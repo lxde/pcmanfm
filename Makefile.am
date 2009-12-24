@@ -1,0 +1,6 @@
+NULL=
+
+SUBDIRS=src po
+
+EXTRA_DIST = \
+	$(NULL)
