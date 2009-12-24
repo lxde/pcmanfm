@@ -1,7 +1,7 @@
 /*
  *      pcmanfm.c
  *      
- *      Copyright 2009 PCMan <pcman@thinkpad>
+ *      Copyright 2009 PCMan <pcman.tw@gmail.com>
  *      
  *      This program is free software; you can redistribute it and/or modify
  *      it under the terms of the GNU General Public License as published by

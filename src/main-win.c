@@ -29,6 +29,7 @@ G_DEFINE_TYPE(FmMainWin, fm_main_win, GTK_TYPE_WINDOW);
 
 static GtkWidget* create_tab_label(FmMainWin* win, FmPath* path, FmFolderView* view);
 static void update_tab_label(FmMainWin* win, FmFolderView* fv, const char* title);
+static void update_volume_info(FmMainWin* win);
 
 static void on_new_win(GtkAction* act, FmMainWin* win);
 static void on_new_tab(GtkAction* act, FmMainWin* win);
@@ -74,6 +75,7 @@ static void on_switch_page(GtkNotebook* nb, GtkNotebookPage* page, guint num, Fm
 #include "main-win-ui.c" /* ui xml definitions and actions */
 
 static guint n_wins = 0;
+static GQuark nav_history_id = 0;
 
 static void fm_main_win_class_init(FmMainWinClass *klass)
 {
@@ -92,6 +94,8 @@ static void fm_main_win_class_init(FmMainWinClass *klass)
 		"}\n"
 		"widget \"*.close-btn\" style \"close-btn-style\""
 	);
+
+    nav_history_id = g_quark_from_static_string("nav-history");
 }
 
 static void on_entry_activate(GtkEntry* entry, FmMainWin* self)
@@ -102,7 +106,17 @@ static void on_entry_activate(GtkEntry* entry, FmMainWin* self)
 static void on_view_loaded( FmFolderView* view, FmPath* path, gpointer user_data) 
 {
     FmMainWin* win = FM_MAIN_WIN(user_data);
+    FmIcon* icon;
+    /* FIXME: we shouldn't access private data member directly. */
     fm_path_entry_set_model( win->location, view->model );
+    icon = FM_FOLDER_MODEL(view->model)->dir->dir_fi->icon;
+    if(icon)
+    {
+        icon->gicon;
+        /* FIXME: load icon. we need to change window icon when switching pages. */
+        gtk_window_set_icon_name(win, "folder");
+    }
+    update_volume_info(win);
 }
 
 static void open_folder_hook(FmFileInfo* fi, gpointer user_data)
@@ -306,6 +320,7 @@ static void fm_main_win_init(FmMainWin *self)
     GtkActionGroup* act_grp;
     GtkAction* act;
     GtkAccelGroup* accel_grp;
+    GtkShadowType shadow_type;
 
     ++n_wins;
 
@@ -358,7 +373,6 @@ static void fm_main_win_init(FmMainWin *self)
     gtk_activatable_set_related_action(toolitem, act);
 
     /* set up history menu */
-    self->nav_history = fm_nav_history_new();
     self->history_menu = gtk_menu_new();
     gtk_menu_tool_button_set_menu(toolitem, self->history_menu);
     g_signal_connect(toolitem, "show-menu", G_CALLBACK(on_show_history_menu), self);
@@ -384,6 +398,13 @@ static void fm_main_win_init(FmMainWin *self)
 
     /* status bar */
     self->statusbar = gtk_statusbar_new();
+    /* status bar column showing volume free space */
+    gtk_widget_style_get(self->statusbar, "shadow-type", &shadow_type, NULL);
+    self->vol_status = gtk_frame_new(NULL);
+    gtk_frame_set_shadow_type(self->vol_status, shadow_type);
+    gtk_box_pack_start(self->statusbar, self->vol_status, FALSE, TRUE, 0);
+    gtk_container_add(self->vol_status, gtk_label_new(NULL));
+
     gtk_box_pack_start( (GtkBox*)vbox, self->statusbar, FALSE, TRUE, 0 );
     self->statusbar_ctx = gtk_statusbar_get_context_id(self->statusbar, "status");
     self->statusbar_ctx2 = gtk_statusbar_get_context_id(self->statusbar, "status2");
@@ -417,7 +438,9 @@ static void fm_main_win_finalize(GObject *object)
 
     self = FM_MAIN_WIN(object);
 
-    g_object_unref(self->nav_history);
+    if(self->vol_status_cancellable)
+        g_object_unref(self->vol_status_cancellable);
+
     g_object_unref(self->ui);
     g_object_unref(self->bookmarks);
 
@@ -609,7 +632,15 @@ static void close_btn_style_set(GtkWidget *btn, GtkRcStyle *prev, gpointer data)
 static void on_close_tab(GtkButton* btn, GtkWidget* view)
 {
     GtkNotebook* nb = GTK_NOTEBOOK(gtk_widget_get_parent(view));
+    FmMainWin* win = FM_MAIN_WIN(gtk_widget_get_toplevel(nb));
     gtk_widget_destroy(view);
+
+    if(win->vol_status_cancellable)
+    {
+        g_cancellable_cancel(win->vol_status_cancellable);
+        g_object_unref(win->vol_status_cancellable);
+        win->vol_status_cancellable = NULL;
+    }
     if(gtk_notebook_get_n_pages(nb) == 0)
     {
         GtkWidget* main_win = gtk_widget_get_toplevel(nb);
@@ -675,6 +706,57 @@ void update_tab_label(FmMainWin* win, FmFolderView* fv, const char* title)
     gtk_label_set_text((GtkLabel*)label, title);
 }
 
+/* FIXME: remote filesystems are sometimes regarded as local ones. */
+static void on_vol_info_available(GObject *src, GAsyncResult *res, FmMainWin* win)
+{
+    GFileInfo* inf = g_file_query_filesystem_info_finish((GFile*)src, res, NULL);
+    guint64 total, free;
+    char total_str[ 64 ];
+    char free_str[ 64 ];
+    char buf[128];
+    if(!inf)
+        return;
+    if(g_file_info_has_attribute(inf, G_FILE_ATTRIBUTE_FILESYSTEM_SIZE))
+    {
+        total = g_file_info_get_attribute_uint64(inf, G_FILE_ATTRIBUTE_FILESYSTEM_SIZE);
+        free = g_file_info_get_attribute_uint64(inf, G_FILE_ATTRIBUTE_FILESYSTEM_FREE);
+
+        fm_file_size_to_str(free_str, free, TRUE);
+        fm_file_size_to_str(total_str, total, TRUE);
+        g_snprintf( buf, G_N_ELEMENTS(buf),
+                    _(", Free space: %s (Total: %s )"), free_str, total_str );
+        gtk_label_set_text(gtk_bin_get_child(win->vol_status), buf);
+        gtk_widget_show(win->vol_status);
+    }
+    else
+        gtk_widget_hide(win->vol_status);
+    g_object_unref(inf);
+}
+
+void update_volume_info(FmMainWin* win)
+{
+    FmFolderModel* model;
+    if(win->vol_status_cancellable)
+    {
+        g_cancellable_cancel(win->vol_status_cancellable);
+        g_object_unref(win->vol_status_cancellable);
+        win->vol_status_cancellable = NULL;
+    }
+    if(win->folder_view && (model = FM_FOLDER_VIEW(win->folder_view)->model))
+    {
+        /* FIXME: we should't access private data member directly. */
+        GFile* gf = model->dir->gf;
+        win->vol_status_cancellable = g_cancellable_new();
+        g_file_query_filesystem_info_async(gf,
+                G_FILE_ATTRIBUTE_FILESYSTEM_SIZE","
+                G_FILE_ATTRIBUTE_FILESYSTEM_FREE,
+                G_PRIORITY_LOW, win->vol_status_cancellable,
+                on_vol_info_available, win);
+    }
+    else
+        gtk_widget_hide(win->vol_status);
+}
+
 gint fm_main_win_add_tab(FmMainWin* win, FmPath* path)
 {
     /* create label for the tab */
@@ -702,6 +784,9 @@ gint fm_main_win_add_tab(FmMainWin* win, FmPath* path)
 
     /* set current folder view */
     win->folder_view = folder_view;
+    /* create navigation history */
+    win->nav_history = fm_nav_history_new();
+    g_object_set_qdata_full((GObject*)folder_view, nav_history_id, win->nav_history, (GDestroyNotify)g_object_unref);
     return ret;
 }
 
@@ -833,6 +918,7 @@ void on_switch_page(GtkNotebook* nb, GtkNotebookPage* page, guint num, FmMainWin
     if(fv)
     {
         FmPath* cwd = fm_folder_view_get_cwd(fv);
+        win->nav_history = (FmNavHistory*)g_object_get_qdata((GObject*)fv, nav_history_id);
 
         if(fv->model) /* FIXME: we shouldn't access private data member. */
             fm_path_entry_set_model( win->location, fv->model );
@@ -845,6 +931,8 @@ void on_switch_page(GtkNotebook* nb, GtkNotebookPage* page, guint num, FmMainWin
             gtk_window_set_title((GtkWindow*)win, disp_name);
             g_free(disp_name);
         }
+
+        update_volume_info(win);
     }
 }
 

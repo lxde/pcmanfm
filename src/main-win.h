@@ -53,11 +53,13 @@ struct _FmMainWin
     GtkWidget* places_view;
 	GtkWidget* folder_view;
 	GtkWidget* statusbar;
+	GtkWidget* vol_status;
     GtkWidget* bookmarks_menu;
     GtkWidget* history_menu;
     GtkWidget* popup;
     /* <private> */
     FmNavHistory* nav_history;
+    GCancellable* vol_status_cancellable;
     guint statusbar_ctx;
     guint statusbar_ctx2;
     FmBookmarks* bookmarks;
