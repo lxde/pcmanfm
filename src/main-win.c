@@ -22,7 +22,7 @@
 #include <glib/gi18n.h>
 
 #include "main-win.h"
-#include <fm-gtk.h>
+#include "pref.h"
 
 static void fm_main_win_finalize              (GObject *object);
 G_DEFINE_TYPE(FmMainWin, fm_main_win, GTK_TYPE_WINDOW);
@@ -48,6 +48,7 @@ static void on_rename(GtkAction* act, FmMainWin* win);
 
 static void on_select_all(GtkAction* act, FmMainWin* win);
 static void on_invert_select(GtkAction* act, FmMainWin* win);
+static void on_preference(GtkAction* act, FmMainWin* win);
 
 static void on_go(GtkAction* act, FmMainWin* win);
 static void on_go_back(GtkAction* act, FmMainWin* win);
@@ -453,13 +454,12 @@ static void fm_main_win_finalize(GObject *object)
 
 void on_about(GtkAction* act, FmMainWin* win)
 {
-    const char* authors[]={"Hong Jen Yee <pcman.tw@gmail.com>", NULL};
-    GtkWidget* dlg = gtk_about_dialog_new();
-    gtk_about_dialog_set_program_name(dlg, "libfm-demo");
-    gtk_about_dialog_set_authors(dlg, authors);
-    gtk_about_dialog_set_comments(dlg, "A demo program for libfm");
-    gtk_about_dialog_set_website(dlg, "http://pcmanfm.sf.net/");
-    gtk_dialog_run(dlg);
+    GtkWidget* dlg;
+    GtkBuilder* builder = gtk_builder_new();
+    gtk_builder_add_from_file(builder, PACKAGE_UI_DIR "/about.ui", NULL);
+    dlg = (GtkWidget*)gtk_builder_get_object(builder, "dlg");
+    g_object_unref(builder);
+    gtk_dialog_run((GtkDialog*)dlg);
     gtk_widget_destroy(dlg);
 }
 
@@ -724,7 +724,7 @@ static void on_vol_info_available(GObject *src, GAsyncResult *res, FmMainWin* wi
         fm_file_size_to_str(free_str, free, TRUE);
         fm_file_size_to_str(total_str, total, TRUE);
         g_snprintf( buf, G_N_ELEMENTS(buf),
-                    _(", Free space: %s (Total: %s )"), free_str, total_str );
+                    _("Free space: %s (Total: %s )"), free_str, total_str );
         gtk_label_set_text(gtk_bin_get_child(win->vol_status), buf);
         gtk_widget_show(win->vol_status);
     }
@@ -889,6 +889,11 @@ void on_select_all(GtkAction* act, FmMainWin* win)
 void on_invert_select(GtkAction* act, FmMainWin* win)
 {
     fm_folder_view_select_invert(win->folder_view);
+}
+
+void on_preference(GtkAction* act, FmMainWin* win)
+{
+    fm_edit_preference(win, 0);
 }
 
 void on_location(GtkAction* act, FmMainWin* win)

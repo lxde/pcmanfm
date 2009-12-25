@@ -10,6 +10,7 @@ bin_PROGRAMS = pcmanfm2
 pcmanfm2_SOURCES = \
 	pcmanfm.c \
 	main-win.c main-win.h \
+	pref.c pref.h \
 	$(NULL)
 
 pcmanfm2_CFLAGS = \

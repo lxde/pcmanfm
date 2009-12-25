@@ -123,7 +123,7 @@ static GtkActionEntry main_win_actions[]=
         {"CopyTo", NULL, N_("Copy To..."), NULL, NULL, G_CALLBACK(on_copy_to)},
         {"SelAll", GTK_STOCK_SELECT_ALL, NULL, NULL, NULL, G_CALLBACK(on_select_all)},
         {"InvSel", NULL, N_("Invert Selection"), NULL, NULL, G_CALLBACK(on_invert_select)},
-        {"Pref", GTK_STOCK_PREFERENCES, NULL, NULL, NULL, NULL},
+        {"Pref", GTK_STOCK_PREFERENCES, NULL, NULL, NULL, G_CALLBACK(on_preference)},
     {"ViewMenu", NULL, N_("_View"), NULL, NULL, NULL},
         {"Sort", NULL, N_("_Sort Files"), NULL, NULL, NULL},
     {"HelpMenu", NULL, N_("_Help"), NULL, NULL, NULL},
