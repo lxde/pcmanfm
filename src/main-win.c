@@ -137,9 +137,9 @@ static void on_file_clicked(FmFolderView* fv, FmFolderViewClickType type, FmFile
         {
             fm_main_win_chdir( win, fi->path);
         }
-        else if(fi->target) /* FIXME: use accessor functions. */
+        else if(!fm_file_info_is_symlink(fi) && fi->target) /* FIXME: use accessor functions. */
         {
-			/* FIXME: use FmPath here. */
+            /* symlinks also has fi->target, but we only handle shortcuts here. */
             fm_main_win_chdir_by_name( win, fi->target);
         }
         else
