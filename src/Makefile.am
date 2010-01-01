@@ -9,6 +9,7 @@ bin_PROGRAMS = pcmanfm2
 
 pcmanfm2_SOURCES = \
 	pcmanfm.c \
+	app-config.c app-config.h \
 	main-win.c main-win.h \
 	pref.c pref.h \
 	$(NULL)

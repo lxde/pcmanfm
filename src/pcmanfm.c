@@ -24,14 +24,17 @@
 #include <stdio.h>
 
 #include <fm-gtk.h>
+#include "app-config.h"
 #include "main-win.h"
 
 int main(int argc, char** argv)
 {
 	GtkWidget* w;
+    FmConfig* config;
 	gtk_init(&argc, &argv);
 
-	fm_gtk_init(NULL);
+    config = fm_app_config_new();
+	fm_gtk_init(config);
 
 	w = fm_main_win_new();
 	gtk_window_set_default_size(w, 640, 480);
