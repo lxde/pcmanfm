@@ -76,6 +76,7 @@ void fm_main_win_chdir(FmMainWin* win, FmPath* path);
 void fm_main_win_chdir_by_name(FmMainWin* win, const char* path_str);
 void fm_main_win_chdir_without_history(FmMainWin* win, FmPath* path);
 gint fm_main_win_add_tab(FmMainWin* win, FmPath* path);
+FmMainWin* fm_main_win_add_win(FmMainWin* win, FmPath* path);
 
 G_END_DECLS
 

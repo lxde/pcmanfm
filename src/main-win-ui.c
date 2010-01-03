@@ -26,6 +26,8 @@ static const char main_menu_xml[] =
   "<menu action='FileMenu'>"
     "<menuitem action='New'/>"
     "<menuitem action='NewTab'/>"
+    "<separator/>"
+    "<menuitem action='CloseTab'/>"
     "<menuitem action='Close'/>"
   "</menu>"
   "<menu action='EditMenu'>"
@@ -111,7 +113,8 @@ static GtkActionEntry main_win_actions[]=
     {"FileMenu", NULL, N_("_File"), NULL, NULL, NULL},
         {"New", GTK_STOCK_NEW, N_("_New Window"), "<Ctrl>N", NULL, G_CALLBACK(on_new_win)},
         {"NewTab", GTK_STOCK_NEW, N_("New _Tab"), "<Ctrl>T", NULL, G_CALLBACK(on_new_tab)},
-        {"Close", GTK_STOCK_CLOSE, N_("_Close Window"), "<Ctrl>W", NULL, G_CALLBACK(on_close_win)},
+        {"CloseTab", GTK_STOCK_CLOSE, N_("_Close Tab"), "<Ctrl>W", NULL, G_CALLBACK(on_close_tab)},
+        {"Close", GTK_STOCK_QUIT, N_("Close Window"), "<Ctrl>Q", NULL, G_CALLBACK(on_close_win)},
     {"EditMenu", NULL, N_("_Edit"), NULL, NULL, NULL},
         {"Cut", GTK_STOCK_CUT, NULL, NULL, NULL, G_CALLBACK(on_cut)},
         {"Copy", GTK_STOCK_COPY, NULL, NULL, NULL, G_CALLBACK(on_copy)},

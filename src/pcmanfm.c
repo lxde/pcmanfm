@@ -49,7 +49,10 @@ int main(int argc, char** argv)
 	
 	gtk_main();
 
-    fm_finalize();
+    fm_config_save(config, NULL); /* save libfm config */
+    fm_app_config_save((FmAppConfig*)config, NULL); /* save pcmanfm config */
+
+    fm_gtk_finalize();
 
 	return 0;
 }

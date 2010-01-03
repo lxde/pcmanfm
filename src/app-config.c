@@ -134,7 +134,7 @@ void fm_app_config_save(FmAppConfig* cfg, const char* name)
         {
             fputs("[config]\n", f);
             fprintf(f, "bm_open_method=%d\n", cfg->bm_open_method);
-            fputs("[desktop]\n", f);
+            fputs("\n[desktop]\n", f);
             fprintf(f, "manage_desktop=%d\n", cfg->manage_desktop);
             fprintf(f, "wallpaper=%s\n", cfg->wallpaper ? cfg->wallpaper : "");
             fputs("\n[ui]\n", f);

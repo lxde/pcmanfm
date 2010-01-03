@@ -21,6 +21,7 @@
 
 #include <glib/gi18n.h>
 
+#include "app-config.h"
 #include "main-win.h"
 #include "pref.h"
 
@@ -33,6 +34,7 @@ static void update_volume_info(FmMainWin* win);
 
 static void on_new_win(GtkAction* act, FmMainWin* win);
 static void on_new_tab(GtkAction* act, FmMainWin* win);
+static void on_close_tab(GtkAction* act, FmMainWin* win);
 static void on_close_win(GtkAction* act, FmMainWin* win);
 
 static void on_open_in_new_tab(GtkAction* act, FmMainWin* win);
@@ -222,7 +224,18 @@ static void on_status(FmFolderView* fv, const char* msg, FmMainWin* win)
 static void on_bookmark(GtkMenuItem* mi, FmMainWin* win)
 {
     FmPath* path = (FmPath*)g_object_get_data(mi, "path");
-    fm_main_win_chdir(win, path);
+    switch(FM_APP_CONFIG(fm_config)->bm_open_method)
+    {
+    case 0: /* current tab */
+        fm_main_win_chdir(win, path);
+        break;
+    case 1: /* new tab */
+        fm_main_win_add_tab(win, path);
+        break;
+    case 2: /* new window */
+        fm_main_win_add_win(win, path);
+        break;
+    }
 }
 
 static void create_bookmarks_menu(FmMainWin* win)
@@ -489,10 +502,7 @@ void on_sort_type(GtkRadioAction* act, GtkRadioAction *cur, FmMainWin* win)
 
 void on_new_win(GtkAction* act, FmMainWin* win)
 {
-    win = fm_main_win_new();
-    gtk_window_set_default_size(win, 640, 480);
-    fm_main_win_chdir(win, fm_path_get_home());
-    gtk_window_present(win);
+    fm_main_win_add_win(win, fm_path_get_home());
 }
 
 void on_new_tab(GtkAction* act, FmMainWin* win)
@@ -506,8 +516,35 @@ void on_close_win(GtkAction* act, FmMainWin* win)
     gtk_widget_destroy(win);
 }
 
+void on_close_tab(GtkAction* act, FmMainWin* win)
+{
+    /* FIXME: this is a little bit dirty */
+    GtkNotebook* nb = (GtkNotebook*)win->notebook;
+    gtk_widget_destroy(win->folder_view);
+
+    if(win->vol_status_cancellable)
+    {
+        g_cancellable_cancel(win->vol_status_cancellable);
+        g_object_unref(win->vol_status_cancellable);
+        win->vol_status_cancellable = NULL;
+    }
+    if(gtk_notebook_get_n_pages(nb) == 0)
+    {
+        GtkWidget* main_win = gtk_widget_get_toplevel(nb);
+        gtk_widget_destroy(main_win);
+    }
+}
+
 void on_open_in_new_tab(GtkAction* act, FmMainWin* win)
 {
+    FmPathList* sels = fm_folder_view_get_selected_file_paths(win->folder_view);
+    GList* l;
+    for( l = fm_list_peek_head_link(sels); l; l=l->next )
+    {
+        FmPath* path = (FmPath*)l->data;
+        fm_main_win_add_tab(win, path);
+    }
+    fm_list_unref(sels);
 }
 
 
@@ -518,10 +555,7 @@ void on_open_in_new_win(GtkAction* act, FmMainWin* win)
     for( l = fm_list_peek_head_link(sels); l; l=l->next )
     {
         FmPath* path = (FmPath*)l->data;
-        win = fm_main_win_new();
-        gtk_window_set_default_size(win, 640, 480);
-        fm_main_win_chdir(win, path);
-        gtk_window_present(win);
+        fm_main_win_add_win(win, path);
     }
     fm_list_unref(sels);
 }
@@ -629,7 +663,7 @@ static void close_btn_style_set(GtkWidget *btn, GtkRcStyle *prev, gpointer data)
 	gtk_widget_set_size_request(btn, w + 2, h + 2);
 }
 
-static void on_close_tab(GtkButton* btn, GtkWidget* view)
+static void on_close_tab_btn(GtkButton* btn, GtkWidget* view)
 {
     GtkNotebook* nb = GTK_NOTEBOOK(gtk_widget_get_parent(view));
     FmMainWin* win = FM_MAIN_WIN(gtk_widget_get_toplevel(nb));
@@ -679,7 +713,7 @@ GtkWidget* create_tab_label(FmMainWin* win, FmPath* path, FmFolderView* view)
 
     gtk_box_pack_end( GTK_BOX( tab_label ), close_btn, FALSE, FALSE, 0 );
 
-    g_signal_connect(close_btn, "clicked", G_CALLBACK(on_close_tab), view);
+    g_signal_connect(close_btn, "clicked", G_CALLBACK(on_close_tab_btn), view);
 
     gtk_container_add(GTK_CONTAINER(evt_box), tab_label);
     gtk_widget_set_events( GTK_WIDGET(evt_box), GDK_ALL_EVENTS_MASK);
@@ -790,6 +824,15 @@ gint fm_main_win_add_tab(FmMainWin* win, FmPath* path)
     return ret;
 }
 
+
+FmMainWin* fm_main_win_add_win(FmMainWin* win, FmPath* path)
+{
+    win = fm_main_win_new();
+    gtk_window_set_default_size(win, 640, 480);
+    fm_main_win_chdir(win, path);
+    gtk_window_present(win);
+    return win;
+}
 
 void on_cut(GtkAction* act, FmMainWin* win)
 {
