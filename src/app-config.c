@@ -63,9 +63,6 @@ static void fm_app_config_init(FmAppConfig *self)
     self->desktop_fg.red = self->desktop_fg.green = self->desktop_fg.blue = 65535;
     self->win_width = 640;
     self->win_height = 480;
-
-    /* load pcmanfm-specific config file */
-    fm_app_config_load_from_file(self, NULL);
 }
 
 

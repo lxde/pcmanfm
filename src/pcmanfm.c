@@ -43,8 +43,9 @@ GIOChannel* io_channel = NULL;
 
 gboolean daemon_mode = FALSE;
 
-static char* default_files[2] = {NULL, NULL};
 static char** files_to_open = NULL;
+static char* profile = NULL;
+static char* config_name = NULL;
 static gboolean no_desktop = FALSE;
 static gboolean show_desktop = FALSE;
 static gboolean desktop_off = FALSE;
@@ -59,15 +60,16 @@ static int n_pcmanfm_ref = 0;
 
 static GOptionEntry opt_entries[] =
 {
+    { "new-tab", 't', 0, G_OPTION_ARG_NONE, &new_tab, N_("Open folders in new tabs of the last used window instead of creating new windows"), NULL },
+    { "profile", 'p', 0, G_OPTION_ARG_STRING, &profile, N_("Name of config profile"), "<profile name>" },
     { "desktop", '\0', 0, G_OPTION_ARG_NONE, &show_desktop, N_("Launch desktop manager"), NULL },
     { "desktop-off", '\0', 0, G_OPTION_ARG_NONE, &desktop_off, N_("Turn off desktop manager if it's running"), NULL },
-    { "no-desktop", '\0', 0, G_OPTION_ARG_NONE, &no_desktop, N_("No function. Just to be compatible with nautilus"), NULL },
     { "daemon-mode", 'd', 0, G_OPTION_ARG_NONE, &daemon_mode, N_("Run PCManFM as a daemon"), NULL },
-    { "new-tab", 't', 0, G_OPTION_ARG_NONE, &new_tab, N_("Open folders in new tabs of the last used window instead of creating new windows"), NULL },
-    { "show-pref", '\0', 0, G_OPTION_ARG_INT, &show_pref, N_("Open preference dialog. 'n' is the number of page you want to show (1, 2, 3...)."), "n" },
     { "desktop-pref", '\0', 0, G_OPTION_ARG_NONE, &desktop_pref, N_("Open desktop preference dialog"), NULL },
+    { "set-wallpaper", 'w', 0, G_OPTION_ARG_FILENAME, &set_wallpaper, N_("Set desktop wallpaper"), N_("<image file>") },
+    { "show-pref", '\0', 0, G_OPTION_ARG_INT, &show_pref, N_("Open preference dialog. 'n' is the number of page you want to show (1, 2, 3...)."), "n" },
     { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
-    { "set-wallpaper", 'w', 0, G_OPTION_ARG_FILENAME, &set_wallpaper, N_("Set desktop wallpaper"), N_("<Image file>") },
+    { "no-desktop", '\0', 0, G_OPTION_ARG_NONE, &no_desktop, N_("No function. Just to be compatible with nautilus"), NULL },
     {G_OPTION_REMAINING, 0, 0, G_OPTION_ARG_FILENAME_ARRAY, &files_to_open, NULL, N_("[FILE1, FILE2,...]")},
     { NULL }
 };
@@ -108,7 +110,12 @@ int main(int argc, char** argv)
     signal( SIGINT, gtk_main_quit );
     signal( SIGTERM, gtk_main_quit );
 
-    config = fm_app_config_new();
+    config = fm_app_config_new(); /* this automatically load libfm config file. */
+    /* load pcmanfm-specific config file */
+    if(profile)
+        config_name = g_strconcat("pcmanfm/", profile, ".conf", NULL);
+    fm_app_config_load_from_file(config, config_name);
+
 	fm_gtk_init(config);
 
     /* the main part */
@@ -119,7 +126,7 @@ int main(int argc, char** argv)
             fm_desktop_manager_finalize();
 
         fm_config_save(config, NULL); /* save libfm config */
-        fm_app_config_save((FmAppConfig*)config, NULL); /* save pcmanfm config */
+        fm_app_config_save((FmAppConfig*)config, config_name); /* save pcmanfm config */
     }
     single_instance_finalize();
 
@@ -152,6 +159,7 @@ inline static GString* args_to_keyfile()
             g_string_append_printf(buf, "%d", *(gint*)ent->arg_data);
             break;
         case G_OPTION_ARG_FILENAME_ARRAY:   /* string array */
+        case G_OPTION_ARG_STRING_ARRAY:
             {
                 char** files = *(char***)ent->arg_data;
                 if(files)
@@ -194,6 +202,7 @@ inline static void keyfile_to_args(GString* buf)
                 *(gint*)ent->arg_data = g_key_file_get_integer(kf, "a", ent->long_name, NULL);
                 break;
             case G_OPTION_ARG_FILENAME_ARRAY: /* string array */
+            case G_OPTION_ARG_STRING_ARRAY:
                 if(*(char**)ent->arg_data)
                     g_strfreev(*(char***)ent->arg_data);
                 *(gchar***)ent->arg_data = g_key_file_get_string_list(kf, "a", *ent->long_name ? *ent->long_name : "@", NULL, NULL);
@@ -362,12 +371,16 @@ gboolean pcmanfm_run()
         }
         else if(set_wallpaper)
         {
+            /* g_debug("\'%s\'", set_wallpaper); */
             /* Make sure this is a support image file. */
-            if(app_config->wallpaper && gdk_pixbuf_get_file_info(app_config->wallpaper, NULL, NULL))
+            if(gdk_pixbuf_get_file_info(set_wallpaper, NULL, NULL))
             {
-                g_free(app_config->wallpaper);
-                app_config->wallpaper = g_strdup(set_wallpaper);
+                if(app_config->wallpaper)
+                    g_free(app_config->wallpaper);
+                app_config->wallpaper = set_wallpaper;
                 set_wallpaper = NULL;
+                if(app_config->wallpaper_mode == FM_WP_COLOR)
+                    app_config->wallpaper_mode = FM_WP_FULL;
                 fm_config_emit_changed(app_config, "wallpaper");
                 fm_app_config_save(app_config, NULL);
             }

@@ -78,7 +78,7 @@ struct _FmAppConfigClass
 };
 
 GType		fm_app_config_get_type		(void);
-FmConfig*	fm_app_config_new			(void);
+FmConfig*	fm_app_config_new			();
 
 void fm_app_config_load_from_file(FmAppConfig* cfg, const char* name);
 

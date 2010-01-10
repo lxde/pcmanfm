@@ -73,6 +73,8 @@ static void on_realize( GtkWidget* w );
 static gboolean on_focus_in( GtkWidget* w, GdkEventFocus* evt );
 static gboolean on_focus_out( GtkWidget* w, GdkEventFocus* evt );
 
+static void on_wallpaper_changed(FmConfig* cfg, gpointer user_data);
+
 static void on_row_inserted(GtkTreeModel* mod, GtkTreePath* tp, GtkTreeIter* it, FmDesktop* desktop);
 static void on_row_deleted(GtkTreeModel* mod, GtkTreePath* tp, FmDesktop* desktop);
 static void on_row_changed(GtkTreeModel* mod, GtkTreePath* tp, GtkTreeIter* it, FmDesktop* desktop);
@@ -92,6 +94,7 @@ G_DEFINE_TYPE(FmDesktop, fm_desktop, GTK_TYPE_WINDOW);
 static GtkWindowGroup* win_group = NULL;
 static GtkWidget **desktops = NULL;
 static gint n_screens = 0;
+static guint wallpaper_changed = 0;
 
 static FmFolderModel* model = NULL;
 
@@ -288,6 +291,8 @@ void fm_desktop_manager_init()
         gtk_window_group_add_window( GTK_WINDOW_GROUP(win_group), desktop );
     }
 
+    wallpaper_changed = g_signal_connect(app_config, "changed::wallpaper", G_CALLBACK(on_wallpaper_changed), NULL);
+
     pcmanfm_ref();
 }
 
@@ -307,6 +312,8 @@ void fm_desktop_manager_finalize()
         g_object_unref(model);
         model = NULL;
     }
+    
+    g_signal_handler_disconnect(app_config, wallpaper_changed);
     
     pcmanfm_unref();
 }
@@ -1094,6 +1101,9 @@ static void update_background(FmDesktop* desktop)
         gdk_window_set_background(widget->window, &bg);
         gdk_window_set_back_pixmap(root, NULL, FALSE);
         gdk_window_set_background(root, &bg);
+        gdk_window_clear(root);
+        gdk_window_clear(widget->window);
+        gdk_window_invalidate_rect(widget->window, NULL, TRUE);
         return;
     }
 
@@ -1154,7 +1164,10 @@ static void update_background(FmDesktop* desktop)
     g_object_unref(pixmap);
     if(pix)
         g_object_unref(pix);
+
+    gdk_window_clear(root);
     gdk_window_clear(widget->window);
+    gdk_window_invalidate_rect(widget->window, NULL, TRUE);
 }
 
 GdkFilterReturn on_root_event(GdkXEvent *xevent, GdkEvent *event, gpointer data)
@@ -1250,4 +1263,11 @@ void on_dnd_dest_files_dropped(FmDndDest* dd, GdkDragAction action,
                                int info_type, FmList* files, FmDesktop* desktop)
 {
     
+}
+
+void on_wallpaper_changed(FmConfig* cfg, gpointer user_data)
+{
+    int i;
+    for(i=0; i < n_screens; ++i)
+        update_background(desktops[i]);
 }
