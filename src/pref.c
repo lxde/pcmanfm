@@ -27,6 +27,7 @@
 
 #include "pref.h"
 #include "app-config.h"
+#include "desktop.h"
 
 #define INIT_BOOL(b, st, name)  init_bool(b, #name, G_STRUCT_OFFSET(st, name))
 #define INIT_ICON_SIZES(b, name) init_icon_sizes(b, #name, G_STRUCT_OFFSET(FmConfig, name))

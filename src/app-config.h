@@ -24,8 +24,11 @@
 #define __APP_CONFIG_H__
 
 #include <fm-config.h>
+#include <gtk/gtk.h>
 
 G_BEGIN_DECLS
+
+#define app_config   ((FmAppConfig*)fm_config)
 
 #define FM_APP_CONFIG_TYPE				(fm_app_config_get_type())
 #define FM_APP_CONFIG(obj)				(G_TYPE_CHECK_INSTANCE_CAST((obj),\
@@ -37,6 +40,15 @@ G_BEGIN_DECLS
 #define IS_FM_APP_CONFIG_CLASS(klass)	(G_TYPE_CHECK_CLASS_TYPE((klass),\
 			FM_APP_CONFIG_TYPE))
 
+typedef enum
+{
+    FM_WP_COLOR,
+    FM_WP_TILE,
+    FM_WP_FULL,
+    FM_WP_STRETCH,
+    FM_WP_CENTER
+}FmWallpaperMode;
+
 typedef struct _FmAppConfig			FmAppConfig;
 typedef struct _FmAppConfigClass		FmAppConfigClass;
 
@@ -44,10 +56,15 @@ struct _FmAppConfig
 {
 	FmConfig parent;
     guint bm_open_method;
-    gboolean manage_desktop;
-    char* wallpaper;
     gboolean always_show_tabs;
     gboolean hide_close_btn;
+    /* desktop manager */
+    gboolean manage_desktop;
+    FmWallpaperMode wallpaper_mode;
+    char* wallpaper;
+    GdkColor desktop_bg;
+    GdkColor desktop_fg;
+    GdkColor desktop_shadow;
 };
 
 struct _FmAppConfigClass

@@ -60,8 +60,10 @@ static void fm_app_config_init(FmAppConfig *self)
     /* load libfm config file */
     fm_config_load_from_file((FmConfig*)self, NULL);
 
+    self->desktop_fg.red = self->desktop_fg.green = self->desktop_fg.blue = 65535;
+
     /* load pcmanfm-specific config file */
-    fm_app_config_load_from_file(self, "pcmanfm.conf");
+    fm_app_config_load_from_file(self, NULL);
 }
 
 
@@ -72,10 +74,30 @@ FmConfig *fm_app_config_new(void)
 
 void fm_app_config_load_from_key_file(FmAppConfig* cfg, GKeyFile* kf)
 {
+    char* tmp;
     fm_key_file_get_bool(kf, "config", "bm_open_method", &cfg->bm_open_method);
 
     fm_key_file_get_bool(kf, "desktop", "manage_desktop", &cfg->manage_desktop);
-    fm_key_file_get_bool(kf, "desktop", "wallpaper", &cfg->wallpaper);
+    fm_key_file_get_int(kf, "desktop", "wallpaper_mode", &cfg->wallpaper_mode);
+    cfg->wallpaper = g_key_file_get_string(kf, "desktop", "wallpaper", NULL);
+    tmp = g_key_file_get_string(kf, "desktop", "desktop_bg", NULL);
+    if(tmp)
+    {
+        gdk_color_parse(tmp, &cfg->desktop_bg);
+        g_free(tmp);
+    }
+    tmp = g_key_file_get_string(kf, "desktop", "desktop_fg", NULL);
+    if(tmp)
+    {
+        gdk_color_parse(tmp, &cfg->desktop_fg);
+        g_free(tmp);
+    }
+    tmp = g_key_file_get_string(kf, "desktop", "desktop_shadow", NULL);
+    if(tmp)
+    {
+        gdk_color_parse(tmp, &cfg->desktop_shadow);
+        g_free(tmp);
+    }
 
     fm_key_file_get_int(kf, "ui", "always_show_tabs", &cfg->always_show_tabs);
     fm_key_file_get_int(kf, "ui", "hide_close_btn", &cfg->hide_close_btn);
@@ -136,7 +158,11 @@ void fm_app_config_save(FmAppConfig* cfg, const char* name)
             fprintf(f, "bm_open_method=%d\n", cfg->bm_open_method);
             fputs("\n[desktop]\n", f);
             fprintf(f, "manage_desktop=%d\n", cfg->manage_desktop);
+            fprintf(f, "wallpaper_mode=%d\n", cfg->wallpaper_mode);
             fprintf(f, "wallpaper=%s\n", cfg->wallpaper ? cfg->wallpaper : "");
+            fprintf(f, "desktop_bg=#%02x%02x%02x\n", cfg->desktop_bg.red/257, cfg->desktop_bg.green/257, cfg->desktop_bg.blue/257);
+            fprintf(f, "desktop_fg=#%02x%02x%02x\n", cfg->desktop_fg.red/257, cfg->desktop_fg.green/257, cfg->desktop_fg.blue/257);
+            fprintf(f, "desktop_shadow=#%02x%02x%02x\n", cfg->desktop_shadow.red/257, cfg->desktop_shadow.green/257, cfg->desktop_shadow.blue/257);
             fputs("\n[ui]\n", f);
             fprintf(f, "always_show_tabs=%d\n", cfg->always_show_tabs);
             fprintf(f, "hide_close_btn=%d\n", cfg->hide_close_btn);

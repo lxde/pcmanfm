@@ -26,6 +26,15 @@
 #include <fm-gtk.h>
 #include "app-config.h"
 #include "main-win.h"
+#include "desktop.h"
+
+static void on_manage_desktop_changed(FmConfig* cfg, gpointer user_data)
+{
+    if(FM_APP_CONFIG(fm_config)->manage_desktop)
+        fm_desktop_manager_init();
+    else
+        fm_desktop_manager_finalize();
+}
 
 int main(int argc, char** argv)
 {
@@ -35,6 +44,10 @@ int main(int argc, char** argv)
 
     config = fm_app_config_new();
 	fm_gtk_init(config);
+
+    g_signal_connect(fm_config, "changed::manage_desktop", G_CALLBACK(on_manage_desktop_changed), NULL);
+    if(FM_APP_CONFIG(fm_config)->manage_desktop)
+        fm_desktop_manager_init();
 
 	w = fm_main_win_new();
 	gtk_window_set_default_size(w, 640, 480);
@@ -46,11 +59,14 @@ int main(int argc, char** argv)
         fm_main_win_chdir(w, path);
         fm_path_unref(path);
     }
-	
+
 	gtk_main();
 
     fm_config_save(config, NULL); /* save libfm config */
     fm_app_config_save((FmAppConfig*)config, NULL); /* save pcmanfm config */
+
+    if(FM_APP_CONFIG(fm_config)->manage_desktop)
+        fm_desktop_manager_finalize();
 
     fm_gtk_finalize();
 

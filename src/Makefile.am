@@ -11,6 +11,7 @@ pcmanfm2_SOURCES = \
 	pcmanfm.c \
 	app-config.c app-config.h \
 	main-win.c main-win.h \
+	desktop.c desktop.h \
 	pref.c pref.h \
 	$(NULL)
 
