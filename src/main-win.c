@@ -112,7 +112,7 @@ static void on_view_loaded( FmFolderView* view, FmPath* path, gpointer user_data
     FmMainWin* win = FM_MAIN_WIN(user_data);
     FmIcon* icon;
     /* FIXME: we shouldn't access private data member directly. */
-    fm_path_entry_set_model( win->location, view->model );
+    fm_path_entry_set_model( win->location, path, view->model );
     icon = FM_FOLDER_MODEL(view->model)->dir->dir_fi->icon;
     if(icon)
     {
@@ -966,8 +966,8 @@ void on_switch_page(GtkNotebook* nb, GtkNotebookPage* page, guint num, FmMainWin
         FmPath* cwd = fm_folder_view_get_cwd(fv);
         win->nav_history = (FmNavHistory*)g_object_get_qdata((GObject*)fv, nav_history_id);
 
-        if(fv->model) /* FIXME: we shouldn't access private data member. */
-            fm_path_entry_set_model( win->location, fv->model );
+        /* FIXME: we shouldn't access private data member. */
+        fm_path_entry_set_model( win->location, cwd, fv->model );
         g_signal_connect(fv, "loaded", G_CALLBACK(on_view_loaded), win);
 
         if(cwd)

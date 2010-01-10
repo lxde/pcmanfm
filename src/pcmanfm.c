@@ -190,6 +190,7 @@ inline static void keyfile_to_args(GString* buf)
     if(g_key_file_load_from_data(kf, buf->str, buf->len, 0, NULL))
     {
         int i;
+        char*** pstrs;
         for(i = 0; i < G_N_ELEMENTS(opt_entries)-1;++i)
         {
             GOptionEntry* ent = &opt_entries[i];
@@ -203,15 +204,31 @@ inline static void keyfile_to_args(GString* buf)
                 break;
             case G_OPTION_ARG_FILENAME_ARRAY: /* string array */
             case G_OPTION_ARG_STRING_ARRAY:
-                if(*(char**)ent->arg_data)
-                    g_strfreev(*(char***)ent->arg_data);
-                *(gchar***)ent->arg_data = g_key_file_get_string_list(kf, "a", *ent->long_name ? *ent->long_name : "@", NULL, NULL);
+                pstrs = (char**)ent->arg_data;
+                if(*pstrs)
+                    g_strfreev(*pstrs);
+                *pstrs = g_key_file_get_string_list(kf, "a", *ent->long_name ? *ent->long_name : "@", NULL, NULL);
+                if(*pstrs)
+                {
+                    char** strs = *pstrs;
+                    char* str = *strs;
+                    if(!str || str[0] == '\0')
+                    {
+                        g_strfreev(strs);
+                        *pstrs = NULL;
+                    }
+                }
                 break;
             case G_OPTION_ARG_FILENAME:
             case G_OPTION_ARG_STRING: /* string */
                 if(*(char**)ent->arg_data)
                     g_free(*(char**)ent->arg_data);
                 *(char**)ent->arg_data = g_key_file_get_string(kf, "a", ent->long_name, NULL);
+                if(*(char**)ent->arg_data && **(char**)ent->arg_data == '\0')
+                {
+                    g_free(*(char**)ent->arg_data);
+                    *(char**)ent->arg_data = NULL;
+                }
                 break;
             }
         }
@@ -334,12 +351,6 @@ gboolean pcmanfm_run()
     char** file;
 	GtkWidget* w;
 
-    if(G_UNLIKELY(files_to_open && !files_to_open[0]))
-    {
-        g_strfreev(files_to_open);
-        files_to_open = NULL;
-    }
-
     if(!files_to_open)
     {
         /* Launch desktop manager */
@@ -350,6 +361,7 @@ gboolean pcmanfm_run()
                 fm_desktop_manager_init();
                 desktop_running = TRUE;
             }
+            show_desktop = FALSE;
             return TRUE;
         }
         else if(desktop_off)
@@ -359,14 +371,17 @@ gboolean pcmanfm_run()
                 desktop_running = FALSE;
                 fm_desktop_manager_finalize();
             }
+            desktop_off = FALSE;
             return FALSE;
         }
         else if(show_pref > 0)
         {
+            show_pref = FALSE;
             return TRUE;
         }
         else if(desktop_pref)
         {
+            desktop_pref = FALSE;
             return TRUE;
         }
         else if(set_wallpaper)
@@ -398,7 +413,7 @@ gboolean pcmanfm_run()
         {
             FmPath* path;
             w = fm_main_win_new();
-            gtk_window_set_default_size(w, 640, 480);
+            gtk_window_set_default_size(w, app_config->win_width, app_config->win_height);
             gtk_widget_show(w);
             path = fm_path_get_home();
             fm_main_win_chdir(w, path);

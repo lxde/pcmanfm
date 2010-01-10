@@ -92,6 +92,8 @@ void fm_desktop_set_single_click(FmDesktop* desktop, gboolean single_click);
 void fm_desktop_set_single_click_timeout(FmDesktop* desktop, guint timeout);
 */
 
+FmFileInfoList* fm_desktop_get_selected_files(FmDesktop* desktop);
+
 GType		fm_desktop_get_type		(void);
 GtkWidget*	fm_desktop_new			(void);
 

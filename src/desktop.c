@@ -239,7 +239,7 @@ static void fm_desktop_init(FmDesktop *self)
 
     gtk_drag_dest_set(self, 0, NULL, 0,
             GDK_ACTION_COPY|GDK_ACTION_MOVE|GDK_ACTION_LINK|GDK_ACTION_ASK);
-    gtk_drag_source_set_target_list(self, targets);
+    gtk_drag_dest_set_target_list(self, targets);
 
     self->dnd_dest = fm_dnd_dest_new((GtkWidget*)self);
     g_signal_connect(self->dnd_dest, "query-info", G_CALLBACK(on_dnd_dest_query_info), self);
@@ -561,28 +561,16 @@ gboolean on_motion( GtkWidget* w, GdkEventMotion* evt )
                                     self->drag_start_y,
                                     evt->x, evt->y))
         {
+            FmFileInfoList* files = fm_desktop_get_selected_files(self);
             GtkTargetList* target_list;
-#if 0
-            gboolean virtual_item = FALSE;
-            GList* sels = fm_desktop_win_get_selected_items(self);
-
-            self->dragging = TRUE;
-            if( sels && sels->next == NULL ) /* only one item selected */
+            if(files)
             {
-                FmDesktopItem* item = (FmDesktopItem*)sels->data;
-                if( item->fi->flags & VFS_FILE_INFO_VIRTUAL )
-                    virtual_item = TRUE;
+                self->dragging = TRUE;
+                target_list = gtk_drag_source_get_target_list(w);
+                gtk_drag_begin( w, target_list,
+                             GDK_ACTION_COPY|GDK_ACTION_MOVE|GDK_ACTION_LINK,
+                             1, evt );
             }
-            g_list_free( sels );
-            if( virtual_item )
-                target_list = gtk_target_list_new( drag_targets + 1, G_N_ELEMENTS(drag_targets) - 1 );
-            else
-                target_list = gtk_target_list_new( drag_targets, G_N_ELEMENTS(drag_targets) );
-            gtk_drag_begin( w, target_list,
-                         GDK_ACTION_COPY|GDK_ACTION_MOVE|GDK_ACTION_LINK,
-                         1, evt );
-            gtk_target_list_unref( target_list );
-#endif
         }
     }
 
@@ -1243,20 +1231,32 @@ void on_screen_size_changed(GdkScreen* screen, FmDesktop* desktop)
 
 void on_dnd_src_data_get(FmDndSrc* ds, FmDesktop* desktop)
 {
-/*
-    FmFileInfoList* files = fm_folder_view_get_selected_files(fv);
+    FmFileInfoList* files = fm_desktop_get_selected_files(desktop);
     if(files)
     {
         fm_dnd_src_set_files(ds, files);
         fm_list_unref(files);
     }
-*/
 }
 
 gboolean on_dnd_dest_query_info(FmDndDest* dd, int x, int y,
                     			GdkDragAction* action, FmDesktop* desktop)
 {
-    return FALSE;
+    FmDesktopItem* item = hit_test(desktop, x, y);
+    if(item)
+    {
+        *action = GDK_ACTION_COPY;
+        fm_dnd_dest_set_dest_file(dd, item->fi);
+        return TRUE;
+    }
+    else
+    {
+        *action = GDK_ACTION_COPY;
+        /* FIXME: prevent direct access to data member */
+        fm_dnd_dest_set_dest_file(dd, model->dir->dir_fi);
+        return TRUE;
+    }
+    return TRUE;
 }
 
 void on_dnd_dest_files_dropped(FmDndDest* dd, GdkDragAction action,
@@ -1270,4 +1270,22 @@ void on_wallpaper_changed(FmConfig* cfg, gpointer user_data)
     int i;
     for(i=0; i < n_screens; ++i)
         update_background(desktops[i]);
+}
+
+FmFileInfoList* fm_desktop_get_selected_files(FmDesktop* desktop)
+{
+    GList* l;
+    FmFileInfoList* files = fm_file_info_list_new();
+    for(l=desktop->items; l; l=l->next)
+    {
+        FmDesktopItem* item = (FmDesktopItem*)l->data;
+        if(item->is_selected)
+            fm_list_push_tail(files, item->fi);
+    }
+    if(fm_list_is_empty(files))
+    {
+        fm_list_unref(files);
+        files = NULL;
+    }
+    return files;
 }
