@@ -28,7 +28,7 @@
 
 #define SPACING 2
 #define PADDING 6
-#define MARGIN  4
+#define MARGIN  2
 
 struct _FmDesktopItem
 {
@@ -164,6 +164,7 @@ static void fm_desktop_finalize(GObject *object)
 static void fm_desktop_init(FmDesktop *self)
 {
     GdkScreen* screen = gtk_widget_get_screen((GtkWidget*)self);
+    GdkWindow* root;
     PangoContext* pc;
 
     gtk_window_set_default_size((GtkWindow*)self, gdk_screen_get_width(screen), gdk_screen_get_height(screen));
@@ -195,9 +196,10 @@ static void fm_desktop_init(FmDesktop *self)
     g_signal_connect(model, "row-deleted", G_CALLBACK(on_row_deleted), self);
     g_signal_connect(model, "row-changed", G_CALLBACK(on_row_changed), self);
 
-    gdk_window_add_filter(gdk_screen_get_root_window(screen), on_root_event, self);
+    root = gdk_screen_get_root_window(screen);
+    gdk_window_set_events(root, gdk_window_get_events(root)|GDK_PROPERTY_CHANGE_MASK);
+    gdk_window_add_filter(root, on_root_event, self);
     g_signal_connect(screen, "size-changed", G_CALLBACK(on_screen_size_changed), self);
-    update_working_area(self);
 }
 
 
@@ -807,7 +809,7 @@ void layout_items(FmDesktop* self)
 
     x = self->working_area.x + self->xmargin;
     y = self->working_area.y + self->ymargin;
-    bottom = self->working_area.y + self->working_area.height - self->ymargin;
+    bottom = self->working_area.y + self->working_area.height - self->ymargin - self->cell_h;
 
     for( l = self->items; l; l = l->next )
     {
@@ -850,7 +852,7 @@ static gboolean on_idle_layout(FmDesktop* desktop)
 
 void queue_layout_items(FmDesktop* desktop)
 {
-    if(!desktop->idle_layout)
+    if(0 == desktop->idle_layout)
         desktop->idle_layout = g_idle_add((GSourceFunc)on_idle_layout, desktop);
 }
 
