@@ -8,7 +8,7 @@ AM_CPPFLAGS = \
 bin_PROGRAMS = pcmanfm2
 
 pcmanfm2_SOURCES = \
-	pcmanfm.c \
+	pcmanfm.c pcmanfm.h \
 	app-config.c app-config.h \
 	main-win.c main-win.h \
 	desktop.c desktop.h \

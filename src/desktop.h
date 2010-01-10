@@ -69,6 +69,8 @@ struct _FmDesktop
     gboolean button_pressed : 1;
     gboolean dragging : 1;
     guint idle_layout;
+    FmDndSrc* dnd_src;
+    FmDndDest* dnd_dest;
 };
 
 struct _FmDesktopClass

@@ -61,6 +61,8 @@ static void fm_app_config_init(FmAppConfig *self)
     fm_config_load_from_file((FmConfig*)self, NULL);
 
     self->desktop_fg.red = self->desktop_fg.green = self->desktop_fg.blue = 65535;
+    self->win_width = 640;
+    self->win_height = 480;
 
     /* load pcmanfm-specific config file */
     fm_app_config_load_from_file(self, NULL);
@@ -77,7 +79,6 @@ void fm_app_config_load_from_key_file(FmAppConfig* cfg, GKeyFile* kf)
     char* tmp;
     fm_key_file_get_bool(kf, "config", "bm_open_method", &cfg->bm_open_method);
 
-    fm_key_file_get_bool(kf, "desktop", "manage_desktop", &cfg->manage_desktop);
     fm_key_file_get_int(kf, "desktop", "wallpaper_mode", &cfg->wallpaper_mode);
     cfg->wallpaper = g_key_file_get_string(kf, "desktop", "wallpaper", NULL);
     tmp = g_key_file_get_string(kf, "desktop", "desktop_bg", NULL);
@@ -157,7 +158,6 @@ void fm_app_config_save(FmAppConfig* cfg, const char* name)
             fputs("[config]\n", f);
             fprintf(f, "bm_open_method=%d\n", cfg->bm_open_method);
             fputs("\n[desktop]\n", f);
-            fprintf(f, "manage_desktop=%d\n", cfg->manage_desktop);
             fprintf(f, "wallpaper_mode=%d\n", cfg->wallpaper_mode);
             fprintf(f, "wallpaper=%s\n", cfg->wallpaper ? cfg->wallpaper : "");
             fprintf(f, "desktop_bg=#%02x%02x%02x\n", cfg->desktop_bg.red/257, cfg->desktop_bg.green/257, cfg->desktop_bg.blue/257);
@@ -166,6 +166,8 @@ void fm_app_config_save(FmAppConfig* cfg, const char* name)
             fputs("\n[ui]\n", f);
             fprintf(f, "always_show_tabs=%d\n", cfg->always_show_tabs);
             fprintf(f, "hide_close_btn=%d\n", cfg->hide_close_btn);
+            fprintf(f, "win_width=%d\n", cfg->win_width);
+            fprintf(f, "win_height=%d\n", cfg->win_height);
             fclose(f);
         }
     }

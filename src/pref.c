@@ -25,6 +25,8 @@
 
 #include <fm-config.h>
 
+#include "pcmanfm.h"
+
 #include "pref.h"
 #include "app-config.h"
 #include "desktop.h"
@@ -149,7 +151,6 @@ gboolean fm_edit_preference( GtkWindow* parent, int page )
         INIT_BOOL(builder, FmConfig, show_thumbnail);
         INIT_BOOL(builder, FmConfig, si_unit);
 
-        INIT_BOOL(builder, FmAppConfig, manage_desktop);
         INIT_BOOL(builder, FmAppConfig, always_show_tabs);
         INIT_BOOL(builder, FmAppConfig, hide_close_btn);
 
@@ -161,6 +162,9 @@ gboolean fm_edit_preference( GtkWindow* parent, int page )
 
         g_signal_connect(pref_dlg, "response", G_CALLBACK(on_response), NULL);
         g_object_unref(builder);
+        
+        pcmanfm_ref();
+        g_signal_connect(pref_dlg, "destroy", G_CALLBACK(pcmanfm_unref), NULL);
     }
     gtk_window_present(pref_dlg);
     gtk_notebook_set_current_page(notebook, page);

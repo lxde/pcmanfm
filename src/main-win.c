@@ -21,6 +21,8 @@
 
 #include <glib/gi18n.h>
 
+#include "pcmanfm.h"
+
 #include "app-config.h"
 #include "main-win.h"
 #include "pref.h"
@@ -77,7 +79,6 @@ static void on_switch_page(GtkNotebook* nb, GtkNotebookPage* page, guint num, Fm
 
 #include "main-win-ui.c" /* ui xml definitions and actions */
 
-static guint n_wins = 0;
 static GQuark nav_history_id = 0;
 
 static void fm_main_win_class_init(FmMainWinClass *klass)
@@ -336,7 +337,7 @@ static void fm_main_win_init(FmMainWin *self)
     GtkAccelGroup* accel_grp;
     GtkShadowType shadow_type;
 
-    ++n_wins;
+    pcmanfm_ref();
 
     vbox = gtk_vbox_new(FALSE, 0);
 
@@ -448,7 +449,7 @@ static void fm_main_win_finalize(GObject *object)
     g_return_if_fail(object != NULL);
     g_return_if_fail(IS_FM_MAIN_WIN(object));
 
-    --n_wins;
+    pcmanfm_unref();
 
     self = FM_MAIN_WIN(object);
 
@@ -460,9 +461,6 @@ static void fm_main_win_finalize(GObject *object)
 
     if (G_OBJECT_CLASS(fm_main_win_parent_class)->finalize)
         (* G_OBJECT_CLASS(fm_main_win_parent_class)->finalize)(object);
-
-    if(n_wins == 0)
-        gtk_main_quit();
 }
 
 void on_about(GtkAction* act, FmMainWin* win)

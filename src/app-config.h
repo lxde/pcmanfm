@@ -55,11 +55,16 @@ typedef struct _FmAppConfigClass		FmAppConfigClass;
 struct _FmAppConfig
 {
 	FmConfig parent;
+    /* config */
     guint bm_open_method;
+
+    /* ui */
     gboolean always_show_tabs;
     gboolean hide_close_btn;
+    int win_width;
+    int win_height;
+
     /* desktop manager */
-    gboolean manage_desktop;
     FmWallpaperMode wallpaper_mode;
     char* wallpaper;
     GdkColor desktop_bg;

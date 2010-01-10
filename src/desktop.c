@@ -20,6 +20,7 @@
  */
 
 #include "desktop.h"
+#include "pcmanfm.h"
 #include "app-config.h"
 
 #include <gdk/gdkx.h>
@@ -43,7 +44,8 @@ struct _FmDesktopItem
     gboolean custom_pos : 1;
 };
 
-static void fm_desktop_finalize              (GObject *object);
+/* static void fm_desktop_finalize              (GObject *object); */
+static void fm_desktop_destroy               (GtkObject *object);
 
 static FmDesktopItem* hit_test(FmDesktop* self, int x, int y);
 static void layout_items(FmDesktop* self);
@@ -56,6 +58,7 @@ static void paint_rubber_banding_rect(FmDesktop* self, cairo_t* cr, GdkRectangle
 static void update_background(FmDesktop* desktop);
 static void update_working_area(FmDesktop* desktop);
 
+static FmDesktopItem* desktop_item_new(GtkTreeIter* it);
 static void desktop_item_free(FmDesktopItem* item);
 
 static gboolean on_expose( GtkWidget* w, GdkEventExpose* evt );
@@ -74,6 +77,13 @@ static void on_row_inserted(GtkTreeModel* mod, GtkTreePath* tp, GtkTreeIter* it,
 static void on_row_deleted(GtkTreeModel* mod, GtkTreePath* tp, FmDesktop* desktop);
 static void on_row_changed(GtkTreeModel* mod, GtkTreePath* tp, GtkTreeIter* it, FmDesktop* desktop);
 
+static void on_dnd_src_data_get(FmDndSrc* ds, FmDesktop* desktop);
+static gboolean on_dnd_dest_query_info(FmDndDest* dd, int x, int y,
+                            			GdkDragAction* action, FmDesktop* desktop);
+static void on_dnd_dest_files_dropped(FmDndDest* dd, GdkDragAction action,
+                                       int info_type, FmList* files, FmDesktop* desktop);
+
+
 static GdkFilterReturn on_root_event(GdkXEvent *xevent, GdkEvent *event, gpointer data);
 static void on_screen_size_changed(GdkScreen* screen, FmDesktop* desktop);
 
@@ -90,16 +100,29 @@ static Atom XA_NET_NUMBER_OF_DESKTOPS = 0;
 static Atom XA_NET_CURRENT_DESKTOP = 0;
 static Atom XA_XROOTMAP_ID= 0;
 
+enum {
+    FM_DND_DEST_DESKTOP_ITEM = N_FM_DND_DEST_DEFAULT_TARGETS + 1
+};
+
+GtkTargetEntry dnd_targets[] = 
+{
+    {"application/x-desktop-item", GTK_TARGET_SAME_WIDGET, FM_DND_DEST_DESKTOP_ITEM}
+};
+
+
 static void fm_desktop_class_init(FmDesktopClass *klass)
 {
     GObjectClass *g_object_class;
+    GtkObjectClass *gtk_object_class;
     GtkWidgetClass* wc;
 	typedef gboolean (*DeleteEvtHandler) (GtkWidget*, GdkEvent*);
     const char* atom_names[] = {"_NET_WORKAREA", "_NET_NUMBER_OF_DESKTOPS", "_NET_CURRENT_DESKTOP", "_XROOTMAP_ID"};
     Atom atoms[G_N_ELEMENTS(atom_names)] = {0};
 
-    g_object_class = G_OBJECT_CLASS(klass);
-    g_object_class->finalize = fm_desktop_finalize;
+    /* g_object_class = G_OBJECT_CLASS(klass);
+       g_object_class->finalize = fm_desktop_finalize; */
+    gtk_object_class = GTK_OBJECT_CLASS(klass);
+    gtk_object_class->destroy = fm_desktop_destroy;
 
     wc = GTK_WIDGET_CLASS(klass);
     wc->expose_event = on_expose;
@@ -132,13 +155,10 @@ static void desktop_item_free(FmDesktopItem* item)
     g_slice_free(FmDesktopItem, item);
 }
 
-static void fm_desktop_finalize(GObject *object)
+static void fm_desktop_destroy(GtkObject *object)
 {
     FmDesktop *self;
     GdkScreen* screen;
-
-    g_return_if_fail(object != NULL);
-    g_return_if_fail(FM_IS_DESKTOP(object));
 
     self = FM_DESKTOP(object);
     screen = gtk_widget_get_screen((GtkWidget*)self);
@@ -146,6 +166,7 @@ static void fm_desktop_finalize(GObject *object)
 
     g_list_foreach(self->items, (GFunc)desktop_item_free, NULL);
     g_list_free(self->items);
+    self->items = NULL;
 
     g_object_unref(self->icon_render);
     g_object_unref(self->pl);
@@ -157,15 +178,17 @@ static void fm_desktop_finalize(GObject *object)
     if(self->idle_layout)
         g_source_remove(self->idle_layout);
 
-    G_OBJECT_CLASS(fm_desktop_parent_class)->finalize(object);
+    G_OBJECT_CLASS(fm_desktop_parent_class)->dispose(object);
 }
-
 
 static void fm_desktop_init(FmDesktop *self)
 {
     GdkScreen* screen = gtk_widget_get_screen((GtkWidget*)self);
     GdkWindow* root;
     PangoContext* pc;
+    GtkTreeIter it;
+    GtkCellRenderer* renderer;
+    GtkTargetList* targets;
 
     gtk_window_set_default_size((GtkWindow*)self, gdk_screen_get_width(screen), gdk_screen_get_height(screen));
     gtk_window_move(self, 0, 0);
@@ -200,6 +223,34 @@ static void fm_desktop_init(FmDesktop *self)
     gdk_window_set_events(root, gdk_window_get_events(root)|GDK_PROPERTY_CHANGE_MASK);
     gdk_window_add_filter(root, on_root_event, self);
     g_signal_connect(screen, "size-changed", G_CALLBACK(on_screen_size_changed), self);
+
+    /* init dnd support */
+    gtk_drag_source_set(self, 0,
+            fm_default_dnd_dest_targets, N_FM_DND_DEST_DEFAULT_TARGETS,
+            GDK_ACTION_COPY|GDK_ACTION_MOVE|GDK_ACTION_LINK|GDK_ACTION_ASK);
+    targets = gtk_drag_source_get_target_list((GtkWidget*)self);
+    /* add our own targets */
+    gtk_target_list_add_table(targets, dnd_targets, G_N_ELEMENTS(dnd_targets));
+    self->dnd_src = fm_dnd_src_new((GtkWidget*)self);
+    g_signal_connect(self->dnd_src, "data-get", G_CALLBACK(on_dnd_src_data_get), self);
+
+    gtk_drag_dest_set(self, 0, NULL, 0,
+            GDK_ACTION_COPY|GDK_ACTION_MOVE|GDK_ACTION_LINK|GDK_ACTION_ASK);
+    gtk_drag_source_set_target_list(self, targets);
+
+    self->dnd_dest = fm_dnd_dest_new((GtkWidget*)self);
+    g_signal_connect(self->dnd_dest, "query-info", G_CALLBACK(on_dnd_dest_query_info), self);
+    g_signal_connect(self->dnd_dest, "files_dropped", G_CALLBACK(on_dnd_dest_files_dropped), self);
+
+    /* add items */
+    if(gtk_tree_model_get_iter_first(model, &it))
+    {
+        do{
+            FmDesktopItem* item = desktop_item_new(&it);
+            self->items = g_list_prepend(self->items, item);
+        }while(gtk_tree_model_iter_next(model, &it));
+        self->items = g_list_reverse(self->items);
+    }
 }
 
 
@@ -236,6 +287,8 @@ void fm_desktop_manager_init()
         gdk_window_lower(desktop ->window);
         gtk_window_group_add_window( GTK_WINDOW_GROUP(win_group), desktop );
     }
+
+    pcmanfm_ref();
 }
 
 void fm_desktop_manager_finalize()
@@ -254,6 +307,8 @@ void fm_desktop_manager_finalize()
         g_object_unref(model);
         model = NULL;
     }
+    
+    pcmanfm_unref();
 }
 
 
@@ -632,16 +687,6 @@ void on_realize( GtkWidget* w )
     if( ! self->gc )
         self->gc = gdk_gc_new( w->window );
 
-    if(app_config->wallpaper)
-    {
-        GdkPixbuf* pix = gdk_pixbuf_new_from_file(app_config->wallpaper, NULL);
-        GdkPixmap* pixmap = gdk_pixmap_new(w->window, gdk_pixbuf_get_width(pix), gdk_pixbuf_get_height(pix), -1);
-        gdk_draw_pixbuf(pixmap, self->gc, pix, 0, 0, 0, 0, gdk_pixbuf_get_width(pix), gdk_pixbuf_get_height(pix), GDK_RGB_DITHER_NORMAL, 0, 0);
-        g_object_unref(pix);
-        gdk_window_set_back_pixmap( w->window, pixmap, FALSE );
-        g_object_unref(pixmap);
-    }
-
     update_background(self);
 }
 
@@ -765,13 +810,18 @@ FmDesktopItem* hit_test(FmDesktop* self, int x, int y)
     return NULL;
 }
 
-void on_row_inserted(GtkTreeModel* mod, GtkTreePath* tp, GtkTreeIter* it, FmDesktop* desktop)
+inline FmDesktopItem* desktop_item_new(GtkTreeIter* it)
 {
     FmDesktopItem* item = g_slice_new0(FmDesktopItem);
     item->it = *it;
-    gtk_tree_model_get(mod, it, COL_FILE_BIG_ICON, &item->icon, COL_FILE_INFO, &item->fi, -1);
-    desktop->items = g_list_insert(desktop->items, item, gtk_tree_path_get_indices(tp)[0]);
+    gtk_tree_model_get(model, it, COL_FILE_BIG_ICON, &item->icon, COL_FILE_INFO, &item->fi, -1);
+    return item;
+}
 
+void on_row_inserted(GtkTreeModel* mod, GtkTreePath* tp, GtkTreeIter* it, FmDesktop* desktop)
+{
+    FmDesktopItem* item = desktop_item_new(it);
+    desktop->items = g_list_insert(desktop->items, item, gtk_tree_path_get_indices(tp)[0]);
     queue_layout_items(desktop);
 }
 
@@ -1035,6 +1085,7 @@ static void update_background(FmDesktop* desktop)
 
     if(app_config->wallpaper_mode == FM_WP_COLOR
        || !app_config->wallpaper
+       || !*app_config->wallpaper
        || ! (pix = gdk_pixbuf_new_from_file(app_config->wallpaper, NULL)) ) /* solid color only */
     {
         GdkColor bg = app_config->desktop_bg;
@@ -1175,4 +1226,28 @@ _out:
 void on_screen_size_changed(GdkScreen* screen, FmDesktop* desktop)
 {
     gtk_window_resize((GtkWindow*)desktop, gdk_screen_get_width(screen), gdk_screen_get_height(screen));
+}
+
+void on_dnd_src_data_get(FmDndSrc* ds, FmDesktop* desktop)
+{
+/*
+    FmFileInfoList* files = fm_folder_view_get_selected_files(fv);
+    if(files)
+    {
+        fm_dnd_src_set_files(ds, files);
+        fm_list_unref(files);
+    }
+*/
+}
+
+gboolean on_dnd_dest_query_info(FmDndDest* dd, int x, int y,
+                    			GdkDragAction* action, FmDesktop* desktop)
+{
+    return FALSE;
+}
+
+void on_dnd_dest_files_dropped(FmDndDest* dd, GdkDragAction action,
+                               int info_type, FmList* files, FmDesktop* desktop)
+{
+    
 }
