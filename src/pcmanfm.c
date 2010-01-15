@@ -132,7 +132,6 @@ int main(int argc, char** argv)
 
     fm_gtk_finalize();
     g_object_unref(config);
-
 	return 0;
 }
 
@@ -417,7 +416,6 @@ gboolean pcmanfm_run()
             gtk_widget_show(w);
             path = fm_path_get_home();
             fm_main_win_chdir(w, path);
-            fm_path_unref(path);
         }
     }
     return ret;

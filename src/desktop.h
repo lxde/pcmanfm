@@ -57,10 +57,13 @@ struct _FmDesktop
     guint ymargin;
     guint text_h;
     guint text_w;
+    guint pango_text_h;
+    guint pango_text_w;
     guint cell_w;
     guint cell_h;
     GdkRectangle working_area;
     FmDesktopItem* focus;
+    FmDesktopItem* drop_hilight;
     gint rubber_bending_x;
     gint rubber_bending_y;
     gint drag_start_x;
@@ -77,20 +80,6 @@ struct _FmDesktopClass
 {
 	GtkWindowClass parent_class;
 };
-
-/*
-void fm_desktop_set_text_color(FmDesktop* desktop, GdkColor* clr);
-void fm_desktop_set_bg_color(FmDesktop* desktop, GdkColor* clr);
-// void fm_desktop_set_background(FmDesktop* desktop, );
-
-void fm_desktop_win_set_icon_size(FmDesktop* desktop, guint size);
-//void fm_desktop_win_set_show_thumbnails(FmDesktop* desktop, gboolean show);
-
-// void fm_desktop_win_sort_items( FmDesktopWin* win, DWSortType sort_by, GtkSortType sort_type );
-
-void fm_desktop_set_single_click(FmDesktop* desktop, gboolean single_click);
-void fm_desktop_set_single_click_timeout(FmDesktop* desktop, guint timeout);
-*/
 
 FmFileInfoList* fm_desktop_get_selected_files(FmDesktop* desktop);
 

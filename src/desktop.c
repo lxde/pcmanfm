@@ -36,9 +36,12 @@ struct _FmDesktopItem
     GtkTreeIter it;
     FmFileInfo* fi;
     GdkPixbuf* icon;
-    // GdkRectangle box;   /* bounding rect */
+    int x; /* position of the item on the desktop */
+    int y;
     GdkRectangle icon_rect;
     GdkRectangle text_rect;
+    gboolean is_special : 1; /* is this a special item like "My Computer", mounted volume, or "Trash" */
+    gboolean is_mount : 1; /* is this a mounted volume*/
     gboolean is_selected : 1;
     gboolean is_prelight : 1;
     gboolean custom_pos : 1;
@@ -48,6 +51,7 @@ struct _FmDesktopItem
 static void fm_desktop_destroy               (GtkObject *object);
 
 static FmDesktopItem* hit_test(FmDesktop* self, int x, int y);
+static void calc_item_size(FmDesktop* desktop, FmDesktopItem* item);
 static void layout_items(FmDesktop* self);
 static void queue_layout_items(FmDesktop* desktop);
 static void paint_item(FmDesktop* self, FmDesktopItem* item, cairo_t* cr, GdkRectangle* expose_area);
@@ -57,6 +61,8 @@ static void update_rubberbanding(FmDesktop* self, int newx, int newy );
 static void paint_rubber_banding_rect(FmDesktop* self, cairo_t* cr, GdkRectangle* expose_area);
 static void update_background(FmDesktop* desktop);
 static void update_working_area(FmDesktop* desktop);
+static GList* get_selected_items(FmDesktop* desktop, int* n_items);
+static void activate_selected_items(FmDesktop* desktop);
 
 static FmDesktopItem* desktop_item_new(GtkTreeIter* it);
 static void desktop_item_free(FmDesktopItem* item);
@@ -72,6 +78,7 @@ static void on_style_set( GtkWidget* w, GtkStyle* prev );
 static void on_realize( GtkWidget* w );
 static gboolean on_focus_in( GtkWidget* w, GdkEventFocus* evt );
 static gboolean on_focus_out( GtkWidget* w, GdkEventFocus* evt );
+static void on_drag_leave(GtkWidget* w, GdkDragContext* drag_ctx, guint time);
 
 static void on_wallpaper_changed(FmConfig* cfg, gpointer user_data);
 
@@ -141,6 +148,7 @@ static void fm_desktop_class_init(FmDesktopClass *klass)
     wc->focus_out_event = on_focus_out;
     /* wc->scroll_event = on_scroll; */
     wc->delete_event = (DeleteEvtHandler)gtk_true;
+    wc->drag_leave = on_drag_leave;
 
     if(XInternAtoms(GDK_DISPLAY(), atom_names, G_N_ELEMENTS(atom_names), False, atoms))
     {
@@ -215,8 +223,6 @@ static void fm_desktop_init(FmDesktop *self)
     pango_layout_set_alignment( self->pl, PANGO_ALIGN_CENTER );
     pango_layout_set_ellipsize( self->pl, PANGO_ELLIPSIZE_END );
     pango_layout_set_wrap(self->pl, PANGO_WRAP_WORD_CHAR);
-    pango_layout_set_height(self->pl, self->text_h * PANGO_SCALE);
-    pango_layout_set_width(self->pl, self->text_w * PANGO_SCALE);
 
     g_signal_connect(model, "row-inserted", G_CALLBACK(on_row_inserted), self);
     g_signal_connect(model, "row-deleted", G_CALLBACK(on_row_deleted), self);
@@ -318,6 +324,22 @@ void fm_desktop_manager_finalize()
     pcmanfm_unref();
 }
 
+void activate_selected_items(FmDesktop* desktop)
+{
+    int n_sels;
+    GList* items = get_selected_items(desktop, &n_sels);
+    GList* l;
+
+    if(!items)
+        return;
+
+    for(l=items;l;l=l->next)
+    {
+        FmDesktopItem* item = (FmDesktopItem*)l->data;
+
+    }
+    g_list_free(items);
+}
 
 gboolean on_button_press( GtkWidget* w, GdkEventButton* evt )
 {
@@ -370,36 +392,27 @@ gboolean on_button_press( GtkWidget* w, GdkEventButton* evt )
             self->focus = clicked_item;
             redraw_item( self, clicked_item );
 
-           /* if ( evt->button == 1 && clicked_item->is_selected)
-				{
-						open_clicked_item( clicked_item );
-						goto out;
-				}*/
-#if 0
-            if( evt->button == 3 )  /* right click */
+            /* left single click */
+            if( evt->button == 1 && fm_config->single_click && clicked_item->is_selected)
             {
-                GList* sel = fm_desktop_win_get_selected_items( self );
-                if( sel )
+                fm_launch_file(w, NULL, clicked_item->fi);
+                goto out;
+            }
+            if( evt->button == 3 )  /* right click, context menu */
+            {
+                int n_sels;
+                GList* items = get_selected_items(self, &n_sels);
+                if( items )
                 {
-                    item = (FmDesktopItem*)sel->data;
-                    GtkMenu* popup;
-                    GList* l;
-                    char* file_path = g_build_filename( vfs_get_desktop_dir(), item->fi->name, NULL );
-                    /* FIXME: show popup menu for files */
-                    for( l = sel; l; l = l->next )
-                        l->data = vfs_file_info_ref( ((FmDesktopItem*)l->data)->fi );
-                    popup = GTK_MENU(ptk_file_menu_new( file_path, item->fi, vfs_get_desktop_dir(), sel, NULL ));
-                    g_free( file_path );
-
-                    gtk_menu_popup( popup, NULL, NULL, NULL, NULL, evt->button, evt->time );
+                    GList* sel;
+                    
                 }
             }
-#endif
             goto out;
         }
         else /* no item is clicked */
         {
-            if( evt->button == 3 )  /* right click on the blank area */
+            if( evt->button == 3 )  /* right click on the blank area => desktop popup menu */
             {
 #if 0
                 if( ! app_settings.show_wm_menu ) /* if our desktop menu is used */
@@ -437,11 +450,11 @@ gboolean on_button_press( GtkWidget* w, GdkEventButton* evt )
             }
         }
     }
-    else if( evt->type == GDK_2BUTTON_PRESS )
+    else if( evt->type == GDK_2BUTTON_PRESS ) /* activate items */
     {
         if( clicked_item && evt->button == 1)   /* left double click */
         {
-//            open_clicked_item( clicked_item );
+            fm_launch_file(w, NULL, clicked_item->fi);
             goto out;
         }
     }
@@ -705,6 +718,16 @@ gboolean on_focus_out( GtkWidget* w, GdkEventFocus* evt )
     return FALSE;
 }
 
+void on_drag_leave(GtkWidget* w, GdkDragContext* drag_ctx, guint time)
+{
+    FmDesktop* desktop = (FmDesktop*)w;
+    if(desktop->drop_hilight)
+    {
+        FmDesktopItem* old_drop = desktop->drop_hilight;
+        desktop->drop_hilight = NULL;
+        redraw_item(desktop, old_drop);
+    }
+}
 
 gboolean on_expose( GtkWidget* w, GdkEventExpose* evt )
 {
@@ -766,12 +789,12 @@ void on_size_allocate( GtkWidget* w, GtkAllocation* alloc )
     self->spacing = SPACING;
     self->xpad = self->ypad = PADDING;
     self->xmargin = self->ymargin = MARGIN;
-    self->text_h = font_h * 2;
-    self->text_w = 100;
-    self->cell_h = fm_config->big_icon_size + SPACING + self->text_h + PADDING * 2;
-    self->cell_w = MAX(self->text_w, fm_config->big_icon_size) + PADDING * 2;
-
-    pango_layout_set_width( self->pl, self->text_w * PANGO_SCALE );
+    self->text_h = font_h * 2 + 4;
+    self->text_w = 100 + 4; /* 4 is for drawing border */
+    self->pango_text_h = self->text_h * PANGO_SCALE;
+    self->pango_text_w = self->text_w * PANGO_SCALE;
+    self->cell_h = fm_config->big_icon_size + self->spacing + self->text_h + self->ypad * 2;
+    self->cell_w = MAX(self->text_w, fm_config->big_icon_size) + self->xpad * 2;
 
     update_working_area(self);
     /* queue_layout_items(self); this is called in update_working_area */
@@ -843,6 +866,44 @@ void on_row_changed(GtkTreeModel* mod, GtkTreePath* tp, GtkTreeIter* it, FmDeskt
     queue_layout_items(desktop);
 }
 
+void calc_item_size(FmDesktop* desktop, FmDesktopItem* item)
+{
+    int text_x, text_y, text_w, text_h;
+    PangoRectangle rc;
+
+    /* icon rect */
+    if(item->icon)
+    {
+        item->icon_rect.width = gdk_pixbuf_get_width(item->icon);
+        item->icon_rect.height = gdk_pixbuf_get_height(item->icon);
+        item->icon_rect.x = item->x + (desktop->cell_w - item->icon_rect.width) / 2;
+        item->icon_rect.y = item->y + desktop->ypad + (fm_config->big_icon_size - item->icon_rect.height) / 2;
+        item->icon_rect.height += desktop->spacing;
+    }
+    else
+    {
+        item->icon_rect.width = fm_config->big_icon_size;
+        item->icon_rect.height = fm_config->big_icon_size;
+        item->icon_rect.x = item->x + desktop->ypad;
+        item->icon_rect.y = item->y + desktop->ypad;
+        item->icon_rect.height += desktop->spacing;
+    }
+
+    /* text label rect */
+    pango_layout_set_text(desktop->pl, NULL, 0);
+    /* FIXME: we should cache text_h * PANGO_SCALE and text_w * PANGO_SCALE */
+    pango_layout_set_height(desktop->pl, desktop->pango_text_h);
+    pango_layout_set_width(desktop->pl, desktop->pango_text_w);
+    pango_layout_set_text(desktop->pl, fm_file_info_get_disp_name(item->fi), -1);
+
+    pango_layout_get_pixel_extents(desktop->pl, &rc, NULL);
+    pango_layout_set_text(desktop->pl, NULL, 0);
+
+    item->text_rect.x = item->x + (desktop->cell_w - rc.width) / 2;
+    item->text_rect.y = item->icon_rect.y + item->icon_rect.height;
+    item->text_rect.width = rc.width + 4;
+    item->text_rect.height = rc.height + 4;
+}
 
 void layout_items(FmDesktop* self)
 {
@@ -850,7 +911,6 @@ void layout_items(FmDesktop* self)
     FmDesktopItem* item;
     GtkWidget* widget = (GtkWidget*)self;
     int x, y, w, bottom, right;
-    GdkPixbuf* pix;
 
     x = self->working_area.x + self->xmargin;
     y = self->working_area.y + self->ymargin;
@@ -859,25 +919,9 @@ void layout_items(FmDesktop* self)
     for( l = self->items; l; l = l->next )
     {
         item = (FmDesktopItem*)l->data;
-        if(item->icon)
-        {
-            item->icon_rect.width = gdk_pixbuf_get_width(item->icon);
-            item->icon_rect.height = gdk_pixbuf_get_height(item->icon);
-            item->icon_rect.x = x + (self->cell_w - item->icon_rect.width) / 2;
-            item->icon_rect.y = y + self->ypad + (fm_config->big_icon_size - item->icon_rect.height) / 2;
-        }
-        else
-        {
-            item->icon_rect.width = fm_config->big_icon_size;
-            item->icon_rect.height = fm_config->big_icon_size;
-            item->icon_rect.x = x + self->ypad;
-            item->icon_rect.y = y + self->ypad;
-        }
-        item->text_rect.x = x + (self->cell_w - self->text_w) / 2;
-        item->text_rect.y = item->icon_rect.y + item->icon_rect.height + self->spacing;
-        item->text_rect.width = self->text_w;
-        item->text_rect.height = self->text_h;
-
+        item->x = x;
+        item->y = y;
+        calc_item_size(self, item);
         y += self->cell_h;
         if(y > bottom)
         {
@@ -909,25 +953,18 @@ void paint_item(FmDesktop* self, FmDesktopItem* item, cairo_t* cr, GdkRectangle*
     /* g_debug("%s, %d, %d, %d, %d", item->fi->path->name, expose_area->x, expose_area->y, expose_area->width, expose_area->height); */
 
     pango_layout_set_text(self->pl, NULL, 0);
-    pango_layout_set_height(self->pl, self->text_h * PANGO_SCALE);
-    pango_layout_set_width(self->pl, self->text_w * PANGO_SCALE);
+    pango_layout_set_height(self->pl, item->text_rect.height * PANGO_SCALE);
+    pango_layout_set_width(self->pl, item->text_rect.width * PANGO_SCALE);
     pango_layout_set_text(self->pl, fm_file_info_get_disp_name(item->fi), -1);
 
-    if(item->is_selected) /* draw background for text label */
+    if(item->is_selected || item == self->drop_hilight) /* draw background for text label */
     {
-        PangoRectangle rc;
+        GdkRectangle rc;
         int text_x, text_y, text_w, text_h;
         state = GTK_CELL_RENDERER_SELECTED;
-        pango_layout_get_pixel_extents(self->pl, &rc, NULL);
-        rc.x -= 2;
-        rc.x += item->text_rect.x;
-        rc.y -= 2;
-        rc.y += item->text_rect.y;
-        rc.width += 4;
-        rc.height += 4;
 
         cairo_save(cr);
-        gdk_cairo_rectangle(cr, &rc);
+        gdk_cairo_rectangle(cr, &item->text_rect);
         gdk_cairo_set_source_color(cr, &widget->style->bg[GTK_STATE_SELECTED]);
         cairo_clip(cr);
         cairo_paint(cr);
@@ -944,6 +981,7 @@ void paint_item(FmDesktop* self, FmDesktopItem* item, cairo_t* cr, GdkRectangle*
     /* real text */
     gdk_gc_set_rgb_fg_color(self->gc, fg);
     gdk_draw_layout( widget->window, self->gc, item->text_rect.x, item->text_rect.y, self->pl );
+    pango_layout_set_text(self->pl, NULL, 0);
 
     /* draw the icon */
     g_object_set( self->icon_render, "pixbuf", item->icon, NULL );
@@ -1247,14 +1285,22 @@ gboolean on_dnd_dest_query_info(FmDndDest* dd, int x, int y,
     {
         *action = GDK_ACTION_COPY;
         fm_dnd_dest_set_dest_file(dd, item->fi);
-        return TRUE;
     }
     else
     {
         *action = GDK_ACTION_COPY;
         /* FIXME: prevent direct access to data member */
         fm_dnd_dest_set_dest_file(dd, model->dir->dir_fi);
-        return TRUE;
+    }
+
+    if(desktop->drop_hilight != item)
+    {
+        FmDesktopItem* old_drop = desktop->drop_hilight;
+        desktop->drop_hilight = item;
+        if(old_drop)
+            redraw_item(desktop, old_drop);
+        if(item)
+            redraw_item(desktop, item);
     }
     return TRUE;
 }
@@ -1262,7 +1308,7 @@ gboolean on_dnd_dest_query_info(FmDndDest* dd, int x, int y,
 void on_dnd_dest_files_dropped(FmDndDest* dd, GdkDragAction action,
                                int info_type, FmList* files, FmDesktop* desktop)
 {
-    
+
 }
 
 void on_wallpaper_changed(FmConfig* cfg, gpointer user_data)
@@ -1270,6 +1316,28 @@ void on_wallpaper_changed(FmConfig* cfg, gpointer user_data)
     int i;
     for(i=0; i < n_screens; ++i)
         update_background(desktops[i]);
+}
+
+GList* get_selected_items(FmDesktop* desktop, int* n_items)
+{
+    GList* items = NULL;
+    GList* l;
+    int n = 0;
+    for(l=desktop->items; l; l=l->next)
+    {
+        FmDesktopItem* item = (FmDesktopItem*)l->data;
+        if(item->is_selected && item != desktop->focus)
+        {
+            items = g_list_prepend(items, item);
+            ++n;
+        }
+    }
+    items = g_list_reverse(items);
+    if(desktop->focus)
+        items = g_list_prepend(items, desktop->focus);
+    if(n_items)
+        *n_items = n;
+    return items;
 }
 
 FmFileInfoList* fm_desktop_get_selected_files(FmDesktop* desktop)

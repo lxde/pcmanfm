@@ -179,7 +179,7 @@ static GtkRadioActionEntry main_win_sort_by_actions[]=
 };
 
 
-const char folder_menu_xml[]=
+static const char folder_menu_xml[]=
 "<popup>"
   "<placeholder name='ph1'>"
     "<menuitem action='NewTab'/>"

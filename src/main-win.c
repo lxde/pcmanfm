@@ -308,7 +308,7 @@ static void on_show_history_menu(GtkMenuToolButton* btn, FmMainWin* win)
     for(l = fm_list_peek_head_link(nh); l; l=l->next)
     {
         FmPath* path = (FmPath*)l->data;
-        char* str = fm_path_to_str(path);
+        char* str = fm_path_display_name(path);
         GtkMenuItem* mi;
         if( l == cur )
         {
@@ -374,7 +374,6 @@ static void fm_main_win_init(FmMainWin *self)
     gtk_ui_manager_add_ui_from_string(ui, main_menu_xml, -1, NULL);
 
     menubar = gtk_ui_manager_get_widget(ui, "/menubar");
-
     self->toolbar = gtk_ui_manager_get_widget(ui, "/toolbar");
     /* FIXME: should make these optional */
     gtk_toolbar_set_icon_size(self->toolbar, GTK_ICON_SIZE_SMALL_TOOLBAR);
@@ -449,8 +448,6 @@ static void fm_main_win_finalize(GObject *object)
     g_return_if_fail(object != NULL);
     g_return_if_fail(IS_FM_MAIN_WIN(object));
 
-    pcmanfm_unref();
-
     self = FM_MAIN_WIN(object);
 
     if(self->vol_status_cancellable)
@@ -461,6 +458,8 @@ static void fm_main_win_finalize(GObject *object)
 
     if (G_OBJECT_CLASS(fm_main_win_parent_class)->finalize)
         (* G_OBJECT_CLASS(fm_main_win_parent_class)->finalize)(object);
+
+    pcmanfm_unref();
 }
 
 void on_about(GtkAction* act, FmMainWin* win)
@@ -588,10 +587,7 @@ void on_go_up(GtkAction* act, FmMainWin* win)
 {
     FmPath* parent = fm_path_get_parent(fm_folder_view_get_cwd(win->folder_view));
     if(parent)
-    {
         fm_main_win_chdir( win, parent);
-        fm_path_unref(parent);
-    }
 }
 
 void on_go_home(GtkAction* act, FmMainWin* win)
