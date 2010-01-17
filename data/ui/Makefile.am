@@ -20,5 +20,4 @@ CLEANFILES = \
 # Purge GtkBuilder UI files
 %.ui: %.glade
 	cp $< $@
-#	$(top_builddir)/src/xml-purge $@
-
+	$(top_builddir)/src/xml-purge $@
