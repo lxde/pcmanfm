@@ -37,6 +37,7 @@
 #include "app-config.h"
 #include "main-win.h"
 #include "desktop.h"
+#include "pref.h"
 
 static int sock;
 GIOChannel* io_channel = NULL;
@@ -95,7 +96,7 @@ int main(int argc, char** argv)
     if(G_UNLIKELY(!gtk_init_with_args(&argc, &argv, "", opt_entries, GETTEXT_PACKAGE, &err)))
     {
         g_printf("%s\n", err->message);
-        g_free(err);
+        g_error_free(err);
         return 1;
     }
 
@@ -124,7 +125,6 @@ int main(int argc, char** argv)
     	gtk_main();
         if(desktop_running)
             fm_desktop_manager_finalize();
-
         fm_config_save(config, NULL); /* save libfm config */
         fm_app_config_save((FmAppConfig*)config, config_name); /* save pcmanfm config */
     }
@@ -375,11 +375,13 @@ gboolean pcmanfm_run()
         }
         else if(show_pref > 0)
         {
-            show_pref = FALSE;
+            fm_edit_preference(NULL, show_pref - 1);
+            show_pref = 0;
             return TRUE;
         }
         else if(desktop_pref)
         {
+            fm_desktop_preference();
             desktop_pref = FALSE;
             return TRUE;
         }
@@ -394,7 +396,7 @@ gboolean pcmanfm_run()
                 app_config->wallpaper = set_wallpaper;
                 set_wallpaper = NULL;
                 if(app_config->wallpaper_mode == FM_WP_COLOR)
-                    app_config->wallpaper_mode = FM_WP_FULL;
+                    app_config->wallpaper_mode = FM_WP_FIT;
                 fm_config_emit_changed(app_config, "wallpaper");
                 fm_app_config_save(app_config, NULL);
             }

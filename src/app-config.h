@@ -43,10 +43,10 @@ G_BEGIN_DECLS
 typedef enum
 {
     FM_WP_COLOR,
-    FM_WP_TILE,
-    FM_WP_FULL,
     FM_WP_STRETCH,
-    FM_WP_CENTER
+    FM_WP_FIT,
+    FM_WP_CENTER,
+    FM_WP_TILE
 }FmWallpaperMode;
 
 typedef struct _FmAppConfig			FmAppConfig;
@@ -65,11 +65,15 @@ struct _FmAppConfig
     int win_height;
 
     /* desktop manager */
+    /* emit "changed::wallpaper" */
     FmWallpaperMode wallpaper_mode;
     char* wallpaper;
     GdkColor desktop_bg;
+    /* emit "changed::desktop_text" */
     GdkColor desktop_fg;
     GdkColor desktop_shadow;
+    /* emit "changed::desktop_font" */
+    char* desktop_font;
 };
 
 struct _FmAppConfigClass

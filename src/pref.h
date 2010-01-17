@@ -29,12 +29,13 @@ G_BEGIN_DECLS
 typedef enum {
     PREF_GENERAL,
     PREF_INTERFACE,
-    PREF_DESKTOP,
-    PREF_VOLMAN,
+    /* PREF_VOLMAN, */
     PREF_ADVANCED
 }PrefDlgPage;
 
-gboolean fm_edit_preference( GtkWindow* parent, int page );
+void fm_edit_preference( GtkWindow* parent, int page );
+
+void fm_desktop_preference();
 
 G_END_DECLS
 

@@ -46,7 +46,6 @@ struct _FmDesktop
 {
 	GtkWindow parent;
     GdkGC* gc;
-    PangoFontDescription* font;
     PangoLayout* pl;
     GtkCellRendererPixbuf* icon_render;
     GList* items;
@@ -64,6 +63,7 @@ struct _FmDesktop
     GdkRectangle working_area;
     FmDesktopItem* focus;
     FmDesktopItem* drop_hilight;
+    FmDesktopItem* hover_item;
     gint rubber_bending_x;
     gint rubber_bending_y;
     gint drag_start_x;
@@ -74,6 +74,7 @@ struct _FmDesktop
     guint idle_layout;
     FmDndSrc* dnd_src;
     FmDndDest* dnd_dest;
+    guint single_click_timeout_handler;
 };
 
 struct _FmDesktopClass
