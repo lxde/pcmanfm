@@ -34,6 +34,8 @@ static GtkWidget* create_tab_label(FmMainWin* win, FmPath* path, FmFolderView* v
 static void update_tab_label(FmMainWin* win, FmFolderView* fv, const char* title);
 static void update_volume_info(FmMainWin* win);
 
+static void on_focus_in(GtkWidget* w, GdkEventFocus* evt);
+
 static void on_new_win(GtkAction* act, FmMainWin* win);
 static void on_new_tab(GtkAction* act, FmMainWin* win);
 static void on_close_tab(GtkAction* act, FmMainWin* win);
@@ -80,12 +82,18 @@ static void on_switch_page(GtkNotebook* nb, GtkNotebookPage* page, guint num, Fm
 #include "main-win-ui.c" /* ui xml definitions and actions */
 
 static GQuark nav_history_id = 0;
+static GSList* all_wins = NULL;
 
 static void fm_main_win_class_init(FmMainWinClass *klass)
 {
     GObjectClass *g_object_class;
+    GtkWidgetClass* widget_class;
     g_object_class = G_OBJECT_CLASS(klass);
     g_object_class->finalize = fm_main_win_finalize;
+
+    widget_class = (GtkWidgetClass*)klass;
+    widget_class->focus_in_event = on_focus_in;
+
     fm_main_win_parent_class = (GtkWindowClass*)g_type_class_peek(GTK_TYPE_WINDOW);
 
     /* special style used by close button */
@@ -338,6 +346,7 @@ static void fm_main_win_init(FmMainWin *self)
     GtkShadowType shadow_type;
 
     pcmanfm_ref();
+    all_wins = g_slist_prepend(all_wins, self);
 
     vbox = gtk_vbox_new(FALSE, 0);
 
@@ -459,6 +468,7 @@ static void fm_main_win_finalize(GObject *object)
     if (G_OBJECT_CLASS(fm_main_win_parent_class)->finalize)
         (* G_OBJECT_CLASS(fm_main_win_parent_class)->finalize)(object);
 
+    all_wins = g_slist_remove(all_wins, self);
     pcmanfm_unref();
 }
 
@@ -495,6 +505,16 @@ void on_sort_type(GtkRadioAction* act, GtkRadioAction *cur, FmMainWin* win)
 {
     int val = gtk_radio_action_get_current_value(cur);
     fm_folder_view_sort(win->folder_view, val, -1);
+}
+
+void on_focus_in(GtkWidget* w, GdkEventFocus* evt)
+{
+    if(all_wins->data != w)
+    {
+        all_wins = g_slist_remove(all_wins, w);
+        all_wins = g_slist_prepend(all_wins, w);
+    }
+    ((GtkWidgetClass*)fm_main_win_parent_class)->focus_in_event(w, evt);
 }
 
 void on_new_win(GtkAction* act, FmMainWin* win)
@@ -1061,4 +1081,23 @@ _retry:
         
     }
     fm_path_unref(dest);
+}
+
+FmMainWin* fm_main_win_get_last_active()
+{
+    return all_wins ? (FmMainWin*)all_wins->data : NULL;
+}
+
+void fm_main_win_open_in_last_active(FmPath* path)
+{
+    FmMainWin* win = fm_main_win_get_last_active();
+    if(!win)
+    {
+        win = fm_main_win_new();
+        gtk_window_set_default_size(win, app_config->win_width, app_config->win_height);
+        fm_main_win_chdir(win, path);
+    }
+    else
+        fm_main_win_add_tab(win, path);
+    gtk_window_present(win);
 }

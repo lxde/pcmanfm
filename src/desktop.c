@@ -30,6 +30,7 @@
 #include <X11/Xatom.h>
 
 #include "pref.h"
+#include "main-win.h"
 
 #define SPACING 2
 #define PADDING 6
@@ -420,6 +421,11 @@ void activate_selected_items(FmDesktop* desktop)
     g_list_free(items);
 }
 
+static void open_folder_hook(FmFileInfo* fi, gpointer user_data)
+{
+    fm_main_win_open_in_last_active(fi->path);
+}
+
 gboolean on_button_press( GtkWidget* w, GdkEventButton* evt )
 {
     FmDesktop* self = (FmDesktop*)w;
@@ -480,35 +486,36 @@ gboolean on_button_press( GtkWidget* w, GdkEventButton* evt )
             }
             if( evt->button == 3 )  /* right click, context menu */
             {
+                FmFileMenu* menu;
+                GtkMenu* popup;
+                FmFileInfo* fi;
+                FmFileInfoList* files;
                 int n_sels;
+                /*
                 GList* items = get_selected_items(self, &n_sels);
                 if( items )
                 {
                     GList* sel;
                     
                 }
+                */
+                files = fm_desktop_get_selected_files(self);
+                fi = (FmFileInfo*)fm_list_peek_head(files);
+                menu = fm_file_menu_new_for_files(files, TRUE);
+                fm_file_menu_set_folder_hook(menu, open_folder_hook, NULL);
+                fm_list_unref(files);
 
-#if 0
-            FmFileMenu* menu;
-            GtkMenu* popup;
-            FmFileInfoList* files = fm_folder_view_get_selected_files(fv);
-            menu = fm_file_menu_new_for_files(files, TRUE);
-            fm_file_menu_set_folder_hook(menu, open_folder_hook, win);
-            fm_list_unref(files);
+                /* merge some specific menu items for folders */
+                if(fm_file_menu_is_single_file_type(menu) && fm_file_info_is_dir(fi))
+                {
+                    GtkUIManager* ui = fm_file_menu_get_ui(menu);
+                    GtkActionGroup* act_grp = fm_file_menu_get_action_group(menu);
+                    gtk_action_group_add_actions(act_grp, folder_menu_actions, G_N_ELEMENTS(folder_menu_actions), menu);
+                    gtk_ui_manager_add_ui_from_string(ui, folder_menu_xml, -1, NULL);
+                }
 
-            /* merge some specific menu items for folders */
-            if(fm_file_menu_is_single_file_type(menu) && fm_file_info_is_dir(fi))
-            {
-                GtkUIManager* ui = fm_file_menu_get_ui(menu);
-                GtkActionGroup* act_grp = fm_file_menu_get_action_group(menu);
-                gtk_action_group_add_actions(act_grp, folder_menu_actions, G_N_ELEMENTS(folder_menu_actions), win);
-                gtk_ui_manager_add_ui_from_string(ui, folder_menu_xml, -1, NULL);
-            }
-
-            popup = fm_file_menu_get_menu(menu);
-            gtk_menu_popup(popup, NULL, NULL, NULL, fi, 3, gtk_get_current_event_time());
-#endif
-
+                popup = fm_file_menu_get_menu(menu);
+                gtk_menu_popup(popup, NULL, NULL, NULL, fi, 3, gtk_get_current_event_time());
             }
             goto out;
         }
@@ -1558,12 +1565,30 @@ void on_sort_by(GtkAction* act, GtkRadioAction *cur, gpointer user_data)
 
 void on_open_in_new_tab(GtkAction* act, gpointer user_data)
 {
-    
+    FmFileMenu* menu = (FmFileMenu*)user_data;
+    FmFileInfoList* files = fm_file_menu_get_file_info_list(menu);
+    GList* l;
+    for( l = fm_list_peek_head_link(files); l; l=l->next )
+    {
+        FmFileInfo* fi = (FmFileInfo*)l->data;
+        fm_main_win_open_in_last_active(fi->path);
+    }
+    fm_list_unref(files);
 }
 
 void on_open_in_new_win(GtkAction* act, gpointer user_data)
 {
-    
+    FmFileMenu* menu = (FmFileMenu*)user_data;
+    FmFileInfoList* files = fm_file_menu_get_file_info_list(menu);
+    GList* l;
+    FmFileInfo* fi = fm_list_peek_head(files);
+    FmMainWin* win = fm_main_win_add_win(NULL, fi->path);
+    for( l = fm_list_peek_head_link(files)->next; l; l=l->next )
+    {
+        fi = (FmFileInfo*)l->data;
+        fm_main_win_add_tab(win, fi->path);
+    }
+    fm_list_unref(files);
 }
 
 GList* get_selected_items(FmDesktop* desktop, int* n_items)
