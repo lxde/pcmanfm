@@ -481,7 +481,10 @@ gboolean on_button_press( GtkWidget* w, GdkEventButton* evt )
             /* left single click */
             if( evt->button == 1 && fm_config->single_click && clicked_item->is_selected )
             {
-                fm_launch_file(w, NULL, clicked_item->fi);
+                if( fm_file_info_is_dir(clicked_item->fi) )
+                    fm_main_win_open_in_last_active(clicked_item->fi->path);
+                else
+                    fm_launch_file(w, NULL, clicked_item->fi);
                 goto out;
             }
             if( evt->button == 3 )  /* right click, context menu */
@@ -545,7 +548,10 @@ gboolean on_button_press( GtkWidget* w, GdkEventButton* evt )
     {
         if( clicked_item && evt->button == 1)   /* left double click */
         {
-            fm_launch_file(w, NULL, clicked_item->fi);
+            if( fm_file_info_is_dir(clicked_item->fi) )
+                fm_main_win_open_in_last_active(clicked_item->fi->path);
+            else
+                fm_launch_file(w, NULL, clicked_item->fi);
             goto out;
         }
     }
