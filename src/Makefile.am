@@ -13,6 +13,7 @@ pcmanfm2_SOURCES = \
 	main-win.c main-win.h \
 	desktop.c desktop.h \
 	pref.c pref.h \
+	utils.c utils.h \
 	$(NULL)
 
 pcmanfm2_CFLAGS = \
