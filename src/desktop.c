@@ -714,7 +714,7 @@ void on_style_set( GtkWidget* w, GtkStyle* prev )
     PangoContext* pc = gtk_widget_get_pango_context(w);
     if(font_desc)
         pango_context_set_font_description(pc, font_desc);
-    pango_layout_context_changed(pc);
+    pango_layout_context_changed(self->pl);
 }
 
 void on_direction_changed( GtkWidget* w, GtkTextDirection prev )
@@ -722,7 +722,7 @@ void on_direction_changed( GtkWidget* w, GtkTextDirection prev )
     FmDesktop* self = (FmDesktop*)w;
     /* FIXME: handle RTL */
     PangoContext* pc = gtk_widget_get_pango_context(w);
-    pango_layout_context_changed(pc);
+    pango_layout_context_changed(self->pl);
     queue_layout_items(self);
 }
 
@@ -1412,7 +1412,7 @@ void on_desktop_font_changed(FmConfig* cfg, gpointer user_data)
                 FmDesktop* desktop = desktops[i];
                 PangoContext* pc = gtk_widget_get_pango_context( (GtkWidget*)desktop );
                 pango_context_set_font_description(pc, font_desc);
-                pango_layout_context_changed(pc);
+                pango_layout_context_changed(desktop->pl);
                 gtk_widget_queue_resize(desktop);
                 /* layout_items(desktop); */
                 /* gtk_widget_queue_draw(desktops[i]); */

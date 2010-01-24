@@ -22,6 +22,7 @@ pcmanfm2_CFLAGS = \
 	$(FM_CFLAGS) \
 	$(MENU_CACHE_CFLAGS) \
 	$(G_CAST_CHECKS) \
+	-Wall \
 	-Werror-implicit-function-declaration \
 	$(NULL)
 
