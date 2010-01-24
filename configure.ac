@@ -84,6 +84,7 @@ AC_CONFIG_FILES([
     data/Makefile
     data/ui/Makefile
     data/ui/about.glade
+    data/pcmanfm2.desktop
 ])
 
 AC_OUTPUT
