@@ -1579,7 +1579,6 @@ void on_open_in_new_tab(GtkAction* act, gpointer user_data)
         FmFileInfo* fi = (FmFileInfo*)l->data;
         fm_main_win_open_in_last_active(fi->path);
     }
-    fm_list_unref(files);
 }
 
 void on_open_in_new_win(GtkAction* act, gpointer user_data)
@@ -1594,7 +1593,6 @@ void on_open_in_new_win(GtkAction* act, gpointer user_data)
         fi = (FmFileInfo*)l->data;
         fm_main_win_add_tab(win, fi->path);
     }
-    fm_list_unref(files);
 }
 
 GList* get_selected_items(FmDesktop* desktop, int* n_items)
