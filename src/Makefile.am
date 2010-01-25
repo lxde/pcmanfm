@@ -16,6 +16,11 @@ pcmanfm2_SOURCES = \
 	utils.c utils.h \
 	$(NULL)
 
+EXTRA_DIST= \
+	main-win-ui.c \
+	desktop-ui.c \
+	$(NULL)
+
 pcmanfm2_CFLAGS = \
 	$(GTK_CFLAGS) \
 	$(GIO_CFLAGS) \
