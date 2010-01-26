@@ -316,7 +316,7 @@ static void on_show_history_menu(GtkMenuToolButton* btn, FmMainWin* win)
     for(l = fm_list_peek_head_link(nh); l; l=l->next)
     {
         FmPath* path = (FmPath*)l->data;
-        char* str = fm_path_display_name(path);
+        char* str = fm_path_display_name(path, TRUE);
         GtkMenuItem* mi;
         if( l == cur )
         {
@@ -643,22 +643,21 @@ void on_go_apps(GtkAction* act, FmMainWin* win)
 void fm_main_win_chdir_by_name(FmMainWin* win, const char* path_str)
 {
     FmPath* path = fm_path_new(path_str);
-    fm_main_win_chdir_without_history(win, path);
+    fm_main_win_chdir(win, path);
     fm_path_unref(path);
 }
 
 void fm_main_win_chdir_without_history(FmMainWin* win, FmPath* path)
 {
-    char* disp_path = fm_path_display_name(path);
-    const char* disp_name = g_utf8_strrchr(disp_path, -1, G_DIR_SEPARATOR);
+    /* FIXME: how to handle UTF-8 here? */
+    char* disp_path = fm_path_to_str(path);
+    char* disp_name = fm_path_display_basename(path);
     gtk_entry_set_text(win->location, disp_path);
-
-    if(disp_name && disp_name[1])
-        ++disp_name;
 
     update_tab_label(win, win->folder_view, disp_name);
     gtk_window_set_title(win, disp_name);
     g_free(disp_path);
+    g_free(disp_name);
 
     fm_folder_view_chdir(win->folder_view, path);
     /* fm_nav_history_set_cur(); */
