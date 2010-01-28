@@ -3,22 +3,24 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-01-29 05:58+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2010-01-29 05:57+0800\n"
+"Last-Translator: Hong Jen Yee (PCMan) <pcman.tw@gmail.com>\n"
+"Language-Team: zh_TW <zh_TW@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Chinese\n"
+"X-Poedit-Country: TAIWAN\n"
+"X-Poedit-SourceCharset: UTF-8\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009"
-msgstr ""
+msgstr "版權所有 (C) 2009"
 
 #: ../data/ui/about.glade.in.h:2
 msgid ""
@@ -26,67 +28,70 @@ msgid ""
 "\n"
 "Developed by Hon Jen Yee (PCMan)"
 msgstr ""
+"輕量級的檔案管理程式\n"
+"\n"
+"由洪任諭 (PCMan) 開發"
 
 #. Please replace this line with your own names, one name per line.
 #: ../data/ui/about.glade.in.h:6
 msgid "translator-credits"
-msgstr ""
+msgstr "洪任諭 (PCMan) <pcman.tw@gmail.com>"
 
 #: ../data/ui/desktop-pref.glade.h:1
 msgid "<b>Background</b>"
-msgstr ""
+msgstr "<b>背景</b>"
 
 #: ../data/ui/desktop-pref.glade.h:2
 msgid "<b>Show desktop icons</b>"
-msgstr ""
+msgstr "<b>顯示桌面圖示</b>"
 
 #: ../data/ui/desktop-pref.glade.h:3
 msgid "<b>Text</b>"
-msgstr ""
+msgstr "<b>文字</b>"
 
 #: ../data/ui/desktop-pref.glade.h:4
 msgid "Advanced"
-msgstr ""
+msgstr "進階"
 
 #: ../data/ui/desktop-pref.glade.h:5
 msgid "Appearance"
-msgstr ""
+msgstr "外觀"
 
 #: ../data/ui/desktop-pref.glade.h:6
 msgid "Background color:"
-msgstr ""
+msgstr "背景顏色："
 
 #: ../data/ui/desktop-pref.glade.h:7 ../data/ui/pref.glade.h:6
 msgid "Center on the screen"
-msgstr ""
+msgstr "置於螢幕中央"
 
 #: ../data/ui/desktop-pref.glade.h:8
 msgid "Color of label text:"
-msgstr ""
+msgstr "標籤文字色彩："
 
 #: ../data/ui/desktop-pref.glade.h:9
 msgid "Color of shadow:"
-msgstr ""
+msgstr "陰影色彩："
 
 #: ../data/ui/desktop-pref.glade.h:10
 msgid "Desktop Icons"
-msgstr ""
+msgstr "桌面圖示"
 
 #: ../data/ui/desktop-pref.glade.h:11
 msgid "Desktop Preferences"
-msgstr ""
+msgstr "桌面偏好設定"
 
 #: ../data/ui/desktop-pref.glade.h:12
 msgid "FIll with background color only"
-msgstr ""
+msgstr "只以背景色填滿"
 
 #: ../data/ui/desktop-pref.glade.h:13
 msgid "Font of label text:"
-msgstr ""
+msgstr "標籤文字字型："
 
 #: ../data/ui/desktop-pref.glade.h:14
 msgid "Please select an image file"
-msgstr ""
+msgstr "請選擇一個影像檔"
 
 #: ../data/ui/desktop-pref.glade.h:15
 msgid "Show \"My Computer\" icon on desktop"
@@ -110,35 +115,35 @@ msgstr ""
 
 #: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:22
 msgid "Stretch to fill the entire screen"
-msgstr ""
+msgstr "延展至填滿整個螢幕"
 
 #: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:23
 msgid "Stretch to fit the screen"
-msgstr ""
+msgstr "延展到適合螢幕大小"
 
 #: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:25
 msgid "Tile the image to fill the entire screen"
-msgstr ""
+msgstr "併排影像填滿整個螢幕"
 
 #: ../data/ui/desktop-pref.glade.h:23
 msgid "Wallpaper mode:"
-msgstr ""
+msgstr "桌布模式："
 
 #: ../data/ui/desktop-pref.glade.h:24
 msgid "Wallpaper:"
-msgstr ""
+msgstr "桌布："
 
 #: ../data/ui/pref.glade.h:1
 msgid "<b>Behavior</b>"
-msgstr ""
+msgstr "<b>行為</b>"
 
 #: ../data/ui/pref.glade.h:2
 msgid "<b>Icons</b>"
-msgstr ""
+msgstr "<b>圖示</b>"
 
 #: ../data/ui/pref.glade.h:3
 msgid "<b>User Interface</b>"
-msgstr ""
+msgstr "<b>使用者介面</b>"
 
 #: ../data/ui/pref.glade.h:4
 msgid "Always show the tab bar"
@@ -146,11 +151,11 @@ msgstr ""
 
 #: ../data/ui/pref.glade.h:5
 msgid "Bookmarks:"
-msgstr ""
+msgstr "書籤："
 
 #: ../data/ui/pref.glade.h:7
 msgid "Confirm before deleting files"
-msgstr ""
+msgstr "刪除檔案前先確認"
 
 #: ../data/ui/pref.glade.h:8
 msgid "Display image files with supported format as thumbnails"
@@ -174,43 +179,43 @@ msgstr ""
 
 #: ../data/ui/pref.glade.h:13
 msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
-msgstr ""
+msgstr "將刪除的檔案移到「垃圾桶」而不真的從磁碟上清除"
 
 #: ../data/ui/pref.glade.h:14
 msgid "Open files with single click"
-msgstr ""
+msgstr "單擊滑鼠開啟檔案"
 
 #: ../data/ui/pref.glade.h:15
 msgid "Opened in Current Tab"
-msgstr ""
+msgstr "在目前分頁開啟"
 
 #: ../data/ui/pref.glade.h:16
 msgid "Opened in New Tab"
-msgstr ""
+msgstr "在新分頁開啟"
 
 #: ../data/ui/pref.glade.h:17
 msgid "Opened in New Window"
-msgstr ""
+msgstr "在新視窗開啟"
 
 #: ../data/ui/pref.glade.h:18
 msgid "Preferences"
-msgstr ""
+msgstr "偏好設定"
 
 #: ../data/ui/pref.glade.h:19
 msgid "Size of big icons:"
-msgstr ""
+msgstr "大圖示的尺寸："
 
 #: ../data/ui/pref.glade.h:20
 msgid "Size of side pane icons:"
-msgstr ""
+msgstr "側邊欄圖示的尺寸："
 
 #: ../data/ui/pref.glade.h:21
 msgid "Size of small icons:"
-msgstr ""
+msgstr "小圖示的尺寸："
 
 #: ../data/ui/pref.glade.h:24
 msgid "Terminal:"
-msgstr ""
+msgstr "終端機："
 
 #: ../data/ui/pref.glade.h:26
 msgid "Use SI decimal prefixes instead of IEC binary prefixes"
@@ -218,192 +223,192 @@ msgstr ""
 
 #: ../data/ui/pref.glade.h:27
 msgid "_Advanced"
-msgstr ""
+msgstr "進階(_A)"
 
 #: ../data/ui/pref.glade.h:28
 msgid "_Display"
-msgstr ""
+msgstr "顯示(_D)"
 
 #: ../data/ui/pref.glade.h:29
 msgid "_General"
-msgstr ""
+msgstr "一般(_G)"
 
 #: ../data/ui/pref.glade.h:30
 msgid "_Volume Management"
-msgstr ""
+msgstr "磁碟管理(_V)"
 
 #: ../src/desktop-ui.c:47 ../src/main-win-ui.c:128
 msgid "Invert Selection"
-msgstr ""
+msgstr "反相選取"
 
 #: ../src/desktop-ui.c:48 ../src/main-win-ui.c:131
 msgid "_Sort Files"
-msgstr ""
+msgstr "排序檔案(_S)"
 
 #: ../src/desktop-ui.c:50 ../src/main-win-ui.c:152
 msgid "Folder"
-msgstr ""
+msgstr "資料夾"
 
 #: ../src/desktop-ui.c:51 ../src/main-win-ui.c:153
 msgid "Blank FIle"
-msgstr ""
+msgstr "空白檔案"
 
 #: ../src/desktop-ui.c:63 ../src/main-win-ui.c:177
 msgid "By _Name"
-msgstr ""
+msgstr "依名稱(_N)"
 
 #: ../src/desktop-ui.c:64 ../src/main-win-ui.c:178
 msgid "By _Modification Time"
-msgstr ""
+msgstr "依修改時間(_M)"
 
 #: ../src/desktop-ui.c:79 ../src/main-win-ui.c:194
 msgid "Open in New Tab"
-msgstr ""
+msgstr "在新分頁開啟"
 
 #: ../src/desktop-ui.c:80 ../src/main-win-ui.c:195
 msgid "Open in New Window"
-msgstr ""
+msgstr "在新視窗開啟"
 
 #: ../src/main-win-ui.c:113
 msgid "_File"
-msgstr ""
+msgstr "檔案(_F)"
 
 #: ../src/main-win-ui.c:114
 msgid "_New Window"
-msgstr ""
+msgstr "新視窗(_N)"
 
 #: ../src/main-win-ui.c:115
 msgid "New _Tab"
-msgstr ""
+msgstr "新分頁(_T)"
 
 #: ../src/main-win-ui.c:116
 msgid "_Close Tab"
-msgstr ""
+msgstr "關閉分頁(_C)"
 
 #: ../src/main-win-ui.c:117
 msgid "Close Window"
-msgstr ""
+msgstr "關閉視窗"
 
 #: ../src/main-win-ui.c:118
 msgid "_Edit"
-msgstr ""
+msgstr "編輯(_E)"
 
 #: ../src/main-win-ui.c:123
 msgid "Rename"
-msgstr ""
+msgstr "重新命名"
 
 #: ../src/main-win-ui.c:124
 msgid "Create Symlink"
-msgstr ""
+msgstr "建立符號連結"
 
 #: ../src/main-win-ui.c:125
 msgid "Move To..."
-msgstr ""
+msgstr "移動到..."
 
 #: ../src/main-win-ui.c:126
 msgid "Copy To..."
-msgstr ""
+msgstr "複製到..."
 
 #: ../src/main-win-ui.c:130
 msgid "_View"
-msgstr ""
+msgstr "檢視(_V)"
 
 #: ../src/main-win-ui.c:132
 msgid "_Help"
-msgstr ""
+msgstr "說明(_H)"
 
 #: ../src/main-win-ui.c:134
 msgid "_Go"
-msgstr ""
+msgstr "到(_G)"
 
 #: ../src/main-win-ui.c:135
 msgid "Previous Folder"
-msgstr ""
+msgstr "上一個資料夾"
 
 #: ../src/main-win-ui.c:136
 msgid "Next Folder"
-msgstr ""
+msgstr "下一個資料夾"
 
 #: ../src/main-win-ui.c:137
 msgid "Parent Folder"
-msgstr ""
+msgstr "上層資料夾"
 
 #: ../src/main-win-ui.c:137
 msgid "Go to parent Folder"
-msgstr ""
+msgstr "到上層資料夾"
 
 #: ../src/main-win-ui.c:138
 msgid "Home Folder"
-msgstr ""
+msgstr "家目錄"
 
 #: ../src/main-win-ui.c:139
 msgid "Desktop"
-msgstr ""
+msgstr "桌面"
 
 #: ../src/main-win-ui.c:139
 msgid "Desktop Folder"
-msgstr ""
+msgstr "桌面資料夾"
 
 #: ../src/main-win-ui.c:140
 msgid "My Computer"
-msgstr ""
+msgstr "我的電腦"
 
 #: ../src/main-win-ui.c:141
 msgid "Trash Can"
-msgstr ""
+msgstr "垃圾桶"
 
 #: ../src/main-win-ui.c:142
 msgid "Network Drives"
-msgstr ""
+msgstr "網路磁碟機"
 
 #: ../src/main-win-ui.c:143
 msgid "Applications"
-msgstr ""
+msgstr "應用程式"
 
 #: ../src/main-win-ui.c:143
 msgid "Installed Applications"
-msgstr ""
+msgstr "已安裝的應用程式 "
 
 #: ../src/main-win-ui.c:145
 msgid "_Bookmarks"
-msgstr ""
+msgstr "書籤(_B)"
 
 #: ../src/main-win-ui.c:146
 msgid "Add To Bookmarks"
-msgstr ""
+msgstr "新增到書籤"
 
 #: ../src/main-win-ui.c:159
 msgid "Show _Hidden"
-msgstr ""
+msgstr "顯示隱藏檔(_H)"
 
 #: ../src/main-win-ui.c:164
 msgid "_Icon View"
-msgstr ""
+msgstr "以大圖示檢視(_I)"
 
 #: ../src/main-win-ui.c:165
 msgid "_Compact View"
-msgstr ""
+msgstr "以簡潔清單檢視(_C)"
 
 #: ../src/main-win-ui.c:166
 msgid "Detailed _List View"
-msgstr ""
+msgstr "以詳細清單檢視(_L)"
 
 #: ../src/main-win.c:780
 #, c-format
 msgid "Free space: %s (Total: %s )"
-msgstr ""
+msgstr "可用空間：%s (總共：%s )"
 
 #: ../src/main-win.c:1015
 msgid "Create New..."
-msgstr ""
+msgstr "新建..."
 
 #: ../src/main-win.c:1015
 msgid "Enter a name for the newly created file:"
-msgstr ""
+msgstr "輸入新建立檔案的名稱："
 
 #: ../src/main-win.c:1015
 msgid "New"
-msgstr ""
+msgstr "新增"
 
 #: ../src/pcmanfm.c:67
 msgid ""
@@ -425,19 +430,19 @@ msgstr ""
 
 #: ../src/pcmanfm.c:71
 msgid "Run PCManFM as a daemon"
-msgstr ""
+msgstr "以常駐模式執行 PCManFM"
 
 #: ../src/pcmanfm.c:72
 msgid "Open desktop preference dialog"
-msgstr ""
+msgstr "開啟桌面偏好設定"
 
 #: ../src/pcmanfm.c:73
 msgid "Set desktop wallpaper"
-msgstr ""
+msgstr "設定桌布"
 
 #: ../src/pcmanfm.c:73
 msgid "<image file>"
-msgstr ""
+msgstr "<影像檔>"
 
 #: ../src/pcmanfm.c:74
 msgid ""
@@ -447,12 +452,12 @@ msgstr ""
 
 #: ../src/pcmanfm.c:75
 msgid "Open Find Files utility"
-msgstr ""
+msgstr "開啟尋找檔案工具"
 
 #: ../src/pcmanfm.c:76
 msgid "No function. Just to be compatible with nautilus"
-msgstr ""
+msgstr "沒有功能，只是用來和 nautilus 保持相容"
 
 #: ../src/pcmanfm.c:77
 msgid "[FILE1, FILE2,...]"
-msgstr ""
+msgstr "[檔案1, 檔案2,...]"

@@ -19,6 +19,10 @@
  *      MA 02110-1301, USA.
  */
 
+#ifdef HAVE_CONFIG_H
+#include <config.h>
+#endif
+
 #include <glib/gi18n.h>
 
 #include "pcmanfm.h"
@@ -173,6 +177,7 @@ static void on_file_clicked(FmFolderView* fv, FmFolderViewClickType type, FmFile
             {
                 GtkUIManager* ui = fm_file_menu_get_ui(menu);
                 GtkActionGroup* act_grp = fm_file_menu_get_action_group(menu);
+                gtk_action_group_set_translation_domain(act_grp, NULL);
                 gtk_action_group_add_actions(act_grp, folder_menu_actions, G_N_ELEMENTS(folder_menu_actions), win);
                 gtk_ui_manager_add_ui_from_string(ui, folder_menu_xml, -1, NULL);
             }
@@ -370,6 +375,7 @@ static void fm_main_win_init(FmMainWin *self)
     /* create menu bar and toolbar */
     ui = gtk_ui_manager_new();
     act_grp = gtk_action_group_new("Main");
+    gtk_action_group_set_translation_domain(act_grp, NULL);
     gtk_action_group_add_actions(act_grp, main_win_actions, G_N_ELEMENTS(main_win_actions), self);
     gtk_action_group_add_toggle_actions(act_grp, main_win_toggle_actions, G_N_ELEMENTS(main_win_toggle_actions), self);
     gtk_action_group_add_radio_actions(act_grp, main_win_mode_actions, G_N_ELEMENTS(main_win_mode_actions), FM_FV_ICON_VIEW, on_change_mode, self);
