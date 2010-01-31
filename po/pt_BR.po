@@ -1,0 +1,478 @@
+# Brazilian translations for pcmanfm PCManFM
+# Traduções em Português do Brasil para o pacote pcmanfm.
+# Copyright (C) 2006 THE pcmanfm'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the pcmanfm PCManFM.
+# Flávio Costa <formicbr@gmail.com>, 2006.
+# Fábio Antunes <fabio.antunes@hotmail.com>, 2008.
+# Og Maciel <ogmaciel@gnome.org>, 2008-2010.
+# Henrique P. Machado <zehrique@gmail.com>, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PCManFM\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-01-31 07:28+0000\n"
+"PO-Revision-Date: 2010-01-31 12:07-0500\n"
+"Last-Translator: Og Maciel <ogmaciel@gnome.org>\n"
+"Language-Team: Brazilian Portuguese <ldp-br@bazar2.conectiva.com.br>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../data/ui/about.glade.in.h:1
+msgid "Copyright (C) 2009"
+msgstr "Copyright (C) 2009"
+
+#: ../data/ui/about.glade.in.h:2
+msgid ""
+"Lightweight file manager\n"
+"\n"
+"Developed by Hon Jen Yee (PCMan)"
+msgstr ""
+"Gerenciador de arquivos rápido e leve\n"
+"\n"
+"Desenvolvido por Hon Jen Yee (PCMan)"
+
+#. Please replace this line with your own names, one name per line.
+#: ../data/ui/about.glade.in.h:6
+msgid "translator-credits"
+msgstr ""
+"Fábio Antunes <fabio.antunes@hotmail.com>\n"
+"Flávio Costa <formicbr@gmail.com>\n"
+"Og Maciel <ogmaciel@gnome.org>\n"
+"Henrique P. Machado <zehrique@gmail.com>"
+
+#: ../data/ui/desktop-pref.glade.h:1
+msgid "<b>Background</b>"
+msgstr "<b>Plano de fundo<b>"
+
+#: ../data/ui/desktop-pref.glade.h:2
+msgid "<b>Show desktop icons</b>"
+msgstr "<b>Mostrar ícones na área de trabalho.</b>"
+
+#: ../data/ui/desktop-pref.glade.h:3
+msgid "<b>Text</b>"
+msgstr "<b>Texto</b>"
+
+#: ../data/ui/desktop-pref.glade.h:4
+msgid "Advanced"
+msgstr "Avançado"
+
+#: ../data/ui/desktop-pref.glade.h:5
+msgid "Appearance"
+msgstr "Aparência"
+
+#: ../data/ui/desktop-pref.glade.h:6
+msgid "Background color:"
+msgstr "Cor do plano de fundo:"
+
+#: ../data/ui/desktop-pref.glade.h:7
+#: ../data/ui/pref.glade.h:6
+msgid "Center on the screen"
+msgstr "Centralizar na tela"
+
+#: ../data/ui/desktop-pref.glade.h:8
+msgid "Color of label text:"
+msgstr "Cor do texto do rótulo:"
+
+#: ../data/ui/desktop-pref.glade.h:9
+msgid "Color of shadow:"
+msgstr "Cor da sombra:"
+
+#: ../data/ui/desktop-pref.glade.h:10
+msgid "Desktop Icons"
+msgstr "Ícones na área de trabalho"
+
+#: ../data/ui/desktop-pref.glade.h:11
+msgid "Desktop Preferences"
+msgstr "Preferências da área de trabalho"
+
+#: ../data/ui/desktop-pref.glade.h:12
+msgid "FIll with background color only"
+msgstr "Somente preencher com a cor do plano de fundo"
+
+#: ../data/ui/desktop-pref.glade.h:13
+msgid "Font of label text:"
+msgstr "Fonte do texto do rótulo:"
+
+#: ../data/ui/desktop-pref.glade.h:14
+msgid "Please select an image file"
+msgstr "Por favor, selecione um arquivo de imagem"
+
+#: ../data/ui/desktop-pref.glade.h:15
+msgid "Show \"My Computer\" icon on desktop"
+msgstr "Mostrar um ícone \"Meu computador\" na área de trabalho"
+
+#: ../data/ui/desktop-pref.glade.h:16
+msgid "Show \"My Documents\" icon on desktop"
+msgstr "Mostrar um ícone \"Meus Documentos\" na área de trabalho"
+
+#: ../data/ui/desktop-pref.glade.h:17
+msgid "Show \"Trash Bin\" icon on desktop"
+msgstr "Mostrar um ícone \"Lixeira\" na área de trabalho"
+
+#: ../data/ui/desktop-pref.glade.h:18
+msgid "Show icons of volumes on desktop"
+msgstr "Mostrar ícones de volumes na área de trabalho"
+
+#: ../data/ui/desktop-pref.glade.h:19
+msgid "Show menus provided by WM when desktop is clicked"
+msgstr "Mostrar menus do gerente de janelas quando a área de trabalho for clicada"
+
+#: ../data/ui/desktop-pref.glade.h:20
+#: ../data/ui/pref.glade.h:22
+msgid "Stretch to fill the entire screen"
+msgstr "Esticar para ocupar a tela toda"
+
+#: ../data/ui/desktop-pref.glade.h:21
+#: ../data/ui/pref.glade.h:23
+msgid "Stretch to fit the screen"
+msgstr "Esticar para ocupar a tela"
+
+#: ../data/ui/desktop-pref.glade.h:22
+#: ../data/ui/pref.glade.h:25
+msgid "Tile the image to fill the entire screen"
+msgstr "Ladrilhar a imagem para ocupar a tela toda"
+
+#: ../data/ui/desktop-pref.glade.h:23
+msgid "Wallpaper mode:"
+msgstr "Modo de papel de parede:"
+
+#: ../data/ui/desktop-pref.glade.h:24
+msgid "Wallpaper:"
+msgstr "Papel de parede:"
+
+#: ../data/ui/pref.glade.h:1
+msgid "<b>Behavior</b>"
+msgstr "<b>Comportamento</b>"
+
+#: ../data/ui/pref.glade.h:2
+msgid "<b>Icons</b>"
+msgstr "<b>Ícones</b>"
+
+#: ../data/ui/pref.glade.h:3
+msgid "<b>User Interface</b>"
+msgstr "<b>Interface do usuário</b>"
+
+#: ../data/ui/pref.glade.h:4
+msgid "Always show the tab bar"
+msgstr "Sempre mostrar a barra de abas"
+
+#: ../data/ui/pref.glade.h:5
+msgid "Bookmarks:"
+msgstr "Marcadores:"
+
+#: ../data/ui/pref.glade.h:7
+msgid "Confirm before deleting files"
+msgstr "Confirmar antes de excluir arquivos"
+
+#: ../data/ui/pref.glade.h:8
+msgid "Display image files with supported format as thumbnails"
+msgstr "Mostrar miniaturas dos arquivos suportados"
+
+#: ../data/ui/pref.glade.h:9
+msgid "Hide 'Close tab' buttons"
+msgstr "Esconde botões \"Fechar aba\""
+
+#: ../data/ui/pref.glade.h:10
+msgid "Hide folder content border"
+msgstr "Esconde conteúdo da borda da pasta"
+
+#: ../data/ui/pref.glade.h:11
+msgid "Hide side pane buttons"
+msgstr "Esconde botões do painel lateral"
+
+#: ../data/ui/pref.glade.h:12
+msgid "Max size of files displayed as thumbnails:"
+msgstr "Tamanho máximo para as miniaturas exibidas:"
+
+#: ../data/ui/pref.glade.h:13
+msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
+msgstr "Mover arquivos excluídos para a \"lixeira\" em vez de apagá-los da unidade"
+
+#: ../data/ui/pref.glade.h:14
+msgid "Open files with single click"
+msgstr "Abrir arquivos com um clique simples"
+
+#: ../data/ui/pref.glade.h:15
+msgid "Opened in Current Tab"
+msgstr "Aberto na aba atual"
+
+#: ../data/ui/pref.glade.h:16
+msgid "Opened in New Tab"
+msgstr "Aberto em uma nova aba"
+
+#: ../data/ui/pref.glade.h:17
+msgid "Opened in New Window"
+msgstr "Aberto em uma nova janela"
+
+#: ../data/ui/pref.glade.h:18
+msgid "Preferences"
+msgstr "Preferências"
+
+#: ../data/ui/pref.glade.h:19
+msgid "Size of big icons:"
+msgstr "Tamanho dos ícones grandes:"
+
+#: ../data/ui/pref.glade.h:20
+msgid "Size of side pane icons:"
+msgstr "Tamanho dos ícones do painel lateral:"
+
+#: ../data/ui/pref.glade.h:21
+msgid "Size of small icons:"
+msgstr "Tamanho dos ícones pequenos:"
+
+#: ../data/ui/pref.glade.h:24
+msgid "Terminal:"
+msgstr "Terminal:"
+
+#: ../data/ui/pref.glade.h:26
+msgid "Use SI decimal prefixes instead of IEC binary prefixes"
+msgstr "Usar prefíxos decimais do SI em vez de prefíxos binários do IEC"
+
+#: ../data/ui/pref.glade.h:27
+msgid "_Advanced"
+msgstr "_Avançado"
+
+#: ../data/ui/pref.glade.h:28
+msgid "_Display"
+msgstr "_Tela"
+
+#: ../data/ui/pref.glade.h:29
+msgid "_General"
+msgstr "_Geral"
+
+#: ../data/ui/pref.glade.h:30
+msgid "_Volume Management"
+msgstr "Gerenciamento de _volume"
+
+#: ../src/desktop-ui.c:47
+#: ../src/main-win-ui.c:128
+msgid "Invert Selection"
+msgstr "Inverter seleção"
+
+#: ../src/desktop-ui.c:48
+#: ../src/main-win-ui.c:131
+msgid "_Sort Files"
+msgstr "_Ordenar arquivos"
+
+#: ../src/desktop-ui.c:50
+#: ../src/main-win-ui.c:152
+msgid "Folder"
+msgstr "Pasta"
+
+#: ../src/desktop-ui.c:51
+#: ../src/main-win-ui.c:153
+msgid "Blank FIle"
+msgstr "Arquivo em branco"
+
+#: ../src/desktop-ui.c:63
+#: ../src/main-win-ui.c:177
+msgid "By _Name"
+msgstr "Por _nome"
+
+#: ../src/desktop-ui.c:64
+#: ../src/main-win-ui.c:178
+msgid "By _Modification Time"
+msgstr "Por _data de modificação"
+
+#: ../src/desktop-ui.c:79
+#: ../src/main-win-ui.c:194
+msgid "Open in New Tab"
+msgstr "Abrir em nova aba"
+
+#: ../src/desktop-ui.c:80
+#: ../src/main-win-ui.c:195
+msgid "Open in New Window"
+msgstr "Abrir em nova janela"
+
+#: ../src/main-win-ui.c:113
+msgid "_File"
+msgstr "_Arquivo"
+
+#: ../src/main-win-ui.c:114
+msgid "_New Window"
+msgstr "_Nova janela"
+
+#: ../src/main-win-ui.c:115
+msgid "New _Tab"
+msgstr "Nova _aba"
+
+#: ../src/main-win-ui.c:116
+msgid "_Close Tab"
+msgstr "_Fechar aba"
+
+#: ../src/main-win-ui.c:117
+msgid "Close Window"
+msgstr "Fechar janela"
+
+#: ../src/main-win-ui.c:118
+msgid "_Edit"
+msgstr "_Editar"
+
+#: ../src/main-win-ui.c:123
+msgid "Rename"
+msgstr "Renomear"
+
+#: ../src/main-win-ui.c:124
+msgid "Create Symlink"
+msgstr "Criar link simbólico"
+
+#: ../src/main-win-ui.c:125
+msgid "Move To..."
+msgstr "Mover para..."
+
+#: ../src/main-win-ui.c:126
+msgid "Copy To..."
+msgstr "Copiar para..."
+
+#: ../src/main-win-ui.c:130
+msgid "_View"
+msgstr "_Ver"
+
+#: ../src/main-win-ui.c:132
+msgid "_Help"
+msgstr "Aj_uda"
+
+#: ../src/main-win-ui.c:134
+msgid "_Go"
+msgstr "_Ir"
+
+#: ../src/main-win-ui.c:135
+msgid "Previous Folder"
+msgstr "Pasta anterior"
+
+#: ../src/main-win-ui.c:136
+msgid "Next Folder"
+msgstr "Próxima pasta"
+
+#: ../src/main-win-ui.c:137
+msgid "Parent Folder"
+msgstr "Pasta superior"
+
+#: ../src/main-win-ui.c:137
+msgid "Go to parent Folder"
+msgstr "Ir para pasta superior"
+
+#: ../src/main-win-ui.c:138
+msgid "Home Folder"
+msgstr "Pasta Pessoal"
+
+#: ../src/main-win-ui.c:139
+msgid "Desktop"
+msgstr "Área de trabalho"
+
+#: ../src/main-win-ui.c:139
+msgid "Desktop Folder"
+msgstr "Pasta Área de trabalho"
+
+#: ../src/main-win-ui.c:140
+msgid "My Computer"
+msgstr "Meu computador"
+
+#: ../src/main-win-ui.c:141
+msgid "Trash Can"
+msgstr "Lixeira"
+
+#: ../src/main-win-ui.c:142
+msgid "Network Drives"
+msgstr "Unidades de rede"
+
+#: ../src/main-win-ui.c:143
+msgid "Applications"
+msgstr "Aplicativos"
+
+#: ../src/main-win-ui.c:143
+msgid "Installed Applications"
+msgstr "Aplicativos instalados"
+
+#: ../src/main-win-ui.c:145
+msgid "_Bookmarks"
+msgstr "_Marcadores"
+
+#: ../src/main-win-ui.c:146
+msgid "Add To Bookmarks"
+msgstr "Adicionar aos marcadores"
+
+#: ../src/main-win-ui.c:159
+msgid "Show _Hidden"
+msgstr "Mostrar _ocultos"
+
+#: ../src/main-win-ui.c:164
+msgid "_Icon View"
+msgstr "V_isualização de ícones"
+
+#: ../src/main-win-ui.c:165
+msgid "_Compact View"
+msgstr "Visualização _compacta"
+
+#: ../src/main-win-ui.c:166
+msgid "Detailed _List View"
+msgstr "Visualização _lista detalhada"
+
+#: ../src/main-win.c:780
+#, c-format
+msgid "Free space: %s (Total: %s )"
+msgstr "Espaço livre: %s (Total: %s )"
+
+#: ../src/main-win.c:1015
+msgid "Create New..."
+msgstr "Criar novo..."
+
+#: ../src/main-win.c:1015
+msgid "Enter a name for the newly created file:"
+msgstr "Digite um nome para o novo arquivo:"
+
+#: ../src/main-win.c:1015
+msgid "New"
+msgstr "Novo"
+
+#: ../src/pcmanfm.c:67
+msgid "Open folders in new tabs of the last used window instead of creating new windows"
+msgstr "Abrir pastas em novas abas na última janela aberta, em vez de criar novas janelas"
+
+#: ../src/pcmanfm.c:68
+msgid "Name of config profile"
+msgstr "Nome do perfil de configurações"
+
+#: ../src/pcmanfm.c:69
+msgid "Launch desktop manager"
+msgstr "Lançar o gerente da área de trabalho"
+
+#: ../src/pcmanfm.c:70
+msgid "Turn off desktop manager if it's running"
+msgstr "Desligar o gerente da área de trabalho se estiver em execução"
+
+#: ../src/pcmanfm.c:71
+msgid "Run PCManFM as a daemon"
+msgstr "Executar PcManFM como um serviço"
+
+#: ../src/pcmanfm.c:72
+msgid "Open desktop preference dialog"
+msgstr "Abrir o diálogo de prefências da área de trabalho"
+
+#: ../src/pcmanfm.c:73
+msgid "Set desktop wallpaper"
+msgstr "Definir o papel de parede da área de trabalho"
+
+#: ../src/pcmanfm.c:73
+msgid "<image file>"
+msgstr "<arquivo de imagem>"
+
+#: ../src/pcmanfm.c:74
+msgid "Open preference dialog. 'n' is the number of page you want to show (1, 2, 3...)."
+msgstr "Abre o diálogo de preferências. \"n\" é o número da página que você deseja mostrar (1, 2, 3...)."
+
+#: ../src/pcmanfm.c:75
+msgid "Open Find Files utility"
+msgstr "Abrir utilitário de localizar arquivos"
+
+#: ../src/pcmanfm.c:76
+msgid "No function. Just to be compatible with nautilus"
+msgstr "Nenhuma função. Somente para ser compatível com o nautilus"
+
+#: ../src/pcmanfm.c:77
+msgid "[FILE1, FILE2,...]"
+msgstr "[ARQUIVO1, ARQUIVO2,...]"
+
