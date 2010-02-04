@@ -2,13 +2,13 @@
 # Copyright (C) 2010
 # This file is distributed under the same license as the pcmanfm package.
 # Yarema aka Knedlyk <yupadmin@gmail.com>, 2010.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm2\n"
 "Report-Msgid-Bugs-To: yupadmin@gmail.com\n"
 "POT-Creation-Date: 2010-02-01 07:32+0000\n"
-"PO-Revision-Date: 2010-02-01 18:31+0100\n"
+"PO-Revision-Date: 2010-02-04 19:17+0100\n"
 "Last-Translator: Yarema aka Knedlyk <yupadmin@gmail.com>\n"
 "Language-Team: Ukrainian <translation@linux.org.ua>\n"
 "MIME-Version: 1.0\n"
@@ -60,7 +60,8 @@ msgstr "Вигляд"
 msgid "Background color:"
 msgstr "Колір тла:"
 
-#: ../data/ui/desktop-pref.glade.h:7 ../data/ui/pref.glade.h:6
+#: ../data/ui/desktop-pref.glade.h:7
+#: ../data/ui/pref.glade.h:6
 msgid "Center on the screen"
 msgstr "Центр на екрані"
 
@@ -112,15 +113,18 @@ msgstr "Показати значки дисків на стільниці"
 msgid "Show menus provided by WM when desktop is clicked"
 msgstr "Показати меню менеджера вікон при кліканні на стільниці"
 
-#: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:22
+#: ../data/ui/desktop-pref.glade.h:20
+#: ../data/ui/pref.glade.h:22
 msgid "Stretch to fill the entire screen"
 msgstr "Розтягнути для заповнення всієї стільниці"
 
-#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:23
+#: ../data/ui/desktop-pref.glade.h:21
+#: ../data/ui/pref.glade.h:23
 msgid "Stretch to fit the screen"
 msgstr "Розтягнути щоб вмістити на стільниці"
 
-#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:25
+#: ../data/ui/desktop-pref.glade.h:22
+#: ../data/ui/pref.glade.h:25
 msgid "Tile the image to fill the entire screen"
 msgstr "Розмножити зображення щоб заповнити весь екран"
 
@@ -217,7 +221,6 @@ msgid "Terminal:"
 msgstr "Термінал:"
 
 #: ../data/ui/pref.glade.h:26
-#, fuzzy
 msgid "Use SI decimal prefixes instead of IEC binary prefixes"
 msgstr "Використовувати SI десяткові префікси замість IEC бінарних префіксів"
 
@@ -237,36 +240,43 @@ msgstr "_Загальне"
 msgid "_Volume Management"
 msgstr "_Управління дисками"
 
-#: ../src/desktop-ui.c:47 ../src/main-win-ui.c:128
-#, fuzzy
+#: ../src/desktop-ui.c:47
+#: ../src/main-win-ui.c:128
 msgid "Invert Selection"
 msgstr "Забрати виділення"
 
-#: ../src/desktop-ui.c:48 ../src/main-win-ui.c:131
+#: ../src/desktop-ui.c:48
+#: ../src/main-win-ui.c:131
 msgid "_Sort Files"
 msgstr "_Сортування файлів"
 
-#: ../src/desktop-ui.c:50 ../src/main-win-ui.c:152
+#: ../src/desktop-ui.c:50
+#: ../src/main-win-ui.c:152
 msgid "Folder"
 msgstr "Каталог"
 
-#: ../src/desktop-ui.c:51 ../src/main-win-ui.c:153
+#: ../src/desktop-ui.c:51
+#: ../src/main-win-ui.c:153
 msgid "Blank FIle"
 msgstr "Пустий файл"
 
-#: ../src/desktop-ui.c:63 ../src/main-win-ui.c:177
+#: ../src/desktop-ui.c:63
+#: ../src/main-win-ui.c:177
 msgid "By _Name"
 msgstr "По _назві"
 
-#: ../src/desktop-ui.c:64 ../src/main-win-ui.c:178
+#: ../src/desktop-ui.c:64
+#: ../src/main-win-ui.c:178
 msgid "By _Modification Time"
 msgstr "По _часу зміни"
 
-#: ../src/desktop-ui.c:79 ../src/main-win-ui.c:194
+#: ../src/desktop-ui.c:79
+#: ../src/main-win-ui.c:194
 msgid "Open in New Tab"
 msgstr "Відкрити в новій вкладці"
 
-#: ../src/desktop-ui.c:80 ../src/main-win-ui.c:195
+#: ../src/desktop-ui.c:80
+#: ../src/main-win-ui.c:195
 msgid "Open in New Window"
 msgstr "Відкрити в новому вікні"
 
@@ -412,7 +422,6 @@ msgid "New"
 msgstr "Новий"
 
 #: ../src/pcmanfm.c:67
-#, fuzzy
 msgid "Open folders in new tabs of the last used window instead of creating new windows"
 msgstr "Відкрити каталоги в нових вкладках останньо використаних вікон замість створювати нові вікна"
 
@@ -459,3 +468,4 @@ msgstr "Немає функції. Тільки щоб було компатиб
 #: ../src/pcmanfm.c:77
 msgid "[FILE1, FILE2,...]"
 msgstr "[ФАЙЛ1, ФАЙЛ2,...]"
+
