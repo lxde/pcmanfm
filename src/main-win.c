@@ -82,6 +82,7 @@ static void on_create_new(GtkAction* action, FmMainWin* win);
 static void on_prop(GtkAction* action, FmMainWin* win);
 
 static void on_switch_page(GtkNotebook* nb, GtkNotebookPage* page, guint num, FmMainWin* win);
+static void on_page_removed(GtkNotebook* nb, GtkWidget* page, guint num, FmMainWin* win);
 
 #include "main-win-ui.c" /* ui xml definitions and actions */
 
@@ -370,6 +371,7 @@ static void fm_main_win_init(FmMainWin *self)
     self->notebook = gtk_notebook_new();
     gtk_notebook_set_scrollable(self->notebook, TRUE);
     g_signal_connect(self->notebook, "switch-page", G_CALLBACK(on_switch_page), self);
+    g_signal_connect(self->notebook, "page-removed", G_CALLBACK(on_page_removed), self);
     gtk_paned_add2(self->hpaned, self->notebook);
 
     /* create menu bar and toolbar */
@@ -835,6 +837,11 @@ gint fm_main_win_add_tab(FmMainWin* win, FmPath* path)
     gtk_notebook_set_tab_reorderable(win->notebook, folder_view, TRUE);
     gtk_notebook_set_current_page(win->notebook, ret);
 
+    if(gtk_notebook_get_n_pages(win->notebook) > 1)
+        gtk_notebook_set_show_tabs(win->notebook, TRUE);
+    else
+        gtk_notebook_set_show_tabs(win->notebook, FALSE);
+
     /* set current folder view */
     win->folder_view = folder_view;
     /* create navigation history */
@@ -1001,6 +1008,14 @@ void on_switch_page(GtkNotebook* nb, GtkNotebookPage* page, guint num, FmMainWin
 
         update_volume_info(win);
     }
+}
+
+void on_page_removed(GtkNotebook* nb, GtkWidget* page, guint num, FmMainWin* win)
+{
+    if(gtk_notebook_get_n_pages(nb) > 1)
+        gtk_notebook_set_show_tabs(nb, TRUE);
+    else
+        gtk_notebook_set_show_tabs(nb, FALSE);
 }
 
 void on_create_new(GtkAction* action, FmMainWin* win)
