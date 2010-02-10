@@ -6,10 +6,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-10 01:20+0100\n"
-"PO-Revision-Date: 2010-01-30 12:34+0300\n"
-"Last-Translator: \n"
-"Language-Team: Russian <kde-russian@lists.kde.ru>\n"
+"POT-Creation-Date: 2010-02-10 04:38+0000\n"
+"PO-Revision-Date: 2010-02-10 10:29+0300\n"
+"Last-Translator: Koptev Oleg <koptev.oleg@gmail.com>\n"
+"Language-Team: Russian <>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -17,8 +17,7 @@ msgstr ""
 "X-Poedit-Country: Russia\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Generator: Lokalize 1.0\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
-"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009"
@@ -41,11 +40,11 @@ msgstr "Переводчики"
 
 #: ../data/ui/desktop-pref.glade.h:1
 msgid "<b>Background</b>"
-msgstr "<b>Фон<b>"
+msgstr "<b>Фон</b>"
 
 #: ../data/ui/desktop-pref.glade.h:2
 msgid "<b>Show desktop icons</b>"
-msgstr "<b>Показать иконки на рабочем столе<b>"
+msgstr "<b>Показать значки на рабочем столе</b>"
 
 #: ../data/ui/desktop-pref.glade.h:3
 msgid "<b>Text</b>"
@@ -63,13 +62,14 @@ msgstr "Внешний вид"
 msgid "Background color:"
 msgstr "Цвет фона:"
 
-#: ../data/ui/desktop-pref.glade.h:7 ../data/ui/pref.glade.h:6
+#: ../data/ui/desktop-pref.glade.h:7
+#: ../data/ui/pref.glade.h:6
 msgid "Center on the screen"
 msgstr "По центру экрана"
 
 #: ../data/ui/desktop-pref.glade.h:8
 msgid "Color of label text:"
-msgstr "Цвет текста:"
+msgstr "Цвет текста ярлыков:"
 
 #: ../data/ui/desktop-pref.glade.h:9
 msgid "Color of shadow:"
@@ -77,55 +77,58 @@ msgstr "Цвет тени:"
 
 #: ../data/ui/desktop-pref.glade.h:10
 msgid "Desktop Icons"
-msgstr "Иконки на рабочем столе"
+msgstr "Иконки рабочего стола"
 
 #: ../data/ui/desktop-pref.glade.h:11
 msgid "Desktop Preferences"
-msgstr "Параметры"
+msgstr "Параметры рабочего стола"
 
 #: ../data/ui/desktop-pref.glade.h:12
 msgid "FIll with background color only"
-msgstr "Заполнить только цвет фона"
+msgstr "Заполнить только цветом фона"
 
 #: ../data/ui/desktop-pref.glade.h:13
 msgid "Font of label text:"
-msgstr "Шрифт текста:"
+msgstr "Шрифт текста ярлыков:"
 
 #: ../data/ui/desktop-pref.glade.h:14
 msgid "Please select an image file"
-msgstr "Пожалуйста, выбирите изображение"
+msgstr "Пожалуйста, выберите изображение"
 
 #: ../data/ui/desktop-pref.glade.h:15
 msgid "Show \"My Computer\" icon on desktop"
-msgstr "Показать \"Мой компьютер\" иконку на рабочем столе"
+msgstr "Показывать на рабочем столе значок \"Мой компьютер\" "
 
 #: ../data/ui/desktop-pref.glade.h:16
 msgid "Show \"My Documents\" icon on desktop"
-msgstr "Показать \"Мои документы\" иконку на рабочем столе"
+msgstr "Показывать на рабочем столе значок \"Мои документы\""
 
 #: ../data/ui/desktop-pref.glade.h:17
 msgid "Show \"Trash Bin\" icon on desktop"
-msgstr "Покзать \"Корзину\" иконку на рнабочем столе"
+msgstr "Покзывать на рабочем столе значок \"Корзина\""
 
 #: ../data/ui/desktop-pref.glade.h:18
 msgid "Show icons of volumes on desktop"
-msgstr "Показать иконки томов на рабочем столе"
+msgstr "Показывать на рабочем столе иконки дисков "
 
 #: ../data/ui/desktop-pref.glade.h:19
 msgid "Show menus provided by WM when desktop is clicked"
-msgstr "Показать меню предоставляемых WM рабочем столе, когда нажата"
+msgstr "При нажатии показать контекстное меню менеджера рабочего стола"
 
-#: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:22
+#: ../data/ui/desktop-pref.glade.h:20
+#: ../data/ui/pref.glade.h:22
 msgid "Stretch to fill the entire screen"
-msgstr "Растнуть, чтоб заполнить весь экран"
+msgstr "Растянуть на весь экран"
 
-#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:23
+#: ../data/ui/desktop-pref.glade.h:21
+#: ../data/ui/pref.glade.h:23
 msgid "Stretch to fit the screen"
 msgstr "Растянуть по размеру экрана"
 
-#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:25
+#: ../data/ui/desktop-pref.glade.h:22
+#: ../data/ui/pref.glade.h:25
 msgid "Tile the image to fill the entire screen"
-msgstr "Стянуть изображение, чтоб заполнить весь єкран"
+msgstr "Замостить изображением весь экран"
 
 #: ../data/ui/desktop-pref.glade.h:23
 msgid "Wallpaper mode:"
@@ -137,11 +140,11 @@ msgstr "Обои"
 
 #: ../data/ui/pref.glade.h:1
 msgid "<b>Behavior</b>"
-msgstr "Поведение"
+msgstr "<b>Поведение</b>"
 
 #: ../data/ui/pref.glade.h:2
 msgid "<b>Icons</b>"
-msgstr "Иконки"
+msgstr "<b>Значки</b>"
 
 #: ../data/ui/pref.glade.h:3
 msgid "<b>User Interface</b>"
@@ -153,24 +156,23 @@ msgstr "Всегда показывать панель вкладок"
 
 #: ../data/ui/pref.glade.h:5
 msgid "Bookmarks:"
-msgstr "Закладки"
+msgstr "Закладки:"
 
 #: ../data/ui/pref.glade.h:7
 msgid "Confirm before deleting files"
-msgstr "Подтвердить прежде, чем удалить"
+msgstr "Подтверждение удаления файлов"
 
 #: ../data/ui/pref.glade.h:8
 msgid "Display image files with supported format as thumbnails"
-msgstr ""
-"Отображения файлов изображений с поддерживаемого формата в виде эскизов"
+msgstr "Отображения файлов изображений с поддерживаемого формата в виде эскизов"
 
 #: ../data/ui/pref.glade.h:9
 msgid "Hide 'Close tab' buttons"
-msgstr "Скрыть 'Закрыть вкладку' кнопку"
+msgstr "Скрыть кнопку 'Закрыть вкладку' "
 
 #: ../data/ui/pref.glade.h:10
 msgid "Hide folder content border"
-msgstr "Скрыть папку содержимую границу"
+msgstr "Скрыть границу содержимого папки"
 
 #: ../data/ui/pref.glade.h:11
 msgid "Hide side pane buttons"
@@ -178,7 +180,7 @@ msgstr "Скрыть боковые кнопоки панели"
 
 #: ../data/ui/pref.glade.h:12
 msgid "Max size of files displayed as thumbnails:"
-msgstr "Максимальный размер файлов отображаемых, как эскизы"
+msgstr "Максимальный размер файлов, отображаемых, как эскизы"
 
 #: ../data/ui/pref.glade.h:13
 msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
@@ -186,19 +188,19 @@ msgstr "Переместить удаленные файлы в \"Корзину
 
 #: ../data/ui/pref.glade.h:14
 msgid "Open files with single click"
-msgstr "Открытие файлова одним нажатием"
+msgstr "Открытие файлов одним нажатием"
 
 #: ../data/ui/pref.glade.h:15
 msgid "Opened in Current Tab"
-msgstr "Открыть в текущей вкладке"
+msgstr "Открывать в текущей вкладке"
 
 #: ../data/ui/pref.glade.h:16
 msgid "Opened in New Tab"
-msgstr "Открыть в Новой вкладке"
+msgstr "Открывать в новой вкладке"
 
 #: ../data/ui/pref.glade.h:17
 msgid "Opened in New Window"
-msgstr "Открать в Новом Окне"
+msgstr "Открывать в новом Окне"
 
 #: ../data/ui/pref.glade.h:18
 msgid "Preferences"
@@ -206,15 +208,15 @@ msgstr "Параметры"
 
 #: ../data/ui/pref.glade.h:19
 msgid "Size of big icons:"
-msgstr "Размер больших иконок:"
+msgstr "Размер больших значков:"
 
 #: ../data/ui/pref.glade.h:20
 msgid "Size of side pane icons:"
-msgstr "Размер иконок боковой панели"
+msgstr "Размер значков боковой панели:"
 
 #: ../data/ui/pref.glade.h:21
 msgid "Size of small icons:"
-msgstr "Размер маленьких иконок:"
+msgstr "Размер маленьких значков:"
 
 #: ../data/ui/pref.glade.h:24
 msgid "Terminal:"
@@ -222,7 +224,7 @@ msgstr "Консоль:"
 
 #: ../data/ui/pref.glade.h:26
 msgid "Use SI decimal prefixes instead of IEC binary prefixes"
-msgstr ""
+msgstr "Используйте десятичные префиксы в системе СИ вместо префиксов IEC"
 
 #: ../data/ui/pref.glade.h:27
 msgid "_Advanced"
@@ -240,37 +242,45 @@ msgstr "_Основные"
 msgid "_Volume Management"
 msgstr "_Управление томами"
 
-#: ../src/desktop-ui.c:47 ../src/main-win-ui.c:128
+#: ../src/desktop-ui.c:47
+#: ../src/main-win-ui.c:128
 msgid "Invert Selection"
-msgstr "Инвертировать выделеление"
+msgstr "Инвертировать выделение"
 
-#: ../src/desktop-ui.c:48 ../src/main-win-ui.c:131
+#: ../src/desktop-ui.c:48
+#: ../src/main-win-ui.c:131
 msgid "_Sort Files"
-msgstr "_Сортировать Файлы"
+msgstr "_Сортировать файлы"
 
-#: ../src/desktop-ui.c:50 ../src/main-win-ui.c:152
+#: ../src/desktop-ui.c:50
+#: ../src/main-win-ui.c:152
 msgid "Folder"
 msgstr "Папка"
 
-#: ../src/desktop-ui.c:51 ../src/main-win-ui.c:153
+#: ../src/desktop-ui.c:51
+#: ../src/main-win-ui.c:153
 msgid "Blank FIle"
-msgstr "Пустой Файл"
+msgstr "Пустой файл"
 
-#: ../src/desktop-ui.c:63 ../src/main-win-ui.c:177
+#: ../src/desktop-ui.c:63
+#: ../src/main-win-ui.c:177
 msgid "By _Name"
-msgstr "_Имя"
+msgstr "По _имени"
 
-#: ../src/desktop-ui.c:64 ../src/main-win-ui.c:178
+#: ../src/desktop-ui.c:64
+#: ../src/main-win-ui.c:178
 msgid "By _Modification Time"
-msgstr "_Время изменения"
+msgstr "По _времени изменения"
 
-#: ../src/desktop-ui.c:79 ../src/main-win-ui.c:194
+#: ../src/desktop-ui.c:79
+#: ../src/main-win-ui.c:194
 msgid "Open in New Tab"
 msgstr "Открыть в новой вкладке"
 
-#: ../src/desktop-ui.c:80 ../src/main-win-ui.c:195
+#: ../src/desktop-ui.c:80
+#: ../src/main-win-ui.c:195
 msgid "Open in New Window"
-msgstr "Открыть в Новом Окне"
+msgstr "Открыть в новом окне"
 
 #: ../src/main-win-ui.c:113
 msgid "_File"
@@ -282,7 +292,7 @@ msgstr "_Новое окно"
 
 #: ../src/main-win-ui.c:115
 msgid "New _Tab"
-msgstr "Новая вкладка"
+msgstr "Новая _вкладка"
 
 #: ../src/main-win-ui.c:116
 msgid "_Close Tab"
@@ -298,7 +308,7 @@ msgstr "_Редактировать"
 
 #: ../src/main-win-ui.c:123
 msgid "Rename"
-msgstr "Перименовать"
+msgstr "Переименовать"
 
 #: ../src/main-win-ui.c:124
 msgid "Create Symlink"
@@ -350,7 +360,7 @@ msgstr "Рабочий стол"
 
 #: ../src/main-win-ui.c:139
 msgid "Desktop Folder"
-msgstr "Рабочая папка"
+msgstr "Папка рабочего стола"
 
 #: ../src/main-win-ui.c:140
 msgid "My Computer"
@@ -382,11 +392,11 @@ msgstr "Добавить закладку"
 
 #: ../src/main-win-ui.c:159
 msgid "Show _Hidden"
-msgstr "Показать скрытые файлы"
+msgstr "_Показать скрытые файлы"
 
 #: ../src/main-win-ui.c:164
 msgid "_Icon View"
-msgstr "_Просмотр иконок"
+msgstr "_Значки"
 
 #: ../src/main-win-ui.c:165
 msgid "_Compact View"
@@ -394,7 +404,7 @@ msgstr "_Компактный вид"
 
 #: ../src/main-win-ui.c:166
 msgid "Detailed _List View"
-msgstr "Детализированый вид списка"
+msgstr "_Подробности"
 
 #: ../src/main-win.c:782
 #, c-format
@@ -403,66 +413,61 @@ msgstr "Свободное место:%s (Всего: %s )"
 
 #: ../src/main-win.c:1030
 msgid "Create New..."
-msgstr "Создать Новый..."
+msgstr "Создать новый..."
 
 #: ../src/main-win.c:1030
 msgid "Enter a name for the newly created file:"
-msgstr "Введите имя для создания нового файла:"
+msgstr "Введите имя нового файла:"
 
 #: ../src/main-win.c:1030
 msgid "New"
 msgstr "Новый"
 
 #: ../src/pcmanfm.c:67
-msgid ""
-"Open folders in new tabs of the last used window instead of creating new "
-"windows"
-msgstr ""
-"Открывать паки в новой вкладке последнего использованого окна вместо "
-"создания новогоокна"
+msgid "Open folders in new tabs of the last used window instead of creating new windows"
+msgstr "Открывать папки в новой вкладке последнего активного окна, вместо создания нового окна"
 
 #: ../src/pcmanfm.c:68
 msgid "Name of config profile"
-msgstr "Имя файла профиля"
+msgstr "Имя профиля конфигурации"
 
 #: ../src/pcmanfm.c:69
 msgid "Launch desktop manager"
-msgstr "Запустить рабочий диспетчер"
+msgstr "Запустить менеджер рабочего стола"
 
 #: ../src/pcmanfm.c:70
 msgid "Turn off desktop manager if it's running"
-msgstr "Выключить диспетчер рабочего сола, если он запущен"
+msgstr "Выключить менеджер рабочего стола, если он запущен"
 
 #: ../src/pcmanfm.c:71
 msgid "Run PCManFM as a daemon"
-msgstr "Запустить PCManFM , как службу "
+msgstr "Запустить PCManFM как демон "
 
 #: ../src/pcmanfm.c:72
 msgid "Open desktop preference dialog"
-msgstr "Открыть диалог параметров"
+msgstr "Открыть диалог параметров рабочего стола"
 
 #: ../src/pcmanfm.c:73
 msgid "Set desktop wallpaper"
-msgstr "Настроить обои рабочего стола"
+msgstr "Установить обои рабочего стола"
 
 #: ../src/pcmanfm.c:73
 msgid "<image file>"
 msgstr "<файл изображения>"
 
 #: ../src/pcmanfm.c:74
-msgid ""
-"Open preference dialog. 'n' is the number of page you want to show (1, 2, "
-"3...)."
-msgstr ""
+msgid "Open preference dialog. 'n' is the number of page you want to show (1, 2, 3...)."
+msgstr "Открывает диалог настроек. 'n' является номером отображаемой страницы (1, 2, 3, ...)."
 
 #: ../src/pcmanfm.c:75
 msgid "Open Find Files utility"
-msgstr "Открыть утилиту Поиска Файлов"
+msgstr "Открыть поиск файлов"
 
 #: ../src/pcmanfm.c:76
 msgid "No function. Just to be compatible with nautilus"
-msgstr "Нет функции. Должно быть совместим с nautilus"
+msgstr "Нет функции. Для совместимости с Nautilus"
 
 #: ../src/pcmanfm.c:77
 msgid "[FILE1, FILE2,...]"
-msgstr ""
+msgstr "[FILE1, FILE2,...]"
+
