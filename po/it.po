@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-01-29 05:58+0800\n"
+"POT-Creation-Date: 2010-02-10 01:17+0100\n"
 "PO-Revision-Date: 2010-01-31 15:32+0100\n"
 "Last-Translator: Andrea Florio <andrea@opensuse.org>\n"
 "Language-Team: it <it@li.org>\n"
@@ -58,8 +58,7 @@ msgstr "Aspetto"
 msgid "Background color:"
 msgstr "Colore sfondo:"
 
-#: ../data/ui/desktop-pref.glade.h:7
-#: ../data/ui/pref.glade.h:6
+#: ../data/ui/desktop-pref.glade.h:7 ../data/ui/pref.glade.h:6
 msgid "Center on the screen"
 msgstr "Al centro dello schermo"
 
@@ -111,18 +110,15 @@ msgstr "Mostra le icone delle unità sul desktop"
 msgid "Show menus provided by WM when desktop is clicked"
 msgstr "Mostra i menu fornito dal WM quando clicchi sul desktop"
 
-#: ../data/ui/desktop-pref.glade.h:20
-#: ../data/ui/pref.glade.h:22
+#: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:22
 msgid "Stretch to fill the entire screen"
 msgstr "Allarga per riempire lo schermo"
 
-#: ../data/ui/desktop-pref.glade.h:21
-#: ../data/ui/pref.glade.h:23
+#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:23
 msgid "Stretch to fit the screen"
 msgstr "Allarga per adattare allo schermo"
 
-#: ../data/ui/desktop-pref.glade.h:22
-#: ../data/ui/pref.glade.h:25
+#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:25
 msgid "Tile the image to fill the entire screen"
 msgstr "Piastrella l'immagine per riempire l'interno schermo"
 
@@ -238,43 +234,35 @@ msgstr "_Generale"
 msgid "_Volume Management"
 msgstr "Gestione _Dispositivi"
 
-#: ../src/desktop-ui.c:47
-#: ../src/main-win-ui.c:128
+#: ../src/desktop-ui.c:47 ../src/main-win-ui.c:128
 msgid "Invert Selection"
 msgstr "Inverti Selezione"
 
-#: ../src/desktop-ui.c:48
-#: ../src/main-win-ui.c:131
+#: ../src/desktop-ui.c:48 ../src/main-win-ui.c:131
 msgid "_Sort Files"
 msgstr "_Ordina File"
 
-#: ../src/desktop-ui.c:50
-#: ../src/main-win-ui.c:152
+#: ../src/desktop-ui.c:50 ../src/main-win-ui.c:152
 msgid "Folder"
 msgstr "Cartella"
 
-#: ../src/desktop-ui.c:51
-#: ../src/main-win-ui.c:153
+#: ../src/desktop-ui.c:51 ../src/main-win-ui.c:153
 msgid "Blank FIle"
 msgstr "File Vuoto"
 
-#: ../src/desktop-ui.c:63
-#: ../src/main-win-ui.c:177
+#: ../src/desktop-ui.c:63 ../src/main-win-ui.c:177
 msgid "By _Name"
 msgstr "Per _Nome"
 
-#: ../src/desktop-ui.c:64
-#: ../src/main-win-ui.c:178
+#: ../src/desktop-ui.c:64 ../src/main-win-ui.c:178
 msgid "By _Modification Time"
 msgstr "Per Ora _Modica"
 
-#: ../src/desktop-ui.c:79
-#: ../src/main-win-ui.c:194
+#: ../src/desktop-ui.c:79 ../src/main-win-ui.c:194
 msgid "Open in New Tab"
 msgstr "Apri in una nuova scheda"
 
-#: ../src/desktop-ui.c:80
-#: ../src/main-win-ui.c:195
+#: ../src/desktop-ui.c:80 ../src/main-win-ui.c:195
 msgid "Open in New Window"
 msgstr "Apri in una nuova finestra"
 
@@ -402,26 +390,30 @@ msgstr "Vista _Compatta"
 msgid "Detailed _List View"
 msgstr "Vista _Lista Dettagliata"
 
-#: ../src/main-win.c:780
+#: ../src/main-win.c:782
 #, c-format
 msgid "Free space: %s (Total: %s )"
 msgstr "Spazio libero: %s (Totale: %s)"
 
-#: ../src/main-win.c:1015
+#: ../src/main-win.c:1030
 msgid "Create New..."
 msgstr "Crea Nuovo..."
 
-#: ../src/main-win.c:1015
+#: ../src/main-win.c:1030
 msgid "Enter a name for the newly created file:"
 msgstr "Inserisci un nome per il file appena creati:"
 
-#: ../src/main-win.c:1015
+#: ../src/main-win.c:1030
 msgid "New"
 msgstr "Nuovo"
 
 #: ../src/pcmanfm.c:67
-msgid "Open folders in new tabs of the last used window instead of creating new windows"
-msgstr "Apri le cartelle nelle schede dell'ultima finestra utilizzata invece di creare nuove finestre"
+msgid ""
+"Open folders in new tabs of the last used window instead of creating new "
+"windows"
+msgstr ""
+"Apri le cartelle nelle schede dell'ultima finestra utilizzata invece di "
+"creare nuove finestre"
 
 #: ../src/pcmanfm.c:68
 msgid "Name of config profile"
@@ -452,8 +444,12 @@ msgid "<image file>"
 msgstr "<file immagine>"
 
 #: ../src/pcmanfm.c:74
-msgid "Open preference dialog. 'n' is the number of page you want to show (1, 2, 3...)."
-msgstr "Apri la finestra di dialogo delle preferenze. 'n' è il numero di pagina che si desidera visualizzare (1, 2, 3 ...)."
+msgid ""
+"Open preference dialog. 'n' is the number of page you want to show (1, 2, "
+"3...)."
+msgstr ""
+"Apri la finestra di dialogo delle preferenze. 'n' è il numero di pagina che "
+"si desidera visualizzare (1, 2, 3 ...)."
 
 #: ../src/pcmanfm.c:75
 msgid "Open Find Files utility"
@@ -466,4 +462,3 @@ msgstr "Nessuna funzione. Solo per essere compatibile con nautilus"
 #: ../src/pcmanfm.c:77
 msgid "[FILE1, FILE2,...]"
 msgstr "[FILE1, FILE2,...]"
-

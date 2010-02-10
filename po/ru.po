@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-01-29 04:57+0000\n"
+"POT-Creation-Date: 2010-02-10 01:17+0100\n"
 "PO-Revision-Date: 2010-01-30 12:34+0300\n"
 "Last-Translator: \n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -17,8 +17,8 @@ msgstr ""
 "X-Poedit-Country: Russia\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Generator: Lokalize 1.0\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && "
-"(n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009"
@@ -161,7 +161,8 @@ msgstr "Подтвердить прежде, чем удалить"
 
 #: ../data/ui/pref.glade.h:8
 msgid "Display image files with supported format as thumbnails"
-msgstr "Отображения файлов изображений с поддерживаемого формата в виде эскизов"
+msgstr ""
+"Отображения файлов изображений с поддерживаемого формата в виде эскизов"
 
 #: ../data/ui/pref.glade.h:9
 msgid "Hide 'Close tab' buttons"
@@ -395,20 +396,20 @@ msgstr "_Компактный вид"
 msgid "Detailed _List View"
 msgstr "Детализированый вид списка"
 
-#: ../src/main-win.c:780
+#: ../src/main-win.c:782
 #, c-format
 msgid "Free space: %s (Total: %s )"
 msgstr "Свободное место:%s (Всего: %s )"
 
-#: ../src/main-win.c:1015
+#: ../src/main-win.c:1030
 msgid "Create New..."
 msgstr "Создать Новый..."
 
-#: ../src/main-win.c:1015
+#: ../src/main-win.c:1030
 msgid "Enter a name for the newly created file:"
 msgstr "Введите имя для создания нового файла:"
 
-#: ../src/main-win.c:1015
+#: ../src/main-win.c:1030
 msgid "New"
 msgstr "Новый"
 
@@ -417,8 +418,8 @@ msgid ""
 "Open folders in new tabs of the last used window instead of creating new "
 "windows"
 msgstr ""
-"Открывать паки в новой вкладке последнего использованого окна вместо создания нового"
-"окна"
+"Открывать паки в новой вкладке последнего использованого окна вместо "
+"создания новогоокна"
 
 #: ../src/pcmanfm.c:68
 msgid "Name of config profile"
@@ -465,4 +466,3 @@ msgstr "Нет функции. Должно быть совместим с nauti
 #: ../src/pcmanfm.c:77
 msgid "[FILE1, FILE2,...]"
 msgstr ""
-

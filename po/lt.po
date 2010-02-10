@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-06 14:44+0000\n"
+"POT-Creation-Date: 2010-02-10 01:17+0100\n"
 "PO-Revision-Date: 2010-02-06 18:08+0200\n"
 "Last-Translator: Julius Vitkauskas <zadintuvas@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -58,8 +58,7 @@ msgstr "Išvaizda"
 msgid "Background color:"
 msgstr "Fono spalva:"
 
-#: ../data/ui/desktop-pref.glade.h:7
-#: ../data/ui/pref.glade.h:6
+#: ../data/ui/desktop-pref.glade.h:7 ../data/ui/pref.glade.h:6
 msgid "Center on the screen"
 msgstr "Rodyti ekrano centre"
 
@@ -111,18 +110,15 @@ msgstr ""
 msgid "Show menus provided by WM when desktop is clicked"
 msgstr ""
 
-#: ../data/ui/desktop-pref.glade.h:20
-#: ../data/ui/pref.glade.h:22
+#: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:22
 msgid "Stretch to fill the entire screen"
 msgstr "Ištempti per visą ekraną"
 
-#: ../data/ui/desktop-pref.glade.h:21
-#: ../data/ui/pref.glade.h:23
+#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:23
 msgid "Stretch to fit the screen"
 msgstr "Sutalpinti ekrane"
 
-#: ../data/ui/desktop-pref.glade.h:22
-#: ../data/ui/pref.glade.h:25
+#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:25
 msgid "Tile the image to fill the entire screen"
 msgstr "Užplildyti ekraną paveikslėliais"
 
@@ -238,43 +234,35 @@ msgstr ""
 msgid "_Volume Management"
 msgstr ""
 
-#: ../src/desktop-ui.c:47
-#: ../src/main-win-ui.c:128
+#: ../src/desktop-ui.c:47 ../src/main-win-ui.c:128
 msgid "Invert Selection"
 msgstr ""
 
-#: ../src/desktop-ui.c:48
-#: ../src/main-win-ui.c:131
+#: ../src/desktop-ui.c:48 ../src/main-win-ui.c:131
 msgid "_Sort Files"
 msgstr ""
 
-#: ../src/desktop-ui.c:50
-#: ../src/main-win-ui.c:152
+#: ../src/desktop-ui.c:50 ../src/main-win-ui.c:152
 msgid "Folder"
 msgstr "Aplankas"
 
-#: ../src/desktop-ui.c:51
-#: ../src/main-win-ui.c:153
+#: ../src/desktop-ui.c:51 ../src/main-win-ui.c:153
 msgid "Blank FIle"
 msgstr "Tuščias failas"
 
-#: ../src/desktop-ui.c:63
-#: ../src/main-win-ui.c:177
+#: ../src/desktop-ui.c:63 ../src/main-win-ui.c:177
 msgid "By _Name"
 msgstr "Pagal _pavadinimą"
 
-#: ../src/desktop-ui.c:64
-#: ../src/main-win-ui.c:178
+#: ../src/desktop-ui.c:64 ../src/main-win-ui.c:178
 msgid "By _Modification Time"
 msgstr "Pagal p_akeitimo laiką"
 
-#: ../src/desktop-ui.c:79
-#: ../src/main-win-ui.c:194
+#: ../src/desktop-ui.c:79 ../src/main-win-ui.c:194
 msgid "Open in New Tab"
 msgstr "Atverti naujoje kortelėje"
 
-#: ../src/desktop-ui.c:80
-#: ../src/main-win-ui.c:195
+#: ../src/desktop-ui.c:80 ../src/main-win-ui.c:195
 msgid "Open in New Window"
 msgstr "Atverti naujame lange"
 
@@ -402,25 +390,27 @@ msgstr ""
 msgid "Detailed _List View"
 msgstr ""
 
-#: ../src/main-win.c:780
+#: ../src/main-win.c:782
 #, c-format
 msgid "Free space: %s (Total: %s )"
 msgstr "Laisvos vietos: %s (Iš viso: %s )"
 
-#: ../src/main-win.c:1015
+#: ../src/main-win.c:1030
 msgid "Create New..."
 msgstr "Sukurti naują..."
 
-#: ../src/main-win.c:1015
+#: ../src/main-win.c:1030
 msgid "Enter a name for the newly created file:"
 msgstr "Įveskite naujo failo pavadinimą:"
 
-#: ../src/main-win.c:1015
+#: ../src/main-win.c:1030
 msgid "New"
 msgstr "Nauja"
 
 #: ../src/pcmanfm.c:67
-msgid "Open folders in new tabs of the last used window instead of creating new windows"
+msgid ""
+"Open folders in new tabs of the last used window instead of creating new "
+"windows"
 msgstr ""
 
 #: ../src/pcmanfm.c:68
@@ -452,8 +442,11 @@ msgid "<image file>"
 msgstr "<paveikslėlis>"
 
 #: ../src/pcmanfm.c:74
-msgid "Open preference dialog. 'n' is the number of page you want to show (1, 2, 3...)."
-msgstr "Atverti nustatymų dialogą. 'n' yra rodomo puslapio pavadinimas (1, 2, 3...)."
+msgid ""
+"Open preference dialog. 'n' is the number of page you want to show (1, 2, "
+"3...)."
+msgstr ""
+"Atverti nustatymų dialogą. 'n' yra rodomo puslapio pavadinimas (1, 2, 3...)."
 
 #: ../src/pcmanfm.c:75
 msgid "Open Find Files utility"
@@ -466,4 +459,3 @@ msgstr "Jokios funkcijos. Reikalinga tik suderinamumui su nautilus"
 #: ../src/pcmanfm.c:77
 msgid "[FILE1, FILE2,...]"
 msgstr "[FAILAS1, FAILAS2,...]"
-

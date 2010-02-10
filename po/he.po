@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-06 14:44+0000\n"
+"POT-Creation-Date: 2010-02-10 01:17+0100\n"
 "PO-Revision-Date: 2010-02-06 17:47+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: \n"
@@ -59,8 +59,7 @@ msgstr "מראה"
 msgid "Background color:"
 msgstr "צבע הרקע:"
 
-#: ../data/ui/desktop-pref.glade.h:7
-#: ../data/ui/pref.glade.h:6
+#: ../data/ui/desktop-pref.glade.h:7 ../data/ui/pref.glade.h:6
 msgid "Center on the screen"
 msgstr "ממורכז על גבי המסך"
 
@@ -112,18 +111,15 @@ msgstr "הצגת סמלים ליחידות אחסון על שולחן העבוד
 msgid "Show menus provided by WM when desktop is clicked"
 msgstr "הצגת התפריטים בעת הלחיצה על הרקע מתבצעת על ידי מנהל החלונות"
 
-#: ../data/ui/desktop-pref.glade.h:20
-#: ../data/ui/pref.glade.h:22
+#: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:22
 msgid "Stretch to fill the entire screen"
 msgstr "מתיחה כדי למלא את המסך כולו"
 
-#: ../data/ui/desktop-pref.glade.h:21
-#: ../data/ui/pref.glade.h:23
+#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:23
 msgid "Stretch to fit the screen"
 msgstr "מתיחה לצורך התאמה למסך"
 
-#: ../data/ui/desktop-pref.glade.h:22
-#: ../data/ui/pref.glade.h:25
+#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:25
 msgid "Tile the image to fill the entire screen"
 msgstr "פריסת התמונה כך שתמלא את המסך כולו"
 
@@ -221,7 +217,8 @@ msgstr "מסוף:"
 
 #: ../data/ui/pref.glade.h:26
 msgid "Use SI decimal prefixes instead of IEC binary prefixes"
-msgstr "שימוש בקידומות עשרוניות לפי תקן ה־SI במקום קידומות בינאריות לפי תקן ה־IEC"
+msgstr ""
+"שימוש בקידומות עשרוניות לפי תקן ה־SI במקום קידומות בינאריות לפי תקן ה־IEC"
 
 #: ../data/ui/pref.glade.h:27
 msgid "_Advanced"
@@ -239,43 +236,35 @@ msgstr "_כללי"
 msgid "_Volume Management"
 msgstr "_ניהול התקני אחסון"
 
-#: ../src/desktop-ui.c:47
-#: ../src/main-win-ui.c:128
+#: ../src/desktop-ui.c:47 ../src/main-win-ui.c:128
 msgid "Invert Selection"
 msgstr "היפוך הבחירה"
 
-#: ../src/desktop-ui.c:48
-#: ../src/main-win-ui.c:131
+#: ../src/desktop-ui.c:48 ../src/main-win-ui.c:131
 msgid "_Sort Files"
 msgstr "_מיון קבצים"
 
-#: ../src/desktop-ui.c:50
-#: ../src/main-win-ui.c:152
+#: ../src/desktop-ui.c:50 ../src/main-win-ui.c:152
 msgid "Folder"
 msgstr "תיקייה"
 
-#: ../src/desktop-ui.c:51
-#: ../src/main-win-ui.c:153
+#: ../src/desktop-ui.c:51 ../src/main-win-ui.c:153
 msgid "Blank FIle"
 msgstr "קובץ ריק"
 
-#: ../src/desktop-ui.c:63
-#: ../src/main-win-ui.c:177
+#: ../src/desktop-ui.c:63 ../src/main-win-ui.c:177
 msgid "By _Name"
 msgstr "לפי _שם"
 
-#: ../src/desktop-ui.c:64
-#: ../src/main-win-ui.c:178
+#: ../src/desktop-ui.c:64 ../src/main-win-ui.c:178
 msgid "By _Modification Time"
 msgstr "לפי מועד ה_שינוי האחרון"
 
-#: ../src/desktop-ui.c:79
-#: ../src/main-win-ui.c:194
+#: ../src/desktop-ui.c:79 ../src/main-win-ui.c:194
 msgid "Open in New Tab"
 msgstr "פתיחה בלשונית חדשה"
 
-#: ../src/desktop-ui.c:80
-#: ../src/main-win-ui.c:195
+#: ../src/desktop-ui.c:80 ../src/main-win-ui.c:195
 msgid "Open in New Window"
 msgstr "פתיחה בחלון חדש"
 
@@ -403,25 +392,27 @@ msgstr "תצוגה _קומפקטית"
 msgid "Detailed _List View"
 msgstr "תצוגת רשימה מ_פורטת"
 
-#: ../src/main-win.c:780
+#: ../src/main-win.c:782
 #, c-format
 msgid "Free space: %s (Total: %s )"
 msgstr "מקום פנוי: %s (סך הכל: %s )"
 
-#: ../src/main-win.c:1015
+#: ../src/main-win.c:1030
 msgid "Create New..."
 msgstr "יצירת חדש..."
 
-#: ../src/main-win.c:1015
+#: ../src/main-win.c:1030
 msgid "Enter a name for the newly created file:"
 msgstr "יש להזין שם עבור הקובץ החדש שנוצר:"
 
-#: ../src/main-win.c:1015
+#: ../src/main-win.c:1030
 msgid "New"
 msgstr "חדש"
 
 #: ../src/pcmanfm.c:67
-msgid "Open folders in new tabs of the last used window instead of creating new windows"
+msgid ""
+"Open folders in new tabs of the last used window instead of creating new "
+"windows"
 msgstr "פתיחת תיקיות בלשוניות חדשות בתוך החלון הפעיל במקום בחלונות חדשים"
 
 #: ../src/pcmanfm.c:68
@@ -453,8 +444,11 @@ msgid "<image file>"
 msgstr "<קובץ תמונה>"
 
 #: ../src/pcmanfm.c:74
-msgid "Open preference dialog. 'n' is the number of page you want to show (1, 2, 3...)."
-msgstr "פתיחת תיבת דו־שיח ההעדפות. 'n' יהיה מספר העמודים המבוקש להצגה (1, 2, 3...)."
+msgid ""
+"Open preference dialog. 'n' is the number of page you want to show (1, 2, "
+"3...)."
+msgstr ""
+"פתיחת תיבת דו־שיח ההעדפות. 'n' יהיה מספר העמודים המבוקש להצגה (1, 2, 3...)."
 
 #: ../src/pcmanfm.c:75
 msgid "Open Find Files utility"
@@ -476,6 +470,7 @@ msgstr "[FILE1, FILE2,...]"
 #~ "הסמל נלקח מערכת הסמלים \"nuoveXT 2‏\"\n"
 #~ "שנוצרה על ידי Alexandre Moore ‏(saki)‏.\n"
 #~ "http://www.gnome-look.org/content/show.php/nuoveXT+2?content=56625"
+
 #~ msgid ""
 #~ "洪任諭 Hong Jen Yee <pcman.tw@gmail.com>\n"
 #~ "\n"
@@ -502,102 +497,150 @@ msgstr "[FILE1, FILE2,...]"
 #~ "     * gnome-vfs: David Zeuthen\n"
 #~ "     * thunar-vfs and libexo: Benedikt Meurer\n"
 #~ "     * gnome-mount: David Zeuthen"
+
 #~ msgid "Choose an Application"
 #~ msgstr "בחירת יישום"
+
 #~ msgid "File Type To be Opened:"
 #~ msgstr "סוג קובץ לפתיחה:"
+
 #~ msgid "Opened in Terminal"
 #~ msgstr "פתיחה במסוף"
+
 #~ msgid ""
 #~ "Please choose an application from following lists or enter the command "
 #~ "line by hand:"
 #~ msgstr "נא לבחור יישום מהרשימות האלו או להזין לשורת הפקודה ידנית:"
+
 #~ msgid "Set selected application to default action"
 #~ msgstr "הגדרת היישום הנבחר לפעולת ברירת מחדל"
+
 #~ msgid "_Browse"
 #~ msgstr "_עיון"
+
 #~ msgid "_Command Line:"
 #~ msgstr "שורת _פקודה:"
+
 #~ msgid "_Recommended Applications"
 #~ msgstr "יי_שומים מומלצים"
+
 #~ msgid "Actions Showed in Popup Menus"
 #~ msgstr "פעולות המופיעות בתפריטים מוקפצים"
+
 #~ msgid "Add _Application"
 #~ msgstr "הו_ספת יישום"
+
 #~ msgid "Add _Custom Action"
 #~ msgstr "הוספת פעולה א_חרת"
+
 #~ msgid "File Associations"
 #~ msgstr "שיוכי קבצים"
+
 #~ msgid "Known File Types:"
 #~ msgstr "סוגי קבצים מוכרים:"
+
 #~ msgid "Move _Down"
 #~ msgstr "העברה מ_טה"
+
 #~ msgid "Move _Up"
 #~ msgstr "העברה מ_עלה"
+
 #~ msgid "<b>Processing:</b>"
 #~ msgstr "<b>בתהליכי עיבוד:</b>"
+
 #~ msgid "<b>Progress:</b>"
 #~ msgstr "<b>התקדמות:</b>"
+
 #~ msgid "Preparing..."
 #~ msgstr "בתהליכי הכנה..."
+
 #~ msgid "<b>File Type:</b>"
 #~ msgstr "<b>סוג הקובץ:</b>"
+
 #~ msgid "<b>File _Name:</b>"
 #~ msgstr "<b>שם ה_קובץ:</b>"
+
 #~ msgid "<b>Group:</b>"
 #~ msgstr "<b>קבוצה:</b>"
+
 #~ msgid "<b>Last Access:</b>"
 #~ msgstr "<b>גישה אחרונה:</b>"
+
 #~ msgid "<b>Last Modification:</b>"
 #~ msgstr "<b>שינוי אחרון:</b>"
+
 #~ msgid "<b>Location:</b>"
 #~ msgstr "<b>מיקום:</b>"
+
 #~ msgid "<b>Open _with:</b>"
 #~ msgstr "<b>פתיחה _באמצעות:</b>"
+
 #~ msgid "<b>Other Users:</b>"
 #~ msgstr "<b>משתמשים אחרים:</b>"
+
 #~ msgid "<b>Owner:</b>"
 #~ msgstr "<b>בעלים:</b>"
+
 #~ msgid "<b>Size on Disk:</b>"
 #~ msgstr "<b>גודל על הכונן:</b>"
+
 #~ msgid "<b>Total Size of Files:</b>"
 #~ msgstr "<b>סך גודל הקבצים:</b>"
+
 #~ msgid "<b>_Group:</b>"
 #~ msgstr "<b>_קבוצה:</b>"
+
 #~ msgid "<b>_Owner:</b>"
 #~ msgstr "<b>_בעלים:</b>"
+
 #~ msgid "Execute"
 #~ msgstr "הרצה"
+
 #~ msgid "File Properties"
 #~ msgstr "מאפייני קובץ"
+
 #~ msgid "Read"
 #~ msgstr "קריאה"
+
 #~ msgid "Set GID"
 #~ msgstr "הגדרת מזהה הקבוצה (GID)"
+
 #~ msgid "Set UID"
 #~ msgstr "הגדרת מזהה המשתמש (UID)"
+
 #~ msgid "Sticky"
 #~ msgstr "דביק"
+
 #~ msgid "Write"
 #~ msgstr "כתיבה"
+
 #~ msgid "_Permissions"
 #~ msgstr "ה_רשאות"
+
 #~ msgid "<b>File Content</b>"
 #~ msgstr "<b>תוכן הקובץ</b>"
+
 #~ msgid "<b>File Name Contains:</b>"
 #~ msgstr "<b>שם הקובץ מכיל:</b>"
+
 #~ msgid "<b>File Size</b>"
 #~ msgstr "<b>גודל הקובץ</b>"
+
 #~ msgid "<b>File Types to Search</b>"
 #~ msgstr "<b>סוגי הקבצים לחיפוש</b>"
+
 #~ msgid "<b>Last Modified</b>"
 #~ msgstr "<b>שינוי אחרון</b>"
+
 #~ msgid "<b>Places to Search</b>"
 #~ msgstr "<b>מיקומים לחיפוש</b>"
+
 #~ msgid "<b>Search Result:</b>"
 #~ msgstr "<b>תוצאות החיפוש:</b>"
+
 #~ msgid "All Files and Folders"
 #~ msgstr "כל הקבצים והתיקיות"
+
 #~ msgid ""
 #~ "Any\n"
 #~ "Within One Day\n"
@@ -612,8 +655,10 @@ msgstr "[FILE1, FILE2,...]"
 #~ "בחודש האחרון\n"
 #~ "בשנה האחרונה\n"
 #~ "בטווח התאריכים הנבחר"
+
 #~ msgid "Audio Files (mp3, ogg,...)"
 #~ msgstr "קובצי שמע (mp3, ogg,...)"
+
 #~ msgid ""
 #~ "Bytes\n"
 #~ "KB\n"
@@ -624,50 +669,73 @@ msgstr "[FILE1, FILE2,...]"
 #~ "ק\"ב\n"
 #~ "מ\"ב\n"
 #~ "ג\"ב"
+
 #~ msgid "Case Sensitive"
 #~ msgstr "תלוי רישיות"
+
 #~ msgid "Content"
 #~ msgstr "תוכן"
+
 #~ msgid "File Contains:"
 #~ msgstr "הקובץ מכיל:"
+
 #~ msgid "General"
 #~ msgstr "כללי"
+
 #~ msgid "Greater Than:"
 #~ msgstr "גדולים מ־:"
+
 #~ msgid "Image Files (jpg, png,...)"
 #~ msgstr "קובצי תמונה (jpg, png,...)"
+
 #~ msgid "Plain Text Files"
 #~ msgstr "קובצי _טקסט פשוטים"
+
 #~ msgid "Search Again"
 #~ msgstr "חיפוש חוזר"
+
 #~ msgid "Search Hidden Files"
 #~ msgstr "חיפוש אחר קבצים מוסתרים"
+
 #~ msgid "Search in Sub Directories"
 #~ msgstr "חיפוש בתת־תיקיות"
+
 #~ msgid "Size & Date"
 #~ msgstr "גודל ותאריך"
+
 #~ msgid "Smaller Than:"
 #~ msgstr "קטנים מ־:"
+
 #~ msgid "Use Regular Expression"
 #~ msgstr "שימוש בביטוי רגולארי"
+
 #~ msgid "Video Files (avi, mpg,...)"
 #~ msgstr "קובצי וידאו (avi, mpg,...)"
+
 #~ msgid "Go to folder"
 #~ msgstr "מעבר לתיקייה"
+
 #~ msgid "<b>Colors</b>"
 #~ msgstr "<b>צבעים</b>"
+
 #~ msgid "<b>Wallpaper</b>"
 #~ msgstr "<b>רקע שולחן העבודה</b>"
+
 #~ msgid "Disable \"Trash Can\" and delete files from disk directly"
 #~ msgstr "ביטול \"סל המיחזור\" ומחיקת הקבצים מהכונן ישירות"
+
 #~ msgid "I_nterface"
 #~ msgstr "מ_נשק"
+
 #~ msgid "Manage the desktop and show file icons"
 #~ msgstr "ניהול שולחן העבודה והצגת סמלי הקבצים"
+
 #~ msgid "Mode:"
 #~ msgstr "מצב:"
+
 #~ msgid "On-disk file name encoding:"
 #~ msgstr "קידוד שמות קבצים על הכונן:"
+
 #~ msgid ""
 #~ "Opened in Current Tab\n"
 #~ "Opened in New Tab\n"
@@ -676,8 +744,10 @@ msgstr "[FILE1, FILE2,...]"
 #~ "פתיחה בלשונית הנוכחית\n"
 #~ "פתיחה בלשונית חדשה\n"
 #~ "פתיחה בחלון חדש"
+
 #~ msgid "Shadow:"
 #~ msgstr "צללית:"
+
 #~ msgid ""
 #~ "Stretch to fill the entire screen\n"
 #~ "Stretch to fit the screen\n"
@@ -688,114 +758,167 @@ msgstr "[FILE1, FILE2,...]"
 #~ "מתיחה להתאמה לגודל המסך\n"
 #~ "מירכוז במסך\n"
 #~ "פריסת התמונה למילוי המסך כולו"
+
 #~ msgid "Text:"
 #~ msgstr "טקסט:"
+
 #~ msgid "_Desktop"
 #~ msgstr "_שולחן עבודה"
+
 #~ msgid "Column Spacing"
 #~ msgstr "ריווח עמודות"
+
 #~ msgid "Space which is inserted between grid column"
 #~ msgstr "רווח הנוסף בין עמודות הטבלה"
+
 #~ msgid "Number of columns"
 #~ msgstr "מספר העמודות"
+
 #~ msgid "Number of columns to display"
 #~ msgstr "מספר העמודות להצגה"
+
 #~ msgid "Enable Search"
 #~ msgstr "הפעלת החיפוש"
+
 #~ msgid "View allows user to search through columns interactively"
 #~ msgstr "מצב הצפייה מאפשר למשתמש לחפש בין העמודות בצורה אינטרקטיבית"
+
 #~ msgid "Width for each item"
 #~ msgstr "רוחב עבור כל פריט"
+
 #~ msgid "The width used for each item"
 #~ msgstr "הרוחב בו נעשה שימוש לכל פריט"
+
 #~ msgid "Layout mode"
 #~ msgstr "מצב פריסה"
+
 #~ msgid "The layout mode"
 #~ msgstr "מצב הפריסה"
+
 #~ msgid "Margin"
 #~ msgstr "גבול חיצוני"
+
 #~ msgid "Space which is inserted at the edges of the icon view"
 #~ msgstr "הרווח שנוסף בקצוות תצוגת הסמל"
+
 #~ msgid "Markup column"
 #~ msgstr "עמודת סימון"
+
 #~ msgid "Model column used to retrieve the text if using Pango markup"
 #~ msgstr "עמודת דגם המשמשת לאיחזור הטקסט במידה שנעשה שימוש בסימון Pango"
+
 #~ msgid "The model for the icon view"
 #~ msgstr "הדגם עבור תצוגת הסמלים"
+
 #~ msgid "Orientation"
 #~ msgstr "כיוון"
+
 #~ msgid ""
 #~ "How the text and icon of each item are positioned relative to each other"
 #~ msgstr "כיצד הטקסט והסמל של כל פריט ימוקמו אחד ביחס לשני"
+
 #~ msgid "Pixbuf column"
 #~ msgstr "עמודת Pixbuf"
+
 #~ msgid "Model column used to retrieve the icon pixbuf from"
 #~ msgstr "עמודת דגם המיועדת לאחזור ה־Pixbuf של הסמל"
+
 #~ msgid "Reorderable"
 #~ msgstr "לסידור משתנה"
+
 #~ msgid "View is reorderable"
 #~ msgstr "התצוגה ניתנת לסידור מחדש"
+
 #~ msgid "Row Spacing"
 #~ msgstr "ריווח בין השורות"
+
 #~ msgid "Space which is inserted between grid rows"
 #~ msgstr "הרווח שנוסף בין שורות הטבלה"
+
 #~ msgid "Search Column"
 #~ msgstr "עמודת חיפוש"
+
 #~ msgid "Model column to search through when searching through item"
 #~ msgstr "עמודת דגם המשמשת לחיפוש בעת חיפוש אחר פריט"
+
 #~ msgid "Selection mode"
 #~ msgstr "מצב בחירה"
+
 #~ msgid "The selection mode"
 #~ msgstr "מצב הבחירה"
+
 #~ msgid "Single Click"
 #~ msgstr "לחיצה בודדת"
+
 #~ msgid "Whether the items in the view can be activated with single clicks"
 #~ msgstr "האם ניתן יהיה להפעיל את הפריטים שבתצוגה באמצעות לחיצה בודדת"
+
 #~ msgid "Single Click Timeout"
 #~ msgstr "תפוגת זמן ללחיצה בודדת"
+
 #~ msgid ""
 #~ "The amount of time after which the item under the mouse cursor will be "
 #~ "selected automatically in single click mode"
 #~ msgstr ""
 #~ "משך הזמן שלאחריו הפריט תחת סמן העכבר ייבחר אוטומטית במצב לחיצה בודדת"
+
 #~ msgid "Spacing"
 #~ msgstr "ריווח"
+
 #~ msgid "Space which is inserted between cells of an item"
 #~ msgstr "הרווח שנוסף בין תאים של פריט"
+
 #~ msgid "Text column"
 #~ msgstr "עמודת טקסט"
+
 #~ msgid "Model column used to retrieve the text from"
 #~ msgstr "עמודת דגם שממנה יאוחזר הטקסט"
+
 #~ msgid "Selection Box Color"
 #~ msgstr "צבע תיבת הבחירה"
+
 #~ msgid "Color of the selection box"
 #~ msgstr "הצבע של תיבת הבחירה"
+
 #~ msgid "Selection Box Alpha"
 #~ msgstr "אטימות תיבת הבחירה"
+
 #~ msgid "Opacity of the selection box"
 #~ msgstr "אטימות צבע תיבת הבחירה"
+
 #~ msgid "audio"
 #~ msgstr "שמע"
+
 #~ msgid "video"
 #~ msgstr "וידאו"
+
 #~ msgid "text"
 #~ msgstr "טקסט"
+
 #~ msgid "multipart"
 #~ msgstr "מרובה חלקים"
+
 #~ msgid "image"
 #~ msgstr "תמונה"
+
 #~ msgid "message"
 #~ msgstr "הודעה"
+
 #~ msgid "model"
 #~ msgstr "דגם"
+
 #~ msgid "inode"
 #~ msgstr "inode"
+
 #~ msgid "packages"
 #~ msgstr "חבילות"
+
 #~ msgid "Find Files with PCManFM"
 #~ msgstr "מציאת קבצים באמצעות PCManFM"
+
 #~ msgid "GTK+ icon theme is not properly set"
 #~ msgstr "ערכת הסמלים של GTK+ לא הוגדרה כראוי"
+
 #~ msgid ""
 #~ "<big><b>%s</b></big>\n"
 #~ "\n"
@@ -833,8 +956,10 @@ msgstr "[FILE1, FILE2,...]"
 #~ "יהיה להציגה כראוי.</b>  עקב ההבדלים בין שמות הסמלים של GNOME ושל KDE, לא "
 #~ "ניתן להשתמש בערכות נושא של KDE.  לעת עתה נושא זה אינו מתוקנן עדיין, אך "
 #~ "הוא יפתר על ידי freedesktop.org בעתיד."
+
 #~ msgid "Error"
 #~ msgstr "שגיאה"
+
 #~ msgid ""
 #~ "Error: Unable to establish connection with FAM.\n"
 #~ "\n"
@@ -843,10 +968,13 @@ msgstr "[FILE1, FILE2,...]"
 #~ "שגיאה: לא ניתן לקיים את החיבור אל FAM.\n"
 #~ "\n"
 #~ "האם יש ברשותך \"FAM\" או \"Gamin\" מותקן ופעיל?"
+
 #~ msgid "File doesn't exist"
 #~ msgstr "הקובץ אינו קיים"
+
 #~ msgid "Don't know how to open the file"
 #~ msgstr "המידע הדרוש לפתיחת הקובץ חסר או לקוי"
+
 #~ msgid ""
 #~ "Unable to open file:\n"
 #~ "\"%s\"\n"
@@ -855,156 +983,229 @@ msgstr "[FILE1, FILE2,...]"
 #~ "לא ניתן לפתוח את הקובץ:\n"
 #~ "\"%s\"\n"
 #~ "%s"
+
 #~ msgid "_Folder"
 #~ msgstr "_תיקייה"
+
 #~ msgid "File _Properties"
 #~ msgstr "_מאפייני קובץ"
+
 #~ msgid "_Delete"
 #~ msgstr "_מחיקה"
+
 #~ msgid "_Rename"
 #~ msgstr "_שינוי שם"
+
 #~ msgid "Select _All"
 #~ msgstr "בחר ה_כל"
+
 #~ msgid "Go _Back"
 #~ msgstr "מעבר _אחורה"
+
 #~ msgid "Go _Forward"
 #~ msgstr "מעבר _קדימה"
+
 #~ msgid "Go _Home"
 #~ msgstr "מעבר לתיקיית ה_בית"
+
 #~ msgid "Sort by _Size"
 #~ msgstr "מיון לפי _גודל"
+
 #~ msgid "Sort by _Type"
 #~ msgstr "מיון לפי _שם"
+
 #~ msgid "Sort by _Permission"
 #~ msgstr "מיון לפי _הרשאות"
+
 #~ msgid "Sort by _Owner"
 #~ msgstr "מיון לפי _בעלים"
+
 #~ msgid "Ascending"
 #~ msgstr "סדר עולה"
+
 #~ msgid "Descending"
 #~ msgstr "סדר יורד"
+
 #~ msgid "_Open Side Pane"
 #~ msgstr "_פתיחת חלונית צד"
+
 #~ msgid "Show _Location Pane"
 #~ msgstr "הצגת חלונית ה_מיקומים"
+
 #~ msgid "Show _Directory Tree"
 #~ msgstr "הצגת _עץ התיקיות"
+
 #~ msgid "_Refresh"
 #~ msgstr "_רענון"
+
 #~ msgid "Side _Pane"
 #~ msgstr "חלונית _צד"
+
 #~ msgid "L_ocation Bar"
 #~ msgstr "סרגל ה_מיקום"
+
 #~ msgid "_Sort..."
 #~ msgstr "_מיון..."
+
 #~ msgid "View as _Icons"
 #~ msgstr "הצגה כ_סמלים"
+
 #~ msgid "View as _Compact List"
 #~ msgstr "הצגה כרשימה _מצומצמת"
+
 #~ msgid "Open _Terminal"
 #~ msgstr "פתיחת _מסוף"
+
 #~ msgid "Open Current Folder as _Root"
 #~ msgstr "פתיחת התיקייה הנוכחית כמשתמש _על"
+
 #~ msgid "_Find Files"
 #~ msgstr "חיפוש _קבצים"
+
 #~ msgid "_Tool"
 #~ msgstr "_כלים"
+
 #~ msgid "Back"
 #~ msgstr "אחורה"
+
 #~ msgid "Forward"
 #~ msgstr "קדימה"
+
 #~ msgid "Refresh"
 #~ msgstr "רענון"
+
 #~ msgid "Home Directory"
 #~ msgstr "תיקיית הבית"
+
 #~ msgid "Open Side Pane"
 #~ msgstr "פתיחת חלונית הצד"
+
 #~ msgid "Go"
 #~ msgstr "מעבר"
+
 #~ msgid "Warning: You are in super user mode"
 #~ msgstr "אזהרה: המצב הנוכחי הוא מצב משתמש על"
+
 #~ msgid "Terminal program has not been set"
 #~ msgstr "לא הוגדר יישום מסוף"
+
 #~ msgid "_Edit Bookmarks"
 #~ msgstr "_עריכת סימניות"
+
 #~ msgid "Loading..."
 #~ msgstr "בהליכי טעינה..."
+
 #~ msgid "%d item selected (%s)%s"
 #~ msgid_plural "%d items selected (%s)%s"
 #~ msgstr[0] "נבחר פריט אחד ‎(%s)%s"
 #~ msgstr[1] "%d פריטים נבחרו ‎(%s)%s"
+
 #~ msgid "%d hidden"
 #~ msgid_plural "%d hidden"
 #~ msgstr[0] "אחד מוסתר"
 #~ msgstr[1] "%d מוסתרים"
+
 #~ msgid "%d visible item (%s)%s"
 #~ msgid_plural "%d visible items (%s)%s"
 #~ msgstr[0] "פריט גלוי אחד ‎(%s)%s"
 #~ msgstr[1] "%d פריטים גלויים ‎(%s)%s"
+
 #~ msgid "Directory doesn't exist!"
 #~ msgstr "התיקייה אינה קיימת!"
+
 #~ msgid "Name"
 #~ msgstr "שם"
+
 #~ msgid "Size"
 #~ msgstr "גודל"
+
 #~ msgid "Type"
 #~ msgstr "סוג"
+
 #~ msgid "Permission"
 #~ msgstr "הרשאות"
+
 #~ msgid "Owner:Group"
 #~ msgstr "בעלים:קבוצה"
+
 #~ msgid "Last Modification"
 #~ msgstr "שינוי אחרון"
+
 #~ msgid "Location"
 #~ msgstr "מיקום"
+
 #~ msgid "Directory Tree"
 #~ msgstr "עץ תיקיות"
+
 #~ msgid "Unable to mount device"
 #~ msgstr "לא ניתן לעגן את ההתקן"
+
 #~ msgid "Unable to unmount device"
 #~ msgstr "לא ניתן לנתק את ההתקן"
+
 #~ msgid "Unable to eject device"
 #~ msgstr "לא ניתן לשלוף את ההתקן"
+
 #~ msgid "_Mount File System"
 #~ msgstr "_עיגון מערכת הקבצים"
+
 #~ msgid "_Eject"
 #~ msgstr "_שליפה"
+
 #~ msgid "_Unmount File System"
 #~ msgstr "_ניתוק מערכת הקבצים"
+
 #~ msgid "Move: "
 #~ msgstr "העברה: "
+
 #~ msgid "Copy: "
 #~ msgstr "העתקה: "
+
 #~ msgid "Move to Trash: "
 #~ msgstr "העברה לאשפה: "
+
 #~ msgid "Delete: "
 #~ msgstr "מחיקה: "
+
 #~ msgid "Link: "
 #~ msgstr "קישור: "
+
 #~ msgid "Change Properties: "
 #~ msgstr "שינוי מאפיינים: "
+
 #~ msgid "Moving to Trash..."
 #~ msgstr "בהליכי העברה אל האשפה..."
+
 #~ msgid "Deleting..."
 #~ msgstr "בהליכי מחיקה..."
+
 #~ msgid "Linking..."
 #~ msgstr "בהליכי קישור..."
+
 #~ msgid "Changing Properties"
 #~ msgstr "שינוי המאפיינים"
+
 #~ msgid "To:"
 #~ msgstr "אל:"
+
 #~ msgid "Processing:"
 #~ msgstr "בתהליכי עיבוד:"
+
 #~ msgid "Progress:"
 #~ msgstr "התקדמות:"
+
 #~ msgid "Cancel the operation?"
 #~ msgstr "האם לבטל את הפעולה?"
+
 #~ msgid "Do you want to overwrite the folder and its content?"
 #~ msgstr "האם לשכתב על התיקייה ועל תוכנה?"
+
 #~ msgid "Do you want to overwrite this file?"
 #~ msgstr "האם לשכתב את הקובץ?"
+
 #~ msgid "Please choose a new file name."
 #~ msgstr "נא לבחור שם חדש לקובץ."
+
 #~ msgid ""
 #~ "\"%s\" already exists.\n"
 #~ "\n"
@@ -1013,6 +1214,7 @@ msgstr "[FILE1, FILE2,...]"
 #~ "\"%s\" כבר קיים.\n"
 #~ "\n"
 #~ "%s"
+
 #~ msgid ""
 #~ "\"%s\"\n"
 #~ "\n"
@@ -1025,243 +1227,352 @@ msgstr "[FILE1, FILE2,...]"
 #~ "קובץ היעד וקובץ המקור הינם אותו הקובץ.\n"
 #~ "\n"
 #~ "%s"
+
 #~ msgid "Overwrite"
 #~ msgstr "שכתוב"
+
 #~ msgid "Overwrite All"
 #~ msgstr "שכתוב הכול"
+
 #~ msgid "Skip"
 #~ msgstr "דילוג"
+
 #~ msgid "Skip All"
 #~ msgstr "דילוג על הכול"
+
 #~ msgid "Save Compressed Files to..."
 #~ msgstr "שמירת קבצים דחוסים אל..."
+
 #~ msgid "Format of compressed File:"
 #~ msgstr "סוג הקובץ הדחוס:"
+
 #~ msgid "Creating Compressed File: %s"
 #~ msgstr "הקובץ הדחוס נוצר: %s"
+
 #~ msgid "Compress Files"
 #~ msgstr "דחיסת קבצים"
+
 #~ msgid "Extract File to..."
 #~ msgstr "חילוץ קבצים אל..."
+
 #~ msgid "Extracting Files to: %s"
 #~ msgstr "חילוץ הקבצים מתבצע אל: %s"
+
 #~ msgid "Extract Files"
 #~ msgstr "חילוץ קבצים"
+
 #~ msgid ""
 #~ "\n"
 #~ "Complete!"
 #~ msgstr ""
 #~ "\n"
 #~ "הושלם!"
+
 #~ msgid "Command:"
 #~ msgstr "פקודה:"
+
 #~ msgid "File System"
 #~ msgstr "מערכת קבצים"
+
 #~ msgid "No Sub Folder"
 #~ msgstr "אין תת־תיקייה"
+
 #~ msgid "E_xtract Here"
 #~ msgstr "חי_לוץ לכאן"
+
 #~ msgid "Extract _To"
 #~ msgstr "חילוץ _אל"
+
 #~ msgid "Open _with..."
 #~ msgstr "פתיחה _באמצעות..."
+
 #~ msgid "Compress"
 #~ msgstr "דחיסה"
+
 #~ msgid "E_xtract"
 #~ msgstr "חי_לוץ"
+
 #~ msgid "_Properties"
 #~ msgstr "_מאפיינים"
+
 #~ msgid "Open in Terminal"
 #~ msgstr "פתיחה במסוף"
+
 #~ msgid "_Open with another program"
 #~ msgstr "_פתיחה באמצעות יישום אחר"
+
 #~ msgid "E_xecute"
 #~ msgstr "הר_צה"
+
 #~ msgid "_Open with \"%s\""
 #~ msgstr "_פתיחה באמצעות \"%s\""
+
 #~ msgid "_Open"
 #~ msgstr "_פתיחה"
+
 #~ msgid "Really delete selected files?"
 #~ msgstr "האם באמת למחוק את הקבצים הנבחרים?"
+
 #~ msgid "Rename File"
 #~ msgstr "שינוי שם לקובץ"
+
 #~ msgid "Please input new file name:"
 #~ msgstr "נא להכניס את שם הקובץ החדש:"
+
 #~ msgid ""
 #~ "The file name you specified already exists.\n"
 #~ "Please input a new one:"
 #~ msgstr ""
 #~ "השם שהוזן כבר קיים.\n"
 #~ "נא להכניס שם חדש:"
+
 #~ msgid "Input a name for the new folder:"
 #~ msgstr "נא להכניס שם עבור התיקייה החדשה:"
+
 #~ msgid "New File"
 #~ msgstr "קובץ חדש"
+
 #~ msgid "The new file cannot be created!"
 #~ msgstr "לא ניתן ליצור את הקובץ החדש!"
+
 #~ msgid "Multiple files are selected"
 #~ msgstr "קבצים רבים נבחרו"
+
 #~ msgid "Multiple files of different types"
 #~ msgstr "קבצים רבים מסוגים שונים"
+
 #~ msgid "Other program..."
 #~ msgstr "תוכנה אחרת..."
+
 #~ msgid "Calculating..."
 #~ msgstr "בהליכי חישוב..."
+
 #~ msgid "Invalid User"
 #~ msgstr "משתמש לא תקין"
+
 #~ msgid "Invalid Group"
 #~ msgstr "קבוצה לא תקינה"
+
 #~ msgid ""
 #~ "Do you want to recursively apply these changes to all files and sub-"
 #~ "folders?"
 #~ msgstr "האם להחל שינוים אלה על כל הקבצים ותת־התיקיות באופן נסוג?"
+
 #~ msgid "New Item"
 #~ msgstr "פריט חדש"
+
 #~ msgid "Edit Bookmarks"
 #~ msgstr "עריכת סימניות"
+
 #~ msgid "Path"
 #~ msgstr "נתיב"
+
 #~ msgid "Use drag & drop to sort the items"
 #~ msgstr "ניתן לגרור ולשחרר פריטים כדי לסדר אותם"
+
 #~ msgid "Command not found"
 #~ msgstr "הפקודה לא נמצאה"
+
 #~ msgid "Destination directory \"%1$s\" is contained in source \"%2$s\""
 #~ msgstr "תיקיית היעד \"%1$s\" מוכלת תחת המקור \"%2$s\""
+
 #~ msgid "%s Volume"
 #~ msgstr "כרך %s"
+
 #~ msgid "CD-ROM"
 #~ msgstr "CD-ROM"
+
 #~ msgid "CD-R"
 #~ msgstr "CD-R"
+
 #~ msgid "CD-RW"
 #~ msgstr "CD-RW"
+
 #~ msgid "DVD-ROM"
 #~ msgstr "DVD-ROM"
+
 #~ msgid "DVD+R"
 #~ msgstr "DVD+R"
+
 #~ msgid "DVD+RW"
 #~ msgstr "DVD+RW"
+
 #~ msgid "DVD-R"
 #~ msgstr "DVD-R"
+
 #~ msgid "DVD-RW"
 #~ msgstr "DVD-RW"
+
 #~ msgid "DVD-RAM"
 #~ msgstr "DVD-RAM"
+
 #~ msgid "%s/%s Drive"
 #~ msgstr "%s/כונן %s"
+
 #~ msgid "%s Drive"
 #~ msgstr "כונן %s"
+
 #~ msgid "Floppy Drive"
 #~ msgstr "כונן דיסקטים"
+
 #~ msgid "Smart Media Drive"
 #~ msgstr "כונן Smart Media"
+
 #~ msgid "SD/MMC Drive"
 #~ msgstr "כונן SD/MMC"
+
 #~ msgid "Zip Drive"
 #~ msgstr "כונן Zip"
+
 #~ msgid "Jaz Drive"
 #~ msgstr "כונן Jaz"
+
 #~ msgid "Pen Drive"
 #~ msgstr "דיסק־און־קי"
+
 #~ msgid "%s %s Music Player"
 #~ msgstr "נגן מוזיקה ‏‎%s %s"
+
 #~ msgid "%s %s Digital Camera"
 #~ msgstr "מצלמה דיגיטלית ‎%s %s"
+
 #~ msgid "Drive"
 #~ msgstr "כונן"
+
 #~ msgid "External %s"
 #~ msgstr "%s חיצוני"
+
 #~ msgid "CD-ROM Disc"
 #~ msgstr "דיסק CD-ROM"
+
 #~ msgid "Blank CD-R Disc"
 #~ msgstr "דיסק CD-R ריק"
+
 #~ msgid "CD-R Disc"
 #~ msgstr "דיסק CD-R"
+
 #~ msgid "Blank CD-RW Disc"
 #~ msgstr "דיסק CD-RW ריק"
+
 #~ msgid "CD-RW Disc"
 #~ msgstr "דיסק CD-RW"
+
 #~ msgid "DVD-ROM Disc"
 #~ msgstr "דיסק DVD-ROM"
+
 #~ msgid "Blank DVD-RAM Disc"
 #~ msgstr "דיסק DVD-RAM ריק"
+
 #~ msgid "DVD-RAM Disc"
 #~ msgstr "דיסק DVD-RAM"
+
 #~ msgid "Blank DVD-R Disc"
 #~ msgstr "דיסק DVD-R ריק"
+
 #~ msgid "DVD-R Disc"
 #~ msgstr "דיסק DVD-R"
+
 #~ msgid "Blank DVD-RW Disc"
 #~ msgstr "דיסק DVD-RW ריק"
+
 #~ msgid "DVD-RW Disc"
 #~ msgstr "דיסק DVD-RW"
+
 #~ msgid "Blank DVD+R Disc"
 #~ msgstr "דיסק DVD+R ריק"
+
 #~ msgid "DVD+R Disc"
 #~ msgstr "דיסק DVD+R"
+
 #~ msgid "Blank DVD+RW Disc"
 #~ msgstr "דיסק DVD+RW ריק"
+
 #~ msgid "DVD+RW Disc"
 #~ msgstr "דיסק DVD+RW"
+
 #~ msgid "Audio Disc"
 #~ msgstr "דיסק שמע"
+
 #~ msgid "%s Removable Volume"
 #~ msgstr "כרך %s נתיק"
+
 #~ msgid "Volume"
 #~ msgstr "כרך"
+
 #~ msgid "Failed to connect to the HAL daemon: %s"
 #~ msgstr "ארע כשל בהתחברות אל מנגנון ה־HAL‏: %s"
+
 #~ msgid "Given device \"%s\" is not a volume or drive"
 #~ msgstr "ההתקן הנתון \"%s\" איננו כרך או כונן"
+
 #~ msgid "Device \"%s\" not found in file system device table"
 #~ msgstr "ההתקן \"%s\" לא נמצא בטבלת התקני מערכות קבצים"
+
 #~ msgid "You are not privileged to mount the volume \"%s\""
 #~ msgstr "אינך מורשה לחבר את הכרך \"%s\""
+
 #~ msgid "You are not privileged to unmount the volume \"%s\""
 #~ msgstr "אינך מורשה לנתק את הכרך \"%s\""
+
 #~ msgid "You are not privileged to eject the volume \"%s\""
 #~ msgstr "אינך מורשה לשלוף את הכרך \"%s\""
+
 #~ msgid "Invalid mount option when attempting to mount the volume \"%s\""
 #~ msgstr "אפשרות העגינה לא היתה תקנית בעת הנסיון לעגינת הכרך \"%s\""
+
 #~ msgid ""
 #~ "The volume \"%s\" uses the <i>%s</i> file system which is not supported "
 #~ "by your system"
 #~ msgstr ""
 #~ "הכרך \"%s\" משתמש במערכת הקבצים <i>%s</i> שאינה נתמכת על ידי המערכת שלך"
+
 #~ msgid "An application is preventing the volume \"%s\" from being unmounted"
 #~ msgstr "ישנו יישום המונע את ניתוק הכרך \"%s\""
+
 #~ msgid "The volume \"%s\" is not mounted"
 #~ msgstr "הכרך \"%s\" אינו מעוגן"
+
 #~ msgid "Error <i>%s</i>"
 #~ msgstr "שגיאה <i>%s</i>"
+
 #~ msgid "The volume \"%s\" was probably mounted manually on the command line"
 #~ msgstr "קרוב לוודאי שהכרך \"%s\" עוגן אוטומטית באמצעות שורת הפקודה"
+
 #~ msgid ""
 #~ "Blank discs cannot be mounted, use a CD recording application to record "
 #~ "audio or data on the disc"
 #~ msgstr ""
 #~ "לא ניתן לעגן דיסקים ריקים, יש להשתמש בתוכנת צריבה כדי לצרוב רצועות שמע או "
 #~ "נתונים על הדיסק"
+
 #~ msgid ""
 #~ "Audio CDs cannot be mounted, use music players to play the audio tracks"
 #~ msgstr ""
 #~ "לא ניתן לעגן תקליטורי שמע, יש להשתמש בנגני מוזיקה כדי לנגן את רצועות השמע"
+
 #~ msgid "_Icons"
 #~ msgstr "_סמלים"
+
 #~ msgid "_Desktop Settings"
 #~ msgstr "הגדרות _שולחן העבודה"
+
 #~ msgid "My Documents"
 #~ msgstr "המסמכים שלי"
+
 #~ msgid "Open Containing _Folder"
 #~ msgstr "פתיחת התיקייה ה_מכילה"
+
 #~ msgid "Select a folder"
 #~ msgstr "בחירת תיקייה"
+
 #~ msgid "Browse..."
 #~ msgstr "עיון..."
+
 #~ msgid "All Local Disk Partitions"
 #~ msgstr "כל המחיצות של הכונן המקומי"
+
 #~ msgid "Last Modified"
 #~ msgstr "שינוי אחרון"
+
 #~ msgid "Owner:"
 #~ msgstr "בעלים:"
-
