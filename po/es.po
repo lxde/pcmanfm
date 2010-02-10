@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm2 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-09 04:38+0000\n"
+"POT-Creation-Date: 2010-02-10 01:20+0100\n"
 "PO-Revision-Date: 2010-02-09 13:26-0500\n"
 "Last-Translator: Hugo Florentino <sysadmin@cips.cu>\n"
 "Language-Team: \n"
@@ -58,8 +58,7 @@ msgstr "Apariencia"
 msgid "Background color:"
 msgstr "Color de fondo:"
 
-#: ../data/ui/desktop-pref.glade.h:7
-#: ../data/ui/pref.glade.h:6
+#: ../data/ui/desktop-pref.glade.h:7 ../data/ui/pref.glade.h:6
 msgid "Center on the screen"
 msgstr "Centrar en la pantalla"
 
@@ -111,18 +110,15 @@ msgstr "Mostrar los iconos de volumenes en el escritorio"
 msgid "Show menus provided by WM when desktop is clicked"
 msgstr "Mostrar menús del gestor de ventanas al hacer clic en el escritorio"
 
-#: ../data/ui/desktop-pref.glade.h:20
-#: ../data/ui/pref.glade.h:22
+#: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:22
 msgid "Stretch to fill the entire screen"
 msgstr "Estirar para llenar toda la pantalla"
 
-#: ../data/ui/desktop-pref.glade.h:21
-#: ../data/ui/pref.glade.h:23
+#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:23
 msgid "Stretch to fit the screen"
 msgstr "Estirar para ajustarse a la pantalla"
 
-#: ../data/ui/desktop-pref.glade.h:22
-#: ../data/ui/pref.glade.h:25
+#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:25
 msgid "Tile the image to fill the entire screen"
 msgstr "Usar la imagen en mosaico para llenar la pantalla"
 
@@ -180,7 +176,9 @@ msgstr "Tamaño máximo de los archivos mostrados como miniaturas:"
 
 #: ../data/ui/pref.glade.h:13
 msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
-msgstr "Mover los archivos eliminados a \"Papelera\" en lugar de eliminarlos del disco"
+msgstr ""
+"Mover los archivos eliminados a \"Papelera\" en lugar de eliminarlos del "
+"disco"
 
 #: ../data/ui/pref.glade.h:14
 msgid "Open files with single click"
@@ -239,43 +237,36 @@ msgstr "_General"
 msgid "_Volume Management"
 msgstr "_Gestión de volúmenes"
 
-#: ../src/desktop-ui.c:47
-#: ../src/main-win-ui.c:128
+#: ../src/desktop-ui.c:47 ../src/main-win-ui.c:128
 msgid "Invert Selection"
 msgstr "Invertir selección"
 
-#: ../src/desktop-ui.c:48
-#: ../src/main-win-ui.c:131
+#: ../src/desktop-ui.c:48 ../src/main-win-ui.c:131
 msgid "_Sort Files"
 msgstr "_Ordenar archivos"
 
-#: ../src/desktop-ui.c:50
-#: ../src/main-win-ui.c:152
+#: ../src/desktop-ui.c:50 ../src/main-win-ui.c:152
 msgid "Folder"
 msgstr "Carpeta"
 
-#: ../src/desktop-ui.c:51
-#: ../src/main-win-ui.c:153
-msgid "Blank File"
+#: ../src/desktop-ui.c:51 ../src/main-win-ui.c:153
+#, fuzzy
+msgid "Blank FIle"
 msgstr "Archivo en blanco"
 
-#: ../src/desktop-ui.c:63
-#: ../src/main-win-ui.c:177
+#: ../src/desktop-ui.c:63 ../src/main-win-ui.c:177
 msgid "By _Name"
 msgstr "Por _nombre"
 
-#: ../src/desktop-ui.c:64
-#: ../src/main-win-ui.c:178
+#: ../src/desktop-ui.c:64 ../src/main-win-ui.c:178
 msgid "By _Modification Time"
 msgstr "Por fecha de _modificación"
 
-#: ../src/desktop-ui.c:79
-#: ../src/main-win-ui.c:194
+#: ../src/desktop-ui.c:79 ../src/main-win-ui.c:194
 msgid "Open in New Tab"
 msgstr "Abrir en una nueva pestaña"
 
-#: ../src/desktop-ui.c:80
-#: ../src/main-win-ui.c:195
+#: ../src/desktop-ui.c:80 ../src/main-win-ui.c:195
 msgid "Open in New Window"
 msgstr "Abrir en una nueva ventana"
 
@@ -403,26 +394,30 @@ msgstr "Vista _compacta"
 msgid "Detailed _List View"
 msgstr "Vista _detallada"
 
-#: ../src/main-win.c:780
+#: ../src/main-win.c:782
 #, c-format
 msgid "Free space: %s (Total: %s )"
 msgstr "Espacio libre %s (Total: %s )"
 
-#: ../src/main-win.c:1015
+#: ../src/main-win.c:1030
 msgid "Create New..."
 msgstr "Crear nuevo..."
 
-#: ../src/main-win.c:1015
+#: ../src/main-win.c:1030
 msgid "Enter a name for the newly created file:"
 msgstr "Introduzca un nombre para el archivo recién creado:"
 
-#: ../src/main-win.c:1015
+#: ../src/main-win.c:1030
 msgid "New"
 msgstr "Nuevo"
 
 #: ../src/pcmanfm.c:67
-msgid "Open folders in new tabs of the last used window instead of creating new windows"
-msgstr "Abrir las carpetas en nuevas pestañas de la ventana usada en lugar de crear nuevas ventanas"
+msgid ""
+"Open folders in new tabs of the last used window instead of creating new "
+"windows"
+msgstr ""
+"Abrir las carpetas en nuevas pestañas de la ventana usada en lugar de crear "
+"nuevas ventanas"
 
 #: ../src/pcmanfm.c:68
 msgid "Name of config profile"
@@ -453,8 +448,12 @@ msgid "<image file>"
 msgstr "<archivo de imagen>"
 
 #: ../src/pcmanfm.c:74
-msgid "Open preference dialog. 'n' is the number of page you want to show (1, 2, 3...)."
-msgstr "Abrir la pantalla de preferencias. 'n' es el número de páginas que desea mostrar (1, 2, 3...)."
+msgid ""
+"Open preference dialog. 'n' is the number of page you want to show (1, 2, "
+"3...)."
+msgstr ""
+"Abrir la pantalla de preferencias. 'n' es el número de páginas que desea "
+"mostrar (1, 2, 3...)."
 
 #: ../src/pcmanfm.c:75
 msgid "Open Find Files utility"
@@ -467,4 +466,3 @@ msgstr "Sin funcionalidad. Sólo para compatibilidad con nautilus"
 #: ../src/pcmanfm.c:77
 msgid "[FILE1, FILE2,...]"
 msgstr "[ARCHIVO1, ARCHIVO2, ...]"
-
