@@ -126,12 +126,15 @@ static void on_view_loaded( FmFolderView* view, FmPath* path, gpointer user_data
     FmIcon* icon;
     /* FIXME: we shouldn't access private data member directly. */
     fm_path_entry_set_model( win->location, path, view->model );
-    icon = FM_FOLDER_MODEL(view->model)->dir->dir_fi->icon;
-    if(icon)
+    if(FM_FOLDER_MODEL(view->model)->dir->dir_fi)
     {
-        icon->gicon;
-        /* FIXME: load icon. we need to change window icon when switching pages. */
-        gtk_window_set_icon_name(win, "folder");
+        icon = FM_FOLDER_MODEL(view->model)->dir->dir_fi->icon;
+        if(icon)
+        {
+            icon->gicon;
+            /* FIXME: load icon. we need to change window icon when switching pages. */
+            gtk_window_set_icon_name(win, "folder");
+        }
     }
     update_volume_info(win);
 }
