@@ -92,6 +92,8 @@ static void on_desktop_text_changed(FmConfig* cfg, gpointer user_data);
 static void on_desktop_font_changed(FmConfig* cfg, gpointer user_data);
 static void on_big_icon_size_changed(FmConfig* cfg, gpointer user_data);
 
+static void on_icon_theme_changed(GtkIconTheme* theme, gpointer user_data);
+
 static void on_row_inserted(GtkTreeModel* mod, GtkTreePath* tp, GtkTreeIter* it, FmDesktop* desktop);
 static void on_row_deleted(GtkTreeModel* mod, GtkTreePath* tp, FmDesktop* desktop);
 static void on_row_changed(GtkTreeModel* mod, GtkTreePath* tp, GtkTreeIter* it, FmDesktop* desktop);
@@ -128,6 +130,7 @@ static guint wallpaper_changed = 0;
 static guint desktop_text_changed = 0;
 static guint desktop_font_changed = 0;
 static guint big_icon_size_changed = 0;
+static guint icon_theme_changed = 0;
 
 static PangoFontDescription* font_desc = NULL;
 
@@ -352,6 +355,8 @@ void fm_desktop_manager_init()
     desktop_font_changed = g_signal_connect(app_config, "changed::desktop_font", G_CALLBACK(on_desktop_font_changed), NULL);
     big_icon_size_changed = g_signal_connect(app_config, "changed::big_icon_size", G_CALLBACK(on_big_icon_size_changed), NULL);
 
+    icon_theme_changed = g_signal_connect(gtk_icon_theme_get_default(), "changed", G_CALLBACK(on_icon_theme_changed), NULL);
+
     /* popup menu */
     ui = gtk_ui_manager_new();
     act_grp = gtk_action_group_new("Desktop");
@@ -398,6 +403,8 @@ void fm_desktop_manager_finalize()
     g_signal_handler_disconnect(app_config, desktop_text_changed);
     g_signal_handler_disconnect(app_config, desktop_font_changed);
     g_signal_handler_disconnect(app_config, big_icon_size_changed);
+
+    g_signal_handler_disconnect(gtk_icon_theme_get_default(), icon_theme_changed);
 
     gtk_widget_destroy(desktop_popup);
     desktop_popup = NULL;
@@ -1504,7 +1511,7 @@ void on_desktop_font_changed(FmConfig* cfg, gpointer user_data)
         font_desc = NULL;
 }
 
-void on_big_icon_size_changed(FmConfig* cfg, gpointer user_data)
+static void reload_icons()
 {
     int i;
     for(i=0; i < n_screens; ++i)
@@ -1523,6 +1530,16 @@ void on_big_icon_size_changed(FmConfig* cfg, gpointer user_data)
         }
         gtk_widget_queue_resize(desktop);
     }
+}
+
+void on_big_icon_size_changed(FmConfig* cfg, gpointer user_data)
+{
+    reload_icons();
+}
+
+void on_icon_theme_changed(GtkIconTheme* theme, gpointer user_data)
+{
+    reload_icons();
 }
 
 void on_paste(GtkAction* act, gpointer user_data)
