@@ -868,7 +868,7 @@ gint fm_main_win_add_tab(FmMainWin* win, FmPath* path)
     g_signal_connect(folder_view, "sel-changed", on_sel_changed, win);
 
     nh = fm_nav_history_new();
-    g_object_set_qdata_full((GObject*)folder_view, nav_history_id, win->nav_history, (GDestroyNotify)g_object_unref);
+    g_object_set_qdata_full((GObject*)folder_view, nav_history_id, nh, (GDestroyNotify)g_object_unref);
 
     fm_folder_view_chdir(folder_view, path);
     fm_nav_history_chdir(nh, path, 0);
