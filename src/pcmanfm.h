@@ -34,6 +34,8 @@ void pcmanfm_ref();
  */
 void pcmanfm_unref();
 
+gboolean pcmanfm_open_folder(GAppLaunchContext* ctx, GList* folder_infos, gpointer user_data, GError** err);
+
 G_END_DECLS
 
 #endif

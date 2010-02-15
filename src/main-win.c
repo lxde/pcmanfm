@@ -139,10 +139,19 @@ static void on_view_loaded( FmFolderView* view, FmPath* path, gpointer user_data
     update_volume_info(win);
 }
 
-static void open_folder_hook(FmFileInfo* fi, gpointer user_data)
+static gboolean open_folder_func(GAppLaunchContext* ctx, GList* folder_infos, gpointer user_data, GError** err)
 {
     FmMainWin* win = FM_MAIN_WIN(user_data);
+    GList* l = folder_infos;
+    FmFileInfo* fi = (FmFileInfo*)l->data;
     fm_main_win_chdir(win, fi->path);
+    l=l->next;
+    for(; l; l=l->next)
+    {
+        FmFileInfo* fi = (FmFileInfo*)l->data;
+        fm_main_win_add_tab(win, fi->path);
+    }
+    return TRUE;
 }
 
 static void on_file_clicked(FmFolderView* fv, FmFolderViewClickType type, FmFileInfo* fi, FmMainWin* win)
@@ -163,7 +172,7 @@ static void on_file_clicked(FmFolderView* fv, FmFolderViewClickType type, FmFile
         }
         else
         {
-            fm_launch_file(win, NULL, fi);
+            fm_launch_file_simple(win, NULL, fi, open_folder_func, win);
         }
         break;
     case FM_FV_CONTEXT_MENU:
@@ -173,7 +182,7 @@ static void on_file_clicked(FmFolderView* fv, FmFolderViewClickType type, FmFile
             GtkMenu* popup;
             FmFileInfoList* files = fm_folder_view_get_selected_files(fv);
             menu = fm_file_menu_new_for_files(files, TRUE);
-            fm_file_menu_set_folder_hook(menu, open_folder_hook, win);
+            fm_file_menu_set_folder_func(menu, open_folder_func, win);
             fm_list_unref(files);
 
             /* merge some specific menu items for folders */

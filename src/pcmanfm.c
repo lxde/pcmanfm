@@ -41,6 +41,7 @@
 #include "main-win.h"
 #include "desktop.h"
 #include "pref.h"
+#include "pcmanfm.h"
 
 static int sock;
 GIOChannel* io_channel = NULL;
@@ -413,7 +414,21 @@ gboolean pcmanfm_run()
     }
     else
     {
-        if(!files_to_open)
+        if(files_to_open)
+        {
+            char** filename;
+            FmJob* job = fm_file_info_job_new(NULL);
+            for(filename=files_to_open; *filename; ++filename)
+            {
+                FmPath* path = fm_path_new(*filename);
+                fm_file_info_job_add(job, path);
+                fm_path_unref(path);
+            }
+            fm_job_run_sync(job);
+            fm_launch_files_simple(NULL, NULL, FM_FILE_INFO_JOB(job)->file_infos, pcmanfm_open_folder, NULL);
+            g_object_unref(job);
+        }
+        else
         {
             FmPath* path;
             w = fm_main_win_new();
@@ -442,4 +457,16 @@ void pcmanfm_unref()
     /* g_debug("unref: %d, daemon_mode=%d, desktop_running=%d", n_pcmanfm_ref, daemon_mode, desktop_running); */
     if( 0 == n_pcmanfm_ref && !daemon_mode && !desktop_running )
         gtk_main_quit();
+}
+
+gboolean pcmanfm_open_folder(GAppLaunchContext* ctx, GList* folder_infos, gpointer user_data, GError** err)
+{
+    FmMainWin* win = FM_MAIN_WIN(user_data);
+    GList* l = folder_infos;
+    for(; l; l=l->next)
+    {
+        FmFileInfo* fi = (FmFileInfo*)l->data;
+        fm_main_win_open_in_last_active(fi->path);
+    }
+    return TRUE;
 }

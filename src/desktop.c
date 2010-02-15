@@ -422,11 +422,6 @@ void activate_selected_items(FmDesktop* desktop)
     g_list_free(items);
 }
 
-static void open_folder_hook(FmFileInfo* fi, gpointer user_data)
-{
-    fm_main_win_open_in_last_active(fi->path);
-}
-
 gboolean on_button_press( GtkWidget* w, GdkEventButton* evt )
 {
     FmDesktop* self = (FmDesktop*)w;
@@ -482,10 +477,7 @@ gboolean on_button_press( GtkWidget* w, GdkEventButton* evt )
             /* left single click */
             if( evt->button == 1 && fm_config->single_click && clicked_item->is_selected )
             {
-                if( fm_file_info_is_dir(clicked_item->fi) )
-                    fm_main_win_open_in_last_active(clicked_item->fi->path);
-                else
-                    fm_launch_file(w, NULL, clicked_item->fi);
+                fm_launch_file_simple(w, NULL, clicked_item->fi, pcmanfm_open_folder, NULL);
                 goto out;
             }
             if( evt->button == 3 )  /* right click, context menu */
@@ -506,7 +498,7 @@ gboolean on_button_press( GtkWidget* w, GdkEventButton* evt )
                 files = fm_desktop_get_selected_files(self);
                 fi = (FmFileInfo*)fm_list_peek_head(files);
                 menu = fm_file_menu_new_for_files(files, TRUE);
-                fm_file_menu_set_folder_hook(menu, open_folder_hook, NULL);
+                fm_file_menu_set_folder_func(menu, pcmanfm_open_folder, NULL);
                 fm_list_unref(files);
 
                 /* merge some specific menu items for folders */
@@ -549,10 +541,7 @@ gboolean on_button_press( GtkWidget* w, GdkEventButton* evt )
     {
         if( clicked_item && evt->button == 1)   /* left double click */
         {
-            if( fm_file_info_is_dir(clicked_item->fi) )
-                fm_main_win_open_in_last_active(clicked_item->fi->path);
-            else
-                fm_launch_file(w, NULL, clicked_item->fi);
+            fm_launch_file_simple(w, NULL, clicked_item->fi, pcmanfm_open_folder, NULL);
             goto out;
         }
     }
