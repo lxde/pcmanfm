@@ -125,6 +125,7 @@ static void on_view_loaded( FmFolderView* view, FmPath* path, gpointer user_data
     FmMainWin* win = FM_MAIN_WIN(user_data);
     FmIcon* icon;
     const FmNavHistoryItem* item;
+    FmNavHistory* nh;
 
     /* FIXME: we shouldn't access private data member directly. */
     fm_path_entry_set_model( win->location, path, view->model );
@@ -141,7 +142,8 @@ static void on_view_loaded( FmFolderView* view, FmPath* path, gpointer user_data
     update_volume_info(win);
 
     /* scroll to recorded position */
-    item = fm_nav_history_get_cur(win->nav_history);
+    nh = (FmNavHistory*)g_object_get_qdata(view, nav_history_id);
+    item = fm_nav_history_get_cur(nh);
     gtk_adjustment_set_value( gtk_scrolled_window_get_vadjustment(view), item->scroll_pos);
 }
 
@@ -327,6 +329,9 @@ static void on_history_item(GtkMenuItem* mi, FmMainWin* win)
     item = fm_nav_history_get_cur(win->nav_history);
     /* FIXME: should this be driven by a signal emitted on FmNavHistory? */
     fm_main_win_chdir_without_history(win, item->path);
+
+    /* scroll to recorded position */
+    gtk_adjustment_set_value( gtk_scrolled_window_get_vadjustment(win->folder_view), item->scroll_pos);
 }
 
 static void on_show_history_menu(GtkMenuToolButton* btn, FmMainWin* win)
@@ -620,6 +625,9 @@ void on_go_back(GtkAction* act, FmMainWin* win)
         item = fm_nav_history_get_cur(win->nav_history);
         /* FIXME: should this be driven by a signal emitted on FmNavHistory? */
         fm_main_win_chdir_without_history(win, item->path);
+
+        /* scroll to recorded position */
+        gtk_adjustment_set_value( gtk_scrolled_window_get_vadjustment(win->folder_view), item->scroll_pos);
     }
 }
 
@@ -634,6 +642,9 @@ void on_go_forward(GtkAction* act, FmMainWin* win)
         item = fm_nav_history_get_cur(win->nav_history);
         /* FIXME: should this be driven by a signal emitted on FmNavHistory? */
         fm_main_win_chdir_without_history(win, item->path);
+
+        /* scroll to recorded position */
+        gtk_adjustment_set_value( gtk_scrolled_window_get_vadjustment(win->folder_view), item->scroll_pos);
     }
 }
 
@@ -845,6 +856,7 @@ gint fm_main_win_add_tab(FmMainWin* win, FmPath* path)
     GtkWidget* label;
     GtkWidget* folder_view;
     gint ret;
+    FmNavHistory* nh;
 
     /* create folder view */
     folder_view = fm_folder_view_new( FM_FV_ICON_VIEW );
@@ -855,7 +867,12 @@ gint fm_main_win_add_tab(FmMainWin* win, FmPath* path)
     g_signal_connect(folder_view, "status", on_status, win);
     g_signal_connect(folder_view, "sel-changed", on_sel_changed, win);
 
+    nh = fm_nav_history_new();
+    g_object_set_qdata_full((GObject*)folder_view, nav_history_id, win->nav_history, (GDestroyNotify)g_object_unref);
+
     fm_folder_view_chdir(folder_view, path);
+    fm_nav_history_chdir(nh, path, 0);
+
     gtk_widget_show(folder_view);
 
     label = create_tab_label(win, path, folder_view);
@@ -872,8 +889,7 @@ gint fm_main_win_add_tab(FmMainWin* win, FmPath* path)
     /* set current folder view */
     win->folder_view = folder_view;
     /* create navigation history */
-    win->nav_history = fm_nav_history_new();
-    g_object_set_qdata_full((GObject*)folder_view, nav_history_id, win->nav_history, (GDestroyNotify)g_object_unref);
+    win->nav_history = nh;
     return ret;
 }
 
