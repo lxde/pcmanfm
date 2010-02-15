@@ -418,6 +418,7 @@ gboolean pcmanfm_run()
         {
             char** filename;
             FmJob* job = fm_file_info_job_new(NULL);
+            GList* infos;
             for(filename=files_to_open; *filename; ++filename)
             {
                 FmPath* path = fm_path_new(*filename);
@@ -425,7 +426,8 @@ gboolean pcmanfm_run()
                 fm_path_unref(path);
             }
             fm_job_run_sync(job);
-            fm_launch_files_simple(NULL, NULL, FM_FILE_INFO_JOB(job)->file_infos, pcmanfm_open_folder, NULL);
+            infos = fm_list_peek_head_link(FM_FILE_INFO_JOB(job)->file_infos);
+            fm_launch_files_simple(NULL, NULL, infos, pcmanfm_open_folder, NULL);
             g_object_unref(job);
         }
         else
