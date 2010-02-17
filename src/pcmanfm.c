@@ -40,6 +40,7 @@
 #include "app-config.h"
 #include "main-win.h"
 #include "desktop.h"
+#include "volume-manager.h"
 #include "pref.h"
 #include "pcmanfm.h"
 
@@ -126,11 +127,13 @@ int main(int argc, char** argv)
     /* the main part */
     if(pcmanfm_run())
     {
+        fm_volume_manager_init();
     	gtk_main();
         if(desktop_running)
             fm_desktop_manager_finalize();
         fm_config_save(config, NULL); /* save libfm config */
         fm_app_config_save((FmAppConfig*)config, config_name); /* save pcmanfm config */
+        fm_volume_manager_finalize();
     }
     single_instance_finalize();
 

@@ -12,6 +12,7 @@ pcmanfm2_SOURCES = \
 	app-config.c app-config.h \
 	main-win.c main-win.h \
 	desktop.c desktop.h \
+	volume-manager.c volume-manager.ch \
 	pref.c pref.h \
 	utils.c utils.h \
 	$(NULL)
