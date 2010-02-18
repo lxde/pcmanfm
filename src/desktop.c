@@ -258,9 +258,10 @@ static void fm_desktop_init(FmDesktop *self)
                         GDK_KEY_PRESS_MASK|
                         GDK_PROPERTY_CHANGE_MASK);
 
-    self->icon_render = gtk_cell_renderer_pixbuf_new();
+    self->icon_render = fm_cell_renderer_pixbuf_new();
     g_object_set( self->icon_render, "follow-state", TRUE, NULL);
     g_object_ref_sink(self->icon_render);
+    fm_cell_renderer_pixbuf_set_fixed_size(self->icon_render, fm_config->big_icon_size, fm_config->big_icon_size);
 
     /* FIXME: call pango_layout_context_changed() on the layout in response to the
      * "style-set" and "direction-changed" signals for the widget. */
@@ -331,7 +332,11 @@ void fm_desktop_manager_init()
     {
         FmFolder* folder = fm_folder_get_for_path(fm_path_get_desktop());
         if(folder)
+        {
             model = fm_folder_model_new(folder, FALSE);
+            if(model)
+                fm_folder_model_set_icon_size(model, fm_config->big_icon_size);
+        }
     }
 
     if(app_config->desktop_font)
@@ -938,7 +943,7 @@ inline FmDesktopItem* desktop_item_new(GtkTreeIter* it)
 {
     FmDesktopItem* item = g_slice_new0(FmDesktopItem);
     item->it = *it;
-    gtk_tree_model_get(model, it, COL_FILE_BIG_ICON, &item->icon, COL_FILE_INFO, &item->fi, -1);
+    gtk_tree_model_get(model, it, COL_FILE_ICON, &item->icon, COL_FILE_INFO, &item->fi, -1);
     return item;
 }
 
@@ -969,7 +974,21 @@ void on_row_deleted(GtkTreeModel* mod, GtkTreePath* tp, FmDesktop* desktop)
 
 void on_row_changed(GtkTreeModel* mod, GtkTreePath* tp, GtkTreeIter* it, FmDesktop* desktop)
 {
-    queue_layout_items(desktop);
+    GList* l;
+    for(l=desktop->items;l;l=l->next)
+    {
+        FmDesktopItem* item = (FmDesktopItem*)l->data;
+        if(item->it.user_data == it->user_data)
+        {
+            if(item->icon)
+                g_object_unref(item->icon);
+            gtk_tree_model_get(mod, it, COL_FILE_ICON, &item->icon, COL_FILE_INFO, &item->fi, -1);
+            redraw_item(desktop, item);
+            /* FIXME: check if sorting of files is changed. */
+            break;
+        }
+    }
+    /* queue_layout_items(desktop); */
 }
 
 void on_rows_reordered(GtkTreeModel* mod, GtkTreePath* parent_tp, GtkTreeIter* parent_it, gpointer arg3, FmDesktop* desktop)
@@ -1125,7 +1144,7 @@ void paint_item(FmDesktop* self, FmDesktopItem* item, cairo_t* cr, GdkRectangle*
                         item->text_rect.x, item->text_rect.y, item->text_rect.width, item->text_rect.height);
 
     /* draw the icon */
-    g_object_set( self->icon_render, "pixbuf", item->icon, NULL );
+    g_object_set( self->icon_render, "pixbuf", item->icon, "info", fm_file_info_ref(item->fi), NULL );
     gtk_cell_renderer_render(self->icon_render, widget->window, widget, &item->icon_rect, &item->icon_rect, expose_area, state);
 }
 
@@ -1525,7 +1544,7 @@ static void reload_icons()
             {
                 g_object_unref(item->icon);
                 item->icon = NULL;
-                gtk_tree_model_get(model, &item->it, COL_FILE_BIG_ICON, &item->icon, -1);
+                gtk_tree_model_get(model, &item->it, COL_FILE_ICON, &item->icon, -1);
             }
         }
         gtk_widget_queue_resize(desktop);
@@ -1534,6 +1553,7 @@ static void reload_icons()
 
 void on_big_icon_size_changed(FmConfig* cfg, gpointer user_data)
 {
+    fm_folder_model_set_icon_size(model, fm_config->big_icon_size);
     reload_icons();
 }
 
