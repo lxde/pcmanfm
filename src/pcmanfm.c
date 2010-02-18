@@ -405,7 +405,7 @@ gboolean pcmanfm_run()
                 if(app_config->wallpaper_mode == FM_WP_COLOR)
                     app_config->wallpaper_mode = FM_WP_FIT;
                 fm_config_emit_changed(app_config, "wallpaper");
-                fm_app_config_save(app_config, NULL);
+                fm_app_config_save(app_config, config_name);
             }
             return FALSE;
         }
@@ -474,4 +474,10 @@ gboolean pcmanfm_open_folder(GAppLaunchContext* ctx, GList* folder_infos, gpoint
         fm_main_win_open_in_last_active(fi->path);
     }
     return TRUE;
+}
+
+void pcmanfm_save_config()
+{
+    fm_config_save(fm_config, NULL);
+    fm_app_config_save(app_config, config_name);
 }

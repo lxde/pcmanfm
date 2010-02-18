@@ -50,6 +50,7 @@ static void on_response(GtkDialog* dlg, int res, GtkWidget** pdlg)
 {
     gtk_widget_destroy(dlg);
     *pdlg = NULL;
+    pcmanfm_save_config();
 }
 
 static void on_icon_size_changed(GtkComboBox* combo, gpointer _off)
