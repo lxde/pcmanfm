@@ -711,8 +711,8 @@ void fm_main_win_chdir_without_history(FmMainWin* win, FmPath* path)
 void fm_main_win_chdir(FmMainWin* win, FmPath* path)
 {
     int scroll_pos = gtk_adjustment_get_value(gtk_scrolled_window_get_vadjustment(win->folder_view));
-    fm_main_win_chdir_without_history(win, path);
     fm_nav_history_chdir(win->nav_history, path, scroll_pos);
+    fm_main_win_chdir_without_history(win, path);
 }
 
 static void close_btn_style_set(GtkWidget *btn, GtkRcStyle *prev, gpointer data)
