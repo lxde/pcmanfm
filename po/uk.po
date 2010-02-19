@@ -2,12 +2,12 @@
 # Copyright (C) 2010
 # This file is distributed under the same license as the pcmanfm package.
 # Yarema aka Knedlyk <yupadmin@gmail.com>, 2010.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-10 01:20+0100\n"
+"POT-Creation-Date: 2010-02-19 04:10+0000\n"
 "PO-Revision-Date: 2010-02-04 19:17+0100\n"
 "Last-Translator: Yarema aka Knedlyk <yupadmin@gmail.com>\n"
 "Language-Team: Ukrainian <translation@linux.org.ua>\n"
@@ -178,8 +178,7 @@ msgstr "Максимальний розмір файлів, що відобра�
 
 #: ../data/ui/pref.glade.h:13
 msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
-msgstr ""
-"Перенести видалені файли до \"смітника\" замість повного видалення з диску"
+msgstr "Перенести видалені файли до \"смітника\" замість повного видалення з диску"
 
 #: ../data/ui/pref.glade.h:14
 msgid "Open files with single click"
@@ -237,231 +236,227 @@ msgstr "_Загальне"
 msgid "_Volume Management"
 msgstr "_Управління дисками"
 
-#: ../src/desktop-ui.c:47 ../src/main-win-ui.c:128
+#: ../src/desktop-ui.c:47 ../src/main-win-ui.c:129
 msgid "Invert Selection"
 msgstr "Забрати виділення"
 
-#: ../src/desktop-ui.c:48 ../src/main-win-ui.c:131
+#: ../src/desktop-ui.c:48 ../src/main-win-ui.c:132
 msgid "_Sort Files"
 msgstr "_Сортування файлів"
 
-#: ../src/desktop-ui.c:50 ../src/main-win-ui.c:152
+#: ../src/desktop-ui.c:50 ../src/main-win-ui.c:153
 msgid "Folder"
 msgstr "Каталог"
 
-#: ../src/desktop-ui.c:51 ../src/main-win-ui.c:153
+#: ../src/desktop-ui.c:51 ../src/main-win-ui.c:154
 msgid "Blank FIle"
 msgstr "Пустий файл"
 
-#: ../src/desktop-ui.c:63 ../src/main-win-ui.c:177
+#: ../src/desktop-ui.c:63 ../src/main-win-ui.c:179
 msgid "By _Name"
 msgstr "По _назві"
 
-#: ../src/desktop-ui.c:64 ../src/main-win-ui.c:178
+#: ../src/desktop-ui.c:64 ../src/main-win-ui.c:180
 msgid "By _Modification Time"
 msgstr "По _часу зміни"
 
-#: ../src/desktop-ui.c:79 ../src/main-win-ui.c:194
+#: ../src/desktop-ui.c:79 ../src/main-win-ui.c:196
 msgid "Open in New Tab"
 msgstr "Відкрити в новій вкладці"
 
-#: ../src/desktop-ui.c:80 ../src/main-win-ui.c:195
+#: ../src/desktop-ui.c:80 ../src/main-win-ui.c:197
 msgid "Open in New Window"
 msgstr "Відкрити в новому вікні"
 
-#: ../src/main-win-ui.c:113
+#: ../src/main-win-ui.c:114
 msgid "_File"
 msgstr "_Файл"
 
-#: ../src/main-win-ui.c:114
+#: ../src/main-win-ui.c:115
 msgid "_New Window"
 msgstr "_Нове вікно"
 
-#: ../src/main-win-ui.c:115
+#: ../src/main-win-ui.c:116
 msgid "New _Tab"
 msgstr "Нова _вкладка"
 
-#: ../src/main-win-ui.c:116
+#: ../src/main-win-ui.c:117
 msgid "_Close Tab"
 msgstr "_Закрити вкладку"
 
-#: ../src/main-win-ui.c:117
+#: ../src/main-win-ui.c:118
 msgid "Close Window"
 msgstr "Закрити вікно"
 
-#: ../src/main-win-ui.c:118
+#: ../src/main-win-ui.c:119
 msgid "_Edit"
 msgstr "_Редагувати"
 
-#: ../src/main-win-ui.c:123
+#: ../src/main-win-ui.c:124
 msgid "Rename"
 msgstr "Перейменувати"
 
-#: ../src/main-win-ui.c:124
+#: ../src/main-win-ui.c:125
 msgid "Create Symlink"
 msgstr "Створити символічне посилання"
 
-#: ../src/main-win-ui.c:125
+#: ../src/main-win-ui.c:126
 msgid "Move To..."
 msgstr "Пересунути до..."
 
-#: ../src/main-win-ui.c:126
+#: ../src/main-win-ui.c:127
 msgid "Copy To..."
 msgstr "Копіювати до..."
 
-#: ../src/main-win-ui.c:130
+#: ../src/main-win-ui.c:131
 msgid "_View"
 msgstr "_Перегляд"
 
-#: ../src/main-win-ui.c:132
+#: ../src/main-win-ui.c:133
 msgid "_Help"
 msgstr "_Допомога"
 
-#: ../src/main-win-ui.c:134
+#: ../src/main-win-ui.c:135
 msgid "_Go"
 msgstr "_Йти"
 
-#: ../src/main-win-ui.c:135
+#: ../src/main-win-ui.c:136
 msgid "Previous Folder"
 msgstr "Попередній каталог"
 
-#: ../src/main-win-ui.c:136
+#: ../src/main-win-ui.c:137
 msgid "Next Folder"
 msgstr "Наступний каталог"
 
-#: ../src/main-win-ui.c:137
+#: ../src/main-win-ui.c:138
 msgid "Parent Folder"
 msgstr "Батьківський каталог"
 
-#: ../src/main-win-ui.c:137
+#: ../src/main-win-ui.c:138
 msgid "Go to parent Folder"
 msgstr "Перейти до батьківського каталогу"
 
-#: ../src/main-win-ui.c:138
+#: ../src/main-win-ui.c:139
 msgid "Home Folder"
 msgstr "Домашній каталог"
 
-#: ../src/main-win-ui.c:139
+#: ../src/main-win-ui.c:140
 msgid "Desktop"
 msgstr "Стільниця"
 
-#: ../src/main-win-ui.c:139
+#: ../src/main-win-ui.c:140
 msgid "Desktop Folder"
 msgstr "Каталог стільниці"
 
-#: ../src/main-win-ui.c:140
+#: ../src/main-win-ui.c:141
 msgid "My Computer"
 msgstr "Мій комп’ютер"
 
-#: ../src/main-win-ui.c:141
+#: ../src/main-win-ui.c:142
 msgid "Trash Can"
 msgstr "Смітник"
 
-#: ../src/main-win-ui.c:142
+#: ../src/main-win-ui.c:143
 msgid "Network Drives"
 msgstr "Сіткові диски"
 
-#: ../src/main-win-ui.c:143
+#: ../src/main-win-ui.c:144
 msgid "Applications"
 msgstr "Програми"
 
-#: ../src/main-win-ui.c:143
+#: ../src/main-win-ui.c:144
 msgid "Installed Applications"
 msgstr "Інстальовані програми"
 
-#: ../src/main-win-ui.c:145
+#: ../src/main-win-ui.c:146
 msgid "_Bookmarks"
 msgstr "_Закладки"
 
-#: ../src/main-win-ui.c:146
+#: ../src/main-win-ui.c:147
 msgid "Add To Bookmarks"
 msgstr "Додати до закладок"
 
-#: ../src/main-win-ui.c:159
+#: ../src/main-win-ui.c:160
 msgid "Show _Hidden"
 msgstr "Показати приховані"
 
-#: ../src/main-win-ui.c:164
+#: ../src/main-win-ui.c:165
 msgid "_Icon View"
 msgstr "_Перегляд значками"
 
-#: ../src/main-win-ui.c:165
+#: ../src/main-win-ui.c:166
 msgid "_Compact View"
 msgstr "_Компактний перегляд"
 
-#: ../src/main-win-ui.c:166
+#: ../src/main-win-ui.c:167
+msgid "Thumbnail View"
+msgstr "Перегляд мініа_тюрами"
+
+#: ../src/main-win-ui.c:168
 msgid "Detailed _List View"
 msgstr "Детальний перегляд _списком"
 
-#: ../src/main-win.c:782
+#: ../src/main-win.c:820
 #, c-format
 msgid "Free space: %s (Total: %s )"
 msgstr "Вільний простір: %s (Всього: %s )"
 
-#: ../src/main-win.c:1030
+#: ../src/main-win.c:1073
 msgid "Create New..."
 msgstr "Створити новий..."
 
-#: ../src/main-win.c:1030
+#: ../src/main-win.c:1073
 msgid "Enter a name for the newly created file:"
 msgstr "Введіть назву новоствореного файлу:"
 
-#: ../src/main-win.c:1030
+#: ../src/main-win.c:1073
 msgid "New"
 msgstr "Новий"
 
-#: ../src/pcmanfm.c:67
-msgid ""
-"Open folders in new tabs of the last used window instead of creating new "
-"windows"
-msgstr ""
-"Відкрити каталоги в нових вкладках останньо використаних вікон замість "
-"створювати нові вікна"
+#: ../src/pcmanfm.c:69
+msgid "Open folders in new tabs of the last used window instead of creating new windows"
+msgstr "Відкрити каталоги в нових вкладках останньо використаних вікон замість створювати нові вікна"
 
-#: ../src/pcmanfm.c:68
+#: ../src/pcmanfm.c:70
 msgid "Name of config profile"
 msgstr "Назва файлу конфігурацій"
 
-#: ../src/pcmanfm.c:69
+#: ../src/pcmanfm.c:71
 msgid "Launch desktop manager"
 msgstr "Запустити менеджер стільниці"
 
-#: ../src/pcmanfm.c:70
+#: ../src/pcmanfm.c:72
 msgid "Turn off desktop manager if it's running"
 msgstr "Виключити менеджер стільниці, якщо він запущений"
 
-#: ../src/pcmanfm.c:71
+#: ../src/pcmanfm.c:73
 msgid "Run PCManFM as a daemon"
 msgstr "Запустити PCManFM як демон"
 
-#: ../src/pcmanfm.c:72
+#: ../src/pcmanfm.c:74
 msgid "Open desktop preference dialog"
 msgstr "Відкрити діалог налаштування стільниці"
 
-#: ../src/pcmanfm.c:73
+#: ../src/pcmanfm.c:75
 msgid "Set desktop wallpaper"
 msgstr "Налаштувати шпалери стільниці"
 
-#: ../src/pcmanfm.c:73
+#: ../src/pcmanfm.c:75
 msgid "<image file>"
 msgstr "<файл зображення>"
 
-#: ../src/pcmanfm.c:74
-msgid ""
-"Open preference dialog. 'n' is the number of page you want to show (1, 2, "
-"3...)."
-msgstr ""
-"Відкрити діалог налаштування. 'n' є номер сторінки, яку Ви хочете "
-"переглянути (1, 2, 3...)"
+#: ../src/pcmanfm.c:76
+msgid "Open preference dialog. 'n' is the number of page you want to show (1, 2, 3...)."
+msgstr "Відкрити діалог налаштування. 'n' є номер сторінки, яку Ви хочете переглянути (1, 2, 3...)"
 
-#: ../src/pcmanfm.c:75
+#: ../src/pcmanfm.c:77
 msgid "Open Find Files utility"
 msgstr "Відкрити утиліту пошуку файлів"
 
-#: ../src/pcmanfm.c:76
+#: ../src/pcmanfm.c:78
 msgid "No function. Just to be compatible with nautilus"
 msgstr "Немає функції. Тільки щоб було компатибільне з nautilus."
 
-#: ../src/pcmanfm.c:77
+#: ../src/pcmanfm.c:79
 msgid "[FILE1, FILE2,...]"
 msgstr "[ФАЙЛ1, ФАЙЛ2,...]"
