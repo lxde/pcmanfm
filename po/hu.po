@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PCMan File Manager 0.3.6\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-10 01:20+0100\n"
+"POT-Creation-Date: 2010-02-19 22:50+0100\n"
 "PO-Revision-Date: 2010-01-31 02:05+0100\n"
 "Last-Translator: SZERVÁC Attila <sas@321.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -237,214 +237,218 @@ msgstr "Általá_nos"
 msgid "_Volume Management"
 msgstr "_Kötetkezelés"
 
-#: ../src/desktop-ui.c:47 ../src/main-win-ui.c:128
+#: ../src/desktop-ui.c:47 ../src/main-win-ui.c:129
 msgid "Invert Selection"
 msgstr "Választás megfordítása"
 
-#: ../src/desktop-ui.c:48 ../src/main-win-ui.c:131
+#: ../src/desktop-ui.c:48 ../src/main-win-ui.c:132
 msgid "_Sort Files"
 msgstr "Fájlok _rendezése"
 
-#: ../src/desktop-ui.c:50 ../src/main-win-ui.c:152
+#: ../src/desktop-ui.c:50 ../src/main-win-ui.c:153
 msgid "Folder"
 msgstr "Mappa"
 
-#: ../src/desktop-ui.c:51 ../src/main-win-ui.c:153
+#: ../src/desktop-ui.c:51 ../src/main-win-ui.c:154
 msgid "Blank FIle"
 msgstr "Üres fájl"
 
-#: ../src/desktop-ui.c:63 ../src/main-win-ui.c:177
+#: ../src/desktop-ui.c:63 ../src/main-win-ui.c:179
 msgid "By _Name"
 msgstr "_Név szerint"
 
-#: ../src/desktop-ui.c:64 ../src/main-win-ui.c:178
+#: ../src/desktop-ui.c:64 ../src/main-win-ui.c:180
 msgid "By _Modification Time"
 msgstr "_Módosítás szerint"
 
-#: ../src/desktop-ui.c:79 ../src/main-win-ui.c:194
+#: ../src/desktop-ui.c:79 ../src/main-win-ui.c:196
 msgid "Open in New Tab"
 msgstr "Megnyitás új lapon"
 
-#: ../src/desktop-ui.c:80 ../src/main-win-ui.c:195
+#: ../src/desktop-ui.c:80 ../src/main-win-ui.c:197
 msgid "Open in New Window"
 msgstr "Megnyitás új ablakban"
 
-#: ../src/main-win-ui.c:113
+#: ../src/main-win-ui.c:114
 msgid "_File"
 msgstr "_Fájl"
 
-#: ../src/main-win-ui.c:114
+#: ../src/main-win-ui.c:115
 msgid "_New Window"
 msgstr "Ú_j ablak"
 
-#: ../src/main-win-ui.c:115
+#: ../src/main-win-ui.c:116
 msgid "New _Tab"
 msgstr "Új _lap"
 
-#: ../src/main-win-ui.c:116
+#: ../src/main-win-ui.c:117
 msgid "_Close Tab"
 msgstr "Lap be_zárása"
 
-#: ../src/main-win-ui.c:117
+#: ../src/main-win-ui.c:118
 msgid "Close Window"
 msgstr "Ablak bezárása"
 
-#: ../src/main-win-ui.c:118
+#: ../src/main-win-ui.c:119
 msgid "_Edit"
 msgstr "Sz_erkesztés"
 
-#: ../src/main-win-ui.c:123
+#: ../src/main-win-ui.c:124
 msgid "Rename"
 msgstr "Átnevezés"
 
-#: ../src/main-win-ui.c:124
+#: ../src/main-win-ui.c:125
 msgid "Create Symlink"
 msgstr "Szimlink létrehozása"
 
-#: ../src/main-win-ui.c:125
+#: ../src/main-win-ui.c:126
 msgid "Move To..."
 msgstr "Mozgatás..."
 
-#: ../src/main-win-ui.c:126
+#: ../src/main-win-ui.c:127
 msgid "Copy To..."
 msgstr "Másolás..."
 
-#: ../src/main-win-ui.c:130
+#: ../src/main-win-ui.c:131
 msgid "_View"
 msgstr "_Nézet"
 
-#: ../src/main-win-ui.c:132
+#: ../src/main-win-ui.c:133
 msgid "_Help"
 msgstr "_Súgó"
 
-#: ../src/main-win-ui.c:134
+#: ../src/main-win-ui.c:135
 msgid "_Go"
 msgstr "_Ugrás"
 
-#: ../src/main-win-ui.c:135
+#: ../src/main-win-ui.c:136
 msgid "Previous Folder"
 msgstr "Előző mappa"
 
-#: ../src/main-win-ui.c:136
+#: ../src/main-win-ui.c:137
 msgid "Next Folder"
 msgstr "Következő mappa"
 
-#: ../src/main-win-ui.c:137
+#: ../src/main-win-ui.c:138
 msgid "Parent Folder"
 msgstr "Szülő"
 
-#: ../src/main-win-ui.c:137
+#: ../src/main-win-ui.c:138
 msgid "Go to parent Folder"
 msgstr "Szülő mappa"
 
-#: ../src/main-win-ui.c:138
+#: ../src/main-win-ui.c:139
 msgid "Home Folder"
 msgstr "Saját mappa"
 
-#: ../src/main-win-ui.c:139
+#: ../src/main-win-ui.c:140
 msgid "Desktop"
 msgstr "Munkaasztal"
 
-#: ../src/main-win-ui.c:139
+#: ../src/main-win-ui.c:140
 msgid "Desktop Folder"
 msgstr "Aszal mappa"
 
-#: ../src/main-win-ui.c:140
+#: ../src/main-win-ui.c:141
 msgid "My Computer"
 msgstr "Saját gép"
 
-#: ../src/main-win-ui.c:141
+#: ../src/main-win-ui.c:142
 msgid "Trash Can"
 msgstr "Kuka"
 
-#: ../src/main-win-ui.c:142
+#: ../src/main-win-ui.c:143
 msgid "Network Drives"
 msgstr "Hálózati meghajtók"
 
-#: ../src/main-win-ui.c:143
+#: ../src/main-win-ui.c:144
 msgid "Applications"
 msgstr "Alkalmazások"
 
-#: ../src/main-win-ui.c:143
+#: ../src/main-win-ui.c:144
 msgid "Installed Applications"
 msgstr "Telepített alkalmazások"
 
-#: ../src/main-win-ui.c:145
+#: ../src/main-win-ui.c:146
 msgid "_Bookmarks"
 msgstr "_Könyvjelzők"
 
-#: ../src/main-win-ui.c:146
+#: ../src/main-win-ui.c:147
 msgid "Add To Bookmarks"
 msgstr "Hozzáadás a könyvjelzőkhöz"
 
-#: ../src/main-win-ui.c:159
+#: ../src/main-win-ui.c:160
 msgid "Show _Hidden"
 msgstr "_Rejtett"
 
-#: ../src/main-win-ui.c:164
+#: ../src/main-win-ui.c:165
 msgid "_Icon View"
 msgstr "_Ikon nézet"
 
-#: ../src/main-win-ui.c:165
+#: ../src/main-win-ui.c:166
 msgid "_Compact View"
 msgstr "_Tömör nézet"
 
-#: ../src/main-win-ui.c:166
+#: ../src/main-win-ui.c:167
+msgid "Thumbnail View"
+msgstr ""
+
+#: ../src/main-win-ui.c:168
 msgid "Detailed _List View"
 msgstr "Részletes _Lista"
 
-#: ../src/main-win.c:782
+#: ../src/main-win.c:820
 #, c-format
 msgid "Free space: %s (Total: %s )"
 msgstr "Szabad hely: %s (Összesen: %s )"
 
-#: ../src/main-win.c:1030
+#: ../src/main-win.c:1073
 msgid "Create New..."
 msgstr "Új..."
 
-#: ../src/main-win.c:1030
+#: ../src/main-win.c:1073
 msgid "Enter a name for the newly created file:"
 msgstr "Adj nevet az új fájlnak:"
 
-#: ../src/main-win.c:1030
+#: ../src/main-win.c:1073
 msgid "New"
 msgstr "Új"
 
-#: ../src/pcmanfm.c:67
+#: ../src/pcmanfm.c:69
 msgid ""
 "Open folders in new tabs of the last used window instead of creating new "
 "windows"
 msgstr "Mappák megnyitása a legutóbbi ablak lapjain új ablak helyett"
 
-#: ../src/pcmanfm.c:68
+#: ../src/pcmanfm.c:70
 msgid "Name of config profile"
 msgstr "Beállító profil neve"
 
-#: ../src/pcmanfm.c:69
+#: ../src/pcmanfm.c:71
 msgid "Launch desktop manager"
 msgstr "Asztal kezelő futtatása"
 
-#: ../src/pcmanfm.c:70
+#: ../src/pcmanfm.c:72
 msgid "Turn off desktop manager if it's running"
 msgstr "Asztalkezelő kikapcsolása, ha fut"
 
-#: ../src/pcmanfm.c:71
+#: ../src/pcmanfm.c:73
 msgid "Run PCManFM as a daemon"
 msgstr "PCManFM futtatása démonként"
 
-#: ../src/pcmanfm.c:72
+#: ../src/pcmanfm.c:74
 msgid "Open desktop preference dialog"
 msgstr "Asztal jellemzők párbeszéd megnyitása"
 
-#: ../src/pcmanfm.c:73
+#: ../src/pcmanfm.c:75
 msgid "Set desktop wallpaper"
 msgstr "Asztali tapéta beállítása"
 
-#: ../src/pcmanfm.c:73
+#: ../src/pcmanfm.c:75
 msgid "<image file>"
 msgstr "<kép fájl>"
 
-#: ../src/pcmanfm.c:74
+#: ../src/pcmanfm.c:76
 msgid ""
 "Open preference dialog. 'n' is the number of page you want to show (1, 2, "
 "3...)."
@@ -452,15 +456,15 @@ msgstr ""
 "Tulajdonságok ablak megnyitása. 'n' a lap száma amit szeretnél megjeleníteni "
 "(1, 2, 3...)."
 
-#: ../src/pcmanfm.c:75
+#: ../src/pcmanfm.c:77
 msgid "Open Find Files utility"
 msgstr "Fájlkereső megnyitása"
 
-#: ../src/pcmanfm.c:76
+#: ../src/pcmanfm.c:78
 msgid "No function. Just to be compatible with nautilus"
 msgstr "Nincs funkciója csak a Nautilus-kompatibilitást nyújtja"
 
-#: ../src/pcmanfm.c:77
+#: ../src/pcmanfm.c:79
 msgid "[FILE1, FILE2,...]"
 msgstr "[FÁJL1, FÁJL2,...]"
 
