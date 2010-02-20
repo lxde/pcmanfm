@@ -142,7 +142,6 @@ int main(int argc, char** argv)
 	return 0;
 }
 
-
 inline static GString* args_to_keyfile()
 {
     int i;
@@ -181,7 +180,12 @@ inline static GString* args_to_keyfile()
         case G_OPTION_ARG_FILENAME:
         case G_OPTION_ARG_STRING:   /* string */
             if(*(gchar**)ent->arg_data)
+            {
+                /* Handle . and .. and escape string containing ; */
+                const char* fn = *(gchar**)ent->arg_data;
+                
                 g_string_append(buf, *(gchar**)ent->arg_data);
+            }
             break;
         }
         g_string_append_c(buf, '\n');
@@ -421,17 +425,35 @@ gboolean pcmanfm_run()
         {
             char** filename;
             FmJob* job = fm_file_info_job_new(NULL);
+            FmPath* cwd = NULL;
             GList* infos;
             for(filename=files_to_open; *filename; ++filename)
             {
-                FmPath* path = fm_path_new(*filename);
+                FmPath* path;
+                if( **filename == '/' || strstr(*filename, ":/") ) /* absolute path or URI */
+                    path = fm_path_new(*filename);
+                else /* basename */
+                {
+                    if(G_UNLIKELY(!cwd))
+                    {
+                        /* FIXME: This won't work if those filenames are passed via IPC since the receiving process has different cwd. */
+                        char* cwd_str = g_get_current_dir();
+                        cwd = fm_path_new(cwd_str);
+                        g_free(cwd_str);
+                    }
+                    path = fm_path_new_relative(cwd, *filename);
+                }
                 fm_file_info_job_add(job, path);
                 fm_path_unref(path);
             }
+            if(cwd)
+                fm_path_unref(cwd);
+            /* FIXME: do this asynchronously */
             fm_job_run_sync(job);
             infos = fm_list_peek_head_link(FM_FILE_INFO_JOB(job)->file_infos);
             fm_launch_files_simple(NULL, NULL, infos, pcmanfm_open_folder, NULL);
             g_object_unref(job);
+            ret = (n_pcmanfm_ref >= 1); /* if there is opened window, return true to run the main loop. */
         }
         else
         {
