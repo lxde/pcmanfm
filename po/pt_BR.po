@@ -6,12 +6,12 @@
 # Fábio Antunes <fabio.antunes@hotmail.com>, 2008.
 # Og Maciel <ogmaciel@gnome.org>, 2008-2010.
 # Henrique P. Machado <zehrique@gmail.com>, 2009.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PCManFM\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-19 22:50+0100\n"
+"POT-Creation-Date: 2010-02-20 04:11+0000\n"
 "PO-Revision-Date: 2010-01-31 12:07-0500\n"
 "Last-Translator: Og Maciel <ogmaciel@gnome.org>\n"
 "Language-Team: Brazilian Portuguese <ldp-br@bazar2.conectiva.com.br>\n"
@@ -117,8 +117,7 @@ msgstr "Mostrar ícones de volumes na área de trabalho"
 
 #: ../data/ui/desktop-pref.glade.h:19
 msgid "Show menus provided by WM when desktop is clicked"
-msgstr ""
-"Mostrar menus do gerente de janelas quando a área de trabalho for clicada"
+msgstr "Mostrar menus do gerente de janelas quando a área de trabalho for clicada"
 
 #: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:22
 msgid "Stretch to fill the entire screen"
@@ -186,8 +185,7 @@ msgstr "Tamanho máximo para as miniaturas exibidas:"
 
 #: ../data/ui/pref.glade.h:13
 msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
-msgstr ""
-"Mover arquivos excluídos para a \"lixeira\" em vez de apagá-los da unidade"
+msgstr "Mover arquivos excluídos para a \"lixeira\" em vez de apagá-los da unidade"
 
 #: ../data/ui/pref.glade.h:14
 msgid "Open files with single click"
@@ -399,7 +397,7 @@ msgstr "Visualização _compacta"
 
 #: ../src/main-win-ui.c:167
 msgid "Thumbnail View"
-msgstr ""
+msgstr "Visualização de miniaturas"
 
 #: ../src/main-win-ui.c:168
 msgid "Detailed _List View"
@@ -423,12 +421,8 @@ msgid "New"
 msgstr "Novo"
 
 #: ../src/pcmanfm.c:69
-msgid ""
-"Open folders in new tabs of the last used window instead of creating new "
-"windows"
-msgstr ""
-"Abrir pastas em novas abas na última janela aberta, em vez de criar novas "
-"janelas"
+msgid "Open folders in new tabs of the last used window instead of creating new windows"
+msgstr "Abrir pastas em novas abas na última janela aberta, em vez de criar novas janelas"
 
 #: ../src/pcmanfm.c:70
 msgid "Name of config profile"
@@ -459,12 +453,8 @@ msgid "<image file>"
 msgstr "<arquivo de imagem>"
 
 #: ../src/pcmanfm.c:76
-msgid ""
-"Open preference dialog. 'n' is the number of page you want to show (1, 2, "
-"3...)."
-msgstr ""
-"Abre o diálogo de preferências. \"n\" é o número da página que você deseja "
-"mostrar (1, 2, 3...)."
+msgid "Open preference dialog. 'n' is the number of page you want to show (1, 2, 3...)."
+msgstr "Abre o diálogo de preferências. \"n\" é o número da página que você deseja mostrar (1, 2, 3...)."
 
 #: ../src/pcmanfm.c:77
 msgid "Open Find Files utility"
