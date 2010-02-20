@@ -142,18 +142,15 @@ int main(int argc, char** argv)
 	return 0;
 }
 
-inline static GString* args_to_keyfile()
+inline static GString* args_to_ipc_buf()
 {
     int i;
     GString* buf = g_string_sized_new(1024);
-    g_string_assign(buf, "[a]\n");
     for(i = 0; i < G_N_ELEMENTS(opt_entries)-1;++i)
     {
         GOptionEntry* ent = &opt_entries[i];
         if(G_LIKELY(*ent->long_name))
             g_string_append(buf, ent->long_name);
-        else /* G_OPTION_REMAINING */
-            g_string_append(buf, "@");
         g_string_append_c(buf, '=');
         switch(ent->arg)
         {
@@ -171,79 +168,85 @@ inline static GString* args_to_keyfile()
                 {
                     for(;*files;++files)
                     {
+                        /* FIXME: Handle . and ..*/
                         g_string_append(buf, *files);
-                        g_string_append_c(buf, ';');
+                        g_string_append_c(buf, '\0');
                     }
                 }
+                g_string_append_c(buf, '\0'); /* end of array */
             }
             break;
         case G_OPTION_ARG_FILENAME:
         case G_OPTION_ARG_STRING:   /* string */
             if(*(gchar**)ent->arg_data)
             {
-                /* Handle . and .. and escape string containing ; */
+                /* FIXME: Handle . and ..*/
                 const char* fn = *(gchar**)ent->arg_data;
-                
                 g_string_append(buf, *(gchar**)ent->arg_data);
             }
             break;
         }
-        g_string_append_c(buf, '\n');
+        g_string_append_c(buf, '\0');
     }
+    g_string_append_c(buf, '\0'); /* EOF */
     return buf;
 }
 
-inline static void keyfile_to_args(GString* buf)
+inline static void ipc_buf_to_args(GString* buf)
 {
-    GKeyFile* kf = g_key_file_new();
-    /* g_debug("\n%s", buf->str); */
-    if(g_key_file_load_from_data(kf, buf->str, buf->len, 0, NULL))
+    char* p;
+    GHashTable* hash = g_hash_table_new(g_str_hash, g_str_equal);
+    int i;
+    for(i = 0; i < G_N_ELEMENTS(opt_entries)-1;++i)
+        g_hash_table_insert(hash, opt_entries[i].long_name, &opt_entries[i]);
+
+    for( p = buf->str; *p; )
     {
-        int i;
-        char*** pstrs;
-        for(i = 0; i < G_N_ELEMENTS(opt_entries)-1;++i)
+        GOptionEntry* ent;
+        char *name = p;
+        char* val = strchr(p, '=');
+        *val = '\0';
+        ++val;
+        p = val + strlen(val) + 1; /* next item */
+        ent = g_hash_table_lookup(hash, name);
+        if(G_LIKELY(ent))
         {
-            GOptionEntry* ent = &opt_entries[i];
             switch(ent->arg)
             {
             case G_OPTION_ARG_NONE: /* bool */
-                *(gboolean*)ent->arg_data = g_key_file_get_boolean(kf, "a", ent->long_name, NULL);
+                *(gboolean*)ent->arg_data = val[0] == '1';
                 break;
             case G_OPTION_ARG_INT: /* int */
-                *(gint*)ent->arg_data = g_key_file_get_integer(kf, "a", ent->long_name, NULL);
+                *(gint*)ent->arg_data = atoi(val);
                 break;
             case G_OPTION_ARG_FILENAME_ARRAY: /* string array */
             case G_OPTION_ARG_STRING_ARRAY:
-                pstrs = (char**)ent->arg_data;
-                if(*pstrs)
-                    g_strfreev(*pstrs);
-                *pstrs = g_key_file_get_string_list(kf, "a", *ent->long_name ? *ent->long_name : "@", NULL, NULL);
-                if(*pstrs)
                 {
-                    char** strs = *pstrs;
-                    char* str = *strs;
-                    if(!str || str[0] == '\0')
+                    GPtrArray* strs = g_ptr_array_new();
+                    char*** pstrs = (char***)ent->arg_data;
+                    if(*pstrs)
+                        g_strfreev(*pstrs);
+                    do
                     {
-                        g_strfreev(strs);
-                        *pstrs = NULL;
-                    }
+                        g_ptr_array_add(strs, g_strdup(val));
+                        val += (strlen(val) + 1);
+                    }while(*val != '\0');
+                    g_ptr_array_add(strs, NULL);
+                    *pstrs = g_ptr_array_free(strs, FALSE);
+                    p = val - 1;
+                    continue;
                 }
                 break;
             case G_OPTION_ARG_FILENAME:
             case G_OPTION_ARG_STRING: /* string */
                 if(*(char**)ent->arg_data)
                     g_free(*(char**)ent->arg_data);
-                *(char**)ent->arg_data = g_key_file_get_string(kf, "a", ent->long_name, NULL);
-                if(*(char**)ent->arg_data && **(char**)ent->arg_data == '\0')
-                {
-                    g_free(*(char**)ent->arg_data);
-                    *(char**)ent->arg_data = NULL;
-                }
+                *(char**)ent->arg_data = *val ? g_strdup(val) : NULL;
                 break;
             }
         }
     }
-    g_key_file_free(kf);
+    g_hash_table_destroy(hash);
 }
 
 gboolean on_socket_event( GIOChannel* ioc, GIOCondition cond, gpointer data )
@@ -265,7 +268,7 @@ gboolean on_socket_event( GIOChannel* ioc, GIOCondition cond, gpointer data )
                 g_string_append_len( args, buf, r);
             shutdown( client, 2 );
             close( client );
-            keyfile_to_args(args);
+            ipc_buf_to_args(args);
             g_string_free( args, TRUE );
             pcmanfm_run();
         }
@@ -306,7 +309,7 @@ gboolean single_instance_check()
     if(connect(sock, (struct sockaddr*)&addr, addr_len) == 0)
     {
         /* connected successfully */
-        GString* buf = args_to_keyfile();
+        GString* buf = args_to_ipc_buf();
         write(sock, buf->str, buf->len);
         g_string_free(buf, TRUE);
 
