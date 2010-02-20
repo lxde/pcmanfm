@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-19 22:50+0100\n"
-"PO-Revision-Date: 2010-02-10 10:29+0300\n"
+"POT-Creation-Date: 2010-02-20 04:11+0000\n"
+"PO-Revision-Date: 2010-02-20 08:45+0300\n"
 "Last-Translator: Koptev Oleg <koptev.oleg@gmail.com>\n"
 "Language-Team: Russian <>\n"
 "MIME-Version: 1.0\n"
@@ -17,8 +17,7 @@ msgstr ""
 "X-Poedit-Country: Russia\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Generator: Lokalize 1.0\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
-"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009"
@@ -63,7 +62,8 @@ msgstr "Внешний вид"
 msgid "Background color:"
 msgstr "Цвет фона:"
 
-#: ../data/ui/desktop-pref.glade.h:7 ../data/ui/pref.glade.h:6
+#: ../data/ui/desktop-pref.glade.h:7
+#: ../data/ui/pref.glade.h:6
 msgid "Center on the screen"
 msgstr "По центру экрана"
 
@@ -115,15 +115,18 @@ msgstr "Показывать на рабочем столе иконки дис�
 msgid "Show menus provided by WM when desktop is clicked"
 msgstr "При нажатии показать контекстное меню менеджера рабочего стола"
 
-#: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:22
+#: ../data/ui/desktop-pref.glade.h:20
+#: ../data/ui/pref.glade.h:22
 msgid "Stretch to fill the entire screen"
 msgstr "Растянуть на весь экран"
 
-#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:23
+#: ../data/ui/desktop-pref.glade.h:21
+#: ../data/ui/pref.glade.h:23
 msgid "Stretch to fit the screen"
 msgstr "Растянуть по размеру экрана"
 
-#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:25
+#: ../data/ui/desktop-pref.glade.h:22
+#: ../data/ui/pref.glade.h:25
 msgid "Tile the image to fill the entire screen"
 msgstr "Замостить изображением весь экран"
 
@@ -161,8 +164,7 @@ msgstr "Подтверждение удаления файлов"
 
 #: ../data/ui/pref.glade.h:8
 msgid "Display image files with supported format as thumbnails"
-msgstr ""
-"Отображения файлов изображений с поддерживаемого формата в виде эскизов"
+msgstr "Отображения файлов изображений с поддерживаемого формата в виде эскизов"
 
 #: ../data/ui/pref.glade.h:9
 msgid "Hide 'Close tab' buttons"
@@ -240,35 +242,43 @@ msgstr "_Основные"
 msgid "_Volume Management"
 msgstr "_Управление томами"
 
-#: ../src/desktop-ui.c:47 ../src/main-win-ui.c:129
+#: ../src/desktop-ui.c:47
+#: ../src/main-win-ui.c:129
 msgid "Invert Selection"
 msgstr "Инвертировать выделение"
 
-#: ../src/desktop-ui.c:48 ../src/main-win-ui.c:132
+#: ../src/desktop-ui.c:48
+#: ../src/main-win-ui.c:132
 msgid "_Sort Files"
 msgstr "_Сортировать файлы"
 
-#: ../src/desktop-ui.c:50 ../src/main-win-ui.c:153
+#: ../src/desktop-ui.c:50
+#: ../src/main-win-ui.c:153
 msgid "Folder"
 msgstr "Папка"
 
-#: ../src/desktop-ui.c:51 ../src/main-win-ui.c:154
+#: ../src/desktop-ui.c:51
+#: ../src/main-win-ui.c:154
 msgid "Blank FIle"
 msgstr "Пустой файл"
 
-#: ../src/desktop-ui.c:63 ../src/main-win-ui.c:179
+#: ../src/desktop-ui.c:63
+#: ../src/main-win-ui.c:179
 msgid "By _Name"
 msgstr "По _имени"
 
-#: ../src/desktop-ui.c:64 ../src/main-win-ui.c:180
+#: ../src/desktop-ui.c:64
+#: ../src/main-win-ui.c:180
 msgid "By _Modification Time"
 msgstr "По _времени изменения"
 
-#: ../src/desktop-ui.c:79 ../src/main-win-ui.c:196
+#: ../src/desktop-ui.c:79
+#: ../src/main-win-ui.c:196
 msgid "Open in New Tab"
 msgstr "Открыть в новой вкладке"
 
-#: ../src/desktop-ui.c:80 ../src/main-win-ui.c:197
+#: ../src/desktop-ui.c:80
+#: ../src/main-win-ui.c:197
 msgid "Open in New Window"
 msgstr "Открыть в новом окне"
 
@@ -394,7 +404,7 @@ msgstr "_Компактный вид"
 
 #: ../src/main-win-ui.c:167
 msgid "Thumbnail View"
-msgstr ""
+msgstr "Миниатюры"
 
 #: ../src/main-win-ui.c:168
 msgid "Detailed _List View"
@@ -418,12 +428,8 @@ msgid "New"
 msgstr "Новый"
 
 #: ../src/pcmanfm.c:69
-msgid ""
-"Open folders in new tabs of the last used window instead of creating new "
-"windows"
-msgstr ""
-"Открывать папки в новой вкладке последнего активного окна, вместо создания "
-"нового окна"
+msgid "Open folders in new tabs of the last used window instead of creating new windows"
+msgstr "Открывать папки в новой вкладке последнего активного окна, вместо создания нового окна"
 
 #: ../src/pcmanfm.c:70
 msgid "Name of config profile"
@@ -454,12 +460,8 @@ msgid "<image file>"
 msgstr "<файл изображения>"
 
 #: ../src/pcmanfm.c:76
-msgid ""
-"Open preference dialog. 'n' is the number of page you want to show (1, 2, "
-"3...)."
-msgstr ""
-"Открывает диалог настроек. 'n' является номером отображаемой страницы (1, 2, "
-"3, ...)."
+msgid "Open preference dialog. 'n' is the number of page you want to show (1, 2, 3...)."
+msgstr "Открывает диалог настроек. 'n' является номером отображаемой страницы (1, 2, 3, ...)."
 
 #: ../src/pcmanfm.c:77
 msgid "Open Find Files utility"
@@ -472,3 +474,4 @@ msgstr "Нет функции. Для совместимости с Nautilus"
 #: ../src/pcmanfm.c:79
 msgid "[FILE1, FILE2,...]"
 msgstr "[FILE1, FILE2,...]"
+
