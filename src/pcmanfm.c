@@ -168,8 +168,9 @@ inline static GString* args_to_ipc_buf()
                 {
                     for(;*files;++files)
                     {
-                        /* FIXME: Handle . and ..*/
-                        g_string_append(buf, *files);
+                        char* tmp = fm_canonicalize_filename(*files, TRUE);
+                        g_string_append(buf, tmp);
+                        g_free(tmp);
                         g_string_append_c(buf, '\0');
                     }
                 }
