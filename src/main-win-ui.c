@@ -164,7 +164,7 @@ static GtkRadioActionEntry main_win_mode_actions[]=
 {
     {"IconView", NULL, N_("_Icon View"), NULL, NULL, FM_FV_ICON_VIEW},
     {"CompactView", NULL, N_("_Compact View"), NULL, NULL, FM_FV_COMPACT_VIEW},
-    {"ThumbnailView", NULL, N_("Thumbnail View"), NULL, NULL, FM_FV_THUMBNAIL_VIEW},
+    {"ThumbnailView", NULL, N_("_Thumbnail View"), NULL, NULL, FM_FV_THUMBNAIL_VIEW},
     {"ListView", NULL, N_("Detailed _List View"), NULL, NULL, FM_FV_LIST_VIEW},
 };
 

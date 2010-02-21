@@ -48,7 +48,7 @@ static GtkActionEntry desktop_actions[]=
     {"Sort", NULL, N_("_Sort Files"), NULL, NULL, NULL},
     {"CreateNew", GTK_STOCK_NEW, NULL, NULL, NULL, NULL},
     {"NewFolder", "folder", N_("Folder"), NULL, NULL, G_CALLBACK(on_create_new)},
-    {"NewBlank", "text-x-generic", N_("Blank FIle"), NULL, NULL, G_CALLBACK(on_create_new)},
+    {"NewBlank", "text-x-generic", N_("Blank File"), NULL, NULL, G_CALLBACK(on_create_new)},
     {"Prop", GTK_STOCK_PROPERTIES, NULL, NULL, NULL, G_CALLBACK(fm_desktop_preference)}
 };
 

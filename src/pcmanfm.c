@@ -67,13 +67,13 @@ static int n_pcmanfm_ref = 0;
 static GOptionEntry opt_entries[] =
 {
     { "new-tab", 't', 0, G_OPTION_ARG_NONE, &new_tab, N_("Open folders in new tabs of the last used window instead of creating new windows"), NULL },
-    { "profile", 'p', 0, G_OPTION_ARG_STRING, &profile, N_("Name of config profile"), "<profile name>" },
+    { "profile", 'p', 0, G_OPTION_ARG_STRING, &profile, N_("Name of configuration profile"), "<profile name>" },
     { "desktop", '\0', 0, G_OPTION_ARG_NONE, &show_desktop, N_("Launch desktop manager"), NULL },
     { "desktop-off", '\0', 0, G_OPTION_ARG_NONE, &desktop_off, N_("Turn off desktop manager if it's running"), NULL },
     { "daemon-mode", 'd', 0, G_OPTION_ARG_NONE, &daemon_mode, N_("Run PCManFM as a daemon"), NULL },
     { "desktop-pref", '\0', 0, G_OPTION_ARG_NONE, &desktop_pref, N_("Open desktop preference dialog"), NULL },
     { "set-wallpaper", 'w', 0, G_OPTION_ARG_FILENAME, &set_wallpaper, N_("Set desktop wallpaper"), N_("<image file>") },
-    { "show-pref", '\0', 0, G_OPTION_ARG_INT, &show_pref, N_("Open preference dialog. 'n' is the number of page you want to show (1, 2, 3...)."), "n" },
+    { "show-pref", '\0', 0, G_OPTION_ARG_INT, &show_pref, N_("Open preference dialog. 'n' is number of the page you want to show (1, 2, 3...)."), "n" },
     { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
     { "no-desktop", '\0', 0, G_OPTION_ARG_NONE, &no_desktop, N_("No function. Just to be compatible with nautilus"), NULL },
     {G_OPTION_REMAINING, 0, 0, G_OPTION_ARG_FILENAME_ARRAY, &files_to_open, NULL, N_("[FILE1, FILE2,...]")},
@@ -452,8 +452,7 @@ gboolean pcmanfm_run()
             }
             if(cwd)
                 fm_path_unref(cwd);
-            /* FIXME: do this asynchronously */
-            fm_job_run_sync(job);
+            fm_job_run_sync_with_mainloop(job);
             infos = fm_list_peek_head_link(FM_FILE_INFO_JOB(job)->file_infos);
             fm_launch_files_simple(NULL, NULL, infos, pcmanfm_open_folder, NULL);
             g_object_unref(job);

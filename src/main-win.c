@@ -176,7 +176,13 @@ static void on_file_clicked(FmFolderView* fv, FmFolderViewClickType type, FmFile
         else if(!fm_file_info_is_symlink(fi) && fi->target) /* FIXME: use accessor functions. */
         {
             /* symlinks also has fi->target, but we only handle shortcuts here. */
-            fm_main_win_chdir_by_name( win, fi->target);
+            if(fm_file_info_is_dir(fi))
+                fm_main_win_chdir_by_name( win, fi->target);
+            else
+            {
+                /* FIXME: items under applications:/// are not working... */
+                /* fm_launch_file_simple(win, NULL, fi, open_folder_func, win); */
+            }
         }
         else
         {
@@ -817,7 +823,7 @@ static void on_vol_info_available(GObject *src, GAsyncResult *res, FmMainWin* wi
         fm_file_size_to_str(free_str, free, TRUE);
         fm_file_size_to_str(total_str, total, TRUE);
         g_snprintf( buf, G_N_ELEMENTS(buf),
-                    _("Free space: %s (Total: %s )"), free_str, total_str );
+                    _("Free space: %s (Total: %s)"), free_str, total_str );
         gtk_label_set_text(gtk_bin_get_child(win->vol_status), buf);
         gtk_widget_show(win->vol_status);
     }
