@@ -24,6 +24,7 @@
 #endif
 
 #include <glib/gi18n.h>
+#include <gdk/gdkkeysyms.h>
 
 #include "pcmanfm.h"
 
@@ -258,6 +259,20 @@ static void on_sel_changed(FmFolderView* fv, FmFileInfoList* files, FmMainWin* w
     }
 }
 
+static gboolean on_view_key_press_event(FmFolderView* fv, GdkEventKey* evt, FmMainWin* win)
+{
+    switch(evt->keyval)
+    {
+    case GDK_BackSpace:
+        on_go_up(NULL, win);
+        break;
+    case GDK_Delete:
+        on_del(NULL, win);
+        break;
+    }
+    return FALSE;
+}
+
 static void on_status(FmFolderView* fv, const char* msg, FmMainWin* win)
 {
     gtk_statusbar_pop(win->statusbar, win->statusbar_ctx);
@@ -411,10 +426,12 @@ static void fm_main_win_init(FmMainWin *self)
     act_grp = gtk_action_group_new("Main");
     gtk_action_group_set_translation_domain(act_grp, NULL);
     gtk_action_group_add_actions(act_grp, main_win_actions, G_N_ELEMENTS(main_win_actions), self);
+    /* FIXME: this is so ugly */
+    main_win_toggle_actions[0].is_active = app_config->show_hidden;
     gtk_action_group_add_toggle_actions(act_grp, main_win_toggle_actions, G_N_ELEMENTS(main_win_toggle_actions), self);
-    gtk_action_group_add_radio_actions(act_grp, main_win_mode_actions, G_N_ELEMENTS(main_win_mode_actions), FM_FV_ICON_VIEW, on_change_mode, self);
-    gtk_action_group_add_radio_actions(act_grp, main_win_sort_type_actions, G_N_ELEMENTS(main_win_sort_type_actions), GTK_SORT_ASCENDING, on_sort_type, self);
-    gtk_action_group_add_radio_actions(act_grp, main_win_sort_by_actions, G_N_ELEMENTS(main_win_sort_by_actions), 0, on_sort_by, self);
+    gtk_action_group_add_radio_actions(act_grp, main_win_mode_actions, G_N_ELEMENTS(main_win_mode_actions), app_config->view_mode, on_change_mode, self);
+    gtk_action_group_add_radio_actions(act_grp, main_win_sort_type_actions, G_N_ELEMENTS(main_win_sort_type_actions), app_config->sort_type, on_sort_type, self);
+    gtk_action_group_add_radio_actions(act_grp, main_win_sort_by_actions, G_N_ELEMENTS(main_win_sort_by_actions), app_config->sort_by, on_sort_by, self);
 
     accel_grp = gtk_ui_manager_get_accel_group(ui);
     gtk_window_add_accel_group(self, accel_grp);
@@ -526,6 +543,7 @@ void on_show_hidden(GtkToggleAction* act, FmMainWin* win)
 {
     gboolean active = gtk_toggle_action_get_active(act);
     fm_folder_view_set_show_hidden( win->folder_view, active );
+    app_config->show_hidden = active;
 }
 
 void on_change_mode(GtkRadioAction* act, GtkRadioAction *cur, FmMainWin* win)
@@ -538,12 +556,14 @@ void on_sort_by(GtkRadioAction* act, GtkRadioAction *cur, FmMainWin* win)
 {
     int val = gtk_radio_action_get_current_value(cur);
     fm_folder_view_sort(win->folder_view, -1, val);
+    app_config->sort_by = val;
 }
 
 void on_sort_type(GtkRadioAction* act, GtkRadioAction *cur, FmMainWin* win)
 {
     int val = gtk_radio_action_get_current_value(cur);
     fm_folder_view_sort(win->folder_view, val, -1);
+    app_config->sort_type = val;
 }
 
 void on_focus_in(GtkWidget* w, GdkEventFocus* evt)
@@ -876,13 +896,14 @@ gint fm_main_win_add_tab(FmMainWin* win, FmPath* path)
     FmNavHistory* nh;
 
     /* create folder view */
-    folder_view = fm_folder_view_new( FM_FV_ICON_VIEW );
-    fm_folder_view_set_show_hidden(folder_view, FALSE);
-    fm_folder_view_sort(folder_view, GTK_SORT_DESCENDING, COL_FILE_NAME);
+    folder_view = fm_folder_view_new( app_config->view_mode );
+    fm_folder_view_set_show_hidden(folder_view, app_config->show_hidden);
+    fm_folder_view_sort(folder_view, app_config->sort_type, app_config->sort_by);
     fm_folder_view_set_selection_mode(folder_view, GTK_SELECTION_MULTIPLE);
     g_signal_connect(folder_view, "clicked", on_file_clicked, win);
     g_signal_connect(folder_view, "status", on_status, win);
     g_signal_connect(folder_view, "sel-changed", on_sel_changed, win);
+    g_signal_connect(folder_view, "key-press-event", on_view_key_press_event, win);
 
     nh = fm_nav_history_new();
     g_object_set_qdata_full((GObject*)folder_view, nav_history_id, nh, (GDestroyNotify)g_object_unref);
@@ -995,7 +1016,13 @@ void on_paste(GtkAction* act, FmMainWin* win)
 void on_del(GtkAction* act, FmMainWin* win)
 {
     FmPathList* files = fm_folder_view_get_selected_file_paths(win->folder_view);
-    fm_trash_or_delete_files(files);
+    GdkModifierType state = 0;
+    if(!gtk_get_current_event_state (&state))
+        state = 0;
+    if( state & GDK_SHIFT_MASK ) /* Shift + Delete = delete directly */
+        fm_delete_files(files);
+    else
+        fm_trash_or_delete_files(files);
     fm_list_unref(files);
 }
 

@@ -23,7 +23,7 @@
 #include <config.h>
 #endif
 
-#include <fm-utils.h>
+#include <fm-gtk.h>
 #include <stdio.h>
 
 #include "app-config.h"
@@ -63,6 +63,11 @@ static void fm_app_config_init(FmAppConfig *self)
     self->desktop_fg.red = self->desktop_fg.green = self->desktop_fg.blue = 65535;
     self->win_width = 640;
     self->win_height = 480;
+
+    self->view_mode = FM_FV_ICON_VIEW;
+    self->show_hidden = FALSE;
+    self->sort_type = GTK_SORT_ASCENDING;
+    self->sort_by = 0;
 }
 
 
@@ -74,9 +79,12 @@ FmConfig *fm_app_config_new(void)
 void fm_app_config_load_from_key_file(FmAppConfig* cfg, GKeyFile* kf)
 {
     char* tmp;
+    /* behavior */
     fm_key_file_get_bool(kf, "config", "bm_open_method", &cfg->bm_open_method);
 
+    /* desktop */
     fm_key_file_get_int(kf, "desktop", "wallpaper_mode", &cfg->wallpaper_mode);
+
     cfg->wallpaper = g_key_file_get_string(kf, "desktop", "wallpaper", NULL);
     tmp = g_key_file_get_string(kf, "desktop", "desktop_bg", NULL);
     if(tmp)
@@ -102,6 +110,12 @@ void fm_app_config_load_from_key_file(FmAppConfig* cfg, GKeyFile* kf)
 
     fm_key_file_get_int(kf, "ui", "win_width", &cfg->win_width);
     fm_key_file_get_int(kf, "ui", "win_height", &cfg->win_height);
+
+    /* default values for folder views */
+    fm_key_file_get_int(kf, "ui", "view_mode", &cfg->view_mode);
+    fm_key_file_get_bool(kf, "ui", "show_hidden", &cfg->show_hidden);
+    fm_key_file_get_int(kf, "ui", "sort_type", &cfg->sort_type);
+    fm_key_file_get_int(kf, "ui", "sort_by", &cfg->sort_by);
 }
 
 void fm_app_config_load_from_file(FmAppConfig* cfg, const char* name)
@@ -170,6 +184,10 @@ void fm_app_config_save(FmAppConfig* cfg, const char* name)
             fprintf(f, "hide_close_btn=%d\n", cfg->hide_close_btn);
             fprintf(f, "win_width=%d\n", cfg->win_width);
             fprintf(f, "win_height=%d\n", cfg->win_height);
+            fprintf(f, "view_mode=%d\n", cfg->view_mode);
+            fprintf(f, "show_hidden=%d\n", cfg->show_hidden);
+            fprintf(f, "sort_type=%d\n", cfg->sort_type);
+            fprintf(f, "sort_by=%d\n", cfg->sort_by);
             fclose(f);
         }
     }

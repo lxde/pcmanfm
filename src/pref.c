@@ -219,6 +219,7 @@ void fm_edit_preference( GtkWindow* parent, int page )
         INIT_BOOL(builder, FmConfig, si_unit, NULL);
 
         INIT_COMBO(builder, FmAppConfig, bm_open_method, NULL);
+        INIT_COMBO(builder, FmAppConfig, view_mode, NULL);
 
         INIT_ICON_SIZES(builder, big_icon_size);
         INIT_ICON_SIZES(builder, small_icon_size);

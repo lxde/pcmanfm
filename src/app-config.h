@@ -64,6 +64,12 @@ struct _FmAppConfig
     int win_width;
     int win_height;
 
+    /* default values for folder views */
+    guint view_mode;
+    gboolean show_hidden;
+    GtkSortType sort_type;
+    int sort_by;
+
     /* desktop manager */
     /* emit "changed::wallpaper" */
     FmWallpaperMode wallpaper_mode;
