@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-21 13:01+0800\n"
+"POT-Creation-Date: 2010-02-21 23:07+0800\n"
 "PO-Revision-Date: 2010-02-04 19:17+0100\n"
 "Last-Translator: Yarema aka Knedlyk <yupadmin@gmail.com>\n"
 "Language-Team: Ukrainian <translation@linux.org.ua>\n"
@@ -60,7 +60,7 @@ msgstr "Вигляд"
 msgid "Background color:"
 msgstr "Колір тла:"
 
-#: ../data/ui/desktop-pref.glade.h:7 ../data/ui/pref.glade.h:6
+#: ../data/ui/desktop-pref.glade.h:7 ../data/ui/pref.glade.h:8
 msgid "Center on the screen"
 msgstr "Центр на екрані"
 
@@ -76,7 +76,7 @@ msgstr "Колір тіні:"
 msgid "Desktop Icons"
 msgstr "Іконки стільниці"
 
-#: ../data/ui/desktop-pref.glade.h:11 ../src/desktop-ui.c:56
+#: ../data/ui/desktop-pref.glade.h:11 ../src/desktop-ui.c:58
 msgid "Desktop Preferences"
 msgstr "Налаштування стільниці"
 
@@ -112,15 +112,15 @@ msgstr "Показати значки дисків на стільниці"
 msgid "Show menus provided by WM when desktop is clicked"
 msgstr "Показати меню менеджера вікон при кліканні на стільниці"
 
-#: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:22
+#: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:32
 msgid "Stretch to fill the entire screen"
 msgstr "Розтягнути для заповнення всієї стільниці"
 
-#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:23
+#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:33
 msgid "Stretch to fit the screen"
 msgstr "Розтягнути щоб вмістити на стільниці"
 
-#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:25
+#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:37
 msgid "Tile the image to fill the entire screen"
 msgstr "Розмножити зображення щоб заповнити весь екран"
 
@@ -137,291 +137,388 @@ msgid "<b>Behavior</b>"
 msgstr "<b>Поведінка</b>"
 
 #: ../data/ui/pref.glade.h:2
+#, fuzzy
+msgid "<b>Default View</b>"
+msgstr "<b>Текст</b>"
+
+#: ../data/ui/pref.glade.h:3
 msgid "<b>Icons</b>"
 msgstr "<b>Значки</b>"
 
-#: ../data/ui/pref.glade.h:3
+#: ../data/ui/pref.glade.h:4
+#, fuzzy
+msgid "<b>Programs</b>"
+msgstr "<b>Значки</b>"
+
+#: ../data/ui/pref.glade.h:5
 msgid "<b>User Interface</b>"
 msgstr "<b>Інтерфейс користувача</b>"
 
-#: ../data/ui/pref.glade.h:4
+#: ../data/ui/pref.glade.h:6
 msgid "Always show the tab bar"
 msgstr "Завжди показувати панель вкладок"
 
-#: ../data/ui/pref.glade.h:5
+#: ../data/ui/pref.glade.h:7
 msgid "Bookmarks:"
 msgstr "Закладки:"
 
-#: ../data/ui/pref.glade.h:7
+#: ../data/ui/pref.glade.h:9
+#, fuzzy
+msgid "Compact View"
+msgstr "_Компактний перегляд"
+
+#: ../data/ui/pref.glade.h:10
 msgid "Confirm before deleting files"
 msgstr "Попереджати перед видаленням файлів"
 
-#: ../data/ui/pref.glade.h:8
-msgid "Display image files with supported format as thumbnails"
-msgstr "Показати файли зображень як іконки"
+#: ../data/ui/pref.glade.h:11
+#, fuzzy
+msgid "Detailed List View"
+msgstr "Детальний перегляд _списком"
 
-#: ../data/ui/pref.glade.h:9
+#: ../data/ui/pref.glade.h:12
+msgid "Do not generate thumbnails for files exceeding this size:"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:14
+#, no-c-format
+msgid ""
+"Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
+"%s = the command line you want to execute with terminal or su."
+msgstr ""
+
+#: ../data/ui/pref.glade.h:16
 msgid "Hide 'Close tab' buttons"
 msgstr "Приховати кнопку 'Закрити вкладку'"
 
-#: ../data/ui/pref.glade.h:10
+#: ../data/ui/pref.glade.h:17
 msgid "Hide folder content border"
 msgstr "Приховати границю поділу каталогів"
 
-#: ../data/ui/pref.glade.h:11
+#: ../data/ui/pref.glade.h:18
 msgid "Hide side pane buttons"
 msgstr "Приховати кнопки бічної панелі"
 
-#: ../data/ui/pref.glade.h:12
-msgid "Max size of files displayed as thumbnails:"
-msgstr "Максимальний розмір файлів, що відображаються як іконки:"
+#: ../data/ui/pref.glade.h:19
+#, fuzzy
+msgid "Icon View"
+msgstr "_Перегляд значками"
 
-#: ../data/ui/pref.glade.h:13
+#: ../data/ui/pref.glade.h:20
 msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
 msgstr ""
 "Перенести видалені файли до \"смітника\" замість повного видалення з диску"
 
-#: ../data/ui/pref.glade.h:14
+#: ../data/ui/pref.glade.h:21
+msgid "Only show thumbnails for local files"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:22
 msgid "Open files with single click"
 msgstr "Відкривати файли одним клацанням"
 
-#: ../data/ui/pref.glade.h:15
+#: ../data/ui/pref.glade.h:23
 msgid "Opened in Current Tab"
 msgstr "Відкрити в поточній вкладці"
 
-#: ../data/ui/pref.glade.h:16
+#: ../data/ui/pref.glade.h:24
 msgid "Opened in New Tab"
 msgstr "Відкрити в новій вкладці"
 
-#: ../data/ui/pref.glade.h:17
+#: ../data/ui/pref.glade.h:25
 msgid "Opened in New Window"
 msgstr "Відкрити в новому вікні"
 
-#: ../data/ui/pref.glade.h:18
+#: ../data/ui/pref.glade.h:26
 msgid "Preferences"
 msgstr "Налаштування"
 
-#: ../data/ui/pref.glade.h:19
+#: ../data/ui/pref.glade.h:27
+msgid "Show thumbnails of files"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:28
 msgid "Size of big icons:"
 msgstr "Розмір великих значків:"
 
-#: ../data/ui/pref.glade.h:20
+#: ../data/ui/pref.glade.h:29
 msgid "Size of side pane icons:"
 msgstr "Розмір значків бічної панелі:"
 
-#: ../data/ui/pref.glade.h:21
+#: ../data/ui/pref.glade.h:30
 msgid "Size of small icons:"
 msgstr "Розмір малих значків:"
 
-#: ../data/ui/pref.glade.h:24
-msgid "Terminal:"
+#: ../data/ui/pref.glade.h:31
+#, fuzzy
+msgid "Size of thumbnails:"
+msgstr "Розмір малих значків:"
+
+#: ../data/ui/pref.glade.h:34
+msgid "Switch user command:"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:35
+#, fuzzy
+msgid "Terminal emulator:"
 msgstr "Термінал:"
 
-#: ../data/ui/pref.glade.h:26
+#: ../data/ui/pref.glade.h:36
+#, fuzzy
+msgid "Thumbnail View"
+msgstr "Перегляд мініа_тюрами"
+
+#: ../data/ui/pref.glade.h:38
 msgid "Use SI decimal prefixes instead of IEC binary prefixes"
 msgstr "Використовувати SI десяткові префікси замість IEC бінарних префіксів"
 
-#: ../data/ui/pref.glade.h:27
+#: ../data/ui/pref.glade.h:39
+msgid "View Mode:"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:40
 msgid "_Advanced"
 msgstr "_Додатково"
 
-#: ../data/ui/pref.glade.h:28
+#: ../data/ui/pref.glade.h:41
 msgid "_Display"
 msgstr "_Екран"
 
-#: ../data/ui/pref.glade.h:29
+#: ../data/ui/pref.glade.h:42
 msgid "_General"
 msgstr "_Загальне"
 
-#: ../data/ui/pref.glade.h:30
+#: ../data/ui/pref.glade.h:43
 msgid "_Volume Management"
 msgstr "_Управління дисками"
 
-#: ../src/desktop-ui.c:51
+#: ../src/desktop-ui.c:53
 #, fuzzy
 msgid "_Invert Selection"
 msgstr "Забрати виділення"
 
-#: ../src/desktop-ui.c:52 ../src/main-win-ui.c:134
+#: ../src/desktop-ui.c:54 ../src/main-win-ui.c:144
 msgid "_Sort Files"
 msgstr "_Сортування файлів"
 
-#: ../src/desktop-ui.c:54 ../src/main-win-ui.c:155
+#: ../src/desktop-ui.c:56 ../src/main-win-ui.c:168
 msgid "Folder"
 msgstr "Каталог"
 
-#: ../src/desktop-ui.c:55
+#: ../src/desktop-ui.c:57
 #, fuzzy
 msgid "Blank File"
 msgstr "Пустий файл"
 
-#: ../src/desktop-ui.c:67 ../src/main-win-ui.c:181
+#: ../src/desktop-ui.c:69 ../src/main-win-ui.c:194
 msgid "By _Name"
 msgstr "По _назві"
 
-#: ../src/desktop-ui.c:68 ../src/main-win-ui.c:182
+#: ../src/desktop-ui.c:70 ../src/main-win-ui.c:195
 msgid "By _Modification Time"
 msgstr "По _часу зміни"
 
-#: ../src/desktop-ui.c:83 ../src/main-win-ui.c:198
+#: ../src/desktop-ui.c:71 ../src/main-win-ui.c:196
+#, fuzzy
+msgid "By _Size"
+msgstr "По _назві"
+
+#: ../src/desktop-ui.c:72 ../src/main-win-ui.c:197
+msgid "By File _Type"
+msgstr ""
+
+#: ../src/desktop-ui.c:87 ../src/main-win-ui.c:213
 msgid "Open in New Tab"
 msgstr "Відкрити в новій вкладці"
 
-#: ../src/desktop-ui.c:84 ../src/main-win-ui.c:199
+#: ../src/desktop-ui.c:88 ../src/main-win-ui.c:214
 msgid "Open in New Window"
 msgstr "Відкрити в новому вікні"
 
-#: ../src/main-win-ui.c:116
+#: ../src/main-win-ui.c:126
 msgid "_File"
 msgstr "_Файл"
 
-#: ../src/main-win-ui.c:117
+#: ../src/main-win-ui.c:127
 msgid "_New Window"
 msgstr "_Нове вікно"
 
-#: ../src/main-win-ui.c:118
+#: ../src/main-win-ui.c:128
 msgid "New _Tab"
 msgstr "Нова _вкладка"
 
-#: ../src/main-win-ui.c:119
+#: ../src/main-win-ui.c:129
 msgid "_Close Tab"
 msgstr "_Закрити вкладку"
 
-#: ../src/main-win-ui.c:120
+#: ../src/main-win-ui.c:130
 msgid "Close Window"
 msgstr "Закрити вікно"
 
-#: ../src/main-win-ui.c:121
+#: ../src/main-win-ui.c:131
 msgid "_Edit"
 msgstr "_Редагувати"
 
-#: ../src/main-win-ui.c:126
+#: ../src/main-win-ui.c:136
 msgid "Rename"
 msgstr "Перейменувати"
 
-#: ../src/main-win-ui.c:127
+#: ../src/main-win-ui.c:137
 msgid "Create Symlink"
 msgstr "Створити символічне посилання"
 
-#: ../src/main-win-ui.c:128
+#: ../src/main-win-ui.c:138
 msgid "Move To..."
 msgstr "Пересунути до..."
 
-#: ../src/main-win-ui.c:129
+#: ../src/main-win-ui.c:139
 msgid "Copy To..."
 msgstr "Копіювати до..."
 
-#: ../src/main-win-ui.c:131
+#: ../src/main-win-ui.c:141
 msgid "Invert Selection"
 msgstr "Забрати виділення"
 
-#: ../src/main-win-ui.c:133
+#: ../src/main-win-ui.c:143
 msgid "_View"
 msgstr "_Перегляд"
 
-#: ../src/main-win-ui.c:135
+#: ../src/main-win-ui.c:145
 msgid "_Help"
 msgstr "_Допомога"
 
-#: ../src/main-win-ui.c:137
+#: ../src/main-win-ui.c:147
 msgid "_Go"
 msgstr "_Йти"
 
-#: ../src/main-win-ui.c:138
+#: ../src/main-win-ui.c:148
 msgid "Previous Folder"
 msgstr "Попередній каталог"
 
-#: ../src/main-win-ui.c:139
+#: ../src/main-win-ui.c:149
 msgid "Next Folder"
 msgstr "Наступний каталог"
 
-#: ../src/main-win-ui.c:140
+#: ../src/main-win-ui.c:150
 msgid "Parent Folder"
 msgstr "Батьківський каталог"
 
-#: ../src/main-win-ui.c:140
+#: ../src/main-win-ui.c:150
 msgid "Go to parent Folder"
 msgstr "Перейти до батьківського каталогу"
 
-#: ../src/main-win-ui.c:141
+#: ../src/main-win-ui.c:151
 msgid "Home Folder"
 msgstr "Домашній каталог"
 
-#: ../src/main-win-ui.c:142
+#: ../src/main-win-ui.c:152
 msgid "Desktop"
 msgstr "Стільниця"
 
-#: ../src/main-win-ui.c:142
+#: ../src/main-win-ui.c:152
 msgid "Desktop Folder"
 msgstr "Каталог стільниці"
 
-#: ../src/main-win-ui.c:143
+#: ../src/main-win-ui.c:153
 msgid "My Computer"
 msgstr "Мій комп’ютер"
 
-#: ../src/main-win-ui.c:144
+#: ../src/main-win-ui.c:154
 msgid "Trash Can"
 msgstr "Смітник"
 
-#: ../src/main-win-ui.c:145
+#: ../src/main-win-ui.c:155
 msgid "Network Drives"
 msgstr "Сіткові диски"
 
-#: ../src/main-win-ui.c:146
+#: ../src/main-win-ui.c:156
 msgid "Applications"
 msgstr "Програми"
 
-#: ../src/main-win-ui.c:146
+#: ../src/main-win-ui.c:156
 msgid "Installed Applications"
 msgstr "Інстальовані програми"
 
-#: ../src/main-win-ui.c:148
+#: ../src/main-win-ui.c:158
 msgid "_Bookmarks"
 msgstr "_Закладки"
 
-#: ../src/main-win-ui.c:149
+#: ../src/main-win-ui.c:159
 msgid "Add To Bookmarks"
 msgstr "Додати до закладок"
 
-#: ../src/main-win-ui.c:156
+#: ../src/main-win-ui.c:160
+msgid "_Tools"
+msgstr ""
+
+#: ../src/main-win-ui.c:161
+msgid "Open Current Folder in _Terminal"
+msgstr ""
+
+#: ../src/main-win-ui.c:162
+msgid "Open Current Folder as _Root"
+msgstr ""
+
+#: ../src/main-win-ui.c:169
 msgid "Blank FIle"
 msgstr "Пустий файл"
 
-#: ../src/main-win-ui.c:162
+#: ../src/main-win-ui.c:175
 msgid "Show _Hidden"
 msgstr "Показати приховані"
 
-#: ../src/main-win-ui.c:167
+#: ../src/main-win-ui.c:180
 msgid "_Icon View"
 msgstr "_Перегляд значками"
 
-#: ../src/main-win-ui.c:168
+#: ../src/main-win-ui.c:181
 msgid "_Compact View"
 msgstr "_Компактний перегляд"
 
-#: ../src/main-win-ui.c:169
+#: ../src/main-win-ui.c:182
 #, fuzzy
 msgid "_Thumbnail View"
 msgstr "Перегляд мініа_тюрами"
 
-#: ../src/main-win-ui.c:170
+#: ../src/main-win-ui.c:183
 msgid "Detailed _List View"
 msgstr "Детальний перегляд _списком"
 
-#: ../src/main-win.c:826
+#: ../src/main-win.c:554
+msgid "Terminal emulator is not set."
+msgstr ""
+
+#: ../src/main-win.c:600
+msgid "Switch user command is not set."
+msgstr ""
+
+#: ../src/main-win.c:947
 #, fuzzy, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Вільний простір: %s (Всього: %s )"
 
-#: ../src/main-win.c:1079
+#: ../src/main-win.c:1152
+#, c-format
+msgid ""
+"Add following folder to bookmarks:\n"
+"'%s'\n"
+"Enter a name for the new bookmark item:"
+msgstr ""
+
+#: ../src/main-win.c:1156
+#, fuzzy
+msgid "Add to Bookmarks"
+msgstr "Додати до закладок"
+
+#: ../src/main-win.c:1228
 msgid "Create New..."
 msgstr "Створити новий..."
 
-#: ../src/main-win.c:1079
+#: ../src/main-win.c:1228
 msgid "Enter a name for the newly created file:"
 msgstr "Введіть назву новоствореного файлу:"
 
-#: ../src/main-win.c:1079
+#: ../src/main-win.c:1228
 msgid "New"
 msgstr "Новий"
 
@@ -482,3 +579,9 @@ msgstr "Немає функції. Тільки щоб було компатиб
 #: ../src/pcmanfm.c:79
 msgid "[FILE1, FILE2,...]"
 msgstr "[ФАЙЛ1, ФАЙЛ2,...]"
+
+#~ msgid "Display image files with supported format as thumbnails"
+#~ msgstr "Показати файли зображень як іконки"
+
+#~ msgid "Max size of files displayed as thumbnails:"
+#~ msgstr "Максимальний розмір файлів, що відображаються як іконки:"

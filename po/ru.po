@@ -1,19 +1,19 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
-#, 2010.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-21 04:20+0000\n"
+"POT-Creation-Date: 2010-02-21 23:07+0800\n"
 "PO-Revision-Date: 2010-02-20 08:45+0300\n"
 "Last-Translator: Koptev Oleg <koptev.oleg@gmail.com>\n"
 "Language-Team: Russian <>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Poedit-Language: Russian\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-Country: Russia\n"
@@ -62,7 +62,7 @@ msgstr "Внешний вид"
 msgid "Background color:"
 msgstr "Цвет фона:"
 
-#: ../data/ui/desktop-pref.glade.h:7 ../data/ui/pref.glade.h:6
+#: ../data/ui/desktop-pref.glade.h:7 ../data/ui/pref.glade.h:8
 msgid "Center on the screen"
 msgstr "По центру экрана"
 
@@ -78,7 +78,7 @@ msgstr "Цвет тени:"
 msgid "Desktop Icons"
 msgstr "Иконки рабочего стола"
 
-#: ../data/ui/desktop-pref.glade.h:11 ../src/desktop-ui.c:56
+#: ../data/ui/desktop-pref.glade.h:11 ../src/desktop-ui.c:58
 msgid "Desktop Preferences"
 msgstr "Параметры рабочего стола"
 
@@ -114,15 +114,15 @@ msgstr "Показывать на рабочем столе иконки дис�
 msgid "Show menus provided by WM when desktop is clicked"
 msgstr "При нажатии показать контекстное меню менеджера рабочего стола"
 
-#: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:22
+#: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:32
 msgid "Stretch to fill the entire screen"
 msgstr "Растянуть на весь экран"
 
-#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:23
+#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:33
 msgid "Stretch to fit the screen"
 msgstr "Растянуть по размеру экрана"
 
-#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:25
+#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:37
 msgid "Tile the image to fill the entire screen"
 msgstr "Замостить изображением весь экран"
 
@@ -139,293 +139,394 @@ msgid "<b>Behavior</b>"
 msgstr "<b>Поведение</b>"
 
 #: ../data/ui/pref.glade.h:2
+#, fuzzy
+msgid "<b>Default View</b>"
+msgstr "<b>Текст</b>"
+
+#: ../data/ui/pref.glade.h:3
 msgid "<b>Icons</b>"
 msgstr "<b>Значки</b>"
 
-#: ../data/ui/pref.glade.h:3
+#: ../data/ui/pref.glade.h:4
+#, fuzzy
+msgid "<b>Programs</b>"
+msgstr "<b>Значки</b>"
+
+#: ../data/ui/pref.glade.h:5
 msgid "<b>User Interface</b>"
 msgstr "<b>Интерфейс пользователя</b>"
 
-#: ../data/ui/pref.glade.h:4
+#: ../data/ui/pref.glade.h:6
 msgid "Always show the tab bar"
 msgstr "Всегда показывать панель вкладок"
 
-#: ../data/ui/pref.glade.h:5
+#: ../data/ui/pref.glade.h:7
 msgid "Bookmarks:"
 msgstr "Закладки:"
 
-#: ../data/ui/pref.glade.h:7
+#: ../data/ui/pref.glade.h:9
+#, fuzzy
+msgid "Compact View"
+msgstr "_Компактный вид"
+
+#: ../data/ui/pref.glade.h:10
 msgid "Confirm before deleting files"
 msgstr "Подтверждение удаления файлов"
 
-#: ../data/ui/pref.glade.h:8
-msgid "Display image files with supported format as thumbnails"
-msgstr "Отображения файлов изображений с поддерживаемого формата в виде эскизов"
+#: ../data/ui/pref.glade.h:11
+#, fuzzy
+msgid "Detailed List View"
+msgstr "_Подробности"
 
-#: ../data/ui/pref.glade.h:9
+#: ../data/ui/pref.glade.h:12
+msgid "Do not generate thumbnails for files exceeding this size:"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:14
+#, no-c-format
+msgid ""
+"Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
+"%s = the command line you want to execute with terminal or su."
+msgstr ""
+
+#: ../data/ui/pref.glade.h:16
 msgid "Hide 'Close tab' buttons"
 msgstr "Скрыть кнопку 'Закрыть вкладку' "
 
-#: ../data/ui/pref.glade.h:10
+#: ../data/ui/pref.glade.h:17
 msgid "Hide folder content border"
 msgstr "Скрыть границу содержимого папки"
 
-#: ../data/ui/pref.glade.h:11
+#: ../data/ui/pref.glade.h:18
 msgid "Hide side pane buttons"
 msgstr "Скрыть боковые кнопоки панели"
 
-#: ../data/ui/pref.glade.h:12
-msgid "Max size of files displayed as thumbnails:"
-msgstr "Максимальный размер файлов, отображаемых, как эскизы"
+#: ../data/ui/pref.glade.h:19
+#, fuzzy
+msgid "Icon View"
+msgstr "_Значки"
 
-#: ../data/ui/pref.glade.h:13
+#: ../data/ui/pref.glade.h:20
 msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
 msgstr "Переместить удаленные файлы в \"Корзину\" вместо удаления с диска"
 
-#: ../data/ui/pref.glade.h:14
+#: ../data/ui/pref.glade.h:21
+msgid "Only show thumbnails for local files"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:22
 msgid "Open files with single click"
 msgstr "Открытие файлов одним нажатием"
 
-#: ../data/ui/pref.glade.h:15
+#: ../data/ui/pref.glade.h:23
 msgid "Opened in Current Tab"
 msgstr "Открывать в текущей вкладке"
 
-#: ../data/ui/pref.glade.h:16
+#: ../data/ui/pref.glade.h:24
 msgid "Opened in New Tab"
 msgstr "Открывать в новой вкладке"
 
-#: ../data/ui/pref.glade.h:17
+#: ../data/ui/pref.glade.h:25
 msgid "Opened in New Window"
 msgstr "Открывать в новом Окне"
 
-#: ../data/ui/pref.glade.h:18
+#: ../data/ui/pref.glade.h:26
 msgid "Preferences"
 msgstr "Параметры"
 
-#: ../data/ui/pref.glade.h:19
+#: ../data/ui/pref.glade.h:27
+msgid "Show thumbnails of files"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:28
 msgid "Size of big icons:"
 msgstr "Размер больших значков:"
 
-#: ../data/ui/pref.glade.h:20
+#: ../data/ui/pref.glade.h:29
 msgid "Size of side pane icons:"
 msgstr "Размер значков боковой панели:"
 
-#: ../data/ui/pref.glade.h:21
+#: ../data/ui/pref.glade.h:30
 msgid "Size of small icons:"
 msgstr "Размер маленьких значков:"
 
-#: ../data/ui/pref.glade.h:24
-msgid "Terminal:"
+#: ../data/ui/pref.glade.h:31
+#, fuzzy
+msgid "Size of thumbnails:"
+msgstr "Размер маленьких значков:"
+
+#: ../data/ui/pref.glade.h:34
+msgid "Switch user command:"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:35
+#, fuzzy
+msgid "Terminal emulator:"
 msgstr "Консоль:"
 
-#: ../data/ui/pref.glade.h:26
+#: ../data/ui/pref.glade.h:36
+#, fuzzy
+msgid "Thumbnail View"
+msgstr "_Миниатюры"
+
+#: ../data/ui/pref.glade.h:38
 msgid "Use SI decimal prefixes instead of IEC binary prefixes"
 msgstr "Используйте десятичные префиксы в системе СИ вместо префиксов IEC"
 
-#: ../data/ui/pref.glade.h:27
+#: ../data/ui/pref.glade.h:39
+msgid "View Mode:"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:40
 msgid "_Advanced"
 msgstr "_Опытные"
 
-#: ../data/ui/pref.glade.h:28
+#: ../data/ui/pref.glade.h:41
 msgid "_Display"
 msgstr "_Отображение"
 
-#: ../data/ui/pref.glade.h:29
+#: ../data/ui/pref.glade.h:42
 msgid "_General"
 msgstr "_Основные"
 
-#: ../data/ui/pref.glade.h:30
+#: ../data/ui/pref.glade.h:43
 msgid "_Volume Management"
 msgstr "_Управление томами"
 
-#: ../src/desktop-ui.c:51
+#: ../src/desktop-ui.c:53
 msgid "_Invert Selection"
 msgstr "_Инвертировать выделение"
 
-#: ../src/desktop-ui.c:52 ../src/main-win-ui.c:134
+#: ../src/desktop-ui.c:54 ../src/main-win-ui.c:144
 msgid "_Sort Files"
 msgstr "_Сортировать файлы"
 
-#: ../src/desktop-ui.c:54 ../src/main-win-ui.c:155
+#: ../src/desktop-ui.c:56 ../src/main-win-ui.c:168
 msgid "Folder"
 msgstr "Папка"
 
-#: ../src/desktop-ui.c:55
+#: ../src/desktop-ui.c:57
 msgid "Blank File"
 msgstr "Пустой файл"
 
-#: ../src/desktop-ui.c:67 ../src/main-win-ui.c:181
+#: ../src/desktop-ui.c:69 ../src/main-win-ui.c:194
 msgid "By _Name"
 msgstr "По _имени"
 
-#: ../src/desktop-ui.c:68 ../src/main-win-ui.c:182
+#: ../src/desktop-ui.c:70 ../src/main-win-ui.c:195
 msgid "By _Modification Time"
 msgstr "По _времени изменения"
 
-#: ../src/desktop-ui.c:83 ../src/main-win-ui.c:198
+#: ../src/desktop-ui.c:71 ../src/main-win-ui.c:196
+#, fuzzy
+msgid "By _Size"
+msgstr "По _имени"
+
+#: ../src/desktop-ui.c:72 ../src/main-win-ui.c:197
+msgid "By File _Type"
+msgstr ""
+
+#: ../src/desktop-ui.c:87 ../src/main-win-ui.c:213
 msgid "Open in New Tab"
 msgstr "Открыть в новой вкладке"
 
-#: ../src/desktop-ui.c:84 ../src/main-win-ui.c:199
+#: ../src/desktop-ui.c:88 ../src/main-win-ui.c:214
 msgid "Open in New Window"
 msgstr "Открыть в новом окне"
 
-#: ../src/main-win-ui.c:116
+#: ../src/main-win-ui.c:126
 msgid "_File"
 msgstr "_Файл"
 
-#: ../src/main-win-ui.c:117
+#: ../src/main-win-ui.c:127
 msgid "_New Window"
 msgstr "_Новое окно"
 
-#: ../src/main-win-ui.c:118
+#: ../src/main-win-ui.c:128
 msgid "New _Tab"
 msgstr "Новая _вкладка"
 
-#: ../src/main-win-ui.c:119
+#: ../src/main-win-ui.c:129
 msgid "_Close Tab"
 msgstr "_Закрыть вкладку"
 
-#: ../src/main-win-ui.c:120
+#: ../src/main-win-ui.c:130
 msgid "Close Window"
 msgstr "Закрыть окно"
 
-#: ../src/main-win-ui.c:121
+#: ../src/main-win-ui.c:131
 msgid "_Edit"
 msgstr "_Редактировать"
 
-#: ../src/main-win-ui.c:126
+#: ../src/main-win-ui.c:136
 msgid "Rename"
 msgstr "Переименовать"
 
-#: ../src/main-win-ui.c:127
+#: ../src/main-win-ui.c:137
 msgid "Create Symlink"
 msgstr "Создать символьную ссылку"
 
-#: ../src/main-win-ui.c:128
+#: ../src/main-win-ui.c:138
 msgid "Move To..."
 msgstr "Переместить в..."
 
-#: ../src/main-win-ui.c:129
+#: ../src/main-win-ui.c:139
 msgid "Copy To..."
 msgstr "Копировать в..."
 
-#: ../src/main-win-ui.c:131
+#: ../src/main-win-ui.c:141
 msgid "Invert Selection"
 msgstr "Инвертировать выделение"
 
-#: ../src/main-win-ui.c:133
+#: ../src/main-win-ui.c:143
 msgid "_View"
 msgstr "_Вид"
 
-#: ../src/main-win-ui.c:135
+#: ../src/main-win-ui.c:145
 msgid "_Help"
 msgstr "_Справка"
 
-#: ../src/main-win-ui.c:137
+#: ../src/main-win-ui.c:147
 msgid "_Go"
 msgstr "_Перейти"
 
-#: ../src/main-win-ui.c:138
+#: ../src/main-win-ui.c:148
 msgid "Previous Folder"
 msgstr "Предыдущая папка"
 
-#: ../src/main-win-ui.c:139
+#: ../src/main-win-ui.c:149
 msgid "Next Folder"
 msgstr "Следующая папка"
 
-#: ../src/main-win-ui.c:140
+#: ../src/main-win-ui.c:150
 msgid "Parent Folder"
 msgstr "Родительская папка"
 
-#: ../src/main-win-ui.c:140
+#: ../src/main-win-ui.c:150
 msgid "Go to parent Folder"
 msgstr "Перейти в родительскую папку"
 
-#: ../src/main-win-ui.c:141
+#: ../src/main-win-ui.c:151
 msgid "Home Folder"
 msgstr "Домашняя папка"
 
-#: ../src/main-win-ui.c:142
+#: ../src/main-win-ui.c:152
 msgid "Desktop"
 msgstr "Рабочий стол"
 
-#: ../src/main-win-ui.c:142
+#: ../src/main-win-ui.c:152
 msgid "Desktop Folder"
 msgstr "Папка рабочего стола"
 
-#: ../src/main-win-ui.c:143
+#: ../src/main-win-ui.c:153
 msgid "My Computer"
 msgstr "Мой компьютер"
 
-#: ../src/main-win-ui.c:144
+#: ../src/main-win-ui.c:154
 msgid "Trash Can"
 msgstr "Корзина"
 
-#: ../src/main-win-ui.c:145
+#: ../src/main-win-ui.c:155
 msgid "Network Drives"
 msgstr "Сетевые устройства"
 
-#: ../src/main-win-ui.c:146
+#: ../src/main-win-ui.c:156
 msgid "Applications"
 msgstr "Приложения"
 
-#: ../src/main-win-ui.c:146
+#: ../src/main-win-ui.c:156
 msgid "Installed Applications"
 msgstr "Установленные приложения"
 
-#: ../src/main-win-ui.c:148
+#: ../src/main-win-ui.c:158
 msgid "_Bookmarks"
 msgstr "_Закладки"
 
-#: ../src/main-win-ui.c:149
+#: ../src/main-win-ui.c:159
 msgid "Add To Bookmarks"
 msgstr "Добавить закладку"
 
-#: ../src/main-win-ui.c:156
+#: ../src/main-win-ui.c:160
+msgid "_Tools"
+msgstr ""
+
+#: ../src/main-win-ui.c:161
+msgid "Open Current Folder in _Terminal"
+msgstr ""
+
+#: ../src/main-win-ui.c:162
+msgid "Open Current Folder as _Root"
+msgstr ""
+
+#: ../src/main-win-ui.c:169
 msgid "Blank FIle"
 msgstr "Пустой файл"
 
-#: ../src/main-win-ui.c:162
+#: ../src/main-win-ui.c:175
 msgid "Show _Hidden"
 msgstr "_Показать скрытые файлы"
 
-#: ../src/main-win-ui.c:167
+#: ../src/main-win-ui.c:180
 msgid "_Icon View"
 msgstr "_Значки"
 
-#: ../src/main-win-ui.c:168
+#: ../src/main-win-ui.c:181
 msgid "_Compact View"
 msgstr "_Компактный вид"
 
-#: ../src/main-win-ui.c:169
+#: ../src/main-win-ui.c:182
 msgid "_Thumbnail View"
 msgstr "_Миниатюры"
 
-#: ../src/main-win-ui.c:170
+#: ../src/main-win-ui.c:183
 msgid "Detailed _List View"
 msgstr "_Подробности"
 
-#: ../src/main-win.c:826
+#: ../src/main-win.c:554
+msgid "Terminal emulator is not set."
+msgstr ""
+
+#: ../src/main-win.c:600
+msgid "Switch user command is not set."
+msgstr ""
+
+#: ../src/main-win.c:947
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Свободное место: %s (Всего: %s )"
 
-#: ../src/main-win.c:1079
+#: ../src/main-win.c:1152
+#, c-format
+msgid ""
+"Add following folder to bookmarks:\n"
+"'%s'\n"
+"Enter a name for the new bookmark item:"
+msgstr ""
+
+#: ../src/main-win.c:1156
+#, fuzzy
+msgid "Add to Bookmarks"
+msgstr "Добавить закладку"
+
+#: ../src/main-win.c:1228
 msgid "Create New..."
 msgstr "Создать новый..."
 
-#: ../src/main-win.c:1079
+#: ../src/main-win.c:1228
 msgid "Enter a name for the newly created file:"
 msgstr "Введите имя нового файла:"
 
-#: ../src/main-win.c:1079
+#: ../src/main-win.c:1228
 msgid "New"
 msgstr "Новый"
 
 #: ../src/pcmanfm.c:69
-msgid "Open folders in new tabs of the last used window instead of creating new windows"
-msgstr "Открывать папки в новой вкладке последнего активного окна, вместо создания нового окна"
+msgid ""
+"Open folders in new tabs of the last used window instead of creating new "
+"windows"
+msgstr ""
+"Открывать папки в новой вкладке последнего активного окна, вместо создания "
+"нового окна"
 
 #: ../src/pcmanfm.c:70
 msgid "Name of configuration profile"
@@ -456,8 +557,12 @@ msgid "<image file>"
 msgstr "<файл изображения>"
 
 #: ../src/pcmanfm.c:76
-msgid "Open preference dialog. 'n' is number of the page you want to show (1, 2, 3...)."
-msgstr "Открывает диалог настроек. 'n' является номером отображаемой страницы (1, 2, 3, ...)."
+msgid ""
+"Open preference dialog. 'n' is number of the page you want to show (1, 2, "
+"3...)."
+msgstr ""
+"Открывает диалог настроек. 'n' является номером отображаемой страницы (1, 2, "
+"3, ...)."
 
 #: ../src/pcmanfm.c:77
 msgid "Open Find Files utility"
@@ -470,3 +575,10 @@ msgstr "Нет функции. Для совместимости с Nautilus"
 #: ../src/pcmanfm.c:79
 msgid "[FILE1, FILE2,...]"
 msgstr "[FILE1, FILE2,...]"
+
+#~ msgid "Display image files with supported format as thumbnails"
+#~ msgstr ""
+#~ "Отображения файлов изображений с поддерживаемого формата в виде эскизов"
+
+#~ msgid "Max size of files displayed as thumbnails:"
+#~ msgstr "Максимальный размер файлов, отображаемых, как эскизы"
