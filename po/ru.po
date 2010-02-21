@@ -1,24 +1,23 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
-# , 2010.
+# 
+#, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-21 13:01+0800\n"
+"POT-Creation-Date: 2010-02-21 04:20+0000\n"
 "PO-Revision-Date: 2010-02-20 08:45+0300\n"
 "Last-Translator: Koptev Oleg <koptev.oleg@gmail.com>\n"
 "Language-Team: Russian <>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Poedit-Language: Russian\n"
-"X-Poedit-Country: Russia\n"
 "X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Country: Russia\n"
 "X-Generator: Lokalize 1.0\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
-"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009"
@@ -161,8 +160,7 @@ msgstr "Подтверждение удаления файлов"
 
 #: ../data/ui/pref.glade.h:8
 msgid "Display image files with supported format as thumbnails"
-msgstr ""
-"Отображения файлов изображений с поддерживаемого формата в виде эскизов"
+msgstr "Отображения файлов изображений с поддерживаемого формата в виде эскизов"
 
 #: ../data/ui/pref.glade.h:9
 msgid "Hide 'Close tab' buttons"
@@ -241,9 +239,8 @@ msgid "_Volume Management"
 msgstr "_Управление томами"
 
 #: ../src/desktop-ui.c:51
-#, fuzzy
 msgid "_Invert Selection"
-msgstr "Инвертировать выделение"
+msgstr "_Инвертировать выделение"
 
 #: ../src/desktop-ui.c:52 ../src/main-win-ui.c:134
 msgid "_Sort Files"
@@ -254,7 +251,6 @@ msgid "Folder"
 msgstr "Папка"
 
 #: ../src/desktop-ui.c:55
-#, fuzzy
 msgid "Blank File"
 msgstr "Пустой файл"
 
@@ -403,18 +399,17 @@ msgid "_Compact View"
 msgstr "_Компактный вид"
 
 #: ../src/main-win-ui.c:169
-#, fuzzy
 msgid "_Thumbnail View"
-msgstr "Миниатюры"
+msgstr "_Миниатюры"
 
 #: ../src/main-win-ui.c:170
 msgid "Detailed _List View"
 msgstr "_Подробности"
 
 #: ../src/main-win.c:826
-#, fuzzy, c-format
+#, c-format
 msgid "Free space: %s (Total: %s)"
-msgstr "Свободное место:%s (Всего: %s )"
+msgstr "Свободное место: %s (Всего: %s )"
 
 #: ../src/main-win.c:1079
 msgid "Create New..."
@@ -429,15 +424,10 @@ msgid "New"
 msgstr "Новый"
 
 #: ../src/pcmanfm.c:69
-msgid ""
-"Open folders in new tabs of the last used window instead of creating new "
-"windows"
-msgstr ""
-"Открывать папки в новой вкладке последнего активного окна, вместо создания "
-"нового окна"
+msgid "Open folders in new tabs of the last used window instead of creating new windows"
+msgstr "Открывать папки в новой вкладке последнего активного окна, вместо создания нового окна"
 
 #: ../src/pcmanfm.c:70
-#, fuzzy
 msgid "Name of configuration profile"
 msgstr "Имя профиля конфигурации"
 
@@ -466,13 +456,8 @@ msgid "<image file>"
 msgstr "<файл изображения>"
 
 #: ../src/pcmanfm.c:76
-#, fuzzy
-msgid ""
-"Open preference dialog. 'n' is number of the page you want to show (1, 2, "
-"3...)."
-msgstr ""
-"Открывает диалог настроек. 'n' является номером отображаемой страницы (1, 2, "
-"3, ...)."
+msgid "Open preference dialog. 'n' is number of the page you want to show (1, 2, 3...)."
+msgstr "Открывает диалог настроек. 'n' является номером отображаемой страницы (1, 2, 3, ...)."
 
 #: ../src/pcmanfm.c:77
 msgid "Open Find Files utility"
