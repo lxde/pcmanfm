@@ -62,6 +62,8 @@ static void on_select_all(GtkAction* act, FmMainWin* win);
 static void on_invert_select(GtkAction* act, FmMainWin* win);
 static void on_preference(GtkAction* act, FmMainWin* win);
 
+static void on_add_bookmark(GtkAction* act, FmMainWin* win);
+
 static void on_go(GtkAction* act, FmMainWin* win);
 static void on_go_back(GtkAction* act, FmMainWin* win);
 static void on_go_forward(GtkAction* act, FmMainWin* win);
@@ -1050,6 +1052,27 @@ void on_invert_select(GtkAction* act, FmMainWin* win)
 void on_preference(GtkAction* act, FmMainWin* win)
 {
     fm_edit_preference(win, 0);
+}
+
+void on_add_bookmark(GtkAction* act, FmMainWin* win)
+{
+    FmNavHistoryItem* item = fm_nav_history_get_cur(win->nav_history);
+    if(item)
+    {
+        FmPath* cwd = item->path;
+        char* disp_path = fm_path_display_name(cwd, TRUE);
+        char* msg = g_strdup_printf(_("Add following folder to bookmarks:\n\'%s\'\nEnter a name for the new bookmark item:"), disp_path);
+        char* disp_name = fm_path_display_basename(cwd);
+        char* name;
+        g_free(disp_path);
+        name = fm_get_user_input(win, _("Add to Bookmarks"), msg, disp_name);
+        g_free(disp_name);
+        if(name)
+        {
+            fm_bookmarks_append(win->bookmarks, cwd, name);
+            g_free(name);
+        }
+    }
 }
 
 void on_location(GtkAction* act, FmMainWin* win)
