@@ -2,12 +2,12 @@
 # Copyright (C) 2010 pcman & Joe Hansen.
 # This file is distributed under the same license as the pcman package.
 # Joe Hansen <joedalton2@yahoo.dk>, 2010.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-21 13:01+0800\n"
+"POT-Creation-Date: 2010-02-21 04:20+0000\n"
 "PO-Revision-Date: 2010-02-20 17:30+01:00\n"
 "Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
@@ -182,9 +182,7 @@ msgstr "Maksimal størrelse på filer vist som miniaturebilleder:"
 
 #: ../data/ui/pref.glade.h:13
 msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
-msgstr ""
-"Flyt slettede filer til »skradespanden« i steden for at slette dem fra "
-"harddisken"
+msgstr "Flyt slettede filer til »skradespanden« i steden for at slette dem fra harddisken"
 
 #: ../data/ui/pref.glade.h:14
 msgid "Open files with single click"
@@ -243,9 +241,8 @@ msgid "_Volume Management"
 msgstr "_Arkivhåndtering"
 
 #: ../src/desktop-ui.c:51
-#, fuzzy
 msgid "_Invert Selection"
-msgstr "Vend markering"
+msgstr "_Vend markering"
 
 #: ../src/desktop-ui.c:52 ../src/main-win-ui.c:134
 msgid "_Sort Files"
@@ -257,7 +254,6 @@ msgstr "Mappe"
 
 # engelsk fejl FI
 #: ../src/desktop-ui.c:55
-#, fuzzy
 msgid "Blank File"
 msgstr "Tom fil"
 
@@ -407,16 +403,15 @@ msgid "_Compact View"
 msgstr "_Kompakt visning"
 
 #: ../src/main-win-ui.c:169
-#, fuzzy
 msgid "_Thumbnail View"
-msgstr "Miniaturebilledvisning"
+msgstr "_Miniaturebilledvisning"
 
 #: ../src/main-win-ui.c:170
 msgid "Detailed _List View"
 msgstr "Detaljeret _listevisning"
 
 #: ../src/main-win.c:826
-#, fuzzy, c-format
+#, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Ledig plads: %s (I alt: %s)"
 
@@ -433,15 +428,10 @@ msgid "New"
 msgstr "Ny"
 
 #: ../src/pcmanfm.c:69
-msgid ""
-"Open folders in new tabs of the last used window instead of creating new "
-"windows"
-msgstr ""
-"Åbn mapper i nye faneblade i det sidst brugte vindue frem for at oprette nye "
-"vinduer"
+msgid "Open folders in new tabs of the last used window instead of creating new windows"
+msgstr "Åbn mapper i nye faneblade i det sidst brugte vindue frem for at oprette nye vinduer"
 
 #: ../src/pcmanfm.c:70
-#, fuzzy
 msgid "Name of configuration profile"
 msgstr "Navn på konfigurationsprofil"
 
@@ -471,13 +461,8 @@ msgstr "<billedfil>"
 
 # page -> pages
 #: ../src/pcmanfm.c:76
-#, fuzzy
-msgid ""
-"Open preference dialog. 'n' is number of the page you want to show (1, 2, "
-"3...)."
-msgstr ""
-"Åbn indstillingsdialog. »n« er antallet af sider du ønsker at vise (1, 2, "
-"3...)."
+msgid "Open preference dialog. 'n' is number of the page you want to show (1, 2, 3...)."
+msgstr "Åbn indstillingsdialog. »n« er antallet af sider du ønsker at vise (1, 2, 3...)."
 
 #: ../src/pcmanfm.c:77
 msgid "Open Find Files utility"
