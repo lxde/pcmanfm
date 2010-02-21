@@ -1,18 +1,18 @@
-/*
+met/*
  *      pref.c
- *      
+ *
  *      Copyright 2009 PCMan <pcman.tw@gmail.com>
- *      
+ *
  *      This program is free software; you can redistribute it and/or modify
  *      it under the terms of the GNU General Public License as published by
  *      the Free Software Foundation; either version 2 of the License, or
  *      (at your option) any later version.
- *      
+ *
  *      This program is distributed in the hope that it will be useful,
  *      but WITHOUT ANY WARRANTY; without even the implied warranty of
  *      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *      GNU General Public License for more details.
- *      
+ *
  *      You should have received a copy of the GNU General Public License
  *      along with this program; if not, write to the Free Software
  *      Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
@@ -200,13 +200,21 @@ static void init_spin(GtkBuilder* b, const char* name, gsize off, const char* ch
 static void on_entry_changed(GtkEntry* entry, gpointer _off)
 {
     gsize off = GPOINTER_TO_SIZE(_off);
-    guint* val = (guint*)G_STRUCT_MEMBER_P(fm_config, off);
+    guint *val = (guint*)G_STRUCT_MEMBER_P(fm_config, off);
     const char* new_val = gtk_entry_get_text(entry);
+    /* FIXME prototype IS
+
+    int g_strcmp0 (const char *str1,const char *str2);
+
+    why should i compare a guint* instead of a char*? this results in a critical warning
+    warning: passing argument 1 of 'g_strcmp0' makes pointer from integer without a cast*/
+
     if(g_strcmp0(*val, new_val))
     {
         const char* name = g_object_get_data((GObject*)entry, "changed");
         if(!name)
             name = gtk_buildable_get_name((GtkBuildable*)entry);
+    /*FIXME similar error here, g_free expect a gpointer that means void* */
         g_free(*val);
         *val = *new_val ? g_strdup(new_val) : NULL;
         fm_config_emit_changed(fm_config, name);
@@ -220,6 +228,7 @@ static void init_entry(GtkBuilder* b, const char* name, gsize off, const char* c
     if(changed_notify)
         g_object_set_data_full(btn, "changed", g_strdup(changed_notify), g_free);
     if(*val)
+    /* similar error here, it aspect a gchar NOT a guint */
         gtk_entry_set_text(btn, *val);
     g_signal_connect(btn, "changed", G_CALLBACK(on_entry_changed), GSIZE_TO_POINTER(off));
 }
