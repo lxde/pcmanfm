@@ -37,7 +37,9 @@ static const char main_menu_xml[] =
     "<menuitem action='Del'/>"
     "<separator/>"
     "<menuitem action='Rename'/>"
+    /* TODO: implement symlink creation.
     "<menuitem action='Link'/>"
+    */
     "<menuitem action='MoveTo'/>"
     "<menuitem action='CopyTo'/>"
     "<separator/>"
@@ -75,7 +77,13 @@ static const char main_menu_xml[] =
       "<separator/>"
       "<menuitem action='ByName'/>"
       "<menuitem action='ByMTime'/>"
+      "<menuitem action='BySize'/>"
+      "<menuitem action='ByType'/>"
     "</menu>"
+  "</menu>"
+  "<menu action='ToolMenu'>"
+  "<menuitem action='Term'/>"
+  "<menuitem action='AsRoot'/>"
   "</menu>"
   "<menu action='HelpMenu'>"
     "<menuitem action='About'/>"
@@ -103,6 +111,8 @@ static const char main_menu_xml[] =
     "<separator/>"
     "<menuitem action='ByName'/>"
     "<menuitem action='ByMTime'/>"
+    "<menuitem action='BySize'/>"
+    "<menuitem action='ByType'/>"
   "</menu>"
   "<menuitem action='ShowHidden'/>"
   "<separator/>"
@@ -124,9 +134,7 @@ static GtkActionEntry main_win_actions[]=
         {"Paste", GTK_STOCK_PASTE, NULL, NULL, NULL, G_CALLBACK(on_paste)},
         {"Del", GTK_STOCK_DELETE, NULL, NULL, NULL, G_CALLBACK(on_del)},
         {"Rename", NULL, N_("Rename"), "F2", NULL, G_CALLBACK(on_rename)},
-        /* TODO: implement symlink creation.
         {"Link", NULL, N_("Create Symlink"), NULL, NULL, NULL},
-        */
         {"MoveTo", NULL, N_("Move To..."), NULL, NULL, G_CALLBACK(on_move_to)},
         {"CopyTo", NULL, N_("Copy To..."), NULL, NULL, G_CALLBACK(on_copy_to)},
         {"SelAll", GTK_STOCK_SELECT_ALL, NULL, NULL, NULL, G_CALLBACK(on_select_all)},
@@ -148,7 +156,10 @@ static GtkActionEntry main_win_actions[]=
         {"Apps", "system-software-install", N_("Applications"), NULL, N_("Installed Applications"), G_CALLBACK(on_go_apps)},
         {"Go", GTK_STOCK_JUMP_TO, NULL, NULL, NULL, G_CALLBACK(on_go)},
     {"BookmarksMenu", NULL, N_("_Bookmarks"), NULL, NULL, NULL},
-        {"AddBookmark", GTK_STOCK_ADD, N_("Add To Bookmarks"), NULL, N_("Add To Bookmarks"), G_CALLBACK(on_add_bookmark)},
+        {"AddBookmark", GTK_STOCK_ADD, N_("Add To Bookmarks"), NULL, NULL, G_CALLBACK(on_add_bookmark)},
+    {"ToolMenu", NULL, N_("_Tools"), NULL, NULL, NULL},
+        {"Term", "utilities-terminal", N_("Open Current Folder in _Terminal"), "F4", NULL, G_CALLBACK(on_open_in_terminal)},
+        {"AsRoot", GTK_STOCK_DIALOG_AUTHENTICATION, N_("Open Current Folder as _Root"), NULL, NULL, G_CALLBACK(on_open_as_root)},
     /* for accelerators */
     {"Location", NULL, NULL, "<Alt>d", NULL, G_CALLBACK(on_location)},
     {"Location2", NULL, NULL, "<Ctrl>L", NULL, G_CALLBACK(on_location)},
@@ -181,7 +192,9 @@ static GtkRadioActionEntry main_win_sort_type_actions[]=
 static GtkRadioActionEntry main_win_sort_by_actions[]=
 {
     {"ByName", NULL, N_("By _Name"), NULL, NULL, COL_FILE_NAME},
-    {"ByMTime", NULL, N_("By _Modification Time"), NULL, NULL, COL_FILE_MTIME}
+    {"ByMTime", NULL, N_("By _Modification Time"), NULL, NULL, COL_FILE_MTIME},
+    {"BySize", NULL, N_("By _Size"), NULL, NULL, COL_FILE_SIZE},
+    {"ByType", NULL, N_("By File _Type"), NULL, NULL, COL_FILE_DESC}
 };
 
 

@@ -29,7 +29,7 @@ G_BEGIN_DECLS
 typedef enum {
     PREF_GENERAL,
     PREF_INTERFACE,
-    /* PREF_VOLMAN, */
+    PREF_VOLMAN,
     PREF_ADVANCED
 }PrefDlgPage;
 

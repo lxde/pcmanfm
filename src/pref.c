@@ -36,6 +36,7 @@
 #define INIT_ICON_SIZES(b, name) init_icon_sizes(b, #name, G_STRUCT_OFFSET(FmConfig, name))
 #define INIT_COLOR(b, st, name, changed_notify)  init_color(b, #name, G_STRUCT_OFFSET(st, name), changed_notify)
 #define INIT_SPIN(b, st, name, changed_notify)  init_spin(b, #name, G_STRUCT_OFFSET(st, name), changed_notify)
+#define INIT_ENTRY(b, st, name, changed_notify)  init_entry(b, #name, G_STRUCT_OFFSET(st, name), changed_notify)
 
 static GtkWidget* pref_dlg = NULL;
 static GtkWidget* notebook = NULL;
@@ -196,6 +197,33 @@ static void init_spin(GtkBuilder* b, const char* name, gsize off, const char* ch
     g_signal_connect(btn, "value-changed", G_CALLBACK(on_spin_changed), GSIZE_TO_POINTER(off));
 }
 
+static void on_entry_changed(GtkEntry* entry, gpointer _off)
+{
+    gsize off = GPOINTER_TO_SIZE(_off);
+    guint* val = (guint*)G_STRUCT_MEMBER_P(fm_config, off);
+    const char* new_val = gtk_entry_get_text(entry);
+    if(g_strcmp0(*val, new_val))
+    {
+        const char* name = g_object_get_data((GObject*)entry, "changed");
+        if(!name)
+            name = gtk_buildable_get_name((GtkBuildable*)entry);
+        g_free(*val);
+        *val = *new_val ? g_strdup(new_val) : NULL;
+        fm_config_emit_changed(fm_config, name);
+    }
+}
+
+static void init_entry(GtkBuilder* b, const char* name, gsize off, const char* changed_notify)
+{
+    GtkSpinButton* btn = GTK_SPIN_BUTTON(gtk_builder_get_object(b, name));
+    guint* val = (guint*)G_STRUCT_MEMBER_P(fm_config, off);
+    if(changed_notify)
+        g_object_set_data_full(btn, "changed", g_strdup(changed_notify), g_free);
+    if(*val)
+        gtk_entry_set_text(btn, *val);
+    g_signal_connect(btn, "changed", G_CALLBACK(on_entry_changed), GSIZE_TO_POINTER(off));
+}
+
 void fm_edit_preference( GtkWindow* parent, int page )
 {
     if(!pref_dlg)
@@ -226,14 +254,17 @@ void fm_edit_preference( GtkWindow* parent, int page )
         INIT_ICON_SIZES(builder, thumbnail_size);
         INIT_ICON_SIZES(builder, pane_icon_size);
 
+        INIT_ENTRY(builder, FmConfig, terminal, NULL);
+        INIT_ENTRY(builder, FmAppConfig, su_cmd, NULL);
+
         g_signal_connect(pref_dlg, "response", G_CALLBACK(on_response), &pref_dlg);
         g_object_unref(builder);
 
         pcmanfm_ref();
         g_signal_connect(pref_dlg, "destroy", G_CALLBACK(pcmanfm_unref), NULL);
     }
-    gtk_window_present(pref_dlg);
     gtk_notebook_set_current_page(notebook, page);
+    gtk_window_present(pref_dlg);
 }
 
 static void on_wallpaper_set(GtkFileChooserButton* btn, gpointer user_data)

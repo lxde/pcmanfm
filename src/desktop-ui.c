@@ -39,6 +39,8 @@ static const char desktop_menu_xml[] =
     "<separator/>"
     "<menuitem action='ByName'/>"
     "<menuitem action='ByMTime'/>"
+    "<menuitem action='BySize'/>"
+    "<menuitem action='ByType'/>"
   "</menu>"
   "<separator/>"
   "<menuitem action='Prop'/>"
@@ -65,7 +67,9 @@ static GtkRadioActionEntry desktop_sort_type_actions[]=
 static GtkRadioActionEntry desktop_sort_by_actions[]=
 {
     {"ByName", NULL, N_("By _Name"), NULL, NULL, COL_FILE_NAME},
-    {"ByMTime", NULL, N_("By _Modification Time"), NULL, NULL, COL_FILE_MTIME}
+    {"ByMTime", NULL, N_("By _Modification Time"), NULL, NULL, COL_FILE_MTIME},
+    {"BySize", NULL, N_("By _Size"), NULL, NULL, COL_FILE_SIZE},
+    {"ByType", NULL, N_("By File _Type"), NULL, NULL, COL_FILE_DESC}
 };
 
 static const char folder_menu_xml[]=

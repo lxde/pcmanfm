@@ -80,6 +80,8 @@ struct _FmAppConfig
     GdkColor desktop_shadow;
     /* emit "changed::desktop_font" */
     char* desktop_font;
+    
+    char* su_cmd;
 };
 
 struct _FmAppConfigClass

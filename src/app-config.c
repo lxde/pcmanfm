@@ -81,6 +81,7 @@ void fm_app_config_load_from_key_file(FmAppConfig* cfg, GKeyFile* kf)
     char* tmp;
     /* behavior */
     fm_key_file_get_bool(kf, "config", "bm_open_method", &cfg->bm_open_method);
+    cfg->su_cmd = g_key_file_get_string(kf, "config", "su_cmd", NULL);
 
     /* desktop */
     fm_key_file_get_int(kf, "desktop", "wallpaper_mode", &cfg->wallpaper_mode);
@@ -171,6 +172,8 @@ void fm_app_config_save(FmAppConfig* cfg, const char* name)
         {
             fputs("[config]\n", f);
             fprintf(f, "bm_open_method=%d\n", cfg->bm_open_method);
+            if(cfg->su_cmd)
+                fprintf(f, "su_cmd=%s\n", cfg->su_cmd);
             fputs("\n[desktop]\n", f);
             fprintf(f, "wallpaper_mode=%d\n", cfg->wallpaper_mode);
             fprintf(f, "wallpaper=%s\n", cfg->wallpaper ? cfg->wallpaper : "");
