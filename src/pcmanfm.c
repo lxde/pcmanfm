@@ -174,6 +174,13 @@ inline static GString* args_to_ipc_buf()
                         g_string_append_c(buf, '\0');
                     }
                 }
+                else
+                {
+                    char* cwd = g_get_current_dir();
+                    g_string_append(buf, cwd);
+                    g_free(cwd);
+                    g_string_append_c(buf, '\0');
+                }
                 g_string_append_c(buf, '\0'); /* end of array */
             }
             break;
@@ -431,11 +438,18 @@ gboolean pcmanfm_run()
             FmJob* job = fm_file_info_job_new(NULL);
             FmPath* cwd = NULL;
             GList* infos;
+            g_debug("fn = %s", *filename);
             for(filename=files_to_open; *filename; ++filename)
             {
                 FmPath* path;
                 if( **filename == '/' || strstr(*filename, ":/") ) /* absolute path or URI */
                     path = fm_path_new(*filename);
+                else if( strcmp(*filename, "~") == 0 ) /* special case for home dir */
+                {
+                    path = fm_path_get_home();
+                    fm_main_win_add_win(NULL, path);
+                    continue;
+                }
                 else /* basename */
                 {
                     if(G_UNLIKELY(!cwd))
@@ -461,11 +475,11 @@ gboolean pcmanfm_run()
         else
         {
             FmPath* path;
-            w = fm_main_win_new();
-            gtk_window_set_default_size(w, app_config->win_width, app_config->win_height);
-            gtk_widget_show(w);
-            path = fm_path_get_home();
-            fm_main_win_chdir(w, path);
+            char* cwd = g_get_current_dir();
+            path = fm_path_new(cwd);
+            fm_main_win_add_win(NULL, path);
+            fm_path_unref(path);
+            g_free(cwd);
         }
     }
     return ret;

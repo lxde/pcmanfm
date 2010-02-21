@@ -26,6 +26,7 @@
 #include <glib/gi18n.h>
 
 #include <gdk/gdkx.h>
+#include <gdk/gdkkeysyms.h>
 #include <X11/Xlib.h>
 #include <X11/Xatom.h>
 
@@ -56,6 +57,7 @@ struct _FmDesktopItem
 static void fm_desktop_destroy               (GtkObject *object);
 
 static FmDesktopItem* hit_test(FmDesktop* self, int x, int y);
+static FmDesktopItem* get_nearest_item(FmDesktop* desktop, FmDesktopItem* item, GtkDirectionType dir);
 static void calc_item_size(FmDesktop* desktop, FmDesktopItem* item);
 static void layout_items(FmDesktop* self);
 static void queue_layout_items(FmDesktop* desktop);
@@ -68,6 +70,9 @@ static void update_background(FmDesktop* desktop);
 static void update_working_area(FmDesktop* desktop);
 static GList* get_selected_items(FmDesktop* desktop, int* n_items);
 static void activate_selected_items(FmDesktop* desktop);
+static void set_focused_item(FmDesktop* desktop, FmDesktopItem* item);
+static void select_all(FmDesktop* desktop);
+static void deselect_all(FmDesktop* desktop);
 
 static FmDesktopItem* desktop_item_new(GtkTreeIter* it);
 static void desktop_item_free(FmDesktopItem* item);
@@ -429,10 +434,51 @@ void activate_selected_items(FmDesktop* desktop)
     for(l=items;l;l=l->next)
     {
         FmDesktopItem* item = (FmDesktopItem*)l->data;
-
+        l->data = item->fi;
     }
+    fm_launch_files_simple(desktop, NULL, items, pcmanfm_open_folder, NULL);
     g_list_free(items);
 }
+
+void set_focused_item(FmDesktop* desktop, FmDesktopItem* item)
+{
+    if(item != desktop->focus)
+    {
+        FmDesktopItem* old_focus = desktop->focus;
+        desktop->focus = item;
+        if(old_focus)
+            redraw_item(desktop, old_focus);
+        if(item)
+            redraw_item(desktop, item);
+    }
+}
+
+static void select_all(FmDesktop* desktop)
+{
+    GList* l;
+    for(l=desktop->items;l;l=l->next)
+    {
+        FmDesktopItem* item = (FmDesktopItem*)l->data;
+        item->is_selected = TRUE;
+        redraw_item(desktop, item);
+    }
+}
+
+static void deselect_all(FmDesktop* desktop)
+{
+    GList* l;
+    for( l = desktop->items; l ;l = l->next )
+    {
+        FmDesktopItem* item = (FmDesktopItem*) l->data;
+        if( item->is_selected )
+        {
+            item->is_selected = FALSE;
+            redraw_item( desktop, item );
+        }
+    }
+}
+
+
 
 gboolean on_button_press( GtkWidget* w, GdkEventButton* evt )
 {
@@ -452,21 +498,11 @@ gboolean on_button_press( GtkWidget* w, GdkEventButton* evt )
         }
 
         /* if ctrl / shift is not pressed, deselect all. */
-        if( ! (evt->state & (GDK_SHIFT_MASK | GDK_CONTROL_MASK)) )
+        if(  evt->button != 3 && ! (evt->state & (GDK_SHIFT_MASK | GDK_CONTROL_MASK)) )
         {
             /* don't cancel selection if clicking on selected items */
             if( !( (evt->button == 1 || evt->button == 3) && clicked_item && clicked_item->is_selected) )
-            {
-                for( l = self->items; l ;l = l->next )
-                {
-                    item = (FmDesktopItem*) l->data;
-                    if( item->is_selected )
-                    {
-                        item->is_selected = FALSE;
-                        redraw_item( self, item );
-                    }
-                }
-            }
+                deselect_all(self);
         }
 
         if( clicked_item )
@@ -704,8 +740,83 @@ gboolean on_leave_notify( GtkWidget* w, GdkEventCrossing *evt )
 gboolean on_key_press( GtkWidget* w, GdkEventKey* evt )
 {
     GList* sels;
-    FmDesktop* self = (FmDesktop*)w;
+    FmDesktop* desktop = (FmDesktop*)w;
+    FmDesktopItem* item;
     int modifier = ( evt->state & ( GDK_SHIFT_MASK | GDK_CONTROL_MASK | GDK_MOD1_MASK ) );
+
+    switch ( evt->keyval )
+    {
+    case GDK_Left:
+        item = get_nearest_item(desktop, desktop->focus, GTK_DIR_LEFT);
+        if(item)
+        {
+            if(0 == modifier)
+            {
+                deselect_all(desktop);
+                item->is_selected = TRUE;
+            }
+            set_focused_item(desktop, item);
+        }
+        break;
+    case GDK_Right:
+        item = get_nearest_item(desktop, desktop->focus, GTK_DIR_RIGHT);
+        if(item)
+        {
+            if(0 == modifier)
+            {
+                deselect_all(desktop);
+                item->is_selected = TRUE;
+            }
+            set_focused_item(desktop, item);
+        }
+        break;
+    case GDK_Up:
+        item = get_nearest_item(desktop, desktop->focus, GTK_DIR_UP);
+        if(item)
+        {
+            if(0 == modifier)
+            {
+                deselect_all(desktop);
+                item->is_selected = TRUE;
+            }
+            set_focused_item(desktop, item);
+        }
+        break;
+    case GDK_Down:
+        item = get_nearest_item(desktop, desktop->focus, GTK_DIR_DOWN);
+        if(item)
+        {
+            if(0 == modifier)
+            {
+                deselect_all(desktop);
+                item->is_selected = TRUE;
+            }
+            set_focused_item(desktop, item);
+        }
+        break;
+    case GDK_space:
+        if(modifier & GDK_CONTROL_MASK)
+        {
+            if(desktop->focus)
+            {
+                desktop->focus->is_selected = !desktop->focus->is_selected;
+                redraw_item(desktop, desktop->focus);
+            }
+        }
+        else
+            activate_selected_items(desktop);
+        break;
+    case GDK_Return:
+        if(modifier & GDK_MOD1_MASK)
+        {
+            fm_desktop_preference(desktop);
+        }
+        else
+            activate_selected_items(desktop);
+        break;
+    }
+
+
 #if 0
     sels = fm_desktop_win_get_selected_files( self );
 
@@ -813,6 +924,8 @@ gboolean on_focus_in( GtkWidget* w, GdkEventFocus* evt )
 {
     FmDesktop* self = (FmDesktop*) w;
     GTK_WIDGET_SET_FLAGS( w, GTK_HAS_FOCUS );
+    if( !self->focus && self->items)
+        self->focus = (FmDesktopItem*)self->items->data;
     if( self->focus )
         redraw_item( self, self->focus );
     return FALSE;
@@ -939,6 +1052,128 @@ FmDesktopItem* hit_test(FmDesktop* self, int x, int y)
     return NULL;
 }
 
+FmDesktopItem* get_nearest_item(FmDesktop* desktop, FmDesktopItem* item,  GtkDirectionType dir)
+{
+    GList* l;
+    FmDesktopItem* item2, *ret = NULL;
+    guint min_x_dist, min_y_dist;
+
+    if(!desktop->items || !desktop->items->next)
+        return NULL;
+
+    min_x_dist = min_y_dist = (guint)-1;
+    item2 = NULL;
+
+    switch(dir)
+    {
+    case GTK_DIR_LEFT:
+        for( l = desktop->items; l; l = l->next )
+        {
+            int dist;
+            item2 = (FmDesktopItem*) l->data;
+            if(item2->x >= item->x)
+                continue;
+            dist = item->x - item2->x;
+            if(dist < min_x_dist)
+            {
+                ret = item2;
+                min_x_dist = dist;
+                min_y_dist = ABS(item->y - item2->y);
+            }
+            else if(dist == min_x_dist && item2 != ret) /* if there is another item of the same x distance */
+            {
+                /* get the one with smaller y distance */
+                dist = ABS(item2->y - item->y);
+                if(dist < min_y_dist)
+                {
+                    ret = item2;
+                    min_y_dist = dist;
+                }
+            }
+        }
+        break;
+    case GTK_DIR_RIGHT:
+        for( l = desktop->items; l; l = l->next )
+        {
+            int dist;
+            item2 = (FmDesktopItem*) l->data;
+            if(item2->x <= item->x)
+                continue;
+            dist = item2->x - item->x;
+            if(dist < min_x_dist)
+            {
+                ret = item2;
+                min_x_dist = dist;
+                min_y_dist = ABS(item->y - item2->y);
+            }
+            else if(dist == min_x_dist && item2 != ret) /* if there is another item of the same x distance */
+            {
+                /* get the one with smaller y distance */
+                dist = ABS(item2->y - item->y);
+                if(dist < min_y_dist)
+                {
+                    ret = item2;
+                    min_y_dist = dist;
+                }
+            }
+        }
+        break;
+    case GTK_DIR_UP:
+        for( l = desktop->items; l; l = l->next )
+        {
+            int dist;
+            item2 = (FmDesktopItem*) l->data;
+            if(item2->y >= item->y)
+                continue;
+            dist = item->y - item2->y;
+            if(dist < min_y_dist)
+            {
+                ret = item2;
+                min_y_dist = dist;
+                min_x_dist = ABS(item->x - item2->x);
+            }
+            else if(dist == min_y_dist && item2 != ret) /* if there is another item of the same y distance */
+            {
+                /* get the one with smaller x distance */
+                dist = ABS(item2->x - item->x);
+                if(dist < min_x_dist)
+                {
+                    ret = item2;
+                    min_x_dist = dist;
+                }
+            }
+        }
+        break;
+    case GTK_DIR_DOWN:
+        for( l = desktop->items; l; l = l->next )
+        {
+            int dist;
+            item2 = (FmDesktopItem*) l->data;
+            if(item2->y <= item->y)
+                continue;
+            dist = item2->y - item->y;
+            if(dist < min_y_dist)
+            {
+                ret = item2;
+                min_y_dist = dist;
+                min_x_dist = ABS(item->x - item2->x);
+            }
+            else if(dist == min_y_dist && item2 != ret) /* if there is another item of the same y distance */
+            {
+                /* get the one with smaller x distance */
+                dist = ABS(item2->x - item->x);
+                if(dist < min_x_dist)
+                {
+                    ret = item2;
+                    min_x_dist = dist;
+                }
+            }
+        }
+        break;
+    }
+    return ret;
+}
+
 inline FmDesktopItem* desktop_item_new(GtkTreeIter* it)
 {
     FmDesktopItem* item = g_slice_new0(FmDesktopItem);
@@ -964,6 +1199,19 @@ void on_row_deleted(GtkTreeModel* mod, GtkTreePath* tp, FmDesktop* desktop)
         if(i == idx)
         {
             desktop_item_free(item);
+            if(desktop->focus == item)
+            {
+                if(l->next)
+                    desktop->focus = (FmDesktopItem*)l->next->data;
+                else if(l->prev)
+                    desktop->focus = (FmDesktopItem*)l->prev->data;
+                else
+                    desktop->focus = NULL;
+            }
+            if(desktop->drop_hilight == item)
+                desktop->drop_hilight = NULL;
+            if(desktop->hover_item == item)
+                desktop->hover_item = NULL;
             desktop->items = g_list_delete_link(desktop->items, l);
             break;
         }
@@ -1564,17 +1812,34 @@ void on_icon_theme_changed(GtkIconTheme* theme, gpointer user_data)
 
 void on_paste(GtkAction* act, gpointer user_data)
 {
-    
+    FmPath* path = fm_path_get_desktop();
+    fm_clipboard_paste_files(NULL, path);
 }
 
 void on_select_all(GtkAction* act, gpointer user_data)
 {
-    
+    int i;
+    for(i=0; i < n_screens; ++i)
+    {
+        FmDesktop* desktop = desktops[i];
+        select_all(desktop);
+    }
 }
 
 void on_invert_select(GtkAction* act, gpointer user_data)
 {
-    
+    int i;
+    for(i=0; i < n_screens; ++i)
+    {
+        FmDesktop* desktop = desktops[i];
+        GList* l;
+        for(l=desktop->items;l;l=l->next)
+        {
+            FmDesktopItem* item = (FmDesktopItem*)l->data;
+            item->is_selected = !item->is_selected;
+            redraw_item(desktop, item);
+        }
+    }
 }
 
 void on_create_new(GtkAction* act, gpointer user_data)
@@ -1627,18 +1892,27 @@ GList* get_selected_items(FmDesktop* desktop, int* n_items)
     GList* items = NULL;
     GList* l;
     int n = 0;
+    FmDesktopItem* focus = NULL;
     for(l=desktop->items; l; l=l->next)
     {
         FmDesktopItem* item = (FmDesktopItem*)l->data;
-        if(item->is_selected && item != desktop->focus)
+        if(item->is_selected)
         {
-            items = g_list_prepend(items, item);
-            ++n;
+            if(G_LIKELY(item != desktop->focus))
+            {
+                items = g_list_prepend(items, item);
+                ++n;
+            }
+            else
+                focus = item;
         }
     }
     items = g_list_reverse(items);
-    if(desktop->focus)
-        items = g_list_prepend(items, desktop->focus);
+    if(focus)
+    {
+        items = g_list_prepend(items, focus);
+        ++n;
+    }
     if(n_items)
         *n_items = n;
     return items;

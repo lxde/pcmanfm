@@ -95,6 +95,8 @@ static const char main_menu_xml[] =
   "</menu>"
   "<separator/>"
   "<menuitem action='Paste'/>"
+  "<menuitem action='SelAll'/>"
+  "<separator/>"
   "<menu action='Sort'>"
     "<menuitem action='Desc'/>"
     "<menuitem action='Asc'/>"

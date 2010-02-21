@@ -903,7 +903,7 @@ gint fm_main_win_add_tab(FmMainWin* win, FmPath* path)
 FmMainWin* fm_main_win_add_win(FmMainWin* win, FmPath* path)
 {
     win = fm_main_win_new();
-    gtk_window_set_default_size(win, 640, 480);
+    gtk_window_set_default_size(win, app_config->win_width, app_config->win_height);
     fm_main_win_chdir(win, path);
     gtk_window_present(win);
     return win;

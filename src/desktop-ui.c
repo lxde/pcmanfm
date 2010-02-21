@@ -29,6 +29,10 @@ static const char desktop_menu_xml[] =
   "</menu>"
   "<separator/>"
   "<menuitem action='Paste'/>"
+  "<separator/>"
+  "<menuitem action='SelAll'/>"
+  "<menuitem action='InvSel'/>"
+  "<separator/>"
   "<menu action='Sort'>"
     "<menuitem action='Desc'/>"
     "<menuitem action='Asc'/>"
@@ -44,12 +48,12 @@ static GtkActionEntry desktop_actions[]=
 {
     {"Paste", GTK_STOCK_PASTE, NULL, NULL, NULL, G_CALLBACK(on_paste)},
     {"SelAll", GTK_STOCK_SELECT_ALL, NULL, NULL, NULL, G_CALLBACK(on_select_all)},
-    {"InvSel", NULL, N_("Invert Selection"), NULL, NULL, G_CALLBACK(on_invert_select)},
+    {"InvSel", NULL, N_("_Invert Selection"), NULL, NULL, G_CALLBACK(on_invert_select)},
     {"Sort", NULL, N_("_Sort Files"), NULL, NULL, NULL},
     {"CreateNew", GTK_STOCK_NEW, NULL, NULL, NULL, NULL},
     {"NewFolder", "folder", N_("Folder"), NULL, NULL, G_CALLBACK(on_create_new)},
     {"NewBlank", "text-x-generic", N_("Blank File"), NULL, NULL, G_CALLBACK(on_create_new)},
-    {"Prop", GTK_STOCK_PROPERTIES, NULL, NULL, NULL, G_CALLBACK(fm_desktop_preference)}
+    {"Prop", GTK_STOCK_PROPERTIES, N_("Desktop Preferences"), NULL, NULL, G_CALLBACK(fm_desktop_preference)}
 };
 
 static GtkRadioActionEntry desktop_sort_type_actions[]=
