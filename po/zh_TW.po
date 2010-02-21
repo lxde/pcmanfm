@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-21 23:07+0800\n"
+"POT-Creation-Date: 2010-02-22 00:24+0100\n"
 "PO-Revision-Date: 2010-02-21 23:11+0800\n"
 "Last-Translator: 洪任諭 <pcman.tw@gmail.com>\n"
 "Language-Team: zh_TW <zh_TW@li.org>\n"
@@ -61,8 +61,7 @@ msgstr "外觀"
 msgid "Background color:"
 msgstr "背景顏色："
 
-#: ../data/ui/desktop-pref.glade.h:7
-#: ../data/ui/pref.glade.h:8
+#: ../data/ui/desktop-pref.glade.h:7 ../data/ui/pref.glade.h:8
 msgid "Center on the screen"
 msgstr "置於螢幕中央"
 
@@ -78,8 +77,7 @@ msgstr "陰影色彩："
 msgid "Desktop Icons"
 msgstr "桌面圖示"
 
-#: ../data/ui/desktop-pref.glade.h:11
-#: ../src/desktop-ui.c:58
+#: ../data/ui/desktop-pref.glade.h:11 ../src/desktop-ui.c:58
 msgid "Desktop Preferences"
 msgstr "桌面偏好設定"
 
@@ -115,18 +113,15 @@ msgstr ""
 msgid "Show menus provided by WM when desktop is clicked"
 msgstr ""
 
-#: ../data/ui/desktop-pref.glade.h:20
-#: ../data/ui/pref.glade.h:32
+#: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:32
 msgid "Stretch to fill the entire screen"
 msgstr "延展至填滿整個螢幕"
 
-#: ../data/ui/desktop-pref.glade.h:21
-#: ../data/ui/pref.glade.h:33
+#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:33
 msgid "Stretch to fit the screen"
 msgstr "延展到適合螢幕大小"
 
-#: ../data/ui/desktop-pref.glade.h:22
-#: ../data/ui/pref.glade.h:37
+#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:37
 msgid "Tile the image to fill the entire screen"
 msgstr "併排影像填滿整個螢幕"
 
@@ -295,13 +290,11 @@ msgstr "磁碟管理(_V)"
 msgid "_Invert Selection"
 msgstr "反相選取(_I)"
 
-#: ../src/desktop-ui.c:54
-#: ../src/main-win-ui.c:144
+#: ../src/desktop-ui.c:54 ../src/main-win-ui.c:144
 msgid "_Sort Files"
 msgstr "排序檔案(_S)"
 
-#: ../src/desktop-ui.c:56
-#: ../src/main-win-ui.c:168
+#: ../src/desktop-ui.c:56 ../src/main-win-ui.c:168
 msgid "Folder"
 msgstr "資料夾"
 
@@ -309,33 +302,27 @@ msgstr "資料夾"
 msgid "Blank File"
 msgstr "空白檔案"
 
-#: ../src/desktop-ui.c:69
-#: ../src/main-win-ui.c:194
+#: ../src/desktop-ui.c:69 ../src/main-win-ui.c:194
 msgid "By _Name"
 msgstr "依名稱(_N)"
 
-#: ../src/desktop-ui.c:70
-#: ../src/main-win-ui.c:195
+#: ../src/desktop-ui.c:70 ../src/main-win-ui.c:195
 msgid "By _Modification Time"
 msgstr "依修改時間(_M)"
 
-#: ../src/desktop-ui.c:71
-#: ../src/main-win-ui.c:196
+#: ../src/desktop-ui.c:71 ../src/main-win-ui.c:196
 msgid "By _Size"
 msgstr "依大小(_S)"
 
-#: ../src/desktop-ui.c:72
-#: ../src/main-win-ui.c:197
+#: ../src/desktop-ui.c:72 ../src/main-win-ui.c:197
 msgid "By File _Type"
 msgstr "依檔案型態(_T)"
 
-#: ../src/desktop-ui.c:87
-#: ../src/main-win-ui.c:213
+#: ../src/desktop-ui.c:87 ../src/main-win-ui.c:213
 msgid "Open in New Tab"
 msgstr "在新分頁開啟"
 
-#: ../src/desktop-ui.c:88
-#: ../src/main-win-ui.c:214
+#: ../src/desktop-ui.c:88 ../src/main-win-ui.c:214
 msgid "Open in New Window"
 msgstr "在新視窗開啟"
 
@@ -525,7 +512,9 @@ msgid "New"
 msgstr "新增"
 
 #: ../src/pcmanfm.c:69
-msgid "Open folders in new tabs of the last used window instead of creating new windows"
+msgid ""
+"Open folders in new tabs of the last used window instead of creating new "
+"windows"
 msgstr ""
 
 #: ../src/pcmanfm.c:70
@@ -557,7 +546,9 @@ msgid "<image file>"
 msgstr "<影像檔>"
 
 #: ../src/pcmanfm.c:76
-msgid "Open preference dialog. 'n' is number of the page you want to show (1, 2, 3...)."
+msgid ""
+"Open preference dialog. 'n' is number of the page you want to show (1, 2, "
+"3...)."
 msgstr ""
 
 #: ../src/pcmanfm.c:77
@@ -571,4 +562,3 @@ msgstr "沒有功能，只是用來和 nautilus 保持相容"
 #: ../src/pcmanfm.c:79
 msgid "[FILE1, FILE2,...]"
 msgstr "[檔案1, 檔案2,...]"
-
