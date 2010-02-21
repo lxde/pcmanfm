@@ -83,6 +83,7 @@ struct _FmDesktopClass
 };
 
 FmFileInfoList* fm_desktop_get_selected_files(FmDesktop* desktop);
+FmPathList* fm_desktop_get_selected_paths(FmDesktop* desktop);
 
 GType		fm_desktop_get_type		(void);
 GtkWidget*	fm_desktop_new			(void);

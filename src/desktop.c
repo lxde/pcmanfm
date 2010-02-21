@@ -136,6 +136,7 @@ static guint desktop_text_changed = 0;
 static guint desktop_font_changed = 0;
 static guint big_icon_size_changed = 0;
 static guint icon_theme_changed = 0;
+static GtkAccelGroup* acc_grp = NULL;
 
 static PangoFontDescription* font_desc = NULL;
 
@@ -379,6 +380,10 @@ void fm_desktop_manager_init()
     gtk_ui_manager_insert_action_group(ui, act_grp, 0);
     gtk_ui_manager_add_ui_from_string(ui, desktop_menu_xml, -1, NULL);
 
+    acc_grp = gtk_ui_manager_get_accel_group(ui);
+    for( i = 0; i < n_screens; i++ )
+        gtk_window_add_accel_group(desktops[i], acc_grp);
+
     desktop_popup = (GtkWidget*)g_object_ref(gtk_ui_manager_get_widget(ui, "/popup"));
 
     hand_cursor = gdk_cursor_new(GDK_HAND2);
@@ -421,6 +426,9 @@ void fm_desktop_manager_finalize()
 
     gtk_widget_destroy(desktop_popup);
     desktop_popup = NULL;
+
+    g_object_unref(acc_grp);
+    acc_grp = NULL;
 
     if(hand_cursor)
     {
@@ -748,10 +756,10 @@ gboolean on_leave_notify( GtkWidget* w, GdkEventCrossing *evt )
 
 gboolean on_key_press( GtkWidget* w, GdkEventKey* evt )
 {
-    GList* sels;
     FmDesktop* desktop = (FmDesktop*)w;
     FmDesktopItem* item;
     int modifier = ( evt->state & ( GDK_SHIFT_MASK | GDK_CONTROL_MASK | GDK_MOD1_MASK ) );
+    FmPathList* sels;
 
     switch ( evt->keyval )
     {
@@ -766,6 +774,7 @@ gboolean on_key_press( GtkWidget* w, GdkEventKey* evt )
             }
             set_focused_item(desktop, item);
         }
+        return TRUE;
         break;
     case GDK_Right:
         item = get_nearest_item(desktop, desktop->focus, GTK_DIR_RIGHT);
@@ -778,6 +787,7 @@ gboolean on_key_press( GtkWidget* w, GdkEventKey* evt )
             }
             set_focused_item(desktop, item);
         }
+        return TRUE;
         break;
     case GDK_Up:
         item = get_nearest_item(desktop, desktop->focus, GTK_DIR_UP);
@@ -790,6 +800,7 @@ gboolean on_key_press( GtkWidget* w, GdkEventKey* evt )
             }
             set_focused_item(desktop, item);
         }
+        return TRUE;
         break;
     case GDK_Down:
         item = get_nearest_item(desktop, desktop->focus, GTK_DIR_DOWN);
@@ -802,6 +813,7 @@ gboolean on_key_press( GtkWidget* w, GdkEventKey* evt )
             }
             set_focused_item(desktop, item);
         }
+        return TRUE;
         break;
     case GDK_space:
         if(modifier & GDK_CONTROL_MASK)
@@ -814,86 +826,64 @@ gboolean on_key_press( GtkWidget* w, GdkEventKey* evt )
         }
         else
             activate_selected_items(desktop);
+        return TRUE;
         break;
     case GDK_Return:
         if(modifier & GDK_MOD1_MASK)
         {
-            fm_desktop_preference(desktop);
+            FmFileInfoList* infos = fm_desktop_get_selected_files(desktop);
+            if(infos)
+            {
+                fm_show_file_properties(infos);
+                fm_list_unref(infos);
+                return TRUE;
+            }
         }
         else
+        {
             activate_selected_items(desktop);
+            return TRUE;
+        }
+        break;
+    case GDK_x:
+        if(modifier & GDK_CONTROL_MASK)
+        {
+            sels = fm_desktop_get_selected_paths(desktop);
+            fm_clipboard_cut_files(desktop, sels);
+            fm_list_unref(sels);
+        }
+        break;
+    case GDK_c:
+        if(modifier & GDK_CONTROL_MASK)
+        {
+            sels = fm_desktop_get_selected_paths(desktop);
+            fm_clipboard_copy_files(desktop, sels);
+            fm_list_unref(sels);
+        }
+        break;
+    case GDK_v:
+        if(modifier & GDK_CONTROL_MASK)
+            fm_clipboard_paste_files(desktop, fm_path_get_desktop());
+        break;
+    case GDK_F2:
+#if 0
+        if( sels )
+            ptk_rename_file( NULL, vfs_get_desktop_dir(), (FmFileInfo*)sels->data );
+#endif
+        break;
+    case GDK_Delete:
+        sels = fm_desktop_get_selected_paths(desktop);
+        if(sels)
+        {
+            if(modifier & GDK_SHIFT_MASK)
+                fm_delete_files(sels);
+            else
+                fm_trash_or_delete_files(sels);
+            fm_list_unref(sels);
+        }
         break;
     }
-
-
-#if 0
-    sels = fm_desktop_win_get_selected_files( self );
-
-    if ( modifier == GDK_CONTROL_MASK )
-    {
-        switch ( evt->keyval )
-        {
-        case GDK_x:
-            if( sels )
-                ptk_clipboard_cut_or_copy_files( vfs_get_desktop_dir(), sels, FALSE );
-            break;
-        case GDK_c:
-            if( sels )
-                ptk_clipboard_cut_or_copy_files( vfs_get_desktop_dir(), sels, TRUE );
-            break;
-        case GDK_v:
-            on_paste( NULL, self );
-            break;
-/*
-        case GDK_i:
-            ptk_file_browser_invert_selection( file_browser );
-            break;
-        case GDK_a:
-            ptk_file_browser_select_all( file_browser );
-            break;
-*/
-        }
-    }
-    else if ( modifier == GDK_MOD1_MASK )
-    {
-        switch ( evt->keyval )
-        {
-        case GDK_Return:
-            if( sels )
-                ptk_show_file_properties( NULL, vfs_get_desktop_dir(), sels );
-            break;
-        }
-    }
-    else if ( modifier == GDK_SHIFT_MASK )
-    {
-        switch ( evt->keyval )
-        {
-        case GDK_Delete:
-            if( sels )
-                ptk_delete_files( NULL, vfs_get_desktop_dir(), sels );
-            break;
-        }
-    }
-    else if ( modifier == 0 )
-    {
-        switch ( evt->keyval )
-        {
-        case GDK_F2:
-            if( sels )
-                ptk_rename_file( NULL, vfs_get_desktop_dir(), (FmFileInfo*)sels->data );
-            break;
-        case GDK_Delete:
-            if( sels )
-                ptk_delete_files( NULL, vfs_get_desktop_dir(), sels );
-            break;
-        }
-    }
-
-    if( sels )
-        vfs_file_info_list_free( sels );
-#endif
-
-    return TRUE;
+    return GTK_WIDGET_CLASS(fm_desktop_parent_class)->key_press_event(w, evt);
 }
 
 void on_style_set( GtkWidget* w, GtkStyle* prev )
@@ -1936,6 +1926,24 @@ FmFileInfoList* fm_desktop_get_selected_files(FmDesktop* desktop)
         FmDesktopItem* item = (FmDesktopItem*)l->data;
         if(item->is_selected)
             fm_list_push_tail(files, item->fi);
+    }
+    if(fm_list_is_empty(files))
+    {
+        fm_list_unref(files);
+        files = NULL;
+    }
+    return files;
+}
+
+FmPathList* fm_desktop_get_selected_paths(FmDesktop* desktop)
+{
+    GList* l;
+    FmPathList* files = fm_path_list_new();
+    for(l=desktop->items; l; l=l->next)
+    {
+        FmDesktopItem* item = (FmDesktopItem*)l->data;
+        if(item->is_selected)
+            fm_list_push_tail(files, item->fi->path);
     }
     if(fm_list_is_empty(files))
     {
