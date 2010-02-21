@@ -35,6 +35,7 @@
 #define INIT_COMBO(b, st, name, changed_notify) init_combo(b, #name, G_STRUCT_OFFSET(st, name), changed_notify)
 #define INIT_ICON_SIZES(b, name) init_icon_sizes(b, #name, G_STRUCT_OFFSET(FmConfig, name))
 #define INIT_COLOR(b, st, name, changed_notify)  init_color(b, #name, G_STRUCT_OFFSET(st, name), changed_notify)
+#define INIT_SPIN(b, st, name, changed_notify)  init_spin(b, #name, G_STRUCT_OFFSET(st, name), changed_notify)
 
 static GtkWidget* pref_dlg = NULL;
 static GtkWidget* notebook = NULL;
@@ -65,7 +66,7 @@ static void on_icon_size_changed(GtkComboBox* combo, gpointer _off)
         gtk_tree_model_get(model, &it, 1, &size, -1);
         if(size != *val)
         {
-            const char* name = gtk_widget_get_name((GtkWidget*)combo);
+            const char* name = gtk_buildable_get_name((GtkBuildable*)combo);
             *val = size;
             fm_config_emit_changed(fm_config, name);
         }
@@ -78,7 +79,6 @@ static void init_icon_sizes(GtkBuilder* builder, const char* name, gsize off)
     GtkTreeModel* model = gtk_combo_box_get_model(combo);
     GtkTreeIter it;
     int* val = (int*)G_STRUCT_MEMBER_P(fm_config, off);
-    gtk_widget_set_name((GtkWidget*)combo, name);
     gtk_tree_model_get_iter_first(model, &it);
     gtk_combo_box_set_active_iter(combo, &it);
     do{
@@ -102,7 +102,7 @@ static void on_combo_changed(GtkComboBox* combo, gpointer _off)
     {
         const char* name = g_object_get_data((GObject*)combo, "changed");
         if(!name)
-            name = gtk_widget_get_name((GtkWidget*)combo);
+            name = gtk_buildable_get_name((GtkBuildable*)combo);
         *val = sel;
         fm_config_emit_changed(fm_config, name);
     }
@@ -114,7 +114,6 @@ static void init_combo(GtkBuilder* builder, const char* name, gsize off, const c
     GtkTreeModel* model = gtk_combo_box_get_model(combo);
     GtkTreeIter it;
     int* val = (int*)G_STRUCT_MEMBER_P(fm_config, off);
-    gtk_widget_set_name((GtkWidget*)combo, name);
     if(changed_notify)
         g_object_set_data_full(combo, "changed", g_strdup(changed_notify), g_free);
     gtk_combo_box_set_active(combo, *val);
@@ -130,7 +129,7 @@ static void on_toggled(GtkToggleButton* btn, gpointer _off)
     {
         const char* name = g_object_get_data((GObject*)btn, "changed");
         if(!name)
-            name = gtk_widget_get_name((GtkWidget*)btn);
+            name = gtk_buildable_get_name((GtkBuildable*)btn);
         *val = new_val;
         fm_config_emit_changed(fm_config, name);
     }
@@ -140,7 +139,6 @@ static void init_bool(GtkBuilder* b, const char* name, gsize off, const char* ch
 {
     GtkToggleButton* btn = GTK_TOGGLE_BUTTON(gtk_builder_get_object(b, name));
     gboolean* val = (gboolean*)G_STRUCT_MEMBER_P(fm_config, off);
-    gtk_widget_set_name((GtkWidget*)btn, name);
     if(changed_notify)
         g_object_set_data_full(btn, "changed", g_strdup(changed_notify), g_free);
     gtk_toggle_button_set_active(btn, *val);
@@ -157,7 +155,7 @@ static void on_color_set(GtkColorButton* btn, gpointer _off)
     {
         const char* name = g_object_get_data((GObject*)btn, "changed");
         if(!name)
-            name = gtk_widget_get_name((GtkWidget*)btn);
+            name = gtk_buildable_get_name((GtkBuildable*)btn);
         *val = new_val;
         fm_config_emit_changed(fm_config, name);
     }
@@ -166,12 +164,36 @@ static void on_color_set(GtkColorButton* btn, gpointer _off)
 static void init_color(GtkBuilder* b, const char* name, gsize off, const char* changed_notify)
 {
     GtkFontButton* btn = GTK_FONT_BUTTON(gtk_builder_get_object(b, name));
-    GdkColor* val = (gboolean*)G_STRUCT_MEMBER_P(fm_config, off);
-    gtk_widget_set_name((GtkWidget*)btn, name);
+    GdkColor* val = (GdkColor*)G_STRUCT_MEMBER_P(fm_config, off);
     if(changed_notify)
         g_object_set_data_full(btn, "changed", g_strdup(changed_notify), g_free);
     gtk_color_button_set_color(btn, val);
     g_signal_connect(btn, "color-set", G_CALLBACK(on_color_set), GSIZE_TO_POINTER(off));
+}
+
+static void on_spin_changed(GtkSpinButton* btn, gpointer _off)
+{
+    gsize off = GPOINTER_TO_SIZE(_off);
+    guint* val = (guint*)G_STRUCT_MEMBER_P(fm_config, off);
+    gboolean new_val = gtk_spin_button_get_value(btn);
+    if(*val != new_val)
+    {
+        const char* name = g_object_get_data((GObject*)btn, "changed");
+        if(!name)
+            name = gtk_buildable_get_name((GtkBuildable*)btn);
+        *val = new_val;
+        fm_config_emit_changed(fm_config, name);
+    }
+}
+
+static void init_spin(GtkBuilder* b, const char* name, gsize off, const char* changed_notify)
+{
+    GtkSpinButton* btn = GTK_SPIN_BUTTON(gtk_builder_get_object(b, name));
+    guint* val = (guint*)G_STRUCT_MEMBER_P(fm_config, off);
+    if(changed_notify)
+        g_object_set_data_full(btn, "changed", g_strdup(changed_notify), g_free);
+    gtk_spin_button_set_value(btn, *val);
+    g_signal_connect(btn, "value-changed", G_CALLBACK(on_spin_changed), GSIZE_TO_POINTER(off));
 }
 
 void fm_edit_preference( GtkWindow* parent, int page )
@@ -187,16 +209,20 @@ void fm_edit_preference( GtkWindow* parent, int page )
         INIT_BOOL(builder, FmConfig, single_click, NULL);
         INIT_BOOL(builder, FmConfig, confirm_del, NULL);
         INIT_BOOL(builder, FmConfig, use_trash, NULL);
+
         INIT_BOOL(builder, FmConfig, show_thumbnail, NULL);
-        INIT_BOOL(builder, FmConfig, si_unit, NULL);
+        INIT_BOOL(builder, FmConfig, thumbnail_local, NULL);
+        INIT_SPIN(builder, FmConfig, thumbnail_max, NULL);
 
         INIT_BOOL(builder, FmAppConfig, always_show_tabs, NULL);
         INIT_BOOL(builder, FmAppConfig, hide_close_btn, NULL);
+        INIT_BOOL(builder, FmConfig, si_unit, NULL);
 
         INIT_COMBO(builder, FmAppConfig, bm_open_method, NULL);
 
         INIT_ICON_SIZES(builder, big_icon_size);
         INIT_ICON_SIZES(builder, small_icon_size);
+        INIT_ICON_SIZES(builder, thumbnail_size);
         INIT_ICON_SIZES(builder, pane_icon_size);
 
         g_signal_connect(pref_dlg, "response", G_CALLBACK(on_response), &pref_dlg);
