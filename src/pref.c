@@ -200,7 +200,7 @@ static void init_spin(GtkBuilder* b, const char* name, gsize off, const char* ch
 static void on_entry_changed(GtkEntry* entry, gpointer _off)
 {
     gsize off = GPOINTER_TO_SIZE(_off);
-    guint *val = (guint*)G_STRUCT_MEMBER_P(fm_config, off);
+    guint* val = (guint*)G_STRUCT_MEMBER_P(fm_config, off);
     const char* new_val = gtk_entry_get_text(entry);
     /* FIXME prototype IS
 
