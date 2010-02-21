@@ -604,7 +604,7 @@ void on_open_as_root(GtkAction* act, FmMainWin* win)
     if(strstr(app_config->su_cmd, "%s")) /* FIXME: need to rename to pcmanfm when we reach stable release. */
         cmd = g_strdup_printf(app_config->su_cmd, "pcmanfm2 %U");
     else
-        cmd = g_strconcat(app_config->su_cmd, " ", "pcmanfm2 %U");
+        cmd = g_strconcat(app_config->su_cmd, " ", "pcmanfm2 %U", NULL);
     app = g_app_info_create_from_commandline(cmd, NULL, 0, NULL);
     g_free(cmd);
     if(app)
