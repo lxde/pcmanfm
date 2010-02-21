@@ -39,6 +39,7 @@ static void update_tab_label(FmMainWin* win, FmFolderView* fv, const char* title
 static void update_volume_info(FmMainWin* win);
 
 static void on_focus_in(GtkWidget* w, GdkEventFocus* evt);
+static gboolean on_delete_event(GtkWidget* w, GdkEvent* evt);
 
 static void on_new_win(GtkAction* act, FmMainWin* win);
 static void on_new_tab(GtkAction* act, FmMainWin* win);
@@ -98,6 +99,7 @@ static void fm_main_win_class_init(FmMainWinClass *klass)
 
     widget_class = (GtkWidgetClass*)klass;
     widget_class->focus_in_event = on_focus_in;
+    widget_class->delete_event = on_delete_event;
 
     fm_main_win_parent_class = (GtkWindowClass*)g_type_class_peek(GTK_TYPE_WINDOW);
 
@@ -506,7 +508,6 @@ static void fm_main_win_finalize(GObject *object)
     if (G_OBJECT_CLASS(fm_main_win_parent_class)->finalize)
         (* G_OBJECT_CLASS(fm_main_win_parent_class)->finalize)(object);
 
-    all_wins = g_slist_remove(all_wins, self);
     pcmanfm_unref();
 }
 
@@ -553,6 +554,16 @@ void on_focus_in(GtkWidget* w, GdkEventFocus* evt)
         all_wins = g_slist_prepend(all_wins, w);
     }
     ((GtkWidgetClass*)fm_main_win_parent_class)->focus_in_event(w, evt);
+}
+
+gboolean on_delete_event(GtkWidget* w, GdkEvent* evt)
+{
+    FmMainWin* win = (FmMainWin*)w;
+    /* store the size of last used window in config. */
+    gtk_window_get_size(w, &app_config->win_width, &app_config->win_height);
+    all_wins = g_slist_remove(all_wins, win);
+//    ((GtkWidgetClass*)fm_main_win_parent_class)->delete_event(w, evt);
+    return FALSE;
 }
 
 void on_new_win(GtkAction* act, FmMainWin* win)

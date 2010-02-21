@@ -438,7 +438,6 @@ gboolean pcmanfm_run()
             FmJob* job = fm_file_info_job_new(NULL);
             FmPath* cwd = NULL;
             GList* infos;
-            g_debug("fn = %s", *filename);
             for(filename=files_to_open; *filename; ++filename)
             {
                 FmPath* path;

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-20 04:11+0000\n"
+"POT-Creation-Date: 2010-02-21 13:01+0800\n"
 "PO-Revision-Date: 2010-02-20 14:49-0000\n"
 "Last-Translator: Sergio Marques <smarquespt@gmail.com>\n"
 "Language-Team: \n"
@@ -64,8 +64,7 @@ msgstr "Aparência"
 msgid "Background color:"
 msgstr "Cor de fundo:"
 
-#: ../data/ui/desktop-pref.glade.h:7
-#: ../data/ui/pref.glade.h:6
+#: ../data/ui/desktop-pref.glade.h:7 ../data/ui/pref.glade.h:6
 msgid "Center on the screen"
 msgstr "Centrar no ecrâ"
 
@@ -81,7 +80,7 @@ msgstr "Cor da sombra:"
 msgid "Desktop Icons"
 msgstr "Ícones da Área de Trabalho"
 
-#: ../data/ui/desktop-pref.glade.h:11
+#: ../data/ui/desktop-pref.glade.h:11 ../src/desktop-ui.c:56
 msgid "Desktop Preferences"
 msgstr "Preferências da Área de Trabalho"
 
@@ -117,18 +116,15 @@ msgstr "Mostrar ícones de volumes na área de trabalho"
 msgid "Show menus provided by WM when desktop is clicked"
 msgstr "Mostrar menus pelo G J ao clicar na área de trabalho"
 
-#: ../data/ui/desktop-pref.glade.h:20
-#: ../data/ui/pref.glade.h:22
+#: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:22
 msgid "Stretch to fill the entire screen"
 msgstr "Esticar para preencher totalmente o ecrã"
 
-#: ../data/ui/desktop-pref.glade.h:21
-#: ../data/ui/pref.glade.h:23
+#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:23
 msgid "Stretch to fit the screen"
 msgstr "Esticar para preencher o ecrã"
 
-#: ../data/ui/desktop-pref.glade.h:22
-#: ../data/ui/pref.glade.h:25
+#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:25
 msgid "Tile the image to fill the entire screen"
 msgstr "Ladrilhar imagem para preencher totalmente o ecrã"
 
@@ -186,7 +182,8 @@ msgstr "Tamanho máx. dos ficheiros mostrados como miniaturas:"
 
 #: ../data/ui/pref.glade.h:13
 msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
-msgstr "Mover ficheiros apagados para o \"lixo\" ao invés de os apagar do disco"
+msgstr ""
+"Mover ficheiros apagados para o \"lixo\" ao invés de os apagar do disco"
 
 #: ../data/ui/pref.glade.h:14
 msgid "Open files with single click"
@@ -244,197 +241,205 @@ msgstr "_Geral"
 msgid "_Volume Management"
 msgstr "Gestão de _Volumes"
 
-#: ../src/desktop-ui.c:47
-#: ../src/main-win-ui.c:129
-msgid "Invert Selection"
+#: ../src/desktop-ui.c:51
+#, fuzzy
+msgid "_Invert Selection"
 msgstr "Inverter Selecção"
 
-#: ../src/desktop-ui.c:48
-#: ../src/main-win-ui.c:132
+#: ../src/desktop-ui.c:52 ../src/main-win-ui.c:134
 msgid "_Sort Files"
 msgstr "_Ordenar Ficheiros"
 
-#: ../src/desktop-ui.c:50
-#: ../src/main-win-ui.c:153
+#: ../src/desktop-ui.c:54 ../src/main-win-ui.c:155
 msgid "Folder"
 msgstr "Pasta"
 
-#: ../src/desktop-ui.c:51
-#: ../src/main-win-ui.c:154
-msgid "Blank FIle"
+#: ../src/desktop-ui.c:55
+#, fuzzy
+msgid "Blank File"
 msgstr "Ficheiro Vazio"
 
-#: ../src/desktop-ui.c:63
-#: ../src/main-win-ui.c:179
+#: ../src/desktop-ui.c:67 ../src/main-win-ui.c:181
 msgid "By _Name"
 msgstr "Por _Nome"
 
-#: ../src/desktop-ui.c:64
-#: ../src/main-win-ui.c:180
+#: ../src/desktop-ui.c:68 ../src/main-win-ui.c:182
 msgid "By _Modification Time"
 msgstr "Por Data de _Modificação"
 
-#: ../src/desktop-ui.c:79
-#: ../src/main-win-ui.c:196
+#: ../src/desktop-ui.c:83 ../src/main-win-ui.c:198
 msgid "Open in New Tab"
 msgstr "Abrir em Novo Separador"
 
-#: ../src/desktop-ui.c:80
-#: ../src/main-win-ui.c:197
+#: ../src/desktop-ui.c:84 ../src/main-win-ui.c:199
 msgid "Open in New Window"
 msgstr "Abrie em Nova Janela"
 
-#: ../src/main-win-ui.c:114
+#: ../src/main-win-ui.c:116
 msgid "_File"
 msgstr "_Ficheiro"
 
-#: ../src/main-win-ui.c:115
+#: ../src/main-win-ui.c:117
 msgid "_New Window"
 msgstr "_Nova Janela"
 
-#: ../src/main-win-ui.c:116
+#: ../src/main-win-ui.c:118
 msgid "New _Tab"
 msgstr "Novo _Separador"
 
-#: ../src/main-win-ui.c:117
+#: ../src/main-win-ui.c:119
 msgid "_Close Tab"
 msgstr "_Fechar Separador"
 
-#: ../src/main-win-ui.c:118
+#: ../src/main-win-ui.c:120
 msgid "Close Window"
 msgstr "Fechar Janela"
 
-#: ../src/main-win-ui.c:119
+#: ../src/main-win-ui.c:121
 msgid "_Edit"
 msgstr "_Editar"
 
-#: ../src/main-win-ui.c:124
+#: ../src/main-win-ui.c:126
 msgid "Rename"
 msgstr "Renomear"
 
-#: ../src/main-win-ui.c:125
+#: ../src/main-win-ui.c:127
 msgid "Create Symlink"
 msgstr "Criar Ligações Simbólicas"
 
-#: ../src/main-win-ui.c:126
+#: ../src/main-win-ui.c:128
 msgid "Move To..."
 msgstr "Mover Para..."
 
-#: ../src/main-win-ui.c:127
+#: ../src/main-win-ui.c:129
 msgid "Copy To..."
 msgstr "Copiar Para..."
 
 #: ../src/main-win-ui.c:131
+msgid "Invert Selection"
+msgstr "Inverter Selecção"
+
+#: ../src/main-win-ui.c:133
 msgid "_View"
 msgstr "_Ver"
 
-#: ../src/main-win-ui.c:133
+#: ../src/main-win-ui.c:135
 msgid "_Help"
 msgstr "_Ajuda"
 
-#: ../src/main-win-ui.c:135
+#: ../src/main-win-ui.c:137
 msgid "_Go"
 msgstr "_Ir"
 
-#: ../src/main-win-ui.c:136
+#: ../src/main-win-ui.c:138
 msgid "Previous Folder"
 msgstr "Pasta Anterior"
 
-#: ../src/main-win-ui.c:137
+#: ../src/main-win-ui.c:139
 msgid "Next Folder"
 msgstr "Pasta Seguinte"
 
-#: ../src/main-win-ui.c:138
+#: ../src/main-win-ui.c:140
 msgid "Parent Folder"
 msgstr "Pasta Superior"
 
-#: ../src/main-win-ui.c:138
+#: ../src/main-win-ui.c:140
 msgid "Go to parent Folder"
 msgstr "Ir para Pasta Superior"
 
-#: ../src/main-win-ui.c:139
+#: ../src/main-win-ui.c:141
 msgid "Home Folder"
 msgstr "Pasta Pessoal"
 
-#: ../src/main-win-ui.c:140
+#: ../src/main-win-ui.c:142
 msgid "Desktop"
 msgstr "Área de Trabalho"
 
-#: ../src/main-win-ui.c:140
+#: ../src/main-win-ui.c:142
 msgid "Desktop Folder"
 msgstr "Pasta da Área de trabalho"
 
-#: ../src/main-win-ui.c:141
+#: ../src/main-win-ui.c:143
 msgid "My Computer"
 msgstr "Meu Computador"
 
-#: ../src/main-win-ui.c:142
+#: ../src/main-win-ui.c:144
 msgid "Trash Can"
 msgstr "Lixo"
 
-#: ../src/main-win-ui.c:143
+#: ../src/main-win-ui.c:145
 msgid "Network Drives"
 msgstr "Unidades de Rede"
 
-#: ../src/main-win-ui.c:144
+#: ../src/main-win-ui.c:146
 msgid "Applications"
 msgstr "Aplicações"
 
-#: ../src/main-win-ui.c:144
+#: ../src/main-win-ui.c:146
 msgid "Installed Applications"
 msgstr "Aplicações Instaladas"
 
-#: ../src/main-win-ui.c:146
+#: ../src/main-win-ui.c:148
 msgid "_Bookmarks"
 msgstr "_Marcadores"
 
-#: ../src/main-win-ui.c:147
+#: ../src/main-win-ui.c:149
 msgid "Add To Bookmarks"
 msgstr "Adicionar aos Marcadores"
 
-#: ../src/main-win-ui.c:160
+#: ../src/main-win-ui.c:156
+msgid "Blank FIle"
+msgstr "Ficheiro Vazio"
+
+#: ../src/main-win-ui.c:162
 msgid "Show _Hidden"
 msgstr "Mostrar _Ocultos"
 
-#: ../src/main-win-ui.c:165
+#: ../src/main-win-ui.c:167
 msgid "_Icon View"
 msgstr "Íco_nes"
 
-#: ../src/main-win-ui.c:166
+#: ../src/main-win-ui.c:168
 msgid "_Compact View"
 msgstr "_Compacta"
 
-#: ../src/main-win-ui.c:167
-msgid "Thumbnail View"
+#: ../src/main-win-ui.c:169
+#, fuzzy
+msgid "_Thumbnail View"
 msgstr "Miniaturas"
 
-#: ../src/main-win-ui.c:168
+#: ../src/main-win-ui.c:170
 msgid "Detailed _List View"
 msgstr "_Lista Detalhada"
 
-#: ../src/main-win.c:820
-#, c-format
-msgid "Free space: %s (Total: %s )"
+#: ../src/main-win.c:826
+#, fuzzy, c-format
+msgid "Free space: %s (Total: %s)"
 msgstr "Espaço livre: %s (Total: %s )"
 
-#: ../src/main-win.c:1073
+#: ../src/main-win.c:1079
 msgid "Create New..."
 msgstr "Criar Novo..."
 
-#: ../src/main-win.c:1073
+#: ../src/main-win.c:1079
 msgid "Enter a name for the newly created file:"
 msgstr "Indique o nome do ficheiro agora criado:"
 
-#: ../src/main-win.c:1073
+#: ../src/main-win.c:1079
 msgid "New"
 msgstr "Novo"
 
 #: ../src/pcmanfm.c:69
-msgid "Open folders in new tabs of the last used window instead of creating new windows"
-msgstr "Abrir pastas em novos separadores da última janela usada em vez de criar novas janelas"
+msgid ""
+"Open folders in new tabs of the last used window instead of creating new "
+"windows"
+msgstr ""
+"Abrir pastas em novos separadores da última janela usada em vez de criar "
+"novas janelas"
 
 #: ../src/pcmanfm.c:70
-msgid "Name of config profile"
+#, fuzzy
+msgid "Name of configuration profile"
 msgstr "Nome do perfil de configuração"
 
 #: ../src/pcmanfm.c:71
@@ -462,8 +467,13 @@ msgid "<image file>"
 msgstr "<imagem>"
 
 #: ../src/pcmanfm.c:76
-msgid "Open preference dialog. 'n' is the number of page you want to show (1, 2, 3...)."
-msgstr "Abrir diálogo de preferências. 'n' é o número da página que quer mostrar (1,2,3...)."
+#, fuzzy
+msgid ""
+"Open preference dialog. 'n' is number of the page you want to show (1, 2, "
+"3...)."
+msgstr ""
+"Abrir diálogo de preferências. 'n' é o número da página que quer mostrar "
+"(1,2,3...)."
 
 #: ../src/pcmanfm.c:77
 msgid "Open Find Files utility"
@@ -476,4 +486,3 @@ msgstr "Sem função. Apenas para compatibilidade com nautilus"
 #: ../src/pcmanfm.c:79
 msgid "[FILE1, FILE2,...]"
 msgstr "[FICHEIRO1, FICHEIRO2,...]"
-

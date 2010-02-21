@@ -99,6 +99,9 @@ void fm_app_config_load_from_key_file(FmAppConfig* cfg, GKeyFile* kf)
     cfg->desktop_font = g_key_file_get_string(kf, "desktop", "desktop_font", NULL);
     fm_key_file_get_int(kf, "ui", "always_show_tabs", &cfg->always_show_tabs);
     fm_key_file_get_int(kf, "ui", "hide_close_btn", &cfg->hide_close_btn);
+
+    fm_key_file_get_int(kf, "ui", "win_width", &cfg->win_width);
+    fm_key_file_get_int(kf, "ui", "win_height", &cfg->win_height);
 }
 
 void fm_app_config_load_from_file(FmAppConfig* cfg, const char* name)

@@ -149,6 +149,7 @@ static Atom XA_XROOTMAP_ID= 0;
 static int desktop_sort_by = COL_FILE_MTIME;
 static int desktop_sort_type = GTK_SORT_ASCENDING;
 
+static GdkCursor* hand_cursor = NULL;
 
 enum {
     FM_DND_DEST_DESKTOP_ITEM = N_FM_DND_DEST_DEFAULT_TARGETS + 1
@@ -380,6 +381,8 @@ void fm_desktop_manager_init()
 
     desktop_popup = (GtkWidget*)g_object_ref(gtk_ui_manager_get_widget(ui, "/popup"));
 
+    hand_cursor = gdk_cursor_new(GDK_HAND2);
+
     g_object_unref(act_grp);
     g_object_unref(ui);
 
@@ -418,6 +421,12 @@ void fm_desktop_manager_finalize()
 
     gtk_widget_destroy(desktop_popup);
     desktop_popup = NULL;
+
+    if(hand_cursor)
+    {
+        gdk_cursor_destroy(hand_cursor);
+        hand_cursor = NULL;
+    }
 
     pcmanfm_unref();
 }
@@ -680,7 +689,7 @@ gboolean on_motion_notify( GtkWidget* w, GdkEventMotion* evt )
             }
             if( item )
             {
-//                gdk_window_set_cursor( w->window, self->hand_cursor );
+                gdk_window_set_cursor( w->window, hand_cursor );
                 /* FIXME: timeout should be customizable */
                 if( self->single_click_timeout_handler == 0)
                     self->single_click_timeout_handler = g_timeout_add( 400, on_single_click_timeout, self ); //400 ms

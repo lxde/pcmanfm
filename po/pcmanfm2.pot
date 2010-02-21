@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-19 22:50+0100\n"
+"POT-Creation-Date: 2010-02-21 13:01+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -72,7 +72,7 @@ msgstr ""
 msgid "Desktop Icons"
 msgstr ""
 
-#: ../data/ui/desktop-pref.glade.h:11
+#: ../data/ui/desktop-pref.glade.h:11 ../src/desktop-ui.c:56
 msgid "Desktop Preferences"
 msgstr ""
 
@@ -232,180 +232,188 @@ msgstr ""
 msgid "_Volume Management"
 msgstr ""
 
-#: ../src/desktop-ui.c:47 ../src/main-win-ui.c:129
-msgid "Invert Selection"
+#: ../src/desktop-ui.c:51
+msgid "_Invert Selection"
 msgstr ""
 
-#: ../src/desktop-ui.c:48 ../src/main-win-ui.c:132
+#: ../src/desktop-ui.c:52 ../src/main-win-ui.c:134
 msgid "_Sort Files"
 msgstr ""
 
-#: ../src/desktop-ui.c:50 ../src/main-win-ui.c:153
+#: ../src/desktop-ui.c:54 ../src/main-win-ui.c:155
 msgid "Folder"
 msgstr ""
 
-#: ../src/desktop-ui.c:51 ../src/main-win-ui.c:154
-msgid "Blank FIle"
+#: ../src/desktop-ui.c:55
+msgid "Blank File"
 msgstr ""
 
-#: ../src/desktop-ui.c:63 ../src/main-win-ui.c:179
+#: ../src/desktop-ui.c:67 ../src/main-win-ui.c:181
 msgid "By _Name"
 msgstr ""
 
-#: ../src/desktop-ui.c:64 ../src/main-win-ui.c:180
+#: ../src/desktop-ui.c:68 ../src/main-win-ui.c:182
 msgid "By _Modification Time"
 msgstr ""
 
-#: ../src/desktop-ui.c:79 ../src/main-win-ui.c:196
+#: ../src/desktop-ui.c:83 ../src/main-win-ui.c:198
 msgid "Open in New Tab"
 msgstr ""
 
-#: ../src/desktop-ui.c:80 ../src/main-win-ui.c:197
+#: ../src/desktop-ui.c:84 ../src/main-win-ui.c:199
 msgid "Open in New Window"
 msgstr ""
 
-#: ../src/main-win-ui.c:114
+#: ../src/main-win-ui.c:116
 msgid "_File"
 msgstr ""
 
-#: ../src/main-win-ui.c:115
+#: ../src/main-win-ui.c:117
 msgid "_New Window"
 msgstr ""
 
-#: ../src/main-win-ui.c:116
+#: ../src/main-win-ui.c:118
 msgid "New _Tab"
 msgstr ""
 
-#: ../src/main-win-ui.c:117
+#: ../src/main-win-ui.c:119
 msgid "_Close Tab"
 msgstr ""
 
-#: ../src/main-win-ui.c:118
+#: ../src/main-win-ui.c:120
 msgid "Close Window"
 msgstr ""
 
-#: ../src/main-win-ui.c:119
+#: ../src/main-win-ui.c:121
 msgid "_Edit"
 msgstr ""
 
-#: ../src/main-win-ui.c:124
+#: ../src/main-win-ui.c:126
 msgid "Rename"
 msgstr ""
 
-#: ../src/main-win-ui.c:125
+#: ../src/main-win-ui.c:127
 msgid "Create Symlink"
 msgstr ""
 
-#: ../src/main-win-ui.c:126
+#: ../src/main-win-ui.c:128
 msgid "Move To..."
 msgstr ""
 
-#: ../src/main-win-ui.c:127
+#: ../src/main-win-ui.c:129
 msgid "Copy To..."
 msgstr ""
 
 #: ../src/main-win-ui.c:131
-msgid "_View"
+msgid "Invert Selection"
 msgstr ""
 
 #: ../src/main-win-ui.c:133
-msgid "_Help"
+msgid "_View"
 msgstr ""
 
 #: ../src/main-win-ui.c:135
-msgid "_Go"
-msgstr ""
-
-#: ../src/main-win-ui.c:136
-msgid "Previous Folder"
+msgid "_Help"
 msgstr ""
 
 #: ../src/main-win-ui.c:137
-msgid "Next Folder"
+msgid "_Go"
 msgstr ""
 
 #: ../src/main-win-ui.c:138
-msgid "Parent Folder"
-msgstr ""
-
-#: ../src/main-win-ui.c:138
-msgid "Go to parent Folder"
+msgid "Previous Folder"
 msgstr ""
 
 #: ../src/main-win-ui.c:139
-msgid "Home Folder"
+msgid "Next Folder"
 msgstr ""
 
 #: ../src/main-win-ui.c:140
-msgid "Desktop"
+msgid "Parent Folder"
 msgstr ""
 
 #: ../src/main-win-ui.c:140
-msgid "Desktop Folder"
+msgid "Go to parent Folder"
 msgstr ""
 
 #: ../src/main-win-ui.c:141
-msgid "My Computer"
+msgid "Home Folder"
 msgstr ""
 
 #: ../src/main-win-ui.c:142
-msgid "Trash Can"
+msgid "Desktop"
+msgstr ""
+
+#: ../src/main-win-ui.c:142
+msgid "Desktop Folder"
 msgstr ""
 
 #: ../src/main-win-ui.c:143
+msgid "My Computer"
+msgstr ""
+
+#: ../src/main-win-ui.c:144
+msgid "Trash Can"
+msgstr ""
+
+#: ../src/main-win-ui.c:145
 msgid "Network Drives"
 msgstr ""
 
-#: ../src/main-win-ui.c:144
+#: ../src/main-win-ui.c:146
 msgid "Applications"
 msgstr ""
 
-#: ../src/main-win-ui.c:144
+#: ../src/main-win-ui.c:146
 msgid "Installed Applications"
 msgstr ""
 
-#: ../src/main-win-ui.c:146
+#: ../src/main-win-ui.c:148
 msgid "_Bookmarks"
 msgstr ""
 
-#: ../src/main-win-ui.c:147
+#: ../src/main-win-ui.c:149
 msgid "Add To Bookmarks"
 msgstr ""
 
-#: ../src/main-win-ui.c:160
+#: ../src/main-win-ui.c:156
+msgid "Blank FIle"
+msgstr ""
+
+#: ../src/main-win-ui.c:162
 msgid "Show _Hidden"
 msgstr ""
 
-#: ../src/main-win-ui.c:165
+#: ../src/main-win-ui.c:167
 msgid "_Icon View"
 msgstr ""
 
-#: ../src/main-win-ui.c:166
+#: ../src/main-win-ui.c:168
 msgid "_Compact View"
 msgstr ""
 
-#: ../src/main-win-ui.c:167
-msgid "Thumbnail View"
+#: ../src/main-win-ui.c:169
+msgid "_Thumbnail View"
 msgstr ""
 
-#: ../src/main-win-ui.c:168
+#: ../src/main-win-ui.c:170
 msgid "Detailed _List View"
 msgstr ""
 
-#: ../src/main-win.c:820
+#: ../src/main-win.c:826
 #, c-format
-msgid "Free space: %s (Total: %s )"
+msgid "Free space: %s (Total: %s)"
 msgstr ""
 
-#: ../src/main-win.c:1073
+#: ../src/main-win.c:1079
 msgid "Create New..."
 msgstr ""
 
-#: ../src/main-win.c:1073
+#: ../src/main-win.c:1079
 msgid "Enter a name for the newly created file:"
 msgstr ""
 
-#: ../src/main-win.c:1073
+#: ../src/main-win.c:1079
 msgid "New"
 msgstr ""
 
@@ -416,7 +424,7 @@ msgid ""
 msgstr ""
 
 #: ../src/pcmanfm.c:70
-msgid "Name of config profile"
+msgid "Name of configuration profile"
 msgstr ""
 
 #: ../src/pcmanfm.c:71
@@ -445,7 +453,7 @@ msgstr ""
 
 #: ../src/pcmanfm.c:76
 msgid ""
-"Open preference dialog. 'n' is the number of page you want to show (1, 2, "
+"Open preference dialog. 'n' is number of the page you want to show (1, 2, "
 "3...)."
 msgstr ""
 

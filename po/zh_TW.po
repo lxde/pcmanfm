@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-19 22:50+0100\n"
+"POT-Creation-Date: 2010-02-21 13:01+0800\n"
 "PO-Revision-Date: 2010-01-29 05:57+0800\n"
 "Last-Translator: Hong Jen Yee (PCMan) <pcman.tw@gmail.com>\n"
 "Language-Team: zh_TW <zh_TW@li.org>\n"
@@ -77,7 +77,7 @@ msgstr "陰影色彩："
 msgid "Desktop Icons"
 msgstr "桌面圖示"
 
-#: ../data/ui/desktop-pref.glade.h:11
+#: ../data/ui/desktop-pref.glade.h:11 ../src/desktop-ui.c:56
 msgid "Desktop Preferences"
 msgstr "桌面偏好設定"
 
@@ -237,180 +237,190 @@ msgstr "一般(_G)"
 msgid "_Volume Management"
 msgstr "磁碟管理(_V)"
 
-#: ../src/desktop-ui.c:47 ../src/main-win-ui.c:129
-msgid "Invert Selection"
+#: ../src/desktop-ui.c:51
+#, fuzzy
+msgid "_Invert Selection"
 msgstr "反相選取"
 
-#: ../src/desktop-ui.c:48 ../src/main-win-ui.c:132
+#: ../src/desktop-ui.c:52 ../src/main-win-ui.c:134
 msgid "_Sort Files"
 msgstr "排序檔案(_S)"
 
-#: ../src/desktop-ui.c:50 ../src/main-win-ui.c:153
+#: ../src/desktop-ui.c:54 ../src/main-win-ui.c:155
 msgid "Folder"
 msgstr "資料夾"
 
-#: ../src/desktop-ui.c:51 ../src/main-win-ui.c:154
-msgid "Blank FIle"
+#: ../src/desktop-ui.c:55
+#, fuzzy
+msgid "Blank File"
 msgstr "空白檔案"
 
-#: ../src/desktop-ui.c:63 ../src/main-win-ui.c:179
+#: ../src/desktop-ui.c:67 ../src/main-win-ui.c:181
 msgid "By _Name"
 msgstr "依名稱(_N)"
 
-#: ../src/desktop-ui.c:64 ../src/main-win-ui.c:180
+#: ../src/desktop-ui.c:68 ../src/main-win-ui.c:182
 msgid "By _Modification Time"
 msgstr "依修改時間(_M)"
 
-#: ../src/desktop-ui.c:79 ../src/main-win-ui.c:196
+#: ../src/desktop-ui.c:83 ../src/main-win-ui.c:198
 msgid "Open in New Tab"
 msgstr "在新分頁開啟"
 
-#: ../src/desktop-ui.c:80 ../src/main-win-ui.c:197
+#: ../src/desktop-ui.c:84 ../src/main-win-ui.c:199
 msgid "Open in New Window"
 msgstr "在新視窗開啟"
 
-#: ../src/main-win-ui.c:114
+#: ../src/main-win-ui.c:116
 msgid "_File"
 msgstr "檔案(_F)"
 
-#: ../src/main-win-ui.c:115
+#: ../src/main-win-ui.c:117
 msgid "_New Window"
 msgstr "新視窗(_N)"
 
-#: ../src/main-win-ui.c:116
+#: ../src/main-win-ui.c:118
 msgid "New _Tab"
 msgstr "新分頁(_T)"
 
-#: ../src/main-win-ui.c:117
+#: ../src/main-win-ui.c:119
 msgid "_Close Tab"
 msgstr "關閉分頁(_C)"
 
-#: ../src/main-win-ui.c:118
+#: ../src/main-win-ui.c:120
 msgid "Close Window"
 msgstr "關閉視窗"
 
-#: ../src/main-win-ui.c:119
+#: ../src/main-win-ui.c:121
 msgid "_Edit"
 msgstr "編輯(_E)"
 
-#: ../src/main-win-ui.c:124
+#: ../src/main-win-ui.c:126
 msgid "Rename"
 msgstr "重新命名"
 
-#: ../src/main-win-ui.c:125
+#: ../src/main-win-ui.c:127
 msgid "Create Symlink"
 msgstr "建立符號連結"
 
-#: ../src/main-win-ui.c:126
+#: ../src/main-win-ui.c:128
 msgid "Move To..."
 msgstr "移動到..."
 
-#: ../src/main-win-ui.c:127
+#: ../src/main-win-ui.c:129
 msgid "Copy To..."
 msgstr "複製到..."
 
 #: ../src/main-win-ui.c:131
+msgid "Invert Selection"
+msgstr "反相選取"
+
+#: ../src/main-win-ui.c:133
 msgid "_View"
 msgstr "檢視(_V)"
 
-#: ../src/main-win-ui.c:133
+#: ../src/main-win-ui.c:135
 msgid "_Help"
 msgstr "說明(_H)"
 
-#: ../src/main-win-ui.c:135
+#: ../src/main-win-ui.c:137
 msgid "_Go"
 msgstr "到(_G)"
 
-#: ../src/main-win-ui.c:136
+#: ../src/main-win-ui.c:138
 msgid "Previous Folder"
 msgstr "上一個資料夾"
 
-#: ../src/main-win-ui.c:137
+#: ../src/main-win-ui.c:139
 msgid "Next Folder"
 msgstr "下一個資料夾"
 
-#: ../src/main-win-ui.c:138
+#: ../src/main-win-ui.c:140
 msgid "Parent Folder"
 msgstr "上層資料夾"
 
-#: ../src/main-win-ui.c:138
+#: ../src/main-win-ui.c:140
 msgid "Go to parent Folder"
 msgstr "到上層資料夾"
 
-#: ../src/main-win-ui.c:139
+#: ../src/main-win-ui.c:141
 msgid "Home Folder"
 msgstr "家目錄"
 
-#: ../src/main-win-ui.c:140
+#: ../src/main-win-ui.c:142
 msgid "Desktop"
 msgstr "桌面"
 
-#: ../src/main-win-ui.c:140
+#: ../src/main-win-ui.c:142
 msgid "Desktop Folder"
 msgstr "桌面資料夾"
 
-#: ../src/main-win-ui.c:141
+#: ../src/main-win-ui.c:143
 msgid "My Computer"
 msgstr "我的電腦"
 
-#: ../src/main-win-ui.c:142
+#: ../src/main-win-ui.c:144
 msgid "Trash Can"
 msgstr "垃圾桶"
 
-#: ../src/main-win-ui.c:143
+#: ../src/main-win-ui.c:145
 msgid "Network Drives"
 msgstr "網路磁碟機"
 
-#: ../src/main-win-ui.c:144
+#: ../src/main-win-ui.c:146
 msgid "Applications"
 msgstr "應用程式"
 
-#: ../src/main-win-ui.c:144
+#: ../src/main-win-ui.c:146
 msgid "Installed Applications"
 msgstr "已安裝的應用程式 "
 
-#: ../src/main-win-ui.c:146
+#: ../src/main-win-ui.c:148
 msgid "_Bookmarks"
 msgstr "書籤(_B)"
 
-#: ../src/main-win-ui.c:147
+#: ../src/main-win-ui.c:149
 msgid "Add To Bookmarks"
 msgstr "新增到書籤"
 
-#: ../src/main-win-ui.c:160
+#: ../src/main-win-ui.c:156
+msgid "Blank FIle"
+msgstr "空白檔案"
+
+#: ../src/main-win-ui.c:162
 msgid "Show _Hidden"
 msgstr "顯示隱藏檔(_H)"
 
-#: ../src/main-win-ui.c:165
+#: ../src/main-win-ui.c:167
 msgid "_Icon View"
 msgstr "以大圖示檢視(_I)"
 
-#: ../src/main-win-ui.c:166
+#: ../src/main-win-ui.c:168
 msgid "_Compact View"
 msgstr "以簡潔清單檢視(_C)"
 
-#: ../src/main-win-ui.c:167
-msgid "Thumbnail View"
+#: ../src/main-win-ui.c:169
+msgid "_Thumbnail View"
 msgstr ""
 
-#: ../src/main-win-ui.c:168
+#: ../src/main-win-ui.c:170
 msgid "Detailed _List View"
 msgstr "以詳細清單檢視(_L)"
 
-#: ../src/main-win.c:820
-#, c-format
-msgid "Free space: %s (Total: %s )"
+#: ../src/main-win.c:826
+#, fuzzy, c-format
+msgid "Free space: %s (Total: %s)"
 msgstr "可用空間：%s (總共：%s )"
 
-#: ../src/main-win.c:1073
+#: ../src/main-win.c:1079
 msgid "Create New..."
 msgstr "新建..."
 
-#: ../src/main-win.c:1073
+#: ../src/main-win.c:1079
 msgid "Enter a name for the newly created file:"
 msgstr "輸入新建立檔案的名稱："
 
-#: ../src/main-win.c:1073
+#: ../src/main-win.c:1079
 msgid "New"
 msgstr "新增"
 
@@ -421,7 +431,7 @@ msgid ""
 msgstr ""
 
 #: ../src/pcmanfm.c:70
-msgid "Name of config profile"
+msgid "Name of configuration profile"
 msgstr ""
 
 #: ../src/pcmanfm.c:71
@@ -450,7 +460,7 @@ msgstr "<影像檔>"
 
 #: ../src/pcmanfm.c:76
 msgid ""
-"Open preference dialog. 'n' is the number of page you want to show (1, 2, "
+"Open preference dialog. 'n' is number of the page you want to show (1, 2, "
 "3...)."
 msgstr ""
 
