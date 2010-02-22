@@ -1,4 +1,4 @@
-met/*
+/*
  *      pref.c
  *
  *      Copyright 2009 PCMan <pcman.tw@gmail.com>
