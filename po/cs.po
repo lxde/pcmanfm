@@ -1,20 +1,20 @@
-# SOME DESCRIPTIVE TITLE.
+# Czech translation for pcmanfm package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# This file is distributed under the same license as the pcmanfm package.
+# Radek Tříška <radek@fastlinux.eu>, 2010.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: PCMan File Manager 0.9\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-02-22 00:24+0100\n"
-"PO-Revision-Date: 2010-02-23 02:26+0100\n"
+"PO-Revision-Date: 2010-02-23 23:13+0100\n"
 "Last-Translator: Radek Tříška <radek@fastlinux.eu>\n"
 "Language-Team: Czech <radek@fastlinux.eu>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009"
@@ -61,12 +61,10 @@ msgstr "Barva pozadí:"
 
 #: ../data/ui/desktop-pref.glade.h:7
 #: ../data/ui/pref.glade.h:8
-#, fuzzy
 msgid "Center on the screen"
 msgstr "Na střed"
 
 #: ../data/ui/desktop-pref.glade.h:8
-#, fuzzy
 msgid "Color of label text:"
 msgstr "Barva popisku:"
 
@@ -88,7 +86,6 @@ msgid "FIll with background color only"
 msgstr "Vyplnit barvou pozadí"
 
 #: ../data/ui/desktop-pref.glade.h:13
-#, fuzzy
 msgid "Font of label text:"
 msgstr "Font popisku:"
 
@@ -410,7 +407,7 @@ msgstr "Nadřazená složka"
 
 #: ../src/main-win-ui.c:150
 msgid "Go to parent Folder"
-msgstr "Přejít na nadřazenou složku"
+msgstr "Přejít do nadřazené složky"
 
 #: ../src/main-win-ui.c:151
 msgid "Home Folder"
@@ -433,9 +430,8 @@ msgid "Trash Can"
 msgstr "Koš"
 
 #: ../src/main-win-ui.c:155
-#, fuzzy
 msgid "Network Drives"
-msgstr "Síťové disky"
+msgstr "Síť"
 
 #: ../src/main-win-ui.c:156
 msgid "Applications"
@@ -558,7 +554,6 @@ msgid "Set desktop wallpaper"
 msgstr "Nastavit pozadí plochy"
 
 #: ../src/pcmanfm.c:75
-#, fuzzy
 msgid "<image file>"
 msgstr "<obrázek>"
 
@@ -571,7 +566,6 @@ msgid "Open Find Files utility"
 msgstr "Otevřít nástroj pro hledání souborů"
 
 #: ../src/pcmanfm.c:78
-#, fuzzy
 msgid "No function. Just to be compatible with nautilus"
 msgstr "Bez funkce. Pouze pro kompatibilitu s programem nautilus"
 
