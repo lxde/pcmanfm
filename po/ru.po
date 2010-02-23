@@ -252,7 +252,7 @@ msgstr "Размер миниатюр:"
 
 #: ../data/ui/pref.glade.h:34
 msgid "Switch user command:"
-msgstr ""
+msgstr "Команда переключения пользователей:"
 
 #: ../data/ui/pref.glade.h:35
 msgid "Terminal emulator:"
@@ -476,16 +476,16 @@ msgstr "_Подробности"
 
 #: ../src/main-win.c:554
 msgid "Terminal emulator is not set."
-msgstr "Не установлен эмулятор консоли"
+msgstr "Не задан эмулятор консоли."
 
 #: ../src/main-win.c:600
 msgid "Switch user command is not set."
-msgstr ""
+msgstr "Не задана команда переключения пользователей."
 
 #: ../src/main-win.c:947
 #, c-format
 msgid "Free space: %s (Total: %s)"
-msgstr "Свободное место: %s (Всего: %s )"
+msgstr "Свободное место: %s (Всего: %s)"
 
 #: ../src/main-win.c:1152
 #, c-format
@@ -494,6 +494,9 @@ msgid ""
 "'%s'\n"
 "Enter a name for the new bookmark item:"
 msgstr ""
+"Добавить каталог в закладки:\n"
+"'%s'\n"
+"Введите имя новой закладки:"
 
 #: ../src/main-win.c:1156
 msgid "Add to Bookmarks"
