@@ -120,7 +120,7 @@ int main(int argc, char** argv)
     /* load pcmanfm-specific config file */
     if(profile)
         config_name = g_strconcat("pcmanfm/", profile, ".conf", NULL);
-    fm_app_config_load_from_file(config, config_name);
+    fm_app_config_load_from_file(FM_APP_CONFIG(config), config_name);
 
 	fm_gtk_init(config);
 
@@ -419,7 +419,7 @@ gboolean pcmanfm_run()
                 set_wallpaper = NULL;
                 if(app_config->wallpaper_mode == FM_WP_COLOR)
                     app_config->wallpaper_mode = FM_WP_FIT;
-                fm_config_emit_changed(app_config, "wallpaper");
+                fm_config_emit_changed(FM_CONFIG(app_config), "wallpaper");
                 fm_app_config_save(app_config, config_name);
             }
             return FALSE;
@@ -460,7 +460,7 @@ gboolean pcmanfm_run()
                     }
                     path = fm_path_new_relative(cwd, *filename);
                 }
-                fm_file_info_job_add(job, path);
+                fm_file_info_job_add(FM_FILE_INFO_JOB(job), path);
                 fm_path_unref(path);
             }
             if(cwd)

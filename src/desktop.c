@@ -255,9 +255,9 @@ static void fm_desktop_init(FmDesktop *self)
     GtkTargetList* targets;
 
     gtk_window_set_default_size((GtkWindow*)self, gdk_screen_get_width(screen), gdk_screen_get_height(screen));
-    gtk_window_move(self, 0, 0);
+    gtk_window_move(GTK_WINDOW(self), 0, 0);
     gtk_widget_set_app_paintable((GtkWidget*)self, TRUE);
-    gtk_window_set_type_hint(self, GDK_WINDOW_TYPE_HINT_DESKTOP);
+    gtk_window_set_type_hint(GTK_WINDOW(self), GDK_WINDOW_TYPE_HINT_DESKTOP);
     gtk_widget_add_events((GtkWidget*)self,
                         GDK_POINTER_MOTION_MASK |
                         GDK_BUTTON_PRESS_MASK |
@@ -268,7 +268,7 @@ static void fm_desktop_init(FmDesktop *self)
     self->icon_render = fm_cell_renderer_pixbuf_new();
     g_object_set( self->icon_render, "follow-state", TRUE, NULL);
     g_object_ref_sink(self->icon_render);
-    fm_cell_renderer_pixbuf_set_fixed_size(self->icon_render, fm_config->big_icon_size, fm_config->big_icon_size);
+    fm_cell_renderer_pixbuf_set_fixed_size(FM_CELL_RENDERER_PIXBUF(self->icon_render), fm_config->big_icon_size, fm_config->big_icon_size);
 
     /* FIXME: call pango_layout_context_changed() on the layout in response to the
      * "style-set" and "direction-changed" signals for the widget. */
@@ -300,19 +300,19 @@ static void fm_desktop_init(FmDesktop *self)
 
     gtk_drag_dest_set(self, 0, NULL, 0,
             GDK_ACTION_COPY|GDK_ACTION_MOVE|GDK_ACTION_LINK|GDK_ACTION_ASK);
-    gtk_drag_dest_set_target_list(self, targets);
+    gtk_drag_dest_set_target_list(GTK_WIDGET(self), targets);
 
     self->dnd_dest = fm_dnd_dest_new((GtkWidget*)self);
     g_signal_connect(self->dnd_dest, "query-info", G_CALLBACK(on_dnd_dest_query_info), self);
     g_signal_connect(self->dnd_dest, "files_dropped", G_CALLBACK(on_dnd_dest_files_dropped), self);
 
     /* add items */
-    if(gtk_tree_model_get_iter_first(model, &it))
+    if(gtk_tree_model_get_iter_first(GTK_TREE_MODEL(model), &it))
     {
         do{
             FmDesktopItem* item = desktop_item_new(&it);
             self->items = g_list_prepend(self->items, item);
-        }while(gtk_tree_model_iter_next(model, &it));
+        }while(gtk_tree_model_iter_next(GTK_TREE_MODEL(model), &it));
         self->items = g_list_reverse(self->items);
     }
 }
@@ -382,7 +382,7 @@ void fm_desktop_manager_init()
 
     acc_grp = gtk_ui_manager_get_accel_group(ui);
     for( i = 0; i < n_screens; i++ )
-        gtk_window_add_accel_group(desktops[i], acc_grp);
+        gtk_window_add_accel_group(GTK_WINDOW(desktops[i]), acc_grp);
 
     desktop_popup = (GtkWidget*)g_object_ref(gtk_ui_manager_get_widget(ui, "/popup"));
 
@@ -453,7 +453,7 @@ void activate_selected_items(FmDesktop* desktop)
         FmDesktopItem* item = (FmDesktopItem*)l->data;
         l->data = item->fi;
     }
-    fm_launch_files_simple(desktop, NULL, items, pcmanfm_open_folder, NULL);
+    fm_launch_files_simple(GTK_WINDOW(desktop), NULL, items, pcmanfm_open_folder, NULL);
     g_list_free(items);
 }
 
@@ -542,7 +542,7 @@ gboolean on_button_press( GtkWidget* w, GdkEventButton* evt )
             /* left single click */
             if( evt->button == 1 && fm_config->single_click && clicked_item->is_selected )
             {
-                fm_launch_file_simple(w, NULL, clicked_item->fi, pcmanfm_open_folder, NULL);
+                fm_launch_file_simple(GTK_WINDOW(w), NULL, clicked_item->fi, pcmanfm_open_folder, NULL);
                 goto out;
             }
             if( evt->button == 3 )  /* right click, context menu */
@@ -585,7 +585,7 @@ gboolean on_button_press( GtkWidget* w, GdkEventButton* evt )
             if( evt->button == 3 )  /* right click on the blank area => desktop popup menu */
             {
                 // FIXME: if(! app_config->show_wm_menu)
-                    gtk_menu_popup(desktop_popup, NULL, NULL, NULL, NULL, 3, gtk_get_current_event_time());
+                    gtk_menu_popup(GTK_MENU(desktop_popup), NULL, NULL, NULL, NULL, 3, gtk_get_current_event_time());
             }
             else if( evt->button == 1 )
             {
@@ -606,7 +606,7 @@ gboolean on_button_press( GtkWidget* w, GdkEventButton* evt )
     {
         if( clicked_item && evt->button == 1)   /* left double click */
         {
-            fm_launch_file_simple(w, NULL, clicked_item->fi, pcmanfm_open_folder, NULL);
+            fm_launch_file_simple(GTK_WINDOW(w), NULL, clicked_item->fi, pcmanfm_open_folder, NULL);
             goto out;
         }
     }
@@ -863,7 +863,7 @@ gboolean on_key_press( GtkWidget* w, GdkEventKey* evt )
         break;
     case GDK_v:
         if(modifier & GDK_CONTROL_MASK)
-            fm_clipboard_paste_files(desktop, fm_path_get_desktop());
+            fm_clipboard_paste_files(GTK_WIDGET(desktop), fm_path_get_desktop());
         break;
     case GDK_F2:
 #if 0
@@ -1177,7 +1177,7 @@ inline FmDesktopItem* desktop_item_new(GtkTreeIter* it)
 {
     FmDesktopItem* item = g_slice_new0(FmDesktopItem);
     item->it = *it;
-    gtk_tree_model_get(model, it, COL_FILE_ICON, &item->icon, COL_FILE_INFO, &item->fi, -1);
+    gtk_tree_model_get(GTK_TREE_MODEL(model), it, COL_FILE_ICON, &item->icon, COL_FILE_INFO, &item->fi, -1);
     return item;
 }
 
@@ -1392,7 +1392,7 @@ void paint_item(FmDesktop* self, FmDesktopItem* item, cairo_t* cr, GdkRectangle*
 
     /* draw the icon */
     g_object_set( self->icon_render, "pixbuf", item->icon, "info", fm_file_info_ref(item->fi), NULL );
-    gtk_cell_renderer_render(self->icon_render, widget->window, widget, &item->icon_rect, &item->icon_rect, expose_area, state);
+    gtk_cell_renderer_render(GTK_CELL_RENDERER(self->icon_render), widget->window, widget, &item->icon_rect, &item->icon_rect, expose_area, state);
 }
 
 void redraw_item(FmDesktop* desktop, FmDesktopItem* item)
@@ -1738,7 +1738,7 @@ void on_wallpaper_changed(FmConfig* cfg, gpointer user_data)
 {
     int i;
     for(i=0; i < n_screens; ++i)
-        update_background(desktops[i]);
+        update_background(FM_DESKTOP(desktops[i]));
 }
 
 void on_desktop_text_changed(FmConfig* cfg, gpointer user_data)
@@ -1767,7 +1767,7 @@ void on_desktop_font_changed(FmConfig* cfg, gpointer user_data)
                 PangoContext* pc = gtk_widget_get_pango_context( (GtkWidget*)desktop );
                 pango_context_set_font_description(pc, font_desc);
                 pango_layout_context_changed(desktop->pl);
-                gtk_widget_queue_resize(desktop);
+                gtk_widget_queue_resize(GTK_WIDGET(desktop));
                 /* layout_items(desktop); */
                 /* gtk_widget_queue_draw(desktops[i]); */
             }
@@ -1791,10 +1791,10 @@ static void reload_icons()
             {
                 g_object_unref(item->icon);
                 item->icon = NULL;
-                gtk_tree_model_get(model, &item->it, COL_FILE_ICON, &item->icon, -1);
+                gtk_tree_model_get(GTK_TREE_MODEL(model), &item->it, COL_FILE_ICON, &item->icon, -1);
             }
         }
-        gtk_widget_queue_resize(desktop);
+        gtk_widget_queue_resize(GTK_WIDGET(desktop));
     }
 }
 
