@@ -124,7 +124,15 @@ static void fm_main_win_class_init(FmMainWinClass *klass)
 
 static void on_entry_activate(GtkEntry* entry, FmMainWin* self)
 {
-    fm_folder_view_chdir_by_name(FM_FOLDER_VIEW(self->folder_view), gtk_entry_get_text(entry));
+    FmPath* path = fm_path_new( gtk_entry_get_text(entry) );
+    char* disp_path = fm_path_to_str(path);
+    char* disp_name = fm_path_display_basename(path);
+    update_tab_label(self, self->folder_view, disp_name);
+    gtk_window_set_title(GTK_WINDOW(self), disp_name);
+    g_free(disp_path);
+    g_free(disp_name);
+    fm_folder_view_chdir(FM_FOLDER_VIEW(self->folder_view), path);
+    fm_path_unref(path);
 }
 
 static void on_view_loaded( FmFolderView* view, FmPath* path, gpointer user_data) 
