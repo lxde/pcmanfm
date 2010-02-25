@@ -987,7 +987,6 @@ gint fm_main_win_add_tab(FmMainWin* win, FmPath* path)
 
     /* create folder view */
     folder_view = fm_folder_view_new( app_config->view_mode );
-    fm_folder_view_set_show_hidden(FM_FOLDER_VIEW(folder_view), app_config->show_hidden);
     fm_folder_view_sort(FM_FOLDER_VIEW(folder_view), app_config->sort_type, app_config->sort_by);
     fm_folder_view_set_selection_mode(FM_FOLDER_VIEW(folder_view), GTK_SELECTION_MULTIPLE);
     g_signal_connect(folder_view, "clicked", on_file_clicked, win);
@@ -998,7 +997,9 @@ gint fm_main_win_add_tab(FmMainWin* win, FmPath* path)
     nh = fm_nav_history_new();
     g_object_set_qdata_full((GObject*)folder_view, nav_history_id, nh, (GDestroyNotify)g_object_unref);
 
+    /* ensure model is loaded before setting model dependend properties */
     fm_folder_view_chdir(FM_FOLDER_VIEW(folder_view), path);
+    fm_folder_view_set_show_hidden(FM_FOLDER_VIEW(folder_view), app_config->show_hidden);
     fm_nav_history_chdir(nh, path, 0);
 
     gtk_widget_show(folder_view);
