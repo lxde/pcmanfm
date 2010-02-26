@@ -44,6 +44,21 @@ if test x"$cast_checks" = "xno"; then
 fi
 AC_SUBST(G_CAST_CHECKS)
 
+AC_ARG_ENABLE(debug,
+	[AC_HELP_STRING([--enable-debug],
+		[build libfm with debug support @<:@default=no@:>@])],
+	[enable_debug="${enableval}"],
+	[enable_debug=no]
+)
+if test "$enable_debug" = "yes"; then
+    # turn on debug and disable optimization
+    CPPFLAGS="$CPPFLAGS -DG_ENABLE_DEBUG -O0 -g"
+else
+    # turn off glib debug checks
+    # G_DISABLE_CAST_CHECKS is already handled by $(G_CAST_CHECKS)
+    CPPFLAGS="$CPPFLAGS -DG_DISABLE_ASSERT -DG_DISABLE_CHECKS"
+fi
+
 # intltool
 IT_PROG_INTLTOOL([0.40.0])
 

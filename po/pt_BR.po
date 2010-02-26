@@ -6,12 +6,12 @@
 # Fábio Antunes <fabio.antunes@hotmail.com>, 2008.
 # Og Maciel <ogmaciel@gnome.org>, 2008-2010.
 # Henrique P. Machado <zehrique@gmail.com>, 2009.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PCManFM\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-22 04:11+0000\n"
+"POT-Creation-Date: 2010-02-27 07:50+0800\n"
 "PO-Revision-Date: 2010-01-31 12:07-0500\n"
 "Last-Translator: Og Maciel <ogmaciel@gnome.org>\n"
 "Language-Team: Brazilian Portuguese <ldp-br@bazar2.conectiva.com.br>\n"
@@ -117,7 +117,8 @@ msgstr "Mostrar ícones de volumes na área de trabalho"
 
 #: ../data/ui/desktop-pref.glade.h:19
 msgid "Show menus provided by WM when desktop is clicked"
-msgstr "Mostrar menus do gerente de janelas quando a área de trabalho for clicada"
+msgstr ""
+"Mostrar menus do gerente de janelas quando a área de trabalho for clicada"
 
 #: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:32
 msgid "Stretch to fill the entire screen"
@@ -189,7 +190,8 @@ msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
 "%s = the command line you want to execute with terminal or su."
 msgstr ""
-"Exemplos: \"xterm -e %s\" para terminal or \"gksu %s\" para alternar o usuário.\n"
+"Exemplos: \"xterm -e %s\" para terminal or \"gksu %s\" para alternar o "
+"usuário.\n"
 "%s = a linha de comando que você deseja executar no terminal ou com o su."
 
 #: ../data/ui/pref.glade.h:16
@@ -210,7 +212,8 @@ msgstr "Visualização de ícones"
 
 #: ../data/ui/pref.glade.h:20
 msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
-msgstr "Mover arquivos excluídos para a \"lixeira\" em vez de apagá-los da unidade"
+msgstr ""
+"Mover arquivos excluídos para a \"lixeira\" em vez de apagá-los da unidade"
 
 #: ../data/ui/pref.glade.h:21
 msgid "Only show thumbnails for local files"
@@ -480,20 +483,20 @@ msgstr "Visualização de minia_turas"
 msgid "Detailed _List View"
 msgstr "Visualização _lista detalhada"
 
-#: ../src/main-win.c:554
+#: ../src/main-win.c:562
 msgid "Terminal emulator is not set."
 msgstr "O emulador de terminal não está configurado."
 
-#: ../src/main-win.c:600
+#: ../src/main-win.c:608
 msgid "Switch user command is not set."
 msgstr "O comando para alternar o usuário não está configurado."
 
-#: ../src/main-win.c:947
+#: ../src/main-win.c:955
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Espaço livre: %s (Total: %s )"
 
-#: ../src/main-win.c:1152
+#: ../src/main-win.c:1161
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -504,25 +507,29 @@ msgstr ""
 "'%s'\n"
 "Digite um nome para o novo item favorito:"
 
-#: ../src/main-win.c:1156
+#: ../src/main-win.c:1165
 msgid "Add to Bookmarks"
 msgstr "Adicionar aos favoritos"
 
-#: ../src/main-win.c:1228
+#: ../src/main-win.c:1237
 msgid "Create New..."
 msgstr "Criar novo..."
 
-#: ../src/main-win.c:1228
+#: ../src/main-win.c:1237
 msgid "Enter a name for the newly created file:"
 msgstr "Digite um nome para o novo arquivo:"
 
-#: ../src/main-win.c:1228
+#: ../src/main-win.c:1237
 msgid "New"
 msgstr "Novo"
 
 #: ../src/pcmanfm.c:69
-msgid "Open folders in new tabs of the last used window instead of creating new windows"
-msgstr "Abrir pastas em novas abas na última janela aberta, em vez de criar novas janelas"
+msgid ""
+"Open folders in new tabs of the last used window instead of creating new "
+"windows"
+msgstr ""
+"Abrir pastas em novas abas na última janela aberta, em vez de criar novas "
+"janelas"
 
 #: ../src/pcmanfm.c:70
 msgid "Name of configuration profile"
@@ -553,8 +560,12 @@ msgid "<image file>"
 msgstr "<arquivo de imagem>"
 
 #: ../src/pcmanfm.c:76
-msgid "Open preference dialog. 'n' is number of the page you want to show (1, 2, 3...)."
-msgstr "Abre o diálogo de preferências. \"n\" é o número da página que você deseja mostrar (1, 2, 3...)."
+msgid ""
+"Open preference dialog. 'n' is number of the page you want to show (1, 2, "
+"3...)."
+msgstr ""
+"Abre o diálogo de preferências. \"n\" é o número da página que você deseja "
+"mostrar (1, 2, 3...)."
 
 #: ../src/pcmanfm.c:77
 msgid "Open Find Files utility"
