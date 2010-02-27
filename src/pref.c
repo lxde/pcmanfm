@@ -324,7 +324,8 @@ void fm_desktop_preference()
         gtk_widget_set_size_request( img_preview, 128, 128 );
         gtk_file_chooser_set_preview_widget( (GtkFileChooser*)item, img_preview );
         g_signal_connect( item, "update-preview", G_CALLBACK(on_update_img_preview), img_preview );
-        gtk_file_chooser_set_filename(item, app_config->wallpaper);
+        if(app_config->wallpaper)
+            gtk_file_chooser_set_filename(item, app_config->wallpaper);
 
         INIT_COMBO(builder, FmAppConfig, wallpaper_mode, "wallpaper");
         INIT_COLOR(builder, FmAppConfig, desktop_bg, "wallpaper");
@@ -333,7 +334,8 @@ void fm_desktop_preference()
         INIT_COLOR(builder, FmAppConfig, desktop_shadow, "desktop_text");
 
         item = gtk_builder_get_object(builder, "desktop_font");
-        gtk_font_button_set_font_name(item, app_config->desktop_font);
+        if(app_config->desktop_font)
+            gtk_font_button_set_font_name(item, app_config->desktop_font);
         g_signal_connect(item, "font-set", G_CALLBACK(on_desktop_font_set), NULL);
 
         g_signal_connect(desktop_pref_dlg, "response", G_CALLBACK(on_response), &desktop_pref_dlg);

@@ -19,7 +19,7 @@
  *      MA 02110-1301, USA.
  */
 
-/* this file is included by main-win.c */
+/* this file is included by desktop.c */
 
 static const char desktop_menu_xml[] =
 "<popup>"
@@ -46,7 +46,7 @@ static const char desktop_menu_xml[] =
   "<menuitem action='Prop'/>"
 "</popup>";
 
-static GtkActionEntry desktop_actions[]=
+static const GtkActionEntry desktop_actions[]=
 {
     {"Paste", GTK_STOCK_PASTE, NULL, NULL, NULL, G_CALLBACK(on_paste)},
     {"SelAll", GTK_STOCK_SELECT_ALL, NULL, NULL, NULL, G_CALLBACK(on_select_all)},
@@ -58,13 +58,13 @@ static GtkActionEntry desktop_actions[]=
     {"Prop", GTK_STOCK_PROPERTIES, N_("Desktop Preferences"), "<Alt>Return", NULL, G_CALLBACK(fm_desktop_preference)}
 };
 
-static GtkRadioActionEntry desktop_sort_type_actions[]=
+static const GtkRadioActionEntry desktop_sort_type_actions[]=
 {
     {"Asc", GTK_STOCK_SORT_ASCENDING, NULL, NULL, NULL, GTK_SORT_ASCENDING},
     {"Desc", GTK_STOCK_SORT_DESCENDING, NULL, NULL, NULL, GTK_SORT_DESCENDING},
 };
 
-static GtkRadioActionEntry desktop_sort_by_actions[]=
+static const GtkRadioActionEntry desktop_sort_by_actions[]=
 {
     {"ByName", NULL, N_("By _Name"), NULL, NULL, COL_FILE_NAME},
     {"ByMTime", NULL, N_("By _Modification Time"), NULL, NULL, COL_FILE_MTIME},
@@ -77,15 +77,17 @@ static const char folder_menu_xml[]=
   "<placeholder name='ph1'>"
     "<menuitem action='NewTab'/>"
     "<menuitem action='NewWin'/>"
+    "<menuitem action='Term'/>"
     /* "<menuitem action='Search'/>" */
   "</placeholder>"
 "</popup>";
 
 /* Action entries for pupup menus */
-static GtkActionEntry folder_menu_actions[]=
+static const GtkActionEntry folder_menu_actions[]=
 {
     {"NewTab", GTK_STOCK_NEW, N_("Open in New Tab"), NULL, NULL, G_CALLBACK(on_open_in_new_tab)},
     {"NewWin", GTK_STOCK_NEW, N_("Open in New Window"), NULL, NULL, G_CALLBACK(on_open_in_new_win)},
-    {"Search", GTK_STOCK_FIND, NULL, NULL, NULL, NULL}
+    {"Search", GTK_STOCK_FIND, NULL, NULL, NULL, NULL},
+    {"Term", "utilities-terminal", N_("Open in _Terminal"), NULL, NULL, G_CALLBACK(on_open_folder_in_terminal)}
 };
 

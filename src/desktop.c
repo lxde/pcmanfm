@@ -1,18 +1,18 @@
 /*
  *      desktop.c
- *      
+ *
  *      Copyright 2010 Hong Jen Yee (PCMan) <pcman.tw@gmail.com>
- *      
+ *
  *      This program is free software; you can redistribute it and/or modify
  *      it under the terms of the GNU General Public License as published by
  *      the Free Software Foundation; either version 2 of the License, or
  *      (at your option) any later version.
- *      
+ *
  *      This program is distributed in the hope that it will be useful,
  *      but WITHOUT ANY WARRANTY; without even the implied warranty of
  *      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *      GNU General Public License for more details.
- *      
+ *
  *      You should have received a copy of the GNU General Public License
  *      along with this program; if not, write to the Free Software
  *      Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
@@ -124,7 +124,7 @@ static void on_sort_by(GtkAction* act, GtkRadioAction *cur, gpointer user_data);
 
 static void on_open_in_new_tab(GtkAction* act, gpointer user_data);
 static void on_open_in_new_win(GtkAction* act, gpointer user_data);
-
+static void on_open_folder_in_terminal(GtkAction* act, gpointer user_data);
 
 G_DEFINE_TYPE(FmDesktop, fm_desktop, GTK_TYPE_WINDOW);
 
@@ -156,7 +156,7 @@ enum {
     FM_DND_DEST_DESKTOP_ITEM = N_FM_DND_DEST_DEFAULT_TARGETS + 1
 };
 
-GtkTargetEntry dnd_targets[] = 
+GtkTargetEntry dnd_targets[] =
 {
     {"application/x-desktop-item", GTK_TARGET_SAME_WIDGET, FM_DND_DEST_DESKTOP_ITEM}
 };
@@ -557,7 +557,7 @@ gboolean on_button_press( GtkWidget* w, GdkEventButton* evt )
                 if( items )
                 {
                     GList* sel;
-                    
+
                 }
                 */
                 files = fm_desktop_get_selected_files(self);
@@ -594,7 +594,7 @@ gboolean on_button_press( GtkWidget* w, GdkEventButton* evt )
                 /* FIXME: if you foward the event here, this will break rubber bending... */
                 /* forward the event to root window */
                 /* forward_event_to_rootwin( gtk_widget_get_screen(w), evt ); */
-				
+
                 gtk_grab_add( w );
                 self->rubber_bending_x = evt->x;
                 self->rubber_bending_y = evt->y;
@@ -1384,9 +1384,9 @@ void paint_item(FmDesktop* self, FmDesktopItem* item, cairo_t* cr, GdkRectangle*
     gdk_gc_set_rgb_fg_color(self->gc, fg);
     gdk_draw_layout( widget->window, self->gc, text_x, text_y, self->pl );
     pango_layout_set_text(self->pl, NULL, 0);
-    
+
     if(item == self->focus && GTK_WIDGET_HAS_FOCUS(self) )
-        gtk_paint_focus(widget->style, widget->window, gtk_widget_get_state(widget), 
+        gtk_paint_focus(widget->style, widget->window, gtk_widget_get_state(widget),
                         expose_area, widget, "icon_view",
                         item->text_rect.x, item->text_rect.y, item->text_rect.width, item->text_rect.height);
 
@@ -1556,8 +1556,8 @@ static void update_background(FmDesktop* desktop)
         dest_h = gdk_screen_get_height(screen);
         pixmap = gdk_pixmap_new(widget->window, dest_w, dest_h, -1);
     }
-    
-    if(gdk_pixbuf_get_has_alpha(pix) 
+
+    if(gdk_pixbuf_get_has_alpha(pix)
         || app_config->wallpaper_mode == FM_WP_CENTER
         || app_config->wallpaper_mode == FM_WP_FIT)
     {
@@ -1607,7 +1607,7 @@ static void update_background(FmDesktop* desktop)
     gdk_window_set_back_pixmap(widget->window, NULL, TRUE);
 
     pixmap_id = GDK_DRAWABLE_XID(pixmap);
-    XChangeProperty(GDK_WINDOW_XDISPLAY(root), GDK_WINDOW_XID(root), 
+    XChangeProperty(GDK_WINDOW_XDISPLAY(root), GDK_WINDOW_XID(root),
                     XA_XROOTMAP_ID, XA_PIXMAP, 32, PropModeReplace, (guchar*)&pixmap_id, 1);
 
     g_object_unref(pixmap);
@@ -1843,7 +1843,7 @@ void on_invert_select(GtkAction* act, gpointer user_data)
 
 void on_create_new(GtkAction* act, gpointer user_data)
 {
-    
+
 }
 
 void on_sort_type(GtkAction* act, GtkRadioAction *cur, gpointer user_data)
@@ -1884,6 +1884,20 @@ void on_open_in_new_win(GtkAction* act, gpointer user_data)
         fi = (FmFileInfo*)l->data;
         fm_main_win_add_tab(win, fi->path);
     }
+}
+
+void on_open_folder_in_terminal(GtkAction* act, gpointer user_data)
+{
+    FmFileMenu* menu = (FmFileMenu*)user_data;
+    FmFileInfoList* files = fm_file_menu_get_file_info_list(menu);
+    GList* l;
+    for(l=fm_list_peek_head_link(files);l;l=l->next)
+    {
+        FmFileInfo* fi = (FmFileInfo*)l->data;
+        if(fm_file_info_is_dir(fi) /*&& !fm_file_info_is_virtual(fi)*/)
+            pcmanfm_open_folder_in_terminal(NULL, fi->path);
+    }
+    fm_list_unref(files);
 }
 
 GList* get_selected_items(FmDesktop* desktop, int* n_items)

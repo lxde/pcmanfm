@@ -550,7 +550,7 @@ void pcmanfm_open_folder_in_terminal(GtkWindow* parent, FmPath* dir)
             cwd_str = g_file_get_path(gf);
             g_object_unref(gf);
         }
-        gdk_app_launch_context_set_screen(GDK_APP_LAUNCH_CONTEXT(ctx), gtk_widget_get_screen(GTK_WIDGET(parent)));
+        gdk_app_launch_context_set_screen(GDK_APP_LAUNCH_CONTEXT(ctx), parent ? gtk_widget_get_screen(GTK_WIDGET(parent)) : gdk_screen_get_default());
         gdk_app_launch_context_set_timestamp(GDK_APP_LAUNCH_CONTEXT(ctx), gtk_get_current_event_time());
         g_chdir(cwd_str); /* FIXME: currently we don't have better way for this. maybe a wrapper script? */
         g_free(cwd_str);
