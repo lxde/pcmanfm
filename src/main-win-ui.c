@@ -203,6 +203,7 @@ static const char folder_menu_xml[]=
   "<placeholder name='ph1'>"
     "<menuitem action='NewTab'/>"
     "<menuitem action='NewWin'/>"
+    "<menuitem action='Term'/>"
     /* "<menuitem action='Search'/>" */
   "</placeholder>"
 "</popup>";
@@ -212,6 +213,7 @@ static GtkActionEntry folder_menu_actions[]=
 {
     {"NewTab", GTK_STOCK_NEW, N_("Open in New Tab"), NULL, NULL, G_CALLBACK(on_open_in_new_tab)},
     {"NewWin", GTK_STOCK_NEW, N_("Open in New Window"), NULL, NULL, G_CALLBACK(on_open_in_new_win)},
-    {"Search", GTK_STOCK_FIND, NULL, NULL, NULL, NULL}
+    {"Search", GTK_STOCK_FIND, NULL, NULL, NULL, NULL},
+    {"Term", "utilities-terminal", N_("Open in _Terminal"), NULL, NULL, G_CALLBACK(on_open_folder_in_terminal)},
 };
 

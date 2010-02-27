@@ -519,3 +519,47 @@ void pcmanfm_save_config()
     fm_config_save(fm_config, NULL);
     fm_app_config_save(app_config, config_name);
 }
+
+void pcmanfm_open_folder_in_terminal(GtkWindow* parent, FmPath* dir)
+{
+    GAppInfo* app;
+    char* cmd;
+    char** argv;
+    int argc;
+    if(!fm_config->terminal)
+    {
+        fm_show_error(parent, _("Terminal emulator is not set."));
+        fm_edit_preference(parent, PREF_ADVANCED);
+        return;
+    }
+    if(!g_shell_parse_argv(fm_config->terminal, &argc, &argv, NULL))
+        return;
+    app = g_app_info_create_from_commandline(argv[0], NULL, 0, NULL);
+    g_strfreev(argv);
+    if(app)
+    {
+        GError* err = NULL;
+        GAppLaunchContext* ctx = gdk_app_launch_context_new();
+        char* cwd_str;
+
+        if(fm_path_is_native(dir))
+            cwd_str = fm_path_to_str(dir);
+        else
+        {
+            GFile* gf = fm_path_to_gfile(dir);
+            cwd_str = g_file_get_path(gf);
+            g_object_unref(gf);
+        }
+        gdk_app_launch_context_set_screen(GDK_APP_LAUNCH_CONTEXT(ctx), gtk_widget_get_screen(GTK_WIDGET(parent)));
+        gdk_app_launch_context_set_timestamp(GDK_APP_LAUNCH_CONTEXT(ctx), gtk_get_current_event_time());
+        g_chdir(cwd_str); /* FIXME: currently we don't have better way for this. maybe a wrapper script? */
+        g_free(cwd_str);
+        if(!g_app_info_launch(app, NULL, ctx, &err))
+        {
+            fm_show_error(parent, err->message);
+            g_error_free(err);
+        }
+        g_object_unref(ctx);
+        g_object_unref(app);
+    }
+}

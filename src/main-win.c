@@ -79,6 +79,7 @@ static void on_change_mode(GtkRadioAction* act, GtkRadioAction *cur, FmMainWin* 
 static void on_sort_by(GtkRadioAction* act, GtkRadioAction *cur, FmMainWin* win);
 static void on_sort_type(GtkRadioAction* act, GtkRadioAction *cur, FmMainWin* win);
 static void on_about(GtkAction* act, FmMainWin* win);
+static void on_open_folder_in_terminal(GtkAction* act, FmMainWin* win);
 static void on_open_in_terminal(GtkAction* act, FmMainWin* win);
 static void on_open_as_root(GtkAction* act, FmMainWin* win);
 
@@ -548,50 +549,24 @@ void on_about(GtkAction* act, FmMainWin* win)
     gtk_widget_destroy(dlg);
 }
 
+void on_open_folder_in_terminal(GtkAction* act, FmMainWin* win)
+{
+    FmFileInfoList* files = fm_folder_view_get_selected_files(win->folder_view);
+    GList* l;
+    for(l=fm_list_peek_head_link(files);l;l=l->next)
+    {
+        FmFileInfo* fi = (FmFileInfo*)l->data;
+        if(fm_file_info_is_dir(fi) /*&& !fm_file_info_is_virtual(fi)*/)
+            pcmanfm_open_folder_in_terminal(GTK_WINDOW(win), fi->path);
+    }
+    fm_list_unref(files);
+}
+
 void on_open_in_terminal(GtkAction* act, FmMainWin* win)
 {
-    GAppInfo* app;
-    char* cmd;
-    char** argv;
-    int argc;
-    if(!fm_config->terminal)
-    {
-        fm_show_error(GTK_WINDOW(win), _("Terminal emulator is not set."));
-        fm_edit_preference(GTK_WINDOW(win), PREF_ADVANCED);
-        return;
-    }
-    if(!g_shell_parse_argv(fm_config->terminal, &argc, &argv, NULL))
-        return;
-    app = g_app_info_create_from_commandline(argv[0], NULL, 0, NULL);
-    g_strfreev(argv);
-    if(app)
-    {
-        const FmNavHistoryItem* item = fm_nav_history_get_cur(win->nav_history);
-        FmPath* cwd = item->path;
-        GError* err = NULL;
-        GAppLaunchContext* ctx = gdk_app_launch_context_new();
-        char* cwd_str;
-
-        if(fm_path_is_native(cwd))
-            cwd_str = fm_path_to_str(cwd);
-        else
-        {
-            GFile* gf = fm_path_to_gfile(cwd);
-            cwd_str = g_file_get_path(gf);
-            g_object_unref(gf);
-        }
-        gdk_app_launch_context_set_screen(GDK_APP_LAUNCH_CONTEXT(ctx), gtk_widget_get_screen(GTK_WIDGET(win)));
-        gdk_app_launch_context_set_timestamp(GDK_APP_LAUNCH_CONTEXT(ctx), gtk_get_current_event_time());
-        g_chdir(cwd_str); /* FIXME: currently we don't have better way for this. maybe a wrapper script? */
-        g_free(cwd_str);
-        if(!g_app_info_launch(app, NULL, ctx, &err))
-        {
-            fm_show_error(GTK_WINDOW(win), err->message);
-            g_error_free(err);
-        }
-        g_object_unref(ctx);
-        g_object_unref(app);
-    }
+    const FmNavHistoryItem* item = fm_nav_history_get_cur(win->nav_history);
+    if(item && item->path)
+        pcmanfm_open_folder_in_terminal(win, item->path);
 }
 
 void on_open_as_root(GtkAction* act, FmMainWin* win)

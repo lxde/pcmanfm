@@ -1,18 +1,18 @@
 /*
  *      pcmanfm.h
- *      
+ *
  *      Copyright 2010 Hong Jen Yee (PCMan) <pcman.tw@gmail.com>
- *      
+ *
  *      This program is free software; you can redistribute it and/or modify
  *      it under the terms of the GNU General Public License as published by
  *      the Free Software Foundation; either version 2 of the License, or
  *      (at your option) any later version.
- *      
+ *
  *      This program is distributed in the hope that it will be useful,
  *      but WITHOUT ANY WARRANTY; without even the implied warranty of
  *      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *      GNU General Public License for more details.
- *      
+ *
  *      You should have received a copy of the GNU General Public License
  *      along with this program; if not, write to the Free Software
  *      Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
@@ -23,6 +23,7 @@
 #define __PCMANFM_H__
 
 #include <gtk/gtk.h>
+#include <fm.h>
 
 G_BEGIN_DECLS
 
@@ -37,6 +38,8 @@ void pcmanfm_unref();
 gboolean pcmanfm_open_folder(GAppLaunchContext* ctx, GList* folder_infos, gpointer user_data, GError** err);
 
 void pcmanfm_save_config();
+
+void pcmanfm_open_folder_in_terminal(GtkWindow* parent, FmPath* dir);
 
 G_END_DECLS
 
