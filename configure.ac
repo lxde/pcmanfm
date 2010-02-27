@@ -46,7 +46,7 @@ AC_SUBST(G_CAST_CHECKS)
 
 AC_ARG_ENABLE(debug,
 	[AC_HELP_STRING([--enable-debug],
-		[build libfm with debug support @<:@default=no@:>@])],
+		[build pcmanfm with debug support @<:@default=no@:>@])],
 	[enable_debug="${enableval}"],
 	[enable_debug=no]
 )
@@ -106,4 +106,3 @@ AC_CONFIG_FILES([
 AC_OUTPUT
 
 echo Ready to make pcmanfm
-
