@@ -186,15 +186,16 @@ static void on_file_clicked(FmFolderView* fv, FmFolderViewClickType type, FmFile
     case FM_FV_ACTIVATED: /* file activated */
         if(fm_file_info_is_dir(fi))
             fm_main_win_chdir( win, fi->path);
-        else if(!fm_file_info_is_symlink(fi) && fi->target) /* FIXME: use accessor functions. */
+        else if(fm_file_info_get_target(fi) && !fm_file_info_is_symlink(fi))
         {
             /* symlinks also has fi->target, but we only handle shortcuts here. */
             if(fm_file_info_is_dir(fi))
-                fm_main_win_chdir_by_name( win, fi->target);
+                fm_main_win_chdir_by_name( win, fm_file_info_get_target(fi));
             else
             {
-                /* FIXME: items under applications:/// are not working... */
-                /* fm_launch_file_simple(win, NULL, fi, open_folder_func, win); */
+                FmPath* real_path = fm_path_new(fm_file_info_get_target(fi));
+                fm_launch_path_simple(win, NULL, real_path, open_folder_func, win);
+                fm_path_unref(real_path);
             }
         }
         else
@@ -811,7 +812,8 @@ void on_go_network(GtkAction* act, FmMainWin* win)
 
 void on_go_apps(GtkAction* act, FmMainWin* win)
 {
-    fm_main_win_chdir_by_name( win, "applications:///");
+    FmPath* app_root = fm_path_get_apps_menu();
+    fm_main_win_chdir(win, app_root);
 }
 
 void fm_main_win_chdir_by_name(FmMainWin* win, const char* path_str)
