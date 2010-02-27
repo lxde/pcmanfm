@@ -135,6 +135,8 @@ static void on_entry_activate(GtkEntry* entry, FmMainWin* self)
     fm_path_unref(path);
 }
 
+/* FIXME: call this if the view is already loaded before it's added to
+ * main window. Update title and tab label using dir->fi of the FmFolder object. */
 static void on_view_loaded( FmFolderView* view, FmPath* path, gpointer user_data)
 {
     FmMainWin* win = FM_MAIN_WIN(user_data);
