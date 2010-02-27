@@ -185,9 +185,7 @@ static void on_file_clicked(FmFolderView* fv, FmFolderViewClickType type, FmFile
     {
     case FM_FV_ACTIVATED: /* file activated */
         if(fm_file_info_is_dir(fi))
-        {
             fm_main_win_chdir( win, fi->path);
-        }
         else if(!fm_file_info_is_symlink(fi) && fi->target) /* FIXME: use accessor functions. */
         {
             /* symlinks also has fi->target, but we only handle shortcuts here. */
@@ -200,9 +198,7 @@ static void on_file_clicked(FmFolderView* fv, FmFolderViewClickType type, FmFile
             }
         }
         else
-        {
             fm_launch_file_simple(GTK_WINDOW(win), NULL, fi, open_folder_func, win);
-        }
         break;
     case FM_FV_CONTEXT_MENU:
         if(fi)
@@ -228,12 +224,10 @@ static void on_file_clicked(FmFolderView* fv, FmFolderViewClickType type, FmFile
             gtk_menu_popup(popup, NULL, NULL, NULL, fi, 3, gtk_get_current_event_time());
         }
         else /* no files are selected. Show context menu of current folder. */
-        {
             gtk_menu_popup(GTK_MENU(win->popup), NULL, NULL, NULL, NULL, 3, gtk_get_current_event_time());
-        }
         break;
     case FM_FV_MIDDLE_CLICK:
-        g_debug("middle click!");
+        fm_main_win_add_tab(win, fi->path);
         break;
     }
 }
