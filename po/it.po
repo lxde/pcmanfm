@@ -2,12 +2,12 @@
 # Copyright (C) 2010
 # This file is distributed under the same license as the pcmanfm package.
 # ANDREA FLORIO <andrea@opensuse.org>, 2010.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-27 07:50+0800\n"
+"POT-Creation-Date: 2010-02-28 04:12+0000\n"
 "PO-Revision-Date: 2010-02-22 00:34+0100\n"
 "Last-Translator: Andrea Florio <andrea@opensuse.org>\n"
 "Language-Team: it <it@li.org>\n"
@@ -315,13 +315,17 @@ msgstr "Per _Dimensione"
 msgid "By File _Type"
 msgstr "Per _tipo di file"
 
-#: ../src/desktop-ui.c:87 ../src/main-win-ui.c:213
+#: ../src/desktop-ui.c:88 ../src/main-win-ui.c:214
 msgid "Open in New Tab"
 msgstr "Apri in una nuova scheda"
 
-#: ../src/desktop-ui.c:88 ../src/main-win-ui.c:214
+#: ../src/desktop-ui.c:89 ../src/main-win-ui.c:215
 msgid "Open in New Window"
 msgstr "Apri in una nuova finestra"
+
+#: ../src/desktop-ui.c:91 ../src/main-win-ui.c:217
+msgid "Open in _Terminal"
+msgstr "Apri nel _Terminale"
 
 #: ../src/main-win-ui.c:126
 msgid "_File"
@@ -471,20 +475,16 @@ msgstr "Vista _Anteprime"
 msgid "Detailed _List View"
 msgstr "Vista _Lista Dettagliata"
 
-#: ../src/main-win.c:562
-msgid "Terminal emulator is not set."
-msgstr "L'emulatore di terminale non è impostato."
-
-#: ../src/main-win.c:608
+#: ../src/main-win.c:580
 msgid "Switch user command is not set."
 msgstr "Il comando per il cambio utente non è impostato."
 
-#: ../src/main-win.c:955
+#: ../src/main-win.c:928
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Spazio libero: %s (Totale: %s)"
 
-#: ../src/main-win.c:1161
+#: ../src/main-win.c:1134
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -495,29 +495,25 @@ msgstr ""
 "'%s'\n"
 "Inserisci un nome per il nuovo segnalibro:"
 
-#: ../src/main-win.c:1165
+#: ../src/main-win.c:1138
 msgid "Add to Bookmarks"
 msgstr "Aggiungi ai Segnalibri"
 
-#: ../src/main-win.c:1237
+#: ../src/main-win.c:1210
 msgid "Create New..."
 msgstr "Crea Nuovo..."
 
-#: ../src/main-win.c:1237
+#: ../src/main-win.c:1210
 msgid "Enter a name for the newly created file:"
 msgstr "Inserisci un nome per il file appena creati:"
 
-#: ../src/main-win.c:1237
+#: ../src/main-win.c:1210
 msgid "New"
 msgstr "Nuovo"
 
 #: ../src/pcmanfm.c:69
-msgid ""
-"Open folders in new tabs of the last used window instead of creating new "
-"windows"
-msgstr ""
-"Apri le cartelle nelle schede dell'ultima finestra utilizzata invece di "
-"creare nuove finestre"
+msgid "Open folders in new tabs of the last used window instead of creating new windows"
+msgstr "Apri le cartelle nelle schede dell'ultima finestra utilizzata invece di creare nuove finestre"
 
 #: ../src/pcmanfm.c:70
 msgid "Name of configuration profile"
@@ -548,12 +544,8 @@ msgid "<image file>"
 msgstr "<file immagine>"
 
 #: ../src/pcmanfm.c:76
-msgid ""
-"Open preference dialog. 'n' is number of the page you want to show (1, 2, "
-"3...)."
-msgstr ""
-"Apri la finestra di dialogo delle preferenze. 'n' è il numero di pagina che "
-"si desidera visualizzare (1, 2, 3 ...)."
+msgid "Open preference dialog. 'n' is number of the page you want to show (1, 2, 3...)."
+msgstr "Apri la finestra di dialogo delle preferenze. 'n' è il numero di pagina che si desidera visualizzare (1, 2, 3 ...)."
 
 #: ../src/pcmanfm.c:77
 msgid "Open Find Files utility"
@@ -566,6 +558,10 @@ msgstr "Nessuna funzione. Solo per essere compatibile con nautilus"
 #: ../src/pcmanfm.c:79
 msgid "[FILE1, FILE2,...]"
 msgstr "[FILE1, FILE2,...]"
+
+#: ../src/pcmanfm.c:531
+msgid "Terminal emulator is not set."
+msgstr "L'emulatore di terminale non è impostato."
 
 #~ msgid "Display image files with supported format as thumbnails"
 #~ msgstr "Mostra le anteprime delle immagini con formati supportati"
