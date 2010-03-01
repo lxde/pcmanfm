@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm 0.9\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-02-27 04:12+0000\n"
-"PO-Revision-Date: 2010-02-28 03:14+0100\n"
+"PO-Revision-Date: 2010-03-01 01:18+0100\n"
 "Last-Translator: Christoph Wickert <cwickert@fedoraproject.org>\n"
 "Language-Team: German\n"
 "MIME-Version: 1.0\n"
@@ -33,15 +33,15 @@ msgstr ""
 #. Please replace this line with your own names, one name per line.
 #: ../data/ui/about.glade.in.h:6
 msgid "translator-credits"
-msgstr ""
+msgstr "Christoph Wickert <cwickert@fedoraproject.org>"
 
 #: ../data/ui/desktop-pref.glade.h:1
 msgid "<b>Background</b>"
-msgstr ""
+msgstr "<b>Hintergrund</b>"
 
 #: ../data/ui/desktop-pref.glade.h:2
 msgid "<b>Show desktop icons</b>"
-msgstr ""
+msgstr "<b>Desktop-Symbole anzeigen</b>"
 
 #: ../data/ui/desktop-pref.glade.h:3
 msgid "<b>Text</b>"
@@ -62,7 +62,7 @@ msgstr "Hintergrundfarbe"
 #: ../data/ui/desktop-pref.glade.h:7
 #: ../data/ui/pref.glade.h:8
 msgid "Center on the screen"
-msgstr ""
+msgstr "Zentriert"
 
 #: ../data/ui/desktop-pref.glade.h:8
 msgid "Color of label text:"
@@ -70,11 +70,11 @@ msgstr ""
 
 #: ../data/ui/desktop-pref.glade.h:9
 msgid "Color of shadow:"
-msgstr ""
+msgstr "Schattenfarbe:"
 
 #: ../data/ui/desktop-pref.glade.h:10
 msgid "Desktop Icons"
-msgstr ""
+msgstr "Desktop-Symbole"
 
 #: ../data/ui/desktop-pref.glade.h:11
 #: ../src/desktop-ui.c:58
@@ -83,7 +83,7 @@ msgstr ""
 
 #: ../data/ui/desktop-pref.glade.h:12
 msgid "FIll with background color only"
-msgstr ""
+msgstr "Nur Hintergrundfarbe"
 
 #: ../data/ui/desktop-pref.glade.h:13
 msgid "Font of label text:"
@@ -91,50 +91,50 @@ msgstr ""
 
 #: ../data/ui/desktop-pref.glade.h:14
 msgid "Please select an image file"
-msgstr ""
+msgstr "Hintergrundbild wählen"
 
 #: ../data/ui/desktop-pref.glade.h:15
 msgid "Show \"My Computer\" icon on desktop"
-msgstr ""
+msgstr "»Mein Computer« auf dem Desktop anzeigen"
 
 #: ../data/ui/desktop-pref.glade.h:16
 msgid "Show \"My Documents\" icon on desktop"
-msgstr ""
+msgstr "»Meine Dokumente« auf dem Desktop anzeigen"
 
 #: ../data/ui/desktop-pref.glade.h:17
 msgid "Show \"Trash Bin\" icon on desktop"
-msgstr ""
+msgstr "»Papierkorb« auf dem Desktop anzeigen"
 
 #: ../data/ui/desktop-pref.glade.h:18
 msgid "Show icons of volumes on desktop"
-msgstr ""
+msgstr "Symbole für "
 
 #: ../data/ui/desktop-pref.glade.h:19
 msgid "Show menus provided by WM when desktop is clicked"
-msgstr ""
+msgstr "Beim Klicken auf den Desktop Menüs des Fenstermanagers anzeigen"
 
 #: ../data/ui/desktop-pref.glade.h:20
 #: ../data/ui/pref.glade.h:32
 msgid "Stretch to fill the entire screen"
-msgstr ""
+msgstr "Bildschirm füllen"
 
 #: ../data/ui/desktop-pref.glade.h:21
 #: ../data/ui/pref.glade.h:33
 msgid "Stretch to fit the screen"
-msgstr ""
+msgstr "Skalieren"
 
 #: ../data/ui/desktop-pref.glade.h:22
 #: ../data/ui/pref.glade.h:37
 msgid "Tile the image to fill the entire screen"
-msgstr ""
+msgstr "Kacheln"
 
 #: ../data/ui/desktop-pref.glade.h:23
 msgid "Wallpaper mode:"
-msgstr ""
+msgstr "Hintergrundbild:"
 
 #: ../data/ui/desktop-pref.glade.h:24
 msgid "Wallpaper:"
-msgstr "Hinterbrundbild"
+msgstr "Hinterbrundbild:"
 
 #: ../data/ui/pref.glade.h:1
 msgid "<b>Behavior</b>"
@@ -142,7 +142,7 @@ msgstr "<b>Verhalten</b>"
 
 #: ../data/ui/pref.glade.h:2
 msgid "<b>Default View</b>"
-msgstr ""
+msgstr "<b>Standard-Ansicht</b>"
 
 #: ../data/ui/pref.glade.h:3
 msgid "<b>Icons</b>"
@@ -154,7 +154,7 @@ msgstr "<b>Programme</b>"
 
 #: ../data/ui/pref.glade.h:5
 msgid "<b>User Interface</b>"
-msgstr ""
+msgstr "<b>Benutzeroberflache</b>"
 
 #: ../data/ui/pref.glade.h:6
 msgid "Always show the tab bar"
@@ -166,7 +166,7 @@ msgstr "Lesezeichen:"
 
 #: ../data/ui/pref.glade.h:9
 msgid "Compact View"
-msgstr "Kompakte Ansicht"
+msgstr "Listenansicht"
 
 #: ../data/ui/pref.glade.h:10
 msgid "Confirm before deleting files"
@@ -174,11 +174,12 @@ msgstr "Löschen von Dateien bestätigen"
 
 #: ../data/ui/pref.glade.h:11
 msgid "Detailed List View"
-msgstr "Detaillierte Liste"
+msgstr "Detailansicht"
 
 #: ../data/ui/pref.glade.h:12
+#, fuzzy
 msgid "Do not generate thumbnails for files exceeding this size:"
-msgstr ""
+msgstr "Maximale Größe der Miniatur-Vorschaubilder:"
 
 #: ../data/ui/pref.glade.h:14
 #, no-c-format
@@ -189,7 +190,7 @@ msgstr ""
 
 #: ../data/ui/pref.glade.h:16
 msgid "Hide 'Close tab' buttons"
-msgstr ""
+msgstr "»Reiter schließen« Knopf verbergen"
 
 #: ../data/ui/pref.glade.h:17
 msgid "Hide folder content border"
@@ -205,27 +206,27 @@ msgstr "Symbolansicht"
 
 #: ../data/ui/pref.glade.h:20
 msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
-msgstr ""
+msgstr "Dateien in den »Papierkorb« verschieben anstatt sie zu löschen"
 
 #: ../data/ui/pref.glade.h:21
 msgid "Only show thumbnails for local files"
-msgstr ""
+msgstr "Vorschaubilder nur für lokale Dateien anzeigen"
 
 #: ../data/ui/pref.glade.h:22
 msgid "Open files with single click"
-msgstr ""
+msgstr "Einfacher Klick zum Öffnen von Dateien"
 
 #: ../data/ui/pref.glade.h:23
 msgid "Opened in Current Tab"
-msgstr ""
+msgstr "Im aktuellen Reiter öffnen"
 
 #: ../data/ui/pref.glade.h:24
 msgid "Opened in New Tab"
-msgstr ""
+msgstr "In einem neuen Reiter öffnen"
 
 #: ../data/ui/pref.glade.h:25
 msgid "Opened in New Window"
-msgstr ""
+msgstr "In einem neuen Fenster öffnen"
 
 #: ../data/ui/pref.glade.h:26
 msgid "Preferences"
@@ -233,23 +234,23 @@ msgstr "Einstellungen"
 
 #: ../data/ui/pref.glade.h:27
 msgid "Show thumbnails of files"
-msgstr ""
+msgstr "Miniatur-Vorschaubilder anzeigen"
 
 #: ../data/ui/pref.glade.h:28
 msgid "Size of big icons:"
-msgstr ""
+msgstr "Symbolansicht:"
 
 #: ../data/ui/pref.glade.h:29
 msgid "Size of side pane icons:"
-msgstr ""
+msgstr "Seitenleiste:"
 
 #: ../data/ui/pref.glade.h:30
 msgid "Size of small icons:"
-msgstr ""
+msgstr "Listenansicht:"
 
 #: ../data/ui/pref.glade.h:31
 msgid "Size of thumbnails:"
-msgstr ""
+msgstr "Vorschaubilder:"
 
 #: ../data/ui/pref.glade.h:34
 msgid "Switch user command:"
@@ -261,7 +262,7 @@ msgstr "Terminal:"
 
 #: ../data/ui/pref.glade.h:36
 msgid "Thumbnail View"
-msgstr ""
+msgstr "Miniatur-Vorschaubilder"
 
 #: ../data/ui/pref.glade.h:38
 msgid "Use SI decimal prefixes instead of IEC binary prefixes"
@@ -273,15 +274,15 @@ msgstr ""
 
 #: ../data/ui/pref.glade.h:40
 msgid "_Advanced"
-msgstr ""
+msgstr "_Erweitert"
 
 #: ../data/ui/pref.glade.h:41
 msgid "_Display"
-msgstr ""
+msgstr "_Ansicht"
 
 #: ../data/ui/pref.glade.h:42
 msgid "_General"
-msgstr ""
+msgstr "All_gemein"
 
 #: ../data/ui/pref.glade.h:43
 msgid "_Volume Management"
@@ -289,12 +290,12 @@ msgstr ""
 
 #: ../src/desktop-ui.c:53
 msgid "_Invert Selection"
-msgstr ""
+msgstr "_Auswahl umkehren"
 
 #: ../src/desktop-ui.c:54
 #: ../src/main-win-ui.c:144
 msgid "_Sort Files"
-msgstr ""
+msgstr "_Sortieren"
 
 #: ../src/desktop-ui.c:56
 #: ../src/main-win-ui.c:168
@@ -313,7 +314,7 @@ msgstr "Nach _Name"
 #: ../src/desktop-ui.c:70
 #: ../src/main-win-ui.c:195
 msgid "By _Modification Time"
-msgstr ""
+msgstr "Nach Än_derungsdatum"
 
 #: ../src/desktop-ui.c:71
 #: ../src/main-win-ui.c:196
@@ -345,7 +346,7 @@ msgstr "_Neues Fenster"
 
 #: ../src/main-win-ui.c:128
 msgid "New _Tab"
-msgstr ""
+msgstr "Neuer _Reiter"
 
 #: ../src/main-win-ui.c:129
 msgid "_Close Tab"
@@ -389,23 +390,23 @@ msgstr "_Hilfe"
 
 #: ../src/main-win-ui.c:147
 msgid "_Go"
-msgstr ""
+msgstr "_Gehe zu"
 
 #: ../src/main-win-ui.c:148
 msgid "Previous Folder"
-msgstr ""
+msgstr "Zurück"
 
 #: ../src/main-win-ui.c:149
 msgid "Next Folder"
-msgstr ""
+msgstr "Vor"
 
 #: ../src/main-win-ui.c:150
 msgid "Parent Folder"
-msgstr ""
+msgstr "Eltern-Ordner"
 
 #: ../src/main-win-ui.c:150
 msgid "Go to parent Folder"
-msgstr ""
+msgstr "Eltern-Ordner öffnen"
 
 #: ../src/main-win-ui.c:151
 msgid "Home Folder"
@@ -429,7 +430,7 @@ msgstr "Papierkorb"
 
 #: ../src/main-win-ui.c:155
 msgid "Network Drives"
-msgstr "Netzlaufwerke"
+msgstr "Netzwerk"
 
 #: ../src/main-win-ui.c:156
 msgid "Applications"
@@ -445,7 +446,7 @@ msgstr "_Lesezeichen"
 
 #: ../src/main-win-ui.c:159
 msgid "Add To Bookmarks"
-msgstr "Lesezeichen hinzufügen"
+msgstr "Lesezeichen hinzufügen..."
 
 #: ../src/main-win-ui.c:160
 msgid "_Tools"
@@ -453,11 +454,11 @@ msgstr "_Werkzeuge"
 
 #: ../src/main-win-ui.c:161
 msgid "Open Current Folder in _Terminal"
-msgstr ""
+msgstr "_Terminal öffnen"
 
 #: ../src/main-win-ui.c:162
 msgid "Open Current Folder as _Root"
-msgstr ""
+msgstr "Aktuellen Ordner als »_root« öffnen"
 
 #: ../src/main-win-ui.c:169
 msgid "Blank FIle"
@@ -465,27 +466,27 @@ msgstr "Leere Datei"
 
 #: ../src/main-win-ui.c:175
 msgid "Show _Hidden"
-msgstr ""
+msgstr "_Verborgene Dateien anzeigen"
 
 #: ../src/main-win-ui.c:180
 msgid "_Icon View"
-msgstr "_Symbolansicht"
+msgstr "Symbolans_icht"
 
 #: ../src/main-win-ui.c:181
 msgid "_Compact View"
-msgstr "_Kompakte Ansicht"
+msgstr "_Listenansicht"
 
 #: ../src/main-win-ui.c:182
 msgid "_Thumbnail View"
-msgstr ""
+msgstr "_Miniatur-Vorschaubilder"
 
 #: ../src/main-win-ui.c:183
 msgid "Detailed _List View"
-msgstr "Detaillierte _Liste"
+msgstr "_Detailansicht"
 
 #: ../src/main-win.c:562
 msgid "Terminal emulator is not set."
-msgstr ""
+msgstr "Es wurde keine Terminal-Anwendung in den Einstellungen angegeben"
 
 #: ../src/main-win.c:608
 msgid "Switch user command is not set."
@@ -494,7 +495,7 @@ msgstr ""
 #: ../src/main-win.c:955
 #, c-format
 msgid "Free space: %s (Total: %s)"
-msgstr ""
+msgstr "Freier Speicherplatz: %s (Gesamt: %s)"
 
 #: ../src/main-win.c:1161
 #, c-format
@@ -506,15 +507,15 @@ msgstr ""
 
 #: ../src/main-win.c:1165
 msgid "Add to Bookmarks"
-msgstr "Lesezeichen hinzufügen..."
+msgstr "Lesezeichen hinzufügen"
 
 #: ../src/main-win.c:1237
 msgid "Create New..."
-msgstr ""
+msgstr "Neue Datei"
 
 #: ../src/main-win.c:1237
 msgid "Enter a name for the newly created file:"
-msgstr ""
+msgstr "Namen der neuen Datei eingeben:"
 
 #: ../src/main-win.c:1237
 msgid "New"
@@ -522,11 +523,11 @@ msgstr "Neu"
 
 #: ../src/pcmanfm.c:69
 msgid "Open folders in new tabs of the last used window instead of creating new windows"
-msgstr ""
+msgstr "Ordner in neuen Reitern des zuletzt benutzten Fensters öffnen, anstatt neue Fenster zu öffnen"
 
 #: ../src/pcmanfm.c:70
 msgid "Name of configuration profile"
-msgstr ""
+msgstr "Name des Konfigurationsprofils"
 
 #: ../src/pcmanfm.c:71
 msgid "Launch desktop manager"
@@ -550,11 +551,11 @@ msgstr "Hintergrundbild einstellen"
 
 #: ../src/pcmanfm.c:75
 msgid "<image file>"
-msgstr ""
+msgstr "<Bilddatei>"
 
 #: ../src/pcmanfm.c:76
 msgid "Open preference dialog. 'n' is number of the page you want to show (1, 2, 3...)."
-msgstr ""
+msgstr "Einstellungen öffnen,  wobei 'n' der Reiter ist, den Sie anzeigen möchten (1, 2, 3 ...)."
 
 #: ../src/pcmanfm.c:77
 msgid "Open Find Files utility"
@@ -562,9 +563,9 @@ msgstr ""
 
 #: ../src/pcmanfm.c:78
 msgid "No function. Just to be compatible with nautilus"
-msgstr ""
+msgstr "Keine Funktion. Nur um kompatibel zu nautilus zu sein"
 
 #: ../src/pcmanfm.c:79
 msgid "[FILE1, FILE2,...]"
-msgstr ""
+msgstr "[DATEI1, DATEI2,...]"
 
