@@ -61,6 +61,7 @@ static int show_pref = 0;
 static gboolean desktop_pref = FALSE;
 static char* set_wallpaper = NULL;
 static gboolean find_files = FALSE;
+static char* ipc_cwd = NULL;
 
 static int n_pcmanfm_ref = 0;
 
@@ -146,6 +147,12 @@ inline static GString* args_to_ipc_buf()
 {
     int i;
     GString* buf = g_string_sized_new(1024);
+    /* send our current working dir to existing instance via IPC. */
+    ipc_cwd = g_get_current_dir();
+    g_string_append(buf, ipc_cwd);
+    g_string_append_c(buf, '\0');
+    g_free(ipc_cwd);
+    ipc_cwd = NULL;
     for(i = 0; i < G_N_ELEMENTS(opt_entries)-1;++i)
     {
         GOptionEntry* ent = &opt_entries[i];
@@ -175,12 +182,7 @@ inline static GString* args_to_ipc_buf()
                     }
                 }
                 else
-                {
-                    char* cwd = g_get_current_dir();
-                    g_string_append(buf, cwd);
-                    g_free(cwd);
                     g_string_append_c(buf, '\0');
-                }
                 g_string_append_c(buf, '\0'); /* end of array */
             }
             break;
@@ -207,8 +209,10 @@ inline static void ipc_buf_to_args(GString* buf)
     int i;
     for(i = 0; i < G_N_ELEMENTS(opt_entries)-1;++i)
         g_hash_table_insert(hash, opt_entries[i].long_name, &opt_entries[i]);
-
-    for( p = buf->str; *p; )
+    p = buf->str; /* the fist string in buf is cwd */
+    i = strlen(p) + 1;
+    ipc_cwd = g_memdup(p, i);
+    for( p += i; *p; )
     {
         GOptionEntry* ent;
         char *name = p;
@@ -230,18 +234,26 @@ inline static void ipc_buf_to_args(GString* buf)
             case G_OPTION_ARG_FILENAME_ARRAY: /* string array */
             case G_OPTION_ARG_STRING_ARRAY:
                 {
-                    GPtrArray* strs = g_ptr_array_new();
                     char*** pstrs = (char***)ent->arg_data;
                     if(*pstrs)
                         g_strfreev(*pstrs);
-                    do
+                    if(val && *val) /* the array is not empty */
                     {
-                        g_ptr_array_add(strs, g_strdup(val));
-                        val += (strlen(val) + 1);
-                    }while(*val != '\0');
-                    g_ptr_array_add(strs, NULL);
-                    *pstrs = g_ptr_array_free(strs, FALSE);
-                    p = val - 1;
+                        GPtrArray* strs = g_ptr_array_new();
+                        do
+                        {
+                            g_ptr_array_add(strs, g_strdup(val));
+                            val += (strlen(val) + 1);
+                        }while(*val != '\0');
+                        g_ptr_array_add(strs, NULL);
+                        *pstrs = g_ptr_array_free(strs, FALSE);
+                        p = val - 1;
+                    }
+                    else /* the array is empty */
+                    {
+                        p = val + 1;
+                        *pstrs = NULL;
+                    }
                     continue;
                 }
                 break;
@@ -474,11 +486,12 @@ gboolean pcmanfm_run()
         else
         {
             FmPath* path;
-            char* cwd = g_get_current_dir();
+            char* cwd = ipc_cwd ? ipc_cwd : g_get_current_dir();
             path = fm_path_new(cwd);
             fm_main_win_add_win(NULL, path);
             fm_path_unref(path);
             g_free(cwd);
+            ipc_cwd = NULL;
         }
     }
     return ret;
