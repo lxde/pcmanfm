@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm 0.9\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-27 04:12+0000\n"
-"PO-Revision-Date: 2010-03-01 01:18+0100\n"
+"POT-Creation-Date: 2010-03-02 04:12+0000\n"
+"PO-Revision-Date: 2010-03-03 05:17+0100\n"
 "Last-Translator: Christoph Wickert <cwickert@fedoraproject.org>\n"
 "Language-Team: German\n"
 "MIME-Version: 1.0\n"
@@ -57,7 +57,7 @@ msgstr "Erscheinungsbild"
 
 #: ../data/ui/desktop-pref.glade.h:6
 msgid "Background color:"
-msgstr "Hintergrundfarbe"
+msgstr "Hintergrundfarbe:"
 
 #: ../data/ui/desktop-pref.glade.h:7
 #: ../data/ui/pref.glade.h:8
@@ -65,8 +65,9 @@ msgid "Center on the screen"
 msgstr "Zentriert"
 
 #: ../data/ui/desktop-pref.glade.h:8
+#, fuzzy
 msgid "Color of label text:"
-msgstr ""
+msgstr "Farbe der Beschriftung:"
 
 #: ../data/ui/desktop-pref.glade.h:9
 msgid "Color of shadow:"
@@ -78,16 +79,18 @@ msgstr "Desktop-Symbole"
 
 #: ../data/ui/desktop-pref.glade.h:11
 #: ../src/desktop-ui.c:58
+#, fuzzy
 msgid "Desktop Preferences"
-msgstr ""
+msgstr "Einstellungen der Arbeitsfläche"
 
 #: ../data/ui/desktop-pref.glade.h:12
 msgid "FIll with background color only"
 msgstr "Nur Hintergrundfarbe"
 
 #: ../data/ui/desktop-pref.glade.h:13
+#, fuzzy
 msgid "Font of label text:"
-msgstr ""
+msgstr "Schriftart der Beschriftungen:"
 
 #: ../data/ui/desktop-pref.glade.h:14
 msgid "Please select an image file"
@@ -182,11 +185,13 @@ msgid "Do not generate thumbnails for files exceeding this size:"
 msgstr "Maximale Größe der Miniatur-Vorschaubilder:"
 
 #: ../data/ui/pref.glade.h:14
-#, no-c-format
+#, fuzzy, no-c-format
 msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
 "%s = the command line you want to execute with terminal or su."
 msgstr ""
+"Beispiele: \"xterm -e %s\" für Terminal oder \"gksu %s\" zum Benutzerwechsel.\n"
+"%s = Befehlszeile, die im Terminal oder mit su ausgeführt werden soll."
 
 #: ../data/ui/pref.glade.h:16
 msgid "Hide 'Close tab' buttons"
@@ -194,7 +199,7 @@ msgstr "»Reiter schließen« Knopf verbergen"
 
 #: ../data/ui/pref.glade.h:17
 msgid "Hide folder content border"
-msgstr ""
+msgstr "Rahmen um den Ordnerinhalt verbergen"
 
 #: ../data/ui/pref.glade.h:18
 msgid "Hide side pane buttons"
@@ -254,7 +259,7 @@ msgstr "Vorschaubilder:"
 
 #: ../data/ui/pref.glade.h:34
 msgid "Switch user command:"
-msgstr ""
+msgstr "Befehl zum Benutzerwechsel:"
 
 #: ../data/ui/pref.glade.h:35
 msgid "Terminal emulator:"
@@ -270,7 +275,7 @@ msgstr ""
 
 #: ../data/ui/pref.glade.h:39
 msgid "View Mode:"
-msgstr ""
+msgstr "Ansicht:"
 
 #: ../data/ui/pref.glade.h:40
 msgid "_Advanced"
@@ -286,7 +291,7 @@ msgstr "All_gemein"
 
 #: ../data/ui/pref.glade.h:43
 msgid "_Volume Management"
-msgstr ""
+msgstr "Datenträger_verwaltung"
 
 #: ../src/desktop-ui.c:53
 msgid "_Invert Selection"
@@ -326,15 +331,20 @@ msgstr "Nach _Größe"
 msgid "By File _Type"
 msgstr "Nach Datei_typ"
 
-#: ../src/desktop-ui.c:87
-#: ../src/main-win-ui.c:213
+#: ../src/desktop-ui.c:88
+#: ../src/main-win-ui.c:214
 msgid "Open in New Tab"
 msgstr "In neuem Reiter öffnen"
 
-#: ../src/desktop-ui.c:88
-#: ../src/main-win-ui.c:214
+#: ../src/desktop-ui.c:89
+#: ../src/main-win-ui.c:215
 msgid "Open in New Window"
 msgstr "In neuem Fenster öffnen"
+
+#: ../src/desktop-ui.c:91
+#: ../src/main-win-ui.c:217
+msgid "Open in _Terminal"
+msgstr "_Terminal öffnen"
 
 #: ../src/main-win-ui.c:126
 msgid "_File"
@@ -418,7 +428,7 @@ msgstr "Desktop"
 
 #: ../src/main-win-ui.c:152
 msgid "Desktop Folder"
-msgstr ""
+msgstr "Desktop-Ordner"
 
 #: ../src/main-win-ui.c:153
 msgid "My Computer"
@@ -484,88 +494,91 @@ msgstr "_Miniatur-Vorschaubilder"
 msgid "Detailed _List View"
 msgstr "_Detailansicht"
 
-#: ../src/main-win.c:562
-msgid "Terminal emulator is not set."
-msgstr "Es wurde keine Terminal-Anwendung in den Einstellungen angegeben"
-
-#: ../src/main-win.c:608
+#: ../src/main-win.c:580
 msgid "Switch user command is not set."
-msgstr ""
+msgstr "Es wurde kein Befehl zum Benutzerwechsel ist in den Einstellungen angegeben."
 
-#: ../src/main-win.c:955
+#: ../src/main-win.c:928
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Freier Speicherplatz: %s (Gesamt: %s)"
 
-#: ../src/main-win.c:1161
+#: ../src/main-win.c:1134
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
 "'%s'\n"
 "Enter a name for the new bookmark item:"
 msgstr ""
+"Der folgende Ordner wird zu den Lesezeichen hinzugefügt:\n"
+"'%s'\n"
+"Namen für des neue Lesezeichen eingeben:"
 
-#: ../src/main-win.c:1165
+#: ../src/main-win.c:1138
 msgid "Add to Bookmarks"
 msgstr "Lesezeichen hinzufügen"
 
-#: ../src/main-win.c:1237
+#: ../src/main-win.c:1210
 msgid "Create New..."
 msgstr "Neue Datei"
 
-#: ../src/main-win.c:1237
+#: ../src/main-win.c:1210
 msgid "Enter a name for the newly created file:"
 msgstr "Namen der neuen Datei eingeben:"
 
-#: ../src/main-win.c:1237
+#: ../src/main-win.c:1210
 msgid "New"
 msgstr "Neu"
 
-#: ../src/pcmanfm.c:69
+#: ../src/pcmanfm.c:70
 msgid "Open folders in new tabs of the last used window instead of creating new windows"
 msgstr "Ordner in neuen Reitern des zuletzt benutzten Fensters öffnen, anstatt neue Fenster zu öffnen"
 
-#: ../src/pcmanfm.c:70
+#: ../src/pcmanfm.c:71
 msgid "Name of configuration profile"
 msgstr "Name des Konfigurationsprofils"
 
-#: ../src/pcmanfm.c:71
-msgid "Launch desktop manager"
-msgstr ""
-
 #: ../src/pcmanfm.c:72
-msgid "Turn off desktop manager if it's running"
-msgstr ""
+msgid "Launch desktop manager"
+msgstr "Desktop Manager starten"
 
 #: ../src/pcmanfm.c:73
+msgid "Turn off desktop manager if it's running"
+msgstr "Desktop Manager beenden, falls er ausgeführt wird"
+
+#: ../src/pcmanfm.c:74
 msgid "Run PCManFM as a daemon"
 msgstr "PCManFM als Daemon ausführen"
 
-#: ../src/pcmanfm.c:74
-msgid "Open desktop preference dialog"
-msgstr ""
-
 #: ../src/pcmanfm.c:75
+msgid "Open desktop preference dialog"
+msgstr "Einstellungsdialog öffnen"
+
+#: ../src/pcmanfm.c:76
 msgid "Set desktop wallpaper"
 msgstr "Hintergrundbild einstellen"
 
-#: ../src/pcmanfm.c:75
+#: ../src/pcmanfm.c:76
 msgid "<image file>"
 msgstr "<Bilddatei>"
 
-#: ../src/pcmanfm.c:76
+#: ../src/pcmanfm.c:77
 msgid "Open preference dialog. 'n' is number of the page you want to show (1, 2, 3...)."
 msgstr "Einstellungen öffnen,  wobei 'n' der Reiter ist, den Sie anzeigen möchten (1, 2, 3 ...)."
 
-#: ../src/pcmanfm.c:77
-msgid "Open Find Files utility"
-msgstr ""
-
 #: ../src/pcmanfm.c:78
+msgid "Open Find Files utility"
+msgstr "Mit PCManFM nach Dateien suchen"
+
+#: ../src/pcmanfm.c:79
 msgid "No function. Just to be compatible with nautilus"
 msgstr "Keine Funktion. Nur um kompatibel zu nautilus zu sein"
 
-#: ../src/pcmanfm.c:79
+#: ../src/pcmanfm.c:80
 msgid "[FILE1, FILE2,...]"
 msgstr "[DATEI1, DATEI2,...]"
+
+#: ../src/pcmanfm.c:544
+msgid "Terminal emulator is not set."
+msgstr "Es wurde keine Terminal-Anwendung in den Einstellungen angegeben"
 
