@@ -576,3 +576,89 @@ void pcmanfm_open_folder_in_terminal(GtkWindow* parent, FmPath* dir)
         g_object_unref(app);
     }
 }
+
+/* FIXME: Need to load content of ~/Templates and list available templates in popup menus. */
+void pcmanfm_create_new(GtkWindow* parent, FmPath* cwd, const char* templ)
+{
+    GError* err = NULL;
+    FmPath* dest;
+    char* basename;
+_retry:
+    basename = fm_get_user_input(parent, _("Create New..."), _("Enter a name for the newly created file:"), _("New"));
+    if(!basename)
+        return;
+
+    dest = fm_path_new_child(cwd, basename);
+    g_free(basename);
+
+    if( templ == TEMPL_NAME_FOLDER )
+    {
+        GFile* gf = fm_path_to_gfile(dest);
+        if(!g_file_make_directory(gf, NULL, &err))
+        {
+            if(err->domain = G_IO_ERROR && err->code == G_IO_ERROR_EXISTS)
+            {
+                fm_path_unref(dest);
+                g_error_free(err);
+                g_object_unref(gf);
+                err = NULL;
+                goto _retry;
+            }
+            fm_show_error(parent, err->message);
+            g_error_free(err);
+        }
+
+        if(!err) /* select the newly created file */
+        {
+            /*FIXME: this doesn't work since the newly created file will
+             * only be shown after file-created event was fired on its
+             * folder's monitor and after FmFolder handles it in idle
+             * handler. So, we cannot select it since it's not yet in
+             * the folder model now. */
+            /* fm_folder_view_select_file_path(fv, dest); */
+        }
+        g_object_unref(gf);
+    }
+    else if( templ == TEMPL_NAME_BLANK )
+    {
+        GFile* gf = fm_path_to_gfile(dest);
+        GFileOutputStream* f = g_file_create(gf, G_FILE_CREATE_NONE, NULL, &err);
+        if(f)
+        {
+            g_output_stream_close(G_OUTPUT_STREAM(f), NULL, NULL);
+            g_object_unref(f);
+        }
+        else
+        {
+            if(err->domain = G_IO_ERROR && err->code == G_IO_ERROR_EXISTS)
+            {
+                fm_path_unref(dest);
+                g_error_free(err);
+                g_object_unref(gf);
+                err = NULL;
+                goto _retry;
+            }
+            fm_show_error(parent, err->message);
+            g_error_free(err);
+        }
+
+        if(!err) /* select the newly created file */
+        {
+            /*FIXME: this doesn't work since the newly created file will
+             * only be shown after file-created event was fired on its
+             * folder's monitor and after FmFolder handles it in idle
+             * handler. So, we cannot select it since it's not yet in
+             * the folder model now. */
+            /* fm_folder_view_select_file_path(fv, dest); */
+        }
+        g_object_unref(gf);
+    }
+    else /* templates in ~/Templates */
+    {
+        FmPath* dir = fm_path_new(g_get_user_special_dir(G_USER_DIRECTORY_TEMPLATES));
+        FmPath* template = fm_path_new_child(dir, templ);
+        fm_copy_file(template, cwd);
+        fm_path_unref(template);
+    }
+    fm_path_unref(dest);
+}

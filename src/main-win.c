@@ -1218,85 +1218,12 @@ void on_create_new(GtkAction* action, FmMainWin* win)
 {
     FmFolderView* fv = FM_FOLDER_VIEW(win->folder_view);
     const char* name = gtk_action_get_name(action);
-    GError* err = NULL;
-    FmPath* cwd = fm_folder_view_get_cwd(fv);
-    FmPath* dest;
-    char* basename;
-_retry:
-    basename = fm_get_user_input(GTK_WINDOW(win), _("Create New..."), _("Enter a name for the newly created file:"), _("New"));
-    if(!basename)
-        return;
-
-    dest = fm_path_new_child(cwd, basename);
-    g_free(basename);
 
     if( strcmp(name, "NewFolder") == 0 )
-    {
-        GFile* gf = fm_path_to_gfile(dest);
-        if(!g_file_make_directory(gf, NULL, &err))
-        {
-            if(err->domain = G_IO_ERROR && err->code == G_IO_ERROR_EXISTS)
-            {
-                fm_path_unref(dest);
-                g_error_free(err);
-                g_object_unref(gf);
-                err = NULL;
-                goto _retry;
-            }
-            fm_show_error(GTK_WINDOW(win), err->message);
-            g_error_free(err);
-        }
-
-        if(!err) /* select the newly created file */
-        {
-            /*FIXME: this doesn't work since the newly created file will
-             * only be shown after file-created event was fired on its
-             * folder's monitor and after FmFolder handles it in idle
-             * handler. So, we cannot select it since it's not yet in
-             * the folder model now. */
-            /* fm_folder_view_select_file_path(fv, dest); */
-        }
-        g_object_unref(gf);
-    }
+        name = TEMPL_NAME_FOLDER;
     else if( strcmp(name, "NewBlank") == 0 )
-    {
-        GFile* gf = fm_path_to_gfile(dest);
-        GFileOutputStream* f = g_file_create(gf, G_FILE_CREATE_NONE, NULL, &err);
-        if(f)
-        {
-            g_output_stream_close(G_OUTPUT_STREAM(f), NULL, NULL);
-            g_object_unref(f);
-        }
-        else
-        {
-            if(err->domain = G_IO_ERROR && err->code == G_IO_ERROR_EXISTS)
-            {
-                fm_path_unref(dest);
-                g_error_free(err);
-                g_object_unref(gf);
-                err = NULL;
-                goto _retry;
-            }
-            fm_show_error(GTK_WINDOW(win), err->message);
-            g_error_free(err);
-        }
-
-        if(!err) /* select the newly created file */
-        {
-            /*FIXME: this doesn't work since the newly created file will
-             * only be shown after file-created event was fired on its
-             * folder's monitor and after FmFolder handles it in idle
-             * handler. So, we cannot select it since it's not yet in
-             * the folder model now. */
-            /* fm_folder_view_select_file_path(fv, dest); */
-        }
-        g_object_unref(gf);
-    }
-    else /* templates */
-    {
-
-    }
-    fm_path_unref(dest);
+        name = TEMPL_NAME_BLANK;
+    pcmanfm_create_new(GTK_WINDOW(win), fm_folder_view_get_cwd(fv), name);
 }
 
 FmMainWin* fm_main_win_get_last_active()

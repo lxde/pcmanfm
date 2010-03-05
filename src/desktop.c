@@ -1843,7 +1843,12 @@ void on_invert_select(GtkAction* act, gpointer user_data)
 
 void on_create_new(GtkAction* act, gpointer user_data)
 {
-
+    const char* name = gtk_action_get_name(act);
+    if( strcmp(name, "NewFolder") == 0 )
+        name = TEMPL_NAME_FOLDER;
+    else if( strcmp(name, "NewBlank") == 0 )
+        name = TEMPL_NAME_BLANK;
+    pcmanfm_create_new(NULL, fm_path_get_desktop(), name);
 }
 
 void on_sort_type(GtkAction* act, GtkRadioAction *cur, gpointer user_data)
