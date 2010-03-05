@@ -26,6 +26,9 @@
 #include <glib/gi18n.h>
 #include <gdk/gdkkeysyms.h>
 
+#include <unistd.h> /* for get euid */
+#include <sys/types.h>
+
 #include "pcmanfm.h"
 
 #include "app-config.h"
@@ -478,6 +481,19 @@ static void fm_main_win_init(FmMainWin *self)
     /* the location bar */
     self->location = fm_path_entry_new();
     g_signal_connect(self->location, "activate", on_entry_activate, self);
+    if(geteuid() == 0) /* if we're using root, give the location entry a different color */
+    {
+        GtkStyle* style = gtk_rc_get_style_by_paths(
+                            gtk_settings_get_for_screen(gtk_widget_get_screen(self->location)),
+                            "gtk-tooltip", NULL, G_TYPE_NONE);
+        if(style)
+        {
+            gtk_widget_modify_base(self->location, GTK_STATE_NORMAL, &style->bg[GTK_STATE_NORMAL]);
+            gtk_widget_modify_fg(self->location, GTK_STATE_NORMAL, &style->fg[GTK_STATE_NORMAL]);
+            gtk_entry_set_icon_from_stock(self->location, GTK_ENTRY_ICON_PRIMARY, GTK_STOCK_DIALOG_WARNING);
+        }
+        gtk_entry_set_icon_tooltip_text(self->location, GTK_ENTRY_ICON_PRIMARY, _("You are in super user mode"));
+    }
 
     toolitem = gtk_tool_item_new();
     gtk_container_add( GTK_CONTAINER(toolitem), self->location );
