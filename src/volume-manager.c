@@ -42,7 +42,15 @@ struct _AutoRun
     GCancellable* cancel;
 };
 
-static void on_dlg_response(GtkDialog* dlg, int res, gpointer user_data)
+static void on_dlg_response(GtkDialog* dlg, int res, gpointer user_data);
+
+static void on_unmount(GMount* mount, AutoRun* data)
+{
+    g_debug("on umount");
+    on_dlg_response(data->dlg, GTK_RESPONSE_CLOSE, data);
+}
+
+void on_dlg_response(GtkDialog* dlg, int res, gpointer user_data)
 {
     AutoRun* data = (AutoRun*)user_data;
 
@@ -77,6 +85,7 @@ static void on_dlg_response(GtkDialog* dlg, int res, gpointer user_data)
 
     g_object_unref(data->cancel);
     g_object_unref(data->store);
+    g_signal_handlers_disconnect_by_func(data->mount, on_unmount, data);
     g_object_unref(data->mount);
     g_slice_free(AutoRun, data);
 
@@ -111,6 +120,7 @@ static void on_content_type_finished(GObject* src_obj, GAsyncResult* res, gpoint
         if(apps)
         {
             int pos = 0;
+            GtkTreePath* tp;
             for(l = apps; l; l=l->next, ++pos)
             {
                 GAppInfo* app = G_APP_INFO(l->data);
@@ -124,6 +134,9 @@ static void on_content_type_finished(GObject* src_obj, GAsyncResult* res, gpoint
 
             gtk_tree_model_get_iter_first(GTK_TREE_MODEL(data->store), &it);
             gtk_tree_selection_select_iter(gtk_tree_view_get_selection(GTK_TREE_VIEW(data->view)), &it);
+            tp = gtk_tree_path_new_first();
+            gtk_tree_view_set_cursor(GTK_TREE_VIEW(data->view), tp, NULL, FALSE);
+            gtk_tree_path_free(tp);
         }
     }
 
@@ -137,6 +150,13 @@ static void on_content_type_finished(GObject* src_obj, GAsyncResult* res, gpoint
 
 }
 
+static void on_row_activated(GtkTreeView* view, GtkTreePath* tp, GtkTreeViewColumn* col, gpointer user_data)
+{
+    AutoRun* data = (AutoRun*)user_data;
+    on_dlg_response(data->dlg, GTK_RESPONSE_OK, data);
+}
+
+
 inline static void show_autorun_dlg(GVolume* vol, GMount* mount)
 {
     GtkBuilder* builder;
@@ -144,7 +164,8 @@ inline static void show_autorun_dlg(GVolume* vol, GMount* mount)
     GtkTreeViewColumn* col;
     GtkTreeSelection* tree_sel;
     GtkCellRenderer*render;
-    GIcon* icon;
+    GtkWidget* icon;
+    GIcon* gicon;
     AutoRun* data;
 
     data = g_slice_new(AutoRun);
@@ -155,7 +176,12 @@ inline static void show_autorun_dlg(GVolume* vol, GMount* mount)
     data->dlg = GTK_WIDGET(gtk_builder_get_object(builder, "dlg"));
     data->view = GTK_LIST_STORE(gtk_builder_get_object(builder, "listview"));
     data->type = GTK_LABEL(gtk_builder_get_object(builder, "type"));
+    icon = GTK_LABEL(gtk_builder_get_object(builder, "icon"));
     g_object_unref(builder);
+
+    gicon = g_volume_get_icon(vol);
+    gtk_image_set_from_gicon(icon, gicon, GTK_ICON_SIZE_DIALOG);
+    g_object_unref(gicon);
 
     gtk_dialog_set_default_response(GTK_DIALOG(data->dlg), GTK_RESPONSE_OK);
     gtk_dialog_set_alternative_button_order(GTK_DIALOG(data->dlg), GTK_RESPONSE_OK, GTK_RESPONSE_CANCEL, -1);
@@ -178,16 +204,20 @@ inline static void show_autorun_dlg(GVolume* vol, GMount* mount)
     data->mount = (GMount*)g_object_ref(mount);
 
     gtk_list_store_append(data->store, &it);
-    icon = g_themed_icon_new("system-file-manager");
-    gtk_list_store_set(data->store, &it, 0, icon, 1, _("Open in File Manager"), -1);
-    g_object_unref(icon);
+    gicon = g_themed_icon_new("system-file-manager");
+    gtk_list_store_set(data->store, &it, 0, gicon, 1, _("Open in File Manager"), -1);
+    g_object_unref(gicon);
 
     gtk_tree_view_set_model(data->view, GTK_TREE_MODEL(data->store));
 
     gtk_tree_model_get_iter_first(GTK_TREE_MODEL(data->store), &it);
     gtk_tree_selection_select_iter(tree_sel, &it);
 
+    g_signal_connect(data->view, "row-activated", G_CALLBACK(on_row_activated), data);
     g_signal_connect(data->dlg, "response", G_CALLBACK(on_dlg_response), data);
+
+    g_signal_connect(data->mount, "unmounted", G_CALLBACK(on_unmount), data);
+
     gtk_window_present(GTK_WINDOW(data->dlg));
 
     g_mount_guess_content_type(mount, TRUE, data->cancel, on_content_type_finished, data);
@@ -227,7 +257,8 @@ static void on_vol_added(GVolumeMonitor* vm, GVolume* vol, gpointer user_data)
     /* TODO: show icons in systray */
 }
 
-/* FIXME: Need to kill opened auto-run dialogs if they refer to the device removed */
+#ifdef G_ENABLE_DEBUG
+
 static void on_vol_removed(GVolumeMonitor* vm, GVolume* vol, gpointer user_data)
 {
     g_debug("vol: %p is removed", vol);
@@ -240,6 +271,7 @@ static void on_vol_changed(GVolumeMonitor* vm, GVolume* vol, gpointer user_data)
     if(mount)
         g_object_unref(mount);
 }
+#endif
 
 static gboolean fm_volume_manager_delay_init(gpointer user_data)
 {
@@ -249,10 +281,11 @@ static gboolean fm_volume_manager_delay_init(gpointer user_data)
         return FALSE;
 
     g_signal_connect(vol_mon, "volume-added", G_CALLBACK(on_vol_added), NULL);
-    g_signal_connect(vol_mon, "volume-removed", G_CALLBACK(on_vol_removed), NULL);
 
-    /* FIXME: is this needed? */
+#ifdef G_ENABLE_DEBUG
+    g_signal_connect(vol_mon, "volume-removed", G_CALLBACK(on_vol_removed), NULL);
     g_signal_connect(vol_mon, "volume-changed", G_CALLBACK(on_vol_changed), NULL);
+#endif
 
     /* try to automount all volumes */
     vols = g_volume_monitor_get_volumes(vol_mon);
@@ -278,9 +311,11 @@ void fm_volume_manager_finalize()
     if(vol_mon)
     {
         g_signal_handlers_disconnect_by_func(vol_mon, on_vol_added, NULL);
+
+#ifdef G_ENABLE_DEBUG
         g_signal_handlers_disconnect_by_func(vol_mon, on_vol_removed, NULL);
         g_signal_handlers_disconnect_by_func(vol_mon, on_vol_changed, NULL);
-
+#endif
         g_object_unref(vol_mon);
         vol_mon = NULL;
     }
