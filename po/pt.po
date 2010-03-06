@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-04 04:14+0000\n"
+"POT-Creation-Date: 2010-03-06 22:37+0100\n"
 "PO-Revision-Date: 2010-03-04 16:56-0000\n"
 "Last-Translator: Sérgio Marques <smarquespt@gmail.com>\n"
 "Language-Team: \n"
@@ -64,8 +64,7 @@ msgstr "Aparência"
 msgid "Background color:"
 msgstr "Cor de fundo:"
 
-#: ../data/ui/desktop-pref.glade.h:7
-#: ../data/ui/pref.glade.h:8
+#: ../data/ui/desktop-pref.glade.h:7 ../data/ui/pref.glade.h:8
 msgid "Center on the screen"
 msgstr "Centrar no ecrâ"
 
@@ -81,8 +80,7 @@ msgstr "Cor da sombra:"
 msgid "Desktop Icons"
 msgstr "Ícones da Área de Trabalho"
 
-#: ../data/ui/desktop-pref.glade.h:11
-#: ../src/desktop-ui.c:58
+#: ../data/ui/desktop-pref.glade.h:11 ../src/desktop-ui.c:58
 msgid "Desktop Preferences"
 msgstr "Preferências da Área de Trabalho"
 
@@ -118,18 +116,15 @@ msgstr "Mostrar ícones de volumes na área de trabalho"
 msgid "Show menus provided by WM when desktop is clicked"
 msgstr "Mostrar menus pelo G J ao clicar na área de trabalho"
 
-#: ../data/ui/desktop-pref.glade.h:20
-#: ../data/ui/pref.glade.h:32
+#: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:32
 msgid "Stretch to fill the entire screen"
 msgstr "Esticar para preencher totalmente o ecrã"
 
-#: ../data/ui/desktop-pref.glade.h:21
-#: ../data/ui/pref.glade.h:33
+#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:33
 msgid "Stretch to fit the screen"
 msgstr "Esticar para preencher o ecrã"
 
-#: ../data/ui/desktop-pref.glade.h:22
-#: ../data/ui/pref.glade.h:37
+#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:37
 msgid "Tile the image to fill the entire screen"
 msgstr "Ladrilhar imagem para preencher totalmente o ecrã"
 
@@ -191,7 +186,8 @@ msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
 "%s = the command line you want to execute with terminal or su."
 msgstr ""
-"Exemplos: \"xterm -e %s\" para terminal ou \"gksu %s\" para trocar utilizadores.\n"
+"Exemplos: \"xterm -e %s\" para terminal ou \"gksu %s\" para trocar "
+"utilizadores.\n"
 "%s = a linha de comandos a executar com o terminal ou su."
 
 #: ../data/ui/pref.glade.h:16
@@ -212,7 +208,8 @@ msgstr "Ícones"
 
 #: ../data/ui/pref.glade.h:20
 msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
-msgstr "Mover ficheiros apagados para o \"lixo\" ao invés de os apagar do disco"
+msgstr ""
+"Mover ficheiros apagados para o \"lixo\" ao invés de os apagar do disco"
 
 #: ../data/ui/pref.glade.h:21
 msgid "Only show thumbnails for local files"
@@ -294,17 +291,44 @@ msgstr "_Geral"
 msgid "_Volume Management"
 msgstr "Gestão de _Volumes"
 
+#: ../data/ui/autorun.glade.h:1
+msgid "<b>Removable medium is inserted</b>"
+msgstr ""
+
+#: ../data/ui/autorun.glade.h:2
+msgid "Detecting..."
+msgstr ""
+
+#: ../data/ui/autorun.glade.h:3
+msgid "Please select the action you want to perform:"
+msgstr ""
+
+#: ../data/ui/autorun.glade.h:4
+msgid "Removable medium is inserted"
+msgstr ""
+
+#: ../data/ui/autorun.glade.h:5
+msgid "Type of medium:"
+msgstr ""
+
+#: ../src/volume-manager.c:149
+msgid "Removable Disk"
+msgstr ""
+
+#: ../src/volume-manager.c:208
+#, fuzzy
+msgid "Open in File Manager"
+msgstr "Abrir em Novo Separador"
+
 #: ../src/desktop-ui.c:53
 msgid "_Invert Selection"
 msgstr "_Inverter Selecção"
 
-#: ../src/desktop-ui.c:54
-#: ../src/main-win-ui.c:144
+#: ../src/desktop-ui.c:54 ../src/main-win-ui.c:144
 msgid "_Sort Files"
 msgstr "_Ordenar Ficheiros"
 
-#: ../src/desktop-ui.c:56
-#: ../src/main-win-ui.c:168
+#: ../src/desktop-ui.c:56 ../src/main-win-ui.c:168
 msgid "Folder"
 msgstr "Pasta"
 
@@ -312,38 +336,31 @@ msgstr "Pasta"
 msgid "Blank File"
 msgstr "Ficheiro Vazio"
 
-#: ../src/desktop-ui.c:69
-#: ../src/main-win-ui.c:194
+#: ../src/desktop-ui.c:69 ../src/main-win-ui.c:194
 msgid "By _Name"
 msgstr "Por _Nome"
 
-#: ../src/desktop-ui.c:70
-#: ../src/main-win-ui.c:195
+#: ../src/desktop-ui.c:70 ../src/main-win-ui.c:195
 msgid "By _Modification Time"
 msgstr "Por Data de _Modificação"
 
-#: ../src/desktop-ui.c:71
-#: ../src/main-win-ui.c:196
+#: ../src/desktop-ui.c:71 ../src/main-win-ui.c:196
 msgid "By _Size"
 msgstr "Por _Tamanho"
 
-#: ../src/desktop-ui.c:72
-#: ../src/main-win-ui.c:197
+#: ../src/desktop-ui.c:72 ../src/main-win-ui.c:197
 msgid "By File _Type"
 msgstr "Por _Tipo de Ficheiro"
 
-#: ../src/desktop-ui.c:88
-#: ../src/main-win-ui.c:214
+#: ../src/desktop-ui.c:88 ../src/main-win-ui.c:214
 msgid "Open in New Tab"
 msgstr "Abrir em Novo Separador"
 
-#: ../src/desktop-ui.c:89
-#: ../src/main-win-ui.c:215
+#: ../src/desktop-ui.c:89 ../src/main-win-ui.c:215
 msgid "Open in New Window"
 msgstr "Abrie em Nova Janela"
 
-#: ../src/desktop-ui.c:91
-#: ../src/main-win-ui.c:217
+#: ../src/desktop-ui.c:91 ../src/main-win-ui.c:217
 msgid "Open in _Terminal"
 msgstr "Abrir no _Terminal"
 
@@ -495,16 +512,20 @@ msgstr "_Miniaturas"
 msgid "Detailed _List View"
 msgstr "_Lista Detalhada"
 
-#: ../src/main-win.c:580
+#: ../src/main-win.c:495
+msgid "You are in super user mode"
+msgstr ""
+
+#: ../src/main-win.c:596
 msgid "Switch user command is not set."
 msgstr "Troca de comando de utilizador não definido."
 
-#: ../src/main-win.c:928
+#: ../src/main-win.c:944
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Espaço livre: %s (Total: %s)"
 
-#: ../src/main-win.c:1134
+#: ../src/main-win.c:1150
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -515,25 +536,17 @@ msgstr ""
 "'%s'\n"
 "Indique o nome para o novo marcador:"
 
-#: ../src/main-win.c:1138
+#: ../src/main-win.c:1154
 msgid "Add to Bookmarks"
 msgstr "Adicionar aos Marcadores"
 
-#: ../src/main-win.c:1210
-msgid "Create New..."
-msgstr "Criar Novo..."
-
-#: ../src/main-win.c:1210
-msgid "Enter a name for the newly created file:"
-msgstr "Indique o nome do ficheiro agora criado:"
-
-#: ../src/main-win.c:1210
-msgid "New"
-msgstr "Novo"
-
 #: ../src/pcmanfm.c:70
-msgid "Open folders in new tabs of the last used window instead of creating new windows"
-msgstr "Abrir pastas em novos separadores da última janela usada em vez de criar novas janelas"
+msgid ""
+"Open folders in new tabs of the last used window instead of creating new "
+"windows"
+msgstr ""
+"Abrir pastas em novos separadores da última janela usada em vez de criar "
+"novas janelas"
 
 #: ../src/pcmanfm.c:71
 msgid "Name of configuration profile"
@@ -564,8 +577,12 @@ msgid "<image file>"
 msgstr "<imagem>"
 
 #: ../src/pcmanfm.c:77
-msgid "Open preference dialog. 'n' is number of the page you want to show (1, 2, 3...)."
-msgstr "Abrir diálogo de preferências. 'n' é o número da página que quer mostrar (1, 2, 3...)."
+msgid ""
+"Open preference dialog. 'n' is number of the page you want to show (1, 2, "
+"3...)."
+msgstr ""
+"Abrir diálogo de preferências. 'n' é o número da página que quer mostrar (1, "
+"2, 3...)."
 
 #: ../src/pcmanfm.c:78
 msgid "Open Find Files utility"
@@ -583,8 +600,20 @@ msgstr "[FICHEIRO1, FICHEIRO2,...]"
 msgid "Terminal emulator is not set."
 msgstr "Emulador de Terminal não definido."
 
+#: ../src/pcmanfm.c:587
+msgid "Create New..."
+msgstr "Criar Novo..."
+
+#: ../src/pcmanfm.c:587
+msgid "Enter a name for the newly created file:"
+msgstr "Indique o nome do ficheiro agora criado:"
+
+#: ../src/pcmanfm.c:587
+msgid "New"
+msgstr "Novo"
+
 #~ msgid "Display image files with supported format as thumbnails"
 #~ msgstr "Mostrar imagens de formatos suportados como miniaturas"
+
 #~ msgid "Max size of files displayed as thumbnails:"
 #~ msgstr "Tamanho máx. dos ficheiros mostrados como miniaturas:"
-

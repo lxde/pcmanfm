@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-22 00:24+0100\n"
+"POT-Creation-Date: 2010-03-06 22:37+0100\n"
 "PO-Revision-Date: 2010-02-17 19:10+0100\n"
 "Last-Translator: Emmanuel Trillaud <etrillaud@gmail.com> \n"
 "Language-Team: French\n"
@@ -292,6 +292,35 @@ msgstr "_Général"
 msgid "_Volume Management"
 msgstr "_Gestion des _Volumes"
 
+#: ../data/ui/autorun.glade.h:1
+msgid "<b>Removable medium is inserted</b>"
+msgstr ""
+
+#: ../data/ui/autorun.glade.h:2
+msgid "Detecting..."
+msgstr ""
+
+#: ../data/ui/autorun.glade.h:3
+msgid "Please select the action you want to perform:"
+msgstr ""
+
+#: ../data/ui/autorun.glade.h:4
+msgid "Removable medium is inserted"
+msgstr ""
+
+#: ../data/ui/autorun.glade.h:5
+msgid "Type of medium:"
+msgstr ""
+
+#: ../src/volume-manager.c:149
+msgid "Removable Disk"
+msgstr ""
+
+#: ../src/volume-manager.c:208
+#, fuzzy
+msgid "Open in File Manager"
+msgstr "Ouvrir dans un nouvel onglet"
+
 #: ../src/desktop-ui.c:53
 #, fuzzy
 msgid "_Invert Selection"
@@ -327,12 +356,17 @@ msgstr "Par _Nom"
 msgid "By File _Type"
 msgstr ""
 
-#: ../src/desktop-ui.c:87 ../src/main-win-ui.c:213
+#: ../src/desktop-ui.c:88 ../src/main-win-ui.c:214
 msgid "Open in New Tab"
 msgstr "Ouvrir dans un nouvel onglet"
 
-#: ../src/desktop-ui.c:88 ../src/main-win-ui.c:214
+#: ../src/desktop-ui.c:89 ../src/main-win-ui.c:215
 msgid "Open in New Window"
+msgstr "Ouvrir dans une nouvelle fenêtre"
+
+#: ../src/desktop-ui.c:91 ../src/main-win-ui.c:217
+#, fuzzy
+msgid "Open in _Terminal"
 msgstr "Ouvrir dans une nouvelle fenêtre"
 
 #: ../src/main-win-ui.c:126
@@ -483,20 +517,20 @@ msgstr ""
 msgid "Detailed _List View"
 msgstr "Vue en _Liste détaillée"
 
-#: ../src/main-win.c:554
-msgid "Terminal emulator is not set."
+#: ../src/main-win.c:495
+msgid "You are in super user mode"
 msgstr ""
 
-#: ../src/main-win.c:600
+#: ../src/main-win.c:596
 msgid "Switch user command is not set."
 msgstr ""
 
-#: ../src/main-win.c:947
+#: ../src/main-win.c:944
 #, fuzzy, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Espace libre : %s (Total : %s)"
 
-#: ../src/main-win.c:1152
+#: ../src/main-win.c:1150
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -504,24 +538,12 @@ msgid ""
 "Enter a name for the new bookmark item:"
 msgstr ""
 
-#: ../src/main-win.c:1156
+#: ../src/main-win.c:1154
 #, fuzzy
 msgid "Add to Bookmarks"
 msgstr "Marquer cette page"
 
-#: ../src/main-win.c:1228
-msgid "Create New..."
-msgstr "Créer nouveau..."
-
-#: ../src/main-win.c:1228
-msgid "Enter a name for the newly created file:"
-msgstr "Entrer le nom du nouveau fichier :"
-
-#: ../src/main-win.c:1228
-msgid "New"
-msgstr "Nouveau"
-
-#: ../src/pcmanfm.c:69
+#: ../src/pcmanfm.c:70
 msgid ""
 "Open folders in new tabs of the last used window instead of creating new "
 "windows"
@@ -529,36 +551,36 @@ msgstr ""
 "Ouvrir les dossiers dans de nouveaux onglet de la dernière fenêtre utilisée "
 "au lieu d'ouvrir une nouvelle fenêtre"
 
-#: ../src/pcmanfm.c:70
+#: ../src/pcmanfm.c:71
 #, fuzzy
 msgid "Name of configuration profile"
 msgstr "Nom du profil de configuration"
 
-#: ../src/pcmanfm.c:71
+#: ../src/pcmanfm.c:72
 msgid "Launch desktop manager"
 msgstr "Lancer le gestionnaire de bureau"
 
-#: ../src/pcmanfm.c:72
+#: ../src/pcmanfm.c:73
 msgid "Turn off desktop manager if it's running"
 msgstr ""
 
-#: ../src/pcmanfm.c:73
+#: ../src/pcmanfm.c:74
 msgid "Run PCManFM as a daemon"
 msgstr "Lancer PCManFM comme démon"
 
-#: ../src/pcmanfm.c:74
+#: ../src/pcmanfm.c:75
 msgid "Open desktop preference dialog"
 msgstr "Ouvrir la fenêtre des préférence du bureau"
 
-#: ../src/pcmanfm.c:75
+#: ../src/pcmanfm.c:76
 msgid "Set desktop wallpaper"
 msgstr "Sélectionner un fond d'écran"
 
-#: ../src/pcmanfm.c:75
+#: ../src/pcmanfm.c:76
 msgid "<image file>"
 msgstr "<fichier image>"
 
-#: ../src/pcmanfm.c:76
+#: ../src/pcmanfm.c:77
 #, fuzzy
 msgid ""
 "Open preference dialog. 'n' is number of the page you want to show (1, 2, "
@@ -567,17 +589,33 @@ msgstr ""
 "Ouvrir la fenêtre des préférences. 'n' est le nombre de pages que vous "
 "voulez afficher (1, 2, 3...)."
 
-#: ../src/pcmanfm.c:77
+#: ../src/pcmanfm.c:78
 msgid "Open Find Files utility"
 msgstr "Ouvrir l'utilitaire de recherche de fichier"
 
-#: ../src/pcmanfm.c:78
+#: ../src/pcmanfm.c:79
 msgid "No function. Just to be compatible with nautilus"
 msgstr "Ne rien faire. Être seulement compatible avec nautilus"
 
-#: ../src/pcmanfm.c:79
+#: ../src/pcmanfm.c:80
 msgid "[FILE1, FILE2,...]"
 msgstr "[FICHIER1, FICHIER2, ...]"
+
+#: ../src/pcmanfm.c:544
+msgid "Terminal emulator is not set."
+msgstr ""
+
+#: ../src/pcmanfm.c:587
+msgid "Create New..."
+msgstr "Créer nouveau..."
+
+#: ../src/pcmanfm.c:587
+msgid "Enter a name for the newly created file:"
+msgstr "Entrer le nom du nouveau fichier :"
+
+#: ../src/pcmanfm.c:587
+msgid "New"
+msgstr "Nouveau"
 
 #~ msgid "Display image files with supported format as thumbnails"
 #~ msgstr "Afficher un aperçu des images dont le format est supporté"

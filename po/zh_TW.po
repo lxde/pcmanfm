@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-27 07:50+0800\n"
+"POT-Creation-Date: 2010-03-06 22:37+0100\n"
 "PO-Revision-Date: 2010-02-21 23:11+0800\n"
 "Last-Translator: 洪任諭 <pcman.tw@gmail.com>\n"
 "Language-Team: zh_TW <zh_TW@li.org>\n"
@@ -286,6 +286,35 @@ msgstr "一般(_G)"
 msgid "_Volume Management"
 msgstr "磁碟管理(_V)"
 
+#: ../data/ui/autorun.glade.h:1
+msgid "<b>Removable medium is inserted</b>"
+msgstr ""
+
+#: ../data/ui/autorun.glade.h:2
+msgid "Detecting..."
+msgstr ""
+
+#: ../data/ui/autorun.glade.h:3
+msgid "Please select the action you want to perform:"
+msgstr ""
+
+#: ../data/ui/autorun.glade.h:4
+msgid "Removable medium is inserted"
+msgstr ""
+
+#: ../data/ui/autorun.glade.h:5
+msgid "Type of medium:"
+msgstr ""
+
+#: ../src/volume-manager.c:149
+msgid "Removable Disk"
+msgstr ""
+
+#: ../src/volume-manager.c:208
+#, fuzzy
+msgid "Open in File Manager"
+msgstr "在新分頁開啟"
+
 #: ../src/desktop-ui.c:53
 msgid "_Invert Selection"
 msgstr "反相選取(_I)"
@@ -318,13 +347,18 @@ msgstr "依大小(_S)"
 msgid "By File _Type"
 msgstr "依檔案型態(_T)"
 
-#: ../src/desktop-ui.c:87 ../src/main-win-ui.c:213
+#: ../src/desktop-ui.c:88 ../src/main-win-ui.c:214
 msgid "Open in New Tab"
 msgstr "在新分頁開啟"
 
-#: ../src/desktop-ui.c:88 ../src/main-win-ui.c:214
+#: ../src/desktop-ui.c:89 ../src/main-win-ui.c:215
 msgid "Open in New Window"
 msgstr "在新視窗開啟"
+
+#: ../src/desktop-ui.c:91 ../src/main-win-ui.c:217
+#, fuzzy
+msgid "Open in _Terminal"
+msgstr "以終端機模擬器開啟目前資料夾(_T)"
 
 #: ../src/main-win-ui.c:126
 msgid "_File"
@@ -474,20 +508,20 @@ msgstr "縮圖檢視(_T)"
 msgid "Detailed _List View"
 msgstr "以詳細清單檢視(_L)"
 
-#: ../src/main-win.c:562
-msgid "Terminal emulator is not set."
-msgstr "終端機模擬器尚未設定。"
+#: ../src/main-win.c:495
+msgid "You are in super user mode"
+msgstr ""
 
-#: ../src/main-win.c:608
+#: ../src/main-win.c:596
 msgid "Switch user command is not set."
 msgstr "切換使用者的命令尚未設定。"
 
-#: ../src/main-win.c:955
+#: ../src/main-win.c:944
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "可用空間：%s (總共：%s )"
 
-#: ../src/main-win.c:1161
+#: ../src/main-win.c:1150
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -495,70 +529,74 @@ msgid ""
 "Enter a name for the new bookmark item:"
 msgstr ""
 
-#: ../src/main-win.c:1165
+#: ../src/main-win.c:1154
 msgid "Add to Bookmarks"
 msgstr "新增到書籤"
 
-#: ../src/main-win.c:1237
-msgid "Create New..."
-msgstr "新建..."
-
-#: ../src/main-win.c:1237
-msgid "Enter a name for the newly created file:"
-msgstr "輸入新建立檔案的名稱："
-
-#: ../src/main-win.c:1237
-msgid "New"
-msgstr "新增"
-
-#: ../src/pcmanfm.c:69
+#: ../src/pcmanfm.c:70
 msgid ""
 "Open folders in new tabs of the last used window instead of creating new "
 "windows"
 msgstr ""
 
-#: ../src/pcmanfm.c:70
+#: ../src/pcmanfm.c:71
 msgid "Name of configuration profile"
 msgstr ""
 
-#: ../src/pcmanfm.c:71
+#: ../src/pcmanfm.c:72
 msgid "Launch desktop manager"
 msgstr ""
 
-#: ../src/pcmanfm.c:72
+#: ../src/pcmanfm.c:73
 msgid "Turn off desktop manager if it's running"
 msgstr ""
 
-#: ../src/pcmanfm.c:73
+#: ../src/pcmanfm.c:74
 msgid "Run PCManFM as a daemon"
 msgstr "以常駐模式執行 PCManFM"
 
-#: ../src/pcmanfm.c:74
+#: ../src/pcmanfm.c:75
 msgid "Open desktop preference dialog"
 msgstr "開啟桌面偏好設定"
 
-#: ../src/pcmanfm.c:75
+#: ../src/pcmanfm.c:76
 msgid "Set desktop wallpaper"
 msgstr "設定桌布"
 
-#: ../src/pcmanfm.c:75
+#: ../src/pcmanfm.c:76
 msgid "<image file>"
 msgstr "<影像檔>"
 
-#: ../src/pcmanfm.c:76
+#: ../src/pcmanfm.c:77
 msgid ""
 "Open preference dialog. 'n' is number of the page you want to show (1, 2, "
 "3...)."
 msgstr ""
 
-#: ../src/pcmanfm.c:77
+#: ../src/pcmanfm.c:78
 msgid "Open Find Files utility"
 msgstr "開啟尋找檔案工具"
 
-#: ../src/pcmanfm.c:78
+#: ../src/pcmanfm.c:79
 msgid "No function. Just to be compatible with nautilus"
 msgstr "沒有功能，只是用來和 nautilus 保持相容"
 
-#: ../src/pcmanfm.c:79
+#: ../src/pcmanfm.c:80
 msgid "[FILE1, FILE2,...]"
 msgstr "[檔案1, 檔案2,...]"
+
+#: ../src/pcmanfm.c:544
+msgid "Terminal emulator is not set."
+msgstr "終端機模擬器尚未設定。"
+
+#: ../src/pcmanfm.c:587
+msgid "Create New..."
+msgstr "新建..."
+
+#: ../src/pcmanfm.c:587
+msgid "Enter a name for the newly created file:"
+msgstr "輸入新建立檔案的名稱："
+
+#: ../src/pcmanfm.c:587
+msgid "New"
+msgstr "新增"

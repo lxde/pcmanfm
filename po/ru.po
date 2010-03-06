@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-27 07:50+0800\n"
+"POT-Creation-Date: 2010-03-06 22:37+0100\n"
 "PO-Revision-Date: 2010-02-20 08:45+0300\n"
 "Last-Translator: Koptev Oleg <koptev.oleg@gmail.com>\n"
 "Language-Team: Russian <>\n"
@@ -288,6 +288,35 @@ msgstr "_Основные"
 msgid "_Volume Management"
 msgstr "_Управление томами"
 
+#: ../data/ui/autorun.glade.h:1
+msgid "<b>Removable medium is inserted</b>"
+msgstr ""
+
+#: ../data/ui/autorun.glade.h:2
+msgid "Detecting..."
+msgstr ""
+
+#: ../data/ui/autorun.glade.h:3
+msgid "Please select the action you want to perform:"
+msgstr ""
+
+#: ../data/ui/autorun.glade.h:4
+msgid "Removable medium is inserted"
+msgstr ""
+
+#: ../data/ui/autorun.glade.h:5
+msgid "Type of medium:"
+msgstr ""
+
+#: ../src/volume-manager.c:149
+msgid "Removable Disk"
+msgstr ""
+
+#: ../src/volume-manager.c:208
+#, fuzzy
+msgid "Open in File Manager"
+msgstr "Открыть в новой вкладке"
+
 #: ../src/desktop-ui.c:53
 msgid "_Invert Selection"
 msgstr "_Инвертировать выделение"
@@ -320,13 +349,18 @@ msgstr "По _размеру"
 msgid "By File _Type"
 msgstr "По _типу файла"
 
-#: ../src/desktop-ui.c:87 ../src/main-win-ui.c:213
+#: ../src/desktop-ui.c:88 ../src/main-win-ui.c:214
 msgid "Open in New Tab"
 msgstr "Открыть в новой вкладке"
 
-#: ../src/desktop-ui.c:88 ../src/main-win-ui.c:214
+#: ../src/desktop-ui.c:89 ../src/main-win-ui.c:215
 msgid "Open in New Window"
 msgstr "Открыть в новом окне"
+
+#: ../src/desktop-ui.c:91 ../src/main-win-ui.c:217
+#, fuzzy
+msgid "Open in _Terminal"
+msgstr "Запустить _терминал в текущей папке"
 
 #: ../src/main-win-ui.c:126
 msgid "_File"
@@ -476,20 +510,20 @@ msgstr "_Миниатюры"
 msgid "Detailed _List View"
 msgstr "_Подробности"
 
-#: ../src/main-win.c:562
-msgid "Terminal emulator is not set."
-msgstr "Не задан эмулятор консоли."
+#: ../src/main-win.c:495
+msgid "You are in super user mode"
+msgstr ""
 
-#: ../src/main-win.c:608
+#: ../src/main-win.c:596
 msgid "Switch user command is not set."
 msgstr "Не задана команда переключения пользователей."
 
-#: ../src/main-win.c:955
+#: ../src/main-win.c:944
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Свободное место: %s (Всего: %s)"
 
-#: ../src/main-win.c:1161
+#: ../src/main-win.c:1150
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -500,23 +534,11 @@ msgstr ""
 "'%s'\n"
 "Введите имя новой закладки:"
 
-#: ../src/main-win.c:1165
+#: ../src/main-win.c:1154
 msgid "Add to Bookmarks"
 msgstr "Добавить в закладки"
 
-#: ../src/main-win.c:1237
-msgid "Create New..."
-msgstr "Создать новый..."
-
-#: ../src/main-win.c:1237
-msgid "Enter a name for the newly created file:"
-msgstr "Введите имя нового файла:"
-
-#: ../src/main-win.c:1237
-msgid "New"
-msgstr "Новый"
-
-#: ../src/pcmanfm.c:69
+#: ../src/pcmanfm.c:70
 msgid ""
 "Open folders in new tabs of the last used window instead of creating new "
 "windows"
@@ -524,35 +546,35 @@ msgstr ""
 "Открывать папки в новой вкладке последнего активного окна, вместо создания "
 "нового окна"
 
-#: ../src/pcmanfm.c:70
+#: ../src/pcmanfm.c:71
 msgid "Name of configuration profile"
 msgstr "Имя профиля конфигурации"
 
-#: ../src/pcmanfm.c:71
+#: ../src/pcmanfm.c:72
 msgid "Launch desktop manager"
 msgstr "Запустить менеджер рабочего стола"
 
-#: ../src/pcmanfm.c:72
+#: ../src/pcmanfm.c:73
 msgid "Turn off desktop manager if it's running"
 msgstr "Выключить менеджер рабочего стола, если он запущен"
 
-#: ../src/pcmanfm.c:73
+#: ../src/pcmanfm.c:74
 msgid "Run PCManFM as a daemon"
 msgstr "Запустить PCManFM как демон "
 
-#: ../src/pcmanfm.c:74
+#: ../src/pcmanfm.c:75
 msgid "Open desktop preference dialog"
 msgstr "Открыть диалог параметров рабочего стола"
 
-#: ../src/pcmanfm.c:75
+#: ../src/pcmanfm.c:76
 msgid "Set desktop wallpaper"
 msgstr "Установить обои рабочего стола"
 
-#: ../src/pcmanfm.c:75
+#: ../src/pcmanfm.c:76
 msgid "<image file>"
 msgstr "<файл изображения>"
 
-#: ../src/pcmanfm.c:76
+#: ../src/pcmanfm.c:77
 msgid ""
 "Open preference dialog. 'n' is number of the page you want to show (1, 2, "
 "3...)."
@@ -560,17 +582,33 @@ msgstr ""
 "Открывает диалог настроек. 'n' является номером отображаемой страницы (1, 2, "
 "3, ...)."
 
-#: ../src/pcmanfm.c:77
+#: ../src/pcmanfm.c:78
 msgid "Open Find Files utility"
 msgstr "Открыть поиск файлов"
 
-#: ../src/pcmanfm.c:78
+#: ../src/pcmanfm.c:79
 msgid "No function. Just to be compatible with nautilus"
 msgstr "Нет функции. Для совместимости с Nautilus"
 
-#: ../src/pcmanfm.c:79
+#: ../src/pcmanfm.c:80
 msgid "[FILE1, FILE2,...]"
 msgstr "[FILE1, FILE2,...]"
+
+#: ../src/pcmanfm.c:544
+msgid "Terminal emulator is not set."
+msgstr "Не задан эмулятор консоли."
+
+#: ../src/pcmanfm.c:587
+msgid "Create New..."
+msgstr "Создать новый..."
+
+#: ../src/pcmanfm.c:587
+msgid "Enter a name for the newly created file:"
+msgstr "Введите имя нового файла:"
+
+#: ../src/pcmanfm.c:587
+msgid "New"
+msgstr "Новый"
 
 #~ msgid "Display image files with supported format as thumbnails"
 #~ msgstr ""

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PCMan File Manager 0.3.6\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-27 07:50+0800\n"
+"POT-Creation-Date: 2010-03-06 22:37+0100\n"
 "PO-Revision-Date: 2010-01-31 02:05+0100\n"
 "Last-Translator: SZERVÁC Attila <sas@321.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -292,6 +292,37 @@ msgstr "Általá_nos"
 msgid "_Volume Management"
 msgstr "_Kötetkezelés"
 
+#: ../data/ui/autorun.glade.h:1
+msgid "<b>Removable medium is inserted</b>"
+msgstr ""
+
+#: ../data/ui/autorun.glade.h:2
+#, fuzzy
+msgid "Detecting..."
+msgstr "Törlés..."
+
+#: ../data/ui/autorun.glade.h:3
+msgid "Please select the action you want to perform:"
+msgstr ""
+
+#: ../data/ui/autorun.glade.h:4
+msgid "Removable medium is inserted"
+msgstr ""
+
+#: ../data/ui/autorun.glade.h:5
+msgid "Type of medium:"
+msgstr ""
+
+#: ../src/volume-manager.c:149
+#, fuzzy
+msgid "Removable Disk"
+msgstr "%s eltávolítható kötet"
+
+#: ../src/volume-manager.c:208
+#, fuzzy
+msgid "Open in File Manager"
+msgstr "PCMan fájlkezelő"
+
 #: ../src/desktop-ui.c:53
 #, fuzzy
 msgid "_Invert Selection"
@@ -328,13 +359,18 @@ msgstr "_Méret"
 msgid "By File _Type"
 msgstr "Ismert fájl típusok:"
 
-#: ../src/desktop-ui.c:87 ../src/main-win-ui.c:213
+#: ../src/desktop-ui.c:88 ../src/main-win-ui.c:214
 msgid "Open in New Tab"
 msgstr "Megnyitás új lapon"
 
-#: ../src/desktop-ui.c:88 ../src/main-win-ui.c:214
+#: ../src/desktop-ui.c:89 ../src/main-win-ui.c:215
 msgid "Open in New Window"
 msgstr "Megnyitás új ablakban"
+
+#: ../src/desktop-ui.c:91 ../src/main-win-ui.c:217
+#, fuzzy
+msgid "Open in _Terminal"
+msgstr "Megnyitás Terminálban"
 
 #: ../src/main-win-ui.c:126
 msgid "_File"
@@ -486,21 +522,21 @@ msgstr ""
 msgid "Detailed _List View"
 msgstr "Részletes _Lista"
 
-#: ../src/main-win.c:562
+#: ../src/main-win.c:495
 #, fuzzy
-msgid "Terminal emulator is not set."
-msgstr "Nem állítottál be Terminál programot"
+msgid "You are in super user mode"
+msgstr "Figyelj!: Most rendszergazda módban vagy!"
 
-#: ../src/main-win.c:608
+#: ../src/main-win.c:596
 msgid "Switch user command is not set."
 msgstr ""
 
-#: ../src/main-win.c:955
+#: ../src/main-win.c:944
 #, fuzzy, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Szabad hely: %s (Összesen: %s )"
 
-#: ../src/main-win.c:1161
+#: ../src/main-win.c:1150
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -508,59 +544,47 @@ msgid ""
 "Enter a name for the new bookmark item:"
 msgstr ""
 
-#: ../src/main-win.c:1165
+#: ../src/main-win.c:1154
 #, fuzzy
 msgid "Add to Bookmarks"
 msgstr "Hozzá_adás a könyvjelzőkhöz"
 
-#: ../src/main-win.c:1237
-msgid "Create New..."
-msgstr "Új..."
-
-#: ../src/main-win.c:1237
-msgid "Enter a name for the newly created file:"
-msgstr "Adj nevet az új fájlnak:"
-
-#: ../src/main-win.c:1237
-msgid "New"
-msgstr "Új"
-
-#: ../src/pcmanfm.c:69
+#: ../src/pcmanfm.c:70
 msgid ""
 "Open folders in new tabs of the last used window instead of creating new "
 "windows"
 msgstr "Mappák megnyitása a legutóbbi ablak lapjain új ablak helyett"
 
-#: ../src/pcmanfm.c:70
+#: ../src/pcmanfm.c:71
 #, fuzzy
 msgid "Name of configuration profile"
 msgstr "Beállító profil neve"
 
-#: ../src/pcmanfm.c:71
+#: ../src/pcmanfm.c:72
 msgid "Launch desktop manager"
 msgstr "Asztal kezelő futtatása"
 
-#: ../src/pcmanfm.c:72
+#: ../src/pcmanfm.c:73
 msgid "Turn off desktop manager if it's running"
 msgstr "Asztalkezelő kikapcsolása, ha fut"
 
-#: ../src/pcmanfm.c:73
+#: ../src/pcmanfm.c:74
 msgid "Run PCManFM as a daemon"
 msgstr "PCManFM futtatása démonként"
 
-#: ../src/pcmanfm.c:74
+#: ../src/pcmanfm.c:75
 msgid "Open desktop preference dialog"
 msgstr "Asztal jellemzők párbeszéd megnyitása"
 
-#: ../src/pcmanfm.c:75
+#: ../src/pcmanfm.c:76
 msgid "Set desktop wallpaper"
 msgstr "Asztali tapéta beállítása"
 
-#: ../src/pcmanfm.c:75
+#: ../src/pcmanfm.c:76
 msgid "<image file>"
 msgstr "<kép fájl>"
 
-#: ../src/pcmanfm.c:76
+#: ../src/pcmanfm.c:77
 #, fuzzy
 msgid ""
 "Open preference dialog. 'n' is number of the page you want to show (1, 2, "
@@ -569,17 +593,34 @@ msgstr ""
 "Tulajdonságok ablak megnyitása. 'n' a lap száma amit szeretnél megjeleníteni "
 "(1, 2, 3...)."
 
-#: ../src/pcmanfm.c:77
+#: ../src/pcmanfm.c:78
 msgid "Open Find Files utility"
 msgstr "Fájlkereső megnyitása"
 
-#: ../src/pcmanfm.c:78
+#: ../src/pcmanfm.c:79
 msgid "No function. Just to be compatible with nautilus"
 msgstr "Nincs funkciója csak a Nautilus-kompatibilitást nyújtja"
 
-#: ../src/pcmanfm.c:79
+#: ../src/pcmanfm.c:80
 msgid "[FILE1, FILE2,...]"
 msgstr "[FÁJL1, FÁJL2,...]"
+
+#: ../src/pcmanfm.c:544
+#, fuzzy
+msgid "Terminal emulator is not set."
+msgstr "Nem állítottál be Terminál programot"
+
+#: ../src/pcmanfm.c:587
+msgid "Create New..."
+msgstr "Új..."
+
+#: ../src/pcmanfm.c:587
+msgid "Enter a name for the newly created file:"
+msgstr "Adj nevet az új fájlnak:"
+
+#: ../src/pcmanfm.c:587
+msgid "New"
+msgstr "Új"
 
 #~ msgid "Display image files with supported format as thumbnails"
 #~ msgstr "Támogatott formátumú fájlok megjelenítése előképként"
@@ -1179,9 +1220,6 @@ msgstr "[FÁJL1, FÁJL2,...]"
 #~ msgid "Go"
 #~ msgstr "Ugrás"
 
-#~ msgid "Warning: You are in super user mode"
-#~ msgstr "Figyelj!: Most rendszergazda módban vagy!"
-
 #~ msgid "_Edit Bookmarks"
 #~ msgstr "Könyvjelzők sz_erkesztése"
 
@@ -1265,9 +1303,6 @@ msgstr "[FÁJL1, FÁJL2,...]"
 
 #~ msgid "Moving to Trash..."
 #~ msgstr "Mozgatás a kukába..."
-
-#~ msgid "Deleting..."
-#~ msgstr "Törlés..."
 
 #~ msgid "Linking..."
 #~ msgstr "Láncolás..."
@@ -1385,9 +1420,6 @@ msgstr "[FÁJL1, FÁJL2,...]"
 
 #~ msgid "_Properties"
 #~ msgstr "T_ulajdonságok"
-
-#~ msgid "Open in Terminal"
-#~ msgstr "Megnyitás Terminálban"
 
 #~ msgid "_Open with another program"
 #~ msgstr "Megnyitás _más programmal"
@@ -1584,9 +1616,6 @@ msgstr "[FÁJL1, FÁJL2,...]"
 #~ msgid "Audio Disc"
 #~ msgstr "Audio lemez"
 
-#~ msgid "%s Removable Volume"
-#~ msgstr "%s eltávolítható kötet"
-
 #~ msgid "Volume"
 #~ msgstr "Kötet"
 
@@ -1712,9 +1741,6 @@ msgstr "[FÁJL1, FÁJL2,...]"
 #~ "     * gnome-vfs: David Zeuthen,\n"
 #~ "     * thunar-vfs és libexo: Benedikt Meurer\n"
 #~ "     * gnome-mount: David Zeuthen"
-
-#~ msgid "PCMan File Manager"
-#~ msgstr "PCMan fájlkezelő"
 
 #~ msgid "Icon Theme:"
 #~ msgstr "Ikon téma:"

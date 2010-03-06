@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-22 00:24+0100\n"
+"POT-Creation-Date: 2010-03-06 22:37+0100\n"
 "PO-Revision-Date: 2010-02-06 18:08+0200\n"
 "Last-Translator: Julius Vitkauskas <zadintuvas@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -290,6 +290,35 @@ msgstr "_Bendra"
 msgid "_Volume Management"
 msgstr "_Tomų valdymas"
 
+#: ../data/ui/autorun.glade.h:1
+msgid "<b>Removable medium is inserted</b>"
+msgstr ""
+
+#: ../data/ui/autorun.glade.h:2
+msgid "Detecting..."
+msgstr ""
+
+#: ../data/ui/autorun.glade.h:3
+msgid "Please select the action you want to perform:"
+msgstr ""
+
+#: ../data/ui/autorun.glade.h:4
+msgid "Removable medium is inserted"
+msgstr ""
+
+#: ../data/ui/autorun.glade.h:5
+msgid "Type of medium:"
+msgstr ""
+
+#: ../src/volume-manager.c:149
+msgid "Removable Disk"
+msgstr ""
+
+#: ../src/volume-manager.c:208
+#, fuzzy
+msgid "Open in File Manager"
+msgstr "Atverti naujoje kortelėje"
+
 #: ../src/desktop-ui.c:53
 msgid "_Invert Selection"
 msgstr "_Rinktis atvirkščiai"
@@ -323,12 +352,17 @@ msgstr "Pagal _pavadinimą"
 msgid "By File _Type"
 msgstr ""
 
-#: ../src/desktop-ui.c:87 ../src/main-win-ui.c:213
+#: ../src/desktop-ui.c:88 ../src/main-win-ui.c:214
 msgid "Open in New Tab"
 msgstr "Atverti naujoje kortelėje"
 
-#: ../src/desktop-ui.c:88 ../src/main-win-ui.c:214
+#: ../src/desktop-ui.c:89 ../src/main-win-ui.c:215
 msgid "Open in New Window"
+msgstr "Atverti naujame lange"
+
+#: ../src/desktop-ui.c:91 ../src/main-win-ui.c:217
+#, fuzzy
+msgid "Open in _Terminal"
 msgstr "Atverti naujame lange"
 
 #: ../src/main-win-ui.c:126
@@ -479,20 +513,20 @@ msgstr "_Miniatiūros"
 msgid "Detailed _List View"
 msgstr "_Išsamus sąrašas"
 
-#: ../src/main-win.c:554
-msgid "Terminal emulator is not set."
+#: ../src/main-win.c:495
+msgid "You are in super user mode"
 msgstr ""
 
-#: ../src/main-win.c:600
+#: ../src/main-win.c:596
 msgid "Switch user command is not set."
 msgstr ""
 
-#: ../src/main-win.c:947
+#: ../src/main-win.c:944
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Laisvos vietos: %s (Iš viso: %s )"
 
-#: ../src/main-win.c:1152
+#: ../src/main-win.c:1150
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -500,75 +534,79 @@ msgid ""
 "Enter a name for the new bookmark item:"
 msgstr ""
 
-#: ../src/main-win.c:1156
+#: ../src/main-win.c:1154
 #, fuzzy
 msgid "Add to Bookmarks"
 msgstr "Įtraukti į žymeles"
 
-#: ../src/main-win.c:1228
-msgid "Create New..."
-msgstr "Sukurti naują..."
-
-#: ../src/main-win.c:1228
-msgid "Enter a name for the newly created file:"
-msgstr "Įveskite naujo failo pavadinimą:"
-
-#: ../src/main-win.c:1228
-msgid "New"
-msgstr "Nauja"
-
-#: ../src/pcmanfm.c:69
+#: ../src/pcmanfm.c:70
 msgid ""
 "Open folders in new tabs of the last used window instead of creating new "
 "windows"
 msgstr "Atverti aplankus kortelėse, o ne atskiruose languose"
 
-#: ../src/pcmanfm.c:70
+#: ../src/pcmanfm.c:71
 msgid "Name of configuration profile"
 msgstr "Konfigūracijos profilio pavadinimas"
 
-#: ../src/pcmanfm.c:71
+#: ../src/pcmanfm.c:72
 msgid "Launch desktop manager"
 msgstr "Paleisti darbastalio tvarkyklę"
 
-#: ../src/pcmanfm.c:72
+#: ../src/pcmanfm.c:73
 msgid "Turn off desktop manager if it's running"
 msgstr "Išjungti darbastalio tvarkyklę (jei ji veikia)"
 
-#: ../src/pcmanfm.c:73
+#: ../src/pcmanfm.c:74
 msgid "Run PCManFM as a daemon"
 msgstr "Paleisti PCManFM kaip demoną"
 
-#: ../src/pcmanfm.c:74
+#: ../src/pcmanfm.c:75
 msgid "Open desktop preference dialog"
 msgstr "Atverti darbastalio nustatymų dialogą"
 
-#: ../src/pcmanfm.c:75
+#: ../src/pcmanfm.c:76
 msgid "Set desktop wallpaper"
 msgstr "Nustatyti darbastalio foną"
 
-#: ../src/pcmanfm.c:75
+#: ../src/pcmanfm.c:76
 msgid "<image file>"
 msgstr "<paveikslėlis>"
 
-#: ../src/pcmanfm.c:76
+#: ../src/pcmanfm.c:77
 msgid ""
 "Open preference dialog. 'n' is number of the page you want to show (1, 2, "
 "3...)."
 msgstr ""
 "Atverti nustatymų dialogą. 'n' yra rodomo puslapio pavadinimas (1, 2, 3...)."
 
-#: ../src/pcmanfm.c:77
+#: ../src/pcmanfm.c:78
 msgid "Open Find Files utility"
 msgstr "Atverti failų paieškos programą"
 
-#: ../src/pcmanfm.c:78
+#: ../src/pcmanfm.c:79
 msgid "No function. Just to be compatible with nautilus"
 msgstr "Jokios funkcijos. Reikalinga tik suderinamumui su nautilus"
 
-#: ../src/pcmanfm.c:79
+#: ../src/pcmanfm.c:80
 msgid "[FILE1, FILE2,...]"
 msgstr "[FAILAS1, FAILAS2,...]"
+
+#: ../src/pcmanfm.c:544
+msgid "Terminal emulator is not set."
+msgstr ""
+
+#: ../src/pcmanfm.c:587
+msgid "Create New..."
+msgstr "Sukurti naują..."
+
+#: ../src/pcmanfm.c:587
+msgid "Enter a name for the newly created file:"
+msgstr "Įveskite naujo failo pavadinimą:"
+
+#: ../src/pcmanfm.c:587
+msgid "New"
+msgstr "Nauja"
 
 #~ msgid "Display image files with supported format as thumbnails"
 #~ msgstr "Rodyti paveikslėlių miniatiūras"

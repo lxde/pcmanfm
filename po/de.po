@@ -2,12 +2,12 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm 0.9\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-06 04:14+0000\n"
+"POT-Creation-Date: 2010-03-06 22:37+0100\n"
 "PO-Revision-Date: 2010-03-03 05:17+0100\n"
 "Last-Translator: Christoph Wickert <cwickert@fedoraproject.org>\n"
 "Language-Team: German\n"
@@ -187,7 +187,8 @@ msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
 "%s = the command line you want to execute with terminal or su."
 msgstr ""
-"Beispiele: \"xterm -e %s\" für Terminal oder \"gksu %s\" zum Benutzerwechsel.\n"
+"Beispiele: \"xterm -e %s\" für Terminal oder \"gksu %s\" zum "
+"Benutzerwechsel.\n"
 "%s = Befehlszeile, die im Terminal oder mit su ausgeführt werden soll."
 
 #: ../data/ui/pref.glade.h:16
@@ -289,6 +290,35 @@ msgstr "All_gemein"
 #: ../data/ui/pref.glade.h:43
 msgid "_Volume Management"
 msgstr "Datenträger_verwaltung"
+
+#: ../data/ui/autorun.glade.h:1
+msgid "<b>Removable medium is inserted</b>"
+msgstr ""
+
+#: ../data/ui/autorun.glade.h:2
+msgid "Detecting..."
+msgstr ""
+
+#: ../data/ui/autorun.glade.h:3
+msgid "Please select the action you want to perform:"
+msgstr ""
+
+#: ../data/ui/autorun.glade.h:4
+msgid "Removable medium is inserted"
+msgstr ""
+
+#: ../data/ui/autorun.glade.h:5
+msgid "Type of medium:"
+msgstr ""
+
+#: ../src/volume-manager.c:149
+msgid "Removable Disk"
+msgstr ""
+
+#: ../src/volume-manager.c:208
+#, fuzzy
+msgid "Open in File Manager"
+msgstr "In einem neuen Reiter öffnen"
 
 #: ../src/desktop-ui.c:53
 msgid "_Invert Selection"
@@ -490,7 +520,8 @@ msgstr ""
 
 #: ../src/main-win.c:596
 msgid "Switch user command is not set."
-msgstr "Es wurde kein Befehl zum Benutzerwechsel ist in den Einstellungen angegeben."
+msgstr ""
+"Es wurde kein Befehl zum Benutzerwechsel ist in den Einstellungen angegeben."
 
 #: ../src/main-win.c:944
 #, c-format
@@ -513,8 +544,12 @@ msgid "Add to Bookmarks"
 msgstr "Lesezeichen hinzufügen"
 
 #: ../src/pcmanfm.c:70
-msgid "Open folders in new tabs of the last used window instead of creating new windows"
-msgstr "Ordner in neuen Reitern des zuletzt benutzten Fensters öffnen, anstatt neue Fenster zu öffnen"
+msgid ""
+"Open folders in new tabs of the last used window instead of creating new "
+"windows"
+msgstr ""
+"Ordner in neuen Reitern des zuletzt benutzten Fensters öffnen, anstatt neue "
+"Fenster zu öffnen"
 
 #: ../src/pcmanfm.c:71
 msgid "Name of configuration profile"
@@ -545,8 +580,12 @@ msgid "<image file>"
 msgstr "<Bilddatei>"
 
 #: ../src/pcmanfm.c:77
-msgid "Open preference dialog. 'n' is number of the page you want to show (1, 2, 3...)."
-msgstr "Einstellungen öffnen,  wobei 'n' der Reiter ist, den Sie anzeigen möchten (1, 2, 3 ...)."
+msgid ""
+"Open preference dialog. 'n' is number of the page you want to show (1, 2, "
+"3...)."
+msgstr ""
+"Einstellungen öffnen,  wobei 'n' der Reiter ist, den Sie anzeigen möchten "
+"(1, 2, 3 ...)."
 
 #: ../src/pcmanfm.c:78
 msgid "Open Find Files utility"

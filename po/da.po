@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-27 07:50+0800\n"
+"POT-Creation-Date: 2010-03-06 22:37+0100\n"
 "PO-Revision-Date: 2010-02-22 17:30+01:00\n"
 "Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
@@ -291,6 +291,35 @@ msgstr "_Generelt"
 msgid "_Volume Management"
 msgstr "_Arkivhåndtering"
 
+#: ../data/ui/autorun.glade.h:1
+msgid "<b>Removable medium is inserted</b>"
+msgstr ""
+
+#: ../data/ui/autorun.glade.h:2
+msgid "Detecting..."
+msgstr ""
+
+#: ../data/ui/autorun.glade.h:3
+msgid "Please select the action you want to perform:"
+msgstr ""
+
+#: ../data/ui/autorun.glade.h:4
+msgid "Removable medium is inserted"
+msgstr ""
+
+#: ../data/ui/autorun.glade.h:5
+msgid "Type of medium:"
+msgstr ""
+
+#: ../src/volume-manager.c:149
+msgid "Removable Disk"
+msgstr ""
+
+#: ../src/volume-manager.c:208
+#, fuzzy
+msgid "Open in File Manager"
+msgstr "Åbn i nyt faneblad"
+
 #: ../src/desktop-ui.c:53
 msgid "_Invert Selection"
 msgstr "_Vend markering"
@@ -324,13 +353,18 @@ msgstr "Efter _størrelse"
 msgid "By File _Type"
 msgstr "Efter _filtype"
 
-#: ../src/desktop-ui.c:87 ../src/main-win-ui.c:213
+#: ../src/desktop-ui.c:88 ../src/main-win-ui.c:214
 msgid "Open in New Tab"
 msgstr "Åbn i nyt faneblad"
 
-#: ../src/desktop-ui.c:88 ../src/main-win-ui.c:214
+#: ../src/desktop-ui.c:89 ../src/main-win-ui.c:215
 msgid "Open in New Window"
 msgstr "Åbn i nyt vindue"
+
+#: ../src/desktop-ui.c:91 ../src/main-win-ui.c:217
+#, fuzzy
+msgid "Open in _Terminal"
+msgstr "Åbn aktuel mappe i _terminal"
 
 #: ../src/main-win-ui.c:126
 msgid "_File"
@@ -481,20 +515,20 @@ msgstr "_Miniaturebilledvisning"
 msgid "Detailed _List View"
 msgstr "Detaljeret _listevisning"
 
-#: ../src/main-win.c:562
-msgid "Terminal emulator is not set."
-msgstr "Terminalemulator er ikke angivet."
+#: ../src/main-win.c:495
+msgid "You are in super user mode"
+msgstr ""
 
-#: ../src/main-win.c:608
+#: ../src/main-win.c:596
 msgid "Switch user command is not set."
 msgstr "Kommando for brugerskift er ikke angivet."
 
-#: ../src/main-win.c:955
+#: ../src/main-win.c:944
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Ledig plads: %s (I alt: %s)"
 
-#: ../src/main-win.c:1161
+#: ../src/main-win.c:1150
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -505,23 +539,11 @@ msgstr ""
 "»%s«\n"
 "Indtast et navn for det nye bogmærkeelement:"
 
-#: ../src/main-win.c:1165
+#: ../src/main-win.c:1154
 msgid "Add to Bookmarks"
 msgstr "Tilføj til bogmærker"
 
-#: ../src/main-win.c:1237
-msgid "Create New..."
-msgstr "Opret ny..."
-
-#: ../src/main-win.c:1237
-msgid "Enter a name for the newly created file:"
-msgstr "Indtast et navn for den netop oprettede fil:"
-
-#: ../src/main-win.c:1237
-msgid "New"
-msgstr "Ny"
-
-#: ../src/pcmanfm.c:69
+#: ../src/pcmanfm.c:70
 msgid ""
 "Open folders in new tabs of the last used window instead of creating new "
 "windows"
@@ -529,36 +551,36 @@ msgstr ""
 "Åbn mapper i nye faneblade i det sidst brugte vindue frem for at oprette nye "
 "vinduer"
 
-#: ../src/pcmanfm.c:70
+#: ../src/pcmanfm.c:71
 msgid "Name of configuration profile"
 msgstr "Navn på konfigurationsprofil"
 
-#: ../src/pcmanfm.c:71
+#: ../src/pcmanfm.c:72
 msgid "Launch desktop manager"
 msgstr "Start skrivebordshåndtering"
 
-#: ../src/pcmanfm.c:72
+#: ../src/pcmanfm.c:73
 msgid "Turn off desktop manager if it's running"
 msgstr "Sluk skrivebordshåndtering hvis den er i gang"
 
-#: ../src/pcmanfm.c:73
+#: ../src/pcmanfm.c:74
 msgid "Run PCManFM as a daemon"
 msgstr "Kør PCManFM som dæmon"
 
-#: ../src/pcmanfm.c:74
+#: ../src/pcmanfm.c:75
 msgid "Open desktop preference dialog"
 msgstr "Åbn skrivebordets indstillingsdialog"
 
-#: ../src/pcmanfm.c:75
+#: ../src/pcmanfm.c:76
 msgid "Set desktop wallpaper"
 msgstr "Angiv baggrundsbillede for skrivebord"
 
-#: ../src/pcmanfm.c:75
+#: ../src/pcmanfm.c:76
 msgid "<image file>"
 msgstr "<billedfil>"
 
 # page -> pages
-#: ../src/pcmanfm.c:76
+#: ../src/pcmanfm.c:77
 msgid ""
 "Open preference dialog. 'n' is number of the page you want to show (1, 2, "
 "3...)."
@@ -566,17 +588,33 @@ msgstr ""
 "Åbn indstillingsdialog. »n« er antallet af sider du ønsker at vise (1, 2, "
 "3...)."
 
-#: ../src/pcmanfm.c:77
+#: ../src/pcmanfm.c:78
 msgid "Open Find Files utility"
 msgstr "Åbn værktøjet til Find filer"
 
-#: ../src/pcmanfm.c:78
+#: ../src/pcmanfm.c:79
 msgid "No function. Just to be compatible with nautilus"
 msgstr "Ingen funktion. Kun for at værek kompatibel med nautilus"
 
-#: ../src/pcmanfm.c:79
+#: ../src/pcmanfm.c:80
 msgid "[FILE1, FILE2,...]"
 msgstr "[FIL1, FIL2,...]"
+
+#: ../src/pcmanfm.c:544
+msgid "Terminal emulator is not set."
+msgstr "Terminalemulator er ikke angivet."
+
+#: ../src/pcmanfm.c:587
+msgid "Create New..."
+msgstr "Opret ny..."
+
+#: ../src/pcmanfm.c:587
+msgid "Enter a name for the newly created file:"
+msgstr "Indtast et navn for den netop oprettede fil:"
+
+#: ../src/pcmanfm.c:587
+msgid "New"
+msgstr "Ny"
 
 #~ msgid "Display image files with supported format as thumbnails"
 #~ msgstr "Vis billedfiler med understøttet format som miniaturebilleder"

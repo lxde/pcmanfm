@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-27 04:12+0000\n"
+"POT-Creation-Date: 2010-03-06 22:37+0100\n"
 "PO-Revision-Date: 2010-02-28 16:06+0100\n"
 "Last-Translator: Piotr Sokół <piotr.sokol@10g.pl>\n"
 "Language-Team: \n"
@@ -15,7 +15,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Language: Polish\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009"
@@ -57,8 +58,7 @@ msgstr "Wygląd"
 msgid "Background color:"
 msgstr "Kolor tła:"
 
-#: ../data/ui/desktop-pref.glade.h:7
-#: ../data/ui/pref.glade.h:8
+#: ../data/ui/desktop-pref.glade.h:7 ../data/ui/pref.glade.h:8
 msgid "Center on the screen"
 msgstr ""
 
@@ -74,8 +74,7 @@ msgstr ""
 msgid "Desktop Icons"
 msgstr "Ikony pulpitu"
 
-#: ../data/ui/desktop-pref.glade.h:11
-#: ../src/desktop-ui.c:58
+#: ../data/ui/desktop-pref.glade.h:11 ../src/desktop-ui.c:58
 msgid "Desktop Preferences"
 msgstr "Preferencje pulpitu"
 
@@ -111,18 +110,15 @@ msgstr ""
 msgid "Show menus provided by WM when desktop is clicked"
 msgstr ""
 
-#: ../data/ui/desktop-pref.glade.h:20
-#: ../data/ui/pref.glade.h:32
+#: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:32
 msgid "Stretch to fill the entire screen"
 msgstr ""
 
-#: ../data/ui/desktop-pref.glade.h:21
-#: ../data/ui/pref.glade.h:33
+#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:33
 msgid "Stretch to fit the screen"
 msgstr ""
 
-#: ../data/ui/desktop-pref.glade.h:22
-#: ../data/ui/pref.glade.h:37
+#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:37
 msgid "Tile the image to fill the entire screen"
 msgstr ""
 
@@ -285,17 +281,44 @@ msgstr "_Ogólne"
 msgid "_Volume Management"
 msgstr ""
 
+#: ../data/ui/autorun.glade.h:1
+msgid "<b>Removable medium is inserted</b>"
+msgstr ""
+
+#: ../data/ui/autorun.glade.h:2
+msgid "Detecting..."
+msgstr ""
+
+#: ../data/ui/autorun.glade.h:3
+msgid "Please select the action you want to perform:"
+msgstr ""
+
+#: ../data/ui/autorun.glade.h:4
+msgid "Removable medium is inserted"
+msgstr ""
+
+#: ../data/ui/autorun.glade.h:5
+msgid "Type of medium:"
+msgstr ""
+
+#: ../src/volume-manager.c:149
+msgid "Removable Disk"
+msgstr ""
+
+#: ../src/volume-manager.c:208
+#, fuzzy
+msgid "Open in File Manager"
+msgstr "Otwórz w nowej karcie"
+
 #: ../src/desktop-ui.c:53
 msgid "_Invert Selection"
 msgstr ""
 
-#: ../src/desktop-ui.c:54
-#: ../src/main-win-ui.c:144
+#: ../src/desktop-ui.c:54 ../src/main-win-ui.c:144
 msgid "_Sort Files"
 msgstr "_Sortowanie"
 
-#: ../src/desktop-ui.c:56
-#: ../src/main-win-ui.c:168
+#: ../src/desktop-ui.c:56 ../src/main-win-ui.c:168
 msgid "Folder"
 msgstr "Katalog"
 
@@ -303,35 +326,34 @@ msgstr "Katalog"
 msgid "Blank File"
 msgstr "Pusty plik"
 
-#: ../src/desktop-ui.c:69
-#: ../src/main-win-ui.c:194
+#: ../src/desktop-ui.c:69 ../src/main-win-ui.c:194
 msgid "By _Name"
 msgstr "Według _nazwy"
 
-#: ../src/desktop-ui.c:70
-#: ../src/main-win-ui.c:195
+#: ../src/desktop-ui.c:70 ../src/main-win-ui.c:195
 msgid "By _Modification Time"
 msgstr "Według czasu _modyfikacji"
 
-#: ../src/desktop-ui.c:71
-#: ../src/main-win-ui.c:196
+#: ../src/desktop-ui.c:71 ../src/main-win-ui.c:196
 msgid "By _Size"
 msgstr "Według _rozmiaru"
 
-#: ../src/desktop-ui.c:72
-#: ../src/main-win-ui.c:197
+#: ../src/desktop-ui.c:72 ../src/main-win-ui.c:197
 msgid "By File _Type"
 msgstr "Według _typu"
 
-#: ../src/desktop-ui.c:87
-#: ../src/main-win-ui.c:213
+#: ../src/desktop-ui.c:88 ../src/main-win-ui.c:214
 msgid "Open in New Tab"
 msgstr "Otwórz w nowej karcie"
 
-#: ../src/desktop-ui.c:88
-#: ../src/main-win-ui.c:214
+#: ../src/desktop-ui.c:89 ../src/main-win-ui.c:215
 msgid "Open in New Window"
 msgstr "Otwórz w nowym oknie"
+
+#: ../src/desktop-ui.c:91 ../src/main-win-ui.c:217
+#, fuzzy
+msgid "Open in _Terminal"
+msgstr "Otwórz bieżący katalog w _terminalu"
 
 #: ../src/main-win-ui.c:126
 msgid "_File"
@@ -482,20 +504,20 @@ msgstr "_Miniatury"
 msgid "Detailed _List View"
 msgstr "_Lista szczegółowa"
 
-#: ../src/main-win.c:562
-msgid "Terminal emulator is not set."
-msgstr "Nie zdefiniowano polecenia emulatora terminala."
+#: ../src/main-win.c:495
+msgid "You are in super user mode"
+msgstr ""
 
-#: ../src/main-win.c:608
+#: ../src/main-win.c:596
 msgid "Switch user command is not set."
 msgstr ""
 
-#: ../src/main-win.c:955
+#: ../src/main-win.c:944
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr ""
 
-#: ../src/main-win.c:1161
+#: ../src/main-win.c:1150
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -506,68 +528,77 @@ msgstr ""
 "„%s”\n"
 "Proszę wprowadzić nazwę nowej zakładki:"
 
-#: ../src/main-win.c:1165
+#: ../src/main-win.c:1154
 msgid "Add to Bookmarks"
 msgstr "Dodaj..."
 
-#: ../src/main-win.c:1237
-msgid "Create New..."
-msgstr "Utwórz nowy..."
-
-#: ../src/main-win.c:1237
-msgid "Enter a name for the newly created file:"
-msgstr "Proszę wprowadzić nazwę pliku:"
-
-#: ../src/main-win.c:1237
-msgid "New"
-msgstr "Nowy"
-
-#: ../src/pcmanfm.c:69
-msgid "Open folders in new tabs of the last used window instead of creating new windows"
+#: ../src/pcmanfm.c:70
+msgid ""
+"Open folders in new tabs of the last used window instead of creating new "
+"windows"
 msgstr ""
 
-#: ../src/pcmanfm.c:70
+#: ../src/pcmanfm.c:71
 #, fuzzy
 msgid "Name of configuration profile"
 msgstr "Nazwa profilu"
 
-#: ../src/pcmanfm.c:71
+#: ../src/pcmanfm.c:72
 msgid "Launch desktop manager"
 msgstr ""
 
-#: ../src/pcmanfm.c:72
+#: ../src/pcmanfm.c:73
 msgid "Turn off desktop manager if it's running"
 msgstr ""
 
-#: ../src/pcmanfm.c:73
+#: ../src/pcmanfm.c:74
 msgid "Run PCManFM as a daemon"
 msgstr ""
 
-#: ../src/pcmanfm.c:74
+#: ../src/pcmanfm.c:75
 msgid "Open desktop preference dialog"
 msgstr ""
 
-#: ../src/pcmanfm.c:75
+#: ../src/pcmanfm.c:76
 msgid "Set desktop wallpaper"
 msgstr "Ustaw tło pulpitu"
 
-#: ../src/pcmanfm.c:75
+#: ../src/pcmanfm.c:76
 msgid "<image file>"
 msgstr "<plik obrazu>"
 
-#: ../src/pcmanfm.c:76
-msgid "Open preference dialog. 'n' is number of the page you want to show (1, 2, 3...)."
-msgstr "Otwiera okno dialogowe preferencji, gdzie „n” jest numerem karty okna (1, 2, 3...)."
-
 #: ../src/pcmanfm.c:77
+msgid ""
+"Open preference dialog. 'n' is number of the page you want to show (1, 2, "
+"3...)."
+msgstr ""
+"Otwiera okno dialogowe preferencji, gdzie „n” jest numerem karty okna (1, 2, "
+"3...)."
+
+#: ../src/pcmanfm.c:78
 msgid "Open Find Files utility"
 msgstr ""
 
-#: ../src/pcmanfm.c:78
+#: ../src/pcmanfm.c:79
 msgid "No function. Just to be compatible with nautilus"
 msgstr ""
 
-#: ../src/pcmanfm.c:79
+#: ../src/pcmanfm.c:80
 msgid "[FILE1, FILE2,...]"
 msgstr "[PLIK1, PLIK2,...]"
 
+#: ../src/pcmanfm.c:544
+msgid "Terminal emulator is not set."
+msgstr "Nie zdefiniowano polecenia emulatora terminala."
+
+#: ../src/pcmanfm.c:587
+msgid "Create New..."
+msgstr "Utwórz nowy..."
+
+#: ../src/pcmanfm.c:587
+msgid "Enter a name for the newly created file:"
+msgstr "Proszę wprowadzić nazwę pliku:"
+
+#: ../src/pcmanfm.c:587
+msgid "New"
+msgstr "Nowy"

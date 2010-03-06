@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-27 04:12+0000\n"
+"POT-Creation-Date: 2010-03-06 22:37+0100\n"
 "PO-Revision-Date: 2010-02-27 15:56+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -60,8 +60,7 @@ msgstr "מראה"
 msgid "Background color:"
 msgstr "צבע הרקע:"
 
-#: ../data/ui/desktop-pref.glade.h:7
-#: ../data/ui/pref.glade.h:8
+#: ../data/ui/desktop-pref.glade.h:7 ../data/ui/pref.glade.h:8
 msgid "Center on the screen"
 msgstr "ממורכז על גבי המסך"
 
@@ -77,8 +76,7 @@ msgstr "צבע הצל:"
 msgid "Desktop Icons"
 msgstr "סמלי שולחן העבודה"
 
-#: ../data/ui/desktop-pref.glade.h:11
-#: ../src/desktop-ui.c:58
+#: ../data/ui/desktop-pref.glade.h:11 ../src/desktop-ui.c:58
 msgid "Desktop Preferences"
 msgstr "העדפות שולחן העבודה"
 
@@ -114,18 +112,15 @@ msgstr "הצגת סמלים ליחידות אחסון על שולחן העבוד
 msgid "Show menus provided by WM when desktop is clicked"
 msgstr "הצגת התפריטים בעת הלחיצה על הרקע מתבצעת על ידי מנהל החלונות"
 
-#: ../data/ui/desktop-pref.glade.h:20
-#: ../data/ui/pref.glade.h:32
+#: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:32
 msgid "Stretch to fill the entire screen"
 msgstr "מתיחה כדי למלא את המסך כולו"
 
-#: ../data/ui/desktop-pref.glade.h:21
-#: ../data/ui/pref.glade.h:33
+#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:33
 msgid "Stretch to fit the screen"
 msgstr "מתיחה לצורך התאמה למסך"
 
-#: ../data/ui/desktop-pref.glade.h:22
-#: ../data/ui/pref.glade.h:37
+#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:37
 msgid "Tile the image to fill the entire screen"
 msgstr "פריסת התמונה כך שתמלא את המסך כולו"
 
@@ -268,7 +263,8 @@ msgstr "תצוגת תמונות ממוזערות"
 
 #: ../data/ui/pref.glade.h:38
 msgid "Use SI decimal prefixes instead of IEC binary prefixes"
-msgstr "שימוש בקידומות עשרוניות לפי תקן ה־SI במקום קידומות בינאריות לפי תקן ה־IEC"
+msgstr ""
+"שימוש בקידומות עשרוניות לפי תקן ה־SI במקום קידומות בינאריות לפי תקן ה־IEC"
 
 #: ../data/ui/pref.glade.h:39
 msgid "View Mode:"
@@ -290,17 +286,46 @@ msgstr "_כללי"
 msgid "_Volume Management"
 msgstr "_ניהול התקני אחסון"
 
+#: ../data/ui/autorun.glade.h:1
+msgid "<b>Removable medium is inserted</b>"
+msgstr ""
+
+#: ../data/ui/autorun.glade.h:2
+#, fuzzy
+msgid "Detecting..."
+msgstr "בהליכי מחיקה..."
+
+#: ../data/ui/autorun.glade.h:3
+msgid "Please select the action you want to perform:"
+msgstr ""
+
+#: ../data/ui/autorun.glade.h:4
+msgid "Removable medium is inserted"
+msgstr ""
+
+#: ../data/ui/autorun.glade.h:5
+msgid "Type of medium:"
+msgstr ""
+
+#: ../src/volume-manager.c:149
+#, fuzzy
+msgid "Removable Disk"
+msgstr "כרך %s נתיק"
+
+#: ../src/volume-manager.c:208
+#, fuzzy
+msgid "Open in File Manager"
+msgstr "פתיחת חלונית הצד"
+
 #: ../src/desktop-ui.c:53
 msgid "_Invert Selection"
 msgstr "הי_פוך הבחירה"
 
-#: ../src/desktop-ui.c:54
-#: ../src/main-win-ui.c:144
+#: ../src/desktop-ui.c:54 ../src/main-win-ui.c:144
 msgid "_Sort Files"
 msgstr "_מיון קבצים"
 
-#: ../src/desktop-ui.c:56
-#: ../src/main-win-ui.c:168
+#: ../src/desktop-ui.c:56 ../src/main-win-ui.c:168
 msgid "Folder"
 msgstr "תיקייה"
 
@@ -308,35 +333,34 @@ msgstr "תיקייה"
 msgid "Blank File"
 msgstr "קובץ ריק"
 
-#: ../src/desktop-ui.c:69
-#: ../src/main-win-ui.c:194
+#: ../src/desktop-ui.c:69 ../src/main-win-ui.c:194
 msgid "By _Name"
 msgstr "לפי _שם"
 
-#: ../src/desktop-ui.c:70
-#: ../src/main-win-ui.c:195
+#: ../src/desktop-ui.c:70 ../src/main-win-ui.c:195
 msgid "By _Modification Time"
 msgstr "לפי מועד ה_שינוי האחרון"
 
-#: ../src/desktop-ui.c:71
-#: ../src/main-win-ui.c:196
+#: ../src/desktop-ui.c:71 ../src/main-win-ui.c:196
 msgid "By _Size"
 msgstr "לפי _גודל"
 
-#: ../src/desktop-ui.c:72
-#: ../src/main-win-ui.c:197
+#: ../src/desktop-ui.c:72 ../src/main-win-ui.c:197
 msgid "By File _Type"
 msgstr "לפי _סוג קובץ"
 
-#: ../src/desktop-ui.c:87
-#: ../src/main-win-ui.c:213
+#: ../src/desktop-ui.c:88 ../src/main-win-ui.c:214
 msgid "Open in New Tab"
 msgstr "פתיחה בלשונית חדשה"
 
-#: ../src/desktop-ui.c:88
-#: ../src/main-win-ui.c:214
+#: ../src/desktop-ui.c:89 ../src/main-win-ui.c:215
 msgid "Open in New Window"
 msgstr "פתיחה בחלון חדש"
+
+#: ../src/desktop-ui.c:91 ../src/main-win-ui.c:217
+#, fuzzy
+msgid "Open in _Terminal"
+msgstr "פתיחה במסוף"
 
 #: ../src/main-win-ui.c:126
 msgid "_File"
@@ -486,20 +510,21 @@ msgstr "תצוגת ת_מונות ממוזערת"
 msgid "Detailed _List View"
 msgstr "תצוגת רשימה מ_פורטת"
 
-#: ../src/main-win.c:562
-msgid "Terminal emulator is not set."
-msgstr "מדמה המסוף לא הוגדר."
+#: ../src/main-win.c:495
+#, fuzzy
+msgid "You are in super user mode"
+msgstr "אזהרה: המצב הנוכחי הוא מצב משתמש על"
 
-#: ../src/main-win.c:608
+#: ../src/main-win.c:596
 msgid "Switch user command is not set."
 msgstr "פקודת החלפת המשתמש לא הוגדרה."
 
-#: ../src/main-win.c:955
+#: ../src/main-win.c:944
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "מקום פנוי: %s (סך הכל: %s )"
 
-#: ../src/main-win.c:1161
+#: ../src/main-win.c:1150
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -510,69 +535,78 @@ msgstr ""
 "'%s'\n"
 "יש להזין שם עבור פריט הסימנייה החדשה:"
 
-#: ../src/main-win.c:1165
+#: ../src/main-win.c:1154
 msgid "Add to Bookmarks"
 msgstr "הוספה לסימניות"
 
-#: ../src/main-win.c:1237
-msgid "Create New..."
-msgstr "יצירת חדש..."
-
-#: ../src/main-win.c:1237
-msgid "Enter a name for the newly created file:"
-msgstr "יש להזין שם עבור הקובץ החדש שנוצר:"
-
-#: ../src/main-win.c:1237
-msgid "New"
-msgstr "חדש"
-
-#: ../src/pcmanfm.c:69
-msgid "Open folders in new tabs of the last used window instead of creating new windows"
+#: ../src/pcmanfm.c:70
+msgid ""
+"Open folders in new tabs of the last used window instead of creating new "
+"windows"
 msgstr "פתיחת תיקיות בלשוניות חדשות בתוך החלון הפעיל במקום בחלונות חדשים"
 
-#: ../src/pcmanfm.c:70
+#: ../src/pcmanfm.c:71
 msgid "Name of configuration profile"
 msgstr "שם פרופיל התצורה"
 
-#: ../src/pcmanfm.c:71
+#: ../src/pcmanfm.c:72
 msgid "Launch desktop manager"
 msgstr "טעינת מנהל שולחן העבודה"
 
-#: ../src/pcmanfm.c:72
+#: ../src/pcmanfm.c:73
 msgid "Turn off desktop manager if it's running"
 msgstr "כיבוי מנהל שולחן העבודה במידה שהוא פעיל"
 
-#: ../src/pcmanfm.c:73
+#: ../src/pcmanfm.c:74
 msgid "Run PCManFM as a daemon"
 msgstr "הרצת PCManFM כסוכן ברקע"
 
-#: ../src/pcmanfm.c:74
+#: ../src/pcmanfm.c:75
 msgid "Open desktop preference dialog"
 msgstr "פתיחת דו־שיח העדפות שולחן העבודה"
 
-#: ../src/pcmanfm.c:75
+#: ../src/pcmanfm.c:76
 msgid "Set desktop wallpaper"
 msgstr "הגדרת רקע שולחן העבודה"
 
-#: ../src/pcmanfm.c:75
+#: ../src/pcmanfm.c:76
 msgid "<image file>"
 msgstr "<קובץ תמונה>"
 
-#: ../src/pcmanfm.c:76
-msgid "Open preference dialog. 'n' is number of the page you want to show (1, 2, 3...)."
-msgstr "פתיחת תיבת דו־שיח ההעדפות. 'n' יהיה מספר העמודים המבוקש להצגה (1, 2, 3...)."
-
 #: ../src/pcmanfm.c:77
+msgid ""
+"Open preference dialog. 'n' is number of the page you want to show (1, 2, "
+"3...)."
+msgstr ""
+"פתיחת תיבת דו־שיח ההעדפות. 'n' יהיה מספר העמודים המבוקש להצגה (1, 2, 3...)."
+
+#: ../src/pcmanfm.c:78
 msgid "Open Find Files utility"
 msgstr "פתיחת הכלי למציאת קבצים"
 
-#: ../src/pcmanfm.c:78
+#: ../src/pcmanfm.c:79
 msgid "No function. Just to be compatible with nautilus"
 msgstr "אין פונקציה. נועד לצורכי תאימות עם nautilus"
 
-#: ../src/pcmanfm.c:79
+#: ../src/pcmanfm.c:80
 msgid "[FILE1, FILE2,...]"
 msgstr "[FILE1, FILE2,...]"
+
+#: ../src/pcmanfm.c:544
+msgid "Terminal emulator is not set."
+msgstr "מדמה המסוף לא הוגדר."
+
+#: ../src/pcmanfm.c:587
+msgid "Create New..."
+msgstr "יצירת חדש..."
+
+#: ../src/pcmanfm.c:587
+msgid "Enter a name for the newly created file:"
+msgstr "יש להזין שם עבור הקובץ החדש שנוצר:"
+
+#: ../src/pcmanfm.c:587
+msgid "New"
+msgstr "חדש"
 
 #~ msgid "Display image files with supported format as thumbnails"
 #~ msgstr "הצגת תמונות ממוזערות לסוגי קבצים נתמכים"
@@ -1174,14 +1208,8 @@ msgstr "[FILE1, FILE2,...]"
 #~ msgid "Home Directory"
 #~ msgstr "תיקיית הבית"
 
-#~ msgid "Open Side Pane"
-#~ msgstr "פתיחת חלונית הצד"
-
 #~ msgid "Go"
 #~ msgstr "מעבר"
-
-#~ msgid "Warning: You are in super user mode"
-#~ msgstr "אזהרה: המצב הנוכחי הוא מצב משתמש על"
 
 #~ msgid "_Edit Bookmarks"
 #~ msgstr "_עריכת סימניות"
@@ -1190,19 +1218,16 @@ msgstr "[FILE1, FILE2,...]"
 #~ msgstr "בהליכי טעינה..."
 
 #~ msgid "%d item selected (%s)%s"
-
 #~ msgid_plural "%d items selected (%s)%s"
 #~ msgstr[0] "נבחר פריט אחד ‎(%s)%s"
 #~ msgstr[1] "%d פריטים נבחרו ‎(%s)%s"
 
 #~ msgid "%d hidden"
-
 #~ msgid_plural "%d hidden"
 #~ msgstr[0] "אחד מוסתר"
 #~ msgstr[1] "%d מוסתרים"
 
 #~ msgid "%d visible item (%s)%s"
-
 #~ msgid_plural "%d visible items (%s)%s"
 #~ msgstr[0] "פריט גלוי אחד ‎(%s)%s"
 #~ msgstr[1] "%d פריטים גלויים ‎(%s)%s"
@@ -1272,9 +1297,6 @@ msgstr "[FILE1, FILE2,...]"
 
 #~ msgid "Moving to Trash..."
 #~ msgstr "בהליכי העברה אל האשפה..."
-
-#~ msgid "Deleting..."
-#~ msgstr "בהליכי מחיקה..."
 
 #~ msgid "Linking..."
 #~ msgstr "בהליכי קישור..."
@@ -1391,9 +1413,6 @@ msgstr "[FILE1, FILE2,...]"
 
 #~ msgid "_Properties"
 #~ msgstr "_מאפיינים"
-
-#~ msgid "Open in Terminal"
-#~ msgstr "פתיחה במסוף"
 
 #~ msgid "_Open with another program"
 #~ msgstr "_פתיחה באמצעות יישום אחר"
@@ -1589,9 +1608,6 @@ msgstr "[FILE1, FILE2,...]"
 
 #~ msgid "Audio Disc"
 #~ msgstr "דיסק שמע"
-
-#~ msgid "%s Removable Volume"
-#~ msgstr "כרך %s נתיק"
 
 #~ msgid "Volume"
 #~ msgstr "כרך"
