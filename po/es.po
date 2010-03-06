@@ -2,12 +2,12 @@
 # Copyright (C) 2010 the LXDE team
 # This file is distributed under the same license as the pcmanfm2 package.
 # Hugo Florentino <sysadmin@cips.cu>, 2010.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm2 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-06 22:37+0100\n"
+"POT-Creation-Date: 2010-03-06 04:14+0000\n"
 "PO-Revision-Date: 2010-02-09 13:26-0500\n"
 "Last-Translator: Hugo Florentino <sysadmin@cips.cu>\n"
 "Language-Team: \n"
@@ -180,8 +180,7 @@ msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
 "%s = the command line you want to execute with terminal or su."
 msgstr ""
-"Ejemplos: \"xterm -e %s\" para la terminal o \"gksu %s\" para cambiar de "
-"usuario.\n"
+"Ejemplos: \"xterm -e %s\" para la terminal o \"gksu %s\" para cambiar de usuario.\n"
 "%s = la línea de comando que desea ejecutar con terminal o su."
 
 #: ../data/ui/pref.glade.h:16
@@ -202,9 +201,7 @@ msgstr "Vista de iconos"
 
 #: ../data/ui/pref.glade.h:20
 msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
-msgstr ""
-"Mover los archivos eliminados a \"Papelera\" en lugar de eliminarlos del "
-"disco"
+msgstr "Mover los archivos eliminados a \"Papelera\" en lugar de eliminarlos del disco"
 
 #: ../data/ui/pref.glade.h:21
 msgid "Only show thumbnails for local files"
@@ -285,35 +282,6 @@ msgstr "_General"
 #: ../data/ui/pref.glade.h:43
 msgid "_Volume Management"
 msgstr "_Gestión de volúmenes"
-
-#: ../data/ui/autorun.glade.h:1
-msgid "<b>Removable medium is inserted</b>"
-msgstr ""
-
-#: ../data/ui/autorun.glade.h:2
-msgid "Detecting..."
-msgstr ""
-
-#: ../data/ui/autorun.glade.h:3
-msgid "Please select the action you want to perform:"
-msgstr ""
-
-#: ../data/ui/autorun.glade.h:4
-msgid "Removable medium is inserted"
-msgstr ""
-
-#: ../data/ui/autorun.glade.h:5
-msgid "Type of medium:"
-msgstr ""
-
-#: ../src/volume-manager.c:149
-msgid "Removable Disk"
-msgstr ""
-
-#: ../src/volume-manager.c:208
-#, fuzzy
-msgid "Open in File Manager"
-msgstr "Abrir en una nueva pestaña"
 
 #: ../src/desktop-ui.c:53
 msgid "_Invert Selection"
@@ -509,7 +477,7 @@ msgstr "Vista _detallada"
 
 #: ../src/main-win.c:495
 msgid "You are in super user mode"
-msgstr ""
+msgstr "Está en modo de super usuario"
 
 #: ../src/main-win.c:596
 msgid "Switch user command is not set."
@@ -536,12 +504,8 @@ msgid "Add to Bookmarks"
 msgstr "Añadir a los marcadores"
 
 #: ../src/pcmanfm.c:70
-msgid ""
-"Open folders in new tabs of the last used window instead of creating new "
-"windows"
-msgstr ""
-"Abrir las carpetas en nuevas pestañas de la última ventana utilizada, en "
-"lugar de crear nuevas ventanas"
+msgid "Open folders in new tabs of the last used window instead of creating new windows"
+msgstr "Abrir las carpetas en nuevas pestañas de la última ventana utilizada, en lugar de crear nuevas ventanas"
 
 #: ../src/pcmanfm.c:71
 msgid "Name of configuration profile"
@@ -572,12 +536,8 @@ msgid "<image file>"
 msgstr "<archivo de imagen>"
 
 #: ../src/pcmanfm.c:77
-msgid ""
-"Open preference dialog. 'n' is number of the page you want to show (1, 2, "
-"3...)."
-msgstr ""
-"Abrir la pantalla de preferencias. 'n' es el número de la página que desea "
-"mostrar (1, 2, 3...)."
+msgid "Open preference dialog. 'n' is number of the page you want to show (1, 2, 3...)."
+msgstr "Abrir la pantalla de preferencias. 'n' es el número de la página que desea mostrar (1, 2, 3...)."
 
 #: ../src/pcmanfm.c:78
 msgid "Open Find Files utility"
