@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-01 04:11+0000\n"
+"POT-Creation-Date: 2010-03-06 04:14+0000\n"
 "PO-Revision-Date: 2010-02-04 19:17+0100\n"
 "Last-Translator: Yarema aka Knedlyk <yupadmin@gmail.com>\n"
 "Language-Team: Ukrainian <translation@linux.org.ua>\n"
@@ -477,16 +477,20 @@ msgstr "Вигляд мініа_тюрами"
 msgid "Detailed _List View"
 msgstr "Детальний вигляд _списком"
 
-#: ../src/main-win.c:580
+#: ../src/main-win.c:495
+msgid "You are in super user mode"
+msgstr "Ви в режимі супер-користувача"
+
+#: ../src/main-win.c:596
 msgid "Switch user command is not set."
 msgstr "Команду переключання користувача не встановлено"
 
-#: ../src/main-win.c:928
+#: ../src/main-win.c:944
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Вільний простір: %s (Всього: %s )"
 
-#: ../src/main-win.c:1134
+#: ../src/main-win.c:1150
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -497,73 +501,73 @@ msgstr ""
 "'%s'\n"
 "Введіть назву для нової закладки:"
 
-#: ../src/main-win.c:1138
+#: ../src/main-win.c:1154
 msgid "Add to Bookmarks"
 msgstr "Додати до закладок"
 
-#: ../src/main-win.c:1210
-msgid "Create New..."
-msgstr "Створити новий..."
-
-#: ../src/main-win.c:1210
-msgid "Enter a name for the newly created file:"
-msgstr "Введіть назву новоствореного файлу:"
-
-#: ../src/main-win.c:1210
-msgid "New"
-msgstr "Новий"
-
-#: ../src/pcmanfm.c:69
+#: ../src/pcmanfm.c:70
 msgid "Open folders in new tabs of the last used window instead of creating new windows"
 msgstr "Відкрити каталоги в нових вкладках останньо використаних вікон замість створювати нові вікна"
 
-#: ../src/pcmanfm.c:70
+#: ../src/pcmanfm.c:71
 msgid "Name of configuration profile"
 msgstr "Назва профілю конфігурації"
 
-#: ../src/pcmanfm.c:71
+#: ../src/pcmanfm.c:72
 msgid "Launch desktop manager"
 msgstr "Запустити менеджер стільниці"
 
-#: ../src/pcmanfm.c:72
+#: ../src/pcmanfm.c:73
 msgid "Turn off desktop manager if it's running"
 msgstr "Виключити менеджер стільниці, якщо він запущений"
 
-#: ../src/pcmanfm.c:73
+#: ../src/pcmanfm.c:74
 msgid "Run PCManFM as a daemon"
 msgstr "Запустити PCManFM як демон"
 
-#: ../src/pcmanfm.c:74
+#: ../src/pcmanfm.c:75
 msgid "Open desktop preference dialog"
 msgstr "Відкрити діалог налаштування стільниці"
 
-#: ../src/pcmanfm.c:75
+#: ../src/pcmanfm.c:76
 msgid "Set desktop wallpaper"
 msgstr "Налаштувати шпалери стільниці"
 
-#: ../src/pcmanfm.c:75
+#: ../src/pcmanfm.c:76
 msgid "<image file>"
 msgstr "<файл зображення>"
 
-#: ../src/pcmanfm.c:76
+#: ../src/pcmanfm.c:77
 msgid "Open preference dialog. 'n' is number of the page you want to show (1, 2, 3...)."
 msgstr "Відкрити діалог налаштування. 'n' є номер сторінки, яку Ви бажаєте показати (1, 2, 3...)."
 
-#: ../src/pcmanfm.c:77
+#: ../src/pcmanfm.c:78
 msgid "Open Find Files utility"
 msgstr "Відкрити утиліту пошуку файлів"
 
-#: ../src/pcmanfm.c:78
+#: ../src/pcmanfm.c:79
 msgid "No function. Just to be compatible with nautilus"
 msgstr "Немає функції. Тільки щоб було компатибільне з nautilus."
 
-#: ../src/pcmanfm.c:79
+#: ../src/pcmanfm.c:80
 msgid "[FILE1, FILE2,...]"
 msgstr "[ФАЙЛ1, ФАЙЛ2,...]"
 
-#: ../src/pcmanfm.c:531
+#: ../src/pcmanfm.c:544
 msgid "Terminal emulator is not set."
 msgstr "Емулятор терміналу не встановлено"
+
+#: ../src/pcmanfm.c:587
+msgid "Create New..."
+msgstr "Створити новий..."
+
+#: ../src/pcmanfm.c:587
+msgid "Enter a name for the newly created file:"
+msgstr "Введіть назву новоствореного файлу:"
+
+#: ../src/pcmanfm.c:587
+msgid "New"
+msgstr "Новий"
 
 #~ msgid "Display image files with supported format as thumbnails"
 #~ msgstr "Показати файли зображень як іконки"
