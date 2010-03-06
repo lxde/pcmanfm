@@ -86,7 +86,10 @@ void fm_app_config_load_from_key_file(FmAppConfig* cfg, GKeyFile* kf)
     /* desktop */
     fm_key_file_get_int(kf, "desktop", "wallpaper_mode", &cfg->wallpaper_mode);
 
-    cfg->wallpaper = g_key_file_get_string(kf, "desktop", "wallpaper", NULL);
+    tmp = g_key_file_get_string(kf, "desktop", "wallpaper", NULL);
+    g_free(cfg->wallpaper);
+    cfg->wallpaper = tmp;
+
     tmp = g_key_file_get_string(kf, "desktop", "desktop_bg", NULL);
     if(tmp)
     {
@@ -105,7 +108,11 @@ void fm_app_config_load_from_key_file(FmAppConfig* cfg, GKeyFile* kf)
         gdk_color_parse(tmp, &cfg->desktop_shadow);
         g_free(tmp);
     }
-    cfg->desktop_font = g_key_file_get_string(kf, "desktop", "desktop_font", NULL);
+
+    tmp = g_key_file_get_string(kf, "desktop", "desktop_font", NULL);
+    g_free(cfg->desktop_font);
+    cfg->desktop_font = tmp;
+
     fm_key_file_get_int(kf, "ui", "always_show_tabs", &cfg->always_show_tabs);
     fm_key_file_get_int(kf, "ui", "hide_close_btn", &cfg->hide_close_btn);
 
