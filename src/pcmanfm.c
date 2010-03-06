@@ -36,7 +36,7 @@
 #include <signal.h>
 #include <unistd.h> /* for getcwd */
 
-#include <fm-gtk.h>
+#include <libfm/fm-gtk.h>
 #include "app-config.h"
 #include "main-win.h"
 #include "desktop.h"
