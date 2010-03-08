@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm2 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-06 04:14+0000\n"
+"POT-Creation-Date: 2010-03-07 04:15+0000\n"
 "PO-Revision-Date: 2010-02-09 13:26-0500\n"
 "Last-Translator: Hugo Florentino <sysadmin@cips.cu>\n"
 "Language-Team: \n"
@@ -282,6 +282,34 @@ msgstr "_General"
 #: ../data/ui/pref.glade.h:43
 msgid "_Volume Management"
 msgstr "_Gestión de volúmenes"
+
+#: ../data/ui/autorun.glade.h:1
+msgid "<b>Removable medium is inserted</b>"
+msgstr "<b>Se ha insertado un medio extraíble</b>"
+
+#: ../data/ui/autorun.glade.h:2
+msgid "Detecting..."
+msgstr "Detectando..."
+
+#: ../data/ui/autorun.glade.h:3
+msgid "Please select the action you want to perform:"
+msgstr "Por favor, seleccione la acción que desea realizar:"
+
+#: ../data/ui/autorun.glade.h:4
+msgid "Removable medium is inserted"
+msgstr "Se ha insertado un medio extraíble"
+
+#: ../data/ui/autorun.glade.h:5
+msgid "Type of medium:"
+msgstr "Tipo de medio:"
+
+#: ../src/volume-manager.c:149
+msgid "Removable Disk"
+msgstr "Disco extraíble"
+
+#: ../src/volume-manager.c:208
+msgid "Open in File Manager"
+msgstr "Abrir en el gestor de archivos"
 
 #: ../src/desktop-ui.c:53
 msgid "_Invert Selection"
