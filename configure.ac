@@ -63,6 +63,11 @@ fi
 IT_PROG_INTLTOOL([0.40.0])
 
 # Checks for libraries.
+
+PKG_CHECK_MODULES(XLIB, "x11")
+AC_SUBST(XLIB_CFLAGS)
+AC_SUBST(XLIB_LIBS)
+
 gtk_modules="gtk+-2.0 >= 2.16.0"
 PKG_CHECK_MODULES(GTK, [$gtk_modules])
 AC_SUBST(GTK_CFLAGS)
