@@ -122,7 +122,7 @@ msgstr "Розтягнути щоб вмістити на стільниці"
 
 #: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:37
 msgid "Tile the image to fill the entire screen"
-msgstr "Розмножити зображення щоб заповнити весь екран"
+msgstr "Розмножити зображення, щоб заповнити весь екран"
 
 #: ../data/ui/desktop-pref.glade.h:23
 msgid "Wallpaper mode:"
@@ -191,7 +191,7 @@ msgstr "Приховати кнопку 'Закрити вкладку'"
 
 #: ../data/ui/pref.glade.h:17
 msgid "Hide folder content border"
-msgstr "Приховати границю поділу каталогів"
+msgstr "Приховати границю вмісту каталогу"
 
 #: ../data/ui/pref.glade.h:18
 msgid "Hide side pane buttons"
@@ -263,7 +263,7 @@ msgstr "Вигляд мініатюрами"
 
 #: ../data/ui/pref.glade.h:38
 msgid "Use SI decimal prefixes instead of IEC binary prefixes"
-msgstr "Використовувати SI десяткові префікси замість IEC бінарних префіксів"
+msgstr "Використовувати десяткові префікси SI замість IEC бінарних префіксів"
 
 #: ../data/ui/pref.glade.h:39
 msgid "View Mode:"
@@ -299,7 +299,7 @@ msgstr "Виберіть, будь-ласка, дію, яку Ви бажаєт�
 
 #: ../data/ui/autorun.glade.h:4
 msgid "Removable medium is inserted"
-msgstr "Вставлено знімний пристрій"
+msgstr "Вставлено змінний пристрій"
 
 #: ../data/ui/autorun.glade.h:5
 msgid "Type of medium:"
@@ -307,7 +307,7 @@ msgstr "Тип пристрою:"
 
 #: ../src/volume-manager.c:149
 msgid "Removable Disk"
-msgstr "Знімний диск"
+msgstr "Змінний диск"
 
 #: ../src/volume-manager.c:208
 msgid "Open in File Manager"
@@ -411,7 +411,7 @@ msgstr "_Допомога"
 
 #: ../src/main-win-ui.c:147
 msgid "_Go"
-msgstr "_Йти"
+msgstr "Пере_хід"
 
 #: ../src/main-win-ui.c:148
 msgid "Previous Folder"
@@ -423,11 +423,11 @@ msgstr "Наступний каталог"
 
 #: ../src/main-win-ui.c:150
 msgid "Parent Folder"
-msgstr "Батьківський каталог"
+msgstr "Каталог рівнем вище"
 
 #: ../src/main-win-ui.c:150
 msgid "Go to parent Folder"
-msgstr "Перейти до батьківського каталогу"
+msgstr "Перейти до каталогу рівнем вище"
 
 #: ../src/main-win-ui.c:151
 msgid "Home Folder"
@@ -483,7 +483,7 @@ msgstr "Відкрити поточний каталог з правами root-
 
 #: ../src/main-win-ui.c:169
 msgid "Blank FIle"
-msgstr "Пустий файл"
+msgstr "Порожній файл"
 
 #: ../src/main-win-ui.c:175
 msgid "Show _Hidden"
