@@ -126,6 +126,10 @@ static void on_open_in_new_tab(GtkAction* act, gpointer user_data);
 static void on_open_in_new_win(GtkAction* act, gpointer user_data);
 static void on_open_folder_in_terminal(GtkAction* act, gpointer user_data);
 
+/* for desktop menu provided by window manager */
+static void forward_event_to_rootwin( GdkScreen *gscreen, GdkEvent *event );
+
+
 G_DEFINE_TYPE(FmDesktop, fm_desktop, GTK_TYPE_WINDOW);
 
 static GtkWindowGroup* win_group = NULL;
@@ -539,12 +543,6 @@ gboolean on_button_press( GtkWidget* w, GdkEventButton* evt )
             self->focus = clicked_item;
             redraw_item( self, clicked_item );
 
-            /* left single click */
-            if( evt->button == 1 && fm_config->single_click && clicked_item->is_selected )
-            {
-                fm_launch_file_simple(GTK_WINDOW(w), NULL, clicked_item->fi, pcmanfm_open_folder, NULL);
-                goto out;
-            }
             if( evt->button == 3 )  /* right click, context menu */
             {
                 FmFileMenu* menu;
@@ -584,7 +582,7 @@ gboolean on_button_press( GtkWidget* w, GdkEventButton* evt )
         {
             if( evt->button == 3 )  /* right click on the blank area => desktop popup menu */
             {
-                // FIXME: if(! app_config->show_wm_menu)
+                if(! app_config->show_wm_menu)
                     gtk_menu_popup(GTK_MENU(desktop_popup), NULL, NULL, NULL, NULL, 3, gtk_get_current_event_time());
             }
             else if( evt->button == 1 )
@@ -611,7 +609,7 @@ gboolean on_button_press( GtkWidget* w, GdkEventButton* evt )
         }
     }
     /* forward the event to root window */
-//    forward_event_to_rootwin( gtk_widget_get_screen(w), evt );
+    forward_event_to_rootwin( gtk_widget_get_screen(w), evt );
 
 out:
     if( ! GTK_WIDGET_HAS_FOCUS(w) )
@@ -643,14 +641,15 @@ gboolean on_button_release( GtkWidget* w, GdkEventButton* evt )
     {
         if( clicked_item )
         {
-//            open_clicked_item( clicked_item );
+            /* left single click */
+            fm_launch_file_simple(GTK_WINDOW(w), NULL, clicked_item->fi, pcmanfm_open_folder, NULL);
             return TRUE;
         }
     }
 
     /* forward the event to root window */
-//    if( ! clicked_item )
-//        forward_event_to_rootwin( gtk_widget_get_screen(w), evt );
+    if( ! clicked_item )
+        forward_event_to_rootwin( gtk_widget_get_screen(w), evt );
 
     return TRUE;
 }
@@ -1970,4 +1969,77 @@ FmPathList* fm_desktop_get_selected_paths(FmDesktop* desktop)
         files = NULL;
     }
     return files;
+}
+
+
+/* This function is taken from xfdesktop */
+void forward_event_to_rootwin( GdkScreen *gscreen, GdkEvent *event )
+{
+    XButtonEvent xev, xev2;
+    Display *dpy = GDK_DISPLAY_XDISPLAY( gdk_screen_get_display( gscreen ) );
+
+    if ( event->type == GDK_BUTTON_PRESS || event->type == GDK_BUTTON_RELEASE )
+    {
+        if ( event->type == GDK_BUTTON_PRESS )
+        {
+            xev.type = ButtonPress;
+            /*
+             * rox has an option to disable the next
+             * instruction. it is called "blackbox_hack". Does
+             * anyone know why exactly it is needed?
+             */
+            XUngrabPointer( dpy, event->button.time );
+        }
+        else
+            xev.type = ButtonRelease;
+
+        xev.button = event->button.button;
+        xev.x = event->button.x;    /* Needed for icewm */
+        xev.y = event->button.y;
+        xev.x_root = event->button.x_root;
+        xev.y_root = event->button.y_root;
+        xev.state = event->button.state;
+
+        xev2.type = 0;
+    }
+    else if ( event->type == GDK_SCROLL )
+    {
+        xev.type = ButtonPress;
+        xev.button = event->scroll.direction + 4;
+        xev.x = event->scroll.x;    /* Needed for icewm */
+        xev.y = event->scroll.y;
+        xev.x_root = event->scroll.x_root;
+        xev.y_root = event->scroll.y_root;
+        xev.state = event->scroll.state;
+
+        xev2.type = ButtonRelease;
+        xev2.button = xev.button;
+    }
+    else
+        return ;
+    xev.window = GDK_WINDOW_XWINDOW( gdk_screen_get_root_window( gscreen ) );
+    xev.root = xev.window;
+    xev.subwindow = None;
+    xev.time = event->button.time;
+    xev.same_screen = True;
+
+    XSendEvent( dpy, xev.window, False, ButtonPressMask | ButtonReleaseMask,
+                ( XEvent * ) & xev );
+    if ( xev2.type == 0 )
+        return ;
+
+    /* send button release for scroll event */
+    xev2.window = xev.window;
+    xev2.root = xev.root;
+    xev2.subwindow = xev.subwindow;
+    xev2.time = xev.time;
+    xev2.x = xev.x;
+    xev2.y = xev.y;
+    xev2.x_root = xev.x_root;
+    xev2.y_root = xev.y_root;
+    xev2.state = xev.state;
+    xev2.same_screen = xev.same_screen;
+
+    XSendEvent( dpy, xev2.window, False, ButtonPressMask | ButtonReleaseMask,
+                ( XEvent * ) & xev2 );
 }

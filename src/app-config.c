@@ -113,6 +113,8 @@ void fm_app_config_load_from_key_file(FmAppConfig* cfg, GKeyFile* kf)
     g_free(cfg->desktop_font);
     cfg->desktop_font = tmp;
 
+    fm_key_file_get_bool(kf, "desktop", "show_wm_menu", &cfg->show_wm_menu);
+
     fm_key_file_get_int(kf, "ui", "always_show_tabs", &cfg->always_show_tabs);
     fm_key_file_get_int(kf, "ui", "hide_close_btn", &cfg->hide_close_btn);
 
@@ -189,6 +191,7 @@ void fm_app_config_save(FmAppConfig* cfg, const char* name)
             fprintf(f, "desktop_shadow=#%02x%02x%02x\n", cfg->desktop_shadow.red/257, cfg->desktop_shadow.green/257, cfg->desktop_shadow.blue/257);
             if(cfg->desktop_font)
                 fprintf(f, "desktop_font=%s\n", cfg->desktop_font);
+            fprintf(f, "show_wm_menu=%d\n", cfg->show_wm_menu);
             fputs("\n[ui]\n", f);
             fprintf(f, "always_show_tabs=%d\n", cfg->always_show_tabs);
             fprintf(f, "hide_close_btn=%d\n", cfg->hide_close_btn);

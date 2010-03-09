@@ -333,6 +333,8 @@ void fm_desktop_preference()
         INIT_COLOR(builder, FmAppConfig, desktop_fg, "desktop_text");
         INIT_COLOR(builder, FmAppConfig, desktop_shadow, "desktop_text");
 
+        INIT_BOOL(builder, FmAppConfig, show_wm_menu, NULL);
+
         item = gtk_builder_get_object(builder, "desktop_font");
         if(app_config->desktop_font)
             gtk_font_button_set_font_name(item, app_config->desktop_font);

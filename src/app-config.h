@@ -81,6 +81,8 @@ struct _FmAppConfig
     /* emit "changed::desktop_font" */
     char* desktop_font;
 
+    gboolean show_wm_menu;
+
     char* su_cmd;
 };
 
