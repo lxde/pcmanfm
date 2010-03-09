@@ -2,12 +2,12 @@
 # Copyright (C) 2010
 # This file is distributed under the same license as the pcmanfm package.
 # Yarema aka Knedlyk <yupadmin@gmail.com>, 2010.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-09 23:38+0800\n"
+"POT-Creation-Date: 2010-03-09 17:57+0000\n"
 "PO-Revision-Date: 2010-02-04 19:17+0100\n"
 "Last-Translator: Yarema aka Knedlyk <yupadmin@gmail.com>\n"
 "Language-Team: Ukrainian <translation@linux.org.ua>\n"
@@ -109,7 +109,6 @@ msgid "Show icons of volumes on desktop"
 msgstr "Показати значки дисків на стільниці"
 
 #: ../data/ui/desktop-pref.glade.h:19
-#, fuzzy
 msgid "Show menus provided by window managers when desktop is clicked"
 msgstr "Показати меню менеджера вікон при кліканні на стільниці"
 
@@ -119,7 +118,7 @@ msgstr "Розтягнути для заповнення всієї стільн
 
 #: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:33
 msgid "Stretch to fit the screen"
-msgstr "Розтягнути щоб вмістити на стільниці"
+msgstr "Розтягнути, щоб вмістити на стільниці"
 
 #: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:37
 msgid "Tile the image to fill the entire screen"
@@ -183,8 +182,7 @@ msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
 "%s = the command line you want to execute with terminal or su."
 msgstr ""
-"Приклад: \"xterm -e %s\" для терміналу, або \"gksu %s\" для переключення "
-"користувача.\n"
+"Приклад: \"xterm -e %s\" для терміналу, або \"gksu %s\" для переключення користувача.\n"
 "%s = командна стрічка, яку Ви бажаєти виконати в терміналі або з su."
 
 #: ../data/ui/pref.glade.h:16
@@ -205,8 +203,7 @@ msgstr "Вигляд значками"
 
 #: ../data/ui/pref.glade.h:20
 msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
-msgstr ""
-"Перенести видалені файли до \"смітника\" замість повного видалення з диску"
+msgstr "Перенести видалені файли до \"смітника\" замість повного видалення з диску"
 
 #: ../data/ui/pref.glade.h:21
 msgid "Only show thumbnails for local files"
@@ -537,12 +534,8 @@ msgid "Add to Bookmarks"
 msgstr "Додати до закладок"
 
 #: ../src/pcmanfm.c:70
-msgid ""
-"Open folders in new tabs of the last used window instead of creating new "
-"windows"
-msgstr ""
-"Відкрити каталоги в нових вкладках останньо використаного вікна замість "
-"створення нових вікон"
+msgid "Open folders in new tabs of the last used window instead of creating new windows"
+msgstr "Відкрити каталоги в нових вкладках останньо використаного вікна замість створення нових вікон"
 
 #: ../src/pcmanfm.c:71
 msgid "Name of configuration profile"
@@ -573,12 +566,8 @@ msgid "<image file>"
 msgstr "<файл зображення>"
 
 #: ../src/pcmanfm.c:77
-msgid ""
-"Open preference dialog. 'n' is number of the page you want to show (1, 2, "
-"3...)."
-msgstr ""
-"Відкрити діалог налаштування. 'n' є номер сторінки, яку Ви бажаєте показати "
-"(1, 2, 3...)."
+msgid "Open preference dialog. 'n' is number of the page you want to show (1, 2, 3...)."
+msgstr "Відкрити діалог налаштування. 'n' є номер сторінки, яку Ви бажаєте показати (1, 2, 3...)."
 
 #: ../src/pcmanfm.c:78
 msgid "Open Find Files utility"
