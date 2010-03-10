@@ -10,14 +10,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PCManFM\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-15 18:46+0100\n"
+"POT-Creation-Date: 2010-03-10 17:09+0100\n"
 "PO-Revision-Date: 2010-02-15 19:57+0200\n"
 "Last-Translator: Martin <brother@bsnet.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
-"Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: sv\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.0.1\n"
 
@@ -254,185 +254,189 @@ msgstr "A_llmänt"
 msgid "_Volume Management"
 msgstr "_Volymhantering"
 
-#: ../src/desktop-ui.c:47 ../src/main-win-ui.c:128
+#: ../src/desktop-ui.c:47 ../src/main-win-ui.c:129
 #, fuzzy
 msgid "Invert Selection"
 msgstr "In_vertera markering"
 
-#: ../src/desktop-ui.c:48 ../src/main-win-ui.c:131
+#: ../src/desktop-ui.c:48 ../src/main-win-ui.c:132
 #, fuzzy
 msgid "_Sort Files"
 msgstr "_Textfil"
 
-#: ../src/desktop-ui.c:50 ../src/main-win-ui.c:152
+#: ../src/desktop-ui.c:50 ../src/main-win-ui.c:153
 msgid "Folder"
 msgstr "Mapp"
 
-#: ../src/desktop-ui.c:51 ../src/main-win-ui.c:153
+#: ../src/desktop-ui.c:51 ../src/main-win-ui.c:154
 msgid "Blank FIle"
 msgstr ""
 
-#: ../src/desktop-ui.c:63 ../src/main-win-ui.c:177
+#: ../src/desktop-ui.c:63 ../src/main-win-ui.c:179
 #, fuzzy
 msgid "By _Name"
 msgstr "Sortera efter _namn"
 
-#: ../src/desktop-ui.c:64 ../src/main-win-ui.c:178
+#: ../src/desktop-ui.c:64 ../src/main-win-ui.c:180
 #, fuzzy
 msgid "By _Modification Time"
 msgstr "Sortera efter ändringsdatu_m"
 
-#: ../src/desktop-ui.c:79 ../src/main-win-ui.c:194
+#: ../src/desktop-ui.c:79 ../src/main-win-ui.c:196
 #, fuzzy
 msgid "Open in New Tab"
 msgstr "Öppna i ny f_lik"
 
-#: ../src/desktop-ui.c:80 ../src/main-win-ui.c:195
+#: ../src/desktop-ui.c:80 ../src/main-win-ui.c:197
 #, fuzzy
 msgid "Open in New Window"
 msgstr "Öppna i nytt f_önster"
 
-#: ../src/main-win-ui.c:113
+#: ../src/main-win-ui.c:114
 msgid "_File"
 msgstr "_Arkiv"
 
-#: ../src/main-win-ui.c:114
+#: ../src/main-win-ui.c:115
 #, fuzzy
 msgid "_New Window"
 msgstr "Nytt fö_nster"
 
-#: ../src/main-win-ui.c:115
+#: ../src/main-win-ui.c:116
 msgid "New _Tab"
 msgstr "Ny _flik"
 
-#: ../src/main-win-ui.c:116
+#: ../src/main-win-ui.c:117
 #, fuzzy
 msgid "_Close Tab"
 msgstr "Stäng flik"
 
-#: ../src/main-win-ui.c:117
+#: ../src/main-win-ui.c:118
 #, fuzzy
 msgid "Close Window"
 msgstr "S_täng fönster"
 
-#: ../src/main-win-ui.c:118
+#: ../src/main-win-ui.c:119
 msgid "_Edit"
 msgstr "_Redigera"
 
-#: ../src/main-win-ui.c:123
+#: ../src/main-win-ui.c:124
 msgid "Rename"
 msgstr "Byt namn"
 
-#: ../src/main-win-ui.c:124
+#: ../src/main-win-ui.c:125
 msgid "Create Symlink"
 msgstr ""
 
-#: ../src/main-win-ui.c:125
+#: ../src/main-win-ui.c:126
 #, fuzzy
 msgid "Move To..."
 msgstr "Flyttar..."
 
-#: ../src/main-win-ui.c:126
+#: ../src/main-win-ui.c:127
 #, fuzzy
 msgid "Copy To..."
 msgstr "Kopierar..."
 
-#: ../src/main-win-ui.c:130
+#: ../src/main-win-ui.c:131
 msgid "_View"
 msgstr "_Visa"
 
-#: ../src/main-win-ui.c:132
+#: ../src/main-win-ui.c:133
 msgid "_Help"
 msgstr "_Hjälp"
 
-#: ../src/main-win-ui.c:134
+#: ../src/main-win-ui.c:135
 msgid "_Go"
 msgstr "_Gå"
 
-#: ../src/main-win-ui.c:135
+#: ../src/main-win-ui.c:136
 #, fuzzy
 msgid "Previous Folder"
 msgstr "Föräldramapp"
 
-#: ../src/main-win-ui.c:136
+#: ../src/main-win-ui.c:137
 #, fuzzy
 msgid "Next Folder"
 msgstr "Ny mapp"
 
-#: ../src/main-win-ui.c:137
+#: ../src/main-win-ui.c:138
 msgid "Parent Folder"
 msgstr "Föräldramapp"
 
-#: ../src/main-win-ui.c:137
+#: ../src/main-win-ui.c:138
 #, fuzzy
 msgid "Go to parent Folder"
 msgstr "Gå till f_öräldramapp"
 
-#: ../src/main-win-ui.c:138
+#: ../src/main-win-ui.c:139
 #, fuzzy
 msgid "Home Folder"
 msgstr "Ny mapp"
 
-#: ../src/main-win-ui.c:139
+#: ../src/main-win-ui.c:140
 msgid "Desktop"
 msgstr "Skrivbord"
 
-#: ../src/main-win-ui.c:139
+#: ../src/main-win-ui.c:140
 #, fuzzy
 msgid "Desktop Folder"
 msgstr "Föräldramapp"
 
-#: ../src/main-win-ui.c:140
+#: ../src/main-win-ui.c:141
 msgid "My Computer"
 msgstr ""
 
-#: ../src/main-win-ui.c:141
+#: ../src/main-win-ui.c:142
 #, fuzzy
 msgid "Trash Can"
 msgstr "Papperskorg"
 
-#: ../src/main-win-ui.c:142
+#: ../src/main-win-ui.c:143
 #, fuzzy
 msgid "Network Drives"
 msgstr "Memory Stick-enhet"
 
 # Inte översätta mime-typer
-#: ../src/main-win-ui.c:143
+#: ../src/main-win-ui.c:144
 #, fuzzy
 msgid "Applications"
 msgstr "application"
 
-#: ../src/main-win-ui.c:143
+#: ../src/main-win-ui.c:144
 #, fuzzy
 msgid "Installed Applications"
 msgstr "_Alla program"
 
-#: ../src/main-win-ui.c:145
+#: ../src/main-win-ui.c:146
 #, fuzzy
 msgid "_Bookmarks"
 msgstr "_Bokmärken"
 
-#: ../src/main-win-ui.c:146
+#: ../src/main-win-ui.c:147
 #, fuzzy
 msgid "Add To Bookmarks"
 msgstr "Lägg till bokmärke"
 
-#: ../src/main-win-ui.c:159
+#: ../src/main-win-ui.c:160
 #, fuzzy
 msgid "Show _Hidden"
 msgstr "Visa _dolda filer"
 
-#: ../src/main-win-ui.c:164
+#: ../src/main-win-ui.c:165
 #, fuzzy
 msgid "_Icon View"
 msgstr "Ikonvymodell"
 
-#: ../src/main-win-ui.c:165
+#: ../src/main-win-ui.c:166
 #, fuzzy
 msgid "_Compact View"
 msgstr "Compact Flash-enhet"
 
-#: ../src/main-win-ui.c:166
+#: ../src/main-win-ui.c:167
+msgid "Thumbnail View"
+msgstr ""
+
+#: ../src/main-win-ui.c:168
 #, fuzzy
 msgid "Detailed _List View"
 msgstr "Visa som detaljerad _lista"
@@ -457,7 +461,7 @@ msgstr "Ange ett namn för den nya filen:"
 msgid "New"
 msgstr "Ny flik"
 
-#: ../src/pcmanfm.c:68
+#: ../src/pcmanfm.c:69
 msgid ""
 "Open folders in new tabs of the last used window instead of creating new "
 "windows"
@@ -465,52 +469,52 @@ msgstr ""
 "Öppna mappar i nya flikar i det senast använda fönstret istället för att "
 "skapa nya fönster"
 
-#: ../src/pcmanfm.c:69
+#: ../src/pcmanfm.c:70
 msgid "Name of config profile"
 msgstr ""
 
-#: ../src/pcmanfm.c:70
+#: ../src/pcmanfm.c:71
 #, fuzzy
 msgid "Launch desktop manager"
 msgstr "Ange skrivbordsbakgrund"
 
-#: ../src/pcmanfm.c:71
+#: ../src/pcmanfm.c:72
 msgid "Turn off desktop manager if it's running"
 msgstr ""
 
-#: ../src/pcmanfm.c:72
+#: ../src/pcmanfm.c:73
 msgid "Run PCManFM as a daemon"
 msgstr "Kör PCManFM som en bakgrundsprocess"
 
-#: ../src/pcmanfm.c:73
+#: ../src/pcmanfm.c:74
 msgid "Open desktop preference dialog"
 msgstr ""
 
-#: ../src/pcmanfm.c:74
+#: ../src/pcmanfm.c:75
 msgid "Set desktop wallpaper"
 msgstr "Ange skrivbordsbakgrund"
 
-#: ../src/pcmanfm.c:74
+#: ../src/pcmanfm.c:75
 msgid "<image file>"
 msgstr ""
 
-#: ../src/pcmanfm.c:75
+#: ../src/pcmanfm.c:76
 msgid ""
 "Open preference dialog. 'n' is the number of page you want to show (1, 2, "
 "3...)."
 msgstr ""
 "Öppna inställningarna. \"n\" är det sidnummer som du vill visa (1,2,3,...)."
 
-#: ../src/pcmanfm.c:76
+#: ../src/pcmanfm.c:77
 #, fuzzy
 msgid "Open Find Files utility"
 msgstr "Sök filer"
 
-#: ../src/pcmanfm.c:77
+#: ../src/pcmanfm.c:78
 msgid "No function. Just to be compatible with nautilus"
 msgstr ""
 
-#: ../src/pcmanfm.c:78
+#: ../src/pcmanfm.c:79
 msgid "[FILE1, FILE2,...]"
 msgstr "[FIL1, FIL2,...]"
 

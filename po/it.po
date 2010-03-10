@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-10 01:20+0100\n"
+"POT-Creation-Date: 2010-03-10 17:09+0100\n"
 "PO-Revision-Date: 2010-01-31 15:32+0100\n"
 "Last-Translator: Andrea Florio <andrea@opensuse.org>\n"
 "Language-Team: it <it@li.org>\n"
@@ -15,11 +15,11 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../data/ui/about.glade.in.h:1
+#: ../data/ui/about.glade.h:1 ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009"
 msgstr "Copyright (C) 2009"
 
-#: ../data/ui/about.glade.in.h:2
+#: ../data/ui/about.glade.h:2 ../data/ui/about.glade.in.h:2
 msgid ""
 "Lightweight file manager\n"
 "\n"
@@ -30,7 +30,7 @@ msgstr ""
 "Sviluppato da Hon Jen Yee (PCMan)"
 
 #. Please replace this line with your own names, one name per line.
-#: ../data/ui/about.glade.in.h:6
+#: ../data/ui/about.glade.h:6 ../data/ui/about.glade.in.h:6
 msgid "translator-credits"
 msgstr "Andrea Florio <andrea@opensuse.org>"
 
@@ -234,180 +234,184 @@ msgstr "_Generale"
 msgid "_Volume Management"
 msgstr "Gestione _Dispositivi"
 
-#: ../src/desktop-ui.c:47 ../src/main-win-ui.c:128
+#: ../src/desktop-ui.c:47 ../src/main-win-ui.c:129
 msgid "Invert Selection"
 msgstr "Inverti Selezione"
 
-#: ../src/desktop-ui.c:48 ../src/main-win-ui.c:131
+#: ../src/desktop-ui.c:48 ../src/main-win-ui.c:132
 msgid "_Sort Files"
 msgstr "_Ordina File"
 
-#: ../src/desktop-ui.c:50 ../src/main-win-ui.c:152
+#: ../src/desktop-ui.c:50 ../src/main-win-ui.c:153
 msgid "Folder"
 msgstr "Cartella"
 
-#: ../src/desktop-ui.c:51 ../src/main-win-ui.c:153
+#: ../src/desktop-ui.c:51 ../src/main-win-ui.c:154
 msgid "Blank FIle"
 msgstr "File Vuoto"
 
-#: ../src/desktop-ui.c:63 ../src/main-win-ui.c:177
+#: ../src/desktop-ui.c:63 ../src/main-win-ui.c:179
 msgid "By _Name"
 msgstr "Per _Nome"
 
-#: ../src/desktop-ui.c:64 ../src/main-win-ui.c:178
+#: ../src/desktop-ui.c:64 ../src/main-win-ui.c:180
 msgid "By _Modification Time"
 msgstr "Per Ora _Modica"
 
-#: ../src/desktop-ui.c:79 ../src/main-win-ui.c:194
+#: ../src/desktop-ui.c:79 ../src/main-win-ui.c:196
 msgid "Open in New Tab"
 msgstr "Apri in una nuova scheda"
 
-#: ../src/desktop-ui.c:80 ../src/main-win-ui.c:195
+#: ../src/desktop-ui.c:80 ../src/main-win-ui.c:197
 msgid "Open in New Window"
 msgstr "Apri in una nuova finestra"
 
-#: ../src/main-win-ui.c:113
+#: ../src/main-win-ui.c:114
 msgid "_File"
 msgstr "_File"
 
-#: ../src/main-win-ui.c:114
+#: ../src/main-win-ui.c:115
 msgid "_New Window"
 msgstr "_Nuova Finestra"
 
-#: ../src/main-win-ui.c:115
+#: ../src/main-win-ui.c:116
 msgid "New _Tab"
 msgstr "Nuova _Scheda"
 
-#: ../src/main-win-ui.c:116
+#: ../src/main-win-ui.c:117
 msgid "_Close Tab"
 msgstr "_Chiudi Scheda"
 
-#: ../src/main-win-ui.c:117
+#: ../src/main-win-ui.c:118
 msgid "Close Window"
 msgstr "Chiudi finestra"
 
-#: ../src/main-win-ui.c:118
+#: ../src/main-win-ui.c:119
 msgid "_Edit"
 msgstr "_Modifica"
 
-#: ../src/main-win-ui.c:123
+#: ../src/main-win-ui.c:124
 msgid "Rename"
 msgstr "Rinomina"
 
-#: ../src/main-win-ui.c:124
+#: ../src/main-win-ui.c:125
 msgid "Create Symlink"
 msgstr "Crea Collegamento simbolico"
 
-#: ../src/main-win-ui.c:125
+#: ../src/main-win-ui.c:126
 msgid "Move To..."
 msgstr "Muovi in..."
 
-#: ../src/main-win-ui.c:126
+#: ../src/main-win-ui.c:127
 msgid "Copy To..."
 msgstr "Copia in..."
 
-#: ../src/main-win-ui.c:130
+#: ../src/main-win-ui.c:131
 msgid "_View"
 msgstr "_Visualizza"
 
-#: ../src/main-win-ui.c:132
+#: ../src/main-win-ui.c:133
 msgid "_Help"
 msgstr "_Aiuto"
 
-#: ../src/main-win-ui.c:134
+#: ../src/main-win-ui.c:135
 msgid "_Go"
 msgstr "_Vai"
 
-#: ../src/main-win-ui.c:135
+#: ../src/main-win-ui.c:136
 msgid "Previous Folder"
 msgstr "Cartella Precedente"
 
-#: ../src/main-win-ui.c:136
+#: ../src/main-win-ui.c:137
 msgid "Next Folder"
 msgstr "Prossima Cartella"
 
-#: ../src/main-win-ui.c:137
+#: ../src/main-win-ui.c:138
 msgid "Parent Folder"
 msgstr "Cartella Superiore"
 
-#: ../src/main-win-ui.c:137
+#: ../src/main-win-ui.c:138
 msgid "Go to parent Folder"
 msgstr "Vai alla cartella superiore"
 
-#: ../src/main-win-ui.c:138
+#: ../src/main-win-ui.c:139
 msgid "Home Folder"
 msgstr "Cartella Home"
 
-#: ../src/main-win-ui.c:139
+#: ../src/main-win-ui.c:140
 msgid "Desktop"
 msgstr "Desktop"
 
-#: ../src/main-win-ui.c:139
+#: ../src/main-win-ui.c:140
 msgid "Desktop Folder"
 msgstr "Cartella Desktop"
 
-#: ../src/main-win-ui.c:140
+#: ../src/main-win-ui.c:141
 msgid "My Computer"
 msgstr "Il Mio Computer"
 
-#: ../src/main-win-ui.c:141
+#: ../src/main-win-ui.c:142
 msgid "Trash Can"
 msgstr "Cestino"
 
-#: ../src/main-win-ui.c:142
+#: ../src/main-win-ui.c:143
 msgid "Network Drives"
 msgstr "Dispositivi di Rete"
 
-#: ../src/main-win-ui.c:143
+#: ../src/main-win-ui.c:144
 msgid "Applications"
 msgstr "Applicazioni"
 
-#: ../src/main-win-ui.c:143
+#: ../src/main-win-ui.c:144
 msgid "Installed Applications"
 msgstr "Applicazioni Installare"
 
-#: ../src/main-win-ui.c:145
+#: ../src/main-win-ui.c:146
 msgid "_Bookmarks"
 msgstr "_Segnalibri"
 
-#: ../src/main-win-ui.c:146
+#: ../src/main-win-ui.c:147
 msgid "Add To Bookmarks"
 msgstr "Aggiungi ai Segnalibri"
 
-#: ../src/main-win-ui.c:159
+#: ../src/main-win-ui.c:160
 msgid "Show _Hidden"
 msgstr "Mostra File _Nascosti"
 
-#: ../src/main-win-ui.c:164
+#: ../src/main-win-ui.c:165
 msgid "_Icon View"
 msgstr "Vista _Icone"
 
-#: ../src/main-win-ui.c:165
+#: ../src/main-win-ui.c:166
 msgid "_Compact View"
 msgstr "Vista _Compatta"
 
-#: ../src/main-win-ui.c:166
+#: ../src/main-win-ui.c:167
+msgid "Thumbnail View"
+msgstr ""
+
+#: ../src/main-win-ui.c:168
 msgid "Detailed _List View"
 msgstr "Vista _Lista Dettagliata"
 
-#: ../src/main-win.c:782
+#: ../src/main-win.c:820
 #, c-format
 msgid "Free space: %s (Total: %s )"
 msgstr "Spazio libero: %s (Totale: %s)"
 
-#: ../src/main-win.c:1030
+#: ../src/main-win.c:1073
 msgid "Create New..."
 msgstr "Crea Nuovo..."
 
-#: ../src/main-win.c:1030
+#: ../src/main-win.c:1073
 msgid "Enter a name for the newly created file:"
 msgstr "Inserisci un nome per il file appena creati:"
 
-#: ../src/main-win.c:1030
+#: ../src/main-win.c:1073
 msgid "New"
 msgstr "Nuovo"
 
-#: ../src/pcmanfm.c:67
+#: ../src/pcmanfm.c:69
 msgid ""
 "Open folders in new tabs of the last used window instead of creating new "
 "windows"
@@ -415,35 +419,35 @@ msgstr ""
 "Apri le cartelle nelle schede dell'ultima finestra utilizzata invece di "
 "creare nuove finestre"
 
-#: ../src/pcmanfm.c:68
+#: ../src/pcmanfm.c:70
 msgid "Name of config profile"
 msgstr "Nome del profilo di configurazione"
 
-#: ../src/pcmanfm.c:69
+#: ../src/pcmanfm.c:71
 msgid "Launch desktop manager"
 msgstr "Avvia il desktop manager"
 
-#: ../src/pcmanfm.c:70
+#: ../src/pcmanfm.c:72
 msgid "Turn off desktop manager if it's running"
 msgstr "Disattiva il desktop manager se avviato"
 
-#: ../src/pcmanfm.c:71
+#: ../src/pcmanfm.c:73
 msgid "Run PCManFM as a daemon"
 msgstr "Avvia PCManFM come demone"
 
-#: ../src/pcmanfm.c:72
+#: ../src/pcmanfm.c:74
 msgid "Open desktop preference dialog"
 msgstr "Apri finestra di dialogo delle preferenze del desktop"
 
-#: ../src/pcmanfm.c:73
+#: ../src/pcmanfm.c:75
 msgid "Set desktop wallpaper"
 msgstr "Imposta sfondo desktop"
 
-#: ../src/pcmanfm.c:73
+#: ../src/pcmanfm.c:75
 msgid "<image file>"
 msgstr "<file immagine>"
 
-#: ../src/pcmanfm.c:74
+#: ../src/pcmanfm.c:76
 msgid ""
 "Open preference dialog. 'n' is the number of page you want to show (1, 2, "
 "3...)."
@@ -451,14 +455,14 @@ msgstr ""
 "Apri la finestra di dialogo delle preferenze. 'n' è il numero di pagina che "
 "si desidera visualizzare (1, 2, 3 ...)."
 
-#: ../src/pcmanfm.c:75
+#: ../src/pcmanfm.c:77
 msgid "Open Find Files utility"
 msgstr "Apri lo strumento Trova Files"
 
-#: ../src/pcmanfm.c:76
+#: ../src/pcmanfm.c:78
 msgid "No function. Just to be compatible with nautilus"
 msgstr "Nessuna funzione. Solo per essere compatibile con nautilus"
 
-#: ../src/pcmanfm.c:77
+#: ../src/pcmanfm.c:79
 msgid "[FILE1, FILE2,...]"
 msgstr "[FILE1, FILE2,...]"

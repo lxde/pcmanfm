@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-17 04:10+0000\n"
+"POT-Creation-Date: 2010-03-10 17:09+0100\n"
 "PO-Revision-Date: 2010-02-17 19:10+0100\n"
 "Last-Translator: Emmanuel Trillaud <etrillaud@gmail.com> \n"
 "Language-Team: French\n"
@@ -15,21 +15,22 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../data/ui/about.glade.in.h:1
+#: ../data/ui/about.glade.h:1 ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009"
 msgstr "Copyright (C) 2009"
 
-#: ../data/ui/about.glade.in.h:2
+#: ../data/ui/about.glade.h:2 ../data/ui/about.glade.in.h:2
 msgid ""
 "Lightweight file manager\n"
 "\n"
 "Developed by Hon Jen Yee (PCMan)"
-msgstr "Gestionnaire de fichier léger\n"
+msgstr ""
+"Gestionnaire de fichier léger\n"
 "\n"
 "Développé par Hin Jen Yee (PCMan)"
 
 #. Please replace this line with your own names, one name per line.
-#: ../data/ui/about.glade.in.h:6
+#: ../data/ui/about.glade.h:6 ../data/ui/about.glade.in.h:6
 msgid "translator-credits"
 msgstr "Emmanuel Trillaud"
 
@@ -108,8 +109,9 @@ msgstr "Afficher les icônes des volumes sur le Bureau"
 
 #: ../data/ui/desktop-pref.glade.h:19
 msgid "Show menus provided by WM when desktop is clicked"
-msgstr "Afficher le menu fourni par le gestionnaire de fenêtre lors d'un clic"
-" sur le bureau"
+msgstr ""
+"Afficher le menu fourni par le gestionnaire de fenêtre lors d'un clic sur le "
+"bureau"
 
 #: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:22
 msgid "Stretch to fill the entire screen"
@@ -177,8 +179,8 @@ msgstr "Taille maximale des fichier afficher comme aperçu"
 
 #: ../data/ui/pref.glade.h:13
 msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
-msgstr "Déplacer les fichier vers la \"Corbeille\" au lieu de les effacer du"
-" disque"
+msgstr ""
+"Déplacer les fichier vers la \"Corbeille\" au lieu de les effacer du disque"
 
 #: ../data/ui/pref.glade.h:14
 msgid "Open files with single click"
@@ -236,159 +238,163 @@ msgstr "_Général"
 msgid "_Volume Management"
 msgstr "_Gestion des _Volumes"
 
-#: ../src/desktop-ui.c:47 ../src/main-win-ui.c:128
+#: ../src/desktop-ui.c:47 ../src/main-win-ui.c:129
 msgid "Invert Selection"
 msgstr "Inverser la sélection"
 
-#: ../src/desktop-ui.c:48 ../src/main-win-ui.c:131
+#: ../src/desktop-ui.c:48 ../src/main-win-ui.c:132
 msgid "_Sort Files"
 msgstr "_Trier les fichiers"
 
-#: ../src/desktop-ui.c:50 ../src/main-win-ui.c:152
+#: ../src/desktop-ui.c:50 ../src/main-win-ui.c:153
 msgid "Folder"
 msgstr "Dossiers"
 
-#: ../src/desktop-ui.c:51 ../src/main-win-ui.c:153
+#: ../src/desktop-ui.c:51 ../src/main-win-ui.c:154
 msgid "Blank FIle"
 msgstr "Fichier Vide"
 
-#: ../src/desktop-ui.c:63 ../src/main-win-ui.c:177
+#: ../src/desktop-ui.c:63 ../src/main-win-ui.c:179
 msgid "By _Name"
 msgstr "Par _Nom"
 
-#: ../src/desktop-ui.c:64 ../src/main-win-ui.c:178
+#: ../src/desktop-ui.c:64 ../src/main-win-ui.c:180
 msgid "By _Modification Time"
 msgstr "Par date de _modification"
 
-#: ../src/desktop-ui.c:79 ../src/main-win-ui.c:194
+#: ../src/desktop-ui.c:79 ../src/main-win-ui.c:196
 msgid "Open in New Tab"
 msgstr "Ouvrir dans un nouvel onglet"
 
-#: ../src/desktop-ui.c:80 ../src/main-win-ui.c:195
+#: ../src/desktop-ui.c:80 ../src/main-win-ui.c:197
 msgid "Open in New Window"
 msgstr "Ouvrir dans une nouvelle fenêtre"
 
-#: ../src/main-win-ui.c:113
+#: ../src/main-win-ui.c:114
 msgid "_File"
 msgstr "_Fichier"
 
-#: ../src/main-win-ui.c:114
+#: ../src/main-win-ui.c:115
 msgid "_New Window"
 msgstr "_Nouvelle Fenêtre"
 
-#: ../src/main-win-ui.c:115
+#: ../src/main-win-ui.c:116
 msgid "New _Tab"
 msgstr "Nouvel _Onglet"
 
-#: ../src/main-win-ui.c:116
+#: ../src/main-win-ui.c:117
 msgid "_Close Tab"
 msgstr "_Fermer l'onglet"
 
-#: ../src/main-win-ui.c:117
+#: ../src/main-win-ui.c:118
 msgid "Close Window"
 msgstr "Fermer la fenêtre"
 
-#: ../src/main-win-ui.c:118
+#: ../src/main-win-ui.c:119
 msgid "_Edit"
 msgstr "_Editer"
 
-#: ../src/main-win-ui.c:123
+#: ../src/main-win-ui.c:124
 msgid "Rename"
 msgstr "Renommer"
 
-#: ../src/main-win-ui.c:124
+#: ../src/main-win-ui.c:125
 msgid "Create Symlink"
 msgstr "Créer un lien symbolique"
 
-#: ../src/main-win-ui.c:125
+#: ../src/main-win-ui.c:126
 msgid "Move To..."
 msgstr "Déplacer vers..."
 
-#: ../src/main-win-ui.c:126
+#: ../src/main-win-ui.c:127
 msgid "Copy To..."
 msgstr "Copier vers..."
 
-#: ../src/main-win-ui.c:130
+#: ../src/main-win-ui.c:131
 msgid "_View"
 msgstr "_Voir"
 
-#: ../src/main-win-ui.c:132
+#: ../src/main-win-ui.c:133
 msgid "_Help"
 msgstr "_Aide"
 
-#: ../src/main-win-ui.c:134
+#: ../src/main-win-ui.c:135
 msgid "_Go"
 msgstr "_Aller à"
 
-#: ../src/main-win-ui.c:135
+#: ../src/main-win-ui.c:136
 msgid "Previous Folder"
 msgstr "Dossier précédent"
 
-#: ../src/main-win-ui.c:136
+#: ../src/main-win-ui.c:137
 msgid "Next Folder"
 msgstr "Dossier suivant"
 
-#: ../src/main-win-ui.c:137
+#: ../src/main-win-ui.c:138
 msgid "Parent Folder"
 msgstr "Dossier parent"
 
-#: ../src/main-win-ui.c:137
+#: ../src/main-win-ui.c:138
 msgid "Go to parent Folder"
 msgstr "Aller au dossier parent"
 
-#: ../src/main-win-ui.c:138
+#: ../src/main-win-ui.c:139
 msgid "Home Folder"
 msgstr "Dossier maison"
 
-#: ../src/main-win-ui.c:139
+#: ../src/main-win-ui.c:140
 msgid "Desktop"
 msgstr "Bureau"
 
-#: ../src/main-win-ui.c:139
+#: ../src/main-win-ui.c:140
 msgid "Desktop Folder"
 msgstr "Dossier Bureau"
 
-#: ../src/main-win-ui.c:140
+#: ../src/main-win-ui.c:141
 msgid "My Computer"
 msgstr ""
 
-#: ../src/main-win-ui.c:141
+#: ../src/main-win-ui.c:142
 msgid "Trash Can"
 msgstr "Corbeille"
 
-#: ../src/main-win-ui.c:142
+#: ../src/main-win-ui.c:143
 msgid "Network Drives"
 msgstr "Disque réseau"
 
-#: ../src/main-win-ui.c:143
+#: ../src/main-win-ui.c:144
 msgid "Applications"
 msgstr "Applications"
 
-#: ../src/main-win-ui.c:143
+#: ../src/main-win-ui.c:144
 msgid "Installed Applications"
 msgstr "Applications installées"
 
-#: ../src/main-win-ui.c:145
+#: ../src/main-win-ui.c:146
 msgid "_Bookmarks"
 msgstr "_Marque-pages"
 
-#: ../src/main-win-ui.c:146
+#: ../src/main-win-ui.c:147
 msgid "Add To Bookmarks"
 msgstr "Marquer cette page"
 
-#: ../src/main-win-ui.c:159
+#: ../src/main-win-ui.c:160
 msgid "Show _Hidden"
 msgstr "Montrer les fichier cachés"
 
-#: ../src/main-win-ui.c:164
+#: ../src/main-win-ui.c:165
 msgid "_Icon View"
 msgstr "Vue en _Icônes"
 
-#: ../src/main-win-ui.c:165
+#: ../src/main-win-ui.c:166
 msgid "_Compact View"
 msgstr "Vue _Compacte"
 
-#: ../src/main-win-ui.c:166
+#: ../src/main-win-ui.c:167
+msgid "Thumbnail View"
+msgstr ""
+
+#: ../src/main-win-ui.c:168
 msgid "Detailed _List View"
 msgstr "Vue en _Liste détaillée"
 
@@ -409,56 +415,58 @@ msgstr "Entrer le nom du nouveau fichier :"
 msgid "New"
 msgstr "Nouveau"
 
-#: ../src/pcmanfm.c:68
+#: ../src/pcmanfm.c:69
 msgid ""
 "Open folders in new tabs of the last used window instead of creating new "
 "windows"
-msgstr "Ouvrir les dossiers dans de nouveaux onglet de la dernière fenêtre "
-"utilisée au lieu d'ouvrir une nouvelle fenêtre"
+msgstr ""
+"Ouvrir les dossiers dans de nouveaux onglet de la dernière fenêtre utilisée "
+"au lieu d'ouvrir une nouvelle fenêtre"
 
-#: ../src/pcmanfm.c:69
+#: ../src/pcmanfm.c:70
 msgid "Name of config profile"
 msgstr "Nom du profil de configuration"
 
-#: ../src/pcmanfm.c:70
+#: ../src/pcmanfm.c:71
 msgid "Launch desktop manager"
 msgstr "Lancer le gestionnaire de bureau"
 
-#: ../src/pcmanfm.c:71
+#: ../src/pcmanfm.c:72
 msgid "Turn off desktop manager if it's running"
 msgstr ""
 
-#: ../src/pcmanfm.c:72
+#: ../src/pcmanfm.c:73
 msgid "Run PCManFM as a daemon"
 msgstr "Lancer PCManFM comme démon"
 
-#: ../src/pcmanfm.c:73
+#: ../src/pcmanfm.c:74
 msgid "Open desktop preference dialog"
 msgstr "Ouvrir la fenêtre des préférence du bureau"
 
-#: ../src/pcmanfm.c:74
+#: ../src/pcmanfm.c:75
 msgid "Set desktop wallpaper"
 msgstr "Sélectionner un fond d'écran"
 
-#: ../src/pcmanfm.c:74
+#: ../src/pcmanfm.c:75
 msgid "<image file>"
 msgstr "<fichier image>"
 
-#: ../src/pcmanfm.c:75
+#: ../src/pcmanfm.c:76
 msgid ""
 "Open preference dialog. 'n' is the number of page you want to show (1, 2, "
 "3...)."
-msgstr "Ouvrir la fenêtre des préférences. 'n' est le nombre de pages que vous"
-" voulez afficher (1, 2, 3...)."
+msgstr ""
+"Ouvrir la fenêtre des préférences. 'n' est le nombre de pages que vous "
+"voulez afficher (1, 2, 3...)."
 
-#: ../src/pcmanfm.c:76
+#: ../src/pcmanfm.c:77
 msgid "Open Find Files utility"
 msgstr "Ouvrir l'utilitaire de recherche de fichier"
 
-#: ../src/pcmanfm.c:77
+#: ../src/pcmanfm.c:78
 msgid "No function. Just to be compatible with nautilus"
 msgstr "Ne rien faire. Être seulement compatible avec nautilus"
 
-#: ../src/pcmanfm.c:78
+#: ../src/pcmanfm.c:79
 msgid "[FILE1, FILE2,...]"
 msgstr "[FICHIER1, FICHIER2, ...]"
