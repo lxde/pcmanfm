@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-09 04:15+0000\n"
+"POT-Creation-Date: 2010-03-10 04:20+0000\n"
 "PO-Revision-Date: 2010-02-17 19:10+0100\n"
 "Last-Translator: Emmanuel Trillaud <etrillaud@gmail.com>\n"
 "Language-Team: French\n"
@@ -91,9 +91,8 @@ msgid "Please select an image file"
 msgstr "Veuillez sélectionner une image"
 
 #: ../data/ui/desktop-pref.glade.h:15
-#, fuzzy
 msgid "Show \"My Computer\" icon on desktop"
-msgstr "Afficher l'icône \"My Computer\" sur le Bureau"
+msgstr "Afficher l'icône \"Mon Ordinateur\" sur le Bureau"
 
 #: ../data/ui/desktop-pref.glade.h:16
 msgid "Show \"My Documents\" icon on desktop"
@@ -108,7 +107,8 @@ msgid "Show icons of volumes on desktop"
 msgstr "Afficher les icônes des volumes sur le Bureau"
 
 #: ../data/ui/desktop-pref.glade.h:19
-msgid "Show menus provided by WM when desktop is clicked"
+#, fuzzy
+msgid "Show menus provided by window managers when desktop is clicked"
 msgstr "Afficher le menu fourni par le gestionnaire de fenêtre lors d'un clic sur le bureau"
 
 #: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:32
@@ -121,7 +121,7 @@ msgstr "Ajuster à la taille de l'écran"
 
 #: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:37
 msgid "Tile the image to fill the entire screen"
-msgstr ""
+msgstr "Faire un mosaïque de l'image pour remplir l'écran"
 
 #: ../data/ui/desktop-pref.glade.h:23
 msgid "Wallpaper mode:"
@@ -250,7 +250,7 @@ msgstr "Taille des aperçus :"
 
 #: ../data/ui/pref.glade.h:34
 msgid "Switch user command:"
-msgstr ""
+msgstr "Commande de changement d'utilisateur :"
 
 #: ../data/ui/pref.glade.h:35
 msgid "Terminal emulator:"
@@ -258,15 +258,15 @@ msgstr "Émulateur de terminal :"
 
 #: ../data/ui/pref.glade.h:36
 msgid "Thumbnail View"
-msgstr ""
+msgstr "Vue des aperçu"
 
 #: ../data/ui/pref.glade.h:38
 msgid "Use SI decimal prefixes instead of IEC binary prefixes"
-msgstr ""
+msgstr "Utiliser les préfixe décimaux du SI au lieu des préfixes binaires de l'IEC"
 
 #: ../data/ui/pref.glade.h:39
 msgid "View Mode:"
-msgstr ""
+msgstr "Mode de Vue :"
 
 #: ../data/ui/pref.glade.h:40
 msgid "_Advanced"
@@ -286,37 +286,35 @@ msgstr "_Gestion des _Volumes"
 
 #: ../data/ui/autorun.glade.h:1
 msgid "<b>Removable medium is inserted</b>"
-msgstr ""
+msgstr "<b>Périphérique amovible inseré</b>"
 
 #: ../data/ui/autorun.glade.h:2
 msgid "Detecting..."
-msgstr ""
+msgstr "Détection..."
 
 #: ../data/ui/autorun.glade.h:3
 msgid "Please select the action you want to perform:"
-msgstr ""
+msgstr "Veuillez sélectionner l'action à effectuer"
 
 #: ../data/ui/autorun.glade.h:4
 msgid "Removable medium is inserted"
-msgstr ""
+msgstr "Périphérique amovible inseré"
 
 #: ../data/ui/autorun.glade.h:5
 msgid "Type of medium:"
-msgstr ""
+msgstr "Type de périphérique"
 
 #: ../src/volume-manager.c:149
 msgid "Removable Disk"
 msgstr "Disque amovible"
 
 #: ../src/volume-manager.c:208
-#, fuzzy
 msgid "Open in File Manager"
-msgstr "Ouvrir dans un nouvel onglet"
+msgstr "Ouvrir dans le gestionnaire de fichier"
 
 #: ../src/desktop-ui.c:53
-#, fuzzy
 msgid "_Invert Selection"
-msgstr "Inverser la sélection"
+msgstr "_Inverser la sélection"
 
 #: ../src/desktop-ui.c:54 ../src/main-win-ui.c:144
 msgid "_Sort Files"
@@ -327,7 +325,6 @@ msgid "Folder"
 msgstr "Dossier"
 
 #: ../src/desktop-ui.c:57
-#, fuzzy
 msgid "Blank File"
 msgstr "Fichier Vide"
 
@@ -445,7 +442,7 @@ msgstr "Dossier Bureau"
 
 #: ../src/main-win-ui.c:153
 msgid "My Computer"
-msgstr ""
+msgstr "Mon Ordinateur"
 
 #: ../src/main-win-ui.c:154
 msgid "Trash Can"
@@ -477,11 +474,11 @@ msgstr "_Outils"
 
 #: ../src/main-win-ui.c:161
 msgid "Open Current Folder in _Terminal"
-msgstr ""
+msgstr "Ouvrir le répertoire courant dans un _Terminal"
 
 #: ../src/main-win-ui.c:162
 msgid "Open Current Folder as _Root"
-msgstr ""
+msgstr "Ouvrir le répertoire courant en tant qu'utilisateur root"
 
 #: ../src/main-win-ui.c:169
 msgid "Blank FIle"
@@ -501,7 +498,7 @@ msgstr "Vue _Compacte"
 
 #: ../src/main-win-ui.c:182
 msgid "_Thumbnail View"
-msgstr ""
+msgstr "Vue en _Aperçu"
 
 #: ../src/main-win-ui.c:183
 msgid "Detailed _List View"
@@ -509,14 +506,14 @@ msgstr "Vue en _Liste détaillée"
 
 #: ../src/main-win.c:495
 msgid "You are in super user mode"
-msgstr ""
+msgstr "Vous êtes en mode super utilisateur"
 
 #: ../src/main-win.c:596
 msgid "Switch user command is not set."
-msgstr ""
+msgstr "La commande de changement d'utilisateur n'est pas configurée"
 
 #: ../src/main-win.c:944
-#, fuzzy, c-format
+#, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Espace libre : %s (Total : %s)"
 
@@ -527,9 +524,11 @@ msgid ""
 "'%s'\n"
 "Enter a name for the new bookmark item:"
 msgstr ""
+"Ajouter le répertoire suivant aux marque-pages :\n"
+"« %s »\n"
+"Entrer un nom pour ce marque-page :"
 
 #: ../src/main-win.c:1154
-#, fuzzy
 msgid "Add to Bookmarks"
 msgstr "Marquer cette page"
 
@@ -538,7 +537,6 @@ msgid "Open folders in new tabs of the last used window instead of creating new 
 msgstr "Ouvrir les dossiers dans de nouveaux onglet de la dernière fenêtre utilisée au lieu d'ouvrir une nouvelle fenêtre"
 
 #: ../src/pcmanfm.c:71
-#, fuzzy
 msgid "Name of configuration profile"
 msgstr "Nom du profil de configuration"
 
@@ -584,7 +582,7 @@ msgstr "[FICHIER1, FICHIER2, ...]"
 
 #: ../src/pcmanfm.c:544
 msgid "Terminal emulator is not set."
-msgstr ""
+msgstr "L'émulateur de terminal n'est pas configuré"
 
 #: ../src/pcmanfm.c:587
 msgid "Create New..."
