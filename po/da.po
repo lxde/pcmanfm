@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-09 23:38+0800\n"
+"POT-Creation-Date: 2010-03-14 17:56+0800\n"
 "PO-Revision-Date: 2010-03-07 17:30+01:00\n"
 "Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
@@ -62,7 +62,7 @@ msgstr "Fremtoning"
 msgid "Background color:"
 msgstr "Baggrundsfarve:"
 
-#: ../data/ui/desktop-pref.glade.h:7 ../data/ui/pref.glade.h:8
+#: ../data/ui/desktop-pref.glade.h:7 ../data/ui/pref.glade.h:9
 msgid "Center on the screen"
 msgstr "Centrer på skærmen"
 
@@ -116,16 +116,16 @@ msgstr "Vis ikoner for arkiver på skrivebordet"
 msgid "Show menus provided by window managers when desktop is clicked"
 msgstr "Vis menuer fra WM når der klikkes på skrivebordet"
 
-#: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:32
+#: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:36
 msgid "Stretch to fill the entire screen"
 msgstr "Stræk så hele skærmen fyldes"
 
-#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:33
+#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:37
 msgid "Stretch to fit the screen"
 msgstr "Stræk så der tilpasses til skærmen"
 
 # tile = arrangere side om side.
-#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:37
+#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:41
 msgid "Tile the image to fill the entire screen"
 msgstr "Læg billedet så det fylder hele skærmen"
 
@@ -138,50 +138,55 @@ msgid "Wallpaper:"
 msgstr "Baggrundsbillede:"
 
 #: ../data/ui/pref.glade.h:1
+#, fuzzy
+msgid "<b>Auto-mount</b>"
+msgstr "<b>Ikoner</b>"
+
+#: ../data/ui/pref.glade.h:2
 msgid "<b>Behavior</b>"
 msgstr "<b>Opførsel</b>"
 
-#: ../data/ui/pref.glade.h:2
+#: ../data/ui/pref.glade.h:3
 msgid "<b>Default View</b>"
 msgstr "<b>Standardvisning</b>"
 
-#: ../data/ui/pref.glade.h:3
+#: ../data/ui/pref.glade.h:4
 msgid "<b>Icons</b>"
 msgstr "<b>Ikoner</b>"
 
-#: ../data/ui/pref.glade.h:4
+#: ../data/ui/pref.glade.h:5
 msgid "<b>Programs</b>"
 msgstr "<b>Programmer</b>"
 
-#: ../data/ui/pref.glade.h:5
+#: ../data/ui/pref.glade.h:6
 msgid "<b>User Interface</b>"
 msgstr "<b>Brugergrænseflade</b>"
 
-#: ../data/ui/pref.glade.h:6
+#: ../data/ui/pref.glade.h:7
 msgid "Always show the tab bar"
 msgstr "Vis altid fanebladsbjælken"
 
-#: ../data/ui/pref.glade.h:7
+#: ../data/ui/pref.glade.h:8
 msgid "Bookmarks:"
 msgstr "Bogmærker:"
 
-#: ../data/ui/pref.glade.h:9
+#: ../data/ui/pref.glade.h:10
 msgid "Compact View"
 msgstr "Kompakt visning"
 
-#: ../data/ui/pref.glade.h:10
+#: ../data/ui/pref.glade.h:11
 msgid "Confirm before deleting files"
 msgstr "Bekræft før sletning af filer"
 
-#: ../data/ui/pref.glade.h:11
+#: ../data/ui/pref.glade.h:12
 msgid "Detailed List View"
 msgstr "Detaljeret listevisning"
 
-#: ../data/ui/pref.glade.h:12
+#: ../data/ui/pref.glade.h:13
 msgid "Do not generate thumbnails for files exceeding this size:"
 msgstr "Opret ikke miniaturebilleder for filer større end denne størrelse:"
 
-#: ../data/ui/pref.glade.h:14
+#: ../data/ui/pref.glade.h:15
 #, no-c-format
 msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
@@ -190,105 +195,117 @@ msgstr ""
 "Eksempel: »xterm -e %s« for terminal eller »gksu %s« for brugerskift.\n"
 "%s = kommandolinjen du ønsker at køre med terminal eller su."
 
-#: ../data/ui/pref.glade.h:16
+#: ../data/ui/pref.glade.h:17
 msgid "Hide 'Close tab' buttons"
 msgstr "Skjul knapperne »Luk faneblad«"
 
-#: ../data/ui/pref.glade.h:17
+#: ../data/ui/pref.glade.h:18
 msgid "Hide folder content border"
 msgstr "Skjul mappeindholdskant"
 
-#: ../data/ui/pref.glade.h:18
+#: ../data/ui/pref.glade.h:19
 msgid "Hide side pane buttons"
 msgstr "Skjul knapperne for sidepanel"
 
-#: ../data/ui/pref.glade.h:19
+#: ../data/ui/pref.glade.h:20
 msgid "Icon View"
 msgstr "Ikonvisning"
 
-#: ../data/ui/pref.glade.h:20
+#: ../data/ui/pref.glade.h:21
+msgid "Mount mountable volumes automatically on program startup"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:22
+msgid "Mount removable media automatically when they are inserted"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:23
 msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
 msgstr ""
 "Flyt slettede filer til »skradespanden« i steden for at slette dem fra "
 "harddisken"
 
-#: ../data/ui/pref.glade.h:21
+#: ../data/ui/pref.glade.h:24
 msgid "Only show thumbnails for local files"
 msgstr "Vis kun miniaturebilleder for lokale filer"
 
-#: ../data/ui/pref.glade.h:22
+#: ../data/ui/pref.glade.h:25
 msgid "Open files with single click"
 msgstr "Åbn filer med et enkelt klik"
 
-#: ../data/ui/pref.glade.h:23
+#: ../data/ui/pref.glade.h:26
 msgid "Opened in Current Tab"
 msgstr "Åbnet i aktuelt faneblad"
 
-#: ../data/ui/pref.glade.h:24
+#: ../data/ui/pref.glade.h:27
 msgid "Opened in New Tab"
 msgstr "Åbnet i nyt faneblad"
 
-#: ../data/ui/pref.glade.h:25
+#: ../data/ui/pref.glade.h:28
 msgid "Opened in New Window"
 msgstr "Åbnet i nyt vindue"
 
-#: ../data/ui/pref.glade.h:26
+#: ../data/ui/pref.glade.h:29
 msgid "Preferences"
 msgstr "Indstillinger"
 
-#: ../data/ui/pref.glade.h:27
+#: ../data/ui/pref.glade.h:30
+msgid "Show available options for removable media when they are inserted"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:31
 msgid "Show thumbnails of files"
 msgstr "Vis miniaturebilleder af filer"
 
-#: ../data/ui/pref.glade.h:28
+#: ../data/ui/pref.glade.h:32
 msgid "Size of big icons:"
 msgstr "Størrelse på store ikoner:"
 
-#: ../data/ui/pref.glade.h:29
+#: ../data/ui/pref.glade.h:33
 msgid "Size of side pane icons:"
 msgstr "Størrelse på ikoner for sidepanel:"
 
-#: ../data/ui/pref.glade.h:30
+#: ../data/ui/pref.glade.h:34
 msgid "Size of small icons:"
 msgstr "Størrelse på små ikoner:"
 
-#: ../data/ui/pref.glade.h:31
+#: ../data/ui/pref.glade.h:35
 msgid "Size of thumbnails:"
 msgstr "Størrelse på miniaturebilleder:"
 
-#: ../data/ui/pref.glade.h:34
+#: ../data/ui/pref.glade.h:38
 msgid "Switch user command:"
 msgstr "Kommando for brugerskift:"
 
-#: ../data/ui/pref.glade.h:35
+#: ../data/ui/pref.glade.h:39
 msgid "Terminal emulator:"
 msgstr "Terminalemulator:"
 
-#: ../data/ui/pref.glade.h:36
+#: ../data/ui/pref.glade.h:40
 msgid "Thumbnail View"
 msgstr "Miniaturebilledvisning"
 
-#: ../data/ui/pref.glade.h:38
+#: ../data/ui/pref.glade.h:42
 msgid "Use SI decimal prefixes instead of IEC binary prefixes"
 msgstr "Brug SI-decimale præfiks i steden for IEC-binære præfiks"
 
-#: ../data/ui/pref.glade.h:39
+#: ../data/ui/pref.glade.h:43
 msgid "View Mode:"
 msgstr "Visningstilstand:"
 
-#: ../data/ui/pref.glade.h:40
+#: ../data/ui/pref.glade.h:44
 msgid "_Advanced"
 msgstr "_Avanceret"
 
-#: ../data/ui/pref.glade.h:41
+#: ../data/ui/pref.glade.h:45
 msgid "_Display"
 msgstr "_Skærm"
 
-#: ../data/ui/pref.glade.h:42
+#: ../data/ui/pref.glade.h:46
 msgid "_General"
 msgstr "_Generelt"
 
-#: ../data/ui/pref.glade.h:43
+#: ../data/ui/pref.glade.h:47
 msgid "_Volume Management"
 msgstr "_Arkivhåndtering"
 
@@ -312,11 +329,11 @@ msgstr "Eksternt medie er indsat"
 msgid "Type of medium:"
 msgstr "Medietype:"
 
-#: ../src/volume-manager.c:149
+#: ../src/volume-manager.c:150
 msgid "Removable Disk"
 msgstr "Ekstern disk"
 
-#: ../src/volume-manager.c:208
+#: ../src/volume-manager.c:209
 msgid "Open in File Manager"
 msgstr "Åbn i filhåndtering"
 
