@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-03-14 17:56+0800\n"
-"PO-Revision-Date: 2010-03-09 18:43+0100\n"
+"PO-Revision-Date: 2010-03-14 12:50+0100\n"
 "Last-Translator: Andrea Florio <andrea@opensuse.org>\n"
 "Language-Team: it <it@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -58,7 +58,8 @@ msgstr "Aspetto"
 msgid "Background color:"
 msgstr "Colore sfondo:"
 
-#: ../data/ui/desktop-pref.glade.h:7 ../data/ui/pref.glade.h:9
+#: ../data/ui/desktop-pref.glade.h:7
+#: ../data/ui/pref.glade.h:9
 msgid "Center on the screen"
 msgstr "Al centro dello schermo"
 
@@ -74,7 +75,8 @@ msgstr "Colore dell'ombra:"
 msgid "Desktop Icons"
 msgstr "Icone del Desktop"
 
-#: ../data/ui/desktop-pref.glade.h:11 ../src/desktop-ui.c:58
+#: ../data/ui/desktop-pref.glade.h:11
+#: ../src/desktop-ui.c:58
 msgid "Desktop Preferences"
 msgstr "Preferenze del Desktop"
 
@@ -110,15 +112,18 @@ msgstr "Mostra le icone delle unità sul desktop"
 msgid "Show menus provided by window managers when desktop is clicked"
 msgstr "Mostra i menu fornito dai window manager quando clicchi sul desktop"
 
-#: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:36
+#: ../data/ui/desktop-pref.glade.h:20
+#: ../data/ui/pref.glade.h:36
 msgid "Stretch to fill the entire screen"
 msgstr "Allarga per riempire lo schermo"
 
-#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:37
+#: ../data/ui/desktop-pref.glade.h:21
+#: ../data/ui/pref.glade.h:37
 msgid "Stretch to fit the screen"
 msgstr "Allarga per adattare allo schermo"
 
-#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:41
+#: ../data/ui/desktop-pref.glade.h:22
+#: ../data/ui/pref.glade.h:41
 msgid "Tile the image to fill the entire screen"
 msgstr "Piastrella l'immagine per riempire l'interno schermo"
 
@@ -131,9 +136,8 @@ msgid "Wallpaper:"
 msgstr "Sfondo:"
 
 #: ../data/ui/pref.glade.h:1
-#, fuzzy
 msgid "<b>Auto-mount</b>"
-msgstr "<b>Icone</b>"
+msgstr "<b>Montaggio automatico</b>"
 
 #: ../data/ui/pref.glade.h:2
 msgid "<b>Behavior</b>"
@@ -206,11 +210,11 @@ msgstr "Vista Icone"
 
 #: ../data/ui/pref.glade.h:21
 msgid "Mount mountable volumes automatically on program startup"
-msgstr ""
+msgstr "Monta dispositivi automaticamente all'avvio del programma"
 
 #: ../data/ui/pref.glade.h:22
 msgid "Mount removable media automatically when they are inserted"
-msgstr ""
+msgstr "Monta dispositivi removibili automaticamente quando sono inseriti"
 
 #: ../data/ui/pref.glade.h:23
 msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
@@ -242,7 +246,7 @@ msgstr "Preferenze"
 
 #: ../data/ui/pref.glade.h:30
 msgid "Show available options for removable media when they are inserted"
-msgstr ""
+msgstr "Mostra le opzioni disponibile per i dipositivi removibili quando sono inseriti"
 
 #: ../data/ui/pref.glade.h:31
 msgid "Show thumbnails of files"
@@ -332,11 +336,13 @@ msgstr "Apri nel File Manager"
 msgid "_Invert Selection"
 msgstr "_Inverti Selezione"
 
-#: ../src/desktop-ui.c:54 ../src/main-win-ui.c:144
+#: ../src/desktop-ui.c:54
+#: ../src/main-win-ui.c:144
 msgid "_Sort Files"
 msgstr "_Ordina File"
 
-#: ../src/desktop-ui.c:56 ../src/main-win-ui.c:168
+#: ../src/desktop-ui.c:56
+#: ../src/main-win-ui.c:168
 msgid "Folder"
 msgstr "Cartella"
 
@@ -344,31 +350,38 @@ msgstr "Cartella"
 msgid "Blank File"
 msgstr "File Vuoto"
 
-#: ../src/desktop-ui.c:69 ../src/main-win-ui.c:194
+#: ../src/desktop-ui.c:69
+#: ../src/main-win-ui.c:194
 msgid "By _Name"
 msgstr "Per _Nome"
 
-#: ../src/desktop-ui.c:70 ../src/main-win-ui.c:195
+#: ../src/desktop-ui.c:70
+#: ../src/main-win-ui.c:195
 msgid "By _Modification Time"
 msgstr "Per Ora _Modica"
 
-#: ../src/desktop-ui.c:71 ../src/main-win-ui.c:196
+#: ../src/desktop-ui.c:71
+#: ../src/main-win-ui.c:196
 msgid "By _Size"
 msgstr "Per _Dimensione"
 
-#: ../src/desktop-ui.c:72 ../src/main-win-ui.c:197
+#: ../src/desktop-ui.c:72
+#: ../src/main-win-ui.c:197
 msgid "By File _Type"
 msgstr "Per _tipo di file"
 
-#: ../src/desktop-ui.c:88 ../src/main-win-ui.c:214
+#: ../src/desktop-ui.c:88
+#: ../src/main-win-ui.c:214
 msgid "Open in New Tab"
 msgstr "Apri in una nuova scheda"
 
-#: ../src/desktop-ui.c:89 ../src/main-win-ui.c:215
+#: ../src/desktop-ui.c:89
+#: ../src/main-win-ui.c:215
 msgid "Open in New Window"
 msgstr "Apri in una nuova finestra"
 
-#: ../src/desktop-ui.c:91 ../src/main-win-ui.c:217
+#: ../src/desktop-ui.c:91
+#: ../src/main-win-ui.c:217
 msgid "Open in _Terminal"
 msgstr "Apri nel _Terminale"
 
@@ -549,12 +562,8 @@ msgid "Add to Bookmarks"
 msgstr "Aggiungi ai Segnalibri"
 
 #: ../src/pcmanfm.c:70
-msgid ""
-"Open folders in new tabs of the last used window instead of creating new "
-"windows"
-msgstr ""
-"Apri le cartelle nelle schede dell'ultima finestra utilizzata invece di "
-"creare nuove finestre"
+msgid "Open folders in new tabs of the last used window instead of creating new windows"
+msgstr "Apri le cartelle nelle schede dell'ultima finestra utilizzata invece di creare nuove finestre"
 
 #: ../src/pcmanfm.c:71
 msgid "Name of configuration profile"
@@ -585,12 +594,8 @@ msgid "<image file>"
 msgstr "<file immagine>"
 
 #: ../src/pcmanfm.c:77
-msgid ""
-"Open preference dialog. 'n' is number of the page you want to show (1, 2, "
-"3...)."
-msgstr ""
-"Apri la finestra di dialogo delle preferenze. 'n' è il numero di pagina che "
-"si desidera visualizzare (1, 2, 3 ...)."
+msgid "Open preference dialog. 'n' is number of the page you want to show (1, 2, 3...)."
+msgstr "Apri la finestra di dialogo delle preferenze. 'n' è il numero di pagina che si desidera visualizzare (1, 2, 3 ...)."
 
 #: ../src/pcmanfm.c:78
 msgid "Open Find Files utility"
@@ -622,6 +627,6 @@ msgstr "Nuovo"
 
 #~ msgid "Display image files with supported format as thumbnails"
 #~ msgstr "Mostra le anteprime delle immagini con formati supportati"
-
 #~ msgid "Max size of files displayed as thumbnails:"
 #~ msgstr "Dimensione massima dei file mostrati come anteprime:"
+
