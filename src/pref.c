@@ -242,6 +242,10 @@ void fm_edit_preference( GtkWindow* parent, int page )
         INIT_BOOL(builder, FmConfig, thumbnail_local, NULL);
         INIT_SPIN(builder, FmConfig, thumbnail_max, NULL);
 
+        INIT_BOOL(builder, FmAppConfig, mount_on_startup, NULL);
+        INIT_BOOL(builder, FmAppConfig, mount_removable, NULL);
+        INIT_BOOL(builder, FmAppConfig, autorun, NULL);
+
         INIT_BOOL(builder, FmAppConfig, always_show_tabs, NULL);
         INIT_BOOL(builder, FmAppConfig, hide_close_btn, NULL);
         INIT_BOOL(builder, FmConfig, si_unit, NULL);

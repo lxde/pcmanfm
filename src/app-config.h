@@ -58,6 +58,11 @@ struct _FmAppConfig
     /* config */
     guint bm_open_method;
 
+    /* volume */
+    gboolean mount_on_startup;
+    gboolean mount_removable;
+    gboolean autorun;
+
     /* ui */
     gboolean always_show_tabs;
     gboolean hide_close_btn;

@@ -60,6 +60,10 @@ static void fm_app_config_init(FmAppConfig *self)
     /* load libfm config file */
     fm_config_load_from_file((FmConfig*)self, NULL);
 
+    self->mount_on_startup = TRUE;
+    self->mount_removable = TRUE;
+    self->autorun = TRUE;
+
     self->desktop_fg.red = self->desktop_fg.green = self->desktop_fg.blue = 65535;
     self->win_width = 640;
     self->win_height = 480;
@@ -82,6 +86,11 @@ void fm_app_config_load_from_key_file(FmAppConfig* cfg, GKeyFile* kf)
     /* behavior */
     fm_key_file_get_bool(kf, "config", "bm_open_method", &cfg->bm_open_method);
     cfg->su_cmd = g_key_file_get_string(kf, "config", "su_cmd", NULL);
+
+    /* volume management */
+    fm_key_file_get_bool(kf, "volume", "mount_on_startup", &cfg->mount_on_startup);
+    fm_key_file_get_bool(kf, "volume", "mount_removable", &cfg->mount_removable);
+    fm_key_file_get_bool(kf, "volume", "autorun", &cfg->autorun);
 
     /* desktop */
     fm_key_file_get_int(kf, "desktop", "wallpaper_mode", &cfg->wallpaper_mode);
@@ -183,6 +192,12 @@ void fm_app_config_save(FmAppConfig* cfg, const char* name)
             fprintf(f, "bm_open_method=%d\n", cfg->bm_open_method);
             if(cfg->su_cmd)
                 fprintf(f, "su_cmd=%s\n", cfg->su_cmd);
+
+            fputs("[volume]\n", f);
+            fprintf(f, "mount_on_startup=%d\n", cfg->mount_on_startup);
+            fprintf(f, "mount_removable=%d\n", cfg->mount_removable);
+            fprintf(f, "autorun=%d\n", cfg->autorun);
+
             fputs("\n[desktop]\n", f);
             fprintf(f, "wallpaper_mode=%d\n", cfg->wallpaper_mode);
             fprintf(f, "wallpaper=%s\n", cfg->wallpaper ? cfg->wallpaper : "");
