@@ -1,19 +1,18 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-14 17:56+0800\n"
+"POT-Creation-Date: 2010-03-15 04:46+0000\n"
 "PO-Revision-Date: 2010-02-20 08:45+0300\n"
 "Last-Translator: Koptev Oleg <koptev.oleg@gmail.com>\n"
 "Language-Team: Russian <>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
-"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Poedit-Language: Russian\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-Country: Russia\n"
@@ -112,8 +111,7 @@ msgstr "Показывать на рабочем столе иконки дис�
 
 #: ../data/ui/desktop-pref.glade.h:19
 msgid "Show menus provided by window managers when desktop is clicked"
-msgstr ""
-"При клике на рабочем столе показать контекстное меню менеджера рабочего стола"
+msgstr "При клике на рабочем столе показать контекстное меню менеджера рабочего стола"
 
 #: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:36
 msgid "Stretch to fill the entire screen"
@@ -136,9 +134,8 @@ msgid "Wallpaper:"
 msgstr "Обои"
 
 #: ../data/ui/pref.glade.h:1
-#, fuzzy
 msgid "<b>Auto-mount</b>"
-msgstr "<b>Значки</b>"
+msgstr "<b>Автомонтирование</b>"
 
 #: ../data/ui/pref.glade.h:2
 msgid "<b>Behavior</b>"
@@ -190,8 +187,7 @@ msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
 "%s = the command line you want to execute with terminal or su."
 msgstr ""
-"Примеры: \"xterm -e %s\" для запуска терминала или \"gksu %s\" для "
-"переключения пользователей. \n"
+"Примеры: \"xterm -e %s\" для запуска терминала или \"gksu %s\" для переключения пользователей. \n"
 "%s = команда, которую вы хотите выполнить в терминале или su."
 
 #: ../data/ui/pref.glade.h:17
@@ -212,11 +208,11 @@ msgstr "Значки"
 
 #: ../data/ui/pref.glade.h:21
 msgid "Mount mountable volumes automatically on program startup"
-msgstr ""
+msgstr "Автоматически монтировать тома при старте программы"
 
 #: ../data/ui/pref.glade.h:22
 msgid "Mount removable media automatically when they are inserted"
-msgstr ""
+msgstr "Автоматически монтировать съёмные устройства при их подключении"
 
 #: ../data/ui/pref.glade.h:23
 msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
@@ -248,7 +244,7 @@ msgstr "Параметры"
 
 #: ../data/ui/pref.glade.h:30
 msgid "Show available options for removable media when they are inserted"
-msgstr ""
+msgstr "Показывать доступные действия для подключённых съёмных устройств"
 
 #: ../data/ui/pref.glade.h:31
 msgid "Show thumbnails of files"
@@ -555,12 +551,8 @@ msgid "Add to Bookmarks"
 msgstr "Добавить в закладки"
 
 #: ../src/pcmanfm.c:70
-msgid ""
-"Open folders in new tabs of the last used window instead of creating new "
-"windows"
-msgstr ""
-"Открывать папки в новой вкладке последнего активного окна, вместо создания "
-"нового окна"
+msgid "Open folders in new tabs of the last used window instead of creating new windows"
+msgstr "Открывать папки в новой вкладке последнего активного окна, вместо создания нового окна"
 
 #: ../src/pcmanfm.c:71
 msgid "Name of configuration profile"
@@ -591,12 +583,8 @@ msgid "<image file>"
 msgstr "<файл изображения>"
 
 #: ../src/pcmanfm.c:77
-msgid ""
-"Open preference dialog. 'n' is number of the page you want to show (1, 2, "
-"3...)."
-msgstr ""
-"Открывает диалог настроек. 'n' является номером отображаемой страницы (1, 2, "
-"3, ...)."
+msgid "Open preference dialog. 'n' is number of the page you want to show (1, 2, 3...)."
+msgstr "Открывает диалог настроек. 'n' является номером отображаемой страницы (1, 2, 3, ...)."
 
 #: ../src/pcmanfm.c:78
 msgid "Open Find Files utility"
@@ -627,8 +615,7 @@ msgid "New"
 msgstr "Новый"
 
 #~ msgid "Display image files with supported format as thumbnails"
-#~ msgstr ""
-#~ "Отображения файлов изображений с поддерживаемого формата в виде эскизов"
+#~ msgstr "Отображения файлов изображений с поддерживаемого формата в виде эскизов"
 
 #~ msgid "Max size of files displayed as thumbnails:"
 #~ msgstr "Максимальный размер файлов, отображаемых, как эскизы"
