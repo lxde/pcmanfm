@@ -2,12 +2,12 @@
 # Copyright (C) 2010
 # This file is distributed under the same license as the pcmanfm package.
 # Yarema aka Knedlyk <yupadmin@gmail.com>, 2010.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-14 17:56+0800\n"
+"POT-Creation-Date: 2010-03-15 04:46+0000\n"
 "PO-Revision-Date: 2010-02-04 19:17+0100\n"
 "Last-Translator: Yarema aka Knedlyk <yupadmin@gmail.com>\n"
 "Language-Team: Ukrainian <translation@linux.org.ua>\n"
@@ -133,9 +133,8 @@ msgid "Wallpaper:"
 msgstr "Шпалери:"
 
 #: ../data/ui/pref.glade.h:1
-#, fuzzy
 msgid "<b>Auto-mount</b>"
-msgstr "<b>Значки</b>"
+msgstr "<b>Автомонтування</b>"
 
 #: ../data/ui/pref.glade.h:2
 msgid "<b>Behavior</b>"
@@ -187,8 +186,7 @@ msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
 "%s = the command line you want to execute with terminal or su."
 msgstr ""
-"Приклад: \"xterm -e %s\" для терміналу, або \"gksu %s\" для переключення "
-"користувача.\n"
+"Приклад: \"xterm -e %s\" для терміналу, або \"gksu %s\" для переключення користувача.\n"
 "%s = командна стрічка, яку Ви бажаєти виконати в терміналі або з su."
 
 #: ../data/ui/pref.glade.h:17
@@ -209,16 +207,15 @@ msgstr "Вигляд значками"
 
 #: ../data/ui/pref.glade.h:21
 msgid "Mount mountable volumes automatically on program startup"
-msgstr ""
+msgstr "Монтувати змінні пристрої автоматично під час старту"
 
 #: ../data/ui/pref.glade.h:22
 msgid "Mount removable media automatically when they are inserted"
-msgstr ""
+msgstr "Монтувати змінні пристрої при їх вставленні"
 
 #: ../data/ui/pref.glade.h:23
 msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
-msgstr ""
-"Перенести видалені файли до \"смітника\" замість повного видалення з диску"
+msgstr "Перенести видалені файли до \"смітника\" замість повного видалення з диску"
 
 #: ../data/ui/pref.glade.h:24
 msgid "Only show thumbnails for local files"
@@ -246,7 +243,7 @@ msgstr "Налаштування"
 
 #: ../data/ui/pref.glade.h:30
 msgid "Show available options for removable media when they are inserted"
-msgstr ""
+msgstr "Показати можливі опції для змінних пристроїв при їх вставлянні"
 
 #: ../data/ui/pref.glade.h:31
 msgid "Show thumbnails of files"
@@ -553,12 +550,8 @@ msgid "Add to Bookmarks"
 msgstr "Додати до закладок"
 
 #: ../src/pcmanfm.c:70
-msgid ""
-"Open folders in new tabs of the last used window instead of creating new "
-"windows"
-msgstr ""
-"Відкрити каталоги в нових вкладках останньо використаного вікна замість "
-"створення нових вікон"
+msgid "Open folders in new tabs of the last used window instead of creating new windows"
+msgstr "Відкрити каталоги в нових вкладках останньо використаного вікна замість створення нових вікон"
 
 #: ../src/pcmanfm.c:71
 msgid "Name of configuration profile"
@@ -589,12 +582,8 @@ msgid "<image file>"
 msgstr "<файл зображення>"
 
 #: ../src/pcmanfm.c:77
-msgid ""
-"Open preference dialog. 'n' is number of the page you want to show (1, 2, "
-"3...)."
-msgstr ""
-"Відкрити діалог налаштування. 'n' є номер сторінки, яку Ви бажаєте показати "
-"(1, 2, 3...)."
+msgid "Open preference dialog. 'n' is number of the page you want to show (1, 2, 3...)."
+msgstr "Відкрити діалог налаштування. 'n' є номер сторінки, яку Ви бажаєте показати (1, 2, 3...)."
 
 #: ../src/pcmanfm.c:78
 msgid "Open Find Files utility"
