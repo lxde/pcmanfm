@@ -121,6 +121,49 @@ static void init_combo(GtkBuilder* builder, const char* name, gsize off, const c
     g_signal_connect(combo, "changed", G_CALLBACK(on_combo_changed), GSIZE_TO_POINTER(off));
 }
 
+static void on_archiver_combo_changed(GtkComboBox* combo, gpointer user_data)
+{
+    GtkTreeModel* model = gtk_combo_box_get_model(combo);
+    GtkTreeIter it;
+    if(gtk_combo_box_get_active_iter(combo, &it))
+    {
+        FmArchiver* archiver;
+        gtk_tree_model_get(model, &it, 1, &archiver, -1);
+        if(archiver)
+        {
+            g_free(fm_config->archiver);
+            fm_config->archiver = g_strdup(archiver->program);
+            fm_archiver_set_default(archiver);
+            fm_config_emit_changed(fm_config, "archiver");
+        }
+    }
+}
+
+/* archiver integration */
+static void init_archiver_combo(GtkBuilder* builder)
+{
+    GtkListStore* model = gtk_list_store_new(2, G_TYPE_STRING, G_TYPE_POINTER);
+    GtkComboBox* combo = (GtkComboBox*)gtk_builder_get_object(builder, "archiver");
+    GtkTreeIter it;
+    GList* archivers = fm_archiver_get_all();
+    FmArchiver* default_archiver = fm_archiver_get_default();
+    GList* l;
+
+    gtk_combo_box_set_model(combo, GTK_TREE_MODEL(model));
+
+    for(l = archivers; l; l=l->next)
+    {
+        FmArchiver* archiver = (FmArchiver*)l->data;
+        gtk_list_store_insert_with_values(model, &it, -1,
+                        0, archiver->program,
+                        1, archiver, -1);
+        if(archiver == default_archiver)
+            gtk_combo_box_set_active_iter(combo, &it);
+    }
+    g_object_unref(model);
+    g_signal_connect(combo, "changed", G_CALLBACK(on_archiver_combo_changed), NULL);
+}
+
 static void on_toggled(GtkToggleButton* btn, gpointer _off)
 {
     gsize off = GPOINTER_TO_SIZE(_off);
@@ -230,6 +273,8 @@ void fm_edit_preference( GtkWindow* parent, int page )
     {
         GtkBuilder* builder = gtk_builder_new();
         GtkWidget* item;
+        GList* archivers, *l;
+
         gtk_builder_add_from_file(builder, PACKAGE_UI_DIR "/pref.ui", NULL);
         pref_dlg = gtk_builder_get_object(builder, "dlg");
         notebook = gtk_builder_get_object(builder, "notebook");
@@ -260,6 +305,9 @@ void fm_edit_preference( GtkWindow* parent, int page )
 
         INIT_ENTRY(builder, FmConfig, terminal, NULL);
         INIT_ENTRY(builder, FmAppConfig, su_cmd, NULL);
+
+        /* archiver integration */
+        init_archiver_combo(builder);
 
         g_signal_connect(pref_dlg, "response", G_CALLBACK(on_response), &pref_dlg);
         g_object_unref(builder);

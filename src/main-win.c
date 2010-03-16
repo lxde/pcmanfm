@@ -213,7 +213,7 @@ static void on_file_clicked(FmFolderView* fv, FmFolderViewClickType type, FmFile
             FmFileMenu* menu;
             GtkMenu* popup;
             FmFileInfoList* files = fm_folder_view_get_selected_files(fv);
-            menu = fm_file_menu_new_for_files(files, TRUE);
+            menu = fm_file_menu_new_for_files(files, fm_folder_view_get_cwd(fv), TRUE);
             fm_file_menu_set_folder_func(menu, open_folder_func, win);
             fm_list_unref(files);
 
