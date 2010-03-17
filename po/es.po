@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm2 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-11 04:10+0000\n"
+"POT-Creation-Date: 2010-03-17 04:15+0000\n"
 "PO-Revision-Date: 2010-02-09 13:26-0500\n"
 "Last-Translator: Hugo Florentino <sysadmin@cips.cu>\n"
 "Language-Team: \n"
@@ -16,8 +16,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../data/ui/about.glade.in.h:1
-msgid "Copyright (C) 2009"
-msgstr "Copyright (C) 2009"
+msgid "Copyright (C) 2009 - 2010"
+msgstr "Copyright (C) 2009 - 2010"
 
 #: ../data/ui/about.glade.in.h:2
 msgid ""
@@ -58,7 +58,7 @@ msgstr "Apariencia"
 msgid "Background color:"
 msgstr "Color de fondo:"
 
-#: ../data/ui/desktop-pref.glade.h:7 ../data/ui/pref.glade.h:8
+#: ../data/ui/desktop-pref.glade.h:7 ../data/ui/pref.glade.h:10
 msgid "Center on the screen"
 msgstr "Centrar en la pantalla"
 
@@ -110,15 +110,15 @@ msgstr "Mostrar los iconos de volumenes en el escritorio"
 msgid "Show menus provided by window managers when desktop is clicked"
 msgstr "Mostrar menús del gestor de ventanas al hacer clic en el escritorio"
 
-#: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:32
+#: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:37
 msgid "Stretch to fill the entire screen"
 msgstr "Estirar para llenar toda la pantalla"
 
-#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:33
+#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:38
 msgid "Stretch to fit the screen"
 msgstr "Estirar para ajustarse a la pantalla"
 
-#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:37
+#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:42
 msgid "Tile the image to fill the entire screen"
 msgstr "Usar la imagen en mosaico para llenar la pantalla"
 
@@ -131,50 +131,58 @@ msgid "Wallpaper:"
 msgstr "Tapiz:"
 
 #: ../data/ui/pref.glade.h:1
+msgid "<b>Auto-mount</b>"
+msgstr "<b>Montar automáticamente</b>"
+
+#: ../data/ui/pref.glade.h:2
 msgid "<b>Behavior</b>"
 msgstr "<b>Comportamiento</b>"
 
-#: ../data/ui/pref.glade.h:2
+#: ../data/ui/pref.glade.h:3
 msgid "<b>Default View</b>"
 msgstr "<b>Vista predeterminada</b>"
 
-#: ../data/ui/pref.glade.h:3
+#: ../data/ui/pref.glade.h:4
 msgid "<b>Icons</b>"
 msgstr "<b>Iconos</b>"
 
-#: ../data/ui/pref.glade.h:4
+#: ../data/ui/pref.glade.h:5
 msgid "<b>Programs</b>"
 msgstr "<b>Programas</b>"
 
-#: ../data/ui/pref.glade.h:5
+#: ../data/ui/pref.glade.h:6
 msgid "<b>User Interface</b>"
 msgstr "<b>Interfaz del usuario</b>"
 
-#: ../data/ui/pref.glade.h:6
+#: ../data/ui/pref.glade.h:7
 msgid "Always show the tab bar"
 msgstr "Siempre mostrar la barra de pestañas"
 
-#: ../data/ui/pref.glade.h:7
+#: ../data/ui/pref.glade.h:8
+msgid "Archiver integration:"
+msgstr "Integración del archivador:"
+
+#: ../data/ui/pref.glade.h:9
 msgid "Bookmarks:"
 msgstr "Marcadores:"
 
-#: ../data/ui/pref.glade.h:9
+#: ../data/ui/pref.glade.h:11
 msgid "Compact View"
 msgstr "Vista compacta"
 
-#: ../data/ui/pref.glade.h:10
+#: ../data/ui/pref.glade.h:12
 msgid "Confirm before deleting files"
 msgstr "Confirmar antes de eliminar archivos"
 
-#: ../data/ui/pref.glade.h:11
+#: ../data/ui/pref.glade.h:13
 msgid "Detailed List View"
 msgstr "Vista detallada"
 
-#: ../data/ui/pref.glade.h:12
+#: ../data/ui/pref.glade.h:14
 msgid "Do not generate thumbnails for files exceeding this size:"
 msgstr "No generar miniaturas para los archivos que excedan este tamaño:"
 
-#: ../data/ui/pref.glade.h:14
+#: ../data/ui/pref.glade.h:16
 #, no-c-format
 msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
@@ -183,103 +191,115 @@ msgstr ""
 "Ejemplos: \"xterm -e %s\" para la terminal o \"gksu %s\" para cambiar de usuario.\n"
 "%s = la línea de comando que desea ejecutar con terminal o su."
 
-#: ../data/ui/pref.glade.h:16
+#: ../data/ui/pref.glade.h:18
 msgid "Hide 'Close tab' buttons"
 msgstr "Ocultar los botones 'Cerrar pestaña'"
 
-#: ../data/ui/pref.glade.h:17
+#: ../data/ui/pref.glade.h:19
 msgid "Hide folder content border"
 msgstr "Ocultar el borde del contenido de la carpeta"
 
-#: ../data/ui/pref.glade.h:18
+#: ../data/ui/pref.glade.h:20
 msgid "Hide side pane buttons"
 msgstr "Ocultar los botones de los paneles laterales"
 
-#: ../data/ui/pref.glade.h:19
+#: ../data/ui/pref.glade.h:21
 msgid "Icon View"
 msgstr "Vista de iconos"
 
-#: ../data/ui/pref.glade.h:20
+#: ../data/ui/pref.glade.h:22
+msgid "Mount mountable volumes automatically on program startup"
+msgstr "Montar volúmenes automáticamente al inicio del programa"
+
+#: ../data/ui/pref.glade.h:23
+msgid "Mount removable media automatically when they are inserted"
+msgstr "Montar medios extraíbles automáticamente cuando se inserten"
+
+#: ../data/ui/pref.glade.h:24
 msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
 msgstr "Mover los archivos eliminados a \"Papelera\" en lugar de eliminarlos del disco"
 
-#: ../data/ui/pref.glade.h:21
+#: ../data/ui/pref.glade.h:25
 msgid "Only show thumbnails for local files"
 msgstr "Solo mostrar miniaturas para archivos locales"
 
-#: ../data/ui/pref.glade.h:22
+#: ../data/ui/pref.glade.h:26
 msgid "Open files with single click"
 msgstr "Abrir los archivos con un solo clic"
 
-#: ../data/ui/pref.glade.h:23
+#: ../data/ui/pref.glade.h:27
 msgid "Opened in Current Tab"
 msgstr "Abierto en la pestaña actual"
 
-#: ../data/ui/pref.glade.h:24
+#: ../data/ui/pref.glade.h:28
 msgid "Opened in New Tab"
 msgstr "Abierto en un nueva pestaña"
 
-#: ../data/ui/pref.glade.h:25
+#: ../data/ui/pref.glade.h:29
 msgid "Opened in New Window"
 msgstr "Abierto en una nueva ventana"
 
-#: ../data/ui/pref.glade.h:26
+#: ../data/ui/pref.glade.h:30
 msgid "Preferences"
 msgstr "Preferencias"
 
-#: ../data/ui/pref.glade.h:27
+#: ../data/ui/pref.glade.h:31
+msgid "Show available options for removable media when they are inserted"
+msgstr "Mostrar opciones disponibles para los medios extraíbles cuando se inserten"
+
+#: ../data/ui/pref.glade.h:32
 msgid "Show thumbnails of files"
 msgstr "Mostrar miniaturas de los archivos"
 
-#: ../data/ui/pref.glade.h:28
+#: ../data/ui/pref.glade.h:33
 msgid "Size of big icons:"
 msgstr "Tamaño de los iconos grandes:"
 
-#: ../data/ui/pref.glade.h:29
+#: ../data/ui/pref.glade.h:34
 msgid "Size of side pane icons:"
 msgstr "Tamaño de los iconos del panel lateral:"
 
-#: ../data/ui/pref.glade.h:30
+#: ../data/ui/pref.glade.h:35
 msgid "Size of small icons:"
 msgstr "Tamaño de los iconos pequeños:"
 
-#: ../data/ui/pref.glade.h:31
+#: ../data/ui/pref.glade.h:36
 msgid "Size of thumbnails:"
 msgstr "Tamaño de las miniaturas:"
 
-#: ../data/ui/pref.glade.h:34
+#: ../data/ui/pref.glade.h:39
 msgid "Switch user command:"
 msgstr "Comando para cambiar de usuario:"
 
-#: ../data/ui/pref.glade.h:35
+#: ../data/ui/pref.glade.h:40
 msgid "Terminal emulator:"
 msgstr "Emulador de terminal:"
 
-#: ../data/ui/pref.glade.h:36
+#: ../data/ui/pref.glade.h:41
 msgid "Thumbnail View"
 msgstr "Vista de miniaturas"
 
-#: ../data/ui/pref.glade.h:38
+#: ../data/ui/pref.glade.h:43
 msgid "Use SI decimal prefixes instead of IEC binary prefixes"
 msgstr "Usar prefijos decimales SI en lugar de los prefijos binarios IEC"
 
-#: ../data/ui/pref.glade.h:39
+#: ../data/ui/pref.glade.h:44
 msgid "View Mode:"
 msgstr "Modo de visualización:"
 
-#: ../data/ui/pref.glade.h:40
+#: ../data/ui/pref.glade.h:45
 msgid "_Advanced"
 msgstr "_Avanzado"
 
-#: ../data/ui/pref.glade.h:41
+#: ../data/ui/pref.glade.h:46
 msgid "_Display"
 msgstr "_Mostrar"
 
-#: ../data/ui/pref.glade.h:42
+#: ../data/ui/pref.glade.h:47
 msgid "_General"
 msgstr "_General"
 
-#: ../data/ui/pref.glade.h:43
+#: ../data/ui/pref.glade.h:48
 msgid "_Volume Management"
 msgstr "_Gestión de volúmenes"
 
@@ -303,11 +323,11 @@ msgstr "Se ha insertado un medio extraíble"
 msgid "Type of medium:"
 msgstr "Tipo de medio:"
 
-#: ../src/volume-manager.c:149
+#: ../src/volume-manager.c:150
 msgid "Removable Disk"
 msgstr "Disco extraíble"
 
-#: ../src/volume-manager.c:208
+#: ../src/volume-manager.c:209
 msgid "Open in File Manager"
 msgstr "Abrir en el gestor de archivos"
 
