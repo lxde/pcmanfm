@@ -1,21 +1,20 @@
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-06 22:37+0100\n"
+"POT-Creation-Date: 2010-03-18 04:16+0000\n"
 "PO-Revision-Date: \n"
 "Last-Translator: George Vasilakos <forfolias@gmail.com>\n"
 "Language-Team: Greek\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\\\\n\\n\\nX-Poedit-Language: Greek"
-"\\nX-Poedit-Country: GREECE\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\\\\n\\n\\nX-Poedit-Language: Greek\\nX-Poedit-Country: GREECE\\n\n"
 
 #: ../data/ui/about.glade.in.h:1
-msgid "Copyright (C) 2009"
-msgstr "Πνευματικά δικαιώματα (C) 2009"
+msgid "Copyright (C) 2009 - 2010"
+msgstr "Πνευματικά δικαιώματα (C) 2009 - 2010"
 
 #: ../data/ui/about.glade.in.h:2
 msgid ""
@@ -56,7 +55,7 @@ msgstr "Εμφάνιση"
 msgid "Background color:"
 msgstr "Χρώμα φόντου:"
 
-#: ../data/ui/desktop-pref.glade.h:7 ../data/ui/pref.glade.h:8
+#: ../data/ui/desktop-pref.glade.h:7 ../data/ui/pref.glade.h:10
 msgid "Center on the screen"
 msgstr "Κέντρο της οθόνης"
 
@@ -105,18 +104,18 @@ msgid "Show icons of volumes on desktop"
 msgstr "Εμφάνιση εικονιδίων τόμων στην επιφάνεια εργασίας"
 
 #: ../data/ui/desktop-pref.glade.h:19
-msgid "Show menus provided by WM when desktop is clicked"
-msgstr "Εμφάνιση του μενού του WM όταν κάνετε κλικ στην επιφάνεια εργασίας"
+msgid "Show menus provided by window managers when desktop is clicked"
+msgstr "Εμφάνιση του μενού του διαχειριστή παραθύρων όταν κάνετε κλικ στην επιφάνεια εργασίας"
 
-#: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:32
+#: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:37
 msgid "Stretch to fill the entire screen"
 msgstr "Τέντωμα ώστε να καλύψει όλη την οθόνη"
 
-#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:33
+#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:38
 msgid "Stretch to fit the screen"
 msgstr "Τέντωμα ώστε να χωρέσει στην οθόνη"
 
-#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:37
+#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:42
 msgid "Tile the image to fill the entire screen"
 msgstr "Παράθεση εικόνας σε όλη την οθόνη"
 
@@ -129,190 +128,205 @@ msgid "Wallpaper:"
 msgstr "Ταπετσαρία:"
 
 #: ../data/ui/pref.glade.h:1
+msgid "<b>Auto-mount</b>"
+msgstr "<b>Αυτόματη προσάρτηση</b>"
+
+#: ../data/ui/pref.glade.h:2
 msgid "<b>Behavior</b>"
 msgstr "<b>Συμπεριφορά</b>"
 
-#: ../data/ui/pref.glade.h:2
+#: ../data/ui/pref.glade.h:3
 msgid "<b>Default View</b>"
 msgstr "<b>Προεπιλεγμένη προβολή</b>"
 
-#: ../data/ui/pref.glade.h:3
+#: ../data/ui/pref.glade.h:4
 msgid "<b>Icons</b>"
 msgstr "<b>Εικονίδια</b>"
 
-#: ../data/ui/pref.glade.h:4
+#: ../data/ui/pref.glade.h:5
 msgid "<b>Programs</b>"
 msgstr "<b>Προγράμματα</b>"
 
-#: ../data/ui/pref.glade.h:5
+#: ../data/ui/pref.glade.h:6
 msgid "<b>User Interface</b>"
 msgstr "<b>Διεπαφή</b>"
 
-#: ../data/ui/pref.glade.h:6
+#: ../data/ui/pref.glade.h:7
 msgid "Always show the tab bar"
 msgstr "Να εμφανίζεται πάντα η μπάρα με τις καρτέλες"
 
-#: ../data/ui/pref.glade.h:7
+#: ../data/ui/pref.glade.h:8
+msgid "Archiver integration:"
+msgstr "Ενσωμάτωση από/συμπιεστή αρχείων:"
+
+#: ../data/ui/pref.glade.h:9
 msgid "Bookmarks:"
 msgstr "Σελιδοδείκτες:"
 
-#: ../data/ui/pref.glade.h:9
+#: ../data/ui/pref.glade.h:11
 msgid "Compact View"
 msgstr "Συμπαγής προβολή"
 
-#: ../data/ui/pref.glade.h:10
+#: ../data/ui/pref.glade.h:12
 msgid "Confirm before deleting files"
 msgstr "Επιβεβαίωση πριν από τη διαγραφή αρχείων"
 
-#: ../data/ui/pref.glade.h:11
+#: ../data/ui/pref.glade.h:13
 msgid "Detailed List View"
 msgstr "Λεπτομερής προβολή"
 
-#: ../data/ui/pref.glade.h:12
-msgid "Do not generate thumbnails for files exceeding this size:"
-msgstr ""
-"Μη δημιουργούνται μικρογραφίες για αρχεία που υπερβαίνουν αυτό το μέγεθος:"
-
 #: ../data/ui/pref.glade.h:14
+msgid "Do not generate thumbnails for files exceeding this size:"
+msgstr "Μη δημιουργούνται μικρογραφίες για αρχεία που υπερβαίνουν αυτό το μέγεθος:"
+
+#: ../data/ui/pref.glade.h:16
 #, no-c-format
 msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
 "%s = the command line you want to execute with terminal or su."
 msgstr ""
-"Παραδείγματα: \"xterm-e% s \" για τερματικό ή \"% gksu %s\" για την εναλλαγή "
-"χρήστη.\n"
+"Παραδείγματα: \"xterm-e% s \" για τερματικό ή \"% gksu %s\" για την εναλλαγή χρήστη.\n"
 "%s = η εντολή που θέλετε να εκτελέσετε με τερματικό ή su."
 
-#: ../data/ui/pref.glade.h:16
+#: ../data/ui/pref.glade.h:18
 msgid "Hide 'Close tab' buttons"
 msgstr "Απόκρυψη κουμπιών 'Κλείσιμο καρτέλας'"
 
-#: ../data/ui/pref.glade.h:17
+#: ../data/ui/pref.glade.h:19
 msgid "Hide folder content border"
 msgstr "Απόκρυψη περιεχομένων φακέλου"
 
-#: ../data/ui/pref.glade.h:18
+#: ../data/ui/pref.glade.h:20
 msgid "Hide side pane buttons"
 msgstr "Απόκρυψη κουμπιών πλαϊνού ταμπλό"
 
-#: ../data/ui/pref.glade.h:19
+#: ../data/ui/pref.glade.h:21
 msgid "Icon View"
 msgstr "Προβολή εικονιδίων"
 
-#: ../data/ui/pref.glade.h:20
-msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
-msgstr ""
-"Μετακίνηση των αρχείων στον \"κάδο απορριμάτων\" αντί για διαγραφή από το "
-"δίσκο"
+#: ../data/ui/pref.glade.h:22
+msgid "Mount mountable volumes automatically on program startup"
+msgstr "Αυτόματη προσάρτηση τόμων στην εκκίνηση του προγράμματος"
 
-#: ../data/ui/pref.glade.h:21
+#: ../data/ui/pref.glade.h:23
+msgid "Mount removable media automatically when they are inserted"
+msgstr "Αυτόματη προσάρτηση αφαιρούμενων δίσκων κατά την εισαγωγή τους"
+
+#: ../data/ui/pref.glade.h:24
+msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
+msgstr "Μετακίνηση των αρχείων στον \"κάδο απορριμάτων\" αντί για διαγραφή από το δίσκο"
+
+#: ../data/ui/pref.glade.h:25
 msgid "Only show thumbnails for local files"
 msgstr "Εμφάνιση προεπισκόπησης μόνο σε τοπικά αρχεία"
 
-#: ../data/ui/pref.glade.h:22
+#: ../data/ui/pref.glade.h:26
 msgid "Open files with single click"
 msgstr "Άνοιγμα αρχείων με μονό κλικ"
 
-#: ../data/ui/pref.glade.h:23
+#: ../data/ui/pref.glade.h:27
 msgid "Opened in Current Tab"
 msgstr "Άνοιγμα στην παρούσα καρτέλα"
 
-#: ../data/ui/pref.glade.h:24
+#: ../data/ui/pref.glade.h:28
 msgid "Opened in New Tab"
 msgstr "Άνοιγμα σε νέα καρτέλα"
 
-#: ../data/ui/pref.glade.h:25
+#: ../data/ui/pref.glade.h:29
 msgid "Opened in New Window"
 msgstr "Άνοιγμα σε νέο παράθυρο"
 
-#: ../data/ui/pref.glade.h:26
+#: ../data/ui/pref.glade.h:30
 msgid "Preferences"
 msgstr "Προτιμήσεις"
 
-#: ../data/ui/pref.glade.h:27
+#: ../data/ui/pref.glade.h:31
+msgid "Show available options for removable media when they are inserted"
+msgstr "Εμφάνιση διαθέσιμων επιλογών αφαιρούμενων δίσκων κατά την εισαγωγή τους"
+
+#: ../data/ui/pref.glade.h:32
 msgid "Show thumbnails of files"
 msgstr "Εμφάνιση μικρογραφίας αρχείων"
 
-#: ../data/ui/pref.glade.h:28
+#: ../data/ui/pref.glade.h:33
 msgid "Size of big icons:"
 msgstr "Μέγεθος μεγάλων εικονιδίων:"
 
-#: ../data/ui/pref.glade.h:29
+#: ../data/ui/pref.glade.h:34
 msgid "Size of side pane icons:"
 msgstr "Μέγεθος εικονιδίων στο πλαϊνό ταμπλό:"
 
-#: ../data/ui/pref.glade.h:30
+#: ../data/ui/pref.glade.h:35
 msgid "Size of small icons:"
 msgstr "Μέγεθος μικρών εικονιδίων:"
 
-#: ../data/ui/pref.glade.h:31
+#: ../data/ui/pref.glade.h:36
 msgid "Size of thumbnails:"
 msgstr "Μέγεθος μικρογραφίας:"
 
-#: ../data/ui/pref.glade.h:34
+#: ../data/ui/pref.glade.h:39
 msgid "Switch user command:"
 msgstr "Εντολή αλλαγής χρήστη"
 
-#: ../data/ui/pref.glade.h:35
+#: ../data/ui/pref.glade.h:40
 msgid "Terminal emulator:"
 msgstr "Τερματικό"
 
-#: ../data/ui/pref.glade.h:36
+#: ../data/ui/pref.glade.h:41
 msgid "Thumbnail View"
 msgstr "Προβολή μικρογραφιών"
 
-#: ../data/ui/pref.glade.h:38
+#: ../data/ui/pref.glade.h:43
 msgid "Use SI decimal prefixes instead of IEC binary prefixes"
 msgstr "Χρήση SI δεκαδικών προθεμάτων αντί για IEC δυαδικών προθεμάτων"
 
-#: ../data/ui/pref.glade.h:39
+#: ../data/ui/pref.glade.h:44
 msgid "View Mode:"
 msgstr "Τύπος προβολής:"
 
-#: ../data/ui/pref.glade.h:40
+#: ../data/ui/pref.glade.h:45
 msgid "_Advanced"
 msgstr "_Για προχωρημένους"
 
-#: ../data/ui/pref.glade.h:41
+#: ../data/ui/pref.glade.h:46
 msgid "_Display"
 msgstr "_Εμφάνιση"
 
-#: ../data/ui/pref.glade.h:42
+#: ../data/ui/pref.glade.h:47
 msgid "_General"
 msgstr "_Γενικά"
 
-#: ../data/ui/pref.glade.h:43
+#: ../data/ui/pref.glade.h:48
 msgid "_Volume Management"
 msgstr "Διαχειριστής τόμων"
 
 #: ../data/ui/autorun.glade.h:1
 msgid "<b>Removable medium is inserted</b>"
-msgstr ""
+msgstr "<b>Εισήχθη αφαιρούμενο μέσο</b>"
 
 #: ../data/ui/autorun.glade.h:2
 msgid "Detecting..."
-msgstr ""
+msgstr "Ανίχνευση..."
 
 #: ../data/ui/autorun.glade.h:3
 msgid "Please select the action you want to perform:"
-msgstr ""
+msgstr "Παρακαλώ επιλέξτε την ενέργεια που επιθυμείτε:"
 
 #: ../data/ui/autorun.glade.h:4
 msgid "Removable medium is inserted"
-msgstr ""
+msgstr "Εισήχθη αφαιρούμενο μέσο"
 
 #: ../data/ui/autorun.glade.h:5
 msgid "Type of medium:"
-msgstr ""
+msgstr "Τύπος αφαιρούμενου μέσου:"
 
-#: ../src/volume-manager.c:149
+#: ../src/volume-manager.c:150
 msgid "Removable Disk"
-msgstr ""
+msgstr "Αφαιρούμενος δίσκος"
 
-#: ../src/volume-manager.c:208
-#, fuzzy
+#: ../src/volume-manager.c:209
 msgid "Open in File Manager"
-msgstr "Άνοιγμα σε νέα καρτέλα"
+msgstr "Άνοιγμα στο διαχειριστή αρχείων"
 
 #: ../src/desktop-ui.c:53
 msgid "_Invert Selection"
@@ -508,7 +522,7 @@ msgstr "_Λεπτομέριες"
 
 #: ../src/main-win.c:495
 msgid "You are in super user mode"
-msgstr ""
+msgstr "Είστε σε κατάσταση υπερχρήστη"
 
 #: ../src/main-win.c:596
 msgid "Switch user command is not set."
@@ -535,12 +549,8 @@ msgid "Add to Bookmarks"
 msgstr "Προσθήκη στους σελιδοδείκτες"
 
 #: ../src/pcmanfm.c:70
-msgid ""
-"Open folders in new tabs of the last used window instead of creating new "
-"windows"
-msgstr ""
-"Άνοιγμα φακέλων σε νέες καρτέλες στο πιο πρόσφατο παράθυρο αντί δημιουργίας "
-"νέων παραθύρων"
+msgid "Open folders in new tabs of the last used window instead of creating new windows"
+msgstr "Άνοιγμα φακέλων σε νέες καρτέλες στο πιο πρόσφατο παράθυρο αντί δημιουργίας νέων παραθύρων"
 
 #: ../src/pcmanfm.c:71
 msgid "Name of configuration profile"
@@ -571,12 +581,8 @@ msgid "<image file>"
 msgstr "<αρχείο εικόνας>"
 
 #: ../src/pcmanfm.c:77
-msgid ""
-"Open preference dialog. 'n' is number of the page you want to show (1, 2, "
-"3...)."
-msgstr ""
-"Άνοιγμα παραθύρου προτιμήσεων. 'n' είναι ο αριθμός της σελίδας που θέλετε να "
-"δείτε (1, 2, 3 ...)."
+msgid "Open preference dialog. 'n' is number of the page you want to show (1, 2, 3...)."
+msgstr "Άνοιγμα παραθύρου προτιμήσεων. 'n' είναι ο αριθμός της σελίδας που θέλετε να δείτε (1, 2, 3 ...)."
 
 #: ../src/pcmanfm.c:78
 msgid "Open Find Files utility"
