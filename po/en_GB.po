@@ -2,7 +2,7 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm 0.9.x\n"
@@ -16,15 +16,20 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../data/ui/about.glade.in.h:1
+#, fuzzy
 msgid "Copyright (C) 2009 - 2010"
-msgstr ""
+msgstr "Copyright (C) 2009 - 2010"
 
 #: ../data/ui/about.glade.in.h:2
+#, fuzzy
 msgid ""
 "Lightweight file manager\n"
 "\n"
 "Developed by Hon Jen Yee (PCMan)"
 msgstr ""
+"Lightweight file manager\n"
+"\n"
+"Developed by Hon Jen Yee (PCMan)"
 
 #. Please replace this line with your own names, one name per line.
 #: ../data/ui/about.glade.in.h:6
@@ -549,12 +554,8 @@ msgid "Add to Bookmarks"
 msgstr "Add to Bookmarks"
 
 #: ../src/pcmanfm.c:70
-msgid ""
-"Open folders in new tabs of the last used window instead of creating new "
-"windows"
-msgstr ""
-"Open folders in new tabs of the last used window instead of creating new "
-"windows"
+msgid "Open folders in new tabs of the last used window instead of creating new windows"
+msgstr "Open folders in new tabs of the last used window instead of creating new windows"
 
 #: ../src/pcmanfm.c:71
 msgid "Name of configuration profile"
@@ -585,11 +586,8 @@ msgid "<image file>"
 msgstr "<image file>"
 
 #: ../src/pcmanfm.c:77
-msgid ""
-"Open preference dialog. 'n' is number of the page you want to show (1, 2, "
-"3...)."
-msgstr "Open preference dialogue. 'n' is number of the page you want to show (1, 2, "
-"3...)"
+msgid "Open preference dialog. 'n' is number of the page you want to show (1, 2, 3...)."
+msgstr "Open preference dialogue. 'n' is number of the page you want to show (1, 2, 3...)"
 
 #: ../src/pcmanfm.c:78
 msgid "Open Find Files utility"
