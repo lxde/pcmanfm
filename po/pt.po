@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-18 04:16+0000\n"
-"PO-Revision-Date: 2010-03-18 11:33-0000\n"
+"POT-Creation-Date: 2010-03-19 04:15+0000\n"
+"PO-Revision-Date: 2010-03-19 12:20-0000\n"
 "Last-Translator: Sérgio Marques <smarquespt@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -46,7 +46,7 @@ msgstr "<b>Fundo<b>"
 
 #: ../data/ui/desktop-pref.glade.h:2
 msgid "<b>Show desktop icons</b>"
-msgstr "<b>Mostrar ícones na área de trabalho.</b>"
+msgstr "<b>Mostrar ícones na área de trabalho</b>"
 
 #: ../data/ui/desktop-pref.glade.h:3
 msgid "<b>Text</b>"
@@ -67,7 +67,7 @@ msgstr "Cor de fundo:"
 #: ../data/ui/desktop-pref.glade.h:7
 #: ../data/ui/pref.glade.h:10
 msgid "Center on the screen"
-msgstr "Centrar no ecrâ"
+msgstr "Centrar no ecrã"
 
 #: ../data/ui/desktop-pref.glade.h:8
 msgid "Color of label text:"
@@ -116,7 +116,7 @@ msgstr "Mostrar ícones de volumes na área de trabalho"
 
 #: ../data/ui/desktop-pref.glade.h:19
 msgid "Show menus provided by window managers when desktop is clicked"
-msgstr "Mostrar menus dos gestores de janelas ao clicar no ambiente de trabalho"
+msgstr "Mostrar menus dos gestores de janelas ao clicar na área de trabalho"
 
 #: ../data/ui/desktop-pref.glade.h:20
 #: ../data/ui/pref.glade.h:37
@@ -228,7 +228,7 @@ msgstr "Ao inserir o disco amovível, montar automaticamente"
 
 #: ../data/ui/pref.glade.h:24
 msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
-msgstr "Mover ficheiros apagados para o \"lixo\" ao invés de os apagar do disco"
+msgstr "Mover ficheiros apagados para o \"lixo\" em vez de os apagar do disco"
 
 #: ../data/ui/pref.glade.h:25
 msgid "Only show thumbnails for local files"
@@ -320,7 +320,7 @@ msgstr "<b>Disco amovível inserido</b>"
 
 #: ../data/ui/autorun.glade.h:2
 msgid "Detecting..."
-msgstr "Detectando..."
+msgstr "A detectar..."
 
 #: ../data/ui/autorun.glade.h:3
 msgid "Please select the action you want to perform:"
@@ -332,7 +332,7 @@ msgstr "Disco amovível inserido"
 
 #: ../data/ui/autorun.glade.h:5
 msgid "Type of medium:"
-msgstr "Tipo de média:"
+msgstr "Tipo de disco:"
 
 #: ../src/volume-manager.c:150
 msgid "Removable Disk"
@@ -373,7 +373,7 @@ msgstr "Por Data de _Modificação"
 #: ../src/desktop-ui.c:71
 #: ../src/main-win-ui.c:196
 msgid "By _Size"
-msgstr "Por _Tamanho"
+msgstr "Por T_amanho"
 
 #: ../src/desktop-ui.c:72
 #: ../src/main-win-ui.c:197
@@ -388,7 +388,7 @@ msgstr "Abrir em Novo Separador"
 #: ../src/desktop-ui.c:89
 #: ../src/main-win-ui.c:215
 msgid "Open in New Window"
-msgstr "Abrie em Nova Janela"
+msgstr "Abrir em Nova Janela"
 
 #: ../src/desktop-ui.c:91
 #: ../src/main-win-ui.c:217
@@ -445,7 +445,7 @@ msgstr "_Ver"
 
 #: ../src/main-win-ui.c:145
 msgid "_Help"
-msgstr "_Ajuda"
+msgstr "Aj_uda"
 
 #: ../src/main-win-ui.c:147
 msgid "_Go"
@@ -549,7 +549,7 @@ msgstr "Está no modo de super utilizador"
 
 #: ../src/main-win.c:596
 msgid "Switch user command is not set."
-msgstr "Troca de comando de utilizador não definido."
+msgstr "Comando para troca de utilizador não definido."
 
 #: ../src/main-win.c:944
 #, c-format
@@ -585,7 +585,7 @@ msgstr "Iniciar gestor da área de trabalho"
 
 #: ../src/pcmanfm.c:73
 msgid "Turn off desktop manager if it's running"
-msgstr "Desligar gertor da área de trabalho se em execução"
+msgstr "Desligar gestor da área de trabalho se em execução"
 
 #: ../src/pcmanfm.c:74
 msgid "Run PCManFM as a daemon"
@@ -634,9 +634,4 @@ msgstr "Indique o nome do ficheiro agora criado:"
 #: ../src/pcmanfm.c:587
 msgid "New"
 msgstr "Novo"
-
-#~ msgid "Display image files with supported format as thumbnails"
-#~ msgstr "Mostrar imagens de formatos suportados como miniaturas"
-#~ msgid "Max size of files displayed as thumbnails:"
-#~ msgstr "Tamanho máx. dos ficheiros mostrados como miniaturas:"
 
