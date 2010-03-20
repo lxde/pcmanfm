@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-06 22:37+0100\n"
+"POT-Creation-Date: 2010-03-20 17:07+0800\n"
 "PO-Revision-Date: 2010-02-27 15:56+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -15,7 +15,8 @@ msgstr ""
 "X-Generator: Pootle 1.1.0\n"
 
 #: ../data/ui/about.glade.in.h:1
-msgid "Copyright (C) 2009"
+#, fuzzy
+msgid "Copyright (C) 2009 - 2010"
 msgstr "כל הזכויות שמורות (C)‏ 2009"
 
 #: ../data/ui/about.glade.in.h:2
@@ -60,7 +61,7 @@ msgstr "מראה"
 msgid "Background color:"
 msgstr "צבע הרקע:"
 
-#: ../data/ui/desktop-pref.glade.h:7 ../data/ui/pref.glade.h:8
+#: ../data/ui/desktop-pref.glade.h:7 ../data/ui/pref.glade.h:10
 msgid "Center on the screen"
 msgstr "ממורכז על גבי המסך"
 
@@ -109,18 +110,19 @@ msgid "Show icons of volumes on desktop"
 msgstr "הצגת סמלים ליחידות אחסון על שולחן העבודה"
 
 #: ../data/ui/desktop-pref.glade.h:19
-msgid "Show menus provided by WM when desktop is clicked"
+#, fuzzy
+msgid "Show menus provided by window managers when desktop is clicked"
 msgstr "הצגת התפריטים בעת הלחיצה על הרקע מתבצעת על ידי מנהל החלונות"
 
-#: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:32
+#: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:37
 msgid "Stretch to fill the entire screen"
 msgstr "מתיחה כדי למלא את המסך כולו"
 
-#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:33
+#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:38
 msgid "Stretch to fit the screen"
 msgstr "מתיחה לצורך התאמה למסך"
 
-#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:37
+#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:42
 msgid "Tile the image to fill the entire screen"
 msgstr "פריסת התמונה כך שתמלא את המסך כולו"
 
@@ -133,50 +135,60 @@ msgid "Wallpaper:"
 msgstr "רקע שולחן העבודה:"
 
 #: ../data/ui/pref.glade.h:1
+#, fuzzy
+msgid "<b>Auto-mount</b>"
+msgstr "<b>סמלים</b>"
+
+#: ../data/ui/pref.glade.h:2
 msgid "<b>Behavior</b>"
 msgstr "<b>התנהגות</b>"
 
-#: ../data/ui/pref.glade.h:2
+#: ../data/ui/pref.glade.h:3
 msgid "<b>Default View</b>"
 msgstr "<b>תצוגת ברירת המחדל</b>"
 
-#: ../data/ui/pref.glade.h:3
+#: ../data/ui/pref.glade.h:4
 msgid "<b>Icons</b>"
 msgstr "<b>סמלים</b>"
 
-#: ../data/ui/pref.glade.h:4
+#: ../data/ui/pref.glade.h:5
 msgid "<b>Programs</b>"
 msgstr "<b>תוכניות</b>"
 
-#: ../data/ui/pref.glade.h:5
+#: ../data/ui/pref.glade.h:6
 msgid "<b>User Interface</b>"
 msgstr "<b>מנשק המשתמש</b>"
 
-#: ../data/ui/pref.glade.h:6
+#: ../data/ui/pref.glade.h:7
 msgid "Always show the tab bar"
 msgstr "תמיד להציג את סרגל הלשוניות"
 
-#: ../data/ui/pref.glade.h:7
+#: ../data/ui/pref.glade.h:8
+#, fuzzy
+msgid "Archiver integration:"
+msgstr "כיוון"
+
+#: ../data/ui/pref.glade.h:9
 msgid "Bookmarks:"
 msgstr "סימניות:"
 
-#: ../data/ui/pref.glade.h:9
+#: ../data/ui/pref.glade.h:11
 msgid "Compact View"
 msgstr "תצוגה קומפקטית"
 
-#: ../data/ui/pref.glade.h:10
+#: ../data/ui/pref.glade.h:12
 msgid "Confirm before deleting files"
 msgstr "יש לאשר לפני מחיקת קבצים"
 
-#: ../data/ui/pref.glade.h:11
+#: ../data/ui/pref.glade.h:13
 msgid "Detailed List View"
 msgstr "תצוגת רשימה מפורטת"
 
-#: ../data/ui/pref.glade.h:12
+#: ../data/ui/pref.glade.h:14
 msgid "Do not generate thumbnails for files exceeding this size:"
 msgstr "אין לייצר תמונות מוקטנות עבור קבצים החורגים מגודל זה:"
 
-#: ../data/ui/pref.glade.h:14
+#: ../data/ui/pref.glade.h:16
 #, no-c-format
 msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
@@ -185,104 +197,116 @@ msgstr ""
 "דוגמאות: \"xterm -e %s\" עבור מסוף או \"gksu %s\" להחלפת משתמש.\n"
 "%s = שורת הפקודה שברצונך להפעיל עם המסוף או עם su."
 
-#: ../data/ui/pref.glade.h:16
+#: ../data/ui/pref.glade.h:18
 msgid "Hide 'Close tab' buttons"
 msgstr "הסתרת לחצני 'סגירת הלשונית'"
 
-#: ../data/ui/pref.glade.h:17
+#: ../data/ui/pref.glade.h:19
 msgid "Hide folder content border"
 msgstr "הסתרת מסגרת תכני התיקייה"
 
-#: ../data/ui/pref.glade.h:18
+#: ../data/ui/pref.glade.h:20
 msgid "Hide side pane buttons"
 msgstr "הסתרת לחצני חלונית הצד"
 
-#: ../data/ui/pref.glade.h:19
+#: ../data/ui/pref.glade.h:21
 msgid "Icon View"
 msgstr "תצוגת סמלים"
 
-#: ../data/ui/pref.glade.h:20
+#: ../data/ui/pref.glade.h:22
+msgid "Mount mountable volumes automatically on program startup"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:23
+msgid "Mount removable media automatically when they are inserted"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:24
 msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
 msgstr "העברת קבצים שנמחקו אל \"סל המיחזור\" במקום מחיקה מהכונן"
 
-#: ../data/ui/pref.glade.h:21
+#: ../data/ui/pref.glade.h:25
 msgid "Only show thumbnails for local files"
 msgstr "יש להציג תמונות ממוזערות עבור קבצים מקומיים בלבד"
 
-#: ../data/ui/pref.glade.h:22
+#: ../data/ui/pref.glade.h:26
 msgid "Open files with single click"
 msgstr "פתיחת קבצים בלחיצה בודדת"
 
-#: ../data/ui/pref.glade.h:23
+#: ../data/ui/pref.glade.h:27
 msgid "Opened in Current Tab"
 msgstr "נפתח בלשונית הנוכחית"
 
-#: ../data/ui/pref.glade.h:24
+#: ../data/ui/pref.glade.h:28
 msgid "Opened in New Tab"
 msgstr "נפתח בלשונית חדשה"
 
-#: ../data/ui/pref.glade.h:25
+#: ../data/ui/pref.glade.h:29
 msgid "Opened in New Window"
 msgstr "נפתח בחלון חדש"
 
-#: ../data/ui/pref.glade.h:26
+#: ../data/ui/pref.glade.h:30
 msgid "Preferences"
 msgstr "העדפות"
 
-#: ../data/ui/pref.glade.h:27
+#: ../data/ui/pref.glade.h:31
+msgid "Show available options for removable media when they are inserted"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:32
 msgid "Show thumbnails of files"
 msgstr "הצגת תמונות ממוזערות של קבצים"
 
-#: ../data/ui/pref.glade.h:28
+#: ../data/ui/pref.glade.h:33
 msgid "Size of big icons:"
 msgstr "גודל הסמלים הגדולים:"
 
-#: ../data/ui/pref.glade.h:29
+#: ../data/ui/pref.glade.h:34
 msgid "Size of side pane icons:"
 msgstr "גודל הסמלים בסרגל הצד:"
 
-#: ../data/ui/pref.glade.h:30
+#: ../data/ui/pref.glade.h:35
 msgid "Size of small icons:"
 msgstr "גודל הסמלים הקטנים:"
 
-#: ../data/ui/pref.glade.h:31
+#: ../data/ui/pref.glade.h:36
 msgid "Size of thumbnails:"
 msgstr "גודל התמונות הממוזערות:"
 
-#: ../data/ui/pref.glade.h:34
+#: ../data/ui/pref.glade.h:39
 msgid "Switch user command:"
 msgstr "פקודת החלפת משתמש:"
 
-#: ../data/ui/pref.glade.h:35
+#: ../data/ui/pref.glade.h:40
 msgid "Terminal emulator:"
 msgstr "מדמה מסוף:"
 
-#: ../data/ui/pref.glade.h:36
+#: ../data/ui/pref.glade.h:41
 msgid "Thumbnail View"
 msgstr "תצוגת תמונות ממוזערות"
 
-#: ../data/ui/pref.glade.h:38
+#: ../data/ui/pref.glade.h:43
 msgid "Use SI decimal prefixes instead of IEC binary prefixes"
 msgstr ""
 "שימוש בקידומות עשרוניות לפי תקן ה־SI במקום קידומות בינאריות לפי תקן ה־IEC"
 
-#: ../data/ui/pref.glade.h:39
+#: ../data/ui/pref.glade.h:44
 msgid "View Mode:"
 msgstr "מצב התצוגה:"
 
-#: ../data/ui/pref.glade.h:40
+#: ../data/ui/pref.glade.h:45
 msgid "_Advanced"
 msgstr "מ_תקדם"
 
-#: ../data/ui/pref.glade.h:41
+#: ../data/ui/pref.glade.h:46
 msgid "_Display"
 msgstr "ה_צגה"
 
-#: ../data/ui/pref.glade.h:42
+#: ../data/ui/pref.glade.h:47
 msgid "_General"
 msgstr "_כללי"
 
-#: ../data/ui/pref.glade.h:43
+#: ../data/ui/pref.glade.h:48
 msgid "_Volume Management"
 msgstr "_ניהול התקני אחסון"
 
@@ -307,12 +331,12 @@ msgstr ""
 msgid "Type of medium:"
 msgstr ""
 
-#: ../src/volume-manager.c:149
+#: ../src/volume-manager.c:150
 #, fuzzy
 msgid "Removable Disk"
 msgstr "כרך %s נתיק"
 
-#: ../src/volume-manager.c:208
+#: ../src/volume-manager.c:209
 #, fuzzy
 msgid "Open in File Manager"
 msgstr "פתיחת חלונית הצד"
@@ -510,21 +534,21 @@ msgstr "תצוגת ת_מונות ממוזערת"
 msgid "Detailed _List View"
 msgstr "תצוגת רשימה מ_פורטת"
 
-#: ../src/main-win.c:495
+#: ../src/main-win.c:504
 #, fuzzy
 msgid "You are in super user mode"
 msgstr "אזהרה: המצב הנוכחי הוא מצב משתמש על"
 
-#: ../src/main-win.c:596
+#: ../src/main-win.c:605
 msgid "Switch user command is not set."
 msgstr "פקודת החלפת המשתמש לא הוגדרה."
 
-#: ../src/main-win.c:944
+#: ../src/main-win.c:953
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "מקום פנוי: %s (סך הכל: %s )"
 
-#: ../src/main-win.c:1150
+#: ../src/main-win.c:1159
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -535,7 +559,7 @@ msgstr ""
 "'%s'\n"
 "יש להזין שם עבור פריט הסימנייה החדשה:"
 
-#: ../src/main-win.c:1154
+#: ../src/main-win.c:1163
 msgid "Add to Bookmarks"
 msgstr "הוספה לסימניות"
 
@@ -949,9 +973,6 @@ msgstr "חדש"
 
 #~ msgid "The model for the icon view"
 #~ msgstr "הדגם עבור תצוגת הסמלים"
-
-#~ msgid "Orientation"
-#~ msgstr "כיוון"
 
 #~ msgid ""
 #~ "How the text and icon of each item are positioned relative to each other"

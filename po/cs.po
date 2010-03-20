@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PCMan File Manager 0.9\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-06 22:37+0100\n"
+"POT-Creation-Date: 2010-03-20 17:07+0800\n"
 "PO-Revision-Date: 2010-02-23 23:13+0100\n"
 "Last-Translator: Radek Tříška <radek@fastlinux.eu>\n"
 "Language-Team: Czech <radek@fastlinux.eu>\n"
@@ -17,7 +17,8 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #: ../data/ui/about.glade.in.h:1
-msgid "Copyright (C) 2009"
+#, fuzzy
+msgid "Copyright (C) 2009 - 2010"
 msgstr "Copyright (C) 2009"
 
 #: ../data/ui/about.glade.in.h:2
@@ -59,7 +60,7 @@ msgstr "Vzhled"
 msgid "Background color:"
 msgstr "Barva pozadí:"
 
-#: ../data/ui/desktop-pref.glade.h:7 ../data/ui/pref.glade.h:8
+#: ../data/ui/desktop-pref.glade.h:7 ../data/ui/pref.glade.h:10
 msgid "Center on the screen"
 msgstr "Na střed"
 
@@ -108,18 +109,19 @@ msgid "Show icons of volumes on desktop"
 msgstr "Zobraz ikony svazků na ploše"
 
 #: ../data/ui/desktop-pref.glade.h:19
-msgid "Show menus provided by WM when desktop is clicked"
+#, fuzzy
+msgid "Show menus provided by window managers when desktop is clicked"
 msgstr "Zobrazit menu poskytované Okenním Managerem při kliknutí na plochu"
 
-#: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:32
+#: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:37
 msgid "Stretch to fill the entire screen"
 msgstr "Roztáhnout na celou obrazovku"
 
-#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:33
+#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:38
 msgid "Stretch to fit the screen"
 msgstr "Přizpůsobit obrazovce"
 
-#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:37
+#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:42
 msgid "Tile the image to fill the entire screen"
 msgstr "Vydlaždicovat na celou obrazovku"
 
@@ -132,50 +134,59 @@ msgid "Wallpaper:"
 msgstr "Tapeta:"
 
 #: ../data/ui/pref.glade.h:1
+#, fuzzy
+msgid "<b>Auto-mount</b>"
+msgstr "<b>Ikony</b>"
+
+#: ../data/ui/pref.glade.h:2
 msgid "<b>Behavior</b>"
 msgstr "<b>Chování</b>"
 
-#: ../data/ui/pref.glade.h:2
+#: ../data/ui/pref.glade.h:3
 msgid "<b>Default View</b>"
 msgstr "<b>Výchozí pohled</b>"
 
-#: ../data/ui/pref.glade.h:3
+#: ../data/ui/pref.glade.h:4
 msgid "<b>Icons</b>"
 msgstr "<b>Ikony</b>"
 
-#: ../data/ui/pref.glade.h:4
+#: ../data/ui/pref.glade.h:5
 msgid "<b>Programs</b>"
 msgstr "<b>Programy</b>"
 
-#: ../data/ui/pref.glade.h:5
+#: ../data/ui/pref.glade.h:6
 msgid "<b>User Interface</b>"
 msgstr "<b>Uživatelské rozhraní</b>"
 
-#: ../data/ui/pref.glade.h:6
+#: ../data/ui/pref.glade.h:7
 msgid "Always show the tab bar"
 msgstr "Vždy zobrazovat lištu karet"
 
-#: ../data/ui/pref.glade.h:7
+#: ../data/ui/pref.glade.h:8
+msgid "Archiver integration:"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:9
 msgid "Bookmarks:"
 msgstr "Záložky:"
 
-#: ../data/ui/pref.glade.h:9
+#: ../data/ui/pref.glade.h:11
 msgid "Compact View"
 msgstr "Kompaktní pohled"
 
-#: ../data/ui/pref.glade.h:10
+#: ../data/ui/pref.glade.h:12
 msgid "Confirm before deleting files"
 msgstr "Potvrzovat mazání souborů"
 
-#: ../data/ui/pref.glade.h:11
+#: ../data/ui/pref.glade.h:13
 msgid "Detailed List View"
 msgstr "Detailní pohled"
 
-#: ../data/ui/pref.glade.h:12
+#: ../data/ui/pref.glade.h:14
 msgid "Do not generate thumbnails for files exceeding this size:"
 msgstr "Negenerovat náhledy pro soubory přesahující tuto velikost:"
 
-#: ../data/ui/pref.glade.h:14
+#: ../data/ui/pref.glade.h:16
 #, no-c-format
 msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
@@ -185,103 +196,115 @@ msgstr ""
 "uživatele.\n"
 "%s = příkaz který chcete spouštět pomocí terminálu nebo su."
 
-#: ../data/ui/pref.glade.h:16
+#: ../data/ui/pref.glade.h:18
 msgid "Hide 'Close tab' buttons"
 msgstr "Skrýt 'Zavřít kartu' tlačítka"
 
-#: ../data/ui/pref.glade.h:17
+#: ../data/ui/pref.glade.h:19
 msgid "Hide folder content border"
 msgstr "Skrýt okraj u adresářového okna"
 
-#: ../data/ui/pref.glade.h:18
+#: ../data/ui/pref.glade.h:20
 msgid "Hide side pane buttons"
 msgstr "Skrýt tlačítka postranního panelu"
 
-#: ../data/ui/pref.glade.h:19
+#: ../data/ui/pref.glade.h:21
 msgid "Icon View"
 msgstr "Ikonový pohled"
 
-#: ../data/ui/pref.glade.h:20
+#: ../data/ui/pref.glade.h:22
+msgid "Mount mountable volumes automatically on program startup"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:23
+msgid "Mount removable media automatically when they are inserted"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:24
 msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
 msgstr "Přesouvat mazané soubory do \"Koše\" "
 
-#: ../data/ui/pref.glade.h:21
+#: ../data/ui/pref.glade.h:25
 msgid "Only show thumbnails for local files"
 msgstr "Zobrazovat náhledy jen místních souborů"
 
-#: ../data/ui/pref.glade.h:22
+#: ../data/ui/pref.glade.h:26
 msgid "Open files with single click"
 msgstr "Otevírat soubory jedním kliknutím"
 
-#: ../data/ui/pref.glade.h:23
+#: ../data/ui/pref.glade.h:27
 msgid "Opened in Current Tab"
 msgstr "Otevřít v současné kartě"
 
-#: ../data/ui/pref.glade.h:24
+#: ../data/ui/pref.glade.h:28
 msgid "Opened in New Tab"
 msgstr "Otevřít v nové kartě"
 
-#: ../data/ui/pref.glade.h:25
+#: ../data/ui/pref.glade.h:29
 msgid "Opened in New Window"
 msgstr "Otevřít v novém okně"
 
-#: ../data/ui/pref.glade.h:26
+#: ../data/ui/pref.glade.h:30
 msgid "Preferences"
 msgstr "Nastavení"
 
-#: ../data/ui/pref.glade.h:27
+#: ../data/ui/pref.glade.h:31
+msgid "Show available options for removable media when they are inserted"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:32
 msgid "Show thumbnails of files"
 msgstr "Zobrazit náhledy souborů"
 
-#: ../data/ui/pref.glade.h:28
+#: ../data/ui/pref.glade.h:33
 msgid "Size of big icons:"
 msgstr "Velikost velkých ikon:"
 
-#: ../data/ui/pref.glade.h:29
+#: ../data/ui/pref.glade.h:34
 msgid "Size of side pane icons:"
 msgstr "Velikost ikon postranního panelu:"
 
-#: ../data/ui/pref.glade.h:30
+#: ../data/ui/pref.glade.h:35
 msgid "Size of small icons:"
 msgstr "Velikost malých ikon:"
 
-#: ../data/ui/pref.glade.h:31
+#: ../data/ui/pref.glade.h:36
 msgid "Size of thumbnails:"
 msgstr "Velikost náhledů:"
 
-#: ../data/ui/pref.glade.h:34
+#: ../data/ui/pref.glade.h:39
 msgid "Switch user command:"
 msgstr "Příkaz pro přepnutí uživatele:"
 
-#: ../data/ui/pref.glade.h:35
+#: ../data/ui/pref.glade.h:40
 msgid "Terminal emulator:"
 msgstr "Emulátor terminálu:"
 
-#: ../data/ui/pref.glade.h:36
+#: ../data/ui/pref.glade.h:41
 msgid "Thumbnail View"
 msgstr "Pohled s náhledy"
 
-#: ../data/ui/pref.glade.h:38
+#: ../data/ui/pref.glade.h:43
 msgid "Use SI decimal prefixes instead of IEC binary prefixes"
 msgstr "Používat SI decimální prefixy místo IEC binárních prefixů"
 
-#: ../data/ui/pref.glade.h:39
+#: ../data/ui/pref.glade.h:44
 msgid "View Mode:"
 msgstr "Režim zobrazení:"
 
-#: ../data/ui/pref.glade.h:40
+#: ../data/ui/pref.glade.h:45
 msgid "_Advanced"
 msgstr "_Rozšířené"
 
-#: ../data/ui/pref.glade.h:41
+#: ../data/ui/pref.glade.h:46
 msgid "_Display"
 msgstr "_Zobrazit"
 
-#: ../data/ui/pref.glade.h:42
+#: ../data/ui/pref.glade.h:47
 msgid "_General"
 msgstr "_Obecné"
 
-#: ../data/ui/pref.glade.h:43
+#: ../data/ui/pref.glade.h:48
 msgid "_Volume Management"
 msgstr "_Správa svazků"
 
@@ -305,11 +328,11 @@ msgstr ""
 msgid "Type of medium:"
 msgstr ""
 
-#: ../src/volume-manager.c:149
+#: ../src/volume-manager.c:150
 msgid "Removable Disk"
 msgstr ""
 
-#: ../src/volume-manager.c:208
+#: ../src/volume-manager.c:209
 #, fuzzy
 msgid "Open in File Manager"
 msgstr "Otevřít v nové kartě"
@@ -507,20 +530,20 @@ msgstr "_Pohled s náhledy"
 msgid "Detailed _List View"
 msgstr "Detailní pohled"
 
-#: ../src/main-win.c:495
+#: ../src/main-win.c:504
 msgid "You are in super user mode"
 msgstr ""
 
-#: ../src/main-win.c:596
+#: ../src/main-win.c:605
 msgid "Switch user command is not set."
 msgstr "Příkaz pro přepnutí uživatele není nastaven."
 
-#: ../src/main-win.c:944
+#: ../src/main-win.c:953
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Volné místo: %s (Celkem: %s)"
 
-#: ../src/main-win.c:1150
+#: ../src/main-win.c:1159
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -531,7 +554,7 @@ msgstr ""
 "'%s'\n"
 "Vložte název nové záložky:"
 
-#: ../src/main-win.c:1154
+#: ../src/main-win.c:1163
 msgid "Add to Bookmarks"
 msgstr "Přidat do záložek"
 

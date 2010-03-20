@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-14 17:56+0800\n"
-"PO-Revision-Date: 2010-03-14 18:01+0800\n"
-"Last-Translator: Hong Jen Yee (PCMan) <pcman.tw@gmail.com>\n"
+"POT-Creation-Date: 2010-03-20 17:07+0800\n"
+"PO-Revision-Date: 2010-03-20 17:09+0800\n"
+"Last-Translator: 洪任諭 <pcman.tw@gmail.com>\n"
 "Language-Team: zh_TW <zh_TW@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,7 +19,7 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 
 #: ../data/ui/about.glade.in.h:1
-msgid "Copyright (C) 2009"
+msgid "Copyright (C) 2009 - 2010"
 msgstr "版權所有 (C) 2009"
 
 #: ../data/ui/about.glade.in.h:2
@@ -62,7 +62,7 @@ msgid "Background color:"
 msgstr "背景顏色："
 
 #: ../data/ui/desktop-pref.glade.h:7
-#: ../data/ui/pref.glade.h:9
+#: ../data/ui/pref.glade.h:10
 msgid "Center on the screen"
 msgstr "置於螢幕中央"
 
@@ -116,17 +116,17 @@ msgid "Show menus provided by window managers when desktop is clicked"
 msgstr "點擊桌面時，顯示視窗管理員提供的選單"
 
 #: ../data/ui/desktop-pref.glade.h:20
-#: ../data/ui/pref.glade.h:36
+#: ../data/ui/pref.glade.h:37
 msgid "Stretch to fill the entire screen"
 msgstr "延展至填滿整個螢幕"
 
 #: ../data/ui/desktop-pref.glade.h:21
-#: ../data/ui/pref.glade.h:37
+#: ../data/ui/pref.glade.h:38
 msgid "Stretch to fit the screen"
 msgstr "延展到適合螢幕大小"
 
 #: ../data/ui/desktop-pref.glade.h:22
-#: ../data/ui/pref.glade.h:41
+#: ../data/ui/pref.glade.h:42
 msgid "Tile the image to fill the entire screen"
 msgstr "併排影像填滿整個螢幕"
 
@@ -167,26 +167,30 @@ msgid "Always show the tab bar"
 msgstr ""
 
 #: ../data/ui/pref.glade.h:8
+msgid "Archiver integration:"
+msgstr "壓縮軟體整合："
+
+#: ../data/ui/pref.glade.h:9
 msgid "Bookmarks:"
 msgstr "書籤："
 
-#: ../data/ui/pref.glade.h:10
+#: ../data/ui/pref.glade.h:11
 msgid "Compact View"
 msgstr "簡潔清單檢視"
 
-#: ../data/ui/pref.glade.h:11
+#: ../data/ui/pref.glade.h:12
 msgid "Confirm before deleting files"
 msgstr "刪除檔案前先確認"
 
-#: ../data/ui/pref.glade.h:12
+#: ../data/ui/pref.glade.h:13
 msgid "Detailed List View"
 msgstr "詳細清單檢視"
 
-#: ../data/ui/pref.glade.h:13
+#: ../data/ui/pref.glade.h:14
 msgid "Do not generate thumbnails for files exceeding this size:"
 msgstr "不要為超過這個大小的檔案產生縮圖："
 
-#: ../data/ui/pref.glade.h:15
+#: ../data/ui/pref.glade.h:16
 #, no-c-format
 msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
@@ -195,115 +199,115 @@ msgstr ""
 "舉例：終端機用 \"xterm -e %s\" 或切換使用者命令用\"gksu %s\"\n"
 "%s = 你想用終端機模擬器或是切換使用者命令來執行的指令行"
 
-#: ../data/ui/pref.glade.h:17
+#: ../data/ui/pref.glade.h:18
 msgid "Hide 'Close tab' buttons"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:18
+#: ../data/ui/pref.glade.h:19
 msgid "Hide folder content border"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:19
+#: ../data/ui/pref.glade.h:20
 msgid "Hide side pane buttons"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:20
+#: ../data/ui/pref.glade.h:21
 msgid "Icon View"
 msgstr "圖示檢視"
 
-#: ../data/ui/pref.glade.h:21
+#: ../data/ui/pref.glade.h:22
 msgid "Mount mountable volumes automatically on program startup"
 msgstr "啟動程式時自動掛載可掛載的磁碟"
 
-#: ../data/ui/pref.glade.h:22
+#: ../data/ui/pref.glade.h:23
 msgid "Mount removable media automatically when they are inserted"
 msgstr "當可移除媒體被插入時，自動掛載"
 
-#: ../data/ui/pref.glade.h:23
+#: ../data/ui/pref.glade.h:24
 msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
 msgstr "將刪除的檔案移到「垃圾桶」而不真的從磁碟上清除"
 
-#: ../data/ui/pref.glade.h:24
+#: ../data/ui/pref.glade.h:25
 msgid "Only show thumbnails for local files"
 msgstr "只顯示本地端檔案的縮圖"
 
-#: ../data/ui/pref.glade.h:25
+#: ../data/ui/pref.glade.h:26
 msgid "Open files with single click"
 msgstr "單擊滑鼠開啟檔案"
 
-#: ../data/ui/pref.glade.h:26
+#: ../data/ui/pref.glade.h:27
 msgid "Opened in Current Tab"
 msgstr "在目前分頁開啟"
 
-#: ../data/ui/pref.glade.h:27
+#: ../data/ui/pref.glade.h:28
 msgid "Opened in New Tab"
 msgstr "在新分頁開啟"
 
-#: ../data/ui/pref.glade.h:28
+#: ../data/ui/pref.glade.h:29
 msgid "Opened in New Window"
 msgstr "在新視窗開啟"
 
-#: ../data/ui/pref.glade.h:29
+#: ../data/ui/pref.glade.h:30
 msgid "Preferences"
 msgstr "偏好設定"
 
-#: ../data/ui/pref.glade.h:30
+#: ../data/ui/pref.glade.h:31
 msgid "Show available options for removable media when they are inserted"
 msgstr "當可移除媒體被插入時，顯示可用的選項"
 
-#: ../data/ui/pref.glade.h:31
+#: ../data/ui/pref.glade.h:32
 msgid "Show thumbnails of files"
 msgstr "以縮圖顯示檔案內容"
 
-#: ../data/ui/pref.glade.h:32
+#: ../data/ui/pref.glade.h:33
 msgid "Size of big icons:"
 msgstr "大圖示的尺寸："
 
-#: ../data/ui/pref.glade.h:33
+#: ../data/ui/pref.glade.h:34
 msgid "Size of side pane icons:"
 msgstr "側邊欄圖示的尺寸："
 
-#: ../data/ui/pref.glade.h:34
+#: ../data/ui/pref.glade.h:35
 msgid "Size of small icons:"
 msgstr "小圖示的尺寸："
 
-#: ../data/ui/pref.glade.h:35
+#: ../data/ui/pref.glade.h:36
 msgid "Size of thumbnails:"
 msgstr "縮圖的尺寸："
 
-#: ../data/ui/pref.glade.h:38
+#: ../data/ui/pref.glade.h:39
 msgid "Switch user command:"
 msgstr "切換使用者之指令："
 
-#: ../data/ui/pref.glade.h:39
+#: ../data/ui/pref.glade.h:40
 msgid "Terminal emulator:"
 msgstr "終端機模擬程式："
 
-#: ../data/ui/pref.glade.h:40
+#: ../data/ui/pref.glade.h:41
 msgid "Thumbnail View"
 msgstr "縮圖檢視"
 
-#: ../data/ui/pref.glade.h:42
+#: ../data/ui/pref.glade.h:43
 msgid "Use SI decimal prefixes instead of IEC binary prefixes"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:43
+#: ../data/ui/pref.glade.h:44
 msgid "View Mode:"
 msgstr "檢視模式："
 
-#: ../data/ui/pref.glade.h:44
+#: ../data/ui/pref.glade.h:45
 msgid "_Advanced"
 msgstr "進階(_A)"
 
-#: ../data/ui/pref.glade.h:45
+#: ../data/ui/pref.glade.h:46
 msgid "_Display"
 msgstr "顯示(_D)"
 
-#: ../data/ui/pref.glade.h:46
+#: ../data/ui/pref.glade.h:47
 msgid "_General"
 msgstr "一般(_G)"
 
-#: ../data/ui/pref.glade.h:47
+#: ../data/ui/pref.glade.h:48
 msgid "_Volume Management"
 msgstr "磁碟管理(_V)"
 
@@ -536,20 +540,20 @@ msgstr "縮圖檢視(_T)"
 msgid "Detailed _List View"
 msgstr "以詳細清單檢視(_L)"
 
-#: ../src/main-win.c:495
+#: ../src/main-win.c:504
 msgid "You are in super user mode"
 msgstr "你正在使用超級使用者模式"
 
-#: ../src/main-win.c:596
+#: ../src/main-win.c:605
 msgid "Switch user command is not set."
 msgstr "切換使用者的命令尚未設定。"
 
-#: ../src/main-win.c:944
+#: ../src/main-win.c:953
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "可用空間：%s (總共：%s )"
 
-#: ../src/main-win.c:1150
+#: ../src/main-win.c:1159
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -560,7 +564,7 @@ msgstr ""
 "'%s'\n"
 "輸入新書籤的名稱:"
 
-#: ../src/main-win.c:1154
+#: ../src/main-win.c:1163
 msgid "Add to Bookmarks"
 msgstr "新增到書籤"
 
@@ -570,15 +574,15 @@ msgstr ""
 
 #: ../src/pcmanfm.c:71
 msgid "Name of configuration profile"
-msgstr ""
+msgstr "設定檔名稱"
 
 #: ../src/pcmanfm.c:72
 msgid "Launch desktop manager"
-msgstr ""
+msgstr "啟動桌面管理"
 
 #: ../src/pcmanfm.c:73
 msgid "Turn off desktop manager if it's running"
-msgstr ""
+msgstr "關閉桌面管理"
 
 #: ../src/pcmanfm.c:74
 msgid "Run PCManFM as a daemon"
@@ -598,7 +602,7 @@ msgstr "<影像檔>"
 
 #: ../src/pcmanfm.c:77
 msgid "Open preference dialog. 'n' is number of the page you want to show (1, 2, 3...)."
-msgstr ""
+msgstr "開啟偏好設定對話框，'n' 是你要顯示的頁面(1, 2, 3...)"
 
 #: ../src/pcmanfm.c:78
 msgid "Open Find Files utility"

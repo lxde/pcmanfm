@@ -2,12 +2,12 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm 0.9\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-19 04:15+0000\n"
+"POT-Creation-Date: 2010-03-20 17:07+0800\n"
 "PO-Revision-Date: 2010-03-19 15:25+0100\n"
 "Last-Translator: Christoph Wickert <cwickert@fedoraproject.org>\n"
 "Language-Team: German\n"
@@ -196,7 +196,8 @@ msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
 "%s = the command line you want to execute with terminal or su."
 msgstr ""
-"Beispiele: \"xterm -e %s\" für Terminal oder \"gksu %s\" zum Benutzerwechsel.\n"
+"Beispiele: \"xterm -e %s\" für Terminal oder \"gksu %s\" zum "
+"Benutzerwechsel.\n"
 "%s = Befehlszeile, die im Terminal oder mit su ausgeführt werden soll."
 
 #: ../data/ui/pref.glade.h:18
@@ -537,20 +538,21 @@ msgstr "_Miniatur-Vorschaubilder"
 msgid "Detailed _List View"
 msgstr "_Detailansicht"
 
-#: ../src/main-win.c:495
+#: ../src/main-win.c:504
 msgid "You are in super user mode"
 msgstr "Sie arbeiten im Superuser-Rechten"
 
-#: ../src/main-win.c:596
+#: ../src/main-win.c:605
 msgid "Switch user command is not set."
-msgstr "Es wurde kein Befehl zum Benutzerwechsel in den Einstellungen angegeben."
+msgstr ""
+"Es wurde kein Befehl zum Benutzerwechsel in den Einstellungen angegeben."
 
-#: ../src/main-win.c:944
+#: ../src/main-win.c:953
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Freier Speicherplatz: %s (Gesamt: %s)"
 
-#: ../src/main-win.c:1150
+#: ../src/main-win.c:1159
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -561,13 +563,17 @@ msgstr ""
 "'%s'\n"
 "Namen für des neue Lesezeichen eingeben:"
 
-#: ../src/main-win.c:1154
+#: ../src/main-win.c:1163
 msgid "Add to Bookmarks"
 msgstr "Lesezeichen hinzufügen"
 
 #: ../src/pcmanfm.c:70
-msgid "Open folders in new tabs of the last used window instead of creating new windows"
-msgstr "Ordner in neuen Reitern des zuletzt benutzten Fensters öffnen, anstatt neue Fenster zu öffnen"
+msgid ""
+"Open folders in new tabs of the last used window instead of creating new "
+"windows"
+msgstr ""
+"Ordner in neuen Reitern des zuletzt benutzten Fensters öffnen, anstatt neue "
+"Fenster zu öffnen"
 
 #: ../src/pcmanfm.c:71
 msgid "Name of configuration profile"
@@ -598,8 +604,12 @@ msgid "<image file>"
 msgstr "<Bilddatei>"
 
 #: ../src/pcmanfm.c:77
-msgid "Open preference dialog. 'n' is number of the page you want to show (1, 2, 3...)."
-msgstr "Einstellungen öffnen,  wobei 'n' der Reiter ist, den Sie anzeigen möchten (1, 2, 3 ...)."
+msgid ""
+"Open preference dialog. 'n' is number of the page you want to show (1, 2, "
+"3...)."
+msgstr ""
+"Einstellungen öffnen,  wobei 'n' der Reiter ist, den Sie anzeigen möchten "
+"(1, 2, 3 ...)."
 
 #: ../src/pcmanfm.c:78
 msgid "Open Find Files utility"
