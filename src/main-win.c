@@ -28,6 +28,7 @@
 
 #include <unistd.h> /* for get euid */
 #include <sys/types.h>
+#include <ctype.h>
 
 #include "pcmanfm.h"
 
@@ -43,6 +44,7 @@ static void update_tab_label(FmMainWin* win, FmFolderView* fv, const char* title
 static void update_volume_info(FmMainWin* win);
 
 static void on_focus_in(GtkWidget* w, GdkEventFocus* evt);
+static gboolean on_key_press_event(GtkWidget* w, GdkEventKey* evt);
 static gboolean on_delete_event(GtkWidget* w, GdkEvent* evt);
 
 static void on_new_win(GtkAction* act, FmMainWin* win);
@@ -109,6 +111,7 @@ static void fm_main_win_class_init(FmMainWinClass *klass)
     widget_class = (GtkWidgetClass*)klass;
     widget_class->focus_in_event = on_focus_in;
     widget_class->delete_event = on_delete_event;
+    widget_class->key_press_event = on_key_press_event;
 
     fm_main_win_parent_class = (GtkWindowClass*)g_type_class_peek(GTK_TYPE_WINDOW);
 
@@ -402,6 +405,11 @@ static void on_show_history_menu(GtkMenuToolButton* btn, FmMainWin* win)
     gtk_widget_show_all( GTK_WIDGET(menu) );
 }
 
+static void on_splitter_pos_changed(GtkPaned* paned, GParamSpec* ps, FmMainWin* win)
+{
+    app_config->splitter_pos = gtk_paned_get_position(paned);
+}
+
 static void fm_main_win_init(FmMainWin *self)
 {
     GtkWidget *vbox, *menubar, *toolitem, *next_btn, *scroll;
@@ -417,7 +425,8 @@ static void fm_main_win_init(FmMainWin *self)
     vbox = gtk_vbox_new(FALSE, 0);
 
     self->hpaned = gtk_hpaned_new();
-    gtk_paned_set_position(GTK_PANED(self->hpaned), 150);
+    gtk_paned_set_position(GTK_PANED(self->hpaned), app_config->splitter_pos);
+    g_signal_connect(self->hpaned, "notify::position", G_CALLBACK(on_splitter_pos_changed), self);
 
     /* places left pane */
     self->places_view = fm_places_view_new();
@@ -1243,4 +1252,49 @@ void fm_main_win_open_in_last_active(FmPath* path)
     else
         fm_main_win_add_tab(win, path);
     gtk_window_present(GTK_WINDOW(win));
+}
+
+gboolean on_key_press_event(GtkWidget* w, GdkEventKey* evt)
+{
+    FmMainWin* win = FM_MAIN_WIN(w);
+    if(evt->state == GDK_MOD1_MASK) /* Alt */
+    {
+        if(isdigit(evt->keyval)) /* Alt + 0 ~ 9, nth tab */
+        {
+            int n;
+            if(evt->keyval == '0')
+                n = 9;
+            else
+                n = evt->keyval - '1';
+            gtk_notebook_set_current_page(GTK_NOTEBOOK(win->notebook), n);
+            return TRUE;
+        }
+    }
+    else if(evt->state == GDK_CONTROL_MASK) /* Ctrl */
+    {
+        if(evt->keyval == GDK_Tab || evt->keyval == GDK_ISO_Left_Tab) /* Ctrl + Tab, next tab */
+        {
+            int n = gtk_notebook_get_current_page(GTK_NOTEBOOK(win->notebook));
+            if(n < gtk_notebook_get_n_pages(GTK_NOTEBOOK(win->notebook)) - 1)
+                ++n;
+            else
+                n = 0;
+            gtk_notebook_set_current_page(GTK_NOTEBOOK(win->notebook), n);
+            return TRUE;
+        }
+    }
+    else if(evt->state == (GDK_CONTROL_MASK|GDK_SHIFT_MASK)) /* Ctrl + Shift */
+    {
+        if(evt->keyval == GDK_Tab || evt->keyval == GDK_ISO_Left_Tab) /* Ctrl + Shift + Tab, previous tab */
+        {
+            int n = gtk_notebook_get_current_page(GTK_NOTEBOOK(win->notebook));
+            if(n > 0)
+                --n;
+            else
+                n = gtk_notebook_get_n_pages(GTK_NOTEBOOK(win->notebook)) - 1;
+            gtk_notebook_set_current_page(GTK_NOTEBOOK(win->notebook), n);
+            return TRUE;
+        }
+    }
+    return GTK_WIDGET_CLASS(fm_main_win_parent_class)->key_press_event(w, evt);
 }

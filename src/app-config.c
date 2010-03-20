@@ -67,6 +67,7 @@ static void fm_app_config_init(FmAppConfig *self)
     self->desktop_fg.red = self->desktop_fg.green = self->desktop_fg.blue = 65535;
     self->win_width = 640;
     self->win_height = 480;
+    self->splitter_pos = 150;
 
     self->view_mode = FM_FV_ICON_VIEW;
     self->show_hidden = FALSE;
@@ -124,11 +125,14 @@ void fm_app_config_load_from_key_file(FmAppConfig* cfg, GKeyFile* kf)
 
     fm_key_file_get_bool(kf, "desktop", "show_wm_menu", &cfg->show_wm_menu);
 
+    /* ui */
     fm_key_file_get_int(kf, "ui", "always_show_tabs", &cfg->always_show_tabs);
     fm_key_file_get_int(kf, "ui", "hide_close_btn", &cfg->hide_close_btn);
 
     fm_key_file_get_int(kf, "ui", "win_width", &cfg->win_width);
     fm_key_file_get_int(kf, "ui", "win_height", &cfg->win_height);
+
+    fm_key_file_get_int(kf, "ui", "splitter_pos", &cfg->splitter_pos);
 
     /* default values for folder views */
     fm_key_file_get_int(kf, "ui", "view_mode", &cfg->view_mode);
@@ -193,7 +197,7 @@ void fm_app_config_save(FmAppConfig* cfg, const char* name)
             if(cfg->su_cmd)
                 fprintf(f, "su_cmd=%s\n", cfg->su_cmd);
 
-            fputs("[volume]\n", f);
+            fputs("\n[volume]\n", f);
             fprintf(f, "mount_on_startup=%d\n", cfg->mount_on_startup);
             fprintf(f, "mount_removable=%d\n", cfg->mount_removable);
             fprintf(f, "autorun=%d\n", cfg->autorun);
@@ -207,11 +211,13 @@ void fm_app_config_save(FmAppConfig* cfg, const char* name)
             if(cfg->desktop_font)
                 fprintf(f, "desktop_font=%s\n", cfg->desktop_font);
             fprintf(f, "show_wm_menu=%d\n", cfg->show_wm_menu);
+
             fputs("\n[ui]\n", f);
             fprintf(f, "always_show_tabs=%d\n", cfg->always_show_tabs);
             fprintf(f, "hide_close_btn=%d\n", cfg->hide_close_btn);
             fprintf(f, "win_width=%d\n", cfg->win_width);
             fprintf(f, "win_height=%d\n", cfg->win_height);
+            fprintf(f, "splitter_pos=%d\n", cfg->splitter_pos);
             fprintf(f, "view_mode=%d\n", cfg->view_mode);
             fprintf(f, "show_hidden=%d\n", cfg->show_hidden);
             fprintf(f, "sort_type=%d\n", cfg->sort_type);

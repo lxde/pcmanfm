@@ -68,6 +68,7 @@ struct _FmAppConfig
     gboolean hide_close_btn;
     int win_width;
     int win_height;
+    int splitter_pos;
 
     /* default values for folder views */
     guint view_mode;
