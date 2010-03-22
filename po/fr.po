@@ -2,12 +2,12 @@
 # Copyright (C) 2010
 # This file is distributed under the same license as the pcmanfm package.
 # Emmanuel <Trillaud etrillaud@gmail.com>, 2010.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-20 17:07+0800\n"
+"POT-Creation-Date: 2010-03-22 04:15+0000\n"
 "PO-Revision-Date: 2010-02-17 19:10+0100\n"
 "Last-Translator: Emmanuel Trillaud <etrillaud@gmail.com>\n"
 "Language-Team: French\n"
@@ -16,9 +16,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../data/ui/about.glade.in.h:1
-#, fuzzy
 msgid "Copyright (C) 2009 - 2010"
-msgstr "Copyright (C) 2009"
+msgstr "Copyright (C) 2009 - 2010"
 
 #: ../data/ui/about.glade.in.h:2
 msgid ""
@@ -109,9 +108,7 @@ msgstr "Afficher les icônes des volumes sur le Bureau"
 
 #: ../data/ui/desktop-pref.glade.h:19
 msgid "Show menus provided by window managers when desktop is clicked"
-msgstr ""
-"Afficher le menu fourni par le gestionnaire de fenêtre lors d'un clic sur le "
-"bureau"
+msgstr "Afficher le menu fourni par le gestionnaire de fenêtre lors d'un clic sur le bureau"
 
 #: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:37
 msgid "Stretch to fill the entire screen"
@@ -134,9 +131,8 @@ msgid "Wallpaper:"
 msgstr "Fond d'écran :"
 
 #: ../data/ui/pref.glade.h:1
-#, fuzzy
 msgid "<b>Auto-mount</b>"
-msgstr "<b>Icônes</b>"
+msgstr "<b>Auto-montage</b>"
 
 #: ../data/ui/pref.glade.h:2
 msgid "<b>Behavior</b>"
@@ -164,7 +160,7 @@ msgstr "Toujours montrer la barre des onglets"
 
 #: ../data/ui/pref.glade.h:8
 msgid "Archiver integration:"
-msgstr ""
+msgstr "Intégration de l'archiveur :"
 
 #: ../data/ui/pref.glade.h:9
 msgid "Bookmarks:"
@@ -192,10 +188,8 @@ msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
 "%s = the command line you want to execute with terminal or su."
 msgstr ""
-"Exemples : \"xterm -e %s\" pour un terminal ou \"gksu %s\" pour changer "
-"d'utilisateur.\n"
-"%s = la ligne de commande que vous voulez exécuter dans un terminal ou faire "
-"exécuter par un autre utilisateur."
+"Exemples : \"xterm -e %s\" pour un terminal ou \"gksu %s\" pour changer d'utilisateur.\n"
+"%s = la ligne de commande que vous voulez exécuter dans un terminal ou faire exécuter par un autre utilisateur."
 
 #: ../data/ui/pref.glade.h:18
 msgid "Hide 'Close tab' buttons"
@@ -215,16 +209,15 @@ msgstr "Vue en Icônes"
 
 #: ../data/ui/pref.glade.h:22
 msgid "Mount mountable volumes automatically on program startup"
-msgstr ""
+msgstr "Monter les volumes montables automatiquement lors du démarrage"
 
 #: ../data/ui/pref.glade.h:23
 msgid "Mount removable media automatically when they are inserted"
-msgstr ""
+msgstr "Monter les volumes amovible automatiquement quand ils sont insérés"
 
 #: ../data/ui/pref.glade.h:24
 msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
-msgstr ""
-"Déplacer les fichier vers la \"Corbeille\" au lieu de les effacer du disque"
+msgstr "Déplacer les fichier vers la \"Corbeille\" au lieu de les effacer du disque"
 
 #: ../data/ui/pref.glade.h:25
 msgid "Only show thumbnails for local files"
@@ -252,7 +245,7 @@ msgstr "Préférences"
 
 #: ../data/ui/pref.glade.h:31
 msgid "Show available options for removable media when they are inserted"
-msgstr ""
+msgstr "Afficher les options disponibles des média amovibles quand il sont insérés"
 
 #: ../data/ui/pref.glade.h:32
 msgid "Show thumbnails of files"
@@ -288,8 +281,7 @@ msgstr "Vue des aperçu"
 
 #: ../data/ui/pref.glade.h:43
 msgid "Use SI decimal prefixes instead of IEC binary prefixes"
-msgstr ""
-"Utiliser les préfixe décimaux du SI au lieu des préfixes binaires de l'IEC"
+msgstr "Utiliser les préfixe décimaux du SI au lieu des préfixes binaires de l'IEC"
 
 #: ../data/ui/pref.glade.h:44
 msgid "View Mode:"
@@ -560,12 +552,8 @@ msgid "Add to Bookmarks"
 msgstr "Marquer cette page"
 
 #: ../src/pcmanfm.c:70
-msgid ""
-"Open folders in new tabs of the last used window instead of creating new "
-"windows"
-msgstr ""
-"Ouvrir les dossiers dans de nouveaux onglet de la dernière fenêtre utilisée "
-"au lieu d'ouvrir une nouvelle fenêtre"
+msgid "Open folders in new tabs of the last used window instead of creating new windows"
+msgstr "Ouvrir les dossiers dans de nouveaux onglet de la dernière fenêtre utilisée au lieu d'ouvrir une nouvelle fenêtre"
 
 #: ../src/pcmanfm.c:71
 msgid "Name of configuration profile"
@@ -596,12 +584,8 @@ msgid "<image file>"
 msgstr "<fichier image>"
 
 #: ../src/pcmanfm.c:77
-msgid ""
-"Open preference dialog. 'n' is number of the page you want to show (1, 2, "
-"3...)."
-msgstr ""
-"Ouvrir la fenêtre des préférences. « n » est le nombre de pages que vous "
-"voulez afficher (1, 2, 3...)."
+msgid "Open preference dialog. 'n' is number of the page you want to show (1, 2, 3...)."
+msgstr "Ouvrir la fenêtre des préférences. « n » est le nombre de pages que vous voulez afficher (1, 2, 3...)."
 
 #: ../src/pcmanfm.c:78
 msgid "Open Find Files utility"
