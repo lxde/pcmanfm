@@ -236,7 +236,7 @@ inline static gboolean automount_volume(GVolume* vol, gboolean silent)
     if(!mount) /* not mounted, automount is needed */
     {
         g_debug("try automount");
-        if(!fm_mount_volume(NULL, vol))
+        if(!fm_mount_volume(NULL, vol, !silent))
             return FALSE;
         if(silent)
             return TRUE;
