@@ -1,18 +1,18 @@
 /*
  *      main-win-ui.c
- *      
+ *
  *      Copyright 2009 PCMan <pcman.tw@gmail.com>
- *      
+ *
  *      This program is free software; you can redistribute it and/or modify
  *      it under the terms of the GNU General Public License as published by
  *      the Free Software Foundation; either version 2 of the License, or
  *      (at your option) any later version.
- *      
+ *
  *      This program is distributed in the hope that it will be useful,
  *      but WITHOUT ANY WARRANTY; without even the implied warranty of
  *      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *      GNU General Public License for more details.
- *      
+ *
  *      You should have received a copy of the GNU General Public License
  *      along with this program; if not, write to the Free Software
  *      Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
@@ -21,7 +21,7 @@
 
 /* this file is included by main-win.c */
 
-static const char main_menu_xml[] = 
+static const char main_menu_xml[] =
 "<menubar>"
   "<menu action='FileMenu'>"
     "<menuitem action='New'/>"
@@ -37,7 +37,9 @@ static const char main_menu_xml[] =
     "<menuitem action='Del'/>"
     "<separator/>"
     "<menuitem action='Rename'/>"
+    /* TODO: implement symlink creation.
     "<menuitem action='Link'/>"
+    */
     "<menuitem action='MoveTo'/>"
     "<menuitem action='CopyTo'/>"
     "<separator/>"
@@ -70,12 +72,18 @@ static const char main_menu_xml[] =
     "<menuitem action='ListView'/>"
     "<separator/>"
     "<menu action='Sort'>"
-      "<menuitem action='Desc'/>"
       "<menuitem action='Asc'/>"
+      "<menuitem action='Desc'/>"
       "<separator/>"
       "<menuitem action='ByName'/>"
       "<menuitem action='ByMTime'/>"
+      "<menuitem action='BySize'/>"
+      "<menuitem action='ByType'/>"
     "</menu>"
+  "</menu>"
+  "<menu action='ToolMenu'>"
+  "<menuitem action='Term'/>"
+  "<menuitem action='AsRoot'/>"
   "</menu>"
   "<menu action='HelpMenu'>"
     "<menuitem action='About'/>"
@@ -95,12 +103,16 @@ static const char main_menu_xml[] =
   "</menu>"
   "<separator/>"
   "<menuitem action='Paste'/>"
+  "<menuitem action='SelAll'/>"
+  "<separator/>"
   "<menu action='Sort'>"
-    "<menuitem action='Desc'/>"
     "<menuitem action='Asc'/>"
+    "<menuitem action='Desc'/>"
     "<separator/>"
     "<menuitem action='ByName'/>"
     "<menuitem action='ByMTime'/>"
+    "<menuitem action='BySize'/>"
+    "<menuitem action='ByType'/>"
   "</menu>"
   "<menuitem action='ShowHidden'/>"
   "<separator/>"
@@ -144,7 +156,10 @@ static GtkActionEntry main_win_actions[]=
         {"Apps", "system-software-install", N_("Applications"), NULL, N_("Installed Applications"), G_CALLBACK(on_go_apps)},
         {"Go", GTK_STOCK_JUMP_TO, NULL, NULL, NULL, G_CALLBACK(on_go)},
     {"BookmarksMenu", NULL, N_("_Bookmarks"), NULL, NULL, NULL},
-        {"AddBookmark", GTK_STOCK_ADD, N_("Add To Bookmarks"), NULL, N_("Add To Bookmarks"), NULL},
+        {"AddBookmark", GTK_STOCK_ADD, N_("Add To Bookmarks"), NULL, NULL, G_CALLBACK(on_add_bookmark)},
+    {"ToolMenu", NULL, N_("_Tools"), NULL, NULL, NULL},
+        {"Term", "utilities-terminal", N_("Open Current Folder in _Terminal"), "F4", NULL, G_CALLBACK(on_open_in_terminal)},
+        {"AsRoot", GTK_STOCK_DIALOG_AUTHENTICATION, N_("Open Current Folder as _Root"), NULL, NULL, G_CALLBACK(on_open_as_root)},
     /* for accelerators */
     {"Location", NULL, NULL, "<Alt>d", NULL, G_CALLBACK(on_location)},
     {"Location2", NULL, NULL, "<Ctrl>L", NULL, G_CALLBACK(on_location)},
@@ -164,7 +179,7 @@ static GtkRadioActionEntry main_win_mode_actions[]=
 {
     {"IconView", NULL, N_("_Icon View"), NULL, NULL, FM_FV_ICON_VIEW},
     {"CompactView", NULL, N_("_Compact View"), NULL, NULL, FM_FV_COMPACT_VIEW},
-    {"ThumbnailView", NULL, N_("Thumbnail View"), NULL, NULL, FM_FV_THUMBNAIL_VIEW},
+    {"ThumbnailView", NULL, N_("_Thumbnail View"), NULL, NULL, FM_FV_THUMBNAIL_VIEW},
     {"ListView", NULL, N_("Detailed _List View"), NULL, NULL, FM_FV_LIST_VIEW},
 };
 
@@ -177,7 +192,9 @@ static GtkRadioActionEntry main_win_sort_type_actions[]=
 static GtkRadioActionEntry main_win_sort_by_actions[]=
 {
     {"ByName", NULL, N_("By _Name"), NULL, NULL, COL_FILE_NAME},
-    {"ByMTime", NULL, N_("By _Modification Time"), NULL, NULL, COL_FILE_MTIME}
+    {"ByMTime", NULL, N_("By _Modification Time"), NULL, NULL, COL_FILE_MTIME},
+    {"BySize", NULL, N_("By _Size"), NULL, NULL, COL_FILE_SIZE},
+    {"ByType", NULL, N_("By File _Type"), NULL, NULL, COL_FILE_DESC}
 };
 
 
@@ -186,6 +203,7 @@ static const char folder_menu_xml[]=
   "<placeholder name='ph1'>"
     "<menuitem action='NewTab'/>"
     "<menuitem action='NewWin'/>"
+    "<menuitem action='Term'/>"
     /* "<menuitem action='Search'/>" */
   "</placeholder>"
 "</popup>";
@@ -195,6 +213,7 @@ static GtkActionEntry folder_menu_actions[]=
 {
     {"NewTab", GTK_STOCK_NEW, N_("Open in New Tab"), NULL, NULL, G_CALLBACK(on_open_in_new_tab)},
     {"NewWin", GTK_STOCK_NEW, N_("Open in New Window"), NULL, NULL, G_CALLBACK(on_open_in_new_win)},
-    {"Search", GTK_STOCK_FIND, NULL, NULL, NULL, NULL}
+    {"Search", GTK_STOCK_FIND, NULL, NULL, NULL, NULL},
+    {"Term", "utilities-terminal", N_("Open in _Terminal"), NULL, NULL, G_CALLBACK(on_open_folder_in_terminal)},
 };
 

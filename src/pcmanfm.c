@@ -36,7 +36,7 @@
 #include <signal.h>
 #include <unistd.h> /* for getcwd */
 
-#include <fm-gtk.h>
+#include <libfm/fm-gtk.h>
 #include "app-config.h"
 #include "main-win.h"
 #include "desktop.h"
@@ -61,19 +61,20 @@ static int show_pref = 0;
 static gboolean desktop_pref = FALSE;
 static char* set_wallpaper = NULL;
 static gboolean find_files = FALSE;
+static char* ipc_cwd = NULL;
 
 static int n_pcmanfm_ref = 0;
 
 static GOptionEntry opt_entries[] =
 {
     { "new-tab", 't', 0, G_OPTION_ARG_NONE, &new_tab, N_("Open folders in new tabs of the last used window instead of creating new windows"), NULL },
-    { "profile", 'p', 0, G_OPTION_ARG_STRING, &profile, N_("Name of config profile"), "<profile name>" },
+    { "profile", 'p', 0, G_OPTION_ARG_STRING, &profile, N_("Name of configuration profile"), "<profile name>" },
     { "desktop", '\0', 0, G_OPTION_ARG_NONE, &show_desktop, N_("Launch desktop manager"), NULL },
     { "desktop-off", '\0', 0, G_OPTION_ARG_NONE, &desktop_off, N_("Turn off desktop manager if it's running"), NULL },
     { "daemon-mode", 'd', 0, G_OPTION_ARG_NONE, &daemon_mode, N_("Run PCManFM as a daemon"), NULL },
     { "desktop-pref", '\0', 0, G_OPTION_ARG_NONE, &desktop_pref, N_("Open desktop preference dialog"), NULL },
     { "set-wallpaper", 'w', 0, G_OPTION_ARG_FILENAME, &set_wallpaper, N_("Set desktop wallpaper"), N_("<image file>") },
-    { "show-pref", '\0', 0, G_OPTION_ARG_INT, &show_pref, N_("Open preference dialog. 'n' is the number of page you want to show (1, 2, 3...)."), "n" },
+    { "show-pref", '\0', 0, G_OPTION_ARG_INT, &show_pref, N_("Open preference dialog. 'n' is number of the page you want to show (1, 2, 3...)."), "n" },
     { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
     { "no-desktop", '\0', 0, G_OPTION_ARG_NONE, &no_desktop, N_("No function. Just to be compatible with nautilus"), NULL },
     {G_OPTION_REMAINING, 0, 0, G_OPTION_ARG_FILENAME_ARRAY, &files_to_open, NULL, N_("[FILE1, FILE2,...]")},
@@ -120,7 +121,7 @@ int main(int argc, char** argv)
     /* load pcmanfm-specific config file */
     if(profile)
         config_name = g_strconcat("pcmanfm/", profile, ".conf", NULL);
-    fm_app_config_load_from_file(config, config_name);
+    fm_app_config_load_from_file(FM_APP_CONFIG(config), config_name);
 
 	fm_gtk_init(config);
 
@@ -142,19 +143,21 @@ int main(int argc, char** argv)
 	return 0;
 }
 
-
-inline static GString* args_to_keyfile()
+inline static GString* args_to_ipc_buf()
 {
     int i;
     GString* buf = g_string_sized_new(1024);
-    g_string_assign(buf, "[a]\n");
+    /* send our current working dir to existing instance via IPC. */
+    ipc_cwd = g_get_current_dir();
+    g_string_append(buf, ipc_cwd);
+    g_string_append_c(buf, '\0');
+    g_free(ipc_cwd);
+    ipc_cwd = NULL;
     for(i = 0; i < G_N_ELEMENTS(opt_entries)-1;++i)
     {
         GOptionEntry* ent = &opt_entries[i];
         if(G_LIKELY(*ent->long_name))
             g_string_append(buf, ent->long_name);
-        else /* G_OPTION_REMAINING */
-            g_string_append(buf, "@");
         g_string_append_c(buf, '=');
         switch(ent->arg)
         {
@@ -172,74 +175,98 @@ inline static GString* args_to_keyfile()
                 {
                     for(;*files;++files)
                     {
-                        g_string_append(buf, *files);
-                        g_string_append_c(buf, ';');
+                        char* tmp = fm_canonicalize_filename(*files, TRUE);
+                        g_string_append(buf, tmp);
+                        g_free(tmp);
+                        g_string_append_c(buf, '\0');
                     }
                 }
+                else
+                    g_string_append_c(buf, '\0');
+                g_string_append_c(buf, '\0'); /* end of array */
             }
             break;
         case G_OPTION_ARG_FILENAME:
         case G_OPTION_ARG_STRING:   /* string */
             if(*(gchar**)ent->arg_data)
+            {
+                /* FIXME: Handle . and ..*/
+                const char* fn = *(gchar**)ent->arg_data;
                 g_string_append(buf, *(gchar**)ent->arg_data);
+            }
             break;
         }
-        g_string_append_c(buf, '\n');
+        g_string_append_c(buf, '\0');
     }
+    g_string_append_c(buf, '\0'); /* EOF */
     return buf;
 }
 
-inline static void keyfile_to_args(GString* buf)
+inline static void ipc_buf_to_args(GString* buf)
 {
-    GKeyFile* kf = g_key_file_new();
-    /* g_debug("\n%s", buf->str); */
-    if(g_key_file_load_from_data(kf, buf->str, buf->len, 0, NULL))
+    char* p;
+    GHashTable* hash = g_hash_table_new(g_str_hash, g_str_equal);
+    int i;
+    for(i = 0; i < G_N_ELEMENTS(opt_entries)-1;++i)
+        g_hash_table_insert(hash, opt_entries[i].long_name, &opt_entries[i]);
+    p = buf->str; /* the fist string in buf is cwd */
+    i = strlen(p) + 1;
+    ipc_cwd = g_memdup(p, i);
+    for( p += i; *p; )
     {
-        int i;
-        char*** pstrs;
-        for(i = 0; i < G_N_ELEMENTS(opt_entries)-1;++i)
+        GOptionEntry* ent;
+        char *name = p;
+        char* val = strchr(p, '=');
+        *val = '\0';
+        ++val;
+        p = val + strlen(val) + 1; /* next item */
+        ent = g_hash_table_lookup(hash, name);
+        if(G_LIKELY(ent))
         {
-            GOptionEntry* ent = &opt_entries[i];
             switch(ent->arg)
             {
             case G_OPTION_ARG_NONE: /* bool */
-                *(gboolean*)ent->arg_data = g_key_file_get_boolean(kf, "a", ent->long_name, NULL);
+                *(gboolean*)ent->arg_data = val[0] == '1';
                 break;
             case G_OPTION_ARG_INT: /* int */
-                *(gint*)ent->arg_data = g_key_file_get_integer(kf, "a", ent->long_name, NULL);
+                *(gint*)ent->arg_data = atoi(val);
                 break;
             case G_OPTION_ARG_FILENAME_ARRAY: /* string array */
             case G_OPTION_ARG_STRING_ARRAY:
-                pstrs = (char**)ent->arg_data;
-                if(*pstrs)
-                    g_strfreev(*pstrs);
-                *pstrs = g_key_file_get_string_list(kf, "a", *ent->long_name ? *ent->long_name : "@", NULL, NULL);
-                if(*pstrs)
                 {
-                    char** strs = *pstrs;
-                    char* str = *strs;
-                    if(!str || str[0] == '\0')
+                    char*** pstrs = (char***)ent->arg_data;
+                    if(*pstrs)
+                        g_strfreev(*pstrs);
+                    if(val && *val) /* the array is not empty */
                     {
-                        g_strfreev(strs);
+                        GPtrArray* strs = g_ptr_array_new();
+                        do
+                        {
+                            g_ptr_array_add(strs, g_strdup(val));
+                            val += (strlen(val) + 1);
+                        }while(*val != '\0');
+                        g_ptr_array_add(strs, NULL);
+                        *pstrs = g_ptr_array_free(strs, FALSE);
+                        p = val - 1;
+                    }
+                    else /* the array is empty */
+                    {
+                        p = val + 1;
                         *pstrs = NULL;
                     }
+                    continue;
                 }
                 break;
             case G_OPTION_ARG_FILENAME:
             case G_OPTION_ARG_STRING: /* string */
                 if(*(char**)ent->arg_data)
                     g_free(*(char**)ent->arg_data);
-                *(char**)ent->arg_data = g_key_file_get_string(kf, "a", ent->long_name, NULL);
-                if(*(char**)ent->arg_data && **(char**)ent->arg_data == '\0')
-                {
-                    g_free(*(char**)ent->arg_data);
-                    *(char**)ent->arg_data = NULL;
-                }
+                *(char**)ent->arg_data = *val ? g_strdup(val) : NULL;
                 break;
             }
         }
     }
-    g_key_file_free(kf);
+    g_hash_table_destroy(hash);
 }
 
 gboolean on_socket_event( GIOChannel* ioc, GIOCondition cond, gpointer data )
@@ -261,7 +288,7 @@ gboolean on_socket_event( GIOChannel* ioc, GIOCondition cond, gpointer data )
                 g_string_append_len( args, buf, r);
             shutdown( client, 2 );
             close( client );
-            keyfile_to_args(args);
+            ipc_buf_to_args(args);
             g_string_free( args, TRUE );
             pcmanfm_run();
         }
@@ -302,7 +329,7 @@ gboolean single_instance_check()
     if(connect(sock, (struct sockaddr*)&addr, addr_len) == 0)
     {
         /* connected successfully */
-        GString* buf = args_to_keyfile();
+        GString* buf = args_to_ipc_buf();
         write(sock, buf->str, buf->len);
         g_string_free(buf, TRUE);
 
@@ -404,7 +431,7 @@ gboolean pcmanfm_run()
                 set_wallpaper = NULL;
                 if(app_config->wallpaper_mode == FM_WP_COLOR)
                     app_config->wallpaper_mode = FM_WP_FIT;
-                fm_config_emit_changed(app_config, "wallpaper");
+                fm_config_emit_changed(FM_CONFIG(app_config), "wallpaper");
                 fm_app_config_save(app_config, config_name);
             }
             return FALSE;
@@ -421,26 +448,50 @@ gboolean pcmanfm_run()
         {
             char** filename;
             FmJob* job = fm_file_info_job_new(NULL);
+            FmPath* cwd = NULL;
             GList* infos;
             for(filename=files_to_open; *filename; ++filename)
             {
-                FmPath* path = fm_path_new(*filename);
-                fm_file_info_job_add(job, path);
+                FmPath* path;
+                if( **filename == '/' || strstr(*filename, ":/") ) /* absolute path or URI */
+                    path = fm_path_new(*filename);
+                else if( strcmp(*filename, "~") == 0 ) /* special case for home dir */
+                {
+                    path = fm_path_get_home();
+                    fm_main_win_add_win(NULL, path);
+                    continue;
+                }
+                else /* basename */
+                {
+                    if(G_UNLIKELY(!cwd))
+                    {
+                        /* FIXME: This won't work if those filenames are passed via IPC since the receiving process has different cwd. */
+                        char* cwd_str = g_get_current_dir();
+                        cwd = fm_path_new(cwd_str);
+                        g_free(cwd_str);
+                    }
+                    path = fm_path_new_relative(cwd, *filename);
+                }
+                fm_file_info_job_add(FM_FILE_INFO_JOB(job), path);
                 fm_path_unref(path);
             }
-            fm_job_run_sync(job);
+            if(cwd)
+                fm_path_unref(cwd);
+            fm_job_run_sync_with_mainloop(job);
             infos = fm_list_peek_head_link(FM_FILE_INFO_JOB(job)->file_infos);
             fm_launch_files_simple(NULL, NULL, infos, pcmanfm_open_folder, NULL);
             g_object_unref(job);
+            ret = (n_pcmanfm_ref >= 1); /* if there is opened window, return true to run the main loop. */
         }
         else
         {
             FmPath* path;
-            w = fm_main_win_new();
-            gtk_window_set_default_size(w, app_config->win_width, app_config->win_height);
-            gtk_widget_show(w);
-            path = fm_path_get_home();
-            fm_main_win_chdir(w, path);
+            char* cwd = ipc_cwd ? ipc_cwd : g_get_current_dir();
+            path = fm_path_new(cwd);
+            fm_main_win_add_win(NULL, path);
+            fm_path_unref(path);
+            g_free(cwd);
+            ipc_cwd = NULL;
         }
     }
     return ret;
@@ -480,4 +531,134 @@ void pcmanfm_save_config()
 {
     fm_config_save(fm_config, NULL);
     fm_app_config_save(app_config, config_name);
+}
+
+void pcmanfm_open_folder_in_terminal(GtkWindow* parent, FmPath* dir)
+{
+    GAppInfo* app;
+    char* cmd;
+    char** argv;
+    int argc;
+    if(!fm_config->terminal)
+    {
+        fm_show_error(parent, _("Terminal emulator is not set."));
+        fm_edit_preference(parent, PREF_ADVANCED);
+        return;
+    }
+    if(!g_shell_parse_argv(fm_config->terminal, &argc, &argv, NULL))
+        return;
+    app = g_app_info_create_from_commandline(argv[0], NULL, 0, NULL);
+    g_strfreev(argv);
+    if(app)
+    {
+        GError* err = NULL;
+        GAppLaunchContext* ctx = gdk_app_launch_context_new();
+        char* cwd_str;
+
+        if(fm_path_is_native(dir))
+            cwd_str = fm_path_to_str(dir);
+        else
+        {
+            GFile* gf = fm_path_to_gfile(dir);
+            cwd_str = g_file_get_path(gf);
+            g_object_unref(gf);
+        }
+        gdk_app_launch_context_set_screen(GDK_APP_LAUNCH_CONTEXT(ctx), parent ? gtk_widget_get_screen(GTK_WIDGET(parent)) : gdk_screen_get_default());
+        gdk_app_launch_context_set_timestamp(GDK_APP_LAUNCH_CONTEXT(ctx), gtk_get_current_event_time());
+        g_chdir(cwd_str); /* FIXME: currently we don't have better way for this. maybe a wrapper script? */
+        g_free(cwd_str);
+        if(!g_app_info_launch(app, NULL, ctx, &err))
+        {
+            fm_show_error(parent, err->message);
+            g_error_free(err);
+        }
+        g_object_unref(ctx);
+        g_object_unref(app);
+    }
+}
+
+/* FIXME: Need to load content of ~/Templates and list available templates in popup menus. */
+void pcmanfm_create_new(GtkWindow* parent, FmPath* cwd, const char* templ)
+{
+    GError* err = NULL;
+    FmPath* dest;
+    char* basename;
+_retry:
+    basename = fm_get_user_input(parent, _("Create New..."), _("Enter a name for the newly created file:"), _("New"));
+    if(!basename)
+        return;
+
+    dest = fm_path_new_child(cwd, basename);
+    g_free(basename);
+
+    if( templ == TEMPL_NAME_FOLDER )
+    {
+        GFile* gf = fm_path_to_gfile(dest);
+        if(!g_file_make_directory(gf, NULL, &err))
+        {
+            if(err->domain = G_IO_ERROR && err->code == G_IO_ERROR_EXISTS)
+            {
+                fm_path_unref(dest);
+                g_error_free(err);
+                g_object_unref(gf);
+                err = NULL;
+                goto _retry;
+            }
+            fm_show_error(parent, err->message);
+            g_error_free(err);
+        }
+
+        if(!err) /* select the newly created file */
+        {
+            /*FIXME: this doesn't work since the newly created file will
+             * only be shown after file-created event was fired on its
+             * folder's monitor and after FmFolder handles it in idle
+             * handler. So, we cannot select it since it's not yet in
+             * the folder model now. */
+            /* fm_folder_view_select_file_path(fv, dest); */
+        }
+        g_object_unref(gf);
+    }
+    else if( templ == TEMPL_NAME_BLANK )
+    {
+        GFile* gf = fm_path_to_gfile(dest);
+        GFileOutputStream* f = g_file_create(gf, G_FILE_CREATE_NONE, NULL, &err);
+        if(f)
+        {
+            g_output_stream_close(G_OUTPUT_STREAM(f), NULL, NULL);
+            g_object_unref(f);
+        }
+        else
+        {
+            if(err->domain = G_IO_ERROR && err->code == G_IO_ERROR_EXISTS)
+            {
+                fm_path_unref(dest);
+                g_error_free(err);
+                g_object_unref(gf);
+                err = NULL;
+                goto _retry;
+            }
+            fm_show_error(parent, err->message);
+            g_error_free(err);
+        }
+
+        if(!err) /* select the newly created file */
+        {
+            /*FIXME: this doesn't work since the newly created file will
+             * only be shown after file-created event was fired on its
+             * folder's monitor and after FmFolder handles it in idle
+             * handler. So, we cannot select it since it's not yet in
+             * the folder model now. */
+            /* fm_folder_view_select_file_path(fv, dest); */
+        }
+        g_object_unref(gf);
+    }
+    else /* templates in ~/Templates */
+    {
+        FmPath* dir = fm_path_new(g_get_user_special_dir(G_USER_DIRECTORY_TEMPLATES));
+        FmPath* template = fm_path_new_child(dir, templ);
+        fm_copy_file(template, cwd);
+        fm_path_unref(template);
+    }
+    fm_path_unref(dest);
 }

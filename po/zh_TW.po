@@ -7,9 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
+<<<<<<< HEAD
 "POT-Creation-Date: 2010-03-10 17:09+0100\n"
 "PO-Revision-Date: 2010-01-29 05:57+0800\n"
 "Last-Translator: Hong Jen Yee (PCMan) <pcman.tw@gmail.com>\n"
+=======
+"POT-Creation-Date: 2010-03-09 23:38+0800\n"
+"PO-Revision-Date: 2010-03-09 23:38+0800\n"
+"Last-Translator: 洪任諭 <pcman.tw@gmail.com>\n"
+>>>>>>> 338e46298f545cd75d4e26cecb91321ef4fa22e8
 "Language-Team: zh_TW <zh_TW@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -61,7 +67,8 @@ msgstr "外觀"
 msgid "Background color:"
 msgstr "背景顏色："
 
-#: ../data/ui/desktop-pref.glade.h:7 ../data/ui/pref.glade.h:6
+#: ../data/ui/desktop-pref.glade.h:7
+#: ../data/ui/pref.glade.h:8
 msgid "Center on the screen"
 msgstr "置於螢幕中央"
 
@@ -78,6 +85,7 @@ msgid "Desktop Icons"
 msgstr "桌面圖示"
 
 #: ../data/ui/desktop-pref.glade.h:11
+#: ../src/desktop-ui.c:58
 msgid "Desktop Preferences"
 msgstr "桌面偏好設定"
 
@@ -110,18 +118,21 @@ msgid "Show icons of volumes on desktop"
 msgstr ""
 
 #: ../data/ui/desktop-pref.glade.h:19
-msgid "Show menus provided by WM when desktop is clicked"
-msgstr ""
+msgid "Show menus provided by window managers when desktop is clicked"
+msgstr "點擊桌面時，顯示視窗管理員提供的選單"
 
-#: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:22
+#: ../data/ui/desktop-pref.glade.h:20
+#: ../data/ui/pref.glade.h:32
 msgid "Stretch to fill the entire screen"
 msgstr "延展至填滿整個螢幕"
 
-#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:23
+#: ../data/ui/desktop-pref.glade.h:21
+#: ../data/ui/pref.glade.h:33
 msgid "Stretch to fit the screen"
 msgstr "延展到適合螢幕大小"
 
-#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:25
+#: ../data/ui/desktop-pref.glade.h:22
+#: ../data/ui/pref.glade.h:37
 msgid "Tile the image to fill the entire screen"
 msgstr "併排影像填滿整個螢幕"
 
@@ -138,105 +149,155 @@ msgid "<b>Behavior</b>"
 msgstr "<b>行為</b>"
 
 #: ../data/ui/pref.glade.h:2
+msgid "<b>Default View</b>"
+msgstr "<b>預設檢視方式</b>"
+
+#: ../data/ui/pref.glade.h:3
 msgid "<b>Icons</b>"
 msgstr "<b>圖示</b>"
 
-#: ../data/ui/pref.glade.h:3
+#: ../data/ui/pref.glade.h:4
+msgid "<b>Programs</b>"
+msgstr "<b>程式</b>"
+
+#: ../data/ui/pref.glade.h:5
 msgid "<b>User Interface</b>"
 msgstr "<b>使用者介面</b>"
 
-#: ../data/ui/pref.glade.h:4
+#: ../data/ui/pref.glade.h:6
 msgid "Always show the tab bar"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:5
+#: ../data/ui/pref.glade.h:7
 msgid "Bookmarks:"
 msgstr "書籤："
 
-#: ../data/ui/pref.glade.h:7
+#: ../data/ui/pref.glade.h:9
+msgid "Compact View"
+msgstr "簡潔清單檢視"
+
+#: ../data/ui/pref.glade.h:10
 msgid "Confirm before deleting files"
 msgstr "刪除檔案前先確認"
 
-#: ../data/ui/pref.glade.h:8
-msgid "Display image files with supported format as thumbnails"
-msgstr ""
+#: ../data/ui/pref.glade.h:11
+msgid "Detailed List View"
+msgstr "詳細清單檢視"
 
-#: ../data/ui/pref.glade.h:9
+#: ../data/ui/pref.glade.h:12
+msgid "Do not generate thumbnails for files exceeding this size:"
+msgstr "不要為超過這個大小的檔案產生縮圖："
+
+#: ../data/ui/pref.glade.h:14
+#, no-c-format
+msgid ""
+"Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
+"%s = the command line you want to execute with terminal or su."
+msgstr ""
+"舉例：終端機用 \"xterm -e %s\" 或切換使用者命令用\"gksu %s\"\n"
+"%s = 你想用終端機模擬器或是切換使用者命令來執行的指令行"
+
+#: ../data/ui/pref.glade.h:16
 msgid "Hide 'Close tab' buttons"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:10
+#: ../data/ui/pref.glade.h:17
 msgid "Hide folder content border"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:11
+#: ../data/ui/pref.glade.h:18
 msgid "Hide side pane buttons"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:12
-msgid "Max size of files displayed as thumbnails:"
-msgstr ""
+#: ../data/ui/pref.glade.h:19
+msgid "Icon View"
+msgstr "圖示檢視"
 
-#: ../data/ui/pref.glade.h:13
+#: ../data/ui/pref.glade.h:20
 msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
 msgstr "將刪除的檔案移到「垃圾桶」而不真的從磁碟上清除"
 
-#: ../data/ui/pref.glade.h:14
+#: ../data/ui/pref.glade.h:21
+msgid "Only show thumbnails for local files"
+msgstr "只顯示本地端檔案的縮圖"
+
+#: ../data/ui/pref.glade.h:22
 msgid "Open files with single click"
 msgstr "單擊滑鼠開啟檔案"
 
-#: ../data/ui/pref.glade.h:15
+#: ../data/ui/pref.glade.h:23
 msgid "Opened in Current Tab"
 msgstr "在目前分頁開啟"
 
-#: ../data/ui/pref.glade.h:16
+#: ../data/ui/pref.glade.h:24
 msgid "Opened in New Tab"
 msgstr "在新分頁開啟"
 
-#: ../data/ui/pref.glade.h:17
+#: ../data/ui/pref.glade.h:25
 msgid "Opened in New Window"
 msgstr "在新視窗開啟"
 
-#: ../data/ui/pref.glade.h:18
+#: ../data/ui/pref.glade.h:26
 msgid "Preferences"
 msgstr "偏好設定"
 
-#: ../data/ui/pref.glade.h:19
+#: ../data/ui/pref.glade.h:27
+msgid "Show thumbnails of files"
+msgstr "以縮圖顯示檔案內容"
+
+#: ../data/ui/pref.glade.h:28
 msgid "Size of big icons:"
 msgstr "大圖示的尺寸："
 
-#: ../data/ui/pref.glade.h:20
+#: ../data/ui/pref.glade.h:29
 msgid "Size of side pane icons:"
 msgstr "側邊欄圖示的尺寸："
 
-#: ../data/ui/pref.glade.h:21
+#: ../data/ui/pref.glade.h:30
 msgid "Size of small icons:"
 msgstr "小圖示的尺寸："
 
-#: ../data/ui/pref.glade.h:24
-msgid "Terminal:"
-msgstr "終端機："
+#: ../data/ui/pref.glade.h:31
+msgid "Size of thumbnails:"
+msgstr "縮圖的尺寸："
 
-#: ../data/ui/pref.glade.h:26
+#: ../data/ui/pref.glade.h:34
+msgid "Switch user command:"
+msgstr "切換使用者之指令："
+
+#: ../data/ui/pref.glade.h:35
+msgid "Terminal emulator:"
+msgstr "終端機模擬程式："
+
+#: ../data/ui/pref.glade.h:36
+msgid "Thumbnail View"
+msgstr "縮圖檢視"
+
+#: ../data/ui/pref.glade.h:38
 msgid "Use SI decimal prefixes instead of IEC binary prefixes"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:27
+#: ../data/ui/pref.glade.h:39
+msgid "View Mode:"
+msgstr "檢視模式："
+
+#: ../data/ui/pref.glade.h:40
 msgid "_Advanced"
 msgstr "進階(_A)"
 
-#: ../data/ui/pref.glade.h:28
+#: ../data/ui/pref.glade.h:41
 msgid "_Display"
 msgstr "顯示(_D)"
 
-#: ../data/ui/pref.glade.h:29
+#: ../data/ui/pref.glade.h:42
 msgid "_General"
 msgstr "一般(_G)"
 
-#: ../data/ui/pref.glade.h:30
+#: ../data/ui/pref.glade.h:43
 msgid "_Volume Management"
 msgstr "磁碟管理(_V)"
 
+<<<<<<< HEAD
 #: ../src/desktop-ui.c:47 ../src/main-win-ui.c:129
 msgid "Invert Selection"
 msgstr "反相選取"
@@ -374,10 +435,203 @@ msgid "_Bookmarks"
 msgstr "書籤(_B)"
 
 #: ../src/main-win-ui.c:147
+=======
+#: ../data/ui/autorun.glade.h:1
+msgid "<b>Removable medium is inserted</b>"
+msgstr "<b>插入可移除媒體</b>"
+
+#: ../data/ui/autorun.glade.h:2
+msgid "Detecting..."
+msgstr "正在偵測..."
+
+#: ../data/ui/autorun.glade.h:3
+msgid "Please select the action you want to perform:"
+msgstr "請選擇你想要執行的動作："
+
+#: ../data/ui/autorun.glade.h:4
+msgid "Removable medium is inserted"
+msgstr "插入可移除媒體"
+
+#: ../data/ui/autorun.glade.h:5
+msgid "Type of medium:"
+msgstr "媒體類型："
+
+#: ../src/volume-manager.c:149
+msgid "Removable Disk"
+msgstr "可移除磁碟"
+
+#: ../src/volume-manager.c:208
+msgid "Open in File Manager"
+msgstr "在檔案管理程式中開啟"
+
+#: ../src/desktop-ui.c:53
+msgid "_Invert Selection"
+msgstr "反相選取(_I)"
+
+#: ../src/desktop-ui.c:54
+#: ../src/main-win-ui.c:144
+msgid "_Sort Files"
+msgstr "排序檔案(_S)"
+
+#: ../src/desktop-ui.c:56
+#: ../src/main-win-ui.c:168
+msgid "Folder"
+msgstr "資料夾"
+
+#: ../src/desktop-ui.c:57
+msgid "Blank File"
+msgstr "空白檔案"
+
+#: ../src/desktop-ui.c:69
+#: ../src/main-win-ui.c:194
+msgid "By _Name"
+msgstr "依名稱(_N)"
+
+#: ../src/desktop-ui.c:70
+#: ../src/main-win-ui.c:195
+msgid "By _Modification Time"
+msgstr "依修改時間(_M)"
+
+#: ../src/desktop-ui.c:71
+#: ../src/main-win-ui.c:196
+msgid "By _Size"
+msgstr "依大小(_S)"
+
+#: ../src/desktop-ui.c:72
+#: ../src/main-win-ui.c:197
+msgid "By File _Type"
+msgstr "依檔案型態(_T)"
+
+#: ../src/desktop-ui.c:88
+#: ../src/main-win-ui.c:214
+msgid "Open in New Tab"
+msgstr "在新分頁開啟"
+
+#: ../src/desktop-ui.c:89
+#: ../src/main-win-ui.c:215
+msgid "Open in New Window"
+msgstr "在新視窗開啟"
+
+#: ../src/desktop-ui.c:91
+#: ../src/main-win-ui.c:217
+msgid "Open in _Terminal"
+msgstr "以終端機模擬器開啟(_T)"
+
+#: ../src/main-win-ui.c:126
+msgid "_File"
+msgstr "檔案(_F)"
+
+#: ../src/main-win-ui.c:127
+msgid "_New Window"
+msgstr "新視窗(_N)"
+
+#: ../src/main-win-ui.c:128
+msgid "New _Tab"
+msgstr "新分頁(_T)"
+
+#: ../src/main-win-ui.c:129
+msgid "_Close Tab"
+msgstr "關閉分頁(_C)"
+
+#: ../src/main-win-ui.c:130
+msgid "Close Window"
+msgstr "關閉視窗"
+
+#: ../src/main-win-ui.c:131
+msgid "_Edit"
+msgstr "編輯(_E)"
+
+#: ../src/main-win-ui.c:136
+msgid "Rename"
+msgstr "重新命名"
+
+#: ../src/main-win-ui.c:137
+msgid "Create Symlink"
+msgstr "建立符號連結"
+
+#: ../src/main-win-ui.c:138
+msgid "Move To..."
+msgstr "移動到..."
+
+#: ../src/main-win-ui.c:139
+msgid "Copy To..."
+msgstr "複製到..."
+
+#: ../src/main-win-ui.c:141
+msgid "Invert Selection"
+msgstr "反相選取"
+
+#: ../src/main-win-ui.c:143
+msgid "_View"
+msgstr "檢視(_V)"
+
+#: ../src/main-win-ui.c:145
+msgid "_Help"
+msgstr "說明(_H)"
+
+#: ../src/main-win-ui.c:147
+msgid "_Go"
+msgstr "到(_G)"
+
+#: ../src/main-win-ui.c:148
+msgid "Previous Folder"
+msgstr "上一個資料夾"
+
+#: ../src/main-win-ui.c:149
+msgid "Next Folder"
+msgstr "下一個資料夾"
+
+#: ../src/main-win-ui.c:150
+msgid "Parent Folder"
+msgstr "上層資料夾"
+
+#: ../src/main-win-ui.c:150
+msgid "Go to parent Folder"
+msgstr "到上層資料夾"
+
+#: ../src/main-win-ui.c:151
+msgid "Home Folder"
+msgstr "家目錄"
+
+#: ../src/main-win-ui.c:152
+msgid "Desktop"
+msgstr "桌面"
+
+#: ../src/main-win-ui.c:152
+msgid "Desktop Folder"
+msgstr "桌面資料夾"
+
+#: ../src/main-win-ui.c:153
+msgid "My Computer"
+msgstr "我的電腦"
+
+#: ../src/main-win-ui.c:154
+msgid "Trash Can"
+msgstr "垃圾桶"
+
+#: ../src/main-win-ui.c:155
+msgid "Network Drives"
+msgstr "網路磁碟機"
+
+#: ../src/main-win-ui.c:156
+msgid "Applications"
+msgstr "應用程式"
+
+#: ../src/main-win-ui.c:156
+msgid "Installed Applications"
+msgstr "已安裝的應用程式 "
+
+#: ../src/main-win-ui.c:158
+msgid "_Bookmarks"
+msgstr "書籤(_B)"
+
+#: ../src/main-win-ui.c:159
+>>>>>>> 338e46298f545cd75d4e26cecb91321ef4fa22e8
 msgid "Add To Bookmarks"
 msgstr "新增到書籤"
 
 #: ../src/main-win-ui.c:160
+<<<<<<< HEAD
 msgid "Show _Hidden"
 msgstr "顯示隱藏檔(_H)"
 
@@ -398,10 +652,57 @@ msgid "Detailed _List View"
 msgstr "以詳細清單檢視(_L)"
 
 #: ../src/main-win.c:820
+=======
+msgid "_Tools"
+msgstr "工具(_T)"
+
+#: ../src/main-win-ui.c:161
+msgid "Open Current Folder in _Terminal"
+msgstr "以終端機模擬器開啟目前資料夾(_T)"
+
+#: ../src/main-win-ui.c:162
+msgid "Open Current Folder as _Root"
+msgstr "以系統管理員權限開啟目前資料夾(_R)"
+
+#: ../src/main-win-ui.c:169
+msgid "Blank FIle"
+msgstr "空白檔案"
+
+#: ../src/main-win-ui.c:175
+msgid "Show _Hidden"
+msgstr "顯示隱藏檔(_H)"
+
+#: ../src/main-win-ui.c:180
+msgid "_Icon View"
+msgstr "以大圖示檢視(_I)"
+
+#: ../src/main-win-ui.c:181
+msgid "_Compact View"
+msgstr "以簡潔清單檢視(_C)"
+
+#: ../src/main-win-ui.c:182
+msgid "_Thumbnail View"
+msgstr "縮圖檢視(_T)"
+
+#: ../src/main-win-ui.c:183
+msgid "Detailed _List View"
+msgstr "以詳細清單檢視(_L)"
+
+#: ../src/main-win.c:495
+msgid "You are in super user mode"
+msgstr "你正在使用超級使用者模式"
+
+#: ../src/main-win.c:596
+msgid "Switch user command is not set."
+msgstr "切換使用者的命令尚未設定。"
+
+#: ../src/main-win.c:944
+>>>>>>> 338e46298f545cd75d4e26cecb91321ef4fa22e8
 #, c-format
-msgid "Free space: %s (Total: %s )"
+msgid "Free space: %s (Total: %s)"
 msgstr "可用空間：%s (總共：%s )"
 
+<<<<<<< HEAD
 #: ../src/main-win.c:1073
 msgid "Create New..."
 msgstr "新建..."
@@ -463,5 +764,84 @@ msgid "No function. Just to be compatible with nautilus"
 msgstr "沒有功能，只是用來和 nautilus 保持相容"
 
 #: ../src/pcmanfm.c:79
+=======
+#: ../src/main-win.c:1150
+#, c-format
+msgid ""
+"Add following folder to bookmarks:\n"
+"'%s'\n"
+"Enter a name for the new bookmark item:"
+msgstr ""
+"將下列資料夾加入到書籤：\n"
+"'%s'\n"
+"輸入新書籤的名稱:"
+
+#: ../src/main-win.c:1154
+msgid "Add to Bookmarks"
+msgstr "新增到書籤"
+
+#: ../src/pcmanfm.c:70
+msgid "Open folders in new tabs of the last used window instead of creating new windows"
+msgstr ""
+
+#: ../src/pcmanfm.c:71
+msgid "Name of configuration profile"
+msgstr ""
+
+#: ../src/pcmanfm.c:72
+msgid "Launch desktop manager"
+msgstr ""
+
+#: ../src/pcmanfm.c:73
+msgid "Turn off desktop manager if it's running"
+msgstr ""
+
+#: ../src/pcmanfm.c:74
+msgid "Run PCManFM as a daemon"
+msgstr "以常駐模式執行 PCManFM"
+
+#: ../src/pcmanfm.c:75
+msgid "Open desktop preference dialog"
+msgstr "開啟桌面偏好設定"
+
+#: ../src/pcmanfm.c:76
+msgid "Set desktop wallpaper"
+msgstr "設定桌布"
+
+#: ../src/pcmanfm.c:76
+msgid "<image file>"
+msgstr "<影像檔>"
+
+#: ../src/pcmanfm.c:77
+msgid "Open preference dialog. 'n' is number of the page you want to show (1, 2, 3...)."
+msgstr ""
+
+#: ../src/pcmanfm.c:78
+msgid "Open Find Files utility"
+msgstr "開啟尋找檔案工具"
+
+#: ../src/pcmanfm.c:79
+msgid "No function. Just to be compatible with nautilus"
+msgstr "沒有功能，只是用來和 nautilus 保持相容"
+
+#: ../src/pcmanfm.c:80
+>>>>>>> 338e46298f545cd75d4e26cecb91321ef4fa22e8
 msgid "[FILE1, FILE2,...]"
 msgstr "[檔案1, 檔案2,...]"
+
+#: ../src/pcmanfm.c:544
+msgid "Terminal emulator is not set."
+msgstr "終端機模擬器尚未設定。"
+
+#: ../src/pcmanfm.c:587
+msgid "Create New..."
+msgstr "新建..."
+
+#: ../src/pcmanfm.c:587
+msgid "Enter a name for the newly created file:"
+msgstr "輸入新建立檔案的名稱："
+
+#: ../src/pcmanfm.c:587
+msgid "New"
+msgstr "新增"
+

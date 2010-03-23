@@ -1,18 +1,18 @@
 /*
  *      app-config.h
- *      
+ *
  *      Copyright 2010 PCMan <pcman.tw@gmail.com>
- *      
+ *
  *      This program is free software; you can redistribute it and/or modify
  *      it under the terms of the GNU General Public License as published by
  *      the Free Software Foundation; either version 2 of the License, or
  *      (at your option) any later version.
- *      
+ *
  *      This program is distributed in the hope that it will be useful,
  *      but WITHOUT ANY WARRANTY; without even the implied warranty of
  *      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *      GNU General Public License for more details.
- *      
+ *
  *      You should have received a copy of the GNU General Public License
  *      along with this program; if not, write to the Free Software
  *      Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
@@ -23,7 +23,7 @@
 #ifndef __APP_CONFIG_H__
 #define __APP_CONFIG_H__
 
-#include <fm-config.h>
+#include <libfm/fm.h>
 #include <gtk/gtk.h>
 
 G_BEGIN_DECLS
@@ -64,6 +64,12 @@ struct _FmAppConfig
     int win_width;
     int win_height;
 
+    /* default values for folder views */
+    guint view_mode;
+    gboolean show_hidden;
+    GtkSortType sort_type;
+    int sort_by;
+
     /* desktop manager */
     /* emit "changed::wallpaper" */
     FmWallpaperMode wallpaper_mode;
@@ -74,6 +80,10 @@ struct _FmAppConfig
     GdkColor desktop_shadow;
     /* emit "changed::desktop_font" */
     char* desktop_font;
+
+    gboolean show_wm_menu;
+
+    char* su_cmd;
 };
 
 struct _FmAppConfigClass
