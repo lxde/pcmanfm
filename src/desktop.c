@@ -560,7 +560,7 @@ gboolean on_button_press( GtkWidget* w, GdkEventButton* evt )
                 */
                 files = fm_desktop_get_selected_files(self);
                 fi = (FmFileInfo*)fm_list_peek_head(files);
-                menu = fm_file_menu_new_for_files(files, TRUE);
+                menu = fm_file_menu_new_for_files(files, fm_path_get_desktop(), TRUE);
                 fm_file_menu_set_folder_func(menu, pcmanfm_open_folder, NULL);
                 fm_list_unref(files);
 

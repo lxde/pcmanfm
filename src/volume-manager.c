@@ -28,6 +28,7 @@
 #include <glib/gi18n.h>
 #include "pcmanfm.h"
 #include "main-win.h"
+#include "app-config.h"
 
 static GVolumeMonitor* vol_mon = NULL;
 
@@ -235,7 +236,7 @@ inline static gboolean automount_volume(GVolume* vol, gboolean silent)
     if(!mount) /* not mounted, automount is needed */
     {
         g_debug("try automount");
-        if(!fm_mount_volume(NULL, vol))
+        if(!fm_mount_volume(NULL, vol, !silent))
             return FALSE;
         if(silent)
             return TRUE;
@@ -244,7 +245,7 @@ inline static gboolean automount_volume(GVolume* vol, gboolean silent)
     }
     if(mount)
     {
-        if(!silent) /* show autorun dialog */
+        if(!silent && app_config->autorun) /* show autorun dialog */
             show_autorun_dlg(vol, mount);
         g_object_unref(mount);
     }
@@ -253,7 +254,8 @@ inline static gboolean automount_volume(GVolume* vol, gboolean silent)
 
 static void on_vol_added(GVolumeMonitor* vm, GVolume* vol, gpointer user_data)
 {
-    automount_volume(vol, FALSE);
+    if(app_config->mount_removable)
+        automount_volume(vol, FALSE);
     /* TODO: show icons in systray */
 }
 
@@ -287,16 +289,19 @@ static gboolean fm_volume_manager_delay_init(gpointer user_data)
     g_signal_connect(vol_mon, "volume-changed", G_CALLBACK(on_vol_changed), NULL);
 #endif
 
-    /* try to automount all volumes */
-    vols = g_volume_monitor_get_volumes(vol_mon);
-    for(l=vols;l;l=l->next)
+    if(app_config->mount_on_startup)
     {
-        GVolume* vol = G_VOLUME(l->data);
-        if(g_volume_should_automount(vol))
-            automount_volume(vol, TRUE);
-        g_object_unref(vol);
+        /* try to automount all volumes */
+        vols = g_volume_monitor_get_volumes(vol_mon);
+        for(l=vols;l;l=l->next)
+        {
+            GVolume* vol = G_VOLUME(l->data);
+            if(g_volume_should_automount(vol))
+                automount_volume(vol, TRUE);
+            g_object_unref(vol);
+        }
+        g_list_free(vols);
     }
-    g_list_free(vols);
     return FALSE;
 }
 

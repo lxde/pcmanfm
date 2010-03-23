@@ -2,7 +2,7 @@
 # Process this file with autoconf to produce a configure script.
 
 AC_PREREQ([2.63])
-AC_INIT([pcmanfm], [0.9.2], [http://pcmanfm.sf.net/])
+AC_INIT([pcmanfm], [0.9.3], [http://pcmanfm.sf.net/])
 AM_INIT_AUTOMAKE([-Wall -Werror foreign])
 
 AC_CONFIG_HEADERS([config.h])
@@ -95,6 +95,17 @@ AC_SUBST(MENU_CACHE_LIBS)
 
 GETTEXT_PACKAGE=pcmanfm2
 AC_SUBST(GETTEXT_PACKAGE)
+
+# Generate po/LINGUAS on the fly rather than relying on translators
+# to maintain it manually. This also overcome the problem that Transifex
+# cannot add a language to po/LINGUAS if a new po file is submitted.
+rm -f $srcdir/po/LINGUAS
+for po_file in `ls $srcdir/po/*.po | sort`;
+do
+    lang=`echo "$po_file" | sed "s|.*/po/\(.*\)\.po|\1|g"`
+    echo $lang >> $srcdir/po/LINGUAS
+done
+
 AM_GLIB_GNU_GETTEXT
 AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$GETTEXT_PACKAGE", [Gettext package.])
 

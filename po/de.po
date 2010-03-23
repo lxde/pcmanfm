@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm 0.9\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-06 22:37+0100\n"
-"PO-Revision-Date: 2010-03-03 05:17+0100\n"
+"POT-Creation-Date: 2010-03-20 17:07+0800\n"
+"PO-Revision-Date: 2010-03-19 15:25+0100\n"
 "Last-Translator: Christoph Wickert <cwickert@fedoraproject.org>\n"
 "Language-Team: German\n"
 "MIME-Version: 1.0\n"
@@ -18,17 +18,17 @@ msgstr ""
 "X-Poedit-Language: German\n"
 
 #: ../data/ui/about.glade.in.h:1
-msgid "Copyright (C) 2009"
-msgstr "Copyright (C) 2009"
+msgid "Copyright (C) 2009 - 2010"
+msgstr "Copyright (C) 2009 - 2010"
 
 #: ../data/ui/about.glade.in.h:2
-#, fuzzy
 msgid ""
 "Lightweight file manager\n"
 "\n"
 "Developed by Hon Jen Yee (PCMan)"
 msgstr ""
-"Ressourcen schonender Datei-Managern\n"
+"Ressourcen schonender Datei-Manager\n"
+"\n"
 "Entwickelt von Hon Jen Yee (PCMan)"
 
 #. Please replace this line with your own names, one name per line.
@@ -60,12 +60,11 @@ msgstr "Erscheinungsbild"
 msgid "Background color:"
 msgstr "Hintergrundfarbe:"
 
-#: ../data/ui/desktop-pref.glade.h:7 ../data/ui/pref.glade.h:8
+#: ../data/ui/desktop-pref.glade.h:7 ../data/ui/pref.glade.h:10
 msgid "Center on the screen"
 msgstr "Zentriert"
 
 #: ../data/ui/desktop-pref.glade.h:8
-#, fuzzy
 msgid "Color of label text:"
 msgstr "Farbe der Beschriftung:"
 
@@ -84,7 +83,7 @@ msgstr "Einstellungen der Arbeitsfläche"
 
 #: ../data/ui/desktop-pref.glade.h:12
 #, fuzzy
-msgid "FIll with background color only"
+msgid "Fill with background color only"
 msgstr "Nur Hintergrundfarbe"
 
 #: ../data/ui/desktop-pref.glade.h:13
@@ -113,18 +112,19 @@ msgid "Show icons of volumes on desktop"
 msgstr "Symbole für "
 
 #: ../data/ui/desktop-pref.glade.h:19
-msgid "Show menus provided by WM when desktop is clicked"
+#, fuzzy
+msgid "Show menus provided by window managers when desktop is clicked"
 msgstr "Beim Klicken auf den Desktop Menüs des Fenstermanagers anzeigen"
 
-#: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:32
+#: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:37
 msgid "Stretch to fill the entire screen"
 msgstr "Bildschirm füllen"
 
-#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:33
+#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:38
 msgid "Stretch to fit the screen"
 msgstr "Skalieren"
 
-#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:37
+#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:42
 msgid "Tile the image to fill the entire screen"
 msgstr "Kacheln"
 
@@ -137,52 +137,61 @@ msgid "Wallpaper:"
 msgstr "Hinterbrundbild:"
 
 #: ../data/ui/pref.glade.h:1
+msgid "<b>Auto-mount</b>"
+msgstr "<b>Automatisches Einbinden</b>"
+
+#: ../data/ui/pref.glade.h:2
 msgid "<b>Behavior</b>"
 msgstr "<b>Verhalten</b>"
 
-#: ../data/ui/pref.glade.h:2
+#: ../data/ui/pref.glade.h:3
 msgid "<b>Default View</b>"
 msgstr "<b>Standard-Ansicht</b>"
 
-#: ../data/ui/pref.glade.h:3
+#: ../data/ui/pref.glade.h:4
 msgid "<b>Icons</b>"
 msgstr "<b>Symbole</b>"
 
-#: ../data/ui/pref.glade.h:4
+#: ../data/ui/pref.glade.h:5
 msgid "<b>Programs</b>"
 msgstr "<b>Programme</b>"
 
-#: ../data/ui/pref.glade.h:5
+#: ../data/ui/pref.glade.h:6
 msgid "<b>User Interface</b>"
 msgstr "<b>Benutzeroberflache</b>"
 
-#: ../data/ui/pref.glade.h:6
+#: ../data/ui/pref.glade.h:7
 msgid "Always show the tab bar"
 msgstr "Reiterleiste immer anzeigen"
 
-#: ../data/ui/pref.glade.h:7
+#: ../data/ui/pref.glade.h:8
+#, fuzzy
+msgid "Archiver integration:"
+msgstr "Archivmanager-Integration:"
+
+#: ../data/ui/pref.glade.h:9
 msgid "Bookmarks:"
 msgstr "Lesezeichen:"
 
-#: ../data/ui/pref.glade.h:9
+#: ../data/ui/pref.glade.h:11
 msgid "Compact View"
 msgstr "Listenansicht"
 
-#: ../data/ui/pref.glade.h:10
+#: ../data/ui/pref.glade.h:12
 msgid "Confirm before deleting files"
 msgstr "Löschen von Dateien bestätigen"
 
-#: ../data/ui/pref.glade.h:11
+#: ../data/ui/pref.glade.h:13
 msgid "Detailed List View"
 msgstr "Detailansicht"
 
-#: ../data/ui/pref.glade.h:12
+#: ../data/ui/pref.glade.h:14
 #, fuzzy
 msgid "Do not generate thumbnails for files exceeding this size:"
 msgstr "Maximale Größe der Miniatur-Vorschaubilder:"
 
-#: ../data/ui/pref.glade.h:14
-#, fuzzy, no-c-format
+#: ../data/ui/pref.glade.h:16
+#, no-c-format
 msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
 "%s = the command line you want to execute with terminal or su."
@@ -191,131 +200,146 @@ msgstr ""
 "Benutzerwechsel.\n"
 "%s = Befehlszeile, die im Terminal oder mit su ausgeführt werden soll."
 
-#: ../data/ui/pref.glade.h:16
+#: ../data/ui/pref.glade.h:18
 msgid "Hide 'Close tab' buttons"
 msgstr "»Reiter schließen« Knopf verbergen"
 
-#: ../data/ui/pref.glade.h:17
+#: ../data/ui/pref.glade.h:19
 msgid "Hide folder content border"
 msgstr "Rahmen um den Ordnerinhalt verbergen"
 
-#: ../data/ui/pref.glade.h:18
+#: ../data/ui/pref.glade.h:20
+#, fuzzy
 msgid "Hide side pane buttons"
-msgstr ""
+msgstr "Knöpfe in der Seitenleiste ausblenden"
 
-#: ../data/ui/pref.glade.h:19
+#: ../data/ui/pref.glade.h:21
 msgid "Icon View"
 msgstr "Symbolansicht"
 
-#: ../data/ui/pref.glade.h:20
+#: ../data/ui/pref.glade.h:22
+#, fuzzy
+msgid "Mount mountable volumes automatically on program startup"
+msgstr "Datenträger automatisch beim Programmstart einbinden"
+
+#: ../data/ui/pref.glade.h:23
+msgid "Mount removable media automatically when they are inserted"
+msgstr "Wechseldatenträger automatisch beim Einlegen einbinden"
+
+#: ../data/ui/pref.glade.h:24
 msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
 msgstr "Dateien in den »Papierkorb« verschieben anstatt sie zu löschen"
 
-#: ../data/ui/pref.glade.h:21
+#: ../data/ui/pref.glade.h:25
 msgid "Only show thumbnails for local files"
 msgstr "Vorschaubilder nur für lokale Dateien anzeigen"
 
-#: ../data/ui/pref.glade.h:22
+#: ../data/ui/pref.glade.h:26
 msgid "Open files with single click"
 msgstr "Einfacher Klick zum Öffnen von Dateien"
 
-#: ../data/ui/pref.glade.h:23
+#: ../data/ui/pref.glade.h:27
 msgid "Opened in Current Tab"
 msgstr "Im aktuellen Reiter öffnen"
 
-#: ../data/ui/pref.glade.h:24
+#: ../data/ui/pref.glade.h:28
 msgid "Opened in New Tab"
 msgstr "In einem neuen Reiter öffnen"
 
-#: ../data/ui/pref.glade.h:25
+#: ../data/ui/pref.glade.h:29
 msgid "Opened in New Window"
 msgstr "In einem neuen Fenster öffnen"
 
-#: ../data/ui/pref.glade.h:26
+#: ../data/ui/pref.glade.h:30
 msgid "Preferences"
 msgstr "Einstellungen"
 
-#: ../data/ui/pref.glade.h:27
+#: ../data/ui/pref.glade.h:31
+msgid "Show available options for removable media when they are inserted"
+msgstr "Verfügbare Optionen für Wechseldatenträger beim Einlegen anzeigen"
+
+#: ../data/ui/pref.glade.h:32
 msgid "Show thumbnails of files"
 msgstr "Miniatur-Vorschaubilder anzeigen"
 
-#: ../data/ui/pref.glade.h:28
+#: ../data/ui/pref.glade.h:33
 msgid "Size of big icons:"
 msgstr "Symbolansicht:"
 
-#: ../data/ui/pref.glade.h:29
+#: ../data/ui/pref.glade.h:34
 msgid "Size of side pane icons:"
 msgstr "Seitenleiste:"
 
-#: ../data/ui/pref.glade.h:30
+#: ../data/ui/pref.glade.h:35
 msgid "Size of small icons:"
 msgstr "Listenansicht:"
 
-#: ../data/ui/pref.glade.h:31
+#: ../data/ui/pref.glade.h:36
 msgid "Size of thumbnails:"
 msgstr "Vorschaubilder:"
 
-#: ../data/ui/pref.glade.h:34
+#: ../data/ui/pref.glade.h:39
 msgid "Switch user command:"
 msgstr "Befehl zum Benutzerwechsel:"
 
-#: ../data/ui/pref.glade.h:35
+#: ../data/ui/pref.glade.h:40
 msgid "Terminal emulator:"
 msgstr "Terminal:"
 
-#: ../data/ui/pref.glade.h:36
+#: ../data/ui/pref.glade.h:41
 msgid "Thumbnail View"
 msgstr "Miniatur-Vorschaubilder"
 
-#: ../data/ui/pref.glade.h:38
+#: ../data/ui/pref.glade.h:43
 msgid "Use SI decimal prefixes instead of IEC binary prefixes"
-msgstr ""
+msgstr "SI Dezimalpräfixe anstatt IEC Binärpräfixen verwenden"
 
-#: ../data/ui/pref.glade.h:39
+#: ../data/ui/pref.glade.h:44
 msgid "View Mode:"
 msgstr "Ansicht:"
 
-#: ../data/ui/pref.glade.h:40
+#: ../data/ui/pref.glade.h:45
 msgid "_Advanced"
 msgstr "_Erweitert"
 
-#: ../data/ui/pref.glade.h:41
+#: ../data/ui/pref.glade.h:46
 msgid "_Display"
 msgstr "_Ansicht"
 
-#: ../data/ui/pref.glade.h:42
+#: ../data/ui/pref.glade.h:47
 msgid "_General"
 msgstr "All_gemein"
 
-#: ../data/ui/pref.glade.h:43
+#: ../data/ui/pref.glade.h:48
 msgid "_Volume Management"
 msgstr "Datenträger_verwaltung"
 
+# eingelegt?
 #: ../data/ui/autorun.glade.h:1
 msgid "<b>Removable medium is inserted</b>"
-msgstr ""
+msgstr "<b>Wechseldatenträger wurde eingelegt</b>"
 
 #: ../data/ui/autorun.glade.h:2
 msgid "Detecting..."
-msgstr ""
+msgstr "Erkennen..."
 
 #: ../data/ui/autorun.glade.h:3
 msgid "Please select the action you want to perform:"
-msgstr ""
+msgstr "Bitte wählen Sie die auszuführende Aktion:"
 
 #: ../data/ui/autorun.glade.h:4
 msgid "Removable medium is inserted"
-msgstr ""
+msgstr "Wechseldatenträger wurde eingelegt"
 
 #: ../data/ui/autorun.glade.h:5
 msgid "Type of medium:"
-msgstr ""
+msgstr "Medientyp:"
 
-#: ../src/volume-manager.c:149
+#: ../src/volume-manager.c:150
 msgid "Removable Disk"
-msgstr ""
+msgstr "Wechseldatenträger"
 
-#: ../src/volume-manager.c:208
+#: ../src/volume-manager.c:209
 #, fuzzy
 msgid "Open in File Manager"
 msgstr "In einem neuen Reiter öffnen"
@@ -514,21 +538,21 @@ msgstr "_Miniatur-Vorschaubilder"
 msgid "Detailed _List View"
 msgstr "_Detailansicht"
 
-#: ../src/main-win.c:495
+#: ../src/main-win.c:504
 msgid "You are in super user mode"
-msgstr ""
+msgstr "Sie arbeiten im Superuser-Rechten"
 
-#: ../src/main-win.c:596
+#: ../src/main-win.c:605
 msgid "Switch user command is not set."
 msgstr ""
-"Es wurde kein Befehl zum Benutzerwechsel ist in den Einstellungen angegeben."
+"Es wurde kein Befehl zum Benutzerwechsel in den Einstellungen angegeben."
 
-#: ../src/main-win.c:944
+#: ../src/main-win.c:953
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Freier Speicherplatz: %s (Gesamt: %s)"
 
-#: ../src/main-win.c:1150
+#: ../src/main-win.c:1159
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -539,7 +563,7 @@ msgstr ""
 "'%s'\n"
 "Namen für des neue Lesezeichen eingeben:"
 
-#: ../src/main-win.c:1154
+#: ../src/main-win.c:1163
 msgid "Add to Bookmarks"
 msgstr "Lesezeichen hinzufügen"
 
@@ -601,7 +625,7 @@ msgstr "[DATEI1, DATEI2,...]"
 
 #: ../src/pcmanfm.c:544
 msgid "Terminal emulator is not set."
-msgstr "Es wurde keine Terminal-Anwendung in den Einstellungen angegeben"
+msgstr "Es wurde keine Terminal-Anwendung in den Einstellungen angegeben."
 
 #: ../src/pcmanfm.c:587
 msgid "Create New..."
