@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-10 17:09+0100\n"
+"POT-Creation-Date: 2010-03-20 17:07+0800\n"
 "PO-Revision-Date: 2010-02-06 18:08+0200\n"
 "Last-Translator: Julius Vitkauskas <zadintuvas@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,11 +15,12 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../data/ui/about.glade.h:1 ../data/ui/about.glade.in.h:1
-msgid "Copyright (C) 2009"
+#: ../data/ui/about.glade.in.h:1
+#, fuzzy
+msgid "Copyright (C) 2009 - 2010"
 msgstr "Autorinės teisės (C) 2009"
 
-#: ../data/ui/about.glade.h:2 ../data/ui/about.glade.in.h:2
+#: ../data/ui/about.glade.in.h:2
 msgid ""
 "Lightweight file manager\n"
 "\n"
@@ -30,7 +31,7 @@ msgstr ""
 "Kūrėjas Hon Jen Yee (PCMan)"
 
 #. Please replace this line with your own names, one name per line.
-#: ../data/ui/about.glade.h:6 ../data/ui/about.glade.in.h:6
+#: ../data/ui/about.glade.in.h:6
 msgid "translator-credits"
 msgstr "Julius Vitkauskas <zadintuvas@gmail.com>"
 
@@ -316,143 +317,186 @@ msgstr "_Tomų valdymas"
 msgid "<b>Removable medium is inserted</b>"
 msgstr ""
 
-#: ../src/desktop-ui.c:47 ../src/main-win-ui.c:129
-msgid "Invert Selection"
+#: ../data/ui/autorun.glade.h:2
+msgid "Detecting..."
 msgstr ""
 
-#: ../src/desktop-ui.c:48 ../src/main-win-ui.c:132
+#: ../data/ui/autorun.glade.h:3
+msgid "Please select the action you want to perform:"
+msgstr ""
+
+#: ../data/ui/autorun.glade.h:4
+msgid "Removable medium is inserted"
+msgstr ""
+
+#: ../data/ui/autorun.glade.h:5
+msgid "Type of medium:"
+msgstr ""
+
+#: ../src/volume-manager.c:150
+msgid "Removable Disk"
+msgstr ""
+
+#: ../src/volume-manager.c:209
+#, fuzzy
+msgid "Open in File Manager"
+msgstr "Atverti naujoje kortelėje"
+
+#: ../src/desktop-ui.c:53
+msgid "_Invert Selection"
+msgstr "_Rinktis atvirkščiai"
+
+#: ../src/desktop-ui.c:54 ../src/main-win-ui.c:144
 msgid "_Sort Files"
-msgstr ""
+msgstr "_Rūšiuoti failus"
 
-#: ../src/desktop-ui.c:50 ../src/main-win-ui.c:153
+#: ../src/desktop-ui.c:56 ../src/main-win-ui.c:168
 msgid "Folder"
 msgstr "Aplankas"
 
-#: ../src/desktop-ui.c:51 ../src/main-win-ui.c:154
-msgid "Blank FIle"
+#: ../src/desktop-ui.c:57
+msgid "Blank File"
 msgstr "Tuščias failas"
 
-#: ../src/desktop-ui.c:63 ../src/main-win-ui.c:179
+#: ../src/desktop-ui.c:69 ../src/main-win-ui.c:194
 msgid "By _Name"
 msgstr "Pagal _pavadinimą"
 
-#: ../src/desktop-ui.c:64 ../src/main-win-ui.c:180
+#: ../src/desktop-ui.c:70 ../src/main-win-ui.c:195
 msgid "By _Modification Time"
 msgstr "Pagal p_akeitimo laiką"
 
-#: ../src/desktop-ui.c:79 ../src/main-win-ui.c:196
+#: ../src/desktop-ui.c:71 ../src/main-win-ui.c:196
+#, fuzzy
+msgid "By _Size"
+msgstr "Pagal _pavadinimą"
+
+#: ../src/desktop-ui.c:72 ../src/main-win-ui.c:197
+msgid "By File _Type"
+msgstr ""
+
+#: ../src/desktop-ui.c:88 ../src/main-win-ui.c:214
 msgid "Open in New Tab"
 msgstr "Atverti naujoje kortelėje"
 
-#: ../src/desktop-ui.c:80 ../src/main-win-ui.c:197
+#: ../src/desktop-ui.c:89 ../src/main-win-ui.c:215
 msgid "Open in New Window"
 msgstr "Atverti naujame lange"
 
-#: ../src/main-win-ui.c:114
+#: ../src/desktop-ui.c:91 ../src/main-win-ui.c:217
+#, fuzzy
+msgid "Open in _Terminal"
+msgstr "Atverti naujame lange"
+
+#: ../src/main-win-ui.c:126
 msgid "_File"
 msgstr "_Failas"
 
-#: ../src/main-win-ui.c:115
+#: ../src/main-win-ui.c:127
 msgid "_New Window"
 msgstr "Naujas _langas"
 
-#: ../src/main-win-ui.c:116
+#: ../src/main-win-ui.c:128
 msgid "New _Tab"
 msgstr "_Nauja kortelė"
 
-#: ../src/main-win-ui.c:117
+#: ../src/main-win-ui.c:129
 msgid "_Close Tab"
 msgstr "_Uždaryti kortelę"
 
-#: ../src/main-win-ui.c:118
+#: ../src/main-win-ui.c:130
 msgid "Close Window"
 msgstr "Uždaryti l_angą"
 
-#: ../src/main-win-ui.c:119
+#: ../src/main-win-ui.c:131
 msgid "_Edit"
 msgstr "_Keisti"
 
-#: ../src/main-win-ui.c:124
+#: ../src/main-win-ui.c:136
 msgid "Rename"
 msgstr "Pervadinti"
 
-#: ../src/main-win-ui.c:125
+#: ../src/main-win-ui.c:137
 msgid "Create Symlink"
 msgstr "Sukurti sisteminę nuorodą"
 
-#: ../src/main-win-ui.c:126
+#: ../src/main-win-ui.c:138
 msgid "Move To..."
 msgstr "Perkelti į..."
 
-#: ../src/main-win-ui.c:127
+#: ../src/main-win-ui.c:139
 msgid "Copy To..."
 msgstr "Kopijuoti į..."
 
-#: ../src/main-win-ui.c:131
+#: ../src/main-win-ui.c:141
+msgid "Invert Selection"
+msgstr "Pasirinkti atvirkščiai"
+
+#: ../src/main-win-ui.c:143
 msgid "_View"
 msgstr "_Rodyti"
 
-#: ../src/main-win-ui.c:133
+#: ../src/main-win-ui.c:145
 msgid "_Help"
 msgstr "_Pagalba"
 
-#: ../src/main-win-ui.c:135
+#: ../src/main-win-ui.c:147
 msgid "_Go"
 msgstr "_Eiti"
 
-#: ../src/main-win-ui.c:136
+#: ../src/main-win-ui.c:148
 msgid "Previous Folder"
 msgstr "Ankstesnis aplankas"
 
-#: ../src/main-win-ui.c:137
+#: ../src/main-win-ui.c:149
 msgid "Next Folder"
 msgstr "Sekantis aplankas"
 
-#: ../src/main-win-ui.c:138
+#: ../src/main-win-ui.c:150
 msgid "Parent Folder"
 msgstr "Aukštesnis aplankas"
 
-#: ../src/main-win-ui.c:138
+#: ../src/main-win-ui.c:150
 msgid "Go to parent Folder"
 msgstr "Eiti aukštyn"
 
-#: ../src/main-win-ui.c:139
+#: ../src/main-win-ui.c:151
 msgid "Home Folder"
 msgstr "Namų katalogas"
 
-#: ../src/main-win-ui.c:140
+#: ../src/main-win-ui.c:152
 msgid "Desktop"
 msgstr "Darbastalis"
 
-#: ../src/main-win-ui.c:140
+#: ../src/main-win-ui.c:152
 msgid "Desktop Folder"
 msgstr "Darbastalio aplankas"
 
-#: ../src/main-win-ui.c:141
+#: ../src/main-win-ui.c:153
 msgid "My Computer"
 msgstr "Kompiuteris"
 
-#: ../src/main-win-ui.c:142
+#: ../src/main-win-ui.c:154
 msgid "Trash Can"
 msgstr "Šiukšlinė"
 
-#: ../src/main-win-ui.c:143
+#: ../src/main-win-ui.c:155
 msgid "Network Drives"
 msgstr "Tinklo įrenginiai"
 
-#: ../src/main-win-ui.c:144
+#: ../src/main-win-ui.c:156
 msgid "Applications"
 msgstr "Programos"
 
-#: ../src/main-win-ui.c:144
+#: ../src/main-win-ui.c:156
 msgid "Installed Applications"
 msgstr "Įdiegtos programos"
 
-#: ../src/main-win-ui.c:146
+#: ../src/main-win-ui.c:158
 msgid "_Bookmarks"
 msgstr "_Žymelės"
 
-#: ../src/main-win-ui.c:147
+#: ../src/main-win-ui.c:159
 msgid "Add To Bookmarks"
 msgstr "Įtraukti į žymeles"
 
@@ -460,15 +504,27 @@ msgstr "Įtraukti į žymeles"
 msgid "_Tools"
 msgstr ""
 
-#: ../src/main-win-ui.c:160
+#: ../src/main-win-ui.c:161
+msgid "Open Current Folder in _Terminal"
+msgstr ""
+
+#: ../src/main-win-ui.c:162
+msgid "Open Current Folder as _Root"
+msgstr ""
+
+#: ../src/main-win-ui.c:169
+msgid "Blank FIle"
+msgstr "Tuščias failas"
+
+#: ../src/main-win-ui.c:175
 msgid "Show _Hidden"
-msgstr ""
+msgstr "Rodyti _paslėptus"
 
-#: ../src/main-win-ui.c:165
+#: ../src/main-win-ui.c:180
 msgid "_Icon View"
-msgstr ""
+msgstr "_Piktogramos"
 
-#: ../src/main-win-ui.c:166
+#: ../src/main-win-ui.c:181
 msgid "_Compact View"
 msgstr "_Kompaktiškas"
 
@@ -476,11 +532,7 @@ msgstr "_Kompaktiškas"
 msgid "_Thumbnail View"
 msgstr "_Miniatiūros"
 
-#: ../src/main-win-ui.c:167
-msgid "Thumbnail View"
-msgstr ""
-
-#: ../src/main-win-ui.c:168
+#: ../src/main-win-ui.c:183
 msgid "Detailed _List View"
 msgstr "_Išsamus sąrašas"
 
@@ -488,73 +540,78 @@ msgstr "_Išsamus sąrašas"
 msgid "You are in super user mode"
 msgstr ""
 
-#: ../src/main-win.c:820
+#: ../src/main-win.c:605
+msgid "Switch user command is not set."
+msgstr ""
+
+#: ../src/main-win.c:953
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Laisvos vietos: %s (Iš viso: %s )"
 
-#: ../src/main-win.c:1073
-msgid "Create New..."
-msgstr "Sukurti naują..."
+#: ../src/main-win.c:1159
+#, c-format
+msgid ""
+"Add following folder to bookmarks:\n"
+"'%s'\n"
+"Enter a name for the new bookmark item:"
+msgstr ""
 
-#: ../src/main-win.c:1073
-msgid "Enter a name for the newly created file:"
-msgstr "Įveskite naujo failo pavadinimą:"
+#: ../src/main-win.c:1163
+#, fuzzy
+msgid "Add to Bookmarks"
+msgstr "Įtraukti į žymeles"
 
-#: ../src/main-win.c:1073
-msgid "New"
-msgstr "Nauja"
-
-#: ../src/pcmanfm.c:69
+#: ../src/pcmanfm.c:70
 msgid ""
 "Open folders in new tabs of the last used window instead of creating new "
 "windows"
 msgstr "Atverti aplankus kortelėse, o ne atskiruose languose"
 
-#: ../src/pcmanfm.c:70
-msgid "Name of config profile"
-msgstr ""
-
 #: ../src/pcmanfm.c:71
+msgid "Name of configuration profile"
+msgstr "Konfigūracijos profilio pavadinimas"
+
+#: ../src/pcmanfm.c:72
 msgid "Launch desktop manager"
 msgstr "Paleisti darbastalio tvarkyklę"
 
-#: ../src/pcmanfm.c:72
+#: ../src/pcmanfm.c:73
 msgid "Turn off desktop manager if it's running"
 msgstr "Išjungti darbastalio tvarkyklę (jei ji veikia)"
 
-#: ../src/pcmanfm.c:73
+#: ../src/pcmanfm.c:74
 msgid "Run PCManFM as a daemon"
 msgstr "Paleisti PCManFM kaip demoną"
 
-#: ../src/pcmanfm.c:74
+#: ../src/pcmanfm.c:75
 msgid "Open desktop preference dialog"
 msgstr "Atverti darbastalio nustatymų dialogą"
 
-#: ../src/pcmanfm.c:75
+#: ../src/pcmanfm.c:76
 msgid "Set desktop wallpaper"
 msgstr "Nustatyti darbastalio foną"
 
-#: ../src/pcmanfm.c:75
+#: ../src/pcmanfm.c:76
 msgid "<image file>"
 msgstr "<paveikslėlis>"
 
-#: ../src/pcmanfm.c:76
+#: ../src/pcmanfm.c:77
 msgid ""
 "Open preference dialog. 'n' is number of the page you want to show (1, 2, "
 "3...)."
 msgstr ""
 "Atverti nustatymų dialogą. 'n' yra rodomo puslapio pavadinimas (1, 2, 3...)."
 
-#: ../src/pcmanfm.c:77
+#: ../src/pcmanfm.c:78
 msgid "Open Find Files utility"
 msgstr "Atverti failų paieškos programą"
 
-#: ../src/pcmanfm.c:78
+#: ../src/pcmanfm.c:79
 msgid "No function. Just to be compatible with nautilus"
 msgstr "Jokios funkcijos. Reikalinga tik suderinamumui su nautilus"
 
-#: ../src/pcmanfm.c:79
+#: ../src/pcmanfm.c:80
 msgid "[FILE1, FILE2,...]"
 msgstr "[FAILAS1, FAILAS2,...]"
 
