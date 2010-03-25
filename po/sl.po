@@ -59,14 +59,12 @@ msgstr "Barva ozadja:"
 
 #: ../data/ui/desktop-pref.glade.h:7
 #: ../data/ui/pref.glade.h:10
-#, fuzzy
 msgid "Center on the screen"
-msgstr "Na stran [[welcome|dobrodošlice]]."
+msgstr "Na sredino zaslona"
 
 #: ../data/ui/desktop-pref.glade.h:8
-#, fuzzy
 msgid "Color of label text:"
-msgstr "Onemogoči oblikovanje besedila"
+msgstr "Barva teksta oznake"
 
 #: ../data/ui/desktop-pref.glade.h:9
 msgid "Color of shadow:"
@@ -83,12 +81,11 @@ msgstr "Nastavitve namizja"
 
 #: ../data/ui/desktop-pref.glade.h:12
 msgid "Fill with background color only"
-msgstr ""
+msgstr "Zapolni le z barvo ozadja"
 
 #: ../data/ui/desktop-pref.glade.h:13
-#, fuzzy
 msgid "Font of label text:"
-msgstr "Pisava oznake sledi"
+msgstr "Pisava oznake"
 
 #: ../data/ui/desktop-pref.glade.h:14
 msgid "Please select an image file"
@@ -112,12 +109,12 @@ msgstr "Na namizju prikaži ikone nosilcev"
 
 #: ../data/ui/desktop-pref.glade.h:19
 msgid "Show menus provided by window managers when desktop is clicked"
-msgstr ""
+msgstr "Ob kliku na namizje prikaži menije upraviteljev oken"
 
 #: ../data/ui/desktop-pref.glade.h:20
 #: ../data/ui/pref.glade.h:37
 msgid "Stretch to fill the entire screen"
-msgstr ""
+msgstr "Razširi na cel zaslon"
 
 #: ../data/ui/desktop-pref.glade.h:21
 #: ../data/ui/pref.glade.h:38
@@ -127,12 +124,11 @@ msgstr "Prilagodi sliko oknu"
 #: ../data/ui/desktop-pref.glade.h:22
 #: ../data/ui/pref.glade.h:42
 msgid "Tile the image to fill the entire screen"
-msgstr ""
+msgstr "Razpostavi sliko na cel zaslon"
 
 #: ../data/ui/desktop-pref.glade.h:23
-#, fuzzy
 msgid "Wallpaper mode:"
-msgstr "Način ozadja"
+msgstr "Postavitev ozadja:"
 
 #: ../data/ui/desktop-pref.glade.h:24
 msgid "Wallpaper:"
@@ -156,7 +152,7 @@ msgstr "<b>Ikone</b>"
 
 #: ../data/ui/pref.glade.h:5
 msgid "<b>Programs</b>"
-msgstr ""
+msgstr "<b>Programi</b>"
 
 #: ../data/ui/pref.glade.h:6
 msgid "<b>User Interface</b>"
@@ -168,7 +164,7 @@ msgstr "Vedno prikaži vrstico zavihkov"
 
 #: ../data/ui/pref.glade.h:8
 msgid "Archiver integration:"
-msgstr ""
+msgstr "Poveži z arhivarjem:"
 
 #: ../data/ui/pref.glade.h:9
 msgid "Bookmarks:"
@@ -188,7 +184,7 @@ msgstr "Podroben seznam"
 
 #: ../data/ui/pref.glade.h:14
 msgid "Do not generate thumbnails for files exceeding this size:"
-msgstr ""
+msgstr "Ne ustvari predoglednih sličic za datoteke večje od:"
 
 #: ../data/ui/pref.glade.h:16
 #, no-c-format
@@ -196,6 +192,8 @@ msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
 "%s = the command line you want to execute with terminal or su."
 msgstr ""
+"Primeri: \"xterm -e %s\" za konzolo ali \"gksu %s\" za preklop med uporabniki.\n"
+"%s = ukaz za izvršitev v konzoli ali s su."
 
 #: ../data/ui/pref.glade.h:18
 msgid "Hide 'Close tab' buttons"
@@ -215,19 +213,19 @@ msgstr "Ikone"
 
 #: ../data/ui/pref.glade.h:22
 msgid "Mount mountable volumes automatically on program startup"
-msgstr ""
+msgstr "Priklopi nosilce samodejno ob zagonu "
 
 #: ../data/ui/pref.glade.h:23
 msgid "Mount removable media automatically when they are inserted"
-msgstr ""
+msgstr "Priklopi nosilce samodejno ob priključitvi"
 
 #: ../data/ui/pref.glade.h:24
 msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
-msgstr ""
+msgstr "Namesto brisanja z diska datoteke premakni v \"Koš\""
 
 #: ../data/ui/pref.glade.h:25
 msgid "Only show thumbnails for local files"
-msgstr ""
+msgstr "Prikaži predogledne sličice le za lokalne datoteke"
 
 #: ../data/ui/pref.glade.h:26
 msgid "Open files with single click"
@@ -251,7 +249,7 @@ msgstr "Nastavitve"
 
 #: ../data/ui/pref.glade.h:31
 msgid "Show available options for removable media when they are inserted"
-msgstr ""
+msgstr "Ob priključitvi izmenljivih nosilcev prikaži razpoložljive možnosti"
 
 #: ../data/ui/pref.glade.h:32
 msgid "Show thumbnails of files"
@@ -275,7 +273,7 @@ msgstr "Velikost predoglednih sličic:"
 
 #: ../data/ui/pref.glade.h:39
 msgid "Switch user command:"
-msgstr "Ukaz za menjavo uporabnika:"
+msgstr "Ukaz za preklop med uporabniki:"
 
 #: ../data/ui/pref.glade.h:40
 msgid "Terminal emulator:"
@@ -311,7 +309,7 @@ msgstr "_Upravitelj nosilcev"
 
 #: ../data/ui/autorun.glade.h:1
 msgid "<b>Removable medium is inserted</b>"
-msgstr ""
+msgstr "<b>Priključen je izmenljiv medij</b>"
 
 #: ../data/ui/autorun.glade.h:2
 msgid "Detecting..."
@@ -319,11 +317,11 @@ msgstr "Zaznavam..."
 
 #: ../data/ui/autorun.glade.h:3
 msgid "Please select the action you want to perform:"
-msgstr ""
+msgstr "Izberite dejanje:"
 
 #: ../data/ui/autorun.glade.h:4
 msgid "Removable medium is inserted"
-msgstr ""
+msgstr "Priključen je izmenljiv medij"
 
 #: ../data/ui/autorun.glade.h:5
 msgid "Type of medium:"
@@ -334,9 +332,8 @@ msgid "Removable Disk"
 msgstr "Izmenljivi disk"
 
 #: ../src/volume-manager.c:209
-#, fuzzy
 msgid "Open in File Manager"
-msgstr "Datoteka \"%s\" je v napoto"
+msgstr "Odpri z upraviteljem datotek"
 
 #: ../src/desktop-ui.c:53
 msgid "_Invert Selection"
@@ -420,9 +417,8 @@ msgid "Rename"
 msgstr "Preimenuj"
 
 #: ../src/main-win-ui.c:137
-#, fuzzy
 msgid "Create Symlink"
-msgstr "Ustvaritev \"%1$s\": %2$s ni uspela"
+msgstr "Ustvari simbolno povezavo"
 
 #: ../src/main-win-ui.c:138
 msgid "Move To..."
@@ -449,14 +445,12 @@ msgid "_Go"
 msgstr "_Pojdi"
 
 #: ../src/main-win-ui.c:148
-#, fuzzy
 msgid "Previous Folder"
-msgstr "Mapa z nastavitvami:"
+msgstr "Prejšnja mapa"
 
 #: ../src/main-win-ui.c:149
-#, fuzzy
 msgid "Next Folder"
-msgstr "Mapa z nastavitvami:"
+msgstr "Naslednja mapa"
 
 #: ../src/main-win-ui.c:150
 msgid "Parent Folder"
@@ -467,18 +461,16 @@ msgid "Go to parent Folder"
 msgstr "Pojdi v nadrejeno mapo"
 
 #: ../src/main-win-ui.c:151
-#, fuzzy
 msgid "Home Folder"
-msgstr "Mapa z nastavitvami:"
+msgstr "Domača mapa"
 
 #: ../src/main-win-ui.c:152
 msgid "Desktop"
 msgstr "Namizje"
 
 #: ../src/main-win-ui.c:152
-#, fuzzy
 msgid "Desktop Folder"
-msgstr "Mapa z nastavitvami:"
+msgstr "Namizna mapa"
 
 #: ../src/main-win-ui.c:153
 msgid "My Computer"
@@ -489,14 +481,12 @@ msgid "Trash Can"
 msgstr "Koš"
 
 #: ../src/main-win-ui.c:155
-#, fuzzy
 msgid "Network Drives"
-msgstr "<b>Mrežna naprava</b>"
+msgstr "Omrežni diski"
 
 #: ../src/main-win-ui.c:156
-#, fuzzy
 msgid "Applications"
-msgstr "Dodani programi"
+msgstr "Programi"
 
 #: ../src/main-win-ui.c:156
 msgid "Installed Applications"
@@ -539,9 +529,8 @@ msgid "_Compact View"
 msgstr "Prikaži _strnjen seznam"
 
 #: ../src/main-win-ui.c:182
-#, fuzzy
 msgid "_Thumbnail View"
-msgstr "Dodaj pogled"
+msgstr "_Predogled"
 
 #: ../src/main-win-ui.c:183
 msgid "Detailed _List View"
@@ -553,7 +542,7 @@ msgstr "Prijavljeni ste kot super uporabnik"
 
 #: ../src/main-win.c:605
 msgid "Switch user command is not set."
-msgstr ""
+msgstr "Ukaz za preklop med uporabniki ni nastavljen"
 
 #: ../src/main-win.c:953
 #, c-format
@@ -567,6 +556,9 @@ msgid ""
 "'%s'\n"
 "Enter a name for the new bookmark item:"
 msgstr ""
+"Med zaznamke dodaj sledeče mape:\n"
+"'%s'\n"
+"Vnesi ime za nov zazamek:"
 
 #: ../src/main-win.c:1163
 msgid "Add to Bookmarks"
@@ -577,27 +569,24 @@ msgid "Open folders in new tabs of the last used window instead of creating new 
 msgstr "Mapo odpri v zavihku zadnjič uporabljenega okna namesto v novem oknu"
 
 #: ../src/pcmanfm.c:71
-#, fuzzy
 msgid "Name of configuration profile"
-msgstr " --profile Ime -- uporabi podan profil\n"
+msgstr "Imena profila nastavitev"
 
 #: ../src/pcmanfm.c:72
-#, fuzzy
 msgid "Launch desktop manager"
-msgstr "Poedit - Upravljalec katalogov"
+msgstr "Zaženi upravljalca namizja"
 
 #: ../src/pcmanfm.c:73
 msgid "Turn off desktop manager if it's running"
-msgstr ""
+msgstr "Izključi upravljalca namizja če je le-ta zagnan"
 
 #: ../src/pcmanfm.c:74
 msgid "Run PCManFM as a daemon"
 msgstr "Zaženi PCManFM kot demon"
 
 #: ../src/pcmanfm.c:75
-#, fuzzy
 msgid "Open desktop preference dialog"
-msgstr "Odpri pretvornik"
+msgstr "Odpri nastavitve namizja"
 
 #: ../src/pcmanfm.c:76
 msgid "Set desktop wallpaper"
@@ -617,7 +606,7 @@ msgstr "Odpri iskanje"
 
 #: ../src/pcmanfm.c:79
 msgid "No function. Just to be compatible with nautilus"
-msgstr ""
+msgstr "Brez funkcije; za kompatibilnost z Nautilusom."
 
 #: ../src/pcmanfm.c:80
 msgid "[FILE1, FILE2,...]"
@@ -633,7 +622,7 @@ msgstr "Ustvari novo..."
 
 #: ../src/pcmanfm.c:587
 msgid "Enter a name for the newly created file:"
-msgstr ""
+msgstr "Vnesite ime nove datoteke:"
 
 #: ../src/pcmanfm.c:587
 msgid "New"
