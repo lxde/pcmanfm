@@ -855,7 +855,7 @@ static void close_btn_style_set(GtkWidget *btn, GtkRcStyle *prev, gpointer data)
 	gtk_widget_set_size_request(btn, w + 2, h + 2);
 }
 
-static void on_close_tab_btn(GtkButton* btn, GtkWidget* view)
+static void close_tab(GtkWidget* view)
 {
     GtkNotebook* nb = GTK_NOTEBOOK(gtk_widget_get_parent(view));
     FmMainWin* win = FM_MAIN_WIN(gtk_widget_get_toplevel(GTK_WIDGET(nb)));
@@ -872,6 +872,21 @@ static void on_close_tab_btn(GtkButton* btn, GtkWidget* view)
         GtkWidget* main_win = gtk_widget_get_toplevel(GTK_WIDGET(nb));
         gtk_widget_destroy(main_win);
     }
+}
+
+static void on_close_tab_btn(GtkButton* btn, GtkWidget* view)
+{
+    close_tab(view);
+}
+
+static gboolean on_tab_label_button_pressed(GtkEventBox* tab_label, GdkEventButton* evt, FmFolderView* view)
+{
+    if(evt->button == 2) /* middle click */
+    {
+        close_tab(view);
+        return TRUE;
+    }
+    return FALSE;
 }
 
 GtkWidget* create_tab_label(FmMainWin* win, FmPath* path, FmFolderView* view)
@@ -909,6 +924,7 @@ GtkWidget* create_tab_label(FmMainWin* win, FmPath* path, FmFolderView* view)
 
     gtk_container_add(GTK_CONTAINER(evt_box), tab_label);
     gtk_widget_set_events( GTK_WIDGET(evt_box), GDK_ALL_EVENTS_MASK);
+    g_signal_connect(evt_box, "button-press-event", G_CALLBACK(on_tab_label_button_pressed), view);
 /*
     gtk_drag_dest_set ( GTK_WIDGET( evt_box ), GTK_DEST_DEFAULT_ALL,
                         drag_targets,
