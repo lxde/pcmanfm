@@ -119,7 +119,9 @@ static const char main_menu_xml[] =
   "<menuitem action='Prop'/>"
 "</popup>"
 "<accelerator action='Location'/>"
-"<accelerator action='Location2'/>";
+"<accelerator action='Location2'/>"
+"<accelerator action='Prev2'/>"
+"<accelerator action='Next2'/>";
 
 static GtkActionEntry main_win_actions[]=
 {
@@ -163,6 +165,8 @@ static GtkActionEntry main_win_actions[]=
     /* for accelerators */
     {"Location", NULL, NULL, "<Alt>d", NULL, G_CALLBACK(on_location)},
     {"Location2", NULL, NULL, "<Ctrl>L", NULL, G_CALLBACK(on_location)},
+    {"Prev2", NULL, NULL, "XF86Back", NULL, G_CALLBACK(on_go_back)},
+    {"Next2", NULL, NULL, "XF86Forward", NULL, G_CALLBACK(on_go_forward)},
     /* for popup menu */
     {"CreateNew", GTK_STOCK_NEW, NULL, NULL, NULL, NULL},
     {"NewFolder", "folder", N_("Folder"), NULL, NULL, G_CALLBACK(on_create_new)},
