@@ -893,7 +893,6 @@ void on_style_set( GtkWidget* w, GtkStyle* prev )
 void on_direction_changed( GtkWidget* w, GtkTextDirection prev )
 {
     FmDesktop* self = (FmDesktop*)w;
-    /* FIXME: handle RTL */
     PangoContext* pc = gtk_widget_get_pango_context(w);
     pango_layout_context_changed(self->pl);
     queue_layout_items(self);
@@ -1300,22 +1299,43 @@ void layout_items(FmDesktop* self)
     GList* l;
     FmDesktopItem* item;
     int x, y, bottom;
+    GtkTextDirection direction = gtk_widget_get_direction(GTK_WIDGET(self));
 
-    x = self->working_area.x + self->xmargin;
     y = self->working_area.y + self->ymargin;
     bottom = self->working_area.y + self->working_area.height - self->ymargin - self->cell_h;
 
-    for( l = self->items; l; l = l->next )
+    if(direction != GTK_TEXT_DIR_RTL) /* LTR or NONE */
     {
-        item = (FmDesktopItem*)l->data;
-        item->x = x;
-        item->y = y;
-        calc_item_size(self, item);
-        y += self->cell_h;
-        if(y > bottom)
+        x = self->working_area.x + self->xmargin;
+        for( l = self->items; l; l = l->next )
         {
-            x += self->cell_w;
-            y = self->working_area.y + self->ymargin;
+            item = (FmDesktopItem*)l->data;
+            item->x = x;
+            item->y = y;
+            calc_item_size(self, item);
+            y += self->cell_h;
+            if(y > bottom)
+            {
+                x += self->cell_w;
+                y = self->working_area.y + self->ymargin;
+            }
+        }
+    }
+    else /* RTL */
+    {
+        x = self->working_area.x + self->working_area.width - self->xmargin;
+        for( l = self->items; l; l = l->next )
+        {
+            item = (FmDesktopItem*)l->data;
+            item->x = x;
+            item->y = y;
+            calc_item_size(self, item);
+            y += self->cell_h;
+            if(y > bottom)
+            {
+                x -= self->cell_w;
+                y = self->working_area.y + self->ymargin;
+            }
         }
     }
     gtk_widget_queue_draw( GTK_WIDGET(self) );
