@@ -273,6 +273,29 @@ static void on_sel_changed(FmFolderView* fv, FmFileInfoList* files, FmMainWin* w
     }
 }
 
+static void update_sort_menu(FmMainWin* win)
+{
+    GtkAction* act;
+    act = gtk_ui_manager_get_action(win->ui, "/menubar/ViewMenu/Sort/Asc");
+    gtk_radio_action_set_current_value(act, FM_FOLDER_VIEW(win->folder_view)->sort_type);
+    act = gtk_ui_manager_get_action(win->ui, "/menubar/ViewMenu/Sort/ByName");
+    gtk_radio_action_set_current_value(act, FM_FOLDER_VIEW(win->folder_view)->sort_by);
+}
+
+static void update_view_menu(FmMainWin* win)
+{
+    GtkAction* act;
+    act = gtk_ui_manager_get_action(win->ui, "/menubar/ViewMenu/ShowHidden");
+    gtk_toggle_action_set_active(act, FM_FOLDER_VIEW(win->folder_view)->show_hidden);
+    act = gtk_ui_manager_get_action(win->ui, "/menubar/ViewMenu/IconView");
+    gtk_radio_action_set_current_value(act, FM_FOLDER_VIEW(win->folder_view)->mode);
+}
+
+static void on_sort_changed(FmFolderView* fv, FmMainWin* win)
+{
+    update_sort_menu(win);
+}
+
 static gboolean on_view_key_press_event(FmFolderView* fv, GdkEventKey* evt, FmMainWin* win)
 {
     switch(evt->keyval)
@@ -1006,10 +1029,10 @@ gint fm_main_win_add_tab(FmMainWin* win, FmPath* path)
     folder_view = fm_folder_view_new( app_config->view_mode );
     fm_folder_view_sort(FM_FOLDER_VIEW(folder_view), app_config->sort_type, app_config->sort_by);
     fm_folder_view_set_selection_mode(FM_FOLDER_VIEW(folder_view), GTK_SELECTION_MULTIPLE);
-    g_signal_connect(folder_view, "clicked", on_file_clicked, win);
-    g_signal_connect(folder_view, "status", on_status, win);
-    g_signal_connect(folder_view, "sel-changed", on_sel_changed, win);
-    g_signal_connect(folder_view, "key-press-event", on_view_key_press_event, win);
+    g_signal_connect(folder_view, "clicked", G_CALLBACK(on_file_clicked), win);
+    g_signal_connect(folder_view, "status", G_CALLBACK(on_status), win);
+    g_signal_connect(folder_view, "sel-changed", G_CALLBACK(on_sel_changed), win);
+    g_signal_connect(folder_view, "key-press-event", G_CALLBACK(on_view_key_press_event), win);
 
     nh = fm_nav_history_new();
     g_object_set_qdata_full((GObject*)folder_view, nav_history_id, nh, (GDestroyNotify)g_object_unref);
@@ -1202,7 +1225,10 @@ void on_switch_page(GtkNotebook* nb, GtkNotebookPage* page, guint num, FmMainWin
     FmFolderView* fv = FM_FOLDER_VIEW(gtk_notebook_get_nth_page(nb, num));
 
     if(win->folder_view)
+    {
         g_signal_handlers_disconnect_by_func(win->folder_view, on_view_loaded, win);
+        g_signal_handlers_disconnect_by_func(win->folder_view, on_sort_changed, win);
+    }
     win->folder_view = fv;
 
     if(fv)
@@ -1213,6 +1239,7 @@ void on_switch_page(GtkNotebook* nb, GtkNotebookPage* page, guint num, FmMainWin
         /* FIXME: we shouldn't access private data member. */
         fm_path_entry_set_model( FM_PATH_ENTRY(win->location), cwd, fv->model );
         g_signal_connect(fv, "loaded", G_CALLBACK(on_view_loaded), win);
+        g_signal_connect(fv, "sort-changed", G_CALLBACK(on_sort_changed), win);
 
         if(cwd)
         {
@@ -1222,6 +1249,8 @@ void on_switch_page(GtkNotebook* nb, GtkNotebookPage* page, guint num, FmMainWin
             g_free(disp_name);
         }
 
+        update_sort_menu(win);
+        update_view_menu(win);
         update_volume_info(win);
     }
 }
