@@ -173,7 +173,6 @@ static GtkWidget* desktop_popup = NULL;
 
 static void fm_desktop_class_init(FmDesktopClass *klass)
 {
-    GObjectClass *g_object_class;
     GtkObjectClass *gtk_object_class;
     GtkWidgetClass* wc;
 	typedef gboolean (*DeleteEvtHandler) (GtkWidget*, GdkEvent*);
@@ -255,7 +254,6 @@ static void fm_desktop_init(FmDesktop *self)
     GdkWindow* root;
     PangoContext* pc;
     GtkTreeIter it;
-    GtkCellRenderer* renderer;
     GtkTargetList* targets;
 
     gtk_window_set_default_size((GtkWindow*)self, gdk_screen_get_width(screen), gdk_screen_get_height(screen));
@@ -334,7 +332,6 @@ void fm_desktop_manager_init()
     gint i;
     GtkUIManager* ui;
     GtkActionGroup* act_grp;
-    GtkAction* act;
 
     if( ! win_group )
         win_group = gtk_window_group_new();
@@ -504,8 +501,7 @@ static void deselect_all(FmDesktop* desktop)
 gboolean on_button_press( GtkWidget* w, GdkEventButton* evt )
 {
     FmDesktop* self = (FmDesktop*)w;
-    FmDesktopItem *item, *clicked_item = NULL;
-    GList* l;
+    FmDesktopItem *item = NULL, *clicked_item = NULL;
 
     clicked_item = hit_test( FM_DESKTOP(w), (int)evt->x, (int)evt->y );
 
@@ -549,8 +545,8 @@ gboolean on_button_press( GtkWidget* w, GdkEventButton* evt )
                 GtkMenu* popup;
                 FmFileInfo* fi;
                 FmFileInfoList* files;
-                int n_sels;
                 /*
+                int n_sels;
                 GList* items = get_selected_items(self, &n_sels);
                 if( items )
                 {
@@ -991,9 +987,7 @@ gboolean on_expose( GtkWidget* w, GdkEventExpose* evt )
 
 void on_size_allocate( GtkWidget* w, GtkAllocation* alloc )
 {
-    GdkPixbuf* pix;
     FmDesktop* self = (FmDesktop*)w;
-    GdkRectangle wa;
 
     /* calculate item size */
     PangoContext* pc;
@@ -1264,7 +1258,7 @@ void on_rows_reordered(GtkTreeModel* mod, GtkTreePath* parent_tp, GtkTreeIter* p
 
 void calc_item_size(FmDesktop* desktop, FmDesktopItem* item)
 {
-    int text_x, text_y, text_w, text_h;
+    //int text_x, text_y, text_w, text_h;	 /* Probably goes along with the FIXME in this function */
     PangoRectangle rc, rc2;
 
     /* icon rect */
@@ -1305,8 +1299,7 @@ void layout_items(FmDesktop* self)
 {
     GList* l;
     FmDesktopItem* item;
-    GtkWidget* widget = (GtkWidget*)self;
-    int x, y, w, bottom, right;
+    int x, y, bottom;
 
     x = self->working_area.x + self->xmargin;
     y = self->working_area.y + self->ymargin;
@@ -1361,7 +1354,6 @@ void paint_item(FmDesktop* self, FmDesktopItem* item, cairo_t* cr, GdkRectangle*
 
     if(item->is_selected || item == self->drop_hilight) /* draw background for text label */
     {
-        GdkRectangle rc;
         state = GTK_CELL_RENDERER_SELECTED;
 
         cairo_save(cr);
@@ -1407,7 +1399,7 @@ void redraw_item(FmDesktop* desktop, FmDesktopItem* item)
 
 void calc_rubber_banding_rect( FmDesktop* self, int x, int y, GdkRectangle* rect )
 {
-    int x1, x2, y1, y2, w, h;
+    int x1, x2, y1, y2;
     if( self->drag_start_x < x )
     {
         x1 = self->drag_start_x;
@@ -1440,7 +1432,7 @@ void update_rubberbanding( FmDesktop* self, int newx, int newy )
 {
     GList* l;
     GdkRectangle old_rect, new_rect;
-    GdkRegion *region;
+    //GdkRegion *region;
 
     calc_rubber_banding_rect(self, self->rubber_bending_x, self->rubber_bending_y, &old_rect );
     calc_rubber_banding_rect(self, newx, newy, &new_rect );

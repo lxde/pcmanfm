@@ -188,8 +188,6 @@ static gboolean open_folder_func(GAppLaunchContext* ctx, GList* folder_infos, gp
 
 static void on_file_clicked(FmFolderView* fv, FmFolderViewClickType type, FmFileInfo* fi, FmMainWin* win)
 {
-    char* fpath, *uri;
-    GAppLaunchContext* ctx;
     switch(type)
     {
     case FM_FV_ACTIVATED: /* file activated */
@@ -412,7 +410,7 @@ static void on_splitter_pos_changed(GtkPaned* paned, GParamSpec* ps, FmMainWin* 
 
 static void fm_main_win_init(FmMainWin *self)
 {
-    GtkWidget *vbox, *menubar, *toolitem, *next_btn, *scroll;
+    GtkWidget *vbox, *menubar, *toolitem, *scroll;
     GtkUIManager* ui;
     GtkActionGroup* act_grp;
     GtkAction* act;
@@ -598,8 +596,6 @@ void on_open_as_root(GtkAction* act, FmMainWin* win)
 {
     GAppInfo* app;
     char* cmd;
-    char** argv;
-    int argc;
     if(!app_config->su_cmd)
     {
         fm_show_error(GTK_WINDOW(win), _("Switch user command is not set."));
@@ -896,7 +892,6 @@ GtkWidget* create_tab_label(FmMainWin* win, FmPath* path, FmFolderView* view)
     GtkWidget* tab_text;
     GtkWidget* close_btn;
     char* disp_name;
-    int w, h;
 
     /* Create tab label */
     evt_box = gtk_event_box_new();

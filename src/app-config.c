@@ -159,7 +159,7 @@ void fm_app_config_load_from_file(FmAppConfig* cfg, const char* name)
         }
     }
 
-    dirs = g_get_system_config_dirs(), **dir;
+    dirs = g_get_system_config_dirs();
     for(dir=dirs;*dir;++dir)
     {
         path = g_build_filename(*dir, name, NULL);

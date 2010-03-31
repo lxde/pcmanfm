@@ -112,8 +112,6 @@ static void on_combo_changed(GtkComboBox* combo, gpointer _off)
 static void init_combo(GtkBuilder* builder, const char* name, gsize off, const char* changed_notify)
 {
     GtkComboBox* combo = (GtkComboBox*)gtk_builder_get_object(builder, name);
-    GtkTreeModel* model = gtk_combo_box_get_model(combo);
-    GtkTreeIter it;
     int* val = (int*)G_STRUCT_MEMBER_P(fm_config, off);
     if(changed_notify)
         g_object_set_data_full(combo, "changed", g_strdup(changed_notify), g_free);
@@ -272,8 +270,6 @@ void fm_edit_preference( GtkWindow* parent, int page )
     if(!pref_dlg)
     {
         GtkBuilder* builder = gtk_builder_new();
-        GtkWidget* item;
-        GList* archivers, *l;
 
         gtk_builder_add_from_file(builder, PACKAGE_UI_DIR "/pref.ui", NULL);
         pref_dlg = gtk_builder_get_object(builder, "dlg");

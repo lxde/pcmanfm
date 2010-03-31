@@ -276,7 +276,6 @@ gboolean on_socket_event( GIOChannel* ioc, GIOCondition cond, gpointer data )
     struct sockaddr_un client_addr ={ 0 };
     static char buf[ 1024 ];
     GString* args;
-    char** file;
 
     if ( cond & G_IO_IN )
     {
@@ -381,8 +380,6 @@ void single_instance_finalize()
 gboolean pcmanfm_run()
 {
     gboolean ret = TRUE;
-    char** file;
-	GtkWidget* w;
 
     if(!files_to_open)
     {
@@ -517,7 +514,6 @@ void pcmanfm_unref()
 
 gboolean pcmanfm_open_folder(GAppLaunchContext* ctx, GList* folder_infos, gpointer user_data, GError** err)
 {
-    FmMainWin* win = FM_MAIN_WIN(user_data);
     GList* l = folder_infos;
     for(; l; l=l->next)
     {
@@ -536,7 +532,6 @@ void pcmanfm_save_config()
 void pcmanfm_open_folder_in_terminal(GtkWindow* parent, FmPath* dir)
 {
     GAppInfo* app;
-    char* cmd;
     char** argv;
     int argc;
     if(!fm_config->terminal)
@@ -596,7 +591,7 @@ _retry:
         GFile* gf = fm_path_to_gfile(dest);
         if(!g_file_make_directory(gf, NULL, &err))
         {
-            if(err->domain = G_IO_ERROR && err->code == G_IO_ERROR_EXISTS)
+            if(err->domain == G_IO_ERROR && err->code == G_IO_ERROR_EXISTS)
             {
                 fm_path_unref(dest);
                 g_error_free(err);
@@ -630,7 +625,7 @@ _retry:
         }
         else
         {
-            if(err->domain = G_IO_ERROR && err->code == G_IO_ERROR_EXISTS)
+            if(err->domain == G_IO_ERROR && err->code == G_IO_ERROR_EXISTS)
             {
                 fm_path_unref(dest);
                 g_error_free(err);
