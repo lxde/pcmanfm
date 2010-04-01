@@ -2,6 +2,7 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the pcmanfm package.
 # Radek Tříška <radek@fastlinux.eu>, 2010.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm2\n"
@@ -9,10 +10,11 @@ msgstr ""
 "POT-Creation-Date: 2010-03-24 01:25+0100\n"
 "PO-Revision-Date: 2010-04-01 23:30+0100\n"
 "Last-Translator: Radek Tříška <radek@fastlinux.eu>\n"
-"Language-Team: \n"
+"Language-Team: Czech <radek@fastlinux.eu>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2010"
@@ -163,9 +165,8 @@ msgid "Always show the tab bar"
 msgstr "Vždy zobrazovat lištu karet"
 
 #: ../data/ui/pref.glade.h:8
-#, fuzzy
 msgid "Archiver integration:"
-msgstr "Integrace archivačního programu:"
+msgstr "Integrace archivátoru:"
 
 #: ../data/ui/pref.glade.h:9
 msgid "Bookmarks:"
@@ -313,9 +314,8 @@ msgid "<b>Removable medium is inserted</b>"
 msgstr "<b>Je vloženo odpojitelné médium</b>"
 
 #: ../data/ui/autorun.glade.h:2
-#, fuzzy
 msgid "Detecting..."
-msgstr "Načítám..."
+msgstr "Probíhá detekce..."
 
 #: ../data/ui/autorun.glade.h:3
 msgid "Please select the action you want to perform:"
@@ -335,7 +335,7 @@ msgstr "Odpojitelný disk"
 
 #: ../src/volume-manager.c:209
 msgid "Open in File Manager"
-msgstr "Otevřít ve Správci So"
+msgstr "Otevřít ve Správci Souborů"
 
 #: ../src/desktop-ui.c:53
 msgid "_Invert Selection"
