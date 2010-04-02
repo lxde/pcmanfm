@@ -11,20 +11,19 @@ msgstr ""
 "Project-Id-Version: PCManFM\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-03-24 01:25+0100\n"
-"PO-Revision-Date: 2010-02-15 19:57+0200\n"
+"PO-Revision-Date: 2010-04-02 13:05+0200\n"
 "Last-Translator: Martin <brother@bsnet.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
+"Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: sv\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.0.1\n"
 
 #: ../data/ui/about.glade.in.h:1
-#, fuzzy
 msgid "Copyright (C) 2009 - 2010"
-msgstr "Copyright © 2009"
+msgstr "Copyright © 2009 - 2010"
 
 #: ../data/ui/about.glade.in.h:2
 msgid ""
@@ -93,13 +92,12 @@ msgid "Desktop Preferences"
 msgstr "Skrivbordsinställningar"
 
 #: ../data/ui/desktop-pref.glade.h:12
-#, fuzzy
 msgid "Fill with background color only"
 msgstr "Fyll endast med bakgrundsfärg"
 
 #: ../data/ui/desktop-pref.glade.h:13
 msgid "Font of label text:"
-msgstr "Teckensnitt för ettikettext"
+msgstr "Teckensnitt för ettikettext:"
 
 #: ../data/ui/desktop-pref.glade.h:14
 msgid "Please select an image file"
@@ -107,22 +105,21 @@ msgstr "Välj en bildfil"
 
 #: ../data/ui/desktop-pref.glade.h:15
 msgid "Show \"My Computer\" icon on desktop"
-msgstr "Visa \"Den här datorn\"-ikon på skrivbordet"
+msgstr "Visa ikonen \"Den här datorn\" på skrivbordet"
 
 #: ../data/ui/desktop-pref.glade.h:16
 msgid "Show \"My Documents\" icon on desktop"
-msgstr "Visa \"Mina dokument\"-ikon på skrivbordet"
+msgstr "Visa ikonen \"Mina dokument\" på skrivbordet"
 
 #: ../data/ui/desktop-pref.glade.h:17
 msgid "Show \"Trash Bin\" icon on desktop"
-msgstr "Visa \"Papperskorg\"-ikon på skrivbordet"
+msgstr "Visa ikonen \"Papperskorg\" på skrivbordet"
 
 #: ../data/ui/desktop-pref.glade.h:18
 msgid "Show icons of volumes on desktop"
 msgstr "Visa volymikoner på skrivbordet"
 
 #: ../data/ui/desktop-pref.glade.h:19
-#, fuzzy
 msgid "Show menus provided by window managers when desktop is clicked"
 msgstr "Visa menyer från fönsterhanteraren när skrivbordet klickas"
 
@@ -139,73 +136,64 @@ msgid "Tile the image to fill the entire screen"
 msgstr "Lägg i mönster för att fylla hela skärmen"
 
 #: ../data/ui/desktop-pref.glade.h:23
-#, fuzzy
 msgid "Wallpaper mode:"
-msgstr "Bakgrundsbild:"
+msgstr "Justering för bakgrundsbild:"
 
 #: ../data/ui/desktop-pref.glade.h:24
 msgid "Wallpaper:"
 msgstr "Bakgrundsbild:"
 
 #: ../data/ui/pref.glade.h:1
-#, fuzzy
 msgid "<b>Auto-mount</b>"
-msgstr "<b>Till:</b>"
+msgstr "<b>Automontering</b>"
 
 #: ../data/ui/pref.glade.h:2
 msgid "<b>Behavior</b>"
 msgstr "<b>Beteende</b>"
 
 #: ../data/ui/pref.glade.h:3
-#, fuzzy
 msgid "<b>Default View</b>"
-msgstr "<b>Filstorlek</b>"
+msgstr "<b>Standardvy</b>"
 
 #: ../data/ui/pref.glade.h:4
-#, fuzzy
 msgid "<b>Icons</b>"
-msgstr "<b>Till:</b>"
+msgstr "<b>Ikoner</b>"
 
 #: ../data/ui/pref.glade.h:5
-#, fuzzy
 msgid "<b>Programs</b>"
-msgstr "</b>Förlopp:</b>"
+msgstr "<b>Program</b>"
 
 #: ../data/ui/pref.glade.h:6
-#, fuzzy
 msgid "<b>User Interface</b>"
-msgstr "<b>Allmänt</b>"
+msgstr "<b>Användargränssnitt</b>"
 
 #: ../data/ui/pref.glade.h:7
 msgid "Always show the tab bar"
 msgstr "Visa alltid flikfältet"
 
 #: ../data/ui/pref.glade.h:8
-#, fuzzy
 msgid "Archiver integration:"
-msgstr "Orientering"
+msgstr "Integrering med arkivhantering:"
 
 #: ../data/ui/pref.glade.h:9
 msgid "Bookmarks:"
 msgstr "Bokmärken:"
 
 #: ../data/ui/pref.glade.h:11
-#, fuzzy
 msgid "Compact View"
-msgstr "Compact Flash-enhet"
+msgstr "Kompakt vy"
 
 #: ../data/ui/pref.glade.h:12
 msgid "Confirm before deleting files"
-msgstr ""
+msgstr "Bekräfta före radering av filer"
 
 #: ../data/ui/pref.glade.h:13
-#, fuzzy
 msgid "Detailed List View"
-msgstr "Visa som detaljerad _lista"
+msgstr "Detaljerad vy"
 
 #: ../data/ui/pref.glade.h:14
 msgid "Do not generate thumbnails for files exceeding this size:"
-msgstr ""
+msgstr "Skapa inte tumnaglar för filer större än:"
 
 #: ../data/ui/pref.glade.h:16
 #, no-c-format
@@ -213,6 +201,8 @@ msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
 "%s = the command line you want to execute with terminal or su."
 msgstr ""
+"Exempel: \"xterm -e %s\" för terminal eller \"gksu %s\" för att byta användare.\n"
+"%s = kommandoraden som du vill köra med terminal eller su."
 
 #: ../data/ui/pref.glade.h:18
 msgid "Hide 'Close tab' buttons"
@@ -227,25 +217,25 @@ msgid "Hide side pane buttons"
 msgstr "Dölj knappar för sidopanel"
 
 #: ../data/ui/pref.glade.h:21
-#, fuzzy
 msgid "Icon View"
-msgstr "Ikonvymodell"
+msgstr "Ikonvy"
 
 #: ../data/ui/pref.glade.h:22
 msgid "Mount mountable volumes automatically on program startup"
-msgstr ""
+msgstr "Montera tillgängliga enheter automatiskt vid programmets uppstart"
 
 #: ../data/ui/pref.glade.h:23
 msgid "Mount removable media automatically when they are inserted"
-msgstr ""
+msgstr "Montera flyttbara enheter automatiskt när de ansluts"
 
 #: ../data/ui/pref.glade.h:24
 msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
 msgstr ""
+"Flytta raderade filer till \"Papperskorgen\" istället för att radera från disk"
 
 #: ../data/ui/pref.glade.h:25
 msgid "Only show thumbnails for local files"
-msgstr ""
+msgstr "Visa endast tumnaglar för lokala filer"
 
 #: ../data/ui/pref.glade.h:26
 msgid "Open files with single click"
@@ -269,62 +259,55 @@ msgstr "Inställningar"
 
 #: ../data/ui/pref.glade.h:31
 msgid "Show available options for removable media when they are inserted"
-msgstr ""
+msgstr "Visa tillgängliga alternativ från flyttbara media när de ansluts"
 
 #: ../data/ui/pref.glade.h:32
 msgid "Show thumbnails of files"
-msgstr ""
+msgstr "Visa tumnaglar för filer"
 
 #: ../data/ui/pref.glade.h:33
-#, fuzzy
 msgid "Size of big icons:"
 msgstr "Storlek på stora ikoner:"
 
 #: ../data/ui/pref.glade.h:34
-#, fuzzy
 msgid "Size of side pane icons:"
-msgstr "Storlek på stora ikoner:"
+msgstr "Storlek på ikoner i sidopanel:"
 
 #: ../data/ui/pref.glade.h:35
-#, fuzzy
 msgid "Size of small icons:"
 msgstr "Storlek på små ikoner:"
 
 #: ../data/ui/pref.glade.h:36
-#, fuzzy
 msgid "Size of thumbnails:"
-msgstr "Storlek på små ikoner:"
+msgstr "Storlek på tumnagelikoner:"
 
 #: ../data/ui/pref.glade.h:39
 msgid "Switch user command:"
-msgstr ""
+msgstr "Kommando för att byta användare:"
 
 #: ../data/ui/pref.glade.h:40
-#, fuzzy
 msgid "Terminal emulator:"
 msgstr "Terminalprogram:"
 
 #: ../data/ui/pref.glade.h:41
 msgid "Thumbnail View"
-msgstr ""
+msgstr "Tumnagelvy"
 
 #: ../data/ui/pref.glade.h:43
 msgid "Use SI decimal prefixes instead of IEC binary prefixes"
 msgstr "Använd SI-prefix istället för IEC-binär-prefix"
 
 #: ../data/ui/pref.glade.h:44
-#, fuzzy
 msgid "View Mode:"
-msgstr "Läge: "
+msgstr "Vytyp:"
 
 #: ../data/ui/pref.glade.h:45
 msgid "_Advanced"
 msgstr "A_vancerat"
 
 #: ../data/ui/pref.glade.h:46
-#, fuzzy
 msgid "_Display"
-msgstr "<b>Visning</b>"
+msgstr "_Visning"
 
 #: ../data/ui/pref.glade.h:47
 msgid "_General"
@@ -336,111 +319,95 @@ msgstr "_Volymhantering"
 
 #: ../data/ui/autorun.glade.h:1
 msgid "<b>Removable medium is inserted</b>"
-msgstr ""
+msgstr "<b>Flyttbart media anslutet</b>"
 
 #: ../data/ui/autorun.glade.h:2
-#, fuzzy
 msgid "Detecting..."
-msgstr "Tar bort..."
+msgstr "Letar..."
 
 #: ../data/ui/autorun.glade.h:3
 msgid "Please select the action you want to perform:"
-msgstr ""
+msgstr "Ange åtgärd som du vill utföra:"
 
 #: ../data/ui/autorun.glade.h:4
 msgid "Removable medium is inserted"
-msgstr ""
+msgstr "Flyttbart media anslutet"
 
 #: ../data/ui/autorun.glade.h:5
 msgid "Type of medium:"
-msgstr ""
+msgstr "Medietyp:"
 
 #: ../src/volume-manager.c:150
-#, fuzzy
 msgid "Removable Disk"
-msgstr "Flyttbar %s-volym"
+msgstr "Flyttbar enhet"
 
 #: ../src/volume-manager.c:209
-#, fuzzy
 msgid "Open in File Manager"
-msgstr "PCMan Filhanterare"
+msgstr "Öppna i filhanterare"
 
 #: ../src/desktop-ui.c:53
-#, fuzzy
 msgid "_Invert Selection"
-msgstr "In_vertera markering"
+msgstr "_Invertera markering"
 
 #: ../src/desktop-ui.c:54 ../src/main-win-ui.c:144
-#, fuzzy
 msgid "_Sort Files"
-msgstr "_Textfil"
+msgstr "_Sortera filer"
 
 #: ../src/desktop-ui.c:56 ../src/main-win-ui.c:168
 msgid "Folder"
 msgstr "Mapp"
 
 #: ../src/desktop-ui.c:57
-#, fuzzy
 msgid "Blank File"
-msgstr "Vanliga textfiler"
+msgstr "Tom fil"
 
 #: ../src/desktop-ui.c:69 ../src/main-win-ui.c:194
-#, fuzzy
 msgid "By _Name"
-msgstr "Sortera efter _namn"
+msgstr "Efter _namn"
 
 #: ../src/desktop-ui.c:70 ../src/main-win-ui.c:195
-#, fuzzy
 msgid "By _Modification Time"
-msgstr "Sortera efter ändringsdatu_m"
+msgstr "Efter ändringsdatu_m"
 
 #: ../src/desktop-ui.c:71 ../src/main-win-ui.c:196
-#, fuzzy
 msgid "By _Size"
-msgstr "Sortera efter _storlek"
+msgstr "Efter _storlek"
 
 #: ../src/desktop-ui.c:72 ../src/main-win-ui.c:197
-#, fuzzy
 msgid "By File _Type"
-msgstr "Kända filtyper:"
+msgstr "Efter _filtyp"
 
 #: ../src/desktop-ui.c:88 ../src/main-win-ui.c:214
-#, fuzzy
 msgid "Open in New Tab"
-msgstr "Öppna i ny f_lik"
+msgstr "Öppna i ny flik"
 
 #: ../src/desktop-ui.c:89 ../src/main-win-ui.c:215
-#, fuzzy
 msgid "Open in New Window"
-msgstr "Öppna i nytt f_önster"
+msgstr "Öppna i nytt fönster"
 
 #: ../src/desktop-ui.c:91 ../src/main-win-ui.c:217
-#, fuzzy
 msgid "Open in _Terminal"
-msgstr "Öppna i terminal"
+msgstr "Öppna i _terminal"
 
 #: ../src/main-win-ui.c:126
 msgid "_File"
 msgstr "_Arkiv"
 
 #: ../src/main-win-ui.c:127
-#, fuzzy
 msgid "_New Window"
-msgstr "Nytt fö_nster"
+msgstr "_Nytt fönster"
 
 #: ../src/main-win-ui.c:128
 msgid "New _Tab"
 msgstr "Ny _flik"
 
 #: ../src/main-win-ui.c:129
-#, fuzzy
 msgid "_Close Tab"
-msgstr "Stäng flik"
+msgstr "Stäng fli_k"
 
 #: ../src/main-win-ui.c:130
-#, fuzzy
 msgid "Close Window"
-msgstr "S_täng fönster"
+msgstr "Stäng fönster"
 
 #: ../src/main-win-ui.c:131
 msgid "_Edit"
@@ -452,22 +419,19 @@ msgstr "Byt namn"
 
 #: ../src/main-win-ui.c:137
 msgid "Create Symlink"
-msgstr ""
+msgstr "Skapa symlänk"
 
 #: ../src/main-win-ui.c:138
-#, fuzzy
 msgid "Move To..."
-msgstr "Flyttar..."
+msgstr "Flytta till..."
 
 #: ../src/main-win-ui.c:139
-#, fuzzy
 msgid "Copy To..."
-msgstr "Kopierar..."
+msgstr "Kopiera till..."
 
 #: ../src/main-win-ui.c:141
-#, fuzzy
 msgid "Invert Selection"
-msgstr "In_vertera markering"
+msgstr "Invertera markering"
 
 #: ../src/main-win-ui.c:143
 msgid "_View"
@@ -482,82 +446,69 @@ msgid "_Go"
 msgstr "_Gå"
 
 #: ../src/main-win-ui.c:148
-#, fuzzy
 msgid "Previous Folder"
-msgstr "Föräldramapp"
+msgstr "Föregående mapp"
 
 #: ../src/main-win-ui.c:149
-#, fuzzy
 msgid "Next Folder"
-msgstr "Ny mapp"
+msgstr "Nästa mapp"
 
 #: ../src/main-win-ui.c:150
 msgid "Parent Folder"
 msgstr "Föräldramapp"
 
 #: ../src/main-win-ui.c:150
-#, fuzzy
 msgid "Go to parent Folder"
-msgstr "Gå till f_öräldramapp"
+msgstr "Gå till föräldramapp"
 
 #: ../src/main-win-ui.c:151
-#, fuzzy
 msgid "Home Folder"
-msgstr "Ny mapp"
+msgstr "Hemkatalog"
 
 #: ../src/main-win-ui.c:152
 msgid "Desktop"
 msgstr "Skrivbord"
 
 #: ../src/main-win-ui.c:152
-#, fuzzy
 msgid "Desktop Folder"
-msgstr "Föräldramapp"
+msgstr "Skrivbordsmapp"
 
 #: ../src/main-win-ui.c:153
 msgid "My Computer"
-msgstr ""
+msgstr "Den här datorn"
 
 #: ../src/main-win-ui.c:154
-#, fuzzy
 msgid "Trash Can"
 msgstr "Papperskorg"
 
 #: ../src/main-win-ui.c:155
-#, fuzzy
 msgid "Network Drives"
-msgstr "Memory Stick-enhet"
+msgstr "Nätverksenhet"
 
 # Inte översätta mime-typer
 #: ../src/main-win-ui.c:156
-#, fuzzy
 msgid "Applications"
-msgstr "application"
+msgstr "Program"
 
 #: ../src/main-win-ui.c:156
-#, fuzzy
 msgid "Installed Applications"
-msgstr "_Alla program"
+msgstr "Installerade program"
 
 #: ../src/main-win-ui.c:158
-#, fuzzy
 msgid "_Bookmarks"
 msgstr "_Bokmärken"
 
 #: ../src/main-win-ui.c:159
-#, fuzzy
 msgid "Add To Bookmarks"
 msgstr "Lägg till bokmärke"
 
 #: ../src/main-win-ui.c:160
-#, fuzzy
 msgid "_Tools"
 msgstr "Ver_ktyg"
 
 #: ../src/main-win-ui.c:161
-#, fuzzy
 msgid "Open Current Folder in _Terminal"
-msgstr "Öppna aktuell mapp som _root"
+msgstr "Öppna aktuell mapp i _terminal"
 
 #: ../src/main-win-ui.c:162
 msgid "Open Current Folder as _Root"
@@ -565,45 +516,40 @@ msgstr "Öppna aktuell mapp som _root"
 
 #: ../src/main-win-ui.c:169
 msgid "Blank FIle"
-msgstr ""
+msgstr "Tom fil"
 
 #: ../src/main-win-ui.c:175
-#, fuzzy
 msgid "Show _Hidden"
-msgstr "Visa _dolda filer"
+msgstr "Visa _dolda"
 
 #: ../src/main-win-ui.c:180
-#, fuzzy
 msgid "_Icon View"
-msgstr "Ikonvymodell"
+msgstr "_Ikonvy"
 
 #: ../src/main-win-ui.c:181
-#, fuzzy
 msgid "_Compact View"
-msgstr "Compact Flash-enhet"
+msgstr "_Kompakt vy"
 
 #: ../src/main-win-ui.c:182
 msgid "_Thumbnail View"
-msgstr ""
+msgstr "_Tumnagelvy"
 
 #: ../src/main-win-ui.c:183
-#, fuzzy
 msgid "Detailed _List View"
-msgstr "Visa som detaljerad _lista"
+msgstr "Detaljerad _listvy"
 
 #: ../src/main-win.c:504
-#, fuzzy
 msgid "You are in super user mode"
-msgstr "Varning: Du är i administratörsläge"
+msgstr "Du är i administratörsläge"
 
 #: ../src/main-win.c:605
 msgid "Switch user command is not set."
-msgstr ""
+msgstr "Kommando för att byta användare är inte angivet."
 
 #: ../src/main-win.c:953
-#, fuzzy, c-format
+#, c-format
 msgid "Free space: %s (Total: %s)"
-msgstr ", ledigt utrymme: %s (Totalt: %s )"
+msgstr "Ledigt utrymme: %s (Totalt: %s )"
 
 #: ../src/main-win.c:1159
 #, c-format
@@ -612,11 +558,13 @@ msgid ""
 "'%s'\n"
 "Enter a name for the new bookmark item:"
 msgstr ""
+"Lägg till katalog till bokmärken:\n"
+"\"%s\"\n"
+"Ange namn för bokmärke:"
 
 #: ../src/main-win.c:1163
-#, fuzzy
 msgid "Add to Bookmarks"
-msgstr "_Lägg till i bokmärken"
+msgstr "Lägg till i bokmärken"
 
 #: ../src/pcmanfm.c:70
 msgid ""
@@ -628,16 +576,15 @@ msgstr ""
 
 #: ../src/pcmanfm.c:71
 msgid "Name of configuration profile"
-msgstr ""
+msgstr "Namn för inställningsprofil"
 
 #: ../src/pcmanfm.c:72
-#, fuzzy
 msgid "Launch desktop manager"
-msgstr "Ange skrivbordsbakgrund"
+msgstr "Starta skrivbordshanterare"
 
 #: ../src/pcmanfm.c:73
 msgid "Turn off desktop manager if it's running"
-msgstr ""
+msgstr "Stäng av skrivbordshanteraren om den körs"
 
 #: ../src/pcmanfm.c:74
 msgid "Run PCManFM as a daemon"
@@ -645,7 +592,7 @@ msgstr "Kör PCManFM som en bakgrundsprocess"
 
 #: ../src/pcmanfm.c:75
 msgid "Open desktop preference dialog"
-msgstr ""
+msgstr "Öppna inställningar för skrivbordet"
 
 #: ../src/pcmanfm.c:76
 msgid "Set desktop wallpaper"
@@ -653,48 +600,43 @@ msgstr "Ange skrivbordsbakgrund"
 
 #: ../src/pcmanfm.c:76
 msgid "<image file>"
-msgstr ""
+msgstr "<bildfil>"
 
 #: ../src/pcmanfm.c:77
-#, fuzzy
 msgid ""
 "Open preference dialog. 'n' is number of the page you want to show (1, 2, "
 "3...)."
 msgstr ""
-"Öppna inställningarna. \"n\" är det sidnummer som du vill visa (1,2,3,...)."
+"Öppna inställningshanteraren. \"n\" är det sidnummer som du vill visa "
+"(1,2,3,...)."
 
 #: ../src/pcmanfm.c:78
-#, fuzzy
 msgid "Open Find Files utility"
-msgstr "Sök filer"
+msgstr "Öppna verktyg för filsök"
 
 #: ../src/pcmanfm.c:79
 msgid "No function. Just to be compatible with nautilus"
-msgstr ""
+msgstr "Har ingen funktion. Endast för att vara kompatibel med Nautilus"
 
 #: ../src/pcmanfm.c:80
 msgid "[FILE1, FILE2,...]"
 msgstr "[FIL1, FIL2,...]"
 
 #: ../src/pcmanfm.c:544
-#, fuzzy
 msgid "Terminal emulator is not set."
-msgstr "Terminalprogrammet har inte angivits"
+msgstr "Terminalprogram har inte angivits."
 
 #: ../src/pcmanfm.c:587
-#, fuzzy
 msgid "Create New..."
-msgstr "_Skapa ny"
+msgstr "Skapa ny..."
 
 #: ../src/pcmanfm.c:587
-#, fuzzy
 msgid "Enter a name for the newly created file:"
 msgstr "Ange ett namn för den nya filen:"
 
 #: ../src/pcmanfm.c:587
-#, fuzzy
 msgid "New"
-msgstr "Ny flik"
+msgstr "Ny"
 
 #~ msgid "Display image files with supported format as thumbnails"
 #~ msgstr "Visa miniatyrbilder av bildfiler som stöds"
