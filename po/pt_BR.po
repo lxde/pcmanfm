@@ -6,12 +6,12 @@
 # Fábio Antunes <fabio.antunes@hotmail.com>, 2008.
 # Og Maciel <ogmaciel@gnome.org>, 2008-2010.
 # Henrique P. Machado <zehrique@gmail.com>, 2009.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PCManFM\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-24 01:25+0100\n"
+"POT-Creation-Date: 2010-04-07 04:23+0000\n"
 "PO-Revision-Date: 2010-01-31 12:07-0500\n"
 "Last-Translator: Og Maciel <ogmaciel@gnome.org>\n"
 "Language-Team: Brazilian Portuguese <ldp-br@bazar2.conectiva.com.br>\n"
@@ -21,9 +21,8 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../data/ui/about.glade.in.h:1
-#, fuzzy
 msgid "Copyright (C) 2009 - 2010"
-msgstr "Copyright (C) 2009"
+msgstr "Copyright (C) 2009-2010"
 
 #: ../data/ui/about.glade.in.h:2
 msgid ""
@@ -117,10 +116,8 @@ msgid "Show icons of volumes on desktop"
 msgstr "Mostrar ícones de volumes na área de trabalho"
 
 #: ../data/ui/desktop-pref.glade.h:19
-#, fuzzy
 msgid "Show menus provided by window managers when desktop is clicked"
-msgstr ""
-"Mostrar menus do gerente de janelas quando a área de trabalho for clicada"
+msgstr "Mostrar menus dos gerenciadores de janelas quando a área de trabalho for clicada"
 
 #: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:37
 msgid "Stretch to fill the entire screen"
@@ -143,9 +140,8 @@ msgid "Wallpaper:"
 msgstr "Papel de parede:"
 
 #: ../data/ui/pref.glade.h:1
-#, fuzzy
 msgid "<b>Auto-mount</b>"
-msgstr "<b>Ícones</b>"
+msgstr "<b>Montagem automática</b>"
 
 #: ../data/ui/pref.glade.h:2
 msgid "<b>Behavior</b>"
@@ -173,7 +169,7 @@ msgstr "Sempre mostrar a barra de abas"
 
 #: ../data/ui/pref.glade.h:8
 msgid "Archiver integration:"
-msgstr ""
+msgstr "Integração com o arquivador:"
 
 #: ../data/ui/pref.glade.h:9
 msgid "Bookmarks:"
@@ -201,8 +197,7 @@ msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
 "%s = the command line you want to execute with terminal or su."
 msgstr ""
-"Exemplos: \"xterm -e %s\" para terminal or \"gksu %s\" para alternar o "
-"usuário.\n"
+"Exemplos: \"xterm -e %s\" para terminal or \"gksu %s\" para alternar o usuário.\n"
 "%s = a linha de comando que você deseja executar no terminal ou com o su."
 
 #: ../data/ui/pref.glade.h:18
@@ -223,16 +218,15 @@ msgstr "Visualização de ícones"
 
 #: ../data/ui/pref.glade.h:22
 msgid "Mount mountable volumes automatically on program startup"
-msgstr ""
+msgstr "Montar volumes automaticamente no início do programa"
 
 #: ../data/ui/pref.glade.h:23
 msgid "Mount removable media automatically when they are inserted"
-msgstr ""
+msgstr "Montar mídia removível automaticamente quando elas forem inseridas"
 
 #: ../data/ui/pref.glade.h:24
 msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
-msgstr ""
-"Mover arquivos excluídos para a \"lixeira\" em vez de apagá-los da unidade"
+msgstr "Mover arquivos excluídos para a \"lixeira\" em vez de apagá-los da unidade"
 
 #: ../data/ui/pref.glade.h:25
 msgid "Only show thumbnails for local files"
@@ -260,7 +254,7 @@ msgstr "Preferências"
 
 #: ../data/ui/pref.glade.h:31
 msgid "Show available options for removable media when they are inserted"
-msgstr ""
+msgstr "Mostrar opções disponíveis para mídia removível quando elas forem inseridas"
 
 #: ../data/ui/pref.glade.h:32
 msgid "Show thumbnails of files"
@@ -320,42 +314,41 @@ msgstr "Gerenciamento de _volume"
 
 #: ../data/ui/autorun.glade.h:1
 msgid "<b>Removable medium is inserted</b>"
-msgstr ""
+msgstr "<b>Mídia removível está inserida</b>"
 
 #: ../data/ui/autorun.glade.h:2
 msgid "Detecting..."
-msgstr ""
+msgstr "Detectando..."
 
 #: ../data/ui/autorun.glade.h:3
 msgid "Please select the action you want to perform:"
-msgstr ""
+msgstr "Por favor, selecione a ação que você deseja realizar:"
 
 #: ../data/ui/autorun.glade.h:4
 msgid "Removable medium is inserted"
-msgstr ""
+msgstr "Mídia removível está inserida"
 
 #: ../data/ui/autorun.glade.h:5
 msgid "Type of medium:"
-msgstr ""
+msgstr "Tipo de mídia:"
 
 #: ../src/volume-manager.c:150
 msgid "Removable Disk"
-msgstr ""
+msgstr "Disco removível"
 
 #: ../src/volume-manager.c:209
-#, fuzzy
 msgid "Open in File Manager"
-msgstr "Abrir em nova aba"
+msgstr "Abrir no Gerenciador de arquivos"
 
 #: ../src/desktop-ui.c:53
 msgid "_Invert Selection"
 msgstr "_Inverter seleção"
 
-#: ../src/desktop-ui.c:54 ../src/main-win-ui.c:144
+#: ../src/desktop-ui.c:54 ../src/main-win-ui.c:146
 msgid "_Sort Files"
 msgstr "_Ordenar arquivos"
 
-#: ../src/desktop-ui.c:56 ../src/main-win-ui.c:168
+#: ../src/desktop-ui.c:56 ../src/main-win-ui.c:172
 msgid "Folder"
 msgstr "Pasta"
 
@@ -363,197 +356,196 @@ msgstr "Pasta"
 msgid "Blank File"
 msgstr "Arquivo em branco"
 
-#: ../src/desktop-ui.c:69 ../src/main-win-ui.c:194
+#: ../src/desktop-ui.c:69 ../src/main-win-ui.c:198
 msgid "By _Name"
 msgstr "Por _nome"
 
-#: ../src/desktop-ui.c:70 ../src/main-win-ui.c:195
+#: ../src/desktop-ui.c:70 ../src/main-win-ui.c:199
 msgid "By _Modification Time"
 msgstr "Por _data de modificação"
 
-#: ../src/desktop-ui.c:71 ../src/main-win-ui.c:196
+#: ../src/desktop-ui.c:71 ../src/main-win-ui.c:200
 msgid "By _Size"
 msgstr "Por _tamanho"
 
-#: ../src/desktop-ui.c:72 ../src/main-win-ui.c:197
+#: ../src/desktop-ui.c:72 ../src/main-win-ui.c:201
 msgid "By File _Type"
 msgstr "Por tipo de _arquivo"
 
-#: ../src/desktop-ui.c:88 ../src/main-win-ui.c:214
+#: ../src/desktop-ui.c:88 ../src/main-win-ui.c:218
 msgid "Open in New Tab"
 msgstr "Abrir em nova aba"
 
-#: ../src/desktop-ui.c:89 ../src/main-win-ui.c:215
+#: ../src/desktop-ui.c:89 ../src/main-win-ui.c:219
 msgid "Open in New Window"
 msgstr "Abrir em nova janela"
 
-#: ../src/desktop-ui.c:91 ../src/main-win-ui.c:217
-#, fuzzy
+#: ../src/desktop-ui.c:91 ../src/main-win-ui.c:221
 msgid "Open in _Terminal"
-msgstr "Abrir a pasta atual no _terminal"
+msgstr "Abrir no _terminal"
 
-#: ../src/main-win-ui.c:126
+#: ../src/main-win-ui.c:128
 msgid "_File"
 msgstr "_Arquivo"
 
-#: ../src/main-win-ui.c:127
+#: ../src/main-win-ui.c:129
 msgid "_New Window"
 msgstr "_Nova janela"
 
-#: ../src/main-win-ui.c:128
+#: ../src/main-win-ui.c:130
 msgid "New _Tab"
 msgstr "Nova _aba"
 
-#: ../src/main-win-ui.c:129
+#: ../src/main-win-ui.c:131
 msgid "_Close Tab"
 msgstr "_Fechar aba"
 
-#: ../src/main-win-ui.c:130
+#: ../src/main-win-ui.c:132
 msgid "Close Window"
 msgstr "Fechar janela"
 
-#: ../src/main-win-ui.c:131
+#: ../src/main-win-ui.c:133
 msgid "_Edit"
 msgstr "_Editar"
 
-#: ../src/main-win-ui.c:136
+#: ../src/main-win-ui.c:138
 msgid "Rename"
 msgstr "Renomear"
 
-#: ../src/main-win-ui.c:137
+#: ../src/main-win-ui.c:139
 msgid "Create Symlink"
 msgstr "Criar link simbólico"
 
-#: ../src/main-win-ui.c:138
+#: ../src/main-win-ui.c:140
 msgid "Move To..."
 msgstr "Mover para..."
 
-#: ../src/main-win-ui.c:139
+#: ../src/main-win-ui.c:141
 msgid "Copy To..."
 msgstr "Copiar para..."
 
-#: ../src/main-win-ui.c:141
+#: ../src/main-win-ui.c:143
 msgid "Invert Selection"
 msgstr "Inverter seleção"
 
-#: ../src/main-win-ui.c:143
+#: ../src/main-win-ui.c:145
 msgid "_View"
 msgstr "_Ver"
 
-#: ../src/main-win-ui.c:145
+#: ../src/main-win-ui.c:147
 msgid "_Help"
 msgstr "Aj_uda"
 
-#: ../src/main-win-ui.c:147
+#: ../src/main-win-ui.c:149
 msgid "_Go"
 msgstr "_Ir"
 
-#: ../src/main-win-ui.c:148
+#: ../src/main-win-ui.c:150
 msgid "Previous Folder"
 msgstr "Pasta anterior"
 
-#: ../src/main-win-ui.c:149
+#: ../src/main-win-ui.c:151
 msgid "Next Folder"
 msgstr "Próxima pasta"
 
-#: ../src/main-win-ui.c:150
+#: ../src/main-win-ui.c:152
 msgid "Parent Folder"
 msgstr "Pasta superior"
 
-#: ../src/main-win-ui.c:150
+#: ../src/main-win-ui.c:152
 msgid "Go to parent Folder"
 msgstr "Ir para pasta superior"
 
-#: ../src/main-win-ui.c:151
+#: ../src/main-win-ui.c:153
 msgid "Home Folder"
 msgstr "Pasta Pessoal"
 
-#: ../src/main-win-ui.c:152
+#: ../src/main-win-ui.c:154
 msgid "Desktop"
 msgstr "Área de trabalho"
 
-#: ../src/main-win-ui.c:152
+#: ../src/main-win-ui.c:154
 msgid "Desktop Folder"
 msgstr "Pasta Área de trabalho"
 
-#: ../src/main-win-ui.c:153
+#: ../src/main-win-ui.c:155
 msgid "My Computer"
 msgstr "Meu computador"
 
-#: ../src/main-win-ui.c:154
+#: ../src/main-win-ui.c:156
 msgid "Trash Can"
 msgstr "Lixeira"
 
-#: ../src/main-win-ui.c:155
+#: ../src/main-win-ui.c:157
 msgid "Network Drives"
 msgstr "Unidades de rede"
 
-#: ../src/main-win-ui.c:156
+#: ../src/main-win-ui.c:158
 msgid "Applications"
 msgstr "Aplicativos"
 
-#: ../src/main-win-ui.c:156
+#: ../src/main-win-ui.c:158
 msgid "Installed Applications"
 msgstr "Aplicativos instalados"
 
-#: ../src/main-win-ui.c:158
+#: ../src/main-win-ui.c:160
 msgid "_Bookmarks"
 msgstr "_Marcadores"
 
-#: ../src/main-win-ui.c:159
+#: ../src/main-win-ui.c:161
 msgid "Add To Bookmarks"
 msgstr "Adicionar aos marcadores"
 
-#: ../src/main-win-ui.c:160
+#: ../src/main-win-ui.c:162
 msgid "_Tools"
 msgstr "Ferramen_tas"
 
-#: ../src/main-win-ui.c:161
+#: ../src/main-win-ui.c:163
 msgid "Open Current Folder in _Terminal"
 msgstr "Abrir a pasta atual no _terminal"
 
-#: ../src/main-win-ui.c:162
+#: ../src/main-win-ui.c:164
 msgid "Open Current Folder as _Root"
 msgstr "Abrir a pasta atual como _root"
 
-#: ../src/main-win-ui.c:169
+#: ../src/main-win-ui.c:173
 msgid "Blank FIle"
 msgstr "Arquivo em branco"
 
-#: ../src/main-win-ui.c:175
+#: ../src/main-win-ui.c:179
 msgid "Show _Hidden"
 msgstr "Mostrar _ocultos"
 
-#: ../src/main-win-ui.c:180
+#: ../src/main-win-ui.c:184
 msgid "_Icon View"
 msgstr "V_isualização de ícones"
 
-#: ../src/main-win-ui.c:181
+#: ../src/main-win-ui.c:185
 msgid "_Compact View"
 msgstr "Visualização _compacta"
 
-#: ../src/main-win-ui.c:182
+#: ../src/main-win-ui.c:186
 msgid "_Thumbnail View"
 msgstr "Visualização de minia_turas"
 
-#: ../src/main-win-ui.c:183
+#: ../src/main-win-ui.c:187
 msgid "Detailed _List View"
 msgstr "Visualização _lista detalhada"
 
-#: ../src/main-win.c:504
+#: ../src/main-win.c:525
 msgid "You are in super user mode"
-msgstr ""
+msgstr "Você está em modo superusuário"
 
-#: ../src/main-win.c:605
+#: ../src/main-win.c:624
 msgid "Switch user command is not set."
 msgstr "O comando para alternar o usuário não está configurado."
 
-#: ../src/main-win.c:953
+#: ../src/main-win.c:987
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Espaço livre: %s (Total: %s )"
 
-#: ../src/main-win.c:1159
+#: ../src/main-win.c:1193
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -564,17 +556,13 @@ msgstr ""
 "'%s'\n"
 "Digite um nome para o novo item favorito:"
 
-#: ../src/main-win.c:1163
+#: ../src/main-win.c:1197
 msgid "Add to Bookmarks"
 msgstr "Adicionar aos favoritos"
 
 #: ../src/pcmanfm.c:70
-msgid ""
-"Open folders in new tabs of the last used window instead of creating new "
-"windows"
-msgstr ""
-"Abrir pastas em novas abas na última janela aberta, em vez de criar novas "
-"janelas"
+msgid "Open folders in new tabs of the last used window instead of creating new windows"
+msgstr "Abrir pastas em novas abas na última janela aberta, em vez de criar novas janelas"
 
 #: ../src/pcmanfm.c:71
 msgid "Name of configuration profile"
@@ -605,12 +593,8 @@ msgid "<image file>"
 msgstr "<arquivo de imagem>"
 
 #: ../src/pcmanfm.c:77
-msgid ""
-"Open preference dialog. 'n' is number of the page you want to show (1, 2, "
-"3...)."
-msgstr ""
-"Abre o diálogo de preferências. \"n\" é o número da página que você deseja "
-"mostrar (1, 2, 3...)."
+msgid "Open preference dialog. 'n' is number of the page you want to show (1, 2, 3...)."
+msgstr "Abre o diálogo de preferências. \"n\" é o número da página que você deseja mostrar (1, 2, 3...)."
 
 #: ../src/pcmanfm.c:78
 msgid "Open Find Files utility"
@@ -624,19 +608,19 @@ msgstr "Nenhuma função. Somente para ser compatível com o nautilus"
 msgid "[FILE1, FILE2,...]"
 msgstr "[ARQUIVO1, ARQUIVO2,...]"
 
-#: ../src/pcmanfm.c:544
+#: ../src/pcmanfm.c:539
 msgid "Terminal emulator is not set."
 msgstr "O emulador de terminal não está configurado."
 
-#: ../src/pcmanfm.c:587
+#: ../src/pcmanfm.c:582
 msgid "Create New..."
 msgstr "Criar novo..."
 
-#: ../src/pcmanfm.c:587
+#: ../src/pcmanfm.c:582
 msgid "Enter a name for the newly created file:"
 msgstr "Digite um nome para o novo arquivo:"
 
-#: ../src/pcmanfm.c:587
+#: ../src/pcmanfm.c:582
 msgid "New"
 msgstr "Novo"
 
