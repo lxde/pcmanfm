@@ -2,31 +2,34 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Piotr Sokół <piotr.sokol@10g.pl>, 2010.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-24 01:25+0100\n"
+"POT-Creation-Date: 2010-04-07 04:23+0000\n"
 "PO-Revision-Date: 2010-03-24 19:41+0100\n"
 "Last-Translator: Grzegorz Gibas <amigib@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Polish\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Poedit-Language: Polish\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2010"
-msgstr "Copyright (C) 2009 - 2010"
+msgstr "Prawa autorskie (C) 2009 - 2010"
 
 #: ../data/ui/about.glade.in.h:2
 msgid ""
 "Lightweight file manager\n"
 "\n"
 "Developed by Hon Jen Yee (PCMan)"
-msgstr "Menedżer plików"
+msgstr ""
+"Menedżer plików\n"
+"\n"
+"Rozwijany przez Hon Jen Yee (PCMan)"
 
 #. Please replace this line with your own names, one name per line.
 #: ../data/ui/about.glade.in.h:6
@@ -57,8 +60,7 @@ msgstr "Wygląd"
 msgid "Background color:"
 msgstr "Kolor tła:"
 
-#: ../data/ui/desktop-pref.glade.h:7
-#: ../data/ui/pref.glade.h:10
+#: ../data/ui/desktop-pref.glade.h:7 ../data/ui/pref.glade.h:10
 msgid "Center on the screen"
 msgstr "Środek ekranu"
 
@@ -74,8 +76,7 @@ msgstr "Kolor cienia:"
 msgid "Desktop Icons"
 msgstr "Ikony pulpitu"
 
-#: ../data/ui/desktop-pref.glade.h:11
-#: ../src/desktop-ui.c:58
+#: ../data/ui/desktop-pref.glade.h:11 ../src/desktop-ui.c:58
 msgid "Desktop Preferences"
 msgstr "Preferencje pulpitu"
 
@@ -111,18 +112,15 @@ msgstr "Wyświetlanie ikon wolumenów na pulpicie"
 msgid "Show menus provided by window managers when desktop is clicked"
 msgstr "Pokaż menu menedżera okien przy klikaniu w pulpit"
 
-#: ../data/ui/desktop-pref.glade.h:20
-#: ../data/ui/pref.glade.h:37
+#: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:37
 msgid "Stretch to fill the entire screen"
 msgstr "Rozciągnij na cały ekran"
 
-#: ../data/ui/desktop-pref.glade.h:21
-#: ../data/ui/pref.glade.h:38
+#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:38
 msgid "Stretch to fit the screen"
 msgstr "Rozciągnij na ekran"
 
-#: ../data/ui/desktop-pref.glade.h:22
-#: ../data/ui/pref.glade.h:42
+#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:42
 msgid "Tile the image to fill the entire screen"
 msgstr "Rozciągnij obraz, żeby wypełnił cały ekran"
 
@@ -339,13 +337,11 @@ msgstr "Otwórz w nowej karcie"
 msgid "_Invert Selection"
 msgstr "Odwróć zaznaczenie"
 
-#: ../src/desktop-ui.c:54
-#: ../src/main-win-ui.c:144
+#: ../src/desktop-ui.c:54 ../src/main-win-ui.c:146
 msgid "_Sort Files"
 msgstr "_Sortowanie"
 
-#: ../src/desktop-ui.c:56
-#: ../src/main-win-ui.c:168
+#: ../src/desktop-ui.c:56 ../src/main-win-ui.c:172
 msgid "Folder"
 msgstr "Katalog"
 
@@ -353,203 +349,196 @@ msgstr "Katalog"
 msgid "Blank File"
 msgstr "Pusty plik"
 
-#: ../src/desktop-ui.c:69
-#: ../src/main-win-ui.c:194
+#: ../src/desktop-ui.c:69 ../src/main-win-ui.c:198
 msgid "By _Name"
 msgstr "Według _nazwy"
 
-#: ../src/desktop-ui.c:70
-#: ../src/main-win-ui.c:195
+#: ../src/desktop-ui.c:70 ../src/main-win-ui.c:199
 msgid "By _Modification Time"
 msgstr "Według czasu _modyfikacji"
 
-#: ../src/desktop-ui.c:71
-#: ../src/main-win-ui.c:196
+#: ../src/desktop-ui.c:71 ../src/main-win-ui.c:200
 msgid "By _Size"
 msgstr "Według _rozmiaru"
 
-#: ../src/desktop-ui.c:72
-#: ../src/main-win-ui.c:197
+#: ../src/desktop-ui.c:72 ../src/main-win-ui.c:201
 msgid "By File _Type"
 msgstr "Według _typu"
 
-#: ../src/desktop-ui.c:88
-#: ../src/main-win-ui.c:214
+#: ../src/desktop-ui.c:88 ../src/main-win-ui.c:218
 msgid "Open in New Tab"
 msgstr "Otwórz w nowej karcie"
 
-#: ../src/desktop-ui.c:89
-#: ../src/main-win-ui.c:215
+#: ../src/desktop-ui.c:89 ../src/main-win-ui.c:219
 msgid "Open in New Window"
 msgstr "Otwórz w nowym oknie"
 
-#: ../src/desktop-ui.c:91
-#: ../src/main-win-ui.c:217
+#: ../src/desktop-ui.c:91 ../src/main-win-ui.c:221
 msgid "Open in _Terminal"
 msgstr "Otwórz bieżący katalog w _terminalu"
 
-#: ../src/main-win-ui.c:126
+#: ../src/main-win-ui.c:128
 msgid "_File"
 msgstr "_Plik"
 
-#: ../src/main-win-ui.c:127
+#: ../src/main-win-ui.c:129
 msgid "_New Window"
 msgstr "Nowe _okno"
 
-#: ../src/main-win-ui.c:128
+#: ../src/main-win-ui.c:130
 msgid "New _Tab"
 msgstr "Nowa _karta"
 
-#: ../src/main-win-ui.c:129
+#: ../src/main-win-ui.c:131
 msgid "_Close Tab"
 msgstr "_Zamknij kartę"
 
-#: ../src/main-win-ui.c:130
+#: ../src/main-win-ui.c:132
 msgid "Close Window"
 msgstr "Zamknij okno"
 
-#: ../src/main-win-ui.c:131
+#: ../src/main-win-ui.c:133
 msgid "_Edit"
 msgstr "_Edycja"
 
-#: ../src/main-win-ui.c:136
+#: ../src/main-win-ui.c:138
 msgid "Rename"
 msgstr "Zmień nazwę"
 
-#: ../src/main-win-ui.c:137
+#: ../src/main-win-ui.c:139
 msgid "Create Symlink"
 msgstr "Utwórz dowiązanie"
 
-#: ../src/main-win-ui.c:138
+#: ../src/main-win-ui.c:140
 msgid "Move To..."
 msgstr "Przenieś..."
 
-#: ../src/main-win-ui.c:139
+#: ../src/main-win-ui.c:141
 msgid "Copy To..."
 msgstr "Skopiuj..."
 
-#: ../src/main-win-ui.c:141
+#: ../src/main-win-ui.c:143
 msgid "Invert Selection"
 msgstr "Odwróć zaznaczenie"
 
-#: ../src/main-win-ui.c:143
+#: ../src/main-win-ui.c:145
 msgid "_View"
 msgstr "_Widok"
 
-#: ../src/main-win-ui.c:145
+#: ../src/main-win-ui.c:147
 msgid "_Help"
 msgstr "Pomo_c"
 
-#: ../src/main-win-ui.c:147
+#: ../src/main-win-ui.c:149
 msgid "_Go"
 msgstr "P_rzejdź"
 
-#: ../src/main-win-ui.c:148
+#: ../src/main-win-ui.c:150
 msgid "Previous Folder"
 msgstr "Poprzedni folder"
 
-#: ../src/main-win-ui.c:149
+#: ../src/main-win-ui.c:151
 msgid "Next Folder"
 msgstr "Naprzód"
 
-#: ../src/main-win-ui.c:150
+#: ../src/main-win-ui.c:152
 msgid "Parent Folder"
 msgstr "Wstecz"
 
-#: ../src/main-win-ui.c:150
+#: ../src/main-win-ui.c:152
 msgid "Go to parent Folder"
 msgstr "Przechodzi do katalogu nadrzędnego"
 
-#: ../src/main-win-ui.c:151
+#: ../src/main-win-ui.c:153
 msgid "Home Folder"
 msgstr "Katalog domowy"
 
-#: ../src/main-win-ui.c:152
+#: ../src/main-win-ui.c:154
 msgid "Desktop"
 msgstr "Pulpit"
 
-#: ../src/main-win-ui.c:152
+#: ../src/main-win-ui.c:154
 msgid "Desktop Folder"
 msgstr "Katalog pulpitu"
 
-#: ../src/main-win-ui.c:153
+#: ../src/main-win-ui.c:155
 msgid "My Computer"
 msgstr "Komputer"
 
-#: ../src/main-win-ui.c:154
+#: ../src/main-win-ui.c:156
 msgid "Trash Can"
 msgstr "Kosz"
 
-#: ../src/main-win-ui.c:155
+#: ../src/main-win-ui.c:157
 msgid "Network Drives"
 msgstr "Napędy sieciowe"
 
-#: ../src/main-win-ui.c:156
+#: ../src/main-win-ui.c:158
 msgid "Applications"
 msgstr "Programy"
 
-#: ../src/main-win-ui.c:156
+#: ../src/main-win-ui.c:158
 msgid "Installed Applications"
 msgstr "Zainstalowane programy"
 
-#: ../src/main-win-ui.c:158
+#: ../src/main-win-ui.c:160
 msgid "_Bookmarks"
 msgstr "_Zakładki"
 
-#: ../src/main-win-ui.c:159
+#: ../src/main-win-ui.c:161
 msgid "Add To Bookmarks"
 msgstr "Nowa zakładka"
 
-#: ../src/main-win-ui.c:160
+#: ../src/main-win-ui.c:162
 msgid "_Tools"
 msgstr "_Narzędzia"
 
-#: ../src/main-win-ui.c:161
+#: ../src/main-win-ui.c:163
 msgid "Open Current Folder in _Terminal"
 msgstr "Otwórz bieżący katalog w _terminalu"
 
-#: ../src/main-win-ui.c:162
+#: ../src/main-win-ui.c:164
 msgid "Open Current Folder as _Root"
 msgstr "Otwórz bieżący katalog jako użytkownik _root"
 
-#: ../src/main-win-ui.c:169
+#: ../src/main-win-ui.c:173
 msgid "Blank FIle"
 msgstr "Pusty plik"
 
-#: ../src/main-win-ui.c:175
+#: ../src/main-win-ui.c:179
 msgid "Show _Hidden"
 msgstr "Wyświetlanie _ukrytych plików"
 
-#: ../src/main-win-ui.c:180
+#: ../src/main-win-ui.c:184
 msgid "_Icon View"
 msgstr "_Ikony"
 
-#: ../src/main-win-ui.c:181
+#: ../src/main-win-ui.c:185
 msgid "_Compact View"
 msgstr "_Zwarty"
 
-#: ../src/main-win-ui.c:182
+#: ../src/main-win-ui.c:186
 msgid "_Thumbnail View"
 msgstr "_Miniatury"
 
-#: ../src/main-win-ui.c:183
+#: ../src/main-win-ui.c:187
 msgid "Detailed _List View"
 msgstr "_Lista szczegółowa"
 
-#: ../src/main-win.c:504
+#: ../src/main-win.c:525
 msgid "You are in super user mode"
 msgstr "Jesteś w trybie super użytkownika"
 
-#: ../src/main-win.c:605
+#: ../src/main-win.c:624
 msgid "Switch user command is not set."
 msgstr "Polecenie zmiany użytkownika nie zostało ustawione."
 
-#: ../src/main-win.c:953
+#: ../src/main-win.c:987
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Wolne miejsce: %s (Ogółem: %s)"
 
-#: ../src/main-win.c:1159
+#: ../src/main-win.c:1193
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -560,7 +549,7 @@ msgstr ""
 "„%s”\n"
 "Proszę wprowadzić nazwę nowej zakładki:"
 
-#: ../src/main-win.c:1163
+#: ../src/main-win.c:1197
 msgid "Add to Bookmarks"
 msgstr "Dodaj..."
 
@@ -612,19 +601,18 @@ msgstr "Bez funkcji. Potrzebne tylko do kombatybilności z Nautilusem"
 msgid "[FILE1, FILE2,...]"
 msgstr "[PLIK1, PLIK2,...]"
 
-#: ../src/pcmanfm.c:544
+#: ../src/pcmanfm.c:539
 msgid "Terminal emulator is not set."
 msgstr "Nie zdefiniowano polecenia emulatora terminala."
 
-#: ../src/pcmanfm.c:587
+#: ../src/pcmanfm.c:582
 msgid "Create New..."
 msgstr "Utwórz nowy..."
 
-#: ../src/pcmanfm.c:587
+#: ../src/pcmanfm.c:582
 msgid "Enter a name for the newly created file:"
 msgstr "Proszę wprowadzić nazwę pliku:"
 
-#: ../src/pcmanfm.c:587
+#: ../src/pcmanfm.c:582
 msgid "New"
 msgstr "Nowy"
-
