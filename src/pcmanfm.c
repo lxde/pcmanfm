@@ -1,7 +1,7 @@
 /*
  *      pcmanfm.c
  *
- *      Copyright 2009 PCMan <pcman.tw@gmail.com>
+ *      Copyright 2009 - 2010 Hong Jen Yee (PCMan) <pcman.tw@gmail.com>
  *
  *      This program is free software; you can redistribute it and/or modify
  *      it under the terms of the GNU General Public License as published by
@@ -143,130 +143,112 @@ int main(int argc, char** argv)
 	return 0;
 }
 
-inline static GString* args_to_ipc_buf()
+inline static void buf_append_str(GByteArray* buf, const char* str)
 {
-    int i;
-    GString* buf = g_string_sized_new(1024);
+    int len;
+    if(G_LIKELY(str))
+    {
+        len = strlen(str) + 1;
+        g_byte_array_append(buf, (guint8*)&len, sizeof(len));
+        g_byte_array_append(buf, (guint8*)str, len);
+    }
+    else
+    {
+        len = 0;
+        g_byte_array_append(buf, (guint8*)&len, sizeof(len));
+    }
+}
+
+inline static GByteArray* args_to_ipc_buf()
+{
+    int i, len;
+    GByteArray* buf = g_byte_array_sized_new(4096);
     /* send our current working dir to existing instance via IPC. */
     ipc_cwd = g_get_current_dir();
-    g_string_append(buf, ipc_cwd);
-    g_string_append_c(buf, '\0');
+    buf_append_str(buf, ipc_cwd);
     g_free(ipc_cwd);
-    ipc_cwd = NULL;
-    for(i = 0; i < G_N_ELEMENTS(opt_entries)-1;++i)
+
+    g_byte_array_append(buf, (guint8*)&new_tab, sizeof(new_tab));
+    g_byte_array_append(buf, (guint8*)&show_desktop, sizeof(show_desktop));
+    g_byte_array_append(buf, (guint8*)&desktop_off, sizeof(desktop_off));
+    g_byte_array_append(buf, (guint8*)&desktop_pref, sizeof(desktop_pref));
+    buf_append_str(buf, set_wallpaper);
+    g_byte_array_append(buf, (guint8*)&show_pref, sizeof(show_pref));
+    g_byte_array_append(buf, (guint8*)&find_files, sizeof(find_files));
+    g_byte_array_append(buf, (guint8*)&no_desktop, sizeof(no_desktop));
+
+    if(files_to_open)
     {
-        GOptionEntry* ent = &opt_entries[i];
-        if(G_LIKELY(*ent->long_name))
-            g_string_append(buf, ent->long_name);
-        g_string_append_c(buf, '=');
-        switch(ent->arg)
-        {
-        case G_OPTION_ARG_NONE: /* bool */
-            g_string_append_c(buf, *(gboolean*)ent->arg_data ? '1' : '0');
-            break;
-        case G_OPTION_ARG_INT:  /* int */
-            g_string_append_printf(buf, "%d", *(gint*)ent->arg_data);
-            break;
-        case G_OPTION_ARG_FILENAME_ARRAY:   /* string array */
-        case G_OPTION_ARG_STRING_ARRAY:
-            {
-                char** files = *(char***)ent->arg_data;
-                if(files)
-                {
-                    for(;*files;++files)
-                    {
-                        char* tmp = fm_canonicalize_filename(*files, TRUE);
-                        g_string_append(buf, tmp);
-                        g_free(tmp);
-                        g_string_append_c(buf, '\0');
-                    }
-                }
-                else
-                    g_string_append_c(buf, '\0');
-                g_string_append_c(buf, '\0'); /* end of array */
-            }
-            break;
-        case G_OPTION_ARG_FILENAME:
-        case G_OPTION_ARG_STRING:   /* string */
-            if(*(gchar**)ent->arg_data)
-            {
-                /* FIXME: Handle . and ..*/
-                const char* fn = *(gchar**)ent->arg_data;
-                g_string_append(buf, *(gchar**)ent->arg_data);
-            }
-            break;
-        }
-        g_string_append_c(buf, '\0');
+        len = g_strv_length(files_to_open);
+        g_byte_array_append(buf, (guint8*)&len, sizeof(len));
+        for(i = 0; i < len; ++i)
+            buf_append_str(buf, files_to_open[i]);
     }
-    g_string_append_c(buf, '\0'); /* EOF */
+
     return buf;
 }
 
-inline static void ipc_buf_to_args(GString* buf)
+inline static gboolean buf_read_bool(const char**p)
 {
-    char* p;
-    GHashTable* hash = g_hash_table_new(g_str_hash, g_str_equal);
-    int i;
-    for(i = 0; i < G_N_ELEMENTS(opt_entries)-1;++i)
-        g_hash_table_insert(hash, opt_entries[i].long_name, &opt_entries[i]);
-    p = buf->str; /* the fist string in buf is cwd */
-    i = strlen(p) + 1;
-    ipc_cwd = g_memdup(p, i);
-    for( p += i; *p; )
+    gboolean ret;
+    memcpy(&ret, *p, sizeof(ret));
+    *p += sizeof(ret);
+    return ret;
+}
+
+inline static int buf_read_int(const char**p)
+{
+    int ret;
+    memcpy(&ret, *p, sizeof(ret));
+    *p += sizeof(ret);
+    return ret;
+}
+
+inline static char* buf_read_str(const char**p)
+{
+    char* ret;
+    int len = buf_read_int(p);
+    if(len > 0)
     {
-        GOptionEntry* ent;
-        char *name = p;
-        char* val = strchr(p, '=');
-        *val = '\0';
-        ++val;
-        p = val + strlen(val) + 1; /* next item */
-        ent = g_hash_table_lookup(hash, name);
-        if(G_LIKELY(ent))
-        {
-            switch(ent->arg)
-            {
-            case G_OPTION_ARG_NONE: /* bool */
-                *(gboolean*)ent->arg_data = val[0] == '1';
-                break;
-            case G_OPTION_ARG_INT: /* int */
-                *(gint*)ent->arg_data = atoi(val);
-                break;
-            case G_OPTION_ARG_FILENAME_ARRAY: /* string array */
-            case G_OPTION_ARG_STRING_ARRAY:
-                {
-                    char*** pstrs = (char***)ent->arg_data;
-                    if(*pstrs)
-                        g_strfreev(*pstrs);
-                    if(val && *val) /* the array is not empty */
-                    {
-                        GPtrArray* strs = g_ptr_array_new();
-                        do
-                        {
-                            g_ptr_array_add(strs, g_strdup(val));
-                            val += (strlen(val) + 1);
-                        }while(*val != '\0');
-                        g_ptr_array_add(strs, NULL);
-                        *pstrs = g_ptr_array_free(strs, FALSE);
-                        p = val - 1;
-                    }
-                    else /* the array is empty */
-                    {
-                        p = val + 1;
-                        *pstrs = NULL;
-                    }
-                    continue;
-                }
-                break;
-            case G_OPTION_ARG_FILENAME:
-            case G_OPTION_ARG_STRING: /* string */
-                if(*(char**)ent->arg_data)
-                    g_free(*(char**)ent->arg_data);
-                *(char**)ent->arg_data = *val ? g_strdup(val) : NULL;
-                break;
-            }
-        }
+        ret = g_malloc(len);
+        memcpy(ret, *p, len);
+        *p += len;
     }
-    g_hash_table_destroy(hash);
+    else
+        ret = NULL;
+    return ret;
+}
+
+inline static void ipc_buf_to_args(GByteArray* buf)
+{
+    int i, len;
+    char* p = buf->data;
+    char* cwd = buf_read_str(&p);
+    new_tab = buf_read_bool(&p);
+    show_desktop = buf_read_bool(&p);
+    desktop_off = buf_read_bool(&p);
+    desktop_pref = buf_read_bool(&p);
+    g_free(set_wallpaper);
+    set_wallpaper = buf_read_str(&p);
+    show_pref = buf_read_int(&p);
+    find_files = buf_read_bool(&p);
+    no_desktop = buf_read_bool(&p);
+
+    len = buf_read_int(&p);
+    if(len > 0)
+    {
+        files_to_open = g_new(char*, len + 1);
+        for(i = 0; i < len; ++i)
+        {
+            char* file = buf_read_str(&p);
+            files_to_open[i] = fm_canonicalize_filename(file, cwd);
+            g_free(file);
+        }
+        files_to_open[i] = NULL;
+    }
+    else
+        files_to_open = NULL;
+    g_free(cwd);
 }
 
 gboolean on_socket_event( GIOChannel* ioc, GIOCondition cond, gpointer data )
@@ -275,20 +257,20 @@ gboolean on_socket_event( GIOChannel* ioc, GIOCondition cond, gpointer data )
     socklen_t addr_len = 0;
     struct sockaddr_un client_addr ={ 0 };
     static char buf[ 1024 ];
-    GString* args;
+    GByteArray* args;
 
     if ( cond & G_IO_IN )
     {
         client = accept( g_io_channel_unix_get_fd( ioc ), (struct sockaddr *)&client_addr, &addr_len );
         if ( client != -1 )
         {
-            args = g_string_sized_new(1024);
+            args = g_byte_array_sized_new(4096);
             while( (r = read( client, buf, sizeof(buf) )) > 0 )
-                g_string_append_len( args, buf, r);
+                g_byte_array_append( args, (guint8*)buf, r);
             shutdown( client, 2 );
             close( client );
             ipc_buf_to_args(args);
-            g_string_free( args, TRUE );
+            g_byte_array_free( args, TRUE );
             pcmanfm_run();
         }
     }
@@ -328,9 +310,9 @@ gboolean single_instance_check()
     if(connect(sock, (struct sockaddr*)&addr, addr_len) == 0)
     {
         /* connected successfully */
-        GString* buf = args_to_ipc_buf();
-        write(sock, buf->str, buf->len);
-        g_string_free(buf, TRUE);
+        GByteArray* buf = args_to_ipc_buf();
+        write(sock, buf->data, buf->len);
+        g_byte_array_free(buf, TRUE);
 
         shutdown( sock, 2 );
         close( sock );

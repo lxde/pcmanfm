@@ -1,7 +1,7 @@
 /*
  *      main-win.c
  *
- *      Copyright 2009 PCMan <pcman.tw@gmail.com>
+ *      Copyright 2009 - 2010 Hong Jen Yee (PCMan) <pcman.tw@gmail.com>
  *
  *      This program is free software; you can redistribute it and/or modify
  *      it under the terms of the GNU General Public License as published by
@@ -112,17 +112,6 @@ static void fm_main_win_class_init(FmMainWinClass *klass)
     widget_class->key_press_event = on_key_press_event;
 
     fm_main_win_parent_class = (GtkWindowClass*)g_type_class_peek(GTK_TYPE_WINDOW);
-
-    /* special style used by close button */
-	gtk_rc_parse_string(
-		"style \"close-btn-style\" {\n"
-            "GtkWidget::focus-padding = 0\n"
-            "GtkWidget::focus-line-width = 0\n"
-            "xthickness = 0\n"
-            "ythickness = 0\n"
-		"}\n"
-		"widget \"*.close-btn\" style \"close-btn-style\""
-	);
 
     nav_history_id = g_quark_from_static_string("nav-history");
 }
