@@ -444,7 +444,7 @@ gboolean pcmanfm_run()
         if(files_to_open)
         {
             char** filename;
-            FmJob* job = fm_file_info_job_new(NULL);
+            FmJob* job = fm_file_info_job_new(NULL, 0);
             FmPath* cwd = NULL;
             GList* infos;
             for(filename=files_to_open; *filename; ++filename)
