@@ -177,13 +177,10 @@ inline static GByteArray* args_to_ipc_buf()
     g_byte_array_append(buf, (guint8*)&find_files, sizeof(find_files));
     g_byte_array_append(buf, (guint8*)&no_desktop, sizeof(no_desktop));
 
-    if(files_to_open)
-    {
-        len = g_strv_length(files_to_open);
-        g_byte_array_append(buf, (guint8*)&len, sizeof(len));
-        for(i = 0; i < len; ++i)
-            buf_append_str(buf, files_to_open[i]);
-    }
+    len = g_strv_length(files_to_open);
+    g_byte_array_append(buf, (guint8*)&len, sizeof(len));
+    for(i = 0; i < len; ++i)
+        buf_append_str(buf, files_to_open[i]);
 
     return buf;
 }
@@ -235,6 +232,7 @@ inline static void ipc_buf_to_args(GByteArray* buf)
     no_desktop = buf_read_bool(&p);
 
     len = buf_read_int(&p);
+    g_debug("len = %d", len);
     if(len > 0)
     {
         files_to_open = g_new(char*, len + 1);
@@ -461,6 +459,9 @@ gboolean pcmanfm_run()
             fm_launch_files_simple(NULL, NULL, infos, pcmanfm_open_folder, NULL);
             g_object_unref(job);
             ret = (n_pcmanfm_ref >= 1); /* if there is opened window, return true to run the main loop. */
+
+            g_strfreev(files_to_open);
+            files_to_open = NULL;
         }
         else
         {
