@@ -39,8 +39,6 @@
 static void fm_main_win_finalize              (GObject *object);
 G_DEFINE_TYPE(FmMainWin, fm_main_win, GTK_TYPE_WINDOW);
 
-static GtkWidget* create_tab_label(FmMainWin* win, FmPath* path, FmFolderView* view);
-static void update_tab_label(FmMainWin* win, FmFolderView* fv, const char* title);
 static void update_volume_info(FmMainWin* win);
 
 static void on_focus_in(GtkWidget* w, GdkEventFocus* evt);
@@ -134,7 +132,8 @@ static void on_entry_activate(GtkEntry* entry, FmMainWin* self)
     FmPath* path = fm_path_new( gtk_entry_get_text(entry) );
     char* disp_path = fm_path_to_str(path);
     char* disp_name = fm_path_display_basename(path);
-    update_tab_label(self, self->folder_view, disp_name);
+    GtkWidget* label = gtk_notebook_get_tab_label((GtkNotebook*)self->notebook, self->folder_view);
+    fm_tab_label_set_text(FM_TAB_LABEL(label), disp_name);
     gtk_window_set_title(GTK_WINDOW(self), disp_name);
     g_free(disp_path);
     g_free(disp_name);
@@ -847,11 +846,12 @@ void fm_main_win_chdir_by_name(FmMainWin* win, const char* path_str)
 void fm_main_win_chdir_without_history(FmMainWin* win, FmPath* path)
 {
     /* FIXME: how to handle UTF-8 here? */
+    GtkWidget* label = gtk_notebook_get_tab_label((GtkNotebook*)win->notebook, win->folder_view);
     char* disp_path = fm_path_to_str(path);
     char* disp_name = fm_path_display_basename(path);
     gtk_entry_set_text(GTK_ENTRY(win->location), disp_path);
 
-    update_tab_label(win, win->folder_view, disp_name);
+    fm_tab_label_set_text(FM_TAB_LABEL(label), disp_name);
     gtk_window_set_title(GTK_WINDOW(win), disp_name);
     g_free(disp_path);
     g_free(disp_name);
@@ -908,63 +908,6 @@ static gboolean on_tab_label_button_pressed(GtkEventBox* tab_label, GdkEventButt
     return FALSE;
 }
 
-GtkWidget* create_tab_label(FmMainWin* win, FmPath* path, FmFolderView* view)
-{
-    GtkWidget * evt_box;
-    GtkWidget* tab_label;
-    GtkWidget* tab_text;
-    GtkWidget* close_btn;
-    char* disp_name;
-
-    /* Create tab label */
-    evt_box = gtk_event_box_new();
-    gtk_event_box_set_visible_window(GTK_EVENT_BOX(evt_box), FALSE);
-
-    tab_label = gtk_hbox_new( FALSE, 0 );
-
-    disp_name = g_filename_display_name(path->name);
-    tab_text = gtk_label_new(disp_name);
-    g_free(disp_name);
-    gtk_box_pack_start(GTK_BOX(tab_label), tab_text, FALSE, FALSE, 4 );
-
-    close_btn = gtk_button_new ();
-    gtk_button_set_focus_on_click ( GTK_BUTTON ( close_btn ), FALSE );
-    gtk_button_set_relief( GTK_BUTTON ( close_btn ), GTK_RELIEF_NONE );
-    gtk_container_add ( GTK_CONTAINER ( close_btn ),
-                        gtk_image_new_from_stock(GTK_STOCK_CLOSE, GTK_ICON_SIZE_MENU));
-    gtk_container_set_border_width(GTK_CONTAINER(close_btn), 0);
-    gtk_widget_set_name(close_btn, "close-btn");
-    g_signal_connect(close_btn, "style-set", G_CALLBACK(close_btn_style_set), NULL);
-
-    gtk_box_pack_end( GTK_BOX( tab_label ), close_btn, FALSE, FALSE, 0 );
-
-    g_signal_connect(close_btn, "clicked", G_CALLBACK(on_close_tab_btn), view);
-
-    gtk_container_add(GTK_CONTAINER(evt_box), tab_label);
-    gtk_widget_set_events( GTK_WIDGET(evt_box), GDK_ALL_EVENTS_MASK);
-    g_signal_connect(evt_box, "button-press-event", G_CALLBACK(on_tab_label_button_pressed), view);
-/*
-    gtk_drag_dest_set ( GTK_WIDGET( evt_box ), GTK_DEST_DEFAULT_ALL,
-                        drag_targets,
-                        sizeof( drag_targets ) / sizeof( GtkTargetEntry ),
-                        GDK_ACTION_DEFAULT | GDK_ACTION_COPY | GDK_ACTION_MOVE | GDK_ACTION_LINK );
-    g_signal_connect ( ( gpointer ) evt_box, "drag-motion",
-                       G_CALLBACK ( on_tab_drag_motion ),
-                       file_browser );
-*/
-    gtk_widget_show_all(GTK_WIDGET(evt_box));
-    return GTK_WIDGET(evt_box);
-}
-
-void update_tab_label(FmMainWin* win, FmFolderView* fv, const char* title)
-{
-    GtkWidget* tab = gtk_notebook_get_tab_label((GtkNotebook*)win->notebook, win->folder_view);
-    GtkWidget* hbox = gtk_bin_get_child((GtkBin*)tab);
-    GList* children = gtk_container_get_children(GTK_CONTAINER(hbox));
-    GtkWidget* label = (GtkWidget*)children->data;
-    g_list_free(children);
-    gtk_label_set_text((GtkLabel*)label, title);
-}
 
 /* FIXME: remote filesystems are sometimes regarded as local ones. */
 static void on_vol_info_available(GObject *src, GAsyncResult *res, FmMainWin* win)
@@ -1023,6 +966,7 @@ gint fm_main_win_add_tab(FmMainWin* win, FmPath* path)
     GtkWidget* label;
     GtkWidget* folder_view;
     gint ret;
+    char* disp_name;
     FmNavHistory* nh;
 
     /* create folder view */
@@ -1044,7 +988,12 @@ gint fm_main_win_add_tab(FmMainWin* win, FmPath* path)
 
     gtk_widget_show(folder_view);
 
-    label = create_tab_label(win, path, folder_view);
+    /* the tab label */
+    disp_name = fm_path_display_basename(path);
+    label = fm_tab_label_new(disp_name);
+    g_free(disp_name);
+    g_signal_connect(FM_TAB_LABEL(label)->close_btn, "clicked", G_CALLBACK(on_close_tab_btn), folder_view);
+    g_signal_connect(label, "button-press-event", G_CALLBACK(on_tab_label_button_pressed), folder_view);
 
     ret = gtk_notebook_append_page(GTK_NOTEBOOK(win->notebook), folder_view, label);
     gtk_notebook_set_tab_reorderable(GTK_NOTEBOOK(win->notebook), folder_view, TRUE);
