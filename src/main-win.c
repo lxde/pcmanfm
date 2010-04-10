@@ -1103,7 +1103,8 @@ void on_rename(GtkAction* act, FmMainWin* win)
         fm_rename_file(fm_list_peek_head(files));
         /* FIXME: is it ok to only rename the first selected file here. */
     }
-    fm_list_unref(files);
+    if(files)
+        fm_list_unref(files);
 }
 
 void on_select_all(GtkAction* act, FmMainWin* win)
