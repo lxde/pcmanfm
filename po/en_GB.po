@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm 0.9.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-07 04:23+0000\n"
+"POT-Creation-Date: 2010-04-11 04:17+0000\n"
 "PO-Revision-Date: 2010-03-27 15:45+0100\n"
 "Last-Translator: Yorvyk <yorvik.ubunto@googlemail.com>\n"
 "Language-Team: English en_GB\n"
@@ -18,7 +18,7 @@ msgstr ""
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2010"
-msgstr "Copyright (C) 2009 - 2010"
+msgstr "Copyright © 2009 - 2010"
 
 #: ../data/ui/about.glade.in.h:2
 msgid ""
@@ -32,8 +32,9 @@ msgstr ""
 
 #. Please replace this line with your own names, one name per line.
 #: ../data/ui/about.glade.in.h:6
+#, fuzzy
 msgid "translator-credits"
-msgstr "Steve Cook (Yorvyk)"
+msgstr "translator-credits"
 
 #: ../data/ui/desktop-pref.glade.h:1
 msgid "<b>Background</b>"
@@ -524,20 +525,20 @@ msgstr "_Thumbnail View"
 msgid "Detailed _List View"
 msgstr "Detailed _List View"
 
-#: ../src/main-win.c:525
+#: ../src/main-win.c:513
 msgid "You are in super user mode"
 msgstr "You are in Super User mode"
 
-#: ../src/main-win.c:624
+#: ../src/main-win.c:612
 msgid "Switch user command is not set."
 msgstr "Switch User command is not set"
 
-#: ../src/main-win.c:987
+#: ../src/main-win.c:919
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Free space: %s (Total: %s)"
 
-#: ../src/main-win.c:1193
+#: ../src/main-win.c:1131
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -548,7 +549,7 @@ msgstr ""
 "'%s'\n"
 "Enter a name for the new bookmark item:"
 
-#: ../src/main-win.c:1197
+#: ../src/main-win.c:1135
 msgid "Add to Bookmarks"
 msgstr "Add to Bookmarks"
 
@@ -600,18 +601,18 @@ msgstr "No function. Just to be compatible with nautilus"
 msgid "[FILE1, FILE2,...]"
 msgstr "[FILE1, FILE2,...]"
 
-#: ../src/pcmanfm.c:539
+#: ../src/pcmanfm.c:522
 msgid "Terminal emulator is not set."
 msgstr "Terminal emulator is not set"
 
-#: ../src/pcmanfm.c:582
+#: ../src/pcmanfm.c:565
 msgid "Create New..."
 msgstr "Create New..."
 
-#: ../src/pcmanfm.c:582
+#: ../src/pcmanfm.c:565
 msgid "Enter a name for the newly created file:"
 msgstr "Enter a name for the newly created file:"
 
-#: ../src/pcmanfm.c:582
+#: ../src/pcmanfm.c:565
 msgid "New"
 msgstr "New"
