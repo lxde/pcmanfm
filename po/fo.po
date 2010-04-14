@@ -8,20 +8,19 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-03-24 01:25+0100\n"
-"PO-Revision-Date: 2010-03-21 21:50+0200\n"
+"PO-Revision-Date: 2010-04-14 12:24+0200\n"
 "Last-Translator: Gunleif <gunleif@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: fo\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: fo\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.0.1\n"
 
 #: ../data/ui/about.glade.in.h:1
-#, fuzzy
 msgid "Copyright (C) 2009 - 2010"
-msgstr "Upphavsrættindi 2009"
+msgstr "Upphavsrættindi 2009 - 2010"
 
 #: ../data/ui/about.glade.in.h:2
 msgid ""
@@ -82,7 +81,6 @@ msgid "Desktop Preferences"
 msgstr "Skriviborðs sertokkar"
 
 #: ../data/ui/desktop-pref.glade.h:12
-#, fuzzy
 msgid "Fill with background color only"
 msgstr "Fyll einans við bakgrundsliti"
 
@@ -112,7 +110,7 @@ msgstr ""
 
 #: ../data/ui/desktop-pref.glade.h:19
 msgid "Show menus provided by window managers when desktop is clicked"
-msgstr ""
+msgstr "Vís valmyndir av gluggafyrisitum, tá klikkt verður á skriviborðið"
 
 #: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:37
 msgid "Stretch to fill the entire screen"
@@ -124,7 +122,7 @@ msgstr "Strekk til at fylla skíggjan"
 
 #: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:42
 msgid "Tile the image to fill the entire screen"
-msgstr ""
+msgstr "Legg myndina so at hon fyllir allan skíggjan"
 
 #: ../data/ui/desktop-pref.glade.h:23
 msgid "Wallpaper mode:"
@@ -135,27 +133,24 @@ msgid "Wallpaper:"
 msgstr "Tapet:"
 
 #: ../data/ui/pref.glade.h:1
-#, fuzzy
 msgid "<b>Auto-mount</b>"
-msgstr "<b>Ímyndir</b>"
+msgstr "<b>Sjálvirkin íseta</b>"
 
 #: ../data/ui/pref.glade.h:2
 msgid "<b>Behavior</b>"
 msgstr "<b>Atburður</b>"
 
 #: ../data/ui/pref.glade.h:3
-#, fuzzy
 msgid "<b>Default View</b>"
-msgstr "<b>Tekstur</b>"
+msgstr "<b>Vanlig sýning</b>"
 
 #: ../data/ui/pref.glade.h:4
 msgid "<b>Icons</b>"
 msgstr "<b>Ímyndir</b>"
 
 #: ../data/ui/pref.glade.h:5
-#, fuzzy
 msgid "<b>Programs</b>"
-msgstr "<b>Ímyndir</b>"
+msgstr "<b>Forrit</b>"
 
 #: ../data/ui/pref.glade.h:6
 msgid "<b>User Interface</b>"
@@ -183,11 +178,11 @@ msgstr "Vátta áðrenn fílur strikast"
 
 #: ../data/ui/pref.glade.h:13
 msgid "Detailed List View"
-msgstr ""
+msgstr "Nágreinilig listavísing"
 
 #: ../data/ui/pref.glade.h:14
 msgid "Do not generate thumbnails for files exceeding this size:"
-msgstr ""
+msgstr "Stovna ikki smámyndir fyri fílur ið eru stórri enn hendan støddin:"
 
 #: ../data/ui/pref.glade.h:16
 #, no-c-format
@@ -195,6 +190,8 @@ msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
 "%s = the command line you want to execute with terminal or su."
 msgstr ""
+"Dømi: \"xterm -e %s\" fyri útstøð ella \"gksu %s\" fyri at skifta brúkara.\n"
+"%s = stýriboðslinjan ið tú vil inna við útstøð ella su."
 
 #: ../data/ui/pref.glade.h:18
 msgid "Hide 'Close tab' buttons"
@@ -210,7 +207,7 @@ msgstr ""
 
 #: ../data/ui/pref.glade.h:21
 msgid "Icon View"
-msgstr ""
+msgstr "Ímyndavísan"
 
 #: ../data/ui/pref.glade.h:22
 msgid "Mount mountable volumes automatically on program startup"
@@ -218,7 +215,7 @@ msgstr ""
 
 #: ../data/ui/pref.glade.h:23
 msgid "Mount removable media automatically when they are inserted"
-msgstr ""
+msgstr "Íset flytimiðlar sjálvirkandi, tá ið teir verða settir í"
 
 #: ../data/ui/pref.glade.h:24
 msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
@@ -250,11 +247,11 @@ msgstr "Sertokkar"
 
 #: ../data/ui/pref.glade.h:31
 msgid "Show available options for removable media when they are inserted"
-msgstr ""
+msgstr "Vír tøkar kostir fyri leysamiðlar, tá ið teir verða settir í"
 
 #: ../data/ui/pref.glade.h:32
 msgid "Show thumbnails of files"
-msgstr ""
+msgstr "Vís smámyndir av fílum"
 
 #: ../data/ui/pref.glade.h:33
 msgid "Size of big icons:"
@@ -269,22 +266,20 @@ msgid "Size of small icons:"
 msgstr "Stødd á smáum ímyndum:"
 
 #: ../data/ui/pref.glade.h:36
-#, fuzzy
 msgid "Size of thumbnails:"
-msgstr "Stødd á smáum ímyndum:"
+msgstr "Stødd á smámyndum:"
 
 #: ../data/ui/pref.glade.h:39
 msgid "Switch user command:"
-msgstr ""
+msgstr "Stýriboð fyri brúkaraskift"
 
 #: ../data/ui/pref.glade.h:40
-#, fuzzy
 msgid "Terminal emulator:"
-msgstr "Útstøð:"
+msgstr "Útstøðarhermari:"
 
 #: ../data/ui/pref.glade.h:41
 msgid "Thumbnail View"
-msgstr ""
+msgstr "Smámyndavísan"
 
 #: ../data/ui/pref.glade.h:43
 msgid "Use SI decimal prefixes instead of IEC binary prefixes"
@@ -292,7 +287,7 @@ msgstr ""
 
 #: ../data/ui/pref.glade.h:44
 msgid "View Mode:"
-msgstr ""
+msgstr "Vísingarstandur"
 
 #: ../data/ui/pref.glade.h:45
 msgid "_Advanced"
@@ -312,31 +307,31 @@ msgstr ""
 
 #: ../data/ui/autorun.glade.h:1
 msgid "<b>Removable medium is inserted</b>"
-msgstr ""
+msgstr "<b>Leysamiðil er ísettur</b>"
 
 #: ../data/ui/autorun.glade.h:2
 msgid "Detecting..."
-msgstr ""
+msgstr "Leiti..."
 
 #: ../data/ui/autorun.glade.h:3
 msgid "Please select the action you want to perform:"
-msgstr ""
+msgstr "Vinarliga vel tí atgerð ið tú vil inna:"
 
 #: ../data/ui/autorun.glade.h:4
 msgid "Removable medium is inserted"
-msgstr ""
+msgstr "Leysamiðil er ísettur"
 
 #: ../data/ui/autorun.glade.h:5
 msgid "Type of medium:"
-msgstr ""
+msgstr "Miðlaslag:"
 
 #: ../src/volume-manager.c:150
 msgid "Removable Disk"
-msgstr ""
+msgstr "Leysadiskur"
 
 #: ../src/volume-manager.c:209
 msgid "Open in File Manager"
-msgstr ""
+msgstr "Lat upp í fílufyrisiting"
 
 #: ../src/desktop-ui.c:53
 msgid "_Invert Selection"
@@ -351,7 +346,6 @@ msgid "Folder"
 msgstr "Faldari"
 
 #: ../src/desktop-ui.c:57
-#, fuzzy
 msgid "Blank File"
 msgstr "Blank fíla"
 
