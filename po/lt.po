@@ -2,13 +2,13 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-04-16 04:19+0000\n"
-"PO-Revision-Date: 2010-02-06 18:08+0200\n"
+"PO-Revision-Date: 2010-04-16 19:27+0200\n"
 "Last-Translator: Julius Vitkauskas <zadintuvas@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -58,7 +58,8 @@ msgstr "Išvaizda"
 msgid "Background color:"
 msgstr "Fono spalva:"
 
-#: ../data/ui/desktop-pref.glade.h:7 ../data/ui/pref.glade.h:10
+#: ../data/ui/desktop-pref.glade.h:7
+#: ../data/ui/pref.glade.h:10
 msgid "Center on the screen"
 msgstr "Rodyti ekrano centre"
 
@@ -74,7 +75,8 @@ msgstr "Šešėlio spalva:"
 msgid "Desktop Icons"
 msgstr "Darbastalio piktogramos"
 
-#: ../data/ui/desktop-pref.glade.h:11 ../src/desktop-ui.c:58
+#: ../data/ui/desktop-pref.glade.h:11
+#: ../src/desktop-ui.c:58
 msgid "Desktop Preferences"
 msgstr "Darbastalio nustatymai"
 
@@ -110,15 +112,18 @@ msgstr "Rodyti tomų piktogramas darbastalyje"
 msgid "Show menus provided by window managers when desktop is clicked"
 msgstr "Rodyti langų tvarkyklės meniu paspaudus dešiniuoju klavišu ant darbastalio"
 
-#: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:37
+#: ../data/ui/desktop-pref.glade.h:20
+#: ../data/ui/pref.glade.h:37
 msgid "Stretch to fill the entire screen"
 msgstr "Ištempti per visą ekraną"
 
-#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:38
+#: ../data/ui/desktop-pref.glade.h:21
+#: ../data/ui/pref.glade.h:38
 msgid "Stretch to fit the screen"
 msgstr "Sutalpinti ekrane"
 
-#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:42
+#: ../data/ui/desktop-pref.glade.h:22
+#: ../data/ui/pref.glade.h:42
 msgid "Tile the image to fill the entire screen"
 msgstr "Užpildyti ekraną paveikslėliais"
 
@@ -188,6 +193,8 @@ msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
 "%s = the command line you want to execute with terminal or su."
 msgstr ""
+"Pavyzdys: \"xterm -e %s\" terminalui ar \"gksu %s\" vartotojo perjungimui.\n"
+"%s = komandinė eilutė, kurią jūs norite vykdyti kartu su terminalu arba su."
 
 #: ../data/ui/pref.glade.h:18
 msgid "Hide 'Close tab' buttons"
@@ -263,7 +270,7 @@ msgstr "Mažų piktogramų dydis"
 
 #: ../data/ui/pref.glade.h:36
 msgid "Size of thumbnails:"
-msgstr "Piktogramų dydis"
+msgstr "Miniatiūrų dydis"
 
 #: ../data/ui/pref.glade.h:39
 msgid "Switch user command:"
@@ -333,11 +340,13 @@ msgstr "Atverti failų tvarkyklėje"
 msgid "_Invert Selection"
 msgstr "_Rinktis atvirkščiai"
 
-#: ../src/desktop-ui.c:54 ../src/main-win-ui.c:146
+#: ../src/desktop-ui.c:54
+#: ../src/main-win-ui.c:146
 msgid "_Sort Files"
 msgstr "_Rūšiuoti failus"
 
-#: ../src/desktop-ui.c:56 ../src/main-win-ui.c:172
+#: ../src/desktop-ui.c:56
+#: ../src/main-win-ui.c:172
 msgid "Folder"
 msgstr "Aplankas"
 
@@ -345,31 +354,38 @@ msgstr "Aplankas"
 msgid "Blank File"
 msgstr "Tuščias failas"
 
-#: ../src/desktop-ui.c:69 ../src/main-win-ui.c:198
+#: ../src/desktop-ui.c:69
+#: ../src/main-win-ui.c:198
 msgid "By _Name"
 msgstr "Pagal _pavadinimą"
 
-#: ../src/desktop-ui.c:70 ../src/main-win-ui.c:199
+#: ../src/desktop-ui.c:70
+#: ../src/main-win-ui.c:199
 msgid "By _Modification Time"
 msgstr "Pagal p_akeitimo laiką"
 
-#: ../src/desktop-ui.c:71 ../src/main-win-ui.c:200
+#: ../src/desktop-ui.c:71
+#: ../src/main-win-ui.c:200
 msgid "By _Size"
 msgstr "Pagal _dydį"
 
-#: ../src/desktop-ui.c:72 ../src/main-win-ui.c:201
+#: ../src/desktop-ui.c:72
+#: ../src/main-win-ui.c:201
 msgid "By File _Type"
 msgstr "Pagal failo _tipą"
 
-#: ../src/desktop-ui.c:88 ../src/main-win-ui.c:218
+#: ../src/desktop-ui.c:88
+#: ../src/main-win-ui.c:218
 msgid "Open in New Tab"
 msgstr "Atverti naujoje kortelėje"
 
-#: ../src/desktop-ui.c:89 ../src/main-win-ui.c:219
+#: ../src/desktop-ui.c:89
+#: ../src/main-win-ui.c:219
 msgid "Open in New Window"
 msgstr "Atverti naujame lange"
 
-#: ../src/desktop-ui.c:91 ../src/main-win-ui.c:221
+#: ../src/desktop-ui.c:91
+#: ../src/main-win-ui.c:221
 msgid "Open in _Terminal"
 msgstr "Atverti _terminale"
 
@@ -541,6 +557,9 @@ msgid ""
 "'%s'\n"
 "Enter a name for the new bookmark item:"
 msgstr ""
+"Įtraukti šį aplanką į žymeles:\n"
+"'%s'\n"
+"Įveskite naujos žymelės pavadinimą:"
 
 #: ../src/main-win.c:1136
 msgid "Add to Bookmarks"
