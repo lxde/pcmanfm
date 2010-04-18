@@ -116,7 +116,7 @@ static void fm_main_win_class_init(FmMainWinClass *klass)
     nav_history_id = g_quark_from_static_string("nav-history");
 }
 
-static void on_entry_activate(GtkEntry* entry, FmMainWin* self)
+static void on_location_activate(GtkEntry* entry, FmMainWin* self)
 {
     FmPath* path = fm_path_new( gtk_entry_get_text(entry) );
     char* disp_path = fm_path_to_str(path);
@@ -126,7 +126,7 @@ static void on_entry_activate(GtkEntry* entry, FmMainWin* self)
     gtk_window_set_title(GTK_WINDOW(self), disp_name);
     g_free(disp_path);
     g_free(disp_name);
-    fm_folder_view_chdir(FM_FOLDER_VIEW(self->folder_view), path);
+    fm_main_win_chdir(self, path);
     fm_path_unref(path);
 }
 
@@ -498,7 +498,7 @@ static void fm_main_win_init(FmMainWin *self)
 
     /* the location bar */
     self->location = fm_path_entry_new();
-    g_signal_connect(self->location, "activate", on_entry_activate, self);
+    g_signal_connect(self->location, "activate", on_location_activate, self);
     if(geteuid() == 0) /* if we're using root, give the location entry a different color */
     {
         GtkStyle* style = gtk_rc_get_style_by_paths(

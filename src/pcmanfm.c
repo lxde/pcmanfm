@@ -177,7 +177,7 @@ inline static GByteArray* args_to_ipc_buf()
     g_byte_array_append(buf, (guint8*)&find_files, sizeof(find_files));
     g_byte_array_append(buf, (guint8*)&no_desktop, sizeof(no_desktop));
 
-    len = g_strv_length(files_to_open);
+    len = files_to_open ? g_strv_length(files_to_open) : 0;
     g_byte_array_append(buf, (guint8*)&len, sizeof(len));
     for(i = 0; i < len; ++i)
         buf_append_str(buf, files_to_open[i]);
