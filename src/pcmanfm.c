@@ -239,8 +239,18 @@ inline static void ipc_buf_to_args(GByteArray* buf)
         for(i = 0; i < len; ++i)
         {
             char* file = buf_read_str(&p);
-            files_to_open[i] = fm_canonicalize_filename(file, cwd);
-            g_free(file);
+            char* scheme = g_uri_parse_scheme(file);
+            if(scheme) /* a valid URI */
+            {
+                /* FIXME: should we canonicalize URIs? and how about file:///? */
+                files_to_open[i] = file;
+                g_free(scheme);
+            }
+            else /* a file path */
+            {
+                files_to_open[i] = fm_canonicalize_filename(file, cwd);
+                g_free(file);
+            }
         }
         files_to_open[i] = NULL;
     }
@@ -356,6 +366,16 @@ void single_instance_finalize()
     unlink(lock_file);
 }
 
+static FmJobErrorAction on_file_info_job_error(FmFileInfoJob* job, GError* err, FmJobErrorSeverity severity, gpointer user_data)
+{
+    if(err->domain == G_IO_ERROR && err->code == G_IO_ERROR_NOT_MOUNTED)
+    {
+        FmPath* current = fm_file_info_job_get_current(job);
+        if( fm_mount_path(NULL, current, TRUE) )
+            return FM_JOB_RETRY;
+    }
+    return FM_JOB_CONTINUE;
+}
 
 gboolean pcmanfm_run()
 {
@@ -454,6 +474,7 @@ gboolean pcmanfm_run()
             }
             if(cwd)
                 fm_path_unref(cwd);
+            g_signal_connect(job, "error", G_CALLBACK(on_file_info_job_error), NULL);
             fm_job_run_sync_with_mainloop(job);
             infos = fm_list_peek_head_link(FM_FILE_INFO_JOB(job)->file_infos);
             fm_launch_files_simple(NULL, NULL, infos, pcmanfm_open_folder, NULL);
