@@ -1663,12 +1663,16 @@ void update_working_area(FmDesktop* desktop)
                        XA_NET_NUMBER_OF_DESKTOPS, 0, 1, False, XA_CARDINAL, &ret_type,
                        &format, &len, &after, &prop) != Success)
         goto _out;
+    if(!prop)
+        goto _out;
     n_desktops = *(guint32*)prop;
     XFree(prop);
 
     if( XGetWindowProperty(GDK_WINDOW_XDISPLAY(root), GDK_WINDOW_XID(root),
                        XA_NET_CURRENT_DESKTOP, 0, 1, False, XA_CARDINAL, &ret_type,
                        &format, &len, &after, &prop) != Success)
+        goto _out;
+    if(!prop)
         goto _out;
     cur_desktop = *(guint32*)prop;
     XFree(prop);
