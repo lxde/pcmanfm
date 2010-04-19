@@ -2,12 +2,12 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm 0.9\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-11 04:17+0000\n"
+"POT-Creation-Date: 2010-04-19 04:21+0000\n"
 "PO-Revision-Date: 2010-04-11 13:33+0100\n"
 "Last-Translator: Lutz Thuns <lOtz1009@opensuse.org>\n"
 "Language-Team: German\n"
@@ -62,8 +62,7 @@ msgstr "Erscheinungsbild"
 msgid "Background color:"
 msgstr "Hintergrundfarbe:"
 
-#: ../data/ui/desktop-pref.glade.h:7
-#: ../data/ui/pref.glade.h:10
+#: ../data/ui/desktop-pref.glade.h:7 ../data/ui/pref.glade.h:10
 msgid "Center on the screen"
 msgstr "Zentriert"
 
@@ -79,9 +78,7 @@ msgstr "Farbe des Schattens:"
 msgid "Desktop Icons"
 msgstr "Desktop-Symbole"
 
-#: ../data/ui/desktop-pref.glade.h:11
-#: ../src/desktop-ui.c:58
-#, fuzzy
+#: ../data/ui/desktop-pref.glade.h:11 ../src/desktop-ui.c:58
 msgid "Desktop Preferences"
 msgstr "Einstellungen der Arbeitsfläche"
 
@@ -118,18 +115,15 @@ msgstr "Symbole für "
 msgid "Show menus provided by window managers when desktop is clicked"
 msgstr "Beim Klicken auf den Desktop die Menüs des Fenstermanagers anzeigen"
 
-#: ../data/ui/desktop-pref.glade.h:20
-#: ../data/ui/pref.glade.h:37
+#: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:37
 msgid "Stretch to fill the entire screen"
 msgstr "Bildschirm füllen"
 
-#: ../data/ui/desktop-pref.glade.h:21
-#: ../data/ui/pref.glade.h:38
+#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:38
 msgid "Stretch to fit the screen"
 msgstr "Skalieren"
 
-#: ../data/ui/desktop-pref.glade.h:22
-#: ../data/ui/pref.glade.h:42
+#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:42
 msgid "Tile the image to fill the entire screen"
 msgstr "Kacheln"
 
@@ -170,7 +164,6 @@ msgid "Always show the tab bar"
 msgstr "Reiterleiste immer anzeigen"
 
 #: ../data/ui/pref.glade.h:8
-#, fuzzy
 msgid "Archiver integration:"
 msgstr "Archivmanager-Integration:"
 
@@ -212,7 +205,6 @@ msgid "Hide folder content border"
 msgstr "Rahmen um den Ordnerinhalt verbergen"
 
 #: ../data/ui/pref.glade.h:20
-#, fuzzy
 msgid "Hide side pane buttons"
 msgstr "Knöpfe in der Seitenleiste ausblenden"
 
@@ -349,13 +341,11 @@ msgstr "In einem neuen Reiter öffnen"
 msgid "_Invert Selection"
 msgstr "_Auswahl umkehren"
 
-#: ../src/desktop-ui.c:54
-#: ../src/main-win-ui.c:146
+#: ../src/desktop-ui.c:54 ../src/main-win-ui.c:146
 msgid "_Sort Files"
 msgstr "_Sortieren"
 
-#: ../src/desktop-ui.c:56
-#: ../src/main-win-ui.c:172
+#: ../src/desktop-ui.c:56 ../src/main-win-ui.c:172
 msgid "Folder"
 msgstr "Ordner"
 
@@ -363,38 +353,31 @@ msgstr "Ordner"
 msgid "Blank File"
 msgstr "Leere Datei"
 
-#: ../src/desktop-ui.c:69
-#: ../src/main-win-ui.c:198
+#: ../src/desktop-ui.c:69 ../src/main-win-ui.c:198
 msgid "By _Name"
 msgstr "Nach _Name"
 
-#: ../src/desktop-ui.c:70
-#: ../src/main-win-ui.c:199
+#: ../src/desktop-ui.c:70 ../src/main-win-ui.c:199
 msgid "By _Modification Time"
 msgstr "Nach Än_derungsdatum"
 
-#: ../src/desktop-ui.c:71
-#: ../src/main-win-ui.c:200
+#: ../src/desktop-ui.c:71 ../src/main-win-ui.c:200
 msgid "By _Size"
 msgstr "Nach _Größe"
 
-#: ../src/desktop-ui.c:72
-#: ../src/main-win-ui.c:201
+#: ../src/desktop-ui.c:72 ../src/main-win-ui.c:201
 msgid "By File _Type"
 msgstr "Nach Datei_typ"
 
-#: ../src/desktop-ui.c:88
-#: ../src/main-win-ui.c:218
+#: ../src/desktop-ui.c:88 ../src/main-win-ui.c:218
 msgid "Open in New Tab"
 msgstr "In einem neuen Reiter öffnen"
 
-#: ../src/desktop-ui.c:89
-#: ../src/main-win-ui.c:219
+#: ../src/desktop-ui.c:89 ../src/main-win-ui.c:219
 msgid "Open in New Window"
 msgstr "In einem neuen Fenster öffnen"
 
-#: ../src/desktop-ui.c:91
-#: ../src/main-win-ui.c:221
+#: ../src/desktop-ui.c:91 ../src/main-win-ui.c:221
 msgid "Open in _Terminal"
 msgstr "_Terminal öffnen"
 
@@ -561,7 +544,7 @@ msgstr "Es wurde kein Befehl zum Benutzerwechsel in den Einstellungen angegeben.
 msgid "Free space: %s (Total: %s)"
 msgstr "Freier Speicherplatz: %s (Gesamt: %s)"
 
-#: ../src/main-win.c:1131
+#: ../src/main-win.c:1132
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -572,7 +555,7 @@ msgstr ""
 "'%s'\n"
 "Namen für des neue Lesezeichen eingeben:"
 
-#: ../src/main-win.c:1135
+#: ../src/main-win.c:1136
 msgid "Add to Bookmarks"
 msgstr "Lesezeichen hinzufügen"
 
@@ -624,19 +607,18 @@ msgstr "Keine Funktion. Nur um kompatibel zu nautilus zu sein"
 msgid "[FILE1, FILE2,...]"
 msgstr "[DATEI1, DATEI2,...]"
 
-#: ../src/pcmanfm.c:522
+#: ../src/pcmanfm.c:543
 msgid "Terminal emulator is not set."
 msgstr "Es wurde keine Terminal-Anwendung in den Einstellungen angegeben."
 
-#: ../src/pcmanfm.c:565
+#: ../src/pcmanfm.c:586
 msgid "Create New..."
 msgstr "Neue Datei"
 
-#: ../src/pcmanfm.c:565
+#: ../src/pcmanfm.c:586
 msgid "Enter a name for the newly created file:"
 msgstr "Namen der neuen Datei eingeben:"
 
-#: ../src/pcmanfm.c:565
+#: ../src/pcmanfm.c:586
 msgid "New"
 msgstr "Neu"
-
