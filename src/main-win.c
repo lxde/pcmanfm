@@ -1085,14 +1085,17 @@ void on_paste(GtkAction* act, FmMainWin* win)
 void on_del(GtkAction* act, FmMainWin* win)
 {
     FmPathList* files = fm_folder_view_get_selected_file_paths(FM_FOLDER_VIEW(win->folder_view));
-    GdkModifierType state = 0;
-    if(!gtk_get_current_event_state (&state))
-        state = 0;
-    if( state & GDK_SHIFT_MASK ) /* Shift + Delete = delete directly */
-        fm_delete_files(files);
-    else
-        fm_trash_or_delete_files(files);
-    fm_list_unref(files);
+    if(files)
+    {
+        GdkModifierType state = 0;
+        if(!gtk_get_current_event_state (&state))
+            state = 0;
+        if( state & GDK_SHIFT_MASK ) /* Shift + Delete = delete directly */
+            fm_delete_files(files);
+        else
+            fm_trash_or_delete_files(files);
+        fm_list_unref(files);
+    }
 }
 
 void on_rename(GtkAction* act, FmMainWin* win)
