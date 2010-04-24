@@ -324,12 +324,14 @@ static void on_bookmark(GtkMenuItem* mi, FmMainWin* win)
 static void create_bookmarks_menu(FmMainWin* win)
 {
     GList* l;
+    GtkWidget* mi;
     int i = 0;
+
     /* FIXME: direct access to data member is not allowed */
     for(l=win->bookmarks->items;l;l=l->next)
     {
         FmBookmarkItem* item = (FmBookmarkItem*)l->data;
-        GtkWidget* mi = gtk_image_menu_item_new_with_label(item->name);
+        mi = gtk_image_menu_item_new_with_label(item->name);
         gtk_widget_show(mi);
         // gtk_image_menu_item_set_image(); // FIXME: set icons for menu items
         g_object_set_data_full(G_OBJECT(mi), "path", fm_path_ref(item->path), (GDestroyNotify)fm_path_unref);
@@ -338,7 +340,11 @@ static void create_bookmarks_menu(FmMainWin* win)
         ++i;
     }
     if(i > 0)
-        gtk_menu_shell_insert(GTK_MENU_SHELL(win->bookmarks_menu), gtk_separator_menu_item_new(), i);
+    {
+        mi = gtk_separator_menu_item_new();
+        gtk_widget_show(mi);
+        gtk_menu_shell_insert(GTK_MENU_SHELL(win->bookmarks_menu), mi, i);
+    }
 }
 
 static void on_bookmarks_changed(FmBookmarks* bm, FmMainWin* win)
@@ -349,9 +355,14 @@ static void on_bookmarks_changed(FmBookmarks* bm, FmMainWin* win)
     for(l = mis;l;l=l->next)
     {
         GtkWidget* item = (GtkWidget*)l->data;
-        if( GTK_IS_SEPARATOR_MENU_ITEM(item) )
+        if( g_object_get_data(G_OBJECT(item), "path") )
+            gtk_widget_destroy(item);
+        else
+        {
+            if(GTK_IS_SEPARATOR_MENU_ITEM(item))
+                gtk_widget_destroy(item);
             break;
-        gtk_widget_destroy(item);
+        }
     }
     g_list_free(mis);
 
