@@ -861,10 +861,12 @@ gboolean on_key_press( GtkWidget* w, GdkEventKey* evt )
             fm_clipboard_paste_files(GTK_WIDGET(desktop), fm_path_get_desktop());
         break;
     case GDK_F2:
-#if 0
-        if( sels )
-            ptk_rename_file( NULL, vfs_get_desktop_dir(), (FmFileInfo*)sels->data );
-#endif
+        sels = fm_desktop_get_selected_paths(desktop);
+        if(sels)
+        {
+            fm_rename_file(fm_list_peek_head(sels));
+            fm_list_unref(sels);
+        }
         break;
     case GDK_Delete:
         sels = fm_desktop_get_selected_paths(desktop);
