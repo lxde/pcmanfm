@@ -2,19 +2,20 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Piotr Sokół <piotr.sokol@10g.pl>, 2010.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-07 04:23+0000\n"
+"POT-Creation-Date: 2010-04-25 17:28+0800\n"
 "PO-Revision-Date: 2010-03-24 19:41+0100\n"
 "Last-Translator: Grzegorz Gibas <amigib@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
 "X-Poedit-Language: Polish\n"
 
 #: ../data/ui/about.glade.in.h:1
@@ -34,7 +35,9 @@ msgstr ""
 #. Please replace this line with your own names, one name per line.
 #: ../data/ui/about.glade.in.h:6
 msgid "translator-credits"
-msgstr "Piotr Sokół <piotr.sokol@10g.pl> 2010 & Grzegorz Gibas <amigib@gmail.com> 2010"
+msgstr ""
+"Piotr Sokół <piotr.sokol@10g.pl> 2010 & Grzegorz Gibas <amigib@gmail.com> "
+"2010"
 
 #: ../data/ui/desktop-pref.glade.h:1
 msgid "<b>Background</b>"
@@ -190,7 +193,8 @@ msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
 "%s = the command line you want to execute with terminal or su."
 msgstr ""
-"Przykłady: \"xterm -e %s\" dla terminala lub \"gksu %s\" by przełączyć użytkownika.\n"
+"Przykłady: \"xterm -e %s\" dla terminala lub \"gksu %s\" by przełączyć "
+"użytkownika.\n"
 "%s = polecenie, które chcesz wykonać w terminale lub przy użyciu su."
 
 #: ../data/ui/pref.glade.h:18
@@ -525,20 +529,20 @@ msgstr "_Miniatury"
 msgid "Detailed _List View"
 msgstr "_Lista szczegółowa"
 
-#: ../src/main-win.c:525
+#: ../src/main-win.c:524
 msgid "You are in super user mode"
 msgstr "Jesteś w trybie super użytkownika"
 
-#: ../src/main-win.c:624
+#: ../src/main-win.c:623
 msgid "Switch user command is not set."
 msgstr "Polecenie zmiany użytkownika nie zostało ustawione."
 
-#: ../src/main-win.c:987
+#: ../src/main-win.c:930
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Wolne miejsce: %s (Ogółem: %s)"
 
-#: ../src/main-win.c:1193
+#: ../src/main-win.c:1146
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -549,70 +553,86 @@ msgstr ""
 "„%s”\n"
 "Proszę wprowadzić nazwę nowej zakładki:"
 
-#: ../src/main-win.c:1197
+#: ../src/main-win.c:1150
 msgid "Add to Bookmarks"
 msgstr "Dodaj..."
 
-#: ../src/pcmanfm.c:70
-msgid "Open folders in new tabs of the last used window instead of creating new windows"
-msgstr "Otwieraj foldery w nowej karcie ostatniego użytego okna zamiast otwierać nowe okna"
-
-#: ../src/pcmanfm.c:71
+#. { "new-tab", 't', 0, G_OPTION_ARG_NONE, &new_tab, N_("Open folders in new tabs of the last used window instead of creating new windows"), NULL },
+#: ../src/pcmanfm.c:72
 msgid "Name of configuration profile"
 msgstr "Nazwa profilu"
 
-#: ../src/pcmanfm.c:72
+#: ../src/pcmanfm.c:73
 msgid "Launch desktop manager"
 msgstr "Uruchom menedżer pulpitu"
 
-#: ../src/pcmanfm.c:73
+#: ../src/pcmanfm.c:74
 msgid "Turn off desktop manager if it's running"
 msgstr "Wyłącz menedżer pulpitu jeśli jest uruchomiony"
 
-#: ../src/pcmanfm.c:74
+#: ../src/pcmanfm.c:75
 msgid "Run PCManFM as a daemon"
 msgstr "Uruchom PCManFM jako demon"
 
-#: ../src/pcmanfm.c:75
+#: ../src/pcmanfm.c:76
 msgid "Open desktop preference dialog"
 msgstr "Ustawienia pulpitu"
 
-#: ../src/pcmanfm.c:76
+#: ../src/pcmanfm.c:77
 msgid "Set desktop wallpaper"
 msgstr "Ustaw tło pulpitu"
 
-#: ../src/pcmanfm.c:76
+#: ../src/pcmanfm.c:77
 msgid "<image file>"
 msgstr "<plik obrazu>"
 
-#: ../src/pcmanfm.c:77
-msgid "Open preference dialog. 'n' is number of the page you want to show (1, 2, 3...)."
-msgstr "Otwiera okno dialogowe preferencji, gdzie „n” jest numerem karty okna (1, 2, 3...)."
+#: ../src/pcmanfm.c:78
+msgid "Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"
+msgstr ""
 
 #: ../src/pcmanfm.c:78
+msgid "<mode>"
+msgstr ""
+
+#: ../src/pcmanfm.c:79
+msgid ""
+"Open preference dialog. 'n' is number of the page you want to show (1, 2, "
+"3...)."
+msgstr ""
+"Otwiera okno dialogowe preferencji, gdzie „n” jest numerem karty okna (1, 2, "
+"3...)."
+
+#: ../src/pcmanfm.c:80
 msgid "Open Find Files utility"
 msgstr "Otwórz program Wyszukiwanie Plików"
 
-#: ../src/pcmanfm.c:79
+#: ../src/pcmanfm.c:81
 msgid "No function. Just to be compatible with nautilus"
 msgstr "Bez funkcji. Potrzebne tylko do kombatybilności z Nautilusem"
 
-#: ../src/pcmanfm.c:80
+#: ../src/pcmanfm.c:82
 msgid "[FILE1, FILE2,...]"
 msgstr "[PLIK1, PLIK2,...]"
 
-#: ../src/pcmanfm.c:539
+#: ../src/pcmanfm.c:585
 msgid "Terminal emulator is not set."
 msgstr "Nie zdefiniowano polecenia emulatora terminala."
 
-#: ../src/pcmanfm.c:582
+#: ../src/pcmanfm.c:628
 msgid "Create New..."
 msgstr "Utwórz nowy..."
 
-#: ../src/pcmanfm.c:582
+#: ../src/pcmanfm.c:628
 msgid "Enter a name for the newly created file:"
 msgstr "Proszę wprowadzić nazwę pliku:"
 
-#: ../src/pcmanfm.c:582
+#: ../src/pcmanfm.c:628
 msgid "New"
 msgstr "Nowy"
+
+#~ msgid ""
+#~ "Open folders in new tabs of the last used window instead of creating new "
+#~ "windows"
+#~ msgstr ""
+#~ "Otwieraj foldery w nowej karcie ostatniego użytego okna zamiast otwierać "
+#~ "nowe okna"

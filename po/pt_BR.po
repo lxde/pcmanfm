@@ -6,12 +6,12 @@
 # Fábio Antunes <fabio.antunes@hotmail.com>, 2008.
 # Og Maciel <ogmaciel@gnome.org>, 2008-2010.
 # Henrique P. Machado <zehrique@gmail.com>, 2009.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PCManFM\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-07 04:23+0000\n"
+"POT-Creation-Date: 2010-04-25 17:28+0800\n"
 "PO-Revision-Date: 2010-01-31 12:07-0500\n"
 "Last-Translator: Og Maciel <ogmaciel@gnome.org>\n"
 "Language-Team: Brazilian Portuguese <ldp-br@bazar2.conectiva.com.br>\n"
@@ -117,7 +117,9 @@ msgstr "Mostrar ícones de volumes na área de trabalho"
 
 #: ../data/ui/desktop-pref.glade.h:19
 msgid "Show menus provided by window managers when desktop is clicked"
-msgstr "Mostrar menus dos gerenciadores de janelas quando a área de trabalho for clicada"
+msgstr ""
+"Mostrar menus dos gerenciadores de janelas quando a área de trabalho for "
+"clicada"
 
 #: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:37
 msgid "Stretch to fill the entire screen"
@@ -197,7 +199,8 @@ msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
 "%s = the command line you want to execute with terminal or su."
 msgstr ""
-"Exemplos: \"xterm -e %s\" para terminal or \"gksu %s\" para alternar o usuário.\n"
+"Exemplos: \"xterm -e %s\" para terminal or \"gksu %s\" para alternar o "
+"usuário.\n"
 "%s = a linha de comando que você deseja executar no terminal ou com o su."
 
 #: ../data/ui/pref.glade.h:18
@@ -226,7 +229,8 @@ msgstr "Montar mídia removível automaticamente quando elas forem inseridas"
 
 #: ../data/ui/pref.glade.h:24
 msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
-msgstr "Mover arquivos excluídos para a \"lixeira\" em vez de apagá-los da unidade"
+msgstr ""
+"Mover arquivos excluídos para a \"lixeira\" em vez de apagá-los da unidade"
 
 #: ../data/ui/pref.glade.h:25
 msgid "Only show thumbnails for local files"
@@ -254,7 +258,8 @@ msgstr "Preferências"
 
 #: ../data/ui/pref.glade.h:31
 msgid "Show available options for removable media when they are inserted"
-msgstr "Mostrar opções disponíveis para mídia removível quando elas forem inseridas"
+msgstr ""
+"Mostrar opções disponíveis para mídia removível quando elas forem inseridas"
 
 #: ../data/ui/pref.glade.h:32
 msgid "Show thumbnails of files"
@@ -532,20 +537,20 @@ msgstr "Visualização de minia_turas"
 msgid "Detailed _List View"
 msgstr "Visualização _lista detalhada"
 
-#: ../src/main-win.c:525
+#: ../src/main-win.c:524
 msgid "You are in super user mode"
 msgstr "Você está em modo superusuário"
 
-#: ../src/main-win.c:624
+#: ../src/main-win.c:623
 msgid "Switch user command is not set."
 msgstr "O comando para alternar o usuário não está configurado."
 
-#: ../src/main-win.c:987
+#: ../src/main-win.c:930
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Espaço livre: %s (Total: %s )"
 
-#: ../src/main-win.c:1193
+#: ../src/main-win.c:1146
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -556,73 +561,89 @@ msgstr ""
 "'%s'\n"
 "Digite um nome para o novo item favorito:"
 
-#: ../src/main-win.c:1197
+#: ../src/main-win.c:1150
 msgid "Add to Bookmarks"
 msgstr "Adicionar aos favoritos"
 
-#: ../src/pcmanfm.c:70
-msgid "Open folders in new tabs of the last used window instead of creating new windows"
-msgstr "Abrir pastas em novas abas na última janela aberta, em vez de criar novas janelas"
-
-#: ../src/pcmanfm.c:71
+#. { "new-tab", 't', 0, G_OPTION_ARG_NONE, &new_tab, N_("Open folders in new tabs of the last used window instead of creating new windows"), NULL },
+#: ../src/pcmanfm.c:72
 msgid "Name of configuration profile"
 msgstr "Nome do perfil de configurações"
 
-#: ../src/pcmanfm.c:72
+#: ../src/pcmanfm.c:73
 msgid "Launch desktop manager"
 msgstr "Lançar o gerente da área de trabalho"
 
-#: ../src/pcmanfm.c:73
+#: ../src/pcmanfm.c:74
 msgid "Turn off desktop manager if it's running"
 msgstr "Desligar o gerente da área de trabalho se estiver em execução"
 
-#: ../src/pcmanfm.c:74
+#: ../src/pcmanfm.c:75
 msgid "Run PCManFM as a daemon"
 msgstr "Executar PcManFM como um serviço"
 
-#: ../src/pcmanfm.c:75
+#: ../src/pcmanfm.c:76
 msgid "Open desktop preference dialog"
 msgstr "Abrir o diálogo de prefências da área de trabalho"
 
-#: ../src/pcmanfm.c:76
+#: ../src/pcmanfm.c:77
 msgid "Set desktop wallpaper"
 msgstr "Definir o papel de parede da área de trabalho"
 
-#: ../src/pcmanfm.c:76
+#: ../src/pcmanfm.c:77
 msgid "<image file>"
 msgstr "<arquivo de imagem>"
 
-#: ../src/pcmanfm.c:77
-msgid "Open preference dialog. 'n' is number of the page you want to show (1, 2, 3...)."
-msgstr "Abre o diálogo de preferências. \"n\" é o número da página que você deseja mostrar (1, 2, 3...)."
+#: ../src/pcmanfm.c:78
+msgid "Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"
+msgstr ""
 
 #: ../src/pcmanfm.c:78
+msgid "<mode>"
+msgstr ""
+
+#: ../src/pcmanfm.c:79
+msgid ""
+"Open preference dialog. 'n' is number of the page you want to show (1, 2, "
+"3...)."
+msgstr ""
+"Abre o diálogo de preferências. \"n\" é o número da página que você deseja "
+"mostrar (1, 2, 3...)."
+
+#: ../src/pcmanfm.c:80
 msgid "Open Find Files utility"
 msgstr "Abrir utilitário de localizar arquivos"
 
-#: ../src/pcmanfm.c:79
+#: ../src/pcmanfm.c:81
 msgid "No function. Just to be compatible with nautilus"
 msgstr "Nenhuma função. Somente para ser compatível com o nautilus"
 
-#: ../src/pcmanfm.c:80
+#: ../src/pcmanfm.c:82
 msgid "[FILE1, FILE2,...]"
 msgstr "[ARQUIVO1, ARQUIVO2,...]"
 
-#: ../src/pcmanfm.c:539
+#: ../src/pcmanfm.c:585
 msgid "Terminal emulator is not set."
 msgstr "O emulador de terminal não está configurado."
 
-#: ../src/pcmanfm.c:582
+#: ../src/pcmanfm.c:628
 msgid "Create New..."
 msgstr "Criar novo..."
 
-#: ../src/pcmanfm.c:582
+#: ../src/pcmanfm.c:628
 msgid "Enter a name for the newly created file:"
 msgstr "Digite um nome para o novo arquivo:"
 
-#: ../src/pcmanfm.c:582
+#: ../src/pcmanfm.c:628
 msgid "New"
 msgstr "Novo"
+
+#~ msgid ""
+#~ "Open folders in new tabs of the last used window instead of creating new "
+#~ "windows"
+#~ msgstr ""
+#~ "Abrir pastas em novas abas na última janela aberta, em vez de criar novas "
+#~ "janelas"
 
 #~ msgid "Display image files with supported format as thumbnails"
 #~ msgstr "Mostrar miniaturas dos arquivos suportados"

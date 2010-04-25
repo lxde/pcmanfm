@@ -2,12 +2,12 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm 0.9.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-11 04:17+0000\n"
+"POT-Creation-Date: 2010-04-25 17:28+0800\n"
 "PO-Revision-Date: 2010-03-27 15:45+0100\n"
 "Last-Translator: Yorvyk <yorvik.ubunto@googlemail.com>\n"
 "Language-Team: English en_GB\n"
@@ -524,20 +524,20 @@ msgstr "_Thumbnail View"
 msgid "Detailed _List View"
 msgstr "Detailed _List View"
 
-#: ../src/main-win.c:513
+#: ../src/main-win.c:524
 msgid "You are in super user mode"
 msgstr "You are in Super User mode"
 
-#: ../src/main-win.c:612
+#: ../src/main-win.c:623
 msgid "Switch user command is not set."
 msgstr "Switch User command is not set"
 
-#: ../src/main-win.c:919
+#: ../src/main-win.c:930
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Free space: %s (Total: %s)"
 
-#: ../src/main-win.c:1131
+#: ../src/main-win.c:1146
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -548,70 +548,86 @@ msgstr ""
 "'%s'\n"
 "Enter a name for the new bookmark item:"
 
-#: ../src/main-win.c:1135
+#: ../src/main-win.c:1150
 msgid "Add to Bookmarks"
 msgstr "Add to Bookmarks"
 
-#: ../src/pcmanfm.c:70
-msgid "Open folders in new tabs of the last used window instead of creating new windows"
-msgstr "Open folders in new tabs of the last used window instead of creating new windows"
-
-#: ../src/pcmanfm.c:71
+#. { "new-tab", 't', 0, G_OPTION_ARG_NONE, &new_tab, N_("Open folders in new tabs of the last used window instead of creating new windows"), NULL },
+#: ../src/pcmanfm.c:72
 msgid "Name of configuration profile"
 msgstr "Name of configuration profile"
 
-#: ../src/pcmanfm.c:72
+#: ../src/pcmanfm.c:73
 msgid "Launch desktop manager"
 msgstr "Launch desktop manager"
 
-#: ../src/pcmanfm.c:73
+#: ../src/pcmanfm.c:74
 msgid "Turn off desktop manager if it's running"
 msgstr "Turn off desktop manager if it‘s running"
 
-#: ../src/pcmanfm.c:74
+#: ../src/pcmanfm.c:75
 msgid "Run PCManFM as a daemon"
 msgstr "Run PCManFM as a daemon"
 
-#: ../src/pcmanfm.c:75
+#: ../src/pcmanfm.c:76
 msgid "Open desktop preference dialog"
 msgstr "Open desktop preference dialogue"
 
-#: ../src/pcmanfm.c:76
+#: ../src/pcmanfm.c:77
 msgid "Set desktop wallpaper"
 msgstr "Set desktop wallpaper"
 
-#: ../src/pcmanfm.c:76
+#: ../src/pcmanfm.c:77
 msgid "<image file>"
 msgstr "<image file>"
 
-#: ../src/pcmanfm.c:77
-msgid "Open preference dialog. 'n' is number of the page you want to show (1, 2, 3...)."
-msgstr "Open preference dialogue. 'n' is number of the page you want to show (1, 2, 3...)"
+#: ../src/pcmanfm.c:78
+msgid "Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"
+msgstr ""
 
 #: ../src/pcmanfm.c:78
+msgid "<mode>"
+msgstr ""
+
+#: ../src/pcmanfm.c:79
+msgid ""
+"Open preference dialog. 'n' is number of the page you want to show (1, 2, "
+"3...)."
+msgstr ""
+"Open preference dialogue. 'n' is number of the page you want to show (1, 2, "
+"3...)"
+
+#: ../src/pcmanfm.c:80
 msgid "Open Find Files utility"
 msgstr "Open Find Files utility"
 
-#: ../src/pcmanfm.c:79
+#: ../src/pcmanfm.c:81
 msgid "No function. Just to be compatible with nautilus"
 msgstr "No function. Just to be compatible with nautilus"
 
-#: ../src/pcmanfm.c:80
+#: ../src/pcmanfm.c:82
 msgid "[FILE1, FILE2,...]"
 msgstr "[FILE1, FILE2,...]"
 
-#: ../src/pcmanfm.c:522
+#: ../src/pcmanfm.c:585
 msgid "Terminal emulator is not set."
 msgstr "Terminal emulator is not set"
 
-#: ../src/pcmanfm.c:565
+#: ../src/pcmanfm.c:628
 msgid "Create New..."
 msgstr "Create New..."
 
-#: ../src/pcmanfm.c:565
+#: ../src/pcmanfm.c:628
 msgid "Enter a name for the newly created file:"
 msgstr "Enter a name for the newly created file:"
 
-#: ../src/pcmanfm.c:565
+#: ../src/pcmanfm.c:628
 msgid "New"
 msgstr "New"
+
+#~ msgid ""
+#~ "Open folders in new tabs of the last used window instead of creating new "
+#~ "windows"
+#~ msgstr ""
+#~ "Open folders in new tabs of the last used window instead of creating new "
+#~ "windows"
