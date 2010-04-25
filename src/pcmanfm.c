@@ -56,10 +56,11 @@ static gboolean no_desktop = FALSE;
 static gboolean show_desktop = FALSE;
 static gboolean desktop_off = FALSE;
 static gboolean desktop_running = FALSE;
-static gboolean new_tab = FALSE;
+/* static gboolean new_tab = FALSE; */
 static int show_pref = 0;
 static gboolean desktop_pref = FALSE;
 static char* set_wallpaper = NULL;
+static char* wallpaper_mode = NULL;
 static gboolean find_files = FALSE;
 static char* ipc_cwd = NULL;
 
@@ -67,19 +68,22 @@ static int n_pcmanfm_ref = 0;
 
 static GOptionEntry opt_entries[] =
 {
-    { "new-tab", 't', 0, G_OPTION_ARG_NONE, &new_tab, N_("Open folders in new tabs of the last used window instead of creating new windows"), NULL },
+    /* { "new-tab", 't', 0, G_OPTION_ARG_NONE, &new_tab, N_("Open folders in new tabs of the last used window instead of creating new windows"), NULL }, */
     { "profile", 'p', 0, G_OPTION_ARG_STRING, &profile, N_("Name of configuration profile"), "<profile name>" },
     { "desktop", '\0', 0, G_OPTION_ARG_NONE, &show_desktop, N_("Launch desktop manager"), NULL },
     { "desktop-off", '\0', 0, G_OPTION_ARG_NONE, &desktop_off, N_("Turn off desktop manager if it's running"), NULL },
     { "daemon-mode", 'd', 0, G_OPTION_ARG_NONE, &daemon_mode, N_("Run PCManFM as a daemon"), NULL },
     { "desktop-pref", '\0', 0, G_OPTION_ARG_NONE, &desktop_pref, N_("Open desktop preference dialog"), NULL },
     { "set-wallpaper", 'w', 0, G_OPTION_ARG_FILENAME, &set_wallpaper, N_("Set desktop wallpaper"), N_("<image file>") },
+    { "wallpaper-mode", '\0', 0, G_OPTION_ARG_STRING, &wallpaper_mode, N_("Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"), N_("<mode>") },
     { "show-pref", '\0', 0, G_OPTION_ARG_INT, &show_pref, N_("Open preference dialog. 'n' is number of the page you want to show (1, 2, 3...)."), "n" },
     { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
     { "no-desktop", '\0', 0, G_OPTION_ARG_NONE, &no_desktop, N_("No function. Just to be compatible with nautilus"), NULL },
     {G_OPTION_REMAINING, 0, 0, G_OPTION_ARG_FILENAME_ARRAY, &files_to_open, NULL, N_("[FILE1, FILE2,...]")},
     { NULL }
 };
+
+static const char* valid_wallpaper_modes[] = {"color", "stretch", "fit", "center", "tile"};
 
 static gboolean single_instance_check();
 static void single_instance_finalize();
@@ -168,11 +172,12 @@ inline static GByteArray* args_to_ipc_buf()
     buf_append_str(buf, ipc_cwd);
     g_free(ipc_cwd);
 
-    g_byte_array_append(buf, (guint8*)&new_tab, sizeof(new_tab));
+    /* g_byte_array_append(buf, (guint8*)&new_tab, sizeof(new_tab)); */
     g_byte_array_append(buf, (guint8*)&show_desktop, sizeof(show_desktop));
     g_byte_array_append(buf, (guint8*)&desktop_off, sizeof(desktop_off));
     g_byte_array_append(buf, (guint8*)&desktop_pref, sizeof(desktop_pref));
     buf_append_str(buf, set_wallpaper);
+    buf_append_str(buf, wallpaper_mode);
     g_byte_array_append(buf, (guint8*)&show_pref, sizeof(show_pref));
     g_byte_array_append(buf, (guint8*)&find_files, sizeof(find_files));
     g_byte_array_append(buf, (guint8*)&no_desktop, sizeof(no_desktop));
@@ -221,18 +226,20 @@ inline static void ipc_buf_to_args(GByteArray* buf)
     int i, len;
     char* p = buf->data;
     char* cwd = buf_read_str(&p);
-    new_tab = buf_read_bool(&p);
+    /* new_tab = buf_read_bool(&p); */
     show_desktop = buf_read_bool(&p);
     desktop_off = buf_read_bool(&p);
     desktop_pref = buf_read_bool(&p);
     g_free(set_wallpaper);
     set_wallpaper = buf_read_str(&p);
+    g_free(wallpaper_mode);
+    wallpaper_mode = buf_read_str(&p);
     show_pref = buf_read_int(&p);
     find_files = buf_read_bool(&p);
     no_desktop = buf_read_bool(&p);
 
     len = buf_read_int(&p);
-    g_debug("len = %d", len);
+    /* g_debug("len = %d", len); */
     if(len > 0)
     {
         files_to_open = g_new(char*, len + 1);
@@ -416,22 +423,57 @@ gboolean pcmanfm_run()
             desktop_pref = FALSE;
             return TRUE;
         }
-        else if(set_wallpaper)
+        else
         {
-            /* g_debug("\'%s\'", set_wallpaper); */
-            /* Make sure this is a support image file. */
-            if(gdk_pixbuf_get_file_info(set_wallpaper, NULL, NULL))
+            gboolean need_to_exit = (wallpaper_mode || set_wallpaper);
+            gboolean wallpaper_changed = FALSE;
+            if(set_wallpaper) /* a new wallpaper is assigned */
             {
-                if(app_config->wallpaper)
-                    g_free(app_config->wallpaper);
-                app_config->wallpaper = set_wallpaper;
-                set_wallpaper = NULL;
-                if(app_config->wallpaper_mode == FM_WP_COLOR)
-                    app_config->wallpaper_mode = FM_WP_FIT;
+                /* g_debug("\'%s\'", set_wallpaper); */
+                /* Make sure this is a support image file. */
+                if(gdk_pixbuf_get_file_info(set_wallpaper, NULL, NULL))
+                {
+                    if(app_config->wallpaper)
+                        g_free(app_config->wallpaper);
+                    app_config->wallpaper = set_wallpaper;
+                    set_wallpaper = NULL;
+                    if(! wallpaper_mode) /* if wallpaper mode is not specified */
+                    {
+                        /* do not use solid color mode; otherwise wallpaper won't be shown. */
+                        if(app_config->wallpaper_mode == FM_WP_COLOR)
+                            app_config->wallpaper_mode = FM_WP_FIT;
+                    }
+                    wallpaper_changed = TRUE;
+                }
+            }
+
+            if(wallpaper_mode)
+            {
+                int i = 0;
+                for(i = 0; i < G_N_ELEMENTS(valid_wallpaper_modes); ++i)
+                {
+                    if(strcmp(valid_wallpaper_modes[i], wallpaper_mode) == 0)
+                    {
+                        if(i != app_config->wallpaper_mode)
+                        {
+                            app_config->wallpaper_mode = i;
+                            wallpaper_changed = TRUE;
+                        }
+                        break;
+                    }
+                }
+                g_free(wallpaper_mode);
+                wallpaper_mode = NULL;
+            }
+
+            if(wallpaper_changed)
+            {
                 fm_config_emit_changed(FM_CONFIG(app_config), "wallpaper");
                 fm_app_config_save(app_config, config_name);
             }
-            return FALSE;
+
+            if(need_to_exit)
+                return FALSE;
         }
     }
 
