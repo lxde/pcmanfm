@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-25 17:28+0800\n"
+"POT-Creation-Date: 2010-04-28 02:32+0800\n"
 "PO-Revision-Date: 2010-04-16 19:27+0200\n"
 "Last-Translator: Julius Vitkauskas <zadintuvas@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -595,10 +595,7 @@ msgid ""
 msgstr ""
 "Atverti nustatymų dialogą. 'n' yra rodomo puslapio pavadinimas (1, 2, 3...)."
 
-#: ../src/pcmanfm.c:80
-msgid "Open Find Files utility"
-msgstr "Atverti failų paieškos programą"
-
+#. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
 #: ../src/pcmanfm.c:81
 msgid "No function. Just to be compatible with nautilus"
 msgstr "Jokios funkcijos. Reikalinga tik suderinamumui su nautilus"
@@ -622,6 +619,9 @@ msgstr "Įveskite naujo failo pavadinimą:"
 #: ../src/pcmanfm.c:628
 msgid "New"
 msgstr "Nauja"
+
+#~ msgid "Open Find Files utility"
+#~ msgstr "Atverti failų paieškos programą"
 
 #~ msgid ""
 #~ "Open folders in new tabs of the last used window instead of creating new "

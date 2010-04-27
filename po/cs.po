@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-25 17:28+0800\n"
+"POT-Creation-Date: 2010-04-28 02:32+0800\n"
 "PO-Revision-Date: 2010-04-01 23:30+0100\n"
 "Last-Translator: Radek Tříška <radek@fastlinux.eu>\n"
 "Language-Team: Czech <radek@fastlinux.eu>\n"
@@ -597,10 +597,7 @@ msgid ""
 msgstr ""
 "Otevře dialog nastavení. 'n' je počet stránek pro zobrazení (1,2,3...)."
 
-#: ../src/pcmanfm.c:80
-msgid "Open Find Files utility"
-msgstr "Otevřít nástroj pro hledání souborů"
-
+#. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
 #: ../src/pcmanfm.c:81
 msgid "No function. Just to be compatible with nautilus"
 msgstr "Bez funkce. Pouze pro kompatibilitu s programem nautilus"
@@ -624,6 +621,9 @@ msgstr "Vložte název nově vytvořeného souboru:"
 #: ../src/pcmanfm.c:628
 msgid "New"
 msgstr "Nový"
+
+#~ msgid "Open Find Files utility"
+#~ msgstr "Otevřít nástroj pro hledání souborů"
 
 #~ msgid ""
 #~ "Open folders in new tabs of the last used window instead of creating new "

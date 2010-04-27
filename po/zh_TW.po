@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-25 17:28+0800\n"
+"POT-Creation-Date: 2010-04-28 02:32+0800\n"
 "PO-Revision-Date: 2010-03-20 17:09+0800\n"
 "Last-Translator: 洪任諭 <pcman.tw@gmail.com>\n"
 "Language-Team: zh_TW <zh_TW@li.org>\n"
@@ -597,10 +597,7 @@ msgid ""
 "3...)."
 msgstr "開啟偏好設定對話框，'n' 是你要顯示的頁面(1, 2, 3...)"
 
-#: ../src/pcmanfm.c:80
-msgid "Open Find Files utility"
-msgstr "開啟尋找檔案工具"
-
+#. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
 #: ../src/pcmanfm.c:81
 msgid "No function. Just to be compatible with nautilus"
 msgstr "沒有功能，只是用來和 nautilus 保持相容"
@@ -624,3 +621,6 @@ msgstr "輸入新建立檔案的名稱："
 #: ../src/pcmanfm.c:628
 msgid "New"
 msgstr "新增"
+
+#~ msgid "Open Find Files utility"
+#~ msgstr "開啟尋找檔案工具"

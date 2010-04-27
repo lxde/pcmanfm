@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PCManFM2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-25 17:28+0800\n"
+"POT-Creation-Date: 2010-04-28 02:32+0800\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Matej Gačnik <paxmanpwnz@gmail.com>\n"
 "Language-Team: paxman <paxmanpwnz@gmail.com>\n"
@@ -597,10 +597,7 @@ msgstr ""
 "Odpre nastavitveni dialog. 'n' je število strani, kolikor naj jih bo "
 "prikazanih (1, 2, 3,...)"
 
-#: ../src/pcmanfm.c:80
-msgid "Open Find Files utility"
-msgstr "Odpri iskanje"
-
+#. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
 #: ../src/pcmanfm.c:81
 msgid "No function. Just to be compatible with nautilus"
 msgstr "Brez funkcije; za kompatibilnost z Nautilusom."
@@ -624,6 +621,9 @@ msgstr "Vnesite ime nove datoteke:"
 #: ../src/pcmanfm.c:628
 msgid "New"
 msgstr "Nov"
+
+#~ msgid "Open Find Files utility"
+#~ msgstr "Odpri iskanje"
 
 #~ msgid ""
 #~ "Open folders in new tabs of the last used window instead of creating new "

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-25 17:28+0800\n"
+"POT-Creation-Date: 2010-04-28 02:32+0800\n"
 "PO-Revision-Date: 2010-03-19 12:20-0000\n"
 "Last-Translator: Sérgio Marques <smarquespt@gmail.com>\n"
 "Language-Team: \n"
@@ -603,10 +603,7 @@ msgstr ""
 "Abrir diálogo de preferências. 'n' é o número da página que quer mostrar (1, "
 "2, 3...)."
 
-#: ../src/pcmanfm.c:80
-msgid "Open Find Files utility"
-msgstr "Abrir Procura de Ficheiros"
-
+#. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
 #: ../src/pcmanfm.c:81
 msgid "No function. Just to be compatible with nautilus"
 msgstr "Sem função. Apenas para compatibilidade com nautilus"
@@ -630,6 +627,9 @@ msgstr "Indique o nome do ficheiro agora criado:"
 #: ../src/pcmanfm.c:628
 msgid "New"
 msgstr "Novo"
+
+#~ msgid "Open Find Files utility"
+#~ msgstr "Abrir Procura de Ficheiros"
 
 #~ msgid ""
 #~ "Open folders in new tabs of the last used window instead of creating new "

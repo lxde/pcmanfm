@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm 0.9\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-25 17:28+0800\n"
+"POT-Creation-Date: 2010-04-28 02:32+0800\n"
 "PO-Revision-Date: 2010-04-11 13:33+0100\n"
 "Last-Translator: Lutz Thuns <lOtz1009@opensuse.org>\n"
 "Language-Team: German\n"
@@ -606,10 +606,7 @@ msgstr ""
 "Einstellungen öffnen,  wobei 'n' der Reiter ist, den Sie anzeigen möchten "
 "(1, 2, 3 ...)."
 
-#: ../src/pcmanfm.c:80
-msgid "Open Find Files utility"
-msgstr "Mit PCManFM nach Dateien suchen"
-
+#. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
 #: ../src/pcmanfm.c:81
 msgid "No function. Just to be compatible with nautilus"
 msgstr "Keine Funktion. Nur um kompatibel zu nautilus zu sein"
@@ -633,6 +630,9 @@ msgstr "Namen der neuen Datei eingeben:"
 #: ../src/pcmanfm.c:628
 msgid "New"
 msgstr "Neu"
+
+#~ msgid "Open Find Files utility"
+#~ msgstr "Mit PCManFM nach Dateien suchen"
 
 #~ msgid ""
 #~ "Open folders in new tabs of the last used window instead of creating new "

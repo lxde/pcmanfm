@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PCMan File Manager 0.3.6\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-25 17:28+0800\n"
+"POT-Creation-Date: 2010-04-28 02:32+0800\n"
 "PO-Revision-Date: 2010-01-31 02:05+0100\n"
 "Last-Translator: SZERVÁC Attila <sas@321.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -621,10 +621,7 @@ msgstr ""
 "Tulajdonságok ablak megnyitása. 'n' a lap száma amit szeretnél megjeleníteni "
 "(1, 2, 3...)."
 
-#: ../src/pcmanfm.c:80
-msgid "Open Find Files utility"
-msgstr "Fájlkereső megnyitása"
-
+#. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
 #: ../src/pcmanfm.c:81
 msgid "No function. Just to be compatible with nautilus"
 msgstr "Nincs funkciója csak a Nautilus-kompatibilitást nyújtja"
@@ -649,6 +646,9 @@ msgstr "Adj nevet az új fájlnak:"
 #: ../src/pcmanfm.c:628
 msgid "New"
 msgstr "Új"
+
+#~ msgid "Open Find Files utility"
+#~ msgstr "Fájlkereső megnyitása"
 
 #~ msgid ""
 #~ "Open folders in new tabs of the last used window instead of creating new "

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm 0.9.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-25 17:28+0800\n"
+"POT-Creation-Date: 2010-04-28 02:32+0800\n"
 "PO-Revision-Date: 2010-03-27 15:45+0100\n"
 "Last-Translator: Yorvyk <yorvik.ubunto@googlemail.com>\n"
 "Language-Team: English en_GB\n"
@@ -597,10 +597,7 @@ msgstr ""
 "Open preference dialogue. 'n' is number of the page you want to show (1, 2, "
 "3...)"
 
-#: ../src/pcmanfm.c:80
-msgid "Open Find Files utility"
-msgstr "Open Find Files utility"
-
+#. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
 #: ../src/pcmanfm.c:81
 msgid "No function. Just to be compatible with nautilus"
 msgstr "No function. Just to be compatible with nautilus"
@@ -624,6 +621,9 @@ msgstr "Enter a name for the newly created file:"
 #: ../src/pcmanfm.c:628
 msgid "New"
 msgstr "New"
+
+#~ msgid "Open Find Files utility"
+#~ msgstr "Open Find Files utility"
 
 #~ msgid ""
 #~ "Open folders in new tabs of the last used window instead of creating new "
