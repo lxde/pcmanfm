@@ -8,14 +8,16 @@ msgstr ""
 "Project-Id-Version: pcmanfm2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-04-28 02:32+0800\n"
-"PO-Revision-Date: 2010-03-24 19:41+0100\n"
-"Last-Translator: Grzegorz Gibas <amigib@gmail.com>\n"
+"PO-Revision-Date: 2010-04-29 02:37+0200\n"
+"Last-Translator: Artur <mazdac@gmail.com>\n"
 "Language-Team: \n"
+"Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
+"X-Generator: Pootle 2.0.1\n"
 "X-Poedit-Language: Polish\n"
 
 #: ../data/ui/about.glade.in.h:1
@@ -589,10 +591,12 @@ msgstr "<plik obrazu>"
 #: ../src/pcmanfm.c:78
 msgid "Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"
 msgstr ""
+"Ustaw sposób wyświetlania tła. "
+"<sposób>=(kolor|rozciągnięcie|dopasowanie|centrowanie|kafelki)"
 
 #: ../src/pcmanfm.c:78
 msgid "<mode>"
-msgstr ""
+msgstr "<sposób>"
 
 #: ../src/pcmanfm.c:79
 msgid ""
