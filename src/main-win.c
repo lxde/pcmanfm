@@ -174,6 +174,22 @@ static gboolean open_folder_func(GAppLaunchContext* ctx, GList* folder_infos, gp
     return TRUE;
 }
 
+static FmJobErrorAction on_query_target_info_error(FmJob* job, GError* err, FmJobErrorSeverity severity, FmMainWin* win)
+{
+    if(err->domain == G_IO_ERROR)
+    {
+        if(err->code == G_IO_ERROR_NOT_MOUNTED)
+        {
+            if(fm_mount_path(win, fm_file_info_job_get_current(job), TRUE))
+                return FM_JOB_RETRY;
+        }
+        else if(err->code == G_IO_ERROR_FAILED_HANDLED)
+            return FM_JOB_CONTINUE;
+    }
+    fm_show_error(win, err->message);
+    return FM_JOB_CONTINUE;
+}
+
 static void on_file_clicked(FmFolderView* fv, FmFolderViewClickType type, FmFileInfo* fi, FmMainWin* win)
 {
     switch(type)
@@ -184,14 +200,26 @@ static void on_file_clicked(FmFolderView* fv, FmFolderViewClickType type, FmFile
         else if(fm_file_info_get_target(fi) && !fm_file_info_is_symlink(fi))
         {
             /* symlinks also has fi->target, but we only handle shortcuts here. */
-            if(fm_file_info_is_dir(fi))
-                fm_main_win_chdir_by_name( win, fm_file_info_get_target(fi));
-            else
+            FmFileInfo* target_fi;
+            FmPath* real_path = fm_path_new(fm_file_info_get_target(fi));
+            /* query the info of target */
+            FmJob* job = fm_file_info_job_new(NULL, 0);
+            fm_file_info_job_add(job, real_path);
+            g_signal_connect(job, "error", G_CALLBACK(on_query_target_info_error), win);
+            fm_job_run_sync_with_mainloop(job);
+            target_fi = FM_FILE_INFO(fm_list_peek_head(FM_FILE_INFO_JOB(job)->file_infos));
+            if(target_fi)
+                fm_file_info_ref(target_fi);
+            g_object_unref(job);
+            if(target_fi)
             {
-                FmPath* real_path = fm_path_new(fm_file_info_get_target(fi));
-                fm_launch_path_simple(win, NULL, real_path, open_folder_func, win);
-                fm_path_unref(real_path);
+                if(fm_file_info_is_dir(target_fi))
+                    fm_main_win_chdir( win, real_path);
+                else
+                    fm_launch_path_simple(win, NULL, real_path, open_folder_func, win);
+                fm_path_unref(target_fi);
             }
+            fm_path_unref(real_path);
         }
         else
             fm_launch_file_simple(GTK_WINDOW(win), NULL, fi, open_folder_func, win);
