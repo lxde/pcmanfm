@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-04-28 02:32+0800\n"
-"PO-Revision-Date: 2010-04-18 00:03+0200\n"
+"PO-Revision-Date: 2010-05-04 12:46+0200\n"
 "Last-Translator: Gunleif <gunleif@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: fo\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: fo\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.0.1\n"
 
@@ -104,9 +104,10 @@ msgstr "Vís \"Míni skjøl\" ímynd á skriviborðinum"
 msgid "Show \"Trash Bin\" icon on desktop"
 msgstr "Vís \"Ruskspann\" ímynd á skriviborðinum"
 
+# á enskum volume, á donskum arkiv
 #: ../data/ui/desktop-pref.glade.h:18
 msgid "Show icons of volumes on desktop"
-msgstr ""
+msgstr "Vís ímyndir av skjalasøvnum á skriviborðinum"
 
 #: ../data/ui/desktop-pref.glade.h:19
 msgid "Show menus provided by window managers when desktop is clicked"
@@ -170,7 +171,7 @@ msgstr "Bókamerki:"
 
 #: ../data/ui/pref.glade.h:11
 msgid "Compact View"
-msgstr ""
+msgstr "Stappað vísing"
 
 #: ../data/ui/pref.glade.h:12
 msgid "Confirm before deleting files"
@@ -199,11 +200,11 @@ msgstr "Fjal 'Sløkk teig' knappar"
 
 #: ../data/ui/pref.glade.h:19
 msgid "Hide folder content border"
-msgstr ""
+msgstr "Fjal skjáttu-innihaldsrammu"
 
 #: ../data/ui/pref.glade.h:20
 msgid "Hide side pane buttons"
-msgstr ""
+msgstr "Fjal síðupanelsknappar"
 
 #: ../data/ui/pref.glade.h:21
 msgid "Icon View"
@@ -211,7 +212,7 @@ msgstr "Ímyndavísan"
 
 #: ../data/ui/pref.glade.h:22
 msgid "Mount mountable volumes automatically on program startup"
-msgstr ""
+msgstr "Íset ísetilig skjalasøvn sjálvvirkandi við forritsbyrjan"
 
 #: ../data/ui/pref.glade.h:23
 msgid "Mount removable media automatically when they are inserted"
@@ -259,7 +260,7 @@ msgstr "Stødd á stórum ímyndum:"
 
 #: ../data/ui/pref.glade.h:34
 msgid "Size of side pane icons:"
-msgstr ""
+msgstr "Stødd á síðupanelsímyndum:"
 
 #: ../data/ui/pref.glade.h:35
 msgid "Size of small icons:"
@@ -370,9 +371,8 @@ msgid "Open in New Tab"
 msgstr "Lat upp í nýggjum teigi"
 
 #: ../src/desktop-ui.c:89 ../src/main-win-ui.c:219
-#, fuzzy
 msgid "Open in New Window"
-msgstr "Lat upp í nýggjum rúti"
+msgstr "Lat upp í nýggjum glugga"
 
 #: ../src/desktop-ui.c:91 ../src/main-win-ui.c:221
 msgid "Open in _Terminal"
