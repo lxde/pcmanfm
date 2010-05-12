@@ -2,12 +2,12 @@
 # Copyright (C) 2010 the LXDE team
 # This file is distributed under the same license as the pcmanfm2 package.
 # Hugo Florentino <sysadmin@cips.cu>, 2010.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm2 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-28 02:32+0800\n"
+"POT-Creation-Date: 2010-05-11 06:57+0000\n"
 "PO-Revision-Date: 2010-02-09 13:26-0500\n"
 "Last-Translator: Hugo Florentino <sysadmin@cips.cu>\n"
 "Language-Team: \n"
@@ -188,8 +188,7 @@ msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
 "%s = the command line you want to execute with terminal or su."
 msgstr ""
-"Ejemplos: \"xterm -e %s\" para la terminal o \"gksu %s\" para cambiar de "
-"usuario.\n"
+"Ejemplos: \"xterm -e %s\" para la terminal o \"gksu %s\" para cambiar de usuario.\n"
 "%s = la línea de comando que desea ejecutar con terminal o su."
 
 #: ../data/ui/pref.glade.h:18
@@ -218,9 +217,7 @@ msgstr "Montar medios extraíbles automáticamente cuando se inserten"
 
 #: ../data/ui/pref.glade.h:24
 msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
-msgstr ""
-"Mover los archivos eliminados a \"Papelera\" en lugar de eliminarlos del "
-"disco"
+msgstr "Mover los archivos eliminados a \"Papelera\" en lugar de eliminarlos del disco"
 
 #: ../data/ui/pref.glade.h:25
 msgid "Only show thumbnails for local files"
@@ -248,8 +245,7 @@ msgstr "Preferencias"
 
 #: ../data/ui/pref.glade.h:31
 msgid "Show available options for removable media when they are inserted"
-msgstr ""
-"Mostrar opciones disponibles para los medios extraíbles cuando se inserten"
+msgstr "Mostrar opciones disponibles para los medios extraíbles cuando se inserten"
 
 #: ../data/ui/pref.glade.h:32
 msgid "Show thumbnails of files"
@@ -437,15 +433,15 @@ msgstr "_Ir"
 
 #: ../src/main-win-ui.c:150
 msgid "Previous Folder"
-msgstr "Carpeta anterior"
+msgstr "Carpeta Anterior"
 
 #: ../src/main-win-ui.c:151
 msgid "Next Folder"
-msgstr "Carpeta siguiente"
+msgstr "Carpeta Siguiente"
 
 #: ../src/main-win-ui.c:152
 msgid "Parent Folder"
-msgstr "Carpeta superior"
+msgstr "Carpeta Superior"
 
 #: ../src/main-win-ui.c:152
 msgid "Go to parent Folder"
@@ -527,20 +523,20 @@ msgstr "Vista de _miniaturas"
 msgid "Detailed _List View"
 msgstr "Vista _detallada"
 
-#: ../src/main-win.c:524
+#: ../src/main-win.c:552
 msgid "You are in super user mode"
 msgstr "Está en modo de super usuario"
 
-#: ../src/main-win.c:623
+#: ../src/main-win.c:651
 msgid "Switch user command is not set."
 msgstr "No se ha establecido el comando para cambiar de usuario."
 
-#: ../src/main-win.c:930
+#: ../src/main-win.c:958
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Espacio libre: %s (Total: %s)"
 
-#: ../src/main-win.c:1146
+#: ../src/main-win.c:1174
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -551,11 +547,12 @@ msgstr ""
 "'%s'\n"
 "Introduzca in nombre para el nuevo marcador:"
 
-#: ../src/main-win.c:1150
+#: ../src/main-win.c:1178
 msgid "Add to Bookmarks"
 msgstr "Añadir a los marcadores"
 
-#. { "new-tab", 't', 0, G_OPTION_ARG_NONE, &new_tab, N_("Open folders in new tabs of the last used window instead of creating new windows"), NULL },
+#. { "new-tab", 't', 0, G_OPTION_ARG_NONE, &new_tab, N_("Open folders in new
+#. tabs of the last used window instead of creating new windows"), NULL },
 #: ../src/pcmanfm.c:72
 msgid "Name of configuration profile"
 msgstr "Nombre del perfil de configuración"
@@ -586,23 +583,18 @@ msgstr "<archivo de imagen>"
 
 #: ../src/pcmanfm.c:78
 msgid "Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"
-msgstr ""
-"Establecer el modo del tapiz de escritorio. <modo>=(color|estirar|ajustar|"
-"centrar|mosaico)"
+msgstr "Establecer el modo del tapiz de escritorio. <modo>=(color|estirar|ajustar|centrar|mosaico)"
 
 #: ../src/pcmanfm.c:78
 msgid "<mode>"
 msgstr "<modo>"
 
 #: ../src/pcmanfm.c:79
-msgid ""
-"Open preference dialog. 'n' is number of the page you want to show (1, 2, "
-"3...)."
-msgstr ""
-"Abrir la pantalla de preferencias. 'n' es el número de la página que desea "
-"mostrar (1, 2, 3...)."
+msgid "Open preference dialog. 'n' is number of the page you want to show (1, 2, 3...)."
+msgstr "Abrir la pantalla de preferencias. 'n' es el número de la página que desea mostrar (1, 2, 3...)."
 
-#. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
+#. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files
+#. utility"), NULL },
 #: ../src/pcmanfm.c:81
 msgid "No function. Just to be compatible with nautilus"
 msgstr "Sin funcionalidad. Sólo para compatibilidad con nautilus"
@@ -611,31 +603,27 @@ msgstr "Sin funcionalidad. Sólo para compatibilidad con nautilus"
 msgid "[FILE1, FILE2,...]"
 msgstr "[ARCHIVO1, ARCHIVO2, ...]"
 
-#: ../src/pcmanfm.c:585
+#: ../src/pcmanfm.c:590
 msgid "Terminal emulator is not set."
 msgstr "No se ha establecido el emulador de terminal."
 
-#: ../src/pcmanfm.c:628
+#: ../src/pcmanfm.c:633
 msgid "Create New..."
 msgstr "Crear nuevo..."
 
-#: ../src/pcmanfm.c:628
+#: ../src/pcmanfm.c:633
 msgid "Enter a name for the newly created file:"
 msgstr "Introduzca un nombre para el archivo recién creado:"
 
-#: ../src/pcmanfm.c:628
+#: ../src/pcmanfm.c:633
 msgid "New"
 msgstr "Nuevo"
 
 #~ msgid "Open Find Files utility"
 #~ msgstr "Abrir la utilidad de búsqueda de archivos"
 
-#~ msgid ""
-#~ "Open folders in new tabs of the last used window instead of creating new "
-#~ "windows"
-#~ msgstr ""
-#~ "Abrir las carpetas en nuevas pestañas de la última ventana utilizada, en "
-#~ "lugar de crear nuevas ventanas"
+#~ msgid "Open folders in new tabs of the last used window instead of creating new windows"
+#~ msgstr "Abrir las carpetas en nuevas pestañas de la última ventana utilizada, en lugar de crear nuevas ventanas"
 
 #~ msgid "Display image files with supported format as thumbnails"
 #~ msgstr "Mostrar como miniaturas los archivos de imagen admitidos"
