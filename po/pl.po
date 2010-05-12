@@ -7,16 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-28 02:32+0800\n"
-"PO-Revision-Date: 2010-04-29 02:37+0200\n"
-"Last-Translator: Artur <mazdac@gmail.com>\n"
+"POT-Creation-Date: 2010-05-10 04:20+0000\n"
+"PO-Revision-Date: 2010-05-11 23:30+0100\n"
+"Last-Translator: Piotr Sokół <psokol@jabster.pl>\n"
 "Language-Team: \n"
-"Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
-"|| n%100>=20) ? 1 : 2);\n"
+"Language: pl\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Pootle 2.0.1\n"
 "X-Poedit-Language: Polish\n"
 
@@ -38,8 +37,8 @@ msgstr ""
 #: ../data/ui/about.glade.in.h:6
 msgid "translator-credits"
 msgstr ""
-"Piotr Sokół <piotr.sokol@10g.pl> 2010 & Grzegorz Gibas <amigib@gmail.com> "
-"2010"
+"Piotr Sokół <psokol@jabster.pl> 2010\n"
+"Grzegorz Gibas <amigib@gmail.com> 2010"
 
 #: ../data/ui/desktop-pref.glade.h:1
 msgid "<b>Background</b>"
@@ -65,7 +64,8 @@ msgstr "Wygląd"
 msgid "Background color:"
 msgstr "Kolor tła:"
 
-#: ../data/ui/desktop-pref.glade.h:7 ../data/ui/pref.glade.h:10
+#: ../data/ui/desktop-pref.glade.h:7
+#: ../data/ui/pref.glade.h:10
 msgid "Center on the screen"
 msgstr "Środek ekranu"
 
@@ -81,7 +81,8 @@ msgstr "Kolor cienia:"
 msgid "Desktop Icons"
 msgstr "Ikony pulpitu"
 
-#: ../data/ui/desktop-pref.glade.h:11 ../src/desktop-ui.c:58
+#: ../data/ui/desktop-pref.glade.h:11
+#: ../src/desktop-ui.c:58
 msgid "Desktop Preferences"
 msgstr "Preferencje pulpitu"
 
@@ -117,15 +118,18 @@ msgstr "Wyświetlanie ikon wolumenów na pulpicie"
 msgid "Show menus provided by window managers when desktop is clicked"
 msgstr "Pokaż menu menedżera okien przy klikaniu w pulpit"
 
-#: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:37
+#: ../data/ui/desktop-pref.glade.h:20
+#: ../data/ui/pref.glade.h:37
 msgid "Stretch to fill the entire screen"
 msgstr "Rozciągnij na cały ekran"
 
-#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:38
+#: ../data/ui/desktop-pref.glade.h:21
+#: ../data/ui/pref.glade.h:38
 msgid "Stretch to fit the screen"
 msgstr "Rozciągnij na ekran"
 
-#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:42
+#: ../data/ui/desktop-pref.glade.h:22
+#: ../data/ui/pref.glade.h:42
 msgid "Tile the image to fill the entire screen"
 msgstr "Rozciągnij obraz, żeby wypełnił cały ekran"
 
@@ -167,7 +171,7 @@ msgstr "Zawsze pokazuj karty"
 
 #: ../data/ui/pref.glade.h:8
 msgid "Archiver integration:"
-msgstr "Integracja archiwizera:"
+msgstr "Archiwizer:"
 
 #: ../data/ui/pref.glade.h:9
 msgid "Bookmarks:"
@@ -179,7 +183,7 @@ msgstr "Widok zwarty"
 
 #: ../data/ui/pref.glade.h:12
 msgid "Confirm before deleting files"
-msgstr "Wyświetlanie pytania przez usunięciem plików"
+msgstr "Wyświetlanie pytania przed usuwaniem plików"
 
 #: ../data/ui/pref.glade.h:13
 msgid "Detailed List View"
@@ -195,8 +199,7 @@ msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
 "%s = the command line you want to execute with terminal or su."
 msgstr ""
-"Przykłady: \"xterm -e %s\" dla terminala lub \"gksu %s\" by przełączyć "
-"użytkownika.\n"
+"Przykłady: \"xterm -e %s\" dla terminala lub \"gksu %s\" by przełączyć użytkownika.\n"
 "%s = polecenie, które chcesz wykonać w terminale lub przy użyciu su."
 
 #: ../data/ui/pref.glade.h:18
@@ -217,15 +220,15 @@ msgstr "Widok ikon"
 
 #: ../data/ui/pref.glade.h:22
 msgid "Mount mountable volumes automatically on program startup"
-msgstr "Montuj urządzenia przenośne przy starcie programu"
+msgstr "Montowanie wolumenów podczas uruchamiania programu"
 
 #: ../data/ui/pref.glade.h:23
 msgid "Mount removable media automatically when they are inserted"
-msgstr "Montuj urządzenia przenośne automatycznie po włożeniu"
+msgstr "Montowanie nośników wymiennych po wsunięciu"
 
 #: ../data/ui/pref.glade.h:24
 msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
-msgstr "Przenoszenie plików do kosza zamiast usuwania ich z dysku"
+msgstr "Przenoszenie plików do kosza zamiast usuwania"
 
 #: ../data/ui/pref.glade.h:25
 msgid "Only show thumbnails for local files"
@@ -253,7 +256,7 @@ msgstr "Preferencje"
 
 #: ../data/ui/pref.glade.h:31
 msgid "Show available options for removable media when they are inserted"
-msgstr "Pokaż dostępne opcje dla urządzeń przenośnych po ich włożeniu"
+msgstr "Wyświetlanie możliwych czynności po wsunięciu nośników wymiennych"
 
 #: ../data/ui/pref.glade.h:32
 msgid "Show thumbnails of files"
@@ -277,7 +280,7 @@ msgstr "Rozmiar miniatur:"
 
 #: ../data/ui/pref.glade.h:39
 msgid "Switch user command:"
-msgstr "Polecenie zmiany użytkownika"
+msgstr "Zmiana użytkownika:"
 
 #: ../data/ui/pref.glade.h:40
 msgid "Terminal emulator:"
@@ -293,7 +296,7 @@ msgstr "Użyj dziesiętnych prefiksów SI zamiast binarnych IEC"
 
 #: ../data/ui/pref.glade.h:44
 msgid "View Mode:"
-msgstr "Widok:"
+msgstr "Tryb:"
 
 #: ../data/ui/pref.glade.h:45
 msgid "_Advanced"
@@ -313,7 +316,7 @@ msgstr "_Zarządzanie wolumenami"
 
 #: ../data/ui/autorun.glade.h:1
 msgid "<b>Removable medium is inserted</b>"
-msgstr "<b>Urządzenie pzenośne jest włożone</b>"
+msgstr "<b>Nośnik wymienny jest wsunięty</b>"
 
 #: ../data/ui/autorun.glade.h:2
 msgid "Detecting..."
@@ -321,11 +324,11 @@ msgstr "Wykrywanie..."
 
 #: ../data/ui/autorun.glade.h:3
 msgid "Please select the action you want to perform:"
-msgstr "Proszę wybrać akcję, którą chcesz wykonać:"
+msgstr "Proszę wybrać czynność:"
 
 #: ../data/ui/autorun.glade.h:4
 msgid "Removable medium is inserted"
-msgstr "Urządzenie przenośne jest włożone"
+msgstr "Nośnik wymienny został wsunięty"
 
 #: ../data/ui/autorun.glade.h:5
 msgid "Type of medium:"
@@ -343,11 +346,13 @@ msgstr "Otwórz w nowej karcie"
 msgid "_Invert Selection"
 msgstr "Odwróć zaznaczenie"
 
-#: ../src/desktop-ui.c:54 ../src/main-win-ui.c:146
+#: ../src/desktop-ui.c:54
+#: ../src/main-win-ui.c:146
 msgid "_Sort Files"
 msgstr "_Sortowanie"
 
-#: ../src/desktop-ui.c:56 ../src/main-win-ui.c:172
+#: ../src/desktop-ui.c:56
+#: ../src/main-win-ui.c:172
 msgid "Folder"
 msgstr "Katalog"
 
@@ -355,33 +360,40 @@ msgstr "Katalog"
 msgid "Blank File"
 msgstr "Pusty plik"
 
-#: ../src/desktop-ui.c:69 ../src/main-win-ui.c:198
+#: ../src/desktop-ui.c:69
+#: ../src/main-win-ui.c:198
 msgid "By _Name"
 msgstr "Według _nazwy"
 
-#: ../src/desktop-ui.c:70 ../src/main-win-ui.c:199
+#: ../src/desktop-ui.c:70
+#: ../src/main-win-ui.c:199
 msgid "By _Modification Time"
 msgstr "Według czasu _modyfikacji"
 
-#: ../src/desktop-ui.c:71 ../src/main-win-ui.c:200
+#: ../src/desktop-ui.c:71
+#: ../src/main-win-ui.c:200
 msgid "By _Size"
 msgstr "Według _rozmiaru"
 
-#: ../src/desktop-ui.c:72 ../src/main-win-ui.c:201
+#: ../src/desktop-ui.c:72
+#: ../src/main-win-ui.c:201
 msgid "By File _Type"
 msgstr "Według _typu"
 
-#: ../src/desktop-ui.c:88 ../src/main-win-ui.c:218
+#: ../src/desktop-ui.c:88
+#: ../src/main-win-ui.c:218
 msgid "Open in New Tab"
 msgstr "Otwórz w nowej karcie"
 
-#: ../src/desktop-ui.c:89 ../src/main-win-ui.c:219
+#: ../src/desktop-ui.c:89
+#: ../src/main-win-ui.c:219
 msgid "Open in New Window"
 msgstr "Otwórz w nowym oknie"
 
-#: ../src/desktop-ui.c:91 ../src/main-win-ui.c:221
+#: ../src/desktop-ui.c:91
+#: ../src/main-win-ui.c:221
 msgid "Open in _Terminal"
-msgstr "Otwórz bieżący katalog w _terminalu"
+msgstr "Otwórz w _terminalu"
 
 #: ../src/main-win-ui.c:128
 msgid "_File"
@@ -441,7 +453,7 @@ msgstr "P_rzejdź"
 
 #: ../src/main-win-ui.c:150
 msgid "Previous Folder"
-msgstr "Poprzedni folder"
+msgstr "Wstecz"
 
 #: ../src/main-win-ui.c:151
 msgid "Next Folder"
@@ -449,7 +461,7 @@ msgstr "Naprzód"
 
 #: ../src/main-win-ui.c:152
 msgid "Parent Folder"
-msgstr "Wstecz"
+msgstr "Nadrzędny"
 
 #: ../src/main-win-ui.c:152
 msgid "Go to parent Folder"
@@ -493,7 +505,7 @@ msgstr "_Zakładki"
 
 #: ../src/main-win-ui.c:161
 msgid "Add To Bookmarks"
-msgstr "Nowa zakładka"
+msgstr "Dodaj"
 
 #: ../src/main-win-ui.c:162
 msgid "_Tools"
@@ -531,33 +543,32 @@ msgstr "_Miniatury"
 msgid "Detailed _List View"
 msgstr "_Lista szczegółowa"
 
-#: ../src/main-win.c:524
+#: ../src/main-win.c:552
 msgid "You are in super user mode"
 msgstr "Jesteś w trybie super użytkownika"
 
-#: ../src/main-win.c:623
+#: ../src/main-win.c:651
 msgid "Switch user command is not set."
 msgstr "Polecenie zmiany użytkownika nie zostało ustawione."
 
-#: ../src/main-win.c:930
+#: ../src/main-win.c:958
 #, c-format
 msgid "Free space: %s (Total: %s)"
-msgstr "Wolne miejsce: %s (Ogółem: %s)"
+msgstr "Wolna przestrzeń: %s (Całkowita: %s)"
 
-#: ../src/main-win.c:1146
+#: ../src/main-win.c:1174
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
 "'%s'\n"
 "Enter a name for the new bookmark item:"
 msgstr ""
-"Następujący katalog zostanie dodany do zakładek:\n"
-"„%s”\n"
-"Proszę wprowadzić nazwę nowej zakładki:"
+"Zostanie dodana zakładka do katalogu „%s”.\n"
+"Proszę wprowadzić nazwę zakładki:"
 
-#: ../src/main-win.c:1150
+#: ../src/main-win.c:1178
 msgid "Add to Bookmarks"
-msgstr "Dodaj..."
+msgstr "Nowa zakładka"
 
 #. { "new-tab", 't', 0, G_OPTION_ARG_NONE, &new_tab, N_("Open folders in new tabs of the last used window instead of creating new windows"), NULL },
 #: ../src/pcmanfm.c:72
@@ -574,69 +585,63 @@ msgstr "Wyłącz menedżer pulpitu jeśli jest uruchomiony"
 
 #: ../src/pcmanfm.c:75
 msgid "Run PCManFM as a daemon"
-msgstr "Uruchom PCManFM jako demon"
+msgstr "Uruchamia program jako demon"
 
 #: ../src/pcmanfm.c:76
 msgid "Open desktop preference dialog"
-msgstr "Ustawienia pulpitu"
+msgstr "Otwiera okno preferencji pulpitu"
 
 #: ../src/pcmanfm.c:77
 msgid "Set desktop wallpaper"
-msgstr "Ustaw tło pulpitu"
+msgstr "Ustawia tło pulpitu"
 
 #: ../src/pcmanfm.c:77
 msgid "<image file>"
-msgstr "<plik obrazu>"
+msgstr "<PLIK>"
 
 #: ../src/pcmanfm.c:78
 msgid "Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"
-msgstr ""
-"Ustaw sposób wyświetlania tła. "
-"<sposób>=(kolor|rozciągnięcie|dopasowanie|centrowanie|kafelki)"
+msgstr "Ustawia tryb wyświetlania tła. <TRYB>=(color|stretch|fit|center|tile)"
 
 #: ../src/pcmanfm.c:78
 msgid "<mode>"
-msgstr "<sposób>"
+msgstr "<TRYB>"
 
 #: ../src/pcmanfm.c:79
-msgid ""
-"Open preference dialog. 'n' is number of the page you want to show (1, 2, "
-"3...)."
-msgstr ""
-"Otwiera okno dialogowe preferencji, gdzie „n” jest numerem karty okna (1, 2, "
-"3...)."
+msgid "Open preference dialog. 'n' is number of the page you want to show (1, 2, 3...)."
+msgstr "Otwiera okno dialogowe preferencji, gdzie „n” jest numerem karty okna (1, 2, 3...)."
 
 #. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
 #: ../src/pcmanfm.c:81
 msgid "No function. Just to be compatible with nautilus"
-msgstr "Bez funkcji. Potrzebne tylko do kombatybilności z Nautilusem"
+msgstr "Brak funkcji. Zapewnia kompatybilność z programem Nautilus."
 
 #: ../src/pcmanfm.c:82
 msgid "[FILE1, FILE2,...]"
 msgstr "[PLIK1, PLIK2,...]"
 
-#: ../src/pcmanfm.c:585
+#: ../src/pcmanfm.c:590
 msgid "Terminal emulator is not set."
 msgstr "Nie zdefiniowano polecenia emulatora terminala."
 
-#: ../src/pcmanfm.c:628
+#: ../src/pcmanfm.c:633
 msgid "Create New..."
 msgstr "Utwórz nowy..."
 
-#: ../src/pcmanfm.c:628
+#: ../src/pcmanfm.c:633
 msgid "Enter a name for the newly created file:"
 msgstr "Proszę wprowadzić nazwę pliku:"
 
-#: ../src/pcmanfm.c:628
+#: ../src/pcmanfm.c:633
 msgid "New"
 msgstr "Nowy"
 
 #~ msgid "Open Find Files utility"
 #~ msgstr "Otwórz program Wyszukiwanie Plików"
-
 #~ msgid ""
 #~ "Open folders in new tabs of the last used window instead of creating new "
 #~ "windows"
 #~ msgstr ""
 #~ "Otwieraj foldery w nowej karcie ostatniego użytego okna zamiast otwierać "
 #~ "nowe okna"
+
