@@ -127,7 +127,7 @@ static GtkActionEntry main_win_actions[]=
 {
     {"FileMenu", NULL, N_("_File"), NULL, NULL, NULL},
         {"New", GTK_STOCK_NEW, N_("_New Window"), "<Ctrl>N", NULL, G_CALLBACK(on_new_win)},
-        {"NewTab", GTK_STOCK_NEW, N_("New _Tab"), "<Ctrl>T", NULL, G_CALLBACK(on_new_tab)},
+        {"NewTab", "tab-new", N_("New _Tab"), "<Ctrl>T", NULL, G_CALLBACK(on_new_tab)},
         {"CloseTab", GTK_STOCK_CLOSE, N_("_Close Tab"), "<Ctrl>W", NULL, G_CALLBACK(on_close_tab)},
         {"Close", GTK_STOCK_QUIT, N_("Close Window"), "<Ctrl>Q", NULL, G_CALLBACK(on_close_win)},
     {"EditMenu", NULL, N_("_Edit"), NULL, NULL, NULL},
