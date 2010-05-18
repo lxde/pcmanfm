@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-05-10 04:20+0000\n"
-"PO-Revision-Date: 2010-05-11 23:30+0100\n"
+"PO-Revision-Date: 2010-05-14 22:05+0100\n"
 "Last-Translator: Piotr Sokół <psokol@jabster.pl>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -46,7 +46,7 @@ msgstr "<b>Tło</b>"
 
 #: ../data/ui/desktop-pref.glade.h:2
 msgid "<b>Show desktop icons</b>"
-msgstr "<b>Pokaż ikony na pulpicie</b>"
+msgstr "<b>Wyświetlanie ikon na pulpicie</b>"
 
 #: ../data/ui/desktop-pref.glade.h:3
 msgid "<b>Text</b>"
@@ -62,12 +62,12 @@ msgstr "Wygląd"
 
 #: ../data/ui/desktop-pref.glade.h:6
 msgid "Background color:"
-msgstr "Kolor tła:"
+msgstr "Kolor:"
 
 #: ../data/ui/desktop-pref.glade.h:7
 #: ../data/ui/pref.glade.h:10
 msgid "Center on the screen"
-msgstr "Środek ekranu"
+msgstr "Wyśrodkowanie"
 
 #: ../data/ui/desktop-pref.glade.h:8
 msgid "Color of label text:"
@@ -88,15 +88,15 @@ msgstr "Preferencje pulpitu"
 
 #: ../data/ui/desktop-pref.glade.h:12
 msgid "Fill with background color only"
-msgstr "Wypełnij tylko kolorem tła"
+msgstr "Wypełnienie kolorem"
 
 #: ../data/ui/desktop-pref.glade.h:13
 msgid "Font of label text:"
-msgstr "Czcionka tekstu:"
+msgstr "Czcionka:"
 
 #: ../data/ui/desktop-pref.glade.h:14
 msgid "Please select an image file"
-msgstr "Proszę wybrać obrazek"
+msgstr "Wybór pliku"
 
 #: ../data/ui/desktop-pref.glade.h:15
 msgid "Show \"My Computer\" icon on desktop"
@@ -116,30 +116,30 @@ msgstr "Wyświetlanie ikon wolumenów na pulpicie"
 
 #: ../data/ui/desktop-pref.glade.h:19
 msgid "Show menus provided by window managers when desktop is clicked"
-msgstr "Pokaż menu menedżera okien przy klikaniu w pulpit"
+msgstr "Wyświetlanie menu menedżera okien po kliknięciu w pulpit"
 
 #: ../data/ui/desktop-pref.glade.h:20
 #: ../data/ui/pref.glade.h:37
 msgid "Stretch to fill the entire screen"
-msgstr "Rozciągnij na cały ekran"
+msgstr "Rozciągnięcie do rozmiaru ekranu"
 
 #: ../data/ui/desktop-pref.glade.h:21
 #: ../data/ui/pref.glade.h:38
 msgid "Stretch to fit the screen"
-msgstr "Rozciągnij na ekran"
+msgstr "Dopasowanie do rozmiaru ekranu"
 
 #: ../data/ui/desktop-pref.glade.h:22
 #: ../data/ui/pref.glade.h:42
 msgid "Tile the image to fill the entire screen"
-msgstr "Rozciągnij obraz, żeby wypełnił cały ekran"
+msgstr "Rozmieszczenie sąsiadująco"
 
 #: ../data/ui/desktop-pref.glade.h:23
 msgid "Wallpaper mode:"
-msgstr "Tryb tapety:"
+msgstr "Tryb:"
 
 #: ../data/ui/desktop-pref.glade.h:24
 msgid "Wallpaper:"
-msgstr "Tło pulpitu:"
+msgstr "Obraz:"
 
 #: ../data/ui/pref.glade.h:1
 msgid "<b>Auto-mount</b>"
@@ -199,8 +199,8 @@ msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
 "%s = the command line you want to execute with terminal or su."
 msgstr ""
-"Przykłady: \"xterm -e %s\" dla terminala lub \"gksu %s\" by przełączyć użytkownika.\n"
-"%s = polecenie, które chcesz wykonać w terminale lub przy użyciu su."
+"Przykłady: „xterm -e %s” dla emulatora terminala lub „gksu %s” dla polecenia zmiany użytkownika.\n"
+"%s = polecenie, które należy wykonać w terminalu lub przy użyciu su."
 
 #: ../data/ui/pref.glade.h:18
 msgid "Hide 'Close tab' buttons"
