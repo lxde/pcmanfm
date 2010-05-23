@@ -15,6 +15,7 @@ pcmanfm2_SOURCES = \
 	volume-manager.c volume-manager.h \
 	pref.c pref.h \
 	utils.c utils.h \
+	gseal-gtk-compat.h \
 	$(NULL)
 
 EXTRA_DIST= \

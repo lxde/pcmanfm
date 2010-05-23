@@ -33,6 +33,8 @@
 #include "pref.h"
 #include "main-win.h"
 
+#include "gseal-gtk-compat.h"
+
 #define SPACING 2
 #define PADDING 6
 #define MARGIN  2
@@ -359,7 +361,7 @@ void fm_desktop_manager_init()
         desktops[i] = desktop;
         gtk_widget_realize(desktop);  /* without this, setting wallpaper won't work */
         gtk_widget_show_all(desktop);
-        gdk_window_lower(desktop ->window);
+        gdk_window_lower(gtk_widget_get_window(desktop));
         gtk_window_group_add_window( GTK_WINDOW_GROUP(win_group), desktop );
     }
 
@@ -433,7 +435,7 @@ void fm_desktop_manager_finalize()
 
     if(hand_cursor)
     {
-        gdk_cursor_destroy(hand_cursor);
+        gdk_cursor_unref(hand_cursor);
         hand_cursor = NULL;
     }
 
@@ -608,7 +610,7 @@ gboolean on_button_press( GtkWidget* w, GdkEventButton* evt )
     forward_event_to_rootwin( gtk_widget_get_screen(w), evt );
 
 out:
-    if( ! GTK_WIDGET_HAS_FOCUS(w) )
+    if( ! gtk_widget_has_focus(w) )
     {
         /* g_debug( "we don't have the focus, grab it!" ); */
         gtk_widget_grab_focus( w );
@@ -654,12 +656,15 @@ static gboolean on_single_click_timeout( FmDesktop* self )
 {
     GtkWidget* w = (GtkWidget*)self;
     GdkEventButton evt;
+    GdkWindow* window;
     int x, y;
+
+    window = gtk_widget_get_window(w);
     /* generate a fake button press */
     /* FIXME: will this cause any problem? */
     evt.type = GDK_BUTTON_PRESS;
-    evt.window = w->window;
-    gdk_window_get_pointer( w->window, &x, &y, &evt.state );
+    evt.window = window;
+    gdk_window_get_pointer( window, &x, &y, &evt.state );
     evt.x = x;
     evt.y = y;
     evt.state |= GDK_BUTTON_PRESS_MASK;
@@ -682,6 +687,8 @@ gboolean on_motion_notify( GtkWidget* w, GdkEventMotion* evt )
         if( fm_config->single_click )
         {
             FmDesktopItem* item = hit_test( self, evt->x, evt->y );
+            GdkWindow* window = gtk_widget_get_window(w);
+
             if( item != self->hover_item )
             {
                 if( 0 != self->single_click_timeout_handler )
@@ -692,7 +699,7 @@ gboolean on_motion_notify( GtkWidget* w, GdkEventMotion* evt )
             }
             if( item )
             {
-                gdk_window_set_cursor( w->window, hand_cursor );
+                gdk_window_set_cursor( window, hand_cursor );
                 /* FIXME: timeout should be customizable */
                 if( self->single_click_timeout_handler == 0)
                     self->single_click_timeout_handler = g_timeout_add( 400, on_single_click_timeout, self ); //400 ms
@@ -701,7 +708,7 @@ gboolean on_motion_notify( GtkWidget* w, GdkEventMotion* evt )
 			}
             else
             {
-                gdk_window_set_cursor( w->window, NULL );
+                gdk_window_set_cursor( window, NULL );
             }
             self->hover_item = item;
         }
@@ -910,7 +917,7 @@ void on_realize( GtkWidget* w )
     gtk_window_set_resizable( (GtkWindow*)w, FALSE );
 
     if( ! self->gc )
-        self->gc = gdk_gc_new( w->window );
+        self->gc = gdk_gc_new( gtk_widget_get_window(w) );
 
     update_background(self);
 }
@@ -954,10 +961,10 @@ gboolean on_expose( GtkWidget* w, GdkEventExpose* evt )
     GList* l;
     cairo_t* cr;
 
-    if( G_UNLIKELY( ! GTK_WIDGET_VISIBLE (w) || ! GTK_WIDGET_MAPPED (w) ) )
+    if( G_UNLIKELY( ! gtk_widget_get_visible (w) || ! gtk_widget_get_mapped (w) ) )
         return TRUE;
 
-    cr = gdk_cairo_create(w->window);
+    cr = gdk_cairo_create( gtk_widget_get_window(w) );
     if( self->rubber_bending )
         paint_rubber_banding_rect( self, cr, &evt->area );
 
@@ -1358,11 +1365,16 @@ void queue_layout_items(FmDesktop* desktop)
 
 void paint_item(FmDesktop* self, FmDesktopItem* item, cairo_t* cr, GdkRectangle* expose_area)
 {
+    GtkStyle* style;
     GtkWidget* widget = (GtkWidget*)self;
     GtkCellRendererState state = 0;
     GdkColor* fg;
+    GdkWindow* window;
     int text_x, text_y;
     /* g_debug("%s, %d, %d, %d, %d", item->fi->path->name, expose_area->x, expose_area->y, expose_area->width, expose_area->height); */
+
+    style = gtk_widget_get_style(widget);
+    window = gtk_widget_get_window(widget);
 
     pango_layout_set_text(self->pl, NULL, 0);
     pango_layout_set_width(self->pl, self->pango_text_w);
@@ -1380,32 +1392,32 @@ void paint_item(FmDesktop* self, FmDesktopItem* item, cairo_t* cr, GdkRectangle*
 
         cairo_save(cr);
         gdk_cairo_rectangle(cr, &item->text_rect);
-        gdk_cairo_set_source_color(cr, &widget->style->bg[GTK_STATE_SELECTED]);
+        gdk_cairo_set_source_color(cr, &style->bg[GTK_STATE_SELECTED]);
         cairo_clip(cr);
         cairo_paint(cr);
         cairo_restore(cr);
-        fg = &widget->style->fg[GTK_STATE_SELECTED];
+        fg = &style->fg[GTK_STATE_SELECTED];
     }
     else
     {
         /* the shadow */
         gdk_gc_set_rgb_fg_color(self->gc, &app_config->desktop_shadow);
-        gdk_draw_layout( widget->window, self->gc, text_x + 1, text_y + 1, self->pl );
+        gdk_draw_layout( window, self->gc, text_x + 1, text_y + 1, self->pl );
         fg = &app_config->desktop_fg;
     }
     /* real text */
     gdk_gc_set_rgb_fg_color(self->gc, fg);
-    gdk_draw_layout( widget->window, self->gc, text_x, text_y, self->pl );
+    gdk_draw_layout( window, self->gc, text_x, text_y, self->pl );
     pango_layout_set_text(self->pl, NULL, 0);
 
-    if(item == self->focus && GTK_WIDGET_HAS_FOCUS(self) )
-        gtk_paint_focus(widget->style, widget->window, gtk_widget_get_state(widget),
+    if(item == self->focus && gtk_widget_has_focus(widget) )
+        gtk_paint_focus(style, window, gtk_widget_get_state(widget),
                         expose_area, widget, "icon_view",
                         item->text_rect.x, item->text_rect.y, item->text_rect.width, item->text_rect.height);
 
     /* draw the icon */
     g_object_set( self->icon_render, "pixbuf", item->icon, "info", fm_file_info_ref(item->fi), NULL );
-    gtk_cell_renderer_render(GTK_CELL_RENDERER(self->icon_render), widget->window, widget, &item->icon_rect, &item->icon_rect, expose_area, state);
+    gtk_cell_renderer_render(GTK_CELL_RENDERER(self->icon_render), window, widget, &item->icon_rect, &item->icon_rect, expose_area, state);
 }
 
 void redraw_item(FmDesktop* desktop, FmDesktopItem* item)
@@ -1416,7 +1428,7 @@ void redraw_item(FmDesktop* desktop, FmDesktopItem* item)
     --rect.y;
     rect.width += 2;
     rect.height += 2;
-    gdk_window_invalidate_rect( ((GtkWidget*)desktop)->window, &rect, FALSE );
+    gdk_window_invalidate_rect(gtk_widget_get_window(GTK_WIDGET(desktop)), &rect, FALSE);
 }
 
 void calc_rubber_banding_rect( FmDesktop* self, int x, int y, GdkRectangle* rect )
@@ -1455,12 +1467,15 @@ void update_rubberbanding( FmDesktop* self, int newx, int newy )
     GList* l;
     GdkRectangle old_rect, new_rect;
     //GdkRegion *region;
+    GdkWindow *window;
+
+    window = gtk_widget_get_window(GTK_WIDGET(self));
 
     calc_rubber_banding_rect(self, self->rubber_bending_x, self->rubber_bending_y, &old_rect );
     calc_rubber_banding_rect(self, newx, newy, &new_rect );
 
-    gdk_window_invalidate_rect(((GtkWidget*)self)->window, &old_rect, FALSE );
-    gdk_window_invalidate_rect(((GtkWidget*)self)->window, &new_rect, FALSE );
+    gdk_window_invalidate_rect(window, &old_rect, FALSE );
+    gdk_window_invalidate_rect(window, &new_rect, FALSE );
 //    gdk_window_clear_area(((GtkWidget*)self)->window, new_rect.x, new_rect.y, new_rect.width, new_rect.height );
 /*
     region = gdk_region_rectangle( &old_rect );
@@ -1513,7 +1528,7 @@ void paint_rubber_banding_rect(FmDesktop* self, cairo_t* cr, GdkRectangle* expos
                         "selection-box-alpha", &alpha,
                         NULL);
 */
-    clr = widget->style->base[GTK_STATE_SELECTED];
+    clr = gtk_widget_get_style (widget)->base[GTK_STATE_SELECTED];
     alpha = 64;  /* FIXME: should be themable in the future */
 
     cairo_save(cr);
@@ -1536,6 +1551,7 @@ static void update_background(FmDesktop* desktop)
     int src_w, src_h;
     int dest_w, dest_h;
     GdkWindow* root = gdk_screen_get_root_window(gtk_widget_get_screen(widget));
+    GdkWindow *window = gtk_widget_get_window(widget);
 
     if(app_config->wallpaper_mode == FM_WP_COLOR
        || !app_config->wallpaper
@@ -1543,14 +1559,15 @@ static void update_background(FmDesktop* desktop)
        || ! (pix = gdk_pixbuf_new_from_file(app_config->wallpaper, NULL)) ) /* solid color only */
     {
         GdkColor bg = app_config->desktop_bg;
-        gdk_rgb_find_color(gdk_drawable_get_colormap(widget->window), &bg);
-        gdk_window_set_back_pixmap(widget->window, NULL, FALSE);
-        gdk_window_set_background(widget->window, &bg);
+
+        gdk_rgb_find_color(gdk_drawable_get_colormap(window), &bg);
+        gdk_window_set_back_pixmap(window, NULL, FALSE);
+        gdk_window_set_background(window, &bg);
         gdk_window_set_back_pixmap(root, NULL, FALSE);
         gdk_window_set_background(root, &bg);
         gdk_window_clear(root);
-        gdk_window_clear(widget->window);
-        gdk_window_invalidate_rect(widget->window, NULL, TRUE);
+        gdk_window_clear(window);
+        gdk_window_invalidate_rect(window, NULL, TRUE);
         return;
     }
 
@@ -1560,14 +1577,14 @@ static void update_background(FmDesktop* desktop)
     {
         dest_w = src_w;
         dest_h = src_h;
-        pixmap = gdk_pixmap_new(widget->window, dest_w, dest_h, -1);
+        pixmap = gdk_pixmap_new(window, dest_w, dest_h, -1);
     }
     else
     {
         GdkScreen* screen = gtk_widget_get_screen(widget);
         dest_w = gdk_screen_get_width(screen);
         dest_h = gdk_screen_get_height(screen);
-        pixmap = gdk_pixmap_new(widget->window, dest_w, dest_h, -1);
+        pixmap = gdk_pixmap_new(window, dest_w, dest_h, -1);
     }
 
     if(gdk_pixbuf_get_has_alpha(pix)
@@ -1617,7 +1634,7 @@ static void update_background(FmDesktop* desktop)
             break;
     }
     gdk_window_set_back_pixmap(root, pixmap, FALSE);
-    gdk_window_set_back_pixmap(widget->window, NULL, TRUE);
+    gdk_window_set_back_pixmap(window, NULL, TRUE);
 
     pixmap_id = GDK_DRAWABLE_XID(pixmap);
     XChangeProperty(GDK_WINDOW_XDISPLAY(root), GDK_WINDOW_XID(root),
@@ -1628,8 +1645,8 @@ static void update_background(FmDesktop* desktop)
         g_object_unref(pix);
 
     gdk_window_clear(root);
-    gdk_window_clear(widget->window);
-    gdk_window_invalidate_rect(widget->window, NULL, TRUE);
+    gdk_window_clear(window);
+    gdk_window_invalidate_rect(window, NULL, TRUE);
 }
 
 GdkFilterReturn on_root_event(GdkXEvent *xevent, GdkEvent *event, gpointer data)
