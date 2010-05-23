@@ -295,7 +295,7 @@ gboolean on_socket_event( GIOChannel* ioc, GIOCondition cond, gpointer data )
 void get_socket_name( char* buf, int len )
 {
     char* dpy = gdk_get_display();
-    g_snprintf( buf, len, "/tmp/.pcmanfm2-socket%s-%s", dpy, g_get_user_name() );
+    g_snprintf( buf, len, "/tmp/.pcmanfm-socket%s-%s", dpy, g_get_user_name() );
     g_free( dpy );
 }
 

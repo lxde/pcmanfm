@@ -2,7 +2,7 @@
 # Process this file with autoconf to produce a configure script.
 
 AC_PREREQ([2.63])
-AC_INIT([pcmanfm], [0.9.5], [http://pcmanfm.sf.net/])
+AC_INIT([pcmanfm], [0.9.6], [http://pcmanfm.sf.net/])
 AM_INIT_AUTOMAKE([-Wall -Werror foreign])
 
 AC_CONFIG_HEADERS([config.h])
@@ -93,7 +93,7 @@ PKG_CHECK_MODULES(MENU_CACHE, [$menu_modules])
 AC_SUBST(MENU_CACHE_CFLAGS)
 AC_SUBST(MENU_CACHE_LIBS)
 
-GETTEXT_PACKAGE=pcmanfm2
+GETTEXT_PACKAGE=pcmanfm
 AC_SUBST(GETTEXT_PACKAGE)
 
 # Generate po/LINGUAS on the fly rather than relying on translators
@@ -116,7 +116,7 @@ AC_CONFIG_FILES([
     data/Makefile
     data/ui/Makefile
     data/ui/about.glade
-    data/pcmanfm2.desktop
+    data/pcmanfm.desktop
 ])
 
 AC_OUTPUT
