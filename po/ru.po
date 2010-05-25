@@ -6,18 +6,19 @@ msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-04-28 02:32+0800\n"
-"PO-Revision-Date: 2010-02-20 08:45+0300\n"
-"Last-Translator: Koptev Oleg <koptev.oleg@gmail.com>\n"
+"PO-Revision-Date: 2010-05-25 18:16+0200\n"
+"Last-Translator: Max <mpui@tut.by>\n"
 "Language-Team: Russian <>\n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
 "10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Pootle 2.0.1\n"
 "X-Poedit-Language: Russian\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-Country: Russia\n"
-"X-Generator: Lokalize 1.0\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2010"
@@ -96,7 +97,7 @@ msgstr "Пожалуйста, выберите изображение"
 
 #: ../data/ui/desktop-pref.glade.h:15
 msgid "Show \"My Computer\" icon on desktop"
-msgstr "Показывать на рабочем столе значок \"Мой компьютер\" "
+msgstr "Показывать на рабочем столе значок \"Мой компьютер\""
 
 #: ../data/ui/desktop-pref.glade.h:16
 msgid "Show \"My Documents\" icon on desktop"
@@ -108,7 +109,7 @@ msgstr "Показывать на рабочем столе значок \"Ко�
 
 #: ../data/ui/desktop-pref.glade.h:18
 msgid "Show icons of volumes on desktop"
-msgstr "Показывать на рабочем столе значки дисков "
+msgstr "Показывать на рабочем столе значки дисков"
 
 #: ../data/ui/desktop-pref.glade.h:19
 msgid "Show menus provided by window managers when desktop is clicked"
@@ -133,7 +134,7 @@ msgstr "Режим обоев:"
 
 #: ../data/ui/desktop-pref.glade.h:24
 msgid "Wallpaper:"
-msgstr "Обои"
+msgstr "Обои:"
 
 #: ../data/ui/pref.glade.h:1
 msgid "<b>Auto-mount</b>"
@@ -572,7 +573,7 @@ msgstr "Выключить менеджер рабочего стола, есл�
 
 #: ../src/pcmanfm.c:75
 msgid "Run PCManFM as a daemon"
-msgstr "Запустить PCManFM как демон "
+msgstr "Запустить PCManFM как демон"
 
 #: ../src/pcmanfm.c:76
 msgid "Open desktop preference dialog"
@@ -589,8 +590,8 @@ msgstr "<файл изображения>"
 #: ../src/pcmanfm.c:78
 msgid "Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"
 msgstr ""
-"Установить режим для обоев рабочего стола. <режим>=(color|stretch|fit|center|"
-"tile)"
+"Установить режим для обоев рабочего стола. "
+"<режим>=(color|stretch|fit|center|tile)"
 
 #: ../src/pcmanfm.c:78
 msgid "<mode>"
