@@ -2,12 +2,12 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm 0.9.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-17 04:23+0000\n"
+"POT-Creation-Date: 2010-05-25 23:58+0200\n"
 "PO-Revision-Date: 2010-03-27 15:45+0100\n"
 "Last-Translator: Yorvyk <yorvik.ubunto@googlemail.com>\n"
 "Language-Team: English en_GB\n"
@@ -212,11 +212,14 @@ msgstr ""
 
 #: ../data/ui/pref.glade.h:23
 msgid "Mount removable media automatically when they are inserted"
-msgstr "Koppel verwisselbare schijven automatisch aan als ze worden aangesloten"
+msgstr ""
+"Koppel verwisselbare schijven automatisch aan als ze worden aangesloten"
 
 #: ../data/ui/pref.glade.h:24
 msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
-msgstr "Verplaats verwijderde bestanden naar de \"Prullenbak\" in plaats van ze van uw schijf te verwijderen"
+msgstr ""
+"Verplaats verwijderde bestanden naar de \"Prullenbak\" in plaats van ze van "
+"uw schijf te verwijderen"
 
 #: ../data/ui/pref.glade.h:25
 msgid "Only show thumbnails for local files"
@@ -550,8 +553,7 @@ msgstr ""
 msgid "Add to Bookmarks"
 msgstr "Toevoegen aan Bladwijzers"
 
-#. { "new-tab", 't', 0, G_OPTION_ARG_NONE, &new_tab, N_("Open folders in new
-#. tabs of the last used window instead of creating new windows"), NULL },
+#. { "new-tab", 't', 0, G_OPTION_ARG_NONE, &new_tab, N_("Open folders in new tabs of the last used window instead of creating new windows"), NULL },
 #: ../src/pcmanfm.c:72
 msgid "Name of configuration profile"
 msgstr ""
@@ -582,18 +584,21 @@ msgstr "<afbeeldingsbestand>"
 
 #: ../src/pcmanfm.c:78
 msgid "Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"
-msgstr "Stel de modus van uw bureaublad achtergrond in. <modus>=(kleur|uitrekken|schalen|centreren|tegels)"
+msgstr ""
+"Stel de modus van uw bureaublad achtergrond in. <modus>=(kleur|uitrekken|"
+"schalen|centreren|tegels)"
 
 #: ../src/pcmanfm.c:78
 msgid "<mode>"
 msgstr "<modus>"
 
 #: ../src/pcmanfm.c:79
-msgid "Open preference dialog. 'n' is number of the page you want to show (1, 2, 3...)."
+msgid ""
+"Open preference dialog. 'n' is number of the page you want to show (1, 2, "
+"3...)."
 msgstr ""
 
-#. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files
-#. utility"), NULL },
+#. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
 #: ../src/pcmanfm.c:81
 msgid "No function. Just to be compatible with nautilus"
 msgstr "Geen functie. Gewoon om compatibel te zijn met nautilus"
@@ -621,5 +626,9 @@ msgstr "Nieuw"
 #~ msgid "Open Find Files utility"
 #~ msgstr "Open Find Files utility"
 
-#~ msgid "Open folders in new tabs of the last used window instead of creating new windows"
-#~ msgstr "Open folders in new tabs of the last used window instead of creating new windows"
+#~ msgid ""
+#~ "Open folders in new tabs of the last used window instead of creating new "
+#~ "windows"
+#~ msgstr ""
+#~ "Open folders in new tabs of the last used window instead of creating new "
+#~ "windows"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-04 04:20+0000\n"
+"POT-Creation-Date: 2010-05-25 23:58+0200\n"
 "PO-Revision-Date: 2010-05-04 22:15+0100\n"
 "Last-Translator: el_libre -- www.catmidia.cat <el.libre@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -61,8 +61,7 @@ msgstr "Aparença"
 msgid "Background color:"
 msgstr "Color de fons:"
 
-#: ../data/ui/desktop-pref.glade.h:7
-#: ../data/ui/pref.glade.h:10
+#: ../data/ui/desktop-pref.glade.h:7 ../data/ui/pref.glade.h:10
 #, fuzzy
 msgid "Center on the screen"
 msgstr "~Centra la finestra en pantalla"
@@ -82,8 +81,7 @@ msgstr "Color de l`ombra"
 msgid "Desktop Icons"
 msgstr "Organitza les icones"
 
-#: ../data/ui/desktop-pref.glade.h:11
-#: ../src/desktop-ui.c:58
+#: ../data/ui/desktop-pref.glade.h:11 ../src/desktop-ui.c:58
 #, fuzzy
 msgid "Desktop Preferences"
 msgstr "Obre les preferències de l'escriptori"
@@ -121,19 +119,16 @@ msgstr "Mostra icones dels volums a l'escriptori"
 msgid "Show menus provided by window managers when desktop is clicked"
 msgstr ""
 
-#: ../data/ui/desktop-pref.glade.h:20
-#: ../data/ui/pref.glade.h:37
+#: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:37
 msgid "Stretch to fill the entire screen"
 msgstr ""
 
-#: ../data/ui/desktop-pref.glade.h:21
-#: ../data/ui/pref.glade.h:38
+#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:38
 #, fuzzy
 msgid "Stretch to fit the screen"
 msgstr "_Ajusta a la pantalla"
 
-#: ../data/ui/desktop-pref.glade.h:22
-#: ../data/ui/pref.glade.h:42
+#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:42
 msgid "Tile the image to fill the entire screen"
 msgstr ""
 
@@ -369,14 +364,12 @@ msgstr "Obre amb el gestor de _fitxers"
 msgid "_Invert Selection"
 msgstr "_Inverteix selecció"
 
-#: ../src/desktop-ui.c:54
-#: ../src/main-win-ui.c:146
+#: ../src/desktop-ui.c:54 ../src/main-win-ui.c:146
 #, fuzzy
 msgid "_Sort Files"
 msgstr "Ordena les car_petes abans que els fitxers"
 
-#: ../src/desktop-ui.c:56
-#: ../src/main-win-ui.c:172
+#: ../src/desktop-ui.c:56 ../src/main-win-ui.c:172
 msgid "Folder"
 msgstr "Carpeta"
 
@@ -385,40 +378,33 @@ msgstr "Carpeta"
 msgid "Blank File"
 msgstr "Descarregant arxiu:"
 
-#: ../src/desktop-ui.c:69
-#: ../src/main-win-ui.c:198
+#: ../src/desktop-ui.c:69 ../src/main-win-ui.c:198
 msgid "By _Name"
 msgstr "Per _nom"
 
-#: ../src/desktop-ui.c:70
-#: ../src/main-win-ui.c:199
+#: ../src/desktop-ui.c:70 ../src/main-win-ui.c:199
 #, fuzzy
 msgid "By _Modification Time"
 msgstr "Ordena les imatges per la data de modificació"
 
-#: ../src/desktop-ui.c:71
-#: ../src/main-win-ui.c:200
+#: ../src/desktop-ui.c:71 ../src/main-win-ui.c:200
 msgid "By _Size"
 msgstr "Per _mida"
 
-#: ../src/desktop-ui.c:72
-#: ../src/main-win-ui.c:201
+#: ../src/desktop-ui.c:72 ../src/main-win-ui.c:201
 #, fuzzy
 msgid "By File _Type"
 msgstr "Ordena la llista de fitxers per tipus"
 
-#: ../src/desktop-ui.c:88
-#: ../src/main-win-ui.c:218
+#: ../src/desktop-ui.c:88 ../src/main-win-ui.c:218
 msgid "Open in New Tab"
 msgstr "Obre a una nova pestanya"
 
-#: ../src/desktop-ui.c:89
-#: ../src/main-win-ui.c:219
+#: ../src/desktop-ui.c:89 ../src/main-win-ui.c:219
 msgid "Open in New Window"
 msgstr "Obre en una nova finestra"
 
-#: ../src/desktop-ui.c:91
-#: ../src/main-win-ui.c:221
+#: ../src/desktop-ui.c:91 ../src/main-win-ui.c:221
 msgid "Open in _Terminal"
 msgstr "Obre en un _terminal"
 
@@ -654,7 +640,9 @@ msgid "<mode>"
 msgstr "Mode"
 
 #: ../src/pcmanfm.c:79
-msgid "Open preference dialog. 'n' is number of the page you want to show (1, 2, 3...)."
+msgid ""
+"Open preference dialog. 'n' is number of the page you want to show (1, 2, "
+"3...)."
 msgstr ""
 
 #. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
@@ -682,4 +670,3 @@ msgstr ""
 #: ../src/pcmanfm.c:633
 msgid "New"
 msgstr "Nous"
-

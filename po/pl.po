@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-10 04:20+0000\n"
+"POT-Creation-Date: 2010-05-25 23:58+0200\n"
 "PO-Revision-Date: 2010-05-14 22:05+0100\n"
 "Last-Translator: Piotr Sokół <psokol@jabster.pl>\n"
 "Language-Team: \n"
@@ -15,7 +15,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: pl\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
 "X-Generator: Pootle 2.0.1\n"
 "X-Poedit-Language: Polish\n"
 
@@ -64,8 +65,7 @@ msgstr "Wygląd"
 msgid "Background color:"
 msgstr "Kolor:"
 
-#: ../data/ui/desktop-pref.glade.h:7
-#: ../data/ui/pref.glade.h:10
+#: ../data/ui/desktop-pref.glade.h:7 ../data/ui/pref.glade.h:10
 msgid "Center on the screen"
 msgstr "Wyśrodkowanie"
 
@@ -81,8 +81,7 @@ msgstr "Kolor cienia:"
 msgid "Desktop Icons"
 msgstr "Ikony pulpitu"
 
-#: ../data/ui/desktop-pref.glade.h:11
-#: ../src/desktop-ui.c:58
+#: ../data/ui/desktop-pref.glade.h:11 ../src/desktop-ui.c:58
 msgid "Desktop Preferences"
 msgstr "Preferencje pulpitu"
 
@@ -118,18 +117,15 @@ msgstr "Wyświetlanie ikon wolumenów na pulpicie"
 msgid "Show menus provided by window managers when desktop is clicked"
 msgstr "Wyświetlanie menu menedżera okien po kliknięciu w pulpit"
 
-#: ../data/ui/desktop-pref.glade.h:20
-#: ../data/ui/pref.glade.h:37
+#: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:37
 msgid "Stretch to fill the entire screen"
 msgstr "Rozciągnięcie do rozmiaru ekranu"
 
-#: ../data/ui/desktop-pref.glade.h:21
-#: ../data/ui/pref.glade.h:38
+#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:38
 msgid "Stretch to fit the screen"
 msgstr "Dopasowanie do rozmiaru ekranu"
 
-#: ../data/ui/desktop-pref.glade.h:22
-#: ../data/ui/pref.glade.h:42
+#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:42
 msgid "Tile the image to fill the entire screen"
 msgstr "Rozmieszczenie sąsiadująco"
 
@@ -199,7 +195,8 @@ msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
 "%s = the command line you want to execute with terminal or su."
 msgstr ""
-"Przykłady: „xterm -e %s” dla emulatora terminala lub „gksu %s” dla polecenia zmiany użytkownika.\n"
+"Przykłady: „xterm -e %s” dla emulatora terminala lub „gksu %s” dla polecenia "
+"zmiany użytkownika.\n"
 "%s = polecenie, które należy wykonać w terminalu lub przy użyciu su."
 
 #: ../data/ui/pref.glade.h:18
@@ -346,13 +343,11 @@ msgstr "Otwórz w nowej karcie"
 msgid "_Invert Selection"
 msgstr "Odwróć zaznaczenie"
 
-#: ../src/desktop-ui.c:54
-#: ../src/main-win-ui.c:146
+#: ../src/desktop-ui.c:54 ../src/main-win-ui.c:146
 msgid "_Sort Files"
 msgstr "_Sortowanie"
 
-#: ../src/desktop-ui.c:56
-#: ../src/main-win-ui.c:172
+#: ../src/desktop-ui.c:56 ../src/main-win-ui.c:172
 msgid "Folder"
 msgstr "Katalog"
 
@@ -360,38 +355,31 @@ msgstr "Katalog"
 msgid "Blank File"
 msgstr "Pusty plik"
 
-#: ../src/desktop-ui.c:69
-#: ../src/main-win-ui.c:198
+#: ../src/desktop-ui.c:69 ../src/main-win-ui.c:198
 msgid "By _Name"
 msgstr "Według _nazwy"
 
-#: ../src/desktop-ui.c:70
-#: ../src/main-win-ui.c:199
+#: ../src/desktop-ui.c:70 ../src/main-win-ui.c:199
 msgid "By _Modification Time"
 msgstr "Według czasu _modyfikacji"
 
-#: ../src/desktop-ui.c:71
-#: ../src/main-win-ui.c:200
+#: ../src/desktop-ui.c:71 ../src/main-win-ui.c:200
 msgid "By _Size"
 msgstr "Według _rozmiaru"
 
-#: ../src/desktop-ui.c:72
-#: ../src/main-win-ui.c:201
+#: ../src/desktop-ui.c:72 ../src/main-win-ui.c:201
 msgid "By File _Type"
 msgstr "Według _typu"
 
-#: ../src/desktop-ui.c:88
-#: ../src/main-win-ui.c:218
+#: ../src/desktop-ui.c:88 ../src/main-win-ui.c:218
 msgid "Open in New Tab"
 msgstr "Otwórz w nowej karcie"
 
-#: ../src/desktop-ui.c:89
-#: ../src/main-win-ui.c:219
+#: ../src/desktop-ui.c:89 ../src/main-win-ui.c:219
 msgid "Open in New Window"
 msgstr "Otwórz w nowym oknie"
 
-#: ../src/desktop-ui.c:91
-#: ../src/main-win-ui.c:221
+#: ../src/desktop-ui.c:91 ../src/main-win-ui.c:221
 msgid "Open in _Terminal"
 msgstr "Otwórz w _terminalu"
 
@@ -608,8 +596,12 @@ msgid "<mode>"
 msgstr "<TRYB>"
 
 #: ../src/pcmanfm.c:79
-msgid "Open preference dialog. 'n' is number of the page you want to show (1, 2, 3...)."
-msgstr "Otwiera okno dialogowe preferencji, gdzie „n” jest numerem karty okna (1, 2, 3...)."
+msgid ""
+"Open preference dialog. 'n' is number of the page you want to show (1, 2, "
+"3...)."
+msgstr ""
+"Otwiera okno dialogowe preferencji, gdzie „n” jest numerem karty okna (1, 2, "
+"3...)."
 
 #. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
 #: ../src/pcmanfm.c:81
@@ -638,10 +630,10 @@ msgstr "Nowy"
 
 #~ msgid "Open Find Files utility"
 #~ msgstr "Otwórz program Wyszukiwanie Plików"
+
 #~ msgid ""
 #~ "Open folders in new tabs of the last used window instead of creating new "
 #~ "windows"
 #~ msgstr ""
 #~ "Otwieraj foldery w nowej karcie ostatniego użytego okna zamiast otwierać "
 #~ "nowe okna"
-
