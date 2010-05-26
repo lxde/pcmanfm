@@ -1,0 +1,637 @@
+# Serbian latin translation for PCManFM package
+# Copyright (C) 2010 the LXDE team
+# This file is distributed under the same license as the PCManFM package.
+# Jay A. Fleming <tito.nehru.naser@gmail.com>, 2010.
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PCManFM 0.9.5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-05-25 23:58+0200\n"
+"PO-Revision-Date: 2010-05-26 11:44+0100\n"
+"Last-Translator: Jay Alexander Fleming <tito.nehru.naser@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Poedit-Language: Serbian\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: ../data/ui/about.glade.in.h:1
+msgid "Copyright (C) 2009 - 2010"
+msgstr "2005-2010. Sva prava zadržana."
+
+#: ../data/ui/about.glade.in.h:2
+msgid ""
+"Lightweight file manager\n"
+"\n"
+"Developed by Hon Jen Yee (PCMan)"
+msgstr ""
+"Olakšani upravljač datotekama\n"
+"\n"
+"Priredio: Hon Jen Yee (PCMan)"
+
+#. Please replace this line with your own names, one name per line.
+#: ../data/ui/about.glade.in.h:6
+msgid "translator-credits"
+msgstr "Serbian (sr) — Jay A. Fleming <tito.nehru.naser@gmail.com>"
+
+#: ../data/ui/desktop-pref.glade.h:1
+msgid "<b>Background</b>"
+msgstr "<b>Pozadina</b>"
+
+#: ../data/ui/desktop-pref.glade.h:2
+msgid "<b>Show desktop icons</b>"
+msgstr "<b>Prikaži ikone radne površi</b>"
+
+#: ../data/ui/desktop-pref.glade.h:3
+msgid "<b>Text</b>"
+msgstr "<b>Tekst</b>"
+
+#: ../data/ui/desktop-pref.glade.h:4
+msgid "Advanced"
+msgstr "Napredno"
+
+#: ../data/ui/desktop-pref.glade.h:5
+msgid "Appearance"
+msgstr "Izgled"
+
+#: ../data/ui/desktop-pref.glade.h:6
+msgid "Background color:"
+msgstr "Boja pozadine:"
+
+#: ../data/ui/desktop-pref.glade.h:7
+#: ../data/ui/pref.glade.h:10
+msgid "Center on the screen"
+msgstr "Na sred ekrana"
+
+#: ../data/ui/desktop-pref.glade.h:8
+msgid "Color of label text:"
+msgstr "Boja označenog teksta"
+
+#: ../data/ui/desktop-pref.glade.h:9
+msgid "Color of shadow:"
+msgstr "Boja senke"
+
+#: ../data/ui/desktop-pref.glade.h:10
+msgid "Desktop Icons"
+msgstr "Ikone radne površi"
+
+#: ../data/ui/desktop-pref.glade.h:11
+#: ../src/desktop-ui.c:58
+msgid "Desktop Preferences"
+msgstr "Postavke radne površi"
+
+#: ../data/ui/desktop-pref.glade.h:12
+msgid "Fill with background color only"
+msgstr "Popuni samo sa bojom pozadine"
+
+#: ../data/ui/desktop-pref.glade.h:13
+msgid "Font of label text:"
+msgstr "Font označenog teksta"
+
+#: ../data/ui/desktop-pref.glade.h:14
+msgid "Please select an image file"
+msgstr "Izaberite datoteku sa slikom"
+
+#: ../data/ui/desktop-pref.glade.h:15
+msgid "Show \"My Computer\" icon on desktop"
+msgstr "Prikaži ikonu \"Računar\" na radnoj površi"
+
+#: ../data/ui/desktop-pref.glade.h:16
+msgid "Show \"My Documents\" icon on desktop"
+msgstr "Prikaži ikonu \"Lične datoteke\" na radnoj površi"
+
+#: ../data/ui/desktop-pref.glade.h:17
+msgid "Show \"Trash Bin\" icon on desktop"
+msgstr "Prikaži ikonu \"Nepotrebno\" na radnoj površi"
+
+#: ../data/ui/desktop-pref.glade.h:18
+msgid "Show icons of volumes on desktop"
+msgstr "Prikaži ikone logičkih diskova na radnoj površi"
+
+#: ../data/ui/desktop-pref.glade.h:19
+msgid "Show menus provided by window managers when desktop is clicked"
+msgstr "Prikaži meni upravljača prozora kada se klikne na radnu površ"
+
+#: ../data/ui/desktop-pref.glade.h:20
+#: ../data/ui/pref.glade.h:37
+msgid "Stretch to fill the entire screen"
+msgstr "Rastegni preko celog ekrana"
+
+#: ../data/ui/desktop-pref.glade.h:21
+#: ../data/ui/pref.glade.h:38
+msgid "Stretch to fit the screen"
+msgstr "Prilagodi veličini ekrana"
+
+#: ../data/ui/desktop-pref.glade.h:22
+#: ../data/ui/pref.glade.h:42
+msgid "Tile the image to fill the entire screen"
+msgstr "Popločaj ekran"
+
+#: ../data/ui/desktop-pref.glade.h:23
+msgid "Wallpaper mode:"
+msgstr "Režim pozadinske slike:"
+
+#: ../data/ui/desktop-pref.glade.h:24
+msgid "Wallpaper:"
+msgstr "Pozadinska slika:"
+
+#: ../data/ui/pref.glade.h:1
+msgid "<b>Auto-mount</b>"
+msgstr "<b>Automatsko priključivanje</b>"
+
+#: ../data/ui/pref.glade.h:2
+msgid "<b>Behavior</b>"
+msgstr "<b>Ponašanje</b>"
+
+#: ../data/ui/pref.glade.h:3
+msgid "<b>Default View</b>"
+msgstr "<b>Podrazumevani pogled</b>"
+
+#: ../data/ui/pref.glade.h:4
+msgid "<b>Icons</b>"
+msgstr "<b>Ikone</b>"
+
+#: ../data/ui/pref.glade.h:5
+msgid "<b>Programs</b>"
+msgstr "<b>Programi</b>"
+
+#: ../data/ui/pref.glade.h:6
+msgid "<b>User Interface</b>"
+msgstr "<b>Korisničko okruženje</b>"
+
+#: ../data/ui/pref.glade.h:7
+msgid "Always show the tab bar"
+msgstr "Uvek prikazuj traku sa listovima"
+
+#: ../data/ui/pref.glade.h:8
+msgid "Archiver integration:"
+msgstr "Integracija sa arhiverima datoteka:"
+
+#: ../data/ui/pref.glade.h:9
+msgid "Bookmarks:"
+msgstr "Obeleživači"
+
+#: ../data/ui/pref.glade.h:11
+msgid "Compact View"
+msgstr "Zbijeni pregled"
+
+#: ../data/ui/pref.glade.h:12
+msgid "Confirm before deleting files"
+msgstr "Potvrda pre brisanja datoteka"
+
+#: ../data/ui/pref.glade.h:13
+msgid "Detailed List View"
+msgstr "Detaljni pregled u obliku liste"
+
+#: ../data/ui/pref.glade.h:14
+msgid "Do not generate thumbnails for files exceeding this size:"
+msgstr "Ne pravi umanjeni prikaz datoteka čija veličina prelazi:"
+
+#: ../data/ui/pref.glade.h:16
+#, no-c-format
+msgid ""
+"Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
+"%s = the command line you want to execute with terminal or su."
+msgstr ""
+"Primeri: \"xterm -e %s\" za terminal ili \"gksu %s\" za prebacivanje između korisnika.\n"
+"%s = naredba koja želite da se izvrši u terminalu ili sa \"su\"."
+
+#: ../data/ui/pref.glade.h:18
+msgid "Hide 'Close tab' buttons"
+msgstr "Sakrij „Zatvori list“ dugmad"
+
+#: ../data/ui/pref.glade.h:19
+msgid "Hide folder content border"
+msgstr "Sakrij ivicu sadržaja direktorijuma"
+
+#: ../data/ui/pref.glade.h:20
+msgid "Hide side pane buttons"
+msgstr "Sakrij dugmad bočne površi"
+
+#: ../data/ui/pref.glade.h:21
+msgid "Icon View"
+msgstr "Pregled ikona"
+
+#: ../data/ui/pref.glade.h:22
+msgid "Mount mountable volumes automatically on program startup"
+msgstr "Priključi logičke diskove po pokretanju programa"
+
+#: ../data/ui/pref.glade.h:23
+msgid "Mount removable media automatically when they are inserted"
+msgstr "Priključi izmenjive medije po njihovom ubacivanju"
+
+#: ../data/ui/pref.glade.h:24
+msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
+msgstr "Ne briši datoteke sa diska već ih premesti u \"Nepotrebno\""
+
+#: ../data/ui/pref.glade.h:25
+msgid "Only show thumbnails for local files"
+msgstr "Umanjeni prikaz samo za lokalne datoteke"
+
+#: ../data/ui/pref.glade.h:26
+msgid "Open files with single click"
+msgstr "Otvaraj datoteke jednostrukim klikom"
+
+#: ../data/ui/pref.glade.h:27
+msgid "Opened in Current Tab"
+msgstr "Otvoreno u trenutnom listu"
+
+#: ../data/ui/pref.glade.h:28
+msgid "Opened in New Tab"
+msgstr "Otvoreno u novom listu"
+
+#: ../data/ui/pref.glade.h:29
+msgid "Opened in New Window"
+msgstr "Otvoreno u novom prozoru"
+
+#: ../data/ui/pref.glade.h:30
+msgid "Preferences"
+msgstr "Postavke"
+
+#: ../data/ui/pref.glade.h:31
+msgid "Show available options for removable media when they are inserted"
+msgstr "Kod ubacivanja izmenjivog medija ponudi dostupne radnje za medij"
+
+#: ../data/ui/pref.glade.h:32
+msgid "Show thumbnails of files"
+msgstr "Prikaži umanjeni prikaz datoteka"
+
+#: ../data/ui/pref.glade.h:33
+msgid "Size of big icons:"
+msgstr "Veličina većih ikona:"
+
+#: ../data/ui/pref.glade.h:34
+msgid "Size of side pane icons:"
+msgstr "Veličina ikona bočne površi:"
+
+#: ../data/ui/pref.glade.h:35
+msgid "Size of small icons:"
+msgstr "Veličina manjih ikona:"
+
+#: ../data/ui/pref.glade.h:36
+msgid "Size of thumbnails:"
+msgstr "Veličina umanjenog prikaza datoteka:"
+
+#: ../data/ui/pref.glade.h:39
+msgid "Switch user command:"
+msgstr "Naredba za prebacivanje između korisnika:"
+
+#: ../data/ui/pref.glade.h:40
+msgid "Terminal emulator:"
+msgstr "Emulator terminala:"
+
+#: ../data/ui/pref.glade.h:41
+msgid "Thumbnail View"
+msgstr "Model umanjenog prikaza datoteka"
+
+#: ../data/ui/pref.glade.h:43
+msgid "Use SI decimal prefixes instead of IEC binary prefixes"
+msgstr "Koristi „SI“ decimalne prefikse umesto „IEC“ binarnih prefiksa"
+
+#: ../data/ui/pref.glade.h:44
+msgid "View Mode:"
+msgstr "Način prikaza:"
+
+#: ../data/ui/pref.glade.h:45
+msgid "_Advanced"
+msgstr "N_apredno"
+
+#: ../data/ui/pref.glade.h:46
+msgid "_Display"
+msgstr "_Prikaz"
+
+#: ../data/ui/pref.glade.h:47
+msgid "_General"
+msgstr "Op_šte"
+
+#: ../data/ui/pref.glade.h:48
+msgid "_Volume Management"
+msgstr "Upra_vljanje logičkim diskovima"
+
+#: ../data/ui/autorun.glade.h:1
+msgid "<b>Removable medium is inserted</b>"
+msgstr "<b>Izmenjivi medij je ubačen</b>"
+
+#: ../data/ui/autorun.glade.h:2
+msgid "Detecting..."
+msgstr "Otkrivam..."
+
+#: ../data/ui/autorun.glade.h:3
+msgid "Please select the action you want to perform:"
+msgstr "Odaberite radnju koju želite izvršiti:"
+
+#: ../data/ui/autorun.glade.h:4
+msgid "Removable medium is inserted"
+msgstr "Izmenjivi medij je ubačen"
+
+#: ../data/ui/autorun.glade.h:5
+msgid "Type of medium:"
+msgstr "Vrsta medija"
+
+#: ../src/volume-manager.c:150
+msgid "Removable Disk"
+msgstr "Izmenjivi disk"
+
+#: ../src/volume-manager.c:209
+msgid "Open in File Manager"
+msgstr "Otvori upravljačem datoteka"
+
+#: ../src/desktop-ui.c:53
+msgid "_Invert Selection"
+msgstr "_Obrni izbor"
+
+#: ../src/desktop-ui.c:54
+#: ../src/main-win-ui.c:146
+msgid "_Sort Files"
+msgstr "Po_ređaj datoteke"
+
+#: ../src/desktop-ui.c:56
+#: ../src/main-win-ui.c:172
+msgid "Folder"
+msgstr "Direktorijum"
+
+#: ../src/desktop-ui.c:57
+msgid "Blank File"
+msgstr "Prazna datoteka"
+
+#: ../src/desktop-ui.c:69
+#: ../src/main-win-ui.c:198
+msgid "By _Name"
+msgstr "Prema _imenu"
+
+#: ../src/desktop-ui.c:70
+#: ../src/main-win-ui.c:199
+msgid "By _Modification Time"
+msgstr "Prema _datumu izmene"
+
+#: ../src/desktop-ui.c:71
+#: ../src/main-win-ui.c:200
+msgid "By _Size"
+msgstr "Prema _veličini"
+
+#: ../src/desktop-ui.c:72
+#: ../src/main-win-ui.c:201
+msgid "By File _Type"
+msgstr "Prema vr_sti"
+
+#: ../src/desktop-ui.c:88
+#: ../src/main-win-ui.c:218
+msgid "Open in New Tab"
+msgstr "Otvori u novom listu"
+
+#: ../src/desktop-ui.c:89
+#: ../src/main-win-ui.c:219
+msgid "Open in New Window"
+msgstr "Otvori u novom prozoru"
+
+#: ../src/desktop-ui.c:91
+#: ../src/main-win-ui.c:221
+msgid "Open in _Terminal"
+msgstr "Otvori u _terminalu"
+
+#: ../src/main-win-ui.c:128
+msgid "_File"
+msgstr "_Datoteka"
+
+#: ../src/main-win-ui.c:129
+msgid "_New Window"
+msgstr "_Novi prozor"
+
+#: ../src/main-win-ui.c:130
+msgid "New _Tab"
+msgstr "Novi _list"
+
+#: ../src/main-win-ui.c:131
+msgid "_Close Tab"
+msgstr "_Zatvori list"
+
+#: ../src/main-win-ui.c:132
+msgid "Close Window"
+msgstr "Zatvori prozor"
+
+#: ../src/main-win-ui.c:133
+msgid "_Edit"
+msgstr "_Uredi"
+
+#: ../src/main-win-ui.c:138
+msgid "Rename"
+msgstr "Preimenuj"
+
+#: ../src/main-win-ui.c:139
+msgid "Create Symlink"
+msgstr "Napravi meku vezu"
+
+#: ../src/main-win-ui.c:140
+msgid "Move To..."
+msgstr "Premesti u ..."
+
+#: ../src/main-win-ui.c:141
+msgid "Copy To..."
+msgstr "Umnoži u ..."
+
+#: ../src/main-win-ui.c:143
+msgid "Invert Selection"
+msgstr "Obrnuti izbor"
+
+#: ../src/main-win-ui.c:145
+msgid "_View"
+msgstr "P_regled"
+
+#: ../src/main-win-ui.c:147
+msgid "_Help"
+msgstr "_Pomoć"
+
+#: ../src/main-win-ui.c:149
+msgid "_Go"
+msgstr "_Idi"
+
+#: ../src/main-win-ui.c:150
+msgid "Previous Folder"
+msgstr "Nazad"
+
+#: ../src/main-win-ui.c:151
+msgid "Next Folder"
+msgstr "Napred"
+
+#: ../src/main-win-ui.c:152
+msgid "Parent Folder"
+msgstr "Naddirektorijum"
+
+#: ../src/main-win-ui.c:152
+msgid "Go to parent Folder"
+msgstr "Idi u naddirektorijum"
+
+#: ../src/main-win-ui.c:153
+msgid "Home Folder"
+msgstr "Lične datoteke"
+
+#: ../src/main-win-ui.c:154
+msgid "Desktop"
+msgstr "Radna površ"
+
+#: ../src/main-win-ui.c:154
+msgid "Desktop Folder"
+msgstr "Direktorijum radne površi"
+
+#: ../src/main-win-ui.c:155
+msgid "My Computer"
+msgstr "Računar"
+
+#: ../src/main-win-ui.c:156
+msgid "Trash Can"
+msgstr "Nepotrebno"
+
+#: ../src/main-win-ui.c:157
+msgid "Network Drives"
+msgstr "Mrežni diskovi"
+
+#: ../src/main-win-ui.c:158
+msgid "Applications"
+msgstr "Programi"
+
+#: ../src/main-win-ui.c:158
+msgid "Installed Applications"
+msgstr "Instalirani programi"
+
+#: ../src/main-win-ui.c:160
+msgid "_Bookmarks"
+msgstr "O_beleživači"
+
+#: ../src/main-win-ui.c:161
+msgid "Add To Bookmarks"
+msgstr "Dodaj obeleživač"
+
+#: ../src/main-win-ui.c:162
+msgid "_Tools"
+msgstr "_Alatke"
+
+#: ../src/main-win-ui.c:163
+msgid "Open Current Folder in _Terminal"
+msgstr "Otvori trenutni direktorijum u _terminalu"
+
+#: ../src/main-win-ui.c:164
+msgid "Open Current Folder as _Root"
+msgstr "Otvori trenutni direktorijum kao „_Root“ korisnik"
+
+#: ../src/main-win-ui.c:173
+msgid "Blank FIle"
+msgstr "Prazna datoteka"
+
+#: ../src/main-win-ui.c:179
+msgid "Show _Hidden"
+msgstr "Prikaži _skrivene datoteke"
+
+#: ../src/main-win-ui.c:184
+msgid "_Icon View"
+msgstr "Model za pregled _ikona"
+
+#: ../src/main-win-ui.c:185
+msgid "_Compact View"
+msgstr "Model _zbijenog prikaza"
+
+#: ../src/main-win-ui.c:186
+msgid "_Thumbnail View"
+msgstr "Model umanjenog prikaza da_toteka"
+
+#: ../src/main-win-ui.c:187
+msgid "Detailed _List View"
+msgstr "Prikaži kao detaljnu _listu"
+
+#: ../src/main-win.c:552
+msgid "You are in super user mode"
+msgstr "UPOZORENJE: Koristite program sa administratorskim privilegijama"
+
+#: ../src/main-win.c:651
+msgid "Switch user command is not set."
+msgstr "Naredba za prebacivanje između korisnika nije postavljena"
+
+#: ../src/main-win.c:958
+#, c-format
+msgid "Free space: %s (Total: %s)"
+msgstr "Slobodan prostor: %s od %s"
+
+#: ../src/main-win.c:1174
+#, c-format
+msgid ""
+"Add following folder to bookmarks:\n"
+"'%s'\n"
+"Enter a name for the new bookmark item:"
+msgstr ""
+"Dodaj ovaj folder u obeleživače:\n"
+"„%s“\n"
+"Unesite ime za ovaj obeleživač"
+
+#: ../src/main-win.c:1178
+msgid "Add to Bookmarks"
+msgstr "Dodaj u obeleživače"
+
+#. { "new-tab", 't', 0, G_OPTION_ARG_NONE, &new_tab, N_("Open folders in new tabs of the last used window instead of creating new windows"), NULL },
+#: ../src/pcmanfm.c:72
+msgid "Name of configuration profile"
+msgstr "Naziv profila za podešavanja"
+
+#: ../src/pcmanfm.c:73
+msgid "Launch desktop manager"
+msgstr "Pokreni upravljač okruženja"
+
+#: ../src/pcmanfm.c:74
+msgid "Turn off desktop manager if it's running"
+msgstr "Zaustavi upravljač okruženja ukoliko je pokrenut"
+
+#: ../src/pcmanfm.c:75
+msgid "Run PCManFM as a daemon"
+msgstr "Pokreni PCManFM program u pozadini"
+
+#: ../src/pcmanfm.c:76
+msgid "Open desktop preference dialog"
+msgstr "Otvori podešavanja radne površi"
+
+#: ../src/pcmanfm.c:77
+msgid "Set desktop wallpaper"
+msgstr "Postavi pozadinsku sliku"
+
+#: ../src/pcmanfm.c:77
+msgid "<image file>"
+msgstr "<datoteka sa slikom>"
+
+#: ../src/pcmanfm.c:78
+msgid "Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"
+msgstr "Režim prikaza pozadinske slike. <režim>=(color|stretch|fit|center|tile)"
+
+#: ../src/pcmanfm.c:78
+msgid "<mode>"
+msgstr "<režim>"
+
+#: ../src/pcmanfm.c:79
+msgid "Open preference dialog. 'n' is number of the page you want to show (1, 2, 3...)."
+msgstr "Otvori podešavanja. 'n' je broj srtane koju želite videti (1, 2, 3...)."
+
+#. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
+#: ../src/pcmanfm.c:81
+msgid "No function. Just to be compatible with nautilus"
+msgstr "Funkcija ne postoji. Samo zbog usaglašenosti sa programom „Nautilus“"
+
+#: ../src/pcmanfm.c:82
+msgid "[FILE1, FILE2,...]"
+msgstr "[FILE1, FILE2,...]"
+
+#: ../src/pcmanfm.c:590
+msgid "Terminal emulator is not set."
+msgstr "Nije postavljen emulator terminala."
+
+#: ../src/pcmanfm.c:633
+msgid "Create New..."
+msgstr "Napravi nov..."
+
+#: ../src/pcmanfm.c:633
+msgid "Enter a name for the newly created file:"
+msgstr "Unesite ime za novu datoteku:"
+
+#: ../src/pcmanfm.c:633
+msgid "New"
+msgstr "Nov"
+
