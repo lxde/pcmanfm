@@ -1658,7 +1658,7 @@ GdkFilterReturn on_root_event(GdkXEvent *xevent, GdkEvent *event, gpointer data)
         if(evt->atom == XA_NET_WORKAREA)
             update_working_area(self);
     }
-    return GDK_FILTER_TRANSLATE;
+    return GDK_FILTER_CONTINUE;
 }
 
 void update_working_area(FmDesktop* desktop)
