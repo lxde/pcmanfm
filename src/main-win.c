@@ -458,6 +458,14 @@ static void on_splitter_pos_changed(GtkPaned* paned, GParamSpec* ps, FmMainWin* 
     app_config->splitter_pos = gtk_paned_get_position(paned);
 }
 
+static void on_places_chdir(FmPlacesView* view, guint button, FmPath* path, FmMainWin* win)
+{
+    if(button == 2) /* middle click */
+        fm_main_win_add_tab(win, path);
+    else
+        fm_main_win_chdir(win, path);
+}
+
 static void fm_main_win_init(FmMainWin *self)
 {
     GtkWidget *vbox, *menubar, *toolitem, *scroll;
@@ -482,7 +490,7 @@ static void fm_main_win_init(FmMainWin *self)
     gtk_scrolled_window_set_policy(GTK_SCROLLED_WINDOW(scroll), GTK_POLICY_NEVER, GTK_POLICY_AUTOMATIC);
     gtk_container_add(GTK_CONTAINER(scroll), self->places_view);
     gtk_paned_add1(GTK_PANED(self->hpaned), scroll);
-    g_signal_connect_swapped(self->places_view, "chdir", G_CALLBACK(fm_main_win_chdir), self);
+    g_signal_connect(self->places_view, "chdir", G_CALLBACK(on_places_chdir), self);
 
     /* notebook right pane */
     self->notebook = gtk_notebook_new();
