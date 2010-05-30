@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-25 23:58+0200\n"
+"POT-Creation-Date: 2010-05-30 04:57+0000\n"
 "PO-Revision-Date: 2010-02-04 19:17+0100\n"
 "Last-Translator: Yarema aka Knedlyk <yupadmin@gmail.com>\n"
 "Language-Team: Ukrainian <translation@linux.org.ua>\n"
@@ -200,7 +200,7 @@ msgstr "Приховати кнопку 'Закрити вкладку'"
 
 #: ../data/ui/pref.glade.h:19
 msgid "Hide folder content border"
-msgstr "Приховати границю вмісту каталогу"
+msgstr "Приховати границю вмісту теки"
 
 #: ../data/ui/pref.glade.h:20
 msgid "Hide side pane buttons"
@@ -345,7 +345,7 @@ msgstr "_Сортувати файли"
 
 #: ../src/desktop-ui.c:56 ../src/main-win-ui.c:172
 msgid "Folder"
-msgstr "Каталог"
+msgstr "Тека"
 
 #: ../src/desktop-ui.c:57
 msgid "Blank File"
@@ -437,23 +437,23 @@ msgstr "Пере_хід"
 
 #: ../src/main-win-ui.c:150
 msgid "Previous Folder"
-msgstr "Попередній каталог"
+msgstr "Попередня тека"
 
 #: ../src/main-win-ui.c:151
 msgid "Next Folder"
-msgstr "Наступний каталог"
+msgstr "Наступна тека"
 
 #: ../src/main-win-ui.c:152
 msgid "Parent Folder"
-msgstr "Каталог рівнем вище"
+msgstr "Тека рівнем вище"
 
 #: ../src/main-win-ui.c:152
 msgid "Go to parent Folder"
-msgstr "Перейти до каталогу рівнем вище"
+msgstr "Перейти до теки рівнем вище"
 
 #: ../src/main-win-ui.c:153
 msgid "Home Folder"
-msgstr "Домашній каталог"
+msgstr "Домашня тека"
 
 #: ../src/main-win-ui.c:154
 msgid "Desktop"
@@ -461,7 +461,7 @@ msgstr "Стільниця"
 
 #: ../src/main-win-ui.c:154
 msgid "Desktop Folder"
-msgstr "Каталог стільниці"
+msgstr "Тека стільниці"
 
 #: ../src/main-win-ui.c:155
 msgid "My Computer"
@@ -497,11 +497,11 @@ msgstr "_Інструменти"
 
 #: ../src/main-win-ui.c:163
 msgid "Open Current Folder in _Terminal"
-msgstr "Відкрити поточний каталог у _терміналі"
+msgstr "Відкрити поточну теку у _терміналі"
 
 #: ../src/main-win-ui.c:164
 msgid "Open Current Folder as _Root"
-msgstr "Відкрити поточний каталог з правами root'а"
+msgstr "Відкрити поточну теку з правами root'а"
 
 #: ../src/main-win-ui.c:173
 msgid "Blank FIle"
@@ -527,31 +527,31 @@ msgstr "Вигляд мініа_тюрами"
 msgid "Detailed _List View"
 msgstr "Детальний вигляд _списком"
 
-#: ../src/main-win.c:552
+#: ../src/main-win.c:560
 msgid "You are in super user mode"
 msgstr "Ви в режимі супер-користувача"
 
-#: ../src/main-win.c:651
+#: ../src/main-win.c:659
 msgid "Switch user command is not set."
 msgstr "Команду зміни користувача не встановлено"
 
-#: ../src/main-win.c:958
+#: ../src/main-win.c:966
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Вільний простір: %s (Всього: %s )"
 
-#: ../src/main-win.c:1174
+#: ../src/main-win.c:1182
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
 "'%s'\n"
 "Enter a name for the new bookmark item:"
 msgstr ""
-"Додати наступний каталог до закладок:\n"
+"Додати наступну теку до закладок:\n"
 "'%s'\n"
 "Введіть назву для нової закладки:"
 
-#: ../src/main-win.c:1178
+#: ../src/main-win.c:1186
 msgid "Add to Bookmarks"
 msgstr "Додати до закладок"
 
@@ -634,7 +634,7 @@ msgstr "Новий"
 #~ "Open folders in new tabs of the last used window instead of creating new "
 #~ "windows"
 #~ msgstr ""
-#~ "Відкрити каталоги в нових вкладках останньо використаного вікна замість "
+#~ "Відкрити теки в нових вкладках останньо використаного вікна замість "
 #~ "створення нових вікон"
 
 #~ msgid "Display image files with supported format as thumbnails"
