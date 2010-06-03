@@ -2,20 +2,20 @@
 # Copyright (C) 2010
 # This file is distributed under the same license as the pcmanfm package.
 # Yarema aka Knedlyk <yupadmin@gmail.com>, 2010.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-30 04:57+0000\n"
+"POT-Creation-Date: 2010-06-03 05:46+0000\n"
 "PO-Revision-Date: 2010-02-04 19:17+0100\n"
 "Last-Translator: Yarema aka Knedlyk <yupadmin@gmail.com>\n"
 "Language-Team: Ukrainian <translation@linux.org.ua>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Country: Ukraine\n"
 "X-Poedit-Language: Ukrainian\n"
+"X-Poedit-Country: Ukraine\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2010"
@@ -190,8 +190,7 @@ msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
 "%s = the command line you want to execute with terminal or su."
 msgstr ""
-"Приклад: \"xterm -e %s\" для терміналу, або \"gksu %s\" для переключення "
-"користувача.\n"
+"Приклад: \"xterm -e %s\" для терміналу, або \"gksu %s\" для переключення користувача.\n"
 "%s = командна стрічка, яку Ви бажаєти виконати в терміналі або з su."
 
 #: ../data/ui/pref.glade.h:18
@@ -220,8 +219,7 @@ msgstr "Монтувати змінні пристрої при їх встав�
 
 #: ../data/ui/pref.glade.h:24
 msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
-msgstr ""
-"Перенести видалені файли до \"смітника\" замість повного видалення з диску"
+msgstr "Перенести видалені файли до \"смітника\" замість повного видалення з диску"
 
 #: ../data/ui/pref.glade.h:25
 msgid "Only show thumbnails for local files"
@@ -281,11 +279,11 @@ msgstr "Емулятор терміналу:"
 
 #: ../data/ui/pref.glade.h:41
 msgid "Thumbnail View"
-msgstr "Вигляд мініатюрами"
+msgstr "Вигляд значками"
 
 #: ../data/ui/pref.glade.h:43
 msgid "Use SI decimal prefixes instead of IEC binary prefixes"
-msgstr "Використовувати десяткові префікси SI замість IEC бінарних префіксів"
+msgstr "Використовувати десяткові префікси SI замість бінарних префіксів IEC"
 
 #: ../data/ui/pref.glade.h:44
 msgid "View Mode:"
@@ -309,7 +307,7 @@ msgstr "_Управління дисками"
 
 #: ../data/ui/autorun.glade.h:1
 msgid "<b>Removable medium is inserted</b>"
-msgstr "<b>Вставлено змінний пристрій</b>"
+msgstr "<b>Вставлено знімний пристрій</b>"
 
 #: ../data/ui/autorun.glade.h:2
 msgid "Detecting..."
@@ -317,7 +315,7 @@ msgstr "Визначаю..."
 
 #: ../data/ui/autorun.glade.h:3
 msgid "Please select the action you want to perform:"
-msgstr "Виберіть, будь-ласка, дію, яку Ви бажаєте виконати:"
+msgstr "Виберіть, будь ласка, дію, яку Ви бажаєте виконати:"
 
 #: ../data/ui/autorun.glade.h:4
 msgid "Removable medium is inserted"
@@ -337,7 +335,7 @@ msgstr "Відкрити в менеджері файлів"
 
 #: ../src/desktop-ui.c:53
 msgid "_Invert Selection"
-msgstr "Забрати виділення"
+msgstr "_Інвертувати виділене"
 
 #: ../src/desktop-ui.c:54 ../src/main-win-ui.c:146
 msgid "_Sort Files"
@@ -369,11 +367,11 @@ msgstr "По типу файлу"
 
 #: ../src/desktop-ui.c:88 ../src/main-win-ui.c:218
 msgid "Open in New Tab"
-msgstr "Відкрити в новій вкладці"
+msgstr "Відкрити у новій вкладці"
 
 #: ../src/desktop-ui.c:89 ../src/main-win-ui.c:219
 msgid "Open in New Window"
-msgstr "Відкрити в новому вікні"
+msgstr "Відкрити у новому вікні"
 
 #: ../src/desktop-ui.c:91 ../src/main-win-ui.c:221
 msgid "Open in _Terminal"
@@ -409,7 +407,7 @@ msgstr "Перейменувати"
 
 #: ../src/main-win-ui.c:139
 msgid "Create Symlink"
-msgstr "Створити символічне посилання"
+msgstr "Створити символьне посилання"
 
 #: ../src/main-win-ui.c:140
 msgid "Move To..."
@@ -421,7 +419,7 @@ msgstr "Копіювати до..."
 
 #: ../src/main-win-ui.c:143
 msgid "Invert Selection"
-msgstr "Забрати виділення"
+msgstr "Інвертувати виділене"
 
 #: ../src/main-win-ui.c:145
 msgid "_View"
@@ -509,7 +507,7 @@ msgstr "Порожній файл"
 
 #: ../src/main-win-ui.c:179
 msgid "Show _Hidden"
-msgstr "Показати приховані"
+msgstr "Показати приховане"
 
 #: ../src/main-win-ui.c:184
 msgid "_Icon View"
@@ -521,7 +519,7 @@ msgstr "_Компактний вигляд"
 
 #: ../src/main-win-ui.c:186
 msgid "_Thumbnail View"
-msgstr "Вигляд мініа_тюрами"
+msgstr "Вигляд зна_чками"
 
 #: ../src/main-win-ui.c:187
 msgid "Detailed _List View"
@@ -555,7 +553,8 @@ msgstr ""
 msgid "Add to Bookmarks"
 msgstr "Додати до закладок"
 
-#. { "new-tab", 't', 0, G_OPTION_ARG_NONE, &new_tab, N_("Open folders in new tabs of the last used window instead of creating new windows"), NULL },
+#. { "new-tab", 't', 0, G_OPTION_ARG_NONE, &new_tab, N_("Open folders in new
+#. tabs of the last used window instead of creating new windows"), NULL },
 #: ../src/pcmanfm.c:72
 msgid "Name of configuration profile"
 msgstr "Назва профілю конфігурації"
@@ -586,23 +585,18 @@ msgstr "<файл зображення>"
 
 #: ../src/pcmanfm.c:78
 msgid "Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"
-msgstr ""
-"Встановити режим для заставки стільниці. <режим>=(колір|розтягнення|"
-"заповнення|центрування|плиткою)"
+msgstr "Встановити режим для заставки стільниці. <режим>=(колір|розтягнення|заповнення|центрування|плиткою)"
 
 #: ../src/pcmanfm.c:78
 msgid "<mode>"
 msgstr "<режим>"
 
 #: ../src/pcmanfm.c:79
-msgid ""
-"Open preference dialog. 'n' is number of the page you want to show (1, 2, "
-"3...)."
-msgstr ""
-"Відкрити діалог налаштування. 'n' є номер сторінки, яку Ви бажаєте показати "
-"(1, 2, 3...)."
+msgid "Open preference dialog. 'n' is number of the page you want to show (1, 2, 3...)."
+msgstr "Відкрити діалог налаштування. 'n' є номер сторінки, яку Ви бажаєте показати (1, 2, 3...)."
 
-#. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
+#. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files
+#. utility"), NULL },
 #: ../src/pcmanfm.c:81
 msgid "No function. Just to be compatible with nautilus"
 msgstr "Немає функції. Тільки щоб було сумісно з nautilus."
@@ -630,12 +624,8 @@ msgstr "Новий"
 #~ msgid "Open Find Files utility"
 #~ msgstr "Відкрити утиліту пошуку файлів"
 
-#~ msgid ""
-#~ "Open folders in new tabs of the last used window instead of creating new "
-#~ "windows"
-#~ msgstr ""
-#~ "Відкрити теки в нових вкладках останньо використаного вікна замість "
-#~ "створення нових вікон"
+#~ msgid "Open folders in new tabs of the last used window instead of creating new windows"
+#~ msgstr "Відкрити теки в нових вкладках останньо використаного вікна замість створення нових вікон"
 
 #~ msgid "Display image files with supported format as thumbnails"
 #~ msgstr "Показати файли зображень як іконки"
