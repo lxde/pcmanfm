@@ -8,19 +8,19 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-05-25 23:58+0200\n"
-"PO-Revision-Date: 2010-05-04 12:46+0200\n"
+"PO-Revision-Date: 2010-06-04 00:29+0200\n"
 "Last-Translator: Gunleif <gunleif@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: fo\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: fo\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.0.1\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2010"
-msgstr "Upphavsrættindi 2009 - 2010"
+msgstr "Upphavsrættindi (C) 2009 - 2010"
 
 #: ../data/ui/about.glade.in.h:2
 msgid ""
@@ -29,12 +29,13 @@ msgid ""
 "Developed by Hon Jen Yee (PCMan)"
 msgstr ""
 "Lættur fíluleiðari\n"
+"\n"
 "Mentur av Hon Jen Yee (PCMan)"
 
 #. Please replace this line with your own names, one name per line.
 #: ../data/ui/about.glade.in.h:6
 msgid "translator-credits"
-msgstr "Gunleif Joensen, 2010"
+msgstr "Gunleif Joensen, 2010\n"
 
 #: ../data/ui/desktop-pref.glade.h:1
 msgid "<b>Background</b>"
@@ -86,7 +87,7 @@ msgstr "Fyll einans við bakgrundsliti"
 
 #: ../data/ui/desktop-pref.glade.h:13
 msgid "Font of label text:"
-msgstr "Stavasnið á spjaldrateksti"
+msgstr "Stavasnið á spjaldrateksti:"
 
 #: ../data/ui/desktop-pref.glade.h:14
 msgid "Please select an image file"
@@ -220,7 +221,7 @@ msgstr "Íset flytimiðlar sjálvirkandi, tá ið teir verða settir í"
 
 #: ../data/ui/pref.glade.h:24
 msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
-msgstr "Flyt fílur til \"Ruskspann\", ístaðin fyri at strika tær av diskinum"
+msgstr "Flyt fílur til \"Ruskspann\" ístaðin fyri at strika tær av diskinum"
 
 #: ../data/ui/pref.glade.h:25
 msgid "Only show thumbnails for local files"
@@ -272,7 +273,7 @@ msgstr "Stødd á smámyndum:"
 
 #: ../data/ui/pref.glade.h:39
 msgid "Switch user command:"
-msgstr "Stýriboð fyri brúkaraskift"
+msgstr "Stýriboð fyri brúkaraskift:"
 
 #: ../data/ui/pref.glade.h:40
 msgid "Terminal emulator:"
@@ -288,7 +289,7 @@ msgstr ""
 
 #: ../data/ui/pref.glade.h:44
 msgid "View Mode:"
-msgstr "Vísingarstandur"
+msgstr "Vísingarstandur:"
 
 #: ../data/ui/pref.glade.h:45
 msgid "_Advanced"
@@ -376,7 +377,7 @@ msgstr "Lat upp í nýggjum glugga"
 
 #: ../src/desktop-ui.c:91 ../src/main-win-ui.c:221
 msgid "Open in _Terminal"
-msgstr "Lat upp í _útstøð:"
+msgstr "La_t upp í útstøð"
 
 #: ../src/main-win-ui.c:128
 msgid "_File"
@@ -447,11 +448,11 @@ msgstr "Næsta skjátta"
 
 #: ../src/main-win-ui.c:152
 msgid "Parent Folder"
-msgstr ""
+msgstr "Foreldraskjátta"
 
 #: ../src/main-win-ui.c:152
 msgid "Go to parent Folder"
-msgstr ""
+msgstr "Far til foreldramappu"
 
 #: ../src/main-win-ui.c:153
 msgid "Home Folder"
@@ -535,7 +536,7 @@ msgstr "Tú er í úrvalsbrúkara standi"
 
 #: ../src/main-win.c:651
 msgid "Switch user command is not set."
-msgstr "Stýriboð til brúkaraskift er ikki sett"
+msgstr "Stýriboð til brúkaraskift er ikki sett."
 
 #: ../src/main-win.c:958
 #, c-format
@@ -588,11 +589,11 @@ msgstr "<myndafíla>"
 
 #: ../src/pcmanfm.c:78
 msgid "Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"
-msgstr ""
+msgstr "Set standin á skriviborðstapeti. <mode>=(color|stretch|fit|center|tile)"
 
 #: ../src/pcmanfm.c:78
 msgid "<mode>"
-msgstr ""
+msgstr "<standur>"
 
 #: ../src/pcmanfm.c:79
 msgid ""
@@ -611,9 +612,8 @@ msgid "[FILE1, FILE2,...]"
 msgstr "[FÍLA1, FÍLA2,...]"
 
 #: ../src/pcmanfm.c:590
-#, fuzzy
 msgid "Terminal emulator is not set."
-msgstr "Útstøðarhermari er ikki givin"
+msgstr "Útstøðarhermari er ikki givin."
 
 #: ../src/pcmanfm.c:633
 msgid "Create New..."
