@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-05-25 23:58+0200\n"
-"PO-Revision-Date: 2010-06-07 15:55+0200\n"
+"PO-Revision-Date: 2010-06-08 18:12+0200\n"
 "Last-Translator: Gunleif <gunleif@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: fo\n"
@@ -35,7 +35,11 @@ msgstr ""
 #. Please replace this line with your own names, one name per line.
 #: ../data/ui/about.glade.in.h:6
 msgid "translator-credits"
-msgstr "Gunleif Joensen, 2010"
+msgstr ""
+"Gunleif Joensen\n"
+"\n"
+"Sjónarmið viðvíkjandi týðingini kunnu sendast til:\n"
+"<fo.umseting@gmail.com>"
 
 #: ../data/ui/desktop-pref.glade.h:1
 msgid "<b>Background</b>"
@@ -285,7 +289,7 @@ msgstr "Smámyndavísan"
 
 #: ../data/ui/pref.glade.h:43
 msgid "Use SI decimal prefixes instead of IEC binary prefixes"
-msgstr ""
+msgstr "Nýt SI forstavilsi ístaðin fyri IEC tvítalsforstavilsi"
 
 #: ../data/ui/pref.glade.h:44
 msgid "View Mode:"
@@ -337,7 +341,7 @@ msgstr "Lat upp í fílufyrisiting"
 
 #: ../src/desktop-ui.c:53
 msgid "_Invert Selection"
-msgstr ""
+msgstr "_Vend úrval"
 
 #: ../src/desktop-ui.c:54 ../src/main-win-ui.c:146
 msgid "_Sort Files"
@@ -384,7 +388,6 @@ msgid "_File"
 msgstr "_Fíla"
 
 #: ../src/main-win-ui.c:129
-#, fuzzy
 msgid "_New Window"
 msgstr "_Nýggjan rút"
 
@@ -397,7 +400,6 @@ msgid "_Close Tab"
 msgstr "_Lat teigin aftur"
 
 #: ../src/main-win-ui.c:132
-#, fuzzy
 msgid "Close Window"
 msgstr "Lat rútin aftur"
 
@@ -577,7 +579,7 @@ msgstr "Koyr PCManFM sum demón"
 
 #: ../src/pcmanfm.c:76
 msgid "Open desktop preference dialog"
-msgstr ""
+msgstr "Lat innstillingar til skriviborðið"
 
 #: ../src/pcmanfm.c:77
 msgid "Set desktop wallpaper"
@@ -603,7 +605,6 @@ msgstr ""
 
 #. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
 #: ../src/pcmanfm.c:81
-#, fuzzy
 msgid "No function. Just to be compatible with nautilus"
 msgstr "Einki ávirki. Einans til at verða samnýtandi við nautilus"
 
