@@ -2,12 +2,12 @@
 # Copyright (C) 2006 THE pcmanfm'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the pcmanfm package.
 # Nuno Miguel <nunis@netcabo.pt>, 2008, 2009
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-25 23:58+0200\n"
+"POT-Creation-Date: 2010-06-12 08:10+0000\n"
 "PO-Revision-Date: 2010-03-19 12:20-0000\n"
 "Last-Translator: Sérgio Marques <smarquespt@gmail.com>\n"
 "Language-Team: \n"
@@ -15,9 +15,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 1.1.0\n"
 "X-Poedit-Language: Portuguese\n"
 "X-Poedit-Country: PORTUGAL\n"
+"X-Generator: Pootle 1.1.0\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2010"
@@ -194,8 +194,7 @@ msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
 "%s = the command line you want to execute with terminal or su."
 msgstr ""
-"Exemplos: \"xterm -e %s\" para terminal ou \"gksu %s\" para trocar "
-"utilizadores.\n"
+"Exemplos: \"xterm -e %s\" para terminal ou \"gksu %s\" para trocar utilizadores.\n"
 "%s = a linha de comandos a executar com o terminal ou su."
 
 #: ../data/ui/pref.glade.h:18
@@ -530,20 +529,20 @@ msgstr "_Miniaturas"
 msgid "Detailed _List View"
 msgstr "_Lista Detalhada"
 
-#: ../src/main-win.c:552
+#: ../src/main-win.c:560
 msgid "You are in super user mode"
 msgstr "Está no modo de super utilizador"
 
-#: ../src/main-win.c:651
+#: ../src/main-win.c:659
 msgid "Switch user command is not set."
 msgstr "Comando para troca de utilizador não definido."
 
-#: ../src/main-win.c:958
+#: ../src/main-win.c:966
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Espaço livre: %s (Total: %s)"
 
-#: ../src/main-win.c:1174
+#: ../src/main-win.c:1182
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -554,11 +553,12 @@ msgstr ""
 "'%s'\n"
 "Indique o nome para o novo marcador:"
 
-#: ../src/main-win.c:1178
+#: ../src/main-win.c:1186
 msgid "Add to Bookmarks"
 msgstr "Adicionar aos Marcadores"
 
-#. { "new-tab", 't', 0, G_OPTION_ARG_NONE, &new_tab, N_("Open folders in new tabs of the last used window instead of creating new windows"), NULL },
+#. { "new-tab", 't', 0, G_OPTION_ARG_NONE, &new_tab, N_("Open folders in new
+#. tabs of the last used window instead of creating new windows"), NULL },
 #: ../src/pcmanfm.c:72
 msgid "Name of configuration profile"
 msgstr "Nome do perfil de configuração"
@@ -589,21 +589,18 @@ msgstr "<imagem>"
 
 #: ../src/pcmanfm.c:78
 msgid "Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"
-msgstr ""
+msgstr "Defina o modo do papel de parede. <modo>=(cor|esticar|ajustar|centrar|mosaico)"
 
 #: ../src/pcmanfm.c:78
 msgid "<mode>"
-msgstr ""
+msgstr "<modo>"
 
 #: ../src/pcmanfm.c:79
-msgid ""
-"Open preference dialog. 'n' is number of the page you want to show (1, 2, "
-"3...)."
-msgstr ""
-"Abrir diálogo de preferências. 'n' é o número da página que quer mostrar (1, "
-"2, 3...)."
+msgid "Open preference dialog. 'n' is number of the page you want to show (1, 2, 3...)."
+msgstr "Abrir diálogo de preferências. 'n' é o número da página que quer mostrar (1, 2, 3...)."
 
-#. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
+#. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files
+#. utility"), NULL },
 #: ../src/pcmanfm.c:81
 msgid "No function. Just to be compatible with nautilus"
 msgstr "Sem função. Apenas para compatibilidade com nautilus"
@@ -631,9 +628,5 @@ msgstr "Novo"
 #~ msgid "Open Find Files utility"
 #~ msgstr "Abrir Procura de Ficheiros"
 
-#~ msgid ""
-#~ "Open folders in new tabs of the last used window instead of creating new "
-#~ "windows"
-#~ msgstr ""
-#~ "Abrir pastas em novos separadores da última janela usada em vez de criar "
-#~ "novas janelas"
+#~ msgid "Open folders in new tabs of the last used window instead of creating new windows"
+#~ msgstr "Abrir pastas em novos separadores da última janela usada em vez de criar novas janelas"
