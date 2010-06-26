@@ -47,6 +47,8 @@
 static int sock;
 GIOChannel* io_channel = NULL;
 
+static int signal_pipe[2] = {-1, -1};
+
 gboolean daemon_mode = FALSE;
 
 static char** files_to_open = NULL;
@@ -91,6 +93,27 @@ static void get_socket_name(char* buf, int len);
 static gboolean pcmanfm_run();
 static gboolean on_socket_event(GIOChannel* ioc, GIOCondition cond, gpointer data);
 
+/* it's not safe to call gtk+ functions in unix signal handler
+ * since the process is interrupted here and the state of gtk+ is unpredictable. */
+static void unix_signal_handler(int sig_num)
+{
+    /* postpond the signal handling by using a pipe */
+    write(signal_pipe[1], &sig_num, sizeof(sig_num));
+}
+
+static gboolean on_unix_signal(GIOChannel* ch, GIOCondition cond, gpointer user_data)
+{
+    int sig_num;
+    g_io_channel_read_chars(ch, &sig_num, 1, NULL, NULL);
+    switch(sig_num)
+    {
+    case SIGTERM:
+    default:
+        gtk_main_quit();
+    }
+    return TRUE;
+}
+
 int main(int argc, char** argv)
 {
     FmConfig* config;
@@ -115,11 +138,17 @@ int main(int argc, char** argv)
          will be passed to the existing instance, and exit() will be called here.  */
     single_instance_check();
 
-    /* intercept signals */
-    signal( SIGPIPE, SIG_IGN );
-    /* signal( SIGHUP, gtk_main_quit ); */
-    signal( SIGINT, gtk_main_quit );
-    signal( SIGTERM, gtk_main_quit );
+    if(pipe(signal_pipe) == 0)
+    {
+        GIOChannel* ch = g_io_channel_unix_new(signal_pipe[0]);
+        g_io_add_watch(ch, G_IO_IN|G_IO_PRI, (GIOFunc)on_unix_signal, NULL);
+        g_io_channel_unref(ch);
+
+        /* intercept signals */
+        signal( SIGPIPE, SIG_IGN );
+        /* signal( SIGHUP, gtk_main_quit ); */
+        signal( SIGTERM, unix_signal_handler );
+    }
 
     config = fm_app_config_new(); /* this automatically load libfm config file. */
     /* load pcmanfm-specific config file */
@@ -127,13 +156,13 @@ int main(int argc, char** argv)
         config_name = g_strconcat("pcmanfm/", profile, ".conf", NULL);
     fm_app_config_load_from_file(FM_APP_CONFIG(config), config_name);
 
-	fm_gtk_init(config);
+    fm_gtk_init(config);
 
     /* the main part */
     if(pcmanfm_run())
     {
         fm_volume_manager_init();
-    	gtk_main();
+        gtk_main();
         if(desktop_running)
             fm_desktop_manager_finalize();
         fm_config_save(config, NULL); /* save libfm config */
@@ -144,7 +173,7 @@ int main(int argc, char** argv)
 
     fm_gtk_finalize();
     g_object_unref(config);
-	return 0;
+    return 0;
 }
 
 inline static void buf_append_str(GByteArray* buf, const char* str)
