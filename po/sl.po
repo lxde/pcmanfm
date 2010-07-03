@@ -1,19 +1,19 @@
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PCManFM2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-25 23:58+0200\n"
+"POT-Creation-Date: 2010-07-03 07:54+0000\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Matej Gačnik <paxmanpwnz@gmail.com>\n"
 "Language-Team: paxman <paxmanpwnz@gmail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
-"%100==4 ? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
 "X-Poedit-Language: Slovenian\n"
-"X-Poedit-Country: SLOVENIA\n"
 "X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-Country: SLOVENIA\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2010"
@@ -188,8 +188,7 @@ msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
 "%s = the command line you want to execute with terminal or su."
 msgstr ""
-"Primeri: \"xterm -e %s\" za konzolo ali \"gksu %s\" za preklop med "
-"uporabniki.\n"
+"Primeri: \"xterm -e %s\" za konzolo ali \"gksu %s\" za preklop med uporabniki.\n"
 "%s = ukaz za izvršitev v konzoli ali s su."
 
 #: ../data/ui/pref.glade.h:18
@@ -524,20 +523,20 @@ msgstr "_Predogled"
 msgid "Detailed _List View"
 msgstr "Prikaži _podroben seznam"
 
-#: ../src/main-win.c:552
+#: ../src/main-win.c:560
 msgid "You are in super user mode"
 msgstr "Prijavljeni ste kot super uporabnik"
 
-#: ../src/main-win.c:651
+#: ../src/main-win.c:659
 msgid "Switch user command is not set."
 msgstr "Ukaz za preklop med uporabniki ni nastavljen"
 
-#: ../src/main-win.c:958
+#: ../src/main-win.c:966
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Prazen prostor: %s (skupno: %s)"
 
-#: ../src/main-win.c:1174
+#: ../src/main-win.c:1182
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -548,85 +547,80 @@ msgstr ""
 "'%s'\n"
 "Vnesi ime za nov zazamek:"
 
-#: ../src/main-win.c:1178
+#: ../src/main-win.c:1186
 msgid "Add to Bookmarks"
 msgstr "Dodaj med zaznamke"
 
-#. { "new-tab", 't', 0, G_OPTION_ARG_NONE, &new_tab, N_("Open folders in new tabs of the last used window instead of creating new windows"), NULL },
-#: ../src/pcmanfm.c:72
+#. { "new-tab", 't', 0, G_OPTION_ARG_NONE, &new_tab, N_("Open folders in new
+#. tabs of the last used window instead of creating new windows"), NULL },
+#: ../src/pcmanfm.c:74
 msgid "Name of configuration profile"
 msgstr "Imena profila nastavitev"
 
-#: ../src/pcmanfm.c:73
+#: ../src/pcmanfm.c:75
 msgid "Launch desktop manager"
 msgstr "Zaženi upravljalca namizja"
 
-#: ../src/pcmanfm.c:74
+#: ../src/pcmanfm.c:76
 msgid "Turn off desktop manager if it's running"
 msgstr "Izključi upravljalca namizja če je le-ta zagnan"
 
-#: ../src/pcmanfm.c:75
+#: ../src/pcmanfm.c:77
 msgid "Run PCManFM as a daemon"
 msgstr "Zaženi PCManFM kot demon"
 
-#: ../src/pcmanfm.c:76
+#: ../src/pcmanfm.c:78
 msgid "Open desktop preference dialog"
 msgstr "Odpri nastavitve namizja"
 
-#: ../src/pcmanfm.c:77
+#: ../src/pcmanfm.c:79
 msgid "Set desktop wallpaper"
 msgstr "Nastavi ozadje namizja"
 
-#: ../src/pcmanfm.c:77
+#: ../src/pcmanfm.c:79
 msgid "<image file>"
 msgstr "<slikovna datoteka>"
 
-#: ../src/pcmanfm.c:78
+#: ../src/pcmanfm.c:80
 msgid "Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"
-msgstr ""
+msgstr "Nastavi način ozadja <način>=(barva|raztegni|zapolni|sredina|razpostavi)"
 
-#: ../src/pcmanfm.c:78
+#: ../src/pcmanfm.c:80
 msgid "<mode>"
-msgstr ""
+msgstr "<način>"
 
-#: ../src/pcmanfm.c:79
-msgid ""
-"Open preference dialog. 'n' is number of the page you want to show (1, 2, "
-"3...)."
-msgstr ""
-"Odpre nastavitveni dialog. 'n' je število strani, kolikor naj jih bo "
-"prikazanih (1, 2, 3,...)"
-
-#. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
 #: ../src/pcmanfm.c:81
+msgid "Open preference dialog. 'n' is number of the page you want to show (1, 2, 3...)."
+msgstr "Odpre nastavitveni dialog. 'n' je število strani, kolikor naj jih bo prikazanih (1, 2, 3,...)"
+
+#. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files
+#. utility"), NULL },
+#: ../src/pcmanfm.c:83
 msgid "No function. Just to be compatible with nautilus"
 msgstr "Brez funkcije; za kompatibilnost z Nautilusom."
 
-#: ../src/pcmanfm.c:82
+#: ../src/pcmanfm.c:84
 msgid "[FILE1, FILE2,...]"
 msgstr "[DATOTEKA1, DATOTEKA2,...]"
 
-#: ../src/pcmanfm.c:590
+#: ../src/pcmanfm.c:619
 msgid "Terminal emulator is not set."
 msgstr "Ukaz za zagon konzole ni nastavljen"
 
-#: ../src/pcmanfm.c:633
+#: ../src/pcmanfm.c:662
 msgid "Create New..."
 msgstr "Ustvari novo..."
 
-#: ../src/pcmanfm.c:633
+#: ../src/pcmanfm.c:662
 msgid "Enter a name for the newly created file:"
 msgstr "Vnesite ime nove datoteke:"
 
-#: ../src/pcmanfm.c:633
+#: ../src/pcmanfm.c:662
 msgid "New"
 msgstr "Nov"
 
 #~ msgid "Open Find Files utility"
 #~ msgstr "Odpri iskanje"
 
-#~ msgid ""
-#~ "Open folders in new tabs of the last used window instead of creating new "
-#~ "windows"
-#~ msgstr ""
-#~ "Mapo odpri v zavihku zadnjič uporabljenega okna namesto v novem oknu"
+#~ msgid "Open folders in new tabs of the last used window instead of creating new windows"
+#~ msgstr "Mapo odpri v zavihku zadnjič uporabljenega okna namesto v novem oknu"
