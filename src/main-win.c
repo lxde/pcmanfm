@@ -251,15 +251,16 @@ static void on_file_clicked(FmFolderView* fv, FmFolderViewClickType type, FmFile
             gtk_menu_popup(GTK_MENU(win->popup), NULL, NULL, NULL, NULL, 3, gtk_get_current_event_time());
         break;
     case FM_FV_MIDDLE_CLICK:
-        fm_main_win_add_tab(win, fi->path);
+        if(fm_file_info_is_dir(fi))
+            fm_main_win_add_tab(win, fi->path);
         break;
     }
 }
 
 static void on_sel_changed(FmFolderView* fv, FmFileInfoList* files, FmMainWin* win)
 {
-	/* popup previous message if there is any */
-	gtk_statusbar_pop(GTK_STATUSBAR(win->statusbar), win->statusbar_ctx2);
+    /* popup previous message if there is any */
+    gtk_statusbar_pop(GTK_STATUSBAR(win->statusbar), win->statusbar_ctx2);
     if(files)
     {
         char* msg;
@@ -905,9 +906,9 @@ void fm_main_win_chdir(FmMainWin* win, FmPath* path)
 
 static void close_btn_style_set(GtkWidget *btn, GtkRcStyle *prev, gpointer data)
 {
-	gint w, h;
-	gtk_icon_size_lookup_for_settings(gtk_widget_get_settings(btn), GTK_ICON_SIZE_MENU, &w, &h);
-	gtk_widget_set_size_request(btn, w + 2, h + 2);
+    gint w, h;
+    gtk_icon_size_lookup_for_settings(gtk_widget_get_settings(btn), GTK_ICON_SIZE_MENU, &w, &h);
+    gtk_widget_set_size_request(btn, w + 2, h + 2);
 }
 
 static void close_tab(GtkWidget* view)
