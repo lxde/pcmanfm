@@ -1,27 +1,26 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# SZERVÁC Attila <sas@321.hu>, 2006.
+# Hungarian translation of pcmanfm.
+# Copyright (C) 2010 The LXDE Team
+# This file is distributed under the same license as the pcmanfm package.
+# Attila Szervac <sas@321.hu>, 2010.
+# Laszlo Dvornik <dvornik@gnome.hu>, 2010.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PCMan File Manager 0.3.6\n"
+"Project-Id-Version: pcmanfm\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-25 23:58+0200\n"
-"PO-Revision-Date: 2010-01-31 02:05+0100\n"
-"Last-Translator: SZERVÁC Attila <sas@321.hu>\n"
+"POT-Creation-Date: 2010-07-26 08:03+0000\n"
+"PO-Revision-Date: 2010-07-26 11:27+0200\n"
+"Last-Translator: Laszlo Dvornik <dvornik@gnome.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
+"Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Poedit-Language: Hungarian\n"
-"X-Poedit-Country: HUNGARY\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../data/ui/about.glade.in.h:1
-#, fuzzy
 msgid "Copyright (C) 2009 - 2010"
-msgstr "Copyright (C) 2009"
+msgstr "Copyright (C) 2009 - 2010"
 
 #: ../data/ui/about.glade.in.h:2
 msgid ""
@@ -36,7 +35,9 @@ msgstr ""
 #. Please replace this line with your own names, one name per line.
 #: ../data/ui/about.glade.in.h:6
 msgid "translator-credits"
-msgstr "SZERVÁC Attila"
+msgstr ""
+"Dvornik László <dvornik@gnome.hu>\n"
+"Szervác Attila <sas@321.hu>"
 
 #: ../data/ui/desktop-pref.glade.h:1
 msgid "<b>Background</b>"
@@ -44,7 +45,7 @@ msgstr "<b>Háttér</b>"
 
 #: ../data/ui/desktop-pref.glade.h:2
 msgid "<b>Show desktop icons</b>"
-msgstr "<b>Asztali ikonok mutatása</b>"
+msgstr "<b>Asztali ikonok megjelenítése</b>"
 
 #: ../data/ui/desktop-pref.glade.h:3
 msgid "<b>Text</b>"
@@ -68,11 +69,11 @@ msgstr "Középre a képernyőn"
 
 #: ../data/ui/desktop-pref.glade.h:8
 msgid "Color of label text:"
-msgstr "Címke szöveg színe"
+msgstr "Címke szöveg színe:"
 
 #: ../data/ui/desktop-pref.glade.h:9
 msgid "Color of shadow:"
-msgstr "Árnyék színe"
+msgstr "Árnyék színe:"
 
 #: ../data/ui/desktop-pref.glade.h:10
 msgid "Desktop Icons"
@@ -80,7 +81,7 @@ msgstr "Asztali ikonok"
 
 #: ../data/ui/desktop-pref.glade.h:11 ../src/desktop-ui.c:58
 msgid "Desktop Preferences"
-msgstr "Asztal jellemzői"
+msgstr "Asztal beállításai"
 
 #: ../data/ui/desktop-pref.glade.h:12
 msgid "Fill with background color only"
@@ -88,32 +89,31 @@ msgstr "Kitöltés csak a háttérszínnel"
 
 #: ../data/ui/desktop-pref.glade.h:13
 msgid "Font of label text:"
-msgstr "Címke szöveg betűje"
+msgstr "Címke szöveg betűje:"
 
 #: ../data/ui/desktop-pref.glade.h:14
 msgid "Please select an image file"
-msgstr "Válassz egy kép fájlt"
+msgstr "Válassz egy képfájlt"
 
 #: ../data/ui/desktop-pref.glade.h:15
 msgid "Show \"My Computer\" icon on desktop"
-msgstr "\"Saját gép\" ikon mutatása az asztalon"
+msgstr "\"Számítógép\" ikon megjelenítése az asztalon"
 
 #: ../data/ui/desktop-pref.glade.h:16
 msgid "Show \"My Documents\" icon on desktop"
-msgstr "\"Dokumentumaim\" ikon az asztalon"
+msgstr "\"Dokumentumaim\" ikon megjelenítése az asztalon"
 
 #: ../data/ui/desktop-pref.glade.h:17
 msgid "Show \"Trash Bin\" icon on desktop"
-msgstr "\"Kuka\" ikon mutatása az asztalon"
+msgstr "\"Kuka\" ikon megjelenítése az asztalon"
 
 #: ../data/ui/desktop-pref.glade.h:18
 msgid "Show icons of volumes on desktop"
-msgstr "Kötetikonok az asztalon"
+msgstr "Kötetikonok megjelenítése az asztalon"
 
 #: ../data/ui/desktop-pref.glade.h:19
-#, fuzzy
 msgid "Show menus provided by window managers when desktop is clicked"
-msgstr "Ablakkezelő menüit mutatja az asztalra kattintva"
+msgstr "Ablakkezelő menüinek megjelenítése az asztalra kattintva"
 
 #: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:37
 msgid "Stretch to fill the entire screen"
@@ -136,27 +136,24 @@ msgid "Wallpaper:"
 msgstr "Tapéta:"
 
 #: ../data/ui/pref.glade.h:1
-#, fuzzy
 msgid "<b>Auto-mount</b>"
-msgstr "<b>Ikonok</b>"
+msgstr "<b>Automatikus csatolás</b>"
 
 #: ../data/ui/pref.glade.h:2
 msgid "<b>Behavior</b>"
 msgstr "<b>Viselkedés</b>"
 
 #: ../data/ui/pref.glade.h:3
-#, fuzzy
 msgid "<b>Default View</b>"
-msgstr "<b>Fájlméret</b>"
+msgstr "<b>Alapértelmezett nézet</b>"
 
 #: ../data/ui/pref.glade.h:4
 msgid "<b>Icons</b>"
 msgstr "<b>Ikonok</b>"
 
 #: ../data/ui/pref.glade.h:5
-#, fuzzy
 msgid "<b>Programs</b>"
-msgstr "Folyamat:"
+msgstr "<b>Programok</b>"
 
 #: ../data/ui/pref.glade.h:6
 msgid "<b>User Interface</b>"
@@ -164,34 +161,31 @@ msgstr "<b>Felhasználói felület</b>"
 
 #: ../data/ui/pref.glade.h:7
 msgid "Always show the tab bar"
-msgstr "Fül sáv állandó mutatása"
+msgstr "Fül sáv állandó megjelenítése"
 
 #: ../data/ui/pref.glade.h:8
-#, fuzzy
 msgid "Archiver integration:"
-msgstr "Elrendezés"
+msgstr "Tömörítő integrációja:"
 
 #: ../data/ui/pref.glade.h:9
 msgid "Bookmarks:"
-msgstr "Könyvjelzők"
+msgstr "Könyvjelzők:"
 
 #: ../data/ui/pref.glade.h:11
-#, fuzzy
 msgid "Compact View"
-msgstr "_Tömör nézet"
+msgstr "Tömör nézet"
 
 #: ../data/ui/pref.glade.h:12
 msgid "Confirm before deleting files"
 msgstr "Fájlok törlésének megerősítése"
 
 #: ../data/ui/pref.glade.h:13
-#, fuzzy
 msgid "Detailed List View"
-msgstr "Részletes _Lista"
+msgstr "Részletes listanézet"
 
 #: ../data/ui/pref.glade.h:14
 msgid "Do not generate thumbnails for files exceeding this size:"
-msgstr ""
+msgstr "Ennél nagyobb méretű fájlokhoz ne készüljenek előképek:"
 
 #: ../data/ui/pref.glade.h:16
 #, no-c-format
@@ -199,6 +193,9 @@ msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
 "%s = the command line you want to execute with terminal or su."
 msgstr ""
+"Példák: \"xterm -e %s\" a terminálhoz vagy \"gksu %s\" a "
+"felhasználóváltáshoz.\n"
+"%s = a terminállal vagy az su-val végrehajtandó parancs."
 
 #: ../data/ui/pref.glade.h:18
 msgid "Hide 'Close tab' buttons"
@@ -206,24 +203,23 @@ msgstr "'Fül bezárása' gombok elrejtése"
 
 #: ../data/ui/pref.glade.h:19
 msgid "Hide folder content border"
-msgstr "'Mappa tartalma' keret eltüntetése"
+msgstr "'Mappa tartalma' keret elrejtése"
 
 #: ../data/ui/pref.glade.h:20
 msgid "Hide side pane buttons"
-msgstr "Oldalsó mező gombok eltüntetése"
+msgstr "Oldalsáv gombjainak elrejtése"
 
 #: ../data/ui/pref.glade.h:21
-#, fuzzy
 msgid "Icon View"
-msgstr "_Ikon nézet"
+msgstr "Ikonnézet"
 
 #: ../data/ui/pref.glade.h:22
 msgid "Mount mountable volumes automatically on program startup"
-msgstr ""
+msgstr "Csatolható kötetek automatikus csatolása programinduláskor"
 
 #: ../data/ui/pref.glade.h:23
 msgid "Mount removable media automatically when they are inserted"
-msgstr ""
+msgstr "Cserélhető adathordozó automatikus csatolása behelyezéskor"
 
 #: ../data/ui/pref.glade.h:24
 msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
@@ -231,15 +227,15 @@ msgstr "Fájlok törlése a \"kuka\" mappába a lemezről törlés helyett"
 
 #: ../data/ui/pref.glade.h:25
 msgid "Only show thumbnails for local files"
-msgstr ""
+msgstr "Előképek megjelenítése csak a helyi fájloknál"
 
 #: ../data/ui/pref.glade.h:26
 msgid "Open files with single click"
-msgstr "Fájlok megnyitása 1 kattintással"
+msgstr "Fájlok megnyitása egy kattintással"
 
 #: ../data/ui/pref.glade.h:27
 msgid "Opened in Current Tab"
-msgstr "Megnyitva e lapon"
+msgstr "Megnyitva a jelenlehi lapon"
 
 #: ../data/ui/pref.glade.h:28
 msgid "Opened in New Tab"
@@ -251,15 +247,16 @@ msgstr "Megnyitva új ablakban"
 
 #: ../data/ui/pref.glade.h:30
 msgid "Preferences"
-msgstr "Tulajdonságok"
+msgstr "Beállítások"
 
 #: ../data/ui/pref.glade.h:31
 msgid "Show available options for removable media when they are inserted"
 msgstr ""
+"Elérhető beállítások megjelenítése cserélhető adathordozó behelyezésekor"
 
 #: ../data/ui/pref.glade.h:32
 msgid "Show thumbnails of files"
-msgstr ""
+msgstr "Fájlok előképeinek megjelenítése"
 
 #: ../data/ui/pref.glade.h:33
 msgid "Size of big icons:"
@@ -267,38 +264,35 @@ msgstr "Nagy ikonok mérete:"
 
 #: ../data/ui/pref.glade.h:34
 msgid "Size of side pane icons:"
-msgstr "Oldal panel ikonok mérete:"
+msgstr "Oldalsáv ikonjainak mérete:"
 
 #: ../data/ui/pref.glade.h:35
 msgid "Size of small icons:"
 msgstr "Kis ikonok mérete:"
 
 #: ../data/ui/pref.glade.h:36
-#, fuzzy
 msgid "Size of thumbnails:"
-msgstr "Kis ikonok mérete:"
+msgstr "Előképek mérete:"
 
 #: ../data/ui/pref.glade.h:39
 msgid "Switch user command:"
-msgstr ""
+msgstr "Felhasználóváltási parancs:"
 
 #: ../data/ui/pref.glade.h:40
-#, fuzzy
 msgid "Terminal emulator:"
 msgstr "Terminál:"
 
 #: ../data/ui/pref.glade.h:41
 msgid "Thumbnail View"
-msgstr ""
+msgstr "Előkép nézet"
 
 #: ../data/ui/pref.glade.h:43
 msgid "Use SI decimal prefixes instead of IEC binary prefixes"
 msgstr "SI tízes előtagok használata IEC binárisok helyett"
 
 #: ../data/ui/pref.glade.h:44
-#, fuzzy
 msgid "View Mode:"
-msgstr "Mód:"
+msgstr "Nézetmód:"
 
 #: ../data/ui/pref.glade.h:45
 msgid "_Advanced"
@@ -318,39 +312,35 @@ msgstr "_Kötetkezelés"
 
 #: ../data/ui/autorun.glade.h:1
 msgid "<b>Removable medium is inserted</b>"
-msgstr ""
+msgstr "<b>Cserélhető adathordozó van behelyezve</b>"
 
 #: ../data/ui/autorun.glade.h:2
-#, fuzzy
 msgid "Detecting..."
-msgstr "Törlés..."
+msgstr "Felismerés..."
 
 #: ../data/ui/autorun.glade.h:3
 msgid "Please select the action you want to perform:"
-msgstr ""
+msgstr "Válaszd ki a végrehajtandó műveletet:"
 
 #: ../data/ui/autorun.glade.h:4
 msgid "Removable medium is inserted"
-msgstr ""
+msgstr "Cserélhető adathordozó van behelyezve"
 
 #: ../data/ui/autorun.glade.h:5
 msgid "Type of medium:"
-msgstr ""
+msgstr "Adathordozó típusa:"
 
 #: ../src/volume-manager.c:150
-#, fuzzy
 msgid "Removable Disk"
-msgstr "%s eltávolítható kötet"
+msgstr "Cserélhető lemez"
 
 #: ../src/volume-manager.c:209
-#, fuzzy
 msgid "Open in File Manager"
-msgstr "PCMan fájlkezelő"
+msgstr "Megnyitás fájlkezelőben"
 
 #: ../src/desktop-ui.c:53
-#, fuzzy
 msgid "_Invert Selection"
-msgstr "Választás megfordítása"
+msgstr "Kijelölés meg_fordítása"
 
 #: ../src/desktop-ui.c:54 ../src/main-win-ui.c:146
 msgid "_Sort Files"
@@ -361,7 +351,6 @@ msgid "Folder"
 msgstr "Mappa"
 
 #: ../src/desktop-ui.c:57
-#, fuzzy
 msgid "Blank File"
 msgstr "Üres fájl"
 
@@ -374,14 +363,12 @@ msgid "By _Modification Time"
 msgstr "_Módosítás szerint"
 
 #: ../src/desktop-ui.c:71 ../src/main-win-ui.c:200
-#, fuzzy
 msgid "By _Size"
-msgstr "_Méret"
+msgstr "_Méret szerint"
 
 #: ../src/desktop-ui.c:72 ../src/main-win-ui.c:201
-#, fuzzy
 msgid "By File _Type"
-msgstr "Ismert fájl típusok:"
+msgstr "Fájl_típus szerint"
 
 #: ../src/desktop-ui.c:88 ../src/main-win-ui.c:218
 msgid "Open in New Tab"
@@ -392,9 +379,8 @@ msgid "Open in New Window"
 msgstr "Megnyitás új ablakban"
 
 #: ../src/desktop-ui.c:91 ../src/main-win-ui.c:221
-#, fuzzy
 msgid "Open in _Terminal"
-msgstr "Megnyitás Terminálban"
+msgstr "Megnyitás _terminálban"
 
 #: ../src/main-win-ui.c:128
 msgid "_File"
@@ -426,11 +412,11 @@ msgstr "Átnevezés"
 
 #: ../src/main-win-ui.c:139
 msgid "Create Symlink"
-msgstr "Szimlink létrehozása"
+msgstr "Szimbolikus hivatkozás létrehozása"
 
 #: ../src/main-win-ui.c:140
 msgid "Move To..."
-msgstr "Mozgatás..."
+msgstr "Áthelyezés..."
 
 #: ../src/main-win-ui.c:141
 msgid "Copy To..."
@@ -438,7 +424,7 @@ msgstr "Másolás..."
 
 #: ../src/main-win-ui.c:143
 msgid "Invert Selection"
-msgstr "Választás megfordítása"
+msgstr "Kijelölés megfordítása"
 
 #: ../src/main-win-ui.c:145
 msgid "_View"
@@ -462,11 +448,11 @@ msgstr "Következő mappa"
 
 #: ../src/main-win-ui.c:152
 msgid "Parent Folder"
-msgstr "Szülő"
+msgstr "Szülőmappa"
 
 #: ../src/main-win-ui.c:152
 msgid "Go to parent Folder"
-msgstr "Szülő mappa"
+msgstr "Ugrás a szülőmappába"
 
 #: ../src/main-win-ui.c:153
 msgid "Home Folder"
@@ -474,15 +460,15 @@ msgstr "Saját mappa"
 
 #: ../src/main-win-ui.c:154
 msgid "Desktop"
-msgstr "Munkaasztal"
+msgstr "Asztal"
 
 #: ../src/main-win-ui.c:154
 msgid "Desktop Folder"
-msgstr "Aszal mappa"
+msgstr "Asztalmappa"
 
 #: ../src/main-win-ui.c:155
 msgid "My Computer"
-msgstr "Saját gép"
+msgstr "Számítógép"
 
 #: ../src/main-win-ui.c:156
 msgid "Trash Can"
@@ -509,18 +495,16 @@ msgid "Add To Bookmarks"
 msgstr "Hozzáadás a könyvjelzőkhöz"
 
 #: ../src/main-win-ui.c:162
-#, fuzzy
 msgid "_Tools"
-msgstr "Esz_köz"
+msgstr "Esz_közök"
 
 #: ../src/main-win-ui.c:163
-#, fuzzy
 msgid "Open Current Folder in _Terminal"
-msgstr "E könyvtár megnyitása rendszergazdaként"
+msgstr "Jelenlegi mappa megnyitása _terminálban"
 
 #: ../src/main-win-ui.c:164
 msgid "Open Current Folder as _Root"
-msgstr "E könyvtár megnyitása rendszergazdaként"
+msgstr "Jelenlegi mappa megnyitása _rendszergazdaként"
 
 #: ../src/main-win-ui.c:173
 msgid "Blank FIle"
@@ -528,11 +512,11 @@ msgstr "Üres fájl"
 
 #: ../src/main-win-ui.c:179
 msgid "Show _Hidden"
-msgstr "_Rejtett"
+msgstr "_Rejtett megjelenítése"
 
 #: ../src/main-win-ui.c:184
 msgid "_Icon View"
-msgstr "_Ikon nézet"
+msgstr "_Ikonnézet"
 
 #: ../src/main-win-ui.c:185
 msgid "_Compact View"
@@ -540,1268 +524,107 @@ msgstr "_Tömör nézet"
 
 #: ../src/main-win-ui.c:186
 msgid "_Thumbnail View"
-msgstr ""
+msgstr "_Előkép nézet"
 
 #: ../src/main-win-ui.c:187
 msgid "Detailed _List View"
-msgstr "Részletes _Lista"
+msgstr "Részletes _listanézet"
 
-#: ../src/main-win.c:552
-#, fuzzy
+#: ../src/main-win.c:561
 msgid "You are in super user mode"
-msgstr "Figyelj!: Most rendszergazda módban vagy!"
+msgstr "Rendszergazda módban vagy"
 
-#: ../src/main-win.c:651
+#: ../src/main-win.c:660
 msgid "Switch user command is not set."
-msgstr ""
+msgstr "Felhasználóváltási parancs nincs beállítva."
 
-#: ../src/main-win.c:958
-#, fuzzy, c-format
+#: ../src/main-win.c:967
+#, c-format
 msgid "Free space: %s (Total: %s)"
-msgstr "Szabad hely: %s (Összesen: %s )"
+msgstr "Szabad hely: %s (Összesen: %s)"
 
-#: ../src/main-win.c:1174
+#: ../src/main-win.c:1183
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
 "'%s'\n"
 "Enter a name for the new bookmark item:"
 msgstr ""
+"A következő mappa hozzáadása a könyvjelzőkhöz:\n"
+"'%s'\n"
+"Adj nevet az új könyvelző elemnek:"
 
-#: ../src/main-win.c:1178
-#, fuzzy
+#: ../src/main-win.c:1187
 msgid "Add to Bookmarks"
-msgstr "Hozzá_adás a könyvjelzőkhöz"
+msgstr "Hozzáadás a könyvjelzőkhöz"
 
 #. { "new-tab", 't', 0, G_OPTION_ARG_NONE, &new_tab, N_("Open folders in new tabs of the last used window instead of creating new windows"), NULL },
-#: ../src/pcmanfm.c:72
-#, fuzzy
+#: ../src/pcmanfm.c:74
 msgid "Name of configuration profile"
 msgstr "Beállító profil neve"
 
-#: ../src/pcmanfm.c:73
+#: ../src/pcmanfm.c:75
 msgid "Launch desktop manager"
-msgstr "Asztal kezelő futtatása"
+msgstr "Asztalkezelő indítása"
 
-#: ../src/pcmanfm.c:74
+#: ../src/pcmanfm.c:76
 msgid "Turn off desktop manager if it's running"
 msgstr "Asztalkezelő kikapcsolása, ha fut"
 
-#: ../src/pcmanfm.c:75
+#: ../src/pcmanfm.c:77
 msgid "Run PCManFM as a daemon"
 msgstr "PCManFM futtatása démonként"
 
-#: ../src/pcmanfm.c:76
+#: ../src/pcmanfm.c:78
 msgid "Open desktop preference dialog"
-msgstr "Asztal jellemzők párbeszéd megnyitása"
+msgstr "Asztal beállításai párbeszédablak megnyitása"
 
-#: ../src/pcmanfm.c:77
+#: ../src/pcmanfm.c:79
 msgid "Set desktop wallpaper"
 msgstr "Asztali tapéta beállítása"
 
-#: ../src/pcmanfm.c:77
+#: ../src/pcmanfm.c:79
 msgid "<image file>"
-msgstr "<kép fájl>"
+msgstr "<képfájl>"
 
-#: ../src/pcmanfm.c:78
+#: ../src/pcmanfm.c:80
 msgid "Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"
 msgstr ""
+"Asztali tapéta módjának beállítása. <mode>=(color|stretch|fit|center|tile)"
 
-#: ../src/pcmanfm.c:78
-#, fuzzy
+#: ../src/pcmanfm.c:80
 msgid "<mode>"
-msgstr "modell"
+msgstr "<mód>"
 
-#: ../src/pcmanfm.c:79
-#, fuzzy
+#: ../src/pcmanfm.c:81
 msgid ""
 "Open preference dialog. 'n' is number of the page you want to show (1, 2, "
 "3...)."
 msgstr ""
-"Tulajdonságok ablak megnyitása. 'n' a lap száma amit szeretnél megjeleníteni "
-"(1, 2, 3...)."
+"Beállítások párbeszédablak megnyitása. 'n' a lap száma, amit szeretnél "
+"megjeleníteni (1, 2, 3...)."
 
 #. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
-#: ../src/pcmanfm.c:81
+#: ../src/pcmanfm.c:83
 msgid "No function. Just to be compatible with nautilus"
-msgstr "Nincs funkciója csak a Nautilus-kompatibilitást nyújtja"
+msgstr "Nincs funkciója, csak a Nautilus-kompatibilitást nyújtja"
 
-#: ../src/pcmanfm.c:82
+#: ../src/pcmanfm.c:84
 msgid "[FILE1, FILE2,...]"
 msgstr "[FÁJL1, FÁJL2,...]"
 
-#: ../src/pcmanfm.c:590
-#, fuzzy
+#: ../src/pcmanfm.c:619
 msgid "Terminal emulator is not set."
-msgstr "Nem állítottál be Terminál programot"
+msgstr "Terminál program nincs beállítva."
 
-#: ../src/pcmanfm.c:633
+#: ../src/pcmanfm.c:662
 msgid "Create New..."
 msgstr "Új..."
 
-#: ../src/pcmanfm.c:633
+#: ../src/pcmanfm.c:662
 msgid "Enter a name for the newly created file:"
 msgstr "Adj nevet az új fájlnak:"
 
-#: ../src/pcmanfm.c:633
+#: ../src/pcmanfm.c:662
 msgid "New"
 msgstr "Új"
-
-#~ msgid "Open Find Files utility"
-#~ msgstr "Fájlkereső megnyitása"
-
-#~ msgid ""
-#~ "Open folders in new tabs of the last used window instead of creating new "
-#~ "windows"
-#~ msgstr "Mappák megnyitása a legutóbbi ablak lapjain új ablak helyett"
-
-#~ msgid "Display image files with supported format as thumbnails"
-#~ msgstr "Támogatott formátumú fájlok megjelenítése előképként"
-
-#~ msgid "Max size of files displayed as thumbnails:"
-#~ msgstr "Az előképként megjelenített legnagyobb fájl:"
-
-#~ msgid ""
-#~ "The icon was taken from \"nuoveXT 2\" icon theme\n"
-#~ "created by Alexandre Moore (saki).\n"
-#~ "http://www.gnome-look.org/content/show.php/nuoveXT+2?content=56625"
-#~ msgstr ""
-#~ "Az ikon a \"nuoveXT 2\" ikontémából jön, melyet\n"
-#~ "Alexandre Moore (saki) készített.\n"
-#~ "http://www.gnome-look.org/content/show.php/nuoveXT+2?content=56625"
-
-#~ msgid ""
-#~ "洪任諭 Hong Jen Yee <pcman.tw@gmail.com>\n"
-#~ "\n"
-#~ "Source code taken from other projects:\n"
-#~ " * libmd5-rfc: Aladdin Enterprises\n"
-#~ " * Working area detection: Gary Kramlich\n"
-#~ " * ExoIconView: os-cillation e.K, Anders Carlsson, & Benedikt Meurer\n"
-#~ " * Text and icon renderer uses code from Jonathan Blandford\n"
-#~ " * Desktop icons use code from Brian Tarricone\n"
-#~ " * Volume management uses code from following projects/authors:\n"
-#~ "     * gnome-vfs: David Zeuthen\n"
-#~ "     * thunar-vfs and libexo: Benedikt Meurer\n"
-#~ "     * gnome-mount: David Zeuthen"
-#~ msgstr ""
-#~ "洪任諭 Hong Jen Yee <pcman.tw@gmail.com>\n"
-#~ "\n"
-#~ "Source code taken from other projects:\n"
-#~ " * libmd5-rfc: Aladdin Enterprises\n"
-#~ " * Working area detection: Gary Kramlich\n"
-#~ " * ExoIconView: os-cillation e.K, Anders Carlsson, & Benedikt Meurer\n"
-#~ " * Text and icon renderer uses code from Jonathan Blandford\n"
-#~ " * Desktop icons use code from Brian Tarricone\n"
-#~ " * Volume management uses code from following projects/authors:\n"
-#~ "     * gnome-vfs: David Zeuthen\n"
-#~ "     * thunar-vfs and libexo: Benedikt Meurer\n"
-#~ "     * gnome-mount: David Zeuthen"
-
-#~ msgid "Choose an Application"
-#~ msgstr "Válassz alkalmazást"
-
-#~ msgid "File Type To be Opened:"
-#~ msgstr "Megnyitandó fájltípus:"
-
-#~ msgid "Opened in Terminal"
-#~ msgstr "Megnyitás Terminálban"
-
-#~ msgid ""
-#~ "Please choose an application from following lists or enter the command "
-#~ "line by hand:"
-#~ msgstr ""
-#~ "Válassz egy alkalmazást az alábbi listákból, vagy add meg a parancsot "
-#~ "kézzel:"
-
-#~ msgid "Set selected application to default action"
-#~ msgstr "A választott alkalmazás legyen alap"
-
-#~ msgid "_Browse"
-#~ msgstr "_Böngészés"
-
-#~ msgid "_Command Line:"
-#~ msgstr "_Parancssor: "
-
-#~ msgid "_Recommended Applications"
-#~ msgstr "Ajánlott alkalmazások"
-
-#~ msgid "Actions Showed in Popup Menus"
-#~ msgstr "Felugró menükben megjelenő műveletek"
-
-#~ msgid "Add _Application"
-#~ msgstr "Alkalmazás hozzá_adása"
-
-#~ msgid "Add _Custom Action"
-#~ msgstr "Egyéni művelet hozáadása"
-
-#~ msgid "File Associations"
-#~ msgstr "Fájltársítások"
-
-#~ msgid "Move _Down"
-#~ msgstr "Mozgatás _le:"
-
-#~ msgid "Move _Up"
-#~ msgstr "Mozgatás _fel:"
-
-#, fuzzy
-#~ msgid "<b>Processing:</b>"
-#~ msgstr "Feldolgozás:"
-
-#~ msgid "Preparing..."
-#~ msgstr "Előkészítés..."
-
-#~ msgid "<b>File Type:</b>"
-#~ msgstr "<b>Fájltípus:</b>"
-
-#~ msgid "<b>File _Name:</b>"
-#~ msgstr "<b>Fájl_név:</b>"
-
-#~ msgid "<b>Group:</b>"
-#~ msgstr "<b>Csoport:</b>"
-
-#~ msgid "<b>Last Access:</b>"
-#~ msgstr "<b>Utolsó hozzáférés:</b>"
-
-#~ msgid "<b>Last Modification:</b>"
-#~ msgstr "<b>Utolsó módosítás:</b>"
-
-#~ msgid "<b>Location:</b>"
-#~ msgstr "<b>Hely:</b>"
-
-#~ msgid "<b>Open _with:</b>"
-#~ msgstr "<b>Megnyitás ezzel:</b>"
-
-#~ msgid "<b>Other Users:</b>"
-#~ msgstr "<b>Más felhasználók:</b>"
-
-#~ msgid "<b>Owner:</b>"
-#~ msgstr "<b>Tulajdonos:</b>"
-
-#~ msgid "<b>Size on Disk:</b>"
-#~ msgstr "<b>Méret a lemezen:</b>"
-
-#~ msgid "<b>Total Size of Files:</b>"
-#~ msgstr "<b>Fájlok összmérete:</b>"
-
-#~ msgid "<b>_Group:</b>"
-#~ msgstr "<b>_Csoport:</b>"
-
-#~ msgid "<b>_Owner:</b>"
-#~ msgstr "<b>_Tulajdonos:</b>"
-
-#~ msgid "Execute"
-#~ msgstr "Futtat"
-
-#~ msgid "File Properties"
-#~ msgstr "Tulajdonságok"
-
-#~ msgid "Read"
-#~ msgstr "Olvas"
-
-#~ msgid "Set GID"
-#~ msgstr "Set GID"
-
-#~ msgid "Set UID"
-#~ msgstr "Set UID"
-
-#~ msgid "Sticky"
-#~ msgstr "Ragadós"
-
-#~ msgid "Write"
-#~ msgstr "Ír"
-
-#~ msgid "_Permissions"
-#~ msgstr "_Jogok"
-
-#~ msgid "<b>File Content</b>"
-#~ msgstr "<b>Fájltartalom</b>"
-
-#~ msgid "<b>File Name Contains:</b>"
-#~ msgstr "<b>Fájlnév tartalma:</b>"
-
-#~ msgid "<b>File Types to Search</b>"
-#~ msgstr "<b>Keresendő fájltípusok</b>"
-
-#~ msgid "<b>Last Modified</b>"
-#~ msgstr "<b>Utolsó módosítás</b>"
-
-#~ msgid "<b>Places to Search</b>"
-#~ msgstr "<b>Keresési helyek</b>"
-
-#~ msgid "<b>Search Result:</b>"
-#~ msgstr "<b>Keresési eredmények:</b>"
-
-#~ msgid "All Files and Folders"
-#~ msgstr "Minden fájl és mappa"
-
-#~ msgid ""
-#~ "Any\n"
-#~ "Within One Day\n"
-#~ "Within One Week\n"
-#~ "Within One Month\n"
-#~ "Within One Year\n"
-#~ "Within Selected Date Range"
-#~ msgstr ""
-#~ "Bármely\n"
-#~ "Egy napon belül\n"
-#~ "Egy héten belül\n"
-#~ "Egy hónapon belül\n"
-#~ "Egy éven belül\n"
-#~ " "
-
-#~ msgid "Audio Files (mp3, ogg,...)"
-#~ msgstr "Hangfájlok (ogg, mp3,...)"
-
-#~ msgid ""
-#~ "Bytes\n"
-#~ "KB\n"
-#~ "MB\n"
-#~ "GB"
-#~ msgstr ""
-#~ "Bájt\n"
-#~ "KB\n"
-#~ "MB\n"
-#~ "GB"
-
-#~ msgid "Case Sensitive"
-#~ msgstr "Nagybetű-érzékeny"
-
-#~ msgid "Content"
-#~ msgstr "Tartalom"
-
-#~ msgid "File Contains:"
-#~ msgstr "Fájl tartalma:"
-
-#~ msgid "General"
-#~ msgstr "Általános"
-
-#~ msgid "Greater Than:"
-#~ msgstr "Nagyobb mint:"
-
-#~ msgid "Image Files (jpg, png,...)"
-#~ msgstr "Képfájlok (png, jpg...)"
-
-#~ msgid "Plain Text Files"
-#~ msgstr "Sima szövegfájlok"
-
-#~ msgid "Search Again"
-#~ msgstr "Keresés újra"
-
-#~ msgid "Search Hidden Files"
-#~ msgstr "Rejtett fájlok keresése"
-
-#~ msgid "Search in Sub Directories"
-#~ msgstr "Keresés Almappákban is"
-
-#~ msgid "Size & Date"
-#~ msgstr "Méret és dátum"
-
-#~ msgid "Smaller Than:"
-#~ msgstr "Kisebb mint:"
-
-#~ msgid "Use Regular Expression"
-#~ msgstr "Szabályos kifejezéssel"
-
-#~ msgid "Video Files (avi, mpg,...)"
-#~ msgstr "Videófájlok (mpg, avi...)"
-
-#~ msgid "Go to folder"
-#~ msgstr "Ugrás mappára"
-
-#~ msgid "<b>Colors</b>"
-#~ msgstr "<b>Színek</b>"
-
-#~ msgid "<b>Wallpaper</b>"
-#~ msgstr "<b>Tapéta</b>"
-
-#~ msgid "Disable \"Trash Can\" and delete files from disk directly"
-#~ msgstr "\"Lomtár\" kikapcsolása, s a fájlok közvetlen törlése"
-
-#~ msgid "I_nterface"
-#~ msgstr "F_elület"
-
-#~ msgid "Manage the desktop and show file icons"
-#~ msgstr "Asztal kezelése, s fájl ikonok mutatása"
-
-#~ msgid "On-disk file name encoding:"
-#~ msgstr "Fájlnévkódolás a lemezen:"
-
-#~ msgid ""
-#~ "Opened in Current Tab\n"
-#~ "Opened in New Tab\n"
-#~ "Opened in New Window"
-#~ msgstr ""
-#~ "E lapon nyílik\n"
-#~ "Új lapon nyílik\n"
-#~ "Új ablakban nyílik"
-
-#~ msgid "Shadow:"
-#~ msgstr "Árnyék:"
-
-#~ msgid ""
-#~ "Stretch to fill the entire screen\n"
-#~ "Stretch to fit the screen\n"
-#~ "Center on the screen\n"
-#~ "Tile the image to fill the entire screen"
-#~ msgstr ""
-#~ "Méretezés, hogy kitöltse a képernyőt\n"
-#~ "Méretezés, hogy beférjen a képernyőbe\n"
-#~ "Középen\n"
-#~ "Mozaik"
-
-#~ msgid "Text:"
-#~ msgstr "Szöveg:"
-
-#~ msgid "_Desktop"
-#~ msgstr "Asztal"
-
-#~ msgid "Column Spacing"
-#~ msgstr "Oszloptáv"
-
-#~ msgid "Space which is inserted between grid column"
-#~ msgstr "Az oszlopok közti táv"
-
-#~ msgid "Number of columns"
-#~ msgstr "Oszlopszám"
-
-#~ msgid "Number of columns to display"
-#~ msgstr "Megjelenített oszlopok száma"
-
-#~ msgid "Enable Search"
-#~ msgstr "Keresés bekapcsolva"
-
-#~ msgid "View allows user to search through columns interactively"
-#~ msgstr "Lehetővé teszik az oszlopok közti interaktív keresést"
-
-#~ msgid "Width for each item"
-#~ msgstr "Elemek szélessége"
-
-#~ msgid "The width used for each item"
-#~ msgstr "Az egyes elemekhez használt szélesség"
-
-#~ msgid "Layout mode"
-#~ msgstr "Rendezési mód"
-
-#~ msgid "The layout mode"
-#~ msgstr "Az elrendezés módja"
-
-#~ msgid "Margin"
-#~ msgstr "Margó"
-
-#~ msgid "Space which is inserted at the edges of the icon view"
-#~ msgstr "Az ikonnézet széleihez tett táv"
-
-#~ msgid "The model for the icon view"
-#~ msgstr "Az ikon nézethez tartozó model"
-
-#, fuzzy
-#~ msgid ""
-#~ "How the text and icon of each item are positioned relative to each other"
-#~ msgstr ""
-#~ "Hogy legyen a szöveg és az ikon elhelyezve relatívan a többihez képest"
-
-#~ msgid "Pixbuf column"
-#~ msgstr "Pixbuf oszlop"
-
-#~ msgid "Reorderable"
-#~ msgstr "Újrarendezhető"
-
-#~ msgid "View is reorderable"
-#~ msgstr "A nézet újrarendezhető"
-
-#~ msgid "Row Spacing"
-#~ msgstr "Sor Térköz"
-
-#~ msgid "Space which is inserted between grid rows"
-#~ msgstr "Térköz ami a rács sorok közé kerül"
-
-#~ msgid "Search Column"
-#~ msgstr "Kereső Oszlop"
-
-#~ msgid "Selection mode"
-#~ msgstr "Kijelölő mód"
-
-#~ msgid "The selection mode"
-#~ msgstr "Kijelölés mód"
-
-#~ msgid "Single Click"
-#~ msgstr "Kattintás"
-
-#~ msgid "Whether the items in the view can be activated with single clicks"
-#~ msgstr ""
-#~ "Az elemek bekapcsolhatóak legyenek e a nézetben egy egyszerű kattintással"
-
-#~ msgid "Single Click Timeout"
-#~ msgstr "Szimpla kattintás időtúllépése"
-
-#~ msgid ""
-#~ "The amount of time after which the item under the mouse cursor will be "
-#~ "selected automatically in single click mode"
-#~ msgstr ""
-#~ "Az időtartam amely szükséges egy elem kijelöléséhez a kurzor "
-#~ "rajtatartásával"
-
-#~ msgid "Spacing"
-#~ msgstr "Térköz"
-
-#~ msgid "Space which is inserted between cells of an item"
-#~ msgstr "Térköz amely az elem cellái közé kerül"
-
-#~ msgid "Text column"
-#~ msgstr "Szövegoszlop"
-
-#~ msgid "Selection Box Color"
-#~ msgstr "Kijelölő doboz színe"
-
-#~ msgid "Color of the selection box"
-#~ msgstr "Kijelölődoboz színe"
-
-#~ msgid "Selection Box Alpha"
-#~ msgstr "Kijelölő doboz alfa"
-
-#~ msgid "Opacity of the selection box"
-#~ msgstr "Kijelölő dobod telítettsége"
-
-#~ msgid "audio"
-#~ msgstr "hang"
-
-#~ msgid "video"
-#~ msgstr "mozgókép"
-
-#~ msgid "text"
-#~ msgstr "szöveg"
-
-#~ msgid "multipart"
-#~ msgstr "többrészes"
-
-#~ msgid "image"
-#~ msgstr "kép"
-
-#~ msgid "message"
-#~ msgstr "üzenet"
-
-#~ msgid "inode"
-#~ msgstr "inode"
-
-#~ msgid "packages"
-#~ msgstr "csomagok"
-
-#~ msgid "Find Files with PCManFM"
-#~ msgstr "PCManFM fájlkeresés"
-
-#~ msgid "GTK+ icon theme is not properly set"
-#~ msgstr "A GTK+ ikon téma nincs helyesen beállítva"
-
-#~ msgid ""
-#~ "<big><b>%s</b></big>\n"
-#~ "\n"
-#~ "This usually means you don't have an XSETTINGS manager running.  Desktop "
-#~ "environment like GNOME or XFCE automatically execute their XSETTING "
-#~ "managers like gnome-settings-daemon or xfce-mcs-manager.\n"
-#~ "\n"
-#~ "<b>If you don't use these desktop environments, you have two choices:\n"
-#~ "1. run an XSETTINGS manager, or\n"
-#~ "2. simply specify an icon theme in ~/.gtkrc-2.0.</b>\n"
-#~ "For example to use the Tango icon theme add a line:\n"
-#~ "<i><b>gtk-icon-theme-name=\"Tango\"</b></i> in your ~/.gtkrc-2.0. (create "
-#~ "it if no such file)\n"
-#~ "\n"
-#~ "<b>NOTICE: The icon theme you choose should be compatible with GNOME, or "
-#~ "the file icons cannot be displayed correctly.</b>  Due to the differences "
-#~ "in icon naming of GNOME and KDE, KDE themes cannot be used.  Currently "
-#~ "there is no standard for this, but it will be solved by freedesktop.org "
-#~ "in the future."
-#~ msgstr ""
-#~ "<big><b>%s</b></big>\n"
-#~ "\n"
-#~ "Valószínűleg nem futtatsz XSETTINGS kezelőt.  Az Xfce vagy GNOME "
-#~ "munkakörnyezetek automatikusan futtatják xfce-mcs-manager vagy gnome-"
-#~ "settings-daemon XSETTING kezelőjüket.\n"
-#~ "\n"
-#~ "<b>Ha nem használod ezeket 2 lehetőséged van:\n"
-#~ "1. futtas egy XSETTINGS kezelőt, vagy\n"
-#~ "2. egyszerűen adj meg egy ikon témát a ~/.gtkrc-2.0 fájlban.</b>\n"
-#~ "Például a Tango ikon témához adj egy ilyen sort:\n"
-#~ "<i><b>gtk-icon-theme-name=\"Tango\"</b></i> a ~/.gtkrc-2.0 fájlodban. "
-#~ "(hozd létre, ha nincs)\n"
-#~ "\n"
-#~ "<b>MEGJEGYZÉS: Az ikon téma Xfce/GNOME kompatibilis kell legyen, különben "
-#~ "a fájl ikonok nem jelennek meg helyesen.</b>  Ezek és a KDE ikon nevek "
-#~ "közti eltérés miatt, a KDE témák nem használhatók.  Még nincs erre "
-#~ "szabvány, de a freedesktop.org megoldja a jövőben."
-
-#~ msgid "Error"
-#~ msgstr "Hiba"
-
-#~ msgid ""
-#~ "Error: Unable to establish connection with FAM.\n"
-#~ "\n"
-#~ "Do you have \"FAM\" or \"Gamin\" installed and running?"
-#~ msgstr ""
-#~ "Hiba: Nem tudok kapcsolódni a FAM-hoz.\n"
-#~ "\n"
-#~ "A \"FAM\" vagy \"Gamin\" telepítve van és fut?"
-
-#~ msgid "File doesn't exist"
-#~ msgstr "A fájl nem létezik"
-
-#~ msgid "Don't know how to open the file"
-#~ msgstr "Nincs adatom e fájl megnyitásáról"
-
-#~ msgid ""
-#~ "Unable to open file:\n"
-#~ "\"%s\"\n"
-#~ "%s"
-#~ msgstr ""
-#~ "Fájl megnyitása sikertelen:\n"
-#~ "\"%s\"\n"
-#~ "%s"
-
-#~ msgid "_Folder"
-#~ msgstr "_Mappa"
-
-#~ msgid "File _Properties"
-#~ msgstr "Fájl _tulajdonságok"
-
-#~ msgid "_Delete"
-#~ msgstr "_Törlés"
-
-#~ msgid "_Rename"
-#~ msgstr "Át_nevezés"
-
-#~ msgid "Select _All"
-#~ msgstr "M_indent kiválaszt"
-
-#~ msgid "Go _Back"
-#~ msgstr "_Vissza"
-
-#~ msgid "Go _Forward"
-#~ msgstr "_Előre"
-
-#~ msgid "Go _Home"
-#~ msgstr "_Haza"
-
-#~ msgid "Sort by _Type"
-#~ msgstr "Rendezés típus szerint"
-
-#~ msgid "Sort by _Permission"
-#~ msgstr "Rendezés jogok szerint"
-
-#~ msgid "Sort by _Owner"
-#~ msgstr "Rendezés tulajdonos szerint"
-
-#~ msgid "Ascending"
-#~ msgstr "Növekvő"
-
-#~ msgid "Descending"
-#~ msgstr "Csökkenő"
-
-#~ msgid "_Open Side Pane"
-#~ msgstr "_Oldalpanel megnyitása"
-
-#~ msgid "Show _Location Pane"
-#~ msgstr "Címpanel megjelenítése"
-
-#~ msgid "Show _Directory Tree"
-#~ msgstr "_Könyvtárfa megjelenítése"
-
-#~ msgid "_Refresh"
-#~ msgstr "_Frissít"
-
-#~ msgid "Side _Pane"
-#~ msgstr "Oldal_panel"
-
-#~ msgid "L_ocation Bar"
-#~ msgstr "Helysáv"
-
-#~ msgid "_Sort..."
-#~ msgstr "_Rendezés..."
-
-#~ msgid "View as _Icons"
-#~ msgstr "_Ikonnézet"
-
-#~ msgid "View as _Compact List"
-#~ msgstr "Tömör lista"
-
-#~ msgid "Open _Terminal"
-#~ msgstr "_Terminál megnyitása"
-
-#~ msgid "_Find Files"
-#~ msgstr "_Fájlkeresés"
-
-#~ msgid "Back"
-#~ msgstr "Vissza"
-
-#~ msgid "Forward"
-#~ msgstr "Előre"
-
-#~ msgid "Refresh"
-#~ msgstr "Frissít"
-
-#~ msgid "Home Directory"
-#~ msgstr "Saját könyvtár"
-
-#~ msgid "Open Side Pane"
-#~ msgstr "Oldalpanel megnyitása"
-
-#~ msgid "Go"
-#~ msgstr "Ugrás"
-
-#~ msgid "_Edit Bookmarks"
-#~ msgstr "Könyvjelzők sz_erkesztése"
-
-#~ msgid "Loading..."
-#~ msgstr "Betöltés..."
-
-#~ msgid "%d item selected (%s)%s"
-#~ msgid_plural "%d items selected (%s)%s"
-#~ msgstr[0] "%d kijelölt elem (%s)%s"
-
-#~ msgid "%d hidden"
-#~ msgid_plural "%d hidden"
-#~ msgstr[0] "%d rejtett"
-
-#~ msgid "%d visible item (%s)%s"
-#~ msgid_plural "%d visible items (%s)%s"
-#~ msgstr[0] "%d látható elem (%s)%s"
-
-#~ msgid "Directory doesn't exist!"
-#~ msgstr "A könyvtár nem létezik!"
-
-#~ msgid "Name"
-#~ msgstr "Név"
-
-#~ msgid "Size"
-#~ msgstr "Méret"
-
-#~ msgid "Type"
-#~ msgstr "Típus"
-
-#~ msgid "Permission"
-#~ msgstr "Engedély"
-
-#~ msgid "Owner:Group"
-#~ msgstr "Tulajdonos:Csoport"
-
-#~ msgid "Last Modification"
-#~ msgstr "Utolsó módosítás"
-
-#~ msgid "Location"
-#~ msgstr "Hely"
-
-#~ msgid "Directory Tree"
-#~ msgstr "Könyvtárfa"
-
-#~ msgid "Unable to mount device"
-#~ msgstr "Eszköz csatolása sikertelen"
-
-#~ msgid "Unable to unmount device"
-#~ msgstr "Eszköz lecsatolása sikertelen"
-
-#~ msgid "Unable to eject device"
-#~ msgstr "Eszköz kiadása sikertelen"
-
-#~ msgid "_Mount File System"
-#~ msgstr "Fájlrendszer _felcsatolása"
-
-#~ msgid "_Eject"
-#~ msgstr "Kiad"
-
-#~ msgid "_Unmount File System"
-#~ msgstr "Fájlrendszer _lecsatolása"
-
-#~ msgid "Move: "
-#~ msgstr "Mozgatás:"
-
-#~ msgid "Copy: "
-#~ msgstr "Másolás:"
-
-#~ msgid "Move to Trash: "
-#~ msgstr "Mozgatás a kukába:"
-
-#~ msgid "Delete: "
-#~ msgstr "Törlés:"
-
-#~ msgid "Link: "
-#~ msgstr "Lánc:"
-
-#~ msgid "Change Properties: "
-#~ msgstr "Tulajdonságok megváltoztatása:"
-
-#~ msgid "Moving to Trash..."
-#~ msgstr "Mozgatás a kukába..."
-
-#~ msgid "Linking..."
-#~ msgstr "Láncolás..."
-
-#~ msgid "Changing Properties"
-#~ msgstr "Tulajdonságok megváltoztatása"
-
-#~ msgid "To:"
-#~ msgstr "Ide:"
-
-#~ msgid "Processing:"
-#~ msgstr "Feldolgozás:"
-
-#~ msgid "Progress:"
-#~ msgstr "Folyamat:"
-
-#~ msgid "Cancel the operation?"
-#~ msgstr "Törlöd a műveletet?"
-
-#~ msgid "Do you want to overwrite the folder and its content?"
-#~ msgstr "Felülírod a mappát és tartalmát?"
-
-#~ msgid "Do you want to overwrite this file?"
-#~ msgstr "Felülírod e fájlt?"
-
-#~ msgid "Please choose a new file name."
-#~ msgstr "Adj új nevet"
-
-#~ msgid ""
-#~ "\"%s\" already exists.\n"
-#~ "\n"
-#~ "%s"
-#~ msgstr ""
-#~ "\"%s\" már van\n"
-#~ "\n"
-#~ "%s"
-
-#~ msgid ""
-#~ "\"%s\"\n"
-#~ "\n"
-#~ "Destination and source are the same file.\n"
-#~ "\n"
-#~ "%s"
-#~ msgstr ""
-#~ "\"%s\"\n"
-#~ "\n"
-#~ "A cél és a forrás ugyanaz a fájl\n"
-#~ "\n"
-#~ "%s"
-
-#~ msgid "Overwrite"
-#~ msgstr "Felülír"
-
-#~ msgid "Overwrite All"
-#~ msgstr "Mindet felülírja"
-
-#~ msgid "Skip"
-#~ msgstr "Kihagy"
-
-#~ msgid "Skip All"
-#~ msgstr "Mindet kihagyja"
-
-#, fuzzy
-#~ msgid "Save Compressed Files to..."
-#~ msgstr "Tömörített fájlok mentése ide..."
-
-#~ msgid "Format of compressed File:"
-#~ msgstr "Tömörített fájl formátuma:"
-
-#~ msgid "Creating Compressed File: %s"
-#~ msgstr "Tömörített fájl létrehozása: %s"
-
-#~ msgid "Compress Files"
-#~ msgstr "Fájlok tömörítése"
-
-#~ msgid "Extract File to..."
-#~ msgstr "Fájlok kibontása ide..."
-
-#~ msgid "Extracting Files to: %s"
-#~ msgstr "Fájlok kibontása ide: %s"
-
-#~ msgid "Extract Files"
-#~ msgstr "Fájlok kibontása"
-
-#~ msgid ""
-#~ "\n"
-#~ "Complete!"
-#~ msgstr ""
-#~ "\n"
-#~ "Kész!"
-
-#~ msgid "Command:"
-#~ msgstr "Parancs:"
-
-#~ msgid "File System"
-#~ msgstr "Fájlrendszer"
-
-#~ msgid "No Sub Folder"
-#~ msgstr "Nincs alkönyvtár"
-
-#~ msgid "E_xtract Here"
-#~ msgstr "Kibontás itt"
-
-#~ msgid "Extract _To"
-#~ msgstr "Kibontás ide"
-
-#~ msgid "Open _with..."
-#~ msgstr "Megnyitás _ezzel:"
-
-#~ msgid "Compress"
-#~ msgstr "Tömörít"
-
-#~ msgid "E_xtract"
-#~ msgstr "Kibontás"
-
-#~ msgid "_Properties"
-#~ msgstr "T_ulajdonságok"
-
-#~ msgid "_Open with another program"
-#~ msgstr "Megnyitás _más programmal"
-
-#~ msgid "E_xecute"
-#~ msgstr "_Futtat"
-
-#~ msgid "_Open with \"%s\""
-#~ msgstr "Megnyitás _ezzel: \"%s\""
-
-#~ msgid "_Open"
-#~ msgstr "Megnyitás"
-
-#~ msgid "Really delete selected files?"
-#~ msgstr "Tényleg törlöd a kijelölt fájlokat?"
-
-#~ msgid "Rename File"
-#~ msgstr "Fájl átnevezése"
-
-#~ msgid "Please input new file name:"
-#~ msgstr "Adj új nevet:"
-
-#~ msgid ""
-#~ "The file name you specified already exists.\n"
-#~ "Please input a new one:"
-#~ msgstr ""
-#~ "Már van ilyen nevű fájl.\n"
-#~ "Adj más nevet:"
-
-#~ msgid "Input a name for the new folder:"
-#~ msgstr "Adj nevet az új könyvtárnak:"
-
-#~ msgid "New File"
-#~ msgstr "Új fájl"
-
-#~ msgid "The new file cannot be created!"
-#~ msgstr "Az új fájl nem hozható létre!"
-
-#~ msgid "Multiple files are selected"
-#~ msgstr "Fájlok kiválasztva"
-
-#~ msgid "Multiple files of different types"
-#~ msgstr "Különböző típusú fájlok"
-
-#~ msgid "Other program..."
-#~ msgstr "Más program..."
-
-#~ msgid "Calculating..."
-#~ msgstr "Számolás..."
-
-#~ msgid "Invalid User"
-#~ msgstr "Nem létező felhasználó"
-
-#~ msgid "Invalid Group"
-#~ msgstr "Nem létező csoport"
-
-#~ msgid ""
-#~ "Do you want to recursively apply these changes to all files and sub-"
-#~ "folders?"
-#~ msgstr "Minden fájl és alkönyvtár módosítása?"
-
-#~ msgid "New Item"
-#~ msgstr "Új elem"
-
-#~ msgid "Edit Bookmarks"
-#~ msgstr "Könyvjelzők szerkesztése"
-
-#~ msgid "Path"
-#~ msgstr "Ösvény"
-
-#~ msgid "Use drag & drop to sort the items"
-#~ msgstr "Vidd és ejtsd a rendezéshez"
-
-#~ msgid "Command not found"
-#~ msgstr "Parancs nem található"
-
-#~ msgid "Destination directory \"%1$s\" is contained in source \"%2$s\""
-#~ msgstr "\"%1$s\" cél könyvtár szerepel a forrásban: \"%2$s\""
-
-#~ msgid "%s Volume"
-#~ msgstr "%s kötet"
-
-#~ msgid "CD-ROM"
-#~ msgstr "CD-ROM"
-
-#~ msgid "CD-R"
-#~ msgstr "CD-R"
-
-#~ msgid "CD-RW"
-#~ msgstr "CD-RW"
-
-#~ msgid "DVD-ROM"
-#~ msgstr "DVD-ROM"
-
-#~ msgid "DVD+R"
-#~ msgstr "DVD+R"
-
-#~ msgid "DVD+RW"
-#~ msgstr "DVD+RW"
-
-#~ msgid "DVD-R"
-#~ msgstr "DVD-R"
-
-#~ msgid "DVD-RW"
-#~ msgstr "DVD-RW"
-
-#~ msgid "DVD-RAM"
-#~ msgstr "DVD-RAM"
-
-#~ msgid "%s/%s Drive"
-#~ msgstr "%s/%s meghajtó"
-
-#~ msgid "%s Drive"
-#~ msgstr "%s Meghajtó"
-
-#~ msgid "Floppy Drive"
-#~ msgstr "Flopi meghajtó"
-
-#~ msgid "Smart Media Drive"
-#~ msgstr "Smart Media meghajtó"
-
-#~ msgid "SD/MMC Drive"
-#~ msgstr "SD/MMC meghajtó"
-
-#~ msgid "Zip Drive"
-#~ msgstr "Zip meghajtó"
-
-#~ msgid "Jaz Drive"
-#~ msgstr "Jaz meghajtó"
-
-#~ msgid "Pen Drive"
-#~ msgstr "Pen meghajtó"
-
-#~ msgid "%s %s Music Player"
-#~ msgstr "%s %s zenelejátszó"
-
-#~ msgid "%s %s Digital Camera"
-#~ msgstr "%s %s digitális kamera"
-
-#~ msgid "Drive"
-#~ msgstr "Meghajtó"
-
-#~ msgid "External %s"
-#~ msgstr "Külső %s"
-
-#~ msgid "CD-ROM Disc"
-#~ msgstr "CD-ROM lemez"
-
-#~ msgid "Blank CD-R Disc"
-#~ msgstr "Üres CD-R lemez"
-
-#~ msgid "CD-R Disc"
-#~ msgstr "CD-R lemez"
-
-#~ msgid "Blank CD-RW Disc"
-#~ msgstr "Üres CD-RW lemez"
-
-#~ msgid "CD-RW Disc"
-#~ msgstr "CD-RW lemez"
-
-#~ msgid "DVD-ROM Disc"
-#~ msgstr "DVD-ROM lemez"
-
-#~ msgid "Blank DVD-RAM Disc"
-#~ msgstr "Üres DVD-RAM lemez"
-
-#~ msgid "DVD-RAM Disc"
-#~ msgstr "DVD-RAM lemez"
-
-#~ msgid "Blank DVD-R Disc"
-#~ msgstr "Üres DVD-R lemez"
-
-#~ msgid "DVD-R Disc"
-#~ msgstr "DVD-R lemez"
-
-#~ msgid "Blank DVD-RW Disc"
-#~ msgstr "Üres DVD-RW lemez"
-
-#~ msgid "DVD-RW Disc"
-#~ msgstr "DVD-RW lemez"
-
-#~ msgid "Blank DVD+R Disc"
-#~ msgstr "Üres DVD+R lemez"
-
-#~ msgid "DVD+R Disc"
-#~ msgstr "DVD+R lemez"
-
-#~ msgid "Blank DVD+RW Disc"
-#~ msgstr "Üres DVD+RW lemez"
-
-#~ msgid "DVD+RW Disc"
-#~ msgstr "DVD+RW lemez"
-
-#~ msgid "Audio Disc"
-#~ msgstr "Audio lemez"
-
-#~ msgid "Volume"
-#~ msgstr "Kötet"
-
-#~ msgid "Failed to connect to the HAL daemon: %s"
-#~ msgstr "Nem tudtam kapcsolódni a HAL démonhoz: %s"
-
-#~ msgid "Given device \"%s\" is not a volume or drive"
-#~ msgstr "A megadott \"%s\" eszköz nem kötet vagy meghajtó"
-
-#~ msgid "Device \"%s\" not found in file system device table"
-#~ msgstr "\"%s\" eszköz nincs a fájlrendszer eszköz táblában"
-
-#~ msgid "You are not privileged to mount the volume \"%s\""
-#~ msgstr "Nincs jogod csatolni \"%s\" kötetet"
-
-#~ msgid "You are not privileged to unmount the volume \"%s\""
-#~ msgstr "Nincs jogod lecsatolni \"%s\" kötetet"
-
-#~ msgid "You are not privileged to eject the volume \"%s\""
-#~ msgstr "Nincs jogod kiadni \"%s\" kötetet"
-
-#~ msgid "Invalid mount option when attempting to mount the volume \"%s\""
-#~ msgstr "Érvénytelen csatolási opció \"%s\" kötet csatolása közben"
-
-#~ msgid ""
-#~ "The volume \"%s\" uses the <i>%s</i> file system which is not supported "
-#~ "by your system"
-#~ msgstr ""
-#~ "\"%s\" kötet <i>%s</i> fájlrendszert használja, melyet nem támogat "
-#~ "rendszered"
-
-#~ msgid "An application is preventing the volume \"%s\" from being unmounted"
-#~ msgstr "Egy alkalmazás gátolja \"%s\" kötet lecsatolását"
-
-#~ msgid "The volume \"%s\" is not mounted"
-#~ msgstr "Az alábbi kötet nincs csatolva: \"%s\""
-
-#~ msgid "Error <i>%s</i>"
-#~ msgstr "Hiba: <i>%s</i>"
-
-#~ msgid "The volume \"%s\" was probably mounted manually on the command line"
-#~ msgstr "Az alábbi kötet valószínűleg kézzel került csatolásra: \"%s\""
-
-#~ msgid ""
-#~ "Blank discs cannot be mounted, use a CD recording application to record "
-#~ "audio or data on the disc"
-#~ msgstr ""
-#~ "Az üres lemezek nem csatolhatók, használj egy CD-író alkalmazást "
-#~ "hangsávok vagy adatok rögzítésére a lemezen"
-
-#~ msgid ""
-#~ "Audio CDs cannot be mounted, use music players to play the audio tracks"
-#~ msgstr ""
-#~ "A hang CD-k nem csatolhatók, használj zenelejátszót a hangsávok "
-#~ "lejátszására"
-
-#~ msgid "_Icons"
-#~ msgstr "_Ikonok"
-
-#~ msgid "_Desktop Settings"
-#~ msgstr "Asztal beállításai"
-
-#~ msgid "My Documents"
-#~ msgstr "Dokumentumaim"
-
-#~ msgid "Open Containing _Folder"
-#~ msgstr "Tartalmazó _mappa megnyitása"
-
-#~ msgid "Select a folder"
-#~ msgstr "Válassz mappát"
-
-#~ msgid "Browse..."
-#~ msgstr "Böngész..."
-
-#~ msgid "All Local Disk Partitions"
-#~ msgstr "Minden lemezpartíció"
-
-#~ msgid "Last Modified"
-#~ msgstr "Utolsó módosítás"
-
-#~ msgid "Owner:"
-#~ msgstr "Tulajdonos:"
-
-#~ msgid "gksu or kdesu is not found"
-#~ msgstr "Nem találok ismert su felületet (gksu v. kdesu)"
-
-#~ msgid "Error: %s\n"
-#~ msgstr "Hiba: %s\n"
-
-#~ msgid ""
-#~ "The volume \"%s\" is not mounted.\n"
-#~ "Do you want to mount it?"
-#~ msgstr ""
-#~ "Az alábbi kötet nincs csatolva: \"%s\" \n"
-#~ "Csatoljuk?"
-
-#~ msgid "Source code taken from other projects:"
-#~ msgstr "Más projektekből származó kódok:"
-
-#~ msgid " * libmd5-rfc: Aladdin Enterprises"
-#~ msgstr " * libmd5-rfc: Aladdin Enterprises"
-
-#~ msgid " * Working area detection: Gary Kramlich"
-#~ msgstr " * Munkaterület érzékelés: Gary Kramlich"
-
-#~ msgid " * ExoIconView: os-cillation e.K, Anders Carlsson, & Benedikt Meurer"
-#~ msgstr ""
-#~ " * ExoIconView: os-cillation e.K, Anders Carlsson, & Benedikt Meurer"
-
-#~ msgid " * Text and icon renderer uese code from Jonathan Blandford"
-#~ msgstr " * A szöveg és ikon rajzoló Jonathan Blandford kódját használja"
-
-#~ msgid " * Desktop icons use code from Brian Tarricone"
-#~ msgstr " * Az asztali ikonok Brian Tarricone kódját használják"
-
-#~ msgid ""
-#~ " * Volume management uses code from following projects/authors:\n"
-#~ "     * gnome-vfs: David Zeuthen,\n"
-#~ "     * thunar-vfs and libexo: Benedikt Meurer\n"
-#~ "     * gnome-mount: David Zeuthen"
-#~ msgstr ""
-#~ " * A kötetkezelő e projektek/szerzők kódját használja:\n"
-#~ "     * gnome-vfs: David Zeuthen,\n"
-#~ "     * thunar-vfs és libexo: Benedikt Meurer\n"
-#~ "     * gnome-mount: David Zeuthen"
-
-#~ msgid "Icon Theme:"
-#~ msgstr "Ikon téma:"
-
-#~ msgid "A_ddress:"
-#~ msgstr "_Cím:"
-
-#~ msgid " * xdgmime: Red Hat, Inc & Jonathan Blandford"
-#~ msgstr " * xdgmime: Red Hat, Inc & Jonathan Blandford"
-
-#~ msgid "_Full Screen"
-#~ msgstr "Teljes képernyő"
-
-#~ msgid ""
-#~ "File operation failed.\n"
-#~ "\n"
-#~ "Unable to process \"%s\"\n"
-#~ "\n"
-#~ "%s"
-#~ msgstr ""
-#~ "Sikertelen fájlművelet\n"
-#~ "\n"
-#~ "Feldolgozatlan: \"%s\"\n"
-#~ "\n"
-#~ "%s"
-
-#~ msgid "Edit Bookmark"
-#~ msgstr "Könyvjelző szerkesztése"
-
-#~ msgid "Enter new directory path:"
-#~ msgstr "Új könyvtár útvonala:"
-
-#~ msgid "Open Directory _Tree"
-#~ msgstr "Könyvtár_fa"
-
-#~ msgid "Open Terminal"
-#~ msgstr "Terminál megnyitása"
