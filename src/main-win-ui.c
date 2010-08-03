@@ -170,7 +170,7 @@ static GtkActionEntry main_win_actions[]=
     /* for popup menu */
     {"CreateNew", GTK_STOCK_NEW, NULL, NULL, NULL, NULL},
     {"NewFolder", "folder", N_("Folder"), NULL, NULL, G_CALLBACK(on_create_new)},
-    {"NewBlank", "text-x-generic", N_("Blank FIle"), NULL, NULL, G_CALLBACK(on_create_new)},
+    {"NewBlank", "text-x-generic", N_("Blank File"), NULL, NULL, G_CALLBACK(on_create_new)},
     {"Prop", GTK_STOCK_PROPERTIES, NULL, NULL, NULL, G_CALLBACK(on_prop)}
 };
 

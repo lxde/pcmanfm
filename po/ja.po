@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PcmanFM 0.9.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-25 23:58+0200\n"
+"POT-Creation-Date: 2010-08-03 20:08+0200\n"
 "PO-Revision-Date: 2010-05-05 15:41+0900\n"
 "Last-Translator: Hironao Komatsu <hironao@users.sourceforge.net>\n"
 "Language-Team: Japanese <translation-team-ja@lists.sourceforge.net>\n"
+"Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -346,7 +347,7 @@ msgstr "ファイルを整列する(_S)"
 msgid "Folder"
 msgstr "フォルダ"
 
-#: ../src/desktop-ui.c:57
+#: ../src/desktop-ui.c:57 ../src/main-win-ui.c:173
 msgid "Blank File"
 msgstr "空のファイル"
 
@@ -502,10 +503,6 @@ msgstr "現在のフォルダを端末で開く(_T)"
 msgid "Open Current Folder as _Root"
 msgstr "rootユーザとして現在のフォルダを開く(_R)"
 
-#: ../src/main-win-ui.c:173
-msgid "Blank FIle"
-msgstr "空のファイル"
-
 #: ../src/main-win-ui.c:179
 msgid "Show _Hidden"
 msgstr "隠しファイルを表示する"
@@ -526,20 +523,20 @@ msgstr "サムネイル(_T)"
 msgid "Detailed _List View"
 msgstr "詳細リスト(_L)"
 
-#: ../src/main-win.c:552
+#: ../src/main-win.c:561
 msgid "You are in super user mode"
 msgstr "現在あなたは管理者権限で操作しています"
 
-#: ../src/main-win.c:651
+#: ../src/main-win.c:660
 msgid "Switch user command is not set."
 msgstr "ユーザ切り替えのコマンドが設定されていません"
 
-#: ../src/main-win.c:958
+#: ../src/main-win.c:967
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "空き容量: %s (合計: %s)"
 
-#: ../src/main-win.c:1174
+#: ../src/main-win.c:1183
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -550,48 +547,48 @@ msgstr ""
 "'%s'\n"
 "新規ブックマークアイテムの名前を入力してください:"
 
-#: ../src/main-win.c:1178
+#: ../src/main-win.c:1187
 msgid "Add to Bookmarks"
 msgstr "ブックマークへ追加"
 
 #. { "new-tab", 't', 0, G_OPTION_ARG_NONE, &new_tab, N_("Open folders in new tabs of the last used window instead of creating new windows"), NULL },
-#: ../src/pcmanfm.c:72
+#: ../src/pcmanfm.c:74
 msgid "Name of configuration profile"
 msgstr "設定プロファイルの名前"
 
-#: ../src/pcmanfm.c:73
+#: ../src/pcmanfm.c:75
 msgid "Launch desktop manager"
 msgstr "デスクトップマネージャを立ち上げる"
 
-#: ../src/pcmanfm.c:74
+#: ../src/pcmanfm.c:76
 msgid "Turn off desktop manager if it's running"
 msgstr "既に動いているデスクトップマネージャがあれば停止させる"
 
-#: ../src/pcmanfm.c:75
+#: ../src/pcmanfm.c:77
 msgid "Run PCManFM as a daemon"
 msgstr "PCmanFM をデーモンとして実行する"
 
-#: ../src/pcmanfm.c:76
+#: ../src/pcmanfm.c:78
 msgid "Open desktop preference dialog"
 msgstr "デスクトップ設定ダイアログを開く"
 
-#: ../src/pcmanfm.c:77
+#: ../src/pcmanfm.c:79
 msgid "Set desktop wallpaper"
 msgstr "デスクトップの壁紙を設定する"
 
-#: ../src/pcmanfm.c:77
+#: ../src/pcmanfm.c:79
 msgid "<image file>"
 msgstr "<画像ファイル>"
 
-#: ../src/pcmanfm.c:78
+#: ../src/pcmanfm.c:80
 msgid "Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"
 msgstr "デスクトップ壁紙のモード設定。 <mode>=(color|stretch|fit|center|tile)"
 
-#: ../src/pcmanfm.c:78
+#: ../src/pcmanfm.c:80
 msgid "<mode>"
 msgstr "<mode>"
 
-#: ../src/pcmanfm.c:79
+#: ../src/pcmanfm.c:81
 msgid ""
 "Open preference dialog. 'n' is number of the page you want to show (1, 2, "
 "3...)."
@@ -599,27 +596,27 @@ msgstr ""
 "設定ダイアログを開きます。'n' は表示したいページ番号 (1, 2, 3...) です。"
 
 #. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
-#: ../src/pcmanfm.c:81
+#: ../src/pcmanfm.c:83
 msgid "No function. Just to be compatible with nautilus"
 msgstr "機能しません。nautilus との互換性のため"
 
-#: ../src/pcmanfm.c:82
+#: ../src/pcmanfm.c:84
 msgid "[FILE1, FILE2,...]"
 msgstr "[ファイル1, ファイル2,...]"
 
-#: ../src/pcmanfm.c:590
+#: ../src/pcmanfm.c:619
 msgid "Terminal emulator is not set."
 msgstr "端末エミュレータが設定されていません。"
 
-#: ../src/pcmanfm.c:633
+#: ../src/pcmanfm.c:662
 msgid "Create New..."
 msgstr "新規作成中..."
 
-#: ../src/pcmanfm.c:633
+#: ../src/pcmanfm.c:662
 msgid "Enter a name for the newly created file:"
 msgstr "新たに作成するファイルの名前を入力してください:"
 
-#: ../src/pcmanfm.c:633
+#: ../src/pcmanfm.c:662
 msgid "New"
 msgstr "New"
 

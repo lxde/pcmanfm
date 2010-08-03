@@ -2,15 +2,16 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-27 05:49+0000\n"
+"POT-Creation-Date: 2010-08-03 20:08+0200\n"
 "PO-Revision-Date: 2010-04-16 19:27+0200\n"
 "Last-Translator: Julius Vitkauskas <zadintuvas@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -108,7 +109,8 @@ msgstr "Rodyti tomų piktogramas darbastalyje"
 
 #: ../data/ui/desktop-pref.glade.h:19
 msgid "Show menus provided by window managers when desktop is clicked"
-msgstr "Rodyti langų tvarkyklės meniu paspaudus dešiniuoju klavišu ant darbastalio"
+msgstr ""
+"Rodyti langų tvarkyklės meniu paspaudus dešiniuoju klavišu ant darbastalio"
 
 #: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:37
 msgid "Stretch to fill the entire screen"
@@ -343,7 +345,7 @@ msgstr "_Rūšiuoti failus"
 msgid "Folder"
 msgstr "Aplankas"
 
-#: ../src/desktop-ui.c:57
+#: ../src/desktop-ui.c:57 ../src/main-win-ui.c:173
 msgid "Blank File"
 msgstr "Tuščias failas"
 
@@ -499,10 +501,6 @@ msgstr "Atverti šį katalogą _terminale"
 msgid "Open Current Folder as _Root"
 msgstr "Atverti šį katalogą administrato_riaus teisėmis"
 
-#: ../src/main-win-ui.c:173
-msgid "Blank FIle"
-msgstr "Tuščias failas"
-
 #: ../src/main-win-ui.c:179
 msgid "Show _Hidden"
 msgstr "Rodyti _paslėptus"
@@ -523,20 +521,20 @@ msgstr "_Miniatiūros"
 msgid "Detailed _List View"
 msgstr "_Išsamus sąrašas"
 
-#: ../src/main-win.c:560
+#: ../src/main-win.c:561
 msgid "You are in super user mode"
 msgstr "Jūs esate super vartotojo režime"
 
-#: ../src/main-win.c:659
+#: ../src/main-win.c:660
 msgid "Switch user command is not set."
 msgstr "Nenustatyta vartotojo perjungimo komanda"
 
-#: ../src/main-win.c:966
+#: ../src/main-win.c:967
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Laisvos vietos: %s (Iš viso: %s )"
 
-#: ../src/main-win.c:1182
+#: ../src/main-win.c:1183
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -546,12 +544,11 @@ msgstr ""
 "Įtraukiamas aplankas '%s' į žymeles.\n"
 "Įveskite naujos žymelės pavadinimą:"
 
-#: ../src/main-win.c:1186
+#: ../src/main-win.c:1187
 msgid "Add to Bookmarks"
 msgstr "Įtraukti į žymeles"
 
-#. { "new-tab", 't', 0, G_OPTION_ARG_NONE, &new_tab, N_("Open folders in new
-#. tabs of the last used window instead of creating new windows"), NULL },
+#. { "new-tab", 't', 0, G_OPTION_ARG_NONE, &new_tab, N_("Open folders in new tabs of the last used window instead of creating new windows"), NULL },
 #: ../src/pcmanfm.c:74
 msgid "Name of configuration profile"
 msgstr "Konfigūracijos profilio pavadinimas"
@@ -591,11 +588,13 @@ msgid "<mode>"
 msgstr "<mode>"
 
 #: ../src/pcmanfm.c:81
-msgid "Open preference dialog. 'n' is number of the page you want to show (1, 2, 3...)."
-msgstr "Atverti nustatymų dialogą. 'n' yra rodomo puslapio pavadinimas (1, 2, 3...)."
+msgid ""
+"Open preference dialog. 'n' is number of the page you want to show (1, 2, "
+"3...)."
+msgstr ""
+"Atverti nustatymų dialogą. 'n' yra rodomo puslapio pavadinimas (1, 2, 3...)."
 
-#. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files
-#. utility"), NULL },
+#. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
 #: ../src/pcmanfm.c:83
 msgid "No function. Just to be compatible with nautilus"
 msgstr "Jokios funkcijos. Reikalinga tik suderinamumui su nautilus"
@@ -623,7 +622,9 @@ msgstr "Nauja"
 #~ msgid "Open Find Files utility"
 #~ msgstr "Atverti failų paieškos programą"
 
-#~ msgid "Open folders in new tabs of the last used window instead of creating new windows"
+#~ msgid ""
+#~ "Open folders in new tabs of the last used window instead of creating new "
+#~ "windows"
 #~ msgstr "Atverti aplankus kortelėse, o ne atskiruose languose"
 
 #~ msgid "Display image files with supported format as thumbnails"

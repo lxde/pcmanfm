@@ -7,15 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-06 05:45+0000\n"
+"POT-Creation-Date: 2010-08-03 20:08+0200\n"
 "PO-Revision-Date: 2010-06-06 18:57+0200\n"
 "Last-Translator: Ivica Kolić<ikoli@yahoo.com> <>\n"
 "Language-Team: Croatian hr <>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
-"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2010"
@@ -348,7 +349,7 @@ msgstr "_Posloži datoteke"
 msgid "Folder"
 msgstr "Mapa"
 
-#: ../src/desktop-ui.c:57
+#: ../src/desktop-ui.c:57 ../src/main-win-ui.c:173
 msgid "Blank File"
 msgstr "Prazna datoteka"
 
@@ -504,10 +505,6 @@ msgstr "Otvori trenutnu mapu u _treminalu"
 msgid "Open Current Folder as _Root"
 msgstr ""
 
-#: ../src/main-win-ui.c:173
-msgid "Blank FIle"
-msgstr "Prazna datoteka"
-
 #: ../src/main-win-ui.c:179
 msgid "Show _Hidden"
 msgstr "Pokaži _skriveno"
@@ -528,20 +525,20 @@ msgstr "_Sličica"
 msgid "Detailed _List View"
 msgstr "Detaljna _lista"
 
-#: ../src/main-win.c:560
+#: ../src/main-win.c:561
 msgid "You are in super user mode"
 msgstr ""
 
-#: ../src/main-win.c:659
+#: ../src/main-win.c:660
 msgid "Switch user command is not set."
 msgstr "Naredba zamijeni korisnika nije postavljena."
 
-#: ../src/main-win.c:966
+#: ../src/main-win.c:967
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Slobodni prostor: %s (Ukupno: %s)"
 
-#: ../src/main-win.c:1182
+#: ../src/main-win.c:1183
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -552,48 +549,48 @@ msgstr ""
 "'%s'\n"
 "Unesi ime nove stavke zabilješki"
 
-#: ../src/main-win.c:1186
+#: ../src/main-win.c:1187
 msgid "Add to Bookmarks"
 msgstr "Dodaj u zabilješke"
 
 #. { "new-tab", 't', 0, G_OPTION_ARG_NONE, &new_tab, N_("Open folders in new tabs of the last used window instead of creating new windows"), NULL },
-#: ../src/pcmanfm.c:72
+#: ../src/pcmanfm.c:74
 msgid "Name of configuration profile"
 msgstr "Ime konfiguracijskog profila"
 
-#: ../src/pcmanfm.c:73
+#: ../src/pcmanfm.c:75
 msgid "Launch desktop manager"
 msgstr "Pokreni upravitelj radne površine"
 
-#: ../src/pcmanfm.c:74
+#: ../src/pcmanfm.c:76
 msgid "Turn off desktop manager if it's running"
 msgstr ""
 
-#: ../src/pcmanfm.c:75
+#: ../src/pcmanfm.c:77
 msgid "Run PCManFM as a daemon"
 msgstr ""
 
-#: ../src/pcmanfm.c:76
+#: ../src/pcmanfm.c:78
 msgid "Open desktop preference dialog"
 msgstr "Otvori dijalog postavki radne površine"
 
-#: ../src/pcmanfm.c:77
+#: ../src/pcmanfm.c:79
 msgid "Set desktop wallpaper"
 msgstr ""
 
-#: ../src/pcmanfm.c:77
+#: ../src/pcmanfm.c:79
 msgid "<image file>"
 msgstr "<slikovna datoteka>"
 
-#: ../src/pcmanfm.c:78
+#: ../src/pcmanfm.c:80
 msgid "Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"
 msgstr ""
 
-#: ../src/pcmanfm.c:78
+#: ../src/pcmanfm.c:80
 msgid "<mode>"
 msgstr ""
 
-#: ../src/pcmanfm.c:79
+#: ../src/pcmanfm.c:81
 msgid ""
 "Open preference dialog. 'n' is number of the page you want to show (1, 2, "
 "3...)."
@@ -602,26 +599,26 @@ msgstr ""
 "3...)."
 
 #. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
-#: ../src/pcmanfm.c:81
+#: ../src/pcmanfm.c:83
 msgid "No function. Just to be compatible with nautilus"
 msgstr "Bez funkcija. Samo da bude kompatibilan sa nautilus-om"
 
-#: ../src/pcmanfm.c:82
+#: ../src/pcmanfm.c:84
 msgid "[FILE1, FILE2,...]"
 msgstr "[DATOTEKA1, DATOTEKA2,...]"
 
-#: ../src/pcmanfm.c:590
+#: ../src/pcmanfm.c:619
 msgid "Terminal emulator is not set."
 msgstr "Terminal emulator nije postavljen."
 
-#: ../src/pcmanfm.c:633
+#: ../src/pcmanfm.c:662
 msgid "Create New..."
 msgstr "Napravi novi..."
 
-#: ../src/pcmanfm.c:633
+#: ../src/pcmanfm.c:662
 msgid "Enter a name for the newly created file:"
 msgstr "Unesi ime novostvorene datoteke"
 
-#: ../src/pcmanfm.c:633
+#: ../src/pcmanfm.c:662
 msgid "New"
 msgstr "Novo"

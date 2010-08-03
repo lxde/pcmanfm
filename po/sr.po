@@ -8,14 +8,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PCManFM 0.9.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-25 23:58+0200\n"
+"POT-Creation-Date: 2010-08-03 20:08+0200\n"
 "PO-Revision-Date: 2010-05-26 09:41+0100\n"
 "Last-Translator: Jay Alexander Fleming <tito.nehru.naser@gmail.com>\n"
 "Language-Team: \n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Poedit-Language: Serbian\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
@@ -62,8 +64,7 @@ msgstr "Изглед"
 msgid "Background color:"
 msgstr "Боја позадине:"
 
-#: ../data/ui/desktop-pref.glade.h:7
-#: ../data/ui/pref.glade.h:10
+#: ../data/ui/desktop-pref.glade.h:7 ../data/ui/pref.glade.h:10
 msgid "Center on the screen"
 msgstr "На сред екрана"
 
@@ -79,8 +80,7 @@ msgstr "Боја сенке"
 msgid "Desktop Icons"
 msgstr "Иконе радне површи"
 
-#: ../data/ui/desktop-pref.glade.h:11
-#: ../src/desktop-ui.c:58
+#: ../data/ui/desktop-pref.glade.h:11 ../src/desktop-ui.c:58
 msgid "Desktop Preferences"
 msgstr "Поставке радне површи"
 
@@ -116,18 +116,15 @@ msgstr "Прикажи иконе логичких дискова на радн�
 msgid "Show menus provided by window managers when desktop is clicked"
 msgstr "Прикажи мени управљача прозора када се кликне на радну површ"
 
-#: ../data/ui/desktop-pref.glade.h:20
-#: ../data/ui/pref.glade.h:37
+#: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:37
 msgid "Stretch to fill the entire screen"
 msgstr "Растегни преко целог екрана"
 
-#: ../data/ui/desktop-pref.glade.h:21
-#: ../data/ui/pref.glade.h:38
+#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:38
 msgid "Stretch to fit the screen"
 msgstr "Прилагоди величини екрана"
 
-#: ../data/ui/desktop-pref.glade.h:22
-#: ../data/ui/pref.glade.h:42
+#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:42
 msgid "Tile the image to fill the entire screen"
 msgstr "Поплочај екран"
 
@@ -197,7 +194,8 @@ msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
 "%s = the command line you want to execute with terminal or su."
 msgstr ""
-"Примери: \"xterm -e %s\" за терминал или \"gksu %s\" за пребацивање између корисника.\n"
+"Примери: \"xterm -e %s\" за терминал или \"gksu %s\" за пребацивање између "
+"корисника.\n"
 "%s = наредба која желите да се изврши у терминалу или са \"su\"."
 
 #: ../data/ui/pref.glade.h:18
@@ -344,52 +342,43 @@ msgstr "Отвори управљачем датотека"
 msgid "_Invert Selection"
 msgstr "_Обрни избор"
 
-#: ../src/desktop-ui.c:54
-#: ../src/main-win-ui.c:146
+#: ../src/desktop-ui.c:54 ../src/main-win-ui.c:146
 msgid "_Sort Files"
 msgstr "По_ређај датотеке"
 
-#: ../src/desktop-ui.c:56
-#: ../src/main-win-ui.c:172
+#: ../src/desktop-ui.c:56 ../src/main-win-ui.c:172
 msgid "Folder"
 msgstr "Директоријум"
 
-#: ../src/desktop-ui.c:57
+#: ../src/desktop-ui.c:57 ../src/main-win-ui.c:173
 msgid "Blank File"
 msgstr "Празна датотека"
 
-#: ../src/desktop-ui.c:69
-#: ../src/main-win-ui.c:198
+#: ../src/desktop-ui.c:69 ../src/main-win-ui.c:198
 msgid "By _Name"
 msgstr "Према _имену"
 
-#: ../src/desktop-ui.c:70
-#: ../src/main-win-ui.c:199
+#: ../src/desktop-ui.c:70 ../src/main-win-ui.c:199
 msgid "By _Modification Time"
 msgstr "Према _датуму измене"
 
-#: ../src/desktop-ui.c:71
-#: ../src/main-win-ui.c:200
+#: ../src/desktop-ui.c:71 ../src/main-win-ui.c:200
 msgid "By _Size"
 msgstr "Према _величини"
 
-#: ../src/desktop-ui.c:72
-#: ../src/main-win-ui.c:201
+#: ../src/desktop-ui.c:72 ../src/main-win-ui.c:201
 msgid "By File _Type"
 msgstr "Према вр_сти"
 
-#: ../src/desktop-ui.c:88
-#: ../src/main-win-ui.c:218
+#: ../src/desktop-ui.c:88 ../src/main-win-ui.c:218
 msgid "Open in New Tab"
 msgstr "Отвори у новом листу"
 
-#: ../src/desktop-ui.c:89
-#: ../src/main-win-ui.c:219
+#: ../src/desktop-ui.c:89 ../src/main-win-ui.c:219
 msgid "Open in New Window"
 msgstr "Отвори у новом прозору"
 
-#: ../src/desktop-ui.c:91
-#: ../src/main-win-ui.c:221
+#: ../src/desktop-ui.c:91 ../src/main-win-ui.c:221
 msgid "Open in _Terminal"
 msgstr "Отвори у _терминалу"
 
@@ -517,10 +506,6 @@ msgstr "Отвори тренутни директоријум у _термин�
 msgid "Open Current Folder as _Root"
 msgstr "Отвори тренутни директоријум као „_Root“ корисник"
 
-#: ../src/main-win-ui.c:173
-msgid "Blank FIle"
-msgstr "Празна датотека"
-
 #: ../src/main-win-ui.c:179
 msgid "Show _Hidden"
 msgstr "Прикажи _скривене датотеке"
@@ -541,20 +526,20 @@ msgstr "Модел умањеног приказа да_тотека"
 msgid "Detailed _List View"
 msgstr "Прикажи као детаљну _листу"
 
-#: ../src/main-win.c:552
+#: ../src/main-win.c:561
 msgid "You are in super user mode"
 msgstr "УПОЗОРЕЊЕ: Користите програм са администраторским привилегијама"
 
-#: ../src/main-win.c:651
+#: ../src/main-win.c:660
 msgid "Switch user command is not set."
 msgstr "Наредба за пребацивање између корисника није постављена"
 
-#: ../src/main-win.c:958
+#: ../src/main-win.c:967
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Слободан простор: %s од %s"
 
-#: ../src/main-win.c:1174
+#: ../src/main-win.c:1183
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -565,73 +550,75 @@ msgstr ""
 "„%s“\n"
 "Унесите име за овај обележивач"
 
-#: ../src/main-win.c:1178
+#: ../src/main-win.c:1187
 msgid "Add to Bookmarks"
 msgstr "Додај у обележиваче"
 
 #. { "new-tab", 't', 0, G_OPTION_ARG_NONE, &new_tab, N_("Open folders in new tabs of the last used window instead of creating new windows"), NULL },
-#: ../src/pcmanfm.c:72
+#: ../src/pcmanfm.c:74
 msgid "Name of configuration profile"
 msgstr "Назив профила за подешавања"
 
-#: ../src/pcmanfm.c:73
+#: ../src/pcmanfm.c:75
 msgid "Launch desktop manager"
 msgstr "Покрени управљач окружења"
 
-#: ../src/pcmanfm.c:74
+#: ../src/pcmanfm.c:76
 msgid "Turn off desktop manager if it's running"
 msgstr "Заустави управљач окружења уколико је покренут"
 
-#: ../src/pcmanfm.c:75
+#: ../src/pcmanfm.c:77
 msgid "Run PCManFM as a daemon"
 msgstr "Покрени PCManFM програм у позадини"
 
-#: ../src/pcmanfm.c:76
+#: ../src/pcmanfm.c:78
 msgid "Open desktop preference dialog"
 msgstr "Отвори подешавања радне површи"
 
-#: ../src/pcmanfm.c:77
+#: ../src/pcmanfm.c:79
 msgid "Set desktop wallpaper"
 msgstr "Постави позадинску слику"
 
-#: ../src/pcmanfm.c:77
+#: ../src/pcmanfm.c:79
 msgid "<image file>"
 msgstr "<датотека са сликом>"
 
-#: ../src/pcmanfm.c:78
+#: ../src/pcmanfm.c:80
 msgid "Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"
-msgstr "Режим приказа позадинске слике. <режим>=(color|stretch|fit|center|tile)"
+msgstr ""
+"Режим приказа позадинске слике. <режим>=(color|stretch|fit|center|tile)"
 
-#: ../src/pcmanfm.c:78
+#: ../src/pcmanfm.c:80
 msgid "<mode>"
 msgstr "<режим>"
 
-#: ../src/pcmanfm.c:79
-msgid "Open preference dialog. 'n' is number of the page you want to show (1, 2, 3...)."
+#: ../src/pcmanfm.c:81
+msgid ""
+"Open preference dialog. 'n' is number of the page you want to show (1, 2, "
+"3...)."
 msgstr "Отвори подешавања. 'n' је број сртане коју желите видети (1, 2, 3...)."
 
 #. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
-#: ../src/pcmanfm.c:81
+#: ../src/pcmanfm.c:83
 msgid "No function. Just to be compatible with nautilus"
 msgstr "Функција не постоји. Само због усаглашености са програмом „Nautilus“"
 
-#: ../src/pcmanfm.c:82
+#: ../src/pcmanfm.c:84
 msgid "[FILE1, FILE2,...]"
 msgstr "[FILE1, FILE2,...]"
 
-#: ../src/pcmanfm.c:590
+#: ../src/pcmanfm.c:619
 msgid "Terminal emulator is not set."
 msgstr "Није постављен емулатор терминала."
 
-#: ../src/pcmanfm.c:633
+#: ../src/pcmanfm.c:662
 msgid "Create New..."
 msgstr "Направи нов..."
 
-#: ../src/pcmanfm.c:633
+#: ../src/pcmanfm.c:662
 msgid "Enter a name for the newly created file:"
 msgstr "Унесите име за нову датотеку:"
 
-#: ../src/pcmanfm.c:633
+#: ../src/pcmanfm.c:662
 msgid "New"
 msgstr "Нов"
-

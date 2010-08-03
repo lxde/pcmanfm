@@ -7,10 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-25 23:58+0200\n"
+"POT-Creation-Date: 2010-08-03 20:08+0200\n"
 "PO-Revision-Date: 2010-05-04 22:15+0100\n"
 "Last-Translator: el_libre -- www.catmidia.cat <el.libre@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -373,7 +374,7 @@ msgstr "Ordena les car_petes abans que els fitxers"
 msgid "Folder"
 msgstr "Carpeta"
 
-#: ../src/desktop-ui.c:57
+#: ../src/desktop-ui.c:57 ../src/main-win-ui.c:173
 #, fuzzy
 msgid "Blank File"
 msgstr "Descarregant arxiu:"
@@ -541,11 +542,6 @@ msgstr "Obre el directori actual en un terminal"
 msgid "Open Current Folder as _Root"
 msgstr "Obre la carpeta actual com _root"
 
-#: ../src/main-win-ui.c:173
-#, fuzzy
-msgid "Blank FIle"
-msgstr "Descarregant arxiu:"
-
 #: ../src/main-win-ui.c:179
 msgid "Show _Hidden"
 msgstr "Mostra els _ocults"
@@ -570,20 +566,20 @@ msgstr "Vista d'imatges"
 msgid "Detailed _List View"
 msgstr "Visualitza la llista de preferits"
 
-#: ../src/main-win.c:552
+#: ../src/main-win.c:561
 msgid "You are in super user mode"
 msgstr ""
 
-#: ../src/main-win.c:651
+#: ../src/main-win.c:660
 msgid "Switch user command is not set."
 msgstr ""
 
-#: ../src/main-win.c:958
+#: ../src/main-win.c:967
 #, fuzzy, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Utilitza l'espai lliure"
 
-#: ../src/main-win.c:1174
+#: ../src/main-win.c:1183
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -591,82 +587,82 @@ msgid ""
 "Enter a name for the new bookmark item:"
 msgstr ""
 
-#: ../src/main-win.c:1178
+#: ../src/main-win.c:1187
 #, fuzzy
 msgid "Add to Bookmarks"
 msgstr "Afegeix a les adreces d'interès"
 
 #. { "new-tab", 't', 0, G_OPTION_ARG_NONE, &new_tab, N_("Open folders in new tabs of the last used window instead of creating new windows"), NULL },
-#: ../src/pcmanfm.c:72
+#: ../src/pcmanfm.c:74
 #, fuzzy
 msgid "Name of configuration profile"
 msgstr ""
 "Configuració <b>%s</b>\n"
 " per al perfil <b>%s</b>"
 
-#: ../src/pcmanfm.c:73
+#: ../src/pcmanfm.c:75
 #, fuzzy
 msgid "Launch desktop manager"
 msgstr "Gestor d'escriptori GNOME"
 
-#: ../src/pcmanfm.c:74
+#: ../src/pcmanfm.c:76
 msgid "Turn off desktop manager if it's running"
 msgstr ""
 
-#: ../src/pcmanfm.c:75
+#: ../src/pcmanfm.c:77
 msgid "Run PCManFM as a daemon"
 msgstr "Executa PCManFM com un dimoni de sistema"
 
-#: ../src/pcmanfm.c:76
+#: ../src/pcmanfm.c:78
 msgid "Open desktop preference dialog"
 msgstr ""
 
-#: ../src/pcmanfm.c:77
+#: ../src/pcmanfm.c:79
 msgid "Set desktop wallpaper"
 msgstr "Defineix com a fons d'escriptori"
 
-#: ../src/pcmanfm.c:77
+#: ../src/pcmanfm.c:79
 #, fuzzy
 msgid "<image file>"
 msgstr "Arxiu d'imatge"
 
-#: ../src/pcmanfm.c:78
+#: ../src/pcmanfm.c:80
 msgid "Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"
 msgstr ""
 
-#: ../src/pcmanfm.c:78
+#: ../src/pcmanfm.c:80
 #, fuzzy
 msgid "<mode>"
 msgstr "Mode"
 
-#: ../src/pcmanfm.c:79
+#: ../src/pcmanfm.c:81
 msgid ""
 "Open preference dialog. 'n' is number of the page you want to show (1, 2, "
 "3...)."
 msgstr ""
 
 #. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
-#: ../src/pcmanfm.c:81
+#: ../src/pcmanfm.c:83
 msgid "No function. Just to be compatible with nautilus"
 msgstr ""
 
-#: ../src/pcmanfm.c:82
+#: ../src/pcmanfm.c:84
 msgid "[FILE1, FILE2,...]"
 msgstr "[Fitxer1, fitxer2 ,...]"
 
-#: ../src/pcmanfm.c:590
+#: ../src/pcmanfm.c:619
 msgid "Terminal emulator is not set."
 msgstr ""
 
-#: ../src/pcmanfm.c:633
+#: ../src/pcmanfm.c:662
 #, fuzzy
 msgid "Create New..."
 msgstr "Crea un de nou"
 
-#: ../src/pcmanfm.c:633
+#: ../src/pcmanfm.c:662
 msgid "Enter a name for the newly created file:"
 msgstr ""
 
-#: ../src/pcmanfm.c:633
+#: ../src/pcmanfm.c:662
 msgid "New"
 msgstr "Nous"

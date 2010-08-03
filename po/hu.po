@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-07-26 08:03+0000\n"
+"POT-Creation-Date: 2010-08-03 20:08+0200\n"
 "PO-Revision-Date: 2010-07-26 11:27+0200\n"
 "Last-Translator: Laszlo Dvornik <dvornik@gnome.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -350,7 +350,7 @@ msgstr "Fájlok _rendezése"
 msgid "Folder"
 msgstr "Mappa"
 
-#: ../src/desktop-ui.c:57
+#: ../src/desktop-ui.c:57 ../src/main-win-ui.c:173
 msgid "Blank File"
 msgstr "Üres fájl"
 
@@ -505,10 +505,6 @@ msgstr "Jelenlegi mappa megnyitása _terminálban"
 #: ../src/main-win-ui.c:164
 msgid "Open Current Folder as _Root"
 msgstr "Jelenlegi mappa megnyitása _rendszergazdaként"
-
-#: ../src/main-win-ui.c:173
-msgid "Blank FIle"
-msgstr "Üres fájl"
 
 #: ../src/main-win-ui.c:179
 msgid "Show _Hidden"

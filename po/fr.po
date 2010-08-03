@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PCManFM\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-25 23:58+0200\n"
+"POT-Creation-Date: 2010-08-03 20:08+0200\n"
 "PO-Revision-Date: 2010-08-02 20:48+0200\n"
 "Last-Translator: Cilyan <gaknar@gmail.com>\n"
 "Language-Team: French\n"
@@ -65,8 +65,7 @@ msgstr "Apparence"
 msgid "Background color:"
 msgstr "Couleur de l'arrière-plan :"
 
-#: ../data/ui/desktop-pref.glade.h:7
-#: ../data/ui/pref.glade.h:10
+#: ../data/ui/desktop-pref.glade.h:7 ../data/ui/pref.glade.h:10
 msgid "Center on the screen"
 msgstr "Centrer sur l'écran"
 
@@ -82,8 +81,7 @@ msgstr "Couleur des ombres :"
 msgid "Desktop Icons"
 msgstr "Icônes du bureau"
 
-#: ../data/ui/desktop-pref.glade.h:11
-#: ../src/desktop-ui.c:58
+#: ../data/ui/desktop-pref.glade.h:11 ../src/desktop-ui.c:58
 msgid "Desktop Preferences"
 msgstr "Préférences du bureau"
 
@@ -117,20 +115,19 @@ msgstr "Afficher les icônes des volumes sur le bureau"
 
 #: ../data/ui/desktop-pref.glade.h:19
 msgid "Show menus provided by window managers when desktop is clicked"
-msgstr "Afficher le menu fourni par le gestionnaire de fenêtre lors d'un clic sur le bureau"
+msgstr ""
+"Afficher le menu fourni par le gestionnaire de fenêtre lors d'un clic sur le "
+"bureau"
 
-#: ../data/ui/desktop-pref.glade.h:20
-#: ../data/ui/pref.glade.h:37
+#: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:37
 msgid "Stretch to fill the entire screen"
 msgstr "Étirer pour remplir tout l'écran"
 
-#: ../data/ui/desktop-pref.glade.h:21
-#: ../data/ui/pref.glade.h:38
+#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:38
 msgid "Stretch to fit the screen"
 msgstr "Ajuster à la taille de l'écran"
 
-#: ../data/ui/desktop-pref.glade.h:22
-#: ../data/ui/pref.glade.h:42
+#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:42
 msgid "Tile the image to fill the entire screen"
 msgstr "Faire une mosaïque avec l'image pour remplir l'écran"
 
@@ -200,8 +197,10 @@ msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
 "%s = the command line you want to execute with terminal or su."
 msgstr ""
-"Exemples : « xterm -e %s » pour un terminal ou « gksu %s » pour changer d'utilisateur.\n"
-"%s = la ligne de commande que vous voulez exécuter dans un terminal ou faire exécuter par un autre utilisateur."
+"Exemples : « xterm -e %s » pour un terminal ou « gksu %s » pour changer "
+"d'utilisateur.\n"
+"%s = la ligne de commande que vous voulez exécuter dans un terminal ou faire "
+"exécuter par un autre utilisateur."
 
 #: ../data/ui/pref.glade.h:18
 msgid "Hide 'Close tab' buttons"
@@ -229,7 +228,8 @@ msgstr "Monter les volumes amovibles automatiquement quand ils sont insérés"
 
 #: ../data/ui/pref.glade.h:24
 msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
-msgstr "Déplacer les fichier vers la « Corbeille » au lieu de les effacer du disque"
+msgstr ""
+"Déplacer les fichier vers la « Corbeille » au lieu de les effacer du disque"
 
 #: ../data/ui/pref.glade.h:25
 msgid "Only show thumbnails for local files"
@@ -257,7 +257,9 @@ msgstr "Préférences"
 
 #: ../data/ui/pref.glade.h:31
 msgid "Show available options for removable media when they are inserted"
-msgstr "Afficher les options disponibles pour les média amovibles quand il sont insérés"
+msgstr ""
+"Afficher les options disponibles pour les média amovibles quand il sont "
+"insérés"
 
 #: ../data/ui/pref.glade.h:32
 msgid "Show thumbnails of files"
@@ -293,7 +295,8 @@ msgstr "Vue en aperçus"
 
 #: ../data/ui/pref.glade.h:43
 msgid "Use SI decimal prefixes instead of IEC binary prefixes"
-msgstr "Utiliser les préfixe décimaux SI au lieu des préfixes binaires de l'IEC"
+msgstr ""
+"Utiliser les préfixe décimaux SI au lieu des préfixes binaires de l'IEC"
 
 #: ../data/ui/pref.glade.h:44
 msgid "View Mode:"
@@ -347,52 +350,43 @@ msgstr "Ouvrir dans le gestionnaire de fichier"
 msgid "_Invert Selection"
 msgstr "_Inverser la sélection"
 
-#: ../src/desktop-ui.c:54
-#: ../src/main-win-ui.c:146
+#: ../src/desktop-ui.c:54 ../src/main-win-ui.c:146
 msgid "_Sort Files"
 msgstr "_Trier les fichiers"
 
-#: ../src/desktop-ui.c:56
-#: ../src/main-win-ui.c:172
+#: ../src/desktop-ui.c:56 ../src/main-win-ui.c:172
 msgid "Folder"
 msgstr "Dossier"
 
-#: ../src/desktop-ui.c:57
+#: ../src/desktop-ui.c:57 ../src/main-win-ui.c:173
 msgid "Blank File"
 msgstr "Fichier vide"
 
-#: ../src/desktop-ui.c:69
-#: ../src/main-win-ui.c:198
+#: ../src/desktop-ui.c:69 ../src/main-win-ui.c:198
 msgid "By _Name"
 msgstr "Par _nom"
 
-#: ../src/desktop-ui.c:70
-#: ../src/main-win-ui.c:199
+#: ../src/desktop-ui.c:70 ../src/main-win-ui.c:199
 msgid "By _Modification Time"
 msgstr "Par date de _modification"
 
-#: ../src/desktop-ui.c:71
-#: ../src/main-win-ui.c:200
+#: ../src/desktop-ui.c:71 ../src/main-win-ui.c:200
 msgid "By _Size"
 msgstr "Par _taille"
 
-#: ../src/desktop-ui.c:72
-#: ../src/main-win-ui.c:201
+#: ../src/desktop-ui.c:72 ../src/main-win-ui.c:201
 msgid "By File _Type"
 msgstr "Par t_ype de fichier"
 
-#: ../src/desktop-ui.c:88
-#: ../src/main-win-ui.c:218
+#: ../src/desktop-ui.c:88 ../src/main-win-ui.c:218
 msgid "Open in New Tab"
 msgstr "Ouvrir dans un nouvel onglet"
 
-#: ../src/desktop-ui.c:89
-#: ../src/main-win-ui.c:219
+#: ../src/desktop-ui.c:89 ../src/main-win-ui.c:219
 msgid "Open in New Window"
 msgstr "Ouvrir dans une nouvelle fenêtre"
 
-#: ../src/desktop-ui.c:91
-#: ../src/main-win-ui.c:221
+#: ../src/desktop-ui.c:91 ../src/main-win-ui.c:221
 msgid "Open in _Terminal"
 msgstr "Ouvrir dans un _terminal"
 
@@ -520,12 +514,6 @@ msgstr "Ouvrir le répertoire courant dans un _terminal"
 msgid "Open Current Folder as _Root"
 msgstr "Ouvrir le répertoire courant en tant qu'utilisateur _root"
 
-# There is a typo here!
-# Duplicate?
-#: ../src/main-win-ui.c:173
-msgid "Blank FIle"
-msgstr "Fichier vide"
-
 #: ../src/main-win-ui.c:179
 msgid "Show _Hidden"
 msgstr "Montrer les fichier _cachés"
@@ -546,20 +534,20 @@ msgstr "Vue en _aperçu"
 msgid "Detailed _List View"
 msgstr "Vue en _liste détaillée"
 
-#: ../src/main-win.c:552
+#: ../src/main-win.c:561
 msgid "You are in super user mode"
 msgstr "Vous êtes en mode super utilisateur"
 
-#: ../src/main-win.c:651
+#: ../src/main-win.c:660
 msgid "Switch user command is not set."
 msgstr "La commande de changement d'utilisateur n'est pas configurée."
 
-#: ../src/main-win.c:958
+#: ../src/main-win.c:967
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Espace libre : %s (Total : %s)"
 
-#: ../src/main-win.c:1174
+#: ../src/main-win.c:1183
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -571,73 +559,79 @@ msgstr ""
 "Entrer un nom pour ce marque-page :"
 
 # Duplicate?
-#: ../src/main-win.c:1178
+#: ../src/main-win.c:1187
 msgid "Add to Bookmarks"
 msgstr "Marquer cette page"
 
 #. { "new-tab", 't', 0, G_OPTION_ARG_NONE, &new_tab, N_("Open folders in new tabs of the last used window instead of creating new windows"), NULL },
-#: ../src/pcmanfm.c:72
+#: ../src/pcmanfm.c:74
 msgid "Name of configuration profile"
 msgstr "Nom du profil de configuration"
 
-#: ../src/pcmanfm.c:73
+#: ../src/pcmanfm.c:75
 msgid "Launch desktop manager"
 msgstr "Lancer le gestionnaire de bureau"
 
-#: ../src/pcmanfm.c:74
+#: ../src/pcmanfm.c:76
 msgid "Turn off desktop manager if it's running"
 msgstr "Quitter le gestionnaire de bureau s'il est en cours de fonctionnement"
 
-#: ../src/pcmanfm.c:75
+#: ../src/pcmanfm.c:77
 msgid "Run PCManFM as a daemon"
 msgstr "Lancer PCManFM en tant que démon"
 
-#: ../src/pcmanfm.c:76
+#: ../src/pcmanfm.c:78
 msgid "Open desktop preference dialog"
 msgstr "Ouvrir la fenêtre des préférences du bureau"
 
-#: ../src/pcmanfm.c:77
+#: ../src/pcmanfm.c:79
 msgid "Set desktop wallpaper"
 msgstr "Sélectionner un fond d'écran"
 
-#: ../src/pcmanfm.c:77
+#: ../src/pcmanfm.c:79
 msgid "<image file>"
 msgstr "<fichier image>"
 
-#: ../src/pcmanfm.c:78
+#: ../src/pcmanfm.c:80
 msgid "Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"
-msgstr "Sélectionner le mode d'affichage du fond d'écran. <mode>=(color|stretch|fit|center|tile)"
+msgstr ""
+"Sélectionner le mode d'affichage du fond d'écran. <mode>=(color|stretch|fit|"
+"center|tile)"
 
-#: ../src/pcmanfm.c:78
+#: ../src/pcmanfm.c:80
 msgid "<mode>"
 msgstr "<mode>"
 
-#: ../src/pcmanfm.c:79
-msgid "Open preference dialog. 'n' is number of the page you want to show (1, 2, 3...)."
-msgstr "Ouvrir la fenêtre des préférences. « n » est le numéro de la page que vous voulez afficher (1, 2, 3...)."
+#: ../src/pcmanfm.c:81
+msgid ""
+"Open preference dialog. 'n' is number of the page you want to show (1, 2, "
+"3...)."
+msgstr ""
+"Ouvrir la fenêtre des préférences. « n » est le numéro de la page que vous "
+"voulez afficher (1, 2, 3...)."
 
 #. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
-#: ../src/pcmanfm.c:81
+#: ../src/pcmanfm.c:83
 msgid "No function. Just to be compatible with nautilus"
 msgstr "Ne rien faire. Être seulement compatible avec nautilus"
 
-#: ../src/pcmanfm.c:82
+#: ../src/pcmanfm.c:84
 msgid "[FILE1, FILE2,...]"
 msgstr "[FICHIER1, FICHIER2, ...]"
 
-#: ../src/pcmanfm.c:590
+#: ../src/pcmanfm.c:619
 msgid "Terminal emulator is not set."
 msgstr "L'émulateur de terminal n'est pas configuré."
 
-#: ../src/pcmanfm.c:633
+#: ../src/pcmanfm.c:662
 msgid "Create New..."
 msgstr "Créer un nouveau..."
 
-#: ../src/pcmanfm.c:633
+#: ../src/pcmanfm.c:662
 msgid "Enter a name for the newly created file:"
 msgstr "Entrer un nom pour le nouveau fichier :"
 
-#: ../src/pcmanfm.c:633
+#: ../src/pcmanfm.c:662
 msgid "New"
 msgstr "Nouveau"
 

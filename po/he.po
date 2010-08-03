@@ -3,10 +3,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-25 23:58+0200\n"
+"POT-Creation-Date: 2010-08-03 20:08+0200\n"
 "PO-Revision-Date: 2010-02-27 15:56+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -346,7 +347,7 @@ msgstr "_מיון קבצים"
 msgid "Folder"
 msgstr "תיקייה"
 
-#: ../src/desktop-ui.c:57
+#: ../src/desktop-ui.c:57 ../src/main-win-ui.c:173
 msgid "Blank File"
 msgstr "קובץ ריק"
 
@@ -502,10 +503,6 @@ msgstr "פתיחת התיקייה הנוכחית ב_מסוף"
 msgid "Open Current Folder as _Root"
 msgstr "פתיחת התיקייה הנוכחית כמשתמש _על"
 
-#: ../src/main-win-ui.c:173
-msgid "Blank FIle"
-msgstr "קובץ ריק"
-
 #: ../src/main-win-ui.c:179
 msgid "Show _Hidden"
 msgstr "הצגת _מוסתרים"
@@ -526,20 +523,20 @@ msgstr "תצוגת ת_מונות ממוזערת"
 msgid "Detailed _List View"
 msgstr "תצוגת רשימה מ_פורטת"
 
-#: ../src/main-win.c:552
+#: ../src/main-win.c:561
 msgid "You are in super user mode"
 msgstr "המצב הנוכחי הוא מצב משתמש על"
 
-#: ../src/main-win.c:651
+#: ../src/main-win.c:660
 msgid "Switch user command is not set."
 msgstr "פקודת החלפת המשתמש לא הוגדרה."
 
-#: ../src/main-win.c:958
+#: ../src/main-win.c:967
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "מקום פנוי: %s (סך הכל: %s )"
 
-#: ../src/main-win.c:1174
+#: ../src/main-win.c:1183
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -550,48 +547,48 @@ msgstr ""
 "'%s'\n"
 "יש להזין שם עבור פריט הסימנייה החדשה:"
 
-#: ../src/main-win.c:1178
+#: ../src/main-win.c:1187
 msgid "Add to Bookmarks"
 msgstr "הוספה לסימניות"
 
 #. { "new-tab", 't', 0, G_OPTION_ARG_NONE, &new_tab, N_("Open folders in new tabs of the last used window instead of creating new windows"), NULL },
-#: ../src/pcmanfm.c:72
+#: ../src/pcmanfm.c:74
 msgid "Name of configuration profile"
 msgstr "שם פרופיל התצורה"
 
-#: ../src/pcmanfm.c:73
+#: ../src/pcmanfm.c:75
 msgid "Launch desktop manager"
 msgstr "טעינת מנהל שולחן העבודה"
 
-#: ../src/pcmanfm.c:74
+#: ../src/pcmanfm.c:76
 msgid "Turn off desktop manager if it's running"
 msgstr "כיבוי מנהל שולחן העבודה במידה שהוא פעיל"
 
-#: ../src/pcmanfm.c:75
+#: ../src/pcmanfm.c:77
 msgid "Run PCManFM as a daemon"
 msgstr "הרצת PCManFM כסוכן ברקע"
 
-#: ../src/pcmanfm.c:76
+#: ../src/pcmanfm.c:78
 msgid "Open desktop preference dialog"
 msgstr "פתיחת דו־שיח העדפות שולחן העבודה"
 
-#: ../src/pcmanfm.c:77
+#: ../src/pcmanfm.c:79
 msgid "Set desktop wallpaper"
 msgstr "הגדרת רקע שולחן העבודה"
 
-#: ../src/pcmanfm.c:77
+#: ../src/pcmanfm.c:79
 msgid "<image file>"
 msgstr "<קובץ תמונה>"
 
-#: ../src/pcmanfm.c:78
+#: ../src/pcmanfm.c:80
 msgid "Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"
 msgstr "הגדרת מצב תמונת שולחן העבודה. <mode>=(color|stretch|fit|center|tile)"
 
-#: ../src/pcmanfm.c:78
+#: ../src/pcmanfm.c:80
 msgid "<mode>"
 msgstr "<mode>"
 
-#: ../src/pcmanfm.c:79
+#: ../src/pcmanfm.c:81
 msgid ""
 "Open preference dialog. 'n' is number of the page you want to show (1, 2, "
 "3...)."
@@ -599,27 +596,27 @@ msgstr ""
 "פתיחת תיבת דו־שיח ההעדפות. 'n' יהיה מספר העמודים המבוקש להצגה (1, 2, 3...)."
 
 #. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
-#: ../src/pcmanfm.c:81
+#: ../src/pcmanfm.c:83
 msgid "No function. Just to be compatible with nautilus"
 msgstr "אין פונקציה. נועד לצורכי תאימות עם nautilus"
 
-#: ../src/pcmanfm.c:82
+#: ../src/pcmanfm.c:84
 msgid "[FILE1, FILE2,...]"
 msgstr "[FILE1, FILE2,...]"
 
-#: ../src/pcmanfm.c:590
+#: ../src/pcmanfm.c:619
 msgid "Terminal emulator is not set."
 msgstr "מדמה המסוף לא הוגדר."
 
-#: ../src/pcmanfm.c:633
+#: ../src/pcmanfm.c:662
 msgid "Create New..."
 msgstr "יצירת חדש..."
 
-#: ../src/pcmanfm.c:633
+#: ../src/pcmanfm.c:662
 msgid "Enter a name for the newly created file:"
 msgstr "יש להזין שם עבור הקובץ החדש שנוצר:"
 
-#: ../src/pcmanfm.c:633
+#: ../src/pcmanfm.c:662
 msgid "New"
 msgstr "חדש"
 

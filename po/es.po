@@ -7,10 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm2 0.9.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-25 23:58+0200\n"
+"POT-Creation-Date: 2010-08-03 20:08+0200\n"
 "PO-Revision-Date: 2010-05-12 09:37-0500\n"
 "Last-Translator: Hugo Florentino <sysadmin@cips.cu>\n"
 "Language-Team: \n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -349,7 +350,7 @@ msgstr "_Ordenar archivos"
 msgid "Folder"
 msgstr "Carpeta"
 
-#: ../src/desktop-ui.c:57
+#: ../src/desktop-ui.c:57 ../src/main-win-ui.c:173
 msgid "Blank File"
 msgstr "Archivo en blanco"
 
@@ -505,10 +506,6 @@ msgstr "Abrir la carpeta actual en la _terminal"
 msgid "Open Current Folder as _Root"
 msgstr "Abrir la carpeta actual como _root"
 
-#: ../src/main-win-ui.c:173
-msgid "Blank FIle"
-msgstr "Archivo en blanco"
-
 #: ../src/main-win-ui.c:179
 msgid "Show _Hidden"
 msgstr "Mostrar _ocultos"
@@ -529,20 +526,20 @@ msgstr "Vista de _miniaturas"
 msgid "Detailed _List View"
 msgstr "Vista _detallada"
 
-#: ../src/main-win.c:552
+#: ../src/main-win.c:561
 msgid "You are in super user mode"
 msgstr "Está en modo de super usuario"
 
-#: ../src/main-win.c:651
+#: ../src/main-win.c:660
 msgid "Switch user command is not set."
 msgstr "No se ha establecido el comando para cambiar de usuario."
 
-#: ../src/main-win.c:958
+#: ../src/main-win.c:967
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Espacio libre: %s (Total: %s)"
 
-#: ../src/main-win.c:1174
+#: ../src/main-win.c:1183
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -553,50 +550,50 @@ msgstr ""
 "'%s'\n"
 "Introduzca in nombre para el nuevo marcador:"
 
-#: ../src/main-win.c:1178
+#: ../src/main-win.c:1187
 msgid "Add to Bookmarks"
 msgstr "Añadir a los marcadores"
 
 #. { "new-tab", 't', 0, G_OPTION_ARG_NONE, &new_tab, N_("Open folders in new tabs of the last used window instead of creating new windows"), NULL },
-#: ../src/pcmanfm.c:72
+#: ../src/pcmanfm.c:74
 msgid "Name of configuration profile"
 msgstr "Nombre del perfil de configuración"
 
-#: ../src/pcmanfm.c:73
+#: ../src/pcmanfm.c:75
 msgid "Launch desktop manager"
 msgstr "Iniciar el gestor de escritorios"
 
-#: ../src/pcmanfm.c:74
+#: ../src/pcmanfm.c:76
 msgid "Turn off desktop manager if it's running"
 msgstr "Apagar el gestor de escritorios, si está funcionando"
 
-#: ../src/pcmanfm.c:75
+#: ../src/pcmanfm.c:77
 msgid "Run PCManFM as a daemon"
 msgstr "Ejecutar PCManFM como servicio"
 
-#: ../src/pcmanfm.c:76
+#: ../src/pcmanfm.c:78
 msgid "Open desktop preference dialog"
 msgstr "Abrir la pantalla de preferencias del escritorio"
 
-#: ../src/pcmanfm.c:77
+#: ../src/pcmanfm.c:79
 msgid "Set desktop wallpaper"
 msgstr "Establecer el tapiz del escritorio"
 
-#: ../src/pcmanfm.c:77
+#: ../src/pcmanfm.c:79
 msgid "<image file>"
 msgstr "<archivo de imagen>"
 
-#: ../src/pcmanfm.c:78
+#: ../src/pcmanfm.c:80
 msgid "Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"
 msgstr ""
 "Establecer el modo del tapiz de escritorio. <modo>=(color|estirar|ajustar|"
 "centrar|mosaico)"
 
-#: ../src/pcmanfm.c:78
+#: ../src/pcmanfm.c:80
 msgid "<mode>"
 msgstr "<modo>"
 
-#: ../src/pcmanfm.c:79
+#: ../src/pcmanfm.c:81
 msgid ""
 "Open preference dialog. 'n' is number of the page you want to show (1, 2, "
 "3...)."
@@ -605,27 +602,27 @@ msgstr ""
 "mostrar (1, 2, 3...)."
 
 #. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
-#: ../src/pcmanfm.c:81
+#: ../src/pcmanfm.c:83
 msgid "No function. Just to be compatible with nautilus"
 msgstr "Sin funcionalidad. Sólo para compatibilidad con nautilus"
 
-#: ../src/pcmanfm.c:82
+#: ../src/pcmanfm.c:84
 msgid "[FILE1, FILE2,...]"
 msgstr "[ARCHIVO1, ARCHIVO2, ...]"
 
-#: ../src/pcmanfm.c:590
+#: ../src/pcmanfm.c:619
 msgid "Terminal emulator is not set."
 msgstr "No se ha establecido el emulador de terminal."
 
-#: ../src/pcmanfm.c:633
+#: ../src/pcmanfm.c:662
 msgid "Create New..."
 msgstr "Crear nuevo..."
 
-#: ../src/pcmanfm.c:633
+#: ../src/pcmanfm.c:662
 msgid "Enter a name for the newly created file:"
 msgstr "Introduzca un nombre para el archivo recién creado:"
 
-#: ../src/pcmanfm.c:633
+#: ../src/pcmanfm.c:662
 msgid "New"
 msgstr "Nuevo"
 

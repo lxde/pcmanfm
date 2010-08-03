@@ -2,15 +2,16 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm 0.9.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-07-06 09:08+0000\n"
+"POT-Creation-Date: 2010-08-03 20:08+0200\n"
 "PO-Revision-Date: 2010-03-27 15:45+0100\n"
 "Last-Translator: Yorvyk <yorvik.ubunto@googlemail.com>\n"
 "Language-Team: English en_GB\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -344,7 +345,7 @@ msgstr "_Sort Files"
 msgid "Folder"
 msgstr "Folder"
 
-#: ../src/desktop-ui.c:57
+#: ../src/desktop-ui.c:57 ../src/main-win-ui.c:173
 msgid "Blank File"
 msgstr "Blank File"
 
@@ -500,10 +501,6 @@ msgstr "Open Current Folder in _Terminal"
 msgid "Open Current Folder as _Root"
 msgstr "Open Current Folder as _Root"
 
-#: ../src/main-win-ui.c:173
-msgid "Blank FIle"
-msgstr "Blank File"
-
 #: ../src/main-win-ui.c:179
 msgid "Show _Hidden"
 msgstr "Show _Hidden"
@@ -524,20 +521,20 @@ msgstr "_Thumbnail View"
 msgid "Detailed _List View"
 msgstr "Detailed _List View"
 
-#: ../src/main-win.c:560
+#: ../src/main-win.c:561
 msgid "You are in super user mode"
 msgstr "You are in Super User mode"
 
-#: ../src/main-win.c:659
+#: ../src/main-win.c:660
 msgid "Switch user command is not set."
 msgstr "Switch User command is not set"
 
-#: ../src/main-win.c:966
+#: ../src/main-win.c:967
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Free space: %s (Total: %s)"
 
-#: ../src/main-win.c:1182
+#: ../src/main-win.c:1183
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -548,12 +545,11 @@ msgstr ""
 "'%s'\n"
 "Enter a name for the new bookmark item:"
 
-#: ../src/main-win.c:1186
+#: ../src/main-win.c:1187
 msgid "Add to Bookmarks"
 msgstr "Add to Bookmarks"
 
-#. { "new-tab", 't', 0, G_OPTION_ARG_NONE, &new_tab, N_("Open folders in new
-#. tabs of the last used window instead of creating new windows"), NULL },
+#. { "new-tab", 't', 0, G_OPTION_ARG_NONE, &new_tab, N_("Open folders in new tabs of the last used window instead of creating new windows"), NULL },
 #: ../src/pcmanfm.c:74
 msgid "Name of configuration profile"
 msgstr "Name of configuration profile"
@@ -591,11 +587,14 @@ msgid "<mode>"
 msgstr "<mode>"
 
 #: ../src/pcmanfm.c:81
-msgid "Open preference dialog. 'n' is number of the page you want to show (1, 2, 3...)."
-msgstr "Open preference dialogue. 'n' is number of the page you want to show (1, 2, 3...)"
+msgid ""
+"Open preference dialog. 'n' is number of the page you want to show (1, 2, "
+"3...)."
+msgstr ""
+"Open preference dialogue. 'n' is number of the page you want to show (1, 2, "
+"3...)"
 
-#. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files
-#. utility"), NULL },
+#. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
 #: ../src/pcmanfm.c:83
 msgid "No function. Just to be compatible with nautilus"
 msgstr "No function. Just to be compatible with nautilus"
@@ -623,5 +622,9 @@ msgstr "New"
 #~ msgid "Open Find Files utility"
 #~ msgstr "Open Find Files utility"
 
-#~ msgid "Open folders in new tabs of the last used window instead of creating new windows"
-#~ msgstr "Open folders in new tabs of the last used window instead of creating new windows"
+#~ msgid ""
+#~ "Open folders in new tabs of the last used window instead of creating new "
+#~ "windows"
+#~ msgstr ""
+#~ "Open folders in new tabs of the last used window instead of creating new "
+#~ "windows"

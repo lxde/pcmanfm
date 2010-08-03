@@ -3,14 +3,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-25 23:58+0200\n"
+"POT-Creation-Date: 2010-08-03 20:08+0200\n"
 "PO-Revision-Date: 2010-04-08 00:29+0200\n"
 "Last-Translator: <edhunter@sidux.com>\n"
 "Language-Team: Greek\n"
+"Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: el\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.0.1\n"
 
@@ -348,7 +348,7 @@ msgstr "_Ταξινόμηση αρχείων κατά"
 msgid "Folder"
 msgstr "Φακέλου"
 
-#: ../src/desktop-ui.c:57
+#: ../src/desktop-ui.c:57 ../src/main-win-ui.c:173
 msgid "Blank File"
 msgstr "Κενού αρχείου"
 
@@ -504,10 +504,6 @@ msgstr "Άνοιγμα του τρέχοντος φακέλου στο _τερμ
 msgid "Open Current Folder as _Root"
 msgstr "Άνοιγμα του τρέχοντος φακέλου ως _διαχειριστής"
 
-#: ../src/main-win-ui.c:173
-msgid "Blank FIle"
-msgstr "Κενού αρχείου"
-
 #: ../src/main-win-ui.c:179
 msgid "Show _Hidden"
 msgstr "Εμφάνιση κρυφών αρχείων"
@@ -528,20 +524,20 @@ msgstr "_Μικρογραφίες"
 msgid "Detailed _List View"
 msgstr "_Λεπτομέριες"
 
-#: ../src/main-win.c:552
+#: ../src/main-win.c:561
 msgid "You are in super user mode"
 msgstr "Είστε σε κατάσταση υπερχρήστη"
 
-#: ../src/main-win.c:651
+#: ../src/main-win.c:660
 msgid "Switch user command is not set."
 msgstr "Δεν έχει οριστεί εντολή αλλαγής χρήστη"
 
-#: ../src/main-win.c:958
+#: ../src/main-win.c:967
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Ελεύθερος χώρος: %s (Σύνολο: %s)"
 
-#: ../src/main-win.c:1174
+#: ../src/main-win.c:1183
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -552,50 +548,50 @@ msgstr ""
 "'%s'\n"
 "Εισάγετε ένα όνομα για το νέο σελιδοδείκτη:"
 
-#: ../src/main-win.c:1178
+#: ../src/main-win.c:1187
 msgid "Add to Bookmarks"
 msgstr "Προσθήκη στους σελιδοδείκτες"
 
 #. { "new-tab", 't', 0, G_OPTION_ARG_NONE, &new_tab, N_("Open folders in new tabs of the last used window instead of creating new windows"), NULL },
-#: ../src/pcmanfm.c:72
+#: ../src/pcmanfm.c:74
 msgid "Name of configuration profile"
 msgstr "Όνομα του προφίλ ρυθμίσεων"
 
-#: ../src/pcmanfm.c:73
+#: ../src/pcmanfm.c:75
 msgid "Launch desktop manager"
 msgstr "Εκτέλεση της εφαρμογής επιφάνειας εργασίας"
 
-#: ../src/pcmanfm.c:74
+#: ../src/pcmanfm.c:76
 msgid "Turn off desktop manager if it's running"
 msgstr "Τερματισμός της εφαρμογής επιφάνειας εργασίας εάν εκτελείται"
 
-#: ../src/pcmanfm.c:75
+#: ../src/pcmanfm.c:77
 msgid "Run PCManFM as a daemon"
 msgstr "Εκτέλεση του PCManFM ως δαίμονα"
 
-#: ../src/pcmanfm.c:76
+#: ../src/pcmanfm.c:78
 msgid "Open desktop preference dialog"
 msgstr "Ρυθμίσεις επιφάνειας εργασίας"
 
-#: ../src/pcmanfm.c:77
+#: ../src/pcmanfm.c:79
 msgid "Set desktop wallpaper"
 msgstr "Ορισμός ταπετσαρίας επιφάνειας εργασίας"
 
-#: ../src/pcmanfm.c:77
+#: ../src/pcmanfm.c:79
 msgid "<image file>"
 msgstr "<αρχείο εικόνας>"
 
-#: ../src/pcmanfm.c:78
+#: ../src/pcmanfm.c:80
 msgid "Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"
 msgstr ""
 "Ρύθμιση του τρόπου εμφάνισης της ταπετσαρίας στην επιφάνεια εργασίας. "
 "<τρόπος> = (Χρώμα | τέντωμα | ταίριασμα | κέντρο | παράθεση)"
 
-#: ../src/pcmanfm.c:78
+#: ../src/pcmanfm.c:80
 msgid "<mode>"
 msgstr "<τρόπος>"
 
-#: ../src/pcmanfm.c:79
+#: ../src/pcmanfm.c:81
 msgid ""
 "Open preference dialog. 'n' is number of the page you want to show (1, 2, "
 "3...)."
@@ -604,27 +600,27 @@ msgstr ""
 "δείτε (1, 2, 3 ...)."
 
 #. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
-#: ../src/pcmanfm.c:81
+#: ../src/pcmanfm.c:83
 msgid "No function. Just to be compatible with nautilus"
 msgstr "Χωρίς λειτουργία. Για λόγους συμβατότητας με το nautilus"
 
-#: ../src/pcmanfm.c:82
+#: ../src/pcmanfm.c:84
 msgid "[FILE1, FILE2,...]"
 msgstr "[ΑΡΧΕΙΟ1, ΑΡΧΕΙΟ2,...]"
 
-#: ../src/pcmanfm.c:590
+#: ../src/pcmanfm.c:619
 msgid "Terminal emulator is not set."
 msgstr "Δεν έχει οριστεί κάποιο τερματικό"
 
-#: ../src/pcmanfm.c:633
+#: ../src/pcmanfm.c:662
 msgid "Create New..."
 msgstr "Δημιουργία νέου..."
 
-#: ../src/pcmanfm.c:633
+#: ../src/pcmanfm.c:662
 msgid "Enter a name for the newly created file:"
 msgstr "Εισάγετε ένα όνομα για το νέο αρχείο:"
 
-#: ../src/pcmanfm.c:633
+#: ../src/pcmanfm.c:662
 msgid "New"
 msgstr "Νέο αρχείο"
 

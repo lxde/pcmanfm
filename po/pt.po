@@ -2,15 +2,16 @@
 # Copyright (C) 2006 THE pcmanfm'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the pcmanfm package.
 # Nuno Miguel <nunis@netcabo.pt>, 2008, 2009
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-12 08:10+0000\n"
+"POT-Creation-Date: 2010-08-03 20:08+0200\n"
 "PO-Revision-Date: 2010-03-19 12:20-0000\n"
 "Last-Translator: Sérgio Marques <smarquespt@gmail.com>\n"
 "Language-Team: \n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -194,7 +195,8 @@ msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
 "%s = the command line you want to execute with terminal or su."
 msgstr ""
-"Exemplos: \"xterm -e %s\" para terminal ou \"gksu %s\" para trocar utilizadores.\n"
+"Exemplos: \"xterm -e %s\" para terminal ou \"gksu %s\" para trocar "
+"utilizadores.\n"
 "%s = a linha de comandos a executar com o terminal ou su."
 
 #: ../data/ui/pref.glade.h:18
@@ -349,7 +351,7 @@ msgstr "_Ordenar Ficheiros"
 msgid "Folder"
 msgstr "Pasta"
 
-#: ../src/desktop-ui.c:57
+#: ../src/desktop-ui.c:57 ../src/main-win-ui.c:173
 msgid "Blank File"
 msgstr "Ficheiro Vazio"
 
@@ -505,10 +507,6 @@ msgstr "Abrir Pasta Actual no _Terminal"
 msgid "Open Current Folder as _Root"
 msgstr "Abrir Pasta Actual Como _Root"
 
-#: ../src/main-win-ui.c:173
-msgid "Blank FIle"
-msgstr "Ficheiro Vazio"
-
 #: ../src/main-win-ui.c:179
 msgid "Show _Hidden"
 msgstr "Mostrar _Ocultos"
@@ -529,20 +527,20 @@ msgstr "_Miniaturas"
 msgid "Detailed _List View"
 msgstr "_Lista Detalhada"
 
-#: ../src/main-win.c:560
+#: ../src/main-win.c:561
 msgid "You are in super user mode"
 msgstr "Está no modo de super utilizador"
 
-#: ../src/main-win.c:659
+#: ../src/main-win.c:660
 msgid "Switch user command is not set."
 msgstr "Comando para troca de utilizador não definido."
 
-#: ../src/main-win.c:966
+#: ../src/main-win.c:967
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Espaço livre: %s (Total: %s)"
 
-#: ../src/main-win.c:1182
+#: ../src/main-win.c:1183
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -553,80 +551,88 @@ msgstr ""
 "'%s'\n"
 "Indique o nome para o novo marcador:"
 
-#: ../src/main-win.c:1186
+#: ../src/main-win.c:1187
 msgid "Add to Bookmarks"
 msgstr "Adicionar aos Marcadores"
 
-#. { "new-tab", 't', 0, G_OPTION_ARG_NONE, &new_tab, N_("Open folders in new
-#. tabs of the last used window instead of creating new windows"), NULL },
-#: ../src/pcmanfm.c:72
+#. { "new-tab", 't', 0, G_OPTION_ARG_NONE, &new_tab, N_("Open folders in new tabs of the last used window instead of creating new windows"), NULL },
+#: ../src/pcmanfm.c:74
 msgid "Name of configuration profile"
 msgstr "Nome do perfil de configuração"
 
-#: ../src/pcmanfm.c:73
+#: ../src/pcmanfm.c:75
 msgid "Launch desktop manager"
 msgstr "Iniciar gestor da área de trabalho"
 
-#: ../src/pcmanfm.c:74
+#: ../src/pcmanfm.c:76
 msgid "Turn off desktop manager if it's running"
 msgstr "Desligar gestor da área de trabalho se em execução"
 
-#: ../src/pcmanfm.c:75
+#: ../src/pcmanfm.c:77
 msgid "Run PCManFM as a daemon"
 msgstr "Executar PcManFM como daemon"
 
-#: ../src/pcmanfm.c:76
+#: ../src/pcmanfm.c:78
 msgid "Open desktop preference dialog"
 msgstr "Abrir preferências da área de trabalho"
 
-#: ../src/pcmanfm.c:77
+#: ../src/pcmanfm.c:79
 msgid "Set desktop wallpaper"
 msgstr "Definir papel de parede"
 
-#: ../src/pcmanfm.c:77
+#: ../src/pcmanfm.c:79
 msgid "<image file>"
 msgstr "<imagem>"
 
-#: ../src/pcmanfm.c:78
+#: ../src/pcmanfm.c:80
 msgid "Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"
-msgstr "Defina o modo do papel de parede. <modo>=(cor|esticar|ajustar|centrar|mosaico)"
+msgstr ""
+"Defina o modo do papel de parede. <modo>=(cor|esticar|ajustar|centrar|"
+"mosaico)"
 
-#: ../src/pcmanfm.c:78
+#: ../src/pcmanfm.c:80
 msgid "<mode>"
 msgstr "<modo>"
 
-#: ../src/pcmanfm.c:79
-msgid "Open preference dialog. 'n' is number of the page you want to show (1, 2, 3...)."
-msgstr "Abrir diálogo de preferências. 'n' é o número da página que quer mostrar (1, 2, 3...)."
-
-#. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files
-#. utility"), NULL },
 #: ../src/pcmanfm.c:81
+msgid ""
+"Open preference dialog. 'n' is number of the page you want to show (1, 2, "
+"3...)."
+msgstr ""
+"Abrir diálogo de preferências. 'n' é o número da página que quer mostrar (1, "
+"2, 3...)."
+
+#. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
+#: ../src/pcmanfm.c:83
 msgid "No function. Just to be compatible with nautilus"
 msgstr "Sem função. Apenas para compatibilidade com nautilus"
 
-#: ../src/pcmanfm.c:82
+#: ../src/pcmanfm.c:84
 msgid "[FILE1, FILE2,...]"
 msgstr "[FICHEIRO1, FICHEIRO2,...]"
 
-#: ../src/pcmanfm.c:590
+#: ../src/pcmanfm.c:619
 msgid "Terminal emulator is not set."
 msgstr "Emulador de Terminal não definido."
 
-#: ../src/pcmanfm.c:633
+#: ../src/pcmanfm.c:662
 msgid "Create New..."
 msgstr "Criar Novo..."
 
-#: ../src/pcmanfm.c:633
+#: ../src/pcmanfm.c:662
 msgid "Enter a name for the newly created file:"
 msgstr "Indique o nome do ficheiro agora criado:"
 
-#: ../src/pcmanfm.c:633
+#: ../src/pcmanfm.c:662
 msgid "New"
 msgstr "Novo"
 
 #~ msgid "Open Find Files utility"
 #~ msgstr "Abrir Procura de Ficheiros"
 
-#~ msgid "Open folders in new tabs of the last used window instead of creating new windows"
-#~ msgstr "Abrir pastas em novos separadores da última janela usada em vez de criar novas janelas"
+#~ msgid ""
+#~ "Open folders in new tabs of the last used window instead of creating new "
+#~ "windows"
+#~ msgstr ""
+#~ "Abrir pastas em novos separadores da última janela usada em vez de criar "
+#~ "novas janelas"

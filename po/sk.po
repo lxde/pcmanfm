@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-07-06 09:08+0000\n"
+"POT-Creation-Date: 2010-08-03 20:08+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Ivan Masár <helix84@centrum.sk>\n"
 "Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
+"Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -60,8 +61,7 @@ msgstr "Vzhľad"
 msgid "Background color:"
 msgstr "Farba pozadia:"
 
-#: ../data/ui/desktop-pref.glade.h:7
-#: ../data/ui/pref.glade.h:10
+#: ../data/ui/desktop-pref.glade.h:7 ../data/ui/pref.glade.h:10
 msgid "Center on the screen"
 msgstr "Vycentrovať na obrazovke"
 
@@ -77,8 +77,7 @@ msgstr "Farba tieňa:"
 msgid "Desktop Icons"
 msgstr "Ikony na ploche"
 
-#: ../data/ui/desktop-pref.glade.h:11
-#: ../src/desktop-ui.c:58
+#: ../data/ui/desktop-pref.glade.h:11 ../src/desktop-ui.c:58
 msgid "Desktop Preferences"
 msgstr "Nastavenie pracovného prostredia"
 
@@ -114,18 +113,15 @@ msgstr "Zobraziť na ploche ikony zväzkov"
 msgid "Show menus provided by window managers when desktop is clicked"
 msgstr "Zobraziť po kliknutí na plochu menu správcu okien"
 
-#: ../data/ui/desktop-pref.glade.h:20
-#: ../data/ui/pref.glade.h:37
+#: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:37
 msgid "Stretch to fill the entire screen"
 msgstr "Roztiahnuť na celú obrazovku"
 
-#: ../data/ui/desktop-pref.glade.h:21
-#: ../data/ui/pref.glade.h:38
+#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:38
 msgid "Stretch to fit the screen"
 msgstr "Roztiahnuť na obrazovku"
 
-#: ../data/ui/desktop-pref.glade.h:22
-#: ../data/ui/pref.glade.h:42
+#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:42
 msgid "Tile the image to fill the entire screen"
 msgstr "Vydláždiť obrázkom celú obrazovku"
 
@@ -342,52 +338,43 @@ msgstr "Otvoriť v Správcovi súborov"
 msgid "_Invert Selection"
 msgstr "_Invertovať výber"
 
-#: ../src/desktop-ui.c:54
-#: ../src/main-win-ui.c:146
+#: ../src/desktop-ui.c:54 ../src/main-win-ui.c:146
 msgid "_Sort Files"
 msgstr "_Usporiadať súbory"
 
-#: ../src/desktop-ui.c:56
-#: ../src/main-win-ui.c:172
+#: ../src/desktop-ui.c:56 ../src/main-win-ui.c:172
 msgid "Folder"
 msgstr "Priečinok"
 
-#: ../src/desktop-ui.c:57
+#: ../src/desktop-ui.c:57 ../src/main-win-ui.c:173
 msgid "Blank File"
 msgstr "Prázdny súbor"
 
-#: ../src/desktop-ui.c:69
-#: ../src/main-win-ui.c:198
+#: ../src/desktop-ui.c:69 ../src/main-win-ui.c:198
 msgid "By _Name"
 msgstr "Podľa _názvu"
 
-#: ../src/desktop-ui.c:70
-#: ../src/main-win-ui.c:199
+#: ../src/desktop-ui.c:70 ../src/main-win-ui.c:199
 msgid "By _Modification Time"
 msgstr "Podľa času poslednej z_meny"
 
-#: ../src/desktop-ui.c:71
-#: ../src/main-win-ui.c:200
+#: ../src/desktop-ui.c:71 ../src/main-win-ui.c:200
 msgid "By _Size"
 msgstr "Podľa veľko_sti"
 
-#: ../src/desktop-ui.c:72
-#: ../src/main-win-ui.c:201
+#: ../src/desktop-ui.c:72 ../src/main-win-ui.c:201
 msgid "By File _Type"
 msgstr "Podľa _typu súboru"
 
-#: ../src/desktop-ui.c:88
-#: ../src/main-win-ui.c:218
+#: ../src/desktop-ui.c:88 ../src/main-win-ui.c:218
 msgid "Open in New Tab"
 msgstr "Otvoriť na novej _karte"
 
-#: ../src/desktop-ui.c:89
-#: ../src/main-win-ui.c:219
+#: ../src/desktop-ui.c:89 ../src/main-win-ui.c:219
 msgid "Open in New Window"
 msgstr "Otvoriť v novom _okne"
 
-#: ../src/desktop-ui.c:91
-#: ../src/main-win-ui.c:221
+#: ../src/desktop-ui.c:91 ../src/main-win-ui.c:221
 msgid "Open in _Terminal"
 msgstr "Otvoriť v _termináli"
 
@@ -515,10 +502,6 @@ msgstr "Otvoriť aktuálny priečinok v _termináli"
 msgid "Open Current Folder as _Root"
 msgstr "Otvoriť aktuálny priečinok ako _root"
 
-#: ../src/main-win-ui.c:173
-msgid "Blank FIle"
-msgstr "Prázdny súbor"
-
 #: ../src/main-win-ui.c:179
 msgid "Show _Hidden"
 msgstr "Zobrazovať _skryté"
@@ -539,20 +522,20 @@ msgstr "_Zobrazenie náhľadov"
 msgid "Detailed _List View"
 msgstr "Zobrazenie _Podrobný zoznam"
 
-#: ../src/main-win.c:560
+#: ../src/main-win.c:561
 msgid "You are in super user mode"
 msgstr "Nachádzate sa v režime superpoužívateľa"
 
-#: ../src/main-win.c:659
+#: ../src/main-win.c:660
 msgid "Switch user command is not set."
 msgstr "Príkaz na prepnutie používateľa nie je nastavený."
 
-#: ../src/main-win.c:966
+#: ../src/main-win.c:967
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Voľné miesto: %s (Celkom: %s)"
 
-#: ../src/main-win.c:1182
+#: ../src/main-win.c:1183
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -563,7 +546,7 @@ msgstr ""
 "„%s“\n"
 "Zadajte názov pre novú záložku:"
 
-#: ../src/main-win.c:1186
+#: ../src/main-win.c:1187
 msgid "Add to Bookmarks"
 msgstr "Pridať medzi záložky"
 
@@ -598,20 +581,28 @@ msgstr "<súbor obrázka>"
 
 #: ../src/pcmanfm.c:80
 msgid "Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"
-msgstr "Nastaviť režim pozadia plochy. Režim môže byť jedna z hodnôt „color“ (farba), „stretch“ (roztiahnuť), „fit“ (prispôsobiť veľkosť), „center“ (centrovať) a „tile“ (dlaždice)."
+msgstr ""
+"Nastaviť režim pozadia plochy. Režim môže byť jedna z hodnôt "
+"„color“ (farba), „stretch“ (roztiahnuť), „fit“ (prispôsobiť veľkosť), "
+"„center“ (centrovať) a „tile“ (dlaždice)."
 
 #: ../src/pcmanfm.c:80
 msgid "<mode>"
 msgstr "<režim>"
 
 #: ../src/pcmanfm.c:81
-msgid "Open preference dialog. 'n' is number of the page you want to show (1, 2, 3...)."
-msgstr "Otvoriť dialóg s nastavením. „n“ je počet stránok, ktorý chcete zobraziť (1, 2, 3...)."
+msgid ""
+"Open preference dialog. 'n' is number of the page you want to show (1, 2, "
+"3...)."
+msgstr ""
+"Otvoriť dialóg s nastavením. „n“ je počet stránok, ktorý chcete zobraziť (1, "
+"2, 3...)."
 
 #. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
 #: ../src/pcmanfm.c:83
 msgid "No function. Just to be compatible with nautilus"
-msgstr "Nevykonáva žiadnu funkciu. Implementované len pre kompatibilitu s Nautilom"
+msgstr ""
+"Nevykonáva žiadnu funkciu. Implementované len pre kompatibilitu s Nautilom"
 
 #: ../src/pcmanfm.c:84
 msgid "[FILE1, FILE2,...]"
@@ -1118,8 +1109,8 @@ msgstr "Nový"
 #~ "1. spustiť správcu XSETTINGS alebo\n"
 #~ "2. jednoducho uviesť tému ikon v súbore ~/.gtkrc-2.0.</b>\n"
 #~ "Napríklad ak chcete použiť tému ikon Tango pridajte riadok:\n"
-#~ "<i><b>gtk-icon-theme-name=\"Tango\"</b></i> do svojho súboru ~/.gtkrc-"
-#~ "2.0. (ak neexistuje vytvorte ho)\n"
+#~ "<i><b>gtk-icon-theme-name=\"Tango\"</b></i> do svojho súboru ~/."
+#~ "gtkrc-2.0. (ak neexistuje vytvorte ho)\n"
 #~ "\n"
 #~ "<b>POZN.: Téma ikon, ktorú vyberiete by mala byť kompatibilná s GNOME "
 #~ "inak nebude možné správne zobraziť ikony súborov.</b>  Kvôli rozdielom v "
@@ -1248,21 +1239,18 @@ msgstr "Nový"
 #~ msgstr "Načítava sa..."
 
 #~ msgid "%d item selected (%s)%s"
-
 #~ msgid_plural "%d items selected (%s)%s"
 #~ msgstr[0] "%d vybraná položka (%s)%s"
 #~ msgstr[1] "%d vybrané položky (%s)%s"
 #~ msgstr[2] "%d vybraných položiek (%s)%s"
 
 #~ msgid "%d hidden"
-
 #~ msgid_plural "%d hidden"
 #~ msgstr[0] "%d skrytý"
 #~ msgstr[1] "%d skryté"
 #~ msgstr[2] "%d skrytých"
 
 #~ msgid "%d visible item (%s)%s"
-
 #~ msgid_plural "%d visible items (%s)%s"
 #~ msgstr[0] "%d viditeľná položka (%s)%s"
 #~ msgstr[1] "%d viditeľné položky (%s)%s"

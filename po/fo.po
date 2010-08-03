@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-25 23:58+0200\n"
+"POT-Creation-Date: 2010-08-03 20:08+0200\n"
 "PO-Revision-Date: 2010-06-08 18:12+0200\n"
 "Last-Translator: Gunleif <gunleif@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -351,7 +351,7 @@ msgstr "_Raða fílur"
 msgid "Folder"
 msgstr "Faldari"
 
-#: ../src/desktop-ui.c:57
+#: ../src/desktop-ui.c:57 ../src/main-win-ui.c:173
 msgid "Blank File"
 msgstr "Blank fíla"
 
@@ -508,10 +508,6 @@ msgstr "Lat núverandi skjáttu upp í _útstøð"
 msgid "Open Current Folder as _Root"
 msgstr "Lat núverandi skjáttu upp sum fyrisiti _root"
 
-#: ../src/main-win-ui.c:173
-msgid "Blank FIle"
-msgstr "Blank fíla"
-
 #: ../src/main-win-ui.c:179
 msgid "Show _Hidden"
 msgstr "Sýn _fjald"
@@ -532,20 +528,20 @@ msgstr "_Smámyndasýning"
 msgid "Detailed _List View"
 msgstr "Nágreinilig _listasýning"
 
-#: ../src/main-win.c:552
+#: ../src/main-win.c:561
 msgid "You are in super user mode"
 msgstr "Tú er í úrvalsbrúkara standi"
 
-#: ../src/main-win.c:651
+#: ../src/main-win.c:660
 msgid "Switch user command is not set."
 msgstr "Stýriboð til brúkaraskift er ikki sett."
 
-#: ../src/main-win.c:958
+#: ../src/main-win.c:967
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Tøkt pláss: %s (Í alt: %s)"
 
-#: ../src/main-win.c:1174
+#: ../src/main-win.c:1183
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -556,75 +552,76 @@ msgstr ""
 "'%s'\n"
 "Skriva eitt navn til nýggja bókamerkið:"
 
-#: ../src/main-win.c:1178
+#: ../src/main-win.c:1187
 msgid "Add to Bookmarks"
 msgstr "Legg til bókamerki"
 
 #. { "new-tab", 't', 0, G_OPTION_ARG_NONE, &new_tab, N_("Open folders in new tabs of the last used window instead of creating new windows"), NULL },
-#: ../src/pcmanfm.c:72
+#: ../src/pcmanfm.c:74
 msgid "Name of configuration profile"
 msgstr "Navn á samansetinga-umhvarvinum"
 
-#: ../src/pcmanfm.c:73
+#: ../src/pcmanfm.c:75
 msgid "Launch desktop manager"
 msgstr "Byrja skriviborðs fyrisiting"
 
-#: ../src/pcmanfm.c:74
+#: ../src/pcmanfm.c:76
 msgid "Turn off desktop manager if it's running"
 msgstr "Sløkk skriviborðsfyrisiting, um hon er í gongd"
 
-#: ../src/pcmanfm.c:75
+#: ../src/pcmanfm.c:77
 msgid "Run PCManFM as a daemon"
 msgstr "Koyr PCManFM sum demón"
 
-#: ../src/pcmanfm.c:76
+#: ../src/pcmanfm.c:78
 msgid "Open desktop preference dialog"
 msgstr "Lat innstillingar til skriviborðið"
 
-#: ../src/pcmanfm.c:77
+#: ../src/pcmanfm.c:79
 msgid "Set desktop wallpaper"
 msgstr "Set skriviborðstapet"
 
-#: ../src/pcmanfm.c:77
+#: ../src/pcmanfm.c:79
 msgid "<image file>"
 msgstr "<myndafíla>"
 
-#: ../src/pcmanfm.c:78
+#: ../src/pcmanfm.c:80
 msgid "Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"
-msgstr "Set standin á skriviborðstapeti. <mode>=(color|stretch|fit|center|tile)"
+msgstr ""
+"Set standin á skriviborðstapeti. <mode>=(color|stretch|fit|center|tile)"
 
-#: ../src/pcmanfm.c:78
+#: ../src/pcmanfm.c:80
 msgid "<mode>"
 msgstr "<standur>"
 
-#: ../src/pcmanfm.c:79
+#: ../src/pcmanfm.c:81
 msgid ""
 "Open preference dialog. 'n' is number of the page you want to show (1, 2, "
 "3...)."
 msgstr ""
 
 #. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
-#: ../src/pcmanfm.c:81
+#: ../src/pcmanfm.c:83
 msgid "No function. Just to be compatible with nautilus"
 msgstr "Einki ávirki. Einans til at verða samnýtandi við nautilus"
 
-#: ../src/pcmanfm.c:82
+#: ../src/pcmanfm.c:84
 msgid "[FILE1, FILE2,...]"
 msgstr "[FÍLA1, FÍLA2,...]"
 
-#: ../src/pcmanfm.c:590
+#: ../src/pcmanfm.c:619
 msgid "Terminal emulator is not set."
 msgstr "Útstøðarhermari er ikki givin."
 
-#: ../src/pcmanfm.c:633
+#: ../src/pcmanfm.c:662
 msgid "Create New..."
 msgstr "Stovna nýggja..."
 
-#: ../src/pcmanfm.c:633
+#: ../src/pcmanfm.c:662
 msgid "Enter a name for the newly created file:"
 msgstr "Skriva navn á nýggju fíluni:"
 
-#: ../src/pcmanfm.c:633
+#: ../src/pcmanfm.c:662
 msgid "New"
 msgstr "Nýggj"
 
