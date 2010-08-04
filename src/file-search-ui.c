@@ -5,6 +5,7 @@
 #include <glib/gi18n.h>
 #include <gtk/gtk.h>
 #include <libfm/fm-gtk.h>
+#include <math.h>
 
 void add_path(GtkWidget * list, const char * path);
 
@@ -40,6 +41,13 @@ GtkObject * bigger_adjustment;
 GtkObject * smaller_adjustment;
 GtkWidget * bigger_checkbox;
 GtkWidget * smaller_checkbox;
+
+GtkWidget * smaller_spinbutton;
+GtkWidget * bigger_spinbutton;
+static goffset max_size = 0;
+static goffset min_size = 0;
+GtkWidget * smaller_type;
+GtkWidget * bigger_type;
 
 GtkListStore * path_list_store;
 
@@ -114,13 +122,13 @@ void on_find_button()
 
 	if(gtk_toggle_button_get_active(bigger_checkbox))
 	{
-		goffset min_size = (goffset)gtk_adjustment_get_value(bigger_adjustment);
+		min_size = (goffset)pow(1024, gtk_combo_box_get_active(bigger_type)) * (goffset)gtk_spin_button_get_value_as_int((GtkSpinButton*)bigger_spinbutton);
 		fm_file_search_add_search_func(search, fm_file_search_minimum_size_rule, &min_size);
 	}
 
 	if(gtk_toggle_button_get_active(smaller_checkbox))
 	{
-		goffset max_size = (goffset)gtk_adjustment_get_value(smaller_adjustment);
+		max_size = (goffset)pow(1024, gtk_combo_box_get_active(smaller_type)) * (goffset)gtk_spin_button_get_value_as_int((GtkSpinButton*)smaller_spinbutton);
 		fm_file_search_add_search_func(search, fm_file_search_maximum_size_rule, &max_size);
 	}
 
@@ -209,6 +217,11 @@ gboolean file_search_ui()
 	smaller_adjustment = gtk_builder_get_object(builder, "smaller_adjustment");
 	bigger_checkbox = GTK_WIDGET(gtk_builder_get_object(builder, "bigger_than_cb"));
 	smaller_checkbox = GTK_WIDGET(gtk_builder_get_object(builder, "smaller_than_cb"));
+	bigger_spinbutton = GTK_WIDGET(gtk_builder_get_object(builder, "bigger_spinbutton"));
+	smaller_spinbutton = GTK_WIDGET(gtk_builder_get_object(builder, "smaller_spinbutton"));
+	smaller_type = GTK_WIDGET(gtk_builder_get_object(builder, "smaller_than_type"));
+	bigger_type = GTK_WIDGET(gtk_builder_get_object(builder, "bigger_than_type"));
+
 
 	gtk_widget_hide(cancel_button);
 	gtk_widget_hide(search_again_button);

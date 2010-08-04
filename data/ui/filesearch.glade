@@ -1,7 +1,47 @@
 <?xml version="1.0"?>
 <interface>
-  <!-- interface-requires gtk+ 2.12 -->
+  <requires lib="gtk+" version="2.16"/>
   <!-- interface-naming-policy project-wide -->
+  <object class="GtkListStore" id="bigger_liststore">
+    <columns>
+      <!-- column-name gchararray1 -->
+      <column type="gchararray"/>
+    </columns>
+    <data>
+      <row>
+        <col id="0" translatable="yes">Bytes</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">KB</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">MB</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">GB</col>
+      </row>
+    </data>
+  </object>
+  <object class="GtkListStore" id="smaller_liststore">
+    <columns>
+      <!-- column-name gchararray1 -->
+      <column type="gchararray"/>
+    </columns>
+    <data>
+      <row>
+        <col id="0" translatable="yes">Bytes</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">KB</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">MB</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">GB</col>
+      </row>
+    </data>
+  </object>
   <object class="GtkWindow" id="search_dialog_window">
     <property name="title" translatable="yes">Find Files</property>
     <property name="window_position">center</property>
@@ -204,8 +244,6 @@
             <child type="tab">
               <object class="GtkLabel" id="name_path_tab_label">
                 <property name="visible">True</property>
-                <property name="xalign">0.49000000953674316</property>
-                <property name="yalign">0.47999998927116394</property>
                 <property name="label" translatable="yes">Name &amp; Path</property>
               </object>
               <packing>
@@ -327,7 +365,7 @@
                           <object class="GtkTable" id="table1">
                             <property name="visible">True</property>
                             <property name="n_rows">2</property>
-                            <property name="n_columns">2</property>
+                            <property name="n_columns">3</property>
                             <child>
                               <object class="GtkSpinButton" id="bigger_spinbutton">
                                 <property name="visible">True</property>
@@ -342,7 +380,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkSpinButton" id="smaller_spin_button">
+                              <object class="GtkSpinButton" id="smaller_spinbutton">
                                 <property name="visible">True</property>
                                 <property name="can_focus">True</property>
                                 <property name="invisible_char">&#x25CF;</property>
@@ -381,6 +419,45 @@
                               </object>
                               <packing>
                                 <property name="x_options">GTK_FILL</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <object class="GtkComboBox" id="bigger_than_type">
+                                <property name="visible">True</property>
+                                <property name="model">bigger_liststore</property>
+                                <property name="active">1</property>
+                                <child>
+                                  <object class="GtkCellRendererText" id="cellrenderertext1"/>
+                                  <attributes>
+                                    <attribute name="text">0</attribute>
+                                  </attributes>
+                                </child>
+                              </object>
+                              <packing>
+                                <property name="left_attach">2</property>
+                                <property name="right_attach">3</property>
+                                <property name="x_options"></property>
+                              </packing>
+                            </child>
+                            <child>
+                              <object class="GtkComboBox" id="smaller_than_type">
+                                <property name="visible">True</property>
+                                <property name="model">smaller_liststore</property>
+                                <property name="active">2</property>
+                                <child>
+                                  <object class="GtkCellRendererText" id="cellrenderertext2"/>
+                                  <attributes>
+                                    <attribute name="text">0</attribute>
+                                  </attributes>
+                                </child>
+                              </object>
+                              <packing>
+                                <property name="left_attach">2</property>
+                                <property name="right_attach">3</property>
+                                <property name="top_attach">1</property>
+                                <property name="bottom_attach">2</property>
+                                <property name="x_options"></property>
+                                <property name="y_options">GTK_EXPAND</property>
                               </packing>
                             </child>
                           </object>
@@ -534,13 +611,13 @@
     <property name="stock">gtk-remove</property>
   </object>
   <object class="GtkAdjustment" id="bigger_adjustment">
-    <property name="upper">100</property>
+    <property name="upper">2147483647</property>
     <property name="step_increment">1</property>
     <property name="page_increment">10</property>
     <property name="page_size">10</property>
   </object>
   <object class="GtkAdjustment" id="smaller_adjustment">
-    <property name="upper">100</property>
+    <property name="upper">2147483647</property>
     <property name="step_increment">1</property>
     <property name="page_increment">10</property>
     <property name="page_size">10</property>
