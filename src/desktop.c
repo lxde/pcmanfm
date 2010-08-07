@@ -108,7 +108,7 @@ static void on_rows_reordered(GtkTreeModel* mod, GtkTreePath* parent_tp, GtkTree
 
 static void on_dnd_src_data_get(FmDndSrc* ds, FmDesktop* desktop);
 static gboolean on_dnd_dest_query_info(FmDndDest* dd, int x, int y,
-                            			GdkDragAction* action, FmDesktop* desktop);
+                                        GdkDragAction* action, FmDesktop* desktop);
 static void on_dnd_dest_files_dropped(FmDndDest* dd, GdkDragAction action,
                                        int info_type, FmList* files, FmDesktop* desktop);
 
@@ -177,7 +177,7 @@ static void fm_desktop_class_init(FmDesktopClass *klass)
 {
     GtkObjectClass *gtk_object_class;
     GtkWidgetClass* wc;
-	typedef gboolean (*DeleteEvtHandler) (GtkWidget*, GdkEvent*);
+    typedef gboolean (*DeleteEvtHandler) (GtkWidget*, GdkEvent*);
     const char* atom_names[] = {"_NET_WORKAREA", "_NET_NUMBER_OF_DESKTOPS", "_NET_CURRENT_DESKTOP", "_XROOTMAP_ID"};
     Atom atoms[G_N_ELEMENTS(atom_names)] = {0};
 
@@ -334,9 +334,15 @@ void fm_desktop_manager_init()
     gint i;
     GtkUIManager* ui;
     GtkActionGroup* act_grp;
+    const char* desktop_path;
 
     if( ! win_group )
         win_group = gtk_window_group_new();
+
+    /* create the ~/Desktop folder if it doesn't exist. */
+    desktop_path = g_get_user_special_dir(G_USER_DIRECTORY_DESKTOP);
+    /* FIXME: should we use a localized folder name instead? */
+    g_mkdir_with_parents(desktop_path, 0700);
 
     if(!model)
     {
@@ -536,7 +542,7 @@ gboolean on_button_press( GtkWidget* w, GdkEventButton* evt )
                 FmDesktopItem* old_focus = self->focus;
                 self->focus = NULL;
                 if( old_focus )
-        		    redraw_item( FM_DESKTOP(w), old_focus );
+                    redraw_item( FM_DESKTOP(w), old_focus );
             }
             self->focus = clicked_item;
             redraw_item( self, clicked_item );
@@ -703,9 +709,9 @@ gboolean on_motion_notify( GtkWidget* w, GdkEventMotion* evt )
                 /* FIXME: timeout should be customizable */
                 if( self->single_click_timeout_handler == 0)
                     self->single_click_timeout_handler = g_timeout_add( 400, on_single_click_timeout, self ); //400 ms
-					/* Making a loop to aviod the selection of the item */
-					/* on_single_click_timeout( self ); */
-			}
+                    /* Making a loop to aviod the selection of the item */
+                    /* on_single_click_timeout( self ); */
+            }
             else
             {
                 gdk_window_set_cursor( window, NULL );
@@ -1266,7 +1272,7 @@ void on_rows_reordered(GtkTreeModel* mod, GtkTreePath* parent_tp, GtkTreeIter* p
 
 void calc_item_size(FmDesktop* desktop, FmDesktopItem* item)
 {
-    //int text_x, text_y, text_w, text_h;	 /* Probably goes along with the FIXME in this function */
+    //int text_x, text_y, text_w, text_h;    /* Probably goes along with the FIXME in this function */
     PangoRectangle rc, rc2;
 
     /* icon rect */
@@ -1700,7 +1706,7 @@ void update_working_area(FmDesktop* desktop)
                        XA_NET_WORKAREA, 0, 4 * 32, False, AnyPropertyType, &ret_type,
                        &format, &len, &after, &prop) != Success)
         goto _out;
-	if(ret_type == None || format == 0 || len != n_desktops*4 )
+    if(ret_type == None || format == 0 || len != n_desktops*4 )
     {
         if(prop)
             XFree(prop);
@@ -1735,7 +1741,7 @@ void on_dnd_src_data_get(FmDndSrc* ds, FmDesktop* desktop)
 }
 
 gboolean on_dnd_dest_query_info(FmDndDest* dd, int x, int y,
-                    			GdkDragAction* action, FmDesktop* desktop)
+                                GdkDragAction* action, FmDesktop* desktop)
 {
     FmDesktopItem* item = hit_test(desktop, x, y);
     if(item)
