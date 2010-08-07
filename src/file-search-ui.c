@@ -49,6 +49,13 @@ static goffset min_size = 0;
 GtkWidget * smaller_type;
 GtkWidget * bigger_type;
 
+GtkWidget * type_selector;
+
+/* for mod time search */
+GtkWidget * calender_checkbox;
+GtkWidget * start_calender;
+GtkWidget * end_calender;
+
 GtkListStore * path_list_store;
 
 /* search settings */
@@ -66,6 +73,19 @@ gboolean case_sensitive_content = FALSE;
 gint64 minimum_size = -1;
 gint64 maximum_size = -1;
 
+static gchar * mime_types[] = { NULL,
+						 "text/plain",
+						 "audio/mpeg",
+						 "audio/ogg",
+						 "video/x-msvideo",
+						 "video/mp4",
+						 "video/mpeg",
+						 "video/ogg",
+						 "image/gif",
+						 "image/jpeg",
+						 "image/png",
+						 "application/pdf" };
+						 
 /* UI Signal Handlers */
 
 void on_find_button()
@@ -73,15 +93,15 @@ void on_find_button()
 	/*show and hide appropriate widgets */
 	gtk_widget_hide(find_settings_notebook);
 	gtk_widget_hide(find_button);
-	gtk_widget_show(search_results_frame);
-	//gtk_widget_show(cancel_button);
-	gtk_widget_show(search_again_button);
 
 	target = g_strdup(gtk_entry_get_text(file_name_textbox)); /*TODO: free */
 	target_contains = g_strdup(gtk_entry_get_text(file_contains_textbox)); /*TODO: free */
 
 	if(search != NULL)
+	{
 		g_object_unref(search);
+		search = NULL;
+	}
 
 	gboolean iter_has_next;
 	char * path;
@@ -135,18 +155,34 @@ void on_find_button()
 	if(target != NULL && g_strcmp0(target, "") != 0)
 		fm_file_search_add_search_func(search, fm_file_search_target_rule, target);
 
+	if(gtk_combo_box_get_active(type_selector) >= 1)
+		fm_file_search_add_search_func(search, fm_file_search_target_type_rule, mime_types[gtk_combo_box_get_active(type_selector)]);
 
 	if(target_contains != NULL && g_strcmp0(target_contains, "") != 0)
 		fm_file_search_add_search_func(search, fm_file_search_target_contains_rule, target_contains);
 
+	if(gtk_toggle_button_get_active(calender_checkbox))
+	{
+		FmFileSearchModifiedTimeRuleData * time_data = g_slice_new(FmFileSearchModifiedTimeRuleData);
+		gtk_calendar_get_date(start_calender, &time_data->start_y, &time_data->start_m, &time_data->start_d);
+		gtk_calendar_get_date(end_calender, &time_data->end_y, &time_data->end_m, &time_data->end_d);
+
+		fm_file_search_add_search_func(search, fm_file_search_modified_time_rule, time_data);
+	}
+
 	fm_folder_view_chdir_by_folder(FM_FOLDER_VIEW(view), FM_FOLDER(search));
 
 	fm_file_search_run(search);
+
+	gtk_widget_show(search_results_frame);
+	gtk_widget_show(cancel_button);
+	gtk_widget_show(search_again_button);
 }
 
 void on_cancel_button()
 {
 	gtk_widget_hide(cancel_button);
+	fm_file_search_cancel(search);
 }
 
 void on_search_again_button()
@@ -156,9 +192,6 @@ void on_search_again_button()
 	gtk_widget_hide(search_again_button);
 	gtk_widget_show(find_settings_notebook);
 	gtk_widget_show(find_button);
-
-	if(search != NULL)
-		g_object_unref(search);
 }
 
 void on_add_path_button()
@@ -222,6 +255,11 @@ gboolean file_search_ui()
 	smaller_type = GTK_WIDGET(gtk_builder_get_object(builder, "smaller_than_type"));
 	bigger_type = GTK_WIDGET(gtk_builder_get_object(builder, "bigger_than_type"));
 
+	type_selector = GTK_WIDGET(gtk_builder_get_object(builder, "type_selection"));
+
+	calender_checkbox = GTK_WIDGET(gtk_builder_get_object(builder, "calender_checkbox"));;
+	start_calender = GTK_WIDGET(gtk_builder_get_object(builder, "start_calender"));;
+	end_calender = GTK_WIDGET(gtk_builder_get_object(builder, "end_calender"));;
 
 	gtk_widget_hide(cancel_button);
 	gtk_widget_hide(search_again_button);
