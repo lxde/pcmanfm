@@ -342,7 +342,8 @@ void fm_desktop_manager_init()
     /* create the ~/Desktop folder if it doesn't exist. */
     desktop_path = g_get_user_special_dir(G_USER_DIRECTORY_DESKTOP);
     /* FIXME: should we use a localized folder name instead? */
-    g_mkdir_with_parents(desktop_path, 0700);
+    g_mkdir_with_parents(desktop_path, 0700); /* ensure the existance of Desktop folder. */
+    /* FIXME: should we store the desktop folder path in the annoying ~/.config/user-dirs.dirs file? */
 
     if(!model)
     {
