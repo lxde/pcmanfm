@@ -44,8 +44,8 @@ GtkWidget * smaller_checkbox;
 
 GtkWidget * smaller_spinbutton;
 GtkWidget * bigger_spinbutton;
-static goffset max_size = 0;
-static goffset min_size = 0;
+goffset max_size = 0;
+goffset min_size = 0;
 GtkWidget * smaller_type;
 GtkWidget * bigger_type;
 
@@ -220,6 +220,13 @@ static void on_remove_path_button()
     if( gtk_tree_selection_get_selected(sel, NULL, &it) )
         gtk_list_store_remove( path_list_store, &it );
 }
+
+static GtkActionEntry menu_actions[] =
+{
+    { "OpenAction", GTK_STOCK_OPEN, N_("_Open"), NULL, NULL, G_CALLBACK(on_open_files) },
+    { "OpenFolderAction", GTK_STOCK_OPEN, N_("Open Containing _Folder"), NULL, NULL, G_CALLBACK(on_open_files) }
+};
+
 
 gboolean file_search_ui()
 {
