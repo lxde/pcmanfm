@@ -1,17 +1,17 @@
 //      single-inst.c: simple IPC mechanism for single instance app
-//      
+//
 //      Copyright 2010 Hong Jen Yee (PCMan) <pcman.tw@gmail.com>
-//      
+//
 //      This program is free software; you can redistribute it and/or modify
 //      it under the terms of the GNU General Public License as published by
 //      the Free Software Foundation; either version 2 of the License, or
 //      (at your option) any later version.
-//      
+//
 //      This program is distributed in the hope that it will be useful,
 //      but WITHOUT ANY WARRANTY; without even the implied warranty of
 //      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 //      GNU General Public License for more details.
-//      
+//
 //      You should have received a copy of the GNU General Public License
 //      along with this program; if not, write to the Free Software
 //      Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
@@ -25,6 +25,7 @@
 #include <sys/un.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <errno.h>
 
 typedef struct _SingleInstClient SingleInstClient;
 struct _SingleInstClient
@@ -108,7 +109,6 @@ SingleInstResult single_inst_init(const char* _prog_name, SingleInstCallback _se
         single_inst_finalize();
         return SINGLE_INST_ERROR;
     }
-
     io_watch = g_io_add_watch(io_channel, G_IO_IN|G_IO_ERR|G_IO_PRI|G_IO_HUP, (GIOFunc)on_server_socket_event, NULL);
     return SINGLE_INST_SERVER;
 }
@@ -234,9 +234,7 @@ gboolean on_server_socket_event(GIOChannel* ioc, GIOCondition cond, gpointer dat
 {
     if ( cond & (G_IO_IN|G_IO_PRI) )
     {
-        struct sockaddr_un addr;
-        int addr_len;
-        int client_sock = accept(g_io_channel_unix_get_fd(ioc), (struct sockaddr *)&addr, &addr_len);
+        int client_sock = accept(g_io_channel_unix_get_fd(ioc), NULL, 0);
         if(client_sock != -1)
         {
             SingleInstClient* client = g_slice_new0(SingleInstClient);
@@ -249,6 +247,8 @@ gboolean on_server_socket_event(GIOChannel* ioc, GIOCondition cond, gpointer dat
             clients = g_list_prepend(clients, client);
             /* g_debug("accept new client"); */
         }
+        else
+            g_debug("accept() failed!\n%s", g_strerror(errno));
     }
 
     if(cond & (G_IO_ERR|G_IO_HUP))
