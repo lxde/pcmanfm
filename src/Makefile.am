@@ -16,6 +16,7 @@ pcmanfm_SOURCES = \
 	pref.c pref.h \
 	utils.c utils.h \
 	gseal-gtk-compat.h \
+	single-inst.c single-inst.h \
 	$(NULL)
 
 EXTRA_DIST= \
