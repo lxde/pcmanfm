@@ -7,71 +7,51 @@
 #include <libfm/fm-gtk.h>
 #include <math.h>
 
+typedef struct
+{ 
+	GtkBuilder * builder;
+	GtkWidget * window;
+
+	/* For Search Results */
+	GtkWidget * view;
+	FmFileSearch * search;
+
+	/* GUI Items */
+	GtkWidget * find_button;
+	GtkWidget * cancel_button;
+	GtkWidget * search_again_button;
+	GtkWidget * search_results_frame;
+	GtkWidget * search_results_tree_container;
+	GtkWidget * find_settings_notebook;
+
+	/* Data Entry Items */
+	GtkWidget * file_name_textbox;
+	GtkWidget * file_name_case_sensitive_checkbox;
+	GtkWidget * file_name_regex_checkbox;
+	GtkWidget * path_tree_view;
+	GtkWidget * path_tree_view_add_button;
+	GtkWidget * path_tree_view_remove_button;
+	GtkWidget * path_recursive_checkbox;
+	GtkWidget * path_show_hidden_checkbox;
+	GtkWidget * file_contains_textbox;
+	GtkWidget * file_contains_case_sensitive_checkbox;
+	GtkWidget * file_contains_regex_checkbox;
+	GtkWidget * bigger_checkbox;
+	GtkWidget * smaller_checkbox;
+	GtkWidget * smaller_spinbutton;
+	GtkWidget * bigger_spinbutton;
+	goffset max_size;
+	goffset min_size;
+	GtkWidget * smaller_type;
+	GtkWidget * bigger_type;
+	GtkWidget * type_selector;
+	GtkWidget * calender_checkbox;
+	GtkWidget * start_calender;
+	GtkWidget * end_calender;
+	GtkListStore * path_list_store;
+} FileSearchUI;
+
 void add_path(GtkWidget * list, const char * path);
-
-GtkBuilder * builder;
-GtkWidget * window;
-
-GtkWidget * view;
-FmFileSearch * search;
-
-/* GUI Items */
-GtkWidget * find_button;
-GtkWidget * cancel_button;
-GtkWidget * search_again_button;
-GtkWidget * search_results_frame;
-GtkWidget * search_results_tree_container;
-GtkWidget * find_settings_notebook;
-
-/* Data Entry Items */
-GtkWidget * file_name_textbox;
-GtkWidget * file_name_case_sensitive_checkbox;
-GtkWidget * file_name_regex_checkbox;
-GtkWidget * path_tree_view;
-GtkWidget * path_tree_view_add_button;
-GtkWidget * path_tree_view_remove_button;
-GtkWidget * path_recursive_checkbox;
-GtkWidget * path_show_hidden_checkbox;
-GtkWidget * file_contains_textbox;
-GtkWidget * file_contains_case_sensitive_checkbox;
-GtkWidget * file_contains_regex_checkbox;
-
-/* for size search */
-GtkObject * bigger_adjustment;
-GtkObject * smaller_adjustment;
-GtkWidget * bigger_checkbox;
-GtkWidget * smaller_checkbox;
-
-GtkWidget * smaller_spinbutton;
-GtkWidget * bigger_spinbutton;
-goffset max_size = 0;
-goffset min_size = 0;
-GtkWidget * smaller_type;
-GtkWidget * bigger_type;
-
-GtkWidget * type_selector;
-
-/* for mod time search */
-GtkWidget * calender_checkbox;
-GtkWidget * start_calender;
-GtkWidget * end_calender;
-
-GtkListStore * path_list_store;
-
-/* search settings */
-char * target = NULL;
-char * target_contains = NULL;
-char * target_type = NULL;
-gboolean not_recursive = FALSE;
-gboolean show_hidden = FALSE;
-gboolean regex_target = FALSE;
-gboolean regex_content = FALSE;
-gboolean exact_target = FALSE;
-gboolean exact_content = FALSE;
-gboolean case_sensitive_target = FALSE;
-gboolean case_sensitive_content = FALSE;
-gint64 minimum_size = -1;
-gint64 maximum_size = -1;
 
 static gchar * mime_types[] = { NULL,
 						 "text/plain",
@@ -88,116 +68,124 @@ static gchar * mime_types[] = { NULL,
 						 
 /* UI Signal Handlers */
 
-void on_find_button()
+void on_find_button(GtkButton * btn, gpointer user_data)
 {
+	FileSearchUI * ui = (FileSearchUI *)user_data;
+
 	/*show and hide appropriate widgets */
-	gtk_widget_hide(find_settings_notebook);
-	gtk_widget_hide(find_button);
+	gtk_widget_hide(ui->find_settings_notebook);
+	gtk_widget_hide(ui->find_button);
 
-	target = g_strdup(gtk_entry_get_text(file_name_textbox)); /*TODO: free */
-	target_contains = g_strdup(gtk_entry_get_text(file_contains_textbox)); /*TODO: free */
+	char * target = g_strdup(gtk_entry_get_text(ui->file_name_textbox)); /*TODO: free */
+	char * target_contains = g_strdup(gtk_entry_get_text(ui->file_contains_textbox)); /*TODO: free */
 
-	if(search != NULL)
+	if(ui->search != NULL)
 	{
-		g_object_unref(search);
-		search = NULL;
+		g_object_unref(ui->search);
+		ui->search = NULL;
 	}
 
 	gboolean iter_has_next;
 	char * path;
 	GtkTreeIter it;
-	iter_has_next = gtk_tree_model_get_iter_first(path_list_store, &it);
+	iter_has_next = gtk_tree_model_get_iter_first(ui->path_list_store, &it);
 
 	FmPathList * target_folders = fm_path_list_new();
 
 	while(iter_has_next)
 	{
-		gtk_tree_model_get(path_list_store, &it, 0, &path, -1);
+		gtk_tree_model_get(ui->path_list_store, &it, 0, &path, -1);
 
 		FmPath * fm_path = fm_path_new(path);
 		fm_list_push_tail(target_folders, fm_path);
 
-		iter_has_next = gtk_tree_model_iter_next(path_list_store, &it);
+		iter_has_next = gtk_tree_model_iter_next(ui->path_list_store, &it);
 	}
 
-	search = fm_file_search_new(target_folders);
+	ui->search = fm_file_search_new(target_folders);
 
 	/* add settings */
-	fm_file_search_set_case_sensitive_target(search, gtk_toggle_button_get_active(file_name_case_sensitive_checkbox));
-	if(gtk_toggle_button_get_active(file_name_regex_checkbox))
-		fm_file_search_set_target_mode(search, FM_FILE_SEARCH_MODE_REGEX);
+	fm_file_search_set_case_sensitive_target(ui->search, gtk_toggle_button_get_active(ui->file_name_case_sensitive_checkbox));
+	if(gtk_toggle_button_get_active(ui->file_name_regex_checkbox))
+		fm_file_search_set_target_mode(ui->search, FM_FILE_SEARCH_MODE_REGEX);
 	else
-		fm_file_search_set_target_mode(search, FM_FILE_SEARCH_MODE_EXACT);
+		fm_file_search_set_target_mode(ui->search, FM_FILE_SEARCH_MODE_EXACT);
 
-	fm_file_search_set_case_sensitive_content(search, gtk_toggle_button_get_active(file_contains_case_sensitive_checkbox));
-	if(gtk_toggle_button_get_active(file_contains_regex_checkbox))
-		fm_file_search_set_content_mode(search, FM_FILE_SEARCH_MODE_REGEX);
+	fm_file_search_set_case_sensitive_content(ui->search, gtk_toggle_button_get_active(ui->file_contains_case_sensitive_checkbox));
+	if(gtk_toggle_button_get_active(ui->file_contains_regex_checkbox))
+		fm_file_search_set_content_mode(ui->search, FM_FILE_SEARCH_MODE_REGEX);
 	else
-		fm_file_search_set_content_mode(search, FM_FILE_SEARCH_MODE_EXACT);
+		fm_file_search_set_content_mode(ui->search, FM_FILE_SEARCH_MODE_EXACT);
 
-	fm_file_search_set_recursive(search, gtk_toggle_button_get_active(path_recursive_checkbox));
-	fm_file_search_set_show_hidden(search, gtk_toggle_button_get_active(path_show_hidden_checkbox));
+	fm_file_search_set_recursive(ui->search, gtk_toggle_button_get_active(ui->path_recursive_checkbox));
+	fm_file_search_set_show_hidden(ui->search, gtk_toggle_button_get_active(ui->path_show_hidden_checkbox));
 	
 	/* add rules */
 
-	if(gtk_toggle_button_get_active(bigger_checkbox))
+	if(gtk_toggle_button_get_active(ui->bigger_checkbox))
 	{
-		min_size = (goffset)pow(1024, gtk_combo_box_get_active(bigger_type)) * (goffset)gtk_spin_button_get_value_as_int((GtkSpinButton*)bigger_spinbutton);
-		fm_file_search_add_search_func(search, fm_file_search_minimum_size_rule, &min_size);
+		ui->min_size = (goffset)pow(1024, gtk_combo_box_get_active(ui->bigger_type)) * (goffset)gtk_spin_button_get_value_as_int((GtkSpinButton*)ui->bigger_spinbutton);
+		fm_file_search_add_search_func(ui->search, fm_file_search_minimum_size_rule, &ui->min_size);
 	}
 
-	if(gtk_toggle_button_get_active(smaller_checkbox))
+	if(gtk_toggle_button_get_active(ui->smaller_checkbox))
 	{
-		max_size = (goffset)pow(1024, gtk_combo_box_get_active(smaller_type)) * (goffset)gtk_spin_button_get_value_as_int((GtkSpinButton*)smaller_spinbutton);
-		fm_file_search_add_search_func(search, fm_file_search_maximum_size_rule, &max_size);
+		ui->max_size = (goffset)pow(1024, gtk_combo_box_get_active(ui->smaller_type)) * (goffset)gtk_spin_button_get_value_as_int((GtkSpinButton*)ui->smaller_spinbutton);
+		fm_file_search_add_search_func(ui->search, fm_file_search_maximum_size_rule, &ui->max_size);
 	}
 
 	if(target != NULL && g_strcmp0(target, "") != 0)
-		fm_file_search_add_search_func(search, fm_file_search_target_rule, target);
+		fm_file_search_add_search_func(ui->search, fm_file_search_target_rule, target);
 
-	if(gtk_combo_box_get_active(type_selector) >= 1)
-		fm_file_search_add_search_func(search, fm_file_search_target_type_rule, mime_types[gtk_combo_box_get_active(type_selector)]);
+	if(gtk_combo_box_get_active(ui->type_selector) >= 1)
+		fm_file_search_add_search_func(ui->search, fm_file_search_target_type_rule, mime_types[gtk_combo_box_get_active(ui->type_selector)]);
 
 	if(target_contains != NULL && g_strcmp0(target_contains, "") != 0)
-		fm_file_search_add_search_func(search, fm_file_search_target_contains_rule, target_contains);
+		fm_file_search_add_search_func(ui->search, fm_file_search_target_contains_rule, target_contains);
 
-	if(gtk_toggle_button_get_active(calender_checkbox))
+	if(gtk_toggle_button_get_active(ui->calender_checkbox))
 	{
 		FmFileSearchModifiedTimeRuleData * time_data = g_slice_new(FmFileSearchModifiedTimeRuleData);
-		gtk_calendar_get_date(start_calender, &time_data->start_y, &time_data->start_m, &time_data->start_d);
-		gtk_calendar_get_date(end_calender, &time_data->end_y, &time_data->end_m, &time_data->end_d);
+		gtk_calendar_get_date(ui->start_calender, &time_data->start_y, &time_data->start_m, &time_data->start_d);
+		gtk_calendar_get_date(ui->end_calender, &time_data->end_y, &time_data->end_m, &time_data->end_d);
 
-		fm_file_search_add_search_func(search, fm_file_search_modified_time_rule, time_data);
+		fm_file_search_add_search_func(ui->search, fm_file_search_modified_time_rule, time_data);
 	}
 
-	fm_folder_view_chdir_by_folder(FM_FOLDER_VIEW(view), FM_FOLDER(search));
+	fm_folder_view_chdir_by_folder(FM_FOLDER_VIEW(ui->view), FM_FOLDER(ui->search));
 
-	fm_file_search_run(search);
+	fm_file_search_run(ui->search);
 
-	gtk_widget_show(search_results_frame);
-	gtk_widget_show(cancel_button);
-	gtk_widget_show(search_again_button);
+	gtk_widget_show(ui->search_results_frame);
+	gtk_widget_show(ui->cancel_button);
+	gtk_widget_show(ui->search_again_button);
 }
 
-void on_cancel_button()
+void on_cancel_button(GtkButton * btn, gpointer user_data)
 {
-	gtk_widget_hide(cancel_button);
-	fm_file_search_cancel(search);
+	FileSearchUI * ui = (FileSearchUI *)user_data;
+
+	gtk_widget_hide(ui->cancel_button);
+	fm_file_search_cancel(ui->search);
 }
 
-void on_search_again_button()
+void on_search_again_button(GtkButton * btn, gpointer user_data)
 {
-	gtk_widget_hide(search_results_frame);
-	gtk_widget_hide(cancel_button);
-	gtk_widget_hide(search_again_button);
-	gtk_widget_show(find_settings_notebook);
-	gtk_widget_show(find_button);
+	FileSearchUI * ui = (FileSearchUI *)user_data;
+
+	gtk_widget_hide(ui->search_results_frame);
+	gtk_widget_hide(ui->cancel_button);
+	gtk_widget_hide(ui->search_again_button);
+	gtk_widget_show(ui->find_settings_notebook);
+	gtk_widget_show(ui->find_button);
 }
 
-void on_add_path_button()
+void on_add_path_button(GtkButton * btn, gpointer user_data)
 {
+	FileSearchUI * ui = (FileSearchUI *)user_data;
+
     GtkWidget* dlg = gtk_file_chooser_dialog_new(
-      _("Select a folder"), GTK_WINDOW(window),
+      _("Select a folder"), GTK_WINDOW(ui->window),
       GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER,
       GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
       GTK_STOCK_OPEN, GTK_RESPONSE_OK,
@@ -207,100 +195,103 @@ void on_add_path_button()
     if( gtk_dialog_run( GTK_DIALOG( dlg ) ) == GTK_RESPONSE_OK )
     {
         char* path = gtk_file_chooser_get_filename( GTK_FILE_CHOOSER( dlg ) );
-        add_path(path_list_store, path);
+        add_path(ui->path_list_store, path);
         g_free( path );
     }
     gtk_widget_destroy( dlg );
 }
 
-static void on_remove_path_button()
+static void on_remove_path_button(GtkButton * btn, gpointer user_data)
 {
+	FileSearchUI * ui = (FileSearchUI *)user_data;
+
     GtkTreeIter it;
-    GtkTreeSelection* sel = gtk_tree_view_get_selection( GTK_TREE_VIEW(path_tree_view) );
+    GtkTreeSelection* sel = gtk_tree_view_get_selection( GTK_TREE_VIEW(ui->path_tree_view) );
     if( gtk_tree_selection_get_selected(sel, NULL, &it) )
-        gtk_list_store_remove( path_list_store, &it );
+        gtk_list_store_remove( ui->path_list_store, &it );
 }
 
+/*
 static GtkActionEntry menu_actions[] =
 {
     { "OpenAction", GTK_STOCK_OPEN, N_("_Open"), NULL, NULL, G_CALLBACK(on_open_files) },
     { "OpenFolderAction", GTK_STOCK_OPEN, N_("Open Containing _Folder"), NULL, NULL, G_CALLBACK(on_open_files) }
 };
-
+*/
 
 gboolean file_search_ui()
 {
-	builder = gtk_builder_new();
-	gtk_builder_add_from_file( builder, PACKAGE_UI_DIR "/filesearch.ui", NULL );
+	FileSearchUI * ui = g_slice_new(FileSearchUI);
 
-	window = GTK_WIDGET(gtk_builder_get_object(builder, "search_dialog_window"));
-	find_button = GTK_WIDGET(gtk_builder_get_object(builder, "find_button"));
-	cancel_button = GTK_WIDGET(gtk_builder_get_object(builder, "cancel_search_button"));
-	search_again_button = GTK_WIDGET(gtk_builder_get_object(builder, "search_again_button"));
-	search_results_frame = GTK_WIDGET(gtk_builder_get_object(builder, "search_results"));
-	search_results_tree_container = GTK_WIDGET(gtk_builder_get_object(builder, "search_results_container"));
-	find_settings_notebook = GTK_WIDGET(gtk_builder_get_object(builder, "search_dialog_tabs"));
+
+	ui->builder = gtk_builder_new();
+	gtk_builder_add_from_file( ui->builder, PACKAGE_UI_DIR "/filesearch.ui", NULL );
+
+	ui->window = GTK_WIDGET(gtk_builder_get_object(ui->builder, "search_dialog_window"));
+	ui->find_button = GTK_WIDGET(gtk_builder_get_object(ui->builder, "find_button"));
+	ui->cancel_button = GTK_WIDGET(gtk_builder_get_object(ui->builder, "cancel_search_button"));
+	ui->search_again_button = GTK_WIDGET(gtk_builder_get_object(ui->builder, "search_again_button"));
+	ui->search_results_frame = GTK_WIDGET(gtk_builder_get_object(ui->builder, "search_results"));
+	ui->search_results_tree_container = GTK_WIDGET(gtk_builder_get_object(ui->builder, "search_results_container"));
+	ui->find_settings_notebook = GTK_WIDGET(gtk_builder_get_object(ui->builder, "search_dialog_tabs"));
 	
-	file_name_textbox = GTK_WIDGET(gtk_builder_get_object(builder, "target_inputbox"));
-	file_name_case_sensitive_checkbox = GTK_WIDGET(gtk_builder_get_object(builder, "case_sensitive_checkbox"));
-	file_name_regex_checkbox = GTK_WIDGET(gtk_builder_get_object(builder, "regex_checkbox"));
-	path_tree_view = GTK_WIDGET(gtk_builder_get_object(builder, "path_tree_view"));
-	path_tree_view_add_button = GTK_WIDGET(gtk_builder_get_object(builder, "add_path_button"));
-	path_tree_view_remove_button = GTK_WIDGET(gtk_builder_get_object(builder, "remove_path_button"));
-	path_recursive_checkbox = GTK_WIDGET(gtk_builder_get_object(builder, "search_recursive_checkbox"));
-	path_show_hidden_checkbox = GTK_WIDGET(gtk_builder_get_object(builder, "search_hidden_files_checkbox"));
-	file_contains_textbox = GTK_WIDGET(gtk_builder_get_object(builder, "target_contains_inputbox"));
-	file_contains_case_sensitive_checkbox = GTK_WIDGET(gtk_builder_get_object(builder, "target_contains_case_sensitive_checkbox"));
-	file_contains_regex_checkbox = GTK_WIDGET(gtk_builder_get_object(builder, "target_contains_regex_checkbox"));
+	ui->file_name_textbox = GTK_WIDGET(gtk_builder_get_object(ui->builder, "target_inputbox"));
+	ui->file_name_case_sensitive_checkbox = GTK_WIDGET(gtk_builder_get_object(ui->builder, "case_sensitive_checkbox"));
+	ui->file_name_regex_checkbox = GTK_WIDGET(gtk_builder_get_object(ui->builder, "regex_checkbox"));
+	ui->path_tree_view = GTK_WIDGET(gtk_builder_get_object(ui->builder, "path_tree_view"));
+	ui->path_tree_view_add_button = GTK_WIDGET(gtk_builder_get_object(ui->builder, "add_path_button"));
+	ui->path_tree_view_remove_button = GTK_WIDGET(gtk_builder_get_object(ui->builder, "remove_path_button"));
+	ui->path_recursive_checkbox = GTK_WIDGET(gtk_builder_get_object(ui->builder, "search_recursive_checkbox"));
+	ui->path_show_hidden_checkbox = GTK_WIDGET(gtk_builder_get_object(ui->builder, "search_hidden_files_checkbox"));
+	ui->file_contains_textbox = GTK_WIDGET(gtk_builder_get_object(ui->builder, "target_contains_inputbox"));
+	ui->file_contains_case_sensitive_checkbox = GTK_WIDGET(gtk_builder_get_object(ui->builder, "target_contains_case_sensitive_checkbox"));
+	ui->file_contains_regex_checkbox = GTK_WIDGET(gtk_builder_get_object(ui->builder, "target_contains_regex_checkbox"));
 
-	bigger_adjustment = gtk_builder_get_object(builder, "bigger_adjustment");
-	smaller_adjustment = gtk_builder_get_object(builder, "smaller_adjustment");
-	bigger_checkbox = GTK_WIDGET(gtk_builder_get_object(builder, "bigger_than_cb"));
-	smaller_checkbox = GTK_WIDGET(gtk_builder_get_object(builder, "smaller_than_cb"));
-	bigger_spinbutton = GTK_WIDGET(gtk_builder_get_object(builder, "bigger_spinbutton"));
-	smaller_spinbutton = GTK_WIDGET(gtk_builder_get_object(builder, "smaller_spinbutton"));
-	smaller_type = GTK_WIDGET(gtk_builder_get_object(builder, "smaller_than_type"));
-	bigger_type = GTK_WIDGET(gtk_builder_get_object(builder, "bigger_than_type"));
+	ui->bigger_checkbox = GTK_WIDGET(gtk_builder_get_object(ui->builder, "bigger_than_cb"));
+	ui->smaller_checkbox = GTK_WIDGET(gtk_builder_get_object(ui->builder, "smaller_than_cb"));
+	ui->bigger_spinbutton = GTK_WIDGET(gtk_builder_get_object(ui->builder, "bigger_spinbutton"));
+	ui->smaller_spinbutton = GTK_WIDGET(gtk_builder_get_object(ui->builder, "smaller_spinbutton"));
+	ui->smaller_type = GTK_WIDGET(gtk_builder_get_object(ui->builder, "smaller_than_type"));
+	ui->bigger_type = GTK_WIDGET(gtk_builder_get_object(ui->builder, "bigger_than_type"));
 
-	type_selector = GTK_WIDGET(gtk_builder_get_object(builder, "type_selection"));
+	ui->type_selector = GTK_WIDGET(gtk_builder_get_object(ui->builder, "type_selection"));
 
-	calender_checkbox = GTK_WIDGET(gtk_builder_get_object(builder, "calender_checkbox"));;
-	start_calender = GTK_WIDGET(gtk_builder_get_object(builder, "start_calender"));;
-	end_calender = GTK_WIDGET(gtk_builder_get_object(builder, "end_calender"));;
+	ui->calender_checkbox = GTK_WIDGET(gtk_builder_get_object(ui->builder, "calender_checkbox"));;
+	ui->start_calender = GTK_WIDGET(gtk_builder_get_object(ui->builder, "start_calender"));;
+	ui->end_calender = GTK_WIDGET(gtk_builder_get_object(ui->builder, "end_calender"));;
 
-	gtk_widget_hide(cancel_button);
-	gtk_widget_hide(search_again_button);
-	gtk_widget_hide(search_results_frame);
+	gtk_widget_hide(ui->cancel_button);
+	gtk_widget_hide(ui->search_again_button);
+	gtk_widget_hide(ui->search_results_frame);
 
-	gtk_builder_connect_signals(builder, NULL);
+	gtk_builder_connect_signals(ui->builder, NULL);
 
 	/* create path list store */
-	path_list_store = gtk_list_store_new(1, G_TYPE_STRING);
+	ui->path_list_store = gtk_list_store_new(1, G_TYPE_STRING);
 
 	/* connect signals */
-	g_signal_connect(G_OBJECT(find_button), "clicked", G_CALLBACK(on_find_button), NULL);
-	g_signal_connect(G_OBJECT(cancel_button), "clicked", G_CALLBACK(on_cancel_button), NULL);
-	g_signal_connect(G_OBJECT(search_again_button), "clicked", G_CALLBACK(on_search_again_button), NULL);
-	g_signal_connect(G_OBJECT(path_tree_view_add_button), "clicked", G_CALLBACK(on_add_path_button), NULL);
-	g_signal_connect(G_OBJECT(path_tree_view_remove_button), "clicked", G_CALLBACK(on_remove_path_button), NULL);
-
+	g_signal_connect(G_OBJECT(ui->find_button), "clicked", G_CALLBACK(on_find_button), ui);
+	g_signal_connect(G_OBJECT(ui->cancel_button), "clicked", G_CALLBACK(on_cancel_button), ui);
+	g_signal_connect(G_OBJECT(ui->search_again_button), "clicked", G_CALLBACK(on_search_again_button), ui);
+	g_signal_connect(G_OBJECT(ui->path_tree_view_add_button), "clicked", G_CALLBACK(on_add_path_button), ui);
+	g_signal_connect(G_OBJECT(ui->path_tree_view_remove_button), "clicked", G_CALLBACK(on_remove_path_button), ui);
 
 	/* create view and pack */
-	view = fm_folder_view_new(FM_FV_LIST_VIEW);
-	fm_folder_view_set_show_hidden(view, TRUE);
-	gtk_container_add(GTK_CONTAINER(search_results_tree_container), view);
-	gtk_widget_show(view);
+	ui->view = fm_folder_view_new(FM_FV_LIST_VIEW);
+	fm_folder_view_set_show_hidden(ui->view, TRUE);
+	gtk_container_add(GTK_CONTAINER(ui->search_results_tree_container), ui->view);
+	gtk_widget_show(ui->view);
 
 	/* set up path view */
-	add_path(path_list_store, g_get_home_dir());
-	gtk_tree_view_set_model(path_tree_view, path_list_store);
-	gtk_tree_view_set_headers_visible(path_tree_view, FALSE);
+	add_path(ui->path_list_store, g_get_home_dir());
+	gtk_tree_view_set_model(ui->path_tree_view, ui->path_list_store);
+	gtk_tree_view_set_headers_visible(ui->path_tree_view, FALSE);
 	GtkTreeViewColumn * col = gtk_tree_view_column_new_with_attributes(NULL, gtk_cell_renderer_text_new(), "text", 0, NULL );
-    gtk_tree_view_append_column(path_tree_view, col);
+    gtk_tree_view_append_column(ui->path_tree_view, col);
 
-	g_object_unref(G_OBJECT(builder));
+	g_object_unref(G_OBJECT(ui->builder));
 
-	gtk_widget_show(window);
+	gtk_widget_show(ui->window);
 
 	return TRUE;
 }
