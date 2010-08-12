@@ -1,5 +1,3 @@
-/* This file is still very rough */
-
 #include "file-search-ui.h"
 
 #include <glib/gi18n.h>
@@ -7,8 +5,12 @@
 #include <libfm/fm-gtk.h>
 #include <math.h>
 
+#include "main-win.h"
+
 typedef struct
 { 
+	FmMainWin * win;
+
 	GtkBuilder * builder;
 	GtkWidget * window;
 
@@ -211,19 +213,108 @@ static void on_remove_path_button(GtkButton * btn, gpointer user_data)
         gtk_list_store_remove( ui->path_list_store, &it );
 }
 
-/*
+static gboolean open_folder_func(GAppLaunchContext* ctx, GList* folder_infos, gpointer user_data, GError** err)
+{
+    FmMainWin* win = FM_MAIN_WIN(user_data);
+    GList* l = folder_infos;
+    FmFileInfo* fi = (FmFileInfo*)l->data;
+    fm_main_win_chdir(win, fi->path);
+    l=l->next;
+    for(; l; l=l->next)
+    {
+        FmFileInfo* fi = (FmFileInfo*)l->data;
+        fm_main_win_add_tab(win, fi->path);
+    }
+    return TRUE;
+}
+
+typedef struct {
+	FmFileInfo * info;
+	FileSearchUI * ui;
+} OnOpenFileData;
+
+static on_open_file(GtkAction* action, OnOpenFileData * data)
+{
+	gboolean open_file = (0 == strcmp( gtk_action_get_name(action), "OpenAction") );
+
+	if(open_file)
+	{
+		fm_launch_file_simple(GTK_WINDOW(data->ui->win), NULL, data->info, open_folder_func, data->ui->win);
+	}
+	else
+	{
+		FmPath * path = fm_file_info_get_path(data->info);
+		FmPath * parent = fm_path_get_parent(path);
+		fm_main_win_add_win(data->ui->win, parent);
+	}	
+}
+
+static const char menu_def[] =
+"<ui>"
+"<popup name=\"Popup\">"
+  "<menuitem name=\"Open\" action=\"OpenAction\" />"
+  "<menuitem name=\"OpenFolder\" action=\"OpenFolderAction\" />"
+"</popup>"
+"</ui>";
+
+
 static GtkActionEntry menu_actions[] =
 {
-    { "OpenAction", GTK_STOCK_OPEN, N_("_Open"), NULL, NULL, G_CALLBACK(on_open_files) },
-    { "OpenFolderAction", GTK_STOCK_OPEN, N_("Open Containing _Folder"), NULL, NULL, G_CALLBACK(on_open_files) }
+    { "OpenAction", GTK_STOCK_OPEN, N_("_Open"), NULL, NULL, G_CALLBACK(on_open_file) },
+    { "OpenFolderAction", GTK_STOCK_OPEN, N_("Open Containing _Folder"), NULL, NULL, G_CALLBACK(on_open_file) }
 };
-*/
+
+static void on_file_clicked(FmFolderView * fv, FmFolderViewClickType type, FmFileInfo * fi, FileSearchUI * ui)
+{
+	switch(type)
+	{
+		case FM_FV_ACTIVATED:
+		if(fi)
+		{
+			fm_launch_file_simple(GTK_WINDOW(ui->win), NULL, fi, open_folder_func, ui->win);
+		}
+		break;
+
+		case FM_FV_CONTEXT_MENU:
+        if(fi)
+        {
+            GtkMenu * popup;
+            GtkUIManager* menu_mgr;
+            GtkActionGroup * action_group = gtk_action_group_new ("PopupActions");
+            gtk_action_group_set_translation_domain( action_group, NULL );
+            menu_mgr = gtk_ui_manager_new();
+
+			OnOpenFileData * data = g_slice_new(OnOpenFileData);
+			data->info = fi;
+			data->ui = ui;
+
+            gtk_action_group_add_actions( action_group, menu_actions, G_N_ELEMENTS(menu_actions), data);
+            gtk_ui_manager_insert_action_group( menu_mgr, action_group, 0 );
+            gtk_ui_manager_add_ui_from_string( menu_mgr, menu_def, -1, NULL );
+
+            popup = gtk_ui_manager_get_widget( menu_mgr, "/Popup" );
+            g_object_unref(action_group);
+
+            gtk_menu_popup(popup, NULL, NULL, NULL, data, 3, gtk_get_current_event_time());
+        }
+		break;
+
+    	case FM_FV_MIDDLE_CLICK:
+		if(fi)
+		{
+			FmPath * path = fm_file_info_get_path(fi);
+			FmPath * parent = fm_path_get_parent(path);
+			fm_main_win_add_win(ui->win, parent);
+		}
+		break;
+	}
+}
 
 gboolean file_search_ui()
 {
 	FileSearchUI * ui = g_slice_new(FileSearchUI);
 
-
+	ui->win = fm_main_win_get_last_active();
 	ui->builder = gtk_builder_new();
 	gtk_builder_add_from_file( ui->builder, PACKAGE_UI_DIR "/filesearch.ui", NULL );
 
@@ -279,6 +370,8 @@ gboolean file_search_ui()
 	/* create view and pack */
 	ui->view = fm_folder_view_new(FM_FV_LIST_VIEW);
 	fm_folder_view_set_show_hidden(ui->view, TRUE);
+    fm_folder_view_set_selection_mode(FM_FOLDER_VIEW(ui->view), GTK_SELECTION_SINGLE);
+	g_signal_connect(ui->view, "clicked", on_file_clicked, ui);
 	gtk_container_add(GTK_CONTAINER(ui->search_results_tree_container), ui->view);
 	gtk_widget_show(ui->view);
 
