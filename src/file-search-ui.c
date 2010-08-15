@@ -6,6 +6,7 @@
 #include <math.h>
 
 #include "main-win.h"
+#include "pcmanfm.h"
 
 typedef struct
 { 
@@ -54,6 +55,11 @@ typedef struct
 } FileSearchUI;
 
 void add_path(GtkWidget * list, const char * path);
+
+static void on_window_deleted()
+{
+	pcmanfm_unref();
+}
 
 static gchar * mime_types[] = { NULL,
 						 "text/plain",
@@ -246,6 +252,7 @@ static on_open_file(GtkAction* action, OnOpenFileData * data)
 		FmPath * path = fm_file_info_get_path(data->info);
 		FmPath * parent = fm_path_get_parent(path);
 		fm_main_win_add_win(data->ui->win, parent);
+		pcmanfm_ref();
 	}	
 }
 
@@ -305,6 +312,7 @@ static void on_file_clicked(FmFolderView * fv, FmFolderViewClickType type, FmFil
 			FmPath * path = fm_file_info_get_path(fi);
 			FmPath * parent = fm_path_get_parent(path);
 			fm_main_win_add_win(ui->win, parent);
+			pcmanfm_ref();
 		}
 		break;
 	}
@@ -385,6 +393,9 @@ gboolean file_search_ui()
 	g_object_unref(G_OBJECT(ui->builder));
 
 	gtk_widget_show(ui->window);
+
+	pcmanfm_ref();
+	g_signal_connect(G_OBJECT(ui->window), "delete-event", G_CALLBACK(on_window_deleted), NULL);
 
 	return TRUE;
 }
