@@ -63,16 +63,32 @@ static void on_window_deleted()
 
 static gchar * mime_types[] = { NULL,
 						 "text/plain",
-						 "audio/mpeg",
-						 "audio/ogg",
-						 "video/x-msvideo",
-						 "video/mp4",
-						 "video/mpeg",
-						 "video/ogg",
-						 "image/gif",
-						 "image/jpeg",
-						 "image/png",
-						 "application/pdf" };
+						 "audio/",
+						 "video/",
+						 "image/" };
+
+static gchar * document_mime_types[] = { "application/pdf",
+"application/msword",
+"application/vnd.ms-excel",
+"application/vnd.ms-powerpoint",
+"application/vnd.oasis.opendocument.chart",
+"application/vnd.oasis.opendocument.database",
+"application/vnd.oasis.opendocument.formula",
+"application/vnd.oasis.opendocument.graphics",
+"application/vnd.oasis.opendocument.image",
+"application/vnd.oasis.opendocument.presentation",
+"application/vnd.oasis.opendocument.spreadsheet",
+"application/vnd.oasis.opendocument.text",
+"application/vnd.oasis.opendocument.text-master",
+"application/vnd.oasis.opendocument.text-web",
+"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+"application/vnd.openxmlformats-officedocument.presentationml.presentation",
+"application/vnd.openxmlformats-officedocument.presentationml.slideshow",
+"application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+"application/x-abiword",
+"application/x-gnumeric",
+"application/x-dvi",
+NULL};
 						 
 /* UI Signal Handlers */
 
@@ -146,7 +162,23 @@ void on_find_button(GtkButton * btn, gpointer user_data)
 		fm_file_search_add_search_func(ui->search, fm_file_search_target_rule, target);
 
 	if(gtk_combo_box_get_active(ui->type_selector) >= 1)
-		fm_file_search_add_search_func(ui->search, fm_file_search_target_type_rule, mime_types[gtk_combo_box_get_active(ui->type_selector)]);
+	{
+		switch(gtk_combo_box_get_active(ui->type_selector))
+		{
+			case 1:
+				fm_file_search_add_search_func(ui->search, fm_file_search_target_type_rule, mime_types[gtk_combo_box_get_active(ui->type_selector)]);
+				break;
+
+			case 5:
+				fm_file_search_add_search_func(ui->search, fm_file_search_target_type_list_rule, &document_mime_types);
+				break;
+
+			default:
+				fm_file_search_add_search_func(ui->search, fm_file_search_target_type_generic_rule, mime_types[gtk_combo_box_get_active(ui->type_selector)]);
+				break;
+		}
+
+	}
 
 	if(target_contains != NULL && g_strcmp0(target_contains, "") != 0)
 		fm_file_search_add_search_func(ui->search, fm_file_search_target_contains_rule, target_contains);
@@ -167,14 +199,6 @@ void on_find_button(GtkButton * btn, gpointer user_data)
 	gtk_widget_show(ui->search_results_frame);
 	gtk_widget_show(ui->cancel_button);
 	gtk_widget_show(ui->search_again_button);
-}
-
-void on_cancel_button(GtkButton * btn, gpointer user_data)
-{
-	FileSearchUI * ui = (FileSearchUI *)user_data;
-
-	gtk_widget_hide(ui->cancel_button);
-	fm_file_search_cancel(ui->search);
 }
 
 void on_search_again_button(GtkButton * btn, gpointer user_data)
