@@ -201,6 +201,14 @@ void on_find_button(GtkButton * btn, gpointer user_data)
 	gtk_widget_show(ui->search_again_button);
 }
 
+void on_cancel_button(GtkButton * btn, gpointer user_data)
+{
+	FileSearchUI * ui = (FileSearchUI *)user_data;
+
+	gtk_widget_hide(ui->cancel_button);
+	fm_file_search_cancel(ui->search);
+}
+
 void on_search_again_button(GtkButton * btn, gpointer user_data)
 {
 	FileSearchUI * ui = (FileSearchUI *)user_data;
