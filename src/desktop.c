@@ -1181,7 +1181,7 @@ FmDesktopItem* get_nearest_item(FmDesktop* desktop, FmDesktopItem* item,  GtkDir
     return ret;
 }
 
-inline FmDesktopItem* desktop_item_new(GtkTreeIter* it)
+static inline FmDesktopItem* desktop_item_new(GtkTreeIter* it)
 {
     FmDesktopItem* item = g_slice_new0(FmDesktopItem);
     item->it = *it;
