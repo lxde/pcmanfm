@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm-0,5.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-09-03 06:03+0000\n"
-"PO-Revision-Date: 2010-09-03 19:01+0100\n"
+"PO-Revision-Date: 2010-09-03 19:25+0100\n"
 "Last-Translator: Miguel Anxo Bouzada <mbouzada@gmail.com>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
 "MIME-Version: 1.0\n"
@@ -36,7 +36,7 @@ msgstr ""
 msgid "translator-credits"
 msgstr ""
 "Miguel Anxo Bouzada <mbouzada@gmail.com>\n"
-"Equipo GALPon MiniNo<minino@galpon.org>"
+"Proxecto Trasno<proxecto@trasno.net>"
 
 #: ../data/ui/desktop-pref.glade.h:1
 msgid "<b>Background</b>"
@@ -86,7 +86,7 @@ msgstr "Preferencias de escritorio"
 
 #: ../data/ui/desktop-pref.glade.h:12
 msgid "Fill with background color only"
-msgstr ""
+msgstr "Encher só coa cor de fondo"
 
 #: ../data/ui/desktop-pref.glade.h:13
 msgid "Font of label text:"
@@ -119,17 +119,17 @@ msgstr "Amosar sempre os menús do xestor de xanelas cando se preme no escritori
 #: ../data/ui/desktop-pref.glade.h:20
 #: ../data/ui/pref.glade.h:37
 msgid "Stretch to fill the entire screen"
-msgstr ""
+msgstr "Estirar para encher a pantalla completa"
 
 #: ../data/ui/desktop-pref.glade.h:21
 #: ../data/ui/pref.glade.h:38
 msgid "Stretch to fit the screen"
-msgstr ""
+msgstr "Estirar para adaptar á pantalla"
 
 #: ../data/ui/desktop-pref.glade.h:22
 #: ../data/ui/pref.glade.h:42
 msgid "Tile the image to fill the entire screen"
-msgstr ""
+msgstr "Facer mosaico coa imaxe para encher a pantalla completa"
 
 #: ../data/ui/desktop-pref.glade.h:23
 msgid "Wallpaper mode:"
@@ -165,7 +165,7 @@ msgstr "<b>Interface de usuario</b>"
 
 #: ../data/ui/pref.glade.h:7
 msgid "Always show the tab bar"
-msgstr "Amosar sempre a barra de lingüetas"
+msgstr "Amosar sempre a barra de lapelas"
 
 #: ../data/ui/pref.glade.h:8
 msgid "Archiver integration:"
@@ -181,7 +181,7 @@ msgstr "Vista compacta"
 
 #: ../data/ui/pref.glade.h:12
 msgid "Confirm before deleting files"
-msgstr ""
+msgstr "Confirmar antes de eliminar ficheiros"
 
 #: ../data/ui/pref.glade.h:13
 msgid "Detailed List View"
@@ -189,7 +189,7 @@ msgstr "Ver como lista detallada"
 
 #: ../data/ui/pref.glade.h:14
 msgid "Do not generate thumbnails for files exceeding this size:"
-msgstr ""
+msgstr "Non xerar miniaturas para os ficheiros que excedan do tamaño:"
 
 #: ../data/ui/pref.glade.h:16
 #, no-c-format
@@ -200,7 +200,7 @@ msgstr ""
 
 #: ../data/ui/pref.glade.h:18
 msgid "Hide 'Close tab' buttons"
-msgstr "Agochar os botóns «Pechar lingüeta»"
+msgstr "Agochar os botóns «Pechar lapela»"
 
 #: ../data/ui/pref.glade.h:19
 msgid "Hide folder content border"
@@ -232,7 +232,7 @@ msgstr ""
 
 #: ../data/ui/pref.glade.h:26
 msgid "Open files with single click"
-msgstr "Abrir ficheiros con só un clic"
+msgstr "Abrir ficheiros premendo só unha vez"
 
 #: ../data/ui/pref.glade.h:27
 msgid "Opened in Current Tab"
@@ -256,7 +256,7 @@ msgstr ""
 
 #: ../data/ui/pref.glade.h:32
 msgid "Show thumbnails of files"
-msgstr ""
+msgstr "Amosar miniaturas de ficheiros"
 
 #: ../data/ui/pref.glade.h:33
 msgid "Size of big icons:"
@@ -276,7 +276,7 @@ msgstr "Tamaño das miniaturas:"
 
 #: ../data/ui/pref.glade.h:39
 msgid "Switch user command:"
-msgstr ""
+msgstr "Orde para cambiar de usuario:"
 
 #: ../data/ui/pref.glade.h:40
 msgid "Terminal emulator:"
@@ -402,7 +402,7 @@ msgstr "_Nova xanela"
 
 #: ../src/main-win-ui.c:130
 msgid "New _Tab"
-msgstr "Nova _lingüeta"
+msgstr "Nova _lapela"
 
 #: ../src/main-win-ui.c:131
 msgid "_Close Tab"
@@ -542,7 +542,7 @@ msgstr "Vostede está en modo superusuario"
 
 #: ../src/main-win.c:660
 msgid "Switch user command is not set."
-msgstr ""
+msgstr "A orde para cambiar de usuario non está configurada"
 
 #: ../src/main-win.c:967
 #, c-format
@@ -580,7 +580,7 @@ msgstr "Executar PCManFM como un «daemon»"
 
 #: ../src/pcmanfm.c:75
 msgid "Open desktop preference dialog"
-msgstr ""
+msgstr "Abrir o diálogo de preferencias do escritorio"
 
 #: ../src/pcmanfm.c:76
 msgid "Set desktop wallpaper"
@@ -605,7 +605,7 @@ msgstr "Abrir as preferencias de diálogo. «n» é o número de páxina que des
 #. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
 #: ../src/pcmanfm.c:80
 msgid "No function. Just to be compatible with nautilus"
-msgstr ""
+msgstr "Sen función. Só para ter compatibilidade con Nautilus"
 
 #: ../src/pcmanfm.c:81
 msgid "[FILE1, FILE2,...]"
