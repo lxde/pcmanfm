@@ -2,7 +2,7 @@
 # Copyright (C) 2010
 # This file is distributed under the same license as the PCManFM package.
 # Mehmet Gülmen <memetgulmen@gmail.com>, 2010.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.9.x\n"
@@ -11,10 +11,10 @@ msgstr ""
 "PO-Revision-Date: \n"
 "Last-Translator: Mehmet Gülmen <memetgulmen@gmail.com>\n"
 "Language-Team: tr <tr@li.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
 "X-Poedit-Country: TURKEY\n"
 
 #: ../data/ui/about.glade.in.h:1
@@ -60,8 +60,7 @@ msgstr "Görünüm"
 msgid "Background color:"
 msgstr "Arkaplan rengi:"
 
-#: ../data/ui/desktop-pref.glade.h:7
-#: ../data/ui/pref.glade.h:10
+#: ../data/ui/desktop-pref.glade.h:7 ../data/ui/pref.glade.h:10
 msgid "Center on the screen"
 msgstr "Ekranı ortala"
 
@@ -77,8 +76,7 @@ msgstr "Gölge rengi:"
 msgid "Desktop Icons"
 msgstr "Masaüstü Simgeleri"
 
-#: ../data/ui/desktop-pref.glade.h:11
-#: ../src/desktop-ui.c:58
+#: ../data/ui/desktop-pref.glade.h:11 ../src/desktop-ui.c:58
 msgid "Desktop Preferences"
 msgstr "Masaüstü Seçenekleri"
 
@@ -114,22 +112,20 @@ msgstr "Masaüstünde disk bölümlerinin simgesini göster"
 msgid "Show menus provided by window managers when desktop is clicked"
 msgstr "Masaüstüne tıklandığında pencere yöneticisinin sağladığı simgeleri göster"
 
-#: ../data/ui/desktop-pref.glade.h:20
-#: ../data/ui/pref.glade.h:37
+#: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:37
 msgid "Stretch to fill the entire screen"
 msgstr "Tüm ekranı kaplayacak şekilde ger"
 
-#: ../data/ui/desktop-pref.glade.h:21
-#: ../data/ui/pref.glade.h:38
+#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:38
 msgid "Stretch to fit the screen"
 msgstr "Ekrana uyacak şekilde boyutlandır"
 
-#: ../data/ui/desktop-pref.glade.h:22
-#: ../data/ui/pref.glade.h:42
+#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:42
 msgid "Tile the image to fill the entire screen"
 msgstr "Tüm ekranı kaplayacak şekilde döşe"
 
-# Not: "Modu" muğlak kalıyor. Ger, ortala gibi seçeneklerin olduğu bir menüyü gösterdiğinden "seçenekleri" uygun kalıyor.
+# Not: "Modu" muğlak kalıyor. Ger, ortala gibi seçeneklerin olduğu bir menüyü
+# gösterdiğinden "seçenekleri" uygun kalıyor.
 #: ../data/ui/desktop-pref.glade.h:23
 msgid "Wallpaper mode:"
 msgstr "Duvarkağıdı seçenekleri:"
@@ -166,12 +162,13 @@ msgstr "<b>Kullanıcı Arayüzü</b>"
 msgid "Always show the tab bar"
 msgstr "Her zaman sekme çubuğunu göster"
 
-# Yahut "Arşiv Yöneticisi Entegrasyonu". Seçtiğim ifade daha açıklayıcı gibime geliyor. 
+# Yahut "Arşiv Yöneticisi Entegrasyonu". Seçtiğim ifade daha açıklayıcı gibime
+# geliyor.
 #: ../data/ui/pref.glade.h:8
 msgid "Archiver integration:"
 msgstr "İlişkilendirilen Arşiv Yöneticisi:"
 
-# İki parçaya bölünmüş cümlenin ilk kısmı, o yüzden imleri"ni". Ör: 
+# İki parçaya bölünmüş cümlenin ilk kısmı, o yüzden imleri"ni". Ör:
 # Bookmarks:
 # Opened in Current Tab
 #: ../data/ui/pref.glade.h:9
@@ -209,7 +206,7 @@ msgstr "'Sekmeyi kapat' düğmelerini sakla"
 
 #: ../data/ui/pref.glade.h:19
 msgid "Hide folder content border"
-msgstr ""
+msgstr "Dizin içeriği kenarlığını gizle"
 
 #: ../data/ui/pref.glade.h:20
 msgid "Hide side pane buttons"
@@ -348,53 +345,43 @@ msgstr "Dosya Yöneticisinde Aç"
 msgid "_Invert Selection"
 msgstr "Seçimi _Tersine Çevir"
 
-#: ../src/desktop-ui.c:54
-#: ../src/main-win-ui.c:146
+#: ../src/desktop-ui.c:54 ../src/main-win-ui.c:146
 msgid "_Sort Files"
 msgstr "Dosyaları _Sırala"
 
-#: ../src/desktop-ui.c:56
-#: ../src/main-win-ui.c:172
+#: ../src/desktop-ui.c:56 ../src/main-win-ui.c:172
 msgid "Folder"
 msgstr "Dizin"
 
-#: ../src/desktop-ui.c:57
-#: ../src/main-win-ui.c:173
+#: ../src/desktop-ui.c:57 ../src/main-win-ui.c:173
 msgid "Blank File"
 msgstr "Boş Dosya"
 
-#: ../src/desktop-ui.c:69
-#: ../src/main-win-ui.c:198
+#: ../src/desktop-ui.c:69 ../src/main-win-ui.c:198
 msgid "By _Name"
 msgstr "İ_sme Göre"
 
-#: ../src/desktop-ui.c:70
-#: ../src/main-win-ui.c:199
+#: ../src/desktop-ui.c:70 ../src/main-win-ui.c:199
 msgid "By _Modification Time"
 msgstr "_Değişim Tarihine Göre"
 
-#: ../src/desktop-ui.c:71
-#: ../src/main-win-ui.c:200
+#: ../src/desktop-ui.c:71 ../src/main-win-ui.c:200
 msgid "By _Size"
 msgstr "_Boyuta Göre"
 
-#: ../src/desktop-ui.c:72
-#: ../src/main-win-ui.c:201
+#: ../src/desktop-ui.c:72 ../src/main-win-ui.c:201
 msgid "By File _Type"
 msgstr "_Türe Göre"
 
-#: ../src/desktop-ui.c:88
-#: ../src/main-win-ui.c:218
+#: ../src/desktop-ui.c:88 ../src/main-win-ui.c:218
 msgid "Open in New Tab"
 msgstr "Yeni Sekmede Aç"
 
-#: ../src/desktop-ui.c:89
-#: ../src/main-win-ui.c:219
+#: ../src/desktop-ui.c:89 ../src/main-win-ui.c:219
 msgid "Open in New Window"
 msgstr "Yeni Pencerede Aç"
 
-#: ../src/desktop-ui.c:91
-#: ../src/main-win-ui.c:221
+#: ../src/desktop-ui.c:91 ../src/main-win-ui.c:221
 msgid "Open in _Terminal"
 msgstr "_Uçbirimde Aç"
 
@@ -570,7 +557,8 @@ msgstr ""
 msgid "Add to Bookmarks"
 msgstr "Yer İmlerine Ekle"
 
-#. { "new-tab", 't', 0, G_OPTION_ARG_NONE, &new_tab, N_("Open folders in new tabs of the last used window instead of creating new windows"), NULL },
+#. { "new-tab", 't', 0, G_OPTION_ARG_NONE, &new_tab, N_("Open folders in new
+#. tabs of the last used window instead of creating new windows"), NULL },
 #: ../src/pcmanfm.c:71
 msgid "Name of configuration profile"
 msgstr "Yapılandırma profilinin adı"
@@ -611,7 +599,8 @@ msgstr "<mode>"
 msgid "Open preference dialog. 'n' is number of the page you want to show (1, 2, 3...)."
 msgstr "Seçenekler diyaloğunu aç. 'n' görüntülenmesini istediğiniz sayfanın numarasıdır (1,2,3...)."
 
-#. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
+#. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files
+#. utility"), NULL },
 #: ../src/pcmanfm.c:80
 msgid "No function. Just to be compatible with nautilus"
 msgstr "İşlev yok. Nautilus ile uyumlu olmak için"
@@ -635,4 +624,3 @@ msgstr "Yeni oluşturulan dosya için bir isim girin:"
 #: ../src/pcmanfm.c:544
 msgid "New"
 msgstr "Yeni"
-
