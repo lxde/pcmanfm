@@ -37,6 +37,7 @@
 #include "main-win.h"
 #include "pref.h"
 #include "tab-page.h"
+#include "file-search-ui.h"
 
 #if GTK_CHECK_VERSION(3, 0, 0)
 static void fm_main_win_destroy(GtkWidget *object);
@@ -92,6 +93,7 @@ static void on_about(GtkAction* act, FmMainWin* win);
 static void on_open_in_terminal(GtkAction* act, FmMainWin* win);
 static void on_open_as_root(GtkAction* act, FmMainWin* win);
 static void on_fullscreen(GtkToggleAction* act, FmMainWin* win);
+static void on_search(GtkAction* act, FmMainWin* win);
 
 static void on_location(GtkAction* act, FmMainWin* win);
 
@@ -700,6 +702,11 @@ static void on_open_as_root(GtkAction* act, FmMainWin* win)
         g_object_unref(ctx);
         g_object_unref(app);
     }
+}
+
+static void on_search(GtkAction* act, FmMainWin* win)
+{
+    file_search_ui();
 }
 
 static void on_show_hidden(GtkToggleAction* act, FmMainWin* win)
