@@ -45,10 +45,10 @@ fi
 AC_SUBST(G_CAST_CHECKS)
 
 AC_ARG_ENABLE(debug,
-	[AC_HELP_STRING([--enable-debug],
-		[build pcmanfm with debug support @<:@default=no@:>@])],
-	[enable_debug="${enableval}"],
-	[enable_debug=no]
+    [AC_HELP_STRING([--enable-debug],
+        [build pcmanfm with debug support @<:@default=no@:>@])],
+    [enable_debug="${enableval}"],
+    [enable_debug=no]
 )
 if test "$enable_debug" = "yes"; then
     # turn on debug and disable optimization
@@ -116,7 +116,6 @@ AC_CONFIG_FILES([
     data/Makefile
     data/ui/Makefile
     data/ui/about.glade
-    data/pcmanfm.desktop
 ])
 
 AC_OUTPUT

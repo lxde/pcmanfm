@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PCManFM\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-08-03 20:08+0200\n"
+"POT-Creation-Date: 2010-10-04 02:25+0800\n"
 "PO-Revision-Date: 2010-08-02 20:48+0200\n"
 "Last-Translator: Cilyan <gaknar@gmail.com>\n"
 "Language-Team: French\n"
-"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: fr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Pootle 2.0.5\n"
 "X-Poedit-Language: French\n"
@@ -564,45 +564,45 @@ msgid "Add to Bookmarks"
 msgstr "Marquer cette page"
 
 #. { "new-tab", 't', 0, G_OPTION_ARG_NONE, &new_tab, N_("Open folders in new tabs of the last used window instead of creating new windows"), NULL },
-#: ../src/pcmanfm.c:74
+#: ../src/pcmanfm.c:71
 msgid "Name of configuration profile"
 msgstr "Nom du profil de configuration"
 
-#: ../src/pcmanfm.c:75
+#: ../src/pcmanfm.c:72
 msgid "Launch desktop manager"
 msgstr "Lancer le gestionnaire de bureau"
 
-#: ../src/pcmanfm.c:76
+#: ../src/pcmanfm.c:73
 msgid "Turn off desktop manager if it's running"
 msgstr "Quitter le gestionnaire de bureau s'il est en cours de fonctionnement"
 
-#: ../src/pcmanfm.c:77
+#: ../src/pcmanfm.c:74
 msgid "Run PCManFM as a daemon"
 msgstr "Lancer PCManFM en tant que démon"
 
-#: ../src/pcmanfm.c:78
+#: ../src/pcmanfm.c:75
 msgid "Open desktop preference dialog"
 msgstr "Ouvrir la fenêtre des préférences du bureau"
 
-#: ../src/pcmanfm.c:79
+#: ../src/pcmanfm.c:76
 msgid "Set desktop wallpaper"
 msgstr "Sélectionner un fond d'écran"
 
-#: ../src/pcmanfm.c:79
+#: ../src/pcmanfm.c:76
 msgid "<image file>"
 msgstr "<fichier image>"
 
-#: ../src/pcmanfm.c:80
+#: ../src/pcmanfm.c:77
 msgid "Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"
 msgstr ""
 "Sélectionner le mode d'affichage du fond d'écran. <mode>=(color|stretch|fit|"
 "center|tile)"
 
-#: ../src/pcmanfm.c:80
+#: ../src/pcmanfm.c:77
 msgid "<mode>"
 msgstr "<mode>"
 
-#: ../src/pcmanfm.c:81
+#: ../src/pcmanfm.c:78
 msgid ""
 "Open preference dialog. 'n' is number of the page you want to show (1, 2, "
 "3...)."
@@ -611,29 +611,38 @@ msgstr ""
 "voulez afficher (1, 2, 3...)."
 
 #. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
-#: ../src/pcmanfm.c:83
+#: ../src/pcmanfm.c:80
 msgid "No function. Just to be compatible with nautilus"
 msgstr "Ne rien faire. Être seulement compatible avec nautilus"
 
-#: ../src/pcmanfm.c:84
+#: ../src/pcmanfm.c:81
 msgid "[FILE1, FILE2,...]"
 msgstr "[FICHIER1, FICHIER2, ...]"
 
-#: ../src/pcmanfm.c:619
+#: ../src/pcmanfm.c:501
 msgid "Terminal emulator is not set."
 msgstr "L'émulateur de terminal n'est pas configuré."
 
-#: ../src/pcmanfm.c:662
+#: ../src/pcmanfm.c:544
 msgid "Create New..."
 msgstr "Créer un nouveau..."
 
-#: ../src/pcmanfm.c:662
+#: ../src/pcmanfm.c:544
 msgid "Enter a name for the newly created file:"
 msgstr "Entrer un nom pour le nouveau fichier :"
 
-#: ../src/pcmanfm.c:662
+#: ../src/pcmanfm.c:544
 msgid "New"
 msgstr "Nouveau"
+
+#: ../data/pcmanfm.desktop.in.h:1
+msgid "Browse the file system and manage the files"
+msgstr ""
+
+#: ../data/pcmanfm.desktop.in.h:2
+#, fuzzy
+msgid "File Manager"
+msgstr "Ouvrir dans le gestionnaire de fichier"
 
 #~ msgid "Open Find Files utility"
 #~ msgstr "Ouvrir l'utilitaire de recherche de fichier"

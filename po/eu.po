@@ -8,14 +8,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-08-03 20:08+0200\n"
+"POT-Creation-Date: 2010-10-04 02:25+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../data/ui/about.glade.in.h:1
@@ -543,69 +543,77 @@ msgid "Add to Bookmarks"
 msgstr ""
 
 #. { "new-tab", 't', 0, G_OPTION_ARG_NONE, &new_tab, N_("Open folders in new tabs of the last used window instead of creating new windows"), NULL },
-#: ../src/pcmanfm.c:74
+#: ../src/pcmanfm.c:71
 msgid "Name of configuration profile"
 msgstr ""
 
-#: ../src/pcmanfm.c:75
+#: ../src/pcmanfm.c:72
 msgid "Launch desktop manager"
 msgstr ""
 
-#: ../src/pcmanfm.c:76
+#: ../src/pcmanfm.c:73
 msgid "Turn off desktop manager if it's running"
 msgstr ""
 
-#: ../src/pcmanfm.c:77
+#: ../src/pcmanfm.c:74
 msgid "Run PCManFM as a daemon"
 msgstr ""
 
-#: ../src/pcmanfm.c:78
+#: ../src/pcmanfm.c:75
 msgid "Open desktop preference dialog"
 msgstr ""
 
-#: ../src/pcmanfm.c:79
+#: ../src/pcmanfm.c:76
 msgid "Set desktop wallpaper"
 msgstr ""
 
-#: ../src/pcmanfm.c:79
+#: ../src/pcmanfm.c:76
 msgid "<image file>"
 msgstr ""
 
-#: ../src/pcmanfm.c:80
+#: ../src/pcmanfm.c:77
 msgid "Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"
 msgstr ""
 
-#: ../src/pcmanfm.c:80
+#: ../src/pcmanfm.c:77
 msgid "<mode>"
 msgstr ""
 
-#: ../src/pcmanfm.c:81
+#: ../src/pcmanfm.c:78
 msgid ""
 "Open preference dialog. 'n' is number of the page you want to show (1, 2, "
 "3...)."
 msgstr ""
 
 #. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
-#: ../src/pcmanfm.c:83
+#: ../src/pcmanfm.c:80
 msgid "No function. Just to be compatible with nautilus"
 msgstr ""
 
-#: ../src/pcmanfm.c:84
+#: ../src/pcmanfm.c:81
 msgid "[FILE1, FILE2,...]"
 msgstr ""
 
-#: ../src/pcmanfm.c:619
+#: ../src/pcmanfm.c:501
 msgid "Terminal emulator is not set."
 msgstr ""
 
-#: ../src/pcmanfm.c:662
+#: ../src/pcmanfm.c:544
 msgid "Create New..."
 msgstr ""
 
-#: ../src/pcmanfm.c:662
+#: ../src/pcmanfm.c:544
 msgid "Enter a name for the newly created file:"
 msgstr ""
 
-#: ../src/pcmanfm.c:662
+#: ../src/pcmanfm.c:544
 msgid "New"
+msgstr ""
+
+#: ../data/pcmanfm.desktop.in.h:1
+msgid "Browse the file system and manage the files"
+msgstr ""
+
+#: ../data/pcmanfm.desktop.in.h:2
+msgid "File Manager"
 msgstr ""

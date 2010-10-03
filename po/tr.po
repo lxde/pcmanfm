@@ -2,12 +2,12 @@
 # Copyright (C) 2010
 # This file is distributed under the same license as the PCManFM package.
 # Mehmet Gülmen <memetgulmen@gmail.com>, 2010.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.9.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-09-05 06:06+0000\n"
+"POT-Creation-Date: 2010-10-04 02:25+0800\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Mehmet Gülmen <memetgulmen@gmail.com>\n"
 "Language-Team: tr <tr@li.org>\n"
@@ -110,7 +110,8 @@ msgstr "Masaüstünde disk bölümlerinin simgesini göster"
 
 #: ../data/ui/desktop-pref.glade.h:19
 msgid "Show menus provided by window managers when desktop is clicked"
-msgstr "Masaüstüne tıklandığında pencere yöneticisinin sağladığı simgeleri göster"
+msgstr ""
+"Masaüstüne tıklandığında pencere yöneticisinin sağladığı simgeleri göster"
 
 #: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:37
 msgid "Stretch to fill the entire screen"
@@ -197,7 +198,8 @@ msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
 "%s = the command line you want to execute with terminal or su."
 msgstr ""
-"Örnekler: Uçbirim için \"xterm -e %s\" veya kullanıcı değiştirme için \"gksu %s\".\n"
+"Örnekler: Uçbirim için \"xterm -e %s\" veya kullanıcı değiştirme için \"gksu "
+"%s\".\n"
 "%s = Uçbirim ya da su ile çalıştırmak istediğiniz komut satırı. "
 
 #: ../data/ui/pref.glade.h:18
@@ -557,8 +559,7 @@ msgstr ""
 msgid "Add to Bookmarks"
 msgstr "Yer İmlerine Ekle"
 
-#. { "new-tab", 't', 0, G_OPTION_ARG_NONE, &new_tab, N_("Open folders in new
-#. tabs of the last used window instead of creating new windows"), NULL },
+#. { "new-tab", 't', 0, G_OPTION_ARG_NONE, &new_tab, N_("Open folders in new tabs of the last used window instead of creating new windows"), NULL },
 #: ../src/pcmanfm.c:71
 msgid "Name of configuration profile"
 msgstr "Yapılandırma profilinin adı"
@@ -589,18 +590,23 @@ msgstr "<resim dosyası>"
 
 #: ../src/pcmanfm.c:77
 msgid "Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"
-msgstr "Masaüstü duvar kağıdı görüntüleme modunu seç. <mode>=(renk|ger|uydur|ortala|döşe)"
+msgstr ""
+"Masaüstü duvar kağıdı görüntüleme modunu seç. <mode>=(renk|ger|uydur|ortala|"
+"döşe)"
 
 #: ../src/pcmanfm.c:77
 msgid "<mode>"
 msgstr "<mode>"
 
 #: ../src/pcmanfm.c:78
-msgid "Open preference dialog. 'n' is number of the page you want to show (1, 2, 3...)."
-msgstr "Seçenekler diyaloğunu aç. 'n' görüntülenmesini istediğiniz sayfanın numarasıdır (1,2,3...)."
+msgid ""
+"Open preference dialog. 'n' is number of the page you want to show (1, 2, "
+"3...)."
+msgstr ""
+"Seçenekler diyaloğunu aç. 'n' görüntülenmesini istediğiniz sayfanın "
+"numarasıdır (1,2,3...)."
 
-#. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files
-#. utility"), NULL },
+#. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
 #: ../src/pcmanfm.c:80
 msgid "No function. Just to be compatible with nautilus"
 msgstr "İşlev yok. Nautilus ile uyumlu olmak için"
@@ -624,3 +630,12 @@ msgstr "Yeni oluşturulan dosya için bir isim girin:"
 #: ../src/pcmanfm.c:544
 msgid "New"
 msgstr "Yeni"
+
+#: ../data/pcmanfm.desktop.in.h:1
+msgid "Browse the file system and manage the files"
+msgstr ""
+
+#: ../data/pcmanfm.desktop.in.h:2
+#, fuzzy
+msgid "File Manager"
+msgstr "Dosya Yöneticisinde Aç"

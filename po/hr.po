@@ -7,16 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-08-03 20:08+0200\n"
+"POT-Creation-Date: 2010-10-04 02:25+0800\n"
 "PO-Revision-Date: 2010-06-06 18:57+0200\n"
 "Last-Translator: Ivica Kolić<ikoli@yahoo.com> <>\n"
 "Language-Team: Croatian hr <>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Language: \n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2010"
@@ -554,43 +554,43 @@ msgid "Add to Bookmarks"
 msgstr "Dodaj u zabilješke"
 
 #. { "new-tab", 't', 0, G_OPTION_ARG_NONE, &new_tab, N_("Open folders in new tabs of the last used window instead of creating new windows"), NULL },
-#: ../src/pcmanfm.c:74
+#: ../src/pcmanfm.c:71
 msgid "Name of configuration profile"
 msgstr "Ime konfiguracijskog profila"
 
-#: ../src/pcmanfm.c:75
+#: ../src/pcmanfm.c:72
 msgid "Launch desktop manager"
 msgstr "Pokreni upravitelj radne površine"
 
-#: ../src/pcmanfm.c:76
+#: ../src/pcmanfm.c:73
 msgid "Turn off desktop manager if it's running"
 msgstr ""
 
-#: ../src/pcmanfm.c:77
+#: ../src/pcmanfm.c:74
 msgid "Run PCManFM as a daemon"
 msgstr ""
 
-#: ../src/pcmanfm.c:78
+#: ../src/pcmanfm.c:75
 msgid "Open desktop preference dialog"
 msgstr "Otvori dijalog postavki radne površine"
 
-#: ../src/pcmanfm.c:79
+#: ../src/pcmanfm.c:76
 msgid "Set desktop wallpaper"
 msgstr ""
 
-#: ../src/pcmanfm.c:79
+#: ../src/pcmanfm.c:76
 msgid "<image file>"
 msgstr "<slikovna datoteka>"
 
-#: ../src/pcmanfm.c:80
+#: ../src/pcmanfm.c:77
 msgid "Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"
 msgstr ""
 
-#: ../src/pcmanfm.c:80
+#: ../src/pcmanfm.c:77
 msgid "<mode>"
 msgstr ""
 
-#: ../src/pcmanfm.c:81
+#: ../src/pcmanfm.c:78
 msgid ""
 "Open preference dialog. 'n' is number of the page you want to show (1, 2, "
 "3...)."
@@ -599,26 +599,35 @@ msgstr ""
 "3...)."
 
 #. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
-#: ../src/pcmanfm.c:83
+#: ../src/pcmanfm.c:80
 msgid "No function. Just to be compatible with nautilus"
 msgstr "Bez funkcija. Samo da bude kompatibilan sa nautilus-om"
 
-#: ../src/pcmanfm.c:84
+#: ../src/pcmanfm.c:81
 msgid "[FILE1, FILE2,...]"
 msgstr "[DATOTEKA1, DATOTEKA2,...]"
 
-#: ../src/pcmanfm.c:619
+#: ../src/pcmanfm.c:501
 msgid "Terminal emulator is not set."
 msgstr "Terminal emulator nije postavljen."
 
-#: ../src/pcmanfm.c:662
+#: ../src/pcmanfm.c:544
 msgid "Create New..."
 msgstr "Napravi novi..."
 
-#: ../src/pcmanfm.c:662
+#: ../src/pcmanfm.c:544
 msgid "Enter a name for the newly created file:"
 msgstr "Unesi ime novostvorene datoteke"
 
-#: ../src/pcmanfm.c:662
+#: ../src/pcmanfm.c:544
 msgid "New"
 msgstr "Novo"
+
+#: ../data/pcmanfm.desktop.in.h:1
+msgid "Browse the file system and manage the files"
+msgstr ""
+
+#: ../data/pcmanfm.desktop.in.h:2
+#, fuzzy
+msgid "File Manager"
+msgstr "Otvori upravitelj datotekama"

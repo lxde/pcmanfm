@@ -8,14 +8,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-08-03 20:08+0200\n"
+"POT-Creation-Date: 2010-10-04 02:25+0800\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Ivan Masár <helix84@centrum.sk>\n"
 "Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
-"Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: sk\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 
 #: ../data/ui/about.glade.in.h:1
@@ -551,46 +551,46 @@ msgid "Add to Bookmarks"
 msgstr "Pridať medzi záložky"
 
 #. { "new-tab", 't', 0, G_OPTION_ARG_NONE, &new_tab, N_("Open folders in new tabs of the last used window instead of creating new windows"), NULL },
-#: ../src/pcmanfm.c:74
+#: ../src/pcmanfm.c:71
 msgid "Name of configuration profile"
 msgstr "Názov profilu konfigurácie"
 
-#: ../src/pcmanfm.c:75
+#: ../src/pcmanfm.c:72
 msgid "Launch desktop manager"
 msgstr "Spustiť správcu plochy"
 
-#: ../src/pcmanfm.c:76
+#: ../src/pcmanfm.c:73
 msgid "Turn off desktop manager if it's running"
 msgstr "Vypnúť správcu plochy ak beží"
 
-#: ../src/pcmanfm.c:77
+#: ../src/pcmanfm.c:74
 msgid "Run PCManFM as a daemon"
 msgstr "Spúšťať PCManFM v režime démona"
 
-#: ../src/pcmanfm.c:78
+#: ../src/pcmanfm.c:75
 msgid "Open desktop preference dialog"
 msgstr "Otvoriť dialóg nastavení pracovného prostredia"
 
-#: ../src/pcmanfm.c:79
+#: ../src/pcmanfm.c:76
 msgid "Set desktop wallpaper"
 msgstr "Nastaviť tapetu plochy"
 
-#: ../src/pcmanfm.c:79
+#: ../src/pcmanfm.c:76
 msgid "<image file>"
 msgstr "<súbor obrázka>"
 
-#: ../src/pcmanfm.c:80
+#: ../src/pcmanfm.c:77
 msgid "Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"
 msgstr ""
 "Nastaviť režim pozadia plochy. Režim môže byť jedna z hodnôt "
 "„color“ (farba), „stretch“ (roztiahnuť), „fit“ (prispôsobiť veľkosť), "
 "„center“ (centrovať) a „tile“ (dlaždice)."
 
-#: ../src/pcmanfm.c:80
+#: ../src/pcmanfm.c:77
 msgid "<mode>"
 msgstr "<režim>"
 
-#: ../src/pcmanfm.c:81
+#: ../src/pcmanfm.c:78
 msgid ""
 "Open preference dialog. 'n' is number of the page you want to show (1, 2, "
 "3...)."
@@ -599,30 +599,39 @@ msgstr ""
 "2, 3...)."
 
 #. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
-#: ../src/pcmanfm.c:83
+#: ../src/pcmanfm.c:80
 msgid "No function. Just to be compatible with nautilus"
 msgstr ""
 "Nevykonáva žiadnu funkciu. Implementované len pre kompatibilitu s Nautilom"
 
-#: ../src/pcmanfm.c:84
+#: ../src/pcmanfm.c:81
 msgid "[FILE1, FILE2,...]"
 msgstr "[SÚBOR1, SÚBOR2,...]"
 
-#: ../src/pcmanfm.c:619
+#: ../src/pcmanfm.c:501
 msgid "Terminal emulator is not set."
 msgstr "Nebol nastavený emulátor terminálu."
 
-#: ../src/pcmanfm.c:662
+#: ../src/pcmanfm.c:544
 msgid "Create New..."
 msgstr "Vytvoriť nový..."
 
-#: ../src/pcmanfm.c:662
+#: ../src/pcmanfm.c:544
 msgid "Enter a name for the newly created file:"
 msgstr "Zadajte názov pre novo vytvorený súbor:"
 
-#: ../src/pcmanfm.c:662
+#: ../src/pcmanfm.c:544
 msgid "New"
 msgstr "Nový"
+
+#: ../data/pcmanfm.desktop.in.h:1
+msgid "Browse the file system and manage the files"
+msgstr ""
+
+#: ../data/pcmanfm.desktop.in.h:2
+#, fuzzy
+msgid "File Manager"
+msgstr "Otvoriť v Správcovi súborov"
 
 #~ msgid "Open Find Files utility"
 #~ msgstr "Otvoriť nástroj Nájsť súbory"
@@ -1109,8 +1118,8 @@ msgstr "Nový"
 #~ "1. spustiť správcu XSETTINGS alebo\n"
 #~ "2. jednoducho uviesť tému ikon v súbore ~/.gtkrc-2.0.</b>\n"
 #~ "Napríklad ak chcete použiť tému ikon Tango pridajte riadok:\n"
-#~ "<i><b>gtk-icon-theme-name=\"Tango\"</b></i> do svojho súboru ~/."
-#~ "gtkrc-2.0. (ak neexistuje vytvorte ho)\n"
+#~ "<i><b>gtk-icon-theme-name=\"Tango\"</b></i> do svojho súboru ~/.gtkrc-"
+#~ "2.0. (ak neexistuje vytvorte ho)\n"
 #~ "\n"
 #~ "<b>POZN.: Téma ikon, ktorú vyberiete by mala byť kompatibilná s GNOME "
 #~ "inak nebude možné správne zobraziť ikony súborov.</b>  Kvôli rozdielom v "

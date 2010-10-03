@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-08-03 20:08+0200\n"
+"POT-Creation-Date: 2010-10-04 02:25+0800\n"
 "PO-Revision-Date: 2010-03-20 17:09+0800\n"
 "Last-Translator: 洪任諭 <pcman.tw@gmail.com>\n"
 "Language-Team: zh_TW <zh_TW@li.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
 "X-Poedit-Language: Chinese\n"
 "X-Poedit-Country: TAIWAN\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -552,72 +552,80 @@ msgid "Add to Bookmarks"
 msgstr "新增到書籤"
 
 #. { "new-tab", 't', 0, G_OPTION_ARG_NONE, &new_tab, N_("Open folders in new tabs of the last used window instead of creating new windows"), NULL },
-#: ../src/pcmanfm.c:74
+#: ../src/pcmanfm.c:71
 msgid "Name of configuration profile"
 msgstr "設定檔名稱"
 
-#: ../src/pcmanfm.c:75
+#: ../src/pcmanfm.c:72
 msgid "Launch desktop manager"
 msgstr "啟動桌面管理"
 
-#: ../src/pcmanfm.c:76
+#: ../src/pcmanfm.c:73
 msgid "Turn off desktop manager if it's running"
 msgstr "關閉桌面管理"
 
-#: ../src/pcmanfm.c:77
+#: ../src/pcmanfm.c:74
 msgid "Run PCManFM as a daemon"
 msgstr "以常駐模式執行 PCManFM"
 
-#: ../src/pcmanfm.c:78
+#: ../src/pcmanfm.c:75
 msgid "Open desktop preference dialog"
 msgstr "開啟桌面偏好設定"
 
-#: ../src/pcmanfm.c:79
+#: ../src/pcmanfm.c:76
 msgid "Set desktop wallpaper"
 msgstr "設定桌布"
 
-#: ../src/pcmanfm.c:79
+#: ../src/pcmanfm.c:76
 msgid "<image file>"
 msgstr "<影像檔>"
 
-#: ../src/pcmanfm.c:80
+#: ../src/pcmanfm.c:77
 msgid "Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"
 msgstr ""
 
-#: ../src/pcmanfm.c:80
+#: ../src/pcmanfm.c:77
 msgid "<mode>"
 msgstr ""
 
-#: ../src/pcmanfm.c:81
+#: ../src/pcmanfm.c:78
 msgid ""
 "Open preference dialog. 'n' is number of the page you want to show (1, 2, "
 "3...)."
 msgstr "開啟偏好設定對話框，'n' 是你要顯示的頁面(1, 2, 3...)"
 
 #. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
-#: ../src/pcmanfm.c:83
+#: ../src/pcmanfm.c:80
 msgid "No function. Just to be compatible with nautilus"
 msgstr "沒有功能，只是用來和 nautilus 保持相容"
 
-#: ../src/pcmanfm.c:84
+#: ../src/pcmanfm.c:81
 msgid "[FILE1, FILE2,...]"
 msgstr "[檔案1, 檔案2,...]"
 
-#: ../src/pcmanfm.c:619
+#: ../src/pcmanfm.c:501
 msgid "Terminal emulator is not set."
 msgstr "終端機模擬器尚未設定。"
 
-#: ../src/pcmanfm.c:662
+#: ../src/pcmanfm.c:544
 msgid "Create New..."
 msgstr "新建..."
 
-#: ../src/pcmanfm.c:662
+#: ../src/pcmanfm.c:544
 msgid "Enter a name for the newly created file:"
 msgstr "輸入新建立檔案的名稱："
 
-#: ../src/pcmanfm.c:662
+#: ../src/pcmanfm.c:544
 msgid "New"
 msgstr "新增"
+
+#: ../data/pcmanfm.desktop.in.h:1
+msgid "Browse the file system and manage the files"
+msgstr "瀏覽檔案系統及管理檔案"
+
+#: ../data/pcmanfm.desktop.in.h:2
+msgid "File Manager"
+msgstr "檔案管理程式"
 
 #~ msgid "Open Find Files utility"
 #~ msgstr "開啟尋找檔案工具"

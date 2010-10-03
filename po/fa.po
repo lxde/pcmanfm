@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-08-16 05:59+0000\n"
+"POT-Creation-Date: 2010-10-04 02:25+0800\n"
 "PO-Revision-Date: 2010-08-16 17:54+0330\n"
 "Last-Translator: Mostafa <info@mostafadaneshvar.com>\n"
 "Language-Team: Persian <trans-fa@lists.fedoraproject.org>\n"
@@ -60,8 +60,7 @@ msgstr "شکل ظاهر"
 msgid "Background color:"
 msgstr "رنگ پس زمینه:"
 
-#: ../data/ui/desktop-pref.glade.h:7
-#: ../data/ui/pref.glade.h:10
+#: ../data/ui/desktop-pref.glade.h:7 ../data/ui/pref.glade.h:10
 msgid "Center on the screen"
 msgstr "وسط در صفحه نمایش"
 
@@ -77,8 +76,7 @@ msgstr "رنگ سایه:"
 msgid "Desktop Icons"
 msgstr "ایکن های رومیزی"
 
-#: ../data/ui/desktop-pref.glade.h:11
-#: ../src/desktop-ui.c:58
+#: ../data/ui/desktop-pref.glade.h:11 ../src/desktop-ui.c:58
 msgid "Desktop Preferences"
 msgstr "ترجیحات رومیزی"
 
@@ -114,18 +112,15 @@ msgstr "نمایش ایکن ها جلد در رومیزی"
 msgid "Show menus provided by window managers when desktop is clicked"
 msgstr "نمایش منوها مدیریت های پنجره وقتی رومیزی کلیک می شود"
 
-#: ../data/ui/desktop-pref.glade.h:20
-#: ../data/ui/pref.glade.h:37
+#: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:37
 msgid "Stretch to fill the entire screen"
 msgstr "کشیدن برای تناسب همه صفحه نمایش"
 
-#: ../data/ui/desktop-pref.glade.h:21
-#: ../data/ui/pref.glade.h:38
+#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:38
 msgid "Stretch to fit the screen"
 msgstr "کشیدن برای تناسب صفحه نمایش"
 
-#: ../data/ui/desktop-pref.glade.h:22
-#: ../data/ui/pref.glade.h:42
+#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:42
 msgid "Tile the image to fill the entire screen"
 msgstr "کاشی سازی تصویر جهت تناسب با همه صفحه نمایش"
 
@@ -342,53 +337,43 @@ msgstr "بازکردن در مدیریت فایل"
 msgid "_Invert Selection"
 msgstr "واگردانی انتخاب"
 
-#: ../src/desktop-ui.c:54
-#: ../src/main-win-ui.c:146
+#: ../src/desktop-ui.c:54 ../src/main-win-ui.c:146
 msgid "_Sort Files"
 msgstr "ترتیب فایلها"
 
-#: ../src/desktop-ui.c:56
-#: ../src/main-win-ui.c:172
+#: ../src/desktop-ui.c:56 ../src/main-win-ui.c:172
 msgid "Folder"
 msgstr "پوشه"
 
-#: ../src/desktop-ui.c:57
-#: ../src/main-win-ui.c:173
+#: ../src/desktop-ui.c:57 ../src/main-win-ui.c:173
 msgid "Blank File"
 msgstr "فایل خالی"
 
-#: ../src/desktop-ui.c:69
-#: ../src/main-win-ui.c:198
+#: ../src/desktop-ui.c:69 ../src/main-win-ui.c:198
 msgid "By _Name"
 msgstr "با نام"
 
-#: ../src/desktop-ui.c:70
-#: ../src/main-win-ui.c:199
+#: ../src/desktop-ui.c:70 ../src/main-win-ui.c:199
 msgid "By _Modification Time"
 msgstr "باز زمان تغییر"
 
-#: ../src/desktop-ui.c:71
-#: ../src/main-win-ui.c:200
+#: ../src/desktop-ui.c:71 ../src/main-win-ui.c:200
 msgid "By _Size"
 msgstr "با اندازه"
 
-#: ../src/desktop-ui.c:72
-#: ../src/main-win-ui.c:201
+#: ../src/desktop-ui.c:72 ../src/main-win-ui.c:201
 msgid "By File _Type"
 msgstr "با نوع فایل"
 
-#: ../src/desktop-ui.c:88
-#: ../src/main-win-ui.c:218
+#: ../src/desktop-ui.c:88 ../src/main-win-ui.c:218
 msgid "Open in New Tab"
 msgstr "بازکردن در زبانه ی جدید"
 
-#: ../src/desktop-ui.c:89
-#: ../src/main-win-ui.c:219
+#: ../src/desktop-ui.c:89 ../src/main-win-ui.c:219
 msgid "Open in New Window"
 msgstr "بازکردن در پنجره ی جدید"
 
-#: ../src/desktop-ui.c:91
-#: ../src/main-win-ui.c:221
+#: ../src/desktop-ui.c:91 ../src/main-win-ui.c:221
 msgid "Open in _Terminal"
 msgstr "بازکردن در ترمینال"
 
@@ -602,8 +587,11 @@ msgid "<mode>"
 msgstr "<حالت>"
 
 #: ../src/pcmanfm.c:78
-msgid "Open preference dialog. 'n' is number of the page you want to show (1, 2, 3...)."
-msgstr "بازکردن محاوره ترجیحات. 'n' شما صفحاتی است که می خواهید نمایش دهید (۱،۲،۳...)"
+msgid ""
+"Open preference dialog. 'n' is number of the page you want to show (1, 2, "
+"3...)."
+msgstr ""
+"بازکردن محاوره ترجیحات. 'n' شما صفحاتی است که می خواهید نمایش دهید (۱،۲،۳...)"
 
 #. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
 #: ../src/pcmanfm.c:80
@@ -630,3 +618,11 @@ msgstr "برای فایل تازه ساخته شده نامی وارد کنید:
 msgid "New"
 msgstr "جدید"
 
+#: ../data/pcmanfm.desktop.in.h:1
+msgid "Browse the file system and manage the files"
+msgstr ""
+
+#: ../data/pcmanfm.desktop.in.h:2
+#, fuzzy
+msgid "File Manager"
+msgstr "بازکردن در مدیریت فایل"

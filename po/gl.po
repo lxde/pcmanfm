@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm-0,5.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-09-06 06:06+0000\n"
+"POT-Creation-Date: 2010-10-04 02:25+0800\n"
 "PO-Revision-Date: 2010-09-06 12:39+0100\n"
 "Last-Translator: Indalecio Freiría Santos <ifreiria@gmail.com>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
@@ -62,8 +62,7 @@ msgstr "Aparencia"
 msgid "Background color:"
 msgstr "Cor de fondo:"
 
-#: ../data/ui/desktop-pref.glade.h:7
-#: ../data/ui/pref.glade.h:10
+#: ../data/ui/desktop-pref.glade.h:7 ../data/ui/pref.glade.h:10
 msgid "Center on the screen"
 msgstr "Centrar na pantalla"
 
@@ -79,8 +78,7 @@ msgstr "Cor da sombra:"
 msgid "Desktop Icons"
 msgstr "Iconas de escritorio"
 
-#: ../data/ui/desktop-pref.glade.h:11
-#: ../src/desktop-ui.c:58
+#: ../data/ui/desktop-pref.glade.h:11 ../src/desktop-ui.c:58
 msgid "Desktop Preferences"
 msgstr "Preferencias de escritorio"
 
@@ -114,20 +112,18 @@ msgstr "Amosar iconas de volumes no escritorio"
 
 #: ../data/ui/desktop-pref.glade.h:19
 msgid "Show menus provided by window managers when desktop is clicked"
-msgstr "Amosar sempre os menús do xestor de xanelas cando se preme no escritorio"
+msgstr ""
+"Amosar sempre os menús do xestor de xanelas cando se preme no escritorio"
 
-#: ../data/ui/desktop-pref.glade.h:20
-#: ../data/ui/pref.glade.h:37
+#: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:37
 msgid "Stretch to fill the entire screen"
 msgstr "Estirar para encher a pantalla completa"
 
-#: ../data/ui/desktop-pref.glade.h:21
-#: ../data/ui/pref.glade.h:38
+#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:38
 msgid "Stretch to fit the screen"
 msgstr "Estirar para adaptar á pantalla"
 
-#: ../data/ui/desktop-pref.glade.h:22
-#: ../data/ui/pref.glade.h:42
+#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:42
 msgid "Tile the image to fill the entire screen"
 msgstr "Facer mosaico coa imaxe para encher a pantalla completa"
 
@@ -197,7 +193,8 @@ msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
 "%s = the command line you want to execute with terminal or su."
 msgstr ""
-"Exemplos: \"xterm -e %s\" para o terminal ou \"gksu %s\" para cambiar de usuario.\n"
+"Exemplos: \"xterm -e %s\" para o terminal ou \"gksu %s\" para cambiar de "
+"usuario.\n"
 "%s = a liña de ordes que quere executar con terminal ou superusario."
 
 #: ../data/ui/pref.glade.h:18
@@ -226,7 +223,8 @@ msgstr "Montar automaticamente os soportes extraíbeis cando se insertan"
 
 #: ../data/ui/pref.glade.h:24
 msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
-msgstr "Mover os ficheiros eliminados a \"trash bin\" no canto de borralos do disco"
+msgstr ""
+"Mover os ficheiros eliminados a \"trash bin\" no canto de borralos do disco"
 
 #: ../data/ui/pref.glade.h:25
 msgid "Only show thumbnails for local files"
@@ -254,7 +252,8 @@ msgstr "Preferencias"
 
 #: ../data/ui/pref.glade.h:31
 msgid "Show available options for removable media when they are inserted"
-msgstr "Amosar as opcións dispoñíbeis para un soporte extraíbel cando é insertado"
+msgstr ""
+"Amosar as opcións dispoñíbeis para un soporte extraíbel cando é insertado"
 
 #: ../data/ui/pref.glade.h:32
 msgid "Show thumbnails of files"
@@ -344,53 +343,43 @@ msgstr "Abrir no xestor de ficheiros"
 msgid "_Invert Selection"
 msgstr "_Inverter a selección"
 
-#: ../src/desktop-ui.c:54
-#: ../src/main-win-ui.c:146
+#: ../src/desktop-ui.c:54 ../src/main-win-ui.c:146
 msgid "_Sort Files"
 msgstr "_Ordenar ficheiros"
 
-#: ../src/desktop-ui.c:56
-#: ../src/main-win-ui.c:172
+#: ../src/desktop-ui.c:56 ../src/main-win-ui.c:172
 msgid "Folder"
 msgstr "Cartafol"
 
-#: ../src/desktop-ui.c:57
-#: ../src/main-win-ui.c:173
+#: ../src/desktop-ui.c:57 ../src/main-win-ui.c:173
 msgid "Blank File"
 msgstr "Ficheiro baleiro"
 
-#: ../src/desktop-ui.c:69
-#: ../src/main-win-ui.c:198
+#: ../src/desktop-ui.c:69 ../src/main-win-ui.c:198
 msgid "By _Name"
 msgstr "Por _nome"
 
-#: ../src/desktop-ui.c:70
-#: ../src/main-win-ui.c:199
+#: ../src/desktop-ui.c:70 ../src/main-win-ui.c:199
 msgid "By _Modification Time"
 msgstr "Por data de _modificación"
 
-#: ../src/desktop-ui.c:71
-#: ../src/main-win-ui.c:200
+#: ../src/desktop-ui.c:71 ../src/main-win-ui.c:200
 msgid "By _Size"
 msgstr "Por _tamaño"
 
-#: ../src/desktop-ui.c:72
-#: ../src/main-win-ui.c:201
+#: ../src/desktop-ui.c:72 ../src/main-win-ui.c:201
 msgid "By File _Type"
 msgstr "Por t_ipo de ficheiro"
 
-#: ../src/desktop-ui.c:88
-#: ../src/main-win-ui.c:218
+#: ../src/desktop-ui.c:88 ../src/main-win-ui.c:218
 msgid "Open in New Tab"
 msgstr "Abrir nunha nova lapela"
 
-#: ../src/desktop-ui.c:89
-#: ../src/main-win-ui.c:219
+#: ../src/desktop-ui.c:89 ../src/main-win-ui.c:219
 msgid "Open in New Window"
 msgstr "Abrir nunha nova xanela"
 
-#: ../src/desktop-ui.c:91
-#: ../src/main-win-ui.c:221
+#: ../src/desktop-ui.c:91 ../src/main-win-ui.c:221
 msgid "Open in _Terminal"
 msgstr "Abrir en _terminal"
 
@@ -597,15 +586,20 @@ msgstr "<ficheiro de imaxe>"
 
 #: ../src/pcmanfm.c:77
 msgid "Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"
-msgstr "Axuste o modo de fondo de escritorio. <mode>=(color|stretch|fit|center|tile)"
+msgstr ""
+"Axuste o modo de fondo de escritorio. <mode>=(color|stretch|fit|center|tile)"
 
 #: ../src/pcmanfm.c:77
 msgid "<mode>"
 msgstr "<modo>"
 
 #: ../src/pcmanfm.c:78
-msgid "Open preference dialog. 'n' is number of the page you want to show (1, 2, 3...)."
-msgstr "Abrir as preferencias de diálogo. «n» é o número de páxina que desexa amosar (1, 2, 3 ...)."
+msgid ""
+"Open preference dialog. 'n' is number of the page you want to show (1, 2, "
+"3...)."
+msgstr ""
+"Abrir as preferencias de diálogo. «n» é o número de páxina que desexa amosar "
+"(1, 2, 3 ...)."
 
 #. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
 #: ../src/pcmanfm.c:80
@@ -632,6 +626,15 @@ msgstr "Introduza un nome para o novo ficheiro:"
 msgid "New"
 msgstr "Novo"
 
+#: ../data/pcmanfm.desktop.in.h:1
+msgid "Browse the file system and manage the files"
+msgstr ""
+
+#: ../data/pcmanfm.desktop.in.h:2
+#, fuzzy
+msgid "File Manager"
+msgstr "Abrir no xestor de ficheiros"
+
 #~ msgid ""
 #~ "The icon was taken from \"nuoveXT 2\" icon theme\n"
 #~ "created by Alexandre Moore (saki).\n"
@@ -640,6 +643,7 @@ msgstr "Novo"
 #~ "As iconas foron tomadas do tema de iconas «nuoveXT 2»\n"
 #~ "creado por Alexandre Moore (saki).\n"
 #~ "http://www.gnome-look.org/content/show.php/nuoveXT+2?content=56625"
+
 #~ msgid ""
 #~ "洪任諭 Hong Jen Yee <pcman.tw@gmail.com>\n"
 #~ "\n"
@@ -667,98 +671,143 @@ msgstr "Novo"
 #~ "      * gnome-vfs: David Zeuthen\n"
 #~ "      * thunar-vfs y libexo: Benedikt Meurer\n"
 #~ "      * gnome-mount: David Zeuthen"
+
 #~ msgid "Choose an Application"
 #~ msgstr "Seleccionar un aplicativo"
+
 #~ msgid "File Type To be Opened:"
 #~ msgstr "Nome do ficheiro a abrir:"
+
 #~ msgid "Opened in Terminal"
 #~ msgstr "Abrir nun terminal"
+
 #~ msgid ""
 #~ "Please choose an application from following lists or enter the command "
 #~ "line by hand:"
 #~ msgstr ""
 #~ "Por favor, seleccione un aplicativo da lista ou introduza a liña de ordes "
 #~ "a man:"
+
 #~ msgid "Set selected application to default action"
 #~ msgstr "Configurar o aplicativo seleccionado como acción predeterminada"
+
 #~ msgid "_Browse"
 #~ msgstr "_Explorar"
+
 #~ msgid "_Command Line:"
 #~ msgstr "_Líña de ordes:"
+
 #~ msgid "_Recommended Applications"
 #~ msgstr "Aplicativos _recomendados"
+
 #~ msgid "Actions Showed in Popup Menus"
 #~ msgstr "Accións amosadas nos menús contextuais"
+
 #~ msgid "Add _Application"
 #~ msgstr "Engadir un _aplicativo"
+
 #~ msgid "Add _Custom Action"
 #~ msgstr "Engadir unha a_cción personalizada"
+
 #~ msgid "File Associations"
 #~ msgstr "Asociacións de ficheiros"
+
 #~ msgid "Move _Down"
 #~ msgstr "_Baixar"
+
 #~ msgid "Move _Up"
 #~ msgstr "_Subir"
+
 #~ msgid "Preparing..."
 #~ msgstr "Preparando..."
+
 #~ msgid "Processing:"
 #~ msgstr "Procesando: "
+
 #~ msgid "Progress:"
 #~ msgstr "Progreso:"
+
 #~ msgid "To:"
 #~ msgstr "A:"
+
 #~ msgid "<b>File Type:</b>"
 #~ msgstr "<b>Tipo de ficheiro:</b>"
+
 #~ msgid "<b>File _Name:</b>"
 #~ msgstr "<b>_Nome do ficheiro:</b>"
+
 #~ msgid "<b>Group:</b>"
 #~ msgstr "<b>Grupo:</b>"
+
 #~ msgid "<b>Last Access:</b>"
 #~ msgstr "<b>Último acceso:</b>"
+
 #~ msgid "<b>Last Modification:</b>"
 #~ msgstr "<b>Última modificación:</b>"
+
 #~ msgid "<b>Open _with:</b>"
 #~ msgstr "<b>Abrir _con:</b>"
+
 #~ msgid "<b>Other Users:</b>"
 #~ msgstr "<b>Outros usuarios:</b>"
+
 #~ msgid "<b>Size on Disk:</b>"
 #~ msgstr "<b>Tamaño en disco:</b>"
+
 #~ msgid "<b>Total Size of Files:</b>"
 #~ msgstr "<b>Tamaño total dos ficheiros:</b>"
+
 #~ msgid "<b>_Group:</b>"
 #~ msgstr "<b>_Grupo:</b>"
+
 #~ msgid "<b>_Owner:</b>"
 #~ msgstr "<b>_Propietario:</b>"
+
 #~ msgid "Execute"
 #~ msgstr "Executar"
+
 #~ msgid "File Properties"
 #~ msgstr "Propiedades do ficheiro"
+
 #~ msgid "Read"
 #~ msgstr "Lectura"
+
 #~ msgid "Set GID"
 #~ msgstr "Establecer GID"
+
 #~ msgid "Set UID"
 #~ msgstr "Establecer UID"
+
 #~ msgid "Sticky"
 #~ msgstr "Pegañento"
+
 #~ msgid "Write"
 #~ msgstr "Escritura"
+
 #~ msgid "_Permissions"
 #~ msgstr "_Permisos"
+
 #~ msgid "<b>File Content</b>"
 #~ msgstr "<b>Contido do ficheiro</b>"
+
 #~ msgid "<b>File Name Contains:</b>"
 #~ msgstr "<b>O nome de ficheiro conten:</b>"
+
 #~ msgid "<b>File Types to Search</b>"
 #~ msgstr "<b>Tipos de ficheiro para buscar:</b>"
+
 #~ msgid "<b>Last Modified</b>"
 #~ msgstr "<b>Última modificación</b>"
+
 #~ msgid "<b>Places to Search</b>"
 #~ msgstr "<b>Buscar en</b>"
+
 #~ msgid "<b>Search Result:</b>"
 #~ msgstr "<b>Resultado da busca:</b>"
+
 #~ msgid "All Files and Folders"
 #~ msgstr "Todos os ficheiros e cartafoles"
+
 #~ msgid ""
 #~ "Any\n"
 #~ "Within One Day\n"
@@ -773,8 +822,10 @@ msgstr "Novo"
 #~ "Dentro dun mes\n"
 #~ "Dentro dun ano\n"
 #~ "Dentro do rango de datas seleccionado"
+
 #~ msgid "Audio Files (mp3, ogg,...)"
 #~ msgstr "Ficheiros de son (mp3, ogg,...)"
+
 #~ msgid ""
 #~ "Bytes\n"
 #~ "KB\n"
@@ -785,53 +836,77 @@ msgstr "Novo"
 #~ "KB\n"
 #~ "MB\n"
 #~ "GB"
+
 #~ msgid "Case Sensitive"
 #~ msgstr "Distinguir maiúsculas / minúsculas"
+
 #~ msgid "Content"
 #~ msgstr "Contido"
+
 #~ msgid "File Contains:"
 #~ msgstr "O ficheiro conten:"
+
 #~ msgid "Find Files"
 #~ msgstr "Buscar ficheiros"
+
 #~ msgid "General"
 #~ msgstr "Xeral"
+
 #~ msgid "Greater Than:"
 #~ msgstr "Maior que:"
+
 #~ msgid "Image Files (jpg, png,...)"
 #~ msgstr "Ficheiros de imaxe (jpg, png,...)"
+
 #~ msgid "Search Again"
 #~ msgstr "Buscar de novo"
+
 #~ msgid "Search Hidden Files"
 #~ msgstr "Buscar ficheiros agochados"
+
 #~ msgid "Search in Sub Directories"
 #~ msgstr "Buscar en sub-directorios"
+
 #~ msgid "Size & Date"
 #~ msgstr "Tamaño e data"
+
 #~ msgid "Smaller Than:"
 #~ msgstr "Menor que:"
+
 #~ msgid "Use Regular Expression"
 #~ msgstr "Utilice unha expresión regular"
+
 #~ msgid "Video Files (avi, mpg,...)"
 #~ msgstr "Ficheiros de vídeo (avi, mpg,...)"
+
 #~ msgid "Go to folder"
 #~ msgstr "Ir ao cartafol"
+
 #~ msgid "<b>Wallpaper</b>"
 #~ msgstr "<b>Fondo de pantalla</b>"
+
 #~ msgid "Disable \"Trash Can\" and delete files from disk directly"
 #~ msgstr ""
 #~ "Desactivar «Cesta do lixo» e borrar os ficheiros directamente do disco"
+
 #~ msgid "Display image files with supported format as thumbnails"
 #~ msgstr "Amosar ficheiros de formatos soportados como miniaturas"
+
 #~ msgid "I_nterface"
 #~ msgstr "I_nterface"
+
 #~ msgid "Manage the desktop and show file icons"
 #~ msgstr "Administrar o escritorio e amosar iconas de ficheiros"
+
 #~ msgid "Max size of files displayed as thumbnails:"
 #~ msgstr "Tamaño máximo para as miniaturas amosadas:"
+
 #~ msgid "Mode:"
 #~ msgstr "Modo:"
+
 #~ msgid "On-disk file name encoding:"
 #~ msgstr "Codificación do nome de ficheiro no disco:"
+
 #~ msgid ""
 #~ "Opened in Current Tab\n"
 #~ "Opened in New Tab\n"
@@ -840,8 +915,10 @@ msgstr "Novo"
 #~ "Aberto na lingüeta actual\n"
 #~ "Aberto nunha nova lingüeta\n"
 #~ "Aberto nunha nova fiestra"
+
 #~ msgid "Shadow:"
 #~ msgstr "Sombra:"
+
 #~ msgid ""
 #~ "Stretch to fill the entire screen\n"
 #~ "Stretch to fit the screen\n"
@@ -852,120 +929,172 @@ msgstr "Novo"
 #~ "Estirar para axustar á pantalla\n"
 #~ "Centrar na pantalla\n"
 #~ "Mosaico coa imaxe para encher toda a pantalla"
+
 #~ msgid "Text:"
 #~ msgstr "Texto:"
+
 #~ msgid "_Desktop"
 #~ msgstr "_Escritorio"
+
 #~ msgid "Column Spacing"
 #~ msgstr "Espaciado de columnas:"
+
 #~ msgid "Space which is inserted between grid column"
 #~ msgstr "Espazo a inserir entre columnas"
+
 #~ msgid "Number of columns"
 #~ msgstr "Número de columnas"
+
 #~ msgid "Number of columns to display"
 #~ msgstr "Número de columnas a amosar"
+
 #~ msgid "Enable Search"
 #~ msgstr "Activar busca"
+
 #~ msgid "View allows user to search through columns interactively"
 #~ msgstr "Permite que o usuario busque interactivamente entre as columnas"
+
 #~ msgid "Width for each item"
 #~ msgstr "Ancho de cada elemento"
+
 #~ msgid "The width used for each item"
 #~ msgstr "O ancho que se utiliza para cada elemento"
+
 #~ msgid "Layout mode"
 #~ msgstr "Modo de deseño"
+
 #~ msgid "The layout mode"
 #~ msgstr "O modo de deseño"
+
 #~ msgid "Margin"
 #~ msgstr "Marxe"
+
 #~ msgid "Space which is inserted at the edges of the icon view"
 #~ msgstr "Espazo a inserir nos bordos das iconas"
+
 #~ msgid "Markup column"
 #~ msgstr "Columna de marcación"
+
 #~ msgid "Model column used to retrieve the text if using Pango markup"
 #~ msgstr ""
 #~ "Columna modelo utilizada para obter o texto se se utiliza a marcación "
 #~ "Pango"
+
 #~ msgid "The model for the icon view"
 #~ msgstr "O modelo para a vista de iconas"
+
 #~ msgid ""
 #~ "How the text and icon of each item are positioned relative to each other"
 #~ msgstr ""
 #~ "Como se colocan o texto e a icona de cada elemento, un respecto do outro"
+
 #~ msgid "Pixbuf column"
 #~ msgstr "Columna do pixbuf"
+
 #~ msgid "Model column used to retrieve the icon pixbuf from"
 #~ msgstr "Columna modelo da que se obten o pixbuf para a icona"
+
 #~ msgid "Reorderable"
 #~ msgstr "Reordenable"
+
 #~ msgid "View is reorderable"
 #~ msgstr "A vista podese reordenar"
+
 #~ msgid "Row Spacing"
 #~ msgstr "Espaciado de filas:"
+
 #~ msgid "Space which is inserted between grid rows"
 #~ msgstr "Espazo a inserir entre as filas"
+
 #~ msgid "Search Column"
 #~ msgstr "Columna de busca"
+
 #~ msgid "Model column to search through when searching through item"
 #~ msgstr "Columna modelo para buscar entre elementos"
+
 #~ msgid "Selection mode"
 #~ msgstr "Modo de selección"
+
 #~ msgid "The selection mode"
 #~ msgstr "O modo de selección"
+
 #~ msgid "Single Click"
 #~ msgstr "Un só clic"
+
 #~ msgid "Whether the items in the view can be activated with single clicks"
 #~ msgstr "Se os elementos da vista se poden activar cun só clic"
+
 #~ msgid "Single Click Timeout"
 #~ msgstr "Tempo de aguarde para o clic"
+
 #~ msgid ""
 #~ "The amount of time after which the item under the mouse cursor will be "
 #~ "selected automatically in single click mode"
 #~ msgstr ""
 #~ "O tempo despois do que se seleccionará automaticamente o elemento baixo o "
 #~ "punteiro no modo de «Un só clic»"
+
 #~ msgid "Spacing"
 #~ msgstr "Espaciado"
+
 #~ msgid "Space which is inserted between cells of an item"
 #~ msgstr "Espazo a inserir entre celas dun elemento"
+
 #~ msgid "Text column"
 #~ msgstr "Columna de texto"
+
 #~ msgid "Model column used to retrieve the text from"
 #~ msgstr "Columna modelo que se utiliza para obter o texto"
+
 #~ msgid "Selection Box Color"
 #~ msgstr "Cor do cadro de selección"
+
 #~ msgid "Color of the selection box"
 #~ msgstr "Cor do cadro de selección"
+
 #~ msgid "Selection Box Alpha"
 #~ msgstr "Transparencia do cadro de selección"
+
 #~ msgid "Opacity of the selection box"
 #~ msgstr "Opacidade do cadro de selección"
+
 #~ msgid "audio"
 #~ msgstr "son"
+
 #~ msgid "video"
 #~ msgstr "video"
+
 #~ msgid "text"
 #~ msgstr "Texto"
+
 #~ msgid "multipart"
 #~ msgstr "multiparte"
+
 #~ msgid "image"
 #~ msgstr "imaxe"
+
 #~ msgid "message"
 #~ msgstr "mensaxe"
+
 #~ msgid "inode"
 #~ msgstr "nodo-i"
+
 #~ msgid "packages"
 #~ msgstr "paquetes"
+
 #~ msgid ""
 #~ "Open folders in new tabs of the last used window instead of creating new "
 #~ "windows"
 #~ msgstr ""
 #~ "Abrir os cartafoles en lingüetas novas da fiestra utilizada por última "
 #~ "vez no canto de crear novas fiestras"
+
 #~ msgid "Find Files with PCManFM"
 #~ msgstr "Buscar ficheiros con PCManFM"
+
 #~ msgid "GTK+ icon theme is not properly set"
 #~ msgstr "O tema de iconas GTK+ non está ben configurado"
+
 #~ msgid ""
 #~ "<big><b>%s</b></big>\n"
 #~ "\n"
@@ -1006,8 +1135,10 @@ msgstr "Novo"
 #~ "nomes das iconas de GNOME e KDE, os temas de KDE non se poden utilizar. "
 #~ "Actualmente non existe un estándar para isto, pero será resolto por "
 #~ "freedesktop.org no futuro."
+
 #~ msgid "Error"
 #~ msgstr "Erro"
+
 #~ msgid ""
 #~ "Error: Unable to establish connection with FAM.\n"
 #~ "\n"
@@ -1016,10 +1147,13 @@ msgstr "Novo"
 #~ "Error: No se puido establecer conexión con FAM.\n"
 #~ "\n"
 #~ "Ten «FAM» ou «Gamin» instalado e en execución?"
+
 #~ msgid "File doesn't exist"
 #~ msgstr "O ficheiro non existe"
+
 #~ msgid "Don't know how to open the file"
 #~ msgstr "No se sabe como abrir o ficheiro"
+
 #~ msgid ""
 #~ "Unable to open file:\n"
 #~ "\"%s\"\n"
@@ -1028,136 +1162,199 @@ msgstr "Novo"
 #~ "Non se pode abrir o ficheiro:\n"
 #~ "«%s»\n"
 #~ "%s"
+
 #~ msgid "_Folder"
 #~ msgstr "_Cartafol"
+
 #~ msgid "File _Properties"
 #~ msgstr "_Propiedades do ficheiro"
+
 #~ msgid "_Delete"
 #~ msgstr "_Borrar"
+
 #~ msgid "_Rename"
 #~ msgstr "_Renomear"
+
 #~ msgid "Select _All"
 #~ msgstr "Seleccionar _todo"
+
 #~ msgid "Go _Back"
 #~ msgstr "At_rás"
+
 #~ msgid "Go _Forward"
 #~ msgstr "Adian_te"
+
 #~ msgid "Go _Home"
 #~ msgstr "Ir ao cartafol pers_oal"
+
 #~ msgid "Sort by _Type"
 #~ msgstr "Ordenar por tip_o"
+
 #~ msgid "Sort by _Permission"
 #~ msgstr "Ordenar por _permisos"
+
 #~ msgid "Sort by _Owner"
 #~ msgstr "Ordenar por p_ropietario"
+
 #~ msgid "Ascending"
 #~ msgstr "Ascendente"
+
 #~ msgid "Descending"
 #~ msgstr "Descendente"
+
 #~ msgid "_Open Side Pane"
 #~ msgstr "_Abrir panel lateral"
+
 #~ msgid "Show _Location Pane"
 #~ msgstr "Amosar _barra de localización"
+
 #~ msgid "Show _Directory Tree"
 #~ msgstr "Amosar árbore de _cartafoles"
+
 #~ msgid "_Refresh"
 #~ msgstr "_Actualizar"
+
 #~ msgid "Side _Pane"
 #~ msgstr "_Panel lateral"
+
 #~ msgid "L_ocation Bar"
 #~ msgstr "_Barra de enderezo"
+
 #~ msgid "_Sort..."
 #~ msgstr "_Ordenar..."
+
 #~ msgid "View as _Icons"
 #~ msgstr "Ver como ico_nas"
+
 #~ msgid "View as _Compact List"
 #~ msgstr "Ver como lista _compacta"
+
 #~ msgid "Open _Terminal"
 #~ msgstr "Abrir el _terminal"
+
 #~ msgid "_Find Files"
 #~ msgstr "_Buscar ficheiros"
+
 #~ msgid "Back"
 #~ msgstr "Atras"
+
 #~ msgid "Forward"
 #~ msgstr "Adiante"
+
 #~ msgid "Refresh"
 #~ msgstr "Actualizar"
+
 #~ msgid "Home Directory"
 #~ msgstr "Cartafol persoal"
+
 #~ msgid "Go"
 #~ msgstr "Ir"
+
 #~ msgid "_Edit Bookmarks"
 #~ msgstr "_Editar marcadores"
+
 #~ msgid "Loading..."
 #~ msgstr "Cargando..."
+
 #~ msgid "%d item selected (%s)%s"
 #~ msgid_plural "%d items selected (%s)%s"
 #~ msgstr[0] "%d elemento seleccionado (%s)%s"
 #~ msgstr[1] "%d elementos seleccionados (%s)%s"
+
 #~ msgid "%d hidden"
 #~ msgid_plural "%d hidden"
 #~ msgstr[0] "%d agochado"
 #~ msgstr[1] "%d agochados"
+
 #~ msgid "%d visible item (%s)%s"
 #~ msgid_plural "%d visible items (%s)%s"
 #~ msgstr[0] "%d elemento visible (%s)%s"
 #~ msgstr[1] "%d elementos visibles (%s)%s"
+
 #~ msgid "Directory doesn't exist!"
 #~ msgstr "O cartafol non existe!"
+
 #~ msgid "Name"
 #~ msgstr "Nome"
+
 #~ msgid "Size"
 #~ msgstr "Tamaño"
+
 #~ msgid "Type"
 #~ msgstr "Tipo"
+
 #~ msgid "Permission"
 #~ msgstr "Permisos"
+
 #~ msgid "Owner:Group"
 #~ msgstr "Propietario:Grupo"
+
 #~ msgid "Last Modification"
 #~ msgstr "Última modificación"
+
 #~ msgid "Location"
 #~ msgstr "Localización"
+
 #~ msgid "Directory Tree"
 #~ msgstr "Árbore de cartafoles"
+
 #~ msgid "Unable to mount device"
 #~ msgstr "Non se pode montar o dispositivo"
+
 #~ msgid "Unable to unmount device"
 #~ msgstr "Non se pode desmontar o dispositivo"
+
 #~ msgid "Unable to eject device"
 #~ msgstr "Non se pode expulsar o dispositivo"
+
 #~ msgid "_Mount File System"
 #~ msgstr "_Montar sistema de ficheiros"
+
 #~ msgid "_Eject"
 #~ msgstr "_Expulsar"
+
 #~ msgid "_Unmount File System"
 #~ msgstr "_Desmontar sistema de ficheiros"
+
 #~ msgid "Move: "
 #~ msgstr "Mover:"
+
 #~ msgid "Copy: "
 #~ msgstr "Copiar:"
+
 #~ msgid "Move to Trash: "
 #~ msgstr "Enviar ao cesto do lixo:"
+
 #~ msgid "Delete: "
 #~ msgstr "Borrar:"
+
 #~ msgid "Link: "
 #~ msgstr "Ligar:"
+
 #~ msgid "Change Properties: "
 #~ msgstr "Cambiar propiedades: "
+
 #~ msgid "Moving to Trash..."
 #~ msgstr "Enviando a cesta do lixo..."
+
 #~ msgid "Linking..."
 #~ msgstr "Ligando..."
+
 #~ msgid "Changing Properties"
 #~ msgstr "Cambiando as propiedades"
+
 #~ msgid "Cancel the operation?"
 #~ msgstr "¿Cancelar a operación?"
+
 #~ msgid "Do you want to overwrite the folder and its content?"
 #~ msgstr "Quere sobreescribir o cartafol e o seu contido?"
+
 #~ msgid "Do you want to overwrite this file?"
 #~ msgstr "Quere sobreescribir este ficheiro?"
+
 #~ msgid "Please choose a new file name."
 #~ msgstr "Por favor, escolla un novo nome de ficheiro"
+
 #~ msgid ""
 #~ "\"%s\" already exists.\n"
 #~ "\n"
@@ -1166,6 +1363,7 @@ msgstr "Novo"
 #~ "«%s» xa existe.\n"
 #~ "\n"
 #~ "%s"
+
 #~ msgid ""
 #~ "\"%s\"\n"
 #~ "\n"
@@ -1178,244 +1376,350 @@ msgstr "Novo"
 #~ "O destino e a orixe é o mesmo ficheiro.\n"
 #~ "\n"
 #~ "%s"
+
 #~ msgid "Overwrite"
 #~ msgstr "Sobreescribir"
+
 #~ msgid "Overwrite All"
 #~ msgstr "Sobreescribir todo"
+
 #~ msgid "Skip"
 #~ msgstr "Omitir"
+
 #~ msgid "Skip All"
 #~ msgstr "Omitir todo"
+
 #~ msgid "Save Compressd Files to..."
 #~ msgstr "Gardar Arquivos comprimidos en..."
+
 #~ msgid "Format of compressed File:"
 #~ msgstr "Formato do arquivo comprimido:"
+
 #~ msgid "Creating Compressed File: %s"
 #~ msgstr "Creando arquivo comprimido: %s"
+
 #~ msgid "Compress Files"
 #~ msgstr "Comprimir ficheiros"
+
 #~ msgid "Extract File to..."
 #~ msgstr "Extraer arquivo a..."
+
 #~ msgid "Extracting Files to: %s"
 #~ msgstr "Extraer arquivos a: %s"
+
 #~ msgid "Extract Files"
 #~ msgstr "Extraer arquivos"
+
 #~ msgid ""
 #~ "\n"
 #~ "Complete!"
 #~ msgstr ""
 #~ "\n"
 #~ "Completado!"
+
 #~ msgid "Command:"
 #~ msgstr "Orde:"
+
 #~ msgid "File System"
 #~ msgstr "Sistema de ficheiros"
+
 #~ msgid "No Sub Folder"
 #~ msgstr "Sen sub-cartafol"
+
 #~ msgid "E_xtract Here"
 #~ msgstr "E_xtraer aqui"
+
 #~ msgid "Extract _To"
 #~ msgstr "Extraer _a"
+
 #~ msgid "Open _with..."
 #~ msgstr "Abrir _con..."
+
 #~ msgid "Compress"
 #~ msgstr "Comprimir"
+
 #~ msgid "E_xtract"
 #~ msgstr "_Extraer"
+
 #~ msgid "_Properties"
 #~ msgstr "P_ropiedades"
+
 #~ msgid "_Open with another program"
 #~ msgstr "Abrir con _outro programa"
+
 #~ msgid "E_xecute"
 #~ msgstr "_Executar"
+
 #~ msgid "_Open with \"%s\""
 #~ msgstr "Abrir _con «%s»"
+
 #~ msgid "_Open"
 #~ msgstr "_Abrir"
+
 #~ msgid "Really delete selected files?"
 #~ msgstr "Borrar os ficheiros seleccionados?"
+
 #~ msgid "Rename File"
 #~ msgstr "Renomear ficheiro"
+
 #~ msgid "Please input new file name:"
 #~ msgstr "Por favor, introduza o novo nome do ficheiro:"
+
 #~ msgid ""
 #~ "The file name you specified already exists.\n"
 #~ "Please input a new one:"
 #~ msgstr ""
 #~ "O nome de ficheiro introducido xa existe.\n"
 #~ "Por favor, introduza outro:"
+
 #~ msgid "Input a name for the new folder:"
 #~ msgstr "Introduza un nomee para o novo cartafol: "
+
 #~ msgid "New File"
 #~ msgstr "Novo ficheiro"
+
 #~ msgid "The new file cannot be created!"
 #~ msgstr "O ficheiro non puido ser creado!"
+
 #~ msgid "Multiple files are selected"
 #~ msgstr "Seleccionaronse múltiples ficheiros"
+
 #~ msgid "Multiple files of different types"
 #~ msgstr "Múltiples ficheiros ou de tipos diferentes"
+
 #~ msgid "Other program..."
 #~ msgstr "Outro programa..."
+
 #~ msgid "Calculating..."
 #~ msgstr "Calculando..."
+
 #~ msgid "Invalid User"
 #~ msgstr "Usuario non válido"
+
 #~ msgid "Invalid Group"
 #~ msgstr "Grupo non válido"
+
 #~ msgid ""
 #~ "Do you want to recursively apply these changes to all files and sub-"
 #~ "folders?"
 #~ msgstr ""
 #~ "¿Quere aplicar os cambios recursivamente a todos os ficheiros e "
 #~ "cartafoles?"
+
 #~ msgid "New Item"
 #~ msgstr "Novo elemento"
+
 #~ msgid "Edit Bookmarks"
 #~ msgstr "Editar marcadores"
+
 #~ msgid "Path"
 #~ msgstr "Ruta"
+
 #~ msgid "Use drag & drop to sort the items"
 #~ msgstr "Usar arrastrar e soltar para ordenar elementos"
+
 #~ msgid "Command not found"
 #~ msgstr "Orde non atopada"
+
 #~ msgid "Destination directory \"%1$s\" is contained in source \"%2$s\""
 #~ msgstr "O directorio de destino «%1$s» está contido na fonte «%2$s»"
+
 #~ msgid "%s Volume"
 #~ msgstr "Volume %s"
+
 #~ msgid "CD-ROM"
 #~ msgstr "CD-ROM"
+
 #~ msgid "CD-R"
 #~ msgstr "CD-R"
+
 #~ msgid "CD-RW"
 #~ msgstr "CD-RW"
+
 #~ msgid "DVD-ROM"
 #~ msgstr "DVD-ROM"
+
 #~ msgid "DVD+R"
 #~ msgstr "DVD+R"
+
 #~ msgid "DVD+RW"
 #~ msgstr "DVD+RW"
+
 #~ msgid "DVD-R"
 #~ msgstr "DVD-R"
+
 #~ msgid "DVD-RW"
 #~ msgstr "DVD-RW"
+
 #~ msgid "DVD-RAM"
 #~ msgstr "DVD-RAM"
+
 #~ msgid "%s/%s Drive"
 #~ msgstr "Unidade %s/%s"
+
 #~ msgid "%s Drive"
 #~ msgstr "Unidade %s"
+
 #~ msgid "Floppy Drive"
 #~ msgstr "Unidade de disquete"
+
 #~ msgid "Smart Media Drive"
 #~ msgstr "Unidade de Smart Media"
+
 #~ msgid "SD/MMC Drive"
 #~ msgstr "Unidade de SD/MMC"
+
 #~ msgid "Zip Drive"
 #~ msgstr "Unidade Zip"
+
 #~ msgid "Jaz Drive"
 #~ msgstr "Unidade Jaz"
+
 #~ msgid "Pen Drive"
 #~ msgstr "Memoria USB"
+
 #~ msgid "%s %s Music Player"
 #~ msgstr "Reproductor musical %s %s"
+
 #~ msgid "%s %s Digital Camera"
 #~ msgstr "Cámara dixital %s %s"
+
 #~ msgid "Drive"
 #~ msgstr "Unidade"
+
 #~ msgid "External %s"
 #~ msgstr "Externa %s"
+
 #~ msgid "CD-ROM Disc"
 #~ msgstr "Disco CD-ROM"
+
 #~ msgid "Blank CD-R Disc"
 #~ msgstr "Disco CD-R sen gravar"
+
 #~ msgid "CD-R Disc"
 #~ msgstr "Disco CD-R"
+
 #~ msgid "Blank CD-RW Disc"
 #~ msgstr "CD-RW sen gravar"
+
 #~ msgid "CD-RW Disc"
 #~ msgstr "Disco CD-RW"
+
 #~ msgid "DVD-ROM Disc"
 #~ msgstr "Disco DVD-ROM"
+
 #~ msgid "Blank DVD-RAM Disc"
 #~ msgstr "Disco DVD-RAM sen gravar"
+
 #~ msgid "DVD-RAM Disc"
 #~ msgstr "Disco DVD-RAM"
+
 #~ msgid "Blank DVD-R Disc"
 #~ msgstr "Disco DVD-R sen gravar"
+
 #~ msgid "DVD-R Disc"
 #~ msgstr "Disco DVD-R"
+
 #~ msgid "Blank DVD-RW Disc"
 #~ msgstr "Disco DVD-RW sen gravar"
+
 #~ msgid "DVD-RW Disc"
 #~ msgstr "Disco DVD-RW"
+
 #~ msgid "Blank DVD+R Disc"
 #~ msgstr "Disco DVD+R sen gravar"
+
 #~ msgid "DVD+R Disc"
 #~ msgstr "Disco DVD*R"
+
 #~ msgid "Blank DVD+RW Disc"
 #~ msgstr "Disco DVD+R sen gravar"
+
 #~ msgid "DVD+RW Disc"
 #~ msgstr "Disco DVD+RW"
+
 #~ msgid "Audio Disc"
 #~ msgstr "Disco de son"
+
 #~ msgid "Volume"
 #~ msgstr "Volume"
+
 #~ msgid "Failed to connect to the HAL daemon: %s"
 #~ msgstr "Fallou a conexión ao «daemon» HAL: %s"
+
 #~ msgid "Given device \"%s\" is not a volume or drive"
 #~ msgstr "O dispositivo «%s» non é un volume ou unidade"
+
 #~ msgid "Device \"%s\" not found in file system device table"
 #~ msgstr ""
 #~ "O dispositivo «%s» non se atopa na táboa de dispositivos do sistema de "
 #~ "ficheiros"
+
 #~ msgid "You are not privileged to mount the volume \"%s\""
 #~ msgstr "Vd. non ten permisos para montar o volume «%s»"
+
 #~ msgid "You are not privileged to unmount the volume \"%s\""
 #~ msgstr "Vd. non ten permisos para desmontar o volume «%s»"
+
 #~ msgid "You are not privileged to eject the volume \"%s\""
 #~ msgstr "Vd. non ten permisos para expulsar o volume «%s»"
+
 #~ msgid "Invalid mount option when attempting to mount the volume \"%s\""
 #~ msgstr "Opción de montaxe incorrecta ao tentar montar o volume «%s»"
+
 #~ msgid ""
 #~ "The volume \"%s\" uses the <i>%s</i> file system which is not supported "
 #~ "by your system"
 #~ msgstr ""
 #~ "O volume «%s» utiliza o sistema de ficheiros <i>%s</i> que o seu sistema "
 #~ "non admite"
+
 #~ msgid "An application is preventing the volume \"%s\" from being unmounted"
 #~ msgstr "Un aplicativo está impedindo que o volume «%s» poida ser desmontado"
+
 #~ msgid "The volume \"%s\" is not mounted"
 #~ msgstr "O volume «%s» non está montado"
+
 #~ msgid "Error <i>%s</i>"
 #~ msgstr "Erro <i>%s</i>"
+
 #~ msgid "The volume \"%s\" was probably mounted manually on the command line"
 #~ msgstr ""
 #~ "O volume «%s» probablemente foi montado manualmente mediante liña de "
 #~ "ordenes"
+
 #~ msgid ""
 #~ "Blank discs cannot be mounted, use a CD recording application to record "
 #~ "audio or data on the disc"
 #~ msgstr ""
 #~ "Os discos sen gravar non poden ser montados, empregue un aplicativo de "
 #~ "gravación de CD/DVD para gravar son ou datos "
+
 #~ msgid ""
 #~ "Audio CDs cannot be mounted, use music players to play the audio tracks"
 #~ msgstr ""
 #~ "Os CDs de son non poden ser montados, empregue un reprodutor musical"
+
 #~ msgid "_Icons"
 #~ msgstr "_Iconas"
+
 #~ msgid "_Desktop Settings"
 #~ msgstr "_Configuración de escritorio"
+
 #~ msgid "My Documents"
 #~ msgstr "Meus documentos"
+
 #~ msgid "Open Containing _Folder"
 #~ msgstr "Abrir _cartafol contedor"
+
 #~ msgid "Select a folder"
 #~ msgstr "Selecciona un cartafol"
+
 #~ msgid "Browse..."
 #~ msgstr "Explorar..."
+
 #~ msgid "All Local Disk Partitions"
 #~ msgstr "Todas as particións de discos locais"
+
 #~ msgid "Last Modified"
 #~ msgstr "Última modificación"
-
