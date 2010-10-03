@@ -348,7 +348,6 @@ void fm_desktop_manager_init()
 
     hand_cursor = gdk_cursor_new(GDK_HAND2);
 
-    g_object_unref(act_grp);
     g_object_unref(ui);
 
     pcmanfm_ref();
