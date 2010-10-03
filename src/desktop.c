@@ -92,7 +92,6 @@ static void on_direction_changed( GtkWidget* w, GtkTextDirection prev );
 static void on_realize( GtkWidget* w );
 static gboolean on_focus_in( GtkWidget* w, GdkEventFocus* evt );
 static gboolean on_focus_out( GtkWidget* w, GdkEventFocus* evt );
-static void on_drag_leave(GtkWidget* w, GdkDragContext* drag_ctx, guint time);
 
 static void on_wallpaper_changed(FmConfig* cfg, gpointer user_data);
 static void on_desktop_text_changed(FmConfig* cfg, gpointer user_data);
@@ -107,11 +106,6 @@ static void on_row_changed(GtkTreeModel* mod, GtkTreePath* tp, GtkTreeIter* it, 
 static void on_rows_reordered(GtkTreeModel* mod, GtkTreePath* parent_tp, GtkTreeIter* parent_it, gpointer arg3, FmDesktop* desktop);
 
 static void on_dnd_src_data_get(FmDndSrc* ds, FmDesktop* desktop);
-static gboolean on_dnd_dest_query_info(FmDndDest* dd, int x, int y,
-                                        GdkDragAction* action, FmDesktop* desktop);
-static void on_dnd_dest_files_dropped(FmDndDest* dd, GdkDragAction action,
-                                       int info_type, FmList* files, FmDesktop* desktop);
-
 
 static GdkFilterReturn on_root_event(GdkXEvent *xevent, GdkEvent *event, gpointer data);
 static void on_screen_size_changed(GdkScreen* screen, FmDesktop* desktop);
@@ -130,7 +124,6 @@ static void on_open_folder_in_terminal(GtkAction* act, gpointer user_data);
 
 /* for desktop menu provided by window manager */
 static void forward_event_to_rootwin( GdkScreen *gscreen, GdkEvent *event );
-
 
 G_DEFINE_TYPE(FmDesktop, fm_desktop, GTK_TYPE_WINDOW);
 
@@ -172,46 +165,6 @@ static GtkWidget* desktop_popup = NULL;
 /* insert GtkUIManager XML definitions */
 #include "desktop-ui.c"
 
-
-static void fm_desktop_class_init(FmDesktopClass *klass)
-{
-    GtkObjectClass *gtk_object_class;
-    GtkWidgetClass* wc;
-    typedef gboolean (*DeleteEvtHandler) (GtkWidget*, GdkEvent*);
-    const char* atom_names[] = {"_NET_WORKAREA", "_NET_NUMBER_OF_DESKTOPS", "_NET_CURRENT_DESKTOP", "_XROOTMAP_ID"};
-    Atom atoms[G_N_ELEMENTS(atom_names)] = {0};
-
-    /* g_object_class = G_OBJECT_CLASS(klass);
-       g_object_class->finalize = fm_desktop_finalize; */
-    gtk_object_class = GTK_OBJECT_CLASS(klass);
-    gtk_object_class->destroy = fm_desktop_destroy;
-
-    wc = GTK_WIDGET_CLASS(klass);
-    wc->expose_event = on_expose;
-    wc->size_allocate = on_size_allocate;
-    wc->size_request = on_size_request;
-    wc->button_press_event = on_button_press;
-    wc->button_release_event = on_button_release;
-    wc->motion_notify_event = on_motion_notify;
-    wc->leave_notify_event = on_leave_notify;
-    wc->key_press_event = on_key_press;
-    wc->style_set = on_style_set;
-    wc->direction_changed = on_direction_changed;
-    wc->realize = on_realize;
-    wc->focus_in_event = on_focus_in;
-    wc->focus_out_event = on_focus_out;
-    /* wc->scroll_event = on_scroll; */
-    wc->delete_event = (DeleteEvtHandler)gtk_true;
-    wc->drag_leave = on_drag_leave;
-
-    if(XInternAtoms(GDK_DISPLAY(), atom_names, G_N_ELEMENTS(atom_names), False, atoms))
-    {
-        XA_NET_WORKAREA = atoms[0];
-        XA_NET_NUMBER_OF_DESKTOPS = atoms[1];
-        XA_NET_CURRENT_DESKTOP = atoms[2];
-        XA_XROOTMAP_ID= atoms[3];
-    }
-}
 
 static void desktop_item_free(FmDesktopItem* item)
 {
@@ -307,9 +260,6 @@ static void fm_desktop_init(FmDesktop *self)
     gtk_drag_dest_set_target_list(GTK_WIDGET(self), targets);
 
     self->dnd_dest = fm_dnd_dest_new((GtkWidget*)self);
-    g_signal_connect(self->dnd_dest, "query-info", G_CALLBACK(on_dnd_dest_query_info), self);
-    g_signal_connect(self->dnd_dest, "files_dropped", G_CALLBACK(on_dnd_dest_files_dropped), self);
-
     /* add items */
     if(gtk_tree_model_get_iter_first(GTK_TREE_MODEL(model), &it))
     {
@@ -951,16 +901,6 @@ gboolean on_focus_out( GtkWidget* w, GdkEventFocus* evt )
     return FALSE;
 }
 
-void on_drag_leave(GtkWidget* w, GdkDragContext* drag_ctx, guint time)
-{
-    FmDesktop* desktop = (FmDesktop*)w;
-    if(desktop->drop_hilight)
-    {
-        FmDesktopItem* old_drop = desktop->drop_hilight;
-        desktop->drop_hilight = NULL;
-        redraw_item(desktop, old_drop);
-    }
-}
 
 gboolean on_expose( GtkWidget* w, GdkEventExpose* evt )
 {
@@ -1748,40 +1688,6 @@ void on_dnd_src_data_get(FmDndSrc* ds, FmDesktop* desktop)
     }
 }
 
-gboolean on_dnd_dest_query_info(FmDndDest* dd, int x, int y,
-                                GdkDragAction* action, FmDesktop* desktop)
-{
-    FmDesktopItem* item = hit_test(desktop, x, y);
-    if(item)
-    {
-        *action = GDK_ACTION_COPY;
-        fm_dnd_dest_set_dest_file(dd, item->fi);
-    }
-    else
-    {
-        *action = GDK_ACTION_COPY;
-        /* FIXME: prevent direct access to data member */
-        fm_dnd_dest_set_dest_file(dd, model->dir->dir_fi);
-    }
-
-    if(desktop->drop_hilight != item)
-    {
-        FmDesktopItem* old_drop = desktop->drop_hilight;
-        desktop->drop_hilight = item;
-        if(old_drop)
-            redraw_item(desktop, old_drop);
-        if(item)
-            redraw_item(desktop, item);
-    }
-    return TRUE;
-}
-
-void on_dnd_dest_files_dropped(FmDndDest* dd, GdkDragAction action,
-                               int info_type, FmList* files, FmDesktop* desktop)
-{
-
-}
-
 void on_wallpaper_changed(FmConfig* cfg, gpointer user_data)
 {
     int i;
@@ -2091,4 +1997,209 @@ void forward_event_to_rootwin( GdkScreen *gscreen, GdkEvent *event )
 
     XSendEvent( dpy, xev2.window, False, ButtonPressMask | ButtonReleaseMask,
                 ( XEvent * ) & xev2 );
+}
+
+static inline gboolean is_atom_in_targets(GList* targets, const char* name)
+{
+    GList* l;
+    for(l = targets; l; l=l->next)
+    {
+        GdkAtom atom = (GdkAtom)l->data;
+        if(gdk_atom_intern(name, FALSE))
+            return TRUE;
+    }
+    return FALSE;
+}
+
+static gboolean on_drag_motion ( GtkWidget *dest_widget,
+                    GdkDragContext *drag_context,
+                    gint x,
+                    gint y,
+                    guint time)
+{
+    GdkAtom target;
+    gboolean ret = FALSE;
+    GdkDragAction action = 0;
+    FmDesktop* desktop = FM_DESKTOP(dest_widget);
+    FmDesktopItem* item;
+
+    /* check if we're dragging over an item */
+    item = hit_test(desktop, x, y);
+    /* handle moving desktop items */
+    if(!item)
+    {
+        target = gdk_atom_intern_static_string(dnd_targets[0].target);
+        if(fm_drag_context_has_target(drag_context, target)
+           && (drag_context->actions & GDK_ACTION_MOVE))
+        {
+            /* desktop item is being dragged */
+            fm_dnd_dest_set_dest_file(desktop->dnd_dest, NULL);
+            action = GDK_ACTION_MOVE; /* move desktop items */
+            ret = TRUE;
+        }
+    }
+
+    if(!ret)
+    {
+        target = fm_dnd_dest_find_target(desktop->dnd_dest, drag_context);
+        /* try FmDndDest */
+        if(target != GDK_NONE)
+        {
+            FmFileInfo* dest_file;
+            if(item && item->fi)
+            {
+                /* if(fm_file_info_is_dir(item->fi)) */
+                dest_file = item->fi;
+            }
+            else /* FIXME: prevent direct access to data member */
+                dest_file = model->dir->dir_fi;
+
+            fm_dnd_dest_set_dest_file(desktop->dnd_dest, dest_file);
+            action = fm_dnd_dest_get_default_action(desktop->dnd_dest, drag_context, target);
+            ret = action != 0;
+        }
+        else
+        {
+            ret = FALSE;
+            action = 0;
+        }
+    }
+    gdk_drag_status(drag_context, action, time);
+
+    if(desktop->drop_hilight != item)
+    {
+        FmDesktopItem* old_drop = desktop->drop_hilight;
+        desktop->drop_hilight = item;
+        if(old_drop)
+            redraw_item(desktop, old_drop);
+        if(item)
+            redraw_item(desktop, item);
+    }
+
+    return ret;
+}
+
+static gboolean on_drag_leave ( GtkWidget *dest_widget,
+                    GdkDragContext *drag_context,
+                    guint time)
+{
+    FmDesktop* desktop = FM_DESKTOP(dest_widget);
+
+    fm_dnd_dest_drag_leave(desktop->dnd_dest, drag_context, time);
+
+    if(desktop->drop_hilight)
+    {
+        FmDesktopItem* old_drop = desktop->drop_hilight;
+        desktop->drop_hilight = NULL;
+        redraw_item(desktop, old_drop);
+    }
+}
+
+static gboolean on_drag_drop ( GtkWidget *dest_widget,
+                    GdkDragContext *drag_context,
+                    gint x,
+                    gint y,
+                    guint time)
+{
+    FmDesktop* desktop = FM_DESKTOP(dest_widget);
+    GtkTreeViewDropPosition pos;
+    gboolean ret = FALSE;
+    GdkAtom target;
+    FmDesktopItem* item;
+
+    /* check if we're dragging over an item */
+    item = hit_test(desktop, x, y);
+    /* handle moving desktop items */
+    if(!item)
+    {
+        target = gdk_atom_intern_static_string(dnd_targets[0].target);
+        if(fm_drag_context_has_target(drag_context, target)
+           && (drag_context->actions & GDK_ACTION_MOVE))
+        {
+            /* desktop item is being dragged */
+            gtk_drag_get_data(dest_widget, drag_context, target, time);
+            ret = TRUE;
+        }
+    }
+
+    if(!ret)
+    {
+        target = fm_dnd_dest_find_target(desktop->dnd_dest, drag_context);
+        /* try FmDndDest */
+        ret = fm_dnd_dest_drag_drop(desktop->dnd_dest, drag_context, target, time);
+        if(!ret)
+            gtk_drag_finish(drag_context, FALSE, FALSE, time);
+    }
+    return ret;
+}
+
+static void on_drag_data_received ( GtkWidget *dest_widget,
+                GdkDragContext *drag_context,
+                gint x,
+                gint y,
+                GtkSelectionData *sel_data,
+                guint info,
+                guint time)
+{
+    FmDesktop* desktop = FM_DESKTOP(dest_widget);
+    GtkTreePath* dest_tp = NULL;
+    GtkTreeViewDropPosition pos;
+    gboolean ret = FALSE;
+
+    switch(info)
+    {
+    case FM_DND_DEST_DESKTOP_ITEM:
+        g_debug("desktop items are dropped");
+        gtk_drag_finish(drag_context, ret, FALSE, time);
+        break;
+    default:
+        /* check if files are received. */
+        fm_dnd_dest_drag_data_received(desktop->dnd_dest, drag_context, x, y, sel_data, info, time);
+        break;
+    }
+}
+
+
+static void fm_desktop_class_init(FmDesktopClass *klass)
+{
+    GtkObjectClass *gtk_object_class;
+    GtkWidgetClass* wc;
+    typedef gboolean (*DeleteEvtHandler) (GtkWidget*, GdkEvent*);
+    const char* atom_names[] = {"_NET_WORKAREA", "_NET_NUMBER_OF_DESKTOPS", "_NET_CURRENT_DESKTOP", "_XROOTMAP_ID"};
+    Atom atoms[G_N_ELEMENTS(atom_names)] = {0};
+
+    /* g_object_class = G_OBJECT_CLASS(klass);
+       g_object_class->finalize = fm_desktop_finalize; */
+    gtk_object_class = GTK_OBJECT_CLASS(klass);
+    gtk_object_class->destroy = fm_desktop_destroy;
+
+    wc = GTK_WIDGET_CLASS(klass);
+    wc->expose_event = on_expose;
+    wc->size_allocate = on_size_allocate;
+    wc->size_request = on_size_request;
+    wc->button_press_event = on_button_press;
+    wc->button_release_event = on_button_release;
+    wc->motion_notify_event = on_motion_notify;
+    wc->leave_notify_event = on_leave_notify;
+    wc->key_press_event = on_key_press;
+    wc->style_set = on_style_set;
+    wc->direction_changed = on_direction_changed;
+    wc->realize = on_realize;
+    wc->focus_in_event = on_focus_in;
+    wc->focus_out_event = on_focus_out;
+    /* wc->scroll_event = on_scroll; */
+    wc->delete_event = (DeleteEvtHandler)gtk_true;
+
+    wc->drag_motion = on_drag_motion;
+    wc->drag_drop = on_drag_drop;
+    wc->drag_data_received = on_drag_data_received;
+    wc->drag_leave = on_drag_leave;
+
+    if(XInternAtoms(GDK_DISPLAY(), atom_names, G_N_ELEMENTS(atom_names), False, atoms))
+    {
+        XA_NET_WORKAREA = atoms[0];
+        XA_NET_NUMBER_OF_DESKTOPS = atoms[1];
+        XA_NET_CURRENT_DESKTOP = atoms[2];
+        XA_XROOTMAP_ID= atoms[3];
+    }
 }
