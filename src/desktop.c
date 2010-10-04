@@ -2092,6 +2092,8 @@ static gboolean on_drag_leave ( GtkWidget *dest_widget,
         desktop->drop_hilight = NULL;
         redraw_item(desktop, old_drop);
     }
+
+    return TRUE;
 }
 
 static gboolean on_drag_drop ( GtkWidget *dest_widget,
