@@ -37,6 +37,7 @@ void pcmanfm_unref();
 
 gboolean pcmanfm_open_folder(GAppLaunchContext* ctx, GList* folder_infos, gpointer user_data, GError** err);
 
+char* pcmanfm_get_profile_dir(gboolean create);
 void pcmanfm_save_config();
 
 void pcmanfm_open_folder_in_terminal(GtkWindow* parent, FmPath* dir);

@@ -28,27 +28,28 @@
 
 G_BEGIN_DECLS
 
-#define FM_TYPE_DESKTOP				(fm_desktop_get_type())
-#define FM_DESKTOP(obj)				(G_TYPE_CHECK_INSTANCE_CAST((obj),\
-			FM_TYPE_DESKTOP, FmDesktop))
-#define FM_DESKTOP_CLASS(klass)		(G_TYPE_CHECK_CLASS_CAST((klass),\
-			FM_TYPE_DESKTOP, FmDesktopClass))
-#define FM_IS_DESKTOP(obj)			(G_TYPE_CHECK_INSTANCE_TYPE((obj),\
-			FM_TYPE_DESKTOP))
-#define FM_IS_DESKTOP_CLASS(klass)	(G_TYPE_CHECK_CLASS_TYPE((klass),\
-			FM_TYPE_DESKTOP))
+#define FM_TYPE_DESKTOP             (fm_desktop_get_type())
+#define FM_DESKTOP(obj)             (G_TYPE_CHECK_INSTANCE_CAST((obj),\
+            FM_TYPE_DESKTOP, FmDesktop))
+#define FM_DESKTOP_CLASS(klass)     (G_TYPE_CHECK_CLASS_CAST((klass),\
+            FM_TYPE_DESKTOP, FmDesktopClass))
+#define FM_IS_DESKTOP(obj)          (G_TYPE_CHECK_INSTANCE_TYPE((obj),\
+            FM_TYPE_DESKTOP))
+#define FM_IS_DESKTOP_CLASS(klass)  (G_TYPE_CHECK_CLASS_TYPE((klass),\
+            FM_TYPE_DESKTOP))
 
-typedef struct _FmDesktop			FmDesktop;
-typedef struct _FmDesktopClass		FmDesktopClass;
+typedef struct _FmDesktop           FmDesktop;
+typedef struct _FmDesktopClass      FmDesktopClass;
 typedef struct _FmDesktopItem       FmDesktopItem;
 
 struct _FmDesktop
 {
-	GtkWindow parent;
+    GtkWindow parent;
     GdkGC* gc;
     PangoLayout* pl;
     GtkCellRendererPixbuf* icon_render;
     GList* items;
+    GList* fixed_items;
     guint xpad;
     guint ypad;
     guint spacing;
@@ -79,14 +80,14 @@ struct _FmDesktop
 
 struct _FmDesktopClass
 {
-	GtkWindowClass parent_class;
+    GtkWindowClass parent_class;
 };
 
 FmFileInfoList* fm_desktop_get_selected_files(FmDesktop* desktop);
 FmPathList* fm_desktop_get_selected_paths(FmDesktop* desktop);
 
-GType		fm_desktop_get_type		(void);
-GtkWidget*	fm_desktop_new			(void);
+GType       fm_desktop_get_type     (void);
+GtkWidget*  fm_desktop_new          (void);
 
 void fm_desktop_manager_init();
 void fm_desktop_manager_finalize();

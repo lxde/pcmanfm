@@ -617,3 +617,11 @@ _retry:
     }
     fm_path_unref(dest);
 }
+
+char* pcmanfm_get_profile_dir(gboolean create)
+{
+    char* dir = g_build_filename(g_get_user_config_dir(), "pcmanfm", profile ? profile : "default", NULL);
+    if(create)
+        g_mkdir_with_parents(dir, 0700);
+    return dir;
+}
