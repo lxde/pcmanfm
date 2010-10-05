@@ -141,33 +141,51 @@ void fm_app_config_load_from_key_file(FmAppConfig* cfg, GKeyFile* kf)
     fm_key_file_get_int(kf, "ui", "sort_by", &cfg->sort_by);
 }
 
-void fm_app_config_load_from_file(FmAppConfig* cfg, const char* name)
+void fm_app_config_load_from_profile(FmAppConfig* cfg, const char* name)
 {
     char **dirs, **dir;
-    char *path;
+    char *path, *rel_path;
     GKeyFile* kf = g_key_file_new();
 
-    if(G_LIKELY(!name))
-        name = "pcmanfm/pcmanfm.conf";
-    else
+    /* For backward compatibility, try to load old config file and
+     * then migrate to new location */
+    path = g_strconcat(g_get_user_config_dir(), "/pcmanfm/", name ? name : "pcmanfm", ".conf", NULL);
+    if(G_UNLIKELY(g_key_file_load_from_file(kf, path, 0, NULL)))
     {
-        if(G_UNLIKELY(g_path_is_absolute(name)))
-        {
-            if(g_key_file_load_from_file(kf, name, 0, NULL))
-                fm_app_config_load_from_key_file(cfg, kf);
-            goto _out;
-        }
-    }
+        char* new_dir;
+        /* old config file is found, migrate to new profile format */
+        fm_app_config_load_from_key_file(cfg, kf);
 
+        /* create the profile dir */
+        new_dir = g_build_filename(g_get_user_config_dir(), "pcmanfm", name, NULL);
+        if(g_mkdir_with_parents(new_dir, 0700) == 0)
+        {
+            /* move the old config file to new location */
+            char* new_path = g_build_filename(new_dir, "pcmanfm.conf", NULL);
+            rename(path, new_path);
+            g_free(new_path);
+        }
+        g_free(new_dir);
+        g_free(path);
+        goto _out;
+    }
+    g_free(path);
+
+    if(!name || !*name) /* if profile name is not provided, use 'default' */
+        name = "default";
+
+    /* load system-wide settings */
     dirs = g_get_system_config_dirs();
     for(dir=dirs;*dir;++dir)
     {
-        path = g_build_filename(*dir, name, NULL);
+        path = g_build_filename(*dir, "pcmanfm", name, "pcmanfm.conf", NULL);
         if(g_key_file_load_from_file(kf, path, 0, NULL))
             fm_app_config_load_from_key_file(cfg, kf);
         g_free(path);
     }
-    path = g_build_filename(g_get_user_config_dir(), name, NULL);
+
+    /* override with user-specific configuration */
+    path = g_build_filename(g_get_user_config_dir(), "pcmanfm", name, "pcmanfm.conf", NULL);
     if(g_key_file_load_from_file(kf, path, 0, NULL))
         fm_app_config_load_from_key_file(cfg, kf);
     g_free(path);
@@ -176,56 +194,55 @@ _out:
     g_key_file_free(kf);
 }
 
-void fm_app_config_save(FmAppConfig* cfg, const char* name)
+void fm_app_config_save_profile(FmAppConfig* cfg, const char* name)
 {
     char* path = NULL;;
     char* dir_path;
-    FILE* f;
-    if(!name)
-        name = path = g_build_filename(g_get_user_config_dir(), "pcmanfm/pcmanfm.conf", NULL);
-    else if(!g_path_is_absolute(name))
-        name = path = g_build_filename(g_get_user_config_dir(), name, NULL);
 
-    dir_path = g_path_get_dirname(name);
+    if(!name || !*name)
+        name = "default";
+
+    dir_path = g_build_filename(g_get_user_config_dir(), "pcmanfm", name, NULL);
     if(g_mkdir_with_parents(dir_path, 0700) != -1)
     {
-        f = fopen(name, "w");
-        if(f)
-        {
-            fputs("[config]\n", f);
-            fprintf(f, "bm_open_method=%d\n", cfg->bm_open_method);
-            if(cfg->su_cmd)
-                fprintf(f, "su_cmd=%s\n", cfg->su_cmd);
+        GString* buf = g_string_sized_new(1024);
 
-            fputs("\n[volume]\n", f);
-            fprintf(f, "mount_on_startup=%d\n", cfg->mount_on_startup);
-            fprintf(f, "mount_removable=%d\n", cfg->mount_removable);
-            fprintf(f, "autorun=%d\n", cfg->autorun);
+        g_string_append(buf, "[config]\n");
+        g_string_append_printf(buf, "bm_open_method=%d\n", cfg->bm_open_method);
+        if(cfg->su_cmd && *cfg->su_cmd)
+            g_string_append_printf(buf, "su_cmd=%s\n", cfg->su_cmd);
 
-            fputs("\n[desktop]\n", f);
-            fprintf(f, "wallpaper_mode=%d\n", cfg->wallpaper_mode);
-            fprintf(f, "wallpaper=%s\n", cfg->wallpaper ? cfg->wallpaper : "");
-            fprintf(f, "desktop_bg=#%02x%02x%02x\n", cfg->desktop_bg.red/257, cfg->desktop_bg.green/257, cfg->desktop_bg.blue/257);
-            fprintf(f, "desktop_fg=#%02x%02x%02x\n", cfg->desktop_fg.red/257, cfg->desktop_fg.green/257, cfg->desktop_fg.blue/257);
-            fprintf(f, "desktop_shadow=#%02x%02x%02x\n", cfg->desktop_shadow.red/257, cfg->desktop_shadow.green/257, cfg->desktop_shadow.blue/257);
-            if(cfg->desktop_font)
-                fprintf(f, "desktop_font=%s\n", cfg->desktop_font);
-            fprintf(f, "show_wm_menu=%d\n", cfg->show_wm_menu);
+        g_string_append(buf, "\n[volume]\n");
+        g_string_append_printf(buf, "mount_on_startup=%d\n", cfg->mount_on_startup);
+        g_string_append_printf(buf, "mount_removable=%d\n", cfg->mount_removable);
+        g_string_append_printf(buf, "autorun=%d\n", cfg->autorun);
 
-            fputs("\n[ui]\n", f);
-            fprintf(f, "always_show_tabs=%d\n", cfg->always_show_tabs);
-            fprintf(f, "hide_close_btn=%d\n", cfg->hide_close_btn);
-            fprintf(f, "win_width=%d\n", cfg->win_width);
-            fprintf(f, "win_height=%d\n", cfg->win_height);
-            fprintf(f, "splitter_pos=%d\n", cfg->splitter_pos);
-            fprintf(f, "view_mode=%d\n", cfg->view_mode);
-            fprintf(f, "show_hidden=%d\n", cfg->show_hidden);
-            fprintf(f, "sort_type=%d\n", cfg->sort_type);
-            fprintf(f, "sort_by=%d\n", cfg->sort_by);
-            fclose(f);
-        }
+        g_string_append(buf, "\n[desktop]\n");
+        g_string_append_printf(buf, "wallpaper_mode=%d\n", cfg->wallpaper_mode);
+        g_string_append_printf(buf, "wallpaper=%s\n", cfg->wallpaper ? cfg->wallpaper : "");
+        g_string_append_printf(buf, "desktop_bg=#%02x%02x%02x\n", cfg->desktop_bg.red/257, cfg->desktop_bg.green/257, cfg->desktop_bg.blue/257);
+        g_string_append_printf(buf, "desktop_fg=#%02x%02x%02x\n", cfg->desktop_fg.red/257, cfg->desktop_fg.green/257, cfg->desktop_fg.blue/257);
+        g_string_append_printf(buf, "desktop_shadow=#%02x%02x%02x\n", cfg->desktop_shadow.red/257, cfg->desktop_shadow.green/257, cfg->desktop_shadow.blue/257);
+        if(cfg->desktop_font && *cfg->desktop_font)
+            g_string_append_printf(buf, "desktop_font=%s\n", cfg->desktop_font);
+        g_string_append_printf(buf, "show_wm_menu=%d\n", cfg->show_wm_menu);
+
+        g_string_append(buf, "\n[ui]\n");
+        g_string_append_printf(buf, "always_show_tabs=%d\n", cfg->always_show_tabs);
+        g_string_append_printf(buf, "hide_close_btn=%d\n", cfg->hide_close_btn);
+        g_string_append_printf(buf, "win_width=%d\n", cfg->win_width);
+        g_string_append_printf(buf, "win_height=%d\n", cfg->win_height);
+        g_string_append_printf(buf, "splitter_pos=%d\n", cfg->splitter_pos);
+        g_string_append_printf(buf, "view_mode=%d\n", cfg->view_mode);
+        g_string_append_printf(buf, "show_hidden=%d\n", cfg->show_hidden);
+        g_string_append_printf(buf, "sort_type=%d\n", cfg->sort_type);
+        g_string_append_printf(buf, "sort_by=%d\n", cfg->sort_by);
+
+        path = g_build_filename(dir_path, "pcmanfm.conf", NULL);
+        g_file_set_contents(path, buf->str, buf->len, NULL);
+        g_string_free(buf, TRUE);
+        g_free(path);
     }
     g_free(dir_path);
-    g_free(path);
 }
 

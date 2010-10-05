@@ -30,15 +30,15 @@ G_BEGIN_DECLS
 
 #define app_config   ((FmAppConfig*)fm_config)
 
-#define FM_APP_CONFIG_TYPE				(fm_app_config_get_type())
-#define FM_APP_CONFIG(obj)				(G_TYPE_CHECK_INSTANCE_CAST((obj),\
-			FM_APP_CONFIG_TYPE, FmAppConfig))
-#define FM_APP_CONFIG_CLASS(klass)		(G_TYPE_CHECK_CLASS_CAST((klass),\
-			FM_APP_CONFIG_TYPE, FmAppConfigClass))
-#define IS_FM_APP_CONFIG(obj)			(G_TYPE_CHECK_INSTANCE_TYPE((obj),\
-			FM_APP_CONFIG_TYPE))
-#define IS_FM_APP_CONFIG_CLASS(klass)	(G_TYPE_CHECK_CLASS_TYPE((klass),\
-			FM_APP_CONFIG_TYPE))
+#define FM_APP_CONFIG_TYPE              (fm_app_config_get_type())
+#define FM_APP_CONFIG(obj)              (G_TYPE_CHECK_INSTANCE_CAST((obj),\
+            FM_APP_CONFIG_TYPE, FmAppConfig))
+#define FM_APP_CONFIG_CLASS(klass)      (G_TYPE_CHECK_CLASS_CAST((klass),\
+            FM_APP_CONFIG_TYPE, FmAppConfigClass))
+#define IS_FM_APP_CONFIG(obj)           (G_TYPE_CHECK_INSTANCE_TYPE((obj),\
+            FM_APP_CONFIG_TYPE))
+#define IS_FM_APP_CONFIG_CLASS(klass)   (G_TYPE_CHECK_CLASS_TYPE((klass),\
+            FM_APP_CONFIG_TYPE))
 
 typedef enum
 {
@@ -49,12 +49,12 @@ typedef enum
     FM_WP_TILE
 }FmWallpaperMode;
 
-typedef struct _FmAppConfig			FmAppConfig;
-typedef struct _FmAppConfigClass		FmAppConfigClass;
+typedef struct _FmAppConfig         FmAppConfig;
+typedef struct _FmAppConfigClass        FmAppConfigClass;
 
 struct _FmAppConfig
 {
-	FmConfig parent;
+    FmConfig parent;
     /* config */
     guint bm_open_method;
 
@@ -94,17 +94,17 @@ struct _FmAppConfig
 
 struct _FmAppConfigClass
 {
-	FmConfigClass parent_class;
+    FmConfigClass parent_class;
 };
 
-GType		fm_app_config_get_type		(void);
-FmConfig*	fm_app_config_new			();
+GType       fm_app_config_get_type      (void);
+FmConfig*   fm_app_config_new           ();
 
-void fm_app_config_load_from_file(FmAppConfig* cfg, const char* name);
+void fm_app_config_load_from_profile(FmAppConfig* cfg, const char* name);
 
 void fm_app_config_load_from_key_file(FmAppConfig* cfg, GKeyFile* kf);
 
-void fm_app_config_save(FmAppConfig* cfg, const char* name);
+void fm_app_config_save_profile(FmAppConfig* cfg, const char* name);
 
 
 G_END_DECLS

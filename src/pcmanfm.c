@@ -50,7 +50,6 @@ gboolean daemon_mode = FALSE;
 static char** files_to_open = NULL;
 static int n_files_to_open = 0;
 static char* profile = NULL;
-static char* config_name = NULL;
 static gboolean no_desktop = FALSE;
 static gboolean show_desktop = FALSE;
 static gboolean desktop_off = FALSE;
@@ -258,10 +257,9 @@ int main(int argc, char** argv)
     }
 
     config = fm_app_config_new(); /* this automatically load libfm config file. */
+
     /* load pcmanfm-specific config file */
-    if(profile)
-        config_name = g_strconcat("pcmanfm/", profile, ".conf", NULL);
-    fm_app_config_load_from_file(FM_APP_CONFIG(config), config_name);
+    fm_app_config_load_from_profile(FM_APP_CONFIG(config), profile);
 
     fm_gtk_init(config);
 
@@ -273,7 +271,7 @@ int main(int argc, char** argv)
         if(desktop_running)
             fm_desktop_manager_finalize();
         fm_config_save(config, NULL); /* save libfm config */
-        fm_app_config_save((FmAppConfig*)config, config_name); /* save pcmanfm config */
+        fm_app_config_save_profile((FmAppConfig*)config, profile); /* save pcmanfm config */
         fm_volume_manager_finalize();
     }
 
@@ -385,7 +383,7 @@ gboolean pcmanfm_run()
             if(wallpaper_changed)
             {
                 fm_config_emit_changed(FM_CONFIG(app_config), "wallpaper");
-                fm_app_config_save(app_config, config_name);
+                fm_app_config_save_profile(app_config, profile);
             }
 
             if(need_to_exit)
@@ -488,7 +486,7 @@ gboolean pcmanfm_open_folder(GAppLaunchContext* ctx, GList* folder_infos, gpoint
 void pcmanfm_save_config()
 {
     fm_config_save(fm_config, NULL);
-    fm_app_config_save(app_config, config_name);
+    fm_app_config_save_profile(app_config, profile);
 }
 
 void pcmanfm_open_folder_in_terminal(GtkWindow* parent, FmPath* dir)
