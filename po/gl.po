@@ -2,12 +2,12 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm-0,5.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-04 02:25+0800\n"
+"POT-Creation-Date: 2010-10-06 06:59+0000\n"
 "PO-Revision-Date: 2010-09-06 12:39+0100\n"
 "Last-Translator: Indalecio Freiría Santos <ifreiria@gmail.com>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
@@ -112,8 +112,7 @@ msgstr "Amosar iconas de volumes no escritorio"
 
 #: ../data/ui/desktop-pref.glade.h:19
 msgid "Show menus provided by window managers when desktop is clicked"
-msgstr ""
-"Amosar sempre os menús do xestor de xanelas cando se preme no escritorio"
+msgstr "Amosar sempre os menús do xestor de xanelas cando se preme no escritorio"
 
 #: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:37
 msgid "Stretch to fill the entire screen"
@@ -193,8 +192,7 @@ msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
 "%s = the command line you want to execute with terminal or su."
 msgstr ""
-"Exemplos: \"xterm -e %s\" para o terminal ou \"gksu %s\" para cambiar de "
-"usuario.\n"
+"Exemplos: \"xterm -e %s\" para o terminal ou \"gksu %s\" para cambiar de usuario.\n"
 "%s = a liña de ordes que quere executar con terminal ou superusario."
 
 #: ../data/ui/pref.glade.h:18
@@ -223,8 +221,7 @@ msgstr "Montar automaticamente os soportes extraíbeis cando se insertan"
 
 #: ../data/ui/pref.glade.h:24
 msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
-msgstr ""
-"Mover os ficheiros eliminados a \"trash bin\" no canto de borralos do disco"
+msgstr "Mover os ficheiros eliminados a \"trash bin\" no canto de borralos do disco"
 
 #: ../data/ui/pref.glade.h:25
 msgid "Only show thumbnails for local files"
@@ -252,8 +249,7 @@ msgstr "Preferencias"
 
 #: ../data/ui/pref.glade.h:31
 msgid "Show available options for removable media when they are inserted"
-msgstr ""
-"Amosar as opcións dispoñíbeis para un soporte extraíbel cando é insertado"
+msgstr "Amosar as opcións dispoñíbeis para un soporte extraíbel cando é insertado"
 
 #: ../data/ui/pref.glade.h:32
 msgid "Show thumbnails of files"
@@ -555,85 +551,81 @@ msgstr ""
 msgid "Add to Bookmarks"
 msgstr "Engadir a marcadores"
 
-#. { "new-tab", 't', 0, G_OPTION_ARG_NONE, &new_tab, N_("Open folders in new tabs of the last used window instead of creating new windows"), NULL },
-#: ../src/pcmanfm.c:71
+#. { "new-tab", 't', 0, G_OPTION_ARG_NONE, &new_tab, N_("Open folders in new
+#. tabs of the last used window instead of creating new windows"), NULL },
+#: ../src/pcmanfm.c:70
 msgid "Name of configuration profile"
 msgstr "Nome da configuración do perfil"
 
-#: ../src/pcmanfm.c:72
+#: ../src/pcmanfm.c:71
 msgid "Launch desktop manager"
 msgstr "Executar o xestor de escritorio"
 
-#: ../src/pcmanfm.c:73
+#: ../src/pcmanfm.c:72
 msgid "Turn off desktop manager if it's running"
 msgstr "Apague o xestor do escritorio se se está executando"
 
-#: ../src/pcmanfm.c:74
+#: ../src/pcmanfm.c:73
 msgid "Run PCManFM as a daemon"
 msgstr "Executar PCManFM como un «daemon»"
 
-#: ../src/pcmanfm.c:75
+#: ../src/pcmanfm.c:74
 msgid "Open desktop preference dialog"
 msgstr "Abrir o diálogo de preferencias do escritorio"
 
-#: ../src/pcmanfm.c:76
+#: ../src/pcmanfm.c:75
 msgid "Set desktop wallpaper"
 msgstr "Configurar o fondo de escritorio"
 
-#: ../src/pcmanfm.c:76
+#: ../src/pcmanfm.c:75
 msgid "<image file>"
 msgstr "<ficheiro de imaxe>"
 
-#: ../src/pcmanfm.c:77
+#: ../src/pcmanfm.c:76
 msgid "Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"
-msgstr ""
-"Axuste o modo de fondo de escritorio. <mode>=(color|stretch|fit|center|tile)"
+msgstr "Axuste o modo de fondo de escritorio. <mode>=(color|stretch|fit|center|tile)"
 
-#: ../src/pcmanfm.c:77
+#: ../src/pcmanfm.c:76
 msgid "<mode>"
 msgstr "<modo>"
 
-#: ../src/pcmanfm.c:78
-msgid ""
-"Open preference dialog. 'n' is number of the page you want to show (1, 2, "
-"3...)."
-msgstr ""
-"Abrir as preferencias de diálogo. «n» é o número de páxina que desexa amosar "
-"(1, 2, 3 ...)."
+#: ../src/pcmanfm.c:77
+msgid "Open preference dialog. 'n' is number of the page you want to show (1, 2, 3...)."
+msgstr "Abrir as preferencias de diálogo. «n» é o número de páxina que desexa amosar (1, 2, 3 ...)."
 
-#. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
-#: ../src/pcmanfm.c:80
+#. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files
+#. utility"), NULL },
+#: ../src/pcmanfm.c:79
 msgid "No function. Just to be compatible with nautilus"
 msgstr "Sen función. Só para ter compatibilidade con Nautilus"
 
-#: ../src/pcmanfm.c:81
+#: ../src/pcmanfm.c:80
 msgid "[FILE1, FILE2,...]"
 msgstr "[FICHEIRO1, FICHEIRO2,...]"
 
-#: ../src/pcmanfm.c:501
+#: ../src/pcmanfm.c:499
 msgid "Terminal emulator is not set."
 msgstr "No se configurou o emulador de terminal."
 
-#: ../src/pcmanfm.c:544
+#: ../src/pcmanfm.c:542
 msgid "Create New..."
 msgstr "Crear novo..."
 
-#: ../src/pcmanfm.c:544
+#: ../src/pcmanfm.c:542
 msgid "Enter a name for the newly created file:"
 msgstr "Introduza un nome para o novo ficheiro:"
 
-#: ../src/pcmanfm.c:544
+#: ../src/pcmanfm.c:542
 msgid "New"
 msgstr "Novo"
 
 #: ../data/pcmanfm.desktop.in.h:1
 msgid "Browse the file system and manage the files"
-msgstr ""
+msgstr "Navegar polo sistema de ficheiros e xestionar os ficheiros"
 
 #: ../data/pcmanfm.desktop.in.h:2
-#, fuzzy
 msgid "File Manager"
-msgstr "Abrir no xestor de ficheiros"
+msgstr "Xestor de ficheiros"
 
 #~ msgid ""
 #~ "The icon was taken from \"nuoveXT 2\" icon theme\n"
@@ -666,8 +658,7 @@ msgstr "Abrir no xestor de ficheiros"
 #~ "  * ExoIconView: os-cillation e.K, Anders Carlsson, e Benedikt Meurer\n"
 #~ "  * O renderizado de texto e iconas emprega código de Jonathan Blandford\n"
 #~ "  * As iconas de escritorio empregan código de Brian Tarricone\n"
-#~ "  * A xestión de volumes emprega código dos seguintes proxectos e "
-#~ "autores:\n"
+#~ "  * A xestión de volumes emprega código dos seguintes proxectos e autores:\n"
 #~ "      * gnome-vfs: David Zeuthen\n"
 #~ "      * thunar-vfs y libexo: Benedikt Meurer\n"
 #~ "      * gnome-mount: David Zeuthen"
@@ -681,12 +672,8 @@ msgstr "Abrir no xestor de ficheiros"
 #~ msgid "Opened in Terminal"
 #~ msgstr "Abrir nun terminal"
 
-#~ msgid ""
-#~ "Please choose an application from following lists or enter the command "
-#~ "line by hand:"
-#~ msgstr ""
-#~ "Por favor, seleccione un aplicativo da lista ou introduza a liña de ordes "
-#~ "a man:"
+#~ msgid "Please choose an application from following lists or enter the command line by hand:"
+#~ msgstr "Por favor, seleccione un aplicativo da lista ou introduza a liña de ordes a man:"
 
 #~ msgid "Set selected application to default action"
 #~ msgstr "Configurar o aplicativo seleccionado como acción predeterminada"
@@ -886,8 +873,7 @@ msgstr "Abrir no xestor de ficheiros"
 #~ msgstr "<b>Fondo de pantalla</b>"
 
 #~ msgid "Disable \"Trash Can\" and delete files from disk directly"
-#~ msgstr ""
-#~ "Desactivar «Cesta do lixo» e borrar os ficheiros directamente do disco"
+#~ msgstr "Desactivar «Cesta do lixo» e borrar os ficheiros directamente do disco"
 
 #~ msgid "Display image files with supported format as thumbnails"
 #~ msgstr "Amosar ficheiros de formatos soportados como miniaturas"
@@ -976,17 +962,13 @@ msgstr "Abrir no xestor de ficheiros"
 #~ msgstr "Columna de marcación"
 
 #~ msgid "Model column used to retrieve the text if using Pango markup"
-#~ msgstr ""
-#~ "Columna modelo utilizada para obter o texto se se utiliza a marcación "
-#~ "Pango"
+#~ msgstr "Columna modelo utilizada para obter o texto se se utiliza a marcación Pango"
 
 #~ msgid "The model for the icon view"
 #~ msgstr "O modelo para a vista de iconas"
 
-#~ msgid ""
-#~ "How the text and icon of each item are positioned relative to each other"
-#~ msgstr ""
-#~ "Como se colocan o texto e a icona de cada elemento, un respecto do outro"
+#~ msgid "How the text and icon of each item are positioned relative to each other"
+#~ msgstr "Como se colocan o texto e a icona de cada elemento, un respecto do outro"
 
 #~ msgid "Pixbuf column"
 #~ msgstr "Columna do pixbuf"
@@ -1027,12 +1009,8 @@ msgstr "Abrir no xestor de ficheiros"
 #~ msgid "Single Click Timeout"
 #~ msgstr "Tempo de aguarde para o clic"
 
-#~ msgid ""
-#~ "The amount of time after which the item under the mouse cursor will be "
-#~ "selected automatically in single click mode"
-#~ msgstr ""
-#~ "O tempo despois do que se seleccionará automaticamente o elemento baixo o "
-#~ "punteiro no modo de «Un só clic»"
+#~ msgid "The amount of time after which the item under the mouse cursor will be selected automatically in single click mode"
+#~ msgstr "O tempo despois do que se seleccionará automaticamente o elemento baixo o punteiro no modo de «Un só clic»"
 
 #~ msgid "Spacing"
 #~ msgstr "Espaciado"
@@ -1082,12 +1060,8 @@ msgstr "Abrir no xestor de ficheiros"
 #~ msgid "packages"
 #~ msgstr "paquetes"
 
-#~ msgid ""
-#~ "Open folders in new tabs of the last used window instead of creating new "
-#~ "windows"
-#~ msgstr ""
-#~ "Abrir os cartafoles en lingüetas novas da fiestra utilizada por última "
-#~ "vez no canto de crear novas fiestras"
+#~ msgid "Open folders in new tabs of the last used window instead of creating new windows"
+#~ msgstr "Abrir os cartafoles en lingüetas novas da fiestra utilizada por última vez no canto de crear novas fiestras"
 
 #~ msgid "Find Files with PCManFM"
 #~ msgstr "Buscar ficheiros con PCManFM"
@@ -1098,43 +1072,27 @@ msgstr "Abrir no xestor de ficheiros"
 #~ msgid ""
 #~ "<big><b>%s</b></big>\n"
 #~ "\n"
-#~ "This usually means you don't have an XSETTINGS manager running.  Desktop "
-#~ "environment like GNOME or XFCE automatically execute their XSETTING "
-#~ "managers like gnome-settings-daemon or xfce-mcs-manager.\n"
+#~ "This usually means you don't have an XSETTINGS manager running.  Desktop environment like GNOME or XFCE automatically execute their XSETTING managers like gnome-settings-daemon or xfce-mcs-manager.\n"
 #~ "\n"
 #~ "<b>If you don't use these desktop environments, you have two choices:\n"
 #~ "1. run an XSETTINGS manager, or\n"
 #~ "2. simply specify an icon theme in ~/.gtkrc-2.0.</b>\n"
 #~ "For example to use the Tango icon theme add a line:\n"
-#~ "<i><b>gtk-icon-theme-name=\"Tango\"</b></i> in your ~/.gtkrc-2.0. (create "
-#~ "it if no such file)\n"
+#~ "<i><b>gtk-icon-theme-name=\"Tango\"</b></i> in your ~/.gtkrc-2.0. (create it if no such file)\n"
 #~ "\n"
-#~ "<b>NOTICE: The icon theme you choose should be compatible with GNOME, or "
-#~ "the file icons cannot be displayed correctly.</b>  Due to the differences "
-#~ "in icon naming of GNOME and KDE, KDE themes cannot be used.  Currently "
-#~ "there is no standard for this, but it will be solved by freedesktop.org "
-#~ "in the future."
+#~ "<b>NOTICE: The icon theme you choose should be compatible with GNOME, or the file icons cannot be displayed correctly.</b>  Due to the differences in icon naming of GNOME and KDE, KDE themes cannot be used.  Currently there is no standard for this, but it will be solved by freedesktop.org in the future."
 #~ msgstr ""
 #~ "<big><b>%s</b></big>\n"
 #~ "\n"
-#~ "\tIsto xeralmente significa que Vd. non ten un xestor de XSETTINGS "
-#~ "funcionando. Contornas de escritorio como GNOME ou XFCE executan "
-#~ "automáticamente o seu xestor XSETTING como gnome-settings-daemon ou xfce-"
-#~ "cc-manager.\n"
+#~ "\tIsto xeralmente significa que Vd. non ten un xestor de XSETTINGS funcionando. Contornas de escritorio como GNOME ou XFCE executan automáticamente o seu xestor XSETTING como gnome-settings-daemon ou xfce-cc-manager.\n"
 #~ "\n"
-#~ "<b>Se Vd. non emprega estas contornas de escritorio, Vd. ten dúas "
-#~ "opcións:\n"
+#~ "<b>Se Vd. non emprega estas contornas de escritorio, Vd. ten dúas opcións:\n"
 #~ "1. executar un xestor XSETTINGS, ou\n"
 #~ "2. é abondo con que especifique un tema de iconas en ~/.gtkrc-2,0.</b>\n"
 #~ "Por exemplo, para utilizar o tema de iconas «Tango» engadir unha liña:\n"
-#~ "<i><b>gtk-icon-theme-name=\"Tango\"</b></i> no seu ~/.gtkrc-2.0. (crealo "
-#~ "se non existe)\n"
+#~ "<i><b>gtk-icon-theme-name=\"Tango\"</b></i> no seu ~/.gtkrc-2.0. (crealo se non existe)\n"
 #~ "\n"
-#~ "<b>AVISO: O tema de iconas que elixa debe ser compatible con GNOME, ou as "
-#~ "iconas non se poderan amosar correctamente.</b> Debido as diferenzas nos "
-#~ "nomes das iconas de GNOME e KDE, os temas de KDE non se poden utilizar. "
-#~ "Actualmente non existe un estándar para isto, pero será resolto por "
-#~ "freedesktop.org no futuro."
+#~ "<b>AVISO: O tema de iconas que elixa debe ser compatible con GNOME, ou as iconas non se poderan amosar correctamente.</b> Debido as diferenzas nos nomes das iconas de GNOME e KDE, os temas de KDE non se poden utilizar. Actualmente non existe un estándar para isto, pero será resolto por freedesktop.org no futuro."
 
 #~ msgid "Error"
 #~ msgstr "Erro"
@@ -1499,12 +1457,8 @@ msgstr "Abrir no xestor de ficheiros"
 #~ msgid "Invalid Group"
 #~ msgstr "Grupo non válido"
 
-#~ msgid ""
-#~ "Do you want to recursively apply these changes to all files and sub-"
-#~ "folders?"
-#~ msgstr ""
-#~ "¿Quere aplicar os cambios recursivamente a todos os ficheiros e "
-#~ "cartafoles?"
+#~ msgid "Do you want to recursively apply these changes to all files and sub-folders?"
+#~ msgstr "¿Quere aplicar os cambios recursivamente a todos os ficheiros e cartafoles?"
 
 #~ msgid "New Item"
 #~ msgstr "Novo elemento"
@@ -1651,9 +1605,7 @@ msgstr "Abrir no xestor de ficheiros"
 #~ msgstr "O dispositivo «%s» non é un volume ou unidade"
 
 #~ msgid "Device \"%s\" not found in file system device table"
-#~ msgstr ""
-#~ "O dispositivo «%s» non se atopa na táboa de dispositivos do sistema de "
-#~ "ficheiros"
+#~ msgstr "O dispositivo «%s» non se atopa na táboa de dispositivos do sistema de ficheiros"
 
 #~ msgid "You are not privileged to mount the volume \"%s\""
 #~ msgstr "Vd. non ten permisos para montar o volume «%s»"
@@ -1667,12 +1619,8 @@ msgstr "Abrir no xestor de ficheiros"
 #~ msgid "Invalid mount option when attempting to mount the volume \"%s\""
 #~ msgstr "Opción de montaxe incorrecta ao tentar montar o volume «%s»"
 
-#~ msgid ""
-#~ "The volume \"%s\" uses the <i>%s</i> file system which is not supported "
-#~ "by your system"
-#~ msgstr ""
-#~ "O volume «%s» utiliza o sistema de ficheiros <i>%s</i> que o seu sistema "
-#~ "non admite"
+#~ msgid "The volume \"%s\" uses the <i>%s</i> file system which is not supported by your system"
+#~ msgstr "O volume «%s» utiliza o sistema de ficheiros <i>%s</i> que o seu sistema non admite"
 
 #~ msgid "An application is preventing the volume \"%s\" from being unmounted"
 #~ msgstr "Un aplicativo está impedindo que o volume «%s» poida ser desmontado"
@@ -1684,21 +1632,13 @@ msgstr "Abrir no xestor de ficheiros"
 #~ msgstr "Erro <i>%s</i>"
 
 #~ msgid "The volume \"%s\" was probably mounted manually on the command line"
-#~ msgstr ""
-#~ "O volume «%s» probablemente foi montado manualmente mediante liña de "
-#~ "ordenes"
+#~ msgstr "O volume «%s» probablemente foi montado manualmente mediante liña de ordenes"
 
-#~ msgid ""
-#~ "Blank discs cannot be mounted, use a CD recording application to record "
-#~ "audio or data on the disc"
-#~ msgstr ""
-#~ "Os discos sen gravar non poden ser montados, empregue un aplicativo de "
-#~ "gravación de CD/DVD para gravar son ou datos "
+#~ msgid "Blank discs cannot be mounted, use a CD recording application to record audio or data on the disc"
+#~ msgstr "Os discos sen gravar non poden ser montados, empregue un aplicativo de gravación de CD/DVD para gravar son ou datos "
 
-#~ msgid ""
-#~ "Audio CDs cannot be mounted, use music players to play the audio tracks"
-#~ msgstr ""
-#~ "Os CDs de son non poden ser montados, empregue un reprodutor musical"
+#~ msgid "Audio CDs cannot be mounted, use music players to play the audio tracks"
+#~ msgstr "Os CDs de son non poden ser montados, empregue un reprodutor musical"
 
 #~ msgid "_Icons"
 #~ msgstr "_Iconas"
