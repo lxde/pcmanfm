@@ -180,13 +180,13 @@ static FmJobErrorAction on_query_target_info_error(FmJob* job, GError* err, FmJo
     {
         if(err->code == G_IO_ERROR_NOT_MOUNTED)
         {
-            if(fm_mount_path(win, fm_file_info_job_get_current(job), TRUE))
+            if(fm_mount_path(GTK_WINDOW(win), fm_file_info_job_get_current(FM_FILE_INFO_JOB(job)), TRUE))
                 return FM_JOB_RETRY;
         }
         else if(err->code == G_IO_ERROR_FAILED_HANDLED)
             return FM_JOB_CONTINUE;
     }
-    fm_show_error(win, err->message);
+    fm_show_error(GTK_WINDOW(win), err->message);
     return FM_JOB_CONTINUE;
 }
 
@@ -204,7 +204,7 @@ static void on_file_clicked(FmFolderView* fv, FmFolderViewClickType type, FmFile
             FmPath* real_path = fm_path_new(fm_file_info_get_target(fi));
             /* query the info of target */
             FmJob* job = fm_file_info_job_new(NULL, 0);
-            fm_file_info_job_add(job, real_path);
+            fm_file_info_job_add(FM_FILE_INFO_JOB(job), real_path);
             g_signal_connect(job, "error", G_CALLBACK(on_query_target_info_error), win);
             fm_job_run_sync_with_mainloop(job);
             target_fi = FM_FILE_INFO(fm_list_peek_head(FM_FILE_INFO_JOB(job)->file_infos));
@@ -216,8 +216,8 @@ static void on_file_clicked(FmFolderView* fv, FmFolderViewClickType type, FmFile
                 if(fm_file_info_is_dir(target_fi))
                     fm_main_win_chdir( win, real_path);
                 else
-                    fm_launch_path_simple(win, NULL, real_path, open_folder_func, win);
-                fm_path_unref(target_fi);
+                    fm_launch_path_simple(GTK_WINDOW(win), NULL, real_path, open_folder_func, win);
+                fm_path_unref(FM_PATH(target_fi));
             }
             fm_path_unref(real_path);
         }
@@ -294,18 +294,18 @@ static void update_sort_menu(FmMainWin* win)
 {
     GtkAction* act;
     act = gtk_ui_manager_get_action(win->ui, "/menubar/ViewMenu/Sort/Asc");
-    gtk_radio_action_set_current_value(act, FM_FOLDER_VIEW(win->folder_view)->sort_type);
+    gtk_radio_action_set_current_value(GTK_RADIO_ACTION(act), FM_FOLDER_VIEW(win->folder_view)->sort_type);
     act = gtk_ui_manager_get_action(win->ui, "/menubar/ViewMenu/Sort/ByName");
-    gtk_radio_action_set_current_value(act, FM_FOLDER_VIEW(win->folder_view)->sort_by);
+    gtk_radio_action_set_current_value(GTK_RADIO_ACTION(act), FM_FOLDER_VIEW(win->folder_view)->sort_by);
 }
 
 static void update_view_menu(FmMainWin* win)
 {
     GtkAction* act;
     act = gtk_ui_manager_get_action(win->ui, "/menubar/ViewMenu/ShowHidden");
-    gtk_toggle_action_set_active(act, FM_FOLDER_VIEW(win->folder_view)->show_hidden);
+    gtk_toggle_action_set_active(GTK_TOGGLE_ACTION(act), FM_FOLDER_VIEW(win->folder_view)->show_hidden);
     act = gtk_ui_manager_get_action(win->ui, "/menubar/ViewMenu/IconView");
-    gtk_radio_action_set_current_value(act, FM_FOLDER_VIEW(win->folder_view)->mode);
+    gtk_radio_action_set_current_value(GTK_RADIO_ACTION(act), FM_FOLDER_VIEW(win->folder_view)->mode);
 }
 
 static void on_sort_changed(FmFolderView* fv, FmMainWin* win)
@@ -556,9 +556,9 @@ static void fm_main_win_init(FmMainWin *self)
         {
             gtk_widget_modify_base(self->location, GTK_STATE_NORMAL, &style->bg[GTK_STATE_NORMAL]);
             gtk_widget_modify_fg(self->location, GTK_STATE_NORMAL, &style->fg[GTK_STATE_NORMAL]);
-            gtk_entry_set_icon_from_stock(self->location, GTK_ENTRY_ICON_PRIMARY, GTK_STOCK_DIALOG_WARNING);
+            gtk_entry_set_icon_from_stock(GTK_ENTRY(self->location), GTK_ENTRY_ICON_PRIMARY, GTK_STOCK_DIALOG_WARNING);
         }
-        gtk_entry_set_icon_tooltip_text(self->location, GTK_ENTRY_ICON_PRIMARY, _("You are in super user mode"));
+        gtk_entry_set_icon_tooltip_text(GTK_ENTRY(self->location), GTK_ENTRY_ICON_PRIMARY, _("You are in super user mode"));
     }
 
     toolitem = gtk_tool_item_new();
@@ -633,7 +633,7 @@ void on_about(GtkAction* act, FmMainWin* win)
 
 void on_open_folder_in_terminal(GtkAction* act, FmMainWin* win)
 {
-    FmFileInfoList* files = fm_folder_view_get_selected_files(win->folder_view);
+    FmFileInfoList* files = fm_folder_view_get_selected_files(FM_FOLDER_VIEW(win->folder_view));
     GList* l;
     for(l=fm_list_peek_head_link(files);l;l=l->next)
     {
@@ -648,7 +648,7 @@ void on_open_in_terminal(GtkAction* act, FmMainWin* win)
 {
     const FmNavHistoryItem* item = fm_nav_history_get_cur(win->nav_history);
     if(item && item->path)
-        pcmanfm_open_folder_in_terminal(win, item->path);
+        pcmanfm_open_folder_in_terminal(GTK_WINDOW(win), item->path);
 }
 
 void on_open_as_root(GtkAction* act, FmMainWin* win)
@@ -939,7 +939,7 @@ static gboolean on_tab_label_button_pressed(GtkEventBox* tab_label, GdkEventButt
 {
     if(evt->button == 2) /* middle click */
     {
-        close_tab(view);
+        close_tab(GTK_WIDGET(view));
         return TRUE;
     }
     return FALSE;

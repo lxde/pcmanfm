@@ -50,7 +50,7 @@ static GtkWidget* desktop_pref_dlg = NULL;
 
 static void on_response(GtkDialog* dlg, int res, GtkWidget** pdlg)
 {
-    gtk_widget_destroy(dlg);
+    gtk_widget_destroy(GTK_WIDGET(dlg));
     *pdlg = NULL;
     pcmanfm_save_config();
 }
@@ -114,7 +114,7 @@ static void init_combo(GtkBuilder* builder, const char* name, gsize off, const c
     GtkComboBox* combo = (GtkComboBox*)gtk_builder_get_object(builder, name);
     int* val = (int*)G_STRUCT_MEMBER_P(fm_config, off);
     if(changed_notify)
-        g_object_set_data_full(combo, "changed", g_strdup(changed_notify), g_free);
+        g_object_set_data_full(G_OBJECT(combo), "changed", g_strdup(changed_notify), g_free);
     gtk_combo_box_set_active(combo, *val);
     g_signal_connect(combo, "changed", G_CALLBACK(on_combo_changed), GSIZE_TO_POINTER(off));
 }
@@ -182,7 +182,7 @@ static void init_bool(GtkBuilder* b, const char* name, gsize off, const char* ch
     GtkToggleButton* btn = GTK_TOGGLE_BUTTON(gtk_builder_get_object(b, name));
     gboolean* val = (gboolean*)G_STRUCT_MEMBER_P(fm_config, off);
     if(changed_notify)
-        g_object_set_data_full(btn, "changed", g_strdup(changed_notify), g_free);
+        g_object_set_data_full(G_OBJECT(btn), "changed", g_strdup(changed_notify), g_free);
     gtk_toggle_button_set_active(btn, *val);
     g_signal_connect(btn, "toggled", G_CALLBACK(on_toggled), GSIZE_TO_POINTER(off));
 }
@@ -208,8 +208,8 @@ static void init_color(GtkBuilder* b, const char* name, gsize off, const char* c
     GtkFontButton* btn = GTK_FONT_BUTTON(gtk_builder_get_object(b, name));
     GdkColor* val = (GdkColor*)G_STRUCT_MEMBER_P(fm_config, off);
     if(changed_notify)
-        g_object_set_data_full(btn, "changed", g_strdup(changed_notify), g_free);
-    gtk_color_button_set_color(btn, val);
+        g_object_set_data_full(G_OBJECT(btn), "changed", g_strdup(changed_notify), g_free);
+    gtk_color_button_set_color(GTK_COLOR_BUTTON(btn), val);
     g_signal_connect(btn, "color-set", G_CALLBACK(on_color_set), GSIZE_TO_POINTER(off));
 }
 
@@ -233,7 +233,7 @@ static void init_spin(GtkBuilder* b, const char* name, gsize off, const char* ch
     GtkSpinButton* btn = GTK_SPIN_BUTTON(gtk_builder_get_object(b, name));
     guint* val = (guint*)G_STRUCT_MEMBER_P(fm_config, off);
     if(changed_notify)
-        g_object_set_data_full(btn, "changed", g_strdup(changed_notify), g_free);
+        g_object_set_data_full(G_OBJECT(btn), "changed", g_strdup(changed_notify), g_free);
     gtk_spin_button_set_value(btn, *val);
     g_signal_connect(btn, "value-changed", G_CALLBACK(on_spin_changed), GSIZE_TO_POINTER(off));
 }
@@ -259,9 +259,9 @@ static void init_entry(GtkBuilder* b, const char* name, gsize off, const char* c
     GtkSpinButton* btn = GTK_SPIN_BUTTON(gtk_builder_get_object(b, name));
     gchar** val = (guint*)G_STRUCT_MEMBER_P(fm_config, off);
     if(changed_notify)
-        g_object_set_data_full(btn, "changed", g_strdup(changed_notify), g_free);
+        g_object_set_data_full(G_OBJECT(btn), "changed", g_strdup(changed_notify), g_free);
     if(*val)
-        gtk_entry_set_text(btn, *val);
+        gtk_entry_set_text(GTK_ENTRY(btn), *val);
     g_signal_connect(btn, "changed", G_CALLBACK(on_entry_changed), GSIZE_TO_POINTER(off));
 }
 
@@ -311,13 +311,13 @@ void fm_edit_preference( GtkWindow* parent, int page )
         pcmanfm_ref();
         g_signal_connect(pref_dlg, "destroy", G_CALLBACK(pcmanfm_unref), NULL);
     }
-    gtk_notebook_set_current_page(notebook, page);
-    gtk_window_present(pref_dlg);
+    gtk_notebook_set_current_page(GTK_NOTEBOOK(notebook), page);
+    gtk_window_present(GTK_WINDOW(pref_dlg));
 }
 
 static void on_wallpaper_set(GtkFileChooserButton* btn, gpointer user_data)
 {
-    char* file = gtk_file_chooser_get_filename(btn);
+    char* file = gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(btn));
     g_free(app_config->wallpaper);
     app_config->wallpaper = file;
     fm_config_emit_changed(fm_config, "wallpaper");
@@ -368,12 +368,12 @@ void fm_desktop_preference()
         item = gtk_builder_get_object(builder, "wallpaper");
         g_signal_connect(item, "file-set", G_CALLBACK(on_wallpaper_set), NULL);
         img_preview = gtk_image_new();
-        gtk_misc_set_alignment(img_preview, 0.5, 0.0);
+        gtk_misc_set_alignment(GTK_MISC(img_preview), 0.5, 0.0);
         gtk_widget_set_size_request( img_preview, 128, 128 );
         gtk_file_chooser_set_preview_widget( (GtkFileChooser*)item, img_preview );
         g_signal_connect( item, "update-preview", G_CALLBACK(on_update_img_preview), img_preview );
         if(app_config->wallpaper)
-            gtk_file_chooser_set_filename(item, app_config->wallpaper);
+            gtk_file_chooser_set_filename(GTK_FILE_CHOOSER(item), app_config->wallpaper);
 
         INIT_COMBO(builder, FmAppConfig, wallpaper_mode, "wallpaper");
         INIT_COLOR(builder, FmAppConfig, desktop_bg, "wallpaper");
@@ -385,7 +385,7 @@ void fm_desktop_preference()
 
         item = gtk_builder_get_object(builder, "desktop_font");
         if(app_config->desktop_font)
-            gtk_font_button_set_font_name(item, app_config->desktop_font);
+            gtk_font_button_set_font_name(GTK_FONT_BUTTON(item), app_config->desktop_font);
         g_signal_connect(item, "font-set", G_CALLBACK(on_desktop_font_set), NULL);
 
         g_signal_connect(desktop_pref_dlg, "response", G_CALLBACK(on_response), &desktop_pref_dlg);
@@ -394,6 +394,6 @@ void fm_desktop_preference()
         pcmanfm_ref();
         g_signal_connect(desktop_pref_dlg, "destroy", G_CALLBACK(pcmanfm_unref), NULL);
     }
-    gtk_window_present(desktop_pref_dlg);
+    gtk_window_present(GTK_WINDOW(desktop_pref_dlg));
 }
 
