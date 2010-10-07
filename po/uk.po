@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-03 18:32+0000\n"
+"POT-Creation-Date: 2010-10-07 07:17+0000\n"
 "PO-Revision-Date: 2010-02-04 19:17+0100\n"
 "Last-Translator: Yarema aka Knedlyk <yupadmin@gmail.com>\n"
 "Language-Team: Ukrainian <translation@linux.org.ua>\n"
@@ -378,6 +378,14 @@ msgstr "Відкрити у новому вікні"
 msgid "Open in _Terminal"
 msgstr "Відкрити в _терміналі"
 
+#: ../src/desktop-ui.c:107
+msgid "Stick to Current Position"
+msgstr "Дотримуватися поточної позиції"
+
+#: ../src/desktop-ui.c:112
+msgid "Snap to Grid"
+msgstr "Дотримуватися сітки"
+
 #: ../src/main-win-ui.c:128
 msgid "_File"
 msgstr "_Файл"
@@ -552,69 +560,69 @@ msgstr "Додати до закладок"
 
 #. { "new-tab", 't', 0, G_OPTION_ARG_NONE, &new_tab, N_("Open folders in new
 #. tabs of the last used window instead of creating new windows"), NULL },
-#: ../src/pcmanfm.c:71
+#: ../src/pcmanfm.c:70
 msgid "Name of configuration profile"
 msgstr "Назва профілю конфігурації"
 
-#: ../src/pcmanfm.c:72
+#: ../src/pcmanfm.c:71
 msgid "Launch desktop manager"
 msgstr "Запустити менеджер стільниці"
 
-#: ../src/pcmanfm.c:73
+#: ../src/pcmanfm.c:72
 msgid "Turn off desktop manager if it's running"
 msgstr "Виключити менеджер стільниці, якщо він запущений"
 
-#: ../src/pcmanfm.c:74
+#: ../src/pcmanfm.c:73
 msgid "Run PCManFM as a daemon"
 msgstr "Запустити PCManFM як демон"
 
-#: ../src/pcmanfm.c:75
+#: ../src/pcmanfm.c:74
 msgid "Open desktop preference dialog"
 msgstr "Відкрити діалог налаштування стільниці"
 
-#: ../src/pcmanfm.c:76
+#: ../src/pcmanfm.c:75
 msgid "Set desktop wallpaper"
 msgstr "Налаштувати шпалери стільниці"
 
-#: ../src/pcmanfm.c:76
+#: ../src/pcmanfm.c:75
 msgid "<image file>"
 msgstr "<файл зображення>"
 
-#: ../src/pcmanfm.c:77
+#: ../src/pcmanfm.c:76
 msgid "Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"
 msgstr "Встановити режим для заставки стільниці. <режим>=(колір|розтягнення|заповнення|центрування|плиткою)"
 
-#: ../src/pcmanfm.c:77
+#: ../src/pcmanfm.c:76
 msgid "<mode>"
 msgstr "<режим>"
 
-#: ../src/pcmanfm.c:78
+#: ../src/pcmanfm.c:77
 msgid "Open preference dialog. 'n' is number of the page you want to show (1, 2, 3...)."
 msgstr "Відкрити діалог налаштування. 'n' є номер сторінки, яку Ви бажаєте показати (1, 2, 3...)."
 
 #. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files
 #. utility"), NULL },
-#: ../src/pcmanfm.c:80
+#: ../src/pcmanfm.c:79
 msgid "No function. Just to be compatible with nautilus"
 msgstr "Немає функції. Тільки для сумісності з nautilus."
 
-#: ../src/pcmanfm.c:81
+#: ../src/pcmanfm.c:80
 msgid "[FILE1, FILE2,...]"
 msgstr "[ФАЙЛ1, ФАЙЛ2,...]"
 
-#: ../src/pcmanfm.c:501
+#: ../src/pcmanfm.c:499
 msgid "Terminal emulator is not set."
 msgstr "Емулятор терміналу не встановлено"
 
-#: ../src/pcmanfm.c:544
+#: ../src/pcmanfm.c:542
 msgid "Create New..."
 msgstr "Створити новий..."
 
-#: ../src/pcmanfm.c:544
+#: ../src/pcmanfm.c:542
 msgid "Enter a name for the newly created file:"
 msgstr "Введіть назву новоствореного файлу:"
 
-#: ../src/pcmanfm.c:544
+#: ../src/pcmanfm.c:542
 msgid "New"
 msgstr "Новий"
 
