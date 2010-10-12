@@ -44,7 +44,6 @@
 #include "single-inst.h"
 
 static int signal_pipe[2] = {-1, -1};
-
 gboolean daemon_mode = FALSE;
 
 static char** files_to_open = NULL;
@@ -217,7 +216,6 @@ int main(int argc, char** argv)
 {
     FmConfig* config;
     GError* err = NULL;
-
 #ifdef ENABLE_NLS
     bindtextdomain ( GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR );
     bind_textdomain_codeset ( GETTEXT_PACKAGE, "UTF-8" );
@@ -251,9 +249,11 @@ int main(int argc, char** argv)
         g_io_channel_unref(ch);
 
         /* intercept signals */
-        signal( SIGPIPE, SIG_IGN );
-        /* signal( SIGHUP, gtk_main_quit ); */
+        // signal( SIGPIPE, SIG_IGN );
+        signal( SIGHUP, unix_signal_handler );
         signal( SIGTERM, unix_signal_handler );
+        signal( SIGPOLL, unix_signal_handler );
+        signal( SIGHUP, unix_signal_handler );
     }
 
     config = fm_app_config_new(); /* this automatically load libfm config file. */
@@ -262,7 +262,6 @@ int main(int argc, char** argv)
     fm_app_config_load_from_profile(FM_APP_CONFIG(config), profile);
 
     fm_gtk_init(config);
-
     /* the main part */
     if(pcmanfm_run())
     {
@@ -276,8 +275,8 @@ int main(int argc, char** argv)
     }
 
     single_inst_finalize();
-
     fm_gtk_finalize();
+
     g_object_unref(config);
     return 0;
 }

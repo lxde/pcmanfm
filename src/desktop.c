@@ -2424,6 +2424,10 @@ static gboolean on_drag_drop ( GtkWidget *dest_widget,
             ret = TRUE;
             gtk_drag_finish(drag_context, TRUE, FALSE, time);
 
+            /* FIXME: save position of desktop icons everytime is
+             * extremely inefficient, but currently inevitable. */
+            save_item_pos(desktop);
+
             queue_layout_items(desktop);
         }
     }
