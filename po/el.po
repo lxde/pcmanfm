@@ -1,9 +1,9 @@
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-04 02:25+0800\n"
+"POT-Creation-Date: 2010-10-13 07:04+0000\n"
 "PO-Revision-Date: 2010-04-08 00:29+0200\n"
 "Last-Translator: <edhunter@sidux.com>\n"
 "Language-Team: Greek\n"
@@ -107,9 +107,7 @@ msgstr "Εμφάνιση εικονιδίων των τόμων στην επι�
 
 #: ../data/ui/desktop-pref.glade.h:19
 msgid "Show menus provided by window managers when desktop is clicked"
-msgstr ""
-"Εμφάνιση του μενού του διαχειριστή παραθύρων όταν κάνετε κλικ στην επιφάνεια "
-"εργασίας"
+msgstr "Εμφάνιση του μενού του διαχειριστή παραθύρων όταν κάνετε κλικ στην επιφάνεια εργασίας"
 
 #: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:37
 msgid "Stretch to fill the entire screen"
@@ -181,8 +179,7 @@ msgstr "Λεπτομερής προβολή"
 
 #: ../data/ui/pref.glade.h:14
 msgid "Do not generate thumbnails for files exceeding this size:"
-msgstr ""
-"Μη δημιουργούνται μικρογραφίες για αρχεία που υπερβαίνουν αυτό το μέγεθος:"
+msgstr "Μη δημιουργούνται μικρογραφίες για αρχεία που υπερβαίνουν αυτό το μέγεθος:"
 
 #: ../data/ui/pref.glade.h:16
 #, no-c-format
@@ -190,8 +187,7 @@ msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
 "%s = the command line you want to execute with terminal or su."
 msgstr ""
-"Παραδείγματα: \"xterm -e %s\" για τερματικό ή \"gksu %s\" για την εναλλαγή "
-"χρήστη.\n"
+"Παραδείγματα: \"xterm -e %s\" για τερματικό ή \"gksu %s\" για την εναλλαγή χρήστη.\n"
 "%s = η εντολή που θέλετε να εκτελέσετε με τερματικό ή su."
 
 #: ../data/ui/pref.glade.h:18
@@ -220,8 +216,7 @@ msgstr "Αυτόματη προσάρτηση αφαιρούμενων δίσκ�
 
 #: ../data/ui/pref.glade.h:24
 msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
-msgstr ""
-"Μετακίνηση των αρχείων στα \"Απορρίμματα\" αντί για διαγραφή από το δίσκο"
+msgstr "Μετακίνηση των αρχείων στα \"Απορρίμματα\" αντί για διαγραφή από το δίσκο"
 
 #: ../data/ui/pref.glade.h:25
 msgid "Only show thumbnails for local files"
@@ -249,8 +244,7 @@ msgstr "Προτιμήσεις"
 
 #: ../data/ui/pref.glade.h:31
 msgid "Show available options for removable media when they are inserted"
-msgstr ""
-"Εμφάνιση διαθέσιμων επιλογών αφαιρούμενων δίσκων κατά την εισαγωγή τους"
+msgstr "Εμφάνιση διαθέσιμων επιλογών αφαιρούμενων δίσκων κατά την εισαγωγή τους"
 
 #: ../data/ui/pref.glade.h:32
 msgid "Show thumbnails of files"
@@ -344,6 +338,11 @@ msgstr "_Αντιστροφή επιλογής"
 msgid "_Sort Files"
 msgstr "_Ταξινόμηση αρχείων κατά"
 
+#. for popup menu
+#: ../src/desktop-ui.c:55 ../src/main-win-ui.c:171
+msgid "_New"
+msgstr "_Νέο"
+
 #: ../src/desktop-ui.c:56 ../src/main-win-ui.c:172
 msgid "Folder"
 msgstr "Φακέλου"
@@ -379,6 +378,14 @@ msgstr "Άνοιγμα σε νέο παράθυρο"
 #: ../src/desktop-ui.c:91 ../src/main-win-ui.c:221
 msgid "Open in _Terminal"
 msgstr "Άνοιγμα στο τερματικό"
+
+#: ../src/desktop-ui.c:107
+msgid "Stick to Current Position"
+msgstr "Κόλλημα στην τρέχουσα θέση"
+
+#: ../src/desktop-ui.c:112
+msgid "Snap to Grid"
+msgstr "Στοίχιση στο πλέγμα"
 
 #: ../src/main-win-ui.c:128
 msgid "_File"
@@ -552,93 +559,84 @@ msgstr ""
 msgid "Add to Bookmarks"
 msgstr "Προσθήκη στους σελιδοδείκτες"
 
-#. { "new-tab", 't', 0, G_OPTION_ARG_NONE, &new_tab, N_("Open folders in new tabs of the last used window instead of creating new windows"), NULL },
-#: ../src/pcmanfm.c:71
+#. { "new-tab", 't', 0, G_OPTION_ARG_NONE, &new_tab, N_("Open folders in new
+#. tabs of the last used window instead of creating new windows"), NULL },
+#: ../src/pcmanfm.c:69
 msgid "Name of configuration profile"
 msgstr "Όνομα του προφίλ ρυθμίσεων"
 
-#: ../src/pcmanfm.c:72
+#: ../src/pcmanfm.c:70
 msgid "Launch desktop manager"
 msgstr "Εκτέλεση της εφαρμογής επιφάνειας εργασίας"
 
-#: ../src/pcmanfm.c:73
+#: ../src/pcmanfm.c:71
 msgid "Turn off desktop manager if it's running"
 msgstr "Τερματισμός της εφαρμογής επιφάνειας εργασίας εάν εκτελείται"
 
-#: ../src/pcmanfm.c:74
+#: ../src/pcmanfm.c:72
 msgid "Run PCManFM as a daemon"
 msgstr "Εκτέλεση του PCManFM ως δαίμονα"
 
-#: ../src/pcmanfm.c:75
+#: ../src/pcmanfm.c:73
 msgid "Open desktop preference dialog"
 msgstr "Ρυθμίσεις επιφάνειας εργασίας"
 
-#: ../src/pcmanfm.c:76
+#: ../src/pcmanfm.c:74
 msgid "Set desktop wallpaper"
 msgstr "Ορισμός ταπετσαρίας επιφάνειας εργασίας"
 
-#: ../src/pcmanfm.c:76
+#: ../src/pcmanfm.c:74
 msgid "<image file>"
 msgstr "<αρχείο εικόνας>"
 
-#: ../src/pcmanfm.c:77
+#: ../src/pcmanfm.c:75
 msgid "Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"
-msgstr ""
-"Ρύθμιση του τρόπου εμφάνισης της ταπετσαρίας στην επιφάνεια εργασίας. "
-"<τρόπος> = (Χρώμα | τέντωμα | ταίριασμα | κέντρο | παράθεση)"
+msgstr "Ρύθμιση του τρόπου εμφάνισης της ταπετσαρίας στην επιφάνεια εργασίας. <τρόπος> = (Χρώμα | τέντωμα | ταίριασμα | κέντρο | παράθεση)"
 
-#: ../src/pcmanfm.c:77
+#: ../src/pcmanfm.c:75
 msgid "<mode>"
 msgstr "<τρόπος>"
 
-#: ../src/pcmanfm.c:78
-msgid ""
-"Open preference dialog. 'n' is number of the page you want to show (1, 2, "
-"3...)."
-msgstr ""
-"Άνοιγμα παραθύρου προτιμήσεων. 'n' είναι ο αριθμός της σελίδας που θέλετε να "
-"δείτε (1, 2, 3 ...)."
+#: ../src/pcmanfm.c:76
+msgid "Open preference dialog. 'n' is number of the page you want to show (1, 2, 3...)."
+msgstr "Άνοιγμα παραθύρου προτιμήσεων. 'n' είναι ο αριθμός της σελίδας που θέλετε να δείτε (1, 2, 3 ...)."
 
-#. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
-#: ../src/pcmanfm.c:80
+#. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files
+#. utility"), NULL },
+#: ../src/pcmanfm.c:78
 msgid "No function. Just to be compatible with nautilus"
 msgstr "Χωρίς λειτουργία. Για λόγους συμβατότητας με το nautilus"
 
-#: ../src/pcmanfm.c:81
+#: ../src/pcmanfm.c:79
 msgid "[FILE1, FILE2,...]"
 msgstr "[ΑΡΧΕΙΟ1, ΑΡΧΕΙΟ2,...]"
 
-#: ../src/pcmanfm.c:501
+#: ../src/pcmanfm.c:498
 msgid "Terminal emulator is not set."
 msgstr "Δεν έχει οριστεί κάποιο τερματικό"
 
-#: ../src/pcmanfm.c:544
+#: ../src/pcmanfm.c:541
 msgid "Create New..."
 msgstr "Δημιουργία νέου..."
 
-#: ../src/pcmanfm.c:544
+#: ../src/pcmanfm.c:541
 msgid "Enter a name for the newly created file:"
 msgstr "Εισάγετε ένα όνομα για το νέο αρχείο:"
 
-#: ../src/pcmanfm.c:544
+#: ../src/pcmanfm.c:541
 msgid "New"
 msgstr "Νέο αρχείο"
 
 #: ../data/pcmanfm.desktop.in.h:1
 msgid "Browse the file system and manage the files"
-msgstr ""
+msgstr "Περιήγηση στο σύστημα αρχείων και διαχείριση αρχείων"
 
 #: ../data/pcmanfm.desktop.in.h:2
-#, fuzzy
 msgid "File Manager"
-msgstr "Άνοιγμα στο διαχειριστή αρχείων"
+msgstr "Διαχειριστής αρχείων"
 
 #~ msgid "Open Find Files utility"
 #~ msgstr "Άνοιγμα εργαλείου εύρεσης αρχείων"
 
-#~ msgid ""
-#~ "Open folders in new tabs of the last used window instead of creating new "
-#~ "windows"
-#~ msgstr ""
-#~ "Άνοιγμα φακέλων σε νέες καρτέλες στο πιο πρόσφατο παράθυρο αντί "
-#~ "δημιουργίας νέων παραθύρων"
+#~ msgid "Open folders in new tabs of the last used window instead of creating new windows"
+#~ msgstr "Άνοιγμα φακέλων σε νέες καρτέλες στο πιο πρόσφατο παράθυρο αντί δημιουργίας νέων παραθύρων"
