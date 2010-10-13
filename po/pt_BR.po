@@ -7,12 +7,12 @@
 # Og Maciel <ogmaciel@gnome.org>, 2008-2009.
 # Henrique P. Machado <zehrique@gmail.com>, 2009.
 # Sérgio B. Cipolla <secipolla@gmail.com>, 2010.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm 0.3.0-beta3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-07 07:17+0000\n"
+"POT-Creation-Date: 2010-10-13 07:04+0000\n"
 "PO-Revision-Date: 2010-07-09 16:48-0500\n"
 "Last-Translator: Og Maciel <ogmaciel@gnome.org>\n"
 "Language-Team: Brazilian Portuguese <ldp-br@bazar2.conectiva.com.br>\n"
@@ -348,7 +348,12 @@ msgstr "_Inverter seleção"
 
 #: ../src/desktop-ui.c:54 ../src/main-win-ui.c:146
 msgid "_Sort Files"
-msgstr "_Ordenar arquivos"
+msgstr "Or_denar arquivos"
+
+#. for popup menu
+#: ../src/desktop-ui.c:55 ../src/main-win-ui.c:171
+msgid "_New"
+msgstr "_Novo(a)"
 
 #: ../src/desktop-ui.c:56 ../src/main-win-ui.c:172
 msgid "Folder"
@@ -520,7 +525,7 @@ msgstr "Abrir a pasta atual como _root"
 
 #: ../src/main-win-ui.c:179
 msgid "Show _Hidden"
-msgstr "Mostrar arquivos _ocultos"
+msgstr "_Mostrar arquivos ocultos"
 
 #: ../src/main-win-ui.c:184
 msgid "_Icon View"
@@ -568,69 +573,69 @@ msgstr "Adicionar aos marcadores"
 
 #. { "new-tab", 't', 0, G_OPTION_ARG_NONE, &new_tab, N_("Open folders in new
 #. tabs of the last used window instead of creating new windows"), NULL },
-#: ../src/pcmanfm.c:70
+#: ../src/pcmanfm.c:69
 msgid "Name of configuration profile"
 msgstr "Nome do perfil de configurações"
 
-#: ../src/pcmanfm.c:71
+#: ../src/pcmanfm.c:70
 msgid "Launch desktop manager"
 msgstr "Lançar o gerenciador da área de trabalho"
 
-#: ../src/pcmanfm.c:72
+#: ../src/pcmanfm.c:71
 msgid "Turn off desktop manager if it's running"
 msgstr "Desligar o gerenciador da área de trabalho se ele já estiver em execução"
 
-#: ../src/pcmanfm.c:73
+#: ../src/pcmanfm.c:72
 msgid "Run PCManFM as a daemon"
 msgstr "Executar o PCManFM como um serviço"
 
-#: ../src/pcmanfm.c:74
+#: ../src/pcmanfm.c:73
 msgid "Open desktop preference dialog"
 msgstr "Abrir o diálogo de preferências da área de trabalho"
 
-#: ../src/pcmanfm.c:75
+#: ../src/pcmanfm.c:74
 msgid "Set desktop wallpaper"
 msgstr "Definir o papel de parede da área de trabalho"
 
-#: ../src/pcmanfm.c:75
+#: ../src/pcmanfm.c:74
 msgid "<image file>"
 msgstr "<arquivo de imagem>"
 
-#: ../src/pcmanfm.c:76
+#: ../src/pcmanfm.c:75
 msgid "Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"
 msgstr "Definir o modo de papel de parede da área de trabalho. <modo>=(color|stretch|fit|center|tile)"
 
-#: ../src/pcmanfm.c:76
+#: ../src/pcmanfm.c:75
 msgid "<mode>"
 msgstr "<modo>"
 
-#: ../src/pcmanfm.c:77
+#: ../src/pcmanfm.c:76
 msgid "Open preference dialog. 'n' is number of the page you want to show (1, 2, 3...)."
 msgstr "Abrir o diálogo de preferências. \"n\" é o número da página que você deseja mostrar (1, 2, 3...)."
 
 #. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files
 #. utility"), NULL },
-#: ../src/pcmanfm.c:79
+#: ../src/pcmanfm.c:78
 msgid "No function. Just to be compatible with nautilus"
 msgstr "Nenhuma função. Somente para ser compatível com o nautilus"
 
-#: ../src/pcmanfm.c:80
+#: ../src/pcmanfm.c:79
 msgid "[FILE1, FILE2,...]"
 msgstr "[ARQUIVO1, ARQUIVO2,...]"
 
-#: ../src/pcmanfm.c:499
+#: ../src/pcmanfm.c:498
 msgid "Terminal emulator is not set."
 msgstr "O emulador de terminal não está configurado."
 
-#: ../src/pcmanfm.c:542
+#: ../src/pcmanfm.c:541
 msgid "Create New..."
 msgstr "Criar novo..."
 
-#: ../src/pcmanfm.c:542
+#: ../src/pcmanfm.c:541
 msgid "Enter a name for the newly created file:"
 msgstr "Digite um nome para o novo arquivo:"
 
-#: ../src/pcmanfm.c:542
+#: ../src/pcmanfm.c:541
 msgid "New"
 msgstr "Novo"
 
