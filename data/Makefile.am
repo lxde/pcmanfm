@@ -16,5 +16,6 @@ defconf_DATA = \
 
 EXTRA_DIST= \
 	$(desktop_DATA) \
+	$(defconf_DATA) \
 	$(NULL)
 
