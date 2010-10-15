@@ -7,14 +7,14 @@
 # Og Maciel <ogmaciel@gnome.org>, 2008-2009.
 # Henrique P. Machado <zehrique@gmail.com>, 2009.
 # Sérgio B. Cipolla <secipolla@gmail.com>, 2010.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm 0.3.0-beta3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-14 06:59+0000\n"
-"PO-Revision-Date: 2010-07-09 16:48-0500\n"
-"Last-Translator: Og Maciel <ogmaciel@gnome.org>\n"
+"POT-Creation-Date: 2010-10-15 07:01+0000\n"
+"PO-Revision-Date: 2010-10-15 12:23-0300\n"
+"Last-Translator: Sérgio Cipolla <secipolla@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <ldp-br@bazar2.conectiva.com.br>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -44,7 +44,6 @@ msgstr ""
 "Flávio Costa <formicbr@gmail.com>\n"
 "Og Maciel <ogmaciel@gnome.org>\n"
 "Henrique P. Machado <zehrique@gmail.com>\n"
-"\r\n"
 "Sérgio B. Cipolla <secipolla@gmail.com>"
 
 #: ../data/ui/desktop-pref.glade.h:1
@@ -71,7 +70,8 @@ msgstr "Aparência"
 msgid "Background color:"
 msgstr "Cor do plano de fundo:"
 
-#: ../data/ui/desktop-pref.glade.h:7 ../data/ui/pref.glade.h:10
+#: ../data/ui/desktop-pref.glade.h:7
+#: ../data/ui/pref.glade.h:10
 msgid "Center on the screen"
 msgstr "Centralizar na tela"
 
@@ -87,7 +87,8 @@ msgstr "Cor da sombra:"
 msgid "Desktop Icons"
 msgstr "Ícones na área de trabalho"
 
-#: ../data/ui/desktop-pref.glade.h:11 ../src/desktop-ui.c:58
+#: ../data/ui/desktop-pref.glade.h:11
+#: ../src/desktop-ui.c:58
 msgid "Desktop Preferences"
 msgstr "Preferências da área de trabalho"
 
@@ -123,21 +124,24 @@ msgstr "Mostrar ícones de volumes na área de trabalho"
 msgid "Show menus provided by window managers when desktop is clicked"
 msgstr "Mostrar menus dos gerenciadores de janelas quando a área de trabalho for clicada"
 
-#: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:37
+#: ../data/ui/desktop-pref.glade.h:20
+#: ../data/ui/pref.glade.h:37
 msgid "Stretch to fill the entire screen"
 msgstr "Esticar para ocupar a tela toda"
 
-#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:38
+#: ../data/ui/desktop-pref.glade.h:21
+#: ../data/ui/pref.glade.h:38
 msgid "Stretch to fit the screen"
 msgstr "Esticar para ocupar a tela"
 
-#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:42
+#: ../data/ui/desktop-pref.glade.h:22
+#: ../data/ui/pref.glade.h:42
 msgid "Tile the image to fill the entire screen"
 msgstr "Ladrilhar a imagem para ocupar a tela toda"
 
 #: ../data/ui/desktop-pref.glade.h:23
 msgid "Wallpaper mode:"
-msgstr "Modo de papel de parede:"
+msgstr "Modo do papel de parede:"
 
 #: ../data/ui/desktop-pref.glade.h:24
 msgid "Wallpaper:"
@@ -206,15 +210,15 @@ msgstr ""
 
 #: ../data/ui/pref.glade.h:18
 msgid "Hide 'Close tab' buttons"
-msgstr "Esconde botões \"Fechar aba\""
+msgstr "Esconder botões \"Fechar aba\""
 
 #: ../data/ui/pref.glade.h:19
 msgid "Hide folder content border"
-msgstr "Esconde conteúdo da borda da pasta"
+msgstr "Esconder borda do conteúdo da pasta"
 
 #: ../data/ui/pref.glade.h:20
 msgid "Hide side pane buttons"
-msgstr "Esconde botões do painel lateral"
+msgstr "Esconder botões do painel lateral"
 
 #: ../data/ui/pref.glade.h:21
 msgid "Icon View"
@@ -242,15 +246,15 @@ msgstr "Abrir arquivos com um clique simples"
 
 #: ../data/ui/pref.glade.h:27
 msgid "Opened in Current Tab"
-msgstr "Aberto na aba atual"
+msgstr "Abrir na aba atual"
 
 #: ../data/ui/pref.glade.h:28
 msgid "Opened in New Tab"
-msgstr "Aberto em uma nova aba"
+msgstr "Abrir em uma nova aba"
 
 #: ../data/ui/pref.glade.h:29
 msgid "Opened in New Window"
-msgstr "Aberto em uma nova janela"
+msgstr "Abrir em uma nova janela"
 
 #: ../data/ui/pref.glade.h:30
 msgid "Preferences"
@@ -348,48 +352,59 @@ msgstr "Abrir no gerenciador de arquivos"
 msgid "_Invert Selection"
 msgstr "_Inverter seleção"
 
-#: ../src/desktop-ui.c:54 ../src/main-win-ui.c:146
+#: ../src/desktop-ui.c:54
+#: ../src/main-win-ui.c:146
 msgid "_Sort Files"
 msgstr "Or_denar arquivos"
 
 #. for popup menu
-#: ../src/desktop-ui.c:55 ../src/main-win-ui.c:171
+#: ../src/desktop-ui.c:55
+#: ../src/main-win-ui.c:171
 msgid "_New"
 msgstr "_Novo(a)"
 
-#: ../src/desktop-ui.c:56 ../src/main-win-ui.c:172
+#: ../src/desktop-ui.c:56
+#: ../src/main-win-ui.c:172
 msgid "Folder"
 msgstr "Pasta"
 
-#: ../src/desktop-ui.c:57 ../src/main-win-ui.c:173
+#: ../src/desktop-ui.c:57
+#: ../src/main-win-ui.c:173
 msgid "Blank File"
 msgstr "Arquivo em branco"
 
-#: ../src/desktop-ui.c:69 ../src/main-win-ui.c:198
+#: ../src/desktop-ui.c:69
+#: ../src/main-win-ui.c:198
 msgid "By _Name"
 msgstr "Por _nome"
 
-#: ../src/desktop-ui.c:70 ../src/main-win-ui.c:199
+#: ../src/desktop-ui.c:70
+#: ../src/main-win-ui.c:199
 msgid "By _Modification Time"
 msgstr "Por _data de modificação"
 
-#: ../src/desktop-ui.c:71 ../src/main-win-ui.c:200
+#: ../src/desktop-ui.c:71
+#: ../src/main-win-ui.c:200
 msgid "By _Size"
 msgstr "Por _tamanho"
 
-#: ../src/desktop-ui.c:72 ../src/main-win-ui.c:201
+#: ../src/desktop-ui.c:72
+#: ../src/main-win-ui.c:201
 msgid "By File _Type"
 msgstr "Por tipo de _arquivo"
 
-#: ../src/desktop-ui.c:88 ../src/main-win-ui.c:218
+#: ../src/desktop-ui.c:88
+#: ../src/main-win-ui.c:218
 msgid "Open in New Tab"
 msgstr "Abrir em nova aba"
 
-#: ../src/desktop-ui.c:89 ../src/main-win-ui.c:219
+#: ../src/desktop-ui.c:89
+#: ../src/main-win-ui.c:219
 msgid "Open in New Window"
 msgstr "Abrir em nova janela"
 
-#: ../src/desktop-ui.c:91 ../src/main-win-ui.c:221
+#: ../src/desktop-ui.c:91
+#: ../src/main-win-ui.c:221
 msgid "Open in _Terminal"
 msgstr "Abrir no _terminal"
 
@@ -547,7 +562,7 @@ msgstr "Visão em _lista detalhada"
 
 #: ../src/main-win.c:561
 msgid "You are in super user mode"
-msgstr "Você está usando o modo de super usuário"
+msgstr "Você está no modo de superusuário"
 
 #: ../src/main-win.c:660
 msgid "Switch user command is not set."
@@ -573,8 +588,7 @@ msgstr ""
 msgid "Add to Bookmarks"
 msgstr "Adicionar aos marcadores"
 
-#. { "new-tab", 't', 0, G_OPTION_ARG_NONE, &new_tab, N_("Open folders in new
-#. tabs of the last used window instead of creating new windows"), NULL },
+#. { "new-tab", 't', 0, G_OPTION_ARG_NONE, &new_tab, N_("Open folders in new tabs of the last used window instead of creating new windows"), NULL },
 #: ../src/pcmanfm.c:69
 msgid "Name of configuration profile"
 msgstr "Nome do perfil de configurações"
@@ -615,8 +629,7 @@ msgstr "<modo>"
 msgid "Open preference dialog. 'n' is number of the page you want to show (1, 2, 3...)."
 msgstr "Abrir o diálogo de preferências. \"n\" é o número da página que você deseja mostrar (1, 2, 3...)."
 
-#. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files
-#. utility"), NULL },
+#. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
 #: ../src/pcmanfm.c:78
 msgid "No function. Just to be compatible with nautilus"
 msgstr "Nenhuma função. Somente para ser compatível com o nautilus"
@@ -647,4 +660,5 @@ msgstr "Navegue pelo sistema de arquivos e gerencie arquivos e pastas"
 
 #: ../data/pcmanfm.desktop.in.h:2
 msgid "File Manager"
-msgstr "Gerenciador de Arquivos"
+msgstr "Gerenciador de arquivos"
+
