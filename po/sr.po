@@ -2,13 +2,13 @@
 # Copyright (C) 2010 the LXDE team
 # This file is distributed under the same license as the PCManFM package.
 # Jay A. Fleming <tito.nehru.naser@gmail.com>, 2010.
-#
-#
+# 
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PCManFM 0.9.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-04 02:25+0800\n"
+"POT-Creation-Date: 2010-10-17 07:04+0000\n"
 "PO-Revision-Date: 2010-05-26 09:41+0100\n"
 "Last-Translator: Jay Alexander Fleming <tito.nehru.naser@gmail.com>\n"
 "Language-Team: \n"
@@ -16,8 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: \n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
-"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Poedit-Language: Serbian\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
@@ -194,8 +193,7 @@ msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
 "%s = the command line you want to execute with terminal or su."
 msgstr ""
-"Примери: \"xterm -e %s\" за терминал или \"gksu %s\" за пребацивање између "
-"корисника.\n"
+"Примери: \"xterm -e %s\" за терминал или \"gksu %s\" за пребацивање између корисника.\n"
 "%s = наредба која желите да се изврши у терминалу или са \"su\"."
 
 #: ../data/ui/pref.glade.h:18
@@ -346,6 +344,11 @@ msgstr "_Обрни избор"
 msgid "_Sort Files"
 msgstr "По_ређај датотеке"
 
+#. for popup menu
+#: ../src/desktop-ui.c:55 ../src/main-win-ui.c:171
+msgid "_New"
+msgstr "Ново"
+
 #: ../src/desktop-ui.c:56 ../src/main-win-ui.c:172
 msgid "Folder"
 msgstr "Директоријум"
@@ -381,6 +384,16 @@ msgstr "Отвори у новом прозору"
 #: ../src/desktop-ui.c:91 ../src/main-win-ui.c:221
 msgid "Open in _Terminal"
 msgstr "Отвори у _терминалу"
+
+#: ../src/desktop-ui.c:107
+#, fuzzy
+msgid "Stick to Current Position"
+msgstr "Прилепи за тренутну позицију"
+
+#: ../src/desktop-ui.c:112
+#, fuzzy
+msgid "Snap to Grid"
+msgstr "Поравнај као у координатној мрежи"
 
 #: ../src/main-win-ui.c:128
 msgid "_File"
@@ -554,80 +567,78 @@ msgstr ""
 msgid "Add to Bookmarks"
 msgstr "Додај у обележиваче"
 
-#. { "new-tab", 't', 0, G_OPTION_ARG_NONE, &new_tab, N_("Open folders in new tabs of the last used window instead of creating new windows"), NULL },
-#: ../src/pcmanfm.c:71
+#. { "new-tab", 't', 0, G_OPTION_ARG_NONE, &new_tab, N_("Open folders in new
+#. tabs of the last used window instead of creating new windows"), NULL },
+#: ../src/pcmanfm.c:69
 msgid "Name of configuration profile"
 msgstr "Назив профила за подешавања"
 
-#: ../src/pcmanfm.c:72
+#: ../src/pcmanfm.c:70
 msgid "Launch desktop manager"
 msgstr "Покрени управљач окружења"
 
-#: ../src/pcmanfm.c:73
+#: ../src/pcmanfm.c:71
 msgid "Turn off desktop manager if it's running"
 msgstr "Заустави управљач окружења уколико је покренут"
 
-#: ../src/pcmanfm.c:74
+#: ../src/pcmanfm.c:72
 msgid "Run PCManFM as a daemon"
 msgstr "Покрени PCManFM програм у позадини"
 
-#: ../src/pcmanfm.c:75
+#: ../src/pcmanfm.c:73
 msgid "Open desktop preference dialog"
 msgstr "Отвори подешавања радне површи"
 
-#: ../src/pcmanfm.c:76
+#: ../src/pcmanfm.c:74
 msgid "Set desktop wallpaper"
 msgstr "Постави позадинску слику"
 
-#: ../src/pcmanfm.c:76
+#: ../src/pcmanfm.c:74
 msgid "<image file>"
 msgstr "<датотека са сликом>"
 
-#: ../src/pcmanfm.c:77
+#: ../src/pcmanfm.c:75
 msgid "Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"
-msgstr ""
-"Режим приказа позадинске слике. <режим>=(color|stretch|fit|center|tile)"
+msgstr "Режим приказа позадинске слике. <режим>=(color|stretch|fit|center|tile)"
 
-#: ../src/pcmanfm.c:77
+#: ../src/pcmanfm.c:75
 msgid "<mode>"
 msgstr "<режим>"
 
-#: ../src/pcmanfm.c:78
-msgid ""
-"Open preference dialog. 'n' is number of the page you want to show (1, 2, "
-"3...)."
+#: ../src/pcmanfm.c:76
+msgid "Open preference dialog. 'n' is number of the page you want to show (1, 2, 3...)."
 msgstr "Отвори подешавања. 'n' је број сртане коју желите видети (1, 2, 3...)."
 
-#. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
-#: ../src/pcmanfm.c:80
+#. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files
+#. utility"), NULL },
+#: ../src/pcmanfm.c:78
 msgid "No function. Just to be compatible with nautilus"
 msgstr "Функција не постоји. Само због усаглашености са програмом „Nautilus“"
 
-#: ../src/pcmanfm.c:81
+#: ../src/pcmanfm.c:79
 msgid "[FILE1, FILE2,...]"
 msgstr "[FILE1, FILE2,...]"
 
-#: ../src/pcmanfm.c:501
+#: ../src/pcmanfm.c:498
 msgid "Terminal emulator is not set."
 msgstr "Није постављен емулатор терминала."
 
-#: ../src/pcmanfm.c:544
+#: ../src/pcmanfm.c:541
 msgid "Create New..."
 msgstr "Направи нов..."
 
-#: ../src/pcmanfm.c:544
+#: ../src/pcmanfm.c:541
 msgid "Enter a name for the newly created file:"
 msgstr "Унесите име за нову датотеку:"
 
-#: ../src/pcmanfm.c:544
+#: ../src/pcmanfm.c:541
 msgid "New"
 msgstr "Нов"
 
 #: ../data/pcmanfm.desktop.in.h:1
 msgid "Browse the file system and manage the files"
-msgstr ""
+msgstr "Управљајте системом датотека"
 
 #: ../data/pcmanfm.desktop.in.h:2
-#, fuzzy
 msgid "File Manager"
-msgstr "Отвори управљачем датотека"
+msgstr "Управник датотека"
