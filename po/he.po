@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-03 18:32+0000\n"
+"POT-Creation-Date: 2010-10-19 07:02+0000\n"
 "PO-Revision-Date: 2010-02-27 15:56+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -342,6 +342,11 @@ msgstr "הי_פוך הבחירה"
 msgid "_Sort Files"
 msgstr "_מיון קבצים"
 
+#. for popup menu
+#: ../src/desktop-ui.c:55 ../src/main-win-ui.c:171
+msgid "_New"
+msgstr "_חדש"
+
 #: ../src/desktop-ui.c:56 ../src/main-win-ui.c:172
 msgid "Folder"
 msgstr "תיקייה"
@@ -377,6 +382,14 @@ msgstr "פתיחה בחלון חדש"
 #: ../src/desktop-ui.c:91 ../src/main-win-ui.c:221
 msgid "Open in _Terminal"
 msgstr "פתיחה ב_מסוף"
+
+#: ../src/desktop-ui.c:107
+msgid "Stick to Current Position"
+msgstr "הצמדה למיקום הנוכחי"
+
+#: ../src/desktop-ui.c:112
+msgid "Snap to Grid"
+msgstr "הצמדה לרשת"
 
 #: ../src/main-win-ui.c:128
 msgid "_File"
@@ -552,69 +565,69 @@ msgstr "הוספה לסימניות"
 
 #. { "new-tab", 't', 0, G_OPTION_ARG_NONE, &new_tab, N_("Open folders in new
 #. tabs of the last used window instead of creating new windows"), NULL },
-#: ../src/pcmanfm.c:71
+#: ../src/pcmanfm.c:69
 msgid "Name of configuration profile"
 msgstr "שם פרופיל התצורה"
 
-#: ../src/pcmanfm.c:72
+#: ../src/pcmanfm.c:70
 msgid "Launch desktop manager"
 msgstr "טעינת מנהל שולחן העבודה"
 
-#: ../src/pcmanfm.c:73
+#: ../src/pcmanfm.c:71
 msgid "Turn off desktop manager if it's running"
 msgstr "כיבוי מנהל שולחן העבודה במידה שהוא פעיל"
 
-#: ../src/pcmanfm.c:74
+#: ../src/pcmanfm.c:72
 msgid "Run PCManFM as a daemon"
 msgstr "הרצת PCManFM כסוכן ברקע"
 
-#: ../src/pcmanfm.c:75
+#: ../src/pcmanfm.c:73
 msgid "Open desktop preference dialog"
 msgstr "פתיחת דו־שיח העדפות שולחן העבודה"
 
-#: ../src/pcmanfm.c:76
+#: ../src/pcmanfm.c:74
 msgid "Set desktop wallpaper"
 msgstr "הגדרת רקע שולחן העבודה"
 
-#: ../src/pcmanfm.c:76
+#: ../src/pcmanfm.c:74
 msgid "<image file>"
 msgstr "<קובץ תמונה>"
 
-#: ../src/pcmanfm.c:77
+#: ../src/pcmanfm.c:75
 msgid "Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"
 msgstr "הגדרת מצב תמונת שולחן העבודה. <mode>=(color|stretch|fit|center|tile)"
 
-#: ../src/pcmanfm.c:77
+#: ../src/pcmanfm.c:75
 msgid "<mode>"
 msgstr "<mode>"
 
-#: ../src/pcmanfm.c:78
+#: ../src/pcmanfm.c:76
 msgid "Open preference dialog. 'n' is number of the page you want to show (1, 2, 3...)."
 msgstr "פתיחת תיבת דו־שיח ההעדפות. 'n' יהיה מספר העמודים המבוקש להצגה (1, 2, 3...)."
 
 #. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files
 #. utility"), NULL },
-#: ../src/pcmanfm.c:80
+#: ../src/pcmanfm.c:78
 msgid "No function. Just to be compatible with nautilus"
 msgstr "אין פונקציה. נועד לצורכי תאימות עם nautilus"
 
-#: ../src/pcmanfm.c:81
+#: ../src/pcmanfm.c:79
 msgid "[FILE1, FILE2,...]"
 msgstr "[FILE1, FILE2,...]"
 
-#: ../src/pcmanfm.c:501
+#: ../src/pcmanfm.c:498
 msgid "Terminal emulator is not set."
 msgstr "מדמה המסוף לא הוגדר."
 
-#: ../src/pcmanfm.c:544
+#: ../src/pcmanfm.c:541
 msgid "Create New..."
 msgstr "יצירת חדש..."
 
-#: ../src/pcmanfm.c:544
+#: ../src/pcmanfm.c:541
 msgid "Enter a name for the newly created file:"
 msgstr "יש להזין שם עבור הקובץ החדש שנוצר:"
 
-#: ../src/pcmanfm.c:544
+#: ../src/pcmanfm.c:541
 msgid "New"
 msgstr "חדש"
 
