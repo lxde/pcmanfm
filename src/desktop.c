@@ -1676,6 +1676,10 @@ static void update_background(FmDesktop* desktop)
     GdkWindow* root = gdk_screen_get_root_window(gtk_widget_get_screen(widget));
     GdkWindow *window = gtk_widget_get_window(widget);
 
+    Display* xdisplay;
+    Pixmap xpixmap = 0;
+    Window xroot;
+
     if(app_config->wallpaper_mode == FM_WP_COLOR
        || !app_config->wallpaper
        || !*app_config->wallpaper
@@ -1762,6 +1766,33 @@ static void update_background(FmDesktop* desktop)
     pixmap_id = GDK_DRAWABLE_XID(pixmap);
     XChangeProperty(GDK_WINDOW_XDISPLAY(root), GDK_WINDOW_XID(root),
                     XA_XROOTMAP_ID, XA_PIXMAP, 32, PropModeReplace, (guchar*)&pixmap_id, 1);
+
+    /* set root map here */
+    xdisplay = GDK_WINDOW_XDISPLAY(root);
+    xroot = GDK_WINDOW_XID(root);
+
+    XGrabServer (xdisplay);
+
+    if( pixmap )
+    {
+        xpixmap = GDK_WINDOW_XWINDOW(pixmap);
+
+        XChangeProperty( xdisplay,
+                    xroot,
+                    gdk_x11_get_xatom_by_name("_XROOTPMAP_ID"), XA_PIXMAP,
+                    32, PropModeReplace,
+                    (guchar *) &xpixmap, 1);
+
+        XSetWindowBackgroundPixmap( xdisplay, xroot, xpixmap );
+    }
+    else
+    {
+        /* FIXME: Anyone knows how to handle this correctly??? */
+    }
+    XClearWindow( xdisplay, xroot );
+
+    XUngrabServer( xdisplay );
+    XFlush( xdisplay );
 
     g_object_unref(pixmap);
     if(pix)
