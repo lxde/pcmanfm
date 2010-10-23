@@ -2058,6 +2058,12 @@ static void on_fix_pos(GtkToggleAction* act, gpointer user_data)
     g_list_free(items);
 }
 
+/* round() is only available in C99. Don't use it now for portability. */
+inline double _round(double x)
+{
+    return (x > 0.0) ? floor(x + 0.5) : ceil(x - 0.5);
+}
+
 static void on_snap_to_grid(GtkAction* act, gpointer user_data)
 {
     FmDesktop* desktop = FM_DESKTOP(user_data);
@@ -2081,8 +2087,8 @@ static void on_snap_to_grid(GtkAction* act, gpointer user_data)
         item = (FmDesktopItem*)l->data;
         if(!item->fixed_pos)
             continue;
-        new_x = x + round((double)(item->x - x) / desktop->cell_w) * desktop->cell_w;
-        new_y = y + round((double)(item->y - y) / desktop->cell_h) * desktop->cell_h;
+        new_x = x + _round((double)(item->x - x) / desktop->cell_w) * desktop->cell_w;
+        new_y = y + _round((double)(item->y - y) / desktop->cell_h) * desktop->cell_h;
         move_item(desktop, item, new_x, new_y, FALSE);
     }
     g_list_free(items);
