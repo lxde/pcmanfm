@@ -585,7 +585,7 @@ static inline void popup_menu(FmDesktop* desktop, GdkEventButton* evt)
     g_list_free(sel_items);
 
     fi = (FmFileInfo*)fm_list_peek_head(files);
-    menu = fm_file_menu_new_for_files(files, fm_path_get_desktop(), TRUE);
+    menu = fm_file_menu_new_for_files(GTK_WINDOW(desktop), files, fm_path_get_desktop(), TRUE);
     fm_file_menu_set_folder_func(menu, pcmanfm_open_folder, desktop);
     fm_list_unref(files);
 
@@ -669,7 +669,10 @@ gboolean on_button_press( GtkWidget* w, GdkEventButton* evt )
             if( evt->button == 3 )  /* right click on the blank area => desktop popup menu */
             {
                 if(! app_config->show_wm_menu)
+                {
+                    gtk_menu_attach_to_widget(desktop_popup, w, NULL);
                     gtk_menu_popup(GTK_MENU(desktop_popup), NULL, NULL, NULL, NULL, 3, evt->time);
+                }
             }
             else if( evt->button == 1 )
             {
@@ -924,7 +927,7 @@ gboolean on_key_press( GtkWidget* w, GdkEventKey* evt )
             FmFileInfoList* infos = fm_desktop_get_selected_files(desktop);
             if(infos)
             {
-                fm_show_file_properties(infos);
+                fm_show_file_properties(GTK_WINDOW(desktop), infos);
                 fm_list_unref(infos);
                 return TRUE;
             }
@@ -959,7 +962,7 @@ gboolean on_key_press( GtkWidget* w, GdkEventKey* evt )
         sels = fm_desktop_get_selected_paths(desktop);
         if(sels)
         {
-            fm_rename_file(fm_list_peek_head(sels));
+            fm_rename_file(GTK_WINDOW(desktop), fm_list_peek_head(sels));
             fm_list_unref(sels);
         }
         break;
@@ -968,9 +971,9 @@ gboolean on_key_press( GtkWidget* w, GdkEventKey* evt )
         if(sels)
         {
             if(modifier & GDK_SHIFT_MASK)
-                fm_delete_files(sels);
+                fm_delete_files(GTK_WINDOW(desktop), sels);
             else
-                fm_trash_or_delete_files(sels);
+                fm_trash_or_delete_files(GTK_WINDOW(desktop), sels);
             fm_list_unref(sels);
         }
         break;
