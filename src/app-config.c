@@ -146,10 +146,29 @@ void fm_app_config_load_from_profile(FmAppConfig* cfg, const char* name)
     char **dirs, **dir;
     char *path, *rel_path;
     GKeyFile* kf = g_key_file_new();
+    const char* old_name = name;
+
+    if(!name || !*name) /* if profile name is not provided, use 'default' */
+    {
+        name = "default";
+        old_name = "pcmanfm"; /* for compatibility with old versions. */
+    }
+
+    /* load system-wide settings */
+    dirs = g_get_system_config_dirs();
+    for(dir=dirs;*dir;++dir)
+    {
+        path = g_build_filename(*dir, "pcmanfm", name, "pcmanfm.conf", NULL);
+        if(g_key_file_load_from_file(kf, path, 0, NULL))
+            fm_app_config_load_from_key_file(cfg, kf);
+        g_free(path);
+    }
+
+    /* override system-wide settings with user-specific configuration */
 
     /* For backward compatibility, try to load old config file and
      * then migrate to new location */
-    path = g_strconcat(g_get_user_config_dir(), "/pcmanfm/", name ? name : "pcmanfm", ".conf", NULL);
+    path = g_strconcat(g_get_user_config_dir(), "/pcmanfm/", old_name, ".conf", NULL);
     if(G_UNLIKELY(g_key_file_load_from_file(kf, path, 0, NULL)))
     {
         char* new_dir;
@@ -166,28 +185,14 @@ void fm_app_config_load_from_profile(FmAppConfig* cfg, const char* name)
             g_free(new_path);
         }
         g_free(new_dir);
-        g_free(path);
-        goto _out;
     }
-    g_free(path);
-
-    if(!name || !*name) /* if profile name is not provided, use 'default' */
-        name = "default";
-
-    /* load system-wide settings */
-    dirs = g_get_system_config_dirs();
-    for(dir=dirs;*dir;++dir)
+    else
     {
-        path = g_build_filename(*dir, "pcmanfm", name, "pcmanfm.conf", NULL);
+        g_free(path);
+        path = g_build_filename(g_get_user_config_dir(), "pcmanfm", name, "pcmanfm.conf", NULL);
         if(g_key_file_load_from_file(kf, path, 0, NULL))
             fm_app_config_load_from_key_file(cfg, kf);
-        g_free(path);
     }
-
-    /* override with user-specific configuration */
-    path = g_build_filename(g_get_user_config_dir(), "pcmanfm", name, "pcmanfm.conf", NULL);
-    if(g_key_file_load_from_file(kf, path, 0, NULL))
-        fm_app_config_load_from_key_file(cfg, kf);
     g_free(path);
 
 _out:

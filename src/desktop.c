@@ -670,7 +670,11 @@ gboolean on_button_press( GtkWidget* w, GdkEventButton* evt )
             {
                 if(! app_config->show_wm_menu)
                 {
-                    gtk_menu_attach_to_widget(desktop_popup, w, NULL);
+                    if(gtk_menu_get_attach_widget(desktop_popup) != w)
+                    {
+                        gtk_menu_detach(desktop_popup);
+                        gtk_menu_attach_to_widget(desktop_popup, w, NULL);
+                    }
                     gtk_menu_popup(GTK_MENU(desktop_popup), NULL, NULL, NULL, NULL, 3, evt->time);
                 }
             }
