@@ -43,6 +43,7 @@ static void update_volume_info(FmMainWin* win);
 
 static void on_focus_in(GtkWidget* w, GdkEventFocus* evt);
 static gboolean on_key_press_event(GtkWidget* w, GdkEventKey* evt);
+static gboolean on_button_press_event(GtkWidget* w, GdkEventButton* evt);
 static gboolean on_delete_event(GtkWidget* w, GdkEvent* evt);
 
 static void on_new_win(GtkAction* act, FmMainWin* win);
@@ -110,6 +111,7 @@ static void fm_main_win_class_init(FmMainWinClass *klass)
     widget_class->focus_in_event = on_focus_in;
     widget_class->delete_event = on_delete_event;
     widget_class->key_press_event = on_key_press_event;
+    widget_class->button_press_event = on_button_press_event;
 
     fm_main_win_parent_class = (GtkWindowClass*)g_type_class_peek(GTK_TYPE_WINDOW);
 
@@ -1329,4 +1331,21 @@ gboolean on_key_press_event(GtkWidget* w, GdkEventKey* evt)
         }
     }
     return GTK_WIDGET_CLASS(fm_main_win_parent_class)->key_press_event(w, evt);
+}
+
+gboolean on_button_press_event(GtkWidget* w, GdkEventButton* evt)
+{
+    FmMainWin* win = FM_MAIN_WIN(w);
+    GtkAction* act;
+    if(evt->button == 8) /* back */
+    {
+        act = gtk_ui_manager_get_action(win->ui, "/Prev2");
+        gtk_action_activate(act);
+    }
+    else if(evt->button == 9) /* forward */
+    {
+        act = gtk_ui_manager_get_action(win->ui, "/Next2");
+        gtk_action_activate(act);
+    }
+    return TRUE;
 }
