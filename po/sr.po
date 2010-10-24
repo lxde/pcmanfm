@@ -2,21 +2,22 @@
 # Copyright (C) 2010 the LXDE team
 # This file is distributed under the same license as the PCManFM package.
 # Jay A. Fleming <tito.nehru.naser@gmail.com>, 2010.
-# 
-# 
+#
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PCManFM 0.9.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-17 07:04+0000\n"
+"POT-Creation-Date: 2010-10-24 11:13+0200\n"
 "PO-Revision-Date: 2010-05-26 09:41+0100\n"
 "Last-Translator: Jay Alexander Fleming <tito.nehru.naser@gmail.com>\n"
 "Language-Team: \n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: \n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Poedit-Language: Serbian\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
@@ -193,7 +194,8 @@ msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
 "%s = the command line you want to execute with terminal or su."
 msgstr ""
-"Примери: \"xterm -e %s\" за терминал или \"gksu %s\" за пребацивање између корисника.\n"
+"Примери: \"xterm -e %s\" за терминал или \"gksu %s\" за пребацивање између "
+"корисника.\n"
 "%s = наредба која желите да се изврши у терминалу или са \"su\"."
 
 #: ../data/ui/pref.glade.h:18
@@ -539,20 +541,20 @@ msgstr "Модел умањеног приказа да_тотека"
 msgid "Detailed _List View"
 msgstr "Прикажи као детаљну _листу"
 
-#: ../src/main-win.c:561
+#: ../src/main-win.c:562
 msgid "You are in super user mode"
 msgstr "УПОЗОРЕЊЕ: Користите програм са администраторским привилегијама"
 
-#: ../src/main-win.c:660
+#: ../src/main-win.c:661
 msgid "Switch user command is not set."
 msgstr "Наредба за пребацивање између корисника није постављена"
 
-#: ../src/main-win.c:967
+#: ../src/main-win.c:968
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Слободан простор: %s од %s"
 
-#: ../src/main-win.c:1183
+#: ../src/main-win.c:1185
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -563,12 +565,11 @@ msgstr ""
 "„%s“\n"
 "Унесите име за овај обележивач"
 
-#: ../src/main-win.c:1187
+#: ../src/main-win.c:1189
 msgid "Add to Bookmarks"
 msgstr "Додај у обележиваче"
 
-#. { "new-tab", 't', 0, G_OPTION_ARG_NONE, &new_tab, N_("Open folders in new
-#. tabs of the last used window instead of creating new windows"), NULL },
+#. { "new-tab", 't', 0, G_OPTION_ARG_NONE, &new_tab, N_("Open folders in new tabs of the last used window instead of creating new windows"), NULL },
 #: ../src/pcmanfm.c:69
 msgid "Name of configuration profile"
 msgstr "Назив профила за подешавања"
@@ -599,18 +600,20 @@ msgstr "<датотека са сликом>"
 
 #: ../src/pcmanfm.c:75
 msgid "Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"
-msgstr "Режим приказа позадинске слике. <режим>=(color|stretch|fit|center|tile)"
+msgstr ""
+"Режим приказа позадинске слике. <режим>=(color|stretch|fit|center|tile)"
 
 #: ../src/pcmanfm.c:75
 msgid "<mode>"
 msgstr "<режим>"
 
 #: ../src/pcmanfm.c:76
-msgid "Open preference dialog. 'n' is number of the page you want to show (1, 2, 3...)."
+msgid ""
+"Open preference dialog. 'n' is number of the page you want to show (1, 2, "
+"3...)."
 msgstr "Отвори подешавања. 'n' је број сртане коју желите видети (1, 2, 3...)."
 
-#. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files
-#. utility"), NULL },
+#. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
 #: ../src/pcmanfm.c:78
 msgid "No function. Just to be compatible with nautilus"
 msgstr "Функција не постоји. Само због усаглашености са програмом „Nautilus“"

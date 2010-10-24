@@ -7,10 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-04 02:25+0800\n"
+"POT-Creation-Date: 2010-10-24 11:13+0200\n"
 "PO-Revision-Date: 2010-09-06 05:02+0700\n"
 "Last-Translator: Andika Triwidada <andika@gmail.com>\n"
 "Language-Team: Indonesian Translation Team <id@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -346,6 +347,11 @@ msgstr "Balik P_ilihan"
 msgid "_Sort Files"
 msgstr "Urutkan Berka_s"
 
+#. for popup menu
+#: ../src/desktop-ui.c:55 ../src/main-win-ui.c:171
+msgid "_New"
+msgstr ""
+
 #: ../src/desktop-ui.c:56 ../src/main-win-ui.c:172
 msgid "Folder"
 msgstr "Folder"
@@ -381,6 +387,14 @@ msgstr "Buka di Jendela Baru"
 #: ../src/desktop-ui.c:91 ../src/main-win-ui.c:221
 msgid "Open in _Terminal"
 msgstr "Buka di _Terminal"
+
+#: ../src/desktop-ui.c:107
+msgid "Stick to Current Position"
+msgstr ""
+
+#: ../src/desktop-ui.c:112
+msgid "Snap to Grid"
+msgstr ""
 
 #: ../src/main-win-ui.c:128
 msgid "_File"
@@ -526,20 +540,20 @@ msgstr "_Tilikan Gambar Kecil"
 msgid "Detailed _List View"
 msgstr "Ti_likan Daftar Terrinci"
 
-#: ../src/main-win.c:561
+#: ../src/main-win.c:562
 msgid "You are in super user mode"
 msgstr "Anda sedang berada pada mode pengguna super"
 
-#: ../src/main-win.c:660
+#: ../src/main-win.c:661
 msgid "Switch user command is not set."
 msgstr "Perintah tukar pengguna tak ditata."
 
-#: ../src/main-win.c:967
+#: ../src/main-win.c:968
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Ruang bebas: %s (Total: %s)"
 
-#: ../src/main-win.c:1183
+#: ../src/main-win.c:1185
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -550,48 +564,48 @@ msgstr ""
 "'%s'\n"
 "Masukkan nama bagi butir penanda tautan baru:"
 
-#: ../src/main-win.c:1187
+#: ../src/main-win.c:1189
 msgid "Add to Bookmarks"
 msgstr "Tambahkan ke Penanda Tautan"
 
 #. { "new-tab", 't', 0, G_OPTION_ARG_NONE, &new_tab, N_("Open folders in new tabs of the last used window instead of creating new windows"), NULL },
-#: ../src/pcmanfm.c:71
+#: ../src/pcmanfm.c:69
 msgid "Name of configuration profile"
 msgstr "Nama profil konfigurasi"
 
-#: ../src/pcmanfm.c:72
+#: ../src/pcmanfm.c:70
 msgid "Launch desktop manager"
 msgstr "Luncurkan manajer desktop"
 
-#: ../src/pcmanfm.c:73
+#: ../src/pcmanfm.c:71
 msgid "Turn off desktop manager if it's running"
 msgstr "Matikan manajer desktop bila sedang berjalan"
 
-#: ../src/pcmanfm.c:74
+#: ../src/pcmanfm.c:72
 msgid "Run PCManFM as a daemon"
 msgstr "Jalankan PCManFM sebagai daemon"
 
-#: ../src/pcmanfm.c:75
+#: ../src/pcmanfm.c:73
 msgid "Open desktop preference dialog"
 msgstr "Buka dialog preferensi desktop"
 
-#: ../src/pcmanfm.c:76
+#: ../src/pcmanfm.c:74
 msgid "Set desktop wallpaper"
 msgstr "Tata wallpaper desktop"
 
-#: ../src/pcmanfm.c:76
+#: ../src/pcmanfm.c:74
 msgid "<image file>"
 msgstr "<berkas gambar>"
 
-#: ../src/pcmanfm.c:77
+#: ../src/pcmanfm.c:75
 msgid "Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"
 msgstr "Tata mode wallpaper desktop. <mode>=(color|stretch|fit|center|tile)"
 
-#: ../src/pcmanfm.c:77
+#: ../src/pcmanfm.c:75
 msgid "<mode>"
 msgstr "<mode>"
 
-#: ../src/pcmanfm.c:78
+#: ../src/pcmanfm.c:76
 msgid ""
 "Open preference dialog. 'n' is number of the page you want to show (1, 2, "
 "3...)."
@@ -600,27 +614,27 @@ msgstr ""
 "(1, 2, 3...)."
 
 #. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
-#: ../src/pcmanfm.c:80
+#: ../src/pcmanfm.c:78
 msgid "No function. Just to be compatible with nautilus"
 msgstr "Tanpa fungsi. Hanya agar kompatibel dengan nautilus"
 
-#: ../src/pcmanfm.c:81
+#: ../src/pcmanfm.c:79
 msgid "[FILE1, FILE2,...]"
 msgstr "[BERKAS1, BERKAS2,...]"
 
-#: ../src/pcmanfm.c:501
+#: ../src/pcmanfm.c:498
 msgid "Terminal emulator is not set."
 msgstr "Emulator terminal tak ditata."
 
-#: ../src/pcmanfm.c:544
+#: ../src/pcmanfm.c:541
 msgid "Create New..."
 msgstr "Buat Baru..."
 
-#: ../src/pcmanfm.c:544
+#: ../src/pcmanfm.c:541
 msgid "Enter a name for the newly created file:"
 msgstr "Masukkan nama bagi berkas yang baru dibuat:"
 
-#: ../src/pcmanfm.c:544
+#: ../src/pcmanfm.c:541
 msgid "New"
 msgstr "Baru"
 

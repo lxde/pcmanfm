@@ -1,16 +1,16 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-19 07:02+0000\n"
+"POT-Creation-Date: 2010-10-24 11:13+0200\n"
 "PO-Revision-Date: 2010-02-27 15:56+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: \n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-Language: Hebrew\n"
 "X-Generator: Pootle 1.1.0\n"
@@ -284,7 +284,8 @@ msgstr "תצוגת תמונות ממוזערות"
 
 #: ../data/ui/pref.glade.h:43
 msgid "Use SI decimal prefixes instead of IEC binary prefixes"
-msgstr "שימוש בקידומות עשרוניות לפי תקן ה־SI במקום קידומות בינאריות לפי תקן ה־IEC"
+msgstr ""
+"שימוש בקידומות עשרוניות לפי תקן ה־SI במקום קידומות בינאריות לפי תקן ה־IEC"
 
 #: ../data/ui/pref.glade.h:44
 msgid "View Mode:"
@@ -535,20 +536,20 @@ msgstr "תצוגת ת_מונות ממוזערת"
 msgid "Detailed _List View"
 msgstr "תצוגת רשימה מ_פורטת"
 
-#: ../src/main-win.c:561
+#: ../src/main-win.c:562
 msgid "You are in super user mode"
 msgstr "המצב הנוכחי הוא מצב משתמש על"
 
-#: ../src/main-win.c:660
+#: ../src/main-win.c:661
 msgid "Switch user command is not set."
 msgstr "פקודת החלפת המשתמש לא הוגדרה."
 
-#: ../src/main-win.c:967
+#: ../src/main-win.c:968
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "מקום פנוי: %s (סך הכל: %s )"
 
-#: ../src/main-win.c:1183
+#: ../src/main-win.c:1185
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -559,12 +560,11 @@ msgstr ""
 "'%s'\n"
 "יש להזין שם עבור פריט הסימנייה החדשה:"
 
-#: ../src/main-win.c:1187
+#: ../src/main-win.c:1189
 msgid "Add to Bookmarks"
 msgstr "הוספה לסימניות"
 
-#. { "new-tab", 't', 0, G_OPTION_ARG_NONE, &new_tab, N_("Open folders in new
-#. tabs of the last used window instead of creating new windows"), NULL },
+#. { "new-tab", 't', 0, G_OPTION_ARG_NONE, &new_tab, N_("Open folders in new tabs of the last used window instead of creating new windows"), NULL },
 #: ../src/pcmanfm.c:69
 msgid "Name of configuration profile"
 msgstr "שם פרופיל התצורה"
@@ -602,11 +602,13 @@ msgid "<mode>"
 msgstr "<mode>"
 
 #: ../src/pcmanfm.c:76
-msgid "Open preference dialog. 'n' is number of the page you want to show (1, 2, 3...)."
-msgstr "פתיחת תיבת דו־שיח ההעדפות. 'n' יהיה מספר העמודים המבוקש להצגה (1, 2, 3...)."
+msgid ""
+"Open preference dialog. 'n' is number of the page you want to show (1, 2, "
+"3...)."
+msgstr ""
+"פתיחת תיבת דו־שיח ההעדפות. 'n' יהיה מספר העמודים המבוקש להצגה (1, 2, 3...)."
 
-#. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files
-#. utility"), NULL },
+#. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
 #: ../src/pcmanfm.c:78
 msgid "No function. Just to be compatible with nautilus"
 msgstr "אין פונקציה. נועד לצורכי תאימות עם nautilus"
@@ -642,7 +644,9 @@ msgstr "מנהל קבצים"
 #~ msgid "Open Find Files utility"
 #~ msgstr "פתיחת הכלי למציאת קבצים"
 
-#~ msgid "Open folders in new tabs of the last used window instead of creating new windows"
+#~ msgid ""
+#~ "Open folders in new tabs of the last used window instead of creating new "
+#~ "windows"
 #~ msgstr "פתיחת תיקיות בלשוניות חדשות בתוך החלון הפעיל במקום בחלונות חדשים"
 
 #~ msgid "Display image files with supported format as thumbnails"
@@ -696,7 +700,9 @@ msgstr "מנהל קבצים"
 #~ msgid "Opened in Terminal"
 #~ msgstr "פתיחה במסוף"
 
-#~ msgid "Please choose an application from following lists or enter the command line by hand:"
+#~ msgid ""
+#~ "Please choose an application from following lists or enter the command "
+#~ "line by hand:"
 #~ msgstr "נא לבחור יישום מהרשימות האלו או להזין לשורת הפקודה ידנית:"
 
 #~ msgid "Set selected application to default action"
@@ -985,7 +991,8 @@ msgstr "מנהל קבצים"
 #~ msgid "The model for the icon view"
 #~ msgstr "הדגם עבור תצוגת הסמלים"
 
-#~ msgid "How the text and icon of each item are positioned relative to each other"
+#~ msgid ""
+#~ "How the text and icon of each item are positioned relative to each other"
 #~ msgstr "כיצד הטקסט והסמל של כל פריט ימוקמו אחד ביחס לשני"
 
 #~ msgid "Pixbuf column"
@@ -1027,8 +1034,11 @@ msgstr "מנהל קבצים"
 #~ msgid "Single Click Timeout"
 #~ msgstr "תפוגת זמן ללחיצה בודדת"
 
-#~ msgid "The amount of time after which the item under the mouse cursor will be selected automatically in single click mode"
-#~ msgstr "משך הזמן שלאחריו הפריט תחת סמן העכבר ייבחר אוטומטית במצב לחיצה בודדת"
+#~ msgid ""
+#~ "The amount of time after which the item under the mouse cursor will be "
+#~ "selected automatically in single click mode"
+#~ msgstr ""
+#~ "משך הזמן שלאחריו הפריט תחת סמן העכבר ייבחר אוטומטית במצב לחיצה בודדת"
 
 #~ msgid "Spacing"
 #~ msgstr "ריווח"
@@ -1087,27 +1097,40 @@ msgstr "מנהל קבצים"
 #~ msgid ""
 #~ "<big><b>%s</b></big>\n"
 #~ "\n"
-#~ "This usually means you don't have an XSETTINGS manager running.  Desktop environment like GNOME or XFCE automatically execute their XSETTING managers like gnome-settings-daemon or xfce-mcs-manager.\n"
+#~ "This usually means you don't have an XSETTINGS manager running.  Desktop "
+#~ "environment like GNOME or XFCE automatically execute their XSETTING "
+#~ "managers like gnome-settings-daemon or xfce-mcs-manager.\n"
 #~ "\n"
 #~ "<b>If you don't use these desktop environments, you have two choices:\n"
 #~ "1. run an XSETTINGS manager, or\n"
 #~ "2. simply specify an icon theme in ~/.gtkrc-2.0.</b>\n"
 #~ "For example to use the Tango icon theme add a line:\n"
-#~ "<i><b>gtk-icon-theme-name=\"Tango\"</b></i> in your ~/.gtkrc-2.0. (create it if no such file)\n"
+#~ "<i><b>gtk-icon-theme-name=\"Tango\"</b></i> in your ~/.gtkrc-2.0. (create "
+#~ "it if no such file)\n"
 #~ "\n"
-#~ "<b>NOTICE: The icon theme you choose should be compatible with GNOME, or the file icons cannot be displayed correctly.</b>  Due to the differences in icon naming of GNOME and KDE, KDE themes cannot be used.  Currently there is no standard for this, but it will be solved by freedesktop.org in the future."
+#~ "<b>NOTICE: The icon theme you choose should be compatible with GNOME, or "
+#~ "the file icons cannot be displayed correctly.</b>  Due to the differences "
+#~ "in icon naming of GNOME and KDE, KDE themes cannot be used.  Currently "
+#~ "there is no standard for this, but it will be solved by freedesktop.org "
+#~ "in the future."
 #~ msgstr ""
 #~ "<big><b>%s</b></big>\n"
 #~ "\n"
-#~ "משמעות הדבר היא שמנהל ה־XSETTINGS אינו פעיל.  סביבות שולחן עבודה כגון GNOME או XFCE מפעילות באופן אוטומטי את מנהלי ה־XSETTING שלהן לדוגמה gnome-settings-daemon או xfce-mcs-manager.\n"
+#~ "משמעות הדבר היא שמנהל ה־XSETTINGS אינו פעיל.  סביבות שולחן עבודה כגון "
+#~ "GNOME או XFCE מפעילות באופן אוטומטי את מנהלי ה־XSETTING שלהן לדוגמה gnome-"
+#~ "settings-daemon או xfce-mcs-manager.\n"
 #~ "\n"
 #~ "<b>אם אינך עושה שימוש בסביבות עבודה אלו, עומדות בפניך שתי אפשרויות:\n"
 #~ "1. להריץ מנהל XSETTINGS, או\n"
 #~ "2. פשוט לציין ערכת נושא תחת ~/.gtkrc-2.0.</b>\n"
 #~ "לדוגמה כדי להשתמש בערכת הסמלים Tango יש להוסיף את השורה:\n"
-#~ "<i><b>gtk-icon-theme-name=\"Tango\"</b></i> תחת הקובץ ~/.gtkrc-2.0. (יש ליצור אם לא קיים אחד כזה)\n"
+#~ "<i><b>gtk-icon-theme-name=\"Tango\"</b></i> תחת הקובץ ~/.gtkrc-2.0. (יש "
+#~ "ליצור אם לא קיים אחד כזה)\n"
 #~ "\n"
-#~ "<b>לתשומת לבך: על ערכת הסמלים הנבחרת להיות תואמת ל־GNOME, אחרת לא ניתן יהיה להציגה כראוי.</b>  עקב ההבדלים בין שמות הסמלים של GNOME ושל KDE, לא ניתן להשתמש בערכות נושא של KDE.  לעת עתה נושא זה אינו מתוקנן עדיין, אך הוא יפתר על ידי freedesktop.org בעתיד."
+#~ "<b>לתשומת לבך: על ערכת הסמלים הנבחרת להיות תואמת ל־GNOME, אחרת לא ניתן "
+#~ "יהיה להציגה כראוי.</b>  עקב ההבדלים בין שמות הסמלים של GNOME ושל KDE, לא "
+#~ "ניתן להשתמש בערכות נושא של KDE.  לעת עתה נושא זה אינו מתוקנן עדיין, אך "
+#~ "הוא יפתר על ידי freedesktop.org בעתיד."
 
 #~ msgid "Error"
 #~ msgstr "שגיאה"
@@ -1481,7 +1504,9 @@ msgstr "מנהל קבצים"
 #~ msgid "Invalid Group"
 #~ msgstr "קבוצה לא תקינה"
 
-#~ msgid "Do you want to recursively apply these changes to all files and sub-folders?"
+#~ msgid ""
+#~ "Do you want to recursively apply these changes to all files and sub-"
+#~ "folders?"
 #~ msgstr "האם להחל שינוים אלה על כל הקבצים ותת־התיקיות באופן נסוג?"
 
 #~ msgid "New Item"
@@ -1643,8 +1668,11 @@ msgstr "מנהל קבצים"
 #~ msgid "Invalid mount option when attempting to mount the volume \"%s\""
 #~ msgstr "אפשרות העגינה לא היתה תקנית בעת הנסיון לעגינת הכרך \"%s\""
 
-#~ msgid "The volume \"%s\" uses the <i>%s</i> file system which is not supported by your system"
-#~ msgstr "הכרך \"%s\" משתמש במערכת הקבצים <i>%s</i> שאינה נתמכת על ידי המערכת שלך"
+#~ msgid ""
+#~ "The volume \"%s\" uses the <i>%s</i> file system which is not supported "
+#~ "by your system"
+#~ msgstr ""
+#~ "הכרך \"%s\" משתמש במערכת הקבצים <i>%s</i> שאינה נתמכת על ידי המערכת שלך"
 
 #~ msgid "An application is preventing the volume \"%s\" from being unmounted"
 #~ msgstr "ישנו יישום המונע את ניתוק הכרך \"%s\""
@@ -1658,11 +1686,17 @@ msgstr "מנהל קבצים"
 #~ msgid "The volume \"%s\" was probably mounted manually on the command line"
 #~ msgstr "קרוב לוודאי שהכרך \"%s\" עוגן אוטומטית באמצעות שורת הפקודה"
 
-#~ msgid "Blank discs cannot be mounted, use a CD recording application to record audio or data on the disc"
-#~ msgstr "לא ניתן לעגן דיסקים ריקים, יש להשתמש בתוכנת צריבה כדי לצרוב רצועות שמע או נתונים על הדיסק"
+#~ msgid ""
+#~ "Blank discs cannot be mounted, use a CD recording application to record "
+#~ "audio or data on the disc"
+#~ msgstr ""
+#~ "לא ניתן לעגן דיסקים ריקים, יש להשתמש בתוכנת צריבה כדי לצרוב רצועות שמע או "
+#~ "נתונים על הדיסק"
 
-#~ msgid "Audio CDs cannot be mounted, use music players to play the audio tracks"
-#~ msgstr "לא ניתן לעגן תקליטורי שמע, יש להשתמש בנגני מוזיקה כדי לנגן את רצועות השמע"
+#~ msgid ""
+#~ "Audio CDs cannot be mounted, use music players to play the audio tracks"
+#~ msgstr ""
+#~ "לא ניתן לעגן תקליטורי שמע, יש להשתמש בנגני מוזיקה כדי לנגן את רצועות השמע"
 
 #~ msgid "_Icons"
 #~ msgstr "_סמלים"

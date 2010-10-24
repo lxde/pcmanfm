@@ -2,19 +2,19 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm 0.9\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-22 06:59+0000\n"
+"POT-Creation-Date: 2010-10-24 11:13+0200\n"
 "PO-Revision-Date: 2010-04-11 13:33+0100\n"
 "Last-Translator: Lutz Thuns <lOtz1009@opensuse.org>\n"
 "Language-Team: German\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: \n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-Language: German\n"
 
@@ -194,7 +194,8 @@ msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
 "%s = the command line you want to execute with terminal or su."
 msgstr ""
-"Beispiele: \"xterm -e %s\" für Terminal oder \"gksu %s\" zum Benutzerwechsel.\n"
+"Beispiele: \"xterm -e %s\" für Terminal oder \"gksu %s\" zum "
+"Benutzerwechsel.\n"
 "%s = Befehlszeile, die im Terminal oder mit su ausgeführt werden soll."
 
 #: ../data/ui/pref.glade.h:18
@@ -542,20 +543,21 @@ msgid "Detailed _List View"
 msgstr "_Detailansicht"
 
 # nicht lieber "mit"?
-#: ../src/main-win.c:561
+#: ../src/main-win.c:562
 msgid "You are in super user mode"
 msgstr "Sie arbeiten mit Superuser-Rechten"
 
-#: ../src/main-win.c:660
+#: ../src/main-win.c:661
 msgid "Switch user command is not set."
-msgstr "Es wurde kein Befehl zum Benutzerwechsel in den Einstellungen angegeben."
+msgstr ""
+"Es wurde kein Befehl zum Benutzerwechsel in den Einstellungen angegeben."
 
-#: ../src/main-win.c:967
+#: ../src/main-win.c:968
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Freier Speicherplatz: %s (Gesamt: %s)"
 
-#: ../src/main-win.c:1183
+#: ../src/main-win.c:1185
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -566,12 +568,11 @@ msgstr ""
 "'%s'\n"
 "Namen für des neue Lesezeichen eingeben:"
 
-#: ../src/main-win.c:1187
+#: ../src/main-win.c:1189
 msgid "Add to Bookmarks"
 msgstr "Zu Lesezeichen hinzufügen"
 
-#. { "new-tab", 't', 0, G_OPTION_ARG_NONE, &new_tab, N_("Open folders in new
-#. tabs of the last used window instead of creating new windows"), NULL },
+#. { "new-tab", 't', 0, G_OPTION_ARG_NONE, &new_tab, N_("Open folders in new tabs of the last used window instead of creating new windows"), NULL },
 #: ../src/pcmanfm.c:69
 msgid "Name of configuration profile"
 msgstr "Name des Konfigurationsprofils"
@@ -603,18 +604,23 @@ msgstr "<Bilddatei>"
 
 #: ../src/pcmanfm.c:75
 msgid "Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"
-msgstr "Eigenschaften des Hintergrundbildes setzen. <mode>=(color|stretch|fit|center|tile)"
+msgstr ""
+"Eigenschaften des Hintergrundbildes setzen. <mode>=(color|stretch|fit|center|"
+"tile)"
 
 #: ../src/pcmanfm.c:75
 msgid "<mode>"
 msgstr "<mode>"
 
 #: ../src/pcmanfm.c:76
-msgid "Open preference dialog. 'n' is number of the page you want to show (1, 2, 3...)."
-msgstr "Einstellungen öffnen,  wobei 'n' der Reiter ist, den Sie anzeigen möchten (1, 2, 3 …)."
+msgid ""
+"Open preference dialog. 'n' is number of the page you want to show (1, 2, "
+"3...)."
+msgstr ""
+"Einstellungen öffnen,  wobei 'n' der Reiter ist, den Sie anzeigen möchten "
+"(1, 2, 3 …)."
 
-#. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files
-#. utility"), NULL },
+#. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
 #: ../src/pcmanfm.c:78
 msgid "No function. Just to be compatible with nautilus"
 msgstr "Keine Funktion. Nur um kompatibel zu nautilus zu sein"
@@ -651,5 +657,9 @@ msgstr "Dateimanager"
 #~ msgid "Open Find Files utility"
 #~ msgstr "Mit PCManFM nach Dateien suchen"
 
-#~ msgid "Open folders in new tabs of the last used window instead of creating new windows"
-#~ msgstr "Ordner in neuen Reitern des zuletzt benutzten Fensters öffnen, anstatt neue Fenster zu öffnen"
+#~ msgid ""
+#~ "Open folders in new tabs of the last used window instead of creating new "
+#~ "windows"
+#~ msgstr ""
+#~ "Ordner in neuen Reitern des zuletzt benutzten Fensters öffnen, anstatt "
+#~ "neue Fenster zu öffnen"
