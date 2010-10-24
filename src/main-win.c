@@ -1037,7 +1037,8 @@ gint fm_main_win_add_tab(FmMainWin* win, FmPath* path)
     gtk_notebook_set_tab_reorderable(GTK_NOTEBOOK(win->notebook), folder_view, TRUE);
     gtk_notebook_set_current_page(GTK_NOTEBOOK(win->notebook), ret);
 
-    if(gtk_notebook_get_n_pages(GTK_NOTEBOOK(win->notebook)) > 1)
+    if(gtk_notebook_get_n_pages(GTK_NOTEBOOK(win->notebook)) > 1
+       || app_config->always_show_tabs)
         gtk_notebook_set_show_tabs(GTK_NOTEBOOK(win->notebook), TRUE);
     else
         gtk_notebook_set_show_tabs(GTK_NOTEBOOK(win->notebook), FALSE);
@@ -1248,7 +1249,7 @@ void on_switch_page(GtkNotebook* nb, GtkNotebookPage* page, guint num, FmMainWin
 
 void on_page_removed(GtkNotebook* nb, GtkWidget* page, guint num, FmMainWin* win)
 {
-    if(gtk_notebook_get_n_pages(nb) > 1)
+    if(gtk_notebook_get_n_pages(nb) > 1 || app_config->always_show_tabs)
         gtk_notebook_set_show_tabs(nb, TRUE);
     else
         gtk_notebook_set_show_tabs(nb, FALSE);

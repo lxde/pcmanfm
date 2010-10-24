@@ -229,7 +229,7 @@ void fm_app_config_save_profile(FmAppConfig* cfg, const char* name)
 
         g_string_append(buf, "\n[ui]\n");
         g_string_append_printf(buf, "always_show_tabs=%d\n", cfg->always_show_tabs);
-        g_string_append_printf(buf, "hide_close_btn=%d\n", cfg->hide_close_btn);
+        /* g_string_append_printf(buf, "hide_close_btn=%d\n", cfg->hide_close_btn); */
         g_string_append_printf(buf, "win_width=%d\n", cfg->win_width);
         g_string_append_printf(buf, "win_height=%d\n", cfg->win_height);
         g_string_append_printf(buf, "splitter_pos=%d\n", cfg->splitter_pos);
