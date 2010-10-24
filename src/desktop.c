@@ -2092,6 +2092,7 @@ static void on_fix_pos(GtkToggleAction* act, gpointer user_data)
         layout_items(desktop);
     }
     g_list_free(items);
+    save_item_pos(desktop);
 }
 
 /* round() is only available in C99. Don't use it now for portability. */
