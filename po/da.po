@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-24 11:13+0200\n"
-"PO-Revision-Date: 2010-04-13 19:46+0200\n"
-"Last-Translator: Vidar Jon Bauge <vidarjb@gmail.com>\n"
+"POT-Creation-Date: 2010-10-25 07:07+0000\n"
+"PO-Revision-Date: 2010-10-25 19:46+0200\n"
+"Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
-"Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: da\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.0.1\n"
 
@@ -394,11 +394,11 @@ msgstr "Åbn i _terminal"
 
 #: ../src/desktop-ui.c:107
 msgid "Stick to Current Position"
-msgstr ""
+msgstr "Fasthold aktuel placering"
 
 #: ../src/desktop-ui.c:112
 msgid "Snap to Grid"
-msgstr ""
+msgstr "Tilpas til gitter"
 
 #: ../src/main-win-ui.c:128
 msgid "_File"
@@ -544,20 +544,20 @@ msgstr "_Miniaturebilledvisning"
 msgid "Detailed _List View"
 msgstr "Detaljeret _listevisning"
 
-#: ../src/main-win.c:562
+#: ../src/main-win.c:564
 msgid "You are in super user mode"
 msgstr "Du er i tilstanden superbruger"
 
-#: ../src/main-win.c:661
+#: ../src/main-win.c:663
 msgid "Switch user command is not set."
 msgstr "Kommando for brugerskift er ikke angivet."
 
-#: ../src/main-win.c:968
+#: ../src/main-win.c:970
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Ledig plads: %s (I alt: %s)"
 
-#: ../src/main-win.c:1185
+#: ../src/main-win.c:1187
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -568,7 +568,7 @@ msgstr ""
 "»%s«\n"
 "Indtast et navn for det nye bogmærkeelement:"
 
-#: ../src/main-win.c:1189
+#: ../src/main-win.c:1191
 msgid "Add to Bookmarks"
 msgstr "Tilføj til bogmærker"
 
@@ -648,25 +648,10 @@ msgstr "Ny"
 
 #: ../data/pcmanfm.desktop.in.h:1
 msgid "Browse the file system and manage the files"
-msgstr ""
+msgstr "Gennemse filsystemet og håndter filerne"
 
 #: ../data/pcmanfm.desktop.in.h:2
-#, fuzzy
 msgid "File Manager"
-msgstr "Åbn i filhåndtering"
+msgstr "Filhåndtering"
 
-#~ msgid "Open Find Files utility"
-#~ msgstr "Åbn værktøjet til Find filer"
 
-#~ msgid ""
-#~ "Open folders in new tabs of the last used window instead of creating new "
-#~ "windows"
-#~ msgstr ""
-#~ "Åbn mapper i nye faneblade i det sidst brugte vindue frem for at oprette "
-#~ "nye vinduer"
-
-#~ msgid "Display image files with supported format as thumbnails"
-#~ msgstr "Vis billedfiler med understøttet format som miniaturebilleder"
-
-#~ msgid "Max size of files displayed as thumbnails:"
-#~ msgstr "Maksimal størrelse på filer vist som miniaturebilleder:"
