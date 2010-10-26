@@ -2,19 +2,19 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the pcmanfm package.
 # Radek Tříška <radek@fastlinux.eu>, 2010.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-24 11:13+0200\n"
+"POT-Creation-Date: 2010-10-26 07:05+0000\n"
 "PO-Revision-Date: 2010-04-01 23:30+0100\n"
 "Last-Translator: Radek Tříška <radek@fastlinux.eu>\n"
 "Language-Team: Czech <radek@fastlinux.eu>\n"
-"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: cs\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #: ../data/ui/about.glade.in.h:1
@@ -190,8 +190,7 @@ msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
 "%s = the command line you want to execute with terminal or su."
 msgstr ""
-"Příklady:  \"xterm -e %s\" pro terminál nebo \"gksu %s\" pro přepínání "
-"uživatele.\n"
+"Příklady:  \"xterm -e %s\" pro terminál nebo \"gksu %s\" pro přepínání uživatele.\n"
 "%s = příkaz který chcete spouštět pomocí terminálu nebo su."
 
 #: ../data/ui/pref.glade.h:18
@@ -345,7 +344,7 @@ msgstr "Řadit soubory"
 #. for popup menu
 #: ../src/desktop-ui.c:55 ../src/main-win-ui.c:171
 msgid "_New"
-msgstr ""
+msgstr "_Nový"
 
 #: ../src/desktop-ui.c:56 ../src/main-win-ui.c:172
 msgid "Folder"
@@ -384,12 +383,14 @@ msgid "Open in _Terminal"
 msgstr "Otevřít v _Terminálu"
 
 #: ../src/desktop-ui.c:107
+#, fuzzy
 msgid "Stick to Current Position"
-msgstr ""
+msgstr "Přichytit k současné pozici"
 
 #: ../src/desktop-ui.c:112
+#, fuzzy
 msgid "Snap to Grid"
-msgstr ""
+msgstr "Přichytávat k mřížce"
 
 #: ../src/main-win-ui.c:128
 msgid "_File"
@@ -535,20 +536,20 @@ msgstr "_Pohled s náhledy"
 msgid "Detailed _List View"
 msgstr "Detailní pohled"
 
-#: ../src/main-win.c:562
+#: ../src/main-win.c:564
 msgid "You are in super user mode"
 msgstr "Nacházíte se v superuživatelském režimu"
 
-#: ../src/main-win.c:661
+#: ../src/main-win.c:663
 msgid "Switch user command is not set."
 msgstr "Příkaz pro přepnutí uživatele není nastaven."
 
-#: ../src/main-win.c:968
+#: ../src/main-win.c:970
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Volné místo: %s (Celkem: %s)"
 
-#: ../src/main-win.c:1185
+#: ../src/main-win.c:1187
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -559,11 +560,12 @@ msgstr ""
 "'%s'\n"
 "Vložte název nové záložky:"
 
-#: ../src/main-win.c:1189
+#: ../src/main-win.c:1191
 msgid "Add to Bookmarks"
 msgstr "Přidat do záložek"
 
-#. { "new-tab", 't', 0, G_OPTION_ARG_NONE, &new_tab, N_("Open folders in new tabs of the last used window instead of creating new windows"), NULL },
+#. { "new-tab", 't', 0, G_OPTION_ARG_NONE, &new_tab, N_("Open folders in new
+#. tabs of the last used window instead of creating new windows"), NULL },
 #: ../src/pcmanfm.c:69
 msgid "Name of configuration profile"
 msgstr "Název konfiguračního profilu"
@@ -593,21 +595,20 @@ msgid "<image file>"
 msgstr "<obrázek>"
 
 #: ../src/pcmanfm.c:75
+#, fuzzy
 msgid "Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"
-msgstr ""
+msgstr "Zvolit režim pracovní plochy. <režim>=(color|stretch|fit|center|tile)"
 
 #: ../src/pcmanfm.c:75
 msgid "<mode>"
-msgstr ""
+msgstr "<režim>"
 
 #: ../src/pcmanfm.c:76
-msgid ""
-"Open preference dialog. 'n' is number of the page you want to show (1, 2, "
-"3...)."
-msgstr ""
-"Otevře dialog nastavení. 'n' je počet stránek pro zobrazení (1,2,3...)."
+msgid "Open preference dialog. 'n' is number of the page you want to show (1, 2, 3...)."
+msgstr "Otevře dialog nastavení. 'n' je počet stránek pro zobrazení (1,2,3...)."
 
-#. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
+#. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files
+#. utility"), NULL },
 #: ../src/pcmanfm.c:78
 msgid "No function. Just to be compatible with nautilus"
 msgstr "Bez funkce. Pouze pro kompatibilitu s programem nautilus"
@@ -634,19 +635,14 @@ msgstr "Nový"
 
 #: ../data/pcmanfm.desktop.in.h:1
 msgid "Browse the file system and manage the files"
-msgstr ""
+msgstr "Procházet systém souborů správcem souborů"
 
 #: ../data/pcmanfm.desktop.in.h:2
-#, fuzzy
 msgid "File Manager"
-msgstr "Otevřít ve správci souborů"
+msgstr "Správce souborů"
 
 #~ msgid "Open Find Files utility"
 #~ msgstr "Otevřít nástroj pro hledání souborů"
 
-#~ msgid ""
-#~ "Open folders in new tabs of the last used window instead of creating new "
-#~ "windows"
-#~ msgstr ""
-#~ "Otevírat adresáře v nových kartách naposled použitého okna místo "
-#~ "vytváření nových oken"
+#~ msgid "Open folders in new tabs of the last used window instead of creating new windows"
+#~ msgstr "Otevírat adresáře v nových kartách naposled použitého okna místo vytváření nových oken"
