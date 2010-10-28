@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-24 11:13+0200\n"
-"PO-Revision-Date: 2010-07-26 11:27+0200\n"
+"POT-Creation-Date: 2010-10-28 07:06+0000\n"
+"PO-Revision-Date: 2010-10-28 17:59+0200\n"
 "Last-Translator: Laszlo Dvornik <dvornik@gnome.hu>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
 "Language: hu\n"
@@ -231,19 +231,19 @@ msgstr "Előképek megjelenítése csak a helyi fájloknál"
 
 #: ../data/ui/pref.glade.h:26
 msgid "Open files with single click"
-msgstr "Fájlok megnyitása egy kattintással"
+msgstr "Fájlok megnyitása egyszeres kattintással"
 
 #: ../data/ui/pref.glade.h:27
 msgid "Opened in Current Tab"
-msgstr "Megnyitva a jelenlehi lapon"
+msgstr "megnyitása a jelenlegi lapon"
 
 #: ../data/ui/pref.glade.h:28
 msgid "Opened in New Tab"
-msgstr "Megnyitva új lapon"
+msgstr "megnyitása új lapon"
 
 #: ../data/ui/pref.glade.h:29
 msgid "Opened in New Window"
-msgstr "Megnyitva új ablakban"
+msgstr "megnyitása új ablakban"
 
 #: ../data/ui/pref.glade.h:30
 msgid "Preferences"
@@ -349,7 +349,7 @@ msgstr "Fájlok _rendezése"
 #. for popup menu
 #: ../src/desktop-ui.c:55 ../src/main-win-ui.c:171
 msgid "_New"
-msgstr ""
+msgstr "Ú_j"
 
 #: ../src/desktop-ui.c:56 ../src/main-win-ui.c:172
 msgid "Folder"
@@ -389,11 +389,11 @@ msgstr "Megnyitás _terminálban"
 
 #: ../src/desktop-ui.c:107
 msgid "Stick to Current Position"
-msgstr ""
+msgstr "Jelenlegi helyzethez ragasztás"
 
 #: ../src/desktop-ui.c:112
 msgid "Snap to Grid"
-msgstr ""
+msgstr "Rácshoz illesztés"
 
 #: ../src/main-win-ui.c:128
 msgid "_File"
@@ -539,20 +539,20 @@ msgstr "_Előkép nézet"
 msgid "Detailed _List View"
 msgstr "Részletes _listanézet"
 
-#: ../src/main-win.c:562
+#: ../src/main-win.c:564
 msgid "You are in super user mode"
 msgstr "Rendszergazda módban vagy"
 
-#: ../src/main-win.c:661
+#: ../src/main-win.c:663
 msgid "Switch user command is not set."
 msgstr "Felhasználóváltási parancs nincs beállítva."
 
-#: ../src/main-win.c:968
+#: ../src/main-win.c:970
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Szabad hely: %s (Összesen: %s)"
 
-#: ../src/main-win.c:1185
+#: ../src/main-win.c:1187
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -563,7 +563,7 @@ msgstr ""
 "'%s'\n"
 "Adj nevet az új könyvelző elemnek:"
 
-#: ../src/main-win.c:1189
+#: ../src/main-win.c:1191
 msgid "Add to Bookmarks"
 msgstr "Hozzáadás a könyvjelzőkhöz"
 
@@ -640,9 +640,8 @@ msgstr "Új"
 
 #: ../data/pcmanfm.desktop.in.h:1
 msgid "Browse the file system and manage the files"
-msgstr ""
+msgstr "Fájlrendszer tallózása és fájlok kezelése"
 
 #: ../data/pcmanfm.desktop.in.h:2
-#, fuzzy
 msgid "File Manager"
-msgstr "Megnyitás fájlkezelőben"
+msgstr "Fájlkezelő"
