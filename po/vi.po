@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm 0.9.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-24 11:13+0200\n"
-"PO-Revision-Date: 2010-08-05 19:25+0700\n"
-"Last-Translator: Tran Duy Hung <nguyentieuhau@gmail.com>\n"
+"POT-Creation-Date: 2010-10-26 07:05+0000\n"
+"PO-Revision-Date: 2010-10-29 21:18+0700\n"
+"Last-Translator: Duy Hung Tran <nguyentieuhau@gmail.com>\n"
 "Language-Team: English en_GB\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
 "X-Poedit-Country: UNITED KINGDOM\n"
 
 #: ../data/ui/about.glade.in.h:1
@@ -34,7 +34,9 @@ msgstr ""
 #. Please replace this line with your own names, one name per line.
 #: ../data/ui/about.glade.in.h:6
 msgid "translator-credits"
-msgstr "công dịch thuật"
+msgstr ""
+"công dịch thuật\n"
+"Tran Duy Hung <nguyentieuhau@gmail.com>"
 
 #: ../data/ui/desktop-pref.glade.h:1
 msgid "<b>Background</b>"
@@ -60,7 +62,8 @@ msgstr "Diện mạo"
 msgid "Background color:"
 msgstr "Màu nền:"
 
-#: ../data/ui/desktop-pref.glade.h:7 ../data/ui/pref.glade.h:10
+#: ../data/ui/desktop-pref.glade.h:7
+#: ../data/ui/pref.glade.h:10
 msgid "Center on the screen"
 msgstr "Giữa màn hình"
 
@@ -76,7 +79,8 @@ msgstr "Màu của bóng:"
 msgid "Desktop Icons"
 msgstr "Biểu tượng Màn hình nền"
 
-#: ../data/ui/desktop-pref.glade.h:11 ../src/desktop-ui.c:58
+#: ../data/ui/desktop-pref.glade.h:11
+#: ../src/desktop-ui.c:58
 msgid "Desktop Preferences"
 msgstr "Tùy chỉnh Màn hình nền"
 
@@ -110,19 +114,20 @@ msgstr "Hiển thị biểu tượng thiết bị trên màn hình nền"
 
 #: ../data/ui/desktop-pref.glade.h:19
 msgid "Show menus provided by window managers when desktop is clicked"
-msgstr ""
-"Hiển thị trình đơn cung cấp bởi bộ quản lý cửa sổ khi nhấp chuột vào màn "
-"hình nền"
+msgstr "Hiển thị trình đơn cung cấp bởi bộ quản lý cửa sổ khi nhấp chuột vào màn hình nền"
 
-#: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:37
+#: ../data/ui/desktop-pref.glade.h:20
+#: ../data/ui/pref.glade.h:37
 msgid "Stretch to fill the entire screen"
 msgstr "Căng toàn bộ màn hình"
 
-#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:38
+#: ../data/ui/desktop-pref.glade.h:21
+#: ../data/ui/pref.glade.h:38
 msgid "Stretch to fit the screen"
 msgstr "Căng vừa màn hình"
 
-#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:42
+#: ../data/ui/desktop-pref.glade.h:22
+#: ../data/ui/pref.glade.h:42
 msgid "Tile the image to fill the entire screen"
 msgstr "Sắp xếp hình ảnh cạnh nhau toàn bộ màn hình"
 
@@ -192,8 +197,7 @@ msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
 "%s = the command line you want to execute with terminal or su."
 msgstr ""
-"Ví dụ: \"xterm -e %s\" cho cửa sổ dòng lệnh hay \"gksu %s\" để chuyển đổi "
-"người dùng.\n"
+"Ví dụ: \"xterm -e %s\" cho cửa sổ dòng lệnh hay \"gksu %s\" để chuyển đổi người dùng.\n"
 "%s = dòng lệnh bạn muốn thực thi với cửa sổ dòng lệnh hay siêu người dùng."
 
 #: ../data/ui/pref.glade.h:18
@@ -214,8 +218,7 @@ msgstr "Hiển thị Biểu tượng"
 
 #: ../data/ui/pref.glade.h:22
 msgid "Mount mountable volumes automatically on program startup"
-msgstr ""
-"Tự động kết nối với những thiết bị có thể kết nối khi chương trình bắt đầu"
+msgstr "Tự động kết nối với những thiết bị có thể kết nối khi chương trình bắt đầu"
 
 #: ../data/ui/pref.glade.h:23
 msgid "Mount removable media automatically when they are inserted"
@@ -223,8 +226,7 @@ msgstr "Tự động kết nối những thiết bị có thể tháo gỡ khi c
 
 #: ../data/ui/pref.glade.h:24
 msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
-msgstr ""
-"Chuyển những tập tin bị xóa vào \"Thùng rác\" thay vì xóa ngay trên đĩa"
+msgstr "Chuyển những tập tin bị xóa vào \"Thùng rác\" thay vì xóa ngay trên đĩa"
 
 #: ../data/ui/pref.glade.h:25
 msgid "Only show thumbnails for local files"
@@ -252,8 +254,7 @@ msgstr "Tùy chỉnh"
 
 #: ../data/ui/pref.glade.h:31
 msgid "Show available options for removable media when they are inserted"
-msgstr ""
-"Hiển thị những tùy chọn có thể cho những thiết bị khi chúng được gắn vào máy"
+msgstr "Hiển thị những tùy chọn có thể cho những thiết bị khi chúng được gắn vào máy"
 
 #: ../data/ui/pref.glade.h:32
 msgid "Show thumbnails of files"
@@ -343,58 +344,69 @@ msgstr "Mở trong Bộ quản lý Tập tin"
 msgid "_Invert Selection"
 msgstr "_Đảo Chọn lựa"
 
-#: ../src/desktop-ui.c:54 ../src/main-win-ui.c:146
+#: ../src/desktop-ui.c:54
+#: ../src/main-win-ui.c:146
 msgid "_Sort Files"
 msgstr "_Sắp xếp Tập tin"
 
 #. for popup menu
-#: ../src/desktop-ui.c:55 ../src/main-win-ui.c:171
+#: ../src/desktop-ui.c:55
+#: ../src/main-win-ui.c:171
 msgid "_New"
-msgstr ""
+msgstr "_Mới"
 
-#: ../src/desktop-ui.c:56 ../src/main-win-ui.c:172
+#: ../src/desktop-ui.c:56
+#: ../src/main-win-ui.c:172
 msgid "Folder"
 msgstr "Thư mục"
 
-#: ../src/desktop-ui.c:57 ../src/main-win-ui.c:173
+#: ../src/desktop-ui.c:57
+#: ../src/main-win-ui.c:173
 msgid "Blank File"
 msgstr "Tập tin Rỗng"
 
-#: ../src/desktop-ui.c:69 ../src/main-win-ui.c:198
+#: ../src/desktop-ui.c:69
+#: ../src/main-win-ui.c:198
 msgid "By _Name"
 msgstr "Bởi Tê_n"
 
-#: ../src/desktop-ui.c:70 ../src/main-win-ui.c:199
+#: ../src/desktop-ui.c:70
+#: ../src/main-win-ui.c:199
 msgid "By _Modification Time"
 msgstr "Bởi _Ngày Thay đổi"
 
-#: ../src/desktop-ui.c:71 ../src/main-win-ui.c:200
+#: ../src/desktop-ui.c:71
+#: ../src/main-win-ui.c:200
 msgid "By _Size"
 msgstr "Bởi _Kích thước"
 
-#: ../src/desktop-ui.c:72 ../src/main-win-ui.c:201
+#: ../src/desktop-ui.c:72
+#: ../src/main-win-ui.c:201
 msgid "By File _Type"
 msgstr "Bởi K_iểu tập tin"
 
-#: ../src/desktop-ui.c:88 ../src/main-win-ui.c:218
+#: ../src/desktop-ui.c:88
+#: ../src/main-win-ui.c:218
 msgid "Open in New Tab"
 msgstr "Mở trong Thẻ mới"
 
-#: ../src/desktop-ui.c:89 ../src/main-win-ui.c:219
+#: ../src/desktop-ui.c:89
+#: ../src/main-win-ui.c:219
 msgid "Open in New Window"
 msgstr "Mở trong Cửa sổ Mới"
 
-#: ../src/desktop-ui.c:91 ../src/main-win-ui.c:221
+#: ../src/desktop-ui.c:91
+#: ../src/main-win-ui.c:221
 msgid "Open in _Terminal"
 msgstr "Mở trong _Cửa sổ dòng lệnh"
 
 #: ../src/desktop-ui.c:107
 msgid "Stick to Current Position"
-msgstr ""
+msgstr "Gắn vào Vị trí Hiện tại"
 
 #: ../src/desktop-ui.c:112
 msgid "Snap to Grid"
-msgstr ""
+msgstr "Gắn vào Lưới"
 
 #: ../src/main-win-ui.c:128
 msgid "_File"
@@ -540,20 +552,20 @@ msgstr "Kiểu hiển thị Ảnh _nhỏ"
 msgid "Detailed _List View"
 msgstr "Kiểu hiển thị _Chi tiết"
 
-#: ../src/main-win.c:562
+#: ../src/main-win.c:564
 msgid "You are in super user mode"
 msgstr "Bạn đang trong chế độ quản trị"
 
-#: ../src/main-win.c:661
+#: ../src/main-win.c:663
 msgid "Switch user command is not set."
 msgstr "Lệnh chuyển đổi người dùng chưa được thiết lập."
 
-#: ../src/main-win.c:968
+#: ../src/main-win.c:970
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Không gian trống: %s (Tổng cộng: %s)"
 
-#: ../src/main-win.c:1185
+#: ../src/main-win.c:1187
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -564,7 +576,7 @@ msgstr ""
 "'%s'\n"
 "Nhập tên cho hạng mục đánh dấu mới:"
 
-#: ../src/main-win.c:1189
+#: ../src/main-win.c:1191
 msgid "Add to Bookmarks"
 msgstr "Thêm vào Đánh dấu"
 
@@ -606,9 +618,7 @@ msgid "<mode>"
 msgstr "<mode>"
 
 #: ../src/pcmanfm.c:76
-msgid ""
-"Open preference dialog. 'n' is number of the page you want to show (1, 2, "
-"3...)."
+msgid "Open preference dialog. 'n' is number of the page you want to show (1, 2, 3...)."
 msgstr "Mở hộp thoại tùy chỉnh. 'n' là số trang bạn muốn xem (1, 2, 3...)"
 
 #. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
@@ -638,22 +648,20 @@ msgstr "Mới"
 
 #: ../data/pcmanfm.desktop.in.h:1
 msgid "Browse the file system and manage the files"
-msgstr ""
+msgstr "Xem hệ thống tập tin và quản lý dữ liệu"
 
 #: ../data/pcmanfm.desktop.in.h:2
-#, fuzzy
 msgid "File Manager"
-msgstr "Mở trong Bộ quản lý Tập tin"
+msgstr "Bộ quản lý Tập tin"
 
 #~ msgid "Blank FIle"
 #~ msgstr "Tập tin rỗng"
-
 #~ msgid "Open Find Files utility"
 #~ msgstr "Open Find Files utility"
-
 #~ msgid ""
 #~ "Open folders in new tabs of the last used window instead of creating new "
 #~ "windows"
 #~ msgstr ""
 #~ "Open folders in new tabs of the last used window instead of creating new "
 #~ "windows"
+
