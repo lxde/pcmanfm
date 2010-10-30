@@ -1,20 +1,20 @@
 # Polish translation of pcmanfm2 package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# Piotr Sokół <piotr.sokol@10g.pl>, 2010.
+# Piotr Sokół <psokol@jabster.pl>, 2010.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-24 11:13+0200\n"
-"PO-Revision-Date: 2010-05-14 22:05+0100\n"
+"POT-Creation-Date: 2010-10-28 07:06+0000\n"
+"PO-Revision-Date: 2010-10-30 19:07+0200\n"
 "Last-Translator: Piotr Sokół <psokol@jabster.pl>\n"
 "Language-Team: \n"
-"Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: pl\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
 "X-Generator: Pootle 2.0.1\n"
@@ -205,11 +205,11 @@ msgstr "Ukrycie przycisków zamykania kart"
 
 #: ../data/ui/pref.glade.h:19
 msgid "Hide folder content border"
-msgstr "Ukryj obramownie zawartości folderu"
+msgstr "Ukrycie obramowania zawartości katalogu"
 
 #: ../data/ui/pref.glade.h:20
 msgid "Hide side pane buttons"
-msgstr "Ukryj przyciski panelu bocznego"
+msgstr "Ukrycie przycisków panelu bocznego"
 
 #: ../data/ui/pref.glade.h:21
 msgid "Icon View"
@@ -333,11 +333,11 @@ msgstr "Typ nośnika:"
 
 #: ../src/volume-manager.c:150
 msgid "Removable Disk"
-msgstr "Dysk wymienny"
+msgstr "Nośnik wymienny"
 
 #: ../src/volume-manager.c:209
 msgid "Open in File Manager"
-msgstr "Otwórz w nowej karcie"
+msgstr "Otwórz w menedżerze plików"
 
 #: ../src/desktop-ui.c:53
 msgid "_Invert Selection"
@@ -350,7 +350,7 @@ msgstr "_Sortowanie"
 #. for popup menu
 #: ../src/desktop-ui.c:55 ../src/main-win-ui.c:171
 msgid "_New"
-msgstr ""
+msgstr "_Nowy"
 
 #: ../src/desktop-ui.c:56 ../src/main-win-ui.c:172
 msgid "Folder"
@@ -389,12 +389,14 @@ msgid "Open in _Terminal"
 msgstr "Otwórz w _terminalu"
 
 #: ../src/desktop-ui.c:107
+#, fuzzy
 msgid "Stick to Current Position"
-msgstr ""
+msgstr "Zablokowanie położenia"
 
 #: ../src/desktop-ui.c:112
+#, fuzzy
 msgid "Snap to Grid"
-msgstr ""
+msgstr "Wyrównanie położenia"
 
 #: ../src/main-win-ui.c:128
 msgid "_File"
@@ -462,7 +464,7 @@ msgstr "Naprzód"
 
 #: ../src/main-win-ui.c:152
 msgid "Parent Folder"
-msgstr "Nadrzędny"
+msgstr "Katalog nadrzędny"
 
 #: ../src/main-win-ui.c:152
 msgid "Go to parent Folder"
@@ -470,7 +472,7 @@ msgstr "Przechodzi do katalogu nadrzędnego"
 
 #: ../src/main-win-ui.c:153
 msgid "Home Folder"
-msgstr "Katalog domowy"
+msgstr "Katalog użytkownika"
 
 #: ../src/main-win-ui.c:154
 msgid "Desktop"
@@ -540,20 +542,20 @@ msgstr "_Miniatury"
 msgid "Detailed _List View"
 msgstr "_Lista szczegółowa"
 
-#: ../src/main-win.c:562
+#: ../src/main-win.c:564
 msgid "You are in super user mode"
-msgstr "Jesteś w trybie super użytkownika"
+msgstr "W użyciu tryb super użytkownika"
 
-#: ../src/main-win.c:661
+#: ../src/main-win.c:663
 msgid "Switch user command is not set."
 msgstr "Polecenie zmiany użytkownika nie zostało ustawione."
 
-#: ../src/main-win.c:968
+#: ../src/main-win.c:970
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Wolna przestrzeń: %s (Całkowita: %s)"
 
-#: ../src/main-win.c:1185
+#: ../src/main-win.c:1187
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -563,7 +565,7 @@ msgstr ""
 "Zostanie dodana zakładka do katalogu „%s”.\n"
 "Proszę wprowadzić nazwę zakładki:"
 
-#: ../src/main-win.c:1189
+#: ../src/main-win.c:1191
 msgid "Add to Bookmarks"
 msgstr "Nowa zakładka"
 
@@ -574,11 +576,11 @@ msgstr "Nazwa profilu"
 
 #: ../src/pcmanfm.c:70
 msgid "Launch desktop manager"
-msgstr "Uruchom menedżer pulpitu"
+msgstr "Włącza zarządzanie pulpitem"
 
 #: ../src/pcmanfm.c:71
 msgid "Turn off desktop manager if it's running"
-msgstr "Wyłącz menedżer pulpitu jeśli jest uruchomiony"
+msgstr "Wyłącza zarządzanie pulpitu jeśli jest włączone"
 
 #: ../src/pcmanfm.c:72
 msgid "Run PCManFM as a daemon"
@@ -639,12 +641,11 @@ msgstr "Nowy"
 
 #: ../data/pcmanfm.desktop.in.h:1
 msgid "Browse the file system and manage the files"
-msgstr ""
+msgstr "Umożliwia przeglądanie systemu plików i zarządza plikami"
 
 #: ../data/pcmanfm.desktop.in.h:2
-#, fuzzy
 msgid "File Manager"
-msgstr "Otwórz w nowej karcie"
+msgstr "Menedżer plików"
 
 #~ msgid "Open Find Files utility"
 #~ msgstr "Otwórz program Wyszukiwanie Plików"
