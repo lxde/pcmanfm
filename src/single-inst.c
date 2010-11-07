@@ -70,10 +70,13 @@ static void pass_args_to_existing_instance()
 {
     GOptionEntry* ent;
     FILE* f = fdopen(sock, "w");
+    char* escaped;
 
     /* pass cwd */
     char* cwd = g_get_current_dir();
-    fprintf(f, "%s\n", cwd);
+    escaped = g_strescape(cwd, NULL);
+    fprintf(f, "%s\n", escaped);
+    g_free(escaped);
     g_free(cwd);
 
     /* pass screen number */
@@ -96,7 +99,9 @@ static void pass_args_to_existing_instance()
                 fprintf(f, "--%s\n", ent->long_name);
                 if(g_str_has_prefix(str, "--")) /* strings begining with -- */
                     fprintf(f, "--\n"); /* prepend a -- to it */
-                fprintf(f, "%s\n", str);
+                escaped = g_strescape(str, NULL);
+                fprintf(f, "%s\n", escaped);
+                g_free(escaped);
             }
             break;
         }
@@ -116,7 +121,9 @@ static void pass_args_to_existing_instance()
                     char* str = *strv;
                     if(g_str_has_prefix(str, "--")) /* strings begining with -- */
                         fprintf(f, "--\n"); /* prepend a -- to it */
-                    fprintf(f, "%s\n", str);
+                    escaped = g_strescape(str, NULL);
+                    fprintf(f, "%s\n", escaped);
+                    g_free(escaped);
                 }
             }
             break;
@@ -261,16 +268,19 @@ gboolean on_client_socket_event(GIOChannel* ioc, GIOCondition cond, gpointer use
                 line[term] = '\0';
                 g_debug("line = %s", line);
                 if(!client->cwd)
-                    client->cwd = line;
+                    client->cwd = g_strcompress(line);
                 else if(client->screen_num == -1)
                 {
                     client->screen_num = atoi(line);
-                    g_free(line);
                     if(client->screen_num < 0)
                         client->screen_num = 0;
                 }
                 else
-                    g_ptr_array_add(client->argv, line);
+                {
+                    char* str = g_strcompress(line);
+                    g_ptr_array_add(client->argv, str);
+                }
+                g_free(line);
             }
         }
     }

@@ -116,11 +116,13 @@ static void single_inst_cb(const char* cwd, int screen_num)
     if(files_to_open)
     {
         int i;
+        n_files_to_open = g_strv_length(files_to_open);
         /* canonicalize filename if needed. */
         for(i = 0; i < n_files_to_open; ++i)
         {
             char* file = files_to_open[i];
             char* scheme = g_uri_parse_scheme(file);
+            g_debug("file: %s", file);
             if(scheme) /* a valid URI */
             {
                 /* FIXME: should we canonicalize URIs? and how about file:///? */
