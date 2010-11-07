@@ -90,10 +90,14 @@ static void pass_args_to_existing_instance()
         case G_OPTION_ARG_STRING:
         case G_OPTION_ARG_FILENAME:
         {
-            /* FIXME: handle strings has -- prefix */
             char* str = *(char**)ent->arg_data;
             if(str && *str)
-                fprintf(f, "--%s\n%s\n", ent->long_name, str);
+            {
+                fprintf(f, "--%s\n", ent->long_name);
+                if(g_str_has_prefix(str, "--")) /* strings begining with -- */
+                    fprintf(f, "--\n"); /* prepend a -- to it */
+                fprintf(f, "%s\n", str);
+            }
             break;
         }
         case G_OPTION_ARG_INT:
@@ -102,7 +106,6 @@ static void pass_args_to_existing_instance()
         case G_OPTION_ARG_STRING_ARRAY:
         case G_OPTION_ARG_FILENAME_ARRAY:
         {
-            /* FIXME: handle strings has -- prefix */
             char** strv = *(char***)ent->arg_data;
             if(strv && *strv)
             {
@@ -110,7 +113,10 @@ static void pass_args_to_existing_instance()
                     fprintf(f, "--%s\n", ent->long_name);
                 for(; *strv; ++strv)
                 {
-                    fprintf(f, "%s\n", *strv);
+                    char* str = *strv;
+                    if(g_str_has_prefix(str, "--")) /* strings begining with -- */
+                        fprintf(f, "--\n"); /* prepend a -- to it */
+                    fprintf(f, "%s\n", str);
                 }
             }
             break;
@@ -253,7 +259,7 @@ gboolean on_client_socket_event(GIOChannel* ioc, GIOCondition cond, gpointer use
             if(line)
             {
                 line[term] = '\0';
-                /* g_debug("line = %s", line); */
+                g_debug("line = %s", line);
                 if(!client->cwd)
                     client->cwd = line;
                 else if(client->screen_num == -1)
