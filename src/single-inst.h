@@ -36,9 +36,9 @@ enum _SingleInstResult
     SINGLE_INST_ERROR
 };
 
-typedef void (*SingleInstCallback)(const char* cwd, int workspace, int screen);
+typedef void (*SingleInstCallback)(const char* cwd, int screen);
 
-SingleInstResult single_inst_init(const char* prog_name, SingleInstCallback cb, GOptionEntry* opt_entries);
+SingleInstResult single_inst_init(const char* prog_name, SingleInstCallback cb, GOptionEntry* opt_entries, int screen_num);
 void single_inst_finalize();
 
 G_END_DECLS

@@ -18,7 +18,7 @@
  *      Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
  *      MA 02110-1301, USA.
  */
- 
+
 #include "single-inst.h"
 
 #include <string.h>
@@ -35,6 +35,7 @@ struct _SingleInstClient
 {
     GIOChannel* channel;
     char* cwd;
+    int screen_num;
     GPtrArray* argv;
     guint watch;
 };
@@ -47,6 +48,7 @@ static char* prog_name = NULL;
 static GList* clients;
 static SingleInstCallback callback = NULL;
 static GOptionEntry* opt_entries = NULL;
+static int screen_num = 0;
 
 static void get_socket_name(char* buf, int len);
 static gboolean on_server_socket_event(GIOChannel* ioc, GIOCondition cond, gpointer data);
@@ -69,10 +71,13 @@ static void pass_args_to_existing_instance()
     GOptionEntry* ent;
     FILE* f = fdopen(sock, "w");
 
-    char* cwd = g_get_current_dir();
     /* pass cwd */
+    char* cwd = g_get_current_dir();
     fprintf(f, "%s\n", cwd);
     g_free(cwd);
+
+    /* pass screen number */
+    fprintf(f, "%d\n", screen_num);
 
     for(ent = opt_entries; ent->long_name; ++ent)
     {
@@ -124,7 +129,7 @@ static void pass_args_to_existing_instance()
     fclose(f);
 }
 
-SingleInstResult single_inst_init(const char* _prog_name, SingleInstCallback cb, GOptionEntry* _opt_entries)
+SingleInstResult single_inst_init(const char* _prog_name, SingleInstCallback cb, GOptionEntry* _opt_entries, int _screen_num)
 {
     struct sockaddr_un addr;
     int addr_len;
@@ -136,6 +141,7 @@ SingleInstResult single_inst_init(const char* _prog_name, SingleInstCallback cb,
 
     prog_name = g_strdup(_prog_name);
     opt_entries = _opt_entries;
+    screen_num = _screen_num;
 
     /* FIXME: use abstract socket? */
     addr.sun_family = AF_UNIX;
@@ -218,13 +224,27 @@ void single_inst_finalize()
     prog_name = NULL;
 }
 
+static inline void parse_args(SingleInstClient* client)
+{
+    GOptionContext* ctx = g_option_context_new("");
+    int argc = client->argv->len;
+    char** argv = g_new(char*, argc + 1);
+    memcpy(argv, client->argv->pdata, sizeof(char*) * argc);
+    argv[argc] = NULL;
+    g_option_context_add_main_entries(ctx, opt_entries, NULL);
+    g_option_context_parse(ctx, &argc, &argv, NULL);
+    g_free(argv);
+    g_option_context_free(ctx);
+    if(callback)
+        callback(client->cwd, client->screen_num);
+}
+
 gboolean on_client_socket_event(GIOChannel* ioc, GIOCondition cond, gpointer user_data)
 {
     SingleInstClient* client = (SingleInstClient*)user_data;
 
     if ( cond & (G_IO_IN|G_IO_PRI) )
     {
-        GIOStatus status;
         char *line;
         gsize term;
 
@@ -233,9 +253,16 @@ gboolean on_client_socket_event(GIOChannel* ioc, GIOCondition cond, gpointer use
             if(line)
             {
                 line[term] = '\0';
-                g_debug("line = %s", line);
+                /* g_debug("line = %s", line); */
                 if(!client->cwd)
                     client->cwd = line;
+                else if(client->screen_num == -1)
+                {
+                    client->screen_num = atoi(line);
+                    g_free(line);
+                    if(client->screen_num < 0)
+                        client->screen_num = 0;
+                }
                 else
                     g_ptr_array_add(client->argv, line);
             }
@@ -247,17 +274,7 @@ gboolean on_client_socket_event(GIOChannel* ioc, GIOCondition cond, gpointer use
         if(! (cond & G_IO_ERR) ) /* if there is no error */
         {
             /* try to parse argv */
-            GOptionContext* ctx = g_option_context_new("");
-            int argc = client->argv->len;
-            char** argv = g_new(char*, argc + 1);
-            memcpy(argv, client->argv->pdata, sizeof(char*) * argc);
-            argv[argc] = NULL;
-            g_option_context_add_main_entries(ctx, opt_entries, NULL);
-            g_option_context_parse(ctx, &argc, &argv, NULL);
-            g_free(argv);
-            g_option_context_free(ctx);
-            if(callback)
-                callback(client->cwd, 0, 0);
+            parse_args(client);
         }
         single_inst_client_free(client);
         clients = g_list_remove(clients, client);
@@ -277,6 +294,7 @@ gboolean on_server_socket_event(GIOChannel* ioc, GIOCondition cond, gpointer dat
             SingleInstClient* client = g_slice_new0(SingleInstClient);
             client->channel = g_io_channel_unix_new(client_sock);
             g_io_channel_set_encoding(client->channel, NULL, NULL);
+            client->screen_num = -1;
             client->argv = g_ptr_array_new();
             g_ptr_array_add(client->argv, g_strdup(g_get_prgname()));
             client->watch = g_io_add_watch(client->channel, G_IO_IN|G_IO_PRI|G_IO_ERR|G_IO_HUP,
@@ -293,7 +311,7 @@ gboolean on_server_socket_event(GIOChannel* ioc, GIOCondition cond, gpointer dat
         char* _prog_name = prog_name;
         prog_name = NULL;
         single_inst_finalize();
-        single_inst_init(_prog_name, callback, opt_entries);
+        single_inst_init(_prog_name, callback, opt_entries, screen_num);
         g_free(_prog_name);
         return FALSE;
     }

@@ -24,6 +24,7 @@
 #endif
 
 #include <gtk/gtk.h>
+#include <gdk/gdkx.h>
 #include <stdio.h>
 #include <glib/gi18n.h>
 
@@ -107,7 +108,7 @@ static gboolean on_unix_signal(GIOChannel* ch, GIOCondition cond, gpointer user_
     return TRUE;
 }
 
-static void single_inst_cb(const char* cwd, int workspace, int screen)
+static void single_inst_cb(const char* cwd, int screen_num)
 {
     g_free(ipc_cwd);
     ipc_cwd = g_strdup(cwd);
@@ -155,7 +156,7 @@ int main(int argc, char** argv)
     }
 
     /* ensure that there is only one instance of pcmanfm. */
-    switch(single_inst_init("pcmanfm", single_inst_cb, opt_entries + 3))
+    switch(single_inst_init("pcmanfm", single_inst_cb, opt_entries + 3, gdk_x11_get_default_screen()))
     {
     case SINGLE_INST_CLIENT: /* we're not the first instance. */
         single_inst_finalize();
@@ -367,7 +368,7 @@ gboolean pcmanfm_run()
         {
             FmPath* path;
             char* cwd = ipc_cwd ? ipc_cwd : g_get_current_dir();
-            path = fm_path_new(cwd);
+            path = fm_path_new_for_path(cwd);
             fm_main_win_add_win(NULL, path);
             fm_path_unref(path);
             g_free(cwd);
