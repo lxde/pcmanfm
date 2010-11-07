@@ -65,35 +65,21 @@ static int n_pcmanfm_ref = 0;
 
 static GOptionEntry opt_entries[] =
 {
-    /* { "new-tab", 't', 0, G_OPTION_ARG_NONE, &new_tab, N_("Open folders in new tabs of the last used window instead of creating new windows"), NULL }, */
+    /* options only acceptable by first pcmanfm instance. These options are not passed through IPC */
     { "profile", 'p', 0, G_OPTION_ARG_STRING, &profile, N_("Name of configuration profile"), "<profile name>" },
+    { "daemon-mode", 'd', 0, G_OPTION_ARG_NONE, &daemon_mode, N_("Run PCManFM as a daemon"), NULL },
+    { "no-desktop", '\0', 0, G_OPTION_ARG_NONE, &no_desktop, N_("No function. Just to be compatible with nautilus"), NULL },
+
+    /* options that are acceptable for every instance of pcmanfm and will be passed through IPC. */
     { "desktop", '\0', 0, G_OPTION_ARG_NONE, &show_desktop, N_("Launch desktop manager"), NULL },
     { "desktop-off", '\0', 0, G_OPTION_ARG_NONE, &desktop_off, N_("Turn off desktop manager if it's running"), NULL },
-    { "daemon-mode", 'd', 0, G_OPTION_ARG_NONE, &daemon_mode, N_("Run PCManFM as a daemon"), NULL },
     { "desktop-pref", '\0', 0, G_OPTION_ARG_NONE, &desktop_pref, N_("Open desktop preference dialog"), NULL },
     { "set-wallpaper", 'w', 0, G_OPTION_ARG_FILENAME, &set_wallpaper, N_("Set desktop wallpaper"), N_("<image file>") },
     { "wallpaper-mode", '\0', 0, G_OPTION_ARG_STRING, &wallpaper_mode, N_("Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"), N_("<mode>") },
     { "show-pref", '\0', 0, G_OPTION_ARG_INT, &show_pref, N_("Open preference dialog. 'n' is number of the page you want to show (1, 2, 3...)."), "n" },
     /* { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL }, */
-    { "no-desktop", '\0', 0, G_OPTION_ARG_NONE, &no_desktop, N_("No function. Just to be compatible with nautilus"), NULL },
     {G_OPTION_REMAINING, 0, 0, G_OPTION_ARG_FILENAME_ARRAY, &files_to_open, NULL, N_("[FILE1, FILE2,...]")},
     { NULL }
-};
-
-/* single instance command id */
-enum {
-    CMD_INVALID,
-    CMD_CWD,
-    CMD_PROFILE,
-    CMD_DESKTOP,
-    CMD_DESKTOP_OFF,
-    CMD_DAEMON_MODE,
-    CMD_DESKTOP_PREF,
-    CMD_SET_WALLPAPER,
-    CMD_WALLPAPER_MODE,
-    CMD_SHOW_PREF,
-    CMD_FILES_TO_OPEN,
-    CMD_EOF
 };
 
 static const char* valid_wallpaper_modes[] = {"color", "stretch", "fit", "center", "tile"};
@@ -121,101 +107,39 @@ static gboolean on_unix_signal(GIOChannel* ch, GIOCondition cond, gpointer user_
     return TRUE;
 }
 
-static gboolean on_single_inst_command(int cmd, SingleInstCmdData* data)
+static void single_inst_cb(const char* cwd, int workspace, int screen)
 {
-    switch(cmd)
-    {
-    case CMD_CWD:
-        g_free(ipc_cwd);
-        ipc_cwd = single_inst_get_str(data, NULL);
-        break;
-    case CMD_PROFILE:
-        /* Not supported */
-        break;
-    case CMD_DESKTOP:
-        single_inst_get_bool(data, &show_desktop);
-        break;
-    case CMD_DESKTOP_OFF:
-        single_inst_get_bool(data, &desktop_off);
-        break;
-    case CMD_DAEMON_MODE:
-        /* Not supported */
-        break;
-    case CMD_DESKTOP_PREF:
-        single_inst_get_bool(data, &desktop_pref);
-        break;
-    case CMD_SET_WALLPAPER:
-        g_free(set_wallpaper);
-        set_wallpaper = single_inst_get_str(data, NULL);
-        break;
-    case CMD_WALLPAPER_MODE:
-        g_free(wallpaper_mode);
-        wallpaper_mode = single_inst_get_str(data, NULL);
-        break;
-    case CMD_SHOW_PREF:
-        single_inst_get_int(data, &show_pref);
-        break;
-    case CMD_FILES_TO_OPEN:
-        {
-            g_strfreev(files_to_open);
-            n_files_to_open = 0;
-            files_to_open = single_inst_get_strv(data, &n_files_to_open);
-        }
-        break;
-    case CMD_EOF:
-        {
-            int i;
-            /* canonicalize filename if needed. */
-            for(i = 0; i < n_files_to_open; ++i)
-            {
-                char* file = files_to_open[i];
-                char* scheme = g_uri_parse_scheme(file);
-                if(scheme) /* a valid URI */
-                {
-                    /* FIXME: should we canonicalize URIs? and how about file:///? */
-                    g_free(scheme);
-                }
-                else /* a file path */
-                {
-                    files_to_open[i] = fm_canonicalize_filename(file, ipc_cwd);
-                    g_free(file);
-                }
-            }
-
-            /* handle the parsed result and run the main program */
-            pcmanfm_run();
-        }
-        break;
-    }
-    return TRUE;
-}
-
-/* we're not the first instance. pass the argv to the existing one. */
-static void pass_args_to_existing_instance()
-{
-    /* send our current working dir to existing instance via IPC. */
-    ipc_cwd = g_get_current_dir();
-    single_inst_send_str(CMD_CWD, ipc_cwd);
     g_free(ipc_cwd);
+    ipc_cwd = g_strdup(cwd);
 
-    single_inst_send_bool(CMD_DESKTOP, show_desktop);
-    single_inst_send_bool(CMD_DESKTOP_OFF, desktop_off);
-    single_inst_send_bool(CMD_DESKTOP_PREF, desktop_pref);
-    single_inst_send_str(CMD_SET_WALLPAPER, set_wallpaper);
-    single_inst_send_str(CMD_WALLPAPER_MODE, wallpaper_mode);
-    single_inst_send_int(CMD_SHOW_PREF, show_pref);
-    /* single_inst_send_bool(CMD_FIND_FILES, find_files); */
-
-    single_inst_send_strv(CMD_FILES_TO_OPEN, files_to_open);
-    single_inst_send_bool(CMD_EOF, TRUE); /* all args have been sent. */
-
-    single_inst_finalize();
+    if(files_to_open)
+    {
+        int i;
+        /* canonicalize filename if needed. */
+        for(i = 0; i < n_files_to_open; ++i)
+        {
+            char* file = files_to_open[i];
+            char* scheme = g_uri_parse_scheme(file);
+            if(scheme) /* a valid URI */
+            {
+                /* FIXME: should we canonicalize URIs? and how about file:///? */
+                g_free(scheme);
+            }
+            else /* a file path */
+            {
+                files_to_open[i] = fm_canonicalize_filename(file, cwd);
+                g_free(file);
+            }
+        }
+    }
+    pcmanfm_run();
 }
 
 int main(int argc, char** argv)
 {
     FmConfig* config;
     GError* err = NULL;
+
 #ifdef ENABLE_NLS
     bindtextdomain ( GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR );
     bind_textdomain_codeset ( GETTEXT_PACKAGE, "UTF-8" );
@@ -231,10 +155,10 @@ int main(int argc, char** argv)
     }
 
     /* ensure that there is only one instance of pcmanfm. */
-    switch(single_inst_init("pcmanfm", on_single_inst_command))
+    switch(single_inst_init("pcmanfm", single_inst_cb, opt_entries + 3))
     {
     case SINGLE_INST_CLIENT: /* we're not the first instance. */
-        pass_args_to_existing_instance();
+        single_inst_finalize();
         gdk_notify_startup_complete();
         return 0;
     case SINGLE_INST_ERROR: /* error happened. */
