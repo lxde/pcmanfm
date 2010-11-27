@@ -368,13 +368,16 @@ gboolean pcmanfm_run()
         }
         else
         {
-            FmPath* path;
-            char* cwd = ipc_cwd ? ipc_cwd : g_get_current_dir();
-            path = fm_path_new_for_path(cwd);
-            fm_main_win_add_win(NULL, path);
-            fm_path_unref(path);
-            g_free(cwd);
-            ipc_cwd = NULL;
+			if(!daemon_mode)
+			{
+				FmPath* path;
+				char* cwd = ipc_cwd ? ipc_cwd : g_get_current_dir();
+				path = fm_path_new_for_path(cwd);
+				fm_main_win_add_win(NULL, path);
+				fm_path_unref(path);
+				g_free(cwd);
+				ipc_cwd = NULL;
+			}
         }
     }
     return ret;
