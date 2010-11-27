@@ -10,14 +10,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PCManFM\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-24 11:13+0200\n"
+"POT-Creation-Date: 2010-11-27 13:02+0800\n"
 "PO-Revision-Date: 2010-10-24 11:48+0200\n"
 "Last-Translator: Martin <brother@bsnet.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
-"Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: sv\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.0.5\n"
 
@@ -549,20 +549,20 @@ msgstr "_Tumnagelvy"
 msgid "Detailed _List View"
 msgstr "Detaljerad _listvy"
 
-#: ../src/main-win.c:562
+#: ../src/main-win.c:564
 msgid "You are in super user mode"
 msgstr "Du är i administratörsläge"
 
-#: ../src/main-win.c:661
+#: ../src/main-win.c:663
 msgid "Switch user command is not set."
 msgstr "Kommando för att byta användare är inte angivet."
 
-#: ../src/main-win.c:968
+#: ../src/main-win.c:970
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Ledigt utrymme: %s (Totalt: %s )"
 
-#: ../src/main-win.c:1185
+#: ../src/main-win.c:1187
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -573,50 +573,55 @@ msgstr ""
 "\"%s\"\n"
 "Ange namn för bokmärke:"
 
-#: ../src/main-win.c:1189
+#: ../src/main-win.c:1191
 msgid "Add to Bookmarks"
 msgstr "Lägg till i bokmärken"
 
-#. { "new-tab", 't', 0, G_OPTION_ARG_NONE, &new_tab, N_("Open folders in new tabs of the last used window instead of creating new windows"), NULL },
-#: ../src/pcmanfm.c:69
+#. options only acceptable by first pcmanfm instance. These options are not passed through IPC
+#: ../src/pcmanfm.c:70
 msgid "Name of configuration profile"
 msgstr "Namn för inställningsprofil"
 
-#: ../src/pcmanfm.c:70
-msgid "Launch desktop manager"
-msgstr "Starta skrivbordshanterare"
-
 #: ../src/pcmanfm.c:71
-msgid "Turn off desktop manager if it's running"
-msgstr "Stäng av skrivbordshanteraren om den körs"
-
-#: ../src/pcmanfm.c:72
 msgid "Run PCManFM as a daemon"
 msgstr "Kör PCManFM som en bakgrundsprocess"
 
-#: ../src/pcmanfm.c:73
+#: ../src/pcmanfm.c:72
+msgid "No function. Just to be compatible with nautilus"
+msgstr "Har ingen funktion. Endast för att vara kompatibel med Nautilus"
+
+#. options that are acceptable for every instance of pcmanfm and will be passed through IPC.
+#: ../src/pcmanfm.c:75
+msgid "Launch desktop manager"
+msgstr "Starta skrivbordshanterare"
+
+#: ../src/pcmanfm.c:76
+msgid "Turn off desktop manager if it's running"
+msgstr "Stäng av skrivbordshanteraren om den körs"
+
+#: ../src/pcmanfm.c:77
 msgid "Open desktop preference dialog"
 msgstr "Öppna inställningar för skrivbordet"
 
-#: ../src/pcmanfm.c:74
+#: ../src/pcmanfm.c:78
 msgid "Set desktop wallpaper"
 msgstr "Ange skrivbordsbakgrund"
 
-#: ../src/pcmanfm.c:74
+#: ../src/pcmanfm.c:78
 msgid "<image file>"
 msgstr "<bildfil>"
 
-#: ../src/pcmanfm.c:75
+#: ../src/pcmanfm.c:79
 msgid "Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"
 msgstr ""
 "Ange visningsläge för skrivbordsbakgrund. <mode> = (color|stretch|fit|center|"
 "tile)"
 
-#: ../src/pcmanfm.c:75
+#: ../src/pcmanfm.c:79
 msgid "<mode>"
 msgstr "<mode>"
 
-#: ../src/pcmanfm.c:76
+#: ../src/pcmanfm.c:80
 msgid ""
 "Open preference dialog. 'n' is number of the page you want to show (1, 2, "
 "3...)."
@@ -625,27 +630,23 @@ msgstr ""
 "(1,2,3,...)."
 
 #. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
-#: ../src/pcmanfm.c:78
-msgid "No function. Just to be compatible with nautilus"
-msgstr "Har ingen funktion. Endast för att vara kompatibel med Nautilus"
-
-#: ../src/pcmanfm.c:79
+#: ../src/pcmanfm.c:82
 msgid "[FILE1, FILE2,...]"
 msgstr "[FIL1, FIL2,...]"
 
-#: ../src/pcmanfm.c:498
+#: ../src/pcmanfm.c:425
 msgid "Terminal emulator is not set."
 msgstr "Terminalprogram har inte angivits."
 
-#: ../src/pcmanfm.c:541
+#: ../src/pcmanfm.c:468
 msgid "Create New..."
 msgstr "Skapa ny..."
 
-#: ../src/pcmanfm.c:541
+#: ../src/pcmanfm.c:468
 msgid "Enter a name for the newly created file:"
 msgstr "Ange ett namn för den nya filen:"
 
-#: ../src/pcmanfm.c:541
+#: ../src/pcmanfm.c:468
 msgid "New"
 msgstr "Ny"
 

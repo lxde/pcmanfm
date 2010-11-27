@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm 0.9.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-24 11:13+0200\n"
+"POT-Creation-Date: 2010-11-27 13:02+0800\n"
 "PO-Revision-Date: 2010-03-27 15:45+0100\n"
 "Last-Translator: Yorvyk <yorvik.ubunto@googlemail.com>\n"
 "Language-Team: English en_GB\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
 "X-Poedit-Country: UNITED KINGDOM\n"
 
 #: ../data/ui/about.glade.in.h:1
@@ -534,20 +534,20 @@ msgstr "_Thumbnail View"
 msgid "Detailed _List View"
 msgstr "Detailed _List View"
 
-#: ../src/main-win.c:562
+#: ../src/main-win.c:564
 msgid "You are in super user mode"
 msgstr "You are in Super User mode"
 
-#: ../src/main-win.c:661
+#: ../src/main-win.c:663
 msgid "Switch user command is not set."
 msgstr "Switch User command is not set"
 
-#: ../src/main-win.c:968
+#: ../src/main-win.c:970
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Free space: %s (Total: %s)"
 
-#: ../src/main-win.c:1185
+#: ../src/main-win.c:1187
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -558,48 +558,53 @@ msgstr ""
 "'%s'\n"
 "Enter a name for the new bookmark item:"
 
-#: ../src/main-win.c:1189
+#: ../src/main-win.c:1191
 msgid "Add to Bookmarks"
 msgstr "Add to Bookmarks"
 
-#. { "new-tab", 't', 0, G_OPTION_ARG_NONE, &new_tab, N_("Open folders in new tabs of the last used window instead of creating new windows"), NULL },
-#: ../src/pcmanfm.c:69
+#. options only acceptable by first pcmanfm instance. These options are not passed through IPC
+#: ../src/pcmanfm.c:70
 msgid "Name of configuration profile"
 msgstr "Name of configuration profile"
 
-#: ../src/pcmanfm.c:70
-msgid "Launch desktop manager"
-msgstr "Launch desktop manager"
-
 #: ../src/pcmanfm.c:71
-msgid "Turn off desktop manager if it's running"
-msgstr "Turn off desktop manager if it‘s running"
-
-#: ../src/pcmanfm.c:72
 msgid "Run PCManFM as a daemon"
 msgstr "Run PCManFM as a daemon"
 
-#: ../src/pcmanfm.c:73
+#: ../src/pcmanfm.c:72
+msgid "No function. Just to be compatible with nautilus"
+msgstr "No function. Just to be compatible with nautilus"
+
+#. options that are acceptable for every instance of pcmanfm and will be passed through IPC.
+#: ../src/pcmanfm.c:75
+msgid "Launch desktop manager"
+msgstr "Launch desktop manager"
+
+#: ../src/pcmanfm.c:76
+msgid "Turn off desktop manager if it's running"
+msgstr "Turn off desktop manager if it‘s running"
+
+#: ../src/pcmanfm.c:77
 msgid "Open desktop preference dialog"
 msgstr "Open desktop preference dialogue"
 
-#: ../src/pcmanfm.c:74
+#: ../src/pcmanfm.c:78
 msgid "Set desktop wallpaper"
 msgstr "Set desktop wallpaper"
 
-#: ../src/pcmanfm.c:74
+#: ../src/pcmanfm.c:78
 msgid "<image file>"
 msgstr "<image file>"
 
-#: ../src/pcmanfm.c:75
+#: ../src/pcmanfm.c:79
 msgid "Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"
 msgstr "Set mode of desktop wallpaper. <mode>=(colour|stretch|fit|centre|tile)"
 
-#: ../src/pcmanfm.c:75
+#: ../src/pcmanfm.c:79
 msgid "<mode>"
 msgstr "<mode>"
 
-#: ../src/pcmanfm.c:76
+#: ../src/pcmanfm.c:80
 msgid ""
 "Open preference dialog. 'n' is number of the page you want to show (1, 2, "
 "3...)."
@@ -608,27 +613,23 @@ msgstr ""
 "3...)"
 
 #. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
-#: ../src/pcmanfm.c:78
-msgid "No function. Just to be compatible with nautilus"
-msgstr "No function. Just to be compatible with nautilus"
-
-#: ../src/pcmanfm.c:79
+#: ../src/pcmanfm.c:82
 msgid "[FILE1, FILE2,...]"
 msgstr "[FILE1, FILE2,...]"
 
-#: ../src/pcmanfm.c:498
+#: ../src/pcmanfm.c:425
 msgid "Terminal emulator is not set."
 msgstr "Terminal emulator is not set"
 
-#: ../src/pcmanfm.c:541
+#: ../src/pcmanfm.c:468
 msgid "Create New..."
 msgstr "Create New..."
 
-#: ../src/pcmanfm.c:541
+#: ../src/pcmanfm.c:468
 msgid "Enter a name for the newly created file:"
 msgstr "Enter a name for the newly created file:"
 
-#: ../src/pcmanfm.c:541
+#: ../src/pcmanfm.c:468
 msgid "New"
 msgstr "New"
 

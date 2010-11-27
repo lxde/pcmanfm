@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-24 11:13+0200\n"
-"PO-Revision-Date: 2010-03-20 17:09+0800\n"
-"Last-Translator: 洪任諭 <pcman.tw@gmail.com>\n"
+"POT-Creation-Date: 2010-11-27 13:02+0800\n"
+"PO-Revision-Date: 2010-11-27 13:11+0800\n"
+"Last-Translator: Hong Jen Yee (PCMan) <pcman.tw@gmail.com>\n"
 "Language-Team: zh_TW <zh_TW@li.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
 "X-Poedit-Language: Chinese\n"
 "X-Poedit-Country: TAIWAN\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -62,7 +62,8 @@ msgstr "外觀"
 msgid "Background color:"
 msgstr "背景顏色："
 
-#: ../data/ui/desktop-pref.glade.h:7 ../data/ui/pref.glade.h:10
+#: ../data/ui/desktop-pref.glade.h:7
+#: ../data/ui/pref.glade.h:10
 msgid "Center on the screen"
 msgstr "置於螢幕中央"
 
@@ -78,7 +79,8 @@ msgstr "陰影色彩："
 msgid "Desktop Icons"
 msgstr "桌面圖示"
 
-#: ../data/ui/desktop-pref.glade.h:11 ../src/desktop-ui.c:58
+#: ../data/ui/desktop-pref.glade.h:11
+#: ../src/desktop-ui.c:58
 msgid "Desktop Preferences"
 msgstr "桌面偏好設定"
 
@@ -114,15 +116,18 @@ msgstr ""
 msgid "Show menus provided by window managers when desktop is clicked"
 msgstr "點擊桌面時，顯示視窗管理員提供的選單"
 
-#: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:37
+#: ../data/ui/desktop-pref.glade.h:20
+#: ../data/ui/pref.glade.h:37
 msgid "Stretch to fill the entire screen"
 msgstr "延展至填滿整個螢幕"
 
-#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:38
+#: ../data/ui/desktop-pref.glade.h:21
+#: ../data/ui/pref.glade.h:38
 msgid "Stretch to fit the screen"
 msgstr "延展到適合螢幕大小"
 
-#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:42
+#: ../data/ui/desktop-pref.glade.h:22
+#: ../data/ui/pref.glade.h:42
 msgid "Tile the image to fill the entire screen"
 msgstr "併排影像填滿整個螢幕"
 
@@ -339,58 +344,69 @@ msgstr "在檔案管理程式中開啟"
 msgid "_Invert Selection"
 msgstr "反相選取(_I)"
 
-#: ../src/desktop-ui.c:54 ../src/main-win-ui.c:146
+#: ../src/desktop-ui.c:54
+#: ../src/main-win-ui.c:146
 msgid "_Sort Files"
 msgstr "排序檔案(_S)"
 
 #. for popup menu
-#: ../src/desktop-ui.c:55 ../src/main-win-ui.c:171
+#: ../src/desktop-ui.c:55
+#: ../src/main-win-ui.c:171
 msgid "_New"
-msgstr ""
+msgstr "新建(_N)"
 
-#: ../src/desktop-ui.c:56 ../src/main-win-ui.c:172
+#: ../src/desktop-ui.c:56
+#: ../src/main-win-ui.c:172
 msgid "Folder"
 msgstr "資料夾"
 
-#: ../src/desktop-ui.c:57 ../src/main-win-ui.c:173
+#: ../src/desktop-ui.c:57
+#: ../src/main-win-ui.c:173
 msgid "Blank File"
 msgstr "空白檔案"
 
-#: ../src/desktop-ui.c:69 ../src/main-win-ui.c:198
+#: ../src/desktop-ui.c:69
+#: ../src/main-win-ui.c:198
 msgid "By _Name"
 msgstr "依名稱(_N)"
 
-#: ../src/desktop-ui.c:70 ../src/main-win-ui.c:199
+#: ../src/desktop-ui.c:70
+#: ../src/main-win-ui.c:199
 msgid "By _Modification Time"
 msgstr "依修改時間(_M)"
 
-#: ../src/desktop-ui.c:71 ../src/main-win-ui.c:200
+#: ../src/desktop-ui.c:71
+#: ../src/main-win-ui.c:200
 msgid "By _Size"
 msgstr "依大小(_S)"
 
-#: ../src/desktop-ui.c:72 ../src/main-win-ui.c:201
+#: ../src/desktop-ui.c:72
+#: ../src/main-win-ui.c:201
 msgid "By File _Type"
 msgstr "依檔案型態(_T)"
 
-#: ../src/desktop-ui.c:88 ../src/main-win-ui.c:218
+#: ../src/desktop-ui.c:88
+#: ../src/main-win-ui.c:218
 msgid "Open in New Tab"
 msgstr "在新分頁開啟"
 
-#: ../src/desktop-ui.c:89 ../src/main-win-ui.c:219
+#: ../src/desktop-ui.c:89
+#: ../src/main-win-ui.c:219
 msgid "Open in New Window"
 msgstr "在新視窗開啟"
 
-#: ../src/desktop-ui.c:91 ../src/main-win-ui.c:221
+#: ../src/desktop-ui.c:91
+#: ../src/main-win-ui.c:221
 msgid "Open in _Terminal"
 msgstr "以終端機模擬器開啟(_T)"
 
 #: ../src/desktop-ui.c:107
 msgid "Stick to Current Position"
-msgstr ""
+msgstr "固定在目前位置"
 
 #: ../src/desktop-ui.c:112
 msgid "Snap to Grid"
-msgstr ""
+msgstr "貼齊格線"
 
 #: ../src/main-win-ui.c:128
 msgid "_File"
@@ -536,20 +552,20 @@ msgstr "縮圖檢視(_T)"
 msgid "Detailed _List View"
 msgstr "以詳細清單檢視(_L)"
 
-#: ../src/main-win.c:562
+#: ../src/main-win.c:564
 msgid "You are in super user mode"
 msgstr "你正在使用超級使用者模式"
 
-#: ../src/main-win.c:661
+#: ../src/main-win.c:663
 msgid "Switch user command is not set."
 msgstr "切換使用者的命令尚未設定。"
 
-#: ../src/main-win.c:968
+#: ../src/main-win.c:970
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "可用空間：%s (總共：%s )"
 
-#: ../src/main-win.c:1185
+#: ../src/main-win.c:1187
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -560,75 +576,74 @@ msgstr ""
 "'%s'\n"
 "輸入新書籤的名稱:"
 
-#: ../src/main-win.c:1189
+#: ../src/main-win.c:1191
 msgid "Add to Bookmarks"
 msgstr "新增到書籤"
 
-#. { "new-tab", 't', 0, G_OPTION_ARG_NONE, &new_tab, N_("Open folders in new tabs of the last used window instead of creating new windows"), NULL },
-#: ../src/pcmanfm.c:69
+#. options only acceptable by first pcmanfm instance. These options are not passed through IPC
+#: ../src/pcmanfm.c:70
 msgid "Name of configuration profile"
 msgstr "設定檔名稱"
 
-#: ../src/pcmanfm.c:70
-msgid "Launch desktop manager"
-msgstr "啟動桌面管理"
-
 #: ../src/pcmanfm.c:71
-msgid "Turn off desktop manager if it's running"
-msgstr "關閉桌面管理"
-
-#: ../src/pcmanfm.c:72
 msgid "Run PCManFM as a daemon"
 msgstr "以常駐模式執行 PCManFM"
 
-#: ../src/pcmanfm.c:73
-msgid "Open desktop preference dialog"
-msgstr "開啟桌面偏好設定"
-
-#: ../src/pcmanfm.c:74
-msgid "Set desktop wallpaper"
-msgstr "設定桌布"
-
-#: ../src/pcmanfm.c:74
-msgid "<image file>"
-msgstr "<影像檔>"
-
-#: ../src/pcmanfm.c:75
-msgid "Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"
-msgstr ""
-
-#: ../src/pcmanfm.c:75
-msgid "<mode>"
-msgstr ""
-
-#: ../src/pcmanfm.c:76
-msgid ""
-"Open preference dialog. 'n' is number of the page you want to show (1, 2, "
-"3...)."
-msgstr "開啟偏好設定對話框，'n' 是你要顯示的頁面(1, 2, 3...)"
-
-#. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
-#: ../src/pcmanfm.c:78
+#: ../src/pcmanfm.c:72
 msgid "No function. Just to be compatible with nautilus"
 msgstr "沒有功能，只是用來和 nautilus 保持相容"
 
+#. options that are acceptable for every instance of pcmanfm and will be passed through IPC.
+#: ../src/pcmanfm.c:75
+msgid "Launch desktop manager"
+msgstr "啟動桌面管理"
+
+#: ../src/pcmanfm.c:76
+msgid "Turn off desktop manager if it's running"
+msgstr "關閉桌面管理"
+
+#: ../src/pcmanfm.c:77
+msgid "Open desktop preference dialog"
+msgstr "開啟桌面偏好設定"
+
+#: ../src/pcmanfm.c:78
+msgid "Set desktop wallpaper"
+msgstr "設定桌布"
+
+#: ../src/pcmanfm.c:78
+msgid "<image file>"
+msgstr "<影像檔>"
+
 #: ../src/pcmanfm.c:79
+msgid "Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"
+msgstr ""
+
+#: ../src/pcmanfm.c:79
+msgid "<mode>"
+msgstr ""
+
+#: ../src/pcmanfm.c:80
+msgid "Open preference dialog. 'n' is number of the page you want to show (1, 2, 3...)."
+msgstr "開啟偏好設定對話框，'n' 是你要顯示的頁面(1, 2, 3...)"
+
+#. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
+#: ../src/pcmanfm.c:82
 msgid "[FILE1, FILE2,...]"
 msgstr "[檔案1, 檔案2,...]"
 
-#: ../src/pcmanfm.c:498
+#: ../src/pcmanfm.c:425
 msgid "Terminal emulator is not set."
 msgstr "終端機模擬器尚未設定。"
 
-#: ../src/pcmanfm.c:541
+#: ../src/pcmanfm.c:468
 msgid "Create New..."
 msgstr "新建..."
 
-#: ../src/pcmanfm.c:541
+#: ../src/pcmanfm.c:468
 msgid "Enter a name for the newly created file:"
 msgstr "輸入新建立檔案的名稱："
 
-#: ../src/pcmanfm.c:541
+#: ../src/pcmanfm.c:468
 msgid "New"
 msgstr "新增"
 
@@ -642,3 +657,4 @@ msgstr "檔案管理程式"
 
 #~ msgid "Open Find Files utility"
 #~ msgstr "開啟尋找檔案工具"
+

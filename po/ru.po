@@ -1,11 +1,11 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-11-05 06:30+0000\n"
+"POT-Creation-Date: 2010-11-27 13:02+0800\n"
 "PO-Revision-Date: 2010-09-03 14:24+0200\n"
 "Last-Translator: Max <mpui@tut.by>\n"
 "Language-Team: Russian <>\n"
@@ -13,7 +13,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: ru\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Poedit-Language: Russian\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-Country: Russia\n"
@@ -112,7 +113,8 @@ msgstr "Показывать на рабочем столе значки дис�
 
 #: ../data/ui/desktop-pref.glade.h:19
 msgid "Show menus provided by window managers when desktop is clicked"
-msgstr "При клике на рабочем столе показать контекстное меню менеджера рабочего стола"
+msgstr ""
+"При клике на рабочем столе показать контекстное меню менеджера рабочего стола"
 
 #: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:37
 msgid "Stretch to fill the entire screen"
@@ -192,7 +194,8 @@ msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
 "%s = the command line you want to execute with terminal or su."
 msgstr ""
-"Примеры: \"xterm -e %s\" для запуска терминала или \"gksu %s\" для переключения пользователей. \n"
+"Примеры: \"xterm -e %s\" для запуска терминала или \"gksu %s\" для "
+"переключения пользователей. \n"
 "%s = команда, которую вы хотите выполнить в терминале или su."
 
 #: ../data/ui/pref.glade.h:18
@@ -564,71 +567,76 @@ msgstr ""
 msgid "Add to Bookmarks"
 msgstr "Добавить в закладки"
 
-#. { "new-tab", 't', 0, G_OPTION_ARG_NONE, &new_tab, N_("Open folders in new
-#. tabs of the last used window instead of creating new windows"), NULL },
-#: ../src/pcmanfm.c:69
+#. options only acceptable by first pcmanfm instance. These options are not passed through IPC
+#: ../src/pcmanfm.c:70
 msgid "Name of configuration profile"
 msgstr "Имя профиля конфигурации"
 
-#: ../src/pcmanfm.c:70
-msgid "Launch desktop manager"
-msgstr "Запустить менеджер рабочего стола"
-
 #: ../src/pcmanfm.c:71
-msgid "Turn off desktop manager if it's running"
-msgstr "Выключить менеджер рабочего стола, если он запущен"
-
-#: ../src/pcmanfm.c:72
 msgid "Run PCManFM as a daemon"
 msgstr "Запустить PCManFM как демон"
 
-#: ../src/pcmanfm.c:73
-msgid "Open desktop preference dialog"
-msgstr "Открыть диалог параметров рабочего стола"
-
-#: ../src/pcmanfm.c:74
-msgid "Set desktop wallpaper"
-msgstr "Установить обои рабочего стола"
-
-#: ../src/pcmanfm.c:74
-msgid "<image file>"
-msgstr "<файл изображения>"
-
-#: ../src/pcmanfm.c:75
-msgid "Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"
-msgstr "Установить режим для обоев рабочего стола. <режим>=(color|stretch|fit|center|tile)"
-
-#: ../src/pcmanfm.c:75
-msgid "<mode>"
-msgstr "<режим>"
-
-#: ../src/pcmanfm.c:76
-msgid "Open preference dialog. 'n' is number of the page you want to show (1, 2, 3...)."
-msgstr "Открывает диалог настроек. 'n' является номером отображаемой страницы (1, 2, 3, ...)."
-
-#. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files
-#. utility"), NULL },
-#: ../src/pcmanfm.c:78
+#: ../src/pcmanfm.c:72
 msgid "No function. Just to be compatible with nautilus"
 msgstr "Нет функции. Для совместимости с Nautilus"
 
+#. options that are acceptable for every instance of pcmanfm and will be passed through IPC.
+#: ../src/pcmanfm.c:75
+msgid "Launch desktop manager"
+msgstr "Запустить менеджер рабочего стола"
+
+#: ../src/pcmanfm.c:76
+msgid "Turn off desktop manager if it's running"
+msgstr "Выключить менеджер рабочего стола, если он запущен"
+
+#: ../src/pcmanfm.c:77
+msgid "Open desktop preference dialog"
+msgstr "Открыть диалог параметров рабочего стола"
+
+#: ../src/pcmanfm.c:78
+msgid "Set desktop wallpaper"
+msgstr "Установить обои рабочего стола"
+
+#: ../src/pcmanfm.c:78
+msgid "<image file>"
+msgstr "<файл изображения>"
+
 #: ../src/pcmanfm.c:79
+msgid "Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"
+msgstr ""
+"Установить режим для обоев рабочего стола. <режим>=(color|stretch|fit|center|"
+"tile)"
+
+#: ../src/pcmanfm.c:79
+msgid "<mode>"
+msgstr "<режим>"
+
+#: ../src/pcmanfm.c:80
+msgid ""
+"Open preference dialog. 'n' is number of the page you want to show (1, 2, "
+"3...)."
+msgstr ""
+"Открывает диалог настроек. 'n' является номером отображаемой страницы (1, 2, "
+"3, ...)."
+
+#. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
+#: ../src/pcmanfm.c:82
 msgid "[FILE1, FILE2,...]"
 msgstr "[FILE1, FILE2,...]"
 
-#: ../src/pcmanfm.c:498
+#: ../src/pcmanfm.c:425
 msgid "Terminal emulator is not set."
 msgstr "Не задан эмулятор терминала."
 
-#: ../src/pcmanfm.c:541
+#: ../src/pcmanfm.c:468
 msgid "Create New..."
 msgstr "Создать новый..."
 
-#: ../src/pcmanfm.c:541
+#: ../src/pcmanfm.c:468
 msgid "Enter a name for the newly created file:"
 msgstr "Введите имя создаваемого файла:"
 
-#: ../src/pcmanfm.c:541
+#: ../src/pcmanfm.c:468
 msgid "New"
 msgstr "Новый"
 
@@ -643,11 +651,16 @@ msgstr "Файловый менеджер"
 #~ msgid "Open Find Files utility"
 #~ msgstr "Открыть поиск файлов"
 
-#~ msgid "Open folders in new tabs of the last used window instead of creating new windows"
-#~ msgstr "Открывать папки в новой вкладке последнего активного окна, вместо создания нового окна"
+#~ msgid ""
+#~ "Open folders in new tabs of the last used window instead of creating new "
+#~ "windows"
+#~ msgstr ""
+#~ "Открывать папки в новой вкладке последнего активного окна, вместо "
+#~ "создания нового окна"
 
 #~ msgid "Display image files with supported format as thumbnails"
-#~ msgstr "Отображения файлов изображений с поддерживаемого формата в виде эскизов"
+#~ msgstr ""
+#~ "Отображения файлов изображений с поддерживаемого формата в виде эскизов"
 
 #~ msgid "Max size of files displayed as thumbnails:"
 #~ msgstr "Максимальный размер файлов, отображаемых, как эскизы"

@@ -591,6 +591,8 @@ static inline void popup_menu(FmDesktop* desktop, GdkEventButton* evt)
 
     ui = fm_file_menu_get_ui(menu);
     act_grp = fm_file_menu_get_action_group(menu);
+	gtk_action_group_set_translation_domain(act_grp, NULL);
+
     /* merge some specific menu items for folders */
     if(fm_file_menu_is_single_file_type(menu) && fm_file_info_is_dir(fi))
     {

@@ -8,14 +8,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-24 11:13+0200\n"
+"POT-Creation-Date: 2010-11-27 13:02+0800\n"
 "PO-Revision-Date: 2010-06-15 12:31+0600\n"
 "Last-Translator: Israt Jahan <israt@ankur.org.bd\n"
 "Language-Team: Bengali <ankur-bd-l10n@googlegroups.com>\n"
-"Language: bn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: bn\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../data/ui/about.glade.in.h:1
@@ -538,20 +538,20 @@ msgstr "থাম্বনেইল দৃশ্যপট (_T)"
 msgid "Detailed _List View"
 msgstr "বিস্তারিত তালিকা প্রদর্শন (_L)"
 
-#: ../src/main-win.c:562
+#: ../src/main-win.c:564
 msgid "You are in super user mode"
 msgstr "আপনি সুপার ব্যবহারকারী মোডে আছেন"
 
-#: ../src/main-win.c:661
+#: ../src/main-win.c:663
 msgid "Switch user command is not set."
 msgstr "ব্যবহারকারীর কমান্ড পরিবর্তন নির্ধারন করা হয়নি।"
 
-#: ../src/main-win.c:968
+#: ../src/main-win.c:970
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "অব্যবহৃত জায়গা: %s (সর্বমোট: %s)"
 
-#: ../src/main-win.c:1185
+#: ../src/main-win.c:1187
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -562,49 +562,54 @@ msgstr ""
 "'%s'\n"
 "নতুন বুকমার্ক আইটেমের নাম দিন :"
 
-#: ../src/main-win.c:1189
+#: ../src/main-win.c:1191
 msgid "Add to Bookmarks"
 msgstr "বুকমার্কে যোগ করুন"
 
-#. { "new-tab", 't', 0, G_OPTION_ARG_NONE, &new_tab, N_("Open folders in new tabs of the last used window instead of creating new windows"), NULL },
-#: ../src/pcmanfm.c:69
+#. options only acceptable by first pcmanfm instance. These options are not passed through IPC
+#: ../src/pcmanfm.c:70
 msgid "Name of configuration profile"
 msgstr "কনফিগারেশন প্রোফাইলের নাম"
 
-#: ../src/pcmanfm.c:70
-msgid "Launch desktop manager"
-msgstr "ডেক্সটপ ব্যবস্থাপক চালু করুন"
-
 #: ../src/pcmanfm.c:71
-msgid "Turn off desktop manager if it's running"
-msgstr "ডেক্সটপ ব্যবস্থাপক চলতে থাকলে তা বন্ধ করে দিন"
-
-#: ../src/pcmanfm.c:72
 msgid "Run PCManFM as a daemon"
 msgstr "PCManFM কে ডেমন হিসাবে চালান"
 
-#: ../src/pcmanfm.c:73
+#: ../src/pcmanfm.c:72
+msgid "No function. Just to be compatible with nautilus"
+msgstr "কোন ফাংশন নেই। শুধু নটিলাসের সাথে মানানসই করার জন্য"
+
+#. options that are acceptable for every instance of pcmanfm and will be passed through IPC.
+#: ../src/pcmanfm.c:75
+msgid "Launch desktop manager"
+msgstr "ডেক্সটপ ব্যবস্থাপক চালু করুন"
+
+#: ../src/pcmanfm.c:76
+msgid "Turn off desktop manager if it's running"
+msgstr "ডেক্সটপ ব্যবস্থাপক চলতে থাকলে তা বন্ধ করে দিন"
+
+#: ../src/pcmanfm.c:77
 msgid "Open desktop preference dialog"
 msgstr "ডেক্সটপের পছন্দসই ডায়ালগ খোলা হবে"
 
-#: ../src/pcmanfm.c:74
+#: ../src/pcmanfm.c:78
 msgid "Set desktop wallpaper"
 msgstr "ডেক্সটপ ওয়ালপেপার নির্ধারণ করা হবে"
 
-#: ../src/pcmanfm.c:74
+#: ../src/pcmanfm.c:78
 msgid "<image file>"
 msgstr "<ছবি ফাইল>"
 
-#: ../src/pcmanfm.c:75
+#: ../src/pcmanfm.c:79
 msgid "Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"
 msgstr ""
 "ডেক্সটপ ওয়ালপেপারের মোড নির্ধারণ করুন। <মোড>=(রং|প্রসারিত করুন|উপযুক্ত|কেন্দ্র|টালি)"
 
-#: ../src/pcmanfm.c:75
+#: ../src/pcmanfm.c:79
 msgid "<mode>"
 msgstr "<মোড>"
 
-#: ../src/pcmanfm.c:76
+#: ../src/pcmanfm.c:80
 msgid ""
 "Open preference dialog. 'n' is number of the page you want to show (1, 2, "
 "3...)."
@@ -612,27 +617,23 @@ msgstr ""
 "পছন্দসই ডায়ালগ খুলুন। 'n' হল আপনি যে পৃষ্ঠা প্রদর্শন করতে চান তার নম্বর (১, ২, ৩...)।"
 
 #. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
-#: ../src/pcmanfm.c:78
-msgid "No function. Just to be compatible with nautilus"
-msgstr "কোন ফাংশন নেই। শুধু নটিলাসের সাথে মানানসই করার জন্য"
-
-#: ../src/pcmanfm.c:79
+#: ../src/pcmanfm.c:82
 msgid "[FILE1, FILE2,...]"
 msgstr "[FILE1, FILE2,...]"
 
-#: ../src/pcmanfm.c:498
+#: ../src/pcmanfm.c:425
 msgid "Terminal emulator is not set."
 msgstr "টার্মিনাল ইমিউলেটর নির্ধারণ করা হয়নি।"
 
-#: ../src/pcmanfm.c:541
+#: ../src/pcmanfm.c:468
 msgid "Create New..."
 msgstr "নতুন তৈরি করুন..."
 
-#: ../src/pcmanfm.c:541
+#: ../src/pcmanfm.c:468
 msgid "Enter a name for the newly created file:"
 msgstr "নতুন তৈরি ফাইলের নাম দিন:"
 
-#: ../src/pcmanfm.c:541
+#: ../src/pcmanfm.c:468
 msgid "New"
 msgstr "নতুন"
 

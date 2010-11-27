@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm 0.9.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-26 07:05+0000\n"
+"POT-Creation-Date: 2010-11-27 13:02+0800\n"
 "PO-Revision-Date: 2010-10-29 21:31+0700\n"
 "Last-Translator: Duy Hung Tran <nguyentieuhau@gmail.com>\n"
 "Language-Team: English en_GB\n"
@@ -62,8 +62,7 @@ msgstr "Diện mạo"
 msgid "Background color:"
 msgstr "Màu nền:"
 
-#: ../data/ui/desktop-pref.glade.h:7
-#: ../data/ui/pref.glade.h:10
+#: ../data/ui/desktop-pref.glade.h:7 ../data/ui/pref.glade.h:10
 msgid "Center on the screen"
 msgstr "Giữa màn hình"
 
@@ -79,8 +78,7 @@ msgstr "Màu của bóng:"
 msgid "Desktop Icons"
 msgstr "Biểu tượng Màn hình nền"
 
-#: ../data/ui/desktop-pref.glade.h:11
-#: ../src/desktop-ui.c:58
+#: ../data/ui/desktop-pref.glade.h:11 ../src/desktop-ui.c:58
 msgid "Desktop Preferences"
 msgstr "Tùy chỉnh Màn hình nền"
 
@@ -114,20 +112,19 @@ msgstr "Hiển thị biểu tượng thiết bị trên màn hình nền"
 
 #: ../data/ui/desktop-pref.glade.h:19
 msgid "Show menus provided by window managers when desktop is clicked"
-msgstr "Hiển thị trình đơn cung cấp bởi bộ quản lý cửa sổ khi nhấp chuột vào màn hình nền"
+msgstr ""
+"Hiển thị trình đơn cung cấp bởi bộ quản lý cửa sổ khi nhấp chuột vào màn "
+"hình nền"
 
-#: ../data/ui/desktop-pref.glade.h:20
-#: ../data/ui/pref.glade.h:37
+#: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:37
 msgid "Stretch to fill the entire screen"
 msgstr "Căng toàn bộ màn hình"
 
-#: ../data/ui/desktop-pref.glade.h:21
-#: ../data/ui/pref.glade.h:38
+#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:38
 msgid "Stretch to fit the screen"
 msgstr "Căng vừa màn hình"
 
-#: ../data/ui/desktop-pref.glade.h:22
-#: ../data/ui/pref.glade.h:42
+#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:42
 msgid "Tile the image to fill the entire screen"
 msgstr "Sắp xếp hình ảnh cạnh nhau toàn bộ màn hình"
 
@@ -197,7 +194,8 @@ msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
 "%s = the command line you want to execute with terminal or su."
 msgstr ""
-"Ví dụ: \"xterm -e %s\" cho cửa sổ dòng lệnh hay \"gksu %s\" để chuyển đổi người dùng.\n"
+"Ví dụ: \"xterm -e %s\" cho cửa sổ dòng lệnh hay \"gksu %s\" để chuyển đổi "
+"người dùng.\n"
 "%s = dòng lệnh bạn muốn thực thi với cửa sổ dòng lệnh hay siêu người dùng."
 
 #: ../data/ui/pref.glade.h:18
@@ -218,7 +216,8 @@ msgstr "Hiển thị Biểu tượng"
 
 #: ../data/ui/pref.glade.h:22
 msgid "Mount mountable volumes automatically on program startup"
-msgstr "Tự động kết nối với những thiết bị có thể kết nối khi chương trình bắt đầu"
+msgstr ""
+"Tự động kết nối với những thiết bị có thể kết nối khi chương trình bắt đầu"
 
 #: ../data/ui/pref.glade.h:23
 msgid "Mount removable media automatically when they are inserted"
@@ -226,7 +225,8 @@ msgstr "Tự động kết nối những thiết bị có thể tháo gỡ khi c
 
 #: ../data/ui/pref.glade.h:24
 msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
-msgstr "Chuyển những tập tin bị xóa vào \"Thùng rác\" thay vì xóa ngay trên đĩa"
+msgstr ""
+"Chuyển những tập tin bị xóa vào \"Thùng rác\" thay vì xóa ngay trên đĩa"
 
 #: ../data/ui/pref.glade.h:25
 msgid "Only show thumbnails for local files"
@@ -254,7 +254,8 @@ msgstr "Tùy chỉnh"
 
 #: ../data/ui/pref.glade.h:31
 msgid "Show available options for removable media when they are inserted"
-msgstr "Hiển thị những tùy chọn có thể cho những thiết bị khi chúng được gắn vào máy"
+msgstr ""
+"Hiển thị những tùy chọn có thể cho những thiết bị khi chúng được gắn vào máy"
 
 #: ../data/ui/pref.glade.h:32
 msgid "Show thumbnails of files"
@@ -344,59 +345,48 @@ msgstr "Mở trong Bộ quản lý Tập tin"
 msgid "_Invert Selection"
 msgstr "_Đảo Chọn lựa"
 
-#: ../src/desktop-ui.c:54
-#: ../src/main-win-ui.c:146
+#: ../src/desktop-ui.c:54 ../src/main-win-ui.c:146
 msgid "_Sort Files"
 msgstr "_Sắp xếp Tập tin"
 
 #. for popup menu
-#: ../src/desktop-ui.c:55
-#: ../src/main-win-ui.c:171
+#: ../src/desktop-ui.c:55 ../src/main-win-ui.c:171
 msgid "_New"
 msgstr "_Mới"
 
-#: ../src/desktop-ui.c:56
-#: ../src/main-win-ui.c:172
+#: ../src/desktop-ui.c:56 ../src/main-win-ui.c:172
 msgid "Folder"
 msgstr "Thư mục"
 
-#: ../src/desktop-ui.c:57
-#: ../src/main-win-ui.c:173
+#: ../src/desktop-ui.c:57 ../src/main-win-ui.c:173
 msgid "Blank File"
 msgstr "Tập tin Rỗng"
 
-#: ../src/desktop-ui.c:69
-#: ../src/main-win-ui.c:198
+#: ../src/desktop-ui.c:69 ../src/main-win-ui.c:198
 msgid "By _Name"
 msgstr "Bởi Tê_n"
 
-#: ../src/desktop-ui.c:70
-#: ../src/main-win-ui.c:199
+#: ../src/desktop-ui.c:70 ../src/main-win-ui.c:199
 msgid "By _Modification Time"
 msgstr "Bởi _Ngày Thay đổi"
 
-#: ../src/desktop-ui.c:71
-#: ../src/main-win-ui.c:200
+#: ../src/desktop-ui.c:71 ../src/main-win-ui.c:200
 msgid "By _Size"
 msgstr "Bởi _Kích thước"
 
-#: ../src/desktop-ui.c:72
-#: ../src/main-win-ui.c:201
+#: ../src/desktop-ui.c:72 ../src/main-win-ui.c:201
 msgid "By File _Type"
 msgstr "Bởi K_iểu tập tin"
 
-#: ../src/desktop-ui.c:88
-#: ../src/main-win-ui.c:218
+#: ../src/desktop-ui.c:88 ../src/main-win-ui.c:218
 msgid "Open in New Tab"
 msgstr "Mở trong Thẻ mới"
 
-#: ../src/desktop-ui.c:89
-#: ../src/main-win-ui.c:219
+#: ../src/desktop-ui.c:89 ../src/main-win-ui.c:219
 msgid "Open in New Window"
 msgstr "Mở trong Cửa sổ Mới"
 
-#: ../src/desktop-ui.c:91
-#: ../src/main-win-ui.c:221
+#: ../src/desktop-ui.c:91 ../src/main-win-ui.c:221
 msgid "Open in _Terminal"
 msgstr "Mở trong _Cửa sổ dòng lệnh"
 
@@ -580,69 +570,72 @@ msgstr ""
 msgid "Add to Bookmarks"
 msgstr "Thêm vào Đánh dấu"
 
-#. { "new-tab", 't', 0, G_OPTION_ARG_NONE, &new_tab, N_("Open folders in new tabs of the last used window instead of creating new windows"), NULL },
-#: ../src/pcmanfm.c:69
+#. options only acceptable by first pcmanfm instance. These options are not passed through IPC
+#: ../src/pcmanfm.c:70
 msgid "Name of configuration profile"
 msgstr "Tên của tiểu sử cài đặt"
 
-#: ../src/pcmanfm.c:70
-msgid "Launch desktop manager"
-msgstr "Chạy bộ quản lý màn hình nền"
-
 #: ../src/pcmanfm.c:71
-msgid "Turn off desktop manager if it's running"
-msgstr "Tắt bộ quản lý màn hình nền nếu nó đang chạy"
-
-#: ../src/pcmanfm.c:72
 msgid "Run PCManFM as a daemon"
 msgstr "Chạy PCManFM ở chế độ ngầm"
 
-#: ../src/pcmanfm.c:73
-msgid "Open desktop preference dialog"
-msgstr "Mở hộp thoại tùy chỉnh màn hình nền"
-
-#: ../src/pcmanfm.c:74
-msgid "Set desktop wallpaper"
-msgstr "Thiết lập ảnh nền"
-
-#: ../src/pcmanfm.c:74
-msgid "<image file>"
-msgstr "<image file>"
-
-#: ../src/pcmanfm.c:75
-msgid "Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"
-msgstr "Thiết lập chế độ ảnh nền. <mode>=(colour|stretch|fit|centre|tile)"
-
-#: ../src/pcmanfm.c:75
-msgid "<mode>"
-msgstr "<mode>"
-
-#: ../src/pcmanfm.c:76
-msgid "Open preference dialog. 'n' is number of the page you want to show (1, 2, 3...)."
-msgstr "Mở hộp thoại tùy chỉnh. 'n' là số trang bạn muốn xem (1, 2, 3...)"
-
-#. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
-#: ../src/pcmanfm.c:78
+#: ../src/pcmanfm.c:72
 msgid "No function. Just to be compatible with nautilus"
 msgstr "Không có chức năng. Chỉ tương thích với nautilus"
 
+#. options that are acceptable for every instance of pcmanfm and will be passed through IPC.
+#: ../src/pcmanfm.c:75
+msgid "Launch desktop manager"
+msgstr "Chạy bộ quản lý màn hình nền"
+
+#: ../src/pcmanfm.c:76
+msgid "Turn off desktop manager if it's running"
+msgstr "Tắt bộ quản lý màn hình nền nếu nó đang chạy"
+
+#: ../src/pcmanfm.c:77
+msgid "Open desktop preference dialog"
+msgstr "Mở hộp thoại tùy chỉnh màn hình nền"
+
+#: ../src/pcmanfm.c:78
+msgid "Set desktop wallpaper"
+msgstr "Thiết lập ảnh nền"
+
+#: ../src/pcmanfm.c:78
+msgid "<image file>"
+msgstr "<image file>"
+
 #: ../src/pcmanfm.c:79
+msgid "Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"
+msgstr "Thiết lập chế độ ảnh nền. <mode>=(colour|stretch|fit|centre|tile)"
+
+#: ../src/pcmanfm.c:79
+msgid "<mode>"
+msgstr "<mode>"
+
+#: ../src/pcmanfm.c:80
+msgid ""
+"Open preference dialog. 'n' is number of the page you want to show (1, 2, "
+"3...)."
+msgstr "Mở hộp thoại tùy chỉnh. 'n' là số trang bạn muốn xem (1, 2, 3...)"
+
+#. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
+#: ../src/pcmanfm.c:82
 msgid "[FILE1, FILE2,...]"
 msgstr "[FILE1, FILE2,...]"
 
-#: ../src/pcmanfm.c:498
+#: ../src/pcmanfm.c:425
 msgid "Terminal emulator is not set."
 msgstr "Bộ mô phỏng dòng lệnh chưa được thiết lập."
 
-#: ../src/pcmanfm.c:541
+#: ../src/pcmanfm.c:468
 msgid "Create New..."
 msgstr "Tạo Mới..."
 
-#: ../src/pcmanfm.c:541
+#: ../src/pcmanfm.c:468
 msgid "Enter a name for the newly created file:"
 msgstr "Đặt tên cho tập tin vừa mới tạo:"
 
-#: ../src/pcmanfm.c:541
+#: ../src/pcmanfm.c:468
 msgid "New"
 msgstr "Mới"
 
@@ -656,12 +649,13 @@ msgstr "Bộ quản lý Tập tin"
 
 #~ msgid "Blank FIle"
 #~ msgstr "Tập tin rỗng"
+
 #~ msgid "Open Find Files utility"
 #~ msgstr "Open Find Files utility"
+
 #~ msgid ""
 #~ "Open folders in new tabs of the last used window instead of creating new "
 #~ "windows"
 #~ msgstr ""
 #~ "Open folders in new tabs of the last used window instead of creating new "
 #~ "windows"
-

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-28 07:06+0000\n"
+"POT-Creation-Date: 2010-11-27 13:02+0800\n"
 "PO-Revision-Date: 2010-10-30 19:07+0200\n"
 "Last-Translator: Piotr Sokół <psokol@jabster.pl>\n"
 "Language-Team: \n"
@@ -569,44 +569,49 @@ msgstr ""
 msgid "Add to Bookmarks"
 msgstr "Nowa zakładka"
 
-#. { "new-tab", 't', 0, G_OPTION_ARG_NONE, &new_tab, N_("Open folders in new tabs of the last used window instead of creating new windows"), NULL },
-#: ../src/pcmanfm.c:69
+#. options only acceptable by first pcmanfm instance. These options are not passed through IPC
+#: ../src/pcmanfm.c:70
 msgid "Name of configuration profile"
 msgstr "Nazwa profilu"
 
-#: ../src/pcmanfm.c:70
-msgid "Launch desktop manager"
-msgstr "Włącza zarządzanie pulpitem"
-
 #: ../src/pcmanfm.c:71
-msgid "Turn off desktop manager if it's running"
-msgstr "Wyłącza zarządzanie pulpitu jeśli jest włączone"
-
-#: ../src/pcmanfm.c:72
 msgid "Run PCManFM as a daemon"
 msgstr "Uruchamia program jako demon"
 
-#: ../src/pcmanfm.c:73
+#: ../src/pcmanfm.c:72
+msgid "No function. Just to be compatible with nautilus"
+msgstr "Brak funkcji. Zapewnia kompatybilność z programem Nautilus."
+
+#. options that are acceptable for every instance of pcmanfm and will be passed through IPC.
+#: ../src/pcmanfm.c:75
+msgid "Launch desktop manager"
+msgstr "Włącza zarządzanie pulpitem"
+
+#: ../src/pcmanfm.c:76
+msgid "Turn off desktop manager if it's running"
+msgstr "Wyłącza zarządzanie pulpitu jeśli jest włączone"
+
+#: ../src/pcmanfm.c:77
 msgid "Open desktop preference dialog"
 msgstr "Otwiera okno preferencji pulpitu"
 
-#: ../src/pcmanfm.c:74
+#: ../src/pcmanfm.c:78
 msgid "Set desktop wallpaper"
 msgstr "Ustawia tło pulpitu"
 
-#: ../src/pcmanfm.c:74
+#: ../src/pcmanfm.c:78
 msgid "<image file>"
 msgstr "<PLIK>"
 
-#: ../src/pcmanfm.c:75
+#: ../src/pcmanfm.c:79
 msgid "Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"
 msgstr "Ustawia tryb wyświetlania tła. <TRYB>=(color|stretch|fit|center|tile)"
 
-#: ../src/pcmanfm.c:75
+#: ../src/pcmanfm.c:79
 msgid "<mode>"
 msgstr "<TRYB>"
 
-#: ../src/pcmanfm.c:76
+#: ../src/pcmanfm.c:80
 msgid ""
 "Open preference dialog. 'n' is number of the page you want to show (1, 2, "
 "3...)."
@@ -615,27 +620,23 @@ msgstr ""
 "3...)."
 
 #. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
-#: ../src/pcmanfm.c:78
-msgid "No function. Just to be compatible with nautilus"
-msgstr "Brak funkcji. Zapewnia kompatybilność z programem Nautilus."
-
-#: ../src/pcmanfm.c:79
+#: ../src/pcmanfm.c:82
 msgid "[FILE1, FILE2,...]"
 msgstr "[PLIK1, PLIK2,...]"
 
-#: ../src/pcmanfm.c:498
+#: ../src/pcmanfm.c:425
 msgid "Terminal emulator is not set."
 msgstr "Nie zdefiniowano polecenia emulatora terminala."
 
-#: ../src/pcmanfm.c:541
+#: ../src/pcmanfm.c:468
 msgid "Create New..."
 msgstr "Utwórz nowy..."
 
-#: ../src/pcmanfm.c:541
+#: ../src/pcmanfm.c:468
 msgid "Enter a name for the newly created file:"
 msgstr "Proszę wprowadzić nazwę pliku:"
 
-#: ../src/pcmanfm.c:541
+#: ../src/pcmanfm.c:468
 msgid "New"
 msgstr "Nowy"
 
