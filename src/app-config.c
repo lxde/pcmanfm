@@ -136,9 +136,15 @@ void fm_app_config_load_from_key_file(FmAppConfig* cfg, GKeyFile* kf)
 
     /* default values for folder views */
     fm_key_file_get_int(kf, "ui", "view_mode", &cfg->view_mode);
+    if(!FM_FOLDER_VIEW_MODE_IS_VALID(cfg->view_mode))
+		cfg->view_mode = FM_FV_ICON_VIEW;
     fm_key_file_get_bool(kf, "ui", "show_hidden", &cfg->show_hidden);
     fm_key_file_get_int(kf, "ui", "sort_type", &cfg->sort_type);
+	if(cfg->sort_type != GTK_SORT_ASCENDING && cfg->sort_type != GTK_SORT_DESCENDING)
+		cfg->sort_type = GTK_SORT_ASCENDING;
     fm_key_file_get_int(kf, "ui", "sort_by", &cfg->sort_by);
+    if(!FM_FOLDER_MODEL_COL_IS_VALID(cfg->sort_by))
+		cfg->sort_by = COL_FILE_NAME;
 }
 
 void fm_app_config_load_from_profile(FmAppConfig* cfg, const char* name)
