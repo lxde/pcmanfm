@@ -1,20 +1,23 @@
-# Spanish (Castilian) translation for pcmanfm2 package.
+# Spanish (Castilian) translation for pcmanfm package.
 # Copyright (C) 2010 the LXDE team
-# This file is distributed under the same license as the pcmanfm2 package.
-# Hugo Florentino <sysadmin@cips.cu>, 2010.
-#
+# This file is distributed under the same license as the pcmanfm package.
+# Hugo Florentino <sysadmin@cips.cu>, 2010
+# LinoSP <ljsp1@hotmail.com>, 2010
+# 
 msgid ""
 msgstr ""
-"Project-Id-Version: pcmanfm2 0.9.5\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-11-27 13:02+0800\n"
-"PO-Revision-Date: 2010-05-12 09:37-0500\n"
-"Last-Translator: Hugo Florentino <sysadmin@cips.cu>\n"
-"Language-Team: \n"
+"Project-Id-Version: pcmanfm 0.9.9\n"
+"Report-Msgid-Bugs-To: http://sourceforge.net/projects/lxde/support\n"
+"POT-Creation-Date: 2010-11-26 07:28+0000\n"
+"PO-Revision-Date: 2011-01-03 14:14+0200\n"
+"Last-Translator: Hugo <sysadmin@cips.cu>\n"
+"Language-Team: Spanish (Castilian) <translation@mailinglist.lxde.org>\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.0.5\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2010"
@@ -191,8 +194,7 @@ msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
 "%s = the command line you want to execute with terminal or su."
 msgstr ""
-"Ejemplos: \"xterm -e %s\" para la terminal o \"gksu %s\" para cambiar de "
-"usuario.\n"
+"Ejemplos: \"xterm -e %s\" para la terminal o \"gksu %s\" para cambiar de usuario.\n"
 "%s = la línea de comando que desea ejecutar con terminal o su."
 
 #: ../data/ui/pref.glade.h:18
@@ -221,9 +223,7 @@ msgstr "Montar medios extraíbles automáticamente cuando se inserten"
 
 #: ../data/ui/pref.glade.h:24
 msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
-msgstr ""
-"Mover los archivos eliminados a \"Papelera\" en lugar de eliminarlos del "
-"disco"
+msgstr "Mover los archivos eliminados a \"Papelera\" en lugar de eliminarlos del disco"
 
 #: ../data/ui/pref.glade.h:25
 msgid "Only show thumbnails for local files"
@@ -251,8 +251,7 @@ msgstr "Preferencias"
 
 #: ../data/ui/pref.glade.h:31
 msgid "Show available options for removable media when they are inserted"
-msgstr ""
-"Mostrar opciones disponibles para los medios extraíbles cuando se inserten"
+msgstr "Mostrar opciones disponibles para los medios extraíbles cuando se inserten"
 
 #: ../data/ui/pref.glade.h:32
 msgid "Show thumbnails of files"
@@ -525,7 +524,7 @@ msgstr "Mostrar _ocultos"
 
 #: ../src/main-win-ui.c:184
 msgid "_Icon View"
-msgstr "Vista de iconos"
+msgstr "Vista de _iconos"
 
 #: ../src/main-win-ui.c:185
 msgid "_Compact View"
@@ -567,7 +566,8 @@ msgstr ""
 msgid "Add to Bookmarks"
 msgstr "Añadir a los marcadores"
 
-#. options only acceptable by first pcmanfm instance. These options are not passed through IPC
+#. options only acceptable by first pcmanfm instance. These options are not
+#. passed through IPC
 #: ../src/pcmanfm.c:70
 msgid "Name of configuration profile"
 msgstr "Nombre del perfil de configuración"
@@ -580,7 +580,8 @@ msgstr "Ejecutar PCManFM como servicio"
 msgid "No function. Just to be compatible with nautilus"
 msgstr "Sin funcionalidad. Sólo para compatibilidad con nautilus"
 
-#. options that are acceptable for every instance of pcmanfm and will be passed through IPC.
+#. options that are acceptable for every instance of pcmanfm and will be
+#. passed through IPC.
 #: ../src/pcmanfm.c:75
 msgid "Launch desktop manager"
 msgstr "Iniciar el gestor de escritorios"
@@ -603,23 +604,18 @@ msgstr "<archivo de imagen>"
 
 #: ../src/pcmanfm.c:79
 msgid "Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"
-msgstr ""
-"Establecer el modo del tapiz de escritorio. <modo>=(color|estirar|ajustar|"
-"centrar|mosaico)"
+msgstr "Establecer el modo del tapiz de escritorio. <modo>=(color|estirar|ajustar|centrar|mosaico)"
 
 #: ../src/pcmanfm.c:79
 msgid "<mode>"
 msgstr "<modo>"
 
 #: ../src/pcmanfm.c:80
-msgid ""
-"Open preference dialog. 'n' is number of the page you want to show (1, 2, "
-"3...)."
-msgstr ""
-"Abrir la pantalla de preferencias. 'n' es el número de la página que desea "
-"mostrar (1, 2, 3...)."
+msgid "Open preference dialog. 'n' is number of the page you want to show (1, 2, 3...)."
+msgstr "Abrir la pantalla de preferencias. 'n' es el número de la página que desea mostrar (1, 2, 3...)."
 
-#. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
+#. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files
+#. utility"), NULL },
 #: ../src/pcmanfm.c:82
 msgid "[FILE1, FILE2,...]"
 msgstr "[ARCHIVO1, ARCHIVO2, ...]"
@@ -647,19 +643,3 @@ msgstr "Explorar el sistema de archivos y gestionar los archivos"
 #: ../data/pcmanfm.desktop.in.h:2
 msgid "File Manager"
 msgstr "Gestor de archivos"
-
-#~ msgid "Open Find Files utility"
-#~ msgstr "Abrir la utilidad de búsqueda de archivos"
-
-#~ msgid ""
-#~ "Open folders in new tabs of the last used window instead of creating new "
-#~ "windows"
-#~ msgstr ""
-#~ "Abrir las carpetas en nuevas pestañas de la última ventana utilizada, en "
-#~ "lugar de crear nuevas ventanas"
-
-#~ msgid "Display image files with supported format as thumbnails"
-#~ msgstr "Mostrar como miniaturas los archivos de imagen admitidos"
-
-#~ msgid "Max size of files displayed as thumbnails:"
-#~ msgstr "Tamaño máximo de los archivos mostrados como miniaturas:"
