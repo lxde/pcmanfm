@@ -8,13 +8,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-11-27 13:02+0800\n"
-"PO-Revision-Date: 2010-04-16 19:27+0200\n"
-"Last-Translator: Julius Vitkauskas <zadintuvas@gmail.com>\n"
+"PO-Revision-Date: 2011-01-03 19:28+0200\n"
+"Last-Translator: Julius <zadintuvas@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: lt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: \n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%"
+"100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Pootle 2.0.5\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2010"
@@ -85,7 +88,7 @@ msgstr "Tik užpildyti fono spalva"
 
 #: ../data/ui/desktop-pref.glade.h:13
 msgid "Font of label text:"
-msgstr "Žymos teksto šriftas"
+msgstr "Žymos teksto šriftas:"
 
 #: ../data/ui/desktop-pref.glade.h:14
 msgid "Please select an image file"
@@ -255,19 +258,19 @@ msgstr "Rodyti failų miniatiūras"
 
 #: ../data/ui/pref.glade.h:33
 msgid "Size of big icons:"
-msgstr "Didelių piktogramų dydis"
+msgstr "Didelių piktogramų dydis:"
 
 #: ../data/ui/pref.glade.h:34
 msgid "Size of side pane icons:"
-msgstr "Šoninio skydelio piktogramų dydis"
+msgstr "Šoninio skydelio piktogramų dydis:"
 
 #: ../data/ui/pref.glade.h:35
 msgid "Size of small icons:"
-msgstr "Mažų piktogramų dydis"
+msgstr "Mažų piktogramų dydis:"
 
 #: ../data/ui/pref.glade.h:36
 msgid "Size of thumbnails:"
-msgstr "Miniatiūrų dydis"
+msgstr "Miniatiūrų dydis:"
 
 #: ../data/ui/pref.glade.h:39
 msgid "Switch user command:"
@@ -344,7 +347,7 @@ msgstr "_Rūšiuoti failus"
 #. for popup menu
 #: ../src/desktop-ui.c:55 ../src/main-win-ui.c:171
 msgid "_New"
-msgstr ""
+msgstr "_Naujas"
 
 #: ../src/desktop-ui.c:56 ../src/main-win-ui.c:172
 msgid "Folder"
@@ -384,11 +387,11 @@ msgstr "Atverti _terminale"
 
 #: ../src/desktop-ui.c:107
 msgid "Stick to Current Position"
-msgstr ""
+msgstr "Laikytis dabartinės pozicijos"
 
 #: ../src/desktop-ui.c:112
 msgid "Snap to Grid"
-msgstr ""
+msgstr "Laikytis lygiavimo"
 
 #: ../src/main-win-ui.c:128
 msgid "_File"
@@ -540,7 +543,7 @@ msgstr "Jūs esate super vartotojo režime"
 
 #: ../src/main-win.c:663
 msgid "Switch user command is not set."
-msgstr "Nenustatyta vartotojo perjungimo komanda"
+msgstr "Nenustatyta vartotojo perjungimo komanda."
 
 #: ../src/main-win.c:970
 #, c-format
@@ -554,7 +557,8 @@ msgid ""
 "'%s'\n"
 "Enter a name for the new bookmark item:"
 msgstr ""
-"Įtraukiamas aplankas '%s' į žymeles.\n"
+"Įtraukiamas aplankas į žymeles:\n"
+"'%s'\n"
 "Įveskite naujos žymelės pavadinimą:"
 
 #: ../src/main-win.c:1191
@@ -597,9 +601,7 @@ msgstr "<paveikslėlis>"
 
 #: ../src/pcmanfm.c:79
 msgid "Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"
-msgstr ""
-"Darbastalio fono režimas.\n"
-"<mode>=(color|stretch|fit|center|tile)"
+msgstr "Darbastalio fono režimas. <mode>=(color|stretch|fit|center|tile)"
 
 #: ../src/pcmanfm.c:79
 msgid "<mode>"
@@ -619,7 +621,7 @@ msgstr "[FAILAS1, FAILAS2,...]"
 
 #: ../src/pcmanfm.c:425
 msgid "Terminal emulator is not set."
-msgstr "Nenustatytas terminalo emuliatorius"
+msgstr "Nenustatytas terminalo emuliatorius."
 
 #: ../src/pcmanfm.c:468
 msgid "Create New..."
@@ -635,12 +637,11 @@ msgstr "Nauja"
 
 #: ../data/pcmanfm.desktop.in.h:1
 msgid "Browse the file system and manage the files"
-msgstr ""
+msgstr "Tvarkykite failus ir aplankus"
 
 #: ../data/pcmanfm.desktop.in.h:2
-#, fuzzy
 msgid "File Manager"
-msgstr "Atverti failų tvarkyklėje"
+msgstr "Failų tvarkyklė"
 
 #~ msgid "Open Find Files utility"
 #~ msgstr "Atverti failų paieškos programą"
