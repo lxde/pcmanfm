@@ -8,15 +8,16 @@ msgstr ""
 "Project-Id-Version: pcmanfm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-11-27 13:02+0800\n"
-"PO-Revision-Date: 2010-06-06 18:57+0200\n"
-"Last-Translator: Ivica Kolić<ikoli@yahoo.com> <>\n"
+"PO-Revision-Date: 2011-01-05 12:53+0200\n"
+"Last-Translator: zvacet <ikoli@yahoo.com>\n"
 "Language-Team: Croatian hr <>\n"
+"Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: \n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
 "10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Pootle 2.0.5\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2010"
@@ -30,7 +31,7 @@ msgid ""
 msgstr ""
 "Lagani upravitelj datotekama\n"
 "\n"
-"Razvio  Hon Jen Yee (PCMan)"
+"Razvio Hon Jen Yee (PCMan)"
 
 #. Please replace this line with your own names, one name per line.
 #: ../data/ui/about.glade.in.h:6
@@ -59,7 +60,7 @@ msgstr "Izgled"
 
 #: ../data/ui/desktop-pref.glade.h:6
 msgid "Background color:"
-msgstr "Pozadinska boja"
+msgstr "Pozadinska boja:"
 
 #: ../data/ui/desktop-pref.glade.h:7 ../data/ui/pref.glade.h:10
 msgid "Center on the screen"
@@ -71,7 +72,7 @@ msgstr ""
 
 #: ../data/ui/desktop-pref.glade.h:9
 msgid "Color of shadow:"
-msgstr "Boja sjene"
+msgstr "Boja sjene:"
 
 #: ../data/ui/desktop-pref.glade.h:10
 msgid "Desktop Icons"
@@ -168,7 +169,7 @@ msgstr ""
 
 #: ../data/ui/pref.glade.h:9
 msgid "Bookmarks:"
-msgstr "Zabilješke"
+msgstr "Zabilješke:"
 
 #: ../data/ui/pref.glade.h:11
 msgid "Compact View"
@@ -192,13 +193,12 @@ msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
 "%s = the command line you want to execute with terminal or su."
 msgstr ""
-"Primjeri:  \"xterm -e %s\" za terminal ili  \"gksu %s\" za promjenu "
-"korisnika.\n"
-"%s = naredbeni redak koji želite izvršiti terminalom ili su"
+"Primjeri: \"xterm -e %s\" za terminal ili \"gksu %s\" za promjenu korisnika.\n"
+"%s = naredbeni redak koji želite izvršiti terminalom ili su."
 
 #: ../data/ui/pref.glade.h:18
 msgid "Hide 'Close tab' buttons"
-msgstr "Sakrij \"Zatvori karticu\" dugmad"
+msgstr "Sakrij ´Zatvori karticu´ dugmad"
 
 #: ../data/ui/pref.glade.h:19
 msgid "Hide folder content border"
@@ -251,7 +251,7 @@ msgstr "Postavke"
 
 #: ../data/ui/pref.glade.h:31
 msgid "Show available options for removable media when they are inserted"
-msgstr "Prikaži dostupne opcije za uklonjive uređaje našto oni su umetnuti"
+msgstr "Prikaži dostupne opcije za uklonjive uređaje nakon što su umetnuti"
 
 #: ../data/ui/pref.glade.h:32
 msgid "Show thumbnails of files"
@@ -259,19 +259,19 @@ msgstr "Pokaži sličice datoteka"
 
 #: ../data/ui/pref.glade.h:33
 msgid "Size of big icons:"
-msgstr "Velična velikih ikona"
+msgstr "Velična velikih ikona:"
 
 #: ../data/ui/pref.glade.h:34
 msgid "Size of side pane icons:"
-msgstr "Veličina ikona bočnog stupca"
+msgstr "Veličina ikona bočnog stupca:"
 
 #: ../data/ui/pref.glade.h:35
 msgid "Size of small icons:"
-msgstr "Veličina malih ikona"
+msgstr "Veličina malih ikona:"
 
 #: ../data/ui/pref.glade.h:36
 msgid "Size of thumbnails:"
-msgstr "Veličina sličica"
+msgstr "Veličina sličica:"
 
 #: ../data/ui/pref.glade.h:39
 msgid "Switch user command:"
@@ -319,7 +319,7 @@ msgstr ""
 
 #: ../data/ui/autorun.glade.h:3
 msgid "Please select the action you want to perform:"
-msgstr " Odaberite akciju koju želite izvršiti:"
+msgstr "Odaberite akciju koju želite izvršiti:"
 
 #: ../data/ui/autorun.glade.h:4
 msgid "Removable medium is inserted"
@@ -327,7 +327,7 @@ msgstr "Uklonjivi medij je umetnut"
 
 #: ../data/ui/autorun.glade.h:5
 msgid "Type of medium:"
-msgstr "Tip medija"
+msgstr "Tip medija:"
 
 #: ../src/volume-manager.c:150
 msgid "Removable Disk"
@@ -348,7 +348,7 @@ msgstr "_Posloži datoteke"
 #. for popup menu
 #: ../src/desktop-ui.c:55 ../src/main-win-ui.c:171
 msgid "_New"
-msgstr ""
+msgstr "_Novi"
 
 #: ../src/desktop-ui.c:56 ../src/main-win-ui.c:172
 msgid "Folder"
@@ -368,7 +368,7 @@ msgstr "Po _vremenu izmjene"
 
 #: ../src/desktop-ui.c:71 ../src/main-win-ui.c:200
 msgid "By _Size"
-msgstr "po _veličini"
+msgstr "Po _veličini"
 
 #: ../src/desktop-ui.c:72 ../src/main-win-ui.c:201
 msgid "By File _Type"
@@ -558,9 +558,9 @@ msgid ""
 "'%s'\n"
 "Enter a name for the new bookmark item:"
 msgstr ""
-"Dodaj  mapu u zabilješke\n"
+"Dodaj mapu u zabilješke\n"
 "'%s'\n"
-"Unesi ime nove stavke zabilješki"
+"Unesi ime nove stavke zabilješki:"
 
 #: ../src/main-win.c:1191
 msgid "Add to Bookmarks"
@@ -631,7 +631,7 @@ msgstr "Napravi novi..."
 
 #: ../src/pcmanfm.c:468
 msgid "Enter a name for the newly created file:"
-msgstr "Unesi ime novostvorene datoteke"
+msgstr "Unesi ime novostvorene datoteke:"
 
 #: ../src/pcmanfm.c:468
 msgid "New"
@@ -642,6 +642,5 @@ msgid "Browse the file system and manage the files"
 msgstr ""
 
 #: ../data/pcmanfm.desktop.in.h:2
-#, fuzzy
 msgid "File Manager"
-msgstr "Otvori upravitelj datotekama"
+msgstr "Upravitelj datotekama"
