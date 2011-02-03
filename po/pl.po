@@ -1,22 +1,22 @@
-# Polish translation of pcmanfm2 package.
+# Polish translation of pcmanfm package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# Piotr Sokół <psokol@jabster.pl>, 2010.
+# This file is distributed under the same license as the pcmanfm package.
+# Piotr Sokół <psokol@jabster.pl>, 2010, 2011.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: pcmanfm2\n"
+"Project-Id-Version: pcmanfm 0.9.7\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-11-27 13:02+0800\n"
-"PO-Revision-Date: 2010-12-21 18:48+0200\n"
-"Last-Translator: Artur <mazdac@gmail.com>\n"
-"Language-Team: \n"
+"PO-Revision-Date: 2011-02-03 23:03+0100\n"
+"Last-Translator: Piotr Sokół <psokol@jabster.pl>\n"
+"Language-Team: Polish <>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
-"|| n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : ((n%10>=2 && n%10<=4 && (n"
+"%100<10 || n%100>=20)) ? 1 : 2));\n"
 "X-Generator: Pootle 2.0.5\n"
 "X-Poedit-Language: Polish\n"
 
@@ -32,14 +32,14 @@ msgid ""
 msgstr ""
 "Menedżer plików\n"
 "\n"
-"Rozwijany przez Hon Jen Yee (PCMan)"
+"Autor: Hon Jen Yee (PCMan)"
 
 #. Please replace this line with your own names, one name per line.
 #: ../data/ui/about.glade.in.h:6
 msgid "translator-credits"
 msgstr ""
-"Piotr Sokół <psokol@jabster.pl> 2010\n"
-"Grzegorz Gibas <amigib@gmail.com> 2010"
+"Grzegorz Gibas <amigib@gmail.com>, 2010.\n"
+"Piotr Sokół <psokol@jabster.pl>, 2010, 2011."
 
 #: ../data/ui/desktop-pref.glade.h:1
 msgid "<b>Background</b>"
@@ -163,7 +163,7 @@ msgstr "<b>Interfejs użytkownika</b>"
 
 #: ../data/ui/pref.glade.h:7
 msgid "Always show the tab bar"
-msgstr "Zawsze pokazuj karty"
+msgstr "Zawsze widoczny pasek kart"
 
 #: ../data/ui/pref.glade.h:8
 msgid "Archiver integration:"
@@ -175,7 +175,7 @@ msgstr "Otwieranie zakładek:"
 
 #: ../data/ui/pref.glade.h:11
 msgid "Compact View"
-msgstr "Widok zwarty"
+msgstr "Zwarty"
 
 #: ../data/ui/pref.glade.h:12
 msgid "Confirm before deleting files"
@@ -183,7 +183,7 @@ msgstr "Wyświetlanie pytania przed usuwaniem plików"
 
 #: ../data/ui/pref.glade.h:13
 msgid "Detailed List View"
-msgstr "Widok listy szczegółowej"
+msgstr "Lista szczegółowa"
 
 #: ../data/ui/pref.glade.h:14
 msgid "Do not generate thumbnails for files exceeding this size:"
@@ -213,7 +213,7 @@ msgstr "Ukrycie przycisków panelu bocznego"
 
 #: ../data/ui/pref.glade.h:21
 msgid "Icon View"
-msgstr "Widok ikon"
+msgstr "Ikony"
 
 #: ../data/ui/pref.glade.h:22
 msgid "Mount mountable volumes automatically on program startup"
@@ -253,11 +253,11 @@ msgstr "Preferencje"
 
 #: ../data/ui/pref.glade.h:31
 msgid "Show available options for removable media when they are inserted"
-msgstr "Wyświetlanie możliwych czynności po wsunięciu nośników wymiennych"
+msgstr "Wyświetlanie możliwych czynności po wsunięciu nośnika wymiennego"
 
 #: ../data/ui/pref.glade.h:32
 msgid "Show thumbnails of files"
-msgstr "Wyświetlanie minatur"
+msgstr "Wyświetlanie miniatur zawartości plików"
 
 #: ../data/ui/pref.glade.h:33
 msgid "Size of big icons:"
@@ -277,7 +277,7 @@ msgstr "Rozmiar miniatur:"
 
 #: ../data/ui/pref.glade.h:39
 msgid "Switch user command:"
-msgstr "Zmiana użytkownika:"
+msgstr "Polecenie zmiany użytkownika:"
 
 #: ../data/ui/pref.glade.h:40
 msgid "Terminal emulator:"
@@ -285,7 +285,7 @@ msgstr "Emulator terminala:"
 
 #: ../data/ui/pref.glade.h:41
 msgid "Thumbnail View"
-msgstr "Widok miniatur"
+msgstr "Miniatury"
 
 #: ../data/ui/pref.glade.h:43
 msgid "Use SI decimal prefixes instead of IEC binary prefixes"
@@ -390,11 +390,11 @@ msgstr "Otwórz w _terminalu"
 
 #: ../src/desktop-ui.c:107
 msgid "Stick to Current Position"
-msgstr "Przyklej do bieżącej pozycji"
+msgstr "Zablokowanie położenia"
 
 #: ../src/desktop-ui.c:112
 msgid "Snap to Grid"
-msgstr "Przyciągaj do siatki"
+msgstr "Wyrównanie położenia"
 
 #: ../src/main-win-ui.c:128
 msgid "_File"
