@@ -459,6 +459,7 @@ static void on_show_history_menu(GtkMenuToolButton* btn, FmMainWin* win)
 static void on_splitter_pos_changed(GtkPaned* paned, GParamSpec* ps, FmMainWin* win)
 {
     app_config->splitter_pos = gtk_paned_get_position(paned);
+    pcmanfm_save_config(FALSE);
 }
 
 static void on_places_chdir(FmPlacesView* view, guint button, FmPath* path, FmMainWin* win)
@@ -696,7 +697,12 @@ void on_show_hidden(GtkToggleAction* act, FmMainWin* win)
 {
     gboolean active = gtk_toggle_action_get_active(act);
     fm_folder_view_set_show_hidden( FM_FOLDER_VIEW(win->folder_view), active );
-    app_config->show_hidden = active;
+
+    if(active != app_config->show_hidden)
+    {
+        app_config->show_hidden = active;
+        pcmanfm_save_config(FALSE);
+    }
 }
 
 void on_change_mode(GtkRadioAction* act, GtkRadioAction *cur, FmMainWin* win)
@@ -709,14 +715,22 @@ void on_sort_by(GtkRadioAction* act, GtkRadioAction *cur, FmMainWin* win)
 {
     int val = gtk_radio_action_get_current_value(cur);
     fm_folder_view_sort(FM_FOLDER_VIEW(win->folder_view), -1, val);
-    app_config->sort_by = val;
+    if(val != app_config->sort_by)
+    {
+        app_config->sort_by = val;
+        pcmanfm_save_config(FALSE);
+    }
 }
 
 void on_sort_type(GtkRadioAction* act, GtkRadioAction *cur, FmMainWin* win)
 {
     int val = gtk_radio_action_get_current_value(cur);
     fm_folder_view_sort(FM_FOLDER_VIEW(win->folder_view), val, -1);
-    app_config->sort_type = val;
+    if(val != app_config->sort_type)
+    {
+        app_config->sort_type = val;
+        pcmanfm_save_config(FALSE);
+    }
 }
 
 void on_focus_in(GtkWidget* w, GdkEventFocus* evt)

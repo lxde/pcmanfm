@@ -46,6 +46,7 @@
 
 static int signal_pipe[2] = {-1, -1};
 gboolean daemon_mode = FALSE;
+static guint save_config_idle = 0;
 
 static char** files_to_open = NULL;
 static int n_files_to_open = 0;
@@ -196,8 +197,13 @@ int main(int argc, char** argv)
         gtk_main();
         if(desktop_running)
             fm_desktop_manager_finalize();
-        fm_config_save(config, NULL); /* save libfm config */
-        fm_app_config_save_profile((FmAppConfig*)config, profile); /* save pcmanfm config */
+
+        pcmanfm_save_config(TRUE);
+        if(save_config_idle)
+        {
+            g_source_remove(save_config_idle);
+            save_config_idle = 0;
+        }
         fm_volume_manager_finalize();
     }
 
@@ -368,16 +374,16 @@ gboolean pcmanfm_run()
         }
         else
         {
-			if(!daemon_mode)
-			{
-				FmPath* path;
-				char* cwd = ipc_cwd ? ipc_cwd : g_get_current_dir();
-				path = fm_path_new_for_path(cwd);
-				fm_main_win_add_win(NULL, path);
-				fm_path_unref(path);
-				g_free(cwd);
-				ipc_cwd = NULL;
-			}
+            if(!daemon_mode)
+            {
+                FmPath* path;
+                char* cwd = ipc_cwd ? ipc_cwd : g_get_current_dir();
+                path = fm_path_new_for_path(cwd);
+                fm_main_win_add_win(NULL, path);
+                fm_path_unref(path);
+                g_free(cwd);
+                ipc_cwd = NULL;
+            }
         }
     }
     return ret;
@@ -412,10 +418,26 @@ gboolean pcmanfm_open_folder(GAppLaunchContext* ctx, GList* folder_infos, gpoint
     return TRUE;
 }
 
-void pcmanfm_save_config()
+static gboolean on_save_config_idle(gpointer user_data)
 {
-    fm_config_save(fm_config, NULL);
-    fm_app_config_save_profile(app_config, profile);
+    pcmanfm_save_config(TRUE);
+    save_config_idle = 0;
+    return FALSE;
+}
+
+void pcmanfm_save_config(gboolean immediate)
+{
+    if(immediate)
+    {
+        fm_config_save(fm_config, NULL);
+        fm_app_config_save_profile(app_config, profile);
+    }
+    else
+    {
+        /* install an idle handler to save the config file. */
+        if( 0 == save_config_idle)
+            save_config_idle = g_idle_add_full(G_PRIORITY_LOW, (GSourceFunc)on_save_config_idle, NULL, NULL);
+    }
 }
 
 void pcmanfm_open_folder_in_terminal(GtkWindow* parent, FmPath* dir)
