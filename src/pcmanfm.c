@@ -494,8 +494,13 @@ void pcmanfm_create_new(GtkWindow* parent, FmPath* cwd, const char* templ)
     GError* err = NULL;
     FmPath* dest;
     char* basename;
+    const char* msg;
 _retry:
-    basename = fm_get_user_input(parent, _("Create New..."), _("Enter a name for the newly created file:"), _("New"));
+    if(templ == TEMPL_NAME_FOLDER)
+        msg = N_("Enter a name for the newly created folder:");
+    else
+        msg = N_("Enter a name for the newly created file:");
+    basename = fm_get_user_input(parent, _("Create New..."), _(msg), _("New"));
     if(!basename)
         return;
 

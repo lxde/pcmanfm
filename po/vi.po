@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm 0.9.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-11-27 13:02+0800\n"
+"POT-Creation-Date: 2011-02-14 20:00+0800\n"
 "PO-Revision-Date: 2010-10-29 21:31+0700\n"
 "Last-Translator: Duy Hung Tran <nguyentieuhau@gmail.com>\n"
 "Language-Team: English en_GB\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: \n"
 "X-Poedit-Country: UNITED KINGDOM\n"
 
 #: ../data/ui/about.glade.in.h:1
@@ -345,48 +345,47 @@ msgstr "Mở trong Bộ quản lý Tập tin"
 msgid "_Invert Selection"
 msgstr "_Đảo Chọn lựa"
 
-#: ../src/desktop-ui.c:54 ../src/main-win-ui.c:146
+#: ../src/desktop-ui.c:54 ../src/main-win-ui.c:151
 msgid "_Sort Files"
 msgstr "_Sắp xếp Tập tin"
 
-#. for popup menu
-#: ../src/desktop-ui.c:55 ../src/main-win-ui.c:171
+#: ../src/desktop-ui.c:55
 msgid "_New"
 msgstr "_Mới"
 
-#: ../src/desktop-ui.c:56 ../src/main-win-ui.c:172
+#: ../src/desktop-ui.c:56 ../src/main-win-ui.c:177
 msgid "Folder"
 msgstr "Thư mục"
 
-#: ../src/desktop-ui.c:57 ../src/main-win-ui.c:173
+#: ../src/desktop-ui.c:57 ../src/main-win-ui.c:178
 msgid "Blank File"
 msgstr "Tập tin Rỗng"
 
-#: ../src/desktop-ui.c:69 ../src/main-win-ui.c:198
+#: ../src/desktop-ui.c:69 ../src/main-win-ui.c:203
 msgid "By _Name"
 msgstr "Bởi Tê_n"
 
-#: ../src/desktop-ui.c:70 ../src/main-win-ui.c:199
+#: ../src/desktop-ui.c:70 ../src/main-win-ui.c:204
 msgid "By _Modification Time"
 msgstr "Bởi _Ngày Thay đổi"
 
-#: ../src/desktop-ui.c:71 ../src/main-win-ui.c:200
+#: ../src/desktop-ui.c:71 ../src/main-win-ui.c:205
 msgid "By _Size"
 msgstr "Bởi _Kích thước"
 
-#: ../src/desktop-ui.c:72 ../src/main-win-ui.c:201
+#: ../src/desktop-ui.c:72 ../src/main-win-ui.c:206
 msgid "By File _Type"
 msgstr "Bởi K_iểu tập tin"
 
-#: ../src/desktop-ui.c:88 ../src/main-win-ui.c:218
+#: ../src/desktop-ui.c:88 ../src/main-win-ui.c:223
 msgid "Open in New Tab"
 msgstr "Mở trong Thẻ mới"
 
-#: ../src/desktop-ui.c:89 ../src/main-win-ui.c:219
+#: ../src/desktop-ui.c:89 ../src/main-win-ui.c:224
 msgid "Open in New Window"
 msgstr "Mở trong Cửa sổ Mới"
 
-#: ../src/desktop-ui.c:91 ../src/main-win-ui.c:221
+#: ../src/desktop-ui.c:91 ../src/main-win-ui.c:226
 msgid "Open in _Terminal"
 msgstr "Mở trong _Cửa sổ dòng lệnh"
 
@@ -398,164 +397,170 @@ msgstr "Gắn vào Vị trí Hiện tại"
 msgid "Snap to Grid"
 msgstr "Gắn vào Lưới"
 
-#: ../src/main-win-ui.c:128
+#: ../src/main-win-ui.c:133
 msgid "_File"
 msgstr "_Tập tin"
 
-#: ../src/main-win-ui.c:129
+#: ../src/main-win-ui.c:134
 msgid "_New Window"
 msgstr "_Cửa sổ Mới"
 
-#: ../src/main-win-ui.c:130
+#: ../src/main-win-ui.c:135
 msgid "New _Tab"
 msgstr "Thẻ _Mới"
 
-#: ../src/main-win-ui.c:131
+#: ../src/main-win-ui.c:136
 msgid "_Close Tab"
 msgstr "Đóng T_hẻ"
 
-#: ../src/main-win-ui.c:132
+#: ../src/main-win-ui.c:137
 msgid "Close Window"
 msgstr "Đóng Cửa sổ"
 
-#: ../src/main-win-ui.c:133
+#: ../src/main-win-ui.c:138
 msgid "_Edit"
 msgstr "_Sửa"
 
-#: ../src/main-win-ui.c:138
+#: ../src/main-win-ui.c:143
 msgid "Rename"
 msgstr "Đổi tên"
 
-#: ../src/main-win-ui.c:139
+#: ../src/main-win-ui.c:144
 msgid "Create Symlink"
 msgstr "Tạo Liên kết mềm"
 
-#: ../src/main-win-ui.c:140
+#: ../src/main-win-ui.c:145
 msgid "Move To..."
 msgstr "Chuyển Đến..."
 
-#: ../src/main-win-ui.c:141
+#: ../src/main-win-ui.c:146
 msgid "Copy To..."
 msgstr "Sao chép Đến..."
 
-#: ../src/main-win-ui.c:143
+#: ../src/main-win-ui.c:148
 msgid "Invert Selection"
 msgstr "Đảo Lựa chọn"
 
-#: ../src/main-win-ui.c:145
+#: ../src/main-win-ui.c:150
 msgid "_View"
 msgstr "_Hiển thị"
 
-#: ../src/main-win-ui.c:147
+#: ../src/main-win-ui.c:152
 msgid "_Help"
 msgstr "_Trợ giúp"
 
-#: ../src/main-win-ui.c:149
+#: ../src/main-win-ui.c:154
 msgid "_Go"
 msgstr "_Đi đến"
 
-#: ../src/main-win-ui.c:150
+#: ../src/main-win-ui.c:155
 msgid "Previous Folder"
 msgstr "Thư mục Trước"
 
-#: ../src/main-win-ui.c:151
+#: ../src/main-win-ui.c:156
 msgid "Next Folder"
 msgstr "Thư mục Sau"
 
-#: ../src/main-win-ui.c:152
+#: ../src/main-win-ui.c:157
 msgid "Parent Folder"
 msgstr "Thư mục Cha"
 
-#: ../src/main-win-ui.c:152
+#: ../src/main-win-ui.c:157
 msgid "Go to parent Folder"
 msgstr "Đi đến Thư mục Cha"
 
-#: ../src/main-win-ui.c:153
+#: ../src/main-win-ui.c:158
 msgid "Home Folder"
 msgstr "Thư mục Nhà"
 
-#: ../src/main-win-ui.c:154
+#: ../src/main-win-ui.c:159
 msgid "Desktop"
 msgstr "Màn hình nền"
 
-#: ../src/main-win-ui.c:154
+#: ../src/main-win-ui.c:159
 msgid "Desktop Folder"
 msgstr "Thư mục Màn hình nền"
 
-#: ../src/main-win-ui.c:155
+#: ../src/main-win-ui.c:160
 msgid "My Computer"
 msgstr "Máy tính của tôi"
 
-#: ../src/main-win-ui.c:156
+#: ../src/main-win-ui.c:161
 msgid "Trash Can"
 msgstr "Thùng rác"
 
-#: ../src/main-win-ui.c:157
+#: ../src/main-win-ui.c:162
 msgid "Network Drives"
 msgstr "Ổ đĩa Mạng"
 
-#: ../src/main-win-ui.c:158
+#: ../src/main-win-ui.c:163
 msgid "Applications"
 msgstr "Ứng dụng"
 
-#: ../src/main-win-ui.c:158
+#: ../src/main-win-ui.c:163
 msgid "Installed Applications"
 msgstr "Ứng dụng Đã cài đặt"
 
-#: ../src/main-win-ui.c:160
+#: ../src/main-win-ui.c:165
 msgid "_Bookmarks"
 msgstr "_Đánh dấu"
 
-#: ../src/main-win-ui.c:161
+#: ../src/main-win-ui.c:166
 msgid "Add To Bookmarks"
 msgstr "Thêm vào Đánh dấu"
 
-#: ../src/main-win-ui.c:162
+#: ../src/main-win-ui.c:167
 msgid "_Tools"
 msgstr "_Công cụ"
 
-#: ../src/main-win-ui.c:163
+#: ../src/main-win-ui.c:168
 msgid "Open Current Folder in _Terminal"
 msgstr "Mở Thư mục Hiện tại trong _Cửa sổ dòng lệnh"
 
-#: ../src/main-win-ui.c:164
+#: ../src/main-win-ui.c:169
 msgid "Open Current Folder as _Root"
 msgstr "Mở Thư mục Hiện tại Với _Quyền quản trị"
 
-#: ../src/main-win-ui.c:179
+#. for popup menu
+#: ../src/main-win-ui.c:176
+#, fuzzy
+msgid "Create _New..."
+msgstr "Tạo Mới..."
+
+#: ../src/main-win-ui.c:184
 msgid "Show _Hidden"
 msgstr "Hiển thị _Nội dung ẩn"
 
-#: ../src/main-win-ui.c:184
+#: ../src/main-win-ui.c:189
 msgid "_Icon View"
 msgstr "Kiểu hiển thị _Biểu tượng"
 
-#: ../src/main-win-ui.c:185
+#: ../src/main-win-ui.c:190
 msgid "_Compact View"
 msgstr "Kiểu hiển thị _Thu gọn"
 
-#: ../src/main-win-ui.c:186
+#: ../src/main-win-ui.c:191
 msgid "_Thumbnail View"
 msgstr "Kiểu hiển thị Ảnh _nhỏ"
 
-#: ../src/main-win-ui.c:187
+#: ../src/main-win-ui.c:192
 msgid "Detailed _List View"
 msgstr "Kiểu hiển thị _Chi tiết"
 
-#: ../src/main-win.c:564
+#: ../src/main-win.c:565
 msgid "You are in super user mode"
 msgstr "Bạn đang trong chế độ quản trị"
 
-#: ../src/main-win.c:663
+#: ../src/main-win.c:664
 msgid "Switch user command is not set."
 msgstr "Lệnh chuyển đổi người dùng chưa được thiết lập."
 
-#: ../src/main-win.c:970
+#: ../src/main-win.c:984
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Không gian trống: %s (Tổng cộng: %s)"
 
-#: ../src/main-win.c:1187
+#: ../src/main-win.c:1201
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -566,76 +571,82 @@ msgstr ""
 "'%s'\n"
 "Nhập tên cho hạng mục đánh dấu mới:"
 
-#: ../src/main-win.c:1191
+#: ../src/main-win.c:1205
 msgid "Add to Bookmarks"
 msgstr "Thêm vào Đánh dấu"
 
 #. options only acceptable by first pcmanfm instance. These options are not passed through IPC
-#: ../src/pcmanfm.c:70
+#: ../src/pcmanfm.c:72
 msgid "Name of configuration profile"
 msgstr "Tên của tiểu sử cài đặt"
 
-#: ../src/pcmanfm.c:71
+#: ../src/pcmanfm.c:73
 msgid "Run PCManFM as a daemon"
 msgstr "Chạy PCManFM ở chế độ ngầm"
 
-#: ../src/pcmanfm.c:72
+#: ../src/pcmanfm.c:74
 msgid "No function. Just to be compatible with nautilus"
 msgstr "Không có chức năng. Chỉ tương thích với nautilus"
 
 #. options that are acceptable for every instance of pcmanfm and will be passed through IPC.
-#: ../src/pcmanfm.c:75
+#: ../src/pcmanfm.c:77
 msgid "Launch desktop manager"
 msgstr "Chạy bộ quản lý màn hình nền"
 
-#: ../src/pcmanfm.c:76
+#: ../src/pcmanfm.c:78
 msgid "Turn off desktop manager if it's running"
 msgstr "Tắt bộ quản lý màn hình nền nếu nó đang chạy"
 
-#: ../src/pcmanfm.c:77
+#: ../src/pcmanfm.c:79
 msgid "Open desktop preference dialog"
 msgstr "Mở hộp thoại tùy chỉnh màn hình nền"
 
-#: ../src/pcmanfm.c:78
+#: ../src/pcmanfm.c:80
 msgid "Set desktop wallpaper"
 msgstr "Thiết lập ảnh nền"
 
-#: ../src/pcmanfm.c:78
+#: ../src/pcmanfm.c:80
 msgid "<image file>"
 msgstr "<image file>"
 
-#: ../src/pcmanfm.c:79
+#: ../src/pcmanfm.c:81
 msgid "Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"
 msgstr "Thiết lập chế độ ảnh nền. <mode>=(colour|stretch|fit|centre|tile)"
 
-#: ../src/pcmanfm.c:79
+#: ../src/pcmanfm.c:81
 msgid "<mode>"
 msgstr "<mode>"
 
-#: ../src/pcmanfm.c:80
+#: ../src/pcmanfm.c:82
 msgid ""
 "Open preference dialog. 'n' is number of the page you want to show (1, 2, "
 "3...)."
 msgstr "Mở hộp thoại tùy chỉnh. 'n' là số trang bạn muốn xem (1, 2, 3...)"
 
+#. { "new-win", '\0', 'n', G_OPTION_ARG_NONE, &new_win, N_("Open new window"), NULL },
 #. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
-#: ../src/pcmanfm.c:82
+#: ../src/pcmanfm.c:85
 msgid "[FILE1, FILE2,...]"
 msgstr "[FILE1, FILE2,...]"
 
-#: ../src/pcmanfm.c:425
+#: ../src/pcmanfm.c:455
 msgid "Terminal emulator is not set."
 msgstr "Bộ mô phỏng dòng lệnh chưa được thiết lập."
 
-#: ../src/pcmanfm.c:468
-msgid "Create New..."
-msgstr "Tạo Mới..."
+#: ../src/pcmanfm.c:500
+#, fuzzy
+msgid "Enter a name for the newly created folder:"
+msgstr "Đặt tên cho tập tin vừa mới tạo:"
 
-#: ../src/pcmanfm.c:468
+#: ../src/pcmanfm.c:502
 msgid "Enter a name for the newly created file:"
 msgstr "Đặt tên cho tập tin vừa mới tạo:"
 
-#: ../src/pcmanfm.c:468
+#: ../src/pcmanfm.c:503
+msgid "Create New..."
+msgstr "Tạo Mới..."
+
+#: ../src/pcmanfm.c:503
 msgid "New"
 msgstr "Mới"
 

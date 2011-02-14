@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-11-27 13:02+0800\n"
+"POT-Creation-Date: 2011-02-14 20:00+0800\n"
 "PO-Revision-Date: 2010-10-29 14:20+0200\n"
 "Last-Translator: Yinghua_Wang <wantinghard@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Pootle 2.0.5\n"
 
@@ -338,48 +338,47 @@ msgstr "在文件管理器中打开"
 msgid "_Invert Selection"
 msgstr "反转选择(_I)"
 
-#: ../src/desktop-ui.c:54 ../src/main-win-ui.c:146
+#: ../src/desktop-ui.c:54 ../src/main-win-ui.c:151
 msgid "_Sort Files"
 msgstr "排序文件(_S)"
 
-#. for popup menu
-#: ../src/desktop-ui.c:55 ../src/main-win-ui.c:171
+#: ../src/desktop-ui.c:55
 msgid "_New"
 msgstr "新建(_N)"
 
-#: ../src/desktop-ui.c:56 ../src/main-win-ui.c:172
+#: ../src/desktop-ui.c:56 ../src/main-win-ui.c:177
 msgid "Folder"
 msgstr "文件夹"
 
-#: ../src/desktop-ui.c:57 ../src/main-win-ui.c:173
+#: ../src/desktop-ui.c:57 ../src/main-win-ui.c:178
 msgid "Blank File"
 msgstr "空白文件"
 
-#: ../src/desktop-ui.c:69 ../src/main-win-ui.c:198
+#: ../src/desktop-ui.c:69 ../src/main-win-ui.c:203
 msgid "By _Name"
 msgstr "按名称(_N)"
 
-#: ../src/desktop-ui.c:70 ../src/main-win-ui.c:199
+#: ../src/desktop-ui.c:70 ../src/main-win-ui.c:204
 msgid "By _Modification Time"
 msgstr "按修改时间(_M)"
 
-#: ../src/desktop-ui.c:71 ../src/main-win-ui.c:200
+#: ../src/desktop-ui.c:71 ../src/main-win-ui.c:205
 msgid "By _Size"
 msgstr "按大小(_S)"
 
-#: ../src/desktop-ui.c:72 ../src/main-win-ui.c:201
+#: ../src/desktop-ui.c:72 ../src/main-win-ui.c:206
 msgid "By File _Type"
 msgstr "按文件类型(_T)"
 
-#: ../src/desktop-ui.c:88 ../src/main-win-ui.c:218
+#: ../src/desktop-ui.c:88 ../src/main-win-ui.c:223
 msgid "Open in New Tab"
 msgstr "在新标签中打开"
 
-#: ../src/desktop-ui.c:89 ../src/main-win-ui.c:219
+#: ../src/desktop-ui.c:89 ../src/main-win-ui.c:224
 msgid "Open in New Window"
 msgstr "在新窗口中打开"
 
-#: ../src/desktop-ui.c:91 ../src/main-win-ui.c:221
+#: ../src/desktop-ui.c:91 ../src/main-win-ui.c:226
 msgid "Open in _Terminal"
 msgstr "在终端中打开(_T)"
 
@@ -391,164 +390,170 @@ msgstr "粘在当前位置"
 msgid "Snap to Grid"
 msgstr "捕获到网格"
 
-#: ../src/main-win-ui.c:128
+#: ../src/main-win-ui.c:133
 msgid "_File"
 msgstr "文件(_F)"
 
-#: ../src/main-win-ui.c:129
+#: ../src/main-win-ui.c:134
 msgid "_New Window"
 msgstr "新窗口(_N)"
 
-#: ../src/main-win-ui.c:130
+#: ../src/main-win-ui.c:135
 msgid "New _Tab"
 msgstr "新标签(_T)"
 
-#: ../src/main-win-ui.c:131
+#: ../src/main-win-ui.c:136
 msgid "_Close Tab"
 msgstr "关闭标签(_C)"
 
-#: ../src/main-win-ui.c:132
+#: ../src/main-win-ui.c:137
 msgid "Close Window"
 msgstr "关闭窗口"
 
-#: ../src/main-win-ui.c:133
+#: ../src/main-win-ui.c:138
 msgid "_Edit"
 msgstr "编辑(_E)"
 
-#: ../src/main-win-ui.c:138
+#: ../src/main-win-ui.c:143
 msgid "Rename"
 msgstr "重命名"
 
-#: ../src/main-win-ui.c:139
+#: ../src/main-win-ui.c:144
 msgid "Create Symlink"
 msgstr "创建符号链接"
 
-#: ../src/main-win-ui.c:140
+#: ../src/main-win-ui.c:145
 msgid "Move To..."
 msgstr "移动到..."
 
-#: ../src/main-win-ui.c:141
+#: ../src/main-win-ui.c:146
 msgid "Copy To..."
 msgstr "复制到..."
 
-#: ../src/main-win-ui.c:143
+#: ../src/main-win-ui.c:148
 msgid "Invert Selection"
 msgstr "反转选择"
 
-#: ../src/main-win-ui.c:145
+#: ../src/main-win-ui.c:150
 msgid "_View"
 msgstr "视图(_V)"
 
-#: ../src/main-win-ui.c:147
+#: ../src/main-win-ui.c:152
 msgid "_Help"
 msgstr "帮助(_H)"
 
-#: ../src/main-win-ui.c:149
+#: ../src/main-win-ui.c:154
 msgid "_Go"
 msgstr "转到(_G)"
 
-#: ../src/main-win-ui.c:150
+#: ../src/main-win-ui.c:155
 msgid "Previous Folder"
 msgstr "上一个文件夹"
 
-#: ../src/main-win-ui.c:151
+#: ../src/main-win-ui.c:156
 msgid "Next Folder"
 msgstr "下一个文件夹"
 
-#: ../src/main-win-ui.c:152
+#: ../src/main-win-ui.c:157
 msgid "Parent Folder"
 msgstr "上级文件夹"
 
-#: ../src/main-win-ui.c:152
+#: ../src/main-win-ui.c:157
 msgid "Go to parent Folder"
 msgstr "转到上级文件夹"
 
-#: ../src/main-win-ui.c:153
+#: ../src/main-win-ui.c:158
 msgid "Home Folder"
 msgstr "主文件夹"
 
-#: ../src/main-win-ui.c:154
+#: ../src/main-win-ui.c:159
 msgid "Desktop"
 msgstr "桌面"
 
-#: ../src/main-win-ui.c:154
+#: ../src/main-win-ui.c:159
 msgid "Desktop Folder"
 msgstr "桌面文件夹"
 
-#: ../src/main-win-ui.c:155
+#: ../src/main-win-ui.c:160
 msgid "My Computer"
 msgstr "我的电脑"
 
-#: ../src/main-win-ui.c:156
+#: ../src/main-win-ui.c:161
 msgid "Trash Can"
 msgstr "回收站"
 
-#: ../src/main-win-ui.c:157
+#: ../src/main-win-ui.c:162
 msgid "Network Drives"
 msgstr "网络驱动器"
 
-#: ../src/main-win-ui.c:158
+#: ../src/main-win-ui.c:163
 msgid "Applications"
 msgstr "应用程序"
 
-#: ../src/main-win-ui.c:158
+#: ../src/main-win-ui.c:163
 msgid "Installed Applications"
 msgstr "已安装的应用程序"
 
-#: ../src/main-win-ui.c:160
+#: ../src/main-win-ui.c:165
 msgid "_Bookmarks"
 msgstr "书签(_B)"
 
-#: ../src/main-win-ui.c:161
+#: ../src/main-win-ui.c:166
 msgid "Add To Bookmarks"
 msgstr "添加到书签中"
 
-#: ../src/main-win-ui.c:162
+#: ../src/main-win-ui.c:167
 msgid "_Tools"
 msgstr "工具(_T)"
 
-#: ../src/main-win-ui.c:163
+#: ../src/main-win-ui.c:168
 msgid "Open Current Folder in _Terminal"
 msgstr "在终端中打开当前文件夹(_T)"
 
-#: ../src/main-win-ui.c:164
+#: ../src/main-win-ui.c:169
 msgid "Open Current Folder as _Root"
 msgstr "以 _Root 身份打开当前文件夹"
 
-#: ../src/main-win-ui.c:179
+#. for popup menu
+#: ../src/main-win-ui.c:176
+#, fuzzy
+msgid "Create _New..."
+msgstr "新建..."
+
+#: ../src/main-win-ui.c:184
 msgid "Show _Hidden"
 msgstr "显示隐藏内容(_H)"
 
-#: ../src/main-win-ui.c:184
+#: ../src/main-win-ui.c:189
 msgid "_Icon View"
 msgstr "图标视图(_I)"
 
-#: ../src/main-win-ui.c:185
+#: ../src/main-win-ui.c:190
 msgid "_Compact View"
 msgstr "紧凑视图(_C)"
 
-#: ../src/main-win-ui.c:186
+#: ../src/main-win-ui.c:191
 msgid "_Thumbnail View"
 msgstr "缩略视图(_T)"
 
-#: ../src/main-win-ui.c:187
+#: ../src/main-win-ui.c:192
 msgid "Detailed _List View"
 msgstr "详细列表视图(_L)"
 
-#: ../src/main-win.c:564
+#: ../src/main-win.c:565
 msgid "You are in super user mode"
 msgstr "您正处于超级用户模式"
 
-#: ../src/main-win.c:663
+#: ../src/main-win.c:664
 msgid "Switch user command is not set."
 msgstr "没有设置切换用户命令。"
 
-#: ../src/main-win.c:970
+#: ../src/main-win.c:984
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "可用空间：%s(共：%s)"
 
-#: ../src/main-win.c:1187
+#: ../src/main-win.c:1201
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -559,76 +564,82 @@ msgstr ""
 "“%s”\n"
 "为新书签输入一个名称："
 
-#: ../src/main-win.c:1191
+#: ../src/main-win.c:1205
 msgid "Add to Bookmarks"
 msgstr "添加到书签中"
 
 #. options only acceptable by first pcmanfm instance. These options are not passed through IPC
-#: ../src/pcmanfm.c:70
+#: ../src/pcmanfm.c:72
 msgid "Name of configuration profile"
 msgstr "配置名称"
 
-#: ../src/pcmanfm.c:71
+#: ../src/pcmanfm.c:73
 msgid "Run PCManFM as a daemon"
 msgstr "以守护进程方式运行 PCManFM"
 
-#: ../src/pcmanfm.c:72
+#: ../src/pcmanfm.c:74
 msgid "No function. Just to be compatible with nautilus"
 msgstr "没有功能。仅为与 nautilus 兼容"
 
 #. options that are acceptable for every instance of pcmanfm and will be passed through IPC.
-#: ../src/pcmanfm.c:75
+#: ../src/pcmanfm.c:77
 msgid "Launch desktop manager"
 msgstr "启动桌面管理器"
 
-#: ../src/pcmanfm.c:76
+#: ../src/pcmanfm.c:78
 msgid "Turn off desktop manager if it's running"
 msgstr "若桌面管理器正在运行，关闭它"
 
-#: ../src/pcmanfm.c:77
+#: ../src/pcmanfm.c:79
 msgid "Open desktop preference dialog"
 msgstr "打开桌面偏好设置对话框"
 
-#: ../src/pcmanfm.c:78
+#: ../src/pcmanfm.c:80
 msgid "Set desktop wallpaper"
 msgstr "设置桌面壁纸"
 
-#: ../src/pcmanfm.c:78
+#: ../src/pcmanfm.c:80
 msgid "<image file>"
 msgstr "<图像文件>"
 
-#: ../src/pcmanfm.c:79
+#: ../src/pcmanfm.c:81
 msgid "Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"
 msgstr "设置桌面壁纸模式。 <mode>=(color|stretch|fit|center|tile)"
 
-#: ../src/pcmanfm.c:79
+#: ../src/pcmanfm.c:81
 msgid "<mode>"
 msgstr "<模式>"
 
-#: ../src/pcmanfm.c:80
+#: ../src/pcmanfm.c:82
 msgid ""
 "Open preference dialog. 'n' is number of the page you want to show (1, 2, "
 "3...)."
 msgstr "打开偏好设置对话框。'n' 是您想要显示的页数(1, 2, 3...)。"
 
+#. { "new-win", '\0', 'n', G_OPTION_ARG_NONE, &new_win, N_("Open new window"), NULL },
 #. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
-#: ../src/pcmanfm.c:82
+#: ../src/pcmanfm.c:85
 msgid "[FILE1, FILE2,...]"
 msgstr "[文件1, 文件2,...]"
 
-#: ../src/pcmanfm.c:425
+#: ../src/pcmanfm.c:455
 msgid "Terminal emulator is not set."
 msgstr "没有设置终端模拟器。"
 
-#: ../src/pcmanfm.c:468
-msgid "Create New..."
-msgstr "新建..."
+#: ../src/pcmanfm.c:500
+#, fuzzy
+msgid "Enter a name for the newly created folder:"
+msgstr "为新创建的文件输入一个名称："
 
-#: ../src/pcmanfm.c:468
+#: ../src/pcmanfm.c:502
 msgid "Enter a name for the newly created file:"
 msgstr "为新创建的文件输入一个名称："
 
-#: ../src/pcmanfm.c:468
+#: ../src/pcmanfm.c:503
+msgid "Create New..."
+msgstr "新建..."
+
+#: ../src/pcmanfm.c:503
 msgid "New"
 msgstr "新建"
 
