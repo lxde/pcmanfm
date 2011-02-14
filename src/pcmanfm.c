@@ -60,6 +60,7 @@ static int show_pref = 0;
 static gboolean desktop_pref = FALSE;
 static char* set_wallpaper = NULL;
 static char* wallpaper_mode = NULL;
+/* static gboolean new_win = FALSE; */
 static gboolean find_files = FALSE;
 static char* ipc_cwd = NULL;
 
@@ -79,6 +80,7 @@ static GOptionEntry opt_entries[] =
     { "set-wallpaper", 'w', 0, G_OPTION_ARG_FILENAME, &set_wallpaper, N_("Set desktop wallpaper"), N_("<image file>") },
     { "wallpaper-mode", '\0', 0, G_OPTION_ARG_STRING, &wallpaper_mode, N_("Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"), N_("<mode>") },
     { "show-pref", '\0', 0, G_OPTION_ARG_INT, &show_pref, N_("Open preference dialog. 'n' is number of the page you want to show (1, 2, 3...)."), "n" },
+    /* { "new-win", '\0', 'n', G_OPTION_ARG_NONE, &new_win, N_("Open new window"), NULL }, */
     /* { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL }, */
     {G_OPTION_REMAINING, 0, 0, G_OPTION_ARG_FILENAME_ARRAY, &files_to_open, NULL, N_("[FILE1, FILE2,...]")},
     { NULL }
@@ -338,8 +340,10 @@ gboolean pcmanfm_run()
             for(filename=files_to_open; *filename; ++filename)
             {
                 FmPath* path;
-                if( **filename == '/' || strstr(*filename, ":/") ) /* absolute path or URI */
-                    path = fm_path_new(*filename);
+                if( **filename == '/') /* absolute path */
+                    path = fm_path_new_for_path(*filename);
+                else if(strstr(*filename, ":/") ) /* URI */
+                    path = fm_path_new_for_uri(*filename);
                 else if( strcmp(*filename, "~") == 0 ) /* special case for home dir */
                 {
                     path = fm_path_get_home();
@@ -351,6 +355,7 @@ gboolean pcmanfm_run()
                     if(G_UNLIKELY(!cwd))
                     {
                         /* FIXME: This won't work if those filenames are passed via IPC since the receiving process has different cwd. */
+                        /* FIXME: should we use ipc_cwd here? */
                         char* cwd_str = g_get_current_dir();
                         cwd = fm_path_new(cwd_str);
                         g_free(cwd_str);

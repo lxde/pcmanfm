@@ -27,6 +27,11 @@ static const char main_menu_xml[] =
     "<menuitem action='New'/>"
     "<menuitem action='NewTab'/>"
     "<separator/>"
+    "<menu action='CreateNew'>"
+      "<menuitem action='NewFolder'/>"
+      "<menuitem action='NewBlank'/>"
+    "</menu>"
+    "<separator/>"
     "<menuitem action='CloseTab'/>"
     "<menuitem action='Close'/>"
   "</menu>"
@@ -168,7 +173,7 @@ static GtkActionEntry main_win_actions[]=
     {"Prev2", NULL, NULL, "XF86Back", NULL, G_CALLBACK(on_go_back)},
     {"Next2", NULL, NULL, "XF86Forward", NULL, G_CALLBACK(on_go_forward)},
     /* for popup menu */
-    {"CreateNew", GTK_STOCK_NEW, N_("_New"), "", NULL, NULL},
+    {"CreateNew", NULL, N_("Create _New..."), "", NULL, NULL},
     {"NewFolder", "folder", N_("Folder"), "<Ctrl><Shift>N", NULL, G_CALLBACK(on_create_new)},
     {"NewBlank", "text-x-generic", N_("Blank File"), NULL, NULL, G_CALLBACK(on_create_new)},
     {"Prop", GTK_STOCK_PROPERTIES, NULL, NULL, NULL, G_CALLBACK(on_prop)}
