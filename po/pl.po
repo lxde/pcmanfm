@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm 0.9.7\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-02-15 09:19+0100\n"
-"PO-Revision-Date: 2011-02-03 23:03+0100\n"
+"PO-Revision-Date: 2011-02-15 11:38+0100\n"
 "Last-Translator: Piotr Sokół <psokol@jabster.pl>\n"
 "Language-Team: Polish <>\n"
 "Language: pl\n"
@@ -313,7 +313,7 @@ msgstr "_Zarządzanie wolumenami"
 
 #: ../data/ui/autorun.glade.h:1
 msgid "<b>Removable medium is inserted</b>"
-msgstr "<b>Nośnik wymienny jest wsunięty</b>"
+msgstr "<b>Wsunięto nośnik wymienny</b>"
 
 #: ../data/ui/autorun.glade.h:2
 msgid "Detecting..."
@@ -325,11 +325,11 @@ msgstr "Proszę wybrać czynność:"
 
 #: ../data/ui/autorun.glade.h:4
 msgid "Removable medium is inserted"
-msgstr "Nośnik wymienny został wsunięty"
+msgstr "Otwieranie nośnika"
 
 #: ../data/ui/autorun.glade.h:5
 msgid "Type of medium:"
-msgstr "Typ nośnika:"
+msgstr "Typ:"
 
 #: ../src/volume-manager.c:150
 msgid "Removable Disk"
@@ -521,9 +521,8 @@ msgstr "Otwórz bieżący katalog jako użytkownik _root"
 
 #. for popup menu
 #: ../src/main-win-ui.c:176
-#, fuzzy
 msgid "Create _New..."
-msgstr "Utwórz nowy..."
+msgstr "Utwórz _nowy..."
 
 #: ../src/main-win-ui.c:184
 msgid "Show _Hidden"
@@ -633,9 +632,8 @@ msgid "Terminal emulator is not set."
 msgstr "Nie zdefiniowano polecenia emulatora terminala."
 
 #: ../src/pcmanfm.c:500
-#, fuzzy
 msgid "Enter a name for the newly created folder:"
-msgstr "Proszę wprowadzić nazwę pliku:"
+msgstr "Proszę wprowadzić nazwę katalogu:"
 
 #: ../src/pcmanfm.c:502
 msgid "Enter a name for the newly created file:"
@@ -651,7 +649,7 @@ msgstr "Nowy"
 
 #: ../data/pcmanfm.desktop.in.h:1
 msgid "Browse the file system and manage the files"
-msgstr "Umożliwia przeglądanie systemu plików i zarządza plikami"
+msgstr "Umożliwia przeglądanie systemu plików i zarządza jego zawartością"
 
 #: ../data/pcmanfm.desktop.in.h:2
 msgid "File Manager"
