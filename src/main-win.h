@@ -28,32 +28,32 @@
 
 G_BEGIN_DECLS
 
-#define FM_MAIN_WIN_TYPE				(fm_main_win_get_type())
-#define FM_MAIN_WIN(obj)				(G_TYPE_CHECK_INSTANCE_CAST((obj),\
-			FM_MAIN_WIN_TYPE, FmMainWin))
-#define FM_MAIN_WIN_CLASS(klass)		(G_TYPE_CHECK_CLASS_CAST((klass),\
-			FM_MAIN_WIN_TYPE, FmMainWinClass))
-#define IS_FM_MAIN_WIN(obj)			(G_TYPE_CHECK_INSTANCE_TYPE((obj),\
-			FM_MAIN_WIN_TYPE))
-#define IS_FM_MAIN_WIN_CLASS(klass)	(G_TYPE_CHECK_CLASS_TYPE((klass),\
-			FM_MAIN_WIN_TYPE))
+#define FM_MAIN_WIN_TYPE                (fm_main_win_get_type())
+#define FM_MAIN_WIN(obj)                (G_TYPE_CHECK_INSTANCE_CAST((obj),\
+            FM_MAIN_WIN_TYPE, FmMainWin))
+#define FM_MAIN_WIN_CLASS(klass)        (G_TYPE_CHECK_CLASS_CAST((klass),\
+            FM_MAIN_WIN_TYPE, FmMainWinClass))
+#define IS_FM_MAIN_WIN(obj)         (G_TYPE_CHECK_INSTANCE_TYPE((obj),\
+            FM_MAIN_WIN_TYPE))
+#define IS_FM_MAIN_WIN_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE((klass),\
+            FM_MAIN_WIN_TYPE))
 
-typedef struct _FmMainWin			FmMainWin;
-typedef struct _FmMainWinClass		FmMainWinClass;
+typedef struct _FmMainWin           FmMainWin;
+typedef struct _FmMainWinClass      FmMainWinClass;
 
 struct _FmMainWin
 {
-	GtkWindow parent;
+    GtkWindow parent;
 
     GtkUIManager* ui;
-	GtkWidget* toolbar;
-	GtkWidget* location;
+    GtkWidget* toolbar;
+    GtkWidget* location;
     GtkWidget* hpaned;
-    GtkWidget* notebook;
+    GtkWidget* tabbar; /* the tab bar */
     GtkWidget* places_view;
-	GtkWidget* folder_view;
-	GtkWidget* statusbar;
-	GtkWidget* vol_status;
+    GtkWidget* folder_view;
+    GtkWidget* statusbar;
+    GtkWidget* vol_status;
     GtkWidget* bookmarks_menu;
     GtkWidget* history_menu;
     GtkWidget* popup;
@@ -67,11 +67,11 @@ struct _FmMainWin
 
 struct _FmMainWinClass
 {
-	GtkWindowClass parent_class;
+    GtkWindowClass parent_class;
 };
 
-GType		fm_main_win_get_type		(void);
-GtkWidget*	fm_main_win_new			(void);
+GType       fm_main_win_get_type        (void);
+GtkWidget*  fm_main_win_new         (void);
 void fm_main_win_chdir(FmMainWin* win, FmPath* path);
 void fm_main_win_chdir_by_name(FmMainWin* win, const char* path_str);
 void fm_main_win_chdir_without_history(FmMainWin* win, FmPath* path);
