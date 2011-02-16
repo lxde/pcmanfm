@@ -205,6 +205,10 @@ void fm_app_config_load_from_profile(FmAppConfig* cfg, const char* name)
 
 _out:
     g_key_file_free(kf);
+
+    /* set some additional default values when needed. */
+    if(!cfg->desktop_font) /* set a proper desktop font if needed */
+        cfg->desktop_font = g_strdup("Sans 12");
 }
 
 void fm_app_config_save_profile(FmAppConfig* cfg, const char* name)
