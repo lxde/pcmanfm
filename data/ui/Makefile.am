@@ -14,10 +14,6 @@ EXTRA_DIST = \
 	$(ui_DATA) \
 	$(NULL)
 
-CLEANFILES = \
-	$(ui_DATA) \
-	$(NULL)
-
 # Purge GtkBuilder UI files
 %.ui: %.glade
 	cp $< $@
