@@ -1,7 +1,7 @@
 /*
  *      app-config.h
  *
- *      Copyright 2010 PCMan <pcman.tw@gmail.com>
+ *      Copyright 2010 - 2011 PCMan <pcman.tw@gmail.com>
  *
  *      This program is free software; you can redistribute it and/or modify
  *      it under the terms of the GNU General Public License as published by
@@ -66,6 +66,7 @@ struct _FmAppConfig
     /* ui */
     gboolean always_show_tabs;
     gboolean hide_close_btn;
+    int max_tab_chars;
     int win_width;
     int win_height;
     int splitter_pos;

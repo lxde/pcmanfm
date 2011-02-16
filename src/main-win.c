@@ -523,8 +523,6 @@ static void fm_main_win_init(FmMainWin *self)
     g_signal_connect(self->tabbar, "switch-page", G_CALLBACK(on_switch_page), self);
     g_signal_connect(self->tabbar, "page-removed", G_CALLBACK(on_page_removed), self);
 
-    // gtk_paned_add2(GTK_PANED(self->hpaned), self->tabbar);
-
     /* create menu bar and toolbar */
     ui = gtk_ui_manager_new();
     act_grp = gtk_action_group_new("Main");
@@ -1080,6 +1078,8 @@ gint fm_main_win_add_tab(FmMainWin* win, FmPath* path)
     /* the tab label */
     disp_name = fm_path_display_basename(path);
     label = fm_tab_label_new(disp_name);
+    gtk_label_set_max_width_chars(FM_TAB_LABEL(label)->label, app_config->max_tab_chars);
+    gtk_label_set_ellipsize(FM_TAB_LABEL(label)->label, PANGO_ELLIPSIZE_END);
     g_free(disp_name);
     g_signal_connect(FM_TAB_LABEL(label)->close_btn, "clicked", G_CALLBACK(on_close_tab_btn), tab_page);
     g_signal_connect(label, "button-press-event", G_CALLBACK(on_tab_label_button_pressed), tab_page);
