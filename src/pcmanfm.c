@@ -465,6 +465,7 @@ void pcmanfm_open_folder_in_terminal(GtkWindow* parent, FmPath* dir)
         GError* err = NULL;
         GAppLaunchContext* ctx = gdk_app_launch_context_new();
         char* cwd_str;
+        char* old_cwd = g_get_current_dir();
 
         if(fm_path_is_native(dir))
             cwd_str = fm_path_to_str(dir);
@@ -478,6 +479,7 @@ void pcmanfm_open_folder_in_terminal(GtkWindow* parent, FmPath* dir)
         gdk_app_launch_context_set_timestamp(GDK_APP_LAUNCH_CONTEXT(ctx), gtk_get_current_event_time());
         g_chdir(cwd_str); /* FIXME: currently we don't have better way for this. maybe a wrapper script? */
         g_free(cwd_str);
+
         if(!g_app_info_launch(app, NULL, ctx, &err))
         {
             fm_show_error(parent, err->message);
@@ -485,6 +487,10 @@ void pcmanfm_open_folder_in_terminal(GtkWindow* parent, FmPath* dir)
         }
         g_object_unref(ctx);
         g_object_unref(app);
+
+        /* switch back to old cwd and fix #3114626 - PCManFM 0.9.9 Umount partitions problem */
+        g_chdir(old_cwd); /* This is really dirty, but we don't have better solution now. */
+        g_free(old_cwd);
     }
 }
 
