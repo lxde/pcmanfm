@@ -8,13 +8,15 @@ msgstr ""
 "Project-Id-Version: pcmanfm 0.9.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-02-15 09:19+0100\n"
-"PO-Revision-Date: 2010-10-29 21:31+0700\n"
-"Last-Translator: Duy Hung Tran <nguyentieuhau@gmail.com>\n"
+"PO-Revision-Date: 2011-03-07 03:48+0200\n"
+"Last-Translator: Duy Hung <nguyentieuhau@gmail.com>\n"
 "Language-Team: English en_GB\n"
-"Language: \n"
+"Language: vi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Pootle 2.0.5\n"
 "X-Poedit-Country: UNITED KINGDOM\n"
 
 #: ../data/ui/about.glade.in.h:1
@@ -44,7 +46,7 @@ msgstr "<b>Hình nền</b>"
 
 #: ../data/ui/desktop-pref.glade.h:2
 msgid "<b>Show desktop icons</b>"
-msgstr "<b>Hiển thị biểu tượng màn hình nền</b>"
+msgstr "<b>Hiển thị biểu tượng trên màn hình nền</b>"
 
 #: ../data/ui/desktop-pref.glade.h:3
 msgid "<b>Text</b>"
@@ -126,7 +128,7 @@ msgstr "Căng vừa màn hình"
 
 #: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:42
 msgid "Tile the image to fill the entire screen"
-msgstr "Sắp xếp hình ảnh cạnh nhau toàn bộ màn hình"
+msgstr "Sắp xếp hình ảnh cạnh nhau để lắp đầy toàn bộ màn hình"
 
 #: ../data/ui/desktop-pref.glade.h:23
 msgid "Wallpaper mode:"
@@ -194,13 +196,13 @@ msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
 "%s = the command line you want to execute with terminal or su."
 msgstr ""
-"Ví dụ: \"xterm -e %s\" cho cửa sổ dòng lệnh hay \"gksu %s\" để chuyển đổi "
-"người dùng.\n"
+"Ví dụ: \"xterm -e %s\" cho cửa sổ dòng lệnh hay \"gksu %s\" để chuyển đổi người "
+"dùng.\n"
 "%s = dòng lệnh bạn muốn thực thi với cửa sổ dòng lệnh hay siêu người dùng."
 
 #: ../data/ui/pref.glade.h:18
 msgid "Hide 'Close tab' buttons"
-msgstr "Ẩn nút 'thẻ Đóng'"
+msgstr "Ẩn nút 'Đóng thẻ'"
 
 #: ../data/ui/pref.glade.h:19
 msgid "Hide folder content border"
@@ -225,8 +227,7 @@ msgstr "Tự động kết nối những thiết bị có thể tháo gỡ khi c
 
 #: ../data/ui/pref.glade.h:24
 msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
-msgstr ""
-"Chuyển những tập tin bị xóa vào \"Thùng rác\" thay vì xóa ngay trên đĩa"
+msgstr "Chuyển những tập tin bị xóa vào \"Thùng rác\" thay vì xóa ngay trên đĩa"
 
 #: ../data/ui/pref.glade.h:25
 msgid "Only show thumbnails for local files"
@@ -343,7 +344,7 @@ msgstr "Mở trong Bộ quản lý Tập tin"
 
 #: ../src/desktop-ui.c:53
 msgid "_Invert Selection"
-msgstr "_Đảo Chọn lựa"
+msgstr "Đảo Chọn _lựa"
 
 #: ../src/desktop-ui.c:54 ../src/main-win-ui.c:151
 msgid "_Sort Files"
@@ -367,7 +368,7 @@ msgstr "Bởi Tê_n"
 
 #: ../src/desktop-ui.c:70 ../src/main-win-ui.c:204
 msgid "By _Modification Time"
-msgstr "Bởi _Ngày Thay đổi"
+msgstr "Bởi N_gày Thay đổi"
 
 #: ../src/desktop-ui.c:71 ../src/main-win-ui.c:205
 msgid "By _Size"
@@ -395,7 +396,7 @@ msgstr "Gắn vào Vị trí Hiện tại"
 
 #: ../src/desktop-ui.c:112
 msgid "Snap to Grid"
-msgstr "Gắn vào Lưới"
+msgstr "Bám vào Lưới"
 
 #: ../src/main-win-ui.c:133
 msgid "_File"
@@ -451,7 +452,7 @@ msgstr "_Trợ giúp"
 
 #: ../src/main-win-ui.c:154
 msgid "_Go"
-msgstr "_Đi đến"
+msgstr "Đ_i đến"
 
 #: ../src/main-win-ui.c:155
 msgid "Previous Folder"
@@ -503,7 +504,7 @@ msgstr "Ứng dụng Đã cài đặt"
 
 #: ../src/main-win-ui.c:165
 msgid "_Bookmarks"
-msgstr "_Đánh dấu"
+msgstr "Đá_nh dấu"
 
 #: ../src/main-win-ui.c:166
 msgid "Add To Bookmarks"
@@ -523,9 +524,8 @@ msgstr "Mở Thư mục Hiện tại Với _Quyền quản trị"
 
 #. for popup menu
 #: ../src/main-win-ui.c:176
-#, fuzzy
 msgid "Create _New..."
-msgstr "Tạo Mới..."
+msgstr "Tạo _Mới..."
 
 #: ../src/main-win-ui.c:184
 msgid "Show _Hidden"
@@ -541,7 +541,7 @@ msgstr "Kiểu hiển thị _Thu gọn"
 
 #: ../src/main-win-ui.c:191
 msgid "_Thumbnail View"
-msgstr "Kiểu hiển thị Ảnh _nhỏ"
+msgstr "Kiểu hiển thị Ảnh n_hỏ"
 
 #: ../src/main-win-ui.c:192
 msgid "Detailed _List View"
@@ -634,9 +634,8 @@ msgid "Terminal emulator is not set."
 msgstr "Bộ mô phỏng dòng lệnh chưa được thiết lập."
 
 #: ../src/pcmanfm.c:500
-#, fuzzy
 msgid "Enter a name for the newly created folder:"
-msgstr "Đặt tên cho tập tin vừa mới tạo:"
+msgstr "Đặt tên cho thư mục vừa mới tạo:"
 
 #: ../src/pcmanfm.c:502
 msgid "Enter a name for the newly created file:"
