@@ -8,15 +8,16 @@ msgstr ""
 "Project-Id-Version: pcmanfm 0.9.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-02-15 09:19+0100\n"
-"PO-Revision-Date: 2010-11-29 15:45+0100\n"
-"Last-Translator: Huulivoide <jesse.jaara@gmail.com>\n"
+"PO-Revision-Date: 2011-03-10 20:32+0200\n"
+"Last-Translator: Jesse <jesse.jaara@gmail.com>\n"
 "Language-Team: Finnish fi_FI\n"
-"Language: Finnish\n"
+"Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Country: FINLAND\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.0.5\n"
+"X-Poedit-Country: FINLAND\n"
 "X-Language: fi_FI\n"
 "X-Source-Language: C\n"
 
@@ -518,7 +519,6 @@ msgstr "Avaa nykyinen kansio root-käyttäjänä"
 
 #. for popup menu
 #: ../src/main-win-ui.c:176
-#, fuzzy
 msgid "Create _New..."
 msgstr "Luo uusi..."
 
@@ -629,9 +629,8 @@ msgid "Terminal emulator is not set."
 msgstr "Terminaali emulaattoria ei ole valittu."
 
 #: ../src/pcmanfm.c:500
-#, fuzzy
 msgid "Enter a name for the newly created folder:"
-msgstr "Anna uudentiedoston nimi:"
+msgstr "Anna nimi uudelle kansiolle:"
 
 #: ../src/pcmanfm.c:502
 msgid "Enter a name for the newly created file:"
