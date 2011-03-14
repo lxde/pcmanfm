@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: PCManFM\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-02-15 09:19+0100\n"
-"PO-Revision-Date: 2010-10-24 11:48+0200\n"
+"PO-Revision-Date: 2011-03-15 00:46+0200\n"
 "Last-Translator: Martin <brother@bsnet.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
@@ -23,7 +23,7 @@ msgstr ""
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2010"
-msgstr "Copyright © 2009 - 2010"
+msgstr "Copyright © 2009 - 2011"
 
 #: ../data/ui/about.glade.in.h:2
 msgid ""
@@ -232,8 +232,7 @@ msgstr "Montera flyttbara enheter automatiskt när de ansluts"
 #: ../data/ui/pref.glade.h:24
 msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
 msgstr ""
-"Flytta raderade filer till \"Papperskorgen\" istället för att radera från "
-"disk"
+"Flytta raderade filer till \"papperskorgen\" istället för att radera från disk"
 
 #: ../data/ui/pref.glade.h:25
 msgid "Only show thumbnails for local files"
@@ -530,9 +529,8 @@ msgstr "Öppna aktuell mapp som _root"
 
 #. for popup menu
 #: ../src/main-win-ui.c:176
-#, fuzzy
 msgid "Create _New..."
-msgstr "Skapa ny..."
+msgstr "Skapa _ny..."
 
 #: ../src/main-win-ui.c:184
 msgid "Show _Hidden"
@@ -616,11 +614,12 @@ msgstr "Ange skrivbordsbakgrund"
 msgid "<image file>"
 msgstr "<bildfil>"
 
+# kreativ förklaring av vad varje grejj gör? (color|stretch|fit|center|tile)
 #: ../src/pcmanfm.c:81
 msgid "Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"
 msgstr ""
-"Ange visningsläge för skrivbordsbakgrund. <mode> = (color|stretch|fit|center|"
-"tile)"
+"Ange visningsläge för skrivbordsbakgrund. <mode> = "
+"(color|stretch|fit|center|tile)"
 
 #: ../src/pcmanfm.c:81
 msgid "<mode>"
@@ -645,9 +644,8 @@ msgid "Terminal emulator is not set."
 msgstr "Terminalprogram har inte angivits."
 
 #: ../src/pcmanfm.c:500
-#, fuzzy
 msgid "Enter a name for the newly created folder:"
-msgstr "Ange ett namn för den nya filen:"
+msgstr "Ange ett namn för den nya katalogen:"
 
 #: ../src/pcmanfm.c:502
 msgid "Enter a name for the newly created file:"
