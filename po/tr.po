@@ -8,13 +8,15 @@ msgstr ""
 "Project-Id-Version: 0.9.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-02-15 09:19+0100\n"
-"PO-Revision-Date: \n"
-"Last-Translator: Mehmet Gülmen <memetgulmen@gmail.com>\n"
+"PO-Revision-Date: 2011-03-13 14:04+0200\n"
+"Last-Translator: mulucam <mulucam@gmail.com>\n"
 "Language-Team: tr <tr@li.org>\n"
-"Language: \n"
+"Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Pootle 2.0.5\n"
 "X-Poedit-Country: TURKEY\n"
 
 #: ../data/ui/about.glade.in.h:1
@@ -353,7 +355,7 @@ msgstr "Dosyaları _Sırala"
 
 #: ../src/desktop-ui.c:55
 msgid "_New"
-msgstr ""
+msgstr "_Yeni"
 
 #: ../src/desktop-ui.c:56 ../src/main-win-ui.c:177
 msgid "Folder"
@@ -393,11 +395,11 @@ msgstr "_Uçbirimde Aç"
 
 #: ../src/desktop-ui.c:107
 msgid "Stick to Current Position"
-msgstr ""
+msgstr "Mevcut Konuma Tuttur"
 
 #: ../src/desktop-ui.c:112
 msgid "Snap to Grid"
-msgstr ""
+msgstr "Kılavuza Uydur"
 
 #: ../src/main-win-ui.c:133
 msgid "_File"
@@ -525,7 +527,6 @@ msgstr "Mevcut Dizini _Root Olarak Aç"
 
 #. for popup menu
 #: ../src/main-win-ui.c:176
-#, fuzzy
 msgid "Create _New..."
 msgstr "Yeni Oluştur..."
 
@@ -560,7 +561,7 @@ msgstr "Kullanıcı değiştirme komutu atanmamış."
 #: ../src/main-win.c:984
 #, c-format
 msgid "Free space: %s (Total: %s)"
-msgstr "Boş alanÇ %s (Toplam: %s)"
+msgstr "Boş alan: %s (Toplam: %s)"
 
 #: ../src/main-win.c:1201
 #, c-format
@@ -640,9 +641,8 @@ msgid "Terminal emulator is not set."
 msgstr "Uçbirim öykünücüsü seçilmedi."
 
 #: ../src/pcmanfm.c:500
-#, fuzzy
 msgid "Enter a name for the newly created folder:"
-msgstr "Yeni oluşturulan dosya için bir isim girin:"
+msgstr "Yeni oluşturulan dizin için bir isim girin:"
 
 #: ../src/pcmanfm.c:502
 msgid "Enter a name for the newly created file:"
@@ -658,9 +658,8 @@ msgstr "Yeni"
 
 #: ../data/pcmanfm.desktop.in.h:1
 msgid "Browse the file system and manage the files"
-msgstr ""
+msgstr "Dosya sistemine göz at ve dosyaları yönet"
 
 #: ../data/pcmanfm.desktop.in.h:2
-#, fuzzy
 msgid "File Manager"
-msgstr "Dosya Yöneticisinde Aç"
+msgstr "Dosya Yöneticisi"
