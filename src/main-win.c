@@ -138,18 +138,17 @@ static void fm_main_win_class_init(FmMainWinClass *klass)
 
 static void on_location_activate(GtkEntry* entry, FmMainWin* self)
 {
-    FmPath* path = fm_path_new( gtk_entry_get_text(entry) );
-    char* disp_path = fm_path_to_str(path);
+    FmPath* path = fm_path_entry_get_path(FM_PATH_ENTRY(entry));
     char* disp_name = fm_path_display_basename(path);
     int cur_page = gtk_notebook_get_current_page(GTK_NOTEBOOK(self->tabbar));
     GtkWidget* tab_child = gtk_notebook_get_nth_page(GTK_NOTEBOOK(self->tabbar), cur_page);
     GtkWidget* label = gtk_notebook_get_tab_label((GtkNotebook*)self->tabbar, tab_child);
     fm_tab_label_set_text(FM_TAB_LABEL(label), disp_name);
     gtk_window_set_title(GTK_WINDOW(self), disp_name);
-    g_free(disp_path);
     g_free(disp_name);
     fm_main_win_chdir(self, path);
-    fm_path_unref(path);
+    if(self->folder_view)
+        gtk_widget_grab_focus(self->folder_view);
 }
 
 /* FIXME: call this if the view is already loaded before it's added to
@@ -162,7 +161,7 @@ static void on_view_loaded( FmFolderView* view, FmPath* path, gpointer user_data
     const FmNavHistoryItem* item;
 
     /* FIXME: we shouldn't access private data member directly. */
-    fm_path_entry_set_model( FM_PATH_ENTRY(win->location), path, view->model );
+    fm_path_entry_set_path( FM_PATH_ENTRY(win->location), path);
     if(FM_FOLDER_MODEL(view->model)->dir->dir_fi)
     {
         icon = FM_FOLDER_MODEL(view->model)->dir->dir_fi->icon;
@@ -1298,7 +1297,7 @@ void on_switch_page(GtkNotebook* nb, GtkNotebookPage* page, guint num, FmMainWin
         FmPath* cwd = fm_folder_view_get_cwd(fv);
 
         /* FIXME: we shouldn't access private data member. */
-        fm_path_entry_set_model( FM_PATH_ENTRY(win->location), cwd, fv->model );
+        fm_path_entry_set_path( FM_PATH_ENTRY(win->location), cwd);
         g_signal_connect(fv, "loaded", G_CALLBACK(on_view_loaded), win);
         g_signal_connect(fv, "sort-changed", G_CALLBACK(on_sort_changed), win);
 
