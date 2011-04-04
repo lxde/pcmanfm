@@ -50,6 +50,7 @@ static void fm_main_win_finalize              (GObject *object);
 G_DEFINE_TYPE(FmMainWin, fm_main_win, GTK_TYPE_WINDOW);
 
 static void update_volume_info(FmMainWin* win);
+static void update_statusbar(FmMainWin* win);
 
 static void on_focus_in(GtkWidget* w, GdkEventFocus* evt);
 static gboolean on_key_press_event(GtkWidget* w, GdkEventKey* evt);
@@ -177,6 +178,9 @@ static void on_view_loaded( FmFolderView* view, FmPath* path, gpointer user_data
     /* scroll to recorded position */
     item = fm_nav_history_get_cur(tab_page->nav_history);
     gtk_adjustment_set_value( gtk_scrolled_window_get_vadjustment(GTK_SCROLLED_WINDOW(view)), item->scroll_pos);
+
+    /* update status bar */
+    update_statusbar(win);
 }
 
 static gboolean open_folder_func(GAppLaunchContext* ctx, GList* folder_infos, gpointer user_data, GError** err)
@@ -345,12 +349,6 @@ static gboolean on_view_key_press_event(FmFolderView* fv, GdkEventKey* evt, FmMa
         break;
     }
     return FALSE;
-}
-
-static void on_status(FmFolderView* fv, const char* msg, FmMainWin* win)
-{
-    gtk_statusbar_pop(GTK_STATUSBAR(win->statusbar), win->statusbar_ctx);
-    gtk_statusbar_push(GTK_STATUSBAR(win->statusbar), win->statusbar_ctx, msg);
 }
 
 static void on_bookmark(GtkMenuItem* mi, FmMainWin* win)
@@ -718,6 +716,8 @@ void on_show_hidden(GtkToggleAction* act, FmMainWin* win)
     gboolean active = gtk_toggle_action_get_active(act);
     fm_folder_view_set_show_hidden( FM_FOLDER_VIEW(win->folder_view), active );
 
+    update_statusbar(win);
+
     if(active != app_config->show_hidden)
     {
         app_config->show_hidden = active;
@@ -1034,6 +1034,30 @@ void update_volume_info(FmMainWin* win)
         gtk_widget_hide(win->vol_status);
 }
 
+static void update_statusbar(FmMainWin* win)
+{
+    FmFolderModel* model = fm_folder_view_get_model(win->folder_view);
+    FmFolder* folder = fm_folder_view_get_folder(win->folder_view);
+    if(model && folder)
+    {
+        GString* msg = g_string_sized_new(128);
+        int total_files = fm_list_get_length(folder->files);
+        int shown_files = gtk_tree_model_iter_n_children(GTK_TREE_MODEL(model), NULL);
+        int hidden_files = total_files - shown_files;
+        const char* visible_fmt = ngettext("%d item", "%d items", shown_files);
+        const char* hidden_fmt = ngettext(" (%d hidden)", " (%d hidden)", hidden_files);
+
+        g_string_append_printf(msg, visible_fmt, shown_files);
+        if(hidden_files > 0)
+            g_string_append_printf(msg, hidden_fmt, hidden_files);
+
+        /* FIXME: We need better API here. */
+        gtk_statusbar_pop(GTK_STATUSBAR(win->statusbar), win->statusbar_ctx);
+        gtk_statusbar_push(GTK_STATUSBAR(win->statusbar), win->statusbar_ctx, msg->str);
+        g_string_free(msg, TRUE);
+    }
+}
+
 gint fm_main_win_add_tab(FmMainWin* win, FmPath* path)
 {
     /* NOTE: We treat GtkNotebook as a toolbar containing tabs only.
@@ -1059,7 +1083,6 @@ gint fm_main_win_add_tab(FmMainWin* win, FmPath* path)
     fm_folder_view_sort(FM_FOLDER_VIEW(folder_view), app_config->sort_type, app_config->sort_by);
     fm_folder_view_set_selection_mode(FM_FOLDER_VIEW(folder_view), GTK_SELECTION_MULTIPLE);
     g_signal_connect(folder_view, "clicked", G_CALLBACK(on_file_clicked), win);
-    g_signal_connect(folder_view, "status", G_CALLBACK(on_status), win);
     g_signal_connect(folder_view, "sel-changed", G_CALLBACK(on_sel_changed), win);
     g_signal_connect(folder_view, "key-press-event", G_CALLBACK(on_view_key_press_event), win);
 
@@ -1312,6 +1335,7 @@ void on_switch_page(GtkNotebook* nb, GtkNotebookPage* page, guint num, FmMainWin
         update_sort_menu(win);
         update_view_menu(win);
         update_volume_info(win);
+        update_statusbar(win);
     }
 }
 
