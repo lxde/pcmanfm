@@ -8,13 +8,15 @@ msgstr ""
 "Project-Id-Version: pcmanfm 0.9.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-02-15 09:19+0100\n"
-"PO-Revision-Date: 2010-03-27 15:45+0100\n"
-"Last-Translator: Yorvyk <yorvik.ubunto@googlemail.com>\n"
+"PO-Revision-Date: 2011-04-09 16:00+0200\n"
+"Last-Translator: Steve <yorvik.ubunto@gmail.com>\n"
 "Language-Team: English en_GB\n"
-"Language: \n"
+"Language: en_GB\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.0.5\n"
 "X-Poedit-Country: UNITED KINGDOM\n"
 
 #: ../data/ui/about.glade.in.h:1
@@ -343,7 +345,7 @@ msgstr "_Sort Files"
 
 #: ../src/desktop-ui.c:55
 msgid "_New"
-msgstr ""
+msgstr "_New"
 
 #: ../src/desktop-ui.c:56 ../src/main-win-ui.c:177
 msgid "Folder"
@@ -383,11 +385,11 @@ msgstr "Open in _Terminal"
 
 #: ../src/desktop-ui.c:107
 msgid "Stick to Current Position"
-msgstr ""
+msgstr "Stick to Current Position"
 
 #: ../src/desktop-ui.c:112
 msgid "Snap to Grid"
-msgstr ""
+msgstr "Snap to Grid"
 
 #: ../src/main-win-ui.c:133
 msgid "_File"
@@ -515,9 +517,8 @@ msgstr "Open Current Folder as _Root"
 
 #. for popup menu
 #: ../src/main-win-ui.c:176
-#, fuzzy
 msgid "Create _New..."
-msgstr "Create New..."
+msgstr "Create _New..."
 
 #: ../src/main-win-ui.c:184
 msgid "Show _Hidden"
@@ -615,7 +616,7 @@ msgid ""
 "3...)."
 msgstr ""
 "Open preference dialogue. 'n' is number of the page you want to show (1, 2, "
-"3...)"
+"3...)."
 
 #. { "new-win", '\0', 'n', G_OPTION_ARG_NONE, &new_win, N_("Open new window"), NULL },
 #. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
@@ -625,12 +626,11 @@ msgstr "[FILE1, FILE2,...]"
 
 #: ../src/pcmanfm.c:455
 msgid "Terminal emulator is not set."
-msgstr "Terminal emulator is not set"
+msgstr "Terminal emulator is not set."
 
 #: ../src/pcmanfm.c:500
-#, fuzzy
 msgid "Enter a name for the newly created folder:"
-msgstr "Enter a name for the newly created file:"
+msgstr "Enter a name for the newly created folder:"
 
 #: ../src/pcmanfm.c:502
 msgid "Enter a name for the newly created file:"
@@ -646,12 +646,11 @@ msgstr "New"
 
 #: ../data/pcmanfm.desktop.in.h:1
 msgid "Browse the file system and manage the files"
-msgstr ""
+msgstr "Browse the file system and manage the files"
 
 #: ../data/pcmanfm.desktop.in.h:2
-#, fuzzy
 msgid "File Manager"
-msgstr "Open in File Manager"
+msgstr "File Manager"
 
 #~ msgid "Open Find Files utility"
 #~ msgstr "Open Find Files utility"
