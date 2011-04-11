@@ -352,7 +352,7 @@ void fm_desktop_manager_init()
 
     if(!model)
     {
-        FmFolder* folder = fm_folder_get_for_path(fm_path_get_desktop());
+        FmFolder* folder = fm_folder_get(fm_path_get_desktop());
         if(folder)
         {
             model = fm_folder_model_new(folder, FALSE);
@@ -591,7 +591,7 @@ static inline void popup_menu(FmDesktop* desktop, GdkEventButton* evt)
 
     ui = fm_file_menu_get_ui(menu);
     act_grp = fm_file_menu_get_action_group(menu);
-	gtk_action_group_set_translation_domain(act_grp, NULL);
+    gtk_action_group_set_translation_domain(act_grp, NULL);
 
     /* merge some specific menu items for folders */
     if(fm_file_menu_is_single_file_type(menu) && fm_file_info_is_dir(fi))
