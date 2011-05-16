@@ -49,7 +49,7 @@ struct _FmMainWin
     GtkWidget* toolbar;
     GtkWidget* location;
     GtkWidget* hpaned;
-    GtkWidget* tabbar; /* the tab bar */
+    GtkWidget* notebook;
     GtkWidget* places_view;
     GtkWidget* folder_view;
     GtkWidget* statusbar;
