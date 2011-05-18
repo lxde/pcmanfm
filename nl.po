@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm 0.9.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-02-15 09:19+0100\n"
-"PO-Revision-Date: 2011-05-18 12:12+0200\n"
+"PO-Revision-Date: 2011-05-18 12:38+0200\n"
 "Last-Translator: Pjotr <pliniusminor@gmail.com>\n"
 "Language-Team: Dutch\n"
 "Language: nl\n"
@@ -432,9 +432,10 @@ msgstr "Maak Symbolische koppeling aan"
 msgid "Move To..."
 msgstr "Verplaatsen naar..."
 
+# Trema wordt soms vervormd. Daarom weggelaten.
 #: ../src/main-win-ui.c:146
 msgid "Copy To..."
-msgstr "Kopiëren naar..."
+msgstr "Kopieren naar..."
 
 #: ../src/main-win-ui.c:148
 msgid "Invert Selection"
@@ -582,9 +583,10 @@ msgstr "Naam van configuratieprofiel"
 msgid "Run PCManFM as a daemon"
 msgstr "Voer PCmanFM uit als een achtergronddienst"
 
+# Nautilus (verkenner van Gnome) moet met hoofdletter.
 #: ../src/pcmanfm.c:74
 msgid "No function. Just to be compatible with nautilus"
-msgstr "Geen functie. Gewoon om verenigbaar te zijn met nautilus"
+msgstr "Geen functie. Gewoon om verenigbaar te zijn met Nautilus"
 
 #. options that are acceptable for every instance of pcmanfm and will be passed through IPC.
 #: ../src/pcmanfm.c:77
