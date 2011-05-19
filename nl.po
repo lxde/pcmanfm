@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm 0.9.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-02-15 09:19+0100\n"
-"PO-Revision-Date: 2011-05-18 12:38+0200\n"
+"PO-Revision-Date: 2011-05-19 12:33+0200\n"
 "Last-Translator: Pjotr <pliniusminor@gmail.com>\n"
 "Language-Team: Dutch\n"
 "Language: nl\n"
@@ -68,7 +68,7 @@ msgstr "Plaats in het midden van het scherm"
 
 #: ../data/ui/desktop-pref.glade.h:8
 msgid "Color of label text:"
-msgstr "Kleur van etiket-tekst"
+msgstr "Kleur van etiket-tekst:"
 
 #: ../data/ui/desktop-pref.glade.h:9
 msgid "Color of shadow:"
@@ -88,23 +88,23 @@ msgstr "Vul alleen met achtergrondkleur"
 
 #: ../data/ui/desktop-pref.glade.h:13
 msgid "Font of label text:"
-msgstr "Lettertype van etiket-tekst"
+msgstr "Lettertype van etiket-tekst:"
 
 #: ../data/ui/desktop-pref.glade.h:14
 msgid "Please select an image file"
-msgstr "Kies alstublieft een afbeeldingsbestand"
+msgstr "Gelieve een afbeeldingbestand te kiezen"
 
 #: ../data/ui/desktop-pref.glade.h:15
 msgid "Show \"My Computer\" icon on desktop"
-msgstr "Toon\"Mijn Computer\" pictogram op bureaublad"
+msgstr "Toon \"Mijn Computer\"-pictogram op bureaublad"
 
 #: ../data/ui/desktop-pref.glade.h:16
 msgid "Show \"My Documents\" icon on desktop"
-msgstr "Toon \"Mijn Documenten\" pictogram op bureaublad"
+msgstr "Toon \"Mijn Documenten\"-pictogram op bureaublad"
 
 #: ../data/ui/desktop-pref.glade.h:17
 msgid "Show \"Trash Bin\" icon on desktop"
-msgstr "Toon \"Prullenbak\" pictogram op bureaublad"
+msgstr "Toon \"Prullenbak\"-pictogram op bureaublad"
 
 #: ../data/ui/desktop-pref.glade.h:18
 msgid "Show icons of volumes on desktop"
@@ -194,11 +194,11 @@ msgid ""
 "%s = the command line you want to execute with terminal or su."
 msgstr ""
 "Voorbeelden: \"xterm -e %s\" voor terminal of \"gksu %s\" gebruikerswissel.\n"
-"%s = de commandoregel die u wil uitvoeren met terminal of su."
+"%s = de opdrachtregel die u wil uitvoeren met terminal of su."
 
 #: ../data/ui/pref.glade.h:18
 msgid "Hide 'Close tab' buttons"
-msgstr "Verberg 'Sluit tabblad' knoppen"
+msgstr "Verberg 'Sluit tabblad'-knoppen"
 
 #: ../data/ui/pref.glade.h:19
 msgid "Hide folder content border"
@@ -210,7 +210,7 @@ msgstr "Verberg de knoppen op de zijbalk"
 
 #: ../data/ui/pref.glade.h:21
 msgid "Icon View"
-msgstr "Pictogrammenweergave "
+msgstr "Pictogramweergave"
 
 #: ../data/ui/pref.glade.h:22
 msgid "Mount mountable volumes automatically on program startup"
@@ -225,8 +225,8 @@ msgstr ""
 #: ../data/ui/pref.glade.h:24
 msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
 msgstr ""
-"Verplaats verwijderde bestanden naar de \"Prullenbak\" in plaats van ze van "
-"uw schijf te verwijderen"
+"Verplaats verwijderde bestanden naar de \"Prullenbak\" in plaats van ze te "
+"verwijderen van uw schijf"
 
 #: ../data/ui/pref.glade.h:25
 msgid "Only show thumbnails for local files"
@@ -246,7 +246,7 @@ msgstr "Geopend in Nieuw Tabblad"
 
 #: ../data/ui/pref.glade.h:29
 msgid "Opened in New Window"
-msgstr "Geopend in een Nieuw Venster"
+msgstr "Geopend in Nieuw Venster"
 
 #: ../data/ui/pref.glade.h:30
 msgid "Preferences"
@@ -254,7 +254,9 @@ msgstr "Voorkeuren"
 
 #: ../data/ui/pref.glade.h:31
 msgid "Show available options for removable media when they are inserted"
-msgstr "Toon beschikbare opties voor verwijderbare media wanneer ze zijn ingebracht"
+msgstr ""
+"Toon beschikbare opties voor verwijderbare media wanneer ze worden "
+"ingebracht"
 
 #: ../data/ui/pref.glade.h:32
 msgid "Show thumbnails of files"
@@ -274,11 +276,11 @@ msgstr "Grootte van kleine pictogrammen:"
 
 #: ../data/ui/pref.glade.h:36
 msgid "Size of thumbnails:"
-msgstr "Grootte van miniaturen"
+msgstr "Grootte van miniaturen:"
 
 #: ../data/ui/pref.glade.h:39
 msgid "Switch user command:"
-msgstr "Commando voor gebruikerswissel"
+msgstr "Opdracht voor gebruikerswissel:"
 
 #: ../data/ui/pref.glade.h:40
 msgid "Terminal emulator:"
@@ -314,7 +316,7 @@ msgstr "_Mediabeheer"
 
 #: ../data/ui/autorun.glade.h:1
 msgid "<b>Removable medium is inserted</b>"
-msgstr "<b>Verwijderbaar medium werd ingebracht</b>"
+msgstr "<b>Verwijderbaar medium wordt ingebracht</b>"
 
 #: ../data/ui/autorun.glade.h:2
 msgid "Detecting..."
@@ -326,7 +328,7 @@ msgstr "Kies alstublieft de actie die u wilt uitvoeren:"
 
 #: ../data/ui/autorun.glade.h:4
 msgid "Removable medium is inserted"
-msgstr "Verwijderbaar medium werd ingebracht"
+msgstr "Verwijderbaar medium wordt ingebracht"
 
 #: ../data/ui/autorun.glade.h:5
 msgid "Type of medium:"
@@ -334,7 +336,7 @@ msgstr "Type medium:"
 
 #: ../src/volume-manager.c:150
 msgid "Removable Disk"
-msgstr "Verwisselbare Schijf"
+msgstr "Verwijderbare Schijf"
 
 #: ../src/volume-manager.c:209
 msgid "Open in File Manager"
@@ -394,7 +396,7 @@ msgstr "Blijf bij de Huidige Positie"
 
 #: ../src/desktop-ui.c:112
 msgid "Snap to Grid"
-msgstr "Snap naar Grid"
+msgstr "Breek af naar Rooster"
 
 #: ../src/main-win-ui.c:133
 msgid "_File"
@@ -418,7 +420,7 @@ msgstr "Sluit Venster"
 
 #: ../src/main-win-ui.c:138
 msgid "_Edit"
-msgstr "_Aanpassen"
+msgstr "B_ewerken"
 
 #: ../src/main-win-ui.c:143
 msgid "Rename"
@@ -511,11 +513,11 @@ msgstr "Toevoegen aan Bladwijzers"
 
 #: ../src/main-win-ui.c:167
 msgid "_Tools"
-msgstr "_Hulpmiddelen"
+msgstr "_Gereedschappen"
 
 #: ../src/main-win-ui.c:168
 msgid "Open Current Folder in _Terminal"
-msgstr "Open Huidige Map in _terminal"
+msgstr "Open Huidige Map in _Terminal"
 
 #: ../src/main-win-ui.c:169
 msgid "Open Current Folder as _Root"
@@ -635,7 +637,7 @@ msgstr "[BESTAND1, BESTAND2,...]"
 
 #: ../src/pcmanfm.c:455
 msgid "Terminal emulator is not set."
-msgstr "Terminal-emulator is niet ingesteld"
+msgstr "Terminal-emulator is niet ingesteld."
 
 #: ../src/pcmanfm.c:500
 msgid "Enter a name for the newly created folder:"
@@ -647,7 +649,7 @@ msgstr "Voer een naam in voor het nieuwe bestand:"
 
 #: ../src/pcmanfm.c:503
 msgid "Create New..."
-msgstr "Maak nieuwe..."
+msgstr "Maak Nieuwe..."
 
 #: ../src/pcmanfm.c:503
 msgid "New"
@@ -659,7 +661,7 @@ msgstr "Blader door het bestandssysteem en beheer de bestanden"
 
 #: ../data/pcmanfm.desktop.in.h:2
 msgid "File Manager"
-msgstr "Bestandsbeheerder"
+msgstr "Bestandbeheerder"
 
 #~ msgid "Open Find Files utility"
 #~ msgstr "Open de Bestandenzoeker"
