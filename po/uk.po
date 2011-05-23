@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-02-15 09:19+0100\n"
-"PO-Revision-Date: 2011-05-22 22:55+0200\n"
+"PO-Revision-Date: 2011-05-23 07:45+0200\n"
 "Last-Translator: Y P <yupadmin@gmail.com>\n"
 "Language-Team: Ukrainian <translation@linux.org.ua>\n"
 "Language: uk\n"
@@ -46,7 +46,7 @@ msgstr "<b>Тло</b>"
 
 #: ../data/ui/desktop-pref.glade.h:2
 msgid "<b>Show desktop icons</b>"
-msgstr "<b>Показати значки на стільниці</b>"
+msgstr "<b>Показати значки на робочому столі</b>"
 
 #: ../data/ui/desktop-pref.glade.h:3
 msgid "<b>Text</b>"
@@ -78,11 +78,11 @@ msgstr "Колір тіні:"
 
 #: ../data/ui/desktop-pref.glade.h:10
 msgid "Desktop Icons"
-msgstr "Іконки стільниці"
+msgstr "Іконки робочого столу"
 
 #: ../data/ui/desktop-pref.glade.h:11 ../src/desktop-ui.c:58
 msgid "Desktop Preferences"
-msgstr "Налаштування стільниці"
+msgstr "Налаштування робочого столу"
 
 #: ../data/ui/desktop-pref.glade.h:12
 msgid "Fill with background color only"
@@ -98,31 +98,31 @@ msgstr "Виберіть файл зображення"
 
 #: ../data/ui/desktop-pref.glade.h:15
 msgid "Show \"My Computer\" icon on desktop"
-msgstr "Показати значок \"Мій комп’ютер\" на стільниці"
+msgstr "Показати значок \"Мій комп’ютер\" на робочому столі"
 
 #: ../data/ui/desktop-pref.glade.h:16
 msgid "Show \"My Documents\" icon on desktop"
-msgstr "Показати значок \"Мої документи\" на стільниці"
+msgstr "Показати значок \"Мої документи\" на робочому столі"
 
 #: ../data/ui/desktop-pref.glade.h:17
 msgid "Show \"Trash Bin\" icon on desktop"
-msgstr "Показати значок \"Смітник\" на стільниці"
+msgstr "Показати значок \"Смітник\" на робочому столі"
 
 #: ../data/ui/desktop-pref.glade.h:18
 msgid "Show icons of volumes on desktop"
-msgstr "Показати значки дисків на стільниці"
+msgstr "Показати значки дисків на робочому столі"
 
 #: ../data/ui/desktop-pref.glade.h:19
 msgid "Show menus provided by window managers when desktop is clicked"
-msgstr "Показати меню менеджера вікон при клацанні на стільниці"
+msgstr "Показати меню менеджера вікон при клацанні на робочому столі"
 
 #: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:37
 msgid "Stretch to fill the entire screen"
-msgstr "Розтягнути для заповнення всієї стільниці"
+msgstr "Розтягнути для заповнення всієї робочому столі"
 
 #: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:38
 msgid "Stretch to fit the screen"
-msgstr "Розтягнути, щоб вмістити на стільниці"
+msgstr "Розтягнути, щоб вмістити на робочому столі"
 
 #: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:42
 msgid "Tile the image to fill the entire screen"
@@ -477,7 +477,7 @@ msgstr "Робочий стіл"
 
 #: ../src/main-win-ui.c:159
 msgid "Desktop Folder"
-msgstr "Тека стільниці"
+msgstr "Тека робочого столу"
 
 #: ../src/main-win-ui.c:160
 msgid "My Computer"
@@ -588,19 +588,19 @@ msgstr "Немає функції. Тільки для сумісності з n
 #. options that are acceptable for every instance of pcmanfm and will be passed through IPC.
 #: ../src/pcmanfm.c:77
 msgid "Launch desktop manager"
-msgstr "Запустити менеджер стільниці"
+msgstr "Запустити менеджер робочого столу"
 
 #: ../src/pcmanfm.c:78
 msgid "Turn off desktop manager if it's running"
-msgstr "Виключити менеджер стільниці, якщо він запущений"
+msgstr "Виключити менеджер робочого столу, якщо він запущений"
 
 #: ../src/pcmanfm.c:79
 msgid "Open desktop preference dialog"
-msgstr "Відкрити діалог налаштування стільниці"
+msgstr "Відкрити діалог налаштування робочого столу"
 
 #: ../src/pcmanfm.c:80
 msgid "Set desktop wallpaper"
-msgstr "Налаштувати шпалери стільниці"
+msgstr "Налаштувати шпалери робочого столу"
 
 #: ../src/pcmanfm.c:80
 msgid "<image file>"
@@ -609,8 +609,8 @@ msgstr "<файл зображення>"
 #: ../src/pcmanfm.c:81
 msgid "Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"
 msgstr ""
-"Встановити режим для заставки стільниці. <режим>=(колір|розтягнення|"
-"заповнення|центрування|плиткою)"
+"Встановити режим для заставки робочого столу. "
+"<режим>=(колір|розтягнення|заповнення|центрування|плиткою)"
 
 #: ../src/pcmanfm.c:81
 msgid "<mode>"
