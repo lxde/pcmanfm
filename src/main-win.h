@@ -50,7 +50,7 @@ struct _FmMainWin
     GtkWidget* location;
     GtkWidget* hpaned;
     GtkWidget* notebook;
-    GtkWidget* places_view;
+    GtkWidget* side_pane;
     GtkWidget* folder_view;
     GtkWidget* statusbar;
     GtkWidget* vol_status;
@@ -59,7 +59,6 @@ struct _FmMainWin
     GtkWidget* popup;
     /* <private> */
     FmNavHistory* nav_history;
-    GCancellable* vol_status_cancellable;
     guint statusbar_ctx;
     guint statusbar_ctx2;
     FmBookmarks* bookmarks;

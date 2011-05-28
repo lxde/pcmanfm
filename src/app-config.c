@@ -68,7 +68,7 @@ static void fm_app_config_init(FmAppConfig *self)
     self->win_width = 640;
     self->win_height = 480;
     self->splitter_pos = 150;
-    self->max_tab_chars = 150;
+    self->max_tab_chars = 32;
 
     self->view_mode = FM_FV_ICON_VIEW;
     self->show_hidden = FALSE;
