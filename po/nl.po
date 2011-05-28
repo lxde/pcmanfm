@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm 0.9.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-02-15 09:19+0100\n"
-"PO-Revision-Date: 2011-05-21 21:52+0200\n"
+"PO-Revision-Date: 2011-05-28 18:31+0200\n"
 "Last-Translator: Pjotr <pliniusminor@gmail.com>\n"
 "Language-Team: Dutch\n"
 "Language: nl\n"
@@ -29,7 +29,7 @@ msgid ""
 "\n"
 "Developed by Hon Jen Yee (PCMan)"
 msgstr ""
-"Lichtgewicht bestandsbeheerder\n"
+"Lichtgewicht bestandbeheerder\n"
 "\n"
 "Ontwikkeld door Hon Jen Yee (PCMan)"
 
@@ -193,8 +193,8 @@ msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
 "%s = the command line you want to execute with terminal or su."
 msgstr ""
-"Voorbeelden: \"xterm -e %s\" voor terminal of \"gksu %s\" gebruikerswissel.\n"
-"%s = de opdrachtregel die u wil uitvoeren met terminal of su."
+"Voorbeelden: \"xterm -e %s\" voor terminal of \"gksu %s\" voor gebruikers- \n"
+"wissel. %s = de opdrachtregel die u wil uitvoeren met terminal of su."
 
 #: ../data/ui/pref.glade.h:18
 msgid "Hide 'Close tab' buttons"
@@ -219,8 +219,7 @@ msgstr ""
 
 #: ../data/ui/pref.glade.h:23
 msgid "Mount removable media automatically when they are inserted"
-msgstr ""
-"Koppel verwisselbare media automatisch aan als ze worden ingebracht"
+msgstr "Koppel verwijderbare media automatisch aan als ze worden ingebracht"
 
 #: ../data/ui/pref.glade.h:24
 msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
@@ -284,7 +283,7 @@ msgstr "Opdracht voor gebruikerswissel:"
 
 #: ../data/ui/pref.glade.h:40
 msgid "Terminal emulator:"
-msgstr "Terminal-emulator:"
+msgstr "Terminalvenster:"
 
 #: ../data/ui/pref.glade.h:41
 msgid "Thumbnail View"
@@ -340,7 +339,7 @@ msgstr "Verwijderbare Schijf"
 
 #: ../src/volume-manager.c:209
 msgid "Open in File Manager"
-msgstr "Open in Bestandsbeheerder"
+msgstr "Open in Bestandbeheerder"
 
 #: ../src/desktop-ui.c:53
 msgid "_Invert Selection"
@@ -368,7 +367,7 @@ msgstr "Op _Naam"
 
 #: ../src/desktop-ui.c:70 ../src/main-win-ui.c:204
 msgid "By _Modification Time"
-msgstr "Op tijdstip van _Aanpassing"
+msgstr "Op Tijdstip van _Aanpassing"
 
 #: ../src/desktop-ui.c:71 ../src/main-win-ui.c:205
 msgid "By _Size"
@@ -437,7 +436,7 @@ msgstr "Verplaatsen naar..."
 # Trema wordt soms vervormd. Daarom weggelaten.
 #: ../src/main-win-ui.c:146
 msgid "Copy To..."
-msgstr "Kopieren naar..."
+msgstr "Kopiëren naar..."
 
 #: ../src/main-win-ui.c:148
 msgid "Invert Selection"
@@ -481,7 +480,7 @@ msgstr "Bureaublad"
 
 #: ../src/main-win-ui.c:159
 msgid "Desktop Folder"
-msgstr "Bureaublad Map"
+msgstr "Bureaubladmap"
 
 #: ../src/main-win-ui.c:160
 msgid "My Computer"
@@ -501,7 +500,7 @@ msgstr "Toepassingen"
 
 #: ../src/main-win-ui.c:163
 msgid "Installed Applications"
-msgstr "Geinstalleerde Toepassingen"
+msgstr "Geïnstalleerde Toepassingen"
 
 #: ../src/main-win-ui.c:165
 msgid "_Bookmarks"
@@ -534,7 +533,7 @@ msgstr "Toon _Verborgen"
 
 #: ../src/main-win-ui.c:189
 msgid "_Icon View"
-msgstr "_Pictogrammenweergave"
+msgstr "_Pictogramweergave"
 
 #: ../src/main-win-ui.c:190
 msgid "_Compact View"
@@ -554,7 +553,7 @@ msgstr "U bent in systeembeheermodus (su)"
 
 #: ../src/main-win.c:664
 msgid "Switch user command is not set."
-msgstr "Het commando voor gebruikerswissel is niet ingesteld."
+msgstr "De opdracht voor gebruikerswissel is niet ingesteld."
 
 #: ../src/main-win.c:984
 #, c-format
@@ -583,7 +582,7 @@ msgstr "Naam van configuratieprofiel"
 
 #: ../src/pcmanfm.c:73
 msgid "Run PCManFM as a daemon"
-msgstr "Voer PCmanFM uit als een achtergronddienst"
+msgstr "Voer PCManFM uit als een achtergronddienst"
 
 # Nautilus (verkenner van Gnome) moet met hoofdletter.
 #: ../src/pcmanfm.c:74
@@ -593,7 +592,7 @@ msgstr "Geen functie. Gewoon om verenigbaar te zijn met Nautilus"
 #. options that are acceptable for every instance of pcmanfm and will be passed through IPC.
 #: ../src/pcmanfm.c:77
 msgid "Launch desktop manager"
-msgstr "Start bureaubladbeheerder op"
+msgstr "Start bureaubladbeheerder"
 
 #: ../src/pcmanfm.c:78
 msgid "Turn off desktop manager if it's running"
@@ -637,7 +636,7 @@ msgstr "[BESTAND1, BESTAND2,...]"
 
 #: ../src/pcmanfm.c:455
 msgid "Terminal emulator is not set."
-msgstr "Terminal-emulator is niet ingesteld."
+msgstr "Terminalvenster is niet ingesteld."
 
 #: ../src/pcmanfm.c:500
 msgid "Enter a name for the newly created folder:"
