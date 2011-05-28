@@ -27,6 +27,8 @@ EXTRA_DIST= \
 pcmanfm_CFLAGS = \
 	$(XLIB_CFLAGS) \
 	$(GTK_CFLAGS) \
+	$(PANGO_CFLAGS) \
+	$(GLIB_CFLAGS) \
 	$(GIO_CFLAGS) \
 	$(GMODULE_CFLAGS) \
 	$(FM_CFLAGS) \
@@ -39,6 +41,8 @@ pcmanfm_CFLAGS = \
 pcmanfm_LDADD = \
 	$(XLIB_LIBS) \
 	$(GTK_LIBS) \
+	$(PANGO_LIBS) \
+	$(GLIB_LIBS) \
 	$(GIO_LIBS) \
 	$(GMODULE_LIBS) \
 	$(FM_LIBS) \

@@ -73,7 +73,17 @@ PKG_CHECK_MODULES(GTK, [$gtk_modules])
 AC_SUBST(GTK_CFLAGS)
 AC_SUBST(GTK_LIBS)
 
-gio_modules="gthread-2.0 gio-unix-2.0"
+pango_modules="pango >= 1.20.0"
+PKG_CHECK_MODULES(PANGO, [$pango_modules])
+AC_SUBST(PANGO_CFLAGS)
+AC_SUBST(PANGO_LIBS)
+
+glib_modules="glib-2.0 >= 2.16.0"
+PKG_CHECK_MODULES(GLIB, [$glib_modules])
+AC_SUBST(GLIB_CFLAGS)
+AC_SUBST(GLIB_LIBS)
+
+gio_modules="gthread-2.0 gio-unix-2.0 >= 2.18.0"
 PKG_CHECK_MODULES(GIO, [$gio_modules])
 AC_SUBST(GIO_CFLAGS)
 AC_SUBST(GIO_LIBS)
