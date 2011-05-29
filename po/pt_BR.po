@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm 0.9.9\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-02-15 09:19+0100\n"
-"PO-Revision-Date: 2011-05-21 14:54-0300\n"
+"POT-Creation-Date: 2011-05-29 12:45-0300\n"
+"PO-Revision-Date: 2011-05-29 12:47-0300\n"
 "Last-Translator: Sérgio Cipolla <secipolla@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <ldp-br@bazar2.conectiva.com.br>\n"
 "Language: pt_BR\n"
@@ -357,9 +357,11 @@ msgstr "_Inverter seleção"
 msgid "_Sort Files"
 msgstr "Or_denar arquivos"
 
+#. for popup menu
 #: ../src/desktop-ui.c:55
-msgid "_New"
-msgstr "_Novo(a)"
+#: ../src/main-win-ui.c:176
+msgid "Create _New..."
+msgstr "Criar _novo(a)..."
 
 #: ../src/desktop-ui.c:56
 #: ../src/main-win-ui.c:177
@@ -538,11 +540,6 @@ msgstr "Abrir a pasta atual no _terminal"
 msgid "Open Current Folder as _Root"
 msgstr "Abrir a pasta atual como _root"
 
-#. for popup menu
-#: ../src/main-win-ui.c:176
-msgid "Create _New..."
-msgstr "Criar _novo(a)..."
-
 #: ../src/main-win-ui.c:184
 msgid "Show _Hidden"
 msgstr "_Mostrar arquivos ocultos"
@@ -563,20 +560,34 @@ msgstr "Visão em minia_turas"
 msgid "Detailed _List View"
 msgstr "Visão em _lista detalhada"
 
-#: ../src/main-win.c:565
+#: ../src/main-win.c:582
 msgid "You are in super user mode"
 msgstr "Você está no modo de superusuário"
 
-#: ../src/main-win.c:664
+#: ../src/main-win.c:682
 msgid "Switch user command is not set."
 msgstr "O comando para alternar o usuário não está configurado."
 
-#: ../src/main-win.c:984
+#: ../src/main-win.c:1004
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Espaço livre: %s (Total: %s)"
 
-#: ../src/main-win.c:1201
+#: ../src/main-win.c:1047
+#, c-format
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] "%d item"
+msgstr[1] "%d itens"
+
+#: ../src/main-win.c:1048
+#, c-format
+msgid " (%d hidden)"
+msgid_plural " (%d hidden)"
+msgstr[0] " (%d oculto)"
+msgstr[1] " (%d ocultos)"
+
+#: ../src/main-win.c:1270
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -587,7 +598,7 @@ msgstr ""
 "\"%s\"\n"
 "Informe um nome para o novo marcador:"
 
-#: ../src/main-win.c:1205
+#: ../src/main-win.c:1274
 msgid "Add to Bookmarks"
 msgstr "Adicionar aos marcadores"
 
@@ -647,19 +658,19 @@ msgstr "[ARQUIVO1, ARQUIVO2,...]"
 msgid "Terminal emulator is not set."
 msgstr "O emulador de terminal não está configurado."
 
-#: ../src/pcmanfm.c:500
+#: ../src/pcmanfm.c:507
 msgid "Enter a name for the newly created folder:"
 msgstr "Informe um nome para a nova pasta:"
 
-#: ../src/pcmanfm.c:502
+#: ../src/pcmanfm.c:509
 msgid "Enter a name for the newly created file:"
 msgstr "Informe um nome para o novo arquivo:"
 
-#: ../src/pcmanfm.c:503
+#: ../src/pcmanfm.c:510
 msgid "Create New..."
 msgstr "Criar novo(a)..."
 
-#: ../src/pcmanfm.c:503
+#: ../src/pcmanfm.c:510
 msgid "New"
 msgstr "Novo(a)"
 
@@ -671,3 +682,5 @@ msgstr "Navegue pelo sistema de arquivos e gerencie arquivos e pastas"
 msgid "File Manager"
 msgstr "Gerenciador de arquivos"
 
+#~ msgid "_New"
+#~ msgstr "_Novo(a)"
