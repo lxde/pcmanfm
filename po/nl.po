@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm 0.9.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-02-15 09:19+0100\n"
-"PO-Revision-Date: 2011-05-28 18:31+0200\n"
+"PO-Revision-Date: 2011-06-02 16:48+0200\n"
 "Last-Translator: Pjotr <pliniusminor@gmail.com>\n"
 "Language-Team: Dutch\n"
 "Language: nl\n"
@@ -113,7 +113,8 @@ msgstr "Toon media-pictogrammen op bureaublad"
 #: ../data/ui/desktop-pref.glade.h:19
 msgid "Show menus provided by window managers when desktop is clicked"
 msgstr ""
-"Toon menu´s verstrekt door vensterbeheerders als het bureaublad wordt aangeklikt"
+"Toon menu´s verstrekt door vensterbeheerders, wanneer het bureaublad wordt "
+"aangeklikt"
 
 #: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:37
 msgid "Stretch to fill the entire screen"
@@ -157,7 +158,7 @@ msgstr "<b>Programma's</b>"
 
 #: ../data/ui/pref.glade.h:6
 msgid "<b>User Interface</b>"
-msgstr "<b>Gebruikersomgeving</b>"
+msgstr "<b>Gebruikersschil</b>"
 
 #: ../data/ui/pref.glade.h:7
 msgid "Always show the tab bar"
@@ -267,7 +268,7 @@ msgstr "Grootte van grote pictogrammen:"
 
 #: ../data/ui/pref.glade.h:34
 msgid "Size of side pane icons:"
-msgstr "Groote van zijbalkpictogrammen"
+msgstr "Grootte van zijbalkpictogrammen"
 
 #: ../data/ui/pref.glade.h:35
 msgid "Size of small icons:"
@@ -303,7 +304,7 @@ msgstr "_Geavanceerd"
 
 #: ../data/ui/pref.glade.h:46
 msgid "_Display"
-msgstr "_Beeldscherm"
+msgstr "_Tonen"
 
 #: ../data/ui/pref.glade.h:47
 msgid "_General"
@@ -315,7 +316,7 @@ msgstr "_Mediabeheer"
 
 #: ../data/ui/autorun.glade.h:1
 msgid "<b>Removable medium is inserted</b>"
-msgstr "<b>Verwijderbaar medium wordt ingebracht</b>"
+msgstr "<b>Verwijderbaar medium is ingebracht</b>"
 
 #: ../data/ui/autorun.glade.h:2
 msgid "Detecting..."
@@ -323,11 +324,11 @@ msgstr "Aan het detecteren..."
 
 #: ../data/ui/autorun.glade.h:3
 msgid "Please select the action you want to perform:"
-msgstr "Kies alstublieft de actie die u wilt uitvoeren:"
+msgstr "Kies alstublieft de actie die u wil uitvoeren:"
 
 #: ../data/ui/autorun.glade.h:4
 msgid "Removable medium is inserted"
-msgstr "Verwijderbaar medium wordt ingebracht"
+msgstr "Verwijderbaar medium is ingebracht"
 
 #: ../data/ui/autorun.glade.h:5
 msgid "Type of medium:"
@@ -375,7 +376,7 @@ msgstr "Op _Grootte"
 
 #: ../src/desktop-ui.c:72 ../src/main-win-ui.c:206
 msgid "By File _Type"
-msgstr "Op Bestands_type"
+msgstr "Op Bestand_type"
 
 #: ../src/desktop-ui.c:88 ../src/main-win-ui.c:223
 msgid "Open in New Tab"
@@ -549,11 +550,11 @@ msgstr "Gedetailleerde _Lijstweergave"
 
 #: ../src/main-win.c:565
 msgid "You are in super user mode"
-msgstr "U bent in systeembeheermodus (su)"
+msgstr "U bent in systeembeheerdermodus (su)"
 
 #: ../src/main-win.c:664
 msgid "Switch user command is not set."
-msgstr "De opdracht voor gebruikerswissel is niet ingesteld."
+msgstr "De opdracht voor gebruikerwissel is niet ingesteld."
 
 #: ../src/main-win.c:984
 #, c-format
@@ -625,8 +626,8 @@ msgid ""
 "Open preference dialog. 'n' is number of the page you want to show (1, 2, "
 "3...)."
 msgstr ""
-"Open de voorkeurdialoog. 'n' is het nummer van de pagina die u wil tonen "
-"(1, 2, 3...)."
+"Open voorkeurdialoog. 'n' is het nummer van de pagina die u wil tonen (1, 2, "
+"3...)."
 
 #. { "new-win", '\0', 'n', G_OPTION_ARG_NONE, &new_win, N_("Open new window"), NULL },
 #. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
