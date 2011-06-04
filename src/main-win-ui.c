@@ -70,6 +70,10 @@ static const char main_menu_xml[] =
   "</menu>"
   "<menu action='ViewMenu'>"
     "<menuitem action='ShowHidden'/>"
+    "<menu action='SidePane'>"
+      "<menuitem action='Places' />"
+      "<menuitem action='DirTree' />"
+    "</menu>"
     "<separator/>"
     "<menuitem action='IconView'/>"
     "<menuitem action='ThumbnailView'/>"
@@ -148,6 +152,7 @@ static GtkActionEntry main_win_actions[]=
         {"InvSel", NULL, N_("Invert Selection"), NULL, NULL, G_CALLBACK(on_invert_select)},
         {"Pref", GTK_STOCK_PREFERENCES, NULL, NULL, NULL, G_CALLBACK(on_preference)},
     {"ViewMenu", NULL, N_("_View"), NULL, NULL, NULL},
+        {"SidePane", NULL, N_("Side Pane"), NULL, NULL, NULL},
         {"Sort", NULL, N_("_Sort Files"), NULL, NULL, NULL},
     {"HelpMenu", NULL, N_("_Help"), NULL, NULL, NULL},
         {"About", GTK_STOCK_ABOUT, NULL, NULL, NULL, G_CALLBACK(on_about)},
@@ -206,6 +211,12 @@ static GtkRadioActionEntry main_win_sort_by_actions[]=
     {"ByType", NULL, N_("By File _Type"), NULL, NULL, COL_FILE_DESC}
 };
 
+static GtkRadioActionEntry main_win_side_bar_mode_actions[]=
+{
+    {"Places", NULL, N_("Places"), NULL, NULL, FM_SP_PLACES},
+    {"DirTree", NULL, N_("Directory Tree"), NULL, NULL, FM_SP_DIR_TREE},
+    {"Remote", NULL, N_("Remote"), NULL, NULL, FM_SP_REMOTE},
+};
 
 static const char folder_menu_xml[]=
 "<popup>"

@@ -194,6 +194,7 @@ static void on_show_hidden(GtkToggleAction* act, FmMainWin* win);
 static void on_change_mode(GtkRadioAction* act, GtkRadioAction *cur, FmMainWin* win);
 static void on_sort_by(GtkRadioAction* act, GtkRadioAction *cur, FmMainWin* win);
 static void on_sort_type(GtkRadioAction* act, GtkRadioAction *cur, FmMainWin* win);
+static void on_side_pane_mode(GtkRadioAction* act, GtkRadioAction *cur, FmMainWin* win);
 static void on_about(GtkAction* act, FmMainWin* win);
 static void on_open_folder_in_terminal(GtkAction* act, FmMainWin* win);
 static void on_open_in_terminal(GtkAction* act, FmMainWin* win);
@@ -592,6 +593,14 @@ static void on_side_pane_chdir(FmSidePane* sp, guint button, FmPath* path, FmMai
         fm_main_win_chdir(win, path);
 }
 
+static void on_side_pane_mode_changed(FmSidePane* sp, FmMainWin* win)
+{
+    app_config->side_pane_mode = fm_side_pane_get_mode(sp);
+    fm_config_emit_changed(app_config, "side_pane_mode");
+
+
+}
+
 static void fm_main_win_init(FmMainWin *win)
 {
     GtkWidget *vbox, *menubar, *toolitem, *btn;
@@ -617,10 +626,11 @@ static void fm_main_win_init(FmMainWin *win)
 
     /* places left pane */
     win->side_pane = fm_side_pane_new();
-    fm_side_pane_set_mode(FM_SIDE_PANE(win->side_pane), FM_SP_PLACES);
+    fm_side_pane_set_mode(FM_SIDE_PANE(win->side_pane), app_config->side_pane_mode);
     /* TODO: add a close button to side pane */
     gtk_paned_add1(GTK_PANED(win->hpaned), win->side_pane);
     g_signal_connect(win->side_pane, "chdir", G_CALLBACK(on_side_pane_chdir), win);
+    g_signal_connect(win->side_pane, "mode-changed", G_CALLBACK(on_side_pane_mode_changed), win);
 
     /* notebook */
     win->notebook = gtk_notebook_new();
@@ -647,6 +657,7 @@ static void fm_main_win_init(FmMainWin *win)
     gtk_action_group_add_radio_actions(act_grp, main_win_mode_actions, G_N_ELEMENTS(main_win_mode_actions), app_config->view_mode, on_change_mode, win);
     gtk_action_group_add_radio_actions(act_grp, main_win_sort_type_actions, G_N_ELEMENTS(main_win_sort_type_actions), app_config->sort_type, on_sort_type, win);
     gtk_action_group_add_radio_actions(act_grp, main_win_sort_by_actions, G_N_ELEMENTS(main_win_sort_by_actions), app_config->sort_by, on_sort_by, win);
+    gtk_action_group_add_radio_actions(act_grp, main_win_side_bar_mode_actions, G_N_ELEMENTS(main_win_side_bar_mode_actions), app_config->side_pane_mode, on_side_pane_mode, win);
 
     accel_grp = gtk_ui_manager_get_accel_group(ui);
     gtk_window_add_accel_group(GTK_WINDOW(win), accel_grp);
@@ -868,6 +879,18 @@ void on_sort_type(GtkRadioAction* act, GtkRadioAction *cur, FmMainWin* win)
         pcmanfm_save_config(FALSE);
     }
 }
+
+void on_side_pane_mode(GtkRadioAction* act, GtkRadioAction *cur, FmMainWin* win)
+{
+    int val = gtk_radio_action_get_current_value(cur);
+    fm_side_pane_set_mode(FM_SIDE_PANE(win->side_pane), val);
+    if(val != app_config->side_pane_mode)
+    {
+        app_config->side_pane_mode = val;
+        pcmanfm_save_config(FALSE);
+    }
+}
+
 
 void on_focus_in(GtkWidget* w, GdkEventFocus* evt)
 {
@@ -1176,6 +1199,17 @@ gint fm_main_win_add_tab(FmMainWin* win, FmPath* path)
 
 FmMainWin* fm_main_win_add_win(FmMainWin* win, FmPath* path)
 {
+    /* Copy some settings of current window to AppConfig
+     * so the newly created window can use the same settings. */
+    if(win)
+    {
+        if(app_config->side_pane_mode != fm_side_pane_get_mode(FM_SIDE_PANE(win->side_pane)))
+        {
+            app_config->side_pane_mode = fm_side_pane_get_mode(FM_SIDE_PANE(win->side_pane));
+            fm_config_emit_changed(FM_CONFIG(app_config), "side_pane_mode");
+        }
+    }
+
     win = fm_main_win_new();
     gtk_window_set_default_size(GTK_WINDOW(win), app_config->win_width, app_config->win_height);
     fm_main_win_chdir(win, path);

@@ -43,37 +43,39 @@ static void fm_app_config_class_init(FmAppConfigClass *klass)
 
 static void fm_app_config_finalize(GObject *object)
 {
-    FmAppConfig *self;
+    FmAppConfig *cfg;
 
     g_return_if_fail(object != NULL);
     g_return_if_fail(IS_FM_APP_CONFIG(object));
 
-    self = FM_APP_CONFIG(object);
-    g_free(self->wallpaper);
+    cfg = FM_APP_CONFIG(object);
+    g_free(cfg->wallpaper);
 
     G_OBJECT_CLASS(fm_app_config_parent_class)->finalize(object);
 }
 
 
-static void fm_app_config_init(FmAppConfig *self)
+static void fm_app_config_init(FmAppConfig *cfg)
 {
     /* load libfm config file */
-    fm_config_load_from_file((FmConfig*)self, NULL);
+    fm_config_load_from_file((FmConfig*)cfg, NULL);
 
-    self->mount_on_startup = TRUE;
-    self->mount_removable = TRUE;
-    self->autorun = TRUE;
+    cfg->mount_on_startup = TRUE;
+    cfg->mount_removable = TRUE;
+    cfg->autorun = TRUE;
 
-    self->desktop_fg.red = self->desktop_fg.green = self->desktop_fg.blue = 65535;
-    self->win_width = 640;
-    self->win_height = 480;
-    self->splitter_pos = 150;
-    self->max_tab_chars = 32;
+    cfg->desktop_fg.red = cfg->desktop_fg.green = cfg->desktop_fg.blue = 65535;
+    cfg->win_width = 640;
+    cfg->win_height = 480;
+    cfg->splitter_pos = 150;
+    cfg->max_tab_chars = 32;
 
-    self->view_mode = FM_FV_ICON_VIEW;
-    self->show_hidden = FALSE;
-    self->sort_type = GTK_SORT_ASCENDING;
-    self->sort_by = COL_FILE_NAME;
+    cfg->side_pane_mode = FM_SP_PLACES;
+
+    cfg->view_mode = FM_FV_ICON_VIEW;
+    cfg->show_hidden = FALSE;
+    cfg->sort_type = GTK_SORT_ASCENDING;
+    cfg->sort_by = COL_FILE_NAME;
 }
 
 
@@ -135,6 +137,8 @@ void fm_app_config_load_from_key_file(FmAppConfig* cfg, GKeyFile* kf)
     fm_key_file_get_int(kf, "ui", "win_height", &cfg->win_height);
 
     fm_key_file_get_int(kf, "ui", "splitter_pos", &cfg->splitter_pos);
+
+    fm_key_file_get_int(kf, "ui", "side_pane_mode", &cfg->side_pane_mode);
 
     /* default values for folder views */
     fm_key_file_get_int(kf, "ui", "view_mode", &cfg->view_mode);
@@ -251,6 +255,7 @@ void fm_app_config_save_profile(FmAppConfig* cfg, const char* name)
         g_string_append_printf(buf, "win_width=%d\n", cfg->win_width);
         g_string_append_printf(buf, "win_height=%d\n", cfg->win_height);
         g_string_append_printf(buf, "splitter_pos=%d\n", cfg->splitter_pos);
+        g_string_append_printf(buf, "side_pane_mode=%d\n", cfg->side_pane_mode);
         g_string_append_printf(buf, "view_mode=%d\n", cfg->view_mode);
         g_string_append_printf(buf, "show_hidden=%d\n", cfg->show_hidden);
         g_string_append_printf(buf, "sort_type=%d\n", cfg->sort_type);

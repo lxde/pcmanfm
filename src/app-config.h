@@ -24,6 +24,7 @@
 #define __APP_CONFIG_H__
 
 #include <libfm/fm.h>
+#include <libfm/fm-gtk.h>
 #include <gtk/gtk.h>
 
 G_BEGIN_DECLS
@@ -70,6 +71,8 @@ struct _FmAppConfig
     int win_width;
     int win_height;
     int splitter_pos;
+
+    FmSidePaneMode side_pane_mode;
 
     /* default values for folder views */
     guint view_mode;
