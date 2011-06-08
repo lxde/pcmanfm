@@ -48,8 +48,8 @@ struct _FmMainWin
     GtkUIManager* ui;
     GtkWidget* toolbar;
     GtkWidget* location;
-    GtkWidget* hpaned;
     GtkWidget* notebook;
+    GtkWidget* current_page;
     GtkWidget* side_pane;
     GtkWidget* folder_view;
     GtkWidget* statusbar;
@@ -70,10 +70,9 @@ struct _FmMainWinClass
 };
 
 GType       fm_main_win_get_type        (void);
-GtkWidget*  fm_main_win_new         (void);
-void fm_main_win_chdir(FmMainWin* win, FmPath* path);
-void fm_main_win_chdir_by_name(FmMainWin* win, const char* path_str);
-void fm_main_win_chdir_without_history(FmMainWin* win, FmPath* path);
+GtkWidget*  fm_main_win_new         (FmPath* path);
+void fm_main_win_chdir(FmMainWin* win, FmPath* path, gboolean add_to_history);
+void fm_main_win_chdir_by_name(FmMainWin* win, const char* path_str, gboolean add_to_history);
 gint fm_main_win_add_tab(FmMainWin* win, FmPath* path);
 FmMainWin* fm_main_win_add_win(FmMainWin* win, FmPath* path);
 

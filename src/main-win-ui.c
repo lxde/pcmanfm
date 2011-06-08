@@ -130,7 +130,8 @@ static const char main_menu_xml[] =
 "<accelerator action='Location'/>"
 "<accelerator action='Location2'/>"
 "<accelerator action='Prev2'/>"
-"<accelerator action='Next2'/>";
+"<accelerator action='Next2'/>"
+;
 
 static GtkActionEntry main_win_actions[]=
 {
