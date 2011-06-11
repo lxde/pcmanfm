@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-11 21:25+0800\n"
-"PO-Revision-Date: 2011-03-11 12:56+0200\n"
+"POT-Creation-Date: 2011-02-15 09:19+0100\n"
+"PO-Revision-Date: 2011-03-14 11:34+0200\n"
 "Last-Translator: Rahman Yusri Aftian <aftian@yahoo.com>\n"
 "Language-Team: Indonesian Translation Team <id@li.org>\n"
 "Language: id\n"
@@ -392,12 +392,14 @@ msgid "Open in _Terminal"
 msgstr "Buka di _Terminal"
 
 #: ../src/desktop-ui.c:107
+#, fuzzy
 msgid "Stick to Current Position"
-msgstr ""
+msgstr "Menuju Posisi Lancar"
 
 #: ../src/desktop-ui.c:112
+#, fuzzy
 msgid "Snap to Grid"
-msgstr ""
+msgstr "Snap to Grid"
 
 #: ../src/main-win-ui.c:138
 msgid "_File"
@@ -527,7 +529,12 @@ msgstr "Buka Folder Kini di _Terminal"
 msgid "Open Current Folder as _Root"
 msgstr "Buka Folder Kini sebagai _Root"
 
-#: ../src/main-win-ui.c:190
+#. for popup menu
+#: ../src/main-win-ui.c:176
+msgid "Create _New..."
+msgstr "Buat _Baru..."
+
+#: ../src/main-win-ui.c:184
 msgid "Show _Hidden"
 msgstr "Tampilkan Yang _Tersembunyi"
 
@@ -642,8 +649,7 @@ msgstr "[BERKAS1, BERKAS2,...]"
 msgid "Terminal emulator is not set."
 msgstr "Emulator terminal tak ditata."
 
-#: ../src/pcmanfm.c:507
-#, fuzzy
+#: ../src/pcmanfm.c:500
 msgid "Enter a name for the newly created folder:"
 msgstr "Masukkan nama bagi berkas yang baru dibuat:"
 
@@ -681,9 +687,5 @@ msgid "Browse the file system and manage the files"
 msgstr ""
 
 #: ../data/pcmanfm.desktop.in.h:2
-#, fuzzy
 msgid "File Manager"
-msgstr "Buka di Pengelola Berkas"
-
-#~ msgid "_New"
-#~ msgstr "_Baru"
+msgstr "Menejemen Berkas"
