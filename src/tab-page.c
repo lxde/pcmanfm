@@ -27,6 +27,8 @@
 #define GET_MAIN_WIN(page)   FM_MAIN_WIN(gtk_widget_get_toplevel(GTK_WIDGET(page)))
 
 enum {
+    CHDIR,
+    OPEN_DIR,
     STATUS,
     N_SIGNALS
 };
@@ -34,8 +36,10 @@ enum {
 static guint signals[N_SIGNALS];
 
 static void fm_tab_page_finalize(GObject *object);
+static void fm_tab_page_chdir_without_history(FmTabPage* page, FmPath* path);
 static void on_folder_fs_info(FmFolder* folder, FmTabPage* page);
 static void on_folder_content_changed(FmFolder* folder, FmTabPage* page);
+static char* format_status_text(FmTabPage* page);
 
 #if GTK_CHECK_VERSION(3, 0, 0)
 static void fm_tab_page_destroy(GtkWidget *page);
@@ -57,6 +61,30 @@ static void fm_tab_page_class_init(FmTabPageClass *klass)
 #endif
     g_object_class->finalize = fm_tab_page_finalize;
 
+    /* signals that current working directory is changed. */
+    signals[CHDIR] =
+        g_signal_new("chdir",
+                    G_TYPE_FROM_CLASS(klass),
+                    G_SIGNAL_RUN_FIRST,
+                    G_STRUCT_OFFSET (FmTabPageClass, chdir),
+                    NULL, NULL,
+                    g_cclosure_marshal_VOID__POINTER,
+                    G_TYPE_NONE, 1, G_TYPE_POINTER);
+
+#if 0
+    /* FIXME: is this really needed? */
+    /* signals that the user wants to open a new dir. */
+    signals[OPEN_DIR] =
+        g_signal_new("open-dir",
+                    G_TYPE_FROM_CLASS(klass),
+                    G_SIGNAL_RUN_FIRST,
+                    G_STRUCT_OFFSET (FmTabPageClass, open_dir),
+                    NULL, NULL,
+                    g_cclosure_marshal_VOID__UINT_POINTER,
+                    G_TYPE_NONE, 2, G_TYPE_UINT, G_TYPE_POINTER);
+#endif
+
+    /* emit when the status bar message is changed */
     signals[STATUS] =
         g_signal_new("status",
                     G_TYPE_FROM_CLASS(klass),
@@ -101,7 +129,11 @@ void fm_tab_page_destroy(GtkObject *page)
 
 static void on_folder_content_changed(FmFolder* folder, FmTabPage* page)
 {
-    // FIXME: update_statusbar(win);
+    /* update status text */
+    g_free(page->status_text[FM_STATUS_TEXT_NORMAL]);
+    page->status_text[FM_STATUS_TEXT_NORMAL] = format_status_text(page);
+    g_signal_emit(page, signals[STATUS], 0,
+                  FM_STATUS_TEXT_NORMAL, page->status_text[FM_STATUS_TEXT_NORMAL]);
 }
 
 
@@ -209,9 +241,9 @@ static void on_folder_view_loaded(FmFolderView* view, FmPath* path, FmTabPage* p
         fm_folder_query_filesystem_info(folder);
     }
 
-    /* FIXME: scroll to recorded position */
-//    item = fm_nav_history_get_cur(page->nav_history);
-//    gtk_adjustment_set_value(gtk_scrolled_window_get_vadjustment(GTK_SCROLLED_WINDOW(view)), item->scroll_pos);
+    /* scroll to recorded position */
+    item = fm_nav_history_get_cur(page->nav_history);
+    gtk_adjustment_set_value(gtk_scrolled_window_get_vadjustment(GTK_SCROLLED_WINDOW(view)), item->scroll_pos);
 
     /* update status text */
     g_free(page->status_text[FM_STATUS_TEXT_NORMAL]);
@@ -224,16 +256,17 @@ static void fm_tab_page_init(FmTabPage *page)
 {
     GtkPaned* paned = GTK_PANED(page);
     FmTabLabel* tab_label;
+    FmFolderView* folder_view;
+
     page->side_pane = fm_side_pane_new();
     fm_side_pane_set_mode(FM_SIDE_PANE(page->side_pane), app_config->side_pane_mode);
     /* TODO: add a close button to side pane */
     gtk_paned_add1(paned, page->side_pane);
 
     page->folder_view = fm_folder_view_new(app_config->view_mode);
-    fm_folder_view_sort(FM_FOLDER_VIEW(page->folder_view),
-                        app_config->sort_type, app_config->sort_by);
-    fm_folder_view_set_selection_mode(FM_FOLDER_VIEW(page->folder_view),
-                                      GTK_SELECTION_MULTIPLE);
+    folder_view = FM_FOLDER_VIEW(page->folder_view);
+    fm_folder_view_sort(folder_view, app_config->sort_type, app_config->sort_by);
+    fm_folder_view_set_selection_mode(folder_view, GTK_SELECTION_MULTIPLE);
     page->nav_history = fm_nav_history_new();
     gtk_paned_add2(paned, page->folder_view);
 
@@ -249,6 +282,9 @@ static void fm_tab_page_init(FmTabPage *page)
                      G_CALLBACK(on_folder_view_sel_changed), page);
     g_signal_connect(page->folder_view, "loaded",
                      G_CALLBACK(on_folder_view_loaded), page);
+    /* the folder view is already loded, call the "loaded" callback ourself. */
+    if(fm_folder_view_get_is_loaded(folder_view))
+        on_folder_view_loaded(folder_view, fm_folder_view_get_cwd(folder_view), page);
 }
 
 GtkWidget *fm_tab_page_new(FmPath* path)
@@ -259,11 +295,11 @@ GtkWidget *fm_tab_page_new(FmPath* path)
 
     fm_folder_view_set_show_hidden(FM_FOLDER_VIEW(page->folder_view),
                                    app_config->show_hidden);
-    fm_tab_page_chdir(page, path, TRUE);
+    fm_tab_page_chdir(page, path);
     return page;
 }
 
-void fm_tab_page_chdir(FmTabPage* page, FmPath* path, gboolean add_to_history)
+static void fm_tab_page_chdir_without_history(FmTabPage* page, FmPath* path)
 {
     FmFolderView* folder_view = FM_FOLDER_VIEW(page->folder_view);
     FmFolder* folder = fm_folder_view_get_folder(folder_view);
@@ -290,14 +326,18 @@ void fm_tab_page_chdir(FmTabPage* page, FmPath* path, gboolean add_to_history)
 
     fm_side_pane_chdir(FM_SIDE_PANE(page->side_pane), path);
 
-    if(add_to_history)
-    {
-        int scroll_pos = gtk_adjustment_get_value(gtk_scrolled_window_get_vadjustment(GTK_SCROLLED_WINDOW(page->folder_view)));
-        fm_nav_history_chdir(page->nav_history, path, scroll_pos);
-    }
-
     g_signal_connect(folder, "content-changed", G_CALLBACK(on_folder_content_changed), page);
     g_signal_connect(folder, "fs-info", G_CALLBACK(on_folder_fs_info), page);
+
+    /* tell the world that our current working directory is changed */
+    g_signal_emit(page, signals[CHDIR], 0, path);
+}
+
+void fm_tab_page_chdir(FmTabPage* page, FmPath* path)
+{
+    int scroll_pos = gtk_adjustment_get_value(gtk_scrolled_window_get_vadjustment(GTK_SCROLLED_WINDOW(page->folder_view)));
+    fm_nav_history_chdir(page->nav_history, path, scroll_pos);
+    fm_tab_page_chdir_without_history(page, path);
 }
 
 void fm_tab_page_set_show_hidden(FmTabPage* page, gboolean show_hidden)
@@ -337,21 +377,14 @@ FmNavHistory* fm_tab_page_get_history(FmTabPage* page)
 
 void fm_tab_page_forward(FmTabPage* page)
 {
-    FmMainWin* win = FM_MAIN_WIN(gtk_widget_get_toplevel(GTK_WIDGET(page)));
-
     if(fm_nav_history_get_can_forward(page->nav_history))
     {
         FmNavHistoryItem* item;
         GtkAdjustment* vadjustment = gtk_scrolled_window_get_vadjustment(GTK_SCROLLED_WINDOW(page->folder_view));
         int scroll_pos = gtk_adjustment_get_value(vadjustment);
         fm_nav_history_forward(page->nav_history, scroll_pos);
-        /* FIXME: should this be driven by a signal emitted on FmNavHistory? */
         item = fm_nav_history_get_cur(page->nav_history);
-        /* FIXME: should this be driven by a signal emitted on FmNavHistory? */
-        fm_main_win_chdir(win, item->path, FALSE);
-
-        /* scroll to recorded position */
-        gtk_adjustment_set_value(vadjustment, item->scroll_pos);
+        fm_tab_page_chdir_without_history(page, item->path);
     }
 }
 
@@ -366,11 +399,7 @@ void fm_tab_page_back(FmTabPage* page)
         int scroll_pos = gtk_adjustment_get_value(vadjustment);
         fm_nav_history_back(page->nav_history, scroll_pos);
         item = fm_nav_history_get_cur(page->nav_history);
-        /* FIXME: should this be driven by a signal emitted on FmNavHistory? */
-        fm_main_win_chdir(win, item->path, FALSE);
-
-        /* scroll to recorded position */
-        gtk_adjustment_set_value( vadjustment, item->scroll_pos);
+        fm_tab_page_chdir_without_history(page, item->path);
     }
 }
 
@@ -382,11 +411,7 @@ void fm_tab_page_history(FmTabPage* page, GList* history_item_link)
     int scroll_pos = gtk_adjustment_get_value(vadjustment);
     fm_nav_history_jump(page->nav_history, history_item_link, scroll_pos);
     item = fm_nav_history_get_cur(page->nav_history);
-    /* FIXME: should this be driven by a signal emitted on FmNavHistory? */
-    fm_main_win_chdir(win, item->path, FALSE);
-
-    /* scroll to recorded position */
-    gtk_adjustment_set_value(vadjustment, item->scroll_pos);
+    fm_tab_page_chdir_without_history(page, item->path);
 }
 
 const char* fm_tab_page_get_title(FmTabPage* page)

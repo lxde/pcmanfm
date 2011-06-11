@@ -62,6 +62,8 @@ struct _FmTabPage
 struct _FmTabPageClass
 {
     GtkHPanedClass parent_class;
+    void (*chdir)(FmTabPage* page, FmPath* path);
+    void (*open_dir)(FmTabPage* page, guint where, FmPath* path);
     void (*status)(FmTabPage* page, guint type, const char* status_text);
 };
 
@@ -70,7 +72,7 @@ GType fm_tab_page_get_type(void);
 
 GtkWidget* fm_tab_page_new(FmPath* path);
 
-void fm_tab_page_chdir(FmTabPage* page, FmPath* path, gboolean add_to_history);
+void fm_tab_page_chdir(FmTabPage* page, FmPath* path);
 
 void fm_tab_page_set_show_hidden(FmTabPage* page, gboolean show_hidden);
 
