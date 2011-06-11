@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: PCManFM\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-06-11 19:45+0200\n"
-"PO-Revision-Date: 2011-03-15 00:46+0200\n"
+"PO-Revision-Date: 2011-06-11 20:02+0200\n"
 "Last-Translator: Martin <brother@bsnet.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
@@ -453,19 +453,16 @@ msgid "_View"
 msgstr "_Visa"
 
 #: ../src/main-win-ui.c:161
-#, fuzzy
 msgid "Reload Folder"
-msgstr "Nästa mapp"
+msgstr "Läs om mapp"
 
 #: ../src/main-win-ui.c:161
-#, fuzzy
 msgid "Reload current folder"
-msgstr "Föräldramapp"
+msgstr "Läs om aktuell mapp"
 
 #: ../src/main-win-ui.c:162
-#, fuzzy
 msgid "Side Pane"
-msgstr "Sido_panel"
+msgstr "Sidopanel"
 
 #: ../src/main-win-ui.c:164
 msgid "_Help"
@@ -549,9 +546,8 @@ msgid "Show _Hidden"
 msgstr "Visa _dolda"
 
 #: ../src/main-win-ui.c:198
-#, fuzzy
 msgid "Show Side Pane"
-msgstr "Sido_panel"
+msgstr "Visa sidopanel"
 
 #: ../src/main-win-ui.c:203
 msgid "_Icon View"
@@ -571,7 +567,7 @@ msgstr "Detaljerad _listvy"
 
 #: ../src/main-win-ui.c:225
 msgid "Places"
-msgstr ""
+msgstr "Platser"
 
 #: ../src/main-win-ui.c:226
 msgid "Directory Tree"
@@ -579,7 +575,7 @@ msgstr "Katalogträd"
 
 #: ../src/main-win-ui.c:227
 msgid "Remote"
-msgstr ""
+msgstr "Fjärr"
 
 #: ../src/main-win.c:471
 msgid "You are in super user mode"
@@ -654,7 +650,7 @@ msgid ""
 "Open preference dialog. 'n' is number of the page you want to show (1, 2, "
 "3...)."
 msgstr ""
-"Öppna inställningshanteraren. \"n\" är det sidnummer som du vill visa "
+"Öppna inställningshanteraren. \"n\" är det sidnummer som ska visas "
 "(1,2,3,...)."
 
 #. { "new-win", '\0', 'n', G_OPTION_ARG_NONE, &new_win, N_("Open new window"), NULL },
@@ -692,15 +688,15 @@ msgstr "Ledigt utrymme: %s (Totalt: %s )"
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d objekt"
+msgstr[1] "%d objekt"
 
 #: ../src/tab-page.c:213
-#, fuzzy, c-format
+#, c-format
 msgid " (%d hidden)"
 msgid_plural " (%d hidden)"
-msgstr[0] "%d dolt"
-msgstr[1] "%d dolda"
+msgstr[0] " (%d dold)"
+msgstr[1] " (%d dolda)"
 
 #: ../data/pcmanfm.desktop.in.h:1
 msgid "Browse the file system and manage the files"
