@@ -1242,7 +1242,27 @@ gboolean on_key_press_event(GtkWidget* w, GdkEventKey* evt)
             return TRUE;
         }
     }
-
+    else if(evt->keyval == '/' || evt->keyval == '~')
+    {
+        if (!gtk_widget_is_focus(win->location))
+        {
+            gtk_widget_grab_focus(win->location);
+            char path[] = {evt->keyval, 0};
+            gtk_entry_set_text(GTK_ENTRY(win->location), path);
+            gtk_editable_set_position(GTK_EDITABLE(win->location), -1);
+            return TRUE;
+        }
+    }
+    else if(evt->keyval == GDK_Escape)
+    {
+        if (gtk_widget_is_focus(win->location))
+        {
+            gtk_widget_grab_focus(win->folder_view);
+            fm_path_entry_set_path(FM_PATH_ENTRY(win->location),
+                                   fm_folder_view_get_cwd(FM_FOLDER_VIEW(win->folder_view)));
+            return TRUE;
+        }
+    }
     return GTK_WIDGET_CLASS(fm_main_win_parent_class)->key_press_event(w, evt);
 }
 
