@@ -60,6 +60,8 @@ static void fm_app_config_init(FmAppConfig *cfg)
     /* load libfm config file */
     fm_config_load_from_file((FmConfig*)cfg, NULL);
 
+    cfg->bm_open_method = FM_OPEN_IN_CURRENT_TAB;
+
     cfg->mount_on_startup = TRUE;
     cfg->mount_removable = TRUE;
     cfg->autorun = TRUE;

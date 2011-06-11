@@ -50,6 +50,14 @@ typedef enum
     FM_WP_TILE
 }FmWallpaperMode;
 
+typedef enum
+{
+    FM_OPEN_IN_CURRENT_TAB,
+    FM_OPEN_IN_NEW_TAB,
+    FM_OPEN_IN_NEW_WINDOW,
+    FM_OPEN_IN_LAST_ACTIVE_WINDOW,
+}FmOpenMethod;
+
 typedef struct _FmAppConfig         FmAppConfig;
 typedef struct _FmAppConfigClass        FmAppConfigClass;
 
