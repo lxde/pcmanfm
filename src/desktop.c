@@ -833,6 +833,7 @@ gboolean on_motion_notify( GtkWidget* w, GdkEventMotion* evt )
                 gtk_drag_begin( w, target_list,
                              GDK_ACTION_COPY|GDK_ACTION_MOVE|GDK_ACTION_LINK,
                              1, evt );
+                fm_list_unref(files);
             }
         }
     }
@@ -857,9 +858,23 @@ gboolean on_key_press( GtkWidget* w, GdkEventKey* evt )
     FmDesktopItem* item;
     int modifier = ( evt->state & ( GDK_SHIFT_MASK | GDK_CONTROL_MASK | GDK_MOD1_MASK ) );
     FmPathList* sels;
-
     switch ( evt->keyval )
     {
+    case GDK_Menu:
+        {
+            FmFileInfoList* files = fm_desktop_get_selected_files(desktop);
+            if(files)
+            {
+                popup_menu(desktop, evt);
+                fm_list_unref(files);
+            }
+            else
+            {
+                if(! app_config->show_wm_menu)
+                    gtk_menu_popup(GTK_MENU(desktop_popup), NULL, NULL, NULL, NULL, 3, evt->time);
+            }
+            return TRUE;
+        }
     case GDK_Left:
         item = get_nearest_item(desktop, desktop->focus, GTK_DIR_LEFT);
         if(item)

@@ -98,6 +98,8 @@ static void on_notebook_switch_page(GtkNotebook* nb, GtkNotebookPage* page, guin
 static void on_notebook_page_added(GtkNotebook* nb, GtkWidget* page, guint num, FmMainWin* win);
 static void on_notebook_page_removed(GtkNotebook* nb, GtkWidget* page, guint num, FmMainWin* win);
 
+static void on_folder_view_clicked(FmFolderView* fv, FmFolderViewClickType type, FmFileInfo* fi, FmMainWin* win);
+
 #include "main-win-ui.c" /* ui xml definitions and actions */
 
 static GSList* all_wins = NULL;
@@ -190,6 +192,19 @@ static gboolean on_view_key_press_event(FmFolderView* fv, GdkEventKey* evt, FmMa
     case GDK_Delete:
         on_del(NULL, win);
         break;
+    case GDK_Menu:
+        {
+            FmFileInfoList *files = fm_folder_view_get_selected_files(fv);
+            FmFileInfo *info;
+            if(files && !fm_list_is_empty(files))
+                info = fm_list_peek_head(files);
+            else
+                info = NULL;
+            on_folder_view_clicked(fv, FM_FV_CONTEXT_MENU, info, win);
+            if(files)
+                fm_list_unref(files);
+            break;
+        }
     }
     return FALSE;
 }
@@ -1203,6 +1218,7 @@ void fm_main_win_open_in_last_active(FmPath* path)
 gboolean on_key_press_event(GtkWidget* w, GdkEventKey* evt)
 {
     FmMainWin* win = FM_MAIN_WIN(w);
+
     if(evt->state == GDK_MOD1_MASK) /* Alt */
     {
         if(isdigit(evt->keyval)) /* Alt + 0 ~ 9, nth tab */
