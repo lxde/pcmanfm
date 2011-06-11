@@ -113,6 +113,16 @@ static void fm_tab_page_finalize(GObject *object)
     G_OBJECT_CLASS(fm_tab_page_parent_class)->finalize(object);
 }
 
+inline static void disconnect_folder(FmTabPage* page, FmFolder* folder)
+{
+    if(folder)
+    {
+        g_signal_handlers_disconnect_by_func(folder, gtk_widget_destroy, page);
+        g_signal_handlers_disconnect_by_func(folder, on_folder_content_changed, page);
+        g_signal_handlers_disconnect_by_func(folder, on_folder_fs_info, page);
+    }
+}
+
 #if GTK_CHECK_VERSION(3, 0, 0)
 void fm_tab_page_destroy(GtkWidget *page)
 #else
@@ -120,11 +130,7 @@ void fm_tab_page_destroy(GtkObject *page)
 #endif
 {
     FmFolder* folder = fm_tab_page_get_folder(FM_TAB_PAGE(page));
-    if(folder)
-    {
-        g_signal_handlers_disconnect_by_func(folder, on_folder_content_changed, page);
-        g_signal_handlers_disconnect_by_func(folder, on_folder_fs_info, page);
-    }
+    disconnect_folder(page, folder);
 }
 
 static void on_folder_content_changed(FmFolder* folder, FmTabPage* page)
@@ -135,7 +141,6 @@ static void on_folder_content_changed(FmFolder* folder, FmTabPage* page)
     g_signal_emit(page, signals[STATUS], 0,
                   FM_STATUS_TEXT_NORMAL, page->status_text[FM_STATUS_TEXT_NORMAL]);
 }
-
 
 static void on_folder_view_sel_changed(FmFolderView* fv, FmFileInfoList* files, FmTabPage* page)
 {
@@ -308,11 +313,7 @@ static void fm_tab_page_chdir_without_history(FmTabPage* page, FmPath* path)
     g_free(disp_name);
 
     /* disconnect from previous folder */
-    if(folder)
-    {
-        g_signal_handlers_disconnect_by_func(folder, on_folder_content_changed, page);
-        g_signal_handlers_disconnect_by_func(folder, on_folder_fs_info, page);
-    }
+    disconnect_folder(page, folder);
 
     /* chdir to a new folder */
     fm_folder_view_chdir(folder_view, path);
@@ -325,6 +326,10 @@ static void fm_tab_page_chdir_without_history(FmTabPage* page, FmPath* path)
     }
 
     fm_side_pane_chdir(FM_SIDE_PANE(page->side_pane), path);
+
+    /* destroy the page when the folder is unmounted or deleted. */
+    g_signal_connect_swapped(folder, "unmount", G_CALLBACK(gtk_widget_destroy), page);
+    g_signal_connect_swapped(folder, "removed", G_CALLBACK(gtk_widget_destroy), page);
 
     g_signal_connect(folder, "content-changed", G_CALLBACK(on_folder_content_changed), page);
     g_signal_connect(folder, "fs-info", G_CALLBACK(on_folder_fs_info), page);
