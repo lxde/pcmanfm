@@ -122,12 +122,34 @@ static void fm_main_win_class_init(FmMainWinClass *klass)
     fm_main_win_parent_class = (GtkWindowClass*)g_type_class_peek(GTK_TYPE_WINDOW);
 }
 
+static gboolean idle_focus_view(FmMainWin* win)
+{
+    if(win->folder_view)
+        gtk_widget_grab_focus(win->folder_view);
+    return FALSE;
+}
+
 static void on_location_activate(GtkEntry* entry, FmMainWin* win)
 {
     FmPath* path = fm_path_entry_get_path(FM_PATH_ENTRY(entry));
     fm_main_win_chdir(win, path);
-    if(win->folder_view)
-        gtk_widget_grab_focus(win->folder_view);
+
+    /* FIXME: due to bug #650114 in GTK+, GtkEntry still call a
+     * idle function for GtkEntryCompletion even if the completion
+     * is set to NULL. This causes crash in pcmanfm since libfm
+     * set GtkCompletition to NULL when FmPathEntry loses its
+     * focus. Hence the bug is triggered when we set focus to
+     * the folder view, which in turns causes FmPathEntry to lose focus.
+     *
+     * See related bug reports for more info:
+     * https://bugzilla.gnome.org/show_bug.cgi?id=650114
+     * https://sourceforge.net/tracker/?func=detail&aid=3308324&group_id=156956&atid=801864
+     *
+     * So here is a quick fix:
+     * Set the focus to folder view in our own idle handler with lower
+     * priority than GtkEntry's idle function (They use G_PRIORITY_HIGH).
+     */
+    g_idle_add_full(G_PRIORITY_LOW, idle_focus_view, win, NULL);
 }
 
 static gboolean open_folder_func(GAppLaunchContext* ctx, GList* folder_infos, gpointer user_data, GError** err)
@@ -518,6 +540,9 @@ static void fm_main_win_finalize(GObject *object)
 
     g_object_unref(win->ui);
     g_object_unref(win->bookmarks);
+
+    /* This is mainly for removing idle_focus_view() */
+    g_source_remove_by_user_data(win);
 
     if (G_OBJECT_CLASS(fm_main_win_parent_class)->finalize)
         (* G_OBJECT_CLASS(fm_main_win_parent_class)->finalize)(object);
