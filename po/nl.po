@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm 0.9.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-06-11 19:45+0200\n"
-"PO-Revision-Date: 2011-06-03 00:06+0200\n"
+"PO-Revision-Date: 2011-06-11 21:23+0200\n"
 "Last-Translator: Pjotr <>\n"
 "Language-Team: Dutch\n"
 "Language: nl\n"
@@ -450,18 +450,16 @@ msgid "_View"
 msgstr "_Beeld"
 
 #: ../src/main-win-ui.c:161
-#, fuzzy
 msgid "Reload Folder"
-msgstr "Volgende map"
+msgstr "Herlaad Map"
 
 #: ../src/main-win-ui.c:161
-#, fuzzy
 msgid "Reload current folder"
-msgstr "Bovenliggende Map"
+msgstr "Herlaad huidige map"
 
 #: ../src/main-win-ui.c:162
 msgid "Side Pane"
-msgstr ""
+msgstr "Zijbalk"
 
 #: ../src/main-win-ui.c:164
 msgid "_Help"
@@ -544,9 +542,8 @@ msgid "Show _Hidden"
 msgstr "Toon _Verborgen"
 
 #: ../src/main-win-ui.c:198
-#, fuzzy
 msgid "Show Side Pane"
-msgstr "Toon _Verborgen"
+msgstr "Toon Zijbalk"
 
 #: ../src/main-win-ui.c:203
 msgid "_Icon View"
@@ -566,15 +563,15 @@ msgstr "Gedetailleerde _Lijstweergave"
 
 #: ../src/main-win-ui.c:225
 msgid "Places"
-msgstr ""
+msgstr "Locaties"
 
 #: ../src/main-win-ui.c:226
 msgid "Directory Tree"
-msgstr ""
+msgstr "Boomstructuur mappen"
 
 #: ../src/main-win-ui.c:227
 msgid "Remote"
-msgstr ""
+msgstr "Op afstand"
 
 #: ../src/main-win.c:471
 msgid "You are in super user mode"
@@ -687,15 +684,15 @@ msgstr "Vrije ruimte: %s (Totaal: %s)"
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d element"
+msgstr[1] "%d elementen"
 
 #: ../src/tab-page.c:213
 #, c-format
 msgid " (%d hidden)"
 msgid_plural " (%d hidden)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] " (%d verborgen)"
+msgstr[1] " (%d verborgen)"
 
 #: ../data/pcmanfm.desktop.in.h:1
 msgid "Browse the file system and manage the files"
