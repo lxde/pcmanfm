@@ -381,7 +381,7 @@ void fm_desktop_manager_init()
     if(model)
     {
         g_signal_connect(model, "loaded", G_CALLBACK(on_model_loaded), NULL);
-        if(!fm_folder_model_get_is_loading(model))
+        if(fm_folder_model_get_is_loaded(model))
             on_model_loaded(model, NULL);
     }
 
