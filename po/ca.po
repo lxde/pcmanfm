@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-02-15 09:19+0100\n"
+"POT-Creation-Date: 2011-06-11 21:25+0800\n"
 "PO-Revision-Date: 2010-09-09 10:46+0200\n"
 "Last-Translator: sisco <sisco.garcia@ubuntu.cat>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -346,47 +346,49 @@ msgstr "Obre amb el gestor de fitxers"
 msgid "_Invert Selection"
 msgstr "_Inverteix la selecció"
 
-#: ../src/desktop-ui.c:54 ../src/main-win-ui.c:151
+#: ../src/desktop-ui.c:54 ../src/main-win-ui.c:157
 msgid "_Sort Files"
 msgstr "_Ordena els fitxers"
 
-#: ../src/desktop-ui.c:55
-msgid "_New"
-msgstr ""
+#. for popup menu
+#: ../src/desktop-ui.c:55 ../src/main-win-ui.c:182
+#, fuzzy
+msgid "Create _New..."
+msgstr "Crea un de nou..."
 
-#: ../src/desktop-ui.c:56 ../src/main-win-ui.c:177
+#: ../src/desktop-ui.c:56 ../src/main-win-ui.c:183
 msgid "Folder"
 msgstr "Carpeta"
 
-#: ../src/desktop-ui.c:57 ../src/main-win-ui.c:178
+#: ../src/desktop-ui.c:57 ../src/main-win-ui.c:184
 msgid "Blank File"
 msgstr "Fitxer buit"
 
-#: ../src/desktop-ui.c:69 ../src/main-win-ui.c:203
+#: ../src/desktop-ui.c:69 ../src/main-win-ui.c:209
 msgid "By _Name"
 msgstr "Per _nom"
 
-#: ../src/desktop-ui.c:70 ../src/main-win-ui.c:204
+#: ../src/desktop-ui.c:70 ../src/main-win-ui.c:210
 msgid "By _Modification Time"
 msgstr "Per la data de _modificació"
 
-#: ../src/desktop-ui.c:71 ../src/main-win-ui.c:205
+#: ../src/desktop-ui.c:71 ../src/main-win-ui.c:211
 msgid "By _Size"
 msgstr "Per _mida"
 
-#: ../src/desktop-ui.c:72 ../src/main-win-ui.c:206
+#: ../src/desktop-ui.c:72 ../src/main-win-ui.c:212
 msgid "By File _Type"
 msgstr "Per tipus de fitxers"
 
-#: ../src/desktop-ui.c:88 ../src/main-win-ui.c:223
+#: ../src/desktop-ui.c:88 ../src/main-win-ui.c:235
 msgid "Open in New Tab"
 msgstr "Obre a una nova pestanya"
 
-#: ../src/desktop-ui.c:89 ../src/main-win-ui.c:224
+#: ../src/desktop-ui.c:89 ../src/main-win-ui.c:236
 msgid "Open in New Window"
 msgstr "Obre en una nova finestra"
 
-#: ../src/desktop-ui.c:91 ../src/main-win-ui.c:226
+#: ../src/desktop-ui.c:91 ../src/main-win-ui.c:238
 msgid "Open in _Terminal"
 msgstr "Obre en un _terminal"
 
@@ -398,171 +400,176 @@ msgstr ""
 msgid "Snap to Grid"
 msgstr ""
 
-#: ../src/main-win-ui.c:133
+#: ../src/main-win-ui.c:138
 msgid "_File"
 msgstr "_Fitxer"
 
-#: ../src/main-win-ui.c:134
+#: ../src/main-win-ui.c:139
 msgid "_New Window"
 msgstr "_Nova finestra"
 
-#: ../src/main-win-ui.c:135
+#: ../src/main-win-ui.c:140
 msgid "New _Tab"
 msgstr "_Nova pestanya"
 
-#: ../src/main-win-ui.c:136
+#: ../src/main-win-ui.c:141
 msgid "_Close Tab"
 msgstr "Tan_ca la pestanya"
 
-#: ../src/main-win-ui.c:137
+#: ../src/main-win-ui.c:142
 msgid "Close Window"
 msgstr "Tanca la finestra"
 
-#: ../src/main-win-ui.c:138
+#: ../src/main-win-ui.c:143
 msgid "_Edit"
 msgstr "_Edita"
 
-#: ../src/main-win-ui.c:143
+#: ../src/main-win-ui.c:148
 msgid "Rename"
 msgstr "Reanomena"
 
-#: ../src/main-win-ui.c:144
+#: ../src/main-win-ui.c:149
 msgid "Create Symlink"
 msgstr "Crea un enllaç simbòlic"
 
-#: ../src/main-win-ui.c:145
+#: ../src/main-win-ui.c:150
 msgid "Move To..."
 msgstr "Mou a..."
 
-#: ../src/main-win-ui.c:146
+#: ../src/main-win-ui.c:151
 msgid "Copy To..."
 msgstr "Copia a..."
 
-#: ../src/main-win-ui.c:148
+#: ../src/main-win-ui.c:153
 msgid "Invert Selection"
 msgstr "Inverteix la selecció"
 
-#: ../src/main-win-ui.c:150
+#: ../src/main-win-ui.c:155
 msgid "_View"
 msgstr "_Visualitza"
 
-#: ../src/main-win-ui.c:152
+#: ../src/main-win-ui.c:156
+msgid "Side Pane"
+msgstr ""
+
+#: ../src/main-win-ui.c:158
 msgid "_Help"
 msgstr "_Ajuda"
 
-#: ../src/main-win-ui.c:154
+#: ../src/main-win-ui.c:160
 msgid "_Go"
 msgstr "_Ves"
 
-#: ../src/main-win-ui.c:155
+#: ../src/main-win-ui.c:161
 msgid "Previous Folder"
 msgstr "Directori anterior"
 
-#: ../src/main-win-ui.c:156
+#: ../src/main-win-ui.c:162
 msgid "Next Folder"
 msgstr "Carpeta següent"
 
-#: ../src/main-win-ui.c:157
+#: ../src/main-win-ui.c:163
 msgid "Parent Folder"
 msgstr "Directori superior"
 
-#: ../src/main-win-ui.c:157
+#: ../src/main-win-ui.c:163
 msgid "Go to parent Folder"
 msgstr "Vés a la carpeta superior"
 
-#: ../src/main-win-ui.c:158
+#: ../src/main-win-ui.c:164
 msgid "Home Folder"
 msgstr "Carpeta d'inici"
 
-#: ../src/main-win-ui.c:159
+#: ../src/main-win-ui.c:165
 msgid "Desktop"
 msgstr "Escriptori"
 
-#: ../src/main-win-ui.c:159
+#: ../src/main-win-ui.c:165
 msgid "Desktop Folder"
 msgstr "Carpeta escriptori"
 
-#: ../src/main-win-ui.c:160
+#: ../src/main-win-ui.c:166
 msgid "My Computer"
 msgstr "El meu ordinador"
 
-#: ../src/main-win-ui.c:161
+#: ../src/main-win-ui.c:167
 msgid "Trash Can"
 msgstr "Paperera"
 
-#: ../src/main-win-ui.c:162
+#: ../src/main-win-ui.c:168
 msgid "Network Drives"
 msgstr "Unitats de xarxa"
 
-#: ../src/main-win-ui.c:163
+#: ../src/main-win-ui.c:169
 msgid "Applications"
 msgstr "Aplicacions"
 
-#: ../src/main-win-ui.c:163
+#: ../src/main-win-ui.c:169
 msgid "Installed Applications"
 msgstr "Aplicacions instal·lades"
 
-#: ../src/main-win-ui.c:165
+#: ../src/main-win-ui.c:171
 msgid "_Bookmarks"
 msgstr "A_dreces d'interès"
 
-#: ../src/main-win-ui.c:166
+#: ../src/main-win-ui.c:172
 msgid "Add To Bookmarks"
 msgstr "Afegeix a les adreces d'interès"
 
-#: ../src/main-win-ui.c:167
+#: ../src/main-win-ui.c:173
 msgid "_Tools"
 msgstr "Ei_nes"
 
-#: ../src/main-win-ui.c:168
+#: ../src/main-win-ui.c:174
 msgid "Open Current Folder in _Terminal"
 msgstr "Obre el directori actual en un terminal"
 
-#: ../src/main-win-ui.c:169
+#: ../src/main-win-ui.c:175
 msgid "Open Current Folder as _Root"
 msgstr "Obre la carpeta actual com a _root"
 
-#. for popup menu
-#: ../src/main-win-ui.c:176
-#, fuzzy
-msgid "Create _New..."
-msgstr "Crea un de nou..."
-
-#: ../src/main-win-ui.c:184
+#: ../src/main-win-ui.c:190
 msgid "Show _Hidden"
 msgstr "Mostra els _ocults"
 
-#: ../src/main-win-ui.c:189
+#: ../src/main-win-ui.c:195
 msgid "_Icon View"
 msgstr "Vista d'icones"
 
-#: ../src/main-win-ui.c:190
+#: ../src/main-win-ui.c:196
 msgid "_Compact View"
 msgstr "Vista _compacta"
 
-#: ../src/main-win-ui.c:191
+#: ../src/main-win-ui.c:197
 msgid "_Thumbnail View"
 msgstr "Vista de miniatures"
 
-#: ../src/main-win-ui.c:192
+#: ../src/main-win-ui.c:198
 msgid "Detailed _List View"
 msgstr "Vista de llista amb detalls"
 
-#: ../src/main-win.c:565
+#: ../src/main-win-ui.c:217
+msgid "Places"
+msgstr ""
+
+#: ../src/main-win-ui.c:218
+msgid "Directory Tree"
+msgstr ""
+
+#: ../src/main-win-ui.c:219
+msgid "Remote"
+msgstr ""
+
+#: ../src/main-win.c:440
 msgid "You are in super user mode"
 msgstr "Esteu en mode de super usuari"
 
-#: ../src/main-win.c:664
+#: ../src/main-win.c:550
 #, fuzzy
 msgid "Switch user command is not set."
 msgstr "La comanda d'intercanvi d'usuaris no està a punt"
 
-#: ../src/main-win.c:984
-#, c-format
-msgid "Free space: %s (Total: %s)"
-msgstr "Espai lliure: %s (Total: %s)"
-
-#: ../src/main-win.c:1201
+#: ../src/main-win.c:966
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -573,7 +580,7 @@ msgstr ""
 " '%s'\n"
 "Entreu un nom per la nova adreça d'interès:"
 
-#: ../src/main-win.c:1205
+#: ../src/main-win.c:970
 msgid "Add to Bookmarks"
 msgstr "Afegeix a les adreces d'interès"
 
@@ -640,22 +647,41 @@ msgstr "[Fitxer1, fitxer2 ,...]"
 msgid "Terminal emulator is not set."
 msgstr "L'emulador del terminal no està activat"
 
-#: ../src/pcmanfm.c:500
+#: ../src/pcmanfm.c:507
 #, fuzzy
 msgid "Enter a name for the newly created folder:"
 msgstr "Introduïu un nou pel nou fitxer creat:"
 
-#: ../src/pcmanfm.c:502
+#: ../src/pcmanfm.c:509
 msgid "Enter a name for the newly created file:"
 msgstr "Introduïu un nou pel nou fitxer creat:"
 
-#: ../src/pcmanfm.c:503
+#: ../src/pcmanfm.c:510
 msgid "Create New..."
 msgstr "Crea un de nou..."
 
-#: ../src/pcmanfm.c:503
+#: ../src/pcmanfm.c:510
 msgid "New"
 msgstr "Nous"
+
+#: ../src/tab-page.c:188
+#, c-format
+msgid "Free space: %s (Total: %s)"
+msgstr "Espai lliure: %s (Total: %s)"
+
+#: ../src/tab-page.c:207
+#, c-format
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../src/tab-page.c:208
+#, c-format
+msgid " (%d hidden)"
+msgid_plural " (%d hidden)"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../data/pcmanfm.desktop.in.h:1
 msgid "Browse the file system and manage the files"

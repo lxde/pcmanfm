@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-02-15 09:19+0100\n"
+"POT-Creation-Date: 2011-06-11 21:25+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -110,9 +110,7 @@ msgstr "సంపుటముల యొక్క ప్రతీకలను డ
 
 #: ../data/ui/desktop-pref.glade.h:19
 msgid "Show menus provided by window managers when desktop is clicked"
-msgstr ""
-"డెస్క్‍టాప్‌ను క్లిక్ చేసినపుడు విండో నిర్వాహకంచే సమకూర్చబడిన మెనూలను "
-"చూపించు"
+msgstr "డెస్క్‍టాప్‌ను క్లిక్ చేసినపుడు విండో నిర్వాహకంచే సమకూర్చబడిన మెనూలను చూపించు"
 
 #: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:37
 msgid "Stretch to fill the entire screen"
@@ -221,8 +219,7 @@ msgstr "తొలగించదగిన మాధ్యమం ప్రవే�
 
 #: ../data/ui/pref.glade.h:24
 msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
-msgstr ""
-"డిస్క్ నుంచి చెరిపివేసే బదులుగా తీసివేయదగిన ఫైళ్ళను 'చెత్తబుట్ట'కు తరలించు"
+msgstr "డిస్క్ నుంచి చెరిపివేసే బదులుగా తీసివేయదగిన ఫైళ్ళను 'చెత్తబుట్ట'కు తరలించు"
 
 #: ../data/ui/pref.glade.h:25
 msgid "Only show thumbnails for local files"
@@ -250,9 +247,7 @@ msgstr "ప్రాధాన్యతలు"
 
 #: ../data/ui/pref.glade.h:31
 msgid "Show available options for removable media when they are inserted"
-msgstr ""
-"తొలగించదగిన మాధ్యమం ప్రవేశపెట్టినపుడు వాటికి అందుబాటులోనున్న ఐచ్ఛికాలను "
-"చూపించు"
+msgstr "తొలగించదగిన మాధ్యమం ప్రవేశపెట్టినపుడు వాటికి అందుబాటులోనున్న ఐచ్ఛికాలను చూపించు"
 
 #: ../data/ui/pref.glade.h:32
 msgid "Show thumbnails of files"
@@ -342,47 +337,48 @@ msgstr "ఫైల్ నిర్వాహకములో తెరువుమ�
 msgid "_Invert Selection"
 msgstr "ఎంపికను విలోమకరించు (_I)"
 
-#: ../src/desktop-ui.c:54 ../src/main-win-ui.c:151
+#: ../src/desktop-ui.c:54 ../src/main-win-ui.c:157
 msgid "_Sort Files"
 msgstr "ఫైళ్ళ క్రమబద్దీకరణ (_S)"
 
-#: ../src/desktop-ui.c:55
-msgid "_New"
-msgstr "కొత్త (_N)"
+#. for popup menu
+#: ../src/desktop-ui.c:55 ../src/main-win-ui.c:182
+msgid "Create _New..."
+msgstr "కొత్తది సృష్టించు...(_N)"
 
-#: ../src/desktop-ui.c:56 ../src/main-win-ui.c:177
+#: ../src/desktop-ui.c:56 ../src/main-win-ui.c:183
 msgid "Folder"
 msgstr "సంచయం"
 
-#: ../src/desktop-ui.c:57 ../src/main-win-ui.c:178
+#: ../src/desktop-ui.c:57 ../src/main-win-ui.c:184
 msgid "Blank File"
 msgstr "శూన్య ఫైల్"
 
-#: ../src/desktop-ui.c:69 ../src/main-win-ui.c:203
+#: ../src/desktop-ui.c:69 ../src/main-win-ui.c:209
 msgid "By _Name"
 msgstr "పేరును బట్టి (_N)"
 
-#: ../src/desktop-ui.c:70 ../src/main-win-ui.c:204
+#: ../src/desktop-ui.c:70 ../src/main-win-ui.c:210
 msgid "By _Modification Time"
 msgstr "సవరించబడిన సమయముని బట్టి"
 
-#: ../src/desktop-ui.c:71 ../src/main-win-ui.c:205
+#: ../src/desktop-ui.c:71 ../src/main-win-ui.c:211
 msgid "By _Size"
 msgstr "పరిమాణముని బట్టి(_S)"
 
-#: ../src/desktop-ui.c:72 ../src/main-win-ui.c:206
+#: ../src/desktop-ui.c:72 ../src/main-win-ui.c:212
 msgid "By File _Type"
 msgstr "ఫైల్ రకాన్ని బట్టి (_T)"
 
-#: ../src/desktop-ui.c:88 ../src/main-win-ui.c:223
+#: ../src/desktop-ui.c:88 ../src/main-win-ui.c:235
 msgid "Open in New Tab"
 msgstr "కొత్త ట్యాబ్‌లో తెరువుము"
 
-#: ../src/desktop-ui.c:89 ../src/main-win-ui.c:224
+#: ../src/desktop-ui.c:89 ../src/main-win-ui.c:236
 msgid "Open in New Window"
 msgstr "కొత్త విండోలో తెరువుము"
 
-#: ../src/desktop-ui.c:91 ../src/main-win-ui.c:226
+#: ../src/desktop-ui.c:91 ../src/main-win-ui.c:238
 msgid "Open in _Terminal"
 msgstr "టెర్మినల్‌లో తెరువు (_T)"
 
@@ -394,169 +390,175 @@ msgstr "ప్రస్తుత స్థానమునకు తగిలి�
 msgid "Snap to Grid"
 msgstr "స్నాప్ టు గ్రిడ్"
 
-#: ../src/main-win-ui.c:133
+#: ../src/main-win-ui.c:138
 msgid "_File"
 msgstr "ఫైల్ (_F)"
 
-#: ../src/main-win-ui.c:134
+#: ../src/main-win-ui.c:139
 msgid "_New Window"
 msgstr "కొత్త విండో (_N)"
 
-#: ../src/main-win-ui.c:135
+#: ../src/main-win-ui.c:140
 msgid "New _Tab"
 msgstr "కొత్త ట్యాబ్ (_T)"
 
-#: ../src/main-win-ui.c:136
+#: ../src/main-win-ui.c:141
 msgid "_Close Tab"
 msgstr "ట్యాబును మూయి (_C)"
 
-#: ../src/main-win-ui.c:137
+#: ../src/main-win-ui.c:142
 msgid "Close Window"
 msgstr "విండోను మూసివేయి"
 
-#: ../src/main-win-ui.c:138
+#: ../src/main-win-ui.c:143
 msgid "_Edit"
 msgstr "సవరణ(_E)"
 
-#: ../src/main-win-ui.c:143
+#: ../src/main-win-ui.c:148
 msgid "Rename"
 msgstr "పేరుమార్చు"
 
-#: ../src/main-win-ui.c:144
+#: ../src/main-win-ui.c:149
 msgid "Create Symlink"
 msgstr "Symlink సృష్టించు"
 
-#: ../src/main-win-ui.c:145
+#: ../src/main-win-ui.c:150
 msgid "Move To..."
 msgstr "ఇచటకు తరలించు..."
 
-#: ../src/main-win-ui.c:146
+#: ../src/main-win-ui.c:151
 msgid "Copy To..."
 msgstr "ఇచటకు నకలుచేయి..."
 
-#: ../src/main-win-ui.c:148
+#: ../src/main-win-ui.c:153
 msgid "Invert Selection"
 msgstr "ఎంపికను విలోమకరించు"
 
-#: ../src/main-win-ui.c:150
+#: ../src/main-win-ui.c:155
 msgid "_View"
 msgstr "వీక్షణ (_V)"
 
-#: ../src/main-win-ui.c:152
+#: ../src/main-win-ui.c:156
+msgid "Side Pane"
+msgstr ""
+
+#: ../src/main-win-ui.c:158
 msgid "_Help"
 msgstr "సహాయం (_H)"
 
-#: ../src/main-win-ui.c:154
+#: ../src/main-win-ui.c:160
 msgid "_Go"
 msgstr "వెళ్ళు (_G)"
 
-#: ../src/main-win-ui.c:155
+#: ../src/main-win-ui.c:161
 msgid "Previous Folder"
 msgstr "మునుపటి సంచయం"
 
-#: ../src/main-win-ui.c:156
+#: ../src/main-win-ui.c:162
 msgid "Next Folder"
 msgstr "తరువాయి సంచయం"
 
-#: ../src/main-win-ui.c:157
+#: ../src/main-win-ui.c:163
 msgid "Parent Folder"
 msgstr "మూల సంచయం"
 
-#: ../src/main-win-ui.c:157
+#: ../src/main-win-ui.c:163
 msgid "Go to parent Folder"
 msgstr "మూల సంచయమునకు వెళ్ళు"
 
-#: ../src/main-win-ui.c:158
+#: ../src/main-win-ui.c:164
 msgid "Home Folder"
 msgstr "నివాస సంచయం"
 
-#: ../src/main-win-ui.c:159
+#: ../src/main-win-ui.c:165
 msgid "Desktop"
 msgstr "డెస్క్‍టాప్"
 
-#: ../src/main-win-ui.c:159
+#: ../src/main-win-ui.c:165
 msgid "Desktop Folder"
 msgstr "డెస్క్‍టాప్ సంచయం"
 
-#: ../src/main-win-ui.c:160
+#: ../src/main-win-ui.c:166
 msgid "My Computer"
 msgstr "నా కంప్యూటర్"
 
-#: ../src/main-win-ui.c:161
+#: ../src/main-win-ui.c:167
 msgid "Trash Can"
 msgstr "చెత్తబుట్ట"
 
-#: ../src/main-win-ui.c:162
+#: ../src/main-win-ui.c:168
 msgid "Network Drives"
 msgstr "నెట్‌వర్క్ డ్రైవర్లు"
 
-#: ../src/main-win-ui.c:163
+#: ../src/main-win-ui.c:169
 msgid "Applications"
 msgstr "అనువర్తనాలు"
 
-#: ../src/main-win-ui.c:163
+#: ../src/main-win-ui.c:169
 msgid "Installed Applications"
 msgstr "స్థాపించబడిన అనువర్తనాలు"
 
-#: ../src/main-win-ui.c:165
+#: ../src/main-win-ui.c:171
 msgid "_Bookmarks"
 msgstr "ఇష్టాంశాలు (_B)"
 
-#: ../src/main-win-ui.c:166
+#: ../src/main-win-ui.c:172
 msgid "Add To Bookmarks"
 msgstr "ఇష్టాంశాలకు జతచేయి"
 
-#: ../src/main-win-ui.c:167
+#: ../src/main-win-ui.c:173
 msgid "_Tools"
 msgstr "సాధనాలు (_T)"
 
-#: ../src/main-win-ui.c:168
+#: ../src/main-win-ui.c:174
 msgid "Open Current Folder in _Terminal"
 msgstr "ప్రస్తుత సంచయమును టెర్మినల్‌లో తెరువుము (_T)"
 
-#: ../src/main-win-ui.c:169
+#: ../src/main-win-ui.c:175
 msgid "Open Current Folder as _Root"
 msgstr "ప్రస్తుత సంచయమును రూట్ వలె తెరువు (_R)"
 
-#. for popup menu
-#: ../src/main-win-ui.c:176
-msgid "Create _New..."
-msgstr "కొత్తది సృష్టించు...(_N)"
-
-#: ../src/main-win-ui.c:184
+#: ../src/main-win-ui.c:190
 msgid "Show _Hidden"
 msgstr "దాచబడినవాటిని చూపించు (_H)"
 
-#: ../src/main-win-ui.c:189
+#: ../src/main-win-ui.c:195
 msgid "_Icon View"
 msgstr "ప్రతీక వీక్షణం (_I)"
 
-#: ../src/main-win-ui.c:190
+#: ../src/main-win-ui.c:196
 msgid "_Compact View"
 msgstr "సౌలభ్య వీక్షణం (_C)"
 
-#: ../src/main-win-ui.c:191
+#: ../src/main-win-ui.c:197
 msgid "_Thumbnail View"
 msgstr "థంబ్‌నైళ్ళ వీక్షణం (_T)"
 
-#: ../src/main-win-ui.c:192
+#: ../src/main-win-ui.c:198
 msgid "Detailed _List View"
 msgstr "వివరణాత్మక జాబితా వీక్షణం (_L)"
 
-#: ../src/main-win.c:565
+#: ../src/main-win-ui.c:217
+msgid "Places"
+msgstr ""
+
+#: ../src/main-win-ui.c:218
+msgid "Directory Tree"
+msgstr ""
+
+#: ../src/main-win-ui.c:219
+msgid "Remote"
+msgstr ""
+
+#: ../src/main-win.c:440
 msgid "You are in super user mode"
 msgstr "మీరు సూపర్ వాడుకరి విధములో ఉన్నారు"
 
-#: ../src/main-win.c:664
+#: ../src/main-win.c:550
 msgid "Switch user command is not set."
 msgstr "వాడుకరి మార్పు ఆదేశము అమర్చబడలేదు."
 
-#: ../src/main-win.c:984
-#, c-format
-msgid "Free space: %s (Total: %s)"
-msgstr "ఖాళీ స్థలము: %s (మొత్తం: %s)"
-
-#: ../src/main-win.c:1201
+#: ../src/main-win.c:966
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -567,7 +569,7 @@ msgstr ""
 "'%s'\n"
 "కొత్త ఇష్టాంశమునకు ఒక పేరును ప్రవేశపెట్టండి:"
 
-#: ../src/main-win.c:1205
+#: ../src/main-win.c:970
 msgid "Add to Bookmarks"
 msgstr "ఇష్టాంశములకు జతచేయి"
 
@@ -607,9 +609,7 @@ msgstr "<బొమ్మ ఫైలు>"
 
 #: ../src/pcmanfm.c:81
 msgid "Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"
-msgstr ""
-"డెస్క్‍టాప్ నేపథ్యచిత్ర విధమును అమర్చు. "
-"<విధము>=(రంగు|సాగదీయి|సరిగ్గాఅమర్చు|మధ్యస్థం|పలక)"
+msgstr "డెస్క్‍టాప్ నేపథ్యచిత్ర విధమును అమర్చు. <విధము>=(రంగు|సాగదీయి|సరిగ్గాఅమర్చు|మధ్యస్థం|పలక)"
 
 #: ../src/pcmanfm.c:81
 msgid "<mode>"
@@ -619,9 +619,7 @@ msgstr "<విధము>"
 msgid ""
 "Open preference dialog. 'n' is number of the page you want to show (1, 2, "
 "3...)."
-msgstr ""
-"ప్రాధాన్య డైలాగును తెరువు. 'n' అనేది మీరు చూడాలనుకుంటున్న పేజీ సంఖ్య (1, 2, "
-"3...)."
+msgstr "ప్రాధాన్య డైలాగును తెరువు. 'n' అనేది మీరు చూడాలనుకుంటున్న పేజీ సంఖ్య (1, 2, 3...)."
 
 #. { "new-win", '\0', 'n', G_OPTION_ARG_NONE, &new_win, N_("Open new window"), NULL },
 #. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
@@ -633,21 +631,40 @@ msgstr "[FILE1, FILE2,...]"
 msgid "Terminal emulator is not set."
 msgstr "టెర్మినల్ ఎమ్యులేటర్ అమర్చబడలేదు."
 
-#: ../src/pcmanfm.c:500
+#: ../src/pcmanfm.c:507
 msgid "Enter a name for the newly created folder:"
 msgstr "కొత్తగా సృష్టించబడిన సంచయమునకు ఒక పేరును ప్రవేశపెట్టండి:"
 
-#: ../src/pcmanfm.c:502
+#: ../src/pcmanfm.c:509
 msgid "Enter a name for the newly created file:"
 msgstr "కొత్తగా సృష్టించబడిన ఫైలుకు ఒక పేరును ప్రవేశపెట్టండి:"
 
-#: ../src/pcmanfm.c:503
+#: ../src/pcmanfm.c:510
 msgid "Create New..."
 msgstr "కొత్తది సృష్టించు..."
 
-#: ../src/pcmanfm.c:503
+#: ../src/pcmanfm.c:510
 msgid "New"
 msgstr "కొత్త"
+
+#: ../src/tab-page.c:188
+#, c-format
+msgid "Free space: %s (Total: %s)"
+msgstr "ఖాళీ స్థలము: %s (మొత్తం: %s)"
+
+#: ../src/tab-page.c:207
+#, c-format
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../src/tab-page.c:208
+#, c-format
+msgid " (%d hidden)"
+msgid_plural " (%d hidden)"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../data/pcmanfm.desktop.in.h:1
 msgid "Browse the file system and manage the files"
@@ -656,3 +673,6 @@ msgstr "ఫైల్ వ్యవస్థను అన్వేషించు 
 #: ../data/pcmanfm.desktop.in.h:2
 msgid "File Manager"
 msgstr "ఫైల్ నిర్వాహకం"
+
+#~ msgid "_New"
+#~ msgstr "కొత్త (_N)"

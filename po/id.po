@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-02-15 09:19+0100\n"
+"POT-Creation-Date: 2011-06-11 21:25+0800\n"
 "PO-Revision-Date: 2011-03-11 12:56+0200\n"
 "Last-Translator: Rahman Yusri Aftian <aftian@yahoo.com>\n"
 "Language-Team: Indonesian Translation Team <id@li.org>\n"
@@ -345,47 +345,49 @@ msgstr "Buka di Pengelola Berkas"
 msgid "_Invert Selection"
 msgstr "Balik P_ilihan"
 
-#: ../src/desktop-ui.c:54 ../src/main-win-ui.c:151
+#: ../src/desktop-ui.c:54 ../src/main-win-ui.c:157
 msgid "_Sort Files"
 msgstr "Urutkan Berka_s"
 
-#: ../src/desktop-ui.c:55
-msgid "_New"
-msgstr "_Baru"
+#. for popup menu
+#: ../src/desktop-ui.c:55 ../src/main-win-ui.c:182
+#, fuzzy
+msgid "Create _New..."
+msgstr "Buat Baru..."
 
-#: ../src/desktop-ui.c:56 ../src/main-win-ui.c:177
+#: ../src/desktop-ui.c:56 ../src/main-win-ui.c:183
 msgid "Folder"
 msgstr "Folder"
 
-#: ../src/desktop-ui.c:57 ../src/main-win-ui.c:178
+#: ../src/desktop-ui.c:57 ../src/main-win-ui.c:184
 msgid "Blank File"
 msgstr "Berkas Kosong"
 
-#: ../src/desktop-ui.c:69 ../src/main-win-ui.c:203
+#: ../src/desktop-ui.c:69 ../src/main-win-ui.c:209
 msgid "By _Name"
 msgstr "Berdasarkan _Nama"
 
-#: ../src/desktop-ui.c:70 ../src/main-win-ui.c:204
+#: ../src/desktop-ui.c:70 ../src/main-win-ui.c:210
 msgid "By _Modification Time"
 msgstr "Berdasar _Waktu Perubahan"
 
-#: ../src/desktop-ui.c:71 ../src/main-win-ui.c:205
+#: ../src/desktop-ui.c:71 ../src/main-win-ui.c:211
 msgid "By _Size"
 msgstr "Berdasar _Ukuran"
 
-#: ../src/desktop-ui.c:72 ../src/main-win-ui.c:206
+#: ../src/desktop-ui.c:72 ../src/main-win-ui.c:212
 msgid "By File _Type"
 msgstr "Berdasar _Jenis Berkas"
 
-#: ../src/desktop-ui.c:88 ../src/main-win-ui.c:223
+#: ../src/desktop-ui.c:88 ../src/main-win-ui.c:235
 msgid "Open in New Tab"
 msgstr "Buka di Tab baru"
 
-#: ../src/desktop-ui.c:89 ../src/main-win-ui.c:224
+#: ../src/desktop-ui.c:89 ../src/main-win-ui.c:236
 msgid "Open in New Window"
 msgstr "Buka di Jendela Baru"
 
-#: ../src/desktop-ui.c:91 ../src/main-win-ui.c:226
+#: ../src/desktop-ui.c:91 ../src/main-win-ui.c:238
 msgid "Open in _Terminal"
 msgstr "Buka di _Terminal"
 
@@ -397,170 +399,175 @@ msgstr ""
 msgid "Snap to Grid"
 msgstr ""
 
-#: ../src/main-win-ui.c:133
+#: ../src/main-win-ui.c:138
 msgid "_File"
 msgstr "_Berkas"
 
-#: ../src/main-win-ui.c:134
+#: ../src/main-win-ui.c:139
 msgid "_New Window"
 msgstr "_Jendela Baru"
 
-#: ../src/main-win-ui.c:135
+#: ../src/main-win-ui.c:140
 msgid "New _Tab"
 msgstr "_Tab Baru"
 
-#: ../src/main-win-ui.c:136
+#: ../src/main-win-ui.c:141
 msgid "_Close Tab"
 msgstr "T_utup Tab"
 
-#: ../src/main-win-ui.c:137
+#: ../src/main-win-ui.c:142
 msgid "Close Window"
 msgstr "Tutup Jendela"
 
-#: ../src/main-win-ui.c:138
+#: ../src/main-win-ui.c:143
 msgid "_Edit"
 msgstr "_Sunting"
 
-#: ../src/main-win-ui.c:143
+#: ../src/main-win-ui.c:148
 msgid "Rename"
 msgstr "Ganti Nama"
 
-#: ../src/main-win-ui.c:144
+#: ../src/main-win-ui.c:149
 msgid "Create Symlink"
 msgstr "Buat Symlink"
 
-#: ../src/main-win-ui.c:145
+#: ../src/main-win-ui.c:150
 msgid "Move To..."
 msgstr "Pindah Ke..."
 
-#: ../src/main-win-ui.c:146
+#: ../src/main-win-ui.c:151
 msgid "Copy To..."
 msgstr "Salin ke..."
 
-#: ../src/main-win-ui.c:148
+#: ../src/main-win-ui.c:153
 msgid "Invert Selection"
 msgstr "Balik Pilihan"
 
-#: ../src/main-win-ui.c:150
+#: ../src/main-win-ui.c:155
 msgid "_View"
 msgstr "_Tilik"
 
-#: ../src/main-win-ui.c:152
+#: ../src/main-win-ui.c:156
+msgid "Side Pane"
+msgstr ""
+
+#: ../src/main-win-ui.c:158
 msgid "_Help"
 msgstr "Ba_ntuan"
 
-#: ../src/main-win-ui.c:154
+#: ../src/main-win-ui.c:160
 msgid "_Go"
 msgstr "_Lompat"
 
-#: ../src/main-win-ui.c:155
+#: ../src/main-win-ui.c:161
 msgid "Previous Folder"
 msgstr "Folder Sebelumnya"
 
-#: ../src/main-win-ui.c:156
+#: ../src/main-win-ui.c:162
 msgid "Next Folder"
 msgstr "Folder Selanjutnya"
 
-#: ../src/main-win-ui.c:157
+#: ../src/main-win-ui.c:163
 msgid "Parent Folder"
 msgstr "Folder Induk"
 
-#: ../src/main-win-ui.c:157
+#: ../src/main-win-ui.c:163
 msgid "Go to parent Folder"
 msgstr "Pergi ke Folder induk"
 
-#: ../src/main-win-ui.c:158
+#: ../src/main-win-ui.c:164
 msgid "Home Folder"
 msgstr "Folder Rumah"
 
-#: ../src/main-win-ui.c:159
+#: ../src/main-win-ui.c:165
 msgid "Desktop"
 msgstr "Desktop"
 
-#: ../src/main-win-ui.c:159
+#: ../src/main-win-ui.c:165
 msgid "Desktop Folder"
 msgstr "Folder Desktop"
 
-#: ../src/main-win-ui.c:160
+#: ../src/main-win-ui.c:166
 msgid "My Computer"
 msgstr "Komputerku"
 
-#: ../src/main-win-ui.c:161
+#: ../src/main-win-ui.c:167
 msgid "Trash Can"
 msgstr "Tong Sampah"
 
-#: ../src/main-win-ui.c:162
+#: ../src/main-win-ui.c:168
 msgid "Network Drives"
 msgstr "Disk Jaringan"
 
-#: ../src/main-win-ui.c:163
+#: ../src/main-win-ui.c:169
 msgid "Applications"
 msgstr "Aplikasi"
 
-#: ../src/main-win-ui.c:163
+#: ../src/main-win-ui.c:169
 msgid "Installed Applications"
 msgstr "Aplikasi Terpasang"
 
-#: ../src/main-win-ui.c:165
+#: ../src/main-win-ui.c:171
 msgid "_Bookmarks"
 msgstr "_Penanda Tautan"
 
-#: ../src/main-win-ui.c:166
+#: ../src/main-win-ui.c:172
 msgid "Add To Bookmarks"
 msgstr "T_ambah Ke Penanda Tautan"
 
-#: ../src/main-win-ui.c:167
+#: ../src/main-win-ui.c:173
 msgid "_Tools"
 msgstr "Ala_t"
 
-#: ../src/main-win-ui.c:168
+#: ../src/main-win-ui.c:174
 msgid "Open Current Folder in _Terminal"
 msgstr "Buka Folder Kini di _Terminal"
 
-#: ../src/main-win-ui.c:169
+#: ../src/main-win-ui.c:175
 msgid "Open Current Folder as _Root"
 msgstr "Buka Folder Kini sebagai _Root"
 
-#. for popup menu
-#: ../src/main-win-ui.c:176
-#, fuzzy
-msgid "Create _New..."
-msgstr "Buat Baru..."
-
-#: ../src/main-win-ui.c:184
+#: ../src/main-win-ui.c:190
 msgid "Show _Hidden"
 msgstr "Tampilkan Yang _Tersembunyi"
 
-#: ../src/main-win-ui.c:189
+#: ../src/main-win-ui.c:195
 msgid "_Icon View"
 msgstr "Tampilan _Ikon"
 
-#: ../src/main-win-ui.c:190
+#: ../src/main-win-ui.c:196
 msgid "_Compact View"
 msgstr "Tampilan _Rapat"
 
-#: ../src/main-win-ui.c:191
+#: ../src/main-win-ui.c:197
 msgid "_Thumbnail View"
 msgstr "_Tilikan Gambar Kecil"
 
-#: ../src/main-win-ui.c:192
+#: ../src/main-win-ui.c:198
 msgid "Detailed _List View"
 msgstr "Ti_likan Daftar Terrinci"
 
-#: ../src/main-win.c:565
+#: ../src/main-win-ui.c:217
+msgid "Places"
+msgstr ""
+
+#: ../src/main-win-ui.c:218
+msgid "Directory Tree"
+msgstr ""
+
+#: ../src/main-win-ui.c:219
+msgid "Remote"
+msgstr ""
+
+#: ../src/main-win.c:440
 msgid "You are in super user mode"
 msgstr "Anda sedang berada pada mode pengguna super"
 
-#: ../src/main-win.c:664
+#: ../src/main-win.c:550
 msgid "Switch user command is not set."
 msgstr "Perintah tukar pengguna tak ditata."
 
-#: ../src/main-win.c:984
-#, c-format
-msgid "Free space: %s (Total: %s)"
-msgstr "Ruang bebas: %s (Total: %s)"
-
-#: ../src/main-win.c:1201
+#: ../src/main-win.c:966
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -571,7 +578,7 @@ msgstr ""
 "'%s'\n"
 "Masukkan nama bagi butir penanda tautan baru:"
 
-#: ../src/main-win.c:1205
+#: ../src/main-win.c:970
 msgid "Add to Bookmarks"
 msgstr "Tambahkan ke Penanda Tautan"
 
@@ -635,22 +642,39 @@ msgstr "[BERKAS1, BERKAS2,...]"
 msgid "Terminal emulator is not set."
 msgstr "Emulator terminal tak ditata."
 
-#: ../src/pcmanfm.c:500
+#: ../src/pcmanfm.c:507
 #, fuzzy
 msgid "Enter a name for the newly created folder:"
 msgstr "Masukkan nama bagi berkas yang baru dibuat:"
 
-#: ../src/pcmanfm.c:502
+#: ../src/pcmanfm.c:509
 msgid "Enter a name for the newly created file:"
 msgstr "Masukkan nama bagi berkas yang baru dibuat:"
 
-#: ../src/pcmanfm.c:503
+#: ../src/pcmanfm.c:510
 msgid "Create New..."
 msgstr "Buat Baru..."
 
-#: ../src/pcmanfm.c:503
+#: ../src/pcmanfm.c:510
 msgid "New"
 msgstr "Baru"
+
+#: ../src/tab-page.c:188
+#, c-format
+msgid "Free space: %s (Total: %s)"
+msgstr "Ruang bebas: %s (Total: %s)"
+
+#: ../src/tab-page.c:207
+#, c-format
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] ""
+
+#: ../src/tab-page.c:208
+#, c-format
+msgid " (%d hidden)"
+msgid_plural " (%d hidden)"
+msgstr[0] ""
 
 #: ../data/pcmanfm.desktop.in.h:1
 msgid "Browse the file system and manage the files"
@@ -660,3 +684,6 @@ msgstr ""
 #, fuzzy
 msgid "File Manager"
 msgstr "Buka di Pengelola Berkas"
+
+#~ msgid "_New"
+#~ msgstr "_Baru"

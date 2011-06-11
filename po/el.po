@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-02-15 09:19+0100\n"
+"POT-Creation-Date: 2011-06-11 21:25+0800\n"
 "PO-Revision-Date: 2011-06-08 13:20+0200\n"
 "Last-Translator: George <forfolias@gmail.com>\n"
 "Language-Team: Greek\n"
@@ -340,47 +340,48 @@ msgstr "Άνοιγμα στο διαχειριστή αρχείων"
 msgid "_Invert Selection"
 msgstr "_Αντιστροφή επιλογής"
 
-#: ../src/desktop-ui.c:54 ../src/main-win-ui.c:151
+#: ../src/desktop-ui.c:54 ../src/main-win-ui.c:157
 msgid "_Sort Files"
 msgstr "_Ταξινόμηση αρχείων κατά"
 
-#: ../src/desktop-ui.c:55
-msgid "_New"
-msgstr "_Δημιουργία νέου"
+#. for popup menu
+#: ../src/desktop-ui.c:55 ../src/main-win-ui.c:182
+msgid "Create _New..."
+msgstr "Δημιουργία _νέου..."
 
-#: ../src/desktop-ui.c:56 ../src/main-win-ui.c:177
+#: ../src/desktop-ui.c:56 ../src/main-win-ui.c:183
 msgid "Folder"
 msgstr "Φακέλου"
 
-#: ../src/desktop-ui.c:57 ../src/main-win-ui.c:178
+#: ../src/desktop-ui.c:57 ../src/main-win-ui.c:184
 msgid "Blank File"
 msgstr "Κενού αρχείου"
 
-#: ../src/desktop-ui.c:69 ../src/main-win-ui.c:203
+#: ../src/desktop-ui.c:69 ../src/main-win-ui.c:209
 msgid "By _Name"
 msgstr "_Όνομα"
 
-#: ../src/desktop-ui.c:70 ../src/main-win-ui.c:204
+#: ../src/desktop-ui.c:70 ../src/main-win-ui.c:210
 msgid "By _Modification Time"
 msgstr "_Ημερομηνία τροποποίησης"
 
-#: ../src/desktop-ui.c:71 ../src/main-win-ui.c:205
+#: ../src/desktop-ui.c:71 ../src/main-win-ui.c:211
 msgid "By _Size"
 msgstr "_Μέγεθος"
 
-#: ../src/desktop-ui.c:72 ../src/main-win-ui.c:206
+#: ../src/desktop-ui.c:72 ../src/main-win-ui.c:212
 msgid "By File _Type"
 msgstr "_Τύπο"
 
-#: ../src/desktop-ui.c:88 ../src/main-win-ui.c:223
+#: ../src/desktop-ui.c:88 ../src/main-win-ui.c:235
 msgid "Open in New Tab"
 msgstr "Άνοιγμα σε νέα καρτέλα"
 
-#: ../src/desktop-ui.c:89 ../src/main-win-ui.c:224
+#: ../src/desktop-ui.c:89 ../src/main-win-ui.c:236
 msgid "Open in New Window"
 msgstr "Άνοιγμα σε νέο παράθυρο"
 
-#: ../src/desktop-ui.c:91 ../src/main-win-ui.c:226
+#: ../src/desktop-ui.c:91 ../src/main-win-ui.c:238
 msgid "Open in _Terminal"
 msgstr "Άνοιγμα στο τερματικό"
 
@@ -392,169 +393,175 @@ msgstr "Κόλλημα στην τρέχουσα θέση"
 msgid "Snap to Grid"
 msgstr "Στοίχιση στο πλέγμα"
 
-#: ../src/main-win-ui.c:133
+#: ../src/main-win-ui.c:138
 msgid "_File"
 msgstr "_Αρχείο"
 
-#: ../src/main-win-ui.c:134
+#: ../src/main-win-ui.c:139
 msgid "_New Window"
 msgstr "_Νέο παράθυρο"
 
-#: ../src/main-win-ui.c:135
+#: ../src/main-win-ui.c:140
 msgid "New _Tab"
 msgstr "Νέα _Καρτέλα"
 
-#: ../src/main-win-ui.c:136
+#: ../src/main-win-ui.c:141
 msgid "_Close Tab"
 msgstr "_Κλείσιμο καρτέλας"
 
-#: ../src/main-win-ui.c:137
+#: ../src/main-win-ui.c:142
 msgid "Close Window"
 msgstr "Κλείσιμο παραθύρου"
 
-#: ../src/main-win-ui.c:138
+#: ../src/main-win-ui.c:143
 msgid "_Edit"
 msgstr "_Επεξεργασία"
 
-#: ../src/main-win-ui.c:143
+#: ../src/main-win-ui.c:148
 msgid "Rename"
 msgstr "Μετονομασία"
 
-#: ../src/main-win-ui.c:144
+#: ../src/main-win-ui.c:149
 msgid "Create Symlink"
 msgstr "Δημιουργία συμβολικού συνδέσμου"
 
-#: ../src/main-win-ui.c:145
+#: ../src/main-win-ui.c:150
 msgid "Move To..."
 msgstr "Μετακίνηση στο..."
 
-#: ../src/main-win-ui.c:146
+#: ../src/main-win-ui.c:151
 msgid "Copy To..."
 msgstr "Αντιγραφή στο..."
 
-#: ../src/main-win-ui.c:148
+#: ../src/main-win-ui.c:153
 msgid "Invert Selection"
 msgstr "Αντιστροφή επιλογής"
 
-#: ../src/main-win-ui.c:150
+#: ../src/main-win-ui.c:155
 msgid "_View"
 msgstr "_Προβολή"
 
-#: ../src/main-win-ui.c:152
+#: ../src/main-win-ui.c:156
+msgid "Side Pane"
+msgstr ""
+
+#: ../src/main-win-ui.c:158
 msgid "_Help"
 msgstr "_Βοήθεια"
 
-#: ../src/main-win-ui.c:154
+#: ../src/main-win-ui.c:160
 msgid "_Go"
 msgstr "_Μετάβαση"
 
-#: ../src/main-win-ui.c:155
+#: ../src/main-win-ui.c:161
 msgid "Previous Folder"
 msgstr "Προηγούμενος φάκελος"
 
-#: ../src/main-win-ui.c:156
+#: ../src/main-win-ui.c:162
 msgid "Next Folder"
 msgstr "Επόμενος φάκελος"
 
-#: ../src/main-win-ui.c:157
+#: ../src/main-win-ui.c:163
 msgid "Parent Folder"
 msgstr "Γονικός φάκελος"
 
-#: ../src/main-win-ui.c:157
+#: ../src/main-win-ui.c:163
 msgid "Go to parent Folder"
 msgstr "Μετάβαση στο γονικό φάκελο"
 
-#: ../src/main-win-ui.c:158
+#: ../src/main-win-ui.c:164
 msgid "Home Folder"
 msgstr "Προσωπικός φάκελος"
 
-#: ../src/main-win-ui.c:159
+#: ../src/main-win-ui.c:165
 msgid "Desktop"
 msgstr "Επιφάνεια εργασίας"
 
-#: ../src/main-win-ui.c:159
+#: ../src/main-win-ui.c:165
 msgid "Desktop Folder"
 msgstr "Φάκελος επιφάνειας εργασίας"
 
-#: ../src/main-win-ui.c:160
+#: ../src/main-win-ui.c:166
 msgid "My Computer"
 msgstr "Ο υπολογιστής μου"
 
-#: ../src/main-win-ui.c:161
+#: ../src/main-win-ui.c:167
 msgid "Trash Can"
 msgstr "Απορρίμματα"
 
-#: ../src/main-win-ui.c:162
+#: ../src/main-win-ui.c:168
 msgid "Network Drives"
 msgstr "Δίκτυο"
 
-#: ../src/main-win-ui.c:163
+#: ../src/main-win-ui.c:169
 msgid "Applications"
 msgstr "Εφαρμογές"
 
-#: ../src/main-win-ui.c:163
+#: ../src/main-win-ui.c:169
 msgid "Installed Applications"
 msgstr "Εγκατεστημένες εφαρμογές"
 
-#: ../src/main-win-ui.c:165
+#: ../src/main-win-ui.c:171
 msgid "_Bookmarks"
 msgstr "_Σελιδοδείκτες"
 
-#: ../src/main-win-ui.c:166
+#: ../src/main-win-ui.c:172
 msgid "Add To Bookmarks"
 msgstr "Προσθήκη στους σελιδοδείκτες"
 
-#: ../src/main-win-ui.c:167
+#: ../src/main-win-ui.c:173
 msgid "_Tools"
 msgstr "_Εργαλεία"
 
-#: ../src/main-win-ui.c:168
+#: ../src/main-win-ui.c:174
 msgid "Open Current Folder in _Terminal"
 msgstr "Άνοιγμα του τρέχοντος φακέλου στο _τερματικό"
 
-#: ../src/main-win-ui.c:169
+#: ../src/main-win-ui.c:175
 msgid "Open Current Folder as _Root"
 msgstr "Άνοιγμα του τρέχοντος φακέλου ως _διαχειριστής"
 
-#. for popup menu
-#: ../src/main-win-ui.c:176
-msgid "Create _New..."
-msgstr "Δημιουργία _νέου..."
-
-#: ../src/main-win-ui.c:184
+#: ../src/main-win-ui.c:190
 msgid "Show _Hidden"
 msgstr "Εμφάνιση κρυφών αρχείων"
 
-#: ../src/main-win-ui.c:189
+#: ../src/main-win-ui.c:195
 msgid "_Icon View"
 msgstr "_Εικονίδια"
 
-#: ../src/main-win-ui.c:190
+#: ../src/main-win-ui.c:196
 msgid "_Compact View"
 msgstr "_Λίστα"
 
-#: ../src/main-win-ui.c:191
+#: ../src/main-win-ui.c:197
 msgid "_Thumbnail View"
 msgstr "_Μικρογραφίες"
 
-#: ../src/main-win-ui.c:192
+#: ../src/main-win-ui.c:198
 msgid "Detailed _List View"
 msgstr "_Λεπτομέρειες"
 
-#: ../src/main-win.c:565
+#: ../src/main-win-ui.c:217
+msgid "Places"
+msgstr ""
+
+#: ../src/main-win-ui.c:218
+msgid "Directory Tree"
+msgstr ""
+
+#: ../src/main-win-ui.c:219
+msgid "Remote"
+msgstr ""
+
+#: ../src/main-win.c:440
 msgid "You are in super user mode"
 msgstr "Είστε σε κατάσταση υπερχρήστη"
 
-#: ../src/main-win.c:664
+#: ../src/main-win.c:550
 msgid "Switch user command is not set."
 msgstr "Δεν έχει οριστεί εντολή αλλαγής χρήστη."
 
-#: ../src/main-win.c:984
-#, c-format
-msgid "Free space: %s (Total: %s)"
-msgstr "Ελεύθερος χώρος: %s (Σύνολο: %s)"
-
-#: ../src/main-win.c:1201
+#: ../src/main-win.c:966
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -565,7 +572,7 @@ msgstr ""
 "'%s'\n"
 "Εισάγετε ένα όνομα για το νέο σελιδοδείκτη:"
 
-#: ../src/main-win.c:1205
+#: ../src/main-win.c:970
 msgid "Add to Bookmarks"
 msgstr "Προσθήκη στους σελιδοδείκτες"
 
@@ -631,21 +638,40 @@ msgstr "[ΑΡΧΕΙΟ1, ΑΡΧΕΙΟ2,...]"
 msgid "Terminal emulator is not set."
 msgstr "Δεν έχει οριστεί κάποιο τερματικό."
 
-#: ../src/pcmanfm.c:500
+#: ../src/pcmanfm.c:507
 msgid "Enter a name for the newly created folder:"
 msgstr "Εισάγετε ένα όνομα για το νέο φάκελο:"
 
-#: ../src/pcmanfm.c:502
+#: ../src/pcmanfm.c:509
 msgid "Enter a name for the newly created file:"
 msgstr "Εισάγετε ένα όνομα για το νέο αρχείο:"
 
-#: ../src/pcmanfm.c:503
+#: ../src/pcmanfm.c:510
 msgid "Create New..."
 msgstr "Δημιουργία νέου..."
 
-#: ../src/pcmanfm.c:503
+#: ../src/pcmanfm.c:510
 msgid "New"
 msgstr "Νέο αρχείο"
+
+#: ../src/tab-page.c:188
+#, c-format
+msgid "Free space: %s (Total: %s)"
+msgstr "Ελεύθερος χώρος: %s (Σύνολο: %s)"
+
+#: ../src/tab-page.c:207
+#, c-format
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../src/tab-page.c:208
+#, c-format
+msgid " (%d hidden)"
+msgid_plural " (%d hidden)"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../data/pcmanfm.desktop.in.h:1
 msgid "Browse the file system and manage the files"
@@ -654,6 +680,9 @@ msgstr "Περιήγηση στο σύστημα αρχείων και διαχ�
 #: ../data/pcmanfm.desktop.in.h:2
 msgid "File Manager"
 msgstr "Διαχειριστής αρχείων"
+
+#~ msgid "_New"
+#~ msgstr "_Δημιουργία νέου"
 
 #~ msgid "Open Find Files utility"
 #~ msgstr "Άνοιγμα εργαλείου εύρεσης αρχείων"

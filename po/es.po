@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm 0.9.9\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-02-15 09:19+0100\n"
+"POT-Creation-Date: 2011-06-11 21:25+0800\n"
 "PO-Revision-Date: 2011-02-15 12:30+0200\n"
 "Last-Translator: Hugo <sysadmin@cips.cu>\n"
 "Language-Team: Spanish (Castilian) <translation@mailinglist.lxde.org>\n"
@@ -345,47 +345,48 @@ msgstr "Abrir en el gestor de archivos"
 msgid "_Invert Selection"
 msgstr "_Invertir selección"
 
-#: ../src/desktop-ui.c:54 ../src/main-win-ui.c:151
+#: ../src/desktop-ui.c:54 ../src/main-win-ui.c:157
 msgid "_Sort Files"
 msgstr "_Ordenar archivos"
 
-#: ../src/desktop-ui.c:55
-msgid "_New"
-msgstr "_Nuevo"
+#. for popup menu
+#: ../src/desktop-ui.c:55 ../src/main-win-ui.c:182
+msgid "Create _New..."
+msgstr "Crear _nuevo..."
 
-#: ../src/desktop-ui.c:56 ../src/main-win-ui.c:177
+#: ../src/desktop-ui.c:56 ../src/main-win-ui.c:183
 msgid "Folder"
 msgstr "Carpeta"
 
-#: ../src/desktop-ui.c:57 ../src/main-win-ui.c:178
+#: ../src/desktop-ui.c:57 ../src/main-win-ui.c:184
 msgid "Blank File"
 msgstr "Archivo en blanco"
 
-#: ../src/desktop-ui.c:69 ../src/main-win-ui.c:203
+#: ../src/desktop-ui.c:69 ../src/main-win-ui.c:209
 msgid "By _Name"
 msgstr "Por _nombre"
 
-#: ../src/desktop-ui.c:70 ../src/main-win-ui.c:204
+#: ../src/desktop-ui.c:70 ../src/main-win-ui.c:210
 msgid "By _Modification Time"
 msgstr "Por fecha de _modificación"
 
-#: ../src/desktop-ui.c:71 ../src/main-win-ui.c:205
+#: ../src/desktop-ui.c:71 ../src/main-win-ui.c:211
 msgid "By _Size"
 msgstr "Por _tamaño"
 
-#: ../src/desktop-ui.c:72 ../src/main-win-ui.c:206
+#: ../src/desktop-ui.c:72 ../src/main-win-ui.c:212
 msgid "By File _Type"
 msgstr "Por tipo de a_rchivo"
 
-#: ../src/desktop-ui.c:88 ../src/main-win-ui.c:223
+#: ../src/desktop-ui.c:88 ../src/main-win-ui.c:235
 msgid "Open in New Tab"
 msgstr "Abrir en una nueva pestaña"
 
-#: ../src/desktop-ui.c:89 ../src/main-win-ui.c:224
+#: ../src/desktop-ui.c:89 ../src/main-win-ui.c:236
 msgid "Open in New Window"
 msgstr "Abrir en una nueva ventana"
 
-#: ../src/desktop-ui.c:91 ../src/main-win-ui.c:226
+#: ../src/desktop-ui.c:91 ../src/main-win-ui.c:238
 msgid "Open in _Terminal"
 msgstr "Abrir en la _terminal"
 
@@ -397,169 +398,175 @@ msgstr "Adherirse a la posición actual"
 msgid "Snap to Grid"
 msgstr "Ajustar a la cuadrícula"
 
-#: ../src/main-win-ui.c:133
+#: ../src/main-win-ui.c:138
 msgid "_File"
 msgstr "_Archivo"
 
-#: ../src/main-win-ui.c:134
+#: ../src/main-win-ui.c:139
 msgid "_New Window"
 msgstr "_Nueva ventana"
 
-#: ../src/main-win-ui.c:135
+#: ../src/main-win-ui.c:140
 msgid "New _Tab"
 msgstr "Nueva _pestaña"
 
-#: ../src/main-win-ui.c:136
+#: ../src/main-win-ui.c:141
 msgid "_Close Tab"
 msgstr "_Cerrar pestaña"
 
-#: ../src/main-win-ui.c:137
+#: ../src/main-win-ui.c:142
 msgid "Close Window"
 msgstr "Cerrar ventana"
 
-#: ../src/main-win-ui.c:138
+#: ../src/main-win-ui.c:143
 msgid "_Edit"
 msgstr "_Edición"
 
-#: ../src/main-win-ui.c:143
+#: ../src/main-win-ui.c:148
 msgid "Rename"
 msgstr "Renombrar"
 
-#: ../src/main-win-ui.c:144
+#: ../src/main-win-ui.c:149
 msgid "Create Symlink"
 msgstr "Crear enlace simbólico"
 
-#: ../src/main-win-ui.c:145
+#: ../src/main-win-ui.c:150
 msgid "Move To..."
 msgstr "Mover a..."
 
-#: ../src/main-win-ui.c:146
+#: ../src/main-win-ui.c:151
 msgid "Copy To..."
 msgstr "Copiar a..."
 
-#: ../src/main-win-ui.c:148
+#: ../src/main-win-ui.c:153
 msgid "Invert Selection"
 msgstr "Invertir selección"
 
-#: ../src/main-win-ui.c:150
+#: ../src/main-win-ui.c:155
 msgid "_View"
 msgstr "_Ver"
 
-#: ../src/main-win-ui.c:152
+#: ../src/main-win-ui.c:156
+msgid "Side Pane"
+msgstr ""
+
+#: ../src/main-win-ui.c:158
 msgid "_Help"
 msgstr "_Ayuda"
 
-#: ../src/main-win-ui.c:154
+#: ../src/main-win-ui.c:160
 msgid "_Go"
 msgstr "_Ir"
 
-#: ../src/main-win-ui.c:155
+#: ../src/main-win-ui.c:161
 msgid "Previous Folder"
 msgstr "Carpeta anterior"
 
-#: ../src/main-win-ui.c:156
+#: ../src/main-win-ui.c:162
 msgid "Next Folder"
 msgstr "Carpeta siguiente"
 
-#: ../src/main-win-ui.c:157
+#: ../src/main-win-ui.c:163
 msgid "Parent Folder"
 msgstr "Carpeta superior"
 
-#: ../src/main-win-ui.c:157
+#: ../src/main-win-ui.c:163
 msgid "Go to parent Folder"
 msgstr "Ir a la carpeta superior"
 
-#: ../src/main-win-ui.c:158
+#: ../src/main-win-ui.c:164
 msgid "Home Folder"
 msgstr "Carpeta de inicio"
 
-#: ../src/main-win-ui.c:159
+#: ../src/main-win-ui.c:165
 msgid "Desktop"
 msgstr "Escritorio"
 
-#: ../src/main-win-ui.c:159
+#: ../src/main-win-ui.c:165
 msgid "Desktop Folder"
 msgstr "Carpeta del escritorio"
 
-#: ../src/main-win-ui.c:160
+#: ../src/main-win-ui.c:166
 msgid "My Computer"
 msgstr "Mi PC"
 
-#: ../src/main-win-ui.c:161
+#: ../src/main-win-ui.c:167
 msgid "Trash Can"
 msgstr "Papelera"
 
-#: ../src/main-win-ui.c:162
+#: ../src/main-win-ui.c:168
 msgid "Network Drives"
 msgstr "Unidades de red"
 
-#: ../src/main-win-ui.c:163
+#: ../src/main-win-ui.c:169
 msgid "Applications"
 msgstr "Aplicaciones"
 
-#: ../src/main-win-ui.c:163
+#: ../src/main-win-ui.c:169
 msgid "Installed Applications"
 msgstr "Aplicaciones instaladas"
 
-#: ../src/main-win-ui.c:165
+#: ../src/main-win-ui.c:171
 msgid "_Bookmarks"
 msgstr "_Marcadores"
 
-#: ../src/main-win-ui.c:166
+#: ../src/main-win-ui.c:172
 msgid "Add To Bookmarks"
 msgstr "Añadir a marcadores"
 
-#: ../src/main-win-ui.c:167
+#: ../src/main-win-ui.c:173
 msgid "_Tools"
 msgstr "_Herramientas"
 
-#: ../src/main-win-ui.c:168
+#: ../src/main-win-ui.c:174
 msgid "Open Current Folder in _Terminal"
 msgstr "Abrir la carpeta actual en la _terminal"
 
-#: ../src/main-win-ui.c:169
+#: ../src/main-win-ui.c:175
 msgid "Open Current Folder as _Root"
 msgstr "Abrir la carpeta actual como _root"
 
-#. for popup menu
-#: ../src/main-win-ui.c:176
-msgid "Create _New..."
-msgstr "Crear _nuevo..."
-
-#: ../src/main-win-ui.c:184
+#: ../src/main-win-ui.c:190
 msgid "Show _Hidden"
 msgstr "Mostrar _ocultos"
 
-#: ../src/main-win-ui.c:189
+#: ../src/main-win-ui.c:195
 msgid "_Icon View"
 msgstr "Vista de _iconos"
 
-#: ../src/main-win-ui.c:190
+#: ../src/main-win-ui.c:196
 msgid "_Compact View"
 msgstr "Vista _compacta"
 
-#: ../src/main-win-ui.c:191
+#: ../src/main-win-ui.c:197
 msgid "_Thumbnail View"
 msgstr "Vista de _miniaturas"
 
-#: ../src/main-win-ui.c:192
+#: ../src/main-win-ui.c:198
 msgid "Detailed _List View"
 msgstr "Vista _detallada"
 
-#: ../src/main-win.c:565
+#: ../src/main-win-ui.c:217
+msgid "Places"
+msgstr ""
+
+#: ../src/main-win-ui.c:218
+msgid "Directory Tree"
+msgstr ""
+
+#: ../src/main-win-ui.c:219
+msgid "Remote"
+msgstr ""
+
+#: ../src/main-win.c:440
 msgid "You are in super user mode"
 msgstr "Está en modo de super usuario"
 
-#: ../src/main-win.c:664
+#: ../src/main-win.c:550
 msgid "Switch user command is not set."
 msgstr "No se ha establecido el comando para cambiar de usuario."
 
-#: ../src/main-win.c:984
-#, c-format
-msgid "Free space: %s (Total: %s)"
-msgstr "Espacio libre: %s (Total: %s)"
-
-#: ../src/main-win.c:1201
+#: ../src/main-win.c:966
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -570,7 +577,7 @@ msgstr ""
 "'%s'\n"
 "Introduzca in nombre para el nuevo marcador:"
 
-#: ../src/main-win.c:1205
+#: ../src/main-win.c:970
 msgid "Add to Bookmarks"
 msgstr "Añadir a los marcadores"
 
@@ -636,21 +643,40 @@ msgstr "[ARCHIVO1, ARCHIVO2, ...]"
 msgid "Terminal emulator is not set."
 msgstr "No se ha establecido el emulador de terminal."
 
-#: ../src/pcmanfm.c:500
+#: ../src/pcmanfm.c:507
 msgid "Enter a name for the newly created folder:"
 msgstr "Introduzca un nombre para la carpeta recién creada:"
 
-#: ../src/pcmanfm.c:502
+#: ../src/pcmanfm.c:509
 msgid "Enter a name for the newly created file:"
 msgstr "Introduzca un nombre para el archivo recién creado:"
 
-#: ../src/pcmanfm.c:503
+#: ../src/pcmanfm.c:510
 msgid "Create New..."
 msgstr "Crear nuevo..."
 
-#: ../src/pcmanfm.c:503
+#: ../src/pcmanfm.c:510
 msgid "New"
 msgstr "Nuevo"
+
+#: ../src/tab-page.c:188
+#, c-format
+msgid "Free space: %s (Total: %s)"
+msgstr "Espacio libre: %s (Total: %s)"
+
+#: ../src/tab-page.c:207
+#, c-format
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../src/tab-page.c:208
+#, c-format
+msgid " (%d hidden)"
+msgid_plural " (%d hidden)"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../data/pcmanfm.desktop.in.h:1
 msgid "Browse the file system and manage the files"
@@ -659,3 +685,6 @@ msgstr "Explorar el sistema de archivos y gestionar los archivos"
 #: ../data/pcmanfm.desktop.in.h:2
 msgid "File Manager"
 msgstr "Gestor de archivos"
+
+#~ msgid "_New"
+#~ msgstr "_Nuevo"
