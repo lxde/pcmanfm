@@ -426,18 +426,16 @@ static void fm_main_win_init(FmMainWin *win)
     /* the location bar */
     win->location = fm_path_entry_new();
     g_signal_connect(win->location, "activate", on_location_activate, win);
-    if(geteuid() == 0) /* if we're using root, give the location entry a different color */
+    if(geteuid() == 0) /* if we're using root, Give the user some warnings */
     {
-        GtkStyle* style = gtk_rc_get_style_by_paths(
-                            gtk_settings_get_for_screen(gtk_widget_get_screen(win->location)),
-                            "gtk-tooltip", NULL, G_TYPE_NONE);
-        if(style)
-        {
-            gtk_widget_modify_base(win->location, GTK_STATE_NORMAL, &style->bg[GTK_STATE_NORMAL]);
-            gtk_widget_modify_fg(win->location, GTK_STATE_NORMAL, &style->fg[GTK_STATE_NORMAL]);
-            gtk_entry_set_icon_from_stock(GTK_ENTRY(win->location), GTK_ENTRY_ICON_PRIMARY, GTK_STOCK_DIALOG_WARNING);
-        }
-        gtk_entry_set_icon_tooltip_text(GTK_ENTRY(win->location), GTK_ENTRY_ICON_PRIMARY, _("You are in super user mode"));
+        GtkWidget* warning = gtk_image_new_from_stock(GTK_STOCK_DIALOG_AUTHENTICATION, GTK_ICON_SIZE_SMALL_TOOLBAR);
+        gtk_widget_set_tooltip_markup(warning, _("You are in super user mode"));
+
+        toolitem = gtk_tool_item_new();
+        gtk_container_add( GTK_CONTAINER(toolitem), warning );
+        gtk_toolbar_insert(GTK_TOOLBAR(win->toolbar), gtk_separator_tool_item_new(), 0);
+
+        gtk_toolbar_insert(GTK_TOOLBAR(win->toolbar), toolitem, 0);
     }
 
     toolitem = gtk_tool_item_new();
