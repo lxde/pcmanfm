@@ -79,7 +79,9 @@ static void on_go_trash(GtkAction* act, FmMainWin* win);
 static void on_go_computer(GtkAction* act, FmMainWin* win);
 static void on_go_network(GtkAction* act, FmMainWin* win);
 static void on_go_apps(GtkAction* act, FmMainWin* win);
+static void on_reload(GtkAction* act, FmMainWin* win);
 static void on_show_hidden(GtkToggleAction* act, FmMainWin* win);
+static void on_show_side_pane(GtkToggleAction* act, FmMainWin* win);
 static void on_change_mode(GtkRadioAction* act, GtkRadioAction *cur, FmMainWin* win);
 static void on_sort_by(GtkRadioAction* act, GtkRadioAction *cur, FmMainWin* win);
 static void on_sort_type(GtkRadioAction* act, GtkRadioAction *cur, FmMainWin* win);
@@ -1298,3 +1300,15 @@ gboolean on_button_press_event(GtkWidget* w, GdkEventButton* evt)
     }
     return TRUE;
 }
+
+static void on_reload(GtkAction* act, FmMainWin* win)
+{
+    FmTabPage* page = FM_TAB_PAGE(win->current_page);
+    fm_tab_page_reload(page);
+}
+
+static void on_show_side_pane(GtkToggleAction* act, FmMainWin* win)
+{
+    /* TODO: hide the side pane if the user wants to. */
+}
+

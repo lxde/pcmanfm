@@ -429,3 +429,10 @@ const char* fm_tab_page_get_status_text(FmTabPage* page, FmStatusTextType type)
 {
     return (type >= 0 && type < FM_STATUS_TEXT_NUM) ? page->status_text[type] : NULL;
 }
+
+void fm_tab_page_reload(FmTabPage* page)
+{
+    FmFolder* folder = fm_folder_view_get_folder(FM_FOLDER_VIEW(page->folder_view));
+    if(folder)
+        fm_folder_reload(folder);
+}

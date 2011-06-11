@@ -86,6 +86,8 @@ FmFolder* fm_tab_page_get_folder(FmTabPage* page);
 
 FmNavHistory* fm_tab_page_get_history(FmTabPage* page);
 
+void fm_tab_page_reload(FmTabPage* page);
+
 /* go back to next folder */
 void fm_tab_page_forward(FmTabPage* page);
 
