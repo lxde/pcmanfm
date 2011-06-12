@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-06-11 19:45+0200\n"
-"PO-Revision-Date: 2011-05-14 02:23+0200\n"
+"PO-Revision-Date: 2011-06-12 17:25+0200\n"
 "Last-Translator: Sérgio <smarquespt@gmail.com>\n"
 "Language-Team: \n"
 "Language: pt\n"
@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2010"
-msgstr "Copyright (C) 2009 - 2010"
+msgstr "Direitos de autor (C) 2009 - 2011"
 
 #: ../data/ui/about.glade.in.h:2
 msgid ""
@@ -445,18 +445,16 @@ msgid "_View"
 msgstr "_Ver"
 
 #: ../src/main-win-ui.c:161
-#, fuzzy
 msgid "Reload Folder"
-msgstr "Pasta seguinte"
+msgstr "Recarregar pasta"
 
 #: ../src/main-win-ui.c:161
-#, fuzzy
 msgid "Reload current folder"
-msgstr "Pasta superior"
+msgstr "Recarregar a pasta atual"
 
 #: ../src/main-win-ui.c:162
 msgid "Side Pane"
-msgstr ""
+msgstr "Painel lateral"
 
 #: ../src/main-win-ui.c:164
 msgid "_Help"
@@ -539,9 +537,8 @@ msgid "Show _Hidden"
 msgstr "Mostrar _ocultos"
 
 #: ../src/main-win-ui.c:198
-#, fuzzy
 msgid "Show Side Pane"
-msgstr "Mostrar _ocultos"
+msgstr "Mostrar painel lateral"
 
 #: ../src/main-win-ui.c:203
 msgid "_Icon View"
@@ -561,15 +558,15 @@ msgstr "_Lista detalhada"
 
 #: ../src/main-win-ui.c:225
 msgid "Places"
-msgstr ""
+msgstr "Locais"
 
 #: ../src/main-win-ui.c:226
 msgid "Directory Tree"
-msgstr ""
+msgstr "Árvore de diretórios"
 
 #: ../src/main-win-ui.c:227
 msgid "Remote"
-msgstr ""
+msgstr "Remoto"
 
 #: ../src/main-win.c:471
 msgid "You are in super user mode"
@@ -681,15 +678,15 @@ msgstr "Espaço livre: %s (Total: %s)"
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d item"
+msgstr[1] "%d itens"
 
 #: ../src/tab-page.c:213
 #, c-format
 msgid " (%d hidden)"
 msgid_plural " (%d hidden)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] " (%d oculto)"
+msgstr[1] " (%d ocultos)"
 
 #: ../data/pcmanfm.desktop.in.h:1
 msgid "Browse the file system and manage the files"
