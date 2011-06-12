@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm 0.9.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-06-11 19:45+0200\n"
-"PO-Revision-Date: 2011-04-22 22:20+0200\n"
+"PO-Revision-Date: 2011-06-12 15:47+0200\n"
 "Last-Translator: Steve <yorvik.ubunto@gmail.com>\n"
 "Language-Team: English en_GB\n"
 "Language: en_GB\n"
@@ -441,18 +441,16 @@ msgid "_View"
 msgstr "_View"
 
 #: ../src/main-win-ui.c:161
-#, fuzzy
 msgid "Reload Folder"
-msgstr "Next Folder"
+msgstr "Reload Folder"
 
 #: ../src/main-win-ui.c:161
-#, fuzzy
 msgid "Reload current folder"
-msgstr "Parent Folder"
+msgstr "Reload current folder"
 
 #: ../src/main-win-ui.c:162
 msgid "Side Pane"
-msgstr ""
+msgstr "Side Pane"
 
 #: ../src/main-win-ui.c:164
 msgid "_Help"
@@ -535,9 +533,8 @@ msgid "Show _Hidden"
 msgstr "Show _Hidden"
 
 #: ../src/main-win-ui.c:198
-#, fuzzy
 msgid "Show Side Pane"
-msgstr "Show _Hidden"
+msgstr "Show Side Pane"
 
 #: ../src/main-win-ui.c:203
 msgid "_Icon View"
@@ -557,15 +554,15 @@ msgstr "Detailed _List View"
 
 #: ../src/main-win-ui.c:225
 msgid "Places"
-msgstr ""
+msgstr "Places"
 
 #: ../src/main-win-ui.c:226
 msgid "Directory Tree"
-msgstr ""
+msgstr "Directory Tree"
 
 #: ../src/main-win-ui.c:227
 msgid "Remote"
-msgstr ""
+msgstr "Remote"
 
 #: ../src/main-win.c:471
 msgid "You are in super user mode"
@@ -675,15 +672,15 @@ msgstr "Free space: %s (Total: %s)"
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d item"
+msgstr[1] "%d items"
 
 #: ../src/tab-page.c:213
 #, c-format
 msgid " (%d hidden)"
 msgid_plural " (%d hidden)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] " (%d hidden)"
+msgstr[1] " (%d hidden)"
 
 #: ../data/pcmanfm.desktop.in.h:1
 msgid "Browse the file system and manage the files"
