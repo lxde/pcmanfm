@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm-0,5.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-06-11 19:45+0200\n"
-"PO-Revision-Date: 2011-03-15 00:01+0200\n"
+"PO-Revision-Date: 2011-06-12 19:04+0200\n"
 "Last-Translator: mbouzada <mbouzada@gmail.com>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
 "Language: gl\n"
@@ -167,7 +167,7 @@ msgstr "Amosar sempre a barra de lapelas"
 
 #: ../data/ui/pref.glade.h:8
 msgid "Archiver integration:"
-msgstr "Integración con «Archiver»"
+msgstr "Integración con «Archiver»:"
 
 #: ../data/ui/pref.glade.h:9
 msgid "Bookmarks:"
@@ -331,7 +331,7 @@ msgstr "Foi inserido un medio extraíbel"
 
 #: ../data/ui/autorun.glade.h:5
 msgid "Type of medium:"
-msgstr "Tipo de medio"
+msgstr "Tipo de medio:"
 
 #: ../src/volume-manager.c:150
 msgid "Removable Disk"
@@ -447,19 +447,16 @@ msgid "_View"
 msgstr "_Ver"
 
 #: ../src/main-win-ui.c:161
-#, fuzzy
 msgid "Reload Folder"
-msgstr "Seguinte cartafol"
+msgstr "Volve cargar o cartafol"
 
 #: ../src/main-win-ui.c:161
-#, fuzzy
 msgid "Reload current folder"
-msgstr "Carpeta superior"
+msgstr "Volver cargar o cartafol actual"
 
 #: ../src/main-win-ui.c:162
-#, fuzzy
 msgid "Side Pane"
-msgstr "_Panel lateral"
+msgstr "Panel lateral"
 
 #: ../src/main-win-ui.c:164
 msgid "_Help"
@@ -542,9 +539,8 @@ msgid "Show _Hidden"
 msgstr "A_mosar ficheiros agochados"
 
 #: ../src/main-win-ui.c:198
-#, fuzzy
 msgid "Show Side Pane"
-msgstr "_Panel lateral"
+msgstr "Panel lateral"
 
 #: ../src/main-win-ui.c:203
 msgid "_Icon View"
@@ -564,7 +560,7 @@ msgstr "Ver como lista _detallada"
 
 #: ../src/main-win-ui.c:225
 msgid "Places"
-msgstr ""
+msgstr "Lugares"
 
 #: ../src/main-win-ui.c:226
 msgid "Directory Tree"
@@ -572,7 +568,7 @@ msgstr "Árbore de cartafoles"
 
 #: ../src/main-win-ui.c:227
 msgid "Remote"
-msgstr ""
+msgstr "Remoto"
 
 #: ../src/main-win.c:471
 msgid "You are in super user mode"
@@ -580,7 +576,7 @@ msgstr "Vostede está en modo superusuario"
 
 #: ../src/main-win.c:590
 msgid "Switch user command is not set."
-msgstr "A orde para cambiar de usuario non está configurada"
+msgstr "A orde para cambiar de usuario non está configurada."
 
 #: ../src/main-win.c:1006
 #, c-format
@@ -683,15 +679,15 @@ msgstr "Espazo libre: %s (total: %s )"
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d elemento"
+msgstr[1] "%d elementos"
 
 #: ../src/tab-page.c:213
-#, fuzzy, c-format
+#, c-format
 msgid " (%d hidden)"
 msgid_plural " (%d hidden)"
-msgstr[0] "%d agochado"
-msgstr[1] "%d agochados"
+msgstr[0] " (%d agochado)"
+msgstr[1] " (%d agochados)"
 
 #: ../data/pcmanfm.desktop.in.h:1
 msgid "Browse the file system and manage the files"
