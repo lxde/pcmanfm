@@ -1,19 +1,19 @@
 # Brazilian Portuguese translation for pcmanfm.
-# Traduções em Português do Brasil para o pacote pcmanfm.
+# Tradução em português do Brasil para o gerenciador de arquivos pcmanfm.
 # Copyright (C) 2006 THE pcmanfm'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the pcmanfm package.
 # Flávio Costa <formicbr@gmail.com>, 2006.
 # Fábio Antunes <fabio.antunes@hotmail.com>, 2008.
-# Og Maciel <ogmaciel@gnome.org>, 2008-2009.
+# Og Maciel <ogmaciel@gnome.org>, 2008, 2009.
 # Henrique P. Machado <zehrique@gmail.com>, 2009.
-# Sérgio B. Cipolla <secipolla@gmail.com>, 2010-2011.
+# Sérgio B. Cipolla <secipolla@gmail.com>, 2010, 2011.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm 0.9.9\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-06-13 22:25+0800\n"
-"PO-Revision-Date: 2011-06-11 15:06-0300\n"
+"PO-Revision-Date: 2011-06-13 12:46-0300\n"
 "Last-Translator: Sérgio Cipolla <secipolla@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <ldp-br@bazar2.conectiva.com.br>\n"
 "Language: pt_BR\n"
@@ -120,9 +120,7 @@ msgstr "Mostrar ícones de volumes na área de trabalho"
 
 #: ../data/ui/desktop-pref.glade.h:19
 msgid "Show menus provided by window managers when desktop is clicked"
-msgstr ""
-"Mostrar menus dos gerenciadores de janelas quando a área de trabalho for "
-"clicada"
+msgstr "Mostrar o menu do gerenciador de janelas quando a área de trabalho for clicada"
 
 #: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:37
 msgid "Stretch to fill the entire screen"
@@ -680,11 +678,11 @@ msgid "New"
 msgstr "Novo(a)"
 
 #: ../src/tab-page.c:174
-#, fuzzy, c-format
+#, c-format
 msgid "%d item selected"
 msgid_plural "%d items selected"
-msgstr[0] "%d item"
-msgstr[1] "%d itens"
+msgstr[0] "%d item selecionado"
+msgstr[1] "%d itens selecionados"
 
 #: ../src/tab-page.c:196
 #, c-format
@@ -692,7 +690,7 @@ msgid "Free space: %s (Total: %s)"
 msgstr "Espaço livre: %s (Total: %s)"
 
 #: ../src/tab-page.c:215
-#, fuzzy, c-format
+#, c-format
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] "%d item"
@@ -713,5 +711,3 @@ msgstr "Navegue pelo sistema de arquivos e gerencie arquivos e pastas"
 msgid "File Manager"
 msgstr "Gerenciador de arquivos"
 
-#~ msgid "_New"
-#~ msgstr "_Novo(a)"
