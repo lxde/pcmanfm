@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: 0.9.9\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-06-13 23:15+0200\n"
-"PO-Revision-Date: 2011-03-09 19:51+0200\n"
+"PO-Revision-Date: 2011-06-14 00:13+0200\n"
 "Last-Translator: kizito <kbirabwa@yahoo.co.uk>\n"
 "Language-Team: lg <kbirabwa@yahoo.co.uk>\n"
 "Language: lg\n"
@@ -338,7 +338,7 @@ msgstr "Kika ky'ekitereka data:"
 
 #: ../src/volume-manager.c:150
 msgid "Removable Disk"
-msgstr "Disiki egyikamu:"
+msgstr "Disiki egyikamu"
 
 #: ../src/volume-manager.c:209
 msgid "Open in File Manager"
@@ -450,18 +450,16 @@ msgid "_View"
 msgstr "_Endabika"
 
 #: ../src/main-win-ui.c:161
-#, fuzzy
 msgid "Reload Folder"
-msgstr "Terekero eriddako"
+msgstr "Ddamu okubikkula etterekero"
 
 #: ../src/main-win-ui.c:161
-#, fuzzy
 msgid "Reload current folder"
-msgstr "Terekero lino mweliri"
+msgstr "Ddamu okubikkula etterekero lino"
 
 #: ../src/main-win-ui.c:162
 msgid "Side Pane"
-msgstr ""
+msgstr "Akadirisa ok'oku mabbali"
 
 #: ../src/main-win-ui.c:164
 msgid "_Help"
@@ -544,9 +542,8 @@ msgid "Show _Hidden"
 msgstr "Ndaga fayiro en_kise"
 
 #: ../src/main-win-ui.c:198
-#, fuzzy
 msgid "Show Side Pane"
-msgstr "Ndaga fayiro en_kise"
+msgstr "Ndaga akadirisa ok'oku mabbali"
 
 #: ../src/main-win-ui.c:203
 msgid "_Icon View"
@@ -566,15 +563,15 @@ msgstr "Laga _ebifa ku fayiro mu bujjuvu"
 
 #: ../src/main-win-ui.c:225
 msgid "Places"
-msgstr ""
+msgstr "Ebifo"
 
 #: ../src/main-win-ui.c:226
 msgid "Directory Tree"
-msgstr ""
+msgstr "Enkwatagana y'amaterekero"
 
 #: ../src/main-win-ui.c:227
 msgid "Remote"
-msgstr ""
+msgstr "Ku kompyuta ndala"
 
 #: ../src/main-win.c:471
 msgid "You are in super user mode"
@@ -681,8 +678,8 @@ msgstr "Tonda"
 #, c-format
 msgid "%d item selected"
 msgid_plural "%d items selected"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Ekintu %d kirondedwa"
+msgstr[1] "Ebintu %d birondedwa"
 
 #: ../src/tab-page.c:196
 #, c-format
@@ -693,15 +690,15 @@ msgstr "Ekifo ekisigadde mu kibondo: %s (Kigendamu: %s)"
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Ekintu %d"
+msgstr[1] "Ebintu %d"
 
 #: ../src/tab-page.c:216
 #, c-format
 msgid " (%d hidden)"
 msgid_plural " (%d hidden)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] " (%d ekikise)"
+msgstr[1] " (%d ebikise)"
 
 #: ../data/pcmanfm.desktop.in.h:1
 msgid "Browse the file system and manage the files"
