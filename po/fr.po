@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PCManFM\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-13 22:25+0800\n"
-"PO-Revision-Date: 2011-03-16 23:07+0200\n"
-"Last-Translator: Cilyan <gaknar@gmail.com>\n"
+"POT-Creation-Date: 2011-06-11 19:45+0200\n"
+"PO-Revision-Date: 2011-06-12 16:11+0200\n"
+"Last-Translator: Mathieu <mathieu.millot@gmail.com>\n"
 "Language-Team: French\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
@@ -452,18 +452,16 @@ msgid "_View"
 msgstr "_Voir"
 
 #: ../src/main-win-ui.c:161
-#, fuzzy
 msgid "Reload Folder"
-msgstr "Dossier suivant"
+msgstr "Actualiser"
 
 #: ../src/main-win-ui.c:161
-#, fuzzy
 msgid "Reload current folder"
-msgstr "Dossier parent"
+msgstr "Actualiser le dossier"
 
 #: ../src/main-win-ui.c:162
 msgid "Side Pane"
-msgstr ""
+msgstr "Panneau latéral"
 
 #: ../src/main-win-ui.c:164
 msgid "_Help"
@@ -546,9 +544,8 @@ msgid "Show _Hidden"
 msgstr "Montrer les fichier _cachés"
 
 #: ../src/main-win-ui.c:198
-#, fuzzy
 msgid "Show Side Pane"
-msgstr "Montrer les fichier _cachés"
+msgstr "Afficher le panneau latéral"
 
 #: ../src/main-win-ui.c:203
 msgid "_Icon View"
@@ -568,12 +565,13 @@ msgstr "Vue en _liste détaillée"
 
 #: ../src/main-win-ui.c:225
 msgid "Places"
-msgstr ""
+msgstr "Emplacements"
 
 #: ../src/main-win-ui.c:226
 msgid "Directory Tree"
-msgstr ""
+msgstr "Arborescence"
 
+# what is the context of this item ? What do you wnat ot chaow by clicking it ? Remote filesystems/mounts ?
 #: ../src/main-win-ui.c:227
 msgid "Remote"
 msgstr ""
@@ -696,15 +694,15 @@ msgstr "Espace libre : %s (Total : %s)"
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d élément"
+msgstr[1] "%d éléments"
 
 #: ../src/tab-page.c:216
 #, c-format
 msgid " (%d hidden)"
 msgid_plural " (%d hidden)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d caché"
+msgstr[1] "%d cachés"
 
 #: ../data/pcmanfm.desktop.in.h:1
 msgid "Browse the file system and manage the files"
