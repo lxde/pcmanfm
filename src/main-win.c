@@ -179,7 +179,7 @@ static FmJobErrorAction on_query_target_info_error(FmJob* job, GError* err, FmJo
         else if(err->code == G_IO_ERROR_FAILED_HANDLED)
             return FM_JOB_CONTINUE;
     }
-    fm_show_error(GTK_WINDOW(win), err->message);
+    fm_show_error(GTK_WINDOW(win), NULL, err->message);
     return FM_JOB_CONTINUE;
 }
 
@@ -587,7 +587,7 @@ void on_open_as_root(GtkAction* act, FmMainWin* win)
     char* cmd;
     if(!app_config->su_cmd)
     {
-        fm_show_error(GTK_WINDOW(win), _("Switch user command is not set."));
+        fm_show_error(GTK_WINDOW(win), NULL, _("Switch user command is not set."));
         fm_edit_preference(GTK_WINDOW(win), PREF_ADVANCED);
         return;
     }
@@ -608,7 +608,7 @@ void on_open_as_root(GtkAction* act, FmMainWin* win)
         gdk_app_launch_context_set_timestamp(GDK_APP_LAUNCH_CONTEXT(ctx), gtk_get_current_event_time());
         if(!g_app_info_launch_uris(app, uris, ctx, &err))
         {
-            fm_show_error(GTK_WINDOW(win), err->message);
+            fm_show_error(GTK_WINDOW(win), NULL, err->message);
             g_error_free(err);
         }
         g_list_free(uris);

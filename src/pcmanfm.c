@@ -228,7 +228,7 @@ static FmJobErrorAction on_file_info_job_error(FmFileInfoJob* job, GError* err, 
         else if(err->code == G_IO_ERROR_FAILED_HANDLED)
             return FM_JOB_CONTINUE;
     }
-    fm_show_error(NULL, err->message);
+    fm_show_error(NULL, NULL, err->message);
     return FM_JOB_CONTINUE;
 }
 
@@ -452,7 +452,7 @@ void pcmanfm_open_folder_in_terminal(GtkWindow* parent, FmPath* dir)
     int argc;
     if(!fm_config->terminal)
     {
-        fm_show_error(parent, _("Terminal emulator is not set."));
+        fm_show_error(parent, NULL, _("Terminal emulator is not set."));
         fm_edit_preference(parent, PREF_ADVANCED);
         return;
     }
@@ -482,7 +482,7 @@ void pcmanfm_open_folder_in_terminal(GtkWindow* parent, FmPath* dir)
 
         if(!g_app_info_launch(app, NULL, ctx, &err))
         {
-            fm_show_error(parent, err->message);
+            fm_show_error(parent, NULL, err->message);
             g_error_free(err);
         }
         g_object_unref(ctx);
@@ -527,7 +527,7 @@ _retry:
                 err = NULL;
                 goto _retry;
             }
-            fm_show_error(parent, err->message);
+            fm_show_error(parent, NULL, err->message);
             g_error_free(err);
         }
 
@@ -561,7 +561,7 @@ _retry:
                 err = NULL;
                 goto _retry;
             }
-            fm_show_error(parent, err->message);
+            fm_show_error(parent, NULL, err->message);
             g_error_free(err);
         }
 
