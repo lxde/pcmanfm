@@ -1190,7 +1190,10 @@ static void on_notebook_switch_page(GtkNotebook* nb, GtkNotebookPage* new_page, 
     update_view_menu(win);
     update_statusbar(win);
 
-    gtk_widget_grab_focus(win->folder_view);
+    /* FIXME: this does not work sometimes due to limitation of GtkNotebook.
+     * So weird. After page switching with mouse button, GTK+ always tries
+     * to focus the left pane, instead of the folder_view we specified. */
+    gtk_widget_grab_focus(folder_view);
 }
 
 void on_notebook_page_added(GtkNotebook* nb, GtkWidget* page, guint num, FmMainWin* win)

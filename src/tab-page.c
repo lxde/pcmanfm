@@ -265,11 +265,13 @@ static void fm_tab_page_init(FmTabPage *page)
     GtkPaned* paned = GTK_PANED(page);
     FmTabLabel* tab_label;
     FmFolderView* folder_view;
+    GList* focus_chain = NULL;
 
     page->side_pane = fm_side_pane_new();
     fm_side_pane_set_mode(FM_SIDE_PANE(page->side_pane), app_config->side_pane_mode);
     /* TODO: add a close button to side pane */
     gtk_paned_add1(paned, page->side_pane);
+    focus_chain = g_list_prepend(focus_chain, page->side_pane);
 
     page->folder_view = fm_folder_view_new(app_config->view_mode);
     folder_view = FM_FOLDER_VIEW(page->folder_view);
@@ -277,6 +279,11 @@ static void fm_tab_page_init(FmTabPage *page)
     fm_folder_view_set_selection_mode(folder_view, GTK_SELECTION_MULTIPLE);
     page->nav_history = fm_nav_history_new();
     gtk_paned_add2(paned, page->folder_view);
+    focus_chain = g_list_prepend(focus_chain, page->folder_view);
+
+    /* We need this to change tab order to focus folder view before left pane. */
+    gtk_container_set_focus_chain(page, focus_chain);
+    g_list_free(focus_chain);
 
     gtk_widget_show_all(GTK_WIDGET(page));
 
