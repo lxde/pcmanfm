@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-13 22:18+0800\n"
+"POT-Creation-Date: 2011-06-13 22:25+0800\n"
 "PO-Revision-Date: 2011-06-12 17:25+0200\n"
 "Last-Translator: Sérgio <smarquespt@gmail.com>\n"
 "Language-Team: \n"
@@ -669,9 +669,9 @@ msgstr "Criar novo..."
 msgid "New"
 msgstr "Novo"
 
-#: ../src/tab-page.c:174 ../src/tab-page.c:215
+#: ../src/tab-page.c:174
 #, fuzzy, c-format
-msgid "%d item"
+msgid "%d item selected"
 msgid_plural "%d items selected"
 msgstr[0] "%d item"
 msgstr[1] "%d itens"
@@ -680,6 +680,13 @@ msgstr[1] "%d itens"
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Espaço livre: %s (Total: %s)"
+
+#: ../src/tab-page.c:215
+#, fuzzy, c-format
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] "%d item"
+msgstr[1] "%d itens"
 
 #: ../src/tab-page.c:216
 #, c-format

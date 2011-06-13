@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PCManFM\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-13 22:18+0800\n"
+"POT-Creation-Date: 2011-06-13 22:25+0800\n"
 "PO-Revision-Date: 2011-06-11 20:02+0200\n"
 "Last-Translator: Martin <brother@bsnet.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
@@ -679,17 +679,24 @@ msgstr "Skapa ny..."
 msgid "New"
 msgstr "Ny"
 
-#: ../src/tab-page.c:174 ../src/tab-page.c:215
+#: ../src/tab-page.c:174
 #, fuzzy, c-format
-msgid "%d item"
+msgid "%d item selected"
 msgid_plural "%d items selected"
-msgstr[0] "%d objekt"
-msgstr[1] "%d objekt"
+msgstr[0] "%d objekt markerat (%s)%s"
+msgstr[1] "%d objekt markerade (%s)%s"
 
 #: ../src/tab-page.c:196
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Ledigt utrymme: %s (Totalt: %s )"
+
+#: ../src/tab-page.c:215
+#, fuzzy, c-format
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] "%d objekt"
+msgstr[1] "%d objekt"
 
 #: ../src/tab-page.c:216
 #, c-format
@@ -1326,11 +1333,6 @@ msgstr "Filhanterare"
 
 #~ msgid "Loading..."
 #~ msgstr "Läser in..."
-
-#~ msgid "%d item selected (%s)%s"
-#~ msgid_plural "%d items selected (%s)%s"
-#~ msgstr[0] "%d objekt markerat (%s)%s"
-#~ msgstr[1] "%d objekt markerade (%s)%s"
 
 #~ msgid "%d visible item (%s)%s"
 #~ msgid_plural "%d visible items (%s)%s"

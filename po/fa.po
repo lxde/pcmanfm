@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-13 22:18+0800\n"
+"POT-Creation-Date: 2011-06-13 22:25+0800\n"
 "PO-Revision-Date: 2010-11-01 07:33+0200\n"
 "Last-Translator: Hamidreza <n3gb0y@gmail.com>\n"
 "Language-Team: Persian <trans-fa@lists.fedoraproject.org>\n"
@@ -668,9 +668,9 @@ msgstr "ساخت جدید..."
 msgid "New"
 msgstr "جدید"
 
-#: ../src/tab-page.c:174 ../src/tab-page.c:215
+#: ../src/tab-page.c:174
 #, c-format
-msgid "%d item"
+msgid "%d item selected"
 msgid_plural "%d items selected"
 msgstr[0] ""
 
@@ -678,6 +678,12 @@ msgstr[0] ""
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "فضای خالی : %s (کل: %s)"
+
+#: ../src/tab-page.c:215
+#, c-format
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] ""
 
 #: ../src/tab-page.c:216
 #, c-format

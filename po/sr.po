@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PCManFM 0.9.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-13 22:18+0800\n"
+"POT-Creation-Date: 2011-06-13 22:25+0800\n"
 "PO-Revision-Date: 2010-05-26 09:41+0100\n"
 "Last-Translator: Jay Alexander Fleming <tito.nehru.naser@gmail.com>\n"
 "Language-Team: \n"
@@ -670,9 +670,9 @@ msgstr "Направи нов..."
 msgid "New"
 msgstr "Нов"
 
-#: ../src/tab-page.c:174 ../src/tab-page.c:215
+#: ../src/tab-page.c:174
 #, c-format
-msgid "%d item"
+msgid "%d item selected"
 msgid_plural "%d items selected"
 msgstr[0] ""
 msgstr[1] ""
@@ -682,6 +682,14 @@ msgstr[2] ""
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Слободан простор: %s од %s"
+
+#: ../src/tab-page.c:215
+#, c-format
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
 #: ../src/tab-page.c:216
 #, c-format

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-13 22:18+0800\n"
+"POT-Creation-Date: 2011-06-13 22:25+0800\n"
 "PO-Revision-Date: 2010-10-25 19:46+0200\n"
 "Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
@@ -680,9 +680,9 @@ msgstr "Opret ny..."
 msgid "New"
 msgstr "Ny"
 
-#: ../src/tab-page.c:174 ../src/tab-page.c:215
+#: ../src/tab-page.c:174
 #, c-format
-msgid "%d item"
+msgid "%d item selected"
 msgid_plural "%d items selected"
 msgstr[0] ""
 msgstr[1] ""
@@ -691,6 +691,13 @@ msgstr[1] ""
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Ledig plads: %s (I alt: %s)"
+
+#: ../src/tab-page.c:215
+#, c-format
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../src/tab-page.c:216
 #, c-format

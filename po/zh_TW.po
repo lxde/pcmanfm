@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-13 22:18+0800\n"
-"PO-Revision-Date: 2010-11-27 13:11+0800\n"
-"Last-Translator: Hong Jen Yee (PCMan) <pcman.tw@gmail.com>\n"
+"POT-Creation-Date: 2011-06-13 22:25+0800\n"
+"PO-Revision-Date: 2011-06-13 22:27+0800\n"
+"Last-Translator: 洪任諭 <pcman.tw@gmail.com>\n"
 "Language-Team: zh_TW <zh_TW@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -18,6 +18,7 @@ msgstr ""
 "X-Poedit-Language: Chinese\n"
 "X-Poedit-Country: TAIWAN\n"
 "X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2010"
@@ -62,7 +63,8 @@ msgstr "外觀"
 msgid "Background color:"
 msgstr "背景顏色："
 
-#: ../data/ui/desktop-pref.glade.h:7 ../data/ui/pref.glade.h:10
+#: ../data/ui/desktop-pref.glade.h:7
+#: ../data/ui/pref.glade.h:10
 msgid "Center on the screen"
 msgstr "置於螢幕中央"
 
@@ -78,7 +80,8 @@ msgstr "陰影色彩："
 msgid "Desktop Icons"
 msgstr "桌面圖示"
 
-#: ../data/ui/desktop-pref.glade.h:11 ../src/desktop-ui.c:58
+#: ../data/ui/desktop-pref.glade.h:11
+#: ../src/desktop-ui.c:58
 msgid "Desktop Preferences"
 msgstr "桌面偏好設定"
 
@@ -114,15 +117,18 @@ msgstr ""
 msgid "Show menus provided by window managers when desktop is clicked"
 msgstr "點擊桌面時，顯示視窗管理員提供的選單"
 
-#: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:37
+#: ../data/ui/desktop-pref.glade.h:20
+#: ../data/ui/pref.glade.h:37
 msgid "Stretch to fill the entire screen"
 msgstr "延展至填滿整個螢幕"
 
-#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:38
+#: ../data/ui/desktop-pref.glade.h:21
+#: ../data/ui/pref.glade.h:38
 msgid "Stretch to fit the screen"
 msgstr "延展到適合螢幕大小"
 
-#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:42
+#: ../data/ui/desktop-pref.glade.h:22
+#: ../data/ui/pref.glade.h:42
 msgid "Tile the image to fill the entire screen"
 msgstr "併排影像填滿整個螢幕"
 
@@ -339,49 +345,59 @@ msgstr "在檔案管理程式中開啟"
 msgid "_Invert Selection"
 msgstr "反相選取(_I)"
 
-#: ../src/desktop-ui.c:54 ../src/main-win-ui.c:163
+#: ../src/desktop-ui.c:54
+#: ../src/main-win-ui.c:163
 msgid "_Sort Files"
 msgstr "排序檔案(_S)"
 
 #. for popup menu
-#: ../src/desktop-ui.c:55 ../src/main-win-ui.c:189
-#, fuzzy
+#: ../src/desktop-ui.c:55
+#: ../src/main-win-ui.c:189
 msgid "Create _New..."
-msgstr "新建..."
+msgstr "新建...(_N)"
 
-#: ../src/desktop-ui.c:56 ../src/main-win-ui.c:190
+#: ../src/desktop-ui.c:56
+#: ../src/main-win-ui.c:190
 msgid "Folder"
 msgstr "資料夾"
 
-#: ../src/desktop-ui.c:57 ../src/main-win-ui.c:191
+#: ../src/desktop-ui.c:57
+#: ../src/main-win-ui.c:191
 msgid "Blank File"
 msgstr "空白檔案"
 
-#: ../src/desktop-ui.c:69 ../src/main-win-ui.c:217
+#: ../src/desktop-ui.c:69
+#: ../src/main-win-ui.c:217
 msgid "By _Name"
 msgstr "依名稱(_N)"
 
-#: ../src/desktop-ui.c:70 ../src/main-win-ui.c:218
+#: ../src/desktop-ui.c:70
+#: ../src/main-win-ui.c:218
 msgid "By _Modification Time"
 msgstr "依修改時間(_M)"
 
-#: ../src/desktop-ui.c:71 ../src/main-win-ui.c:219
+#: ../src/desktop-ui.c:71
+#: ../src/main-win-ui.c:219
 msgid "By _Size"
 msgstr "依大小(_S)"
 
-#: ../src/desktop-ui.c:72 ../src/main-win-ui.c:220
+#: ../src/desktop-ui.c:72
+#: ../src/main-win-ui.c:220
 msgid "By File _Type"
 msgstr "依檔案型態(_T)"
 
-#: ../src/desktop-ui.c:88 ../src/main-win-ui.c:243
+#: ../src/desktop-ui.c:88
+#: ../src/main-win-ui.c:243
 msgid "Open in New Tab"
 msgstr "在新分頁開啟"
 
-#: ../src/desktop-ui.c:89 ../src/main-win-ui.c:244
+#: ../src/desktop-ui.c:89
+#: ../src/main-win-ui.c:244
 msgid "Open in New Window"
 msgstr "在新視窗開啟"
 
-#: ../src/desktop-ui.c:91 ../src/main-win-ui.c:246
+#: ../src/desktop-ui.c:91
+#: ../src/main-win-ui.c:246
 msgid "Open in _Terminal"
 msgstr "以終端機模擬器開啟(_T)"
 
@@ -442,18 +458,16 @@ msgid "_View"
 msgstr "檢視(_V)"
 
 #: ../src/main-win-ui.c:161
-#, fuzzy
 msgid "Reload Folder"
-msgstr "下一個資料夾"
+msgstr "重讀資料夾"
 
 #: ../src/main-win-ui.c:161
-#, fuzzy
 msgid "Reload current folder"
-msgstr "上層資料夾"
+msgstr "重讀目前資料夾"
 
 #: ../src/main-win-ui.c:162
 msgid "Side Pane"
-msgstr ""
+msgstr "側邊欄"
 
 #: ../src/main-win-ui.c:164
 msgid "_Help"
@@ -536,9 +550,8 @@ msgid "Show _Hidden"
 msgstr "顯示隱藏檔(_H)"
 
 #: ../src/main-win-ui.c:198
-#, fuzzy
 msgid "Show Side Pane"
-msgstr "顯示隱藏檔(_H)"
+msgstr "顯示側邊欄"
 
 #: ../src/main-win-ui.c:203
 msgid "_Icon View"
@@ -558,15 +571,15 @@ msgstr "以詳細清單檢視(_L)"
 
 #: ../src/main-win-ui.c:225
 msgid "Places"
-msgstr ""
+msgstr "位置"
 
 #: ../src/main-win-ui.c:226
 msgid "Directory Tree"
-msgstr ""
+msgstr "目錄樹"
 
 #: ../src/main-win-ui.c:227
 msgid "Remote"
-msgstr ""
+msgstr "遠端"
 
 #: ../src/main-win.c:471
 msgid "You are in super user mode"
@@ -631,12 +644,10 @@ msgstr ""
 
 #: ../src/pcmanfm.c:81
 msgid "<mode>"
-msgstr ""
+msgstr "<模式>"
 
 #: ../src/pcmanfm.c:82
-msgid ""
-"Open preference dialog. 'n' is number of the page you want to show (1, 2, "
-"3...)."
+msgid "Open preference dialog. 'n' is number of the page you want to show (1, 2, 3...)."
 msgstr "開啟偏好設定對話框，'n' 是你要顯示的頁面(1, 2, 3...)"
 
 #. { "new-win", '\0', 'n', G_OPTION_ARG_NONE, &new_win, N_("Open new window"), NULL },
@@ -650,9 +661,8 @@ msgid "Terminal emulator is not set."
 msgstr "終端機模擬器尚未設定。"
 
 #: ../src/pcmanfm.c:507
-#, fuzzy
 msgid "Enter a name for the newly created folder:"
-msgstr "輸入新建立檔案的名稱："
+msgstr "輸入新資料夾的名稱："
 
 #: ../src/pcmanfm.c:509
 msgid "Enter a name for the newly created file:"
@@ -666,24 +676,28 @@ msgstr "新建..."
 msgid "New"
 msgstr "新增"
 
-#: ../src/tab-page.c:174 ../src/tab-page.c:215
+#: ../src/tab-page.c:174
 #, c-format
-msgid "%d item"
+msgid "%d item selected"
 msgid_plural "%d items selected"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d 個項目被選取"
 
 #: ../src/tab-page.c:196
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "可用空間：%s (總共：%s )"
 
+#: ../src/tab-page.c:215
+#, c-format
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] "%d 個項目"
+
 #: ../src/tab-page.c:216
 #, c-format
 msgid " (%d hidden)"
 msgid_plural " (%d hidden)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "(%d 個隱藏)"
 
 #: ../data/pcmanfm.desktop.in.h:1
 msgid "Browse the file system and manage the files"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm 0.9.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-13 22:18+0800\n"
+"POT-Creation-Date: 2011-06-13 22:25+0800\n"
 "PO-Revision-Date: 2011-03-10 20:32+0200\n"
 "Last-Translator: Jesse <jesse.jaara@gmail.com>\n"
 "Language-Team: Finnish fi_FI\n"
@@ -666,9 +666,9 @@ msgstr "Luo uusi..."
 msgid "New"
 msgstr "Uusi"
 
-#: ../src/tab-page.c:174 ../src/tab-page.c:215
+#: ../src/tab-page.c:174
 #, c-format
-msgid "%d item"
+msgid "%d item selected"
 msgid_plural "%d items selected"
 msgstr[0] ""
 msgstr[1] ""
@@ -677,6 +677,13 @@ msgstr[1] ""
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Vapaata tilaa: %s (Yhteensä: %s)"
+
+#: ../src/tab-page.c:215
+#, c-format
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../src/tab-page.c:216
 #, c-format

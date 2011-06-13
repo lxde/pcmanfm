@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-13 22:18+0800\n"
+"POT-Creation-Date: 2011-06-13 22:25+0800\n"
 "PO-Revision-Date: 2010-05-06 21:54+0300\n"
 "Last-Translator: Tareq Al Jurf <taljurf@fedoraproject.org>\n"
 "Language-Team: Arabic <trans-ar@lists.fedoraproject.org>\n"
@@ -653,9 +653,9 @@ msgstr ""
 msgid "New"
 msgstr "جديد"
 
-#: ../src/tab-page.c:174 ../src/tab-page.c:215
+#: ../src/tab-page.c:174
 #, c-format
-msgid "%d item"
+msgid "%d item selected"
 msgid_plural "%d items selected"
 msgstr[0] ""
 msgstr[1] ""
@@ -664,6 +664,13 @@ msgstr[1] ""
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr ""
+
+#: ../src/tab-page.c:215
+#, c-format
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../src/tab-page.c:216
 #, c-format

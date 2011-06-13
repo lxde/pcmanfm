@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm-0,5.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-13 22:18+0800\n"
+"POT-Creation-Date: 2011-06-13 22:25+0800\n"
 "PO-Revision-Date: 2011-06-12 19:04+0200\n"
 "Last-Translator: mbouzada <mbouzada@gmail.com>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
@@ -670,17 +670,24 @@ msgstr "Crear novo..."
 msgid "New"
 msgstr "Novo"
 
-#: ../src/tab-page.c:174 ../src/tab-page.c:215
+#: ../src/tab-page.c:174
 #, fuzzy, c-format
-msgid "%d item"
+msgid "%d item selected"
 msgid_plural "%d items selected"
-msgstr[0] "%d elemento"
-msgstr[1] "%d elementos"
+msgstr[0] "%d elemento seleccionado (%s)%s"
+msgstr[1] "%d elementos seleccionados (%s)%s"
 
 #: ../src/tab-page.c:196
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Espazo libre: %s (total: %s )"
+
+#: ../src/tab-page.c:215
+#, fuzzy, c-format
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] "%d elemento"
+msgstr[1] "%d elementos"
 
 #: ../src/tab-page.c:216
 #, c-format
@@ -1317,11 +1324,6 @@ msgstr "Xestor de ficheiros"
 
 #~ msgid "Loading..."
 #~ msgstr "Cargando..."
-
-#~ msgid "%d item selected (%s)%s"
-#~ msgid_plural "%d items selected (%s)%s"
-#~ msgstr[0] "%d elemento seleccionado (%s)%s"
-#~ msgstr[1] "%d elementos seleccionados (%s)%s"
 
 #~ msgid "%d visible item (%s)%s"
 #~ msgid_plural "%d visible items (%s)%s"

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PCManFM2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-13 22:18+0800\n"
+"POT-Creation-Date: 2011-06-13 22:25+0800\n"
 "PO-Revision-Date: 2011-06-12 16:55+0200\n"
 "Last-Translator: Klemen <klemen.kosir@gmx.com>\n"
 "Language-Team: paxman <paxmanpwnz@gmail.com>\n"
@@ -665,9 +665,9 @@ msgstr "Ustvari novo ..."
 msgid "New"
 msgstr "Nova"
 
-#: ../src/tab-page.c:174 ../src/tab-page.c:215
+#: ../src/tab-page.c:174
 #, fuzzy, c-format
-msgid "%d item"
+msgid "%d item selected"
 msgid_plural "%d items selected"
 msgstr[0] "%d predmet"
 msgstr[1] "%d predmeta"
@@ -678,6 +678,15 @@ msgstr[3] "%d predmetov"
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Prazen prostor: %s (Skupno: %s)"
+
+#: ../src/tab-page.c:215
+#, fuzzy, c-format
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] "%d predmet"
+msgstr[1] "%d predmeta"
+msgstr[2] "%d predmeti"
+msgstr[3] "%d predmetov"
 
 #: ../src/tab-page.c:216
 #, c-format

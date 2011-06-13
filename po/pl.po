@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm 0.9.7\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-13 22:18+0800\n"
+"POT-Creation-Date: 2011-06-13 22:25+0800\n"
 "PO-Revision-Date: 2011-02-15 11:38+0100\n"
 "Last-Translator: Piotr Sokół <psokol@jabster.pl>\n"
 "Language-Team: Polish <>\n"
@@ -669,9 +669,9 @@ msgstr "Utwórz nowy..."
 msgid "New"
 msgstr "Nowy"
 
-#: ../src/tab-page.c:174 ../src/tab-page.c:215
+#: ../src/tab-page.c:174
 #, c-format
-msgid "%d item"
+msgid "%d item selected"
 msgid_plural "%d items selected"
 msgstr[0] ""
 msgstr[1] ""
@@ -681,6 +681,14 @@ msgstr[2] ""
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Wolna przestrzeń: %s (Całkowita: %s)"
+
+#: ../src/tab-page.c:215
+#, c-format
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
 #: ../src/tab-page.c:216
 #, c-format

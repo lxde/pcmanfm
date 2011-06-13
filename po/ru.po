@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-13 22:18+0800\n"
+"POT-Creation-Date: 2011-06-13 22:25+0800\n"
 "PO-Revision-Date: 2011-06-11 20:08+0200\n"
 "Last-Translator: Alexander <kazancas@gmail.com>\n"
 "Language-Team: Russian <>\n"
@@ -668,9 +668,9 @@ msgstr "Создать новый..."
 msgid "New"
 msgstr "Новый"
 
-#: ../src/tab-page.c:174 ../src/tab-page.c:215
+#: ../src/tab-page.c:174
 #, fuzzy, c-format
-msgid "%d item"
+msgid "%d item selected"
 msgid_plural "%d items selected"
 msgstr[0] "%d элемент"
 msgstr[1] "%d элемента"
@@ -680,6 +680,14 @@ msgstr[2] "%d элементов"
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Свободное место: %s (Всего: %s)"
+
+#: ../src/tab-page.c:215
+#, fuzzy, c-format
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] "%d элемент"
+msgstr[1] "%d элемента"
+msgstr[2] "%d элементов"
 
 #: ../src/tab-page.c:216
 #, c-format

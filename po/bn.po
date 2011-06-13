@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-13 22:18+0800\n"
+"POT-Creation-Date: 2011-06-13 22:25+0800\n"
 "PO-Revision-Date: 2010-06-15 12:31+0600\n"
 "Last-Translator: Israt Jahan <israt@ankur.org.bd\n"
 "Language-Team: Bengali <ankur-bd-l10n@googlegroups.com>\n"
@@ -670,9 +670,9 @@ msgstr "নতুন তৈরি করুন..."
 msgid "New"
 msgstr "নতুন"
 
-#: ../src/tab-page.c:174 ../src/tab-page.c:215
+#: ../src/tab-page.c:174
 #, c-format
-msgid "%d item"
+msgid "%d item selected"
 msgid_plural "%d items selected"
 msgstr[0] ""
 msgstr[1] ""
@@ -681,6 +681,13 @@ msgstr[1] ""
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "অব্যবহৃত জায়গা: %s (সর্বমোট: %s)"
+
+#: ../src/tab-page.c:215
+#, c-format
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../src/tab-page.c:216
 #, c-format

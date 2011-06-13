@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-13 22:18+0800\n"
+"POT-Creation-Date: 2011-06-13 22:25+0800\n"
 "PO-Revision-Date: 2011-03-09 18:05+0200\n"
 "Last-Translator: Alessandro <alex@amiran.it>\n"
 "Language-Team: it <it@li.org>\n"
@@ -669,9 +669,9 @@ msgstr "Crea Nuovo..."
 msgid "New"
 msgstr "Nuovo"
 
-#: ../src/tab-page.c:174 ../src/tab-page.c:215
+#: ../src/tab-page.c:174
 #, c-format
-msgid "%d item"
+msgid "%d item selected"
 msgid_plural "%d items selected"
 msgstr[0] ""
 msgstr[1] ""
@@ -680,6 +680,13 @@ msgstr[1] ""
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Spazio libero: %s (Totale: %s)"
+
+#: ../src/tab-page.c:215
+#, c-format
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../src/tab-page.c:216
 #, c-format

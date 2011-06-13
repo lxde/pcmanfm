@@ -171,7 +171,7 @@ static void on_folder_view_sel_changed(FmFolderView* fv, FmFileInfoList* files, 
         else
         {
             int n_sel = fm_list_get_length(files);
-            msg = g_strdup_printf(ngettext("%d item", "%d items selected", n_sel), n_sel);
+            msg = g_strdup_printf(ngettext("%d item selected", "%d items selected", n_sel), n_sel);
         }
     }
     else
