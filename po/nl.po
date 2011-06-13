@@ -9,14 +9,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-11 19:45+0200\n"
+"POT-Creation-Date: 2011-06-13 22:18+0800\n"
 "PO-Revision-Date: 2011-06-13 11:34+0200\n"
 "Last-Translator: Pjotr\n"
 "Language-Team: Dutch\n"
+"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: nl\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../data/ui/about.glade.in.h:1
@@ -36,7 +36,8 @@ msgstr ""
 #. Please replace this line with your own names, one name per line.
 #: ../data/ui/about.glade.in.h:6
 msgid "translator-credits"
-msgstr "Glenn de Groot\n"
+msgstr ""
+"Glenn de Groot\n"
 "Pjotr"
 
 #: ../data/ui/desktop-pref.glade.h:1
@@ -676,19 +677,19 @@ msgstr "Maak Nieuwe..."
 msgid "New"
 msgstr "Nieuw"
 
-#: ../src/tab-page.c:193
+#: ../src/tab-page.c:174 ../src/tab-page.c:215
+#, fuzzy, c-format
+msgid "%d item"
+msgid_plural "%d items selected"
+msgstr[0] "%d element"
+msgstr[1] "%d elementen"
+
+#: ../src/tab-page.c:196
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Vrije ruimte: %s (Totaal: %s)"
 
-#: ../src/tab-page.c:212
-#, c-format
-msgid "%d item"
-msgid_plural "%d items"
-msgstr[0] "%d element"
-msgstr[1] "%d elementen"
-
-#: ../src/tab-page.c:213
+#: ../src/tab-page.c:216
 #, c-format
 msgid " (%d hidden)"
 msgid_plural " (%d hidden)"

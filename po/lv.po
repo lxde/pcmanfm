@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-11 19:45+0200\n"
+"POT-Creation-Date: 2011-06-13 22:18+0800\n"
 "PO-Revision-Date: 2010-10-17 21:49+0300\n"
 "Last-Translator: Edgars Piruška <lemings@inbox.lv>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -670,20 +670,20 @@ msgstr "Izveidot jaunu ..."
 msgid "New"
 msgstr "Jauns"
 
-#: ../src/tab-page.c:193
-#, c-format
-msgid "Free space: %s (Total: %s)"
-msgstr "Brīvā vieta: %s (Kopā: %s)"
-
-#: ../src/tab-page.c:212
+#: ../src/tab-page.c:174 ../src/tab-page.c:215
 #, c-format
 msgid "%d item"
-msgid_plural "%d items"
+msgid_plural "%d items selected"
 msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: ../src/tab-page.c:213
+#: ../src/tab-page.c:196
+#, c-format
+msgid "Free space: %s (Total: %s)"
+msgstr "Brīvā vieta: %s (Kopā: %s)"
+
+#: ../src/tab-page.c:216
 #, c-format
 msgid " (%d hidden)"
 msgid_plural " (%d hidden)"

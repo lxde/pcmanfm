@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-11 19:45+0200\n"
+"POT-Creation-Date: 2011-06-13 22:18+0800\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Ivan Masár <helix84@centrum.sk>\n"
 "Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
@@ -672,20 +672,20 @@ msgstr "Vytvoriť nový..."
 msgid "New"
 msgstr "Nový"
 
-#: ../src/tab-page.c:193
-#, c-format
-msgid "Free space: %s (Total: %s)"
-msgstr "Voľné miesto: %s (Celkom: %s)"
-
-#: ../src/tab-page.c:212
+#: ../src/tab-page.c:174 ../src/tab-page.c:215
 #, c-format
 msgid "%d item"
-msgid_plural "%d items"
+msgid_plural "%d items selected"
 msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: ../src/tab-page.c:213
+#: ../src/tab-page.c:196
+#, c-format
+msgid "Free space: %s (Total: %s)"
+msgstr "Voľné miesto: %s (Celkom: %s)"
+
+#: ../src/tab-page.c:216
 #, fuzzy, c-format
 msgid " (%d hidden)"
 msgid_plural " (%d hidden)"

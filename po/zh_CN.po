@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-11 19:45+0200\n"
+"POT-Creation-Date: 2011-06-13 22:18+0800\n"
 "PO-Revision-Date: 2011-02-25 10:34+0200\n"
 "Last-Translator: Yinghua_Wang <wantinghard@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -663,18 +663,18 @@ msgstr "新建..."
 msgid "New"
 msgstr "新建"
 
-#: ../src/tab-page.c:193
+#: ../src/tab-page.c:174 ../src/tab-page.c:215
+#, c-format
+msgid "%d item"
+msgid_plural "%d items selected"
+msgstr[0] ""
+
+#: ../src/tab-page.c:196
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "可用空间：%s(共：%s)"
 
-#: ../src/tab-page.c:212
-#, c-format
-msgid "%d item"
-msgid_plural "%d items"
-msgstr[0] ""
-
-#: ../src/tab-page.c:213
+#: ../src/tab-page.c:216
 #, c-format
 msgid " (%d hidden)"
 msgid_plural " (%d hidden)"
