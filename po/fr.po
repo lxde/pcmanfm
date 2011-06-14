@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PCManFM\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-06-13 23:15+0200\n"
-"PO-Revision-Date: 2011-06-12 16:11+0200\n"
-"Last-Translator: Mathieu <mathieu.millot@gmail.com>\n"
+"PO-Revision-Date: 2011-06-14 07:34+0200\n"
+"Last-Translator: Cilyan <gaknar@gmail.com>\n"
 "Language-Team: French\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
@@ -571,10 +571,10 @@ msgstr "Emplacements"
 msgid "Directory Tree"
 msgstr "Arborescence"
 
-# what is the context of this item ? What do you wnat ot chaow by clicking it ? Remote filesystems/mounts ?
+# It's in the same combobox as Places and Directory Tree, so I beleive it's Remote places. In french would be too long, used a translation "ala Windows"...
 #: ../src/main-win-ui.c:227
 msgid "Remote"
-msgstr ""
+msgstr "Réseau"
 
 #: ../src/main-win.c:471
 msgid "You are in super user mode"
@@ -682,8 +682,8 @@ msgstr "Nouveau"
 #, c-format
 msgid "%d item selected"
 msgid_plural "%d items selected"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d élément sélectionné"
+msgstr[1] "%d éléments sélectionnés"
 
 #: ../src/tab-page.c:196
 #, c-format
