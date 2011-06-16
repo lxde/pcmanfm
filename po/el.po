@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-06-13 23:15+0200\n"
-"PO-Revision-Date: 2011-06-08 13:20+0200\n"
+"PO-Revision-Date: 2011-06-16 11:34+0200\n"
 "Last-Translator: George <forfolias@gmail.com>\n"
 "Language-Team: Greek\n"
 "Language: el\n"
@@ -442,18 +442,17 @@ msgid "_View"
 msgstr "_Προβολή"
 
 #: ../src/main-win-ui.c:161
-#, fuzzy
 msgid "Reload Folder"
-msgstr "Επόμενος φάκελος"
+msgstr "Ανανέωση φακέλου"
 
 #: ../src/main-win-ui.c:161
-#, fuzzy
 msgid "Reload current folder"
-msgstr "Γονικός φάκελος"
+msgstr "Ανανέωση τρέχοντος φακέλου"
 
 #: ../src/main-win-ui.c:162
+#, fuzzy
 msgid "Side Pane"
-msgstr ""
+msgstr "Πλευρικό ταμπλό"
 
 #: ../src/main-win-ui.c:164
 msgid "_Help"
@@ -538,7 +537,7 @@ msgstr "Εμφάνιση κρυφών αρχείων"
 #: ../src/main-win-ui.c:198
 #, fuzzy
 msgid "Show Side Pane"
-msgstr "Εμφάνιση κρυφών αρχείων"
+msgstr "Εμφάνιση πλευρικού ταμπλό"
 
 #: ../src/main-win-ui.c:203
 msgid "_Icon View"
@@ -558,15 +557,15 @@ msgstr "_Λεπτομέρειες"
 
 #: ../src/main-win-ui.c:225
 msgid "Places"
-msgstr ""
+msgstr "Τοποθεσίες"
 
 #: ../src/main-win-ui.c:226
 msgid "Directory Tree"
-msgstr ""
+msgstr "Δέντρο καταλόγων"
 
 #: ../src/main-win-ui.c:227
 msgid "Remote"
-msgstr ""
+msgstr "Απομακρυσμένο"
 
 #: ../src/main-win.c:471
 msgid "You are in super user mode"
@@ -673,8 +672,8 @@ msgstr "Νέο αρχείο"
 #, c-format
 msgid "%d item selected"
 msgid_plural "%d items selected"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d αντικείμενο επιλέχτηκε"
+msgstr[1] "%d αντικείμενα επιλέχτηκαν"
 
 #: ../src/tab-page.c:196
 #, c-format
@@ -685,15 +684,15 @@ msgstr "Ελεύθερος χώρος: %s (Σύνολο: %s)"
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d αντικείμενο"
+msgstr[1] "%d αντικείμενα"
 
 #: ../src/tab-page.c:216
 #, c-format
 msgid " (%d hidden)"
 msgid_plural " (%d hidden)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "(%d κρυφό)"
+msgstr[1] "(%d κρυφά)"
 
 #: ../data/pcmanfm.desktop.in.h:1
 msgid "Browse the file system and manage the files"
