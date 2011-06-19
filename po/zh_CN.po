@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-06-13 23:15+0200\n"
-"PO-Revision-Date: 2011-02-25 10:34+0200\n"
+"PO-Revision-Date: 2011-06-19 13:12+0200\n"
 "Last-Translator: Yinghua_Wang <wantinghard@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: zh_CN\n"
@@ -440,18 +440,16 @@ msgid "_View"
 msgstr "视图(_V)"
 
 #: ../src/main-win-ui.c:161
-#, fuzzy
 msgid "Reload Folder"
-msgstr "下一个文件夹"
+msgstr "重新载入文件夹"
 
 #: ../src/main-win-ui.c:161
-#, fuzzy
 msgid "Reload current folder"
-msgstr "上级文件夹"
+msgstr "重新载入当前文件夹"
 
 #: ../src/main-win-ui.c:162
 msgid "Side Pane"
-msgstr ""
+msgstr "侧边窗格"
 
 #: ../src/main-win-ui.c:164
 msgid "_Help"
@@ -534,9 +532,8 @@ msgid "Show _Hidden"
 msgstr "显示隐藏内容(_H)"
 
 #: ../src/main-win-ui.c:198
-#, fuzzy
 msgid "Show Side Pane"
-msgstr "显示隐藏内容(_H)"
+msgstr "显示侧边窗格"
 
 #: ../src/main-win-ui.c:203
 msgid "_Icon View"
@@ -556,15 +553,15 @@ msgstr "详细列表视图(_L)"
 
 #: ../src/main-win-ui.c:225
 msgid "Places"
-msgstr ""
+msgstr "位置"
 
 #: ../src/main-win-ui.c:226
 msgid "Directory Tree"
-msgstr ""
+msgstr "目录树"
 
 #: ../src/main-win-ui.c:227
 msgid "Remote"
-msgstr ""
+msgstr "远程"
 
 #: ../src/main-win.c:471
 msgid "You are in super user mode"
@@ -667,7 +664,7 @@ msgstr "新建"
 #, c-format
 msgid "%d item selected"
 msgid_plural "%d items selected"
-msgstr[0] ""
+msgstr[0] "选择了 %d 项"
 
 #: ../src/tab-page.c:196
 #, c-format
@@ -678,13 +675,13 @@ msgstr "可用空间：%s(共：%s)"
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
-msgstr[0] ""
+msgstr[0] "%d 项"
 
 #: ../src/tab-page.c:216
 #, c-format
 msgid " (%d hidden)"
 msgid_plural " (%d hidden)"
-msgstr[0] ""
+msgstr[0] " (%d 项隐藏)"
 
 #: ../data/pcmanfm.desktop.in.h:1
 msgid "Browse the file system and manage the files"
