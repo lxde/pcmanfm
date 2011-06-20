@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm 0.9.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-06-13 23:15+0200\n"
-"PO-Revision-Date: 2011-06-12 15:47+0200\n"
+"PO-Revision-Date: 2011-06-20 23:17+0200\n"
 "Last-Translator: Steve <yorvik.ubunto@gmail.com>\n"
 "Language-Team: English en_GB\n"
 "Language: en_GB\n"
@@ -664,11 +664,11 @@ msgid "New"
 msgstr "New"
 
 #: ../src/tab-page.c:174
-#, fuzzy, c-format
+#, c-format
 msgid "%d item selected"
 msgid_plural "%d items selected"
-msgstr[0] "%d item"
-msgstr[1] "%d items"
+msgstr[0] "%d item selected"
+msgstr[1] "%d items selected"
 
 #: ../src/tab-page.c:196
 #, c-format
@@ -676,7 +676,7 @@ msgid "Free space: %s (Total: %s)"
 msgstr "Free space: %s (Total: %s)"
 
 #: ../src/tab-page.c:215
-#, fuzzy, c-format
+#, c-format
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] "%d item"
