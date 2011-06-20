@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-06-13 23:15+0200\n"
-"PO-Revision-Date: 2011-03-03 11:45+0200\n"
+"PO-Revision-Date: 2011-06-20 15:41+0200\n"
 "Last-Translator: Радослав <Rec.ku@hotmail.com>\n"
 "Language-Team: Plural-Forms: nplurals=2; plural=(n!= 1);\n"
 "Language: bg\n"
@@ -93,7 +93,7 @@ msgstr "Шрифт на етикета:"
 
 #: ../data/ui/desktop-pref.glade.h:14
 msgid "Please select an image file"
-msgstr "Моля изберете Образ"
+msgstr "Моля, изберете Образ"
 
 #: ../data/ui/desktop-pref.glade.h:15
 msgid "Show \"My Computer\" icon on desktop"
@@ -137,11 +137,11 @@ msgstr "Тапет:"
 
 #: ../data/ui/pref.glade.h:1
 msgid "<b>Auto-mount</b>"
-msgstr "<b>Авто монтиране</b>"
+msgstr "<b>Автоматично монтиране</b>"
 
 #: ../data/ui/pref.glade.h:2
 msgid "<b>Behavior</b>"
-msgstr "<b>Поведение</b>"
+msgstr "<b>Режим на работа</b>"
 
 #: ../data/ui/pref.glade.h:3
 msgid "<b>Default View</b>"
@@ -161,7 +161,7 @@ msgstr "<b>Потребителски интерфейс</b>"
 
 #: ../data/ui/pref.glade.h:7
 msgid "Always show the tab bar"
-msgstr "Винаги показвай бар в рездела"
+msgstr "Винаги показвай поле за раздел"
 
 #: ../data/ui/pref.glade.h:8
 msgid "Archiver integration:"
@@ -193,21 +193,20 @@ msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
 "%s = the command line you want to execute with terminal or su."
 msgstr ""
-"Примери: \"xterm -e %s\" за терминала или \"gksu %s\" за смяна на "
-"потребител.\n"
-"%s = командата, която искате да изпълните с terminal или su."
+"Примери: \"xterm -e %s\" за терминала или \"gksu %s\" за смяна на потребител.\n"
+"%s = командата, която искате да изпълните с терминал или su."
 
 #: ../data/ui/pref.glade.h:18
 msgid "Hide 'Close tab' buttons"
-msgstr "Скриване на бутоните за затваряне на раздел"
+msgstr "Скрити бутони за затваряне на раздел"
 
 #: ../data/ui/pref.glade.h:19
 msgid "Hide folder content border"
-msgstr "Скрий съдържанието на папката"
+msgstr "Скрита рамка за съдържанието на папката"
 
 #: ../data/ui/pref.glade.h:20
 msgid "Hide side pane buttons"
-msgstr "Скриване на бутоните от страничния панел"
+msgstr "Скрити бутони от страничния панел"
 
 #: ../data/ui/pref.glade.h:21
 msgid "Icon View"
@@ -291,7 +290,7 @@ msgstr "Миниатюри"
 msgid "Use SI decimal prefixes instead of IEC binary prefixes"
 msgstr ""
 "Използвай десетична представка (SI)\n"
-"различна от двоичните представки (IEC)"
+"вместо двоичните представки (IEC)"
 
 #: ../data/ui/pref.glade.h:44
 msgid "View Mode:"
@@ -299,7 +298,7 @@ msgstr "Изглед:"
 
 #: ../data/ui/pref.glade.h:45
 msgid "_Advanced"
-msgstr "_Основни"
+msgstr "_За напреднали"
 
 #: ../data/ui/pref.glade.h:46
 msgid "_Display"
@@ -343,7 +342,7 @@ msgstr "Отваряне чрез файловия мениджър"
 
 #: ../src/desktop-ui.c:53
 msgid "_Invert Selection"
-msgstr "_Обръщане на селекцията"
+msgstr "_Размяна на маркираното"
 
 #: ../src/desktop-ui.c:54 ../src/main-win-ui.c:163
 msgid "_Sort Files"
@@ -352,7 +351,7 @@ msgstr "_Сортиране на файлове"
 #. for popup menu
 #: ../src/desktop-ui.c:55 ../src/main-win-ui.c:189
 msgid "Create _New..."
-msgstr "_Създаване на..."
+msgstr "Създаване _на..."
 
 #: ../src/desktop-ui.c:56 ../src/main-win-ui.c:190
 msgid "Folder"
@@ -447,18 +446,16 @@ msgid "_View"
 msgstr "_Изглед"
 
 #: ../src/main-win-ui.c:161
-#, fuzzy
 msgid "Reload Folder"
-msgstr "Следваща папка"
+msgstr "Обновяване на папката"
 
 #: ../src/main-win-ui.c:161
-#, fuzzy
 msgid "Reload current folder"
-msgstr "Родителска папка"
+msgstr "Обновяване на текущата папка"
 
 #: ../src/main-win-ui.c:162
 msgid "Side Pane"
-msgstr ""
+msgstr "Страничен панел"
 
 #: ../src/main-win-ui.c:164
 msgid "_Help"
@@ -541,9 +538,8 @@ msgid "Show _Hidden"
 msgstr "Показване на _Скритите"
 
 #: ../src/main-win-ui.c:198
-#, fuzzy
 msgid "Show Side Pane"
-msgstr "Показване на _Скритите"
+msgstr "Показване на страничен панел"
 
 #: ../src/main-win-ui.c:203
 msgid "_Icon View"
@@ -563,15 +559,15 @@ msgstr "_Подробен списък"
 
 #: ../src/main-win-ui.c:225
 msgid "Places"
-msgstr ""
+msgstr "Места"
 
 #: ../src/main-win-ui.c:226
 msgid "Directory Tree"
-msgstr ""
+msgstr "Дърво от директории"
 
 #: ../src/main-win-ui.c:227
 msgid "Remote"
-msgstr ""
+msgstr "Отдалеченост"
 
 #: ../src/main-win.c:471
 msgid "You are in super user mode"
@@ -668,7 +664,7 @@ msgstr "Име на новосъздадения файл:"
 
 #: ../src/pcmanfm.c:510
 msgid "Create New..."
-msgstr "Създай Нов..."
+msgstr "Създаване на..."
 
 #: ../src/pcmanfm.c:510
 msgid "New"
@@ -678,27 +674,27 @@ msgstr "Нов"
 #, c-format
 msgid "%d item selected"
 msgid_plural "%d items selected"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d маркиран елемент"
+msgstr[1] "%d маркирани елемента"
 
 #: ../src/tab-page.c:196
 #, c-format
 msgid "Free space: %s (Total: %s)"
-msgstr "Свободно място: %s (Макс.: %s)"
+msgstr "Свободно място: %s (Всичко: %s)"
 
 #: ../src/tab-page.c:215
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d елемент"
+msgstr[1] "%d елемента"
 
 #: ../src/tab-page.c:216
 #, c-format
 msgid " (%d hidden)"
 msgid_plural " (%d hidden)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "(%d скрит)"
+msgstr[1] "(%d скрити)"
 
 #: ../data/pcmanfm.desktop.in.h:1
 msgid "Browse the file system and manage the files"
