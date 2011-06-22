@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm 0.9\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-06-13 23:15+0200\n"
-"PO-Revision-Date: 2011-05-05 19:39+0200\n"
+"PO-Revision-Date: 2011-06-22 08:55+0200\n"
 "Last-Translator: Lutz <lthuns@opensuse.org>\n"
 "Language-Team: German\n"
 "Language: de\n"
@@ -130,9 +130,8 @@ msgstr "Kacheln"
 
 # Skalieren/Zentriert/...
 #: ../data/ui/desktop-pref.glade.h:23
-#, fuzzy
 msgid "Wallpaper mode:"
-msgstr "Anordnung:"
+msgstr "Ausrichtung:"
 
 #: ../data/ui/desktop-pref.glade.h:24
 msgid "Wallpaper:"
@@ -352,7 +351,6 @@ msgstr "_Sortieren"
 # Betrifft nicht nur Erstellen von Dateien (Dialogtitel nach dem Klick auf neu Erstellen)
 #. for popup menu
 #: ../src/desktop-ui.c:55 ../src/main-win-ui.c:189
-#, fuzzy
 msgid "Create _New..."
 msgstr "Neu..."
 
@@ -679,11 +677,11 @@ msgid "New"
 msgstr "Neu"
 
 #: ../src/tab-page.c:174
-#, c-format
+#, c-format, fuzzy
 msgid "%d item selected"
 msgid_plural "%d items selected"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d Objekt ausgewählt"
+msgstr[1] "%d Objekte ausgewählt"
 
 #: ../src/tab-page.c:196
 #, c-format
@@ -691,11 +689,11 @@ msgid "Free space: %s (Total: %s)"
 msgstr "Freier Speicherplatz: %s (Gesamt: %s)"
 
 #: ../src/tab-page.c:215
-#, c-format
+#, c-format, fuzzy
 msgid "%d item"
 msgid_plural "%d items"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d Objekt"
+msgstr[1] "%d Objekte"
 
 #: ../src/tab-page.c:216
 #, c-format
