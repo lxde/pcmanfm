@@ -1,15 +1,15 @@
 # French translation of the pcmanfm package
-# Copyright (C) 2010
+# Copyright (C) 2011
 # This file is distributed under the same license as the pcmanfm package.
 # Emmanuel <Trillaud etrillaud@gmail.com>, 2010.
-#
+# Cilyan <gaknar@gmail.com>, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: PCManFM\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-06-13 23:15+0200\n"
-"PO-Revision-Date: 2011-06-14 07:34+0200\n"
-"Last-Translator: Cilyan <gaknar@gmail.com>\n"
+"PO-Revision-Date: 2011-06-23 12:45+0200\n"
+"Last-Translator: Vincent Blut <vincent.debian@free.fr>\n"
 "Language-Team: French\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
@@ -30,7 +30,7 @@ msgid ""
 "\n"
 "Developed by Hon Jen Yee (PCMan)"
 msgstr ""
-"Gestionnaire de fichier léger\n"
+"Gestionnaire de fichiers léger\n"
 "\n"
 "Développé par Hon Jen Yee (PCMan)"
 
@@ -47,7 +47,7 @@ msgstr "<b>Arrière-plan</b>"
 
 #: ../data/ui/desktop-pref.glade.h:2
 msgid "<b>Show desktop icons</b>"
-msgstr "<b>Montrer les icônes du Bureau</b>"
+msgstr "<b>Montrer les icônes du bureau</b>"
 
 #: ../data/ui/desktop-pref.glade.h:3
 msgid "<b>Text</b>"
@@ -116,7 +116,7 @@ msgstr "Afficher les icônes des volumes sur le bureau"
 #: ../data/ui/desktop-pref.glade.h:19
 msgid "Show menus provided by window managers when desktop is clicked"
 msgstr ""
-"Afficher le menu fourni par le gestionnaire de fenêtre lors d'un clic sur le "
+"Afficher le menu fourni par le gestionnaire de fenêtres lors d'un clic sur le "
 "bureau"
 
 #: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:37
@@ -173,7 +173,7 @@ msgstr "Intégration de l'archiveur :"
 
 #: ../data/ui/pref.glade.h:9
 msgid "Bookmarks:"
-msgstr "Marque pages :"
+msgstr "Marque-pages :"
 
 #: ../data/ui/pref.glade.h:11
 msgid "Compact View"
@@ -181,7 +181,7 @@ msgstr "Vue compacte"
 
 #: ../data/ui/pref.glade.h:12
 msgid "Confirm before deleting files"
-msgstr "Confirmer avant de supprimer des fichier"
+msgstr "Confirmer avant de supprimer des fichiers"
 
 #: ../data/ui/pref.glade.h:13
 msgid "Detailed List View"
@@ -189,7 +189,7 @@ msgstr "Vue en liste détaillée"
 
 #: ../data/ui/pref.glade.h:14
 msgid "Do not generate thumbnails for files exceeding this size:"
-msgstr "De pas générer d'aperçu pour les fichiers dépassant cette taille :"
+msgstr "Ne pas générer d'aperçus pour les fichiers dépassant cette taille :"
 
 #: ../data/ui/pref.glade.h:16
 #, no-c-format
@@ -229,7 +229,7 @@ msgstr "Monter les volumes amovibles automatiquement quand ils sont insérés"
 #: ../data/ui/pref.glade.h:24
 msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
 msgstr ""
-"Déplacer les fichier vers la « Corbeille » au lieu de les effacer du disque"
+"Déplacer les fichiers vers la « Corbeille » au lieu de les effacer du disque"
 
 #: ../data/ui/pref.glade.h:25
 msgid "Only show thumbnails for local files"
@@ -249,7 +249,7 @@ msgstr "Ouvrir dans un nouvel onglet"
 
 #: ../data/ui/pref.glade.h:29
 msgid "Opened in New Window"
-msgstr "Ouvrir dans une nouvelle Fenêtre"
+msgstr "Ouvrir dans une nouvelle fenêtre"
 
 #: ../data/ui/pref.glade.h:30
 msgid "Preferences"
@@ -258,7 +258,7 @@ msgstr "Préférences"
 #: ../data/ui/pref.glade.h:31
 msgid "Show available options for removable media when they are inserted"
 msgstr ""
-"Afficher les options disponibles pour les média amovibles quand il sont "
+"Afficher les options disponibles pour les médias amovibles quand il sont "
 "insérés"
 
 #: ../data/ui/pref.glade.h:32
@@ -296,7 +296,7 @@ msgstr "Vue en aperçus"
 #: ../data/ui/pref.glade.h:43
 msgid "Use SI decimal prefixes instead of IEC binary prefixes"
 msgstr ""
-"Utiliser les préfixe décimaux SI au lieu des préfixes binaires de l'IEC"
+"Utiliser les préfixes décimaux SI au lieu des préfixes binaires de l'IEC"
 
 #: ../data/ui/pref.glade.h:44
 msgid "View Mode:"
@@ -344,7 +344,7 @@ msgstr "Disque amovible"
 
 #: ../src/volume-manager.c:209
 msgid "Open in File Manager"
-msgstr "Ouvrir dans le gestionnaire de fichier"
+msgstr "Ouvrir dans le gestionnaire de fichiers"
 
 #: ../src/desktop-ui.c:53
 msgid "_Invert Selection"
@@ -541,7 +541,7 @@ msgstr "Ouvrir le répertoire courant en tant qu'utilisateur _root"
 
 #: ../src/main-win-ui.c:197
 msgid "Show _Hidden"
-msgstr "Montrer les fichier _cachés"
+msgstr "Montrer les fichiers _cachés"
 
 #: ../src/main-win-ui.c:198
 msgid "Show Side Pane"
@@ -706,27 +706,8 @@ msgstr[1] "%d cachés"
 
 #: ../data/pcmanfm.desktop.in.h:1
 msgid "Browse the file system and manage the files"
-msgstr "Parcourt et gère le système de fichiers"
+msgstr "Parcourir le système de fichiers et gérer les fichiers"
 
 #: ../data/pcmanfm.desktop.in.h:2
 msgid "File Manager"
-msgstr "Gestionnaire de fichiers"
-
-#~ msgid "_New"
-#~ msgstr "_Nouveau"
-
-#~ msgid "Open Find Files utility"
-#~ msgstr "Ouvrir l'utilitaire de recherche de fichier"
-
-#~ msgid ""
-#~ "Open folders in new tabs of the last used window instead of creating new "
-#~ "windows"
-#~ msgstr ""
-#~ "Ouvrir les dossiers dans de nouveaux onglet de la dernière fenêtre "
-#~ "utilisée au lieu d'ouvrir une nouvelle fenêtre"
-
-#~ msgid "Display image files with supported format as thumbnails"
-#~ msgstr "Afficher un aperçu des images dont le format est supporté"
-
-#~ msgid "Max size of files displayed as thumbnails:"
-#~ msgstr "Taille maximale des fichier afficher comme aperçu"
+msgstr "Ouvrir dans le gestionnaire de fichiers"
