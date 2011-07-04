@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: 0.9.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-06-13 23:15+0200\n"
-"PO-Revision-Date: 2011-07-04 20:27+0200\n"
+"PO-Revision-Date: 2011-07-04 21:51+0200\n"
 "Last-Translator: keenblade <keenblade@gmail.com>\n"
 "Language-Team: tr <tr@li.org>\n"
 "Language: tr\n"
@@ -21,7 +21,7 @@ msgstr ""
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2010"
-msgstr "Telif Hakkı (C) 2009-2010"
+msgstr "Telif Hakkı (C) 2009 - 2010"
 
 #: ../data/ui/about.glade.in.h:2
 msgid ""
@@ -36,7 +36,7 @@ msgstr ""
 #. Please replace this line with your own names, one name per line.
 #: ../data/ui/about.glade.in.h:6
 msgid "translator-credits"
-msgstr "Mehmet Gülmen <memetgulmen@gmail.com"
+msgstr "Mehmet Gülmen <memetgulmen@gmail.com>"
 
 #: ../data/ui/desktop-pref.glade.h:1
 msgid "<b>Background</b>"
@@ -200,9 +200,9 @@ msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
 "%s = the command line you want to execute with terminal or su."
 msgstr ""
-"Örnekler: Uçbirim için \"xterm -e %s\" veya kullanıcı değiştirme için \"gksu "
-"%s\".\n"
-"%s = Uçbirim ya da su ile çalıştırmak istediğiniz komut satırı. "
+"Örnekler: Uçbirim için \"xterm -e %s\" veya kullanıcı değiştirme için \"gksu %"
+"s\" .\n"
+"%s = Uçbirim ya da su ile çalıştırmak istediğiniz komut satırı."
 
 #: ../data/ui/pref.glade.h:18
 msgid "Hide 'Close tab' buttons"
@@ -647,7 +647,7 @@ msgid ""
 "3...)."
 msgstr ""
 "Seçenekler diyaloğunu aç. 'n' görüntülenmesini istediğiniz sayfanın "
-"numarasıdır (1,2,3...)."
+"numarasıdır (1, 2, 3...)."
 
 #. { "new-win", '\0', 'n', G_OPTION_ARG_NONE, &new_win, N_("Open new window"), NULL },
 #. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
@@ -679,7 +679,7 @@ msgstr "Yeni"
 #, c-format
 msgid "%d item selected"
 msgid_plural "%d items selected"
-msgstr[0] ""
+msgstr[0] "%d parça seçildi"
 
 #: ../src/tab-page.c:196
 #, c-format
@@ -690,13 +690,13 @@ msgstr "Boş alan: %s (Toplam: %s)"
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
-msgstr[0] ""
+msgstr[0] "%d parça"
 
 #: ../src/tab-page.c:216
 #, c-format
 msgid " (%d hidden)"
 msgid_plural " (%d hidden)"
-msgstr[0] ""
+msgstr[0] " (%d gizli)"
 
 #: ../data/pcmanfm.desktop.in.h:1
 msgid "Browse the file system and manage the files"
