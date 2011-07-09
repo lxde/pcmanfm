@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm 0.9.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-06-13 23:15+0200\n"
-"PO-Revision-Date: 2011-03-07 03:48+0200\n"
+"PO-Revision-Date: 2011-07-09 17:25+0200\n"
 "Last-Translator: Duy Hung <nguyentieuhau@gmail.com>\n"
 "Language-Team: English en_GB\n"
 "Language: vi\n"
@@ -449,18 +449,16 @@ msgid "_View"
 msgstr "_Hiển thị"
 
 #: ../src/main-win-ui.c:161
-#, fuzzy
 msgid "Reload Folder"
-msgstr "Thư mục Sau"
+msgstr "Nạp lại Thư mục"
 
 #: ../src/main-win-ui.c:161
-#, fuzzy
 msgid "Reload current folder"
-msgstr "Thư mục Cha"
+msgstr "Nạp lại thư mục hiện tại"
 
 #: ../src/main-win-ui.c:162
 msgid "Side Pane"
-msgstr ""
+msgstr "Khung Bên"
 
 #: ../src/main-win-ui.c:164
 msgid "_Help"
@@ -543,9 +541,8 @@ msgid "Show _Hidden"
 msgstr "Hiển thị _Nội dung ẩn"
 
 #: ../src/main-win-ui.c:198
-#, fuzzy
 msgid "Show Side Pane"
-msgstr "Hiển thị _Nội dung ẩn"
+msgstr "Hiển thị _Khung Bên"
 
 #: ../src/main-win-ui.c:203
 msgid "_Icon View"
@@ -565,15 +562,15 @@ msgstr "Kiểu hiển thị _Chi tiết"
 
 #: ../src/main-win-ui.c:225
 msgid "Places"
-msgstr ""
+msgstr "Nơi"
 
 #: ../src/main-win-ui.c:226
 msgid "Directory Tree"
-msgstr ""
+msgstr "Cây Thư mục"
 
 #: ../src/main-win-ui.c:227
 msgid "Remote"
-msgstr ""
+msgstr "Từ xa"
 
 #: ../src/main-win.c:471
 msgid "You are in super user mode"
@@ -676,7 +673,7 @@ msgstr "Mới"
 #, c-format
 msgid "%d item selected"
 msgid_plural "%d items selected"
-msgstr[0] ""
+msgstr[0] "%d mục đã được chọn"
 
 #: ../src/tab-page.c:196
 #, c-format
@@ -687,13 +684,13 @@ msgstr "Không gian trống: %s (Tổng cộng: %s)"
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
-msgstr[0] ""
+msgstr[0] "%d mục"
 
 #: ../src/tab-page.c:216
 #, c-format
 msgid " (%d hidden)"
 msgid_plural " (%d hidden)"
-msgstr[0] ""
+msgstr[0] " (%d đã ẩn)"
 
 #: ../data/pcmanfm.desktop.in.h:1
 msgid "Browse the file system and manage the files"
