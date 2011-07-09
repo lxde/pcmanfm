@@ -2496,7 +2496,7 @@ static gboolean on_drag_drop ( GtkWidget *dest_widget,
     {
         target = fm_dnd_dest_find_target(desktop->dnd_dest, drag_context);
         /* try FmDndDest */
-        ret = fm_dnd_dest_drag_drop(desktop->dnd_dest, drag_context, target, time);
+        ret = fm_dnd_dest_drag_drop(desktop->dnd_dest, drag_context, target, x, y, time);
         if(!ret)
             gtk_drag_finish(drag_context, FALSE, FALSE, time);
     }
