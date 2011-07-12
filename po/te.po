@@ -3,19 +3,20 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-06-13 23:15+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2011-07-12 17:27+0200\n"
+"Last-Translator: PraveenIlla <mail2ipn@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Language: te\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.0.5\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2010"
@@ -439,18 +440,16 @@ msgid "_View"
 msgstr "వీక్షణ (_V)"
 
 #: ../src/main-win-ui.c:161
-#, fuzzy
 msgid "Reload Folder"
-msgstr "తరువాయి సంచయం"
+msgstr "సంచయాన్ని తిరిగినింపు"
 
 #: ../src/main-win-ui.c:161
-#, fuzzy
 msgid "Reload current folder"
-msgstr "మూల సంచయం"
+msgstr "ప్రస్తుత సంచయాన్ని తిరిగినింపు"
 
 #: ../src/main-win-ui.c:162
 msgid "Side Pane"
-msgstr ""
+msgstr "పక్క పట్టీ"
 
 #: ../src/main-win-ui.c:164
 msgid "_Help"
@@ -533,9 +532,8 @@ msgid "Show _Hidden"
 msgstr "దాచబడినవాటిని చూపించు (_H)"
 
 #: ../src/main-win-ui.c:198
-#, fuzzy
 msgid "Show Side Pane"
-msgstr "దాచబడినవాటిని చూపించు (_H)"
+msgstr "పక్క పట్టీని చూపించు"
 
 #: ../src/main-win-ui.c:203
 msgid "_Icon View"
@@ -555,15 +553,15 @@ msgstr "వివరణాత్మక జాబితా వీక్షణం 
 
 #: ../src/main-win-ui.c:225
 msgid "Places"
-msgstr ""
+msgstr "స్థలములు"
 
 #: ../src/main-win-ui.c:226
 msgid "Directory Tree"
-msgstr ""
+msgstr "సంచయపు వృక్షం"
 
 #: ../src/main-win-ui.c:227
 msgid "Remote"
-msgstr ""
+msgstr "దూరస్థం"
 
 #: ../src/main-win.c:471
 msgid "You are in super user mode"
@@ -666,8 +664,8 @@ msgstr "కొత్త"
 #, c-format
 msgid "%d item selected"
 msgid_plural "%d items selected"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d అంశము ఎంచుకోబడింది"
+msgstr[1] "%d అంశాలు ఎంచుకోబడ్డాయి"
 
 #: ../src/tab-page.c:196
 #, c-format
@@ -678,15 +676,15 @@ msgstr "ఖాళీ స్థలము: %s (మొత్తం: %s)"
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d అంశము"
+msgstr[1] "%d అంశాలు"
 
 #: ../src/tab-page.c:216
 #, c-format
 msgid " (%d hidden)"
 msgid_plural " (%d hidden)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "(%d దాచబడింది)"
+msgstr[1] "(%d దాచబడినవి)"
 
 #: ../data/pcmanfm.desktop.in.h:1
 msgid "Browse the file system and manage the files"
