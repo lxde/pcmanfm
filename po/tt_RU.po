@@ -1,0 +1,698 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-06-13 23:15+0200\n"
+"PO-Revision-Date: 2011-07-14 12:53+0200\n"
+"Last-Translator: Ainur <ainur.shakirov.tt@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: tt_RU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Pootle 2.0.5\n"
+
+#: ../data/ui/about.glade.in.h:1
+msgid "Copyright (C) 2009 - 2010"
+msgstr "Copyright (C) 2009 - 2010"
+
+#: ../data/ui/about.glade.in.h:2
+msgid ""
+"Lightweight file manager\n"
+"\n"
+"Developed by Hon Jen Yee (PCMan)"
+msgstr ""
+"Җиңел файл-менеджер\n"
+"\n"
+"Төзүчесе - Hon Jen Yee (PCMan)"
+
+#. Please replace this line with your own names, one name per line.
+#: ../data/ui/about.glade.in.h:6
+msgid "translator-credits"
+msgstr "Ainur Shakirov <ainur.shakirov.tt@gmail.com>"
+
+#: ../data/ui/desktop-pref.glade.h:1
+msgid "<b>Background</b>"
+msgstr "<b>Җирлек</b>"
+
+#: ../data/ui/desktop-pref.glade.h:2
+msgid "<b>Show desktop icons</b>"
+msgstr "<b>Эш өстәлендә билгечекләрне күрсәтергә</b>"
+
+#: ../data/ui/desktop-pref.glade.h:3
+msgid "<b>Text</b>"
+msgstr "<b>Текст</b>"
+
+#: ../data/ui/desktop-pref.glade.h:4
+msgid "Advanced"
+msgstr "Өстәмә көйләүләр"
+
+#: ../data/ui/desktop-pref.glade.h:5
+msgid "Appearance"
+msgstr "Тыш кыяфәте"
+
+#: ../data/ui/desktop-pref.glade.h:6
+msgid "Background color:"
+msgstr "Җирлекнең төсе:"
+
+#: ../data/ui/desktop-pref.glade.h:7 ../data/ui/pref.glade.h:10
+msgid "Center on the screen"
+msgstr "Экранның уртасы буенча"
+
+#: ../data/ui/desktop-pref.glade.h:8
+msgid "Color of label text:"
+msgstr "Файл сылтамасының текст төсе:"
+
+#: ../data/ui/desktop-pref.glade.h:9
+msgid "Color of shadow:"
+msgstr "Күләгә төсе:"
+
+#: ../data/ui/desktop-pref.glade.h:10
+msgid "Desktop Icons"
+msgstr "Эш өстәле билгечекләре"
+
+#: ../data/ui/desktop-pref.glade.h:11 ../src/desktop-ui.c:58
+msgid "Desktop Preferences"
+msgstr "Эш өстәле көйләүләре"
+
+#: ../data/ui/desktop-pref.glade.h:12
+msgid "Fill with background color only"
+msgstr "Җирлек төсе белән генә буярга"
+
+#: ../data/ui/desktop-pref.glade.h:13
+msgid "Font of label text:"
+msgstr "Файл сылтамасының текст хәрефе:"
+
+#: ../data/ui/desktop-pref.glade.h:14
+msgid "Please select an image file"
+msgstr "Рәсем файлын сайлагыз"
+
+#: ../data/ui/desktop-pref.glade.h:15
+msgid "Show \"My Computer\" icon on desktop"
+msgstr "Эш өстәлендә \"Минем компьютер\" билгечеген күрсәтергә"
+
+#: ../data/ui/desktop-pref.glade.h:16
+msgid "Show \"My Documents\" icon on desktop"
+msgstr "Эш өстәлендә \"Минем кдокументлар\" билгечеген күрсәтергә"
+
+#: ../data/ui/desktop-pref.glade.h:17
+msgid "Show \"Trash Bin\" icon on desktop"
+msgstr "Эш өстәлендә \"Чүп чиләге\" билгечеген күрсәтергә"
+
+#: ../data/ui/desktop-pref.glade.h:18
+msgid "Show icons of volumes on desktop"
+msgstr "Эш өстәлендә диск билгечекләрен күрсәтергә"
+
+#: ../data/ui/desktop-pref.glade.h:19
+msgid "Show menus provided by window managers when desktop is clicked"
+msgstr ""
+"Эш өстәленә басуга эш өстәле белән идарә итүченең контекст менюсын "
+"күрсәтергә"
+
+#: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:37
+msgid "Stretch to fill the entire screen"
+msgstr "Бөтен экранга тарттыру"
+
+#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:38
+msgid "Stretch to fit the screen"
+msgstr "Экран зурлыгы буенча тарттыру"
+
+#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:42
+msgid "Tile the image to fill the entire screen"
+msgstr "Бөтен экранга рәсем белән таш итеп җәергә"
+
+#: ../data/ui/desktop-pref.glade.h:23
+msgid "Wallpaper mode:"
+msgstr "Обойның эш тәртибе:"
+
+#: ../data/ui/desktop-pref.glade.h:24
+msgid "Wallpaper:"
+msgstr "Обой:"
+
+#: ../data/ui/pref.glade.h:1
+msgid "<b>Auto-mount</b>"
+msgstr "<b>Автомат кору</b>"
+
+#: ../data/ui/pref.glade.h:2
+msgid "<b>Behavior</b>"
+msgstr "<b>Гадәт</b>"
+
+#: ../data/ui/pref.glade.h:3
+msgid "<b>Default View</b>"
+msgstr "<b>Үрнәкле күренеш</b>"
+
+#: ../data/ui/pref.glade.h:4
+msgid "<b>Icons</b>"
+msgstr "<b>Билгечекләр</b>"
+
+#: ../data/ui/pref.glade.h:5
+msgid "<b>Programs</b>"
+msgstr "<b>Кушымталар</b>"
+
+#: ../data/ui/pref.glade.h:6
+msgid "<b>User Interface</b>"
+msgstr "<b>Кулланучы интерфейсы</b>"
+
+#: ../data/ui/pref.glade.h:7
+msgid "Always show the tab bar"
+msgstr "Өстәмә бит панелен һәрвакыт күрсәтергә"
+
+#: ../data/ui/pref.glade.h:8
+msgid "Archiver integration:"
+msgstr "Архиватор интеграциясе:"
+
+#: ../data/ui/pref.glade.h:9
+msgid "Bookmarks:"
+msgstr "Кыстыргычлар:"
+
+#: ../data/ui/pref.glade.h:11
+msgid "Compact View"
+msgstr "Җыйнак кыяфәт"
+
+#: ../data/ui/pref.glade.h:12
+msgid "Confirm before deleting files"
+msgstr "Файлны бетерү алдыннан раслауны сорау"
+
+#: ../data/ui/pref.glade.h:13
+msgid "Detailed List View"
+msgstr "Җентекле исемлек"
+
+#: ../data/ui/pref.glade.h:14
+msgid "Do not generate thumbnails for files exceeding this size:"
+msgstr "Моннан зуррак файллар өчен миниатюраны чагылдырмаска:"
+
+#: ../data/ui/pref.glade.h:16
+#, no-c-format
+msgid ""
+"Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
+"%s = the command line you want to execute with terminal or su."
+msgstr ""
+"Мисаллар: терминал өчен \"xterm -e %s\" яки икенче кулланучыга күчерү өчен "
+"\"gksu %s\".\n"
+"%s=терминал яки su аша сез җибәрергә теләгән команда."
+
+#: ../data/ui/pref.glade.h:18
+msgid "Hide 'Close tab' buttons"
+msgstr "'Өстәмә битне ябу' төймәсен качырырга"
+
+#: ../data/ui/pref.glade.h:19
+msgid "Hide folder content border"
+msgstr "Каталогның эчтәлек чиген качырырга"
+
+#: ../data/ui/pref.glade.h:20
+msgid "Hide side pane buttons"
+msgstr "Панельнең ян төймәләрен качыру"
+
+#: ../data/ui/pref.glade.h:21
+msgid "Icon View"
+msgstr "Билгечекләр"
+
+#: ../data/ui/pref.glade.h:22
+msgid "Mount mountable volumes automatically on program startup"
+msgstr "Корыла торган дискларны кушымта җибәрелү вакытында автоматик кору"
+
+#: ../data/ui/pref.glade.h:23
+msgid "Mount removable media automatically when they are inserted"
+msgstr "Алынмалы җайланмаларны тоташтырган вакытта автоматик кору"
+
+#: ../data/ui/pref.glade.h:24
+msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
+msgstr "Бетерә торган файлларны бетерү урынына \"чүп чиләгенә\" күчерергә"
+
+#: ../data/ui/pref.glade.h:25
+msgid "Only show thumbnails for local files"
+msgstr "Миниатюраларны локаль файллар өчен генә күрсәтергә"
+
+#: ../data/ui/pref.glade.h:26
+msgid "Open files with single click"
+msgstr "Файлларны бер басудан ачырга"
+
+#: ../data/ui/pref.glade.h:27
+msgid "Opened in Current Tab"
+msgstr "Бу өстәмә биттә ачырга"
+
+#: ../data/ui/pref.glade.h:28
+msgid "Opened in New Tab"
+msgstr "Яңа өстәмә биттә ачырга"
+
+#: ../data/ui/pref.glade.h:29
+msgid "Opened in New Window"
+msgstr "Яңа тәрәзәдә ачырга"
+
+#: ../data/ui/pref.glade.h:30
+msgid "Preferences"
+msgstr "Көйләүләр"
+
+#: ../data/ui/pref.glade.h:31
+msgid "Show available options for removable media when they are inserted"
+msgstr "Тоташтырылган алынмалы җайланмалар өчен булган көйләүләрне күрсәтергә"
+
+#: ../data/ui/pref.glade.h:32
+msgid "Show thumbnails of files"
+msgstr "Миниатюраларны күрсәтергә"
+
+#: ../data/ui/pref.glade.h:33
+msgid "Size of big icons:"
+msgstr "Зур билгечек зурлыгы:"
+
+#: ../data/ui/pref.glade.h:34
+msgid "Size of side pane icons:"
+msgstr "Ян панель билгечек зурлыгы:"
+
+#: ../data/ui/pref.glade.h:35
+msgid "Size of small icons:"
+msgstr "Кече билгечек зурлыгы:"
+
+#: ../data/ui/pref.glade.h:36
+msgid "Size of thumbnails:"
+msgstr "Миниатюра зурлыгы:"
+
+#: ../data/ui/pref.glade.h:39
+msgid "Switch user command:"
+msgstr "Икенче кулланучыга күчерүче команда:"
+
+#: ../data/ui/pref.glade.h:40
+msgid "Terminal emulator:"
+msgstr "Терминал эмуляторы:"
+
+#: ../data/ui/pref.glade.h:41
+msgid "Thumbnail View"
+msgstr "Миниатюралар"
+
+#: ../data/ui/pref.glade.h:43
+msgid "Use SI decimal prefixes instead of IEC binary prefixes"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:44
+msgid "View Mode:"
+msgstr "Күрсәтү шарты:"
+
+#: ../data/ui/pref.glade.h:45
+msgid "_Advanced"
+msgstr "_Өстәмә"
+
+#: ../data/ui/pref.glade.h:46
+msgid "_Display"
+msgstr "_Экран"
+
+#: ../data/ui/pref.glade.h:47
+msgid "_General"
+msgstr "_Төп"
+
+#: ../data/ui/pref.glade.h:48
+msgid "_Volume Management"
+msgstr "_Дисклар белән идарә итү"
+
+#: ../data/ui/autorun.glade.h:1
+msgid "<b>Removable medium is inserted</b>"
+msgstr "<b>Алынмалы вәкил тоташтырылды</b>"
+
+#: ../data/ui/autorun.glade.h:2
+msgid "Detecting..."
+msgstr "Билгеләү..."
+
+#: ../data/ui/autorun.glade.h:3
+msgid "Please select the action you want to perform:"
+msgstr "Теләгән эшне сайлагыз:"
+
+#: ../data/ui/autorun.glade.h:4
+msgid "Removable medium is inserted"
+msgstr "Алынмалы вәкил тоташтырылды"
+
+#: ../data/ui/autorun.glade.h:5
+msgid "Type of medium:"
+msgstr "Вәкил төре:"
+
+#: ../src/volume-manager.c:150
+msgid "Removable Disk"
+msgstr "Алынмалы диск"
+
+#: ../src/volume-manager.c:209
+msgid "Open in File Manager"
+msgstr "Файл-менеджерда ачу"
+
+#: ../src/desktop-ui.c:53
+msgid "_Invert Selection"
+msgstr ""
+
+#: ../src/desktop-ui.c:54 ../src/main-win-ui.c:163
+msgid "_Sort Files"
+msgstr ""
+
+#. for popup menu
+#: ../src/desktop-ui.c:55 ../src/main-win-ui.c:189
+msgid "Create _New..."
+msgstr ""
+
+#: ../src/desktop-ui.c:56 ../src/main-win-ui.c:190
+msgid "Folder"
+msgstr "Каталог"
+
+#: ../src/desktop-ui.c:57 ../src/main-win-ui.c:191
+msgid "Blank File"
+msgstr "Буш файл"
+
+#: ../src/desktop-ui.c:69 ../src/main-win-ui.c:217
+msgid "By _Name"
+msgstr "_Исем буенча"
+
+#: ../src/desktop-ui.c:70 ../src/main-win-ui.c:218
+msgid "By _Modification Time"
+msgstr "_Үзгәртү вакыты буенча"
+
+#: ../src/desktop-ui.c:71 ../src/main-win-ui.c:219
+msgid "By _Size"
+msgstr "_Зурлыгы буенча"
+
+#: ../src/desktop-ui.c:72 ../src/main-win-ui.c:220
+msgid "By File _Type"
+msgstr "Файл _төре буенча"
+
+#: ../src/desktop-ui.c:88 ../src/main-win-ui.c:243
+msgid "Open in New Tab"
+msgstr "Яңа өстәмә биттә ачырга"
+
+#: ../src/desktop-ui.c:89 ../src/main-win-ui.c:244
+msgid "Open in New Window"
+msgstr "Яңа тәрәзәдә ачырга"
+
+#: ../src/desktop-ui.c:91 ../src/main-win-ui.c:246
+msgid "Open in _Terminal"
+msgstr "_Терминалда ачырга"
+
+#: ../src/desktop-ui.c:107
+msgid "Stick to Current Position"
+msgstr "Бу торышта беркетү"
+
+#: ../src/desktop-ui.c:112
+msgid "Snap to Grid"
+msgstr "Ятьмәгә бәйләп кую"
+
+#: ../src/main-win-ui.c:143
+msgid "_File"
+msgstr "_Файл"
+
+#: ../src/main-win-ui.c:144
+msgid "_New Window"
+msgstr "_Яңа тәрәзә"
+
+#: ../src/main-win-ui.c:145
+msgid "New _Tab"
+msgstr "Яңа _өстәмә бит"
+
+#: ../src/main-win-ui.c:146
+msgid "_Close Tab"
+msgstr "Өстәмә битне _ябу"
+
+#: ../src/main-win-ui.c:147
+msgid "Close Window"
+msgstr "Тәрәзәне ябу"
+
+#: ../src/main-win-ui.c:148
+msgid "_Edit"
+msgstr "_Үзгәртү"
+
+#: ../src/main-win-ui.c:153
+msgid "Rename"
+msgstr "Икенче исем кушу"
+
+#: ../src/main-win-ui.c:154
+msgid "Create Symlink"
+msgstr "Тамгалы сылтама төзү"
+
+#: ../src/main-win-ui.c:155
+msgid "Move To..."
+msgstr ""
+
+#: ../src/main-win-ui.c:156
+msgid "Copy To..."
+msgstr ""
+
+#: ../src/main-win-ui.c:158
+msgid "Invert Selection"
+msgstr ""
+
+#: ../src/main-win-ui.c:160
+msgid "_View"
+msgstr "_Күренеш"
+
+#: ../src/main-win-ui.c:161
+msgid "Reload Folder"
+msgstr "Каталогны яңарту"
+
+#: ../src/main-win-ui.c:161
+msgid "Reload current folder"
+msgstr "Бу каталогны яңарту"
+
+#: ../src/main-win-ui.c:162
+msgid "Side Pane"
+msgstr "Як панеле"
+
+#: ../src/main-win-ui.c:164
+msgid "_Help"
+msgstr "_Белешмә"
+
+#: ../src/main-win-ui.c:166
+msgid "_Go"
+msgstr "_Күчү"
+
+#: ../src/main-win-ui.c:167
+msgid "Previous Folder"
+msgstr "Моннан элекке каталог"
+
+#: ../src/main-win-ui.c:168
+msgid "Next Folder"
+msgstr "Алдагы каталог"
+
+#: ../src/main-win-ui.c:169
+msgid "Parent Folder"
+msgstr ""
+
+#: ../src/main-win-ui.c:169
+msgid "Go to parent Folder"
+msgstr ""
+
+#: ../src/main-win-ui.c:170
+msgid "Home Folder"
+msgstr "Өй каталогы"
+
+#: ../src/main-win-ui.c:171
+msgid "Desktop"
+msgstr "Эш өстәле"
+
+#: ../src/main-win-ui.c:171
+msgid "Desktop Folder"
+msgstr "Эш өстәле каталогы"
+
+#: ../src/main-win-ui.c:172
+msgid "My Computer"
+msgstr "Минем компьютер"
+
+#: ../src/main-win-ui.c:173
+msgid "Trash Can"
+msgstr "Чүп чиләге"
+
+#: ../src/main-win-ui.c:174
+msgid "Network Drives"
+msgstr "Челтәр җайланмалары"
+
+#: ../src/main-win-ui.c:175
+msgid "Applications"
+msgstr "Кушымталар"
+
+#: ../src/main-win-ui.c:175
+msgid "Installed Applications"
+msgstr "Куелган кушымталар"
+
+#: ../src/main-win-ui.c:177
+msgid "_Bookmarks"
+msgstr "_Кыстыргычлар"
+
+#: ../src/main-win-ui.c:178
+msgid "Add To Bookmarks"
+msgstr "Кыстыргыч өстәү"
+
+#: ../src/main-win-ui.c:179
+msgid "_Tools"
+msgstr "_Кораллар"
+
+#: ../src/main-win-ui.c:180
+msgid "Open Current Folder in _Terminal"
+msgstr "Бу каталогны _терминалда ачырга"
+
+#: ../src/main-win-ui.c:181
+msgid "Open Current Folder as _Root"
+msgstr "Бу каталогны _Root аша ачырга"
+
+#: ../src/main-win-ui.c:197
+msgid "Show _Hidden"
+msgstr "Яшерен файлларны чагылдыру"
+
+#: ../src/main-win-ui.c:198
+msgid "Show Side Pane"
+msgstr "Як панельне чагылдыру"
+
+#: ../src/main-win-ui.c:203
+msgid "_Icon View"
+msgstr "_Билгечекләр"
+
+#: ../src/main-win-ui.c:204
+msgid "_Compact View"
+msgstr "_Җыйнак кыяфәт"
+
+#: ../src/main-win-ui.c:205
+msgid "_Thumbnail View"
+msgstr "_Миниатюралар"
+
+#: ../src/main-win-ui.c:206
+msgid "Detailed _List View"
+msgstr "Җентекле _исемлек"
+
+#: ../src/main-win-ui.c:225
+msgid "Places"
+msgstr "Урыннар"
+
+#: ../src/main-win-ui.c:226
+msgid "Directory Tree"
+msgstr "Каталоглар агачы"
+
+#: ../src/main-win-ui.c:227
+msgid "Remote"
+msgstr "Челтәр"
+
+#: ../src/main-win.c:471
+msgid "You are in super user mode"
+msgstr "Сез баш кулланучы тәртибендә"
+
+#: ../src/main-win.c:590
+msgid "Switch user command is not set."
+msgstr "Икенче кулланучыга күчү командасы теркәлмәгән."
+
+#: ../src/main-win.c:1006
+#, c-format
+msgid ""
+"Add following folder to bookmarks:\n"
+"'%s'\n"
+"Enter a name for the new bookmark item:"
+msgstr ""
+"Каталогны кыстыргычларга өстәү:\n"
+"'%s'\n"
+"Яңа кыстыргыч өчен исем кушыгыз:"
+
+#: ../src/main-win.c:1010
+msgid "Add to Bookmarks"
+msgstr "Кыстыргыч өстәү"
+
+#. options only acceptable by first pcmanfm instance. These options are not passed through IPC
+#: ../src/pcmanfm.c:72
+msgid "Name of configuration profile"
+msgstr "Көйләү профиле исеме"
+
+#: ../src/pcmanfm.c:73
+msgid "Run PCManFM as a daemon"
+msgstr "PCManFM кушымтасын демон итеп җибәрү"
+
+#: ../src/pcmanfm.c:74
+msgid "No function. Just to be compatible with nautilus"
+msgstr "Функция юк. Nautilus белән туры килү өчен"
+
+#. options that are acceptable for every instance of pcmanfm and will be passed through IPC.
+#: ../src/pcmanfm.c:77
+msgid "Launch desktop manager"
+msgstr "Эш өстәле белән идарә итүчене җибәрү"
+
+#: ../src/pcmanfm.c:78
+msgid "Turn off desktop manager if it's running"
+msgstr "Ул җибәрелгән булса эш өстәле белән идарә итүчене сүндерү"
+
+#: ../src/pcmanfm.c:79
+msgid "Open desktop preference dialog"
+msgstr "Эш өстәленең көйләү диалогын ачырга"
+
+#: ../src/pcmanfm.c:80
+msgid "Set desktop wallpaper"
+msgstr "Эш өстәле обоен куярга"
+
+#: ../src/pcmanfm.c:80
+msgid "<image file>"
+msgstr "<рәсем файлы>"
+
+#: ../src/pcmanfm.c:81
+msgid "Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"
+msgstr "Эш өстәл обойның тәртибе <тәртип>=(color|stretch|fit|center|tile)"
+
+#: ../src/pcmanfm.c:81
+msgid "<mode>"
+msgstr "<тәртип>"
+
+#: ../src/pcmanfm.c:82
+msgid ""
+"Open preference dialog. 'n' is number of the page you want to show (1, 2, "
+"3...)."
+msgstr ""
+
+#. { "new-win", '\0', 'n', G_OPTION_ARG_NONE, &new_win, N_("Open new window"), NULL },
+#. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
+#: ../src/pcmanfm.c:85
+msgid "[FILE1, FILE2,...]"
+msgstr "[FILE1, FILE2,...]"
+
+#: ../src/pcmanfm.c:455
+msgid "Terminal emulator is not set."
+msgstr "Терминал эмуляторы күрсәтелмәгән."
+
+#: ../src/pcmanfm.c:507
+msgid "Enter a name for the newly created folder:"
+msgstr ""
+
+#: ../src/pcmanfm.c:509
+msgid "Enter a name for the newly created file:"
+msgstr ""
+
+#: ../src/pcmanfm.c:510
+msgid "Create New..."
+msgstr ""
+
+#: ../src/pcmanfm.c:510
+msgid "New"
+msgstr "Яңа"
+
+#: ../src/tab-page.c:174
+#, c-format
+msgid "%d item selected"
+msgid_plural "%d items selected"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../src/tab-page.c:196
+#, c-format
+msgid "Free space: %s (Total: %s)"
+msgstr ""
+
+#: ../src/tab-page.c:215
+#, c-format
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../src/tab-page.c:216
+#, c-format
+msgid " (%d hidden)"
+msgid_plural " (%d hidden)"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../data/pcmanfm.desktop.in.h:1
+msgid "Browse the file system and manage the files"
+msgstr ""
+
+#: ../data/pcmanfm.desktop.in.h:2
+msgid "File Manager"
+msgstr "Файл-менеджер"
