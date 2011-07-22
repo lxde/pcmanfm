@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-07-20 16:23+0200\n"
-"PO-Revision-Date: 2011-07-14 12:53+0200\n"
+"PO-Revision-Date: 2011-07-22 07:32+0200\n"
 "Last-Translator: Ainur <ainur.shakirov.tt@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: tt_RU\n"
@@ -198,7 +198,7 @@ msgstr ""
 
 #: ../data/ui/pref.glade.h:18
 msgid "Hide 'Close tab' buttons"
-msgstr "'Өстәмә битне ябу' төймәсен качырырга"
+msgstr "«Өстәмә битне ябу» төймәсен качырырга"
 
 #: ../data/ui/pref.glade.h:19
 msgid "Hide folder content border"
@@ -287,6 +287,7 @@ msgstr "Миниатюралар"
 #: ../data/ui/pref.glade.h:43
 msgid "Use SI decimal prefixes instead of IEC binary prefixes"
 msgstr ""
+"IEC алкушымчалар урынына СИ системаның унарлы алкушымчаларның кулланырга"
 
 #: ../data/ui/pref.glade.h:44
 msgid "View Mode:"
@@ -338,16 +339,16 @@ msgstr "Файл-менеджерда ачу"
 
 #: ../src/desktop-ui.c:53
 msgid "_Invert Selection"
-msgstr ""
+msgstr "_Сайлаганны бору"
 
 #: ../src/desktop-ui.c:54 ../src/main-win-ui.c:163
 msgid "_Sort Files"
-msgstr ""
+msgstr "_Файлларны сортлау"
 
 #. for popup menu
 #: ../src/desktop-ui.c:55 ../src/main-win-ui.c:189
 msgid "Create _New..."
-msgstr ""
+msgstr "_Яңа ... төзү"
 
 #: ../src/desktop-ui.c:56 ../src/main-win-ui.c:190
 msgid "Folder"
@@ -427,15 +428,15 @@ msgstr "Тамгалы сылтама төзү"
 
 #: ../src/main-win-ui.c:155
 msgid "Move To..."
-msgstr ""
+msgstr "Монда күчерергә..."
 
 #: ../src/main-win-ui.c:156
 msgid "Copy To..."
-msgstr ""
+msgstr "Монда күчермә ясарга..."
 
 #: ../src/main-win-ui.c:158
 msgid "Invert Selection"
-msgstr ""
+msgstr "Сайлаганны бору"
 
 #: ../src/main-win-ui.c:160
 msgid "_View"
@@ -471,11 +472,11 @@ msgstr "Алдагы каталог"
 
 #: ../src/main-win-ui.c:169
 msgid "Parent Folder"
-msgstr ""
+msgstr "Ата-ана каталогы"
 
 #: ../src/main-win-ui.c:169
 msgid "Go to parent Folder"
-msgstr ""
+msgstr "Ата-ана каталогына күчү"
 
 #: ../src/main-win-ui.c:170
 msgid "Home Folder"
@@ -634,7 +635,7 @@ msgstr "<тәртип>"
 msgid ""
 "Open preference dialog. 'n' is number of the page you want to show (1, 2, "
 "3...)."
-msgstr ""
+msgstr "Көйләү диалогын ача. «n» - чагылдырган битнең саны (1, 2, 3,...)."
 
 #. { "new-win", '\0', 'n', G_OPTION_ARG_NONE, &new_win, N_("Open new window"), NULL },
 #. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
@@ -648,15 +649,15 @@ msgstr "Терминал эмуляторы күрсәтелмәгән."
 
 #: ../src/pcmanfm.c:507
 msgid "Enter a name for the newly created folder:"
-msgstr ""
+msgstr "Яңа каталогка исем кушыгыз:"
 
 #: ../src/pcmanfm.c:509
 msgid "Enter a name for the newly created file:"
-msgstr ""
+msgstr "Яңа файлга исем кушыгыз:"
 
 #: ../src/pcmanfm.c:510
 msgid "Create New..."
-msgstr ""
+msgstr "Яңа ... төзү"
 
 #: ../src/pcmanfm.c:510
 msgid "New"
@@ -666,31 +667,28 @@ msgstr "Яңа"
 #, c-format
 msgid "%d item selected"
 msgid_plural "%d items selected"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d өлеш сайланган"
 
 #: ../src/tab-page.c:196
 #, c-format
 msgid "Free space: %s (Total: %s)"
-msgstr ""
+msgstr "Буш урын: %s (Барлык: %s)"
 
 #: ../src/tab-page.c:215
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d өлеш"
 
 #: ../src/tab-page.c:216
 #, c-format
 msgid " (%d hidden)"
 msgid_plural " (%d hidden)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] " (%d качырылган)"
 
 #: ../data/pcmanfm.desktop.in.h:1
 msgid "Browse the file system and manage the files"
-msgstr ""
+msgstr "Файл системасын карау һәм файллар белән идарә итү"
 
 #: ../data/pcmanfm.desktop.in.h:2
 msgid "File Manager"
