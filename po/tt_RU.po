@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-07-20 16:23+0200\n"
-"PO-Revision-Date: 2011-07-22 07:32+0200\n"
+"PO-Revision-Date: 2011-07-26 13:50+0200\n"
 "Last-Translator: Ainur <ainur.shakirov.tt@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: tt_RU\n"
@@ -55,7 +55,7 @@ msgstr "Өстәмә көйләүләр"
 
 #: ../data/ui/desktop-pref.glade.h:5
 msgid "Appearance"
-msgstr "Тыш кыяфәте"
+msgstr "Тышкы кыяфәт"
 
 #: ../data/ui/desktop-pref.glade.h:6
 msgid "Background color:"
@@ -99,7 +99,7 @@ msgstr "Эш өстәлендә \"Минем компьютер\" билгече
 
 #: ../data/ui/desktop-pref.glade.h:16
 msgid "Show \"My Documents\" icon on desktop"
-msgstr "Эш өстәлендә \"Минем кдокументлар\" билгечеген күрсәтергә"
+msgstr "Эш өстәлендә \"Минем документлар\" билгечеген күрсәтергә"
 
 #: ../data/ui/desktop-pref.glade.h:17
 msgid "Show \"Trash Bin\" icon on desktop"
@@ -164,7 +164,7 @@ msgstr "Өстәмә бит панелен һәрвакыт күрсәтергә
 
 #: ../data/ui/pref.glade.h:8
 msgid "Archiver integration:"
-msgstr "Архиватор интеграциясе:"
+msgstr "Архиватор:"
 
 #: ../data/ui/pref.glade.h:9
 msgid "Bookmarks:"
@@ -184,7 +184,7 @@ msgstr "Җентекле исемлек"
 
 #: ../data/ui/pref.glade.h:14
 msgid "Do not generate thumbnails for files exceeding this size:"
-msgstr "Моннан зуррак файллар өчен миниатюраны чагылдырмаска:"
+msgstr "Моннан зуррак файллар өчен кече рәсемне чагылдырмаска:"
 
 #: ../data/ui/pref.glade.h:16
 #, no-c-format
@@ -192,8 +192,8 @@ msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
 "%s = the command line you want to execute with terminal or su."
 msgstr ""
-"Мисаллар: терминал өчен \"xterm -e %s\" яки икенче кулланучыга күчерү өчен "
-"\"gksu %s\".\n"
+"Мисаллар: терминал өчен «xterm -e %s» яки икенче кулланучыга күчерү өчен "
+"«gksu %s».\n"
 "%s=терминал яки su аша сез җибәрергә теләгән команда."
 
 #: ../data/ui/pref.glade.h:18
@@ -222,7 +222,7 @@ msgstr "Алынмалы җайланмаларны тоташтырган ва�
 
 #: ../data/ui/pref.glade.h:24
 msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
-msgstr "Бетерә торган файлларны бетерү урынына \"чүп чиләгенә\" күчерергә"
+msgstr "Бетерә торган файлларны юк итү урынына «чүп чиләгенә» күчерергә"
 
 #: ../data/ui/pref.glade.h:25
 msgid "Only show thumbnails for local files"
@@ -270,7 +270,7 @@ msgstr "Кече билгечек зурлыгы:"
 
 #: ../data/ui/pref.glade.h:36
 msgid "Size of thumbnails:"
-msgstr "Миниатюра зурлыгы:"
+msgstr "Кече рәсем зурлыгы:"
 
 #: ../data/ui/pref.glade.h:39
 msgid "Switch user command:"
@@ -282,12 +282,11 @@ msgstr "Терминал эмуляторы:"
 
 #: ../data/ui/pref.glade.h:41
 msgid "Thumbnail View"
-msgstr "Миниатюралар"
+msgstr "Кече рәсемнәр"
 
 #: ../data/ui/pref.glade.h:43
 msgid "Use SI decimal prefixes instead of IEC binary prefixes"
-msgstr ""
-"IEC алкушымчалар урынына СИ системаның унарлы алкушымчаларның кулланырга"
+msgstr "IEC алкушымчалар урынына СИ системаның унарлы алкушымчаларын кулланырга"
 
 #: ../data/ui/pref.glade.h:44
 msgid "View Mode:"
@@ -424,7 +423,7 @@ msgstr "Икенче исем кушу"
 
 #: ../src/main-win-ui.c:154
 msgid "Create Symlink"
-msgstr "Тамгалы сылтама төзү"
+msgstr "Символик сылтама төзү"
 
 #: ../src/main-win-ui.c:155
 msgid "Move To..."
@@ -440,7 +439,7 @@ msgstr "Сайлаганны бору"
 
 #: ../src/main-win-ui.c:160
 msgid "_View"
-msgstr "_Күренеш"
+msgstr "_Кыяфәт"
 
 #: ../src/main-win-ui.c:161
 msgid "Reload Folder"
@@ -464,7 +463,7 @@ msgstr "_Күчү"
 
 #: ../src/main-win-ui.c:167
 msgid "Previous Folder"
-msgstr "Моннан элекке каталог"
+msgstr "Алдынгы каталог"
 
 #: ../src/main-win-ui.c:168
 msgid "Next Folder"
@@ -548,7 +547,7 @@ msgstr "_Җыйнак кыяфәт"
 
 #: ../src/main-win-ui.c:205
 msgid "_Thumbnail View"
-msgstr "_Миниатюралар"
+msgstr "_Кече рәсемнәр"
 
 #: ../src/main-win-ui.c:206
 msgid "Detailed _List View"
