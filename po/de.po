@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm 0.9\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-07-20 16:23+0200\n"
-"PO-Revision-Date: 2011-06-22 08:55+0200\n"
+"PO-Revision-Date: 2011-07-29 22:13+0200\n"
 "Last-Translator: Lutz <lthuns@opensuse.org>\n"
 "Language-Team: German\n"
 "Language: de\n"
@@ -110,7 +110,7 @@ msgstr "»Papierkorb« auf dem Desktop anzeigen"
 
 #: ../data/ui/desktop-pref.glade.h:18
 msgid "Show icons of volumes on desktop"
-msgstr "Zeige Symbole für Datenträger auf dem Desktop"
+msgstr "Symbole für Datenträger auf dem Desktop anzeigen"
 
 #: ../data/ui/desktop-pref.glade.h:19
 msgid "Show menus provided by window managers when desktop is clicked"
@@ -338,7 +338,7 @@ msgstr "Wechseldatenträger"
 
 #: ../src/volume-manager.c:209
 msgid "Open in File Manager"
-msgstr "In einem neuen Reiter öffnen"
+msgstr "Im Datei-Manager öffnen"
 
 #: ../src/desktop-ui.c:53
 msgid "_Invert Selection"
@@ -458,7 +458,7 @@ msgstr "Übergeordneter Ordner"
 
 #: ../src/main-win-ui.c:162
 msgid "Side Pane"
-msgstr ""
+msgstr "Seitenleiste"
 
 #: ../src/main-win-ui.c:164
 msgid "_Help"
@@ -541,9 +541,8 @@ msgid "Show _Hidden"
 msgstr "_Verborgene Dateien anzeigen"
 
 #: ../src/main-win-ui.c:198
-#, fuzzy
 msgid "Show Side Pane"
-msgstr "_Verborgene Dateien anzeigen"
+msgstr "Seitenleiste anzeigen"
 
 #: ../src/main-win-ui.c:203
 msgid "_Icon View"
@@ -563,15 +562,16 @@ msgstr "_Detailansicht"
 
 #: ../src/main-win-ui.c:225
 msgid "Places"
-msgstr ""
+msgstr "Orte"
 
 #: ../src/main-win-ui.c:226
 msgid "Directory Tree"
-msgstr ""
+msgstr "Verzeichnisbaum"
 
 #: ../src/main-win-ui.c:227
+#, fuzzy
 msgid "Remote"
-msgstr ""
+msgstr "Entfernt"
 
 # nicht lieber "mit"?
 #: ../src/main-win.c:471
@@ -677,7 +677,7 @@ msgid "New"
 msgstr "Neu"
 
 #: ../src/tab-page.c:174
-#, fuzzy, c-format
+#, c-format
 msgid "%d item selected"
 msgid_plural "%d items selected"
 msgstr[0] "%d Objekt ausgewählt"
@@ -689,7 +689,7 @@ msgid "Free space: %s (Total: %s)"
 msgstr "Freier Speicherplatz: %s (Gesamt: %s)"
 
 #: ../src/tab-page.c:215
-#, fuzzy, c-format
+#, c-format
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] "%d Objekt"
