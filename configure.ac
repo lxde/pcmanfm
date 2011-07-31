@@ -93,7 +93,7 @@ PKG_CHECK_MODULES(GMODULE, [$gmodule_modules])
 AC_SUBST(GMODULE_CFLAGS)
 AC_SUBST(GMODULE_LIBS)
 
-fm_modules="libfm-gtk >= 0.1.15"
+fm_modules="libfm >= 0.1.15 libfm-gtk >= 0.1.15"
 PKG_CHECK_MODULES(FM, [$fm_modules])
 AC_SUBST(FM_CFLAGS)
 AC_SUBST(FM_LIBS)
