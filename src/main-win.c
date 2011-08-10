@@ -1128,7 +1128,7 @@ static void on_tab_page_status_text(FmTabPage* page, guint type, const char* sta
     }
 }
 
-static on_tab_page_chdir(FmTabPage* page, FmPath* path, FmMainWin* win)
+static void on_tab_page_chdir(FmTabPage* page, FmPath* path, FmMainWin* win)
 {
     fm_path_entry_set_path(win->location, path);
     gtk_window_set_title(GTK_WINDOW(win), fm_tab_page_get_title(page));
