@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-07-20 16:23+0200\n"
-"PO-Revision-Date: 2011-09-30 17:40+0200\n"
+"PO-Revision-Date: 2011-10-04 02:05+0200\n"
 "Last-Translator: zvacet <ikoli@yahoo.com>\n"
 "Language-Team: Croatian hr <>\n"
 "Language: hr\n"
@@ -21,7 +21,7 @@ msgstr ""
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2010"
-msgstr "Copyright (C) 2009 - 2010"
+msgstr "Autorska prava (C) 2009 - 2010"
 
 #: ../data/ui/about.glade.in.h:2
 msgid ""
@@ -565,11 +565,11 @@ msgstr ""
 
 #: ../src/main-win-ui.c:227
 msgid "Remote"
-msgstr ""
+msgstr "Udaljeno"
 
 #: ../src/main-win.c:471
 msgid "You are in super user mode"
-msgstr ""
+msgstr "Vi koristite super korisnički način rada"
 
 #: ../src/main-win.c:590
 msgid "Switch user command is not set."
@@ -667,12 +667,12 @@ msgid "New"
 msgstr "Novo"
 
 #: ../src/tab-page.c:174
-#, fuzzy, c-format
+#, c-format
 msgid "%d item selected"
 msgid_plural "%d items selected"
-msgstr[0] "%d stavka"
-msgstr[1] "%d stavke"
-msgstr[2] "%d stavki"
+msgstr[0] "%d stavka odabrana"
+msgstr[1] "%d stavke odabrane"
+msgstr[2] "%d stavki odabranih"
 
 #: ../src/tab-page.c:196
 #, c-format
@@ -680,7 +680,7 @@ msgid "Free space: %s (Total: %s)"
 msgstr "Slobodni prostor: %s (Ukupno: %s)"
 
 #: ../src/tab-page.c:215
-#, fuzzy, c-format
+#, c-format
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] "%d stavka"
