@@ -345,9 +345,8 @@ msgstr "ファイルを整列する(_S)"
 
 #. for popup menu
 #: ../src/desktop-ui.c:55 ../src/main-win-ui.c:189
-#, fuzzy
 msgid "Create _New..."
-msgstr "新規作成中..."
+msgstr "新規作成(_N)..."
 
 #: ../src/desktop-ui.c:56 ../src/main-win-ui.c:190
 msgid "Folder"
@@ -442,18 +441,16 @@ msgid "_View"
 msgstr "表示(_V)"
 
 #: ../src/main-win-ui.c:161
-#, fuzzy
 msgid "Reload Folder"
-msgstr "進む"
+msgstr "フォルダを再読み込み"
 
 #: ../src/main-win-ui.c:161
-#, fuzzy
 msgid "Reload current folder"
-msgstr "親フォルダへ"
+msgstr "現在のフォルダを再読み込み"
 
 #: ../src/main-win-ui.c:162
 msgid "Side Pane"
-msgstr ""
+msgstr "サイドペイン"
 
 #: ../src/main-win-ui.c:164
 msgid "_Help"
@@ -536,9 +533,8 @@ msgid "Show _Hidden"
 msgstr "隠しファイルを表示する"
 
 #: ../src/main-win-ui.c:198
-#, fuzzy
 msgid "Show Side Pane"
-msgstr "隠しファイルを表示する"
+msgstr "サイドペインを表示する"
 
 #: ../src/main-win-ui.c:203
 msgid "_Icon View"
@@ -558,15 +554,15 @@ msgstr "詳細リスト(_L)"
 
 #: ../src/main-win-ui.c:225
 msgid "Places"
-msgstr ""
+msgstr "場所"
 
 #: ../src/main-win-ui.c:226
 msgid "Directory Tree"
-msgstr ""
+msgstr "ディレクトリツリー"
 
 #: ../src/main-win-ui.c:227
 msgid "Remote"
-msgstr ""
+msgstr "リモート"
 
 #: ../src/main-win.c:471
 msgid "You are in super user mode"
@@ -651,9 +647,8 @@ msgid "Terminal emulator is not set."
 msgstr "端末エミュレータが設定されていません。"
 
 #: ../src/pcmanfm.c:507
-#, fuzzy
 msgid "Enter a name for the newly created folder:"
-msgstr "新たに作成するファイルの名前を入力してください:"
+msgstr "新たに作成するフォルダの名前を入力してください:"
 
 #: ../src/pcmanfm.c:509
 msgid "Enter a name for the newly created file:"
@@ -671,7 +666,7 @@ msgstr "New"
 #, c-format
 msgid "%d item selected"
 msgid_plural "%d items selected"
-msgstr[0] ""
+msgstr[0] "%d 個のアイテムが選択されています"
 
 #: ../src/tab-page.c:196
 #, c-format
@@ -682,13 +677,13 @@ msgstr "空き容量: %s (合計: %s)"
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
-msgstr[0] ""
+msgstr[0] "%d 個のアイテム"
 
 #: ../src/tab-page.c:216
 #, c-format
 msgid " (%d hidden)"
 msgid_plural " (%d hidden)"
-msgstr[0] ""
+msgstr[0] " (隠しアイテム %d個)"
 
 #: ../data/pcmanfm.desktop.in.h:1
 msgid "Browse the file system and manage the files"
