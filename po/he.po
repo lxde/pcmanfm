@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-07-20 16:23+0200\n"
-"PO-Revision-Date: 2011-03-08 14:20+0200\n"
+"PO-Revision-Date: 2011-11-13 15:28+0200\n"
 "Last-Translator: Yaron <sh.yaron@gmail.com>\n"
 "Language-Team: \n"
 "Language: he\n"
@@ -27,7 +27,7 @@ msgid ""
 msgstr ""
 "מנהל קבצים קליל\n"
 "\n"
-"פותח על ידי Hon Jen Yee (PCMan)"
+"פותח על ידי Hon Jen Yen (PCMan)‎"
 
 #. Please replace this line with your own names, one name per line.
 #: ../data/ui/about.glade.in.h:6
@@ -143,7 +143,7 @@ msgstr "<b>התנהגות</b>"
 
 #: ../data/ui/pref.glade.h:3
 msgid "<b>Default View</b>"
-msgstr "<b>תצוגת ברירת המחדל</b>"
+msgstr "<b>תצוגת בררת המחדל</b>"
 
 #: ../data/ui/pref.glade.h:4
 msgid "<b>Icons</b>"
@@ -441,19 +441,16 @@ msgid "_View"
 msgstr "_תצוגה"
 
 #: ../src/main-win-ui.c:161
-#, fuzzy
 msgid "Reload Folder"
-msgstr "לתיקייה הבאה"
+msgstr "רענון התיקייה"
 
 #: ../src/main-win-ui.c:161
-#, fuzzy
 msgid "Reload current folder"
-msgstr "תיקיית ההורה"
+msgstr "רענון התיקייה הנוכחית"
 
 #: ../src/main-win-ui.c:162
-#, fuzzy
 msgid "Side Pane"
-msgstr "חלונית _צד"
+msgstr "חלונית צד"
 
 #: ../src/main-win-ui.c:164
 msgid "_Help"
@@ -536,9 +533,8 @@ msgid "Show _Hidden"
 msgstr "הצגת _מוסתרים"
 
 #: ../src/main-win-ui.c:198
-#, fuzzy
 msgid "Show Side Pane"
-msgstr "חלונית _צד"
+msgstr "הצגת חלונית צד"
 
 #: ../src/main-win-ui.c:203
 msgid "_Icon View"
@@ -558,7 +554,7 @@ msgstr "תצוגת רשימה מ_פורטת"
 
 #: ../src/main-win-ui.c:225
 msgid "Places"
-msgstr ""
+msgstr "מיקומים"
 
 #: ../src/main-win-ui.c:226
 msgid "Directory Tree"
@@ -566,7 +562,7 @@ msgstr "עץ תיקיות"
 
 #: ../src/main-win-ui.c:227
 msgid "Remote"
-msgstr ""
+msgstr "מרוחק"
 
 #: ../src/main-win.c:471
 msgid "You are in super user mode"
@@ -667,11 +663,11 @@ msgid "New"
 msgstr "חדש"
 
 #: ../src/tab-page.c:174
-#, fuzzy, c-format
+#, c-format
 msgid "%d item selected"
 msgid_plural "%d items selected"
-msgstr[0] "נבחר פריט אחד ‎(%s)%s"
-msgstr[1] "%d פריטים נבחרו ‎(%s)%s"
+msgstr[0] "נבחר פריט אחד"
+msgstr[1] "נבחרו %d פריטים"
 
 #: ../src/tab-page.c:196
 #, c-format
@@ -682,15 +678,15 @@ msgstr "מקום פנוי: %s (סך הכל: %s )"
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "פריט אחד"
+msgstr[1] "%d פריטים"
 
 #: ../src/tab-page.c:216
-#, fuzzy, c-format
+#, c-format
 msgid " (%d hidden)"
 msgid_plural " (%d hidden)"
-msgstr[0] "אחד מוסתר"
-msgstr[1] "%d מוסתרים"
+msgstr[0] "(אחד מוסתר)"
+msgstr[1] "(%d מוסתרים)"
 
 #: ../data/pcmanfm.desktop.in.h:1
 msgid "Browse the file system and manage the files"
