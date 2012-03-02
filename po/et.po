@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-07-20 16:23+0200\n"
-"PO-Revision-Date: 2012-01-22 18:39+0200\n"
+"PO-Revision-Date: 2012-03-02 11:08+0200\n"
 "Last-Translator: Anari <anari.jalakas@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: et\n"
@@ -28,14 +28,16 @@ msgid ""
 "\n"
 "Developed by Hon Jen Yee (PCMan)"
 msgstr ""
-"Kergekaaluline failihaldur\n"
+"Sulgkerge failihaldur\n"
 "\n"
-"Väljatöötanud Hon Jen Yee (PCMan)"
+"Autor: Hon Jen Yee (PCMan)"
 
 #. Please replace this line with your own names, one name per line.
 #: ../data/ui/about.glade.in.h:6
 msgid "translator-credits"
-msgstr "Anari Jalakas"
+msgstr ""
+"Anari Jalakas <anari.jalakas@gmail.com>, 2012\n"
+"veeall, 2012"
 
 #: ../data/ui/desktop-pref.glade.h:1
 msgid "<b>Background</b>"
@@ -43,7 +45,7 @@ msgstr "<b>Taust</b>"
 
 #: ../data/ui/desktop-pref.glade.h:2
 msgid "<b>Show desktop icons</b>"
-msgstr "<b>Töölauaikoonide näitamine</b>"
+msgstr "<b>Näita töölaua ikoone</b>"
 
 #: ../data/ui/desktop-pref.glade.h:3
 msgid "<b>Text</b>"
@@ -59,11 +61,11 @@ msgstr "Välimus"
 
 #: ../data/ui/desktop-pref.glade.h:6
 msgid "Background color:"
-msgstr "Taustavärv:"
+msgstr "Tausta värv:"
 
 #: ../data/ui/desktop-pref.glade.h:7 ../data/ui/pref.glade.h:10
 msgid "Center on the screen"
-msgstr "Ekraani keskel"
+msgstr "Joonda keskele"
 
 #: ../data/ui/desktop-pref.glade.h:8
 msgid "Color of label text:"
@@ -75,7 +77,7 @@ msgstr "Varju värv:"
 
 #: ../data/ui/desktop-pref.glade.h:10
 msgid "Desktop Icons"
-msgstr "Töölauaikoonid"
+msgstr "Töölaua ikoonid"
 
 #: ../data/ui/desktop-pref.glade.h:11 ../src/desktop-ui.c:58
 msgid "Desktop Preferences"
@@ -83,47 +85,47 @@ msgstr "Töölaua eelistused"
 
 #: ../data/ui/desktop-pref.glade.h:12
 msgid "Fill with background color only"
-msgstr "Täida ainult taustavärviga"
+msgstr "Ainult taustavärv"
 
 #: ../data/ui/desktop-pref.glade.h:13
 msgid "Font of label text:"
-msgstr "Pealkirja font:"
+msgstr "Teksti font:"
 
 #: ../data/ui/desktop-pref.glade.h:14
 msgid "Please select an image file"
-msgstr "Palun vali pildifail"
+msgstr "Vali pildifail"
 
 #: ../data/ui/desktop-pref.glade.h:15
 msgid "Show \"My Computer\" icon on desktop"
-msgstr "Näita töölaual \"Minu arvuti\" ikooni"
+msgstr "Näita töölaual kausta \"Minu arvuti\""
 
 #: ../data/ui/desktop-pref.glade.h:16
 msgid "Show \"My Documents\" icon on desktop"
-msgstr "Näita töölaual \"Minu dokumendid\" ikooni"
+msgstr "Näita töölaual kausta \"Minu dokumendid\""
 
 #: ../data/ui/desktop-pref.glade.h:17
 msgid "Show \"Trash Bin\" icon on desktop"
-msgstr "Näita töölaual \"Prügikast\" ikooni"
+msgstr "Näita töölaual kausta \"Prügikorv\""
 
 #: ../data/ui/desktop-pref.glade.h:18
 msgid "Show icons of volumes on desktop"
-msgstr "Näita töölaual ketaste ikoone"
+msgstr "Näita töölaual kettaseadmete ikoone"
 
 #: ../data/ui/desktop-pref.glade.h:19
 msgid "Show menus provided by window managers when desktop is clicked"
-msgstr "Näita töölauale klõpsamisel aknahalduri menüüd"
+msgstr "Ava töölaual klõpsates aknahalduri menüü"
 
 #: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:37
 msgid "Stretch to fill the entire screen"
-msgstr "Venita kogu ekraani täitmiseks"
+msgstr "Suurenda töölaua mõõtmeteni"
 
 #: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:38
 msgid "Stretch to fit the screen"
-msgstr "Venita ekraanile sobitumiseks"
+msgstr "Vähenda töölaua mõõtmeteni"
 
 #: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:42
 msgid "Tile the image to fill the entire screen"
-msgstr "Pildi plaatimine kogu ekraani täitmiseks"
+msgstr "Kasuta pilti mosaiigina"
 
 #: ../data/ui/desktop-pref.glade.h:23
 msgid "Wallpaper mode:"
@@ -135,7 +137,7 @@ msgstr "Taustapilt:"
 
 #: ../data/ui/pref.glade.h:1
 msgid "<b>Auto-mount</b>"
-msgstr "<b>Automaatne-haakimine</b>"
+msgstr "<b>Ühenda automaatselt</b>"
 
 #: ../data/ui/pref.glade.h:2
 msgid "<b>Behavior</b>"
@@ -159,7 +161,7 @@ msgstr "<b>Kasutajaliides</b>"
 
 #: ../data/ui/pref.glade.h:7
 msgid "Always show the tab bar"
-msgstr "Kaartide riba on alati nähtaval"
+msgstr "Kaardiriba näidatakse alati"
 
 #: ../data/ui/pref.glade.h:8
 msgid "Archiver integration:"
@@ -171,19 +173,19 @@ msgstr "Järjehoidjad:"
 
 #: ../data/ui/pref.glade.h:11
 msgid "Compact View"
-msgstr "Kompaktne vaade"
+msgstr "Kompaktvaade"
 
 #: ../data/ui/pref.glade.h:12
 msgid "Confirm before deleting files"
-msgstr "Kinnitamine enne failide kustutamist"
+msgstr "Küis enne failide kustutamist"
 
 #: ../data/ui/pref.glade.h:13
 msgid "Detailed List View"
-msgstr "Detailne nimekirjavaade"
+msgstr "Detailne vaade"
 
 #: ../data/ui/pref.glade.h:14
 msgid "Do not generate thumbnails for files exceeding this size:"
-msgstr "Ei loo pisipilte suurematele failidele kui:"
+msgstr "Ära loo pisipilte suurematest failidest kui:"
 
 #: ../data/ui/pref.glade.h:16
 #, no-c-format
@@ -191,16 +193,17 @@ msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
 "%s = the command line you want to execute with terminal or su."
 msgstr ""
-"Näited: \"xterm -e %s\" terminali jaoks või \"gksu %s\" kasutaja vahetamiseks.\n"
-"%s = käsk, mida soovite teostada terminalis või kasutades su."
+"Näiteks: \"xterm -e %s\" terminali jaoks või \"gksu %s\" muu kasutajana "
+"käivitamiseks.\n"
+"%s = käsklus mida soovid terminalis \"su\" abil käivitada."
 
 #: ../data/ui/pref.glade.h:18
 msgid "Hide 'Close tab' buttons"
-msgstr "Peida 'Kaardi sulgemise' nupp"
+msgstr "Peida 'Sulge kaart' nupp"
 
 #: ../data/ui/pref.glade.h:19
 msgid "Hide folder content border"
-msgstr "Peida kausta sisu piir"
+msgstr "Peida kaustavaate äärisjoon"
 
 #: ../data/ui/pref.glade.h:20
 msgid "Hide side pane buttons"
@@ -212,35 +215,35 @@ msgstr "Ikoonivaade"
 
 #: ../data/ui/pref.glade.h:22
 msgid "Mount mountable volumes automatically on program startup"
-msgstr "Haagi ühendatavad andmeallikad automaatselt programmi käivitumisel"
+msgstr "Ühenda kettaseadmed rakenduse käivitumisel automaatselt"
 
 #: ../data/ui/pref.glade.h:23
 msgid "Mount removable media automatically when they are inserted"
-msgstr "Haagi eemaldatavad andmekandjad automaatselt, kui nad sisestatakse"
+msgstr "Haagi eemaldatavad andmekandjad nende ühendamisel automaatselt"
 
 #: ../data/ui/pref.glade.h:24
 msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
-msgstr "Liiguta kustutatud failid \"prügikasti\" ilma kettalt kustutamata"
+msgstr "Liiguta kustutatavad failid prügikorvi"
 
 #: ../data/ui/pref.glade.h:25
 msgid "Only show thumbnails for local files"
-msgstr "Pisipilte näidatakse ainult kohalike failidega"
+msgstr "Pisipilte kuvatakse ainult kohalike failidega"
 
 #: ../data/ui/pref.glade.h:26
 msgid "Open files with single click"
-msgstr "Failide avamine ühe klikiga"
+msgstr "Failide avamine ühe klõpsuga"
 
 #: ../data/ui/pref.glade.h:27
 msgid "Opened in Current Tab"
-msgstr "Avatud aktiivsel kaardil"
+msgstr "Ava aktiivsel kaardil"
 
 #: ../data/ui/pref.glade.h:28
 msgid "Opened in New Tab"
-msgstr "Avatud uuel kaardil"
+msgstr "Ava uuel kaardil"
 
 #: ../data/ui/pref.glade.h:29
 msgid "Opened in New Window"
-msgstr "Avatud uues aknas"
+msgstr "Ava uues aknas"
 
 #: ../data/ui/pref.glade.h:30
 msgid "Preferences"
@@ -252,43 +255,43 @@ msgstr "Näita eemaldatava andmekandja sisestamisel kasutatavaid võimalusi"
 
 #: ../data/ui/pref.glade.h:32
 msgid "Show thumbnails of files"
-msgstr "Näita failide pisipilte"
+msgstr "Kuva failide pisipilte"
 
 #: ../data/ui/pref.glade.h:33
 msgid "Size of big icons:"
-msgstr "Suurte ikoonide mõõtmed:"
+msgstr "Ikoonivaate ikoonid:"
 
 #: ../data/ui/pref.glade.h:34
 msgid "Size of side pane icons:"
-msgstr "Küljepaneeli ikoonide mõõtmed:"
+msgstr "Külgpaneeli ikoonid:"
 
 #: ../data/ui/pref.glade.h:35
 msgid "Size of small icons:"
-msgstr "Väikeste ikoonide mõõtmed:"
+msgstr "Väikesed ikoonid:"
 
 #: ../data/ui/pref.glade.h:36
 msgid "Size of thumbnails:"
-msgstr "Pisipiltide mõõtmed:"
+msgstr "Pisipildivaate ikoonid:"
 
 #: ../data/ui/pref.glade.h:39
 msgid "Switch user command:"
-msgstr "Kasutaja vahetamise käsk:"
+msgstr "Käsklus kasutaja vahetamiseks:"
 
 #: ../data/ui/pref.glade.h:40
 msgid "Terminal emulator:"
-msgstr "Terminali emulaator:"
+msgstr "Terminaliemulaator:"
 
 #: ../data/ui/pref.glade.h:41
 msgid "Thumbnail View"
-msgstr "Pisipiltide vaatamine"
+msgstr "Pisipildivaade"
 
 #: ../data/ui/pref.glade.h:43
 msgid "Use SI decimal prefixes instead of IEC binary prefixes"
-msgstr "Kasuta SI kümnendkoha eesliited IEC binaarsete eesliidete asemel"
+msgstr "Kasuta SI-kümnendik eesliiteid IEC-binaarsete asemel"
 
 #: ../data/ui/pref.glade.h:44
 msgid "View Mode:"
-msgstr "Vaate režiim:"
+msgstr "Vaated:"
 
 #: ../data/ui/pref.glade.h:45
 msgid "_Advanced"
@@ -300,7 +303,7 @@ msgstr "_Ekraan"
 
 #: ../data/ui/pref.glade.h:47
 msgid "_General"
-msgstr "Ü_ldine"
+msgstr "_Üldine"
 
 #: ../data/ui/pref.glade.h:48
 msgid "_Volume Management"
@@ -312,11 +315,11 @@ msgstr "<b>Ühendati eemaldatav andmekandja</b>"
 
 #: ../data/ui/autorun.glade.h:2
 msgid "Detecting..."
-msgstr "Tuvastamine..."
+msgstr "Tuvastan..."
 
 #: ../data/ui/autorun.glade.h:3
 msgid "Please select the action you want to perform:"
-msgstr "Palun vali soovitud toiming, mida teostada:"
+msgstr "Vali toiming:"
 
 #: ../data/ui/autorun.glade.h:4
 msgid "Removable medium is inserted"
@@ -324,7 +327,7 @@ msgstr "Ühendati eemaldatav andmekandja"
 
 #: ../data/ui/autorun.glade.h:5
 msgid "Type of medium:"
-msgstr "Andmekandja liik:"
+msgstr "Andmekandja tüüp:"
 
 #: ../src/volume-manager.c:150
 msgid "Removable Disk"
@@ -336,11 +339,11 @@ msgstr "Ava failihalduris"
 
 #: ../src/desktop-ui.c:53
 msgid "_Invert Selection"
-msgstr "Val_iku vahetamine"
+msgstr "_Pööra valik"
 
 #: ../src/desktop-ui.c:54 ../src/main-win-ui.c:163
 msgid "_Sort Files"
-msgstr "Failide _sorteerimine"
+msgstr "_Järjesta"
 
 #. for popup menu
 #: ../src/desktop-ui.c:55 ../src/main-win-ui.c:189
@@ -385,11 +388,11 @@ msgstr "Ava _terminalis"
 
 #: ../src/desktop-ui.c:107
 msgid "Stick to Current Position"
-msgstr "Püsi samal positsioonil"
+msgstr "Lukusta praegusele asukohale"
 
 #: ../src/desktop-ui.c:112
 msgid "Snap to Grid"
-msgstr "Võrgustiku punktidesse tõmbumine"
+msgstr "Tõmme alusvõrgule"
 
 #: ../src/main-win-ui.c:143
 msgid "_File"
@@ -409,7 +412,7 @@ msgstr "_Sulge kaart"
 
 #: ../src/main-win-ui.c:147
 msgid "Close Window"
-msgstr "Akna sulgemine"
+msgstr "Sulge aken"
 
 #: ../src/main-win-ui.c:148
 msgid "_Edit"
@@ -417,7 +420,7 @@ msgstr "_Redigeerimine"
 
 #: ../src/main-win-ui.c:153
 msgid "Rename"
-msgstr "Muuda nime"
+msgstr "Nimeta ümber"
 
 #: ../src/main-win-ui.c:154
 msgid "Create Symlink"
@@ -433,7 +436,7 @@ msgstr "Kopeeri..."
 
 #: ../src/main-win-ui.c:158
 msgid "Invert Selection"
-msgstr "Vaheta valik"
+msgstr "Pööra valik"
 
 #: ../src/main-win-ui.c:160
 msgid "_View"
@@ -457,7 +460,7 @@ msgstr "_Abi"
 
 #: ../src/main-win-ui.c:166
 msgid "_Go"
-msgstr "_Mine"
+msgstr "_Liikumine"
 
 #: ../src/main-win-ui.c:167
 msgid "Previous Folder"
@@ -493,7 +496,7 @@ msgstr "Minu arvuti"
 
 #: ../src/main-win-ui.c:173
 msgid "Trash Can"
-msgstr "Prügikast"
+msgstr "Prügikorv"
 
 #: ../src/main-win-ui.c:174
 msgid "Network Drives"
@@ -529,7 +532,7 @@ msgstr "Avatud praegune kaust _Juurkasutajana"
 
 #: ../src/main-win-ui.c:197
 msgid "Show _Hidden"
-msgstr "Näita _peidetud"
+msgstr "Näita _peidetud faile"
 
 #: ../src/main-win-ui.c:198
 msgid "Show Side Pane"
@@ -545,7 +548,7 @@ msgstr "_Kompaktne vaade"
 
 #: ../src/main-win-ui.c:205
 msgid "_Thumbnail View"
-msgstr "_Pisipiltide vaade"
+msgstr "_Pisipildivaade"
 
 #: ../src/main-win-ui.c:206
 msgid "Detailed _List View"
@@ -561,11 +564,11 @@ msgstr "Kaustapuu"
 
 #: ../src/main-win-ui.c:227
 msgid "Remote"
-msgstr "Kaudne"
+msgstr "Võrgus"
 
 #: ../src/main-win.c:471
 msgid "You are in super user mode"
-msgstr "Sa oled adminkasutaja õigustes"
+msgstr "Oled administraatori õigustes"
 
 #: ../src/main-win.c:590
 msgid "Switch user command is not set."
@@ -589,7 +592,7 @@ msgstr "Lisa järjehoidjatesse"
 #. options only acceptable by first pcmanfm instance. These options are not passed through IPC
 #: ../src/pcmanfm.c:72
 msgid "Name of configuration profile"
-msgstr "Konfiguratsiooniprofiili nimi"
+msgstr "Seadistusprofiili nimi"
 
 #: ../src/pcmanfm.c:73
 msgid "Run PCManFM as a daemon"
@@ -610,11 +613,11 @@ msgstr "Lülita töölauahaldur välja, kui see töötab"
 
 #: ../src/pcmanfm.c:79
 msgid "Open desktop preference dialog"
-msgstr "Ava töölaua eelistuste dialoog"
+msgstr "Ava töölaua eelistuste valikud"
 
 #: ../src/pcmanfm.c:80
 msgid "Set desktop wallpaper"
-msgstr "Töölaua ekraanipildi määramine"
+msgstr "Taustapildi määramine"
 
 #: ../src/pcmanfm.c:80
 msgid "<image file>"
@@ -624,17 +627,17 @@ msgstr "<pildifail>"
 msgid "Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"
 msgstr ""
 "Määra töölaua taustapildi režiim. "
-"<viis>=(värviline|venitatud|sobitatud|keskel|plaaditud)"
+"<laad>=(värviline|venitatud|sobitatud|keskel|plaaditud)"
 
 #: ../src/pcmanfm.c:81
 msgid "<mode>"
-msgstr "<viis>"
+msgstr "<laad>"
 
 #: ../src/pcmanfm.c:82
 msgid ""
 "Open preference dialog. 'n' is number of the page you want to show (1, 2, "
 "3...)."
-msgstr "Ava eelistuste dialoog. 'n' on kuvatavate lehtede arv (1, 2, 3...)."
+msgstr "Ava eelistuste dialoog. 'n' on kuvatava lehe number (1, 2, 3...)."
 
 #. { "new-win", '\0', 'n', G_OPTION_ARG_NONE, &new_win, N_("Open new window"), NULL },
 #. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
@@ -690,7 +693,7 @@ msgstr[1] " (%d peidetud)"
 
 #: ../data/pcmanfm.desktop.in.h:1
 msgid "Browse the file system and manage the files"
-msgstr "Failisüsteemi sirvimine ja failide haldamine"
+msgstr "Sirvi failisüsteemi ja halda faile"
 
 #: ../data/pcmanfm.desktop.in.h:2
 msgid "File Manager"
