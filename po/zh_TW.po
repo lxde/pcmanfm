@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-07-20 16:23+0200\n"
-"PO-Revision-Date: 2012-04-14 07:25+0200\n"
+"PO-Revision-Date: 2012-04-16 07:49+0200\n"
 "Last-Translator: Walter <wwycheuk@gmail.com>\n"
 "Language-Team: zh_TW <zh_TW@li.org>\n"
 "Language: zh_TW\n"
@@ -23,7 +23,7 @@ msgstr ""
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2010"
-msgstr "版權所有 (C) 2009"
+msgstr "版權所有 (C) 2009 - 2010"
 
 #: ../data/ui/about.glade.in.h:2
 msgid ""
@@ -126,7 +126,7 @@ msgstr "延展到適合螢幕大小"
 
 #: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:42
 msgid "Tile the image to fill the entire screen"
-msgstr "併排影像填滿整個螢幕"
+msgstr "並排影像填滿整個螢幕"
 
 #: ../data/ui/desktop-pref.glade.h:23
 msgid "Wallpaper mode:"
@@ -162,7 +162,7 @@ msgstr "<b>使用者介面</b>"
 
 #: ../data/ui/pref.glade.h:7
 msgid "Always show the tab bar"
-msgstr ""
+msgstr "一定顯示分頁列"
 
 #: ../data/ui/pref.glade.h:8
 msgid "Archiver integration:"
@@ -219,7 +219,7 @@ msgstr "啟動程式時自動掛載可掛載的磁碟"
 
 #: ../data/ui/pref.glade.h:23
 msgid "Mount removable media automatically when they are inserted"
-msgstr "當可移除媒體被插入時，自動掛載"
+msgstr "當插入可移除媒體時，自動掛載"
 
 #: ../data/ui/pref.glade.h:24
 msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
@@ -251,7 +251,7 @@ msgstr "偏好設定"
 
 #: ../data/ui/pref.glade.h:31
 msgid "Show available options for removable media when they are inserted"
-msgstr "當可移除媒體被插入時，顯示可用的選項"
+msgstr "當插入可移除媒體時，顯示可用的選項"
 
 #: ../data/ui/pref.glade.h:32
 msgid "Show thumbnails of files"
@@ -287,7 +287,7 @@ msgstr "縮圖檢視"
 
 #: ../data/ui/pref.glade.h:43
 msgid "Use SI decimal prefixes instead of IEC binary prefixes"
-msgstr ""
+msgstr "使用 SI 十進制前置字元，而非 IEC 二進制前置字元"
 
 #: ../data/ui/pref.glade.h:44
 msgid "View Mode:"
@@ -319,7 +319,7 @@ msgstr "正在偵測..."
 
 #: ../data/ui/autorun.glade.h:3
 msgid "Please select the action you want to perform:"
-msgstr "請選擇你想要執行的動作："
+msgstr "請選擇想要執行的動作："
 
 #: ../data/ui/autorun.glade.h:4
 msgid "Removable medium is inserted"
@@ -335,7 +335,7 @@ msgstr "可移除磁碟"
 
 #: ../src/volume-manager.c:209
 msgid "Open in File Manager"
-msgstr "在檔案管理程式中開啟"
+msgstr "在檔案管理程式開啟"
 
 #: ../src/desktop-ui.c:53
 msgid "_Invert Selection"
@@ -384,7 +384,7 @@ msgstr "在新視窗開啟"
 
 #: ../src/desktop-ui.c:91 ../src/main-win-ui.c:246
 msgid "Open in _Terminal"
-msgstr "以終端機模擬器開啟(_T)"
+msgstr "以終端機開啟(_T)"
 
 #: ../src/desktop-ui.c:107
 msgid "Stick to Current Position"
@@ -524,7 +524,7 @@ msgstr "工具(_T)"
 
 #: ../src/main-win-ui.c:180
 msgid "Open Current Folder in _Terminal"
-msgstr "以終端機模擬器開啟目前資料夾(_T)"
+msgstr "以終端機開啟目前資料夾(_T)"
 
 #: ../src/main-win-ui.c:181
 msgid "Open Current Folder as _Root"
@@ -667,7 +667,7 @@ msgstr "新增"
 #, c-format
 msgid "%d item selected"
 msgid_plural "%d items selected"
-msgstr[0] "%d 個項目被選取"
+msgstr[0] "已選取 %d 個項目"
 
 #: ../src/tab-page.c:196
 #, c-format
