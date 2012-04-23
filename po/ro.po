@@ -1,0 +1,705 @@
+# Romanian translations for the PCManFM package
+# Traducerea în limba română pentru pachetul PCManFM.
+# Copyright (C) 2012 THE PCManFM'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PCManFM package.
+# Mișu Moldovan <dumol@l10n.ro>, 2012.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: PCManFM 0.9.10\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-04-18 21:04+0300\n"
+"PO-Revision-Date: 2012-04-23 15:57+0200\n"
+"Last-Translator: Mișu <dumol@l10n.ro>\n"
+"Language-Team: Romanian <diacritice@googlegroups.com>\n"
+"Language: ro\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
+"20)) ? 1 : 2);;\n"
+"X-Generator: Pootle 2.0.5\n"
+
+#: ../data/ui/about.glade.in.h:1
+msgid "Copyright (C) 2009 - 2010"
+msgstr "Drepturi de autor (C) 2009 - 2010"
+
+#: ../data/ui/about.glade.in.h:2
+msgid ""
+"Lightweight file manager\n"
+"\n"
+"Developed by Hon Jen Yee (PCMan)"
+msgstr ""
+"Un mic manager de fișiere\n"
+"\n"
+"Dezvoltat de către Hon Jen Yee (PCMan)"
+
+#. Please replace this line with your own names, one name per line.
+#: ../data/ui/about.glade.in.h:6
+msgid "translator-credits"
+msgstr "Mișu Moldovan <dumol@l10n.ro>"
+
+#: ../data/ui/desktop-pref.glade.h:1 ../src/desktop-ui.c:58
+msgid "Desktop Preferences"
+msgstr "Preferințe desktop"
+
+#: ../data/ui/desktop-pref.glade.h:2
+msgid "<b>Background</b>"
+msgstr "<b>Fundal</b>"
+
+#: ../data/ui/desktop-pref.glade.h:3
+msgid "Wallpaper:"
+msgstr "Imagine de fundal:"
+
+#: ../data/ui/desktop-pref.glade.h:4
+msgid "Please select an image file"
+msgstr "Selectați un fișier de tip imagine"
+
+#: ../data/ui/desktop-pref.glade.h:5
+msgid "Background color:"
+msgstr "Culoare de fundal:"
+
+#: ../data/ui/desktop-pref.glade.h:6
+msgid "Wallpaper mode:"
+msgstr "Fundalul este:"
+
+#: ../data/ui/desktop-pref.glade.h:7
+msgid "<b>Text</b>"
+msgstr "<b>Text</b>"
+
+#: ../data/ui/desktop-pref.glade.h:8
+msgid "Font of label text:"
+msgstr "Fontul etichetei de text:"
+
+#: ../data/ui/desktop-pref.glade.h:9
+msgid "Color of label text:"
+msgstr "Culoarea etichetei de text:"
+
+#: ../data/ui/desktop-pref.glade.h:10
+msgid "Color of shadow:"
+msgstr "Culoarea umbrei:"
+
+#: ../data/ui/desktop-pref.glade.h:11
+msgid "Appearance"
+msgstr "Aspect"
+
+#: ../data/ui/desktop-pref.glade.h:12
+msgid "<b>Show desktop icons</b>"
+msgstr "<b>Arată iconițe pe desktop</b>"
+
+#: ../data/ui/desktop-pref.glade.h:13
+msgid "Show \"My Documents\" icon on desktop"
+msgstr "Arată „Documentele mele” pe desktop"
+
+#: ../data/ui/desktop-pref.glade.h:14
+msgid "Show \"My Computer\" icon on desktop"
+msgstr "Arată „Calculatorul meu” pe desktop"
+
+#: ../data/ui/desktop-pref.glade.h:15
+msgid "Show \"Trash Bin\" icon on desktop"
+msgstr "Arată iconița „Coș de gunoi” pe desktop"
+
+#: ../data/ui/desktop-pref.glade.h:16
+msgid "Show icons of volumes on desktop"
+msgstr "Arată iconițele discurilor pe desktop"
+
+#: ../data/ui/desktop-pref.glade.h:17
+msgid "Desktop Icons"
+msgstr "Iconițe pe desktop"
+
+#: ../data/ui/desktop-pref.glade.h:18
+msgid "Show menus provided by window managers when desktop is clicked"
+msgstr "Arată meniul managerului de ferestre la clic pe desktop"
+
+#: ../data/ui/desktop-pref.glade.h:19
+msgid "Advanced"
+msgstr "Avansate"
+
+#: ../data/ui/desktop-pref.glade.h:20
+msgid "Fill with background color only"
+msgstr "Umplut doar cu culoarea fundalului"
+
+#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:38
+msgid "Stretch to fill the entire screen"
+msgstr "Imaginea de fundal întinsă pe tot ecranul"
+
+#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:39
+msgid "Stretch to fit the screen"
+msgstr "Imaginea de fundal întinsă la limita ecranului"
+
+#: ../data/ui/desktop-pref.glade.h:23 ../data/ui/pref.glade.h:40
+msgid "Center on the screen"
+msgstr "Imaginea de fundal centrată pe ecran"
+
+#: ../data/ui/desktop-pref.glade.h:24 ../data/ui/pref.glade.h:41
+msgid "Tile the image to fill the entire screen"
+msgstr "Imaginea de fundal mozaicată pe întreg ecranul"
+
+#: ../data/ui/pref.glade.h:1
+msgid "Preferences"
+msgstr "Preferințe"
+
+#: ../data/ui/pref.glade.h:2
+msgid "<b>Behavior</b>"
+msgstr "<b>Comportament</b>"
+
+#: ../data/ui/pref.glade.h:3
+msgid "Open files with single click"
+msgstr "Deschide fișierele cu un singur clic"
+
+#: ../data/ui/pref.glade.h:4
+msgid "Confirm before deleting files"
+msgstr "Confirmare la ștergerea fișierelor"
+
+#: ../data/ui/pref.glade.h:5
+msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
+msgstr "La ștergere, nu elimina fișierele de pe disc, mută-le în coș"
+
+#: ../data/ui/pref.glade.h:6
+msgid "Bookmarks:"
+msgstr "Favoritele:"
+
+#: ../data/ui/pref.glade.h:7
+msgid "<b>Default View</b>"
+msgstr "<b>Vizualizare implicită</b>"
+
+#: ../data/ui/pref.glade.h:8
+msgid "View Mode:"
+msgstr "Mod de vizualizare:"
+
+#: ../data/ui/pref.glade.h:9
+msgid "_General"
+msgstr "_Generale"
+
+#: ../data/ui/pref.glade.h:10
+msgid "<b>Icons</b>"
+msgstr "<b>Iconițe</b>"
+
+#: ../data/ui/pref.glade.h:11
+msgid "Size of small icons:"
+msgstr "Mărimea iconițelor mici:"
+
+#: ../data/ui/pref.glade.h:12
+msgid "Size of big icons:"
+msgstr "Mărimea iconițelor mari:"
+
+#: ../data/ui/pref.glade.h:13
+msgid "Size of thumbnails:"
+msgstr "Mărimea miniaturilor:"
+
+#: ../data/ui/pref.glade.h:14
+msgid "Size of side pane icons:"
+msgstr "Mărimea iconițelor din vederea laterală:"
+
+#: ../data/ui/pref.glade.h:15
+msgid "Show thumbnails of files"
+msgstr "Arată miniaturi pentru fișiere"
+
+#: ../data/ui/pref.glade.h:16
+msgid "Only show thumbnails for local files"
+msgstr "Arată miniaturi doar pentru fișierele locale"
+
+#: ../data/ui/pref.glade.h:17
+msgid "Do not generate thumbnails for files exceeding this size:"
+msgstr "Fără miniaturi pentru fișierele mai mari de:"
+
+#: ../data/ui/pref.glade.h:18
+msgid "_Display"
+msgstr "A_fișare"
+
+#: ../data/ui/pref.glade.h:19
+msgid "<b>Auto-mount</b>"
+msgstr "<b>Montare automată</b>"
+
+#: ../data/ui/pref.glade.h:20
+msgid "Mount mountable volumes automatically on program startup"
+msgstr "Montează automat volumele montabile la pornirea programului"
+
+#: ../data/ui/pref.glade.h:21
+msgid "Mount removable media automatically when they are inserted"
+msgstr "Montează automat mediile detașabile când sunt inserate"
+
+#: ../data/ui/pref.glade.h:22
+msgid "Show available options for removable media when they are inserted"
+msgstr "Arată opțiunile asociate mediilor detașabile la inserarea acestora"
+
+#: ../data/ui/pref.glade.h:23
+msgid "_Volume Management"
+msgstr "Management de _volume"
+
+#: ../data/ui/pref.glade.h:24
+msgid "<b>Programs</b>"
+msgstr "<b>Programe</b>"
+
+#: ../data/ui/pref.glade.h:25
+msgid "Terminal emulator:"
+msgstr "Emulator de terminal:"
+
+#: ../data/ui/pref.glade.h:26
+msgid "Switch user command:"
+msgstr "Comandă de schimbat utilizatorul:"
+
+#: ../data/ui/pref.glade.h:28
+#, no-c-format
+msgid ""
+"Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
+"%s = the command line you want to execute with terminal or su."
+msgstr ""
+"Exemple: „xterm -e %s” pentru terminal\n"
+"sau „gksu %s” pentru schimbarea utilizatorului.\n"
+"%s = linia de comandă de executat în terminal sau cu „su”."
+
+#: ../data/ui/pref.glade.h:30
+msgid "Archiver integration:"
+msgstr "Arhivator integrat:"
+
+#: ../data/ui/pref.glade.h:31
+msgid "<b>User Interface</b>"
+msgstr "<b>Interfața de utilizare</b>"
+
+#: ../data/ui/pref.glade.h:32
+msgid "Always show the tab bar"
+msgstr "Arată întotdeauna bara cu taburi"
+
+#: ../data/ui/pref.glade.h:33
+msgid "Hide 'Close tab' buttons"
+msgstr "Ascunde butoanele de închidere a taburilor"
+
+#: ../data/ui/pref.glade.h:34
+msgid "Hide side pane buttons"
+msgstr "Ascunde butoanele din vederea laterală"
+
+#: ../data/ui/pref.glade.h:35
+msgid "Hide folder content border"
+msgstr "Ascunde chenarul pentru conținutul unui dosar"
+
+#: ../data/ui/pref.glade.h:36
+msgid "Use SI decimal prefixes instead of IEC binary prefixes"
+msgstr "Utilizează prefixe decimale SI în loc de prefixe binare IEC"
+
+#: ../data/ui/pref.glade.h:37
+msgid "_Advanced"
+msgstr "A_vansate"
+
+#: ../data/ui/pref.glade.h:42
+msgid "Opened in Current Tab"
+msgstr "Se deschid în tabul curent"
+
+#: ../data/ui/pref.glade.h:43
+msgid "Opened in New Tab"
+msgstr "Se deschid într-un tab nou"
+
+#: ../data/ui/pref.glade.h:44
+msgid "Opened in New Window"
+msgstr "Se deschid într-o fereastră nouă"
+
+#: ../data/ui/pref.glade.h:45
+msgid "Icon View"
+msgstr "Vizualizare iconițe"
+
+#: ../data/ui/pref.glade.h:46
+msgid "Compact View"
+msgstr "Vizualizare compactă"
+
+#: ../data/ui/pref.glade.h:47
+msgid "Thumbnail View"
+msgstr "Vizualizare miniaturi"
+
+#: ../data/ui/pref.glade.h:48
+msgid "Detailed List View"
+msgstr "Vizualizare listă detaliată"
+
+#: ../data/ui/autorun.glade.h:1
+msgid "Removable medium is inserted"
+msgstr "S-a inserat un mediu detașabil"
+
+#: ../data/ui/autorun.glade.h:2
+msgid "<b>Removable medium is inserted</b>"
+msgstr "<b>S-a inserat un mediu detașabil</b>"
+
+#: ../data/ui/autorun.glade.h:3
+msgid "Type of medium:"
+msgstr "Tip de mediu:"
+
+#: ../data/ui/autorun.glade.h:4
+msgid "Detecting..."
+msgstr "Se detectează..."
+
+#: ../data/ui/autorun.glade.h:5
+msgid "Please select the action you want to perform:"
+msgstr "Alegeți acțiunea ce doriți să o efectuați:"
+
+#: ../src/volume-manager.c:150
+msgid "Removable Disk"
+msgstr "Disc amovibil"
+
+#: ../src/volume-manager.c:209
+msgid "Open in File Manager"
+msgstr "Deschidere în managerul de fișiere"
+
+#: ../src/desktop-ui.c:53
+msgid "_Invert Selection"
+msgstr "_Inversează selecția"
+
+#: ../src/desktop-ui.c:54 ../src/main-win-ui.c:163
+msgid "_Sort Files"
+msgstr "_Sortează fișierele"
+
+#. for popup menu
+#: ../src/desktop-ui.c:55 ../src/main-win-ui.c:189
+msgid "Create _New..."
+msgstr "Creează un _nou..."
+
+#: ../src/desktop-ui.c:56 ../src/main-win-ui.c:190
+msgid "Folder"
+msgstr "Dosar"
+
+#: ../src/desktop-ui.c:57 ../src/main-win-ui.c:191
+msgid "Blank File"
+msgstr "Fișier gol"
+
+#: ../src/desktop-ui.c:69 ../src/main-win-ui.c:217
+msgid "By _Name"
+msgstr "După _nume"
+
+#: ../src/desktop-ui.c:70 ../src/main-win-ui.c:218
+msgid "By _Modification Time"
+msgstr "După data m_odificării"
+
+#: ../src/desktop-ui.c:71 ../src/main-win-ui.c:219
+msgid "By _Size"
+msgstr "După _mărime"
+
+#: ../src/desktop-ui.c:72 ../src/main-win-ui.c:220
+msgid "By File _Type"
+msgstr "După _tipul de fișiere"
+
+#: ../src/desktop-ui.c:88 ../src/main-win-ui.c:243
+msgid "Open in New Tab"
+msgstr "Deschide într-un tab nou"
+
+#: ../src/desktop-ui.c:89 ../src/main-win-ui.c:244
+msgid "Open in New Window"
+msgstr "Deschide într-o fereastră nouă"
+
+#: ../src/desktop-ui.c:91 ../src/main-win-ui.c:246
+msgid "Open in _Terminal"
+msgstr "Deschide în _terminal"
+
+#: ../src/desktop-ui.c:107
+msgid "Stick to Current Position"
+msgstr "Fixare în poziția curentă"
+
+#: ../src/desktop-ui.c:112
+msgid "Snap to Grid"
+msgstr "Fixează în grilă"
+
+#: ../src/main-win-ui.c:143
+msgid "_File"
+msgstr "_Fișier"
+
+#: ../src/main-win-ui.c:144
+msgid "_New Window"
+msgstr "_Fereastră nouă"
+
+#: ../src/main-win-ui.c:145
+msgid "New _Tab"
+msgstr "_Tab nou"
+
+#: ../src/main-win-ui.c:146
+msgid "_Close Tab"
+msgstr "În_chide tabul"
+
+#: ../src/main-win-ui.c:147
+msgid "Close Window"
+msgstr "Închide fereastra"
+
+#: ../src/main-win-ui.c:148
+msgid "_Edit"
+msgstr "_Editare"
+
+#: ../src/main-win-ui.c:153
+msgid "Rename"
+msgstr "Redenumire"
+
+#: ../src/main-win-ui.c:154
+msgid "Create Symlink"
+msgstr "Creează o legătură"
+
+#: ../src/main-win-ui.c:155
+msgid "Move To..."
+msgstr "Mută în..."
+
+#: ../src/main-win-ui.c:156
+msgid "Copy To..."
+msgstr "Copiază în..."
+
+#: ../src/main-win-ui.c:158
+msgid "Invert Selection"
+msgstr "Inversează selecția"
+
+#: ../src/main-win-ui.c:160
+msgid "_View"
+msgstr "_Vizualizare"
+
+#: ../src/main-win-ui.c:161
+msgid "Reload Folder"
+msgstr "Reîncarcă dosarul"
+
+#: ../src/main-win-ui.c:161
+msgid "Reload current folder"
+msgstr "Reîncarcă dosarul curent"
+
+#: ../src/main-win-ui.c:162
+msgid "Side Pane"
+msgstr "Vedere laterală"
+
+#: ../src/main-win-ui.c:164
+msgid "_Help"
+msgstr "_Ajutor"
+
+#: ../src/main-win-ui.c:166
+msgid "_Go"
+msgstr "_Navigare"
+
+#: ../src/main-win-ui.c:167
+msgid "Previous Folder"
+msgstr "Dosarul anterior"
+
+#: ../src/main-win-ui.c:168
+msgid "Next Folder"
+msgstr "Dosarul următor"
+
+#: ../src/main-win-ui.c:169
+msgid "Parent Folder"
+msgstr "Dosarul părinte"
+
+#: ../src/main-win-ui.c:169
+msgid "Go to parent Folder"
+msgstr "Du-te în dosarul părinte"
+
+#: ../src/main-win-ui.c:170
+msgid "Home Folder"
+msgstr "Acasă"
+
+#: ../src/main-win-ui.c:171
+msgid "Desktop"
+msgstr "Desktop"
+
+#: ../src/main-win-ui.c:171
+msgid "Desktop Folder"
+msgstr "Dosarul Desktop"
+
+#: ../src/main-win-ui.c:172
+msgid "My Computer"
+msgstr "Calculatorul meu"
+
+#: ../src/main-win-ui.c:173
+msgid "Trash Can"
+msgstr "Coș de gunoi"
+
+#: ../src/main-win-ui.c:174
+msgid "Network Drives"
+msgstr "Discuri în rețea"
+
+#: ../src/main-win-ui.c:175
+msgid "Applications"
+msgstr "Programe"
+
+#: ../src/main-win-ui.c:175
+msgid "Installed Applications"
+msgstr "Programe instalate"
+
+#: ../src/main-win-ui.c:177
+msgid "_Bookmarks"
+msgstr "Favo_rite"
+
+#: ../src/main-win-ui.c:178
+msgid "Add To Bookmarks"
+msgstr "Adaugă la favorite"
+
+#: ../src/main-win-ui.c:179
+msgid "_Tools"
+msgstr "_Unelte"
+
+#: ../src/main-win-ui.c:180
+msgid "Open Current Folder in _Terminal"
+msgstr "Deschide dosarul curent în _terminal"
+
+#: ../src/main-win-ui.c:181
+msgid "Open Current Folder as _Root"
+msgstr "Deschide dosarul curent ca _root"
+
+#: ../src/main-win-ui.c:197
+msgid "Show _Hidden"
+msgstr "Arată fișierele _ascunse"
+
+#: ../src/main-win-ui.c:198
+msgid "Show Side Pane"
+msgstr "Arată vederea laterală"
+
+#: ../src/main-win-ui.c:203
+msgid "_Icon View"
+msgstr "Vizualizare _iconițe"
+
+#: ../src/main-win-ui.c:204
+msgid "_Compact View"
+msgstr "Vizualizare _compactă"
+
+#: ../src/main-win-ui.c:205
+msgid "_Thumbnail View"
+msgstr "Vizualizare _miniaturi"
+
+#: ../src/main-win-ui.c:206
+msgid "Detailed _List View"
+msgstr "Vizualizare _listă detaliată"
+
+#: ../src/main-win-ui.c:225
+msgid "Places"
+msgstr "Locuri"
+
+#: ../src/main-win-ui.c:226
+msgid "Directory Tree"
+msgstr "Arbore de directoare"
+
+#: ../src/main-win-ui.c:227
+msgid "Remote"
+msgstr "La distanță"
+
+#: ../src/main-win.c:471
+msgid "You are in super user mode"
+msgstr "Sunteți în modul super-utilizator"
+
+#: ../src/main-win.c:590
+msgid "Switch user command is not set."
+msgstr "Nu ați ales o comandă de schimbare a utilizatorului."
+
+#: ../src/main-win.c:1006
+#, c-format
+msgid ""
+"Add following folder to bookmarks:\n"
+"'%s'\n"
+"Enter a name for the new bookmark item:"
+msgstr ""
+"Pentru a adăuga următorul dosar la favorite:\n"
+"'%s'\n"
+"Introduceți un nume pentru noul favorit:"
+
+#: ../src/main-win.c:1010
+msgid "Add to Bookmarks"
+msgstr "Adaugă la favorite"
+
+#. options only acceptable by first pcmanfm instance. These options are not passed through IPC
+#: ../src/pcmanfm.c:72
+msgid "Name of configuration profile"
+msgstr "Nume al profilului de configurare"
+
+#: ../src/pcmanfm.c:73
+msgid "Run PCManFM as a daemon"
+msgstr "Pornește PCManFM ca serviciu"
+
+#: ../src/pcmanfm.c:74
+msgid "No function. Just to be compatible with nautilus"
+msgstr "Nicio funcție. Pentru compatibilitate cu Nautilus"
+
+#. options that are acceptable for every instance of pcmanfm and will be passed through IPC.
+#: ../src/pcmanfm.c:77
+msgid "Launch desktop manager"
+msgstr "Lansează managerul desktopului"
+
+#: ../src/pcmanfm.c:78
+msgid "Turn off desktop manager if it's running"
+msgstr "Oprește managerul desktopului dacă e pornit"
+
+#: ../src/pcmanfm.c:79
+msgid "Open desktop preference dialog"
+msgstr "Deschide dialogul cu preferințele desktopului"
+
+#: ../src/pcmanfm.c:80
+msgid "Set desktop wallpaper"
+msgstr "Alegeți imaginea de fundal"
+
+#: ../src/pcmanfm.c:80
+msgid "<image file>"
+msgstr "<fișier imagine>"
+
+#: ../src/pcmanfm.c:81
+msgid "Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"
+msgstr ""
+"Alegeți un mod pentru imaginea de fundal. "
+"<mode>=(color|stretch|fit|center|tile)"
+
+#: ../src/pcmanfm.c:81
+msgid "<mode>"
+msgstr "<mode>"
+
+#: ../src/pcmanfm.c:82
+msgid ""
+"Open preference dialog. 'n' is number of the page you want to show (1, 2, "
+"3...)."
+msgstr ""
+"Deschide dialogul de preferințe. „n” este numărul de pagină de afișat (1, 2, "
+"3...)."
+
+#. { "new-win", '\0', 'n', G_OPTION_ARG_NONE, &new_win, N_("Open new window"), NULL },
+#. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
+#: ../src/pcmanfm.c:85
+msgid "[FILE1, FILE2,...]"
+msgstr "[FIȘIER1, FIȘIER2,...]"
+
+#: ../src/pcmanfm.c:455
+msgid "Terminal emulator is not set."
+msgstr "Nu ați ales un emulator de terminal."
+
+#: ../src/pcmanfm.c:507
+msgid "Enter a name for the newly created folder:"
+msgstr "Introduceți un nume pentru dosarul nou creat:"
+
+#: ../src/pcmanfm.c:509
+msgid "Enter a name for the newly created file:"
+msgstr "Introduceți un nume pentru fișierul nou creat:"
+
+#: ../src/pcmanfm.c:510
+msgid "Create New..."
+msgstr "Creează un nou..."
+
+#: ../src/pcmanfm.c:510
+msgid "New"
+msgstr "Nou"
+
+#: ../src/tab-page.c:174
+#, c-format
+msgid "%d item selected"
+msgid_plural "%d items selected"
+msgstr[0] "%d element selectat"
+msgstr[1] "%d elemente selectate"
+msgstr[2] "%d de elemente selectate"
+
+#: ../src/tab-page.c:196
+#, c-format
+msgid "Free space: %s (Total: %s)"
+msgstr "Spațiu liber: %s (Total: %s)"
+
+#: ../src/tab-page.c:215
+#, c-format
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] "%d element"
+msgstr[1] "%d elemente"
+msgstr[2] "%d de elemente"
+
+#: ../src/tab-page.c:216
+#, c-format
+msgid " (%d hidden)"
+msgid_plural " (%d hidden)"
+msgstr[0] " (%d ascuns)"
+msgstr[1] " (%d ascunse)"
+msgstr[2] " (%d ascunse)"
+
+#: ../data/pcmanfm.desktop.in.h:1
+msgid "File Manager"
+msgstr "Manager de fișiere"
+
+#: ../data/pcmanfm.desktop.in.h:2
+msgid "Browse the file system and manage the files"
+msgstr "Navigați în sistemul de fișiere și gestionați-vă fișierele"
