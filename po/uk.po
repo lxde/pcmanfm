@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-20 16:23+0200\n"
+"POT-Creation-Date: 2012-05-05 18:50+0300\n"
 "PO-Revision-Date: 2011-06-15 00:20+0200\n"
 "Last-Translator: Y P <yupadmin@gmail.com>\n"
 "Language-Team: Ukrainian <translation@linux.org.ua>\n"
@@ -46,7 +46,7 @@ msgstr "<b>Тло</b>"
 
 #: ../data/ui/desktop-pref.glade.h:2
 msgid "<b>Show desktop icons</b>"
-msgstr "<b>Показати значки на робочому столі</b>"
+msgstr "<b>Показати значки на стільниці</b>"
 
 #: ../data/ui/desktop-pref.glade.h:3
 msgid "<b>Text</b>"
@@ -78,15 +78,15 @@ msgstr "Колір тіні:"
 
 #: ../data/ui/desktop-pref.glade.h:10
 msgid "Desktop Icons"
-msgstr "Іконки робочого столу"
+msgstr "Значки стільниці"
 
 #: ../data/ui/desktop-pref.glade.h:11 ../src/desktop-ui.c:58
 msgid "Desktop Preferences"
-msgstr "Налаштування робочого столу"
+msgstr "Налаштування стільниці"
 
 #: ../data/ui/desktop-pref.glade.h:12
 msgid "Fill with background color only"
-msgstr "Заповнити тільки кольором тла"
+msgstr "Заповнити лише кольором тла"
 
 #: ../data/ui/desktop-pref.glade.h:13
 msgid "Font of label text:"
@@ -98,41 +98,45 @@ msgstr "Виберіть файл зображення"
 
 #: ../data/ui/desktop-pref.glade.h:15
 msgid "Show \"My Computer\" icon on desktop"
-msgstr "Показати значок \"Мій комп’ютер\" на робочому столі"
+msgstr "Показати значок \"Мій комп’ютер\" на стільниці"
 
 #: ../data/ui/desktop-pref.glade.h:16
 msgid "Show \"My Documents\" icon on desktop"
-msgstr "Показати значок \"Мої документи\" на робочому столі"
+msgstr "Показати значок \"Мої документи\" на стільниці"
 
 #: ../data/ui/desktop-pref.glade.h:17
 msgid "Show \"Trash Bin\" icon on desktop"
-msgstr "Показати значок \"Смітник\" на робочому столі"
+msgstr "Показати значок \"Смітник\" на стільниці"
 
 #: ../data/ui/desktop-pref.glade.h:18
 msgid "Show icons of volumes on desktop"
-msgstr "Показати значки дисків на робочому столі"
+msgstr "Показати значки дисків на стільниці"
 
 #: ../data/ui/desktop-pref.glade.h:19
 msgid "Show menus provided by window managers when desktop is clicked"
-msgstr "Показати меню менеджера вікон при клацанні на робочому столі"
+msgstr "Показати меню менеджера вікон при клацанні на стільниці"
 
 #: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:37
 msgid "Stretch to fill the entire screen"
-msgstr "Розтягнути для заповнення всієї робочому столі"
+msgstr "Розтягнути для заповнення всієї стільниці"
 
 #: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:38
 msgid "Stretch to fit the screen"
-msgstr "Розтягнути, щоб вмістити на робочому столі"
+msgstr "Розтягнути, щоб вмістити на стільниці"
 
 #: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:42
 msgid "Tile the image to fill the entire screen"
 msgstr "Розмножити зображення, щоб заповнити весь екран"
 
 #: ../data/ui/desktop-pref.glade.h:23
+msgid "Use the same wallpaper on all desktops"
+msgstr "Однакові шпалери на всіх стільницях"
+
+#: ../data/ui/desktop-pref.glade.h:24
 msgid "Wallpaper mode:"
 msgstr "Режим шпалер:"
 
-#: ../data/ui/desktop-pref.glade.h:24
+#: ../data/ui/desktop-pref.glade.h:25
 msgid "Wallpaper:"
 msgstr "Шпалери:"
 
@@ -216,11 +220,11 @@ msgstr "Вигляд значками"
 
 #: ../data/ui/pref.glade.h:22
 msgid "Mount mountable volumes automatically on program startup"
-msgstr "Монтувати змінні пристрої автоматично під час старту"
+msgstr "Монтувати змінні диски автоматично під час старту"
 
 #: ../data/ui/pref.glade.h:23
 msgid "Mount removable media automatically when they are inserted"
-msgstr "Монтувати змінні пристрої при їх вставлянні"
+msgstr "Монтувати змінні носії при їх вставлянні"
 
 #: ../data/ui/pref.glade.h:24
 msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
@@ -229,7 +233,7 @@ msgstr ""
 
 #: ../data/ui/pref.glade.h:25
 msgid "Only show thumbnails for local files"
-msgstr "Показувати тільки мініатюри для локальних файлів"
+msgstr "Показувати лише мініатюри для локальних файлів"
 
 #: ../data/ui/pref.glade.h:26
 msgid "Open files with single click"
@@ -253,7 +257,7 @@ msgstr "Налаштування"
 
 #: ../data/ui/pref.glade.h:31
 msgid "Show available options for removable media when they are inserted"
-msgstr "Показати можливі опції для змінних пристроїв при їх вставлянні"
+msgstr "Показати можливі опції для змінних носіїв при їх вставлянні"
 
 #: ../data/ui/pref.glade.h:32
 msgid "Show thumbnails of files"
@@ -277,7 +281,7 @@ msgstr "Розмір малих мініатюр:"
 
 #: ../data/ui/pref.glade.h:39
 msgid "Switch user command:"
-msgstr "Команда переключання користувача:"
+msgstr "Команда зміни користувача:"
 
 #: ../data/ui/pref.glade.h:40
 msgid "Terminal emulator:"
@@ -309,11 +313,11 @@ msgstr "_Загальне"
 
 #: ../data/ui/pref.glade.h:48
 msgid "_Volume Management"
-msgstr "_Управління дисками"
+msgstr "_Керування дисками"
 
 #: ../data/ui/autorun.glade.h:1
 msgid "<b>Removable medium is inserted</b>"
-msgstr "<b>Вставлено знімний пристрій</b>"
+msgstr "<b>Вставлено змінний носій</b>"
 
 #: ../data/ui/autorun.glade.h:2
 msgid "Detecting..."
@@ -325,11 +329,11 @@ msgstr "Виберіть, будь ласка, дію, яку Ви бажаєт�
 
 #: ../data/ui/autorun.glade.h:4
 msgid "Removable medium is inserted"
-msgstr "Вставлено змінний пристрій"
+msgstr "Вставлено змінний носій"
 
 #: ../data/ui/autorun.glade.h:5
 msgid "Type of medium:"
-msgstr "Тип пристрою:"
+msgstr "Тип носія:"
 
 #: ../src/volume-manager.c:150
 msgid "Removable Disk"
@@ -486,11 +490,11 @@ msgstr "Домашня тека"
 
 #: ../src/main-win-ui.c:171
 msgid "Desktop"
-msgstr "Робочий стіл"
+msgstr "Стільниця"
 
 #: ../src/main-win-ui.c:171
 msgid "Desktop Folder"
-msgstr "Тека робочого столу"
+msgstr "Тека стільниці"
 
 #: ../src/main-win-ui.c:172
 msgid "My Computer"
@@ -602,24 +606,24 @@ msgstr "Запустити PCManFM як демон"
 
 #: ../src/pcmanfm.c:74
 msgid "No function. Just to be compatible with nautilus"
-msgstr "Немає функції. Тільки для сумісності з nautilus"
+msgstr "Немає функції. Лише для сумісності з nautilus"
 
 #. options that are acceptable for every instance of pcmanfm and will be passed through IPC.
 #: ../src/pcmanfm.c:77
 msgid "Launch desktop manager"
-msgstr "Запустити менеджер робочого столу"
+msgstr "Запустити менеджер стільниці"
 
 #: ../src/pcmanfm.c:78
 msgid "Turn off desktop manager if it's running"
-msgstr "Виключити менеджер робочого столу, якщо він запущений"
+msgstr "Вимкнути менеджер стільниці, якщо його запущено"
 
 #: ../src/pcmanfm.c:79
 msgid "Open desktop preference dialog"
-msgstr "Відкрити діалог налаштування робочого столу"
+msgstr "Відкрити вікно налаштування стільниці"
 
 #: ../src/pcmanfm.c:80
 msgid "Set desktop wallpaper"
-msgstr "Налаштувати шпалери робочого столу"
+msgstr "Налаштувати шпалери стільниці"
 
 #: ../src/pcmanfm.c:80
 msgid "<image file>"
@@ -628,7 +632,7 @@ msgstr "<файл зображення>"
 #: ../src/pcmanfm.c:81
 msgid "Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"
 msgstr ""
-"Встановити режим для заставки робочого столу. <режим>=(колір|розтягнення|"
+"Встановити режим шпалер стільниці. <режим>=(колір|розтягнення|"
 "заповнення|центрування|плиткою)"
 
 #: ../src/pcmanfm.c:81
@@ -673,9 +677,9 @@ msgstr "Новий"
 #, c-format
 msgid "%d item selected"
 msgid_plural "%d items selected"
-msgstr[0] "%d позицію відмічено"
-msgstr[1] "%d позицій відмічено"
-msgstr[2] "%d позицій відмічено"
+msgstr[0] "%d позицію обрано"
+msgstr[1] "%d позиції обрано"
+msgstr[2] "%d позицій обрано"
 
 #: ../src/tab-page.c:196
 #, c-format
@@ -687,7 +691,7 @@ msgstr "Вільний простір: %s (Всього: %s )"
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] "%d позиція"
-msgstr[1] "%d позицій"
+msgstr[1] "%d позиції"
 msgstr[2] "%d позицій"
 
 #: ../src/tab-page.c:216
