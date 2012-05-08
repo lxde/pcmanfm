@@ -39,6 +39,8 @@ static void fm_tab_page_finalize(GObject *object);
 static void fm_tab_page_chdir_without_history(FmTabPage* page, FmPath* path);
 static void on_folder_fs_info(FmFolder* folder, FmTabPage* page);
 static void on_folder_content_changed(FmFolder* folder, FmTabPage* page);
+static void on_folder_view_sel_changed(FmFolderView* fv, FmFileInfoList* files, FmTabPage* page);
+static void on_folder_view_loaded(FmFolderView* view, FmPath* path, FmTabPage* page);
 static char* format_status_text(FmTabPage* page);
 
 #if GTK_CHECK_VERSION(3, 0, 0)
@@ -124,13 +126,18 @@ inline static void disconnect_folder(FmTabPage* page, FmFolder* folder)
 }
 
 #if GTK_CHECK_VERSION(3, 0, 0)
-void fm_tab_page_destroy(GtkWidget *page)
+void fm_tab_page_destroy(GtkWidget *object)
 #else
-void fm_tab_page_destroy(GtkObject *page)
+void fm_tab_page_destroy(GtkObject *object)
 #endif
 {
-    FmFolder* folder = fm_tab_page_get_folder(FM_TAB_PAGE(page));
+    FmTabPage* page = FM_TAB_PAGE(object);
+    FmFolder* folder = fm_tab_page_get_folder(page);
+
+    /* so we don't call these on a dead object */
     disconnect_folder(page, folder);
+    g_signal_handlers_disconnect_by_func(page->folder_view, on_folder_view_sel_changed, page);
+    g_signal_handlers_disconnect_by_func(page->folder_view, on_folder_view_loaded, page);
 }
 
 static void on_folder_content_changed(FmFolder* folder, FmTabPage* page)
