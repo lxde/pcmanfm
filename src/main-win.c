@@ -1,7 +1,7 @@
 /*
  *      main-win.c
  *
- *      Copyright 2009 - 2010 Hong Jen Yee (PCMan) <pcman.tw@gmail.com>
+ *      Copyright 2009 - 2012 Hong Jen Yee (PCMan) <pcman.tw@gmail.com>
  *
  *      This program is free software; you can redistribute it and/or modify
  *      it under the terms of the GNU General Public License as published by
@@ -1245,6 +1245,26 @@ void fm_main_win_open_in_last_active(FmPath* path)
     gtk_window_present(GTK_WINDOW(win));
 }
 
+static void switch_to_next_tab(FmMainWin* win)
+{
+	int n = gtk_notebook_get_current_page(GTK_NOTEBOOK(win->notebook));
+	if(n < gtk_notebook_get_n_pages(GTK_NOTEBOOK(win->notebook)) - 1)
+		++n;
+	else
+		n = 0;
+	gtk_notebook_set_current_page(GTK_NOTEBOOK(win->notebook), n);
+}
+
+static void switch_to_prev_tab(FmMainWin* win)
+{
+	int n = gtk_notebook_get_current_page(GTK_NOTEBOOK(win->notebook));
+	if(n > 0)
+		--n;
+	else
+		n = gtk_notebook_get_n_pages(GTK_NOTEBOOK(win->notebook)) - 1;
+	gtk_notebook_set_current_page(GTK_NOTEBOOK(win->notebook), n);
+}
+
 gboolean on_key_press_event(GtkWidget* w, GdkEventKey* evt)
 {
     FmMainWin* win = FM_MAIN_WIN(w);
@@ -1264,27 +1284,25 @@ gboolean on_key_press_event(GtkWidget* w, GdkEventKey* evt)
     }
     else if(evt->state == GDK_CONTROL_MASK) /* Ctrl */
     {
-        if(evt->keyval == GDK_Tab || evt->keyval == GDK_ISO_Left_Tab) /* Ctrl + Tab, next tab */
+        if(evt->keyval == GDK_Tab
+         || evt->keyval == GDK_ISO_Left_Tab
+         || evt->keyval == GDK_Page_Down) /* Ctrl + Tab or PageDown, next tab */
         {
-            int n = gtk_notebook_get_current_page(GTK_NOTEBOOK(win->notebook));
-            if(n < gtk_notebook_get_n_pages(GTK_NOTEBOOK(win->notebook)) - 1)
-                ++n;
-            else
-                n = 0;
-            gtk_notebook_set_current_page(GTK_NOTEBOOK(win->notebook), n);
+			switch_to_next_tab(win);
             return TRUE;
         }
+        else if(evt->keyval == GDK_Page_Up)
+        {
+			switch_to_prev_tab(win);
+            return TRUE;
+		}
     }
     else if(evt->state == (GDK_CONTROL_MASK|GDK_SHIFT_MASK)) /* Ctrl + Shift */
     {
-        if(evt->keyval == GDK_Tab || evt->keyval == GDK_ISO_Left_Tab) /* Ctrl + Shift + Tab, previous tab */
+        if(evt->keyval == GDK_Tab
+         || evt->keyval == GDK_ISO_Left_Tab) /* Ctrl + Shift + Tab or PageUp, previous tab */
         {
-            int n = gtk_notebook_get_current_page(GTK_NOTEBOOK(win->notebook));
-            if(n > 0)
-                --n;
-            else
-                n = gtk_notebook_get_n_pages(GTK_NOTEBOOK(win->notebook)) - 1;
-            gtk_notebook_set_current_page(GTK_NOTEBOOK(win->notebook), n);
+			switch_to_prev_tab(win);
             return TRUE;
         }
     }
