@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-07-20 16:23+0200\n"
-"PO-Revision-Date: 2011-06-11 23:50+0200\n"
-"Last-Translator: Julius <zadintuvas@gmail.com>\n"
+"PO-Revision-Date: 2012-05-17 09:18+0200\n"
+"Last-Translator: Algimantas <margevicius.algimantas@mail.ru>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: lt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
-"%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%"
+"100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Pootle 2.0.5\n"
 
 #: ../data/ui/about.glade.in.h:1
@@ -29,14 +29,16 @@ msgid ""
 "\n"
 "Developed by Hon Jen Yee (PCMan)"
 msgstr ""
-"Lengvasvorė failų tvarkytuvė\n"
+"Lengva ir greita failų tvarkyklė\n"
 "\n"
 "Kūrėjas Hon Jen Yee (PCMan)"
 
 #. Please replace this line with your own names, one name per line.
 #: ../data/ui/about.glade.in.h:6
 msgid "translator-credits"
-msgstr "Julius Vitkauskas <zadintuvas@gmail.com>"
+msgstr ""
+"Julius Vitkauskas <zadintuvas@gmail.com>\n"
+"Algimantas Margevičius <margevicius.algimantas@gmail.com>"
 
 #: ../data/ui/desktop-pref.glade.h:1
 msgid "<b>Background</b>"
@@ -84,7 +86,7 @@ msgstr "Darbastalio nustatymai"
 
 #: ../data/ui/desktop-pref.glade.h:12
 msgid "Fill with background color only"
-msgstr "Tik užpildyti fono spalva"
+msgstr "Užpildyti tik fono spalva"
 
 #: ../data/ui/desktop-pref.glade.h:13
 msgid "Font of label text:"
@@ -157,7 +159,7 @@ msgstr "<b>Programos</b>"
 
 #: ../data/ui/pref.glade.h:6
 msgid "<b>User Interface</b>"
-msgstr "<b>Vartotojo sąsaja</b>"
+msgstr "<b>Naudotojo sąsaja</b>"
 
 #: ../data/ui/pref.glade.h:7
 msgid "Always show the tab bar"
@@ -185,7 +187,7 @@ msgstr "Išsamus sąrašas"
 
 #: ../data/ui/pref.glade.h:14
 msgid "Do not generate thumbnails for files exceeding this size:"
-msgstr "Negeneruoti miniatiūrų, jei failas viršija šį dydį:"
+msgstr "Negeneruoti miniatiūrų, jei failas didesnis nei:"
 
 #: ../data/ui/pref.glade.h:16
 #, no-c-format
@@ -193,7 +195,7 @@ msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
 "%s = the command line you want to execute with terminal or su."
 msgstr ""
-"Pavyzdys: \"xterm -e %s\" terminalui ar \"gksu %s\" vartotojo perjungimui.\n"
+"Pavyzdys: „xterm -e %s“ terminalui ar „gksu %s“ naudotojo perjungimui.\n"
 "%s = komandinė eilutė, kurią jūs norite vykdyti kartu su terminalu arba su."
 
 #: ../data/ui/pref.glade.h:18
@@ -274,7 +276,7 @@ msgstr "Miniatiūrų dydis:"
 
 #: ../data/ui/pref.glade.h:39
 msgid "Switch user command:"
-msgstr "Vartotojo perjungimo komanda:"
+msgstr "Naudotojo perjungimo komanda:"
 
 #: ../data/ui/pref.glade.h:40
 msgid "Terminal emulator:"
@@ -286,7 +288,7 @@ msgstr "Miniatiūrų vaizdas"
 
 #: ../data/ui/pref.glade.h:43
 msgid "Use SI decimal prefixes instead of IEC binary prefixes"
-msgstr "Naudoti SI dešimtainius matmetinis vietoj IEC dvejetainių matmenų"
+msgstr "Naudoti SI dešimtainius matmenis vietoj IEC dvejetainių matmenų"
 
 #: ../data/ui/pref.glade.h:44
 msgid "View Mode:"
@@ -523,11 +525,11 @@ msgstr "Įra_nkiai"
 
 #: ../src/main-win-ui.c:180
 msgid "Open Current Folder in _Terminal"
-msgstr "Atverti šį katalogą _terminale"
+msgstr "Atverti šį aplanką _terminale"
 
 #: ../src/main-win-ui.c:181
 msgid "Open Current Folder as _Root"
-msgstr "Atverti šį katalogą administrato_riaus teisėmis"
+msgstr "Atverti šį aplanką administrato_riaus teisėmis"
 
 #: ../src/main-win-ui.c:197
 msgid "Show _Hidden"
@@ -567,11 +569,11 @@ msgstr "Nuotolinis"
 
 #: ../src/main-win.c:471
 msgid "You are in super user mode"
-msgstr "Jūs esate super vartotojo režime"
+msgstr "Jūs esate super naudotojo režime"
 
 #: ../src/main-win.c:590
 msgid "Switch user command is not set."
-msgstr "Nenustatyta vartotojo perjungimo komanda."
+msgstr "Nenustatyta naudotojo perjungimo komanda."
 
 #: ../src/main-win.c:1006
 #, c-format
@@ -581,7 +583,7 @@ msgid ""
 "Enter a name for the new bookmark item:"
 msgstr ""
 "Įtraukiamas aplankas į žymeles:\n"
-"'%s'\n"
+"„%s“\n"
 "Įveskite naujos žymelės pavadinimą:"
 
 #: ../src/main-win.c:1010
@@ -635,7 +637,7 @@ msgid ""
 "Open preference dialog. 'n' is number of the page you want to show (1, 2, "
 "3...)."
 msgstr ""
-"Atverti nustatymų dialogą. 'n' yra rodomo puslapio pavadinimas (1, 2, 3...)."
+"Atverti nustatymų dialogą. „n“ yra rodomo puslapio pavadinimas (1, 2, 3...)."
 
 #. { "new-win", '\0', 'n', G_OPTION_ARG_NONE, &new_win, N_("Open new window"), NULL },
 #. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
