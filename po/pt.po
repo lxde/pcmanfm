@@ -2,14 +2,14 @@
 # Copyright (C) 2006 THE pcmanfm'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the pcmanfm package.
 # Nuno Miguel <nunis@netcabo.pt>, 2008, 2009
-#
+# Sérgio Marques <smarquespt@gmail.com> 2010-2012
 msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-07-20 16:23+0200\n"
-"PO-Revision-Date: 2011-11-22 14:50+0200\n"
-"Last-Translator: Sérgio <smarquespt@gmail.com>\n"
+"PO-Revision-Date: 2012-05-18 15:51-0000\n"
+"Last-Translator: Sérgio Marques <smarquespt@gmail.com>\n"
 "Language-Team: \n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
@@ -65,7 +65,8 @@ msgstr "Aparência"
 msgid "Background color:"
 msgstr "Cor de fundo:"
 
-#: ../data/ui/desktop-pref.glade.h:7 ../data/ui/pref.glade.h:10
+#: ../data/ui/desktop-pref.glade.h:7
+#: ../data/ui/pref.glade.h:10
 msgid "Center on the screen"
 msgstr "Centrar no ecrã"
 
@@ -81,7 +82,8 @@ msgstr "Cor da sombra:"
 msgid "Desktop Icons"
 msgstr "Ícones da área de trabalho"
 
-#: ../data/ui/desktop-pref.glade.h:11 ../src/desktop-ui.c:58
+#: ../data/ui/desktop-pref.glade.h:11
+#: ../src/desktop-ui.c:58
 msgid "Desktop Preferences"
 msgstr "Preferências da área de trabalho"
 
@@ -117,15 +119,18 @@ msgstr "Mostrar ícones de volumes na área de trabalho"
 msgid "Show menus provided by window managers when desktop is clicked"
 msgstr "Mostrar menus dos gestores de janelas ao clicar na área de trabalho"
 
-#: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:37
+#: ../data/ui/desktop-pref.glade.h:20
+#: ../data/ui/pref.glade.h:37
 msgid "Stretch to fill the entire screen"
 msgstr "Esticar para preencher totalmente o ecrã"
 
-#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:38
+#: ../data/ui/desktop-pref.glade.h:21
+#: ../data/ui/pref.glade.h:38
 msgid "Stretch to fit the screen"
 msgstr "Esticar para ajustar ao ecrã"
 
-#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:42
+#: ../data/ui/desktop-pref.glade.h:22
+#: ../data/ui/pref.glade.h:42
 msgid "Tile the image to fill the entire screen"
 msgstr "Ladrilhar imagem para preencher totalmente o ecrã"
 
@@ -179,7 +184,7 @@ msgstr "Compacta"
 
 #: ../data/ui/pref.glade.h:12
 msgid "Confirm before deleting files"
-msgstr "Confirmar antes de apagar ficheiros"
+msgstr "Confirmar antes de eliminar ficheiros"
 
 #: ../data/ui/pref.glade.h:13
 msgid "Detailed List View"
@@ -195,8 +200,7 @@ msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
 "%s = the command line you want to execute with terminal or su."
 msgstr ""
-"Exemplos: \"xterm -e %s\" para terminal ou \"gksu %s\" para trocar "
-"utilizadores.\n"
+"Exemplos: \"xterm -e %s\" para terminal ou \"gksu %s\" para trocar utilizadores.\n"
 "%s = a linha de comandos a executar com o terminal ou su."
 
 #: ../data/ui/pref.glade.h:18
@@ -225,7 +229,7 @@ msgstr "Ao inserir o disco amovível, montar automaticamente"
 
 #: ../data/ui/pref.glade.h:24
 msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
-msgstr "Mover ficheiros apagados para o \"lixo\" em vez de os apagar do disco"
+msgstr "Mover ficheiros eliminados para o \"lixo\" em vez de os eliminar do disco"
 
 #: ../data/ui/pref.glade.h:25
 msgid "Only show thumbnails for local files"
@@ -233,19 +237,19 @@ msgstr "Mostrar apenas para ficheiros locais"
 
 #: ../data/ui/pref.glade.h:26
 msgid "Open files with single click"
-msgstr "Abrir ficheiros com clique único"
+msgstr "Abrir ficheiros com um clique"
 
 #: ../data/ui/pref.glade.h:27
 msgid "Opened in Current Tab"
-msgstr "Aberto no separador atual"
+msgstr "Abrir no separador atual"
 
 #: ../data/ui/pref.glade.h:28
 msgid "Opened in New Tab"
-msgstr "Aberto em novo separador"
+msgstr "Abrir em novo separador"
 
 #: ../data/ui/pref.glade.h:29
 msgid "Opened in New Window"
-msgstr "Aberto em nova janela"
+msgstr "Abrir em nova janela"
 
 #: ../data/ui/pref.glade.h:30
 msgid "Preferences"
@@ -277,7 +281,7 @@ msgstr "Tamanho das miniaturas:"
 
 #: ../data/ui/pref.glade.h:39
 msgid "Switch user command:"
-msgstr "Trocar comando de utilizador:"
+msgstr "Comando para trocar de utilizador:"
 
 #: ../data/ui/pref.glade.h:40
 msgid "Terminal emulator:"
@@ -343,48 +347,59 @@ msgstr "Abrir no gestor de ficheiros"
 msgid "_Invert Selection"
 msgstr "_Inverter seleção"
 
-#: ../src/desktop-ui.c:54 ../src/main-win-ui.c:163
+#: ../src/desktop-ui.c:54
+#: ../src/main-win-ui.c:163
 msgid "_Sort Files"
 msgstr "_Ordenar ficheiros"
 
 #. for popup menu
-#: ../src/desktop-ui.c:55 ../src/main-win-ui.c:189
+#: ../src/desktop-ui.c:55
+#: ../src/main-win-ui.c:189
 msgid "Create _New..."
 msgstr "Criar _novo..."
 
-#: ../src/desktop-ui.c:56 ../src/main-win-ui.c:190
+#: ../src/desktop-ui.c:56
+#: ../src/main-win-ui.c:190
 msgid "Folder"
 msgstr "Pasta"
 
-#: ../src/desktop-ui.c:57 ../src/main-win-ui.c:191
+#: ../src/desktop-ui.c:57
+#: ../src/main-win-ui.c:191
 msgid "Blank File"
 msgstr "Ficheiro vazio"
 
-#: ../src/desktop-ui.c:69 ../src/main-win-ui.c:217
+#: ../src/desktop-ui.c:69
+#: ../src/main-win-ui.c:217
 msgid "By _Name"
 msgstr "Por _nome"
 
-#: ../src/desktop-ui.c:70 ../src/main-win-ui.c:218
+#: ../src/desktop-ui.c:70
+#: ../src/main-win-ui.c:218
 msgid "By _Modification Time"
 msgstr "Por data de _modificação"
 
-#: ../src/desktop-ui.c:71 ../src/main-win-ui.c:219
+#: ../src/desktop-ui.c:71
+#: ../src/main-win-ui.c:219
 msgid "By _Size"
 msgstr "Por t_amanho"
 
-#: ../src/desktop-ui.c:72 ../src/main-win-ui.c:220
+#: ../src/desktop-ui.c:72
+#: ../src/main-win-ui.c:220
 msgid "By File _Type"
 msgstr "Por _tipo de ficheiro"
 
-#: ../src/desktop-ui.c:88 ../src/main-win-ui.c:243
+#: ../src/desktop-ui.c:88
+#: ../src/main-win-ui.c:243
 msgid "Open in New Tab"
 msgstr "Abrir em novo separador"
 
-#: ../src/desktop-ui.c:89 ../src/main-win-ui.c:244
+#: ../src/desktop-ui.c:89
+#: ../src/main-win-ui.c:244
 msgid "Open in New Window"
 msgstr "Abrir em nova janela"
 
-#: ../src/desktop-ui.c:91 ../src/main-win-ui.c:246
+#: ../src/desktop-ui.c:91
+#: ../src/main-win-ui.c:246
 msgid "Open in _Terminal"
 msgstr "Abrir no _terminal"
 
@@ -422,11 +437,11 @@ msgstr "_Editar"
 
 #: ../src/main-win-ui.c:153
 msgid "Rename"
-msgstr "Renomear"
+msgstr "Mudar nome"
 
 #: ../src/main-win-ui.c:154
 msgid "Create Symlink"
-msgstr "Criar ligações simbólicas"
+msgstr "Criar ligação simbólica"
 
 #: ../src/main-win-ui.c:155
 msgid "Move To..."
@@ -450,7 +465,7 @@ msgstr "Recarregar pasta"
 
 #: ../src/main-win-ui.c:161
 msgid "Reload current folder"
-msgstr "Recarregar a pasta atual"
+msgstr "Recarregar pasta atual"
 
 #: ../src/main-win-ui.c:162
 msgid "Side Pane"
@@ -522,7 +537,7 @@ msgstr "Adicionar aos marcadores"
 
 #: ../src/main-win-ui.c:179
 msgid "_Tools"
-msgstr "_Ferramentas"
+msgstr "Ferramen_tas"
 
 #: ../src/main-win-ui.c:180
 msgid "Open Current Folder in _Terminal"
@@ -574,7 +589,7 @@ msgstr "Está no modo de super utilizador"
 
 #: ../src/main-win.c:590
 msgid "Switch user command is not set."
-msgstr "Comando para troca de utilizador não definido."
+msgstr "O comando para trocar de utilizador não está definido."
 
 #: ../src/main-win.c:1006
 #, c-format
@@ -602,7 +617,7 @@ msgstr "Executar PcManFM como serviço"
 
 #: ../src/pcmanfm.c:74
 msgid "No function. Just to be compatible with nautilus"
-msgstr "Sem função. Apenas para compatibilidade com nautilus"
+msgstr "Sem utilidade. Só serve para compatibilidade com o Nautilus"
 
 #. options that are acceptable for every instance of pcmanfm and will be passed through IPC.
 #: ../src/pcmanfm.c:77
@@ -627,21 +642,15 @@ msgstr "<imagem>"
 
 #: ../src/pcmanfm.c:81
 msgid "Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"
-msgstr ""
-"Defina o modo do papel de parede. <modo>=(cor|esticar|ajustar|centrar|"
-"mosaico)"
+msgstr "Defina o modo do papel de parede. <modo>=(cor|esticar|ajustar|centrar|mosaico)"
 
 #: ../src/pcmanfm.c:81
 msgid "<mode>"
 msgstr "<modo>"
 
 #: ../src/pcmanfm.c:82
-msgid ""
-"Open preference dialog. 'n' is number of the page you want to show (1, 2, "
-"3...)."
-msgstr ""
-"Abrir diálogo de preferências. \"n\" é o número da página que quer mostrar "
-"(1, 2, 3...)."
+msgid "Open preference dialog. 'n' is number of the page you want to show (1, 2, 3...)."
+msgstr "Abrir diálogo de preferências. \"n\" é o número da página que quer mostrar (1, 2, 3...)."
 
 #. { "new-win", '\0', 'n', G_OPTION_ARG_NONE, &new_win, N_("Open new window"), NULL },
 #. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
@@ -651,7 +660,7 @@ msgstr "[FICHEIRO1, FICHEIRO2,...]"
 
 #: ../src/pcmanfm.c:455
 msgid "Terminal emulator is not set."
-msgstr "Emulador de terminal não definido."
+msgstr "O emulador de terminal não está definido."
 
 #: ../src/pcmanfm.c:507
 msgid "Enter a name for the newly created folder:"
@@ -697,11 +706,9 @@ msgstr[1] " (%d ocultos)"
 
 #: ../data/pcmanfm.desktop.in.h:1
 msgid "Browse the file system and manage the files"
-msgstr "Navegar no sistema e gerir ficheiros"
+msgstr "Explorar o sistema de ficheiros e gerir ficheiros"
 
 #: ../data/pcmanfm.desktop.in.h:2
 msgid "File Manager"
 msgstr "Gestor de ficheiros"
 
-#~ msgid "_New"
-#~ msgstr "_Novo"
