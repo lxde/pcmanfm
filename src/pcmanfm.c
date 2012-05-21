@@ -182,7 +182,9 @@ int main(int argc, char** argv)
         // signal( SIGPIPE, SIG_IGN );
         signal( SIGHUP, unix_signal_handler );
         signal( SIGTERM, unix_signal_handler );
+#ifdef SIGPOLL /* bug #3528311 */
         signal( SIGPOLL, unix_signal_handler );
+#endif
         signal( SIGHUP, unix_signal_handler );
     }
 
