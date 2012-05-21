@@ -1268,8 +1268,9 @@ static void switch_to_prev_tab(FmMainWin* win)
 gboolean on_key_press_event(GtkWidget* w, GdkEventKey* evt)
 {
     FmMainWin* win = FM_MAIN_WIN(w);
+    int modifier = evt->state & gtk_accelerator_get_default_mod_mask();
 
-    if(evt->state == GDK_MOD1_MASK) /* Alt */
+    if(modifier == GDK_MOD1_MASK) /* Alt */
     {
         if(isdigit(evt->keyval)) /* Alt + 0 ~ 9, nth tab */
         {
@@ -1282,7 +1283,7 @@ gboolean on_key_press_event(GtkWidget* w, GdkEventKey* evt)
             return TRUE;
         }
     }
-    else if(evt->state == GDK_CONTROL_MASK) /* Ctrl */
+    else if(modifier == GDK_CONTROL_MASK) /* Ctrl */
     {
         if(evt->keyval == GDK_Tab
          || evt->keyval == GDK_ISO_Left_Tab
@@ -1297,7 +1298,7 @@ gboolean on_key_press_event(GtkWidget* w, GdkEventKey* evt)
             return TRUE;
 		}
     }
-    else if(evt->state == (GDK_CONTROL_MASK|GDK_SHIFT_MASK)) /* Ctrl + Shift */
+    else if(modifier == (GDK_CONTROL_MASK|GDK_SHIFT_MASK)) /* Ctrl + Shift */
     {
         if(evt->keyval == GDK_Tab
          || evt->keyval == GDK_ISO_Left_Tab) /* Ctrl + Shift + Tab or PageUp, previous tab */
