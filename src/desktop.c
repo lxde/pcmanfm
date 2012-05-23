@@ -306,7 +306,8 @@ static inline void load_item_pos(FmDesktop* desktop, GKeyFile* kf)
         for(l = desktop->items; l; l=l->next)
         {
             FmDesktopItem* item = (FmDesktopItem*)l->data;
-            const char* name = fm_path_get_basename(item->fi->path);
+            FmPath* path = fm_file_info_get_path(item->fi);
+            const char* name = fm_path_get_basename(path);
             if(g_key_file_has_group(kf, name))
             {
                 desktop->fixed_items = g_list_prepend(desktop->fixed_items, item);
@@ -426,10 +427,11 @@ static void save_item_pos(FmDesktop* desktop)
     for(l = desktop->fixed_items; l; l=l->next)
     {
         FmDesktopItem* item = (FmDesktopItem*)l->data;
+        FmPath* fi_path = fm_file_info_get_path(item->fi);
         const char* p;
         /* write the file basename as group name */
         g_string_append_c(buf, '[');
-        for(p = item->fi->path->name; *p; ++p)
+        for(p = fi_path->name; *p; ++p)
         {
             switch(*p)
             {
@@ -1516,7 +1518,6 @@ void paint_item(FmDesktop* self, FmDesktopItem* item, cairo_t* cr, GdkRectangle*
     GdkColor* fg;
     GdkWindow* window;
     int text_x, text_y;
-    /* g_debug("%s, %d, %d, %d, %d", item->fi->path->name, expose_area->x, expose_area->y, expose_area->width, expose_area->height); */
 
     style = gtk_widget_get_style(widget);
     window = gtk_widget_get_window(widget);
@@ -2049,7 +2050,7 @@ void on_open_in_new_tab(GtkAction* act, gpointer user_data)
     for( l = fm_list_peek_head_link(files); l; l=l->next )
     {
         FmFileInfo* fi = (FmFileInfo*)l->data;
-        fm_main_win_open_in_last_active(fi->path);
+        fm_main_win_open_in_last_active(fm_file_info_get_path(fi));
     }
 }
 
@@ -2059,11 +2060,11 @@ void on_open_in_new_win(GtkAction* act, gpointer user_data)
     FmFileInfoList* files = fm_file_menu_get_file_info_list(menu);
     GList* l;
     FmFileInfo* fi = fm_list_peek_head(files);
-    FmMainWin* win = fm_main_win_add_win(NULL, fi->path);
+    FmMainWin* win = fm_main_win_add_win(NULL, fm_file_info_get_path(fi));
     for( l = fm_list_peek_head_link(files)->next; l; l=l->next )
     {
         fi = (FmFileInfo*)l->data;
-        fm_main_win_add_tab(win, fi->path);
+        fm_main_win_add_tab(win, fm_file_info_get_path(fi));
     }
 }
 
@@ -2076,7 +2077,7 @@ void on_open_folder_in_terminal(GtkAction* act, gpointer user_data)
     {
         FmFileInfo* fi = (FmFileInfo*)l->data;
         if(fm_file_info_is_dir(fi) /*&& !fm_file_info_is_virtual(fi)*/)
-            pcmanfm_open_folder_in_terminal(NULL, fi->path);
+            pcmanfm_open_folder_in_terminal(NULL, fm_file_info_get_path(fi));
     }
     fm_list_unref(files);
 }
@@ -2208,7 +2209,7 @@ FmPathList* fm_desktop_get_selected_paths(FmDesktop* desktop)
     {
         FmDesktopItem* item = (FmDesktopItem*)l->data;
         if(item->is_selected)
-            fm_list_push_tail(files, item->fi->path);
+            fm_list_push_tail(files, fm_file_info_get_path(item->fi));
     }
     if(fm_list_is_empty(files))
     {

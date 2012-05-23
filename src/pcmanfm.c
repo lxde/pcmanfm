@@ -420,7 +420,7 @@ gboolean pcmanfm_open_folder(GAppLaunchContext* ctx, GList* folder_infos, gpoint
     for(; l; l=l->next)
     {
         FmFileInfo* fi = (FmFileInfo*)l->data;
-        fm_main_win_open_in_last_active(fi->path);
+        fm_main_win_open_in_last_active(fm_file_info_get_path(fi));
     }
     return TRUE;
 }

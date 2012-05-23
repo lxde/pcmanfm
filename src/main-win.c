@@ -157,12 +157,12 @@ static gboolean open_folder_func(GAppLaunchContext* ctx, GList* folder_infos, gp
     FmMainWin* win = FM_MAIN_WIN(user_data);
     GList* l = folder_infos;
     FmFileInfo* fi = (FmFileInfo*)l->data;
-    fm_main_win_chdir(win, fi->path);
+    fm_main_win_chdir(win, fm_file_info_get_path(fi));
     l=l->next;
     for(; l; l=l->next)
     {
         FmFileInfo* fi = (FmFileInfo*)l->data;
-        fm_main_win_add_tab(win, fi->path);
+        fm_main_win_add_tab(win, fm_file_info_get_path(fi));
     }
     return TRUE;
 }
@@ -569,7 +569,7 @@ void on_open_folder_in_terminal(GtkAction* act, FmMainWin* win)
     {
         FmFileInfo* fi = (FmFileInfo*)l->data;
         if(fm_file_info_is_dir(fi) /*&& !fm_file_info_is_virtual(fi)*/)
-            pcmanfm_open_folder_in_terminal(GTK_WINDOW(win), fi->path);
+            pcmanfm_open_folder_in_terminal(GTK_WINDOW(win), fm_file_info_get_path(fi));
     }
     fm_list_unref(files);
 }
@@ -1039,7 +1039,7 @@ static void on_folder_view_clicked(FmFolderView* fv, FmFolderViewClickType type,
     {
     case FM_FV_ACTIVATED: /* file activated */
         if(fm_file_info_is_dir(fi))
-            fm_main_win_chdir( win, fi->path);
+            fm_main_win_chdir( win, fm_file_info_get_path(fi));
         else if(fm_file_info_get_target(fi) && !fm_file_info_is_symlink(fi))
         {
             /* symlinks also has fi->target, but we only handle shortcuts here. */
@@ -1095,7 +1095,7 @@ static void on_folder_view_clicked(FmFolderView* fv, FmFolderViewClickType type,
         break;
     case FM_FV_MIDDLE_CLICK:
         if(fm_file_info_is_dir(fi))
-            fm_main_win_add_tab(win, fi->path);
+            fm_main_win_add_tab(win, fm_file_info_get_path(fi));
         break;
     }
 }

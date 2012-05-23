@@ -244,7 +244,7 @@ static void on_folder_view_loaded(FmFolderView* view, FmPath* path, FmTabPage* p
 #if 0
         if(folder->dir_fi)
         {
-            icon = folder->dir_fi->icon;
+            icon = fm_file_info_get_icon(folder->dir_fi);
             if(icon)
             {
                 icon->gicon;
