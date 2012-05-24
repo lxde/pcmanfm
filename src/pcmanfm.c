@@ -359,7 +359,7 @@ gboolean pcmanfm_run()
                         /* FIXME: This won't work if those filenames are passed via IPC since the receiving process has different cwd. */
                         /* FIXME: should we use ipc_cwd here? */
                         char* cwd_str = g_get_current_dir();
-                        cwd = fm_path_new(cwd_str);
+                        cwd = fm_path_new_for_str(cwd_str);
                         g_free(cwd_str);
                     }
                     path = fm_path_new_relative(cwd, *filename);
@@ -580,7 +580,7 @@ _retry:
     }
     else /* templates in ~/Templates */
     {
-        FmPath* dir = fm_path_new(g_get_user_special_dir(G_USER_DIRECTORY_TEMPLATES));
+        FmPath* dir = fm_path_new_for_str(g_get_user_special_dir(G_USER_DIRECTORY_TEMPLATES));
         FmPath* template = fm_path_new_child(dir, templ);
         fm_copy_file(parent, template, cwd);
         fm_path_unref(template);

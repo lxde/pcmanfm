@@ -795,7 +795,7 @@ void on_go_apps(GtkAction* act, FmMainWin* win)
 
 void fm_main_win_chdir_by_name(FmMainWin* win, const char* path_str)
 {
-    FmPath* path = fm_path_new(path_str);
+    FmPath* path = fm_path_new_for_str(path_str);
     fm_main_win_chdir(win, path);
     fm_path_unref(path);
 }
@@ -1044,7 +1044,7 @@ static void on_folder_view_clicked(FmFolderView* fv, FmFolderViewClickType type,
         {
             /* symlinks also has fi->target, but we only handle shortcuts here. */
             FmFileInfo* target_fi;
-            FmPath* real_path = fm_path_new(fm_file_info_get_target(fi));
+            FmPath* real_path = fm_path_new_for_str(fm_file_info_get_target(fi));
             /* query the info of target */
             FmJob* job = fm_file_info_job_new(NULL, 0);
             fm_file_info_job_add(FM_FILE_INFO_JOB(job), real_path);
