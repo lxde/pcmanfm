@@ -215,8 +215,9 @@ static char* format_status_text(FmTabPage* page)
     FmFolder* folder = fm_folder_view_get_folder(page->folder_view);
     if(model && folder)
     {
+        FmFileInfoList* files = fm_folder_get_files(folder);
         GString* msg = g_string_sized_new(128);
-        int total_files = fm_list_get_length(folder->files);
+        int total_files = fm_list_get_length(files);
         int shown_files = gtk_tree_model_iter_n_children(GTK_TREE_MODEL(model), NULL);
         int hidden_files = total_files - shown_files;
         const char* visible_fmt = ngettext("%d item", "%d items", shown_files);
@@ -305,7 +306,7 @@ static void fm_tab_page_init(FmTabPage *page)
     g_signal_connect(page->folder_view, "loaded",
                      G_CALLBACK(on_folder_view_loaded), page);
     /* the folder view is already loded, call the "loaded" callback ourself. */
-    if(fm_folder_view_get_is_loaded(folder_view))
+    if(fm_folder_view_is_loaded(folder_view))
         on_folder_view_loaded(folder_view, fm_folder_view_get_cwd(folder_view), page);
 }
 

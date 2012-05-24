@@ -186,19 +186,21 @@ static FmJobErrorAction on_query_target_info_error(FmJob* job, GError* err, FmJo
 static void update_sort_menu(FmMainWin* win)
 {
     GtkAction* act;
+    FmFolderView* fv = FM_FOLDER_VIEW(win->folder_view);
     act = gtk_ui_manager_get_action(win->ui, "/menubar/ViewMenu/Sort/Asc");
-    gtk_radio_action_set_current_value(GTK_RADIO_ACTION(act), FM_FOLDER_VIEW(win->folder_view)->sort_type);
+    gtk_radio_action_set_current_value(GTK_RADIO_ACTION(act), fm_folder_view_get_sort_type(fv));
     act = gtk_ui_manager_get_action(win->ui, "/menubar/ViewMenu/Sort/ByName");
-    gtk_radio_action_set_current_value(GTK_RADIO_ACTION(act), FM_FOLDER_VIEW(win->folder_view)->sort_by);
+    gtk_radio_action_set_current_value(GTK_RADIO_ACTION(act), fm_folder_view_get_sort_by(fv));
 }
 
 static void update_view_menu(FmMainWin* win)
 {
     GtkAction* act;
+    FmFolderView* fv = FM_FOLDER_VIEW(win->folder_view);
     act = gtk_ui_manager_get_action(win->ui, "/menubar/ViewMenu/ShowHidden");
-    gtk_toggle_action_set_active(GTK_TOGGLE_ACTION(act), FM_FOLDER_VIEW(win->folder_view)->show_hidden);
+    gtk_toggle_action_set_active(GTK_TOGGLE_ACTION(act), fm_folder_view_get_show_hidden(fv));
     act = gtk_ui_manager_get_action(win->ui, "/menubar/ViewMenu/IconView");
-    gtk_radio_action_set_current_value(GTK_RADIO_ACTION(act), FM_FOLDER_VIEW(win->folder_view)->mode);
+    gtk_radio_action_set_current_value(GTK_RADIO_ACTION(act), fm_folder_view_get_mode(fv));
 }
 
 static void on_folder_view_sort_changed(FmFolderView* fv, FmMainWin* win)
@@ -1024,12 +1026,16 @@ void on_location(GtkAction* act, FmMainWin* win)
 void on_prop(GtkAction* action, FmMainWin* win)
 {
     FmFolderView* fv = FM_FOLDER_VIEW(win->folder_view);
-    /* FIXME: should prevent directly accessing data members */
-    FmFileInfo* fi = FM_FOLDER_MODEL(fv->model)->dir->dir_fi;
-    FmFileInfoList* files = fm_file_info_list_new();
-    fm_list_push_tail(files, fi);
-    fm_show_file_properties(GTK_WINDOW(win), files);
-    fm_list_unref(files);
+    FmFolder* folder = fm_folder_view_get_folder(fv);
+    if(folder && fm_folder_is_valid(folder))
+    {
+        /* FIXME: should prevent directly accessing data members */
+        FmFileInfo* fi = fm_folder_get_info(folder);
+        FmFileInfoList* files = fm_file_info_list_new();
+        fm_list_push_tail(files, fi);
+        fm_show_file_properties(GTK_WINDOW(win), files);
+        fm_list_unref(files);
+    }
 }
 
 /* This callback is only connected to folder view of current active tab page. */

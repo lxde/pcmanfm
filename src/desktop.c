@@ -2354,8 +2354,8 @@ static gboolean on_drag_motion ( GtkWidget *dest_widget,
                 /* if(fm_file_info_is_dir(item->fi)) */
                 dest_file = item->fi;
             }
-            else /* FIXME: prevent direct access to data member */
-                dest_file = model->dir->dir_fi;
+            else
+                dest_file = fm_folder_get_info(model->dir);
 
             fm_dnd_dest_set_dest_file(desktop->dnd_dest, dest_file);
             action = fm_dnd_dest_get_default_action(desktop->dnd_dest, drag_context, target);
