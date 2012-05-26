@@ -51,6 +51,7 @@ static void update_statusbar(FmMainWin* win);
 static void on_focus_in(GtkWidget* w, GdkEventFocus* evt);
 static gboolean on_key_press_event(GtkWidget* w, GdkEventKey* evt);
 static gboolean on_button_press_event(GtkWidget* w, GdkEventButton* evt);
+static void on_unrealize(GtkWidget* widget);
 
 static void on_new_win(GtkAction* act, FmMainWin* win);
 static void on_new_tab(GtkAction* act, FmMainWin* win);
@@ -128,6 +129,7 @@ static void fm_main_win_class_init(FmMainWinClass *klass)
     widget_class->focus_in_event = on_focus_in;
     widget_class->key_press_event = on_key_press_event;
     widget_class->button_press_event = on_button_press_event;
+    widget_class->unrealize = on_unrealize;
 
     fm_main_win_parent_class = (GtkWindowClass*)g_type_class_peek(GTK_TYPE_WINDOW);
 }
@@ -565,8 +567,6 @@ static void fm_main_win_destroy(GObject *object)
     }
     /* This is mainly for removing idle_focus_view() */
     g_source_remove_by_user_data(win);
-
-    gtk_window_get_size(GTK_WINDOW(win), &app_config->win_width, &app_config->win_height);
     all_wins = g_slist_remove(all_wins, win);
 
 #if GTK_CHECK_VERSION(3, 0, 0)
@@ -588,6 +588,13 @@ static void fm_main_win_finalize(GObject *object)
         (* G_OBJECT_CLASS(fm_main_win_parent_class)->finalize)(object);    
 
     pcmanfm_unref();
+}
+
+static void on_unrealize(GtkWidget* widget)
+{
+    FmMainWin* win = FM_MAIN_WIN(widget);
+    gtk_window_get_size(GTK_WINDOW(win), &app_config->win_width, &app_config->win_height);
+    (*GTK_WIDGET_CLASS(fm_main_win_parent_class)->unrealize)(widget);
 }
 
 void on_about(GtkAction* act, FmMainWin* win)
