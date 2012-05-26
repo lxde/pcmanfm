@@ -37,7 +37,13 @@
 #include "pref.h"
 #include "tab-page.h"
 
-static void fm_main_win_finalize              (GObject *object);
+#if GTK_CHECK_VERSION(3, 0, 0)
+static void fm_main_win_destroy(GtkWidget *object);
+#else
+static void fm_main_win_destroy(GObject *object);
+#endif
+
+static void fm_main_win_finalize(GObject *object);
 G_DEFINE_TYPE(FmMainWin, fm_main_win, GTK_TYPE_WINDOW);
 
 static void update_statusbar(FmMainWin* win);
@@ -45,7 +51,6 @@ static void update_statusbar(FmMainWin* win);
 static void on_focus_in(GtkWidget* w, GdkEventFocus* evt);
 static gboolean on_key_press_event(GtkWidget* w, GdkEventKey* evt);
 static gboolean on_button_press_event(GtkWidget* w, GdkEventButton* evt);
-static gboolean on_delete_event(GtkWidget* w, GdkEvent* evt);
 
 static void on_new_win(GtkAction* act, FmMainWin* win);
 static void on_new_tab(GtkAction* act, FmMainWin* win);
@@ -108,14 +113,19 @@ static GSList* all_wins = NULL;
 
 static void fm_main_win_class_init(FmMainWinClass *klass)
 {
-    GObjectClass *g_object_class;
-    GtkWidgetClass* widget_class;
+    GObjectClass *g_object_class = G_OBJECT_CLASS(klass);
+    GtkWidgetClass* widget_class = GTK_WIDGET_CLASS(klass);
+#if GTK_CHECK_VERSION(3, 0, 0)
+    widget_class->destroy = fm_main_win_destroy;
+#else
+    GtkObjectClass* gtk_object_class = GTK_OBJECT_CLASS(klass);
+    gtk_object_class->destroy = fm_main_win_destroy;
+#endif
     g_object_class = G_OBJECT_CLASS(klass);
     g_object_class->finalize = fm_main_win_finalize;
 
     widget_class = (GtkWidgetClass*)klass;
     widget_class->focus_in_event = on_focus_in;
-    widget_class->delete_event = on_delete_event;
     widget_class->key_press_event = on_key_press_event;
     widget_class->button_press_event = on_button_press_event;
 
@@ -530,6 +540,41 @@ GtkWidget* fm_main_win_new(FmPath* path)
     return (GtkWidget*)win;
 }
 
+#if GTK_CHECK_VERSION(3, 0, 0)
+static void fm_main_win_destroy(GtkWidget *object)
+#else
+static void fm_main_win_destroy(GObject *object)
+#endif
+{
+    FmMainWin *win = FM_MAIN_WIN(object);
+    g_return_if_fail(object != NULL);
+    g_return_if_fail(IS_FM_MAIN_WIN(object));
+
+    /* FIXME: this handler gets invokes for more than once sometimes.
+     * How to avoid repeated calls to this handler? */
+
+    if(win->ui)
+    {
+        g_object_unref(win->ui);
+        win->ui = NULL;
+    }
+    if(win->bookmarks)
+    {
+        g_object_unref(win->bookmarks);
+        win->bookmarks = NULL;
+    }
+    /* This is mainly for removing idle_focus_view() */
+    g_source_remove_by_user_data(win);
+
+    gtk_window_get_size(GTK_WINDOW(win), &app_config->win_width, &app_config->win_height);
+    all_wins = g_slist_remove(all_wins, win);
+
+#if GTK_CHECK_VERSION(3, 0, 0)
+    (*GTK_WIDGET_CLASS(fm_main_win_parent_class)->destroy)(object);
+#else
+    (*GTK_OBJECT_CLASS(fm_main_win_parent_class)->destroy)(object);
+#endif
+}
 
 static void fm_main_win_finalize(GObject *object)
 {
@@ -539,15 +584,8 @@ static void fm_main_win_finalize(GObject *object)
     g_return_if_fail(IS_FM_MAIN_WIN(object));
 
     win = FM_MAIN_WIN(object);
-
-    g_object_unref(win->ui);
-    g_object_unref(win->bookmarks);
-
-    /* This is mainly for removing idle_focus_view() */
-    g_source_remove_by_user_data(win);
-
     if (G_OBJECT_CLASS(fm_main_win_parent_class)->finalize)
-        (* G_OBJECT_CLASS(fm_main_win_parent_class)->finalize)(object);
+        (* G_OBJECT_CLASS(fm_main_win_parent_class)->finalize)(object);    
 
     pcmanfm_unref();
 }
@@ -677,16 +715,6 @@ void on_focus_in(GtkWidget* w, GdkEventFocus* evt)
         all_wins = g_slist_prepend(all_wins, w);
     }
     ((GtkWidgetClass*)fm_main_win_parent_class)->focus_in_event(w, evt);
-}
-
-gboolean on_delete_event(GtkWidget* w, GdkEvent* evt)
-{
-    FmMainWin* win = (FmMainWin*)w;
-    /* store the size of last used window in config. */
-    gtk_window_get_size(GTK_WINDOW(w), &app_config->win_width, &app_config->win_height);
-    all_wins = g_slist_remove(all_wins, win);
-//    ((GtkWidgetClass*)fm_main_win_parent_class)->delete_event(w, evt);
-    return FALSE;
 }
 
 void on_new_win(GtkAction* act, FmMainWin* win)
@@ -1188,7 +1216,7 @@ static void on_notebook_switch_page(GtkNotebook* nb, GtkNotebookPage* new_page, 
     g_signal_connect(win->side_pane, "chdir",
                      G_CALLBACK(on_side_pane_chdir), win);
 
-    cwd = fm_folder_view_get_cwd(folder_view);
+    cwd = fm_tab_page_get_cwd(page);
     fm_path_entry_set_path( FM_PATH_ENTRY(win->location), cwd);
     gtk_window_set_title((GtkWindow*)win, fm_tab_page_get_title(page));
 
@@ -1245,7 +1273,7 @@ void fm_main_win_open_in_last_active(FmPath* path)
 {
     FmMainWin* win = fm_main_win_get_last_active();
     if(!win)
-        fm_main_win_add_win(NULL, path);
+        win = fm_main_win_add_win(NULL, path);
     else
         fm_main_win_add_tab(win, path);
     gtk_window_present(GTK_WINDOW(win));

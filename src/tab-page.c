@@ -38,9 +38,14 @@ static guint signals[N_SIGNALS];
 static void fm_tab_page_finalize(GObject *object);
 static void fm_tab_page_chdir_without_history(FmTabPage* page, FmPath* path);
 static void on_folder_fs_info(FmFolder* folder, FmTabPage* page);
+static void on_folder_start_loading(FmFolder* folder, FmTabPage* page);
+static void on_folder_finish_loading(FmFolder* folder, FmTabPage* page);
+static void on_folder_removed(FmFolder* folder, FmTabPage* page);
+static void on_folder_unmount(FmFolder* folder, FmTabPage* page);
 static void on_folder_content_changed(FmFolder* folder, FmTabPage* page);
+static FmJobErrorAction on_folder_error(FmFolder* folder, GError* err, FmJobErrorSeverity severity, FmTabPage* page);
+
 static void on_folder_view_sel_changed(FmFolderView* fv, FmFileInfoList* files, FmTabPage* page);
-static void on_folder_view_loaded(FmFolderView* view, FmPath* path, FmTabPage* page);
 static char* format_status_text(FmTabPage* page);
 
 #if GTK_CHECK_VERSION(3, 0, 0)
@@ -107,12 +112,27 @@ static void fm_tab_page_finalize(GObject *object)
     g_return_if_fail(FM_IS_TAB_PAGE(object));
 
     page = FM_TAB_PAGE(object);
-    g_object_unref(page->nav_history);
 
     for(i = 0; i < FM_STATUS_TEXT_NUM; ++i)
         g_free(page->status_text[i]);
 
     G_OBJECT_CLASS(fm_tab_page_parent_class)->finalize(object);
+}
+
+static void free_folder(FmTabPage* page)
+{
+    if(page->folder)
+    {
+        g_signal_handlers_disconnect_by_func(page->folder, on_folder_start_loading, page);
+        g_signal_handlers_disconnect_by_func(page->folder, on_folder_finish_loading, page);
+        g_signal_handlers_disconnect_by_func(page->folder, on_folder_fs_info, page);
+        g_signal_handlers_disconnect_by_func(page->folder, on_folder_error, page);
+        g_signal_handlers_disconnect_by_func(page->folder, on_folder_content_changed, page);
+        g_signal_handlers_disconnect_by_func(page->folder, on_folder_removed, page);
+        g_signal_handlers_disconnect_by_func(page->folder, on_folder_unmount, page);
+        g_object_unref(page->folder);
+        page->folder = NULL;
+    }
 }
 
 inline static void disconnect_folder(FmTabPage* page, FmFolder* folder)
@@ -132,12 +152,26 @@ void fm_tab_page_destroy(GtkObject *object)
 #endif
 {
     FmTabPage* page = FM_TAB_PAGE(object);
-    FmFolder* folder = fm_tab_page_get_folder(page);
+    g_debug("fm_tab_page_destroy");
+    free_folder(page);
+    if(page->nav_history)
+    {
+        g_object_unref(page->nav_history);
+        page->nav_history = NULL;
+    }
+    if(page->folder_view)
+    {
+        g_signal_handlers_disconnect_by_func(page->folder_view, on_folder_view_sel_changed, page);
+        page->folder_view = NULL;
+    }
 
-    /* so we don't call these on a dead object */
-    disconnect_folder(page, folder);
-    g_signal_handlers_disconnect_by_func(page->folder_view, on_folder_view_sel_changed, page);
-    g_signal_handlers_disconnect_by_func(page->folder_view, on_folder_view_loaded, page);
+#if GTK_CHECK_VERSION(3, 0, 0)
+    if(GTK_WIDGET_CLASS(fm_tab_page_parent_class)->destroy)
+        (*GTK_WIDGET_CLASS(fm_tab_page_parent_class)->destroy)(object);
+#else
+    if(GTK_OBJECT_CLASS(fm_tab_page_parent_class)->destroy)
+        (*GTK_OBJECT_CLASS(fm_tab_page_parent_class)->destroy)(object);
+#endif
 }
 
 static void on_folder_content_changed(FmFolder* folder, FmTabPage* page)
@@ -188,6 +222,70 @@ static void on_folder_view_sel_changed(FmFolderView* fv, FmFileInfoList* files, 
                   (guint)FM_STATUS_TEXT_SELECTED_FILES, msg);
 }
 
+static FmJobErrorAction on_folder_error(FmFolder* folder, GError* err, FmJobErrorSeverity severity, FmTabPage* page)
+{
+    GtkWindow* win = GTK_WINDOW(GET_MAIN_WIN(page));
+    if(err->domain == G_IO_ERROR)
+    {
+        if( err->code == G_IO_ERROR_NOT_MOUNTED && severity < FM_JOB_ERROR_CRITICAL )
+        {
+            FmPath* path = fm_folder_get_path(folder);
+            if(fm_mount_path(win, path, TRUE))
+                return FM_JOB_RETRY;
+        }
+    }
+    fm_show_error(win, NULL, err->message);
+    return FM_JOB_CONTINUE;
+}
+
+static void on_folder_start_loading(FmFolder* folder, FmTabPage* page)
+{
+    FmFolderView* fv = FM_FOLDER_VIEW(page->folder_view);
+    g_debug("start-loading");
+    /* FIXME: this should be set on toplevel parent */
+    fm_set_busy_cursor(GTK_WIDGET(page));
+    fm_folder_view_set_model(fv, NULL);
+}
+
+static void on_folder_finish_loading(FmFolder* folder, FmTabPage* page)
+{
+    FmFolderView* fv = FM_FOLDER_VIEW(page->folder_view);
+    const FmNavHistoryItem* item;
+    FmPath* path = fm_folder_get_path(folder);
+    GtkScrolledWindow* scroll = GTK_SCROLLED_WINDOW(fv);
+
+    /* create a model for the folder and set it to the view */
+    FmFolderModel* model = fm_folder_model_new(folder, FALSE);
+    fm_folder_view_set_model(fv, model);
+    g_object_unref(model);
+    fm_folder_query_filesystem_info(folder); /* FIXME: is this needed? */
+
+    // fm_path_entry_set_path(entry, path);
+    /* scroll to recorded position */
+    item = fm_nav_history_get_cur(page->nav_history);
+    gtk_adjustment_set_value(gtk_scrolled_window_get_vadjustment(scroll), item->scroll_pos);
+
+    /* update status bar */
+    /* update status text */
+    g_free(page->status_text[FM_STATUS_TEXT_NORMAL]);
+    page->status_text[FM_STATUS_TEXT_NORMAL] = format_status_text(page);
+    g_signal_emit(page, signals[STATUS], 0,
+                  FM_STATUS_TEXT_NORMAL, page->status_text[FM_STATUS_TEXT_NORMAL]);
+
+    fm_unset_busy_cursor(GTK_WIDGET(fv));
+    g_debug("finish-loading");
+}
+
+static void on_folder_unmount(FmFolder* folder, FmTabPage* page)
+{
+    gtk_widget_destroy(GTK_WIDGET(page));
+}
+
+static void on_folder_removed(FmFolder* folder, FmTabPage* page)
+{
+    gtk_widget_destroy(GTK_WIDGET(page));
+}
+
 static void on_folder_fs_info(FmFolder* folder, FmTabPage* page)
 {
     guint64 free, total;
@@ -231,43 +329,6 @@ static char* format_status_text(FmTabPage* page)
     return NULL;
 }
 
-/* FIXME: call this if the view is already loaded before it's added to
- * main window. Update title and tab label using dir_fi of the FmFolder object. */
-static void on_folder_view_loaded(FmFolderView* view, FmPath* path, FmTabPage* page)
-{
-    FmIcon* icon;
-    const FmNavHistoryItem* item;
-    FmFolder* folder;
-
-    folder = fm_folder_view_get_folder(view);
-    if(folder)
-    {
-#if 0
-        if(folder->dir_fi)
-        {
-            icon = fm_file_info_get_icon(folder->dir_fi);
-            if(icon)
-            {
-                icon->gicon;
-                /* FIXME: load icon. we need to change window icon when switching pages. */
-                gtk_window_set_icon_name(GTK_WINDOW(win), "folder");
-            }
-        }
-#endif
-        fm_folder_query_filesystem_info(folder);
-    }
-
-    /* scroll to recorded position */
-    item = fm_nav_history_get_cur(page->nav_history);
-    gtk_adjustment_set_value(gtk_scrolled_window_get_vadjustment(GTK_SCROLLED_WINDOW(view)), item->scroll_pos);
-
-    /* update status text */
-    g_free(page->status_text[FM_STATUS_TEXT_NORMAL]);
-    page->status_text[FM_STATUS_TEXT_NORMAL] = format_status_text(page);
-    g_signal_emit(page, signals[STATUS], 0,
-                  FM_STATUS_TEXT_NORMAL, page->status_text[FM_STATUS_TEXT_NORMAL]);
-}
-
 static void fm_tab_page_init(FmTabPage *page)
 {
     GtkPaned* paned = GTK_PANED(page);
@@ -303,11 +364,18 @@ static void fm_tab_page_init(FmTabPage *page)
 
     g_signal_connect(page->folder_view, "sel-changed",
                      G_CALLBACK(on_folder_view_sel_changed), page);
+    /*
+    g_signal_connect(page->folder_view, "chdir",
+                     G_CALLBACK(on_folder_view_chdir), page);
     g_signal_connect(page->folder_view, "loaded",
                      G_CALLBACK(on_folder_view_loaded), page);
+    g_signal_connect(page->folder_view, "error",
+                     G_CALLBACK(on_folder_view_error), page);
+    */
+
     /* the folder view is already loded, call the "loaded" callback ourself. */
-    if(fm_folder_view_is_loaded(folder_view))
-        on_folder_view_loaded(folder_view, fm_folder_view_get_cwd(folder_view), page);
+    //if(fm_folder_view_is_loaded(folder_view))
+    //    on_folder_view_loaded(folder_view, fm_folder_view_get_cwd(folder_view), page);
 }
 
 GtkWidget *fm_tab_page_new(FmPath* path)
@@ -325,32 +393,31 @@ GtkWidget *fm_tab_page_new(FmPath* path)
 static void fm_tab_page_chdir_without_history(FmTabPage* page, FmPath* path)
 {
     FmFolderView* folder_view = FM_FOLDER_VIEW(page->folder_view);
-    FmFolder* folder = fm_folder_view_get_folder(folder_view);
     char* disp_name = fm_path_display_basename(path);
     fm_tab_label_set_text(FM_TAB_LABEL(page->tab_label), disp_name);
     g_free(disp_name);
 
-    /* disconnect from previous folder */
-    disconnect_folder(page, folder);
+    free_folder(page);
 
-    /* chdir to a new folder */
-    fm_folder_view_chdir(folder_view, path);
-    folder = fm_folder_view_get_folder(folder_view);
-    if(folder)
+    page->folder = fm_folder_get(path);
+    g_signal_connect(page->folder, "start-loading", G_CALLBACK(on_folder_start_loading), page);
+    g_signal_connect(page->folder, "finish-loading", G_CALLBACK(on_folder_finish_loading), page);
+    g_signal_connect(page->folder, "error", G_CALLBACK(on_folder_error), page);
+    g_signal_connect(page->folder, "fs-info", G_CALLBACK(on_folder_fs_info), page);
+    /* destroy the page when the folder is unmounted or deleted. */
+    g_signal_connect(page->folder, "removed", G_CALLBACK(on_folder_removed), page);
+    g_signal_connect(page->folder, "unmount", G_CALLBACK(on_folder_unmount), page);
+    g_signal_connect(page->folder, "content-changed", G_CALLBACK(on_folder_content_changed), page);
+
+    if(fm_folder_is_loaded(page->folder))
     {
-        g_signal_connect(folder, "fs-info", G_CALLBACK(on_folder_fs_info), page);
-//        on_folder_fs_info(folder, win);
-        fm_folder_query_filesystem_info(folder);
+        on_folder_finish_loading(page->folder, page);
+        on_folder_fs_info(page->folder, page);
     }
+    else
+        on_folder_start_loading(page->folder, page);
 
     fm_side_pane_chdir(FM_SIDE_PANE(page->side_pane), path);
-
-    /* destroy the page when the folder is unmounted or deleted. */
-    g_signal_connect_swapped(folder, "unmount", G_CALLBACK(gtk_widget_destroy), page);
-    g_signal_connect_swapped(folder, "removed", G_CALLBACK(gtk_widget_destroy), page);
-
-    g_signal_connect(folder, "content-changed", G_CALLBACK(on_folder_content_changed), page);
-    g_signal_connect(folder, "fs-info", G_CALLBACK(on_folder_fs_info), page);
 
     /* tell the world that our current working directory is changed */
     g_signal_emit(page, signals[CHDIR], 0, path);
@@ -358,7 +425,11 @@ static void fm_tab_page_chdir_without_history(FmTabPage* page, FmPath* path)
 
 void fm_tab_page_chdir(FmTabPage* page, FmPath* path)
 {
-    int scroll_pos = gtk_adjustment_get_value(gtk_scrolled_window_get_vadjustment(GTK_SCROLLED_WINDOW(page->folder_view)));
+    FmPath* cwd = fm_tab_page_get_cwd(page);
+    int scroll_pos;
+    if(cwd && path && fm_path_equal(cwd, path))
+        return;
+    scroll_pos = gtk_adjustment_get_value(gtk_scrolled_window_get_vadjustment(GTK_SCROLLED_WINDOW(page->folder_view)));
     fm_nav_history_chdir(page->nav_history, path, scroll_pos);
     fm_tab_page_chdir_without_history(page, path);
 }
@@ -375,7 +446,7 @@ void fm_tab_page_set_show_hidden(FmTabPage* page, gboolean show_hidden)
 
 FmPath* fm_tab_page_get_cwd(FmTabPage* page)
 {
-    return fm_folder_view_get_cwd(FM_FOLDER_VIEW(page->folder_view));
+    return page->folder ? fm_folder_get_path(page->folder) : NULL;
 }
 
 GtkWidget* fm_tab_page_get_side_pane(FmTabPage* page)

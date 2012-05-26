@@ -57,6 +57,7 @@ struct _FmTabPage
     GtkWidget* tab_label;
     FmNavHistory* nav_history;
     char* status_text[FM_STATUS_TEXT_NUM];
+    FmFolder* folder;
 };
 
 struct _FmTabPageClass
