@@ -152,7 +152,7 @@ void fm_tab_page_destroy(GtkObject *object)
 #endif
 {
     FmTabPage* page = FM_TAB_PAGE(object);
-    g_debug("fm_tab_page_destroy");
+    /* g_debug("fm_tab_page_destroy"); */
     free_folder(page);
     if(page->nav_history)
     {
@@ -241,7 +241,7 @@ static FmJobErrorAction on_folder_error(FmFolder* folder, GError* err, FmJobErro
 static void on_folder_start_loading(FmFolder* folder, FmTabPage* page)
 {
     FmFolderView* fv = FM_FOLDER_VIEW(page->folder_view);
-    g_debug("start-loading");
+    /* g_debug("start-loading"); */
     /* FIXME: this should be set on toplevel parent */
     fm_set_busy_cursor(GTK_WIDGET(page));
     fm_folder_view_set_model(fv, NULL);
@@ -273,7 +273,7 @@ static void on_folder_finish_loading(FmFolder* folder, FmTabPage* page)
                   FM_STATUS_TEXT_NORMAL, page->status_text[FM_STATUS_TEXT_NORMAL]);
 
     fm_unset_busy_cursor(GTK_WIDGET(fv));
-    g_debug("finish-loading");
+    /* g_debug("finish-loading"); */
 }
 
 static void on_folder_unmount(FmFolder* folder, FmTabPage* page)
