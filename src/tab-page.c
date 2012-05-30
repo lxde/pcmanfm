@@ -135,16 +135,6 @@ static void free_folder(FmTabPage* page)
     }
 }
 
-inline static void disconnect_folder(FmTabPage* page, FmFolder* folder)
-{
-    if(folder)
-    {
-        g_signal_handlers_disconnect_by_func(folder, gtk_widget_destroy, page);
-        g_signal_handlers_disconnect_by_func(folder, on_folder_content_changed, page);
-        g_signal_handlers_disconnect_by_func(folder, on_folder_fs_info, page);
-    }
-}
-
 #if GTK_CHECK_VERSION(3, 0, 0)
 void fm_tab_page_destroy(GtkWidget *object)
 #else

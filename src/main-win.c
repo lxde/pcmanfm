@@ -558,11 +558,12 @@ static void fm_main_win_destroy(GObject *object)
     if(win->ui)
     {
         g_object_unref(win->ui);
-        win->ui = NULL;
-    }
+        win->ui= NULL;
+	}
     if(win->bookmarks)
     {
         g_object_unref(win->bookmarks);
+        g_signal_handlers_disconnect_by_func(win->bookmarks, on_bookmarks_changed, win);
         win->bookmarks = NULL;
     }
     /* This is mainly for removing idle_focus_view() */
