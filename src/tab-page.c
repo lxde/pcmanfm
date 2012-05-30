@@ -234,7 +234,16 @@ static FmJobErrorAction on_folder_error(FmFolder* folder, GError* err, FmJobErro
                 return FM_JOB_RETRY;
         }
     }
-    fm_show_error(win, NULL, err->message);
+    if(severity >= FM_JOB_ERROR_MODERATE)
+    {
+		/* Only show more severe errors to the users and
+		 * ignore milder errors. Otherwise too many error
+		 * message boxes can be annoying.
+		 * This fixes bug #3411298- Show "Permission denied" when switching to super user mode.
+		 * https://sourceforge.net/tracker/?func=detail&aid=3411298&group_id=156956&atid=801864
+		 * */
+		fm_show_error(win, NULL, err->message);
+	}
     return FM_JOB_CONTINUE;
 }
 
