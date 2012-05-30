@@ -254,7 +254,7 @@ static void on_folder_finish_loading(FmFolder* folder, FmTabPage* page)
     GtkScrolledWindow* scroll = GTK_SCROLLED_WINDOW(fv);
 
     /* create a model for the folder and set it to the view */
-    FmFolderModel* model = fm_folder_model_new(folder, FALSE);
+    FmFolderModel* model = fm_folder_model_new(folder, app_config->show_hidden);
     fm_folder_view_set_model(fv, model);
     g_object_unref(model);
     fm_folder_query_filesystem_info(folder); /* FIXME: is this needed? */
