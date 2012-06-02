@@ -217,7 +217,7 @@ static void on_spin_changed(GtkSpinButton* btn, gpointer _off)
 {
     gsize off = GPOINTER_TO_SIZE(_off);
     guint* val = (guint*)G_STRUCT_MEMBER_P(fm_config, off);
-    gboolean new_val = gtk_spin_button_get_value(btn);
+    guint new_val = gtk_spin_button_get_value(btn);
     if(*val != new_val)
     {
         const char* name = g_object_get_data((GObject*)btn, "changed");

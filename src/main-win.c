@@ -711,7 +711,7 @@ void on_sort_by(GtkRadioAction* act, GtkRadioAction *cur, FmMainWin* win)
 
 void on_sort_type(GtkRadioAction* act, GtkRadioAction *cur, FmMainWin* win)
 {
-    int val = gtk_radio_action_get_current_value(cur);
+    guint val = gtk_radio_action_get_current_value(cur);
     fm_folder_view_sort(win->folder_view, val, -1);
     if(val != app_config->sort_type)
     {

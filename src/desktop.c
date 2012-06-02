@@ -1190,7 +1190,7 @@ void on_size_allocate(GtkWidget* w, GtkAllocation* alloc)
     self->text_h += 4;
     self->text_w += 4; /* 4 is for drawing border */
     self->cell_h = fm_config->big_icon_size + self->spacing + self->text_h + self->ypad * 2;
-    self->cell_w = MAX(self->text_w, fm_config->big_icon_size) + self->xpad * 2;
+    self->cell_w = MAX((gint)self->text_w, fm_config->big_icon_size) + self->xpad * 2;
 
     update_working_area(self);
     /* queue_layout_items(self); this is called in update_working_area */
@@ -1248,7 +1248,7 @@ FmDesktopItem* get_nearest_item(FmDesktop* desktop, FmDesktopItem* item,  GtkDir
     case GTK_DIR_LEFT:
         for(l = desktop->items; l; l = l->next)
         {
-            int dist;
+            guint dist;
             item2 = (FmDesktopItem*) l->data;
             if(item2->x >= item->x)
                 continue;
@@ -1274,7 +1274,7 @@ FmDesktopItem* get_nearest_item(FmDesktop* desktop, FmDesktopItem* item,  GtkDir
     case GTK_DIR_RIGHT:
         for(l = desktop->items; l; l = l->next)
         {
-            int dist;
+            guint dist;
             item2 = (FmDesktopItem*) l->data;
             if(item2->x <= item->x)
                 continue;
@@ -1300,7 +1300,7 @@ FmDesktopItem* get_nearest_item(FmDesktop* desktop, FmDesktopItem* item,  GtkDir
     case GTK_DIR_UP:
         for(l = desktop->items; l; l = l->next)
         {
-            int dist;
+            guint dist;
             item2 = (FmDesktopItem*) l->data;
             if(item2->y >= item->y)
                 continue;
@@ -1326,7 +1326,7 @@ FmDesktopItem* get_nearest_item(FmDesktop* desktop, FmDesktopItem* item,  GtkDir
     case GTK_DIR_DOWN:
         for(l = desktop->items; l; l = l->next)
         {
-            int dist;
+            guint dist;
             item2 = (FmDesktopItem*) l->data;
             if(item2->y <= item->y)
                 continue;

@@ -303,7 +303,7 @@ gboolean pcmanfm_run()
 
             if(wallpaper_mode)
             {
-                int i = 0;
+                guint i = 0;
                 for(i = 0; i < G_N_ELEMENTS(valid_wallpaper_modes); ++i)
                 {
                     if(strcmp(valid_wallpaper_modes[i], wallpaper_mode) == 0)
