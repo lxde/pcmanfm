@@ -47,7 +47,7 @@ struct _FmDesktop
     GtkWindow parent;
     GdkGC* gc;
     PangoLayout* pl;
-    GtkCellRendererPixbuf* icon_render;
+    FmCellRendererPixbuf* icon_render;
     GList* items;
     GList* fixed_items;
     guint xpad;
@@ -87,7 +87,7 @@ FmFileInfoList* fm_desktop_get_selected_files(FmDesktop* desktop);
 FmPathList* fm_desktop_get_selected_paths(FmDesktop* desktop);
 
 GType       fm_desktop_get_type     (void);
-GtkWidget*  fm_desktop_new          (void);
+FmDesktop*  fm_desktop_new          (void);
 
 void fm_desktop_manager_init();
 void fm_desktop_manager_finalize();

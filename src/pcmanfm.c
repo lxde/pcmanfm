@@ -95,13 +95,16 @@ static gboolean pcmanfm_run();
 static void unix_signal_handler(int sig_num)
 {
     /* postpond the signal handling by using a pipe */
-    write(signal_pipe[1], &sig_num, sizeof(sig_num));
+    if (write(signal_pipe[1], &sig_num, sizeof(sig_num)) != sizeof(sig_num)) {
+        g_critical("cannot bounce the signal, stop");
+        exit(2);
+    }
 }
 
 static gboolean on_unix_signal(GIOChannel* ch, GIOCondition cond, gpointer user_data)
 {
     int sig_num;
-    g_io_channel_read_chars(ch, &sig_num, 1, NULL, NULL);
+    g_io_channel_read_chars(ch, (gchar*)&sig_num, 1, NULL, NULL);
     switch(sig_num)
     {
     case SIGTERM:
@@ -170,6 +173,7 @@ int main(int argc, char** argv)
     case SINGLE_INST_ERROR: /* error happened. */
         single_inst_finalize();
         return 1;
+    case SINGLE_INST_SERVER: ; /* FIXME */
     }
 
     if(pipe(signal_pipe) == 0)
@@ -336,7 +340,7 @@ gboolean pcmanfm_run()
         if(files_to_open)
         {
             char** filename;
-            FmJob* job = fm_file_info_job_new(NULL, 0);
+            FmFileInfoJob* job = fm_file_info_job_new(NULL, 0);
             FmPath* cwd = NULL;
             GList* infos;
             for(filename=files_to_open; *filename; ++filename)
@@ -364,14 +368,14 @@ gboolean pcmanfm_run()
                     }
                     path = fm_path_new_relative(cwd, *filename);
                 }
-                fm_file_info_job_add(FM_FILE_INFO_JOB(job), path);
+                fm_file_info_job_add(job, path);
                 fm_path_unref(path);
             }
             if(cwd)
                 fm_path_unref(cwd);
             g_signal_connect(job, "error", G_CALLBACK(on_file_info_job_error), NULL);
-            fm_job_run_sync_with_mainloop(job);
-            infos = fm_list_peek_head_link(FM_FILE_INFO_JOB(job)->file_infos);
+            fm_job_run_sync_with_mainloop(FM_JOB(job));
+            infos = fm_list_peek_head_link(job->file_infos);
             fm_launch_files_simple(NULL, NULL, infos, pcmanfm_open_folder, NULL);
             g_object_unref(job);
             ret = (n_pcmanfm_ref >= 1); /* if there is opened window, return true to run the main loop. */
@@ -465,7 +469,7 @@ void pcmanfm_open_folder_in_terminal(GtkWindow* parent, FmPath* dir)
     if(app)
     {
         GError* err = NULL;
-        GAppLaunchContext* ctx = gdk_app_launch_context_new();
+        GdkAppLaunchContext* ctx = gdk_app_launch_context_new();
         char* cwd_str;
         char* old_cwd = g_get_current_dir();
 
@@ -477,12 +481,12 @@ void pcmanfm_open_folder_in_terminal(GtkWindow* parent, FmPath* dir)
             cwd_str = g_file_get_path(gf);
             g_object_unref(gf);
         }
-        gdk_app_launch_context_set_screen(GDK_APP_LAUNCH_CONTEXT(ctx), parent ? gtk_widget_get_screen(GTK_WIDGET(parent)) : gdk_screen_get_default());
-        gdk_app_launch_context_set_timestamp(GDK_APP_LAUNCH_CONTEXT(ctx), gtk_get_current_event_time());
+        gdk_app_launch_context_set_screen(ctx, parent ? gtk_widget_get_screen(GTK_WIDGET(parent)) : gdk_screen_get_default());
+        gdk_app_launch_context_set_timestamp(ctx, gtk_get_current_event_time());
         g_chdir(cwd_str); /* FIXME: currently we don't have better way for this. maybe a wrapper script? */
         g_free(cwd_str);
 
-        if(!g_app_info_launch(app, NULL, ctx, &err))
+        if(!g_app_info_launch(app, NULL, G_APP_LAUNCH_CONTEXT(ctx), &err))
         {
             fm_show_error(parent, NULL, err->message);
             g_error_free(err);
@@ -503,7 +507,7 @@ void pcmanfm_create_new(GtkWindow* parent, FmPath* cwd, const char* templ)
     FmPath* dest;
     char* basename;
     const char* msg;
-    FmMainWin* win = FM_MAIN_WIN(parent);
+    //FmMainWin* win = FM_MAIN_WIN(parent);
 _retry:
     if(templ == TEMPL_NAME_FOLDER)
         msg = N_("Enter a name for the newly created folder:");

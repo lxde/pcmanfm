@@ -89,8 +89,9 @@ FmConfig *fm_app_config_new(void)
 void fm_app_config_load_from_key_file(FmAppConfig* cfg, GKeyFile* kf)
 {
     char* tmp;
+    int tmp_int;
     /* behavior */
-    fm_key_file_get_bool(kf, "config", "bm_open_method", &cfg->bm_open_method);
+    fm_key_file_get_int(kf, "config", "bm_open_method", &cfg->bm_open_method);
     cfg->su_cmd = g_key_file_get_string(kf, "config", "su_cmd", NULL);
 
     /* volume management */
@@ -99,7 +100,8 @@ void fm_app_config_load_from_key_file(FmAppConfig* cfg, GKeyFile* kf)
     fm_key_file_get_bool(kf, "volume", "autorun", &cfg->autorun);
 
     /* desktop */
-    fm_key_file_get_int(kf, "desktop", "wallpaper_mode", &cfg->wallpaper_mode);
+    fm_key_file_get_int(kf, "desktop", "wallpaper_mode", &tmp_int);
+    cfg->wallpaper_mode = (FmWallpaperMode)tmp_int;
 
     tmp = g_key_file_get_string(kf, "desktop", "wallpaper", NULL);
     g_free(cfg->wallpaper);
@@ -140,15 +142,20 @@ void fm_app_config_load_from_key_file(FmAppConfig* cfg, GKeyFile* kf)
 
     fm_key_file_get_int(kf, "ui", "splitter_pos", &cfg->splitter_pos);
 
-    fm_key_file_get_int(kf, "ui", "side_pane_mode", &cfg->side_pane_mode);
+    fm_key_file_get_int(kf, "ui", "side_pane_mode", &tmp_int);
+    cfg->side_pane_mode = (FmSidePaneMode)tmp_int;
 
     /* default values for folder views */
-    fm_key_file_get_int(kf, "ui", "view_mode", &cfg->view_mode);
-    if(!FM_FOLDER_VIEW_MODE_IS_VALID(cfg->view_mode))
+    fm_key_file_get_int(kf, "ui", "view_mode", &tmp_int);
+    if(!FM_FOLDER_VIEW_MODE_IS_VALID(tmp_int))
         cfg->view_mode = FM_FV_ICON_VIEW;
+    else
+        cfg->view_mode = tmp_int;
     fm_key_file_get_bool(kf, "ui", "show_hidden", &cfg->show_hidden);
-    fm_key_file_get_int(kf, "ui", "sort_type", &cfg->sort_type);
-    if(cfg->sort_type != GTK_SORT_ASCENDING && cfg->sort_type != GTK_SORT_DESCENDING)
+    fm_key_file_get_int(kf, "ui", "sort_type", &tmp_int);
+    if(tmp_int == GTK_SORT_DESCENDING)
+        cfg->sort_type = GTK_SORT_DESCENDING;
+    else
         cfg->sort_type = GTK_SORT_ASCENDING;
     fm_key_file_get_int(kf, "ui", "sort_by", &cfg->sort_by);
     if(!FM_FOLDER_MODEL_COL_IS_VALID(cfg->sort_by))
@@ -157,8 +164,8 @@ void fm_app_config_load_from_key_file(FmAppConfig* cfg, GKeyFile* kf)
 
 void fm_app_config_load_from_profile(FmAppConfig* cfg, const char* name)
 {
-    char **dirs, **dir;
-    char *path, *rel_path;
+    const gchar * const *dirs, * const *dir;
+    char *path;
     GKeyFile* kf = g_key_file_new();
     const char* old_name = name;
 
@@ -209,7 +216,6 @@ void fm_app_config_load_from_profile(FmAppConfig* cfg, const char* name)
     }
     g_free(path);
 
-_out:
     g_key_file_free(kf);
 
     /* set some additional default values when needed. */

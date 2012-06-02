@@ -35,9 +35,9 @@ static GVolumeMonitor* vol_mon = NULL;
 typedef struct _AutoRun AutoRun;
 struct _AutoRun
 {
-    GtkWidget* dlg;
-    GtkWidget* view;
-    GtkWidget* type;
+    GtkDialog* dlg;
+    GtkTreeView* view;
+    GtkLabel* type;
     GtkListStore* store;
     GMount* mount;
     GCancellable* cancel;
@@ -48,7 +48,7 @@ static void on_dlg_response(GtkDialog* dlg, int res, gpointer user_data);
 static void on_unmount(GMount* mount, AutoRun* data)
 {
     g_debug("on umount");
-    on_dlg_response(GTK_DIALOG(data->dlg), GTK_RESPONSE_CLOSE, data);
+    on_dlg_response(data->dlg, GTK_RESPONSE_CLOSE, data);
 }
 
 void on_dlg_response(GtkDialog* dlg, int res, gpointer user_data)
@@ -61,7 +61,7 @@ void on_dlg_response(GtkDialog* dlg, int res, gpointer user_data)
     if(res == GTK_RESPONSE_OK)
     {
         GtkTreeModel* model;
-        GtkTreeSelection* sel = gtk_tree_view_get_selection(GTK_TREE_VIEW(data->view));
+        GtkTreeSelection* sel = gtk_tree_view_get_selection(data->view);
         GtkTreeIter it;
         if( gtk_tree_selection_get_selected(sel, &model, &it) )
         {
@@ -134,27 +134,27 @@ static void on_content_type_finished(GObject* src_obj, GAsyncResult* res, gpoint
             g_list_free(apps);
 
             gtk_tree_model_get_iter_first(GTK_TREE_MODEL(data->store), &it);
-            gtk_tree_selection_select_iter(gtk_tree_view_get_selection(GTK_TREE_VIEW(data->view)), &it);
+            gtk_tree_selection_select_iter(gtk_tree_view_get_selection(data->view), &it);
             tp = gtk_tree_path_new_first();
-            gtk_tree_view_set_cursor(GTK_TREE_VIEW(data->view), tp, NULL, FALSE);
+            gtk_tree_view_set_cursor(data->view, tp, NULL, FALSE);
             gtk_tree_path_free(tp);
         }
     }
 
     if(desc)
     {
-        gtk_label_set_text(GTK_LABEL(data->type), desc);
+        gtk_label_set_text(data->type, desc);
         g_free(desc);
     }
     else
-        gtk_label_set_text(GTK_LABEL(data->type), _("Removable Disk"));
+        gtk_label_set_text(data->type, _("Removable Disk"));
 
 }
 
 static void on_row_activated(GtkTreeView* view, GtkTreePath* tp, GtkTreeViewColumn* col, gpointer user_data)
 {
     AutoRun* data = (AutoRun*)user_data;
-    on_dlg_response(GTK_DIALOG(data->dlg), GTK_RESPONSE_OK, data);
+    on_dlg_response(data->dlg, GTK_RESPONSE_OK, data);
 }
 
 
@@ -165,7 +165,7 @@ inline static void show_autorun_dlg(GVolume* vol, GMount* mount)
     GtkTreeViewColumn* col;
     GtkTreeSelection* tree_sel;
     GtkCellRenderer*render;
-    GtkWidget* icon;
+    GtkImage* icon;
     GIcon* gicon;
     AutoRun* data;
 
@@ -174,20 +174,20 @@ inline static void show_autorun_dlg(GVolume* vol, GMount* mount)
 
     builder = gtk_builder_new();
     gtk_builder_add_from_file(builder, PACKAGE_UI_DIR "/autorun.ui", NULL);
-    data->dlg = GTK_WIDGET(gtk_builder_get_object(builder, "dlg"));
-    data->view = GTK_LIST_STORE(gtk_builder_get_object(builder, "listview"));
+    data->dlg = GTK_DIALOG(gtk_builder_get_object(builder, "dlg"));
+    data->view = GTK_TREE_VIEW(gtk_builder_get_object(builder, "listview"));
     data->type = GTK_LABEL(gtk_builder_get_object(builder, "type"));
-    icon = GTK_LABEL(gtk_builder_get_object(builder, "icon"));
+    icon = GTK_IMAGE(gtk_builder_get_object(builder, "icon"));
     g_object_unref(builder);
 
     gicon = g_volume_get_icon(vol);
-    gtk_image_set_from_gicon(GTK_IMAGE(icon), gicon, GTK_ICON_SIZE_DIALOG);
+    gtk_image_set_from_gicon(icon, gicon, GTK_ICON_SIZE_DIALOG);
     g_object_unref(gicon);
 
-    gtk_dialog_set_default_response(GTK_DIALOG(data->dlg), GTK_RESPONSE_OK);
-    gtk_dialog_set_alternative_button_order(GTK_DIALOG(data->dlg), GTK_RESPONSE_OK, GTK_RESPONSE_CANCEL, -1);
+    gtk_dialog_set_default_response(data->dlg, GTK_RESPONSE_OK);
+    gtk_dialog_set_alternative_button_order(data->dlg, GTK_RESPONSE_OK, GTK_RESPONSE_CANCEL, -1);
 
-    tree_sel = gtk_tree_view_get_selection(GTK_TREE_VIEW(data->view));
+    tree_sel = gtk_tree_view_get_selection(data->view);
     gtk_tree_selection_set_mode(tree_sel, GTK_SELECTION_BROWSE);
 
     col = gtk_tree_view_column_new();
@@ -199,7 +199,7 @@ inline static void show_autorun_dlg(GVolume* vol, GMount* mount)
     gtk_tree_view_column_pack_start(col, render, FALSE);
     gtk_tree_view_column_set_attributes(col, render, "text", 1, NULL);
 
-    gtk_tree_view_append_column(GTK_TREE_VIEW(data->view), col);
+    gtk_tree_view_append_column(data->view, col);
 
     data->store = gtk_list_store_new(3, G_TYPE_ICON, G_TYPE_STRING, G_TYPE_OBJECT);
     data->mount = (GMount*)g_object_ref(mount);
@@ -209,7 +209,7 @@ inline static void show_autorun_dlg(GVolume* vol, GMount* mount)
     gtk_list_store_set(data->store, &it, 0, gicon, 1, _("Open in File Manager"), -1);
     g_object_unref(gicon);
 
-    gtk_tree_view_set_model(GTK_TREE_VIEW(data->view), GTK_TREE_MODEL(data->store));
+    gtk_tree_view_set_model(data->view, GTK_TREE_MODEL(data->store));
 
     gtk_tree_model_get_iter_first(GTK_TREE_MODEL(data->store), &it);
     gtk_tree_selection_select_iter(tree_sel, &it);

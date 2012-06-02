@@ -38,15 +38,15 @@
 #define INIT_SPIN(b, st, name, changed_notify)  init_spin(b, #name, G_STRUCT_OFFSET(st, name), changed_notify)
 #define INIT_ENTRY(b, st, name, changed_notify)  init_entry(b, #name, G_STRUCT_OFFSET(st, name), changed_notify)
 
-static GtkWidget* pref_dlg = NULL;
-static GtkWidget* notebook = NULL;
+static GtkWindow* pref_dlg = NULL;
+static GtkNotebook* notebook = NULL;
 /*
 static GtkWidget* icon_size_combo[3] = {0};
 static GtkWidget* bookmark_combo = NULL
 static GtkWidget* use_trash;
 */
 
-static GtkWidget* desktop_pref_dlg = NULL;
+static GtkWindow* desktop_pref_dlg = NULL;
 
 static void on_response(GtkDialog* dlg, int res, GtkWidget** pdlg)
 {
@@ -241,7 +241,7 @@ static void init_spin(GtkBuilder* b, const char* name, gsize off, const char* ch
 static void on_entry_changed(GtkEntry* entry, gpointer _off)
 {
     gsize off = GPOINTER_TO_SIZE(_off);
-    gchar** val = (guint*)G_STRUCT_MEMBER_P(fm_config, off);
+    gchar** val = (gchar**)G_STRUCT_MEMBER_P(fm_config, off);
     const char* new_val = gtk_entry_get_text(entry);
     if(g_strcmp0(*val, new_val))
     {
@@ -257,7 +257,7 @@ static void on_entry_changed(GtkEntry* entry, gpointer _off)
 static void init_entry(GtkBuilder* b, const char* name, gsize off, const char* changed_notify)
 {
     GtkSpinButton* btn = GTK_SPIN_BUTTON(gtk_builder_get_object(b, name));
-    gchar** val = (guint*)G_STRUCT_MEMBER_P(fm_config, off);
+    gchar** val = (gchar**)G_STRUCT_MEMBER_P(fm_config, off);
     if(changed_notify)
         g_object_set_data_full(G_OBJECT(btn), "changed", g_strdup(changed_notify), g_free);
     if(*val)
@@ -272,8 +272,8 @@ void fm_edit_preference( GtkWindow* parent, int page )
         GtkBuilder* builder = gtk_builder_new();
 
         gtk_builder_add_from_file(builder, PACKAGE_UI_DIR "/pref.ui", NULL);
-        pref_dlg = gtk_builder_get_object(builder, "dlg");
-        notebook = gtk_builder_get_object(builder, "notebook");
+        pref_dlg = GTK_WINDOW(gtk_builder_get_object(builder, "dlg"));
+        notebook = GTK_NOTEBOOK(gtk_builder_get_object(builder, "notebook"));
 
         INIT_BOOL(builder, FmConfig, single_click, NULL);
         INIT_BOOL(builder, FmConfig, confirm_del, NULL);
@@ -311,8 +311,8 @@ void fm_edit_preference( GtkWindow* parent, int page )
         pcmanfm_ref();
         g_signal_connect(pref_dlg, "destroy", G_CALLBACK(pcmanfm_unref), NULL);
     }
-    gtk_notebook_set_current_page(GTK_NOTEBOOK(notebook), page);
-    gtk_window_present(GTK_WINDOW(pref_dlg));
+    gtk_notebook_set_current_page(notebook, page);
+    gtk_window_present(pref_dlg);
 }
 
 static void on_wallpaper_set(GtkFileChooserButton* btn, gpointer user_data)
@@ -363,14 +363,14 @@ void fm_desktop_preference()
         GtkBuilder* builder = gtk_builder_new();
         GtkWidget* item, *img_preview;
         gtk_builder_add_from_file(builder, PACKAGE_UI_DIR "/desktop-pref.ui", NULL);
-        desktop_pref_dlg = gtk_builder_get_object(builder, "dlg");
+        desktop_pref_dlg = GTK_WINDOW(gtk_builder_get_object(builder, "dlg"));
 
-        item = gtk_builder_get_object(builder, "wallpaper");
+        item = (GtkWidget*)gtk_builder_get_object(builder, "wallpaper");
         g_signal_connect(item, "file-set", G_CALLBACK(on_wallpaper_set), NULL);
         img_preview = gtk_image_new();
         gtk_misc_set_alignment(GTK_MISC(img_preview), 0.5, 0.0);
         gtk_widget_set_size_request( img_preview, 128, 128 );
-        gtk_file_chooser_set_preview_widget( (GtkFileChooser*)item, img_preview );
+        gtk_file_chooser_set_preview_widget(GTK_FILE_CHOOSER(item), img_preview);
         g_signal_connect( item, "update-preview", G_CALLBACK(on_update_img_preview), img_preview );
         if(app_config->wallpaper)
             gtk_file_chooser_set_filename(GTK_FILE_CHOOSER(item), app_config->wallpaper);
@@ -383,7 +383,7 @@ void fm_desktop_preference()
 
         INIT_BOOL(builder, FmAppConfig, show_wm_menu, NULL);
 
-        item = gtk_builder_get_object(builder, "desktop_font");
+        item = (GtkWidget*)gtk_builder_get_object(builder, "desktop_font");
         if(app_config->desktop_font)
             gtk_font_button_set_font_name(GTK_FONT_BUTTON(item), app_config->desktop_font);
         g_signal_connect(item, "font-set", G_CALLBACK(on_desktop_font_set), NULL);
@@ -394,6 +394,6 @@ void fm_desktop_preference()
         pcmanfm_ref();
         g_signal_connect(desktop_pref_dlg, "destroy", G_CALLBACK(pcmanfm_unref), NULL);
     }
-    gtk_window_present(GTK_WINDOW(desktop_pref_dlg));
+    gtk_window_present(desktop_pref_dlg);
 }
 

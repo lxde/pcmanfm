@@ -17,12 +17,12 @@
 //      Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 //      MA 02110-1301, USA.
 
-#include "tab-page.h"
-#include "app-config.h"
-#include "main-win.h"
-
 #include <libfm/fm-gtk.h>
 #include <glib/gi18n.h>
+
+#include "app-config.h"
+#include "main-win.h"
+#include "tab-page.h"
 
 #define GET_MAIN_WIN(page)   FM_MAIN_WIN(gtk_widget_get_toplevel(GTK_WIDGET(page)))
 
@@ -111,7 +111,7 @@ static void fm_tab_page_finalize(GObject *object)
     g_return_if_fail(object != NULL);
     g_return_if_fail(FM_IS_TAB_PAGE(object));
 
-    page = FM_TAB_PAGE(object);
+    page = (FmTabPage*)object;
 
     for(i = 0; i < FM_STATUS_TEXT_NUM; ++i)
         g_free(page->status_text[i]);
@@ -226,31 +226,29 @@ static FmJobErrorAction on_folder_error(FmFolder* folder, GError* err, FmJobErro
     }
     if(severity >= FM_JOB_ERROR_MODERATE)
     {
-		/* Only show more severe errors to the users and
-		 * ignore milder errors. Otherwise too many error
-		 * message boxes can be annoying.
-		 * This fixes bug #3411298- Show "Permission denied" when switching to super user mode.
-		 * https://sourceforge.net/tracker/?func=detail&aid=3411298&group_id=156956&atid=801864
-		 * */
-		fm_show_error(win, NULL, err->message);
-	}
+        /* Only show more severe errors to the users and
+         * ignore milder errors. Otherwise too many error
+         * message boxes can be annoying.
+         * This fixes bug #3411298- Show "Permission denied" when switching to super user mode.
+         * https://sourceforge.net/tracker/?func=detail&aid=3411298&group_id=156956&atid=801864
+         * */
+        fm_show_error(win, NULL, err->message);
+    }
     return FM_JOB_CONTINUE;
 }
 
 static void on_folder_start_loading(FmFolder* folder, FmTabPage* page)
 {
-    FmFolderView* fv = FM_FOLDER_VIEW(page->folder_view);
     /* g_debug("start-loading"); */
     /* FIXME: this should be set on toplevel parent */
     fm_set_busy_cursor(GTK_WIDGET(page));
-    fm_folder_view_set_model(fv, NULL);
+    fm_folder_view_set_model(page->folder_view, NULL);
 }
 
 static void on_folder_finish_loading(FmFolder* folder, FmTabPage* page)
 {
-    FmFolderView* fv = FM_FOLDER_VIEW(page->folder_view);
+    FmFolderView* fv = page->folder_view;
     const FmNavHistoryItem* item;
-    FmPath* path = fm_folder_get_path(folder);
     GtkScrolledWindow* scroll = GTK_SCROLLED_WINDOW(fv);
 
     /* create a model for the folder and set it to the view */
@@ -336,21 +334,21 @@ static void fm_tab_page_init(FmTabPage *page)
     GList* focus_chain = NULL;
 
     page->side_pane = fm_side_pane_new();
-    fm_side_pane_set_mode(FM_SIDE_PANE(page->side_pane), app_config->side_pane_mode);
+    fm_side_pane_set_mode(page->side_pane, app_config->side_pane_mode);
     /* TODO: add a close button to side pane */
-    gtk_paned_add1(paned, page->side_pane);
+    gtk_paned_add1(paned, GTK_WIDGET(page->side_pane));
     focus_chain = g_list_prepend(focus_chain, page->side_pane);
 
     page->folder_view = fm_folder_view_new(app_config->view_mode);
-    folder_view = FM_FOLDER_VIEW(page->folder_view);
+    folder_view = page->folder_view;
     fm_folder_view_sort(folder_view, app_config->sort_type, app_config->sort_by);
     fm_folder_view_set_selection_mode(folder_view, GTK_SELECTION_MULTIPLE);
     page->nav_history = fm_nav_history_new();
-    gtk_paned_add2(paned, page->folder_view);
+    gtk_paned_add2(paned, GTK_WIDGET(page->folder_view));
     focus_chain = g_list_prepend(focus_chain, page->folder_view);
 
     /* We need this to change tab order to focus folder view before left pane. */
-    gtk_container_set_focus_chain(page, focus_chain);
+    gtk_container_set_focus_chain(GTK_CONTAINER(page), focus_chain);
     g_list_free(focus_chain);
 
     gtk_widget_show_all(GTK_WIDGET(page));
@@ -359,7 +357,7 @@ static void fm_tab_page_init(FmTabPage *page)
     tab_label = (FmTabLabel*)fm_tab_label_new("");
     gtk_label_set_max_width_chars(tab_label->label, app_config->max_tab_chars);
     gtk_label_set_ellipsize(tab_label->label, PANGO_ELLIPSIZE_END);
-    page->tab_label = GTK_WIDGET(tab_label);
+    page->tab_label = tab_label;
 
     g_signal_connect(page->folder_view, "sel-changed",
                      G_CALLBACK(on_folder_view_sel_changed), page);
@@ -377,23 +375,19 @@ static void fm_tab_page_init(FmTabPage *page)
     //    on_folder_view_loaded(folder_view, fm_folder_view_get_cwd(folder_view), page);
 }
 
-GtkWidget *fm_tab_page_new(FmPath* path)
+FmTabPage *fm_tab_page_new(FmPath* path)
 {
     FmTabPage* page = (FmTabPage*)g_object_new(FM_TYPE_TAB_PAGE, NULL);
-    GtkWidget* label;
-    char* disp_name;
 
-    fm_folder_view_set_show_hidden(FM_FOLDER_VIEW(page->folder_view),
-                                   app_config->show_hidden);
+    fm_folder_view_set_show_hidden(page->folder_view, app_config->show_hidden);
     fm_tab_page_chdir(page, path);
     return page;
 }
 
 static void fm_tab_page_chdir_without_history(FmTabPage* page, FmPath* path)
 {
-    FmFolderView* folder_view = FM_FOLDER_VIEW(page->folder_view);
     char* disp_name = fm_path_display_basename(path);
-    fm_tab_label_set_text(FM_TAB_LABEL(page->tab_label), disp_name);
+    fm_tab_label_set_text(page->tab_label, disp_name);
     g_free(disp_name);
 
     free_folder(page);
@@ -416,7 +410,7 @@ static void fm_tab_page_chdir_without_history(FmTabPage* page, FmPath* path)
     else
         on_folder_start_loading(page->folder, page);
 
-    fm_side_pane_chdir(FM_SIDE_PANE(page->side_pane), path);
+    fm_side_pane_chdir(page->side_pane, path);
 
     /* tell the world that our current working directory is changed */
     g_signal_emit(page, signals[CHDIR], 0, path);
@@ -435,7 +429,7 @@ void fm_tab_page_chdir(FmTabPage* page, FmPath* path)
 
 void fm_tab_page_set_show_hidden(FmTabPage* page, gboolean show_hidden)
 {
-    fm_folder_view_set_show_hidden(FM_FOLDER_VIEW(page->folder_view), show_hidden);
+    fm_folder_view_set_show_hidden(page->folder_view, show_hidden);
     /* update status text */
     g_free(page->status_text[FM_STATUS_TEXT_NORMAL]);
     page->status_text[FM_STATUS_TEXT_NORMAL] = format_status_text(page);
@@ -448,19 +442,19 @@ FmPath* fm_tab_page_get_cwd(FmTabPage* page)
     return page->folder ? fm_folder_get_path(page->folder) : NULL;
 }
 
-GtkWidget* fm_tab_page_get_side_pane(FmTabPage* page)
+FmSidePane* fm_tab_page_get_side_pane(FmTabPage* page)
 {
     return page->side_pane;
 }
 
-GtkWidget* fm_tab_page_get_folder_view(FmTabPage* page)
+FmFolderView* fm_tab_page_get_folder_view(FmTabPage* page)
 {
     return page->folder_view;
 }
 
 FmFolder* fm_tab_page_get_folder(FmTabPage* page)
 {
-    return fm_folder_view_get_folder(FM_FOLDER_VIEW(page->folder_view));
+    return fm_folder_view_get_folder(page->folder_view);
 }
 
 FmNavHistory* fm_tab_page_get_history(FmTabPage* page)
@@ -472,7 +466,7 @@ void fm_tab_page_forward(FmTabPage* page)
 {
     if(fm_nav_history_get_can_forward(page->nav_history))
     {
-        FmNavHistoryItem* item;
+        const FmNavHistoryItem* item;
         GtkAdjustment* vadjustment = gtk_scrolled_window_get_vadjustment(GTK_SCROLLED_WINDOW(page->folder_view));
         int scroll_pos = gtk_adjustment_get_value(vadjustment);
         fm_nav_history_forward(page->nav_history, scroll_pos);
@@ -483,11 +477,9 @@ void fm_tab_page_forward(FmTabPage* page)
 
 void fm_tab_page_back(FmTabPage* page)
 {
-    FmMainWin* win = FM_MAIN_WIN(gtk_widget_get_toplevel(GTK_WIDGET(page)));
-
     if(fm_nav_history_get_can_back(page->nav_history))
     {
-        FmNavHistoryItem* item;
+        const FmNavHistoryItem* item;
         GtkAdjustment* vadjustment = gtk_scrolled_window_get_vadjustment(GTK_SCROLLED_WINDOW(page->folder_view));
         int scroll_pos = gtk_adjustment_get_value(vadjustment);
         fm_nav_history_back(page->nav_history, scroll_pos);
@@ -498,7 +490,6 @@ void fm_tab_page_back(FmTabPage* page)
 
 void fm_tab_page_history(FmTabPage* page, GList* history_item_link)
 {
-    FmMainWin* win = GET_MAIN_WIN(page);
     const FmNavHistoryItem* item = (FmNavHistoryItem*)history_item_link->data;
     GtkAdjustment* vadjustment = gtk_scrolled_window_get_vadjustment(GTK_SCROLLED_WINDOW(page->folder_view));
     int scroll_pos = gtk_adjustment_get_value(vadjustment);
@@ -509,7 +500,7 @@ void fm_tab_page_history(FmTabPage* page, GList* history_item_link)
 
 const char* fm_tab_page_get_title(FmTabPage* page)
 {
-    FmTabLabel* label = FM_TAB_LABEL(page->tab_label);
+    FmTabLabel* label = page->tab_label;
     return gtk_label_get_text(label->label);
 }
 
@@ -520,7 +511,7 @@ const char* fm_tab_page_get_status_text(FmTabPage* page, FmStatusTextType type)
 
 void fm_tab_page_reload(FmTabPage* page)
 {
-    FmFolder* folder = fm_folder_view_get_folder(FM_FOLDER_VIEW(page->folder_view));
+    FmFolder* folder = fm_folder_view_get_folder(page->folder_view);
     if(folder)
         fm_folder_reload(folder);
 }

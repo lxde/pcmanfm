@@ -52,9 +52,9 @@ typedef struct _FmTabPageClass        FmTabPageClass;
 struct _FmTabPage
 {
     GtkHPaned parent;
-    GtkWidget* side_pane;
-    GtkWidget* folder_view;
-    GtkWidget* tab_label;
+    FmSidePane* side_pane;
+    FmFolderView* folder_view;
+    FmTabLabel* tab_label;
     FmNavHistory* nav_history;
     char* status_text[FM_STATUS_TEXT_NUM];
     FmFolder* folder;
@@ -71,7 +71,7 @@ struct _FmTabPageClass
 
 GType fm_tab_page_get_type(void);
 
-GtkWidget* fm_tab_page_new(FmPath* path);
+FmTabPage* fm_tab_page_new(FmPath* path);
 
 void fm_tab_page_chdir(FmTabPage* page, FmPath* path);
 
@@ -79,9 +79,9 @@ void fm_tab_page_set_show_hidden(FmTabPage* page, gboolean show_hidden);
 
 FmPath* fm_tab_page_get_cwd(FmTabPage* page);
 
-GtkWidget* fm_tab_page_get_side_pane(FmTabPage* page);
+FmSidePane* fm_tab_page_get_side_pane(FmTabPage* page);
 
-GtkWidget* fm_tab_page_get_folder_view(FmTabPage* page);
+FmFolderView* fm_tab_page_get_folder_view(FmTabPage* page);
 
 FmFolder* fm_tab_page_get_folder(FmTabPage* page);
 

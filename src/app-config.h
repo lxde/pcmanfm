@@ -65,7 +65,7 @@ struct _FmAppConfig
 {
     FmConfig parent;
     /* config */
-    guint bm_open_method;
+    int bm_open_method;
 
     /* volume */
     gboolean mount_on_startup;

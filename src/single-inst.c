@@ -178,7 +178,7 @@ SingleInstResult single_inst_init(const char* _prog_name, SingleInstCallback cb,
 
     reuse = 1;
     ret = setsockopt( sock, SOL_SOCKET, SO_REUSEADDR, &reuse, sizeof(reuse) );
-    if(bind(sock, (struct sockaddr*)&addr, addr_len) == -1)
+    if(ret || bind(sock, (struct sockaddr*)&addr, addr_len) == -1)
     {
         close(sock);
         sock = -1;
