@@ -579,8 +579,8 @@ static void fm_main_win_destroy(GtkObject *object)
     }
     if(win->bookmarks)
     {
-        g_object_unref(win->bookmarks);
         g_signal_handlers_disconnect_by_func(win->bookmarks, on_bookmarks_changed, win);
+        g_object_unref(win->bookmarks);
         win->bookmarks = NULL;
     }
     /* This is mainly for removing idle_focus_view() */
