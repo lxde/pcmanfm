@@ -1178,6 +1178,8 @@ void on_size_allocate(GtkWidget* w, GtkAllocation* alloc)
     metrics = pango_context_get_metrics(pc, NULL, NULL);
 
     font_h = pango_font_metrics_get_ascent(metrics) + pango_font_metrics_get_descent (metrics);
+    pango_font_metrics_unref(metrics);
+
     font_h /= PANGO_SCALE;
 
     self->spacing = SPACING;
