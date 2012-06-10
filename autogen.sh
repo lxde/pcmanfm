@@ -4,10 +4,12 @@ AC_VERSION=
 AUTOMAKE=${AUTOMAKE:-automake}
 AM_INSTALLED_VERSION=$($AUTOMAKE --version | sed -e '2,$ d' -e 's/.* \([0-9]*\.[0-9]*\).*/\1/')
 
+# FIXME: we need a better way for version check later.
 if [ "$AM_INSTALLED_VERSION" != "1.10" \
-    -a "$AM_INSTALLED_VERSION" != "1.11" ];then
+    -a "$AM_INSTALLED_VERSION" != "1.11" \
+    -a "$AM_INSTALLED_VERSION" != "1.12" ];then
 	echo
-	echo "You must have automake > 1.10 or 1.11 installed to compile gpicview."
+	echo "You must have automake > 1.10 or 1.11 installed."
 	echo "Install the appropriate package for your distribution,"
 	echo "or get the source tarball at http://ftp.gnu.org/gnu/automake/"
 	exit 1

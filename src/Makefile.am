@@ -8,16 +8,25 @@ AM_CPPFLAGS = \
 bin_PROGRAMS = pcmanfm
 
 pcmanfm_SOURCES = \
-	pcmanfm.c pcmanfm.h \
-	app-config.c app-config.h \
-	main-win.c main-win.h \
-	tab-page.c tab-page.h \
-	desktop.c desktop.h \
-	volume-manager.c volume-manager.h \
-	pref.c pref.h \
-	utils.c utils.h \
+	pcmanfm.c \
+	pcmanfm.h \
+	app-config.c \
+	app-config.h \
+	main-win.c \
+	main-win.h \
+	tab-page.c \
+	tab-page.h \
+	desktop.c \
+	desktop.h \
+	volume-manager.c \
+	volume-manager.h \
+	pref.c \
+	pref.h \
+	utils.c \
+	utils.h \
 	gseal-gtk-compat.h \
-	single-inst.c single-inst.h \
+	single-inst.c \
+	single-inst.h \
 	$(NULL)
 
 EXTRA_DIST= \
