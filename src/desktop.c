@@ -1046,10 +1046,14 @@ gboolean on_key_press(GtkWidget* w, GdkEventKey* evt)
             fm_list_unref(sels);
         }
         break;
+    /* This is redundant. Pressing Ctrl + V on the desktop triggers on_paste() through
+     * GtkAccelGroup from the popup menu. So we don't need to do this manually.
+     * Comment this out to fix #3325001 - Copying a file to the desktop is done 2 times.
     case GDK_v:
         if(modifier & GDK_CONTROL_MASK)
             fm_clipboard_paste_files(GTK_WIDGET(desktop), fm_path_get_desktop());
         break;
+    */
     case GDK_F2:
         sels = fm_desktop_get_selected_paths(desktop);
         if(sels)
