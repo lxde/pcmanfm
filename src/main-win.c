@@ -111,6 +111,7 @@ static void on_folder_view_clicked(FmFolderView* fv, FmFolderViewClickType type,
 #include "main-win-ui.c" /* ui xml definitions and actions */
 
 static GSList* all_wins = NULL;
+static GtkDialog* about_dlg = NULL;
 
 static void fm_main_win_class_init(FmMainWinClass *klass)
 {
@@ -429,6 +430,13 @@ static void fm_main_win_init(FmMainWin *win)
     pcmanfm_ref();
     all_wins = g_slist_prepend(all_wins, win);
 
+    /* every window should have its own window group.
+     * So model dialogs opened for the window does not lockup
+     * other windows.
+     * This is related to bug #3439056 - Pcman is frozen renaming files. */
+    win->win_group = gtk_window_group_new();
+    gtk_window_group_add_window(win->win_group, win);
+
     gtk_window_set_icon_name(GTK_WINDOW(win), "folder");
 
     vbox = (GtkBox*)gtk_vbox_new(FALSE, 0);
@@ -565,9 +573,17 @@ static void fm_main_win_destroy(GtkObject *object)
 #endif
 {
     FmMainWin *win;
+
     g_return_if_fail(object != NULL);
     g_return_if_fail(IS_FM_MAIN_WIN(object));
     win = (FmMainWin*)object;
+
+    /* destroy the window group */
+    if(win->win_group)
+    {
+        g_object_unref(win->win_group);
+        win->win_group = NULL;
+    }
 
     /* FIXME: this handler gets invokes for more than once sometimes.
      * How to avoid repeated calls to this handler? */
@@ -611,15 +627,25 @@ static void on_unrealize(GtkWidget* widget)
     (*GTK_WIDGET_CLASS(fm_main_win_parent_class)->unrealize)(widget);
 }
 
+static void on_about_response(GtkDialog* dlg, gint response, gpointer user_data)
+{
+    gtk_widget_destroy(GTK_WIDGET(dlg));
+    about_dlg = NULL;
+    pcmanfm_unref();
+}
+
 void on_about(GtkAction* act, FmMainWin* win)
 {
-    GtkWidget* dlg;
-    GtkBuilder* builder = gtk_builder_new();
-    gtk_builder_add_from_file(builder, PACKAGE_UI_DIR "/about.ui", NULL);
-    dlg = (GtkWidget*)gtk_builder_get_object(builder, "dlg");
-    g_object_unref(builder);
-    gtk_dialog_run(GTK_DIALOG(dlg));
-    gtk_widget_destroy(dlg);
+    if(!about_dlg)
+    {
+        GtkBuilder* builder = gtk_builder_new();
+        gtk_builder_add_from_file(builder, PACKAGE_UI_DIR "/about.ui", NULL);
+        about_dlg = GTK_DIALOG(gtk_builder_get_object(builder, "dlg"));
+        g_object_unref(builder);
+        g_signal_connect(about_dlg, "response", G_CALLBACK(on_about_response), (gpointer)&about_dlg);
+        pcmanfm_ref();
+    }
+    gtk_window_present(GTK_WINDOW(about_dlg));
 }
 
 void on_open_folder_in_terminal(GtkAction* act, FmMainWin* win)
@@ -1300,22 +1326,22 @@ void fm_main_win_open_in_last_active(FmPath* path)
 
 static void switch_to_next_tab(FmMainWin* win)
 {
-	int n = gtk_notebook_get_current_page(win->notebook);
-	if(n < gtk_notebook_get_n_pages(win->notebook) - 1)
-		++n;
-	else
-		n = 0;
-	gtk_notebook_set_current_page(win->notebook, n);
+    int n = gtk_notebook_get_current_page(win->notebook);
+    if(n < gtk_notebook_get_n_pages(win->notebook) - 1)
+        ++n;
+    else
+        n = 0;
+    gtk_notebook_set_current_page(win->notebook, n);
 }
 
 static void switch_to_prev_tab(FmMainWin* win)
 {
-	int n = gtk_notebook_get_current_page(win->notebook);
-	if(n > 0)
-		--n;
-	else
-		n = gtk_notebook_get_n_pages(win->notebook) - 1;
-	gtk_notebook_set_current_page(win->notebook, n);
+    int n = gtk_notebook_get_current_page(win->notebook);
+    if(n > 0)
+        --n;
+    else
+        n = gtk_notebook_get_n_pages(win->notebook) - 1;
+    gtk_notebook_set_current_page(win->notebook, n);
 }
 
 gboolean on_key_press_event(GtkWidget* w, GdkEventKey* evt)
@@ -1342,21 +1368,21 @@ gboolean on_key_press_event(GtkWidget* w, GdkEventKey* evt)
          || evt->keyval == GDK_ISO_Left_Tab
          || evt->keyval == GDK_Page_Down) /* Ctrl + Tab or PageDown, next tab */
         {
-			switch_to_next_tab(win);
+            switch_to_next_tab(win);
             return TRUE;
         }
         else if(evt->keyval == GDK_Page_Up)
         {
-			switch_to_prev_tab(win);
+            switch_to_prev_tab(win);
             return TRUE;
-		}
+        }
     }
     else if(modifier == (GDK_CONTROL_MASK|GDK_SHIFT_MASK)) /* Ctrl + Shift */
     {
         if(evt->keyval == GDK_Tab
          || evt->keyval == GDK_ISO_Left_Tab) /* Ctrl + Shift + Tab or PageUp, previous tab */
         {
-			switch_to_prev_tab(win);
+            switch_to_prev_tab(win);
             return TRUE;
         }
     }

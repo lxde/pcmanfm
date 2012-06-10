@@ -45,6 +45,7 @@ typedef struct _FmMainWinClass      FmMainWinClass;
 struct _FmMainWin
 {
     GtkWindow parent;
+    GtkWindowGroup* win_group;
 
     GtkUIManager* ui;
     GtkToolbar* toolbar;
