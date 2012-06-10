@@ -385,8 +385,18 @@ gboolean pcmanfm_run()
         }
         else
         {
-            if(!daemon_mode)
+            static gboolean first_run = TRUE;
+            if(first_run && daemon_mode)
             {
+                /* If the function is called the first time and we're in daemon mode,
+               * don't open any folder.
+               * Checking if pcmanfm_run() is called the first time is needed to fix
+               * #3397444 - pcmanfm dont show window in daemon mode if i call 'pcmanfm' */
+            }
+            else
+            {
+                /* If we're not in daemon mode, or pcmanfm_run() is called because another
+               * instance send signal to us, open cwd by default. */
                 FmPath* path;
                 char* cwd = ipc_cwd ? ipc_cwd : g_get_current_dir();
                 path = fm_path_new_for_path(cwd);
@@ -395,6 +405,7 @@ gboolean pcmanfm_run()
                 g_free(cwd);
                 ipc_cwd = NULL;
             }
+            first_run = FALSE;
         }
     }
     return ret;
