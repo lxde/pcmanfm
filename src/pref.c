@@ -377,6 +377,7 @@ void fm_desktop_preference()
 
         INIT_COMBO(builder, FmAppConfig, wallpaper_mode, "wallpaper");
         INIT_COLOR(builder, FmAppConfig, desktop_bg, "wallpaper");
+        INIT_BOOL(builder, FmAppConfig, wallpaper_common, "wallpaper");
 
         INIT_COLOR(builder, FmAppConfig, desktop_fg, "desktop_text");
         INIT_COLOR(builder, FmAppConfig, desktop_shadow, "desktop_text");

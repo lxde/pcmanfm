@@ -92,6 +92,9 @@ struct _FmAppConfig
     /* emit "changed::wallpaper" */
     FmWallpaperMode wallpaper_mode;
     char* wallpaper;
+    char** wallpapers;
+    int wallpapers_configured;
+    gboolean wallpaper_common;
     GdkColor desktop_bg;
     /* emit "changed::desktop_text" */
     GdkColor desktop_fg;
