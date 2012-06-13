@@ -10,9 +10,7 @@ AC_CONFIG_HEADERS([config.h])
 # Checks for programs.
 AC_ISC_POSIX
 AC_PROG_CC
-AM_PROG_LIBTOOL
 AM_PROG_CC_STDC
-AC_HEADER_STDC
 
 # Checks for header files.
 AC_HEADER_STDC
