@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-10 21:55+0800\n"
+"POT-Creation-Date: 2012-06-14 11:46+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -107,7 +107,7 @@ msgstr ""
 msgid "Show menus provided by window managers when desktop is clicked"
 msgstr ""
 
-#: ../data/ui/desktop-pref.glade.h:19
+#: ../data/ui/desktop-pref.glade.h:19 ../data/ui/pref.glade.h:40
 msgid "Advanced"
 msgstr ""
 
@@ -115,190 +115,186 @@ msgstr ""
 msgid "Fill with background color only"
 msgstr ""
 
-#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:38
+#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:45
 msgid "Stretch to fill the entire screen"
 msgstr ""
 
-#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:39
+#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:46
 msgid "Stretch to fit the screen"
 msgstr ""
 
-#: ../data/ui/desktop-pref.glade.h:23 ../data/ui/pref.glade.h:40
+#: ../data/ui/desktop-pref.glade.h:23 ../data/ui/pref.glade.h:47
 msgid "Center on the screen"
 msgstr ""
 
-#: ../data/ui/desktop-pref.glade.h:24 ../data/ui/pref.glade.h:41
+#: ../data/ui/desktop-pref.glade.h:24 ../data/ui/pref.glade.h:48
 msgid "Tile the image to fill the entire screen"
 msgstr ""
 
 #: ../data/ui/pref.glade.h:1
-msgid "Preferences"
+msgid "Opened in Current Tab"
 msgstr ""
 
 #: ../data/ui/pref.glade.h:2
-msgid "<b>Behavior</b>"
+msgid "Opened in New Tab"
 msgstr ""
 
 #: ../data/ui/pref.glade.h:3
-msgid "Open files with single click"
+msgid "Opened in New Window"
 msgstr ""
 
 #: ../data/ui/pref.glade.h:4
-msgid "Confirm before deleting files"
+msgid "Preferences"
 msgstr ""
 
 #: ../data/ui/pref.glade.h:5
-msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
+msgid "<b>Behavior</b>"
 msgstr ""
 
 #: ../data/ui/pref.glade.h:6
-msgid "Bookmarks:"
+msgid "Open files with single click"
 msgstr ""
 
 #: ../data/ui/pref.glade.h:7
-msgid "<b>Default View</b>"
+msgid "Confirm before deleting files"
 msgstr ""
 
 #: ../data/ui/pref.glade.h:8
-msgid "View Mode:"
+msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
 msgstr ""
 
 #: ../data/ui/pref.glade.h:9
-msgid "_General"
+msgid "Bookmarks:"
 msgstr ""
 
 #: ../data/ui/pref.glade.h:10
-msgid "<b>Icons</b>"
+msgid "<b>Default View</b>"
 msgstr ""
 
 #: ../data/ui/pref.glade.h:11
-msgid "Size of small icons:"
+msgid "View Mode:"
 msgstr ""
 
 #: ../data/ui/pref.glade.h:12
-msgid "Size of big icons:"
+msgid "General"
 msgstr ""
 
 #: ../data/ui/pref.glade.h:13
-msgid "Size of thumbnails:"
+msgid "<b>Icons</b>"
 msgstr ""
 
 #: ../data/ui/pref.glade.h:14
-msgid "Size of side pane icons:"
+msgid "Size of small icons:"
 msgstr ""
 
 #: ../data/ui/pref.glade.h:15
-msgid "Show thumbnails of files"
+msgid "Size of big icons:"
 msgstr ""
 
 #: ../data/ui/pref.glade.h:16
-msgid "Only show thumbnails for local files"
+msgid "Size of thumbnails:"
 msgstr ""
 
 #: ../data/ui/pref.glade.h:17
-msgid "Do not generate thumbnails for files exceeding this size:"
+msgid "Size of side pane icons:"
 msgstr ""
 
 #: ../data/ui/pref.glade.h:18
-msgid "_Display"
+msgid "Show thumbnails of files"
 msgstr ""
 
 #: ../data/ui/pref.glade.h:19
-msgid "<b>Auto-mount</b>"
+msgid "Only show thumbnails for local files"
 msgstr ""
 
 #: ../data/ui/pref.glade.h:20
-msgid "Mount mountable volumes automatically on program startup"
+msgid "Do not generate thumbnails for files exceeding this size:"
 msgstr ""
 
 #: ../data/ui/pref.glade.h:21
-msgid "Mount removable media automatically when they are inserted"
+msgid "Display"
 msgstr ""
 
 #: ../data/ui/pref.glade.h:22
-msgid "Show available options for removable media when they are inserted"
+msgid "<b>Auto-mount</b>"
 msgstr ""
 
 #: ../data/ui/pref.glade.h:23
-msgid "_Volume Management"
+msgid "Mount mountable volumes automatically on program startup"
 msgstr ""
 
 #: ../data/ui/pref.glade.h:24
-msgid "<b>Programs</b>"
+msgid "Mount removable media automatically when they are inserted"
 msgstr ""
 
 #: ../data/ui/pref.glade.h:25
-msgid "Terminal emulator:"
+msgid "Show available options for removable media when they are inserted"
 msgstr ""
 
 #: ../data/ui/pref.glade.h:26
-msgid "Switch user command:"
+msgid "Volume Management"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:27
+msgid "<b>Programs</b>"
 msgstr ""
 
 #: ../data/ui/pref.glade.h:28
+msgid "Terminal emulator:"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:29
+msgid "Switch user command:"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:31
 #, no-c-format
 msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
 "%s = the command line you want to execute with terminal or su."
 msgstr ""
 
-#: ../data/ui/pref.glade.h:30
+#: ../data/ui/pref.glade.h:33
 msgid "Archiver integration:"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:31
+#: ../data/ui/pref.glade.h:34
 msgid "<b>User Interface</b>"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:32
+#: ../data/ui/pref.glade.h:35
 msgid "Always show the tab bar"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:33
+#: ../data/ui/pref.glade.h:36
 msgid "Hide 'Close tab' buttons"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:34
+#: ../data/ui/pref.glade.h:37
 msgid "Hide side pane buttons"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:35
+#: ../data/ui/pref.glade.h:38
 msgid "Hide folder content border"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:36
+#: ../data/ui/pref.glade.h:39
 msgid "Use SI decimal prefixes instead of IEC binary prefixes"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:37
-msgid "_Advanced"
-msgstr ""
-
-#: ../data/ui/pref.glade.h:42
-msgid "Opened in Current Tab"
-msgstr ""
-
-#: ../data/ui/pref.glade.h:43
-msgid "Opened in New Tab"
-msgstr ""
-
-#: ../data/ui/pref.glade.h:44
-msgid "Opened in New Window"
-msgstr ""
-
-#: ../data/ui/pref.glade.h:45
+#: ../data/ui/pref.glade.h:41
 msgid "Icon View"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:46
+#: ../data/ui/pref.glade.h:42
 msgid "Compact View"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:47
+#: ../data/ui/pref.glade.h:43
 msgid "Thumbnail View"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:48
+#: ../data/ui/pref.glade.h:44
 msgid "Detailed List View"
 msgstr ""
 
