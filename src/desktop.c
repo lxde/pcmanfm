@@ -56,7 +56,8 @@ struct _FmDesktopItem
     gboolean fixed_pos : 1;
 };
 
-struct _FmBackgroundCache {
+struct _FmBackgroundCache
+{
     FmBackgroundCache *next;
     char *filename;
     GdkPixmap *pixmap;
@@ -235,7 +236,7 @@ static void fm_desktop_destroy(GtkObject *object)
     g_list_foreach(self->items, (GFunc)desktop_item_free, NULL);
     g_list_free(self->items);
     self->items = NULL;
-    
+
     if(desktop_model)
         disconnect_model(self);
 
@@ -253,7 +254,8 @@ static void fm_desktop_destroy(GtkObject *object)
     if(self->idle_layout)
         g_source_remove(self->idle_layout);
 
-    while(self->wallpapers) {
+    while(self->wallpapers)
+    {
         FmBackgroundCache *bg = self->wallpapers;
 
         self->wallpapers = bg->next;
@@ -1798,7 +1800,8 @@ static void update_background(FmDesktop* desktop, int is_it)
 
     char *wallpaper;
 
-    if (!app_config->wallpaper_common) {
+    if (!app_config->wallpaper_common)
+    {
         Atom ret_type;
         gulong len, after;
         int format;
@@ -1813,8 +1816,10 @@ static void update_background(FmDesktop* desktop, int is_it)
             return;
         cur_desktop = *(guint32*)prop;
         XFree(prop);
-        if(is_it >= 0) { /* emit "changed::wallpaper" */
-            if((gint)cur_desktop >= app_config->wallpapers_configured) {
+        if(is_it >= 0) /* signal "changed::wallpaper" */
+        {
+            if((gint)cur_desktop >= app_config->wallpapers_configured)
+            {
                 register int i;
 
                 app_config->wallpapers = g_renew(char *, app_config->wallpapers, cur_desktop + 1);
@@ -1825,7 +1830,9 @@ static void update_background(FmDesktop* desktop, int is_it)
             wallpaper = app_config->wallpaper;
             g_free(app_config->wallpapers[cur_desktop]);
             app_config->wallpapers[cur_desktop] = g_strdup(wallpaper);
-        } else { /* desktop refresh */
+        }
+        else /* desktop refresh */
+        {
             if((gint)cur_desktop < app_config->wallpapers_configured)
                 wallpaper = app_config->wallpapers[cur_desktop];
             else
@@ -1833,35 +1840,44 @@ static void update_background(FmDesktop* desktop, int is_it)
             g_free(app_config->wallpaper); /* update to current desktop */
             app_config->wallpaper = g_strdup(wallpaper);
         }
-    } else
+    }
+    else
         wallpaper = app_config->wallpaper;
 
-    if(app_config->wallpaper_mode != FM_WP_COLOR && wallpaper && *wallpaper) {
+    if(app_config->wallpaper_mode != FM_WP_COLOR && wallpaper && *wallpaper)
+    {
         for(cache = desktop->wallpapers; cache; cache = cache->next)
             if(strcmp(wallpaper, cache->filename) == 0)
                 break;
         if(cache && cache->wallpaper_mode == app_config->wallpaper_mode)
             pix = NULL; /* no new pix for it */
-        else if((pix = gdk_pixbuf_new_from_file(wallpaper, NULL))) {
-            if(cache) {
+        else if((pix = gdk_pixbuf_new_from_file(wallpaper, NULL)))
+        {
+            if(cache)
+            {
                 /* the same file but mode was changed */
                 g_object_unref(cache->pixmap);
                 cache->pixmap = NULL;
-            } else if(desktop->wallpapers) {
+            }
+            else if(desktop->wallpapers)
+            {
                 for(cache = desktop->wallpapers; cache->next; )
                     cache = cache->next;
                 cache->next = g_new0(FmBackgroundCache, 1);
                 cache = cache->next;
-            } else
+            }
+            else
                 desktop->wallpapers = cache = g_new0(FmBackgroundCache, 1);
             if(!cache->filename)
                 cache->filename = g_strdup(wallpaper);
             g_debug("adding new FmBackgroundCache for %s", wallpaper);
-        } else
+        }
+        else
             /* if there is a cached image but with another mode and we cannot
                get it from file for new mode then just leave it in cache as is */
             cache = NULL;
-    } else
+    }
+    else
         cache = NULL;
     if(!cache) /* solid color only */
     {
@@ -1879,33 +1895,34 @@ static void update_background(FmDesktop* desktop, int is_it)
     }
 
     pixmap = cache->pixmap;
-    if (!pixmap) {
-    src_w = gdk_pixbuf_get_width(pix);
-    src_h = gdk_pixbuf_get_height(pix);
-    if(app_config->wallpaper_mode == FM_WP_TILE)
+    if (!pixmap)
     {
-        dest_w = src_w;
-        dest_h = src_h;
-        pixmap = gdk_pixmap_new(window, dest_w, dest_h, -1);
-    }
-    else
-    {
-        GdkScreen* screen = gtk_widget_get_screen(widget);
-        dest_w = gdk_screen_get_width(screen);
-        dest_h = gdk_screen_get_height(screen);
-        pixmap = gdk_pixmap_new(window, dest_w, dest_h, -1);
-    }
+        src_w = gdk_pixbuf_get_width(pix);
+        src_h = gdk_pixbuf_get_height(pix);
+        if(app_config->wallpaper_mode == FM_WP_TILE)
+        {
+            dest_w = src_w;
+            dest_h = src_h;
+            pixmap = gdk_pixmap_new(window, dest_w, dest_h, -1);
+        }
+        else
+        {
+            GdkScreen* screen = gtk_widget_get_screen(widget);
+            dest_w = gdk_screen_get_width(screen);
+            dest_h = gdk_screen_get_height(screen);
+            pixmap = gdk_pixmap_new(window, dest_w, dest_h, -1);
+        }
 
-    if(gdk_pixbuf_get_has_alpha(pix)
-        || app_config->wallpaper_mode == FM_WP_CENTER
-        || app_config->wallpaper_mode == FM_WP_FIT)
-    {
-        gdk_gc_set_rgb_fg_color(desktop->gc, &app_config->desktop_bg);
-        gdk_draw_rectangle(pixmap, desktop->gc, TRUE, 0, 0, dest_w, dest_h);
-    }
+        if(gdk_pixbuf_get_has_alpha(pix)
+            || app_config->wallpaper_mode == FM_WP_CENTER
+            || app_config->wallpaper_mode == FM_WP_FIT)
+        {
+            gdk_gc_set_rgb_fg_color(desktop->gc, &app_config->desktop_bg);
+            gdk_draw_rectangle(pixmap, desktop->gc, TRUE, 0, 0, dest_w, dest_h);
+        }
 
-    switch(app_config->wallpaper_mode)
-    {
+        switch(app_config->wallpaper_mode)
+        {
         case FM_WP_TILE:
             gdk_draw_pixbuf(pixmap, desktop->gc, pix, 0, 0, 0, 0, dest_w, dest_h, GDK_RGB_DITHER_NORMAL, 0, 0);
             break;
@@ -1942,9 +1959,9 @@ static void update_background(FmDesktop* desktop, int is_it)
             }
             break;
         case FM_WP_COLOR: ; /* handled above */
-    }
-    cache->pixmap = pixmap;
-    cache->wallpaper_mode = app_config->wallpaper_mode;
+        }
+        cache->pixmap = pixmap;
+        cache->wallpaper_mode = app_config->wallpaper_mode;
     }
     gdk_window_set_back_pixmap(root, pixmap, FALSE);
     gdk_window_set_back_pixmap(window, NULL, TRUE);
