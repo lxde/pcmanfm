@@ -686,7 +686,7 @@ void on_open_as_root(GtkAction* act, FmMainWin* win)
     g_free(cmd);
     if(app)
     {
-        FmPath* cwd = fm_folder_view_get_cwd(win->folder_view);
+        FmPath* cwd = fm_tab_page_get_cwd(win->current_page);
         GError* err = NULL;
         GdkAppLaunchContext* ctx = gdk_app_launch_context_new();
         char* uri = fm_path_to_uri(cwd);
@@ -766,13 +766,13 @@ static gboolean on_focus_in(GtkWidget* w, GdkEventFocus* evt)
 
 void on_new_win(GtkAction* act, FmMainWin* win)
 {
-    FmPath* path = fm_folder_view_get_cwd(win->folder_view);
+    FmPath* path = fm_tab_page_get_cwd(win->current_page);
     fm_main_win_add_win(win, path);
 }
 
 void on_new_tab(GtkAction* act, FmMainWin* win)
 {
-    FmPath* path = fm_folder_view_get_cwd(win->folder_view);
+    FmPath* path = fm_tab_page_get_cwd(win->current_page);
     fm_main_win_add_tab(win, path);
 }
 
@@ -831,7 +831,7 @@ void on_go_forward(GtkAction* act, FmMainWin* win)
 
 void on_go_up(GtkAction* act, FmMainWin* win)
 {
-    FmPath* parent = fm_path_get_parent(fm_folder_view_get_cwd(win->folder_view));
+    FmPath* parent = fm_path_get_parent(fm_tab_page_get_cwd(win->current_page));
     if(parent)
         fm_main_win_chdir( win, parent);
 }
@@ -1026,7 +1026,7 @@ void on_paste(GtkAction* act, FmMainWin* win)
     }
     else
     {
-        FmPath* path = fm_folder_view_get_cwd(win->folder_view);
+        FmPath* path = fm_tab_page_get_cwd(win->current_page);
         fm_clipboard_paste_files(GTK_WIDGET(win->folder_view), path);
     }
 }
@@ -1076,7 +1076,7 @@ void on_preference(GtkAction* act, FmMainWin* win)
 
 void on_add_bookmark(GtkAction* act, FmMainWin* win)
 {
-    FmPath* cwd = fm_folder_view_get_cwd(win->folder_view);
+    FmPath* cwd = fm_tab_page_get_cwd(win->current_page);
     char* disp_path = fm_path_display_name(cwd, TRUE);
     char* msg = g_strdup_printf(_("Add following folder to bookmarks:\n\'%s\'\nEnter a name for the new bookmark item:"), disp_path);
     char* disp_name = fm_path_display_basename(cwd);
@@ -1299,14 +1299,13 @@ void on_notebook_page_removed(GtkNotebook* nb, GtkWidget* page, guint num, FmMai
 
 void on_create_new(GtkAction* action, FmMainWin* win)
 {
-    FmFolderView* fv = win->folder_view;
     const char* name = gtk_action_get_name(action);
 
     if( strcmp(name, "NewFolder") == 0 )
         name = TEMPL_NAME_FOLDER;
     else if( strcmp(name, "NewBlank") == 0 )
         name = TEMPL_NAME_BLANK;
-    pcmanfm_create_new(GTK_WINDOW(win), fm_folder_view_get_cwd(fv), name);
+    pcmanfm_create_new(GTK_WINDOW(win), fm_tab_page_get_cwd(win->current_page), name);
 }
 
 FmMainWin* fm_main_win_get_last_active()
@@ -1403,7 +1402,7 @@ gboolean on_key_press_event(GtkWidget* w, GdkEventKey* evt)
         {
             gtk_widget_grab_focus(GTK_WIDGET(win->folder_view));
             fm_path_entry_set_path(win->location,
-                                   fm_folder_view_get_cwd(win->folder_view));
+                                   fm_tab_page_get_cwd(win->current_page));
             return TRUE;
         }
     }
