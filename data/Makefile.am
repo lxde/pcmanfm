@@ -2,6 +2,8 @@ NULL=
 
 SUBDIRS=ui
 
+man_MANS=pcmanfm.1
+
 desktopdir=$(datadir)/applications
 desktop_in_files= \
 	pcmanfm.desktop.in \

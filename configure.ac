@@ -129,6 +129,7 @@ AC_CONFIG_FILES([
     src/Makefile
     po/Makefile.in
     data/Makefile
+    data/pcmanfm.1
     data/ui/Makefile
     data/ui/about.glade
 ])
