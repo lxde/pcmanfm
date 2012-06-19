@@ -1,0 +1,82 @@
+.\" Process this file with
+.\" groff -man -Tascii pcmanfm.1
+.\"
+.TH PCManFM 1 "June 2012" "@PACKAGE@ @VERSION@" "User Manuals"
+.SH NAME
+PCManFM \- A lightweight Gtk+ based file manager for X Window.
+.SH SYNOPSIS
+.B pcmanfm
+[ options ] [
+.I directories
+]
+.SH DESCRIPTION
+PCMan File Manager (\fBPCManFM\fP) is an extremly fast, lightweight, yet
+feature-rich file manager with tabbed browsing. It is the default file
+manager for the lightweight desktop environment, \fBLXDE\fP.
+.br
+Features:
+  * Extremly fast and lightweight
+  * Can be started in one second on normal machine
+  * Tabbed browsing (similar to Firefox)
+  * Drag & Drop handling with XDS (X direct save) support
+  * Files can be dragged between tabs
+  * Load large directories in reasonable time
+  * File association support (with default application setup)
+  * Basic thumbnail support with optional EXIF support
+  * Bookmarks support
+  * Handles non-UTF-8 encoded filenames correctly
+  * Provide icon view and detailed list view
+  * Standard compliant (follows FreeDesktop.org specifications)
+  * Clean and user-friendly interface (GTK+ 2.0)
+  * Desktop management
+  * Removable media mounts support
+  * Seamless access to remote file systems such as sftp, smb, and ftp
+  * Trash can support
+.SH OPTIONS
+.SS Global options:
+.TP 20
+.BR \-d ", " \-\^\-daemon-mode
+run PCManFM as a daemon
+.TP
+.BI \-p " profile" "\fR,\fP \-\^\-profile=" profile
+load another configuration \fIprofile\fP instead of \fB"default"\fP
+.TP
+.B \-\^\-no-desktop
+for Nautilus compatibility
+.PP
+.SS Per-instance options:
+.TP 20
+.B \-\^\-desktop
+launch desktop manager
+.TP
+.B \-\^\-desktop-off
+turn off desktop manager if it's running
+.TP
+.B \-\^\-desktop-pref
+open desktop preference dialog
+.TP
+.BI \-w " file" "\fR,\fP \-\^\-set-wallpaper=" file
+set desktop wallpaper from image \fIfile\fP
+.TP
+.BI \-\^\-show-pref " n"
+open preferences dialog on page \fIn\fP
+.TP
+.I directories
+directories to open
+.SH FILES
+.PD 0
+.TP
+.I ~/.config/pcmanfm/default
+The default configuration profile directory
+.TP
+.I ~/.config/pcmanfm/default/pcmanfm.conf
+The main configuration file
+.TP
+.I ~/.config/pcmanfm/default/desktop-items-0.conf
+The desktop items layout for screen 0 (primary screen)
+.SH AUTHOR
+PCManFM is named after its author's nickname on the internet, PCMan. It was
+written by Hong Jen Yee <pcman.tw@gmail.com>.
+
+This manual page was written by Tetralet <tetralet@debian.or.tw>
+for the Debian GNU/Linux system. Updated by Andriy Grytsenko <andrej@rep.kiev.ua>

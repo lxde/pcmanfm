@@ -2,26 +2,27 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Algimantas <margevicius.algimantas@mail.ru>, 2012.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-20 16:23+0200\n"
-"PO-Revision-Date: 2012-05-17 09:18+0200\n"
+"POT-Creation-Date: 2012-06-15 09:00+0300\n"
+"PO-Revision-Date: 2012-06-15 09:02+0300\n"
 "Last-Translator: Algimantas <margevicius.algimantas@mail.ru>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: lt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%"
-"100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
+"%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Pootle 2.0.5\n"
 
 #: ../data/ui/about.glade.in.h:1
-msgid "Copyright (C) 2009 - 2010"
-msgstr "Autorinės teisės (C) 2009-2010"
+msgid "Copyright (C) 2009 - 2012"
+msgstr "Autorinės teisės (C) 2009-2012"
 
 #: ../data/ui/about.glade.in.h:2
 msgid ""
@@ -40,156 +41,209 @@ msgstr ""
 "Julius Vitkauskas <zadintuvas@gmail.com>\n"
 "Algimantas Margevičius <margevicius.algimantas@gmail.com>"
 
-#: ../data/ui/desktop-pref.glade.h:1
-msgid "<b>Background</b>"
-msgstr "<b>Fonas</b>"
-
-#: ../data/ui/desktop-pref.glade.h:2
-msgid "<b>Show desktop icons</b>"
-msgstr "<b>Rodyti darbastalio piktogramas</b>"
-
-#: ../data/ui/desktop-pref.glade.h:3
-msgid "<b>Text</b>"
-msgstr "<b>Tekstas</b>"
-
-#: ../data/ui/desktop-pref.glade.h:4
-msgid "Advanced"
-msgstr "Sudėtingesni"
-
-#: ../data/ui/desktop-pref.glade.h:5
-msgid "Appearance"
-msgstr "Išvaizda"
-
-#: ../data/ui/desktop-pref.glade.h:6
-msgid "Background color:"
-msgstr "Fono spalva:"
-
-#: ../data/ui/desktop-pref.glade.h:7 ../data/ui/pref.glade.h:10
-msgid "Center on the screen"
-msgstr "Rodyti ekrano centre"
-
-#: ../data/ui/desktop-pref.glade.h:8
-msgid "Color of label text:"
-msgstr "Teksto spalva:"
-
-#: ../data/ui/desktop-pref.glade.h:9
-msgid "Color of shadow:"
-msgstr "Šešėlio spalva:"
-
-#: ../data/ui/desktop-pref.glade.h:10
-msgid "Desktop Icons"
-msgstr "Darbastalio piktogramos"
-
-#: ../data/ui/desktop-pref.glade.h:11 ../src/desktop-ui.c:58
+#: ../data/ui/desktop-pref.glade.h:1 ../src/desktop-ui.c:58
+#: ../data/pcmanfm-desktop-pref.desktop.in.h:1
 msgid "Desktop Preferences"
 msgstr "Darbastalio nustatymai"
 
-#: ../data/ui/desktop-pref.glade.h:12
-msgid "Fill with background color only"
-msgstr "Užpildyti tik fono spalva"
+#: ../data/ui/desktop-pref.glade.h:2
+msgid "<b>Background</b>"
+msgstr "<b>Fonas</b>"
 
-#: ../data/ui/desktop-pref.glade.h:13
-msgid "Font of label text:"
-msgstr "Žymos teksto šriftas:"
+#: ../data/ui/desktop-pref.glade.h:3
+msgid "Wallpaper:"
+msgstr "Fonas:"
 
-#: ../data/ui/desktop-pref.glade.h:14
+#: ../data/ui/desktop-pref.glade.h:4
 msgid "Please select an image file"
 msgstr "Prašome pasirinkti paveikslėlį"
 
-#: ../data/ui/desktop-pref.glade.h:15
-msgid "Show \"My Computer\" icon on desktop"
-msgstr "Rodyti kompiuterio piktogramą darbastalyje"
+#: ../data/ui/desktop-pref.glade.h:5
+msgid "Background color:"
+msgstr "Fono spalva:"
 
-#: ../data/ui/desktop-pref.glade.h:16
+#: ../data/ui/desktop-pref.glade.h:6
+msgid "Wallpaper mode:"
+msgstr "Fono režimas:"
+
+#: ../data/ui/desktop-pref.glade.h:7
+msgid "<b>Text</b>"
+msgstr "<b>Tekstas</b>"
+
+#: ../data/ui/desktop-pref.glade.h:8
+msgid "Font of label text:"
+msgstr "Žymos teksto šriftas:"
+
+#: ../data/ui/desktop-pref.glade.h:9
+msgid "Color of label text:"
+msgstr "Teksto spalva:"
+
+#: ../data/ui/desktop-pref.glade.h:10
+msgid "Color of shadow:"
+msgstr "Šešėlio spalva:"
+
+#: ../data/ui/desktop-pref.glade.h:11
+msgid "Appearance"
+msgstr "Išvaizda"
+
+#: ../data/ui/desktop-pref.glade.h:12
+msgid "<b>Show desktop icons</b>"
+msgstr "<b>Rodyti darbastalio piktogramas</b>"
+
+#: ../data/ui/desktop-pref.glade.h:13
 msgid "Show \"My Documents\" icon on desktop"
 msgstr "Rodyti dokumentų piktogramą darbastalyje"
 
-#: ../data/ui/desktop-pref.glade.h:17
+#: ../data/ui/desktop-pref.glade.h:14
+msgid "Show \"My Computer\" icon on desktop"
+msgstr "Rodyti kompiuterio piktogramą darbastalyje"
+
+#: ../data/ui/desktop-pref.glade.h:15
 msgid "Show \"Trash Bin\" icon on desktop"
 msgstr "Rodyti šiukšlinės piktogramą darbastalyje"
 
-#: ../data/ui/desktop-pref.glade.h:18
+#: ../data/ui/desktop-pref.glade.h:16
 msgid "Show icons of volumes on desktop"
 msgstr "Rodyti tomų piktogramas darbastalyje"
 
-#: ../data/ui/desktop-pref.glade.h:19
+#: ../data/ui/desktop-pref.glade.h:17
+msgid "Desktop Icons"
+msgstr "Darbastalio piktogramos"
+
+#: ../data/ui/desktop-pref.glade.h:18
 msgid "Show menus provided by window managers when desktop is clicked"
 msgstr ""
 "Rodyti langų tvarkyklės meniu paspaudus dešiniuoju klavišu ant darbastalio"
 
-#: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:37
+#: ../data/ui/desktop-pref.glade.h:19
+msgid "Advanced"
+msgstr "Sudėtingesni"
+
+#: ../data/ui/desktop-pref.glade.h:20
+msgid "Fill with background color only"
+msgstr "Užpildyti tik fono spalva"
+
+#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:38
 msgid "Stretch to fill the entire screen"
 msgstr "Ištempti per visą ekraną"
 
-#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:38
+#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:39
 msgid "Stretch to fit the screen"
 msgstr "Sutalpinti ekrane"
 
-#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:42
+#: ../data/ui/desktop-pref.glade.h:23 ../data/ui/pref.glade.h:40
+msgid "Center on the screen"
+msgstr "Rodyti ekrano centre"
+
+#: ../data/ui/desktop-pref.glade.h:24 ../data/ui/pref.glade.h:41
 msgid "Tile the image to fill the entire screen"
 msgstr "Užpildyti ekraną paveikslėliais"
 
-#: ../data/ui/desktop-pref.glade.h:23
-msgid "Wallpaper mode:"
-msgstr "Fono režimas:"
-
-#: ../data/ui/desktop-pref.glade.h:24
-msgid "Wallpaper:"
-msgstr "Fonas:"
-
 #: ../data/ui/pref.glade.h:1
-msgid "<b>Auto-mount</b>"
-msgstr "<b>Automatiškai prijungti</b>"
+msgid "Preferences"
+msgstr "Nustatymai"
 
 #: ../data/ui/pref.glade.h:2
 msgid "<b>Behavior</b>"
 msgstr "<b>Elgesys</b>"
 
 #: ../data/ui/pref.glade.h:3
-msgid "<b>Default View</b>"
-msgstr "<b>Numatytas vaizdas</b>"
+msgid "Open files with single click"
+msgstr "Atverti failus vienu mygtuko paspaudimu"
 
 #: ../data/ui/pref.glade.h:4
-msgid "<b>Icons</b>"
-msgstr "<b>Piktogramos</b>"
-
-#: ../data/ui/pref.glade.h:5
-msgid "<b>Programs</b>"
-msgstr "<b>Programos</b>"
-
-#: ../data/ui/pref.glade.h:6
-msgid "<b>User Interface</b>"
-msgstr "<b>Naudotojo sąsaja</b>"
-
-#: ../data/ui/pref.glade.h:7
-msgid "Always show the tab bar"
-msgstr "Visada rodyti kortelių juostą"
-
-#: ../data/ui/pref.glade.h:8
-msgid "Archiver integration:"
-msgstr "Archyvatoriaus integracija:"
-
-#: ../data/ui/pref.glade.h:9
-msgid "Bookmarks:"
-msgstr "Žymelės:"
-
-#: ../data/ui/pref.glade.h:11
-msgid "Compact View"
-msgstr "Kompaktiškas vaizdas"
-
-#: ../data/ui/pref.glade.h:12
 msgid "Confirm before deleting files"
 msgstr "Patvirtinti prieš ištrinant failus"
 
+#: ../data/ui/pref.glade.h:5
+msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
+msgstr "Perkelti ištrintus failus į šiukšlinę, o ne ištrinti iš disko"
+
+#: ../data/ui/pref.glade.h:6
+msgid "Bookmarks:"
+msgstr "Žymelės:"
+
+#: ../data/ui/pref.glade.h:7
+msgid "<b>Default View</b>"
+msgstr "<b>Numatytas vaizdas</b>"
+
+#: ../data/ui/pref.glade.h:8
+msgid "View Mode:"
+msgstr "Peržiūros režimas:"
+
+#: ../data/ui/pref.glade.h:9
+msgid "_General"
+msgstr "_Bendra"
+
+#: ../data/ui/pref.glade.h:10
+msgid "<b>Icons</b>"
+msgstr "<b>Piktogramos</b>"
+
+#: ../data/ui/pref.glade.h:11
+msgid "Size of small icons:"
+msgstr "Mažų piktogramų dydis:"
+
+#: ../data/ui/pref.glade.h:12
+msgid "Size of big icons:"
+msgstr "Didelių piktogramų dydis:"
+
 #: ../data/ui/pref.glade.h:13
-msgid "Detailed List View"
-msgstr "Išsamus sąrašas"
+msgid "Size of thumbnails:"
+msgstr "Miniatiūrų dydis:"
 
 #: ../data/ui/pref.glade.h:14
+msgid "Size of side pane icons:"
+msgstr "Šoninio skydelio piktogramų dydis:"
+
+#: ../data/ui/pref.glade.h:15
+msgid "Show thumbnails of files"
+msgstr "Rodyti failų miniatiūras"
+
+#: ../data/ui/pref.glade.h:16
+msgid "Only show thumbnails for local files"
+msgstr "Rodyti miniatiūras tik vietiniams failams"
+
+#: ../data/ui/pref.glade.h:17
 msgid "Do not generate thumbnails for files exceeding this size:"
 msgstr "Negeneruoti miniatiūrų, jei failas didesnis nei:"
 
-#: ../data/ui/pref.glade.h:16
+#: ../data/ui/pref.glade.h:18
+msgid "_Display"
+msgstr "_Rodymas"
+
+#: ../data/ui/pref.glade.h:19
+msgid "<b>Auto-mount</b>"
+msgstr "<b>Automatiškai prijungti</b>"
+
+#: ../data/ui/pref.glade.h:20
+msgid "Mount mountable volumes automatically on program startup"
+msgstr "Prijungti prijungiamus tomus automatiškai paleidžiant programą"
+
+#: ../data/ui/pref.glade.h:21
+msgid "Mount removable media automatically when they are inserted"
+msgstr "Prijungti išimamas laikmenas automatiškai jas įdėjus"
+
+#: ../data/ui/pref.glade.h:22
+msgid "Show available options for removable media when they are inserted"
+msgstr "Rodyti galimus veiksmus įdėjus išimamas laikmenas"
+
+#: ../data/ui/pref.glade.h:23
+msgid "_Volume Management"
+msgstr "_Tomų valdymas"
+
+#: ../data/ui/pref.glade.h:24
+msgid "<b>Programs</b>"
+msgstr "<b>Programos</b>"
+
+#: ../data/ui/pref.glade.h:25
+msgid "Terminal emulator:"
+msgstr "Terminalo emuliatorius:"
+
+#: ../data/ui/pref.glade.h:26
+msgid "Switch user command:"
+msgstr "Naudotojo perjungimo komanda:"
+
+#: ../data/ui/pref.glade.h:28
 #, no-c-format
 msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
@@ -198,137 +252,85 @@ msgstr ""
 "Pavyzdys: „xterm -e %s“ terminalui ar „gksu %s“ naudotojo perjungimui.\n"
 "%s = komandinė eilutė, kurią jūs norite vykdyti kartu su terminalu arba su."
 
-#: ../data/ui/pref.glade.h:18
+#: ../data/ui/pref.glade.h:30
+msgid "Archiver integration:"
+msgstr "Archyvatoriaus integracija:"
+
+#: ../data/ui/pref.glade.h:31
+msgid "<b>User Interface</b>"
+msgstr "<b>Naudotojo sąsaja</b>"
+
+#: ../data/ui/pref.glade.h:32
+msgid "Always show the tab bar"
+msgstr "Visada rodyti kortelių juostą"
+
+#: ../data/ui/pref.glade.h:33
 msgid "Hide 'Close tab' buttons"
 msgstr "Paslėpti kortelių uždarymo mygtukus"
 
-#: ../data/ui/pref.glade.h:19
-msgid "Hide folder content border"
-msgstr "Paslėpti aplanko turinio paraštę"
-
-#: ../data/ui/pref.glade.h:20
+#: ../data/ui/pref.glade.h:34
 msgid "Hide side pane buttons"
 msgstr "Paslėpti šoninio skydelio mygtukus"
 
-#: ../data/ui/pref.glade.h:21
-msgid "Icon View"
-msgstr "Piktogramų peržiūra"
-
-#: ../data/ui/pref.glade.h:22
-msgid "Mount mountable volumes automatically on program startup"
-msgstr "Prijungti prijungiamus tomus automatiškai paleidžiant programą"
-
-#: ../data/ui/pref.glade.h:23
-msgid "Mount removable media automatically when they are inserted"
-msgstr "Prijungti išimamas laikmenas automatiškai jas įdėjus"
-
-#: ../data/ui/pref.glade.h:24
-msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
-msgstr "Perkelti ištrintus failus į šiukšlinę, o ne ištrinti iš disko"
-
-#: ../data/ui/pref.glade.h:25
-msgid "Only show thumbnails for local files"
-msgstr "Rodyti miniatiūras tik vietiniams failams"
-
-#: ../data/ui/pref.glade.h:26
-msgid "Open files with single click"
-msgstr "Atverti failus vienu mygtuko paspaudimu"
-
-#: ../data/ui/pref.glade.h:27
-msgid "Opened in Current Tab"
-msgstr "Atveriamos dabartinėje kortelėje"
-
-#: ../data/ui/pref.glade.h:28
-msgid "Opened in New Tab"
-msgstr "Atveriamos naujoje kortelėje"
-
-#: ../data/ui/pref.glade.h:29
-msgid "Opened in New Window"
-msgstr "Atveriamos naujame lange"
-
-#: ../data/ui/pref.glade.h:30
-msgid "Preferences"
-msgstr "Nustatymai"
-
-#: ../data/ui/pref.glade.h:31
-msgid "Show available options for removable media when they are inserted"
-msgstr "Rodyti galimus veiksmus įdėjus išimamas laikmenas"
-
-#: ../data/ui/pref.glade.h:32
-msgid "Show thumbnails of files"
-msgstr "Rodyti failų miniatiūras"
-
-#: ../data/ui/pref.glade.h:33
-msgid "Size of big icons:"
-msgstr "Didelių piktogramų dydis:"
-
-#: ../data/ui/pref.glade.h:34
-msgid "Size of side pane icons:"
-msgstr "Šoninio skydelio piktogramų dydis:"
-
 #: ../data/ui/pref.glade.h:35
-msgid "Size of small icons:"
-msgstr "Mažų piktogramų dydis:"
+msgid "Hide folder content border"
+msgstr "Paslėpti aplanko turinio paraštę"
 
 #: ../data/ui/pref.glade.h:36
-msgid "Size of thumbnails:"
-msgstr "Miniatiūrų dydis:"
-
-#: ../data/ui/pref.glade.h:39
-msgid "Switch user command:"
-msgstr "Naudotojo perjungimo komanda:"
-
-#: ../data/ui/pref.glade.h:40
-msgid "Terminal emulator:"
-msgstr "Terminalo emuliatorius:"
-
-#: ../data/ui/pref.glade.h:41
-msgid "Thumbnail View"
-msgstr "Miniatiūrų vaizdas"
-
-#: ../data/ui/pref.glade.h:43
 msgid "Use SI decimal prefixes instead of IEC binary prefixes"
 msgstr "Naudoti SI dešimtainius matmenis vietoj IEC dvejetainių matmenų"
 
-#: ../data/ui/pref.glade.h:44
-msgid "View Mode:"
-msgstr "Peržiūros režimas:"
-
-#: ../data/ui/pref.glade.h:45
+#: ../data/ui/pref.glade.h:37
 msgid "_Advanced"
 msgstr "_Sudėtingesni"
 
+#: ../data/ui/pref.glade.h:42
+msgid "Opened in Current Tab"
+msgstr "Atveriamos dabartinėje kortelėje"
+
+#: ../data/ui/pref.glade.h:43
+msgid "Opened in New Tab"
+msgstr "Atveriamos naujoje kortelėje"
+
+#: ../data/ui/pref.glade.h:44
+msgid "Opened in New Window"
+msgstr "Atveriamos naujame lange"
+
+#: ../data/ui/pref.glade.h:45
+msgid "Icon View"
+msgstr "Piktogramų peržiūra"
+
 #: ../data/ui/pref.glade.h:46
-msgid "_Display"
-msgstr "_Rodymas"
+msgid "Compact View"
+msgstr "Kompaktiškas vaizdas"
 
 #: ../data/ui/pref.glade.h:47
-msgid "_General"
-msgstr "_Bendra"
+msgid "Thumbnail View"
+msgstr "Miniatiūrų vaizdas"
 
 #: ../data/ui/pref.glade.h:48
-msgid "_Volume Management"
-msgstr "_Tomų valdymas"
+msgid "Detailed List View"
+msgstr "Išsamus sąrašas"
 
 #: ../data/ui/autorun.glade.h:1
-msgid "<b>Removable medium is inserted</b>"
-msgstr "<b>Įdėta išimama laikmena</b>"
-
-#: ../data/ui/autorun.glade.h:2
-msgid "Detecting..."
-msgstr "Aptinkama..."
-
-#: ../data/ui/autorun.glade.h:3
-msgid "Please select the action you want to perform:"
-msgstr "Prašome pasirinkti norimą veiksmą:"
-
-#: ../data/ui/autorun.glade.h:4
 msgid "Removable medium is inserted"
 msgstr "Įdėta išimama laikmena"
 
-#: ../data/ui/autorun.glade.h:5
+#: ../data/ui/autorun.glade.h:2
+msgid "<b>Removable medium is inserted</b>"
+msgstr "<b>Įdėta išimama laikmena</b>"
+
+#: ../data/ui/autorun.glade.h:3
 msgid "Type of medium:"
 msgstr "Laikmenos tipas:"
+
+#: ../data/ui/autorun.glade.h:4
+msgid "Detecting..."
+msgstr "Aptinkama..."
+
+#: ../data/ui/autorun.glade.h:5
+msgid "Please select the action you want to perform:"
+msgstr "Prašome pasirinkti norimą veiksmą:"
 
 #: ../src/volume-manager.c:150
 msgid "Removable Disk"
@@ -567,15 +569,15 @@ msgstr "Aplankų medis"
 msgid "Remote"
 msgstr "Nuotolinis"
 
-#: ../src/main-win.c:471
+#: ../src/main-win.c:509
 msgid "You are in super user mode"
 msgstr "Jūs esate super naudotojo režime"
 
-#: ../src/main-win.c:590
+#: ../src/main-win.c:677
 msgid "Switch user command is not set."
 msgstr "Nenustatyta naudotojo perjungimo komanda."
 
-#: ../src/main-win.c:1006
+#: ../src/main-win.c:1081
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -586,7 +588,7 @@ msgstr ""
 "„%s“\n"
 "Įveskite naujos žymelės pavadinimą:"
 
-#: ../src/main-win.c:1010
+#: ../src/main-win.c:1085
 msgid "Add to Bookmarks"
 msgstr "Įtraukti į žymeles"
 
@@ -645,27 +647,27 @@ msgstr ""
 msgid "[FILE1, FILE2,...]"
 msgstr "[FAILAS1, FAILAS2,...]"
 
-#: ../src/pcmanfm.c:455
+#: ../src/pcmanfm.c:472
 msgid "Terminal emulator is not set."
 msgstr "Nenustatytas terminalo emuliatorius."
 
-#: ../src/pcmanfm.c:507
+#: ../src/pcmanfm.c:524
 msgid "Enter a name for the newly created folder:"
 msgstr "Įveskite naujo aplanko pavadinimą:"
 
-#: ../src/pcmanfm.c:509
+#: ../src/pcmanfm.c:526
 msgid "Enter a name for the newly created file:"
 msgstr "Įveskite naujo failo pavadinimą:"
 
-#: ../src/pcmanfm.c:510
+#: ../src/pcmanfm.c:527
 msgid "Create New..."
 msgstr "Sukurti naują..."
 
-#: ../src/pcmanfm.c:510
+#: ../src/pcmanfm.c:527
 msgid "New"
 msgstr "Nauja"
 
-#: ../src/tab-page.c:174
+#: ../src/tab-page.c:205
 #, c-format
 msgid "%d item selected"
 msgid_plural "%d items selected"
@@ -673,12 +675,12 @@ msgstr[0] "pasirinktas %d elementas"
 msgstr[1] "pasirinkti %d elementai"
 msgstr[2] "pasirinkta %d elementų"
 
-#: ../src/tab-page.c:196
+#: ../src/tab-page.c:298
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Laisvos vietos: %s (Iš viso: %s )"
 
-#: ../src/tab-page.c:215
+#: ../src/tab-page.c:318
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
@@ -686,7 +688,7 @@ msgstr[0] "%d elementas"
 msgstr[1] "%d elementai"
 msgstr[2] "%d elementų"
 
-#: ../src/tab-page.c:216
+#: ../src/tab-page.c:319
 #, c-format
 msgid " (%d hidden)"
 msgid_plural " (%d hidden)"
@@ -695,26 +697,13 @@ msgstr[1] "(%d paslėpti)"
 msgstr[2] "(%d paslėptų)"
 
 #: ../data/pcmanfm.desktop.in.h:1
-msgid "Browse the file system and manage the files"
-msgstr "Tvarkykite failus ir aplankus"
-
-#: ../data/pcmanfm.desktop.in.h:2
 msgid "File Manager"
 msgstr "Failų tvarkyklė"
 
-#~ msgid "_New"
-#~ msgstr "_Naujas"
+#: ../data/pcmanfm.desktop.in.h:2
+msgid "Browse the file system and manage the files"
+msgstr "Tvarkykite failus ir aplankus"
 
-#~ msgid "Open Find Files utility"
-#~ msgstr "Atverti failų paieškos programą"
-
-#~ msgid ""
-#~ "Open folders in new tabs of the last used window instead of creating new "
-#~ "windows"
-#~ msgstr "Atverti aplankus kortelėse, o ne atskiruose languose"
-
-#~ msgid "Display image files with supported format as thumbnails"
-#~ msgstr "Rodyti paveikslėlių miniatiūras"
-
-#~ msgid "Max size of files displayed as thumbnails:"
-#~ msgstr "Maksimalus failų, rodomų kaip miniatiūrų, dydis"
+#: ../data/pcmanfm-desktop-pref.desktop.in.h:2
+msgid "Change desktop wallpapers and behavior of desktop manager"
+msgstr "Keiskite darbastalio fonus ir darbastalio tvarkyklės elgseną"

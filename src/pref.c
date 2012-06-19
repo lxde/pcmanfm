@@ -265,11 +265,27 @@ static void init_entry(GtkBuilder* b, const char* name, gsize off, const char* c
     g_signal_connect(btn, "changed", G_CALLBACK(on_entry_changed), GSIZE_TO_POINTER(off));
 }
 
+static void on_tab_label_list_sel_changed(GtkTreeSelection* tree_sel, gpointer user_data)
+{
+    GtkTreePath* tp;
+    GtkTreeIter it;
+    GtkTreeModel* model;
+    gtk_tree_selection_get_selected(tree_sel, &model, &it);
+    tp = gtk_tree_model_get_path(model, &it);
+    gtk_notebook_set_current_page(notebook, gtk_tree_path_get_indices(tp)[0]);
+    gtk_tree_path_free(tp);
+}
+
 void fm_edit_preference( GtkWindow* parent, int page )
 {
     if(!pref_dlg)
     {
         GtkBuilder* builder = gtk_builder_new();
+        GtkTreeView* tab_label_list;
+        GtkTreeSelection* tree_sel;
+        GtkListStore* tab_label_model;
+        GtkTreeIter it;
+        int i, n;
 
         gtk_builder_add_from_file(builder, PACKAGE_UI_DIR "/pref.ui", NULL);
         pref_dlg = GTK_WINDOW(gtk_builder_get_object(builder, "dlg"));
@@ -304,6 +320,26 @@ void fm_edit_preference( GtkWindow* parent, int page )
 
         /* archiver integration */
         init_archiver_combo(builder);
+
+        /* initialize the left side list used for switching among tabs */
+        tab_label_list = GTK_TREE_VIEW(gtk_builder_get_object(builder, "tab_label_list"));
+        tab_label_model = gtk_list_store_new(1, G_TYPE_STRING);
+        n = gtk_notebook_get_n_pages(notebook);
+        for(i = 0; i < n; ++i)
+        {
+            /* this can be less efficient than iterating over a GList obtained by gtk_container_get_children().
+            * However, the order of pages does matter here. So we use get_nth_page. */
+            GtkWidget* page = gtk_notebook_get_nth_page(notebook, i);
+            const char* title = gtk_notebook_get_tab_label_text(notebook, page);
+            gtk_list_store_insert_with_values(tab_label_model, NULL, i, 0, title, -1);
+        }
+        gtk_tree_view_set_model(tab_label_list, GTK_TREE_MODEL(tab_label_model));
+        gtk_tree_model_get_iter_first(GTK_TREE_MODEL(tab_label_model), &it);
+        g_object_unref(tab_label_model);
+        tree_sel = gtk_tree_view_get_selection(tab_label_list);
+        gtk_tree_selection_select_iter(tree_sel, &it);
+        g_signal_connect(tree_sel, "changed", G_CALLBACK(on_tab_label_list_sel_changed), notebook);
+        gtk_notebook_set_show_tabs(notebook, FALSE);
 
         g_signal_connect(pref_dlg, "response", G_CALLBACK(on_response), &pref_dlg);
         g_object_unref(builder);

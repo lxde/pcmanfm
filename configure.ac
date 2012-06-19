@@ -10,9 +10,7 @@ AC_CONFIG_HEADERS([config.h])
 # Checks for programs.
 AC_ISC_POSIX
 AC_PROG_CC
-AM_PROG_LIBTOOL
 AM_PROG_CC_STDC
-AC_HEADER_STDC
 
 # Checks for header files.
 AC_HEADER_STDC
@@ -131,6 +129,7 @@ AC_CONFIG_FILES([
     src/Makefile
     po/Makefile.in
     data/Makefile
+    data/pcmanfm.1
     data/ui/Makefile
     data/ui/about.glade
 ])
