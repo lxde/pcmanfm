@@ -50,6 +50,8 @@ static void fm_app_config_finalize(GObject *object)
 
     cfg = FM_APP_CONFIG(object);
     g_free(cfg->wallpaper);
+    g_free(cfg->desktop_font);
+    g_free(cfg->su_cmd);
 
     G_OBJECT_CLASS(fm_app_config_parent_class)->finalize(object);
 }
@@ -92,7 +94,9 @@ void fm_app_config_load_from_key_file(FmAppConfig* cfg, GKeyFile* kf)
     int tmp_int;
     /* behavior */
     fm_key_file_get_int(kf, "config", "bm_open_method", &cfg->bm_open_method);
-    cfg->su_cmd = g_key_file_get_string(kf, "config", "su_cmd", NULL);
+    tmp = g_key_file_get_string(kf, "config", "su_cmd", NULL);
+    g_free(cfg->su_cmd);
+    cfg->su_cmd = tmp;
 
     /* volume management */
     fm_key_file_get_bool(kf, "volume", "mount_on_startup", &cfg->mount_on_startup);
