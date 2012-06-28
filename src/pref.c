@@ -143,9 +143,9 @@ static void init_archiver_combo(GtkBuilder* builder)
     GtkListStore* model = gtk_list_store_new(2, G_TYPE_STRING, G_TYPE_POINTER);
     GtkComboBox* combo = (GtkComboBox*)gtk_builder_get_object(builder, "archiver");
     GtkTreeIter it;
-    GList* archivers = fm_archiver_get_all();
+    const GList* archivers = fm_archiver_get_all();
     FmArchiver* default_archiver = fm_archiver_get_default();
-    GList* l;
+    const GList* l;
 
     gtk_combo_box_set_model(combo, GTK_TREE_MODEL(model));
 

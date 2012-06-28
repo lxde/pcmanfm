@@ -181,9 +181,9 @@ static void on_folder_view_sel_changed(FmFolderView* fv, FmFileInfoList* files, 
     if(files)
     {
         /* FIXME: display total size of all selected files. */
-        if(fm_list_get_length(files) == 1) /* only one file is selected */
+        if(fm_file_info_list_get_length(files) == 1) /* only one file is selected */
         {
-            FmFileInfo* fi = fm_list_peek_head(files);
+            FmFileInfo* fi = fm_file_info_list_peek_head(files);
             const char* size_str = fm_file_info_get_disp_size(fi);
             if(size_str)
             {
@@ -201,7 +201,7 @@ static void on_folder_view_sel_changed(FmFolderView* fv, FmFileInfoList* files, 
         }
         else
         {
-            int n_sel = fm_list_get_length(files);
+            int n_sel = fm_file_info_list_get_length(files);
             msg = g_strdup_printf(ngettext("%d item selected", "%d items selected", n_sel), n_sel);
         }
     }
@@ -293,8 +293,8 @@ static void on_folder_fs_info(FmFolder* folder, FmTabPage* page)
     {
         char total_str[ 64 ];
         char free_str[ 64 ];
-        fm_file_size_to_str(free_str, free, TRUE);
-        fm_file_size_to_str(total_str, total, TRUE);
+        fm_file_size_to_str(free_str, sizeof(free_str), free, TRUE);
+        fm_file_size_to_str(total_str, sizeof(total_str), total, TRUE);
         msg = g_strdup_printf(_("Free space: %s (Total: %s)"), free_str, total_str );
     }
     else
@@ -312,7 +312,7 @@ static char* format_status_text(FmTabPage* page)
     {
         FmFileInfoList* files = fm_folder_get_files(folder);
         GString* msg = g_string_sized_new(128);
-        int total_files = fm_list_get_length(files);
+        int total_files = fm_file_info_list_get_length(files);
         int shown_files = gtk_tree_model_iter_n_children(GTK_TREE_MODEL(model), NULL);
         int hidden_files = total_files - shown_files;
         const char* visible_fmt = ngettext("%d item", "%d items", shown_files);
@@ -392,7 +392,7 @@ static void fm_tab_page_chdir_without_history(FmTabPage* page, FmPath* path)
 
     free_folder(page);
 
-    page->folder = fm_folder_get(path);
+    page->folder = fm_folder_from_path(path);
     g_signal_connect(page->folder, "start-loading", G_CALLBACK(on_folder_start_loading), page);
     g_signal_connect(page->folder, "finish-loading", G_CALLBACK(on_folder_finish_loading), page);
     g_signal_connect(page->folder, "error", G_CALLBACK(on_folder_error), page);
@@ -464,7 +464,7 @@ FmNavHistory* fm_tab_page_get_history(FmTabPage* page)
 
 void fm_tab_page_forward(FmTabPage* page)
 {
-    if(fm_nav_history_get_can_forward(page->nav_history))
+    if(fm_nav_history_can_forward(page->nav_history))
     {
         const FmNavHistoryItem* item;
         GtkAdjustment* vadjustment = gtk_scrolled_window_get_vadjustment(GTK_SCROLLED_WINDOW(page->folder_view));
@@ -477,7 +477,7 @@ void fm_tab_page_forward(FmTabPage* page)
 
 void fm_tab_page_back(FmTabPage* page)
 {
-    if(fm_nav_history_get_can_back(page->nav_history))
+    if(fm_nav_history_can_back(page->nav_history))
     {
         const FmNavHistoryItem* item;
         GtkAdjustment* vadjustment = gtk_scrolled_window_get_vadjustment(GTK_SCROLLED_WINDOW(page->folder_view));

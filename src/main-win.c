@@ -238,13 +238,13 @@ static gboolean on_view_key_press_event(FmFolderView* fv, GdkEventKey* evt, FmMa
         {
             FmFileInfoList *files = fm_folder_view_get_selected_files(fv);
             FmFileInfo *info;
-            if(files && !fm_list_is_empty(files))
-                info = fm_list_peek_head(files);
+            if(files && !fm_file_info_list_is_empty(files))
+                info = fm_file_info_list_peek_head(files);
             else
                 info = NULL;
             on_folder_view_clicked(fv, FM_FV_CONTEXT_MENU, info, win);
             if(files)
-                fm_list_unref(files);
+                fm_file_info_list_unref(files);
             break;
         }
     }
@@ -318,7 +318,7 @@ static void load_bookmarks(FmMainWin* win, GtkUIManager* ui)
 {
     GtkWidget* mi = gtk_ui_manager_get_widget(ui, "/menubar/BookmarksMenu");
     win->bookmarks_menu = GTK_MENU_SHELL(gtk_menu_item_get_submenu(GTK_MENU_ITEM(mi)));
-    win->bookmarks = fm_bookmarks_get();
+    win->bookmarks = fm_bookmarks_dup();
     g_signal_connect(win->bookmarks, "changed", G_CALLBACK(on_bookmarks_changed), win);
 
     create_bookmarks_menu(win);
@@ -334,8 +334,8 @@ static void on_history_item(GtkMenuItem* mi, FmMainWin* win)
 static void on_show_history_menu(GtkMenuToolButton* btn, FmMainWin* win)
 {
     GtkMenuShell* menu = (GtkMenuShell*)gtk_menu_tool_button_get_menu(btn);
-    GList* l;
-    GList* cur = fm_nav_history_get_cur_link(win->nav_history);
+    const GList* l;
+    const GList* cur = fm_nav_history_get_cur_link(win->nav_history);
 
     /* delete old items */
     gtk_container_foreach(GTK_CONTAINER(menu), (GtkCallback)gtk_widget_destroy, NULL);
@@ -356,7 +356,8 @@ static void on_show_history_menu(GtkMenuToolButton* btn, FmMainWin* win)
             mi = gtk_menu_item_new_with_label(str);
         g_free(str);
 
-        g_object_set_data_full(G_OBJECT(mi), "path", l, NULL);
+        /* FIXME: need to avoid cast from const GList */
+        g_object_set_data_full(G_OBJECT(mi), "path", (gpointer)l, NULL);
         g_signal_connect(mi, "activate", G_CALLBACK(on_history_item), win);
         gtk_menu_shell_append(menu, mi);
     }
@@ -366,8 +367,8 @@ static void on_show_history_menu(GtkMenuToolButton* btn, FmMainWin* win)
 static void on_tab_page_splitter_pos_changed(GtkPaned* paned, GParamSpec* ps, FmMainWin* win)
 {
     GList *children, *child;
-	if(paned != win->current_page)
-		return;
+    if(paned != (GtkPaned*)win->current_page)
+        return;
 
     app_config->splitter_pos = gtk_paned_get_position(paned);
     pcmanfm_save_config(FALSE);
@@ -448,7 +449,7 @@ static void fm_main_win_init(FmMainWin *win)
      * other windows.
      * This is related to bug #3439056 - Pcman is frozen renaming files. */
     win->win_group = gtk_window_group_new();
-    gtk_window_group_add_window(win->win_group, win);
+    gtk_window_group_add_window(win->win_group, GTK_WINDOW(win));
 
     gtk_window_set_icon_name(GTK_WINDOW(win), "folder");
 
@@ -665,13 +666,13 @@ void on_open_folder_in_terminal(GtkAction* act, FmMainWin* win)
 {
     FmFileInfoList* files = fm_folder_view_get_selected_files(win->folder_view);
     GList* l;
-    for(l=fm_list_peek_head_link(files);l;l=l->next)
+    for(l=fm_file_info_list_peek_head_link(files);l;l=l->next)
     {
         FmFileInfo* fi = (FmFileInfo*)l->data;
         if(fm_file_info_is_dir(fi) /*&& !fm_file_info_is_virtual(fi)*/)
             pcmanfm_open_folder_in_terminal(GTK_WINDOW(win), fm_file_info_get_path(fi));
     }
-    fm_list_unref(files);
+    fm_file_info_list_unref(files);
 }
 
 void on_open_in_terminal(GtkAction* act, FmMainWin* win)
@@ -805,12 +806,12 @@ void on_open_in_new_tab(GtkAction* act, FmMainWin* win)
 {
     FmPathList* sels = fm_folder_view_get_selected_file_paths(win->folder_view);
     GList* l;
-    for( l = fm_list_peek_head_link(sels); l; l=l->next )
+    for( l = fm_path_list_peek_head_link(sels); l; l=l->next )
     {
         FmPath* path = (FmPath*)l->data;
         fm_main_win_add_tab(win, path);
     }
-    fm_list_unref(sels);
+    fm_path_list_unref(sels);
 }
 
 
@@ -818,12 +819,12 @@ void on_open_in_new_win(GtkAction* act, FmMainWin* win)
 {
     FmPathList* sels = fm_folder_view_get_selected_file_paths(win->folder_view);
     GList* l;
-    for( l = fm_list_peek_head_link(sels); l; l=l->next )
+    for( l = fm_path_list_peek_head_link(sels); l; l=l->next )
     {
         FmPath* path = (FmPath*)l->data;
         fm_main_win_add_win(win, path);
     }
-    fm_list_unref(sels);
+    fm_path_list_unref(sels);
 }
 
 
@@ -986,7 +987,7 @@ void on_cut(GtkAction* act, FmMainWin* win)
         if(files)
         {
             fm_clipboard_cut_files(GTK_WIDGET(win), files);
-            fm_list_unref(files);
+            fm_path_list_unref(files);
         }
     }
 }
@@ -1005,7 +1006,7 @@ void on_copy(GtkAction* act, FmMainWin* win)
         if(files)
         {
             fm_clipboard_copy_files(GTK_WIDGET(win), files);
-            fm_list_unref(files);
+            fm_path_list_unref(files);
         }
     }
 }
@@ -1016,7 +1017,7 @@ void on_copy_to(GtkAction* act, FmMainWin* win)
     if(files)
     {
         fm_copy_files_to(GTK_WINDOW(win), files);
-        fm_list_unref(files);
+        fm_path_list_unref(files);
     }
 }
 
@@ -1026,7 +1027,7 @@ void on_move_to(GtkAction* act, FmMainWin* win)
     if(files)
     {
         fm_move_files_to(GTK_WINDOW(win), files);
-        fm_list_unref(files);
+        fm_path_list_unref(files);
     }
 }
 
@@ -1056,20 +1057,20 @@ void on_del(GtkAction* act, FmMainWin* win)
             fm_delete_files(GTK_WINDOW(win), files);
         else
             fm_trash_or_delete_files(GTK_WINDOW(win), files);
-        fm_list_unref(files);
+        fm_path_list_unref(files);
     }
 }
 
 void on_rename(GtkAction* act, FmMainWin* win)
 {
     FmPathList* files = fm_folder_view_get_selected_file_paths(win->folder_view);
-    if( !fm_list_is_empty(files) )
+    if( !fm_path_list_is_empty(files) )
     {
-        fm_rename_file(GTK_WINDOW(win), fm_list_peek_head(files));
+        fm_rename_file(GTK_WINDOW(win), fm_path_list_peek_head(files));
         /* FIXME: is it ok to only rename the first selected file here. */
     }
     if(files)
-        fm_list_unref(files);
+        fm_path_list_unref(files);
 }
 
 void on_select_all(GtkAction* act, FmMainWin* win)
@@ -1118,9 +1119,9 @@ void on_prop(GtkAction* action, FmMainWin* win)
         /* FIXME: should prevent directly accessing data members */
         FmFileInfo* fi = fm_folder_get_info(folder);
         FmFileInfoList* files = fm_file_info_list_new();
-        fm_list_push_tail(files, fi);
+        fm_file_info_list_push_tail(files, fi);
         fm_show_file_properties(GTK_WINDOW(win), files);
-        fm_list_unref(files);
+        fm_file_info_list_unref(files);
     }
 }
 
@@ -1145,7 +1146,7 @@ static void on_folder_view_clicked(FmFolderView* fv, FmFolderViewClickType type,
             fm_file_info_job_add(job, real_path);
             g_signal_connect(job, "error", G_CALLBACK(on_query_target_info_error), win);
             fm_job_run_sync_with_mainloop(FM_JOB(job));
-            target_fi = FM_FILE_INFO(fm_list_peek_head(job->file_infos));
+            target_fi = FM_FILE_INFO(fm_file_info_list_peek_head(job->file_infos));
             if(target_fi)
                 fm_file_info_ref(target_fi);
             g_object_unref(job);
@@ -1170,7 +1171,7 @@ static void on_folder_view_clicked(FmFolderView* fv, FmFolderViewClickType type,
             FmFileInfoList* files = fm_folder_view_get_selected_files(fv);
             menu = fm_file_menu_new_for_files(GTK_WINDOW(win), files, fm_folder_view_get_cwd(fv), TRUE);
             fm_file_menu_set_folder_func(menu, open_folder_func, win);
-            fm_list_unref(files);
+            fm_file_info_list_unref(files);
 
             /* merge some specific menu items for folders */
             if(fm_file_menu_is_single_file_type(menu) && fm_file_info_is_dir(fi))
@@ -1238,8 +1239,10 @@ static void on_tab_page_chdir(FmTabPage* page, FmPath* path, FmMainWin* win)
 
 static void on_notebook_switch_page(GtkNotebook* nb, GtkNotebookPage* new_page, guint num, FmMainWin* win)
 {
-    FmTabPage* page = FM_TAB_PAGE(new_page);
+    FmTabPage* page;
 
+    g_return_if_fail(FM_IS_TAB_PAGE(new_page));
+    page = (FmTabPage*)new_page;
     /* connect to the new active page */
     win->current_page = page;
     win->folder_view = fm_tab_page_get_folder_view(page);

@@ -416,7 +416,7 @@ void fm_desktop_manager_init()
 
     if(!desktop_folder)
     {
-        desktop_folder = fm_folder_get(fm_path_get_desktop());
+        desktop_folder = fm_folder_from_path(fm_path_get_desktop());
         g_signal_connect(desktop_folder, "start-loading", G_CALLBACK(on_folder_start_loading), NULL);
         g_signal_connect(desktop_folder, "finish-loading", G_CALLBACK(on_folder_finish_loading), NULL);
         g_signal_connect(desktop_folder, "error", G_CALLBACK(on_folder_error), NULL);
@@ -647,7 +647,7 @@ static inline void popup_menu(FmDesktop* desktop, GdkEvent* evt)
     for(l = sel_items; l; l=l->next)
     {
         FmDesktopItem* item = (FmDesktopItem*)l->data;
-        fm_list_push_tail(files, item->fi);
+        fm_file_info_list_push_tail(files, item->fi);
         if(item->fixed_pos)
             has_fixed = TRUE;
         else
@@ -655,10 +655,10 @@ static inline void popup_menu(FmDesktop* desktop, GdkEvent* evt)
     }
     g_list_free(sel_items);
 
-    fi = (FmFileInfo*)fm_list_peek_head(files);
+    fi = (FmFileInfo*)fm_file_info_list_peek_head(files);
     menu = fm_file_menu_new_for_files(GTK_WINDOW(desktop), files, fm_path_get_desktop(), TRUE);
     fm_file_menu_set_folder_func(menu, pcmanfm_open_folder, desktop);
-    fm_list_unref(files);
+    fm_file_info_list_unref(files);
 
     ui = fm_file_menu_get_ui(menu);
     act_grp = fm_file_menu_get_action_group(menu);
@@ -906,7 +906,7 @@ gboolean on_motion_notify(GtkWidget* w, GdkEventMotion* evt)
                 gtk_drag_begin(w, target_list,
                              GDK_ACTION_COPY|GDK_ACTION_MOVE|GDK_ACTION_LINK,
                              1, (GdkEvent*)evt);
-                fm_list_unref(files);
+                fm_file_info_list_unref(files);
             }
         }
     }
@@ -939,7 +939,7 @@ gboolean on_key_press(GtkWidget* w, GdkEventKey* evt)
             if(files)
             {
                 popup_menu(desktop, (GdkEvent*)evt);
-                fm_list_unref(files);
+                fm_file_info_list_unref(files);
             }
             else
             {
@@ -1020,7 +1020,7 @@ gboolean on_key_press(GtkWidget* w, GdkEventKey* evt)
             if(infos)
             {
                 fm_show_file_properties(GTK_WINDOW(desktop), infos);
-                fm_list_unref(infos);
+                fm_file_info_list_unref(infos);
                 return TRUE;
             }
         }
@@ -1035,7 +1035,7 @@ gboolean on_key_press(GtkWidget* w, GdkEventKey* evt)
         {
             sels = fm_desktop_get_selected_paths(desktop);
             fm_clipboard_cut_files(GTK_WIDGET(desktop), sels);
-            fm_list_unref(sels);
+            fm_path_list_unref(sels);
         }
         break;
     case GDK_c:
@@ -1043,7 +1043,7 @@ gboolean on_key_press(GtkWidget* w, GdkEventKey* evt)
         {
             sels = fm_desktop_get_selected_paths(desktop);
             fm_clipboard_copy_files(GTK_WIDGET(desktop), sels);
-            fm_list_unref(sels);
+            fm_path_list_unref(sels);
         }
         break;
     /* This is redundant. Pressing Ctrl + V on the desktop triggers on_paste() through
@@ -1058,8 +1058,8 @@ gboolean on_key_press(GtkWidget* w, GdkEventKey* evt)
         sels = fm_desktop_get_selected_paths(desktop);
         if(sels)
         {
-            fm_rename_file(GTK_WINDOW(desktop), fm_list_peek_head(sels));
-            fm_list_unref(sels);
+            fm_rename_file(GTK_WINDOW(desktop), fm_path_list_peek_head(sels));
+            fm_path_list_unref(sels);
         }
         break;
     case GDK_Delete:
@@ -1070,7 +1070,7 @@ gboolean on_key_press(GtkWidget* w, GdkEventKey* evt)
                 fm_delete_files(GTK_WINDOW(desktop), sels);
             else
                 fm_trash_or_delete_files(GTK_WINDOW(desktop), sels);
-            fm_list_unref(sels);
+            fm_path_list_unref(sels);
         }
         break;
     }
@@ -1988,7 +1988,7 @@ void on_dnd_src_data_get(FmDndSrc* ds, FmDesktop* desktop)
     if(files)
     {
         fm_dnd_src_set_files(ds, files);
-        fm_list_unref(files);
+        fm_file_info_list_unref(files);
     }
 }
 
@@ -2128,7 +2128,7 @@ void on_open_in_new_tab(GtkAction* act, gpointer user_data)
     FmFileMenu* menu = (FmFileMenu*)user_data;
     FmFileInfoList* files = fm_file_menu_get_file_info_list(menu);
     GList* l;
-    for(l = fm_list_peek_head_link(files); l; l=l->next)
+    for(l = fm_file_info_list_peek_head_link(files); l; l=l->next)
     {
         FmFileInfo* fi = (FmFileInfo*)l->data;
         fm_main_win_open_in_last_active(fm_file_info_get_path(fi));
@@ -2140,9 +2140,9 @@ void on_open_in_new_win(GtkAction* act, gpointer user_data)
     FmFileMenu* menu = (FmFileMenu*)user_data;
     FmFileInfoList* files = fm_file_menu_get_file_info_list(menu);
     GList* l;
-    FmFileInfo* fi = fm_list_peek_head(files);
+    FmFileInfo* fi = fm_file_info_list_peek_head(files);
     FmMainWin* win = fm_main_win_add_win(NULL, fm_file_info_get_path(fi));
-    for(l = fm_list_peek_head_link(files)->next; l; l=l->next)
+    for(l = fm_file_info_list_peek_head_link(files)->next; l; l=l->next)
     {
         fi = (FmFileInfo*)l->data;
         fm_main_win_add_tab(win, fm_file_info_get_path(fi));
@@ -2154,13 +2154,13 @@ void on_open_folder_in_terminal(GtkAction* act, gpointer user_data)
     FmFileMenu* menu = (FmFileMenu*)user_data;
     FmFileInfoList* files = fm_file_menu_get_file_info_list(menu);
     GList* l;
-    for(l=fm_list_peek_head_link(files);l;l=l->next)
+    for(l=fm_file_info_list_peek_head_link(files);l;l=l->next)
     {
         FmFileInfo* fi = (FmFileInfo*)l->data;
         if(fm_file_info_is_dir(fi) /*&& !fm_file_info_is_virtual(fi)*/)
             pcmanfm_open_folder_in_terminal(NULL, fm_file_info_get_path(fi));
     }
-    fm_list_unref(files);
+    fm_file_info_list_unref(files);
 }
 
 static void on_fix_pos(GtkToggleAction* act, gpointer user_data)
@@ -2272,11 +2272,11 @@ FmFileInfoList* fm_desktop_get_selected_files(FmDesktop* desktop)
     {
         FmDesktopItem* item = (FmDesktopItem*)l->data;
         if(item->is_selected)
-            fm_list_push_tail(files, item->fi);
+            fm_file_info_list_push_tail(files, item->fi);
     }
-    if(fm_list_is_empty(files))
+    if(fm_file_info_list_is_empty(files))
     {
-        fm_list_unref(files);
+        fm_file_info_list_unref(files);
         files = NULL;
     }
     return files;
@@ -2290,11 +2290,11 @@ FmPathList* fm_desktop_get_selected_paths(FmDesktop* desktop)
     {
         FmDesktopItem* item = (FmDesktopItem*)l->data;
         if(item->is_selected)
-            fm_list_push_tail(files, fm_file_info_get_path(item->fi));
+            fm_path_list_push_tail(files, fm_file_info_get_path(item->fi));
     }
-    if(fm_list_is_empty(files))
+    if(fm_path_list_is_empty(files))
     {
-        fm_list_unref(files);
+        fm_path_list_unref(files);
         files = NULL;
     }
     return files;

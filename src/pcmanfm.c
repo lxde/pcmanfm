@@ -375,7 +375,7 @@ gboolean pcmanfm_run()
                 fm_path_unref(cwd);
             g_signal_connect(job, "error", G_CALLBACK(on_file_info_job_error), NULL);
             fm_job_run_sync_with_mainloop(FM_JOB(job));
-            infos = fm_list_peek_head_link(job->file_infos);
+            infos = fm_file_info_list_peek_head_link(job->file_infos);
             fm_launch_files_simple(NULL, NULL, infos, pcmanfm_open_folder, NULL);
             g_object_unref(job);
             ret = (n_pcmanfm_ref >= 1); /* if there is opened window, return true to run the main loop. */
