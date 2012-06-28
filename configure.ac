@@ -11,6 +11,7 @@ AC_CONFIG_HEADERS([config.h])
 AC_ISC_POSIX
 AC_PROG_CC
 AM_PROG_CC_STDC
+AM_PROG_CC_C_O
 
 # Checks for header files.
 AC_HEADER_STDC
