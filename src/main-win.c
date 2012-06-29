@@ -236,7 +236,7 @@ static gboolean on_view_key_press_event(FmFolderView* fv, GdkEventKey* evt, FmMa
         break;
     case GDK_Menu:
         {
-            FmFileInfoList *files = fm_folder_view_get_selected_files(fv);
+            FmFileInfoList *files = fm_folder_view_dup_selected_files(fv);
             FmFileInfo *info;
             if(files && !fm_file_info_list_is_empty(files))
                 info = fm_file_info_list_peek_head(files);
@@ -664,7 +664,7 @@ void on_about(GtkAction* act, FmMainWin* win)
 
 void on_open_folder_in_terminal(GtkAction* act, FmMainWin* win)
 {
-    FmFileInfoList* files = fm_folder_view_get_selected_files(win->folder_view);
+    FmFileInfoList* files = fm_folder_view_dup_selected_files(win->folder_view);
     GList* l;
     for(l=fm_file_info_list_peek_head_link(files);l;l=l->next)
     {
@@ -804,7 +804,7 @@ void on_close_tab(GtkAction* act, FmMainWin* win)
 
 void on_open_in_new_tab(GtkAction* act, FmMainWin* win)
 {
-    FmPathList* sels = fm_folder_view_get_selected_file_paths(win->folder_view);
+    FmPathList* sels = fm_folder_view_dup_selected_file_paths(win->folder_view);
     GList* l;
     for( l = fm_path_list_peek_head_link(sels); l; l=l->next )
     {
@@ -817,7 +817,7 @@ void on_open_in_new_tab(GtkAction* act, FmMainWin* win)
 
 void on_open_in_new_win(GtkAction* act, FmMainWin* win)
 {
-    FmPathList* sels = fm_folder_view_get_selected_file_paths(win->folder_view);
+    FmPathList* sels = fm_folder_view_dup_selected_file_paths(win->folder_view);
     GList* l;
     for( l = fm_path_list_peek_head_link(sels); l; l=l->next )
     {
@@ -983,7 +983,7 @@ void on_cut(GtkAction* act, FmMainWin* win)
     }
     else
     {
-        FmPathList* files = fm_folder_view_get_selected_file_paths(win->folder_view);
+        FmPathList* files = fm_folder_view_dup_selected_file_paths(win->folder_view);
         if(files)
         {
             fm_clipboard_cut_files(GTK_WIDGET(win), files);
@@ -1002,7 +1002,7 @@ void on_copy(GtkAction* act, FmMainWin* win)
     }
     else
     {
-        FmPathList* files = fm_folder_view_get_selected_file_paths(win->folder_view);
+        FmPathList* files = fm_folder_view_dup_selected_file_paths(win->folder_view);
         if(files)
         {
             fm_clipboard_copy_files(GTK_WIDGET(win), files);
@@ -1013,7 +1013,7 @@ void on_copy(GtkAction* act, FmMainWin* win)
 
 void on_copy_to(GtkAction* act, FmMainWin* win)
 {
-    FmPathList* files = fm_folder_view_get_selected_file_paths(win->folder_view);
+    FmPathList* files = fm_folder_view_dup_selected_file_paths(win->folder_view);
     if(files)
     {
         fm_copy_files_to(GTK_WINDOW(win), files);
@@ -1023,7 +1023,7 @@ void on_copy_to(GtkAction* act, FmMainWin* win)
 
 void on_move_to(GtkAction* act, FmMainWin* win)
 {
-    FmPathList* files = fm_folder_view_get_selected_file_paths(win->folder_view);
+    FmPathList* files = fm_folder_view_dup_selected_file_paths(win->folder_view);
     if(files)
     {
         fm_move_files_to(GTK_WINDOW(win), files);
@@ -1047,7 +1047,7 @@ void on_paste(GtkAction* act, FmMainWin* win)
 
 void on_del(GtkAction* act, FmMainWin* win)
 {
-    FmPathList* files = fm_folder_view_get_selected_file_paths(win->folder_view);
+    FmPathList* files = fm_folder_view_dup_selected_file_paths(win->folder_view);
     if(files)
     {
         GdkModifierType state = 0;
@@ -1063,7 +1063,7 @@ void on_del(GtkAction* act, FmMainWin* win)
 
 void on_rename(GtkAction* act, FmMainWin* win)
 {
-    FmPathList* files = fm_folder_view_get_selected_file_paths(win->folder_view);
+    FmPathList* files = fm_folder_view_dup_selected_file_paths(win->folder_view);
     if( !fm_path_list_is_empty(files) )
     {
         fm_rename_file(GTK_WINDOW(win), fm_path_list_peek_head(files));
@@ -1168,7 +1168,7 @@ static void on_folder_view_clicked(FmFolderView* fv, FmFolderViewClickType type,
         {
             FmFileMenu* menu;
             GtkMenu* popup;
-            FmFileInfoList* files = fm_folder_view_get_selected_files(fv);
+            FmFileInfoList* files = fm_folder_view_dup_selected_files(fv);
             menu = fm_file_menu_new_for_files(GTK_WINDOW(win), files, fm_folder_view_get_cwd(fv), TRUE);
             fm_file_menu_set_folder_func(menu, open_folder_func, win);
             fm_file_info_list_unref(files);
