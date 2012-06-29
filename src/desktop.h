@@ -45,7 +45,7 @@ typedef struct _FmDesktopItem       FmDesktopItem;
 struct _FmDesktop
 {
     GtkWindow parent;
-    GdkGC* gc;
+    GdkGC* gc; /* FIXME: obsoleted, replace with Cairo */
     PangoLayout* pl;
     FmCellRendererPixbuf* icon_render;
     GList* items;
@@ -76,6 +76,7 @@ struct _FmDesktop
     FmDndSrc* dnd_src;
     FmDndDest* dnd_dest;
     guint single_click_timeout_handler;
+    FmFolderModel* model;
 };
 
 struct _FmDesktopClass
@@ -83,8 +84,9 @@ struct _FmDesktopClass
     GtkWindowClass parent_class;
 };
 
-FmFileInfoList* fm_desktop_get_selected_files(FmDesktop* desktop);
-FmPathList* fm_desktop_get_selected_paths(FmDesktop* desktop);
+gboolean fm_desktop_has_selected_item(FmDesktop* desktop);
+FmFileInfoList* fm_desktop_dup_selected_files(FmDesktop* desktop);
+FmPathList* fm_desktop_dup_selected_paths(FmDesktop* desktop);
 
 GType       fm_desktop_get_type     (void);
 FmDesktop*  fm_desktop_new          (void);
