@@ -48,7 +48,6 @@ struct _FmDesktop
     GdkGC* gc; /* FIXME: obsoleted, replace with Cairo */
     PangoLayout* pl;
     FmCellRendererPixbuf* icon_render;
-    GList* items;
     GList* fixed_items;
     guint xpad;
     guint ypad;

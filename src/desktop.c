@@ -43,7 +43,6 @@
 struct _FmDesktopItem
 {
     FmFileInfo* fi;
-    GdkPixbuf* icon;
     int x; /* position of the item on the desktop */
     int y;
     GdkRectangle icon_rect;
@@ -57,11 +56,11 @@ struct _FmDesktopItem
 
 static FmDesktopItem* hit_test(FmDesktop* self, int x, int y);
 static FmDesktopItem* get_nearest_item(FmDesktop* desktop, FmDesktopItem* item, GtkDirectionType dir);
-static void calc_item_size(FmDesktop* desktop, FmDesktopItem* item);
-static inline void load_item_pos(FmDesktop* desktop, GKeyFile* kf);
+static void calc_item_size(FmDesktop* desktop, FmDesktopItem* item, GdkPixbuf* icon);
+static inline void load_item_pos(FmDesktop* desktop);
 static void layout_items(FmDesktop* self);
 static void queue_layout_items(FmDesktop* desktop);
-static void paint_item(FmDesktop* self, FmDesktopItem* item, cairo_t* cr, GdkRectangle* expose_area);
+static void paint_item(FmDesktop* self, FmDesktopItem* item, cairo_t* cr, GdkRectangle* expose_area, GdkPixbuf* icon);
 static void redraw_item(FmDesktop* desktop, FmDesktopItem* item);
 static void calc_rubber_banding_rect(FmDesktop* self, int x, int y, GdkRectangle* rect);
 static void update_rubberbanding(FmDesktop* self, int newx, int newy);
@@ -74,7 +73,6 @@ static void set_focused_item(FmDesktop* desktop, FmDesktopItem* item);
 static void select_all(FmDesktop* desktop);
 static void deselect_all(FmDesktop* desktop);
 
-static FmDesktopItem* desktop_item_new(GtkTreeIter* it);
 static void desktop_item_free(FmDesktopItem* item);
 static void move_item(FmDesktop* desktop, FmDesktopItem* item, int x, int y, gboolean redraw);
 
@@ -174,13 +172,49 @@ static GtkMenu* desktop_popup = NULL;
 
 static void desktop_item_free(FmDesktopItem* item)
 {
-    if(item->icon)
-        g_object_unref(item->icon);
     if(item->fi)
         fm_file_info_unref(item->fi);
     g_slice_free(FmDesktopItem, item);
 }
 
+static void on_row_deleting(FmFolderModel* model, GtkTreePath* tp,
+                            GtkTreeIter* iter, gpointer data, FmDesktop* desktop)
+{
+    GList *l;
+
+    if(desktop == NULL) /* desktop items are global objects */
+        desktop_item_free(data);
+    else
+    {
+        for(l = desktop->fixed_items; l; l = l->next)
+            if(l->data == data)
+            {
+                desktop->fixed_items = g_list_delete_link(desktop->fixed_items, l);
+                break;
+            }
+        if((gpointer)desktop->focus == data)
+        {
+            GtkTreeIter it = *iter;
+            if(gtk_tree_model_iter_next(GTK_TREE_MODEL(model), &it))
+                desktop->focus = fm_folder_model_get_item_userdata(model, &it);
+            else
+            {
+                if(gtk_tree_path_prev(tp))
+                {
+                    gtk_tree_model_get_iter(GTK_TREE_MODEL(model), &it, tp);
+                    gtk_tree_path_next(tp);
+                    desktop->focus = fm_folder_model_get_item_userdata(model, &it);
+                }
+                else
+                    desktop->focus = NULL;
+            }
+        }
+        if((gpointer)desktop->drop_hilight == data)
+            desktop->drop_hilight = NULL;
+        if((gpointer)desktop->hover_item == data)
+            desktop->hover_item = NULL;
+    }
+}
 
 static inline void connect_model(FmDesktop* desktop)
 {
@@ -189,52 +223,40 @@ static inline void connect_model(FmDesktop* desktop)
         desktop_model = fm_folder_model_new(desktop_folder, FALSE);
         fm_folder_model_set_icon_size(desktop_model, fm_config->big_icon_size);
         g_object_add_weak_pointer(G_OBJECT(desktop_model), (gpointer*)&desktop_model);
+        /* handler on_row_deleting() is needed for freeing items,
+           it will be disconnected itself on model destroying */
+        g_signal_connect(desktop->model, "row-deleting", G_CALLBACK(on_row_deleting), NULL);
         desktop->model = desktop_model;
     }
     else
         desktop->model = g_object_ref(desktop_model);
-    g_signal_connect(desktop_model, "row-inserted", G_CALLBACK(on_row_inserted), desktop);
-    g_signal_connect(desktop_model, "row-deleted", G_CALLBACK(on_row_deleted), desktop);
-    g_signal_connect(desktop_model, "row-changed", G_CALLBACK(on_row_changed), desktop);
-    g_signal_connect(desktop_model, "rows-reordered", G_CALLBACK(on_rows_reordered), desktop);
+    g_signal_connect(desktop->model, "row-inserted", G_CALLBACK(on_row_inserted), desktop);
+    g_signal_connect(desktop->model, "row-deleted", G_CALLBACK(on_row_deleted), desktop);
+    g_signal_connect(desktop->model, "row-changed", G_CALLBACK(on_row_changed), desktop);
+    g_signal_connect(desktop->model, "rows-reordered", G_CALLBACK(on_rows_reordered), desktop);
+    g_signal_connect(desktop->model, "row-deleting", G_CALLBACK(on_row_deleting), desktop);
 }
 
 static inline void disconnect_model(FmDesktop* desktop)
 {
-    g_signal_handlers_disconnect_by_func(desktop_model, on_row_inserted, desktop);
-    g_signal_handlers_disconnect_by_func(desktop_model, on_row_deleted, desktop);
-    g_signal_handlers_disconnect_by_func(desktop_model, on_row_changed, desktop);
-    g_signal_handlers_disconnect_by_func(desktop_model, on_rows_reordered, desktop);
+    g_signal_handlers_disconnect_by_func(desktop->model, on_row_inserted, desktop);
+    g_signal_handlers_disconnect_by_func(desktop->model, on_row_deleted, desktop);
+    g_signal_handlers_disconnect_by_func(desktop->model, on_row_changed, desktop);
+    g_signal_handlers_disconnect_by_func(desktop->model, on_rows_reordered, desktop);
+    g_signal_handlers_disconnect_by_func(desktop->model, on_row_deleting, desktop);
     g_object_unref(desktop->model);
     desktop->model = NULL;
 }
 
 static inline void load_items(FmDesktop* desktop)
 {
-    GKeyFile* kf;
-    GtkTreeIter it;
-
-    /* add items */
-    if(gtk_tree_model_get_iter_first(GTK_TREE_MODEL(desktop_model), &it))
-    {
-        do{
-            FmDesktopItem* item = desktop_item_new(&it);
-            desktop->items = g_list_prepend(desktop->items, item);
-        }while(gtk_tree_model_iter_next(GTK_TREE_MODEL(desktop_model), &it));
-        desktop->items = g_list_reverse(desktop->items);
-    }
-    kf = g_key_file_new();
-    load_item_pos(desktop, kf);
-    g_key_file_free(kf);
+    load_item_pos(desktop);
     queue_layout_items(desktop);
 }
 
 static inline void unload_items(FmDesktop* desktop)
 {
-    /* remove existing items */
-    g_list_foreach(desktop->items, (GFunc)desktop_item_free, NULL);
-    g_list_free(desktop->items);
-    desktop->items = NULL;
+    /* remove existing fixed items */
     g_list_free(desktop->fixed_items);
     desktop->fixed_items = NULL;
     desktop->focus = NULL;
@@ -359,28 +381,43 @@ static char* get_config_file(FmDesktop* desktop, gboolean create_dir)
     return path;
 }
 
-static inline void load_item_pos(FmDesktop* desktop, GKeyFile* kf)
+static inline void load_item_pos(FmDesktop* desktop)
 {
-    char* path = get_config_file(desktop, FALSE);
+    GtkTreeIter it;
+    char* path;
+    GtkTreeModel* model = GTK_TREE_MODEL(desktop->model);
+    GKeyFile* kf;
+
+    if(!gtk_tree_model_get_iter_first(model, &it))
+        return;
+    kf = g_key_file_new();
+    path = get_config_file(desktop, FALSE);
     if(g_key_file_load_from_file(kf, path, 0, NULL))
     {
-        GList* l;
-        for(l = desktop->items; l; l=l->next)
+        do
         {
-            FmDesktopItem* item = (FmDesktopItem*)l->data;
-            FmPath* path = fm_file_info_get_path(item->fi);
-            const char* name = fm_path_get_basename(path);
+            FmDesktopItem* item;
+            const char* name;
+            GdkPixbuf* icon = NULL;
+
+            item = fm_folder_model_get_item_userdata(desktop->model, &it);
+            name = fm_file_info_get_name(item->fi);
             if(g_key_file_has_group(kf, name))
             {
+                gtk_tree_model_get(model, &it, COL_FILE_ICON, &icon, -1);
                 desktop->fixed_items = g_list_prepend(desktop->fixed_items, item);
                 item->fixed_pos = TRUE;
                 item->x = g_key_file_get_integer(kf, name, "x", NULL);
                 item->y = g_key_file_get_integer(kf, name, "y", NULL);
-                calc_item_size(desktop, item);
+                calc_item_size(desktop, item, icon);
+                if(icon)
+                    g_object_unref(icon);
             }
         }
+        while(gtk_tree_model_iter_next(model, &it));
     }
     g_free(path);
+    g_key_file_free(kf);
 }
 
 static void on_folder_start_loading(FmFolder* folder, gpointer user_data)
@@ -619,30 +656,38 @@ static void set_focused_item(FmDesktop* desktop, FmDesktopItem* item)
 
 static void select_all(FmDesktop* desktop)
 {
-    GList* l;
-    for(l=desktop->items;l;l=l->next)
+    GtkTreeIter it;
+    GtkTreeModel* model = GTK_TREE_MODEL(desktop->model);
+    if(!gtk_tree_model_get_iter_first(model, &it))
+        return;
+    do
     {
-        FmDesktopItem* item = (FmDesktopItem*)l->data;
+        FmDesktopItem* item = fm_folder_model_get_item_userdata(desktop->model, &it);
         if(!item->is_selected)
         {
             item->is_selected = TRUE;
             redraw_item(desktop, item);
         }
     }
+    while(gtk_tree_model_iter_next(model, &it));
 }
 
 static void deselect_all(FmDesktop* desktop)
 {
-    GList* l;
-    for(l = desktop->items; l ;l = l->next)
+    GtkTreeIter it;
+    GtkTreeModel* model = GTK_TREE_MODEL(desktop->model);
+    if(!gtk_tree_model_get_iter_first(model, &it))
+        return;
+    do
     {
-        FmDesktopItem* item = (FmDesktopItem*) l->data;
+        FmDesktopItem* item = fm_folder_model_get_item_userdata(desktop->model, &it);
         if(item->is_selected)
         {
             item->is_selected = FALSE;
             redraw_item(desktop, item);
         }
     }
+    while(gtk_tree_model_iter_next(model, &it));
 }
 
 static inline void popup_menu(FmDesktop* desktop, GdkEvent* evt)
@@ -1122,9 +1167,10 @@ static void on_realize(GtkWidget* w)
 static gboolean on_focus_in(GtkWidget* w, GdkEventFocus* evt)
 {
     FmDesktop* self = (FmDesktop*) w;
+    GtkTreeIter it;
     GTK_WIDGET_SET_FLAGS(w, GTK_HAS_FOCUS);
-    if(!self->focus && self->items)
-        self->focus = (FmDesktopItem*)self->items->data;
+    if(!self->focus && gtk_tree_model_get_iter_first(GTK_TREE_MODEL(self->model), &it))
+        self->focus = fm_folder_model_get_item_userdata(self->model, &it);
     if(self->focus)
         redraw_item(self, self->focus);
     return FALSE;
@@ -1144,8 +1190,9 @@ static gboolean on_focus_out(GtkWidget* w, GdkEventFocus* evt)
 static gboolean on_expose(GtkWidget* w, GdkEventExpose* evt)
 {
     FmDesktop* self = (FmDesktop*)w;
-    GList* l;
     cairo_t* cr;
+    GtkTreeModel* model = GTK_TREE_MODEL(self->model);
+    GtkTreeIter it;
 
     if(G_UNLIKELY(! gtk_widget_get_visible (w) || ! gtk_widget_get_mapped (w)))
         return TRUE;
@@ -1154,10 +1201,11 @@ static gboolean on_expose(GtkWidget* w, GdkEventExpose* evt)
     if(self->rubber_bending)
         paint_rubber_banding_rect(self, cr, &evt->area);
 
-    for(l = self->items; l; l = l->next)
+    if(gtk_tree_model_get_iter_first(model, &it)) do
     {
-        FmDesktopItem* item = (FmDesktopItem*)l->data;
+        FmDesktopItem* item = fm_folder_model_get_item_userdata(self->model, &it);
         GdkRectangle* intersect, tmp, tmp2;
+        GdkPixbuf* icon = NULL;
         if(gdk_rectangle_intersect(&evt->area, &item->icon_rect, &tmp))
             intersect = &tmp;
         else
@@ -1172,8 +1220,14 @@ static gboolean on_expose(GtkWidget* w, GdkEventExpose* evt)
         }
 
         if(intersect)
-            paint_item(self, item, cr, intersect);
+        {
+            gtk_tree_model_get(model, &it, COL_FILE_ICON, &icon, -1);
+            paint_item(self, item, cr, intersect, icon);
+            if(icon)
+                g_object_unref(icon);
+        }
     }
+    while(gtk_tree_model_iter_next(model, &it));
     cairo_destroy(cr);
 
     return TRUE;
@@ -1236,24 +1290,27 @@ static gboolean is_point_in_rect(GdkRectangle* rect, int x, int y)
 static FmDesktopItem* hit_test(FmDesktop* self, int x, int y)
 {
     FmDesktopItem* item;
-    GList* l;
-    for(l = self->items; l; l = l->next)
+    GtkTreeModel* model = GTK_TREE_MODEL(self->model);
+    GtkTreeIter it;
+    if(gtk_tree_model_get_iter_first(model, &it)) do
     {
-        item = (FmDesktopItem*) l->data;
+        item = fm_folder_model_get_item_userdata(self->model, &it);
         if(is_point_in_rect(&item->icon_rect, x, y)
          || is_point_in_rect(&item->text_rect, x, y))
             return item;
     }
+    while(gtk_tree_model_iter_next(model, &it));
     return NULL;
 }
 
 static FmDesktopItem* get_nearest_item(FmDesktop* desktop, FmDesktopItem* item,  GtkDirectionType dir)
 {
-    GList* l;
+    GtkTreeModel* model = GTK_TREE_MODEL(desktop->model);
     FmDesktopItem* item2, *ret = NULL;
-    guint min_x_dist, min_y_dist;
+    guint min_x_dist, min_y_dist, dist;
+    GtkTreeIter it;
 
-    if(!desktop->items || !desktop->items->next)
+    if(!gtk_tree_model_get_iter_first(model, &it))
         return NULL;
 
     min_x_dist = min_y_dist = (guint)-1;
@@ -1262,10 +1319,9 @@ static FmDesktopItem* get_nearest_item(FmDesktop* desktop, FmDesktopItem* item, 
     switch(dir)
     {
     case GTK_DIR_LEFT:
-        for(l = desktop->items; l; l = l->next)
+        do
         {
-            guint dist;
-            item2 = (FmDesktopItem*) l->data;
+            item2 = fm_folder_model_get_item_userdata(desktop->model, &it);
             if(item2->x >= item->x)
                 continue;
             dist = item->x - item2->x;
@@ -1286,12 +1342,12 @@ static FmDesktopItem* get_nearest_item(FmDesktop* desktop, FmDesktopItem* item, 
                 }
             }
         }
+        while(gtk_tree_model_iter_next(model, &it));
         break;
     case GTK_DIR_RIGHT:
-        for(l = desktop->items; l; l = l->next)
+        do
         {
-            guint dist;
-            item2 = (FmDesktopItem*) l->data;
+            item2 = fm_folder_model_get_item_userdata(desktop->model, &it);
             if(item2->x <= item->x)
                 continue;
             dist = item2->x - item->x;
@@ -1312,12 +1368,12 @@ static FmDesktopItem* get_nearest_item(FmDesktop* desktop, FmDesktopItem* item, 
                 }
             }
         }
+        while(gtk_tree_model_iter_next(model, &it));
         break;
     case GTK_DIR_UP:
-        for(l = desktop->items; l; l = l->next)
+        do
         {
-            guint dist;
-            item2 = (FmDesktopItem*) l->data;
+            item2 = fm_folder_model_get_item_userdata(desktop->model, &it);
             if(item2->y >= item->y)
                 continue;
             dist = item->y - item2->y;
@@ -1338,12 +1394,12 @@ static FmDesktopItem* get_nearest_item(FmDesktop* desktop, FmDesktopItem* item, 
                 }
             }
         }
+        while(gtk_tree_model_iter_next(model, &it));
         break;
     case GTK_DIR_DOWN:
-        for(l = desktop->items; l; l = l->next)
+        do
         {
-            guint dist;
-            item2 = (FmDesktopItem*) l->data;
+            item2 = fm_folder_model_get_item_userdata(desktop->model, &it);
             if(item2->y <= item->y)
                 continue;
             dist = item2->y - item->y;
@@ -1364,6 +1420,7 @@ static FmDesktopItem* get_nearest_item(FmDesktop* desktop, FmDesktopItem* item, 
                 }
             }
         }
+        while(gtk_tree_model_iter_next(model, &it));
         break;
     case GTK_DIR_TAB_FORWARD: /* FIXME */
         break;
@@ -1373,115 +1430,55 @@ static FmDesktopItem* get_nearest_item(FmDesktop* desktop, FmDesktopItem* item, 
     return ret;
 }
 
-static inline FmDesktopItem* desktop_item_new(GtkTreeIter* it)
+static inline FmDesktopItem* desktop_item_new(GtkTreeModel* model, GtkTreeIter* it)
 {
     FmDesktopItem* item = g_slice_new0(FmDesktopItem);
-    fm_folder_model_set_item_userdata(desktop_model, it, item);
-    gtk_tree_model_get(GTK_TREE_MODEL(desktop_model), it,
-                       COL_FILE_ICON, &item->icon,
-                       COL_FILE_INFO, &item->fi, -1);
+    fm_folder_model_set_item_userdata(FM_FOLDER_MODEL(model), it, item);
+    gtk_tree_model_get(model, it, COL_FILE_INFO, &item->fi, -1);
     fm_file_info_ref(item->fi);
     return item;
 }
 
 static void on_row_inserted(GtkTreeModel* mod, GtkTreePath* tp, GtkTreeIter* it, FmDesktop* desktop)
 {
-    FmDesktopItem* item = desktop_item_new(it);
-    desktop->items = g_list_insert(desktop->items, item, gtk_tree_path_get_indices(tp)[0]);
+    FmDesktopItem* item = desktop_item_new(mod, it);
+    fm_folder_model_set_item_userdata(desktop_model, it, item);
     queue_layout_items(desktop);
 }
 
 static void on_row_deleted(GtkTreeModel* mod, GtkTreePath* tp, FmDesktop* desktop)
 {
-    GList* l;
-    int i = 0, idx = gtk_tree_path_get_indices(tp)[0];
-    for(l=desktop->items;l;l=l->next, ++i)
-    {
-        if(i == idx)
-        {
-            FmDesktopItem* item = (FmDesktopItem*)l->data;
-            desktop_item_free(item);
-            if(desktop->focus == item)
-            {
-                if(l->next)
-                    desktop->focus = (FmDesktopItem*)l->next->data;
-                else if(l->prev)
-                    desktop->focus = (FmDesktopItem*)l->prev->data;
-                else
-                    desktop->focus = NULL;
-            }
-            if(desktop->drop_hilight == item)
-                desktop->drop_hilight = NULL;
-            if(desktop->hover_item == item)
-                desktop->hover_item = NULL;
-            desktop->items = g_list_delete_link(desktop->items, l);
-            break;
-        }
-    }
-
     queue_layout_items(desktop);
 }
 
 static void on_row_changed(GtkTreeModel* model, GtkTreePath* tp, GtkTreeIter* it, FmDesktop* desktop)
 {
-    GList* l;
     FmDesktopItem* item = fm_folder_model_get_item_userdata(FM_FOLDER_MODEL(model), it);
 
-    for(l=desktop->items;l;l=l->next) /* check for failure */
-    {
-        if(l->data == (gpointer)item)
-        {
-            if(item->icon)
-                g_object_unref(item->icon);
-            fm_file_info_unref(item->fi);
-            gtk_tree_model_get(model, it, COL_FILE_ICON, &item->icon,
-                               COL_FILE_INFO, &item->fi, -1);
-            fm_file_info_ref(item->fi);
-            redraw_item(desktop, item);
-            /* FIXME: check if sorting of files is changed. */
-            break;
-        }
-    }
+    fm_file_info_unref(item->fi);
+    gtk_tree_model_get(model, it, COL_FILE_INFO, &item->fi, -1);
+    fm_file_info_ref(item->fi);
+
+    redraw_item(desktop, item);
     /* queue_layout_items(desktop); */
 }
 
 static void on_rows_reordered(GtkTreeModel* model, GtkTreePath* parent_tp, GtkTreeIter* parent_it, gpointer arg3, FmDesktop* desktop)
 {
-    GtkTreeIter it;
-    GList* new_items = NULL;
-    if(!gtk_tree_model_get_iter_first(model, &it))
-        return;
-    do
-    {
-        GList* l;
-        FmDesktopItem* item = fm_folder_model_get_item_userdata(FM_FOLDER_MODEL(model), &it);
-        for(l = desktop->items; l; l=l->next)
-        {
-            if(l->data == (gpointer)item)
-            {
-                desktop->items = g_list_remove_link(desktop->items, l);
-                new_items = g_list_concat(l, new_items);
-                break;
-            }
-        }
-    }while(gtk_tree_model_iter_next(model, &it));
-    g_list_foreach(desktop->items, (GFunc)desktop_item_free, NULL);
-    g_list_free(desktop->items);
-    desktop->items = g_list_reverse(new_items);
     queue_layout_items(desktop);
 }
 
 
-static void calc_item_size(FmDesktop* desktop, FmDesktopItem* item)
+static void calc_item_size(FmDesktop* desktop, FmDesktopItem* item, GdkPixbuf* icon)
 {
     //int text_x, text_y, text_w, text_h;    /* Probably goes along with the FIXME in this function */
     PangoRectangle rc, rc2;
 
     /* icon rect */
-    if(item->icon)
+    if(icon)
     {
-        item->icon_rect.width = gdk_pixbuf_get_width(item->icon);
-        item->icon_rect.height = gdk_pixbuf_get_height(item->icon);
+        item->icon_rect.width = gdk_pixbuf_get_width(icon);
+        item->icon_rect.height = gdk_pixbuf_get_height(icon);
         item->icon_rect.x = item->x + (desktop->cell_w - item->icon_rect.width) / 2;
         item->icon_rect.y = item->y + desktop->ypad + (fm_config->big_icon_size - item->icon_rect.height) / 2;
         item->icon_rect.height += desktop->spacing;
@@ -1533,28 +1530,34 @@ static gboolean is_pos_occupied(FmDesktop* desktop, FmDesktopItem* item)
 
 static void layout_items(FmDesktop* self)
 {
-    GList* l;
     FmDesktopItem* item;
+    GtkTreeModel* model = GTK_TREE_MODEL(self->model);
+    GdkPixbuf* icon;
+    GtkTreeIter it;
     int x, y, bottom;
     GtkTextDirection direction = gtk_widget_get_direction(GTK_WIDGET(self));
 
     y = self->working_area.y + self->ymargin;
     bottom = self->working_area.y + self->working_area.height - self->ymargin - self->cell_h;
 
+    if(!gtk_tree_model_get_iter_first(model, &it))
+        return;
     if(direction != GTK_TEXT_DIR_RTL) /* LTR or NONE */
     {
         x = self->working_area.x + self->xmargin;
-        for(l = self->items; l; l = l->next)
+        do
         {
-            item = (FmDesktopItem*)l->data;
+            item = fm_folder_model_get_item_userdata(self->model, &it);
+            icon = NULL;
+            gtk_tree_model_get(model, &it, COL_FILE_ICON, &icon, -1);
             if(item->fixed_pos)
-                calc_item_size(self, item);
+                calc_item_size(self, item, icon);
             else
             {
             _next_position:
                 item->x = x;
                 item->y = y;
-                calc_item_size(self, item);
+                calc_item_size(self, item, icon);
                 y += self->cell_h;
                 if(y > bottom)
                 {
@@ -1565,22 +1568,27 @@ static void layout_items(FmDesktop* self)
                 if(is_pos_occupied(self, item))
                     goto _next_position;
             }
+            if(icon)
+                g_object_unref(icon);
         }
+        while(gtk_tree_model_iter_next(model, &it));
     }
     else /* RTL */
     {
         x = self->working_area.x + self->working_area.width - self->xmargin - self->cell_w;
-        for(l = self->items; l; l = l->next)
+        do
         {
-            item = (FmDesktopItem*)l->data;
+            item = fm_folder_model_get_item_userdata(self->model, &it);
+            icon = NULL;
+            gtk_tree_model_get(model, &it, COL_FILE_ICON, &icon, -1);
             if(item->fixed_pos)
-                calc_item_size(self, item);
+                calc_item_size(self, item, icon);
             else
             {
             _next_position_rtl:
                 item->x = x;
                 item->y = y;
-                calc_item_size(self, item);
+                calc_item_size(self, item, icon);
                 y += self->cell_h;
                 if(y > bottom)
                 {
@@ -1591,7 +1599,10 @@ static void layout_items(FmDesktop* self)
                 if(is_pos_occupied(self, item))
                     goto _next_position_rtl;
             }
+            if(icon)
+                g_object_unref(icon);
         }
+        while(gtk_tree_model_iter_next(model, &it));
     }
     gtk_widget_queue_draw(GTK_WIDGET(self));
 }
@@ -1609,7 +1620,7 @@ static void queue_layout_items(FmDesktop* desktop)
         desktop->idle_layout = g_idle_add((GSourceFunc)on_idle_layout, desktop);
 }
 
-static void paint_item(FmDesktop* self, FmDesktopItem* item, cairo_t* cr, GdkRectangle* expose_area)
+static void paint_item(FmDesktop* self, FmDesktopItem* item, cairo_t* cr, GdkRectangle* expose_area, GdkPixbuf* icon)
 {
     GtkStyle* style;
     GtkWidget* widget = (GtkWidget*)self;
@@ -1661,7 +1672,7 @@ static void paint_item(FmDesktop* self, FmDesktopItem* item, cairo_t* cr, GdkRec
                         item->text_rect.x, item->text_rect.y, item->text_rect.width, item->text_rect.height);
 
     /* draw the icon */
-    g_object_set(self->icon_render, "pixbuf", item->icon, "info", fm_file_info_ref(item->fi), NULL);
+    g_object_set(self->icon_render, "pixbuf", icon, "info", item->fi, NULL);
     gtk_cell_renderer_render(GTK_CELL_RENDERER(self->icon_render), window, widget, &item->icon_rect, &item->icon_rect, expose_area, state);
 }
 
@@ -1709,7 +1720,8 @@ static void calc_rubber_banding_rect(FmDesktop* self, int x, int y, GdkRectangle
 
 static void update_rubberbanding(FmDesktop* self, int newx, int newy)
 {
-    GList* l;
+    GtkTreeModel* model = GTK_TREE_MODEL(self->model);
+    GtkTreeIter it;
     GdkRectangle old_rect, new_rect;
     //GdkRegion *region;
     GdkWindow *window;
@@ -1734,9 +1746,9 @@ static void update_rubberbanding(FmDesktop* self, int newx, int newy)
     self->rubber_bending_y = newy;
 
     /* update selection */
-    for(l = self->items; l; l = l->next)
+    if(gtk_tree_model_get_iter_first(model, &it)) do
     {
-        FmDesktopItem* item = (FmDesktopItem*)l->data;
+        FmDesktopItem* item = fm_folder_model_get_item_userdata(self->model, &it);
         gboolean selected;
         if(gdk_rectangle_intersect(&new_rect, &item->icon_rect, NULL) ||
             gdk_rectangle_intersect(&new_rect, &item->text_rect, NULL))
@@ -1750,6 +1762,7 @@ static void update_rubberbanding(FmDesktop* self, int newx, int newy)
             redraw_item(self, item);
         }
     }
+    while(gtk_tree_model_iter_next(model, &it));
 }
 
 
@@ -2058,31 +2071,7 @@ static void reload_icons()
 {
     int i;
     for(i=0; i < n_screens; ++i)
-    {
-        FmDesktop* desktop = desktops[i];
-        GList* l;
-        GtkTreeIter it;
-
-        if(!gtk_tree_model_get_iter_first(GTK_TREE_MODEL(desktop->model), &it))
-            continue;
-        do
-        {
-            FmDesktopItem* item = fm_folder_model_get_item_userdata(desktop->model, &it);
-            for(l = desktop->items; l; l=l->next)
-            {
-                if(l->data == (gpointer)item)
-                {
-                    if(item->icon)
-                    {
-                        g_object_unref(item->icon);
-                        item->icon = NULL;
-                    }
-                    gtk_tree_model_get(GTK_TREE_MODEL(desktop->model), &it, COL_FILE_ICON, &item->icon, -1);
-                }
-            }
-        }while(gtk_tree_model_iter_next(GTK_TREE_MODEL(desktop->model), &it));
-        gtk_widget_queue_resize(GTK_WIDGET(desktop));
-    }
+        gtk_widget_queue_resize(GTK_WIDGET(desktops[i]));
 }
 
 static void on_big_icon_size_changed(FmConfig* cfg, gpointer user_data)
@@ -2118,13 +2107,15 @@ static void on_invert_select(GtkAction* act, gpointer user_data)
     for(i=0; i < n_screens; ++i)
     {
         FmDesktop* desktop = desktops[i];
-        GList* l;
-        for(l=desktop->items;l;l=l->next)
+        GtkTreeModel* model = GTK_TREE_MODEL(desktop->model);
+        GtkTreeIter it;
+        if(gtk_tree_model_get_iter_first(model, &it)) do
         {
-            FmDesktopItem* item = (FmDesktopItem*)l->data;
+            FmDesktopItem* item = fm_folder_model_get_item_userdata(desktop->model, &it);
             item->is_selected = !item->is_selected;
             redraw_item(desktop, item);
         }
+        while(gtk_tree_model_iter_next(model, &it));
     }
 }
 
@@ -2264,12 +2255,13 @@ static void on_snap_to_grid(GtkAction* act, gpointer user_data)
 static GList* get_selected_items(FmDesktop* desktop, int* n_items)
 {
     GList* items = NULL;
-    GList* l;
     int n = 0;
     FmDesktopItem* focus = NULL;
-    for(l=desktop->items; l; l=l->next)
+    GtkTreeModel* model = GTK_TREE_MODEL(desktop->model);
+    GtkTreeIter it;
+    if(gtk_tree_model_get_iter_first(model, &it)) do
     {
-        FmDesktopItem* item = (FmDesktopItem*)l->data;
+        FmDesktopItem* item = fm_folder_model_get_item_userdata(desktop->model, &it);
         if(item->is_selected)
         {
             if(G_LIKELY(item != desktop->focus))
@@ -2281,6 +2273,7 @@ static GList* get_selected_items(FmDesktop* desktop, int* n_items)
                 focus = item;
         }
     }
+    while(gtk_tree_model_iter_next(model, &it));
     items = g_list_reverse(items);
     if(focus)
     {
@@ -2294,46 +2287,51 @@ static GList* get_selected_items(FmDesktop* desktop, int* n_items)
 
 gboolean fm_desktop_has_selected_item(FmDesktop* desktop)
 {
-    GList* l;
-    for(l = desktop->items; l; l = l->next)
-        if(((FmDesktopItem*)l->data)->is_selected)
+    GtkTreeModel* model = GTK_TREE_MODEL(desktop->model);
+    GtkTreeIter it;
+    if(gtk_tree_model_get_iter_first(model, &it)) do
+    {
+        FmDesktopItem* item = fm_folder_model_get_item_userdata(desktop->model, &it);
+        if(item->is_selected)
             return TRUE;
+    }
+    while(gtk_tree_model_iter_next(model, &it));
     return FALSE;
 }
 
 FmFileInfoList* fm_desktop_dup_selected_files(FmDesktop* desktop)
 {
-    GList* l;
-    FmFileInfoList* files = fm_file_info_list_new();
-    for(l=desktop->items; l; l=l->next)
+    FmFileInfoList* files;
+    GtkTreeModel* model = GTK_TREE_MODEL(desktop->model);
+    GtkTreeIter it;
+    if(!gtk_tree_model_get_iter_first(model, &it))
+        return NULL;
+    files = fm_file_info_list_new();
+    do
     {
-        FmDesktopItem* item = (FmDesktopItem*)l->data;
+        FmDesktopItem* item = fm_folder_model_get_item_userdata(desktop->model, &it);
         if(item->is_selected)
             fm_file_info_list_push_tail(files, item->fi);
     }
-    if(fm_file_info_list_is_empty(files))
-    {
-        fm_file_info_list_unref(files);
-        files = NULL;
-    }
+    while(gtk_tree_model_iter_next(model, &it));
     return files;
 }
 
 FmPathList* fm_desktop_dup_selected_paths(FmDesktop* desktop)
 {
-    GList* l;
-    FmPathList* files = fm_path_list_new();
-    for(l=desktop->items; l; l=l->next)
+    FmPathList* files;
+    GtkTreeModel* model = GTK_TREE_MODEL(desktop->model);
+    GtkTreeIter it;
+    if(!gtk_tree_model_get_iter_first(model, &it))
+        return NULL;
+    files = fm_path_list_new();
+    do
     {
-        FmDesktopItem* item = (FmDesktopItem*)l->data;
+        FmDesktopItem* item = fm_folder_model_get_item_userdata(desktop->model, &it);
         if(item->is_selected)
             fm_path_list_push_tail(files, fm_file_info_get_path(item->fi));
     }
-    if(fm_path_list_is_empty(files))
-    {
-        fm_path_list_unref(files);
-        files = NULL;
-    }
+    while(gtk_tree_model_iter_next(model, &it));
     return files;
 }
 
