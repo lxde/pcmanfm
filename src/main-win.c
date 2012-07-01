@@ -335,6 +335,20 @@ static void on_history_item(GtkMenuItem* mi, FmMainWin* win)
     fm_tab_page_history(page, l);
 }
 
+static void disconnect_history_item(GtkWidget* mi, gpointer win)
+{
+    g_signal_handlers_disconnect_by_func(mi, on_history_item, win);
+    gtk_widget_destroy(mi);
+}
+
+static void on_history_selection_done(GtkMenuShell* menu, gpointer win)
+{
+    g_debug("history selection done");
+    g_signal_handlers_disconnect_by_func(menu, on_history_selection_done, NULL);
+    /* cleanup: disconnect and delete all items */
+    gtk_container_foreach(GTK_CONTAINER(menu), disconnect_history_item, win);
+}
+
 static void on_show_history_menu(GtkMenuToolButton* btn, FmMainWin* win)
 {
     GtkMenuShell* menu = (GtkMenuShell*)gtk_menu_tool_button_get_menu(btn);
@@ -365,6 +379,7 @@ static void on_show_history_menu(GtkMenuToolButton* btn, FmMainWin* win)
         g_signal_connect(mi, "activate", G_CALLBACK(on_history_item), win);
         gtk_menu_shell_append(menu, mi);
     }
+    g_signal_connect(menu, "selection-done", G_CALLBACK(on_history_selection_done), NULL);
     gtk_widget_show_all( GTK_WIDGET(menu) );
 }
 
@@ -1327,7 +1342,6 @@ static void on_notebook_page_removed(GtkNotebook* nb, GtkWidget* page, guint num
     FmFolderView* folder_view = fm_tab_page_get_folder_view(tab_page);
 
     /* disconnect from previous active page */
-    fm_tab_page_disconnect_nav_history(tab_page, win);
     g_signal_handlers_disconnect_by_func(folder_view, on_view_key_press_event, win);
 
     g_signal_handlers_disconnect_by_func(label->close_btn, gtk_widget_destroy, page);

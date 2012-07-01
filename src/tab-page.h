@@ -104,9 +104,6 @@ const char* fm_tab_page_get_title(FmTabPage* page);
 /* get normal status text */
 const char* fm_tab_page_get_status_text(FmTabPage* page, FmStatusTextType type);
 
-/* disconnect all handlers for win from all history */
-void fm_tab_page_disconnect_nav_history(FmTabPage* page, gpointer win);
-
 G_END_DECLS
 
 #endif /* __FM_TAB_PAGE_H__ */
