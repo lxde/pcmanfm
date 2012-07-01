@@ -335,9 +335,9 @@ void fm_edit_preference( GtkWindow* parent, int page )
         }
         gtk_tree_view_set_model(tab_label_list, GTK_TREE_MODEL(tab_label_model));
         gtk_tree_model_get_iter_first(GTK_TREE_MODEL(tab_label_model), &it);
-        g_object_unref(tab_label_model);
         tree_sel = gtk_tree_view_get_selection(tab_label_list);
         gtk_tree_selection_select_iter(tree_sel, &it);
+        g_object_unref(tab_label_model);
         g_signal_connect(tree_sel, "changed", G_CALLBACK(on_tab_label_list_sel_changed), notebook);
         gtk_notebook_set_show_tabs(notebook, FALSE);
 
@@ -432,4 +432,3 @@ void fm_desktop_preference()
     }
     gtk_window_present(desktop_pref_dlg);
 }
-

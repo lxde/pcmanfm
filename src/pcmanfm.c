@@ -148,6 +148,7 @@ int main(int argc, char** argv)
 {
     FmConfig* config;
     GError* err = NULL;
+    SingleInstData inst;
 
 #ifdef ENABLE_NLS
     bindtextdomain ( GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR );
@@ -164,14 +165,18 @@ int main(int argc, char** argv)
     }
 
     /* ensure that there is only one instance of pcmanfm. */
-    switch(single_inst_init("pcmanfm", single_inst_cb, opt_entries + 3, gdk_x11_get_default_screen()))
+    inst.prog_name = "pcmanfm";
+    inst.cb = single_inst_cb;
+    inst.opt_entries = opt_entries + 3;
+    inst.screen_num = gdk_x11_get_default_screen();
+    switch(single_inst_init(&inst))
     {
     case SINGLE_INST_CLIENT: /* we're not the first instance. */
-        single_inst_finalize();
+        single_inst_finalize(&inst);
         gdk_notify_startup_complete();
         return 0;
     case SINGLE_INST_ERROR: /* error happened. */
-        single_inst_finalize();
+        single_inst_finalize(&inst);
         return 1;
     case SINGLE_INST_SERVER: ; /* FIXME */
     }
@@ -215,7 +220,7 @@ int main(int argc, char** argv)
         fm_volume_manager_finalize();
     }
 
-    single_inst_finalize();
+    single_inst_finalize(&inst);
     fm_gtk_finalize();
 
     g_object_unref(config);
