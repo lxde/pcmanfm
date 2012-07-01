@@ -595,10 +595,12 @@ _retry:
     }
     else /* templates in ~/Templates */
     {
+        /* FIXME: need an extended processing with desktop entries support */
         FmPath* dir = fm_path_new_for_str(g_get_user_special_dir(G_USER_DIRECTORY_TEMPLATES));
         FmPath* template = fm_path_new_child(dir, templ);
         fm_copy_file(parent, template, cwd);
         fm_path_unref(template);
+        fm_path_unref(dir);
     }
     fm_path_unref(dest);
 }
