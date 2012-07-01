@@ -48,11 +48,11 @@ static GtkWidget* use_trash;
 
 static GtkWindow* desktop_pref_dlg = NULL;
 
-static void on_response(GtkDialog* dlg, int res, GtkWidget** pdlg)
+static void on_response(GtkDialog* dlg, int res, GtkWindow** pdlg)
 {
-    gtk_widget_destroy(GTK_WIDGET(dlg));
     *pdlg = NULL;
     pcmanfm_save_config(TRUE);
+    gtk_widget_destroy(GTK_WIDGET(dlg));
 }
 
 static void on_icon_size_changed(GtkComboBox* combo, gpointer _off)

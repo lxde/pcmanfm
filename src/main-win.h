@@ -64,6 +64,8 @@ struct _FmMainWin
     guint statusbar_ctx;
     guint statusbar_ctx2;
     FmBookmarks* bookmarks;
+    guint idle_handler; /* fix for GtkEntry bug */
+    gboolean in_destroy; /* for recursion mark */
 };
 
 struct _FmMainWinClass

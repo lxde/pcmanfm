@@ -515,3 +515,8 @@ void fm_tab_page_reload(FmTabPage* page)
     if(folder)
         fm_folder_reload(folder);
 }
+
+void fm_tab_page_disconnect_nav_history(FmTabPage* page, gpointer win)
+{
+    //TODO!
+}
