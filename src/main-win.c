@@ -464,7 +464,6 @@ static void fm_main_win_init(FmMainWin *win)
 
     pcmanfm_ref();
     all_wins = g_slist_prepend(all_wins, win);
-    win->in_destroy = FALSE;
 
     /* every window should have its own window group.
      * So model dialogs opened for the window does not lockup
@@ -614,49 +613,36 @@ static void fm_main_win_destroy(GtkObject *object)
     g_return_if_fail(IS_FM_MAIN_WIN(object));
     win = (FmMainWin*)object;
 
-    /* when last tab is destroyed it will call us again */
-    if(win->in_destroy)
-        return;
-    win->in_destroy = TRUE;
-    g_debug("main window destroy called");
-
-    g_signal_handlers_disconnect_by_func(win->location, on_location_activate, win);
-    g_signal_handlers_disconnect_by_func(win->notebook, on_notebook_switch_page, win);
-    g_signal_handlers_disconnect_by_func(win->notebook, on_notebook_page_added, win);
-    g_signal_handlers_disconnect_by_func(win->notebook, on_notebook_page_removed, win);
-
-    /* FIXME: setting to NULL should be removed since bug is fixed */
-
-    /* destroy the window group */
+    /* Gtk+ runs destroy method twice */
     if(win->win_group)
     {
+        g_signal_handlers_disconnect_by_func(win->location, on_location_activate, win);
+        g_signal_handlers_disconnect_by_func(win->notebook, on_notebook_switch_page, win);
+        g_signal_handlers_disconnect_by_func(win->notebook, on_notebook_page_added, win);
+        g_signal_handlers_disconnect_by_func(win->notebook, on_notebook_page_removed, win);
+
         g_object_unref(win->win_group);
         win->win_group = NULL;
-    }
-
-    if(win->ui)
-    {
         g_object_unref(win->ui);
         win->ui = NULL;
-    }
-    if(win->bookmarks)
-    {
-        g_signal_handlers_disconnect_by_func(win->bookmarks, on_bookmarks_changed, win);
-        g_object_unref(win->bookmarks);
-        win->bookmarks = NULL;
-    }
-    /* This is for removing idle_focus_view() */
-    if(win->idle_handler)
-    {
-        g_source_remove(win->idle_handler);
-        win->idle_handler = 0;
-    }
+        if(win->bookmarks)
+        {
+            g_signal_handlers_disconnect_by_func(win->bookmarks, on_bookmarks_changed, win);
+            g_object_unref(win->bookmarks);
+            win->bookmarks = NULL;
+        }
+        /* This is for removing idle_focus_view() */
+        if(win->idle_handler)
+        {
+            g_source_remove(win->idle_handler);
+            win->idle_handler = 0;
+        }
 
-    all_wins = g_slist_remove(all_wins, win);
+        all_wins = g_slist_remove(all_wins, win);
 
-    while(gtk_notebook_get_n_pages(win->notebook) > 0)
-        gtk_notebook_remove_page(win->notebook, 0);
-    win->in_destroy = FALSE;
+        while(gtk_notebook_get_n_pages(win->notebook) > 0)
+            gtk_notebook_remove_page(win->notebook, 0);
+    }
 
 #if GTK_CHECK_VERSION(3, 0, 0)
     (*GTK_WIDGET_CLASS(fm_main_win_parent_class)->destroy)(object);
@@ -1338,24 +1324,24 @@ static void on_notebook_page_added(GtkNotebook* nb, GtkWidget* page, guint num, 
 static void on_notebook_page_removed(GtkNotebook* nb, GtkWidget* page, guint num, FmMainWin* win)
 {
     FmTabPage* tab_page = FM_TAB_PAGE(page);
-    FmTabLabel* label = tab_page->tab_label;
     FmFolderView* folder_view = fm_tab_page_get_folder_view(tab_page);
 
     /* disconnect from previous active page */
-    g_signal_handlers_disconnect_by_func(folder_view, on_view_key_press_event, win);
-
-    g_signal_handlers_disconnect_by_func(label->close_btn, gtk_widget_destroy, page);
-    g_signal_handlers_disconnect_by_func(label, on_tab_label_button_pressed, page);
     g_signal_handlers_disconnect_by_func(tab_page,
                                          on_tab_page_splitter_pos_changed, win);
     g_signal_handlers_disconnect_by_func(tab_page,
                                          on_tab_page_chdir, win);
     g_signal_handlers_disconnect_by_func(tab_page,
                                          on_tab_page_status_text, win);
-    g_signal_handlers_disconnect_by_func(tab_page->folder_view,
-                                         on_folder_view_sort_changed, win);
-    g_signal_handlers_disconnect_by_func(tab_page->folder_view,
-                                         on_folder_view_clicked, win);
+    if(folder_view)
+    {
+        g_signal_handlers_disconnect_by_func(folder_view,
+                                             on_view_key_press_event, win);
+        g_signal_handlers_disconnect_by_func(tab_page->folder_view,
+                                             on_folder_view_sort_changed, win);
+        g_signal_handlers_disconnect_by_func(tab_page->folder_view,
+                                             on_folder_view_clicked, win);
+    }
     g_signal_handlers_disconnect_by_func(tab_page->side_pane,
                                          on_side_pane_mode_changed, win);
     g_signal_handlers_disconnect_by_func(tab_page->side_pane,

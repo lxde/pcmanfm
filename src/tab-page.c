@@ -170,7 +170,8 @@ static void on_folder_content_changed(FmFolder* folder, FmTabPage* page)
     g_free(page->status_text[FM_STATUS_TEXT_NORMAL]);
     page->status_text[FM_STATUS_TEXT_NORMAL] = format_status_text(page);
     g_signal_emit(page, signals[STATUS], 0,
-                  FM_STATUS_TEXT_NORMAL, page->status_text[FM_STATUS_TEXT_NORMAL]);
+                  (guint)FM_STATUS_TEXT_NORMAL,
+                  page->status_text[FM_STATUS_TEXT_NORMAL]);
 }
 
 static void on_folder_view_sel_changed(FmFolderView* fv, FmFileInfoList* files, FmTabPage* page)
@@ -267,7 +268,8 @@ static void on_folder_finish_loading(FmFolder* folder, FmTabPage* page)
     g_free(page->status_text[FM_STATUS_TEXT_NORMAL]);
     page->status_text[FM_STATUS_TEXT_NORMAL] = format_status_text(page);
     g_signal_emit(page, signals[STATUS], 0,
-                  FM_STATUS_TEXT_NORMAL, page->status_text[FM_STATUS_TEXT_NORMAL]);
+                  (guint)FM_STATUS_TEXT_NORMAL,
+                  page->status_text[FM_STATUS_TEXT_NORMAL]);
 
     fm_unset_busy_cursor(GTK_WIDGET(fv));
     /* g_debug("finish-loading"); */
@@ -339,8 +341,8 @@ static void fm_tab_page_init(FmTabPage *page)
     gtk_paned_add1(paned, GTK_WIDGET(page->side_pane));
     focus_chain = g_list_prepend(focus_chain, page->side_pane);
 
-    page->folder_view = fm_folder_view_new(app_config->view_mode);
-    folder_view = page->folder_view;
+    folder_view = fm_folder_view_new(app_config->view_mode);
+    page->folder_view = folder_view;
     fm_folder_view_sort(folder_view, app_config->sort_type, app_config->sort_by);
     fm_folder_view_set_selection_mode(folder_view, GTK_SELECTION_MULTIPLE);
     page->nav_history = fm_nav_history_new();
@@ -434,7 +436,8 @@ void fm_tab_page_set_show_hidden(FmTabPage* page, gboolean show_hidden)
     g_free(page->status_text[FM_STATUS_TEXT_NORMAL]);
     page->status_text[FM_STATUS_TEXT_NORMAL] = format_status_text(page);
     g_signal_emit(page, signals[STATUS], 0,
-                  FM_STATUS_TEXT_NORMAL, page->status_text[FM_STATUS_TEXT_NORMAL]);
+                  (guint)FM_STATUS_TEXT_NORMAL,
+                  page->status_text[FM_STATUS_TEXT_NORMAL]);
 }
 
 FmPath* fm_tab_page_get_cwd(FmTabPage* page)

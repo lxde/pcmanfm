@@ -64,7 +64,7 @@ struct _FmTabPageClass
 {
     GtkHPanedClass parent_class;
     void (*chdir)(FmTabPage* page, FmPath* path);
-    void (*open_dir)(FmTabPage* page, guint where, FmPath* path);
+    //void (*open_dir)(FmTabPage* page, guint where, FmPath* path);
     void (*status)(FmTabPage* page, guint type, const char* status_text);
 };
 

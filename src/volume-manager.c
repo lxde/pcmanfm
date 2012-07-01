@@ -32,6 +32,8 @@
 
 static GVolumeMonitor* vol_mon = NULL;
 
+static guint on_idle_handler = 0;
+
 typedef struct _AutoRun AutoRun;
 struct _AutoRun
 {
@@ -51,7 +53,13 @@ static void on_unmount(GMount* mount, AutoRun* data)
     on_dlg_response(data->dlg, GTK_RESPONSE_CLOSE, data);
 }
 
-void on_dlg_response(GtkDialog* dlg, int res, gpointer user_data)
+static void on_row_activated(GtkTreeView* view, GtkTreePath* tp, GtkTreeViewColumn* col, gpointer user_data)
+{
+    AutoRun* data = (AutoRun*)user_data;
+    on_dlg_response(data->dlg, GTK_RESPONSE_OK, data);
+}
+
+static void on_dlg_response(GtkDialog* dlg, int res, gpointer user_data)
 {
     AutoRun* data = (AutoRun*)user_data;
 
@@ -82,11 +90,13 @@ void on_dlg_response(GtkDialog* dlg, int res, gpointer user_data)
             }
         }
     }
+    g_signal_handlers_disconnect_by_func(dlg, on_dlg_response, data);
+    g_signal_handlers_disconnect_by_func(data->view, on_row_activated, data);
+    g_signal_handlers_disconnect_by_func(data->mount, on_unmount, data);
     gtk_widget_destroy(GTK_WIDGET(dlg));
 
     g_object_unref(data->cancel);
     g_object_unref(data->store);
-    g_signal_handlers_disconnect_by_func(data->mount, on_unmount, data);
     g_object_unref(data->mount);
     g_slice_free(AutoRun, data);
 
@@ -149,12 +159,6 @@ static void on_content_type_finished(GObject* src_obj, GAsyncResult* res, gpoint
     else
         gtk_label_set_text(data->type, _("Removable Disk"));
 
-}
-
-static void on_row_activated(GtkTreeView* view, GtkTreePath* tp, GtkTreeViewColumn* col, gpointer user_data)
-{
-    AutoRun* data = (AutoRun*)user_data;
-    on_dlg_response(data->dlg, GTK_RESPONSE_OK, data);
 }
 
 
@@ -280,7 +284,7 @@ static gboolean fm_volume_manager_delay_init(gpointer user_data)
     GList* vols, *l;
     vol_mon = g_volume_monitor_get();
     if(G_UNLIKELY(!vol_mon))
-        return FALSE;
+        goto _end;
 
     g_signal_connect(vol_mon, "volume-added", G_CALLBACK(on_vol_added), NULL);
 
@@ -302,18 +306,20 @@ static gboolean fm_volume_manager_delay_init(gpointer user_data)
         }
         g_list_free(vols);
     }
+_end:
+    on_idle_handler = 0;
     return FALSE;
 }
 
 void fm_volume_manager_init()
 {
     /* init the volume manager when idle */
-    g_idle_add_full(G_PRIORITY_LOW, fm_volume_manager_delay_init, NULL, NULL);
+    on_idle_handler = g_idle_add_full(G_PRIORITY_LOW, fm_volume_manager_delay_init, NULL, NULL);
 }
 
 void fm_volume_manager_finalize()
 {
-    if(vol_mon)
+    if(G_LIKELY(vol_mon))
     {
         g_signal_handlers_disconnect_by_func(vol_mon, on_vol_added, NULL);
 
@@ -324,4 +330,7 @@ void fm_volume_manager_finalize()
         g_object_unref(vol_mon);
         vol_mon = NULL;
     }
+    if(on_idle_handler)
+        g_source_remove(on_idle_handler);
+    on_idle_handler = 0;
 }
