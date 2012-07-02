@@ -282,40 +282,43 @@ static void fm_desktop_destroy(GtkObject *object)
     GdkScreen* screen;
 
     self = FM_DESKTOP(object);
-    screen = gtk_widget_get_screen((GtkWidget*)self);
-    gdk_window_remove_filter(gdk_screen_get_root_window(screen), on_root_event, self);
-
-    g_signal_handlers_disconnect_by_func(screen, on_screen_size_changed, self);
-    g_signal_handlers_disconnect_by_func(self, on_drag_data_get, NULL);
-
-    disconnect_model(self);
-
-    unload_items(self);
-
-    g_object_unref(self->icon_render);
-    g_object_unref(self->pl);
-
-    if(self->gc)
-        g_object_unref(self->gc);
-
-    if(self->single_click_timeout_handler)
-        g_source_remove(self->single_click_timeout_handler);
-
-    if(self->idle_layout)
-        g_source_remove(self->idle_layout);
-
-    g_signal_handlers_disconnect_by_func(self->dnd_src, on_dnd_src_data_get, self);
-    g_object_unref(self->dnd_src);
-    g_object_unref(self->dnd_dest);
-
-    while(self->wallpapers)
+    if(self->model) /* see bug #3533958 by korzhpavel@SF */
     {
-        FmBackgroundCache *bg = self->wallpapers;
+        screen = gtk_widget_get_screen((GtkWidget*)self);
+        gdk_window_remove_filter(gdk_screen_get_root_window(screen), on_root_event, self);
 
-        self->wallpapers = bg->next;
-        g_object_unref(bg->pixmap);
-        g_free(bg->filename);
-        g_free(bg);
+        g_signal_handlers_disconnect_by_func(screen, on_screen_size_changed, self);
+        g_signal_handlers_disconnect_by_func(self, on_drag_data_get, NULL);
+
+        disconnect_model(self);
+
+        unload_items(self);
+
+        g_object_unref(self->icon_render);
+        g_object_unref(self->pl);
+
+        if(self->gc)
+            g_object_unref(self->gc);
+
+        if(self->single_click_timeout_handler)
+            g_source_remove(self->single_click_timeout_handler);
+
+        if(self->idle_layout)
+            g_source_remove(self->idle_layout);
+
+        g_signal_handlers_disconnect_by_func(self->dnd_src, on_dnd_src_data_get, self);
+        g_object_unref(self->dnd_src);
+        g_object_unref(self->dnd_dest);
+
+        while(self->wallpapers)
+        {
+            FmBackgroundCache *bg = self->wallpapers;
+
+            self->wallpapers = bg->next;
+            g_object_unref(bg->pixmap);
+            g_free(bg->filename);
+            g_free(bg);
+        }
     }
 
 #if GTK_CHECK_VERSION(3, 0, 0)
