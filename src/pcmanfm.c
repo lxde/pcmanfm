@@ -598,6 +598,36 @@ _retry:
         }
         g_object_unref(gf);
     }
+    else if ( templ == TEMPL_NAME_SHORTCUT )
+    {
+        /* FIXME: a temp. workaround until ~/Templates support is implemented */
+         char buf[256];
+         GFile* gf = fm_path_to_gfile(dest);
+
+         if (g_find_program_in_path("lxshortcut"))
+         {
+            char* path = g_file_get_path(gf);
+            int s = snprintf(buf, sizeof(buf), "lxshortcut -i %s", path);
+            g_free(path);
+            if(s >= (int)sizeof(buf))
+                buf[0] = '\0';
+         }
+         else
+         {
+             GtkWidget* msg;
+
+             msg = gtk_message_dialog_new( NULL,
+                                           0,
+                                           GTK_MESSAGE_ERROR,
+                                           GTK_BUTTONS_OK,
+                                           _("Error, lxshortcut not installed") );
+             gtk_dialog_run( GTK_DIALOG(msg) );
+             gtk_widget_destroy( msg );
+         }
+         if(buf[0] && system(buf)) /* FIXME: it's dirty and will lock everything */
+            fm_show_error(parent, NULL, _("Failed to start lxshortcut"));
+         g_object_unref(gf);
+    }
     else /* templates in ~/Templates */
     {
         /* FIXME: need an extended processing with desktop entries support */

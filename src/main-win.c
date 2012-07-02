@@ -1373,6 +1373,8 @@ static void on_create_new(GtkAction* action, FmMainWin* win)
         name = TEMPL_NAME_FOLDER;
     else if( strcmp(name, "NewBlank") == 0 )
         name = TEMPL_NAME_BLANK;
+    else if( strcmp(name, "NewShortcut") == 0 )
+        name = TEMPL_NAME_SHORTCUT;
     pcmanfm_create_new(GTK_WINDOW(win), fm_tab_page_get_cwd(win->current_page), name);
 }
 

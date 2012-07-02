@@ -2234,6 +2234,8 @@ static void on_create_new(GtkAction* act, gpointer user_data)
         name = TEMPL_NAME_FOLDER;
     else if(strcmp(name, "NewBlank") == 0)
         name = TEMPL_NAME_BLANK;
+    else if( strcmp(name, "NewShortcut") == 0)
+        name = TEMPL_NAME_SHORTCUT;
     pcmanfm_create_new(NULL, fm_path_get_desktop(), name);
 }
 

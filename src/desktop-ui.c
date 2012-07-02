@@ -26,6 +26,7 @@ static const char desktop_menu_xml[] =
   "<menu action='CreateNew'>"
     "<menuitem action='NewFolder'/>"
     "<menuitem action='NewBlank'/>"
+    "<menuitem action='NewShortcut'/>"
   "</menu>"
   "<separator/>"
   "<menuitem action='Paste'/>"
@@ -55,6 +56,7 @@ static const GtkActionEntry desktop_actions[]=
     {"CreateNew", NULL, N_("Create _New..."), "", NULL, NULL},
     {"NewFolder", "folder", N_("Folder"), "<Ctrl><Shift>N", NULL, G_CALLBACK(on_create_new)},
     {"NewBlank", "text-x-generic", N_("Blank File"), NULL, NULL, G_CALLBACK(on_create_new)},
+    {"NewShortcut", "system-run", N_("Shortcut"), NULL, NULL, G_CALLBACK(on_create_new)},
     {"Prop", GTK_STOCK_PROPERTIES, N_("Desktop Preferences"), "<Alt>Return", NULL, G_CALLBACK(fm_desktop_preference)}
 };
 
