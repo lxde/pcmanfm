@@ -82,6 +82,26 @@
                               </packing>
                             </child>
                             <child>
+                              <object class="GtkAlignment" id="alignment5">
+                                <property name="visible">True</property>
+                                <property name="left_padding">24</property>
+                                <child>
+                                  <object class="GtkCheckButton" id="wallpaper_common">
+                                    <property name="visible">True</property>
+                                    <property name="label" translatable="yes">Use the same wallpaper on all desktops</property>
+                                    <property name="can_focus">True</property>
+                                    <property name="receives_default">False</property>
+                                    <property name="use_underline">True</property>
+                                    <property name="draw_indicator">True</property>
+                                  </object>
+                                </child>
+                              </object>
+                              <packing>
+                                <property name="expand">False</property>
+                                <property name="position">1</property>
+                              </packing>
+                            </child>
+                            <child>
                               <object class="GtkHBox" id="hbox1">
                                 <property name="visible">True</property>
                                 <property name="spacing">12</property>
@@ -110,7 +130,7 @@
                                 </child>
                               </object>
                               <packing>
-                                <property name="position">1</property>
+                                <property name="position">2</property>
                               </packing>
                             </child>
                             <child>

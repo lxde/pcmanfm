@@ -41,6 +41,7 @@ G_BEGIN_DECLS
 typedef struct _FmDesktop           FmDesktop;
 typedef struct _FmDesktopClass      FmDesktopClass;
 typedef struct _FmDesktopItem       FmDesktopItem;
+typedef struct _FmBackgroundCache   FmBackgroundCache;
 
 struct _FmDesktop
 {
@@ -76,6 +77,7 @@ struct _FmDesktop
     FmDndDest* dnd_dest;
     guint single_click_timeout_handler;
     FmFolderModel* model;
+    FmBackgroundCache* wallpapers;
 };
 
 struct _FmDesktopClass
