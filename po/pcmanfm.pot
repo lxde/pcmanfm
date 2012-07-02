@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-02 14:21+0300\n"
+"POT-Creation-Date: 2012-07-03 00:49+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -74,7 +74,7 @@ msgstr ""
 msgid "Desktop Icons"
 msgstr ""
 
-#: ../data/ui/desktop-pref.glade.h:11 ../src/desktop-ui.c:58
+#: ../data/ui/desktop-pref.glade.h:11 ../src/desktop-ui.c:60
 #: ../data/pcmanfm-desktop-pref.desktop.in.h:2
 msgid "Desktop Preferences"
 msgstr ""
@@ -330,232 +330,236 @@ msgstr ""
 msgid "Open in File Manager"
 msgstr ""
 
-#: ../src/desktop-ui.c:53
+#: ../src/desktop-ui.c:54
 msgid "_Invert Selection"
 msgstr ""
 
-#: ../src/desktop-ui.c:54 ../src/main-win-ui.c:163
+#: ../src/desktop-ui.c:55 ../src/main-win-ui.c:164
 msgid "_Sort Files"
 msgstr ""
 
 #. for popup menu
-#: ../src/desktop-ui.c:55 ../src/main-win-ui.c:189
+#: ../src/desktop-ui.c:56 ../src/main-win-ui.c:190
 msgid "Create _New..."
 msgstr ""
 
-#: ../src/desktop-ui.c:56 ../src/main-win-ui.c:190
+#: ../src/desktop-ui.c:57 ../src/main-win-ui.c:191
 msgid "Folder"
 msgstr ""
 
-#: ../src/desktop-ui.c:57 ../src/main-win-ui.c:191
+#: ../src/desktop-ui.c:58 ../src/main-win-ui.c:192
 msgid "Blank File"
 msgstr ""
 
-#: ../src/desktop-ui.c:69 ../src/main-win-ui.c:217
-msgid "By _Name"
-msgstr ""
-
-#: ../src/desktop-ui.c:70 ../src/main-win-ui.c:218
-msgid "By _Modification Time"
+#: ../src/desktop-ui.c:59 ../src/main-win-ui.c:193
+msgid "Shortcut"
 msgstr ""
 
 #: ../src/desktop-ui.c:71 ../src/main-win-ui.c:219
-msgid "By _Size"
+msgid "By _Name"
 msgstr ""
 
 #: ../src/desktop-ui.c:72 ../src/main-win-ui.c:220
+msgid "By _Modification Time"
+msgstr ""
+
+#: ../src/desktop-ui.c:73 ../src/main-win-ui.c:221
+msgid "By _Size"
+msgstr ""
+
+#: ../src/desktop-ui.c:74 ../src/main-win-ui.c:222
 msgid "By File _Type"
 msgstr ""
 
-#: ../src/desktop-ui.c:88 ../src/main-win-ui.c:243
+#: ../src/desktop-ui.c:90 ../src/main-win-ui.c:245
 msgid "Open in New Tab"
 msgstr ""
 
-#: ../src/desktop-ui.c:89 ../src/main-win-ui.c:244
+#: ../src/desktop-ui.c:91 ../src/main-win-ui.c:246
 msgid "Open in New Window"
 msgstr ""
 
-#: ../src/desktop-ui.c:91 ../src/main-win-ui.c:246
+#: ../src/desktop-ui.c:93 ../src/main-win-ui.c:248
 msgid "Open in _Terminal"
 msgstr ""
 
-#: ../src/desktop-ui.c:107
+#: ../src/desktop-ui.c:109
 msgid "Stick to Current Position"
 msgstr ""
 
-#: ../src/desktop-ui.c:112
+#: ../src/desktop-ui.c:114
 msgid "Snap to Grid"
 msgstr ""
 
-#: ../src/main-win-ui.c:143
+#: ../src/main-win-ui.c:144
 msgid "_File"
 msgstr ""
 
-#: ../src/main-win-ui.c:144
+#: ../src/main-win-ui.c:145
 msgid "_New Window"
 msgstr ""
 
-#: ../src/main-win-ui.c:145
+#: ../src/main-win-ui.c:146
 msgid "New _Tab"
 msgstr ""
 
-#: ../src/main-win-ui.c:146
+#: ../src/main-win-ui.c:147
 msgid "_Close Tab"
 msgstr ""
 
-#: ../src/main-win-ui.c:147
+#: ../src/main-win-ui.c:148
 msgid "Close Window"
 msgstr ""
 
-#: ../src/main-win-ui.c:148
+#: ../src/main-win-ui.c:149
 msgid "_Edit"
 msgstr ""
 
-#: ../src/main-win-ui.c:153
+#: ../src/main-win-ui.c:154
 msgid "Rename"
 msgstr ""
 
-#: ../src/main-win-ui.c:154
+#: ../src/main-win-ui.c:155
 msgid "Create Symlink"
 msgstr ""
 
-#: ../src/main-win-ui.c:155
+#: ../src/main-win-ui.c:156
 msgid "Move To..."
 msgstr ""
 
-#: ../src/main-win-ui.c:156
+#: ../src/main-win-ui.c:157
 msgid "Copy To..."
 msgstr ""
 
-#: ../src/main-win-ui.c:158
+#: ../src/main-win-ui.c:159
 msgid "Invert Selection"
 msgstr ""
 
-#: ../src/main-win-ui.c:160
+#: ../src/main-win-ui.c:161
 msgid "_View"
 msgstr ""
 
-#: ../src/main-win-ui.c:161
+#: ../src/main-win-ui.c:162
 msgid "Reload Folder"
 msgstr ""
 
-#: ../src/main-win-ui.c:161
+#: ../src/main-win-ui.c:162
 msgid "Reload current folder"
 msgstr ""
 
-#: ../src/main-win-ui.c:162
+#: ../src/main-win-ui.c:163
 msgid "Side Pane"
 msgstr ""
 
-#: ../src/main-win-ui.c:164
+#: ../src/main-win-ui.c:165
 msgid "_Help"
 msgstr ""
 
-#: ../src/main-win-ui.c:166
+#: ../src/main-win-ui.c:167
 msgid "_Go"
 msgstr ""
 
-#: ../src/main-win-ui.c:167
+#: ../src/main-win-ui.c:168
 msgid "Previous Folder"
 msgstr ""
 
-#: ../src/main-win-ui.c:168
+#: ../src/main-win-ui.c:169
 msgid "Next Folder"
 msgstr ""
 
-#: ../src/main-win-ui.c:169
+#: ../src/main-win-ui.c:170
 msgid "Parent Folder"
 msgstr ""
 
-#: ../src/main-win-ui.c:169
+#: ../src/main-win-ui.c:170
 msgid "Go to parent Folder"
 msgstr ""
 
-#: ../src/main-win-ui.c:170
+#: ../src/main-win-ui.c:171
 msgid "Home Folder"
 msgstr ""
 
-#: ../src/main-win-ui.c:171
+#: ../src/main-win-ui.c:172
 msgid "Desktop"
 msgstr ""
 
-#: ../src/main-win-ui.c:171
+#: ../src/main-win-ui.c:172
 msgid "Desktop Folder"
 msgstr ""
 
-#: ../src/main-win-ui.c:172
+#: ../src/main-win-ui.c:173
 msgid "My Computer"
 msgstr ""
 
-#: ../src/main-win-ui.c:173
+#: ../src/main-win-ui.c:174
 msgid "Trash Can"
 msgstr ""
 
-#: ../src/main-win-ui.c:174
+#: ../src/main-win-ui.c:175
 msgid "Network Drives"
 msgstr ""
 
-#: ../src/main-win-ui.c:175
+#: ../src/main-win-ui.c:176
 msgid "Applications"
 msgstr ""
 
-#: ../src/main-win-ui.c:175
+#: ../src/main-win-ui.c:176
 msgid "Installed Applications"
 msgstr ""
 
-#: ../src/main-win-ui.c:177
+#: ../src/main-win-ui.c:178
 msgid "_Bookmarks"
 msgstr ""
 
-#: ../src/main-win-ui.c:178
+#: ../src/main-win-ui.c:179
 msgid "Add To Bookmarks"
 msgstr ""
 
-#: ../src/main-win-ui.c:179
+#: ../src/main-win-ui.c:180
 msgid "_Tools"
 msgstr ""
 
-#: ../src/main-win-ui.c:180
+#: ../src/main-win-ui.c:181
 msgid "Open Current Folder in _Terminal"
 msgstr ""
 
-#: ../src/main-win-ui.c:181
+#: ../src/main-win-ui.c:182
 msgid "Open Current Folder as _Root"
 msgstr ""
 
-#: ../src/main-win-ui.c:197
+#: ../src/main-win-ui.c:199
 msgid "Show _Hidden"
 msgstr ""
 
-#: ../src/main-win-ui.c:198
+#: ../src/main-win-ui.c:200
 msgid "Show Side Pane"
 msgstr ""
 
-#: ../src/main-win-ui.c:203
+#: ../src/main-win-ui.c:205
 msgid "_Icon View"
 msgstr ""
 
-#: ../src/main-win-ui.c:204
+#: ../src/main-win-ui.c:206
 msgid "_Compact View"
 msgstr ""
 
-#: ../src/main-win-ui.c:205
+#: ../src/main-win-ui.c:207
 msgid "_Thumbnail View"
 msgstr ""
 
-#: ../src/main-win-ui.c:206
+#: ../src/main-win-ui.c:208
 msgid "Detailed _List View"
 msgstr ""
 
-#: ../src/main-win-ui.c:225
+#: ../src/main-win-ui.c:227
 msgid "Places"
 msgstr ""
 
-#: ../src/main-win-ui.c:226
+#: ../src/main-win-ui.c:228
 msgid "Directory Tree"
 msgstr ""
 
-#: ../src/main-win-ui.c:227
+#: ../src/main-win-ui.c:229
 msgid "Remote"
 msgstr ""
 
@@ -651,6 +655,15 @@ msgstr ""
 
 #: ../src/pcmanfm.c:532
 msgid "New"
+msgstr ""
+
+#: ../src/pcmanfm.c:623
+msgid "Error, lxshortcut not installed"
+msgstr ""
+
+#. FIXME: it's dirty and will lock everything
+#: ../src/pcmanfm.c:628
+msgid "Failed to start lxshortcut"
 msgstr ""
 
 #: ../src/tab-page.c:206
