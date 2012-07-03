@@ -101,14 +101,14 @@ static gboolean on_focus_out(GtkWidget* w, GdkEventFocus* evt);
 static void on_wallpaper_changed(FmConfig* cfg, gpointer user_data);
 static void on_desktop_text_changed(FmConfig* cfg, gpointer user_data);
 static void on_desktop_font_changed(FmConfig* cfg, gpointer user_data);
-static void on_big_icon_size_changed(FmConfig* cfg, gpointer user_data);
+static void on_big_icon_size_changed(FmConfig* cfg, FmFolderModel* model);
 
 static void on_icon_theme_changed(GtkIconTheme* theme, gpointer user_data);
 
-static void on_row_inserted(GtkTreeModel* mod, GtkTreePath* tp, GtkTreeIter* it, FmDesktop* desktop);
-static void on_row_deleted(GtkTreeModel* mod, GtkTreePath* tp, FmDesktop* desktop);
-static void on_row_changed(GtkTreeModel* mod, GtkTreePath* tp, GtkTreeIter* it, FmDesktop* desktop);
-static void on_rows_reordered(GtkTreeModel* mod, GtkTreePath* parent_tp, GtkTreeIter* parent_it, gpointer arg3, FmDesktop* desktop);
+static void on_row_inserted(FmFolderModel* mod, GtkTreePath* tp, GtkTreeIter* it, gpointer unused);
+static void on_row_deleted(FmFolderModel* mod, GtkTreePath* tp, gpointer unused);
+static void on_row_changed(FmFolderModel* mod, GtkTreePath* tp, GtkTreeIter* it, gpointer unused);
+static void on_rows_reordered(FmFolderModel* mod, GtkTreePath* parent_tp, GtkTreeIter* parent_it, gpointer arg3, gpointer unused);
 
 static void on_dnd_src_data_get(FmDndSrc* ds, FmDesktop* desktop);
 static void on_drag_data_get(GtkWidget *src_widget, GdkDragContext *drag_context,
@@ -144,7 +144,6 @@ static gint n_screens = 0;
 static guint wallpaper_changed = 0;
 static guint desktop_text_changed = 0;
 static guint desktop_font_changed = 0;
-static guint big_icon_size_changed = 0;
 static guint icon_theme_changed = 0;
 static GtkAccelGroup* acc_grp = NULL;
 
@@ -186,14 +185,18 @@ static void desktop_item_free(FmDesktopItem* item)
 }
 
 static void on_row_deleting(FmFolderModel* model, GtkTreePath* tp,
-                            GtkTreeIter* iter, gpointer data, FmDesktop* desktop)
+                            GtkTreeIter* iter, gpointer data, gpointer unused)
 {
     GList *l;
+    FmDesktop* desktop;
+    gint i;
 
-    if(desktop == NULL) /* desktop items are global objects */
-        desktop_item_free(data);
-    else
+    desktop_item_free(data); /* desktop items are global objects */
+    for(i = 0; i < n_screens; i++)
     {
+        desktop = desktops[i];
+        if(desktop->model != model)
+            continue;
         for(l = desktop->fixed_items; l; l = l->next)
             if(l->data == data)
             {
@@ -224,34 +227,37 @@ static void on_row_deleting(FmFolderModel* model, GtkTreePath* tp,
     }
 }
 
+static void on_desktop_model_destroy(gpointer data, GObject* model)
+{
+    g_signal_handlers_disconnect_by_func(app_config, on_big_icon_size_changed, model);
+    *(gpointer*)data = NULL;
+}
+
 static inline void connect_model(FmDesktop* desktop)
 {
+    /* FIXME: different screens should be able to use different models */
     if(!desktop_model)
     {
         desktop_model = fm_folder_model_new(desktop_folder, FALSE);
         fm_folder_model_set_icon_size(desktop_model, fm_config->big_icon_size);
-        g_object_add_weak_pointer(G_OBJECT(desktop_model), (gpointer*)&desktop_model);
-        /* handler on_row_deleting() is needed for freeing items,
-           it will be disconnected itself on model destroying */
-        g_signal_connect(desktop->model, "row-deleting", G_CALLBACK(on_row_deleting), NULL);
+        g_object_weak_ref(G_OBJECT(desktop_model), on_desktop_model_destroy,
+                          &desktop_model);
+        g_signal_connect(app_config, "changed::big_icon_size",
+                         G_CALLBACK(on_big_icon_size_changed), desktop_model);
         desktop->model = desktop_model;
+        /* handlers will be disconnected itself on model destroying */
+        g_signal_connect(desktop->model, "row-deleting", G_CALLBACK(on_row_deleting), NULL);
+        g_signal_connect(desktop->model, "row-inserted", G_CALLBACK(on_row_inserted), NULL);
+        g_signal_connect(desktop->model, "row-deleted", G_CALLBACK(on_row_deleted), NULL);
+        g_signal_connect(desktop->model, "row-changed", G_CALLBACK(on_row_changed), NULL);
+        g_signal_connect(desktop->model, "rows-reordered", G_CALLBACK(on_rows_reordered), NULL);
     }
     else
         desktop->model = g_object_ref(desktop_model);
-    g_signal_connect(desktop->model, "row-inserted", G_CALLBACK(on_row_inserted), desktop);
-    g_signal_connect(desktop->model, "row-deleted", G_CALLBACK(on_row_deleted), desktop);
-    g_signal_connect(desktop->model, "row-changed", G_CALLBACK(on_row_changed), desktop);
-    g_signal_connect(desktop->model, "rows-reordered", G_CALLBACK(on_rows_reordered), desktop);
-    g_signal_connect(desktop->model, "row-deleting", G_CALLBACK(on_row_deleting), desktop);
 }
 
 static inline void disconnect_model(FmDesktop* desktop)
 {
-    g_signal_handlers_disconnect_by_func(desktop->model, on_row_inserted, desktop);
-    g_signal_handlers_disconnect_by_func(desktop->model, on_row_deleted, desktop);
-    g_signal_handlers_disconnect_by_func(desktop->model, on_row_changed, desktop);
-    g_signal_handlers_disconnect_by_func(desktop->model, on_rows_reordered, desktop);
-    g_signal_handlers_disconnect_by_func(desktop->model, on_row_deleting, desktop);
     g_object_unref(desktop->model);
     desktop->model = NULL;
 }
@@ -493,6 +499,7 @@ void fm_desktop_manager_init()
     g_mkdir_with_parents(desktop_path, 0700); /* ensure the existance of Desktop folder. */
     /* FIXME: should we store the desktop folder path in the annoying ~/.config/user-dirs.dirs file? */
 
+    /* FIXME: should add a possibility to use different folders on screens */
     if(!desktop_folder)
     {
         desktop_folder = fm_folder_from_path(fm_path_get_desktop());
@@ -520,7 +527,6 @@ void fm_desktop_manager_init()
     wallpaper_changed = g_signal_connect(app_config, "changed::wallpaper", G_CALLBACK(on_wallpaper_changed), NULL);
     desktop_text_changed = g_signal_connect(app_config, "changed::desktop_text", G_CALLBACK(on_desktop_text_changed), NULL);
     desktop_font_changed = g_signal_connect(app_config, "changed::desktop_font", G_CALLBACK(on_desktop_font_changed), NULL);
-    big_icon_size_changed = g_signal_connect(app_config, "changed::big_icon_size", G_CALLBACK(on_big_icon_size_changed), NULL);
 
     icon_theme_changed = g_signal_connect(gtk_icon_theme_get_default(), "changed", G_CALLBACK(on_icon_theme_changed), NULL);
 
@@ -625,7 +631,6 @@ void fm_desktop_manager_finalize()
     g_signal_handler_disconnect(app_config, wallpaper_changed);
     g_signal_handler_disconnect(app_config, desktop_text_changed);
     g_signal_handler_disconnect(app_config, desktop_font_changed);
-    g_signal_handler_disconnect(app_config, big_icon_size_changed);
 
     g_signal_handler_disconnect(gtk_icon_theme_get_default(), icon_theme_changed);
 
@@ -1150,6 +1155,7 @@ static gboolean on_key_press(GtkWidget* w, GdkEventKey* evt)
             fm_path_list_unref(sels);
         }
         break;
+    /* TODO: GDK_F11 to go fullscreen? */
     }
     return GTK_WIDGET_CLASS(fm_desktop_parent_class)->key_press_event(w, evt);
 }
@@ -1451,42 +1457,54 @@ static FmDesktopItem* get_nearest_item(FmDesktop* desktop, FmDesktopItem* item, 
     return ret;
 }
 
-static inline FmDesktopItem* desktop_item_new(GtkTreeModel* model, GtkTreeIter* it)
+static inline FmDesktopItem* desktop_item_new(FmFolderModel* model, GtkTreeIter* it)
 {
     FmDesktopItem* item = g_slice_new0(FmDesktopItem);
-    fm_folder_model_set_item_userdata(FM_FOLDER_MODEL(model), it, item);
-    gtk_tree_model_get(model, it, COL_FILE_INFO, &item->fi, -1);
+    fm_folder_model_set_item_userdata(model, it, item);
+    gtk_tree_model_get(GTK_TREE_MODEL(model), it, COL_FILE_INFO, &item->fi, -1);
     fm_file_info_ref(item->fi);
     return item;
 }
 
-static void on_row_inserted(GtkTreeModel* mod, GtkTreePath* tp, GtkTreeIter* it, FmDesktop* desktop)
+static void on_row_inserted(FmFolderModel* mod, GtkTreePath* tp, GtkTreeIter* it, gpointer unused)
 {
     FmDesktopItem* item = desktop_item_new(mod, it);
-    fm_folder_model_set_item_userdata(desktop_model, it, item);
-    queue_layout_items(desktop);
+    gint i;
+    fm_folder_model_set_item_userdata(mod, it, item);
+    for(i = 0; i < n_screens; i++)
+        if(desktops[i]->model == mod)
+            queue_layout_items(desktops[i]);
 }
 
-static void on_row_deleted(GtkTreeModel* mod, GtkTreePath* tp, FmDesktop* desktop)
+static void on_row_deleted(FmFolderModel* mod, GtkTreePath* tp, gpointer unused)
 {
-    queue_layout_items(desktop);
+    gint i;
+    for(i = 0; i < n_screens; i++)
+        if(desktops[i]->model == mod)
+            queue_layout_items(desktops[i]);
 }
 
-static void on_row_changed(GtkTreeModel* model, GtkTreePath* tp, GtkTreeIter* it, FmDesktop* desktop)
+static void on_row_changed(FmFolderModel* model, GtkTreePath* tp, GtkTreeIter* it, gpointer unused)
 {
-    FmDesktopItem* item = fm_folder_model_get_item_userdata(FM_FOLDER_MODEL(model), it);
+    FmDesktopItem* item = fm_folder_model_get_item_userdata(model, it);
+    gint i;
 
     fm_file_info_unref(item->fi);
-    gtk_tree_model_get(model, it, COL_FILE_INFO, &item->fi, -1);
+    gtk_tree_model_get(GTK_TREE_MODEL(model), it, COL_FILE_INFO, &item->fi, -1);
     fm_file_info_ref(item->fi);
 
-    redraw_item(desktop, item);
+    for(i = 0; i < n_screens; i++)
+        if(desktops[i]->model == model)
+            redraw_item(desktops[i], item);
     /* queue_layout_items(desktop); */
 }
 
-static void on_rows_reordered(GtkTreeModel* model, GtkTreePath* parent_tp, GtkTreeIter* parent_it, gpointer arg3, FmDesktop* desktop)
+static void on_rows_reordered(FmFolderModel* model, GtkTreePath* parent_tp, GtkTreeIter* parent_it, gpointer arg3, gpointer unused)
 {
-    queue_layout_items(desktop);
+    gint i;
+    for(i = 0; i < n_screens; i++)
+        if(desktops[i]->model == model)
+            queue_layout_items(desktops[i]);
 }
 
 
@@ -2182,9 +2200,9 @@ static void reload_icons()
         gtk_widget_queue_resize(GTK_WIDGET(desktops[i]));
 }
 
-static void on_big_icon_size_changed(FmConfig* cfg, gpointer user_data)
+static void on_big_icon_size_changed(FmConfig* cfg, FmFolderModel* model)
 {
-    fm_folder_model_set_icon_size(desktop_model, fm_config->big_icon_size);
+    fm_folder_model_set_icon_size(model, fm_config->big_icon_size);
     reload_icons();
 }
 

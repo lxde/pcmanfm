@@ -722,6 +722,7 @@ static void on_open_as_root(GtkAction* act, FmMainWin* win)
     }
     /* FIXME: SECURITY ALERT!
        it can have more than one "%s" and it will be a stack corruption then */
+    /* FIXME: use fm_app_command_parse() here */
     if(strstr(app_config->su_cmd, "%s")) /* FIXME: need to rename to pcmanfm when we reach stable release. */
         cmd = g_strdup_printf(app_config->su_cmd, "pcmanfm %U");
     else
