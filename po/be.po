@@ -8,21 +8,20 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-07-07 00:40+0200\n"
-"PO-Revision-Date: 2012-03-15 01:00+0200\n"
+"PO-Revision-Date: 2012-07-07 01:27+0200\n"
 "Last-Translator: Мікалай <crom-a@tut.by>\n"
 "Language-Team: Belarusian <i18n@mova.org>\n"
 "Language: be\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Pootle 2.0.5\n"
 
 #: ../data/ui/about.glade.in.h:1
-#, fuzzy
 msgid "Copyright (C) 2009 - 2012"
-msgstr "Аўтарскае права (C) 2009 - 2010"
+msgstr "Аўтарскае права (C) 2009 - 2012"
 
 #: ../data/ui/about.glade.in.h:2
 msgid ""
@@ -40,7 +39,7 @@ msgstr ""
 msgid "translator-credits"
 msgstr ""
 "Анік Кіна <son_of_the_photographer@tut.by>\n"
-"Мікалай Удодаў <crom-a@tut.by>, 2011."
+"Мікалай Удодаў <crom-a@tut.by>, 2011, 2012."
 
 #: ../data/ui/desktop-pref.glade.h:1 ../src/desktop-ui.c:60
 #: ../data/pcmanfm-desktop-pref.desktop.in.h:1
@@ -61,7 +60,7 @@ msgstr "Калі ласка, выберыце выяву"
 
 #: ../data/ui/desktop-pref.glade.h:5
 msgid "Use the same wallpaper on all desktops"
-msgstr ""
+msgstr "Адзіныя шпалеры на ўсіх працоўных прасторах"
 
 #: ../data/ui/desktop-pref.glade.h:6
 msgid "Background color:"
@@ -190,9 +189,8 @@ msgid "View Mode:"
 msgstr "Рэжым прагляду:"
 
 #: ../data/ui/pref.glade.h:12
-#, fuzzy
 msgid "General"
-msgstr "А_гульныя"
+msgstr "Агульныя"
 
 #: ../data/ui/pref.glade.h:13
 msgid "<b>Icons</b>"
@@ -227,9 +225,8 @@ msgid "Do not generate thumbnails for files exceeding this size:"
 msgstr "Не генераваць мініяцюры для файлаў, памер якіх большы за:"
 
 #: ../data/ui/pref.glade.h:21
-#, fuzzy
 msgid "Display"
-msgstr "_Выгляд"
+msgstr "Выгляд"
 
 #: ../data/ui/pref.glade.h:22
 msgid "<b>Auto-mount</b>"
@@ -248,9 +245,8 @@ msgid "Show available options for removable media when they are inserted"
 msgstr "Паказваць даступныя опцыі для рухомых носнікаў, калі яны падлучаны"
 
 #: ../data/ui/pref.glade.h:26
-#, fuzzy
 msgid "Volume Management"
-msgstr "_Кіраванне дыскамі"
+msgstr "Кіраванне дыскамі"
 
 #: ../data/ui/pref.glade.h:27
 msgid "<b>Programs</b>"
@@ -369,7 +365,7 @@ msgstr "Пусты файл"
 
 #: ../src/desktop-ui.c:59 ../src/main-win-ui.c:193
 msgid "Shortcut"
-msgstr ""
+msgstr "Скарот"
 
 #: ../src/desktop-ui.c:71 ../src/main-win-ui.c:219
 msgid "By _Name"
@@ -651,7 +647,7 @@ msgid ""
 "Open preference dialog. 'n' is number of the page you want to show (1, 2, "
 "3...)."
 msgstr ""
-"Адкрыць дыялог настаўленняў. 'N' - нумар старонкі, якую трэба паказаць (1, "
+"Адкрыць дыялог настаўленняў. 'n' - нумар старонкі, якую трэба паказаць (1, "
 "2, 3, ...)."
 
 #. { "new-win", '\0', 'n', G_OPTION_ARG_NONE, &new_win, N_("Open new window"), NULL },
@@ -682,12 +678,12 @@ msgstr "Новы"
 
 #: ../src/pcmanfm.c:641
 msgid "Error, lxshortcut not installed"
-msgstr ""
+msgstr "Памылка, lxshortcut не ўстаноўлены"
 
 #. FIXME: it's dirty and will lock everything
 #: ../src/pcmanfm.c:646
 msgid "Failed to start lxshortcut"
-msgstr ""
+msgstr "Не ўдалося запусціць lxshortcut"
 
 #: ../src/tab-page.c:206
 #, c-format
@@ -719,9 +715,8 @@ msgstr[1] " (%d схаваныя)"
 msgstr[2] " (%d схаваных)"
 
 #: ../data/pcmanfm.desktop.in.h:1
-#, fuzzy
 msgid "File Manager PCManFM"
-msgstr "Файлавы менеджар"
+msgstr "Файлавы менеджар PCManFM"
 
 #: ../data/pcmanfm.desktop.in.h:2
 msgid "File Manager"
@@ -733,7 +728,7 @@ msgstr "Прагляд файлавай сістэмы і кіраванне ф�
 
 #: ../data/pcmanfm-desktop-pref.desktop.in.h:2
 msgid "Change desktop wallpapers and behavior of desktop manager"
-msgstr ""
+msgstr "Змяненне шпалер і паводзін кіраўніка працоўных прастораў"
 
 #~ msgid "_Advanced"
 #~ msgstr "_Пашыраныя"
