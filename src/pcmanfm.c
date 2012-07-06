@@ -104,12 +104,32 @@ static void unix_signal_handler(int sig_num)
 static gboolean on_unix_signal(GIOChannel* ch, GIOCondition cond, gpointer user_data)
 {
     int sig_num;
-    g_io_channel_read_chars(ch, (gchar*)&sig_num, 1, NULL, NULL);
-    switch(sig_num)
+    GIOStatus status;
+    gsize got;
+
+    while(1)
     {
-    case SIGTERM:
-    default:
-        gtk_main_quit();
+        status = g_io_channel_read_chars(ch, (gchar*)&sig_num, sizeof(sig_num),
+                                         &got, NULL);
+        if(status == G_IO_STATUS_AGAIN) /* we read all the pipe */
+        {
+            g_debug("got G_IO_STATUS_AGAIN");
+            return TRUE;
+        }
+        if(status != G_IO_STATUS_NORMAL || got != sizeof(sig_num)) /* broken pipe */
+        {
+            g_debug("signal pipe is broken");
+            gtk_main_quit();
+            return FALSE;
+        }
+        g_debug("got signal %d from pipe", sig_num);
+        switch(sig_num)
+        {
+        case SIGTERM:
+        default:
+            gtk_main_quit();
+            return FALSE;
+        }
     }
     return TRUE;
 }
@@ -191,10 +211,7 @@ int main(int argc, char** argv)
         // signal( SIGPIPE, SIG_IGN );
         signal( SIGHUP, unix_signal_handler );
         signal( SIGTERM, unix_signal_handler );
-#ifdef SIGPOLL /* bug #3528311 */
-        signal( SIGPOLL, unix_signal_handler );
-#endif
-        signal( SIGHUP, unix_signal_handler );
+        signal( SIGINT, unix_signal_handler );
     }
 
     config = fm_app_config_new(); /* this automatically load libfm config file. */
@@ -208,6 +225,7 @@ int main(int argc, char** argv)
     {
         fm_volume_manager_init();
         gtk_main();
+        /* g_debug("main loop ended"); */
         if(desktop_running)
             fm_desktop_manager_finalize();
 
