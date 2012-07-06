@@ -2,12 +2,12 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Gheyret Kenji <gheyret@gmail.com>, 2011.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-20 16:23+0200\n"
+"POT-Creation-Date: 2012-07-07 00:40+0200\n"
 "PO-Revision-Date: 2011-12-14 10:39+0200\n"
 "Last-Translator: Gheyret <gheyret@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
@@ -19,7 +19,8 @@ msgstr ""
 "X-Generator: Pootle 2.0.5\n"
 
 #: ../data/ui/about.glade.in.h:1
-msgid "Copyright (C) 2009 - 2010"
+#, fuzzy
+msgid "Copyright (C) 2009 - 2012"
 msgstr "نەشر ھوقۇقى (C) 2009 - 2010"
 
 #: ../data/ui/about.glade.in.h:2
@@ -27,7 +28,8 @@ msgid ""
 "Lightweight file manager\n"
 "\n"
 "Developed by Hon Jen Yee (PCMan)"
-msgstr "يېنىك ھۆججەت باشقۇرغۇ\n"
+msgstr ""
+"يېنىك ھۆججەت باشقۇرغۇ\n"
 "\n"
 "ئاپتورى: Hon Jen Yee (PCMan)"
 
@@ -36,552 +38,566 @@ msgstr "يېنىك ھۆججەت باشقۇرغۇ\n"
 msgid "translator-credits"
 msgstr "Gheyret Kenji <gheyret@gmail.com>"
 
-#: ../data/ui/desktop-pref.glade.h:1
+#: ../data/ui/desktop-pref.glade.h:1 ../src/desktop-ui.c:60
+#: ../data/pcmanfm-desktop-pref.desktop.in.h:1
+msgid "Desktop Preferences"
+msgstr "ئۈستەلئۈستى مايىللىقى"
+
+#: ../data/ui/desktop-pref.glade.h:2
 msgid "<b>Background</b>"
 msgstr "<b>تەگلىك</b>"
 
-#: ../data/ui/desktop-pref.glade.h:2
-msgid "<b>Show desktop icons</b>"
-msgstr "<b>ئۈستەلئۈستى سىنبەلگىسىنى كۆرسىتىش</b>"
-
 #: ../data/ui/desktop-pref.glade.h:3
-msgid "<b>Text</b>"
-msgstr "<b>تېكىست</b>"
+msgid "Wallpaper:"
+msgstr "تام قەغىزى:"
 
 #: ../data/ui/desktop-pref.glade.h:4
-msgid "Advanced"
-msgstr "ئالىي"
+msgid "Please select an image file"
+msgstr "بىر سۈرەت ھۆججىتى تاللاڭ"
 
 #: ../data/ui/desktop-pref.glade.h:5
-msgid "Appearance"
-msgstr "كۆرۈنۈشى"
+msgid "Use the same wallpaper on all desktops"
+msgstr ""
 
 #: ../data/ui/desktop-pref.glade.h:6
 msgid "Background color:"
 msgstr "تەگلىك رەڭگى:"
 
-#: ../data/ui/desktop-pref.glade.h:7 ../data/ui/pref.glade.h:10
-msgid "Center on the screen"
-msgstr "ئېكراننىڭ ئوتتۇرىسىغا"
+#: ../data/ui/desktop-pref.glade.h:7
+msgid "Wallpaper mode:"
+msgstr "تام قەغىزى ھالىتى:"
 
 #: ../data/ui/desktop-pref.glade.h:8
-msgid "Color of label text:"
-msgstr "ئەن تېكىستىنىڭ رەڭگى:"
+msgid "<b>Text</b>"
+msgstr "<b>تېكىست</b>"
 
 #: ../data/ui/desktop-pref.glade.h:9
-msgid "Color of shadow:"
-msgstr "سايىنىڭ رەڭگى:"
-
-#: ../data/ui/desktop-pref.glade.h:10
-msgid "Desktop Icons"
-msgstr "ئۈستەلئۈستى سىنبەلگىسى"
-
-#: ../data/ui/desktop-pref.glade.h:11 ../src/desktop-ui.c:58
-msgid "Desktop Preferences"
-msgstr "ئۈستەلئۈستى مايىللىقى"
-
-#: ../data/ui/desktop-pref.glade.h:12
-msgid "Fill with background color only"
-msgstr "تەگلىك رېڭى بىلەنلا بوياش"
-
-#: ../data/ui/desktop-pref.glade.h:13
 msgid "Font of label text:"
 msgstr "ئەن تېكىستىنىڭ خەت نۇسخىسى:"
 
+#: ../data/ui/desktop-pref.glade.h:10
+msgid "Color of label text:"
+msgstr "ئەن تېكىستىنىڭ رەڭگى:"
+
+#: ../data/ui/desktop-pref.glade.h:11
+msgid "Color of shadow:"
+msgstr "سايىنىڭ رەڭگى:"
+
+#: ../data/ui/desktop-pref.glade.h:12
+msgid "Appearance"
+msgstr "كۆرۈنۈشى"
+
+#: ../data/ui/desktop-pref.glade.h:13
+msgid "<b>Show desktop icons</b>"
+msgstr "<b>ئۈستەلئۈستى سىنبەلگىسىنى كۆرسىتىش</b>"
+
 #: ../data/ui/desktop-pref.glade.h:14
-msgid "Please select an image file"
-msgstr "بىر سۈرەت ھۆججىتى تاللاڭ"
+msgid "Show \"My Documents\" icon on desktop"
+msgstr "«پۈتۈكلىرىم» سىنبەلگىسىنى ئۈستەلئۈستىدە كۆرسىتىش"
 
 #: ../data/ui/desktop-pref.glade.h:15
 msgid "Show \"My Computer\" icon on desktop"
 msgstr "«كومپيۇتېرىم» سىنبەلگىسىنى ئۈستەلئۈستىدە كۆرسىتىش"
 
 #: ../data/ui/desktop-pref.glade.h:16
-msgid "Show \"My Documents\" icon on desktop"
-msgstr "«پۈتۈكلىرىم» سىنبەلگىسىنى ئۈستەلئۈستىدە كۆرسىتىش"
-
-#: ../data/ui/desktop-pref.glade.h:17
 msgid "Show \"Trash Bin\" icon on desktop"
 msgstr "«ئەخلەتخانا» سىنبەلگىسىنى ئۈستەلئۈستىدە كۆرسىتىش"
 
-#: ../data/ui/desktop-pref.glade.h:18
+#: ../data/ui/desktop-pref.glade.h:17
 msgid "Show icons of volumes on desktop"
 msgstr "دىسكىلارنىڭ سىنبەلگىسىنى ئۈستەلئۈستىدە كۆرسىتىش"
 
+#: ../data/ui/desktop-pref.glade.h:18
+msgid "Desktop Icons"
+msgstr "ئۈستەلئۈستى سىنبەلگىسى"
+
 #: ../data/ui/desktop-pref.glade.h:19
 msgid "Show menus provided by window managers when desktop is clicked"
-msgstr "ئۈستەلئۈستى چېكىلگەندە كۆزنەك باشقۇرغۇ تەمىنلىگەن تىزىملىكلەرنى كۆرسىتىش"
+msgstr ""
+"ئۈستەلئۈستى چېكىلگەندە كۆزنەك باشقۇرغۇ تەمىنلىگەن تىزىملىكلەرنى كۆرسىتىش"
 
-#: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:37
+#: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:40
+msgid "Advanced"
+msgstr "ئالىي"
+
+#: ../data/ui/desktop-pref.glade.h:21
+msgid "Fill with background color only"
+msgstr "تەگلىك رېڭى بىلەنلا بوياش"
+
+#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:45
 msgid "Stretch to fill the entire screen"
 msgstr "پۈتۈن ئېكراننى قاپلىغۇدەك قىلىپ چوڭايتىش"
 
-#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:38
+#: ../data/ui/desktop-pref.glade.h:23 ../data/ui/pref.glade.h:46
 msgid "Stretch to fit the screen"
 msgstr "ئېكرانغا ماس كەلگۈدەك قىلىپ چوڭايتىش"
 
-#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:42
+#: ../data/ui/desktop-pref.glade.h:24 ../data/ui/pref.glade.h:47
+msgid "Center on the screen"
+msgstr "ئېكراننىڭ ئوتتۇرىسىغا"
+
+#: ../data/ui/desktop-pref.glade.h:25 ../data/ui/pref.glade.h:48
 msgid "Tile the image to fill the entire screen"
 msgstr "پۈتۈن ئېكراننى قاپلىغۇدەك قىلىپ كاھىش شەكلىدە تىزىش"
 
-#: ../data/ui/desktop-pref.glade.h:23
-msgid "Wallpaper mode:"
-msgstr "تام قەغىزى ھالىتى:"
-
-#: ../data/ui/desktop-pref.glade.h:24
-msgid "Wallpaper:"
-msgstr "تام قەغىزى:"
-
 #: ../data/ui/pref.glade.h:1
-msgid "<b>Auto-mount</b>"
-msgstr "<b>ئاپتوماتىك ئېگەرلەش</b>"
+msgid "Opened in Current Tab"
+msgstr "نۆۋەتتىكى بەتكۈچتە ئېچىش"
 
 #: ../data/ui/pref.glade.h:2
+msgid "Opened in New Tab"
+msgstr "يېڭى بەتكۈچتە ئېچىش"
+
+#: ../data/ui/pref.glade.h:3
+msgid "Opened in New Window"
+msgstr "يېڭى كۆزنەكتە ئېچىش"
+
+#: ../data/ui/pref.glade.h:4
+msgid "Preferences"
+msgstr "مايىللىق"
+
+#: ../data/ui/pref.glade.h:5
 msgid "<b>Behavior</b>"
 msgstr "<b>ھەرىكەت</b>"
 
-#: ../data/ui/pref.glade.h:3
-msgid "<b>Default View</b>"
-msgstr "<b>كۆڭۈلدىكى كۆرۈنۈش</b>"
-
-#: ../data/ui/pref.glade.h:4
-msgid "<b>Icons</b>"
-msgstr "<b>سىنبەلگىلەر</b>"
-
-#: ../data/ui/pref.glade.h:5
-msgid "<b>Programs</b>"
-msgstr "<b>پروگراممىلار</b>"
-
 #: ../data/ui/pref.glade.h:6
-msgid "<b>User Interface</b>"
-msgstr "<b>ئىشلەتكۈچى ئارايۈزى</b>"
+msgid "Open files with single click"
+msgstr "ھۆججەتلەرنى بىرلا چېكىپ ئېچىش"
 
 #: ../data/ui/pref.glade.h:7
-msgid "Always show the tab bar"
-msgstr "بەتكۈچ ئىستونىنى ئىزچىل كۆرسەت"
+msgid "Confirm before deleting files"
+msgstr "ھۆججەتلەرنى ئۆچۈرۈشتىن ئاۋۋال سورىسۇن"
 
 #: ../data/ui/pref.glade.h:8
-msgid "Archiver integration:"
-msgstr "ئارخىپلىغۇچنىڭ يۈرۈشلەشتۈرۈلۈشى"
+msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
+msgstr "ھۆججەتلەرنى ئۆچۈرمەستىن ئۇنى ‹ئەخلەتخانا› غا يۆتكىسۇن"
 
 #: ../data/ui/pref.glade.h:9
 msgid "Bookmarks:"
 msgstr "خەتكۈش :"
 
+#: ../data/ui/pref.glade.h:10
+msgid "<b>Default View</b>"
+msgstr "<b>كۆڭۈلدىكى كۆرۈنۈش</b>"
+
 #: ../data/ui/pref.glade.h:11
-msgid "Compact View"
-msgstr "ئىخچام كۆرۈنۈش"
+msgid "View Mode:"
+msgstr "كۆرۈنۈش ھالىتى:"
 
 #: ../data/ui/pref.glade.h:12
-msgid "Confirm before deleting files"
-msgstr "ھۆججەتلەرنى ئۆچۈرۈشتىن ئاۋۋال سورىسۇن"
+#, fuzzy
+msgid "General"
+msgstr "ئادەتتىكى(_G)"
 
 #: ../data/ui/pref.glade.h:13
-msgid "Detailed List View"
-msgstr "تەپسىلىي تىزىم كۆرۈنۈشى"
+msgid "<b>Icons</b>"
+msgstr "<b>سىنبەلگىلەر</b>"
 
 #: ../data/ui/pref.glade.h:14
+msgid "Size of small icons:"
+msgstr "كىچىك سىنبەلگىلەرنىڭ چوڭلۇقى:"
+
+#: ../data/ui/pref.glade.h:15
+msgid "Size of big icons:"
+msgstr "چوڭ سىنبەلگىلەرنىڭ چوڭلۇقى:"
+
+#: ../data/ui/pref.glade.h:16
+msgid "Size of thumbnails:"
+msgstr "كىچىك سۈرەتلەرنىڭ چوڭلۇقى:"
+
+#: ../data/ui/pref.glade.h:17
+msgid "Size of side pane icons:"
+msgstr "يان كۆزنەك سىنبەلگىلىرىنىڭ چوڭلۇقى:"
+
+#: ../data/ui/pref.glade.h:18
+msgid "Show thumbnails of files"
+msgstr "ھۆججەتلەرنىڭ كىچىك سۈرىتىنى كۆرسەتسۇن"
+
+#: ../data/ui/pref.glade.h:19
+msgid "Only show thumbnails for local files"
+msgstr "يەرلىك ھۆججەتلەرنىڭلا كىچىك سۈرىتىنى كۆرسەت"
+
+#: ../data/ui/pref.glade.h:20
 msgid "Do not generate thumbnails for files exceeding this size:"
 msgstr "بۇ چوڭلۇقتىن ئېشىپ كەتكەن ھۆججەتلەرنىڭ كىچىك سۈرىتىنى ھاسىل قىلمىسۇن"
 
-#: ../data/ui/pref.glade.h:16
+#: ../data/ui/pref.glade.h:21
+#, fuzzy
+msgid "Display"
+msgstr "كۆرسەت(_D)"
+
+#: ../data/ui/pref.glade.h:22
+msgid "<b>Auto-mount</b>"
+msgstr "<b>ئاپتوماتىك ئېگەرلەش</b>"
+
+#: ../data/ui/pref.glade.h:23
+msgid "Mount mountable volumes automatically on program startup"
+msgstr ""
+"پروگرامما باشلانغاندا ئېگەرلىگىلى بولىدىغان دىسكىلارنى ئاپتوماتىك ئېگەرلىسۇن"
+
+#: ../data/ui/pref.glade.h:24
+msgid "Mount removable media automatically when they are inserted"
+msgstr "يۆتكىلىشچان ۋاسىتە قىستۇرۇلغان ھامان ئاپتوماتىك ئېگەرلىسۇن"
+
+#: ../data/ui/pref.glade.h:25
+msgid "Show available options for removable media when they are inserted"
+msgstr ""
+"يۆتكىلىشچان ۋاسىتە قىستۇرۇلغاندا ئىشلەتكىلى بولىدىغان تاللانمىلارنى كۆرسەتسۇن"
+
+#: ../data/ui/pref.glade.h:26
+#, fuzzy
+msgid "Volume Management"
+msgstr "دىسكا باشقۇرۇش(_V)"
+
+#: ../data/ui/pref.glade.h:27
+msgid "<b>Programs</b>"
+msgstr "<b>پروگراممىلار</b>"
+
+#: ../data/ui/pref.glade.h:28
+msgid "Terminal emulator:"
+msgstr "تېرمىنال تەقلىدلىگۈچى:"
+
+#: ../data/ui/pref.glade.h:29
+msgid "Switch user command:"
+msgstr "ئىشلەتكۈچى ئالماشتۇرۇش بۇيرۇقى:"
+
+#: ../data/ui/pref.glade.h:31
 #, no-c-format
 msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
 "%s = the command line you want to execute with terminal or su."
-msgstr "مىساللار: تېرمىنال ئۈچۈن «xterm -e %s»، ياكى ئىشلەتكۈچى ئالماشتۇرۇش ئۈچۈن «gksu %s».\n"
+msgstr ""
+"مىساللار: تېرمىنال ئۈچۈن «xterm -e %s»، ياكى ئىشلەتكۈچى ئالماشتۇرۇش ئۈچۈن "
+"«gksu %s».\n"
 "%s = تېرمىنال ياكى su بىلەن بىرگە ئىجرا قىلىدىغان بۇيرۇق قۇرى."
 
-#: ../data/ui/pref.glade.h:18
+#: ../data/ui/pref.glade.h:33
+msgid "Archiver integration:"
+msgstr "ئارخىپلىغۇچنىڭ يۈرۈشلەشتۈرۈلۈشى"
+
+#: ../data/ui/pref.glade.h:34
+msgid "<b>User Interface</b>"
+msgstr "<b>ئىشلەتكۈچى ئارايۈزى</b>"
+
+#: ../data/ui/pref.glade.h:35
+msgid "Always show the tab bar"
+msgstr "بەتكۈچ ئىستونىنى ئىزچىل كۆرسەت"
+
+#: ../data/ui/pref.glade.h:36
 msgid "Hide 'Close tab' buttons"
 msgstr "‹بەتكۈچ ياپ› توپچىلىرىنى يوشۇرسۇن"
 
-#: ../data/ui/pref.glade.h:19
-msgid "Hide folder content border"
-msgstr "قىسقۇچ گىرۋىكىنىڭ مەزمۇنلىرىنى يوشۇرسۇن"
-
-#: ../data/ui/pref.glade.h:20
+#: ../data/ui/pref.glade.h:37
 msgid "Hide side pane buttons"
 msgstr "يان پەنجىرە توپچىلىرىنى يوشۇرسۇن"
 
-#: ../data/ui/pref.glade.h:21
-msgid "Icon View"
-msgstr "سىنبەلگە كۆرۈنۈش"
-
-#: ../data/ui/pref.glade.h:22
-msgid "Mount mountable volumes automatically on program startup"
-msgstr "پروگرامما باشلانغاندا ئېگەرلىگىلى بولىدىغان دىسكىلارنى ئاپتوماتىك ئېگەرلىسۇن"
-
-#: ../data/ui/pref.glade.h:23
-msgid "Mount removable media automatically when they are inserted"
-msgstr "يۆتكىلىشچان ۋاسىتە قىستۇرۇلغان ھامان ئاپتوماتىك ئېگەرلىسۇن"
-
-#: ../data/ui/pref.glade.h:24
-msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
-msgstr "ھۆججەتلەرنى ئۆچۈرمەستىن ئۇنى ‹ئەخلەتخانا› غا يۆتكىسۇن"
-
-#: ../data/ui/pref.glade.h:25
-msgid "Only show thumbnails for local files"
-msgstr "يەرلىك ھۆججەتلەرنىڭلا كىچىك سۈرىتىنى كۆرسەت"
-
-#: ../data/ui/pref.glade.h:26
-msgid "Open files with single click"
-msgstr "ھۆججەتلەرنى بىرلا چېكىپ ئېچىش"
-
-#: ../data/ui/pref.glade.h:27
-msgid "Opened in Current Tab"
-msgstr "نۆۋەتتىكى بەتكۈچتە ئېچىش"
-
-#: ../data/ui/pref.glade.h:28
-msgid "Opened in New Tab"
-msgstr "يېڭى بەتكۈچتە ئېچىش"
-
-#: ../data/ui/pref.glade.h:29
-msgid "Opened in New Window"
-msgstr "يېڭى كۆزنەكتە ئېچىش"
-
-#: ../data/ui/pref.glade.h:30
-msgid "Preferences"
-msgstr "مايىللىق"
-
-#: ../data/ui/pref.glade.h:31
-msgid "Show available options for removable media when they are inserted"
-msgstr "يۆتكىلىشچان ۋاسىتە قىستۇرۇلغاندا ئىشلەتكىلى بولىدىغان تاللانمىلارنى كۆرسەتسۇن"
-
-#: ../data/ui/pref.glade.h:32
-msgid "Show thumbnails of files"
-msgstr "ھۆججەتلەرنىڭ كىچىك سۈرىتىنى كۆرسەتسۇن"
-
-#: ../data/ui/pref.glade.h:33
-msgid "Size of big icons:"
-msgstr "چوڭ سىنبەلگىلەرنىڭ چوڭلۇقى:"
-
-#: ../data/ui/pref.glade.h:34
-msgid "Size of side pane icons:"
-msgstr "يان كۆزنەك سىنبەلگىلىرىنىڭ چوڭلۇقى:"
-
-#: ../data/ui/pref.glade.h:35
-msgid "Size of small icons:"
-msgstr "كىچىك سىنبەلگىلەرنىڭ چوڭلۇقى:"
-
-#: ../data/ui/pref.glade.h:36
-msgid "Size of thumbnails:"
-msgstr "كىچىك سۈرەتلەرنىڭ چوڭلۇقى:"
+#: ../data/ui/pref.glade.h:38
+msgid "Hide folder content border"
+msgstr "قىسقۇچ گىرۋىكىنىڭ مەزمۇنلىرىنى يوشۇرسۇن"
 
 #: ../data/ui/pref.glade.h:39
-msgid "Switch user command:"
-msgstr "ئىشلەتكۈچى ئالماشتۇرۇش بۇيرۇقى:"
-
-#: ../data/ui/pref.glade.h:40
-msgid "Terminal emulator:"
-msgstr "تېرمىنال تەقلىدلىگۈچى:"
-
-#: ../data/ui/pref.glade.h:41
-msgid "Thumbnail View"
-msgstr "كىچىكلىتىلگەن سۈرەت كۆرۈنۈشى"
-
-#: ../data/ui/pref.glade.h:43
 msgid "Use SI decimal prefixes instead of IEC binary prefixes"
 msgstr ""
 "IEC ئىككىلىك ئالدى قوشۇلغۇچىسىنى ئەمەس SI نىڭ ئونلۇق ئالدى قوشۇلغۇچىسىنى "
 "ئىشلىتىش"
 
+#: ../data/ui/pref.glade.h:41
+msgid "Icon View"
+msgstr "سىنبەلگە كۆرۈنۈش"
+
+#: ../data/ui/pref.glade.h:42
+msgid "Compact View"
+msgstr "ئىخچام كۆرۈنۈش"
+
+#: ../data/ui/pref.glade.h:43
+msgid "Thumbnail View"
+msgstr "كىچىكلىتىلگەن سۈرەت كۆرۈنۈشى"
+
 #: ../data/ui/pref.glade.h:44
-msgid "View Mode:"
-msgstr "كۆرۈنۈش ھالىتى:"
-
-#: ../data/ui/pref.glade.h:45
-msgid "_Advanced"
-msgstr "ئالىي(_A)"
-
-#: ../data/ui/pref.glade.h:46
-msgid "_Display"
-msgstr "كۆرسەت(_D)"
-
-#: ../data/ui/pref.glade.h:47
-msgid "_General"
-msgstr "ئادەتتىكى(_G)"
-
-#: ../data/ui/pref.glade.h:48
-msgid "_Volume Management"
-msgstr "دىسكا باشقۇرۇش(_V)"
+msgid "Detailed List View"
+msgstr "تەپسىلىي تىزىم كۆرۈنۈشى"
 
 #: ../data/ui/autorun.glade.h:1
-msgid "<b>Removable medium is inserted</b>"
-msgstr "<b>يۆتكىلىشچان ۋاسىتىلەر قىستۇرۇلدى</b>"
-
-#: ../data/ui/autorun.glade.h:2
-msgid "Detecting..."
-msgstr "بايقاۋاتىدۇ…"
-
-#: ../data/ui/autorun.glade.h:3
-msgid "Please select the action you want to perform:"
-msgstr "ئېلىپ بارماقچى بولغان مەشغۇلاتنى تاللاڭ:"
-
-#: ../data/ui/autorun.glade.h:4
 msgid "Removable medium is inserted"
 msgstr "يۆتكىلىشچان ۋاسىتىلەر قىستۇرۇلدى"
 
-#: ../data/ui/autorun.glade.h:5
+#: ../data/ui/autorun.glade.h:2
+msgid "<b>Removable medium is inserted</b>"
+msgstr "<b>يۆتكىلىشچان ۋاسىتىلەر قىستۇرۇلدى</b>"
+
+#: ../data/ui/autorun.glade.h:3
 msgid "Type of medium:"
 msgstr "ۋاسىتىلەرنىڭ تىپى:"
 
-#: ../src/volume-manager.c:150
+#: ../data/ui/autorun.glade.h:4
+msgid "Detecting..."
+msgstr "بايقاۋاتىدۇ…"
+
+#: ../data/ui/autorun.glade.h:5
+msgid "Please select the action you want to perform:"
+msgstr "ئېلىپ بارماقچى بولغان مەشغۇلاتنى تاللاڭ:"
+
+#: ../src/volume-manager.c:160
 msgid "Removable Disk"
 msgstr "Removable دىسكا"
 
-#: ../src/volume-manager.c:209
+#: ../src/volume-manager.c:213
 msgid "Open in File Manager"
 msgstr "ھۆججەت باشقۇرغۇچتا ئاچ"
 
-#: ../src/desktop-ui.c:53
+#: ../src/desktop-ui.c:54
 msgid "_Invert Selection"
 msgstr "ئەكسىچە تاللا(_I)"
 
-#: ../src/desktop-ui.c:54 ../src/main-win-ui.c:163
+#: ../src/desktop-ui.c:55 ../src/main-win-ui.c:164
 msgid "_Sort Files"
 msgstr "ھۆججەتلەرنى تەرتىپلە(_S)"
 
 #. for popup menu
-#: ../src/desktop-ui.c:55 ../src/main-win-ui.c:189
+#: ../src/desktop-ui.c:56 ../src/main-win-ui.c:190
 msgid "Create _New..."
 msgstr "يېڭىدىن قۇر(_N)…"
 
-#: ../src/desktop-ui.c:56 ../src/main-win-ui.c:190
+#: ../src/desktop-ui.c:57 ../src/main-win-ui.c:191
 msgid "Folder"
 msgstr "قىسقۇچ"
 
-#: ../src/desktop-ui.c:57 ../src/main-win-ui.c:191
+#: ../src/desktop-ui.c:58 ../src/main-win-ui.c:192
 msgid "Blank File"
 msgstr "قۇرۇق ھۆججەت"
 
-#: ../src/desktop-ui.c:69 ../src/main-win-ui.c:217
+#: ../src/desktop-ui.c:59 ../src/main-win-ui.c:193
+msgid "Shortcut"
+msgstr ""
+
+#: ../src/desktop-ui.c:71 ../src/main-win-ui.c:219
 msgid "By _Name"
 msgstr "ئاتى بويىچە(_N)"
 
-#: ../src/desktop-ui.c:70 ../src/main-win-ui.c:218
+#: ../src/desktop-ui.c:72 ../src/main-win-ui.c:220
 msgid "By _Modification Time"
 msgstr "ئۆزگەرتىلگەن ۋاقتى بويىچە(_M)"
 
-#: ../src/desktop-ui.c:71 ../src/main-win-ui.c:219
+#: ../src/desktop-ui.c:73 ../src/main-win-ui.c:221
 msgid "By _Size"
 msgstr "چوڭلۇقى بويىچە(_S)"
 
-#: ../src/desktop-ui.c:72 ../src/main-win-ui.c:220
+#: ../src/desktop-ui.c:74 ../src/main-win-ui.c:222
 msgid "By File _Type"
 msgstr "ھۆججەت تىپى بويىچە(_T)"
 
-#: ../src/desktop-ui.c:88 ../src/main-win-ui.c:243
+#: ../src/desktop-ui.c:90 ../src/main-win-ui.c:245
 msgid "Open in New Tab"
 msgstr "يېڭى بەتكۈچتە ئاچ"
 
-#: ../src/desktop-ui.c:89 ../src/main-win-ui.c:244
+#: ../src/desktop-ui.c:91 ../src/main-win-ui.c:246
 msgid "Open in New Window"
 msgstr "يېڭى كۆزنەكتە ئاچ"
 
-#: ../src/desktop-ui.c:91 ../src/main-win-ui.c:246
+#: ../src/desktop-ui.c:93 ../src/main-win-ui.c:248
 msgid "Open in _Terminal"
 msgstr "تېرمىنالدا ئاچ(_T)"
 
-#: ../src/desktop-ui.c:107
+#: ../src/desktop-ui.c:109
 msgid "Stick to Current Position"
 msgstr "نۆۋەتتىكى ئورۇنغا مۇقىملاشتۇرۇش"
 
-#: ../src/desktop-ui.c:112
+#: ../src/desktop-ui.c:114
 msgid "Snap to Grid"
 msgstr "سېتكىغا توغرىلا"
 
-#: ../src/main-win-ui.c:143
+#: ../src/main-win-ui.c:144
 msgid "_File"
 msgstr "ھۆججەت(_F)"
 
-#: ../src/main-win-ui.c:144
+#: ../src/main-win-ui.c:145
 msgid "_New Window"
 msgstr "يېڭى كۆزنەك(_N)"
 
-#: ../src/main-win-ui.c:145
+#: ../src/main-win-ui.c:146
 msgid "New _Tab"
 msgstr "يېڭى بەتكۈچ(_T)"
 
-#: ../src/main-win-ui.c:146
+#: ../src/main-win-ui.c:147
 msgid "_Close Tab"
 msgstr "بەتكۈچ ياپ(_C)"
 
-#: ../src/main-win-ui.c:147
+#: ../src/main-win-ui.c:148
 msgid "Close Window"
 msgstr "كۆزنەك ياپ"
 
-#: ../src/main-win-ui.c:148
+#: ../src/main-win-ui.c:149
 msgid "_Edit"
 msgstr "تەھرىر(_E)"
 
-#: ../src/main-win-ui.c:153
+#: ../src/main-win-ui.c:154
 msgid "Rename"
 msgstr "ئات ئۆزگەرت"
 
-#: ../src/main-win-ui.c:154
+#: ../src/main-win-ui.c:155
 msgid "Create Symlink"
 msgstr "بەلگە ئۇلانما قۇر"
 
-#: ../src/main-win-ui.c:155
+#: ../src/main-win-ui.c:156
 msgid "Move To..."
 msgstr "يۆتكەش ئورنى…"
 
-#: ../src/main-win-ui.c:156
+#: ../src/main-win-ui.c:157
 msgid "Copy To..."
 msgstr "كۆچۈرۈش نىشانى…"
 
-#: ../src/main-win-ui.c:158
+#: ../src/main-win-ui.c:159
 msgid "Invert Selection"
 msgstr "ئەكسىچە تاللا"
 
-#: ../src/main-win-ui.c:160
+#: ../src/main-win-ui.c:161
 msgid "_View"
 msgstr "كۆرۈنۈش(_V)"
 
-#: ../src/main-win-ui.c:161
+#: ../src/main-win-ui.c:162
 msgid "Reload Folder"
 msgstr "قىسقۇچنى قايتا ئوقۇش"
 
-#: ../src/main-win-ui.c:161
+#: ../src/main-win-ui.c:162
 msgid "Reload current folder"
 msgstr "نۆۋەتتىكى قىسقۇچنى قايتا ئوقۇش"
 
-#: ../src/main-win-ui.c:162
+#: ../src/main-win-ui.c:163
 msgid "Side Pane"
 msgstr "يان كۆزنەك"
 
-#: ../src/main-win-ui.c:164
+#: ../src/main-win-ui.c:165
 msgid "_Help"
 msgstr "ياردەم(_H)"
 
-#: ../src/main-win-ui.c:166
+#: ../src/main-win-ui.c:167
 msgid "_Go"
 msgstr "يۆتكەل(_G)"
 
-#: ../src/main-win-ui.c:167
+#: ../src/main-win-ui.c:168
 msgid "Previous Folder"
 msgstr "ئالدىنقى قىسقۇچ"
 
-#: ../src/main-win-ui.c:168
+#: ../src/main-win-ui.c:169
 msgid "Next Folder"
 msgstr "كېيىنكى قىسقۇچ"
 
-#: ../src/main-win-ui.c:169
+#: ../src/main-win-ui.c:170
 msgid "Parent Folder"
 msgstr "ئاتا قىسقۇچ"
 
-#: ../src/main-win-ui.c:169
+#: ../src/main-win-ui.c:170
 msgid "Go to parent Folder"
 msgstr "ئاتا قىسقۇچقا يۆتكىلىش"
 
-#: ../src/main-win-ui.c:170
+#: ../src/main-win-ui.c:171
 msgid "Home Folder"
 msgstr "ماكان مۇندەرىجە"
 
-#: ../src/main-win-ui.c:171
+#: ../src/main-win-ui.c:172
 msgid "Desktop"
 msgstr "ئۈستەلئۈستى"
 
-#: ../src/main-win-ui.c:171
+#: ../src/main-win-ui.c:172
 msgid "Desktop Folder"
 msgstr "ئۈستەلئۈستى قىسقۇچى"
 
-#: ../src/main-win-ui.c:172
+#: ../src/main-win-ui.c:173
 msgid "My Computer"
 msgstr "كومپيۇتېرىم"
 
-#: ../src/main-win-ui.c:173
+#: ../src/main-win-ui.c:174
 msgid "Trash Can"
 msgstr "ئەخلەتخانا"
 
-#: ../src/main-win-ui.c:174
+#: ../src/main-win-ui.c:175
 msgid "Network Drives"
 msgstr "تور ئۈسكۈنىلىرى"
 
-#: ../src/main-win-ui.c:175
+#: ../src/main-win-ui.c:176
 msgid "Applications"
 msgstr "پروگراممىلار"
 
-#: ../src/main-win-ui.c:175
+#: ../src/main-win-ui.c:176
 msgid "Installed Applications"
 msgstr "ئورنىتىلغان پروگراممىلار"
 
-#: ../src/main-win-ui.c:177
+#: ../src/main-win-ui.c:178
 msgid "_Bookmarks"
 msgstr "خەتكۈچلەر(_B)"
 
-#: ../src/main-win-ui.c:178
+#: ../src/main-win-ui.c:179
 msgid "Add To Bookmarks"
 msgstr "خەتكۈچكە قوشۇش"
 
-#: ../src/main-win-ui.c:179
+#: ../src/main-win-ui.c:180
 msgid "_Tools"
 msgstr "قوراللار(_T)"
 
-#: ../src/main-win-ui.c:180
+#: ../src/main-win-ui.c:181
 msgid "Open Current Folder in _Terminal"
 msgstr "نۆۋەتتىكى قىسقۇچنى تېرمىنالدا ئېچىش(_T)"
 
-#: ../src/main-win-ui.c:181
+#: ../src/main-win-ui.c:182
 msgid "Open Current Folder as _Root"
 msgstr "نۆۋەتتىكى قىسقۇچنى ئالىي ئىشلەتكۈچى(root) سۈپىتىدە ئېچىش(_R)"
 
-#: ../src/main-win-ui.c:197
+#: ../src/main-win-ui.c:199
 msgid "Show _Hidden"
 msgstr "يوشۇرۇن ھۆججەتنى كۆرسەت(_H)"
 
-#: ../src/main-win-ui.c:198
+#: ../src/main-win-ui.c:200
 msgid "Show Side Pane"
 msgstr "يان كۆزنەكچە كۆرسەت"
 
-#: ../src/main-win-ui.c:203
+#: ../src/main-win-ui.c:205
 msgid "_Icon View"
 msgstr "سىنبەلگە كۆرۈنۈشى(_I)"
 
-#: ../src/main-win-ui.c:204
+#: ../src/main-win-ui.c:206
 msgid "_Compact View"
 msgstr "ئىخچام كۆرۈنۈش(_C)"
 
-#: ../src/main-win-ui.c:205
+#: ../src/main-win-ui.c:207
 msgid "_Thumbnail View"
 msgstr "كىچىكلىتىلگەن سۈرەت كۆرۈنۈشى(_V)"
 
-#: ../src/main-win-ui.c:206
+#: ../src/main-win-ui.c:208
 msgid "Detailed _List View"
 msgstr "تەپسىلىي تىزىم كۆرۈنۈشى(_L)"
 
-#: ../src/main-win-ui.c:225
+#: ../src/main-win-ui.c:227
 msgid "Places"
 msgstr "ئورۇنلار"
 
-#: ../src/main-win-ui.c:226
+#: ../src/main-win-ui.c:228
 msgid "Directory Tree"
 msgstr "مۇندەرىجە دەرىخى"
 
-#: ../src/main-win-ui.c:227
+#: ../src/main-win-ui.c:229
 msgid "Remote"
 msgstr "يىراق"
 
-#: ../src/main-win.c:471
+#: ../src/main-win.c:544
 msgid "You are in super user mode"
 msgstr "سىز ئالىي ئىشلەتكۈچى ھالىتىدە"
 
-#: ../src/main-win.c:590
+#: ../src/main-win.c:730
 msgid "Switch user command is not set."
 msgstr "ئىشلەتكۈچى ئالماشتۇرۇش بۇيرۇقى بەلگىلەنمىگەن."
 
-#: ../src/main-win.c:1006
+#: ../src/main-win.c:1137
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
 "'%s'\n"
 "Enter a name for the new bookmark item:"
-msgstr "تۆۋەندىكى قىسقۇچلارنى خەتكۈچكە قوشىدۇ:\n"
+msgstr ""
+"تۆۋەندىكى قىسقۇچلارنى خەتكۈچكە قوشىدۇ:\n"
 "‹%s›\n"
 "يېڭى خەتكۈچنىڭ تۈرىنىڭ ئاتىنى كىرگۈزۈڭ:"
 
-#: ../src/main-win.c:1010
+#: ../src/main-win.c:1141
 msgid "Add to Bookmarks"
 msgstr "خەتكۈچكە قوش"
 
@@ -621,7 +637,9 @@ msgstr "<سۈرەت ھۆججىتى>"
 
 #: ../src/pcmanfm.c:81
 msgid "Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"
-msgstr "ئۈستەلئۈستى تام قەغىزىنىڭ ھالىتىنى بەلگىلەش. <mode>=(color|stretch|fit|center|tile)"
+msgstr ""
+"ئۈستەلئۈستى تام قەغىزىنىڭ ھالىتىنى بەلگىلەش. <mode>=(color|stretch|fit|"
+"center|tile)"
 
 #: ../src/pcmanfm.c:81
 msgid "<mode>"
@@ -631,7 +649,9 @@ msgstr "<mode>"
 msgid ""
 "Open preference dialog. 'n' is number of the page you want to show (1, 2, "
 "3...)."
-msgstr "مايىللىق سۆزلەشكۈسىنى ئاچىدۇ. ‹n› بولسا ئاچماقچى بولغان بەتنىڭ نومۇرى (1، 2، 3…)"
+msgstr ""
+"مايىللىق سۆزلەشكۈسىنى ئاچىدۇ. ‹n› بولسا ئاچماقچى بولغان بەتنىڭ نومۇرى (1، 2، "
+"3…)"
 
 #. { "new-win", '\0', 'n', G_OPTION_ARG_NONE, &new_win, N_("Open new window"), NULL },
 #. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
@@ -639,53 +659,74 @@ msgstr "مايىللىق سۆزلەشكۈسىنى ئاچىدۇ. ‹n› بولس
 msgid "[FILE1, FILE2,...]"
 msgstr "[FILE1, FILE2,...]"
 
-#: ../src/pcmanfm.c:455
+#: ../src/pcmanfm.c:495
 msgid "Terminal emulator is not set."
 msgstr "تېرمىنال تەقلىدلىگۈچى بەلگىلەنمىگەن."
 
-#: ../src/pcmanfm.c:507
+#: ../src/pcmanfm.c:547
 msgid "Enter a name for the newly created folder:"
 msgstr "يېڭى قۇرۇلغان قىسقۇچنىڭ ئاتىنى كىرگۈزۈڭ:"
 
-#: ../src/pcmanfm.c:509
+#: ../src/pcmanfm.c:549
 msgid "Enter a name for the newly created file:"
 msgstr "يېڭى قۇرۇلغان ھۆججەتنىڭ ئاتىنى كىرگۈزۈڭ:"
 
-#: ../src/pcmanfm.c:510
+#: ../src/pcmanfm.c:550
 msgid "Create New..."
 msgstr "يېڭىدىن قۇرۇش…"
 
-#: ../src/pcmanfm.c:510
+#: ../src/pcmanfm.c:550
 msgid "New"
 msgstr "يېڭى"
 
-#: ../src/tab-page.c:174
+#: ../src/pcmanfm.c:641
+msgid "Error, lxshortcut not installed"
+msgstr ""
+
+#. FIXME: it's dirty and will lock everything
+#: ../src/pcmanfm.c:646
+msgid "Failed to start lxshortcut"
+msgstr ""
+
+#: ../src/tab-page.c:206
 #, c-format
 msgid "%d item selected"
 msgid_plural "%d items selected"
 msgstr[0] "%d تۈر تاللاندى"
 
-#: ../src/tab-page.c:196
+#: ../src/tab-page.c:300
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "بىكار بوشلۇق: %s (جەمئىي: %s)"
 
-#: ../src/tab-page.c:215
+#: ../src/tab-page.c:320
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] "‏‏%d تۈر"
 
-#: ../src/tab-page.c:216
+#: ../src/tab-page.c:321
 #, c-format
 msgid " (%d hidden)"
 msgid_plural " (%d hidden)"
 msgstr[0] " (%d يوشۇرۇن)"
 
 #: ../data/pcmanfm.desktop.in.h:1
-msgid "Browse the file system and manage the files"
-msgstr "ھۆججەت سىستېمىسىنى كۆرىدۇ ۋە ھۆججەتلەرنى باشقۇرىدۇ"
+#, fuzzy
+msgid "File Manager PCManFM"
+msgstr "ھۆججەت باشقۇرغۇ"
 
 #: ../data/pcmanfm.desktop.in.h:2
 msgid "File Manager"
 msgstr "ھۆججەت باشقۇرغۇ"
+
+#: ../data/pcmanfm.desktop.in.h:3
+msgid "Browse the file system and manage the files"
+msgstr "ھۆججەت سىستېمىسىنى كۆرىدۇ ۋە ھۆججەتلەرنى باشقۇرىدۇ"
+
+#: ../data/pcmanfm-desktop-pref.desktop.in.h:2
+msgid "Change desktop wallpapers and behavior of desktop manager"
+msgstr ""
+
+#~ msgid "_Advanced"
+#~ msgstr "ئالىي(_A)"

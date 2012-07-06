@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-20 16:23+0200\n"
+"POT-Creation-Date: 2012-07-07 00:40+0200\n"
 "PO-Revision-Date: 2011-11-13 15:28+0200\n"
 "Last-Translator: Yaron <sh.yaron@gmail.com>\n"
 "Language-Team: \n"
@@ -16,7 +16,8 @@ msgstr ""
 "X-Poedit-Language: Hebrew\n"
 
 #: ../data/ui/about.glade.in.h:1
-msgid "Copyright (C) 2009 - 2010"
+#, fuzzy
+msgid "Copyright (C) 2009 - 2012"
 msgstr "כל הזכויות שמורות (C)‏ 2009 - 2010"
 
 #: ../data/ui/about.glade.in.h:2
@@ -37,155 +38,226 @@ msgstr ""
 "ירון שהרבני <sh.yaron@gmail.com>\n"
 "ליאל פרידמן <lielft@gmail.com>"
 
-#: ../data/ui/desktop-pref.glade.h:1
+#: ../data/ui/desktop-pref.glade.h:1 ../src/desktop-ui.c:60
+#: ../data/pcmanfm-desktop-pref.desktop.in.h:1
+msgid "Desktop Preferences"
+msgstr "העדפות שולחן העבודה"
+
+#: ../data/ui/desktop-pref.glade.h:2
 msgid "<b>Background</b>"
 msgstr "<b>רקע</b>"
 
-#: ../data/ui/desktop-pref.glade.h:2
-msgid "<b>Show desktop icons</b>"
-msgstr "<b>הצגת סמלי שולחן העבודה</b>"
-
 #: ../data/ui/desktop-pref.glade.h:3
-msgid "<b>Text</b>"
-msgstr "<b>טקסט</b>"
+msgid "Wallpaper:"
+msgstr "רקע שולחן העבודה:"
 
 #: ../data/ui/desktop-pref.glade.h:4
-msgid "Advanced"
-msgstr "מתקדם"
+msgid "Please select an image file"
+msgstr "נא לבחור בקובץ תמונה"
 
 #: ../data/ui/desktop-pref.glade.h:5
-msgid "Appearance"
-msgstr "מראה"
+msgid "Use the same wallpaper on all desktops"
+msgstr ""
 
 #: ../data/ui/desktop-pref.glade.h:6
 msgid "Background color:"
 msgstr "צבע הרקע:"
 
-#: ../data/ui/desktop-pref.glade.h:7 ../data/ui/pref.glade.h:10
-msgid "Center on the screen"
-msgstr "ממורכז על גבי המסך"
+#: ../data/ui/desktop-pref.glade.h:7
+msgid "Wallpaper mode:"
+msgstr "מצב תמונת הרקע:"
 
 #: ../data/ui/desktop-pref.glade.h:8
-msgid "Color of label text:"
-msgstr "צבע טקסט התוויות:"
+msgid "<b>Text</b>"
+msgstr "<b>טקסט</b>"
 
 #: ../data/ui/desktop-pref.glade.h:9
-msgid "Color of shadow:"
-msgstr "צבע הצל:"
-
-#: ../data/ui/desktop-pref.glade.h:10
-msgid "Desktop Icons"
-msgstr "סמלי שולחן העבודה"
-
-#: ../data/ui/desktop-pref.glade.h:11 ../src/desktop-ui.c:58
-msgid "Desktop Preferences"
-msgstr "העדפות שולחן העבודה"
-
-#: ../data/ui/desktop-pref.glade.h:12
-msgid "Fill with background color only"
-msgstr "מילוי בצבע הרקע בלבד"
-
-#: ../data/ui/desktop-pref.glade.h:13
 msgid "Font of label text:"
 msgstr "גופן טקסט התוויות:"
 
+#: ../data/ui/desktop-pref.glade.h:10
+msgid "Color of label text:"
+msgstr "צבע טקסט התוויות:"
+
+#: ../data/ui/desktop-pref.glade.h:11
+msgid "Color of shadow:"
+msgstr "צבע הצל:"
+
+#: ../data/ui/desktop-pref.glade.h:12
+msgid "Appearance"
+msgstr "מראה"
+
+#: ../data/ui/desktop-pref.glade.h:13
+msgid "<b>Show desktop icons</b>"
+msgstr "<b>הצגת סמלי שולחן העבודה</b>"
+
 #: ../data/ui/desktop-pref.glade.h:14
-msgid "Please select an image file"
-msgstr "נא לבחור בקובץ תמונה"
+msgid "Show \"My Documents\" icon on desktop"
+msgstr "הצגת סמל \"המסמכים שלי\" על שולחן העבודה"
 
 #: ../data/ui/desktop-pref.glade.h:15
 msgid "Show \"My Computer\" icon on desktop"
 msgstr "הצגת סמל \"המחשב שלי\" על שולחן העבודה"
 
 #: ../data/ui/desktop-pref.glade.h:16
-msgid "Show \"My Documents\" icon on desktop"
-msgstr "הצגת סמל \"המסמכים שלי\" על שולחן העבודה"
-
-#: ../data/ui/desktop-pref.glade.h:17
 msgid "Show \"Trash Bin\" icon on desktop"
 msgstr "הצגת סמל \"סל האשפה\" על שולחן העבודה"
 
-#: ../data/ui/desktop-pref.glade.h:18
+#: ../data/ui/desktop-pref.glade.h:17
 msgid "Show icons of volumes on desktop"
 msgstr "הצגת סמלים ליחידות אחסון על שולחן העבודה"
+
+#: ../data/ui/desktop-pref.glade.h:18
+msgid "Desktop Icons"
+msgstr "סמלי שולחן העבודה"
 
 #: ../data/ui/desktop-pref.glade.h:19
 msgid "Show menus provided by window managers when desktop is clicked"
 msgstr "הצגת התפריטים המסופקים על ידי מנהלי החלונות בעת לחיצה על שולחן העבודה"
 
-#: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:37
+#: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:40
+msgid "Advanced"
+msgstr "מתקדם"
+
+#: ../data/ui/desktop-pref.glade.h:21
+msgid "Fill with background color only"
+msgstr "מילוי בצבע הרקע בלבד"
+
+#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:45
 msgid "Stretch to fill the entire screen"
 msgstr "מתיחה כדי למלא את המסך כולו"
 
-#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:38
+#: ../data/ui/desktop-pref.glade.h:23 ../data/ui/pref.glade.h:46
 msgid "Stretch to fit the screen"
 msgstr "מתיחה לצורך התאמה למסך"
 
-#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:42
+#: ../data/ui/desktop-pref.glade.h:24 ../data/ui/pref.glade.h:47
+msgid "Center on the screen"
+msgstr "ממורכז על גבי המסך"
+
+#: ../data/ui/desktop-pref.glade.h:25 ../data/ui/pref.glade.h:48
 msgid "Tile the image to fill the entire screen"
 msgstr "פריסת התמונה כך שתמלא את המסך כולו"
 
-#: ../data/ui/desktop-pref.glade.h:23
-msgid "Wallpaper mode:"
-msgstr "מצב תמונת הרקע:"
-
-#: ../data/ui/desktop-pref.glade.h:24
-msgid "Wallpaper:"
-msgstr "רקע שולחן העבודה:"
-
 #: ../data/ui/pref.glade.h:1
-msgid "<b>Auto-mount</b>"
-msgstr "<b>עיגון אוטומטי</b>"
+msgid "Opened in Current Tab"
+msgstr "נפתח בלשונית הנוכחית"
 
 #: ../data/ui/pref.glade.h:2
+msgid "Opened in New Tab"
+msgstr "נפתח בלשונית חדשה"
+
+#: ../data/ui/pref.glade.h:3
+msgid "Opened in New Window"
+msgstr "נפתח בחלון חדש"
+
+#: ../data/ui/pref.glade.h:4
+msgid "Preferences"
+msgstr "העדפות"
+
+#: ../data/ui/pref.glade.h:5
 msgid "<b>Behavior</b>"
 msgstr "<b>התנהגות</b>"
 
-#: ../data/ui/pref.glade.h:3
-msgid "<b>Default View</b>"
-msgstr "<b>תצוגת בררת המחדל</b>"
-
-#: ../data/ui/pref.glade.h:4
-msgid "<b>Icons</b>"
-msgstr "<b>סמלים</b>"
-
-#: ../data/ui/pref.glade.h:5
-msgid "<b>Programs</b>"
-msgstr "<b>תוכניות</b>"
-
 #: ../data/ui/pref.glade.h:6
-msgid "<b>User Interface</b>"
-msgstr "<b>מנשק המשתמש</b>"
+msgid "Open files with single click"
+msgstr "פתיחת קבצים בלחיצה בודדת"
 
 #: ../data/ui/pref.glade.h:7
-msgid "Always show the tab bar"
-msgstr "תמיד להציג את סרגל הלשוניות"
+msgid "Confirm before deleting files"
+msgstr "יש לאשר לפני מחיקת קבצים"
 
 #: ../data/ui/pref.glade.h:8
-msgid "Archiver integration:"
-msgstr "שילוב תכנת הארכיון:"
+msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
+msgstr "העברת קבצים שנמחקו אל \"סל המיחזור\" במקום מחיקה מהכונן"
 
 #: ../data/ui/pref.glade.h:9
 msgid "Bookmarks:"
 msgstr "סימניות:"
 
+#: ../data/ui/pref.glade.h:10
+msgid "<b>Default View</b>"
+msgstr "<b>תצוגת בררת המחדל</b>"
+
 #: ../data/ui/pref.glade.h:11
-msgid "Compact View"
-msgstr "תצוגה קומפקטית"
+msgid "View Mode:"
+msgstr "מצב התצוגה:"
 
 #: ../data/ui/pref.glade.h:12
-msgid "Confirm before deleting files"
-msgstr "יש לאשר לפני מחיקת קבצים"
+msgid "General"
+msgstr "כללי"
 
 #: ../data/ui/pref.glade.h:13
-msgid "Detailed List View"
-msgstr "תצוגת רשימה מפורטת"
+msgid "<b>Icons</b>"
+msgstr "<b>סמלים</b>"
 
 #: ../data/ui/pref.glade.h:14
+msgid "Size of small icons:"
+msgstr "גודל הסמלים הקטנים:"
+
+#: ../data/ui/pref.glade.h:15
+msgid "Size of big icons:"
+msgstr "גודל הסמלים הגדולים:"
+
+#: ../data/ui/pref.glade.h:16
+msgid "Size of thumbnails:"
+msgstr "גודל התמונות הממוזערות:"
+
+#: ../data/ui/pref.glade.h:17
+msgid "Size of side pane icons:"
+msgstr "גודל הסמלים בסרגל הצד:"
+
+#: ../data/ui/pref.glade.h:18
+msgid "Show thumbnails of files"
+msgstr "הצגת תמונות ממוזערות של קבצים"
+
+#: ../data/ui/pref.glade.h:19
+msgid "Only show thumbnails for local files"
+msgstr "יש להציג תמונות ממוזערות עבור קבצים מקומיים בלבד"
+
+#: ../data/ui/pref.glade.h:20
 msgid "Do not generate thumbnails for files exceeding this size:"
 msgstr "אין לייצר תמונות מוקטנות עבור קבצים החורגים מגודל זה:"
 
-#: ../data/ui/pref.glade.h:16
+#: ../data/ui/pref.glade.h:21
+#, fuzzy
+msgid "Display"
+msgstr "ה_צגה"
+
+#: ../data/ui/pref.glade.h:22
+msgid "<b>Auto-mount</b>"
+msgstr "<b>עיגון אוטומטי</b>"
+
+#: ../data/ui/pref.glade.h:23
+msgid "Mount mountable volumes automatically on program startup"
+msgstr "עיגון אוטומטי של כרכים שאינם מעוגנים עם הפעלת התכנית"
+
+#: ../data/ui/pref.glade.h:24
+msgid "Mount removable media automatically when they are inserted"
+msgstr "עיגון של מדיה נשלפת אוטומטית בעת החיבור"
+
+#: ../data/ui/pref.glade.h:25
+msgid "Show available options for removable media when they are inserted"
+msgstr "יש להציג את האפשרויות הזמינות עבור מדיה נשלפת בעת החיבור"
+
+#: ../data/ui/pref.glade.h:26
+#, fuzzy
+msgid "Volume Management"
+msgstr "_ניהול התקני אחסון"
+
+#: ../data/ui/pref.glade.h:27
+msgid "<b>Programs</b>"
+msgstr "<b>תוכניות</b>"
+
+#: ../data/ui/pref.glade.h:28
+msgid "Terminal emulator:"
+msgstr "מדמה מסוף:"
+
+#: ../data/ui/pref.glade.h:29
+msgid "Switch user command:"
+msgstr "פקודת החלפת משתמש:"
+
+#: ../data/ui/pref.glade.h:31
 #, no-c-format
 msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
@@ -194,385 +266,321 @@ msgstr ""
 "דוגמאות: \"xterm -e %s\" עבור מסוף או \"gksu %s\" להחלפת משתמש.\n"
 "%s = שורת הפקודה שברצונך להפעיל עם המסוף או עם su."
 
-#: ../data/ui/pref.glade.h:18
+#: ../data/ui/pref.glade.h:33
+msgid "Archiver integration:"
+msgstr "שילוב תכנת הארכיון:"
+
+#: ../data/ui/pref.glade.h:34
+msgid "<b>User Interface</b>"
+msgstr "<b>מנשק המשתמש</b>"
+
+#: ../data/ui/pref.glade.h:35
+msgid "Always show the tab bar"
+msgstr "תמיד להציג את סרגל הלשוניות"
+
+#: ../data/ui/pref.glade.h:36
 msgid "Hide 'Close tab' buttons"
 msgstr "הסתרת לחצני 'סגירת הלשונית'"
 
-#: ../data/ui/pref.glade.h:19
-msgid "Hide folder content border"
-msgstr "הסתרת מסגרת תכני התיקייה"
-
-#: ../data/ui/pref.glade.h:20
+#: ../data/ui/pref.glade.h:37
 msgid "Hide side pane buttons"
 msgstr "הסתרת לחצני חלונית הצד"
 
-#: ../data/ui/pref.glade.h:21
-msgid "Icon View"
-msgstr "תצוגת סמלים"
-
-#: ../data/ui/pref.glade.h:22
-msgid "Mount mountable volumes automatically on program startup"
-msgstr "עיגון אוטומטי של כרכים שאינם מעוגנים עם הפעלת התכנית"
-
-#: ../data/ui/pref.glade.h:23
-msgid "Mount removable media automatically when they are inserted"
-msgstr "עיגון של מדיה נשלפת אוטומטית בעת החיבור"
-
-#: ../data/ui/pref.glade.h:24
-msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
-msgstr "העברת קבצים שנמחקו אל \"סל המיחזור\" במקום מחיקה מהכונן"
-
-#: ../data/ui/pref.glade.h:25
-msgid "Only show thumbnails for local files"
-msgstr "יש להציג תמונות ממוזערות עבור קבצים מקומיים בלבד"
-
-#: ../data/ui/pref.glade.h:26
-msgid "Open files with single click"
-msgstr "פתיחת קבצים בלחיצה בודדת"
-
-#: ../data/ui/pref.glade.h:27
-msgid "Opened in Current Tab"
-msgstr "נפתח בלשונית הנוכחית"
-
-#: ../data/ui/pref.glade.h:28
-msgid "Opened in New Tab"
-msgstr "נפתח בלשונית חדשה"
-
-#: ../data/ui/pref.glade.h:29
-msgid "Opened in New Window"
-msgstr "נפתח בחלון חדש"
-
-#: ../data/ui/pref.glade.h:30
-msgid "Preferences"
-msgstr "העדפות"
-
-#: ../data/ui/pref.glade.h:31
-msgid "Show available options for removable media when they are inserted"
-msgstr "יש להציג את האפשרויות הזמינות עבור מדיה נשלפת בעת החיבור"
-
-#: ../data/ui/pref.glade.h:32
-msgid "Show thumbnails of files"
-msgstr "הצגת תמונות ממוזערות של קבצים"
-
-#: ../data/ui/pref.glade.h:33
-msgid "Size of big icons:"
-msgstr "גודל הסמלים הגדולים:"
-
-#: ../data/ui/pref.glade.h:34
-msgid "Size of side pane icons:"
-msgstr "גודל הסמלים בסרגל הצד:"
-
-#: ../data/ui/pref.glade.h:35
-msgid "Size of small icons:"
-msgstr "גודל הסמלים הקטנים:"
-
-#: ../data/ui/pref.glade.h:36
-msgid "Size of thumbnails:"
-msgstr "גודל התמונות הממוזערות:"
+#: ../data/ui/pref.glade.h:38
+msgid "Hide folder content border"
+msgstr "הסתרת מסגרת תכני התיקייה"
 
 #: ../data/ui/pref.glade.h:39
-msgid "Switch user command:"
-msgstr "פקודת החלפת משתמש:"
-
-#: ../data/ui/pref.glade.h:40
-msgid "Terminal emulator:"
-msgstr "מדמה מסוף:"
-
-#: ../data/ui/pref.glade.h:41
-msgid "Thumbnail View"
-msgstr "תצוגת תמונות ממוזערות"
-
-#: ../data/ui/pref.glade.h:43
 msgid "Use SI decimal prefixes instead of IEC binary prefixes"
 msgstr ""
 "שימוש בקידומות עשרוניות לפי תקן ה־SI במקום קידומות בינאריות לפי תקן ה־IEC"
 
+#: ../data/ui/pref.glade.h:41
+msgid "Icon View"
+msgstr "תצוגת סמלים"
+
+#: ../data/ui/pref.glade.h:42
+msgid "Compact View"
+msgstr "תצוגה קומפקטית"
+
+#: ../data/ui/pref.glade.h:43
+msgid "Thumbnail View"
+msgstr "תצוגת תמונות ממוזערות"
+
 #: ../data/ui/pref.glade.h:44
-msgid "View Mode:"
-msgstr "מצב התצוגה:"
-
-#: ../data/ui/pref.glade.h:45
-msgid "_Advanced"
-msgstr "מ_תקדם"
-
-#: ../data/ui/pref.glade.h:46
-msgid "_Display"
-msgstr "ה_צגה"
-
-#: ../data/ui/pref.glade.h:47
-msgid "_General"
-msgstr "_כללי"
-
-#: ../data/ui/pref.glade.h:48
-msgid "_Volume Management"
-msgstr "_ניהול התקני אחסון"
+msgid "Detailed List View"
+msgstr "תצוגת רשימה מפורטת"
 
 #: ../data/ui/autorun.glade.h:1
-msgid "<b>Removable medium is inserted</b>"
-msgstr "<b>ארע חיבור של התקן מדיה נשלף</b>"
-
-#: ../data/ui/autorun.glade.h:2
-msgid "Detecting..."
-msgstr "בהליכי זיהוי..."
-
-#: ../data/ui/autorun.glade.h:3
-msgid "Please select the action you want to perform:"
-msgstr "נא לבור את הפעולה שברצונך לבצע:"
-
-#: ../data/ui/autorun.glade.h:4
 msgid "Removable medium is inserted"
 msgstr "התקן מדיה נשלף מחובר"
 
-#: ../data/ui/autorun.glade.h:5
+#: ../data/ui/autorun.glade.h:2
+msgid "<b>Removable medium is inserted</b>"
+msgstr "<b>ארע חיבור של התקן מדיה נשלף</b>"
+
+#: ../data/ui/autorun.glade.h:3
 msgid "Type of medium:"
 msgstr "סוג התקן המדיה:"
 
-#: ../src/volume-manager.c:150
+#: ../data/ui/autorun.glade.h:4
+msgid "Detecting..."
+msgstr "בהליכי זיהוי..."
+
+#: ../data/ui/autorun.glade.h:5
+msgid "Please select the action you want to perform:"
+msgstr "נא לבור את הפעולה שברצונך לבצע:"
+
+#: ../src/volume-manager.c:160
 msgid "Removable Disk"
 msgstr "כונן נשלף"
 
-#: ../src/volume-manager.c:209
+#: ../src/volume-manager.c:213
 msgid "Open in File Manager"
 msgstr "פתיחה במנהל קבצים"
 
-#: ../src/desktop-ui.c:53
+#: ../src/desktop-ui.c:54
 msgid "_Invert Selection"
 msgstr "הי_פוך הבחירה"
 
-#: ../src/desktop-ui.c:54 ../src/main-win-ui.c:163
+#: ../src/desktop-ui.c:55 ../src/main-win-ui.c:164
 msgid "_Sort Files"
 msgstr "_מיון קבצים"
 
 #. for popup menu
-#: ../src/desktop-ui.c:55 ../src/main-win-ui.c:189
+#: ../src/desktop-ui.c:56 ../src/main-win-ui.c:190
 msgid "Create _New..."
 msgstr "יצירת _חדש..."
 
-#: ../src/desktop-ui.c:56 ../src/main-win-ui.c:190
+#: ../src/desktop-ui.c:57 ../src/main-win-ui.c:191
 msgid "Folder"
 msgstr "תיקייה"
 
-#: ../src/desktop-ui.c:57 ../src/main-win-ui.c:191
+#: ../src/desktop-ui.c:58 ../src/main-win-ui.c:192
 msgid "Blank File"
 msgstr "קובץ ריק"
 
-#: ../src/desktop-ui.c:69 ../src/main-win-ui.c:217
+#: ../src/desktop-ui.c:59 ../src/main-win-ui.c:193
+msgid "Shortcut"
+msgstr ""
+
+#: ../src/desktop-ui.c:71 ../src/main-win-ui.c:219
 msgid "By _Name"
 msgstr "לפי _שם"
 
-#: ../src/desktop-ui.c:70 ../src/main-win-ui.c:218
+#: ../src/desktop-ui.c:72 ../src/main-win-ui.c:220
 msgid "By _Modification Time"
 msgstr "לפי מועד ה_שינוי האחרון"
 
-#: ../src/desktop-ui.c:71 ../src/main-win-ui.c:219
+#: ../src/desktop-ui.c:73 ../src/main-win-ui.c:221
 msgid "By _Size"
 msgstr "לפי _גודל"
 
-#: ../src/desktop-ui.c:72 ../src/main-win-ui.c:220
+#: ../src/desktop-ui.c:74 ../src/main-win-ui.c:222
 msgid "By File _Type"
 msgstr "לפי _סוג קובץ"
 
-#: ../src/desktop-ui.c:88 ../src/main-win-ui.c:243
+#: ../src/desktop-ui.c:90 ../src/main-win-ui.c:245
 msgid "Open in New Tab"
 msgstr "פתיחה בלשונית חדשה"
 
-#: ../src/desktop-ui.c:89 ../src/main-win-ui.c:244
+#: ../src/desktop-ui.c:91 ../src/main-win-ui.c:246
 msgid "Open in New Window"
 msgstr "פתיחה בחלון חדש"
 
-#: ../src/desktop-ui.c:91 ../src/main-win-ui.c:246
+#: ../src/desktop-ui.c:93 ../src/main-win-ui.c:248
 msgid "Open in _Terminal"
 msgstr "פתיחה ב_מסוף"
 
-#: ../src/desktop-ui.c:107
+#: ../src/desktop-ui.c:109
 msgid "Stick to Current Position"
 msgstr "הצמדה למיקום הנוכחי"
 
-#: ../src/desktop-ui.c:112
+#: ../src/desktop-ui.c:114
 msgid "Snap to Grid"
 msgstr "הצמדה לרשת"
 
-#: ../src/main-win-ui.c:143
+#: ../src/main-win-ui.c:144
 msgid "_File"
 msgstr "_קובץ"
 
-#: ../src/main-win-ui.c:144
+#: ../src/main-win-ui.c:145
 msgid "_New Window"
 msgstr "חלון _חדש"
 
-#: ../src/main-win-ui.c:145
+#: ../src/main-win-ui.c:146
 msgid "New _Tab"
 msgstr "_לשונית חדשה"
 
-#: ../src/main-win-ui.c:146
+#: ../src/main-win-ui.c:147
 msgid "_Close Tab"
 msgstr "_סגירת הסימנייה"
 
-#: ../src/main-win-ui.c:147
+#: ../src/main-win-ui.c:148
 msgid "Close Window"
 msgstr "סגירת החלון"
 
-#: ../src/main-win-ui.c:148
+#: ../src/main-win-ui.c:149
 msgid "_Edit"
 msgstr "_עריכה"
 
-#: ../src/main-win-ui.c:153
+#: ../src/main-win-ui.c:154
 msgid "Rename"
 msgstr "שינוי שם"
 
-#: ../src/main-win-ui.c:154
+#: ../src/main-win-ui.c:155
 msgid "Create Symlink"
 msgstr "יצירת קישור סימבולי"
 
-#: ../src/main-win-ui.c:155
+#: ../src/main-win-ui.c:156
 msgid "Move To..."
 msgstr "העברה אל..."
 
-#: ../src/main-win-ui.c:156
+#: ../src/main-win-ui.c:157
 msgid "Copy To..."
 msgstr "העתקה אל..."
 
-#: ../src/main-win-ui.c:158
+#: ../src/main-win-ui.c:159
 msgid "Invert Selection"
 msgstr "היפוך הבחירה"
 
-#: ../src/main-win-ui.c:160
+#: ../src/main-win-ui.c:161
 msgid "_View"
 msgstr "_תצוגה"
 
-#: ../src/main-win-ui.c:161
+#: ../src/main-win-ui.c:162
 msgid "Reload Folder"
 msgstr "רענון התיקייה"
 
-#: ../src/main-win-ui.c:161
+#: ../src/main-win-ui.c:162
 msgid "Reload current folder"
 msgstr "רענון התיקייה הנוכחית"
 
-#: ../src/main-win-ui.c:162
+#: ../src/main-win-ui.c:163
 msgid "Side Pane"
 msgstr "חלונית צד"
 
-#: ../src/main-win-ui.c:164
+#: ../src/main-win-ui.c:165
 msgid "_Help"
 msgstr "_עזרה"
 
-#: ../src/main-win-ui.c:166
+#: ../src/main-win-ui.c:167
 msgid "_Go"
 msgstr "_מעבר"
 
-#: ../src/main-win-ui.c:167
+#: ../src/main-win-ui.c:168
 msgid "Previous Folder"
 msgstr "לתיקייה הקודמת"
 
-#: ../src/main-win-ui.c:168
+#: ../src/main-win-ui.c:169
 msgid "Next Folder"
 msgstr "לתיקייה הבאה"
 
-#: ../src/main-win-ui.c:169
+#: ../src/main-win-ui.c:170
 msgid "Parent Folder"
 msgstr "תיקיית ההורה"
 
-#: ../src/main-win-ui.c:169
+#: ../src/main-win-ui.c:170
 msgid "Go to parent Folder"
 msgstr "מעבר לתיקיית ההורה"
 
-#: ../src/main-win-ui.c:170
+#: ../src/main-win-ui.c:171
 msgid "Home Folder"
 msgstr "תיקיית הבית"
 
-#: ../src/main-win-ui.c:171
+#: ../src/main-win-ui.c:172
 msgid "Desktop"
 msgstr "שולחן העבודה"
 
-#: ../src/main-win-ui.c:171
+#: ../src/main-win-ui.c:172
 msgid "Desktop Folder"
 msgstr "תיקיית שולחן העבודה"
 
-#: ../src/main-win-ui.c:172
+#: ../src/main-win-ui.c:173
 msgid "My Computer"
 msgstr "המחשב שלי"
 
-#: ../src/main-win-ui.c:173
+#: ../src/main-win-ui.c:174
 msgid "Trash Can"
 msgstr "סל האשפה"
 
-#: ../src/main-win-ui.c:174
+#: ../src/main-win-ui.c:175
 msgid "Network Drives"
 msgstr "כונני רשת"
 
-#: ../src/main-win-ui.c:175
+#: ../src/main-win-ui.c:176
 msgid "Applications"
 msgstr "יישומים"
 
-#: ../src/main-win-ui.c:175
+#: ../src/main-win-ui.c:176
 msgid "Installed Applications"
 msgstr "יישומים מותקנים"
 
-#: ../src/main-win-ui.c:177
+#: ../src/main-win-ui.c:178
 msgid "_Bookmarks"
 msgstr "_סימניות"
 
-#: ../src/main-win-ui.c:178
+#: ../src/main-win-ui.c:179
 msgid "Add To Bookmarks"
 msgstr "הוספה ל_סימניות"
 
-#: ../src/main-win-ui.c:179
+#: ../src/main-win-ui.c:180
 msgid "_Tools"
 msgstr "_כלים"
 
-#: ../src/main-win-ui.c:180
+#: ../src/main-win-ui.c:181
 msgid "Open Current Folder in _Terminal"
 msgstr "פתיחת התיקייה הנוכחית ב_מסוף"
 
-#: ../src/main-win-ui.c:181
+#: ../src/main-win-ui.c:182
 msgid "Open Current Folder as _Root"
 msgstr "פתיחת התיקייה הנוכחית כמשתמש _על"
 
-#: ../src/main-win-ui.c:197
+#: ../src/main-win-ui.c:199
 msgid "Show _Hidden"
 msgstr "הצגת _מוסתרים"
 
-#: ../src/main-win-ui.c:198
+#: ../src/main-win-ui.c:200
 msgid "Show Side Pane"
 msgstr "הצגת חלונית צד"
 
-#: ../src/main-win-ui.c:203
+#: ../src/main-win-ui.c:205
 msgid "_Icon View"
 msgstr "תצוגת _סמלים"
 
-#: ../src/main-win-ui.c:204
+#: ../src/main-win-ui.c:206
 msgid "_Compact View"
 msgstr "תצוגה _קומפקטית"
 
-#: ../src/main-win-ui.c:205
+#: ../src/main-win-ui.c:207
 msgid "_Thumbnail View"
 msgstr "תצוגת ת_מונות ממוזערת"
 
-#: ../src/main-win-ui.c:206
+#: ../src/main-win-ui.c:208
 msgid "Detailed _List View"
 msgstr "תצוגת רשימה מ_פורטת"
 
-#: ../src/main-win-ui.c:225
+#: ../src/main-win-ui.c:227
 msgid "Places"
 msgstr "מיקומים"
 
-#: ../src/main-win-ui.c:226
+#: ../src/main-win-ui.c:228
 msgid "Directory Tree"
 msgstr "עץ תיקיות"
 
-#: ../src/main-win-ui.c:227
+#: ../src/main-win-ui.c:229
 msgid "Remote"
 msgstr "מרוחק"
 
-#: ../src/main-win.c:471
+#: ../src/main-win.c:544
 msgid "You are in super user mode"
 msgstr "המצב הנוכחי הוא מצב משתמש על"
 
-#: ../src/main-win.c:590
+#: ../src/main-win.c:730
 msgid "Switch user command is not set."
 msgstr "פקודת החלפת המשתמש לא הוגדרה."
 
-#: ../src/main-win.c:1006
+#: ../src/main-win.c:1137
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -583,7 +591,7 @@ msgstr ""
 "'%s'\n"
 "יש להזין שם עבור פריט הסימנייה החדשה:"
 
-#: ../src/main-win.c:1010
+#: ../src/main-win.c:1141
 msgid "Add to Bookmarks"
 msgstr "הוספה לסימניות"
 
@@ -642,46 +650,55 @@ msgstr ""
 msgid "[FILE1, FILE2,...]"
 msgstr "[FILE1, FILE2,...]"
 
-#: ../src/pcmanfm.c:455
+#: ../src/pcmanfm.c:495
 msgid "Terminal emulator is not set."
 msgstr "מדמה המסוף לא הוגדר."
 
-#: ../src/pcmanfm.c:507
+#: ../src/pcmanfm.c:547
 msgid "Enter a name for the newly created folder:"
 msgstr "נא להזין שם עבור הקובץ החדש שנוצר:"
 
-#: ../src/pcmanfm.c:509
+#: ../src/pcmanfm.c:549
 msgid "Enter a name for the newly created file:"
 msgstr "יש להזין שם עבור הקובץ החדש שנוצר:"
 
-#: ../src/pcmanfm.c:510
+#: ../src/pcmanfm.c:550
 msgid "Create New..."
 msgstr "יצירת חדש..."
 
-#: ../src/pcmanfm.c:510
+#: ../src/pcmanfm.c:550
 msgid "New"
 msgstr "חדש"
 
-#: ../src/tab-page.c:174
+#: ../src/pcmanfm.c:641
+msgid "Error, lxshortcut not installed"
+msgstr ""
+
+#. FIXME: it's dirty and will lock everything
+#: ../src/pcmanfm.c:646
+msgid "Failed to start lxshortcut"
+msgstr ""
+
+#: ../src/tab-page.c:206
 #, c-format
 msgid "%d item selected"
 msgid_plural "%d items selected"
 msgstr[0] "נבחר פריט אחד"
 msgstr[1] "נבחרו %d פריטים"
 
-#: ../src/tab-page.c:196
+#: ../src/tab-page.c:300
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "מקום פנוי: %s (סך הכל: %s )"
 
-#: ../src/tab-page.c:215
+#: ../src/tab-page.c:320
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] "פריט אחד"
 msgstr[1] "%d פריטים"
 
-#: ../src/tab-page.c:216
+#: ../src/tab-page.c:321
 #, c-format
 msgid " (%d hidden)"
 msgid_plural " (%d hidden)"
@@ -689,12 +706,27 @@ msgstr[0] "(אחד מוסתר)"
 msgstr[1] "(%d מוסתרים)"
 
 #: ../data/pcmanfm.desktop.in.h:1
-msgid "Browse the file system and manage the files"
-msgstr "עיון במערכת הקבצים וניהול הקבצים"
+#, fuzzy
+msgid "File Manager PCManFM"
+msgstr "מנהל קבצים"
 
 #: ../data/pcmanfm.desktop.in.h:2
 msgid "File Manager"
 msgstr "מנהל קבצים"
+
+#: ../data/pcmanfm.desktop.in.h:3
+msgid "Browse the file system and manage the files"
+msgstr "עיון במערכת הקבצים וניהול הקבצים"
+
+#: ../data/pcmanfm-desktop-pref.desktop.in.h:2
+msgid "Change desktop wallpapers and behavior of desktop manager"
+msgstr ""
+
+#~ msgid "_Advanced"
+#~ msgstr "מ_תקדם"
+
+#~ msgid "_General"
+#~ msgstr "_כללי"
 
 #~ msgid "_New"
 #~ msgstr "_חדש"
@@ -920,9 +952,6 @@ msgstr "מנהל קבצים"
 
 #~ msgid "File Contains:"
 #~ msgstr "הקובץ מכיל:"
-
-#~ msgid "General"
-#~ msgstr "כללי"
 
 #~ msgid "Greater Than:"
 #~ msgstr "גדולים מ־:"

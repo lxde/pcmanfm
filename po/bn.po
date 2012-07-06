@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-20 16:23+0200\n"
+"POT-Creation-Date: 2012-07-07 00:40+0200\n"
 "PO-Revision-Date: 2010-06-15 12:31+0600\n"
 "Last-Translator: Israt Jahan <israt@ankur.org.bd\n"
 "Language-Team: Bengali <ankur-bd-l10n@googlegroups.com>\n"
@@ -19,7 +19,8 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../data/ui/about.glade.in.h:1
-msgid "Copyright (C) 2009 - 2010"
+#, fuzzy
+msgid "Copyright (C) 2009 - 2012"
 msgstr "কপিরাইট (C) ২০০৯ - ২০১০"
 
 #: ../data/ui/about.glade.in.h:2
@@ -39,155 +40,227 @@ msgstr ""
 "অঙ্কুর প্রকল্পের পক্ষে উম্মে সালমা স্নিগ্ধা <snigdha@ankur.org.bd.com>\n"
 "ইসরাত জাহান <israt@ankur.org.bd>"
 
-#: ../data/ui/desktop-pref.glade.h:1
+#: ../data/ui/desktop-pref.glade.h:1 ../src/desktop-ui.c:60
+#: ../data/pcmanfm-desktop-pref.desktop.in.h:1
+msgid "Desktop Preferences"
+msgstr "ডেস্কটপের পছন্দসমূহ"
+
+#: ../data/ui/desktop-pref.glade.h:2
 msgid "<b>Background</b>"
 msgstr "<b>পটভূমি</b>"
 
-#: ../data/ui/desktop-pref.glade.h:2
-msgid "<b>Show desktop icons</b>"
-msgstr "<b>ডেক্সটপ আইকন প্রদর্শন</b>"
-
 #: ../data/ui/desktop-pref.glade.h:3
-msgid "<b>Text</b>"
-msgstr "<b>টেক্সট</b>"
+msgid "Wallpaper:"
+msgstr "ওয়ালপেপার:"
 
 #: ../data/ui/desktop-pref.glade.h:4
-msgid "Advanced"
-msgstr "উচ্চ পর্যায়ের"
+msgid "Please select an image file"
+msgstr "অনুগ্রহ করে একটি ছবি ফাইল নির্বাচন করুন"
 
 #: ../data/ui/desktop-pref.glade.h:5
-msgid "Appearance"
-msgstr "অবয়ব"
+msgid "Use the same wallpaper on all desktops"
+msgstr ""
 
 #: ../data/ui/desktop-pref.glade.h:6
 msgid "Background color:"
 msgstr "পটভূমির রঙ:"
 
-#: ../data/ui/desktop-pref.glade.h:7 ../data/ui/pref.glade.h:10
-msgid "Center on the screen"
-msgstr "পর্দার কেন্দ্রে"
+#: ../data/ui/desktop-pref.glade.h:7
+msgid "Wallpaper mode:"
+msgstr "ওয়ালপেপার মোড:"
 
 #: ../data/ui/desktop-pref.glade.h:8
-msgid "Color of label text:"
-msgstr "লেবেল টেক্সট এর রং:"
+msgid "<b>Text</b>"
+msgstr "<b>টেক্সট</b>"
 
 #: ../data/ui/desktop-pref.glade.h:9
-msgid "Color of shadow:"
-msgstr "ছায়ার রং:"
-
-#: ../data/ui/desktop-pref.glade.h:10
-msgid "Desktop Icons"
-msgstr "ডেক্সটপ আইকন"
-
-#: ../data/ui/desktop-pref.glade.h:11 ../src/desktop-ui.c:58
-msgid "Desktop Preferences"
-msgstr "ডেস্কটপের পছন্দসমূহ"
-
-#: ../data/ui/desktop-pref.glade.h:12
-msgid "Fill with background color only"
-msgstr "কেবল পটভূমির রঙ দিয়ে ভরাট করা"
-
-#: ../data/ui/desktop-pref.glade.h:13
 msgid "Font of label text:"
 msgstr "লেবেল টেক্সট এর ফন্ট:"
 
+#: ../data/ui/desktop-pref.glade.h:10
+msgid "Color of label text:"
+msgstr "লেবেল টেক্সট এর রং:"
+
+#: ../data/ui/desktop-pref.glade.h:11
+msgid "Color of shadow:"
+msgstr "ছায়ার রং:"
+
+#: ../data/ui/desktop-pref.glade.h:12
+msgid "Appearance"
+msgstr "অবয়ব"
+
+#: ../data/ui/desktop-pref.glade.h:13
+msgid "<b>Show desktop icons</b>"
+msgstr "<b>ডেক্সটপ আইকন প্রদর্শন</b>"
+
 #: ../data/ui/desktop-pref.glade.h:14
-msgid "Please select an image file"
-msgstr "অনুগ্রহ করে একটি ছবি ফাইল নির্বাচন করুন"
+msgid "Show \"My Documents\" icon on desktop"
+msgstr "ডেক্সটপে \"আমার নথিপত্র\" আইকনটি প্রদর্শন করা হবে"
 
 #: ../data/ui/desktop-pref.glade.h:15
 msgid "Show \"My Computer\" icon on desktop"
 msgstr "ডেক্সটপে \"আমার কম্পিউটার\" আইকনটি প্রদর্শন করা হবে"
 
 #: ../data/ui/desktop-pref.glade.h:16
-msgid "Show \"My Documents\" icon on desktop"
-msgstr "ডেক্সটপে \"আমার নথিপত্র\" আইকনটি প্রদর্শন করা হবে"
-
-#: ../data/ui/desktop-pref.glade.h:17
 msgid "Show \"Trash Bin\" icon on desktop"
 msgstr "ডেক্সটপে \"আবর্জনা বাক্স\" আইকনটি প্রদর্শন করা হবে"
 
-#: ../data/ui/desktop-pref.glade.h:18
+#: ../data/ui/desktop-pref.glade.h:17
 msgid "Show icons of volumes on desktop"
 msgstr "ডেক্সটপে ভলিউমের আইকন প্রদর্শন করা হবে"
+
+#: ../data/ui/desktop-pref.glade.h:18
+msgid "Desktop Icons"
+msgstr "ডেক্সটপ আইকন"
 
 #: ../data/ui/desktop-pref.glade.h:19
 msgid "Show menus provided by window managers when desktop is clicked"
 msgstr "ডেক্সটপে ক্লিক করে উইন্ডো ব্যবস্থাপকের দেয়া মেনু প্রদর্শন করা হবে"
 
-#: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:37
+#: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:40
+msgid "Advanced"
+msgstr "উচ্চ পর্যায়ের"
+
+#: ../data/ui/desktop-pref.glade.h:21
+msgid "Fill with background color only"
+msgstr "কেবল পটভূমির রঙ দিয়ে ভরাট করা"
+
+#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:45
 msgid "Stretch to fill the entire screen"
 msgstr "সম্পূর্ণ পর্দা ভরাট করার জন্য টেনে প্রসারিত করুন"
 
-#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:38
+#: ../data/ui/desktop-pref.glade.h:23 ../data/ui/pref.glade.h:46
 msgid "Stretch to fit the screen"
 msgstr "পর্দায় মানাসই করার জন্য প্রসারিত করুন"
 
-#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:42
+#: ../data/ui/desktop-pref.glade.h:24 ../data/ui/pref.glade.h:47
+msgid "Center on the screen"
+msgstr "পর্দার কেন্দ্রে"
+
+#: ../data/ui/desktop-pref.glade.h:25 ../data/ui/pref.glade.h:48
 msgid "Tile the image to fill the entire screen"
 msgstr "সম্পূর্ণ পর্দাকে ভরাট করার জন্য ছবির টালি করুন"
 
-#: ../data/ui/desktop-pref.glade.h:23
-msgid "Wallpaper mode:"
-msgstr "ওয়ালপেপার মোড:"
-
-#: ../data/ui/desktop-pref.glade.h:24
-msgid "Wallpaper:"
-msgstr "ওয়ালপেপার:"
-
 #: ../data/ui/pref.glade.h:1
-msgid "<b>Auto-mount</b>"
-msgstr "<b>স্বয়ংক্রিয়-মাউন্ট</b>"
+msgid "Opened in Current Tab"
+msgstr "বর্তমান ট্যাবে খোলা আছে"
 
 #: ../data/ui/pref.glade.h:2
+msgid "Opened in New Tab"
+msgstr "নতুন ট্যাবে খোলা আছে"
+
+#: ../data/ui/pref.glade.h:3
+msgid "Opened in New Window"
+msgstr "নতুন উইন্ডোতে খোলা আছে"
+
+#: ../data/ui/pref.glade.h:4
+msgid "Preferences"
+msgstr "পছন্দসমূহ"
+
+#: ../data/ui/pref.glade.h:5
 msgid "<b>Behavior</b>"
 msgstr "<b>উপস্থিতি</b>"
 
-#: ../data/ui/pref.glade.h:3
-msgid "<b>Default View</b>"
-msgstr "<b>ডিফল্ট প্রদর্শন</b>"
-
-#: ../data/ui/pref.glade.h:4
-msgid "<b>Icons</b>"
-msgstr "<b>আইকন</b>"
-
-#: ../data/ui/pref.glade.h:5
-msgid "<b>Programs</b>"
-msgstr "<b>প্রোগ্রাম</b>"
-
 #: ../data/ui/pref.glade.h:6
-msgid "<b>User Interface</b>"
-msgstr "<b>ব্যবহারকারী ইন্টারফেস</b>"
+msgid "Open files with single click"
+msgstr "একবার ক্লিক করে ফাইল খোলা হয়"
 
 #: ../data/ui/pref.glade.h:7
-msgid "Always show the tab bar"
-msgstr "সর্বদা ট্যাব বার প্রদর্শন করা হবে"
+msgid "Confirm before deleting files"
+msgstr "ফাইল মুছে ফেলার আগে নিশ্চিত হয়ে নিন"
 
 #: ../data/ui/pref.glade.h:8
-msgid "Archiver integration:"
-msgstr "আর্কাইভার একত্রীকরণ:"
+msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
+msgstr "ডিস্ক থেকে অপসারন না করে মুছে ফেলা ফাইলগুলো আবর্জনা বাক্সে সরিয়ে রাখা হয়"
 
 #: ../data/ui/pref.glade.h:9
 msgid "Bookmarks:"
 msgstr "বুকমার্ক:"
 
+#: ../data/ui/pref.glade.h:10
+msgid "<b>Default View</b>"
+msgstr "<b>ডিফল্ট প্রদর্শন</b>"
+
 #: ../data/ui/pref.glade.h:11
-msgid "Compact View"
-msgstr "নিবিড় দৃশ্যপট"
+msgid "View Mode:"
+msgstr "মোড প্রদর্শন:"
 
 #: ../data/ui/pref.glade.h:12
-msgid "Confirm before deleting files"
-msgstr "ফাইল মুছে ফেলার আগে নিশ্চিত হয়ে নিন"
+#, fuzzy
+msgid "General"
+msgstr "সাধারণ (_G)"
 
 #: ../data/ui/pref.glade.h:13
-msgid "Detailed List View"
-msgstr "বিস্তারিত তালিকা প্রদর্শন"
+msgid "<b>Icons</b>"
+msgstr "<b>আইকন</b>"
 
 #: ../data/ui/pref.glade.h:14
+msgid "Size of small icons:"
+msgstr "ছোট আইকনের আকার:"
+
+#: ../data/ui/pref.glade.h:15
+msgid "Size of big icons:"
+msgstr "বড় আইকনের আকার:"
+
+#: ../data/ui/pref.glade.h:16
+msgid "Size of thumbnails:"
+msgstr "থাম্বনেইলের আকার:"
+
+#: ../data/ui/pref.glade.h:17
+msgid "Size of side pane icons:"
+msgstr "সাইড প্যান আইকনের আকার:"
+
+#: ../data/ui/pref.glade.h:18
+msgid "Show thumbnails of files"
+msgstr "ফাইলের থাম্বনেইল প্রদর্শন করে"
+
+#: ../data/ui/pref.glade.h:19
+msgid "Only show thumbnails for local files"
+msgstr "শুধুমাত্র স্থানীয় ফাইলসমূহের জন্য থাম্বনেইল প্রদর্শন করা হয়"
+
+#: ../data/ui/pref.glade.h:20
 msgid "Do not generate thumbnails for files exceeding this size:"
 msgstr "যেসব ফাইল এই আকার ছাড়িয়ে যায় সেগুলোর জন্য থাম্বনেইল তৈরি হয়না:"
 
-#: ../data/ui/pref.glade.h:16
+#: ../data/ui/pref.glade.h:21
+#, fuzzy
+msgid "Display"
+msgstr "প্রদর্শন (_D)"
+
+#: ../data/ui/pref.glade.h:22
+msgid "<b>Auto-mount</b>"
+msgstr "<b>স্বয়ংক্রিয়-মাউন্ট</b>"
+
+#: ../data/ui/pref.glade.h:23
+msgid "Mount mountable volumes automatically on program startup"
+msgstr "শুরুতেই প্রোগ্রামে যে ভলিউম মাউন্ট করা যায় তা স্বয়ংক্রিয়ভাবে মাউন্ট করা হয়"
+
+#: ../data/ui/pref.glade.h:24
+msgid "Mount removable media automatically when they are inserted"
+msgstr "প্রবেশ করানোর পর স্বয়ংক্রিয়ভাবেই স্থানান্তরযোগ্য মিডিয়া মাউন্ট করা হবে"
+
+#: ../data/ui/pref.glade.h:25
+msgid "Show available options for removable media when they are inserted"
+msgstr "প্রবেশ করানোর পর স্থানান্তরযোগ্য মিডিয়ার জন্য বিদ্যমান অপশনসমূহ প্রদর্শন করে"
+
+#: ../data/ui/pref.glade.h:26
+#, fuzzy
+msgid "Volume Management"
+msgstr "ভলিউম ব্যবস্থাপনা (_V)"
+
+#: ../data/ui/pref.glade.h:27
+msgid "<b>Programs</b>"
+msgstr "<b>প্রোগ্রাম</b>"
+
+#: ../data/ui/pref.glade.h:28
+msgid "Terminal emulator:"
+msgstr "টার্মিনাল ইমিউলেটর:"
+
+#: ../data/ui/pref.glade.h:29
+msgid "Switch user command:"
+msgstr "ব্যবহারকারীর কমান্ড পরিবর্তন:"
+
+#: ../data/ui/pref.glade.h:31
 #, no-c-format
 msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
@@ -197,388 +270,324 @@ msgstr ""
 "\"।\n"
 "%s = টার্মিনাল বা su এ চালানোর কমান্ড লাইন।"
 
-#: ../data/ui/pref.glade.h:18
+#: ../data/ui/pref.glade.h:33
+msgid "Archiver integration:"
+msgstr "আর্কাইভার একত্রীকরণ:"
+
+#: ../data/ui/pref.glade.h:34
+msgid "<b>User Interface</b>"
+msgstr "<b>ব্যবহারকারী ইন্টারফেস</b>"
+
+#: ../data/ui/pref.glade.h:35
+msgid "Always show the tab bar"
+msgstr "সর্বদা ট্যাব বার প্রদর্শন করা হবে"
+
+#: ../data/ui/pref.glade.h:36
 msgid "Hide 'Close tab' buttons"
 msgstr "'ট্যাব বন্ধ\" বোতাম আড়াল করুন"
 
-#: ../data/ui/pref.glade.h:19
-msgid "Hide folder content border"
-msgstr "ফোল্ডারের বিষয়বস্তুর সীমানা আড়াল করুন"
-
-#: ../data/ui/pref.glade.h:20
+#: ../data/ui/pref.glade.h:37
 msgid "Hide side pane buttons"
 msgstr "সাইড প্যান বোতাম আড়াল করুন"
 
-#: ../data/ui/pref.glade.h:21
-msgid "Icon View"
-msgstr "আইকন ভিউ"
-
-#: ../data/ui/pref.glade.h:22
-msgid "Mount mountable volumes automatically on program startup"
-msgstr "শুরুতেই প্রোগ্রামে যে ভলিউম মাউন্ট করা যায় তা স্বয়ংক্রিয়ভাবে মাউন্ট করা হয়"
-
-#: ../data/ui/pref.glade.h:23
-msgid "Mount removable media automatically when they are inserted"
-msgstr "প্রবেশ করানোর পর স্বয়ংক্রিয়ভাবেই স্থানান্তরযোগ্য মিডিয়া মাউন্ট করা হবে"
-
-#: ../data/ui/pref.glade.h:24
-msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
-msgstr "ডিস্ক থেকে অপসারন না করে মুছে ফেলা ফাইলগুলো আবর্জনা বাক্সে সরিয়ে রাখা হয়"
-
-#: ../data/ui/pref.glade.h:25
-msgid "Only show thumbnails for local files"
-msgstr "শুধুমাত্র স্থানীয় ফাইলসমূহের জন্য থাম্বনেইল প্রদর্শন করা হয়"
-
-#: ../data/ui/pref.glade.h:26
-msgid "Open files with single click"
-msgstr "একবার ক্লিক করে ফাইল খোলা হয়"
-
-#: ../data/ui/pref.glade.h:27
-msgid "Opened in Current Tab"
-msgstr "বর্তমান ট্যাবে খোলা আছে"
-
-#: ../data/ui/pref.glade.h:28
-msgid "Opened in New Tab"
-msgstr "নতুন ট্যাবে খোলা আছে"
-
-#: ../data/ui/pref.glade.h:29
-msgid "Opened in New Window"
-msgstr "নতুন উইন্ডোতে খোলা আছে"
-
-#: ../data/ui/pref.glade.h:30
-msgid "Preferences"
-msgstr "পছন্দসমূহ"
-
-#: ../data/ui/pref.glade.h:31
-msgid "Show available options for removable media when they are inserted"
-msgstr "প্রবেশ করানোর পর স্থানান্তরযোগ্য মিডিয়ার জন্য বিদ্যমান অপশনসমূহ প্রদর্শন করে"
-
-#: ../data/ui/pref.glade.h:32
-msgid "Show thumbnails of files"
-msgstr "ফাইলের থাম্বনেইল প্রদর্শন করে"
-
-#: ../data/ui/pref.glade.h:33
-msgid "Size of big icons:"
-msgstr "বড় আইকনের আকার:"
-
-#: ../data/ui/pref.glade.h:34
-msgid "Size of side pane icons:"
-msgstr "সাইড প্যান আইকনের আকার:"
-
-#: ../data/ui/pref.glade.h:35
-msgid "Size of small icons:"
-msgstr "ছোট আইকনের আকার:"
-
-#: ../data/ui/pref.glade.h:36
-msgid "Size of thumbnails:"
-msgstr "থাম্বনেইলের আকার:"
+#: ../data/ui/pref.glade.h:38
+msgid "Hide folder content border"
+msgstr "ফোল্ডারের বিষয়বস্তুর সীমানা আড়াল করুন"
 
 #: ../data/ui/pref.glade.h:39
-msgid "Switch user command:"
-msgstr "ব্যবহারকারীর কমান্ড পরিবর্তন:"
-
-#: ../data/ui/pref.glade.h:40
-msgid "Terminal emulator:"
-msgstr "টার্মিনাল ইমিউলেটর:"
-
-#: ../data/ui/pref.glade.h:41
-msgid "Thumbnail View"
-msgstr "থাম্বনেইল ভিউ"
-
-#: ../data/ui/pref.glade.h:43
 msgid "Use SI decimal prefixes instead of IEC binary prefixes"
 msgstr "IEC বাইনারি প্রীফিক্স এর পরিবর্তে SI দশমিক প্রীফিক্স ব্যবহার করা হয়"
 
+#: ../data/ui/pref.glade.h:41
+msgid "Icon View"
+msgstr "আইকন ভিউ"
+
+#: ../data/ui/pref.glade.h:42
+msgid "Compact View"
+msgstr "নিবিড় দৃশ্যপট"
+
+#: ../data/ui/pref.glade.h:43
+msgid "Thumbnail View"
+msgstr "থাম্বনেইল ভিউ"
+
 #: ../data/ui/pref.glade.h:44
-msgid "View Mode:"
-msgstr "মোড প্রদর্শন:"
-
-#: ../data/ui/pref.glade.h:45
-msgid "_Advanced"
-msgstr "উচ্চপর্যায়ের (_A)"
-
-#: ../data/ui/pref.glade.h:46
-msgid "_Display"
-msgstr "প্রদর্শন (_D)"
-
-#: ../data/ui/pref.glade.h:47
-msgid "_General"
-msgstr "সাধারণ (_G)"
-
-#: ../data/ui/pref.glade.h:48
-msgid "_Volume Management"
-msgstr "ভলিউম ব্যবস্থাপনা (_V)"
+msgid "Detailed List View"
+msgstr "বিস্তারিত তালিকা প্রদর্শন"
 
 #: ../data/ui/autorun.glade.h:1
-msgid "<b>Removable medium is inserted</b>"
-msgstr "<b>স্থানান্তরযোগ্য মিডিয়া প্রবেশ করানো হয়েছে</b>"
-
-#: ../data/ui/autorun.glade.h:2
-msgid "Detecting..."
-msgstr "অনুসন্ধান করা হচ্ছে..."
-
-#: ../data/ui/autorun.glade.h:3
-msgid "Please select the action you want to perform:"
-msgstr "যে কাজটি করতে চান অনুগ্রহ করে তা নির্বাচন করুন:"
-
-#: ../data/ui/autorun.glade.h:4
 msgid "Removable medium is inserted"
 msgstr "স্থানান্তরযোগ্য মিডিয়া প্রবেশ করানো হয়েছে"
 
-#: ../data/ui/autorun.glade.h:5
+#: ../data/ui/autorun.glade.h:2
+msgid "<b>Removable medium is inserted</b>"
+msgstr "<b>স্থানান্তরযোগ্য মিডিয়া প্রবেশ করানো হয়েছে</b>"
+
+#: ../data/ui/autorun.glade.h:3
 msgid "Type of medium:"
 msgstr "মিডিয়ার ধরণ:"
 
-#: ../src/volume-manager.c:150
+#: ../data/ui/autorun.glade.h:4
+msgid "Detecting..."
+msgstr "অনুসন্ধান করা হচ্ছে..."
+
+#: ../data/ui/autorun.glade.h:5
+msgid "Please select the action you want to perform:"
+msgstr "যে কাজটি করতে চান অনুগ্রহ করে তা নির্বাচন করুন:"
+
+#: ../src/volume-manager.c:160
 msgid "Removable Disk"
 msgstr "স্থানান্তরযোগ্য ডিস্ক"
 
-#: ../src/volume-manager.c:209
+#: ../src/volume-manager.c:213
 msgid "Open in File Manager"
 msgstr "ফাইল ব্যবস্থাপকে খোলা হয়"
 
-#: ../src/desktop-ui.c:53
+#: ../src/desktop-ui.c:54
 msgid "_Invert Selection"
 msgstr "বিপরীতমূখী নির্বাচন (_I)"
 
-#: ../src/desktop-ui.c:54 ../src/main-win-ui.c:163
+#: ../src/desktop-ui.c:55 ../src/main-win-ui.c:164
 msgid "_Sort Files"
 msgstr "ফাইলসমূহ সাজান (_S)"
 
 #. for popup menu
-#: ../src/desktop-ui.c:55 ../src/main-win-ui.c:189
+#: ../src/desktop-ui.c:56 ../src/main-win-ui.c:190
 #, fuzzy
 msgid "Create _New..."
 msgstr "নতুন তৈরি করুন..."
 
-#: ../src/desktop-ui.c:56 ../src/main-win-ui.c:190
+#: ../src/desktop-ui.c:57 ../src/main-win-ui.c:191
 msgid "Folder"
 msgstr "ফোল্ডার"
 
-#: ../src/desktop-ui.c:57 ../src/main-win-ui.c:191
+#: ../src/desktop-ui.c:58 ../src/main-win-ui.c:192
 msgid "Blank File"
 msgstr "খালি ফাইল"
 
-#: ../src/desktop-ui.c:69 ../src/main-win-ui.c:217
+#: ../src/desktop-ui.c:59 ../src/main-win-ui.c:193
+msgid "Shortcut"
+msgstr ""
+
+#: ../src/desktop-ui.c:71 ../src/main-win-ui.c:219
 msgid "By _Name"
 msgstr "নামানুসারে (_N)"
 
-#: ../src/desktop-ui.c:70 ../src/main-win-ui.c:218
+#: ../src/desktop-ui.c:72 ../src/main-win-ui.c:220
 msgid "By _Modification Time"
 msgstr "পরিবর্তনের সময় অনুসারে (_M)"
 
-#: ../src/desktop-ui.c:71 ../src/main-win-ui.c:219
+#: ../src/desktop-ui.c:73 ../src/main-win-ui.c:221
 msgid "By _Size"
 msgstr "আকার অনুসারে (_S)"
 
-#: ../src/desktop-ui.c:72 ../src/main-win-ui.c:220
+#: ../src/desktop-ui.c:74 ../src/main-win-ui.c:222
 msgid "By File _Type"
 msgstr "ফাইলের ধরণ অনুসারে (_T)"
 
-#: ../src/desktop-ui.c:88 ../src/main-win-ui.c:243
+#: ../src/desktop-ui.c:90 ../src/main-win-ui.c:245
 msgid "Open in New Tab"
 msgstr "নতুন ট্যাবে খোলা হবে"
 
-#: ../src/desktop-ui.c:89 ../src/main-win-ui.c:244
+#: ../src/desktop-ui.c:91 ../src/main-win-ui.c:246
 msgid "Open in New Window"
 msgstr "নতুন উইন্ডোতে খোলা হবে"
 
-#: ../src/desktop-ui.c:91 ../src/main-win-ui.c:246
+#: ../src/desktop-ui.c:93 ../src/main-win-ui.c:248
 msgid "Open in _Terminal"
 msgstr "টার্মিনালে খোলা হবে (_T)"
 
-#: ../src/desktop-ui.c:107
+#: ../src/desktop-ui.c:109
 msgid "Stick to Current Position"
 msgstr ""
 
-#: ../src/desktop-ui.c:112
+#: ../src/desktop-ui.c:114
 msgid "Snap to Grid"
 msgstr ""
 
-#: ../src/main-win-ui.c:143
+#: ../src/main-win-ui.c:144
 msgid "_File"
 msgstr "ফাইল (_F)"
 
-#: ../src/main-win-ui.c:144
+#: ../src/main-win-ui.c:145
 msgid "_New Window"
 msgstr "নতুন উইন্ডো (_N)"
 
-#: ../src/main-win-ui.c:145
+#: ../src/main-win-ui.c:146
 msgid "New _Tab"
 msgstr "নতুন ট্যাব (_T)"
 
-#: ../src/main-win-ui.c:146
+#: ../src/main-win-ui.c:147
 msgid "_Close Tab"
 msgstr "ট্যাব বন্ধ (_C)"
 
-#: ../src/main-win-ui.c:147
+#: ../src/main-win-ui.c:148
 msgid "Close Window"
 msgstr "উইন্ডো বন্ধ"
 
-#: ../src/main-win-ui.c:148
+#: ../src/main-win-ui.c:149
 msgid "_Edit"
 msgstr "সম্পাদনা (_E)"
 
-#: ../src/main-win-ui.c:153
+#: ../src/main-win-ui.c:154
 msgid "Rename"
 msgstr "পুনরায় নামকরণ"
 
-#: ../src/main-win-ui.c:154
+#: ../src/main-win-ui.c:155
 msgid "Create Symlink"
 msgstr "সিমলিংক তৈরি"
 
-#: ../src/main-win-ui.c:155
+#: ../src/main-win-ui.c:156
 msgid "Move To..."
 msgstr "সরানো হয়..."
 
-#: ../src/main-win-ui.c:156
+#: ../src/main-win-ui.c:157
 msgid "Copy To..."
 msgstr "অনুলিপি..."
 
-#: ../src/main-win-ui.c:158
+#: ../src/main-win-ui.c:159
 msgid "Invert Selection"
 msgstr "বিপরীতমুখী নির্বাচন"
 
-#: ../src/main-win-ui.c:160
+#: ../src/main-win-ui.c:161
 msgid "_View"
 msgstr "প্রদর্শন (_V)"
 
-#: ../src/main-win-ui.c:161
+#: ../src/main-win-ui.c:162
 #, fuzzy
 msgid "Reload Folder"
 msgstr "পরবর্তী ফোল্ডার"
 
-#: ../src/main-win-ui.c:161
+#: ../src/main-win-ui.c:162
 #, fuzzy
 msgid "Reload current folder"
 msgstr "প্যারেন্ট ফোল্ডার"
 
-#: ../src/main-win-ui.c:162
+#: ../src/main-win-ui.c:163
 msgid "Side Pane"
 msgstr ""
 
-#: ../src/main-win-ui.c:164
+#: ../src/main-win-ui.c:165
 msgid "_Help"
 msgstr "সহায়তা (_H)"
 
-#: ../src/main-win-ui.c:166
+#: ../src/main-win-ui.c:167
 msgid "_Go"
 msgstr "যান (_G)"
 
-#: ../src/main-win-ui.c:167
+#: ../src/main-win-ui.c:168
 msgid "Previous Folder"
 msgstr "পূর্ববর্তী ফোল্ডার"
 
-#: ../src/main-win-ui.c:168
+#: ../src/main-win-ui.c:169
 msgid "Next Folder"
 msgstr "পরবর্তী ফোল্ডার"
 
-#: ../src/main-win-ui.c:169
+#: ../src/main-win-ui.c:170
 msgid "Parent Folder"
 msgstr "প্যারেন্ট ফোল্ডার"
 
-#: ../src/main-win-ui.c:169
+#: ../src/main-win-ui.c:170
 msgid "Go to parent Folder"
 msgstr "প্যারেন্ট ফোল্ডারে যান"
 
-#: ../src/main-win-ui.c:170
+#: ../src/main-win-ui.c:171
 msgid "Home Folder"
 msgstr "প্রধান ফোল্ডার"
 
-#: ../src/main-win-ui.c:171
+#: ../src/main-win-ui.c:172
 msgid "Desktop"
 msgstr "ডেক্সটপ"
 
-#: ../src/main-win-ui.c:171
+#: ../src/main-win-ui.c:172
 msgid "Desktop Folder"
 msgstr "ডেক্সটপ ফোল্ডার"
 
-#: ../src/main-win-ui.c:172
+#: ../src/main-win-ui.c:173
 msgid "My Computer"
 msgstr "আমার কম্পিউটার"
 
-#: ../src/main-win-ui.c:173
+#: ../src/main-win-ui.c:174
 msgid "Trash Can"
 msgstr "আবর্জনা ক্যান"
 
-#: ../src/main-win-ui.c:174
+#: ../src/main-win-ui.c:175
 msgid "Network Drives"
 msgstr "নেটওয়ার্ক ড্রাইভ"
 
-#: ../src/main-win-ui.c:175
+#: ../src/main-win-ui.c:176
 msgid "Applications"
 msgstr "অ্যাপ্লিকেশন"
 
-#: ../src/main-win-ui.c:175
+#: ../src/main-win-ui.c:176
 msgid "Installed Applications"
 msgstr "ইন্সটলকৃত অ্যাপ্লিকেশন"
 
-#: ../src/main-win-ui.c:177
+#: ../src/main-win-ui.c:178
 msgid "_Bookmarks"
 msgstr "বুকমার্ক (_B)"
 
-#: ../src/main-win-ui.c:178
+#: ../src/main-win-ui.c:179
 msgid "Add To Bookmarks"
 msgstr "বুকমার্ক হিসাবে যোগ করুন"
 
-#: ../src/main-win-ui.c:179
+#: ../src/main-win-ui.c:180
 msgid "_Tools"
 msgstr "টুল (_T)"
 
-#: ../src/main-win-ui.c:180
+#: ../src/main-win-ui.c:181
 msgid "Open Current Folder in _Terminal"
 msgstr "টার্মিনালে বর্তমান ফোল্ডার খোলা হবে (_T)"
 
-#: ../src/main-win-ui.c:181
+#: ../src/main-win-ui.c:182
 msgid "Open Current Folder as _Root"
 msgstr "রুট হিসাবে বর্তমান ফোল্ডার খোলা হবে (_R)"
 
-#: ../src/main-win-ui.c:197
+#: ../src/main-win-ui.c:199
 msgid "Show _Hidden"
 msgstr "আড়ালকৃতকে প্রদর্শন করা হবে (_H)"
 
-#: ../src/main-win-ui.c:198
+#: ../src/main-win-ui.c:200
 #, fuzzy
 msgid "Show Side Pane"
 msgstr "আড়ালকৃতকে প্রদর্শন করা হবে (_H)"
 
-#: ../src/main-win-ui.c:203
+#: ../src/main-win-ui.c:205
 msgid "_Icon View"
 msgstr "আইকন দৃশ্যপট (_I)"
 
-#: ../src/main-win-ui.c:204
+#: ../src/main-win-ui.c:206
 msgid "_Compact View"
 msgstr "নিবিড় দৃশ্যপট (_C)"
 
-#: ../src/main-win-ui.c:205
+#: ../src/main-win-ui.c:207
 msgid "_Thumbnail View"
 msgstr "থাম্বনেইল দৃশ্যপট (_T)"
 
-#: ../src/main-win-ui.c:206
+#: ../src/main-win-ui.c:208
 msgid "Detailed _List View"
 msgstr "বিস্তারিত তালিকা প্রদর্শন (_L)"
 
-#: ../src/main-win-ui.c:225
+#: ../src/main-win-ui.c:227
 msgid "Places"
 msgstr ""
 
-#: ../src/main-win-ui.c:226
+#: ../src/main-win-ui.c:228
 msgid "Directory Tree"
 msgstr ""
 
-#: ../src/main-win-ui.c:227
+#: ../src/main-win-ui.c:229
 msgid "Remote"
 msgstr ""
 
-#: ../src/main-win.c:471
+#: ../src/main-win.c:544
 msgid "You are in super user mode"
 msgstr "আপনি সুপার ব্যবহারকারী মোডে আছেন"
 
-#: ../src/main-win.c:590
+#: ../src/main-win.c:730
 msgid "Switch user command is not set."
 msgstr "ব্যবহারকারীর কমান্ড পরিবর্তন নির্ধারন করা হয়নি।"
 
-#: ../src/main-win.c:1006
+#: ../src/main-win.c:1137
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -589,7 +598,7 @@ msgstr ""
 "'%s'\n"
 "নতুন বুকমার্ক আইটেমের নাম দিন :"
 
-#: ../src/main-win.c:1010
+#: ../src/main-win.c:1141
 msgid "Add to Bookmarks"
 msgstr "বুকমার্কে যোগ করুন"
 
@@ -649,47 +658,56 @@ msgstr ""
 msgid "[FILE1, FILE2,...]"
 msgstr "[FILE1, FILE2,...]"
 
-#: ../src/pcmanfm.c:455
+#: ../src/pcmanfm.c:495
 msgid "Terminal emulator is not set."
 msgstr "টার্মিনাল ইমিউলেটর নির্ধারণ করা হয়নি।"
 
-#: ../src/pcmanfm.c:507
+#: ../src/pcmanfm.c:547
 #, fuzzy
 msgid "Enter a name for the newly created folder:"
 msgstr "নতুন তৈরি ফাইলের নাম দিন:"
 
-#: ../src/pcmanfm.c:509
+#: ../src/pcmanfm.c:549
 msgid "Enter a name for the newly created file:"
 msgstr "নতুন তৈরি ফাইলের নাম দিন:"
 
-#: ../src/pcmanfm.c:510
+#: ../src/pcmanfm.c:550
 msgid "Create New..."
 msgstr "নতুন তৈরি করুন..."
 
-#: ../src/pcmanfm.c:510
+#: ../src/pcmanfm.c:550
 msgid "New"
 msgstr "নতুন"
 
-#: ../src/tab-page.c:174
+#: ../src/pcmanfm.c:641
+msgid "Error, lxshortcut not installed"
+msgstr ""
+
+#. FIXME: it's dirty and will lock everything
+#: ../src/pcmanfm.c:646
+msgid "Failed to start lxshortcut"
+msgstr ""
+
+#: ../src/tab-page.c:206
 #, c-format
 msgid "%d item selected"
 msgid_plural "%d items selected"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../src/tab-page.c:196
+#: ../src/tab-page.c:300
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "অব্যবহৃত জায়গা: %s (সর্বমোট: %s)"
 
-#: ../src/tab-page.c:215
+#: ../src/tab-page.c:320
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../src/tab-page.c:216
+#: ../src/tab-page.c:321
 #, c-format
 msgid " (%d hidden)"
 msgid_plural " (%d hidden)"
@@ -697,10 +715,22 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: ../data/pcmanfm.desktop.in.h:1
-msgid "Browse the file system and manage the files"
-msgstr ""
+#, fuzzy
+msgid "File Manager PCManFM"
+msgstr "ফাইল ব্যবস্থাপকে খোলা হয়"
 
 #: ../data/pcmanfm.desktop.in.h:2
 #, fuzzy
 msgid "File Manager"
 msgstr "ফাইল ব্যবস্থাপকে খোলা হয়"
+
+#: ../data/pcmanfm.desktop.in.h:3
+msgid "Browse the file system and manage the files"
+msgstr ""
+
+#: ../data/pcmanfm-desktop-pref.desktop.in.h:2
+msgid "Change desktop wallpapers and behavior of desktop manager"
+msgstr ""
+
+#~ msgid "_Advanced"
+#~ msgstr "উচ্চপর্যায়ের (_A)"
