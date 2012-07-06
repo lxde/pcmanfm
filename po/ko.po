@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-07-20 16:23+0200\n"
-"PO-Revision-Date: 2011-09-06 10:51+0200\n"
-"Last-Translator: Sanghyeon <sanxiyn@gmail.com>\n"
+"PO-Revision-Date: 2012-04-04 07:23+0900\n"
+"Last-Translator: Seong-ho Cho <darkcircle.0426@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: ko\n"
 "MIME-Version: 1.0\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2010"
-msgstr ""
+msgstr "Copyright (C) 2009 - 2010"
 
 #: ../data/ui/about.glade.in.h:2
 msgid ""
@@ -28,159 +28,167 @@ msgid ""
 "\n"
 "Developed by Hon Jen Yee (PCMan)"
 msgstr ""
+"가벼운 파일 관리자\n"
+"\n"
+"Hon Jen Yee (PCMan)가 개발했습니다"
 
 #. Please replace this line with your own names, one name per line.
 #: ../data/ui/about.glade.in.h:6
 msgid "translator-credits"
-msgstr "Seo Sanghyeon <sanxiyn@gmail.com>"
+msgstr "Seo Sanghyeon <sanxiyn@gmail.com>Seong-ho Cho <darkcircle.0426@gmail.com>"
 
 #: ../data/ui/desktop-pref.glade.h:1
 msgid "<b>Background</b>"
-msgstr ""
+msgstr "<b>배경</b>"
 
 #: ../data/ui/desktop-pref.glade.h:2
 msgid "<b>Show desktop icons</b>"
-msgstr ""
+msgstr "<b>데스크톱 아이콘 표시</b>"
 
 #: ../data/ui/desktop-pref.glade.h:3
 msgid "<b>Text</b>"
-msgstr ""
+msgstr "<b>텍스트</b>"
 
 #: ../data/ui/desktop-pref.glade.h:4
 msgid "Advanced"
-msgstr ""
+msgstr "고급"
 
 #: ../data/ui/desktop-pref.glade.h:5
 msgid "Appearance"
-msgstr ""
+msgstr "모양새"
 
 #: ../data/ui/desktop-pref.glade.h:6
 msgid "Background color:"
-msgstr ""
+msgstr "배경색:"
 
-#: ../data/ui/desktop-pref.glade.h:7 ../data/ui/pref.glade.h:10
+#: ../data/ui/desktop-pref.glade.h:7
+#: ../data/ui/pref.glade.h:10
 msgid "Center on the screen"
-msgstr ""
+msgstr "화면 한가운데"
 
 #: ../data/ui/desktop-pref.glade.h:8
 msgid "Color of label text:"
-msgstr ""
+msgstr "레이블 텍스트 색:"
 
 #: ../data/ui/desktop-pref.glade.h:9
 msgid "Color of shadow:"
-msgstr ""
+msgstr "그림자 색:"
 
 #: ../data/ui/desktop-pref.glade.h:10
 msgid "Desktop Icons"
-msgstr ""
+msgstr "데스크톱 아이콘"
 
-#: ../data/ui/desktop-pref.glade.h:11 ../src/desktop-ui.c:58
+#: ../data/ui/desktop-pref.glade.h:11
+#: ../src/desktop-ui.c:58
 msgid "Desktop Preferences"
-msgstr ""
+msgstr "데스크톱 기본 설정"
 
 #: ../data/ui/desktop-pref.glade.h:12
 msgid "Fill with background color only"
-msgstr ""
+msgstr "배경색으로만 채우기"
 
 #: ../data/ui/desktop-pref.glade.h:13
 msgid "Font of label text:"
-msgstr ""
+msgstr "레이블 텍스트 글꼴:"
 
 #: ../data/ui/desktop-pref.glade.h:14
 msgid "Please select an image file"
-msgstr ""
+msgstr "이미지 파일을 선택하여 주십시오"
 
 #: ../data/ui/desktop-pref.glade.h:15
 msgid "Show \"My Computer\" icon on desktop"
-msgstr ""
+msgstr "\"내 킴퓨터\" 아이콘 데스크톱에 표시"
 
 #: ../data/ui/desktop-pref.glade.h:16
 msgid "Show \"My Documents\" icon on desktop"
-msgstr ""
+msgstr "\"내 문서\" 아이콘을 데스크톱에 표시"
 
 #: ../data/ui/desktop-pref.glade.h:17
 msgid "Show \"Trash Bin\" icon on desktop"
-msgstr ""
+msgstr "\"휴지통\"아이콘을 데스크톱에 표시"
 
 #: ../data/ui/desktop-pref.glade.h:18
 msgid "Show icons of volumes on desktop"
-msgstr ""
+msgstr "볼륨 아이콘을 데스크톱에 표시"
 
 #: ../data/ui/desktop-pref.glade.h:19
 msgid "Show menus provided by window managers when desktop is clicked"
-msgstr ""
+msgstr "데스크톱을 클릭했을때 창 관리자가 제공하는 메뉴 표시"
 
-#: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:37
+#: ../data/ui/desktop-pref.glade.h:20
+#: ../data/ui/pref.glade.h:37
 msgid "Stretch to fill the entire screen"
-msgstr ""
+msgstr "전체 화면으로 확장"
 
-#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:38
+#: ../data/ui/desktop-pref.glade.h:21
+#: ../data/ui/pref.glade.h:38
 msgid "Stretch to fit the screen"
-msgstr ""
+msgstr "화면 크기에 맞추기"
 
-#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:42
+#: ../data/ui/desktop-pref.glade.h:22
+#: ../data/ui/pref.glade.h:42
 msgid "Tile the image to fill the entire screen"
-msgstr ""
+msgstr "전체 화면에 채울 이미지를 바둑판 모양으로 배치"
 
 #: ../data/ui/desktop-pref.glade.h:23
 msgid "Wallpaper mode:"
-msgstr ""
+msgstr "바탕 화면 모드:"
 
 #: ../data/ui/desktop-pref.glade.h:24
 msgid "Wallpaper:"
-msgstr ""
+msgstr "바탕 화면:"
 
 #: ../data/ui/pref.glade.h:1
 msgid "<b>Auto-mount</b>"
-msgstr ""
+msgstr "<b>자동 마운트</b>"
 
 #: ../data/ui/pref.glade.h:2
 msgid "<b>Behavior</b>"
-msgstr ""
+msgstr "<b>동작</b>"
 
 #: ../data/ui/pref.glade.h:3
 msgid "<b>Default View</b>"
-msgstr ""
+msgstr "<b>기본 뷰</b>"
 
 #: ../data/ui/pref.glade.h:4
 msgid "<b>Icons</b>"
-msgstr ""
+msgstr "<b>아이콘</b>"
 
 #: ../data/ui/pref.glade.h:5
 msgid "<b>Programs</b>"
-msgstr ""
+msgstr "<b>프로그램</b>"
 
 #: ../data/ui/pref.glade.h:6
 msgid "<b>User Interface</b>"
-msgstr ""
+msgstr "<b>사용자 인터페이스</b>"
 
 #: ../data/ui/pref.glade.h:7
 msgid "Always show the tab bar"
-msgstr ""
+msgstr "항상 탭 바 보기"
 
 #: ../data/ui/pref.glade.h:8
 msgid "Archiver integration:"
-msgstr ""
+msgstr "압축 관리자 통합:"
 
 #: ../data/ui/pref.glade.h:9
 msgid "Bookmarks:"
-msgstr ""
+msgstr "북마크:"
 
 #: ../data/ui/pref.glade.h:11
 msgid "Compact View"
-msgstr ""
+msgstr "간단히 보기"
 
 #: ../data/ui/pref.glade.h:12
 msgid "Confirm before deleting files"
-msgstr ""
+msgstr "파일을 지우기 전에 확인"
 
 #: ../data/ui/pref.glade.h:13
 msgid "Detailed List View"
-msgstr ""
+msgstr "자세히 보기"
 
 #: ../data/ui/pref.glade.h:14
 msgid "Do not generate thumbnails for files exceeding this size:"
-msgstr ""
+msgstr "이 크기를 넘는 파일에 대해 섬네일을 만들지 않습니다:"
 
 #: ../data/ui/pref.glade.h:16
 #, no-c-format
@@ -188,203 +196,216 @@ msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
 "%s = the command line you want to execute with terminal or su."
 msgstr ""
+"예시: 터미널을 열기 위해 \"xterm -e %s\"을(를) 실행하거나 사용자를 전환하기 위해 \"gksu %s\"을(를) 실행합니다.\n"
+"%s = 터미널이나 su로 실행하려는 명령줄 입니다."
 
 #: ../data/ui/pref.glade.h:18
 msgid "Hide 'Close tab' buttons"
-msgstr ""
+msgstr "'탭 닫기' 단추 숨기기"
 
 #: ../data/ui/pref.glade.h:19
 msgid "Hide folder content border"
-msgstr ""
+msgstr "폴더 내용 테두리 숨기기"
 
 #: ../data/ui/pref.glade.h:20
 msgid "Hide side pane buttons"
-msgstr ""
+msgstr "측면 창 단추 숨기기"
 
 #: ../data/ui/pref.glade.h:21
 msgid "Icon View"
-msgstr ""
+msgstr "아이콘 뷰"
 
 #: ../data/ui/pref.glade.h:22
 msgid "Mount mountable volumes automatically on program startup"
-msgstr ""
+msgstr "프로그램을 시작할 때 마운트 할 수 있는 볼륨을 자동으로 마운트"
 
 #: ../data/ui/pref.glade.h:23
 msgid "Mount removable media automatically when they are inserted"
-msgstr ""
+msgstr "이동식 미디어를 삽입했을때 자동으로 마운트"
 
 #: ../data/ui/pref.glade.h:24
 msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
-msgstr ""
+msgstr "디스크에서 지우는 대신 \"휴지통\"으로 지워진 파일 이동"
 
 #: ../data/ui/pref.glade.h:25
 msgid "Only show thumbnails for local files"
-msgstr ""
+msgstr "로컬 파일에 대해서만 섬네일 표시"
 
 #: ../data/ui/pref.glade.h:26
 msgid "Open files with single click"
-msgstr ""
+msgstr "한 번 눌러서 파일 열기"
 
 #: ../data/ui/pref.glade.h:27
 msgid "Opened in Current Tab"
-msgstr ""
+msgstr "열려 있는 현재 탭"
 
 #: ../data/ui/pref.glade.h:28
 msgid "Opened in New Tab"
-msgstr ""
+msgstr "열려 있는 새 탭"
 
 #: ../data/ui/pref.glade.h:29
 msgid "Opened in New Window"
-msgstr ""
+msgstr "열려 있는 새 창"
 
 #: ../data/ui/pref.glade.h:30
 msgid "Preferences"
-msgstr ""
+msgstr "기본 설정"
 
 #: ../data/ui/pref.glade.h:31
 msgid "Show available options for removable media when they are inserted"
-msgstr ""
+msgstr "이동식 미디어를 삽입했을때 사용할 수 있는 옵션 표시"
 
 #: ../data/ui/pref.glade.h:32
 msgid "Show thumbnails of files"
-msgstr ""
+msgstr "파일의 섬네일 표시"
 
 #: ../data/ui/pref.glade.h:33
 msgid "Size of big icons:"
-msgstr ""
+msgstr "큰 아이콘의 크기:"
 
 #: ../data/ui/pref.glade.h:34
 msgid "Size of side pane icons:"
-msgstr ""
+msgstr "측면 창 아이콘의 크기:"
 
 #: ../data/ui/pref.glade.h:35
 msgid "Size of small icons:"
-msgstr ""
+msgstr "작은 아이콘의 크기:"
 
 #: ../data/ui/pref.glade.h:36
 msgid "Size of thumbnails:"
-msgstr ""
+msgstr "섬네일의 크기:"
 
 #: ../data/ui/pref.glade.h:39
 msgid "Switch user command:"
-msgstr ""
+msgstr "사용자 전환 명령:"
 
 #: ../data/ui/pref.glade.h:40
 msgid "Terminal emulator:"
-msgstr ""
+msgstr "터미널 에뮬레이터:"
 
 #: ../data/ui/pref.glade.h:41
 msgid "Thumbnail View"
-msgstr ""
+msgstr "섬네일 뷰"
 
 #: ../data/ui/pref.glade.h:43
 msgid "Use SI decimal prefixes instead of IEC binary prefixes"
-msgstr ""
+msgstr "IEC 이진 접두사 대신 SI 십진 접두사를 사용"
 
 #: ../data/ui/pref.glade.h:44
 msgid "View Mode:"
-msgstr ""
+msgstr "모드 보기:"
 
 #: ../data/ui/pref.glade.h:45
 msgid "_Advanced"
-msgstr ""
+msgstr "고급(_A)"
 
 #: ../data/ui/pref.glade.h:46
 msgid "_Display"
-msgstr ""
+msgstr "표시(_D)"
 
 #: ../data/ui/pref.glade.h:47
 msgid "_General"
-msgstr ""
+msgstr "일반(_G)"
 
 #: ../data/ui/pref.glade.h:48
 msgid "_Volume Management"
-msgstr ""
+msgstr "볼륨 관리자(_V)"
 
 #: ../data/ui/autorun.glade.h:1
 msgid "<b>Removable medium is inserted</b>"
-msgstr ""
+msgstr "<b>이동식 미디어를 삽입했습니다</b>"
 
 #: ../data/ui/autorun.glade.h:2
 msgid "Detecting..."
-msgstr ""
+msgstr "감지중..."
 
 #: ../data/ui/autorun.glade.h:3
 msgid "Please select the action you want to perform:"
-msgstr ""
+msgstr "수행할 동작을 선택하여 주십시오:"
 
 #: ../data/ui/autorun.glade.h:4
 msgid "Removable medium is inserted"
-msgstr ""
+msgstr "이동식 미디어를 삽입했습니다"
 
 #: ../data/ui/autorun.glade.h:5
 msgid "Type of medium:"
-msgstr ""
+msgstr "미디어 유형:"
 
 #: ../src/volume-manager.c:150
 msgid "Removable Disk"
-msgstr ""
+msgstr "이동식 디스크"
 
 #: ../src/volume-manager.c:209
 msgid "Open in File Manager"
-msgstr ""
+msgstr "파일 관리자에서 열기"
 
 #: ../src/desktop-ui.c:53
 msgid "_Invert Selection"
-msgstr ""
+msgstr "선택 반전(_I)"
 
-#: ../src/desktop-ui.c:54 ../src/main-win-ui.c:163
+#: ../src/desktop-ui.c:54
+#: ../src/main-win-ui.c:163
 msgid "_Sort Files"
 msgstr "아이템 정렬(_S)"
 
 #. for popup menu
-#: ../src/desktop-ui.c:55 ../src/main-win-ui.c:189
+#: ../src/desktop-ui.c:55
+#: ../src/main-win-ui.c:189
 msgid "Create _New..."
-msgstr ""
+msgstr "새로 만들기(_N)..."
 
-#: ../src/desktop-ui.c:56 ../src/main-win-ui.c:190
+#: ../src/desktop-ui.c:56
+#: ../src/main-win-ui.c:190
 msgid "Folder"
 msgstr "폴더"
 
-#: ../src/desktop-ui.c:57 ../src/main-win-ui.c:191
+#: ../src/desktop-ui.c:57
+#: ../src/main-win-ui.c:191
 msgid "Blank File"
 msgstr "빈 파일"
 
-#: ../src/desktop-ui.c:69 ../src/main-win-ui.c:217
+#: ../src/desktop-ui.c:69
+#: ../src/main-win-ui.c:217
 msgid "By _Name"
-msgstr "이름으로 정렬(_N)"
+msgstr "이름순 정렬(_N)"
 
-#: ../src/desktop-ui.c:70 ../src/main-win-ui.c:218
+#: ../src/desktop-ui.c:70
+#: ../src/main-win-ui.c:218
 msgid "By _Modification Time"
-msgstr "수정일로 정렬(_M)"
+msgstr "수정일순 정렬(_M)"
 
-#: ../src/desktop-ui.c:71 ../src/main-win-ui.c:219
+#: ../src/desktop-ui.c:71
+#: ../src/main-win-ui.c:219
 msgid "By _Size"
-msgstr "크기로 정렬(_S)"
+msgstr "크기순 정렬(_S)"
 
-#: ../src/desktop-ui.c:72 ../src/main-win-ui.c:220
+#: ../src/desktop-ui.c:72
+#: ../src/main-win-ui.c:220
 msgid "By File _Type"
-msgstr "형식으로 정렬(_T)"
+msgstr "형식순 정렬(_T)"
 
-#: ../src/desktop-ui.c:88 ../src/main-win-ui.c:243
+#: ../src/desktop-ui.c:88
+#: ../src/main-win-ui.c:243
 msgid "Open in New Tab"
-msgstr ""
+msgstr "새 탭 열기"
 
-#: ../src/desktop-ui.c:89 ../src/main-win-ui.c:244
+#: ../src/desktop-ui.c:89
+#: ../src/main-win-ui.c:244
 msgid "Open in New Window"
-msgstr ""
+msgstr "새 창 열기"
 
-#: ../src/desktop-ui.c:91 ../src/main-win-ui.c:246
+#: ../src/desktop-ui.c:91
+#: ../src/main-win-ui.c:246
 msgid "Open in _Terminal"
-msgstr "이 위치에서 터미널 열기(_T)"
+msgstr "터미널 열기(_T)"
 
 #: ../src/desktop-ui.c:107
 msgid "Stick to Current Position"
-msgstr ""
+msgstr "현재 위치에 고정"
 
 #: ../src/desktop-ui.c:112
 msgid "Snap to Grid"
-msgstr ""
+msgstr "격자에 맞추기"
 
 #: ../src/main-win-ui.c:143
 msgid "_File"
@@ -416,19 +437,19 @@ msgstr "이름 바꾸기"
 
 #: ../src/main-win-ui.c:154
 msgid "Create Symlink"
-msgstr ""
+msgstr "심볼릭 링크 만들기"
 
 #: ../src/main-win-ui.c:155
 msgid "Move To..."
-msgstr ""
+msgstr "이동하기..."
 
 #: ../src/main-win-ui.c:156
 msgid "Copy To..."
-msgstr ""
+msgstr "복사하기..."
 
 #: ../src/main-win-ui.c:158
 msgid "Invert Selection"
-msgstr ""
+msgstr "선택 반전"
 
 #: ../src/main-win-ui.c:160
 msgid "_View"
@@ -436,15 +457,15 @@ msgstr "보기(_V)"
 
 #: ../src/main-win-ui.c:161
 msgid "Reload Folder"
-msgstr ""
+msgstr "폴더 다시 불러오기"
 
 #: ../src/main-win-ui.c:161
 msgid "Reload current folder"
-msgstr ""
+msgstr "현재 폴더 다시 불러오기"
 
 #: ../src/main-win-ui.c:162
 msgid "Side Pane"
-msgstr ""
+msgstr "측면 창"
 
 #: ../src/main-win-ui.c:164
 msgid "_Help"
@@ -452,39 +473,39 @@ msgstr "도움말(_H)"
 
 #: ../src/main-win-ui.c:166
 msgid "_Go"
-msgstr ""
+msgstr "이동(_G)"
 
 #: ../src/main-win-ui.c:167
 msgid "Previous Folder"
-msgstr ""
+msgstr "이전 폴더"
 
 #: ../src/main-win-ui.c:168
 msgid "Next Folder"
-msgstr ""
+msgstr "다음 폴더"
 
 #: ../src/main-win-ui.c:169
 msgid "Parent Folder"
-msgstr ""
+msgstr "상위 폴더"
 
 #: ../src/main-win-ui.c:169
 msgid "Go to parent Folder"
-msgstr ""
+msgstr "상위 폴더로 이동"
 
 #: ../src/main-win-ui.c:170
 msgid "Home Folder"
-msgstr "홈"
+msgstr "홈 폴더"
 
 #: ../src/main-win-ui.c:171
 msgid "Desktop"
-msgstr ""
+msgstr "데스크톱"
 
 #: ../src/main-win-ui.c:171
 msgid "Desktop Folder"
-msgstr ""
+msgstr "데스크톱 폴더"
 
 #: ../src/main-win-ui.c:172
 msgid "My Computer"
-msgstr ""
+msgstr "내 컴퓨터"
 
 #: ../src/main-win-ui.c:173
 msgid "Trash Can"
@@ -492,43 +513,43 @@ msgstr "휴지통"
 
 #: ../src/main-win-ui.c:174
 msgid "Network Drives"
-msgstr ""
+msgstr "네트워크 드라이브"
 
 #: ../src/main-win-ui.c:175
 msgid "Applications"
-msgstr ""
+msgstr "프로그램"
 
 #: ../src/main-win-ui.c:175
 msgid "Installed Applications"
-msgstr ""
+msgstr "설치한 프로그램"
 
 #: ../src/main-win-ui.c:177
 msgid "_Bookmarks"
-msgstr ""
+msgstr "북마크(_B)"
 
 #: ../src/main-win-ui.c:178
 msgid "Add To Bookmarks"
-msgstr ""
+msgstr "북마크에 추가"
 
 #: ../src/main-win-ui.c:179
 msgid "_Tools"
-msgstr ""
+msgstr "도구(_T)"
 
 #: ../src/main-win-ui.c:180
 msgid "Open Current Folder in _Terminal"
-msgstr ""
+msgstr "현재 폴더를 터미널에서 열기(_T)"
 
 #: ../src/main-win-ui.c:181
 msgid "Open Current Folder as _Root"
-msgstr ""
+msgstr "현재 폴더를 루트 계정으로 열기(_R)"
 
 #: ../src/main-win-ui.c:197
 msgid "Show _Hidden"
-msgstr ""
+msgstr "숨김 표시(_H)"
 
 #: ../src/main-win-ui.c:198
 msgid "Show Side Pane"
-msgstr ""
+msgstr "측면 창 표시"
 
 #: ../src/main-win-ui.c:203
 msgid "_Icon View"
@@ -540,7 +561,7 @@ msgstr "간단히 보기(_C)"
 
 #: ../src/main-win-ui.c:205
 msgid "_Thumbnail View"
-msgstr ""
+msgstr "섬네일 뷰(_T)"
 
 #: ../src/main-win-ui.c:206
 msgid "Detailed _List View"
@@ -548,23 +569,23 @@ msgstr "자세히 보기(_L)"
 
 #: ../src/main-win-ui.c:225
 msgid "Places"
-msgstr ""
+msgstr "위치"
 
 #: ../src/main-win-ui.c:226
 msgid "Directory Tree"
-msgstr ""
+msgstr "디렉터리 트리"
 
 #: ../src/main-win-ui.c:227
 msgid "Remote"
-msgstr ""
+msgstr "원격"
 
 #: ../src/main-win.c:471
 msgid "You are in super user mode"
-msgstr ""
+msgstr "슈퍼유저 상태입니다."
 
 #: ../src/main-win.c:590
 msgid "Switch user command is not set."
-msgstr ""
+msgstr "사용자 전환 명령을 설정하지 않았습니다."
 
 #: ../src/main-win.c:1006
 #, c-format
@@ -573,115 +594,113 @@ msgid ""
 "'%s'\n"
 "Enter a name for the new bookmark item:"
 msgstr ""
+"다음 폴더를 북마크에 추가합니다:\n"
+"%s새 북마크 항목의 이름을 입력하십시오:"
 
 #: ../src/main-win.c:1010
 msgid "Add to Bookmarks"
-msgstr ""
+msgstr "북마크 추가"
 
 #. options only acceptable by first pcmanfm instance. These options are not passed through IPC
 #: ../src/pcmanfm.c:72
 msgid "Name of configuration profile"
-msgstr ""
+msgstr "설정 프로파일 이름"
 
 #: ../src/pcmanfm.c:73
 msgid "Run PCManFM as a daemon"
-msgstr ""
+msgstr "PCManFM을 데몬으로 실행"
 
 #: ../src/pcmanfm.c:74
 msgid "No function. Just to be compatible with nautilus"
-msgstr ""
+msgstr "구현되지 않았습니다. 노틸러스와 호환될 것입니다"
 
 #. options that are acceptable for every instance of pcmanfm and will be passed through IPC.
 #: ../src/pcmanfm.c:77
 msgid "Launch desktop manager"
-msgstr ""
+msgstr "데스크톱 관리자 실행"
 
 #: ../src/pcmanfm.c:78
 msgid "Turn off desktop manager if it's running"
-msgstr ""
+msgstr "실행중일 경우 데스크톱 관리자 끝내기"
 
 #: ../src/pcmanfm.c:79
 msgid "Open desktop preference dialog"
-msgstr ""
+msgstr "데스크톱 기본 설정 대화상자 열기"
 
 #: ../src/pcmanfm.c:80
 msgid "Set desktop wallpaper"
-msgstr ""
+msgstr "데스크톱 바탕 화면 설정"
 
 #: ../src/pcmanfm.c:80
 msgid "<image file>"
-msgstr ""
+msgstr "<그림 파일>"
 
 #: ../src/pcmanfm.c:81
 msgid "Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"
-msgstr ""
+msgstr "데스크톱 바탕 화면의 모드를 설정합니다. <모드>=(색|늘임|맞추기|가운데|바둑판)"
 
 #: ../src/pcmanfm.c:81
 msgid "<mode>"
-msgstr ""
+msgstr "<모드>"
 
 #: ../src/pcmanfm.c:82
-msgid ""
-"Open preference dialog. 'n' is number of the page you want to show (1, 2, "
-"3...)."
-msgstr ""
+msgid "Open preference dialog. 'n' is number of the page you want to show (1, 2, 3...)."
+msgstr "기본 설정 대화상자를 엽니다. 'n'은 보고 싶은 페이지(1, 2, 3...)의 수 입니다."
 
 #. { "new-win", '\0', 'n', G_OPTION_ARG_NONE, &new_win, N_("Open new window"), NULL },
 #. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
 #: ../src/pcmanfm.c:85
 msgid "[FILE1, FILE2,...]"
-msgstr ""
+msgstr "[파일1, 파일2,...]"
 
 #: ../src/pcmanfm.c:455
 msgid "Terminal emulator is not set."
-msgstr ""
+msgstr "터미널 에뮬레이터를 설정하지 않았습니다."
 
 #: ../src/pcmanfm.c:507
 msgid "Enter a name for the newly created folder:"
-msgstr ""
+msgstr "새로 만들 폴더의 이름을 입력하십시오:"
 
 #: ../src/pcmanfm.c:509
 msgid "Enter a name for the newly created file:"
-msgstr ""
+msgstr "새로 만들 파일의 이름을 입력하십시오:"
 
 #: ../src/pcmanfm.c:510
 msgid "Create New..."
-msgstr ""
+msgstr "새로 만들기..."
 
 #: ../src/pcmanfm.c:510
 msgid "New"
-msgstr ""
+msgstr "새로 만들기"
 
 #: ../src/tab-page.c:174
 #, c-format
 msgid "%d item selected"
 msgid_plural "%d items selected"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d개 항목 선택함"
 
 #: ../src/tab-page.c:196
 #, c-format
 msgid "Free space: %s (Total: %s)"
-msgstr ""
+msgstr "남은 공간: %s (전체: %s)"
 
 #: ../src/tab-page.c:215
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d개 항목"
 
 #: ../src/tab-page.c:216
 #, c-format
 msgid " (%d hidden)"
 msgid_plural " (%d hidden)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "(%d개 숨김)	"
 
 #: ../data/pcmanfm.desktop.in.h:1
 msgid "Browse the file system and manage the files"
-msgstr ""
+msgstr "파일 시스템을 탐색하고 파일을 관리합니다"
 
 #: ../data/pcmanfm.desktop.in.h:2
 msgid "File Manager"
-msgstr ""
+msgstr "파일 관리자"
+

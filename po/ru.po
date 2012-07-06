@@ -20,9 +20,8 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-Country: Russia\n"
 
-#: ../data/ui/about.glade.in.h:1
-msgid "Copyright (C) 2009 - 2010"
-msgstr "Copyright (C) 2009-2010"
+#~ msgid "Copyright (C) 2009 - 2010"
+#~ msgstr "Copyright (C) 2009-2010"
 
 #: ../data/ui/about.glade.in.h:2
 msgid ""
@@ -298,17 +297,14 @@ msgstr "Режим показа:"
 msgid "_Advanced"
 msgstr "_Расширенные"
 
-#: ../data/ui/pref.glade.h:46
-msgid "_Display"
-msgstr "_Отображение"
+#~ msgid "_Display"
+#~ msgstr "_Отображение"
 
-#: ../data/ui/pref.glade.h:47
-msgid "_General"
-msgstr "_Основные"
+#~ msgid "_General"
+#~ msgstr "_Основные"
 
-#: ../data/ui/pref.glade.h:48
-msgid "_Volume Management"
-msgstr "_Управление томами"
+#~ msgid "_Volume Management"
+#~ msgstr "_Управление томами"
 
 #: ../data/ui/autorun.glade.h:1
 msgid "<b>Removable medium is inserted</b>"
@@ -724,3 +720,44 @@ msgstr "Файловый менеджер"
 
 #~ msgid "Max size of files displayed as thumbnails:"
 #~ msgstr "Максимальный размер файлов, отображаемых, как эскизы"
+
+#: ../data/ui/desktop-pref.glade.h:23
+msgid "Use the same wallpaper on all desktops"
+msgstr "Использовать одинаковые обои на всех рабочих столах"
+
+#: ../data/ui/about.glade.in.h:1
+msgid "Copyright (C) 2009 - 2012"
+msgstr "Copyright (C) 2009 - 2012"
+
+#: ../data/pcmanfm.desktop.in.h:3
+msgid "File Manager PCManFM"
+msgstr "Файловый менеджер PCManFM"
+
+#: ../src/desktop-ui.c:59 ../src/main-win-ui.c:193
+msgid "Shortcut"
+msgstr "Ярлык"
+
+#: ../data/ui/pref.glade.h:20
+msgid "General"
+msgstr "Основные"
+
+#. FIXME: it's dirty and will lock everything
+#: ../src/pcmanfm.c:628
+msgid "Failed to start lxshortcut"
+msgstr "Не удалось запустить lxshortcut"
+
+#: ../data/ui/pref.glade.h:48
+msgid "Volume Management"
+msgstr "Управление томами"
+
+#: ../src/pcmanfm.c:623
+msgid "Error, lxshortcut not installed"
+msgstr "Ошибка: программа lxshortcut не установлена"
+
+#: ../data/pcmanfm-desktop-pref.desktop.in.h:1
+msgid "Change desktop wallpapers and behavior of desktop manager"
+msgstr "Смена обоев рабочего стола и поведения менеджера рабочего стола"
+
+#: ../data/ui/pref.glade.h:15
+msgid "Display"
+msgstr "Отображение"
