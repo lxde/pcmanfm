@@ -1580,7 +1580,10 @@ static void layout_items(FmDesktop* self)
     bottom = self->working_area.y + self->working_area.height - self->ymargin - self->cell_h;
 
     if(!gtk_tree_model_get_iter_first(model, &it))
+    {
+        gtk_widget_queue_draw(GTK_WIDGET(self));
         return;
+    }
     if(direction != GTK_TEXT_DIR_RTL) /* LTR or NONE */
     {
         x = self->working_area.x + self->xmargin;
@@ -2739,7 +2742,8 @@ static gboolean on_drag_drop (GtkWidget *dest_widget,
     {
         target = fm_dnd_dest_find_target(desktop->dnd_dest, drag_context);
         /* try FmDndDest */
-        ret = fm_dnd_dest_drag_drop(desktop->dnd_dest, drag_context, target, x, y, time);
+        if(target != GDK_NONE)
+            ret = fm_dnd_dest_drag_drop(desktop->dnd_dest, drag_context, target, x, y, time);
         if(!ret)
             gtk_drag_finish(drag_context, FALSE, FALSE, time);
     }
