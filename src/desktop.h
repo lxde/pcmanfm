@@ -78,6 +78,8 @@ struct _FmDesktop
     guint single_click_timeout_handler;
     FmFolderModel* model;
     FmBackgroundCache* wallpapers;
+    GtkMenu* popup;
+    uint cur_desktop;
 };
 
 struct _FmDesktopClass
@@ -91,6 +93,8 @@ FmPathList* fm_desktop_dup_selected_paths(FmDesktop* desktop);
 
 GType       fm_desktop_get_type     (void);
 FmDesktop*  fm_desktop_new          (void);
+
+FmDesktop*  fm_desktop_get          (guint screen);
 
 void fm_desktop_manager_init();
 void fm_desktop_manager_finalize();

@@ -290,13 +290,15 @@ gboolean pcmanfm_run()
         }
         else if(show_pref > 0)
         {
-            fm_edit_preference(NULL, show_pref - 1);
+            /* FIXME: pass screen number from client */
+            fm_edit_preference(GTK_WINDOW(fm_desktop_get(0)), show_pref - 1);
             show_pref = 0;
             return TRUE;
         }
         else if(desktop_pref)
         {
-            fm_desktop_preference();
+            /* FIXME: pass screen number from client */
+            fm_desktop_preference(NULL, GTK_WINDOW(fm_desktop_get(0)));
             desktop_pref = FALSE;
             return TRUE;
         }
@@ -452,6 +454,34 @@ void pcmanfm_unref()
         gtk_main_quit();
 }
 
+static void move_window_to_desktop(FmMainWin* win, FmDesktop* desktop)
+{
+    GdkScreen* screen = gtk_widget_get_screen(GTK_WIDGET(desktop));
+    Atom atom;
+    char* atom_name = "_NET_WM_DESKTOP";
+    XClientMessageEvent xev;
+
+    gtk_window_set_screen(GTK_WINDOW(win), screen);
+    if(!XInternAtoms(GDK_DISPLAY(), &atom_name, 1, False, &atom))
+    {
+        /* g_debug("cannot get Atom for _NET_WM_DESKTOP"); */
+        return;
+    }
+    xev.type = ClientMessage;
+    xev.window = GDK_WINDOW_XID(GTK_WIDGET(win)->window);
+    xev.message_type = atom;
+    xev.format = 32;
+    xev.data.l[0] = desktop->cur_desktop;
+    xev.data.l[1] = 0;
+    xev.data.l[2] = 0;
+    xev.data.l[3] = 0;
+    xev.data.l[4] = 0;
+    /* g_debug("moving window to current desktop"); */
+    XSendEvent(GDK_DISPLAY(), GDK_ROOT_WINDOW(), False,
+               (SubstructureNotifyMask | SubstructureRedirectMask),
+               (XEvent *) &xev);
+}
+
 gboolean pcmanfm_open_folder(GAppLaunchContext* ctx, GList* folder_infos, gpointer user_data, GError** err)
 {
     GList* l = folder_infos;
@@ -460,6 +490,8 @@ gboolean pcmanfm_open_folder(GAppLaunchContext* ctx, GList* folder_infos, gpoint
         FmFileInfo* fi = (FmFileInfo*)l->data;
         fm_main_win_open_in_last_active(fm_file_info_get_path(fi));
     }
+    if(user_data && FM_IS_DESKTOP(user_data))
+        move_window_to_desktop(fm_main_win_get_last_active(), user_data);
     return TRUE;
 }
 

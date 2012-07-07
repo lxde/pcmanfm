@@ -1391,7 +1391,7 @@ static void on_create_new(GtkAction* action, FmMainWin* win)
     pcmanfm_create_new(GTK_WINDOW(win), fm_tab_page_get_cwd(win->current_page), name);
 }
 
-FmMainWin* fm_main_win_get_last_active()
+FmMainWin* fm_main_win_get_last_active(void)
 {
     return all_wins ? (FmMainWin*)all_wins->data : NULL;
 }

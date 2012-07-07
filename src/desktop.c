@@ -122,7 +122,7 @@ static void on_screen_size_changed(GdkScreen* screen, FmDesktop* desktop);
 static void on_paste(GtkAction* act, gpointer user_data);
 static void on_select_all(GtkAction* act, gpointer user_data);
 static void on_invert_select(GtkAction* act, gpointer user_data);
-static void on_create_new(GtkAction* act, gpointer user_data);
+static void on_create_new(GtkAction* act, FmDesktop* desktop);
 static void on_sort_type(GtkAction* act, GtkRadioAction *cur, gpointer user_data);
 static void on_sort_by(GtkAction* act, GtkRadioAction *cur, gpointer user_data);
 
@@ -140,7 +140,7 @@ G_DEFINE_TYPE(FmDesktop, fm_desktop, GTK_TYPE_WINDOW);
 
 static GtkWindowGroup* win_group = NULL;
 static FmDesktop **desktops = NULL;
-static gint n_screens = 0;
+static guint n_screens = 0;
 static guint wallpaper_changed = 0;
 static guint desktop_text_changed = 0;
 static guint desktop_font_changed = 0;
@@ -171,8 +171,6 @@ GtkTargetEntry dnd_targets[] =
     {"application/x-desktop-item", GTK_TARGET_SAME_WIDGET, FM_DND_DEST_DESKTOP_ITEM}
 };
 
-static GtkMenu* desktop_popup = NULL;
-
 /* insert GtkUIManager XML definitions */
 #include "desktop-ui.c"
 
@@ -189,7 +187,7 @@ static void on_row_deleting(FmFolderModel* model, GtkTreePath* tp,
 {
     GList *l;
     FmDesktop* desktop;
-    gint i;
+    guint i;
 
     desktop_item_free(data); /* desktop items are global objects */
     for(i = 0; i < n_screens; i++)
@@ -327,6 +325,8 @@ static void fm_desktop_destroy(GtkObject *object)
             g_free(bg->filename);
             g_free(bg);
         }
+
+        g_object_unref(self->popup);
     }
 
 #if GTK_CHECK_VERSION(3, 0, 0)
@@ -342,6 +342,8 @@ static void fm_desktop_init(FmDesktop *self)
     GdkWindow* root;
     //PangoContext* pc;
     GtkTargetList* targets;
+    GtkUIManager* ui;
+    GtkActionGroup* act_grp;
 
     gtk_window_set_default_size((GtkWindow*)self, gdk_screen_get_width(screen), gdk_screen_get_height(screen));
     gtk_window_move(GTK_WINDOW(self), 0, 0);
@@ -394,6 +396,34 @@ static void fm_desktop_init(FmDesktop *self)
 
     connect_model(self);
     load_items(self);
+
+    /* popup menu */
+    ui = gtk_ui_manager_new();
+    act_grp = gtk_action_group_new("Desktop");
+    gtk_action_group_set_translation_domain(act_grp, NULL);
+    gtk_action_group_add_actions(act_grp, desktop_actions, G_N_ELEMENTS(desktop_actions), self);
+    gtk_action_group_add_radio_actions(act_grp, desktop_sort_type_actions,
+                                       G_N_ELEMENTS(desktop_sort_type_actions),
+                                       GTK_SORT_ASCENDING,
+                                       G_CALLBACK(on_sort_type), self);
+    gtk_action_group_add_radio_actions(act_grp, desktop_sort_by_actions,
+                                       G_N_ELEMENTS(desktop_sort_by_actions), 0,
+                                       G_CALLBACK(on_sort_by), self);
+
+    gtk_ui_manager_insert_action_group(ui, act_grp, 0);
+    gtk_ui_manager_add_ui_from_string(ui, desktop_menu_xml, -1, NULL);
+
+    if(!acc_grp)
+        acc_grp = (GtkAccelGroup*)g_object_ref(gtk_ui_manager_get_accel_group(ui));
+
+    gtk_window_add_accel_group(GTK_WINDOW(self), acc_grp);
+
+    self->popup = GTK_MENU(g_object_ref_sink(gtk_ui_manager_get_widget(ui, "/popup")));
+
+    hand_cursor = gdk_cursor_new(GDK_HAND2);
+
+    g_object_unref(act_grp);
+    g_object_unref(ui);
 }
 
 
@@ -459,7 +489,7 @@ static void on_folder_start_loading(FmFolder* folder, gpointer user_data)
 
 static void on_folder_finish_loading(FmFolder* folder, gpointer user_data)
 {
-    int i;
+    guint i;
     /* FIXME: we need to free old positions first?? */
 
     /* the desktop folder is just loaded, apply desktop items and positions */
@@ -489,9 +519,7 @@ static FmJobErrorAction on_folder_error(FmFolder* folder, GError* err, FmJobErro
 void fm_desktop_manager_init()
 {
     GdkDisplay * gdpy;
-    gint i;
-    GtkUIManager* ui;
-    GtkActionGroup* act_grp;
+    guint i;
     const char* desktop_path;
 
     if(! win_group)
@@ -533,32 +561,6 @@ void fm_desktop_manager_init()
 
     icon_theme_changed = g_signal_connect(gtk_icon_theme_get_default(), "changed", G_CALLBACK(on_icon_theme_changed), NULL);
 
-    /* popup menu */
-    ui = gtk_ui_manager_new();
-    act_grp = gtk_action_group_new("Desktop");
-    gtk_action_group_set_translation_domain(act_grp, NULL);
-    gtk_action_group_add_actions(act_grp, desktop_actions, G_N_ELEMENTS(desktop_actions), NULL);
-    gtk_action_group_add_radio_actions(act_grp, desktop_sort_type_actions,
-                                       G_N_ELEMENTS(desktop_sort_type_actions),
-                                       GTK_SORT_ASCENDING,
-                                       G_CALLBACK(on_sort_type), NULL);
-    gtk_action_group_add_radio_actions(act_grp, desktop_sort_by_actions,
-                                       G_N_ELEMENTS(desktop_sort_by_actions), 0,
-                                       G_CALLBACK(on_sort_by), NULL);
-
-    gtk_ui_manager_insert_action_group(ui, act_grp, 0);
-    gtk_ui_manager_add_ui_from_string(ui, desktop_menu_xml, -1, NULL);
-
-    acc_grp = gtk_ui_manager_get_accel_group(ui);
-    for(i = 0; i < n_screens; i++)
-        gtk_window_add_accel_group(GTK_WINDOW(desktops[i]), acc_grp);
-
-    desktop_popup = GTK_MENU(g_object_ref(gtk_ui_manager_get_widget(ui, "/popup")));
-
-    hand_cursor = gdk_cursor_new(GDK_HAND2);
-
-    g_object_unref(act_grp);
-    g_object_unref(ui);
     pcmanfm_ref();
 }
 
@@ -606,7 +608,7 @@ static void save_item_pos(FmDesktop* desktop)
 
 void fm_desktop_manager_finalize()
 {
-    int i;
+    guint i;
     for(i = 0; i < n_screens; i++)
     {
         save_item_pos(desktops[i]);
@@ -637,10 +639,8 @@ void fm_desktop_manager_finalize()
 
     g_signal_handler_disconnect(gtk_icon_theme_get_default(), icon_theme_changed);
 
-    gtk_widget_destroy(GTK_WIDGET(desktop_popup));
-    desktop_popup = NULL;
-
-    g_object_unref(acc_grp);
+    if(acc_grp)
+        g_object_unref(acc_grp);
     acc_grp = NULL;
 
     if(hand_cursor)
@@ -666,7 +666,7 @@ static void activate_selected_items(FmDesktop* desktop)
         FmDesktopItem* item = (FmDesktopItem*)l->data;
         l->data = item->fi;
     }
-    fm_launch_files_simple(GTK_WINDOW(desktop), NULL, items, pcmanfm_open_folder, NULL);
+    fm_launch_files_simple(GTK_WINDOW(desktop), NULL, items, pcmanfm_open_folder, desktop);
     g_list_free(items);
 }
 
@@ -833,10 +833,10 @@ static gboolean on_button_press(GtkWidget* w, GdkEventButton* evt)
             {
                 if(! app_config->show_wm_menu)
                 {
-                    if(gtk_menu_get_attach_widget(desktop_popup))
-                        gtk_menu_detach(desktop_popup);
-                    gtk_menu_attach_to_widget(desktop_popup, w, NULL);
-                    gtk_menu_popup(desktop_popup, NULL, NULL, NULL, NULL, 3, evt->time);
+                    if(gtk_menu_get_attach_widget(self->popup))
+                        gtk_menu_detach(self->popup);
+                    gtk_menu_attach_to_widget(self->popup, w, NULL);
+                    gtk_menu_popup(self->popup, NULL, NULL, NULL, NULL, 3, evt->time);
                 }
             }
             else if(evt->button == 1)
@@ -858,7 +858,7 @@ static gboolean on_button_press(GtkWidget* w, GdkEventButton* evt)
     {
         if(clicked_item && evt->button == 1)   /* left double click */
         {
-            fm_launch_file_simple(GTK_WINDOW(w), NULL, clicked_item->fi, pcmanfm_open_folder, NULL);
+            fm_launch_file_simple(GTK_WINDOW(w), NULL, clicked_item->fi, pcmanfm_open_folder, w);
             goto out;
         }
     }
@@ -896,7 +896,7 @@ static gboolean on_button_release(GtkWidget* w, GdkEventButton* evt)
         if(clicked_item)
         {
             /* left single click */
-            fm_launch_file_simple(GTK_WINDOW(w), NULL, clicked_item->fi, pcmanfm_open_folder, NULL);
+            fm_launch_file_simple(GTK_WINDOW(w), NULL, clicked_item->fi, pcmanfm_open_folder, w);
             return TRUE;
         }
     }
@@ -1029,7 +1029,7 @@ static gboolean on_key_press(GtkWidget* w, GdkEventKey* evt)
             else
             {
                 if(! app_config->show_wm_menu)
-                    gtk_menu_popup(desktop_popup, NULL, NULL, NULL, NULL, 3, evt->time);
+                    gtk_menu_popup(desktop->popup, NULL, NULL, NULL, NULL, 3, evt->time);
             }
             return TRUE;
         }
@@ -1472,7 +1472,7 @@ static inline FmDesktopItem* desktop_item_new(FmFolderModel* model, GtkTreeIter*
 static void on_row_inserted(FmFolderModel* mod, GtkTreePath* tp, GtkTreeIter* it, gpointer unused)
 {
     FmDesktopItem* item = desktop_item_new(mod, it);
-    gint i;
+    guint i;
     fm_folder_model_set_item_userdata(mod, it, item);
     for(i = 0; i < n_screens; i++)
         if(desktops[i]->model == mod)
@@ -1481,7 +1481,7 @@ static void on_row_inserted(FmFolderModel* mod, GtkTreePath* tp, GtkTreeIter* it
 
 static void on_row_deleted(FmFolderModel* mod, GtkTreePath* tp, gpointer unused)
 {
-    gint i;
+    guint i;
     for(i = 0; i < n_screens; i++)
         if(desktops[i]->model == mod)
             queue_layout_items(desktops[i]);
@@ -1490,7 +1490,7 @@ static void on_row_deleted(FmFolderModel* mod, GtkTreePath* tp, gpointer unused)
 static void on_row_changed(FmFolderModel* model, GtkTreePath* tp, GtkTreeIter* it, gpointer unused)
 {
     FmDesktopItem* item = fm_folder_model_get_item_userdata(model, it);
-    gint i;
+    guint i;
 
     fm_file_info_unref(item->fi);
     gtk_tree_model_get(GTK_TREE_MODEL(model), it, COL_FILE_INFO, &item->fi, -1);
@@ -1504,7 +1504,7 @@ static void on_row_changed(FmFolderModel* model, GtkTreePath* tp, GtkTreeIter* i
 
 static void on_rows_reordered(FmFolderModel* model, GtkTreePath* parent_tp, GtkTreeIter* parent_it, gpointer arg3, gpointer unused)
 {
-    gint i;
+    guint i;
     for(i = 0; i < n_screens; i++)
         if(desktops[i]->model == model)
             queue_layout_items(desktops[i]);
@@ -1878,6 +1878,7 @@ static void update_background(FmDesktop* desktop, int is_it)
         if(!prop)
             return;
         cur_desktop = *(guint32*)prop;
+        desktop->cur_desktop = cur_desktop;
         XFree(prop);
         if(is_it >= 0) /* signal "changed::wallpaper" */
         {
@@ -2158,14 +2159,14 @@ static void on_dnd_src_data_get(FmDndSrc* ds, FmDesktop* desktop)
 
 static void on_wallpaper_changed(FmConfig* cfg, gpointer user_data)
 {
-    int i;
+    guint i;
     for(i=0; i < n_screens; ++i)
         update_background(desktops[i], i);
 }
 
 static void on_desktop_text_changed(FmConfig* cfg, gpointer user_data)
 {
-    int i;
+    guint i;
     /* FIXME: we only need to redraw text lables */
     for(i=0; i < n_screens; ++i)
         gtk_widget_queue_draw(GTK_WIDGET(desktops[i]));
@@ -2182,7 +2183,7 @@ static void on_desktop_font_changed(FmConfig* cfg, gpointer user_data)
         font_desc = pango_font_description_from_string(app_config->desktop_font);
         if(font_desc)
         {
-            int i;
+            guint i;
             for(i=0; i < n_screens; ++i)
             {
                 FmDesktop* desktop = desktops[i];
@@ -2201,7 +2202,7 @@ static void on_desktop_font_changed(FmConfig* cfg, gpointer user_data)
 
 static void reload_icons()
 {
-    int i;
+    guint i;
     for(i=0; i < n_screens; ++i)
         gtk_widget_queue_resize(GTK_WIDGET(desktops[i]));
 }
@@ -2225,7 +2226,7 @@ static void on_paste(GtkAction* act, gpointer user_data)
 
 static void on_select_all(GtkAction* act, gpointer user_data)
 {
-    int i;
+    guint i;
     for(i=0; i < n_screens; ++i)
     {
         FmDesktop* desktop = desktops[i];
@@ -2235,7 +2236,7 @@ static void on_select_all(GtkAction* act, gpointer user_data)
 
 static void on_invert_select(GtkAction* act, gpointer user_data)
 {
-    int i;
+    guint i;
     for(i=0; i < n_screens; ++i)
     {
         FmDesktop* desktop = desktops[i];
@@ -2251,7 +2252,7 @@ static void on_invert_select(GtkAction* act, gpointer user_data)
     }
 }
 
-static void on_create_new(GtkAction* act, gpointer user_data)
+static void on_create_new(GtkAction* act, FmDesktop* desktop)
 {
     const char* name = gtk_action_get_name(act);
     if(strcmp(name, "NewFolder") == 0)
@@ -2260,7 +2261,7 @@ static void on_create_new(GtkAction* act, gpointer user_data)
         name = TEMPL_NAME_BLANK;
     else if( strcmp(name, "NewShortcut") == 0)
         name = TEMPL_NAME_SHORTCUT;
-    pcmanfm_create_new(NULL, fm_path_get_desktop(), name);
+    pcmanfm_create_new(GTK_WINDOW(desktop), fm_path_get_desktop(), name);
 }
 
 static void on_sort_type(GtkAction* act, GtkRadioAction *cur, gpointer user_data)
@@ -2784,6 +2785,11 @@ static void on_drag_data_get(GtkWidget *src_widget, GdkDragContext *drag_context
         g_signal_stop_emission_by_name(src_widget, "drag-data-get");
 }
 
+
+FmDesktop* fm_desktop_get(guint screen)
+{
+    return (screen < n_screens) ? desktops[screen] : NULL;
+}
 
 static void fm_desktop_class_init(FmDesktopClass *klass)
 {

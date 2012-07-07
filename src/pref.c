@@ -346,6 +346,8 @@ void fm_edit_preference( GtkWindow* parent, int page )
 
         pcmanfm_ref();
         g_signal_connect(pref_dlg, "destroy", G_CALLBACK(pcmanfm_unref), NULL);
+        if(parent)
+            gtk_window_set_transient_for(pref_dlg, parent);
     }
     gtk_notebook_set_current_page(notebook, page);
     gtk_window_present(pref_dlg);
@@ -392,7 +394,7 @@ static void on_desktop_font_set(GtkFontButton* btn, gpointer user_data)
     }
 }
 
-void fm_desktop_preference()
+void fm_desktop_preference(GtkAction* act, GtkWindow* parent)
 {
     if(!desktop_pref_dlg)
     {
@@ -430,6 +432,8 @@ void fm_desktop_preference()
 
         pcmanfm_ref();
         g_signal_connect(desktop_pref_dlg, "destroy", G_CALLBACK(pcmanfm_unref), NULL);
+        if(parent)
+            gtk_window_set_transient_for(desktop_pref_dlg, parent);
     }
     gtk_window_present(desktop_pref_dlg);
 }
