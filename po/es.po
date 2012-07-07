@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm 0.9.9\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-07-07 00:40+0200\n"
-"PO-Revision-Date: 2011-06-14 03:02+0200\n"
+"PO-Revision-Date: 2012-07-07 13:53+0200\n"
 "Last-Translator: Hugo <sysadmin@cips.cu>\n"
 "Language-Team: Spanish (Castilian) <translation@mailinglist.lxde.org>\n"
 "Language: es\n"
@@ -20,9 +20,8 @@ msgstr ""
 "X-Generator: Pootle 2.0.5\n"
 
 #: ../data/ui/about.glade.in.h:1
-#, fuzzy
 msgid "Copyright (C) 2009 - 2012"
-msgstr "Copyright (C) 2009 - 2010"
+msgstr "Copyright (C) 2009 - 2012"
 
 #: ../data/ui/about.glade.in.h:2
 msgid ""
@@ -38,7 +37,7 @@ msgstr ""
 #: ../data/ui/about.glade.in.h:6
 msgid "translator-credits"
 msgstr ""
-"Hugo Florentino <sysadmin@cips.cu>, 2010-2011\n"
+"Hugo Florentino <sysadmin@cips.cu>, 2010-2012\n"
 "LinoSP <ljsp1@hotmail.com>, 2010"
 
 #: ../data/ui/desktop-pref.glade.h:1 ../src/desktop-ui.c:60
@@ -60,7 +59,7 @@ msgstr "Por favor, seleccione un archivo de imagen"
 
 #: ../data/ui/desktop-pref.glade.h:5
 msgid "Use the same wallpaper on all desktops"
-msgstr ""
+msgstr "Utilizar el mismo papel tapiz en todos los escritorios"
 
 #: ../data/ui/desktop-pref.glade.h:6
 msgid "Background color:"
@@ -189,9 +188,8 @@ msgid "View Mode:"
 msgstr "Modo de visualización:"
 
 #: ../data/ui/pref.glade.h:12
-#, fuzzy
 msgid "General"
-msgstr "_General"
+msgstr "General"
 
 #: ../data/ui/pref.glade.h:13
 msgid "<b>Icons</b>"
@@ -226,9 +224,8 @@ msgid "Do not generate thumbnails for files exceeding this size:"
 msgstr "No generar miniaturas para los archivos que excedan este tamaño:"
 
 #: ../data/ui/pref.glade.h:21
-#, fuzzy
 msgid "Display"
-msgstr "_Mostrar"
+msgstr "Mostrar"
 
 #: ../data/ui/pref.glade.h:22
 msgid "<b>Auto-mount</b>"
@@ -248,9 +245,8 @@ msgstr ""
 "Mostrar opciones disponibles para los medios extraíbles cuando se inserten"
 
 #: ../data/ui/pref.glade.h:26
-#, fuzzy
 msgid "Volume Management"
-msgstr "_Gestión de volúmenes"
+msgstr "Gestión de volúmenes"
 
 #: ../data/ui/pref.glade.h:27
 msgid "<b>Programs</b>"
@@ -369,7 +365,7 @@ msgstr "Archivo en blanco"
 
 #: ../src/desktop-ui.c:59 ../src/main-win-ui.c:193
 msgid "Shortcut"
-msgstr ""
+msgstr "Atajo"
 
 #: ../src/desktop-ui.c:71 ../src/main-win-ui.c:219
 msgid "By _Name"
@@ -682,12 +678,12 @@ msgstr "Nuevo"
 
 #: ../src/pcmanfm.c:641
 msgid "Error, lxshortcut not installed"
-msgstr ""
+msgstr "Error, lxshortcut no está instalado"
 
 #. FIXME: it's dirty and will lock everything
 #: ../src/pcmanfm.c:646
 msgid "Failed to start lxshortcut"
-msgstr ""
+msgstr "Fallo al instalar lxshortcut"
 
 #: ../src/tab-page.c:206
 #, c-format
@@ -716,9 +712,8 @@ msgstr[0] " (%d oculto)"
 msgstr[1] " (%d ocultos)"
 
 #: ../data/pcmanfm.desktop.in.h:1
-#, fuzzy
 msgid "File Manager PCManFM"
-msgstr "Gestor de archivos"
+msgstr "Gestor de archivos PCManFM"
 
 #: ../data/pcmanfm.desktop.in.h:2
 msgid "File Manager"
@@ -730,7 +725,7 @@ msgstr "Explorar el sistema de archivos y gestionar los archivos"
 
 #: ../data/pcmanfm-desktop-pref.desktop.in.h:2
 msgid "Change desktop wallpapers and behavior of desktop manager"
-msgstr ""
+msgstr "Cambiar el papel tapiz y el comportamiento del escritorio"
 
 #~ msgid "_Advanced"
 #~ msgstr "_Avanzado"
