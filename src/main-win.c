@@ -621,6 +621,7 @@ static void fm_main_win_destroy(GtkObject *object)
         g_signal_handlers_disconnect_by_func(win->notebook, on_notebook_page_added, win);
         g_signal_handlers_disconnect_by_func(win->notebook, on_notebook_page_removed, win);
 
+        gtk_window_group_remove_window(win->win_group, GTK_WINDOW(win));
         g_object_unref(win->win_group);
         win->win_group = NULL;
         g_object_unref(win->ui);
