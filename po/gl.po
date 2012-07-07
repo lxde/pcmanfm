@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm-0,5.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-07-07 00:40+0200\n"
-"PO-Revision-Date: 2011-12-24 14:08+0200\n"
+"PO-Revision-Date: 2012-07-07 10:48+0200\n"
 "Last-Translator: mbouzada <mbouzada@gmail.com>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
 "Language: gl\n"
@@ -20,9 +20,8 @@ msgstr ""
 "X-Poedit-Language: Galician\n"
 
 #: ../data/ui/about.glade.in.h:1
-#, fuzzy
 msgid "Copyright (C) 2009 - 2012"
-msgstr "Copyright (C) 2009 - 2010"
+msgstr "Copyright (C) 2009 - 2012"
 
 #: ../data/ui/about.glade.in.h:2
 msgid ""
@@ -60,7 +59,7 @@ msgstr "Seleccione un ficheiro de imaxe"
 
 #: ../data/ui/desktop-pref.glade.h:5
 msgid "Use the same wallpaper on all desktops"
-msgstr ""
+msgstr "Usar o mesmo fondo de pantalla en todos os escritorios"
 
 #: ../data/ui/desktop-pref.glade.h:6
 msgid "Background color:"
@@ -225,13 +224,12 @@ msgid "Do not generate thumbnails for files exceeding this size:"
 msgstr "Non xerar miniaturas para os ficheiros que excedan do tamaño:"
 
 #: ../data/ui/pref.glade.h:21
-#, fuzzy
 msgid "Display"
-msgstr "_Pantalla"
+msgstr "Pantalla"
 
 #: ../data/ui/pref.glade.h:22
 msgid "<b>Auto-mount</b>"
-msgstr "<b>Auto montaxe</b>"
+msgstr "<b>Montaxe automático</b>"
 
 #: ../data/ui/pref.glade.h:23
 msgid "Mount mountable volumes automatically on program startup"
@@ -247,9 +245,8 @@ msgstr ""
 "Amosar as opcións dispoñíbeis para un soporte extraíbel cando é inserido"
 
 #: ../data/ui/pref.glade.h:26
-#, fuzzy
 msgid "Volume Management"
-msgstr "Administración de _volumes"
+msgstr "Administración de volumes"
 
 #: ../data/ui/pref.glade.h:27
 msgid "<b>Programs</b>"
@@ -368,7 +365,7 @@ msgstr "Ficheiro baleiro"
 
 #: ../src/desktop-ui.c:59 ../src/main-win-ui.c:193
 msgid "Shortcut"
-msgstr ""
+msgstr "Atallo de teclado"
 
 #: ../src/desktop-ui.c:71 ../src/main-win-ui.c:219
 msgid "By _Name"
@@ -680,12 +677,12 @@ msgstr "Novo"
 
 #: ../src/pcmanfm.c:641
 msgid "Error, lxshortcut not installed"
-msgstr ""
+msgstr "Hai un erro, lxshortcut non está instalado"
 
 #. FIXME: it's dirty and will lock everything
 #: ../src/pcmanfm.c:646
 msgid "Failed to start lxshortcut"
-msgstr ""
+msgstr "Produciuse un fallo ao iniciar lxshortcut"
 
 #: ../src/tab-page.c:206
 #, c-format
@@ -714,9 +711,8 @@ msgstr[0] " (%d agochado)"
 msgstr[1] " (%d agochados)"
 
 #: ../data/pcmanfm.desktop.in.h:1
-#, fuzzy
 msgid "File Manager PCManFM"
-msgstr "Xestor de ficheiros"
+msgstr "Xestor de ficheiros PCManFM"
 
 #: ../data/pcmanfm.desktop.in.h:2
 msgid "File Manager"
@@ -728,7 +724,7 @@ msgstr "Navegar polo sistema de ficheiros e xestionar os ficheiros"
 
 #: ../data/pcmanfm-desktop-pref.desktop.in.h:2
 msgid "Change desktop wallpapers and behavior of desktop manager"
-msgstr ""
+msgstr "Cambio de fondos de pantalla e comportamento do xestor do escritorio"
 
 #~ msgid "_Advanced"
 #~ msgstr "_Avanzado"
