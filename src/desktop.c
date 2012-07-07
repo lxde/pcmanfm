@@ -296,6 +296,8 @@ static void fm_desktop_destroy(GtkObject *object)
         g_signal_handlers_disconnect_by_func(screen, on_screen_size_changed, self);
         g_signal_handlers_disconnect_by_func(self, on_drag_data_get, NULL);
 
+        gtk_window_group_remove_window(win_group, (GtkWindow*)self);
+
         disconnect_model(self);
 
         unload_items(self);
@@ -387,6 +389,8 @@ static void fm_desktop_init(FmDesktop *self)
     gtk_drag_dest_set_target_list(GTK_WIDGET(self), targets);
 
     self->dnd_dest = fm_dnd_dest_new((GtkWidget*)self);
+
+    gtk_window_group_add_window(win_group, GTK_WINDOW(self));
 
     connect_model(self);
     load_items(self);
@@ -521,7 +525,6 @@ void fm_desktop_manager_init()
         gtk_widget_realize(desktop);  /* without this, setting wallpaper won't work */
         gtk_widget_show_all(desktop);
         gdk_window_lower(gtk_widget_get_window(desktop));
-        gtk_window_group_add_window(GTK_WINDOW_GROUP(win_group), GTK_WINDOW(desktop));
     }
 
     wallpaper_changed = g_signal_connect(app_config, "changed::wallpaper", G_CALLBACK(on_wallpaper_changed), NULL);
