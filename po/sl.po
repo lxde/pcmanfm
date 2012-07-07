@@ -8,21 +8,20 @@ msgstr ""
 "Project-Id-Version: pcmanfm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-07-07 00:40+0200\n"
-"PO-Revision-Date: 2012-01-07 17:52+0200\n"
+"PO-Revision-Date: 2012-07-07 11:02+0200\n"
 "Last-Translator: Klemen <klemen.kosir@gmx.com>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);;\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || "
+"n%100==4 ? 3 : 0);;\n"
 "X-Generator: Pootle 2.0.5\n"
 
 #: ../data/ui/about.glade.in.h:1
-#, fuzzy
 msgid "Copyright (C) 2009 - 2012"
-msgstr "Avtorske pravice © 2009 - 2010"
+msgstr "Avtorske pravice © 2009 - 2012"
 
 #: ../data/ui/about.glade.in.h:2
 msgid ""
@@ -58,7 +57,7 @@ msgstr "Izberite slikovno datoteko"
 
 #: ../data/ui/desktop-pref.glade.h:5
 msgid "Use the same wallpaper on all desktops"
-msgstr ""
+msgstr "Uporabi enako ozadje na vseh namizjih"
 
 #: ../data/ui/desktop-pref.glade.h:6
 msgid "Background color:"
@@ -185,9 +184,8 @@ msgid "View Mode:"
 msgstr "Način pogleda:"
 
 #: ../data/ui/pref.glade.h:12
-#, fuzzy
 msgid "General"
-msgstr "_Splošno"
+msgstr "Splošno"
 
 #: ../data/ui/pref.glade.h:13
 msgid "<b>Icons</b>"
@@ -222,9 +220,8 @@ msgid "Do not generate thumbnails for files exceeding this size:"
 msgstr "Ne ustvari predoglednih sličic za datoteke, večje od:"
 
 #: ../data/ui/pref.glade.h:21
-#, fuzzy
 msgid "Display"
-msgstr "_Videz"
+msgstr "Videz"
 
 #: ../data/ui/pref.glade.h:22
 msgid "<b>Auto-mount</b>"
@@ -243,9 +240,8 @@ msgid "Show available options for removable media when they are inserted"
 msgstr "Ob priključitvi odstranljivih nosilcev pokaži razpoložljive možnosti"
 
 #: ../data/ui/pref.glade.h:26
-#, fuzzy
 msgid "Volume Management"
-msgstr "_Upravljanje z nosilci"
+msgstr "Upravljanje z nosilci"
 
 #: ../data/ui/pref.glade.h:27
 msgid "<b>Programs</b>"
@@ -364,7 +360,7 @@ msgstr "Prazna datoteka"
 
 #: ../src/desktop-ui.c:59 ../src/main-win-ui.c:193
 msgid "Shortcut"
-msgstr ""
+msgstr "Bližnjica"
 
 #: ../src/desktop-ui.c:71 ../src/main-win-ui.c:219
 msgid "By _Name"
@@ -674,12 +670,12 @@ msgstr "Nova"
 
 #: ../src/pcmanfm.c:641
 msgid "Error, lxshortcut not installed"
-msgstr ""
+msgstr "Napaka: Program »lxshortcut« ni nameščen."
 
 #. FIXME: it's dirty and will lock everything
 #: ../src/pcmanfm.c:646
 msgid "Failed to start lxshortcut"
-msgstr ""
+msgstr "Programa »lxshortcut« ni mogoče zagnati."
 
 #: ../src/tab-page.c:206
 #, c-format
@@ -714,9 +710,8 @@ msgstr[2] " (%d skrita)"
 msgstr[3] " (%d skriti)"
 
 #: ../data/pcmanfm.desktop.in.h:1
-#, fuzzy
 msgid "File Manager PCManFM"
-msgstr "Upravljalnik datotek"
+msgstr "Upravljalnik datotek PCManFM"
 
 #: ../data/pcmanfm.desktop.in.h:2
 msgid "File Manager"
@@ -728,7 +723,7 @@ msgstr "Brskajte po datotečnem sistemu in upravljajte datoteke"
 
 #: ../data/pcmanfm-desktop-pref.desktop.in.h:2
 msgid "Change desktop wallpapers and behavior of desktop manager"
-msgstr ""
+msgstr "Spremenite ozadje in obnašanje upravljalnika namizij"
 
 #~ msgid "_Advanced"
 #~ msgstr "_Napredno"
