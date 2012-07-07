@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-07-07 00:40+0200\n"
-"PO-Revision-Date: 2012-05-22 21:25+0200\n"
+"PO-Revision-Date: 2012-07-07 13:43+0200\n"
 "Last-Translator: Anari <anari.jalakas@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: et\n"
@@ -19,9 +19,8 @@ msgstr ""
 "X-Generator: Pootle 2.0.5\n"
 
 #: ../data/ui/about.glade.in.h:1
-#, fuzzy
 msgid "Copyright (C) 2009 - 2012"
-msgstr "Copyright (C) 2009 - 2010"
+msgstr "Copyright (C) 2009 - 2012"
 
 #: ../data/ui/about.glade.in.h:2
 msgid ""
@@ -59,7 +58,7 @@ msgstr "Vali pildifail"
 
 #: ../data/ui/desktop-pref.glade.h:5
 msgid "Use the same wallpaper on all desktops"
-msgstr ""
+msgstr "Sama taustapildi kasutamine kõigil töölaudadel"
 
 #: ../data/ui/desktop-pref.glade.h:6
 msgid "Background color:"
@@ -171,7 +170,7 @@ msgstr "Küsi enne failide kustutamist"
 
 #: ../data/ui/pref.glade.h:8
 msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
-msgstr "Liiguta kustutatavad failid prügikorvi"
+msgstr "Liiguta kustutatavad failid \"prügikorvi\" ilma neid kustutamata"
 
 #: ../data/ui/pref.glade.h:9
 msgid "Bookmarks:"
@@ -186,9 +185,8 @@ msgid "View Mode:"
 msgstr "Vaated:"
 
 #: ../data/ui/pref.glade.h:12
-#, fuzzy
 msgid "General"
-msgstr "_Üldine"
+msgstr "Üldine"
 
 #: ../data/ui/pref.glade.h:13
 msgid "<b>Icons</b>"
@@ -223,9 +221,8 @@ msgid "Do not generate thumbnails for files exceeding this size:"
 msgstr "Ära loo pisipilte suurematest failidest kui:"
 
 #: ../data/ui/pref.glade.h:21
-#, fuzzy
 msgid "Display"
-msgstr "_Ekraan"
+msgstr "Kuva"
 
 #: ../data/ui/pref.glade.h:22
 msgid "<b>Auto-mount</b>"
@@ -244,9 +241,8 @@ msgid "Show available options for removable media when they are inserted"
 msgstr "Näita eemaldatava andmekandja sisestamisel kasutatavaid võimalusi"
 
 #: ../data/ui/pref.glade.h:26
-#, fuzzy
 msgid "Volume Management"
-msgstr "A_ndmekandjate haldamine"
+msgstr "Andmekandjate haldamine"
 
 #: ../data/ui/pref.glade.h:27
 msgid "<b>Programs</b>"
@@ -365,7 +361,7 @@ msgstr "Tühi fail"
 
 #: ../src/desktop-ui.c:59 ../src/main-win-ui.c:193
 msgid "Shortcut"
-msgstr ""
+msgstr "Otsetee"
 
 #: ../src/desktop-ui.c:71 ../src/main-win-ui.c:219
 msgid "By _Name"
@@ -676,12 +672,12 @@ msgstr "Uus"
 
 #: ../src/pcmanfm.c:641
 msgid "Error, lxshortcut not installed"
-msgstr ""
+msgstr "Viga, LXShortcut pole paigaldatud"
 
 #. FIXME: it's dirty and will lock everything
 #: ../src/pcmanfm.c:646
 msgid "Failed to start lxshortcut"
-msgstr ""
+msgstr "LXShortcuti käivitamine ebaõnnestus"
 
 #: ../src/tab-page.c:206
 #, c-format
@@ -710,9 +706,8 @@ msgstr[0] " (%d peidetud)"
 msgstr[1] " (%d peidetud)"
 
 #: ../data/pcmanfm.desktop.in.h:1
-#, fuzzy
 msgid "File Manager PCManFM"
-msgstr "Failihaldur"
+msgstr "Failihaldur PCManFM"
 
 #: ../data/pcmanfm.desktop.in.h:2
 msgid "File Manager"
@@ -724,7 +719,7 @@ msgstr "Sirvi failisüsteemi ja halda faile"
 
 #: ../data/pcmanfm-desktop-pref.desktop.in.h:2
 msgid "Change desktop wallpapers and behavior of desktop manager"
-msgstr ""
+msgstr "Töölaua taustapiltide ja ekraanihalduri käitumise muutmine"
 
 #~ msgid "_Advanced"
 #~ msgstr "L_aiendatud"
