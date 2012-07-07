@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-07-07 00:40+0200\n"
-"PO-Revision-Date: 2011-06-19 13:12+0200\n"
-"Last-Translator: Yinghua_Wang <wantinghard@gmail.com>\n"
+"PO-Revision-Date: 2012-07-07 03:35+0200\n"
+"Last-Translator: Wylmer <wantinghard@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
@@ -19,9 +19,8 @@ msgstr ""
 "X-Generator: Pootle 2.0.5\n"
 
 #: ../data/ui/about.glade.in.h:1
-#, fuzzy
 msgid "Copyright (C) 2009 - 2012"
-msgstr "版权所有 (C) 2009 - 2010"
+msgstr "版权所有 (C) 2009 - 2012"
 
 #: ../data/ui/about.glade.in.h:2
 msgid ""
@@ -57,7 +56,7 @@ msgstr "请选择一个图像文件"
 
 #: ../data/ui/desktop-pref.glade.h:5
 msgid "Use the same wallpaper on all desktops"
-msgstr ""
+msgstr "所有桌面使用相同的壁纸"
 
 #: ../data/ui/desktop-pref.glade.h:6
 msgid "Background color:"
@@ -184,9 +183,8 @@ msgid "View Mode:"
 msgstr "查看方式："
 
 #: ../data/ui/pref.glade.h:12
-#, fuzzy
 msgid "General"
-msgstr "常规(_G)"
+msgstr "常规"
 
 #: ../data/ui/pref.glade.h:13
 msgid "<b>Icons</b>"
@@ -221,9 +219,8 @@ msgid "Do not generate thumbnails for files exceeding this size:"
 msgstr "对于大小超过这个尺寸的文件不生成缩略图："
 
 #: ../data/ui/pref.glade.h:21
-#, fuzzy
 msgid "Display"
-msgstr "显示(_D)"
+msgstr "显示"
 
 #: ../data/ui/pref.glade.h:22
 msgid "<b>Auto-mount</b>"
@@ -242,9 +239,8 @@ msgid "Show available options for removable media when they are inserted"
 msgstr "在插入可移动媒质时显示可用操作"
 
 #: ../data/ui/pref.glade.h:26
-#, fuzzy
 msgid "Volume Management"
-msgstr "卷管理(_V)"
+msgstr "卷管理"
 
 #: ../data/ui/pref.glade.h:27
 msgid "<b>Programs</b>"
@@ -362,7 +358,7 @@ msgstr "空白文件"
 
 #: ../src/desktop-ui.c:59 ../src/main-win-ui.c:193
 msgid "Shortcut"
-msgstr ""
+msgstr "快捷方式"
 
 #: ../src/desktop-ui.c:71 ../src/main-win-ui.c:219
 msgid "By _Name"
@@ -671,12 +667,12 @@ msgstr "新建"
 
 #: ../src/pcmanfm.c:641
 msgid "Error, lxshortcut not installed"
-msgstr ""
+msgstr "错误，lxshortcut 未能安装"
 
 #. FIXME: it's dirty and will lock everything
 #: ../src/pcmanfm.c:646
 msgid "Failed to start lxshortcut"
-msgstr ""
+msgstr "启动 lxshortcut 失败"
 
 #: ../src/tab-page.c:206
 #, c-format
@@ -702,9 +698,8 @@ msgid_plural " (%d hidden)"
 msgstr[0] " (%d 项隐藏)"
 
 #: ../data/pcmanfm.desktop.in.h:1
-#, fuzzy
 msgid "File Manager PCManFM"
-msgstr "文件管理器"
+msgstr "文件管理器 PCManFM"
 
 #: ../data/pcmanfm.desktop.in.h:2
 msgid "File Manager"
@@ -716,7 +711,7 @@ msgstr "浏览文件系统和管理文件"
 
 #: ../data/pcmanfm-desktop-pref.desktop.in.h:2
 msgid "Change desktop wallpapers and behavior of desktop manager"
-msgstr ""
+msgstr "更改桌面壁纸和桌面管理器行为"
 
 #~ msgid "_Advanced"
 #~ msgstr "高级(_A)"
