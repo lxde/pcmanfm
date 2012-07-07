@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-07-07 00:40+0200\n"
-"PO-Revision-Date: 2012-06-03 13:13+0200\n"
+"PO-Revision-Date: 2012-07-07 17:33+0200\n"
 "Last-Translator: Sérgio <smarquespt@gmail.com>\n"
 "Language-Team: \n"
 "Language: pt\n"
@@ -21,7 +21,6 @@ msgstr ""
 "X-Poedit-Country: PORTUGAL\n"
 
 #: ../data/ui/about.glade.in.h:1
-#, fuzzy
 msgid "Copyright (C) 2009 - 2012"
 msgstr "Direitos de autor (C) 2009 - 2012"
 
@@ -61,7 +60,7 @@ msgstr "Por favor, selecione uma imagem"
 
 #: ../data/ui/desktop-pref.glade.h:5
 msgid "Use the same wallpaper on all desktops"
-msgstr ""
+msgstr "Utilizar o mesmo papel de parede em todas as áreas de trabalho"
 
 #: ../data/ui/desktop-pref.glade.h:6
 msgid "Background color:"
@@ -189,9 +188,8 @@ msgid "View Mode:"
 msgstr "Modo de visualização:"
 
 #: ../data/ui/pref.glade.h:12
-#, fuzzy
 msgid "General"
-msgstr "_Geral"
+msgstr "Geral"
 
 #: ../data/ui/pref.glade.h:13
 msgid "<b>Icons</b>"
@@ -226,9 +224,8 @@ msgid "Do not generate thumbnails for files exceeding this size:"
 msgstr "Não gerar miniaturas para os ficheiros que excedam este tamanho:"
 
 #: ../data/ui/pref.glade.h:21
-#, fuzzy
 msgid "Display"
-msgstr "_Ecrã"
+msgstr "Exibir"
 
 #: ../data/ui/pref.glade.h:22
 msgid "<b>Auto-mount</b>"
@@ -247,9 +244,8 @@ msgid "Show available options for removable media when they are inserted"
 msgstr "Ao inserir o disco amovível, mostrar as opções disponíveis"
 
 #: ../data/ui/pref.glade.h:26
-#, fuzzy
 msgid "Volume Management"
-msgstr "Gestão de _volumes"
+msgstr "Gestão de volumes"
 
 #: ../data/ui/pref.glade.h:27
 msgid "<b>Programs</b>"
@@ -368,7 +364,7 @@ msgstr "Ficheiro vazio"
 
 #: ../src/desktop-ui.c:59 ../src/main-win-ui.c:193
 msgid "Shortcut"
-msgstr ""
+msgstr "Atalho"
 
 #: ../src/desktop-ui.c:71 ../src/main-win-ui.c:219
 msgid "By _Name"
@@ -681,12 +677,12 @@ msgstr "Novo"
 
 #: ../src/pcmanfm.c:641
 msgid "Error, lxshortcut not installed"
-msgstr ""
+msgstr "Erro. O lxshortcut não está instalado"
 
 #. FIXME: it's dirty and will lock everything
 #: ../src/pcmanfm.c:646
 msgid "Failed to start lxshortcut"
-msgstr ""
+msgstr "Ocorre um erro ao iniciar o lxshortcut"
 
 #: ../src/tab-page.c:206
 #, c-format
@@ -715,9 +711,8 @@ msgstr[0] " (%d oculto)"
 msgstr[1] " (%d ocultos)"
 
 #: ../data/pcmanfm.desktop.in.h:1
-#, fuzzy
 msgid "File Manager PCManFM"
-msgstr "Gestor de ficheiros"
+msgstr "Gestor de ficheiros PcManFM"
 
 #: ../data/pcmanfm.desktop.in.h:2
 msgid "File Manager"
@@ -730,6 +725,7 @@ msgstr "Explorar o sistema de ficheiros e gerir ficheiros"
 #: ../data/pcmanfm-desktop-pref.desktop.in.h:2
 msgid "Change desktop wallpapers and behavior of desktop manager"
 msgstr ""
+"Alterar o papel de parede e o comportamento do gestor de áreas de trabalho"
 
 #~ msgid "_Advanced"
 #~ msgstr "_Avançado"
