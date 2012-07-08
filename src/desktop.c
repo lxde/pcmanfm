@@ -123,8 +123,8 @@ static void on_paste(GtkAction* act, gpointer user_data);
 static void on_select_all(GtkAction* act, gpointer user_data);
 static void on_invert_select(GtkAction* act, gpointer user_data);
 static void on_create_new(GtkAction* act, FmDesktop* desktop);
-static void on_sort_type(GtkAction* act, GtkRadioAction *cur, gpointer user_data);
-static void on_sort_by(GtkAction* act, GtkRadioAction *cur, gpointer user_data);
+static void on_sort_type(GtkAction* act, GtkRadioAction *cur, FmDesktop* desktop);
+static void on_sort_by(GtkAction* act, GtkRadioAction *cur, FmDesktop* desktop);
 
 static void on_open_in_new_tab(GtkAction* act, gpointer user_data);
 static void on_open_in_new_win(GtkAction* act, gpointer user_data);
@@ -156,9 +156,6 @@ static Atom XA_NET_WORKAREA = 0;
 static Atom XA_NET_NUMBER_OF_DESKTOPS = 0;
 static Atom XA_NET_CURRENT_DESKTOP = 0;
 static Atom XA_XROOTMAP_ID= 0;
-
-static int desktop_sort_by = COL_FILE_MTIME;
-static int desktop_sort_type = GTK_SORT_ASCENDING;
 
 static GdkCursor* hand_cursor = NULL;
 
@@ -252,6 +249,9 @@ static inline void connect_model(FmDesktop* desktop)
     }
     else
         desktop->model = g_object_ref(desktop_model);
+    gtk_tree_sortable_set_sort_column_id(GTK_TREE_SORTABLE(desktop->model),
+                                         app_config->desktop_sort_by,
+                                         app_config->desktop_sort_type);
 }
 
 static inline void disconnect_model(FmDesktop* desktop)
@@ -404,10 +404,11 @@ static void fm_desktop_init(FmDesktop *self)
     gtk_action_group_add_actions(act_grp, desktop_actions, G_N_ELEMENTS(desktop_actions), self);
     gtk_action_group_add_radio_actions(act_grp, desktop_sort_type_actions,
                                        G_N_ELEMENTS(desktop_sort_type_actions),
-                                       GTK_SORT_ASCENDING,
+                                       app_config->desktop_sort_type,
                                        G_CALLBACK(on_sort_type), self);
     gtk_action_group_add_radio_actions(act_grp, desktop_sort_by_actions,
-                                       G_N_ELEMENTS(desktop_sort_by_actions), 0,
+                                       G_N_ELEMENTS(desktop_sort_by_actions),
+                                       app_config->desktop_sort_by,
                                        G_CALLBACK(on_sort_by), self);
 
     gtk_ui_manager_insert_action_group(ui, act_grp, 0);
@@ -2264,18 +2265,20 @@ static void on_create_new(GtkAction* act, FmDesktop* desktop)
     pcmanfm_create_new(GTK_WINDOW(desktop), fm_path_get_desktop(), name);
 }
 
-static void on_sort_type(GtkAction* act, GtkRadioAction *cur, gpointer user_data)
+static void on_sort_type(GtkAction* act, GtkRadioAction *cur, FmDesktop* desktop)
 {
-    desktop_sort_type = gtk_radio_action_get_current_value(cur);
-    gtk_tree_sortable_set_sort_column_id(GTK_TREE_SORTABLE(desktop_model),
-                                         desktop_sort_by, desktop_sort_type);
+    app_config->desktop_sort_type = gtk_radio_action_get_current_value(cur);
+    gtk_tree_sortable_set_sort_column_id(GTK_TREE_SORTABLE(desktop->model),
+                                         app_config->desktop_sort_by,
+                                         app_config->desktop_sort_type);
 }
 
-static void on_sort_by(GtkAction* act, GtkRadioAction *cur, gpointer user_data)
+static void on_sort_by(GtkAction* act, GtkRadioAction *cur, FmDesktop* desktop)
 {
-    desktop_sort_by = gtk_radio_action_get_current_value(cur);
-    gtk_tree_sortable_set_sort_column_id(GTK_TREE_SORTABLE(desktop_model),
-                                         desktop_sort_by, desktop_sort_type);
+    app_config->desktop_sort_by = gtk_radio_action_get_current_value(cur);
+    gtk_tree_sortable_set_sort_column_id(GTK_TREE_SORTABLE(desktop->model),
+                                         app_config->desktop_sort_by,
+                                         app_config->desktop_sort_type);
 }
 
 static void on_open_in_new_tab(GtkAction* act, gpointer user_data)

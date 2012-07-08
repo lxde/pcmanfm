@@ -89,6 +89,9 @@ static void fm_app_config_init(FmAppConfig *cfg)
     cfg->sort_type = GTK_SORT_ASCENDING;
     cfg->sort_by = COL_FILE_NAME;
 
+    cfg->desktop_sort_type = GTK_SORT_ASCENDING;
+    cfg->desktop_sort_by = COL_FILE_MTIME;
+
     cfg->wallpaper_common = TRUE;
 }
 
@@ -171,6 +174,14 @@ void fm_app_config_load_from_key_file(FmAppConfig* cfg, GKeyFile* kf)
     cfg->desktop_font = tmp;
 
     fm_key_file_get_bool(kf, "desktop", "show_wm_menu", &cfg->show_wm_menu);
+    if(fm_key_file_get_int(kf, "desktop", "sort_type", &tmp_int) &&
+       tmp_int == GTK_SORT_DESCENDING)
+        cfg->desktop_sort_type = GTK_SORT_DESCENDING;
+    else
+        cfg->desktop_sort_type = GTK_SORT_ASCENDING;
+    if(fm_key_file_get_int(kf, "desktop", "sort_by", &tmp_int) &&
+       FM_FOLDER_MODEL_COL_IS_VALID((guint)tmp_int))
+        cfg->desktop_sort_by = tmp_int;
 
     /* ui */
     fm_key_file_get_int(kf, "ui", "always_show_tabs", &cfg->always_show_tabs);
@@ -307,6 +318,8 @@ void fm_app_config_save_profile(FmAppConfig* cfg, const char* name)
         if(cfg->desktop_font && *cfg->desktop_font)
             g_string_append_printf(buf, "desktop_font=%s\n", cfg->desktop_font);
         g_string_append_printf(buf, "show_wm_menu=%d\n", cfg->show_wm_menu);
+        g_string_append_printf(buf, "sort_type=%d\n", cfg->desktop_sort_type);
+        g_string_append_printf(buf, "sort_by=%d\n", cfg->desktop_sort_by);
 
         g_string_append(buf, "\n[ui]\n");
         g_string_append_printf(buf, "always_show_tabs=%d\n", cfg->always_show_tabs);

@@ -88,7 +88,10 @@ struct _FmAppConfig
     GtkSortType sort_type;
     int sort_by;
 
+    char* su_cmd;
+
     /* desktop manager */
+    /* FIXME: make these setting per FmDesktop */
     /* emit "changed::wallpaper" */
     FmWallpaperMode wallpaper_mode;
     char* wallpaper;
@@ -103,8 +106,8 @@ struct _FmAppConfig
     char* desktop_font;
 
     gboolean show_wm_menu;
-
-    char* su_cmd;
+    GtkSortType desktop_sort_type;
+    int desktop_sort_by;
 };
 
 struct _FmAppConfigClass
