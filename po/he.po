@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-07-07 00:40+0200\n"
-"PO-Revision-Date: 2011-11-13 15:28+0200\n"
+"PO-Revision-Date: 2012-07-07 09:27+0200\n"
 "Last-Translator: Yaron <sh.yaron@gmail.com>\n"
 "Language-Team: \n"
 "Language: he\n"
@@ -16,9 +16,8 @@ msgstr ""
 "X-Poedit-Language: Hebrew\n"
 
 #: ../data/ui/about.glade.in.h:1
-#, fuzzy
 msgid "Copyright (C) 2009 - 2012"
-msgstr "כל הזכויות שמורות (C)‏ 2009 - 2010"
+msgstr "כל הזכויות שמורות (C)‏ 2009 - 2012"
 
 #: ../data/ui/about.glade.in.h:2
 msgid ""
@@ -57,7 +56,7 @@ msgstr "נא לבחור בקובץ תמונה"
 
 #: ../data/ui/desktop-pref.glade.h:5
 msgid "Use the same wallpaper on all desktops"
-msgstr ""
+msgstr "שימוש באותו הרקע בכל שולחנות העבודה"
 
 #: ../data/ui/desktop-pref.glade.h:6
 msgid "Background color:"
@@ -220,9 +219,8 @@ msgid "Do not generate thumbnails for files exceeding this size:"
 msgstr "אין לייצר תמונות מוקטנות עבור קבצים החורגים מגודל זה:"
 
 #: ../data/ui/pref.glade.h:21
-#, fuzzy
 msgid "Display"
-msgstr "ה_צגה"
+msgstr "תצוגה"
 
 #: ../data/ui/pref.glade.h:22
 msgid "<b>Auto-mount</b>"
@@ -241,13 +239,12 @@ msgid "Show available options for removable media when they are inserted"
 msgstr "יש להציג את האפשרויות הזמינות עבור מדיה נשלפת בעת החיבור"
 
 #: ../data/ui/pref.glade.h:26
-#, fuzzy
 msgid "Volume Management"
-msgstr "_ניהול התקני אחסון"
+msgstr "ניהול כרכים"
 
 #: ../data/ui/pref.glade.h:27
 msgid "<b>Programs</b>"
-msgstr "<b>תוכניות</b>"
+msgstr "<b>תכניות</b>"
 
 #: ../data/ui/pref.glade.h:28
 msgid "Terminal emulator:"
@@ -362,7 +359,7 @@ msgstr "קובץ ריק"
 
 #: ../src/desktop-ui.c:59 ../src/main-win-ui.c:193
 msgid "Shortcut"
-msgstr ""
+msgstr "קיצור דרך"
 
 #: ../src/desktop-ui.c:71 ../src/main-win-ui.c:219
 msgid "By _Name"
@@ -672,12 +669,12 @@ msgstr "חדש"
 
 #: ../src/pcmanfm.c:641
 msgid "Error, lxshortcut not installed"
-msgstr ""
+msgstr "שגיאה, lxshortcut לא מותקן"
 
 #. FIXME: it's dirty and will lock everything
 #: ../src/pcmanfm.c:646
 msgid "Failed to start lxshortcut"
-msgstr ""
+msgstr "הפעלת lxshortcut נכשלה"
 
 #: ../src/tab-page.c:206
 #, c-format
@@ -706,9 +703,8 @@ msgstr[0] "(אחד מוסתר)"
 msgstr[1] "(%d מוסתרים)"
 
 #: ../data/pcmanfm.desktop.in.h:1
-#, fuzzy
 msgid "File Manager PCManFM"
-msgstr "מנהל קבצים"
+msgstr "מנהל הקבצים PCManFM"
 
 #: ../data/pcmanfm.desktop.in.h:2
 msgid "File Manager"
@@ -720,7 +716,7 @@ msgstr "עיון במערכת הקבצים וניהול הקבצים"
 
 #: ../data/pcmanfm-desktop-pref.desktop.in.h:2
 msgid "Change desktop wallpapers and behavior of desktop manager"
-msgstr ""
+msgstr "שינוי רקע שולחן העבודה ואת ההתנהגות של מנהל שולחנות העבודה"
 
 #~ msgid "_Advanced"
 #~ msgstr "מ_תקדם"
