@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PCManFM 0.9.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-07 00:40+0200\n"
+"POT-Creation-Date: 2012-07-08 22:55+0200\n"
 "PO-Revision-Date: 2010-05-26 11:44+0100\n"
 "Last-Translator: Jay Alexander Fleming <tito.nehru.naser@gmail.com>\n"
 "Language-Team: \n"
@@ -580,15 +580,15 @@ msgstr ""
 msgid "Remote"
 msgstr ""
 
-#: ../src/main-win.c:544
+#: ../src/main-win.c:545
 msgid "You are in super user mode"
 msgstr "UPOZORENJE: Koristite program sa administratorskim privilegijama"
 
-#: ../src/main-win.c:730
+#: ../src/main-win.c:732
 msgid "Switch user command is not set."
 msgstr "Naredba za prebacivanje između korisnika nije postavljena"
 
-#: ../src/main-win.c:1137
+#: ../src/main-win.c:1139
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -599,54 +599,54 @@ msgstr ""
 "„%s“\n"
 "Unesite ime za ovaj obeleživač"
 
-#: ../src/main-win.c:1141
+#: ../src/main-win.c:1143
 msgid "Add to Bookmarks"
 msgstr "Dodaj u obeleživače"
 
 #. options only acceptable by first pcmanfm instance. These options are not passed through IPC
-#: ../src/pcmanfm.c:72
+#: ../src/pcmanfm.c:73
 msgid "Name of configuration profile"
 msgstr "Naziv profila za podešavanja"
 
-#: ../src/pcmanfm.c:73
+#: ../src/pcmanfm.c:74
 msgid "Run PCManFM as a daemon"
 msgstr "Pokreni PCManFM program u pozadini"
 
-#: ../src/pcmanfm.c:74
+#: ../src/pcmanfm.c:75
 msgid "No function. Just to be compatible with nautilus"
 msgstr "Funkcija ne postoji. Samo zbog usaglašenosti sa programom „Nautilus“"
 
 #. options that are acceptable for every instance of pcmanfm and will be passed through IPC.
-#: ../src/pcmanfm.c:77
+#: ../src/pcmanfm.c:78
 msgid "Launch desktop manager"
 msgstr "Pokreni upravljač okruženja"
 
-#: ../src/pcmanfm.c:78
+#: ../src/pcmanfm.c:79
 msgid "Turn off desktop manager if it's running"
 msgstr "Zaustavi upravljač okruženja ukoliko je pokrenut"
 
-#: ../src/pcmanfm.c:79
+#: ../src/pcmanfm.c:80
 msgid "Open desktop preference dialog"
 msgstr "Otvori podešavanja radne površi"
 
-#: ../src/pcmanfm.c:80
+#: ../src/pcmanfm.c:81
 msgid "Set desktop wallpaper"
 msgstr "Postavi pozadinsku sliku"
 
-#: ../src/pcmanfm.c:80
+#: ../src/pcmanfm.c:81
 msgid "<image file>"
 msgstr "<datoteka sa slikom>"
 
-#: ../src/pcmanfm.c:81
+#: ../src/pcmanfm.c:82
 msgid "Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"
 msgstr ""
 "Režim prikaza pozadinske slike. <režim>=(color|stretch|fit|center|tile)"
 
-#: ../src/pcmanfm.c:81
+#: ../src/pcmanfm.c:82
 msgid "<mode>"
 msgstr "<režim>"
 
-#: ../src/pcmanfm.c:82
+#: ../src/pcmanfm.c:83
 msgid ""
 "Open preference dialog. 'n' is number of the page you want to show (1, 2, "
 "3...)."
@@ -655,37 +655,37 @@ msgstr ""
 
 #. { "new-win", '\0', 'n', G_OPTION_ARG_NONE, &new_win, N_("Open new window"), NULL },
 #. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
-#: ../src/pcmanfm.c:85
+#: ../src/pcmanfm.c:86
 msgid "[FILE1, FILE2,...]"
 msgstr "[FILE1, FILE2,...]"
 
-#: ../src/pcmanfm.c:495
+#: ../src/pcmanfm.c:528
 msgid "Terminal emulator is not set."
 msgstr "Nije postavljen emulator terminala."
 
-#: ../src/pcmanfm.c:547
+#: ../src/pcmanfm.c:580
 #, fuzzy
 msgid "Enter a name for the newly created folder:"
 msgstr "Unesite ime za novu datoteku:"
 
-#: ../src/pcmanfm.c:549
+#: ../src/pcmanfm.c:582
 msgid "Enter a name for the newly created file:"
 msgstr "Unesite ime za novu datoteku:"
 
-#: ../src/pcmanfm.c:550
+#: ../src/pcmanfm.c:583
 msgid "Create New..."
 msgstr "Napravi nov..."
 
-#: ../src/pcmanfm.c:550
+#: ../src/pcmanfm.c:583
 msgid "New"
 msgstr "Nov"
 
-#: ../src/pcmanfm.c:641
+#: ../src/pcmanfm.c:674
 msgid "Error, lxshortcut not installed"
 msgstr ""
 
 #. FIXME: it's dirty and will lock everything
-#: ../src/pcmanfm.c:646
+#: ../src/pcmanfm.c:679
 msgid "Failed to start lxshortcut"
 msgstr ""
 

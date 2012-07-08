@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-07 00:40+0200\n"
+"POT-Creation-Date: 2012-07-08 22:55+0200\n"
 "PO-Revision-Date: 2012-07-04 12:15+0300\n"
 "Last-Translator: Algimantas <margevicius.algimantas@mail.ru>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -573,15 +573,15 @@ msgstr "Aplankų medis"
 msgid "Remote"
 msgstr "Nuotolinis"
 
-#: ../src/main-win.c:544
+#: ../src/main-win.c:545
 msgid "You are in super user mode"
 msgstr "Jūs esate super naudotojo režime"
 
-#: ../src/main-win.c:730
+#: ../src/main-win.c:732
 msgid "Switch user command is not set."
 msgstr "Nenustatyta naudotojo perjungimo komanda."
 
-#: ../src/main-win.c:1137
+#: ../src/main-win.c:1139
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -592,53 +592,53 @@ msgstr ""
 "„%s“\n"
 "Įveskite naujos žymelės pavadinimą:"
 
-#: ../src/main-win.c:1141
+#: ../src/main-win.c:1143
 msgid "Add to Bookmarks"
 msgstr "Įtraukti į žymeles"
 
 #. options only acceptable by first pcmanfm instance. These options are not passed through IPC
-#: ../src/pcmanfm.c:72
+#: ../src/pcmanfm.c:73
 msgid "Name of configuration profile"
 msgstr "Konfigūracijos profilio pavadinimas"
 
-#: ../src/pcmanfm.c:73
+#: ../src/pcmanfm.c:74
 msgid "Run PCManFM as a daemon"
 msgstr "Paleisti PCManFM kaip demoną"
 
-#: ../src/pcmanfm.c:74
+#: ../src/pcmanfm.c:75
 msgid "No function. Just to be compatible with nautilus"
 msgstr "Jokios funkcijos. Reikalinga tik suderinamumui su nautilus"
 
 #. options that are acceptable for every instance of pcmanfm and will be passed through IPC.
-#: ../src/pcmanfm.c:77
+#: ../src/pcmanfm.c:78
 msgid "Launch desktop manager"
 msgstr "Paleisti darbastalio tvarkyklę"
 
-#: ../src/pcmanfm.c:78
+#: ../src/pcmanfm.c:79
 msgid "Turn off desktop manager if it's running"
 msgstr "Išjungti darbastalio tvarkyklę (jei ji veikia)"
 
-#: ../src/pcmanfm.c:79
+#: ../src/pcmanfm.c:80
 msgid "Open desktop preference dialog"
 msgstr "Atverti darbastalio nustatymų dialogą"
 
-#: ../src/pcmanfm.c:80
+#: ../src/pcmanfm.c:81
 msgid "Set desktop wallpaper"
 msgstr "Nustatyti darbastalio foną"
 
-#: ../src/pcmanfm.c:80
+#: ../src/pcmanfm.c:81
 msgid "<image file>"
 msgstr "<paveikslėlis>"
 
-#: ../src/pcmanfm.c:81
+#: ../src/pcmanfm.c:82
 msgid "Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"
 msgstr "Darbastalio fono režimas. <mode>=(color|stretch|fit|center|tile)"
 
-#: ../src/pcmanfm.c:81
+#: ../src/pcmanfm.c:82
 msgid "<mode>"
 msgstr "<mode>"
 
-#: ../src/pcmanfm.c:82
+#: ../src/pcmanfm.c:83
 msgid ""
 "Open preference dialog. 'n' is number of the page you want to show (1, 2, "
 "3...)."
@@ -647,36 +647,36 @@ msgstr ""
 
 #. { "new-win", '\0', 'n', G_OPTION_ARG_NONE, &new_win, N_("Open new window"), NULL },
 #. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
-#: ../src/pcmanfm.c:85
+#: ../src/pcmanfm.c:86
 msgid "[FILE1, FILE2,...]"
 msgstr "[FAILAS1, FAILAS2,...]"
 
-#: ../src/pcmanfm.c:495
+#: ../src/pcmanfm.c:528
 msgid "Terminal emulator is not set."
 msgstr "Nenustatytas terminalo emuliatorius."
 
-#: ../src/pcmanfm.c:547
+#: ../src/pcmanfm.c:580
 msgid "Enter a name for the newly created folder:"
 msgstr "Įveskite naujo aplanko pavadinimą:"
 
-#: ../src/pcmanfm.c:549
+#: ../src/pcmanfm.c:582
 msgid "Enter a name for the newly created file:"
 msgstr "Įveskite naujo failo pavadinimą:"
 
-#: ../src/pcmanfm.c:550
+#: ../src/pcmanfm.c:583
 msgid "Create New..."
 msgstr "Sukurti naują..."
 
-#: ../src/pcmanfm.c:550
+#: ../src/pcmanfm.c:583
 msgid "New"
 msgstr "Nauja"
 
-#: ../src/pcmanfm.c:641
+#: ../src/pcmanfm.c:674
 msgid "Error, lxshortcut not installed"
 msgstr "Klaida, lxshortcut neįdiegtas"
 
 #. FIXME: it's dirty and will lock everything
-#: ../src/pcmanfm.c:646
+#: ../src/pcmanfm.c:679
 msgid "Failed to start lxshortcut"
 msgstr "Paleisti lxshortcut nepavyko"
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PCManFM 0.9.10\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-07 00:40+0200\n"
+"POT-Creation-Date: 2012-07-08 22:55+0200\n"
 "PO-Revision-Date: 2012-04-23 15:57+0200\n"
 "Last-Translator: Mișu <dumol@l10n.ro>\n"
 "Language-Team: Romanian <diacritice@googlegroups.com>\n"
@@ -575,15 +575,15 @@ msgstr "Arbore de directoare"
 msgid "Remote"
 msgstr "La distanță"
 
-#: ../src/main-win.c:544
+#: ../src/main-win.c:545
 msgid "You are in super user mode"
 msgstr "Sunteți în modul super-utilizator"
 
-#: ../src/main-win.c:730
+#: ../src/main-win.c:732
 msgid "Switch user command is not set."
 msgstr "Nu ați ales o comandă de schimbare a utilizatorului."
 
-#: ../src/main-win.c:1137
+#: ../src/main-win.c:1139
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -594,55 +594,55 @@ msgstr ""
 "'%s'\n"
 "Introduceți un nume pentru noul favorit:"
 
-#: ../src/main-win.c:1141
+#: ../src/main-win.c:1143
 msgid "Add to Bookmarks"
 msgstr "Adaugă la favorite"
 
 #. options only acceptable by first pcmanfm instance. These options are not passed through IPC
-#: ../src/pcmanfm.c:72
+#: ../src/pcmanfm.c:73
 msgid "Name of configuration profile"
 msgstr "Nume al profilului de configurare"
 
-#: ../src/pcmanfm.c:73
+#: ../src/pcmanfm.c:74
 msgid "Run PCManFM as a daemon"
 msgstr "Pornește PCManFM ca serviciu"
 
-#: ../src/pcmanfm.c:74
+#: ../src/pcmanfm.c:75
 msgid "No function. Just to be compatible with nautilus"
 msgstr "Nicio funcție. Pentru compatibilitate cu Nautilus"
 
 #. options that are acceptable for every instance of pcmanfm and will be passed through IPC.
-#: ../src/pcmanfm.c:77
+#: ../src/pcmanfm.c:78
 msgid "Launch desktop manager"
 msgstr "Lansează managerul desktopului"
 
-#: ../src/pcmanfm.c:78
+#: ../src/pcmanfm.c:79
 msgid "Turn off desktop manager if it's running"
 msgstr "Oprește managerul desktopului dacă e pornit"
 
-#: ../src/pcmanfm.c:79
+#: ../src/pcmanfm.c:80
 msgid "Open desktop preference dialog"
 msgstr "Deschide dialogul cu preferințele desktopului"
 
-#: ../src/pcmanfm.c:80
+#: ../src/pcmanfm.c:81
 msgid "Set desktop wallpaper"
 msgstr "Alegeți imaginea de fundal"
 
-#: ../src/pcmanfm.c:80
+#: ../src/pcmanfm.c:81
 msgid "<image file>"
 msgstr "<fișier imagine>"
 
-#: ../src/pcmanfm.c:81
+#: ../src/pcmanfm.c:82
 msgid "Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"
 msgstr ""
 "Alegeți un mod pentru imaginea de fundal. <mode>=(color|stretch|fit|center|"
 "tile)"
 
-#: ../src/pcmanfm.c:81
+#: ../src/pcmanfm.c:82
 msgid "<mode>"
 msgstr "<mode>"
 
-#: ../src/pcmanfm.c:82
+#: ../src/pcmanfm.c:83
 msgid ""
 "Open preference dialog. 'n' is number of the page you want to show (1, 2, "
 "3...)."
@@ -652,36 +652,36 @@ msgstr ""
 
 #. { "new-win", '\0', 'n', G_OPTION_ARG_NONE, &new_win, N_("Open new window"), NULL },
 #. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
-#: ../src/pcmanfm.c:85
+#: ../src/pcmanfm.c:86
 msgid "[FILE1, FILE2,...]"
 msgstr "[FIȘIER1, FIȘIER2,...]"
 
-#: ../src/pcmanfm.c:495
+#: ../src/pcmanfm.c:528
 msgid "Terminal emulator is not set."
 msgstr "Nu ați ales un emulator de terminal."
 
-#: ../src/pcmanfm.c:547
+#: ../src/pcmanfm.c:580
 msgid "Enter a name for the newly created folder:"
 msgstr "Introduceți un nume pentru dosarul nou creat:"
 
-#: ../src/pcmanfm.c:549
+#: ../src/pcmanfm.c:582
 msgid "Enter a name for the newly created file:"
 msgstr "Introduceți un nume pentru fișierul nou creat:"
 
-#: ../src/pcmanfm.c:550
+#: ../src/pcmanfm.c:583
 msgid "Create New..."
 msgstr "Creează un nou..."
 
-#: ../src/pcmanfm.c:550
+#: ../src/pcmanfm.c:583
 msgid "New"
 msgstr "Nou"
 
-#: ../src/pcmanfm.c:641
+#: ../src/pcmanfm.c:674
 msgid "Error, lxshortcut not installed"
 msgstr ""
 
 #. FIXME: it's dirty and will lock everything
-#: ../src/pcmanfm.c:646
+#: ../src/pcmanfm.c:679
 msgid "Failed to start lxshortcut"
 msgstr ""
 

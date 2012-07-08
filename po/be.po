@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-07 00:40+0200\n"
+"POT-Creation-Date: 2012-07-08 22:55+0200\n"
 "PO-Revision-Date: 2012-07-07 10:57+0200\n"
 "Last-Translator: Мікалай <crom-a@tut.by>\n"
 "Language-Team: Belarusian <i18n@mova.org>\n"
@@ -15,8 +15,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
-"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Pootle 2.0.5\n"
 
 #: ../data/ui/about.glade.in.h:1
@@ -575,15 +575,15 @@ msgstr "Дрэва каталогаў"
 msgid "Remote"
 msgstr "Аддалены"
 
-#: ../src/main-win.c:544
+#: ../src/main-win.c:545
 msgid "You are in super user mode"
 msgstr "Вы зараз у рэжыме суперкарыстальніка"
 
-#: ../src/main-win.c:730
+#: ../src/main-win.c:732
 msgid "Switch user command is not set."
 msgstr "Не вызначаны загад пераключэння карыстальнікаў."
 
-#: ../src/main-win.c:1137
+#: ../src/main-win.c:1139
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -594,55 +594,55 @@ msgstr ""
 "'%s'\n"
 "Увядзіце назву новай закладкі:"
 
-#: ../src/main-win.c:1141
+#: ../src/main-win.c:1143
 msgid "Add to Bookmarks"
 msgstr "Дадаць у закладкі"
 
 #. options only acceptable by first pcmanfm instance. These options are not passed through IPC
-#: ../src/pcmanfm.c:72
+#: ../src/pcmanfm.c:73
 msgid "Name of configuration profile"
 msgstr "Назва профілю канфігурацыі"
 
-#: ../src/pcmanfm.c:73
+#: ../src/pcmanfm.c:74
 msgid "Run PCManFM as a daemon"
 msgstr "Запусціць PCManFM як дэман"
 
-#: ../src/pcmanfm.c:74
+#: ../src/pcmanfm.c:75
 msgid "No function. Just to be compatible with nautilus"
 msgstr "Няма функцый. Для сумяшчальнасці з Nautilus"
 
 #. options that are acceptable for every instance of pcmanfm and will be passed through IPC.
-#: ../src/pcmanfm.c:77
+#: ../src/pcmanfm.c:78
 msgid "Launch desktop manager"
 msgstr "Запусціць менеджар працоўнай прасторы"
 
-#: ../src/pcmanfm.c:78
+#: ../src/pcmanfm.c:79
 msgid "Turn off desktop manager if it's running"
 msgstr "Выключыць менеджар працоўнай прасторы, калі ён працуе"
 
-#: ../src/pcmanfm.c:79
+#: ../src/pcmanfm.c:80
 msgid "Open desktop preference dialog"
 msgstr "Адкрыць дыялог настаўленняў працоўнай прасторы"
 
-#: ../src/pcmanfm.c:80
+#: ../src/pcmanfm.c:81
 msgid "Set desktop wallpaper"
 msgstr "Устанавіць шпалеры працоўнай прасторы"
 
-#: ../src/pcmanfm.c:80
+#: ../src/pcmanfm.c:81
 msgid "<image file>"
 msgstr "<файл выявы>"
 
-#: ../src/pcmanfm.c:81
+#: ../src/pcmanfm.c:82
 msgid "Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"
 msgstr ""
 "Устанавіць рэжым шпалер працоўнай прасторы. <рэжым>=(color|stretch|fit|"
 "center|tile)"
 
-#: ../src/pcmanfm.c:81
+#: ../src/pcmanfm.c:82
 msgid "<mode>"
 msgstr "<рэжым>"
 
-#: ../src/pcmanfm.c:82
+#: ../src/pcmanfm.c:83
 msgid ""
 "Open preference dialog. 'n' is number of the page you want to show (1, 2, "
 "3...)."
@@ -652,36 +652,36 @@ msgstr ""
 
 #. { "new-win", '\0', 'n', G_OPTION_ARG_NONE, &new_win, N_("Open new window"), NULL },
 #. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
-#: ../src/pcmanfm.c:85
+#: ../src/pcmanfm.c:86
 msgid "[FILE1, FILE2,...]"
 msgstr "[FILE1, FILE2,...]"
 
-#: ../src/pcmanfm.c:495
+#: ../src/pcmanfm.c:528
 msgid "Terminal emulator is not set."
 msgstr "Не вызначаны эмулятар тэрмінала."
 
-#: ../src/pcmanfm.c:547
+#: ../src/pcmanfm.c:580
 msgid "Enter a name for the newly created folder:"
 msgstr "Увядзіце назву новага каталога:"
 
-#: ../src/pcmanfm.c:549
+#: ../src/pcmanfm.c:582
 msgid "Enter a name for the newly created file:"
 msgstr "Увядзіце назву новага файла:"
 
-#: ../src/pcmanfm.c:550
+#: ../src/pcmanfm.c:583
 msgid "Create New..."
 msgstr "Стварыць новы..."
 
-#: ../src/pcmanfm.c:550
+#: ../src/pcmanfm.c:583
 msgid "New"
 msgstr "Новы"
 
-#: ../src/pcmanfm.c:641
+#: ../src/pcmanfm.c:674
 msgid "Error, lxshortcut not installed"
 msgstr "Памылка, lxshortcut не ўстаноўлены"
 
 #. FIXME: it's dirty and will lock everything
-#: ../src/pcmanfm.c:646
+#: ../src/pcmanfm.c:679
 msgid "Failed to start lxshortcut"
 msgstr "Не ўдалося запусціць lxshortcut"
 

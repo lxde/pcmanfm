@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-07 00:40+0200\n"
+"POT-Creation-Date: 2012-07-08 22:55+0200\n"
 "PO-Revision-Date: 2010-11-01 07:33+0200\n"
 "Last-Translator: Hamidreza <n3gb0y@gmail.com>\n"
 "Language-Team: Persian <trans-fa@lists.fedoraproject.org>\n"
@@ -578,15 +578,15 @@ msgstr ""
 msgid "Remote"
 msgstr ""
 
-#: ../src/main-win.c:544
+#: ../src/main-win.c:545
 msgid "You are in super user mode"
 msgstr "شما در حالت کاربر برتر هستید"
 
-#: ../src/main-win.c:730
+#: ../src/main-win.c:732
 msgid "Switch user command is not set."
 msgstr "دستور تغییر کاربر تنظیم نشده است"
 
-#: ../src/main-win.c:1137
+#: ../src/main-win.c:1139
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -597,53 +597,53 @@ msgstr ""
 "'%s'\n"
 "نامی برای ایتم جدید نشانک وارد کنید:"
 
-#: ../src/main-win.c:1141
+#: ../src/main-win.c:1143
 msgid "Add to Bookmarks"
 msgstr "افزودن به نشانکها"
 
 #. options only acceptable by first pcmanfm instance. These options are not passed through IPC
-#: ../src/pcmanfm.c:72
+#: ../src/pcmanfm.c:73
 msgid "Name of configuration profile"
 msgstr "نام نمایه ی پیکره بندی"
 
-#: ../src/pcmanfm.c:73
+#: ../src/pcmanfm.c:74
 msgid "Run PCManFM as a daemon"
 msgstr "اجرای PCManFM به عنوان روح"
 
-#: ../src/pcmanfm.c:74
+#: ../src/pcmanfm.c:75
 msgid "No function. Just to be compatible with nautilus"
 msgstr "بدون عملگر. فقط برای سازگاری با ناتولیس"
 
 #. options that are acceptable for every instance of pcmanfm and will be passed through IPC.
-#: ../src/pcmanfm.c:77
+#: ../src/pcmanfm.c:78
 msgid "Launch desktop manager"
 msgstr "آغاز مدیر رومیزی"
 
-#: ../src/pcmanfm.c:78
+#: ../src/pcmanfm.c:79
 msgid "Turn off desktop manager if it's running"
 msgstr "خاموش کردن مدیر رومیزی اگر در حال اجرا است"
 
-#: ../src/pcmanfm.c:79
+#: ../src/pcmanfm.c:80
 msgid "Open desktop preference dialog"
 msgstr "باز کردن محاوره ی ترجیحات رومیزی"
 
-#: ../src/pcmanfm.c:80
+#: ../src/pcmanfm.c:81
 msgid "Set desktop wallpaper"
 msgstr "انتخاب تصویر پس زمینه ی رومیزی"
 
-#: ../src/pcmanfm.c:80
+#: ../src/pcmanfm.c:81
 msgid "<image file>"
 msgstr "<فایل تصویر>"
 
-#: ../src/pcmanfm.c:81
+#: ../src/pcmanfm.c:82
 msgid "Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"
 msgstr "تنظیم حالت تصویر پس زمینه. <mode>=(color|stretch|fit|center|tile)"
 
-#: ../src/pcmanfm.c:81
+#: ../src/pcmanfm.c:82
 msgid "<mode>"
 msgstr "<حالت>"
 
-#: ../src/pcmanfm.c:82
+#: ../src/pcmanfm.c:83
 msgid ""
 "Open preference dialog. 'n' is number of the page you want to show (1, 2, "
 "3...)."
@@ -652,37 +652,37 @@ msgstr ""
 
 #. { "new-win", '\0', 'n', G_OPTION_ARG_NONE, &new_win, N_("Open new window"), NULL },
 #. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
-#: ../src/pcmanfm.c:85
+#: ../src/pcmanfm.c:86
 msgid "[FILE1, FILE2,...]"
 msgstr "[فایل۱, فایل۲,...]"
 
-#: ../src/pcmanfm.c:495
+#: ../src/pcmanfm.c:528
 msgid "Terminal emulator is not set."
 msgstr "شبیه سازی ترمینال تنظیم نشده است"
 
-#: ../src/pcmanfm.c:547
+#: ../src/pcmanfm.c:580
 #, fuzzy
 msgid "Enter a name for the newly created folder:"
 msgstr "برای فایل تازه ساخته شده نامی وارد کنید:"
 
-#: ../src/pcmanfm.c:549
+#: ../src/pcmanfm.c:582
 msgid "Enter a name for the newly created file:"
 msgstr "برای فایل تازه ساخته شده نامی وارد کنید:"
 
-#: ../src/pcmanfm.c:550
+#: ../src/pcmanfm.c:583
 msgid "Create New..."
 msgstr "ساخت جدید..."
 
-#: ../src/pcmanfm.c:550
+#: ../src/pcmanfm.c:583
 msgid "New"
 msgstr "جدید"
 
-#: ../src/pcmanfm.c:641
+#: ../src/pcmanfm.c:674
 msgid "Error, lxshortcut not installed"
 msgstr ""
 
 #. FIXME: it's dirty and will lock everything
-#: ../src/pcmanfm.c:646
+#: ../src/pcmanfm.c:679
 msgid "Failed to start lxshortcut"
 msgstr ""
 
