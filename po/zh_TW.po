@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-07-08 22:55+0200\n"
-"PO-Revision-Date: 2012-04-16 07:49+0200\n"
+"PO-Revision-Date: 2012-07-09 11:19+0200\n"
 "Last-Translator: Walter <wwycheuk@gmail.com>\n"
 "Language-Team: zh_TW <zh_TW@li.org>\n"
 "Language: zh_TW\n"
@@ -22,9 +22,8 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 
 #: ../data/ui/about.glade.in.h:1
-#, fuzzy
 msgid "Copyright (C) 2009 - 2012"
-msgstr "版權所有 (C) 2009 - 2010"
+msgstr "版權所有 (C) 2009 - 2012"
 
 #: ../data/ui/about.glade.in.h:2
 msgid ""
@@ -60,7 +59,7 @@ msgstr "請選擇影像檔"
 
 #: ../data/ui/desktop-pref.glade.h:5
 msgid "Use the same wallpaper on all desktops"
-msgstr ""
+msgstr "所有桌面使用相同桌布"
 
 #: ../data/ui/desktop-pref.glade.h:6
 msgid "Background color:"
@@ -187,9 +186,8 @@ msgid "View Mode:"
 msgstr "檢視模式："
 
 #: ../data/ui/pref.glade.h:12
-#, fuzzy
 msgid "General"
-msgstr "一般(_G)"
+msgstr "一般"
 
 #: ../data/ui/pref.glade.h:13
 msgid "<b>Icons</b>"
@@ -224,9 +222,8 @@ msgid "Do not generate thumbnails for files exceeding this size:"
 msgstr "不要為超過這個大小的檔案產生縮圖："
 
 #: ../data/ui/pref.glade.h:21
-#, fuzzy
 msgid "Display"
-msgstr "顯示(_D)"
+msgstr "顯示"
 
 #: ../data/ui/pref.glade.h:22
 msgid "<b>Auto-mount</b>"
@@ -245,9 +242,8 @@ msgid "Show available options for removable media when they are inserted"
 msgstr "當插入可移除媒體時，顯示可用的選項"
 
 #: ../data/ui/pref.glade.h:26
-#, fuzzy
 msgid "Volume Management"
-msgstr "磁碟管理(_V)"
+msgstr "磁碟管理"
 
 #: ../data/ui/pref.glade.h:27
 msgid "<b>Programs</b>"
@@ -365,7 +361,7 @@ msgstr "空白檔案"
 
 #: ../src/desktop-ui.c:59 ../src/main-win-ui.c:193
 msgid "Shortcut"
-msgstr ""
+msgstr "捷徑"
 
 #: ../src/desktop-ui.c:71 ../src/main-win-ui.c:219
 msgid "By _Name"
@@ -674,12 +670,12 @@ msgstr "新增"
 
 #: ../src/pcmanfm.c:674
 msgid "Error, lxshortcut not installed"
-msgstr ""
+msgstr "出錯，未安裝 lxshortcut"
 
 #. FIXME: it's dirty and will lock everything
 #: ../src/pcmanfm.c:679
 msgid "Failed to start lxshortcut"
-msgstr ""
+msgstr "未能啟動 lxshortcut"
 
 #: ../src/tab-page.c:206
 #, c-format
@@ -705,9 +701,8 @@ msgid_plural " (%d hidden)"
 msgstr[0] "(%d 個隱藏)"
 
 #: ../data/pcmanfm.desktop.in.h:1
-#, fuzzy
 msgid "File Manager PCManFM"
-msgstr "檔案管理程式"
+msgstr "檔案管理程式 PCManFM"
 
 #: ../data/pcmanfm.desktop.in.h:2
 msgid "File Manager"
@@ -719,7 +714,7 @@ msgstr "瀏覽檔案系統及管理檔案"
 
 #: ../data/pcmanfm-desktop-pref.desktop.in.h:2
 msgid "Change desktop wallpapers and behavior of desktop manager"
-msgstr ""
+msgstr "變更桌面管現程式的桌布及行為"
 
 #~ msgid "_Advanced"
 #~ msgstr "進階(_A)"
