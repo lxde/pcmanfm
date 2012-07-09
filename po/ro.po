@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: PCManFM 0.9.10\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-07-08 22:55+0200\n"
-"PO-Revision-Date: 2012-04-23 15:57+0200\n"
+"PO-Revision-Date: 2012-07-09 16:43+0200\n"
 "Last-Translator: Mișu <dumol@l10n.ro>\n"
 "Language-Team: Romanian <diacritice@googlegroups.com>\n"
 "Language: ro\n"
@@ -21,9 +21,8 @@ msgstr ""
 "X-Generator: Pootle 2.0.5\n"
 
 #: ../data/ui/about.glade.in.h:1
-#, fuzzy
 msgid "Copyright (C) 2009 - 2012"
-msgstr "Drepturi de autor (C) 2009 - 2010"
+msgstr "Drepturi de autor (C) 2009 - 2012"
 
 #: ../data/ui/about.glade.in.h:2
 msgid ""
@@ -59,7 +58,7 @@ msgstr "Selectați un fișier de tip imagine"
 
 #: ../data/ui/desktop-pref.glade.h:5
 msgid "Use the same wallpaper on all desktops"
-msgstr ""
+msgstr "Imagine de fundal unică pentru toate desktopurile"
 
 #: ../data/ui/desktop-pref.glade.h:6
 msgid "Background color:"
@@ -186,9 +185,8 @@ msgid "View Mode:"
 msgstr "Mod de vizualizare:"
 
 #: ../data/ui/pref.glade.h:12
-#, fuzzy
 msgid "General"
-msgstr "_Generale"
+msgstr "Generale"
 
 #: ../data/ui/pref.glade.h:13
 msgid "<b>Icons</b>"
@@ -223,9 +221,8 @@ msgid "Do not generate thumbnails for files exceeding this size:"
 msgstr "Fără miniaturi pentru fișierele mai mari de:"
 
 #: ../data/ui/pref.glade.h:21
-#, fuzzy
 msgid "Display"
-msgstr "A_fișare"
+msgstr "Afișare"
 
 #: ../data/ui/pref.glade.h:22
 msgid "<b>Auto-mount</b>"
@@ -244,9 +241,8 @@ msgid "Show available options for removable media when they are inserted"
 msgstr "Arată opțiunile asociate mediilor detașabile la inserarea acestora"
 
 #: ../data/ui/pref.glade.h:26
-#, fuzzy
 msgid "Volume Management"
-msgstr "Management de _volume"
+msgstr "Management de volume"
 
 #: ../data/ui/pref.glade.h:27
 msgid "<b>Programs</b>"
@@ -365,7 +361,7 @@ msgstr "Fișier gol"
 
 #: ../src/desktop-ui.c:59 ../src/main-win-ui.c:193
 msgid "Shortcut"
-msgstr ""
+msgstr "Combinație de taste"
 
 #: ../src/desktop-ui.c:71 ../src/main-win-ui.c:219
 msgid "By _Name"
@@ -678,12 +674,12 @@ msgstr "Nou"
 
 #: ../src/pcmanfm.c:674
 msgid "Error, lxshortcut not installed"
-msgstr ""
+msgstr "Eroare, lxshortcut nu e instalat"
 
 #. FIXME: it's dirty and will lock everything
 #: ../src/pcmanfm.c:679
 msgid "Failed to start lxshortcut"
-msgstr ""
+msgstr "Nu s-a putut porni lxshortcut"
 
 #: ../src/tab-page.c:206
 #, c-format
@@ -715,9 +711,8 @@ msgstr[1] " (%d ascunse)"
 msgstr[2] " (%d ascunse)"
 
 #: ../data/pcmanfm.desktop.in.h:1
-#, fuzzy
 msgid "File Manager PCManFM"
-msgstr "Manager de fișiere"
+msgstr "Managerul de fișiere PCManFM"
 
 #: ../data/pcmanfm.desktop.in.h:2
 msgid "File Manager"
@@ -729,7 +724,7 @@ msgstr "Navigați în sistemul de fișiere și gestionați-vă fișierele"
 
 #: ../data/pcmanfm-desktop-pref.desktop.in.h:2
 msgid "Change desktop wallpapers and behavior of desktop manager"
-msgstr ""
+msgstr "Schimbați imaginile de fundal și comportamentul managerului desktopului"
 
 #~ msgid "_Advanced"
 #~ msgstr "A_vansate"
