@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm 0.9.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-07-08 22:55+0200\n"
-"PO-Revision-Date: 2011-07-09 17:25+0200\n"
+"PO-Revision-Date: 2012-07-09 05:16+0200\n"
 "Last-Translator: Duy Hung <nguyentieuhau@gmail.com>\n"
 "Language: vi\n"
 "MIME-Version: 1.0\n"
@@ -19,9 +19,8 @@ msgstr ""
 "X-Poedit-Country: UNITED KINGDOM\n"
 
 #: ../data/ui/about.glade.in.h:1
-#, fuzzy
 msgid "Copyright (C) 2009 - 2012"
-msgstr "Bản quyền © 2009 - 2010"
+msgstr "Bản quyền © 2009 - 2012"
 
 #: ../data/ui/about.glade.in.h:2
 msgid ""
@@ -38,7 +37,7 @@ msgstr ""
 msgid "translator-credits"
 msgstr ""
 "công dịch thuật\n"
-"Duy Hung Tran<nguyentieuhau@gmail.com>"
+"Tran Duy Hung<nguyentieuhau@gmail.com>"
 
 #: ../data/ui/desktop-pref.glade.h:1 ../src/desktop-ui.c:60
 #: ../data/pcmanfm-desktop-pref.desktop.in.h:1
@@ -59,7 +58,7 @@ msgstr "Vui lòng chọn một tập tin ảnh"
 
 #: ../data/ui/desktop-pref.glade.h:5
 msgid "Use the same wallpaper on all desktops"
-msgstr ""
+msgstr "Dùng chung ảnh nền trên tất cả màn hình nền"
 
 #: ../data/ui/desktop-pref.glade.h:6
 msgid "Background color:"
@@ -189,7 +188,6 @@ msgid "View Mode:"
 msgstr "Chế độ Hiển thị:"
 
 #: ../data/ui/pref.glade.h:12
-#, fuzzy
 msgid "General"
 msgstr "_Chung"
 
@@ -226,7 +224,6 @@ msgid "Do not generate thumbnails for files exceeding this size:"
 msgstr "Không tạo ảnh nhỏ cho những tập tin vượt quá kích cỡ này:"
 
 #: ../data/ui/pref.glade.h:21
-#, fuzzy
 msgid "Display"
 msgstr "_Hiển thị"
 
@@ -249,7 +246,6 @@ msgstr ""
 "Hiển thị những tùy chọn có thể cho những thiết bị khi chúng được gắn vào máy"
 
 #: ../data/ui/pref.glade.h:26
-#, fuzzy
 msgid "Volume Management"
 msgstr "_Quản lý đĩa"
 
@@ -370,7 +366,7 @@ msgstr "Tập tin Rỗng"
 
 #: ../src/desktop-ui.c:59 ../src/main-win-ui.c:193
 msgid "Shortcut"
-msgstr ""
+msgstr "Lối tắt"
 
 #: ../src/desktop-ui.c:71 ../src/main-win-ui.c:219
 msgid "By _Name"
@@ -679,12 +675,12 @@ msgstr "Mới"
 
 #: ../src/pcmanfm.c:674
 msgid "Error, lxshortcut not installed"
-msgstr ""
+msgstr "Lỗi, lxshortcut chưa được cài đặt"
 
 #. FIXME: it's dirty and will lock everything
 #: ../src/pcmanfm.c:679
 msgid "Failed to start lxshortcut"
-msgstr ""
+msgstr "Không thể chạy lxshortcut"
 
 #: ../src/tab-page.c:206
 #, c-format
@@ -710,9 +706,8 @@ msgid_plural " (%d hidden)"
 msgstr[0] " (%d đã ẩn)"
 
 #: ../data/pcmanfm.desktop.in.h:1
-#, fuzzy
 msgid "File Manager PCManFM"
-msgstr "Bộ quản lý Tập tin"
+msgstr "Bộ quản lý tập tin PCManFM"
 
 #: ../data/pcmanfm.desktop.in.h:2
 msgid "File Manager"
@@ -724,7 +719,7 @@ msgstr "Xem hệ thống tập tin và quản lý dữ liệu"
 
 #: ../data/pcmanfm-desktop-pref.desktop.in.h:2
 msgid "Change desktop wallpapers and behavior of desktop manager"
-msgstr ""
+msgstr "Thay đổi ảnh nền và trạng thái của bộ quản lý màn hình nền"
 
 #~ msgid "_Advanced"
 #~ msgstr "_Nâng cao"
