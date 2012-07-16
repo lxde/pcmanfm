@@ -666,7 +666,15 @@ static void fm_main_win_finalize(GObject *object)
 
 static void on_unrealize(GtkWidget* widget)
 {
-    gtk_window_get_size(GTK_WINDOW(widget), &app_config->win_width, &app_config->win_height);
+    int w, h;
+
+    gtk_window_get_size(GTK_WINDOW(widget), &w, &h);
+    if(w != app_config->win_width || h != app_config->win_height)
+    {
+        app_config->win_width = w;
+        app_config->win_height = h;
+        pcmanfm_save_config(FALSE);
+    }
     (*GTK_WIDGET_CLASS(fm_main_win_parent_class)->unrealize)(widget);
 }
 
