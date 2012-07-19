@@ -292,14 +292,14 @@ gboolean pcmanfm_run()
         else if(show_pref > 0)
         {
             /* FIXME: pass screen number from client */
-            fm_edit_preference(GTK_WINDOW(fm_desktop_get(0)), show_pref - 1);
+            fm_edit_preference(GTK_WINDOW(fm_desktop_get(0, 0)), show_pref - 1);
             show_pref = 0;
             return TRUE;
         }
         else if(desktop_pref)
         {
             /* FIXME: pass screen number from client */
-            fm_desktop_preference(NULL, GTK_WINDOW(fm_desktop_get(0)));
+            fm_desktop_preference(NULL, GTK_WINDOW(fm_desktop_get(0, 0)));
             desktop_pref = FALSE;
             return TRUE;
         }
