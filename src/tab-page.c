@@ -45,7 +45,7 @@ static void on_folder_unmount(FmFolder* folder, FmTabPage* page);
 static void on_folder_content_changed(FmFolder* folder, FmTabPage* page);
 static FmJobErrorAction on_folder_error(FmFolder* folder, GError* err, FmJobErrorSeverity severity, FmTabPage* page);
 
-static void on_folder_view_sel_changed(FmFolderView* fv, FmFileInfoList* files, FmTabPage* page);
+static void on_folder_view_sel_changed(FmFolderView* fv, gint n_sel, FmTabPage* page);
 static char* format_status_text(FmTabPage* page);
 
 #if GTK_CHECK_VERSION(3, 0, 0)
@@ -174,16 +174,17 @@ static void on_folder_content_changed(FmFolder* folder, FmTabPage* page)
                   page->status_text[FM_STATUS_TEXT_NORMAL]);
 }
 
-static void on_folder_view_sel_changed(FmFolderView* fv, FmFileInfoList* files, FmTabPage* page)
+static void on_folder_view_sel_changed(FmFolderView* fv, gint n_sel, FmTabPage* page)
 {
     char* msg = page->status_text[FM_STATUS_TEXT_SELECTED_FILES];
     g_free(msg);
 
-    if(files)
+    if(n_sel > 0)
     {
         /* FIXME: display total size of all selected files. */
-        if(fm_file_info_list_get_length(files) == 1) /* only one file is selected */
+        if(n_sel == 1) /* only one file is selected */
         {
+            FmFileInfoList* files = fm_folder_view_dup_selected_files(fv);
             FmFileInfo* fi = fm_file_info_list_peek_head(files);
             const char* size_str = fm_file_info_get_disp_size(fi);
             if(size_str)
@@ -199,10 +200,10 @@ static void on_folder_view_sel_changed(FmFolderView* fv, FmFileInfoList* files, 
                             fm_file_info_get_disp_name(fi),
                             fm_file_info_get_desc(fi));
             }
+            fm_file_info_list_unref(files);
         }
         else
         {
-            int n_sel = fm_file_info_list_get_length(files);
             msg = g_strdup_printf(ngettext("%d item selected", "%d items selected", n_sel), n_sel);
         }
     }
