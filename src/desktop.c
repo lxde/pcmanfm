@@ -1892,21 +1892,8 @@ static void update_background(FmDesktop* desktop, int is_it)
 
     if (!app_config->wallpaper_common)
     {
-        Atom ret_type;
-        gulong len, after;
-        int format;
-        guchar* prop;
-        guint32 cur_desktop;
+        guint32 cur_desktop = desktop->cur_desktop;
 
-        if( XGetWindowProperty(GDK_WINDOW_XDISPLAY(root), GDK_WINDOW_XID(root),
-                       XA_NET_CURRENT_DESKTOP, 0, 1, False, XA_CARDINAL, &ret_type,
-                       &format, &len, &after, &prop) != Success)
-            return;
-        if(!prop)
-            return;
-        cur_desktop = *(guint32*)prop;
-        desktop->cur_desktop = cur_desktop;
-        XFree(prop);
         if(is_it >= 0) /* signal "changed::wallpaper" */
         {
             if((gint)cur_desktop >= app_config->wallpapers_configured)
@@ -2107,9 +2094,24 @@ static GdkFilterReturn on_root_event(GdkXEvent *xevent, GdkEvent *event, gpointe
     {
         if(evt->atom == XA_NET_WORKAREA)
             update_working_area(self);
-        else if(evt->atom == XA_NET_CURRENT_DESKTOP
-                && !app_config->wallpaper_common)
-            update_background(self, -1);
+        else if(evt->atom == XA_NET_CURRENT_DESKTOP)
+        {
+            GdkWindow* root = gdk_screen_get_root_window(gtk_widget_get_screen(GTK_WIDGET(data)));
+            Atom ret_type;
+            gulong len, after;
+            int format;
+            guchar* prop;
+
+            if(XGetWindowProperty(GDK_WINDOW_XDISPLAY(root), GDK_WINDOW_XID(root),
+                       XA_NET_CURRENT_DESKTOP, 0, 1, False, XA_CARDINAL, &ret_type,
+                       &format, &len, &after, &prop) == Success && prop != NULL)
+            {
+                self->cur_desktop = *(guint32*)prop;
+                XFree(prop);
+                if(!app_config->wallpaper_common)
+                    update_background(self, -1);
+            }
+        }
     }
     return GDK_FILTER_CONTINUE;
 }
