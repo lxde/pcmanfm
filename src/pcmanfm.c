@@ -675,7 +675,7 @@ _retry:
              gtk_dialog_run( GTK_DIALOG(msg) );
              gtk_widget_destroy( msg );
          }
-         if(buf[0] && system(buf)) /* FIXME: it's dirty and will lock everything */
+         if(buf[0] && !g_spawn_command_line_async(buf, NULL))
             fm_show_error(parent, NULL, _("Failed to start lxshortcut"));
          g_object_unref(gf);
     }
