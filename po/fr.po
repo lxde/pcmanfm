@@ -51,7 +51,7 @@ msgstr "<b>Arrière-plan</b>"
 
 #: ../data/ui/desktop-pref.glade.h:3
 msgid "Wallpaper:"
-msgstr "Fond d'écran :"
+msgstr "Fond d’écran :"
 
 #: ../data/ui/desktop-pref.glade.h:4
 msgid "Please select an image file"
@@ -59,15 +59,15 @@ msgstr "Veuillez sélectionner une image"
 
 #: ../data/ui/desktop-pref.glade.h:5
 msgid "Use the same wallpaper on all desktops"
-msgstr "Utiliser le même fond d'écran sur tous les bureaux"
+msgstr "Utiliser le même fond d’écran sur tous les bureaux"
 
 #: ../data/ui/desktop-pref.glade.h:6
 msgid "Background color:"
-msgstr "Couleur de l'arrière-plan :"
+msgstr "Couleur de l’arrière-plan :"
 
 #: ../data/ui/desktop-pref.glade.h:7
 msgid "Wallpaper mode:"
-msgstr "Mode du fond d'écran :"
+msgstr "Mode du fond d’écran :"
 
 #: ../data/ui/desktop-pref.glade.h:8
 msgid "<b>Text</b>"
@@ -83,7 +83,7 @@ msgstr "Couleur du texte :"
 
 #: ../data/ui/desktop-pref.glade.h:11
 msgid "Color of shadow:"
-msgstr "Couleur des ombres :"
+msgstr "Couleur de l’ombre :"
 
 #: ../data/ui/desktop-pref.glade.h:12
 msgid "Appearance"
@@ -95,15 +95,15 @@ msgstr "<b>Montrer les icônes du bureau</b>"
 
 #: ../data/ui/desktop-pref.glade.h:14
 msgid "Show \"My Documents\" icon on desktop"
-msgstr "Afficher l'icône « Mes documents » sur le bureau"
+msgstr "Afficher l’icône « Mes documents » sur le bureau"
 
 #: ../data/ui/desktop-pref.glade.h:15
 msgid "Show \"My Computer\" icon on desktop"
-msgstr "Afficher l'icône « Mon ordinateur » sur le bureau"
+msgstr "Afficher l’icône « Mon ordinateur » sur le bureau"
 
 #: ../data/ui/desktop-pref.glade.h:16
 msgid "Show \"Trash Bin\" icon on desktop"
-msgstr "Afficher l'icône « Corbeille » sur le bureau"
+msgstr "Afficher l’icône « Corbeille » sur le bureau"
 
 #: ../data/ui/desktop-pref.glade.h:17
 msgid "Show icons of volumes on desktop"
@@ -116,7 +116,7 @@ msgstr "Icônes du bureau"
 #: ../data/ui/desktop-pref.glade.h:19
 msgid "Show menus provided by window managers when desktop is clicked"
 msgstr ""
-"Afficher le menu fourni par le gestionnaire de fenêtres lors d'un clic sur "
+"Afficher le menu fourni par le gestionnaire de fenêtres lors d’un clic sur "
 "le bureau"
 
 #: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:40
@@ -125,27 +125,27 @@ msgstr "Avancé"
 
 #: ../data/ui/desktop-pref.glade.h:21
 msgid "Fill with background color only"
-msgstr "Remplir seulement avec la couleur d'arrière-plan"
+msgstr "Remplir seulement avec la couleur d’arrière-plan"
 
 #: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:45
 msgid "Stretch to fill the entire screen"
-msgstr "Étirer pour remplir tout l'écran"
+msgstr "Étirer pour remplir tout l’écran"
 
 #: ../data/ui/desktop-pref.glade.h:23 ../data/ui/pref.glade.h:46
 msgid "Stretch to fit the screen"
-msgstr "Ajuster à la taille de l'écran"
+msgstr "Ajuster à la taille de l’écran"
 
 #: ../data/ui/desktop-pref.glade.h:24 ../data/ui/pref.glade.h:47
 msgid "Center on the screen"
-msgstr "Centrer sur l'écran"
+msgstr "Centrer sur l’écran"
 
 #: ../data/ui/desktop-pref.glade.h:25 ../data/ui/pref.glade.h:48
 msgid "Tile the image to fill the entire screen"
-msgstr "Faire une mosaïque avec l'image pour remplir l'écran"
+msgstr "Faire une mosaïque avec l’image pour remplir l’écran"
 
 #: ../data/ui/pref.glade.h:1
 msgid "Opened in Current Tab"
-msgstr "Ouvrir dans l'onglet courant"
+msgstr "Ouvrir dans l’onglet courant"
 
 #: ../data/ui/pref.glade.h:2
 msgid "Opened in New Tab"
@@ -165,11 +165,11 @@ msgstr "<b>Comportement</b>"
 
 #: ../data/ui/pref.glade.h:6
 msgid "Open files with single click"
-msgstr "Ouvrir les fichiers avec un clic simple"
+msgstr "Ouvrir les fichiers avec un simple clic"
 
 #: ../data/ui/pref.glade.h:7
 msgid "Confirm before deleting files"
-msgstr "Confirmer avant de supprimer des fichiers"
+msgstr "Confirmation avant de supprimer des fichiers"
 
 #: ../data/ui/pref.glade.h:8
 msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
@@ -186,10 +186,9 @@ msgstr "<b>Vue par défaut</b>"
 
 #: ../data/ui/pref.glade.h:11
 msgid "View Mode:"
-msgstr "Mode de vue :"
+msgstr "Mode d’affichage :"
 
 #: ../data/ui/pref.glade.h:12
-#, fuzzy
 msgid "General"
 msgstr "_Général"
 
@@ -219,16 +218,15 @@ msgstr "Montrer un aperçu pour les fichiers"
 
 #: ../data/ui/pref.glade.h:19
 msgid "Only show thumbnails for local files"
-msgstr "Montrer un aperçu seulement pour les fichiers locaux"
+msgstr "Montrer les aperçus seulement pour les fichiers locaux"
 
 #: ../data/ui/pref.glade.h:20
 msgid "Do not generate thumbnails for files exceeding this size:"
-msgstr "Ne pas générer d'aperçus pour les fichiers dépassant cette taille :"
+msgstr "Ne pas générer d’aperçus pour les fichiers dépassant cette taille :"
 
 #: ../data/ui/pref.glade.h:21
-#, fuzzy
 msgid "Display"
-msgstr "_Afficher"
+msgstr "_Affichage"
 
 #: ../data/ui/pref.glade.h:22
 msgid "<b>Auto-mount</b>"
@@ -236,7 +234,7 @@ msgstr "<b>Auto-montage</b>"
 
 #: ../data/ui/pref.glade.h:23
 msgid "Mount mountable volumes automatically on program startup"
-msgstr "Monter les volumes amovibles automatiquement lors du démarrage"
+msgstr "Monter les volumes disponibles automatiquement au lancement"
 
 #: ../data/ui/pref.glade.h:24
 msgid "Mount removable media automatically when they are inserted"
@@ -249,7 +247,6 @@ msgstr ""
 "insérés"
 
 #: ../data/ui/pref.glade.h:26
-#, fuzzy
 msgid "Volume Management"
 msgstr "Gestion des _volumes"
 
@@ -263,7 +260,7 @@ msgstr "Émulateur de terminal :"
 
 #: ../data/ui/pref.glade.h:29
 msgid "Switch user command:"
-msgstr "Commande de changement d'utilisateur :"
+msgstr "Commande de changement d’utilisateur :"
 
 #: ../data/ui/pref.glade.h:31
 #, no-c-format
@@ -271,14 +268,14 @@ msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
 "%s = the command line you want to execute with terminal or su."
 msgstr ""
-"Exemples : « xterm -e %s » pour un terminal ou « gksu %s » pour changer "
-"d'utilisateur.\n"
+"Exemples : « xterm -e %s » pour le terminal ; « gksu %s » pour le changement "
+"d’utilisateur.\n"
 "%s = la ligne de commande que vous voulez exécuter dans un terminal ou faire "
 "exécuter par un autre utilisateur."
 
 #: ../data/ui/pref.glade.h:33
 msgid "Archiver integration:"
-msgstr "Intégration de l'archiveur :"
+msgstr "Intégration de l’archiveur :"
 
 #: ../data/ui/pref.glade.h:34
 msgid "<b>User Interface</b>"
@@ -290,7 +287,7 @@ msgstr "Toujours montrer la barre des onglets"
 
 #: ../data/ui/pref.glade.h:36
 msgid "Hide 'Close tab' buttons"
-msgstr "Masquer les boutons « Fermer l'onglet »"
+msgstr "Masquer les boutons « Fermer l’onglet »"
 
 #: ../data/ui/pref.glade.h:37
 msgid "Hide side pane buttons"
@@ -303,7 +300,7 @@ msgstr "Masquer la bordure autour du contenu du répertoire"
 #: ../data/ui/pref.glade.h:39
 msgid "Use SI decimal prefixes instead of IEC binary prefixes"
 msgstr ""
-"Utiliser les préfixes décimaux SI au lieu des préfixes binaires de l'IEC"
+"Utiliser les préfixes décimaux SI au lieu des préfixes binaires de l’IEC"
 
 #: ../data/ui/pref.glade.h:41
 msgid "Icon View"
@@ -315,7 +312,7 @@ msgstr "Vue compacte"
 
 #: ../data/ui/pref.glade.h:43
 msgid "Thumbnail View"
-msgstr "Vue en aperçus"
+msgstr "Vue en miniatures"
 
 #: ../data/ui/pref.glade.h:44
 msgid "Detailed List View"
@@ -323,15 +320,15 @@ msgstr "Vue en liste détaillée"
 
 #: ../data/ui/autorun.glade.h:1
 msgid "Removable medium is inserted"
-msgstr "Périphérique amovible inseré"
+msgstr "Périphérique amovible inséré"
 
 #: ../data/ui/autorun.glade.h:2
 msgid "<b>Removable medium is inserted</b>"
-msgstr "<b>Périphérique amovible inseré</b>"
+msgstr "<b>Périphérique amovible inséré</b>"
 
 #: ../data/ui/autorun.glade.h:3
 msgid "Type of medium:"
-msgstr "Type de périphérique :"
+msgstr "Type de média :"
 
 #: ../data/ui/autorun.glade.h:4
 msgid "Detecting..."
@@ -339,7 +336,7 @@ msgstr "Détection..."
 
 #: ../data/ui/autorun.glade.h:5
 msgid "Please select the action you want to perform:"
-msgstr "Veuillez sélectionner l'action que vous voulez effectuer :"
+msgstr "Veuillez sélectionner l’action à effectuer :"
 
 #: ../src/volume-manager.c:160
 msgid "Removable Disk"
@@ -404,7 +401,7 @@ msgstr "Ouvrir dans un _terminal"
 
 #: ../src/desktop-ui.c:109
 msgid "Stick to Current Position"
-msgstr "Rester à la position courante"
+msgstr "Bloquer à la position courante"
 
 #: ../src/desktop-ui.c:114
 msgid "Snap to Grid"
@@ -424,7 +421,7 @@ msgstr "Nouvel _onglet"
 
 #: ../src/main-win-ui.c:147
 msgid "_Close Tab"
-msgstr "Fermer l'o_nglet"
+msgstr "Fermer l’o_nglet"
 
 #: ../src/main-win-ui.c:148
 msgid "Close Window"
@@ -516,7 +513,7 @@ msgstr "Corbeille"
 
 #: ../src/main-win-ui.c:175
 msgid "Network Drives"
-msgstr "Disque réseau"
+msgstr "Disques réseau"
 
 #: ../src/main-win-ui.c:176
 msgid "Applications"
@@ -532,7 +529,7 @@ msgstr "_Marque-pages"
 
 #: ../src/main-win-ui.c:179
 msgid "Add To Bookmarks"
-msgstr "Marquer cette page"
+msgstr "Ajouter aux marque-pages"
 
 #: ../src/main-win-ui.c:180
 msgid "_Tools"
@@ -544,7 +541,7 @@ msgstr "Ouvrir le répertoire courant dans un _terminal"
 
 #: ../src/main-win-ui.c:182
 msgid "Open Current Folder as _Root"
-msgstr "Ouvrir le répertoire courant en tant qu'utilisateur _root"
+msgstr "Ouvrir le répertoire courant en tant que _root"
 
 #: ../src/main-win-ui.c:199
 msgid "Show _Hidden"
@@ -564,7 +561,7 @@ msgstr "Vue _compacte"
 
 #: ../src/main-win-ui.c:207
 msgid "_Thumbnail View"
-msgstr "Vue en _aperçu"
+msgstr "Vue en _miniatures"
 
 #: ../src/main-win-ui.c:208
 msgid "Detailed _List View"
@@ -585,11 +582,11 @@ msgstr "Réseau"
 
 #: ../src/main-win.c:545
 msgid "You are in super user mode"
-msgstr "Vous êtes en mode super utilisateur"
+msgstr "Vous êtes en mode super-utilisateur"
 
 #: ../src/main-win.c:732
 msgid "Switch user command is not set."
-msgstr "La commande de changement d'utilisateur n'est pas configurée."
+msgstr "La commande de changement d’utilisateur n'est pas configurée."
 
 #: ../src/main-win.c:1139
 #, c-format
@@ -598,14 +595,14 @@ msgid ""
 "'%s'\n"
 "Enter a name for the new bookmark item:"
 msgstr ""
-"Ajouter le répertoire suivant aux marque-pages :\n"
+"Ajout du répertoire suivant aux marque-pages :\n"
 "« %s »\n"
-"Entrer un nom pour ce marque-page :"
+"Entrez un nom pour ce marque-page :"
 
 # Duplicate?
 #: ../src/main-win.c:1143
 msgid "Add to Bookmarks"
-msgstr "Marquer cette page"
+msgstr "Ajouter aux marque-pages"
 
 #. options only acceptable by first pcmanfm instance. These options are not passed through IPC
 #: ../src/pcmanfm.c:73
@@ -627,7 +624,7 @@ msgstr "Lancer le gestionnaire de bureau"
 
 #: ../src/pcmanfm.c:79
 msgid "Turn off desktop manager if it's running"
-msgstr "Quitter le gestionnaire de bureau s'il est en cours de fonctionnement"
+msgstr "Fermer le gestionnaire de bureau s’il est en cours de fonctionnement"
 
 #: ../src/pcmanfm.c:80
 msgid "Open desktop preference dialog"
@@ -635,7 +632,7 @@ msgstr "Ouvrir la fenêtre des préférences du bureau"
 
 #: ../src/pcmanfm.c:81
 msgid "Set desktop wallpaper"
-msgstr "Sélectionner un fond d'écran"
+msgstr "Sélectionner un fond d’écran"
 
 #: ../src/pcmanfm.c:81
 msgid "<image file>"
@@ -644,7 +641,7 @@ msgstr "<fichier image>"
 #: ../src/pcmanfm.c:82
 msgid "Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"
 msgstr ""
-"Sélectionner le mode d'affichage du fond d'écran. <mode>=(color|stretch|fit|"
+"Sélectionner le mode d’affichage du fond d’écran. <mode>=(color|stretch|fit|"
 "center|tile)"
 
 #: ../src/pcmanfm.c:82
@@ -667,15 +664,15 @@ msgstr "[FICHIER1, FICHIER2, ...]"
 
 #: ../src/pcmanfm.c:528
 msgid "Terminal emulator is not set."
-msgstr "L'émulateur de terminal n'est pas configuré."
+msgstr "L’émulateur de terminal n’est pas configuré."
 
 #: ../src/pcmanfm.c:580
 msgid "Enter a name for the newly created folder:"
-msgstr "Entrer un nom pour le nouveau dossier créé :"
+msgstr "Entrez un nom pour le nouveau dossier :"
 
 #: ../src/pcmanfm.c:582
 msgid "Enter a name for the newly created file:"
-msgstr "Entrer un nom pour le nouveau fichier :"
+msgstr "Entrez un nom pour le nouveau fichier :"
 
 #: ../src/pcmanfm.c:583
 msgid "Create New..."
@@ -687,12 +684,12 @@ msgstr "Nouveau"
 
 #: ../src/pcmanfm.c:674
 msgid "Error, lxshortcut not installed"
-msgstr "Erreur, lxshortcut n'est pas installé"
+msgstr "Erreur, lxshortcut n’est pas installé"
 
 #. FIXME: it's dirty and will lock everything
 #: ../src/pcmanfm.c:679
 msgid "Failed to start lxshortcut"
-msgstr "Erreur lors du démarrage de lxshortcut"
+msgstr "Erreur au démarrage de lxshortcut"
 
 #: ../src/tab-page.c:206
 #, c-format
@@ -737,7 +734,7 @@ msgstr "Parcourir le système de fichiers et gérer les fichiers"
 
 #: ../data/pcmanfm-desktop-pref.desktop.in.h:2
 msgid "Change desktop wallpapers and behavior of desktop manager"
-msgstr "Modifier les fonds d'écran et le comportement du gestionnaire de bureau"
+msgstr "Modifier les fonds d’écran et le comportement du gestionnaire de bureau"
 
 #~ msgid "_Advanced"
 #~ msgstr "_Avancé"
