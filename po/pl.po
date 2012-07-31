@@ -1,28 +1,28 @@
 # Polish translation of pcmanfm package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the pcmanfm package.
-# Piotr Sokół <psokol@jabster.pl>, 2010, 2011.
+# Piotr Sokół <psokol@jabster.pl>, 2010, 2011, 2012.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: pcmanfm 0.9.7\n"
+"Project-Id-Version: pcmanfm 1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-07-08 22:55+0200\n"
-"PO-Revision-Date: 2011-07-07 09:14+0200\n"
+"PO-Revision-Date: 2012-07-31 17:26+0200\n"
 "Last-Translator: Piotr Sokół <psokol@jabster.pl>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bits\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : ((n%10>=2 && n%10<=4 && (n"
 "%100<10 || n%100>=20)) ? 1 : 2));\n"
 "X-Generator: Pootle 2.0.5\n"
 "X-Poedit-Language: Polish\n"
+"Language-Team: polski <>\n"
 
 #: ../data/ui/about.glade.in.h:1
-#, fuzzy
 msgid "Copyright (C) 2009 - 2012"
-msgstr "Prawa autorskie (C) 2009 - 2010"
+msgstr "Copyright (C) 2009 - 2012"
 
 #: ../data/ui/about.glade.in.h:2
 msgid ""
@@ -39,7 +39,7 @@ msgstr ""
 msgid "translator-credits"
 msgstr ""
 "Grzegorz Gibas <amigib@gmail.com>, 2010.\n"
-"Piotr Sokół <psokol@jabster.pl>, 2010, 2011."
+"Piotr Sokół <psokol@jabster.pl>, 2010, 2011, 2012."
 
 #: ../data/ui/desktop-pref.glade.h:1 ../src/desktop-ui.c:60
 #: ../data/pcmanfm-desktop-pref.desktop.in.h:1
@@ -60,7 +60,7 @@ msgstr "Wybór pliku"
 
 #: ../data/ui/desktop-pref.glade.h:5
 msgid "Use the same wallpaper on all desktops"
-msgstr ""
+msgstr "Wyświetlanie tego samego tła na wszystkich obszarach roboczych"
 
 #: ../data/ui/desktop-pref.glade.h:6
 msgid "Background color:"
@@ -187,9 +187,8 @@ msgid "View Mode:"
 msgstr "Tryb:"
 
 #: ../data/ui/pref.glade.h:12
-#, fuzzy
 msgid "General"
-msgstr "_Ogólne"
+msgstr "Ogólne"
 
 #: ../data/ui/pref.glade.h:13
 msgid "<b>Icons</b>"
@@ -224,9 +223,8 @@ msgid "Do not generate thumbnails for files exceeding this size:"
 msgstr "Pomijanie generowania miniatur dla plików o rozmiarze większym niż:"
 
 #: ../data/ui/pref.glade.h:21
-#, fuzzy
 msgid "Display"
-msgstr "_Wyświetlanie"
+msgstr "Wyświetlanie"
 
 #: ../data/ui/pref.glade.h:22
 msgid "<b>Auto-mount</b>"
@@ -245,9 +243,8 @@ msgid "Show available options for removable media when they are inserted"
 msgstr "Wyświetlanie możliwych czynności po wsunięciu nośnika wymiennego"
 
 #: ../data/ui/pref.glade.h:26
-#, fuzzy
 msgid "Volume Management"
-msgstr "_Zarządzanie wolumenami"
+msgstr "Zarządzanie wolumenami"
 
 #: ../data/ui/pref.glade.h:27
 msgid "<b>Programs</b>"
@@ -366,7 +363,7 @@ msgstr "Pusty plik"
 
 #: ../src/desktop-ui.c:59 ../src/main-win-ui.c:193
 msgid "Shortcut"
-msgstr ""
+msgstr "Aktywator"
 
 #: ../src/desktop-ui.c:71 ../src/main-win-ui.c:219
 msgid "By _Name"
@@ -601,7 +598,7 @@ msgstr "Nowa zakładka"
 #. options only acceptable by first pcmanfm instance. These options are not passed through IPC
 #: ../src/pcmanfm.c:73
 msgid "Name of configuration profile"
-msgstr "Nazwa profilu"
+msgstr "Określa nazwę profilu ustawień"
 
 #: ../src/pcmanfm.c:74
 msgid "Run PCManFM as a daemon"
@@ -626,7 +623,7 @@ msgstr "Otwiera okno preferencji pulpitu"
 
 #: ../src/pcmanfm.c:81
 msgid "Set desktop wallpaper"
-msgstr "Ustawia tło pulpitu"
+msgstr "Ustala tło pulpitu"
 
 #: ../src/pcmanfm.c:81
 msgid "<image file>"
@@ -634,7 +631,7 @@ msgstr "<PLIK>"
 
 #: ../src/pcmanfm.c:82
 msgid "Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"
-msgstr "Ustawia tryb wyświetlania tła. <TRYB>=(color|stretch|fit|center|tile)"
+msgstr "Ustala tryb wyświetlania tła <TRYB>=(color|stretch|fit|center|tile)"
 
 #: ../src/pcmanfm.c:82
 msgid "<mode>"
@@ -676,12 +673,12 @@ msgstr "Nowy"
 
 #: ../src/pcmanfm.c:674
 msgid "Error, lxshortcut not installed"
-msgstr ""
+msgstr "Błąd, niezainstalowany lxshorcut"
 
 #. FIXME: it's dirty and will lock everything
 #: ../src/pcmanfm.c:679
 msgid "Failed to start lxshortcut"
-msgstr ""
+msgstr "Nie udało się uruchomić programu lxshortcut"
 
 #: ../src/tab-page.c:206
 #, c-format
@@ -713,9 +710,8 @@ msgstr[1] " (%d ukryte)"
 msgstr[2] " (%d ukrytych)"
 
 #: ../data/pcmanfm.desktop.in.h:1
-#, fuzzy
 msgid "File Manager PCManFM"
-msgstr "Menedżer plików"
+msgstr "Menedżer plików PCManFM"
 
 #: ../data/pcmanfm.desktop.in.h:2
 msgid "File Manager"
@@ -726,8 +722,9 @@ msgid "Browse the file system and manage the files"
 msgstr "Umożliwia przeglądanie systemu plików i zarządza jego zawartością"
 
 #: ../data/pcmanfm-desktop-pref.desktop.in.h:2
+#, fuzzy
 msgid "Change desktop wallpapers and behavior of desktop manager"
-msgstr ""
+msgstr "Zmienia tło pulpitu i zachowanie menedżera pulpitu"
 
 #~ msgid "_Advanced"
 #~ msgstr "_Zaawansowane"
