@@ -296,8 +296,8 @@ static void on_folder_fs_info(FmFolder* folder, FmTabPage* page)
     {
         char total_str[ 64 ];
         char free_str[ 64 ];
-        fm_file_size_to_str(free_str, sizeof(free_str), free, TRUE);
-        fm_file_size_to_str(total_str, sizeof(total_str), total, TRUE);
+        fm_file_size_to_str(free_str, sizeof(free_str), free, fm_config->si_unit);
+        fm_file_size_to_str(total_str, sizeof(total_str), total, fm_config->si_unit);
         msg = g_strdup_printf(_("Free space: %s (Total: %s)"), free_str, total_str );
     }
     else
