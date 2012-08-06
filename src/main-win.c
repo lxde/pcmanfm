@@ -249,6 +249,24 @@ static gboolean on_view_key_press_event(FmFolderView* fv, GdkEventKey* evt, FmMa
                 fm_file_info_list_unref(files);
             break;
         }
+    case GDK_F11:
+        win->fullscreen = !win->fullscreen;
+        if(win->fullscreen)
+        {
+            int w, h;
+
+            gtk_window_get_size(GTK_WINDOW(win), &w, &h);
+            if(w != app_config->win_width || h != app_config->win_height)
+            {
+                app_config->win_width = w;
+                app_config->win_height = h;
+                pcmanfm_save_config(FALSE);
+            }
+            gtk_window_fullscreen(GTK_WINDOW(win));
+        }
+        else
+            gtk_window_unfullscreen(GTK_WINDOW(win));
+        break;
     }
     return FALSE;
 }
@@ -669,7 +687,8 @@ static void on_unrealize(GtkWidget* widget)
     int w, h;
 
     gtk_window_get_size(GTK_WINDOW(widget), &w, &h);
-    if(w != app_config->win_width || h != app_config->win_height)
+    if(!FM_MAIN_WIN(widget)->fullscreen &&
+       (w != app_config->win_width || h != app_config->win_height))
     {
         app_config->win_width = w;
         app_config->win_height = h;

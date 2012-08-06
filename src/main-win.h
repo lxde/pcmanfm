@@ -65,6 +65,7 @@ struct _FmMainWin
     guint statusbar_ctx2;
     FmBookmarks* bookmarks;
     guint idle_handler; /* fix for GtkEntry bug */
+    gboolean fullscreen;
 };
 
 struct _FmMainWinClass
