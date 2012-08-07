@@ -177,8 +177,6 @@ enum
     N_PROPERTIES
 };
 
-static GParamSpec *fm_desktop_properties[N_PROPERTIES] = { NULL, };
-
 /* insert GtkUIManager XML definitions */
 #include "desktop-ui.c"
 
@@ -2911,10 +2909,8 @@ static void fm_desktop_class_init(FmDesktopClass *klass)
     object_class->set_property = fm_desktop_set_property;
     object_class->get_property = fm_desktop_get_property;
 
-    fm_desktop_properties[PROP_MONITOR] =
+    g_object_class_install_property(object_class, PROP_MONITOR,
         g_param_spec_int("monitor", "Monitor",
                          "Monitor number where desktop is",
-                         0, 127, 0, G_PARAM_CONSTRUCT_ONLY | G_PARAM_WRITABLE);
-    g_object_class_install_properties(object_class, N_PROPERTIES,
-                                      fm_desktop_properties);
+                         0, 127, 0, G_PARAM_CONSTRUCT_ONLY | G_PARAM_WRITABLE));
 }
