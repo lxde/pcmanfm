@@ -381,22 +381,27 @@ static GObject* fm_desktop_constructor(GType type, guint n_construct_properties,
     g_signal_connect(screen, "size-changed", G_CALLBACK(on_screen_size_changed), self);
 
     /* init dnd support */
+#ifdef fm_default_dnd_dest_targets /* it's removed in 1.0.1 */
     gtk_drag_source_set(GTK_WIDGET(self), 0,
             fm_default_dnd_dest_targets, N_FM_DND_DEST_DEFAULT_TARGETS,
             GDK_ACTION_COPY|GDK_ACTION_MOVE|GDK_ACTION_LINK|GDK_ACTION_ASK);
+#endif
+    self->dnd_src = fm_dnd_src_new((GtkWidget*)self);
     targets = gtk_drag_source_get_target_list((GtkWidget*)self);
-    /* add our own targets */
+    /* add our own targets -- FIXME: it's dirty */
     gtk_target_list_add_table(targets, dnd_targets, G_N_ELEMENTS(dnd_targets));
     /* a dirty way to override FmDndSrc. */
     g_signal_connect(self, "drag-data-get", G_CALLBACK(on_drag_data_get), NULL);
-    self->dnd_src = fm_dnd_src_new((GtkWidget*)self);
     g_signal_connect(self->dnd_src, "data-get", G_CALLBACK(on_dnd_src_data_get), self);
 
+    self->dnd_dest = fm_dnd_dest_new((GtkWidget*)self);
+
+#ifdef fm_default_dnd_dest_targets /* it's removed in 1.0.1 */
     gtk_drag_dest_set(GTK_WIDGET(self), 0, NULL, 0,
             GDK_ACTION_COPY|GDK_ACTION_MOVE|GDK_ACTION_LINK|GDK_ACTION_ASK);
+#endif
+    /* FIXME: it's dirty */
     gtk_drag_dest_set_target_list(GTK_WIDGET(self), targets);
-
-    self->dnd_dest = fm_dnd_dest_new((GtkWidget*)self);
 
     gtk_window_group_add_window(win_group, GTK_WINDOW(self));
 
