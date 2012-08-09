@@ -1312,10 +1312,11 @@ static void on_tab_page_chdir(FmTabPage* page, FmPath* path, FmMainWin* win)
 
 static void on_notebook_switch_page(GtkNotebook* nb, GtkNotebookPage* new_page, guint num, FmMainWin* win)
 {
+    GtkWidget* sw_page = gtk_notebook_get_nth_page(nb, num);
     FmTabPage* page;
 
-    g_return_if_fail(FM_IS_TAB_PAGE(new_page));
-    page = (FmTabPage*)new_page;
+    g_return_if_fail(FM_IS_TAB_PAGE(sw_page));
+    page = (FmTabPage*)sw_page;
     /* connect to the new active page */
     win->current_page = page;
     win->folder_view = fm_tab_page_get_folder_view(page);
