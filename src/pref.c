@@ -256,12 +256,12 @@ static void on_entry_changed(GtkEntry* entry, gpointer _off)
 
 static void init_entry(GtkBuilder* b, const char* name, gsize off, const char* changed_notify)
 {
-    GtkSpinButton* btn = GTK_SPIN_BUTTON(gtk_builder_get_object(b, name));
+    GtkEntry* btn = GTK_ENTRY(gtk_builder_get_object(b, name));
     gchar** val = (gchar**)G_STRUCT_MEMBER_P(fm_config, off);
     if(changed_notify)
         g_object_set_data_full(G_OBJECT(btn), "changed", g_strdup(changed_notify), g_free);
     if(*val)
-        gtk_entry_set_text(GTK_ENTRY(btn), *val);
+        gtk_entry_set_text(btn, *val);
     g_signal_connect(btn, "changed", G_CALLBACK(on_entry_changed), GSIZE_TO_POINTER(off));
 }
 
