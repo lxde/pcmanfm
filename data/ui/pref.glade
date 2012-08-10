@@ -1163,9 +1163,6 @@ If unchecked then use Startup Notify only if that is defined for application.</p
                     <property name="can_focus">True</property>
                     <property name="headers_visible">False</property>
                     <property name="headers_clickable">False</property>
-                    <child internal-child="selection">
-                      <object class="GtkTreeSelection" id="treeview-selection1"/>
-                    </child>
                     <child>
                       <object class="GtkTreeViewColumn" id="label_column">
                         <child>
