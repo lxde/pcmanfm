@@ -13,19 +13,19 @@ msgstr ""
 "Project-Id-Version: pcmanfm 0.9.9\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-07-08 22:55+0200\n"
-"PO-Revision-Date: 2011-06-13 12:46-0300\n"
-"Last-Translator: Sérgio Cipolla <secipolla@gmail.com>\n"
+"PO-Revision-Date: 2012-07-09 03:18+0200\n"
+"Last-Translator: Adriano <adrianoh2@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <ldp-br@bazar2.conectiva.com.br>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Pootle 2.0.5\n"
 
 #: ../data/ui/about.glade.in.h:1
-#, fuzzy
 msgid "Copyright (C) 2009 - 2012"
-msgstr "Copyright (C) 2009 - 2010"
+msgstr "Copyright (C) 2009 - 2012"
 
 #: ../data/ui/about.glade.in.h:2
 msgid ""
@@ -37,20 +37,22 @@ msgstr ""
 "\n"
 "Desenvolvido por Hon Jen Yee (PCMan)"
 
+# Adicionado tradutor - Adriano H. Hedler e organizado em ordem alfabética.
 #. Please replace this line with your own names, one name per line.
 #: ../data/ui/about.glade.in.h:6
 msgid "translator-credits"
 msgstr ""
+"Adriano H. Hedler <adrianoh2@gmail.com>\n"
 "Fábio Antunes <fabio.antunes@hotmail.com>\n"
 "Flávio Costa <formicbr@gmail.com>\n"
-"Og Maciel <ogmaciel@gnome.org>\n"
 "Henrique P. Machado <zehrique@gmail.com>\n"
+"Og Maciel <ogmaciel@gnome.org>\n"
 "Sérgio B. Cipolla <secipolla@gmail.com>"
 
 #: ../data/ui/desktop-pref.glade.h:1 ../src/desktop-ui.c:60
 #: ../data/pcmanfm-desktop-pref.desktop.in.h:1
 msgid "Desktop Preferences"
-msgstr "Preferências da área de trabalho"
+msgstr "Preferências da Área de Trabalho"
 
 #: ../data/ui/desktop-pref.glade.h:2
 msgid "<b>Background</b>"
@@ -66,7 +68,7 @@ msgstr "Por favor, selecione um arquivo de imagem"
 
 #: ../data/ui/desktop-pref.glade.h:5
 msgid "Use the same wallpaper on all desktops"
-msgstr ""
+msgstr "Use o mesmo plano de fundo para todas as áreas de trabalho"
 
 #: ../data/ui/desktop-pref.glade.h:6
 msgid "Background color:"
@@ -196,7 +198,6 @@ msgid "View Mode:"
 msgstr "Modo de visão:"
 
 #: ../data/ui/pref.glade.h:12
-#, fuzzy
 msgid "General"
 msgstr "_Geral"
 
@@ -233,9 +234,8 @@ msgid "Do not generate thumbnails for files exceeding this size:"
 msgstr "Não gerar miniaturas para arquivos com tamanho maior que:"
 
 #: ../data/ui/pref.glade.h:21
-#, fuzzy
 msgid "Display"
-msgstr "Í_cones"
+msgstr "Exibir"
 
 #: ../data/ui/pref.glade.h:22
 msgid "<b>Auto-mount</b>"
@@ -255,9 +255,8 @@ msgstr ""
 "Mostrar opções disponíveis para mídia removível quando elas forem inseridas"
 
 #: ../data/ui/pref.glade.h:26
-#, fuzzy
 msgid "Volume Management"
-msgstr "Gerenciamento de _volumes"
+msgstr "Gerenciamento de Volumes"
 
 #: ../data/ui/pref.glade.h:27
 msgid "<b>Programs</b>"
@@ -376,7 +375,7 @@ msgstr "Arquivo em branco"
 
 #: ../src/desktop-ui.c:59 ../src/main-win-ui.c:193
 msgid "Shortcut"
-msgstr ""
+msgstr "Atalho"
 
 #: ../src/desktop-ui.c:71 ../src/main-win-ui.c:219
 msgid "By _Name"
@@ -690,12 +689,12 @@ msgstr "Novo(a)"
 
 #: ../src/pcmanfm.c:674
 msgid "Error, lxshortcut not installed"
-msgstr ""
+msgstr "Erro, lxshortcut não instalado"
 
 #. FIXME: it's dirty and will lock everything
 #: ../src/pcmanfm.c:679
 msgid "Failed to start lxshortcut"
-msgstr ""
+msgstr "Falha ao iniciar lxshortcut"
 
 #: ../src/tab-page.c:206
 #, c-format
@@ -724,9 +723,8 @@ msgstr[0] " (%d oculto)"
 msgstr[1] " (%d ocultos)"
 
 #: ../data/pcmanfm.desktop.in.h:1
-#, fuzzy
 msgid "File Manager PCManFM"
-msgstr "Gerenciador de arquivos"
+msgstr "Gerenciador de Arquivos PCManFM"
 
 #: ../data/pcmanfm.desktop.in.h:2
 msgid "File Manager"
@@ -739,6 +737,8 @@ msgstr "Navegue pelo sistema de arquivos e gerencie arquivos e pastas"
 #: ../data/pcmanfm-desktop-pref.desktop.in.h:2
 msgid "Change desktop wallpapers and behavior of desktop manager"
 msgstr ""
+"Alterar papéis de parede e o comportamento do gerenciador da área de "
+"trabalho"
 
 #~ msgid "_Advanced"
 #~ msgstr "_Avançado"

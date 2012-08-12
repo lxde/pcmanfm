@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-07-08 22:55+0200\n"
-"PO-Revision-Date: 2011-12-14 10:39+0200\n"
+"PO-Revision-Date: 2012-07-13 14:44+0200\n"
 "Last-Translator: Gheyret <gheyret@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
 "Language: ug\n"
@@ -19,9 +19,8 @@ msgstr ""
 "X-Generator: Pootle 2.0.5\n"
 
 #: ../data/ui/about.glade.in.h:1
-#, fuzzy
 msgid "Copyright (C) 2009 - 2012"
-msgstr "نەشر ھوقۇقى (C) 2009 - 2010"
+msgstr "نەشر ھوقۇقى (C) 2009 - 2012"
 
 #: ../data/ui/about.glade.in.h:2
 msgid ""
@@ -57,7 +56,7 @@ msgstr "بىر سۈرەت ھۆججىتى تاللاڭ"
 
 #: ../data/ui/desktop-pref.glade.h:5
 msgid "Use the same wallpaper on all desktops"
-msgstr ""
+msgstr "بارلىق ئۈستەلئۈستىدە ئوخشاش تام قەغىزىنى ئىشلەتسۇن"
 
 #: ../data/ui/desktop-pref.glade.h:6
 msgid "Background color:"
@@ -185,9 +184,8 @@ msgid "View Mode:"
 msgstr "كۆرۈنۈش ھالىتى:"
 
 #: ../data/ui/pref.glade.h:12
-#, fuzzy
 msgid "General"
-msgstr "ئادەتتىكى(_G)"
+msgstr "ئادەتتىكى"
 
 #: ../data/ui/pref.glade.h:13
 msgid "<b>Icons</b>"
@@ -222,9 +220,8 @@ msgid "Do not generate thumbnails for files exceeding this size:"
 msgstr "بۇ چوڭلۇقتىن ئېشىپ كەتكەن ھۆججەتلەرنىڭ كىچىك سۈرىتىنى ھاسىل قىلمىسۇن"
 
 #: ../data/ui/pref.glade.h:21
-#, fuzzy
 msgid "Display"
-msgstr "كۆرسەت(_D)"
+msgstr "كۆرسىتىش"
 
 #: ../data/ui/pref.glade.h:22
 msgid "<b>Auto-mount</b>"
@@ -245,9 +242,8 @@ msgstr ""
 "يۆتكىلىشچان ۋاسىتە قىستۇرۇلغاندا ئىشلەتكىلى بولىدىغان تاللانمىلارنى كۆرسەتسۇن"
 
 #: ../data/ui/pref.glade.h:26
-#, fuzzy
 msgid "Volume Management"
-msgstr "دىسكا باشقۇرۇش(_V)"
+msgstr "دىسكا باشقۇرۇش"
 
 #: ../data/ui/pref.glade.h:27
 msgid "<b>Programs</b>"
@@ -368,7 +364,7 @@ msgstr "قۇرۇق ھۆججەت"
 
 #: ../src/desktop-ui.c:59 ../src/main-win-ui.c:193
 msgid "Shortcut"
-msgstr ""
+msgstr "تېزلەتمە"
 
 #: ../src/desktop-ui.c:71 ../src/main-win-ui.c:219
 msgid "By _Name"
@@ -681,12 +677,12 @@ msgstr "يېڭى"
 
 #: ../src/pcmanfm.c:674
 msgid "Error, lxshortcut not installed"
-msgstr ""
+msgstr "خاتالىق كۆرۈلدى، lxshortcut ئورنىتىلمىغان"
 
 #. FIXME: it's dirty and will lock everything
 #: ../src/pcmanfm.c:679
 msgid "Failed to start lxshortcut"
-msgstr ""
+msgstr "بۇ lxshortcut نى باشلاش مەغلۇپ بولدى"
 
 #: ../src/tab-page.c:206
 #, c-format
@@ -712,9 +708,8 @@ msgid_plural " (%d hidden)"
 msgstr[0] " (%d يوشۇرۇن)"
 
 #: ../data/pcmanfm.desktop.in.h:1
-#, fuzzy
 msgid "File Manager PCManFM"
-msgstr "ھۆججەت باشقۇرغۇ"
+msgstr "ھۆججەت باشقۇرغۇ PCManFM"
 
 #: ../data/pcmanfm.desktop.in.h:2
 msgid "File Manager"
@@ -726,7 +721,7 @@ msgstr "ھۆججەت سىستېمىسىنى كۆرىدۇ ۋە ھۆججەتلەر
 
 #: ../data/pcmanfm-desktop-pref.desktop.in.h:2
 msgid "Change desktop wallpapers and behavior of desktop manager"
-msgstr ""
+msgstr "ئۈستەلئۈستى تام قەغىزى ۋە ھۆججەت باشقۇرغۇنىڭ ئىشلىرىنى ئۆزگەرتىش"
 
 #~ msgid "_Advanced"
 #~ msgstr "ئالىي(_A)"

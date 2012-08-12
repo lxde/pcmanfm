@@ -19,9 +19,8 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ../data/ui/about.glade.in.h:1
-#, fuzzy
 msgid "Copyright (C) 2009 - 2012"
-msgstr "Copyright (C) 2009 - 2010"
+msgstr "Copyright (C) 2009 - 2012"
 
 #: ../data/ui/about.glade.in.h:2
 msgid ""
@@ -57,7 +56,7 @@ msgstr "画像ファイルを選んでください"
 
 #: ../data/ui/desktop-pref.glade.h:5
 msgid "Use the same wallpaper on all desktops"
-msgstr ""
+msgstr "すべてのデスクトップで同じ壁紙を使う"
 
 #: ../data/ui/desktop-pref.glade.h:6
 msgid "Background color:"
@@ -184,9 +183,8 @@ msgid "View Mode:"
 msgstr "ビューのモード:"
 
 #: ../data/ui/pref.glade.h:12
-#, fuzzy
 msgid "General"
-msgstr "一般(_G)"
+msgstr "一般"
 
 #: ../data/ui/pref.glade.h:13
 msgid "<b>Icons</b>"
@@ -221,9 +219,8 @@ msgid "Do not generate thumbnails for files exceeding this size:"
 msgstr "このサイズよりも大きなファイルにはサムネイルを作らない"
 
 #: ../data/ui/pref.glade.h:21
-#, fuzzy
 msgid "Display"
-msgstr "ディスプレイ(_D)"
+msgstr "ディスプレイ"
 
 #: ../data/ui/pref.glade.h:22
 msgid "<b>Auto-mount</b>"
@@ -243,9 +240,8 @@ msgid "Show available options for removable media when they are inserted"
 msgstr "リムーバブルメディアが挿入されたとき、可能な選択肢を表示する"
 
 #: ../data/ui/pref.glade.h:26
-#, fuzzy
 msgid "Volume Management"
-msgstr "ボリューム管理(_V)"
+msgstr "ボリューム管理"
 
 #: ../data/ui/pref.glade.h:27
 msgid "<b>Programs</b>"
@@ -363,7 +359,7 @@ msgstr "空のファイル"
 
 #: ../src/desktop-ui.c:59 ../src/main-win-ui.c:193
 msgid "Shortcut"
-msgstr ""
+msgstr "ショートカット"
 
 #: ../src/desktop-ui.c:71 ../src/main-win-ui.c:219
 msgid "By _Name"
@@ -673,12 +669,12 @@ msgstr "New"
 
 #: ../src/pcmanfm.c:674
 msgid "Error, lxshortcut not installed"
-msgstr ""
+msgstr "エラー、lxshortcut はインストールされていません"
 
 #. FIXME: it's dirty and will lock everything
 #: ../src/pcmanfm.c:679
 msgid "Failed to start lxshortcut"
-msgstr ""
+msgstr "lxshortcut の立ち上げに失敗しました"
 
 #: ../src/tab-page.c:206
 #, c-format
@@ -704,9 +700,8 @@ msgid_plural " (%d hidden)"
 msgstr[0] " (隠しアイテム %d個)"
 
 #: ../data/pcmanfm.desktop.in.h:1
-#, fuzzy
 msgid "File Manager PCManFM"
-msgstr "ファイルマネージャ"
+msgstr "ファイルマネージャ PCManFM"
 
 #: ../data/pcmanfm.desktop.in.h:2
 msgid "File Manager"
@@ -718,7 +713,7 @@ msgstr "ファイルシステムをブラウズし、ファイルの管理を行
 
 #: ../data/pcmanfm-desktop-pref.desktop.in.h:2
 msgid "Change desktop wallpapers and behavior of desktop manager"
-msgstr ""
+msgstr "壁紙やデスクトップマネージャの動作を変更する"
 
 #~ msgid "_Advanced"
 #~ msgstr "高度な設定(_A)"
