@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PCManFM 0.9.10\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-08 22:55+0200\n"
+"POT-Creation-Date: 2012-08-12 18:17+0200\n"
 "PO-Revision-Date: 2012-07-09 16:43+0200\n"
 "Last-Translator: Mișu <dumol@l10n.ro>\n"
 "Language-Team: Romanian <diacritice@googlegroups.com>\n"
@@ -676,12 +676,11 @@ msgstr "Nou"
 msgid "Error, lxshortcut not installed"
 msgstr "Eroare, lxshortcut nu e instalat"
 
-#. FIXME: it's dirty and will lock everything
 #: ../src/pcmanfm.c:679
 msgid "Failed to start lxshortcut"
 msgstr "Nu s-a putut porni lxshortcut"
 
-#: ../src/tab-page.c:206
+#: ../src/tab-page.c:207
 #, c-format
 msgid "%d item selected"
 msgid_plural "%d items selected"
@@ -689,12 +688,12 @@ msgstr[0] "%d element selectat"
 msgstr[1] "%d elemente selectate"
 msgstr[2] "%d de elemente selectate"
 
-#: ../src/tab-page.c:300
+#: ../src/tab-page.c:301
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Spațiu liber: %s (Total: %s)"
 
-#: ../src/tab-page.c:320
+#: ../src/tab-page.c:321
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
@@ -702,7 +701,7 @@ msgstr[0] "%d element"
 msgstr[1] "%d elemente"
 msgstr[2] "%d de elemente"
 
-#: ../src/tab-page.c:321
+#: ../src/tab-page.c:322
 #, c-format
 msgid " (%d hidden)"
 msgid_plural " (%d hidden)"
@@ -724,7 +723,8 @@ msgstr "Navigați în sistemul de fișiere și gestionați-vă fișierele"
 
 #: ../data/pcmanfm-desktop-pref.desktop.in.h:2
 msgid "Change desktop wallpapers and behavior of desktop manager"
-msgstr "Schimbați imaginile de fundal și comportamentul managerului desktopului"
+msgstr ""
+"Schimbați imaginile de fundal și comportamentul managerului desktopului"
 
 #~ msgid "_Advanced"
 #~ msgstr "A_vansate"
