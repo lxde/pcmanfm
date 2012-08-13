@@ -381,7 +381,7 @@ static GObject* fm_desktop_constructor(GType type, guint n_construct_properties,
     g_signal_connect(screen, "size-changed", G_CALLBACK(on_screen_size_changed), self);
 
     /* init dnd support */
-#ifdef fm_default_dnd_dest_targets /* it's removed in 1.0.1 */
+#ifdef HAVE_LIBFM_DEFAULT_DND_DEST_TARGETS
     gtk_drag_source_set(GTK_WIDGET(self), 0,
             fm_default_dnd_dest_targets, N_FM_DND_DEST_DEFAULT_TARGETS,
             GDK_ACTION_COPY|GDK_ACTION_MOVE|GDK_ACTION_LINK|GDK_ACTION_ASK);
@@ -396,7 +396,7 @@ static GObject* fm_desktop_constructor(GType type, guint n_construct_properties,
 
     self->dnd_dest = fm_dnd_dest_new((GtkWidget*)self);
 
-#ifdef fm_default_dnd_dest_targets /* it's removed in 1.0.1 */
+#ifdef HAVE_LIBFM_DEFAULT_DND_DEST_TARGETS
     gtk_drag_dest_set(GTK_WIDGET(self), 0, NULL, 0,
             GDK_ACTION_COPY|GDK_ACTION_MOVE|GDK_ACTION_LINK|GDK_ACTION_ASK);
 #endif

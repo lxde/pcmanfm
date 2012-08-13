@@ -104,6 +104,19 @@ PKG_CHECK_MODULES(FM, [$fm_modules])
 AC_SUBST(FM_CFLAGS)
 AC_SUBST(FM_LIBS)
 
+dnl This is temp. workaround until 1.0.2 where libfm 1.0.1 will be required
+AC_MSG_CHECKING([for fm_default_dnd_dest_targets])
+save_CPPFLAGS="$CPPFLAGS"
+CPPFLAGS="$CPPFLAGS $FM_CFLAGS"
+AC_COMPILE_IFELSE([AC_LANG_PROGRAM([
+#include <libfm/fm-gtk.h>
+void* x = fm_default_dnd_dest_targets;
+    ])], [AC_DEFINE(HAVE_LIBFM_DEFAULT_DND_DEST_TARGETS, 1,
+               [Define if Libfm have fm_default_dnd_dest_targets in headers])
+        AC_MSG_RESULT(yes)],
+    [AC_MSG_RESULT(no)])
+CPPFLAGS="$save_CPPFLAGS"
+
 menu_modules="libmenu-cache >= 0.3.2"
 PKG_CHECK_MODULES(MENU_CACHE, [$menu_modules])
 AC_SUBST(MENU_CACHE_CFLAGS)
