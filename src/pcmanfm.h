@@ -27,6 +27,9 @@
 
 G_BEGIN_DECLS
 
+/* Timeout for config saving in milliseconds */
+#define CONFIG_SAVE_TIMEOUT 2000
+
 /* After opening any window/dialog/tool, this should be called. */
 void pcmanfm_ref();
 

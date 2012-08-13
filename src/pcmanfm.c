@@ -513,8 +513,10 @@ void pcmanfm_save_config(gboolean immediate)
     else
     {
         /* install an idle handler to save the config file. */
-        if( 0 == save_config_idle)
-            save_config_idle = g_idle_add_full(G_PRIORITY_LOW, (GSourceFunc)on_save_config_idle, NULL, NULL);
+        if(save_config_idle)
+            g_source_remove(save_config_idle);
+        save_config_idle = g_timeout_add_full(G_PRIORITY_LOW, CONFIG_SAVE_TIMEOUT,
+                                  (GSourceFunc)on_save_config_idle, NULL, NULL);
     }
 }
 
