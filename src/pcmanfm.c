@@ -658,7 +658,10 @@ _retry:
          if (g_find_program_in_path("lxshortcut"))
          {
             char* path = g_file_get_path(gf);
-            int s = snprintf(buf, sizeof(buf), "lxshortcut -i %s", path);
+            char* quoted = g_shell_quote(path);
+            g_debug("creating shortcut %s", quoted);
+            int s = snprintf(buf, sizeof(buf), "lxshortcut -i %s", quoted);
+            g_free(quoted);
             g_free(path);
             if(s >= (int)sizeof(buf))
                 buf[0] = '\0';
