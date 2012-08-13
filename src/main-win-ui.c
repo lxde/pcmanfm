@@ -79,6 +79,7 @@ static const char main_menu_xml[] =
       "<menuitem action='Places' />"
       "<menuitem action='DirTree' />"
     "</menu>"
+    "<menuitem action='Fullscreen' />"
     "<separator/>"
     "<menuitem action='IconView'/>"
     "<menuitem action='ThumbnailView'/>"
@@ -197,7 +198,8 @@ static GtkActionEntry main_win_actions[]=
 static GtkToggleActionEntry main_win_toggle_actions[]=
 {
     {"ShowHidden", NULL, N_("Show _Hidden"), "<Ctrl>H", NULL, G_CALLBACK(on_show_hidden), FALSE},
-    {"ShowSidePane", NULL, N_("Show Side Pane"), "F7", NULL, G_CALLBACK(on_show_side_pane), TRUE}
+    {"ShowSidePane", NULL, N_("Show Side Pane"), "F7", NULL, G_CALLBACK(on_show_side_pane), TRUE},
+    {"Fullscreen", NULL, N_("Fullscreen Mode"), "F11", NULL, G_CALLBACK(on_fullscreen), FALSE}
 };
 
 static GtkRadioActionEntry main_win_mode_actions[]=

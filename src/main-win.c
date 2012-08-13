@@ -97,6 +97,7 @@ static void on_about(GtkAction* act, FmMainWin* win);
 static void on_open_folder_in_terminal(GtkAction* act, FmMainWin* win);
 static void on_open_in_terminal(GtkAction* act, FmMainWin* win);
 static void on_open_as_root(GtkAction* act, FmMainWin* win);
+static void on_fullscreen(GtkToggleAction* act, FmMainWin* win);
 
 static void on_location(GtkAction* act, FmMainWin* win);
 
@@ -249,24 +250,6 @@ static gboolean on_view_key_press_event(FmFolderView* fv, GdkEventKey* evt, FmMa
                 fm_file_info_list_unref(files);
             break;
         }
-    case GDK_F11:
-        win->fullscreen = !win->fullscreen;
-        if(win->fullscreen)
-        {
-            int w, h;
-
-            gtk_window_get_size(GTK_WINDOW(win), &w, &h);
-            if(w != app_config->win_width || h != app_config->win_height)
-            {
-                app_config->win_width = w;
-                app_config->win_height = h;
-                pcmanfm_save_config(FALSE);
-            }
-            gtk_window_fullscreen(GTK_WINDOW(win));
-        }
-        else
-            gtk_window_unfullscreen(GTK_WINDOW(win));
-        break;
     }
     return FALSE;
 }
@@ -801,6 +784,30 @@ static void on_show_hidden(GtkToggleAction* act, FmMainWin* win)
         app_config->show_hidden = active;
         pcmanfm_save_config(FALSE);
     }
+}
+
+static void on_fullscreen(GtkToggleAction* act, FmMainWin* win)
+{
+    gboolean active = gtk_toggle_action_get_active(act);
+
+    if(win->fullscreen == active)
+        return;
+    win->fullscreen = active;
+    if(win->fullscreen)
+    {
+        int w, h;
+
+        gtk_window_get_size(GTK_WINDOW(win), &w, &h);
+        if(w != app_config->win_width || h != app_config->win_height)
+        {
+            app_config->win_width = w;
+            app_config->win_height = h;
+            pcmanfm_save_config(FALSE);
+        }
+        gtk_window_fullscreen(GTK_WINDOW(win));
+    }
+    else
+        gtk_window_unfullscreen(GTK_WINDOW(win));
 }
 
 static void on_change_mode(GtkRadioAction* act, GtkRadioAction *cur, FmMainWin* win)
