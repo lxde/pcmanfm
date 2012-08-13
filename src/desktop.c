@@ -20,6 +20,10 @@
  *      MA 02110-1301, USA.
  */
 
+#ifdef HAVE_CONFIG_H
+#include <config.h>
+#endif
+
 #include "desktop.h"
 #include "pcmanfm.h"
 #include "app-config.h"
