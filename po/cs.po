@@ -8,19 +8,19 @@ msgstr ""
 "Project-Id-Version: pcmanfm2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-08-12 18:17+0200\n"
-"PO-Revision-Date: 2010-04-01 23:30+0100\n"
-"Last-Translator: Radek Tříška <radek@fastlinux.eu>\n"
+"PO-Revision-Date: 2012-08-14 13:01+0200\n"
+"Last-Translator: ALIUM <info@aloisnespor.info>\n"
 "Language-Team: Czech <radek@fastlinux.eu>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Pootle 2.0.5\n"
 
 #: ../data/ui/about.glade.in.h:1
-#, fuzzy
 msgid "Copyright (C) 2009 - 2012"
-msgstr "Copyright (C) 2009 - 2010"
+msgstr "Copyright (C) 2009 - 2012"
 
 #: ../data/ui/about.glade.in.h:2
 msgid ""
@@ -35,7 +35,7 @@ msgstr ""
 #. Please replace this line with your own names, one name per line.
 #: ../data/ui/about.glade.in.h:6
 msgid "translator-credits"
-msgstr "Radek Tříška (radek@fastlinux.eu)"
+msgstr "Michal Várady, Alois Nešpor"
 
 #: ../data/ui/desktop-pref.glade.h:1 ../src/desktop-ui.c:60
 #: ../data/pcmanfm-desktop-pref.desktop.in.h:1
@@ -56,7 +56,7 @@ msgstr "Vyberte soubor s obrázkem"
 
 #: ../data/ui/desktop-pref.glade.h:5
 msgid "Use the same wallpaper on all desktops"
-msgstr ""
+msgstr "Použít stejnou tapetu na všech plochách"
 
 #: ../data/ui/desktop-pref.glade.h:6
 msgid "Background color:"
@@ -92,15 +92,15 @@ msgstr "<b>Zobrazit ikony na ploše</b>"
 
 #: ../data/ui/desktop-pref.glade.h:14
 msgid "Show \"My Documents\" icon on desktop"
-msgstr "Zobrazit  ikonu \"Dokumenty\" na ploše"
+msgstr "Zobrazit ikonu \"Dokumenty\" na ploše"
 
 #: ../data/ui/desktop-pref.glade.h:15
 msgid "Show \"My Computer\" icon on desktop"
-msgstr "Zobrazit  ikonu \"Můj počítač\" na ploše"
+msgstr "Zobrazit ikonu \"Můj počítač\" na ploše"
 
 #: ../data/ui/desktop-pref.glade.h:16
 msgid "Show \"Trash Bin\" icon on desktop"
-msgstr "Zobrazit  ikonu \"Koš\" na ploše"
+msgstr "Zobrazit ikonu \"Koš\" na ploše"
 
 #: ../data/ui/desktop-pref.glade.h:17
 msgid "Show icons of volumes on desktop"
@@ -168,7 +168,7 @@ msgstr "Potvrzovat mazání souborů"
 
 #: ../data/ui/pref.glade.h:8
 msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
-msgstr "Přesouvat mazané soubory do \"Koše\" "
+msgstr "Přesouvat smazané soubory do \"Koše\" namísto smazání"
 
 #: ../data/ui/pref.glade.h:9
 msgid "Bookmarks:"
@@ -183,9 +183,8 @@ msgid "View Mode:"
 msgstr "Režim zobrazení:"
 
 #: ../data/ui/pref.glade.h:12
-#, fuzzy
 msgid "General"
-msgstr "_Obecné"
+msgstr "Obecné"
 
 #: ../data/ui/pref.glade.h:13
 msgid "<b>Icons</b>"
@@ -220,9 +219,8 @@ msgid "Do not generate thumbnails for files exceeding this size:"
 msgstr "Negenerovat náhledy pro soubory přesahující tuto velikost:"
 
 #: ../data/ui/pref.glade.h:21
-#, fuzzy
 msgid "Display"
-msgstr "_Zobrazit"
+msgstr "Zobrazit"
 
 #: ../data/ui/pref.glade.h:22
 msgid "<b>Auto-mount</b>"
@@ -241,9 +239,8 @@ msgid "Show available options for removable media when they are inserted"
 msgstr "Zobrazit dostupné volby pro vložené odpojitelné médium"
 
 #: ../data/ui/pref.glade.h:26
-#, fuzzy
 msgid "Volume Management"
-msgstr "_Správa svazků"
+msgstr "Správa svazků"
 
 #: ../data/ui/pref.glade.h:27
 msgid "<b>Programs</b>"
@@ -263,8 +260,7 @@ msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
 "%s = the command line you want to execute with terminal or su."
 msgstr ""
-"Příklady:  \"xterm -e %s\" pro terminál nebo \"gksu %s\" pro přepínání "
-"uživatele.\n"
+"Příklady: \"xterm -e %s\" pro terminál nebo \"gksu %s\" pro přepínání uživatele.\n"
 "%s = příkaz který chcete spouštět pomocí terminálu nebo su."
 
 #: ../data/ui/pref.glade.h:33
@@ -345,13 +341,12 @@ msgstr "_Invertovat výběr"
 
 #: ../src/desktop-ui.c:55 ../src/main-win-ui.c:164
 msgid "_Sort Files"
-msgstr "Řadit soubory"
+msgstr "_Řadit soubory"
 
 #. for popup menu
 #: ../src/desktop-ui.c:56 ../src/main-win-ui.c:190
-#, fuzzy
 msgid "Create _New..."
-msgstr "Vytvořit nový..."
+msgstr "Vytvořit _nový..."
 
 #: ../src/desktop-ui.c:57 ../src/main-win-ui.c:191
 msgid "Folder"
@@ -363,7 +358,7 @@ msgstr "Prázdný soubor"
 
 #: ../src/desktop-ui.c:59 ../src/main-win-ui.c:193
 msgid "Shortcut"
-msgstr ""
+msgstr "Zkratka"
 
 #: ../src/desktop-ui.c:71 ../src/main-win-ui.c:219
 msgid "By _Name"
@@ -403,7 +398,7 @@ msgstr "Přichytit k mřížce"
 
 #: ../src/main-win-ui.c:144
 msgid "_File"
-msgstr "Soubor"
+msgstr "_Soubor"
 
 #: ../src/main-win-ui.c:145
 msgid "_New Window"
@@ -450,26 +445,24 @@ msgid "_View"
 msgstr "_Zobrazit"
 
 #: ../src/main-win-ui.c:162
-#, fuzzy
 msgid "Reload Folder"
-msgstr "Následující složka"
+msgstr "Obnovit složku"
 
 #: ../src/main-win-ui.c:162
-#, fuzzy
 msgid "Reload current folder"
-msgstr "Nadřazená složka"
+msgstr "Obnovit současnou složku"
 
 #: ../src/main-win-ui.c:163
 msgid "Side Pane"
-msgstr ""
+msgstr "Boční panel"
 
 #: ../src/main-win-ui.c:165
 msgid "_Help"
-msgstr "Nápověda"
+msgstr "_Nápověda"
 
 #: ../src/main-win-ui.c:167
 msgid "_Go"
-msgstr "Přejít"
+msgstr "_Přejít"
 
 #: ../src/main-win-ui.c:168
 msgid "Previous Folder"
@@ -521,7 +514,7 @@ msgstr "Nainstalované aplikace"
 
 #: ../src/main-win-ui.c:178
 msgid "_Bookmarks"
-msgstr "Záložky"
+msgstr "_Záložky"
 
 #: ../src/main-win-ui.c:179
 msgid "Add To Bookmarks"
@@ -529,7 +522,7 @@ msgstr "Přidat do záložek"
 
 #: ../src/main-win-ui.c:180
 msgid "_Tools"
-msgstr "Nás_troje"
+msgstr "_Nástroje"
 
 #: ../src/main-win-ui.c:181
 msgid "Open Current Folder in _Terminal"
@@ -544,9 +537,8 @@ msgid "Show _Hidden"
 msgstr "Zobrazit _skryté"
 
 #: ../src/main-win-ui.c:200
-#, fuzzy
 msgid "Show Side Pane"
-msgstr "Zobrazit _skryté"
+msgstr "Zobrazit boční panel"
 
 #: ../src/main-win-ui.c:205
 msgid "_Icon View"
@@ -566,15 +558,15 @@ msgstr "Detailní pohled"
 
 #: ../src/main-win-ui.c:227
 msgid "Places"
-msgstr ""
+msgstr "Místa"
 
 #: ../src/main-win-ui.c:228
 msgid "Directory Tree"
-msgstr ""
+msgstr "Strom adresářů"
 
 #: ../src/main-win-ui.c:229
 msgid "Remote"
-msgstr ""
+msgstr "Vzdálený"
 
 #: ../src/main-win.c:545
 msgid "You are in super user mode"
@@ -635,7 +627,7 @@ msgstr "<obrázek>"
 
 #: ../src/pcmanfm.c:82
 msgid "Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"
-msgstr "Zvolit režim pracovní plochy. <režim>=(color|stretch|fit|center|tile)"
+msgstr "Zvolit režim pracovní plochy. <mode>=(color|stretch|fit|center|tile)"
 
 #: ../src/pcmanfm.c:82
 msgid "<mode>"
@@ -645,8 +637,7 @@ msgstr "<režim>"
 msgid ""
 "Open preference dialog. 'n' is number of the page you want to show (1, 2, "
 "3...)."
-msgstr ""
-"Otevře dialog nastavení. 'n' je počet stránek pro zobrazení (1,2,3...)."
+msgstr "Otevře dialog nastavení. 'n' je počet stránek pro zobrazení (1,2,3...)."
 
 #. { "new-win", '\0', 'n', G_OPTION_ARG_NONE, &new_win, N_("Open new window"), NULL },
 #. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
@@ -659,9 +650,8 @@ msgid "Terminal emulator is not set."
 msgstr "Emulátor terminálu není nastaven."
 
 #: ../src/pcmanfm.c:580
-#, fuzzy
 msgid "Enter a name for the newly created folder:"
-msgstr "Vložte název nově vytvořeného souboru:"
+msgstr "Vložte název nově vytvořené složky:"
 
 #: ../src/pcmanfm.c:582
 msgid "Enter a name for the newly created file:"
@@ -677,19 +667,19 @@ msgstr "Nový"
 
 #: ../src/pcmanfm.c:674
 msgid "Error, lxshortcut not installed"
-msgstr ""
+msgstr "Chyba, lxshortcut není nainstalovaný"
 
 #: ../src/pcmanfm.c:679
 msgid "Failed to start lxshortcut"
-msgstr ""
+msgstr "Chyba startu lxshortcut"
 
 #: ../src/tab-page.c:207
 #, c-format
 msgid "%d item selected"
 msgid_plural "%d items selected"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%d položka vybrána"
+msgstr[1] "%d položky vybrány"
+msgstr[2] "%d položek vybráno"
 
 #: ../src/tab-page.c:301
 #, c-format
@@ -700,22 +690,21 @@ msgstr "Volné místo: %s (Celkem: %s)"
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%d položka"
+msgstr[1] "%d položky"
+msgstr[2] "%d položek"
 
 #: ../src/tab-page.c:322
 #, c-format
 msgid " (%d hidden)"
 msgid_plural " (%d hidden)"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] " (%d skrytý)"
+msgstr[1] " (%d skrytých)"
+msgstr[2] " (%d skrytých)"
 
 #: ../data/pcmanfm.desktop.in.h:1
-#, fuzzy
 msgid "File Manager PCManFM"
-msgstr "Správce souborů"
+msgstr "Správce souborů PCManFM"
 
 #: ../data/pcmanfm.desktop.in.h:2
 msgid "File Manager"
@@ -727,7 +716,7 @@ msgstr "Procházet systém souborů správcem souborů"
 
 #: ../data/pcmanfm-desktop-pref.desktop.in.h:2
 msgid "Change desktop wallpapers and behavior of desktop manager"
-msgstr ""
+msgstr "Změna tapety na plochu a ovládání správce plochy"
 
 #~ msgid "_Advanced"
 #~ msgstr "_Rozšířené"
