@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: PCManFM\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-08-14 23:45+0200\n"
-"PO-Revision-Date: 2012-07-07 01:12+0200\n"
+"PO-Revision-Date: 2012-08-14 23:55+0200\n"
 "Last-Translator: Martin <brother@bsnet.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
@@ -256,7 +256,7 @@ msgstr "Använd SI-prefix istället för IEC-binär-prefix"
 
 #: ../data/ui/pref.glade.h:27
 msgid "Treat backup files as hidden"
-msgstr ""
+msgstr "Hantera säkerhetskopior som dolda filer"
 
 #: ../data/ui/pref.glade.h:28
 msgid "Display"
@@ -310,7 +310,7 @@ msgstr "Integrering med arkivhantering:"
 
 #: ../data/ui/pref.glade.h:41
 msgid "Use Application Startup Notify by default"
-msgstr ""
+msgstr "Använd notifiering vid programstart som standard"
 
 #: ../data/ui/pref.glade.h:42
 msgid ""
@@ -318,6 +318,10 @@ msgid ""
 "explicitly.\n"
 "If unchecked then use Startup Notify only if that is defined for application."
 msgstr ""
+"Om detta väljs kommer notifiering vid programstart att användas om inget "
+"annat har angivits explicit.\n"
+"Om detta inte väljs kommer notifiering vid programstart endast att användas "
+"om det är angivet för programmet."
 
 #: ../data/ui/pref.glade.h:45
 msgid "Icon View"
@@ -571,7 +575,7 @@ msgstr "Visa sidopanel"
 
 #: ../src/main-win-ui.c:202
 msgid "Fullscreen Mode"
-msgstr ""
+msgstr "Fullskärmsläge"
 
 #: ../src/main-win-ui.c:207
 msgid "_Icon View"
