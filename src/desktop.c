@@ -280,6 +280,25 @@ static inline void unload_items(FmDesktop* desktop)
     desktop->hover_item = NULL;
 }
 
+static gint get_desktop_for_root_window(GdkWindow *root)
+{
+    gint desktop = -1;
+    Atom ret_type;
+    gulong len, after;
+    int format;
+    guchar* prop;
+
+    if(XGetWindowProperty(GDK_WINDOW_XDISPLAY(root), GDK_WINDOW_XID(root),
+                          XA_NET_CURRENT_DESKTOP, 0, 1, False, XA_CARDINAL, &ret_type,
+                          &format, &len, &after, &prop) == Success &&
+       prop != NULL)
+    {
+        desktop = (gint)*(guint32*)prop;
+        XFree(prop);
+    }
+    return desktop;
+}
+
 #if GTK_CHECK_VERSION(3, 0, 0)
 static void fm_desktop_destroy(GtkWidget *object)
 #else
@@ -347,6 +366,7 @@ static GObject* fm_desktop_constructor(GType type, guint n_construct_properties,
     GtkUIManager* ui;
     GtkActionGroup* act_grp;
     guint i;
+    gint n;
     GdkRectangle geom;
 
     for(i = 0; i < n_construct_properties; i++)
@@ -383,6 +403,11 @@ static GObject* fm_desktop_constructor(GType type, guint n_construct_properties,
     gdk_window_set_events(root, gdk_window_get_events(root)|GDK_PROPERTY_CHANGE_MASK);
     gdk_window_add_filter(root, on_root_event, self);
     g_signal_connect(screen, "size-changed", G_CALLBACK(on_screen_size_changed), self);
+
+    n = get_desktop_for_root_window(root);
+    if(n < 0)
+        n = 0;
+    self->cur_desktop = (guint)n;
 
     /* init dnd support */
 #ifdef HAVE_LIBFM_DEFAULT_DND_DEST_TARGETS
@@ -2103,18 +2128,11 @@ static GdkFilterReturn on_root_event(GdkXEvent *xevent, GdkEvent *event, gpointe
             update_working_area(self);
         else if(evt->atom == XA_NET_CURRENT_DESKTOP)
         {
-            GdkWindow* root = gdk_screen_get_root_window(gtk_widget_get_screen(GTK_WIDGET(data)));
-            Atom ret_type;
-            gulong len, after;
-            int format;
-            guchar* prop;
-
-            if(XGetWindowProperty(GDK_WINDOW_XDISPLAY(root), GDK_WINDOW_XID(root),
-                       XA_NET_CURRENT_DESKTOP, 0, 1, False, XA_CARDINAL, &ret_type,
-                       &format, &len, &after, &prop) == Success && prop != NULL)
+            gint desktop = get_desktop_for_root_window(gdk_screen_get_root_window(
+                                    gtk_widget_get_screen(GTK_WIDGET(data))));
+            if(desktop >= 0)
             {
-                self->cur_desktop = *(guint32*)prop;
-                XFree(prop);
+                self->cur_desktop = (guint)desktop;
                 if(!app_config->wallpaper_common)
                     update_background(self, -1);
             }
@@ -2835,7 +2853,7 @@ FmDesktop* fm_desktop_get(guint screen, guint monitor)
     guint i = 0, n = 0;
     while(i < n_screens && n <= screen)
     {
-        if(n == screen && desktops[i]->monitor == monitor)
+        if(n == screen && desktops[i]->monitor == (gint)monitor)
             return desktops[i];
         i++;
         if(desktops[i]->monitor == 0)
