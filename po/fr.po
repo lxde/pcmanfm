@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PCManFM\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-12 18:17+0200\n"
+"POT-Creation-Date: 2012-08-14 23:45+0200\n"
 "PO-Revision-Date: 2012-07-09 18:22+0200\n"
 "Last-Translator: Mathieu <mathieu.millot@gmail.com>\n"
 "Language: fr\n"
@@ -119,7 +119,7 @@ msgstr ""
 "Afficher le menu fourni par le gestionnaire de fenêtres lors d’un clic sur "
 "le bureau"
 
-#: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:40
+#: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:44
 msgid "Advanced"
 msgstr "Avancé"
 
@@ -127,19 +127,19 @@ msgstr "Avancé"
 msgid "Fill with background color only"
 msgstr "Remplir seulement avec la couleur d’arrière-plan"
 
-#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:45
+#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:49
 msgid "Stretch to fill the entire screen"
 msgstr "Étirer pour remplir tout l’écran"
 
-#: ../data/ui/desktop-pref.glade.h:23 ../data/ui/pref.glade.h:46
+#: ../data/ui/desktop-pref.glade.h:23 ../data/ui/pref.glade.h:50
 msgid "Stretch to fit the screen"
 msgstr "Ajuster à la taille de l’écran"
 
-#: ../data/ui/desktop-pref.glade.h:24 ../data/ui/pref.glade.h:47
+#: ../data/ui/desktop-pref.glade.h:24 ../data/ui/pref.glade.h:51
 msgid "Center on the screen"
 msgstr "Centrer sur l’écran"
 
-#: ../data/ui/desktop-pref.glade.h:25 ../data/ui/pref.glade.h:48
+#: ../data/ui/desktop-pref.glade.h:25 ../data/ui/pref.glade.h:52
 msgid "Tile the image to fill the entire screen"
 msgstr "Faire une mosaïque avec l’image pour remplir l’écran"
 
@@ -225,44 +225,73 @@ msgid "Do not generate thumbnails for files exceeding this size:"
 msgstr "Ne pas générer d’aperçus pour les fichiers dépassant cette taille :"
 
 #: ../data/ui/pref.glade.h:21
+msgid "<b>User Interface</b>"
+msgstr "<b>Interface utilisateur</b>"
+
+#: ../data/ui/pref.glade.h:22
+msgid "Always show the tab bar"
+msgstr "Toujours montrer la barre des onglets"
+
+#: ../data/ui/pref.glade.h:23
+msgid "Hide 'Close tab' buttons"
+msgstr "Masquer les boutons « Fermer l’onglet »"
+
+#: ../data/ui/pref.glade.h:24
+msgid "Hide side pane buttons"
+msgstr "Masquer les boutons du panneau latéral"
+
+#: ../data/ui/pref.glade.h:25
+msgid "Hide folder content border"
+msgstr "Masquer la bordure autour du contenu du répertoire"
+
+#: ../data/ui/pref.glade.h:26
+msgid "Use SI decimal prefixes instead of IEC binary prefixes"
+msgstr ""
+"Utiliser les préfixes décimaux SI au lieu des préfixes binaires de l’IEC"
+
+#: ../data/ui/pref.glade.h:27
+msgid "Treat backup files as hidden"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:28
 msgid "Display"
 msgstr "_Affichage"
 
-#: ../data/ui/pref.glade.h:22
+#: ../data/ui/pref.glade.h:29
 msgid "<b>Auto-mount</b>"
 msgstr "<b>Auto-montage</b>"
 
-#: ../data/ui/pref.glade.h:23
+#: ../data/ui/pref.glade.h:30
 msgid "Mount mountable volumes automatically on program startup"
 msgstr "Monter les volumes disponibles automatiquement au lancement"
 
-#: ../data/ui/pref.glade.h:24
+#: ../data/ui/pref.glade.h:31
 msgid "Mount removable media automatically when they are inserted"
 msgstr "Monter les volumes amovibles automatiquement quand ils sont insérés"
 
-#: ../data/ui/pref.glade.h:25
+#: ../data/ui/pref.glade.h:32
 msgid "Show available options for removable media when they are inserted"
 msgstr ""
 "Afficher les options disponibles pour les médias amovibles quand il sont "
 "insérés"
 
-#: ../data/ui/pref.glade.h:26
+#: ../data/ui/pref.glade.h:33
 msgid "Volume Management"
 msgstr "Gestion des _volumes"
 
-#: ../data/ui/pref.glade.h:27
+#: ../data/ui/pref.glade.h:34
 msgid "<b>Programs</b>"
 msgstr "<b>Applications</b>"
 
-#: ../data/ui/pref.glade.h:28
+#: ../data/ui/pref.glade.h:35
 msgid "Terminal emulator:"
 msgstr "Émulateur de terminal :"
 
-#: ../data/ui/pref.glade.h:29
+#: ../data/ui/pref.glade.h:36
 msgid "Switch user command:"
 msgstr "Commande de changement d’utilisateur :"
 
-#: ../data/ui/pref.glade.h:31
+#: ../data/ui/pref.glade.h:38
 #, no-c-format
 msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
@@ -273,48 +302,34 @@ msgstr ""
 "%s = la ligne de commande que vous voulez exécuter dans un terminal ou faire "
 "exécuter par un autre utilisateur."
 
-#: ../data/ui/pref.glade.h:33
+#: ../data/ui/pref.glade.h:40
 msgid "Archiver integration:"
 msgstr "Intégration de l’archiveur :"
 
-#: ../data/ui/pref.glade.h:34
-msgid "<b>User Interface</b>"
-msgstr "<b>Interface utilisateur</b>"
-
-#: ../data/ui/pref.glade.h:35
-msgid "Always show the tab bar"
-msgstr "Toujours montrer la barre des onglets"
-
-#: ../data/ui/pref.glade.h:36
-msgid "Hide 'Close tab' buttons"
-msgstr "Masquer les boutons « Fermer l’onglet »"
-
-#: ../data/ui/pref.glade.h:37
-msgid "Hide side pane buttons"
-msgstr "Masquer les boutons du panneau latéral"
-
-#: ../data/ui/pref.glade.h:38
-msgid "Hide folder content border"
-msgstr "Masquer la bordure autour du contenu du répertoire"
-
-#: ../data/ui/pref.glade.h:39
-msgid "Use SI decimal prefixes instead of IEC binary prefixes"
-msgstr ""
-"Utiliser les préfixes décimaux SI au lieu des préfixes binaires de l’IEC"
-
 #: ../data/ui/pref.glade.h:41
+msgid "Use Application Startup Notify by default"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:42
+msgid ""
+"If checked then use Startup Notify for application if another not stated "
+"explicitly.\n"
+"If unchecked then use Startup Notify only if that is defined for application."
+msgstr ""
+
+#: ../data/ui/pref.glade.h:45
 msgid "Icon View"
 msgstr "Vue en icônes"
 
-#: ../data/ui/pref.glade.h:42
+#: ../data/ui/pref.glade.h:46
 msgid "Compact View"
 msgstr "Vue compacte"
 
-#: ../data/ui/pref.glade.h:43
+#: ../data/ui/pref.glade.h:47
 msgid "Thumbnail View"
 msgstr "Vue en miniatures"
 
-#: ../data/ui/pref.glade.h:44
+#: ../data/ui/pref.glade.h:48
 msgid "Detailed List View"
 msgstr "Vue en liste détaillée"
 
@@ -350,52 +365,52 @@ msgstr "Ouvrir dans le gestionnaire de fichiers"
 msgid "_Invert Selection"
 msgstr "_Inverser la sélection"
 
-#: ../src/desktop-ui.c:55 ../src/main-win-ui.c:164
+#: ../src/desktop-ui.c:55 ../src/main-win-ui.c:165
 msgid "_Sort Files"
 msgstr "_Trier les fichiers"
 
 #. for popup menu
-#: ../src/desktop-ui.c:56 ../src/main-win-ui.c:190
+#: ../src/desktop-ui.c:56 ../src/main-win-ui.c:191
 msgid "Create _New..."
 msgstr "Créer un _nouveau..."
 
-#: ../src/desktop-ui.c:57 ../src/main-win-ui.c:191
+#: ../src/desktop-ui.c:57 ../src/main-win-ui.c:192
 msgid "Folder"
 msgstr "Dossier"
 
-#: ../src/desktop-ui.c:58 ../src/main-win-ui.c:192
+#: ../src/desktop-ui.c:58 ../src/main-win-ui.c:193
 msgid "Blank File"
 msgstr "Fichier vide"
 
-#: ../src/desktop-ui.c:59 ../src/main-win-ui.c:193
+#: ../src/desktop-ui.c:59 ../src/main-win-ui.c:194
 msgid "Shortcut"
 msgstr "Raccourci"
 
-#: ../src/desktop-ui.c:71 ../src/main-win-ui.c:219
+#: ../src/desktop-ui.c:71 ../src/main-win-ui.c:221
 msgid "By _Name"
 msgstr "Par _nom"
 
-#: ../src/desktop-ui.c:72 ../src/main-win-ui.c:220
+#: ../src/desktop-ui.c:72 ../src/main-win-ui.c:222
 msgid "By _Modification Time"
 msgstr "Par date de _modification"
 
-#: ../src/desktop-ui.c:73 ../src/main-win-ui.c:221
+#: ../src/desktop-ui.c:73 ../src/main-win-ui.c:223
 msgid "By _Size"
 msgstr "Par _taille"
 
-#: ../src/desktop-ui.c:74 ../src/main-win-ui.c:222
+#: ../src/desktop-ui.c:74 ../src/main-win-ui.c:224
 msgid "By File _Type"
 msgstr "Par t_ype de fichier"
 
-#: ../src/desktop-ui.c:90 ../src/main-win-ui.c:245
+#: ../src/desktop-ui.c:90 ../src/main-win-ui.c:247
 msgid "Open in New Tab"
 msgstr "Ouvrir dans un nouvel onglet"
 
-#: ../src/desktop-ui.c:91 ../src/main-win-ui.c:246
+#: ../src/desktop-ui.c:91 ../src/main-win-ui.c:248
 msgid "Open in New Window"
 msgstr "Ouvrir dans une nouvelle fenêtre"
 
-#: ../src/desktop-ui.c:93 ../src/main-win-ui.c:248
+#: ../src/desktop-ui.c:93 ../src/main-win-ui.c:250
 msgid "Open in _Terminal"
 msgstr "Ouvrir dans un _terminal"
 
@@ -407,188 +422,192 @@ msgstr "Bloquer à la position courante"
 msgid "Snap to Grid"
 msgstr "Aligner sur la grille"
 
-#: ../src/main-win-ui.c:144
+#: ../src/main-win-ui.c:145
 msgid "_File"
 msgstr "_Fichier"
 
-#: ../src/main-win-ui.c:145
+#: ../src/main-win-ui.c:146
 msgid "_New Window"
 msgstr "_Nouvelle fenêtre"
 
-#: ../src/main-win-ui.c:146
+#: ../src/main-win-ui.c:147
 msgid "New _Tab"
 msgstr "Nouvel _onglet"
 
-#: ../src/main-win-ui.c:147
+#: ../src/main-win-ui.c:148
 msgid "_Close Tab"
 msgstr "Fermer l’o_nglet"
 
-#: ../src/main-win-ui.c:148
+#: ../src/main-win-ui.c:149
 msgid "Close Window"
 msgstr "_Fermer la fenêtre"
 
-#: ../src/main-win-ui.c:149
+#: ../src/main-win-ui.c:150
 msgid "_Edit"
 msgstr "Édit_er"
 
-#: ../src/main-win-ui.c:154
+#: ../src/main-win-ui.c:155
 msgid "Rename"
 msgstr "Renommer"
 
-#: ../src/main-win-ui.c:155
+#: ../src/main-win-ui.c:156
 msgid "Create Symlink"
 msgstr "Créer un lien symbolique"
 
-#: ../src/main-win-ui.c:156
+#: ../src/main-win-ui.c:157
 msgid "Move To..."
 msgstr "Déplacer vers..."
 
-#: ../src/main-win-ui.c:157
+#: ../src/main-win-ui.c:158
 msgid "Copy To..."
 msgstr "Copier vers..."
 
-#: ../src/main-win-ui.c:159
+#: ../src/main-win-ui.c:160
 msgid "Invert Selection"
 msgstr "Inverser la sélection"
 
-#: ../src/main-win-ui.c:161
+#: ../src/main-win-ui.c:162
 msgid "_View"
 msgstr "_Voir"
 
-#: ../src/main-win-ui.c:162
+#: ../src/main-win-ui.c:163
 msgid "Reload Folder"
 msgstr "Actualiser"
 
-#: ../src/main-win-ui.c:162
+#: ../src/main-win-ui.c:163
 msgid "Reload current folder"
 msgstr "Actualiser le dossier"
 
-#: ../src/main-win-ui.c:163
+#: ../src/main-win-ui.c:164
 msgid "Side Pane"
 msgstr "Panneau latéral"
 
-#: ../src/main-win-ui.c:165
+#: ../src/main-win-ui.c:166
 msgid "_Help"
 msgstr "_Aide"
 
-#: ../src/main-win-ui.c:167
+#: ../src/main-win-ui.c:168
 msgid "_Go"
 msgstr "_Aller à"
 
-#: ../src/main-win-ui.c:168
+#: ../src/main-win-ui.c:169
 msgid "Previous Folder"
 msgstr "Dossier précédent"
 
-#: ../src/main-win-ui.c:169
+#: ../src/main-win-ui.c:170
 msgid "Next Folder"
 msgstr "Dossier suivant"
 
-#: ../src/main-win-ui.c:170
+#: ../src/main-win-ui.c:171
 msgid "Parent Folder"
 msgstr "Dossier parent"
 
-#: ../src/main-win-ui.c:170
+#: ../src/main-win-ui.c:171
 msgid "Go to parent Folder"
 msgstr "Aller au dossier parent"
 
-#: ../src/main-win-ui.c:171
+#: ../src/main-win-ui.c:172
 msgid "Home Folder"
 msgstr "Dossier personnel"
 
-#: ../src/main-win-ui.c:172
+#: ../src/main-win-ui.c:173
 msgid "Desktop"
 msgstr "Bureau"
 
-#: ../src/main-win-ui.c:172
+#: ../src/main-win-ui.c:173
 msgid "Desktop Folder"
 msgstr "Dossier du bureau"
 
-#: ../src/main-win-ui.c:173
+#: ../src/main-win-ui.c:174
 msgid "My Computer"
 msgstr "Mon ordinateur"
 
-#: ../src/main-win-ui.c:174
+#: ../src/main-win-ui.c:175
 msgid "Trash Can"
 msgstr "Corbeille"
 
-#: ../src/main-win-ui.c:175
+#: ../src/main-win-ui.c:176
 msgid "Network Drives"
 msgstr "Disques réseau"
 
-#: ../src/main-win-ui.c:176
+#: ../src/main-win-ui.c:177
 msgid "Applications"
 msgstr "Applications"
 
-#: ../src/main-win-ui.c:176
+#: ../src/main-win-ui.c:177
 msgid "Installed Applications"
 msgstr "Applications installées"
 
-#: ../src/main-win-ui.c:178
+#: ../src/main-win-ui.c:179
 msgid "_Bookmarks"
 msgstr "_Marque-pages"
 
-#: ../src/main-win-ui.c:179
+#: ../src/main-win-ui.c:180
 msgid "Add To Bookmarks"
 msgstr "Ajouter aux marque-pages"
 
-#: ../src/main-win-ui.c:180
+#: ../src/main-win-ui.c:181
 msgid "_Tools"
 msgstr "_Outils"
 
-#: ../src/main-win-ui.c:181
+#: ../src/main-win-ui.c:182
 msgid "Open Current Folder in _Terminal"
 msgstr "Ouvrir le répertoire courant dans un _terminal"
 
-#: ../src/main-win-ui.c:182
+#: ../src/main-win-ui.c:183
 msgid "Open Current Folder as _Root"
 msgstr "Ouvrir le répertoire courant en tant que _root"
 
-#: ../src/main-win-ui.c:199
+#: ../src/main-win-ui.c:200
 msgid "Show _Hidden"
 msgstr "Montrer les fichiers _cachés"
 
-#: ../src/main-win-ui.c:200
+#: ../src/main-win-ui.c:201
 msgid "Show Side Pane"
 msgstr "Afficher le panneau latéral"
 
-#: ../src/main-win-ui.c:205
+#: ../src/main-win-ui.c:202
+msgid "Fullscreen Mode"
+msgstr ""
+
+#: ../src/main-win-ui.c:207
 msgid "_Icon View"
 msgstr "Vue en _icônes"
 
-#: ../src/main-win-ui.c:206
+#: ../src/main-win-ui.c:208
 msgid "_Compact View"
 msgstr "Vue _compacte"
 
-#: ../src/main-win-ui.c:207
+#: ../src/main-win-ui.c:209
 msgid "_Thumbnail View"
 msgstr "Vue en _miniatures"
 
-#: ../src/main-win-ui.c:208
+#: ../src/main-win-ui.c:210
 msgid "Detailed _List View"
 msgstr "Vue en _liste détaillée"
 
-#: ../src/main-win-ui.c:227
+#: ../src/main-win-ui.c:229
 msgid "Places"
 msgstr "Emplacements"
 
-#: ../src/main-win-ui.c:228
+#: ../src/main-win-ui.c:230
 msgid "Directory Tree"
 msgstr "Arborescence"
 
 # It's in the same combobox as Places and Directory Tree, so I beleive it's Remote places. In french would be too long, used a translation "ala Windows"...
-#: ../src/main-win-ui.c:229
+#: ../src/main-win-ui.c:231
 msgid "Remote"
 msgstr "Réseau"
 
-#: ../src/main-win.c:545
+#: ../src/main-win.c:546
 msgid "You are in super user mode"
 msgstr "Vous êtes en mode super-utilisateur"
 
-#: ../src/main-win.c:732
+#: ../src/main-win.c:742
 msgid "Switch user command is not set."
 msgstr "La commande de changement d’utilisateur n'est pas configurée."
 
-#: ../src/main-win.c:1139
+#: ../src/main-win.c:1173
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -600,7 +619,7 @@ msgstr ""
 "Entrez un nom pour ce marque-page :"
 
 # Duplicate?
-#: ../src/main-win.c:1143
+#: ../src/main-win.c:1177
 msgid "Add to Bookmarks"
 msgstr "Ajouter aux marque-pages"
 
@@ -682,34 +701,34 @@ msgstr "Créer un nouveau..."
 msgid "New"
 msgstr "Nouveau"
 
-#: ../src/pcmanfm.c:674
+#: ../src/pcmanfm.c:677
 msgid "Error, lxshortcut not installed"
 msgstr "Erreur, lxshortcut n’est pas installé"
 
-#: ../src/pcmanfm.c:679
+#: ../src/pcmanfm.c:682
 msgid "Failed to start lxshortcut"
 msgstr "Erreur au démarrage de lxshortcut"
 
-#: ../src/tab-page.c:207
+#: ../src/tab-page.c:211
 #, c-format
 msgid "%d item selected"
 msgid_plural "%d items selected"
 msgstr[0] "%d élément sélectionné"
 msgstr[1] "%d éléments sélectionnés"
 
-#: ../src/tab-page.c:301
+#: ../src/tab-page.c:305
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Espace libre : %s (Total : %s)"
 
-#: ../src/tab-page.c:321
+#: ../src/tab-page.c:325
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] "%d élément"
 msgstr[1] "%d éléments"
 
-#: ../src/tab-page.c:322
+#: ../src/tab-page.c:326
 #, c-format
 msgid " (%d hidden)"
 msgid_plural " (%d hidden)"

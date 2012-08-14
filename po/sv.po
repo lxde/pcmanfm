@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PCManFM\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-12 18:17+0200\n"
+"POT-Creation-Date: 2012-08-14 23:45+0200\n"
 "PO-Revision-Date: 2012-07-07 01:12+0200\n"
 "Last-Translator: Martin <brother@bsnet.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
@@ -124,7 +124,7 @@ msgstr "Skrivbordsikoner"
 msgid "Show menus provided by window managers when desktop is clicked"
 msgstr "Visa menyer från fönsterhanteraren när skrivbordet klickas"
 
-#: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:40
+#: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:44
 msgid "Advanced"
 msgstr "Avancerat"
 
@@ -132,19 +132,19 @@ msgstr "Avancerat"
 msgid "Fill with background color only"
 msgstr "Fyll endast med bakgrundsfärg"
 
-#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:45
+#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:49
 msgid "Stretch to fill the entire screen"
 msgstr "Sträck ut för att fylla hela skärmen"
 
-#: ../data/ui/desktop-pref.glade.h:23 ../data/ui/pref.glade.h:46
+#: ../data/ui/desktop-pref.glade.h:23 ../data/ui/pref.glade.h:50
 msgid "Stretch to fit the screen"
 msgstr "Sträck för att passa skärmen"
 
-#: ../data/ui/desktop-pref.glade.h:24 ../data/ui/pref.glade.h:47
+#: ../data/ui/desktop-pref.glade.h:24 ../data/ui/pref.glade.h:51
 msgid "Center on the screen"
 msgstr "Centrera på skärmen"
 
-#: ../data/ui/desktop-pref.glade.h:25 ../data/ui/pref.glade.h:48
+#: ../data/ui/desktop-pref.glade.h:25 ../data/ui/pref.glade.h:52
 msgid "Tile the image to fill the entire screen"
 msgstr "Lägg i mönster för att fylla hela skärmen"
 
@@ -231,42 +231,70 @@ msgid "Do not generate thumbnails for files exceeding this size:"
 msgstr "Skapa inte tumnaglar för filer större än:"
 
 #: ../data/ui/pref.glade.h:21
+msgid "<b>User Interface</b>"
+msgstr "<b>Användargränssnitt</b>"
+
+#: ../data/ui/pref.glade.h:22
+msgid "Always show the tab bar"
+msgstr "Visa alltid flikfältet"
+
+#: ../data/ui/pref.glade.h:23
+msgid "Hide 'Close tab' buttons"
+msgstr "Dölj knappen 'stäng flik'"
+
+#: ../data/ui/pref.glade.h:24
+msgid "Hide side pane buttons"
+msgstr "Dölj knappar för sidopanel"
+
+#: ../data/ui/pref.glade.h:25
+msgid "Hide folder content border"
+msgstr "Dölj kant för kataloginnehåll"
+
+#: ../data/ui/pref.glade.h:26
+msgid "Use SI decimal prefixes instead of IEC binary prefixes"
+msgstr "Använd SI-prefix istället för IEC-binär-prefix"
+
+#: ../data/ui/pref.glade.h:27
+msgid "Treat backup files as hidden"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:28
 msgid "Display"
 msgstr "Visning"
 
-#: ../data/ui/pref.glade.h:22
+#: ../data/ui/pref.glade.h:29
 msgid "<b>Auto-mount</b>"
 msgstr "<b>Automontering</b>"
 
-#: ../data/ui/pref.glade.h:23
+#: ../data/ui/pref.glade.h:30
 msgid "Mount mountable volumes automatically on program startup"
 msgstr "Montera tillgängliga enheter automatiskt vid programmets uppstart"
 
-#: ../data/ui/pref.glade.h:24
+#: ../data/ui/pref.glade.h:31
 msgid "Mount removable media automatically when they are inserted"
 msgstr "Montera flyttbara enheter automatiskt när de ansluts"
 
-#: ../data/ui/pref.glade.h:25
+#: ../data/ui/pref.glade.h:32
 msgid "Show available options for removable media when they are inserted"
 msgstr "Visa tillgängliga alternativ från flyttbara media när de ansluts"
 
-#: ../data/ui/pref.glade.h:26
+#: ../data/ui/pref.glade.h:33
 msgid "Volume Management"
 msgstr "Volymhantering"
 
-#: ../data/ui/pref.glade.h:27
+#: ../data/ui/pref.glade.h:34
 msgid "<b>Programs</b>"
 msgstr "<b>Program</b>"
 
-#: ../data/ui/pref.glade.h:28
+#: ../data/ui/pref.glade.h:35
 msgid "Terminal emulator:"
 msgstr "Terminalprogram:"
 
-#: ../data/ui/pref.glade.h:29
+#: ../data/ui/pref.glade.h:36
 msgid "Switch user command:"
 msgstr "Kommando för att byta användare:"
 
-#: ../data/ui/pref.glade.h:31
+#: ../data/ui/pref.glade.h:38
 #, no-c-format
 msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
@@ -276,47 +304,34 @@ msgstr ""
 "användare.\n"
 "%s = kommandoraden som du vill köra med terminal eller su."
 
-#: ../data/ui/pref.glade.h:33
+#: ../data/ui/pref.glade.h:40
 msgid "Archiver integration:"
 msgstr "Integrering med arkivhantering:"
 
-#: ../data/ui/pref.glade.h:34
-msgid "<b>User Interface</b>"
-msgstr "<b>Användargränssnitt</b>"
-
-#: ../data/ui/pref.glade.h:35
-msgid "Always show the tab bar"
-msgstr "Visa alltid flikfältet"
-
-#: ../data/ui/pref.glade.h:36
-msgid "Hide 'Close tab' buttons"
-msgstr "Dölj knappen 'stäng flik'"
-
-#: ../data/ui/pref.glade.h:37
-msgid "Hide side pane buttons"
-msgstr "Dölj knappar för sidopanel"
-
-#: ../data/ui/pref.glade.h:38
-msgid "Hide folder content border"
-msgstr "Dölj kant för kataloginnehåll"
-
-#: ../data/ui/pref.glade.h:39
-msgid "Use SI decimal prefixes instead of IEC binary prefixes"
-msgstr "Använd SI-prefix istället för IEC-binär-prefix"
-
 #: ../data/ui/pref.glade.h:41
+msgid "Use Application Startup Notify by default"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:42
+msgid ""
+"If checked then use Startup Notify for application if another not stated "
+"explicitly.\n"
+"If unchecked then use Startup Notify only if that is defined for application."
+msgstr ""
+
+#: ../data/ui/pref.glade.h:45
 msgid "Icon View"
 msgstr "Ikonvy"
 
-#: ../data/ui/pref.glade.h:42
+#: ../data/ui/pref.glade.h:46
 msgid "Compact View"
 msgstr "Kompakt vy"
 
-#: ../data/ui/pref.glade.h:43
+#: ../data/ui/pref.glade.h:47
 msgid "Thumbnail View"
 msgstr "Tumnagelvy"
 
-#: ../data/ui/pref.glade.h:44
+#: ../data/ui/pref.glade.h:48
 msgid "Detailed List View"
 msgstr "Detaljerad vy"
 
@@ -352,52 +367,52 @@ msgstr "Öppna i filhanterare"
 msgid "_Invert Selection"
 msgstr "_Invertera markering"
 
-#: ../src/desktop-ui.c:55 ../src/main-win-ui.c:164
+#: ../src/desktop-ui.c:55 ../src/main-win-ui.c:165
 msgid "_Sort Files"
 msgstr "_Sortera filer"
 
 #. for popup menu
-#: ../src/desktop-ui.c:56 ../src/main-win-ui.c:190
+#: ../src/desktop-ui.c:56 ../src/main-win-ui.c:191
 msgid "Create _New..."
 msgstr "Skapa _ny..."
 
-#: ../src/desktop-ui.c:57 ../src/main-win-ui.c:191
+#: ../src/desktop-ui.c:57 ../src/main-win-ui.c:192
 msgid "Folder"
 msgstr "Mapp"
 
-#: ../src/desktop-ui.c:58 ../src/main-win-ui.c:192
+#: ../src/desktop-ui.c:58 ../src/main-win-ui.c:193
 msgid "Blank File"
 msgstr "Tom fil"
 
-#: ../src/desktop-ui.c:59 ../src/main-win-ui.c:193
+#: ../src/desktop-ui.c:59 ../src/main-win-ui.c:194
 msgid "Shortcut"
 msgstr "Genväg"
 
-#: ../src/desktop-ui.c:71 ../src/main-win-ui.c:219
+#: ../src/desktop-ui.c:71 ../src/main-win-ui.c:221
 msgid "By _Name"
 msgstr "Efter _namn"
 
-#: ../src/desktop-ui.c:72 ../src/main-win-ui.c:220
+#: ../src/desktop-ui.c:72 ../src/main-win-ui.c:222
 msgid "By _Modification Time"
 msgstr "Efter ändringsdatu_m"
 
-#: ../src/desktop-ui.c:73 ../src/main-win-ui.c:221
+#: ../src/desktop-ui.c:73 ../src/main-win-ui.c:223
 msgid "By _Size"
 msgstr "Efter _storlek"
 
-#: ../src/desktop-ui.c:74 ../src/main-win-ui.c:222
+#: ../src/desktop-ui.c:74 ../src/main-win-ui.c:224
 msgid "By File _Type"
 msgstr "Efter _filtyp"
 
-#: ../src/desktop-ui.c:90 ../src/main-win-ui.c:245
+#: ../src/desktop-ui.c:90 ../src/main-win-ui.c:247
 msgid "Open in New Tab"
 msgstr "Öppna i ny flik"
 
-#: ../src/desktop-ui.c:91 ../src/main-win-ui.c:246
+#: ../src/desktop-ui.c:91 ../src/main-win-ui.c:248
 msgid "Open in New Window"
 msgstr "Öppna i nytt fönster"
 
-#: ../src/desktop-ui.c:93 ../src/main-win-ui.c:248
+#: ../src/desktop-ui.c:93 ../src/main-win-ui.c:250
 msgid "Open in _Terminal"
 msgstr "Öppna i _terminal"
 
@@ -409,188 +424,192 @@ msgstr "Håll kvar vid nuvarande position"
 msgid "Snap to Grid"
 msgstr "Justera till rutnät"
 
-#: ../src/main-win-ui.c:144
+#: ../src/main-win-ui.c:145
 msgid "_File"
 msgstr "_Arkiv"
 
-#: ../src/main-win-ui.c:145
+#: ../src/main-win-ui.c:146
 msgid "_New Window"
 msgstr "_Nytt fönster"
 
-#: ../src/main-win-ui.c:146
+#: ../src/main-win-ui.c:147
 msgid "New _Tab"
 msgstr "Ny _flik"
 
-#: ../src/main-win-ui.c:147
+#: ../src/main-win-ui.c:148
 msgid "_Close Tab"
 msgstr "Stäng fli_k"
 
-#: ../src/main-win-ui.c:148
+#: ../src/main-win-ui.c:149
 msgid "Close Window"
 msgstr "Stäng fönster"
 
-#: ../src/main-win-ui.c:149
+#: ../src/main-win-ui.c:150
 msgid "_Edit"
 msgstr "_Redigera"
 
-#: ../src/main-win-ui.c:154
+#: ../src/main-win-ui.c:155
 msgid "Rename"
 msgstr "Byt namn"
 
-#: ../src/main-win-ui.c:155
+#: ../src/main-win-ui.c:156
 msgid "Create Symlink"
 msgstr "Skapa symlänk"
 
-#: ../src/main-win-ui.c:156
+#: ../src/main-win-ui.c:157
 msgid "Move To..."
 msgstr "Flytta till..."
 
-#: ../src/main-win-ui.c:157
+#: ../src/main-win-ui.c:158
 msgid "Copy To..."
 msgstr "Kopiera till..."
 
-#: ../src/main-win-ui.c:159
+#: ../src/main-win-ui.c:160
 msgid "Invert Selection"
 msgstr "Invertera markering"
 
-#: ../src/main-win-ui.c:161
+#: ../src/main-win-ui.c:162
 msgid "_View"
 msgstr "_Visa"
 
-#: ../src/main-win-ui.c:162
+#: ../src/main-win-ui.c:163
 msgid "Reload Folder"
 msgstr "Läs om mapp"
 
-#: ../src/main-win-ui.c:162
+#: ../src/main-win-ui.c:163
 msgid "Reload current folder"
 msgstr "Läs om aktuell mapp"
 
-#: ../src/main-win-ui.c:163
+#: ../src/main-win-ui.c:164
 msgid "Side Pane"
 msgstr "Sidopanel"
 
-#: ../src/main-win-ui.c:165
+#: ../src/main-win-ui.c:166
 msgid "_Help"
 msgstr "_Hjälp"
 
-#: ../src/main-win-ui.c:167
+#: ../src/main-win-ui.c:168
 msgid "_Go"
 msgstr "_Gå"
 
-#: ../src/main-win-ui.c:168
+#: ../src/main-win-ui.c:169
 msgid "Previous Folder"
 msgstr "Föregående mapp"
 
-#: ../src/main-win-ui.c:169
+#: ../src/main-win-ui.c:170
 msgid "Next Folder"
 msgstr "Nästa mapp"
 
-#: ../src/main-win-ui.c:170
+#: ../src/main-win-ui.c:171
 msgid "Parent Folder"
 msgstr "Föräldramapp"
 
-#: ../src/main-win-ui.c:170
+#: ../src/main-win-ui.c:171
 msgid "Go to parent Folder"
 msgstr "Gå till föräldramapp"
 
-#: ../src/main-win-ui.c:171
+#: ../src/main-win-ui.c:172
 msgid "Home Folder"
 msgstr "Hemkatalog"
 
-#: ../src/main-win-ui.c:172
+#: ../src/main-win-ui.c:173
 msgid "Desktop"
 msgstr "Skrivbord"
 
-#: ../src/main-win-ui.c:172
+#: ../src/main-win-ui.c:173
 msgid "Desktop Folder"
 msgstr "Skrivbordsmapp"
 
-#: ../src/main-win-ui.c:173
+#: ../src/main-win-ui.c:174
 msgid "My Computer"
 msgstr "Den här datorn"
 
-#: ../src/main-win-ui.c:174
+#: ../src/main-win-ui.c:175
 msgid "Trash Can"
 msgstr "Papperskorg"
 
-#: ../src/main-win-ui.c:175
+#: ../src/main-win-ui.c:176
 msgid "Network Drives"
 msgstr "Nätverksenhet"
 
 # Inte översätta mime-typer
-#: ../src/main-win-ui.c:176
+#: ../src/main-win-ui.c:177
 msgid "Applications"
 msgstr "Program"
 
-#: ../src/main-win-ui.c:176
+#: ../src/main-win-ui.c:177
 msgid "Installed Applications"
 msgstr "Installerade program"
 
-#: ../src/main-win-ui.c:178
+#: ../src/main-win-ui.c:179
 msgid "_Bookmarks"
 msgstr "_Bokmärken"
 
-#: ../src/main-win-ui.c:179
+#: ../src/main-win-ui.c:180
 msgid "Add To Bookmarks"
 msgstr "Lägg till bokmärke"
 
-#: ../src/main-win-ui.c:180
+#: ../src/main-win-ui.c:181
 msgid "_Tools"
 msgstr "Ver_ktyg"
 
-#: ../src/main-win-ui.c:181
+#: ../src/main-win-ui.c:182
 msgid "Open Current Folder in _Terminal"
 msgstr "Öppna aktuell mapp i _terminal"
 
-#: ../src/main-win-ui.c:182
+#: ../src/main-win-ui.c:183
 msgid "Open Current Folder as _Root"
 msgstr "Öppna aktuell mapp som _root"
 
-#: ../src/main-win-ui.c:199
+#: ../src/main-win-ui.c:200
 msgid "Show _Hidden"
 msgstr "Visa _dolda"
 
-#: ../src/main-win-ui.c:200
+#: ../src/main-win-ui.c:201
 msgid "Show Side Pane"
 msgstr "Visa sidopanel"
 
-#: ../src/main-win-ui.c:205
+#: ../src/main-win-ui.c:202
+msgid "Fullscreen Mode"
+msgstr ""
+
+#: ../src/main-win-ui.c:207
 msgid "_Icon View"
 msgstr "_Ikonvy"
 
-#: ../src/main-win-ui.c:206
+#: ../src/main-win-ui.c:208
 msgid "_Compact View"
 msgstr "_Kompakt vy"
 
-#: ../src/main-win-ui.c:207
+#: ../src/main-win-ui.c:209
 msgid "_Thumbnail View"
 msgstr "_Tumnagelvy"
 
-#: ../src/main-win-ui.c:208
+#: ../src/main-win-ui.c:210
 msgid "Detailed _List View"
 msgstr "Detaljerad _listvy"
 
-#: ../src/main-win-ui.c:227
+#: ../src/main-win-ui.c:229
 msgid "Places"
 msgstr "Platser"
 
-#: ../src/main-win-ui.c:228
+#: ../src/main-win-ui.c:230
 msgid "Directory Tree"
 msgstr "Katalogträd"
 
-#: ../src/main-win-ui.c:229
+#: ../src/main-win-ui.c:231
 msgid "Remote"
 msgstr "Fjärr"
 
-#: ../src/main-win.c:545
+#: ../src/main-win.c:546
 msgid "You are in super user mode"
 msgstr "Du är i administratörsläge"
 
-#: ../src/main-win.c:732
+#: ../src/main-win.c:742
 msgid "Switch user command is not set."
 msgstr "Kommando för att byta användare är inte angivet."
 
-#: ../src/main-win.c:1139
+#: ../src/main-win.c:1173
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -601,7 +620,7 @@ msgstr ""
 "\"%s\"\n"
 "Ange namn för bokmärke:"
 
-#: ../src/main-win.c:1143
+#: ../src/main-win.c:1177
 msgid "Add to Bookmarks"
 msgstr "Lägg till i bokmärken"
 
@@ -684,34 +703,34 @@ msgstr "Skapa ny..."
 msgid "New"
 msgstr "Ny"
 
-#: ../src/pcmanfm.c:674
+#: ../src/pcmanfm.c:677
 msgid "Error, lxshortcut not installed"
 msgstr "Fel, lxshortcut inte installerat"
 
-#: ../src/pcmanfm.c:679
+#: ../src/pcmanfm.c:682
 msgid "Failed to start lxshortcut"
 msgstr "Kunde inte starta lxshortcut"
 
-#: ../src/tab-page.c:207
+#: ../src/tab-page.c:211
 #, c-format
 msgid "%d item selected"
 msgid_plural "%d items selected"
 msgstr[0] "%d objekt markerat"
 msgstr[1] "%d objekt markerade"
 
-#: ../src/tab-page.c:301
+#: ../src/tab-page.c:305
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Ledigt utrymme: %s (Totalt: %s )"
 
-#: ../src/tab-page.c:321
+#: ../src/tab-page.c:325
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] "%d objekt"
 msgstr[1] "%d objekt"
 
-#: ../src/tab-page.c:322
+#: ../src/tab-page.c:326
 #, c-format
 msgid " (%d hidden)"
 msgid_plural " (%d hidden)"
