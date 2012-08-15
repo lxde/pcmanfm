@@ -247,7 +247,7 @@ msgstr "Использовать десятичные префиксы в сис
 
 #: ../data/ui/pref.glade.h:27
 msgid "Treat backup files as hidden"
-msgstr ""
+msgstr "Считать резервные файлы скрытыми"
 
 #: ../data/ui/pref.glade.h:28
 msgid "Display"
@@ -301,7 +301,7 @@ msgstr "Интеграция архиватора:"
 
 #: ../data/ui/pref.glade.h:41
 msgid "Use Application Startup Notify by default"
-msgstr ""
+msgstr "По умолчанию использовать Оповещение Запуска"
 
 #: ../data/ui/pref.glade.h:42
 msgid ""
@@ -309,6 +309,10 @@ msgid ""
 "explicitly.\n"
 "If unchecked then use Startup Notify only if that is defined for application."
 msgstr ""
+"Если включено, то всегда использовать Оповещение Запуска для программы, "
+"еслиобратное не сказано.\n"
+"Если выключено, то использовать Оповещение Запуска для программы, только "
+"еслиопределено в ярлыке."
 
 #: ../data/ui/pref.glade.h:45
 msgid "Icon View"
@@ -561,7 +565,7 @@ msgstr "_Показать боковую панель"
 
 #: ../src/main-win-ui.c:202
 msgid "Fullscreen Mode"
-msgstr ""
+msgstr "Полноэкранный режим"
 
 #: ../src/main-win-ui.c:207
 msgid "_Icon View"
