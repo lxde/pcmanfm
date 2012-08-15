@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-08-14 23:45+0200\n"
-"PO-Revision-Date: 2012-07-09 11:29+0200\n"
+"PO-Revision-Date: 2012-08-15 10:32+0200\n"
 "Last-Translator: Pjotr <pjotrvertaalt@gmail.com>\n"
 "Language-Team: Dutch\n"
 "Language: nl\n"
@@ -252,7 +252,7 @@ msgstr ""
 
 #: ../data/ui/pref.glade.h:27
 msgid "Treat backup files as hidden"
-msgstr ""
+msgstr "Behandel reservekopie-bestanden als verborgen"
 
 #: ../data/ui/pref.glade.h:28
 msgid "Display"
@@ -306,7 +306,7 @@ msgstr "Integratie van archiefbeheerder:"
 
 #: ../data/ui/pref.glade.h:41
 msgid "Use Application Startup Notify by default"
-msgstr ""
+msgstr "Gebruik standaard de opstartmelding voor toepassingen"
 
 #: ../data/ui/pref.glade.h:42
 msgid ""
@@ -314,6 +314,10 @@ msgid ""
 "explicitly.\n"
 "If unchecked then use Startup Notify only if that is defined for application."
 msgstr ""
+"Indien aangevinkt, gebruik de opstartmelding voor een toepassing, indien er "
+"niet uitdrukkelijk iets anders is opgegeven.\n"
+"Indien niet aangevinkt, gebruik opstartmelding alleen indien die is "
+"ingesteld voor een bepaalde toepassing."
 
 #: ../data/ui/pref.glade.h:45
 msgid "Icon View"
@@ -567,7 +571,7 @@ msgstr "Toon zijbalk"
 
 #: ../src/main-win-ui.c:202
 msgid "Fullscreen Mode"
-msgstr ""
+msgstr "Schermvullende modus"
 
 #: ../src/main-win-ui.c:207
 msgid "_Icon View"
