@@ -223,6 +223,7 @@ inline static void show_autorun_dlg(GVolume* vol, GMount* mount)
 
     g_signal_connect(data->mount, "unmounted", G_CALLBACK(on_unmount), data);
 
+    gtk_window_set_keep_above(GTK_WINDOW(data->dlg), TRUE);
     gtk_window_present(GTK_WINDOW(data->dlg));
 
     g_mount_guess_content_type(mount, TRUE, data->cancel, on_content_type_finished, data);
