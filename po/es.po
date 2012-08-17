@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm 0.9.9\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-08-14 23:45+0200\n"
-"PO-Revision-Date: 2012-07-09 16:00+0200\n"
+"PO-Revision-Date: 2012-08-17 13:28+0200\n"
 "Last-Translator: Hugo <sysadmin@cips.cu>\n"
 "Language-Team: Spanish (Castilian) <translation@mailinglist.lxde.org>\n"
 "Language: es\n"
@@ -249,7 +249,7 @@ msgstr "Usar prefijos decimales SI en lugar de los prefijos binarios IEC"
 
 #: ../data/ui/pref.glade.h:27
 msgid "Treat backup files as hidden"
-msgstr ""
+msgstr "Tratar los archivos de respaldo como ocultos"
 
 #: ../data/ui/pref.glade.h:28
 msgid "Display"
@@ -304,7 +304,7 @@ msgstr "Integración del archivador:"
 
 #: ../data/ui/pref.glade.h:41
 msgid "Use Application Startup Notify by default"
-msgstr ""
+msgstr "Usar por defecto la notificación de inicio de aplicaciones"
 
 #: ../data/ui/pref.glade.h:42
 msgid ""
@@ -312,10 +312,14 @@ msgid ""
 "explicitly.\n"
 "If unchecked then use Startup Notify only if that is defined for application."
 msgstr ""
+"Si se marca, utilizar la notificación de inicio para la aplicación, si no se "
+"especifica otra.\n"
+"Si se desmarca, utilizar la notificación de inicio solo si está definido "
+"para ala aplicación."
 
 #: ../data/ui/pref.glade.h:45
 msgid "Icon View"
-msgstr "Vista de Iconos"
+msgstr "Vista de iconos"
 
 #: ../data/ui/pref.glade.h:46
 msgid "Compact View"
@@ -564,7 +568,7 @@ msgstr "Mostrar panel lateral"
 
 #: ../src/main-win-ui.c:202
 msgid "Fullscreen Mode"
-msgstr ""
+msgstr "Modo de pantalla completa"
 
 #: ../src/main-win-ui.c:207
 msgid "_Icon View"
