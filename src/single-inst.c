@@ -265,14 +265,27 @@ static gboolean on_client_socket_event(GIOChannel* ioc, GIOCondition cond, gpoin
 
     if ( cond & (G_IO_IN|G_IO_PRI) )
     {
-        char *line;
-        gsize term;
+        GString *str = g_string_sized_new(1024);
+        gunichar wc, eol = g_utf8_get_char("\n");
+        GIOStatus status;
 
-        while(g_io_channel_read_line(ioc, &line, NULL, &term, NULL) == G_IO_STATUS_NORMAL)
+        while((status = g_io_channel_read_unichar(ioc, &wc, NULL)) == G_IO_STATUS_NORMAL)
         {
-            if(line)
+            if(wc != eol)
             {
-                line[term] = '\0';
+                if(!g_unichar_validate(wc) || wc == 0 || g_unichar_iscntrl(wc))
+                {
+                    g_error("client connection: invalid char %c", (int)wc);
+                    break;
+                }
+                g_string_append_unichar(str, wc);
+                continue;
+            }
+            if(str->len)
+            {
+                char *line = g_strndup(str->str, str->len);
+
+                g_string_truncate(str, 0);
                 g_debug("line = %s", line);
                 if(!client->cwd)
                     client->cwd = g_strcompress(line);
@@ -290,6 +303,16 @@ static gboolean on_client_socket_event(GIOChannel* ioc, GIOCondition cond, gpoin
                 g_free(line);
             }
         }
+        switch(status)
+        {
+            case G_IO_STATUS_ERROR:
+                cond |= G_IO_ERR;
+                break;
+            case G_IO_STATUS_EOF:
+                cond |= G_IO_HUP;
+            default:
+                break;
+        }
     }
 
     if(cond & (G_IO_ERR|G_IO_HUP))
@@ -299,8 +322,8 @@ static gboolean on_client_socket_event(GIOChannel* ioc, GIOCondition cond, gpoin
             /* try to parse argv */
             parse_args(client);
         }
-        single_inst_client_free(client);
         clients = g_list_remove(clients, client);
+        single_inst_client_free(client);
         return FALSE;
     }
 
@@ -318,7 +341,7 @@ static gboolean on_server_socket_event(GIOChannel* ioc, GIOCondition cond, gpoin
         {
             SingleInstClient* client = g_slice_new0(SingleInstClient);
             client->channel = g_io_channel_unix_new(client_sock);
-            g_io_channel_set_encoding(client->channel, NULL, NULL);
+            g_io_channel_set_encoding(client->channel, "UTF-8", NULL);
             client->screen_num = -1;
             client->argv = g_ptr_array_new();
             client->callback = data->cb;
