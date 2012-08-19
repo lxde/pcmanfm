@@ -303,6 +303,7 @@ static gboolean on_client_socket_event(GIOChannel* ioc, GIOCondition cond, gpoin
                 g_free(line);
             }
         }
+        g_string_free(str, TRUE);
         switch(status)
         {
             case G_IO_STATUS_ERROR:
