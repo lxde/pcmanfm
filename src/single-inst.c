@@ -276,7 +276,7 @@ static gboolean on_client_socket_event(GIOChannel* ioc, GIOCondition cond, gpoin
             {
                 if(ch < 0x20) /* zero or control char */
                 {
-                    g_error("client connection: invalid char %c", ch);
+                    g_error("client connection: invalid char %#x", (int)ch);
                     break;
                 }
                 g_string_append_c(str, ch);
