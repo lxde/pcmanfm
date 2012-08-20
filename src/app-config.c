@@ -129,6 +129,7 @@ void fm_app_config_load_from_key_file(FmAppConfig* cfg, GKeyFile* kf)
         g_free(cfg->wallpapers);
     }
     g_free(cfg->wallpaper);
+    cfg->wallpaper = NULL;
     fm_key_file_get_int(kf, "desktop", "wallpapers_configured", &cfg->wallpapers_configured);
     if(cfg->wallpapers_configured > 0)
     {
