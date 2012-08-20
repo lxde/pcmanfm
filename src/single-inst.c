@@ -266,19 +266,20 @@ static gboolean on_client_socket_event(GIOChannel* ioc, GIOCondition cond, gpoin
     if ( cond & (G_IO_IN|G_IO_PRI) )
     {
         GString *str = g_string_sized_new(1024);
-        gunichar wc, eol = g_utf8_get_char("\n");
+        gsize got;
+        gchar ch;
         GIOStatus status;
 
-        while((status = g_io_channel_read_unichar(ioc, &wc, NULL)) == G_IO_STATUS_NORMAL)
+        while((status = g_io_channel_read_chars(ioc, &ch, 1, &got, NULL)) == G_IO_STATUS_NORMAL)
         {
-            if(wc != eol)
+            if(ch != '\n')
             {
-                if(!g_unichar_validate(wc) || wc == 0 || g_unichar_iscntrl(wc))
+                if(ch < 0x20) /* zero or control char */
                 {
-                    g_error("client connection: invalid char %c", (int)wc);
+                    g_error("client connection: invalid char %c", ch);
                     break;
                 }
-                g_string_append_unichar(str, wc);
+                g_string_append_c(str, ch);
                 continue;
             }
             if(str->len)
