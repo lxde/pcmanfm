@@ -343,7 +343,7 @@ static gboolean on_server_socket_event(GIOChannel* ioc, GIOCondition cond, gpoin
         {
             SingleInstClient* client = g_slice_new0(SingleInstClient);
             client->channel = g_io_channel_unix_new(client_sock);
-            g_io_channel_set_encoding(client->channel, "UTF-8", NULL);
+            g_io_channel_set_encoding(client->channel, NULL, NULL);
             client->screen_num = -1;
             client->argv = g_ptr_array_new();
             client->callback = data->cb;
