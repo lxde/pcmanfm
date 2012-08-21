@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-08-14 23:45+0200\n"
-"PO-Revision-Date: 2012-07-07 03:35+0200\n"
+"PO-Revision-Date: 2012-08-21 12:30+0200\n"
 "Last-Translator: Wylmer <wantinghard@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: zh_CN\n"
@@ -244,7 +244,7 @@ msgstr "使用国际单位制的十进制前缀而非 IEC 的二进制前缀"
 
 #: ../data/ui/pref.glade.h:27
 msgid "Treat backup files as hidden"
-msgstr ""
+msgstr "将备份文件视为隐藏"
 
 #: ../data/ui/pref.glade.h:28
 msgid "Display"
@@ -297,7 +297,7 @@ msgstr "档案管理器集成："
 
 #: ../data/ui/pref.glade.h:41
 msgid "Use Application Startup Notify by default"
-msgstr ""
+msgstr "默认使用“应用程序启动通知”"
 
 #: ../data/ui/pref.glade.h:42
 msgid ""
@@ -305,6 +305,8 @@ msgid ""
 "explicitly.\n"
 "If unchecked then use Startup Notify only if that is defined for application."
 msgstr ""
+"若选中，会在未明确声明的情况下使用“启动通知”。\n"
+"如果不选中，只有为应用程序定义了“启动通知”时才会使用。"
 
 #: ../data/ui/pref.glade.h:45
 msgid "Icon View"
@@ -557,7 +559,7 @@ msgstr "显示侧边窗格"
 
 #: ../src/main-win-ui.c:202
 msgid "Fullscreen Mode"
-msgstr ""
+msgstr "全屏模式"
 
 #: ../src/main-win-ui.c:207
 msgid "_Icon View"
