@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PcmanFM 0.9.9\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-14 23:45+0200\n"
+"POT-Creation-Date: 2012-08-22 22:36+0200\n"
 "PO-Revision-Date: 2010-11-17 20:57+0900\n"
 "Last-Translator: Hironao Komatsu <hironao@users.sourceforge.net>\n"
 "Language-Team: Japanese <translation-team-ja@lists.sourceforge.net>\n"
@@ -114,7 +114,7 @@ msgstr "デスクトップアイコン"
 msgid "Show menus provided by window managers when desktop is clicked"
 msgstr "デスクトップをクリックしたときウィンドウマネージャのメニューを表示する"
 
-#: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:44
+#: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:58
 msgid "Advanced"
 msgstr "高度な設定"
 
@@ -122,19 +122,19 @@ msgstr "高度な設定"
 msgid "Fill with background color only"
 msgstr "背景色のみで塗りつぶす"
 
-#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:49
+#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:67
 msgid "Stretch to fill the entire screen"
 msgstr "画面いっぱいに延ばす"
 
-#: ../data/ui/desktop-pref.glade.h:23 ../data/ui/pref.glade.h:50
+#: ../data/ui/desktop-pref.glade.h:23 ../data/ui/pref.glade.h:68
 msgid "Stretch to fit the screen"
 msgstr "縦横比をそのままに延ばす"
 
-#: ../data/ui/desktop-pref.glade.h:24 ../data/ui/pref.glade.h:51
+#: ../data/ui/desktop-pref.glade.h:24 ../data/ui/pref.glade.h:69
 msgid "Center on the screen"
 msgstr "画面の中央に配置する"
 
-#: ../data/ui/desktop-pref.glade.h:25 ../data/ui/pref.glade.h:52
+#: ../data/ui/desktop-pref.glade.h:25 ../data/ui/pref.glade.h:70
 msgid "Tile the image to fill the entire screen"
 msgstr "画面いっぱいに敷き詰める"
 
@@ -171,72 +171,73 @@ msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
 msgstr "ファイルを削除する代わりに \"ゴミ箱\" に移動する"
 
 #: ../data/ui/pref.glade.h:9
+msgid "Erase files on removable media instead of \"trash bin\" creation"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:10
+#, fuzzy
+msgid "Confirm before moving files into \"trash bin\""
+msgstr "ファイルの削除の前に確認する"
+
+#: ../data/ui/pref.glade.h:11
 msgid "Bookmarks:"
 msgstr "ブックマーク:"
 
-#: ../data/ui/pref.glade.h:10
+#: ../data/ui/pref.glade.h:12
+msgid "Default drop action:"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:13
+msgid "Unfold tab when files are dragged onto tab button"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:14
 msgid "<b>Default View</b>"
 msgstr "<b>デフォルトのビュー</b>"
 
-#: ../data/ui/pref.glade.h:11
+#: ../data/ui/pref.glade.h:15
 msgid "View Mode:"
 msgstr "ビューのモード:"
 
-#: ../data/ui/pref.glade.h:12
+#: ../data/ui/pref.glade.h:16
 msgid "General"
 msgstr "一般"
 
-#: ../data/ui/pref.glade.h:13
+#: ../data/ui/pref.glade.h:17
 msgid "<b>Icons</b>"
 msgstr "<b>アイコン</b>"
 
-#: ../data/ui/pref.glade.h:14
+#: ../data/ui/pref.glade.h:18
 msgid "Size of small icons:"
 msgstr "小さなアイコンのサイズ:"
 
-#: ../data/ui/pref.glade.h:15
+#: ../data/ui/pref.glade.h:19
 msgid "Size of big icons:"
 msgstr "大きなアイコンのサイズ:"
 
-#: ../data/ui/pref.glade.h:16
+#: ../data/ui/pref.glade.h:20
 msgid "Size of thumbnails:"
 msgstr "サムネイルのサイズ:"
 
-#: ../data/ui/pref.glade.h:17
+#: ../data/ui/pref.glade.h:21
 msgid "Size of side pane icons:"
 msgstr "サイドペインのアイコンのサイズ:"
 
-#: ../data/ui/pref.glade.h:18
+#: ../data/ui/pref.glade.h:22
 msgid "Show thumbnails of files"
 msgstr "ファイルのサムネイルを表示する"
 
-#: ../data/ui/pref.glade.h:19
+#: ../data/ui/pref.glade.h:23
 msgid "Only show thumbnails for local files"
 msgstr "ローカルのファイルにはサムネイルだけを表示する"
 
-#: ../data/ui/pref.glade.h:20
+#: ../data/ui/pref.glade.h:24
 msgid "Do not generate thumbnails for files exceeding this size:"
 msgstr "このサイズよりも大きなファイルにはサムネイルを作らない"
 
-#: ../data/ui/pref.glade.h:21
+#: ../data/ui/pref.glade.h:25
 msgid "<b>User Interface</b>"
 msgstr "<b>ユーザインタフェース</b>"
-
-#: ../data/ui/pref.glade.h:22
-msgid "Always show the tab bar"
-msgstr "タブバーを常に表示する"
-
-#: ../data/ui/pref.glade.h:23
-msgid "Hide 'Close tab' buttons"
-msgstr "'タブを閉じる' ボタンを隠す"
-
-#: ../data/ui/pref.glade.h:24
-msgid "Hide side pane buttons"
-msgstr "サイドペインのボタンを隠す"
-
-#: ../data/ui/pref.glade.h:25
-msgid "Hide folder content border"
-msgstr "フォルダの内容の境界を隠す"
 
 #: ../data/ui/pref.glade.h:26
 msgid "Use SI decimal prefixes instead of IEC binary prefixes"
@@ -251,39 +252,100 @@ msgid "Display"
 msgstr "ディスプレイ"
 
 #: ../data/ui/pref.glade.h:29
+msgid "Hide folder content border"
+msgstr "フォルダの内容の境界を隠す"
+
+#: ../data/ui/pref.glade.h:30
+msgid "Hide side pane buttons"
+msgstr "サイドペインのボタンを隠す"
+
+#: ../data/ui/pref.glade.h:31
+msgid "Hide 'Close tab' buttons"
+msgstr "'タブを閉じる' ボタンを隠す"
+
+#: ../data/ui/pref.glade.h:32
+msgid "Always show the tab bar"
+msgstr "タブバーを常に表示する"
+
+#: ../data/ui/pref.glade.h:33
+#, fuzzy
+msgid "<b>Directories Tree</b>"
+msgstr "ディレクトリツリー"
+
+#: ../data/ui/pref.glade.h:34
+msgid "Hide expander on empty or locked folder"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:35
+#, fuzzy
+msgid "<b>Show in Places:</b>"
+msgstr "<b>デスクトップアイコンを表示する</b>"
+
+#: ../data/ui/pref.glade.h:36
+#, fuzzy
+msgid "Home Directory"
+msgstr "ディレクトリツリー"
+
+#: ../data/ui/pref.glade.h:37 ../src/main-win-ui.c:174
+msgid "Desktop Folder"
+msgstr "デスクトップフォルダ"
+
+#: ../data/ui/pref.glade.h:38 ../src/main-win-ui.c:178
+msgid "Applications"
+msgstr "アプリケーション"
+
+#: ../data/ui/pref.glade.h:39
+#, fuzzy
+msgid "Trash bin"
+msgstr "ゴミ箱"
+
+#: ../data/ui/pref.glade.h:40
+msgid "Layout"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:41
 msgid "<b>Auto-mount</b>"
 msgstr "<b>自動マウント</b>"
 
-#: ../data/ui/pref.glade.h:30
+#: ../data/ui/pref.glade.h:42
 msgid "Mount mountable volumes automatically on program startup"
 msgstr ""
 "プログラムのスタートアップ時にマウントできるボリュームを自動でマウントする"
 
-#: ../data/ui/pref.glade.h:31
+#: ../data/ui/pref.glade.h:43
 msgid "Mount removable media automatically when they are inserted"
 msgstr "リムーバブルメディアが挿入されたとき自動でマウントする"
 
-#: ../data/ui/pref.glade.h:32
+#: ../data/ui/pref.glade.h:44
 msgid "Show available options for removable media when they are inserted"
 msgstr "リムーバブルメディアが挿入されたとき、可能な選択肢を表示する"
 
-#: ../data/ui/pref.glade.h:33
+#: ../data/ui/pref.glade.h:45
+msgid "Open mounted removable media in new tab instead of new window"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:46
+#, fuzzy
+msgid "Close tab containing removable medium when it is unmounted"
+msgstr "リムーバブルメディアが挿入されたとき、可能な選択肢を表示する"
+
+#: ../data/ui/pref.glade.h:47
 msgid "Volume Management"
 msgstr "ボリューム管理"
 
-#: ../data/ui/pref.glade.h:34
+#: ../data/ui/pref.glade.h:48
 msgid "<b>Programs</b>"
 msgstr "<b>プログラム</b>"
 
-#: ../data/ui/pref.glade.h:35
+#: ../data/ui/pref.glade.h:49
 msgid "Terminal emulator:"
 msgstr "端末エミュレータ:"
 
-#: ../data/ui/pref.glade.h:36
+#: ../data/ui/pref.glade.h:50
 msgid "Switch user command:"
 msgstr "ユーザ切り替えのコマンド:"
 
-#: ../data/ui/pref.glade.h:38
+#: ../data/ui/pref.glade.h:52
 #, no-c-format
 msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
@@ -292,34 +354,50 @@ msgstr ""
 "例: 端末には \"xterm -e %s\" あるいは、ユーザの切り替えには \"gksu %s\" 。\n"
 "%s = 端末または su で実行したいコマンドライン"
 
-#: ../data/ui/pref.glade.h:40
+#: ../data/ui/pref.glade.h:54
 msgid "Archiver integration:"
 msgstr "アーカイバ統合:"
 
-#: ../data/ui/pref.glade.h:41
+#: ../data/ui/pref.glade.h:55
 msgid "Use Application Startup Notify by default"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:42
+#: ../data/ui/pref.glade.h:56
 msgid ""
 "If checked then use Startup Notify for application if another not stated "
 "explicitly.\n"
 "If unchecked then use Startup Notify only if that is defined for application."
 msgstr ""
 
-#: ../data/ui/pref.glade.h:45
+#: ../data/ui/pref.glade.h:59
+msgid "Auto (move if on the same FS, copy otherwise)"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:60
+msgid "Copy"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:61
+msgid "Move"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:62
+msgid "Ask"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:63
 msgid "Icon View"
 msgstr "アイコン"
 
-#: ../data/ui/pref.glade.h:46
+#: ../data/ui/pref.glade.h:64
 msgid "Compact View"
 msgstr "コンパクト"
 
-#: ../data/ui/pref.glade.h:47
+#: ../data/ui/pref.glade.h:65
 msgid "Thumbnail View"
 msgstr "サムネイル"
 
-#: ../data/ui/pref.glade.h:48
+#: ../data/ui/pref.glade.h:66
 msgid "Detailed List View"
 msgstr "詳細リスト"
 
@@ -355,52 +433,52 @@ msgstr "ファイルマネージャで開く"
 msgid "_Invert Selection"
 msgstr "選択を反転する(_I)"
 
-#: ../src/desktop-ui.c:55 ../src/main-win-ui.c:165
+#: ../src/desktop-ui.c:55 ../src/main-win-ui.c:166
 msgid "_Sort Files"
 msgstr "ファイルを整列する(_S)"
 
 #. for popup menu
-#: ../src/desktop-ui.c:56 ../src/main-win-ui.c:191
+#: ../src/desktop-ui.c:56 ../src/main-win-ui.c:192
 msgid "Create _New..."
 msgstr "新規作成(_N)..."
 
-#: ../src/desktop-ui.c:57 ../src/main-win-ui.c:192
+#: ../src/desktop-ui.c:57 ../src/main-win-ui.c:193
 msgid "Folder"
 msgstr "フォルダ"
 
-#: ../src/desktop-ui.c:58 ../src/main-win-ui.c:193
+#: ../src/desktop-ui.c:58 ../src/main-win-ui.c:194
 msgid "Blank File"
 msgstr "空のファイル"
 
-#: ../src/desktop-ui.c:59 ../src/main-win-ui.c:194
+#: ../src/desktop-ui.c:59 ../src/main-win-ui.c:195
 msgid "Shortcut"
 msgstr "ショートカット"
 
-#: ../src/desktop-ui.c:71 ../src/main-win-ui.c:221
+#: ../src/desktop-ui.c:71 ../src/main-win-ui.c:223
 msgid "By _Name"
 msgstr "名前で(_N)"
 
-#: ../src/desktop-ui.c:72 ../src/main-win-ui.c:222
+#: ../src/desktop-ui.c:72 ../src/main-win-ui.c:224
 msgid "By _Modification Time"
 msgstr "更新時刻で(_M)"
 
-#: ../src/desktop-ui.c:73 ../src/main-win-ui.c:223
+#: ../src/desktop-ui.c:73 ../src/main-win-ui.c:225
 msgid "By _Size"
 msgstr "サイズで(_S)"
 
-#: ../src/desktop-ui.c:74 ../src/main-win-ui.c:224
+#: ../src/desktop-ui.c:74 ../src/main-win-ui.c:226
 msgid "By File _Type"
 msgstr "ファイルタイプで(_T)"
 
-#: ../src/desktop-ui.c:90 ../src/main-win-ui.c:247
+#: ../src/desktop-ui.c:90 ../src/main-win-ui.c:249
 msgid "Open in New Tab"
 msgstr "新規タブで開く"
 
-#: ../src/desktop-ui.c:91 ../src/main-win-ui.c:248
+#: ../src/desktop-ui.c:91 ../src/main-win-ui.c:250
 msgid "Open in New Window"
 msgstr "新規ウィンドウで開く"
 
-#: ../src/desktop-ui.c:93 ../src/main-win-ui.c:250
+#: ../src/desktop-ui.c:93 ../src/main-win-ui.c:252
 msgid "Open in _Terminal"
 msgstr "端末で開く(_T)"
 
@@ -412,179 +490,175 @@ msgstr "現在位置に固定する"
 msgid "Snap to Grid"
 msgstr "自動整列する"
 
-#: ../src/main-win-ui.c:145
+#: ../src/main-win-ui.c:146
 msgid "_File"
 msgstr "ファイル(_F)"
 
-#: ../src/main-win-ui.c:146
+#: ../src/main-win-ui.c:147
 msgid "_New Window"
 msgstr "新規ウィンドウ(_N)"
 
-#: ../src/main-win-ui.c:147
+#: ../src/main-win-ui.c:148
 msgid "New _Tab"
 msgstr "新規タブ(_T)"
 
-#: ../src/main-win-ui.c:148
+#: ../src/main-win-ui.c:149
 msgid "_Close Tab"
 msgstr "タブを閉じる(_C)"
 
-#: ../src/main-win-ui.c:149
+#: ../src/main-win-ui.c:150
 msgid "Close Window"
 msgstr "ウィンドウを閉じる"
 
-#: ../src/main-win-ui.c:150
+#: ../src/main-win-ui.c:151
 msgid "_Edit"
 msgstr "編集(_E)"
 
-#: ../src/main-win-ui.c:155
+#: ../src/main-win-ui.c:156
 msgid "Rename"
 msgstr "名前を変更する"
 
-#: ../src/main-win-ui.c:156
+#: ../src/main-win-ui.c:157
 msgid "Create Symlink"
 msgstr "シンボリック・リンクを作成する"
 
-#: ../src/main-win-ui.c:157
+#: ../src/main-win-ui.c:158
 msgid "Move To..."
 msgstr "送り先へ移動する"
 
-#: ../src/main-win-ui.c:158
+#: ../src/main-win-ui.c:159
 msgid "Copy To..."
 msgstr "送り先へコピーする"
 
-#: ../src/main-win-ui.c:160
+#: ../src/main-win-ui.c:161
 msgid "Invert Selection"
 msgstr "選択を反転する"
 
-#: ../src/main-win-ui.c:162
+#: ../src/main-win-ui.c:163
 msgid "_View"
 msgstr "表示(_V)"
 
-#: ../src/main-win-ui.c:163
+#: ../src/main-win-ui.c:164
 msgid "Reload Folder"
 msgstr "フォルダを再読み込み"
 
-#: ../src/main-win-ui.c:163
+#: ../src/main-win-ui.c:164
 msgid "Reload current folder"
 msgstr "現在のフォルダを再読み込み"
 
-#: ../src/main-win-ui.c:164
+#: ../src/main-win-ui.c:165
 msgid "Side Pane"
 msgstr "サイドペイン"
 
-#: ../src/main-win-ui.c:166
+#: ../src/main-win-ui.c:167
 msgid "_Help"
 msgstr "ヘルプ(_H)"
 
-#: ../src/main-win-ui.c:168
+#: ../src/main-win-ui.c:169
 msgid "_Go"
 msgstr "移動(_G)"
 
-#: ../src/main-win-ui.c:169
+#: ../src/main-win-ui.c:170
 msgid "Previous Folder"
 msgstr "戻る"
 
-#: ../src/main-win-ui.c:170
+#: ../src/main-win-ui.c:171
 msgid "Next Folder"
 msgstr "進む"
 
-#: ../src/main-win-ui.c:171
+#: ../src/main-win-ui.c:172
 msgid "Parent Folder"
 msgstr "親フォルダへ"
 
-#: ../src/main-win-ui.c:171
+#: ../src/main-win-ui.c:172
 msgid "Go to parent Folder"
 msgstr "親フォルダへ移動する"
 
-#: ../src/main-win-ui.c:172
+#: ../src/main-win-ui.c:173
 msgid "Home Folder"
 msgstr "ホーム"
 
-#: ../src/main-win-ui.c:173
+#: ../src/main-win-ui.c:174
 msgid "Desktop"
 msgstr "デスクトップ"
 
-#: ../src/main-win-ui.c:173
-msgid "Desktop Folder"
-msgstr "デスクトップフォルダ"
-
-#: ../src/main-win-ui.c:174
+#: ../src/main-win-ui.c:175
 msgid "My Computer"
 msgstr "マイコンピュータ"
 
-#: ../src/main-win-ui.c:175
+#: ../src/main-win-ui.c:176
 msgid "Trash Can"
 msgstr "ゴミ箱"
 
-#: ../src/main-win-ui.c:176
+#: ../src/main-win-ui.c:177
 msgid "Network Drives"
 msgstr "ネットワーク・ドライブ"
 
-#: ../src/main-win-ui.c:177
-msgid "Applications"
-msgstr "アプリケーション"
-
-#: ../src/main-win-ui.c:177
+#: ../src/main-win-ui.c:178
 msgid "Installed Applications"
 msgstr "インストールされているアプリケーション"
 
-#: ../src/main-win-ui.c:179
+#: ../src/main-win-ui.c:180
 msgid "_Bookmarks"
 msgstr "ブックマーク(_B)"
 
-#: ../src/main-win-ui.c:180
+#: ../src/main-win-ui.c:181
 msgid "Add To Bookmarks"
 msgstr "ブックマークに追加"
 
-#: ../src/main-win-ui.c:181
+#: ../src/main-win-ui.c:182
 msgid "_Tools"
 msgstr "ツール(_T)"
 
-#: ../src/main-win-ui.c:182
+#: ../src/main-win-ui.c:183
 msgid "Open Current Folder in _Terminal"
 msgstr "現在のフォルダを端末で開く(_T)"
 
-#: ../src/main-win-ui.c:183
+#: ../src/main-win-ui.c:184
 msgid "Open Current Folder as _Root"
 msgstr "rootユーザとして現在のフォルダを開く(_R)"
 
-#: ../src/main-win-ui.c:200
+#: ../src/main-win-ui.c:201
 msgid "Show _Hidden"
 msgstr "隠しファイルを表示する"
 
-#: ../src/main-win-ui.c:201
+#: ../src/main-win-ui.c:202
 msgid "Show Side Pane"
 msgstr "サイドペインを表示する"
 
-#: ../src/main-win-ui.c:202
+#: ../src/main-win-ui.c:203
+msgid "Show Status B_ar"
+msgstr ""
+
+#: ../src/main-win-ui.c:204
 msgid "Fullscreen Mode"
 msgstr ""
 
-#: ../src/main-win-ui.c:207
+#: ../src/main-win-ui.c:209
 msgid "_Icon View"
 msgstr "アイコン(_I)"
 
-#: ../src/main-win-ui.c:208
+#: ../src/main-win-ui.c:210
 msgid "_Compact View"
 msgstr "コンパクト(_C)"
 
-#: ../src/main-win-ui.c:209
+#: ../src/main-win-ui.c:211
 msgid "_Thumbnail View"
 msgstr "サムネイル(_T)"
 
-#: ../src/main-win-ui.c:210
+#: ../src/main-win-ui.c:212
 msgid "Detailed _List View"
 msgstr "詳細リスト(_L)"
 
-#: ../src/main-win-ui.c:229
+#: ../src/main-win-ui.c:231
 msgid "Places"
 msgstr "場所"
 
-#: ../src/main-win-ui.c:230
+#: ../src/main-win-ui.c:232
 msgid "Directory Tree"
 msgstr "ディレクトリツリー"
 
-#: ../src/main-win-ui.c:231
+#: ../src/main-win-ui.c:233
 msgid "Remote"
 msgstr "リモート"
 
@@ -666,31 +740,31 @@ msgstr ""
 msgid "[FILE1, FILE2,...]"
 msgstr "[ファイル1, ファイル2,...]"
 
-#: ../src/pcmanfm.c:528
+#: ../src/pcmanfm.c:527
 msgid "Terminal emulator is not set."
 msgstr "端末エミュレータが設定されていません。"
 
-#: ../src/pcmanfm.c:580
+#: ../src/pcmanfm.c:579
 msgid "Enter a name for the newly created folder:"
 msgstr "新たに作成するフォルダの名前を入力してください:"
 
-#: ../src/pcmanfm.c:582
+#: ../src/pcmanfm.c:581
 msgid "Enter a name for the newly created file:"
 msgstr "新たに作成するファイルの名前を入力してください:"
 
-#: ../src/pcmanfm.c:583
+#: ../src/pcmanfm.c:582
 msgid "Create New..."
 msgstr "新規作成中..."
 
-#: ../src/pcmanfm.c:583
+#: ../src/pcmanfm.c:582
 msgid "New"
 msgstr "New"
 
-#: ../src/pcmanfm.c:677
+#: ../src/pcmanfm.c:676
 msgid "Error, lxshortcut not installed"
 msgstr "エラー、lxshortcut はインストールされていません"
 
-#: ../src/pcmanfm.c:682
+#: ../src/pcmanfm.c:681
 msgid "Failed to start lxshortcut"
 msgstr "lxshortcut の立ち上げに失敗しました"
 

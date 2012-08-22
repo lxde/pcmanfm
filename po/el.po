@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-14 23:45+0200\n"
+"POT-Creation-Date: 2012-08-22 22:36+0200\n"
 "PO-Revision-Date: 2012-07-09 07:36+0200\n"
 "Last-Translator: George <forfolias@gmail.com>\n"
 "Language: el\n"
@@ -111,7 +111,7 @@ msgstr ""
 "Εμφάνιση του μενού του διαχειριστή παραθύρων όταν κάνετε κλικ στην επιφάνεια "
 "εργασίας"
 
-#: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:44
+#: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:58
 msgid "Advanced"
 msgstr "Για προχωρημένους"
 
@@ -119,19 +119,19 @@ msgstr "Για προχωρημένους"
 msgid "Fill with background color only"
 msgstr "Γέμισμα μόνο με το χρώμα παρασκηνίου"
 
-#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:49
+#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:67
 msgid "Stretch to fill the entire screen"
 msgstr "Τέντωμα ώστε να γεμίζει όλη την οθόνη"
 
-#: ../data/ui/desktop-pref.glade.h:23 ../data/ui/pref.glade.h:50
+#: ../data/ui/desktop-pref.glade.h:23 ../data/ui/pref.glade.h:68
 msgid "Stretch to fit the screen"
 msgstr "Τέντωμα ώστε να χωρέσει στην οθόνη"
 
-#: ../data/ui/desktop-pref.glade.h:24 ../data/ui/pref.glade.h:51
+#: ../data/ui/desktop-pref.glade.h:24 ../data/ui/pref.glade.h:69
 msgid "Center on the screen"
 msgstr "Κέντρο της οθόνης"
 
-#: ../data/ui/desktop-pref.glade.h:25 ../data/ui/pref.glade.h:52
+#: ../data/ui/desktop-pref.glade.h:25 ../data/ui/pref.glade.h:70
 msgid "Tile the image to fill the entire screen"
 msgstr "Παράθεση εικόνας σε όλη την οθόνη"
 
@@ -169,73 +169,74 @@ msgstr ""
 "Μετακίνηση των αρχείων στα \"Απορρίμματα\" αντί για διαγραφή από το δίσκο"
 
 #: ../data/ui/pref.glade.h:9
+msgid "Erase files on removable media instead of \"trash bin\" creation"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:10
+#, fuzzy
+msgid "Confirm before moving files into \"trash bin\""
+msgstr "Επιβεβαίωση πριν από τη διαγραφή αρχείων"
+
+#: ../data/ui/pref.glade.h:11
 msgid "Bookmarks:"
 msgstr "Σελιδοδείκτες:"
 
-#: ../data/ui/pref.glade.h:10
+#: ../data/ui/pref.glade.h:12
+msgid "Default drop action:"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:13
+msgid "Unfold tab when files are dragged onto tab button"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:14
 msgid "<b>Default View</b>"
 msgstr "<b>Προεπιλεγμένη προβολή</b>"
 
-#: ../data/ui/pref.glade.h:11
+#: ../data/ui/pref.glade.h:15
 msgid "View Mode:"
 msgstr "Τύπος προβολής:"
 
-#: ../data/ui/pref.glade.h:12
+#: ../data/ui/pref.glade.h:16
 msgid "General"
 msgstr "Γενικά"
 
-#: ../data/ui/pref.glade.h:13
+#: ../data/ui/pref.glade.h:17
 msgid "<b>Icons</b>"
 msgstr "<b>Εικονίδια</b>"
 
-#: ../data/ui/pref.glade.h:14
+#: ../data/ui/pref.glade.h:18
 msgid "Size of small icons:"
 msgstr "Μέγεθος μικρών εικονιδίων:"
 
-#: ../data/ui/pref.glade.h:15
+#: ../data/ui/pref.glade.h:19
 msgid "Size of big icons:"
 msgstr "Μέγεθος μεγάλων εικονιδίων:"
 
-#: ../data/ui/pref.glade.h:16
+#: ../data/ui/pref.glade.h:20
 msgid "Size of thumbnails:"
 msgstr "Μέγεθος μικρογραφίας:"
 
-#: ../data/ui/pref.glade.h:17
+#: ../data/ui/pref.glade.h:21
 msgid "Size of side pane icons:"
 msgstr "Μέγεθος εικονιδίων στο πλαϊνό ταμπλό:"
 
-#: ../data/ui/pref.glade.h:18
+#: ../data/ui/pref.glade.h:22
 msgid "Show thumbnails of files"
 msgstr "Εμφάνιση μικρογραφίας αρχείων"
 
-#: ../data/ui/pref.glade.h:19
+#: ../data/ui/pref.glade.h:23
 msgid "Only show thumbnails for local files"
 msgstr "Εμφάνιση προεπισκόπησης μόνο σε τοπικά αρχεία"
 
-#: ../data/ui/pref.glade.h:20
+#: ../data/ui/pref.glade.h:24
 msgid "Do not generate thumbnails for files exceeding this size:"
 msgstr ""
 "Μη δημιουργούνται μικρογραφίες για αρχεία που υπερβαίνουν αυτό το μέγεθος:"
 
-#: ../data/ui/pref.glade.h:21
+#: ../data/ui/pref.glade.h:25
 msgid "<b>User Interface</b>"
 msgstr "<b>Διεπαφή</b>"
-
-#: ../data/ui/pref.glade.h:22
-msgid "Always show the tab bar"
-msgstr "Να εμφανίζεται πάντα η μπάρα με τις καρτέλες"
-
-#: ../data/ui/pref.glade.h:23
-msgid "Hide 'Close tab' buttons"
-msgstr "Απόκρυψη κουμπιών 'Κλείσιμο καρτέλας'"
-
-#: ../data/ui/pref.glade.h:24
-msgid "Hide side pane buttons"
-msgstr "Απόκρυψη κουμπιών πλαϊνού ταμπλό"
-
-#: ../data/ui/pref.glade.h:25
-msgid "Hide folder content border"
-msgstr "Απόκρυψη περιεχομένων φακέλου"
 
 #: ../data/ui/pref.glade.h:26
 msgid "Use SI decimal prefixes instead of IEC binary prefixes"
@@ -250,39 +251,101 @@ msgid "Display"
 msgstr "Εμφάνιση"
 
 #: ../data/ui/pref.glade.h:29
+msgid "Hide folder content border"
+msgstr "Απόκρυψη περιεχομένων φακέλου"
+
+#: ../data/ui/pref.glade.h:30
+msgid "Hide side pane buttons"
+msgstr "Απόκρυψη κουμπιών πλαϊνού ταμπλό"
+
+#: ../data/ui/pref.glade.h:31
+msgid "Hide 'Close tab' buttons"
+msgstr "Απόκρυψη κουμπιών 'Κλείσιμο καρτέλας'"
+
+#: ../data/ui/pref.glade.h:32
+msgid "Always show the tab bar"
+msgstr "Να εμφανίζεται πάντα η μπάρα με τις καρτέλες"
+
+#: ../data/ui/pref.glade.h:33
+#, fuzzy
+msgid "<b>Directories Tree</b>"
+msgstr "Δέντρο καταλόγων"
+
+#: ../data/ui/pref.glade.h:34
+msgid "Hide expander on empty or locked folder"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:35
+#, fuzzy
+msgid "<b>Show in Places:</b>"
+msgstr "<b>Εμφάνιση εικονιδίων επιφάνειας εργασίας</b>"
+
+#: ../data/ui/pref.glade.h:36
+#, fuzzy
+msgid "Home Directory"
+msgstr "Δέντρο καταλόγων"
+
+#: ../data/ui/pref.glade.h:37 ../src/main-win-ui.c:174
+msgid "Desktop Folder"
+msgstr "Φάκελος επιφάνειας εργασίας"
+
+#: ../data/ui/pref.glade.h:38 ../src/main-win-ui.c:178
+msgid "Applications"
+msgstr "Εφαρμογές"
+
+#: ../data/ui/pref.glade.h:39
+#, fuzzy
+msgid "Trash bin"
+msgstr "Απορρίμματα"
+
+#: ../data/ui/pref.glade.h:40
+msgid "Layout"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:41
 msgid "<b>Auto-mount</b>"
 msgstr "<b>Αυτόματη προσάρτηση</b>"
 
-#: ../data/ui/pref.glade.h:30
+#: ../data/ui/pref.glade.h:42
 msgid "Mount mountable volumes automatically on program startup"
 msgstr "Αυτόματη προσάρτηση τόμων στην εκκίνηση του προγράμματος"
 
-#: ../data/ui/pref.glade.h:31
+#: ../data/ui/pref.glade.h:43
 msgid "Mount removable media automatically when they are inserted"
 msgstr "Αυτόματη προσάρτηση αφαιρούμενων δίσκων κατά την εισαγωγή τους"
 
-#: ../data/ui/pref.glade.h:32
+#: ../data/ui/pref.glade.h:44
 msgid "Show available options for removable media when they are inserted"
 msgstr ""
 "Εμφάνιση διαθέσιμων επιλογών αφαιρούμενων δίσκων κατά την εισαγωγή τους"
 
-#: ../data/ui/pref.glade.h:33
+#: ../data/ui/pref.glade.h:45
+msgid "Open mounted removable media in new tab instead of new window"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:46
+#, fuzzy
+msgid "Close tab containing removable medium when it is unmounted"
+msgstr ""
+"Εμφάνιση διαθέσιμων επιλογών αφαιρούμενων δίσκων κατά την εισαγωγή τους"
+
+#: ../data/ui/pref.glade.h:47
 msgid "Volume Management"
 msgstr "Διαχειριστής τόμων"
 
-#: ../data/ui/pref.glade.h:34
+#: ../data/ui/pref.glade.h:48
 msgid "<b>Programs</b>"
 msgstr "<b>Προγράμματα</b>"
 
-#: ../data/ui/pref.glade.h:35
+#: ../data/ui/pref.glade.h:49
 msgid "Terminal emulator:"
 msgstr "Τερματικό:"
 
-#: ../data/ui/pref.glade.h:36
+#: ../data/ui/pref.glade.h:50
 msgid "Switch user command:"
 msgstr "Εντολή αλλαγής χρήστη:"
 
-#: ../data/ui/pref.glade.h:38
+#: ../data/ui/pref.glade.h:52
 #, no-c-format
 msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
@@ -292,34 +355,50 @@ msgstr ""
 "χρήστη.\n"
 "%s = η εντολή που θέλετε να εκτελέσετε με τερματικό ή su."
 
-#: ../data/ui/pref.glade.h:40
+#: ../data/ui/pref.glade.h:54
 msgid "Archiver integration:"
 msgstr "Ενσωμάτωση από/συμπιεστή αρχείων:"
 
-#: ../data/ui/pref.glade.h:41
+#: ../data/ui/pref.glade.h:55
 msgid "Use Application Startup Notify by default"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:42
+#: ../data/ui/pref.glade.h:56
 msgid ""
 "If checked then use Startup Notify for application if another not stated "
 "explicitly.\n"
 "If unchecked then use Startup Notify only if that is defined for application."
 msgstr ""
 
-#: ../data/ui/pref.glade.h:45
+#: ../data/ui/pref.glade.h:59
+msgid "Auto (move if on the same FS, copy otherwise)"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:60
+msgid "Copy"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:61
+msgid "Move"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:62
+msgid "Ask"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:63
 msgid "Icon View"
 msgstr "Προβολή εικονιδίων"
 
-#: ../data/ui/pref.glade.h:46
+#: ../data/ui/pref.glade.h:64
 msgid "Compact View"
 msgstr "Συμπαγής προβολή"
 
-#: ../data/ui/pref.glade.h:47
+#: ../data/ui/pref.glade.h:65
 msgid "Thumbnail View"
 msgstr "Προβολή μικρογραφιών"
 
-#: ../data/ui/pref.glade.h:48
+#: ../data/ui/pref.glade.h:66
 msgid "Detailed List View"
 msgstr "Λεπτομερής προβολή"
 
@@ -355,52 +434,52 @@ msgstr "Άνοιγμα στο διαχειριστή αρχείων"
 msgid "_Invert Selection"
 msgstr "_Αντιστροφή επιλογής"
 
-#: ../src/desktop-ui.c:55 ../src/main-win-ui.c:165
+#: ../src/desktop-ui.c:55 ../src/main-win-ui.c:166
 msgid "_Sort Files"
 msgstr "_Ταξινόμηση αρχείων κατά"
 
 #. for popup menu
-#: ../src/desktop-ui.c:56 ../src/main-win-ui.c:191
+#: ../src/desktop-ui.c:56 ../src/main-win-ui.c:192
 msgid "Create _New..."
 msgstr "Δημιουργία _νέου..."
 
-#: ../src/desktop-ui.c:57 ../src/main-win-ui.c:192
+#: ../src/desktop-ui.c:57 ../src/main-win-ui.c:193
 msgid "Folder"
 msgstr "Φακέλου"
 
-#: ../src/desktop-ui.c:58 ../src/main-win-ui.c:193
+#: ../src/desktop-ui.c:58 ../src/main-win-ui.c:194
 msgid "Blank File"
 msgstr "Κενού αρχείου"
 
-#: ../src/desktop-ui.c:59 ../src/main-win-ui.c:194
+#: ../src/desktop-ui.c:59 ../src/main-win-ui.c:195
 msgid "Shortcut"
 msgstr "Συντόμευση"
 
-#: ../src/desktop-ui.c:71 ../src/main-win-ui.c:221
+#: ../src/desktop-ui.c:71 ../src/main-win-ui.c:223
 msgid "By _Name"
 msgstr "_Όνομα"
 
-#: ../src/desktop-ui.c:72 ../src/main-win-ui.c:222
+#: ../src/desktop-ui.c:72 ../src/main-win-ui.c:224
 msgid "By _Modification Time"
 msgstr "_Ημερομηνία τροποποίησης"
 
-#: ../src/desktop-ui.c:73 ../src/main-win-ui.c:223
+#: ../src/desktop-ui.c:73 ../src/main-win-ui.c:225
 msgid "By _Size"
 msgstr "_Μέγεθος"
 
-#: ../src/desktop-ui.c:74 ../src/main-win-ui.c:224
+#: ../src/desktop-ui.c:74 ../src/main-win-ui.c:226
 msgid "By File _Type"
 msgstr "_Τύπο"
 
-#: ../src/desktop-ui.c:90 ../src/main-win-ui.c:247
+#: ../src/desktop-ui.c:90 ../src/main-win-ui.c:249
 msgid "Open in New Tab"
 msgstr "Άνοιγμα σε νέα καρτέλα"
 
-#: ../src/desktop-ui.c:91 ../src/main-win-ui.c:248
+#: ../src/desktop-ui.c:91 ../src/main-win-ui.c:250
 msgid "Open in New Window"
 msgstr "Άνοιγμα σε νέο παράθυρο"
 
-#: ../src/desktop-ui.c:93 ../src/main-win-ui.c:250
+#: ../src/desktop-ui.c:93 ../src/main-win-ui.c:252
 msgid "Open in _Terminal"
 msgstr "Άνοιγμα στο τερματικό"
 
@@ -412,179 +491,175 @@ msgstr "Κόλλημα στην τρέχουσα θέση"
 msgid "Snap to Grid"
 msgstr "Στοίχιση στο πλέγμα"
 
-#: ../src/main-win-ui.c:145
+#: ../src/main-win-ui.c:146
 msgid "_File"
 msgstr "_Αρχείο"
 
-#: ../src/main-win-ui.c:146
+#: ../src/main-win-ui.c:147
 msgid "_New Window"
 msgstr "_Νέο παράθυρο"
 
-#: ../src/main-win-ui.c:147
+#: ../src/main-win-ui.c:148
 msgid "New _Tab"
 msgstr "Νέα _Καρτέλα"
 
-#: ../src/main-win-ui.c:148
+#: ../src/main-win-ui.c:149
 msgid "_Close Tab"
 msgstr "_Κλείσιμο καρτέλας"
 
-#: ../src/main-win-ui.c:149
+#: ../src/main-win-ui.c:150
 msgid "Close Window"
 msgstr "Κλείσιμο παραθύρου"
 
-#: ../src/main-win-ui.c:150
+#: ../src/main-win-ui.c:151
 msgid "_Edit"
 msgstr "_Επεξεργασία"
 
-#: ../src/main-win-ui.c:155
+#: ../src/main-win-ui.c:156
 msgid "Rename"
 msgstr "Μετονομασία"
 
-#: ../src/main-win-ui.c:156
+#: ../src/main-win-ui.c:157
 msgid "Create Symlink"
 msgstr "Δημιουργία συμβολικού συνδέσμου"
 
-#: ../src/main-win-ui.c:157
+#: ../src/main-win-ui.c:158
 msgid "Move To..."
 msgstr "Μετακίνηση στο..."
 
-#: ../src/main-win-ui.c:158
+#: ../src/main-win-ui.c:159
 msgid "Copy To..."
 msgstr "Αντιγραφή στο..."
 
-#: ../src/main-win-ui.c:160
+#: ../src/main-win-ui.c:161
 msgid "Invert Selection"
 msgstr "Αντιστροφή επιλογής"
 
-#: ../src/main-win-ui.c:162
+#: ../src/main-win-ui.c:163
 msgid "_View"
 msgstr "_Προβολή"
 
-#: ../src/main-win-ui.c:163
+#: ../src/main-win-ui.c:164
 msgid "Reload Folder"
 msgstr "Ανανέωση φακέλου"
 
-#: ../src/main-win-ui.c:163
+#: ../src/main-win-ui.c:164
 msgid "Reload current folder"
 msgstr "Ανανέωση τρέχοντος φακέλου"
 
-#: ../src/main-win-ui.c:164
+#: ../src/main-win-ui.c:165
 msgid "Side Pane"
 msgstr "Πλευρικό ταμπλό"
 
-#: ../src/main-win-ui.c:166
+#: ../src/main-win-ui.c:167
 msgid "_Help"
 msgstr "_Βοήθεια"
 
-#: ../src/main-win-ui.c:168
+#: ../src/main-win-ui.c:169
 msgid "_Go"
 msgstr "_Μετάβαση"
 
-#: ../src/main-win-ui.c:169
+#: ../src/main-win-ui.c:170
 msgid "Previous Folder"
 msgstr "Προηγούμενος φάκελος"
 
-#: ../src/main-win-ui.c:170
+#: ../src/main-win-ui.c:171
 msgid "Next Folder"
 msgstr "Επόμενος φάκελος"
 
-#: ../src/main-win-ui.c:171
+#: ../src/main-win-ui.c:172
 msgid "Parent Folder"
 msgstr "Γονικός φάκελος"
 
-#: ../src/main-win-ui.c:171
+#: ../src/main-win-ui.c:172
 msgid "Go to parent Folder"
 msgstr "Μετάβαση στο γονικό φάκελο"
 
-#: ../src/main-win-ui.c:172
+#: ../src/main-win-ui.c:173
 msgid "Home Folder"
 msgstr "Προσωπικός φάκελος"
 
-#: ../src/main-win-ui.c:173
+#: ../src/main-win-ui.c:174
 msgid "Desktop"
 msgstr "Επιφάνεια εργασίας"
 
-#: ../src/main-win-ui.c:173
-msgid "Desktop Folder"
-msgstr "Φάκελος επιφάνειας εργασίας"
-
-#: ../src/main-win-ui.c:174
+#: ../src/main-win-ui.c:175
 msgid "My Computer"
 msgstr "Ο υπολογιστής μου"
 
-#: ../src/main-win-ui.c:175
+#: ../src/main-win-ui.c:176
 msgid "Trash Can"
 msgstr "Απορρίμματα"
 
-#: ../src/main-win-ui.c:176
+#: ../src/main-win-ui.c:177
 msgid "Network Drives"
 msgstr "Δίκτυο"
 
-#: ../src/main-win-ui.c:177
-msgid "Applications"
-msgstr "Εφαρμογές"
-
-#: ../src/main-win-ui.c:177
+#: ../src/main-win-ui.c:178
 msgid "Installed Applications"
 msgstr "Εγκατεστημένες εφαρμογές"
 
-#: ../src/main-win-ui.c:179
+#: ../src/main-win-ui.c:180
 msgid "_Bookmarks"
 msgstr "_Σελιδοδείκτες"
 
-#: ../src/main-win-ui.c:180
+#: ../src/main-win-ui.c:181
 msgid "Add To Bookmarks"
 msgstr "Προσθήκη στους σελιδοδείκτες"
 
-#: ../src/main-win-ui.c:181
+#: ../src/main-win-ui.c:182
 msgid "_Tools"
 msgstr "_Εργαλεία"
 
-#: ../src/main-win-ui.c:182
+#: ../src/main-win-ui.c:183
 msgid "Open Current Folder in _Terminal"
 msgstr "Άνοιγμα του τρέχοντος φακέλου στο _τερματικό"
 
-#: ../src/main-win-ui.c:183
+#: ../src/main-win-ui.c:184
 msgid "Open Current Folder as _Root"
 msgstr "Άνοιγμα του τρέχοντος φακέλου ως _διαχειριστής"
 
-#: ../src/main-win-ui.c:200
+#: ../src/main-win-ui.c:201
 msgid "Show _Hidden"
 msgstr "Εμφάνιση κρυφών αρχείων"
 
-#: ../src/main-win-ui.c:201
+#: ../src/main-win-ui.c:202
 msgid "Show Side Pane"
 msgstr "Εμφάνιση πλευρικού ταμπλό"
 
-#: ../src/main-win-ui.c:202
+#: ../src/main-win-ui.c:203
+msgid "Show Status B_ar"
+msgstr ""
+
+#: ../src/main-win-ui.c:204
 msgid "Fullscreen Mode"
 msgstr ""
 
-#: ../src/main-win-ui.c:207
+#: ../src/main-win-ui.c:209
 msgid "_Icon View"
 msgstr "_Εικονίδια"
 
-#: ../src/main-win-ui.c:208
+#: ../src/main-win-ui.c:210
 msgid "_Compact View"
 msgstr "_Λίστα"
 
-#: ../src/main-win-ui.c:209
+#: ../src/main-win-ui.c:211
 msgid "_Thumbnail View"
 msgstr "_Μικρογραφίες"
 
-#: ../src/main-win-ui.c:210
+#: ../src/main-win-ui.c:212
 msgid "Detailed _List View"
 msgstr "_Λεπτομέρειες"
 
-#: ../src/main-win-ui.c:229
+#: ../src/main-win-ui.c:231
 msgid "Places"
 msgstr "Τοποθεσίες"
 
-#: ../src/main-win-ui.c:230
+#: ../src/main-win-ui.c:232
 msgid "Directory Tree"
 msgstr "Δέντρο καταλόγων"
 
-#: ../src/main-win-ui.c:231
+#: ../src/main-win-ui.c:233
 msgid "Remote"
 msgstr "Απομακρυσμένο"
 
@@ -669,31 +744,31 @@ msgstr ""
 msgid "[FILE1, FILE2,...]"
 msgstr "[ΑΡΧΕΙΟ1, ΑΡΧΕΙΟ2,...]"
 
-#: ../src/pcmanfm.c:528
+#: ../src/pcmanfm.c:527
 msgid "Terminal emulator is not set."
 msgstr "Δεν έχει οριστεί κάποιο τερματικό."
 
-#: ../src/pcmanfm.c:580
+#: ../src/pcmanfm.c:579
 msgid "Enter a name for the newly created folder:"
 msgstr "Εισάγετε ένα όνομα για το νέο φάκελο:"
 
-#: ../src/pcmanfm.c:582
+#: ../src/pcmanfm.c:581
 msgid "Enter a name for the newly created file:"
 msgstr "Εισάγετε ένα όνομα για το νέο αρχείο:"
 
-#: ../src/pcmanfm.c:583
+#: ../src/pcmanfm.c:582
 msgid "Create New..."
 msgstr "Δημιουργία νέου..."
 
-#: ../src/pcmanfm.c:583
+#: ../src/pcmanfm.c:582
 msgid "New"
 msgstr "Νέο αρχείο"
 
-#: ../src/pcmanfm.c:677
+#: ../src/pcmanfm.c:676
 msgid "Error, lxshortcut not installed"
 msgstr "Σφάλμα, το lxshortcut δεν είναι εγκατεστημένο"
 
-#: ../src/pcmanfm.c:682
+#: ../src/pcmanfm.c:681
 msgid "Failed to start lxshortcut"
 msgstr "Αποτυχία εκκίνησης του lxshortcut"
 
