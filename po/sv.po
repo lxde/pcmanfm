@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: PCManFM\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-08-22 22:36+0200\n"
-"PO-Revision-Date: 2012-08-14 23:55+0200\n"
+"PO-Revision-Date: 2012-08-22 22:51+0200\n"
 "Last-Translator: Martin <brother@bsnet.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
@@ -185,11 +185,11 @@ msgstr ""
 #: ../data/ui/pref.glade.h:9
 msgid "Erase files on removable media instead of \"trash bin\" creation"
 msgstr ""
+"Radera filer på flyttbart media istället för att flytta till \"papperskorgen\""
 
 #: ../data/ui/pref.glade.h:10
-#, fuzzy
 msgid "Confirm before moving files into \"trash bin\""
-msgstr "Bekräfta före radering av filer"
+msgstr "Bekräfta innan filer flyttas till \"papperskorgen\""
 
 #: ../data/ui/pref.glade.h:11
 msgid "Bookmarks:"
@@ -197,11 +197,11 @@ msgstr "Bokmärken:"
 
 #: ../data/ui/pref.glade.h:12
 msgid "Default drop action:"
-msgstr ""
+msgstr "Standardåtgärd för släpp:"
 
 #: ../data/ui/pref.glade.h:13
 msgid "Unfold tab when files are dragged onto tab button"
-msgstr ""
+msgstr "Vik ut flik när filer dras till flikknappen"
 
 #: ../data/ui/pref.glade.h:14
 msgid "<b>Default View</b>"
@@ -280,18 +280,16 @@ msgid "Always show the tab bar"
 msgstr "Visa alltid flikfältet"
 
 #: ../data/ui/pref.glade.h:33
-#, fuzzy
 msgid "<b>Directories Tree</b>"
-msgstr "Katalogträd"
+msgstr "<b>Katalogträd</b>"
 
 #: ../data/ui/pref.glade.h:34
 msgid "Hide expander on empty or locked folder"
-msgstr ""
+msgstr "Dölj expanderare för tom eller låst katalog"
 
 #: ../data/ui/pref.glade.h:35
-#, fuzzy
 msgid "<b>Show in Places:</b>"
-msgstr "<b>Visa skrivbordsikoner</b>"
+msgstr "<b>Visa i Platser</b>"
 
 #: ../data/ui/pref.glade.h:36
 msgid "Home Directory"
@@ -307,14 +305,12 @@ msgid "Applications"
 msgstr "Program"
 
 #: ../data/ui/pref.glade.h:39
-#, fuzzy
 msgid "Trash bin"
 msgstr "Papperskorg"
 
 #: ../data/ui/pref.glade.h:40
-#, fuzzy
 msgid "Layout"
-msgstr "Layoutläge"
+msgstr "Layout"
 
 #: ../data/ui/pref.glade.h:41
 msgid "<b>Auto-mount</b>"
@@ -334,12 +330,11 @@ msgstr "Visa tillgängliga alternativ från flyttbara media när de ansluts"
 
 #: ../data/ui/pref.glade.h:45
 msgid "Open mounted removable media in new tab instead of new window"
-msgstr ""
+msgstr "Öppna monterad flyttbart media i ny flik istället för i nytt fönster"
 
 #: ../data/ui/pref.glade.h:46
-#, fuzzy
 msgid "Close tab containing removable medium when it is unmounted"
-msgstr "Visa tillgängliga alternativ från flyttbara media när de ansluts"
+msgstr "Stäng flik för flyttbart media när det avmonteras"
 
 #: ../data/ui/pref.glade.h:47
 msgid "Volume Management"
@@ -388,21 +383,19 @@ msgstr ""
 
 #: ../data/ui/pref.glade.h:59
 msgid "Auto (move if on the same FS, copy otherwise)"
-msgstr ""
+msgstr "Automatiskt (flytta inom samma filsystem, annars kopiera)"
 
 #: ../data/ui/pref.glade.h:60
-#, fuzzy
 msgid "Copy"
-msgstr "Kopiera: "
+msgstr "Kopiera"
 
 #: ../data/ui/pref.glade.h:61
-#, fuzzy
 msgid "Move"
-msgstr "Flytta: "
+msgstr "Flytta"
 
 #: ../data/ui/pref.glade.h:62
 msgid "Ask"
-msgstr ""
+msgstr "Fråga"
 
 #: ../data/ui/pref.glade.h:63
 msgid "Icon View"
@@ -647,7 +640,7 @@ msgstr "Visa sidopanel"
 
 #: ../src/main-win-ui.c:203
 msgid "Show Status B_ar"
-msgstr ""
+msgstr "Visa status_fält"
 
 #: ../src/main-win-ui.c:204
 msgid "Fullscreen Mode"
