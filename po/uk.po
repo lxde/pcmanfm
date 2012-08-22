@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-08-22 22:36+0200\n"
-"PO-Revision-Date: 2012-08-15 22:47+0300\n"
+"PO-Revision-Date: 2012-08-23 01:50+0300\n"
 "Last-Translator: LStranger <andrej@rep.kiev.ua>\n"
 "Language-Team: Ukrainian <translation@linux.org.ua>\n"
 "Language: uk\n"
@@ -178,12 +178,11 @@ msgstr ""
 
 #: ../data/ui/pref.glade.h:9
 msgid "Erase files on removable media instead of \"trash bin\" creation"
-msgstr ""
+msgstr "Знищувати файли на змінних носіях замість перенесення у \"смітник\""
 
 #: ../data/ui/pref.glade.h:10
-#, fuzzy
 msgid "Confirm before moving files into \"trash bin\""
-msgstr "Попереджати перед видаленням файлів"
+msgstr "Попереджати перед перенесенням файлів у \"смітник\""
 
 #: ../data/ui/pref.glade.h:11
 msgid "Bookmarks:"
@@ -191,11 +190,11 @@ msgstr "Закладки:"
 
 #: ../data/ui/pref.glade.h:12
 msgid "Default drop action:"
-msgstr ""
+msgstr "Типова дія при киданні:"
 
 #: ../data/ui/pref.glade.h:13
 msgid "Unfold tab when files are dragged onto tab button"
-msgstr ""
+msgstr "Розгортати вкладку при перетягуванні на файлів на її кнопку"
 
 #: ../data/ui/pref.glade.h:14
 msgid "<b>Default View</b>"
@@ -274,23 +273,20 @@ msgid "Always show the tab bar"
 msgstr "Завжди показувати панель вкладок"
 
 #: ../data/ui/pref.glade.h:33
-#, fuzzy
 msgid "<b>Directories Tree</b>"
-msgstr "Дерево тек"
+msgstr "<b>Дерево тек</b>"
 
 #: ../data/ui/pref.glade.h:34
 msgid "Hide expander on empty or locked folder"
-msgstr ""
+msgstr "Ховати розгортувач порожньої чи запертої теки"
 
 #: ../data/ui/pref.glade.h:35
-#, fuzzy
 msgid "<b>Show in Places:</b>"
-msgstr "<b>Показати значки на стільниці</b>"
+msgstr "<b>Показати у Місцях:</b>"
 
 #: ../data/ui/pref.glade.h:36
-#, fuzzy
 msgid "Home Directory"
-msgstr "Дерево тек"
+msgstr "Домашня тека"
 
 #: ../data/ui/pref.glade.h:37 ../src/main-win-ui.c:174
 msgid "Desktop Folder"
@@ -301,13 +297,12 @@ msgid "Applications"
 msgstr "Програми"
 
 #: ../data/ui/pref.glade.h:39
-#, fuzzy
 msgid "Trash bin"
 msgstr "Смітник"
 
 #: ../data/ui/pref.glade.h:40
 msgid "Layout"
-msgstr ""
+msgstr "Розміщення"
 
 #: ../data/ui/pref.glade.h:41
 msgid "<b>Auto-mount</b>"
@@ -327,12 +322,11 @@ msgstr "Показати можливі опції для змінних нос�
 
 #: ../data/ui/pref.glade.h:45
 msgid "Open mounted removable media in new tab instead of new window"
-msgstr ""
+msgstr "Відкривати змонтовані змінні носії у новій вкладці замість нового вікна"
 
 #: ../data/ui/pref.glade.h:46
-#, fuzzy
 msgid "Close tab containing removable medium when it is unmounted"
-msgstr "Показати можливі опції для змінних носіїв при їх вставлянні"
+msgstr "Закрити вкладку, що містить змінний носій, при його відмонтуванні"
 
 #: ../data/ui/pref.glade.h:47
 msgid "Volume Management"
@@ -381,19 +375,19 @@ msgstr ""
 
 #: ../data/ui/pref.glade.h:59
 msgid "Auto (move if on the same FS, copy otherwise)"
-msgstr ""
+msgstr "Автоматично (перенести в межах ФС, інакше - копіювати)"
 
 #: ../data/ui/pref.glade.h:60
 msgid "Copy"
-msgstr ""
+msgstr "Копіювати"
 
 #: ../data/ui/pref.glade.h:61
 msgid "Move"
-msgstr ""
+msgstr "Перенести"
 
 #: ../data/ui/pref.glade.h:62
 msgid "Ask"
-msgstr ""
+msgstr "Спитати"
 
 #: ../data/ui/pref.glade.h:63
 msgid "Icon View"
@@ -445,16 +439,16 @@ msgstr "_Інвертувати виділене"
 
 #: ../src/desktop-ui.c:55 ../src/main-win-ui.c:166
 msgid "_Sort Files"
-msgstr "_Сортувати файли"
+msgstr "С_ортувати файли"
 
 #. for popup menu
 #: ../src/desktop-ui.c:56 ../src/main-win-ui.c:192
 msgid "Create _New..."
-msgstr "Створити _новий..."
+msgstr "_Створити ..."
 
 #: ../src/desktop-ui.c:57 ../src/main-win-ui.c:193
 msgid "Folder"
-msgstr "Тека"
+msgstr "Теку"
 
 #: ../src/desktop-ui.c:58 ../src/main-win-ui.c:194
 msgid "Blank File"
@@ -462,7 +456,7 @@ msgstr "Порожній файл"
 
 #: ../src/desktop-ui.c:59 ../src/main-win-ui.c:195
 msgid "Shortcut"
-msgstr "Ярлик"
+msgstr "Посилання на програму"
 
 #: ../src/desktop-ui.c:71 ../src/main-win-ui.c:223
 msgid "By _Name"
@@ -514,11 +508,11 @@ msgstr "Нова _вкладка"
 
 #: ../src/main-win-ui.c:149
 msgid "_Close Tab"
-msgstr "_Закрити вкладку"
+msgstr "З_акрити вкладку"
 
 #: ../src/main-win-ui.c:150
 msgid "Close Window"
-msgstr "Закрити вікно"
+msgstr "Закрити вікн_о"
 
 #: ../src/main-win-ui.c:151
 msgid "_Edit"
@@ -526,7 +520,7 @@ msgstr "_Редагувати"
 
 #: ../src/main-win-ui.c:156
 msgid "Rename"
-msgstr "Перейменувати"
+msgstr "Пере_йменувати"
 
 #: ../src/main-win-ui.c:157
 msgid "Create Symlink"
@@ -534,19 +528,19 @@ msgstr "Створити символьне посилання"
 
 #: ../src/main-win-ui.c:158
 msgid "Move To..."
-msgstr "Перемістити до..."
+msgstr "_Перемістити до..."
 
 #: ../src/main-win-ui.c:159
 msgid "Copy To..."
-msgstr "Копіювати до..."
+msgstr "Копі_ювати до..."
 
 #: ../src/main-win-ui.c:161
 msgid "Invert Selection"
-msgstr "Інвертувати виділене"
+msgstr "І_нвертувати виділене"
 
 #: ../src/main-win-ui.c:163
 msgid "_View"
-msgstr "_Вигляд"
+msgstr "Ви_гляд"
 
 #: ../src/main-win-ui.c:164
 msgid "Reload Folder"
@@ -638,7 +632,7 @@ msgstr "Показати бічну панель"
 
 #: ../src/main-win-ui.c:203
 msgid "Show Status B_ar"
-msgstr ""
+msgstr "Показати панель статусу"
 
 #: ../src/main-win-ui.c:204
 msgid "Fullscreen Mode"
