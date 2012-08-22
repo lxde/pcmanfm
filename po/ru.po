@@ -6,15 +6,15 @@ msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-08-22 22:36+0200\n"
-"PO-Revision-Date: 2012-08-15 22:11+0200\n"
+"PO-Revision-Date: 2012-08-22 23:56+0200\n"
 "Last-Translator: LStranger <andrej@rep.kiev.ua>\n"
 "Language-Team: Russian <>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Pootle 2.0.5\n"
 "X-Poedit-Language: Russian\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -175,12 +175,11 @@ msgstr "Перемещать удалённые файлы в \"Корзину\"
 
 #: ../data/ui/pref.glade.h:9
 msgid "Erase files on removable media instead of \"trash bin\" creation"
-msgstr ""
+msgstr "Удалять фалйы на внешних носителях вместо помещения в \"Корзину\""
 
 #: ../data/ui/pref.glade.h:10
-#, fuzzy
 msgid "Confirm before moving files into \"trash bin\""
-msgstr "Подтверждение удаления файлов"
+msgstr "Подтверждение перемещения файлов в \"Корзину\""
 
 #: ../data/ui/pref.glade.h:11
 msgid "Bookmarks:"
@@ -188,11 +187,11 @@ msgstr "Закладки:"
 
 #: ../data/ui/pref.glade.h:12
 msgid "Default drop action:"
-msgstr ""
+msgstr "Действие по умолчанию при бросании:"
 
 #: ../data/ui/pref.glade.h:13
 msgid "Unfold tab when files are dragged onto tab button"
-msgstr ""
+msgstr "Разворачивать вкладку при перетягивании файлов на кнопку вкладки"
 
 #: ../data/ui/pref.glade.h:14
 msgid "<b>Default View</b>"
@@ -271,23 +270,20 @@ msgid "Always show the tab bar"
 msgstr "Всегда показывать панель вкладок"
 
 #: ../data/ui/pref.glade.h:33
-#, fuzzy
 msgid "<b>Directories Tree</b>"
-msgstr "Дерево директорий"
+msgstr "<b>Дерево директорий<b>"
 
 #: ../data/ui/pref.glade.h:34
 msgid "Hide expander on empty or locked folder"
-msgstr ""
+msgstr "Не раскрывать пустые или заблокированные папки"
 
 #: ../data/ui/pref.glade.h:35
-#, fuzzy
 msgid "<b>Show in Places:</b>"
-msgstr "<b>Показать значки на рабочем столе</b>"
+msgstr "<b>Показать на месте:</b>"
 
 #: ../data/ui/pref.glade.h:36
-#, fuzzy
 msgid "Home Directory"
-msgstr "Дерево директорий"
+msgstr "Домашняя директория"
 
 #: ../data/ui/pref.glade.h:37 ../src/main-win-ui.c:174
 msgid "Desktop Folder"
@@ -298,13 +294,12 @@ msgid "Applications"
 msgstr "Приложения"
 
 #: ../data/ui/pref.glade.h:39
-#, fuzzy
 msgid "Trash bin"
 msgstr "Корзина"
 
 #: ../data/ui/pref.glade.h:40
 msgid "Layout"
-msgstr ""
+msgstr "Раскладка"
 
 #: ../data/ui/pref.glade.h:41
 msgid "<b>Auto-mount</b>"
@@ -325,11 +320,12 @@ msgstr "Показывать доступные действия для подк
 #: ../data/ui/pref.glade.h:45
 msgid "Open mounted removable media in new tab instead of new window"
 msgstr ""
+"Открывать примонтированные внешние устройства в новой вкладке вместо нового "
+"окна"
 
 #: ../data/ui/pref.glade.h:46
-#, fuzzy
 msgid "Close tab containing removable medium when it is unmounted"
-msgstr "Показывать доступные действия для подключённых съёмных устройств"
+msgstr "Закрывать вкладку внешнего устройства при его размонтировании"
 
 #: ../data/ui/pref.glade.h:47
 msgid "Volume Management"
@@ -378,19 +374,19 @@ msgstr ""
 
 #: ../data/ui/pref.glade.h:59
 msgid "Auto (move if on the same FS, copy otherwise)"
-msgstr ""
+msgstr "Авто (перемещать для одинаковых ФС, копировать для разных)"
 
 #: ../data/ui/pref.glade.h:60
 msgid "Copy"
-msgstr ""
+msgstr "Копировать"
 
 #: ../data/ui/pref.glade.h:61
 msgid "Move"
-msgstr ""
+msgstr "Переместить"
 
 #: ../data/ui/pref.glade.h:62
 msgid "Ask"
-msgstr ""
+msgstr "Спросить"
 
 #: ../data/ui/pref.glade.h:63
 msgid "Icon View"
@@ -635,7 +631,7 @@ msgstr "_Показать боковую панель"
 
 #: ../src/main-win-ui.c:203
 msgid "Show Status B_ar"
-msgstr ""
+msgstr "_Показать панель статуса"
 
 #: ../src/main-win-ui.c:204
 msgid "Fullscreen Mode"
