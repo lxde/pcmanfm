@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-08-22 22:36+0200\n"
-"PO-Revision-Date: 2012-07-09 07:36+0200\n"
+"PO-Revision-Date: 2012-08-23 00:30+0200\n"
 "Last-Translator: George <forfolias@gmail.com>\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
@@ -171,11 +171,12 @@ msgstr ""
 #: ../data/ui/pref.glade.h:9
 msgid "Erase files on removable media instead of \"trash bin\" creation"
 msgstr ""
+"Διαγραφή των αρχείων από τους αφαιρούμενους δίσκους αντί δημιουργίας \"κάδου "
+"απορριμάτων\""
 
 #: ../data/ui/pref.glade.h:10
-#, fuzzy
 msgid "Confirm before moving files into \"trash bin\""
-msgstr "Επιβεβαίωση πριν από τη διαγραφή αρχείων"
+msgstr "Επιβεβαίωση πριν τη μεταφορά των αρχείων στον κάδο απορριμάτων"
 
 #: ../data/ui/pref.glade.h:11
 msgid "Bookmarks:"
@@ -183,11 +184,11 @@ msgstr "Σελιδοδείκτες:"
 
 #: ../data/ui/pref.glade.h:12
 msgid "Default drop action:"
-msgstr ""
+msgstr "Προεπιλεγμένη ενέργεια σε περίπτωση αποτυχίας"
 
 #: ../data/ui/pref.glade.h:13
 msgid "Unfold tab when files are dragged onto tab button"
-msgstr ""
+msgstr "Ανάπτυξη καρτέλας όταν σύρονται αρχεία στο κουμπί καρτέλας"
 
 #: ../data/ui/pref.glade.h:14
 msgid "<b>Default View</b>"
@@ -244,7 +245,7 @@ msgstr "Χρήση SI δεκαδικών προθεμάτων αντί για IE
 
 #: ../data/ui/pref.glade.h:27
 msgid "Treat backup files as hidden"
-msgstr ""
+msgstr "Χειρισμός αντιγράφων ασφαλείας ως κρυφά"
 
 #: ../data/ui/pref.glade.h:28
 msgid "Display"
@@ -267,23 +268,20 @@ msgid "Always show the tab bar"
 msgstr "Να εμφανίζεται πάντα η μπάρα με τις καρτέλες"
 
 #: ../data/ui/pref.glade.h:33
-#, fuzzy
 msgid "<b>Directories Tree</b>"
-msgstr "Δέντρο καταλόγων"
+msgstr "<b>Δέντρο καταλόγων</b>"
 
 #: ../data/ui/pref.glade.h:34
 msgid "Hide expander on empty or locked folder"
-msgstr ""
+msgstr "Απόκρυψη επεκτάτη σε κενούς ή κλειδωμένους φακέλους"
 
 #: ../data/ui/pref.glade.h:35
-#, fuzzy
 msgid "<b>Show in Places:</b>"
-msgstr "<b>Εμφάνιση εικονιδίων επιφάνειας εργασίας</b>"
+msgstr "<b>Εμφάνιση στις Τοποθεσίες:</b>"
 
 #: ../data/ui/pref.glade.h:36
-#, fuzzy
 msgid "Home Directory"
-msgstr "Δέντρο καταλόγων"
+msgstr "Προσωπικός φάκελος"
 
 #: ../data/ui/pref.glade.h:37 ../src/main-win-ui.c:174
 msgid "Desktop Folder"
@@ -294,13 +292,12 @@ msgid "Applications"
 msgstr "Εφαρμογές"
 
 #: ../data/ui/pref.glade.h:39
-#, fuzzy
 msgid "Trash bin"
-msgstr "Απορρίμματα"
+msgstr "Κάδος απορριμμάτων"
 
 #: ../data/ui/pref.glade.h:40
 msgid "Layout"
-msgstr ""
+msgstr "Διάταξη"
 
 #: ../data/ui/pref.glade.h:41
 msgid "<b>Auto-mount</b>"
@@ -322,12 +319,12 @@ msgstr ""
 #: ../data/ui/pref.glade.h:45
 msgid "Open mounted removable media in new tab instead of new window"
 msgstr ""
+"Άνοιγμα προσαρτημένων αφαιρούμενων μέσων σε νέα καρτέλα αντί για νέο "
+"παράθυρο"
 
 #: ../data/ui/pref.glade.h:46
-#, fuzzy
 msgid "Close tab containing removable medium when it is unmounted"
-msgstr ""
-"Εμφάνιση διαθέσιμων επιλογών αφαιρούμενων δίσκων κατά την εισαγωγή τους"
+msgstr "Κλείσιμο καρτελών αφαιρούμενων μέσων μετά την αποπροσάρτησή τους"
 
 #: ../data/ui/pref.glade.h:47
 msgid "Volume Management"
@@ -361,7 +358,7 @@ msgstr "Ενσωμάτωση από/συμπιεστή αρχείων:"
 
 #: ../data/ui/pref.glade.h:55
 msgid "Use Application Startup Notify by default"
-msgstr ""
+msgstr "Χρήση ειδοποίησης εκκίνησης εφαρμογής από προεπιλογή"
 
 #: ../data/ui/pref.glade.h:56
 msgid ""
@@ -369,22 +366,27 @@ msgid ""
 "explicitly.\n"
 "If unchecked then use Startup Notify only if that is defined for application."
 msgstr ""
+"Αν επιλεγεί τότε να γίνεται χρήση της Ειδοποίησης Εκκίνησης Εφαρμογής αν δεν "
+"ορίζεται ρητά άλλη.\n"
+"Αν δεν επιλεγεί τότε να γίνεται χρήση της Ειδοποίησης Εκκίνησης Εφαρμογής "
+"μόνο αν έχει οριστεί για την εφαρμογή."
 
 #: ../data/ui/pref.glade.h:59
 msgid "Auto (move if on the same FS, copy otherwise)"
 msgstr ""
+"Αυτόματα (μετακίνηση αν είναι στο ίδιο Σύστημα Αρχείων, αντιγραφή αλλιώς)"
 
 #: ../data/ui/pref.glade.h:60
 msgid "Copy"
-msgstr ""
+msgstr "Αντιγραφή"
 
 #: ../data/ui/pref.glade.h:61
 msgid "Move"
-msgstr ""
+msgstr "Μετακίνηση"
 
 #: ../data/ui/pref.glade.h:62
 msgid "Ask"
-msgstr ""
+msgstr "Ερώτηση"
 
 #: ../data/ui/pref.glade.h:63
 msgid "Icon View"
@@ -621,7 +623,7 @@ msgstr "Άνοιγμα του τρέχοντος φακέλου ως _διαχε
 
 #: ../src/main-win-ui.c:201
 msgid "Show _Hidden"
-msgstr "Εμφάνιση κρυφών αρχείων"
+msgstr "Εμφάνιση _κρυφών αρχείων"
 
 #: ../src/main-win-ui.c:202
 msgid "Show Side Pane"
@@ -629,11 +631,11 @@ msgstr "Εμφάνιση πλευρικού ταμπλό"
 
 #: ../src/main-win-ui.c:203
 msgid "Show Status B_ar"
-msgstr ""
+msgstr "Εμφάνιση _γραμμής κατάστασης"
 
 #: ../src/main-win-ui.c:204
 msgid "Fullscreen Mode"
-msgstr ""
+msgstr "Πλήρης οθόνη"
 
 #: ../src/main-win-ui.c:209
 msgid "_Icon View"
