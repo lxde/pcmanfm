@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-08-14 23:45+0200\n"
-"PO-Revision-Date: 2012-07-07 09:27+0200\n"
+"PO-Revision-Date: 2012-08-15 07:20+0200\n"
 "Last-Translator: Yaron <sh.yaron@gmail.com>\n"
 "Language-Team: \n"
 "Language: he\n"
@@ -245,7 +245,7 @@ msgstr ""
 
 #: ../data/ui/pref.glade.h:27
 msgid "Treat backup files as hidden"
-msgstr ""
+msgstr "להתייחס לקובצי גיבוי כאל קבצים מוסתרים"
 
 #: ../data/ui/pref.glade.h:28
 msgid "Display"
@@ -298,7 +298,7 @@ msgstr "שילוב תכנת הארכיון:"
 
 #: ../data/ui/pref.glade.h:41
 msgid "Use Application Startup Notify by default"
-msgstr ""
+msgstr "שימוש בהתרעת הפעלת יישום כבררת מחדל"
 
 #: ../data/ui/pref.glade.h:42
 msgid ""
@@ -306,6 +306,8 @@ msgid ""
 "explicitly.\n"
 "If unchecked then use Startup Notify only if that is defined for application."
 msgstr ""
+"אם סומן, יש להשתמש בהתרעת הפעלה עבור יישום אם לא צוין אחר במפורש.\n"
+"אם לא סומן, יש להשתמש בהתרעת הפעלה רק אם הוגדר עבור היישום."
 
 #: ../data/ui/pref.glade.h:45
 msgid "Icon View"
@@ -558,7 +560,7 @@ msgstr "הצגת חלונית צד"
 
 #: ../src/main-win-ui.c:202
 msgid "Fullscreen Mode"
-msgstr ""
+msgstr "מצב מסך מלא"
 
 #: ../src/main-win-ui.c:207
 msgid "_Icon View"

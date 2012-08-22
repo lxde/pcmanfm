@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm 0.9.9\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-08-14 23:45+0200\n"
-"PO-Revision-Date: 2012-07-09 03:18+0200\n"
+"PO-Revision-Date: 2012-08-15 07:49+0200\n"
 "Last-Translator: Adriano <adrianoh2@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <ldp-br@bazar2.conectiva.com.br>\n"
 "Language: pt_BR\n"
@@ -199,7 +199,7 @@ msgstr "Modo de visão:"
 
 #: ../data/ui/pref.glade.h:12
 msgid "General"
-msgstr "_Geral"
+msgstr "Geral"
 
 #: ../data/ui/pref.glade.h:13
 msgid "<b>Icons</b>"
@@ -259,7 +259,7 @@ msgstr "Usar prefixos decimais do SI em vez de prefixos binários do IEC"
 
 #: ../data/ui/pref.glade.h:27
 msgid "Treat backup files as hidden"
-msgstr ""
+msgstr "Trate os arquivos de backup como oculto"
 
 #: ../data/ui/pref.glade.h:28
 msgid "Display"
@@ -314,7 +314,7 @@ msgstr "Integração com o empacotador"
 
 #: ../data/ui/pref.glade.h:41
 msgid "Use Application Startup Notify by default"
-msgstr ""
+msgstr "Usar Aplicação de Notificação na Inicialização por padrão"
 
 #: ../data/ui/pref.glade.h:42
 msgid ""
@@ -322,6 +322,10 @@ msgid ""
 "explicitly.\n"
 "If unchecked then use Startup Notify only if that is defined for application."
 msgstr ""
+"Se marcado usa a Notificação na Inicialização para a aplicação se não for "
+"outro explicitamente.\n"
+"Se não marcado ele usa a Notificação na Inicialização que é definido por "
+"aplicação."
 
 #: ../data/ui/pref.glade.h:45
 msgid "Icon View"
@@ -574,7 +578,7 @@ msgstr "Mostrar painel lateral"
 
 #: ../src/main-win-ui.c:202
 msgid "Fullscreen Mode"
-msgstr ""
+msgstr "Modo Tela Cheia"
 
 #: ../src/main-win-ui.c:207
 msgid "_Icon View"
@@ -582,11 +586,11 @@ msgstr "V_isão em ícones"
 
 #: ../src/main-win-ui.c:208
 msgid "_Compact View"
-msgstr "Visão _compacta"
+msgstr "Visão _Compacta"
 
 #: ../src/main-win-ui.c:209
 msgid "_Thumbnail View"
-msgstr "Visão em minia_turas"
+msgstr "Visão em Minia_turas"
 
 #: ../src/main-win-ui.c:210
 msgid "Detailed _List View"
