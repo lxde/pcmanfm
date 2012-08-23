@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: pcmanfm2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-08-22 22:36+0200\n"
-"PO-Revision-Date: 2012-08-15 08:16+0200\n"
-"Last-Translator: ALIUM <info@aloisnespor.info>\n"
+"PO-Revision-Date: 2012-08-23 11:14+0100\n"
+"Last-Translator: pushkin <pushkin@email.cz>\n"
 "Language-Team: Czech <radek@fastlinux.eu>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
@@ -37,7 +37,8 @@ msgstr ""
 msgid "translator-credits"
 msgstr "Michal Várady, Alois Nešpor"
 
-#: ../data/ui/desktop-pref.glade.h:1 ../src/desktop-ui.c:60
+#: ../data/ui/desktop-pref.glade.h:1
+#: ../src/desktop-ui.c:60
 #: ../data/pcmanfm-desktop-pref.desktop.in.h:1
 msgid "Desktop Preferences"
 msgstr "Nastavení pracovní plochy"
@@ -114,7 +115,8 @@ msgstr "Ikony na ploše"
 msgid "Show menus provided by window managers when desktop is clicked"
 msgstr "Zobrazit menu poskytované okenním managerem při kliknutí na plochu"
 
-#: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:58
+#: ../data/ui/desktop-pref.glade.h:20
+#: ../data/ui/pref.glade.h:58
 msgid "Advanced"
 msgstr "Rozšířené"
 
@@ -122,19 +124,23 @@ msgstr "Rozšířené"
 msgid "Fill with background color only"
 msgstr "Vyplnit pouze barvou pozadí"
 
-#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:67
+#: ../data/ui/desktop-pref.glade.h:22
+#: ../data/ui/pref.glade.h:67
 msgid "Stretch to fill the entire screen"
 msgstr "Roztáhnout na celou obrazovku"
 
-#: ../data/ui/desktop-pref.glade.h:23 ../data/ui/pref.glade.h:68
+#: ../data/ui/desktop-pref.glade.h:23
+#: ../data/ui/pref.glade.h:68
 msgid "Stretch to fit the screen"
 msgstr "Přizpůsobit obrazovce"
 
-#: ../data/ui/desktop-pref.glade.h:24 ../data/ui/pref.glade.h:69
+#: ../data/ui/desktop-pref.glade.h:24
+#: ../data/ui/pref.glade.h:69
 msgid "Center on the screen"
 msgstr "Na střed"
 
-#: ../data/ui/desktop-pref.glade.h:25 ../data/ui/pref.glade.h:70
+#: ../data/ui/desktop-pref.glade.h:25
+#: ../data/ui/pref.glade.h:70
 msgid "Tile the image to fill the entire screen"
 msgstr "Vydlaždicovat na celou obrazovku"
 
@@ -172,12 +178,11 @@ msgstr "Přesouvat smazané soubory do \"Koše\" namísto smazání"
 
 #: ../data/ui/pref.glade.h:9
 msgid "Erase files on removable media instead of \"trash bin\" creation"
-msgstr ""
+msgstr "Smazat soubory na vyměnitelném médiu namísto vytvoření \"Koše\""
 
 #: ../data/ui/pref.glade.h:10
-#, fuzzy
 msgid "Confirm before moving files into \"trash bin\""
-msgstr "Potvrzovat mazání souborů"
+msgstr "Potvrdit před přesunutím souborů do \"Koše\""
 
 #: ../data/ui/pref.glade.h:11
 msgid "Bookmarks:"
@@ -185,11 +190,11 @@ msgstr "Záložky:"
 
 #: ../data/ui/pref.glade.h:12
 msgid "Default drop action:"
-msgstr ""
+msgstr "Výchozí akce pro upustění:"
 
 #: ../data/ui/pref.glade.h:13
 msgid "Unfold tab when files are dragged onto tab button"
-msgstr ""
+msgstr "Rozvinout karty, pokud jsou soubory přetáhnuty do tlačítka karty"
 
 #: ../data/ui/pref.glade.h:14
 msgid "<b>Default View</b>"
@@ -268,40 +273,38 @@ msgid "Always show the tab bar"
 msgstr "Vždy zobrazovat lištu karet"
 
 #: ../data/ui/pref.glade.h:33
-#, fuzzy
 msgid "<b>Directories Tree</b>"
-msgstr "Strom adresářů"
+msgstr "<b>Strom adresářů </b>"
 
 #: ../data/ui/pref.glade.h:34
 msgid "Hide expander on empty or locked folder"
-msgstr ""
+msgstr "Skrýt expander na prázdné nebo zamčené složce"
 
 #: ../data/ui/pref.glade.h:35
-#, fuzzy
 msgid "<b>Show in Places:</b>"
-msgstr "<b>Zobrazit ikony na ploše</b>"
+msgstr "<b>Zobrazit v Místech:</b>"
 
 #: ../data/ui/pref.glade.h:36
-#, fuzzy
 msgid "Home Directory"
-msgstr "Strom adresářů"
+msgstr "Domovský adresář"
 
-#: ../data/ui/pref.glade.h:37 ../src/main-win-ui.c:174
+#: ../data/ui/pref.glade.h:37
+#: ../src/main-win-ui.c:174
 msgid "Desktop Folder"
 msgstr "Složka plochy"
 
-#: ../data/ui/pref.glade.h:38 ../src/main-win-ui.c:178
+#: ../data/ui/pref.glade.h:38
+#: ../src/main-win-ui.c:178
 msgid "Applications"
 msgstr "Aplikace"
 
 #: ../data/ui/pref.glade.h:39
-#, fuzzy
 msgid "Trash bin"
-msgstr "Koš"
+msgstr "Odpadkový koš"
 
 #: ../data/ui/pref.glade.h:40
 msgid "Layout"
-msgstr ""
+msgstr "Rozvržení"
 
 #: ../data/ui/pref.glade.h:41
 msgid "<b>Auto-mount</b>"
@@ -317,16 +320,15 @@ msgstr "Připojit odpojitelné médium automaticky při vložení"
 
 #: ../data/ui/pref.glade.h:44
 msgid "Show available options for removable media when they are inserted"
-msgstr "Zobrazit dostupné volby pro vložené odpojitelné médium"
+msgstr "Zobrazit dostupné volby při vložení odpojitelného média"
 
 #: ../data/ui/pref.glade.h:45
 msgid "Open mounted removable media in new tab instead of new window"
-msgstr ""
+msgstr "Otevřít připojené připojitelné média v nové kartě namísto v novém okně"
 
 #: ../data/ui/pref.glade.h:46
-#, fuzzy
 msgid "Close tab containing removable medium when it is unmounted"
-msgstr "Zobrazit dostupné volby pro vložené odpojitelné médium"
+msgstr "Zavřít kartu obsahující připojitelné médium při jeho odpojení"
 
 #: ../data/ui/pref.glade.h:47
 msgid "Volume Management"
@@ -350,8 +352,7 @@ msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
 "%s = the command line you want to execute with terminal or su."
 msgstr ""
-"Příklady: \"xterm -e %s\" pro terminál nebo \"gksu %s\" pro přepínání "
-"uživatele.\n"
+"Příklady: \"xterm -e %s\" pro terminál nebo \"gksu %s\" pro přepínání uživatele.\n"
 "%s = příkaz který chcete spouštět pomocí terminálu nebo su."
 
 #: ../data/ui/pref.glade.h:54
@@ -365,30 +366,27 @@ msgstr "Použít Oznamování startu aplikace jako výchozí"
 # velmi kostrbatý překlad!!!
 #: ../data/ui/pref.glade.h:56
 msgid ""
-"If checked then use Startup Notify for application if another not stated "
-"explicitly.\n"
+"If checked then use Startup Notify for application if another not stated explicitly.\n"
 "If unchecked then use Startup Notify only if that is defined for application."
 msgstr ""
-"Je-li vybráno a není-li jinak výslovně uvedeno, použije se oznámení startu "
-"pro aplikace.\n"
-"Jinak se použije oznámení startu aplikace pouze pokud je pro aplikaci "
-"výslovně definováno."
+"Je-li vybráno a není-li jinak výslovně uvedeno, použije se oznámení startu pro aplikace.\n"
+"Jinak se použije oznámení startu aplikace pouze pokud je pro aplikaci výslovně definováno."
 
 #: ../data/ui/pref.glade.h:59
 msgid "Auto (move if on the same FS, copy otherwise)"
-msgstr ""
+msgstr "Automaticky (přesunout pokud jsou na stejném souborovém systému, jinak zkopírovat)"
 
 #: ../data/ui/pref.glade.h:60
 msgid "Copy"
-msgstr ""
+msgstr "Kopírovat"
 
 #: ../data/ui/pref.glade.h:61
 msgid "Move"
-msgstr ""
+msgstr "Přesunout"
 
 #: ../data/ui/pref.glade.h:62
 msgid "Ask"
-msgstr ""
+msgstr "Ptát se"
 
 #: ../data/ui/pref.glade.h:63
 msgid "Icon View"
@@ -438,52 +436,64 @@ msgstr "Otevřít ve správci souborů"
 msgid "_Invert Selection"
 msgstr "_Invertovat výběr"
 
-#: ../src/desktop-ui.c:55 ../src/main-win-ui.c:166
+#: ../src/desktop-ui.c:55
+#: ../src/main-win-ui.c:166
 msgid "_Sort Files"
 msgstr "_Řadit soubory"
 
 #. for popup menu
-#: ../src/desktop-ui.c:56 ../src/main-win-ui.c:192
+#: ../src/desktop-ui.c:56
+#: ../src/main-win-ui.c:192
 msgid "Create _New..."
 msgstr "Vytvořit _nový..."
 
-#: ../src/desktop-ui.c:57 ../src/main-win-ui.c:193
+#: ../src/desktop-ui.c:57
+#: ../src/main-win-ui.c:193
 msgid "Folder"
 msgstr "Složka"
 
-#: ../src/desktop-ui.c:58 ../src/main-win-ui.c:194
+#: ../src/desktop-ui.c:58
+#: ../src/main-win-ui.c:194
 msgid "Blank File"
 msgstr "Prázdný soubor"
 
-#: ../src/desktop-ui.c:59 ../src/main-win-ui.c:195
+#: ../src/desktop-ui.c:59
+#: ../src/main-win-ui.c:195
 msgid "Shortcut"
 msgstr "Zkratka"
 
-#: ../src/desktop-ui.c:71 ../src/main-win-ui.c:223
+#: ../src/desktop-ui.c:71
+#: ../src/main-win-ui.c:223
 msgid "By _Name"
 msgstr "Podle _názvu"
 
-#: ../src/desktop-ui.c:72 ../src/main-win-ui.c:224
+#: ../src/desktop-ui.c:72
+#: ../src/main-win-ui.c:224
 msgid "By _Modification Time"
 msgstr "Podle času z_měny"
 
-#: ../src/desktop-ui.c:73 ../src/main-win-ui.c:225
+#: ../src/desktop-ui.c:73
+#: ../src/main-win-ui.c:225
 msgid "By _Size"
 msgstr "Podle veliko_sti"
 
-#: ../src/desktop-ui.c:74 ../src/main-win-ui.c:226
+#: ../src/desktop-ui.c:74
+#: ../src/main-win-ui.c:226
 msgid "By File _Type"
 msgstr "Podle _typu souboru"
 
-#: ../src/desktop-ui.c:90 ../src/main-win-ui.c:249
+#: ../src/desktop-ui.c:90
+#: ../src/main-win-ui.c:249
 msgid "Open in New Tab"
 msgstr "Otevřít v nové kartě"
 
-#: ../src/desktop-ui.c:91 ../src/main-win-ui.c:250
+#: ../src/desktop-ui.c:91
+#: ../src/main-win-ui.c:250
 msgid "Open in New Window"
 msgstr "Otevřít v novém okně"
 
-#: ../src/desktop-ui.c:93 ../src/main-win-ui.c:252
+#: ../src/desktop-ui.c:93
+#: ../src/main-win-ui.c:252
 msgid "Open in _Terminal"
 msgstr "Otevřít v _Terminálu"
 
@@ -525,7 +535,7 @@ msgstr "Přejmenovat"
 
 #: ../src/main-win-ui.c:157
 msgid "Create Symlink"
-msgstr "Vytvořit odkaz"
+msgstr "Vytvořit symbolický odkaz"
 
 #: ../src/main-win-ui.c:158
 msgid "Move To..."
@@ -597,7 +607,7 @@ msgstr "Koš"
 
 #: ../src/main-win-ui.c:177
 msgid "Network Drives"
-msgstr "Síť"
+msgstr "Síťové jednotky"
 
 #: ../src/main-win-ui.c:178
 msgid "Installed Applications"
@@ -633,7 +643,7 @@ msgstr "Zobrazit boční panel"
 
 #: ../src/main-win-ui.c:203
 msgid "Show Status B_ar"
-msgstr ""
+msgstr "Zobrazit stavový ř_ádek"
 
 #: ../src/main-win-ui.c:204
 msgid "Fullscreen Mode"
@@ -733,11 +743,8 @@ msgid "<mode>"
 msgstr "<režim>"
 
 #: ../src/pcmanfm.c:83
-msgid ""
-"Open preference dialog. 'n' is number of the page you want to show (1, 2, "
-"3...)."
-msgstr ""
-"Otevře dialog nastavení. 'n' je počet stránek pro zobrazení (1,2,3...)."
+msgid "Open preference dialog. 'n' is number of the page you want to show (1, 2, 3...)."
+msgstr "Otevře dialog nastavení. 'n' je počet stránek pro zobrazení (1,2,3...)."
 
 #. { "new-win", '\0', 'n', G_OPTION_ARG_NONE, &new_win, N_("Open new window"), NULL },
 #. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
