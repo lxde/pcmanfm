@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-08-22 22:36+0200\n"
-"PO-Revision-Date: 2012-08-21 12:30+0200\n"
+"PO-Revision-Date: 2012-08-23 04:22+0200\n"
 "Last-Translator: Wylmer <wantinghard@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: zh_CN\n"
@@ -172,12 +172,11 @@ msgstr "将删除的文件移动到“回收站”而不是从磁盘中擦除"
 
 #: ../data/ui/pref.glade.h:9
 msgid "Erase files on removable media instead of \"trash bin\" creation"
-msgstr ""
+msgstr "擦除可移动媒质上的文件，而非创建“回收站”"
 
 #: ../data/ui/pref.glade.h:10
-#, fuzzy
 msgid "Confirm before moving files into \"trash bin\""
-msgstr "在删除文件前请求确认"
+msgstr "在将文件移到“回收站”前请求确认"
 
 #: ../data/ui/pref.glade.h:11
 msgid "Bookmarks:"
@@ -185,11 +184,11 @@ msgstr "书签："
 
 #: ../data/ui/pref.glade.h:12
 msgid "Default drop action:"
-msgstr ""
+msgstr "放下的默认操作："
 
 #: ../data/ui/pref.glade.h:13
 msgid "Unfold tab when files are dragged onto tab button"
-msgstr ""
+msgstr "当文件拖动到标签页按钮上时展开标签页"
 
 #: ../data/ui/pref.glade.h:14
 msgid "<b>Default View</b>"
@@ -268,23 +267,20 @@ msgid "Always show the tab bar"
 msgstr "总是显示标签栏"
 
 #: ../data/ui/pref.glade.h:33
-#, fuzzy
 msgid "<b>Directories Tree</b>"
-msgstr "目录树"
+msgstr "<b>目录树</b>"
 
 #: ../data/ui/pref.glade.h:34
 msgid "Hide expander on empty or locked folder"
-msgstr ""
+msgstr "隐藏空文件夹或锁定文件夹的展开控件"
 
 #: ../data/ui/pref.glade.h:35
-#, fuzzy
 msgid "<b>Show in Places:</b>"
-msgstr "<b>显示桌面图标</b>"
+msgstr "<b>在位置处显示：</b>"
 
 #: ../data/ui/pref.glade.h:36
-#, fuzzy
 msgid "Home Directory"
-msgstr "目录树"
+msgstr "主目录"
 
 #: ../data/ui/pref.glade.h:37 ../src/main-win-ui.c:174
 msgid "Desktop Folder"
@@ -295,13 +291,12 @@ msgid "Applications"
 msgstr "应用程序"
 
 #: ../data/ui/pref.glade.h:39
-#, fuzzy
 msgid "Trash bin"
 msgstr "回收站"
 
 #: ../data/ui/pref.glade.h:40
 msgid "Layout"
-msgstr ""
+msgstr "布局"
 
 #: ../data/ui/pref.glade.h:41
 msgid "<b>Auto-mount</b>"
@@ -321,12 +316,11 @@ msgstr "在插入可移动媒质时显示可用操作"
 
 #: ../data/ui/pref.glade.h:45
 msgid "Open mounted removable media in new tab instead of new window"
-msgstr ""
+msgstr "在新标签页中打开挂载的可移动媒质，而非打开新窗口"
 
 #: ../data/ui/pref.glade.h:46
-#, fuzzy
 msgid "Close tab containing removable medium when it is unmounted"
-msgstr "在插入可移动媒质时显示可用操作"
+msgstr "在卸载可移动媒质时关闭相应的标签页"
 
 #: ../data/ui/pref.glade.h:47
 msgid "Volume Management"
@@ -372,19 +366,19 @@ msgstr ""
 
 #: ../data/ui/pref.glade.h:59
 msgid "Auto (move if on the same FS, copy otherwise)"
-msgstr ""
+msgstr "自动(相同文件系统时移动，否则复制)"
 
 #: ../data/ui/pref.glade.h:60
 msgid "Copy"
-msgstr ""
+msgstr "复制"
 
 #: ../data/ui/pref.glade.h:61
 msgid "Move"
-msgstr ""
+msgstr "移动"
 
 #: ../data/ui/pref.glade.h:62
 msgid "Ask"
-msgstr ""
+msgstr "询问"
 
 #: ../data/ui/pref.glade.h:63
 msgid "Icon View"
@@ -629,7 +623,7 @@ msgstr "显示侧边窗格"
 
 #: ../src/main-win-ui.c:203
 msgid "Show Status B_ar"
-msgstr ""
+msgstr "显示状态栏(_A)"
 
 #: ../src/main-win-ui.c:204
 msgid "Fullscreen Mode"
