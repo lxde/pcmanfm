@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm 0.9.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-08-22 22:36+0200\n"
-"PO-Revision-Date: 2012-07-09 05:16+0200\n"
+"PO-Revision-Date: 2012-08-23 04:51+0200\n"
 "Last-Translator: Duy Hung <nguyentieuhau@gmail.com>\n"
 "Language: vi\n"
 "MIME-Version: 1.0\n"
@@ -172,17 +172,16 @@ msgstr "Hỏi trước khi xóa tập tin"
 
 #: ../data/ui/pref.glade.h:8
 msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
-msgstr ""
-"Chuyển những tập tin bị xóa vào \"Thùng rác\" thay vì xóa ngay trên đĩa"
+msgstr "Chuyển những tập tin bị xóa vào \"thùng rác\" thay vì xóa ngay trên đĩa"
 
 #: ../data/ui/pref.glade.h:9
 msgid "Erase files on removable media instead of \"trash bin\" creation"
 msgstr ""
+"Xóa tập tin ngay trên phương tiện di động thay vì chuyển vào \"thùng rác\""
 
 #: ../data/ui/pref.glade.h:10
-#, fuzzy
 msgid "Confirm before moving files into \"trash bin\""
-msgstr "Hỏi trước khi xóa tập tin"
+msgstr "Hỏi trước khi chuyển tập tin vào \"thùng rác\""
 
 #: ../data/ui/pref.glade.h:11
 msgid "Bookmarks:"
@@ -190,11 +189,11 @@ msgstr "Đánh dấu:"
 
 #: ../data/ui/pref.glade.h:12
 msgid "Default drop action:"
-msgstr ""
+msgstr "Hành động thả mặc định:"
 
 #: ../data/ui/pref.glade.h:13
 msgid "Unfold tab when files are dragged onto tab button"
-msgstr ""
+msgstr "Mở thẻ khi tập tin được kéo lên nút thẻ"
 
 #: ../data/ui/pref.glade.h:14
 msgid "<b>Default View</b>"
@@ -250,7 +249,7 @@ msgstr "Dùng tiền tố thập phân SI thay vì tiền tố nhị phân IEC"
 
 #: ../data/ui/pref.glade.h:27
 msgid "Treat backup files as hidden"
-msgstr ""
+msgstr "Xem các tập tin sao dự trữ như tập tin ẩn"
 
 #: ../data/ui/pref.glade.h:28
 msgid "Display"
@@ -273,23 +272,20 @@ msgid "Always show the tab bar"
 msgstr "Luôn hiển thị thanh thẻ"
 
 #: ../data/ui/pref.glade.h:33
-#, fuzzy
 msgid "<b>Directories Tree</b>"
-msgstr "Cây Thư mục"
+msgstr "<b>Cây thư mục</b>"
 
 #: ../data/ui/pref.glade.h:34
 msgid "Hide expander on empty or locked folder"
-msgstr ""
+msgstr "Ẩn biểu tượng co giãn cho thư mục rỗng hay thư mục bị khóa"
 
 #: ../data/ui/pref.glade.h:35
-#, fuzzy
 msgid "<b>Show in Places:</b>"
-msgstr "<b>Hiển thị biểu tượng trên màn hình nền</b>"
+msgstr "<b>Hiển thị trong Nơi:</b>"
 
 #: ../data/ui/pref.glade.h:36
-#, fuzzy
 msgid "Home Directory"
-msgstr "Cây Thư mục"
+msgstr "Thư mục nhà"
 
 #: ../data/ui/pref.glade.h:37 ../src/main-win-ui.c:174
 msgid "Desktop Folder"
@@ -300,13 +296,12 @@ msgid "Applications"
 msgstr "Ứng dụng"
 
 #: ../data/ui/pref.glade.h:39
-#, fuzzy
 msgid "Trash bin"
 msgstr "Thùng rác"
 
 #: ../data/ui/pref.glade.h:40
 msgid "Layout"
-msgstr ""
+msgstr "Bố trí"
 
 #: ../data/ui/pref.glade.h:41
 msgid "<b>Auto-mount</b>"
@@ -329,12 +324,12 @@ msgstr ""
 #: ../data/ui/pref.glade.h:45
 msgid "Open mounted removable media in new tab instead of new window"
 msgstr ""
+"Mở những phương tiện di động được gắn trong một thẻ mới thay vì một cửa sổ "
+"mới"
 
 #: ../data/ui/pref.glade.h:46
-#, fuzzy
 msgid "Close tab containing removable medium when it is unmounted"
-msgstr ""
-"Hiển thị những tùy chọn có thể cho những thiết bị khi chúng được gắn vào máy"
+msgstr "Đóng thẻ chứa phương tiện di động khi nó được tháo"
 
 #: ../data/ui/pref.glade.h:47
 msgid "Volume Management"
@@ -368,7 +363,7 @@ msgstr "Tích hợp bộ lưu trữ:"
 
 #: ../data/ui/pref.glade.h:55
 msgid "Use Application Startup Notify by default"
-msgstr ""
+msgstr "Mặc định dùng Thông Báo Khởi Tạo Ứng Dụng"
 
 #: ../data/ui/pref.glade.h:56
 msgid ""
@@ -376,46 +371,52 @@ msgid ""
 "explicitly.\n"
 "If unchecked then use Startup Notify only if that is defined for application."
 msgstr ""
+"Nếu được chọn sẽ sử dụng Thông Báo Khởi Tạo cho ứng dụng nếu những ứng dụng "
+"khác không được xác định rõ ràng.\n"
+"Nếu không chọn sẽ sử dụng Thông Báo Khởi Tạo chỉ khi nó được xác định cho "
+"ứng dụng."
 
 #: ../data/ui/pref.glade.h:59
 msgid "Auto (move if on the same FS, copy otherwise)"
 msgstr ""
+"Tự động (di chuyển nếu trên cùng một hệ thống tập tin, nếu không sẽ sao "
+"chép)"
 
 #: ../data/ui/pref.glade.h:60
 msgid "Copy"
-msgstr ""
+msgstr "Sao chép"
 
 #: ../data/ui/pref.glade.h:61
 msgid "Move"
-msgstr ""
+msgstr "Di chuyển"
 
 #: ../data/ui/pref.glade.h:62
 msgid "Ask"
-msgstr ""
+msgstr "Hỏi"
 
 #: ../data/ui/pref.glade.h:63
 msgid "Icon View"
-msgstr "Hiển thị Biểu tượng"
+msgstr "Hiển thị biểu tượng"
 
 #: ../data/ui/pref.glade.h:64
 msgid "Compact View"
-msgstr "Hiển thị Thu Gọn"
+msgstr "Hiển thị thu gọn"
 
 #: ../data/ui/pref.glade.h:65
 msgid "Thumbnail View"
-msgstr "Hiển thị Ảnh nhỏ"
+msgstr "Hiển thị ảnh nhỏ"
 
 #: ../data/ui/pref.glade.h:66
 msgid "Detailed List View"
-msgstr "Hiển thị Danh sách Chi tiết"
+msgstr "Hiển thị danh sách chi tiết"
 
 #: ../data/ui/autorun.glade.h:1
 msgid "Removable medium is inserted"
-msgstr "Những thiết bị có thể tháo lắp đã được gắn"
+msgstr "Những phương tiện di động đã được gắn"
 
 #: ../data/ui/autorun.glade.h:2
 msgid "<b>Removable medium is inserted</b>"
-msgstr "<b>Những thiết bị có thể tháo lắp đã được gắn</b>"
+msgstr "<b>Những phương tiện di động đã được gắn</b>"
 
 #: ../data/ui/autorun.glade.h:3
 msgid "Type of medium:"
@@ -431,7 +432,7 @@ msgstr "Vui lòng chọn hành động bạn muốn thực hiện:"
 
 #: ../src/volume-manager.c:160
 msgid "Removable Disk"
-msgstr "Đĩa Có thể tháo lắp"
+msgstr "Đĩa di động"
 
 #: ../src/volume-manager.c:213
 msgid "Open in File Manager"
@@ -456,7 +457,7 @@ msgstr "Thư mục"
 
 #: ../src/desktop-ui.c:58 ../src/main-win-ui.c:194
 msgid "Blank File"
-msgstr "Tập tin Rỗng"
+msgstr "Tập tin trắng"
 
 #: ../src/desktop-ui.c:59 ../src/main-win-ui.c:195
 msgid "Shortcut"
@@ -636,11 +637,11 @@ msgstr "Hiển thị _Khung Bên"
 
 #: ../src/main-win-ui.c:203
 msgid "Show Status B_ar"
-msgstr ""
+msgstr "Hiển thị thanh t_rạng thái"
 
 #: ../src/main-win-ui.c:204
 msgid "Fullscreen Mode"
-msgstr ""
+msgstr "Chế độ đầy màn hình"
 
 #: ../src/main-win-ui.c:209
 msgid "_Icon View"
