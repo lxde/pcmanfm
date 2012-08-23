@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm 0.9.9\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-08-22 22:36+0200\n"
-"PO-Revision-Date: 2012-08-17 13:28+0200\n"
+"PO-Revision-Date: 2012-08-23 12:48+0200\n"
 "Last-Translator: Hugo <sysadmin@cips.cu>\n"
 "Language-Team: Spanish (Castilian) <translation@mailinglist.lxde.org>\n"
 "Language: es\n"
@@ -178,11 +178,11 @@ msgstr ""
 #: ../data/ui/pref.glade.h:9
 msgid "Erase files on removable media instead of \"trash bin\" creation"
 msgstr ""
+"Borrar los archivos en los medios extraíbles en lugar de crear una papelera"
 
 #: ../data/ui/pref.glade.h:10
-#, fuzzy
 msgid "Confirm before moving files into \"trash bin\""
-msgstr "Confirmar antes de eliminar archivos"
+msgstr "Confirmar antes de mover los archivos a la papelera"
 
 #: ../data/ui/pref.glade.h:11
 msgid "Bookmarks:"
@@ -190,11 +190,12 @@ msgstr "Marcadores:"
 
 #: ../data/ui/pref.glade.h:12
 msgid "Default drop action:"
-msgstr ""
+msgstr "Acción por defecto para soltar:"
 
 #: ../data/ui/pref.glade.h:13
 msgid "Unfold tab when files are dragged onto tab button"
 msgstr ""
+"Desplegar pestaña cuando se arrastren archivos hacia un botón de pestaña"
 
 #: ../data/ui/pref.glade.h:14
 msgid "<b>Default View</b>"
@@ -273,23 +274,20 @@ msgid "Always show the tab bar"
 msgstr "Siempre mostrar la barra de pestañas"
 
 #: ../data/ui/pref.glade.h:33
-#, fuzzy
 msgid "<b>Directories Tree</b>"
-msgstr "Árbol de directorio"
+msgstr "<b>Árbol de directorios</b>"
 
 #: ../data/ui/pref.glade.h:34
 msgid "Hide expander on empty or locked folder"
-msgstr ""
+msgstr "Ocultar expansión en carpetas vacías o bloqueadas"
 
 #: ../data/ui/pref.glade.h:35
-#, fuzzy
 msgid "<b>Show in Places:</b>"
-msgstr "<b>Mostrar iconos del escritorio</b>"
+msgstr "<b>Mostrar en lugares:</b>"
 
 #: ../data/ui/pref.glade.h:36
-#, fuzzy
 msgid "Home Directory"
-msgstr "Árbol de directorio"
+msgstr "Directorio inicial"
 
 #: ../data/ui/pref.glade.h:37 ../src/main-win-ui.c:174
 msgid "Desktop Folder"
@@ -300,13 +298,12 @@ msgid "Applications"
 msgstr "Aplicaciones"
 
 #: ../data/ui/pref.glade.h:39
-#, fuzzy
 msgid "Trash bin"
 msgstr "Papelera"
 
 #: ../data/ui/pref.glade.h:40
 msgid "Layout"
-msgstr ""
+msgstr "Diseño"
 
 #: ../data/ui/pref.glade.h:41
 msgid "<b>Auto-mount</b>"
@@ -328,12 +325,12 @@ msgstr ""
 #: ../data/ui/pref.glade.h:45
 msgid "Open mounted removable media in new tab instead of new window"
 msgstr ""
+"Abrir los medios extraíbles montados en una nueva pestaña y no en una nueva "
+"ventana"
 
 #: ../data/ui/pref.glade.h:46
-#, fuzzy
 msgid "Close tab containing removable medium when it is unmounted"
-msgstr ""
-"Mostrar opciones disponibles para los medios extraíbles cuando se inserten"
+msgstr "Cerrar las pestañas que contengan medios extraíbles al desmontarlos"
 
 #: ../data/ui/pref.glade.h:47
 msgid "Volume Management"
@@ -383,18 +380,20 @@ msgstr ""
 #: ../data/ui/pref.glade.h:59
 msgid "Auto (move if on the same FS, copy otherwise)"
 msgstr ""
+"Automático (mover si está en el mismo sistema de archivos, copiar en caso "
+"contrario)"
 
 #: ../data/ui/pref.glade.h:60
 msgid "Copy"
-msgstr ""
+msgstr "Copiar"
 
 #: ../data/ui/pref.glade.h:61
 msgid "Move"
-msgstr ""
+msgstr "Mover"
 
 #: ../data/ui/pref.glade.h:62
 msgid "Ask"
-msgstr ""
+msgstr "Preguntar"
 
 #: ../data/ui/pref.glade.h:63
 msgid "Icon View"
@@ -639,7 +638,7 @@ msgstr "Mostrar panel lateral"
 
 #: ../src/main-win-ui.c:203
 msgid "Show Status B_ar"
-msgstr ""
+msgstr "Mostrar la b_arra de estado"
 
 #: ../src/main-win-ui.c:204
 msgid "Fullscreen Mode"
