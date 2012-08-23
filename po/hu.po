@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-08-22 22:36+0200\n"
-"PO-Revision-Date: 2012-08-23 14:43+0200\n"
+"PO-Revision-Date: 2012-08-23 16:18+0200\n"
 "Last-Translator: Bendegúz <gyonkibendeguz@gmail.com>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
@@ -171,7 +171,7 @@ msgstr "Fájlok törlésének megerősítése"
 
 #: ../data/ui/pref.glade.h:8
 msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
-msgstr "Fájlok törlése a \"kuka\" mappába a lemezről törlés helyett"
+msgstr "Fájlok lomtárba helyezése a végleges törlés helyett"
 
 # removable media > cserélhető adathordozó
 #: ../data/ui/pref.glade.h:9
@@ -179,9 +179,8 @@ msgid "Erase files on removable media instead of \"trash bin\" creation"
 msgstr "Cserélhető adathordozón lévő fájlok végleges törlése"
 
 #: ../data/ui/pref.glade.h:10
-#, fuzzy
 msgid "Confirm before moving files into \"trash bin\""
-msgstr "Fájlok törlésének megerősítése"
+msgstr "Fájlok lomtárba helyezésének megerősítése"
 
 #: ../data/ui/pref.glade.h:11
 msgid "Bookmarks:"
@@ -189,7 +188,7 @@ msgstr "Könyvjelzők:"
 
 #: ../data/ui/pref.glade.h:12
 msgid "Default drop action:"
-msgstr ""
+msgstr "Alapértelmezett ejtési művelet:"
 
 #: ../data/ui/pref.glade.h:13
 msgid "Unfold tab when files are dragged onto tab button"
@@ -204,7 +203,6 @@ msgid "View Mode:"
 msgstr "Nézetmód:"
 
 #: ../data/ui/pref.glade.h:16
-#, fuzzy
 msgid "General"
 msgstr "Általá_nos"
 
@@ -273,23 +271,20 @@ msgid "Always show the tab bar"
 msgstr "Fül sáv állandó megjelenítése"
 
 #: ../data/ui/pref.glade.h:33
-#, fuzzy
 msgid "<b>Directories Tree</b>"
-msgstr "Könyvtárfa"
+msgstr "Könyvtárstruktúra"
 
 #: ../data/ui/pref.glade.h:34
 msgid "Hide expander on empty or locked folder"
 msgstr ""
 
 #: ../data/ui/pref.glade.h:35
-#, fuzzy
 msgid "<b>Show in Places:</b>"
 msgstr "<b>Asztali ikonok megjelenítése</b>"
 
 #: ../data/ui/pref.glade.h:36
-#, fuzzy
 msgid "Home Directory"
-msgstr "Könyvtárfa"
+msgstr "Kezdőkönyvtár"
 
 #: ../data/ui/pref.glade.h:37 ../src/main-win-ui.c:174
 msgid "Desktop Folder"
@@ -300,9 +295,8 @@ msgid "Applications"
 msgstr "Alkalmazások"
 
 #: ../data/ui/pref.glade.h:39
-#, fuzzy
 msgid "Trash bin"
-msgstr "Kuka"
+msgstr "Lomtár"
 
 #: ../data/ui/pref.glade.h:40
 msgid "Layout"
@@ -330,13 +324,10 @@ msgid "Open mounted removable media in new tab instead of new window"
 msgstr "Felcsatolt cserélhető adathordozók megnyitása új ablak helyett új fülön"
 
 #: ../data/ui/pref.glade.h:46
-#, fuzzy
 msgid "Close tab containing removable medium when it is unmounted"
-msgstr ""
-"Elérhető beállítások megjelenítése cserélhető adathordozó behelyezésekor"
+msgstr "Cserélhető adathordozó eltávolításakor a tartalmazó fül bezárása"
 
 #: ../data/ui/pref.glade.h:47
-#, fuzzy
 msgid "Volume Management"
 msgstr "_Kötetkezelés"
 
@@ -391,7 +382,7 @@ msgstr "Áthelyezés"
 
 #: ../data/ui/pref.glade.h:62
 msgid "Ask"
-msgstr ""
+msgstr "Rákérdezés"
 
 #: ../data/ui/pref.glade.h:63
 msgid "Icon View"
@@ -460,7 +451,7 @@ msgstr "Üres fájl"
 
 #: ../src/desktop-ui.c:59 ../src/main-win-ui.c:195
 msgid "Shortcut"
-msgstr ""
+msgstr "Parancsikon"
 
 #: ../src/desktop-ui.c:71 ../src/main-win-ui.c:223
 msgid "By _Name"
@@ -772,11 +763,11 @@ msgstr "Új"
 
 #: ../src/pcmanfm.c:676
 msgid "Error, lxshortcut not installed"
-msgstr ""
+msgstr "Hiba, lxshortcut nincs telepítve"
 
 #: ../src/pcmanfm.c:681
 msgid "Failed to start lxshortcut"
-msgstr ""
+msgstr "Lxshortcut elindítása sikertelen"
 
 #: ../src/tab-page.c:211
 #, c-format
@@ -805,9 +796,8 @@ msgstr[0] " (%d rejtett)"
 msgstr[1] " (%d rejtett)"
 
 #: ../data/pcmanfm.desktop.in.h:1
-#, fuzzy
 msgid "File Manager PCManFM"
-msgstr "Fájlkezelő"
+msgstr "Fájlkezelő (PCManFM)"
 
 #: ../data/pcmanfm.desktop.in.h:2
 msgid "File Manager"
@@ -819,7 +809,7 @@ msgstr "Fájlrendszer tallózása és fájlok kezelése"
 
 #: ../data/pcmanfm-desktop-pref.desktop.in.h:2
 msgid "Change desktop wallpapers and behavior of desktop manager"
-msgstr ""
+msgstr "A háttérkép(ek) és az ablakkezelő viselkedésének megváltoztatása"
 
 #~ msgid "_Advanced"
 #~ msgstr "_Haladó"
