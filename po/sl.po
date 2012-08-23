@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: pcmanfm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-08-22 22:36+0200\n"
-"PO-Revision-Date: 2012-08-15 11:39+0200\n"
+"PO-Revision-Date: 2012-08-23 09:08+0200\n"
 "Last-Translator: Klemen <klemen.kosir@gmx.com>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);;\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || "
+"n%100==4 ? 3 : 0);;\n"
 "X-Generator: Pootle 2.0.5\n"
 
 #: ../data/ui/about.glade.in.h:1
@@ -173,12 +173,11 @@ msgstr "Izbrisane datoteke premakni v »Smeti«"
 
 #: ../data/ui/pref.glade.h:9
 msgid "Erase files on removable media instead of \"trash bin\" creation"
-msgstr ""
+msgstr "Izbrisanih datotek na odstranljivih medijih ne premakni v »Smeti«"
 
 #: ../data/ui/pref.glade.h:10
-#, fuzzy
 msgid "Confirm before moving files into \"trash bin\""
-msgstr "Vprašaj pred brisanjem datotek"
+msgstr "Vprašaj pred premikanjem datotek v »Smeti«"
 
 #: ../data/ui/pref.glade.h:11
 msgid "Bookmarks:"
@@ -269,23 +268,20 @@ msgid "Always show the tab bar"
 msgstr "Vedno pokaži vrstico zavihkov"
 
 #: ../data/ui/pref.glade.h:33
-#, fuzzy
 msgid "<b>Directories Tree</b>"
-msgstr "Drevo map"
+msgstr "<b>Drevo map</b>"
 
 #: ../data/ui/pref.glade.h:34
 msgid "Hide expander on empty or locked folder"
-msgstr ""
+msgstr "Skrij razširilnik na praznih ali zaklenjenih mapah"
 
 #: ../data/ui/pref.glade.h:35
-#, fuzzy
 msgid "<b>Show in Places:</b>"
-msgstr "<b>Pokaži ikone namizja</b>"
+msgstr "<b>Pokaži v meniju »Mesta«</b>"
 
 #: ../data/ui/pref.glade.h:36
-#, fuzzy
 msgid "Home Directory"
-msgstr "Drevo map"
+msgstr "Domača mapa"
 
 #: ../data/ui/pref.glade.h:37 ../src/main-win-ui.c:174
 msgid "Desktop Folder"
@@ -296,7 +292,6 @@ msgid "Applications"
 msgstr "Programi"
 
 #: ../data/ui/pref.glade.h:39
-#, fuzzy
 msgid "Trash bin"
 msgstr "Smeti"
 
@@ -323,11 +318,11 @@ msgstr "Ob priključitvi odstranljivih nosilcev pokaži razpoložljive možnosti
 #: ../data/ui/pref.glade.h:45
 msgid "Open mounted removable media in new tab instead of new window"
 msgstr ""
+"Odpri priklopljene odstranljive medije v novem zavihku namesto v novem oknu"
 
 #: ../data/ui/pref.glade.h:46
-#, fuzzy
 msgid "Close tab containing removable medium when it is unmounted"
-msgstr "Ob priključitvi odstranljivih nosilcev pokaži razpoložljive možnosti"
+msgstr "Ob odklopu odstranljivega medija zapri zavihek le-te naprave"
 
 #: ../data/ui/pref.glade.h:47
 msgid "Volume Management"
@@ -381,15 +376,15 @@ msgstr ""
 
 #: ../data/ui/pref.glade.h:60
 msgid "Copy"
-msgstr ""
+msgstr "Kopiraj"
 
 #: ../data/ui/pref.glade.h:61
 msgid "Move"
-msgstr ""
+msgstr "Premakni"
 
 #: ../data/ui/pref.glade.h:62
 msgid "Ask"
-msgstr ""
+msgstr "Vprašaj"
 
 #: ../data/ui/pref.glade.h:63
 msgid "Icon View"
@@ -634,7 +629,7 @@ msgstr "Pokaži stranski pladenj"
 
 #: ../src/main-win-ui.c:203
 msgid "Show Status B_ar"
-msgstr ""
+msgstr "Pokaži _vrstico stanja"
 
 #: ../src/main-win-ui.c:204
 msgid "Fullscreen Mode"
