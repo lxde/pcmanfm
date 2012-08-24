@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-08-22 22:36+0200\n"
-"PO-Revision-Date: 2012-08-15 10:32+0200\n"
+"PO-Revision-Date: 2012-08-24 12:36+0200\n"
 "Last-Translator: Pjotr <pjotrvertaalt@gmail.com>\n"
 "Language-Team: Dutch\n"
 "Language: nl\n"
@@ -180,11 +180,12 @@ msgstr ""
 #: ../data/ui/pref.glade.h:9
 msgid "Erase files on removable media instead of \"trash bin\" creation"
 msgstr ""
+"Verwijder bestanden op verwisselbare media definitief in plaats van "
+"\"prullenbak\"-gebruik"
 
 #: ../data/ui/pref.glade.h:10
-#, fuzzy
 msgid "Confirm before moving files into \"trash bin\""
-msgstr "Bevestig voor verwijderen van bestanden"
+msgstr "Bevestig voor het verplaatsen van bestanden naar de \"prullenbak\""
 
 #: ../data/ui/pref.glade.h:11
 msgid "Bookmarks:"
@@ -192,11 +193,11 @@ msgstr "Bladwijzers:"
 
 #: ../data/ui/pref.glade.h:12
 msgid "Default drop action:"
-msgstr ""
+msgstr "Standaardactie bij slepen:"
 
 #: ../data/ui/pref.glade.h:13
 msgid "Unfold tab when files are dragged onto tab button"
-msgstr ""
+msgstr "Vouw tabblad open wanneer bestanden worden gesleept op tabbladknop"
 
 #: ../data/ui/pref.glade.h:14
 msgid "<b>Default View</b>"
@@ -276,23 +277,20 @@ msgid "Always show the tab bar"
 msgstr "Toon altijd de tabblad-balk"
 
 #: ../data/ui/pref.glade.h:33
-#, fuzzy
 msgid "<b>Directories Tree</b>"
-msgstr "Boomstructuur van mappen"
+msgstr "<b>Boomstructuur van mappen</b>"
 
 #: ../data/ui/pref.glade.h:34
 msgid "Hide expander on empty or locked folder"
-msgstr ""
+msgstr "Verberg uitvouwer bij lege of afgesloten map"
 
 #: ../data/ui/pref.glade.h:35
-#, fuzzy
 msgid "<b>Show in Places:</b>"
-msgstr "<b>Toon bureaubladpictogrammen</b>"
+msgstr "<b>Tonen bij Locaties:</b>"
 
 #: ../data/ui/pref.glade.h:36
-#, fuzzy
 msgid "Home Directory"
-msgstr "Boomstructuur van mappen"
+msgstr "Thuismap"
 
 #: ../data/ui/pref.glade.h:37 ../src/main-win-ui.c:174
 msgid "Desktop Folder"
@@ -303,13 +301,12 @@ msgid "Applications"
 msgstr "Toepassingen"
 
 #: ../data/ui/pref.glade.h:39
-#, fuzzy
 msgid "Trash bin"
 msgstr "Prullenbak"
 
 #: ../data/ui/pref.glade.h:40
 msgid "Layout"
-msgstr ""
+msgstr "Vormgeving"
 
 #: ../data/ui/pref.glade.h:41
 msgid "<b>Auto-mount</b>"
@@ -331,12 +328,12 @@ msgstr ""
 #: ../data/ui/pref.glade.h:45
 msgid "Open mounted removable media in new tab instead of new window"
 msgstr ""
+"Open aangekoppelde verwijderbare media in nieuw tabblad in plaats van nieuw "
+"venster"
 
 #: ../data/ui/pref.glade.h:46
-#, fuzzy
 msgid "Close tab containing removable medium when it is unmounted"
-msgstr ""
-"Toon beschikbare opties voor verwijderbare media wanneer ze worden ingebracht"
+msgstr "Sluit tabblad voor verwijderbaar medium wanneer het wordt ontkoppeld"
 
 #: ../data/ui/pref.glade.h:47
 msgid "Volume Management"
@@ -385,18 +382,20 @@ msgstr ""
 #: ../data/ui/pref.glade.h:59
 msgid "Auto (move if on the same FS, copy otherwise)"
 msgstr ""
+"Automatisch (verplaats indien op hetzelfde bestandssysteem, kopieer indien "
+"niet)"
 
 #: ../data/ui/pref.glade.h:60
 msgid "Copy"
-msgstr ""
+msgstr "Kopiëren"
 
 #: ../data/ui/pref.glade.h:61
 msgid "Move"
-msgstr ""
+msgstr "Verplaatsen"
 
 #: ../data/ui/pref.glade.h:62
 msgid "Ask"
-msgstr ""
+msgstr "Vragen"
 
 #: ../data/ui/pref.glade.h:63
 msgid "Icon View"
@@ -642,7 +641,7 @@ msgstr "Toon zijbalk"
 
 #: ../src/main-win-ui.c:203
 msgid "Show Status B_ar"
-msgstr ""
+msgstr "Toon statusbalk"
 
 #: ../src/main-win-ui.c:204
 msgid "Fullscreen Mode"
