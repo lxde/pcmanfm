@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: pcmanfm2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-08-22 22:36+0200\n"
-"PO-Revision-Date: 2012-08-23 01:21+0200\n"
-"Last-Translator: LStranger <andrej@rep.kiev.ua>\n"
+"PO-Revision-Date: 2012-08-24 19:39+0200\n"
+"Last-Translator: Y P <yupadmin@gmail.com>\n"
 "Language-Team: Ukrainian <translation@linux.org.ua>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
@@ -178,7 +178,7 @@ msgstr ""
 
 #: ../data/ui/pref.glade.h:9
 msgid "Erase files on removable media instead of \"trash bin\" creation"
-msgstr "Знищувати файли на змінних носіях замість перенесення у \"смітник\""
+msgstr "Знищувати файли на знімних носіях замість перенесення у \"смітник\""
 
 #: ../data/ui/pref.glade.h:10
 msgid "Confirm before moving files into \"trash bin\""
@@ -278,7 +278,7 @@ msgstr "<b>Дерево тек</b>"
 
 #: ../data/ui/pref.glade.h:34
 msgid "Hide expander on empty or locked folder"
-msgstr "Ховати розгортувач порожньої чи запертої теки"
+msgstr "Ховати розгортувач порожньої чи замкненої теки"
 
 #: ../data/ui/pref.glade.h:35
 msgid "<b>Show in Places:</b>"
@@ -310,11 +310,11 @@ msgstr "<b>Автомонтування</b>"
 
 #: ../data/ui/pref.glade.h:42
 msgid "Mount mountable volumes automatically on program startup"
-msgstr "Монтувати змінні диски автоматично під час старту"
+msgstr "Монтувати знімні диски автоматично під час старту"
 
 #: ../data/ui/pref.glade.h:43
 msgid "Mount removable media automatically when they are inserted"
-msgstr "Монтувати змінні носії при їх вставлянні"
+msgstr "Монтувати знімні носії при їх вставлянні"
 
 #: ../data/ui/pref.glade.h:44
 msgid "Show available options for removable media when they are inserted"
@@ -322,11 +322,11 @@ msgstr "Показати можливі опції для змінних нос�
 
 #: ../data/ui/pref.glade.h:45
 msgid "Open mounted removable media in new tab instead of new window"
-msgstr "Відкривати змонтовані змінні носії у новій вкладці замість нового вікна"
+msgstr "Відкривати змонтовані знімні носії у новій вкладці замість нового вікна"
 
 #: ../data/ui/pref.glade.h:46
 msgid "Close tab containing removable medium when it is unmounted"
-msgstr "Закрити вкладку, що містить змінний носій, при його відмонтуванні"
+msgstr "Закрити вкладку, що містить знімний носій, при його відмонтуванні"
 
 #: ../data/ui/pref.glade.h:47
 msgid "Volume Management"
@@ -371,7 +371,7 @@ msgstr ""
 "Якщо ввімкнено - використовувати Сповіщення Запуску Програми завжди, якщо "
 "інше не вказано.\n"
 "Якщо вимкнено - використовувати Сповіщення Запуску Програми, лише якщо це "
-"вказано у ярликові."
+"вказано у ярлику."
 
 #: ../data/ui/pref.glade.h:59
 msgid "Auto (move if on the same FS, copy otherwise)"
@@ -407,11 +407,11 @@ msgstr "Детальний вигляд списком"
 
 #: ../data/ui/autorun.glade.h:1
 msgid "Removable medium is inserted"
-msgstr "Вставлено змінний носій"
+msgstr "Вставлено знімний носій"
 
 #: ../data/ui/autorun.glade.h:2
 msgid "<b>Removable medium is inserted</b>"
-msgstr "<b>Вставлено змінний носій</b>"
+msgstr "<b>Вставлено знімний носій</b>"
 
 #: ../data/ui/autorun.glade.h:3
 msgid "Type of medium:"
@@ -423,11 +423,11 @@ msgstr "Визначаю..."
 
 #: ../data/ui/autorun.glade.h:5
 msgid "Please select the action you want to perform:"
-msgstr "Виберіть, будь ласка, дію, яку Ви бажаєте виконати:"
+msgstr "Виберіть, будь ласка, дію для виконання:"
 
 #: ../src/volume-manager.c:160
 msgid "Removable Disk"
-msgstr "Змінний диск"
+msgstr "Знімний диск"
 
 #: ../src/volume-manager.c:213
 msgid "Open in File Manager"
@@ -761,7 +761,7 @@ msgstr "Введіть назву новоствореного файлу:"
 
 #: ../src/pcmanfm.c:582
 msgid "Create New..."
-msgstr "Створити новий..."
+msgstr "Створити..."
 
 #: ../src/pcmanfm.c:582
 msgid "New"
