@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm-0,5.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-08-22 22:36+0200\n"
-"PO-Revision-Date: 2012-07-09 11:59+0200\n"
+"PO-Revision-Date: 2012-08-24 09:42+0200\n"
 "Last-Translator: mbouzada <mbouzada@gmail.com>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
 "Language: gl\n"
@@ -178,11 +178,12 @@ msgstr ""
 #: ../data/ui/pref.glade.h:9
 msgid "Erase files on removable media instead of \"trash bin\" creation"
 msgstr ""
+"Borrar os ficheiros no dispositivo extraíbel, no canto de crear unha «Cesta "
+"do lixo» nel"
 
 #: ../data/ui/pref.glade.h:10
-#, fuzzy
 msgid "Confirm before moving files into \"trash bin\""
-msgstr "Confirmar antes de eliminar ficheiros"
+msgstr "Confirmar antes de mover os ficheiros cara a «Cesta do lixo»"
 
 #: ../data/ui/pref.glade.h:11
 msgid "Bookmarks:"
@@ -190,11 +191,11 @@ msgstr "Marcadores:"
 
 #: ../data/ui/pref.glade.h:12
 msgid "Default drop action:"
-msgstr ""
+msgstr "Acción predeterminada ao soltar:"
 
 #: ../data/ui/pref.glade.h:13
 msgid "Unfold tab when files are dragged onto tab button"
-msgstr ""
+msgstr "Despregar a lapela ao arrastrar ao botón da lapela"
 
 #: ../data/ui/pref.glade.h:14
 msgid "<b>Default View</b>"
@@ -250,7 +251,7 @@ msgstr "Utilizar prefixos decimais SI no canto de prefixos binarios IEC"
 
 #: ../data/ui/pref.glade.h:27
 msgid "Treat backup files as hidden"
-msgstr ""
+msgstr "Considerar os ficheiros de seguranza como agochados"
 
 #: ../data/ui/pref.glade.h:28
 msgid "Display"
@@ -273,18 +274,16 @@ msgid "Always show the tab bar"
 msgstr "Amosar sempre a barra de lapelas"
 
 #: ../data/ui/pref.glade.h:33
-#, fuzzy
 msgid "<b>Directories Tree</b>"
-msgstr "Árbore de cartafoles"
+msgstr "<b>Árbore de directorios</b>"
 
 #: ../data/ui/pref.glade.h:34
 msgid "Hide expander on empty or locked folder"
-msgstr ""
+msgstr "Agochar o despregue nun cartafol baleiro ou bloqueado"
 
 #: ../data/ui/pref.glade.h:35
-#, fuzzy
 msgid "<b>Show in Places:</b>"
-msgstr "<b>Amosar iconas no escritorio</b>"
+msgstr "<b>Amosar en Lugares</b>"
 
 #: ../data/ui/pref.glade.h:36
 msgid "Home Directory"
@@ -299,14 +298,12 @@ msgid "Applications"
 msgstr "Aplicativos"
 
 #: ../data/ui/pref.glade.h:39
-#, fuzzy
 msgid "Trash bin"
 msgstr "Cesta do lixo"
 
 #: ../data/ui/pref.glade.h:40
-#, fuzzy
 msgid "Layout"
-msgstr "Modo de deseño"
+msgstr "Disposición"
 
 #: ../data/ui/pref.glade.h:41
 msgid "<b>Auto-mount</b>"
@@ -328,12 +325,12 @@ msgstr ""
 #: ../data/ui/pref.glade.h:45
 msgid "Open mounted removable media in new tab instead of new window"
 msgstr ""
+"Abrir o dispositivo extraíbel nunha nova lapela, no canto de nunha nova "
+"xanela"
 
 #: ../data/ui/pref.glade.h:46
-#, fuzzy
 msgid "Close tab containing removable medium when it is unmounted"
-msgstr ""
-"Amosar as opcións dispoñíbeis para un soporte extraíbel cando é inserido"
+msgstr "Pechar a lapela de contido dun dispositivo extraíbel cando é desmontado"
 
 #: ../data/ui/pref.glade.h:47
 msgid "Volume Management"
@@ -367,7 +364,7 @@ msgstr "Integración con «Archiver»:"
 
 #: ../data/ui/pref.glade.h:55
 msgid "Use Application Startup Notify by default"
-msgstr ""
+msgstr "Empregar de xeito predeterminado o notificador de inicio de aplicativos"
 
 #: ../data/ui/pref.glade.h:56
 msgid ""
@@ -375,24 +372,27 @@ msgid ""
 "explicitly.\n"
 "If unchecked then use Startup Notify only if that is defined for application."
 msgstr ""
+"Se está marcado, empregarase o notificador de inicio de aplicativos se non "
+"hai outro declarado explicitamente.\n"
+"Se está desmarcado, entón empregarase o notificador de inicio de "
+"apilicativos se non só se está definido para o aplicativo."
 
 #: ../data/ui/pref.glade.h:59
 msgid "Auto (move if on the same FS, copy otherwise)"
 msgstr ""
+"Automático (se se move no mesmo sistema de ficheiros, senón fai unha copia)"
 
 #: ../data/ui/pref.glade.h:60
-#, fuzzy
 msgid "Copy"
-msgstr "Copiar:"
+msgstr "Copiar"
 
 #: ../data/ui/pref.glade.h:61
-#, fuzzy
 msgid "Move"
-msgstr "Mover:"
+msgstr "Mover"
 
 #: ../data/ui/pref.glade.h:62
 msgid "Ask"
-msgstr ""
+msgstr "Preguntar"
 
 #: ../data/ui/pref.glade.h:63
 msgid "Icon View"
@@ -637,11 +637,11 @@ msgstr "Panel lateral"
 
 #: ../src/main-win-ui.c:203
 msgid "Show Status B_ar"
-msgstr ""
+msgstr "Amosar a _barra de estado"
 
 #: ../src/main-win-ui.c:204
 msgid "Fullscreen Mode"
-msgstr ""
+msgstr "Modo de pantalla completa"
 
 #: ../src/main-win-ui.c:209
 msgid "_Icon View"
