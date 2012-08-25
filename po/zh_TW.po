@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-08-22 22:36+0200\n"
-"PO-Revision-Date: 2012-07-09 11:19+0200\n"
+"PO-Revision-Date: 2012-08-25 13:32+0200\n"
 "Last-Translator: Walter <wwycheuk@gmail.com>\n"
 "Language-Team: zh_TW <zh_TW@li.org>\n"
 "Language: zh_TW\n"
@@ -175,12 +175,11 @@ msgstr "將刪除的檔案移到「垃圾桶」而不真的從磁碟上清除"
 
 #: ../data/ui/pref.glade.h:9
 msgid "Erase files on removable media instead of \"trash bin\" creation"
-msgstr ""
+msgstr "當刪除移除式媒體的檔案時直接刪除，而非建立「垃圾桶」"
 
 #: ../data/ui/pref.glade.h:10
-#, fuzzy
 msgid "Confirm before moving files into \"trash bin\""
-msgstr "刪除檔案前先確認"
+msgstr "將檔案移至「垃圾桶」前先確認"
 
 #: ../data/ui/pref.glade.h:11
 msgid "Bookmarks:"
@@ -188,11 +187,11 @@ msgstr "書籤："
 
 #: ../data/ui/pref.glade.h:12
 msgid "Default drop action:"
-msgstr ""
+msgstr "預設置放動作："
 
 #: ../data/ui/pref.glade.h:13
 msgid "Unfold tab when files are dragged onto tab button"
-msgstr ""
+msgstr "當將檔案拖曳至分頁鈕時展開分頁"
 
 #: ../data/ui/pref.glade.h:14
 msgid "<b>Default View</b>"
@@ -248,7 +247,7 @@ msgstr "使用 SI 十進制前置字元，而非 IEC 二進制前置字元"
 
 #: ../data/ui/pref.glade.h:27
 msgid "Treat backup files as hidden"
-msgstr ""
+msgstr "將備份檔視為隱藏檔案"
 
 #: ../data/ui/pref.glade.h:28
 msgid "Display"
@@ -271,23 +270,20 @@ msgid "Always show the tab bar"
 msgstr "一定顯示分頁列"
 
 #: ../data/ui/pref.glade.h:33
-#, fuzzy
 msgid "<b>Directories Tree</b>"
-msgstr "目錄樹"
+msgstr "<b>目錄樹</b>"
 
 #: ../data/ui/pref.glade.h:34
 msgid "Hide expander on empty or locked folder"
-msgstr ""
+msgstr "在空的或鎖定的資料夾時隱藏擴展列"
 
 #: ../data/ui/pref.glade.h:35
-#, fuzzy
 msgid "<b>Show in Places:</b>"
-msgstr "<b>顯示桌面圖示</b>"
+msgstr "<b>在「地點」欄顯示：</b>"
 
 #: ../data/ui/pref.glade.h:36
-#, fuzzy
 msgid "Home Directory"
-msgstr "目錄樹"
+msgstr "家目錄"
 
 #: ../data/ui/pref.glade.h:37 ../src/main-win-ui.c:174
 msgid "Desktop Folder"
@@ -298,13 +294,12 @@ msgid "Applications"
 msgstr "應用程式"
 
 #: ../data/ui/pref.glade.h:39
-#, fuzzy
 msgid "Trash bin"
 msgstr "垃圾桶"
 
 #: ../data/ui/pref.glade.h:40
 msgid "Layout"
-msgstr ""
+msgstr "配置"
 
 #: ../data/ui/pref.glade.h:41
 msgid "<b>Auto-mount</b>"
@@ -324,12 +319,11 @@ msgstr "當插入可移除媒體時，顯示可用的選項"
 
 #: ../data/ui/pref.glade.h:45
 msgid "Open mounted removable media in new tab instead of new window"
-msgstr ""
+msgstr "在新分頁而非新視窗開啟可移除媒體"
 
 #: ../data/ui/pref.glade.h:46
-#, fuzzy
 msgid "Close tab containing removable medium when it is unmounted"
-msgstr "當插入可移除媒體時，顯示可用的選項"
+msgstr "當卸載可移除媒體時，關閉其分頁"
 
 #: ../data/ui/pref.glade.h:47
 msgid "Volume Management"
@@ -362,7 +356,7 @@ msgstr "壓縮軟體整合："
 
 #: ../data/ui/pref.glade.h:55
 msgid "Use Application Startup Notify by default"
-msgstr ""
+msgstr "預設使用應用程式啟動通知"
 
 #: ../data/ui/pref.glade.h:56
 msgid ""
@@ -370,22 +364,24 @@ msgid ""
 "explicitly.\n"
 "If unchecked then use Startup Notify only if that is defined for application."
 msgstr ""
+"如勾選，如沒有另外設定則使用應用程式啟動通知。\n"
+"如不勾選，只在應用程式有個別設定時使用啟動通知。"
 
 #: ../data/ui/pref.glade.h:59
 msgid "Auto (move if on the same FS, copy otherwise)"
-msgstr ""
+msgstr "自動 (如在同一檔案系統則移動；其他情況則複製)"
 
 #: ../data/ui/pref.glade.h:60
 msgid "Copy"
-msgstr ""
+msgstr "複製"
 
 #: ../data/ui/pref.glade.h:61
 msgid "Move"
-msgstr ""
+msgstr "移動"
 
 #: ../data/ui/pref.glade.h:62
 msgid "Ask"
-msgstr ""
+msgstr "詢問"
 
 #: ../data/ui/pref.glade.h:63
 msgid "Icon View"
@@ -630,11 +626,11 @@ msgstr "顯示側邊欄"
 
 #: ../src/main-win-ui.c:203
 msgid "Show Status B_ar"
-msgstr ""
+msgstr "顯示狀態列(_A)"
 
 #: ../src/main-win-ui.c:204
 msgid "Fullscreen Mode"
-msgstr ""
+msgstr "全螢幕模式"
 
 #: ../src/main-win-ui.c:209
 msgid "_Icon View"
