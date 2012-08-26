@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-08-22 22:36+0200\n"
-"PO-Revision-Date: 2012-08-16 20:37+0200\n"
+"PO-Revision-Date: 2012-08-26 11:57+0200\n"
 "Last-Translator: Anari <anari.jalakas@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: et\n"
@@ -175,23 +175,24 @@ msgstr "Liiguta kustutatavad failid \"prügikorvi\" ilma neid kustutamata"
 #: ../data/ui/pref.glade.h:9
 msgid "Erase files on removable media instead of \"trash bin\" creation"
 msgstr ""
+"Eemaldatava mäluseadme failide kustutatamine ilma \"prügikasti\" viskamata"
 
 #: ../data/ui/pref.glade.h:10
-#, fuzzy
 msgid "Confirm before moving files into \"trash bin\""
-msgstr "Küsi enne failide kustutamist"
+msgstr "Küsi enne failide \"prügikasti\" tõstmistt"
 
 #: ../data/ui/pref.glade.h:11
 msgid "Bookmarks:"
 msgstr "Järjehoidjad:"
 
+# Kus kasutatakse ja miks?
 #: ../data/ui/pref.glade.h:12
 msgid "Default drop action:"
-msgstr ""
+msgstr "Vaikimisi tegevus lahtilaskmisel:"
 
 #: ../data/ui/pref.glade.h:13
 msgid "Unfold tab when files are dragged onto tab button"
-msgstr ""
+msgstr "Ava kaart kui faile liigutatakse kaardi nupule"
 
 #: ../data/ui/pref.glade.h:14
 msgid "<b>Default View</b>"
@@ -270,23 +271,20 @@ msgid "Always show the tab bar"
 msgstr "Kaardiriba näidatakse alati"
 
 #: ../data/ui/pref.glade.h:33
-#, fuzzy
 msgid "<b>Directories Tree</b>"
-msgstr "Kaustapuu"
+msgstr "<b>Kaustapuu</b>"
 
 #: ../data/ui/pref.glade.h:34
 msgid "Hide expander on empty or locked folder"
-msgstr ""
+msgstr "Tühja ja lukus kausta puhul laiendajat ei näidata"
 
 #: ../data/ui/pref.glade.h:35
-#, fuzzy
 msgid "<b>Show in Places:</b>"
-msgstr "<b>Näita töölaua ikoone</b>"
+msgstr "<b>Näita asukohtades:</b>"
 
 #: ../data/ui/pref.glade.h:36
-#, fuzzy
 msgid "Home Directory"
-msgstr "Kaustapuu"
+msgstr "Kodukaust"
 
 #: ../data/ui/pref.glade.h:37 ../src/main-win-ui.c:174
 msgid "Desktop Folder"
@@ -297,13 +295,12 @@ msgid "Applications"
 msgstr "Rakendused"
 
 #: ../data/ui/pref.glade.h:39
-#, fuzzy
 msgid "Trash bin"
 msgstr "Prügikorv"
 
 #: ../data/ui/pref.glade.h:40
 msgid "Layout"
-msgstr ""
+msgstr "Asetus"
 
 #: ../data/ui/pref.glade.h:41
 msgid "<b>Auto-mount</b>"
@@ -323,12 +320,11 @@ msgstr "Näita eemaldatava andmekandja sisestamisel kasutatavaid võimalusi"
 
 #: ../data/ui/pref.glade.h:45
 msgid "Open mounted removable media in new tab instead of new window"
-msgstr ""
+msgstr "Eemaldatava andmekandja sisu avamine uue akna asemel uuel kaardil"
 
 #: ../data/ui/pref.glade.h:46
-#, fuzzy
 msgid "Close tab containing removable medium when it is unmounted"
-msgstr "Näita eemaldatava andmekandja sisestamisel kasutatavaid võimalusi"
+msgstr "Sulge eemaldatava andmekandja kaart selle eemaldamisel"
 
 #: ../data/ui/pref.glade.h:47
 msgid "Volume Management"
@@ -352,9 +348,8 @@ msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
 "%s = the command line you want to execute with terminal or su."
 msgstr ""
-"Näiteks: \"xterm -e %s\" terminali jaoks või \"gksu %s\" muu kasutajana "
-"käivitamiseks.\n"
-"%s = käsklus mida soovid terminalis \"su\" abil käivitada."
+"Näiteks: \"xterm -e %s\" terminali jaoks või \"gksu %s\" kasutaja vahetamiseks.\n"
+"%s = käsklus mida soovid terminalis või \"su\" abil käivitada."
 
 #: ../data/ui/pref.glade.h:54
 msgid "Archiver integration:"
@@ -377,18 +372,20 @@ msgstr ""
 #: ../data/ui/pref.glade.h:59
 msgid "Auto (move if on the same FS, copy otherwise)"
 msgstr ""
+"Automaatne (sama failisüsteemi korral liigutamine, erinevate puhul "
+"kopeerimine)"
 
 #: ../data/ui/pref.glade.h:60
 msgid "Copy"
-msgstr ""
+msgstr "Kopeeri"
 
 #: ../data/ui/pref.glade.h:61
 msgid "Move"
-msgstr ""
+msgstr "Liiguta"
 
 #: ../data/ui/pref.glade.h:62
 msgid "Ask"
-msgstr ""
+msgstr "Küsimine"
 
 #: ../data/ui/pref.glade.h:63
 msgid "Icon View"
@@ -633,7 +630,7 @@ msgstr "Näita külgpaneeli"
 
 #: ../src/main-win-ui.c:203
 msgid "Show Status B_ar"
-msgstr ""
+msgstr "Näita _olekuriba"
 
 #: ../src/main-win-ui.c:204
 msgid "Fullscreen Mode"
@@ -701,7 +698,7 @@ msgstr "Käivita PCManFM deemonina"
 
 #: ../src/pcmanfm.c:75
 msgid "No function. Just to be compatible with nautilus"
-msgstr "Ilma funktsioonita. Ainult \"Nautilusega\" kooskõlas olemiseks"
+msgstr "Ilma funktsioonita. Ainult programmiga \"Nautilus\" ühilduvuseks"
 
 #. options that are acceptable for every instance of pcmanfm and will be passed through IPC.
 #: ../src/pcmanfm.c:78
@@ -727,8 +724,8 @@ msgstr "<pildifail>"
 #: ../src/pcmanfm.c:82
 msgid "Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"
 msgstr ""
-"Määra töölaua taustapildi režiim. <laad>=(värviline|venitatud|sobitatud|"
-"keskel|plaaditud)"
+"Määra töölaua taustapildi režiim. "
+"<laad>=(värviline|venitatud|sobitatud|keskel|plaaditud)"
 
 #: ../src/pcmanfm.c:82
 msgid "<mode>"
@@ -768,11 +765,11 @@ msgstr "Uus"
 
 #: ../src/pcmanfm.c:676
 msgid "Error, lxshortcut not installed"
-msgstr "Viga, LXShortcut pole paigaldatud"
+msgstr "Viga, \"LXShortcut\" on paigaldamata"
 
 #: ../src/pcmanfm.c:681
 msgid "Failed to start lxshortcut"
-msgstr "LXShortcuti käivitamine ebaõnnestus"
+msgstr "Programmi \"LXShortcut\" käivitamine ebaõnnestus"
 
 #: ../src/tab-page.c:211
 #, c-format
