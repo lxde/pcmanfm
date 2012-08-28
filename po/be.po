@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-08-22 22:36+0200\n"
-"PO-Revision-Date: 2012-08-15 17:17+0200\n"
+"PO-Revision-Date: 2012-08-28 19:30+0200\n"
 "Last-Translator: Мікалай <crom-a@tut.by>\n"
 "Language-Team: Belarusian <i18n@mova.org>\n"
 "Language: be\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Pootle 2.0.5\n"
 
 #: ../data/ui/about.glade.in.h:1
@@ -178,12 +178,11 @@ msgstr "Перамяшчаць сцёртыя файлы ў \"Сметніцу\"
 
 #: ../data/ui/pref.glade.h:9
 msgid "Erase files on removable media instead of \"trash bin\" creation"
-msgstr ""
+msgstr "Сціраць файлы з рухомых носнікаў замест стварэння \"Сметніцы\""
 
 #: ../data/ui/pref.glade.h:10
-#, fuzzy
 msgid "Confirm before moving files into \"trash bin\""
-msgstr "Пацвярджаць сціранне файлаў"
+msgstr "Пацвярджаць перамяшчэнне файлаў у \"Сметніцу\""
 
 #: ../data/ui/pref.glade.h:11
 msgid "Bookmarks:"
@@ -191,11 +190,11 @@ msgstr "Закладкі:"
 
 #: ../data/ui/pref.glade.h:12
 msgid "Default drop action:"
-msgstr ""
+msgstr "Базавае дзеянне пры перацягванні:"
 
 #: ../data/ui/pref.glade.h:13
 msgid "Unfold tab when files are dragged onto tab button"
-msgstr ""
+msgstr "Разгортваць картку, калі файлы перацягваюцца на кнопку карткі"
 
 #: ../data/ui/pref.glade.h:14
 msgid "<b>Default View</b>"
@@ -274,23 +273,20 @@ msgid "Always show the tab bar"
 msgstr "Заўсёды паказваць панэль картак"
 
 #: ../data/ui/pref.glade.h:33
-#, fuzzy
 msgid "<b>Directories Tree</b>"
-msgstr "Дрэва каталогаў"
+msgstr "<b>Дрэва каталогаў</b>"
 
 #: ../data/ui/pref.glade.h:34
 msgid "Hide expander on empty or locked folder"
-msgstr ""
+msgstr "Хаваць кнопку разгортвання пустых ці заблакаваных каталогаў"
 
 #: ../data/ui/pref.glade.h:35
-#, fuzzy
 msgid "<b>Show in Places:</b>"
-msgstr "<b>Паказваць значкі на працоўнай прасторы</b>"
+msgstr "<b>Паказваць на прасторах:</b>"
 
 #: ../data/ui/pref.glade.h:36
-#, fuzzy
 msgid "Home Directory"
-msgstr "Дрэва каталогаў"
+msgstr "Хатні каталог"
 
 #: ../data/ui/pref.glade.h:37 ../src/main-win-ui.c:174
 msgid "Desktop Folder"
@@ -301,13 +297,12 @@ msgid "Applications"
 msgstr "Праграмы"
 
 #: ../data/ui/pref.glade.h:39
-#, fuzzy
 msgid "Trash bin"
 msgstr "Сметніца"
 
 #: ../data/ui/pref.glade.h:40
 msgid "Layout"
-msgstr ""
+msgstr "Выклад"
 
 #: ../data/ui/pref.glade.h:41
 msgid "<b>Auto-mount</b>"
@@ -328,11 +323,11 @@ msgstr "Паказваць даступныя опцыі для рухомых �
 #: ../data/ui/pref.glade.h:45
 msgid "Open mounted removable media in new tab instead of new window"
 msgstr ""
+"Адкрываць прымацаваныя рухомыя носнікі ў новай картцы замест новага вакна"
 
 #: ../data/ui/pref.glade.h:46
-#, fuzzy
 msgid "Close tab containing removable medium when it is unmounted"
-msgstr "Паказваць даступныя опцыі для рухомых носнікаў, калі яны падлучаны"
+msgstr "Закрываць картку са зместам рухомага носніка, калі ён адмацаваны"
 
 #: ../data/ui/pref.glade.h:47
 msgid "Volume Management"
@@ -376,24 +371,24 @@ msgid ""
 msgstr ""
 "Калі ўстаноўлена, Паказальнік запуску будзе ўжыты для ўсіх праграм, калі "
 "адваротнае не ўказана яўна.\n"
-" Калі знята, Паказальнік запуску будзе ўжыты толькі калі ён прызначаны "
-"пэўнай праграме."
+"Калі знята, Паказальнік запуску будзе ўжыты толькі калі ён прызначаны пэўнай "
+"праграме."
 
 #: ../data/ui/pref.glade.h:59
 msgid "Auto (move if on the same FS, copy otherwise)"
-msgstr ""
+msgstr "Аўтаматычна (пераносіць у межах ФС, інакш капіраваць)"
 
 #: ../data/ui/pref.glade.h:60
 msgid "Copy"
-msgstr ""
+msgstr "Капіраваць"
 
 #: ../data/ui/pref.glade.h:61
 msgid "Move"
-msgstr ""
+msgstr "Перанесці"
 
 #: ../data/ui/pref.glade.h:62
 msgid "Ask"
-msgstr ""
+msgstr "Спытаць"
 
 #: ../data/ui/pref.glade.h:63
 msgid "Icon View"
@@ -638,7 +633,7 @@ msgstr "Паказваць бакавую панэль"
 
 #: ../src/main-win-ui.c:203
 msgid "Show Status B_ar"
-msgstr ""
+msgstr "Паказваць _стужку статусу"
 
 #: ../src/main-win-ui.c:204
 msgid "Fullscreen Mode"
