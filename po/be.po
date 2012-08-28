@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-08-22 22:36+0200\n"
-"PO-Revision-Date: 2012-08-28 19:30+0200\n"
+"PO-Revision-Date: 2012-08-28 20:42+0200\n"
 "Last-Translator: Мікалай <crom-a@tut.by>\n"
 "Language-Team: Belarusian <i18n@mova.org>\n"
 "Language: be\n"
@@ -96,7 +96,7 @@ msgstr "<b>Паказваць значкі на працоўнай прасто�
 
 #: ../data/ui/desktop-pref.glade.h:14
 msgid "Show \"My Documents\" icon on desktop"
-msgstr "Паказваць на працоўнай прасторы значок \"Мае дакументы\""
+msgstr "Паказваць на працоўнай прасторы значок \"Дакументы\""
 
 #: ../data/ui/desktop-pref.glade.h:15
 msgid "Show \"My Computer\" icon on desktop"
@@ -194,7 +194,7 @@ msgstr "Базавае дзеянне пры перацягванні:"
 
 #: ../data/ui/pref.glade.h:13
 msgid "Unfold tab when files are dragged onto tab button"
-msgstr "Разгортваць картку, калі файлы перацягваюцца на кнопку карткі"
+msgstr "Разгортваць картку пры перацягванні файлаў на кнопку карткі"
 
 #: ../data/ui/pref.glade.h:14
 msgid "<b>Default View</b>"
@@ -278,11 +278,11 @@ msgstr "<b>Дрэва каталогаў</b>"
 
 #: ../data/ui/pref.glade.h:34
 msgid "Hide expander on empty or locked folder"
-msgstr "Хаваць кнопку разгортвання пустых ці заблакаваных каталогаў"
+msgstr "Не разгортваць пустыя ці заблакаваныя каталогі"
 
 #: ../data/ui/pref.glade.h:35
 msgid "<b>Show in Places:</b>"
-msgstr "<b>Паказваць на прасторах:</b>"
+msgstr "<b>Паказваць на месцах:</b>"
 
 #: ../data/ui/pref.glade.h:36
 msgid "Home Directory"
@@ -302,19 +302,19 @@ msgstr "Сметніца"
 
 #: ../data/ui/pref.glade.h:40
 msgid "Layout"
-msgstr "Выклад"
+msgstr "Размяшчэнне"
 
 #: ../data/ui/pref.glade.h:41
 msgid "<b>Auto-mount</b>"
-msgstr "<b>Аўтаманціраванне</b>"
+msgstr "<b>Аўтамацаванне</b>"
 
 #: ../data/ui/pref.glade.h:42
 msgid "Mount mountable volumes automatically on program startup"
-msgstr "Аўтаматычна манціраваць дыскі пры запуску праграмы"
+msgstr "Аўтаматычна мацаваць дыскі пры запуску праграмы"
 
 #: ../data/ui/pref.glade.h:43
 msgid "Mount removable media automatically when they are inserted"
-msgstr "Аўтаматычна манціраваць рухомыя носнікі пры іх падлучэнні"
+msgstr "Аўтаматычна мацаваць рухомыя носнікі пры іх падлучэнні"
 
 #: ../data/ui/pref.glade.h:44
 msgid "Show available options for removable media when they are inserted"
@@ -457,7 +457,7 @@ msgstr "Пусты файл"
 
 #: ../src/desktop-ui.c:59 ../src/main-win-ui.c:195
 msgid "Shortcut"
-msgstr "Скарот"
+msgstr "Цэтлік"
 
 #: ../src/desktop-ui.c:71 ../src/main-win-ui.c:223
 msgid "By _Name"
@@ -597,7 +597,7 @@ msgstr "Сметніца"
 
 #: ../src/main-win-ui.c:177
 msgid "Network Drives"
-msgstr "Сеткавыя прылады"
+msgstr "Сеткавыя дыскі"
 
 #: ../src/main-win-ui.c:178
 msgid "Installed Applications"
@@ -701,7 +701,7 @@ msgstr "Запусціць PCManFM як дэман"
 
 #: ../src/pcmanfm.c:75
 msgid "No function. Just to be compatible with nautilus"
-msgstr "Няма функцый. Для сумяшчальнасці з Nautilus"
+msgstr "Няма функцыі. Для сумяшчальнасці з Nautilus"
 
 #. options that are acceptable for every instance of pcmanfm and will be passed through IPC.
 #: ../src/pcmanfm.c:78
