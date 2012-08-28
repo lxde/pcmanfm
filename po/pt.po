@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-08-22 22:36+0200\n"
-"PO-Revision-Date: 2012-08-18 02:18+0200\n"
+"PO-Revision-Date: 2012-08-28 12:40+0200\n"
 "Last-Translator: Sérgio <smarquespt@gmail.com>\n"
 "Language-Team: \n"
 "Language: pt\n"
@@ -56,7 +56,7 @@ msgstr "Papel de parede:"
 
 #: ../data/ui/desktop-pref.glade.h:4
 msgid "Please select an image file"
-msgstr "Por favor, selecione uma imagem"
+msgstr "Por favor selecione uma imagem"
 
 #: ../data/ui/desktop-pref.glade.h:5
 msgid "Use the same wallpaper on all desktops"
@@ -172,17 +172,15 @@ msgstr "Confirmar antes de eliminar ficheiros"
 
 #: ../data/ui/pref.glade.h:8
 msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
-msgstr ""
-"Mover ficheiros eliminados para o \"lixo\" em vez de os eliminar do disco"
+msgstr "Mover ficheiros eliminados para o lixo em vez de os eliminar do disco"
 
 #: ../data/ui/pref.glade.h:9
 msgid "Erase files on removable media instead of \"trash bin\" creation"
-msgstr ""
+msgstr "Eliminar ficheiros dos discos amovíveis em vez de os enviar para o lixo"
 
 #: ../data/ui/pref.glade.h:10
-#, fuzzy
 msgid "Confirm before moving files into \"trash bin\""
-msgstr "Confirmar antes de eliminar ficheiros"
+msgstr "Confirmar antes de enviar os ficheiros para o lixo"
 
 #: ../data/ui/pref.glade.h:11
 msgid "Bookmarks:"
@@ -190,11 +188,11 @@ msgstr "Marcadores:"
 
 #: ../data/ui/pref.glade.h:12
 msgid "Default drop action:"
-msgstr ""
+msgstr "Ação padrão ao largar:"
 
 #: ../data/ui/pref.glade.h:13
 msgid "Unfold tab when files are dragged onto tab button"
-msgstr ""
+msgstr "Expandir separador se os ficheiros forem largados no botão do separador"
 
 #: ../data/ui/pref.glade.h:14
 msgid "<b>Default View</b>"
@@ -273,23 +271,20 @@ msgid "Always show the tab bar"
 msgstr "Mostrar sempre barra de separadores"
 
 #: ../data/ui/pref.glade.h:33
-#, fuzzy
 msgid "<b>Directories Tree</b>"
-msgstr "Árvore de diretórios"
+msgstr "<b>Árvore de diretórios</b>"
 
 #: ../data/ui/pref.glade.h:34
 msgid "Hide expander on empty or locked folder"
-msgstr ""
+msgstr "Ocultar expansão se em pasta vazia ou bloqueada"
 
 #: ../data/ui/pref.glade.h:35
-#, fuzzy
 msgid "<b>Show in Places:</b>"
-msgstr "<b>Mostrar ícones na área de trabalho</b>"
+msgstr "<b>Mostrar em Locais:</b>"
 
 #: ../data/ui/pref.glade.h:36
-#, fuzzy
 msgid "Home Directory"
-msgstr "Árvore de diretórios"
+msgstr "Pasta pessoal"
 
 #: ../data/ui/pref.glade.h:37 ../src/main-win-ui.c:174
 msgid "Desktop Folder"
@@ -300,13 +295,12 @@ msgid "Applications"
 msgstr "Aplicações"
 
 #: ../data/ui/pref.glade.h:39
-#, fuzzy
 msgid "Trash bin"
 msgstr "Lixo"
 
 #: ../data/ui/pref.glade.h:40
 msgid "Layout"
-msgstr ""
+msgstr "Esquema"
 
 #: ../data/ui/pref.glade.h:41
 msgid "<b>Auto-mount</b>"
@@ -327,11 +321,11 @@ msgstr "Ao inserir o disco amovível, mostrar as opções disponíveis"
 #: ../data/ui/pref.glade.h:45
 msgid "Open mounted removable media in new tab instead of new window"
 msgstr ""
+"Ao montar um disco amovível, abrir um novo separador e não uma nova janela"
 
 #: ../data/ui/pref.glade.h:46
-#, fuzzy
 msgid "Close tab containing removable medium when it is unmounted"
-msgstr "Ao inserir o disco amovível, mostrar as opções disponíveis"
+msgstr "Ao desmontar um disco amovível, fechar o separador correspondente"
 
 #: ../data/ui/pref.glade.h:47
 msgid "Volume Management"
@@ -355,9 +349,8 @@ msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
 "%s = the command line you want to execute with terminal or su."
 msgstr ""
-"Exemplos: \"xterm -e %s\" para terminal ou \"gksu %s\" para trocar "
-"utilizadores.\n"
-"%s = a linha de comandos a executar com o terminal ou su."
+"Exemplos: \"xterm -e %s\" para terminal ou \"gksu %s\" para trocar utilizadores.\n"
+"%s é a linha de comandos a executar com o terminal ou com su."
 
 #: ../data/ui/pref.glade.h:54
 msgid "Archiver integration:"
@@ -381,18 +374,20 @@ msgstr ""
 #: ../data/ui/pref.glade.h:59
 msgid "Auto (move if on the same FS, copy otherwise)"
 msgstr ""
+"Automático (Se estiver no mesmo sistema de ficheiros mover. Se não estiver, "
+"copiar)"
 
 #: ../data/ui/pref.glade.h:60
 msgid "Copy"
-msgstr ""
+msgstr "Copiar"
 
 #: ../data/ui/pref.glade.h:61
 msgid "Move"
-msgstr ""
+msgstr "Mover"
 
 #: ../data/ui/pref.glade.h:62
 msgid "Ask"
-msgstr ""
+msgstr "Perguntar"
 
 #: ../data/ui/pref.glade.h:63
 msgid "Icon View"
@@ -428,7 +423,7 @@ msgstr "A detetar..."
 
 #: ../data/ui/autorun.glade.h:5
 msgid "Please select the action you want to perform:"
-msgstr "Por favor, selecione a ação a executar:"
+msgstr "Por favor selecione a ação a executar:"
 
 #: ../src/volume-manager.c:160
 msgid "Removable Disk"
@@ -637,7 +632,7 @@ msgstr "Mostrar painel lateral"
 
 #: ../src/main-win-ui.c:203
 msgid "Show Status B_ar"
-msgstr ""
+msgstr "Mostr_ar barra de estado"
 
 #: ../src/main-win-ui.c:204
 msgid "Fullscreen Mode"
