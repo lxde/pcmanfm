@@ -910,6 +910,15 @@ static gboolean on_button_press(GtkWidget* w, GdkEventButton* evt)
             }
             else if(evt->button == 1)
             {
+                /* disable Gtk+ DnD callbacks, because else rubberbanding will be interrupted */
+                gpointer drag_data = g_object_get_data(G_OBJECT(self),
+                                        g_intern_static_string("gtk-site-data"));
+                if(G_LIKELY(drag_data != NULL))
+                {
+                    g_signal_handlers_block_matched(G_OBJECT(self),
+                                                    G_SIGNAL_MATCH_DATA, 0, 0,
+                                                    NULL, NULL, drag_data);
+                }
                 self->rubber_bending = TRUE;
 
                 /* FIXME: if you foward the event here, this will break rubber bending... */
@@ -952,6 +961,14 @@ static gboolean on_button_release(GtkWidget* w, GdkEventButton* evt)
 
     if(self->rubber_bending)
     {
+        /* re-enable Gtk+ DnD callbacks again */
+        gpointer drag_data = g_object_get_data(G_OBJECT(self),
+                                    g_intern_static_string("gtk-site-data"));
+        if(G_LIKELY(drag_data != NULL))
+        {
+            g_signal_handlers_unblock_matched(G_OBJECT(self), G_SIGNAL_MATCH_DATA,
+                                              0, 0, NULL, NULL, drag_data);
+        }
         update_rubberbanding(self, evt->x, evt->y);
         gtk_grab_remove(w);
         self->rubber_bending = FALSE;
