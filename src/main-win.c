@@ -1249,6 +1249,11 @@ static void on_folder_view_clicked(FmFolderView* fv, FmFolderViewClickType type,
             FmFileMenu* menu;
             GtkMenu* popup;
             FmFileInfoList* files = fm_folder_view_dup_selected_files(fv);
+            if(!files) /* FIXME: workaround for ExoTreeView failure */
+            {
+                files = fm_file_info_list_new();
+                fm_file_info_list_push_tail(files, fi);
+            }
             menu = fm_file_menu_new_for_files(GTK_WINDOW(win), files, fm_folder_view_get_cwd(fv), TRUE);
             fm_file_menu_set_folder_func(menu, open_folder_func, win);
             fm_file_info_list_unref(files);
