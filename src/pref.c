@@ -276,6 +276,20 @@ static void on_tab_label_list_sel_changed(GtkTreeSelection* tree_sel, gpointer u
     gtk_tree_path_free(tp);
 }
 
+static void on_notebook_page_changed(GtkNotebook *notebook, gpointer page,
+                                     guint n, GtkTreeSelection* tree_sel)
+{
+    GtkTreeIter it;
+    GtkTreeModel* model;
+    char path_str[8];
+
+    snprintf(path_str, sizeof(path_str), "%u", n);
+    /* g_debug("changed pref page: %u", n); */
+    gtk_tree_selection_get_selected(tree_sel, &model, &it);
+    gtk_tree_model_get_iter_from_string(model, &it, path_str);
+    gtk_tree_selection_select_iter(tree_sel, &it);
+}
+
 void fm_edit_preference( GtkWindow* parent, int page )
 {
     if(!pref_dlg)
@@ -339,6 +353,7 @@ void fm_edit_preference( GtkWindow* parent, int page )
         gtk_tree_selection_select_iter(tree_sel, &it);
         g_object_unref(tab_label_model);
         g_signal_connect(tree_sel, "changed", G_CALLBACK(on_tab_label_list_sel_changed), notebook);
+        g_signal_connect(notebook, "switch-page", G_CALLBACK(on_notebook_page_changed), tree_sel);
         gtk_notebook_set_show_tabs(notebook, FALSE);
 
         g_signal_connect(pref_dlg, "response", G_CALLBACK(on_response), &pref_dlg);
@@ -349,6 +364,8 @@ void fm_edit_preference( GtkWindow* parent, int page )
         if(parent)
             gtk_window_set_transient_for(pref_dlg, parent);
     }
+    if(page < 0 || page >= gtk_notebook_get_n_pages(notebook))
+        page = 0;
     gtk_notebook_set_current_page(notebook, page);
     gtk_window_present(pref_dlg);
 }

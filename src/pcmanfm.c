@@ -64,6 +64,7 @@ static char* wallpaper_mode = NULL;
 /* static gboolean new_win = FALSE; */
 static gboolean find_files = FALSE;
 static char* ipc_cwd = NULL;
+/* static char* window_role = NULL; */
 
 static int n_pcmanfm_ref = 0;
 
@@ -84,6 +85,7 @@ static GOptionEntry opt_entries[] =
     { "show-pref", '\0', 0, G_OPTION_ARG_INT, &show_pref, N_("Open preference dialog. 'n' is number of the page you want to show (1, 2, 3...)."), "n" },
     /* { "new-win", '\0', 'n', G_OPTION_ARG_NONE, &new_win, N_("Open new window"), NULL }, */
     /* { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL }, */
+    /* { "role", '\0', 0, G_OPTION_ARG_STRING, &window_role, N_("Window role for usage by window manager", N_("ROLE") }, */
     {G_OPTION_REMAINING, 0, 0, G_OPTION_ARG_FILENAME_ARRAY, &files_to_open, NULL, N_("[FILE1, FILE2,...]")},
     { NULL }
 };
@@ -432,6 +434,7 @@ gboolean pcmanfm_run()
                 fm_path_unref(path);
                 g_free(cwd);
                 ipc_cwd = NULL;
+                /* FIXME: bug #3453052: honor --role option */
             }
             first_run = FALSE;
         }
@@ -488,6 +491,8 @@ static void move_window_to_desktop(FmMainWin* win, FmDesktop* desktop)
 gboolean pcmanfm_open_folder(GAppLaunchContext* ctx, GList* folder_infos, gpointer user_data, GError** err)
 {
     GList* l = folder_infos;
+    /* FIXME: honor --new-win option and in that case: */
+    /* FIXME: bug #3453052: honor --role from client */
     for(; l; l=l->next)
     {
         FmFileInfo* fi = (FmFileInfo*)l->data;

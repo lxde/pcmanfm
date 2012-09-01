@@ -118,6 +118,7 @@ static void pass_args_to_existing_instance(const GOptionEntry* opt_entries, int 
                 for(; *strv; ++strv)
                 {
                     char* str = *strv;
+                    /* FIXME: if not absolute path and not URI then prepend cwd or $HOME */
                     if(g_str_has_prefix(str, "--")) /* strings begining with -- */
                         fprintf(f, "--\n"); /* prepend a -- to it */
                     escaped = g_strescape(str, NULL);
