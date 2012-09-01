@@ -366,6 +366,7 @@ gboolean pcmanfm_run()
         if(files_to_open)
         {
             char** filename;
+            /* FIXME: use fm_launch_paths_simple() so don't use job */
             FmFileInfoJob* job = fm_file_info_job_new(NULL, 0);
             FmPath* cwd = NULL;
             GList* infos;
@@ -399,6 +400,7 @@ gboolean pcmanfm_run()
             }
             if(cwd)
                 fm_path_unref(cwd);
+            /* FIXME: use fm_launch_paths_simple() instead */
             g_signal_connect(job, "error", G_CALLBACK(on_file_info_job_error), NULL);
             fm_job_run_sync_with_mainloop(FM_JOB(job));
             infos = fm_file_info_list_peek_head_link(job->file_infos);

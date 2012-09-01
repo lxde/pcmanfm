@@ -139,6 +139,12 @@ done
 AM_GLIB_GNU_GETTEXT
 AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$GETTEXT_PACKAGE", [Gettext package.])
 
+dnl Fix invalid sysconfdir when --prefix=/usr
+if test `eval "echo $sysconfdir"` = /usr/etc
+then
+    sysconfdir=/etc
+fi
+
 AC_CONFIG_FILES([
     Makefile
     src/Makefile
