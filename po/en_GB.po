@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm 0.9.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-08-22 22:36+0200\n"
-"PO-Revision-Date: 2012-07-14 11:34+0200\n"
+"PO-Revision-Date: 2012-09-03 22:19+0200\n"
 "Last-Translator: Steve <yorvik.ubunto@gmail.com>\n"
 "Language: en_GB\n"
 "MIME-Version: 1.0\n"
@@ -172,12 +172,11 @@ msgstr "Move deleted files to \"Rubbish Bin\" instead of erasing from disk"
 
 #: ../data/ui/pref.glade.h:9
 msgid "Erase files on removable media instead of \"trash bin\" creation"
-msgstr ""
+msgstr "Erase files on removable media instead of \"trash bin\" creation"
 
 #: ../data/ui/pref.glade.h:10
-#, fuzzy
 msgid "Confirm before moving files into \"trash bin\""
-msgstr "Confirm before deleting files"
+msgstr "Confirm before moving files into \"rubbish bin\""
 
 #: ../data/ui/pref.glade.h:11
 msgid "Bookmarks:"
@@ -185,11 +184,11 @@ msgstr "Bookmarks:"
 
 #: ../data/ui/pref.glade.h:12
 msgid "Default drop action:"
-msgstr ""
+msgstr "Default drop action:"
 
 #: ../data/ui/pref.glade.h:13
 msgid "Unfold tab when files are dragged onto tab button"
-msgstr ""
+msgstr "Unfold tab when files are dragged onto tab button"
 
 #: ../data/ui/pref.glade.h:14
 msgid "<b>Default View</b>"
@@ -245,7 +244,7 @@ msgstr "Use SI decimal prefixes instead of IEC binary prefixes"
 
 #: ../data/ui/pref.glade.h:27
 msgid "Treat backup files as hidden"
-msgstr ""
+msgstr "Treat backup files as hidden"
 
 #: ../data/ui/pref.glade.h:28
 msgid "Display"
@@ -268,23 +267,20 @@ msgid "Always show the tab bar"
 msgstr "Always show the tab bar"
 
 #: ../data/ui/pref.glade.h:33
-#, fuzzy
 msgid "<b>Directories Tree</b>"
-msgstr "Directory Tree"
+msgstr "<b> Directory Tree</b>"
 
 #: ../data/ui/pref.glade.h:34
 msgid "Hide expander on empty or locked folder"
-msgstr ""
+msgstr "Hide expander on empty or locked folder"
 
 #: ../data/ui/pref.glade.h:35
-#, fuzzy
 msgid "<b>Show in Places:</b>"
-msgstr "<b>Show desktop icons</b>"
+msgstr "<b>Show in Places:</b>"
 
 #: ../data/ui/pref.glade.h:36
-#, fuzzy
 msgid "Home Directory"
-msgstr "Directory Tree"
+msgstr "Home Directory"
 
 #: ../data/ui/pref.glade.h:37 ../src/main-win-ui.c:174
 msgid "Desktop Folder"
@@ -295,13 +291,12 @@ msgid "Applications"
 msgstr "Applications"
 
 #: ../data/ui/pref.glade.h:39
-#, fuzzy
 msgid "Trash bin"
 msgstr "Rubbish Bin"
 
 #: ../data/ui/pref.glade.h:40
 msgid "Layout"
-msgstr ""
+msgstr "Layout"
 
 #: ../data/ui/pref.glade.h:41
 msgid "<b>Auto-mount</b>"
@@ -321,12 +316,11 @@ msgstr "Show available options for removable media when they are inserted"
 
 #: ../data/ui/pref.glade.h:45
 msgid "Open mounted removable media in new tab instead of new window"
-msgstr ""
+msgstr "Open mounted removable media in new tab instead of new window"
 
 #: ../data/ui/pref.glade.h:46
-#, fuzzy
 msgid "Close tab containing removable medium when it is unmounted"
-msgstr "Show available options for removable media when they are inserted"
+msgstr "Close tab containing removable medium when it is unmounted"
 
 #: ../data/ui/pref.glade.h:47
 msgid "Volume Management"
@@ -359,7 +353,7 @@ msgstr "Archiver integration:"
 
 #: ../data/ui/pref.glade.h:55
 msgid "Use Application Startup Notify by default"
-msgstr ""
+msgstr "Use Application Startup Notify by default"
 
 #: ../data/ui/pref.glade.h:56
 msgid ""
@@ -367,22 +361,26 @@ msgid ""
 "explicitly.\n"
 "If unchecked then use Startup Notify only if that is defined for application."
 msgstr ""
+"If checked then use Startup Notify for application if another not stated "
+"explicitly.\n"
+"If unchecked then use Startup Notify only if that is defined for "
+"application."
 
 #: ../data/ui/pref.glade.h:59
 msgid "Auto (move if on the same FS, copy otherwise)"
-msgstr ""
+msgstr "Auto (move if on the same file system, copy otherwise)"
 
 #: ../data/ui/pref.glade.h:60
 msgid "Copy"
-msgstr ""
+msgstr "Copy"
 
 #: ../data/ui/pref.glade.h:61
 msgid "Move"
-msgstr ""
+msgstr "Move"
 
 #: ../data/ui/pref.glade.h:62
 msgid "Ask"
-msgstr ""
+msgstr "Ask"
 
 #: ../data/ui/pref.glade.h:63
 msgid "Icon View"
@@ -627,11 +625,11 @@ msgstr "Show Side Pane"
 
 #: ../src/main-win-ui.c:203
 msgid "Show Status B_ar"
-msgstr ""
+msgstr "Show Status B_ar"
 
 #: ../src/main-win-ui.c:204
 msgid "Fullscreen Mode"
-msgstr ""
+msgstr "Full-screen Mode"
 
 #: ../src/main-win-ui.c:209
 msgid "_Icon View"
