@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-08-22 22:36+0200\n"
-"PO-Revision-Date: 2012-08-21 10:51+0200\n"
+"PO-Revision-Date: 2012-08-29 06:42+0200\n"
 "Last-Translator: Gheyret <gheyret@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
 "Language: ug\n"
@@ -173,12 +173,11 @@ msgstr "ھۆججەتلەرنى ئۆچۈرمەستىن ئۇنى ‹ئەخلەتخ
 
 #: ../data/ui/pref.glade.h:9
 msgid "Erase files on removable media instead of \"trash bin\" creation"
-msgstr ""
+msgstr "يۆتكەلمە ۋاسىتىلەردىكى ھۆججەتنى «ئەخلەتخانىغا» تاشلىماستىن ئۆچۈرسۇن"
 
 #: ../data/ui/pref.glade.h:10
-#, fuzzy
 msgid "Confirm before moving files into \"trash bin\""
-msgstr "ھۆججەتلەرنى ئۆچۈرۈشتىن ئاۋۋال سورىسۇن"
+msgstr "ھۆججەتنى «ئەخلەتخانىغا» يۆتكەشتىن ئاۋۋال سورىسۇن"
 
 #: ../data/ui/pref.glade.h:11
 msgid "Bookmarks:"
@@ -186,11 +185,11 @@ msgstr "خەتكۈش :"
 
 #: ../data/ui/pref.glade.h:12
 msgid "Default drop action:"
-msgstr ""
+msgstr "كۆڭۈلدىكى مەشغۇلات:"
 
 #: ../data/ui/pref.glade.h:13
 msgid "Unfold tab when files are dragged onto tab button"
-msgstr ""
+msgstr "ھۆججەتلەرنى بەتكۈچنىڭ ئۈستىگە سۆرەپ كەلگەندە، بەتكۈچ يېيىلسۇن"
 
 #: ../data/ui/pref.glade.h:14
 msgid "<b>Default View</b>"
@@ -271,23 +270,20 @@ msgid "Always show the tab bar"
 msgstr "بەتكۈچ ئىستونىنى ئىزچىل كۆرسەت"
 
 #: ../data/ui/pref.glade.h:33
-#, fuzzy
 msgid "<b>Directories Tree</b>"
-msgstr "مۇندەرىجە دەرىخى"
+msgstr "<b>مۇندەرىجە دەرىخى</b>"
 
 #: ../data/ui/pref.glade.h:34
 msgid "Hide expander on empty or locked folder"
-msgstr ""
+msgstr "قىسقۇچ قۇرۇق ياكى قۇلۇپلانغان بولسا يايغۇچنى يوشۇرسۇن"
 
 #: ../data/ui/pref.glade.h:35
-#, fuzzy
 msgid "<b>Show in Places:</b>"
-msgstr "<b>ئۈستەلئۈستى سىنبەلگىسىنى كۆرسىتىش</b>"
+msgstr "<b>ئورۇنلاردا كۆرسىتىش:</b>"
 
 #: ../data/ui/pref.glade.h:36
-#, fuzzy
 msgid "Home Directory"
-msgstr "مۇندەرىجە دەرىخى"
+msgstr "ماكان مۇندەرىجە"
 
 #: ../data/ui/pref.glade.h:37 ../src/main-win-ui.c:174
 msgid "Desktop Folder"
@@ -298,13 +294,12 @@ msgid "Applications"
 msgstr "پروگراممىلار"
 
 #: ../data/ui/pref.glade.h:39
-#, fuzzy
 msgid "Trash bin"
 msgstr "ئەخلەتخانا"
 
 #: ../data/ui/pref.glade.h:40
 msgid "Layout"
-msgstr ""
+msgstr "ئورۇنلاشتۇرۇش"
 
 #: ../data/ui/pref.glade.h:41
 msgid "<b>Auto-mount</b>"
@@ -326,13 +321,11 @@ msgstr ""
 
 #: ../data/ui/pref.glade.h:45
 msgid "Open mounted removable media in new tab instead of new window"
-msgstr ""
+msgstr "ئېگەرلەنگەن يۆتكەلمە ۋاسىتىنى يېڭى كۆزنەكتە ئەمەس يېڭى بەتكۈچتە ئاچسۇن"
 
 #: ../data/ui/pref.glade.h:46
-#, fuzzy
 msgid "Close tab containing removable medium when it is unmounted"
-msgstr ""
-"يۆتكىلىشچان ۋاسىتە قىستۇرۇلغاندا ئىشلەتكىلى بولىدىغان تاللانمىلارنى كۆرسەتسۇن"
+msgstr "يۆتكىلىشچان ۋاسىتە ئېگەرسىزلەنگەندە ئۇنىڭ بەتكۈچى يېپىلسۇن"
 
 #: ../data/ui/pref.glade.h:47
 msgid "Volume Management"
@@ -366,7 +359,7 @@ msgstr "ئارخىپلىغۇچنىڭ يۈرۈشلەشتۈرۈلۈشى"
 
 #: ../data/ui/pref.glade.h:55
 msgid "Use Application Startup Notify by default"
-msgstr ""
+msgstr "«پروگرامما باشلىنىش ئۇقتۇرۇشى» نى كۆڭۈلدە ئىشلەتسۇن"
 
 #: ../data/ui/pref.glade.h:56
 msgid ""
@@ -381,15 +374,15 @@ msgstr ""
 
 #: ../data/ui/pref.glade.h:60
 msgid "Copy"
-msgstr ""
+msgstr "كۆچۈر"
 
 #: ../data/ui/pref.glade.h:61
 msgid "Move"
-msgstr ""
+msgstr "يۆتكە"
 
 #: ../data/ui/pref.glade.h:62
 msgid "Ask"
-msgstr ""
+msgstr "سورا"
 
 #: ../data/ui/pref.glade.h:63
 msgid "Icon View"
@@ -634,7 +627,7 @@ msgstr "يان كۆزنەكچە كۆرسەت"
 
 #: ../src/main-win-ui.c:203
 msgid "Show Status B_ar"
-msgstr ""
+msgstr "ھالەت بالدىقىنى كۆرسەت(_A)"
 
 #: ../src/main-win-ui.c:204
 msgid "Fullscreen Mode"

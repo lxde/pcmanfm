@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-08-22 22:36+0200\n"
-"PO-Revision-Date: 2012-08-15 07:20+0200\n"
+"PO-Revision-Date: 2012-08-23 07:06+0200\n"
 "Last-Translator: Yaron <sh.yaron@gmail.com>\n"
 "Language-Team: \n"
 "Language: he\n"
@@ -168,16 +168,15 @@ msgstr "יש לאשר לפני מחיקת קבצים"
 
 #: ../data/ui/pref.glade.h:8
 msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
-msgstr "העברת קבצים שנמחקו אל \"סל המיחזור\" במקום מחיקה מהכונן"
+msgstr "העברת קבצים שנמחקו אל „סל המיחזור“ במקום מחיקה מהכונן"
 
 #: ../data/ui/pref.glade.h:9
 msgid "Erase files on removable media instead of \"trash bin\" creation"
-msgstr ""
+msgstr "מחיקת קבצים על התקנים נתיקים במקום ליצור „סל מיחזור“"
 
 #: ../data/ui/pref.glade.h:10
-#, fuzzy
 msgid "Confirm before moving files into \"trash bin\""
-msgstr "יש לאשר לפני מחיקת קבצים"
+msgstr "יש לאשר לפני העברת קבצים ל„סל המיחזור“"
 
 #: ../data/ui/pref.glade.h:11
 msgid "Bookmarks:"
@@ -185,11 +184,11 @@ msgstr "סימניות:"
 
 #: ../data/ui/pref.glade.h:12
 msgid "Default drop action:"
-msgstr ""
+msgstr "פעילות ההשלכה כבררת מחדל:"
 
 #: ../data/ui/pref.glade.h:13
 msgid "Unfold tab when files are dragged onto tab button"
-msgstr ""
+msgstr "גילוי הלשונית כאשר קבצים נגררים אל לחצן הלשונית"
 
 #: ../data/ui/pref.glade.h:14
 msgid "<b>Default View</b>"
@@ -269,18 +268,16 @@ msgid "Always show the tab bar"
 msgstr "תמיד להציג את סרגל הלשוניות"
 
 #: ../data/ui/pref.glade.h:33
-#, fuzzy
 msgid "<b>Directories Tree</b>"
-msgstr "עץ תיקיות"
+msgstr "<b>עץ תיקיות</b>"
 
 #: ../data/ui/pref.glade.h:34
 msgid "Hide expander on empty or locked folder"
-msgstr ""
+msgstr "הסתרת מקטע ההרחבה על תיקיות ריקות או נעולות"
 
 #: ../data/ui/pref.glade.h:35
-#, fuzzy
 msgid "<b>Show in Places:</b>"
-msgstr "<b>הצגת סמלי שולחן העבודה</b>"
+msgstr "<b>הצגה תחת מיקומים:</b>"
 
 #: ../data/ui/pref.glade.h:36
 msgid "Home Directory"
@@ -295,14 +292,12 @@ msgid "Applications"
 msgstr "יישומים"
 
 #: ../data/ui/pref.glade.h:39
-#, fuzzy
 msgid "Trash bin"
-msgstr "סל האשפה"
+msgstr "סל המיחזור"
 
 #: ../data/ui/pref.glade.h:40
-#, fuzzy
 msgid "Layout"
-msgstr "מצב פריסה"
+msgstr "פריסה"
 
 #: ../data/ui/pref.glade.h:41
 msgid "<b>Auto-mount</b>"
@@ -314,20 +309,19 @@ msgstr "עיגון אוטומטי של כרכים שאינם מעוגנים עם
 
 #: ../data/ui/pref.glade.h:43
 msgid "Mount removable media automatically when they are inserted"
-msgstr "עיגון של מדיה נשלפת אוטומטית בעת החיבור"
+msgstr "עיגון של התקנים נתיקים אוטומטית בעת החיבור"
 
 #: ../data/ui/pref.glade.h:44
 msgid "Show available options for removable media when they are inserted"
-msgstr "יש להציג את האפשרויות הזמינות עבור מדיה נשלפת בעת החיבור"
+msgstr "יש להציג את האפשרויות הזמינות עבור התקנים נתיקים בעת החיבור"
 
 #: ../data/ui/pref.glade.h:45
 msgid "Open mounted removable media in new tab instead of new window"
-msgstr ""
+msgstr "פתיחת התקנים נתיקים בלשונית חדשה במקום בחלון חדש"
 
 #: ../data/ui/pref.glade.h:46
-#, fuzzy
 msgid "Close tab containing removable medium when it is unmounted"
-msgstr "יש להציג את האפשרויות הזמינות עבור מדיה נשלפת בעת החיבור"
+msgstr "יש להציג את האפשרויות הזמינות עבור התקנים נתיקים בעת החיבור"
 
 #: ../data/ui/pref.glade.h:47
 msgid "Volume Management"
@@ -373,21 +367,19 @@ msgstr ""
 
 #: ../data/ui/pref.glade.h:59
 msgid "Auto (move if on the same FS, copy otherwise)"
-msgstr ""
+msgstr "אוטומטית (להעביר אם באותה מערכת הקבצים, להעתיק אם לא כך)"
 
 #: ../data/ui/pref.glade.h:60
-#, fuzzy
 msgid "Copy"
-msgstr "העתקה: "
+msgstr "העתקה"
 
 #: ../data/ui/pref.glade.h:61
-#, fuzzy
 msgid "Move"
-msgstr "העברה: "
+msgstr "העברה"
 
 #: ../data/ui/pref.glade.h:62
 msgid "Ask"
-msgstr ""
+msgstr "הצגת שאלה"
 
 #: ../data/ui/pref.glade.h:63
 msgid "Icon View"
@@ -632,7 +624,7 @@ msgstr "הצגת חלונית צד"
 
 #: ../src/main-win-ui.c:203
 msgid "Show Status B_ar"
-msgstr ""
+msgstr "הצגת שורת מ_צב"
 
 #: ../src/main-win-ui.c:204
 msgid "Fullscreen Mode"

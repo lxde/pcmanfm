@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: pcmanfm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-08-22 22:36+0200\n"
-"PO-Revision-Date: 2012-08-21 19:53+0200\n"
+"PO-Revision-Date: 2012-08-24 03:02+0200\n"
 "Last-Translator: zvacet <ikoli@yahoo.com>\n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Pootle 2.0.5\n"
 
 #: ../data/ui/about.glade.in.h:1
@@ -48,7 +48,7 @@ msgstr "<b>Pozadina</b>"
 
 #: ../data/ui/desktop-pref.glade.h:3
 msgid "Wallpaper:"
-msgstr ""
+msgstr "Pozadinska slika:"
 
 #: ../data/ui/desktop-pref.glade.h:4
 msgid "Please select an image file"
@@ -56,7 +56,7 @@ msgstr "Odaberite slikovnu datoteku"
 
 #: ../data/ui/desktop-pref.glade.h:5
 msgid "Use the same wallpaper on all desktops"
-msgstr ""
+msgstr "Koristi istu pozadinsku sliku na svim radnim površinama"
 
 #: ../data/ui/desktop-pref.glade.h:6
 msgid "Background color:"
@@ -177,9 +177,8 @@ msgid "Erase files on removable media instead of \"trash bin\" creation"
 msgstr ""
 
 #: ../data/ui/pref.glade.h:10
-#, fuzzy
 msgid "Confirm before moving files into \"trash bin\""
-msgstr "Potvrdi prije brisanja datoteka"
+msgstr "Potvrdi prije premještanja datoteka u \"smeće\""
 
 #: ../data/ui/pref.glade.h:11
 msgid "Bookmarks:"
@@ -278,13 +277,12 @@ msgid "Hide expander on empty or locked folder"
 msgstr ""
 
 #: ../data/ui/pref.glade.h:35
-#, fuzzy
 msgid "<b>Show in Places:</b>"
-msgstr "<b>Pokaži ikone radne površine</b>"
+msgstr "<b>Pokaži u Mjestima:</b>"
 
 #: ../data/ui/pref.glade.h:36
 msgid "Home Directory"
-msgstr ""
+msgstr "Osobni direkorij"
 
 #: ../data/ui/pref.glade.h:37 ../src/main-win-ui.c:174
 msgid "Desktop Folder"
@@ -295,13 +293,12 @@ msgid "Applications"
 msgstr "Programi"
 
 #: ../data/ui/pref.glade.h:39
-#, fuzzy
 msgid "Trash bin"
 msgstr "Smeće"
 
 #: ../data/ui/pref.glade.h:40
 msgid "Layout"
-msgstr ""
+msgstr "Raspored"
 
 #: ../data/ui/pref.glade.h:41
 msgid "<b>Auto-mount</b>"
@@ -324,9 +321,8 @@ msgid "Open mounted removable media in new tab instead of new window"
 msgstr ""
 
 #: ../data/ui/pref.glade.h:46
-#, fuzzy
 msgid "Close tab containing removable medium when it is unmounted"
-msgstr "Prikaži dostupne opcije za uklonjive uređaje nakon što su umetnuti"
+msgstr ""
 
 #: ../data/ui/pref.glade.h:47
 msgid "Volume Management"
@@ -375,15 +371,15 @@ msgstr ""
 
 #: ../data/ui/pref.glade.h:60
 msgid "Copy"
-msgstr ""
+msgstr "Kopiraj"
 
 #: ../data/ui/pref.glade.h:61
 msgid "Move"
-msgstr ""
+msgstr "Premjesti"
 
 #: ../data/ui/pref.glade.h:62
 msgid "Ask"
-msgstr ""
+msgstr "Pitaj"
 
 #: ../data/ui/pref.glade.h:63
 msgid "Icon View"
@@ -628,15 +624,15 @@ msgstr "Pokaži bočnu ploču"
 
 #: ../src/main-win-ui.c:203
 msgid "Show Status B_ar"
-msgstr ""
+msgstr "Pokaži statusnu t_raku"
 
 #: ../src/main-win-ui.c:204
 msgid "Fullscreen Mode"
-msgstr ""
+msgstr "Cijeli zaslon"
 
 #: ../src/main-win-ui.c:209
 msgid "_Icon View"
-msgstr "_Ikona"
+msgstr ""
 
 #: ../src/main-win-ui.c:210
 msgid "_Compact View"
