@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: 0.9.9\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-08-22 22:36+0200\n"
-"PO-Revision-Date: 2012-08-16 13:57+0200\n"
+"PO-Revision-Date: 2012-09-07 00:12+0200\n"
 "Last-Translator: kizito <kbirabwa@yahoo.co.uk>\n"
 "Language-Team: lg <kbirabwa@yahoo.co.uk>\n"
 "Language: lg\n"
@@ -176,11 +176,12 @@ msgstr ""
 #: ../data/ui/pref.glade.h:9
 msgid "Erase files on removable media instead of \"trash bin\" creation"
 msgstr ""
+"Fayiro ez'okubitereka data ebyetongovu zigyengawo mukifo eky'okubissa mu "
+"\"bisuulidwa\""
 
 #: ../data/ui/pref.glade.h:10
-#, fuzzy
 msgid "Confirm before moving files into \"trash bin\""
-msgstr "Sooka kukakasa nga fayiro egenda okugyibwawo"
+msgstr "Sooka kukakasa nga fayiro egenda okutwalibwa mu \"bisuulidwa\""
 
 #: ../data/ui/pref.glade.h:11
 msgid "Bookmarks:"
@@ -188,11 +189,11 @@ msgstr "Obukwatakifo:"
 
 #: ../data/ui/pref.glade.h:12
 msgid "Default drop action:"
-msgstr ""
+msgstr "Ekiba kikolebwangawo nga otadde ky'ova kukulula:"
 
 #: ../data/ui/pref.glade.h:13
 msgid "Unfold tab when files are dragged onto tab button"
-msgstr ""
+msgstr "Oludda lubikkukenga nga lusuulidwako fayiro"
 
 #: ../data/ui/pref.glade.h:14
 msgid "<b>Default View</b>"
@@ -272,23 +273,21 @@ msgid "Always show the tab bar"
 msgstr "Olubaawo olw'emikonda bulijjo lulabikenga"
 
 #: ../data/ui/pref.glade.h:33
-#, fuzzy
 msgid "<b>Directories Tree</b>"
-msgstr "Enkwatagana y'amaterekero"
+msgstr "<b>Enkwatagana y'amaterekero</b>"
 
 #: ../data/ui/pref.glade.h:34
 msgid "Hide expander on empty or locked folder"
 msgstr ""
+"Amaterekero amakalu n'agasibidwa galeme kubako akakonda ak'okulagabigalimu"
 
 #: ../data/ui/pref.glade.h:35
-#, fuzzy
 msgid "<b>Show in Places:</b>"
-msgstr "<b>Awakolerwa wabeeko obufaananyi obuyunzi</b>"
+msgstr "<b>Laga bino mu Ebifo:</b>"
 
 #: ../data/ui/pref.glade.h:36
-#, fuzzy
 msgid "Home Directory"
-msgstr "Enkwatagana y'amaterekero"
+msgstr "Tterekero ery'akawunti"
 
 #: ../data/ui/pref.glade.h:37 ../src/main-win-ui.c:174
 msgid "Desktop Folder"
@@ -299,13 +298,12 @@ msgid "Applications"
 msgstr "Puloguramu"
 
 #: ../data/ui/pref.glade.h:39
-#, fuzzy
 msgid "Trash bin"
 msgstr "Ebisuulidwa"
 
 #: ../data/ui/pref.glade.h:40
 msgid "Layout"
-msgstr ""
+msgstr "Entereeza"
 
 #: ../data/ui/pref.glade.h:41
 msgid "<b>Auto-mount</b>"
@@ -324,19 +322,20 @@ msgstr ""
 #: ../data/ui/pref.glade.h:44
 msgid "Show available options for removable media when they are inserted"
 msgstr ""
-"Ebitereka data ebyetongovu bwe biyungibwa ku kompyuta endagenga bye nsobola "
-"okubikolako"
+"Ebitereka data ebyetongovu bwe biyungibwanga ku kompyuta endagenga bye "
+"nsobola okubikolako"
 
 #: ../data/ui/pref.glade.h:45
 msgid "Open mounted removable media in new tab instead of new window"
 msgstr ""
+"Ebitereka data ebyetongovu bwe biwangibwanga bibukkulibwenga mu ludda olupya "
+"mu kifo kya ddirisa ppya"
 
 #: ../data/ui/pref.glade.h:46
-#, fuzzy
 msgid "Close tab containing removable medium when it is unmounted"
 msgstr ""
-"Ebitereka data ebyetongovu bwe biyungibwa ku kompyuta endagenga bye nsobola "
-"okubikolako"
+"Ebitereka data ebyetongovu bwe biwangulwanga ku kompyuta n'oludda mwe "
+"bibadde biragibwa luvengawo"
 
 #: ../data/ui/pref.glade.h:47
 msgid "Volume Management"
@@ -372,6 +371,8 @@ msgstr "Puloguramu enaapakiranga n'okupakulula fayiro:"
 #: ../data/ui/pref.glade.h:55
 msgid "Use Application Startup Notify by default"
 msgstr ""
+"Puloguramu bwe'banga erina ekabonero aka yo akalaga nti etandika, ke kabanga "
+"kakola"
 
 #: ../data/ui/pref.glade.h:56
 msgid ""
@@ -379,22 +380,28 @@ msgid ""
 "explicitly.\n"
 "If unchecked then use Startup Notify only if that is defined for application."
 msgstr ""
+"Bw'olanda kino akabonero aka Startup Notify ke kanaalaganga nti puloguramu "
+"etandika okugyako nga ogiragidde okukuzesanga akalala.\n"
+"Bw'oba tokironze puloguram etandika tekozesa akabonero aka Startup Notify "
+"okugyakonga ogiragidde."
 
 #: ../data/ui/pref.glade.h:59
 msgid "Auto (move if on the same FS, copy otherwise)"
 msgstr ""
+"Ekolebukozi (ebiri ku sisitem eya fayiro y'emu ebisimbulize, ebirala "
+"ekolengamu koppi)"
 
 #: ../data/ui/pref.glade.h:60
 msgid "Copy"
-msgstr ""
+msgstr "Koppa"
 
 #: ../data/ui/pref.glade.h:61
 msgid "Move"
-msgstr ""
+msgstr "Simbuliza"
 
 #: ../data/ui/pref.glade.h:62
 msgid "Ask"
-msgstr ""
+msgstr "Ebuuzenga ekiba kikolebwa"
 
 #: ../data/ui/pref.glade.h:63
 msgid "Icon View"
@@ -639,11 +646,11 @@ msgstr "Ndaga akadirisa ok'oku mabbali"
 
 #: ../src/main-win-ui.c:203
 msgid "Show Status B_ar"
-msgstr ""
+msgstr "Akab_aawo akalaga ebibumbujja kalabike"
 
 #: ../src/main-win-ui.c:204
 msgid "Fullscreen Mode"
-msgstr ""
+msgstr "Buna olutimbe"
 
 #: ../src/main-win-ui.c:209
 msgid "_Icon View"
