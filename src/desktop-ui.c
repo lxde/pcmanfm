@@ -84,13 +84,13 @@ static const char folder_menu_xml[]=
   "</placeholder>"
 "</popup>";
 
-/* Action entries for pupup menus */
+/* Additional action entries for popup menus - check mnemonics in FmFileMenu */
 static const GtkActionEntry folder_menu_actions[]=
 {
-    {"NewTab", GTK_STOCK_NEW, N_("Open in New Tab"), NULL, NULL, G_CALLBACK(on_open_in_new_tab)},
-    {"NewWin", GTK_STOCK_NEW, N_("Open in New Window"), NULL, NULL, G_CALLBACK(on_open_in_new_win)},
+    {"NewTab", GTK_STOCK_NEW, N_("Open in New Ta_b"), NULL, NULL, G_CALLBACK(on_open_in_new_tab)},
+    {"NewWin", GTK_STOCK_NEW, N_("Open in New Win_dow"), NULL, NULL, G_CALLBACK(on_open_in_new_win)},
     {"Search", GTK_STOCK_FIND, NULL, NULL, NULL, NULL},
-    {"Term", "utilities-terminal", N_("Open in _Terminal"), NULL, NULL, G_CALLBACK(on_open_folder_in_terminal)}
+    {"Term", "utilities-terminal", N_("Open in Termina_l"), NULL, NULL, G_CALLBACK(on_open_folder_in_terminal)}
 };
 
 /* xml definition for desktop item placement */
@@ -106,10 +106,10 @@ static const char desktop_icon_menu_xml[]=
 /* action entries for desktop item placement */
 static GtkToggleActionEntry desktop_icon_toggle_actions[]=
 {
-    {"Fix", NULL, N_("Stick to Current Position"), NULL, NULL, G_CALLBACK(on_fix_pos), FALSE}
+    {"Fix", NULL, N_("Stic_k to Current Position"), NULL, NULL, G_CALLBACK(on_fix_pos), FALSE}
 };
 
 static const GtkActionEntry desktop_icon_actions[]=
 {
-    {"Snap", NULL, N_("Snap to Grid"), NULL, NULL, G_CALLBACK(on_snap_to_grid)}
+    {"Snap", NULL, N_("Snap to _Grid"), NULL, NULL, G_CALLBACK(on_snap_to_grid)}
 };

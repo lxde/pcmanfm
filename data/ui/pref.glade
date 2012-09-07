@@ -153,11 +153,12 @@
                                 <property name="spacing">6</property>
                                 <child>
                                   <object class="GtkCheckButton" id="single_click">
-                                    <property name="label" translatable="yes">Open files with single click</property>
+                                    <property name="label" translatable="yes">_Open files with single click</property>
                                     <property name="visible">True</property>
                                     <property name="can_focus">True</property>
                                     <property name="receives_default">False</property>
                                     <property name="use_action_appearance">False</property>
+                                    <property name="use_underline">True</property>
                                     <property name="draw_indicator">True</property>
                                   </object>
                                   <packing>
@@ -168,11 +169,12 @@
                                 </child>
                                 <child>
                                   <object class="GtkCheckButton" id="confirm_del">
-                                    <property name="label" translatable="yes">Confirm before deleting files</property>
+                                    <property name="label" translatable="yes">Co_nfirm before deleting files</property>
                                     <property name="visible">True</property>
                                     <property name="can_focus">True</property>
                                     <property name="receives_default">False</property>
                                     <property name="use_action_appearance">False</property>
+                                    <property name="use_underline">True</property>
                                     <property name="draw_indicator">True</property>
                                   </object>
                                   <packing>
@@ -183,11 +185,12 @@
                                 </child>
                                 <child>
                                   <object class="GtkCheckButton" id="use_trash">
-                                    <property name="label" translatable="yes">Move deleted files to "trash bin" instead of erasing from disk</property>
+                                    <property name="label" translatable="yes">_Move deleted files to "trash bin" instead of erasing from disk</property>
                                     <property name="visible">True</property>
                                     <property name="can_focus">True</property>
                                     <property name="receives_default">False</property>
                                     <property name="use_action_appearance">False</property>
+                                    <property name="use_underline">True</property>
                                     <property name="draw_indicator">True</property>
                                   </object>
                                   <packing>
@@ -207,10 +210,11 @@
                                         <property name="spacing">6</property>
                                         <child>
                                           <object class="GtkCheckButton" id="no_usb_trash">
-                                            <property name="label" translatable="yes">Erase files on removable media instead of "trash bin" creation</property>
+                                            <property name="label" translatable="yes">_Erase files on removable media instead of "trash bin" creation</property>
                                             <property name="can_focus">True</property>
                                             <property name="receives_default">False</property>
                                             <property name="use_action_appearance">False</property>
+                                            <property name="use_underline">True</property>
                                             <property name="draw_indicator">True</property>
                                           </object>
                                           <packing>
@@ -221,11 +225,12 @@
                                         </child>
                                         <child>
                                           <object class="GtkCheckButton" id="confirm_trash">
-                                            <property name="label" translatable="yes">Confirm before moving files into "trash bin"</property>
+                                            <property name="label" translatable="yes">Confi_rm before moving files into "trash bi_n"</property>
                                             <property name="visible">True</property>
                                             <property name="can_focus">True</property>
                                             <property name="receives_default">False</property>
                                             <property name="use_action_appearance">False</property>
+                                            <property name="use_underline">True</property>
                                             <property name="draw_indicator">True</property>
                                           </object>
                                           <packing>
@@ -256,7 +261,9 @@
                                         <property name="visible">True</property>
                                         <property name="can_focus">False</property>
                                         <property name="xalign">0</property>
-                                        <property name="label" translatable="yes">Bookmarks:</property>
+                                        <property name="label" translatable="yes">_Bookmarks:</property>
+                                        <property name="use_underline">True</property>
+                                        <property name="mnemonic_widget">bm_open_method</property>
                                       </object>
                                       <packing>
                                         <property name="x_options">GTK_FILL</property>
@@ -303,7 +310,9 @@
                                       <object class="GtkLabel" id="label24">
                                         <property name="can_focus">False</property>
                                         <property name="xalign">0</property>
-                                        <property name="label" translatable="yes">Default drop action:</property>
+                                        <property name="label" translatable="yes">Defaul_t drop action:</property>
+                                        <property name="use_underline">True</property>
+                                        <property name="mnemonic_widget">drop_default_action</property>
                                       </object>
                                       <packing>
                                         <property name="top_attach">1</property>
@@ -320,10 +329,11 @@
                                 </child>
                                 <child>
                                   <object class="GtkCheckButton" id="change_tab_on_drop">
-                                    <property name="label" translatable="yes">Unfold tab when files are dragged onto tab button</property>
+                                    <property name="label" translatable="yes">_Unfold tab when files are dragged onto tab button</property>
                                     <property name="can_focus">True</property>
                                     <property name="receives_default">False</property>
                                     <property name="use_action_appearance">False</property>
+                                    <property name="use_underline">True</property>
                                     <property name="draw_indicator">True</property>
                                   </object>
                                   <packing>
@@ -386,7 +396,9 @@
                                       <object class="GtkLabel" id="label13">
                                         <property name="visible">True</property>
                                         <property name="can_focus">False</property>
-                                        <property name="label" translatable="yes">View Mode:</property>
+                                        <property name="label" translatable="yes">Vie_w Mode:</property>
+                                        <property name="use_underline">True</property>
+                                        <property name="mnemonic_widget">view_mode</property>
                                       </object>
                                       <packing>
                                         <property name="expand">False</property>
@@ -441,7 +453,7 @@
                   <object class="GtkLabel" id="general_tab_label">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="label" translatable="yes">General</property>
+                    <property name="label" translatable="yes">_General</property>
                     <property name="use_underline">True</property>
                   </object>
                   <packing>
@@ -496,7 +508,9 @@
                                         <property name="visible">True</property>
                                         <property name="can_focus">False</property>
                                         <property name="xalign">0</property>
-                                        <property name="label" translatable="yes">Size of small icons:</property>
+                                        <property name="label" translatable="yes">Size of small _icons:</property>
+                                        <property name="use_underline">True</property>
+                                        <property name="mnemonic_widget">small_icon_size</property>
                                       </object>
                                       <packing>
                                         <property name="top_attach">1</property>
@@ -548,7 +562,9 @@
                                         <property name="visible">True</property>
                                         <property name="can_focus">False</property>
                                         <property name="xalign">0</property>
-                                        <property name="label" translatable="yes">Size of big icons:</property>
+                                        <property name="label" translatable="yes">Size of _big icons:</property>
+                                        <property name="use_underline">True</property>
+                                        <property name="mnemonic_widget">big_icon_size</property>
                                       </object>
                                       <packing>
                                         <property name="x_options">GTK_FILL</property>
@@ -560,7 +576,9 @@
                                         <property name="visible">True</property>
                                         <property name="can_focus">False</property>
                                         <property name="xalign">0</property>
-                                        <property name="label" translatable="yes">Size of thumbnails:</property>
+                                        <property name="label" translatable="yes">Size of _thumbnails:</property>
+                                        <property name="use_underline">True</property>
+                                        <property name="mnemonic_widget">thumbnail_size</property>
                                       </object>
                                       <packing>
                                         <property name="top_attach">2</property>
@@ -593,7 +611,9 @@
                                         <property name="visible">True</property>
                                         <property name="can_focus">False</property>
                                         <property name="xalign">0</property>
-                                        <property name="label" translatable="yes">Size of side pane icons:</property>
+                                        <property name="label" translatable="yes">Size of side _pane icons:</property>
+                                        <property name="use_underline">True</property>
+                                        <property name="mnemonic_widget">pane_icon_size</property>
                                       </object>
                                       <packing>
                                         <property name="top_attach">3</property>
@@ -630,11 +650,12 @@
                                 </child>
                                 <child>
                                   <object class="GtkCheckButton" id="show_thumbnail">
-                                    <property name="label" translatable="yes">Show thumbnails of files</property>
+                                    <property name="label" translatable="yes">_Show thumbnails of files</property>
                                     <property name="visible">True</property>
                                     <property name="can_focus">True</property>
                                     <property name="receives_default">False</property>
                                     <property name="use_action_appearance">False</property>
+                                    <property name="use_underline">True</property>
                                     <property name="draw_indicator">True</property>
                                   </object>
                                   <packing>
@@ -645,11 +666,12 @@
                                 </child>
                                 <child>
                                   <object class="GtkCheckButton" id="thumbnail_local">
-                                    <property name="label" translatable="yes">Only show thumbnails for local files</property>
+                                    <property name="label" translatable="yes">_Only show thumbnails for local files</property>
                                     <property name="visible">True</property>
                                     <property name="can_focus">True</property>
                                     <property name="receives_default">False</property>
                                     <property name="use_action_appearance">False</property>
+                                    <property name="use_underline">True</property>
                                     <property name="draw_indicator">True</property>
                                   </object>
                                   <packing>
@@ -667,7 +689,9 @@
                                       <object class="GtkLabel" id="label3">
                                         <property name="visible">True</property>
                                         <property name="can_focus">False</property>
-                                        <property name="label" translatable="yes">Do not generate thumbnails for files exceeding this size:</property>
+                                        <property name="label" translatable="yes">Do _not generate thumbnails for files exceeding this size:</property>
+                                        <property name="use_underline">True</property>
+                                        <property name="mnemonic_widget">thumbnail_max</property>
                                       </object>
                                       <packing>
                                         <property name="expand">False</property>
@@ -763,11 +787,12 @@
                                 <property name="spacing">6</property>
                                 <child>
                                   <object class="GtkCheckButton" id="si_unit">
-                                    <property name="label" translatable="yes">Use SI decimal prefixes instead of IEC binary prefixes</property>
+                                    <property name="label" translatable="yes">Us_e SI decimal prefixes instead of IEC binary prefixes</property>
                                     <property name="visible">True</property>
                                     <property name="can_focus">True</property>
                                     <property name="receives_default">False</property>
                                     <property name="use_action_appearance">False</property>
+                                    <property name="use_underline">True</property>
                                     <property name="xalign">0</property>
                                     <property name="draw_indicator">True</property>
                                   </object>
@@ -779,10 +804,11 @@
                                 </child>
                                 <child>
                                   <object class="GtkCheckButton" id="backup_as_hidden">
-                                    <property name="label" translatable="yes">Treat backup files as hidden</property>
+                                    <property name="label" translatable="yes">Treat backup files as _hidden</property>
                                     <property name="can_focus">True</property>
                                     <property name="receives_default">False</property>
                                     <property name="use_action_appearance">False</property>
+                                    <property name="use_underline">True</property>
                                     <property name="xalign">0</property>
                                     <property name="draw_indicator">True</property>
                                   </object>
@@ -818,7 +844,7 @@
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
-                    <property name="label" translatable="yes">Display</property>
+                    <property name="label" translatable="yes">_Display</property>
                     <property name="use_underline">True</property>
                   </object>
                   <packing>
@@ -864,10 +890,11 @@
                                 <property name="spacing">6</property>
                                 <child>
                                   <object class="GtkCheckButton" id="hide_folder_content_border">
-                                    <property name="label" translatable="yes">Hide folder content border</property>
+                                    <property name="label" translatable="yes">Hide _folder content border</property>
                                     <property name="can_focus">True</property>
                                     <property name="receives_default">False</property>
                                     <property name="use_action_appearance">False</property>
+                                    <property name="use_underline">True</property>
                                     <property name="xalign">0</property>
                                     <property name="draw_indicator">True</property>
                                   </object>
@@ -879,10 +906,11 @@
                                 </child>
                                 <child>
                                   <object class="GtkCheckButton" id="hide_side_pane_buttons">
-                                    <property name="label" translatable="yes">Hide side pane buttons</property>
+                                    <property name="label" translatable="yes">Hide _side pane buttons</property>
                                     <property name="can_focus">True</property>
                                     <property name="receives_default">False</property>
                                     <property name="use_action_appearance">False</property>
+                                    <property name="use_underline">True</property>
                                     <property name="xalign">0</property>
                                     <property name="draw_indicator">True</property>
                                   </object>
@@ -894,11 +922,12 @@
                                 </child>
                                 <child>
                                   <object class="GtkCheckButton" id="hide_close_btn">
-                                    <property name="label" translatable="yes">Hide 'Close tab' buttons</property>
+                                    <property name="label" translatable="yes">Hid_e 'Close tab' buttons</property>
                                     <property name="can_focus">True</property>
                                     <property name="receives_default">False</property>
                                     <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                                     <property name="use_action_appearance">False</property>
+                                    <property name="use_underline">True</property>
                                     <property name="xalign">0</property>
                                     <property name="draw_indicator">True</property>
                                   </object>
@@ -910,12 +939,13 @@
                                 </child>
                                 <child>
                                   <object class="GtkCheckButton" id="always_show_tabs">
-                                    <property name="label" translatable="yes">Always show the tab bar</property>
+                                    <property name="label" translatable="yes">Al_ways show the tab bar</property>
                                     <property name="visible">True</property>
                                     <property name="can_focus">True</property>
                                     <property name="receives_default">False</property>
                                     <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                                     <property name="use_action_appearance">False</property>
+                                    <property name="use_underline">True</property>
                                     <property name="xalign">0</property>
                                     <property name="draw_indicator">True</property>
                                   </object>
@@ -966,11 +996,12 @@
                             <property name="left_padding">12</property>
                             <child>
                               <object class="GtkCheckButton" id="no_child_non_expandable">
-                                <property name="label" translatable="yes">Hide expander on empty or locked folder</property>
+                                <property name="label" translatable="yes">Hide e_xpander on empty or locked folder</property>
                                 <property name="visible">True</property>
                                 <property name="can_focus">True</property>
                                 <property name="receives_default">False</property>
                                 <property name="use_action_appearance">False</property>
+                                <property name="use_underline">True</property>
                                 <property name="draw_indicator">True</property>
                               </object>
                             </child>
@@ -1017,12 +1048,12 @@
                                 <property name="can_focus">False</property>
                                 <child>
                                   <object class="GtkCheckButton" id="places_home">
-                                    <property name="label" translatable="yes">Home Directory</property>
+                                    <property name="label" translatable="yes">_Home Directory</property>
                                     <property name="visible">True</property>
                                     <property name="can_focus">True</property>
                                     <property name="receives_default">False</property>
                                     <property name="use_action_appearance">False</property>
-                                    <property name="active">True</property>
+                                    <property name="use_underline">True</property>
                                     <property name="draw_indicator">True</property>
                                   </object>
                                   <packing>
@@ -1033,12 +1064,12 @@
                                 </child>
                                 <child>
                                   <object class="GtkCheckButton" id="places_desktop">
-                                    <property name="label" translatable="yes">Desktop Folder</property>
+                                    <property name="label" translatable="yes">Des_ktop Folder</property>
                                     <property name="visible">True</property>
                                     <property name="can_focus">True</property>
                                     <property name="receives_default">False</property>
                                     <property name="use_action_appearance">False</property>
-                                    <property name="active">True</property>
+                                    <property name="use_underline">True</property>
                                     <property name="draw_indicator">True</property>
                                   </object>
                                   <packing>
@@ -1049,12 +1080,12 @@
                                 </child>
                                 <child>
                                   <object class="GtkCheckButton" id="places_applications">
-                                    <property name="label" translatable="yes">Applications</property>
+                                    <property name="label" translatable="yes">App_lications</property>
                                     <property name="visible">True</property>
                                     <property name="can_focus">True</property>
                                     <property name="receives_default">False</property>
                                     <property name="use_action_appearance">False</property>
-                                    <property name="active">True</property>
+                                    <property name="use_underline">True</property>
                                     <property name="draw_indicator">True</property>
                                   </object>
                                   <packing>
@@ -1065,12 +1096,12 @@
                                 </child>
                                 <child>
                                   <object class="GtkCheckButton" id="places_trash">
-                                    <property name="label" translatable="yes">Trash bin</property>
+                                    <property name="label" translatable="yes">_Trash bin</property>
                                     <property name="visible">True</property>
                                     <property name="can_focus">True</property>
                                     <property name="receives_default">False</property>
                                     <property name="use_action_appearance">False</property>
-                                    <property name="active">True</property>
+                                    <property name="use_underline">True</property>
                                     <property name="draw_indicator">True</property>
                                   </object>
                                   <packing>
@@ -1105,7 +1136,7 @@
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK | GDK_STRUCTURE_MASK</property>
-                    <property name="label" translatable="yes">Layout</property>
+                    <property name="label" translatable="yes">_Layout</property>
                     <property name="use_underline">True</property>
                   </object>
                   <packing>
@@ -1150,11 +1181,12 @@
                                 <property name="spacing">6</property>
                                 <child>
                                   <object class="GtkCheckButton" id="mount_on_startup">
-                                    <property name="label" translatable="yes">Mount mountable volumes automatically on program startup</property>
+                                    <property name="label" translatable="yes">_Mount mountable volumes automatically on program startup</property>
                                     <property name="visible">True</property>
                                     <property name="can_focus">True</property>
                                     <property name="receives_default">False</property>
                                     <property name="use_action_appearance">False</property>
+                                    <property name="use_underline">True</property>
                                     <property name="draw_indicator">True</property>
                                   </object>
                                   <packing>
@@ -1165,11 +1197,12 @@
                                 </child>
                                 <child>
                                   <object class="GtkCheckButton" id="mount_removable">
-                                    <property name="label" translatable="yes">Mount removable media automatically when they are inserted</property>
+                                    <property name="label" translatable="yes">Mo_unt removable media automatically when they are inserted</property>
                                     <property name="visible">True</property>
                                     <property name="can_focus">True</property>
                                     <property name="receives_default">False</property>
                                     <property name="use_action_appearance">False</property>
+                                    <property name="use_underline">True</property>
                                     <property name="draw_indicator">True</property>
                                   </object>
                                   <packing>
@@ -1180,11 +1213,12 @@
                                 </child>
                                 <child>
                                   <object class="GtkCheckButton" id="autorun">
-                                    <property name="label" translatable="yes">Show available options for removable media when they are inserted</property>
+                                    <property name="label" translatable="yes">_Show available options for removable media when they are inserted</property>
                                     <property name="visible">True</property>
                                     <property name="can_focus">True</property>
                                     <property name="receives_default">False</property>
                                     <property name="use_action_appearance">False</property>
+                                    <property name="use_underline">True</property>
                                     <property name="draw_indicator">True</property>
                                   </object>
                                   <packing>
@@ -1195,10 +1229,11 @@
                                 </child>
                                 <child>
                                   <object class="GtkCheckButton" id="media_in_new_tab">
-                                    <property name="label" translatable="yes">Open mounted removable media in new tab instead of new window</property>
+                                    <property name="label" translatable="yes">_Open mounted removable media in new tab instead of new window</property>
                                     <property name="can_focus">True</property>
                                     <property name="receives_default">False</property>
                                     <property name="use_action_appearance">False</property>
+                                    <property name="use_underline">True</property>
                                     <property name="draw_indicator">True</property>
                                   </object>
                                   <packing>
@@ -1209,10 +1244,11 @@
                                 </child>
                                 <child>
                                   <object class="GtkCheckButton" id="close_on_unmount">
-                                    <property name="label" translatable="yes">Close tab containing removable medium when it is unmounted</property>
+                                    <property name="label" translatable="yes">Clos_e tab containing removable medium when it is unmounted</property>
                                     <property name="can_focus">True</property>
                                     <property name="receives_default">False</property>
                                     <property name="use_action_appearance">False</property>
+                                    <property name="use_underline">True</property>
                                     <property name="draw_indicator">True</property>
                                   </object>
                                   <packing>
@@ -1246,7 +1282,7 @@
                   <object class="GtkLabel" id="label16">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="label" translatable="yes">Volume Management</property>
+                    <property name="label" translatable="yes">_Volume Management</property>
                     <property name="use_underline">True</property>
                   </object>
                   <packing>
@@ -1299,7 +1335,9 @@
                                         <property name="visible">True</property>
                                         <property name="can_focus">False</property>
                                         <property name="xalign">0</property>
-                                        <property name="label" translatable="yes">Terminal emulator:</property>
+                                        <property name="label" translatable="yes">_Terminal emulator:</property>
+                                        <property name="use_underline">True</property>
+                                        <property name="mnemonic_widget">terminal</property>
                                       </object>
                                       <packing>
                                         <property name="expand">False</property>
@@ -1342,7 +1380,9 @@
                                         <property name="visible">True</property>
                                         <property name="can_focus">False</property>
                                         <property name="xalign">0</property>
-                                        <property name="label" translatable="yes">Switch user command:</property>
+                                        <property name="label" translatable="yes">_Switch user command:</property>
+                                        <property name="use_underline">True</property>
+                                        <property name="mnemonic_widget">su_cmd</property>
                                       </object>
                                       <packing>
                                         <property name="expand">False</property>
@@ -1399,7 +1439,9 @@
                                         <property name="visible">True</property>
                                         <property name="can_focus">False</property>
                                         <property name="xalign">0</property>
-                                        <property name="label" translatable="yes">Archiver integration:</property>
+                                        <property name="label" translatable="yes">A_rchiver integration:</property>
+                                        <property name="use_underline">True</property>
+                                        <property name="mnemonic_widget">archiver</property>
                                       </object>
                                       <packing>
                                         <property name="expand">False</property>
@@ -1433,12 +1475,13 @@
                                 </child>
                                 <child>
                                   <object class="GtkCheckButton" id="force_startup_notify">
-                                    <property name="label" translatable="yes">Use Application Startup Notify by default</property>
+                                    <property name="label" translatable="yes">_Use Application Startup Notify by default</property>
                                     <property name="can_focus">True</property>
                                     <property name="receives_default">False</property>
                                     <property name="tooltip_text" translatable="yes">If checked then use Startup Notify for application if another not stated explicitly.
 If unchecked then use Startup Notify only if that is defined for application.</property>
                                     <property name="use_action_appearance">False</property>
+                                    <property name="use_underline">True</property>
                                     <property name="xalign">0</property>
                                     <property name="draw_indicator">True</property>
                                   </object>
@@ -1473,7 +1516,7 @@ If unchecked then use Startup Notify only if that is defined for application.</p
                   <object class="GtkLabel" id="label1">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="label" translatable="yes">Advanced</property>
+                    <property name="label" translatable="yes">_Advanced</property>
                     <property name="use_underline">True</property>
                   </object>
                   <packing>
