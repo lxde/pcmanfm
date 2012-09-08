@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm 1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-08-22 22:36+0200\n"
-"PO-Revision-Date: 2012-08-18 15:53+0200\n"
+"PO-Revision-Date: 2012-09-08 18:55+0200\n"
 "Last-Translator: Piotr Sokół <psokol@jabster.pl>\n"
 "Language-Team: polski <>\n"
 "Language: pl\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bits\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : ((n%10>=2 && n%10<=4 && (n"
 "%100<10 || n%100>=20)) ? 1 : 2));\n"
-"X-Generator: Pootle 2.0.5\n"
+"X-Generator: Gtranslator 2.91.5\n"
 "X-Poedit-Language: Polish\n"
 
 #: ../data/ui/about.glade.in.h:1
@@ -176,12 +176,11 @@ msgstr "Przenoszenie plików do kosza zamiast usuwania"
 
 #: ../data/ui/pref.glade.h:9
 msgid "Erase files on removable media instead of \"trash bin\" creation"
-msgstr ""
+msgstr "Usuwanie plików z nośników wymiennych zamiast tworzenia katalogu kosza"
 
 #: ../data/ui/pref.glade.h:10
-#, fuzzy
 msgid "Confirm before moving files into \"trash bin\""
-msgstr "Wyświetlanie pytania przed usuwaniem plików"
+msgstr "Wyświetlanie pytania przed przenoszeniem plików do kosza"
 
 #: ../data/ui/pref.glade.h:11
 msgid "Bookmarks:"
@@ -189,11 +188,11 @@ msgstr "Otwieranie zakładek:"
 
 #: ../data/ui/pref.glade.h:12
 msgid "Default drop action:"
-msgstr ""
+msgstr "Domyślna działanie przeciągania plików:"
 
 #: ../data/ui/pref.glade.h:13
 msgid "Unfold tab when files are dragged onto tab button"
-msgstr ""
+msgstr "Uaktywnienie karty po przeciągnieniu pliku na nią"
 
 #: ../data/ui/pref.glade.h:14
 msgid "<b>Default View</b>"
@@ -237,7 +236,7 @@ msgstr "Wyświetlanie miniatur tylko lokalnych plików"
 
 #: ../data/ui/pref.glade.h:24
 msgid "Do not generate thumbnails for files exceeding this size:"
-msgstr "Pomijanie generowania miniatur dla plików o rozmiarze większym niż:"
+msgstr "Pomijanie generowania miniatur plików o rozmiarze większym niż:"
 
 #: ../data/ui/pref.glade.h:25
 msgid "<b>User Interface</b>"
@@ -272,23 +271,20 @@ msgid "Always show the tab bar"
 msgstr "Zawsze widoczny pasek kart"
 
 #: ../data/ui/pref.glade.h:33
-#, fuzzy
 msgid "<b>Directories Tree</b>"
-msgstr "Drzewo katalogów"
+msgstr "<b>Drzewo katalogów</b>"
 
 #: ../data/ui/pref.glade.h:34
 msgid "Hide expander on empty or locked folder"
 msgstr ""
 
 #: ../data/ui/pref.glade.h:35
-#, fuzzy
 msgid "<b>Show in Places:</b>"
-msgstr "<b>Wyświetlanie ikon na pulpicie</b>"
+msgstr "<b>Elementy wyświetlane w położeniach:</b>"
 
 #: ../data/ui/pref.glade.h:36
-#, fuzzy
 msgid "Home Directory"
-msgstr "Drzewo katalogów"
+msgstr "Katalog użytkownika"
 
 #: ../data/ui/pref.glade.h:37 ../src/main-win-ui.c:174
 msgid "Desktop Folder"
@@ -299,13 +295,12 @@ msgid "Applications"
 msgstr "Programy"
 
 #: ../data/ui/pref.glade.h:39
-#, fuzzy
 msgid "Trash bin"
 msgstr "Kosz"
 
 #: ../data/ui/pref.glade.h:40
 msgid "Layout"
-msgstr ""
+msgstr "Układ"
 
 #: ../data/ui/pref.glade.h:41
 msgid "<b>Auto-mount</b>"
@@ -326,15 +321,16 @@ msgstr "Wyświetlanie możliwych czynności po wsunięciu nośnika wymiennego"
 #: ../data/ui/pref.glade.h:45
 msgid "Open mounted removable media in new tab instead of new window"
 msgstr ""
+"Otwieranie zamontowanych nośników wymiennych w nowej karcie zamiast w nowym "
+"oknie"
 
 #: ../data/ui/pref.glade.h:46
-#, fuzzy
 msgid "Close tab containing removable medium when it is unmounted"
-msgstr "Wyświetlanie możliwych czynności po wsunięciu nośnika wymiennego"
+msgstr "Zamykanie kart nośników wymiennych po odmontowaniu"
 
 #: ../data/ui/pref.glade.h:47
 msgid "Volume Management"
-msgstr "Zarządzanie wolumenami"
+msgstr "Wolumeny"
 
 #: ../data/ui/pref.glade.h:48
 msgid "<b>Programs</b>"
@@ -376,18 +372,19 @@ msgstr ""
 #: ../data/ui/pref.glade.h:59
 msgid "Auto (move if on the same FS, copy otherwise)"
 msgstr ""
+"Automatycznie (przenoszenie w tym samym systemie plików, w innym kopiowanie)"
 
 #: ../data/ui/pref.glade.h:60
 msgid "Copy"
-msgstr ""
+msgstr "Kopiowanie"
 
 #: ../data/ui/pref.glade.h:61
 msgid "Move"
-msgstr ""
+msgstr "Przenoszenie"
 
 #: ../data/ui/pref.glade.h:62
 msgid "Ask"
-msgstr ""
+msgstr "Wyświetlanie pytania"
 
 #: ../data/ui/pref.glade.h:63
 msgid "Icon View"
@@ -616,11 +613,11 @@ msgstr "_Narzędzia"
 
 #: ../src/main-win-ui.c:183
 msgid "Open Current Folder in _Terminal"
-msgstr "Otwórz bieżący katalog w _terminalu"
+msgstr "Otwórz położenie w _terminalu"
 
 #: ../src/main-win-ui.c:184
 msgid "Open Current Folder as _Root"
-msgstr "Otwórz bieżący katalog jako użytkownik _root"
+msgstr "Otwórz położenie jako użytkownik _root"
 
 #: ../src/main-win-ui.c:201
 msgid "Show _Hidden"
@@ -632,7 +629,7 @@ msgstr "Wyświetlanie panelu bocznego"
 
 #: ../src/main-win-ui.c:203
 msgid "Show Status B_ar"
-msgstr ""
+msgstr "Pasek _stanu"
 
 #: ../src/main-win-ui.c:204
 msgid "Fullscreen Mode"
