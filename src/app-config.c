@@ -199,7 +199,7 @@ void fm_app_config_load_from_key_file(FmAppConfig* cfg, GKeyFile* kf)
 
     /* default values for folder views */
     fm_key_file_get_int(kf, "ui", "view_mode", &tmp_int);
-    if(!FM_FOLDER_VIEW_MODE_IS_VALID(tmp_int))
+    if(!FM_STANDARD_VIEW_MODE_IS_VALID(tmp_int))
         cfg->view_mode = FM_FV_ICON_VIEW;
     else
         cfg->view_mode = tmp_int;

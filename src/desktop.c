@@ -814,7 +814,9 @@ static void update_background(FmDesktop* desktop, int is_it)
 #else
         GdkColor bg = app_config->desktop_bg;
 
+#if !GTK_CHECK_VERSION(2, 22, 0)
         gdk_rgb_find_color(gdk_drawable_get_colormap(window), &bg);
+#endif
         gdk_window_set_back_pixmap(window, NULL, FALSE);
         gdk_window_set_background(window, &bg);
 #endif
@@ -2122,7 +2124,9 @@ static gboolean on_focus_in(GtkWidget* w, GdkEventFocus* evt)
 {
     FmDesktop* self = (FmDesktop*) w;
     GtkTreeIter it;
+#if !GTK_CHECK_VERSION(2, 22, 0)
     GTK_WIDGET_SET_FLAGS(w, GTK_HAS_FOCUS);
+#endif
     if(!self->focus && gtk_tree_model_get_iter_first(GTK_TREE_MODEL(self->model), &it))
         self->focus = fm_folder_model_get_item_userdata(self->model, &it);
     if(self->focus)
@@ -2135,7 +2139,9 @@ static gboolean on_focus_out(GtkWidget* w, GdkEventFocus* evt)
     FmDesktop* self = (FmDesktop*) w;
     if(self->focus)
     {
+#if !GTK_CHECK_VERSION(2, 22, 0)
         GTK_WIDGET_UNSET_FLAGS(w, GTK_HAS_FOCUS);
+#endif
         redraw_item(self, self->focus);
     }
     return FALSE;
@@ -2159,7 +2165,7 @@ static gboolean on_drag_motion (GtkWidget *dest_widget,
     if(!item)
     {
         if(fm_drag_context_has_target(drag_context, desktop_atom)
-           && (drag_context->actions & GDK_ACTION_MOVE))
+           && (gdk_drag_context_get_actions(drag_context) & GDK_ACTION_MOVE))
         {
             /* desktop item is being dragged */
             action = GDK_ACTION_MOVE; /* move desktop items */
@@ -2221,7 +2227,7 @@ static gboolean on_drag_drop (GtkWidget *dest_widget,
     if(!item)
     {
         if(fm_drag_context_has_target(drag_context, desktop_atom)
-           && (drag_context->actions & GDK_ACTION_MOVE))
+           && (gdk_drag_context_get_actions(drag_context) & GDK_ACTION_MOVE))
         {
             /* desktop item is being dragged */
             gtk_drag_get_data(dest_widget, drag_context, desktop_atom, time);
@@ -2504,7 +2510,8 @@ static void fm_desktop_class_init(FmDesktopClass *klass)
     widget_class->drag_leave = on_drag_leave;
     /* widget_class->drag_data_get = on_drag_data_get; */
 
-    if(XInternAtoms(GDK_DISPLAY(), atom_names, G_N_ELEMENTS(atom_names), False, atoms))
+    if(XInternAtoms(gdk_x11_get_default_xdisplay(), atom_names,
+                    G_N_ELEMENTS(atom_names), False, atoms))
     {
         XA_NET_WORKAREA = atoms[0];
         XA_NET_NUMBER_OF_DESKTOPS = atoms[1];

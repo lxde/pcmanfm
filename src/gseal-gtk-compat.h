@@ -23,6 +23,10 @@
 
 G_BEGIN_DECLS
 
+#if !GTK_CHECK_VERSION(2, 22, 0)
+#  define gdk_drag_context_get_actions(drag_context) \
+        drag_context->actions
+#endif /* GTK < 2.22.0 */
 
 #if !GTK_CHECK_VERSION (2, 20, 0)
 #define gtk_widget_get_mapped(widget)           GTK_WIDGET_MAPPED(widget)

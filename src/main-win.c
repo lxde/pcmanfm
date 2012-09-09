@@ -93,7 +93,7 @@ static void on_fullscreen(GtkToggleAction* act, FmMainWin* win);
 
 static void on_location(GtkAction* act, FmMainWin* win);
 
-static void on_notebook_switch_page(GtkNotebook* nb, GtkNotebookPage* page, guint num, FmMainWin* win);
+static void on_notebook_switch_page(GtkNotebook* nb, gpointer* page, guint num, FmMainWin* win);
 static void on_notebook_page_added(GtkNotebook* nb, GtkWidget* page, guint num, FmMainWin* win);
 static void on_notebook_page_removed(GtkNotebook* nb, GtkWidget* page, guint num, FmMainWin* win);
 
@@ -175,7 +175,8 @@ static void update_view_menu(FmMainWin* win)
     act = gtk_ui_manager_get_action(win->ui, "/menubar/ViewMenu/ShowHidden");
     gtk_toggle_action_set_active(GTK_TOGGLE_ACTION(act), fm_folder_view_get_show_hidden(fv));
     act = gtk_ui_manager_get_action(win->ui, "/menubar/ViewMenu/IconView");
-    gtk_radio_action_set_current_value(GTK_RADIO_ACTION(act), fm_folder_view_get_mode(fv));
+    gtk_radio_action_set_current_value(GTK_RADIO_ACTION(act),
+                                       fm_standard_view_get_mode(FM_STANDARD_VIEW(fv)));
 }
 
 static void on_folder_view_sort_changed(FmFolderView* fv, FmMainWin* win)
@@ -739,7 +740,7 @@ static void on_fullscreen(GtkToggleAction* act, FmMainWin* win)
 static void on_change_mode(GtkRadioAction* act, GtkRadioAction *cur, FmMainWin* win)
 {
     int mode = gtk_radio_action_get_current_value(cur);
-    fm_folder_view_set_mode( win->folder_view, mode );
+    fm_standard_view_set_mode(FM_STANDARD_VIEW(win->folder_view), mode);
 }
 
 static void on_sort_by(GtkRadioAction* act, GtkRadioAction *cur, FmMainWin* win)
@@ -1077,7 +1078,7 @@ static void on_tab_page_chdir(FmTabPage* page, FmPath* path, FmMainWin* win)
     gtk_window_set_title(GTK_WINDOW(win), fm_tab_page_get_title(page));
 }
 
-static void on_notebook_switch_page(GtkNotebook* nb, GtkNotebookPage* new_page, guint num, FmMainWin* win)
+static void on_notebook_switch_page(GtkNotebook* nb, gpointer* new_page, guint num, FmMainWin* win)
 {
     GtkWidget* sw_page = gtk_notebook_get_nth_page(nb, num);
     FmTabPage* page;

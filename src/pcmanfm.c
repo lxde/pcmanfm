@@ -468,13 +468,13 @@ static void move_window_to_desktop(FmMainWin* win, FmDesktop* desktop)
     XClientMessageEvent xev;
 
     gtk_window_set_screen(GTK_WINDOW(win), screen);
-    if(!XInternAtoms(GDK_DISPLAY(), &atom_name, 1, False, &atom))
+    if(!XInternAtoms(gdk_x11_get_default_xdisplay(), &atom_name, 1, False, &atom))
     {
         /* g_debug("cannot get Atom for _NET_WM_DESKTOP"); */
         return;
     }
     xev.type = ClientMessage;
-    xev.window = GDK_WINDOW_XID(GTK_WIDGET(win)->window);
+    xev.window = GDK_WINDOW_XID(gtk_widget_get_window(GTK_WIDGET(win)));
     xev.message_type = atom;
     xev.format = 32;
     xev.data.l[0] = desktop->cur_desktop;
@@ -483,7 +483,7 @@ static void move_window_to_desktop(FmMainWin* win, FmDesktop* desktop)
     xev.data.l[3] = 0;
     xev.data.l[4] = 0;
     /* g_debug("moving window to current desktop"); */
-    XSendEvent(GDK_DISPLAY(), GDK_ROOT_WINDOW(), False,
+    XSendEvent(gdk_x11_get_default_xdisplay(), GDK_ROOT_WINDOW(), False,
                (SubstructureNotifyMask | SubstructureRedirectMask),
                (XEvent *) &xev);
 }
