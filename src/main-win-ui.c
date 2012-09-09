@@ -112,29 +112,6 @@ static const char main_menu_xml[] =
     "<toolitem action='Home'/>"
     "<toolitem action='Go'/>"
 "</toolbar>"
-"<popup>"
-  "<menu action='CreateNew'>"
-    "<menuitem action='NewFolder'/>"
-    "<menuitem action='NewBlank'/>"
-    "<menuitem action='NewShortcut'/>"
-  "</menu>"
-  "<separator/>"
-  "<menuitem action='Paste'/>"
-  "<menuitem action='SelAll'/>"
-  "<separator/>"
-  "<menu action='Sort'>"
-    "<menuitem action='Asc'/>"
-    "<menuitem action='Desc'/>"
-    "<separator/>"
-    "<menuitem action='ByName'/>"
-    "<menuitem action='ByMTime'/>"
-    "<menuitem action='BySize'/>"
-    "<menuitem action='ByType'/>"
-  "</menu>"
-  "<menuitem action='ShowHidden'/>"
-  "<separator/>"
-  "<menuitem action='Prop'/>"
-"</popup>"
 "<accelerator action='Location'/>"
 "<accelerator action='Location2'/>"
 "<accelerator action='Prev2'/>"
@@ -151,16 +128,16 @@ static GtkActionEntry main_win_actions[]=
         {"CloseTab", GTK_STOCK_CLOSE, N_("_Close Tab"), "<Ctrl>W", NULL, G_CALLBACK(on_close_tab)},
         {"Close", GTK_STOCK_QUIT, N_("Close _Window"), "<Ctrl>Q", NULL, G_CALLBACK(on_close_win)},
     {"EditMenu", NULL, N_("_Edit"), NULL, NULL, NULL},
-        {"Cut", GTK_STOCK_CUT, NULL, NULL, NULL, G_CALLBACK(on_cut)},
-        {"Copy", GTK_STOCK_COPY, NULL, NULL, NULL, G_CALLBACK(on_copy)},
-        {"Paste", GTK_STOCK_PASTE, NULL, NULL, NULL, G_CALLBACK(on_paste)},
-        {"Del", GTK_STOCK_DELETE, NULL, "Delete", NULL, G_CALLBACK(on_del)},
+        {"Cut", GTK_STOCK_CUT, NULL, NULL, NULL, G_CALLBACK(bounce_action)},
+        {"Copy", GTK_STOCK_COPY, NULL, NULL, NULL, G_CALLBACK(bounce_action)},
+        {"Paste", GTK_STOCK_PASTE, NULL, NULL, NULL, G_CALLBACK(bounce_action)},
+        {"Del", GTK_STOCK_DELETE, NULL, "Delete", NULL, G_CALLBACK(bounce_action)},
         {"Rename", NULL, N_("_Rename"), "F2", NULL, G_CALLBACK(on_rename)},
         {"Link", NULL, N_("Create Symlin_k"), NULL, NULL, NULL},
         {"MoveTo", NULL, N_("_Move To..."), NULL, NULL, G_CALLBACK(on_move_to)},
         {"CopyTo", NULL, N_("C_opy To..."), NULL, NULL, G_CALLBACK(on_copy_to)},
-        {"SelAll", GTK_STOCK_SELECT_ALL, NULL, "<Ctrl>A", NULL, G_CALLBACK(on_select_all)},
-        {"InvSel", NULL, N_("_Invert Selection"), "<Ctrl>I", NULL, G_CALLBACK(on_invert_select)},
+        {"SelAll", GTK_STOCK_SELECT_ALL, NULL, "<Ctrl>A", NULL, G_CALLBACK(bounce_action)},
+        {"InvSel", NULL, N_("_Invert Selection"), "<Ctrl>I", NULL, G_CALLBACK(bounce_action)},
         {"Pref", GTK_STOCK_PREFERENCES, N_("Prefere_nces"), NULL, NULL, G_CALLBACK(on_preference)},
     {"ViewMenu", NULL, N_("_View"), NULL, NULL, NULL},
         {"Reload", NULL, N_("_Reload Folder"), "F5", N_("Reload current folder"), G_CALLBACK(on_reload)},
@@ -191,11 +168,9 @@ static GtkActionEntry main_win_actions[]=
     {"Prev2", NULL, NULL, "XF86Back", NULL, G_CALLBACK(on_go_back)},
     {"Next2", NULL, NULL, "XF86Forward", NULL, G_CALLBACK(on_go_forward)},
     {"Reload2", NULL, NULL, "<Ctrl>R", NULL, G_CALLBACK(on_reload)},
-    /* for popup menu */
-    {"NewFolder", "folder", N_("Folder"), "<Ctrl><Shift>N", NULL, G_CALLBACK(on_create_new)},
-    {"NewBlank", "text-x-generic", N_("Blank File"), NULL, NULL, G_CALLBACK(on_create_new)},
-    {"NewShortcut", "system-run", N_("Shortcut"), NULL, NULL, G_CALLBACK(on_create_new)},
-    {"Prop", GTK_STOCK_PROPERTIES, NULL, NULL, NULL, G_CALLBACK(on_prop)}
+    /* for popup menu - these entries exist in FmFolderView popup still */
+    {"NewFolder", "folder", N_("Folder"), "<Ctrl><Shift>N", NULL, G_CALLBACK(bounce_action)},
+    {"NewBlank", "text-x-generic", N_("Blank File"), NULL, NULL, G_CALLBACK(bounce_action)}
 };
 
 /* main_win_toggle_actions+main_win_mode_actions - see 'ViewMenu' for mnemonics */
@@ -234,24 +209,5 @@ static GtkRadioActionEntry main_win_side_bar_mode_actions[]=
     {"Places", NULL, N_("Places"), "<Ctrl>6", NULL, FM_SP_PLACES},
     {"DirTree", NULL, N_("Directory Tree"), "<Ctrl>7", NULL, FM_SP_DIR_TREE},
     {"Remote", NULL, N_("Remote"), "<Ctrl>8", NULL, FM_SP_REMOTE},
-};
-
-static const char folder_menu_xml[]=
-"<popup>"
-  "<placeholder name='ph1'>"
-    "<menuitem action='NewTab'/>"
-    "<menuitem action='NewWin'/>"
-    "<menuitem action='Term'/>"
-    /* "<menuitem action='Search'/>" */
-  "</placeholder>"
-"</popup>";
-
-/* Action entries for pupup menus */
-static GtkActionEntry folder_menu_actions[]=
-{
-    {"NewTab", GTK_STOCK_NEW, N_("Open in New T_ab"), NULL, NULL, G_CALLBACK(on_open_in_new_tab)},
-    {"NewWin", GTK_STOCK_NEW, N_("Open in New Win_dow"), NULL, NULL, G_CALLBACK(on_open_in_new_win)},
-    {"Search", GTK_STOCK_FIND, NULL, NULL, NULL, NULL},
-    {"Term", "utilities-terminal", N_("Open in Termina_l"), NULL, NULL, G_CALLBACK(on_open_folder_in_terminal)},
 };
 

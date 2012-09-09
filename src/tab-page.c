@@ -27,6 +27,31 @@
 #include "app-config.h"
 #include "main-win.h"
 #include "tab-page.h"
+#include "pcmanfm.h"
+
+/* Additional entries for FmFileMenu popup */
+static const char folder_menu_xml[]=
+"<popup>"
+  "<placeholder name='ph1'>"
+    "<menuitem action='NewTab'/>"
+    "<menuitem action='NewWin'/>"
+    "<menuitem action='Term'/>"
+    /* "<menuitem action='Search'/>" */
+  "</placeholder>"
+"</popup>";
+
+static void on_open_in_new_tab(GtkAction* act, FmMainWin* win);
+static void on_open_in_new_win(GtkAction* act, FmMainWin* win);
+static void on_open_folder_in_terminal(GtkAction* act, FmMainWin* win);
+
+/* Action entries for popup menu entries above */
+static GtkActionEntry folder_menu_actions[]=
+{
+    {"NewTab", GTK_STOCK_NEW, N_("Open in New T_ab"), NULL, NULL, G_CALLBACK(on_open_in_new_tab)},
+    {"NewWin", GTK_STOCK_NEW, N_("Open in New Win_dow"), NULL, NULL, G_CALLBACK(on_open_in_new_win)},
+    {"Search", GTK_STOCK_FIND, NULL, NULL, NULL, NULL},
+    {"Term", "utilities-terminal", N_("Open in Termina_l"), NULL, NULL, G_CALLBACK(on_open_folder_in_terminal)},
+};
 
 #define GET_MAIN_WIN(page)   FM_MAIN_WIN(gtk_widget_get_toplevel(GTK_WIDGET(page)))
 
@@ -333,6 +358,68 @@ static char* format_status_text(FmTabPage* page)
     return NULL;
 }
 
+static void on_open_in_new_tab(GtkAction* act, FmMainWin* win)
+{
+    FmPathList* sels = fm_folder_view_dup_selected_file_paths(win->folder_view);
+    GList* l;
+    for( l = fm_path_list_peek_head_link(sels); l; l=l->next )
+    {
+        FmPath* path = (FmPath*)l->data;
+        fm_main_win_add_tab(win, path);
+    }
+    fm_path_list_unref(sels);
+}
+
+static void on_open_in_new_win(GtkAction* act, FmMainWin* win)
+{
+    FmPathList* sels = fm_folder_view_dup_selected_file_paths(win->folder_view);
+    GList* l;
+    for( l = fm_path_list_peek_head_link(sels); l; l=l->next )
+    {
+        FmPath* path = (FmPath*)l->data;
+        fm_main_win_add_win(win, path);
+    }
+    fm_path_list_unref(sels);
+}
+
+static void on_open_folder_in_terminal(GtkAction* act, FmMainWin* win)
+{
+    FmFileInfoList* files = fm_folder_view_dup_selected_files(win->folder_view);
+    GList* l;
+    for(l=fm_file_info_list_peek_head_link(files);l;l=l->next)
+    {
+        FmFileInfo* fi = (FmFileInfo*)l->data;
+        if(fm_file_info_is_dir(fi) /*&& !fm_file_info_is_virtual(fi)*/)
+            pcmanfm_open_folder_in_terminal(GTK_WINDOW(win), fm_file_info_get_path(fi));
+    }
+    fm_file_info_list_unref(files);
+}
+
+/* folder view popups */
+static void update_files_popup(FmFolderView* fv, GtkWindow* win,
+                               GtkUIManager* ui, GtkActionGroup* act_grp,
+                               FmFileInfoList* files)
+{
+    gtk_action_group_add_actions(act_grp, folder_menu_actions,
+                                 G_N_ELEMENTS(folder_menu_actions), win);
+    gtk_ui_manager_add_ui_from_string(ui, folder_menu_xml, -1, NULL);
+}
+
+static gboolean open_folder_func(GAppLaunchContext* ctx, GList* folder_infos, gpointer user_data, GError** err)
+{
+    FmMainWin* win = FM_MAIN_WIN(user_data);
+    GList* l = folder_infos;
+    FmFileInfo* fi = (FmFileInfo*)l->data;
+    fm_main_win_chdir(win, fm_file_info_get_path(fi));
+    l=l->next;
+    for(; l; l=l->next)
+    {
+        FmFileInfo* fi = (FmFileInfo*)l->data;
+        fm_main_win_add_tab(win, fm_file_info_get_path(fi));
+    }
+    return TRUE;
+}
+
 static void fm_tab_page_init(FmTabPage *page)
 {
     GtkPaned* paned = GTK_PANED(page);
@@ -346,7 +433,10 @@ static void fm_tab_page_init(FmTabPage *page)
     gtk_paned_add1(paned, GTK_WIDGET(page->side_pane));
     focus_chain = g_list_prepend(focus_chain, page->side_pane);
 
-    folder_view = fm_folder_view_new(app_config->view_mode);
+    /* handlers below will be used when FmMainWin detects new page added */
+    folder_view = (FmFolderView*)fm_standard_view_new(app_config->view_mode,
+                                                      update_files_popup,
+                                                      open_folder_func);
     page->folder_view = folder_view;
     fm_folder_view_sort(folder_view, app_config->sort_type, app_config->sort_by);
     fm_folder_view_set_selection_mode(folder_view, GTK_SELECTION_MULTIPLE);
