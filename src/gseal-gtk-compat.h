@@ -25,12 +25,13 @@ G_BEGIN_DECLS
 
 
 #if !GTK_CHECK_VERSION (2, 20, 0)
-#define gtk_widget_get_mapped(widget)                           GTK_WIDGET_MAPPED(widget)
+#define gtk_widget_get_mapped(widget)           GTK_WIDGET_MAPPED(widget)
+#define gtk_widget_get_realized(widget)         GTK_WIDGET_REALIZED(widget)
 #endif /* GTK < 2.20.0 */
 
 #if !GTK_CHECK_VERSION (2, 18, 0)
-#define gtk_widget_has_focus(widget)                            (GTK_WIDGET_HAS_FOCUS (widget))
-#define gtk_widget_get_visible(widget)                          (GTK_WIDGET_VISIBLE (widget))
+#define gtk_widget_has_focus(widget)            GTK_WIDGET_HAS_FOCUS(widget)
+#define gtk_widget_get_visible(widget)          GTK_WIDGET_VISIBLE(widget)
 #endif /* GTK+ < 2.18.0 */
 
 
