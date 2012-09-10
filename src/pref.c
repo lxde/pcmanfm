@@ -320,6 +320,7 @@ void fm_edit_preference( GtkWindow* parent, int page )
         INIT_BOOL(builder, FmAppConfig, always_show_tabs, NULL);
         INIT_BOOL(builder, FmAppConfig, hide_close_btn, NULL);
         INIT_BOOL(builder, FmConfig, si_unit, NULL);
+        INIT_BOOL(builder, FmConfig, backup_as_hidden, NULL);
 
         INIT_COMBO(builder, FmAppConfig, bm_open_method, NULL);
         INIT_COMBO(builder, FmAppConfig, view_mode, NULL);
@@ -331,6 +332,7 @@ void fm_edit_preference( GtkWindow* parent, int page )
 
         INIT_ENTRY(builder, FmConfig, terminal, NULL);
         INIT_ENTRY(builder, FmAppConfig, su_cmd, NULL);
+        INIT_BOOL(builder, FmConfig, force_startup_notify, NULL);
 
         /* archiver integration */
         init_archiver_combo(builder);

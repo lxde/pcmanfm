@@ -805,6 +805,7 @@
                                 <child>
                                   <object class="GtkCheckButton" id="backup_as_hidden">
                                     <property name="label" translatable="yes">Treat backup files as _hidden</property>
+                                    <property name="visible">True</property>
                                     <property name="can_focus">True</property>
                                     <property name="receives_default">False</property>
                                     <property name="use_action_appearance">False</property>
@@ -1476,6 +1477,7 @@
                                 <child>
                                   <object class="GtkCheckButton" id="force_startup_notify">
                                     <property name="label" translatable="yes">_Use Application Startup Notify by default</property>
+                                    <property name="visible">True</property>
                                     <property name="can_focus">True</property>
                                     <property name="receives_default">False</property>
                                     <property name="tooltip_text" translatable="yes">If checked then use Startup Notify for application if another not stated explicitly.
