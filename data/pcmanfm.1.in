@@ -59,6 +59,9 @@ open desktop preference dialog
 .B \-n\fR,\fP \-\^\-new-win
 open \fIdirectories\fP in new window
 .TP
+.B \-\^\-role
+sets X-role for window (only if \fB-n\fP is used)
+.TP
 .BI \-w " file" "\fR,\fP \-\^\-set-wallpaper=" file
 set desktop wallpaper from image \fIfile\fP
 .TP

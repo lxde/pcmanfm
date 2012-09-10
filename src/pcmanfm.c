@@ -64,7 +64,7 @@ static char* wallpaper_mode = NULL;
 static gboolean new_win = FALSE;
 static gboolean find_files = FALSE;
 static char* ipc_cwd = NULL;
-/* static char* window_role = NULL; */
+static char* window_role = NULL;
 
 static int n_pcmanfm_ref = 0;
 
@@ -85,7 +85,7 @@ static GOptionEntry opt_entries[] =
     { "show-pref", '\0', 0, G_OPTION_ARG_INT, &show_pref, N_("Open preference dialog. 'n' is number of the page you want to show (1, 2, 3...)."), "n" },
     { "new-win", 'n', 0, G_OPTION_ARG_NONE, &new_win, N_("Open new window"), NULL },
     /* { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL }, */
-    /* { "role", '\0', 0, G_OPTION_ARG_STRING, &window_role, N_("Window role for usage by window manager", N_("ROLE") }, */
+    { "role", '\0', 0, G_OPTION_ARG_STRING, &window_role, N_("Window role for usage by window manager"), N_("ROLE") },
     {G_OPTION_REMAINING, 0, 0, G_OPTION_ARG_FILENAME_ARRAY, &files_to_open, NULL, N_("[FILE1, FILE2,...]")},
     { NULL }
 };
@@ -166,7 +166,7 @@ static void single_inst_cb(const char* cwd, int screen_num)
         }
     }
     pcmanfm_run();
-    //window_role = NULL; /* reset it for clients callbacks */
+    window_role = NULL; /* reset it for clients callbacks */
 }
 
 int main(int argc, char** argv)
@@ -228,7 +228,7 @@ int main(int argc, char** argv)
     /* the main part */
     if(pcmanfm_run())
     {
-        //window_role = NULL; /* reset it for clients callbacks */
+        window_role = NULL; /* reset it for clients callbacks */
         fm_volume_manager_init();
         gtk_main();
         /* g_debug("main loop ended"); */
@@ -386,8 +386,8 @@ gboolean pcmanfm_run()
                 {
                     path = fm_path_get_home();
                     win = fm_main_win_add_win(NULL, path);
-//                    if(window_role)
-//                        gtk_window_set_role(GTK_WINDOW(win), window_role);
+                    if(new_win && window_role)
+                        gtk_window_set_role(GTK_WINDOW(win), window_role);
                     continue;
                 }
                 else /* basename */
@@ -436,8 +436,8 @@ gboolean pcmanfm_run()
                 char* cwd = ipc_cwd ? ipc_cwd : g_get_current_dir();
                 path = fm_path_new_for_path(cwd);
                 win = fm_main_win_add_win(NULL, path);
-//                if(window_role)
-//                    gtk_window_set_role(GTK_WINDOW(win), window_role);
+                if(new_win && window_role)
+                    gtk_window_set_role(GTK_WINDOW(win), window_role);
                 fm_path_unref(path);
                 g_free(cwd);
                 ipc_cwd = NULL;
@@ -501,8 +501,8 @@ gboolean pcmanfm_open_folder(GAppLaunchContext* ctx, GList* folder_infos, gpoint
     {
         FmMainWin *win = fm_main_win_add_win(NULL,
                                 fm_file_info_get_path((FmFileInfo*)l->data));
-//        if(window_role)
-//            gtk_window_set_role(GTK_WINDOW(win), window_role);
+        if(window_role)
+            gtk_window_set_role(GTK_WINDOW(win), window_role);
         new_win = FALSE;
         l = l->next;
     }
