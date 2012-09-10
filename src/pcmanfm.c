@@ -46,7 +46,7 @@
 #include "single-inst.h"
 
 static int signal_pipe[2] = {-1, -1};
-gboolean daemon_mode = FALSE;
+static gboolean daemon_mode = FALSE;
 static guint save_config_idle = 0;
 
 static char** files_to_open = NULL;
@@ -61,7 +61,7 @@ static int show_pref = 0;
 static gboolean desktop_pref = FALSE;
 static char* set_wallpaper = NULL;
 static char* wallpaper_mode = NULL;
-/* static gboolean new_win = FALSE; */
+static gboolean new_win = FALSE;
 static gboolean find_files = FALSE;
 static char* ipc_cwd = NULL;
 /* static char* window_role = NULL; */
@@ -83,7 +83,7 @@ static GOptionEntry opt_entries[] =
                     /* don't translate list of modes in description, please */
     { "wallpaper-mode", '\0', 0, G_OPTION_ARG_STRING, &wallpaper_mode, N_("Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"), N_("<mode>") },
     { "show-pref", '\0', 0, G_OPTION_ARG_INT, &show_pref, N_("Open preference dialog. 'n' is number of the page you want to show (1, 2, 3...)."), "n" },
-    /* { "new-win", '\0', 'n', G_OPTION_ARG_NONE, &new_win, N_("Open new window"), NULL }, */
+    { "new-win", 'n', 0, G_OPTION_ARG_NONE, &new_win, N_("Open new window"), NULL },
     /* { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL }, */
     /* { "role", '\0', 0, G_OPTION_ARG_STRING, &window_role, N_("Window role for usage by window manager", N_("ROLE") }, */
     {G_OPTION_REMAINING, 0, 0, G_OPTION_ARG_FILENAME_ARRAY, &files_to_open, NULL, N_("[FILE1, FILE2,...]")},
@@ -166,6 +166,7 @@ static void single_inst_cb(const char* cwd, int screen_num)
         }
     }
     pcmanfm_run();
+    //window_role = NULL; /* reset it for clients callbacks */
 }
 
 int main(int argc, char** argv)
@@ -227,6 +228,7 @@ int main(int argc, char** argv)
     /* the main part */
     if(pcmanfm_run())
     {
+        //window_role = NULL; /* reset it for clients callbacks */
         fm_volume_manager_init();
         gtk_main();
         /* g_debug("main loop ended"); */
@@ -267,6 +269,7 @@ static FmJobErrorAction on_file_info_job_error(FmFileInfoJob* job, GError* err, 
 
 gboolean pcmanfm_run()
 {
+    FmMainWin *win;
     gboolean ret = TRUE;
 
     if(!files_to_open)
@@ -382,7 +385,9 @@ gboolean pcmanfm_run()
                 else if( strcmp(*filename, "~") == 0 ) /* special case for home dir */
                 {
                     path = fm_path_get_home();
-                    fm_main_win_add_win(NULL, path);
+                    win = fm_main_win_add_win(NULL, path);
+//                    if(window_role)
+//                        gtk_window_set_role(GTK_WINDOW(win), window_role);
                     continue;
                 }
                 else /* basename */
@@ -430,11 +435,12 @@ gboolean pcmanfm_run()
                 FmPath* path;
                 char* cwd = ipc_cwd ? ipc_cwd : g_get_current_dir();
                 path = fm_path_new_for_path(cwd);
-                fm_main_win_add_win(NULL, path);
+                win = fm_main_win_add_win(NULL, path);
+//                if(window_role)
+//                    gtk_window_set_role(GTK_WINDOW(win), window_role);
                 fm_path_unref(path);
                 g_free(cwd);
                 ipc_cwd = NULL;
-                /* FIXME: bug #3453052: honor --role option */
             }
             first_run = FALSE;
         }
@@ -491,8 +497,15 @@ static void move_window_to_desktop(FmMainWin* win, FmDesktop* desktop)
 gboolean pcmanfm_open_folder(GAppLaunchContext* ctx, GList* folder_infos, gpointer user_data, GError** err)
 {
     GList* l = folder_infos;
-    /* FIXME: honor --new-win option and in that case: */
-    /* FIXME: bug #3453052: honor --role from client */
+    if(new_win)
+    {
+        FmMainWin *win = fm_main_win_add_win(NULL,
+                                fm_file_info_get_path((FmFileInfo*)l->data));
+//        if(window_role)
+//            gtk_window_set_role(GTK_WINDOW(win), window_role);
+        new_win = FALSE;
+        l = l->next;
+    }
     for(; l; l=l->next)
     {
         FmFileInfo* fi = (FmFileInfo*)l->data;

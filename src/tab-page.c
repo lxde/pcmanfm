@@ -448,8 +448,6 @@ static void fm_tab_page_init(FmTabPage *page)
     gtk_container_set_focus_chain(GTK_CONTAINER(page), focus_chain);
     g_list_free(focus_chain);
 
-    gtk_widget_show_all(GTK_WIDGET(page));
-
     /* create tab label */
     tab_label = (FmTabLabel*)fm_tab_label_new("");
     gtk_label_set_max_width_chars(tab_label->label, app_config->max_tab_chars);

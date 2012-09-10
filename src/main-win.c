@@ -47,6 +47,8 @@ static void fm_main_win_destroy(GtkObject *object);
 static void fm_main_win_finalize(GObject *object);
 G_DEFINE_TYPE(FmMainWin, fm_main_win, GTK_TYPE_WINDOW);
 
+static gint fm_main_win_new_tab(FmMainWin* win, FmPath* path);
+
 static void update_statusbar(FmMainWin* win);
 
 static gboolean on_focus_in(GtkWidget* w, GdkEventFocus* evt);
@@ -462,7 +464,6 @@ static void fm_main_win_init(FmMainWin *win)
     /* create 'Next' button manually and add a popup menu to it */
     toolitem = (GtkToolItem*)g_object_new(GTK_TYPE_MENU_TOOL_BUTTON, NULL);
     gtk_toolbar_insert(win->toolbar, toolitem, 2);
-    gtk_widget_show(GTK_WIDGET(toolitem));
     act = gtk_ui_manager_get_action(ui, "/menubar/GoMenu/Next");
     gtk_activatable_set_related_action(GTK_ACTIVATABLE(toolitem), act);
 
@@ -531,7 +532,6 @@ static void fm_main_win_init(FmMainWin *win)
     win->ui = ui;
 
     gtk_container_add(GTK_CONTAINER(win), GTK_WIDGET(vbox));
-    gtk_widget_show_all(GTK_WIDGET(vbox));
 }
 
 
@@ -539,7 +539,7 @@ FmMainWin* fm_main_win_new(FmPath* path)
 {
     FmMainWin* win = (FmMainWin*)g_object_new(FM_MAIN_WIN_TYPE, NULL);
     /* create new tab */
-    fm_main_win_add_tab(win, path);
+    fm_main_win_new_tab(win, path);
     return win;
 }
 
@@ -919,7 +919,7 @@ static void update_statusbar(FmMainWin* win)
         gtk_widget_hide(GTK_WIDGET(win->vol_status));
 }
 
-gint fm_main_win_add_tab(FmMainWin* win, FmPath* path)
+static gint fm_main_win_new_tab(FmMainWin* win, FmPath* path)
 {
     FmTabPage* page = fm_tab_page_new(path);
     GtkWidget* gpage = GTK_WIDGET(page);
@@ -929,7 +929,6 @@ gint fm_main_win_add_tab(FmMainWin* win, FmPath* path)
 
     gtk_paned_set_position(GTK_PANED(page), app_config->splitter_pos);
 
-    gtk_widget_show(gpage);
     g_signal_connect(folder_view, "key-press-event", G_CALLBACK(on_view_key_press_event), win);
 
     g_signal_connect_swapped(label->close_btn, "clicked", G_CALLBACK(gtk_widget_destroy), page);
@@ -943,12 +942,21 @@ gint fm_main_win_add_tab(FmMainWin* win, FmPath* path)
     return ret;
 }
 
+gint fm_main_win_add_tab(FmMainWin* win, FmPath* path)
+{
+    gint n = fm_main_win_new_tab(win, path);
+
+    gtk_widget_show_all(gtk_notebook_get_nth_page(win->notebook, n));
+    return n;
+}
+
 FmMainWin* fm_main_win_add_win(FmMainWin* win, FmPath* path)
 {
     win = fm_main_win_new(path);
     gtk_window_set_default_size(GTK_WINDOW(win),
                                 app_config->win_width,
                                 app_config->win_height);
+    gtk_widget_show_all(GTK_WIDGET(win));
     gtk_window_present(GTK_WINDOW(win));
     return win;
 }
