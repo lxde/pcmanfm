@@ -69,54 +69,36 @@ fi
 # intltool
 IT_PROG_INTLTOOL([0.40.0])
 
+dnl libgtk version
+AC_ARG_WITH(gtk,
+    [AC_HELP_STRING([--with-gtk=VER],
+        [choose Gtk+ version for libfm-gtk build (default=2)])],
+    [ac_with_gtk="${withval}"],
+    [ac_with_gtk=2])
+
 # Checks for libraries.
 
 PKG_CHECK_MODULES(XLIB, "x11")
 AC_SUBST(XLIB_CFLAGS)
 AC_SUBST(XLIB_LIBS)
 
-dnl gtk_modules="gtk+-2.0 >= 2.16.0"
-dnl PKG_CHECK_MODULES(GTK, [$gtk_modules])
-dnl AC_SUBST(GTK_CFLAGS)
-dnl AC_SUBST(GTK_LIBS)
-
-dnl pango_modules="pango >= 1.20.0"
-dnl PKG_CHECK_MODULES(PANGO, [$pango_modules])
-dnl AC_SUBST(PANGO_CFLAGS)
-dnl AC_SUBST(PANGO_LIBS)
-
-dnl glib_modules="glib-2.0 >= 2.16.0"
-dnl PKG_CHECK_MODULES(GLIB, [$glib_modules])
-dnl AC_SUBST(GLIB_CFLAGS)
-dnl AC_SUBST(GLIB_LIBS)
-
 gio_modules="gthread-2.0 gio-unix-2.0 >= 2.18.0"
 PKG_CHECK_MODULES(GIO, [$gio_modules])
 AC_SUBST(GIO_CFLAGS)
 AC_SUBST(GIO_LIBS)
 
-dnl gmodule_modules="gmodule-2.0"
-dnl PKG_CHECK_MODULES(GMODULE, [$gmodule_modules])
-dnl AC_SUBST(GMODULE_CFLAGS)
-dnl AC_SUBST(GMODULE_LIBS)
-
-fm_modules="glib-2.0 gtk+-2.0 gio-unix-2.0 pango >= 1.20.0 libfm >= 1.0 libfm-gtk >= 1.0"
+fm_modules="$gio_modules glib-2.0 pango >= 1.20.0 libfm >= 1.0"
+case "$ac_with_gtk" in
+    3|3.*)
+        fm_modules="$fm_modules gtk+-3.0 libfm-gtk3 >= 1.0.1"
+        ;;
+    *)
+        fm_modules="$fm_modules gtk+-2.0 libfm-gtk >= 1.0.1"
+        ;;
+esac
 PKG_CHECK_MODULES(FM, [$fm_modules])
 AC_SUBST(FM_CFLAGS)
 AC_SUBST(FM_LIBS)
-
-dnl This is temp. workaround until 1.0.2 where libfm 1.0.1 will be required
-AC_MSG_CHECKING([for fm_default_dnd_dest_targets])
-save_CPPFLAGS="$CPPFLAGS"
-CPPFLAGS="$CPPFLAGS $FM_CFLAGS"
-AC_COMPILE_IFELSE([AC_LANG_PROGRAM([
-#include <libfm/fm-gtk.h>
-void* x = fm_default_dnd_dest_targets;
-    ])], [AC_DEFINE(HAVE_LIBFM_DEFAULT_DND_DEST_TARGETS, 1,
-               [Define if Libfm have fm_default_dnd_dest_targets in headers])
-        AC_MSG_RESULT(yes)],
-    [AC_MSG_RESULT(no)])
-CPPFLAGS="$save_CPPFLAGS"
 
 menu_modules="libmenu-cache >= 0.3.2"
 PKG_CHECK_MODULES(MENU_CACHE, [$menu_modules])
