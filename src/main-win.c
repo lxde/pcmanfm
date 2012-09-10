@@ -190,7 +190,7 @@ static gboolean on_view_key_press_event(FmFolderView* fv, GdkEventKey* evt, FmMa
 {
     switch(evt->keyval)
     {
-    case GDK_BackSpace:
+    case GDK_KEY_BackSpace:
         on_go_up(NULL, win);
         break;
     }
@@ -1243,14 +1243,14 @@ static gboolean on_key_press_event(GtkWidget* w, GdkEventKey* evt)
     }
     else if(modifier == GDK_CONTROL_MASK) /* Ctrl */
     {
-        if(evt->keyval == GDK_Tab
-         || evt->keyval == GDK_ISO_Left_Tab
-         || evt->keyval == GDK_Page_Down) /* Ctrl + Tab or PageDown, next tab */
+        if(evt->keyval == GDK_KEY_Tab
+         || evt->keyval == GDK_KEY_ISO_Left_Tab
+         || evt->keyval == GDK_KEY_Page_Down) /* Ctrl + Tab or PageDown, next tab */
         {
             switch_to_next_tab(win);
             return TRUE;
         }
-        else if(evt->keyval == GDK_Page_Up)
+        else if(evt->keyval == GDK_KEY_Page_Up)
         {
             switch_to_prev_tab(win);
             return TRUE;
@@ -1258,8 +1258,8 @@ static gboolean on_key_press_event(GtkWidget* w, GdkEventKey* evt)
     }
     else if(modifier == (GDK_CONTROL_MASK|GDK_SHIFT_MASK)) /* Ctrl + Shift */
     {
-        if(evt->keyval == GDK_Tab
-         || evt->keyval == GDK_ISO_Left_Tab) /* Ctrl + Shift + Tab or PageUp, previous tab */
+        if(evt->keyval == GDK_KEY_Tab
+         || evt->keyval == GDK_KEY_ISO_Left_Tab) /* Ctrl + Shift + Tab or PageUp, previous tab */
         {
             switch_to_prev_tab(win);
             return TRUE;
@@ -1276,7 +1276,7 @@ static gboolean on_key_press_event(GtkWidget* w, GdkEventKey* evt)
             return TRUE;
         }
     }
-    else if(evt->keyval == GDK_Escape)
+    else if(evt->keyval == GDK_KEY_Escape)
     {
         if (gtk_widget_is_focus(GTK_WIDGET(win->location)))
         {

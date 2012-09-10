@@ -28,6 +28,21 @@ G_BEGIN_DECLS
         drag_context->actions
 #endif /* GTK < 2.22.0 */
 
+#if !GTK_CHECK_VERSION(2, 21, 0)
+#define GDK_KEY_BackSpace                       GDK_BackSpace
+#define GDK_KEY_Tab                             GDK_Tab
+#define GDK_KEY_ISO_Left_Tab                    GDK_ISO_Left_Tab
+#define GDK_KEY_Page_Down                       GDK_Page_Down
+#define GDK_KEY_Page_Up                         GDK_Page_Up
+#define GDK_KEY_Escape                          GDK_Escape
+#define GDK_KEY_Left                            GDK_Left
+#define GDK_KEY_Right                           GDK_Right
+#define GDK_KEY_Up                              GDK_Up
+#define GDK_KEY_Down                            GDK_Down
+#define GDK_KEY_space                           GDK_space
+#define GDK_KEY_F2                              GDK_F2
+#endif
+
 #if !GTK_CHECK_VERSION (2, 20, 0)
 #define gtk_widget_get_mapped(widget)           GTK_WIDGET_MAPPED(widget)
 #define gtk_widget_get_realized(widget)         GTK_WIDGET_REALIZED(widget)

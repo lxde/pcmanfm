@@ -24,14 +24,14 @@
 /* FmFolderView popup extension */
 static const char desktop_menu_xml[]=
 "<popup>"
-  "<placeholder name='CustomCommonOps'/>"
-    "<menuitem action='Prop'/>"
+  "<placeholder name='CustomCommonOps'>"
+    "<menuitem action='DeskPref'/>"
   "</placeholder>"
 "</popup>";
 
 static const GtkActionEntry desktop_actions[]=
 {
-    {"Prop", GTK_STOCK_PROPERTIES, N_("Desktop Preferences"), "", NULL, G_CALLBACK(fm_desktop_preference)}
+    {"DeskPref", GTK_STOCK_PROPERTIES, N_("Desktop Preferences"), "", NULL, G_CALLBACK(fm_desktop_preference)}
 };
 
 /* FmFileMenu extension for single folder */
