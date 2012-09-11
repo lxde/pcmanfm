@@ -361,6 +361,10 @@ static void on_side_pane_chdir(FmSidePane* sp, guint button, FmPath* path, FmMai
         fm_main_win_add_tab(win, path);
     else
         fm_main_win_chdir(win, path);
+
+    /* bug #3531696: search is done on side pane instead of folder view */
+    if(win->folder_view)
+        gtk_widget_grab_focus(GTK_WIDGET(win->folder_view));
 }
 
 /* This callback is only connected to side pane of current active tab page. */
