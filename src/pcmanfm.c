@@ -250,22 +250,6 @@ int main(int argc, char** argv)
     return 0;
 }
 
-static FmJobErrorAction on_file_info_job_error(FmFileInfoJob* job, GError* err, FmJobErrorSeverity severity, gpointer user_data)
-{
-    if(err->domain == G_IO_ERROR)
-    {
-        if(err->code == G_IO_ERROR_NOT_MOUNTED)
-        {
-            if(fm_mount_path(NULL, fm_file_info_job_get_current(job), TRUE))
-                return FM_JOB_RETRY;
-        }
-        else if(err->code == G_IO_ERROR_FAILED_HANDLED)
-            return FM_JOB_CONTINUE;
-    }
-    fm_show_error(NULL, NULL, err->message);
-    return FM_JOB_CONTINUE;
-}
-
 gboolean pcmanfm_run()
 {
     FmMainWin *win;
@@ -370,10 +354,8 @@ gboolean pcmanfm_run()
         if(files_to_open)
         {
             char** filename;
-            /* FIXME: use fm_launch_paths_simple() so don't use job */
-            FmFileInfoJob* job = fm_file_info_job_new(NULL, 0);
             FmPath* cwd = NULL;
-            GList* infos;
+            GList* paths = NULL;
             for(filename=files_to_open; *filename; ++filename)
             {
                 FmPath* path;
@@ -399,17 +381,13 @@ gboolean pcmanfm_run()
                     }
                     path = fm_path_new_relative(cwd, *filename);
                 }
-                fm_file_info_job_add(job, path);
-                fm_path_unref(path);
+                paths = g_list_append(paths, path);
             }
             if(cwd)
                 fm_path_unref(cwd);
-            /* FIXME: use fm_launch_paths_simple() instead */
-            g_signal_connect(job, "error", G_CALLBACK(on_file_info_job_error), NULL);
-            fm_job_run_sync_with_mainloop(FM_JOB(job));
-            infos = fm_file_info_list_peek_head_link(job->file_infos);
-            fm_launch_files_simple(NULL, NULL, infos, pcmanfm_open_folder, NULL);
-            g_object_unref(job);
+            fm_launch_paths_simple(NULL, NULL, paths, pcmanfm_open_folder, NULL);
+            g_list_foreach(paths, (GFunc)fm_path_unref, NULL);
+            g_list_free(paths);
             ret = (n_pcmanfm_ref >= 1); /* if there is opened window, return true to run the main loop. */
 
             g_strfreev(files_to_open);
