@@ -75,8 +75,8 @@ static void pass_args_to_existing_instance(const GOptionEntry* opt_entries, int 
     char* cwd = g_get_current_dir();
     escaped = g_strescape(cwd, NULL);
     fprintf(f, "%s\n", escaped);
-    g_free(escaped);
     g_free(cwd);
+    cwd = escaped;
 
     /* pass screen number */
     fprintf(f, "%d\n", screen_num);
@@ -105,8 +105,14 @@ static void pass_args_to_existing_instance(const GOptionEntry* opt_entries, int 
             break;
         }
         case G_OPTION_ARG_INT:
-            fprintf(f, "--%s\n%d\n", ent->long_name, *(gint*)ent->arg_data);
+        {
+            gint value = *(gint*)ent->arg_data;
+            if(value >= 0)
+            {
+                fprintf(f, "--%s\n%d\n", ent->long_name, value);
+            }
             break;
+        }
         case G_OPTION_ARG_STRING_ARRAY:
         case G_OPTION_ARG_FILENAME_ARRAY:
         {
@@ -118,9 +124,23 @@ static void pass_args_to_existing_instance(const GOptionEntry* opt_entries, int 
                 for(; *strv; ++strv)
                 {
                     char* str = *strv;
-                    /* FIXME: if not absolute path and not URI then prepend cwd or $HOME */
-                    if(g_str_has_prefix(str, "--")) /* strings begining with -- */
-                        fprintf(f, "--\n"); /* prepend a -- to it */
+                    /* if not absolute path and not URI then prepend cwd or $HOME */
+                    if(str[0] == '~' && str[1] == '\0') ; /* pass "~" as is */
+                    else if(str[0] == '~' && str[1] == '/')
+                    {
+                        const char *envvar = g_getenv("HOME");
+                        if(envvar)
+                        {
+                            escaped = g_strescape(envvar, NULL);
+                            fprintf(f, "%s", escaped);
+                            g_free(escaped);
+                            str++;
+                        }
+                    }
+                    else if ((escaped = g_uri_parse_scheme(str))) /* a valid URI */
+                        g_free(escaped);
+                    else if(str[0] != '/')
+                        fprintf(f, "%s/", cwd);
                     escaped = g_strescape(str, NULL);
                     fprintf(f, "%s\n", escaped);
                     g_free(escaped);
@@ -140,6 +160,7 @@ static void pass_args_to_existing_instance(const GOptionEntry* opt_entries, int 
         }
     }
     fclose(f);
+    g_free(cwd);
 }
 
 /**

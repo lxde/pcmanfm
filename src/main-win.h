@@ -74,7 +74,7 @@ struct _FmMainWinClass
 };
 
 GType       fm_main_win_get_type        (void);
-FmMainWin*  fm_main_win_new         (FmPath* path);
+FmMainWin*  fm_main_win_new             (void);
 void fm_main_win_chdir(FmMainWin* win, FmPath* path);
 void fm_main_win_chdir_by_name(FmMainWin* win, const char* path_str);
 gint fm_main_win_add_tab(FmMainWin* win, FmPath* path);

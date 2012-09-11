@@ -11,6 +11,13 @@ Changes on 1.0.2 since 1.0.1:
     preferences dialog and 'Use Application Startup Notify by default'
     into 'Advanced' tab. Both have effect with libfm 1.0.2 or newer.
 
+* Added rintime option '--new-win' to open new window instead of new tab
+    when started with some directory name.
+
+* Added runtime option '--role' to set WM_WINDOW_ROLE property which can
+    be used by window manager to do arrangement of window. Works only if
+    option '--new-win' is also used.
+
 
 Changes on 1.0.1 since 1.0.0:
 

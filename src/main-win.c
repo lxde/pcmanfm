@@ -535,11 +535,9 @@ static void fm_main_win_init(FmMainWin *win)
 }
 
 
-FmMainWin* fm_main_win_new(FmPath* path)
+FmMainWin* fm_main_win_new(void)
 {
     FmMainWin* win = (FmMainWin*)g_object_new(FM_MAIN_WIN_TYPE, NULL);
-    /* create new tab */
-    fm_main_win_new_tab(win, path);
     return win;
 }
 
@@ -952,11 +950,13 @@ gint fm_main_win_add_tab(FmMainWin* win, FmPath* path)
 
 FmMainWin* fm_main_win_add_win(FmMainWin* win, FmPath* path)
 {
-    win = fm_main_win_new(path);
+    win = fm_main_win_new();
     gtk_window_set_default_size(GTK_WINDOW(win),
                                 app_config->win_width,
                                 app_config->win_height);
     gtk_widget_show_all(GTK_WIDGET(win));
+    /* create new tab */
+    fm_main_win_new_tab(win, path);
     gtk_window_present(GTK_WINDOW(win));
     return win;
 }

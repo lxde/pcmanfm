@@ -57,7 +57,7 @@ static gboolean show_desktop = FALSE;
 static gboolean desktop_off = FALSE;
 static gboolean desktop_running = FALSE;
 /* static gboolean new_tab = FALSE; */
-static int show_pref = 0;
+static gint show_pref = -1;
 static gboolean desktop_pref = FALSE;
 static char* set_wallpaper = NULL;
 static char* wallpaper_mode = NULL;
@@ -155,7 +155,6 @@ static void single_inst_cb(const char* cwd, int screen_num)
             g_debug("file: %s", file);
             if(scheme) /* a valid URI */
             {
-                /* FIXME: should we canonicalize URIs? and how about file:///? */
                 g_free(scheme);
             }
             else /* a file path */
@@ -299,7 +298,7 @@ gboolean pcmanfm_run()
         {
             /* FIXME: pass screen number from client */
             fm_edit_preference(GTK_WINDOW(fm_desktop_get(0, 0)), show_pref - 1);
-            show_pref = 0;
+            show_pref = -1;
             return TRUE;
         }
         else if(desktop_pref)
@@ -394,8 +393,6 @@ gboolean pcmanfm_run()
                 {
                     if(G_UNLIKELY(!cwd))
                     {
-                        /* FIXME: This won't work if those filenames are passed via IPC since the receiving process has different cwd. */
-                        /* FIXME: should we use ipc_cwd here? */
                         char* cwd_str = g_get_current_dir();
                         cwd = fm_path_new_for_str(cwd_str);
                         g_free(cwd_str);
