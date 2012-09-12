@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: 0.9.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-08-22 22:36+0200\n"
-"PO-Revision-Date: 2012-07-08 22:52+0200\n"
+"PO-Revision-Date: 2012-09-06 00:49+0200\n"
 "Last-Translator: Necdet <necdetyucel@gmail.com>\n"
 "Language-Team: tr <tr@li.org>\n"
 "Language: tr\n"
@@ -177,27 +177,23 @@ msgstr "Silinen dosyaları diskten silmek yerine \"çöp kutusu\"na gönder"
 
 #: ../data/ui/pref.glade.h:9
 msgid "Erase files on removable media instead of \"trash bin\" creation"
-msgstr ""
+msgstr "Taşınabilir aygıttaki dosyaları \"çöp kutusu\"na göndermek yerine sil"
 
 #: ../data/ui/pref.glade.h:10
-#, fuzzy
 msgid "Confirm before moving files into \"trash bin\""
-msgstr "Dosyaları silmeden önce onay iste"
+msgstr "Dosyaları \"çöp kutusu\"na göndermeden önce onay iste"
 
-# İki parçaya bölünmüş cümlenin ilk kısmı, o yüzden imleri"ni". Ör:
-# Bookmarks:
-# Opened in Current Tab
 #: ../data/ui/pref.glade.h:11
 msgid "Bookmarks:"
-msgstr "Yer İmlerini:"
+msgstr "Yer İmleri:"
 
 #: ../data/ui/pref.glade.h:12
 msgid "Default drop action:"
-msgstr ""
+msgstr "Varsayılan bırakma eylemi:"
 
 #: ../data/ui/pref.glade.h:13
 msgid "Unfold tab when files are dragged onto tab button"
-msgstr ""
+msgstr "Dosyalar sekme düğmesine sürüklendiğinde sekmeyi aç"
 
 #: ../data/ui/pref.glade.h:14
 msgid "<b>Default View</b>"
@@ -253,7 +249,7 @@ msgstr "ICE ikili önekleri yerine SI onlu önekleri kullan"
 
 #: ../data/ui/pref.glade.h:27
 msgid "Treat backup files as hidden"
-msgstr ""
+msgstr "Yedekleme dosyalarına gizli dosya gibi davran"
 
 #: ../data/ui/pref.glade.h:28
 msgid "Display"
@@ -276,23 +272,20 @@ msgid "Always show the tab bar"
 msgstr "Her zaman sekme çubuğunu göster"
 
 #: ../data/ui/pref.glade.h:33
-#, fuzzy
 msgid "<b>Directories Tree</b>"
-msgstr "Dizin Ağacı"
+msgstr "<b>Dizin Ağacı</b>"
 
 #: ../data/ui/pref.glade.h:34
 msgid "Hide expander on empty or locked folder"
-msgstr ""
+msgstr "Boş veya kilitli dizinlerde genişleticiyi gizle"
 
 #: ../data/ui/pref.glade.h:35
-#, fuzzy
 msgid "<b>Show in Places:</b>"
-msgstr "<b>Masaüstü simgelerini göster</b>"
+msgstr "<b>Yerleri Göster:</b>"
 
 #: ../data/ui/pref.glade.h:36
-#, fuzzy
 msgid "Home Directory"
-msgstr "Dizin Ağacı"
+msgstr "Ev Dizini"
 
 #: ../data/ui/pref.glade.h:37 ../src/main-win-ui.c:174
 msgid "Desktop Folder"
@@ -303,13 +296,12 @@ msgid "Applications"
 msgstr "Uygulamalar"
 
 #: ../data/ui/pref.glade.h:39
-#, fuzzy
 msgid "Trash bin"
-msgstr "Çöp Kutusu"
+msgstr "Çöp kutusu"
 
 #: ../data/ui/pref.glade.h:40
 msgid "Layout"
-msgstr ""
+msgstr "Düzen"
 
 #: ../data/ui/pref.glade.h:41
 msgid "<b>Auto-mount</b>"
@@ -329,12 +321,11 @@ msgstr "Yerleştirildiğinde kaldırılabilir ortam için seçenekleri görünt�
 
 #: ../data/ui/pref.glade.h:45
 msgid "Open mounted removable media in new tab instead of new window"
-msgstr ""
+msgstr "Bağlanan taşınabilir aygıtları yeni pencere yerine yeni sekmede aç"
 
 #: ../data/ui/pref.glade.h:46
-#, fuzzy
 msgid "Close tab containing removable medium when it is unmounted"
-msgstr "Yerleştirildiğinde kaldırılabilir ortam için seçenekleri görüntüle"
+msgstr "Çıkartılan taşınabilir aygıtları içeren sekmeleri kapat"
 
 #: ../data/ui/pref.glade.h:47
 msgid "Volume Management"
@@ -370,7 +361,7 @@ msgstr "İlişkilendirilen Arşiv Yöneticisi:"
 
 #: ../data/ui/pref.glade.h:55
 msgid "Use Application Startup Notify by default"
-msgstr ""
+msgstr "Varsayılan olarak Uygulama Başlatma Uyarısını kullan"
 
 #: ../data/ui/pref.glade.h:56
 msgid ""
@@ -378,22 +369,26 @@ msgid ""
 "explicitly.\n"
 "If unchecked then use Startup Notify only if that is defined for application."
 msgstr ""
+"Eğer işaretliyse, başka bir uygulama özellikle belirtilmediği durumlarda "
+"uygulamalar için Başlatma Uyarısını kullan.\n"
+"Eğer işaretli değilse, sadece uygulama için tanımlıysa Başlatma Uyarısını "
+"kullan."
 
 #: ../data/ui/pref.glade.h:59
 msgid "Auto (move if on the same FS, copy otherwise)"
-msgstr ""
+msgstr "Otomatik (aynı FS üzerindeyse taşı, değilse kopyala)"
 
 #: ../data/ui/pref.glade.h:60
 msgid "Copy"
-msgstr ""
+msgstr "Kopyala"
 
 #: ../data/ui/pref.glade.h:61
 msgid "Move"
-msgstr ""
+msgstr "Taşı"
 
 #: ../data/ui/pref.glade.h:62
 msgid "Ask"
-msgstr ""
+msgstr "Sor"
 
 #: ../data/ui/pref.glade.h:63
 msgid "Icon View"
@@ -634,15 +629,15 @@ msgstr "_Gizli Dosyaları Göster"
 
 #: ../src/main-win-ui.c:202
 msgid "Show Side Pane"
-msgstr "_Gizli Dosyaları Göster"
+msgstr "_Yan Bölmede Göster"
 
 #: ../src/main-win-ui.c:203
 msgid "Show Status B_ar"
-msgstr ""
+msgstr "_Araç Çubuğunda Göster"
 
 #: ../src/main-win-ui.c:204
 msgid "Fullscreen Mode"
-msgstr ""
+msgstr "Tam Ekran Kipi"
 
 #: ../src/main-win-ui.c:209
 msgid "_Icon View"

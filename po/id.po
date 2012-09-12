@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm master\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-08-22 22:36+0200\n"
-"PO-Revision-Date: 2012-07-07 16:12+0200\n"
+"PO-Revision-Date: 2012-09-06 04:37+0200\n"
 "Last-Translator: Andika <andika@gmail.com>\n"
 "Language-Team: Indonesian Translation Team <id@li.org>\n"
 "Language: id\n"
@@ -176,12 +176,11 @@ msgstr ""
 
 #: ../data/ui/pref.glade.h:9
 msgid "Erase files on removable media instead of \"trash bin\" creation"
-msgstr ""
+msgstr "Hapus berkas pada media lepas pasang daripada membuat \"tong sampah\""
 
 #: ../data/ui/pref.glade.h:10
-#, fuzzy
 msgid "Confirm before moving files into \"trash bin\""
-msgstr "Konfirmasi sebelum menghapus berkas"
+msgstr "Konfirmasi sebelum memindah berkas ke \"tong sampah\""
 
 #: ../data/ui/pref.glade.h:11
 msgid "Bookmarks:"
@@ -189,11 +188,11 @@ msgstr "Penanda Tautan:"
 
 #: ../data/ui/pref.glade.h:12
 msgid "Default drop action:"
-msgstr ""
+msgstr "Aksi menjatuhkan baku:"
 
 #: ../data/ui/pref.glade.h:13
 msgid "Unfold tab when files are dragged onto tab button"
-msgstr ""
+msgstr "Buka lipatan tab ketika berkas diseret ke tombol tab"
 
 #: ../data/ui/pref.glade.h:14
 msgid "<b>Default View</b>"
@@ -249,7 +248,7 @@ msgstr "Gunakan prefiks desimal SI sebagai ganti prefiks biner IEC"
 
 #: ../data/ui/pref.glade.h:27
 msgid "Treat backup files as hidden"
-msgstr ""
+msgstr "Perlakukan berkas cadangan sebagai tersembunyi"
 
 #: ../data/ui/pref.glade.h:28
 msgid "Display"
@@ -272,23 +271,20 @@ msgid "Always show the tab bar"
 msgstr "Selalu tampilkan bilah tab"
 
 #: ../data/ui/pref.glade.h:33
-#, fuzzy
 msgid "<b>Directories Tree</b>"
-msgstr "Pohon Direktori"
+msgstr "<b>Pohon Direktori</b>"
 
 #: ../data/ui/pref.glade.h:34
 msgid "Hide expander on empty or locked folder"
-msgstr ""
+msgstr "Sembunyikan pengembang pada folder kosong atau terkunci"
 
 #: ../data/ui/pref.glade.h:35
-#, fuzzy
 msgid "<b>Show in Places:</b>"
-msgstr "<b>Tampilkan ikon desktop</b>"
+msgstr "<b>Tampilkan di Tempat</b>"
 
 #: ../data/ui/pref.glade.h:36
-#, fuzzy
 msgid "Home Directory"
-msgstr "Pohon Direktori"
+msgstr "Direktori Rumah"
 
 #: ../data/ui/pref.glade.h:37 ../src/main-win-ui.c:174
 msgid "Desktop Folder"
@@ -299,13 +295,12 @@ msgid "Applications"
 msgstr "Aplikasi"
 
 #: ../data/ui/pref.glade.h:39
-#, fuzzy
 msgid "Trash bin"
-msgstr "Tong Sampah"
+msgstr "Tong sampah"
 
 #: ../data/ui/pref.glade.h:40
 msgid "Layout"
-msgstr ""
+msgstr "Tata letak"
 
 #: ../data/ui/pref.glade.h:41
 msgid "<b>Auto-mount</b>"
@@ -327,14 +322,11 @@ msgstr ""
 
 #: ../data/ui/pref.glade.h:45
 msgid "Open mounted removable media in new tab instead of new window"
-msgstr ""
+msgstr "Buka media lepas pasang yang dikait pada tab baru, bukan jendela baru"
 
 #: ../data/ui/pref.glade.h:46
-#, fuzzy
 msgid "Close tab containing removable medium when it is unmounted"
-msgstr ""
-"Tampilkan pilihan yang tersedia bagi media yang dapat dilepas ketika "
-"ditancapkan"
+msgstr "Tutup tab yang memuat medium lepas pasang ketika dilepas kaitnya"
 
 #: ../data/ui/pref.glade.h:47
 msgid "Volume Management"
@@ -368,7 +360,7 @@ msgstr "Integrasi pengarsip:"
 
 #: ../data/ui/pref.glade.h:55
 msgid "Use Application Startup Notify by default"
-msgstr ""
+msgstr "Secara baku pakai Pemberitahuan Awal Mula Aplikasi"
 
 #: ../data/ui/pref.glade.h:56
 msgid ""
@@ -376,22 +368,26 @@ msgid ""
 "explicitly.\n"
 "If unchecked then use Startup Notify only if that is defined for application."
 msgstr ""
+"Bila dicontreng maka pakai Pemberitahuan Awal Mula bagi aplikasi bila yang "
+"lain tak dinyatakan secara eksplisit.\n"
+"Bila tak dicontreng maka pakai Pemberitahuan Awal Mula hanya bila itu "
+"didefinisikan bagi aplikasi."
 
 #: ../data/ui/pref.glade.h:59
 msgid "Auto (move if on the same FS, copy otherwise)"
-msgstr ""
+msgstr "Otomatis (pindahkan bila pada FS yang sama, salin bila tidak)"
 
 #: ../data/ui/pref.glade.h:60
 msgid "Copy"
-msgstr ""
+msgstr "Salin"
 
 #: ../data/ui/pref.glade.h:61
 msgid "Move"
-msgstr ""
+msgstr "Pindah"
 
 #: ../data/ui/pref.glade.h:62
 msgid "Ask"
-msgstr ""
+msgstr "Tanyakan"
 
 #: ../data/ui/pref.glade.h:63
 msgid "Icon View"
@@ -636,11 +632,11 @@ msgstr "Tampilkan Panel Sisi"
 
 #: ../src/main-win-ui.c:203
 msgid "Show Status B_ar"
-msgstr ""
+msgstr "Tampilkan Bil_ah Status"
 
 #: ../src/main-win-ui.c:204
 msgid "Fullscreen Mode"
-msgstr ""
+msgstr "Mode Layar Penuh"
 
 #: ../src/main-win-ui.c:209
 msgid "_Icon View"
