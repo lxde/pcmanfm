@@ -20,7 +20,19 @@
  * 
  * 
  */
- 
-#include <glib.h>
 
-gboolean file_search_ui();
+#ifndef __FILE_SEARCH_H__
+#define __FILE_SEARCH_H__
+
+#include <glib.h>
+#include <libfm/fm.h>
+
+G_BEGIN_DECLS
+
+void fm_search_file_in_folder(FmPath* folder_path);
+
+void fm_search_file_in_folders(GList* folder_paths);
+
+G_END_DECLS
+
+#endif

@@ -60,12 +60,16 @@ typedef struct
 
     GtkSpinButton* smaller_spinbutton;
     GtkComboBox* smaller_unit_combo;
-    
-    GtkCheckButton* mtime_checkbutton;
-    GtkButton* date1_button;
-    GtkButton* date2_button;
+
+    GtkCheckButton* min_mtime_checkbutton;
+    GtkButton* min_mtime_button;
+    GtkCheckButton* max_mtime_checkbutton;
+    GtkButton* max_mtime_button;
 
     GtkListStore * path_list_store;
+
+    GtkDialog* date_dlg;
+    GtkCalendar* calendar;
 } FileSearchUI;
 
 static gchar * document_mime_types[] = {
@@ -201,9 +205,18 @@ static gboolean launch_search(FileSearchUI* ui)
             g_string_append_printf(search_uri, "&min_size=%llu", (guint64)max_size);
         }
 
-        if(gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(ui->mtime_checkbutton)))
+        if(gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(ui->min_mtime_checkbutton)))
         {
-            /* TODO: support date range */
+            const char* label = gtk_button_get_label(ui->min_mtime_button);
+            if(g_strcmp0(label, _("(None)")) != 0)
+                g_string_append_printf(search_uri, "&min_mtime=%s", label);
+        }
+
+        if(gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(ui->max_mtime_checkbutton)))
+        {
+            const char* label = gtk_button_get_label(ui->max_mtime_button);
+            if(g_strcmp0(label, _("(None)")) != 0)
+                g_string_append_printf(search_uri, "&max_mtime=%s", label);            
         }
 
         search_path = fm_path_new_for_uri(search_uri->str);
@@ -215,7 +228,8 @@ static gboolean launch_search(FileSearchUI* ui)
     }
     else
     {
-        /* FIXME: show error if no paths are added */
+        /* show error if no paths are added */
+        fm_show_error(GTK_WINDOW(ui->dlg), NULL, _("No folders are specified."));
         return FALSE;
     }
     return TRUE;
@@ -231,36 +245,51 @@ static void on_dlg_response(GtkDialog* dlg, int response, gpointer user_data)
             return;
     }
 
+    gtk_widget_destroy(GTK_WIDGET(ui->date_dlg));
     gtk_widget_destroy(GTK_WIDGET(dlg));
     pcmanfm_unref();
 }
 
-static void add_path(GtkWidget * list_store, const char * path)
+static void add_path(GtkWidget * list_store, const char* uri)
 {
+    char* filename;
     GtkTreeIter it;
-    gtk_list_store_append( list_store, &it );
-    gtk_list_store_set( list_store, &it, 0, path, -1 );
+    gtk_list_store_append(list_store, &it);
+    filename = g_filename_from_uri(uri, NULL, NULL);
+    if(filename)
+    {
+        gtk_list_store_set(list_store, &it, 0, filename, -1);
+        g_free(filename);
+    }
+    else
+        gtk_list_store_set(list_store, &it, 0, uri, -1);
 }
 
 static void on_add_path_button_clicked(GtkButton * btn, gpointer user_data)
 {
     FileSearchUI * ui = (FileSearchUI *)user_data;
-
     GtkWidget* dlg = gtk_file_chooser_dialog_new(
-      _("Select a folder"), GTK_WINDOW(ui->dlg),
-      GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER,
-      GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
-      GTK_STOCK_OPEN, GTK_RESPONSE_OK,
-      NULL );
-      
-    gtk_dialog_set_alternative_button_order( GTK_DIALOG( dlg ), GTK_RESPONSE_OK, GTK_RESPONSE_CANCEL );
-    if( gtk_dialog_run( GTK_DIALOG( dlg ) ) == GTK_RESPONSE_OK )
+                          _("Select a folder"), GTK_WINDOW(ui->dlg),
+                          GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER,
+                          GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
+                          GTK_STOCK_OPEN, GTK_RESPONSE_OK,
+                          NULL );
+    gtk_dialog_set_alternative_button_order(GTK_DIALOG(dlg), GTK_RESPONSE_OK, GTK_RESPONSE_CANCEL);
+    gtk_file_chooser_set_select_multiple(GTK_FILE_CHOOSER(dlg), TRUE);
+
+    if(gtk_dialog_run(GTK_DIALOG(dlg)) == GTK_RESPONSE_OK)
     {
-        char* path = gtk_file_chooser_get_filename( GTK_FILE_CHOOSER( dlg ) );
-        add_path(ui->path_list_store, path);
-        g_free( path );
+        GSList* uris = gtk_file_chooser_get_uris(GTK_FILE_CHOOSER(dlg));
+        GSList* l;
+        for(l = uris; l; l=l->next)
+        {
+            char* uri = (char*)l->data;
+            add_path(ui->path_list_store, uri);
+            g_free(uri);
+        }
+        g_slist_free(uris);
     }
-    gtk_widget_destroy( dlg );
+    gtk_widget_destroy(dlg);
 }
 
 static void on_remove_path_button_clicked(GtkButton * btn, gpointer user_data)
@@ -278,7 +307,14 @@ static void file_search_ui_free(FileSearchUI* ui)
     g_slice_free(FileSearchUI, ui);
 }
 
-gboolean file_search_ui()
+void fm_search_file_in_folder(FmPath* folder_path)
+{
+    GList paths = {0};
+    paths.data = folder_path;
+    fm_search_file_in_folders(folder_path ? &paths : NULL);
+}
+
+void fm_search_file_in_folders(GList* folder_paths)
 {
     FileSearchUI * ui = g_slice_new0(FileSearchUI);
 
@@ -286,6 +322,7 @@ gboolean file_search_ui()
     gtk_builder_add_from_file(builder, PACKAGE_UI_DIR "/filesearch.ui", NULL);
 
     ui->dlg = GTK_DIALOG(gtk_builder_get_object(builder, "dlg"));
+    gtk_dialog_set_alternative_button_order(GTK_DIALOG(ui->dlg), GTK_RESPONSE_OK, GTK_RESPONSE_CANCEL);
     ui->path_tree_view = GTK_TREE_VIEW(gtk_builder_get_object(builder, "path_tree_view"));
 
     ui->name_entry = GTK_ENTRY(gtk_builder_get_object(builder, "name_entry"));
@@ -310,17 +347,35 @@ gboolean file_search_ui()
     ui->smaller_spinbutton = GTK_SPIN_BUTTON(gtk_builder_get_object(builder, "smaller_spinbutton"));
     ui->smaller_unit_combo = GTK_COMBO_BOX(gtk_builder_get_object(builder, "smaller_unit_combo"));
     
-    ui->mtime_checkbutton = GTK_CHECK_BUTTON(gtk_builder_get_object(builder, "mtime_checkbutton"));
-    ui->date1_button = GTK_BUTTON(gtk_builder_get_object(builder, "date1_button"));
-    ui->date2_button = GTK_BUTTON(gtk_builder_get_object(builder, "date2_button"));
+    ui->min_mtime_checkbutton = GTK_CHECK_BUTTON(gtk_builder_get_object(builder, "min_mtime_checkbutton"));
+    ui->min_mtime_button = GTK_BUTTON(gtk_builder_get_object(builder, "min_mtime_button"));
+    ui->max_mtime_checkbutton = GTK_CHECK_BUTTON(gtk_builder_get_object(builder, "max_mtime_checkbutton"));
+    ui->max_mtime_button = GTK_BUTTON(gtk_builder_get_object(builder, "max_mtime_button"));
 
     ui->path_list_store = GTK_LIST_STORE(gtk_builder_get_object(builder, "path_list_store"));
+
+    ui->date_dlg = GTK_DIALOG(gtk_builder_get_object(builder, "date_dlg"));
+    gtk_dialog_set_alternative_button_order(GTK_DIALOG(ui->date_dlg), GTK_RESPONSE_OK, GTK_RESPONSE_CANCEL);
+    ui->calendar = GTK_CALENDAR(gtk_builder_get_object(builder, "calendar"));
 
     filesearch_glade_connect_signals(builder, ui);
     g_object_unref(builder);
 
     /* associate the data with the dialog so it can be freed as needed. */
     g_object_set_qdata_full(ui->dlg, fm_qdata_id, ui, (GDestroyNotify)file_search_ui_free);
+
+    /* add folders to search */
+    if(folder_paths)
+    {
+        GList* l;
+        for(l = folder_paths; l; l=l->next)
+        {
+            FmPath* folder_path = FM_PATH(l->data);
+            char* path_str = fm_path_to_str(folder_path);
+            add_path(ui->path_list_store, path_str);
+            g_free(path_str);
+        }
+    }
 
     gtk_widget_show(ui->dlg);
 
@@ -345,23 +400,59 @@ static void on_smaller_than_checkbutton_toggled(GtkToggleButton* btn, gpointer u
     gtk_widget_set_sensitive(GTK_WIDGET(ui->smaller_unit_combo), enable);
 }
 
-static void on_date1_button_clicked(GtkButton* btn, gpointer user_data)
+static gboolean choose_date(GtkButton* btn, FileSearchUI* ui)
 {
-    FileSearchUI* ui = (FileSearchUI*)user_data;
+    const char* label = gtk_button_get_label(btn);
+    int res;
+    guint month, year, day;
+
+    /* FIXME: we definitely need a better UI design for this part. */
+
+    if(sscanf(label, "%04d-%02d-%02d", &year, &month, &day) == 3)
+    {
+        gtk_calendar_select_month(ui->calendar, month, year);
+        gtk_calendar_select_day(ui->calendar, day);
+    }
+
+    res = gtk_dialog_run(ui->date_dlg);
+    gtk_widget_hide(GTK_WIDGET(ui->date_dlg));
+
+    if(res == GTK_RESPONSE_OK)
+    {
+        char str[12];
+        gtk_calendar_get_date(ui->calendar, &year, &month, &day);
+        ++month; /* month returned from GtkCalendar is 0 based. */
+        g_snprintf(str, sizeof(str), "%04d-%02d-%02d", year, month, day);
+        gtk_button_set_label(btn, str);        
+        return TRUE;
+    }
+    return FALSE;
 }
 
-static void on_date2_button_clicked(GtkButton* btn, gpointer user_data)
+static void on_min_mtime_button_clicked(GtkButton* btn, gpointer user_data)
 {
     FileSearchUI* ui = (FileSearchUI*)user_data;
+    choose_date(btn, ui);
 }
 
-static void on_mtime_checkbutton_toggled(GtkToggleButton* btn, gpointer user_data)
+static void on_max_mtime_button_clicked(GtkButton* btn, gpointer user_data)
+{
+    FileSearchUI* ui = (FileSearchUI*)user_data;
+    choose_date(btn, ui);
+}
+
+static void on_min_mtime_checkbutton_toggled(GtkToggleButton* btn, gpointer user_data)
 {
     FileSearchUI* ui = (FileSearchUI*)user_data;
     gboolean enable = gtk_toggle_button_get_active(btn);
-    gtk_widget_set_sensitive(GTK_WIDGET(ui->date1_button), enable);
-    gtk_widget_set_sensitive(GTK_WIDGET(ui->date2_button), enable);
+    gtk_widget_set_sensitive(GTK_WIDGET(ui->min_mtime_button), enable);
 }
 
+static void on_max_mtime_checkbutton_toggled(GtkToggleButton* btn, gpointer user_data)
+{
+    FileSearchUI* ui = (FileSearchUI*)user_data;
+    gboolean enable = gtk_toggle_button_get_active(btn);
+    gtk_widget_set_sensitive(GTK_WIDGET(ui->max_mtime_button), enable);
+}
 
 #include "file-search-ui.c" /* file generated with glade-connect-gen */

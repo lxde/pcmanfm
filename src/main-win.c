@@ -706,7 +706,9 @@ static void on_open_as_root(GtkAction* act, FmMainWin* win)
 
 static void on_search(GtkAction* act, FmMainWin* win)
 {
-    file_search_ui();
+    FmTabPage* page = win->current_page;
+    FmPath* cwd = fm_tab_page_get_cwd(page);
+    fm_search_file_in_folder(cwd);
 }
 
 static void on_show_hidden(GtkToggleAction* act, FmMainWin* win)

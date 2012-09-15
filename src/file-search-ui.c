@@ -17,10 +17,11 @@ static void __filesearch_glade_connect_func(
     static const char* handler_names[] = {
         "on_add_path_button_clicked",
         "on_bigger_than_checkbutton_toggled",
-        "on_date1_button_clicked",
-        "on_date2_button_clicked",
         "on_dlg_response",
-        "on_mtime_checkbutton_toggled",
+        "on_max_mtime_button_clicked",
+        "on_max_mtime_checkbutton_toggled",
+        "on_min_mtime_button_clicked",
+        "on_min_mtime_checkbutton_toggled",
         "on_remove_path_button_clicked",
         "on_smaller_than_checkbutton_toggled"
     };
@@ -28,10 +29,11 @@ static void __filesearch_glade_connect_func(
     static GCallback handler_funcs[] = {
         G_CALLBACK(on_add_path_button_clicked),
         G_CALLBACK(on_bigger_than_checkbutton_toggled),
-        G_CALLBACK(on_date1_button_clicked),
-        G_CALLBACK(on_date2_button_clicked),
         G_CALLBACK(on_dlg_response),
-        G_CALLBACK(on_mtime_checkbutton_toggled),
+        G_CALLBACK(on_max_mtime_button_clicked),
+        G_CALLBACK(on_max_mtime_checkbutton_toggled),
+        G_CALLBACK(on_min_mtime_button_clicked),
+        G_CALLBACK(on_min_mtime_checkbutton_toggled),
         G_CALLBACK(on_remove_path_button_clicked),
         G_CALLBACK(on_smaller_than_checkbutton_toggled)
     };
