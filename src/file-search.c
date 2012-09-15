@@ -68,36 +68,158 @@ typedef struct
     GtkListStore * path_list_store;
 } FileSearchUI;
 
-static gchar * mime_types[] = { NULL,
-                         "text/plain",
-                         "audio/",
-                         "video/",
-                         "image/" };
-
-static gchar * document_mime_types[] = { "application/pdf",
-"application/msword",
-"application/vnd.ms-excel",
-"application/vnd.ms-powerpoint",
-"application/vnd.oasis.opendocument.chart",
-"application/vnd.oasis.opendocument.database",
-"application/vnd.oasis.opendocument.formula",
-"application/vnd.oasis.opendocument.graphics",
-"application/vnd.oasis.opendocument.image",
-"application/vnd.oasis.opendocument.presentation",
-"application/vnd.oasis.opendocument.spreadsheet",
-"application/vnd.oasis.opendocument.text",
-"application/vnd.oasis.opendocument.text-master",
-"application/vnd.oasis.opendocument.text-web",
-"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-"application/vnd.openxmlformats-officedocument.presentationml.presentation",
-"application/vnd.openxmlformats-officedocument.presentationml.slideshow",
-"application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-"application/x-abiword",
-"application/x-gnumeric",
-"application/x-dvi",
-NULL};
+static gchar * document_mime_types[] = {
+    "application/pdf",
+    "application/msword",
+    "application/vnd.ms-excel",
+    "application/vnd.ms-powerpoint",
+    "application/vnd.oasis.opendocument.chart",
+    "application/vnd.oasis.opendocument.database",
+    "application/vnd.oasis.opendocument.formula",
+    "application/vnd.oasis.opendocument.graphics",
+    "application/vnd.oasis.opendocument.image",
+    "application/vnd.oasis.opendocument.presentation",
+    "application/vnd.oasis.opendocument.spreadsheet",
+    "application/vnd.oasis.opendocument.text",
+    "application/vnd.oasis.opendocument.text-master",
+    "application/vnd.oasis.opendocument.text-web",
+    "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+    "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+    "application/vnd.openxmlformats-officedocument.presentationml.slideshow",
+    "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    "application/x-abiword",
+    "application/x-gnumeric",
+    "application/x-dvi",
+    NULL
+};
                          
 /* UI Signal Handlers */
+
+static gboolean launch_search(FileSearchUI* ui)
+{
+    GString* search_uri = g_string_sized_new(1024);
+    GtkTreeModel* model;
+    GtkTreeIter it;
+
+    /* build the search:// URI to perform the search */
+    g_string_append(search_uri, "search:/");
+
+    model = GTK_TREE_MODEL(ui->path_list_store);
+    if(gtk_tree_model_get_iter_first(model, &it)) /* we need to have at least one dir path */
+    {
+        gboolean recursive = gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(ui->search_recursive_checkbutton));
+        gboolean show_hidden = gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(ui->search_hidden_files_checkbutton));
+        const char* name_patterns = gtk_entry_get_text(ui->name_entry);
+        gboolean name_ci = gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(ui->name_case_insensitive_checkbutton));
+        gboolean name_regex = gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(ui->name_regex_checkbutton));
+        const char* content_pattern = gtk_entry_get_text(ui->content_entry);
+        gboolean content_ci = gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(ui->content_case_insensitive_checkbutton));
+        gboolean content_regex = gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(ui->content_regex_checkbutton));
+        const guint unit_bytes[] = {1, (1024), (1024*1024), (1024*1024*1024)};
+        GSList* mime_types = NULL;
+        FmPath* search_path;
+
+        /* add paths */
+        for(;;)
+        {
+            char* path_str;
+            gtk_tree_model_get(model, &it, 0, &path_str, -1);
+
+            /* FIXME: ths paths should be escaped */
+            g_string_append(search_uri, path_str);
+
+            g_free(path_str);
+
+            if(!gtk_tree_model_iter_next(model, &it)) /* no more items */
+                break;
+            g_string_append_c(search_uri, ':'); /* separator for paths */
+        }
+
+        g_string_append_c(search_uri, '?');
+        g_string_append_printf(search_uri, "recursive=%c", recursive ? '1' : '0');
+        g_string_append_printf(search_uri, "&show_hidden=%c", show_hidden ? '1' : '0');
+        if(name_patterns && *name_patterns)
+        {
+            g_string_append_printf(search_uri, "&name=%s", name_patterns);
+            if(name_ci)
+                g_string_append_printf(search_uri, "&name_ci=%c", name_ci ? '1' : '0');
+        }
+
+        if(content_pattern && *content_pattern)
+        {
+            if(content_regex)
+                g_string_append_printf(search_uri, "&content_regex=%s", content_pattern);
+            else
+                g_string_append_printf(search_uri, "&content=%s", content_pattern);
+            if(content_ci)
+                g_string_append_printf(search_uri, "&content_ci=%c", content_ci ? '1' : '0');
+        }
+
+        /* search for the files of specific mime-types */
+        if(gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(ui->text_file_checkbutton)))
+            mime_types = g_slist_prepend(mime_types, (gpointer)"text/plain");
+        if(gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(ui->image_file_checkbutton)))
+            mime_types = g_slist_prepend(mime_types, (gpointer)"image/*");
+        if(gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(ui->audio_file_checkbutton)))
+            mime_types = g_slist_prepend(mime_types, (gpointer)"audio/*");
+        if(gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(ui->video_file_checkbutton)))
+            mime_types = g_slist_prepend(mime_types, (gpointer)"video/*");
+        if(gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(ui->doc_file_checkbutton)))
+        {
+            // mime_types = g_slist_prepend(mime_types, (gpointer)"text/plain");
+        }
+        
+        if(mime_types)
+        {
+            GSList* l;
+            g_string_append(search_uri, "&mime_types=");
+            for(l = mime_types; l; l=l->next)
+            {
+                const char* mime_type = (const char*)l->data;
+                g_string_append(search_uri, mime_type);
+                if(l->next)
+                    g_string_append_c(search_uri, ';');
+            }
+            g_slist_free(mime_types);
+        }
+
+        if(gtk_widget_get_sensitive(GTK_WIDGET(ui->bigger_spinbutton)))
+        {
+            gdouble min_size = gtk_spin_button_get_value(ui->bigger_spinbutton);
+            gint unit_index = gtk_combo_box_get_active(ui->bigger_unit_combo);
+            /* convert to bytes */
+            min_size *= unit_bytes[unit_index];
+            g_string_append_printf(search_uri, "&min_size=%llu", (guint64)min_size);
+        }
+
+        if(gtk_widget_get_sensitive(GTK_WIDGET(ui->smaller_spinbutton)))
+        {
+            gdouble max_size = gtk_spin_button_get_value(ui->smaller_spinbutton);
+            gint unit_index = gtk_combo_box_get_active(ui->smaller_unit_combo);
+            /* convert to bytes */
+            max_size *= unit_bytes[unit_index];
+            g_string_append_printf(search_uri, "&min_size=%llu", (guint64)max_size);
+        }
+
+        if(gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(ui->mtime_checkbutton)))
+        {
+            /* TODO: support date range */
+        }
+
+        search_path = fm_path_new_for_uri(search_uri->str);
+
+        fm_main_win_open_in_last_active(search_path);
+
+        fm_path_unref(search_path);
+        g_string_free(search_uri, TRUE);
+    }
+    else
+    {
+        /* FIXME: show error if no paths are added */
+        return FALSE;
+    }
+    return TRUE;
+}
 
 static void on_dlg_response(GtkDialog* dlg, int response, gpointer user_data)
 {
@@ -105,91 +227,8 @@ static void on_dlg_response(GtkDialog* dlg, int response, gpointer user_data)
 
     if(response == GTK_RESPONSE_OK)
     {
-        GString* search_uri = g_string_sized_new(1024);
-        GtkTreeModel* model;
-        GtkTreeIter it;
-
-        /* build the search:// URI to perform the search */
-        g_string_append(search_uri, "search:/");
-
-        model = GTK_TREE_MODEL(ui->path_list_store);
-        if(gtk_tree_model_get_iter_first(model, &it)) /* we need to have at least one dir path */
-        {
-            gboolean recursive = gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(ui->search_recursive_checkbutton));
-            gboolean show_hidden = gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(ui->search_hidden_files_checkbutton));
-            const char* name_patterns = gtk_entry_get_text(ui->name_entry);
-            gboolean name_ci = gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(ui->name_case_insensitive_checkbutton));
-            gboolean name_regex = gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(ui->name_regex_checkbutton));
-            const char* content_pattern = gtk_entry_get_text(ui->content_entry);
-            gboolean content_ci = gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(ui->content_case_insensitive_checkbutton));
-            gboolean content_regex = gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(ui->content_regex_checkbutton));
-            FmPath* search_path;
-
-            /* add paths */
-            for(;;)
-            {
-                char* path_str;
-                gtk_tree_model_get(model, &it, 0, &path_str, -1);
-
-                /* FIXME: ths paths should be escaped */
-                g_string_append(search_uri, path_str);
-
-                g_free(path_str);
-
-                if(!gtk_tree_model_iter_next(model, &it)) /* no more items */
-                    break;
-                g_string_append_c(search_uri, ':'); /* separator for paths */
-            }
-
-            g_string_append_c(search_uri, '?');
-            g_string_append_printf(search_uri, "recursive=%c", recursive ? '1' : '0');
-            g_string_append_printf(search_uri, "show_hidden=%c", show_hidden ? '1' : '0');
-            if(name_patterns && *name_patterns)
-            {
-                g_string_append_printf(search_uri, "&name=%s", name_patterns);
-                if(name_ci)
-                    g_string_append_printf(search_uri, "&name_ci=%c", name_ci ? '1' : '0');
-            }
-
-            if(content_pattern && *content_pattern)
-            {
-                if(content_regex)
-                    g_string_append_printf(search_uri, "&content_regex=%s", content_pattern);
-                else
-                    g_string_append_printf(search_uri, "&content=%s", content_pattern);
-                if(content_ci)
-                    g_string_append_printf(search_uri, "&content_ci=%c", content_ci ? '1' : '0');
-            }
-
-            /* g_string_append_printf(search_uri, "&types=%s", target_type); */
-
-            if(gtk_widget_get_sensitive(GTK_WIDGET(ui->bigger_spinbutton)))
-            {
-/*
-                if(min_size > 0)
-                    g_string_append_printf(search_uri, "&min_size=%llu", min_size);
-*/
-            }
-
-            if(gtk_widget_get_sensitive(GTK_WIDGET(ui->smaller_spinbutton)))
-            {
-/*
-                if(max_size > 0)
-                    g_string_append_printf(search_uri, "&min_size=%llu", max_size);
-*/
-            }
-
-            search_path = fm_path_new_for_uri(search_uri->str);
-
-            fm_main_win_open_in_last_active(search_path);
-
-            fm_path_unref(search_path);
-            g_string_free(search_uri, TRUE);
-        }
-        else
-        {
-            /* FIXME: show error if no paths are added */
-        }
+        if(!launch_search(ui))
+            return;
     }
 
     gtk_widget_destroy(GTK_WIDGET(dlg));

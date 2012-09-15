@@ -104,7 +104,7 @@
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="xalign">0</property>
-                    <property name="label" translatable="yes">&lt;b&gt;File Name Contains&lt;/b&gt;</property>
+                    <property name="label" translatable="yes">&lt;b&gt;File Name&lt;/b&gt;</property>
                     <property name="use_markup">True</property>
                   </object>
                   <packing>
@@ -128,7 +128,7 @@
                           <object class="GtkEntry" id="name_entry">
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
-                            <property name="invisible_char">•</property>
+                            <property name="text" translatable="yes">*</property>
                             <property name="invisible_char_set">True</property>
                             <property name="primary_icon_activatable">False</property>
                             <property name="secondary_icon_activatable">False</property>
@@ -394,7 +394,7 @@
                         </child>
                         <child>
                           <object class="GtkCheckButton" id="text_file_checkbutton">
-                            <property name="label" translatable="yes">Text files (*.txt, *.html, *.xml, ...)</property>
+                            <property name="label" translatable="yes">Text files</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">False</property>
@@ -409,7 +409,7 @@
                         </child>
                         <child>
                           <object class="GtkCheckButton" id="image_file_checkbutton">
-                            <property name="label" translatable="yes">Image files (*.jpg, *.png, ...etc.)</property>
+                            <property name="label" translatable="yes">Image files</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">False</property>
@@ -424,7 +424,7 @@
                         </child>
                         <child>
                           <object class="GtkCheckButton" id="audio_file_checkbutton">
-                            <property name="label" translatable="yes">Audio files (*.mp3, *.ogg, *.wav, ...etc.)</property>
+                            <property name="label" translatable="yes">Audio files</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">False</property>
@@ -439,7 +439,7 @@
                         </child>
                         <child>
                           <object class="GtkCheckButton" id="video_file_checkbutton">
-                            <property name="label" translatable="yes">Video files (*.avi, *.mov, *.mpg, ...etc.)</property>
+                            <property name="label" translatable="yes">Video files</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">False</property>
@@ -454,7 +454,7 @@
                         </child>
                         <child>
                           <object class="GtkCheckButton" id="doc_file_checkbutton">
-                            <property name="label" translatable="yes">Documents (*.doc, *.pdf, ...etc.)</property>
+                            <property name="label" translatable="yes">Documents</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">False</property>

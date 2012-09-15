@@ -270,10 +270,20 @@ static FmJobErrorAction on_folder_error(FmFolder* folder, GError* err, FmJobErro
 
 static void on_folder_start_loading(FmFolder* folder, FmTabPage* page)
 {
+    FmFolderView* fv = FM_FOLDER_VIEW(page->folder_view);
     /* g_debug("start-loading"); */
     /* FIXME: this should be set on toplevel parent */
     fm_set_busy_cursor(GTK_WIDGET(page));
-    fm_folder_view_set_model(page->folder_view, NULL);
+
+    if(fm_folder_is_incremental(folder))
+    {
+        /* create a model for the folder and set it to the view */
+        FmFolderModel* model = fm_folder_model_new(folder, FALSE);
+        fm_folder_view_set_model(fv, model);
+        g_object_unref(model);
+    }
+    else
+        fm_folder_view_set_model(fv, NULL);
 }
 
 static void on_folder_finish_loading(FmFolder* folder, FmTabPage* page)
@@ -282,10 +292,21 @@ static void on_folder_finish_loading(FmFolder* folder, FmTabPage* page)
     const FmNavHistoryItem* item;
     GtkScrolledWindow* scroll = GTK_SCROLLED_WINDOW(fv);
 
-    /* create a model for the folder and set it to the view */
-    FmFolderModel* model = fm_folder_model_new(folder, app_config->show_hidden);
-    fm_folder_view_set_model(fv, model);
-    g_object_unref(model);
+    /* Note: most of the time, we delay the creation of the 
+     * folder model and do it after the whole folder is loaded.
+     * This is kind of optimization. Emptying a folder is much 
+     * slower than just replacing it with NULL.
+     * So we set the model to NULL when the folder start loading,
+     * and create the model again when it's fully loaded. 
+     * This optimization, however, is not used for FmFolder objects
+     * with incremental loading (search://) */
+    if(fm_folder_view_get_model(fv) == NULL)
+    {
+        /* create a model for the folder and set it to the view */
+        FmFolderModel* model = fm_folder_model_new(folder, app_config->show_hidden);
+        fm_folder_view_set_model(fv, model);
+        g_object_unref(model);
+    }
     fm_folder_query_filesystem_info(folder); /* FIXME: is this needed? */
 
     // fm_path_entry_set_path(entry, path);
@@ -501,6 +522,7 @@ static void fm_tab_page_chdir_without_history(FmTabPage* page, FmPath* path)
 
     if(fm_folder_is_loaded(page->folder))
     {
+        on_folder_start_loading(page->folder, page);
         on_folder_finish_loading(page->folder, page);
         on_folder_fs_info(page->folder, page);
     }
