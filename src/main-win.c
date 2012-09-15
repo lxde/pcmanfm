@@ -36,8 +36,8 @@
 #include "app-config.h"
 #include "main-win.h"
 #include "pref.h"
+#include "file-search.h"
 #include "tab-page.h"
-#include "file-search-ui.h"
 
 #if GTK_CHECK_VERSION(3, 0, 0)
 static void fm_main_win_destroy(GtkWidget *object);
@@ -92,8 +92,8 @@ static void on_side_pane_mode(GtkRadioAction* act, GtkRadioAction *cur, FmMainWi
 static void on_about(GtkAction* act, FmMainWin* win);
 static void on_open_in_terminal(GtkAction* act, FmMainWin* win);
 static void on_open_as_root(GtkAction* act, FmMainWin* win);
-static void on_fullscreen(GtkToggleAction* act, FmMainWin* win);
 static void on_search(GtkAction* act, FmMainWin* win);
+static void on_fullscreen(GtkToggleAction* act, FmMainWin* win);
 
 static void on_location(GtkAction* act, FmMainWin* win);
 

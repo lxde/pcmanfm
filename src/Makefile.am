@@ -25,10 +25,10 @@ pcmanfm_SOURCES = \
 	utils.c \
 	utils.h \
 	gseal-gtk-compat.h \
+	file-search.c \
+	file-search.h \
 	single-inst.c \
 	single-inst.h \
-	file-search-ui.c \
-	file-search-ui.h \
 	$(NULL)
 
 EXTRA_DIST= \
