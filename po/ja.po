@@ -1,15 +1,15 @@
 # Japanese translations for PACKAGE package
 # PACKAGE パッケージに対する英訳.
-# Copyright (C) 2010 THE PACKAGE'S COPYRIGHT HOLDER
+# Copyright (C) 2010-2012 THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# Hironao Komatsu <hironao@users.sourceforge.net>, 2010.
+# Hironao Komatsu <hironao@users.sourceforge.net>, 2010-2012.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PcmanFM 0.9.9\n"
+"Project-Id-Version: PcmanFM 1.0.1~beta\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-22 22:36+0200\n"
-"PO-Revision-Date: 2010-11-17 20:57+0900\n"
+"POT-Creation-Date: 2012-09-14 10:02+0900\n"
+"PO-Revision-Date: 2012-09-14 10:22+0900\n"
 "Last-Translator: Hironao Komatsu <hironao@users.sourceforge.net>\n"
 "Language-Team: Japanese <translation-team-ja@lists.sourceforge.net>\n"
 "Language: ja\n"
@@ -172,12 +172,11 @@ msgstr "ファイルを削除する代わりに \"ゴミ箱\" に移動する"
 
 #: ../data/ui/pref.glade.h:9
 msgid "Erase files on removable media instead of \"trash bin\" creation"
-msgstr ""
+msgstr "リムーバブルメディアに対しては、\"ゴミ箱\" ではなく削除扱いにする"
 
 #: ../data/ui/pref.glade.h:10
-#, fuzzy
 msgid "Confirm before moving files into \"trash bin\""
-msgstr "ファイルの削除の前に確認する"
+msgstr "ファイルを \"ゴミ箱\" に移す前に確認する"
 
 #: ../data/ui/pref.glade.h:11
 msgid "Bookmarks:"
@@ -185,11 +184,11 @@ msgstr "ブックマーク:"
 
 #: ../data/ui/pref.glade.h:12
 msgid "Default drop action:"
-msgstr ""
+msgstr "デフォルトのドロップの動作:"
 
 #: ../data/ui/pref.glade.h:13
 msgid "Unfold tab when files are dragged onto tab button"
-msgstr ""
+msgstr "ファイルがタブボタンにドラッグされたときタブを展開する"
 
 #: ../data/ui/pref.glade.h:14
 msgid "<b>Default View</b>"
@@ -245,7 +244,7 @@ msgstr "SIの10進プリフィックスをIECの2進プリフィックスに代�
 
 #: ../data/ui/pref.glade.h:27
 msgid "Treat backup files as hidden"
-msgstr ""
+msgstr "バックアップファイルは隠しファイルと同じ扱いにする"
 
 #: ../data/ui/pref.glade.h:28
 msgid "Display"
@@ -268,23 +267,20 @@ msgid "Always show the tab bar"
 msgstr "タブバーを常に表示する"
 
 #: ../data/ui/pref.glade.h:33
-#, fuzzy
 msgid "<b>Directories Tree</b>"
-msgstr "ディレクトリツリー"
+msgstr "<b>ディレクトリツリー</b>"
 
 #: ../data/ui/pref.glade.h:34
 msgid "Hide expander on empty or locked folder"
-msgstr ""
+msgstr "空の、またはロックされたフォルダについては、エクスパンダを隠す"
 
 #: ../data/ui/pref.glade.h:35
-#, fuzzy
 msgid "<b>Show in Places:</b>"
-msgstr "<b>デスクトップアイコンを表示する</b>"
+msgstr "<b>「場所」に表示する:</b>"
 
 #: ../data/ui/pref.glade.h:36
-#, fuzzy
 msgid "Home Directory"
-msgstr "ディレクトリツリー"
+msgstr "ホームディレクトリ"
 
 #: ../data/ui/pref.glade.h:37 ../src/main-win-ui.c:174
 msgid "Desktop Folder"
@@ -295,13 +291,12 @@ msgid "Applications"
 msgstr "アプリケーション"
 
 #: ../data/ui/pref.glade.h:39
-#, fuzzy
 msgid "Trash bin"
 msgstr "ゴミ箱"
 
 #: ../data/ui/pref.glade.h:40
 msgid "Layout"
-msgstr ""
+msgstr "配置"
 
 #: ../data/ui/pref.glade.h:41
 msgid "<b>Auto-mount</b>"
@@ -322,12 +317,11 @@ msgstr "リムーバブルメディアが挿入されたとき、可能な選択
 
 #: ../data/ui/pref.glade.h:45
 msgid "Open mounted removable media in new tab instead of new window"
-msgstr ""
+msgstr "マウントされたリムーバブルメディアは新規ウィンドウでなく新規タブとして開く"
 
 #: ../data/ui/pref.glade.h:46
-#, fuzzy
 msgid "Close tab containing removable medium when it is unmounted"
-msgstr "リムーバブルメディアが挿入されたとき、可能な選択肢を表示する"
+msgstr "リムーバブルメディアがアンマウントされたとき、それを含むタブを閉じる"
 
 #: ../data/ui/pref.glade.h:47
 msgid "Volume Management"
@@ -360,7 +354,7 @@ msgstr "アーカイバ統合:"
 
 #: ../data/ui/pref.glade.h:55
 msgid "Use Application Startup Notify by default"
-msgstr ""
+msgstr "アプリケーションスタートアップ通知の使用をデフォルトにする"
 
 #: ../data/ui/pref.glade.h:56
 msgid ""
@@ -368,22 +362,24 @@ msgid ""
 "explicitly.\n"
 "If unchecked then use Startup Notify only if that is defined for application."
 msgstr ""
+"これがチェックされているとき、他に記述がない限りはスタートアップ通知を使用する。\n"
+"でないときは、アプリケーションについて明示されている場合のみ使用する。"
 
 #: ../data/ui/pref.glade.h:59
 msgid "Auto (move if on the same FS, copy otherwise)"
-msgstr ""
+msgstr "自動 (同一ファイルシステム上では移動、でなければコピー)"
 
 #: ../data/ui/pref.glade.h:60
 msgid "Copy"
-msgstr ""
+msgstr "コピー"
 
 #: ../data/ui/pref.glade.h:61
 msgid "Move"
-msgstr ""
+msgstr "移動"
 
 #: ../data/ui/pref.glade.h:62
 msgid "Ask"
-msgstr ""
+msgstr "問い合わせる"
 
 #: ../data/ui/pref.glade.h:63
 msgid "Icon View"
@@ -456,19 +452,19 @@ msgstr "ショートカット"
 
 #: ../src/desktop-ui.c:71 ../src/main-win-ui.c:223
 msgid "By _Name"
-msgstr "名前で(_N)"
+msgstr "名前(_N)"
 
 #: ../src/desktop-ui.c:72 ../src/main-win-ui.c:224
 msgid "By _Modification Time"
-msgstr "更新時刻で(_M)"
+msgstr "更新時刻(_M)"
 
 #: ../src/desktop-ui.c:73 ../src/main-win-ui.c:225
 msgid "By _Size"
-msgstr "サイズで(_S)"
+msgstr "サイズ(_S)"
 
 #: ../src/desktop-ui.c:74 ../src/main-win-ui.c:226
 msgid "By File _Type"
-msgstr "ファイルタイプで(_T)"
+msgstr "ファイルタイプ(_T)"
 
 #: ../src/desktop-ui.c:90 ../src/main-win-ui.c:249
 msgid "Open in New Tab"
@@ -628,11 +624,11 @@ msgstr "サイドペインを表示する"
 
 #: ../src/main-win-ui.c:203
 msgid "Show Status B_ar"
-msgstr ""
+msgstr "ステータスバーを表示する(_A)"
 
 #: ../src/main-win-ui.c:204
 msgid "Fullscreen Mode"
-msgstr ""
+msgstr "全画面"
 
 #: ../src/main-win-ui.c:209
 msgid "_Icon View"
@@ -719,15 +715,16 @@ msgstr "デスクトップの壁紙を設定する"
 msgid "<image file>"
 msgstr "<画像ファイル>"
 
-#: ../src/pcmanfm.c:82
+#. don't translate list of modes in description, please
+#: ../src/pcmanfm.c:83
 msgid "Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"
 msgstr "デスクトップ壁紙のモード設定。 <mode>=(color|stretch|fit|center|tile)"
 
-#: ../src/pcmanfm.c:82
+#: ../src/pcmanfm.c:83
 msgid "<mode>"
 msgstr "<mode>"
 
-#: ../src/pcmanfm.c:83
+#: ../src/pcmanfm.c:84
 msgid ""
 "Open preference dialog. 'n' is number of the page you want to show (1, 2, "
 "3...)."
@@ -736,35 +733,35 @@ msgstr ""
 
 #. { "new-win", '\0', 'n', G_OPTION_ARG_NONE, &new_win, N_("Open new window"), NULL },
 #. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
-#: ../src/pcmanfm.c:86
+#: ../src/pcmanfm.c:87
 msgid "[FILE1, FILE2,...]"
 msgstr "[ファイル1, ファイル2,...]"
 
-#: ../src/pcmanfm.c:527
+#: ../src/pcmanfm.c:530
 msgid "Terminal emulator is not set."
 msgstr "端末エミュレータが設定されていません。"
 
-#: ../src/pcmanfm.c:579
+#: ../src/pcmanfm.c:582
 msgid "Enter a name for the newly created folder:"
 msgstr "新たに作成するフォルダの名前を入力してください:"
 
-#: ../src/pcmanfm.c:581
+#: ../src/pcmanfm.c:584
 msgid "Enter a name for the newly created file:"
 msgstr "新たに作成するファイルの名前を入力してください:"
 
-#: ../src/pcmanfm.c:582
+#: ../src/pcmanfm.c:585
 msgid "Create New..."
 msgstr "新規作成中..."
 
-#: ../src/pcmanfm.c:582
+#: ../src/pcmanfm.c:585
 msgid "New"
-msgstr "New"
+msgstr "新規"
 
-#: ../src/pcmanfm.c:676
+#: ../src/pcmanfm.c:679
 msgid "Error, lxshortcut not installed"
 msgstr "エラー、lxshortcut はインストールされていません"
 
-#: ../src/pcmanfm.c:681
+#: ../src/pcmanfm.c:684
 msgid "Failed to start lxshortcut"
 msgstr "lxshortcut の立ち上げに失敗しました"
 
@@ -805,10 +802,4 @@ msgstr "ファイルシステムをブラウズし、ファイルの管理を行
 
 #: ../data/pcmanfm-desktop-pref.desktop.in.h:2
 msgid "Change desktop wallpapers and behavior of desktop manager"
-msgstr "壁紙やデスクトップマネージャの動作を変更する"
-
-#~ msgid "_Advanced"
-#~ msgstr "高度な設定(_A)"
-
-#~ msgid "_New"
-#~ msgstr "新規作成(_N)"
+msgstr "壁紙やデスクトップマネージャの動作を変更します"
