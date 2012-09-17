@@ -303,7 +303,7 @@ static void save_item_pos(FmDesktop* desktop)
         const char* p;
         /* write the file basename as group name */
         g_string_append_c(buf, '[');
-        for(p = fi_path->name; *p; ++p)
+        for(p = fm_path_get_basename(fi_path); *p; ++p)
         {
             switch(*p)
             {
