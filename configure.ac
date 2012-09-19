@@ -38,18 +38,13 @@ AC_ARG_ENABLE(
     AS_HELP_STRING([--enable-cast-checks],
                    [enable Glib casting checks (default: disable)]),
     cast_checks=$enableval, cast_checks="no")
-G_CAST_CHECKS=""
-if test x"$cast_checks" = "xno"; then
-    G_CAST_CHECKS="-DG_DISABLE_CAST_CHECKS"
-fi
-AC_SUBST(G_CAST_CHECKS)
 
 AC_ARG_ENABLE(debug,
     [AC_HELP_STRING([--enable-debug],
         [build pcmanfm with debug support @<:@default=no@:>@])],
     [enable_debug="${enableval}"],
-    [enable_debug=no]
-)
+    [enable_debug=no])
+
 if test "$enable_debug" = "yes"; then
     # turn on debug and disable optimization
     CPPFLAGS="$CPPFLAGS -DG_ENABLE_DEBUG -O0 -g"
@@ -60,11 +55,21 @@ if test "$enable_debug" = "yes"; then
     *)
         ;;
     esac
+    dnl Be more strict on compatibility
+    CPPFLAGS="$CPPFLAGS -D_POSIX_C_SOURCE=200112L -D_XOPEN_SOURCE=700"
+    dnl debug should enforce cast checks
+    cast_checks=yes
 else
     # turn off glib debug checks
     # G_DISABLE_CAST_CHECKS is already handled by $(G_CAST_CHECKS)
     CPPFLAGS="$CPPFLAGS -DG_DISABLE_ASSERT -DG_DISABLE_CHECKS"
 fi
+
+G_CAST_CHECKS=""
+if test x"$cast_checks" = "xno"; then
+    G_CAST_CHECKS="-DG_DISABLE_CAST_CHECKS"
+fi
+AC_SUBST(G_CAST_CHECKS)
 
 # intltool
 IT_PROG_INTLTOOL([0.40.0])
