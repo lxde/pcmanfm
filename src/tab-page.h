@@ -52,9 +52,11 @@ typedef struct _FmTabPageClass        FmTabPageClass;
 struct _FmTabPage
 {
     GtkHPaned parent;
-    FmSidePane* side_pane;
-    FmFolderView* folder_view;
-    FmTabLabel* tab_label;
+    FmSidePane* side_pane; /* left side pane */
+    GtkBox* vbox; /* right pane, the vbox can be used to add horizontal side bars */
+    GtkBox* hbox; /* inside vbox, the hbox can be used to add vertical side bars */
+    FmFolderView* folder_view; /* inside hbox */
+    FmTabLabel* tab_label; /* the label used to show tabs in notebook */
     FmNavHistory* nav_history;
     char* status_text[FM_STATUS_TEXT_NUM];
     FmFolder* folder;
