@@ -346,25 +346,14 @@ static void fm_tab_page_init(FmTabPage *page)
     gtk_paned_add1(paned, GTK_WIDGET(page->side_pane));
     focus_chain = g_list_prepend(focus_chain, page->side_pane);
 
-    /* add a vbox to right pane */
-    page->vbox = gtk_vbox_new(FALSE, 0);
-    gtk_paned_add2(paned, GTK_WIDGET(page->vbox));
-
-    /* add an hbox inside the vbox */
-    page->hbox = gtk_hbox_new(FALSE, 0);
-    gtk_box_pack_start(page->vbox, GTK_WIDGET(page->hbox), TRUE, TRUE, 0);
-
-    /* add a folder view to the hbox */
     folder_view = fm_folder_view_new(app_config->view_mode);
-    gtk_box_pack_start(page->hbox, GTK_WIDGET(folder_view), TRUE, TRUE, 0);
-
-    /* initialize the folder view */
     page->folder_view = folder_view;
     fm_folder_view_sort(folder_view, app_config->sort_type, app_config->sort_by);
     fm_folder_view_set_selection_mode(folder_view, GTK_SELECTION_MULTIPLE);
     page->nav_history = fm_nav_history_new();
-
+    gtk_paned_add2(paned, GTK_WIDGET(page->folder_view));
     focus_chain = g_list_prepend(focus_chain, page->folder_view);
+
     /* We need this to change tab order to focus folder view before left pane. */
     gtk_container_set_focus_chain(GTK_CONTAINER(page), focus_chain);
     g_list_free(focus_chain);
