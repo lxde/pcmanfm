@@ -6,11 +6,11 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PCManFM 0.9.10\n"
+"Project-Id-Version: PCManFM 1.0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-08-22 22:36+0200\n"
-"PO-Revision-Date: 2012-07-09 16:43+0200\n"
-"Last-Translator: Mișu <dumol@l10n.ro>\n"
+"PO-Revision-Date: 2012-09-20 19:54+0300\n"
+"Last-Translator: Mișu Moldovan <dumol@l10n.ro>\n"
 "Language-Team: Romanian <diacritice@googlegroups.com>\n"
 "Language: ro\n"
 "MIME-Version: 1.0\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
 "20)) ? 1 : 2);;\n"
-"X-Generator: Pootle 2.0.5\n"
+"X-Generator: Virtaal 0.7.0\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2012"
@@ -170,16 +170,15 @@ msgstr "Confirmare la ștergerea fișierelor"
 
 #: ../data/ui/pref.glade.h:8
 msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
-msgstr "La ștergere, nu elimina fișierele de pe disc, mută-le în coș"
+msgstr "Nu elimina fișierele de pe disc la ștergere, ci mută-le în coș"
 
 #: ../data/ui/pref.glade.h:9
 msgid "Erase files on removable media instead of \"trash bin\" creation"
-msgstr ""
+msgstr "Șterge fișierele de pe mediile detașabile și nu crea dosare „Trash”"
 
 #: ../data/ui/pref.glade.h:10
-#, fuzzy
 msgid "Confirm before moving files into \"trash bin\""
-msgstr "Confirmare la ștergerea fișierelor"
+msgstr "Confirmare pentru mutarea fișierelor în coșul de gunoi"
 
 #: ../data/ui/pref.glade.h:11
 msgid "Bookmarks:"
@@ -187,11 +186,11 @@ msgstr "Favoritele:"
 
 #: ../data/ui/pref.glade.h:12
 msgid "Default drop action:"
-msgstr ""
+msgstr "Acțiune implicită pentru plasare:"
 
 #: ../data/ui/pref.glade.h:13
 msgid "Unfold tab when files are dragged onto tab button"
-msgstr ""
+msgstr "Desfă tabul când fișierele sunt trase deasupra butonului său"
 
 #: ../data/ui/pref.glade.h:14
 msgid "<b>Default View</b>"
@@ -239,15 +238,15 @@ msgstr "Fără miniaturi pentru fișierele mai mari de:"
 
 #: ../data/ui/pref.glade.h:25
 msgid "<b>User Interface</b>"
-msgstr "<b>Interfața de utilizare</b>"
+msgstr "<b>Interfață de utilizare</b>"
 
 #: ../data/ui/pref.glade.h:26
 msgid "Use SI decimal prefixes instead of IEC binary prefixes"
-msgstr "Utilizează prefixe decimale SI în loc de prefixe binare IEC"
+msgstr "Utilizează prefixe decimale SI în locul prefixelor binare IEC"
 
 #: ../data/ui/pref.glade.h:27
 msgid "Treat backup files as hidden"
-msgstr ""
+msgstr "Nu arăta fișierele de tip backup"
 
 #: ../data/ui/pref.glade.h:28
 msgid "Display"
@@ -270,40 +269,36 @@ msgid "Always show the tab bar"
 msgstr "Arată întotdeauna bara cu taburi"
 
 #: ../data/ui/pref.glade.h:33
-#, fuzzy
 msgid "<b>Directories Tree</b>"
-msgstr "Arbore de directoare"
+msgstr "<b>Arbori de directoare</b>"
 
 #: ../data/ui/pref.glade.h:34
 msgid "Hide expander on empty or locked folder"
-msgstr ""
+msgstr "Ascunde extensorul pentru dosare goale sau inaccesibile"
 
 #: ../data/ui/pref.glade.h:35
-#, fuzzy
 msgid "<b>Show in Places:</b>"
-msgstr "<b>Arată iconițe pe desktop</b>"
+msgstr "<b>Arată în lateral:</b>"
 
 #: ../data/ui/pref.glade.h:36
-#, fuzzy
 msgid "Home Directory"
-msgstr "Arbore de directoare"
+msgstr "Dosar Acasă"
 
 #: ../data/ui/pref.glade.h:37 ../src/main-win-ui.c:174
 msgid "Desktop Folder"
-msgstr "Dosarul Desktop"
+msgstr "Dosar Desktop"
 
 #: ../data/ui/pref.glade.h:38 ../src/main-win-ui.c:178
 msgid "Applications"
 msgstr "Programe"
 
 #: ../data/ui/pref.glade.h:39
-#, fuzzy
 msgid "Trash bin"
 msgstr "Coș de gunoi"
 
 #: ../data/ui/pref.glade.h:40
 msgid "Layout"
-msgstr ""
+msgstr "Aspect"
 
 #: ../data/ui/pref.glade.h:41
 msgid "<b>Auto-mount</b>"
@@ -311,7 +306,7 @@ msgstr "<b>Montare automată</b>"
 
 #: ../data/ui/pref.glade.h:42
 msgid "Mount mountable volumes automatically on program startup"
-msgstr "Montează automat volumele montabile la pornirea programului"
+msgstr "Montează automat la pornire volumele ce pot fi montate"
 
 #: ../data/ui/pref.glade.h:43
 msgid "Mount removable media automatically when they are inserted"
@@ -323,16 +318,15 @@ msgstr "Arată opțiunile asociate mediilor detașabile la inserarea acestora"
 
 #: ../data/ui/pref.glade.h:45
 msgid "Open mounted removable media in new tab instead of new window"
-msgstr ""
+msgstr "Deschide mediile detașabile montate în taburi noi, nu în ferestre"
 
 #: ../data/ui/pref.glade.h:46
-#, fuzzy
 msgid "Close tab containing removable medium when it is unmounted"
-msgstr "Arată opțiunile asociate mediilor detașabile la inserarea acestora"
+msgstr "Închide taburile cu medii detașabile la demontarea acestora"
 
 #: ../data/ui/pref.glade.h:47
 msgid "Volume Management"
-msgstr "Management de volume"
+msgstr "Volume"
 
 #: ../data/ui/pref.glade.h:48
 msgid "<b>Programs</b>"
@@ -344,7 +338,7 @@ msgstr "Emulator de terminal:"
 
 #: ../data/ui/pref.glade.h:50
 msgid "Switch user command:"
-msgstr "Comandă de schimbat utilizatorul:"
+msgstr "Comandă pentru schimbarea utilizatorului:"
 
 #: ../data/ui/pref.glade.h:52
 #, no-c-format
@@ -362,7 +356,7 @@ msgstr "Arhivator integrat:"
 
 #: ../data/ui/pref.glade.h:55
 msgid "Use Application Startup Notify by default"
-msgstr ""
+msgstr "Utilizează implicit notificarea la pornirea programelor"
 
 #: ../data/ui/pref.glade.h:56
 msgid ""
@@ -370,26 +364,29 @@ msgid ""
 "explicitly.\n"
 "If unchecked then use Startup Notify only if that is defined for application."
 msgstr ""
+"La activare, se va utiliza notificarea la pornirea programelor.\n"
+"Altfel se va utiliza notificarea la pornirea programelor doar dacă va fi "
+"cerută de către respectivul program."
 
 #: ../data/ui/pref.glade.h:59
 msgid "Auto (move if on the same FS, copy otherwise)"
-msgstr ""
+msgstr "Automat (mutare pe același sistem de fișiere, copiere în alte cazuri)"
 
 #: ../data/ui/pref.glade.h:60
 msgid "Copy"
-msgstr ""
+msgstr "Copiere"
 
 #: ../data/ui/pref.glade.h:61
 msgid "Move"
-msgstr ""
+msgstr "Mutare"
 
 #: ../data/ui/pref.glade.h:62
 msgid "Ask"
-msgstr ""
+msgstr "Întreabă"
 
 #: ../data/ui/pref.glade.h:63
 msgid "Icon View"
-msgstr "Vizualizare iconițe"
+msgstr "Vizualizare de iconițe"
 
 #: ../data/ui/pref.glade.h:64
 msgid "Compact View"
@@ -397,11 +394,11 @@ msgstr "Vizualizare compactă"
 
 #: ../data/ui/pref.glade.h:65
 msgid "Thumbnail View"
-msgstr "Vizualizare miniaturi"
+msgstr "Vizualizare de miniaturi"
 
 #: ../data/ui/pref.glade.h:66
 msgid "Detailed List View"
-msgstr "Vizualizare listă detaliată"
+msgstr "Vizualizare ca listă detaliată"
 
 #: ../data/ui/autorun.glade.h:1
 msgid "Removable medium is inserted"
@@ -425,7 +422,7 @@ msgstr "Alegeți acțiunea ce doriți să o efectuați:"
 
 #: ../src/volume-manager.c:160
 msgid "Removable Disk"
-msgstr "Disc amovibil"
+msgstr "Disc detașabil"
 
 #: ../src/volume-manager.c:213
 msgid "Open in File Manager"
@@ -454,7 +451,7 @@ msgstr "Fișier gol"
 
 #: ../src/desktop-ui.c:59 ../src/main-win-ui.c:195
 msgid "Shortcut"
-msgstr "Combinație de taste"
+msgstr "Lansator"
 
 #: ../src/desktop-ui.c:71 ../src/main-win-ui.c:223
 msgid "By _Name"
@@ -482,7 +479,7 @@ msgstr "Deschide într-o fereastră nouă"
 
 #: ../src/desktop-ui.c:93 ../src/main-win-ui.c:252
 msgid "Open in _Terminal"
-msgstr "Deschide în _terminal"
+msgstr "Desc_hide în terminal"
 
 #: ../src/desktop-ui.c:109
 msgid "Stick to Current Position"
@@ -630,15 +627,15 @@ msgstr "Arată vederea laterală"
 
 #: ../src/main-win-ui.c:203
 msgid "Show Status B_ar"
-msgstr ""
+msgstr "Arată bara de _stare"
 
 #: ../src/main-win-ui.c:204
 msgid "Fullscreen Mode"
-msgstr ""
+msgstr "Pe tot ecranul"
 
 #: ../src/main-win-ui.c:209
 msgid "_Icon View"
-msgstr "Vizualizare _iconițe"
+msgstr "Vizualizare de _iconițe"
 
 #: ../src/main-win-ui.c:210
 msgid "_Compact View"
@@ -646,11 +643,11 @@ msgstr "Vizualizare _compactă"
 
 #: ../src/main-win-ui.c:211
 msgid "_Thumbnail View"
-msgstr "Vizualizare _miniaturi"
+msgstr "Vizualizare de _miniaturi"
 
 #: ../src/main-win-ui.c:212
 msgid "Detailed _List View"
-msgstr "Vizualizare _listă detaliată"
+msgstr "Vizualizare ca _listă detaliată"
 
 #: ../src/main-win-ui.c:231
 msgid "Places"
@@ -670,7 +667,7 @@ msgstr "Sunteți în modul super-utilizator"
 
 #: ../src/main-win.c:742
 msgid "Switch user command is not set."
-msgstr "Nu ați ales o comandă de schimbare a utilizatorului."
+msgstr "Nu ați ales o comandă pentru schimbarea utilizatorului."
 
 #: ../src/main-win.c:1173
 #, c-format
@@ -759,7 +756,7 @@ msgstr "Introduceți un nume pentru fișierul nou creat:"
 
 #: ../src/pcmanfm.c:582
 msgid "Create New..."
-msgstr "Creează un nou..."
+msgstr "Creare de element nou..."
 
 #: ../src/pcmanfm.c:582
 msgid "New"
