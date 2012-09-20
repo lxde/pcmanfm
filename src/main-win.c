@@ -705,7 +705,12 @@ static void on_open_as_root(GtkAction* act, FmMainWin* win)
 static void on_show_hidden(GtkToggleAction* act, FmMainWin* win)
 {
     FmTabPage* page = win->current_page;
-    gboolean active = gtk_toggle_action_get_active(act);
+    gboolean active;
+
+    if(!page)
+        return; /* it's fresh created window, do nothing */
+
+    active = gtk_toggle_action_get_active(act);
     fm_tab_page_set_show_hidden(page, active);
 
     if(active != app_config->show_hidden)
