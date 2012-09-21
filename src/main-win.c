@@ -710,7 +710,9 @@ static void on_search(GtkAction* act, FmMainWin* win)
 {
     FmTabPage* page = win->current_page;
     FmPath* cwd = fm_tab_page_get_cwd(page);
-    fm_launch_search_simple(GTK_WINDOW(win), NULL, cwd, pcmanfm_open_folder, NULL);
+    GList* l = g_list_append(NULL, cwd);
+    fm_launch_search_simple(GTK_WINDOW(win), NULL, l, pcmanfm_open_folder, NULL);
+    g_list_free(l);
 }
 #endif
 
