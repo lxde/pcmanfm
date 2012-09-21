@@ -80,6 +80,7 @@ static const char main_menu_xml[] =
       "<menuitem action='DirTree' />"
     "</menu>"
     /* "<menuitem action='ShowStatus'/>" */
+    /* "<menuitem action='TwinPane'/>" */
     "<menuitem action='Fullscreen' />"
     "<separator/>"
     "<menuitem action='IconView'/>"
@@ -184,7 +185,8 @@ static GtkToggleActionEntry main_win_toggle_actions[]=
 {
     {"ShowHidden", NULL, N_("Show Hidde_n"), "<Ctrl>H", NULL, G_CALLBACK(on_show_hidden), FALSE},
     {"ShowSidePane", NULL, N_("Sho_w Side Pane"), "F9", NULL, G_CALLBACK(on_show_side_pane), TRUE},
-    {"ShowStatus", NULL, N_("Show Status B_ar"), "<Alt>A", NULL, NULL, TRUE},
+    {"ShowStatus", NULL, N_("Show Status B_ar"), "<Ctrl>B", NULL, NULL, TRUE},
+    {"TwinPane", NULL, N_("T_win Pane Mode"), "F3", NULL, NULL, TRUE},
     {"Fullscreen", NULL, N_("Fullscreen _Mode"), "F11", NULL, G_CALLBACK(on_fullscreen), FALSE}
 };
 
