@@ -270,11 +270,12 @@ static FmJobErrorAction on_folder_error(FmFolder* folder, GError* err, FmJobErro
 
 static void on_folder_start_loading(FmFolder* folder, FmTabPage* page)
 {
-    FmFolderView* fv = FM_FOLDER_VIEW(page->folder_view);
+    FmFolderView* fv = page->folder_view;
     /* g_debug("start-loading"); */
     /* FIXME: this should be set on toplevel parent */
     fm_set_busy_cursor(GTK_WIDGET(page));
 
+#if FM_CHECK_VERSION(1, 0, 2)
     if(fm_folder_is_incremental(folder))
     {
         /* create a model for the folder and set it to the view */
@@ -283,6 +284,7 @@ static void on_folder_start_loading(FmFolder* folder, FmTabPage* page)
         g_object_unref(model);
     }
     else
+#endif
         fm_folder_view_set_model(fv, NULL);
 }
 

@@ -25,8 +25,6 @@ pcmanfm_SOURCES = \
 	utils.c \
 	utils.h \
 	gseal-gtk-compat.h \
-	file-search.c \
-	file-search.h \
 	single-inst.c \
 	single-inst.h \
 	$(NULL)

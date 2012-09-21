@@ -36,7 +36,6 @@
 #include "app-config.h"
 #include "main-win.h"
 #include "pref.h"
-#include "file-search.h"
 #include "tab-page.h"
 
 #if GTK_CHECK_VERSION(3, 0, 0)
@@ -92,7 +91,9 @@ static void on_side_pane_mode(GtkRadioAction* act, GtkRadioAction *cur, FmMainWi
 static void on_about(GtkAction* act, FmMainWin* win);
 static void on_open_in_terminal(GtkAction* act, FmMainWin* win);
 static void on_open_as_root(GtkAction* act, FmMainWin* win);
+#if FM_CHECK_VERSION(1, 0, 2)
 static void on_search(GtkAction* act, FmMainWin* win);
+#endif
 static void on_fullscreen(GtkToggleAction* act, FmMainWin* win);
 
 static void on_location(GtkAction* act, FmMainWin* win);
@@ -704,12 +705,14 @@ static void on_open_as_root(GtkAction* act, FmMainWin* win)
     }
 }
 
+#if FM_CHECK_VERSION(1, 0, 2)
 static void on_search(GtkAction* act, FmMainWin* win)
 {
     FmTabPage* page = win->current_page;
     FmPath* cwd = fm_tab_page_get_cwd(page);
-    fm_search_file_in_folder(cwd);
+    fm_launch_search_simple(GTK_WINDOW(win), NULL, cwd, pcmanfm_open_folder, NULL);
 }
+#endif
 
 static void on_show_hidden(GtkToggleAction* act, FmMainWin* win)
 {

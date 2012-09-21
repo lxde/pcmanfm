@@ -7,7 +7,6 @@ ui_in_files= \
 	pref.glade \
 	desktop-pref.glade \
 	autorun.glade \
-    filesearch.glade \
 	$(NULL)
 ui_DATA = $(ui_in_files:.glade=.ui)
 
