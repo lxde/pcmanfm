@@ -278,7 +278,9 @@ static void on_folder_start_loading(FmFolder* folder, FmTabPage* page)
 #if FM_CHECK_VERSION(1, 0, 2)
     if(fm_folder_is_incremental(folder))
     {
-        /* create a model for the folder and set it to the view */
+        /* create a model for the folder and set it to the view
+           it is delayed for non-incremental folders since adding rows into
+           model is much faster without handlers connected to its signals */
         FmFolderModel* model = fm_folder_model_new(folder, FALSE);
         fm_folder_view_set_model(fv, model);
         g_object_unref(model);
@@ -296,9 +298,8 @@ static void on_folder_finish_loading(FmFolder* folder, FmTabPage* page)
 
     /* Note: most of the time, we delay the creation of the 
      * folder model and do it after the whole folder is loaded.
-     * This is kind of optimization. Emptying a folder is much 
-     * slower than just replacing it with NULL.
-     * So we set the model to NULL when the folder start loading,
+     * That is because adding rows into model is much faster when no handlers
+     * are connected to its signals. So we detach the model from folder view
      * and create the model again when it's fully loaded. 
      * This optimization, however, is not used for FmFolder objects
      * with incremental loading (search://) */
