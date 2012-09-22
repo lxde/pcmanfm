@@ -107,6 +107,7 @@ static const char main_menu_xml[] =
   "</menu>"
   "<menu action='HelpMenu'>"
     "<menuitem action='About'/>"
+    "<menuitem action='KeyNavList'/>"
   "</menu>"
 "</menubar>"
 "<toolbar>"
@@ -150,6 +151,7 @@ static GtkActionEntry main_win_actions[]=
         {"Sort", NULL, N_("S_ort Files"), NULL, NULL, NULL},
     {"HelpMenu", NULL, N_("_Help"), NULL, NULL, NULL},
         {"About", GTK_STOCK_ABOUT, NULL, NULL, NULL, G_CALLBACK(on_about)},
+        {"KeyNavList", GTK_STOCK_INFO, N_("_Keyboard navigation"), NULL, NULL, G_CALLBACK(on_key_nav_list)},
     {"GoMenu", NULL, N_("_Go"), NULL, NULL, NULL},
         {"Prev", GTK_STOCK_GO_BACK, N_("_Previous Folder"), "<Alt>Left", N_("Previous Folder"), G_CALLBACK(on_go_back)},
         {"Next", GTK_STOCK_GO_FORWARD, N_("_Next Folder"), "<Alt>Right", N_("Next Folder"), G_CALLBACK(on_go_forward)},
@@ -167,7 +169,7 @@ static GtkActionEntry main_win_actions[]=
         {"Term", "utilities-terminal", N_("Open Current Folder in _Terminal"), "F4", NULL, G_CALLBACK(on_open_in_terminal)},
         {"AsRoot", GTK_STOCK_DIALOG_AUTHENTICATION, N_("Open Current Folder as _Root"), NULL, NULL, G_CALLBACK(on_open_as_root)},
 #if FM_CHECK_VERSION(1, 0, 2)
-        {"Search", GTK_STOCK_FIND, N_("Fin_d Files"), "", NULL, G_CALLBACK(on_search)},
+        {"Search", GTK_STOCK_FIND, N_("Fin_d Files"), "<Ctrl><Shift>F", NULL, G_CALLBACK(on_search)},
 #endif
     /* for accelerators */
     {"Location", NULL, NULL, "<Alt>d", NULL, G_CALLBACK(on_location)},

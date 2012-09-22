@@ -89,6 +89,7 @@ static void on_sort_by(GtkRadioAction* act, GtkRadioAction *cur, FmMainWin* win)
 static void on_sort_type(GtkRadioAction* act, GtkRadioAction *cur, FmMainWin* win);
 static void on_side_pane_mode(GtkRadioAction* act, GtkRadioAction *cur, FmMainWin* win);
 static void on_about(GtkAction* act, FmMainWin* win);
+static void on_key_nav_list(GtkAction* act, FmMainWin* win);
 static void on_open_in_terminal(GtkAction* act, FmMainWin* win);
 static void on_open_as_root(GtkAction* act, FmMainWin* win);
 #if FM_CHECK_VERSION(1, 0, 2)
@@ -108,6 +109,7 @@ static void on_folder_view_clicked(FmFolderView* fv, FmFolderViewClickType type,
 
 static GSList* all_wins = NULL;
 static GtkDialog* about_dlg = NULL;
+static GtkWidget* key_nav_list_dlg = NULL;
 
 static void fm_main_win_class_init(FmMainWinClass *klass)
 {
@@ -645,6 +647,35 @@ static void on_about(GtkAction* act, FmMainWin* win)
         pcmanfm_ref();
     }
     gtk_window_present(GTK_WINDOW(about_dlg));
+}
+
+static void on_key_nav_list_response(GtkDialog* dlg, gint response, GtkDialog **dlgptr)
+{
+    g_signal_handlers_disconnect_by_func(dlg, on_key_nav_list_response, dlgptr);
+    *dlgptr = NULL;
+    gtk_widget_destroy(GTK_WIDGET(dlg));
+}
+
+static void on_key_nav_list(GtkAction* act, FmMainWin* win)
+{
+    if(!key_nav_list_dlg)
+    {
+        g_debug("creating key_nav_list_dlg");
+        key_nav_list_dlg = gtk_message_dialog_new(NULL, 0,
+                                                  GTK_MESSAGE_INFO,
+                                                  GTK_BUTTONS_OK,
+                                                  N_("Keyboard navigation"));
+        gtk_message_dialog_format_secondary_text(GTK_MESSAGE_DIALOG(key_nav_list_dlg),
+                        N_("Tab: cycle focus Folder View -> Side Pane -> Tools Bar\n"
+                           "Shift+Tab: cycle focus Tools Bar -> Side Pane -> Folder View\n"
+                           "F6: change focus Side pane <-> Folder view\n"
+                           "F8: focus divider between Side pane and Folder view\n"
+                           "F10: activate main menu\n"
+                           "Ctrl+L or Alt+D: jump focus to Path Bar"));
+        gtk_window_set_title(GTK_WINDOW(key_nav_list_dlg), _("Keyboard navigation"));
+        g_signal_connect(key_nav_list_dlg, "response", G_CALLBACK(on_key_nav_list_response), (gpointer)&key_nav_list_dlg);
+    }
+    gtk_window_present(GTK_WINDOW(key_nav_list_dlg));
 }
 
 static void on_open_in_terminal(GtkAction* act, FmMainWin* win)
