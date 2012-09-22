@@ -7,16 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-22 22:36+0200\n"
-"PO-Revision-Date: 2012-08-28 16:40+0200\n"
+"POT-Creation-Date: 2012-09-22 00:11+0300\n"
+"PO-Revision-Date: 2012-09-22 04:40+0300\n"
 "Last-Translator: LStranger <andrej@rep.kiev.ua>\n"
 "Language-Team: Ukrainian <translation@linux.org.ua>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
-"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Pootle 2.0.5\n"
 "X-Poedit-Language: Ukrainian\n"
 "X-Poedit-Country: Ukraine\n"
@@ -42,309 +42,196 @@ msgstr ""
 "Yarema aka Knedlyk <yupadmin@gmail.com>\n"
 "Andriy Grytsenko <andrej@rep.kiev.ua>"
 
-#: ../data/ui/desktop-pref.glade.h:1 ../src/desktop-ui.c:60
-#: ../data/pcmanfm-desktop-pref.desktop.in.h:1
-msgid "Desktop Preferences"
-msgstr "Налаштування стільниці"
-
-#: ../data/ui/desktop-pref.glade.h:2
+#: ../data/ui/desktop-pref.glade.h:1
 msgid "<b>Background</b>"
 msgstr "<b>Тло</b>"
 
-#: ../data/ui/desktop-pref.glade.h:3
-msgid "Wallpaper:"
-msgstr "Шпалери:"
-
-#: ../data/ui/desktop-pref.glade.h:4
-msgid "Please select an image file"
-msgstr "Виберіть файл зображення"
-
-#: ../data/ui/desktop-pref.glade.h:5
-msgid "Use the same wallpaper on all desktops"
-msgstr "Однакові шпалери на всіх стільницях"
-
-#: ../data/ui/desktop-pref.glade.h:6
-msgid "Background color:"
-msgstr "Колір тла:"
-
-#: ../data/ui/desktop-pref.glade.h:7
-msgid "Wallpaper mode:"
-msgstr "Режим шпалер:"
-
-#: ../data/ui/desktop-pref.glade.h:8
-msgid "<b>Text</b>"
-msgstr "<b>Текст</b>"
-
-#: ../data/ui/desktop-pref.glade.h:9
-msgid "Font of label text:"
-msgstr "Шрифти тексту міток:"
-
-#: ../data/ui/desktop-pref.glade.h:10
-msgid "Color of label text:"
-msgstr "Колір тексту міток:"
-
-#: ../data/ui/desktop-pref.glade.h:11
-msgid "Color of shadow:"
-msgstr "Колір тіні:"
-
-#: ../data/ui/desktop-pref.glade.h:12
-msgid "Appearance"
-msgstr "Вигляд"
-
-#: ../data/ui/desktop-pref.glade.h:13
+#: ../data/ui/desktop-pref.glade.h:2
 msgid "<b>Show desktop icons</b>"
 msgstr "<b>Показати значки на стільниці</b>"
 
-#: ../data/ui/desktop-pref.glade.h:14
-msgid "Show \"My Documents\" icon on desktop"
-msgstr "Показати значок \"Мої документи\" на стільниці"
+#: ../data/ui/desktop-pref.glade.h:3
+msgid "<b>Text</b>"
+msgstr "<b>Текст</b>"
 
-#: ../data/ui/desktop-pref.glade.h:15
-msgid "Show \"My Computer\" icon on desktop"
-msgstr "Показати значок \"Мій комп’ютер\" на стільниці"
+#: ../data/ui/desktop-pref.glade.h:4
+msgid "Ad_vanced"
+msgstr "_Додатково"
 
-#: ../data/ui/desktop-pref.glade.h:16
-msgid "Show \"Trash Bin\" icon on desktop"
-msgstr "Показати значок \"Смітник\" на стільниці"
+#: ../data/ui/desktop-pref.glade.h:5
+msgid "C_olor of label text:"
+msgstr "_Колір тексту міток:"
 
-#: ../data/ui/desktop-pref.glade.h:17
-msgid "Show icons of volumes on desktop"
-msgstr "Показати значки дисків на стільниці"
-
-#: ../data/ui/desktop-pref.glade.h:18
-msgid "Desktop Icons"
-msgstr "Значки стільниці"
-
-#: ../data/ui/desktop-pref.glade.h:19
-msgid "Show menus provided by window managers when desktop is clicked"
-msgstr "Показати меню менеджера вікон при клацанні на стільниці"
-
-#: ../data/ui/desktop-pref.glade.h:20 ../data/ui/pref.glade.h:58
-msgid "Advanced"
-msgstr "Додатково"
-
-#: ../data/ui/desktop-pref.glade.h:21
-msgid "Fill with background color only"
-msgstr "Заповнити лише кольором тла"
-
-#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:67
-msgid "Stretch to fill the entire screen"
-msgstr "Розтягнути для заповнення всієї стільниці"
-
-#: ../data/ui/desktop-pref.glade.h:23 ../data/ui/pref.glade.h:68
-msgid "Stretch to fit the screen"
-msgstr "Розтягнути, щоб вмістити на стільниці"
-
-#: ../data/ui/desktop-pref.glade.h:24 ../data/ui/pref.glade.h:69
+#: ../data/ui/desktop-pref.glade.h:6 ../data/ui/pref.glade.h:14
 msgid "Center on the screen"
 msgstr "Центр на екрані"
 
-#: ../data/ui/desktop-pref.glade.h:25 ../data/ui/pref.glade.h:70
+#: ../data/ui/desktop-pref.glade.h:7
+msgid "Color of _shadow:"
+msgstr "Колір _тіні:"
+
+#: ../data/ui/desktop-pref.glade.h:8 ../src/desktop-ui.c:34
+#: ../data/pcmanfm-desktop-pref.desktop.in.h:2
+msgid "Desktop Preferences"
+msgstr "Налаштування стільниці"
+
+#: ../data/ui/desktop-pref.glade.h:9
+msgid "Fill with background color only"
+msgstr "Заповнити лише кольором тла"
+
+#: ../data/ui/desktop-pref.glade.h:10
+msgid "Please select an image file"
+msgstr "Виберіть файл зображення"
+
+#: ../data/ui/desktop-pref.glade.h:11
+msgid "S_how icons of volumes on desktop"
+msgstr "_Показати значки дисків на стільниці"
+
+#: ../data/ui/desktop-pref.glade.h:12
+msgid "Show \"_My Computer\" icon on desktop"
+msgstr "Показати значок \"_Мій комп’ютер\" на стільниці"
+
+#: ../data/ui/desktop-pref.glade.h:13
+msgid "Show \"_Trash Bin\" icon on desktop"
+msgstr "Показати значок \"_Смітник\" на стільниці"
+
+#: ../data/ui/desktop-pref.glade.h:14 ../data/ui/pref.glade.h:44
+msgid "Stretch to fill the entire screen"
+msgstr "Розтягнути для заповнення всієї стільниці"
+
+#: ../data/ui/desktop-pref.glade.h:15 ../data/ui/pref.glade.h:45
+msgid "Stretch to fit the screen"
+msgstr "Розтягнути, щоб вмістити на стільниці"
+
+#: ../data/ui/desktop-pref.glade.h:16 ../data/ui/pref.glade.h:47
 msgid "Tile the image to fill the entire screen"
 msgstr "Розмножити зображення, щоб заповнити весь екран"
 
+#: ../data/ui/desktop-pref.glade.h:17
+msgid "Wallpaper _mode:"
+msgstr "_Режим шпалер:"
+
+#: ../data/ui/desktop-pref.glade.h:18
+msgid "_Appearance"
+msgstr "_Вигляд"
+
+#: ../data/ui/desktop-pref.glade.h:19
+msgid "_Background color:"
+msgstr "Колір т_ла:"
+
+#: ../data/ui/desktop-pref.glade.h:20
+msgid "_Desktop Icons"
+msgstr "З_начки стільниці"
+
+#: ../data/ui/desktop-pref.glade.h:21
+msgid "_Font of label text:"
+msgstr "Шрифт _тексту міток:"
+
+#: ../data/ui/desktop-pref.glade.h:22
+msgid "_Show \"My Documents\" icon on desktop"
+msgstr "Показати значок \"Мої доку_менти\" на стільниці"
+
+#: ../data/ui/desktop-pref.glade.h:23
+msgid "_Show menus provided by window managers when desktop is clicked"
+msgstr "Показати _меню менеджера вікон при клацанні на стільниці"
+
+#: ../data/ui/desktop-pref.glade.h:24
+msgid "_Use the same wallpaper on all desktops"
+msgstr "_Однакові шпалери на всіх стільницях"
+
+#: ../data/ui/desktop-pref.glade.h:25
+msgid "_Wallpaper:"
+msgstr "_Шпалери:"
+
 #: ../data/ui/pref.glade.h:1
-msgid "Opened in Current Tab"
-msgstr "Відкрити в поточній вкладці"
-
-#: ../data/ui/pref.glade.h:2
-msgid "Opened in New Tab"
-msgstr "Відкрити в новій вкладці"
-
-#: ../data/ui/pref.glade.h:3
-msgid "Opened in New Window"
-msgstr "Відкрити в новому вікні"
-
-#: ../data/ui/pref.glade.h:4
-msgid "Preferences"
-msgstr "Налаштування"
-
-#: ../data/ui/pref.glade.h:5
-msgid "<b>Behavior</b>"
-msgstr "<b>Поведінка</b>"
-
-#: ../data/ui/pref.glade.h:6
-msgid "Open files with single click"
-msgstr "Відкривати файли одним клацанням"
-
-#: ../data/ui/pref.glade.h:7
-msgid "Confirm before deleting files"
-msgstr "Попереджати перед видаленням файлів"
-
-#: ../data/ui/pref.glade.h:8
-msgid "Move deleted files to \"trash bin\" instead of erasing from disk"
-msgstr ""
-"Перенести видалені файли до \"смітника\" замість повного видалення з диску"
-
-#: ../data/ui/pref.glade.h:9
-msgid "Erase files on removable media instead of \"trash bin\" creation"
-msgstr "Знищувати файли на знімних носіях замість перенесення у \"смітник\""
-
-#: ../data/ui/pref.glade.h:10
-msgid "Confirm before moving files into \"trash bin\""
-msgstr "Попереджати перед перенесенням файлів у \"смітник\""
-
-#: ../data/ui/pref.glade.h:11
-msgid "Bookmarks:"
-msgstr "Закладки:"
-
-#: ../data/ui/pref.glade.h:12
-msgid "Default drop action:"
-msgstr "Типова дія при киданні:"
-
-#: ../data/ui/pref.glade.h:13
-msgid "Unfold tab when files are dragged onto tab button"
-msgstr "Розгортати вкладку при перетягуванні файлів на її кнопку"
-
-#: ../data/ui/pref.glade.h:14
-msgid "<b>Default View</b>"
-msgstr "<b>Типовий вигляд</b>"
-
-#: ../data/ui/pref.glade.h:15
-msgid "View Mode:"
-msgstr "Режим перегляду:"
-
-#: ../data/ui/pref.glade.h:16
-msgid "General"
-msgstr "Загальне"
-
-#: ../data/ui/pref.glade.h:17
-msgid "<b>Icons</b>"
-msgstr "<b>Значки</b>"
-
-#: ../data/ui/pref.glade.h:18
-msgid "Size of small icons:"
-msgstr "Розмір малих значків:"
-
-#: ../data/ui/pref.glade.h:19
-msgid "Size of big icons:"
-msgstr "Розмір великих значків:"
-
-#: ../data/ui/pref.glade.h:20
-msgid "Size of thumbnails:"
-msgstr "Розмір малих мініатюр:"
-
-#: ../data/ui/pref.glade.h:21
-msgid "Size of side pane icons:"
-msgstr "Розмір значків бічної панелі:"
-
-#: ../data/ui/pref.glade.h:22
-msgid "Show thumbnails of files"
-msgstr "Показати мініатюри файлів"
-
-#: ../data/ui/pref.glade.h:23
-msgid "Only show thumbnails for local files"
-msgstr "Показувати лише мініатюри для локальних файлів"
-
-#: ../data/ui/pref.glade.h:24
-msgid "Do not generate thumbnails for files exceeding this size:"
-msgstr "Не генерувати іконки для файлів, що перевищують цей розмір:"
-
-#: ../data/ui/pref.glade.h:25
-msgid "<b>User Interface</b>"
-msgstr "<b>Інтерфейс користувача</b>"
-
-#: ../data/ui/pref.glade.h:26
-msgid "Use SI decimal prefixes instead of IEC binary prefixes"
-msgstr "Використовувати десяткові префікси SI замість двійкових префіксів IEC"
-
-#: ../data/ui/pref.glade.h:27
-msgid "Treat backup files as hidden"
-msgstr "Вважати резервні файли прихованими"
-
-#: ../data/ui/pref.glade.h:28
-msgid "Display"
-msgstr "Відображення"
-
-#: ../data/ui/pref.glade.h:29
-msgid "Hide folder content border"
-msgstr "Приховати границю вмісту теки"
-
-#: ../data/ui/pref.glade.h:30
-msgid "Hide side pane buttons"
-msgstr "Приховати кнопки бічної панелі"
-
-#: ../data/ui/pref.glade.h:31
-msgid "Hide 'Close tab' buttons"
-msgstr "Приховати кнопки 'Закрити вкладку'"
-
-#: ../data/ui/pref.glade.h:32
-msgid "Always show the tab bar"
-msgstr "Завжди показувати панель вкладок"
-
-#: ../data/ui/pref.glade.h:33
-msgid "<b>Directories Tree</b>"
-msgstr "<b>Дерево тек</b>"
-
-#: ../data/ui/pref.glade.h:34
-msgid "Hide expander on empty or locked folder"
-msgstr "Ховати розгортувач порожньої чи замкненої теки"
-
-#: ../data/ui/pref.glade.h:35
-msgid "<b>Show in Places:</b>"
-msgstr "<b>Показати у Місцях:</b>"
-
-#: ../data/ui/pref.glade.h:36
-msgid "Home Directory"
-msgstr "Домашня тека"
-
-#: ../data/ui/pref.glade.h:37 ../src/main-win-ui.c:174
-msgid "Desktop Folder"
-msgstr "Тека стільниці"
-
-#: ../data/ui/pref.glade.h:38 ../src/main-win-ui.c:178
-msgid "Applications"
-msgstr "Програми"
-
-#: ../data/ui/pref.glade.h:39
-msgid "Trash bin"
-msgstr "Смітник"
-
-#: ../data/ui/pref.glade.h:40
-msgid "Layout"
-msgstr "Розміщення"
-
-#: ../data/ui/pref.glade.h:41
 msgid "<b>Auto-mount</b>"
 msgstr "<b>Автомонтування</b>"
 
-#: ../data/ui/pref.glade.h:42
-msgid "Mount mountable volumes automatically on program startup"
-msgstr "Монтувати знімні диски автоматично під час старту"
+#: ../data/ui/pref.glade.h:2
+msgid "<b>Behavior</b>"
+msgstr "<b>Поведінка</b>"
 
-#: ../data/ui/pref.glade.h:43
-msgid "Mount removable media automatically when they are inserted"
-msgstr "Монтувати знімні носії при їх вставлянні"
+#: ../data/ui/pref.glade.h:3
+msgid "<b>Default View</b>"
+msgstr "<b>Типовий вигляд</b>"
 
-#: ../data/ui/pref.glade.h:44
-msgid "Show available options for removable media when they are inserted"
-msgstr "Показати можливі опції для змінних носіїв при їх вставлянні"
+#: ../data/ui/pref.glade.h:4
+msgid "<b>Directories Tree</b>"
+msgstr "<b>Дерево тек</b>"
 
-#: ../data/ui/pref.glade.h:45
-msgid "Open mounted removable media in new tab instead of new window"
-msgstr "Відкривати змонтовані знімні носії у новій вкладці замість нового вікна"
+#: ../data/ui/pref.glade.h:5
+msgid "<b>Icons</b>"
+msgstr "<b>Значки</b>"
 
-#: ../data/ui/pref.glade.h:46
-msgid "Close tab containing removable medium when it is unmounted"
-msgstr "Закрити вкладку, що містить знімний носій, при його відмонтуванні"
-
-#: ../data/ui/pref.glade.h:47
-msgid "Volume Management"
-msgstr "Керування дисками"
-
-#: ../data/ui/pref.glade.h:48
+#: ../data/ui/pref.glade.h:6
 msgid "<b>Programs</b>"
 msgstr "<b>Програми</b>"
 
-#: ../data/ui/pref.glade.h:49
-msgid "Terminal emulator:"
-msgstr "Емулятор терміналу:"
+#: ../data/ui/pref.glade.h:7
+msgid "<b>Show in Places:</b>"
+msgstr "<b>Показати у Місцях:</b>"
 
-#: ../data/ui/pref.glade.h:50
-msgid "Switch user command:"
-msgstr "Команда зміни користувача:"
+#: ../data/ui/pref.glade.h:8
+msgid "<b>User Interface</b>"
+msgstr "<b>Інтерфейс користувача</b>"
 
-#: ../data/ui/pref.glade.h:52
+#: ../data/ui/pref.glade.h:9
+msgid "A_rchiver integration:"
+msgstr "_Інтеграція з архіватором:"
+
+#: ../data/ui/pref.glade.h:10
+msgid "Al_ways show the tab bar"
+msgstr "Завжд_и показувати панель вкладок"
+
+#: ../data/ui/pref.glade.h:11
+msgid "App_lications"
+msgstr "Про_грами"
+
+#: ../data/ui/pref.glade.h:12
+msgid "Ask"
+msgstr "Спитати"
+
+#: ../data/ui/pref.glade.h:13
+msgid "Auto (move if on the same FS, copy otherwise)"
+msgstr "Автоматично (перенести в межах ФС, інакше - копіювати)"
+
+#: ../data/ui/pref.glade.h:15
+msgid "Clos_e tab containing removable medium when it is unmounted"
+msgstr "Закрити вкладку, що містить знімний носій, при _його відмонтуванні"
+
+#: ../data/ui/pref.glade.h:16
+msgid "Co_nfirm before deleting files"
+msgstr "_Попереджати перед видаленням файлів"
+
+#: ../data/ui/pref.glade.h:17
+msgid "Compact View"
+msgstr "Компактний вигляд"
+
+#: ../data/ui/pref.glade.h:18
+msgid "Confi_rm before moving files into \"trash bi_n\""
+msgstr "Попереджати перед перенесенням файлів у \"_смітник\""
+
+#: ../data/ui/pref.glade.h:19
+msgid "Copy"
+msgstr "Копіювати"
+
+#: ../data/ui/pref.glade.h:20
+msgid "Defaul_t drop action:"
+msgstr "_Типова дія при киданні:"
+
+#: ../data/ui/pref.glade.h:21
+msgid "Des_ktop Folder"
+msgstr "Те_ка стільниці"
+
+#: ../data/ui/pref.glade.h:22
+msgid "Detailed List View"
+msgstr "Детальний вигляд списком"
+
+#: ../data/ui/pref.glade.h:23
+msgid "Do _not generate thumbnails for files exceeding this size:"
+msgstr "_Не генерувати іконки для файлів, що перевищують цей розмір:"
+
+#: ../data/ui/pref.glade.h:25
 #, no-c-format
 msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
@@ -354,15 +241,27 @@ msgstr ""
 "користувача.\n"
 "%s = командна стрічка, яку Ви бажаєте виконати в терміналі або з su."
 
-#: ../data/ui/pref.glade.h:54
-msgid "Archiver integration:"
-msgstr "Інтеграція з архіватором:"
+#: ../data/ui/pref.glade.h:27
+msgid "Hid_e 'Close tab' buttons"
+msgstr "При_ховати кнопки 'Закрити вкладку'"
 
-#: ../data/ui/pref.glade.h:55
-msgid "Use Application Startup Notify by default"
-msgstr "Типово використовувати Сповіщення Запуску"
+#: ../data/ui/pref.glade.h:28
+msgid "Hide _folder content border"
+msgstr "Приховати кордо_н вмісту теки"
 
-#: ../data/ui/pref.glade.h:56
+#: ../data/ui/pref.glade.h:29
+msgid "Hide _side pane buttons"
+msgstr "Приховати кнопки _бічної панелі"
+
+#: ../data/ui/pref.glade.h:30
+msgid "Hide e_xpander on empty or locked folder"
+msgstr "Ховати розгортувач порожн_ьої чи замкненої теки"
+
+#: ../data/ui/pref.glade.h:31
+msgid "Icon View"
+msgstr "Вигляд значками"
+
+#: ../data/ui/pref.glade.h:32
 msgid ""
 "If checked then use Startup Notify for application if another not stated "
 "explicitly.\n"
@@ -373,57 +272,163 @@ msgstr ""
 "Якщо вимкнено - використовувати Сповіщення Запуску Програми, лише якщо це "
 "вказано у ярлику."
 
-#: ../data/ui/pref.glade.h:59
-msgid "Auto (move if on the same FS, copy otherwise)"
-msgstr "Автоматично (перенести в межах ФС, інакше - копіювати)"
+#: ../data/ui/pref.glade.h:34
+msgid "Mo_unt removable media automatically when they are inserted"
+msgstr "Монтувати знімні _носії при їх вставлянні"
 
-#: ../data/ui/pref.glade.h:60
-msgid "Copy"
-msgstr "Копіювати"
-
-#: ../data/ui/pref.glade.h:61
+#: ../data/ui/pref.glade.h:35
 msgid "Move"
 msgstr "Перенести"
 
-#: ../data/ui/pref.glade.h:62
-msgid "Ask"
-msgstr "Спитати"
+#: ../data/ui/pref.glade.h:36
+msgid "Opened in Current Tab"
+msgstr "Відкрити в поточній вкладці"
 
-#: ../data/ui/pref.glade.h:63
-msgid "Icon View"
-msgstr "Вигляд значками"
+#: ../data/ui/pref.glade.h:37
+msgid "Opened in New Tab"
+msgstr "Відкрити в новій вкладці"
 
-#: ../data/ui/pref.glade.h:64
-msgid "Compact View"
-msgstr "Компактний вигляд"
+#: ../data/ui/pref.glade.h:38
+msgid "Opened in New Window"
+msgstr "Відкрити в новому вікні"
 
-#: ../data/ui/pref.glade.h:65
+#: ../data/ui/pref.glade.h:39
+msgid "Preferences"
+msgstr "Налаштування"
+
+#: ../data/ui/pref.glade.h:40
+msgid "Size of _big icons:"
+msgstr "Розмір _великих значків:"
+
+#: ../data/ui/pref.glade.h:41
+msgid "Size of _thumbnails:"
+msgstr "Розмір _малих мініатюр:"
+
+#: ../data/ui/pref.glade.h:42
+msgid "Size of side _pane icons:"
+msgstr "Розмір значків _бічної панелі:"
+
+#: ../data/ui/pref.glade.h:43
+msgid "Size of small _icons:"
+msgstr "Розмір малих _значків:"
+
+#: ../data/ui/pref.glade.h:46
 msgid "Thumbnail View"
 msgstr "Вигляд мініатюрами"
 
+#: ../data/ui/pref.glade.h:48
+msgid "Treat backup files as _hidden"
+msgstr "Вважати резервні файли при_хованими"
+
+#: ../data/ui/pref.glade.h:49
+msgid "Us_e SI decimal prefixes instead of IEC binary prefixes"
+msgstr "В_икористовувати десяткові префікси SI замість двійкових префіксів IEC"
+
+#: ../data/ui/pref.glade.h:50
+msgid "Vie_w Mode:"
+msgstr "Ре_жим перегляду:"
+
+#: ../data/ui/pref.glade.h:51
+msgid "_Advanced"
+msgstr "_Додатково"
+
+#: ../data/ui/pref.glade.h:52
+msgid "_Bookmarks:"
+msgstr "_Закладки:"
+
+#: ../data/ui/pref.glade.h:53
+msgid "_Display"
+msgstr "_Відображення"
+
+#: ../data/ui/pref.glade.h:54
+msgid "_Erase files on removable media instead of \"trash bin\" creation"
+msgstr "З_нищувати файли на знімних носіях замість перенесення у \"смітник\""
+
+#: ../data/ui/pref.glade.h:55
+msgid "_General"
+msgstr "_Загальне"
+
+#: ../data/ui/pref.glade.h:56
+msgid "_Home Directory"
+msgstr "_Домашня тека"
+
+#: ../data/ui/pref.glade.h:57
+msgid "_Layout"
+msgstr "_Розміщення"
+
+#: ../data/ui/pref.glade.h:58
+msgid "_Mount mountable volumes automatically on program startup"
+msgstr "Монтувати знімні диски _автоматично під час старту"
+
+#: ../data/ui/pref.glade.h:59
+msgid "_Move deleted files to \"trash bin\" instead of erasing from disk"
+msgstr ""
+"Перенести видалені файли до \"_смітника\" замість повного видалення з диску"
+
+#: ../data/ui/pref.glade.h:60
+msgid "_Only show thumbnails for local files"
+msgstr "Показувати _лише мініатюри для локальних файлів"
+
+#: ../data/ui/pref.glade.h:61
+msgid "_Open files with single click"
+msgstr "Відкривати файли _одним клацанням"
+
+#: ../data/ui/pref.glade.h:62
+msgid "_Open mounted removable media in new tab instead of new window"
+msgstr ""
+"Відкривати _змонтовані знімні носії у новій вкладці замість нового вікна"
+
+#: ../data/ui/pref.glade.h:63
+msgid "_Show available options for removable media when they are inserted"
+msgstr "_Показати можливі опції для змінних носіїв при їх вставлянні"
+
+#: ../data/ui/pref.glade.h:64
+msgid "_Show thumbnails of files"
+msgstr "_Показати мініатюри файлів"
+
+#: ../data/ui/pref.glade.h:65
+msgid "_Switch user command:"
+msgstr "_Команда зміни користувача:"
+
 #: ../data/ui/pref.glade.h:66
-msgid "Detailed List View"
-msgstr "Детальний вигляд списком"
+msgid "_Terminal emulator:"
+msgstr "_Емулятор терміналу:"
+
+#: ../data/ui/pref.glade.h:67
+msgid "_Trash bin"
+msgstr "_Смітник"
+
+#: ../data/ui/pref.glade.h:68
+msgid "_Unfold tab when files are dragged onto tab button"
+msgstr "_Розгортати вкладку при перетягуванні файлів на її кнопку"
+
+#: ../data/ui/pref.glade.h:69
+msgid "_Use Application Startup Notify by default"
+msgstr "_Типово використовувати Сповіщення Запуску"
+
+#: ../data/ui/pref.glade.h:70
+msgid "_Volume Management"
+msgstr "_Керування дисками"
 
 #: ../data/ui/autorun.glade.h:1
-msgid "Removable medium is inserted"
-msgstr "Вставлено знімний носій"
-
-#: ../data/ui/autorun.glade.h:2
 msgid "<b>Removable medium is inserted</b>"
 msgstr "<b>Вставлено знімний носій</b>"
 
-#: ../data/ui/autorun.glade.h:3
-msgid "Type of medium:"
-msgstr "Тип носія:"
-
-#: ../data/ui/autorun.glade.h:4
+#: ../data/ui/autorun.glade.h:2
 msgid "Detecting..."
 msgstr "Визначаю..."
 
-#: ../data/ui/autorun.glade.h:5
+#: ../data/ui/autorun.glade.h:3
 msgid "Please select the action you want to perform:"
 msgstr "Виберіть, будь ласка, дію для виконання:"
+
+#: ../data/ui/autorun.glade.h:4
+msgid "Removable medium is inserted"
+msgstr "Вставлено знімний носій"
+
+#: ../data/ui/autorun.glade.h:5
+msgid "Type of medium:"
+msgstr "Тип носія:"
 
 #: ../src/volume-manager.c:160
 msgid "Removable Disk"
@@ -433,248 +438,273 @@ msgstr "Знімний диск"
 msgid "Open in File Manager"
 msgstr "Відкрити в менеджері файлів"
 
-#: ../src/desktop-ui.c:54
-msgid "_Invert Selection"
-msgstr "_Інвертувати виділене"
+#: ../src/desktop-ui.c:51
+msgid "Open in New Ta_b"
+msgstr "Відкрити у новій _вкладці"
 
-#: ../src/desktop-ui.c:55 ../src/main-win-ui.c:166
-msgid "_Sort Files"
-msgstr "С_ортувати файли"
+#: ../src/desktop-ui.c:52 ../src/tab-page.c:51
+msgid "Open in New Win_dow"
+msgstr "Відкрити у _новому вікні"
 
-#. for popup menu
-#: ../src/desktop-ui.c:56 ../src/main-win-ui.c:192
-msgid "Create _New..."
-msgstr "_Створити ..."
-
-#: ../src/desktop-ui.c:57 ../src/main-win-ui.c:193
-msgid "Folder"
-msgstr "Теку"
-
-#: ../src/desktop-ui.c:58 ../src/main-win-ui.c:194
-msgid "Blank File"
-msgstr "Порожній файл"
-
-#: ../src/desktop-ui.c:59 ../src/main-win-ui.c:195
-msgid "Shortcut"
-msgstr "Посилання на програму"
-
-#: ../src/desktop-ui.c:71 ../src/main-win-ui.c:223
-msgid "By _Name"
-msgstr "По _назві"
-
-#: ../src/desktop-ui.c:72 ../src/main-win-ui.c:224
-msgid "By _Modification Time"
-msgstr "По _часу зміни"
-
-#: ../src/desktop-ui.c:73 ../src/main-win-ui.c:225
-msgid "By _Size"
-msgstr "По _розміру"
-
-#: ../src/desktop-ui.c:74 ../src/main-win-ui.c:226
-msgid "By File _Type"
-msgstr "По типу файлу"
-
-#: ../src/desktop-ui.c:90 ../src/main-win-ui.c:249
-msgid "Open in New Tab"
-msgstr "Відкрити у новій вкладці"
-
-#: ../src/desktop-ui.c:91 ../src/main-win-ui.c:250
-msgid "Open in New Window"
-msgstr "Відкрити у новому вікні"
-
-#: ../src/desktop-ui.c:93 ../src/main-win-ui.c:252
-msgid "Open in _Terminal"
+#: ../src/desktop-ui.c:54 ../src/tab-page.c:53
+msgid "Open in Termina_l"
 msgstr "Відкрити в _терміналі"
 
-#: ../src/desktop-ui.c:109
-msgid "Stick to Current Position"
-msgstr "Дотримуватися поточної позиції"
+#: ../src/desktop-ui.c:70
+msgid "Stic_k to Current Position"
+msgstr "Дотримуватися _поточної позиції"
 
-#: ../src/desktop-ui.c:114
-msgid "Snap to Grid"
-msgstr "Дотримуватися сітки"
+#: ../src/desktop-ui.c:75
+msgid "Snap to _Grid"
+msgstr "Дотримуватися _сітки"
 
-#: ../src/main-win-ui.c:146
+#: ../src/main-win-ui.c:128
 msgid "_File"
 msgstr "_Файл"
 
-#: ../src/main-win-ui.c:147
+#: ../src/main-win-ui.c:129
 msgid "_New Window"
 msgstr "_Нове вікно"
 
-#: ../src/main-win-ui.c:148
-msgid "New _Tab"
-msgstr "Нова _вкладка"
+#: ../src/main-win-ui.c:130
+msgid "New T_ab"
+msgstr "Нова вк_ладка"
 
-#: ../src/main-win-ui.c:149
+#: ../src/main-win-ui.c:131
+msgid "C_reate New..."
+msgstr "Ст_ворити..."
+
+#: ../src/main-win-ui.c:132
 msgid "_Close Tab"
 msgstr "З_акрити вкладку"
 
-#: ../src/main-win-ui.c:150
-msgid "Close Window"
+#: ../src/main-win-ui.c:133
+msgid "Close _Window"
 msgstr "Закрити вікн_о"
 
-#: ../src/main-win-ui.c:151
+#: ../src/main-win-ui.c:134
 msgid "_Edit"
 msgstr "_Редагувати"
 
-#: ../src/main-win-ui.c:156
-msgid "Rename"
+#: ../src/main-win-ui.c:139
+msgid "_Rename"
 msgstr "Пере_йменувати"
 
-#: ../src/main-win-ui.c:157
-msgid "Create Symlink"
-msgstr "Створити символьне посилання"
+#: ../src/main-win-ui.c:140
+msgid "Create Symlin_k"
+msgstr "Створити си_мвольне посилання"
 
-#: ../src/main-win-ui.c:158
-msgid "Move To..."
+#: ../src/main-win-ui.c:141
+msgid "_Move To..."
 msgstr "_Перемістити до..."
 
-#: ../src/main-win-ui.c:159
-msgid "Copy To..."
+#: ../src/main-win-ui.c:142
+msgid "C_opy To..."
 msgstr "Копі_ювати до..."
 
-#: ../src/main-win-ui.c:161
-msgid "Invert Selection"
-msgstr "І_нвертувати виділене"
+#: ../src/main-win-ui.c:144
+msgid "_Invert Selection"
+msgstr "_Інвертувати виділене"
 
-#: ../src/main-win-ui.c:163
+#: ../src/main-win-ui.c:145
+msgid "Prefere_nces"
+msgstr "Налаштуванн_я"
+
+#: ../src/main-win-ui.c:146
 msgid "_View"
 msgstr "Ви_гляд"
 
-#: ../src/main-win-ui.c:164
-msgid "Reload Folder"
-msgstr "Перевантажити теку"
+#: ../src/main-win-ui.c:147
+msgid "_Reload Folder"
+msgstr "_Перевантажити теку"
 
-#: ../src/main-win-ui.c:164
+#: ../src/main-win-ui.c:147
 msgid "Reload current folder"
 msgstr "Перевантажити поточну теку"
 
-#: ../src/main-win-ui.c:165
-msgid "Side Pane"
-msgstr "Бічна панель"
+#: ../src/main-win-ui.c:148
+msgid "Side _Pane"
+msgstr "_Бічна панель"
 
-#: ../src/main-win-ui.c:167
+#. other see below: 'ShowHidden' 'ShowStatus' 'Fullscreen' 'IconView'...
+#: ../src/main-win-ui.c:150
+msgid "S_ort Files"
+msgstr "С_ортувати файли"
+
+#: ../src/main-win-ui.c:151
 msgid "_Help"
 msgstr "_Допомога"
 
-#: ../src/main-win-ui.c:169
+#: ../src/main-win-ui.c:153
 msgid "_Go"
 msgstr "Пере_хід"
 
-#: ../src/main-win-ui.c:170
+#: ../src/main-win-ui.c:154
+msgid "_Previous Folder"
+msgstr "_Попередня тека"
+
+#: ../src/main-win-ui.c:154
 msgid "Previous Folder"
 msgstr "Попередня тека"
 
-#: ../src/main-win-ui.c:171
+#: ../src/main-win-ui.c:155
+msgid "_Next Folder"
+msgstr "_Наступна тека"
+
+#: ../src/main-win-ui.c:155
 msgid "Next Folder"
 msgstr "Наступна тека"
 
-#: ../src/main-win-ui.c:172
-msgid "Parent Folder"
-msgstr "Тека рівнем вище"
+#: ../src/main-win-ui.c:156
+msgid "Pa_rent Folder"
+msgstr "Тека рівнем _вище"
 
-#: ../src/main-win-ui.c:172
+#: ../src/main-win-ui.c:156
 msgid "Go to parent Folder"
 msgstr "Перейти до теки рівнем вище"
 
-#: ../src/main-win-ui.c:173
+#: ../src/main-win-ui.c:157
+msgid "H_ome Folder"
+msgstr "Дома_шня тека"
+
+#: ../src/main-win-ui.c:157
 msgid "Home Folder"
 msgstr "Домашня тека"
 
-#: ../src/main-win-ui.c:174
-msgid "Desktop"
-msgstr "Стільниця"
+#: ../src/main-win-ui.c:158
+msgid "_Desktop"
+msgstr "_Стільниця"
 
-#: ../src/main-win-ui.c:175
-msgid "My Computer"
-msgstr "Мій комп’ютер"
+#: ../src/main-win-ui.c:158
+msgid "Desktop Folder"
+msgstr "Тека стільниці"
 
-#: ../src/main-win-ui.c:176
-msgid "Trash Can"
-msgstr "Смітник"
+#: ../src/main-win-ui.c:159
+msgid "_My Computer"
+msgstr "_Мій комп’ютер"
 
-#: ../src/main-win-ui.c:177
-msgid "Network Drives"
-msgstr "Мережеві диски"
+#: ../src/main-win-ui.c:160
+msgid "_Trash Can"
+msgstr "Смі_тник"
 
-#: ../src/main-win-ui.c:178
+#: ../src/main-win-ui.c:161
+msgid "Net_work Drives"
+msgstr "Мере_жеві диски"
+
+#: ../src/main-win-ui.c:162
+msgid "_Applications"
+msgstr "Пр_ограми"
+
+#: ../src/main-win-ui.c:162
 msgid "Installed Applications"
 msgstr "Встановлені програми"
 
-#: ../src/main-win-ui.c:180
+#: ../src/main-win-ui.c:164
 msgid "_Bookmarks"
 msgstr "_Закладки"
 
-#: ../src/main-win-ui.c:181
-msgid "Add To Bookmarks"
-msgstr "Додати до закладок"
+#: ../src/main-win-ui.c:165
+msgid "_Add To Bookmarks"
+msgstr "Додати до з_акладок"
 
-#: ../src/main-win-ui.c:182
-msgid "_Tools"
+#: ../src/main-win-ui.c:166
+msgid "Tool_s"
 msgstr "_Інструменти"
 
-#: ../src/main-win-ui.c:183
+#: ../src/main-win-ui.c:167
 msgid "Open Current Folder in _Terminal"
 msgstr "Відкрити поточну теку у _терміналі"
 
-#: ../src/main-win-ui.c:184
+#: ../src/main-win-ui.c:168
 msgid "Open Current Folder as _Root"
-msgstr "Відкрити поточну теку з правами root'а"
+msgstr "_Відкрити поточну теку з правами root'а"
 
-#: ../src/main-win-ui.c:201
-msgid "Show _Hidden"
-msgstr "Показати приховане"
+#: ../src/main-win-ui.c:170
+msgid "Fin_d Files"
+msgstr "Знайти фа_йли"
 
-#: ../src/main-win-ui.c:202
-msgid "Show Side Pane"
-msgstr "Показати бічну панель"
+#. for popup menu - these entries exist in FmFolderView popup still
+#: ../src/main-win-ui.c:179
+msgid "Folder"
+msgstr "Теку"
 
-#: ../src/main-win-ui.c:203
+#: ../src/main-win-ui.c:180
+msgid "Blank File"
+msgstr "Порожній файл"
+
+#: ../src/main-win-ui.c:186
+msgid "Show Hidde_n"
+msgstr "П_оказати приховане"
+
+#: ../src/main-win-ui.c:187
+msgid "Sho_w Side Pane"
+msgstr "Показати _бічну панель"
+
+#: ../src/main-win-ui.c:188
 msgid "Show Status B_ar"
 msgstr "Показати панель статусу"
 
-#: ../src/main-win-ui.c:204
-msgid "Fullscreen Mode"
-msgstr "На повний екран"
+#: ../src/main-win-ui.c:189
+msgid "T_win Pane Mode"
+msgstr "Двопанел_ьний режим"
 
-#: ../src/main-win-ui.c:209
+#: ../src/main-win-ui.c:190
+msgid "Fullscreen _Mode"
+msgstr "На повний _екран"
+
+#: ../src/main-win-ui.c:195
 msgid "_Icon View"
 msgstr "_Вигляд значками"
 
-#: ../src/main-win-ui.c:210
+#: ../src/main-win-ui.c:196
 msgid "_Compact View"
 msgstr "_Компактний вигляд"
 
-#: ../src/main-win-ui.c:211
+#: ../src/main-win-ui.c:197
 msgid "_Thumbnail View"
 msgstr "Вигляд мініа_тюрами"
 
-#: ../src/main-win-ui.c:212
+#: ../src/main-win-ui.c:198
 msgid "Detailed _List View"
 msgstr "Детальний вигляд _списком"
 
-#: ../src/main-win-ui.c:231
+#: ../src/main-win-ui.c:209
+msgid "By _Name"
+msgstr "По _назві"
+
+#: ../src/main-win-ui.c:210
+msgid "By _Modification Time"
+msgstr "По _часу зміни"
+
+#: ../src/main-win-ui.c:211
+msgid "By _Size"
+msgstr "По ро_зміру"
+
+#: ../src/main-win-ui.c:212
+msgid "By File _Type"
+msgstr "По _типу файлу"
+
+#: ../src/main-win-ui.c:217
 msgid "Places"
 msgstr "Місця"
 
-#: ../src/main-win-ui.c:232
+#: ../src/main-win-ui.c:218
 msgid "Directory Tree"
 msgstr "Дерево тек"
 
-#: ../src/main-win-ui.c:233
+#: ../src/main-win-ui.c:219
 msgid "Remote"
 msgstr "Віддалене"
 
-#: ../src/main-win.c:546
+#: ../src/main-win.c:494
 msgid "You are in super user mode"
 msgstr "Ви в режимі суперкористувача"
 
-#: ../src/main-win.c:742
+#: ../src/main-win.c:674
 msgid "Switch user command is not set."
 msgstr "Команду зміни користувача не встановлено."
 
-#: ../src/main-win.c:1173
+#: ../src/main-win.c:1027
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -685,97 +715,93 @@ msgstr ""
 "'%s'\n"
 "Введіть назву для нової закладки:"
 
-#: ../src/main-win.c:1177
+#: ../src/main-win.c:1031
 msgid "Add to Bookmarks"
 msgstr "Додати до закладок"
 
 #. options only acceptable by first pcmanfm instance. These options are not passed through IPC
-#: ../src/pcmanfm.c:73
+#: ../src/pcmanfm.c:74
 msgid "Name of configuration profile"
 msgstr "Назва профілю конфігурації"
 
 #: ../src/pcmanfm.c:74
+msgid "PROFILE"
+msgstr "ПРОФІЛЬ"
+
+#: ../src/pcmanfm.c:75
 msgid "Run PCManFM as a daemon"
 msgstr "Запустити PCManFM як демон"
 
-#: ../src/pcmanfm.c:75
+#: ../src/pcmanfm.c:76
 msgid "No function. Just to be compatible with nautilus"
 msgstr "Немає функції. Лише для сумісності з nautilus"
 
 #. options that are acceptable for every instance of pcmanfm and will be passed through IPC.
-#: ../src/pcmanfm.c:78
+#: ../src/pcmanfm.c:79
 msgid "Launch desktop manager"
 msgstr "Запустити менеджер стільниці"
 
-#: ../src/pcmanfm.c:79
+#: ../src/pcmanfm.c:80
 msgid "Turn off desktop manager if it's running"
 msgstr "Вимкнути менеджер стільниці, якщо його запущено"
 
-#: ../src/pcmanfm.c:80
+#: ../src/pcmanfm.c:81
 msgid "Open desktop preference dialog"
 msgstr "Відкрити вікно налаштування стільниці"
 
-#: ../src/pcmanfm.c:81
-msgid "Set desktop wallpaper"
-msgstr "Налаштувати шпалери стільниці"
+#: ../src/pcmanfm.c:82
+msgid "Set desktop wallpaper from image FILE"
+msgstr "Встановити шпалери стільниці з ФАЙЛу"
 
-#: ../src/pcmanfm.c:81
-msgid "<image file>"
-msgstr "<файл зображення>"
+#: ../src/pcmanfm.c:82
+msgid "FILE"
+msgstr "ФАЙЛ"
 
 # color|stretch|fit|center|tile - має бути не перекладене, інакше не буде опрацьовуватись.
-#: ../src/pcmanfm.c:82
-msgid "Set mode of desktop wallpaper. <mode>=(color|stretch|fit|center|tile)"
+#. don't translate list of modes in description, please
+#: ../src/pcmanfm.c:84
+msgid "Set mode of desktop wallpaper. MODE=(color|stretch|fit|center|tile)"
 msgstr ""
-"Встановити режим шпалер стільниці. <режим>=(color|stretch|fit|center|tile)"
+"Встановити режим шпалер стільниці. РЕЖИМ=(color|stretch|fit|center|tile)"
 
-#: ../src/pcmanfm.c:82
-msgid "<mode>"
-msgstr "<режим>"
+#: ../src/pcmanfm.c:84
+msgid "MODE"
+msgstr "РЕЖИМ"
 
-#: ../src/pcmanfm.c:83
-msgid ""
-"Open preference dialog. 'n' is number of the page you want to show (1, 2, "
-"3...)."
-msgstr ""
-"Відкрити діалог налаштування. 'n' є номер сторінки, яку Ви бажаєте показати "
-"(1, 2, 3...)."
+#: ../src/pcmanfm.c:85
+msgid "Open Preferences dialog on the page N"
+msgstr "Відкрити сторінку N налаштувань стільниці"
 
-#. { "new-win", '\0', 'n', G_OPTION_ARG_NONE, &new_win, N_("Open new window"), NULL },
-#. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
+#: ../src/pcmanfm.c:85
+msgid "N"
+msgstr "N"
+
 #: ../src/pcmanfm.c:86
+msgid "Open new window"
+msgstr "Відкрити у новому вікні"
+
+#. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
+#: ../src/pcmanfm.c:88
+msgid "Window role for usage by window manager"
+msgstr "Роль вікна, яка використовується менеджером вікон"
+
+#: ../src/pcmanfm.c:88
+msgid "ROLE"
+msgstr "РОЛЬ"
+
+#: ../src/pcmanfm.c:89
 msgid "[FILE1, FILE2,...]"
 msgstr "[ФАЙЛ1, ФАЙЛ2,...]"
 
-#: ../src/pcmanfm.c:527
+#: ../src/pcmanfm.c:523
 msgid "Terminal emulator is not set."
 msgstr "Емулятор терміналу не встановлено."
 
-#: ../src/pcmanfm.c:579
-msgid "Enter a name for the newly created folder:"
-msgstr "Введіть назву новоствореної теки:"
+#: ../src/tab-page.c:50
+msgid "Open in New T_ab"
+msgstr "Відкрити у новій вк_ладці"
 
-#: ../src/pcmanfm.c:581
-msgid "Enter a name for the newly created file:"
-msgstr "Введіть назву новоствореного файлу:"
-
-#: ../src/pcmanfm.c:582
-msgid "Create New..."
-msgstr "Створити..."
-
-#: ../src/pcmanfm.c:582
-msgid "New"
-msgstr "Новий"
-
-#: ../src/pcmanfm.c:676
-msgid "Error, lxshortcut not installed"
-msgstr "Помилка: lxshortcut не встановлено"
-
-#: ../src/pcmanfm.c:681
-msgid "Failed to start lxshortcut"
-msgstr "Не вдалося запустити lxshortcut"
-
-#: ../src/tab-page.c:211
+#: ../src/tab-page.c:236
 #, c-format
 msgid "%d item selected"
 msgid_plural "%d items selected"
@@ -783,12 +809,12 @@ msgstr[0] "%d позицію обрано"
 msgstr[1] "%d позиції обрано"
 msgstr[2] "%d позицій обрано"
 
-#: ../src/tab-page.c:305
+#: ../src/tab-page.c:354
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Вільний простір: %s (Всього: %s )"
 
-#: ../src/tab-page.c:325
+#: ../src/tab-page.c:374
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
@@ -796,7 +822,7 @@ msgstr[0] "%d позиція"
 msgstr[1] "%d позиції"
 msgstr[2] "%d позицій"
 
-#: ../src/tab-page.c:326
+#: ../src/tab-page.c:375
 #, c-format
 msgid " (%d hidden)"
 msgid_plural " (%d hidden)"
@@ -805,23 +831,57 @@ msgstr[1] " (%d приховано)"
 msgstr[2] " (%d приховано)"
 
 #: ../data/pcmanfm.desktop.in.h:1
-msgid "File Manager PCManFM"
-msgstr "Менеджер файлів PCManFM"
+msgid "Browse the file system and manage the files"
+msgstr "Показує файлову систему і керує файлами"
 
 #: ../data/pcmanfm.desktop.in.h:2
 msgid "File Manager"
 msgstr "Менеджер файлів"
 
 #: ../data/pcmanfm.desktop.in.h:3
-msgid "Browse the file system and manage the files"
-msgstr "Показує файлову систему і керує файлами"
+msgid "File Manager PCManFM"
+msgstr "Менеджер файлів PCManFM"
 
-#: ../data/pcmanfm-desktop-pref.desktop.in.h:2
+#: ../data/pcmanfm-desktop-pref.desktop.in.h:1
 msgid "Change desktop wallpapers and behavior of desktop manager"
 msgstr "Налаштування шпалер та поведінки менеджера стільниці"
 
-#~ msgid "_Advanced"
-#~ msgstr "_Додатково"
+#~ msgid "Create _New..."
+#~ msgstr "_Створити ..."
+
+#~ msgid "Shortcut"
+#~ msgstr "Посилання на програму"
+
+#~ msgid "Invert Selection"
+#~ msgstr "І_нвертувати виділене"
+
+#~ msgid "<image file>"
+#~ msgstr "<файл зображення>"
+
+#~ msgid "<mode>"
+#~ msgstr "<режим>"
+
+#~ msgid ""
+#~ "Open preference dialog. 'n' is number of the page you want to show (1, 2, "
+#~ "3...)."
+#~ msgstr ""
+#~ "Відкрити діалог налаштування. 'n' є номер сторінки, яку Ви бажаєте "
+#~ "показати (1, 2, 3...)."
+
+#~ msgid "Enter a name for the newly created folder:"
+#~ msgstr "Введіть назву новоствореної теки:"
+
+#~ msgid "Enter a name for the newly created file:"
+#~ msgstr "Введіть назву новоствореного файлу:"
+
+#~ msgid "New"
+#~ msgstr "Новий"
+
+#~ msgid "Error, lxshortcut not installed"
+#~ msgstr "Помилка: lxshortcut не встановлено"
+
+#~ msgid "Failed to start lxshortcut"
+#~ msgstr "Не вдалося запустити lxshortcut"
 
 #~ msgid "_New"
 #~ msgstr "_Новий"
