@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: pcmanfm2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-09-23 15:36+0200\n"
-"PO-Revision-Date: 2012-09-22 04:40+0300\n"
+"PO-Revision-Date: 2012-09-23 17:21+0200\n"
 "Last-Translator: LStranger <andrej@rep.kiev.ua>\n"
 "Language-Team: Ukrainian <translation@linux.org.ua>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Pootle 2.0.5\n"
 "X-Poedit-Language: Ukrainian\n"
 "X-Poedit-Country: Ukraine\n"
@@ -537,7 +537,7 @@ msgstr "_Допомога"
 
 #: ../src/main-win-ui.c:154
 msgid "_Keyboard navigation"
-msgstr ""
+msgstr "_Навігація з клавіатури"
 
 #: ../src/main-win-ui.c:155
 msgid "_Go"
@@ -706,7 +706,7 @@ msgstr "Ви в режимі суперкористувача"
 
 #: ../src/main-win.c:667 ../src/main-win.c:675
 msgid "Keyboard navigation"
-msgstr ""
+msgstr "Навігація з клавіатури"
 
 #: ../src/main-win.c:669
 msgid ""
@@ -717,6 +717,12 @@ msgid ""
 "F10: activate main menu\n"
 "Ctrl+L or Alt+D: jump focus to Path Bar"
 msgstr ""
+"Tab: перехід Тека -> Бічна панель -> Панель інструментів\n"
+"Shift+Tab: перехід Панель інструментів -> Бічна панель -> Тека\n"
+"F6: перехід з Бічної панелі до Теки й навпаки\n"
+"F8: перемістити керування на розділювач\n"
+"F10: активувати головне меню\n"
+"Ctrl+L або Alt+D: перейти до панелі вводу адреси"
 
 #: ../src/main-win.c:705
 msgid "Switch user command is not set."
