@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-09-23 15:36+0200\n"
-"PO-Revision-Date: 2012-09-22 07:47+0300\n"
+"PO-Revision-Date: 2012-09-24 09:15+0300\n"
 "Last-Translator: Algimantas Margevičius <margevicius.algimantas@gmail.com>\n"
 "Language-Team: Lietuvių <>\n"
 "Language: lt\n"
@@ -536,7 +536,7 @@ msgstr "Ž_inynas"
 
 #: ../src/main-win-ui.c:154
 msgid "_Keyboard navigation"
-msgstr ""
+msgstr "_Naršymas klaviatūra"
 
 #: ../src/main-win-ui.c:155
 msgid "_Go"
@@ -705,7 +705,7 @@ msgstr "Jūs esate super naudotojo režime"
 
 #: ../src/main-win.c:667 ../src/main-win.c:675
 msgid "Keyboard navigation"
-msgstr ""
+msgstr "Naršymas klaviatūra"
 
 #: ../src/main-win.c:669
 msgid ""
@@ -716,6 +716,13 @@ msgid ""
 "F10: activate main menu\n"
 "Ctrl+L or Alt+D: jump focus to Path Bar"
 msgstr ""
+"Tab: perduoti fokusavimą Aplanko rodinys -> Šoninis skydelis -> Įrankinė\n"
+"Shift+Tab: perduoti fokusavimą Įrankinė -> Šoninis skydelis -> Aplanko "
+"rodinys\n"
+"F6: perduoti fokusavimą Šoninis skydelis <-> Aplanko rodinys\n"
+"F8: fokusavimo perskyrimas tarp Šoninio skydelio ir Aplanko rodinio\n"
+"F10: aktyvuoti pagrindinį meniu\n"
+"Ctrl+L ar Alt+D: peršokti į Kelio juostą"
 
 #: ../src/main-win.c:705
 msgid "Switch user command is not set."
