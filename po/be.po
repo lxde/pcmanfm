@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-09-23 15:36+0200\n"
-"PO-Revision-Date: 2012-08-28 20:42+0200\n"
+"PO-Revision-Date: 2012-09-25 21:03+0200\n"
 "Last-Translator: Мікалай <crom-a@tut.by>\n"
 "Language-Team: Belarusian <i18n@mova.org>\n"
 "Language: be\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Pootle 2.0.5\n"
 
 #: ../data/ui/about.glade.in.h:1
@@ -51,93 +51,78 @@ msgid "<b>Background</b>"
 msgstr "<b>Фон</b>"
 
 #: ../data/ui/desktop-pref.glade.h:3
-#, fuzzy
 msgid "_Wallpaper:"
-msgstr "Шпалеры:"
+msgstr "_Шпалеры:"
 
 #: ../data/ui/desktop-pref.glade.h:4
 msgid "Please select an image file"
 msgstr "Калі ласка, выберыце выяву"
 
 #: ../data/ui/desktop-pref.glade.h:5
-#, fuzzy
 msgid "_Use the same wallpaper on all desktops"
-msgstr "Адзіныя шпалеры на ўсіх працоўных прасторах"
+msgstr "_Адзіныя шпалеры на ўсіх працоўных прасторах"
 
 #: ../data/ui/desktop-pref.glade.h:6
-#, fuzzy
 msgid "_Background color:"
-msgstr "Колер фону:"
+msgstr "Колер _фону:"
 
 #: ../data/ui/desktop-pref.glade.h:7
-#, fuzzy
 msgid "Wallpaper _mode:"
-msgstr "Рэжым шпалер:"
+msgstr "_Рэжым шпалер:"
 
 #: ../data/ui/desktop-pref.glade.h:8
 msgid "<b>Text</b>"
 msgstr "<b>Тэкст</b>"
 
 #: ../data/ui/desktop-pref.glade.h:9
-#, fuzzy
 msgid "_Font of label text:"
-msgstr "Шрыфт тэксту значкоў:"
+msgstr "Шрыфт тэксту зн_ачкоў:"
 
 #: ../data/ui/desktop-pref.glade.h:10
-#, fuzzy
 msgid "C_olor of label text:"
-msgstr "Колер тэксту значкоў:"
+msgstr "Колер тэксту значко_ў:"
 
 #: ../data/ui/desktop-pref.glade.h:11
-#, fuzzy
 msgid "Color of _shadow:"
-msgstr "Колер ценю:"
+msgstr "Колер _ценю:"
 
 #: ../data/ui/desktop-pref.glade.h:12
-#, fuzzy
 msgid "_Appearance"
-msgstr "Выгляд"
+msgstr "_Выгляд"
 
 #: ../data/ui/desktop-pref.glade.h:13
 msgid "<b>Show desktop icons</b>"
 msgstr "<b>Паказваць значкі на працоўнай прасторы</b>"
 
 #: ../data/ui/desktop-pref.glade.h:14
-#, fuzzy
 msgid "_Show \"My Documents\" icon on desktop"
-msgstr "Паказваць на працоўнай прасторы значок \"Дакументы\""
+msgstr "Паказваць на працоўнай прастор_ы значок \"Дакументы\""
 
 #: ../data/ui/desktop-pref.glade.h:15
-#, fuzzy
 msgid "Show \"_My Computer\" icon on desktop"
-msgstr "Паказваць на працоўнай прасторы значок \"Мой камп'ютар\""
+msgstr "Паказваць на працоўнай прасторы значок \"_Камп'ютар\""
 
 #: ../data/ui/desktop-pref.glade.h:16
-#, fuzzy
 msgid "Show \"_Trash Bin\" icon on desktop"
-msgstr "Паказваць на працоўнай прасторы значок \"Сметніца\""
+msgstr "Паказваць на працоўнай прасторы значок \"См_етніца\""
 
 #: ../data/ui/desktop-pref.glade.h:17
-#, fuzzy
 msgid "S_how icons of volumes on desktop"
-msgstr "Паказваць на працоўнай прасторы значкі дыскаў"
+msgstr "Паказваць на п_рацоўнай прасторы значкі дыскаў"
 
 #: ../data/ui/desktop-pref.glade.h:18
-#, fuzzy
 msgid "_Desktop Icons"
-msgstr "Значкі працоўнай прасторы"
+msgstr "_Значкі працоўнай прасторы"
 
 #: ../data/ui/desktop-pref.glade.h:19
-#, fuzzy
 msgid "_Show menus provided by window managers when desktop is clicked"
 msgstr ""
-"Па націсканні на працоўнай прасторы паказваць кантэкстнае меню аконнага "
+"Па націсканні на працоўнай прастор_ы паказваць кантэкстнае меню аконнага "
 "менеджара"
 
 #: ../data/ui/desktop-pref.glade.h:20
-#, fuzzy
 msgid "Ad_vanced"
-msgstr "Дадаткова"
+msgstr "Дадатк_ова"
 
 #: ../data/ui/desktop-pref.glade.h:21
 msgid "Fill with background color only"
@@ -180,111 +165,92 @@ msgid "<b>Behavior</b>"
 msgstr "<b>Паводзіны</b>"
 
 #: ../data/ui/pref.glade.h:6
-#, fuzzy
 msgid "_Open files with single click"
-msgstr "Адкрываць файлы адзіночным націсканнем"
+msgstr "Адкрываць файлы адзін_очным націсканнем"
 
 #: ../data/ui/pref.glade.h:7
-#, fuzzy
 msgid "Co_nfirm before deleting files"
-msgstr "Пацвярджаць сціранне файлаў"
+msgstr "Па_цвярджаць сціранне файлаў"
 
 #: ../data/ui/pref.glade.h:8
-#, fuzzy
 msgid "_Move deleted files to \"trash bin\" instead of erasing from disk"
-msgstr "Перамяшчаць сцёртыя файлы ў \"Сметніцу\" замест сцірання з дыска"
+msgstr "Перамяшчац_ь сцёртыя файлы ў \"Сметніцу\" замест сцірання з дыска"
 
 #: ../data/ui/pref.glade.h:9
-#, fuzzy
 msgid "_Erase files on removable media instead of \"trash bin\" creation"
-msgstr "Сціраць файлы з рухомых носнікаў замест стварэння \"Сметніцы\""
+msgstr "Сціраць файлы з р_ухомых носнікаў замест стварэння \"Сметніцы\""
 
 #: ../data/ui/pref.glade.h:10
-#, fuzzy
 msgid "Confi_rm before moving files into \"trash bi_n\""
-msgstr "Пацвярджаць перамяшчэнне файлаў у \"Сметніцу\""
+msgstr "Пацвя_рджаць перамяшчэнне файлаў у \"Сметніцу\""
 
 #: ../data/ui/pref.glade.h:11
-#, fuzzy
 msgid "_Bookmarks:"
-msgstr "Закладкі:"
+msgstr "Закладк_і:"
 
 #: ../data/ui/pref.glade.h:12
-#, fuzzy
 msgid "Defaul_t drop action:"
-msgstr "Базавае дзеянне пры перацягванні:"
+msgstr "Базавае дз_еянне пры перацягванні:"
 
 #: ../data/ui/pref.glade.h:13
-#, fuzzy
 msgid "_Unfold tab when files are dragged onto tab button"
-msgstr "Разгортваць картку пры перацягванні файлаў на кнопку карткі"
+msgstr "Раз_гортваць картку пры перацягванні файлаў на кнопку карткі"
 
 #: ../data/ui/pref.glade.h:14
 msgid "<b>Default View</b>"
 msgstr "<b>Пачатковы выгляд</b>"
 
 #: ../data/ui/pref.glade.h:15
-#, fuzzy
 msgid "Vie_w Mode:"
-msgstr "Рэжым прагляду:"
+msgstr "Рэ_жым прагляду:"
 
 #: ../data/ui/pref.glade.h:16
-#, fuzzy
 msgid "_General"
-msgstr "Агульныя"
+msgstr "_Агульныя"
 
 #: ../data/ui/pref.glade.h:17
 msgid "<b>Icons</b>"
 msgstr "<b>Значкі</b>"
 
 #: ../data/ui/pref.glade.h:18
-#, fuzzy
 msgid "Size of small _icons:"
-msgstr "Памер маленькіх значкоў:"
+msgstr "Памер _маленькіх значкоў:"
 
 #: ../data/ui/pref.glade.h:19
-#, fuzzy
 msgid "Size of _big icons:"
-msgstr "Памер буйных значкоў:"
+msgstr "Памер _буйных значкоў:"
 
 #: ../data/ui/pref.glade.h:20
-#, fuzzy
 msgid "Size of _thumbnails:"
-msgstr "Памер мініяцюр:"
+msgstr "Пам_ер мініяцюр:"
 
 #: ../data/ui/pref.glade.h:21
-#, fuzzy
 msgid "Size of side _pane icons:"
-msgstr "Памер значкоў бакавой панэлі:"
+msgstr "Памер _значкоў бакавой панэлі:"
 
 #: ../data/ui/pref.glade.h:22
-#, fuzzy
 msgid "_Show thumbnails of files"
-msgstr "Паказваць мініяцюры"
+msgstr "Паказваць мініяцюр_ы"
 
 #: ../data/ui/pref.glade.h:23
-#, fuzzy
 msgid "_Only show thumbnails for local files"
-msgstr "Паказваць мініяцюры толькі для лакальных файлаў"
+msgstr "Паказваць мініяцюры толькі для лакальных файла_ў"
 
 #: ../data/ui/pref.glade.h:24
-#, fuzzy
 msgid "Do _not generate thumbnails for files exceeding this size:"
-msgstr "Не генераваць мініяцюры для файлаў, памер якіх большы за:"
+msgstr "Не генераваць мініяцюры для файлаў, памер якіх _большы за:"
 
 #: ../data/ui/pref.glade.h:25
 msgid "<b>User Interface</b>"
 msgstr "<b>Інтэрфейс карыстальніка</b>"
 
 #: ../data/ui/pref.glade.h:26
-#, fuzzy
 msgid "Us_e SI decimal prefixes instead of IEC binary prefixes"
-msgstr "Ужываць дзесятковыя прэфіксы СІ замест двайковых прэфіксаў IEC"
+msgstr "_Ужываць дзесятковыя прэфіксы СІ замест двайковых прэфіксаў IEC"
 
 #: ../data/ui/pref.glade.h:27
-#, fuzzy
 msgid "Treat backup files as _hidden"
-msgstr "Лічыць запасныя файлы схаванымі"
+msgstr "Лічыць запасныя файлы _схаванымі"
 
 #: ../data/ui/pref.glade.h:28
 #, fuzzy
