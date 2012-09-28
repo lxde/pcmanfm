@@ -128,7 +128,7 @@ static GtkActionEntry main_win_actions[]=
 {
     {"FileMenu", NULL, N_("_File"), NULL, NULL, NULL},
         {"New", GTK_STOCK_NEW, N_("_New Window"), "<Ctrl>N", NULL, G_CALLBACK(on_new_win)},
-        {"NewTab", "tab-new", N_("New T_ab"), "<Ctrl>T", NULL, G_CALLBACK(on_new_tab)},
+        {"NewTab", "tab-new", N_("New T_ab"), "<Ctrl>T", N_("Create new tab for this folder"), G_CALLBACK(on_new_tab)},
         {"CreateNew", GTK_STOCK_ADD, N_("C_reate New..."), "", NULL, NULL},
         {"CloseTab", GTK_STOCK_CLOSE, N_("_Close Tab"), "<Ctrl>W", NULL, G_CALLBACK(on_close_tab)},
         {"Close", GTK_STOCK_QUIT, N_("Close _Window"), "<Ctrl>Q", NULL, G_CALLBACK(on_close_win)},
@@ -162,7 +162,7 @@ static GtkActionEntry main_win_actions[]=
         {"Trash", "user-trash", N_("_Trash Can"), NULL, NULL, G_CALLBACK(on_go_trash)},
         {"Network", GTK_STOCK_NETWORK, N_("Net_work Drives"), NULL, NULL, G_CALLBACK(on_go_network)},
         {"Apps", "system-software-install", N_("_Applications"), NULL, N_("Installed Applications"), G_CALLBACK(on_go_apps)},
-        {"Go", GTK_STOCK_JUMP_TO, NULL, NULL, NULL, G_CALLBACK(on_go)},
+        {"Go", GTK_STOCK_JUMP_TO, NULL, NULL, N_("Open entered folder"), G_CALLBACK(on_go)},
     {"BookmarksMenu", NULL, N_("_Bookmarks"), NULL, NULL, NULL},
         {"AddBookmark", GTK_STOCK_ADD, N_("_Add To Bookmarks"), "<Ctrl>D", NULL, G_CALLBACK(on_add_bookmark)},
     {"ToolMenu", NULL, N_("Tool_s"), NULL, NULL, NULL},
