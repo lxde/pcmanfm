@@ -193,6 +193,27 @@ static void on_folder_view_sort_changed(FmFolderView* fv, FmMainWin* win)
     update_sort_menu(win);
 }
 
+static void on_folder_view_sel_changed(FmFolderView* fv, gint n_sel, FmMainWin* win)
+{
+    GtkAction* act;
+    gboolean has_selected = n_sel > 0;
+
+    if(fv != win->folder_view)
+        return;
+    act = gtk_ui_manager_get_action(win->ui, "/menubar/EditMenu/Cut");
+    gtk_action_set_sensitive(act, has_selected);
+    act = gtk_ui_manager_get_action(win->ui, "/menubar/EditMenu/Copy");
+    gtk_action_set_sensitive(act, has_selected);
+    act = gtk_ui_manager_get_action(win->ui, "/menubar/EditMenu/Del");
+    gtk_action_set_sensitive(act, has_selected);
+    act = gtk_ui_manager_get_action(win->ui, "/menubar/EditMenu/Rename");
+    gtk_action_set_sensitive(act, has_selected);
+    act = gtk_ui_manager_get_action(win->ui, "/menubar/EditMenu/CopyTo");
+    gtk_action_set_sensitive(act, has_selected);
+    act = gtk_ui_manager_get_action(win->ui, "/menubar/EditMenu/MoveTo");
+    gtk_action_set_sensitive(act, has_selected);
+}
+
 static gboolean on_view_key_press_event(FmFolderView* fv, GdkEventKey* evt, FmMainWin* win)
 {
     switch(evt->keyval)
@@ -865,14 +886,27 @@ static void on_go(GtkAction* act, FmMainWin* win)
     fm_main_win_chdir(win, fm_path_entry_get_path(win->location));
 }
 
+static void _update_hist_buttons(FmMainWin* win)
+{
+    GtkAction* act;
+    FmNavHistory *nh = fm_tab_page_get_history(win->current_page);
+
+    act = gtk_ui_manager_get_action(win->ui, "/menubar/GoMenu/Next");
+    gtk_action_set_sensitive(act, fm_nav_history_can_forward(nh));
+    act = gtk_ui_manager_get_action(win->ui, "/menubar/GoMenu/Prev");
+    gtk_action_set_sensitive(act, fm_nav_history_can_back(nh));
+}
+
 static void on_go_back(GtkAction* act, FmMainWin* win)
 {
     fm_tab_page_back(win->current_page);
+    _update_hist_buttons(win);
 }
 
 static void on_go_forward(GtkAction* act, FmMainWin* win)
 {
     fm_tab_page_forward(win->current_page);
+    _update_hist_buttons(win);
 }
 
 static void on_go_up(GtkAction* act, FmMainWin* win)
@@ -926,6 +960,7 @@ void fm_main_win_chdir(FmMainWin* win, FmPath* path)
     g_signal_handlers_block_by_func(win->side_pane, on_side_pane_chdir, win);
     fm_tab_page_chdir(win->current_page, path);
     g_signal_handlers_unblock_by_func(win->side_pane, on_side_pane_chdir, win);
+    _update_hist_buttons(win);
 }
 
 #if 0
@@ -1144,6 +1179,7 @@ static void on_notebook_switch_page(GtkNotebook* nb, gpointer* new_page, guint n
 {
     GtkWidget* sw_page = gtk_notebook_get_nth_page(nb, num);
     FmTabPage* page;
+    GtkAction* act;
 
     g_return_if_fail(FM_IS_TAB_PAGE(sw_page));
     page = (FmTabPage*)sw_page;
@@ -1160,6 +1196,15 @@ static void on_notebook_switch_page(GtkNotebook* nb, gpointer* new_page, guint n
     /* reactivate gestures */
     fm_folder_view_set_active(win->folder_view, TRUE);
     g_debug("reactivated gestures to page %u", num);
+    /* update Cut/Copy/Del status */
+    on_folder_view_sel_changed(win->folder_view,
+                               fm_folder_view_get_n_selected_files(win->folder_view),
+                               win);
+    _update_hist_buttons(win);
+    /* FIXME: do it in callback */
+    act = gtk_ui_manager_get_action(win->ui, "/menubar/ViewMenu/ShowHidden");
+    gtk_toggle_action_set_active(GTK_TOGGLE_ACTION(act),
+                            fm_folder_view_get_show_hidden(win->folder_view));
 
     fm_path_entry_set_path(win->location, fm_tab_page_get_cwd(page));
     gtk_window_set_title((GtkWindow*)win, fm_tab_page_get_title(page));
@@ -1186,6 +1231,11 @@ static void on_notebook_page_added(GtkNotebook* nb, GtkWidget* page, guint num, 
                      G_CALLBACK(on_tab_page_status_text), win);
     g_signal_connect(tab_page->folder_view, "sort-changed",
                      G_CALLBACK(on_folder_view_sort_changed), win);
+    g_signal_connect(tab_page->folder_view, "sel-changed",
+                     G_CALLBACK(on_folder_view_sel_changed), win);
+#if FM_CHECK_VERSION(1, 0, 2)
+    /* FIXME: connect to "filter-changed" to get ShowHidden state */
+#endif
     g_signal_connect(tab_page->folder_view, "clicked",
                      G_CALLBACK(on_folder_view_clicked), win);
     g_signal_connect(tab_page->side_pane, "mode-changed",
@@ -1224,6 +1274,10 @@ static void on_notebook_page_removed(GtkNotebook* nb, GtkWidget* page, guint num
                                              on_view_key_press_event, win);
         g_signal_handlers_disconnect_by_func(tab_page->folder_view,
                                              on_folder_view_sort_changed, win);
+        g_signal_handlers_disconnect_by_func(tab_page->folder_view,
+                                             on_folder_view_sel_changed, win);
+#if FM_CHECK_VERSION(1, 0, 2)
+#endif
         g_signal_handlers_disconnect_by_func(tab_page->folder_view,
                                              on_folder_view_clicked, win);
     }
