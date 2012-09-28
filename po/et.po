@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-09-23 15:36+0200\n"
-"PO-Revision-Date: 2012-08-26 11:57+0200\n"
+"PO-Revision-Date: 2012-09-28 22:53+0200\n"
 "Last-Translator: Anari <anari.jalakas@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: et\n"
@@ -49,91 +49,76 @@ msgid "<b>Background</b>"
 msgstr "<b>Taust</b>"
 
 #: ../data/ui/desktop-pref.glade.h:3
-#, fuzzy
 msgid "_Wallpaper:"
-msgstr "Taustapilt:"
+msgstr "_Taustapilt:"
 
 #: ../data/ui/desktop-pref.glade.h:4
 msgid "Please select an image file"
 msgstr "Vali pildifail"
 
 #: ../data/ui/desktop-pref.glade.h:5
-#, fuzzy
 msgid "_Use the same wallpaper on all desktops"
-msgstr "Sama taustapildi kasutamine kõigil töölaudadel"
+msgstr "_Kasuta sama taustapilti kõikidel monitoridel"
 
 #: ../data/ui/desktop-pref.glade.h:6
-#, fuzzy
 msgid "_Background color:"
-msgstr "Tausta värv:"
+msgstr "_Taustavärv:"
 
 #: ../data/ui/desktop-pref.glade.h:7
-#, fuzzy
 msgid "Wallpaper _mode:"
-msgstr "Taustapilt režiim:"
+msgstr "Taustapildi _režiim:"
 
 #: ../data/ui/desktop-pref.glade.h:8
 msgid "<b>Text</b>"
 msgstr "<b>Tekst</b>"
 
 #: ../data/ui/desktop-pref.glade.h:9
-#, fuzzy
 msgid "_Font of label text:"
-msgstr "Teksti font:"
+msgstr "Teksti _font:"
 
 #: ../data/ui/desktop-pref.glade.h:10
-#, fuzzy
 msgid "C_olor of label text:"
-msgstr "Pealkirja teksti värv:"
+msgstr "_Pealkirja tekstivärv:"
 
 #: ../data/ui/desktop-pref.glade.h:11
-#, fuzzy
 msgid "Color of _shadow:"
-msgstr "Varju värv:"
+msgstr "V_arju värv:"
 
 #: ../data/ui/desktop-pref.glade.h:12
-#, fuzzy
 msgid "_Appearance"
-msgstr "Välimus"
+msgstr "_Välimus"
 
 #: ../data/ui/desktop-pref.glade.h:13
 msgid "<b>Show desktop icons</b>"
 msgstr "<b>Näita töölaua ikoone</b>"
 
 #: ../data/ui/desktop-pref.glade.h:14
-#, fuzzy
 msgid "_Show \"My Documents\" icon on desktop"
-msgstr "Näita töölaual kausta \"Minu dokumendid\""
+msgstr "Näita töölaual kausta \"Minu _dokumendid\""
 
 #: ../data/ui/desktop-pref.glade.h:15
-#, fuzzy
 msgid "Show \"_My Computer\" icon on desktop"
-msgstr "Näita töölaual kausta \"Minu arvuti\""
+msgstr "Näita töölaual kausta \"Minu _arvuti\""
 
 #: ../data/ui/desktop-pref.glade.h:16
-#, fuzzy
 msgid "Show \"_Trash Bin\" icon on desktop"
-msgstr "Näita töölaual kausta \"Prügikorv\""
+msgstr "Näita töölaual kausta \"_Prügikast\""
 
 #: ../data/ui/desktop-pref.glade.h:17
-#, fuzzy
 msgid "S_how icons of volumes on desktop"
-msgstr "Näita töölaual kettaseadmete ikoone"
+msgstr "Näita töölaual kettaseadmete _ikoone"
 
 #: ../data/ui/desktop-pref.glade.h:18
-#, fuzzy
 msgid "_Desktop Icons"
-msgstr "Töölaua ikoonid"
+msgstr "_Töölaua ikoonid"
 
 #: ../data/ui/desktop-pref.glade.h:19
-#, fuzzy
 msgid "_Show menus provided by window managers when desktop is clicked"
-msgstr "Ava töölaual klõpsates aknahalduri menüü"
+msgstr "Töölaual _klõpsates avaneb aknahalduri menüü"
 
 #: ../data/ui/desktop-pref.glade.h:20
-#, fuzzy
 msgid "Ad_vanced"
-msgstr "Laiendatud"
+msgstr "_Laiendatud"
 
 #: ../data/ui/desktop-pref.glade.h:21
 msgid "Fill with background color only"
@@ -176,224 +161,186 @@ msgid "<b>Behavior</b>"
 msgstr "<b>Käitumine</b>"
 
 #: ../data/ui/pref.glade.h:6
-#, fuzzy
 msgid "_Open files with single click"
-msgstr "Failide avamine ühe klõpsuga"
+msgstr "_Failide avamine ühe klõpsuga"
 
 #: ../data/ui/pref.glade.h:7
-#, fuzzy
 msgid "Co_nfirm before deleting files"
-msgstr "Küsi enne failide kustutamist"
+msgstr "_Küsi enne failide kustutamist"
 
 #: ../data/ui/pref.glade.h:8
-#, fuzzy
 msgid "_Move deleted files to \"trash bin\" instead of erasing from disk"
-msgstr "Liiguta kustutatavad failid \"prügikorvi\" ilma neid kustutamata"
+msgstr "_Liiguta kustutatavad failid \"prügikasti\" ilma neid kustutamata"
 
 #: ../data/ui/pref.glade.h:9
-#, fuzzy
 msgid "_Erase files on removable media instead of \"trash bin\" creation"
 msgstr ""
-"Eemaldatava mäluseadme failide kustutatamine ilma \"prügikasti\" viskamata"
+"Eemaldatava _mäluseadme failide kustutatamine ilma \"prügikasti\" viskamata"
 
 #: ../data/ui/pref.glade.h:10
-#, fuzzy
 msgid "Confi_rm before moving files into \"trash bi_n\""
-msgstr "Küsi enne failide \"prügikasti\" tõstmistt"
+msgstr "_Küsi enne failide \"prügikasti\" tõstmist"
 
 #: ../data/ui/pref.glade.h:11
-#, fuzzy
 msgid "_Bookmarks:"
-msgstr "Järjehoidjad:"
+msgstr "_Järjehoidjad:"
 
 # Kus kasutatakse ja miks?
 #: ../data/ui/pref.glade.h:12
-#, fuzzy
 msgid "Defaul_t drop action:"
-msgstr "Vaikimisi tegevus lahtilaskmisel:"
+msgstr "_Vaikimisi tegevus lahtilaskmisel:"
 
 #: ../data/ui/pref.glade.h:13
-#, fuzzy
 msgid "_Unfold tab when files are dragged onto tab button"
-msgstr "Ava kaart kui faile liigutatakse kaardi nupule"
+msgstr "_Ava kaart kui faile liigutatakse kaardi nupule"
 
 #: ../data/ui/pref.glade.h:14
 msgid "<b>Default View</b>"
 msgstr "<b>Vaikimisi vaade</b>"
 
 #: ../data/ui/pref.glade.h:15
-#, fuzzy
 msgid "Vie_w Mode:"
-msgstr "Vaated:"
+msgstr "_Vaated:"
 
 #: ../data/ui/pref.glade.h:16
-#, fuzzy
 msgid "_General"
-msgstr "Üldine"
+msgstr "_Üldine"
 
 #: ../data/ui/pref.glade.h:17
 msgid "<b>Icons</b>"
 msgstr "<b>Ikoonid</b>"
 
 #: ../data/ui/pref.glade.h:18
-#, fuzzy
 msgid "Size of small _icons:"
-msgstr "Väikesed ikoonid:"
+msgstr "_Väikesed ikoonid:"
 
 #: ../data/ui/pref.glade.h:19
-#, fuzzy
 msgid "Size of _big icons:"
-msgstr "Ikoonivaate ikoonid:"
+msgstr "_Ikoonivaate ikoonid:"
 
 #: ../data/ui/pref.glade.h:20
-#, fuzzy
 msgid "Size of _thumbnails:"
-msgstr "Pisipildivaate ikoonid:"
+msgstr "_Pisipildivaate ikoonid:"
 
 #: ../data/ui/pref.glade.h:21
-#, fuzzy
 msgid "Size of side _pane icons:"
-msgstr "Külgpaneeli ikoonid:"
+msgstr "_Külgpaneeli ikoonid:"
 
 #: ../data/ui/pref.glade.h:22
-#, fuzzy
 msgid "_Show thumbnails of files"
-msgstr "Kuva failide pisipilte"
+msgstr "Kuva failide _pisipilte"
 
 #: ../data/ui/pref.glade.h:23
-#, fuzzy
 msgid "_Only show thumbnails for local files"
-msgstr "Pisipilte kuvatakse ainult kohalike failidega"
+msgstr "Pisipilte kuvatakse ainult _kohalike failidega"
 
 #: ../data/ui/pref.glade.h:24
-#, fuzzy
 msgid "Do _not generate thumbnails for files exceeding this size:"
-msgstr "Ära loo pisipilte suurematest failidest kui:"
+msgstr "Ära loo pisipilte _suurematest failidest kui:"
 
 #: ../data/ui/pref.glade.h:25
 msgid "<b>User Interface</b>"
 msgstr "<b>Kasutajaliides</b>"
 
 #: ../data/ui/pref.glade.h:26
-#, fuzzy
 msgid "Us_e SI decimal prefixes instead of IEC binary prefixes"
-msgstr "Kasuta SI-kümnendik eesliiteid IEC-binaarsete asemel"
+msgstr "Kasuta _SI-kümnendik eesliiteid IEC-binaarsete asemel"
 
 #: ../data/ui/pref.glade.h:27
-#, fuzzy
 msgid "Treat backup files as _hidden"
-msgstr "Varundamise failide käsitlemine peidetuna"
+msgstr "Varundamise faile käsitletakse _peidetuna"
 
 #: ../data/ui/pref.glade.h:28
-#, fuzzy
 msgid "_Display"
-msgstr "Kuva"
+msgstr "_Kuva"
 
 #: ../data/ui/pref.glade.h:29
-#, fuzzy
 msgid "Hide _folder content border"
-msgstr "Peida kaustavaate äärisjoon"
+msgstr "Peida _kaustavaate äärisjoon"
 
 #: ../data/ui/pref.glade.h:30
-#, fuzzy
 msgid "Hide _side pane buttons"
-msgstr "Peida külgpaneeli nupud"
+msgstr "Peida _külgpaneeli nupud"
 
 #: ../data/ui/pref.glade.h:31
-#, fuzzy
 msgid "Hid_e 'Close tab' buttons"
-msgstr "Peida 'Sulge kaart' nupp"
+msgstr "Peida 'Sulge kaart' _nupp"
 
 #: ../data/ui/pref.glade.h:32
-#, fuzzy
 msgid "Al_ways show the tab bar"
-msgstr "Kaardiriba näidatakse alati"
+msgstr "_Kaardiriba näidatakse alati"
 
 #: ../data/ui/pref.glade.h:33
 msgid "<b>Directories Tree</b>"
 msgstr "<b>Kaustapuu</b>"
 
 #: ../data/ui/pref.glade.h:34
-#, fuzzy
 msgid "Hide e_xpander on empty or locked folder"
-msgstr "Tühja ja lukus kausta puhul laiendajat ei näidata"
+msgstr "Tühja ja lukus kausta puhul laiendajat ei _näidata"
 
 #: ../data/ui/pref.glade.h:35
 msgid "<b>Show in Places:</b>"
 msgstr "<b>Näita asukohtades:</b>"
 
 #: ../data/ui/pref.glade.h:36
-#, fuzzy
 msgid "_Home Directory"
-msgstr "Kodukaust"
+msgstr "_Kodukaust"
 
 #: ../data/ui/pref.glade.h:37
-#, fuzzy
 msgid "Des_ktop Folder"
-msgstr "Töölaua kaust"
+msgstr "_Töölaua kaust"
 
 #: ../data/ui/pref.glade.h:38
-#, fuzzy
 msgid "App_lications"
-msgstr "Rakendused"
+msgstr "_Rakendused"
 
 #: ../data/ui/pref.glade.h:39
-#, fuzzy
 msgid "_Trash bin"
-msgstr "Prügikorv"
+msgstr "_Prügikast"
 
 #: ../data/ui/pref.glade.h:40
-#, fuzzy
 msgid "_Layout"
-msgstr "Asetus"
+msgstr "_Asetus"
 
 #: ../data/ui/pref.glade.h:41
 msgid "<b>Auto-mount</b>"
 msgstr "<b>Ühenda automaatselt</b>"
 
 #: ../data/ui/pref.glade.h:42
-#, fuzzy
 msgid "_Mount mountable volumes automatically on program startup"
-msgstr "Ühenda kettaseadmed rakenduse käivitumisel automaatselt"
+msgstr "Ü_henda kettaseadmed rakenduse käivitumisel automaatselt"
 
 #: ../data/ui/pref.glade.h:43
-#, fuzzy
 msgid "Mo_unt removable media automatically when they are inserted"
-msgstr "Haagi eemaldatavad andmekandjad nende ühendamisel automaatselt"
+msgstr "_Haagi eemaldatavad andmekandjad nende ühendamisel automaatselt"
 
 #: ../data/ui/pref.glade.h:44
-#, fuzzy
 msgid "_Show available options for removable media when they are inserted"
-msgstr "Näita eemaldatava andmekandja sisestamisel kasutatavaid võimalusi"
+msgstr "_Näita eemaldatava andmekandja sisestamisel kasutatavaid võimalusi"
 
 #: ../data/ui/pref.glade.h:45
-#, fuzzy
 msgid "_Open mounted removable media in new tab instead of new window"
-msgstr "Eemaldatava andmekandja sisu avamine uue akna asemel uuel kaardil"
+msgstr "_Eemaldatava andmekandja sisu avamine uue akna asemel uuel kaardil"
 
 #: ../data/ui/pref.glade.h:46
-#, fuzzy
 msgid "Clos_e tab containing removable medium when it is unmounted"
-msgstr "Sulge eemaldatava andmekandja kaart selle eemaldamisel"
+msgstr "_Sulge eemaldatava andmekandja kaart selle eemaldamisel"
 
 #: ../data/ui/pref.glade.h:47
-#, fuzzy
 msgid "_Volume Management"
-msgstr "Andmekandjate haldamine"
+msgstr "_Andmekandjate haldamine"
 
 #: ../data/ui/pref.glade.h:48
 msgid "<b>Programs</b>"
 msgstr "<b>Programmid</b>"
 
 #: ../data/ui/pref.glade.h:49
-#, fuzzy
 msgid "_Terminal emulator:"
-msgstr "Terminaliemulaator:"
+msgstr "_Terminaliemulaator:"
 
 #: ../data/ui/pref.glade.h:50
-#, fuzzy
 msgid "_Switch user command:"
-msgstr "Käsklus kasutaja vahetamiseks:"
+msgstr "Kasutaja _vahetamise käsklus:"
 
 #: ../data/ui/pref.glade.h:52
 #, no-c-format
@@ -401,19 +348,16 @@ msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
 "%s = the command line you want to execute with terminal or su."
 msgstr ""
-"Näiteks: \"xterm -e %s\" terminali jaoks või \"gksu %s\" kasutaja "
-"vahetamiseks.\n"
+"Näiteks: \"xterm -e %s\" terminali jaoks või \"gksu %s\" kasutaja vahetamiseks.\n"
 "%s = käsklus mida soovid terminalis või \"su\" abil käivitada."
 
 #: ../data/ui/pref.glade.h:54
-#, fuzzy
 msgid "A_rchiver integration:"
-msgstr "Arhiveerija kaasamine:"
+msgstr "_Arhiveerija kaasamine:"
 
 #: ../data/ui/pref.glade.h:55
-#, fuzzy
 msgid "_Use Application Startup Notify by default"
-msgstr "Programmi valiku küsimine faili avamiseks"
+msgstr "_Programmi valiku küsimine faili avamiseks"
 
 #: ../data/ui/pref.glade.h:56
 msgid ""
@@ -492,29 +436,24 @@ msgid "Open in File Manager"
 msgstr "Ava failihalduris"
 
 #: ../src/desktop-ui.c:51
-#, fuzzy
 msgid "Open in New Ta_b"
-msgstr "Ava uuel kaardil"
+msgstr "Ava uuel _kaardil"
 
 #: ../src/desktop-ui.c:52 ../src/tab-page.c:51
-#, fuzzy
 msgid "Open in New Win_dow"
-msgstr "Ava uues aknas"
+msgstr "Ava uues _aknas"
 
 #: ../src/desktop-ui.c:54 ../src/tab-page.c:53
-#, fuzzy
 msgid "Open in Termina_l"
 msgstr "Ava _terminalis"
 
 #: ../src/desktop-ui.c:70
-#, fuzzy
 msgid "Stic_k to Current Position"
-msgstr "Lukusta praegusele asukohale"
+msgstr "_Lukusta praegusele asukohale"
 
 #: ../src/desktop-ui.c:75
-#, fuzzy
 msgid "Snap to _Grid"
-msgstr "Tõmme alusvõrgule"
+msgstr "Tõmme _alusvõrgule"
 
 #: ../src/main-win-ui.c:129
 msgid "_File"
@@ -525,78 +464,67 @@ msgid "_New Window"
 msgstr "_Uus aken"
 
 #: ../src/main-win-ui.c:131
-#, fuzzy
 msgid "New T_ab"
-msgstr "Uus kaar_t"
+msgstr "Uus _kaart"
 
 #: ../src/main-win-ui.c:132
-#, fuzzy
 msgid "C_reate New..."
-msgstr "Loo uus..."
+msgstr "Loo _uus..."
 
 #: ../src/main-win-ui.c:133
 msgid "_Close Tab"
 msgstr "_Sulge kaart"
 
 #: ../src/main-win-ui.c:134
-#, fuzzy
 msgid "Close _Window"
-msgstr "Sulge aken"
+msgstr "Sulge _aken"
 
 #: ../src/main-win-ui.c:135
 msgid "_Edit"
 msgstr "_Redigeerimine"
 
 #: ../src/main-win-ui.c:140
-#, fuzzy
 msgid "_Rename"
-msgstr "Nimeta ümber"
+msgstr "_Nimeta ümber"
 
 #: ../src/main-win-ui.c:141
-#, fuzzy
 msgid "Create Symlin_k"
-msgstr "Loo nimeviit"
+msgstr "Loo _nimeviit"
 
 #: ../src/main-win-ui.c:142
-#, fuzzy
 msgid "_Move To..."
-msgstr "Liiguta..."
+msgstr "_Liiguta..."
 
 #: ../src/main-win-ui.c:143
-#, fuzzy
 msgid "C_opy To..."
-msgstr "Kopeeri..."
+msgstr "_Kopeeri..."
 
 #: ../src/main-win-ui.c:145
 msgid "_Invert Selection"
 msgstr "_Pööra valik"
 
 #: ../src/main-win-ui.c:146
-#, fuzzy
 msgid "Prefere_nces"
-msgstr "Eelistused"
+msgstr "_Eelistused"
 
 #: ../src/main-win-ui.c:147
 msgid "_View"
 msgstr "_Vaade"
 
 #: ../src/main-win-ui.c:148
-#, fuzzy
 msgid "_Reload Folder"
-msgstr "Uuestilae kaust"
+msgstr "_Uuestilae kaust"
 
 #: ../src/main-win-ui.c:148
 msgid "Reload current folder"
 msgstr "Uuestilae praegune kaust"
 
 #: ../src/main-win-ui.c:149
-#, fuzzy
 msgid "Side _Pane"
-msgstr "Külgpaneel"
+msgstr "Külg_paneel"
 
 #. other see below: 'ShowHidden' 'ShowStatus' 'Fullscreen' 'IconView'...
 #: ../src/main-win-ui.c:151
-#, fuzzy
 msgid "S_ort Files"
 msgstr "_Järjesta"
 
@@ -606,76 +534,67 @@ msgstr "_Abi"
 
 #: ../src/main-win-ui.c:154
 msgid "_Keyboard navigation"
-msgstr ""
+msgstr "Klaviatuuri _navigatsioon"
 
 #: ../src/main-win-ui.c:155
 msgid "_Go"
 msgstr "_Liikumine"
 
 #: ../src/main-win-ui.c:156
-#, fuzzy
 msgid "_Previous Folder"
-msgstr "Eelmine kaust"
+msgstr "_Eelmine kaust"
 
 #: ../src/main-win-ui.c:156
 msgid "Previous Folder"
 msgstr "Eelmine kaust"
 
 #: ../src/main-win-ui.c:157
-#, fuzzy
 msgid "_Next Folder"
-msgstr "Järgmine kaust"
+msgstr "_Järgmine kaust"
 
 #: ../src/main-win-ui.c:157
 msgid "Next Folder"
 msgstr "Järgmine kaust"
 
 #: ../src/main-win-ui.c:158
-#, fuzzy
 msgid "Pa_rent Folder"
-msgstr "Ülemkaust"
+msgstr "Ü_lemkaust"
 
 #: ../src/main-win-ui.c:158
 msgid "Go to parent Folder"
 msgstr "Mine ülemkausta"
 
 #: ../src/main-win-ui.c:159
-#, fuzzy
 msgid "H_ome Folder"
-msgstr "Kodukaust"
+msgstr "_Kodukaust"
 
 #: ../src/main-win-ui.c:159
 msgid "Home Folder"
 msgstr "Kodukaust"
 
 #: ../src/main-win-ui.c:160
-#, fuzzy
 msgid "_Desktop"
-msgstr "Töölaud"
+msgstr "_Töölaud"
 
 #: ../src/main-win-ui.c:160
 msgid "Desktop Folder"
 msgstr "Töölaua kaust"
 
 #: ../src/main-win-ui.c:161
-#, fuzzy
 msgid "_My Computer"
-msgstr "Minu arvuti"
+msgstr "_Minu arvuti"
 
 #: ../src/main-win-ui.c:162
-#, fuzzy
 msgid "_Trash Can"
-msgstr "Prügikorv"
+msgstr "_Prügikast"
 
 #: ../src/main-win-ui.c:163
-#, fuzzy
 msgid "Net_work Drives"
-msgstr "Võrgukettad"
+msgstr "_Võrgukettad"
 
 #: ../src/main-win-ui.c:164
-#, fuzzy
 msgid "_Applications"
-msgstr "Rakendused"
+msgstr "_Rakendused"
 
 #: ../src/main-win-ui.c:164
 msgid "Installed Applications"
@@ -686,12 +605,10 @@ msgid "_Bookmarks"
 msgstr "_Järjehoidjad"
 
 #: ../src/main-win-ui.c:167
-#, fuzzy
 msgid "_Add To Bookmarks"
-msgstr "Lisa järjehoidjatesse"
+msgstr "Lisa _järjehoidjatesse"
 
 #: ../src/main-win-ui.c:168
-#, fuzzy
 msgid "Tool_s"
 msgstr "_Tööriistad"
 
@@ -704,9 +621,8 @@ msgid "Open Current Folder as _Root"
 msgstr "Avatud praegune kaust _Juurkasutajana"
 
 #: ../src/main-win-ui.c:172
-#, fuzzy
 msgid "Fin_d Files"
-msgstr "_Järjesta"
+msgstr "_Otsi faile"
 
 #. for popup menu - these entries exist in FmFolderView popup still
 #: ../src/main-win-ui.c:181
@@ -718,14 +634,12 @@ msgid "Blank File"
 msgstr "Tühi fail"
 
 #: ../src/main-win-ui.c:188
-#, fuzzy
 msgid "Show Hidde_n"
 msgstr "Näita _peidetud faile"
 
 #: ../src/main-win-ui.c:189
-#, fuzzy
 msgid "Sho_w Side Pane"
-msgstr "Näita külgpaneeli"
+msgstr "Näita _külgpaneeli"
 
 #: ../src/main-win-ui.c:190
 msgid "Show Status B_ar"
@@ -733,12 +647,11 @@ msgstr "Näita _olekuriba"
 
 #: ../src/main-win-ui.c:191
 msgid "T_win Pane Mode"
-msgstr ""
+msgstr "_Topelpaneelivaade"
 
 #: ../src/main-win-ui.c:192
-#, fuzzy
 msgid "Fullscreen _Mode"
-msgstr "Täisekraan vaade"
+msgstr "Täis_ekraanvaade"
 
 #: ../src/main-win-ui.c:197
 msgid "_Icon View"
@@ -790,7 +703,7 @@ msgstr "Oled administraatori õigustes"
 
 #: ../src/main-win.c:667 ../src/main-win.c:675
 msgid "Keyboard navigation"
-msgstr ""
+msgstr "Klaviatuuri navigatsioon"
 
 #: ../src/main-win.c:669
 msgid ""
@@ -801,6 +714,12 @@ msgid ""
 "F10: activate main menu\n"
 "Ctrl+L or Alt+D: jump focus to Path Bar"
 msgstr ""
+"Tab: fookuse liigutamine: Kaustavaade -> Külgpaneel -> Tööriistariba\n"
+"Shift+Tab: fookuse liigutamine:  Tööriistariba -> Külgpaneel -> Kaustavaade\n"
+"F6: fookuse vahetamine: Külgpaneel <-> Kaustavaade\n"
+"F8: fookus Külgpaneeli ja Kaustavaate vahel\n"
+"F10: põhimenüü aktiveerimine\n"
+"Ctrl+L või Alt+D: fookus asukoha ribale"
 
 #: ../src/main-win.c:705
 msgid "Switch user command is not set."
@@ -828,7 +747,7 @@ msgstr "Seadistusprofiili nimi"
 
 #: ../src/pcmanfm.c:74
 msgid "PROFILE"
-msgstr ""
+msgstr "PROFILE"
 
 #: ../src/pcmanfm.c:75
 msgid "Run PCManFM as a daemon"
@@ -852,48 +771,43 @@ msgid "Open desktop preference dialog"
 msgstr "Ava töölaua eelistuste valikud"
 
 #: ../src/pcmanfm.c:82
-#, fuzzy
 msgid "Set desktop wallpaper from image FILE"
-msgstr "Taustapildi määramine"
+msgstr "Taustapildi määramine pildifailist FILE"
 
 #: ../src/pcmanfm.c:82
 msgid "FILE"
-msgstr ""
+msgstr "FILE"
 
 #. don't translate list of modes in description, please
 #: ../src/pcmanfm.c:84
-#, fuzzy
 msgid "Set mode of desktop wallpaper. MODE=(color|stretch|fit|center|tile)"
 msgstr ""
-"Määra töölaua taustapildi režiim. <laad>=(värviline|venitatud|sobitatud|"
-"keskel|plaaditud)"
+"Töölaua taustapildi režiimi määramine. MODE=(color|stretch|fit|center|tile)"
 
 #: ../src/pcmanfm.c:84
 msgid "MODE"
-msgstr ""
+msgstr "MODE"
 
 #: ../src/pcmanfm.c:85
-#, fuzzy
 msgid "Open Preferences dialog on the page N"
-msgstr "Ava töölaua eelistuste valikud"
+msgstr "Ava töölaua eelistuste valikud lehel N"
 
 #: ../src/pcmanfm.c:85
 msgid "N"
-msgstr ""
+msgstr "N"
 
 #: ../src/pcmanfm.c:86
-#, fuzzy
 msgid "Open new window"
-msgstr "Ava uues aknas"
+msgstr "Ava uus aken"
 
 #. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
 #: ../src/pcmanfm.c:88
 msgid "Window role for usage by window manager"
-msgstr ""
+msgstr "Akna roll aknahalduri kasutuse jaoks"
 
 #: ../src/pcmanfm.c:88
 msgid "ROLE"
-msgstr ""
+msgstr "ROLE"
 
 #: ../src/pcmanfm.c:89
 msgid "[FILE1, FILE2,...]"
@@ -904,9 +818,8 @@ msgid "Terminal emulator is not set."
 msgstr "Terminaliemulaator on määramata."
 
 #: ../src/tab-page.c:50
-#, fuzzy
 msgid "Open in New T_ab"
-msgstr "Ava uuel kaardil"
+msgstr "Ava uuel _kaardil"
 
 #: ../src/tab-page.c:236
 #, c-format
