@@ -483,7 +483,11 @@ static void fm_main_win_init(FmMainWin *win)
     gtk_ui_manager_insert_action_group(ui, act_grp, 0);
     gtk_ui_manager_add_ui_from_string(ui, main_menu_xml, -1, NULL);
     act = gtk_ui_manager_get_action(ui, "/menubar/ViewMenu/ShowHidden");
-    gtk_toggle_action_set_active(GTK_TOGGLE_ACTION(act), app_config->show_hidden);
+#if !FM_CHECK_VERSION(1, 0, 2)
+    /* we cannot keep it in sync without callback from folder view which
+       is available only in 1.0.2 so just hide it */
+    gtk_action_set_visible(act, FALSE);
+#endif
 
     menubar = gtk_ui_manager_get_widget(ui, "/menubar");
     win->toolbar = GTK_TOOLBAR(gtk_ui_manager_get_widget(ui, "/toolbar"));
@@ -778,12 +782,6 @@ static void on_show_hidden(GtkToggleAction* act, FmMainWin* win)
 
     active = gtk_toggle_action_get_active(act);
     fm_tab_page_set_show_hidden(page, active);
-
-    if(active != app_config->show_hidden)
-    {
-        app_config->show_hidden = active;
-        pcmanfm_save_config(FALSE);
-    }
 }
 
 static void on_fullscreen(GtkToggleAction* act, FmMainWin* win)
@@ -1175,11 +1173,28 @@ static void on_tab_page_chdir(FmTabPage* page, FmPath* path, FmMainWin* win)
     gtk_window_set_title(GTK_WINDOW(win), fm_tab_page_get_title(page));
 }
 
+#if FM_CHECK_VERSION(1, 0, 2)
+static void on_folder_view_filter_changed(FmFolderView* fv, FmMainWin* win)
+{
+    GtkAction* act;
+    gboolean active;
+
+    active = fm_folder_view_get_show_hidden(fv);
+
+    act = gtk_ui_manager_get_action(win->ui, "/menubar/ViewMenu/ShowHidden");
+    gtk_toggle_action_set_active(GTK_TOGGLE_ACTION(act), active);
+    if(active != app_config->show_hidden)
+    {
+        app_config->show_hidden = active;
+        pcmanfm_save_config(FALSE);
+    }
+}
+#endif
+
 static void on_notebook_switch_page(GtkNotebook* nb, gpointer* new_page, guint num, FmMainWin* win)
 {
     GtkWidget* sw_page = gtk_notebook_get_nth_page(nb, num);
     FmTabPage* page;
-    GtkAction* act;
 
     g_return_if_fail(FM_IS_TAB_PAGE(sw_page));
     page = (FmTabPage*)sw_page;
@@ -1201,10 +1216,9 @@ static void on_notebook_switch_page(GtkNotebook* nb, gpointer* new_page, guint n
                                fm_folder_view_get_n_selected_files(win->folder_view),
                                win);
     _update_hist_buttons(win);
-    /* FIXME: do it in callback */
-    act = gtk_ui_manager_get_action(win->ui, "/menubar/ViewMenu/ShowHidden");
-    gtk_toggle_action_set_active(GTK_TOGGLE_ACTION(act),
-                            fm_folder_view_get_show_hidden(win->folder_view));
+#if FM_CHECK_VERSION(1, 0, 2)
+    on_folder_view_filter_changed(win->folder_view, win);
+#endif
 
     fm_path_entry_set_path(win->location, fm_tab_page_get_cwd(page));
     gtk_window_set_title((GtkWindow*)win, fm_tab_page_get_title(page));
@@ -1234,7 +1248,9 @@ static void on_notebook_page_added(GtkNotebook* nb, GtkWidget* page, guint num, 
     g_signal_connect(tab_page->folder_view, "sel-changed",
                      G_CALLBACK(on_folder_view_sel_changed), win);
 #if FM_CHECK_VERSION(1, 0, 2)
-    /* FIXME: connect to "filter-changed" to get ShowHidden state */
+    /* connect to "filter-changed" to get ShowHidden state */
+    g_signal_connect(tab_page->folder_view, "filter-changed",
+                     G_CALLBACK(on_folder_view_filter_changed), win);
 #endif
     g_signal_connect(tab_page->folder_view, "clicked",
                      G_CALLBACK(on_folder_view_clicked), win);
@@ -1277,6 +1293,8 @@ static void on_notebook_page_removed(GtkNotebook* nb, GtkWidget* page, guint num
         g_signal_handlers_disconnect_by_func(tab_page->folder_view,
                                              on_folder_view_sel_changed, win);
 #if FM_CHECK_VERSION(1, 0, 2)
+        g_signal_handlers_disconnect_by_func(tab_page->folder_view,
+                                             on_folder_view_filter_changed, win);
 #endif
         g_signal_handlers_disconnect_by_func(tab_page->folder_view,
                                              on_folder_view_clicked, win);
