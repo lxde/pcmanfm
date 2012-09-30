@@ -396,16 +396,20 @@ static void on_side_pane_chdir(FmSidePane* sp, guint button, FmPath* path, FmMai
 /* This callback is only connected to side pane of current active tab page. */
 static void on_side_pane_mode_changed(FmSidePane* sp, FmMainWin* win)
 {
-
+#if 0
     GList* children;
     GList* child;
+#endif
     FmSidePaneMode mode;
 
     if(sp != win->side_pane)
         return;
 
+#if 0
     children = gtk_container_get_children(GTK_CONTAINER(win->notebook));
+#endif
     mode = fm_side_pane_get_mode(sp);
+#if 0
     /* set the side pane mode to all other tab pages */
     for(child = children; child; child = child->next)
     {
@@ -414,15 +418,16 @@ static void on_side_pane_mode_changed(FmSidePane* sp, FmMainWin* win)
             fm_side_pane_set_mode(fm_tab_page_get_side_pane(page), mode);
     }
     g_list_free(children);
+#endif
 
     /* update menu */
     gtk_radio_action_set_current_value(GTK_RADIO_ACTION(gtk_ui_manager_get_action(win->ui,
                                            "/menubar/ViewMenu/SidePane/Places")),
-                                       sp->mode);
+                                       mode);
 
-    if(mode != app_config->side_pane_mode)
+    if(mode != (app_config->side_pane_mode & FM_SP_MODE_MASK))
     {
-        app_config->side_pane_mode = mode;
+        app_config->side_pane_mode = mode | (app_config->side_pane_mode & ~FM_SP_MODE_MASK);
         fm_config_emit_changed(FM_CONFIG(app_config), "side_pane_mode");
         pcmanfm_save_config(FALSE);
     }
@@ -474,7 +479,7 @@ static void fm_main_win_init(FmMainWin *win)
                                        G_CALLBACK(on_sort_by), win);
     gtk_action_group_add_radio_actions(act_grp, main_win_side_bar_mode_actions,
                                        G_N_ELEMENTS(main_win_side_bar_mode_actions),
-                                       app_config->side_pane_mode,
+                                       (app_config->side_pane_mode & FM_SP_MODE_MASK),
                                        G_CALLBACK(on_side_pane_mode), win);
 
     accel_grp = gtk_ui_manager_get_accel_group(ui);
@@ -488,6 +493,9 @@ static void fm_main_win_init(FmMainWin *win)
        is available only in 1.0.2 so just hide it */
     gtk_action_set_visible(act, FALSE);
 #endif
+    act = gtk_ui_manager_get_action(ui, "/menubar/ViewMenu/SidePane/ShowSidePane");
+    gtk_toggle_action_set_active(GTK_TOGGLE_ACTION(act),
+                                 (app_config->side_pane_mode & FM_SP_HIDE) == 0);
 
     menubar = gtk_ui_manager_get_widget(ui, "/menubar");
     win->toolbar = GTK_TOOLBAR(gtk_ui_manager_get_widget(ui, "/toolbar"));
@@ -1220,6 +1228,18 @@ static void on_notebook_switch_page(GtkNotebook* nb, gpointer* new_page, guint n
     on_folder_view_filter_changed(win->folder_view, win);
 #endif
 
+    /* update side pane state */
+    if(app_config->side_pane_mode & FM_SP_HIDE) /* hidden */
+    {
+        gtk_widget_hide(GTK_WIDGET(win->side_pane));
+    }
+    else
+    {
+        fm_side_pane_set_mode(win->side_pane,
+                              (app_config->side_pane_mode & FM_SP_MODE_MASK));
+        gtk_widget_show_all(GTK_WIDGET(win->side_pane));
+    }
+
     fm_path_entry_set_path(win->location, fm_tab_page_get_cwd(page));
     gtk_window_set_title((GtkWindow*)win, fm_tab_page_get_title(page));
 
@@ -1451,5 +1471,17 @@ static void on_reload(GtkAction* act, FmMainWin* win)
 
 static void on_show_side_pane(GtkToggleAction* act, FmMainWin* win)
 {
-    /* TODO: hide the side pane if the user wants to. */
+    gboolean active;
+
+    active = gtk_toggle_action_get_active(act);
+    if(active)
+    {
+        app_config->side_pane_mode &= ~FM_SP_HIDE;
+        gtk_widget_show_all(GTK_WIDGET(win->side_pane));
+    }
+    else
+    {
+        app_config->side_pane_mode |= FM_SP_HIDE;
+        gtk_widget_hide(GTK_WIDGET(win->side_pane));
+    }
 }
