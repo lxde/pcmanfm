@@ -450,9 +450,10 @@ static void fm_tab_page_init(FmTabPage *page)
     FmTabLabel* tab_label;
     FmFolderView* folder_view;
     GList* focus_chain = NULL;
+    FmSidePaneMode mode = app_config->side_pane_mode;
 
     page->side_pane = fm_side_pane_new();
-    fm_side_pane_set_mode(page->side_pane, app_config->side_pane_mode);
+    fm_side_pane_set_mode(page->side_pane, (mode & FM_SP_MODE_MASK));
     /* TODO: add a close button to side pane */
     gtk_paned_add1(paned, GTK_WIDGET(page->side_pane));
     focus_chain = g_list_prepend(focus_chain, page->side_pane);
@@ -473,6 +474,8 @@ static void fm_tab_page_init(FmTabPage *page)
     g_list_free(focus_chain);
 
     gtk_widget_show_all(GTK_WIDGET(page));
+    if(mode & FM_SP_HIDE)
+        gtk_widget_hide(GTK_WIDGET(page->side_pane));
 
     /* create tab label */
     tab_label = (FmTabLabel*)fm_tab_label_new("");

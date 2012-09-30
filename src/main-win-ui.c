@@ -72,10 +72,8 @@ static const char main_menu_xml[] =
     "<menuitem action='Reload'/>"
     "<menuitem action='ShowHidden'/>"
     "<menu action='SidePane'>"
-/*
       "<menuitem action='ShowSidePane' />"
       "<separator/>"
-*/
       "<menuitem action='Places' />"
       "<menuitem action='DirTree' />"
     "</menu>"
