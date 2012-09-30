@@ -56,11 +56,14 @@ turn off desktop manager if it's running
 .B \-\^\-desktop-pref
 open desktop preference dialog
 .TP
+.B \-\^\-one-screen
+manage desktop only on current X screen (only if \fB--desktop\fP is used)
+.TP
 .B \-n\fR,\fP \-\^\-new-win
 open \fIdirectories\fP in new window
 .TP
 .B \-\^\-role
-sets X-role for window (only if \fB-n\fP is used)
+set X-role for window (only if \fB-n\fP is used)
 .TP
 .BI \-w " file" "\fR,\fP \-\^\-set-wallpaper=" file
 set desktop wallpaper from image \fIfile\fP

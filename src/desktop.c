@@ -1004,6 +1004,8 @@ static void on_folder_finish_loading(FmFolder* folder, gpointer user_data)
     for(i = 0; i < n_screens; i++)
     {
         FmDesktop* desktop = desktops[i];
+        if(desktop->monitor < 0)
+            continue;
         unload_items(desktop);
         load_items(desktop);
     }
@@ -1203,7 +1205,8 @@ static void on_wallpaper_changed(FmConfig* cfg, gpointer user_data)
 {
     guint i;
     for(i=0; i < n_screens; ++i)
-        update_background(desktops[i], i);
+        if(desktops[i]->monitor >= 0)
+            update_background(desktops[i], i);
 }
 
 static void on_desktop_text_changed(FmConfig* cfg, gpointer user_data)
@@ -1211,7 +1214,8 @@ static void on_desktop_text_changed(FmConfig* cfg, gpointer user_data)
     guint i;
     /* FIXME: we only need to redraw text lables */
     for(i=0; i < n_screens; ++i)
-        gtk_widget_queue_draw(GTK_WIDGET(desktops[i]));
+        if(desktops[i]->monitor >= 0)
+            gtk_widget_queue_draw(GTK_WIDGET(desktops[i]));
 }
 
 static void on_desktop_font_changed(FmConfig* cfg, gpointer user_data)
@@ -1229,7 +1233,10 @@ static void on_desktop_font_changed(FmConfig* cfg, gpointer user_data)
             for(i=0; i < n_screens; ++i)
             {
                 FmDesktop* desktop = desktops[i];
-                PangoContext* pc = gtk_widget_get_pango_context((GtkWidget*)desktop);
+                PangoContext* pc;
+                if(desktop->monitor < 0)
+                    continue;
+                pc = gtk_widget_get_pango_context((GtkWidget*)desktop);
                 pango_context_set_font_description(pc, font_desc);
                 pango_layout_context_changed(desktop->pl);
                 gtk_widget_queue_resize(GTK_WIDGET(desktop));
@@ -1246,7 +1253,8 @@ static void reload_icons()
 {
     guint i;
     for(i=0; i < n_screens; ++i)
-        gtk_widget_queue_resize(GTK_WIDGET(desktops[i]));
+        if(desktops[i]->monitor >= 0)
+            gtk_widget_queue_resize(GTK_WIDGET(desktops[i]));
 }
 
 static void on_big_icon_size_changed(FmConfig* cfg, FmFolderModel* model)
@@ -2444,6 +2452,8 @@ static GObject* fm_desktop_constructor(GType type, guint n_construct_properties,
         if(!strcmp(construct_properties[i].pspec->name, "monitor")
            && G_VALUE_HOLDS_INT(construct_properties[i].value))
             self->monitor = g_value_get_int(construct_properties[i].value);
+    if(self->monitor < 0)
+        return object; /* this monitor is disabled */
     g_debug("fm_desktop_constructor for monitor %d", self->monitor);
     gdk_screen_get_monitor_geometry(screen, self->monitor, &geom);
     gtk_window_set_default_size((GtkWindow*)self, geom.width, geom.height);
@@ -2502,7 +2512,7 @@ static GObject* fm_desktop_constructor(GType type, guint n_construct_properties,
     return object;
 }
 
-FmDesktop *fm_desktop_new(GdkScreen* screen, guint monitor)
+FmDesktop *fm_desktop_new(GdkScreen* screen, gint monitor)
 {
     return g_object_new(FM_TYPE_DESKTOP, "screen", screen, "monitor", monitor, NULL);
 }
@@ -2808,7 +2818,7 @@ static void fm_desktop_view_init(FmFolderViewInterface* iface)
 /* ---------------------------------------------------------------------
     Interface functions */
 
-void fm_desktop_manager_init()
+void fm_desktop_manager_init(gint on_screen)
 {
     GdkDisplay * gdpy;
     guint i, n_scr, n_mon, scr, mon;
@@ -2847,8 +2857,11 @@ void fm_desktop_manager_init()
         n_mon = gdk_screen_get_n_monitors(screen);
         for(mon = 0; mon < n_mon; mon++)
         {
-            GtkWidget* desktop = (GtkWidget*)fm_desktop_new(screen, mon);
+            gint mon_init = (on_screen < 0 || on_screen == (int)scr) ? (int)mon : (mon ? -2 : -1);
+            GtkWidget* desktop = (GtkWidget*)fm_desktop_new(screen, mon_init);
             desktops[i++] = (FmDesktop*)desktop;
+            if(mon_init < 0)
+                continue;
             gtk_widget_realize(desktop);  /* without this, setting wallpaper won't work */
             gtk_widget_show_all(desktop);
             gdk_window_lower(gtk_widget_get_window(desktop));
@@ -2869,7 +2882,8 @@ void fm_desktop_manager_finalize()
     guint i;
     for(i = 0; i < n_screens; i++)
     {
-        save_item_pos(desktops[i]);
+        if(desktops[i]->monitor >= 0)
+            save_item_pos(desktops[i]);
         gtk_widget_destroy(GTK_WIDGET(desktops[i]));
     }
     g_free(desktops);
@@ -2932,7 +2946,8 @@ FmDesktop* fm_desktop_get(guint screen, guint monitor)
         if(n == screen && desktops[i]->monitor == (gint)monitor)
             return desktops[i];
         i++;
-        if(i < n_screens && desktops[i]->monitor == 0)
+        if(i < n_screens &&
+           (desktops[i]->monitor == 0 || desktops[i]->monitor == -1))
             n++;
     }
     return NULL;

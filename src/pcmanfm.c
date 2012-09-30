@@ -56,6 +56,7 @@ static gboolean no_desktop = FALSE;
 static gboolean show_desktop = FALSE;
 static gboolean desktop_off = FALSE;
 static gboolean desktop_running = FALSE;
+static gboolean one_screen = FALSE;
 /* static gboolean new_tab = FALSE; */
 static gint show_pref = -1;
 static gboolean desktop_pref = FALSE;
@@ -79,6 +80,7 @@ static GOptionEntry opt_entries[] =
     { "desktop", '\0', 0, G_OPTION_ARG_NONE, &show_desktop, N_("Launch desktop manager"), NULL },
     { "desktop-off", '\0', 0, G_OPTION_ARG_NONE, &desktop_off, N_("Turn off desktop manager if it's running"), NULL },
     { "desktop-pref", '\0', 0, G_OPTION_ARG_NONE, &desktop_pref, N_("Open desktop preference dialog"), NULL },
+    { "one-screen", '\0', 0, G_OPTION_ARG_NONE, &one_screen, N_("Use --desktop option only for one screen"), NULL },
     { "set-wallpaper", 'w', 0, G_OPTION_ARG_FILENAME, &set_wallpaper, N_("Set desktop wallpaper from image FILE"), N_("FILE") },
                     /* don't translate list of modes in description, please */
     { "wallpaper-mode", '\0', 0, G_OPTION_ARG_STRING, &wallpaper_mode, N_("Set mode of desktop wallpaper. MODE=(color|stretch|fit|center|tile)"), N_("MODE") },
@@ -92,7 +94,7 @@ static GOptionEntry opt_entries[] =
 
 static const char* valid_wallpaper_modes[] = {"color", "stretch", "fit", "center", "tile"};
 
-static gboolean pcmanfm_run();
+static gboolean pcmanfm_run(gint screen_num);
 
 /* it's not safe to call gtk+ functions in unix signal handler
  * since the process is interrupted here and the state of gtk+ is unpredictable. */
@@ -164,7 +166,7 @@ static void single_inst_cb(const char* cwd, int screen_num)
             }
         }
     }
-    pcmanfm_run();
+    pcmanfm_run(screen_num);
     window_role = NULL; /* reset it for clients callbacks */
 }
 
@@ -225,7 +227,7 @@ int main(int argc, char** argv)
 
     fm_gtk_init(config);
     /* the main part */
-    if(pcmanfm_run())
+    if(pcmanfm_run(gdk_screen_get_number(gdk_screen_get_default())))
     {
         window_role = NULL; /* reset it for clients callbacks */
         fm_volume_manager_init();
@@ -250,7 +252,7 @@ int main(int argc, char** argv)
     return 0;
 }
 
-gboolean pcmanfm_run()
+gboolean pcmanfm_run(gint screen_num)
 {
     FmMainWin *win;
     gboolean ret = TRUE;
@@ -262,8 +264,9 @@ gboolean pcmanfm_run()
         {
             if(!desktop_running)
             {
-                fm_desktop_manager_init();
+                fm_desktop_manager_init(one_screen ? screen_num : -1);
                 desktop_running = TRUE;
+                one_screen = FALSE;
             }
             show_desktop = FALSE;
             return TRUE;

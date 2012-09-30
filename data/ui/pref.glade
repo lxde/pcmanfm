@@ -168,6 +168,47 @@
                                   </packing>
                                 </child>
                                 <child>
+                                  <object class="GtkAlignment" id="alignment11">
+                                    <property name="can_focus">False</property>
+                                    <property name="left_padding">16</property>
+                                    <child>
+                                      <object class="GtkVBox" id="vbox14">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">False</property>
+                                        <child>
+                                          <object class="GtkLabel" id="label27">
+                                            <property name="visible">True</property>
+                                            <property name="can_focus">False</property>
+                                            <property name="label" translatable="yes">Delay of auto-selection in single click mode (0 to disable)</property>
+                                          </object>
+                                          <packing>
+                                            <property name="expand">True</property>
+                                            <property name="fill">True</property>
+                                            <property name="position">0</property>
+                                          </packing>
+                                        </child>
+                                        <child>
+                                          <object class="GtkHScale" id="hscale1">
+                                            <property name="visible">True</property>
+                                            <property name="can_focus">True</property>
+                                            <property name="value_pos">left</property>
+                                          </object>
+                                          <packing>
+                                            <property name="expand">True</property>
+                                            <property name="fill">True</property>
+                                            <property name="position">1</property>
+                                          </packing>
+                                        </child>
+                                      </object>
+                                    </child>
+                                  </object>
+                                  <packing>
+                                    <property name="expand">True</property>
+                                    <property name="fill">True</property>
+                                    <property name="position">1</property>
+                                  </packing>
+                                </child>
+                                <child>
                                   <object class="GtkCheckButton" id="confirm_del">
                                     <property name="label" translatable="yes">Co_nfirm before deleting files</property>
                                     <property name="visible">True</property>
@@ -180,7 +221,7 @@
                                   <packing>
                                     <property name="expand">False</property>
                                     <property name="fill">True</property>
-                                    <property name="position">1</property>
+                                    <property name="position">2</property>
                                   </packing>
                                 </child>
                                 <child>
@@ -196,7 +237,7 @@
                                   <packing>
                                     <property name="expand">False</property>
                                     <property name="fill">True</property>
-                                    <property name="position">2</property>
+                                    <property name="position">3</property>
                                   </packing>
                                 </child>
                                 <child>
@@ -207,7 +248,7 @@
                                       <object class="GtkVBox" id="vbox20">
                                         <property name="visible">True</property>
                                         <property name="can_focus">False</property>
-                                        <property name="spacing">6</property>
+                                        <property name="spacing">4</property>
                                         <child>
                                           <object class="GtkCheckButton" id="no_usb_trash">
                                             <property name="label" translatable="yes">_Erase files on removable media instead of "trash bin" creation</property>
@@ -245,7 +286,7 @@
                                   <packing>
                                     <property name="expand">False</property>
                                     <property name="fill">True</property>
-                                    <property name="position">3</property>
+                                    <property name="position">4</property>
                                   </packing>
                                 </child>
                                 <child>
@@ -255,7 +296,7 @@
                                     <property name="n_rows">2</property>
                                     <property name="n_columns">2</property>
                                     <property name="column_spacing">12</property>
-                                    <property name="row_spacing">4</property>
+                                    <property name="row_spacing">2</property>
                                     <child>
                                       <object class="GtkLabel" id="label2">
                                         <property name="visible">True</property>
@@ -324,7 +365,7 @@
                                   <packing>
                                     <property name="expand">True</property>
                                     <property name="fill">True</property>
-                                    <property name="position">4</property>
+                                    <property name="position">5</property>
                                   </packing>
                                 </child>
                                 <child>
@@ -339,7 +380,7 @@
                                   <packing>
                                     <property name="expand">True</property>
                                     <property name="fill">True</property>
-                                    <property name="position">5</property>
+                                    <property name="position">6</property>
                                   </packing>
                                 </child>
                               </object>
@@ -817,6 +858,21 @@
                                     <property name="expand">False</property>
                                     <property name="fill">True</property>
                                     <property name="position">1</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <object class="GtkCheckButton" id="show_full_names">
+                                    <property name="label" translatable="yes">Al_ways show full file names</property>
+                                    <property name="can_focus">True</property>
+                                    <property name="receives_default">False</property>
+                                    <property name="use_action_appearance">False</property>
+                                    <property name="use_underline">True</property>
+                                    <property name="draw_indicator">True</property>
+                                  </object>
+                                  <packing>
+                                    <property name="expand">False</property>
+                                    <property name="fill">True</property>
+                                    <property name="position">2</property>
                                   </packing>
                                 </child>
                               </object>
