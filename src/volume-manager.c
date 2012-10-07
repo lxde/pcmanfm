@@ -77,7 +77,11 @@ static void on_dlg_response(GtkDialog* dlg, int res, gpointer user_data)
             gtk_tree_model_get(model, &it, 2, &app, -1);
             if(app)
             {
-                g_app_info_launch(app, NULL, NULL, NULL);
+                GFile* gf = g_mount_get_root(data->mount);
+                GList* filelist = g_list_prepend(NULL, gf);
+                g_app_info_launch(app, filelist, NULL, NULL);
+                g_list_free(filelist);
+                g_object_unref(gf);
                 g_object_unref(app);
             }
             else
