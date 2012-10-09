@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: 0.9.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-09-23 15:36+0200\n"
-"PO-Revision-Date: 2012-09-06 00:49+0200\n"
+"PO-Revision-Date: 2012-10-09 02:14+0200\n"
 "Last-Translator: Necdet <necdetyucel@gmail.com>\n"
 "Language-Team: tr <tr@li.org>\n"
 "Language: tr\n"
@@ -48,94 +48,79 @@ msgid "<b>Background</b>"
 msgstr "<b>Arkaplan</b>"
 
 #: ../data/ui/desktop-pref.glade.h:3
-#, fuzzy
 msgid "_Wallpaper:"
-msgstr "Duvar kağıdı:"
+msgstr "_Duvar kağıdı:"
 
 #: ../data/ui/desktop-pref.glade.h:4
 msgid "Please select an image file"
 msgstr "Lüten bir resim dosyası seçin"
 
 #: ../data/ui/desktop-pref.glade.h:5
-#, fuzzy
 msgid "_Use the same wallpaper on all desktops"
-msgstr "Tüm masaüstlerinde aynı duvar kağıdını kullan"
+msgstr "_Tüm masaüstlerinde aynı duvar kağıdını kullan"
 
 #: ../data/ui/desktop-pref.glade.h:6
-#, fuzzy
 msgid "_Background color:"
-msgstr "Arkaplan rengi:"
+msgstr "_Arkaplan rengi:"
 
 # Not: "Modu" muğlak kalıyor. Ger, ortala gibi seçeneklerin olduğu bir menüyü
 # gösterdiğinden "seçenekleri" uygun kalıyor.
 #: ../data/ui/desktop-pref.glade.h:7
-#, fuzzy
 msgid "Wallpaper _mode:"
-msgstr "Duvarkağıdı seçenekleri:"
+msgstr "Duvarkağıdı _kipi:"
 
 #: ../data/ui/desktop-pref.glade.h:8
 msgid "<b>Text</b>"
 msgstr "<b>Metin</b>"
 
 #: ../data/ui/desktop-pref.glade.h:9
-#, fuzzy
 msgid "_Font of label text:"
-msgstr "Etiket metni yazıtipi:"
+msgstr "_Etiket metni yazıtipi:"
 
 #: ../data/ui/desktop-pref.glade.h:10
-#, fuzzy
 msgid "C_olor of label text:"
-msgstr "Etiket metninin rengi:"
+msgstr "Etiket metninin _rengi:"
 
 #: ../data/ui/desktop-pref.glade.h:11
-#, fuzzy
 msgid "Color of _shadow:"
-msgstr "Gölge rengi:"
+msgstr "_Gölge rengi:"
 
 #: ../data/ui/desktop-pref.glade.h:12
-#, fuzzy
 msgid "_Appearance"
-msgstr "Görünüm"
+msgstr "G_örünüm"
 
 #: ../data/ui/desktop-pref.glade.h:13
 msgid "<b>Show desktop icons</b>"
 msgstr "<b>Masaüstü simgelerini göster</b>"
 
 #: ../data/ui/desktop-pref.glade.h:14
-#, fuzzy
 msgid "_Show \"My Documents\" icon on desktop"
-msgstr "Masaüstünde \"Belgelerim\" simgesini göster"
+msgstr "Masaüstünde \"Belgelerim\" _simgesini göster"
 
 #: ../data/ui/desktop-pref.glade.h:15
-#, fuzzy
 msgid "Show \"_My Computer\" icon on desktop"
-msgstr "Masaüstünde \"Bilgisayarım\" simgesini göster"
+msgstr "Masaüstünde \"_Bilgisayarım\" simgesini göster"
 
 #: ../data/ui/desktop-pref.glade.h:16
-#, fuzzy
 msgid "Show \"_Trash Bin\" icon on desktop"
-msgstr "Masaüstünde \"Çöp Kutusu\" simgesini göster"
+msgstr "Masaüstünde \"_Çöp Kutusu\" simgesini göster"
 
 #: ../data/ui/desktop-pref.glade.h:17
-#, fuzzy
 msgid "S_how icons of volumes on desktop"
-msgstr "Masaüstünde disk bölümlerinin simgesini göster"
+msgstr "Masaüstünde _disk bölümlerinin simgesini göster"
 
 #: ../data/ui/desktop-pref.glade.h:18
-#, fuzzy
 msgid "_Desktop Icons"
-msgstr "Masaüstü Simgeleri"
+msgstr "_Masaüstü Simgeleri"
 
 #: ../data/ui/desktop-pref.glade.h:19
-#, fuzzy
 msgid "_Show menus provided by window managers when desktop is clicked"
 msgstr ""
-"Masaüstüne tıklandığında pencere yöneticisinin sağladığı simgeleri göster"
+"Masaüstüne tıklandığında _pencere yöneticisinin sağladığı simgeleri göster"
 
 #: ../data/ui/desktop-pref.glade.h:20
-#, fuzzy
 msgid "Ad_vanced"
-msgstr "Gelişmiş"
+msgstr "G_elişmiş"
 
 #: ../data/ui/desktop-pref.glade.h:21
 msgid "Fill with background color only"
@@ -179,222 +164,184 @@ msgid "<b>Behavior</b>"
 msgstr "<b>Davranış</b>"
 
 #: ../data/ui/pref.glade.h:6
-#, fuzzy
 msgid "_Open files with single click"
-msgstr "Dosyaları tek tıkla aç"
+msgstr "Dosyaları _tek tıkla aç"
 
 #: ../data/ui/pref.glade.h:7
-#, fuzzy
 msgid "Co_nfirm before deleting files"
-msgstr "Dosyaları silmeden önce onay iste"
+msgstr "Dosyaları silmeden önce _onay iste"
 
 #: ../data/ui/pref.glade.h:8
-#, fuzzy
 msgid "_Move deleted files to \"trash bin\" instead of erasing from disk"
-msgstr "Silinen dosyaları diskten silmek yerine \"çöp kutusu\"na gönder"
+msgstr "Silinen dosyaları diskten silmek yerine \"çöp kutusu\"na _taşı"
 
 #: ../data/ui/pref.glade.h:9
-#, fuzzy
 msgid "_Erase files on removable media instead of \"trash bin\" creation"
-msgstr "Taşınabilir aygıttaki dosyaları \"çöp kutusu\"na göndermek yerine sil"
+msgstr "Taşınabilir aygıttaki dosyaları \"çöp kutusu\"na göndermek yerine _sil"
 
 #: ../data/ui/pref.glade.h:10
-#, fuzzy
 msgid "Confi_rm before moving files into \"trash bi_n\""
-msgstr "Dosyaları \"çöp kutusu\"na göndermeden önce onay iste"
+msgstr "Dosyaları \"_çöp kutusu\"na göndermeden önce onay iste"
 
 #: ../data/ui/pref.glade.h:11
-#, fuzzy
 msgid "_Bookmarks:"
-msgstr "Yer İmleri:"
+msgstr "_Yer İmleri:"
 
 #: ../data/ui/pref.glade.h:12
-#, fuzzy
 msgid "Defaul_t drop action:"
-msgstr "Varsayılan bırakma eylemi:"
+msgstr "_Varsayılan bırakma eylemi:"
 
 #: ../data/ui/pref.glade.h:13
-#, fuzzy
 msgid "_Unfold tab when files are dragged onto tab button"
-msgstr "Dosyalar sekme düğmesine sürüklendiğinde sekmeyi aç"
+msgstr "Dosyalar _sekme düğmesine sürüklendiğinde sekmeyi aç"
 
 #: ../data/ui/pref.glade.h:14
 msgid "<b>Default View</b>"
 msgstr "<b>Varsayılan Görünüm</b>"
 
 #: ../data/ui/pref.glade.h:15
-#, fuzzy
 msgid "Vie_w Mode:"
-msgstr "Görünüm Modu:"
+msgstr "Görünüm _Kipi:"
 
 #: ../data/ui/pref.glade.h:16
-#, fuzzy
 msgid "_General"
-msgstr "Genel"
+msgstr "_Genel"
 
 #: ../data/ui/pref.glade.h:17
 msgid "<b>Icons</b>"
 msgstr "<b>Simgeler</b>"
 
 #: ../data/ui/pref.glade.h:18
-#, fuzzy
 msgid "Size of small _icons:"
-msgstr "Küçük simge boyutu:"
+msgstr "Küçük _simge boyutu:"
 
 #: ../data/ui/pref.glade.h:19
-#, fuzzy
 msgid "Size of _big icons:"
-msgstr "Büyük simge boyutu:"
+msgstr "_Büyük simge boyutu:"
 
 #: ../data/ui/pref.glade.h:20
-#, fuzzy
 msgid "Size of _thumbnails:"
-msgstr "Önizleme resmi boyutu:"
+msgstr "_Önizleme resmi boyutu:"
 
 #: ../data/ui/pref.glade.h:21
-#, fuzzy
 msgid "Size of side _pane icons:"
-msgstr "Yan panel simge boyutu:"
+msgstr "_Yan panel simge boyutu:"
 
 #: ../data/ui/pref.glade.h:22
-#, fuzzy
 msgid "_Show thumbnails of files"
-msgstr "Dosyaların önizlemelerini göster"
+msgstr "_Dosyaların önizlemelerini göster"
 
 #: ../data/ui/pref.glade.h:23
-#, fuzzy
 msgid "_Only show thumbnails for local files"
-msgstr "Sadece yerel dosyaların önizlemelerini göster"
+msgstr "_Sadece yerel dosyaların önizlemelerini göster"
 
 #: ../data/ui/pref.glade.h:24
-#, fuzzy
 msgid "Do _not generate thumbnails for files exceeding this size:"
-msgstr "Şu boyutun üstündeki dosyalar için önizleme oluşturma:"
+msgstr "_Şu boyutun üstündeki dosyalar için önizleme oluşturma:"
 
 #: ../data/ui/pref.glade.h:25
 msgid "<b>User Interface</b>"
 msgstr "<b>Kullanıcı Arayüzü</b>"
 
 #: ../data/ui/pref.glade.h:26
-#, fuzzy
 msgid "Us_e SI decimal prefixes instead of IEC binary prefixes"
-msgstr "ICE ikili önekleri yerine SI onlu önekleri kullan"
+msgstr "_ICE ikili önekleri yerine SI onlu önekleri kullan"
 
 #: ../data/ui/pref.glade.h:27
-#, fuzzy
 msgid "Treat backup files as _hidden"
-msgstr "Yedekleme dosyalarına gizli dosya gibi davran"
+msgstr "_Yedekleme dosyalarına gizli dosya gibi davran"
 
 #: ../data/ui/pref.glade.h:28
-#, fuzzy
 msgid "_Display"
-msgstr "Göster"
+msgstr "_Görüntüle"
 
 #: ../data/ui/pref.glade.h:29
-#, fuzzy
 msgid "Hide _folder content border"
-msgstr "Dizin içeriği kenarlığını gizle"
+msgstr "Dizin içeriği _kenarlığını gizle"
 
 #: ../data/ui/pref.glade.h:30
-#, fuzzy
 msgid "Hide _side pane buttons"
-msgstr "Yan panel düğmelerini sakla"
+msgstr "Yan panel düğmelerini _sakla"
 
 #: ../data/ui/pref.glade.h:31
-#, fuzzy
 msgid "Hid_e 'Close tab' buttons"
-msgstr "'Sekmeyi kapat' düğmelerini sakla"
+msgstr "'Sekmeyi _kapat' düğmelerini sakla"
 
 #: ../data/ui/pref.glade.h:32
-#, fuzzy
 msgid "Al_ways show the tab bar"
-msgstr "Her zaman sekme çubuğunu göster"
+msgstr "Her _zaman sekme çubuğunu göster"
 
 #: ../data/ui/pref.glade.h:33
 msgid "<b>Directories Tree</b>"
 msgstr "<b>Dizin Ağacı</b>"
 
 #: ../data/ui/pref.glade.h:34
-#, fuzzy
 msgid "Hide e_xpander on empty or locked folder"
-msgstr "Boş veya kilitli dizinlerde genişleticiyi gizle"
+msgstr "Boş _veya kilitli dizinlerde genişleticiyi gizle"
 
 #: ../data/ui/pref.glade.h:35
 msgid "<b>Show in Places:</b>"
 msgstr "<b>Yerleri Göster:</b>"
 
 #: ../data/ui/pref.glade.h:36
-#, fuzzy
 msgid "_Home Directory"
-msgstr "Ev Dizini"
+msgstr "_Ev Dizini"
 
 #: ../data/ui/pref.glade.h:37
-#, fuzzy
 msgid "Des_ktop Folder"
-msgstr "Masaüstü Klasörü"
+msgstr "_Masaüstü Dizini"
 
 #: ../data/ui/pref.glade.h:38
-#, fuzzy
 msgid "App_lications"
-msgstr "Uygulamalar"
+msgstr "_Uygulamalar"
 
 #: ../data/ui/pref.glade.h:39
-#, fuzzy
 msgid "_Trash bin"
-msgstr "Çöp kutusu"
+msgstr "_Çöp kutusu"
 
 #: ../data/ui/pref.glade.h:40
-#, fuzzy
 msgid "_Layout"
-msgstr "Düzen"
+msgstr "_Yerleşim"
 
 #: ../data/ui/pref.glade.h:41
 msgid "<b>Auto-mount</b>"
 msgstr "<b>Otomatik Bağlama</b>"
 
 #: ../data/ui/pref.glade.h:42
-#, fuzzy
 msgid "_Mount mountable volumes automatically on program startup"
-msgstr "Program başladığında bağlanabilir bölümleri otomatik olarak bağla"
+msgstr "Program başladığında bağlanabilir bölümleri otomatik olarak _bağla"
 
 #: ../data/ui/pref.glade.h:43
-#, fuzzy
 msgid "Mo_unt removable media automatically when they are inserted"
-msgstr "Kaldırılabilir ortam takıldığında otomatik olarak bağla"
+msgstr "_Çıkartılabilir ortam takıldığında otomatik olarak bağla"
 
 #: ../data/ui/pref.glade.h:44
-#, fuzzy
 msgid "_Show available options for removable media when they are inserted"
-msgstr "Yerleştirildiğinde kaldırılabilir ortam için seçenekleri görüntüle"
+msgstr "_Yerleştirildiğinde çıkartılabilir ortam için seçenekleri görüntüle"
 
 #: ../data/ui/pref.glade.h:45
-#, fuzzy
 msgid "_Open mounted removable media in new tab instead of new window"
-msgstr "Bağlanan taşınabilir aygıtları yeni pencere yerine yeni sekmede aç"
+msgstr "_Bağlanan taşınabilir aygıtları yeni pencere yerine yeni sekmede aç"
 
 #: ../data/ui/pref.glade.h:46
-#, fuzzy
 msgid "Clos_e tab containing removable medium when it is unmounted"
-msgstr "Çıkartılan taşınabilir aygıtları içeren sekmeleri kapat"
+msgstr "Çıkartılan taşınabilir aygıtları iç_eren sekmeleri kapat"
 
 #: ../data/ui/pref.glade.h:47
-#, fuzzy
 msgid "_Volume Management"
-msgstr "Hacim Yönetimi"
+msgstr "_Hacim Yönetimi"
 
 #: ../data/ui/pref.glade.h:48
 msgid "<b>Programs</b>"
 msgstr "<b>Programlar</b>"
 
 #: ../data/ui/pref.glade.h:49
-#, fuzzy
 msgid "_Terminal emulator:"
-msgstr "Uçbirim Öykünücüsü:"
+msgstr "_Uçbirim Öykünücüsü:"
 
 #: ../data/ui/pref.glade.h:50
-#, fuzzy
 msgid "_Switch user command:"
-msgstr "Kullanıcı Değiştirme Komutu:"
+msgstr "_Kullanıcı Değiştirme Komutu:"
 
 #: ../data/ui/pref.glade.h:52
 #, no-c-format
@@ -409,14 +356,12 @@ msgstr ""
 # Yahut "Arşiv Yöneticisi Entegrasyonu". Seçtiğim ifade daha açıklayıcı gibime
 # geliyor.
 #: ../data/ui/pref.glade.h:54
-#, fuzzy
 msgid "A_rchiver integration:"
-msgstr "İlişkilendirilen Arşiv Yöneticisi:"
+msgstr "İlişkilendirilen A_rşiv Yöneticisi:"
 
 #: ../data/ui/pref.glade.h:55
-#, fuzzy
 msgid "_Use Application Startup Notify by default"
-msgstr "Varsayılan olarak Uygulama Başlatma Uyarısını kullan"
+msgstr "Varsayılan olarak _Uygulama Başlatma Uyarısını kullan"
 
 #: ../data/ui/pref.glade.h:56
 msgid ""
@@ -494,29 +439,24 @@ msgid "Open in File Manager"
 msgstr "Dosya Yöneticisinde Aç"
 
 #: ../src/desktop-ui.c:51
-#, fuzzy
 msgid "Open in New Ta_b"
-msgstr "Yeni Sekmede Aç"
+msgstr "_Yeni Sekmede Aç"
 
 #: ../src/desktop-ui.c:52 ../src/tab-page.c:51
-#, fuzzy
 msgid "Open in New Win_dow"
-msgstr "Yeni Pencerede Aç"
+msgstr "Yeni _Pencerede Aç"
 
 #: ../src/desktop-ui.c:54 ../src/tab-page.c:53
-#, fuzzy
 msgid "Open in Termina_l"
 msgstr "_Uçbirimde Aç"
 
 #: ../src/desktop-ui.c:70
-#, fuzzy
 msgid "Stic_k to Current Position"
-msgstr "Mevcut Konuma Tuttur"
+msgstr "Mevcut Konuma _Tuttur"
 
 #: ../src/desktop-ui.c:75
-#, fuzzy
 msgid "Snap to _Grid"
-msgstr "Kılavuza Uydur"
+msgstr "_Izgaraya Uydur"
 
 #: ../src/main-win-ui.c:129
 msgid "_File"
@@ -527,78 +467,67 @@ msgid "_New Window"
 msgstr "_Yeni Pencere"
 
 #: ../src/main-win-ui.c:131
-#, fuzzy
 msgid "New T_ab"
 msgstr "Yeni _Sekme"
 
 #: ../src/main-win-ui.c:132
-#, fuzzy
 msgid "C_reate New..."
-msgstr "Yeni Oluştur..."
+msgstr "Yeni _Oluştur..."
 
 #: ../src/main-win-ui.c:133
 msgid "_Close Tab"
 msgstr "Sekmeyi _Kapat"
 
 #: ../src/main-win-ui.c:134
-#, fuzzy
 msgid "Close _Window"
-msgstr "Pencereyi Kapat"
+msgstr "_Pencereyi Kapat"
 
 #: ../src/main-win-ui.c:135
 msgid "_Edit"
 msgstr "_Düzenle"
 
 #: ../src/main-win-ui.c:140
-#, fuzzy
 msgid "_Rename"
-msgstr "Yeniden Adlandır"
+msgstr "Yeniden _Adlandır"
 
 #: ../src/main-win-ui.c:141
-#, fuzzy
 msgid "Create Symlin_k"
-msgstr "Bağlantı Oluştur"
+msgstr "_Bağlantı Oluştur"
 
 #: ../src/main-win-ui.c:142
-#, fuzzy
 msgid "_Move To..."
-msgstr "Şuraya Taşı..."
+msgstr "_Şuraya Taşı..."
 
 #: ../src/main-win-ui.c:143
-#, fuzzy
 msgid "C_opy To..."
-msgstr "Şuraya Kopyala..."
+msgstr "Şuraya _Kopyala..."
 
 #: ../src/main-win-ui.c:145
 msgid "_Invert Selection"
 msgstr "Seçimi _Tersine Çevir"
 
 #: ../src/main-win-ui.c:146
-#, fuzzy
 msgid "Prefere_nces"
-msgstr "Tercihler"
+msgstr "T_ercihler"
 
 #: ../src/main-win-ui.c:147
 msgid "_View"
 msgstr "_Görünüm"
 
 #: ../src/main-win-ui.c:148
-#, fuzzy
 msgid "_Reload Folder"
-msgstr "Dizini Yeniden Yükle"
+msgstr "_Dizini Yeniden Yükle"
 
 #: ../src/main-win-ui.c:148
 msgid "Reload current folder"
 msgstr "Mevcut Dizini yeniden Yükle"
 
 #: ../src/main-win-ui.c:149
-#, fuzzy
 msgid "Side _Pane"
-msgstr "Yan Panel"
+msgstr "Yan _Panel"
 
 #. other see below: 'ShowHidden' 'ShowStatus' 'Fullscreen' 'IconView'...
 #: ../src/main-win-ui.c:151
-#, fuzzy
 msgid "S_ort Files"
 msgstr "Dosyaları _Sırala"
 
@@ -608,76 +537,67 @@ msgstr "_Yardım"
 
 #: ../src/main-win-ui.c:154
 msgid "_Keyboard navigation"
-msgstr ""
+msgstr "_Klavye gezintisi"
 
 #: ../src/main-win-ui.c:155
 msgid "_Go"
 msgstr "G_it"
 
 #: ../src/main-win-ui.c:156
-#, fuzzy
 msgid "_Previous Folder"
-msgstr "Önceki Dizin"
+msgstr "_Önceki Dizin"
 
 #: ../src/main-win-ui.c:156
 msgid "Previous Folder"
 msgstr "Önceki Dizin"
 
 #: ../src/main-win-ui.c:157
-#, fuzzy
 msgid "_Next Folder"
-msgstr "Sonraki Dizin"
+msgstr "_Sonraki Dizin"
 
 #: ../src/main-win-ui.c:157
 msgid "Next Folder"
 msgstr "Sonraki Dizin"
 
 #: ../src/main-win-ui.c:158
-#, fuzzy
 msgid "Pa_rent Folder"
-msgstr "Üst Dizin"
+msgstr "_Üst Dizin"
 
 #: ../src/main-win-ui.c:158
 msgid "Go to parent Folder"
 msgstr "Üst Dizine Git"
 
 #: ../src/main-win-ui.c:159
-#, fuzzy
 msgid "H_ome Folder"
-msgstr "Ev Dizini"
+msgstr "E_v Dizini"
 
 #: ../src/main-win-ui.c:159
 msgid "Home Folder"
 msgstr "Ev Dizini"
 
 #: ../src/main-win-ui.c:160
-#, fuzzy
 msgid "_Desktop"
-msgstr "Masaüstü"
+msgstr "_Masaüstü"
 
 #: ../src/main-win-ui.c:160
 msgid "Desktop Folder"
 msgstr "Masaüstü Klasörü"
 
 #: ../src/main-win-ui.c:161
-#, fuzzy
 msgid "_My Computer"
-msgstr "Bilgisayarım"
+msgstr "_Bilgisayarım"
 
 #: ../src/main-win-ui.c:162
-#, fuzzy
 msgid "_Trash Can"
-msgstr "Çöp Kutusu"
+msgstr "_Çöp Kutusu"
 
 #: ../src/main-win-ui.c:163
-#, fuzzy
 msgid "Net_work Drives"
-msgstr "Ağ Sürücüleri"
+msgstr "Ağ _Sürücüleri"
 
 #: ../src/main-win-ui.c:164
-#, fuzzy
 msgid "_Applications"
-msgstr "Uygulamalar"
+msgstr "_Uygulamalar"
 
 #: ../src/main-win-ui.c:164
 msgid "Installed Applications"
@@ -688,12 +608,10 @@ msgid "_Bookmarks"
 msgstr "_Yer İmleri"
 
 #: ../src/main-win-ui.c:167
-#, fuzzy
 msgid "_Add To Bookmarks"
-msgstr "Yer İmlerine Ekle"
+msgstr "Y_er İmlerine Ekle"
 
 #: ../src/main-win-ui.c:168
-#, fuzzy
 msgid "Tool_s"
 msgstr "_Araçlar"
 
@@ -706,9 +624,8 @@ msgid "Open Current Folder as _Root"
 msgstr "Mevcut Dizini _Root Olarak Aç"
 
 #: ../src/main-win-ui.c:172
-#, fuzzy
 msgid "Fin_d Files"
-msgstr "Dosyaları _Sırala"
+msgstr "Dosya _Bul"
 
 #. for popup menu - these entries exist in FmFolderView popup still
 #: ../src/main-win-ui.c:181
@@ -720,12 +637,10 @@ msgid "Blank File"
 msgstr "Boş Dosya"
 
 #: ../src/main-win-ui.c:188
-#, fuzzy
 msgid "Show Hidde_n"
-msgstr "_Gizli Dosyaları Göster"
+msgstr "_Gizlileri Göster"
 
 #: ../src/main-win-ui.c:189
-#, fuzzy
 msgid "Sho_w Side Pane"
 msgstr "_Yan Bölmede Göster"
 
@@ -735,12 +650,11 @@ msgstr "_Araç Çubuğunda Göster"
 
 #: ../src/main-win-ui.c:191
 msgid "T_win Pane Mode"
-msgstr ""
+msgstr "İ_kili panel kipi"
 
 #: ../src/main-win-ui.c:192
-#, fuzzy
 msgid "Fullscreen _Mode"
-msgstr "Tam Ekran Kipi"
+msgstr "_Tam Ekran Kipi"
 
 #: ../src/main-win-ui.c:197
 msgid "_Icon View"
@@ -792,7 +706,7 @@ msgstr "Yetkili kullanıcı modundasınız"
 
 #: ../src/main-win.c:667 ../src/main-win.c:675
 msgid "Keyboard navigation"
-msgstr ""
+msgstr "Klavye gezintisi"
 
 #: ../src/main-win.c:669
 msgid ""
@@ -830,7 +744,7 @@ msgstr "Yapılandırma profilinin adı"
 
 #: ../src/pcmanfm.c:74
 msgid "PROFILE"
-msgstr ""
+msgstr "PROFİL"
 
 #: ../src/pcmanfm.c:75
 msgid "Run PCManFM as a daemon"
@@ -854,48 +768,44 @@ msgid "Open desktop preference dialog"
 msgstr "Masaüstü seçenekleri diyaloğunu aç"
 
 #: ../src/pcmanfm.c:82
-#, fuzzy
 msgid "Set desktop wallpaper from image FILE"
-msgstr "Masaüstü arkaplanı seç"
+msgstr "Masaüstü duvarkağıdını DOSYADAN ayarla"
 
 #: ../src/pcmanfm.c:82
 msgid "FILE"
-msgstr ""
+msgstr "DOSYA"
 
 #. don't translate list of modes in description, please
 #: ../src/pcmanfm.c:84
-#, fuzzy
 msgid "Set mode of desktop wallpaper. MODE=(color|stretch|fit|center|tile)"
 msgstr ""
-"Masaüstü duvar kağıdı görüntüleme modunu seç. <mode>=(renk|ger|uydur|ortala|"
-"döşe)"
+"Masaüstü duvar kağıdı görüntüleme kipini seç. "
+"KİP=(renk|ger|uydur|ortala|döşe)"
 
 #: ../src/pcmanfm.c:84
 msgid "MODE"
-msgstr ""
+msgstr "KİP"
 
 #: ../src/pcmanfm.c:85
-#, fuzzy
 msgid "Open Preferences dialog on the page N"
-msgstr "Masaüstü seçenekleri diyaloğunu aç"
+msgstr "Sayfa N'deki Tercihler penceresini aç"
 
 #: ../src/pcmanfm.c:85
 msgid "N"
-msgstr ""
+msgstr "N"
 
 #: ../src/pcmanfm.c:86
-#, fuzzy
 msgid "Open new window"
-msgstr "Yeni Pencerede Aç"
+msgstr "Yeni pencere aç"
 
 #. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
 #: ../src/pcmanfm.c:88
 msgid "Window role for usage by window manager"
-msgstr ""
+msgstr "Pencere yöneticisinin pencere kullanım rolü"
 
 #: ../src/pcmanfm.c:88
 msgid "ROLE"
-msgstr ""
+msgstr "ROL"
 
 #: ../src/pcmanfm.c:89
 msgid "[FILE1, FILE2,...]"
@@ -906,9 +816,8 @@ msgid "Terminal emulator is not set."
 msgstr "Uçbirim öykünücüsü seçilmedi."
 
 #: ../src/tab-page.c:50
-#, fuzzy
 msgid "Open in New T_ab"
-msgstr "Yeni Sekmede Aç"
+msgstr "Yeni _Sekmede Aç"
 
 #: ../src/tab-page.c:236
 #, c-format
