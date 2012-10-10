@@ -167,7 +167,7 @@ msgstr "Открытие файлов одним кликом"
 
 #: ../data/ui/pref.glade.h:7
 msgid "Delay of auto-selection in single click mode (0 to disable)"
-msgstr ""
+msgstr "Задержка автовыбора в режиме одного клика (0 - отключить автовыбор)"
 
 #: ../data/ui/pref.glade.h:8
 msgid "Co_nfirm before deleting files"
@@ -254,9 +254,8 @@ msgid "Treat backup files as _hidden"
 msgstr "Считать резервные файлы скрытыми"
 
 #: ../data/ui/pref.glade.h:29
-#, fuzzy
 msgid "Al_ways show full file names"
-msgstr "Всегда показывать панель вкладок"
+msgstr "Все_гда показывать имена файлов целиком"
 
 #: ../data/ui/pref.glade.h:30
 msgid "_Display"
@@ -479,7 +478,7 @@ msgstr "Новая _вкладка"
 
 #: ../src/main-win-ui.c:129
 msgid "Create new tab for this folder"
-msgstr ""
+msgstr "Создать новую вкладку для этой папки"
 
 #: ../src/main-win-ui.c:130
 msgid "C_reate New..."
@@ -615,9 +614,8 @@ msgid "Installed Applications"
 msgstr "Установленные приложения"
 
 #: ../src/main-win-ui.c:163
-#, fuzzy
 msgid "Open entered folder"
-msgstr "Обновить текущую папку"
+msgstr "Открыть введенную папку"
 
 #: ../src/main-win-ui.c:164
 msgid "_Bookmarks"
@@ -793,7 +791,7 @@ msgstr "Открыть диалог параметров рабочего сто
 
 #: ../src/pcmanfm.c:83
 msgid "Use --desktop option only for one screen"
-msgstr ""
+msgstr "Использовать параметр --desktop только на одном экране"
 
 #: ../src/pcmanfm.c:84
 msgid "Set desktop wallpaper from image FILE"
