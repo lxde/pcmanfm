@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-10-11 00:18+0200\n"
-"PO-Revision-Date: 2012-09-23 17:21+0200\n"
+"PO-Revision-Date: 2012-10-11 02:09+0300\n"
 "Last-Translator: LStranger <andrej@rep.kiev.ua>\n"
 "Language-Team: Ukrainian <translation@linux.org.ua>\n"
 "Language: uk\n"
@@ -169,7 +169,7 @@ msgstr "Відкривати файли _одним клацанням"
 
 #: ../data/ui/pref.glade.h:7
 msgid "Delay of auto-selection in single click mode (0 to disable)"
-msgstr ""
+msgstr "Затримка автовибору у режимі одного клацання (0 - вимкнути автовибір)"
 
 #: ../data/ui/pref.glade.h:8
 msgid "Co_nfirm before deleting files"
@@ -182,7 +182,7 @@ msgstr ""
 
 #: ../data/ui/pref.glade.h:10
 msgid "_Erase files on removable media instead of \"trash bin\" creation"
-msgstr "З_нищувати файли на знімних носіях замість перенесення у \"смітник\""
+msgstr "З_нищувати файли на зовнішніх носіях замість перенесення у \"смітник\""
 
 #: ../data/ui/pref.glade.h:11
 msgid "Confi_rm before moving files into \"trash bi_n\""
@@ -257,9 +257,8 @@ msgid "Treat backup files as _hidden"
 msgstr "Вважати резервні файли при_хованими"
 
 #: ../data/ui/pref.glade.h:29
-#, fuzzy
 msgid "Al_ways show full file names"
-msgstr "Завжд_и показувати панель вкладок"
+msgstr "Завжд_и показувати імена цілком"
 
 #: ../data/ui/pref.glade.h:30
 msgid "_Display"
@@ -319,11 +318,11 @@ msgstr "<b>Автомонтування</b>"
 
 #: ../data/ui/pref.glade.h:44
 msgid "_Mount mountable volumes automatically on program startup"
-msgstr "Монтувати знімні диски _автоматично під час старту"
+msgstr "Якщо можливо, змонтувати диски _автоматично під час старту"
 
 #: ../data/ui/pref.glade.h:45
 msgid "Mo_unt removable media automatically when they are inserted"
-msgstr "Монтувати знімні _носії при їх вставлянні"
+msgstr "Монтувати зовнішні _носії при їх вставлянні"
 
 #: ../data/ui/pref.glade.h:46
 msgid "_Show available options for removable media when they are inserted"
@@ -332,11 +331,11 @@ msgstr "_Показати можливі опції для змінних нос
 #: ../data/ui/pref.glade.h:47
 msgid "_Open mounted removable media in new tab instead of new window"
 msgstr ""
-"Відкривати _змонтовані знімні носії у новій вкладці замість нового вікна"
+"Відкривати _змонтовані зовнішні носії у новій вкладці замість нового вікна"
 
 #: ../data/ui/pref.glade.h:48
 msgid "Clos_e tab containing removable medium when it is unmounted"
-msgstr "Закрити вкладку, що містить знімний носій, при _його відмонтуванні"
+msgstr "Закрити вкладку, що містить зовнішній носій, при _його відмонтуванні"
 
 #: ../data/ui/pref.glade.h:49
 msgid "_Volume Management"
@@ -421,11 +420,11 @@ msgstr "Детальний вигляд списком"
 
 #: ../data/ui/autorun.glade.h:1
 msgid "Removable medium is inserted"
-msgstr "Вставлено знімний носій"
+msgstr "Вставлено зовнішній носій"
 
 #: ../data/ui/autorun.glade.h:2
 msgid "<b>Removable medium is inserted</b>"
-msgstr "<b>Вставлено знімний носій</b>"
+msgstr "<b>Вставлено зовнішній носій</b>"
 
 #: ../data/ui/autorun.glade.h:3
 msgid "Type of medium:"
@@ -441,7 +440,7 @@ msgstr "Виберіть, будь ласка, дію для виконання:
 
 #: ../src/volume-manager.c:164
 msgid "Removable Disk"
-msgstr "Знімний диск"
+msgstr "Зовнішній диск"
 
 #: ../src/volume-manager.c:217
 msgid "Open in File Manager"
@@ -481,7 +480,7 @@ msgstr "Нова вк_ладка"
 
 #: ../src/main-win-ui.c:129
 msgid "Create new tab for this folder"
-msgstr ""
+msgstr "Відкрити нову вкладку для поточної теки"
 
 #: ../src/main-win-ui.c:130
 msgid "C_reate New..."
@@ -617,9 +616,8 @@ msgid "Installed Applications"
 msgstr "Встановлені програми"
 
 #: ../src/main-win-ui.c:163
-#, fuzzy
 msgid "Open entered folder"
-msgstr "Перевантажити поточну теку"
+msgstr "Завантажити вказану теку"
 
 #: ../src/main-win-ui.c:164
 msgid "_Bookmarks"
@@ -793,7 +791,7 @@ msgstr "Відкрити вікно налаштування стільниці"
 
 #: ../src/pcmanfm.c:83
 msgid "Use --desktop option only for one screen"
-msgstr ""
+msgstr "Використати параметр --desktop лише на одному екрані"
 
 #: ../src/pcmanfm.c:84
 msgid "Set desktop wallpaper from image FILE"
