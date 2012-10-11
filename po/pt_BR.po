@@ -13,8 +13,8 @@ msgstr ""
 "Project-Id-Version: pcmanfm 0.9.9\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-10-11 00:18+0200\n"
-"PO-Revision-Date: 2012-09-24 19:53+0200\n"
-"Last-Translator: Adriano <cobbra@ibest.com.br>\n"
+"PO-Revision-Date: 2012-10-12 00:40+0200\n"
+"Last-Translator: Sérgio <ikisham@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <ldp-br@bazar2.conectiva.com.br>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -179,6 +179,7 @@ msgstr "Abrir arquivos com um clique simples"
 #: ../data/ui/pref.glade.h:7
 msgid "Delay of auto-selection in single click mode (0 to disable)"
 msgstr ""
+"Intervalo para autosseleção no modo de clique-único (0 para desabilitar)"
 
 #: ../data/ui/pref.glade.h:8
 msgid "Co_nfirm before deleting files"
@@ -268,7 +269,7 @@ msgstr "Trate os arquivos de backup como oculto"
 #: ../data/ui/pref.glade.h:29
 #, fuzzy
 msgid "Al_ways show full file names"
-msgstr "Sempre mostrar a barra de abas"
+msgstr "_Sempre mostrar o nome completo de arquivos"
 
 #: ../data/ui/pref.glade.h:30
 msgid "_Display"
@@ -491,8 +492,9 @@ msgid "New T_ab"
 msgstr "Nova _aba"
 
 #: ../src/main-win-ui.c:129
+#, fuzzy
 msgid "Create new tab for this folder"
-msgstr ""
+msgstr "Criar nova aba desta pasta"
 
 #: ../src/main-win-ui.c:130
 msgid "C_reate New..."
@@ -630,7 +632,7 @@ msgstr "Aplicativos instalados"
 #: ../src/main-win-ui.c:163
 #, fuzzy
 msgid "Open entered folder"
-msgstr "Recarregar a pasta atual"
+msgstr "Abrir a pasta definida"
 
 #: ../src/main-win-ui.c:164
 msgid "_Bookmarks"
@@ -807,7 +809,7 @@ msgstr "Abrir o diálogo de preferências da área de trabalho"
 
 #: ../src/pcmanfm.c:83
 msgid "Use --desktop option only for one screen"
-msgstr ""
+msgstr "Usar a opção --desktop para apenas uma tela"
 
 #: ../src/pcmanfm.c:84
 msgid "Set desktop wallpaper from image FILE"
