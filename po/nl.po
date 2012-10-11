@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-10-11 00:18+0200\n"
-"PO-Revision-Date: 2012-09-26 15:32+0200\n"
+"PO-Revision-Date: 2012-10-11 12:37+0200\n"
 "Last-Translator: Pjotr <pjotrvertaalt@gmail.com>\n"
 "Language-Team: Dutch\n"
 "Language: nl\n"
@@ -170,6 +170,8 @@ msgstr "Open bestanden met enkele muisklik"
 #: ../data/ui/pref.glade.h:7
 msgid "Delay of auto-selection in single click mode (0 to disable)"
 msgstr ""
+"Vertraging voor automatische selectie bij enkelkliksmodus (0 om uit te "
+"schakelen)"
 
 #: ../data/ui/pref.glade.h:8
 msgid "Co_nfirm before deleting files"
@@ -261,9 +263,8 @@ msgid "Treat backup files as _hidden"
 msgstr "Behandel reservekopie-bestanden als verborgen"
 
 #: ../data/ui/pref.glade.h:29
-#, fuzzy
 msgid "Al_ways show full file names"
-msgstr "Toon altijd de tabblad-balk"
+msgstr "Toon altijd volledige bestandnamen"
 
 #: ../data/ui/pref.glade.h:30
 msgid "_Display"
@@ -488,7 +489,7 @@ msgstr "Nieuw _tabblad"
 
 #: ../src/main-win-ui.c:129
 msgid "Create new tab for this folder"
-msgstr ""
+msgstr "Maak nieuw tabblad voor deze map"
 
 #: ../src/main-win-ui.c:130
 msgid "C_reate New..."
@@ -625,9 +626,8 @@ msgid "Installed Applications"
 msgstr "Geïnstalleerde toepassingen"
 
 #: ../src/main-win-ui.c:163
-#, fuzzy
 msgid "Open entered folder"
-msgstr "Herlaad bovenliggende map"
+msgstr "Open binnengegane map"
 
 #: ../src/main-win-ui.c:164
 msgid "_Bookmarks"
@@ -803,7 +803,7 @@ msgstr "Open dialoog voor bureaubladvoorkeur"
 
 #: ../src/pcmanfm.c:83
 msgid "Use --desktop option only for one screen"
-msgstr ""
+msgstr "Gebruik optie --desktop slechts voor één scherm"
 
 #: ../src/pcmanfm.c:84
 msgid "Set desktop wallpaper from image FILE"
