@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-10-11 00:18+0200\n"
-"PO-Revision-Date: 2012-10-07 03:28+0200\n"
+"PO-Revision-Date: 2012-10-12 10:46+0200\n"
 "Last-Translator: Sérgio <smarquespt@gmail.com>\n"
 "Language-Team: \n"
 "Language: pt\n"
@@ -168,7 +168,7 @@ msgstr "Abrir ficheir_os com um clique"
 
 #: ../data/ui/pref.glade.h:7
 msgid "Delay of auto-selection in single click mode (0 to disable)"
-msgstr ""
+msgstr "Atraso para seleção automática no modo de um clique (0 para desativar)"
 
 #: ../data/ui/pref.glade.h:8
 msgid "Co_nfirm before deleting files"
@@ -257,9 +257,8 @@ msgid "Treat backup files as _hidden"
 msgstr "Tratar cópias de segurança como fic_heiros ocultos"
 
 #: ../data/ui/pref.glade.h:29
-#, fuzzy
 msgid "Al_ways show full file names"
-msgstr "Mos_trar sempre barra de separadores"
+msgstr "Mos_trar sempre o nome completo dos ficheiros"
 
 #: ../data/ui/pref.glade.h:30
 msgid "_Display"
@@ -483,7 +482,7 @@ msgstr "Novo sep_arador"
 
 #: ../src/main-win-ui.c:129
 msgid "Create new tab for this folder"
-msgstr ""
+msgstr "Criar novo separador para esta pasta"
 
 #: ../src/main-win-ui.c:130
 msgid "C_reate New..."
@@ -797,7 +796,7 @@ msgstr "Abrir preferências da área de trabalho"
 
 #: ../src/pcmanfm.c:83
 msgid "Use --desktop option only for one screen"
-msgstr ""
+msgstr "Utilizar a opção --desktop para só um ecrã"
 
 #: ../src/pcmanfm.c:84
 msgid "Set desktop wallpaper from image FILE"
