@@ -697,9 +697,9 @@ static void on_key_nav_list(GtkAction* act, FmMainWin* win)
         key_nav_list_dlg = gtk_message_dialog_new(NULL, 0,
                                                   GTK_MESSAGE_INFO,
                                                   GTK_BUTTONS_OK,
-                                                  N_("Keyboard navigation"));
+                                                  _("Keyboard navigation"));
         gtk_message_dialog_format_secondary_text(GTK_MESSAGE_DIALOG(key_nav_list_dlg),
-                        N_("Tab: cycle focus Folder View -> Side Pane -> Tools Bar\n"
+                         _("Tab: cycle focus Folder View -> Side Pane -> Tools Bar\n"
                            "Shift+Tab: cycle focus Tools Bar -> Side Pane -> Folder View\n"
                            "F6: change focus Side pane <-> Folder view\n"
                            "F8: focus divider between Side pane and Folder view\n"

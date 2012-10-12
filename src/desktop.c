@@ -1317,6 +1317,7 @@ static void fm_desktop_update_item_popup(FmFolderView* fv, GtkWindow* window,
     fi = (FmFileInfo*)fm_file_info_list_peek_head(files);
 
     /* merge some specific menu items for folders */
+    gtk_action_group_set_translation_domain(act_grp, NULL);
     if(fm_file_info_list_get_length(files) == 1 && fm_file_info_is_dir(fi))
     {
         gtk_action_group_add_actions(act_grp, folder_menu_actions,

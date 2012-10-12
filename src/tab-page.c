@@ -424,6 +424,7 @@ static void update_files_popup(FmFolderView* fv, GtkWindow* win,
                                GtkUIManager* ui, GtkActionGroup* act_grp,
                                FmFileInfoList* files)
 {
+    gtk_action_group_set_translation_domain(act_grp, NULL);
     gtk_action_group_add_actions(act_grp, folder_menu_actions,
                                  G_N_ELEMENTS(folder_menu_actions), win);
     gtk_ui_manager_add_ui_from_string(ui, folder_menu_xml, -1, NULL);
