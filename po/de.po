@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm 0.9\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-10-11 00:18+0200\n"
-"PO-Revision-Date: 2012-08-23 07:04+0200\n"
+"PO-Revision-Date: 2012-10-12 08:24+0200\n"
 "Last-Translator: Daniel <d@winzen4.de>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -50,23 +50,20 @@ msgid "<b>Background</b>"
 msgstr "<b>Hintergrund</b>"
 
 #: ../data/ui/desktop-pref.glade.h:3
-#, fuzzy
 msgid "_Wallpaper:"
-msgstr "Hintergrundbild:"
+msgstr "_Hintergrundbild:"
 
 #: ../data/ui/desktop-pref.glade.h:4
 msgid "Please select an image file"
 msgstr "Hintergrundbild wählen"
 
 #: ../data/ui/desktop-pref.glade.h:5
-#, fuzzy
 msgid "_Use the same wallpaper on all desktops"
-msgstr "Das gleiche Hintergrundbild für alle Arbeitsflächen benutzen"
+msgstr "_Das gleiche Hintergrundbild für alle Arbeitsflächen benutzen"
 
 #: ../data/ui/desktop-pref.glade.h:6
-#, fuzzy
 msgid "_Background color:"
-msgstr "Hintergrundfarbe:"
+msgstr "_Hintergrundfarbe:"
 
 # Skalieren/Zentriert/...
 #: ../data/ui/desktop-pref.glade.h:7
@@ -79,63 +76,53 @@ msgid "<b>Text</b>"
 msgstr "<b>Text</b>"
 
 #: ../data/ui/desktop-pref.glade.h:9
-#, fuzzy
 msgid "_Font of label text:"
-msgstr "Schrift für Beschriftung:"
+msgstr "_Schrift für Beschriftung:"
 
 #: ../data/ui/desktop-pref.glade.h:10
-#, fuzzy
 msgid "C_olor of label text:"
-msgstr "Farbe der Beschriftung:"
+msgstr "_Farbe der Beschriftung:"
 
 #: ../data/ui/desktop-pref.glade.h:11
-#, fuzzy
 msgid "Color of _shadow:"
-msgstr "Farbe des Schattens:"
+msgstr "Farbe des _Schattens:"
 
 #: ../data/ui/desktop-pref.glade.h:12
-#, fuzzy
 msgid "_Appearance"
-msgstr "Erscheinungsbild"
+msgstr "_Erscheinungsbild"
 
 #: ../data/ui/desktop-pref.glade.h:13
 msgid "<b>Show desktop icons</b>"
 msgstr "<b>Desktop-Symbole anzeigen</b>"
 
 #: ../data/ui/desktop-pref.glade.h:14
-#, fuzzy
 msgid "_Show \"My Documents\" icon on desktop"
-msgstr "»Meine Dokumente« auf dem Desktop anzeigen"
+msgstr "»Meine _Dokumente« auf der Arbeitsfläche anzeigen"
 
 #: ../data/ui/desktop-pref.glade.h:15
-#, fuzzy
 msgid "Show \"_My Computer\" icon on desktop"
-msgstr "»Mein Computer« auf dem Desktop anzeigen"
+msgstr "»Mein _Computer« auf der Arbeitsfläche anzeigen"
 
 #: ../data/ui/desktop-pref.glade.h:16
-#, fuzzy
 msgid "Show \"_Trash Bin\" icon on desktop"
-msgstr "»Papierkorb« auf dem Desktop anzeigen"
+msgstr "»_Papierkorb« auf der Arbeitsfläche anzeigen"
 
 #: ../data/ui/desktop-pref.glade.h:17
-#, fuzzy
 msgid "S_how icons of volumes on desktop"
-msgstr "Symbole für Datenträger auf dem Desktop anzeigen"
+msgstr "_Symbole für Datenträger auf dem Desktop anzeigen"
 
 #: ../data/ui/desktop-pref.glade.h:18
-#, fuzzy
 msgid "_Desktop Icons"
-msgstr "Desktop-Symbole"
+msgstr "_Arbeitsflächen-Symbole"
 
 #: ../data/ui/desktop-pref.glade.h:19
-#, fuzzy
 msgid "_Show menus provided by window managers when desktop is clicked"
-msgstr "Beim Klicken auf den Desktop die Menüs des Fenstermanagers anzeigen"
+msgstr ""
+"_Beim Klicken auf die Arbeitsfläche die Menüs des Fenstermanagers anzeigen"
 
 #: ../data/ui/desktop-pref.glade.h:20
-#, fuzzy
 msgid "Ad_vanced"
-msgstr "Fortgeschritten"
+msgstr "_Erweitert"
 
 #: ../data/ui/desktop-pref.glade.h:21
 msgid "Fill with background color only"
@@ -178,40 +165,36 @@ msgid "<b>Behavior</b>"
 msgstr "<b>Verhalten</b>"
 
 #: ../data/ui/pref.glade.h:6
-#, fuzzy
 msgid "_Open files with single click"
-msgstr "Einfacher Klick zum Öffnen von Dateien"
+msgstr "_Einfacher Klick zum Öffnen von Dateien"
 
 #: ../data/ui/pref.glade.h:7
 msgid "Delay of auto-selection in single click mode (0 to disable)"
 msgstr ""
 
 #: ../data/ui/pref.glade.h:8
-#, fuzzy
 msgid "Co_nfirm before deleting files"
-msgstr "Löschen von Dateien bestätigen"
+msgstr "_Löschen von Dateien bestätigen"
 
 #: ../data/ui/pref.glade.h:9
-#, fuzzy
 msgid "_Move deleted files to \"trash bin\" instead of erasing from disk"
-msgstr "Dateien in den »Papierkorb« verschieben anstatt sie zu löschen"
+msgstr "Dateien in den »_Papierkorb« verschieben anstatt sie zu löschen"
 
 #: ../data/ui/pref.glade.h:10
-#, fuzzy
 msgid "_Erase files on removable media instead of \"trash bin\" creation"
 msgstr ""
-"Dateien auf Wechseldatenträgern löschen anstatt sie in den den »Papierkorb« "
+"Dateien auf _Wechseldatenträgern löschen anstatt sie in den den »Papierkorb« "
 "zu verschieben"
 
 #: ../data/ui/pref.glade.h:11
-#, fuzzy
 msgid "Confi_rm before moving files into \"trash bi_n\""
-msgstr "Löschen von Dateien bestätigen"
+msgstr ""
+"Löschen von Dateien _bestätigen, bevor sie in den »Papierkorb« verschoben "
+"werden"
 
 #: ../data/ui/pref.glade.h:12
-#, fuzzy
 msgid "_Bookmarks:"
-msgstr "Lesezeichen:"
+msgstr "_Lesezeichen:"
 
 #: ../data/ui/pref.glade.h:13
 msgid "Defaul_t drop action:"
@@ -226,12 +209,10 @@ msgid "<b>Default View</b>"
 msgstr "<b>Standard-Ansicht</b>"
 
 #: ../data/ui/pref.glade.h:16
-#, fuzzy
 msgid "Vie_w Mode:"
-msgstr "Ansicht:"
+msgstr "_Ansicht:"
 
 #: ../data/ui/pref.glade.h:17
-#, fuzzy
 msgid "_General"
 msgstr "All_gemein"
 
@@ -245,14 +226,12 @@ msgid "Size of small _icons:"
 msgstr "Listenansicht:"
 
 #: ../data/ui/pref.glade.h:20
-#, fuzzy
 msgid "Size of _big icons:"
-msgstr "Symbolansicht:"
+msgstr ""
 
 #: ../data/ui/pref.glade.h:21
-#, fuzzy
 msgid "Size of _thumbnails:"
-msgstr "Vorschaubilder:"
+msgstr "Größe von _Vorschaubildern:"
 
 #: ../data/ui/pref.glade.h:22
 #, fuzzy
@@ -309,14 +288,12 @@ msgid "Hide _side pane buttons"
 msgstr "Knöpfe in der Seitenleiste ausblenden"
 
 #: ../data/ui/pref.glade.h:33
-#, fuzzy
 msgid "Hid_e 'Close tab' buttons"
-msgstr "»Reiter schließen« Knopf verbergen"
+msgstr "»Reiter schließen« Knopf _verbergen"
 
 #: ../data/ui/pref.glade.h:34
-#, fuzzy
 msgid "Al_ways show the tab bar"
-msgstr "Reiterleiste immer anzeigen"
+msgstr "_Reiterleiste immer anzeigen"
 
 #: ../data/ui/pref.glade.h:35
 msgid "<b>Directories Tree</b>"
@@ -332,28 +309,24 @@ msgid "<b>Show in Places:</b>"
 msgstr "<b>Desktop-Symbole anzeigen</b>"
 
 #: ../data/ui/pref.glade.h:38
-#, fuzzy
 msgid "_Home Directory"
-msgstr "Verzeichnisbaum"
+msgstr ""
 
 #: ../data/ui/pref.glade.h:39
-#, fuzzy
 msgid "Des_ktop Folder"
-msgstr "Desktop-Ordner"
+msgstr "Des_ktop-Ordner"
 
 #: ../data/ui/pref.glade.h:40
-#, fuzzy
 msgid "App_lications"
-msgstr "Anwendungen"
+msgstr "_Anwendungen"
 
 #: ../data/ui/pref.glade.h:41
-#, fuzzy
 msgid "_Trash bin"
-msgstr "Papierkorb"
+msgstr "_Papierkorb"
 
 #: ../data/ui/pref.glade.h:42
 msgid "_Layout"
-msgstr ""
+msgstr "_Layout"
 
 #: ../data/ui/pref.glade.h:43
 msgid "<b>Auto-mount</b>"
@@ -384,7 +357,6 @@ msgid "Clos_e tab containing removable medium when it is unmounted"
 msgstr "Verfügbare Optionen für Wechseldatenträger beim Einlegen anzeigen"
 
 #: ../data/ui/pref.glade.h:49
-#, fuzzy
 msgid "_Volume Management"
 msgstr "Datenträger_verwaltung"
 
@@ -393,9 +365,8 @@ msgid "<b>Programs</b>"
 msgstr "<b>Programme</b>"
 
 #: ../data/ui/pref.glade.h:51
-#, fuzzy
 msgid "_Terminal emulator:"
-msgstr "Terminal:"
+msgstr "_Terminal emulator:"
 
 #: ../data/ui/pref.glade.h:52
 #, fuzzy
@@ -494,29 +465,24 @@ msgid "Open in File Manager"
 msgstr "Im Datei-Manager öffnen"
 
 #: ../src/desktop-ui.c:51
-#, fuzzy
 msgid "Open in New Ta_b"
-msgstr "In einem neuen Reiter öffnen"
+msgstr "In einem _neuen Reiter öffnen"
 
 #: ../src/desktop-ui.c:52 ../src/tab-page.c:51
-#, fuzzy
 msgid "Open in New Win_dow"
-msgstr "In einem neuen Fenster öffnen"
+msgstr "In einem neuen _Fenster öffnen"
 
 #: ../src/desktop-ui.c:54 ../src/tab-page.c:53
-#, fuzzy
 msgid "Open in Termina_l"
 msgstr "Im _Terminal öffnen"
 
 #: ../src/desktop-ui.c:70
-#, fuzzy
 msgid "Stic_k to Current Position"
-msgstr "Aktuelle Position merken"
+msgstr "_Aktuelle Position merken"
 
 #: ../src/desktop-ui.c:75
-#, fuzzy
 msgid "Snap to _Grid"
-msgstr "Am Raster ausrichten"
+msgstr "_Am Raster ausrichten"
 
 #: ../src/main-win-ui.c:127
 msgid "_File"
@@ -527,7 +493,6 @@ msgid "_New Window"
 msgstr "_Neues Fenster"
 
 #: ../src/main-win-ui.c:129
-#, fuzzy
 msgid "New T_ab"
 msgstr "Neuer _Reiter"
 
@@ -545,66 +510,57 @@ msgid "_Close Tab"
 msgstr "Reiter s_chließen"
 
 #: ../src/main-win-ui.c:132
-#, fuzzy
 msgid "Close _Window"
-msgstr "Fenster schließen"
+msgstr "_Fenster schließen"
 
 #: ../src/main-win-ui.c:133
 msgid "_Edit"
 msgstr "_Bearbeiten"
 
 #: ../src/main-win-ui.c:138
-#, fuzzy
 msgid "_Rename"
-msgstr "Umbenennen"
+msgstr "_Umbenennen"
 
 #: ../src/main-win-ui.c:139
-#, fuzzy
 msgid "Create Symlin_k"
-msgstr "Verknüpfung erstellen"
+msgstr "_Verknüpfung erstellen"
 
 #: ../src/main-win-ui.c:140
-#, fuzzy
 msgid "_Move To..."
-msgstr "Verschieben nach …"
+msgstr "Verschieben _nach …"
 
 #: ../src/main-win-ui.c:141
-#, fuzzy
 msgid "C_opy To..."
-msgstr "Kopieren nach …"
+msgstr "_Kopieren nach …"
 
 #: ../src/main-win-ui.c:143
 msgid "_Invert Selection"
 msgstr "_Auswahl umkehren"
 
 #: ../src/main-win-ui.c:144
-#, fuzzy
 msgid "Prefere_nces"
-msgstr "Einstellungen"
+msgstr "_Einstellungen"
 
 #: ../src/main-win-ui.c:145
 msgid "_View"
 msgstr "_Ansicht"
 
 #: ../src/main-win-ui.c:146
-#, fuzzy
 msgid "_Reload Folder"
-msgstr "Ordner neu laden"
+msgstr "Ordner neu _laden"
 
 #: ../src/main-win-ui.c:146
 msgid "Reload current folder"
 msgstr "Aktuellen Ordner neu laden"
 
 #: ../src/main-win-ui.c:147
-#, fuzzy
 msgid "Side _Pane"
-msgstr "Seitenleiste"
+msgstr "_Seitenleiste"
 
 #. other see below: 'ShowHidden' 'ShowStatus' 'Fullscreen' 'IconView'...
 #: ../src/main-win-ui.c:149
-#, fuzzy
 msgid "S_ort Files"
-msgstr "_Sortieren"
+msgstr "Dateien s_ortieren"
 
 #: ../src/main-win-ui.c:150
 msgid "_Help"
@@ -637,51 +593,44 @@ msgid "Next Folder"
 msgstr "Vor"
 
 #: ../src/main-win-ui.c:156
-#, fuzzy
 msgid "Pa_rent Folder"
-msgstr "Übergeordneter Ordner"
+msgstr "Übe_rgeordneter Ordner"
 
 #: ../src/main-win-ui.c:156
 msgid "Go to parent Folder"
 msgstr "In übergeordneten Ordner wechseln"
 
 #: ../src/main-win-ui.c:157
-#, fuzzy
 msgid "H_ome Folder"
-msgstr "Persönlicher Ordner"
+msgstr "_Persönlicher Ordner"
 
 #: ../src/main-win-ui.c:157
 msgid "Home Folder"
 msgstr "Persönlicher Ordner"
 
 #: ../src/main-win-ui.c:158
-#, fuzzy
 msgid "_Desktop"
-msgstr "Desktop"
+msgstr "_Desktop"
 
 #: ../src/main-win-ui.c:158
 msgid "Desktop Folder"
 msgstr "Desktop-Ordner"
 
 #: ../src/main-win-ui.c:159
-#, fuzzy
 msgid "_My Computer"
-msgstr "Mein Computer"
+msgstr "_Mein Computer"
 
 #: ../src/main-win-ui.c:160
-#, fuzzy
 msgid "_Trash Can"
-msgstr "Papierkorb"
+msgstr "_Papierkorb"
 
 #: ../src/main-win-ui.c:161
-#, fuzzy
 msgid "Net_work Drives"
-msgstr "Netzwerk"
+msgstr "_Netzwerk"
 
 #: ../src/main-win-ui.c:162
-#, fuzzy
 msgid "_Applications"
-msgstr "Anwendungen"
+msgstr "_Anwendungen"
 
 #: ../src/main-win-ui.c:162
 msgid "Installed Applications"
@@ -697,12 +646,10 @@ msgid "_Bookmarks"
 msgstr "_Lesezeichen"
 
 #: ../src/main-win-ui.c:165
-#, fuzzy
 msgid "_Add To Bookmarks"
-msgstr "Zu Lesezeichen hinzufügen"
+msgstr "Zu _Lesezeichen hinzufügen"
 
 #: ../src/main-win-ui.c:166
-#, fuzzy
 msgid "Tool_s"
 msgstr "_Werkzeuge"
 
@@ -729,7 +676,6 @@ msgid "Blank File"
 msgstr "Leere Datei"
 
 #: ../src/main-win-ui.c:186
-#, fuzzy
 msgid "Show Hidde_n"
 msgstr "_Verborgene Dateien anzeigen"
 
@@ -747,9 +693,8 @@ msgid "T_win Pane Mode"
 msgstr ""
 
 #: ../src/main-win-ui.c:190
-#, fuzzy
 msgid "Fullscreen _Mode"
-msgstr "Vollbildmodus"
+msgstr "_Vollbildmodus"
 
 #: ../src/main-win-ui.c:195
 msgid "_Icon View"
@@ -841,7 +786,7 @@ msgstr "Name des Konfigurationsprofils"
 
 #: ../src/pcmanfm.c:75
 msgid "PROFILE"
-msgstr ""
+msgstr "PROFIL"
 
 #: ../src/pcmanfm.c:76
 msgid "Run PCManFM as a daemon"
@@ -875,7 +820,7 @@ msgstr "Hintergrundbild einstellen"
 
 #: ../src/pcmanfm.c:84
 msgid "FILE"
-msgstr ""
+msgstr "DATEI"
 
 #. don't translate list of modes in description, please
 #: ../src/pcmanfm.c:86
@@ -887,7 +832,7 @@ msgstr ""
 
 #: ../src/pcmanfm.c:86
 msgid "MODE"
-msgstr ""
+msgstr "MODUS"
 
 #: ../src/pcmanfm.c:87
 #, fuzzy
