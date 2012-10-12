@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-10-11 00:18+0200\n"
-"PO-Revision-Date: 2012-09-24 09:15+0300\n"
+"PO-Revision-Date: 2012-10-12 08:03+0300\n"
 "Last-Translator: Algimantas Margevičius <margevicius.algimantas@gmail.com>\n"
 "Language-Team: Lietuvių <>\n"
 "Language: lt\n"
@@ -171,6 +171,7 @@ msgstr "_Atverti failus vienu mygtuko paspaudimu"
 #: ../data/ui/pref.glade.h:7
 msgid "Delay of auto-selection in single click mode (0 to disable)"
 msgstr ""
+"Automatinio pasirinkimo vėlavimas, vieno spragtelėjimo režime (0 išjungti)"
 
 #: ../data/ui/pref.glade.h:8
 msgid "Co_nfirm before deleting files"
@@ -257,9 +258,8 @@ msgid "Treat backup files as _hidden"
 msgstr "_Atsarginės kopijos failus laikyti paslėptais"
 
 #: ../data/ui/pref.glade.h:29
-#, fuzzy
 msgid "Al_ways show full file names"
-msgstr "_Visada rodyti kortelių juostą"
+msgstr "_Visada rodyti pilnus failų vardus"
 
 #: ../data/ui/pref.glade.h:30
 msgid "_Display"
@@ -480,7 +480,7 @@ msgstr "_Nauja kortelė"
 
 #: ../src/main-win-ui.c:129
 msgid "Create new tab for this folder"
-msgstr ""
+msgstr "Šiam aplankui sukurti naują kortelę"
 
 #: ../src/main-win-ui.c:130
 msgid "C_reate New..."
@@ -616,9 +616,8 @@ msgid "Installed Applications"
 msgstr "Įdiegtos programos"
 
 #: ../src/main-win-ui.c:163
-#, fuzzy
 msgid "Open entered folder"
-msgstr "Įkelti šį aplanką iš naujo"
+msgstr "Atverti pasirinktą aplanką"
 
 #: ../src/main-win-ui.c:164
 msgid "_Bookmarks"
@@ -793,7 +792,7 @@ msgstr "Atverti darbastalio nustatymų dialogą"
 
 #: ../src/pcmanfm.c:83
 msgid "Use --desktop option only for one screen"
-msgstr ""
+msgstr "--desktop parinkty naudokite tik vienam ekranui"
 
 #: ../src/pcmanfm.c:84
 msgid "Set desktop wallpaper from image FILE"
