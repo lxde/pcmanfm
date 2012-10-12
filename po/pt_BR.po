@@ -13,8 +13,8 @@ msgstr ""
 "Project-Id-Version: pcmanfm 0.9.9\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-10-11 00:18+0200\n"
-"PO-Revision-Date: 2012-10-12 00:40+0200\n"
-"Last-Translator: Sérgio <ikisham@gmail.com>\n"
+"PO-Revision-Date: 2012-10-12 11:29-0300\n"
+"Last-Translator: Sergio Cipolla <ikisham@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <ldp-br@bazar2.conectiva.com.br>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -49,18 +49,19 @@ msgstr ""
 "Og Maciel <ogmaciel@gnome.org>\n"
 "Sérgio B. Cipolla <secipolla@gmail.com>"
 
-#: ../data/ui/desktop-pref.glade.h:1 ../src/desktop-ui.c:34
+#: ../data/ui/desktop-pref.glade.h:1
+#: ../src/desktop-ui.c:34
 #: ../data/pcmanfm-desktop-pref.desktop.in.h:1
 msgid "Desktop Preferences"
 msgstr "Preferências da Área de Trabalho"
 
 #: ../data/ui/desktop-pref.glade.h:2
 msgid "<b>Background</b>"
-msgstr "<b>Plano de fundo</b>"
+msgstr "<b>Papel de parede</b>"
 
 #: ../data/ui/desktop-pref.glade.h:3
 msgid "_Wallpaper:"
-msgstr "Papel de parede:"
+msgstr "_Papel de parede:"
 
 #: ../data/ui/desktop-pref.glade.h:4
 msgid "Please select an image file"
@@ -68,15 +69,15 @@ msgstr "Por favor, selecione um arquivo de imagem"
 
 #: ../data/ui/desktop-pref.glade.h:5
 msgid "_Use the same wallpaper on all desktops"
-msgstr "Use o mesmo plano de fundo para todas as áreas de trabalho"
+msgstr "_Usar o mesmo papel de parede para todas as áreas de trabalho"
 
 #: ../data/ui/desktop-pref.glade.h:6
 msgid "_Background color:"
-msgstr "Cor do plano de fundo:"
+msgstr "_Cor do papel de parede:"
 
 #: ../data/ui/desktop-pref.glade.h:7
 msgid "Wallpaper _mode:"
-msgstr "Modo do papel de parede:"
+msgstr "_Modo do papel de parede:"
 
 #: ../data/ui/desktop-pref.glade.h:8
 msgid "<b>Text</b>"
@@ -84,19 +85,19 @@ msgstr "<b>Texto</b>"
 
 #: ../data/ui/desktop-pref.glade.h:9
 msgid "_Font of label text:"
-msgstr "Fonte do texto da legenda:"
+msgstr "_Fonte do texto da legenda:"
 
 #: ../data/ui/desktop-pref.glade.h:10
 msgid "C_olor of label text:"
-msgstr "Cor do texto da legenda:"
+msgstr "C_or do texto da legenda:"
 
 #: ../data/ui/desktop-pref.glade.h:11
 msgid "Color of _shadow:"
-msgstr "Cor da sombra:"
+msgstr "Cor da _sombra:"
 
 #: ../data/ui/desktop-pref.glade.h:12
 msgid "_Appearance"
-msgstr "Aparência"
+msgstr "_Aparência"
 
 #: ../data/ui/desktop-pref.glade.h:13
 msgid "<b>Show desktop icons</b>"
@@ -104,51 +105,53 @@ msgstr "<b>Mostrar ícones na área de trabalho</b>"
 
 #: ../data/ui/desktop-pref.glade.h:14
 msgid "_Show \"My Documents\" icon on desktop"
-msgstr "Mostrar um ícone \"Meus documentos\" na área de trabalho"
+msgstr "Mostrar um ícone \"Meus _documentos\" na área de trabalho"
 
 #: ../data/ui/desktop-pref.glade.h:15
 msgid "Show \"_My Computer\" icon on desktop"
-msgstr "Mostrar um ícone \"Meu computador\" na área de trabalho"
+msgstr "Mostrar um ícone \"Meu _computador\" na área de trabalho"
 
 #: ../data/ui/desktop-pref.glade.h:16
 msgid "Show \"_Trash Bin\" icon on desktop"
-msgstr "Mostrar um ícone \"Lixeira\" na área de trabalho"
+msgstr "Mostrar um ícone \"_Lixeira\" na área de trabalho"
 
 #: ../data/ui/desktop-pref.glade.h:17
 msgid "S_how icons of volumes on desktop"
-msgstr "Mostrar ícones de volumes na área de trabalho"
+msgstr "Mostrar ícones de _volumes na área de trabalho"
 
 #: ../data/ui/desktop-pref.glade.h:18
 msgid "_Desktop Icons"
-msgstr "Ícones na área de trabalho"
+msgstr "_Ícones na área de trabalho"
 
 #: ../data/ui/desktop-pref.glade.h:19
 msgid "_Show menus provided by window managers when desktop is clicked"
-msgstr ""
-"Mostrar o menu do gerenciador de janelas quando a área de trabalho for "
-"clicada"
+msgstr "Mostrar o _menu do gerenciador de janelas quando a área de trabalho for clicada"
 
 #: ../data/ui/desktop-pref.glade.h:20
 msgid "Ad_vanced"
-msgstr "Avançado"
+msgstr "A_vançado"
 
 #: ../data/ui/desktop-pref.glade.h:21
 msgid "Fill with background color only"
-msgstr "Somente preencher com a cor do plano de fundo"
+msgstr "Somente preencher com a cor do papel de parede"
 
-#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:69
+#: ../data/ui/desktop-pref.glade.h:22
+#: ../data/ui/pref.glade.h:69
 msgid "Stretch to fill the entire screen"
 msgstr "Esticar para ocupar a tela toda"
 
-#: ../data/ui/desktop-pref.glade.h:23 ../data/ui/pref.glade.h:70
+#: ../data/ui/desktop-pref.glade.h:23
+#: ../data/ui/pref.glade.h:70
 msgid "Stretch to fit the screen"
 msgstr "Esticar para ocupar a tela"
 
-#: ../data/ui/desktop-pref.glade.h:24 ../data/ui/pref.glade.h:71
+#: ../data/ui/desktop-pref.glade.h:24
+#: ../data/ui/pref.glade.h:71
 msgid "Center on the screen"
 msgstr "Centralizar na tela"
 
-#: ../data/ui/desktop-pref.glade.h:25 ../data/ui/pref.glade.h:72
+#: ../data/ui/desktop-pref.glade.h:25
+#: ../data/ui/pref.glade.h:72
 msgid "Tile the image to fill the entire screen"
 msgstr "Ladrilhar a imagem para ocupar a tela toda"
 
@@ -174,41 +177,39 @@ msgstr "<b>Comportamento</b>"
 
 #: ../data/ui/pref.glade.h:6
 msgid "_Open files with single click"
-msgstr "Abrir arquivos com um clique simples"
+msgstr "Abrir arquivos com um clique _simples"
 
 #: ../data/ui/pref.glade.h:7
 msgid "Delay of auto-selection in single click mode (0 to disable)"
-msgstr ""
-"Intervalo para autosseleção no modo de clique-único (0 para desabilitar)"
+msgstr "Intervalo para autosseleção no modo de clique-único (0 para desabilitar)"
 
 #: ../data/ui/pref.glade.h:8
 msgid "Co_nfirm before deleting files"
-msgstr "Confirmar antes de excluir arquivos"
+msgstr "Confirmar antes de _excluir arquivos"
 
 #: ../data/ui/pref.glade.h:9
 msgid "_Move deleted files to \"trash bin\" instead of erasing from disk"
-msgstr ""
-"Mover arquivos excluídos para a \"lixeira\" em vez de apagá-los da unidade"
+msgstr "Mover _arquivos excluídos para a \"lixeira\" em vez de apagá-los da unidade"
 
 #: ../data/ui/pref.glade.h:10
 msgid "_Erase files on removable media instead of \"trash bin\" creation"
-msgstr "Apagar os arquivos de mídias removíveis sem enviar para a \"lixeira\""
+msgstr "_Apagar os arquivos de mídias removíveis sem enviar para a \"lixeira\""
 
 #: ../data/ui/pref.glade.h:11
 msgid "Confi_rm before moving files into \"trash bi_n\""
-msgstr "Confirmar antes de enviar arquivos para a \"lixeira\""
+msgstr "_Confirmar antes de enviar arquivos para a \"lixeira\""
 
 #: ../data/ui/pref.glade.h:12
 msgid "_Bookmarks:"
-msgstr "Marcadores:"
+msgstr "_Marcadores:"
 
 #: ../data/ui/pref.glade.h:13
 msgid "Defaul_t drop action:"
-msgstr "Ação padrão ao soltar:"
+msgstr "Ação padrão ao _soltar:"
 
 #: ../data/ui/pref.glade.h:14
 msgid "_Unfold tab when files are dragged onto tab button"
-msgstr "Abrir guia quando os arquivos são arrastados para um botão de guia"
+msgstr "_Abrir aba quando arrastar arquivos para o botão de aba"
 
 #: ../data/ui/pref.glade.h:15
 msgid "<b>Default View</b>"
@@ -216,11 +217,11 @@ msgstr "<b>Visão padrão</b>"
 
 #: ../data/ui/pref.glade.h:16
 msgid "Vie_w Mode:"
-msgstr "Modo de visão:"
+msgstr "Modo de _visão:"
 
 #: ../data/ui/pref.glade.h:17
 msgid "_General"
-msgstr "Geral"
+msgstr "_Geral"
 
 #: ../data/ui/pref.glade.h:18
 msgid "<b>Icons</b>"
@@ -228,31 +229,31 @@ msgstr "<b>Ícones</b>"
 
 #: ../data/ui/pref.glade.h:19
 msgid "Size of small _icons:"
-msgstr "Tamanho dos ícones pequenos:"
+msgstr "Tamanho dos ícones p_equenos:"
 
 #: ../data/ui/pref.glade.h:20
 msgid "Size of _big icons:"
-msgstr "Tamanho dos ícones grandes:"
+msgstr "Tamanho dos ícones g_randes:"
 
 #: ../data/ui/pref.glade.h:21
 msgid "Size of _thumbnails:"
-msgstr "Tamanho das miniaturas:"
+msgstr "Tamanho das _miniaturas:"
 
 #: ../data/ui/pref.glade.h:22
 msgid "Size of side _pane icons:"
-msgstr "Tamanho dos ícones do painel lateral:"
+msgstr "Tamanho dos ícones do _painel lateral:"
 
 #: ../data/ui/pref.glade.h:23
 msgid "_Show thumbnails of files"
-msgstr "Mostrar miniaturas de arquivos"
+msgstr "Mostrar miniaturas de _arquivos"
 
 #: ../data/ui/pref.glade.h:24
 msgid "_Only show thumbnails for local files"
-msgstr "Somente mostrar miniaturas para arquivos locais"
+msgstr "Somente mostrar miniaturas para arquivos _locais"
 
 #: ../data/ui/pref.glade.h:25
 msgid "Do _not generate thumbnails for files exceeding this size:"
-msgstr "Não gerar miniaturas para arquivos com tamanho maior que:"
+msgstr "Não _gerar miniaturas para arquivos com tamanho maior que:"
 
 #: ../data/ui/pref.glade.h:26
 msgid "<b>User Interface</b>"
@@ -260,36 +261,36 @@ msgstr "<b>Interface do usuário</b>"
 
 #: ../data/ui/pref.glade.h:27
 msgid "Us_e SI decimal prefixes instead of IEC binary prefixes"
-msgstr "Usar prefixos decimais do SI em vez de prefixos binários do IEC"
+msgstr "Usar prefixos _decimais do SI em vez de prefixos binários do IEC"
 
 #: ../data/ui/pref.glade.h:28
 msgid "Treat backup files as _hidden"
-msgstr "Trate os arquivos de backup como oculto"
+msgstr "Tratar os arquivos de backup como _ocultos"
 
 #: ../data/ui/pref.glade.h:29
-#, fuzzy
 msgid "Al_ways show full file names"
 msgstr "_Sempre mostrar o nome completo de arquivos"
 
 #: ../data/ui/pref.glade.h:30
 msgid "_Display"
-msgstr "Exibir"
+msgstr "_Exibir"
 
 #: ../data/ui/pref.glade.h:31
+#, fuzzy
 msgid "Hide _folder content border"
-msgstr "Esconder borda do conteúdo da pasta"
+msgstr "Ocultar borda do _conteúdo da pasta"
 
 #: ../data/ui/pref.glade.h:32
 msgid "Hide _side pane buttons"
-msgstr "Esconder botões do painel lateral"
+msgstr "Ocultar botões do _painel lateral"
 
 #: ../data/ui/pref.glade.h:33
 msgid "Hid_e 'Close tab' buttons"
-msgstr "Esconder botões \"Fechar aba\""
+msgstr "Ocultar _botões \"Fechar aba\""
 
 #: ../data/ui/pref.glade.h:34
 msgid "Al_ways show the tab bar"
-msgstr "Sempre mostrar a barra de abas"
+msgstr "Sempre mostrar a _barra de abas"
 
 #: ../data/ui/pref.glade.h:35
 msgid "<b>Directories Tree</b>"
@@ -297,7 +298,7 @@ msgstr "<b>Árvore de diretórios</b>"
 
 #: ../data/ui/pref.glade.h:36
 msgid "Hide e_xpander on empty or locked folder"
-msgstr "Ocultar expansor de pasta vazia ou fechada"
+msgstr "Ocultar e_xpansor de pasta vazia ou trancada"
 
 #: ../data/ui/pref.glade.h:37
 msgid "<b>Show in Places:</b>"
@@ -305,23 +306,23 @@ msgstr "<b>Mostrar nos locais:</b>"
 
 #: ../data/ui/pref.glade.h:38
 msgid "_Home Directory"
-msgstr "Diretório Inicial"
+msgstr "Pasta _pessoal"
 
 #: ../data/ui/pref.glade.h:39
 msgid "Des_ktop Folder"
-msgstr "Pasta Área de trabalho"
+msgstr "Pasta _Área de trabalho"
 
 #: ../data/ui/pref.glade.h:40
 msgid "App_lications"
-msgstr "Aplicativos"
+msgstr "A_plicativos"
 
 #: ../data/ui/pref.glade.h:41
 msgid "_Trash bin"
-msgstr "Lixeira"
+msgstr "_Lixeira"
 
 #: ../data/ui/pref.glade.h:42
 msgid "_Layout"
-msgstr "Layout"
+msgstr "_Layout"
 
 #: ../data/ui/pref.glade.h:43
 msgid "<b>Auto-mount</b>"
@@ -329,30 +330,27 @@ msgstr "<b>Montagem automática</b>"
 
 #: ../data/ui/pref.glade.h:44
 msgid "_Mount mountable volumes automatically on program startup"
-msgstr "Montar volumes automaticamente no início do programa"
+msgstr "_Montar volumes automaticamente no início do programa"
 
 #: ../data/ui/pref.glade.h:45
 msgid "Mo_unt removable media automatically when they are inserted"
-msgstr "Montar mídia removível automaticamente quando elas forem inseridas"
+msgstr "Montar mídia _removível automaticamente quando for inserida"
 
 #: ../data/ui/pref.glade.h:46
 msgid "_Show available options for removable media when they are inserted"
-msgstr ""
-"Mostrar opções disponíveis para mídia removível quando elas forem inseridas"
+msgstr "Mostrar _opções disponíveis para mídia removível quando for inserida"
 
 #: ../data/ui/pref.glade.h:47
 msgid "_Open mounted removable media in new tab instead of new window"
-msgstr ""
-"Abra dispositivos removíveis montados em nova aba ao invés de nova janela"
+msgstr "Abrir mídia removível montada em nova _aba ao invés de nova janela"
 
 #: ../data/ui/pref.glade.h:48
 msgid "Clos_e tab containing removable medium when it is unmounted"
-msgstr ""
-"Fechar conteúdo de aba que tenha dispositivo removível que não esteja montado"
+msgstr "_Fechar aba de mídia removível quando esta for desmontada"
 
 #: ../data/ui/pref.glade.h:49
 msgid "_Volume Management"
-msgstr "Gerenciamento de Volumes"
+msgstr "Gerenciamento de _volumes"
 
 #: ../data/ui/pref.glade.h:50
 msgid "<b>Programs</b>"
@@ -360,11 +358,11 @@ msgstr "<b>Programas</b>"
 
 #: ../data/ui/pref.glade.h:51
 msgid "_Terminal emulator:"
-msgstr "Emulador de terminal:"
+msgstr "Emulador de _terminal:"
 
 #: ../data/ui/pref.glade.h:52
 msgid "_Switch user command:"
-msgstr "Comando para alternar o usuário:"
+msgstr "_Comando para alternar o usuário:"
 
 #: ../data/ui/pref.glade.h:54
 #, no-c-format
@@ -372,28 +370,24 @@ msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
 "%s = the command line you want to execute with terminal or su."
 msgstr ""
-"Exemplos: \"xterm -e %s\" para o terminal ou \"gksu %s\" para alternar o "
-"usuário.\n"
+"Exemplos: \"xterm -e %s\" para o terminal ou \"gksu %s\" para alternar o usuário.\n"
 "%s = a linha de comando que você deseja executar no terminal ou com o su."
 
 #: ../data/ui/pref.glade.h:56
 msgid "A_rchiver integration:"
-msgstr "Integração com o empacotador"
+msgstr "Integração com o _empacotador"
 
 #: ../data/ui/pref.glade.h:57
 msgid "_Use Application Startup Notify by default"
-msgstr "Usar Aplicação de Notificação na Inicialização por padrão"
+msgstr "_Usar notificação de inicialização por padrão"
 
 #: ../data/ui/pref.glade.h:58
 msgid ""
-"If checked then use Startup Notify for application if another not stated "
-"explicitly.\n"
+"If checked then use Startup Notify for application if another not stated explicitly.\n"
 "If unchecked then use Startup Notify only if that is defined for application."
 msgstr ""
-"Se marcado usa a Notificação na Inicialização para a aplicação se não for "
-"outro explicitamente.\n"
-"Se não marcado ele usa a Notificação na Inicialização que é definido por "
-"aplicação."
+"Se selecionado, usar notificação de inicialização para o aplicativo se o contrário não for definido explicitamente.\n"
+"Se não selecionado, usar notificação de inicialização somente se isso for definido explicitamente para o aplicativo."
 
 #: ../data/ui/pref.glade.h:60
 msgid "_Advanced"
@@ -401,7 +395,7 @@ msgstr "_Avançado"
 
 #: ../data/ui/pref.glade.h:61
 msgid "Auto (move if on the same FS, copy otherwise)"
-msgstr "Auto (mover se no mesmo FS, copiar de outro modo)"
+msgstr "Auto (mover se no mesmo sistema de arquivos, senão copiar)"
 
 #: ../data/ui/pref.glade.h:62
 msgid "Copy"
@@ -461,23 +455,25 @@ msgstr "Abrir no gerenciador de arquivos"
 
 #: ../src/desktop-ui.c:51
 msgid "Open in New Ta_b"
-msgstr "Abrir em nova aba"
+msgstr "Abrir em nova _aba"
 
-#: ../src/desktop-ui.c:52 ../src/tab-page.c:51
+#: ../src/desktop-ui.c:52
+#: ../src/tab-page.c:51
 msgid "Open in New Win_dow"
-msgstr "Abrir em nova janela"
+msgstr "Abrir em nova _janela"
 
-#: ../src/desktop-ui.c:54 ../src/tab-page.c:53
+#: ../src/desktop-ui.c:54
+#: ../src/tab-page.c:53
 msgid "Open in Termina_l"
 msgstr "Abrir no _terminal"
 
 #: ../src/desktop-ui.c:70
 msgid "Stic_k to Current Position"
-msgstr "Fixar na posição atual"
+msgstr "_Fixar na posição atual"
 
 #: ../src/desktop-ui.c:75
 msgid "Snap to _Grid"
-msgstr "Ajustar à grade"
+msgstr "Ajustar à _grade"
 
 #: ../src/main-win-ui.c:127
 msgid "_File"
@@ -485,20 +481,19 @@ msgstr "_Arquivo"
 
 #: ../src/main-win-ui.c:128
 msgid "_New Window"
-msgstr "_Nova janela"
+msgstr "Nova _janela"
 
 #: ../src/main-win-ui.c:129
 msgid "New T_ab"
 msgstr "Nova _aba"
 
 #: ../src/main-win-ui.c:129
-#, fuzzy
 msgid "Create new tab for this folder"
 msgstr "Criar nova aba desta pasta"
 
 #: ../src/main-win-ui.c:130
 msgid "C_reate New..."
-msgstr "Criar novo(a)..."
+msgstr "Criar _novo(a)..."
 
 #: ../src/main-win-ui.c:131
 msgid "_Close Tab"
@@ -506,7 +501,7 @@ msgstr "_Fechar aba"
 
 #: ../src/main-win-ui.c:132
 msgid "Close _Window"
-msgstr "Fechar janela"
+msgstr "Fechar _janela"
 
 #: ../src/main-win-ui.c:133
 msgid "_Edit"
@@ -514,19 +509,19 @@ msgstr "_Editar"
 
 #: ../src/main-win-ui.c:138
 msgid "_Rename"
-msgstr "Renomear"
+msgstr "_Renomear"
 
 #: ../src/main-win-ui.c:139
 msgid "Create Symlin_k"
-msgstr "Criar link simbólico"
+msgstr "Criar link _simbólico"
 
 #: ../src/main-win-ui.c:140
 msgid "_Move To..."
-msgstr "Mover para..."
+msgstr "_Mover para..."
 
 #: ../src/main-win-ui.c:141
 msgid "C_opy To..."
-msgstr "Copiar para..."
+msgstr "Copiar _para..."
 
 #: ../src/main-win-ui.c:143
 msgid "_Invert Selection"
@@ -534,7 +529,7 @@ msgstr "_Inverter seleção"
 
 #: ../src/main-win-ui.c:144
 msgid "Prefere_nces"
-msgstr "Preferências"
+msgstr "Preferê_ncias"
 
 #: ../src/main-win-ui.c:145
 msgid "_View"
@@ -542,7 +537,7 @@ msgstr "_Ver"
 
 #: ../src/main-win-ui.c:146
 msgid "_Reload Folder"
-msgstr "Recarregar pasta"
+msgstr "_Recarregar pasta"
 
 #: ../src/main-win-ui.c:146
 msgid "Reload current folder"
@@ -550,7 +545,7 @@ msgstr "Recarregar a pasta atual"
 
 #: ../src/main-win-ui.c:147
 msgid "Side _Pane"
-msgstr "Painel lateral"
+msgstr "_Painel lateral"
 
 #. other see below: 'ShowHidden' 'ShowStatus' 'Fullscreen' 'IconView'...
 #: ../src/main-win-ui.c:149
@@ -563,7 +558,7 @@ msgstr "Aj_uda"
 
 #: ../src/main-win-ui.c:152
 msgid "_Keyboard navigation"
-msgstr "Navegação pelo teclado"
+msgstr "Navegação pelo _teclado"
 
 #: ../src/main-win-ui.c:153
 msgid "_Go"
@@ -571,7 +566,7 @@ msgstr "_Ir"
 
 #: ../src/main-win-ui.c:154
 msgid "_Previous Folder"
-msgstr "Pasta anterior"
+msgstr "Pasta _anterior"
 
 #: ../src/main-win-ui.c:154
 msgid "Previous Folder"
@@ -579,7 +574,7 @@ msgstr "Pasta anterior"
 
 #: ../src/main-win-ui.c:155
 msgid "_Next Folder"
-msgstr "Próxima pasta"
+msgstr "_Próxima pasta"
 
 #: ../src/main-win-ui.c:155
 msgid "Next Folder"
@@ -587,15 +582,15 @@ msgstr "Próxima pasta"
 
 #: ../src/main-win-ui.c:156
 msgid "Pa_rent Folder"
-msgstr "Pasta superior"
+msgstr "Pasta _superior"
 
 #: ../src/main-win-ui.c:156
 msgid "Go to parent Folder"
-msgstr "Ir para pasta superior"
+msgstr "Ir para a pasta superior"
 
 #: ../src/main-win-ui.c:157
 msgid "H_ome Folder"
-msgstr "Pasta pessoal"
+msgstr "Pasta pess_oal"
 
 #: ../src/main-win-ui.c:157
 msgid "Home Folder"
@@ -603,7 +598,7 @@ msgstr "Pasta pessoal"
 
 #: ../src/main-win-ui.c:158
 msgid "_Desktop"
-msgstr "Área de trabalho"
+msgstr "_Área de trabalho"
 
 #: ../src/main-win-ui.c:158
 msgid "Desktop Folder"
@@ -611,28 +606,27 @@ msgstr "Pasta Área de trabalho"
 
 #: ../src/main-win-ui.c:159
 msgid "_My Computer"
-msgstr "Meu computador"
+msgstr "Meu _computador"
 
 #: ../src/main-win-ui.c:160
 msgid "_Trash Can"
-msgstr "Lixeira"
+msgstr "_Lixeira"
 
 #: ../src/main-win-ui.c:161
 msgid "Net_work Drives"
-msgstr "Unidades de rede"
+msgstr "_Unidades de rede"
 
 #: ../src/main-win-ui.c:162
 msgid "_Applications"
-msgstr "Aplicativos"
+msgstr "Aplicati_vos"
 
 #: ../src/main-win-ui.c:162
 msgid "Installed Applications"
 msgstr "Aplicativos instalados"
 
 #: ../src/main-win-ui.c:163
-#, fuzzy
 msgid "Open entered folder"
-msgstr "Abrir a pasta definida"
+msgstr "Abrir a pasta informada"
 
 #: ../src/main-win-ui.c:164
 msgid "_Bookmarks"
@@ -640,7 +634,7 @@ msgstr "_Marcadores"
 
 #: ../src/main-win-ui.c:165
 msgid "_Add To Bookmarks"
-msgstr "Adicionar aos marcadores"
+msgstr "A_dicionar aos marcadores"
 
 #: ../src/main-win-ui.c:166
 msgid "Tool_s"
@@ -656,7 +650,7 @@ msgstr "Abrir a pasta atual como _root"
 
 #: ../src/main-win-ui.c:170
 msgid "Fin_d Files"
-msgstr "Encontrar Arquivos"
+msgstr "_Pesquisar arquivos"
 
 #. for popup menu - these entries exist in FmFolderView popup still
 #: ../src/main-win-ui.c:179
@@ -669,24 +663,24 @@ msgstr "Arquivo em branco"
 
 #: ../src/main-win-ui.c:186
 msgid "Show Hidde_n"
-msgstr "Mostrar Ocultos"
+msgstr "Mostrar _ocultos"
 
 # Wrong String on English - Panel -> Panel
 #: ../src/main-win-ui.c:187
 msgid "Sho_w Side Pane"
-msgstr "Mostrar painel lateral"
+msgstr "Mostrar _painel lateral"
 
 #: ../src/main-win-ui.c:188
 msgid "Show Status B_ar"
-msgstr "Mostrar B_arra de Status"
+msgstr "Mostrar _barra de status"
 
 #: ../src/main-win-ui.c:189
 msgid "T_win Pane Mode"
-msgstr "Modo de Painel  Duplo"
+msgstr "Modo de painel _duplo"
 
 #: ../src/main-win-ui.c:190
 msgid "Fullscreen _Mode"
-msgstr "Modo Tela Cheia"
+msgstr "_Tela cheia"
 
 #: ../src/main-win-ui.c:195
 msgid "_Icon View"
@@ -694,11 +688,11 @@ msgstr "V_isão em ícones"
 
 #: ../src/main-win-ui.c:196
 msgid "_Compact View"
-msgstr "Visão _Compacta"
+msgstr "Visão _compacta"
 
 #: ../src/main-win-ui.c:197
 msgid "_Thumbnail View"
-msgstr "Visão em Minia_turas"
+msgstr "Visão em _miniaturas"
 
 #: ../src/main-win-ui.c:198
 msgid "Detailed _List View"
@@ -710,7 +704,7 @@ msgstr "Por _nome"
 
 #: ../src/main-win-ui.c:210
 msgid "By _Modification Time"
-msgstr "Por _data de modificação"
+msgstr "Por data de _modificação"
 
 #: ../src/main-win-ui.c:211
 msgid "By _Size"
@@ -736,9 +730,10 @@ msgstr "Remoto"
 msgid "You are in super user mode"
 msgstr "Você está no modo de superusuário"
 
-#: ../src/main-win.c:700 ../src/main-win.c:708
+#: ../src/main-win.c:700
+#: ../src/main-win.c:708
 msgid "Keyboard navigation"
-msgstr "Navegação por Teclado"
+msgstr "Navegação pelo Teclado"
 
 #: ../src/main-win.c:702
 msgid ""
@@ -749,13 +744,12 @@ msgid ""
 "F10: activate main menu\n"
 "Ctrl+L or Alt+D: jump focus to Path Bar"
 msgstr ""
-"Tab: ciclo de Vista da Pasta Foco -> Painel Lateral -> Barra de Ferramentas\n"
-"Shift+Tab: ciclo de Vista da Pasta Foco -> Painel Lateral -> Visualização de "
-"Pasta\n"
-"F6: muda o foco do Painel Lateral <-> Visualização de Pasta\n"
-"F8: divide o foco entre o Painel Lateral e a Visualização de Pasta\n"
-"F10: menu principal ativo\n"
-"Ctrl+L ou Alt+D: muda o foco para a Barra de Endereço"
+"Tab: circular o foco entre pasta -> painel lateral -> barra de ferramentas\n"
+"Shift+Tab: circular o foco entre barra de ferramentas -> painel lateral -> pasta\n"
+"F6: alternar o foco entre painel lateral <-> pasta\n"
+"F8: focar o divisor entre o painel lateral e a pasta\n"
+"F10: ativar o menu principal\n"
+"Ctrl+L ou Alt+D: focar a barra de endereço"
 
 #: ../src/main-win.c:738
 msgid "Switch user command is not set."
@@ -768,7 +762,7 @@ msgid ""
 "'%s'\n"
 "Enter a name for the new bookmark item:"
 msgstr ""
-"Adicionar a seguinte pasta nos marcadores:\n"
+"Adicionar a seguinte pasta aos marcadores:\n"
 "\"%s\"\n"
 "Informe um nome para o novo marcador:"
 
@@ -779,7 +773,7 @@ msgstr "Adicionar aos marcadores"
 #. options only acceptable by first pcmanfm instance. These options are not passed through IPC
 #: ../src/pcmanfm.c:75
 msgid "Name of configuration profile"
-msgstr "Nome do perfil de configurações"
+msgstr "Nome do perfil de configuração"
 
 #: ../src/pcmanfm.c:75
 msgid "PROFILE"
@@ -800,8 +794,7 @@ msgstr "Lançar o gerenciador da área de trabalho"
 
 #: ../src/pcmanfm.c:81
 msgid "Turn off desktop manager if it's running"
-msgstr ""
-"Desligar o gerenciador da área de trabalho se ele já estiver em execução"
+msgstr "Desligar o gerenciador da área de trabalho se ele já estiver em execução"
 
 #: ../src/pcmanfm.c:82
 msgid "Open desktop preference dialog"
@@ -822,9 +815,7 @@ msgstr "ARQUIVO"
 #. don't translate list of modes in description, please
 #: ../src/pcmanfm.c:86
 msgid "Set mode of desktop wallpaper. MODE=(color|stretch|fit|center|tile)"
-msgstr ""
-"Definir o modo de papel de parede da área de trabalho. <modo>=(color|stretch|"
-"fit|center|tile)"
+msgstr "Definir o modo do papel de parede da área de trabalho. MODO=(color|stretch|fit|center|tile)"
 
 #: ../src/pcmanfm.c:86
 msgid "MODE"
@@ -832,7 +823,7 @@ msgstr "MODO"
 
 #: ../src/pcmanfm.c:87
 msgid "Open Preferences dialog on the page N"
-msgstr "Abrir o diálogo de preferências da área de trabalho"
+msgstr "Abrir o diálogo de preferências na página N"
 
 #: ../src/pcmanfm.c:87
 msgid "N"
@@ -840,16 +831,16 @@ msgstr "N"
 
 #: ../src/pcmanfm.c:88
 msgid "Open new window"
-msgstr "Abrir em nova janela"
+msgstr "Abrir nova janela"
 
 #. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
 #: ../src/pcmanfm.c:90
 msgid "Window role for usage by window manager"
-msgstr "Estilo de janela usado pelo gerenciador de janela"
+msgstr "\"Window role\" a ser usado pelo gerenciador de janela"
 
 #: ../src/pcmanfm.c:90
 msgid "ROLE"
-msgstr "PAPEL"
+msgstr "ROLE"
 
 #: ../src/pcmanfm.c:91
 msgid "[FILE1, FILE2,...]"
@@ -861,7 +852,7 @@ msgstr "O emulador de terminal não está configurado."
 
 #: ../src/tab-page.c:50
 msgid "Open in New T_ab"
-msgstr "Abrir em nova aba"
+msgstr "Abrir em nova _aba"
 
 #: ../src/tab-page.c:236
 #, c-format
@@ -903,8 +894,7 @@ msgstr "Navegue pelo sistema de arquivos e gerencie arquivos e pastas"
 
 #: ../data/pcmanfm-desktop-pref.desktop.in.h:2
 msgid "Change desktop wallpapers and behavior of desktop manager"
-msgstr ""
-"Alterar papéis de parede e o comportamento do gerenciador da área de trabalho"
+msgstr "Altere os papéis de parede e o comportamento do gerenciador da área de trabalho"
 
 #~ msgid "Create _New..."
 #~ msgstr "Criar _novo(a)..."
