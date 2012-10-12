@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-10-11 00:18+0200\n"
-"PO-Revision-Date: 2012-09-28 22:53+0200\n"
+"PO-Revision-Date: 2012-10-12 11:20+0200\n"
 "Last-Translator: Anari <anari.jalakas@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: et\n"
@@ -166,7 +166,7 @@ msgstr "_Failide avamine ühe klõpsuga"
 
 #: ../data/ui/pref.glade.h:7
 msgid "Delay of auto-selection in single click mode (0 to disable)"
-msgstr ""
+msgstr "Automaatse valiku viivitus ühe klõpsu režiimis (0 blokeerimiseks)"
 
 #: ../data/ui/pref.glade.h:8
 msgid "Co_nfirm before deleting files"
@@ -255,9 +255,8 @@ msgid "Treat backup files as _hidden"
 msgstr "Varundamise faile käsitletakse _peidetuna"
 
 #: ../data/ui/pref.glade.h:29
-#, fuzzy
 msgid "Al_ways show full file names"
-msgstr "_Kaardiriba näidatakse alati"
+msgstr "Näita alati _täis failinimesid"
 
 #: ../data/ui/pref.glade.h:30
 msgid "_Display"
@@ -479,7 +478,7 @@ msgstr "Uus _kaart"
 
 #: ../src/main-win-ui.c:129
 msgid "Create new tab for this folder"
-msgstr ""
+msgstr "Loo uus kaart selle kaustaga"
 
 #: ../src/main-win-ui.c:130
 msgid "C_reate New..."
@@ -615,9 +614,8 @@ msgid "Installed Applications"
 msgstr "Paigaldatud rakendused"
 
 #: ../src/main-win-ui.c:163
-#, fuzzy
 msgid "Open entered folder"
-msgstr "Uuestilae praegune kaust"
+msgstr "Uuestilae avatud kaust"
 
 #: ../src/main-win-ui.c:164
 msgid "_Bookmarks"
@@ -791,7 +789,7 @@ msgstr "Ava töölaua eelistuste valikud"
 
 #: ../src/pcmanfm.c:83
 msgid "Use --desktop option only for one screen"
-msgstr ""
+msgstr "Kasuta --desktop valikut ainult ühel ekraanil"
 
 #: ../src/pcmanfm.c:84
 msgid "Set desktop wallpaper from image FILE"
