@@ -205,11 +205,11 @@ static void on_color_set(GtkColorButton* btn, gpointer _off)
 
 static void init_color(GtkBuilder* b, const char* name, gsize off, const char* changed_notify)
 {
-    GtkFontButton* btn = GTK_FONT_BUTTON(gtk_builder_get_object(b, name));
+    GtkColorButton* btn = GTK_COLOR_BUTTON(gtk_builder_get_object(b, name));
     GdkColor* val = (GdkColor*)G_STRUCT_MEMBER_P(fm_config, off);
     if(changed_notify)
         g_object_set_data_full(G_OBJECT(btn), "changed", g_strdup(changed_notify), g_free);
-    gtk_color_button_set_color(GTK_COLOR_BUTTON(btn), val);
+    gtk_color_button_set_color(btn, val);
     g_signal_connect(btn, "color-set", G_CALLBACK(on_color_set), GSIZE_TO_POINTER(off));
 }
 
