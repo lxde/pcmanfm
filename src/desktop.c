@@ -827,9 +827,9 @@ static void update_background(FmDesktop* desktop, int is_it)
     if(!cache) /* solid color only */
     {
 #if GTK_CHECK_VERSION(3, 0, 0)
-        pattern = cairo_pattern_create_rgb(app_config->desktop_bg.red / 65535,
-                                           app_config->desktop_bg.green / 65535,
-                                           app_config->desktop_bg.blue / 65535);
+        pattern = cairo_pattern_create_rgb(app_config->desktop_bg.red / 65535.0,
+                                           app_config->desktop_bg.green / 65535.0,
+                                           app_config->desktop_bg.blue / 65535.0);
         gdk_window_set_background_pattern(window, pattern);
         cairo_pattern_destroy(pattern);
 #else
