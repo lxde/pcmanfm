@@ -325,7 +325,7 @@ static void on_folder_finish_loading(FmFolder* folder, FmTabPage* page)
                   (guint)FM_STATUS_TEXT_NORMAL,
                   page->status_text[FM_STATUS_TEXT_NORMAL]);
 
-    fm_unset_busy_cursor(GTK_WIDGET(fv));
+    fm_unset_busy_cursor(GTK_WIDGET(page));
     /* g_debug("finish-loading"); */
 }
 
