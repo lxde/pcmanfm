@@ -835,9 +835,7 @@ static void update_background(FmDesktop* desktop, int is_it)
 #else
         GdkColor bg = app_config->desktop_bg;
 
-#if !GTK_CHECK_VERSION(2, 22, 0)
-        gdk_rgb_find_color(gdk_drawable_get_colormap(window), &bg);
-#endif
+        gdk_colormap_alloc_color(gdk_drawable_get_colormap(window), &bg, FALSE, TRUE);
         gdk_window_set_back_pixmap(window, NULL, FALSE);
         gdk_window_set_background(window, &bg);
 #endif
