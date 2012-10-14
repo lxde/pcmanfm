@@ -193,8 +193,8 @@ static GtkToggleActionEntry main_win_toggle_actions[]=
 static GtkRadioActionEntry main_win_mode_actions[]=
 {
     {"IconView", NULL, N_("_Icon View"), "<Ctrl>1", NULL, FM_FV_ICON_VIEW},
-    {"CompactView", NULL, N_("_Compact View"), "<Ctrl>2", NULL, FM_FV_COMPACT_VIEW},
-    {"ThumbnailView", NULL, N_("_Thumbnail View"), "<Ctrl>3", NULL, FM_FV_THUMBNAIL_VIEW},
+    {"ThumbnailView", NULL, N_("_Thumbnail View"), "<Ctrl>2", NULL, FM_FV_THUMBNAIL_VIEW},
+    {"CompactView", NULL, N_("_Compact View"), "<Ctrl>3", NULL, FM_FV_COMPACT_VIEW},
     {"ListView", NULL, N_("Detailed _List View"), "<Ctrl>4", NULL, FM_FV_LIST_VIEW},
 };
 
