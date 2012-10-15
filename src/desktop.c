@@ -396,8 +396,8 @@ static void layout_items(FmDesktop* self)
     int x, y, bottom;
     GtkTextDirection direction = gtk_widget_get_direction(GTK_WIDGET(self));
 
-    y = self->working_area.y + self->ymargin;
-    bottom = self->working_area.y + self->working_area.height - self->ymargin - self->cell_h;
+    y = self->ymargin;
+    bottom = self->working_area.height - self->ymargin - self->cell_h;
 
     if(!gtk_tree_model_get_iter_first(model, &it))
     {
@@ -406,7 +406,7 @@ static void layout_items(FmDesktop* self)
     }
     if(direction != GTK_TEXT_DIR_RTL) /* LTR or NONE */
     {
-        x = self->working_area.x + self->xmargin;
+        x = self->xmargin;
         do
         {
             item = fm_folder_model_get_item_userdata(self->model, &it);
@@ -424,7 +424,7 @@ _next_position:
                 if(y > bottom)
                 {
                     x += self->cell_w;
-                    y = self->working_area.y + self->ymargin;
+                    y = self->ymargin;
                 }
                 /* check if this position is occupied by a fixed item */
                 if(is_pos_occupied(self, item))
@@ -437,7 +437,7 @@ _next_position:
     }
     else /* RTL */
     {
-        x = self->working_area.x + self->working_area.width - self->xmargin - self->cell_w;
+        x = self->working_area.width - self->xmargin - self->cell_w;
         do
         {
             item = fm_folder_model_get_item_userdata(self->model, &it);
@@ -455,7 +455,7 @@ _next_position_rtl:
                 if(y > bottom)
                 {
                     x -= self->cell_w;
-                    y = self->working_area.y + self->ymargin;
+                    y = self->ymargin;
                 }
                 /* check if this position is occupied by a fixed item */
                 if(is_pos_occupied(self, item))
