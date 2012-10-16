@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-10-11 00:18+0200\n"
-"PO-Revision-Date: 2012-09-30 05:14+0200\n"
+"PO-Revision-Date: 2012-10-16 13:28+0200\n"
 "Last-Translator: Walter <wwycheuk@gmail.com>\n"
 "Language-Team: zh_TW <zh_TW@li.org>\n"
 "Language: zh_TW\n"
@@ -167,7 +167,7 @@ msgstr "單擊滑鼠開啟檔案(_O)"
 
 #: ../data/ui/pref.glade.h:7
 msgid "Delay of auto-selection in single click mode (0 to disable)"
-msgstr ""
+msgstr "在單擊模式進行自動選取的延遲時間 (設為 0 則停用)"
 
 #: ../data/ui/pref.glade.h:8
 msgid "Co_nfirm before deleting files"
@@ -254,9 +254,8 @@ msgid "Treat backup files as _hidden"
 msgstr "將備份檔視為隱藏檔案(_H)"
 
 #: ../data/ui/pref.glade.h:29
-#, fuzzy
 msgid "Al_ways show full file names"
-msgstr "一定顯示分頁列(_W)"
+msgstr "一定顯示完整檔案名(_W)"
 
 #: ../data/ui/pref.glade.h:30
 msgid "_Display"
@@ -474,7 +473,7 @@ msgstr "新分頁(_A)"
 
 #: ../src/main-win-ui.c:129
 msgid "Create new tab for this folder"
-msgstr ""
+msgstr "為此資料夾建立新分頁"
 
 #: ../src/main-win-ui.c:130
 msgid "C_reate New..."
@@ -610,9 +609,8 @@ msgid "Installed Applications"
 msgstr "已安裝的應用程式 "
 
 #: ../src/main-win-ui.c:163
-#, fuzzy
 msgid "Open entered folder"
-msgstr "重讀目前資料夾"
+msgstr "開啟進入的資料夾"
 
 #: ../src/main-win-ui.c:164
 msgid "_Bookmarks"
@@ -786,7 +784,7 @@ msgstr "開啟桌面偏好設定"
 
 #: ../src/pcmanfm.c:83
 msgid "Use --desktop option only for one screen"
-msgstr ""
+msgstr "只為一個螢幕使用 --desktop 選項"
 
 #: ../src/pcmanfm.c:84
 msgid "Set desktop wallpaper from image FILE"
