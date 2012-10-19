@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: 0.9.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-10-11 00:18+0200\n"
-"PO-Revision-Date: 2012-10-10 01:03+0200\n"
-"Last-Translator: Necdet <necdetyucel@gmail.com>\n"
+"PO-Revision-Date: 2012-10-19 19:28+0200\n"
+"Last-Translator: enginmanap <enginmanap@gmail.com>\n"
 "Language-Team: tr <tr@li.org>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
@@ -169,7 +169,7 @@ msgstr "Dosyaları _tek tıkla aç"
 
 #: ../data/ui/pref.glade.h:7
 msgid "Delay of auto-selection in single click mode (0 to disable)"
-msgstr ""
+msgstr "Tek tıklama ile otomatik seçim gecikmesi (kapatmak için 0)"
 
 #: ../data/ui/pref.glade.h:8
 msgid "Co_nfirm before deleting files"
@@ -256,9 +256,8 @@ msgid "Treat backup files as _hidden"
 msgstr "_Yedekleme dosyalarına gizli dosya gibi davran"
 
 #: ../data/ui/pref.glade.h:29
-#, fuzzy
 msgid "Al_ways show full file names"
-msgstr "Her _zaman sekme çubuğunu göster"
+msgstr "Her _zaman tam dosya adlarını göster"
 
 #: ../data/ui/pref.glade.h:30
 msgid "_Display"
@@ -481,7 +480,7 @@ msgstr "Yeni _Sekme"
 
 #: ../src/main-win-ui.c:129
 msgid "Create new tab for this folder"
-msgstr ""
+msgstr "Bu dizin için yeni sekme oluştur"
 
 #: ../src/main-win-ui.c:130
 msgid "C_reate New..."
@@ -617,9 +616,8 @@ msgid "Installed Applications"
 msgstr "Kurulu Uygulamalar"
 
 #: ../src/main-win-ui.c:163
-#, fuzzy
 msgid "Open entered folder"
-msgstr "Mevcut Dizini yeniden Yükle"
+msgstr "Girilen dizini aç"
 
 #: ../src/main-win-ui.c:164
 msgid "_Bookmarks"
@@ -793,7 +791,7 @@ msgstr "Masaüstü seçenekleri diyaloğunu aç"
 
 #: ../src/pcmanfm.c:83
 msgid "Use --desktop option only for one screen"
-msgstr ""
+msgstr "Sadece bir ekran için --desktop seçeneğini kullan"
 
 #: ../src/pcmanfm.c:84
 msgid "Set desktop wallpaper from image FILE"
