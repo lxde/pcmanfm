@@ -1287,6 +1287,7 @@ static void fm_desktop_update_popup(FmFolderView* fv, GtkWindow* window,
     act = gtk_action_group_get_action(act_grp, "Prop");
     gtk_action_set_visible(act, FALSE);
     //gtk_action_group_remove_action(act_grp, act);
+    gtk_action_group_set_translation_domain(act_grp, NULL);
     gtk_action_group_add_actions(act_grp, desktop_actions,
                                  G_N_ELEMENTS(desktop_actions), window);
     gtk_ui_manager_add_ui_from_string(ui, desktop_menu_xml, -1, NULL);
