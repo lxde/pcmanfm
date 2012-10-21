@@ -170,11 +170,19 @@ static void update_sort_menu(FmMainWin* win)
     GtkAction* act;
     FmFolderView* fv = win->folder_view;
     FmFolderModelViewCol by = fm_folder_view_get_sort_by(fv);
+#if FM_CHECK_VERSION(1, 0, 2)
+    if(fv == NULL || fm_folder_view_get_model(fv) == NULL)
+        /* since 1.0.2 libfm have sorting only in FmFolderModel therefore
+           if there is no model then we cannot get last sorting from it */
+        return;
+#endif
     act = gtk_ui_manager_get_action(win->ui, "/menubar/ViewMenu/Sort/Asc");
     gtk_radio_action_set_current_value(GTK_RADIO_ACTION(act), fm_folder_view_get_sort_type(fv));
     act = gtk_ui_manager_get_action(win->ui, "/menubar/ViewMenu/Sort/ByName");
+#if FM_CHECK_VERSION(1, 0, 2)
     if(by == FM_FOLDER_MODEL_COL_DEFAULT)
         by = FM_FOLDER_MODEL_COL_NAME;
+#endif
     gtk_radio_action_set_current_value(GTK_RADIO_ACTION(act), by);
 }
 
