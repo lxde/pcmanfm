@@ -514,10 +514,10 @@ static void fm_main_win_init(FmMainWin *win)
     gtk_toolbar_set_icon_size(win->toolbar, GTK_ICON_SIZE_SMALL_TOOLBAR);
     gtk_toolbar_set_style(win->toolbar, GTK_TOOLBAR_ICONS);
 
-    /* create 'Next' button manually and add a popup menu to it */
+    /* create 'Prev' button manually and add a popup menu to it */
     toolitem = (GtkToolItem*)g_object_new(GTK_TYPE_MENU_TOOL_BUTTON, NULL);
-    gtk_toolbar_insert(win->toolbar, toolitem, 2);
-    act = gtk_ui_manager_get_action(ui, "/menubar/GoMenu/Next");
+    gtk_toolbar_insert(win->toolbar, toolitem, 1);
+    act = gtk_ui_manager_get_action(ui, "/menubar/GoMenu/Prev");
     gtk_activatable_set_related_action(GTK_ACTIVATABLE(toolitem), act);
 
     /* set up history menu */
