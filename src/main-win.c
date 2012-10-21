@@ -169,10 +169,13 @@ static void update_sort_menu(FmMainWin* win)
 {
     GtkAction* act;
     FmFolderView* fv = win->folder_view;
+    FmFolderModelViewCol by = fm_folder_view_get_sort_by(fv);
     act = gtk_ui_manager_get_action(win->ui, "/menubar/ViewMenu/Sort/Asc");
     gtk_radio_action_set_current_value(GTK_RADIO_ACTION(act), fm_folder_view_get_sort_type(fv));
     act = gtk_ui_manager_get_action(win->ui, "/menubar/ViewMenu/Sort/ByName");
-    gtk_radio_action_set_current_value(GTK_RADIO_ACTION(act), fm_folder_view_get_sort_by(fv));
+    if(by == FM_FOLDER_MODEL_COL_DEFAULT)
+        by = FM_FOLDER_MODEL_COL_NAME;
+    gtk_radio_action_set_current_value(GTK_RADIO_ACTION(act), by);
 }
 
 static void update_view_menu(FmMainWin* win)
