@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm-0,5.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-10-11 00:18+0200\n"
-"PO-Revision-Date: 2012-10-21 12:25+0200\n"
+"PO-Revision-Date: 2012-10-21 12:45+0200\n"
 "Last-Translator: mbouzada <mbouzada@gmail.com>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
 "Language: gl\n"
@@ -742,6 +742,14 @@ msgid ""
 "F10: activate main menu\n"
 "Ctrl+L or Alt+D: jump focus to Path Bar"
 msgstr ""
+"Tab: cambiar entre Vista do cartafol -> Panel lateral -> Barra de "
+"ferramentas\n"
+"Maiús+Tab: cambiar entre Barra de ferramentas -> Panel lateral -> Vista do "
+"cartafol\n"
+"F6: cambiar entre Panel lateral <-> Vista do cartafol\n"
+"F8: dividir o foco entre o Panel lateral e a Vista do cartafol\n"
+"F10: activar o menú principal\n"
+"Ctrl+L ou Alt+D: cambiar o foco para a Barra de rutas"
 
 #: ../src/main-win.c:738
 msgid "Switch user command is not set."
@@ -769,7 +777,7 @@ msgstr "Nome da configuración do perfil"
 
 #: ../src/pcmanfm.c:75
 msgid "PROFILE"
-msgstr ""
+msgstr "PERFIL"
 
 #: ../src/pcmanfm.c:76
 msgid "Run PCManFM as a daemon"
@@ -794,50 +802,46 @@ msgstr "Abrir o diálogo de preferencias do escritorio"
 
 #: ../src/pcmanfm.c:83
 msgid "Use --desktop option only for one screen"
-msgstr ""
+msgstr "Utilizar a opción --desktop para unha soa pantalla"
 
 #: ../src/pcmanfm.c:84
-#, fuzzy
 msgid "Set desktop wallpaper from image FILE"
-msgstr "Configurar o fondo de escritorio"
+msgstr "Estabelecer o fondo de escritorio desde un FICHEIRO de imaxe"
 
 #: ../src/pcmanfm.c:84
 msgid "FILE"
-msgstr ""
+msgstr "FICHEIRO"
 
 #. don't translate list of modes in description, please
 #: ../src/pcmanfm.c:86
-#, fuzzy
 msgid "Set mode of desktop wallpaper. MODE=(color|stretch|fit|center|tile)"
 msgstr ""
-"Axuste o modo de fondo de escritorio. <mode>=(color|stretch|fit|center|tile)"
+"Axuste o modo de fondo de escritorio.MODO=(color|stretch|fit|center|tile)"
 
 #: ../src/pcmanfm.c:86
 msgid "MODE"
-msgstr ""
+msgstr "MODO"
 
 #: ../src/pcmanfm.c:87
-#, fuzzy
 msgid "Open Preferences dialog on the page N"
-msgstr "Abrir o diálogo de preferencias do escritorio"
+msgstr "Abrir o diálogo de preferencias na páxina N"
 
 #: ../src/pcmanfm.c:87
 msgid "N"
-msgstr ""
+msgstr "N"
 
 #: ../src/pcmanfm.c:88
-#, fuzzy
 msgid "Open new window"
-msgstr "Abrir nunha nova xanela"
+msgstr "Abrir unha nova xanela"
 
 #. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
 #: ../src/pcmanfm.c:90
 msgid "Window role for usage by window manager"
-msgstr ""
+msgstr "Estilo da xanela utilizado polo xestor de xanelas"
 
 #: ../src/pcmanfm.c:90
 msgid "ROLE"
-msgstr ""
+msgstr "ESTILO"
 
 #: ../src/pcmanfm.c:91
 msgid "[FILE1, FILE2,...]"
@@ -848,9 +852,8 @@ msgid "Terminal emulator is not set."
 msgstr "No se configurou o emulador de terminal."
 
 #: ../src/tab-page.c:50
-#, fuzzy
 msgid "Open in New T_ab"
-msgstr "Abrir nunha nova lapela"
+msgstr "Abrir nunha nova l_apela"
 
 #: ../src/tab-page.c:236
 #, c-format
