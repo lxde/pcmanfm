@@ -38,6 +38,8 @@
 #include "pref.h"
 #include "tab-page.h"
 
+#include "gseal-gtk-compat.h"
+
 #if GTK_CHECK_VERSION(3, 0, 0)
 static void fm_main_win_destroy(GtkWidget *object);
 #else
