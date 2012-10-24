@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm 0.9.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-10-11 00:18+0200\n"
-"PO-Revision-Date: 2012-09-03 22:19+0200\n"
+"PO-Revision-Date: 2012-10-24 16:13+0200\n"
 "Last-Translator: Steve <yorvik.ubunto@gmail.com>\n"
 "Language: en_GB\n"
 "MIME-Version: 1.0\n"
@@ -47,91 +47,76 @@ msgid "<b>Background</b>"
 msgstr "<b>Background</b>"
 
 #: ../data/ui/desktop-pref.glade.h:3
-#, fuzzy
 msgid "_Wallpaper:"
-msgstr "Wallpaper:"
+msgstr "_Wallpaper:"
 
 #: ../data/ui/desktop-pref.glade.h:4
 msgid "Please select an image file"
 msgstr "Please select an image file"
 
 #: ../data/ui/desktop-pref.glade.h:5
-#, fuzzy
 msgid "_Use the same wallpaper on all desktops"
 msgstr "Use the same wallpaper on all desktops"
 
 #: ../data/ui/desktop-pref.glade.h:6
-#, fuzzy
 msgid "_Background color:"
-msgstr "Background colour:"
+msgstr "_Background colour:"
 
 #: ../data/ui/desktop-pref.glade.h:7
-#, fuzzy
 msgid "Wallpaper _mode:"
-msgstr "Wallpaper mode:"
+msgstr "Wallpaper _mode:"
 
 #: ../data/ui/desktop-pref.glade.h:8
 msgid "<b>Text</b>"
 msgstr "<b>Text</b>"
 
 #: ../data/ui/desktop-pref.glade.h:9
-#, fuzzy
 msgid "_Font of label text:"
-msgstr "Label text font:"
+msgstr " Label text _Font:"
 
 #: ../data/ui/desktop-pref.glade.h:10
-#, fuzzy
 msgid "C_olor of label text:"
-msgstr "Colour of label text:"
+msgstr "Label text C_olour:"
 
 #: ../data/ui/desktop-pref.glade.h:11
-#, fuzzy
 msgid "Color of _shadow:"
-msgstr "Colour of shadow:"
+msgstr "_Shadow Colour:"
 
 #: ../data/ui/desktop-pref.glade.h:12
-#, fuzzy
 msgid "_Appearance"
-msgstr "Appearance"
+msgstr "_Appearance"
 
 #: ../data/ui/desktop-pref.glade.h:13
 msgid "<b>Show desktop icons</b>"
 msgstr "<b>Show desktop icons</b>"
 
 #: ../data/ui/desktop-pref.glade.h:14
-#, fuzzy
 msgid "_Show \"My Documents\" icon on desktop"
-msgstr "Show \"My Documents\" icon on desktop"
+msgstr "_Show \"My Documents\" icon on desktop"
 
 #: ../data/ui/desktop-pref.glade.h:15
-#, fuzzy
 msgid "Show \"_My Computer\" icon on desktop"
-msgstr "Show \"My Computer\" icon on desktop"
+msgstr "Show \"_My Computer\" icon on desktop"
 
 #: ../data/ui/desktop-pref.glade.h:16
-#, fuzzy
 msgid "Show \"_Trash Bin\" icon on desktop"
-msgstr "Show \"Rubbish Bin\" icon on desktop"
+msgstr "Show \"_Rubbish Bin\" icon on desktop"
 
 #: ../data/ui/desktop-pref.glade.h:17
-#, fuzzy
 msgid "S_how icons of volumes on desktop"
-msgstr "Show volume icons on desktop"
+msgstr "S_how icons of volumes on desktop"
 
 #: ../data/ui/desktop-pref.glade.h:18
-#, fuzzy
 msgid "_Desktop Icons"
-msgstr "Desktop Icons"
+msgstr "_Desktop Icons"
 
 #: ../data/ui/desktop-pref.glade.h:19
-#, fuzzy
 msgid "_Show menus provided by window managers when desktop is clicked"
-msgstr "Show menus provided by the window manager when desktop is clicked"
+msgstr "_Show menus provided by window manager when desktop is clicked"
 
 #: ../data/ui/desktop-pref.glade.h:20
-#, fuzzy
 msgid "Ad_vanced"
-msgstr "Advanced"
+msgstr "Ad_vanced"
 
 #: ../data/ui/desktop-pref.glade.h:21
 msgid "Fill with background color only"
@@ -174,62 +159,54 @@ msgid "<b>Behavior</b>"
 msgstr "<b>Behaviour</b>"
 
 #: ../data/ui/pref.glade.h:6
-#, fuzzy
 msgid "_Open files with single click"
-msgstr "Open files with single click"
+msgstr "_Open files with single click"
 
 #: ../data/ui/pref.glade.h:7
 msgid "Delay of auto-selection in single click mode (0 to disable)"
-msgstr ""
+msgstr "Delay of auto-selection in single click mode (0 to disable)"
 
 #: ../data/ui/pref.glade.h:8
-#, fuzzy
 msgid "Co_nfirm before deleting files"
-msgstr "Confirm before deleting files"
+msgstr "Co_nfirm before deleting files"
 
 #: ../data/ui/pref.glade.h:9
-#, fuzzy
 msgid "_Move deleted files to \"trash bin\" instead of erasing from disk"
-msgstr "Move deleted files to \"Rubbish Bin\" instead of erasing from disk"
+msgstr "_Move deleted files to \"Rubbish Bin\" instead of erasing from disk"
 
 #: ../data/ui/pref.glade.h:10
-#, fuzzy
 msgid "_Erase files on removable media instead of \"trash bin\" creation"
-msgstr "Erase files on removable media instead of \"trash bin\" creation"
+msgstr "_Erase files on removable media instead of \"Rubbish Bin\" creation"
 
+# Two Alt key options, Which one?
 #: ../data/ui/pref.glade.h:11
 #, fuzzy
 msgid "Confi_rm before moving files into \"trash bi_n\""
-msgstr "Confirm before moving files into \"rubbish bin\""
+msgstr "Confi_rm before moving files into \"Rubbish Bi_n\""
 
 #: ../data/ui/pref.glade.h:12
-#, fuzzy
 msgid "_Bookmarks:"
-msgstr "Bookmarks:"
+msgstr "_Bookmarks:"
 
 #: ../data/ui/pref.glade.h:13
-#, fuzzy
 msgid "Defaul_t drop action:"
-msgstr "Default drop action:"
+msgstr "Defaul_t drop action:"
 
 #: ../data/ui/pref.glade.h:14
-#, fuzzy
 msgid "_Unfold tab when files are dragged onto tab button"
-msgstr "Unfold tab when files are dragged onto tab button"
+msgstr "_Unfold tab when files are dragged onto tab button"
 
 #: ../data/ui/pref.glade.h:15
 msgid "<b>Default View</b>"
 msgstr "<b>Default View</b>"
 
 #: ../data/ui/pref.glade.h:16
-#, fuzzy
 msgid "Vie_w Mode:"
-msgstr "View Mode:"
+msgstr "Vie_w Mode:"
 
 #: ../data/ui/pref.glade.h:17
-#, fuzzy
 msgid "_General"
-msgstr "General"
+msgstr "_General"
 
 #: ../data/ui/pref.glade.h:18
 msgid "<b>Icons</b>"
