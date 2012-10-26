@@ -2079,12 +2079,28 @@ static gboolean on_leave_notify(GtkWidget* w, GdkEventCrossing *evt)
     return TRUE;
 }
 
+static gboolean get_focused_item(FmDesktopItem* focus, GtkTreeModel* model, GtkTreeIter* it)
+{
+    FmDesktopItem* item;
+    if(gtk_tree_model_get_iter_first(model, it)) do
+    {
+        item = fm_folder_model_get_item_userdata(FM_FOLDER_MODEL(model), it);
+        if(item == focus)
+            return item->is_selected;
+    }
+    while(gtk_tree_model_iter_next(model, it));
+    return FALSE;
+}
+
 static gboolean on_key_press(GtkWidget* w, GdkEventKey* evt)
 {
     FmDesktop* desktop = (FmDesktop*)w;
     FmDesktopItem* item;
     int modifier = (evt->state & gtk_accelerator_get_default_mod_mask());
     FmPathList* sels;
+    GtkTreeModel* model;
+    GtkTreePath* tp = NULL;
+    GtkTreeIter it;
     switch (evt->keyval)
     {
     case GDK_KEY_Left:
@@ -2156,6 +2172,21 @@ static gboolean on_key_press(GtkWidget* w, GdkEventKey* evt)
         {
             fm_rename_file(GTK_WINDOW(desktop), fm_path_list_peek_head(sels));
             fm_path_list_unref(sels);
+        }
+        break;
+    case GDK_KEY_Return:
+    case GDK_KEY_ISO_Enter:
+    case GDK_KEY_KP_Enter:
+        if(modifier == 0 && desktop->focus)
+        {
+            model = GTK_TREE_MODEL(desktop->model);
+            if(get_focused_item(desktop->focus, model, &it))
+            {
+                tp = gtk_tree_model_get_path(model, &it);
+                fm_folder_view_item_clicked(FM_FOLDER_VIEW(desktop), tp, FM_FV_ACTIVATED);
+                if(tp)
+                    gtk_tree_path_free(tp);
+            }
         }
         break;
     }
