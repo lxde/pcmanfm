@@ -774,6 +774,7 @@ static void on_open_as_root(GtkAction* act, FmMainWin* win)
         {
             fm_show_error(GTK_WINDOW(win), NULL, err->message);
             g_error_free(err);
+            fm_edit_preference(GTK_WINDOW(win), PREF_ADVANCED);
         }
         g_list_free(uris);
         g_free(uri);
