@@ -307,7 +307,7 @@ gboolean pcmanfm_run(gint screen_num)
                 {
                     if(app_config->wallpaper)
                         g_free(app_config->wallpaper);
-                    app_config->wallpaper = g_strdup(set_wallpaper);
+                    app_config->wallpaper = set_wallpaper;
                     if(! wallpaper_mode) /* if wallpaper mode is not specified */
                     {
                         /* do not use solid color mode; otherwise wallpaper won't be shown. */
@@ -316,6 +316,9 @@ gboolean pcmanfm_run(gint screen_num)
                     }
                     wallpaper_changed = TRUE;
                 }
+                else
+                    g_free(set_wallpaper);
+                set_wallpaper = NULL;
             }
 
             if(wallpaper_mode)
