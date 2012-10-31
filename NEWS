@@ -1,4 +1,4 @@
-Changes on 1.0.2 since 1.0.1:
+Changes on 1.1.0 since 1.0.1:
 
 * Corrected underscores (mnemonics) on every menu and dialog.
 
@@ -22,6 +22,11 @@ Changes on 1.0.2 since 1.0.1:
 
 * The items which cannot act (such as "Copy" when no items selected) now
     are disabled in menu and toolbar.
+
+* Experimental implementation of option --one-screen to apply --desktop
+    option only for one (current) X-Screen.
+
+* Implemented side pane hiding, bound to 'F9' key press.
 
 
 Changes on 1.0.1 since 1.0.0:
