@@ -41,6 +41,9 @@ G_BEGIN_DECLS
 #define GDK_KEY_Down                            GDK_Down
 #define GDK_KEY_space                           GDK_space
 #define GDK_KEY_F2                              GDK_F2
+#define GDK_KEY_Return                          GDK_Return
+#define GDK_KEY_ISO_Enter                       GDK_ISO_Enter
+#define GDK_KEY_KP_Enter                        GDK_KP_Enter
 #endif
 
 #if !GTK_CHECK_VERSION (2, 20, 0)
