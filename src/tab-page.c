@@ -433,6 +433,11 @@ static void update_files_popup(FmFolderView* fv, GtkWindow* win,
                                GtkUIManager* ui, GtkActionGroup* act_grp,
                                FmFileInfoList* files)
 {
+    GList* l;
+
+    for(l = fm_file_info_list_peek_head_link(files); l; l = l->next)
+        if(!fm_file_info_is_dir(l->data))
+            return; /* actions are valid only if all selected are directories */
     gtk_action_group_set_translation_domain(act_grp, NULL);
     gtk_action_group_add_actions(act_grp, folder_menu_actions,
                                  G_N_ELEMENTS(folder_menu_actions), win);
