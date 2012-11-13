@@ -65,6 +65,14 @@ open \fIdirectories\fP in new window
 .B \-\^\-role
 set X-role for window (only if \fB-n\fP is used)
 .TP
+.BI \-\^\-wallpaper-mode= mode
+Set mode of desktop wallpaper, \fImode\fP is:
+ \fBcolor\fP (fill with solid color),
+ \fBstretch\fP (stretch to fill entire screen),
+ \fBfit\fP (stretch to fit screen size),
+ \fBcenter\fP (place on center of screen), or
+ \fBtile\fP (tile to fill entire screen)
+.TP
 .BI \-w " file" "\fR,\fP \-\^\-set-wallpaper=" file
 set desktop wallpaper from image \fIfile\fP
 .TP
@@ -73,6 +81,28 @@ open preferences dialog on page \fIn\fP
 .TP
 .I directories
 directories to open
+.SH DESKTOP MANAGEMENT
+The PCMan File Manager can manage your desktop. That includes drawing some
+background on it and showing icons of Desktop folder. To activate the desktop
+management the \fBpcmanfm\fP should be executed with option \fB--desktop\fP.
+Other option that affects this mode is \fB--one-screen\fP. Change running
+desktop manager parameters you can by executing \fBpcmanfm\fP with option
+\fB--desktop-pref\fP which opens window with preferences or using command
+line parameters for options \fB--set-wallpaper\fP or \fB--wallpaper-mode\fP.
+Execution \fBpcmanfm --desktop-off\fP terminates desktop management.
+
+While \fBpcmanfm\fP manages desktop it displays icons on desktop. Behavior
+of icons resembles folder view in main window of \fBpcmanfm\fP but icons on
+desktop can "remember" their position. If you have two or more monitors then
+desktop background and set of icons will be shown on each of them. Icons
+positions will be remembered individually for each of monitors.
+.SH ENVIRONMENT
+.PD 0
+.TP
+.I XDG_CURRENT_DESKTOP
+The current desktop environment. This variable affects items which will be
+shown in menu://applications/ folder.
+
 .SH FILES
 .PD 0
 .TP
@@ -84,6 +114,7 @@ The main configuration file
 .TP
 .I ~/.config/pcmanfm/default/desktop-items-0.conf
 The desktop items layout for screen 0 (primary screen)
+
 .SH AUTHOR
 PCManFM is named after its author's nickname on the internet, PCMan. It was
 written by Hong Jen Yee <pcman.tw@gmail.com>.
