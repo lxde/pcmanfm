@@ -903,7 +903,7 @@ static void on_close_tab(GtkAction* act, FmMainWin* win)
 
 static void on_go(GtkAction* act, FmMainWin* win)
 {
-    fm_main_win_chdir(win, fm_path_entry_get_path(win->location));
+    fm_main_win_chdir_by_name(win, gtk_entry_get_text(GTK_ENTRY(win->location)));
 }
 
 static void _update_hist_buttons(FmMainWin* win)
