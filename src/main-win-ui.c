@@ -177,7 +177,7 @@ static GtkActionEntry main_win_actions[]=
     {"Reload2", NULL, NULL, "<Ctrl>R", NULL, G_CALLBACK(on_reload)},
     /* for popup menu - these entries exist in FmFolderView popup still */
     {"NewFolder", "folder", N_("Folder"), "<Ctrl><Shift>N", NULL, G_CALLBACK(bounce_action)},
-    {"NewBlank", "text-x-generic", N_("Blank File"), "<Ctrl><Alt>N", NULL, G_CALLBACK(bounce_action)}
+    {"NewBlank", "text-x-generic", N_("Blank File"), NULL, NULL, G_CALLBACK(bounce_action)}
 };
 
 /* main_win_toggle_actions+main_win_mode_actions - see 'ViewMenu' for mnemonics */
@@ -206,10 +206,10 @@ static GtkRadioActionEntry main_win_sort_type_actions[]=
 
 static GtkRadioActionEntry main_win_sort_by_actions[]=
 {
-    {"ByName", NULL, N_("By _Name"), "<Ctrl>F1", NULL, COL_FILE_NAME},
-    {"ByMTime", NULL, N_("By _Modification Time"), "<Ctrl>F2", NULL, COL_FILE_MTIME},
-    {"BySize", NULL, N_("By _Size"), "<Ctrl>F3", NULL, COL_FILE_SIZE},
-    {"ByType", NULL, N_("By File _Type"), "<Ctrl>F4", NULL, COL_FILE_DESC}
+    {"ByName", NULL, N_("By _Name"), NULL, NULL, COL_FILE_NAME},
+    {"ByMTime", NULL, N_("By _Modification Time"), NULL, NULL, COL_FILE_MTIME},
+    {"BySize", NULL, N_("By _Size"), NULL, NULL, COL_FILE_SIZE},
+    {"ByType", NULL, N_("By File _Type"), NULL, NULL, COL_FILE_DESC}
 };
 
 static GtkRadioActionEntry main_win_side_bar_mode_actions[]=
