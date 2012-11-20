@@ -1466,6 +1466,8 @@ static FmDesktopItem* get_nearest_item(FmDesktop* desktop, FmDesktopItem* item, 
 
     if(!gtk_tree_model_get_iter_first(model, &it))
         return NULL;
+    if(!item) /* there is no focused item yet, select first one then */
+        return fm_folder_model_get_item_userdata(desktop->model, &it);
 
     min_x_dist = min_y_dist = (guint)-1;
     item2 = NULL;
