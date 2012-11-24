@@ -417,8 +417,8 @@ static void layout_items(FmDesktop* self)
             else
             {
 _next_position:
-                item->x = x;
-                item->y = y;
+                item->x = self->working_area.x + x;
+                item->y = self->working_area.y + y;
                 calc_item_size(self, item, icon);
                 y += self->cell_h;
                 if(y > bottom)
@@ -448,8 +448,8 @@ _next_position:
             else
             {
 _next_position_rtl:
-                item->x = x;
-                item->y = y;
+                item->x = self->working_area.x + x;
+                item->y = self->working_area.y + y;
                 calc_item_size(self, item, icon);
                 y += self->cell_h;
                 if(y > bottom)
