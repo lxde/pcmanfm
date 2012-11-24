@@ -138,8 +138,12 @@ static void fm_main_win_class_init(FmMainWinClass *klass)
 static gboolean idle_focus_view(gpointer user_data)
 {
     FmMainWin* win = (FmMainWin*)user_data;
+    /* window might be destroyed already */
+    if(g_source_is_destroyed(g_main_current_source()))
+        return FALSE;
     if(win->folder_view)
         gtk_widget_grab_focus(GTK_WIDGET(win->folder_view));
+    win->idle_handler = 0;
     return FALSE;
 }
 
