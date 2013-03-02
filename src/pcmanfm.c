@@ -86,7 +86,7 @@ static GOptionEntry opt_entries[] =
     { "one-screen", '\0', 0, G_OPTION_ARG_NONE, &one_screen, N_("Use --desktop option only for one screen"), NULL },
     { "set-wallpaper", 'w', 0, G_OPTION_ARG_FILENAME, &set_wallpaper, N_("Set desktop wallpaper from image FILE"), N_("FILE") },
                     /* don't translate list of modes in description, please */
-    { "wallpaper-mode", '\0', 0, G_OPTION_ARG_STRING, &wallpaper_mode, N_("Set mode of desktop wallpaper. MODE=(color|stretch|fit|center|tile)"), N_("MODE") },
+    { "wallpaper-mode", '\0', 0, G_OPTION_ARG_STRING, &wallpaper_mode, N_("Set mode of desktop wallpaper. MODE=(color|stretch|fit|crop|center|tile)"), N_("MODE") },
     { "show-pref", '\0', 0, G_OPTION_ARG_INT, &show_pref, N_("Open Preferences dialog on the page N"), N_("N") },
     { "new-win", 'n', 0, G_OPTION_ARG_NONE, &new_win, N_("Open new window"), NULL },
 #if FM_CHECK_VERSION(1, 0, 2)
@@ -97,7 +97,7 @@ static GOptionEntry opt_entries[] =
     { NULL }
 };
 
-static const char* valid_wallpaper_modes[] = {"color", "stretch", "fit", "center", "tile"};
+static const char* valid_wallpaper_modes[] = {"color", "stretch", "fit", "crop", "center", "tile"};
 
 static gboolean pcmanfm_run(gint screen_num);
 

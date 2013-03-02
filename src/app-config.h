@@ -49,6 +49,7 @@ typedef enum
     FM_WP_COLOR,
     FM_WP_STRETCH,
     FM_WP_FIT,
+    FM_WP_CROP,
     FM_WP_CENTER,
     FM_WP_TILE
 }FmWallpaperMode;

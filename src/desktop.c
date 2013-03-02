@@ -2238,11 +2238,14 @@ static void update_background(FmDesktop* desktop, int is_it)
             pix = scaled;
             break;
         case FM_WP_FIT:
+        case FM_WP_CROP:
             if(dest_w != src_w || dest_h != src_h)
             {
                 gdouble w_ratio = (float)dest_w / src_w;
                 gdouble h_ratio = (float)dest_h / src_h;
-                gdouble ratio = MIN(w_ratio, h_ratio);
+                gdouble ratio = app_config->wallpaper_mode == FM_WP_FIT
+                    ? MIN(w_ratio, h_ratio)
+                    : MAX(w_ratio, h_ratio);
                 if(ratio != 1.0)
                 {
                     src_w *= ratio;
