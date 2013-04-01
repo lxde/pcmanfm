@@ -183,7 +183,7 @@ int main(int argc, char** argv)
 #endif
 
     /* initialize GTK+ and parse the command line arguments */
-    if(G_UNLIKELY(!gtk_init_with_args(&argc, &argv, "", opt_entries, GETTEXT_PACKAGE, &err)))
+    if(G_UNLIKELY(!gtk_init_with_args(&argc, &argv, " ", opt_entries, GETTEXT_PACKAGE, &err)))
     {
         g_printf("%s\n", err->message);
         g_error_free(err);

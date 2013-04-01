@@ -498,7 +498,9 @@ static void fm_tab_page_init(FmTabPage *page)
     /* create tab label */
     tab_label = (FmTabLabel*)fm_tab_label_new("");
     gtk_label_set_max_width_chars(tab_label->label, app_config->max_tab_chars);
+#if ! GTK_CHECK_VERSION(3, 0, 0)
     gtk_label_set_ellipsize(tab_label->label, PANGO_ELLIPSIZE_END);
+#endif
     page->tab_label = tab_label;
 
     g_signal_connect(page->folder_view, "sel-changed",
