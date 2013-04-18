@@ -2291,10 +2291,11 @@ static gboolean on_drag_motion (GtkWidget *dest_widget,
     if(desktop->drop_hilight != item)
     {
         FmDesktopItem* old_drop = desktop->drop_hilight;
-        desktop->drop_hilight = item;
+        if(action) /* don't hilight non-dropable item, see #3591767 */
+            desktop->drop_hilight = item;
         if(old_drop)
             redraw_item(desktop, old_drop);
-        if(item)
+        if(item && action)
             redraw_item(desktop, item);
     }
 
