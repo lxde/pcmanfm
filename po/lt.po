@@ -7,10 +7,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: pcmanfm\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-11 00:18+0200\n"
-"PO-Revision-Date: 2012-10-12 08:03+0300\n"
+"POT-Creation-Date: 2013-04-02 19:03+0300\n"
+"PO-Revision-Date: 2013-04-02 19:05+0300\n"
 "Last-Translator: Algimantas Margevičius <margevicius.algimantas@gmail.com>\n"
 "Language-Team: Lietuvių <>\n"
 "Language: lt\n"
@@ -18,8 +18,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
-"%100<10 || n%100>=20) ? 1 : 2)\n"
-"X-Generator: Gtranslator 2.91.5\n"
+"%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Poedit 1.5.4\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2012"
@@ -649,8 +649,8 @@ msgid "Folder"
 msgstr "Aplanką"
 
 #: ../src/main-win-ui.c:180
-msgid "Blank File"
-msgstr "Tuščią failą"
+msgid "Empty File"
+msgstr "Tuščias failas"
 
 #: ../src/main-win-ui.c:186
 msgid "Show Hidde_n"
@@ -677,12 +677,12 @@ msgid "_Icon View"
 msgstr "_Piktogramos"
 
 #: ../src/main-win-ui.c:196
-msgid "_Compact View"
-msgstr "_Kompaktiškas"
-
-#: ../src/main-win-ui.c:197
 msgid "_Thumbnail View"
 msgstr "_Miniatiūros"
+
+#: ../src/main-win-ui.c:197
+msgid "_Compact View"
+msgstr "_Kompaktiškas"
 
 #: ../src/main-win-ui.c:198
 msgid "Detailed _List View"
@@ -716,15 +716,15 @@ msgstr "Aplankų medis"
 msgid "Remote"
 msgstr "Nutolęs"
 
-#: ../src/main-win.c:529
+#: ../src/main-win.c:546
 msgid "You are in super user mode"
 msgstr "Jūs esate super naudotojo režime"
 
-#: ../src/main-win.c:700 ../src/main-win.c:708
+#: ../src/main-win.c:717 ../src/main-win.c:725
 msgid "Keyboard navigation"
 msgstr "Naršymas klaviatūra"
 
-#: ../src/main-win.c:702
+#: ../src/main-win.c:719
 msgid ""
 "Tab: cycle focus Folder View -> Side Pane -> Tools Bar\n"
 "Shift+Tab: cycle focus Tools Bar -> Side Pane -> Folder View\n"
@@ -741,11 +741,11 @@ msgstr ""
 "F10: aktyvuoti pagrindinį meniu\n"
 "Ctrl+L ar Alt+D: peršokti į Kelio juostą"
 
-#: ../src/main-win.c:738
+#: ../src/main-win.c:755
 msgid "Switch user command is not set."
 msgstr "Nenustatyta naudotojo perjungimo komanda."
 
-#: ../src/main-win.c:1099
+#: ../src/main-win.c:1117
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -756,7 +756,7 @@ msgstr ""
 "„%s“\n"
 "Įveskite naujos žymelės pavadinimą:"
 
-#: ../src/main-win.c:1103
+#: ../src/main-win.c:1121
 msgid "Add to Bookmarks"
 msgstr "Įtraukti į žymeles"
 
@@ -836,7 +836,7 @@ msgstr "ROLĖ"
 msgid "[FILE1, FILE2,...]"
 msgstr "[FAILAS1, FAILAS2,...]"
 
-#: ../src/pcmanfm.c:526
+#: ../src/pcmanfm.c:529
 msgid "Terminal emulator is not set."
 msgstr "Nenustatytas terminalo emuliatorius."
 
@@ -852,12 +852,12 @@ msgstr[0] "pasirinktas %d elementas"
 msgstr[1] "pasirinkti %d elementai"
 msgstr[2] "pasirinkta %d elementų"
 
-#: ../src/tab-page.c:354
+#: ../src/tab-page.c:363
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Laisvos vietos: %s (Iš viso: %s )"
 
-#: ../src/tab-page.c:374
+#: ../src/tab-page.c:383
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
@@ -865,7 +865,7 @@ msgstr[0] "%d elementas"
 msgstr[1] "%d elementai"
 msgstr[2] "%d elementų"
 
-#: ../src/tab-page.c:375
+#: ../src/tab-page.c:384
 #, c-format
 msgid " (%d hidden)"
 msgid_plural " (%d hidden)"
@@ -888,6 +888,9 @@ msgstr "Naršykite failų sistemą ir tvarkykite failus"
 #: ../data/pcmanfm-desktop-pref.desktop.in.h:2
 msgid "Change desktop wallpapers and behavior of desktop manager"
 msgstr "Keiskite darbastalio foną ir darbastalio tvarkyklės elgseną"
+
+#~ msgid "Blank File"
+#~ msgstr "Tuščią failą"
 
 #~ msgid "Create _New..."
 #~ msgstr "Sukurti _naują..."
