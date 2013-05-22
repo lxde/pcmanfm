@@ -2,7 +2,7 @@
  *      desktop.c
  *
  *      Copyright 2010 - 2012 Hong Jen Yee (PCMan) <pcman.tw@gmail.com>
- *      Copyright 2012 Andriy Grytsenko (LStranger) <andrej@rep.kiev.ua>
+ *      Copyright 2012-2013 Andriy Grytsenko (LStranger) <andrej@rep.kiev.ua>
  *
  *      This program is free software; you can redistribute it and/or modify
  *      it under the terms of the GNU General Public License as published by
@@ -2281,7 +2281,7 @@ static gboolean on_drag_motion (GtkWidget *dest_widget,
     {
         fm_dnd_dest_set_dest_file(desktop->dnd_dest,
                                   item ? item->fi : fm_folder_get_info(desktop_folder));
-        target = gtk_drag_dest_find_target(dest_widget, drag_context, NULL);
+        target = fm_dnd_dest_find_target(desktop->dnd_dest, drag_context);
         if(target != GDK_NONE &&
            fm_dnd_dest_is_target_supported(desktop->dnd_dest, target))
             action = fm_dnd_dest_get_default_action(desktop->dnd_dest, drag_context, target);
