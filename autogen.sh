@@ -5,15 +5,17 @@ AUTOMAKE=${AUTOMAKE:-automake}
 AM_INSTALLED_VERSION=$($AUTOMAKE --version | sed -e '2,$ d' -e 's/.* \([0-9]*\.[0-9]*\).*/\1/')
 
 # FIXME: we need a better way for version check later.
-if [ "$AM_INSTALLED_VERSION" != "1.10" \
-    -a "$AM_INSTALLED_VERSION" != "1.11" \
-    -a "$AM_INSTALLED_VERSION" != "1.12" ];then
+case "$AM_INSTALLED_VERSION" in
+    1.1[0-9])
+	;;
+    *)
 	echo
-	echo "You must have automake > 1.10 or 1.11 installed."
+	echo "You must have automake 1.10 or newer installed."
 	echo "Install the appropriate package for your distribution,"
 	echo "or get the source tarball at http://ftp.gnu.org/gnu/automake/"
 	exit 1
-fi
+	;;
+esac
 
 set -x
 
