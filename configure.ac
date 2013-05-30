@@ -10,7 +10,6 @@ AC_CONFIG_HEADERS([config.h])
 # Checks for programs.
 AC_ISC_POSIX
 AC_PROG_CC
-AM_PROG_CC_STDC
 AM_PROG_CC_C_O
 
 # Checks for header files.
