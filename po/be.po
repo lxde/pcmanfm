@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-11 00:18+0200\n"
+"POT-Creation-Date: 2013-06-01 01:02+0300\n"
 "PO-Revision-Date: 2012-10-12 01:45+0200\n"
 "Last-Translator: Мікалай <crom-a@tut.by>\n"
 "Language-Team: Belarusian <i18n@mova.org>\n"
@@ -15,8 +15,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
-"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Pootle 2.0.5\n"
 
 #: ../data/ui/about.glade.in.h:1
@@ -41,321 +41,207 @@ msgstr ""
 "Анік Кіна <son_of_the_photographer@tut.by>\n"
 "Мікалай Удодаў <crom-a@tut.by>, 2011, 2012."
 
-#: ../data/ui/desktop-pref.glade.h:1 ../src/desktop-ui.c:34
-#: ../data/pcmanfm-desktop-pref.desktop.in.h:1
-msgid "Desktop Preferences"
-msgstr "Настаўленні працоўнай прасторы"
-
-#: ../data/ui/desktop-pref.glade.h:2
+#: ../data/ui/desktop-pref.glade.h:1
 msgid "<b>Background</b>"
 msgstr "<b>Фон</b>"
 
-#: ../data/ui/desktop-pref.glade.h:3
-msgid "_Wallpaper:"
-msgstr "_Шпалеры:"
-
-#: ../data/ui/desktop-pref.glade.h:4
-msgid "Please select an image file"
-msgstr "Калі ласка, выберыце выяву"
-
-#: ../data/ui/desktop-pref.glade.h:5
-msgid "_Use the same wallpaper on all desktops"
-msgstr "_Адзіныя шпалеры на ўсіх працоўных прасторах"
-
-#: ../data/ui/desktop-pref.glade.h:6
-msgid "_Background color:"
-msgstr "_Колер фону:"
-
-#: ../data/ui/desktop-pref.glade.h:7
-msgid "Wallpaper _mode:"
-msgstr "_Рэжым шпалер:"
-
-#: ../data/ui/desktop-pref.glade.h:8
-msgid "<b>Text</b>"
-msgstr "<b>Тэкст</b>"
-
-#: ../data/ui/desktop-pref.glade.h:9
-msgid "_Font of label text:"
-msgstr "Шрыфт тэксту зн_ачкоў:"
-
-#: ../data/ui/desktop-pref.glade.h:10
-msgid "C_olor of label text:"
-msgstr "Колер тэксту значко_ў:"
-
-#: ../data/ui/desktop-pref.glade.h:11
-msgid "Color of _shadow:"
-msgstr "Колер _ценю:"
-
-#: ../data/ui/desktop-pref.glade.h:12
-msgid "_Appearance"
-msgstr "_Выгляд"
-
-#: ../data/ui/desktop-pref.glade.h:13
+#: ../data/ui/desktop-pref.glade.h:2
 msgid "<b>Show desktop icons</b>"
 msgstr "<b>Паказваць значкі на працоўнай прасторы</b>"
 
-#: ../data/ui/desktop-pref.glade.h:14
-msgid "_Show \"My Documents\" icon on desktop"
-msgstr "Паказваць на працоўнай прастор_ы значок \"Дакументы\""
+#: ../data/ui/desktop-pref.glade.h:3
+msgid "<b>Text</b>"
+msgstr "<b>Тэкст</b>"
 
-#: ../data/ui/desktop-pref.glade.h:15
-msgid "Show \"_My Computer\" icon on desktop"
-msgstr "Паказваць на працоўнай прасторы значок \"_Камп'ютар\""
+#: ../data/ui/desktop-pref.glade.h:4
+msgid "Ad_vanced"
+msgstr "Дадатк_ова"
 
-#: ../data/ui/desktop-pref.glade.h:16
-msgid "Show \"_Trash Bin\" icon on desktop"
-msgstr "Паказваць на працоўнай прасторы значок \"См_етніца\""
+#: ../data/ui/desktop-pref.glade.h:5
+msgid "C_olor of label text:"
+msgstr "Колер тэксту значко_ў:"
 
-#: ../data/ui/desktop-pref.glade.h:17
+#: ../data/ui/desktop-pref.glade.h:6 ../data/ui/pref.glade.h:15
+msgid "Center on the screen"
+msgstr "Па цэнтру экрана"
+
+#: ../data/ui/desktop-pref.glade.h:7
+msgid "Color of _shadow:"
+msgstr "Колер _ценю:"
+
+#: ../data/ui/desktop-pref.glade.h:8 ../src/desktop-ui.c:34
+#: ../data/pcmanfm-desktop-pref.desktop.in.h:2
+msgid "Desktop Preferences"
+msgstr "Настаўленні працоўнай прасторы"
+
+#: ../data/ui/desktop-pref.glade.h:9
+msgid "Fill with background color only"
+msgstr "Запоўніць адным колерам фону"
+
+#: ../data/ui/desktop-pref.glade.h:10
+msgid "Please select an image file"
+msgstr "Калі ласка, выберыце выяву"
+
+#: ../data/ui/desktop-pref.glade.h:11
 msgid "S_how icons of volumes on desktop"
 msgstr "Паказваць на п_рацоўнай прасторы значкі дыскаў"
 
+#: ../data/ui/desktop-pref.glade.h:12
+msgid "Show \"_My Computer\" icon on desktop"
+msgstr "Паказваць на працоўнай прасторы значок \"_Камп'ютар\""
+
+#: ../data/ui/desktop-pref.glade.h:13
+msgid "Show \"_Trash Bin\" icon on desktop"
+msgstr "Паказваць на працоўнай прасторы значок \"См_етніца\""
+
+#: ../data/ui/desktop-pref.glade.h:14 ../data/ui/pref.glade.h:46
+msgid "Stretch to fill the entire screen"
+msgstr "Расцягнуць на ўвесь экран"
+
+#: ../data/ui/desktop-pref.glade.h:15 ../data/ui/pref.glade.h:47
+msgid "Stretch to fit the screen"
+msgstr "Расцягнуць па памеру экрана"
+
+#: ../data/ui/desktop-pref.glade.h:16 ../data/ui/pref.glade.h:49
+msgid "Tile the image to fill the entire screen"
+msgstr "Забрукаваць малюнкам увесь экран"
+
+#: ../data/ui/desktop-pref.glade.h:17
+msgid "Wallpaper _mode:"
+msgstr "_Рэжым шпалер:"
+
 #: ../data/ui/desktop-pref.glade.h:18
+msgid "_Appearance"
+msgstr "_Выгляд"
+
+#: ../data/ui/desktop-pref.glade.h:19
+msgid "_Background color:"
+msgstr "_Колер фону:"
+
+#: ../data/ui/desktop-pref.glade.h:20
 msgid "_Desktop Icons"
 msgstr "_Значкі працоўнай прасторы"
 
-#: ../data/ui/desktop-pref.glade.h:19
+#: ../data/ui/desktop-pref.glade.h:21
+msgid "_Font of label text:"
+msgstr "Шрыфт тэксту зн_ачкоў:"
+
+#: ../data/ui/desktop-pref.glade.h:22
+msgid "_Show \"My Documents\" icon on desktop"
+msgstr "Паказваць на працоўнай прастор_ы значок \"Дакументы\""
+
+#: ../data/ui/desktop-pref.glade.h:23
 msgid "_Show menus provided by window managers when desktop is clicked"
 msgstr ""
 "Па націсканні на працоўнай прастор_ы паказваць кантэкстнае меню аконнага "
 "менеджара"
 
-#: ../data/ui/desktop-pref.glade.h:20
-msgid "Ad_vanced"
-msgstr "Дадатк_ова"
+#: ../data/ui/desktop-pref.glade.h:24
+msgid "_Use the same wallpaper on all desktops"
+msgstr "_Адзіныя шпалеры на ўсіх працоўных прасторах"
 
-#: ../data/ui/desktop-pref.glade.h:21
-msgid "Fill with background color only"
-msgstr "Запоўніць адным колерам фону"
-
-#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:69
-msgid "Stretch to fill the entire screen"
-msgstr "Расцягнуць на ўвесь экран"
-
-#: ../data/ui/desktop-pref.glade.h:23 ../data/ui/pref.glade.h:70
-msgid "Stretch to fit the screen"
-msgstr "Расцягнуць па памеру экрана"
-
-#: ../data/ui/desktop-pref.glade.h:24 ../data/ui/pref.glade.h:71
-msgid "Center on the screen"
-msgstr "Па цэнтру экрана"
-
-#: ../data/ui/desktop-pref.glade.h:25 ../data/ui/pref.glade.h:72
-msgid "Tile the image to fill the entire screen"
-msgstr "Забрукаваць малюнкам увесь экран"
+#: ../data/ui/desktop-pref.glade.h:25
+msgid "_Wallpaper:"
+msgstr "_Шпалеры:"
 
 #: ../data/ui/pref.glade.h:1
-msgid "Opened in Current Tab"
-msgstr "Адкрываць у бягучай картцы"
+msgid "<b>Auto-mount</b>"
+msgstr "<b>Аўтамацаванне</b>"
 
 #: ../data/ui/pref.glade.h:2
-msgid "Opened in New Tab"
-msgstr "Адкрываць у новай картцы"
-
-#: ../data/ui/pref.glade.h:3
-msgid "Opened in New Window"
-msgstr "Адкрываць у новым акне"
-
-#: ../data/ui/pref.glade.h:4
-msgid "Preferences"
-msgstr "Настаўленні"
-
-#: ../data/ui/pref.glade.h:5
 msgid "<b>Behavior</b>"
 msgstr "<b>Паводзіны</b>"
 
-#: ../data/ui/pref.glade.h:6
-msgid "_Open files with single click"
-msgstr "Адкрываць файлы адзін_очным націсканнем"
-
-#: ../data/ui/pref.glade.h:7
-msgid "Delay of auto-selection in single click mode (0 to disable)"
-msgstr ""
-"Затрымка аўтавыбару ў рэжыме адзіночнага націскання (0 - адключыць "
-"аўтавыбар)"
-
-#: ../data/ui/pref.glade.h:8
-msgid "Co_nfirm before deleting files"
-msgstr "Па_цвярджаць сціранне файлаў"
-
-#: ../data/ui/pref.glade.h:9
-msgid "_Move deleted files to \"trash bin\" instead of erasing from disk"
-msgstr "Перамяшчац_ь сцёртыя файлы ў \"Сметніцу\" замест сцірання з дыска"
-
-#: ../data/ui/pref.glade.h:10
-msgid "_Erase files on removable media instead of \"trash bin\" creation"
-msgstr "Сціраць файлы з р_ухомых носнікаў замест стварэння \"Сметніцы\""
-
-#: ../data/ui/pref.glade.h:11
-msgid "Confi_rm before moving files into \"trash bi_n\""
-msgstr "Пацвя_рджаць перамяшчэнне файлаў у \"Сметніцу\""
-
-#: ../data/ui/pref.glade.h:12
-msgid "_Bookmarks:"
-msgstr "Закладк_і:"
-
-#: ../data/ui/pref.glade.h:13
-msgid "Defaul_t drop action:"
-msgstr "Базавае дз_еянне пры перацягванні:"
-
-#: ../data/ui/pref.glade.h:14
-msgid "_Unfold tab when files are dragged onto tab button"
-msgstr "Раз_гортваць картку пры перацягванні файлаў на кнопку карткі"
-
-#: ../data/ui/pref.glade.h:15
+#: ../data/ui/pref.glade.h:3
 msgid "<b>Default View</b>"
 msgstr "<b>Пачатковы выгляд</b>"
 
-#: ../data/ui/pref.glade.h:16
-msgid "Vie_w Mode:"
-msgstr "Рэ_жым прагляду:"
+#: ../data/ui/pref.glade.h:4
+msgid "<b>Directories Tree</b>"
+msgstr "<b>Дрэва каталогаў</b>"
 
-#: ../data/ui/pref.glade.h:17
-msgid "_General"
-msgstr "_Агульныя"
-
-#: ../data/ui/pref.glade.h:18
+#: ../data/ui/pref.glade.h:5
 msgid "<b>Icons</b>"
 msgstr "<b>Значкі</b>"
 
+#: ../data/ui/pref.glade.h:6
+msgid "<b>Programs</b>"
+msgstr "<b>Праграмы</b>"
+
+#: ../data/ui/pref.glade.h:7
+msgid "<b>Show in Places:</b>"
+msgstr "<b>Паказваць на месцах:</b>"
+
+#: ../data/ui/pref.glade.h:8
+msgid "<b>User Interface</b>"
+msgstr "<b>Інтэрфейс карыстальніка</b>"
+
+#: ../data/ui/pref.glade.h:9
+msgid "A_rchiver integration:"
+msgstr "Інтэгра_цыя архіватара:"
+
+#: ../data/ui/pref.glade.h:10
+msgid "Al_ways show full file names"
+msgstr "Заўсёды паказваць назвы файлаў _цалкам"
+
+#: ../data/ui/pref.glade.h:11
+msgid "Al_ways show the tab bar"
+msgstr "Заўсёды паказва_ць панэль картак"
+
+#: ../data/ui/pref.glade.h:12
+msgid "App_lications"
+msgstr "Пра_грамы"
+
+#: ../data/ui/pref.glade.h:13
+msgid "Ask"
+msgstr "Спытаць"
+
+#: ../data/ui/pref.glade.h:14
+msgid "Auto (move if on the same FS, copy otherwise)"
+msgstr "Аўтаматычна (пераносіць у межах ФС, інакш капіраваць)"
+
+#: ../data/ui/pref.glade.h:16
+msgid "Clos_e tab containing removable medium when it is unmounted"
+msgstr "Закрываць картк_у са зместам рухомага носніка, калі ён адмацаваны"
+
+#: ../data/ui/pref.glade.h:17
+msgid "Co_nfirm before deleting files"
+msgstr "Па_цвярджаць сціранне файлаў"
+
+#: ../data/ui/pref.glade.h:18
+msgid "Compact View"
+msgstr "Кампактны выгляд"
+
 #: ../data/ui/pref.glade.h:19
-msgid "Size of small _icons:"
-msgstr "Памер _маленькіх значкоў:"
+msgid "Confi_rm before moving files into \"trash bi_n\""
+msgstr "Пацвя_рджаць перамяшчэнне файлаў у \"Сметніцу\""
 
 #: ../data/ui/pref.glade.h:20
-msgid "Size of _big icons:"
-msgstr "Памер _буйных значкоў:"
+msgid "Copy"
+msgstr "Капіраваць"
 
 #: ../data/ui/pref.glade.h:21
-msgid "Size of _thumbnails:"
-msgstr "Пам_ер мініяцюр:"
+msgid "Defaul_t drop action:"
+msgstr "Базавае дз_еянне пры перацягванні:"
 
 #: ../data/ui/pref.glade.h:22
-msgid "Size of side _pane icons:"
-msgstr "Памер _значкоў бакавой панэлі:"
+msgid "Delay of auto-selection in single click mode (0 to disable)"
+msgstr ""
+"Затрымка аўтавыбару ў рэжыме адзіночнага націскання (0 - адключыць аўтавыбар)"
 
 #: ../data/ui/pref.glade.h:23
-msgid "_Show thumbnails of files"
-msgstr "Паказваць мініяцюр_ы"
+msgid "Des_ktop Folder"
+msgstr "Ката_лог працоўнай прасторы"
 
 #: ../data/ui/pref.glade.h:24
-msgid "_Only show thumbnails for local files"
-msgstr "Паказваць мініяцюры толькі для лакальных файла_ў"
+msgid "Detailed List View"
+msgstr "Падрабязны спіс"
 
 #: ../data/ui/pref.glade.h:25
 msgid "Do _not generate thumbnails for files exceeding this size:"
 msgstr "Не генераваць мініяцюры для файлаў, памер якіх _большы за:"
 
-#: ../data/ui/pref.glade.h:26
-msgid "<b>User Interface</b>"
-msgstr "<b>Інтэрфейс карыстальніка</b>"
-
 #: ../data/ui/pref.glade.h:27
-msgid "Us_e SI decimal prefixes instead of IEC binary prefixes"
-msgstr "_Ужываць дзесятковыя прэфіксы СІ замест двайковых прэфіксаў IEC"
-
-#: ../data/ui/pref.glade.h:28
-msgid "Treat backup files as _hidden"
-msgstr "Лічыць запасныя файлы _схаванымі"
-
-#: ../data/ui/pref.glade.h:29
-msgid "Al_ways show full file names"
-msgstr "Заўсёды паказваць назвы файлаў _цалкам"
-
-#: ../data/ui/pref.glade.h:30
-msgid "_Display"
-msgstr "_Адлюстраванне"
-
-#: ../data/ui/pref.glade.h:31
-msgid "Hide _folder content border"
-msgstr "Хаваць _абрамленне зместу каталога"
-
-#: ../data/ui/pref.glade.h:32
-msgid "Hide _side pane buttons"
-msgstr "Хаваць кнопкі _бакавой панэлі"
-
-#: ../data/ui/pref.glade.h:33
-msgid "Hid_e 'Close tab' buttons"
-msgstr "Хаваць кнопк_у \"Закрыць картку\""
-
-#: ../data/ui/pref.glade.h:34
-msgid "Al_ways show the tab bar"
-msgstr "Заўсёды паказва_ць панэль картак"
-
-#: ../data/ui/pref.glade.h:35
-msgid "<b>Directories Tree</b>"
-msgstr "<b>Дрэва каталогаў</b>"
-
-#: ../data/ui/pref.glade.h:36
-msgid "Hide e_xpander on empty or locked folder"
-msgstr "Не разгортвац_ь пустыя ці заблакаваныя каталогі"
-
-#: ../data/ui/pref.glade.h:37
-msgid "<b>Show in Places:</b>"
-msgstr "<b>Паказваць на месцах:</b>"
-
-#: ../data/ui/pref.glade.h:38
-msgid "_Home Directory"
-msgstr "_Хатні каталог"
-
-#: ../data/ui/pref.glade.h:39
-msgid "Des_ktop Folder"
-msgstr "Ката_лог працоўнай прасторы"
-
-#: ../data/ui/pref.glade.h:40
-msgid "App_lications"
-msgstr "Пра_грамы"
-
-#: ../data/ui/pref.glade.h:41
-msgid "_Trash bin"
-msgstr "См_етніца"
-
-#: ../data/ui/pref.glade.h:42
-msgid "_Layout"
-msgstr "_Размяшчэнне"
-
-#: ../data/ui/pref.glade.h:43
-msgid "<b>Auto-mount</b>"
-msgstr "<b>Аўтамацаванне</b>"
-
-#: ../data/ui/pref.glade.h:44
-msgid "_Mount mountable volumes automatically on program startup"
-msgstr "Аўтаматычна мацавац_ь дыскі пры запуску праграмы"
-
-#: ../data/ui/pref.glade.h:45
-msgid "Mo_unt removable media automatically when they are inserted"
-msgstr "Аўтаматычна мацаваць рух_омыя носнікі пры іх падлучэнні"
-
-#: ../data/ui/pref.glade.h:46
-msgid "_Show available options for removable media when they are inserted"
-msgstr "Паказваць даступныя опц_ыі для рухомых носнікаў, калі яны падлучаны"
-
-#: ../data/ui/pref.glade.h:47
-msgid "_Open mounted removable media in new tab instead of new window"
-msgstr ""
-"Адкрываць прымацаваныя рухомыя носнікі _ў новай картцы замест новага вакна"
-
-#: ../data/ui/pref.glade.h:48
-msgid "Clos_e tab containing removable medium when it is unmounted"
-msgstr "Закрываць картк_у са зместам рухомага носніка, калі ён адмацаваны"
-
-#: ../data/ui/pref.glade.h:49
-msgid "_Volume Management"
-msgstr "Кіраванне дыска_мі"
-
-#: ../data/ui/pref.glade.h:50
-msgid "<b>Programs</b>"
-msgstr "<b>Праграмы</b>"
-
-#: ../data/ui/pref.glade.h:51
-msgid "_Terminal emulator:"
-msgstr "_Эмулятар тэрмінала:"
-
-#: ../data/ui/pref.glade.h:52
-msgid "_Switch user command:"
-msgstr "Загад пераключэння кар_ыстальніка:"
-
-#: ../data/ui/pref.glade.h:54
 #, no-c-format
 msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
@@ -365,15 +251,27 @@ msgstr ""
 "ці \"gksu %s\" для пераключэння карыстальніка.\n"
 "%s = загад для выканання ў тэрмінале ці su."
 
-#: ../data/ui/pref.glade.h:56
-msgid "A_rchiver integration:"
-msgstr "Інтэгра_цыя архіватара:"
+#: ../data/ui/pref.glade.h:29
+msgid "Hid_e 'Close tab' buttons"
+msgstr "Хаваць кнопк_у \"Закрыць картку\""
 
-#: ../data/ui/pref.glade.h:57
-msgid "_Use Application Startup Notify by default"
-msgstr "Звычайна ўжываць Паказальнік запуску пра_грам"
+#: ../data/ui/pref.glade.h:30
+msgid "Hide _folder content border"
+msgstr "Хаваць _абрамленне зместу каталога"
 
-#: ../data/ui/pref.glade.h:58
+#: ../data/ui/pref.glade.h:31
+msgid "Hide _side pane buttons"
+msgstr "Хаваць кнопкі _бакавой панэлі"
+
+#: ../data/ui/pref.glade.h:32
+msgid "Hide e_xpander on empty or locked folder"
+msgstr "Не разгортвац_ь пустыя ці заблакаваныя каталогі"
+
+#: ../data/ui/pref.glade.h:33
+msgid "Icon View"
+msgstr "Значкі"
+
+#: ../data/ui/pref.glade.h:34
 msgid ""
 "If checked then use Startup Notify for application if another not stated "
 "explicitly.\n"
@@ -384,61 +282,162 @@ msgstr ""
 "Калі знята, Паказальнік запуску будзе ўжыты толькі калі ён прызначаны пэўнай "
 "праграме."
 
-#: ../data/ui/pref.glade.h:60
-msgid "_Advanced"
-msgstr "_Пашыраныя"
+#: ../data/ui/pref.glade.h:36
+msgid "Mo_unt removable media automatically when they are inserted"
+msgstr "Аўтаматычна мацаваць рух_омыя носнікі пры іх падлучэнні"
 
-#: ../data/ui/pref.glade.h:61
-msgid "Auto (move if on the same FS, copy otherwise)"
-msgstr "Аўтаматычна (пераносіць у межах ФС, інакш капіраваць)"
-
-#: ../data/ui/pref.glade.h:62
-msgid "Copy"
-msgstr "Капіраваць"
-
-#: ../data/ui/pref.glade.h:63
+#: ../data/ui/pref.glade.h:37
 msgid "Move"
 msgstr "Перанесці"
 
-#: ../data/ui/pref.glade.h:64
-msgid "Ask"
-msgstr "Спытаць"
+#: ../data/ui/pref.glade.h:38
+msgid "Opened in Current Tab"
+msgstr "Адкрываць у бягучай картцы"
 
-#: ../data/ui/pref.glade.h:65
-msgid "Icon View"
-msgstr "Значкі"
+#: ../data/ui/pref.glade.h:39
+msgid "Opened in New Tab"
+msgstr "Адкрываць у новай картцы"
 
-#: ../data/ui/pref.glade.h:66
-msgid "Compact View"
-msgstr "Кампактны выгляд"
+#: ../data/ui/pref.glade.h:40
+msgid "Opened in New Window"
+msgstr "Адкрываць у новым акне"
 
-#: ../data/ui/pref.glade.h:67
+#: ../data/ui/pref.glade.h:41
+msgid "Preferences"
+msgstr "Настаўленні"
+
+#: ../data/ui/pref.glade.h:42
+msgid "Size of _big icons:"
+msgstr "Памер _буйных значкоў:"
+
+#: ../data/ui/pref.glade.h:43
+msgid "Size of _thumbnails:"
+msgstr "Пам_ер мініяцюр:"
+
+#: ../data/ui/pref.glade.h:44
+msgid "Size of side _pane icons:"
+msgstr "Памер _значкоў бакавой панэлі:"
+
+#: ../data/ui/pref.glade.h:45
+msgid "Size of small _icons:"
+msgstr "Памер _маленькіх значкоў:"
+
+#: ../data/ui/pref.glade.h:48
 msgid "Thumbnail View"
 msgstr "Мініяцюры"
 
+#: ../data/ui/pref.glade.h:50
+msgid "Treat backup files as _hidden"
+msgstr "Лічыць запасныя файлы _схаванымі"
+
+#: ../data/ui/pref.glade.h:51
+msgid "Us_e SI decimal prefixes instead of IEC binary prefixes"
+msgstr "_Ужываць дзесятковыя прэфіксы СІ замест двайковых прэфіксаў IEC"
+
+#: ../data/ui/pref.glade.h:52
+msgid "Vie_w Mode:"
+msgstr "Рэ_жым прагляду:"
+
+#: ../data/ui/pref.glade.h:53
+msgid "_Advanced"
+msgstr "_Пашыраныя"
+
+#: ../data/ui/pref.glade.h:54
+msgid "_Bookmarks:"
+msgstr "Закладк_і:"
+
+#: ../data/ui/pref.glade.h:55
+msgid "_Display"
+msgstr "_Адлюстраванне"
+
+#: ../data/ui/pref.glade.h:56
+msgid "_Erase files on removable media instead of \"trash bin\" creation"
+msgstr "Сціраць файлы з р_ухомых носнікаў замест стварэння \"Сметніцы\""
+
+#: ../data/ui/pref.glade.h:57
+msgid "_General"
+msgstr "_Агульныя"
+
+#: ../data/ui/pref.glade.h:58
+msgid "_Home Directory"
+msgstr "_Хатні каталог"
+
+#: ../data/ui/pref.glade.h:59
+msgid "_Layout"
+msgstr "_Размяшчэнне"
+
+#: ../data/ui/pref.glade.h:60
+msgid "_Mount mountable volumes automatically on program startup"
+msgstr "Аўтаматычна мацавац_ь дыскі пры запуску праграмы"
+
+#: ../data/ui/pref.glade.h:61
+msgid "_Move deleted files to \"trash bin\" instead of erasing from disk"
+msgstr "Перамяшчац_ь сцёртыя файлы ў \"Сметніцу\" замест сцірання з дыска"
+
+#: ../data/ui/pref.glade.h:62
+msgid "_Only show thumbnails for local files"
+msgstr "Паказваць мініяцюры толькі для лакальных файла_ў"
+
+#: ../data/ui/pref.glade.h:63
+msgid "_Open files with single click"
+msgstr "Адкрываць файлы адзін_очным націсканнем"
+
+#: ../data/ui/pref.glade.h:64
+msgid "_Open mounted removable media in new tab instead of new window"
+msgstr ""
+"Адкрываць прымацаваныя рухомыя носнікі _ў новай картцы замест новага вакна"
+
+#: ../data/ui/pref.glade.h:65
+msgid "_Show available options for removable media when they are inserted"
+msgstr "Паказваць даступныя опц_ыі для рухомых носнікаў, калі яны падлучаны"
+
+#: ../data/ui/pref.glade.h:66
+msgid "_Show thumbnails of files"
+msgstr "Паказваць мініяцюр_ы"
+
+#: ../data/ui/pref.glade.h:67
+msgid "_Switch user command:"
+msgstr "Загад пераключэння кар_ыстальніка:"
+
 #: ../data/ui/pref.glade.h:68
-msgid "Detailed List View"
-msgstr "Падрабязны спіс"
+msgid "_Terminal emulator:"
+msgstr "_Эмулятар тэрмінала:"
+
+#: ../data/ui/pref.glade.h:69
+msgid "_Trash bin"
+msgstr "См_етніца"
+
+#: ../data/ui/pref.glade.h:70
+msgid "_Unfold tab when files are dragged onto tab button"
+msgstr "Раз_гортваць картку пры перацягванні файлаў на кнопку карткі"
+
+#: ../data/ui/pref.glade.h:71
+msgid "_Use Application Startup Notify by default"
+msgstr "Звычайна ўжываць Паказальнік запуску пра_грам"
+
+#: ../data/ui/pref.glade.h:72
+msgid "_Volume Management"
+msgstr "Кіраванне дыска_мі"
 
 #: ../data/ui/autorun.glade.h:1
-msgid "Removable medium is inserted"
-msgstr "Падключаны рухомы носнік"
-
-#: ../data/ui/autorun.glade.h:2
 msgid "<b>Removable medium is inserted</b>"
 msgstr "<b>Падключаны рухомы носнік</b>"
 
-#: ../data/ui/autorun.glade.h:3
-msgid "Type of medium:"
-msgstr "Тып носніка:"
-
-#: ../data/ui/autorun.glade.h:4
+#: ../data/ui/autorun.glade.h:2
 msgid "Detecting..."
 msgstr "Вызначэнне..."
 
-#: ../data/ui/autorun.glade.h:5
+#: ../data/ui/autorun.glade.h:3
 msgid "Please select the action you want to perform:"
 msgstr "Выберыце патрэбнае дзеянне:"
+
+#: ../data/ui/autorun.glade.h:4
+msgid "Removable medium is inserted"
+msgstr "Падключаны рухомы носнік"
+
+#: ../data/ui/autorun.glade.h:5
+msgid "Type of medium:"
+msgstr "Тып носніка:"
 
 #: ../src/volume-manager.c:164
 msgid "Removable Disk"
@@ -651,8 +650,8 @@ msgid "Folder"
 msgstr "Каталог"
 
 #: ../src/main-win-ui.c:180
-msgid "Blank File"
-msgstr "Пусты файл"
+msgid "Empty File"
+msgstr ""
 
 #: ../src/main-win-ui.c:186
 msgid "Show Hidde_n"
@@ -679,12 +678,12 @@ msgid "_Icon View"
 msgstr "_Значкі"
 
 #: ../src/main-win-ui.c:196
-msgid "_Compact View"
-msgstr "_Кампактны від"
-
-#: ../src/main-win-ui.c:197
 msgid "_Thumbnail View"
 msgstr "_Мініяцюры"
+
+#: ../src/main-win-ui.c:197
+msgid "_Compact View"
+msgstr "_Кампактны від"
 
 #: ../src/main-win-ui.c:198
 msgid "Detailed _List View"
@@ -718,15 +717,15 @@ msgstr "Дрэва каталогаў"
 msgid "Remote"
 msgstr "Аддалены"
 
-#: ../src/main-win.c:529
+#: ../src/main-win.c:546
 msgid "You are in super user mode"
 msgstr "Вы зараз у рэжыме суперкарыстальніка"
 
-#: ../src/main-win.c:700 ../src/main-win.c:708
+#: ../src/main-win.c:717 ../src/main-win.c:725
 msgid "Keyboard navigation"
 msgstr "Навігацыя з клавіятуры"
 
-#: ../src/main-win.c:702
+#: ../src/main-win.c:719
 msgid ""
 "Tab: cycle focus Folder View -> Side Pane -> Tools Bar\n"
 "Shift+Tab: cycle focus Tools Bar -> Side Pane -> Folder View\n"
@@ -742,11 +741,11 @@ msgstr ""
 "F10: актываваць галоўнае меню\n"
 "Ctrl+L або Alt+D: фокус на Стужку шляху"
 
-#: ../src/main-win.c:738
+#: ../src/main-win.c:755
 msgid "Switch user command is not set."
 msgstr "Не вызначаны загад пераключэння карыстальнікаў."
 
-#: ../src/main-win.c:1099
+#: ../src/main-win.c:1117
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -757,7 +756,7 @@ msgstr ""
 "'%s'\n"
 "Увядзіце назву новай закладкі:"
 
-#: ../src/main-win.c:1103
+#: ../src/main-win.c:1121
 msgid "Add to Bookmarks"
 msgstr "Дадаць у закладкі"
 
@@ -839,7 +838,7 @@ msgstr "РОЛЯ"
 msgid "[FILE1, FILE2,...]"
 msgstr "[ФАЙЛ1, ФАЙЛ2,...]"
 
-#: ../src/pcmanfm.c:526
+#: ../src/pcmanfm.c:529
 msgid "Terminal emulator is not set."
 msgstr "Не вызначаны эмулятар тэрмінала."
 
@@ -855,12 +854,12 @@ msgstr[0] "Вылучаны %d элемент"
 msgstr[1] "Вылучана %d элементы"
 msgstr[2] "Вылучана %d элементаў"
 
-#: ../src/tab-page.c:354
+#: ../src/tab-page.c:363
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Свабодная прастора: %s (Уся: %s)"
 
-#: ../src/tab-page.c:374
+#: ../src/tab-page.c:383
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
@@ -868,7 +867,7 @@ msgstr[0] "%d элемент"
 msgstr[1] "%d элементы"
 msgstr[2] "%d элементаў"
 
-#: ../src/tab-page.c:375
+#: ../src/tab-page.c:384
 #, c-format
 msgid " (%d hidden)"
 msgid_plural " (%d hidden)"
@@ -877,20 +876,23 @@ msgstr[1] " (%d схаваныя)"
 msgstr[2] " (%d схаваных)"
 
 #: ../data/pcmanfm.desktop.in.h:1
-msgid "File Manager PCManFM"
-msgstr "Файлавы менеджар PCManFM"
+msgid "Browse the file system and manage the files"
+msgstr "Прагляд файлавай сістэмы і кіраванне файламі"
 
 #: ../data/pcmanfm.desktop.in.h:2
 msgid "File Manager"
 msgstr "Файлавы менеджар"
 
 #: ../data/pcmanfm.desktop.in.h:3
-msgid "Browse the file system and manage the files"
-msgstr "Прагляд файлавай сістэмы і кіраванне файламі"
+msgid "File Manager PCManFM"
+msgstr "Файлавы менеджар PCManFM"
 
-#: ../data/pcmanfm-desktop-pref.desktop.in.h:2
+#: ../data/pcmanfm-desktop-pref.desktop.in.h:1
 msgid "Change desktop wallpapers and behavior of desktop manager"
 msgstr "Змяненне шпалер і паводзін кіраўніка працоўных прастораў"
+
+#~ msgid "Blank File"
+#~ msgstr "Пусты файл"
 
 #~ msgid "Create _New..."
 #~ msgstr "С_тварыць новы..."

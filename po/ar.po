@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-11 00:18+0200\n"
+"POT-Creation-Date: 2013-06-01 01:02+0300\n"
 "PO-Revision-Date: 2012-10-04 20:35+0200\n"
 "Last-Translator: mohsen <linuxer9@gmail.com>\n"
 "Language-Team: Arabic <trans-ar@lists.fedoraproject.org>\n"
@@ -42,360 +42,228 @@ msgstr ""
 "محمد محسن <linuxer9@gmail.com>كريم أولاد الشلحة <herr.linux88@gmail.com>, "
 "2012"
 
-#: ../data/ui/desktop-pref.glade.h:1 ../src/desktop-ui.c:34
-#: ../data/pcmanfm-desktop-pref.desktop.in.h:1
-msgid "Desktop Preferences"
-msgstr "تفضيلات سطح المكتب"
-
-#: ../data/ui/desktop-pref.glade.h:2
+#: ../data/ui/desktop-pref.glade.h:1
 msgid "<b>Background</b>"
 msgstr "<b>الخلفية</b>"
 
-#: ../data/ui/desktop-pref.glade.h:3
-#, fuzzy
-msgid "_Wallpaper:"
-msgstr "خلفيات:"
-
-#: ../data/ui/desktop-pref.glade.h:4
-msgid "Please select an image file"
-msgstr "المرجوا تحديد صورة"
-
-#: ../data/ui/desktop-pref.glade.h:5
-msgid "_Use the same wallpaper on all desktops"
-msgstr ""
-
-#: ../data/ui/desktop-pref.glade.h:6
-#, fuzzy
-msgid "_Background color:"
-msgstr "لون الخلفية:"
-
-#: ../data/ui/desktop-pref.glade.h:7
-#, fuzzy
-msgid "Wallpaper _mode:"
-msgstr "نمط الخلفية:"
-
-#: ../data/ui/desktop-pref.glade.h:8
-msgid "<b>Text</b>"
-msgstr "</b>نَص</b>"
-
-#: ../data/ui/desktop-pref.glade.h:9
-#, fuzzy
-msgid "_Font of label text:"
-msgstr "خط وسم النص:"
-
-#: ../data/ui/desktop-pref.glade.h:10
-#, fuzzy
-msgid "C_olor of label text:"
-msgstr "لون وسم النص:"
-
-#: ../data/ui/desktop-pref.glade.h:11
-#, fuzzy
-msgid "Color of _shadow:"
-msgstr "لون الظل:"
-
-#: ../data/ui/desktop-pref.glade.h:12
-#, fuzzy
-msgid "_Appearance"
-msgstr "المظهر"
-
-#: ../data/ui/desktop-pref.glade.h:13
+#: ../data/ui/desktop-pref.glade.h:2
 msgid "<b>Show desktop icons</b>"
 msgstr "</b>أظهر أيقونات سطح المكتب</b>"
 
-#: ../data/ui/desktop-pref.glade.h:14
-#, fuzzy
-msgid "_Show \"My Documents\" icon on desktop"
-msgstr "عرض أيقونة \"وثائقي\" في سطح المكتب"
+#: ../data/ui/desktop-pref.glade.h:3
+msgid "<b>Text</b>"
+msgstr "</b>نَص</b>"
 
-#: ../data/ui/desktop-pref.glade.h:15
-#, fuzzy
-msgid "Show \"_My Computer\" icon on desktop"
-msgstr "عرض أيقونة \"حاسوبي\" في سطح المكتب"
-
-#: ../data/ui/desktop-pref.glade.h:16
-#, fuzzy
-msgid "Show \"_Trash Bin\" icon on desktop"
-msgstr "عرض أيقونة \"سلة المهملات\" في سطح المكتب"
-
-#: ../data/ui/desktop-pref.glade.h:17
-#, fuzzy
-msgid "S_how icons of volumes on desktop"
-msgstr "عرض أيقونات الأقراص في سطح المكتب"
-
-#: ../data/ui/desktop-pref.glade.h:18
-#, fuzzy
-msgid "_Desktop Icons"
-msgstr "أيقونات سطح المكتب"
-
-#: ../data/ui/desktop-pref.glade.h:19
-msgid "_Show menus provided by window managers when desktop is clicked"
-msgstr ""
-
-#: ../data/ui/desktop-pref.glade.h:20
+#: ../data/ui/desktop-pref.glade.h:4
 #, fuzzy
 msgid "Ad_vanced"
 msgstr "الوضع المتطور"
 
-#: ../data/ui/desktop-pref.glade.h:21
-msgid "Fill with background color only"
-msgstr "املأ بلون الخلفية فقط"
+#: ../data/ui/desktop-pref.glade.h:5
+#, fuzzy
+msgid "C_olor of label text:"
+msgstr "لون وسم النص:"
 
-#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:69
-msgid "Stretch to fill the entire screen"
-msgstr "إمتداد لملء الشاشة بأكملها"
-
-#: ../data/ui/desktop-pref.glade.h:23 ../data/ui/pref.glade.h:70
-msgid "Stretch to fit the screen"
-msgstr "إمتداد لتناسب الشاشة"
-
-#: ../data/ui/desktop-pref.glade.h:24 ../data/ui/pref.glade.h:71
+#: ../data/ui/desktop-pref.glade.h:6 ../data/ui/pref.glade.h:15
 msgid "Center on the screen"
 msgstr "في وسط الشاشة"
 
-#: ../data/ui/desktop-pref.glade.h:25 ../data/ui/pref.glade.h:72
+#: ../data/ui/desktop-pref.glade.h:7
+#, fuzzy
+msgid "Color of _shadow:"
+msgstr "لون الظل:"
+
+#: ../data/ui/desktop-pref.glade.h:8 ../src/desktop-ui.c:34
+#: ../data/pcmanfm-desktop-pref.desktop.in.h:2
+msgid "Desktop Preferences"
+msgstr "تفضيلات سطح المكتب"
+
+#: ../data/ui/desktop-pref.glade.h:9
+msgid "Fill with background color only"
+msgstr "املأ بلون الخلفية فقط"
+
+#: ../data/ui/desktop-pref.glade.h:10
+msgid "Please select an image file"
+msgstr "المرجوا تحديد صورة"
+
+#: ../data/ui/desktop-pref.glade.h:11
+#, fuzzy
+msgid "S_how icons of volumes on desktop"
+msgstr "عرض أيقونات الأقراص في سطح المكتب"
+
+#: ../data/ui/desktop-pref.glade.h:12
+#, fuzzy
+msgid "Show \"_My Computer\" icon on desktop"
+msgstr "عرض أيقونة \"حاسوبي\" في سطح المكتب"
+
+#: ../data/ui/desktop-pref.glade.h:13
+#, fuzzy
+msgid "Show \"_Trash Bin\" icon on desktop"
+msgstr "عرض أيقونة \"سلة المهملات\" في سطح المكتب"
+
+#: ../data/ui/desktop-pref.glade.h:14 ../data/ui/pref.glade.h:46
+msgid "Stretch to fill the entire screen"
+msgstr "إمتداد لملء الشاشة بأكملها"
+
+#: ../data/ui/desktop-pref.glade.h:15 ../data/ui/pref.glade.h:47
+msgid "Stretch to fit the screen"
+msgstr "إمتداد لتناسب الشاشة"
+
+#: ../data/ui/desktop-pref.glade.h:16 ../data/ui/pref.glade.h:49
 msgid "Tile the image to fill the entire screen"
 msgstr ""
 
+#: ../data/ui/desktop-pref.glade.h:17
+#, fuzzy
+msgid "Wallpaper _mode:"
+msgstr "نمط الخلفية:"
+
+#: ../data/ui/desktop-pref.glade.h:18
+#, fuzzy
+msgid "_Appearance"
+msgstr "المظهر"
+
+#: ../data/ui/desktop-pref.glade.h:19
+#, fuzzy
+msgid "_Background color:"
+msgstr "لون الخلفية:"
+
+#: ../data/ui/desktop-pref.glade.h:20
+#, fuzzy
+msgid "_Desktop Icons"
+msgstr "أيقونات سطح المكتب"
+
+#: ../data/ui/desktop-pref.glade.h:21
+#, fuzzy
+msgid "_Font of label text:"
+msgstr "خط وسم النص:"
+
+#: ../data/ui/desktop-pref.glade.h:22
+#, fuzzy
+msgid "_Show \"My Documents\" icon on desktop"
+msgstr "عرض أيقونة \"وثائقي\" في سطح المكتب"
+
+#: ../data/ui/desktop-pref.glade.h:23
+msgid "_Show menus provided by window managers when desktop is clicked"
+msgstr ""
+
+#: ../data/ui/desktop-pref.glade.h:24
+msgid "_Use the same wallpaper on all desktops"
+msgstr ""
+
+#: ../data/ui/desktop-pref.glade.h:25
+#, fuzzy
+msgid "_Wallpaper:"
+msgstr "خلفيات:"
+
 #: ../data/ui/pref.glade.h:1
-msgid "Opened in Current Tab"
-msgstr "المفتوحة في اللسان الحالي"
+msgid "<b>Auto-mount</b>"
+msgstr "<b>ضم تلقائي</b>"
 
 #: ../data/ui/pref.glade.h:2
-msgid "Opened in New Tab"
-msgstr "فتح في لسان جديد"
-
-#: ../data/ui/pref.glade.h:3
-msgid "Opened in New Window"
-msgstr "فتح في نافذة جديدة"
-
-#: ../data/ui/pref.glade.h:4
-msgid "Preferences"
-msgstr "التفضيلات"
-
-#: ../data/ui/pref.glade.h:5
 msgid "<b>Behavior</b>"
 msgstr "<b>السلوك</b>"
 
-#: ../data/ui/pref.glade.h:6
+#: ../data/ui/pref.glade.h:3
+msgid "<b>Default View</b>"
+msgstr "<b>العرض المبدئي</b>"
+
+#: ../data/ui/pref.glade.h:4
 #, fuzzy
-msgid "_Open files with single click"
-msgstr "فتح الملفات بقر مرة واحدة"
+msgid "<b>Directories Tree</b>"
+msgstr "شجرة الدلائل"
+
+#: ../data/ui/pref.glade.h:5
+msgid "<b>Icons</b>"
+msgstr "<b>الأيقونات</b>"
+
+#: ../data/ui/pref.glade.h:6
+msgid "<b>Programs</b>"
+msgstr "<b>برامج</b>"
 
 #: ../data/ui/pref.glade.h:7
-msgid "Delay of auto-selection in single click mode (0 to disable)"
-msgstr ""
+#, fuzzy
+msgid "<b>Show in Places:</b>"
+msgstr "</b>أظهر أيقونات سطح المكتب</b>"
 
 #: ../data/ui/pref.glade.h:8
+msgid "<b>User Interface</b>"
+msgstr "<b>واجهة المستخدم</b>"
+
+#: ../data/ui/pref.glade.h:9
+#, fuzzy
+msgid "A_rchiver integration:"
+msgstr "تكامل مع مدير الأرشيفات:"
+
+#: ../data/ui/pref.glade.h:10
+#, fuzzy
+msgid "Al_ways show full file names"
+msgstr "أظهر شريط الألسنة دائمًا"
+
+#: ../data/ui/pref.glade.h:11
+#, fuzzy
+msgid "Al_ways show the tab bar"
+msgstr "أظهر شريط الألسنة دائمًا"
+
+#: ../data/ui/pref.glade.h:12
+#, fuzzy
+msgid "App_lications"
+msgstr "تطبيقات"
+
+#: ../data/ui/pref.glade.h:13
+msgid "Ask"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:14
+msgid "Auto (move if on the same FS, copy otherwise)"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:16
+#, fuzzy
+msgid "Clos_e tab containing removable medium when it is unmounted"
+msgstr "عرض الجيارات المتاحة عنذ إدراج وسيط قابل للإزالة"
+
+#: ../data/ui/pref.glade.h:17
 #, fuzzy
 msgid "Co_nfirm before deleting files"
 msgstr "طلب التأكيد قبل الحذف الملفات"
 
-#: ../data/ui/pref.glade.h:9
-msgid "_Move deleted files to \"trash bin\" instead of erasing from disk"
-msgstr ""
+#: ../data/ui/pref.glade.h:18
+msgid "Compact View"
+msgstr "عرض مدمج"
 
-#: ../data/ui/pref.glade.h:10
-msgid "_Erase files on removable media instead of \"trash bin\" creation"
-msgstr ""
-
-#: ../data/ui/pref.glade.h:11
+#: ../data/ui/pref.glade.h:19
 #, fuzzy
 msgid "Confi_rm before moving files into \"trash bi_n\""
 msgstr "طلب التأكيد قبل الحذف الملفات"
 
-#: ../data/ui/pref.glade.h:12
-#, fuzzy
-msgid "_Bookmarks:"
-msgstr "العلامات:"
+#: ../data/ui/pref.glade.h:20
+msgid "Copy"
+msgstr ""
 
-#: ../data/ui/pref.glade.h:13
+#: ../data/ui/pref.glade.h:21
 msgid "Defaul_t drop action:"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:14
-msgid "_Unfold tab when files are dragged onto tab button"
-msgstr ""
-
-#: ../data/ui/pref.glade.h:15
-msgid "<b>Default View</b>"
-msgstr "<b>العرض المبدئي</b>"
-
-#: ../data/ui/pref.glade.h:16
-#, fuzzy
-msgid "Vie_w Mode:"
-msgstr "نمط العرض:"
-
-#: ../data/ui/pref.glade.h:17
-#, fuzzy
-msgid "_General"
-msgstr "_عام"
-
-#: ../data/ui/pref.glade.h:18
-msgid "<b>Icons</b>"
-msgstr "<b>الأيقونات</b>"
-
-#: ../data/ui/pref.glade.h:19
-#, fuzzy
-msgid "Size of small _icons:"
-msgstr "حجم الأيقونات الصغيرة:"
-
-#: ../data/ui/pref.glade.h:20
-#, fuzzy
-msgid "Size of _big icons:"
-msgstr "حجم الأيقونات الكبيرة:"
-
-#: ../data/ui/pref.glade.h:21
-#, fuzzy
-msgid "Size of _thumbnails:"
-msgstr "حجم المصغّرات:"
-
 #: ../data/ui/pref.glade.h:22
-#, fuzzy
-msgid "Size of side _pane icons:"
-msgstr "حجم الأيقونات الشريط الجانبي:"
+msgid "Delay of auto-selection in single click mode (0 to disable)"
+msgstr ""
 
 #: ../data/ui/pref.glade.h:23
 #, fuzzy
-msgid "_Show thumbnails of files"
-msgstr "عرض مصغرات الملفات"
+msgid "Des_ktop Folder"
+msgstr "مجلد سطح المكتب"
 
 #: ../data/ui/pref.glade.h:24
-#, fuzzy
-msgid "_Only show thumbnails for local files"
-msgstr "عرض المصغرات للملفات المحلية فقط"
+msgid "Detailed List View"
+msgstr "عرض لائحة مفصلة"
 
 #: ../data/ui/pref.glade.h:25
 #, fuzzy
 msgid "Do _not generate thumbnails for files exceeding this size:"
 msgstr "لا تولد مصغرات لملفات يتجاوز حجمها هذا الحجم:"
 
-#: ../data/ui/pref.glade.h:26
-msgid "<b>User Interface</b>"
-msgstr "<b>واجهة المستخدم</b>"
-
 #: ../data/ui/pref.glade.h:27
-msgid "Us_e SI decimal prefixes instead of IEC binary prefixes"
-msgstr ""
-
-#: ../data/ui/pref.glade.h:28
-msgid "Treat backup files as _hidden"
-msgstr ""
-
-#: ../data/ui/pref.glade.h:29
-#, fuzzy
-msgid "Al_ways show full file names"
-msgstr "أظهر شريط الألسنة دائمًا"
-
-#: ../data/ui/pref.glade.h:30
-#, fuzzy
-msgid "_Display"
-msgstr "ع_رض"
-
-#: ../data/ui/pref.glade.h:31
-#, fuzzy
-msgid "Hide _folder content border"
-msgstr "إخفاء حدود محتويات المجلد"
-
-#: ../data/ui/pref.glade.h:32
-#, fuzzy
-msgid "Hide _side pane buttons"
-msgstr "إخفاء أزرار الشريط الجانبي"
-
-#: ../data/ui/pref.glade.h:33
-#, fuzzy
-msgid "Hid_e 'Close tab' buttons"
-msgstr "إخفاء زر 'أغلق اللسان'"
-
-#: ../data/ui/pref.glade.h:34
-#, fuzzy
-msgid "Al_ways show the tab bar"
-msgstr "أظهر شريط الألسنة دائمًا"
-
-#: ../data/ui/pref.glade.h:35
-#, fuzzy
-msgid "<b>Directories Tree</b>"
-msgstr "شجرة الدلائل"
-
-#: ../data/ui/pref.glade.h:36
-msgid "Hide e_xpander on empty or locked folder"
-msgstr ""
-
-#: ../data/ui/pref.glade.h:37
-#, fuzzy
-msgid "<b>Show in Places:</b>"
-msgstr "</b>أظهر أيقونات سطح المكتب</b>"
-
-#: ../data/ui/pref.glade.h:38
-#, fuzzy
-msgid "_Home Directory"
-msgstr "شجرة الدلائل"
-
-#: ../data/ui/pref.glade.h:39
-#, fuzzy
-msgid "Des_ktop Folder"
-msgstr "مجلد سطح المكتب"
-
-#: ../data/ui/pref.glade.h:40
-#, fuzzy
-msgid "App_lications"
-msgstr "تطبيقات"
-
-#: ../data/ui/pref.glade.h:41
-#, fuzzy
-msgid "_Trash bin"
-msgstr "سلة المهملات"
-
-#: ../data/ui/pref.glade.h:42
-msgid "_Layout"
-msgstr ""
-
-#: ../data/ui/pref.glade.h:43
-msgid "<b>Auto-mount</b>"
-msgstr "<b>ضم تلقائي</b>"
-
-#: ../data/ui/pref.glade.h:44
-msgid "_Mount mountable volumes automatically on program startup"
-msgstr ""
-
-#: ../data/ui/pref.glade.h:45
-#, fuzzy
-msgid "Mo_unt removable media automatically when they are inserted"
-msgstr "عرض الجيارات المتاحة عنذ إدراج وسيط قابل للإزالة"
-
-#: ../data/ui/pref.glade.h:46
-#, fuzzy
-msgid "_Show available options for removable media when they are inserted"
-msgstr "عرض الجيارات المتاحة عنذ إدراج وسيط قابل للإزالة"
-
-#: ../data/ui/pref.glade.h:47
-msgid "_Open mounted removable media in new tab instead of new window"
-msgstr ""
-
-#: ../data/ui/pref.glade.h:48
-#, fuzzy
-msgid "Clos_e tab containing removable medium when it is unmounted"
-msgstr "عرض الجيارات المتاحة عنذ إدراج وسيط قابل للإزالة"
-
-#: ../data/ui/pref.glade.h:49
-#, fuzzy
-msgid "_Volume Management"
-msgstr "مدير الأق_راص"
-
-#: ../data/ui/pref.glade.h:50
-msgid "<b>Programs</b>"
-msgstr "<b>برامج</b>"
-
-#: ../data/ui/pref.glade.h:51
-#, fuzzy
-msgid "_Terminal emulator:"
-msgstr "محاكي الطرفية:"
-
-#: ../data/ui/pref.glade.h:52
-#, fuzzy
-msgid "_Switch user command:"
-msgstr "أمر إستبدال المستخدم:"
-
-#: ../data/ui/pref.glade.h:54
 #, no-c-format
 msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
@@ -404,77 +272,209 @@ msgstr ""
 "مثال: \"xterm -e %s\" لطرفية أو \"gksu %s\"  لإستبدال المستخدم.\n"
 "%s = سطر الأوامر لتنفيذ الأوامر بالطرفية أو su."
 
-#: ../data/ui/pref.glade.h:56
+#: ../data/ui/pref.glade.h:29
 #, fuzzy
-msgid "A_rchiver integration:"
-msgstr "تكامل مع مدير الأرشيفات:"
+msgid "Hid_e 'Close tab' buttons"
+msgstr "إخفاء زر 'أغلق اللسان'"
 
-#: ../data/ui/pref.glade.h:57
-msgid "_Use Application Startup Notify by default"
+#: ../data/ui/pref.glade.h:30
+#, fuzzy
+msgid "Hide _folder content border"
+msgstr "إخفاء حدود محتويات المجلد"
+
+#: ../data/ui/pref.glade.h:31
+#, fuzzy
+msgid "Hide _side pane buttons"
+msgstr "إخفاء أزرار الشريط الجانبي"
+
+#: ../data/ui/pref.glade.h:32
+msgid "Hide e_xpander on empty or locked folder"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:58
+#: ../data/ui/pref.glade.h:33
+msgid "Icon View"
+msgstr "عرض أيقوني"
+
+#: ../data/ui/pref.glade.h:34
 msgid ""
 "If checked then use Startup Notify for application if another not stated "
 "explicitly.\n"
 "If unchecked then use Startup Notify only if that is defined for application."
 msgstr ""
 
-#: ../data/ui/pref.glade.h:60
-msgid "_Advanced"
-msgstr "م_تقدم"
+#: ../data/ui/pref.glade.h:36
+#, fuzzy
+msgid "Mo_unt removable media automatically when they are inserted"
+msgstr "عرض الجيارات المتاحة عنذ إدراج وسيط قابل للإزالة"
 
-#: ../data/ui/pref.glade.h:61
-msgid "Auto (move if on the same FS, copy otherwise)"
-msgstr ""
-
-#: ../data/ui/pref.glade.h:62
-msgid "Copy"
-msgstr ""
-
-#: ../data/ui/pref.glade.h:63
+#: ../data/ui/pref.glade.h:37
 msgid "Move"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:64
-msgid "Ask"
-msgstr ""
+#: ../data/ui/pref.glade.h:38
+msgid "Opened in Current Tab"
+msgstr "المفتوحة في اللسان الحالي"
 
-#: ../data/ui/pref.glade.h:65
-msgid "Icon View"
-msgstr "عرض أيقوني"
+#: ../data/ui/pref.glade.h:39
+msgid "Opened in New Tab"
+msgstr "فتح في لسان جديد"
 
-#: ../data/ui/pref.glade.h:66
-msgid "Compact View"
-msgstr "عرض مدمج"
+#: ../data/ui/pref.glade.h:40
+msgid "Opened in New Window"
+msgstr "فتح في نافذة جديدة"
 
-#: ../data/ui/pref.glade.h:67
+#: ../data/ui/pref.glade.h:41
+msgid "Preferences"
+msgstr "التفضيلات"
+
+#: ../data/ui/pref.glade.h:42
+#, fuzzy
+msgid "Size of _big icons:"
+msgstr "حجم الأيقونات الكبيرة:"
+
+#: ../data/ui/pref.glade.h:43
+#, fuzzy
+msgid "Size of _thumbnails:"
+msgstr "حجم المصغّرات:"
+
+#: ../data/ui/pref.glade.h:44
+#, fuzzy
+msgid "Size of side _pane icons:"
+msgstr "حجم الأيقونات الشريط الجانبي:"
+
+#: ../data/ui/pref.glade.h:45
+#, fuzzy
+msgid "Size of small _icons:"
+msgstr "حجم الأيقونات الصغيرة:"
+
+#: ../data/ui/pref.glade.h:48
 msgid "Thumbnail View"
 msgstr "عرض مصغرات"
 
+#: ../data/ui/pref.glade.h:50
+msgid "Treat backup files as _hidden"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:51
+msgid "Us_e SI decimal prefixes instead of IEC binary prefixes"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:52
+#, fuzzy
+msgid "Vie_w Mode:"
+msgstr "نمط العرض:"
+
+#: ../data/ui/pref.glade.h:53
+msgid "_Advanced"
+msgstr "م_تقدم"
+
+#: ../data/ui/pref.glade.h:54
+#, fuzzy
+msgid "_Bookmarks:"
+msgstr "العلامات:"
+
+#: ../data/ui/pref.glade.h:55
+#, fuzzy
+msgid "_Display"
+msgstr "ع_رض"
+
+#: ../data/ui/pref.glade.h:56
+msgid "_Erase files on removable media instead of \"trash bin\" creation"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:57
+#, fuzzy
+msgid "_General"
+msgstr "_عام"
+
+#: ../data/ui/pref.glade.h:58
+#, fuzzy
+msgid "_Home Directory"
+msgstr "شجرة الدلائل"
+
+#: ../data/ui/pref.glade.h:59
+msgid "_Layout"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:60
+msgid "_Mount mountable volumes automatically on program startup"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:61
+msgid "_Move deleted files to \"trash bin\" instead of erasing from disk"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:62
+#, fuzzy
+msgid "_Only show thumbnails for local files"
+msgstr "عرض المصغرات للملفات المحلية فقط"
+
+#: ../data/ui/pref.glade.h:63
+#, fuzzy
+msgid "_Open files with single click"
+msgstr "فتح الملفات بقر مرة واحدة"
+
+#: ../data/ui/pref.glade.h:64
+msgid "_Open mounted removable media in new tab instead of new window"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:65
+#, fuzzy
+msgid "_Show available options for removable media when they are inserted"
+msgstr "عرض الجيارات المتاحة عنذ إدراج وسيط قابل للإزالة"
+
+#: ../data/ui/pref.glade.h:66
+#, fuzzy
+msgid "_Show thumbnails of files"
+msgstr "عرض مصغرات الملفات"
+
+#: ../data/ui/pref.glade.h:67
+#, fuzzy
+msgid "_Switch user command:"
+msgstr "أمر إستبدال المستخدم:"
+
 #: ../data/ui/pref.glade.h:68
-msgid "Detailed List View"
-msgstr "عرض لائحة مفصلة"
+#, fuzzy
+msgid "_Terminal emulator:"
+msgstr "محاكي الطرفية:"
+
+#: ../data/ui/pref.glade.h:69
+#, fuzzy
+msgid "_Trash bin"
+msgstr "سلة المهملات"
+
+#: ../data/ui/pref.glade.h:70
+msgid "_Unfold tab when files are dragged onto tab button"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:71
+msgid "_Use Application Startup Notify by default"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:72
+#, fuzzy
+msgid "_Volume Management"
+msgstr "مدير الأق_راص"
 
 #: ../data/ui/autorun.glade.h:1
-msgid "Removable medium is inserted"
-msgstr "لقد تم إدراج الوسيط القابل للإزالة"
-
-#: ../data/ui/autorun.glade.h:2
 msgid "<b>Removable medium is inserted</b>"
 msgstr "<b>لقد تم إدراج الوسيط القابل للإزالة</b>"
 
-#: ../data/ui/autorun.glade.h:3
-msgid "Type of medium:"
-msgstr "نوع الوسيطة:"
-
-#: ../data/ui/autorun.glade.h:4
+#: ../data/ui/autorun.glade.h:2
 msgid "Detecting..."
 msgstr "كشف..."
 
-#: ../data/ui/autorun.glade.h:5
+#: ../data/ui/autorun.glade.h:3
 msgid "Please select the action you want to perform:"
 msgstr "المرجوا تحديد الإجراء الذي تريد تطبيقه:"
+
+#: ../data/ui/autorun.glade.h:4
+msgid "Removable medium is inserted"
+msgstr "لقد تم إدراج الوسيط القابل للإزالة"
+
+#: ../data/ui/autorun.glade.h:5
+msgid "Type of medium:"
+msgstr "نوع الوسيطة:"
 
 #: ../src/volume-manager.c:164
 msgid "Removable Disk"
@@ -716,8 +716,8 @@ msgid "Folder"
 msgstr "مجلد"
 
 #: ../src/main-win-ui.c:180
-msgid "Blank File"
-msgstr "ملف فارغ"
+msgid "Empty File"
+msgstr ""
 
 #: ../src/main-win-ui.c:186
 #, fuzzy
@@ -746,12 +746,12 @@ msgid "_Icon View"
 msgstr "عرض أي_قوني"
 
 #: ../src/main-win-ui.c:196
-msgid "_Compact View"
-msgstr "عرض مدم_ج"
-
-#: ../src/main-win-ui.c:197
 msgid "_Thumbnail View"
 msgstr "عرض م_صغرات"
+
+#: ../src/main-win-ui.c:197
+msgid "_Compact View"
+msgstr "عرض مدم_ج"
 
 #: ../src/main-win-ui.c:198
 msgid "Detailed _List View"
@@ -785,15 +785,15 @@ msgstr "شجرة الدلائل"
 msgid "Remote"
 msgstr "عن بعد"
 
-#: ../src/main-win.c:529
+#: ../src/main-win.c:546
 msgid "You are in super user mode"
 msgstr "أنت في نمط المستخدم الخارق"
 
-#: ../src/main-win.c:700 ../src/main-win.c:708
+#: ../src/main-win.c:717 ../src/main-win.c:725
 msgid "Keyboard navigation"
 msgstr ""
 
-#: ../src/main-win.c:702
+#: ../src/main-win.c:719
 msgid ""
 "Tab: cycle focus Folder View -> Side Pane -> Tools Bar\n"
 "Shift+Tab: cycle focus Tools Bar -> Side Pane -> Folder View\n"
@@ -803,11 +803,11 @@ msgid ""
 "Ctrl+L or Alt+D: jump focus to Path Bar"
 msgstr ""
 
-#: ../src/main-win.c:738
+#: ../src/main-win.c:755
 msgid "Switch user command is not set."
 msgstr "أمر إبدال المستخدم غير محدد."
 
-#: ../src/main-win.c:1099
+#: ../src/main-win.c:1117
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -818,7 +818,7 @@ msgstr ""
 "'%s'\n"
 "أدخل إسم للعلامة الجديدة:"
 
-#: ../src/main-win.c:1103
+#: ../src/main-win.c:1121
 msgid "Add to Bookmarks"
 msgstr "إضافة إلى العلامات"
 
@@ -902,7 +902,7 @@ msgstr ""
 msgid "[FILE1, FILE2,...]"
 msgstr "[FILE1, FILE2,...]"
 
-#: ../src/pcmanfm.c:526
+#: ../src/pcmanfm.c:529
 msgid "Terminal emulator is not set."
 msgstr "محاكي الطرفية غير محدد."
 
@@ -922,12 +922,12 @@ msgstr[3] "%d عناصر محددة"
 msgstr[4] "%d عناصر محددة"
 msgstr[5] "%d عناصر محددة"
 
-#: ../src/tab-page.c:354
+#: ../src/tab-page.c:363
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "مساحة الخالية: %s (مجموع: %s)"
 
-#: ../src/tab-page.c:374
+#: ../src/tab-page.c:383
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
@@ -938,7 +938,7 @@ msgstr[3] "%d عناصر"
 msgstr[4] "%d عناصر"
 msgstr[5] "%d عناصر"
 
-#: ../src/tab-page.c:375
+#: ../src/tab-page.c:384
 #, c-format
 msgid " (%d hidden)"
 msgid_plural " (%d hidden)"
@@ -950,21 +950,24 @@ msgstr[4] " (%d مخفية)"
 msgstr[5] " (%d مخفية)"
 
 #: ../data/pcmanfm.desktop.in.h:1
-#, fuzzy
-msgid "File Manager PCManFM"
-msgstr "مدير الملفات"
+msgid "Browse the file system and manage the files"
+msgstr "تصفح نظام الملفات وأدِر الملفات"
 
 #: ../data/pcmanfm.desktop.in.h:2
 msgid "File Manager"
 msgstr "مدير الملفات"
 
 #: ../data/pcmanfm.desktop.in.h:3
-msgid "Browse the file system and manage the files"
-msgstr "تصفح نظام الملفات وأدِر الملفات"
+#, fuzzy
+msgid "File Manager PCManFM"
+msgstr "مدير الملفات"
 
-#: ../data/pcmanfm-desktop-pref.desktop.in.h:2
+#: ../data/pcmanfm-desktop-pref.desktop.in.h:1
 msgid "Change desktop wallpapers and behavior of desktop manager"
 msgstr ""
+
+#~ msgid "Blank File"
+#~ msgstr "ملف فارغ"
 
 #~ msgid "Create _New..."
 #~ msgstr "أنشئ ج_ديدًا..."

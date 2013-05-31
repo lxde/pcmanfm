@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-11 00:18+0200\n"
+"POT-Creation-Date: 2013-06-01 01:02+0300\n"
 "PO-Revision-Date: 2012-10-26 02:35+0200\n"
 "Last-Translator: Walter <wwycheuk@gmail.com>\n"
 "Language-Team: zh_TW <zh_TW@li.org>\n"
@@ -40,316 +40,204 @@ msgstr ""
 msgid "translator-credits"
 msgstr "洪任諭 (PCMan) <pcman.tw@gmail.com>"
 
-#: ../data/ui/desktop-pref.glade.h:1 ../src/desktop-ui.c:34
-#: ../data/pcmanfm-desktop-pref.desktop.in.h:1
-msgid "Desktop Preferences"
-msgstr "桌面偏好設定"
-
-#: ../data/ui/desktop-pref.glade.h:2
+#: ../data/ui/desktop-pref.glade.h:1
 msgid "<b>Background</b>"
 msgstr "<b>背景</b>"
 
-#: ../data/ui/desktop-pref.glade.h:3
-msgid "_Wallpaper:"
-msgstr "桌布(_W)："
-
-#: ../data/ui/desktop-pref.glade.h:4
-msgid "Please select an image file"
-msgstr "請選擇影像檔"
-
-#: ../data/ui/desktop-pref.glade.h:5
-msgid "_Use the same wallpaper on all desktops"
-msgstr "所有桌面使用相同桌布(_U)"
-
-#: ../data/ui/desktop-pref.glade.h:6
-msgid "_Background color:"
-msgstr "背景顏色(_B)："
-
-#: ../data/ui/desktop-pref.glade.h:7
-msgid "Wallpaper _mode:"
-msgstr "桌布模式(_M)："
-
-#: ../data/ui/desktop-pref.glade.h:8
-msgid "<b>Text</b>"
-msgstr "<b>文字</b>"
-
-#: ../data/ui/desktop-pref.glade.h:9
-msgid "_Font of label text:"
-msgstr "標籤文字字型(_F)："
-
-#: ../data/ui/desktop-pref.glade.h:10
-msgid "C_olor of label text:"
-msgstr "標籤文字色彩(_O)："
-
-#: ../data/ui/desktop-pref.glade.h:11
-msgid "Color of _shadow:"
-msgstr "陰影色彩(_S)："
-
-#: ../data/ui/desktop-pref.glade.h:12
-msgid "_Appearance"
-msgstr "外觀(_A)"
-
-#: ../data/ui/desktop-pref.glade.h:13
+#: ../data/ui/desktop-pref.glade.h:2
 msgid "<b>Show desktop icons</b>"
 msgstr "<b>顯示桌面圖示</b>"
 
-#: ../data/ui/desktop-pref.glade.h:14
-msgid "_Show \"My Documents\" icon on desktop"
-msgstr "在桌面顯示「我的文件」圖示(_S)"
+#: ../data/ui/desktop-pref.glade.h:3
+msgid "<b>Text</b>"
+msgstr "<b>文字</b>"
 
-#: ../data/ui/desktop-pref.glade.h:15
-msgid "Show \"_My Computer\" icon on desktop"
-msgstr "在桌面顯示「我的電腦」圖示(_M)"
-
-#: ../data/ui/desktop-pref.glade.h:16
-msgid "Show \"_Trash Bin\" icon on desktop"
-msgstr "在桌面顯示「垃圾桶」圖示(_T)"
-
-#: ../data/ui/desktop-pref.glade.h:17
-msgid "S_how icons of volumes on desktop"
-msgstr "在桌面顯示磁碟圖示(_H)"
-
-#: ../data/ui/desktop-pref.glade.h:18
-msgid "_Desktop Icons"
-msgstr "桌面圖示(_D)"
-
-#: ../data/ui/desktop-pref.glade.h:19
-msgid "_Show menus provided by window managers when desktop is clicked"
-msgstr "點擊桌面時，顯示視窗管理員提供的選單(_S)"
-
-#: ../data/ui/desktop-pref.glade.h:20
+#: ../data/ui/desktop-pref.glade.h:4
 msgid "Ad_vanced"
 msgstr "進階(_V)"
 
-#: ../data/ui/desktop-pref.glade.h:21
-msgid "Fill with background color only"
-msgstr "只以背景色填滿"
+#: ../data/ui/desktop-pref.glade.h:5
+msgid "C_olor of label text:"
+msgstr "標籤文字色彩(_O)："
 
-#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:69
-msgid "Stretch to fill the entire screen"
-msgstr "延展至填滿整個螢幕"
-
-#: ../data/ui/desktop-pref.glade.h:23 ../data/ui/pref.glade.h:70
-msgid "Stretch to fit the screen"
-msgstr "延展到適合螢幕大小"
-
-#: ../data/ui/desktop-pref.glade.h:24 ../data/ui/pref.glade.h:71
+#: ../data/ui/desktop-pref.glade.h:6 ../data/ui/pref.glade.h:15
 msgid "Center on the screen"
 msgstr "置於螢幕中央"
 
-#: ../data/ui/desktop-pref.glade.h:25 ../data/ui/pref.glade.h:72
+#: ../data/ui/desktop-pref.glade.h:7
+msgid "Color of _shadow:"
+msgstr "陰影色彩(_S)："
+
+#: ../data/ui/desktop-pref.glade.h:8 ../src/desktop-ui.c:34
+#: ../data/pcmanfm-desktop-pref.desktop.in.h:2
+msgid "Desktop Preferences"
+msgstr "桌面偏好設定"
+
+#: ../data/ui/desktop-pref.glade.h:9
+msgid "Fill with background color only"
+msgstr "只以背景色填滿"
+
+#: ../data/ui/desktop-pref.glade.h:10
+msgid "Please select an image file"
+msgstr "請選擇影像檔"
+
+#: ../data/ui/desktop-pref.glade.h:11
+msgid "S_how icons of volumes on desktop"
+msgstr "在桌面顯示磁碟圖示(_H)"
+
+#: ../data/ui/desktop-pref.glade.h:12
+msgid "Show \"_My Computer\" icon on desktop"
+msgstr "在桌面顯示「我的電腦」圖示(_M)"
+
+#: ../data/ui/desktop-pref.glade.h:13
+msgid "Show \"_Trash Bin\" icon on desktop"
+msgstr "在桌面顯示「垃圾桶」圖示(_T)"
+
+#: ../data/ui/desktop-pref.glade.h:14 ../data/ui/pref.glade.h:46
+msgid "Stretch to fill the entire screen"
+msgstr "延展至填滿整個螢幕"
+
+#: ../data/ui/desktop-pref.glade.h:15 ../data/ui/pref.glade.h:47
+msgid "Stretch to fit the screen"
+msgstr "延展到適合螢幕大小"
+
+#: ../data/ui/desktop-pref.glade.h:16 ../data/ui/pref.glade.h:49
 msgid "Tile the image to fill the entire screen"
 msgstr "並排影像填滿整個螢幕"
 
+#: ../data/ui/desktop-pref.glade.h:17
+msgid "Wallpaper _mode:"
+msgstr "桌布模式(_M)："
+
+#: ../data/ui/desktop-pref.glade.h:18
+msgid "_Appearance"
+msgstr "外觀(_A)"
+
+#: ../data/ui/desktop-pref.glade.h:19
+msgid "_Background color:"
+msgstr "背景顏色(_B)："
+
+#: ../data/ui/desktop-pref.glade.h:20
+msgid "_Desktop Icons"
+msgstr "桌面圖示(_D)"
+
+#: ../data/ui/desktop-pref.glade.h:21
+msgid "_Font of label text:"
+msgstr "標籤文字字型(_F)："
+
+#: ../data/ui/desktop-pref.glade.h:22
+msgid "_Show \"My Documents\" icon on desktop"
+msgstr "在桌面顯示「我的文件」圖示(_S)"
+
+#: ../data/ui/desktop-pref.glade.h:23
+msgid "_Show menus provided by window managers when desktop is clicked"
+msgstr "點擊桌面時，顯示視窗管理員提供的選單(_S)"
+
+#: ../data/ui/desktop-pref.glade.h:24
+msgid "_Use the same wallpaper on all desktops"
+msgstr "所有桌面使用相同桌布(_U)"
+
+#: ../data/ui/desktop-pref.glade.h:25
+msgid "_Wallpaper:"
+msgstr "桌布(_W)："
+
 #: ../data/ui/pref.glade.h:1
-msgid "Opened in Current Tab"
-msgstr "在目前分頁開啟"
+msgid "<b>Auto-mount</b>"
+msgstr "<b>自動掛載</b>"
 
 #: ../data/ui/pref.glade.h:2
-msgid "Opened in New Tab"
-msgstr "在新分頁開啟"
-
-#: ../data/ui/pref.glade.h:3
-msgid "Opened in New Window"
-msgstr "在新視窗開啟"
-
-#: ../data/ui/pref.glade.h:4
-msgid "Preferences"
-msgstr "偏好設定"
-
-#: ../data/ui/pref.glade.h:5
 msgid "<b>Behavior</b>"
 msgstr "<b>行為</b>"
 
-#: ../data/ui/pref.glade.h:6
-msgid "_Open files with single click"
-msgstr "單擊滑鼠開啟檔案(_O)"
-
-#: ../data/ui/pref.glade.h:7
-msgid "Delay of auto-selection in single click mode (0 to disable)"
-msgstr "在單擊模式進行自動選取的延遲時間 (設為 0 則停用)"
-
-#: ../data/ui/pref.glade.h:8
-msgid "Co_nfirm before deleting files"
-msgstr "刪除檔案前先確認(_N)"
-
-#: ../data/ui/pref.glade.h:9
-msgid "_Move deleted files to \"trash bin\" instead of erasing from disk"
-msgstr "將刪除的檔案移到「垃圾桶」而不真的從磁碟清除(_M)"
-
-#: ../data/ui/pref.glade.h:10
-msgid "_Erase files on removable media instead of \"trash bin\" creation"
-msgstr "當刪除移除式媒體的檔案時直接刪除，而非建立「垃圾桶」(_E)"
-
-#: ../data/ui/pref.glade.h:11
-msgid "Confi_rm before moving files into \"trash bi_n\""
-msgstr "將檔案移至「垃圾桶」前先確認(_R)"
-
-#: ../data/ui/pref.glade.h:12
-msgid "_Bookmarks:"
-msgstr "書籤(_B)："
-
-#: ../data/ui/pref.glade.h:13
-msgid "Defaul_t drop action:"
-msgstr "預設置放動作(_T)："
-
-#: ../data/ui/pref.glade.h:14
-msgid "_Unfold tab when files are dragged onto tab button"
-msgstr "當將檔案拖曳至分頁鈕時展開分頁(_U)"
-
-#: ../data/ui/pref.glade.h:15
+#: ../data/ui/pref.glade.h:3
 msgid "<b>Default View</b>"
 msgstr "<b>預設檢視方式</b>"
 
-#: ../data/ui/pref.glade.h:16
-msgid "Vie_w Mode:"
-msgstr "檢視模式(_W)："
+#: ../data/ui/pref.glade.h:4
+msgid "<b>Directories Tree</b>"
+msgstr "<b>目錄樹</b>"
 
-#: ../data/ui/pref.glade.h:17
-msgid "_General"
-msgstr "一般(_G)"
-
-#: ../data/ui/pref.glade.h:18
+#: ../data/ui/pref.glade.h:5
 msgid "<b>Icons</b>"
 msgstr "<b>圖示</b>"
 
+#: ../data/ui/pref.glade.h:6
+msgid "<b>Programs</b>"
+msgstr "<b>程式</b>"
+
+#: ../data/ui/pref.glade.h:7
+msgid "<b>Show in Places:</b>"
+msgstr "<b>在「地點」欄顯示：</b>"
+
+#: ../data/ui/pref.glade.h:8
+msgid "<b>User Interface</b>"
+msgstr "<b>使用者介面</b>"
+
+#: ../data/ui/pref.glade.h:9
+msgid "A_rchiver integration:"
+msgstr "壓縮軟體整合(_R)："
+
+#: ../data/ui/pref.glade.h:10
+msgid "Al_ways show full file names"
+msgstr "一定顯示完整檔案名(_W)"
+
+#: ../data/ui/pref.glade.h:11
+msgid "Al_ways show the tab bar"
+msgstr "一定顯示分頁列(_W)"
+
+#: ../data/ui/pref.glade.h:12
+msgid "App_lications"
+msgstr "應用程式(_L)"
+
+#: ../data/ui/pref.glade.h:13
+msgid "Ask"
+msgstr "詢問"
+
+#: ../data/ui/pref.glade.h:14
+msgid "Auto (move if on the same FS, copy otherwise)"
+msgstr "自動 (如在同一檔案系統則移動；其他情況則複製)"
+
+#: ../data/ui/pref.glade.h:16
+msgid "Clos_e tab containing removable medium when it is unmounted"
+msgstr "當卸載移除式媒體時，關閉其分頁(_E)"
+
+#: ../data/ui/pref.glade.h:17
+msgid "Co_nfirm before deleting files"
+msgstr "刪除檔案前先確認(_N)"
+
+#: ../data/ui/pref.glade.h:18
+msgid "Compact View"
+msgstr "簡潔清單檢視"
+
 #: ../data/ui/pref.glade.h:19
-msgid "Size of small _icons:"
-msgstr "小圖示的尺寸(_I)："
+msgid "Confi_rm before moving files into \"trash bi_n\""
+msgstr "將檔案移至「垃圾桶」前先確認(_R)"
 
 #: ../data/ui/pref.glade.h:20
-msgid "Size of _big icons:"
-msgstr "大圖示的尺寸(_B)："
+msgid "Copy"
+msgstr "複製"
 
 #: ../data/ui/pref.glade.h:21
-msgid "Size of _thumbnails:"
-msgstr "縮圖的尺寸(_T)："
+msgid "Defaul_t drop action:"
+msgstr "預設置放動作(_T)："
 
 #: ../data/ui/pref.glade.h:22
-msgid "Size of side _pane icons:"
-msgstr "側邊欄圖示的尺寸(_P)："
+msgid "Delay of auto-selection in single click mode (0 to disable)"
+msgstr "在單擊模式進行自動選取的延遲時間 (設為 0 則停用)"
 
 #: ../data/ui/pref.glade.h:23
-msgid "_Show thumbnails of files"
-msgstr "以縮圖顯示檔案內容(_S)"
+msgid "Des_ktop Folder"
+msgstr "桌面資料夾(_K)"
 
 #: ../data/ui/pref.glade.h:24
-msgid "_Only show thumbnails for local files"
-msgstr "只顯示本地端檔案的縮圖(_O)"
+msgid "Detailed List View"
+msgstr "詳細清單檢視"
 
 #: ../data/ui/pref.glade.h:25
 msgid "Do _not generate thumbnails for files exceeding this size:"
 msgstr "不要為超過這個大小的檔案產生縮圖(_N)："
 
-#: ../data/ui/pref.glade.h:26
-msgid "<b>User Interface</b>"
-msgstr "<b>使用者介面</b>"
-
 #: ../data/ui/pref.glade.h:27
-msgid "Us_e SI decimal prefixes instead of IEC binary prefixes"
-msgstr "使用 SI 十進制前置字元，而非 IEC 二進制前置字元(_E)"
-
-#: ../data/ui/pref.glade.h:28
-msgid "Treat backup files as _hidden"
-msgstr "將備份檔視為隱藏檔案(_H)"
-
-#: ../data/ui/pref.glade.h:29
-msgid "Al_ways show full file names"
-msgstr "一定顯示完整檔案名(_W)"
-
-#: ../data/ui/pref.glade.h:30
-msgid "_Display"
-msgstr "顯示(_D)"
-
-#: ../data/ui/pref.glade.h:31
-msgid "Hide _folder content border"
-msgstr "隱藏資料夾內容邊框(_H)"
-
-#: ../data/ui/pref.glade.h:32
-msgid "Hide _side pane buttons"
-msgstr "隱藏側邊欄按鈕(_S)"
-
-#: ../data/ui/pref.glade.h:33
-msgid "Hid_e 'Close tab' buttons"
-msgstr "隱藏「關閉分頁」按鈕(_E)"
-
-#: ../data/ui/pref.glade.h:34
-msgid "Al_ways show the tab bar"
-msgstr "一定顯示分頁列(_W)"
-
-#: ../data/ui/pref.glade.h:35
-msgid "<b>Directories Tree</b>"
-msgstr "<b>目錄樹</b>"
-
-#: ../data/ui/pref.glade.h:36
-msgid "Hide e_xpander on empty or locked folder"
-msgstr "在空的或鎖定的資料夾時隱藏擴展列(_X)"
-
-#: ../data/ui/pref.glade.h:37
-msgid "<b>Show in Places:</b>"
-msgstr "<b>在「地點」欄顯示：</b>"
-
-#: ../data/ui/pref.glade.h:38
-msgid "_Home Directory"
-msgstr "家目錄(_H)"
-
-#: ../data/ui/pref.glade.h:39
-msgid "Des_ktop Folder"
-msgstr "桌面資料夾(_K)"
-
-#: ../data/ui/pref.glade.h:40
-msgid "App_lications"
-msgstr "應用程式(_L)"
-
-#: ../data/ui/pref.glade.h:41
-msgid "_Trash bin"
-msgstr "垃圾桶(_T)"
-
-#: ../data/ui/pref.glade.h:42
-msgid "_Layout"
-msgstr "配置(_L)"
-
-#: ../data/ui/pref.glade.h:43
-msgid "<b>Auto-mount</b>"
-msgstr "<b>自動掛載</b>"
-
-#: ../data/ui/pref.glade.h:44
-msgid "_Mount mountable volumes automatically on program startup"
-msgstr "啟動程式時自動掛載可掛載的磁碟(_M)"
-
-#: ../data/ui/pref.glade.h:45
-msgid "Mo_unt removable media automatically when they are inserted"
-msgstr "當插入移除式媒體時，自動掛載(_U)"
-
-#: ../data/ui/pref.glade.h:46
-msgid "_Show available options for removable media when they are inserted"
-msgstr "當插入移除式媒體時，顯示可用的選項(_S)"
-
-#: ../data/ui/pref.glade.h:47
-msgid "_Open mounted removable media in new tab instead of new window"
-msgstr "在新分頁而非新視窗開啟移除式媒體(_O)"
-
-#: ../data/ui/pref.glade.h:48
-msgid "Clos_e tab containing removable medium when it is unmounted"
-msgstr "當卸載移除式媒體時，關閉其分頁(_E)"
-
-#: ../data/ui/pref.glade.h:49
-msgid "_Volume Management"
-msgstr "磁碟管理(_V)"
-
-#: ../data/ui/pref.glade.h:50
-msgid "<b>Programs</b>"
-msgstr "<b>程式</b>"
-
-#: ../data/ui/pref.glade.h:51
-msgid "_Terminal emulator:"
-msgstr "終端機模擬程式(_T)："
-
-#: ../data/ui/pref.glade.h:52
-msgid "_Switch user command:"
-msgstr "切換使用者之指令(_S)："
-
-#: ../data/ui/pref.glade.h:54
 #, no-c-format
 msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
@@ -358,15 +246,27 @@ msgstr ""
 "舉例：終端機用 \"xterm -e %s\" 或切換使用者命令用\"gksu %s\"\n"
 "%s = 你想用終端機模擬器或是切換使用者命令來執行的指令行"
 
-#: ../data/ui/pref.glade.h:56
-msgid "A_rchiver integration:"
-msgstr "壓縮軟體整合(_R)："
+#: ../data/ui/pref.glade.h:29
+msgid "Hid_e 'Close tab' buttons"
+msgstr "隱藏「關閉分頁」按鈕(_E)"
 
-#: ../data/ui/pref.glade.h:57
-msgid "_Use Application Startup Notify by default"
-msgstr "預設使用應用程式啟動通知(_U)"
+#: ../data/ui/pref.glade.h:30
+msgid "Hide _folder content border"
+msgstr "隱藏資料夾內容邊框(_H)"
 
-#: ../data/ui/pref.glade.h:58
+#: ../data/ui/pref.glade.h:31
+msgid "Hide _side pane buttons"
+msgstr "隱藏側邊欄按鈕(_S)"
+
+#: ../data/ui/pref.glade.h:32
+msgid "Hide e_xpander on empty or locked folder"
+msgstr "在空的或鎖定的資料夾時隱藏擴展列(_X)"
+
+#: ../data/ui/pref.glade.h:33
+msgid "Icon View"
+msgstr "圖示檢視"
+
+#: ../data/ui/pref.glade.h:34
 msgid ""
 "If checked then use Startup Notify for application if another not stated "
 "explicitly.\n"
@@ -375,61 +275,161 @@ msgstr ""
 "如勾選，如沒有另外設定則使用應用程式啟動通知。\n"
 "如不勾選，只在應用程式有個別設定時使用啟動通知。"
 
-#: ../data/ui/pref.glade.h:60
-msgid "_Advanced"
-msgstr "進階(_A)"
+#: ../data/ui/pref.glade.h:36
+msgid "Mo_unt removable media automatically when they are inserted"
+msgstr "當插入移除式媒體時，自動掛載(_U)"
 
-#: ../data/ui/pref.glade.h:61
-msgid "Auto (move if on the same FS, copy otherwise)"
-msgstr "自動 (如在同一檔案系統則移動；其他情況則複製)"
-
-#: ../data/ui/pref.glade.h:62
-msgid "Copy"
-msgstr "複製"
-
-#: ../data/ui/pref.glade.h:63
+#: ../data/ui/pref.glade.h:37
 msgid "Move"
 msgstr "移動"
 
-#: ../data/ui/pref.glade.h:64
-msgid "Ask"
-msgstr "詢問"
+#: ../data/ui/pref.glade.h:38
+msgid "Opened in Current Tab"
+msgstr "在目前分頁開啟"
 
-#: ../data/ui/pref.glade.h:65
-msgid "Icon View"
-msgstr "圖示檢視"
+#: ../data/ui/pref.glade.h:39
+msgid "Opened in New Tab"
+msgstr "在新分頁開啟"
 
-#: ../data/ui/pref.glade.h:66
-msgid "Compact View"
-msgstr "簡潔清單檢視"
+#: ../data/ui/pref.glade.h:40
+msgid "Opened in New Window"
+msgstr "在新視窗開啟"
 
-#: ../data/ui/pref.glade.h:67
+#: ../data/ui/pref.glade.h:41
+msgid "Preferences"
+msgstr "偏好設定"
+
+#: ../data/ui/pref.glade.h:42
+msgid "Size of _big icons:"
+msgstr "大圖示的尺寸(_B)："
+
+#: ../data/ui/pref.glade.h:43
+msgid "Size of _thumbnails:"
+msgstr "縮圖的尺寸(_T)："
+
+#: ../data/ui/pref.glade.h:44
+msgid "Size of side _pane icons:"
+msgstr "側邊欄圖示的尺寸(_P)："
+
+#: ../data/ui/pref.glade.h:45
+msgid "Size of small _icons:"
+msgstr "小圖示的尺寸(_I)："
+
+#: ../data/ui/pref.glade.h:48
 msgid "Thumbnail View"
 msgstr "縮圖檢視"
 
+#: ../data/ui/pref.glade.h:50
+msgid "Treat backup files as _hidden"
+msgstr "將備份檔視為隱藏檔案(_H)"
+
+#: ../data/ui/pref.glade.h:51
+msgid "Us_e SI decimal prefixes instead of IEC binary prefixes"
+msgstr "使用 SI 十進制前置字元，而非 IEC 二進制前置字元(_E)"
+
+#: ../data/ui/pref.glade.h:52
+msgid "Vie_w Mode:"
+msgstr "檢視模式(_W)："
+
+#: ../data/ui/pref.glade.h:53
+msgid "_Advanced"
+msgstr "進階(_A)"
+
+#: ../data/ui/pref.glade.h:54
+msgid "_Bookmarks:"
+msgstr "書籤(_B)："
+
+#: ../data/ui/pref.glade.h:55
+msgid "_Display"
+msgstr "顯示(_D)"
+
+#: ../data/ui/pref.glade.h:56
+msgid "_Erase files on removable media instead of \"trash bin\" creation"
+msgstr "當刪除移除式媒體的檔案時直接刪除，而非建立「垃圾桶」(_E)"
+
+#: ../data/ui/pref.glade.h:57
+msgid "_General"
+msgstr "一般(_G)"
+
+#: ../data/ui/pref.glade.h:58
+msgid "_Home Directory"
+msgstr "家目錄(_H)"
+
+#: ../data/ui/pref.glade.h:59
+msgid "_Layout"
+msgstr "配置(_L)"
+
+#: ../data/ui/pref.glade.h:60
+msgid "_Mount mountable volumes automatically on program startup"
+msgstr "啟動程式時自動掛載可掛載的磁碟(_M)"
+
+#: ../data/ui/pref.glade.h:61
+msgid "_Move deleted files to \"trash bin\" instead of erasing from disk"
+msgstr "將刪除的檔案移到「垃圾桶」而不真的從磁碟清除(_M)"
+
+#: ../data/ui/pref.glade.h:62
+msgid "_Only show thumbnails for local files"
+msgstr "只顯示本地端檔案的縮圖(_O)"
+
+#: ../data/ui/pref.glade.h:63
+msgid "_Open files with single click"
+msgstr "單擊滑鼠開啟檔案(_O)"
+
+#: ../data/ui/pref.glade.h:64
+msgid "_Open mounted removable media in new tab instead of new window"
+msgstr "在新分頁而非新視窗開啟移除式媒體(_O)"
+
+#: ../data/ui/pref.glade.h:65
+msgid "_Show available options for removable media when they are inserted"
+msgstr "當插入移除式媒體時，顯示可用的選項(_S)"
+
+#: ../data/ui/pref.glade.h:66
+msgid "_Show thumbnails of files"
+msgstr "以縮圖顯示檔案內容(_S)"
+
+#: ../data/ui/pref.glade.h:67
+msgid "_Switch user command:"
+msgstr "切換使用者之指令(_S)："
+
 #: ../data/ui/pref.glade.h:68
-msgid "Detailed List View"
-msgstr "詳細清單檢視"
+msgid "_Terminal emulator:"
+msgstr "終端機模擬程式(_T)："
+
+#: ../data/ui/pref.glade.h:69
+msgid "_Trash bin"
+msgstr "垃圾桶(_T)"
+
+#: ../data/ui/pref.glade.h:70
+msgid "_Unfold tab when files are dragged onto tab button"
+msgstr "當將檔案拖曳至分頁鈕時展開分頁(_U)"
+
+#: ../data/ui/pref.glade.h:71
+msgid "_Use Application Startup Notify by default"
+msgstr "預設使用應用程式啟動通知(_U)"
+
+#: ../data/ui/pref.glade.h:72
+msgid "_Volume Management"
+msgstr "磁碟管理(_V)"
 
 #: ../data/ui/autorun.glade.h:1
-msgid "Removable medium is inserted"
-msgstr "插入了移除式媒體"
-
-#: ../data/ui/autorun.glade.h:2
 msgid "<b>Removable medium is inserted</b>"
 msgstr "<b>插入了移除式媒體</b>"
 
-#: ../data/ui/autorun.glade.h:3
-msgid "Type of medium:"
-msgstr "媒體類型："
-
-#: ../data/ui/autorun.glade.h:4
+#: ../data/ui/autorun.glade.h:2
 msgid "Detecting..."
 msgstr "正在偵測..."
 
-#: ../data/ui/autorun.glade.h:5
+#: ../data/ui/autorun.glade.h:3
 msgid "Please select the action you want to perform:"
 msgstr "請選擇要執行的動作："
+
+#: ../data/ui/autorun.glade.h:4
+msgid "Removable medium is inserted"
+msgstr "插入了移除式媒體"
+
+#: ../data/ui/autorun.glade.h:5
+msgid "Type of medium:"
+msgstr "媒體類型："
 
 #: ../src/volume-manager.c:164
 msgid "Removable Disk"
@@ -642,8 +642,8 @@ msgid "Folder"
 msgstr "資料夾"
 
 #: ../src/main-win-ui.c:180
-msgid "Blank File"
-msgstr "空白檔案"
+msgid "Empty File"
+msgstr ""
 
 #: ../src/main-win-ui.c:186
 msgid "Show Hidde_n"
@@ -670,12 +670,12 @@ msgid "_Icon View"
 msgstr "以大圖示檢視(_I)"
 
 #: ../src/main-win-ui.c:196
-msgid "_Compact View"
-msgstr "以簡潔清單檢視(_C)"
-
-#: ../src/main-win-ui.c:197
 msgid "_Thumbnail View"
 msgstr "縮圖檢視(_T)"
+
+#: ../src/main-win-ui.c:197
+msgid "_Compact View"
+msgstr "以簡潔清單檢視(_C)"
 
 #: ../src/main-win-ui.c:198
 msgid "Detailed _List View"
@@ -709,15 +709,15 @@ msgstr "目錄樹"
 msgid "Remote"
 msgstr "遠端"
 
-#: ../src/main-win.c:529
+#: ../src/main-win.c:546
 msgid "You are in super user mode"
 msgstr "你正在使用超級使用者模式"
 
-#: ../src/main-win.c:700 ../src/main-win.c:708
+#: ../src/main-win.c:717 ../src/main-win.c:725
 msgid "Keyboard navigation"
 msgstr "鍵盤導覽"
 
-#: ../src/main-win.c:702
+#: ../src/main-win.c:719
 msgid ""
 "Tab: cycle focus Folder View -> Side Pane -> Tools Bar\n"
 "Shift+Tab: cycle focus Tools Bar -> Side Pane -> Folder View\n"
@@ -733,11 +733,11 @@ msgstr ""
 "F10：啟用主選單\n"
 "Ctrl+L 或 Alt+D：選取路徑列"
 
-#: ../src/main-win.c:738
+#: ../src/main-win.c:755
 msgid "Switch user command is not set."
 msgstr "切換使用者的命令尚未設定。"
 
-#: ../src/main-win.c:1099
+#: ../src/main-win.c:1117
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -748,7 +748,7 @@ msgstr ""
 "'%s'\n"
 "輸入新書籤的名稱:"
 
-#: ../src/main-win.c:1103
+#: ../src/main-win.c:1121
 msgid "Add to Bookmarks"
 msgstr "新增到書籤"
 
@@ -828,7 +828,7 @@ msgstr ""
 msgid "[FILE1, FILE2,...]"
 msgstr "[檔案1, 檔案2,...]"
 
-#: ../src/pcmanfm.c:526
+#: ../src/pcmanfm.c:529
 msgid "Terminal emulator is not set."
 msgstr "尚未設定終端機模擬器。"
 
@@ -842,38 +842,41 @@ msgid "%d item selected"
 msgid_plural "%d items selected"
 msgstr[0] "已選取 %d 個項目"
 
-#: ../src/tab-page.c:354
+#: ../src/tab-page.c:363
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "可用空間：%s (總共：%s )"
 
-#: ../src/tab-page.c:374
+#: ../src/tab-page.c:383
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] "%d 個項目"
 
-#: ../src/tab-page.c:375
+#: ../src/tab-page.c:384
 #, c-format
 msgid " (%d hidden)"
 msgid_plural " (%d hidden)"
 msgstr[0] "(%d 個隱藏項目)"
 
 #: ../data/pcmanfm.desktop.in.h:1
-msgid "File Manager PCManFM"
-msgstr "檔案管理程式 PCManFM"
+msgid "Browse the file system and manage the files"
+msgstr "瀏覽檔案系統及管理檔案"
 
 #: ../data/pcmanfm.desktop.in.h:2
 msgid "File Manager"
 msgstr "檔案管理程式"
 
 #: ../data/pcmanfm.desktop.in.h:3
-msgid "Browse the file system and manage the files"
-msgstr "瀏覽檔案系統及管理檔案"
+msgid "File Manager PCManFM"
+msgstr "檔案管理程式 PCManFM"
 
-#: ../data/pcmanfm-desktop-pref.desktop.in.h:2
+#: ../data/pcmanfm-desktop-pref.desktop.in.h:1
 msgid "Change desktop wallpapers and behavior of desktop manager"
 msgstr "變更桌面管現程式的桌布及行為"
+
+#~ msgid "Blank File"
+#~ msgstr "空白檔案"
 
 #~ msgid "Create _New..."
 #~ msgstr "新建...(_N)"
