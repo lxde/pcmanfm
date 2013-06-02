@@ -1984,9 +1984,11 @@ static gboolean on_single_click_timeout(gpointer user_data)
     GdkWindow* window;
     int x, y;
 
+    if(g_source_is_destroyed(g_main_current_source()))
+        return FALSE;
     window = gtk_widget_get_window(w);
     /* generate a fake button press */
-    /* FIXME: will this cause any problem? */
+    /* FIXME: will this cause any problem? needs to be redesigned later */
     evt.type = GDK_BUTTON_PRESS;
     evt.window = window;
     gdk_window_get_pointer(window, &x, &y, &evt.state);
@@ -2013,7 +2015,7 @@ static gboolean on_motion_notify(GtkWidget* w, GdkEventMotion* evt)
         {
             GtkTreeIter it;
             FmDesktopItem* item = hit_test(self, &it, evt->x, evt->y);
-            GdkWindow* window = gtk_widget_get_window(w);
+            GdkWindow* window;
 
             if(item != self->hover_item)
             {
@@ -2022,21 +2024,22 @@ static gboolean on_motion_notify(GtkWidget* w, GdkEventMotion* evt)
                     g_source_remove(self->single_click_timeout_handler);
                     self->single_click_timeout_handler = 0;
                 }
+                window = gtk_widget_get_window(w);
+                if(item)
+                {
+                    gdk_window_set_cursor(window, hand_cursor);
+                    /* FIXME: timeout should be customizable */
+                    if(self->single_click_timeout_handler == 0)
+                        self->single_click_timeout_handler = g_timeout_add(400, on_single_click_timeout, self); //400 ms
+                        /* Making a loop to aviod the selection of the item */
+                        /* on_single_click_timeout(self); */
+                }
+                else
+                {
+                    gdk_window_set_cursor(window, NULL);
+                }
+                self->hover_item = item;
             }
-            if(item)
-            {
-                gdk_window_set_cursor(window, hand_cursor);
-                /* FIXME: timeout should be customizable */
-                if(self->single_click_timeout_handler == 0)
-                    self->single_click_timeout_handler = g_timeout_add(400, on_single_click_timeout, self); //400 ms
-                    /* Making a loop to aviod the selection of the item */
-                    /* on_single_click_timeout(self); */
-            }
-            else
-            {
-                gdk_window_set_cursor(window, NULL);
-            }
-            self->hover_item = item;
         }
         return TRUE;
     }
