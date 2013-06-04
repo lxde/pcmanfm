@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: pcmanfm 0.9\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-06-01 01:02+0300\n"
-"PO-Revision-Date: 2012-10-12 08:24+0200\n"
-"Last-Translator: Daniel <d@winzen4.de>\n"
+"PO-Revision-Date: 2013-06-03 08:24+0200\n"
+"Last-Translator: Klaus Knopper <knoppix@knopper.net>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -38,7 +38,8 @@ msgid "translator-credits"
 msgstr ""
 "Christoph Wickert <cwickert@fedoraproject.org>\n"
 "Lutz Thuns <lthuns@opensuse.org>\n"
-"Daniel Winzen <d@winzen4.de>"
+"Daniel Winzen <d@winzen4.de>\n"
+"Klaus Knopper <knoppix@knopper.net>"
 
 #: ../data/ui/desktop-pref.glade.h:1
 msgid "<b>Background</b>"
@@ -107,9 +108,8 @@ msgstr "Kacheln"
 
 # Skalieren/Zentriert/...
 #: ../data/ui/desktop-pref.glade.h:17
-#, fuzzy
 msgid "Wallpaper _mode:"
-msgstr "Ausrichtung:"
+msgstr "Hintergrundbild_modus:"
 
 #: ../data/ui/desktop-pref.glade.h:18
 msgid "_Appearance"
@@ -169,23 +169,20 @@ msgid "<b>Programs</b>"
 msgstr "<b>Programme</b>"
 
 #: ../data/ui/pref.glade.h:7
-#, fuzzy
 msgid "<b>Show in Places:</b>"
-msgstr "<b>Desktop-Symbole anzeigen</b>"
+msgstr "<b>In Orten anzeigen:</b>"
 
 #: ../data/ui/pref.glade.h:8
 msgid "<b>User Interface</b>"
-msgstr "<b>Benutzeroberflache</b>"
+msgstr "<b>Benutzeroberfläche</b>"
 
 #: ../data/ui/pref.glade.h:9
-#, fuzzy
 msgid "A_rchiver integration:"
 msgstr "Archivmanager-Integration:"
 
 #: ../data/ui/pref.glade.h:10
-#, fuzzy
 msgid "Al_ways show full file names"
-msgstr "Reiterleiste immer anzeigen"
+msgstr "Vollständige Dateinamen immer anzeigen"
 
 #: ../data/ui/pref.glade.h:11
 msgid "Al_ways show the tab bar"
@@ -201,12 +198,11 @@ msgstr "Fragen"
 
 #: ../data/ui/pref.glade.h:14
 msgid "Auto (move if on the same FS, copy otherwise)"
-msgstr ""
+msgstr "Automatisch (verschieben falls im gleichen Dateisystem, andernfalls kopieren)"
 
 #: ../data/ui/pref.glade.h:16
-#, fuzzy
 msgid "Clos_e tab containing removable medium when it is unmounted"
-msgstr "Verfügbare Optionen für Wechseldatenträger beim Einlegen anzeigen"
+msgstr "Tab für Wechseldatenträger schließ_en, wenn entfernt."
 
 #: ../data/ui/pref.glade.h:17
 msgid "Co_nfirm before deleting files"
@@ -228,11 +224,11 @@ msgstr "Kopieren"
 
 #: ../data/ui/pref.glade.h:21
 msgid "Defaul_t drop action:"
-msgstr ""
+msgstr "Standard Aktion beim Loslassen:"
 
 #: ../data/ui/pref.glade.h:22
 msgid "Delay of auto-selection in single click mode (0 to disable)"
-msgstr ""
+msgstr "Wartezeit für die automatische Auswahl im Einzelklick-Modus (0 zum Abschalten)"
 
 #: ../data/ui/pref.glade.h:23
 msgid "Des_ktop Folder"
@@ -243,7 +239,6 @@ msgid "Detailed List View"
 msgstr "Detailansicht"
 
 #: ../data/ui/pref.glade.h:25
-#, fuzzy
 msgid "Do _not generate thumbnails for files exceeding this size:"
 msgstr "Keine Miniatur-Vorschaubilder erzeugen für Dateien größer als:"
 
@@ -262,18 +257,16 @@ msgid "Hid_e 'Close tab' buttons"
 msgstr "»Reiter schließen« Knopf _verbergen"
 
 #: ../data/ui/pref.glade.h:30
-#, fuzzy
 msgid "Hide _folder content border"
 msgstr "Rahmen um den Ordnerinhalt verbergen"
 
 #: ../data/ui/pref.glade.h:31
-#, fuzzy
 msgid "Hide _side pane buttons"
 msgstr "Knöpfe in der Seitenleiste ausblenden"
 
 #: ../data/ui/pref.glade.h:32
 msgid "Hide e_xpander on empty or locked folder"
-msgstr ""
+msgstr "Erweiterung bei leerem oder gesperrtem Ordner verbergen"
 
 #: ../data/ui/pref.glade.h:33
 msgid "Icon View"
@@ -285,9 +278,12 @@ msgid ""
 "explicitly.\n"
 "If unchecked then use Startup Notify only if that is defined for application."
 msgstr ""
+"Wenn angeklickt, Startsignal für die Anwendung verwenden falls "
+"nicht an anderer Stelle anders angegeben.\n"
+"Wenn nicht angeklickt, Startsignal nur dann verwenden, falls eines "
+"für das Programm definiert ist."
 
 #: ../data/ui/pref.glade.h:36
-#, fuzzy
 msgid "Mo_unt removable media automatically when they are inserted"
 msgstr "Wechseldatenträger automatisch beim Einlegen einbinden"
 
@@ -313,35 +309,31 @@ msgstr "Einstellungen"
 
 #: ../data/ui/pref.glade.h:42
 msgid "Size of _big icons:"
-msgstr ""
+msgstr "Größe für große Symbole:"
+
+#: ../data/ui/pref.glade.h:43
+msgid "Size of small _icons:"
+msgstr "Größe für kleine Symbole:"
 
 #: ../data/ui/pref.glade.h:43
 msgid "Size of _thumbnails:"
 msgstr "Größe von _Vorschaubildern:"
 
 #: ../data/ui/pref.glade.h:44
-#, fuzzy
 msgid "Size of side _pane icons:"
-msgstr "Seitenleiste:"
-
-#: ../data/ui/pref.glade.h:45
-#, fuzzy
-msgid "Size of small _icons:"
-msgstr "Listenansicht:"
+msgstr "Größe der Symbole in der Seitenleiste:"
 
 #: ../data/ui/pref.glade.h:48
 msgid "Thumbnail View"
 msgstr "Miniatur-Vorschaubilder"
 
 #: ../data/ui/pref.glade.h:50
-#, fuzzy
 msgid "Treat backup files as _hidden"
 msgstr "Backupdateien verbergen"
 
 #: ../data/ui/pref.glade.h:51
-#, fuzzy
 msgid "Us_e SI decimal prefixes instead of IEC binary prefixes"
-msgstr "SI Dezimalpräfixe anstatt IEC Binärpräfixen verwenden"
+msgstr "SI Dezimalpräfixe anstatt IEC Binärpräfixe verwenden"
 
 #: ../data/ui/pref.glade.h:52
 msgid "Vie_w Mode:"
@@ -356,9 +348,8 @@ msgid "_Bookmarks:"
 msgstr "_Lesezeichen:"
 
 #: ../data/ui/pref.glade.h:55
-#, fuzzy
 msgid "_Display"
-msgstr "_Ansicht"
+msgstr "_Anzeige"
 
 #: ../data/ui/pref.glade.h:56
 msgid "_Erase files on removable media instead of \"trash bin\" creation"
@@ -372,23 +363,21 @@ msgstr "All_gemein"
 
 #: ../data/ui/pref.glade.h:58
 msgid "_Home Directory"
-msgstr ""
+msgstr "Heimverzeichnis"
 
 #: ../data/ui/pref.glade.h:59
 msgid "_Layout"
 msgstr "_Layout"
 
 #: ../data/ui/pref.glade.h:60
-#, fuzzy
 msgid "_Mount mountable volumes automatically on program startup"
-msgstr "Datenträger bei Programmstart automatisch in das Dateisystem einhängen"
+msgstr "Datenträger bei Programmstart automatisch einhängen"
 
 #: ../data/ui/pref.glade.h:61
 msgid "_Move deleted files to \"trash bin\" instead of erasing from disk"
 msgstr "Dateien in den »_Papierkorb« verschieben anstatt sie zu löschen"
 
 #: ../data/ui/pref.glade.h:62
-#, fuzzy
 msgid "_Only show thumbnails for local files"
 msgstr "Vorschaubilder nur für lokale Dateien anzeigen"
 
@@ -398,26 +387,23 @@ msgstr "_Einfacher Klick zum Öffnen von Dateien"
 
 #: ../data/ui/pref.glade.h:64
 msgid "_Open mounted removable media in new tab instead of new window"
-msgstr ""
+msgstr "Eingehängte Wechseldatenträger in neuem Tab statt neuem Fenster öffnen"
 
 #: ../data/ui/pref.glade.h:65
-#, fuzzy
 msgid "_Show available options for removable media when they are inserted"
 msgstr "Verfügbare Optionen für Wechseldatenträger beim Einlegen anzeigen"
 
 #: ../data/ui/pref.glade.h:66
-#, fuzzy
 msgid "_Show thumbnails of files"
-msgstr "Miniatur-Vorschaubilder anzeigen"
+msgstr "Miniatur-Vorschaubilder für Dateien anzeigen"
 
 #: ../data/ui/pref.glade.h:67
-#, fuzzy
 msgid "_Switch user command:"
 msgstr "Befehl zum Benutzerwechsel:"
 
 #: ../data/ui/pref.glade.h:68
 msgid "_Terminal emulator:"
-msgstr "_Terminal emulator:"
+msgstr "_Terminal Emulator:"
 
 #: ../data/ui/pref.glade.h:69
 msgid "_Trash bin"
@@ -425,11 +411,11 @@ msgstr "_Papierkorb"
 
 #: ../data/ui/pref.glade.h:70
 msgid "_Unfold tab when files are dragged onto tab button"
-msgstr ""
+msgstr "Tabs ausklappen, wenn Dateien auf den Tab Reiter gezogen werden."
 
 #: ../data/ui/pref.glade.h:71
 msgid "_Use Application Startup Notify by default"
-msgstr ""
+msgstr "Standard-Startsignal für das Programm verwenden"
 
 #: ../data/ui/pref.glade.h:72
 msgid "_Volume Management"
@@ -498,12 +484,11 @@ msgstr "Neuer _Reiter"
 
 #: ../src/main-win-ui.c:129
 msgid "Create new tab for this folder"
-msgstr ""
+msgstr "Neuen Tab für diesen Ordner erzeugen"
 
 #: ../src/main-win-ui.c:130
-#, fuzzy
 msgid "C_reate New..."
-msgstr "Neue Datei …"
+msgstr "Neu erzeugen..."
 
 #: ../src/main-win-ui.c:131
 msgid "_Close Tab"
@@ -527,11 +512,11 @@ msgstr "_Verknüpfung erstellen"
 
 #: ../src/main-win-ui.c:140
 msgid "_Move To..."
-msgstr "Verschieben _nach …"
+msgstr "Verschieben _nach..."
 
 #: ../src/main-win-ui.c:141
 msgid "C_opy To..."
-msgstr "_Kopieren nach …"
+msgstr "_Kopieren nach..."
 
 #: ../src/main-win-ui.c:143
 msgid "_Invert Selection"
@@ -568,29 +553,27 @@ msgstr "_Hilfe"
 
 #: ../src/main-win-ui.c:152
 msgid "_Keyboard navigation"
-msgstr ""
+msgstr "Tastaturnavigation"
 
 #: ../src/main-win-ui.c:153
 msgid "_Go"
 msgstr "_Gehe zu"
 
 #: ../src/main-win-ui.c:154
-#, fuzzy
 msgid "_Previous Folder"
-msgstr "Zurück"
+msgstr "Voriger Ordner"
 
 #: ../src/main-win-ui.c:154
 msgid "Previous Folder"
-msgstr "Zurück"
+msgstr "Voriger Ordner"
 
 #: ../src/main-win-ui.c:155
-#, fuzzy
 msgid "_Next Folder"
-msgstr "Vor"
+msgstr "Nächster Ordner"
 
 #: ../src/main-win-ui.c:155
 msgid "Next Folder"
-msgstr "Vor"
+msgstr "Nächster Ordner"
 
 #: ../src/main-win-ui.c:156
 msgid "Pa_rent Folder"
@@ -637,9 +620,8 @@ msgid "Installed Applications"
 msgstr "Installierte Anwendungen"
 
 #: ../src/main-win-ui.c:163
-#, fuzzy
 msgid "Open entered folder"
-msgstr "Aktuellen Ordner neu laden"
+msgstr "Eingegebenen Ordner öffnen"
 
 #: ../src/main-win-ui.c:164
 msgid "_Bookmarks"
@@ -662,9 +644,8 @@ msgid "Open Current Folder as _Root"
 msgstr "Aktuellen Ordner als »_root« öffnen"
 
 #: ../src/main-win-ui.c:170
-#, fuzzy
 msgid "Fin_d Files"
-msgstr "_Sortieren"
+msgstr "Dateien fin_den"
 
 #. for popup menu - these entries exist in FmFolderView popup still
 #: ../src/main-win-ui.c:179
@@ -673,24 +654,23 @@ msgstr "Ordner"
 
 #: ../src/main-win-ui.c:180
 msgid "Empty File"
-msgstr ""
+msgstr "Leere Datei"
 
 #: ../src/main-win-ui.c:186
 msgid "Show Hidde_n"
 msgstr "_Verborgene Dateien anzeigen"
 
 #: ../src/main-win-ui.c:187
-#, fuzzy
 msgid "Sho_w Side Pane"
 msgstr "Seitenleiste anzeigen"
 
 #: ../src/main-win-ui.c:188
 msgid "Show Status B_ar"
-msgstr ""
+msgstr "St_atuszeile anzeigen"
 
 #: ../src/main-win-ui.c:189
 msgid "T_win Pane Mode"
-msgstr ""
+msgstr "Doppelfenster-Modus"
 
 #: ../src/main-win-ui.c:190
 msgid "Fullscreen _Mode"
@@ -747,7 +727,7 @@ msgstr "Sie arbeiten mit Superuser-Rechten"
 
 #: ../src/main-win.c:717 ../src/main-win.c:725
 msgid "Keyboard navigation"
-msgstr ""
+msgstr "Tastaturnavigation"
 
 #: ../src/main-win.c:719
 msgid ""
@@ -758,6 +738,12 @@ msgid ""
 "F10: activate main menu\n"
 "Ctrl+L or Alt+D: jump focus to Path Bar"
 msgstr ""
+"Tabulator: Fokuswechsel Ordneransicht -> Seitenleiste -> Werkzeugleiste\n"
+"Hochstelltaste+Tabulator: Fokuswechsel Werkzeugleiste -> Seitenleiste -> Ordneransicht\n"
+"F6: Fokuswechsel Seitenleiste <-> Ordneransicht\n"
+"F8: Fokus-Aufteiler zwischen Seitenleiste und Ordneransicht\n"
+"F10: Hauptmenü aktivieren\n"
+"Steuerung-L oder Alt-D: Fokus-Sprung auf Pfadleiste"
 
 #: ../src/main-win.c:755
 msgid "Switch user command is not set."
@@ -771,7 +757,7 @@ msgid ""
 "'%s'\n"
 "Enter a name for the new bookmark item:"
 msgstr ""
-"Der folgende Ordner wird zu den Lesezeichen hinzugefügt:\n"
+"Folgenden Ordner zu den Lesezeichen hinzufügen:\n"
 "'%s'\n"
 "Namen für des neue Lesezeichen eingeben:"
 
@@ -790,11 +776,11 @@ msgstr "PROFIL"
 
 #: ../src/pcmanfm.c:76
 msgid "Run PCManFM as a daemon"
-msgstr "PCManFM als Daemon ausführen"
+msgstr "PCManFM als Hintergrunddienst ausführen"
 
 #: ../src/pcmanfm.c:77
 msgid "No function. Just to be compatible with nautilus"
-msgstr "Keine Funktion. Nur um kompatibel zu nautilus zu sein"
+msgstr "Keine Funktion. Nur vorhanden, um kompatibel zu nautilus zu sein"
 
 #. options that are acceptable for every instance of pcmanfm and will be passed through IPC.
 #: ../src/pcmanfm.c:80
@@ -811,12 +797,11 @@ msgstr "Einstellungsdialog öffnen"
 
 #: ../src/pcmanfm.c:83
 msgid "Use --desktop option only for one screen"
-msgstr ""
+msgstr "--desktop Option nur für einen Bildschirm benutzen"
 
 #: ../src/pcmanfm.c:84
-#, fuzzy
 msgid "Set desktop wallpaper from image FILE"
-msgstr "Hintergrundbild einstellen"
+msgstr "Hintergrundbild aus Bild-DATEI setzen"
 
 #: ../src/pcmanfm.c:84
 msgid "FILE"
@@ -824,10 +809,9 @@ msgstr "DATEI"
 
 #. don't translate list of modes in description, please
 #: ../src/pcmanfm.c:86
-#, fuzzy
 msgid "Set mode of desktop wallpaper. MODE=(color|stretch|fit|center|tile)"
 msgstr ""
-"Eigenschaften des Hintergrundbildes setzen. <mode>=(color|stretch|fit|center|"
+"Eigenschaften des Hintergrundbildes setzen. MODUS=(color|stretch|fit|center|"
 "tile)"
 
 #: ../src/pcmanfm.c:86
@@ -835,27 +819,25 @@ msgid "MODE"
 msgstr "MODUS"
 
 #: ../src/pcmanfm.c:87
-#, fuzzy
 msgid "Open Preferences dialog on the page N"
-msgstr "Einstellungsdialog öffnen"
+msgstr "Einstellungsdialog auf der Seite N öffnen"
 
 #: ../src/pcmanfm.c:87
 msgid "N"
-msgstr ""
+msgstr "N"
 
 #: ../src/pcmanfm.c:88
-#, fuzzy
 msgid "Open new window"
-msgstr "In einem neuen Fenster öffnen"
+msgstr "Neues Fenster öffnen"
 
 #. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
 #: ../src/pcmanfm.c:90
 msgid "Window role for usage by window manager"
-msgstr ""
+msgstr "Rolle des Fensters für die Benutzung durch den Windowmanager"
 
 #: ../src/pcmanfm.c:90
 msgid "ROLE"
-msgstr ""
+msgstr "ROLLE"
 
 #: ../src/pcmanfm.c:91
 msgid "[FILE1, FILE2,...]"
@@ -866,7 +848,6 @@ msgid "Terminal emulator is not set."
 msgstr "Es wurde keine Terminal-Anwendung in den Einstellungen angegeben."
 
 #: ../src/tab-page.c:50
-#, fuzzy
 msgid "Open in New T_ab"
 msgstr "In einem neuen Reiter öffnen"
 
