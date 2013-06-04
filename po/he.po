@@ -1,11 +1,11 @@
-#
+# Hebrew translation for PCManFM package.
 msgid ""
 msgstr ""
-"Project-Id-Version: pcmanfm\n"
+"Project-Id-Version: pcmanfm 1.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-06-01 01:02+0300\n"
-"PO-Revision-Date: 2012-10-13 10:53+0200\n"
-"Last-Translator: Yaron <sh.yaron@gmail.com>\n"
+"PO-Revision-Date: 2013-06-04 22:34+0200\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: \n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
@@ -57,7 +57,8 @@ msgstr "מת_קדם"
 msgid "C_olor of label text:"
 msgstr "צב_ע טקסט התוויות:"
 
-#: ../data/ui/desktop-pref.glade.h:6 ../data/ui/pref.glade.h:15
+#: ../data/ui/desktop-pref.glade.h:6
+#: ../data/ui/pref.glade.h:15
 msgid "Center on the screen"
 msgstr "ממורכז על גבי המסך"
 
@@ -65,7 +66,8 @@ msgstr "ממורכז על גבי המסך"
 msgid "Color of _shadow:"
 msgstr "צ_בע הצל:"
 
-#: ../data/ui/desktop-pref.glade.h:8 ../src/desktop-ui.c:34
+#: ../data/ui/desktop-pref.glade.h:8
+#: ../src/desktop-ui.c:34
 #: ../data/pcmanfm-desktop-pref.desktop.in.h:2
 msgid "Desktop Preferences"
 msgstr "העדפות שולחן העבודה"
@@ -90,15 +92,18 @@ msgstr "הצגת סמל „המ_חשב שלי“ על שולחן העבודה"
 msgid "Show \"_Trash Bin\" icon on desktop"
 msgstr "הצגת סמל „ס_ל האשפה“ על שולחן העבודה"
 
-#: ../data/ui/desktop-pref.glade.h:14 ../data/ui/pref.glade.h:46
+#: ../data/ui/desktop-pref.glade.h:14
+#: ../data/ui/pref.glade.h:46
 msgid "Stretch to fill the entire screen"
 msgstr "מתיחה כדי למלא את המסך כולו"
 
-#: ../data/ui/desktop-pref.glade.h:15 ../data/ui/pref.glade.h:47
+#: ../data/ui/desktop-pref.glade.h:15
+#: ../data/ui/pref.glade.h:47
 msgid "Stretch to fit the screen"
 msgstr "מתיחה לצורך התאמה למסך"
 
-#: ../data/ui/desktop-pref.glade.h:16 ../data/ui/pref.glade.h:49
+#: ../data/ui/desktop-pref.glade.h:16
+#: ../data/ui/pref.glade.h:49
 msgid "Tile the image to fill the entire screen"
 msgstr "פריסת התמונה כך שתמלא את המסך כולו"
 
@@ -265,8 +270,7 @@ msgstr "תצוגת סמלים"
 
 #: ../data/ui/pref.glade.h:34
 msgid ""
-"If checked then use Startup Notify for application if another not stated "
-"explicitly.\n"
+"If checked then use Startup Notify for application if another not stated explicitly.\n"
 "If unchecked then use Startup Notify only if that is defined for application."
 msgstr ""
 "אם סומן, יש להשתמש בהתרעת הפעלה עבור יישום אם לא צוין אחר במפורש.\n"
@@ -322,8 +326,7 @@ msgstr "להתייחס לקובצי _גיבוי כאל קבצים מוסתרים
 
 #: ../data/ui/pref.glade.h:51
 msgid "Us_e SI decimal prefixes instead of IEC binary prefixes"
-msgstr ""
-"_שימוש בקידומות עשרוניות לפי תקן ה־SI במקום קידומות בינריות לפי תקן ה־IEC"
+msgstr "_שימוש בקידומות עשרוניות לפי תקן ה־SI במקום קידומות בינריות לפי תקן ה־IEC"
 
 #: ../data/ui/pref.glade.h:52
 msgid "Vie_w Mode:"
@@ -441,11 +444,13 @@ msgstr "פתיחה במנהל קבצים"
 msgid "Open in New Ta_b"
 msgstr "פתיחה ב_לשונית חדשה"
 
-#: ../src/desktop-ui.c:52 ../src/tab-page.c:51
+#: ../src/desktop-ui.c:52
+#: ../src/tab-page.c:51
 msgid "Open in New Win_dow"
 msgstr "פתיחה ב_חלון חדש"
 
-#: ../src/desktop-ui.c:54 ../src/tab-page.c:53
+#: ../src/desktop-ui.c:54
+#: ../src/tab-page.c:53
 msgid "Open in Termina_l"
 msgstr "פתיחה ב_מסוף"
 
@@ -640,9 +645,8 @@ msgid "Folder"
 msgstr "תיקייה"
 
 #: ../src/main-win-ui.c:180
-#, fuzzy
 msgid "Empty File"
-msgstr "חילוץ קבצים"
+msgstr "קובץ ריק"
 
 #: ../src/main-win-ui.c:186
 msgid "Show Hidde_n"
@@ -712,7 +716,8 @@ msgstr "מרוחק"
 msgid "You are in super user mode"
 msgstr "המצב הנוכחי הוא מצב משתמש על"
 
-#: ../src/main-win.c:717 ../src/main-win.c:725
+#: ../src/main-win.c:717
+#: ../src/main-win.c:725
 msgid "Keyboard navigation"
 msgstr "ניווט בעזרת המקלדת"
 
@@ -1520,6 +1525,7 @@ msgstr "שינוי רקע שולחן העבודה ואת ההתנהגות של �
 #~ msgstr "בהליכי טעינה..."
 
 #~ msgid "%d visible item (%s)%s"
+
 #~ msgid_plural "%d visible items (%s)%s"
 #~ msgstr[0] "פריט גלוי אחד ‎(%s)%s"
 #~ msgstr[1] "%d פריטים גלויים ‎(%s)%s"
