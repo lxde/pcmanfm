@@ -5,24 +5,22 @@
 # Sérgio Marques <smarquespt@gmail.com> 2010-2012
 msgid ""
 msgstr ""
-"Project-Id-Version: pcmanfm2\n"
+"Project-Id-Version: pcmanfm 1.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-06-01 01:02+0300\n"
-"PO-Revision-Date: 2012-10-12 16:22+0200\n"
-"Last-Translator: Sérgio <smarquespt@gmail.com>\n"
+"PO-Revision-Date: 2013-06-04 18:08-0000\n"
+"Last-Translator: Sérgio Marques <smarquespt@gmail.com>\n"
 "Language-Team: \n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.0.5\n"
-"X-Poedit-Language: Portuguese\n"
-"X-Poedit-Country: PORTUGAL\n"
+"X-Generator: Poedit 1.5.4\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2012"
-msgstr "Direitos de autor (C) 2009 - 2012"
+msgstr "Direitos de autor (C) 2009 - 2013"
 
 #: ../data/ui/about.glade.in.h:2
 msgid ""
@@ -108,7 +106,7 @@ msgstr "Ladrilhar imagem para preencher totalmente o ecrã"
 
 #: ../data/ui/desktop-pref.glade.h:17
 msgid "Wallpaper _mode:"
-msgstr "_Modo papel de parede:"
+msgstr "_Modo do papel de parede::"
 
 #: ../data/ui/desktop-pref.glade.h:18
 msgid "_Appearance"
@@ -197,8 +195,8 @@ msgstr "Perguntar"
 #: ../data/ui/pref.glade.h:14
 msgid "Auto (move if on the same FS, copy otherwise)"
 msgstr ""
-"Automático (se estiver no mesmo sistema de ficheiros, mover e se não "
-"estiver, copiar)"
+"Automático (se estiver no mesmo sistema de ficheiros mover e se não estiver "
+"copiar)"
 
 #: ../data/ui/pref.glade.h:16
 msgid "Clos_e tab containing removable medium when it is unmounted"
@@ -652,7 +650,7 @@ msgstr "Pasta"
 
 #: ../src/main-win-ui.c:180
 msgid "Empty File"
-msgstr ""
+msgstr "Ficheiro vazio"
 
 #: ../src/main-win-ui.c:186
 msgid "Show Hidde_n"
@@ -740,9 +738,9 @@ msgstr ""
 "Shift+Tab: alterar entre Barra de ferramentas -> Painel lateral -> Vista de "
 "pastas\n"
 "F6: alterar entre Painel lateral <-> Vista de pastas\n"
-"F8: dividir foco entre Painel lateral e Vista de pastasF10: ativar menu "
-"principal\n"
-"Ctrl+L ou Alt+D: mudar foco para a Barra de caminhos"
+"F8: dividir foco entre Painel lateral e Vista de pastas\n"
+"F10: ativar menu principal\n"
+"Ctrl+L ou Alt+D: mudar foco para a Barra de caminho"
 
 #: ../src/main-win.c:755
 msgid "Switch user command is not set."
@@ -884,7 +882,7 @@ msgstr "Gestor de ficheiros"
 
 #: ../data/pcmanfm.desktop.in.h:3
 msgid "File Manager PCManFM"
-msgstr "Gestor de ficheiros PcManFM"
+msgstr "Gestor de ficheiros PCManFM"
 
 #: ../data/pcmanfm-desktop-pref.desktop.in.h:1
 msgid "Change desktop wallpapers and behavior of desktop manager"
