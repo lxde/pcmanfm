@@ -5,10 +5,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: pcmanfm 1.0\n"
+"Project-Id-Version: pcmanfm 1.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-06-01 01:02+0300\n"
-"PO-Revision-Date: 2013-03-16 19:05+0100\n"
+"PO-Revision-Date: 2013-06-04 22:35+0100\n"
 "Last-Translator: Franciszek Janowski <nobange@poczta.onet.pl>\n"
 "Language-Team: polski <>\n"
 "Language: pl\n"
@@ -38,7 +38,8 @@ msgstr ""
 msgid "translator-credits"
 msgstr ""
 "Grzegorz Gibas <amigib@gmail.com>, 2010.\n"
-"Piotr Sokół <psokol@jabster.pl>, 2010, 2011, 2012."
+"Piotr Sokół <psokol@jabster.pl>, 2010, 2011, 2012.\n"
+"Franciszek Janowski <nobange@poczta.onet.pl>, 2013."
 
 #: ../data/ui/desktop-pref.glade.h:1
 msgid "<b>Background</b>"
@@ -274,6 +275,10 @@ msgid ""
 "explicitly.\n"
 "If unchecked then use Startup Notify only if that is defined for application."
 msgstr ""
+"Jeśli zaznaczone, używa Startup Notify dla aplikacji jeżeli wyraźnie nie "
+"określono inaczej.\n"
+"Jeśli odznaczone, używa Startup Notify tylko jeżeli jest tak określone dla "
+"aplikacji."
 
 #: ../data/ui/pref.glade.h:36
 msgid "Mo_unt removable media automatically when they are inserted"
@@ -646,7 +651,7 @@ msgstr "Katalog"
 
 #: ../src/main-win-ui.c:180
 msgid "Empty File"
-msgstr ""
+msgstr "Pusty plik"
 
 #: ../src/main-win-ui.c:186
 msgid "Show Hidde_n"
@@ -762,7 +767,7 @@ msgstr "Określa nazwę profilu ustawień"
 
 #: ../src/pcmanfm.c:75
 msgid "PROFILE"
-msgstr ""
+msgstr "PROFILE"
 
 #: ../src/pcmanfm.c:76
 msgid "Run PCManFM as a daemon"
@@ -795,7 +800,7 @@ msgstr "_Ustala tło pulpitu"
 
 #: ../src/pcmanfm.c:84
 msgid "FILE"
-msgstr ""
+msgstr "FILE"
 
 #. don't translate list of modes in description, please
 #: ../src/pcmanfm.c:86
@@ -804,7 +809,7 @@ msgstr "Ustala _tryb wyświetlania tła <TRYB>=(color|stretch|fit|center|tile)"
 
 #: ../src/pcmanfm.c:86
 msgid "MODE"
-msgstr ""
+msgstr "MODE"
 
 #: ../src/pcmanfm.c:87
 msgid "Open Preferences dialog on the page N"
@@ -812,7 +817,7 @@ msgstr "Otwiera okno _preferencji pulpitu"
 
 #: ../src/pcmanfm.c:87
 msgid "N"
-msgstr ""
+msgstr "N"
 
 #: ../src/pcmanfm.c:88
 msgid "Open new window"
@@ -825,7 +830,7 @@ msgstr "Zadanie okna do użytku menedżera okien"
 
 #: ../src/pcmanfm.c:90
 msgid "ROLE"
-msgstr ""
+msgstr "ROLE"
 
 #: ../src/pcmanfm.c:91
 msgid "[FILE1, FILE2,...]"
