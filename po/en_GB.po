@@ -5,7 +5,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: pcmanfm 0.9.x\n"
+"Project-Id-Version: pcmanfm 1.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-06-01 01:02+0300\n"
 "PO-Revision-Date: 2012-10-24 22:38+0200\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2012"
-msgstr "Copyright © 2009 - 2012"
+msgstr "Copyright © 2009 - 2013"
 
 #: ../data/ui/about.glade.in.h:2
 msgid ""
@@ -192,7 +192,7 @@ msgstr "Ask"
 
 #: ../data/ui/pref.glade.h:14
 msgid "Auto (move if on the same FS, copy otherwise)"
-msgstr "Auto (move if on the same file system, copy otherwise)"
+msgstr "Auto (move if on the same file system, otherwise copy)"
 
 #: ../data/ui/pref.glade.h:16
 msgid "Clos_e tab containing removable medium when it is unmounted"
@@ -208,7 +208,6 @@ msgstr "Compact View"
 
 # Two Alt key options, Which one?
 #: ../data/ui/pref.glade.h:19
-#, fuzzy
 msgid "Confi_rm before moving files into \"trash bi_n\""
 msgstr "Confi_rm before moving files into \"Rubbish Bi_n\""
 
@@ -222,7 +221,7 @@ msgstr "Defaul_t drop action:"
 
 #: ../data/ui/pref.glade.h:22
 msgid "Delay of auto-selection in single click mode (0 to disable)"
-msgstr "Delay of auto-selection in single click mode (0 to disable)"
+msgstr "Delay auto-selection in single click mode (0 to disable)"
 
 #: ../data/ui/pref.glade.h:23
 msgid "Des_ktop Folder"
@@ -271,9 +270,9 @@ msgid ""
 "explicitly.\n"
 "If unchecked then use Startup Notify only if that is defined for application."
 msgstr ""
-"If checked then use Startup Notify for application if another not stated "
+"If checked then use Start-up Notify for application if another not stated "
 "explicitly.\n"
-"If unchecked then use Startup Notify only if that is defined for application."
+"If unchecked then use Start-up Notify only if that is defined for application."
 
 #: ../data/ui/pref.glade.h:36
 msgid "Mo_unt removable media automatically when they are inserted"
@@ -361,7 +360,7 @@ msgstr "_Layout"
 
 #: ../data/ui/pref.glade.h:60
 msgid "_Mount mountable volumes automatically on program startup"
-msgstr "_Mount mountable volumes automatically on program start up"
+msgstr "_Mount mountable volumes automatically on program start-up"
 
 #: ../data/ui/pref.glade.h:61
 msgid "_Move deleted files to \"trash bin\" instead of erasing from disk"
@@ -643,7 +642,7 @@ msgstr "Folder"
 
 #: ../src/main-win-ui.c:180
 msgid "Empty File"
-msgstr ""
+msgstr "Empty File"
 
 #: ../src/main-win-ui.c:186
 msgid "Show Hidde_n"
