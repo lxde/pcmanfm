@@ -1,14 +1,14 @@
 # Kazakh translation for pcmanfm.
 # Copyright (C) 2012 The LXDE team
 # This file is distributed under the same license as the LXDE package.
-# Baurzhan Muftakhidinov <baurthefirst@gmail.com>, 2012.
+# Baurzhan Muftakhidinov <baurthefirst@gmail.com>, 2012-2013.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: master\n"
+"Project-Id-Version: pcmanfm 1.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-06-01 01:02+0300\n"
-"PO-Revision-Date: 2012-10-02 09:58+0600\n"
+"PO-Revision-Date: 2013-06-05 08:24+0600\n"
 "Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>\n"
 "Language-Team: Kazakh <kk_KZ@googlegroups.com>\n"
 "Language: kk\n"
@@ -16,8 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Poedit-Language: Kazakh\n"
-"X-Poedit-Country: KAZAKHSTAN\n"
+"X-Generator: Poedit 1.5.4\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2012"
@@ -36,7 +35,7 @@ msgstr ""
 #. Please replace this line with your own names, one name per line.
 #: ../data/ui/about.glade.in.h:6
 msgid "translator-credits"
-msgstr "Baurzhan Muftakhidinov <baurthefirst@gmail.com> 2012"
+msgstr "Baurzhan Muftakhidinov <baurthefirst@gmail.com> 2012-2013"
 
 #: ../data/ui/desktop-pref.glade.h:1
 msgid "<b>Background</b>"
@@ -178,9 +177,8 @@ msgid "A_rchiver integration:"
 msgstr "Арх_ивтеуші интеграциясы:"
 
 #: ../data/ui/pref.glade.h:10
-#, fuzzy
 msgid "Al_ways show full file names"
-msgstr "Беттер панелін әрқа_шан көрсету"
+msgstr "Файлдардың толық аттарын әрқаш_ан көрсету"
 
 #: ../data/ui/pref.glade.h:11
 msgid "Al_ways show the tab bar"
@@ -224,7 +222,7 @@ msgstr "Тастау_дың бастапқы әрекеті:"
 
 #: ../data/ui/pref.glade.h:22
 msgid "Delay of auto-selection in single click mode (0 to disable)"
-msgstr ""
+msgstr "Дара шерту режимінде автотаңдау үшін күту (0 сөндіру үшін)"
 
 #: ../data/ui/pref.glade.h:23
 msgid "Des_ktop Folder"
@@ -480,7 +478,7 @@ msgstr "Жаңа _бет"
 
 #: ../src/main-win-ui.c:129
 msgid "Create new tab for this folder"
-msgstr ""
+msgstr "Бұл бума үшін жаңа бетті жасау"
 
 #: ../src/main-win-ui.c:130
 msgid "C_reate New..."
@@ -616,9 +614,8 @@ msgid "Installed Applications"
 msgstr "Орнатылған қолданбалар"
 
 #: ../src/main-win-ui.c:163
-#, fuzzy
 msgid "Open entered folder"
-msgstr "Ағымдағы буманы қайта жүктеу"
+msgstr "Енгізілген буманы ашу"
 
 #: ../src/main-win-ui.c:164
 msgid "_Bookmarks"
@@ -651,7 +648,7 @@ msgstr "Бума"
 
 #: ../src/main-win-ui.c:180
 msgid "Empty File"
-msgstr ""
+msgstr "Бос файл"
 
 #: ../src/main-win-ui.c:186
 msgid "Show Hidde_n"
@@ -659,7 +656,7 @@ msgstr "Жас_ырынды көрсету"
 
 #: ../src/main-win-ui.c:187
 msgid "Sho_w Side Pane"
-msgstr "Бүйір _панелді көрсету"
+msgstr "Бүйір _панельді көрсету"
 
 #: ../src/main-win-ui.c:188
 msgid "Show Status B_ar"
@@ -793,7 +790,7 @@ msgstr "Жұмыс үстелі баптаулар сұхбатын ашу"
 
 #: ../src/pcmanfm.c:83
 msgid "Use --desktop option only for one screen"
-msgstr ""
+msgstr "--desktop опциясын тек экран үшін қолданыңыз"
 
 #: ../src/pcmanfm.c:84
 msgid "Set desktop wallpaper from image FILE"
