@@ -58,6 +58,7 @@ struct _FmTabPage
     FmNavHistory* nav_history;
     char* status_text[FM_STATUS_TEXT_NUM];
     FmFolder* folder;
+    gboolean busy : 1;
 };
 
 struct _FmTabPageClass

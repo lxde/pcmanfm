@@ -83,19 +83,24 @@ static void fm_tab_page_destroy(GtkWidget *page);
 static void fm_tab_page_destroy(GtkObject *page);
 #endif
 
+static void fm_tab_page_realize(GtkWidget *page);
+static void fm_tab_page_unrealize(GtkWidget *page);
+
 G_DEFINE_TYPE(FmTabPage, fm_tab_page, GTK_TYPE_HPANED)
 
 static void fm_tab_page_class_init(FmTabPageClass *klass)
 {
     GObjectClass *g_object_class = G_OBJECT_CLASS(klass);
-#if GTK_CHECK_VERSION(3, 0, 0)
     GtkWidgetClass *widget_class = GTK_WIDGET_CLASS(klass);
+#if GTK_CHECK_VERSION(3, 0, 0)
     widget_class->destroy = fm_tab_page_destroy;
 #else
     GtkObjectClass *gtk_object_class = GTK_OBJECT_CLASS(klass);
     gtk_object_class->destroy = fm_tab_page_destroy;
 #endif
     g_object_class->finalize = fm_tab_page_finalize;
+    widget_class->realize = fm_tab_page_realize;
+    widget_class->unrealize = fm_tab_page_unrealize;
 
     /* signals that current working directory is changed. */
     signals[CHDIR] =
@@ -268,12 +273,40 @@ static FmJobErrorAction on_folder_error(FmFolder* folder, GError* err, FmJobErro
     return FM_JOB_CONTINUE;
 }
 
+static void fm_tab_page_realize(GtkWidget *page)
+{
+    GTK_WIDGET_CLASS(fm_tab_page_parent_class)->realize(page);
+    if (FM_TAB_PAGE(page)->busy)
+        fm_set_busy_cursor(page);
+}
+
+static void fm_tab_page_unrealize(GtkWidget *page)
+{
+    if (FM_TAB_PAGE(page)->busy)
+        fm_unset_busy_cursor(page);
+    GTK_WIDGET_CLASS(fm_tab_page_parent_class)->unrealize(page);
+}
+
+static void _tab_set_busy_cursor(FmTabPage* page)
+{
+    page->busy = TRUE;
+    if (gtk_widget_get_realized(GTK_WIDGET(page)))
+        fm_set_busy_cursor(GTK_WIDGET(page));
+}
+
+static void _tab_unset_busy_cursor(FmTabPage* page)
+{
+    page->busy = FALSE;
+    if (gtk_widget_get_realized(GTK_WIDGET(page)))
+        fm_unset_busy_cursor(GTK_WIDGET(page));
+}
+
 static void on_folder_start_loading(FmFolder* folder, FmTabPage* page)
 {
     FmFolderView* fv = page->folder_view;
     /* g_debug("start-loading"); */
     /* FIXME: this should be set on toplevel parent */
-    fm_set_busy_cursor(GTK_WIDGET(page));
+    _tab_set_busy_cursor(page);
 
 #if FM_CHECK_VERSION(1, 0, 2)
     if(fm_folder_is_incremental(folder))
@@ -334,7 +367,7 @@ static void on_folder_finish_loading(FmFolder* folder, FmTabPage* page)
                   (guint)FM_STATUS_TEXT_NORMAL,
                   page->status_text[FM_STATUS_TEXT_NORMAL]);
 
-    fm_unset_busy_cursor(GTK_WIDGET(page));
+    _tab_unset_busy_cursor(page);
     /* g_debug("finish-loading"); */
 }
 
@@ -491,9 +524,9 @@ static void fm_tab_page_init(FmTabPage *page)
     gtk_container_set_focus_chain(GTK_CONTAINER(page), focus_chain);
     g_list_free(focus_chain);
 
-    gtk_widget_show_all(GTK_WIDGET(page));
-    if(mode & FM_SP_HIDE)
-        gtk_widget_hide(GTK_WIDGET(page->side_pane));
+//    gtk_widget_show_all(GTK_WIDGET(page));
+//    if(mode & FM_SP_HIDE)
+//        gtk_widget_hide(GTK_WIDGET(page->side_pane));
 
     /* create tab label */
     tab_label = (FmTabLabel*)fm_tab_label_new("");
@@ -517,6 +550,7 @@ static void fm_tab_page_init(FmTabPage *page)
     /* the folder view is already loded, call the "loaded" callback ourself. */
     //if(fm_folder_view_is_loaded(folder_view))
     //    on_folder_view_loaded(folder_view, fm_folder_view_get_cwd(folder_view), page);
+    page->busy = FALSE;
 }
 
 FmTabPage *fm_tab_page_new(FmPath* path)

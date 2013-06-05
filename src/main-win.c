@@ -49,8 +49,6 @@ static void fm_main_win_destroy(GtkObject *object);
 static void fm_main_win_finalize(GObject *object);
 G_DEFINE_TYPE(FmMainWin, fm_main_win, GTK_TYPE_WINDOW);
 
-static gint fm_main_win_new_tab(FmMainWin* win, FmPath* path);
-
 static void update_statusbar(FmMainWin* win);
 
 static gboolean on_focus_in(GtkWidget* w, GdkEventFocus* evt);
@@ -1030,7 +1028,7 @@ static void update_statusbar(FmMainWin* win)
         gtk_widget_hide(GTK_WIDGET(win->vol_status));
 }
 
-static gint fm_main_win_new_tab(FmMainWin* win, FmPath* path)
+gint fm_main_win_add_tab(FmMainWin* win, FmPath* path)
 {
     FmTabPage* page = fm_tab_page_new(path);
     GtkWidget* gpage = GTK_WIDGET(page);
@@ -1047,18 +1045,11 @@ static gint fm_main_win_new_tab(FmMainWin* win, FmPath* path)
 
     /* add the tab */
     ret = gtk_notebook_append_page(win->notebook, gpage, GTK_WIDGET(page->tab_label));
+    gtk_widget_show_all(gpage);
     gtk_notebook_set_tab_reorderable(win->notebook, gpage, TRUE);
     gtk_notebook_set_current_page(win->notebook, ret);
 
     return ret;
-}
-
-gint fm_main_win_add_tab(FmMainWin* win, FmPath* path)
-{
-    gint n = fm_main_win_new_tab(win, path);
-
-    gtk_widget_show_all(gtk_notebook_get_nth_page(win->notebook, n));
-    return n;
 }
 
 FmMainWin* fm_main_win_add_win(FmMainWin* win, FmPath* path)
@@ -1069,7 +1060,7 @@ FmMainWin* fm_main_win_add_win(FmMainWin* win, FmPath* path)
                                 app_config->win_height);
     gtk_widget_show_all(GTK_WIDGET(win));
     /* create new tab */
-    fm_main_win_new_tab(win, path);
+    fm_main_win_add_tab(win, path);
     gtk_window_present(GTK_WINDOW(win));
     return win;
 }
