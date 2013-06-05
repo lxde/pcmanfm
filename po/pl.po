@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm 1.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-06-01 01:02+0300\n"
-"PO-Revision-Date: 2013-06-04 22:35+0100\n"
+"PO-Revision-Date: 2013-06-05 19:06+0100\n"
 "Last-Translator: Franciszek Janowski <nobange@poczta.onet.pl>\n"
 "Language-Team: polski <>\n"
 "Language: pl\n"
@@ -80,7 +80,7 @@ msgstr "Wypełnienie kolorem"
 
 #: ../data/ui/desktop-pref.glade.h:10
 msgid "Please select an image file"
-msgstr "Wybór pliku"
+msgstr "Wybierz plik obrazu"
 
 #: ../data/ui/desktop-pref.glade.h:11
 msgid "S_how icons of volumes on desktop"
@@ -128,7 +128,7 @@ msgstr "_Czcionka tekstu opisu:"
 
 #: ../data/ui/desktop-pref.glade.h:22
 msgid "_Show \"My Documents\" icon on desktop"
-msgstr "Wyświetlanie ikony „_Dokumenty” na pulpicie"
+msgstr "_Wyświetlanie ikony \"Dokumenty\" na pulpicie"
 
 #: ../data/ui/desktop-pref.glade.h:23
 msgid "_Show menus provided by window managers when desktop is clicked"
@@ -796,24 +796,24 @@ msgstr "Użyj opcji --desktop dla tylko jednego ekranu"
 
 #: ../src/pcmanfm.c:84
 msgid "Set desktop wallpaper from image FILE"
-msgstr "_Ustala tło pulpitu"
+msgstr "Ustala tło pulpitu z PLIK"
 
 #: ../src/pcmanfm.c:84
 msgid "FILE"
-msgstr "FILE"
+msgstr "PLIK"
 
 #. don't translate list of modes in description, please
 #: ../src/pcmanfm.c:86
 msgid "Set mode of desktop wallpaper. MODE=(color|stretch|fit|center|tile)"
-msgstr "Ustala _tryb wyświetlania tła <TRYB>=(color|stretch|fit|center|tile)"
+msgstr "Ustala tryb wyświetlania tła TRYB=(color|stretch|fit|center|tile)"
 
 #: ../src/pcmanfm.c:86
 msgid "MODE"
-msgstr "MODE"
+msgstr "TRYB"
 
 #: ../src/pcmanfm.c:87
 msgid "Open Preferences dialog on the page N"
-msgstr "Otwiera okno _preferencji pulpitu"
+msgstr "Otwiera okno preferencji na stronie N"
 
 #: ../src/pcmanfm.c:87
 msgid "N"
@@ -821,7 +821,7 @@ msgstr "N"
 
 #: ../src/pcmanfm.c:88
 msgid "Open new window"
-msgstr "Otwórz w nowym _oknie"
+msgstr "Otwórz w nowym oknie"
 
 #. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
 #: ../src/pcmanfm.c:90
