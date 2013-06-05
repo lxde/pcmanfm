@@ -5,10 +5,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: pcmanfm\n"
+"Project-Id-Version: pcmanfm 1.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-06-01 01:02+0300\n"
-"PO-Revision-Date: 2012-10-29 07:30+0200\n"
+"PO-Revision-Date: 2013-06-05 09:38+0900\n"
 "Last-Translator: Gheyret <gheyret@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
 "Language: ug\n"
@@ -329,11 +329,11 @@ msgstr "زاپاسلانغان ھۆججەتلەرنى يوشۇرۇن ھۆججە�
 msgid "Us_e SI decimal prefixes instead of IEC binary prefixes"
 msgstr ""
 "IEC ئىككىلىك ئالدى قوشۇلغۇچىسىنى ئەمەس SI نىڭ ئونلۇق ئالدى قوشۇلغۇچىسىنى "
-"ئىشلىتەتسۇن(_E)"
+"ئىشلەتسۇن(_E)"
 
 #: ../data/ui/pref.glade.h:52
 msgid "Vie_w Mode:"
-msgstr "كۆرۈنۈش ئۇسۇلى(_W):"
+msgstr "كۆرۈنۈش(_W):"
 
 #: ../data/ui/pref.glade.h:53
 msgid "_Advanced"
@@ -653,7 +653,7 @@ msgstr "مۇندەرىجە"
 
 #: ../src/main-win-ui.c:180
 msgid "Empty File"
-msgstr ""
+msgstr "قۇرۇق ھۆججەت"
 
 #: ../src/main-win-ui.c:186
 msgid "Show Hidde_n"
@@ -736,6 +736,12 @@ msgid ""
 "F10: activate main menu\n"
 "Ctrl+L or Alt+D: jump focus to Path Bar"
 msgstr ""
+"قىسقۇچ كۆرۈنۈش -> يان كۆزنەك -> قورال بالداقنىڭ فوكۇسىنى ئۆزگەرتىش كۇنۇپكىسى Tab دۇر\n"
+"قورال بالداق -> يان كۆزنەك -> قىسقۇچ كۆرۈنۈشىنىڭ فوكۇسىنى ئۆزگەرتىش كۇنۇپكىسى Shift+Tab دۇر\n"
+"يان كۆزنەك <-> قىسقۇچ كۆرۈنۈشنىڭ فوكۇسىنى ئۆزگەرتىش كۇنۇپكىسى F6 دۇر\n"
+"يان كۆزنەك بىلەن قىسقۇچ كۆرۈنۈشنىڭ فوكۇسىنى ئايرىش كۇنۇپكىسى F8 دۇر\n"
+"باش تىزىملىكنى ئاكتىپلا كۇنۇپكىسى F8 دۇر\n"
+"فوكۇسنى يول بالدىقىغا يۆتكەش كۇنۇپكىسى Ctrl+L ياكى Alt+D دۇر"
 
 #: ../src/main-win.c:755
 msgid "Switch user command is not set."
@@ -767,7 +773,7 @@ msgstr "PROFILE"
 
 #: ../src/pcmanfm.c:76
 msgid "Run PCManFM as a daemon"
-msgstr "ھۆججىەت باشقۇرغۇ PCManFM نى مۇئەككەل سۈپىتىدە ئىجرا قىلسۇن"
+msgstr "ھۆججەت باشقۇرغۇ PCManFM نى مۇئەككەل سۈپىتىدە ئىجرا قىلسۇن"
 
 #: ../src/pcmanfm.c:77
 msgid "No function. Just to be compatible with nautilus"
