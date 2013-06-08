@@ -1752,24 +1752,4 @@ If unchecked then use Startup Notify only if that is defined for application.</p
       </row>
     </data>
   </object>
-  <object class="GtkListStore" id="wp_modes">
-    <columns>
-      <!-- column-name item -->
-      <column type="gchararray"/>
-    </columns>
-    <data>
-      <row>
-        <col id="0" translatable="yes">Stretch to fill the entire screen</col>
-      </row>
-      <row>
-        <col id="0" translatable="yes">Stretch to fit the screen</col>
-      </row>
-      <row>
-        <col id="0" translatable="yes">Center on the screen</col>
-      </row>
-      <row>
-        <col id="0" translatable="yes">Tile the image to fill the entire screen</col>
-      </row>
-    </data>
-  </object>
 </interface>
