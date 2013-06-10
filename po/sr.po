@@ -1,7 +1,7 @@
 # Serbian translation for PCManFM package
 # Copyright (C) 2010 the LXDE team
 # This file is distributed under the same license as the PCManFM package.
-# Jay A. Fleming <tito.nehru.naser@gmail.com>, 2010.
+# Jay A. Fleming <tito.nehru.naser@gmail.com>, 2010-2013.
 #
 #
 msgid ""
@@ -9,16 +9,17 @@ msgstr ""
 "Project-Id-Version: PCManFM\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-06-01 01:02+0300\n"
-"PO-Revision-Date: 2012-09-23 23:08+0200\n"
-"Last-Translator: Jay A. <tito.nehru.naser@gmail.com>\n"
+"PO-Revision-Date: 2013-06-10 01:28+0100\n"
+"Last-Translator: Jay A.Fleming <tito.nehru.naser@gmail.com>\n"
 "Language-Team: \n"
 "Language: sr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Pootle 2.0.5\n"
+"X-Poedit-Language: Serbian\n"
+"X-Poedit-SourceCharset: utf-8\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2012"
@@ -30,7 +31,7 @@ msgid ""
 "\n"
 "Developed by Hon Jen Yee (PCMan)"
 msgstr ""
-"Олакшани управљач датотекама\n"
+"Олакшани управник датотека\n"
 "\n"
 "Приредио: Hon Jen Yee (PCMan)"
 
@@ -59,7 +60,8 @@ msgstr "_Напредно"
 msgid "C_olor of label text:"
 msgstr "_Боја означеног текста:"
 
-#: ../data/ui/desktop-pref.glade.h:6 ../data/ui/pref.glade.h:15
+#: ../data/ui/desktop-pref.glade.h:6
+#: ../data/ui/pref.glade.h:15
 msgid "Center on the screen"
 msgstr "На сред екрана"
 
@@ -67,7 +69,8 @@ msgstr "На сред екрана"
 msgid "Color of _shadow:"
 msgstr "Боја _сенке:"
 
-#: ../data/ui/desktop-pref.glade.h:8 ../src/desktop-ui.c:34
+#: ../data/ui/desktop-pref.glade.h:8
+#: ../src/desktop-ui.c:34
 #: ../data/pcmanfm-desktop-pref.desktop.in.h:2
 msgid "Desktop Preferences"
 msgstr "Поставке радне површи"
@@ -86,21 +89,24 @@ msgstr "Прикажи иконе логичких _дискова на радн
 
 #: ../data/ui/desktop-pref.glade.h:12
 msgid "Show \"_My Computer\" icon on desktop"
-msgstr "Прикажи икону \"_Рачунар\" на радној површи"
+msgstr "Прикажи икону „_Рачунар“ на радној површи"
 
 #: ../data/ui/desktop-pref.glade.h:13
 msgid "Show \"_Trash Bin\" icon on desktop"
-msgstr "Прикажи икону \"_Непотребно\" на радној површи"
+msgstr "Прикажи икону „_Непотребно“ на радној површи"
 
-#: ../data/ui/desktop-pref.glade.h:14 ../data/ui/pref.glade.h:46
+#: ../data/ui/desktop-pref.glade.h:14
+#: ../data/ui/pref.glade.h:46
 msgid "Stretch to fill the entire screen"
 msgstr "Растегни преко целог екрана"
 
-#: ../data/ui/desktop-pref.glade.h:15 ../data/ui/pref.glade.h:47
+#: ../data/ui/desktop-pref.glade.h:15
+#: ../data/ui/pref.glade.h:47
 msgid "Stretch to fit the screen"
 msgstr "Прилагоди величини екрана"
 
-#: ../data/ui/desktop-pref.glade.h:16 ../data/ui/pref.glade.h:49
+#: ../data/ui/desktop-pref.glade.h:16
+#: ../data/ui/pref.glade.h:49
 msgid "Tile the image to fill the entire screen"
 msgstr "Поплочај екран"
 
@@ -122,15 +128,15 @@ msgstr "Иконе ра_дне површи"
 
 #: ../data/ui/desktop-pref.glade.h:21
 msgid "_Font of label text:"
-msgstr "_Словни лик означеног текста:"
+msgstr "_Фонт означеног текста:"
 
 #: ../data/ui/desktop-pref.glade.h:22
 msgid "_Show \"My Documents\" icon on desktop"
-msgstr "_Прикажи икону \"Личне датотеке\" на радној површи"
+msgstr "_Прикажи икону „Личне датотеке“ на радној површи"
 
 #: ../data/ui/desktop-pref.glade.h:23
 msgid "_Show menus provided by window managers when desktop is clicked"
-msgstr "Прикажи мени _управљача прозора кликом на радну површ"
+msgstr "Прикажи мени _управника прозора кликом на радну површ"
 
 #: ../data/ui/desktop-pref.glade.h:24
 msgid "_Use the same wallpaper on all desktops"
@@ -142,7 +148,7 @@ msgstr "_Позадинска слика:"
 
 #: ../data/ui/pref.glade.h:1
 msgid "<b>Auto-mount</b>"
-msgstr "<b>Аутоматско прикључивање</b>"
+msgstr "<b>Само-монтирање</b>"
 
 #: ../data/ui/pref.glade.h:2
 msgid "<b>Behavior</b>"
@@ -166,7 +172,7 @@ msgstr "<b>Програми</b>"
 
 #: ../data/ui/pref.glade.h:7
 msgid "<b>Show in Places:</b>"
-msgstr "<b>Прикажи под „Места“</b>"
+msgstr "<b>Прикажи под „Места“:</b>"
 
 #: ../data/ui/pref.glade.h:8
 msgid "<b>User Interface</b>"
@@ -177,13 +183,12 @@ msgid "A_rchiver integration:"
 msgstr "Интеграција са а_рхиверима датотека:"
 
 #: ../data/ui/pref.glade.h:10
-#, fuzzy
 msgid "Al_ways show full file names"
-msgstr "_Увек приказуј траку са листовима"
+msgstr "У_век приказуј пуна имена датотека"
 
 #: ../data/ui/pref.glade.h:11
 msgid "Al_ways show the tab bar"
-msgstr "_Увек приказуј траку са листовима"
+msgstr "У_век приказуј траку са језичцима"
 
 #: ../data/ui/pref.glade.h:12
 msgid "App_lications"
@@ -195,14 +200,11 @@ msgstr "Питај"
 
 #: ../data/ui/pref.glade.h:14
 msgid "Auto (move if on the same FS, copy otherwise)"
-msgstr ""
-"Аутоматски (премести ако је на истом систему датотека, у супротном умножи)"
+msgstr "Аутоматски (премести ако је на истом систему датотека, у супротном умножи)"
 
 #: ../data/ui/pref.glade.h:16
 msgid "Clos_e tab containing removable medium when it is unmounted"
-msgstr ""
-"_Затвори лист са приказом садржаја измењивог медија по избацивању измењивог "
-"медија"
+msgstr "_Затвори језичак са садржајем измењивог медија по демонтирању измењивог медија"
 
 #: ../data/ui/pref.glade.h:17
 msgid "Co_nfirm before deleting files"
@@ -226,7 +228,7 @@ msgstr "Подразумевана радња код пре_влачења:"
 
 #: ../data/ui/pref.glade.h:22
 msgid "Delay of auto-selection in single click mode (0 to disable)"
-msgstr ""
+msgstr "Кашњење само-одабира у режиму једноструког клика (0 за онемогућавање)"
 
 #: ../data/ui/pref.glade.h:23
 msgid "Des_ktop Folder"
@@ -246,13 +248,12 @@ msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
 "%s = the command line you want to execute with terminal or su."
 msgstr ""
-"Примери: \"xterm -e %s\" за терминал или \"gksu %s\" за пребацивање између "
-"корисника.\n"
-"%s = наредба која желите да се изврши у терминалу или са \"su\"."
+"Примери: „xterm -e %s“ за терминал или „gksu %s“ за пребацивање између корисника.\n"
+"%s = наредба која желите да се изврши у терминалу или са „su“."
 
 #: ../data/ui/pref.glade.h:29
 msgid "Hid_e 'Close tab' buttons"
-msgstr "Сакриј „_Затвори лист“ дугмад"
+msgstr "Сакриј „_Затвори језичак“ дугмад"
 
 #: ../data/ui/pref.glade.h:30
 msgid "Hide _folder content border"
@@ -272,16 +273,15 @@ msgstr "Преглед икона"
 
 #: ../data/ui/pref.glade.h:34
 msgid ""
-"If checked then use Startup Notify for application if another not stated "
-"explicitly.\n"
+"If checked then use Startup Notify for application if another not stated explicitly.\n"
 "If unchecked then use Startup Notify only if that is defined for application."
 msgstr ""
-"Уколико је означено користи се програмско обавештење при покретању ако друго "
-"већ није покренуто"
+"Ако је означено користи „Startup Notify“ за програм ако већ није другачије наведено.\n"
+"У супротном користи „Startup Notify“ само уколико је то одређено у програму."
 
 #: ../data/ui/pref.glade.h:36
 msgid "Mo_unt removable media automatically when they are inserted"
-msgstr "Прикључи измењиве медије по њиховом убацивању"
+msgstr "Момтирај измењиве медије по њиховом _убацивању"
 
 #: ../data/ui/pref.glade.h:37
 msgid "Move"
@@ -289,11 +289,11 @@ msgstr "Премести"
 
 #: ../data/ui/pref.glade.h:38
 msgid "Opened in Current Tab"
-msgstr "Отворено у тренутном листу"
+msgstr "Отворено у текућем језичку"
 
 #: ../data/ui/pref.glade.h:39
 msgid "Opened in New Tab"
-msgstr "Отворено у новом листу"
+msgstr "Отворено у новом језичку"
 
 #: ../data/ui/pref.glade.h:40
 msgid "Opened in New Window"
@@ -349,9 +349,7 @@ msgstr "_Приказ"
 
 #: ../data/ui/pref.glade.h:56
 msgid "_Erase files on removable media instead of \"trash bin\" creation"
-msgstr ""
-"Ум_есто стварања „Непотребно“ директоријума на измењивим медијима, трајно "
-"бриши датотеке са истих"
+msgstr "Ум_есто стварања „Непотребно“ директоријума на измењивим медијима, трајно бриши датотеке са истих"
 
 #: ../data/ui/pref.glade.h:57
 msgid "_General"
@@ -367,11 +365,11 @@ msgstr "_Размештај"
 
 #: ../data/ui/pref.glade.h:60
 msgid "_Mount mountable volumes automatically on program startup"
-msgstr "Прикључи логичке дискове по покретању програма"
+msgstr "По покретању програма _монтирај медије (партиције...)"
 
 #: ../data/ui/pref.glade.h:61
 msgid "_Move deleted files to \"trash bin\" instead of erasing from disk"
-msgstr "Не бриши датотеке са диска већ их пре_мести у \"Непотребно\""
+msgstr "Не бриши датотеке са диска већ их пре_мести у „Непотребно“"
 
 #: ../data/ui/pref.glade.h:62
 msgid "_Only show thumbnails for local files"
@@ -383,13 +381,11 @@ msgstr "Отварај датотеке _једноструким кликом"
 
 #: ../data/ui/pref.glade.h:64
 msgid "_Open mounted removable media in new tab instead of new window"
-msgstr ""
-"Прикажи садржај прикљученог измењивог медија у _новом листу, а не у новом "
-"прозору"
+msgstr "Прикажи садржај измењивог медија у _новом језичку, а не у новом прозору"
 
 #: ../data/ui/pref.glade.h:65
 msgid "_Show available options for removable media when they are inserted"
-msgstr "Код убацивања измењивог медија _понуди доступне радње за медиј"
+msgstr "Код убацивања измењивог медија _понуди доступне радње за њега"
 
 #: ../data/ui/pref.glade.h:66
 msgid "_Show thumbnails of files"
@@ -409,7 +405,7 @@ msgstr "Непо_требно"
 
 #: ../data/ui/pref.glade.h:70
 msgid "_Unfold tab when files are dragged onto tab button"
-msgstr "Прикажи _лист при превлачењу датотека преко дугмета листа"
+msgstr "Прикажи _језичак при превлачењу датотека преко дугмета језичка"
 
 #: ../data/ui/pref.glade.h:71
 msgid "_Use Application Startup Notify by default"
@@ -445,17 +441,19 @@ msgstr "Измењиви диск"
 
 #: ../src/volume-manager.c:217
 msgid "Open in File Manager"
-msgstr "Отвори управљачем датотека"
+msgstr "Отвори управником датотека"
 
 #: ../src/desktop-ui.c:51
 msgid "Open in New Ta_b"
-msgstr "Отвори у _новом листу"
+msgstr "Отвори у _новом језичку"
 
-#: ../src/desktop-ui.c:52 ../src/tab-page.c:51
+#: ../src/desktop-ui.c:52
+#: ../src/tab-page.c:51
 msgid "Open in New Win_dow"
 msgstr "Отвори у новом _прозору"
 
-#: ../src/desktop-ui.c:54 ../src/tab-page.c:53
+#: ../src/desktop-ui.c:54
+#: ../src/tab-page.c:53
 msgid "Open in Termina_l"
 msgstr "Отвори у _терминалу"
 
@@ -477,11 +475,11 @@ msgstr "_Нови прозор"
 
 #: ../src/main-win-ui.c:129
 msgid "New T_ab"
-msgstr "Нови _лист"
+msgstr "Нови _језичак"
 
 #: ../src/main-win-ui.c:129
 msgid "Create new tab for this folder"
-msgstr ""
+msgstr "Створи нови језичак за овај директоријум"
 
 #: ../src/main-win-ui.c:130
 msgid "C_reate New..."
@@ -489,7 +487,7 @@ msgstr "Нап_рави нов..."
 
 #: ../src/main-win-ui.c:131
 msgid "_Close Tab"
-msgstr "_Затвори лист"
+msgstr "_Затвори језичак"
 
 #: ../src/main-win-ui.c:132
 msgid "Close _Window"
@@ -617,9 +615,8 @@ msgid "Installed Applications"
 msgstr "Инсталирани програми"
 
 #: ../src/main-win-ui.c:163
-#, fuzzy
 msgid "Open entered folder"
-msgstr "Освежи приказ садржаја директоријума"
+msgstr "Отвори уписани директоријум"
 
 #: ../src/main-win-ui.c:164
 msgid "_Bookmarks"
@@ -635,11 +632,11 @@ msgstr "_Алатке"
 
 #: ../src/main-win-ui.c:167
 msgid "Open Current Folder in _Terminal"
-msgstr "Отвори тренутни директоријум у _терминалу"
+msgstr "Отвори текући директоријум у _терминалу"
 
 #: ../src/main-win-ui.c:168
 msgid "Open Current Folder as _Root"
-msgstr "Отвори тренутни директоријум као „_Root“ корисник"
+msgstr "Отвори текући директоријум као „_Root“ корисник"
 
 #: ../src/main-win-ui.c:170
 msgid "Fin_d Files"
@@ -652,7 +649,7 @@ msgstr "Директоријум"
 
 #: ../src/main-win-ui.c:180
 msgid "Empty File"
-msgstr ""
+msgstr "Празна датотека"
 
 #: ../src/main-win-ui.c:186
 msgid "Show Hidde_n"
@@ -722,7 +719,8 @@ msgstr "Удаљено"
 msgid "You are in super user mode"
 msgstr "УПОЗОРЕЊЕ: Користите програм са администраторским привилегијама"
 
-#: ../src/main-win.c:717 ../src/main-win.c:725
+#: ../src/main-win.c:717
+#: ../src/main-win.c:725
 msgid "Keyboard navigation"
 msgstr "Управљање тастатуром"
 
@@ -735,10 +733,8 @@ msgid ""
 "F10: activate main menu\n"
 "Ctrl+L or Alt+D: jump focus to Path Bar"
 msgstr ""
-"Tab: кружни фокус — Приказ директоријума -> Бочна трака -> Трака са "
-"алаткама\n"
-"Shift+Tab: кружни фокус — Трака са алаткама -> Бочна трака -> Приказ "
-"директоријума\n"
+"Tab: кружни фокус — Приказ директоријума -> Бочна трака -> Трака са алаткама\n"
+"Shift+Tab: кружни фокус — Трака са алаткама -> Бочна трака -> Приказ директоријума\n"
 "F6: мења фокус — Бочна трака -> Приказ директоријума\n"
 "F8: делитељ фокуса између Бочне траке и Приказа директоријума\n"
 "F10: главни мени програма\n"
@@ -755,9 +751,9 @@ msgid ""
 "'%s'\n"
 "Enter a name for the new bookmark item:"
 msgstr ""
-"Додај овај фолдер у обележиваче:\n"
+"Додај овај директоријум у обележиваче:\n"
 "„%s“\n"
-"Унесите име за овај обележивач"
+"Унесите име за овај обележивач:"
 
 #: ../src/main-win.c:1121
 msgid "Add to Bookmarks"
@@ -783,11 +779,11 @@ msgstr "Функција не постоји. Само због усаглаше
 #. options that are acceptable for every instance of pcmanfm and will be passed through IPC.
 #: ../src/pcmanfm.c:80
 msgid "Launch desktop manager"
-msgstr "Покрени управљач окружења"
+msgstr "Покрени управник радне површи"
 
 #: ../src/pcmanfm.c:81
 msgid "Turn off desktop manager if it's running"
-msgstr "Заустави управљач окружења уколико је покренут"
+msgstr "Заустави управник радне површи уколико је покренут"
 
 #: ../src/pcmanfm.c:82
 msgid "Open desktop preference dialog"
@@ -795,7 +791,7 @@ msgstr "Отвори подешавања радне површи"
 
 #: ../src/pcmanfm.c:83
 msgid "Use --desktop option only for one screen"
-msgstr ""
+msgstr "Користи „--desktop“ опцију само за један екран"
 
 #: ../src/pcmanfm.c:84
 msgid "Set desktop wallpaper from image FILE"
@@ -803,13 +799,12 @@ msgstr "Постави позадинску слику из слике FILE"
 
 #: ../src/pcmanfm.c:84
 msgid "FILE"
-msgstr "FILE"
+msgstr "ДАТОТЕКА"
 
 #. don't translate list of modes in description, please
 #: ../src/pcmanfm.c:86
 msgid "Set mode of desktop wallpaper. MODE=(color|stretch|fit|center|tile)"
-msgstr ""
-"Режим приказа позадинске слике. <режим>=(color|stretch|fit|center|tile)"
+msgstr "Режим приказа позадинске слике. <режим>=(color|stretch|fit|center|tile)"
 
 #: ../src/pcmanfm.c:86
 msgid "MODE"
@@ -830,15 +825,15 @@ msgstr "Отвори нов прозор"
 #. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
 #: ../src/pcmanfm.c:90
 msgid "Window role for usage by window manager"
-msgstr ""
+msgstr "Управник прозора ће користити ово својство прозора"
 
 #: ../src/pcmanfm.c:90
 msgid "ROLE"
-msgstr ""
+msgstr "СВОЈСТВО"
 
 #: ../src/pcmanfm.c:91
 msgid "[FILE1, FILE2,...]"
-msgstr "[FILE1, FILE2,...]"
+msgstr "[ДАТОТЕКА1, ДАТОТЕКА2,...]"
 
 #: ../src/pcmanfm.c:529
 msgid "Terminal emulator is not set."
@@ -846,7 +841,7 @@ msgstr "Није постављен емулатор терминала."
 
 #: ../src/tab-page.c:50
 msgid "Open in New T_ab"
-msgstr "Отвори у новом _листу"
+msgstr "Отвори у новом _језичку"
 
 #: ../src/tab-page.c:236
 #, c-format
@@ -859,7 +854,7 @@ msgstr[2] "%d изабраних ставки"
 #: ../src/tab-page.c:363
 #, c-format
 msgid "Free space: %s (Total: %s)"
-msgstr "Слободан простор: %s од %s"
+msgstr "Слободно: %s од %s"
 
 #: ../src/tab-page.c:383
 #, c-format
@@ -893,44 +888,3 @@ msgstr "Управник датотека"
 msgid "Change desktop wallpapers and behavior of desktop manager"
 msgstr "Промени слику на радним површима и понашање Управника радним површима"
 
-#~ msgid "Blank File"
-#~ msgstr "Празна датотека"
-
-#~ msgid "Create _New..."
-#~ msgstr "Направи _нов..."
-
-#~ msgid "Shortcut"
-#~ msgstr "Пречица"
-
-#~ msgid "Invert Selection"
-#~ msgstr "Обрнути избор"
-
-#~ msgid "<image file>"
-#~ msgstr "<датотека са сликом>"
-
-#~ msgid "<mode>"
-#~ msgstr "<режим>"
-
-#~ msgid ""
-#~ "Open preference dialog. 'n' is number of the page you want to show (1, 2, "
-#~ "3...)."
-#~ msgstr ""
-#~ "Отвори подешавања. 'n' је број сртане коју желите видети (1, 2, 3...)."
-
-#~ msgid "Enter a name for the newly created folder:"
-#~ msgstr "Унесите име за нов директоријум:"
-
-#~ msgid "Enter a name for the newly created file:"
-#~ msgstr "Унесите име за нову датотеку:"
-
-#~ msgid "New"
-#~ msgstr "Нов"
-
-#~ msgid "Error, lxshortcut not installed"
-#~ msgstr "Грешка! Програм „lxshortcut“ није инсталиран"
-
-#~ msgid "Failed to start lxshortcut"
-#~ msgstr "Неуспело покретање програма „lxshortcut“"
-
-#~ msgid "_New"
-#~ msgstr "Ново"
