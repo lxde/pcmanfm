@@ -1,15 +1,16 @@
-# SOME DESCRIPTIVE TITLE.
+# Persian translation for PCManFM.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# This file is distributed under the same license as the pcmanfm package.
+# Hamidreza <n3gb0y@gmail.com>, 2010.
+# Ali Yousefi Sabzevar <aysabzevar@gmail.com>, 2013.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 1\n"
+"Project-Id-Version: pcmanfm 1.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-06-01 01:02+0300\n"
-"PO-Revision-Date: 2010-11-01 07:33+0200\n"
-"Last-Translator: Hamidreza <n3gb0y@gmail.com>\n"
+"PO-Revision-Date: 2013-06-14 11:43+0330\n"
+"Last-Translator: Ali Yousefi Sabzevar <aysabzevar@gmail.com>\n"
 "Language-Team: Persian <trans-fa@lists.fedoraproject.org>\n"
 "Language: fa\n"
 "MIME-Version: 1.0\n"
@@ -21,9 +22,8 @@ msgstr ""
 "X-Poedit-Country: Iran\n"
 
 #: ../data/ui/about.glade.in.h:1
-#, fuzzy
 msgid "Copyright (C) 2009 - 2012"
-msgstr "کپی رایت (C) ۲۰۰۹ - ۲۰۱۰"
+msgstr "کپی رایت (C) ۲۰۰۹ - ۲۰۱۲"
 
 #: ../data/ui/about.glade.in.h:2
 msgid ""
@@ -31,18 +31,20 @@ msgid ""
 "\n"
 "Developed by Hon Jen Yee (PCMan)"
 msgstr ""
-"مدیر فایل فوق العاده سبک\n"
+"مدیر پرونده سبک\n"
 "\n"
-"توسعه یافته توسط (PCMan)"
+"توسعه یافته توسط  (PCMan)"
 
 #. Please replace this line with your own names, one name per line.
 #: ../data/ui/about.glade.in.h:6
 msgid "translator-credits"
-msgstr "مترجمین"
+msgstr ""
+"Hamidreza <n3gb0y@gmail.com>\n"
+"Ali Yousefi Sabzevar <aysabzevar@gmail.com>"
 
 #: ../data/ui/desktop-pref.glade.h:1
 msgid "<b>Background</b>"
-msgstr "<b>تصویر پسزمینه</b>"
+msgstr "<b>تصویر پس‌زمینه</b>"
 
 #: ../data/ui/desktop-pref.glade.h:2
 msgid "<b>Show desktop icons</b>"
@@ -53,21 +55,19 @@ msgid "<b>Text</b>"
 msgstr "<b>متن</b>"
 
 #: ../data/ui/desktop-pref.glade.h:4
-#, fuzzy
 msgid "Ad_vanced"
 msgstr "پیشرفته"
 
 #: ../data/ui/desktop-pref.glade.h:5
-#, fuzzy
 msgid "C_olor of label text:"
 msgstr "رنگ برچسب متن:"
 
 #: ../data/ui/desktop-pref.glade.h:6 ../data/ui/pref.glade.h:15
 msgid "Center on the screen"
-msgstr "وسط در صفحه نمایش"
+msgstr "وسط صفحه نمایش"
 
 #: ../data/ui/desktop-pref.glade.h:7
-#, fuzzy
+
 msgid "Color of _shadow:"
 msgstr "رنگ سایه:"
 
@@ -78,30 +78,29 @@ msgstr "ترجیحات رومیزی"
 
 #: ../data/ui/desktop-pref.glade.h:9
 msgid "Fill with background color only"
-msgstr "فقط متناسب با رنگ پس زمینه"
+msgstr "رنگ کردن فقط با رنگ پس‌زمینه"
 
 #: ../data/ui/desktop-pref.glade.h:10
 msgid "Please select an image file"
-msgstr "لطفا فایل تصویر را انتخاب کنید"
+msgstr "لطفا پرونده تصویر را انتخاب کنید"
 
 #: ../data/ui/desktop-pref.glade.h:11
-#, fuzzy
 msgid "S_how icons of volumes on desktop"
-msgstr "نمایش ایکن ها جلد در رومیزی"
+msgstr "نمایش آیکن‌های جلد در رومیزی"
 
 #: ../data/ui/desktop-pref.glade.h:12
-#, fuzzy
+
 msgid "Show \"_My Computer\" icon on desktop"
-msgstr "نمایش ایکن \"My Computer\" در رومیزی"
+msgstr "نمایش آیکن \"کامپیوتر من\" در رومیزی"
 
 #: ../data/ui/desktop-pref.glade.h:13
-#, fuzzy
+
 msgid "Show \"_Trash Bin\" icon on desktop"
-msgstr "نمایش ایکن \"Trash Bin\"  در رومیزی"
+msgstr "نمایش آیکن \"سطل زباله\"  در رومیزی"
 
 #: ../data/ui/desktop-pref.glade.h:14 ../data/ui/pref.glade.h:46
 msgid "Stretch to fill the entire screen"
-msgstr "کشیدن برای تناسب همه صفحه نمایش"
+msgstr "کشیدن برای تناسب تمام صفحه نمایش"
 
 #: ../data/ui/desktop-pref.glade.h:15 ../data/ui/pref.glade.h:47
 msgid "Stretch to fit the screen"
@@ -112,46 +111,39 @@ msgid "Tile the image to fill the entire screen"
 msgstr "کاشی سازی تصویر جهت تناسب با همه صفحه نمایش"
 
 #: ../data/ui/desktop-pref.glade.h:17
-#, fuzzy
+
 msgid "Wallpaper _mode:"
 msgstr "حالت تصویر پس زمینه:"
 
 #: ../data/ui/desktop-pref.glade.h:18
-#, fuzzy
 msgid "_Appearance"
-msgstr "شکل ظاهر"
+msgstr " ظاهر"
 
 #: ../data/ui/desktop-pref.glade.h:19
-#, fuzzy
 msgid "_Background color:"
 msgstr "رنگ پس زمینه:"
 
 #: ../data/ui/desktop-pref.glade.h:20
-#, fuzzy
 msgid "_Desktop Icons"
-msgstr "ایکن های رومیزی"
+msgstr "آیکن‌های رومیزی"
 
 #: ../data/ui/desktop-pref.glade.h:21
-#, fuzzy
 msgid "_Font of label text:"
-msgstr "قلم برچسب رنگ:"
+msgstr "قلم برچسب متن:"
 
 #: ../data/ui/desktop-pref.glade.h:22
-#, fuzzy
 msgid "_Show \"My Documents\" icon on desktop"
-msgstr "نمایش ایکن \"My Documents\" در رومیزی"
+msgstr "نمایش آیکن \"مستندات من\" در رومیزی"
 
 #: ../data/ui/desktop-pref.glade.h:23
-#, fuzzy
 msgid "_Show menus provided by window managers when desktop is clicked"
-msgstr "نمایش منوها مدیریت های پنجره وقتی رومیزی کلیک می شود"
+msgstr "نمایش منوهای مدیر پنجره وقتی رومیزی کلیک می شود"
 
 #: ../data/ui/desktop-pref.glade.h:24
 msgid "_Use the same wallpaper on all desktops"
-msgstr ""
+msgstr "استفاده از تصویر پس‌زمینه یکسان در تمام رومیزی‌ها"
 
 #: ../data/ui/desktop-pref.glade.h:25
-#, fuzzy
 msgid "_Wallpaper:"
 msgstr "تصویر پس زمینه:"
 
@@ -169,86 +161,77 @@ msgstr "<b>نمایش پیشفرض</b>"
 
 #: ../data/ui/pref.glade.h:4
 msgid "<b>Directories Tree</b>"
-msgstr ""
+msgstr "درختواره پوشه‌ها"
 
 #: ../data/ui/pref.glade.h:5
 msgid "<b>Icons</b>"
-msgstr "<b>ایکنها</b>"
+msgstr "<b>آیکن‌ها</b>"
 
 #: ../data/ui/pref.glade.h:6
 msgid "<b>Programs</b>"
 msgstr "<b>برنامه ها</b>"
 
 #: ../data/ui/pref.glade.h:7
-#, fuzzy
 msgid "<b>Show in Places:</b>"
-msgstr "<b>نمایش آیکن های رومیزی</b>"
+msgstr "<b>نمایش در محل:</b>"
 
 #: ../data/ui/pref.glade.h:8
 msgid "<b>User Interface</b>"
 msgstr "<b>رابط کاربری</b>"
 
 #: ../data/ui/pref.glade.h:9
-#, fuzzy
 msgid "A_rchiver integration:"
-msgstr "تعامل با آشیوساز:"
+msgstr "یکپارچه سازی با آشیوساز:"
 
 #: ../data/ui/pref.glade.h:10
-#, fuzzy
 msgid "Al_ways show full file names"
-msgstr "نمایش دایمی میله زبانه"
+msgstr "نمایش دایمی نام کامل پرونده‌ها"
 
 #: ../data/ui/pref.glade.h:11
-#, fuzzy
 msgid "Al_ways show the tab bar"
-msgstr "نمایش دایمی میله زبانه"
+msgstr "نمایش دایمی نوار زبانه"
 
 #: ../data/ui/pref.glade.h:12
-#, fuzzy
 msgid "App_lications"
 msgstr "برنامه ها"
 
 #: ../data/ui/pref.glade.h:13
 msgid "Ask"
-msgstr ""
+msgstr "بپرس"
 
 #: ../data/ui/pref.glade.h:14
 msgid "Auto (move if on the same FS, copy otherwise)"
-msgstr ""
+msgstr "خودکار (انتقال در صورت یکسان بودن پرونده سیستم، در غیر اینصورت کپی)"
 
 #: ../data/ui/pref.glade.h:16
-#, fuzzy
 msgid "Clos_e tab containing removable medium when it is unmounted"
-msgstr "نمایش گزینه های موجود برای رسانه های قابل حذف وقتی وارد می شوند"
+msgstr "بستن زبانه شامل رسانه جداشدانی هنگامی که این رسانه پیاده می‌شود"
 
 #: ../data/ui/pref.glade.h:17
-#, fuzzy
 msgid "Co_nfirm before deleting files"
-msgstr "تایید قبل از حذف فایل ها"
+msgstr "تایید قبل از حذف پرونده‌ها"
 
 #: ../data/ui/pref.glade.h:18
 msgid "Compact View"
 msgstr "نمایش فشرده"
 
 #: ../data/ui/pref.glade.h:19
-#, fuzzy
 msgid "Confi_rm before moving files into \"trash bi_n\""
-msgstr "تایید قبل از حذف فایل ها"
+msgstr "تایید پش از انتقال پرونده‌ها به \"سطل زباله‌دان\""
 
 #: ../data/ui/pref.glade.h:20
 msgid "Copy"
-msgstr ""
+msgstr "کپی"
 
 #: ../data/ui/pref.glade.h:21
 msgid "Defaul_t drop action:"
-msgstr ""
+msgstr "پیش فرض حالت انداختن:"
 
 #: ../data/ui/pref.glade.h:22
 msgid "Delay of auto-selection in single click mode (0 to disable)"
-msgstr ""
+msgstr "تاخیر انتخاب خودکار در حالت تک کلیک (۰ برای غیر فعال سازی)"
 
 #: ../data/ui/pref.glade.h:23
-#, fuzzy
 msgid "Des_ktop Folder"
 msgstr "پوشه رومیزی"
 
@@ -257,9 +240,8 @@ msgid "Detailed List View"
 msgstr "نمایش لیست جزییات"
 
 #: ../data/ui/pref.glade.h:25
-#, fuzzy
 msgid "Do _not generate thumbnails for files exceeding this size:"
-msgstr "برای فایل هایی که از این اندازه تجاوز کنند تصویر بند تولید نکن:"
+msgstr "برای پرونده های بزرگتر از این اندازه تصویر بندانگشتی تولید نکن:"
 
 #: ../data/ui/pref.glade.h:27
 #, no-c-format
@@ -267,31 +249,28 @@ msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
 "%s = the command line you want to execute with terminal or su."
 msgstr ""
-"مثال ها:  \"xterm -e %s\" برای ترمینال یا \"gksu %s\"  بای تغییر کاربر.\n"
-"%s = خط فرمانی که شما می خواهید برای ترمینال یا سو استفاده کنید."
+"مثال ها:  \"xterm -e %s\" برای ترمینال یا \"gksu %s\"  برای تغییر کاربر.\n"
+"%s = خط فرمانی که شما می خواهید برای ترمینال یا su استفاده کنید."
 
-#: ../data/ui/pref.glade.h:29
-#, fuzzy
+#: ../data/ui/pref.glade.h:29	
 msgid "Hid_e 'Close tab' buttons"
-msgstr "پنهان سازی دکمه 'بستن زبانه'"
+msgstr "پنهان سازی دکمه‌های 'بستن زبانه'"
 
 #: ../data/ui/pref.glade.h:30
-#, fuzzy
 msgid "Hide _folder content border"
-msgstr "پنهان سازی محدوده ی محتوای پوشه"
+msgstr "پنهان سازی حاشیه‌ محتوای پوشه"
 
 #: ../data/ui/pref.glade.h:31
-#, fuzzy
 msgid "Hide _side pane buttons"
-msgstr "پنهان کردن قطعه ی کناری دکمه ها"
+msgstr "پنهان سازی قطعه کناری دکمه‌ها"
 
 #: ../data/ui/pref.glade.h:32
 msgid "Hide e_xpander on empty or locked folder"
-msgstr ""
+msgstr "پنهان سازی گسترش‌گر در پوشه‌های خالی یا قفل شده"
 
 #: ../data/ui/pref.glade.h:33
 msgid "Icon View"
-msgstr "دیدن ایکن"
+msgstr "دیدن آیکن"
 
 #: ../data/ui/pref.glade.h:34
 msgid ""
@@ -299,15 +278,16 @@ msgid ""
 "explicitly.\n"
 "If unchecked then use Startup Notify only if that is defined for application."
 msgstr ""
-
+"اگر تیک داشت و برنامه دیگری تعیین نشده بود از"
+" آگاه‌سازی در زمان اجرای برنامه استفاده کن.\n"
+"اگر تیک نداشت وبرای برنامه تعریف شده بود از آگاه‌سازی در زمان اجرااستفاده کن"
 #: ../data/ui/pref.glade.h:36
-#, fuzzy
 msgid "Mo_unt removable media automatically when they are inserted"
-msgstr "سوار کردن رسانه ی قابل حذف به طور خودکار وقتی آنها وارد می شوند"
+msgstr "سوار کردن رسانه ی جداشدنی به طور خودکار وقتی متصل می شوند"
 
 #: ../data/ui/pref.glade.h:37
 msgid "Move"
-msgstr ""
+msgstr "انتقال"
 
 #: ../data/ui/pref.glade.h:38
 msgid "Opened in Current Tab"
@@ -326,40 +306,34 @@ msgid "Preferences"
 msgstr "ترجیحات"
 
 #: ../data/ui/pref.glade.h:42
-#, fuzzy
 msgid "Size of _big icons:"
-msgstr "اندازه ی ایکن های بزرگ:"
+msgstr "اندازه ی آیکن‌های بزرگ:"
 
 #: ../data/ui/pref.glade.h:43
-#, fuzzy
 msgid "Size of _thumbnails:"
-msgstr "اندازه تصویر بندها:"
+msgstr "اندازه تصویر بندانگشتی‌ها:"
 
 #: ../data/ui/pref.glade.h:44
-#, fuzzy
 msgid "Size of side _pane icons:"
-msgstr "اندازه ی آیکن های قطعه کناری:"
+msgstr "اندازه ی آیکن‌های قطعه کناری:"
 
 #: ../data/ui/pref.glade.h:45
-#, fuzzy
 msgid "Size of small _icons:"
-msgstr "اندازه ی ایکن های کوچک:"
+msgstr "اندازه ی آیکن‌های کوچک:"
 
 #: ../data/ui/pref.glade.h:48
 msgid "Thumbnail View"
-msgstr "دیدن تصویر بند"
+msgstr "دیدن تصویر بندانگشتی"
 
 #: ../data/ui/pref.glade.h:50
 msgid "Treat backup files as _hidden"
-msgstr ""
+msgstr "رفتار با پرونده‌های پشتیبان مانند پرونده‌های مخفی "
 
 #: ../data/ui/pref.glade.h:51
-#, fuzzy
 msgid "Us_e SI decimal prefixes instead of IEC binary prefixes"
-msgstr "استفاده از SI پسوند های دسیمال به جای پسوند های باینری IEC"
+msgstr "استفاده از پسوند‌های دهدهی متریک به جای پسوندهای دودویی IEC"
 
 #: ../data/ui/pref.glade.h:52
-#, fuzzy
 msgid "Vie_w Mode:"
 msgstr "حالت دیدن:"
 
@@ -368,97 +342,86 @@ msgid "_Advanced"
 msgstr "پیش رفته"
 
 #: ../data/ui/pref.glade.h:54
-#, fuzzy
 msgid "_Bookmarks:"
-msgstr "نشانک ها"
+msgstr "نشانک‌ها"
 
 #: ../data/ui/pref.glade.h:55
-#, fuzzy
 msgid "_Display"
 msgstr "نمایش"
 
 #: ../data/ui/pref.glade.h:56
 msgid "_Erase files on removable media instead of \"trash bin\" creation"
-msgstr ""
+msgstr "پاک کردن پرونده‌های رسانه جداشدنی به جای ساخت \"سطل زباله دان\""
 
 #: ../data/ui/pref.glade.h:57
-#, fuzzy
 msgid "_General"
 msgstr "کلی"
 
 #: ../data/ui/pref.glade.h:58
 msgid "_Home Directory"
-msgstr ""
+msgstr "پوشه خانگی"
 
 #: ../data/ui/pref.glade.h:59
 msgid "_Layout"
-msgstr ""
+msgstr "طرح"
 
 #: ../data/ui/pref.glade.h:60
-#, fuzzy
 msgid "_Mount mountable volumes automatically on program startup"
-msgstr "سوار کردن مقدارهای قابل سوار کردن به طور خودکار در آغاز برنامه"
+msgstr "سوار کردن رسانه‌های جداشدنی به طور خودکار در آغاز برنامه"
 
 #: ../data/ui/pref.glade.h:61
-#, fuzzy
+
 msgid "_Move deleted files to \"trash bin\" instead of erasing from disk"
-msgstr "فایل ها به \"trash bin\" جا به جا شدند به جای آنکه از دیسک حذف شوند"
+msgstr "انتقال پرونده‌های پاک شده به \"سطل زباله‌دان\" به جای پاک کردن از روی دیسک"
 
 #: ../data/ui/pref.glade.h:62
-#, fuzzy
 msgid "_Only show thumbnails for local files"
-msgstr "فقط نمایش تصویر بندها برای فایل های داخلی"
+msgstr "فقط نمایش تصاویر بندانگشتی برای پرونده های محلی"
 
 #: ../data/ui/pref.glade.h:63
-#, fuzzy
 msgid "_Open files with single click"
-msgstr "بازکردن فایل با یک کلیک"
+msgstr "بازکردن پرونده‌ها با یک کلیک"
 
 #: ../data/ui/pref.glade.h:64
 msgid "_Open mounted removable media in new tab instead of new window"
-msgstr ""
+msgstr "باز کردن رسانه‌های جداشدنی سوار شده در یک لبه به جای پنجره جدید"
 
 #: ../data/ui/pref.glade.h:65
-#, fuzzy
 msgid "_Show available options for removable media when they are inserted"
-msgstr "نمایش گزینه های موجود برای رسانه های قابل حذف وقتی وارد می شوند"
+msgstr "نمایش گزینه های موجود برای رسانه های جداشدنی وقتی وارد می شوند"
 
 #: ../data/ui/pref.glade.h:66
-#, fuzzy
+
 msgid "_Show thumbnails of files"
-msgstr "نمایش تصویر بندهای فایل ها"
+msgstr "نمایش تصاویر بندانگشتی پرونده‌ها"
 
 #: ../data/ui/pref.glade.h:67
-#, fuzzy
 msgid "_Switch user command:"
 msgstr "دستور تعویض کاربر:"
 
 #: ../data/ui/pref.glade.h:68
-#, fuzzy
 msgid "_Terminal emulator:"
 msgstr "شبیه ساز ترمینال:"
 
 #: ../data/ui/pref.glade.h:69
-#, fuzzy
 msgid "_Trash bin"
 msgstr "سطل زباله"
 
 #: ../data/ui/pref.glade.h:70
 msgid "_Unfold tab when files are dragged onto tab button"
-msgstr ""
+msgstr "هنگامی که پرونده‌ها در حال کپی شدن در لبه هستند از آن لبه عبور نشود"
 
 #: ../data/ui/pref.glade.h:71
 msgid "_Use Application Startup Notify by default"
-msgstr ""
+msgstr "استفاده از اعلام آغاز به کار برنامه به صورت پیش‌فرض"
 
 #: ../data/ui/pref.glade.h:72
-#, fuzzy
 msgid "_Volume Management"
 msgstr "مدیریت صدا"
 
 #: ../data/ui/autorun.glade.h:1
 msgid "<b>Removable medium is inserted</b>"
-msgstr "<b>رسانه ی قابل حذف وارد شد</b>"
+msgstr "<b>رسانه جداشدنی وارد شد</b>"
 
 #: ../data/ui/autorun.glade.h:2
 msgid "Detecting..."
@@ -470,7 +433,7 @@ msgstr "لطفا عملی را که می خواهید انجام دهید انت
 
 #: ../data/ui/autorun.glade.h:4
 msgid "Removable medium is inserted"
-msgstr "رسانه ی قایل برداشتن وصل شد"
+msgstr "رسانه جداشدنی وصل شد"
 
 #: ../data/ui/autorun.glade.h:5
 msgid "Type of medium:"
@@ -478,98 +441,87 @@ msgstr "نوع رسانه"
 
 #: ../src/volume-manager.c:164
 msgid "Removable Disk"
-msgstr "دیسک قایل برداشتن"
+msgstr "دیسک جداشدنی"
 
 #: ../src/volume-manager.c:217
 msgid "Open in File Manager"
-msgstr "بازکردن در مدیریت فایل"
+msgstr "بازکردن در برنامه مدیر پرونده"
 
 #: ../src/desktop-ui.c:51
-#, fuzzy
 msgid "Open in New Ta_b"
-msgstr "بازکردن در زبانه ی جدید"
+msgstr "بازکردن در زبانه جدید"
 
 #: ../src/desktop-ui.c:52 ../src/tab-page.c:51
-#, fuzzy
 msgid "Open in New Win_dow"
-msgstr "بازکردن در پنجره ی جدید"
+msgstr "بازکردن در پنجره جدید"
 
 #: ../src/desktop-ui.c:54 ../src/tab-page.c:53
-#, fuzzy
 msgid "Open in Termina_l"
 msgstr "بازکردن در ترمینال"
 
 #: ../src/desktop-ui.c:70
-#, fuzzy
 msgid "Stic_k to Current Position"
 msgstr "چسبیدن به موقعیت کنونی"
 
 #: ../src/desktop-ui.c:75
-#, fuzzy
 msgid "Snap to _Grid"
 msgstr "ضربه به شبکه"
 
 #: ../src/main-win-ui.c:127
 msgid "_File"
-msgstr "فایل"
+msgstr "پرونده"
 
 #: ../src/main-win-ui.c:128
 msgid "_New Window"
-msgstr "پنجره ی جدید"
+msgstr "پنجره جدید"
 
 #: ../src/main-win-ui.c:129
-#, fuzzy
 msgid "New T_ab"
-msgstr "زبانه ی جدید"
+msgstr "زبانه جدید"
 
 #: ../src/main-win-ui.c:129
 msgid "Create new tab for this folder"
-msgstr ""
+msgstr "ایجاد لبه جدید برای این پوشه"
 
 #: ../src/main-win-ui.c:130
-#, fuzzy
+
 msgid "C_reate New..."
-msgstr "ساخت جدید..."
+msgstr "ساخت ... جدید"
 
 #: ../src/main-win-ui.c:131
 msgid "_Close Tab"
 msgstr "بستن زبانه"
 
 #: ../src/main-win-ui.c:132
-#, fuzzy
 msgid "Close _Window"
 msgstr "بستن پنجره"
 
 #: ../src/main-win-ui.c:133
 msgid "_Edit"
-msgstr "اصلاح"
+msgstr "ویرایش"
 
 #: ../src/main-win-ui.c:138
-#, fuzzy
 msgid "_Rename"
 msgstr "تغییر نام"
 
 #: ../src/main-win-ui.c:139
-#, fuzzy
 msgid "Create Symlin_k"
-msgstr "ساختن Symlink"
+msgstr "ساخت پیوند نمادین"
 
 #: ../src/main-win-ui.c:140
-#, fuzzy
+
 msgid "_Move To..."
-msgstr "جا به جا به..."
+msgstr "انتقال به..."
 
 #: ../src/main-win-ui.c:141
-#, fuzzy
 msgid "C_opy To..."
-msgstr "کپی به..."
+msgstr "کپی در..."
 
 #: ../src/main-win-ui.c:143
 msgid "_Invert Selection"
 msgstr "واگردانی انتخاب"
 
 #: ../src/main-win-ui.c:144
-#, fuzzy
 msgid "Prefere_nces"
 msgstr "ترجیحات"
 
@@ -578,25 +530,24 @@ msgid "_View"
 msgstr "دیدن"
 
 #: ../src/main-win-ui.c:146
-#, fuzzy
+
 msgid "_Reload Folder"
-msgstr "پوشه ی بعدی"
+msgstr "بارگذاری مجدد پوشه"
 
 #: ../src/main-win-ui.c:146
-#, fuzzy
+
 msgid "Reload current folder"
-msgstr "پوشه اصلی"
+msgstr "بارگذاری مجدد پوشه کنونی"
 
 #: ../src/main-win-ui.c:147
-#, fuzzy
 msgid "Side _Pane"
-msgstr "نمایش پنهان ها"
+msgstr "قطعه کناری"
 
 #. other see below: 'ShowHidden' 'ShowStatus' 'Fullscreen' 'IconView'...
 #: ../src/main-win-ui.c:149
-#, fuzzy
+
 msgid "S_ort Files"
-msgstr "ترتیب فایلها"
+msgstr "مرتب کردن پرونده‌ها"
 
 #: ../src/main-win-ui.c:150
 msgid "_Help"
@@ -604,50 +555,45 @@ msgstr "کمک"
 
 #: ../src/main-win-ui.c:152
 msgid "_Keyboard navigation"
-msgstr ""
+msgstr "ناوبری صفحه کلید"
 
 #: ../src/main-win-ui.c:153
 msgid "_Go"
 msgstr "برو"
 
 #: ../src/main-win-ui.c:154
-#, fuzzy
 msgid "_Previous Folder"
-msgstr "پوشه ی قبلی"
+msgstr "پوشه قبلی"
 
 #: ../src/main-win-ui.c:154
 msgid "Previous Folder"
-msgstr "پوشه ی قبلی"
+msgstr "پوشه قبلی"
 
 #: ../src/main-win-ui.c:155
-#, fuzzy
 msgid "_Next Folder"
-msgstr "پوشه ی بعدی"
+msgstr "پوشه بعدی"
 
 #: ../src/main-win-ui.c:155
 msgid "Next Folder"
-msgstr "پوشه ی بعدی"
+msgstr "پوشه بعدی"
 
 #: ../src/main-win-ui.c:156
-#, fuzzy
 msgid "Pa_rent Folder"
-msgstr "پوشه اصلی"
+msgstr "پوشه مادر"
 
 #: ../src/main-win-ui.c:156
 msgid "Go to parent Folder"
-msgstr "رفتن به پوشه اصلی"
+msgstr "رفتن به پوشه مادر"
 
 #: ../src/main-win-ui.c:157
-#, fuzzy
 msgid "H_ome Folder"
-msgstr "پوشه خانه"
+msgstr "پوشه خانگی"
 
 #: ../src/main-win-ui.c:157
 msgid "Home Folder"
-msgstr "پوشه خانه"
+msgstr "پوشه خانگی"
 
 #: ../src/main-win-ui.c:158
-#, fuzzy
 msgid "_Desktop"
 msgstr "رومیزی"
 
@@ -656,45 +602,38 @@ msgid "Desktop Folder"
 msgstr "پوشه رومیزی"
 
 #: ../src/main-win-ui.c:159
-#, fuzzy
 msgid "_My Computer"
 msgstr "رایانه من"
 
 #: ../src/main-win-ui.c:160
-#, fuzzy
 msgid "_Trash Can"
 msgstr "سطل زباله"
 
 #: ../src/main-win-ui.c:161
-#, fuzzy
 msgid "Net_work Drives"
 msgstr "درایوهای شبکه"
 
 #: ../src/main-win-ui.c:162
-#, fuzzy
 msgid "_Applications"
-msgstr "برنامه ها"
+msgstr "برنامه‌ها"
 
 #: ../src/main-win-ui.c:162
 msgid "Installed Applications"
-msgstr "برنامه های نصب شده"
+msgstr "برنامه‌های نصب شده"
 
 #: ../src/main-win-ui.c:163
-#, fuzzy
 msgid "Open entered folder"
-msgstr "پوشه اصلی"
+msgstr "باز کردن پوشه وارد شده"
 
 #: ../src/main-win-ui.c:164
 msgid "_Bookmarks"
 msgstr "نشانک ها"
 
 #: ../src/main-win-ui.c:165
-#, fuzzy
 msgid "_Add To Bookmarks"
 msgstr "افزودن به نشانک ها"
 
 #: ../src/main-win-ui.c:166
-#, fuzzy
 msgid "Tool_s"
 msgstr "ابزار"
 
@@ -704,12 +643,11 @@ msgstr "باز کردن پوشه کنونی در ترمینال"
 
 #: ../src/main-win-ui.c:168
 msgid "Open Current Folder as _Root"
-msgstr "بازکردن پوشه کنونی به عنوان رووت(ریشه)"
+msgstr "بازکردن پوشه کنونی به عنوان کاربر ریشه"
 
 #: ../src/main-win-ui.c:170
-#, fuzzy
 msgid "Fin_d Files"
-msgstr "ترتیب فایلها"
+msgstr "پیدا کردن پرونده‌ها"
 
 #. for popup menu - these entries exist in FmFolderView popup still
 #: ../src/main-win-ui.c:179
@@ -718,29 +656,27 @@ msgstr "پوشه"
 
 #: ../src/main-win-ui.c:180
 msgid "Empty File"
-msgstr ""
+msgstr "پرونده خالی"
 
 #: ../src/main-win-ui.c:186
-#, fuzzy
 msgid "Show Hidde_n"
-msgstr "نمایش پنهان ها"
+msgstr "نمایش پنهان‌ها"
 
 #: ../src/main-win-ui.c:187
-#, fuzzy
 msgid "Sho_w Side Pane"
-msgstr "نمایش پنهان ها"
+msgstr "نمایش قطعه کناری"
 
 #: ../src/main-win-ui.c:188
 msgid "Show Status B_ar"
-msgstr ""
+msgstr "نمایش نوار وضعیت"
 
 #: ../src/main-win-ui.c:189
 msgid "T_win Pane Mode"
-msgstr ""
+msgstr "حالت دو قطعه‌ای"
 
 #: ../src/main-win-ui.c:190
 msgid "Fullscreen _Mode"
-msgstr ""
+msgstr "حالت تمام صفحه"
 
 #: ../src/main-win-ui.c:195
 msgid "_Icon View"
@@ -764,7 +700,7 @@ msgstr "با نام"
 
 #: ../src/main-win-ui.c:210
 msgid "By _Modification Time"
-msgstr "باز زمان تغییر"
+msgstr "با زمان تغییر"
 
 #: ../src/main-win-ui.c:211
 msgid "By _Size"
@@ -772,19 +708,19 @@ msgstr "با اندازه"
 
 #: ../src/main-win-ui.c:212
 msgid "By File _Type"
-msgstr "با نوع فایل"
+msgstr "با نوع پرونده"
 
 #: ../src/main-win-ui.c:217
 msgid "Places"
-msgstr ""
+msgstr "مکان‌ها"
 
 #: ../src/main-win-ui.c:218
 msgid "Directory Tree"
-msgstr ""
+msgstr "درختواره پوشه"
 
 #: ../src/main-win-ui.c:219
 msgid "Remote"
-msgstr ""
+msgstr "راه دور"
 
 #: ../src/main-win.c:546
 msgid "You are in super user mode"
@@ -792,7 +728,7 @@ msgstr "شما در حالت کاربر برتر هستید"
 
 #: ../src/main-win.c:717 ../src/main-win.c:725
 msgid "Keyboard navigation"
-msgstr ""
+msgstr "ناوبری صفحه کلید"
 
 #: ../src/main-win.c:719
 msgid ""
@@ -803,6 +739,12 @@ msgid ""
 "F10: activate main menu\n"
 "Ctrl+L or Alt+D: jump focus to Path Bar"
 msgstr ""
+"Tab: نمایش پوشه به صورت تمرکز چرخشی -> قطعه کناری -> نوار ابزار\n"
+"Shift+Tab:نوار ابزار به صورت تمرکز چرخشی -> قطع کناری -> نمایش پوشه\n"
+"F6: تغییر تمرکز قطعه کناری <-> نمایش پوشه\n"
+"F8: تمرکز راه‌انداز بین قطعه کناری و نمایش پوشه\n"
+"F10: فعال ‌سازی منوی اصلی\n"
+"Ctrl+L یا Alt+D: تمرکز پرشی به نوار مسیر"
 
 #: ../src/main-win.c:755
 msgid "Switch user command is not set."
@@ -815,9 +757,9 @@ msgid ""
 "'%s'\n"
 "Enter a name for the new bookmark item:"
 msgstr ""
-"افزودن پوشه های ذیل به نشانک ها:\n"
+"افزودن پوشه‌های ذیل به نشانک‌ها:\n"
 "'%s'\n"
-"نامی برای ایتم جدید نشانک وارد کنید:"
+"نامی برای مورد جدید نشانک وارد کنید:"
 
 #: ../src/main-win.c:1121
 msgid "Add to Bookmarks"
@@ -826,19 +768,19 @@ msgstr "افزودن به نشانکها"
 #. options only acceptable by first pcmanfm instance. These options are not passed through IPC
 #: ../src/pcmanfm.c:75
 msgid "Name of configuration profile"
-msgstr "نام نمایه ی پیکره بندی"
+msgstr "نام نمایه پیکره‌بندی"
 
 #: ../src/pcmanfm.c:75
 msgid "PROFILE"
-msgstr ""
+msgstr "نمایه"
 
 #: ../src/pcmanfm.c:76
 msgid "Run PCManFM as a daemon"
-msgstr "اجرای PCManFM به عنوان روح"
+msgstr "اجرای PCManFM در پس‌زمینه"
 
 #: ../src/pcmanfm.c:77
 msgid "No function. Just to be compatible with nautilus"
-msgstr "بدون عملگر. فقط برای سازگاری با ناتولیس"
+msgstr "بدون عملگر. فقط برای سازگاری با مدیر پرونده ناتیلوس"
 
 #. options that are acceptable for every instance of pcmanfm and will be passed through IPC.
 #: ../src/pcmanfm.c:80
@@ -855,68 +797,64 @@ msgstr "باز کردن محاوره ی ترجیحات رومیزی"
 
 #: ../src/pcmanfm.c:83
 msgid "Use --desktop option only for one screen"
-msgstr ""
+msgstr "از گزینه desktop-- فقط برای یک صفحه استفاده شود"
 
 #: ../src/pcmanfm.c:84
-#, fuzzy
 msgid "Set desktop wallpaper from image FILE"
-msgstr "انتخاب تصویر پس زمینه ی رومیزی"
+msgstr "انتخاب تصویر پس زمینه از پرونده تصویر"
 
 #: ../src/pcmanfm.c:84
 msgid "FILE"
-msgstr ""
+msgstr "پرونده"
 
 #. don't translate list of modes in description, please
 #: ../src/pcmanfm.c:86
-#, fuzzy
 msgid "Set mode of desktop wallpaper. MODE=(color|stretch|fit|center|tile)"
-msgstr "تنظیم حالت تصویر پس زمینه. <mode>=(color|stretch|fit|center|tile)"
+msgstr "تنظیم حالت تصویر پس زمینه. حالت=(color|stretch|fit|center|tile)"
 
 #: ../src/pcmanfm.c:86
 msgid "MODE"
-msgstr ""
+msgstr "حالت"
 
 #: ../src/pcmanfm.c:87
-#, fuzzy
 msgid "Open Preferences dialog on the page N"
-msgstr "باز کردن محاوره ی ترجیحات رومیزی"
+msgstr "باز کردن محاوره ی ترجیحات در صفحه N"
 
 #: ../src/pcmanfm.c:87
 msgid "N"
-msgstr ""
+msgstr "N"
 
 #: ../src/pcmanfm.c:88
-#, fuzzy
 msgid "Open new window"
-msgstr "بازکردن در پنجره ی جدید"
+msgstr "بازکردن پنجره جدید"
 
 #. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
 #: ../src/pcmanfm.c:90
 msgid "Window role for usage by window manager"
-msgstr ""
+msgstr "قاعده پنجره برای استفاده توسط مدیر پنجره"
 
 #: ../src/pcmanfm.c:90
 msgid "ROLE"
-msgstr ""
+msgstr "قاعده"
 
 #: ../src/pcmanfm.c:91
 msgid "[FILE1, FILE2,...]"
-msgstr "[فایل۱, فایل۲,...]"
+msgstr "[پرونده۱، پرونده۲،...]"
 
 #: ../src/pcmanfm.c:529
 msgid "Terminal emulator is not set."
-msgstr "شبیه سازی ترمینال تنظیم نشده است"
+msgstr "شبیه ساز ترمینال تنظیم نشده است"
 
 #: ../src/tab-page.c:50
-#, fuzzy
 msgid "Open in New T_ab"
-msgstr "بازکردن در زبانه ی جدید"
+msgstr "بازکردن در زبانه جدید"
 
 #: ../src/tab-page.c:236
 #, c-format
 msgid "%d item selected"
 msgid_plural "%d items selected"
-msgstr[0] ""
+msgstr[0] "%d مورد انتخاب شده است"
+msgstr[1] "%d مورد انتخاب شده است"
 
 #: ../src/tab-page.c:363
 #, c-format
@@ -927,43 +865,43 @@ msgstr "فضای خالی : %s (کل: %s)"
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
-msgstr[0] ""
+msgstr[0] "%d مورد"
+msgstr[1] "%d مورد"
 
 #: ../src/tab-page.c:384
 #, c-format
 msgid " (%d hidden)"
 msgid_plural " (%d hidden)"
-msgstr[0] ""
+msgstr[0] "(%d مخفی شده)"
+msgstr[1] "(%d مخفی شده)"
 
 #: ../data/pcmanfm.desktop.in.h:1
 msgid "Browse the file system and manage the files"
-msgstr "مرور فایل سیستم و مدیریت فایل ها"
+msgstr "مرور پرونده سیستم و مدیریت پرونده‌ها"
 
 #: ../data/pcmanfm.desktop.in.h:2
 msgid "File Manager"
-msgstr "مدیر فایل"
+msgstr "مدیر پرونده"
 
 #: ../data/pcmanfm.desktop.in.h:3
-#, fuzzy
 msgid "File Manager PCManFM"
-msgstr "مدیر فایل"
+msgstr "مدیر پرونده PCManFM"
 
 #: ../data/pcmanfm-desktop-pref.desktop.in.h:1
 msgid "Change desktop wallpapers and behavior of desktop manager"
-msgstr ""
+msgstr "تغییر پس‌زمینه‌ها و رفتار مدیر رومیزی"
 
 #~ msgid "Blank File"
-#~ msgstr "فایل خالی"
+#~ msgstr "پرونده خالی"
 
-#, fuzzy
 #~ msgid "Create _New..."
-#~ msgstr "ساخت جدید..."
+#~ msgstr "ساخت ...جدید"
 
 #~ msgid "Invert Selection"
 #~ msgstr "بازگردادن انتخاب"
 
 #~ msgid "<image file>"
-#~ msgstr "<فایل تصویر>"
+#~ msgstr "<پرونده تصویر>"
 
 #~ msgid "<mode>"
 #~ msgstr "<حالت>"
@@ -972,18 +910,17 @@ msgstr ""
 #~ "Open preference dialog. 'n' is number of the page you want to show (1, 2, "
 #~ "3...)."
 #~ msgstr ""
-#~ "بازکردن محاوره ترجیحات. 'n' شما صفحاتی است که می خواهید نمایش دهید "
+#~ "بازکردن محاوره ترجیحات. 'n' شماره صفحاتی است که می خواهید نمایش دهید "
 #~ "(۱،۲،۳...)"
 
-#, fuzzy
 #~ msgid "Enter a name for the newly created folder:"
-#~ msgstr "برای فایل تازه ساخته شده نامی وارد کنید:"
+#~ msgstr "برای پوشه تازه ساخته شده نامی وارد کنید:"
 
 #~ msgid "Enter a name for the newly created file:"
-#~ msgstr "برای فایل تازه ساخته شده نامی وارد کنید:"
+#~ msgstr "برای پرونده تازه ساخته شده نامی وارد کنید:"
 
 #~ msgid "New"
 #~ msgstr "جدید"
 
 #~ msgid "_New"
-#~ msgstr "-جدید"
+#~ msgstr "جدید"
