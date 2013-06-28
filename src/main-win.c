@@ -1306,6 +1306,8 @@ static void on_notebook_page_removed(GtkNotebook* nb, GtkWidget* page, guint num
     FmTabPage* tab_page = FM_TAB_PAGE(page);
     FmFolderView* folder_view = fm_tab_page_get_folder_view(tab_page);
 
+    g_debug("FmMainWin: removed page %u; %u pages left", num,
+            gtk_notebook_get_n_pages(nb));
     /* disconnect from previous active page */
     g_signal_handlers_disconnect_by_func(tab_page,
                                          on_tab_page_splitter_pos_changed, win);

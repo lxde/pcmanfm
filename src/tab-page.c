@@ -176,7 +176,8 @@ void fm_tab_page_destroy(GtkObject *object)
 #endif
 {
     FmTabPage* page = FM_TAB_PAGE(object);
-    /* g_debug("fm_tab_page_destroy"); */
+    g_debug("fm_tab_page_destroy, folder: %s",
+            page->folder ? fm_path_get_basename(fm_folder_get_path(page->folder)) : "(none)");
     free_folder(page);
     if(page->nav_history)
     {
