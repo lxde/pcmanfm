@@ -36,13 +36,13 @@ Features:
 .SH OPTIONS
 .SS Global options:
 .TP 20
-.BR \-d ", " \-\^\-daemon-mode
+.BR \-d ", " \-\^\-daemon\-mode
 run PCManFM as a daemon
 .TP
 .BI \-p " profile" "\fR,\fP \-\^\-profile=" profile
 load another configuration \fIprofile\fP instead of \fB"default"\fP
 .TP
-.B \-\^\-no-desktop
+.B \-\^\-no\-desktop
 for Nautilus compatibility
 .PP
 .SS Per-instance options:
@@ -50,22 +50,22 @@ for Nautilus compatibility
 .B \-\^\-desktop
 launch desktop manager
 .TP
-.B \-\^\-desktop-off
+.B \-\^\-desktop\-off
 turn off desktop manager if it's running
 .TP
-.B \-\^\-desktop-pref
+.B \-\^\-desktop\-pref
 open desktop preference dialog
 .TP
-.B \-\^\-one-screen
-manage desktop only on current X screen (only if \fB--desktop\fP is used)
+.B \-\^\-one\-screen
+manage desktop only on current X screen (only if \fB\-\-desktop\fP is used)
 .TP
-.B \-n\fR,\fP \-\^\-new-win
+.B \-n\fR,\fP \-\^\-new\-win
 open \fIdirectories\fP in new window
 .TP
 .B \-\^\-role
-set X-role for window (only if \fB-n\fP is used)
+set X role for window (only if \fB\-n\fP is used)
 .TP
-.BI \-\^\-wallpaper-mode= mode
+.BI \-\^\-wallpaper\-mode= mode
 Set mode of desktop wallpaper, \fImode\fP is:
  \fBcolor\fP (fill with solid color),
  \fBstretch\fP (stretch to fill entire screen),
@@ -73,10 +73,10 @@ Set mode of desktop wallpaper, \fImode\fP is:
  \fBcenter\fP (place on center of screen), or
  \fBtile\fP (tile to fill entire screen)
 .TP
-.BI \-w " file" "\fR,\fP \-\^\-set-wallpaper=" file
+.BI \-w " file" "\fR,\fP \-\^\-set\-wallpaper=" file
 set desktop wallpaper from image \fIfile\fP
 .TP
-.BI \-\^\-show-pref " n"
+.BI \-\^\-show\-pref " n"
 open preferences dialog on page \fIn\fP
 .TP
 .I directories
@@ -84,12 +84,12 @@ directories to open
 .SH DESKTOP MANAGEMENT
 The PCMan File Manager can manage your desktop. That includes drawing some
 background on it and showing icons of Desktop folder. To activate the desktop
-management the \fBpcmanfm\fP should be executed with option \fB--desktop\fP.
-Other option that affects this mode is \fB--one-screen\fP. Change running
+management the \fBpcmanfm\fP should be executed with option \fB\-\-desktop\fP.
+Other option that affects this mode is \fB\-\-one\-screen\fP. Change running
 desktop manager parameters you can by executing \fBpcmanfm\fP with option
-\fB--desktop-pref\fP which opens window with preferences or using command
-line parameters for options \fB--set-wallpaper\fP or \fB--wallpaper-mode\fP.
-Execution \fBpcmanfm --desktop-off\fP terminates desktop management.
+\fB\-\-desktop\-pref\fP which opens window with preferences or using command
+line parameters for options \fB\-\-set\-wallpaper\fP or \fB\-\-wallpaper\-mode\fP.
+Execution \fBpcmanfm \-\-desktop\-off\fP terminates desktop management.
 
 While \fBpcmanfm\fP manages desktop it displays icons on desktop. Behavior
 of icons resembles folder view in main window of \fBpcmanfm\fP but icons on
@@ -112,7 +112,7 @@ The default configuration profile directory
 .I ~/.config/pcmanfm/default/pcmanfm.conf
 The main configuration file
 .TP
-.I ~/.config/pcmanfm/default/desktop-items-0.conf
+.I ~/.config/pcmanfm/default/desktop\-items\-0.conf
 The desktop items layout for screen 0 (primary screen)
 
 .SH AUTHOR
