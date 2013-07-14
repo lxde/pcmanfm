@@ -152,7 +152,7 @@ static void pass_args_to_existing_instance(const GOptionEntry* opt_entries, int 
             fprintf(f, "--%s\n%lf\n", ent->long_name, *(gdouble*)ent->arg_data);
             break;
         case G_OPTION_ARG_INT64:
-            fprintf(f, "--%s\n%lld\n", ent->long_name, *(gint64*)ent->arg_data);
+            fprintf(f, "--%s\n%lld\n", ent->long_name, (long long int)*(gint64*)ent->arg_data);
             break;
         case G_OPTION_ARG_CALLBACK:
             /* Not supported */
