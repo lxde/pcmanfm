@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: 0.9.9\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-06-01 01:02+0300\n"
-"PO-Revision-Date: 2013-07-11 20:48+0000\n"
+"PO-Revision-Date: 2013-07-15 11:58+0000\n"
 "Last-Translator: kizito <kbirabwa@yahoo.co.uk>\n"
 "Language-Team: lg <kbirabwa@yahoo.co.uk>\n"
 "Language: lg\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1373575729.0\n"
+"X-POOTLE-MTIME: 1373889495.0\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2012"
@@ -227,6 +227,8 @@ msgstr "Ekib_a kikolebwangawo nga otadde ky'ova kukulula:"
 #: ../data/ui/pref.glade.h:22
 msgid "Delay of auto-selection in single click mode (0 to disable)"
 msgstr ""
+"Akaseera akayitawo puloguramu eryoke ebeko ky'eronda (teekawo 0 ereme "
+"okulondanga)"
 
 #: ../data/ui/pref.glade.h:23
 msgid "Des_ktop Folder"
@@ -377,10 +379,9 @@ msgid "_Mount mountable volumes automatically on program startup"
 msgstr "_Puloguramu olutandika, sistemu yewangire ebibondo ebiwangika"
 
 #: ../data/ui/pref.glade.h:61
-#, fuzzy
 msgid "_Move deleted files to \"trash bin\" instead of erasing from disk"
 msgstr ""
-"Fayiro ezigyidwawo zigendenga mu \"bisuulidwa\" mu kifo "
+"_Fayiro ezigyidwawo zigendenga mu \"bisuulidwa\" mu kifo "
 "eky'okuzisiimuliraddala okuva ku disiki"
 
 #: ../data/ui/pref.glade.h:62
@@ -424,16 +425,14 @@ msgid "_Unfold tab when files are dragged onto tab button"
 msgstr "Ol_udda lubikkukenga nga lusuulidwako fayiro"
 
 #: ../data/ui/pref.glade.h:71
-#, fuzzy
 msgid "_Use Application Startup Notify by default"
 msgstr ""
-"Puloguramu bwe'banga erina ekabonero aka yo akalaga nti etandika, ke kabanga "
-"kakola"
+"_Puloguramu bwe'banga erina ekabonero aka yo akalaga nti etandika, ke "
+"kabanga kakola"
 
 #: ../data/ui/pref.glade.h:72
-#, fuzzy
 msgid "_Volume Management"
-msgstr "Enteekateeka y'ebibondo"
+msgstr "_Enteekateeka y'ebibondo"
 
 #: ../data/ui/autorun.glade.h:1
 msgid "<b>Removable medium is inserted</b>"
@@ -464,29 +463,24 @@ msgid "Open in File Manager"
 msgstr "Bikkulira mu kiteekateekafayiro"
 
 #: ../src/desktop-ui.c:51
-#, fuzzy
 msgid "Open in New Ta_b"
-msgstr "Bikkulira ku ludda olupya"
+msgstr "_Bikkulira ku ludda olupya"
 
 #: ../src/desktop-ui.c:52 ../src/tab-page.c:51
-#, fuzzy
 msgid "Open in New Win_dow"
-msgstr "Bikkulira mu ddirisa ppya"
+msgstr "Bikkulira mu _ddirisa ppya"
 
 #: ../src/desktop-ui.c:54 ../src/tab-page.c:53
-#, fuzzy
 msgid "Open in Termina_l"
 msgstr "Bikkulira mu k_iwandikiro"
 
 #: ../src/desktop-ui.c:70
-#, fuzzy
 msgid "Stic_k to Current Position"
-msgstr "Sigala Wano"
+msgstr "Si_gala Wano"
 
 #: ../src/desktop-ui.c:75
-#, fuzzy
 msgid "Snap to _Grid"
-msgstr "Ebintu byetereereze ku musekese"
+msgstr "Ebintu byetereere_ze ku musekese"
 
 #: ../src/main-win-ui.c:127
 msgid "_File"
@@ -497,9 +491,8 @@ msgid "_New Window"
 msgstr "_Ddirisa ppya"
 
 #: ../src/main-win-ui.c:129
-#, fuzzy
 msgid "New T_ab"
-msgstr "Ludda _lupya"
+msgstr "Ludda _Lupya"
 
 #: ../src/main-win-ui.c:129
 msgid "Create new tab for this folder"
@@ -623,9 +616,8 @@ msgid "_My Computer"
 msgstr "_Kompyuta Yange"
 
 #: ../src/main-win-ui.c:160
-#, fuzzy
 msgid "_Trash Can"
-msgstr "Ebisuulidwa"
+msgstr "Ebi_suulidwa"
 
 #: ../src/main-win-ui.c:161
 msgid "Net_work Drives"
@@ -690,12 +682,11 @@ msgstr "Akab_aawo akalaga ebibumbujja kalabike"
 
 #: ../src/main-win-ui.c:189
 msgid "T_win Pane Mode"
-msgstr ""
+msgstr "Bi_tundu Bibiri"
 
 #: ../src/main-win-ui.c:190
-#, fuzzy
 msgid "Fullscreen _Mode"
-msgstr "Buna olutimbe"
+msgstr "Buna _olutimbe"
 
 #: ../src/main-win-ui.c:195
 msgid "_Icon View"
@@ -813,9 +804,9 @@ msgid "Use --desktop option only for one screen"
 msgstr ""
 
 #: ../src/pcmanfm.c:84
-#, fuzzy
 msgid "Set desktop wallpaper from image FILE"
-msgstr "Tegeka ekifaananyi eky'okubwaliriro bw'awakolerwa"
+msgstr ""
+"Ekiri mu FAYIRO kye kiba kibeera ekifaananyi eky'okubwaliriro bw'awakolerwa"
 
 #: ../src/pcmanfm.c:84
 msgid "FILE"
