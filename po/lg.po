@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: 0.9.9\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-06-01 01:02+0300\n"
-"PO-Revision-Date: 2013-07-15 11:58+0000\n"
+"PO-Revision-Date: 2013-07-16 11:56+0000\n"
 "Last-Translator: kizito <kbirabwa@yahoo.co.uk>\n"
 "Language-Team: lg <kbirabwa@yahoo.co.uk>\n"
 "Language: lg\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1373889495.0\n"
+"X-POOTLE-MTIME: 1373975798.0\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2012"
@@ -565,7 +565,7 @@ msgstr "_Nyamba"
 
 #: ../src/main-win-ui.c:152
 msgid "_Keyboard navigation"
-msgstr ""
+msgstr "_Amapeesa agakutambuliza mu puloguramu eno"
 
 #: ../src/main-win-ui.c:153
 msgid "_Go"
@@ -738,7 +738,7 @@ msgstr "Kati okozesa buyinza bwa muteesiteesi"
 
 #: ../src/main-win.c:717 ../src/main-win.c:725
 msgid "Keyboard navigation"
-msgstr ""
+msgstr "Amapeesa agakutambuliza mu puloguramu eno"
 
 #: ../src/main-win.c:719
 msgid ""
@@ -749,6 +749,20 @@ msgid ""
 "F10: activate main menu\n"
 "Ctrl+L or Alt+D: jump focus to Path Bar"
 msgstr ""
+"Ppeesa ery'oluseetuka:\n"
+"Likutambuliza okuva awalabikira zifayiro -> kadirisa ak'okubbali -> lubaawo "
+"lw'ebiyamba\n"
+"Ppeesa erifuula + ery'oluseetuka:\n"
+"Gakutambuliza okuva ku lubaawo lw'ebiyamba -> kadirisa ak'okubbali -> "
+"awalabikira zifayiro\n"
+"Erya F6:\n"
+"Likutambuliza wakati wa kadirisa ak'okubbali <-> awalabikira zifayiro\n"
+"Erya F8:\n"
+"Likutwala ku kyawula wakati w'akadirisa ak'okubbali  n'awalabikira zifayiro\n"
+"Erya F10:\n"
+"Lireetawo menyu ey'okuntikko\n"
+"Aga Ctrl + L oba Alt + D:\n"
+"Gakutwala w'owandikira amakubo agatuuka ku fayiro"
 
 #: ../src/main-win.c:755
 msgid "Switch user command is not set."
@@ -802,6 +816,8 @@ msgstr "Tandika akaboozi ak'okuteekateeka awakolerwa"
 #: ../src/pcmanfm.c:83
 msgid "Use --desktop option only for one screen"
 msgstr ""
+"Bw'obanga oyagala puloguramu erabikire ku lutimbe olumu lwokka, weyambise "
+"akawyiro aka --desktop ng'oyisa ekiragiro ekigitandika"
 
 #: ../src/pcmanfm.c:84
 msgid "Set desktop wallpaper from image FILE"
