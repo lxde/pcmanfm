@@ -1,20 +1,20 @@
 # Polish translation of pcmanfm package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the pcmanfm package.
-# Piotr Sokół <psokol@jabster.pl>, 2010, 2011, 2012.
+# Piotr Sokół <psokol@jabster.pl>, 2010, 2011, 2012, 2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm 1.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-06-01 01:02+0300\n"
-"PO-Revision-Date: 2013-06-05 19:06+0100\n"
-"Last-Translator: Franciszek Janowski <nobange@poczta.onet.pl>\n"
+"PO-Revision-Date: 2013-07-16 22:17+0200\n"
+"Last-Translator: Piotr Sokół <psokol@jabster.pl>\n"
 "Language-Team: polski <>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Encoding: 8bits\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : ((n%10>=2 && n%10<=4 && (n"
 "%100<10 || n%100>=20)) ? 1 : 2));\n"
 "X-Generator: Gtranslator 2.91.5\n"
@@ -38,8 +38,8 @@ msgstr ""
 msgid "translator-credits"
 msgstr ""
 "Grzegorz Gibas <amigib@gmail.com>, 2010.\n"
-"Piotr Sokół <psokol@jabster.pl>, 2010, 2011, 2012.\n"
-"Franciszek Janowski <nobange@poczta.onet.pl>, 2013."
+"Franciszek Janowski <nobange@poczta.onet.pl>, 2013.\n"
+"Piotr Sokół <psokol@jabster.pl>, 2010, 2011, 2012, 2013."
 
 #: ../data/ui/desktop-pref.glade.h:1
 msgid "<b>Background</b>"
@@ -108,7 +108,7 @@ msgstr "Rozmieszczenie sąsiadująco"
 
 #: ../data/ui/desktop-pref.glade.h:17
 msgid "Wallpaper _mode:"
-msgstr "T_ryb tapety:"
+msgstr "T_ryb:"
 
 #: ../data/ui/desktop-pref.glade.h:18
 msgid "_Appearance"
@@ -116,7 +116,7 @@ msgstr "Wy_gląd"
 
 #: ../data/ui/desktop-pref.glade.h:19
 msgid "_Background color:"
-msgstr "_Kolor tła:"
+msgstr "_Kolor:"
 
 #: ../data/ui/desktop-pref.glade.h:20
 msgid "_Desktop Icons"
@@ -128,7 +128,7 @@ msgstr "_Czcionka tekstu opisu:"
 
 #: ../data/ui/desktop-pref.glade.h:22
 msgid "_Show \"My Documents\" icon on desktop"
-msgstr "_Wyświetlanie ikony \"Dokumenty\" na pulpicie"
+msgstr "_Wyświetlanie ikony „Dokumenty” na pulpicie"
 
 #: ../data/ui/desktop-pref.glade.h:23
 msgid "_Show menus provided by window managers when desktop is clicked"
@@ -140,7 +140,7 @@ msgstr "_Wyświetlanie tego samego tła na wszystkich obszarach roboczych"
 
 #: ../data/ui/desktop-pref.glade.h:25
 msgid "_Wallpaper:"
-msgstr "_Tapeta:"
+msgstr "_Obraz:"
 
 #: ../data/ui/pref.glade.h:1
 msgid "<b>Auto-mount</b>"
@@ -176,11 +176,11 @@ msgstr "<b>Interfejs użytkownika</b>"
 
 #: ../data/ui/pref.glade.h:9
 msgid "A_rchiver integration:"
-msgstr "Menedżer _archiwum:"
+msgstr "Menedżer _archiwów:"
 
 #: ../data/ui/pref.glade.h:10
 msgid "Al_ways show full file names"
-msgstr "Z_awsze pokazuj pełne nazwy plików"
+msgstr "_Wyświetlanie pełnych nazw plików"
 
 #: ../data/ui/pref.glade.h:11
 msgid "Al_ways show the tab bar"
@@ -197,7 +197,8 @@ msgstr "Wyświetlanie pytania"
 #: ../data/ui/pref.glade.h:14
 msgid "Auto (move if on the same FS, copy otherwise)"
 msgstr ""
-"Automatycznie (przenoszenie w tym samym systemie plików, w innym kopiowanie)"
+"Automatycznie (przenoszenie w tym samym systemie plików, kopiowanie pomiędzy "
+"innymi)"
 
 #: ../data/ui/pref.glade.h:16
 msgid "Clos_e tab containing removable medium when it is unmounted"
@@ -213,7 +214,7 @@ msgstr "Zwarty"
 
 #: ../data/ui/pref.glade.h:19
 msgid "Confi_rm before moving files into \"trash bi_n\""
-msgstr "Wyświetlanie _pytania przed przenoszeniem plików do kosza"
+msgstr "Wyświetlanie py_tania przed przenoszeniem plików do kosza"
 
 #: ../data/ui/pref.glade.h:20
 msgid "Copy"
@@ -225,11 +226,12 @@ msgstr "Domyślna działanie przeciągania plików:"
 
 #: ../data/ui/pref.glade.h:22
 msgid "Delay of auto-selection in single click mode (0 to disable)"
-msgstr "Opóźnienie autowybierania w trybie jednego kliknięcia (0 aby wyłączyć)"
+msgstr ""
+"Opóźnienie zaznaczania w trybie jednokrotnego kliknięcia (0 aby wyłączyć)"
 
 #: ../data/ui/pref.glade.h:23
 msgid "Des_ktop Folder"
-msgstr "Katalog _pulpitu"
+msgstr "Katalog p_ulpitu"
 
 #: ../data/ui/pref.glade.h:24
 msgid "Detailed List View"
@@ -342,7 +344,7 @@ msgstr "_Zaawansowane"
 
 #: ../data/ui/pref.glade.h:54
 msgid "_Bookmarks:"
-msgstr "_Zakładki:"
+msgstr "Otwieranie _zakładek:"
 
 #: ../data/ui/pref.glade.h:55
 msgid "_Display"
@@ -371,7 +373,7 @@ msgstr "_Montowanie wolumenów podczas uruchamiania programu"
 
 #: ../data/ui/pref.glade.h:61
 msgid "_Move deleted files to \"trash bin\" instead of erasing from disk"
-msgstr "Przenoszenie _plików do kosza zamiast usuwania"
+msgstr "_Przenoszenie plików do kosza zamiast usuwania"
 
 #: ../data/ui/pref.glade.h:62
 msgid "_Only show thumbnails for local files"
@@ -379,7 +381,7 @@ msgstr "Wyświetlanie miniatur tylko _lokalnych plików"
 
 #: ../data/ui/pref.glade.h:63
 msgid "_Open files with single click"
-msgstr "_Otwieranie plików pojedyńczym kliknięciem"
+msgstr "_Otwieranie plików jednokrotnym kliknięciem"
 
 #: ../data/ui/pref.glade.h:64
 msgid "_Open mounted removable media in new tab instead of new window"
@@ -409,11 +411,11 @@ msgstr "_Kosz"
 
 #: ../data/ui/pref.glade.h:70
 msgid "_Unfold tab when files are dragged onto tab button"
-msgstr "_Uaktywnienie karty po przeciągnięciu pliku na nią"
+msgstr "_Uaktywnienie karty po przeciągnięciu na nią pliku"
 
 #: ../data/ui/pref.glade.h:71
 msgid "_Use Application Startup Notify by default"
-msgstr "_Użyj domyślnie notyfikacji uruchamiania programu"
+msgstr "_Domyślne powiadamianie o uruchomieniu programów"
 
 #: ../data/ui/pref.glade.h:72
 msgid "_Volume Management"
@@ -433,7 +435,7 @@ msgstr "Proszę wybrać czynność:"
 
 #: ../data/ui/autorun.glade.h:4
 msgid "Removable medium is inserted"
-msgstr "Otwieranie nośnika"
+msgstr "Wsunięto nośnik wymienny"
 
 #: ../data/ui/autorun.glade.h:5
 msgid "Type of medium:"
@@ -465,7 +467,7 @@ msgstr "Za_blokowanie położenia"
 
 #: ../src/desktop-ui.c:75
 msgid "Snap to _Grid"
-msgstr "Wyrównanie do siatki"
+msgstr "Wyrównanie do _siatki"
 
 #: ../src/main-win-ui.c:127
 msgid "_File"
@@ -481,7 +483,7 @@ msgstr "Nowa _karta"
 
 #: ../src/main-win-ui.c:129
 msgid "Create new tab for this folder"
-msgstr "Utwórz nową kartę dla tego katalogu"
+msgstr "Otwiera katalog w nowej karcie"
 
 #: ../src/main-win-ui.c:130
 msgid "C_reate New..."
@@ -517,11 +519,11 @@ msgstr "_Skopiuj..."
 
 #: ../src/main-win-ui.c:143
 msgid "_Invert Selection"
-msgstr "Odwróć zaznaczenie"
+msgstr "_Odwróć zaznaczenie"
 
 #: ../src/main-win-ui.c:144
 msgid "Prefere_nces"
-msgstr "Prefere_ncje"
+msgstr "P_referencje"
 
 #: ../src/main-win-ui.c:145
 msgid "_View"
@@ -626,7 +628,7 @@ msgstr "_Zakładki"
 
 #: ../src/main-win-ui.c:165
 msgid "_Add To Bookmarks"
-msgstr "Dod_aj do zakładek"
+msgstr "_Dodaj"
 
 #: ../src/main-win-ui.c:166
 msgid "Tool_s"
@@ -642,7 +644,7 @@ msgstr "Otwórz położenie jako użytkownik _root"
 
 #: ../src/main-win-ui.c:170
 msgid "Fin_d Files"
-msgstr "_Znajdź pliki"
+msgstr "_Wyszukaj pliki"
 
 #. for popup menu - these entries exist in FmFolderView popup still
 #: ../src/main-win-ui.c:179
@@ -659,7 +661,7 @@ msgstr "Wyświetlanie _ukrytych plików"
 
 #: ../src/main-win-ui.c:187
 msgid "Sho_w Side Pane"
-msgstr "Wyświetlanie panelu _bocznego"
+msgstr "_Wyświetlanie"
 
 #: ../src/main-win-ui.c:188
 msgid "Show Status B_ar"
@@ -667,7 +669,7 @@ msgstr "Pasek _stanu"
 
 #: ../src/main-win-ui.c:189
 msgid "T_win Pane Mode"
-msgstr "Tryb d_wóch paneli "
+msgstr "Tryb _dwóch paneli "
 
 #: ../src/main-win-ui.c:190
 msgid "Fullscreen _Mode"
@@ -734,13 +736,14 @@ msgid ""
 "F10: activate main menu\n"
 "Ctrl+L or Alt+D: jump focus to Path Bar"
 msgstr ""
-"Tab: przełączaj fokus Widok katalogu -> Panel boczny -> Pasek narzędzi\n"
-"Shift+Tab: przełączaj fokus Pasek narzędzi -> Panel boczny -> Widok "
+"Tab: przełącza uaktywnienie Widok katalogu -> Panel boczny -> Pasek "
+"narzędzi\n"
+"Shift+Tab: przełącza uaktywnienie Pasek narzędzi -> Panel boczny -> Widok "
 "katalogu\n"
-"F6: zmień fokus Panel boczny <-> Widok katalogu\n"
-"F8: fokus podzielony między Panel boczny i Widok katalogu\n"
-"F10: aktywuj główne menu\n"
-"Ctrl+L or Alt+D: przełącz fokus do Paska ścieżki"
+"F6: przełącza uaktywnienie Panel boczny <-> Widok katalogu\n"
+"F8: uaktywnia separator pomiędzy Panelem bocznym i Widokiem katalogu\n"
+"F10: uaktywnia pasek menu\n"
+"Ctrl+L or Alt+D: przechodzi do pola paska ścieżki"
 
 #: ../src/main-win.c:755
 msgid "Switch user command is not set."
@@ -767,7 +770,7 @@ msgstr "Określa nazwę profilu ustawień"
 
 #: ../src/pcmanfm.c:75
 msgid "PROFILE"
-msgstr "PROFILE"
+msgstr "PROFIL"
 
 #: ../src/pcmanfm.c:76
 msgid "Run PCManFM as a daemon"
@@ -788,15 +791,15 @@ msgstr "Wyłącza zarządzanie pulpitu jeśli jest włączone"
 
 #: ../src/pcmanfm.c:82
 msgid "Open desktop preference dialog"
-msgstr "Otwiera okno preferencji pulpitu"
+msgstr "Wyświetla okno preferencji pulpitu"
 
 #: ../src/pcmanfm.c:83
 msgid "Use --desktop option only for one screen"
-msgstr "Użyj opcji --desktop dla tylko jednego ekranu"
+msgstr "Używa opcji --desktop tylko dla jednego ekranu"
 
 #: ../src/pcmanfm.c:84
 msgid "Set desktop wallpaper from image FILE"
-msgstr "Ustala tło pulpitu z PLIK"
+msgstr "Ustala tło pulpitu jako PLIK"
 
 #: ../src/pcmanfm.c:84
 msgid "FILE"
@@ -805,7 +808,8 @@ msgstr "PLIK"
 #. don't translate list of modes in description, please
 #: ../src/pcmanfm.c:86
 msgid "Set mode of desktop wallpaper. MODE=(color|stretch|fit|center|tile)"
-msgstr "Ustala tryb wyświetlania tła TRYB=(color|stretch|fit|center|tile)"
+msgstr ""
+"Ustala tryb wyświetlania tła pulpitu. TRYB=(color|stretch|fit|center|tile)"
 
 #: ../src/pcmanfm.c:86
 msgid "MODE"
@@ -813,7 +817,7 @@ msgstr "TRYB"
 
 #: ../src/pcmanfm.c:87
 msgid "Open Preferences dialog on the page N"
-msgstr "Otwiera okno preferencji na stronie N"
+msgstr "Otwiera okno preferencji na karcie N"
 
 #: ../src/pcmanfm.c:87
 msgid "N"
@@ -821,12 +825,12 @@ msgstr "N"
 
 #: ../src/pcmanfm.c:88
 msgid "Open new window"
-msgstr "Otwórz w nowym oknie"
+msgstr "Otwiera nowe okno"
 
 #. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
 #: ../src/pcmanfm.c:90
 msgid "Window role for usage by window manager"
-msgstr "Zadanie okna do użytku menedżera okien"
+msgstr "Określa typ okna używany przez menedżera okien"
 
 #: ../src/pcmanfm.c:90
 msgid "ROLE"
