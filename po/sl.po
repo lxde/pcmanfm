@@ -8,16 +8,17 @@ msgstr ""
 "Project-Id-Version: pcmanfm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-06-01 01:02+0300\n"
-"PO-Revision-Date: 2012-08-28 09:43+0200\n"
-"Last-Translator: Klemen <klemen.kosir@gmx.com>\n"
+"PO-Revision-Date: 2013-07-19 16:55+0000\n"
+"Last-Translator: Klemen <klemen913@gmail.com>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);;\n"
-"X-Generator: Pootle 2.0.5\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
+"n%100==4 ? 2 : 3);\n"
+"X-Generator: Pootle 2.5.0\n"
+"X-POOTLE-MTIME: 1374252919.0\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2012"
@@ -51,23 +52,20 @@ msgid "<b>Text</b>"
 msgstr "<b>Besedilo</b>"
 
 #: ../data/ui/desktop-pref.glade.h:4
-#, fuzzy
 msgid "Ad_vanced"
-msgstr "Napredno"
+msgstr "_Napredno"
 
 #: ../data/ui/desktop-pref.glade.h:5
-#, fuzzy
 msgid "C_olor of label text:"
-msgstr "Barva besedila:"
+msgstr "Barva _besedila:"
 
 #: ../data/ui/desktop-pref.glade.h:6 ../data/ui/pref.glade.h:15
 msgid "Center on the screen"
 msgstr "Sredina zaslona"
 
 #: ../data/ui/desktop-pref.glade.h:7
-#, fuzzy
 msgid "Color of _shadow:"
-msgstr "Barva sence:"
+msgstr "Barva _senc:"
 
 #: ../data/ui/desktop-pref.glade.h:8 ../src/desktop-ui.c:34
 #: ../data/pcmanfm-desktop-pref.desktop.in.h:2
@@ -83,19 +81,16 @@ msgid "Please select an image file"
 msgstr "Izberite slikovno datoteko"
 
 #: ../data/ui/desktop-pref.glade.h:11
-#, fuzzy
 msgid "S_how icons of volumes on desktop"
-msgstr "Na namizju pokaži ikone nosilcev"
+msgstr "Na namizju pokaži ikone _nosilcev"
 
 #: ../data/ui/desktop-pref.glade.h:12
-#, fuzzy
 msgid "Show \"_My Computer\" icon on desktop"
-msgstr "Na namizju pokaži ikono »Moj računalnik«"
+msgstr "Na namizju pokaži ikono »Moj _računalnik«"
 
 #: ../data/ui/desktop-pref.glade.h:13
-#, fuzzy
 msgid "Show \"_Trash Bin\" icon on desktop"
-msgstr "Na namizju pokaži ikono »Smeti«"
+msgstr "Na namizju pokaži ikono »_Smeti«"
 
 #: ../data/ui/desktop-pref.glade.h:14 ../data/ui/pref.glade.h:46
 msgid "Stretch to fill the entire screen"
@@ -110,49 +105,40 @@ msgid "Tile the image to fill the entire screen"
 msgstr "Razpostavi čez cel zaslon"
 
 #: ../data/ui/desktop-pref.glade.h:17
-#, fuzzy
 msgid "Wallpaper _mode:"
-msgstr "Način ozadja:"
+msgstr "_Način ozadja:"
 
 #: ../data/ui/desktop-pref.glade.h:18
-#, fuzzy
 msgid "_Appearance"
-msgstr "Videz"
+msgstr "_Videz"
 
 #: ../data/ui/desktop-pref.glade.h:19
-#, fuzzy
 msgid "_Background color:"
-msgstr "Barva ozadja:"
+msgstr "Barva _ozadja:"
 
 #: ../data/ui/desktop-pref.glade.h:20
-#, fuzzy
 msgid "_Desktop Icons"
-msgstr "Ikone namizja"
+msgstr "Ikone na_mizja"
 
 #: ../data/ui/desktop-pref.glade.h:21
-#, fuzzy
 msgid "_Font of label text:"
-msgstr "Pisava besedila:"
+msgstr "_Pisava besedila:"
 
 #: ../data/ui/desktop-pref.glade.h:22
-#, fuzzy
 msgid "_Show \"My Documents\" icon on desktop"
-msgstr "Na namizju pokaži ikono »Moji dokumenti«"
+msgstr "Na namizju pokaži ikono »Moji _dokumenti«"
 
 #: ../data/ui/desktop-pref.glade.h:23
-#, fuzzy
 msgid "_Show menus provided by window managers when desktop is clicked"
-msgstr "Ob kliku na namizje pokaži meni upravljalnika oken"
+msgstr "Ob kliku na namizje pokaži meni upravljalnika o_ken"
 
 #: ../data/ui/desktop-pref.glade.h:24
-#, fuzzy
 msgid "_Use the same wallpaper on all desktops"
-msgstr "Uporabi enako ozadje na vseh namizjih"
+msgstr "Uporabi enako ozadje na _vseh namizjih"
 
 #: ../data/ui/desktop-pref.glade.h:25
-#, fuzzy
 msgid "_Wallpaper:"
-msgstr "Ozadje:"
+msgstr "_Ozadje:"
 
 #: ../data/ui/pref.glade.h:1
 msgid "<b>Auto-mount</b>"
@@ -187,24 +173,20 @@ msgid "<b>User Interface</b>"
 msgstr "<b>Uporabniški vmesnik</b>"
 
 #: ../data/ui/pref.glade.h:9
-#, fuzzy
 msgid "A_rchiver integration:"
-msgstr "Arhivnik:"
+msgstr "_Arhivnik:"
 
 #: ../data/ui/pref.glade.h:10
-#, fuzzy
 msgid "Al_ways show full file names"
-msgstr "Vedno pokaži vrstico zavihkov"
+msgstr "_Vedno pokaži celotno ime datoteke"
 
 #: ../data/ui/pref.glade.h:11
-#, fuzzy
 msgid "Al_ways show the tab bar"
-msgstr "Vedno pokaži vrstico zavihkov"
+msgstr "Vedno pokaži vrstico _zavihkov"
 
 #: ../data/ui/pref.glade.h:12
-#, fuzzy
 msgid "App_lications"
-msgstr "Programi"
+msgstr "_Programi"
 
 #: ../data/ui/pref.glade.h:13
 msgid "Ask"
@@ -215,50 +197,44 @@ msgid "Auto (move if on the same FS, copy otherwise)"
 msgstr "Samodejno"
 
 #: ../data/ui/pref.glade.h:16
-#, fuzzy
 msgid "Clos_e tab containing removable medium when it is unmounted"
-msgstr "Ob odklopu odstranljivega medija zapri zavihek le-te naprave"
+msgstr "Ob odklopu odstranljivega _nosilca zapri zavihek le-te naprave"
 
 #: ../data/ui/pref.glade.h:17
-#, fuzzy
 msgid "Co_nfirm before deleting files"
-msgstr "Vprašaj pred brisanjem datotek"
+msgstr "Vprašaj pred _brisanjem datotek"
 
 #: ../data/ui/pref.glade.h:18
 msgid "Compact View"
 msgstr "Strnjen seznam"
 
 #: ../data/ui/pref.glade.h:19
-#, fuzzy
 msgid "Confi_rm before moving files into \"trash bi_n\""
-msgstr "Vprašaj pred premikanjem datotek v »Smeti«"
+msgstr "Vprašaj pred premikom datotek v »_Smeti«"
 
 #: ../data/ui/pref.glade.h:20
 msgid "Copy"
 msgstr "Kopiraj"
 
 #: ../data/ui/pref.glade.h:21
-#, fuzzy
 msgid "Defaul_t drop action:"
-msgstr "Privzeto dejanje ob spustitvi:"
+msgstr "Privzeto _dejanje ob spustitvi:"
 
 #: ../data/ui/pref.glade.h:22
 msgid "Delay of auto-selection in single click mode (0 to disable)"
-msgstr ""
+msgstr "Zakasnitev samodejne izbire v načinu enojnega klika"
 
 #: ../data/ui/pref.glade.h:23
-#, fuzzy
 msgid "Des_ktop Folder"
-msgstr "Namizje"
+msgstr "_Namizje"
 
 #: ../data/ui/pref.glade.h:24
 msgid "Detailed List View"
 msgstr "Podroben seznam"
 
 #: ../data/ui/pref.glade.h:25
-#, fuzzy
 msgid "Do _not generate thumbnails for files exceeding this size:"
-msgstr "Ne ustvari predoglednih sličic za datoteke, večje od:"
+msgstr "Ne ustvari _predoglednih sličic za datoteke, večje od:"
 
 #: ../data/ui/pref.glade.h:27
 #, no-c-format
@@ -271,24 +247,20 @@ msgstr ""
 "%s = ukaz, ki ga želite izvesti s terminalom ali programom »su«."
 
 #: ../data/ui/pref.glade.h:29
-#, fuzzy
 msgid "Hid_e 'Close tab' buttons"
-msgstr "Skrij gumb »Zapri zavihek«"
+msgstr "Skrij gumb »_Zapri zavihek«"
 
 #: ../data/ui/pref.glade.h:30
-#, fuzzy
 msgid "Hide _folder content border"
-msgstr "Skrij obrobo vsebine mape"
+msgstr "Skrij _obrobo vsebine mape"
 
 #: ../data/ui/pref.glade.h:31
-#, fuzzy
 msgid "Hide _side pane buttons"
-msgstr "Skrij gumbe stranskega pladnja"
+msgstr "Skrij gumbe stranskega _pladnja"
 
 #: ../data/ui/pref.glade.h:32
-#, fuzzy
 msgid "Hide e_xpander on empty or locked folder"
-msgstr "Skrij razširilnik na praznih ali zaklenjenih mapah"
+msgstr "Skrij _razširilnik na praznih ali zaklenjenih mapah"
 
 #: ../data/ui/pref.glade.h:33
 msgid "Icon View"
@@ -307,9 +279,8 @@ msgstr ""
 "je to določeno."
 
 #: ../data/ui/pref.glade.h:36
-#, fuzzy
 msgid "Mo_unt removable media automatically when they are inserted"
-msgstr "Samodejno priklopi odstranljive nosilce"
+msgstr "_Samodejno priklopi odstranljive nosilce"
 
 #: ../data/ui/pref.glade.h:37
 msgid "Move"
@@ -332,143 +303,118 @@ msgid "Preferences"
 msgstr "Možnosti"
 
 #: ../data/ui/pref.glade.h:42
-#, fuzzy
 msgid "Size of _big icons:"
-msgstr "Velikost velikih ikon:"
+msgstr "Velikost _velikih ikon:"
 
 #: ../data/ui/pref.glade.h:43
-#, fuzzy
 msgid "Size of _thumbnails:"
-msgstr "Velikost predoglednih sličic:"
+msgstr "Velikost predoglednih _sličic:"
 
 #: ../data/ui/pref.glade.h:44
-#, fuzzy
 msgid "Size of side _pane icons:"
-msgstr "Velikost ikon stranskega pladnja:"
+msgstr "Velikost ikon stranskega _pladnja:"
 
 #: ../data/ui/pref.glade.h:45
-#, fuzzy
 msgid "Size of small _icons:"
-msgstr "Velikost majhnih ikon:"
+msgstr "Velikost _majhnih ikon:"
 
 #: ../data/ui/pref.glade.h:48
 msgid "Thumbnail View"
 msgstr "Predogledne sličice"
 
 #: ../data/ui/pref.glade.h:50
-#, fuzzy
 msgid "Treat backup files as _hidden"
-msgstr "Obravnavaj varnostne kopije kot skrite datoteke"
+msgstr "Obravnavaj varnostne kopije kot _skrite datoteke"
 
 #: ../data/ui/pref.glade.h:51
-#, fuzzy
 msgid "Us_e SI decimal prefixes instead of IEC binary prefixes"
-msgstr "Namesto dvojiških predpon IEC uporabi decimalne predpone SI"
+msgstr "_Namesto dvojiških predpon IEC uporabi decimalne predpone SI"
 
 #: ../data/ui/pref.glade.h:52
-#, fuzzy
 msgid "Vie_w Mode:"
-msgstr "Način pogleda:"
+msgstr "Način po_gleda:"
 
 #: ../data/ui/pref.glade.h:53
 msgid "_Advanced"
 msgstr "_Napredno"
 
 #: ../data/ui/pref.glade.h:54
-#, fuzzy
 msgid "_Bookmarks:"
-msgstr "Zaznamki:"
+msgstr "_Zaznamki:"
 
 #: ../data/ui/pref.glade.h:55
-#, fuzzy
 msgid "_Display"
-msgstr "Videz"
+msgstr "_Videz"
 
 #: ../data/ui/pref.glade.h:56
-#, fuzzy
 msgid "_Erase files on removable media instead of \"trash bin\" creation"
-msgstr "Izbrisanih datotek na odstranljivih medijih ne premakni v »Smeti«"
+msgstr "Datoteke na odstranljivih nosilcih i_zbriši brez premikanja v »Smeti«"
 
 #: ../data/ui/pref.glade.h:57
-#, fuzzy
 msgid "_General"
-msgstr "Splošno"
+msgstr "_Splošno"
 
 #: ../data/ui/pref.glade.h:58
-#, fuzzy
 msgid "_Home Directory"
-msgstr "Domača mapa"
+msgstr "_Domača mapa"
 
 #: ../data/ui/pref.glade.h:59
-#, fuzzy
 msgid "_Layout"
-msgstr "Postavitev"
+msgstr "_Postavitev"
 
 #: ../data/ui/pref.glade.h:60
-#, fuzzy
 msgid "_Mount mountable volumes automatically on program startup"
-msgstr "Samodejno priklopi nosilce ob zagonu programa"
+msgstr "Samodejno _priklopi nosilce ob zagonu programa"
 
 #: ../data/ui/pref.glade.h:61
-#, fuzzy
 msgid "_Move deleted files to \"trash bin\" instead of erasing from disk"
-msgstr "Izbrisane datoteke premakni v »Smeti«"
+msgstr "Izbrisane datoteke premakni v »_Smeti«"
 
 #: ../data/ui/pref.glade.h:62
-#, fuzzy
 msgid "_Only show thumbnails for local files"
-msgstr "Pokaži predogledne sličice le za krajevne datoteke"
+msgstr "Pokaži predogledne sličice le za _krajevne datoteke"
 
 #: ../data/ui/pref.glade.h:63
-#, fuzzy
 msgid "_Open files with single click"
-msgstr "Odpri datoteke z enim klikom"
+msgstr "_Odpri datoteke z enojnim klikom"
 
 #: ../data/ui/pref.glade.h:64
-#, fuzzy
 msgid "_Open mounted removable media in new tab instead of new window"
 msgstr ""
-"Odpri priklopljene odstranljive medije v novem zavihku namesto v novem oknu"
+"Odpri priklopljene odstranljive nosilce v novem _zavihku namesto v novem "
+"oknu"
 
 #: ../data/ui/pref.glade.h:65
-#, fuzzy
 msgid "_Show available options for removable media when they are inserted"
-msgstr "Ob priključitvi odstranljivih nosilcev pokaži razpoložljive možnosti"
+msgstr "Ob priključitvi odstranljivih nosilcev pokaži razpoložljive _možnosti"
 
 #: ../data/ui/pref.glade.h:66
-#, fuzzy
 msgid "_Show thumbnails of files"
-msgstr "Pokaži predogledne sličice datotek"
+msgstr "Pokaži predogledne _sličice datotek"
 
 #: ../data/ui/pref.glade.h:67
-#, fuzzy
 msgid "_Switch user command:"
-msgstr "Preklapljanje med uporabniki:"
+msgstr "_Ukaz za preklop med uporabniki:"
 
 #: ../data/ui/pref.glade.h:68
-#, fuzzy
 msgid "_Terminal emulator:"
-msgstr "Terminal:"
+msgstr "_Terminal:"
 
 #: ../data/ui/pref.glade.h:69
-#, fuzzy
 msgid "_Trash bin"
-msgstr "Smeti"
+msgstr "_Smeti"
 
 #: ../data/ui/pref.glade.h:70
-#, fuzzy
 msgid "_Unfold tab when files are dragged onto tab button"
-msgstr "Razpni zavihek, ko so datoteke premaknjene na gumb zavihka"
+msgstr "_Razpni zavihek, ko so datoteke premaknjene na gumb zavihka"
 
 #: ../data/ui/pref.glade.h:71
-#, fuzzy
 msgid "_Use Application Startup Notify by default"
-msgstr "Privzeto uporabi obveščanje o zagonu programov"
+msgstr "Privzeto uporabi _obveščanje o zagonu programov"
 
 #: ../data/ui/pref.glade.h:72
-#, fuzzy
 msgid "_Volume Management"
-msgstr "Upravljanje z nosilci"
+msgstr "Upravljanje z _nosilci"
 
 #: ../data/ui/autorun.glade.h:1
 msgid "<b>Removable medium is inserted</b>"
@@ -499,29 +445,24 @@ msgid "Open in File Manager"
 msgstr "Odpri v upravljalniku datotek"
 
 #: ../src/desktop-ui.c:51
-#, fuzzy
 msgid "Open in New Ta_b"
-msgstr "Odpri v novem zavihku"
+msgstr "Odpri v novem _zavihku"
 
 #: ../src/desktop-ui.c:52 ../src/tab-page.c:51
-#, fuzzy
 msgid "Open in New Win_dow"
-msgstr "Odpri v novem oknu"
+msgstr "Odpri v novem _oknu"
 
 #: ../src/desktop-ui.c:54 ../src/tab-page.c:53
-#, fuzzy
 msgid "Open in Termina_l"
 msgstr "Odpri v _terminalu"
 
 #: ../src/desktop-ui.c:70
-#, fuzzy
 msgid "Stic_k to Current Position"
-msgstr "Pritrdi na trenutni položaj"
+msgstr "Pri_trdi na trenutni položaj"
 
 #: ../src/desktop-ui.c:75
-#, fuzzy
 msgid "Snap to _Grid"
-msgstr "Pripni na mrežo"
+msgstr "Pripni na _mrežo"
 
 #: ../src/main-win-ui.c:127
 msgid "_File"
@@ -532,82 +473,71 @@ msgid "_New Window"
 msgstr "_Novo okno"
 
 #: ../src/main-win-ui.c:129
-#, fuzzy
 msgid "New T_ab"
 msgstr "Nov _zavihek"
 
 #: ../src/main-win-ui.c:129
 msgid "Create new tab for this folder"
-msgstr ""
+msgstr "Ustvari nov zavihek za to mapo"
 
 #: ../src/main-win-ui.c:130
-#, fuzzy
 msgid "C_reate New..."
-msgstr "Nova ..."
+msgstr "_Ustvari novo ..."
 
 #: ../src/main-win-ui.c:131
 msgid "_Close Tab"
 msgstr "Za_pri zavihek"
 
 #: ../src/main-win-ui.c:132
-#, fuzzy
 msgid "Close _Window"
-msgstr "Zapri okno"
+msgstr "_Zapri okno"
 
 #: ../src/main-win-ui.c:133
 msgid "_Edit"
 msgstr "_Uredi"
 
 #: ../src/main-win-ui.c:138
-#, fuzzy
 msgid "_Rename"
-msgstr "Preimenuj"
+msgstr "Prei_menuj"
 
 #: ../src/main-win-ui.c:139
-#, fuzzy
 msgid "Create Symlin_k"
-msgstr "Ustvari simbolno povezavo"
+msgstr "Ustvari sim_bolno povezavo"
 
 #: ../src/main-win-ui.c:140
-#, fuzzy
 msgid "_Move To..."
-msgstr "Premakni v ..."
+msgstr "_Premakni v ..."
 
 #: ../src/main-win-ui.c:141
-#, fuzzy
 msgid "C_opy To..."
-msgstr "Kopiraj v ..."
+msgstr "_Kopiraj v ..."
 
 #: ../src/main-win-ui.c:143
 msgid "_Invert Selection"
 msgstr "Obrni _izbor"
 
 #: ../src/main-win-ui.c:144
-#, fuzzy
 msgid "Prefere_nces"
-msgstr "Možnosti"
+msgstr "_Možnosti"
 
 #: ../src/main-win-ui.c:145
 msgid "_View"
 msgstr "_Pogled"
 
 #: ../src/main-win-ui.c:146
-#, fuzzy
 msgid "_Reload Folder"
-msgstr "Osveži"
+msgstr "_Osveži mapo"
 
 #: ../src/main-win-ui.c:146
 msgid "Reload current folder"
 msgstr "Osveži"
 
 #: ../src/main-win-ui.c:147
-#, fuzzy
 msgid "Side _Pane"
-msgstr "Stranski pladenj"
+msgstr "Stranski _pladenj"
 
 #. other see below: 'ShowHidden' 'ShowStatus' 'Fullscreen' 'IconView'...
 #: ../src/main-win-ui.c:149
-#, fuzzy
 msgid "S_ort Files"
 msgstr "_Razvrsti datoteke"
 
@@ -617,97 +547,85 @@ msgstr "Pomo_č"
 
 #: ../src/main-win-ui.c:152
 msgid "_Keyboard navigation"
-msgstr ""
+msgstr "Krmarjenje s _tipkovnico"
 
 #: ../src/main-win-ui.c:153
 msgid "_Go"
 msgstr "Poj_di"
 
 #: ../src/main-win-ui.c:154
-#, fuzzy
 msgid "_Previous Folder"
-msgstr "Prejšnja mapa"
+msgstr "_Predhodna mapa"
 
 #: ../src/main-win-ui.c:154
 msgid "Previous Folder"
 msgstr "Prejšnja mapa"
 
 #: ../src/main-win-ui.c:155
-#, fuzzy
 msgid "_Next Folder"
-msgstr "Naslednja mapa"
+msgstr "_Naslednja mapa"
 
 #: ../src/main-win-ui.c:155
 msgid "Next Folder"
 msgstr "Naslednja mapa"
 
 #: ../src/main-win-ui.c:156
-#, fuzzy
 msgid "Pa_rent Folder"
-msgstr "Nadrejena mapa"
+msgstr "Na_drejena mapa"
 
 #: ../src/main-win-ui.c:156
 msgid "Go to parent Folder"
 msgstr "Pojdi v nadrejeno mapo"
 
 #: ../src/main-win-ui.c:157
-#, fuzzy
 msgid "H_ome Folder"
-msgstr "Domača mapa"
+msgstr "_Domača mapa"
 
 #: ../src/main-win-ui.c:157
 msgid "Home Folder"
 msgstr "Domača mapa"
 
 #: ../src/main-win-ui.c:158
-#, fuzzy
 msgid "_Desktop"
-msgstr "Namizje"
+msgstr "_Namizje"
 
 #: ../src/main-win-ui.c:158
 msgid "Desktop Folder"
 msgstr "Namizje"
 
 #: ../src/main-win-ui.c:159
-#, fuzzy
 msgid "_My Computer"
-msgstr "Moj računalnik"
+msgstr "Moj _računalnik"
 
 #: ../src/main-win-ui.c:160
-#, fuzzy
 msgid "_Trash Can"
-msgstr "Smeti"
+msgstr "_Smeti"
 
 #: ../src/main-win-ui.c:161
-#, fuzzy
 msgid "Net_work Drives"
-msgstr "Omrežni pogoni"
+msgstr "O_mrežni pogoni"
 
 #: ../src/main-win-ui.c:162
-#, fuzzy
 msgid "_Applications"
-msgstr "Programi"
+msgstr "_Programi"
 
 #: ../src/main-win-ui.c:162
 msgid "Installed Applications"
 msgstr "Nameščeni programi"
 
 #: ../src/main-win-ui.c:163
-#, fuzzy
 msgid "Open entered folder"
-msgstr "Osveži"
+msgstr "Odpri vneseno mapo"
 
 #: ../src/main-win-ui.c:164
 msgid "_Bookmarks"
 msgstr "_Zaznamki"
 
 #: ../src/main-win-ui.c:165
-#, fuzzy
 msgid "_Add To Bookmarks"
-msgstr "Dodaj med zaznamke"
+msgstr "_Dodaj med zaznamke"
 
 #: ../src/main-win-ui.c:166
-#, fuzzy
 msgid "Tool_s"
 msgstr "_Orodja"
 
@@ -720,9 +638,8 @@ msgid "Open Current Folder as _Root"
 msgstr "Odpri trenutno mapo kot _skrbnik"
 
 #: ../src/main-win-ui.c:170
-#, fuzzy
 msgid "Fin_d Files"
-msgstr "_Razvrsti datoteke"
+msgstr "_Najdi datoteke"
 
 #. for popup menu - these entries exist in FmFolderView popup still
 #: ../src/main-win-ui.c:179
@@ -731,17 +648,15 @@ msgstr "Mapa"
 
 #: ../src/main-win-ui.c:180
 msgid "Empty File"
-msgstr ""
+msgstr "Prazna datoteka"
 
 #: ../src/main-win-ui.c:186
-#, fuzzy
 msgid "Show Hidde_n"
 msgstr "Pokaži _skrite datoteke"
 
 #: ../src/main-win-ui.c:187
-#, fuzzy
 msgid "Sho_w Side Pane"
-msgstr "Pokaži stranski pladenj"
+msgstr "Pokaži stranski _pladenj"
 
 #: ../src/main-win-ui.c:188
 msgid "Show Status B_ar"
@@ -749,12 +664,11 @@ msgstr "Pokaži _vrstico stanja"
 
 #: ../src/main-win-ui.c:189
 msgid "T_win Pane Mode"
-msgstr ""
+msgstr "Način _dvojnega pladnja"
 
 #: ../src/main-win-ui.c:190
-#, fuzzy
 msgid "Fullscreen _Mode"
-msgstr "Celozaslonski način"
+msgstr "_Celozaslonski način"
 
 #: ../src/main-win-ui.c:195
 msgid "_Icon View"
@@ -806,7 +720,7 @@ msgstr "Prijavljeni ste kot skrbnik."
 
 #: ../src/main-win.c:717 ../src/main-win.c:725
 msgid "Keyboard navigation"
-msgstr ""
+msgstr "Krmarjenje s tipkovnico"
 
 #: ../src/main-win.c:719
 msgid ""
@@ -817,6 +731,12 @@ msgid ""
 "F10: activate main menu\n"
 "Ctrl+L or Alt+D: jump focus to Path Bar"
 msgstr ""
+"Tab: Mape -> Stranski pladenj -> Orodna vrstica\n"
+"Shift+Tab: Orodna vrstica -> Stranski pladenj -> Mape\n"
+"F6: Stranski pladenj <-> Mape\n"
+"F8: izbere ločilnik med stranskim pultom in mapami\n"
+"F10: omogoči glavni meni\n"
+"Ctrl+L ali Alt+D: izbere vrstico s potjo do mape"
 
 #: ../src/main-win.c:755
 msgid "Switch user command is not set."
@@ -843,7 +763,7 @@ msgstr "Ime profila nastavitev."
 
 #: ../src/pcmanfm.c:75
 msgid "PROFILE"
-msgstr ""
+msgstr "PROFIL"
 
 #: ../src/pcmanfm.c:76
 msgid "Run PCManFM as a daemon"
@@ -868,49 +788,45 @@ msgstr "Odpre pogovorno okno možnosti namizja."
 
 #: ../src/pcmanfm.c:83
 msgid "Use --desktop option only for one screen"
-msgstr ""
+msgstr "Uporabite možnost --desktop, če želite le en zaslon"
 
 #: ../src/pcmanfm.c:84
-#, fuzzy
 msgid "Set desktop wallpaper from image FILE"
-msgstr "Nastavi ozadje namizja."
+msgstr "Nastavi ozadje namizja iz DATOTEKE"
 
 #: ../src/pcmanfm.c:84
 msgid "FILE"
-msgstr ""
+msgstr "DATOTEKA"
 
 #. don't translate list of modes in description, please
 #: ../src/pcmanfm.c:86
-#, fuzzy
 msgid "Set mode of desktop wallpaper. MODE=(color|stretch|fit|center|tile)"
-msgstr "Nastavi način ozadja namizja. <način>=(color|stretch|fit|center|tile)"
+msgstr "Nastavi način ozadja namizja. NAČIN=(color|stretch|fit|center|tile)"
 
 #: ../src/pcmanfm.c:86
 msgid "MODE"
-msgstr ""
+msgstr "NAČIN"
 
 #: ../src/pcmanfm.c:87
-#, fuzzy
 msgid "Open Preferences dialog on the page N"
-msgstr "Odpre pogovorno okno možnosti namizja."
+msgstr "Odpre možnosti upravljalnika datotek na N-ti strani"
 
 #: ../src/pcmanfm.c:87
 msgid "N"
-msgstr ""
+msgstr "N"
 
 #: ../src/pcmanfm.c:88
-#, fuzzy
 msgid "Open new window"
 msgstr "Odpri v novem oknu"
 
 #. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
 #: ../src/pcmanfm.c:90
 msgid "Window role for usage by window manager"
-msgstr ""
+msgstr "VLOGA okna (za upravljalnika oken)."
 
 #: ../src/pcmanfm.c:90
 msgid "ROLE"
-msgstr ""
+msgstr "VLOGA"
 
 #: ../src/pcmanfm.c:91
 msgid "[FILE1, FILE2,...]"
@@ -921,9 +837,8 @@ msgid "Terminal emulator is not set."
 msgstr "Terminal ni nastavljen."
 
 #: ../src/tab-page.c:50
-#, fuzzy
 msgid "Open in New T_ab"
-msgstr "Odpri v novem zavihku"
+msgstr "Odpri v novem _zavihku"
 
 #: ../src/tab-page.c:236
 #, c-format
