@@ -8,16 +8,15 @@ msgstr ""
 "Project-Id-Version: pcmanfm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-06-01 01:02+0300\n"
-"PO-Revision-Date: 2012-09-30 22:40+0200\n"
-"Last-Translator: Радослав <reckku@gmail.com>\n"
+"PO-Revision-Date: 2013-07-19 20:59+0000\n"
+"Last-Translator: Recku <reckku@gmail.com>\n"
 "Language: bg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.0.5\n"
-"X-Poedit-Language: Bulgarian\n"
-"X-Poedit-Country: BULGARIA\n"
+"X-Generator: Pootle 2.5.0\n"
+"X-POOTLE-MTIME: 1374267586.0\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2012"
@@ -176,9 +175,8 @@ msgid "A_rchiver integration:"
 msgstr "Интеграция с _архиватор:"
 
 #: ../data/ui/pref.glade.h:10
-#, fuzzy
 msgid "Al_ways show full file names"
-msgstr "_Винаги показвай поле за раздел"
+msgstr "_Винаги да се показва пълното име на файла"
 
 #: ../data/ui/pref.glade.h:11
 msgid "Al_ways show the tab bar"
@@ -227,6 +225,8 @@ msgstr "_Действие при пускане:"
 #: ../data/ui/pref.glade.h:22
 msgid "Delay of auto-selection in single click mode (0 to disable)"
 msgstr ""
+"Забавяне преди автоматично избиране при режим с едно кликване (\"0\" за "
+"деактивиране)"
 
 #: ../data/ui/pref.glade.h:23
 msgid "Des_ktop Folder"
@@ -485,7 +485,7 @@ msgstr "Нов _Раздел"
 
 #: ../src/main-win-ui.c:129
 msgid "Create new tab for this folder"
-msgstr ""
+msgstr "Създай нов подпрозорец на тази папка"
 
 #: ../src/main-win-ui.c:130
 msgid "C_reate New..."
@@ -621,9 +621,8 @@ msgid "Installed Applications"
 msgstr "Инсталирани приложения"
 
 #: ../src/main-win-ui.c:163
-#, fuzzy
 msgid "Open entered folder"
-msgstr "Обновяване на текущата папка"
+msgstr "Отвори въведената папка"
 
 #: ../src/main-win-ui.c:164
 msgid "_Bookmarks"
@@ -656,7 +655,7 @@ msgstr "Папка"
 
 #: ../src/main-win-ui.c:180
 msgid "Empty File"
-msgstr ""
+msgstr "Празен файл"
 
 #: ../src/main-win-ui.c:186
 msgid "Show Hidde_n"
@@ -739,6 +738,14 @@ msgid ""
 "F10: activate main menu\n"
 "Ctrl+L or Alt+D: jump focus to Path Bar"
 msgstr ""
+"Tab: превърта в последователност - Изглед -> Страничен панел -> Лента с "
+"инструменти\n"
+"Shift+Tab: превърта в последователност - Лента с инструменти -> Страничен "
+"панел -> Изглед\n"
+"F6: променя фокуса Страничен панел <-> Изглед\n"
+"F8: променя фокуса между Страничен панел и Изглед\n"
+"F10: активира основното меню\n"
+"Ctrl+L или Alt+D: фокусира в адресната лента "
 
 #: ../src/main-win.c:755
 msgid "Switch user command is not set."
@@ -793,7 +800,7 @@ msgstr "Отвори прозорец с настройки за Работни�
 
 #: ../src/pcmanfm.c:83
 msgid "Use --desktop option only for one screen"
-msgstr ""
+msgstr "Използвайте опцията --desktop само за един екран"
 
 #: ../src/pcmanfm.c:84
 msgid "Set desktop wallpaper from image FILE"
