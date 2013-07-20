@@ -8,19 +8,21 @@ msgstr ""
 "Project-Id-Version: pcmanfm 1.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-06-01 01:02+0300\n"
-"PO-Revision-Date: 2013-06-07 05:18+0200\n"
-"Last-Translator: Mohamed Mohsen <linuxer9@gmail.com>\n"
+"PO-Revision-Date: 2013-07-19 05:34+0000\n"
+"Last-Translator: SAGER <sagerahmed@gmail.com>\n"
 "Language-Team: Arabic <trans-ar@lists.fedoraproject.org>\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
-"X-Generator: Pootle 2.0.5\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+"X-Generator: Pootle 2.5.0\n"
+"X-POOTLE-MTIME: 1374212088.0\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2012"
-msgstr "حقوق النسخ محفوظة (C) لعام 2009-2012"
+msgstr "حقوق النسخ محفوظة (C) لعام 2009-2013"
 
 #: ../data/ui/about.glade.in.h:2
 msgid ""
@@ -36,8 +38,11 @@ msgstr ""
 #: ../data/ui/about.glade.in.h:6
 msgid "translator-credits"
 msgstr ""
-"Tareq Al Jurf <taljurf@fedoraproject.org>, 2010\n"
-"محمد محسن <linuxer9@gmail.com>كريم أولاد الشلحة <herr.linux88@gmail.com>, 2012"
+"Tareq Al Jurf <taljurf@fedoraproject.org>, 2010'\n"
+"'محمد محسن <linuxer9@gmail.com>'\n"
+"'كريم أولاد الشلحة <herr.linux88@gmail.com>, 2012'\n"
+"'صقر الزوى<sagerahmed@gmail.com>,2013'\n"
+"'"
 
 #: ../data/ui/desktop-pref.glade.h:1
 msgid "<b>Background</b>"
@@ -59,8 +64,7 @@ msgstr "متق_دم"
 msgid "C_olor of label text:"
 msgstr "_لون النص:"
 
-#: ../data/ui/desktop-pref.glade.h:6
-#: ../data/ui/pref.glade.h:15
+#: ../data/ui/desktop-pref.glade.h:6 ../data/ui/pref.glade.h:15
 msgid "Center on the screen"
 msgstr "في وسط الشاشة"
 
@@ -68,8 +72,7 @@ msgstr "في وسط الشاشة"
 msgid "Color of _shadow:"
 msgstr "لون ال_ظل:"
 
-#: ../data/ui/desktop-pref.glade.h:8
-#: ../src/desktop-ui.c:34
+#: ../data/ui/desktop-pref.glade.h:8 ../src/desktop-ui.c:34
 #: ../data/pcmanfm-desktop-pref.desktop.in.h:2
 msgid "Desktop Preferences"
 msgstr "تفضيلات سطح المكتب"
@@ -94,18 +97,15 @@ msgstr "عرض أيقونة \"ال_حاسوب\" في سطح المكتب"
 msgid "Show \"_Trash Bin\" icon on desktop"
 msgstr "عرض أيقونة \"سلة المح_ذوفات\" في سطح المكتب"
 
-#: ../data/ui/desktop-pref.glade.h:14
-#: ../data/ui/pref.glade.h:46
+#: ../data/ui/desktop-pref.glade.h:14 ../data/ui/pref.glade.h:46
 msgid "Stretch to fill the entire screen"
 msgstr "إمتداد لملء الشاشة بأكملها"
 
-#: ../data/ui/desktop-pref.glade.h:15
-#: ../data/ui/pref.glade.h:47
+#: ../data/ui/desktop-pref.glade.h:15 ../data/ui/pref.glade.h:47
 msgid "Stretch to fit the screen"
 msgstr "إمتداد لتناسب الشاشة"
 
-#: ../data/ui/desktop-pref.glade.h:16
-#: ../data/ui/pref.glade.h:49
+#: ../data/ui/desktop-pref.glade.h:16 ../data/ui/pref.glade.h:49
 msgid "Tile the image to fill the entire screen"
 msgstr "تجانب الصورة لتملء الشاشة بالكامل"
 
@@ -264,7 +264,7 @@ msgstr "إخفاء أزرار الش_ريط الجانبي"
 
 #: ../data/ui/pref.glade.h:32
 msgid "Hide e_xpander on empty or locked folder"
-msgstr ""
+msgstr "اخفاء نافذة الم_ وسع في المجلدات الفارغة او المقفلة"
 
 #: ../data/ui/pref.glade.h:33
 msgid "Icon View"
@@ -272,9 +272,13 @@ msgstr "عرض أيقوني"
 
 #: ../data/ui/pref.glade.h:34
 msgid ""
-"If checked then use Startup Notify for application if another not stated explicitly.\n"
+"If checked then use Startup Notify for application if another not stated "
+"explicitly.\n"
 "If unchecked then use Startup Notify only if that is defined for application."
 msgstr ""
+"اذا تم اختيار التطبيق,استخدام قائمة (بدء التشغيل) للتطبيق إذا  لم تذكر تطبيق "
+"آخر صراحة./n اذا لم يتم اختيار التطبيق ,استخدام قائمة (بدء التشغيل) فقط إلا "
+"إذا كان هذا هو تعريف للتطبيق"
 
 #: ../data/ui/pref.glade.h:36
 msgid "Mo_unt removable media automatically when they are inserted"
@@ -326,7 +330,7 @@ msgstr "عامل ملفات النسخ الإحتياطي كأنها م_خفية
 
 #: ../data/ui/pref.glade.h:51
 msgid "Us_e SI decimal prefixes instead of IEC binary prefixes"
-msgstr ""
+msgstr "اس_ تخدام النظام العشرى SI  بدلاً من النظام الثنائى IEC"
 
 #: ../data/ui/pref.glade.h:52
 msgid "Vie_w Mode:"
@@ -362,7 +366,7 @@ msgstr "الت_خطيط"
 
 #: ../data/ui/pref.glade.h:60
 msgid "_Mount mountable volumes automatically on program startup"
-msgstr ""
+msgstr "_تحميل وحدات التخزين القابلة للتخزين تلقائيا عند تشغيل البرنامج"
 
 #: ../data/ui/pref.glade.h:61
 msgid "_Move deleted files to \"trash bin\" instead of erasing from disk"
@@ -379,6 +383,7 @@ msgstr "فتح الملفات بنقر واح_دة"
 #: ../data/ui/pref.glade.h:64
 msgid "_Open mounted removable media in new tab instead of new window"
 msgstr ""
+"_افتح الاقراص المحملة القابلة للازالة في تبويب جديد بدلا من نافذة جديدة"
 
 #: ../data/ui/pref.glade.h:65
 msgid "_Show available options for removable media when they are inserted"
@@ -402,11 +407,11 @@ msgstr "سلة المح_ذوفات"
 
 #: ../data/ui/pref.glade.h:70
 msgid "_Unfold tab when files are dragged onto tab button"
-msgstr ""
+msgstr "_كشف التبويب عند سحب ملفات الى زر التبويب"
 
 #: ../data/ui/pref.glade.h:71
 msgid "_Use Application Startup Notify by default"
-msgstr ""
+msgstr "_استخدم تنبية تطبيق بدء التشغيل افتراضيا"
 
 #: ../data/ui/pref.glade.h:72
 msgid "_Volume Management"
@@ -444,13 +449,11 @@ msgstr "افتح في مدير الملفات"
 msgid "Open in New Ta_b"
 msgstr "فتح في لسا_ن جديد"
 
-#: ../src/desktop-ui.c:52
-#: ../src/tab-page.c:51
+#: ../src/desktop-ui.c:52 ../src/tab-page.c:51
 msgid "Open in New Win_dow"
 msgstr "فتح في نا_فذة جديدة"
 
-#: ../src/desktop-ui.c:54
-#: ../src/tab-page.c:53
+#: ../src/desktop-ui.c:54 ../src/tab-page.c:53
 msgid "Open in Termina_l"
 msgstr "افتح في الطر_فية"
 
@@ -662,7 +665,7 @@ msgstr "عرض شريط الحا_لة"
 
 #: ../src/main-win-ui.c:189
 msgid "T_win Pane Mode"
-msgstr ""
+msgstr "عرض الشريط ال_جانبي"
 
 #: ../src/main-win-ui.c:190
 msgid "Fullscreen _Mode"
@@ -716,8 +719,7 @@ msgstr "بعيد"
 msgid "You are in super user mode"
 msgstr "أنت في نمط المستخدم الفائق"
 
-#: ../src/main-win.c:717
-#: ../src/main-win.c:725
+#: ../src/main-win.c:717 ../src/main-win.c:725
 msgid "Keyboard navigation"
 msgstr "التنقل بلوحة المفاتيح"
 
@@ -730,10 +732,16 @@ msgid ""
 "F10: activate main menu\n"
 "Ctrl+L or Alt+D: jump focus to Path Bar"
 msgstr ""
+"تبويب:محور حلقة عرض المجلد->اللوحة الجانبية->شريط الادوات\n"
+"Shift+Tab:محور حلقة شريط الادوات->اللوحة الجانبية-> عرض المجلد\n"
+"F6:تغير محور اللوحة الجانبية<->عرض مجلد\n"
+"F8:محور منقسم بين اللوحة الجانبية و عرض مجلد\n"
+"F10: تفعيل القائمة الرئيسية\n"
+"Ctrl+L او Alt+D: نقل التركيز الى شريط المكان"
 
 #: ../src/main-win.c:755
 msgid "Switch user command is not set."
-msgstr "أمر تبديل المستخدم غير محدد."
+msgstr "لم يتم تعيين رمز التبديل الأمر المستخدم"
 
 #: ../src/main-win.c:1117
 #, c-format
@@ -757,7 +765,7 @@ msgstr "إسم ملف الضبط"
 
 #: ../src/pcmanfm.c:75
 msgid "PROFILE"
-msgstr "PROFILE"
+msgstr "معلومات المستخدم"
 
 #: ../src/pcmanfm.c:76
 msgid "Run PCManFM as a daemon"
@@ -799,7 +807,7 @@ msgstr "حدد وضع حلفية سطح المكتب. MODE=(color|stretch|fit|ce
 
 #: ../src/pcmanfm.c:86
 msgid "MODE"
-msgstr "MODE"
+msgstr "طريقة التشغيل"
 
 #: ../src/pcmanfm.c:87
 msgid "Open Preferences dialog on the page N"
