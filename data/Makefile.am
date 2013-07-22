@@ -18,6 +18,7 @@ defconf_DATA = \
 	$(NULL)
 
 EXTRA_DIST= \
+	$(desktop_in_files) \
 	$(desktop_DATA) \
 	$(defconf_DATA) \
 	$(NULL)
