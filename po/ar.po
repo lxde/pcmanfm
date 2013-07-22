@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm 1.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-01 01:02+0300\n"
+"POT-Creation-Date: 2013-07-20 01:31+0300\n"
 "PO-Revision-Date: 2013-07-19 05:34+0000\n"
 "Last-Translator: SAGER <sagerahmed@gmail.com>\n"
 "Language-Team: Arabic <trans-ar@lists.fedoraproject.org>\n"
@@ -21,7 +21,7 @@ msgstr ""
 "X-POOTLE-MTIME: 1374212088.0\n"
 
 #: ../data/ui/about.glade.in.h:1
-msgid "Copyright (C) 2009 - 2012"
+msgid "Copyright (C) 2009 - 2013"
 msgstr "حقوق النسخ محفوظة (C) لعام 2009-2013"
 
 #: ../data/ui/about.glade.in.h:2
@@ -64,7 +64,7 @@ msgstr "متق_دم"
 msgid "C_olor of label text:"
 msgstr "_لون النص:"
 
-#: ../data/ui/desktop-pref.glade.h:6 ../data/ui/pref.glade.h:15
+#: ../data/ui/desktop-pref.glade.h:6
 msgid "Center on the screen"
 msgstr "في وسط الشاشة"
 
@@ -97,15 +97,15 @@ msgstr "عرض أيقونة \"ال_حاسوب\" في سطح المكتب"
 msgid "Show \"_Trash Bin\" icon on desktop"
 msgstr "عرض أيقونة \"سلة المح_ذوفات\" في سطح المكتب"
 
-#: ../data/ui/desktop-pref.glade.h:14 ../data/ui/pref.glade.h:46
+#: ../data/ui/desktop-pref.glade.h:14
 msgid "Stretch to fill the entire screen"
 msgstr "إمتداد لملء الشاشة بأكملها"
 
-#: ../data/ui/desktop-pref.glade.h:15 ../data/ui/pref.glade.h:47
+#: ../data/ui/desktop-pref.glade.h:15
 msgid "Stretch to fit the screen"
 msgstr "إمتداد لتناسب الشاشة"
 
-#: ../data/ui/desktop-pref.glade.h:16 ../data/ui/pref.glade.h:49
+#: ../data/ui/desktop-pref.glade.h:16
 msgid "Tile the image to fill the entire screen"
 msgstr "تجانب الصورة لتملء الشاشة بالكامل"
 
@@ -201,47 +201,47 @@ msgstr "اسأل"
 msgid "Auto (move if on the same FS, copy otherwise)"
 msgstr "تلقائي (النقل إذا كان نفس نظام الملفات، النسخ إذا كان غير ذلك)"
 
-#: ../data/ui/pref.glade.h:16
+#: ../data/ui/pref.glade.h:15
 msgid "Clos_e tab containing removable medium when it is unmounted"
 msgstr "أغل_ق اللسان المحتوي على الوسيط القابل للإزالة عند إلغاء ضمه"
 
-#: ../data/ui/pref.glade.h:17
+#: ../data/ui/pref.glade.h:16
 msgid "Co_nfirm before deleting files"
 msgstr "طلب التأكيد قبل _حذف الملفات"
 
-#: ../data/ui/pref.glade.h:18
+#: ../data/ui/pref.glade.h:17
 msgid "Compact View"
 msgstr "عرض مدمج"
 
-#: ../data/ui/pref.glade.h:19
+#: ../data/ui/pref.glade.h:18
 msgid "Confi_rm before moving files into \"trash bi_n\""
 msgstr "طلب التأكيد قبل نقل الملفات إلى \"سلة المحذوفات\""
 
-#: ../data/ui/pref.glade.h:20
+#: ../data/ui/pref.glade.h:19
 msgid "Copy"
 msgstr "نسخ"
 
-#: ../data/ui/pref.glade.h:21
+#: ../data/ui/pref.glade.h:20
 msgid "Defaul_t drop action:"
 msgstr "حد_ث الإسقاط الإفتراضي:"
 
-#: ../data/ui/pref.glade.h:22
+#: ../data/ui/pref.glade.h:21
 msgid "Delay of auto-selection in single click mode (0 to disable)"
 msgstr "تأخير التحديد التلقائي في وضع الضغط المفرد ( 0 للتعطيل )"
 
-#: ../data/ui/pref.glade.h:23
+#: ../data/ui/pref.glade.h:22
 msgid "Des_ktop Folder"
 msgstr "مجلد سطح الم_كتب"
 
-#: ../data/ui/pref.glade.h:24
+#: ../data/ui/pref.glade.h:23
 msgid "Detailed List View"
 msgstr "عرض لائحة مفصلة"
 
-#: ../data/ui/pref.glade.h:25
+#: ../data/ui/pref.glade.h:24
 msgid "Do _not generate thumbnails for files exceeding this size:"
 msgstr "لا تولد _مصغرات لملفات يتجاوز حجمها هذا الحجم:"
 
-#: ../data/ui/pref.glade.h:27
+#: ../data/ui/pref.glade.h:26
 #, no-c-format
 msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
@@ -250,27 +250,27 @@ msgstr ""
 "مثال: \"xterm -e %s\" لطرفية أو \"gksu %s\"  لتبديل المستخدم.\n"
 "%s = سطر الأوامر لتنفيذ الأوامر بالطرفية أو su."
 
-#: ../data/ui/pref.glade.h:29
+#: ../data/ui/pref.glade.h:28
 msgid "Hid_e 'Close tab' buttons"
 msgstr "إخ_فاء زر 'أغلق اللسان'"
 
-#: ../data/ui/pref.glade.h:30
+#: ../data/ui/pref.glade.h:29
 msgid "Hide _folder content border"
 msgstr "إخفاء حدود م_حتويات المجلد"
 
-#: ../data/ui/pref.glade.h:31
+#: ../data/ui/pref.glade.h:30
 msgid "Hide _side pane buttons"
 msgstr "إخفاء أزرار الش_ريط الجانبي"
 
-#: ../data/ui/pref.glade.h:32
+#: ../data/ui/pref.glade.h:31
 msgid "Hide e_xpander on empty or locked folder"
 msgstr "اخفاء نافذة الم_ وسع في المجلدات الفارغة او المقفلة"
 
-#: ../data/ui/pref.glade.h:33
+#: ../data/ui/pref.glade.h:32
 msgid "Icon View"
 msgstr "عرض أيقوني"
 
-#: ../data/ui/pref.glade.h:34
+#: ../data/ui/pref.glade.h:33
 msgid ""
 "If checked then use Startup Notify for application if another not stated "
 "explicitly.\n"
@@ -280,140 +280,140 @@ msgstr ""
 "آخر صراحة./n اذا لم يتم اختيار التطبيق ,استخدام قائمة (بدء التشغيل) فقط إلا "
 "إذا كان هذا هو تعريف للتطبيق"
 
-#: ../data/ui/pref.glade.h:36
+#: ../data/ui/pref.glade.h:35
 msgid "Mo_unt removable media automatically when they are inserted"
 msgstr "ضم الوسا_ئط القابلة للإزالة تلقائيًا عندما تُدرج"
 
-#: ../data/ui/pref.glade.h:37
+#: ../data/ui/pref.glade.h:36
 msgid "Move"
 msgstr "نقل"
 
-#: ../data/ui/pref.glade.h:38
+#: ../data/ui/pref.glade.h:37
 msgid "Opened in Current Tab"
 msgstr "المفتوحة في اللسان الحالي"
 
-#: ../data/ui/pref.glade.h:39
+#: ../data/ui/pref.glade.h:38
 msgid "Opened in New Tab"
 msgstr "فتح في لسان جديد"
 
-#: ../data/ui/pref.glade.h:40
+#: ../data/ui/pref.glade.h:39
 msgid "Opened in New Window"
 msgstr "فتح في نافذة جديدة"
 
-#: ../data/ui/pref.glade.h:41
+#: ../data/ui/pref.glade.h:40
 msgid "Preferences"
 msgstr "التفضيلات"
 
-#: ../data/ui/pref.glade.h:42
+#: ../data/ui/pref.glade.h:41
 msgid "Size of _big icons:"
 msgstr "حجم الأيقونات ال_كبيرة:"
 
-#: ../data/ui/pref.glade.h:43
+#: ../data/ui/pref.glade.h:42
 msgid "Size of _thumbnails:"
 msgstr "حجم المص_غّرات:"
 
-#: ../data/ui/pref.glade.h:44
+#: ../data/ui/pref.glade.h:43
 msgid "Size of side _pane icons:"
 msgstr "حجم أيقونات الشر_يط الجانبي:"
 
-#: ../data/ui/pref.glade.h:45
+#: ../data/ui/pref.glade.h:44
 msgid "Size of small _icons:"
 msgstr "حجم الأيقونا_ت الصغيرة:"
 
-#: ../data/ui/pref.glade.h:48
+#: ../data/ui/pref.glade.h:45
 msgid "Thumbnail View"
 msgstr "عرض مصغرات"
 
-#: ../data/ui/pref.glade.h:50
+#: ../data/ui/pref.glade.h:46
 msgid "Treat backup files as _hidden"
 msgstr "عامل ملفات النسخ الإحتياطي كأنها م_خفية"
 
-#: ../data/ui/pref.glade.h:51
+#: ../data/ui/pref.glade.h:47
 msgid "Us_e SI decimal prefixes instead of IEC binary prefixes"
 msgstr "اس_ تخدام النظام العشرى SI  بدلاً من النظام الثنائى IEC"
 
-#: ../data/ui/pref.glade.h:52
+#: ../data/ui/pref.glade.h:48
 msgid "Vie_w Mode:"
 msgstr "نمط العر_ض:"
 
-#: ../data/ui/pref.glade.h:53
+#: ../data/ui/pref.glade.h:49
 msgid "_Advanced"
 msgstr "م_تقدم"
 
-#: ../data/ui/pref.glade.h:54
+#: ../data/ui/pref.glade.h:50
 msgid "_Bookmarks:"
 msgstr "ال_علامات:"
 
-#: ../data/ui/pref.glade.h:55
+#: ../data/ui/pref.glade.h:51
 msgid "_Display"
 msgstr "عر_ض"
 
-#: ../data/ui/pref.glade.h:56
+#: ../data/ui/pref.glade.h:52
 msgid "_Erase files on removable media instead of \"trash bin\" creation"
 msgstr "إ_زالة الملفات من الوسيط القابل للإزالة بدلا من إنشاء \"سلة محذوفات\""
 
-#: ../data/ui/pref.glade.h:57
+#: ../data/ui/pref.glade.h:53
 msgid "_General"
 msgstr "_عام"
 
-#: ../data/ui/pref.glade.h:58
+#: ../data/ui/pref.glade.h:54
 msgid "_Home Directory"
 msgstr "مجلد المن_زل"
 
-#: ../data/ui/pref.glade.h:59
+#: ../data/ui/pref.glade.h:55
 msgid "_Layout"
 msgstr "الت_خطيط"
 
-#: ../data/ui/pref.glade.h:60
+#: ../data/ui/pref.glade.h:56
 msgid "_Mount mountable volumes automatically on program startup"
 msgstr "_تحميل وحدات التخزين القابلة للتخزين تلقائيا عند تشغيل البرنامج"
 
-#: ../data/ui/pref.glade.h:61
+#: ../data/ui/pref.glade.h:57
 msgid "_Move deleted files to \"trash bin\" instead of erasing from disk"
 msgstr "نقل الملفات الم_حذوفة إلى \"سلة المحذوفات\" بدلًا من إزالتها من القرص"
 
-#: ../data/ui/pref.glade.h:62
+#: ../data/ui/pref.glade.h:58
 msgid "_Only show thumbnails for local files"
 msgstr "عرض المصغرات للملفات الم_حلية فقط"
 
-#: ../data/ui/pref.glade.h:63
+#: ../data/ui/pref.glade.h:59
 msgid "_Open files with single click"
 msgstr "فتح الملفات بنقر واح_دة"
 
-#: ../data/ui/pref.glade.h:64
+#: ../data/ui/pref.glade.h:60
 msgid "_Open mounted removable media in new tab instead of new window"
 msgstr ""
 "_افتح الاقراص المحملة القابلة للازالة في تبويب جديد بدلا من نافذة جديدة"
 
-#: ../data/ui/pref.glade.h:65
+#: ../data/ui/pref.glade.h:61
 msgid "_Show available options for removable media when they are inserted"
 msgstr "عرض ال_خيارات المتاحة عنذ إدراج وسيط قابل للإزالة"
 
-#: ../data/ui/pref.glade.h:66
+#: ../data/ui/pref.glade.h:62
 msgid "_Show thumbnails of files"
 msgstr "عرض مص_غرات الملفات"
 
-#: ../data/ui/pref.glade.h:67
+#: ../data/ui/pref.glade.h:63
 msgid "_Switch user command:"
 msgstr "أمر ت_بديل المستخدم:"
 
-#: ../data/ui/pref.glade.h:68
+#: ../data/ui/pref.glade.h:64
 msgid "_Terminal emulator:"
 msgstr "محاكي ال_طرفية:"
 
-#: ../data/ui/pref.glade.h:69
+#: ../data/ui/pref.glade.h:65
 msgid "_Trash bin"
 msgstr "سلة المح_ذوفات"
 
-#: ../data/ui/pref.glade.h:70
+#: ../data/ui/pref.glade.h:66
 msgid "_Unfold tab when files are dragged onto tab button"
 msgstr "_كشف التبويب عند سحب ملفات الى زر التبويب"
 
-#: ../data/ui/pref.glade.h:71
+#: ../data/ui/pref.glade.h:67
 msgid "_Use Application Startup Notify by default"
 msgstr "_استخدم تنبية تطبيق بدء التشغيل افتراضيا"
 
-#: ../data/ui/pref.glade.h:72
+#: ../data/ui/pref.glade.h:68
 msgid "_Volume Management"
 msgstr "إدارة الأق_راص"
 
@@ -715,15 +715,15 @@ msgstr "شجرة المجلدات"
 msgid "Remote"
 msgstr "بعيد"
 
-#: ../src/main-win.c:546
+#: ../src/main-win.c:544
 msgid "You are in super user mode"
 msgstr "أنت في نمط المستخدم الفائق"
 
-#: ../src/main-win.c:717 ../src/main-win.c:725
+#: ../src/main-win.c:715 ../src/main-win.c:723
 msgid "Keyboard navigation"
 msgstr "التنقل بلوحة المفاتيح"
 
-#: ../src/main-win.c:719
+#: ../src/main-win.c:717
 msgid ""
 "Tab: cycle focus Folder View -> Side Pane -> Tools Bar\n"
 "Shift+Tab: cycle focus Tools Bar -> Side Pane -> Folder View\n"
@@ -739,11 +739,11 @@ msgstr ""
 "F10: تفعيل القائمة الرئيسية\n"
 "Ctrl+L او Alt+D: نقل التركيز الى شريط المكان"
 
-#: ../src/main-win.c:755
+#: ../src/main-win.c:753
 msgid "Switch user command is not set."
 msgstr "لم يتم تعيين رمز التبديل الأمر المستخدم"
 
-#: ../src/main-win.c:1117
+#: ../src/main-win.c:1108
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -754,7 +754,7 @@ msgstr ""
 "'%s'\n"
 "أدخل إسم للعلامة الجديدة:"
 
-#: ../src/main-win.c:1121
+#: ../src/main-win.c:1112
 msgid "Add to Bookmarks"
 msgstr "إضافة إلى العلامات"
 
@@ -842,7 +842,7 @@ msgstr "محاكي الطرفية غير محدد."
 msgid "Open in New T_ab"
 msgstr "فتح في لسا_ن جديد"
 
-#: ../src/tab-page.c:236
+#: ../src/tab-page.c:242
 #, c-format
 msgid "%d item selected"
 msgid_plural "%d items selected"
@@ -853,12 +853,12 @@ msgstr[3] "%d عناصر محددة"
 msgstr[4] "%d عناصر محددة"
 msgstr[5] "%d عناصر محددة"
 
-#: ../src/tab-page.c:363
+#: ../src/tab-page.c:397
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "مساحة الخالية: %s (مجموع: %s)"
 
-#: ../src/tab-page.c:383
+#: ../src/tab-page.c:417
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
@@ -869,7 +869,7 @@ msgstr[3] "%d عناصر"
 msgstr[4] "%d عناصر"
 msgstr[5] "%d عناصر"
 
-#: ../src/tab-page.c:384
+#: ../src/tab-page.c:418
 #, c-format
 msgid " (%d hidden)"
 msgid_plural " (%d hidden)"

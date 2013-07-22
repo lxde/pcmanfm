@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PCManFM\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-01 01:02+0300\n"
+"POT-Creation-Date: 2013-07-20 01:31+0300\n"
 "PO-Revision-Date: 2013-04-02 12:17+0100\n"
 "Last-Translator: DDZ <drole2zebre57@yahoo.fr>\n"
 "Language-Team: \n"
@@ -21,8 +21,8 @@ msgstr ""
 "X-Poedit-Country: FRANCE\n"
 
 #: ../data/ui/about.glade.in.h:1
-msgid "Copyright (C) 2009 - 2012"
-msgstr "Copyright (C) 2009 - 2012"
+msgid "Copyright (C) 2009 - 2013"
+msgstr "Copyright (C) 2009 - 2013"
 
 #: ../data/ui/about.glade.in.h:2
 msgid ""
@@ -64,7 +64,7 @@ msgstr "A_vancé"
 msgid "C_olor of label text:"
 msgstr "Couleur du _texte :"
 
-#: ../data/ui/desktop-pref.glade.h:6 ../data/ui/pref.glade.h:15
+#: ../data/ui/desktop-pref.glade.h:6
 msgid "Center on the screen"
 msgstr "Centrer sur l’écran"
 
@@ -97,15 +97,15 @@ msgstr "Afficher l’icône « Mon ordinateur » sur le bureau"
 msgid "Show \"_Trash Bin\" icon on desktop"
 msgstr "Afficher l’icône « Corbeille » sur le bureau"
 
-#: ../data/ui/desktop-pref.glade.h:14 ../data/ui/pref.glade.h:46
+#: ../data/ui/desktop-pref.glade.h:14
 msgid "Stretch to fill the entire screen"
 msgstr "Étirer pour remplir tout l’écran"
 
-#: ../data/ui/desktop-pref.glade.h:15 ../data/ui/pref.glade.h:47
+#: ../data/ui/desktop-pref.glade.h:15
 msgid "Stretch to fit the screen"
 msgstr "Ajuster à la taille de l’écran"
 
-#: ../data/ui/desktop-pref.glade.h:16 ../data/ui/pref.glade.h:49
+#: ../data/ui/desktop-pref.glade.h:16
 msgid "Tile the image to fill the entire screen"
 msgstr "Faire une mosaïque avec l’image pour remplir l’écran"
 
@@ -204,47 +204,47 @@ msgid "Auto (move if on the same FS, copy otherwise)"
 msgstr ""
 "Automatique (déplacer si c'est dans le même système de fichier, sinon copier)"
 
-#: ../data/ui/pref.glade.h:16
+#: ../data/ui/pref.glade.h:15
 msgid "Clos_e tab containing removable medium when it is unmounted"
 msgstr "F_ermer l'onglet du support amovible une fois démonté"
 
-#: ../data/ui/pref.glade.h:17
+#: ../data/ui/pref.glade.h:16
 msgid "Co_nfirm before deleting files"
 msgstr "Confirmer avant de supprimer des fichiers"
 
-#: ../data/ui/pref.glade.h:18
+#: ../data/ui/pref.glade.h:17
 msgid "Compact View"
 msgstr "Vue compacte"
 
-#: ../data/ui/pref.glade.h:19
+#: ../data/ui/pref.glade.h:18
 msgid "Confi_rm before moving files into \"trash bi_n\""
 msgstr "Confirmation avant de mettre les fichiers à la corbeille"
 
-#: ../data/ui/pref.glade.h:20
+#: ../data/ui/pref.glade.h:19
 msgid "Copy"
 msgstr "Copier"
 
-#: ../data/ui/pref.glade.h:21
+#: ../data/ui/pref.glade.h:20
 msgid "Defaul_t drop action:"
 msgstr "Action de glissement par défau_t :"
 
-#: ../data/ui/pref.glade.h:22
+#: ../data/ui/pref.glade.h:21
 msgid "Delay of auto-selection in single click mode (0 to disable)"
 msgstr "Délai d'auto-sélection en mode simple clic (0 pour désactiver)"
 
-#: ../data/ui/pref.glade.h:23
+#: ../data/ui/pref.glade.h:22
 msgid "Des_ktop Folder"
 msgstr "_Bureau"
 
-#: ../data/ui/pref.glade.h:24
+#: ../data/ui/pref.glade.h:23
 msgid "Detailed List View"
 msgstr "Vue en liste détaillée"
 
-#: ../data/ui/pref.glade.h:25
+#: ../data/ui/pref.glade.h:24
 msgid "Do _not generate thumbnails for files exceeding this size:"
 msgstr "Ne pas générer d’aperçus pour les fichiers dépassant cette taille :"
 
-#: ../data/ui/pref.glade.h:27
+#: ../data/ui/pref.glade.h:26
 #, no-c-format
 msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
@@ -255,27 +255,27 @@ msgstr ""
 "%s = la ligne de commande que vous voulez exécuter dans un terminal ou faire "
 "exécuter par un autre utilisateur."
 
-#: ../data/ui/pref.glade.h:29
+#: ../data/ui/pref.glade.h:28
 msgid "Hid_e 'Close tab' buttons"
 msgstr "Masquer les boutons « Fermer l’onglet »"
 
-#: ../data/ui/pref.glade.h:30
+#: ../data/ui/pref.glade.h:29
 msgid "Hide _folder content border"
 msgstr "Masquer la bordure autour du contenu du _dossier"
 
-#: ../data/ui/pref.glade.h:31
+#: ../data/ui/pref.glade.h:30
 msgid "Hide _side pane buttons"
 msgstr "Masquer les boutons du panneau latéral"
 
-#: ../data/ui/pref.glade.h:32
+#: ../data/ui/pref.glade.h:31
 msgid "Hide e_xpander on empty or locked folder"
 msgstr "Masquer le dérouleur en cas de dossier vide ou vérouillé"
 
-#: ../data/ui/pref.glade.h:33
+#: ../data/ui/pref.glade.h:32
 msgid "Icon View"
 msgstr "Vue en icônes"
 
-#: ../data/ui/pref.glade.h:34
+#: ../data/ui/pref.glade.h:33
 msgid ""
 "If checked then use Startup Notify for application if another not stated "
 "explicitly.\n"
@@ -286,147 +286,147 @@ msgstr ""
 "Si décoché, utiliser la notification de démarrage seulement si cela a été "
 "défini pour cette application."
 
-#: ../data/ui/pref.glade.h:36
+#: ../data/ui/pref.glade.h:35
 msgid "Mo_unt removable media automatically when they are inserted"
 msgstr "Monter les supports amovibles automatiquement quand ils sont insérés"
 
-#: ../data/ui/pref.glade.h:37
+#: ../data/ui/pref.glade.h:36
 msgid "Move"
 msgstr "Déplacer"
 
-#: ../data/ui/pref.glade.h:38
+#: ../data/ui/pref.glade.h:37
 msgid "Opened in Current Tab"
 msgstr "Ouvrir dans l’onglet courant"
 
-#: ../data/ui/pref.glade.h:39
+#: ../data/ui/pref.glade.h:38
 msgid "Opened in New Tab"
 msgstr "Ouvrir dans un nouvel onglet"
 
-#: ../data/ui/pref.glade.h:40
+#: ../data/ui/pref.glade.h:39
 msgid "Opened in New Window"
 msgstr "Ouvrir dans une nouvelle fenêtre"
 
-#: ../data/ui/pref.glade.h:41
+#: ../data/ui/pref.glade.h:40
 msgid "Preferences"
 msgstr "Préférences"
 
-#: ../data/ui/pref.glade.h:42
+#: ../data/ui/pref.glade.h:41
 msgid "Size of _big icons:"
 msgstr "Taille des grandes icônes :"
 
-#: ../data/ui/pref.glade.h:43
+#: ../data/ui/pref.glade.h:42
 msgid "Size of _thumbnails:"
 msgstr "Taille des aperçus :"
 
-#: ../data/ui/pref.glade.h:44
+#: ../data/ui/pref.glade.h:43
 msgid "Size of side _pane icons:"
 msgstr "Taille des icônes du panneau latéral :"
 
-#: ../data/ui/pref.glade.h:45
+#: ../data/ui/pref.glade.h:44
 msgid "Size of small _icons:"
 msgstr "Taille des petites icônes :"
 
-#: ../data/ui/pref.glade.h:48
+#: ../data/ui/pref.glade.h:45
 msgid "Thumbnail View"
 msgstr "Vue en miniatures"
 
-#: ../data/ui/pref.glade.h:50
+#: ../data/ui/pref.glade.h:46
 msgid "Treat backup files as _hidden"
 msgstr "Considérer les fichiers de sauvegarde comme cac_hés"
 
-#: ../data/ui/pref.glade.h:51
+#: ../data/ui/pref.glade.h:47
 msgid "Us_e SI decimal prefixes instead of IEC binary prefixes"
 msgstr ""
 "Utiliser les préfixes décimaux SI au lieu des préfixes binaires de l’IEC"
 
-#: ../data/ui/pref.glade.h:52
+#: ../data/ui/pref.glade.h:48
 msgid "Vie_w Mode:"
 msgstr "Mode d’affichage :"
 
-#: ../data/ui/pref.glade.h:53
+#: ../data/ui/pref.glade.h:49
 msgid "_Advanced"
 msgstr "_Avancé"
 
-#: ../data/ui/pref.glade.h:54
+#: ../data/ui/pref.glade.h:50
 msgid "_Bookmarks:"
 msgstr "Marque-pages :"
 
-#: ../data/ui/pref.glade.h:55
+#: ../data/ui/pref.glade.h:51
 msgid "_Display"
 msgstr "_Affichage"
 
-#: ../data/ui/pref.glade.h:56
+#: ../data/ui/pref.glade.h:52
 msgid "_Erase files on removable media instead of \"trash bin\" creation"
 msgstr ""
 "Supprimer les fichiers de supports amovibles au lieu de les mettre à la « "
 "Corbeille »"
 
-#: ../data/ui/pref.glade.h:57
+#: ../data/ui/pref.glade.h:53
 msgid "_General"
 msgstr "_Général"
 
-#: ../data/ui/pref.glade.h:58
+#: ../data/ui/pref.glade.h:54
 msgid "_Home Directory"
 msgstr "Dossier person_nel"
 
-#: ../data/ui/pref.glade.h:59
+#: ../data/ui/pref.glade.h:55
 msgid "_Layout"
 msgstr "Agence_ment"
 
-#: ../data/ui/pref.glade.h:60
+#: ../data/ui/pref.glade.h:56
 msgid "_Mount mountable volumes automatically on program startup"
 msgstr "Monter automatiquement les supports amovibles disponibles au lancement"
 
-#: ../data/ui/pref.glade.h:61
+#: ../data/ui/pref.glade.h:57
 msgid "_Move deleted files to \"trash bin\" instead of erasing from disk"
 msgstr ""
 "Mettre les fichiers à la « Corbeille » au lieu de les effacer du disque"
 
-#: ../data/ui/pref.glade.h:62
+#: ../data/ui/pref.glade.h:58
 msgid "_Only show thumbnails for local files"
 msgstr "Afficher les aperçus seulement p_our les fichiers locaux"
 
-#: ../data/ui/pref.glade.h:63
+#: ../data/ui/pref.glade.h:59
 msgid "_Open files with single click"
 msgstr "Ouvrir les fichiers en utilisant le simple clic"
 
-#: ../data/ui/pref.glade.h:64
+#: ../data/ui/pref.glade.h:60
 msgid "_Open mounted removable media in new tab instead of new window"
 msgstr ""
 "_Ouvrir le support amovible une fois monté dans un nouvel onglet plutôt que "
 "dans une nouvelle fenêtre"
 
-#: ../data/ui/pref.glade.h:65
+#: ../data/ui/pref.glade.h:61
 msgid "_Show available options for removable media when they are inserted"
 msgstr ""
 "Afficher les options di_sponibles pour les supports amovibles quand il sont "
 "insérés"
 
-#: ../data/ui/pref.glade.h:66
+#: ../data/ui/pref.glade.h:62
 msgid "_Show thumbnails of files"
 msgstr "Afficher un aperçu pour les fichier_s"
 
-#: ../data/ui/pref.glade.h:67
+#: ../data/ui/pref.glade.h:63
 msgid "_Switch user command:"
 msgstr "Commande de changement d’utili_sateur :"
 
-#: ../data/ui/pref.glade.h:68
+#: ../data/ui/pref.glade.h:64
 msgid "_Terminal emulator:"
 msgstr "Émulateur de _terminal :"
 
-#: ../data/ui/pref.glade.h:69
+#: ../data/ui/pref.glade.h:65
 msgid "_Trash bin"
 msgstr "_Corbeille"
 
-#: ../data/ui/pref.glade.h:70
+#: ../data/ui/pref.glade.h:66
 msgid "_Unfold tab when files are dragged onto tab button"
 msgstr "Déplier l'onglet lorsque des fichiers sont glissés sur son bouton"
 
-#: ../data/ui/pref.glade.h:71
+#: ../data/ui/pref.glade.h:67
 msgid "_Use Application Startup Notify by default"
 msgstr "_Utiliser la notification de démarrage d'application par défaut"
 
-#: ../data/ui/pref.glade.h:72
+#: ../data/ui/pref.glade.h:68
 msgid "_Volume Management"
 msgstr "Gestion des sup_ports amovibles"
 
@@ -729,15 +729,15 @@ msgstr "Arborescence"
 msgid "Remote"
 msgstr "Réseau"
 
-#: ../src/main-win.c:546
+#: ../src/main-win.c:544
 msgid "You are in super user mode"
 msgstr "Vous êtes en mode super-utilisateur"
 
-#: ../src/main-win.c:717 ../src/main-win.c:725
+#: ../src/main-win.c:715 ../src/main-win.c:723
 msgid "Keyboard navigation"
 msgstr "Raccourcis clavier"
 
-#: ../src/main-win.c:719
+#: ../src/main-win.c:717
 msgid ""
 "Tab: cycle focus Folder View -> Side Pane -> Tools Bar\n"
 "Shift+Tab: cycle focus Tools Bar -> Side Pane -> Folder View\n"
@@ -756,11 +756,11 @@ msgstr ""
 "F10 : Dérouler le menu principal\n"
 "Ctrl+L ou Alt+D : Sélectionner le chemin dans la barre d'adresses"
 
-#: ../src/main-win.c:755
+#: ../src/main-win.c:753
 msgid "Switch user command is not set."
 msgstr "La commande de changement d’utilisateur n'est pas configurée."
 
-#: ../src/main-win.c:1117
+#: ../src/main-win.c:1108
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -772,7 +772,7 @@ msgstr ""
 "Entrez un nom pour ce marque-page :"
 
 # Duplicate?
-#: ../src/main-win.c:1121
+#: ../src/main-win.c:1112
 msgid "Add to Bookmarks"
 msgstr "Ajouter aux marque-pages"
 
@@ -862,26 +862,26 @@ msgstr "L’émulateur de terminal n’est pas configuré."
 msgid "Open in New T_ab"
 msgstr "Ouvrir dans un nouvel onglet"
 
-#: ../src/tab-page.c:236
+#: ../src/tab-page.c:242
 #, c-format
 msgid "%d item selected"
 msgid_plural "%d items selected"
 msgstr[0] "%d élément sélectionné"
 msgstr[1] "%d éléments sélectionnés"
 
-#: ../src/tab-page.c:363
+#: ../src/tab-page.c:397
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Espace libre : %s (Total : %s)"
 
-#: ../src/tab-page.c:383
+#: ../src/tab-page.c:417
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] "%d élément"
 msgstr[1] "%d éléments"
 
-#: ../src/tab-page.c:384
+#: ../src/tab-page.c:418
 #, c-format
 msgid " (%d hidden)"
 msgid_plural " (%d hidden)"
