@@ -29,6 +29,8 @@
 #include "tab-page.h"
 #include "pcmanfm.h"
 
+#include "gseal-gtk-compat.h"
+
 /* Additional entries for FmFileMenu popup */
 static const char folder_menu_xml[]=
 "<popup>"
