@@ -37,7 +37,7 @@ Features:
 .SS Global options:
 .TP 20
 .BR \-d ", " \-\^\-daemon\-mode
-run PCManFM as a daemon
+run PCManFM as a daemon (ignored if another PCManFM is already running)
 .TP
 .BI \-p " profile" "\fR,\fP \-\^\-profile=" profile
 load another configuration \fIprofile\fP instead of \fB"default"\fP
@@ -48,7 +48,7 @@ for Nautilus compatibility
 .SS Per-instance options:
 .TP 20
 .B \-\^\-desktop
-launch desktop manager
+launch desktop manager (ignores \fB\-d\fP)
 .TP
 .B \-\^\-desktop\-off
 turn off desktop manager if it's running

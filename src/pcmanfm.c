@@ -47,6 +47,7 @@
 
 static int signal_pipe[2] = {-1, -1};
 static gboolean daemon_mode = FALSE;
+static gboolean first_run = TRUE;
 static guint save_config_idle = 0;
 
 static char** files_to_open = NULL;
@@ -229,6 +230,7 @@ int main(int argc, char** argv)
     /* the main part */
     if(pcmanfm_run(gdk_screen_get_number(gdk_screen_get_default())))
     {
+        first_run = FALSE;
         window_role = NULL; /* reset it for clients callbacks */
         fm_volume_manager_init();
         gtk_main();
@@ -267,6 +269,7 @@ gboolean pcmanfm_run(gint screen_num)
                 fm_desktop_manager_init(one_screen ? screen_num : -1);
                 desktop_running = TRUE;
                 one_screen = FALSE;
+                pcmanfm_ref();
             }
             show_desktop = FALSE;
             return TRUE;
@@ -277,6 +280,7 @@ gboolean pcmanfm_run(gint screen_num)
             {
                 desktop_running = FALSE;
                 fm_desktop_manager_finalize();
+                pcmanfm_unref();
             }
             desktop_off = FALSE;
             return FALSE;
@@ -401,13 +405,13 @@ gboolean pcmanfm_run(gint screen_num)
         }
         else
         {
-            static gboolean first_run = TRUE;
             if(first_run && daemon_mode)
             {
                 /* If the function is called the first time and we're in daemon mode,
                * don't open any folder.
                * Checking if pcmanfm_run() is called the first time is needed to fix
                * #3397444 - pcmanfm dont show window in daemon mode if i call 'pcmanfm' */
+                pcmanfm_ref();
             }
             else
             {
@@ -423,7 +427,6 @@ gboolean pcmanfm_run(gint screen_num)
                 g_free(cwd);
                 ipc_cwd = NULL;
             }
-            first_run = FALSE;
         }
     }
     return ret;
@@ -443,7 +446,7 @@ void pcmanfm_unref()
 {
     --n_pcmanfm_ref;
     /* g_debug("unref: %d, daemon_mode=%d, desktop_running=%d", n_pcmanfm_ref, daemon_mode, desktop_running); */
-    if( 0 == n_pcmanfm_ref && !daemon_mode && !desktop_running )
+    if( 0 == n_pcmanfm_ref )
         gtk_main_quit();
 }
 
