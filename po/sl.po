@@ -1,28 +1,28 @@
 # Slovenian translation of pcmanfm.
-# Copyright (C) 2011 - 2012 Free Software Foundation, Inc.
+# Copyright (C) 2011 - 2013 Free Software Foundation, Inc.
 # This file is distributed under the same license as the pcmanfm package.
-# Klemen Košir <klemen.kosir@gmx.com>, 2011 - 2012.
+# Klemen Košir <klemen913@gmail.com>, 2011 - 2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-20 01:31+0300\n"
-"PO-Revision-Date: 2013-07-19 16:55+0000\n"
+"POT-Creation-Date: 2013-06-01 01:02+0300\n"
+"PO-Revision-Date: 2013-08-09 09:48+0000\n"
 "Last-Translator: Klemen <klemen913@gmail.com>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
-"%100==4 ? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || "
+"n%100==4 ? 3 : 0);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1374252919.0\n"
+"X-POOTLE-MTIME: 1376041725.0\n"
 
 #: ../data/ui/about.glade.in.h:1
-msgid "Copyright (C) 2009 - 2013"
-msgstr "Avtorske pravice © 2009 - 2013"
+msgid "Copyright (C) 2009 - 2012"
+msgstr "Avtorske pravice © 2009 - 2012"
 
 #: ../data/ui/about.glade.in.h:2
 msgid ""
@@ -37,7 +37,7 @@ msgstr ""
 #. Please replace this line with your own names, one name per line.
 #: ../data/ui/about.glade.in.h:6
 msgid "translator-credits"
-msgstr "Klemen Košir <klemen.kosir@gmx.com>"
+msgstr "Klemen Košir <klemen913@gmail.com>"
 
 #: ../data/ui/desktop-pref.glade.h:1
 msgid "<b>Background</b>"
@@ -59,7 +59,7 @@ msgstr "_Napredno"
 msgid "C_olor of label text:"
 msgstr "Barva _besedila:"
 
-#: ../data/ui/desktop-pref.glade.h:6
+#: ../data/ui/desktop-pref.glade.h:6 ../data/ui/pref.glade.h:15
 msgid "Center on the screen"
 msgstr "Sredina zaslona"
 
@@ -92,15 +92,15 @@ msgstr "Na namizju pokaži ikono »Moj _računalnik«"
 msgid "Show \"_Trash Bin\" icon on desktop"
 msgstr "Na namizju pokaži ikono »_Smeti«"
 
-#: ../data/ui/desktop-pref.glade.h:14
+#: ../data/ui/desktop-pref.glade.h:14 ../data/ui/pref.glade.h:46
 msgid "Stretch to fill the entire screen"
 msgstr "Razširi čez cel zaslon"
 
-#: ../data/ui/desktop-pref.glade.h:15
+#: ../data/ui/desktop-pref.glade.h:15 ../data/ui/pref.glade.h:47
 msgid "Stretch to fit the screen"
 msgstr "Prilagodi zaslonu"
 
-#: ../data/ui/desktop-pref.glade.h:16
+#: ../data/ui/desktop-pref.glade.h:16 ../data/ui/pref.glade.h:49
 msgid "Tile the image to fill the entire screen"
 msgstr "Razpostavi čez cel zaslon"
 
@@ -196,47 +196,47 @@ msgstr "Vprašaj"
 msgid "Auto (move if on the same FS, copy otherwise)"
 msgstr "Samodejno"
 
-#: ../data/ui/pref.glade.h:15
+#: ../data/ui/pref.glade.h:16
 msgid "Clos_e tab containing removable medium when it is unmounted"
 msgstr "Ob odklopu odstranljivega _nosilca zapri zavihek le-te naprave"
 
-#: ../data/ui/pref.glade.h:16
+#: ../data/ui/pref.glade.h:17
 msgid "Co_nfirm before deleting files"
 msgstr "Vprašaj pred _brisanjem datotek"
 
-#: ../data/ui/pref.glade.h:17
+#: ../data/ui/pref.glade.h:18
 msgid "Compact View"
 msgstr "Strnjen seznam"
 
-#: ../data/ui/pref.glade.h:18
+#: ../data/ui/pref.glade.h:19
 msgid "Confi_rm before moving files into \"trash bi_n\""
 msgstr "Vprašaj pred premikom datotek v »_Smeti«"
 
-#: ../data/ui/pref.glade.h:19
+#: ../data/ui/pref.glade.h:20
 msgid "Copy"
 msgstr "Kopiraj"
 
-#: ../data/ui/pref.glade.h:20
+#: ../data/ui/pref.glade.h:21
 msgid "Defaul_t drop action:"
 msgstr "Privzeto _dejanje ob spustitvi:"
 
-#: ../data/ui/pref.glade.h:21
+#: ../data/ui/pref.glade.h:22
 msgid "Delay of auto-selection in single click mode (0 to disable)"
 msgstr "Zakasnitev samodejne izbire v načinu enojnega klika"
 
-#: ../data/ui/pref.glade.h:22
+#: ../data/ui/pref.glade.h:23
 msgid "Des_ktop Folder"
 msgstr "_Namizje"
 
-#: ../data/ui/pref.glade.h:23
+#: ../data/ui/pref.glade.h:24
 msgid "Detailed List View"
 msgstr "Podroben seznam"
 
-#: ../data/ui/pref.glade.h:24
+#: ../data/ui/pref.glade.h:25
 msgid "Do _not generate thumbnails for files exceeding this size:"
 msgstr "Ne ustvari _predoglednih sličic za datoteke, večje od:"
 
-#: ../data/ui/pref.glade.h:26
+#: ../data/ui/pref.glade.h:27
 #, no-c-format
 msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
@@ -246,27 +246,27 @@ msgstr ""
 "uporabniki.\n"
 "%s = ukaz, ki ga želite izvesti s terminalom ali programom »su«."
 
-#: ../data/ui/pref.glade.h:28
+#: ../data/ui/pref.glade.h:29
 msgid "Hid_e 'Close tab' buttons"
 msgstr "Skrij gumb »_Zapri zavihek«"
 
-#: ../data/ui/pref.glade.h:29
+#: ../data/ui/pref.glade.h:30
 msgid "Hide _folder content border"
 msgstr "Skrij _obrobo vsebine mape"
 
-#: ../data/ui/pref.glade.h:30
+#: ../data/ui/pref.glade.h:31
 msgid "Hide _side pane buttons"
 msgstr "Skrij gumbe stranskega _pladnja"
 
-#: ../data/ui/pref.glade.h:31
+#: ../data/ui/pref.glade.h:32
 msgid "Hide e_xpander on empty or locked folder"
 msgstr "Skrij _razširilnik na praznih ali zaklenjenih mapah"
 
-#: ../data/ui/pref.glade.h:32
+#: ../data/ui/pref.glade.h:33
 msgid "Icon View"
 msgstr "Ikone"
 
-#: ../data/ui/pref.glade.h:33
+#: ../data/ui/pref.glade.h:34
 msgid ""
 "If checked then use Startup Notify for application if another not stated "
 "explicitly.\n"
@@ -278,140 +278,141 @@ msgstr ""
 "programov, kjer\n"
 "je to določeno."
 
-#: ../data/ui/pref.glade.h:35
+#: ../data/ui/pref.glade.h:36
 msgid "Mo_unt removable media automatically when they are inserted"
 msgstr "_Samodejno priklopi odstranljive nosilce"
 
-#: ../data/ui/pref.glade.h:36
+#: ../data/ui/pref.glade.h:37
 msgid "Move"
 msgstr "Premakni"
 
-#: ../data/ui/pref.glade.h:37
+#: ../data/ui/pref.glade.h:38
 msgid "Opened in Current Tab"
 msgstr "Odpri v trenutnem zavihku"
 
-#: ../data/ui/pref.glade.h:38
+#: ../data/ui/pref.glade.h:39
 msgid "Opened in New Tab"
 msgstr "Odpri v novem zavihku"
 
-#: ../data/ui/pref.glade.h:39
+#: ../data/ui/pref.glade.h:40
 msgid "Opened in New Window"
 msgstr "Odpri v novem oknu"
 
-#: ../data/ui/pref.glade.h:40
+#: ../data/ui/pref.glade.h:41
 msgid "Preferences"
 msgstr "Možnosti"
 
-#: ../data/ui/pref.glade.h:41
+#: ../data/ui/pref.glade.h:42
 msgid "Size of _big icons:"
 msgstr "Velikost _velikih ikon:"
 
-#: ../data/ui/pref.glade.h:42
+#: ../data/ui/pref.glade.h:43
 msgid "Size of _thumbnails:"
 msgstr "Velikost predoglednih _sličic:"
 
-#: ../data/ui/pref.glade.h:43
+#: ../data/ui/pref.glade.h:44
 msgid "Size of side _pane icons:"
 msgstr "Velikost ikon stranskega _pladnja:"
 
-#: ../data/ui/pref.glade.h:44
+#: ../data/ui/pref.glade.h:45
 msgid "Size of small _icons:"
 msgstr "Velikost _majhnih ikon:"
 
-#: ../data/ui/pref.glade.h:45
+#: ../data/ui/pref.glade.h:48
 msgid "Thumbnail View"
 msgstr "Predogledne sličice"
 
-#: ../data/ui/pref.glade.h:46
+#: ../data/ui/pref.glade.h:50
 msgid "Treat backup files as _hidden"
 msgstr "Obravnavaj varnostne kopije kot _skrite datoteke"
 
-#: ../data/ui/pref.glade.h:47
+#: ../data/ui/pref.glade.h:51
 msgid "Us_e SI decimal prefixes instead of IEC binary prefixes"
 msgstr "_Namesto dvojiških predpon IEC uporabi decimalne predpone SI"
 
-#: ../data/ui/pref.glade.h:48
+#: ../data/ui/pref.glade.h:52
 msgid "Vie_w Mode:"
 msgstr "Način po_gleda:"
 
-#: ../data/ui/pref.glade.h:49
+#: ../data/ui/pref.glade.h:53
 msgid "_Advanced"
 msgstr "_Napredno"
 
-#: ../data/ui/pref.glade.h:50
+#: ../data/ui/pref.glade.h:54
 msgid "_Bookmarks:"
 msgstr "_Zaznamki:"
 
-#: ../data/ui/pref.glade.h:51
+#: ../data/ui/pref.glade.h:55
 msgid "_Display"
 msgstr "_Videz"
 
-#: ../data/ui/pref.glade.h:52
+#: ../data/ui/pref.glade.h:56
 msgid "_Erase files on removable media instead of \"trash bin\" creation"
 msgstr "Datoteke na odstranljivih nosilcih i_zbriši brez premikanja v »Smeti«"
 
-#: ../data/ui/pref.glade.h:53
+#: ../data/ui/pref.glade.h:57
 msgid "_General"
 msgstr "_Splošno"
 
-#: ../data/ui/pref.glade.h:54
+#: ../data/ui/pref.glade.h:58
 msgid "_Home Directory"
 msgstr "_Domača mapa"
 
-#: ../data/ui/pref.glade.h:55
+#: ../data/ui/pref.glade.h:59
 msgid "_Layout"
 msgstr "_Postavitev"
 
-#: ../data/ui/pref.glade.h:56
+#: ../data/ui/pref.glade.h:60
 msgid "_Mount mountable volumes automatically on program startup"
 msgstr "Samodejno _priklopi nosilce ob zagonu programa"
 
-#: ../data/ui/pref.glade.h:57
+#: ../data/ui/pref.glade.h:61
 msgid "_Move deleted files to \"trash bin\" instead of erasing from disk"
 msgstr "Izbrisane datoteke premakni v »_Smeti«"
 
-#: ../data/ui/pref.glade.h:58
+#: ../data/ui/pref.glade.h:62
 msgid "_Only show thumbnails for local files"
 msgstr "Pokaži predogledne sličice le za _krajevne datoteke"
 
-#: ../data/ui/pref.glade.h:59
+#: ../data/ui/pref.glade.h:63
 msgid "_Open files with single click"
 msgstr "_Odpri datoteke z enojnim klikom"
 
-#: ../data/ui/pref.glade.h:60
+#: ../data/ui/pref.glade.h:64
 msgid "_Open mounted removable media in new tab instead of new window"
 msgstr ""
-"Odpri priklopljene odstranljive nosilce v novem _zavihku namesto v novem oknu"
+"Odpri priklopljene odstranljive nosilce v novem _zavihku namesto v novem "
+"oknu"
 
-#: ../data/ui/pref.glade.h:61
+#: ../data/ui/pref.glade.h:65
 msgid "_Show available options for removable media when they are inserted"
 msgstr "Ob priključitvi odstranljivih nosilcev pokaži razpoložljive _možnosti"
 
-#: ../data/ui/pref.glade.h:62
+#: ../data/ui/pref.glade.h:66
 msgid "_Show thumbnails of files"
 msgstr "Pokaži predogledne _sličice datotek"
 
-#: ../data/ui/pref.glade.h:63
+#: ../data/ui/pref.glade.h:67
 msgid "_Switch user command:"
 msgstr "_Ukaz za preklop med uporabniki:"
 
-#: ../data/ui/pref.glade.h:64
+#: ../data/ui/pref.glade.h:68
 msgid "_Terminal emulator:"
 msgstr "_Terminal:"
 
-#: ../data/ui/pref.glade.h:65
+#: ../data/ui/pref.glade.h:69
 msgid "_Trash bin"
 msgstr "_Smeti"
 
-#: ../data/ui/pref.glade.h:66
+#: ../data/ui/pref.glade.h:70
 msgid "_Unfold tab when files are dragged onto tab button"
 msgstr "_Razpni zavihek, ko so datoteke premaknjene na gumb zavihka"
 
-#: ../data/ui/pref.glade.h:67
+#: ../data/ui/pref.glade.h:71
 msgid "_Use Application Startup Notify by default"
 msgstr "Privzeto uporabi _obveščanje o zagonu programov"
 
-#: ../data/ui/pref.glade.h:68
+#: ../data/ui/pref.glade.h:72
 msgid "_Volume Management"
 msgstr "Upravljanje z _nosilci"
 
@@ -713,15 +714,15 @@ msgstr "Drevo map"
 msgid "Remote"
 msgstr "Oddaljeno"
 
-#: ../src/main-win.c:544
+#: ../src/main-win.c:546
 msgid "You are in super user mode"
 msgstr "Prijavljeni ste kot skrbnik."
 
-#: ../src/main-win.c:715 ../src/main-win.c:723
+#: ../src/main-win.c:717 ../src/main-win.c:725
 msgid "Keyboard navigation"
 msgstr "Krmarjenje s tipkovnico"
 
-#: ../src/main-win.c:717
+#: ../src/main-win.c:719
 msgid ""
 "Tab: cycle focus Folder View -> Side Pane -> Tools Bar\n"
 "Shift+Tab: cycle focus Tools Bar -> Side Pane -> Folder View\n"
@@ -737,21 +738,22 @@ msgstr ""
 "F10: omogoči glavni meni\n"
 "Ctrl+L ali Alt+D: izbere vrstico s potjo do mape"
 
-#: ../src/main-win.c:753
+#: ../src/main-win.c:755
 msgid "Switch user command is not set."
 msgstr "Ukaz za preklapljanje med uporabniki ni nastavljen."
 
-#: ../src/main-win.c:1108
+#: ../src/main-win.c:1117
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
 "'%s'\n"
 "Enter a name for the new bookmark item:"
 msgstr ""
-"Med zaznamke bo dodana mapa »%s«\n"
+"Med zaznamke bo dodana mapa:\n"
+"»%s«\n"
 "Vnesite ime novega zaznamka:"
 
-#: ../src/main-win.c:1112
+#: ../src/main-win.c:1121
 msgid "Add to Bookmarks"
 msgstr "Dodaj med zaznamke"
 
@@ -839,7 +841,7 @@ msgstr "Terminal ni nastavljen."
 msgid "Open in New T_ab"
 msgstr "Odpri v novem _zavihku"
 
-#: ../src/tab-page.c:242
+#: ../src/tab-page.c:236
 #, c-format
 msgid "%d item selected"
 msgid_plural "%d items selected"
@@ -848,12 +850,12 @@ msgstr[1] "Izbran je %d predmet"
 msgstr[2] "Izbrana sta %d predmeta"
 msgstr[3] "Izbrani so %d predmeti"
 
-#: ../src/tab-page.c:397
+#: ../src/tab-page.c:363
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Prazen prostor: %s (Skupaj: %s)"
 
-#: ../src/tab-page.c:417
+#: ../src/tab-page.c:383
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
@@ -862,7 +864,7 @@ msgstr[1] "%d predmet"
 msgstr[2] "%d predmeta"
 msgstr[3] "%d predmeti"
 
-#: ../src/tab-page.c:418
+#: ../src/tab-page.c:384
 #, c-format
 msgid " (%d hidden)"
 msgid_plural " (%d hidden)"
@@ -886,43 +888,3 @@ msgstr "Upravljalnik datotek PCManFM"
 #: ../data/pcmanfm-desktop-pref.desktop.in.h:1
 msgid "Change desktop wallpapers and behavior of desktop manager"
 msgstr "Spremenite ozadje in obnašanje upravljalnika namizij"
-
-#~ msgid "Blank File"
-#~ msgstr "Prazna datoteka"
-
-#~ msgid "Create _New..."
-#~ msgstr "_Nova ..."
-
-#~ msgid "Shortcut"
-#~ msgstr "Bližnjica"
-
-#~ msgid "Invert Selection"
-#~ msgstr "Obrni izbor"
-
-#~ msgid "<image file>"
-#~ msgstr "<slikovna datoteka>"
-
-#~ msgid "<mode>"
-#~ msgstr "<način>"
-
-#~ msgid ""
-#~ "Open preference dialog. 'n' is number of the page you want to show (1, 2, "
-#~ "3...)."
-#~ msgstr ""
-#~ "Odpre pogovorno okno možnosti. »n« je številka strani, ki naj se prikaže "
-#~ "(1, 2, 3 ali 4)."
-
-#~ msgid "Enter a name for the newly created folder:"
-#~ msgstr "Vnesite ime nove mape:"
-
-#~ msgid "Enter a name for the newly created file:"
-#~ msgstr "Vnesite ime nove datoteke:"
-
-#~ msgid "New"
-#~ msgstr "Nova"
-
-#~ msgid "Error, lxshortcut not installed"
-#~ msgstr "Napaka: Program »lxshortcut« ni nameščen."
-
-#~ msgid "Failed to start lxshortcut"
-#~ msgstr "Programa »lxshortcut« ni mogoče zagnati."
