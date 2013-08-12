@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PCManFM\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-20 01:31+0300\n"
+"POT-Creation-Date: 2013-08-12 14:50+0300\n"
 "PO-Revision-Date: 2013-06-10 01:28+0100\n"
 "Last-Translator: Jay A.Fleming <tito.nehru.naser@gmail.com>\n"
 "Language-Team: \n"
@@ -453,11 +453,11 @@ msgstr "Otvori upravnikom datoteka"
 msgid "Open in New Ta_b"
 msgstr "Otvori u _novom jezičku"
 
-#: ../src/desktop-ui.c:52 ../src/tab-page.c:51
+#: ../src/desktop-ui.c:52 ../src/tab-page.c:53
 msgid "Open in New Win_dow"
 msgstr "Otvori u novom _prozoru"
 
-#: ../src/desktop-ui.c:54 ../src/tab-page.c:53
+#: ../src/desktop-ui.c:54 ../src/tab-page.c:55
 msgid "Open in Termina_l"
 msgstr "Otvori u _terminalu"
 
@@ -765,91 +765,91 @@ msgid "Add to Bookmarks"
 msgstr "Dodaj u obeleživače"
 
 #. options only acceptable by first pcmanfm instance. These options are not passed through IPC
-#: ../src/pcmanfm.c:75
+#: ../src/pcmanfm.c:76
 msgid "Name of configuration profile"
 msgstr "Naziv profila za podešavanja"
 
-#: ../src/pcmanfm.c:75
+#: ../src/pcmanfm.c:76
 msgid "PROFILE"
 msgstr "PROFIL"
 
-#: ../src/pcmanfm.c:76
+#: ../src/pcmanfm.c:77
 msgid "Run PCManFM as a daemon"
 msgstr "Pokreni PCManFM program u pozadini"
 
-#: ../src/pcmanfm.c:77
+#: ../src/pcmanfm.c:78
 msgid "No function. Just to be compatible with nautilus"
 msgstr "Funkcija ne postoji. Samo zbog usaglašenosti sa programom „Nautilus“"
 
 #. options that are acceptable for every instance of pcmanfm and will be passed through IPC.
-#: ../src/pcmanfm.c:80
+#: ../src/pcmanfm.c:81
 msgid "Launch desktop manager"
 msgstr "Pokreni upravnik radne površi"
 
-#: ../src/pcmanfm.c:81
+#: ../src/pcmanfm.c:82
 msgid "Turn off desktop manager if it's running"
 msgstr "Zaustavi upravnik radne površi ukoliko je pokrenut"
 
-#: ../src/pcmanfm.c:82
+#: ../src/pcmanfm.c:83
 msgid "Open desktop preference dialog"
 msgstr "Otvori podešavanja radne površi"
 
-#: ../src/pcmanfm.c:83
+#: ../src/pcmanfm.c:84
 msgid "Use --desktop option only for one screen"
 msgstr "Koristi „--desktop“ opciju samo za jedan ekran"
 
-#: ../src/pcmanfm.c:84
+#: ../src/pcmanfm.c:85
 msgid "Set desktop wallpaper from image FILE"
 msgstr "Postavi pozadinsku sliku iz slike FILE"
 
-#: ../src/pcmanfm.c:84
+#: ../src/pcmanfm.c:85
 msgid "FILE"
 msgstr "DATOTEKA"
 
 #. don't translate list of modes in description, please
-#: ../src/pcmanfm.c:86
+#: ../src/pcmanfm.c:87
 msgid "Set mode of desktop wallpaper. MODE=(color|stretch|fit|center|tile)"
 msgstr ""
 "Režim prikaza pozadinske slike. <režim>=(color|stretch|fit|center|tile)"
 
-#: ../src/pcmanfm.c:86
+#: ../src/pcmanfm.c:87
 msgid "MODE"
 msgstr "REŽIM"
 
-#: ../src/pcmanfm.c:87
+#: ../src/pcmanfm.c:88
 msgid "Open Preferences dialog on the page N"
 msgstr "Otvori prozorče sa postavkama na strani N"
 
-#: ../src/pcmanfm.c:87
+#: ../src/pcmanfm.c:88
 msgid "N"
 msgstr "N"
 
-#: ../src/pcmanfm.c:88
+#: ../src/pcmanfm.c:89
 msgid "Open new window"
 msgstr "Otvori nov prozor"
 
 #. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
-#: ../src/pcmanfm.c:90
+#: ../src/pcmanfm.c:91
 msgid "Window role for usage by window manager"
 msgstr "Upravnik prozora će koristiti ovo svojstvo prozora"
 
-#: ../src/pcmanfm.c:90
+#: ../src/pcmanfm.c:91
 msgid "ROLE"
 msgstr "SVOJSTVO"
 
-#: ../src/pcmanfm.c:91
+#: ../src/pcmanfm.c:92
 msgid "[FILE1, FILE2,...]"
 msgstr "[DATOTEKA1, DATOTEKA2,...]"
 
-#: ../src/pcmanfm.c:529
+#: ../src/pcmanfm.c:532
 msgid "Terminal emulator is not set."
 msgstr "Nije postavljen emulator terminala."
 
-#: ../src/tab-page.c:50
+#: ../src/tab-page.c:52
 msgid "Open in New T_ab"
 msgstr "Otvori u novom _jezičku"
 
-#: ../src/tab-page.c:242
+#: ../src/tab-page.c:244
 #, c-format
 msgid "%d item selected"
 msgid_plural "%d items selected"
@@ -857,12 +857,12 @@ msgstr[0] "%d izabrana stavka"
 msgstr[1] "%d izabrane stavke"
 msgstr[2] "%d izabranih stavki"
 
-#: ../src/tab-page.c:397
+#: ../src/tab-page.c:399
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Slobodno: %s od %s"
 
-#: ../src/tab-page.c:417
+#: ../src/tab-page.c:419
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
@@ -870,7 +870,7 @@ msgstr[0] "%d stavka"
 msgstr[1] "%d stavke"
 msgstr[2] "%d stavki"
 
-#: ../src/tab-page.c:418
+#: ../src/tab-page.c:420
 #, c-format
 msgid " (%d hidden)"
 msgid_plural " (%d hidden)"

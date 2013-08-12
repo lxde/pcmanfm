@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-20 01:31+0300\n"
+"POT-Creation-Date: 2013-08-12 14:50+0300\n"
 "PO-Revision-Date: 2012-09-06 16:13+0200\n"
 "Last-Translator: Bendegúz <gyonkibendeguz@gmail.com>\n"
 "Language: hu\n"
@@ -502,12 +502,12 @@ msgstr "Megnyitás fájlkezelőben"
 msgid "Open in New Ta_b"
 msgstr "Megnyitás új lapon"
 
-#: ../src/desktop-ui.c:52 ../src/tab-page.c:51
+#: ../src/desktop-ui.c:52 ../src/tab-page.c:53
 #, fuzzy
 msgid "Open in New Win_dow"
 msgstr "Megnyitás új ablakban"
 
-#: ../src/desktop-ui.c:54 ../src/tab-page.c:53
+#: ../src/desktop-ui.c:54 ../src/tab-page.c:55
 #, fuzzy
 msgid "Open in Termina_l"
 msgstr "Megnyitás _terminálban"
@@ -837,115 +837,115 @@ msgid "Add to Bookmarks"
 msgstr "Hozzáadás a könyvjelzőkhöz"
 
 #. options only acceptable by first pcmanfm instance. These options are not passed through IPC
-#: ../src/pcmanfm.c:75
+#: ../src/pcmanfm.c:76
 msgid "Name of configuration profile"
 msgstr "Beállító profil neve"
 
-#: ../src/pcmanfm.c:75
+#: ../src/pcmanfm.c:76
 msgid "PROFILE"
 msgstr ""
 
-#: ../src/pcmanfm.c:76
+#: ../src/pcmanfm.c:77
 msgid "Run PCManFM as a daemon"
 msgstr "PCManFM futtatása démonként"
 
-#: ../src/pcmanfm.c:77
+#: ../src/pcmanfm.c:78
 msgid "No function. Just to be compatible with nautilus"
 msgstr "Nincs funkciója, csak a Nautilus-kompatibilitást nyújtja"
 
 #. options that are acceptable for every instance of pcmanfm and will be passed through IPC.
-#: ../src/pcmanfm.c:80
+#: ../src/pcmanfm.c:81
 msgid "Launch desktop manager"
 msgstr "Asztalkezelő indítása"
 
-#: ../src/pcmanfm.c:81
+#: ../src/pcmanfm.c:82
 msgid "Turn off desktop manager if it's running"
 msgstr "Asztalkezelő kikapcsolása, ha fut"
 
-#: ../src/pcmanfm.c:82
+#: ../src/pcmanfm.c:83
 msgid "Open desktop preference dialog"
 msgstr "Asztal beállításai párbeszédablak megnyitása"
 
-#: ../src/pcmanfm.c:83
+#: ../src/pcmanfm.c:84
 msgid "Use --desktop option only for one screen"
 msgstr ""
 
-#: ../src/pcmanfm.c:84
+#: ../src/pcmanfm.c:85
 #, fuzzy
 msgid "Set desktop wallpaper from image FILE"
 msgstr "Asztali tapéta beállítása"
 
-#: ../src/pcmanfm.c:84
+#: ../src/pcmanfm.c:85
 msgid "FILE"
 msgstr ""
 
 #. don't translate list of modes in description, please
-#: ../src/pcmanfm.c:86
+#: ../src/pcmanfm.c:87
 #, fuzzy
 msgid "Set mode of desktop wallpaper. MODE=(color|stretch|fit|center|tile)"
 msgstr ""
 "Asztali tapéta módjának beállítása. <mode>=(color|stretch|fit|center|tile)"
 
-#: ../src/pcmanfm.c:86
+#: ../src/pcmanfm.c:87
 msgid "MODE"
 msgstr ""
 
-#: ../src/pcmanfm.c:87
+#: ../src/pcmanfm.c:88
 #, fuzzy
 msgid "Open Preferences dialog on the page N"
 msgstr "Asztal beállításai párbeszédablak megnyitása"
 
-#: ../src/pcmanfm.c:87
+#: ../src/pcmanfm.c:88
 msgid "N"
 msgstr ""
 
-#: ../src/pcmanfm.c:88
+#: ../src/pcmanfm.c:89
 #, fuzzy
 msgid "Open new window"
 msgstr "Megnyitás új ablakban"
 
 #. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
-#: ../src/pcmanfm.c:90
+#: ../src/pcmanfm.c:91
 msgid "Window role for usage by window manager"
 msgstr ""
 
-#: ../src/pcmanfm.c:90
+#: ../src/pcmanfm.c:91
 msgid "ROLE"
 msgstr ""
 
-#: ../src/pcmanfm.c:91
+#: ../src/pcmanfm.c:92
 msgid "[FILE1, FILE2,...]"
 msgstr "[FÁJL1, FÁJL2,...]"
 
-#: ../src/pcmanfm.c:529
+#: ../src/pcmanfm.c:532
 msgid "Terminal emulator is not set."
 msgstr "Terminál program nincs beállítva."
 
-#: ../src/tab-page.c:50
+#: ../src/tab-page.c:52
 #, fuzzy
 msgid "Open in New T_ab"
 msgstr "Megnyitás új lapon"
 
-#: ../src/tab-page.c:242
+#: ../src/tab-page.c:244
 #, c-format
 msgid "%d item selected"
 msgid_plural "%d items selected"
 msgstr[0] "%d elem kijelölve"
 msgstr[1] "%d elem kijelölve"
 
-#: ../src/tab-page.c:397
+#: ../src/tab-page.c:399
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Szabad hely: %s (Összesen: %s)"
 
-#: ../src/tab-page.c:417
+#: ../src/tab-page.c:419
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] "%d elem"
 msgstr[1] "%d elem"
 
-#: ../src/tab-page.c:418
+#: ../src/tab-page.c:420
 #, c-format
 msgid " (%d hidden)"
 msgid_plural " (%d hidden)"

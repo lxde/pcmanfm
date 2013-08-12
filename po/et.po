@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-01 01:02+0300\n"
+"POT-Creation-Date: 2013-08-12 14:50+0300\n"
 "PO-Revision-Date: 2013-07-23 15:37+0000\n"
 "Last-Translator: Anari <anari.jalakas@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,7 +19,8 @@ msgstr ""
 "X-POOTLE-MTIME: 1374593856.0\n"
 
 #: ../data/ui/about.glade.in.h:1
-msgid "Copyright (C) 2009 - 2012"
+#, fuzzy
+msgid "Copyright (C) 2009 - 2013"
 msgstr "Copyright (C) 2009 - 2012"
 
 #: ../data/ui/about.glade.in.h:2
@@ -59,7 +60,7 @@ msgstr "_Laiendatud"
 msgid "C_olor of label text:"
 msgstr "_Pealkirja tekstivärv:"
 
-#: ../data/ui/desktop-pref.glade.h:6 ../data/ui/pref.glade.h:15
+#: ../data/ui/desktop-pref.glade.h:6
 msgid "Center on the screen"
 msgstr "Joonda keskele"
 
@@ -92,15 +93,15 @@ msgstr "Näita töölaual kausta \"Minu _arvuti\""
 msgid "Show \"_Trash Bin\" icon on desktop"
 msgstr "Näita töölaual kausta \"_Prügikast\""
 
-#: ../data/ui/desktop-pref.glade.h:14 ../data/ui/pref.glade.h:46
+#: ../data/ui/desktop-pref.glade.h:14
 msgid "Stretch to fill the entire screen"
 msgstr "Suurenda töölaua mõõtmeteni"
 
-#: ../data/ui/desktop-pref.glade.h:15 ../data/ui/pref.glade.h:47
+#: ../data/ui/desktop-pref.glade.h:15
 msgid "Stretch to fit the screen"
 msgstr "Vähenda töölaua mõõtmeteni"
 
-#: ../data/ui/desktop-pref.glade.h:16 ../data/ui/pref.glade.h:49
+#: ../data/ui/desktop-pref.glade.h:16
 msgid "Tile the image to fill the entire screen"
 msgstr "Kasuta pilti mosaiigina"
 
@@ -198,77 +199,78 @@ msgstr ""
 "Automaatne (sama failisüsteemi korral liigutamine, erinevate puhul "
 "kopeerimine)"
 
-#: ../data/ui/pref.glade.h:16
+#: ../data/ui/pref.glade.h:15
 msgid "Clos_e tab containing removable medium when it is unmounted"
 msgstr "_Sulge eemaldatava andmekandja kaart selle eemaldamisel"
 
-#: ../data/ui/pref.glade.h:17
+#: ../data/ui/pref.glade.h:16
 msgid "Co_nfirm before deleting files"
 msgstr "_Küsi enne failide kustutamist"
 
-#: ../data/ui/pref.glade.h:18
+#: ../data/ui/pref.glade.h:17
 msgid "Compact View"
 msgstr "Kompaktvaade"
 
-#: ../data/ui/pref.glade.h:19
+#: ../data/ui/pref.glade.h:18
 msgid "Confi_rm before moving files into \"trash bi_n\""
 msgstr "_Küsi enne failide \"prügikasti\" tõstmist"
 
-#: ../data/ui/pref.glade.h:20
+#: ../data/ui/pref.glade.h:19
 msgid "Copy"
 msgstr "Kopeeri"
 
 # Kus kasutatakse ja miks?
-#: ../data/ui/pref.glade.h:21
+#: ../data/ui/pref.glade.h:20
 msgid "Defaul_t drop action:"
 msgstr "_Vaikimisi tegevus lahtilaskmisel:"
 
-#: ../data/ui/pref.glade.h:22
+#: ../data/ui/pref.glade.h:21
 msgid "Delay of auto-selection in single click mode (0 to disable)"
 msgstr "Automaatse valiku viivitus ühe klõpsu režiimis (0 blokeerimiseks)"
 
-#: ../data/ui/pref.glade.h:23
+#: ../data/ui/pref.glade.h:22
 msgid "Des_ktop Folder"
 msgstr "_Töölaua kaust"
 
-#: ../data/ui/pref.glade.h:24
+#: ../data/ui/pref.glade.h:23
 msgid "Detailed List View"
 msgstr "Detailne vaade"
 
-#: ../data/ui/pref.glade.h:25
+#: ../data/ui/pref.glade.h:24
 msgid "Do _not generate thumbnails for files exceeding this size:"
 msgstr "Ära loo pisipilte _suurematest failidest kui:"
 
-#: ../data/ui/pref.glade.h:27
+#: ../data/ui/pref.glade.h:26
 #, no-c-format
 msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
 "%s = the command line you want to execute with terminal or su."
 msgstr ""
-"Näiteks: \"xterm -e %s\" terminali jaoks või \"gksu %s\" kasutaja vahetamiseks.\n"
+"Näiteks: \"xterm -e %s\" terminali jaoks või \"gksu %s\" kasutaja "
+"vahetamiseks.\n"
 "%s = käsklus mida soovid terminalis või \"su\" abil käivitada."
 
-#: ../data/ui/pref.glade.h:29
+#: ../data/ui/pref.glade.h:28
 msgid "Hid_e 'Close tab' buttons"
 msgstr "Peida 'Sulge kaart' _nupp"
 
-#: ../data/ui/pref.glade.h:30
+#: ../data/ui/pref.glade.h:29
 msgid "Hide _folder content border"
 msgstr "Peida _kaustavaate äärisjoon"
 
-#: ../data/ui/pref.glade.h:31
+#: ../data/ui/pref.glade.h:30
 msgid "Hide _side pane buttons"
 msgstr "Peida _külgpaneeli nupud"
 
-#: ../data/ui/pref.glade.h:32
+#: ../data/ui/pref.glade.h:31
 msgid "Hide e_xpander on empty or locked folder"
 msgstr "Tühja ja lukus kausta puhul laiendajat ei _näidata"
 
-#: ../data/ui/pref.glade.h:33
+#: ../data/ui/pref.glade.h:32
 msgid "Icon View"
 msgstr "Ikoonivaade"
 
-#: ../data/ui/pref.glade.h:34
+#: ../data/ui/pref.glade.h:33
 msgid ""
 "If checked then use Startup Notify for application if another not stated "
 "explicitly.\n"
@@ -278,140 +280,140 @@ msgstr ""
 "Kui märkimata siis kasutatakse võimalusel määratud programmi ja küsitakse, "
 "kui see on määramata."
 
-#: ../data/ui/pref.glade.h:36
+#: ../data/ui/pref.glade.h:35
 msgid "Mo_unt removable media automatically when they are inserted"
 msgstr "_Haagi eemaldatavad andmekandjad nende ühendamisel automaatselt"
 
-#: ../data/ui/pref.glade.h:37
+#: ../data/ui/pref.glade.h:36
 msgid "Move"
 msgstr "Liiguta"
 
-#: ../data/ui/pref.glade.h:38
+#: ../data/ui/pref.glade.h:37
 msgid "Opened in Current Tab"
 msgstr "Ava aktiivsel kaardil"
 
-#: ../data/ui/pref.glade.h:39
+#: ../data/ui/pref.glade.h:38
 msgid "Opened in New Tab"
 msgstr "Ava uuel kaardil"
 
-#: ../data/ui/pref.glade.h:40
+#: ../data/ui/pref.glade.h:39
 msgid "Opened in New Window"
 msgstr "Ava uues aknas"
 
-#: ../data/ui/pref.glade.h:41
+#: ../data/ui/pref.glade.h:40
 msgid "Preferences"
 msgstr "Eelistused"
 
-#: ../data/ui/pref.glade.h:42
+#: ../data/ui/pref.glade.h:41
 msgid "Size of _big icons:"
 msgstr "_Ikoonivaate ikoonid:"
 
-#: ../data/ui/pref.glade.h:43
+#: ../data/ui/pref.glade.h:42
 msgid "Size of _thumbnails:"
 msgstr "_Pisipildivaate ikoonid:"
 
-#: ../data/ui/pref.glade.h:44
+#: ../data/ui/pref.glade.h:43
 msgid "Size of side _pane icons:"
 msgstr "_Külgpaneeli ikoonid:"
 
-#: ../data/ui/pref.glade.h:45
+#: ../data/ui/pref.glade.h:44
 msgid "Size of small _icons:"
 msgstr "_Väikesed ikoonid:"
 
-#: ../data/ui/pref.glade.h:48
+#: ../data/ui/pref.glade.h:45
 msgid "Thumbnail View"
 msgstr "Pisipildivaade"
 
-#: ../data/ui/pref.glade.h:50
+#: ../data/ui/pref.glade.h:46
 msgid "Treat backup files as _hidden"
 msgstr "Varundamise faile käsitletakse _peidetuna"
 
-#: ../data/ui/pref.glade.h:51
+#: ../data/ui/pref.glade.h:47
 msgid "Us_e SI decimal prefixes instead of IEC binary prefixes"
 msgstr "Kasuta _SI-kümnendik eesliiteid IEC-binaarsete asemel"
 
-#: ../data/ui/pref.glade.h:52
+#: ../data/ui/pref.glade.h:48
 msgid "Vie_w Mode:"
 msgstr "_Vaated:"
 
-#: ../data/ui/pref.glade.h:53
+#: ../data/ui/pref.glade.h:49
 msgid "_Advanced"
 msgstr "L_aiendatud"
 
-#: ../data/ui/pref.glade.h:54
+#: ../data/ui/pref.glade.h:50
 msgid "_Bookmarks:"
 msgstr "_Järjehoidjad:"
 
-#: ../data/ui/pref.glade.h:55
+#: ../data/ui/pref.glade.h:51
 msgid "_Display"
 msgstr "_Kuva"
 
-#: ../data/ui/pref.glade.h:56
+#: ../data/ui/pref.glade.h:52
 msgid "_Erase files on removable media instead of \"trash bin\" creation"
 msgstr ""
 "Eemaldatava _mäluseadme failide kustutatamine ilma \"prügikasti\" viskamata"
 
-#: ../data/ui/pref.glade.h:57
+#: ../data/ui/pref.glade.h:53
 msgid "_General"
 msgstr "_Üldine"
 
-#: ../data/ui/pref.glade.h:58
+#: ../data/ui/pref.glade.h:54
 msgid "_Home Directory"
 msgstr "_Kodukaust"
 
-#: ../data/ui/pref.glade.h:59
+#: ../data/ui/pref.glade.h:55
 msgid "_Layout"
 msgstr "_Asetus"
 
-#: ../data/ui/pref.glade.h:60
+#: ../data/ui/pref.glade.h:56
 msgid "_Mount mountable volumes automatically on program startup"
 msgstr "Ü_henda kettaseadmed rakenduse käivitumisel automaatselt"
 
-#: ../data/ui/pref.glade.h:61
+#: ../data/ui/pref.glade.h:57
 msgid "_Move deleted files to \"trash bin\" instead of erasing from disk"
 msgstr "_Liiguta kustutatavad failid \"prügikasti\" ilma neid kustutamata"
 
-#: ../data/ui/pref.glade.h:62
+#: ../data/ui/pref.glade.h:58
 msgid "_Only show thumbnails for local files"
 msgstr "Pisipilte kuvatakse ainult _kohalike failidega"
 
-#: ../data/ui/pref.glade.h:63
+#: ../data/ui/pref.glade.h:59
 msgid "_Open files with single click"
 msgstr "_Failide avamine ühe klõpsuga"
 
-#: ../data/ui/pref.glade.h:64
+#: ../data/ui/pref.glade.h:60
 msgid "_Open mounted removable media in new tab instead of new window"
 msgstr "_Eemaldatava andmekandja sisu avamine uue akna asemel uuel kaardil"
 
-#: ../data/ui/pref.glade.h:65
+#: ../data/ui/pref.glade.h:61
 msgid "_Show available options for removable media when they are inserted"
 msgstr "_Näita eemaldatava andmekandja sisestamisel kasutatavaid võimalusi"
 
-#: ../data/ui/pref.glade.h:66
+#: ../data/ui/pref.glade.h:62
 msgid "_Show thumbnails of files"
 msgstr "Kuva failide _pisipilte"
 
-#: ../data/ui/pref.glade.h:67
+#: ../data/ui/pref.glade.h:63
 msgid "_Switch user command:"
 msgstr "Kasutaja _vahetamise käsklus:"
 
-#: ../data/ui/pref.glade.h:68
+#: ../data/ui/pref.glade.h:64
 msgid "_Terminal emulator:"
 msgstr "_Terminaliemulaator:"
 
-#: ../data/ui/pref.glade.h:69
+#: ../data/ui/pref.glade.h:65
 msgid "_Trash bin"
 msgstr "_Prügikast"
 
-#: ../data/ui/pref.glade.h:70
+#: ../data/ui/pref.glade.h:66
 msgid "_Unfold tab when files are dragged onto tab button"
 msgstr "_Ava kaart kui faile liigutatakse kaardi nupule"
 
-#: ../data/ui/pref.glade.h:71
+#: ../data/ui/pref.glade.h:67
 msgid "_Use Application Startup Notify by default"
 msgstr "_Programmi valiku küsimine faili avamiseks"
 
-#: ../data/ui/pref.glade.h:72
+#: ../data/ui/pref.glade.h:68
 msgid "_Volume Management"
 msgstr "_Andmekandjate haldamine"
 
@@ -447,11 +449,11 @@ msgstr "Ava failihalduris"
 msgid "Open in New Ta_b"
 msgstr "Ava uuel _kaardil"
 
-#: ../src/desktop-ui.c:52 ../src/tab-page.c:51
+#: ../src/desktop-ui.c:52 ../src/tab-page.c:53
 msgid "Open in New Win_dow"
 msgstr "Ava uues _aknas"
 
-#: ../src/desktop-ui.c:54 ../src/tab-page.c:53
+#: ../src/desktop-ui.c:54 ../src/tab-page.c:55
 msgid "Open in Termina_l"
 msgstr "Ava _terminalis"
 
@@ -713,15 +715,16 @@ msgstr "Kaustapuu"
 msgid "Remote"
 msgstr "Võrgus"
 
-#: ../src/main-win.c:546
+#: ../src/main-win.c:544
 msgid "You are in super user mode"
 msgstr "Oled administraatori õigustes"
 
-#: ../src/main-win.c:717 ../src/main-win.c:725
+#: ../src/main-win.c:715 ../src/main-win.c:723
 msgid "Keyboard navigation"
 msgstr "Klaviatuuri navigatsioon"
 
-#: ../src/main-win.c:719
+#: ../src/main-win.c:717
+#, fuzzy
 msgid ""
 "Tab: cycle focus Folder View -> Side Pane -> Tools Bar\n"
 "Shift+Tab: cycle focus Tools Bar -> Side Pane -> Folder View\n"
@@ -731,11 +734,11 @@ msgid ""
 "Ctrl+L or Alt+D: jump focus to Path Bar"
 msgstr "Klaviatuuri kiirkäsud"
 
-#: ../src/main-win.c:755
+#: ../src/main-win.c:753
 msgid "Switch user command is not set."
 msgstr "Kasutaja vahetamise käsk on määramata."
 
-#: ../src/main-win.c:1117
+#: ../src/main-win.c:1108
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -746,115 +749,115 @@ msgstr ""
 "'%s'\n"
 "Sisesta uue järjehoidja nimi:"
 
-#: ../src/main-win.c:1121
+#: ../src/main-win.c:1112
 msgid "Add to Bookmarks"
 msgstr "Lisa järjehoidjatesse"
 
 #. options only acceptable by first pcmanfm instance. These options are not passed through IPC
-#: ../src/pcmanfm.c:75
+#: ../src/pcmanfm.c:76
 msgid "Name of configuration profile"
 msgstr "Seadistusprofiili nimi"
 
-#: ../src/pcmanfm.c:75
+#: ../src/pcmanfm.c:76
 msgid "PROFILE"
 msgstr "PROFILE"
 
-#: ../src/pcmanfm.c:76
+#: ../src/pcmanfm.c:77
 msgid "Run PCManFM as a daemon"
 msgstr "Käivita PCManFM deemonina"
 
-#: ../src/pcmanfm.c:77
+#: ../src/pcmanfm.c:78
 msgid "No function. Just to be compatible with nautilus"
 msgstr "Ilma funktsioonita. Ainult programmiga \"Nautilus\" ühilduvuseks"
 
 #. options that are acceptable for every instance of pcmanfm and will be passed through IPC.
-#: ../src/pcmanfm.c:80
+#: ../src/pcmanfm.c:81
 msgid "Launch desktop manager"
 msgstr "Käivita töölauahaldur"
 
-#: ../src/pcmanfm.c:81
+#: ../src/pcmanfm.c:82
 msgid "Turn off desktop manager if it's running"
 msgstr "Lülita töölauahaldur välja, kui see töötab"
 
-#: ../src/pcmanfm.c:82
+#: ../src/pcmanfm.c:83
 msgid "Open desktop preference dialog"
 msgstr "Ava töölaua eelistuste valikud"
 
-#: ../src/pcmanfm.c:83
+#: ../src/pcmanfm.c:84
 msgid "Use --desktop option only for one screen"
 msgstr "Kasuta --desktop valikut ainult ühel ekraanil"
 
-#: ../src/pcmanfm.c:84
+#: ../src/pcmanfm.c:85
 msgid "Set desktop wallpaper from image FILE"
 msgstr "Taustapildi määramine pildifailist FILE"
 
-#: ../src/pcmanfm.c:84
+#: ../src/pcmanfm.c:85
 msgid "FILE"
 msgstr "FILE"
 
 #. don't translate list of modes in description, please
-#: ../src/pcmanfm.c:86
+#: ../src/pcmanfm.c:87
 msgid "Set mode of desktop wallpaper. MODE=(color|stretch|fit|center|tile)"
 msgstr ""
 "Töölaua taustapildi režiimi määramine. MODE=(color|stretch|fit|center|tile)"
 
-#: ../src/pcmanfm.c:86
+#: ../src/pcmanfm.c:87
 msgid "MODE"
 msgstr "MODE"
 
-#: ../src/pcmanfm.c:87
+#: ../src/pcmanfm.c:88
 msgid "Open Preferences dialog on the page N"
 msgstr "Ava töölaua eelistuste valikud lehel N"
 
-#: ../src/pcmanfm.c:87
+#: ../src/pcmanfm.c:88
 msgid "N"
 msgstr "N"
 
-#: ../src/pcmanfm.c:88
+#: ../src/pcmanfm.c:89
 msgid "Open new window"
 msgstr "Ava uus aken"
 
 #. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
-#: ../src/pcmanfm.c:90
+#: ../src/pcmanfm.c:91
 msgid "Window role for usage by window manager"
 msgstr "Akna roll aknahalduri kasutuse jaoks"
 
-#: ../src/pcmanfm.c:90
+#: ../src/pcmanfm.c:91
 msgid "ROLE"
 msgstr "ROLE"
 
-#: ../src/pcmanfm.c:91
+#: ../src/pcmanfm.c:92
 msgid "[FILE1, FILE2,...]"
 msgstr "[FAIL1, FAIL2,...]"
 
-#: ../src/pcmanfm.c:529
+#: ../src/pcmanfm.c:532
 msgid "Terminal emulator is not set."
 msgstr "Terminaliemulaator on määramata."
 
-#: ../src/tab-page.c:50
+#: ../src/tab-page.c:52
 msgid "Open in New T_ab"
 msgstr "Ava uuel _kaardil"
 
-#: ../src/tab-page.c:236
+#: ../src/tab-page.c:244
 #, c-format
 msgid "%d item selected"
 msgid_plural "%d items selected"
 msgstr[0] "%d kirje valitud"
 msgstr[1] "%d kirjet valitud"
 
-#: ../src/tab-page.c:363
+#: ../src/tab-page.c:399
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Vaba ruum: %s (Kokku: %s)"
 
-#: ../src/tab-page.c:383
+#: ../src/tab-page.c:419
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] "%d kirje"
 msgstr[1] "%d kirjet"
 
-#: ../src/tab-page.c:384
+#: ../src/tab-page.c:420
 #, c-format
 msgid " (%d hidden)"
 msgid_plural " (%d hidden)"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm 1.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-20 01:31+0300\n"
+"POT-Creation-Date: 2013-08-12 14:50+0300\n"
 "PO-Revision-Date: 2013-06-11 10:21+0800\n"
 "Last-Translator: Wylmer Wang <wantinghard@gmail.com>\n"
 "Language-Team: Chinese (simplified) <i18n-zh@googlegroups.com>\n"
@@ -440,11 +440,11 @@ msgstr "在文件管理器中打开"
 msgid "Open in New Ta_b"
 msgstr "在新标签中打开(_B)"
 
-#: ../src/desktop-ui.c:52 ../src/tab-page.c:51
+#: ../src/desktop-ui.c:52 ../src/tab-page.c:53
 msgid "Open in New Win_dow"
 msgstr "在新窗口中打开(_D)"
 
-#: ../src/desktop-ui.c:54 ../src/tab-page.c:53
+#: ../src/desktop-ui.c:54 ../src/tab-page.c:55
 msgid "Open in Termina_l"
 msgstr "在终端中打开(_L)"
 
@@ -750,107 +750,107 @@ msgid "Add to Bookmarks"
 msgstr "添加到书签中"
 
 #. options only acceptable by first pcmanfm instance. These options are not passed through IPC
-#: ../src/pcmanfm.c:75
+#: ../src/pcmanfm.c:76
 msgid "Name of configuration profile"
 msgstr "配置名称"
 
-#: ../src/pcmanfm.c:75
+#: ../src/pcmanfm.c:76
 msgid "PROFILE"
 msgstr "配置"
 
-#: ../src/pcmanfm.c:76
+#: ../src/pcmanfm.c:77
 msgid "Run PCManFM as a daemon"
 msgstr "以守护进程方式运行 PCManFM"
 
-#: ../src/pcmanfm.c:77
+#: ../src/pcmanfm.c:78
 msgid "No function. Just to be compatible with nautilus"
 msgstr "没有功能。仅为与 nautilus 兼容"
 
 #. options that are acceptable for every instance of pcmanfm and will be passed through IPC.
-#: ../src/pcmanfm.c:80
+#: ../src/pcmanfm.c:81
 msgid "Launch desktop manager"
 msgstr "启动桌面管理器"
 
-#: ../src/pcmanfm.c:81
+#: ../src/pcmanfm.c:82
 msgid "Turn off desktop manager if it's running"
 msgstr "若桌面管理器正在运行，关闭它"
 
-#: ../src/pcmanfm.c:82
+#: ../src/pcmanfm.c:83
 msgid "Open desktop preference dialog"
 msgstr "打开桌面偏好设置对话框"
 
-#: ../src/pcmanfm.c:83
+#: ../src/pcmanfm.c:84
 msgid "Use --desktop option only for one screen"
 msgstr "只在一个屏幕时使用 --desktop 选项"
 
-#: ../src/pcmanfm.c:84
+#: ../src/pcmanfm.c:85
 msgid "Set desktop wallpaper from image FILE"
 msgstr "从图像文件设置桌面壁纸"
 
-#: ../src/pcmanfm.c:84
+#: ../src/pcmanfm.c:85
 msgid "FILE"
 msgstr "文件"
 
 #. don't translate list of modes in description, please
-#: ../src/pcmanfm.c:86
+#: ../src/pcmanfm.c:87
 msgid "Set mode of desktop wallpaper. MODE=(color|stretch|fit|center|tile)"
 msgstr "设置桌面壁纸模式。模式=(color|stretch|fit|center|tile)"
 
-#: ../src/pcmanfm.c:86
+#: ../src/pcmanfm.c:87
 msgid "MODE"
 msgstr "模式"
 
-#: ../src/pcmanfm.c:87
+#: ../src/pcmanfm.c:88
 msgid "Open Preferences dialog on the page N"
 msgstr "在第 N 页打开桌面偏好设置对话框"
 
-#: ../src/pcmanfm.c:87
+#: ../src/pcmanfm.c:88
 msgid "N"
 msgstr "N"
 
-#: ../src/pcmanfm.c:88
+#: ../src/pcmanfm.c:89
 msgid "Open new window"
 msgstr "打开新窗口"
 
 #. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
-#: ../src/pcmanfm.c:90
+#: ../src/pcmanfm.c:91
 msgid "Window role for usage by window manager"
 msgstr "窗口管理器用的窗口角色"
 
-#: ../src/pcmanfm.c:90
+#: ../src/pcmanfm.c:91
 msgid "ROLE"
 msgstr "角色"
 
-#: ../src/pcmanfm.c:91
+#: ../src/pcmanfm.c:92
 msgid "[FILE1, FILE2,...]"
 msgstr "[文件1, 文件2,...]"
 
-#: ../src/pcmanfm.c:529
+#: ../src/pcmanfm.c:532
 msgid "Terminal emulator is not set."
 msgstr "没有设置终端模拟器。"
 
-#: ../src/tab-page.c:50
+#: ../src/tab-page.c:52
 msgid "Open in New T_ab"
 msgstr "在新标签中打开(_A)"
 
-#: ../src/tab-page.c:242
+#: ../src/tab-page.c:244
 #, c-format
 msgid "%d item selected"
 msgid_plural "%d items selected"
 msgstr[0] "选择了 %d 项"
 
-#: ../src/tab-page.c:397
+#: ../src/tab-page.c:399
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "可用空间：%s(共：%s)"
 
-#: ../src/tab-page.c:417
+#: ../src/tab-page.c:419
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] "%d 项"
 
-#: ../src/tab-page.c:418
+#: ../src/tab-page.c:420
 #, c-format
 msgid " (%d hidden)"
 msgid_plural " (%d hidden)"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PCManFM 1.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-20 01:31+0300\n"
+"POT-Creation-Date: 2013-08-12 14:50+0300\n"
 "PO-Revision-Date: 2013-06-09 11:25+0300\n"
 "Last-Translator: Mișu Moldovan <dumol@l10n.ro>\n"
 "Language-Team: Romanian <diacritice@googlegroups.com>\n"
@@ -446,11 +446,11 @@ msgstr "Deschidere în managerul de fișiere"
 msgid "Open in New Ta_b"
 msgstr "Deschide într-un ta_b nou"
 
-#: ../src/desktop-ui.c:52 ../src/tab-page.c:51
+#: ../src/desktop-ui.c:52 ../src/tab-page.c:53
 msgid "Open in New Win_dow"
 msgstr "Deschide într-o _fereastră nouă"
 
-#: ../src/desktop-ui.c:54 ../src/tab-page.c:53
+#: ../src/desktop-ui.c:54 ../src/tab-page.c:55
 msgid "Open in Termina_l"
 msgstr "Desc_hide în terminal"
 
@@ -763,91 +763,91 @@ msgid "Add to Bookmarks"
 msgstr "Adaugă la favorite"
 
 #. options only acceptable by first pcmanfm instance. These options are not passed through IPC
-#: ../src/pcmanfm.c:75
+#: ../src/pcmanfm.c:76
 msgid "Name of configuration profile"
 msgstr "Nume al profilului de configurare"
 
-#: ../src/pcmanfm.c:75
+#: ../src/pcmanfm.c:76
 msgid "PROFILE"
 msgstr "PROFIL"
 
-#: ../src/pcmanfm.c:76
+#: ../src/pcmanfm.c:77
 msgid "Run PCManFM as a daemon"
 msgstr "Pornește PCManFM ca serviciu"
 
-#: ../src/pcmanfm.c:77
+#: ../src/pcmanfm.c:78
 msgid "No function. Just to be compatible with nautilus"
 msgstr "Nicio funcție. Pentru compatibilitate cu Nautilus"
 
 #. options that are acceptable for every instance of pcmanfm and will be passed through IPC.
-#: ../src/pcmanfm.c:80
+#: ../src/pcmanfm.c:81
 msgid "Launch desktop manager"
 msgstr "Lansează managerul desktopului"
 
-#: ../src/pcmanfm.c:81
+#: ../src/pcmanfm.c:82
 msgid "Turn off desktop manager if it's running"
 msgstr "Oprește managerul desktopului dacă e pornit"
 
-#: ../src/pcmanfm.c:82
+#: ../src/pcmanfm.c:83
 msgid "Open desktop preference dialog"
 msgstr "Deschide dialogul cu preferințele desktopului"
 
-#: ../src/pcmanfm.c:83
+#: ../src/pcmanfm.c:84
 msgid "Use --desktop option only for one screen"
 msgstr "Utilizează opțiunea --desktop doar pentru un ecran"
 
-#: ../src/pcmanfm.c:84
+#: ../src/pcmanfm.c:85
 msgid "Set desktop wallpaper from image FILE"
 msgstr "Schimbă imaginea de fundal cu cea din FIȘIER"
 
-#: ../src/pcmanfm.c:84
+#: ../src/pcmanfm.c:85
 msgid "FILE"
 msgstr "FIȘIER"
 
 #. don't translate list of modes in description, please
-#: ../src/pcmanfm.c:86
+#: ../src/pcmanfm.c:87
 msgid "Set mode of desktop wallpaper. MODE=(color|stretch|fit|center|tile)"
 msgstr ""
 "Alegeți un mod pentru imaginea de fundal. MOD=(color|stretch|fit|center|tile)"
 
-#: ../src/pcmanfm.c:86
+#: ../src/pcmanfm.c:87
 msgid "MODE"
 msgstr "MOD"
 
-#: ../src/pcmanfm.c:87
+#: ../src/pcmanfm.c:88
 msgid "Open Preferences dialog on the page N"
 msgstr "Deschide dialogul cu preferințele în pagina N"
 
-#: ../src/pcmanfm.c:87
+#: ../src/pcmanfm.c:88
 msgid "N"
 msgstr "N"
 
-#: ../src/pcmanfm.c:88
+#: ../src/pcmanfm.c:89
 msgid "Open new window"
 msgstr "Deschide o fereastră nouă"
 
 #. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
-#: ../src/pcmanfm.c:90
+#: ../src/pcmanfm.c:91
 msgid "Window role for usage by window manager"
 msgstr "Rolul ferestrei de transmis managerului de ferestre"
 
-#: ../src/pcmanfm.c:90
+#: ../src/pcmanfm.c:91
 msgid "ROLE"
 msgstr "ROL"
 
-#: ../src/pcmanfm.c:91
+#: ../src/pcmanfm.c:92
 msgid "[FILE1, FILE2,...]"
 msgstr "[FIȘIER1, FIȘIER2,...]"
 
-#: ../src/pcmanfm.c:529
+#: ../src/pcmanfm.c:532
 msgid "Terminal emulator is not set."
 msgstr "Nu ați ales un emulator de terminal."
 
-#: ../src/tab-page.c:50
+#: ../src/tab-page.c:52
 msgid "Open in New T_ab"
 msgstr "Deschide într-un t_ab nou"
 
-#: ../src/tab-page.c:242
+#: ../src/tab-page.c:244
 #, c-format
 msgid "%d item selected"
 msgid_plural "%d items selected"
@@ -855,12 +855,12 @@ msgstr[0] "%d element selectat"
 msgstr[1] "%d elemente selectate"
 msgstr[2] "%d de elemente selectate"
 
-#: ../src/tab-page.c:397
+#: ../src/tab-page.c:399
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Spațiu liber: %s (Total: %s)"
 
-#: ../src/tab-page.c:417
+#: ../src/tab-page.c:419
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
@@ -868,7 +868,7 @@ msgstr[0] "%d element"
 msgstr[1] "%d elemente"
 msgstr[2] "%d de elemente"
 
-#: ../src/tab-page.c:418
+#: ../src/tab-page.c:420
 #, c-format
 msgid " (%d hidden)"
 msgid_plural " (%d hidden)"

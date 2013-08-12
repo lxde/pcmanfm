@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm 1.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-20 01:31+0300\n"
+"POT-Creation-Date: 2013-08-12 14:50+0300\n"
 "PO-Revision-Date: 2013-06-14 11:43+0330\n"
 "Last-Translator: Ali Yousefi Sabzevar <aysabzevar@gmail.com>\n"
 "Language-Team: Persian <trans-fa@lists.fedoraproject.org>\n"
@@ -447,11 +447,11 @@ msgstr "بازکردن در برنامه مدیر پرونده"
 msgid "Open in New Ta_b"
 msgstr "بازکردن در زبانه جدید"
 
-#: ../src/desktop-ui.c:52 ../src/tab-page.c:51
+#: ../src/desktop-ui.c:52 ../src/tab-page.c:53
 msgid "Open in New Win_dow"
 msgstr "بازکردن در پنجره جدید"
 
-#: ../src/desktop-ui.c:54 ../src/tab-page.c:53
+#: ../src/desktop-ui.c:54 ../src/tab-page.c:55
 msgid "Open in Termina_l"
 msgstr "بازکردن در ترمینال"
 
@@ -757,109 +757,109 @@ msgid "Add to Bookmarks"
 msgstr "افزودن به نشانکها"
 
 #. options only acceptable by first pcmanfm instance. These options are not passed through IPC
-#: ../src/pcmanfm.c:75
+#: ../src/pcmanfm.c:76
 msgid "Name of configuration profile"
 msgstr "نام نمایه پیکره‌بندی"
 
-#: ../src/pcmanfm.c:75
+#: ../src/pcmanfm.c:76
 msgid "PROFILE"
 msgstr "نمایه"
 
-#: ../src/pcmanfm.c:76
+#: ../src/pcmanfm.c:77
 msgid "Run PCManFM as a daemon"
 msgstr "اجرای PCManFM در پس‌زمینه"
 
-#: ../src/pcmanfm.c:77
+#: ../src/pcmanfm.c:78
 msgid "No function. Just to be compatible with nautilus"
 msgstr "بدون عملگر. فقط برای سازگاری با مدیر پرونده ناتیلوس"
 
 #. options that are acceptable for every instance of pcmanfm and will be passed through IPC.
-#: ../src/pcmanfm.c:80
+#: ../src/pcmanfm.c:81
 msgid "Launch desktop manager"
 msgstr "آغاز مدیر رومیزی"
 
-#: ../src/pcmanfm.c:81
+#: ../src/pcmanfm.c:82
 msgid "Turn off desktop manager if it's running"
 msgstr "خاموش کردن مدیر رومیزی اگر در حال اجرا است"
 
-#: ../src/pcmanfm.c:82
+#: ../src/pcmanfm.c:83
 msgid "Open desktop preference dialog"
 msgstr "باز کردن محاوره ی ترجیحات رومیزی"
 
-#: ../src/pcmanfm.c:83
+#: ../src/pcmanfm.c:84
 msgid "Use --desktop option only for one screen"
 msgstr "از گزینه desktop-- فقط برای یک صفحه استفاده شود"
 
-#: ../src/pcmanfm.c:84
+#: ../src/pcmanfm.c:85
 msgid "Set desktop wallpaper from image FILE"
 msgstr "انتخاب تصویر پس زمینه از پرونده تصویر"
 
-#: ../src/pcmanfm.c:84
+#: ../src/pcmanfm.c:85
 msgid "FILE"
 msgstr "پرونده"
 
 #. don't translate list of modes in description, please
-#: ../src/pcmanfm.c:86
+#: ../src/pcmanfm.c:87
 msgid "Set mode of desktop wallpaper. MODE=(color|stretch|fit|center|tile)"
 msgstr "تنظیم حالت تصویر پس زمینه. حالت=(color|stretch|fit|center|tile)"
 
-#: ../src/pcmanfm.c:86
+#: ../src/pcmanfm.c:87
 msgid "MODE"
 msgstr "حالت"
 
-#: ../src/pcmanfm.c:87
+#: ../src/pcmanfm.c:88
 msgid "Open Preferences dialog on the page N"
 msgstr "باز کردن محاوره ی ترجیحات در صفحه N"
 
-#: ../src/pcmanfm.c:87
+#: ../src/pcmanfm.c:88
 msgid "N"
 msgstr "N"
 
-#: ../src/pcmanfm.c:88
+#: ../src/pcmanfm.c:89
 msgid "Open new window"
 msgstr "بازکردن پنجره جدید"
 
 #. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
-#: ../src/pcmanfm.c:90
+#: ../src/pcmanfm.c:91
 msgid "Window role for usage by window manager"
 msgstr "قاعده پنجره برای استفاده توسط مدیر پنجره"
 
-#: ../src/pcmanfm.c:90
+#: ../src/pcmanfm.c:91
 msgid "ROLE"
 msgstr "قاعده"
 
-#: ../src/pcmanfm.c:91
+#: ../src/pcmanfm.c:92
 msgid "[FILE1, FILE2,...]"
 msgstr "[پرونده۱، پرونده۲،...]"
 
-#: ../src/pcmanfm.c:529
+#: ../src/pcmanfm.c:532
 msgid "Terminal emulator is not set."
 msgstr "شبیه ساز ترمینال تنظیم نشده است"
 
-#: ../src/tab-page.c:50
+#: ../src/tab-page.c:52
 msgid "Open in New T_ab"
 msgstr "بازکردن در زبانه جدید"
 
-#: ../src/tab-page.c:242
+#: ../src/tab-page.c:244
 #, c-format
 msgid "%d item selected"
 msgid_plural "%d items selected"
 msgstr[0] "%d مورد انتخاب شده است"
 msgstr[1] "%d مورد انتخاب شده است"
 
-#: ../src/tab-page.c:397
+#: ../src/tab-page.c:399
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "فضای خالی : %s (کل: %s)"
 
-#: ../src/tab-page.c:417
+#: ../src/tab-page.c:419
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] "%d مورد"
 msgstr[1] "%d مورد"
 
-#: ../src/tab-page.c:418
+#: ../src/tab-page.c:420
 #, c-format
 msgid " (%d hidden)"
 msgid_plural " (%d hidden)"
