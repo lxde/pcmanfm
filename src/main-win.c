@@ -103,8 +103,6 @@ static void on_notebook_switch_page(GtkNotebook* nb, gpointer* page, guint num, 
 static void on_notebook_page_added(GtkNotebook* nb, GtkWidget* page, guint num, FmMainWin* win);
 static void on_notebook_page_removed(GtkNotebook* nb, GtkWidget* page, guint num, FmMainWin* win);
 
-static void on_folder_view_clicked(FmFolderView* fv, FmFolderViewClickType type, FmFileInfo* fi, FmMainWin* win);
-
 #include "main-win-ui.c" /* ui xml definitions and actions */
 
 static GSList* all_wins = NULL;
@@ -1196,6 +1194,9 @@ static void on_folder_view_filter_changed(FmFolderView* fv, FmMainWin* win)
     GtkAction* act;
     gboolean active;
 
+    if (fv != win->folder_view)
+        return;
+
     active = fm_folder_view_get_show_hidden(fv);
 
     act = gtk_ui_manager_get_action(win->ui, "/menubar/ViewMenu/ShowHidden");
@@ -1217,11 +1218,16 @@ static void on_notebook_switch_page(GtkNotebook* nb, gpointer* new_page, guint n
     page = (FmTabPage*)sw_page;
     /* deactivate gestures from old view first */
     if(win->folder_view)
+    {
         fm_folder_view_set_active(win->folder_view, FALSE);
+        g_object_unref(win->folder_view);
+    }
 
     /* connect to the new active page */
     win->current_page = page;
     win->folder_view = fm_tab_page_get_folder_view(page);
+    if(win->folder_view)
+        g_object_ref(win->folder_view);
     win->nav_history = fm_tab_page_get_history(page);
     win->side_pane = fm_tab_page_get_side_pane(page);
 
@@ -1272,6 +1278,7 @@ static void on_notebook_page_added(GtkNotebook* nb, GtkWidget* page, guint num, 
                      G_CALLBACK(on_tab_page_chdir), win);
     g_signal_connect(tab_page, "status",
                      G_CALLBACK(on_tab_page_status_text), win);
+    /* FIXME: remove direct access */
     g_signal_connect(tab_page->folder_view, "sort-changed",
                      G_CALLBACK(on_folder_view_sort_changed), win);
     g_signal_connect(tab_page->folder_view, "sel-changed",
@@ -1319,15 +1326,15 @@ static void on_notebook_page_removed(GtkNotebook* nb, GtkWidget* page, guint num
     {
         g_signal_handlers_disconnect_by_func(folder_view,
                                              on_view_key_press_event, win);
-        g_signal_handlers_disconnect_by_func(tab_page->folder_view,
+        g_signal_handlers_disconnect_by_func(folder_view,
                                              on_folder_view_sort_changed, win);
-        g_signal_handlers_disconnect_by_func(tab_page->folder_view,
+        g_signal_handlers_disconnect_by_func(folder_view,
                                              on_folder_view_sel_changed, win);
 #if FM_CHECK_VERSION(1, 0, 2)
-        g_signal_handlers_disconnect_by_func(tab_page->folder_view,
+        g_signal_handlers_disconnect_by_func(folder_view,
                                              on_folder_view_filter_changed, win);
 #endif
-        g_signal_handlers_disconnect_by_func(tab_page->folder_view,
+        g_signal_handlers_disconnect_by_func(folder_view,
                                              on_folder_view_clicked, win);
     }
     g_signal_handlers_disconnect_by_func(tab_page->side_pane,
@@ -1338,6 +1345,8 @@ static void on_notebook_page_removed(GtkNotebook* nb, GtkWidget* page, guint num
     if(tab_page == win->current_page)
     {
         win->current_page = NULL;
+        if (win->folder_view)
+            g_object_unref(win->folder_view);
         win->folder_view = NULL;
         win->nav_history = NULL;
         win->side_pane = NULL;

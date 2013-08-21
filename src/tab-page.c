@@ -189,6 +189,7 @@ void fm_tab_page_destroy(GtkObject *object)
     if(page->folder_view)
     {
         g_signal_handlers_disconnect_by_func(page->folder_view, on_folder_view_sel_changed, page);
+        g_object_unref(page->folder_view);
         page->folder_view = NULL;
     }
 
@@ -513,15 +514,15 @@ static void fm_tab_page_init(FmTabPage *page)
     folder_view = (FmFolderView*)fm_standard_view_new(app_config->view_mode,
                                                       update_files_popup,
                                                       open_folder_func);
-    page->folder_view = folder_view;
+    page->folder_view = g_object_ref_sink(folder_view);
 #if !FM_CHECK_VERSION(1, 0, 2)
     /* since 1.0.2 sorting should be applied on model instead */
     fm_folder_view_sort(folder_view, app_config->sort_type, app_config->sort_by);
 #endif
     fm_folder_view_set_selection_mode(folder_view, GTK_SELECTION_MULTIPLE);
     page->nav_history = fm_nav_history_new();
-    gtk_paned_add2(paned, GTK_WIDGET(page->folder_view));
-    focus_chain = g_list_prepend(focus_chain, page->folder_view);
+    gtk_paned_add2(paned, GTK_WIDGET(folder_view));
+    focus_chain = g_list_prepend(focus_chain, folder_view);
 
     /* We need this to change tab order to focus folder view before left pane. */
     gtk_container_set_focus_chain(GTK_CONTAINER(page), focus_chain);
@@ -539,7 +540,7 @@ static void fm_tab_page_init(FmTabPage *page)
 #endif
     page->tab_label = tab_label;
 
-    g_signal_connect(page->folder_view, "sel-changed",
+    g_signal_connect(folder_view, "sel-changed",
                      G_CALLBACK(on_folder_view_sel_changed), page);
     /*
     g_signal_connect(page->folder_view, "chdir",
