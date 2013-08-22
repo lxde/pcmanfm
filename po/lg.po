@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.9.9\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-08-12 14:50+0300\n"
+"POT-Creation-Date: 2013-08-22 20:34+0200\n"
 "PO-Revision-Date: 2013-07-19 11:42+0000\n"
 "Last-Translator: kizito <kbirabwa@yahoo.co.uk>\n"
 "Language-Team: lg <kbirabwa@yahoo.co.uk>\n"
@@ -38,211 +38,333 @@ msgstr ""
 msgid "translator-credits"
 msgstr "Kizito Birabwa <kbirabwa@yahoo.co.uk>"
 
-#: ../data/ui/desktop-pref.glade.h:1
-msgid "<b>Background</b>"
-msgstr "<b>Bwaliriro</b>"
-
-#: ../data/ui/desktop-pref.glade.h:2
-msgid "<b>Show desktop icons</b>"
-msgstr "<b>Awakolerwa wabeeko obufaananyi obuyunzi</b>"
-
-#: ../data/ui/desktop-pref.glade.h:3
-msgid "<b>Text</b>"
-msgstr "<b>Bigambo</b>"
-
-#: ../data/ui/desktop-pref.glade.h:4
-msgid "Ad_vanced"
-msgstr "Ebyetaagisa bumanyiri_vu"
-
-#: ../data/ui/desktop-pref.glade.h:5
-msgid "C_olor of label text:"
-msgstr "L_angi yebigambo eby'oku kirambe:"
-
-#: ../data/ui/desktop-pref.glade.h:6
-msgid "Center on the screen"
-msgstr "Kibeere mu mukkati g'olutimbe"
-
-#: ../data/ui/desktop-pref.glade.h:7
-msgid "Color of _shadow:"
-msgstr "Langi y'eki_siikirize:"
-
-#: ../data/ui/desktop-pref.glade.h:8 ../src/desktop-ui.c:34
-#: ../data/pcmanfm-desktop-pref.desktop.in.h:2
+#: ../data/ui/desktop-pref.glade.h:1 ../src/desktop-ui.c:34
+#: ../data/pcmanfm-desktop-pref.desktop.in.h:1
 msgid "Desktop Preferences"
 msgstr "Entegeka y'awakolerwa"
 
-#: ../data/ui/desktop-pref.glade.h:9
-msgid "Fill with background color only"
-msgstr "Juzisamu langi ey'obwaliriro yokka"
+#: ../data/ui/desktop-pref.glade.h:2
+msgid "<b>Background</b>"
+msgstr "<b>Bwaliriro</b>"
 
-#: ../data/ui/desktop-pref.glade.h:10
+#: ../data/ui/desktop-pref.glade.h:3
+msgid "_Wallpaper:"
+msgstr "_Ekifaananyi eky'oku bwaliriro:"
+
+#: ../data/ui/desktop-pref.glade.h:4
 msgid "Please select an image file"
 msgstr "Londako ekifaananyi"
 
-#: ../data/ui/desktop-pref.glade.h:11
-msgid "S_how icons of volumes on desktop"
-msgstr "A_wakolerwa kubeko n'obufaananyi obuyunzi obw'ebibondo"
+#: ../data/ui/desktop-pref.glade.h:5
+msgid "_Use the same wallpaper on all desktops"
+msgstr "_Obwaliriro obwa buli awakolerwa bufaanagane"
 
-#: ../data/ui/desktop-pref.glade.h:12
-msgid "Show \"_My Computer\" icon on desktop"
-msgstr "Awakolerwa kubeko n'akafaanayi akayunzi aka \"_Kompyuta yange\""
-
-#: ../data/ui/desktop-pref.glade.h:13
-msgid "Show \"_Trash Bin\" icon on desktop"
-msgstr "Awakolerwa kubeko n'akafaananyi akayunzi aka \"Ebi_suulidwa\""
-
-#: ../data/ui/desktop-pref.glade.h:14
-msgid "Stretch to fill the entire screen"
-msgstr "Ekifaananyi kinaanule kimaleyo olutimbe"
-
-#: ../data/ui/desktop-pref.glade.h:15
-msgid "Stretch to fit the screen"
-msgstr "Ekifaananyi kifuule kijje ku lutimbe"
-
-#: ../data/ui/desktop-pref.glade.h:16
-msgid "Tile the image to fill the entire screen"
-msgstr "Yongerawo kopi z'ekifaananyi zimaleyo olutimbe"
-
-#: ../data/ui/desktop-pref.glade.h:17
-msgid "Wallpaper _mode:"
-msgstr "E_ntegeka y'ekifaananyi eky'oku bwaliriro:"
-
-#: ../data/ui/desktop-pref.glade.h:18
-msgid "_Appearance"
-msgstr "End_abika"
-
-#: ../data/ui/desktop-pref.glade.h:19
+#: ../data/ui/desktop-pref.glade.h:6
 msgid "_Background color:"
 msgstr "Langi ey'o_bwaliriro:"
 
-#: ../data/ui/desktop-pref.glade.h:20
-msgid "_Desktop Icons"
-msgstr "_Obufaananyi obuyunzi awakolerwa"
+#: ../data/ui/desktop-pref.glade.h:7
+msgid "Wallpaper _mode:"
+msgstr "E_ntegeka y'ekifaananyi eky'oku bwaliriro:"
 
-#: ../data/ui/desktop-pref.glade.h:21
+#: ../data/ui/desktop-pref.glade.h:8
+msgid "<b>Text</b>"
+msgstr "<b>Bigambo</b>"
+
+#: ../data/ui/desktop-pref.glade.h:9
 msgid "_Font of label text:"
 msgstr "_Enkula y'ennukuta ez'omu bigambo eby'okukirambe:"
 
-#: ../data/ui/desktop-pref.glade.h:22
+#: ../data/ui/desktop-pref.glade.h:10
+msgid "C_olor of label text:"
+msgstr "L_angi yebigambo eby'oku kirambe:"
+
+#: ../data/ui/desktop-pref.glade.h:11
+msgid "Color of _shadow:"
+msgstr "Langi y'eki_siikirize:"
+
+#: ../data/ui/desktop-pref.glade.h:12
+msgid "_Appearance"
+msgstr "End_abika"
+
+#: ../data/ui/desktop-pref.glade.h:13
+msgid "<b>Show desktop icons</b>"
+msgstr "<b>Awakolerwa wabeeko obufaananyi obuyunzi</b>"
+
+#: ../data/ui/desktop-pref.glade.h:14
 msgid "_Show \"My Documents\" icon on desktop"
 msgstr "_Awakolerwa kubeko n'akafaananyi akayunzi aka \"Biwandiko byange\""
 
-#: ../data/ui/desktop-pref.glade.h:23
+#: ../data/ui/desktop-pref.glade.h:15
+msgid "Show \"_My Computer\" icon on desktop"
+msgstr "Awakolerwa kubeko n'akafaanayi akayunzi aka \"_Kompyuta yange\""
+
+#: ../data/ui/desktop-pref.glade.h:16
+msgid "Show \"_Trash Bin\" icon on desktop"
+msgstr "Awakolerwa kubeko n'akafaananyi akayunzi aka \"Ebi_suulidwa\""
+
+#: ../data/ui/desktop-pref.glade.h:17
+msgid "S_how icons of volumes on desktop"
+msgstr "A_wakolerwa kubeko n'obufaananyi obuyunzi obw'ebibondo"
+
+#: ../data/ui/desktop-pref.glade.h:18
+msgid "_Desktop Icons"
+msgstr "_Obufaananyi obuyunzi awakolerwa"
+
+#: ../data/ui/desktop-pref.glade.h:19
 msgid "_Show menus provided by window managers when desktop is clicked"
 msgstr ""
 "_Menyu ya puloguramu eteekateeka madirisa ejjenga ng'okoonedde awakolerwa"
 
+#: ../data/ui/desktop-pref.glade.h:20
+msgid "Ad_vanced"
+msgstr "Ebyetaagisa bumanyiri_vu"
+
+#: ../data/ui/desktop-pref.glade.h:21
+msgid "Fill with background color only"
+msgstr "Juzisamu langi ey'obwaliriro yokka"
+
+#: ../data/ui/desktop-pref.glade.h:22
+msgid "Stretch to fill the entire screen"
+msgstr "Ekifaananyi kinaanule kimaleyo olutimbe"
+
+#: ../data/ui/desktop-pref.glade.h:23
+msgid "Stretch to fit the screen"
+msgstr "Ekifaananyi kifuule kijje ku lutimbe"
+
 #: ../data/ui/desktop-pref.glade.h:24
-msgid "_Use the same wallpaper on all desktops"
-msgstr "_Obwaliriro obwa buli awakolerwa bufaanagane"
+msgid "Center on the screen"
+msgstr "Kibeere mu mukkati g'olutimbe"
 
 #: ../data/ui/desktop-pref.glade.h:25
-msgid "_Wallpaper:"
-msgstr "_Ekifaananyi eky'oku bwaliriro:"
+msgid "Tile the image to fill the entire screen"
+msgstr "Yongerawo kopi z'ekifaananyi zimaleyo olutimbe"
 
 #: ../data/ui/pref.glade.h:1
-msgid "<b>Auto-mount</b>"
-msgstr "<b>Eby'okuwanga ebibondo ebipya ku sisitemu</b>"
+msgid "Opened in Current Tab"
+msgstr "Bubikkulibwenga ku ludda oluliwo"
 
 #: ../data/ui/pref.glade.h:2
+msgid "Opened in New Tab"
+msgstr "Bubikkulibwenga ku ludda olupya"
+
+#: ../data/ui/pref.glade.h:3
+msgid "Opened in New Window"
+msgstr "Bubikkulibwenga mu ddirisa ppya"
+
+#: ../data/ui/pref.glade.h:4
+msgid "Preferences"
+msgstr "Enteekateeka"
+
+#: ../data/ui/pref.glade.h:5
 msgid "<b>Behavior</b>"
 msgstr "<b>Enkola</b>"
 
-#: ../data/ui/pref.glade.h:3
-msgid "<b>Default View</b>"
-msgstr "<b>Endabika eya bulijjo</b>"
-
-#: ../data/ui/pref.glade.h:4
-msgid "<b>Directories Tree</b>"
-msgstr "<b>Enkwatagana y'amaterekero</b>"
-
-#: ../data/ui/pref.glade.h:5
-msgid "<b>Icons</b>"
-msgstr "<b>Obufaananyi obuyunzi</b>"
-
 #: ../data/ui/pref.glade.h:6
-msgid "<b>Programs</b>"
-msgstr "<b>Puloguramu</b>"
+msgid "_Open files with single click"
+msgstr "Fayir_o zibikkulire ku lukoona olumu"
 
 #: ../data/ui/pref.glade.h:7
-msgid "<b>Show in Places:</b>"
-msgstr "<b>Laga bino mu Ebifo:</b>"
-
-#: ../data/ui/pref.glade.h:8
-msgid "<b>User Interface</b>"
-msgstr "<b>Omukozesa bye yeyambisa</b>"
-
-#: ../data/ui/pref.glade.h:9
-msgid "A_rchiver integration:"
-msgstr "_Puloguramu enaapakiranga n'okupakulula fayiro:"
-
-#: ../data/ui/pref.glade.h:10
-msgid "Al_ways show full file names"
-msgstr "A_manya ga fayiro galabikenga mu bujjuvu"
-
-#: ../data/ui/pref.glade.h:11
-msgid "Al_ways show the tab bar"
-msgstr "Ol_ubaawo olw'emikonda bulijjo lulabikenga"
-
-#: ../data/ui/pref.glade.h:12
-msgid "App_lications"
-msgstr "Pu_loguramu"
-
-#: ../data/ui/pref.glade.h:13
-msgid "Ask"
-msgstr "Ebuuzenga ekiba kikolebwa"
-
-#: ../data/ui/pref.glade.h:14
-msgid "Auto (move if on the same FS, copy otherwise)"
-msgstr ""
-"Ekolebukozi (ebiri ku sisitem eya fayiro y'emu ebisimbulize, ebirala "
-"ekolengamu koppi)"
-
-#: ../data/ui/pref.glade.h:15
-msgid "Clos_e tab containing removable medium when it is unmounted"
-msgstr ""
-"Ebiter_eka data ebyetongovu bwe biwangulwanga ku kompyuta n'oludda mwe "
-"bibadde biragibwa luvengawo"
-
-#: ../data/ui/pref.glade.h:16
-msgid "Co_nfirm before deleting files"
-msgstr "S_ooka kukakasa nga fayiro egenda okugyibwawo"
-
-#: ../data/ui/pref.glade.h:17
-msgid "Compact View"
-msgstr "Mu bufunze"
-
-#: ../data/ui/pref.glade.h:18
-msgid "Confi_rm before moving files into \"trash bi_n\""
-msgstr "Soo_ka kukakasa nga fayiro egenda okutwalibwa mu \"bi_suulidwa\""
-
-#: ../data/ui/pref.glade.h:19
-msgid "Copy"
-msgstr "Koppa"
-
-#: ../data/ui/pref.glade.h:20
-msgid "Defaul_t drop action:"
-msgstr "Ekib_a kikolebwangawo nga otadde ky'ova kukulula:"
-
-#: ../data/ui/pref.glade.h:21
 msgid "Delay of auto-selection in single click mode (0 to disable)"
 msgstr ""
 "Akaseera akayitawo puloguramu eryoke ebeko ky'eronda (teekawo 0 ereme "
 "okulondanga)"
 
+#: ../data/ui/pref.glade.h:8
+msgid "Co_nfirm before deleting files"
+msgstr "S_ooka kukakasa nga fayiro egenda okugyibwawo"
+
+#: ../data/ui/pref.glade.h:9
+msgid "_Move deleted files to \"trash bin\" instead of erasing from disk"
+msgstr ""
+"_Fayiro ezigyidwawo zigendenga mu \"bisuulidwa\" mu kifo "
+"eky'okuzisiimuliraddala okuva ku disiki"
+
+#: ../data/ui/pref.glade.h:10
+msgid "_Erase files on removable media instead of \"trash bin\" creation"
+msgstr ""
+"_Fayiro ez'okubitereka data ebyetongovu zigyengawo mukifo eky'okubissa mu "
+"\"bisuulidwa\""
+
+#: ../data/ui/pref.glade.h:11
+msgid "Confi_rm before moving files into \"trash bi_n\""
+msgstr "Soo_ka kukakasa nga fayiro egenda okutwalibwa mu \"bi_suulidwa\""
+
+#: ../data/ui/pref.glade.h:12
+msgid "_Bookmarks:"
+msgstr "_Obukwatakifo:"
+
+#: ../data/ui/pref.glade.h:13
+msgid "Defaul_t drop action:"
+msgstr "Ekib_a kikolebwangawo nga otadde ky'ova kukulula:"
+
+#: ../data/ui/pref.glade.h:14
+msgid "_Unfold tab when files are dragged onto tab button"
+msgstr "Ol_udda lubikkukenga nga lusuulidwako fayiro"
+
+#: ../data/ui/pref.glade.h:15
+msgid "<b>Default View</b>"
+msgstr "<b>Endabika eya bulijjo</b>"
+
+#: ../data/ui/pref.glade.h:16
+msgid "Vie_w Mode:"
+msgstr "E_ndabika:"
+
+#: ../data/ui/pref.glade.h:17
+msgid "_General"
+msgstr "E_bitalibimu"
+
+#: ../data/ui/pref.glade.h:18
+msgid "<b>Icons</b>"
+msgstr "<b>Obufaananyi obuyunzi</b>"
+
+#: ../data/ui/pref.glade.h:19
+msgid "Size of small _icons:"
+msgstr "Eb_ipimo by'obufaananyi obuyunzi obutono:"
+
+#: ../data/ui/pref.glade.h:20
+msgid "Size of _big icons:"
+msgstr "Ebipimo _by'obufaananyi obuyunzi obunene:"
+
+#: ../data/ui/pref.glade.h:21
+msgid "Size of _thumbnails:"
+msgstr "Ebipimo _eby'obulozako bwa fayiro:"
+
 #: ../data/ui/pref.glade.h:22
-msgid "Des_ktop Folder"
-msgstr "Tere_kero Ly'awakolerwa"
+msgid "Size of side _pane icons:"
+msgstr "Ebi_pimo by'obufaananyi obuyunzi obw'omu kadirisa ak'okubbali:"
 
 #: ../data/ui/pref.glade.h:23
-msgid "Detailed List View"
-msgstr "Mu bujjuvu"
+msgid "_Show thumbnails of files"
+msgstr "_Ndaganga obulozako bwa fayiro"
 
 #: ../data/ui/pref.glade.h:24
+msgid "_Only show thumbnails for local files"
+msgstr "T_olaga obulozako bwa fayiro ezitali ku sisitemu eno"
+
+#: ../data/ui/pref.glade.h:25
 msgid "Do _not generate thumbnails for files exceeding this size:"
 msgstr "Fayiro _bw'esinga wano obunene tolaga akalozako:"
 
 #: ../data/ui/pref.glade.h:26
+msgid "<b>User Interface</b>"
+msgstr "<b>Omukozesa bye yeyambisa</b>"
+
+#: ../data/ui/pref.glade.h:27
+msgid "Us_e SI decimal prefixes instead of IEC binary prefixes"
+msgstr ""
+"Koz_esa obutandikwa obwa SI ennengakkumi mu kifo ky'obwa IEC ennengabbiri"
+
+#: ../data/ui/pref.glade.h:28
+msgid "Treat backup files as _hidden"
+msgstr "Koppi za fayiro ez'okwerinda _zikisibwenga"
+
+#: ../data/ui/pref.glade.h:29
+msgid "Al_ways show full file names"
+msgstr "A_manya ga fayiro galabikenga mu bujjuvu"
+
+#: ../data/ui/pref.glade.h:30
+msgid "_Display"
+msgstr "_Laga"
+
+#: ../data/ui/pref.glade.h:31
+msgid "Hide _folder content border"
+msgstr "Ekitundu _ekiraga ebiri mu tterekero kireme kubaako olusalosalo"
+
+#: ../data/ui/pref.glade.h:32
+msgid "Hide _side pane buttons"
+msgstr "Tolaga mapee_sa ag'oku kadirisa ak'okubbali"
+
+#: ../data/ui/pref.glade.h:33
+msgid "Hid_e 'Close tab' buttons"
+msgstr "Tola_ga amapeesa aga 'Gyawo oludda'"
+
+#: ../data/ui/pref.glade.h:34
+msgid "Al_ways show the tab bar"
+msgstr "Ol_ubaawo olw'emikonda bulijjo lulabikenga"
+
+#: ../data/ui/pref.glade.h:35
+msgid "<b>Directories Tree</b>"
+msgstr "<b>Enkwatagana y'amaterekero</b>"
+
+#: ../data/ui/pref.glade.h:36
+msgid "Hide e_xpander on empty or locked folder"
+msgstr ""
+"Amat_erekero amakalu n'agasibidwa galeme kubako akakonda ak'okulaga bigalimu"
+
+#: ../data/ui/pref.glade.h:37
+msgid "<b>Show in Places:</b>"
+msgstr "<b>Laga bino mu Ebifo:</b>"
+
+#: ../data/ui/pref.glade.h:38
+msgid "_Home Directory"
+msgstr "_Tterekero Ly'akawunti"
+
+#: ../data/ui/pref.glade.h:39
+msgid "Des_ktop Folder"
+msgstr "Tere_kero Ly'awakolerwa"
+
+#: ../data/ui/pref.glade.h:40
+msgid "App_lications"
+msgstr "Pu_loguramu"
+
+#: ../data/ui/pref.glade.h:41
+msgid "_Trash bin"
+msgstr "_Ebisuulidwa"
+
+#: ../data/ui/pref.glade.h:42
+msgid "_Layout"
+msgstr "_Entereeza"
+
+#: ../data/ui/pref.glade.h:43
+msgid "<b>Auto-mount</b>"
+msgstr "<b>Eby'okuwanga ebibondo ebipya ku sisitemu</b>"
+
+#: ../data/ui/pref.glade.h:44
+msgid "_Mount mountable volumes automatically on program startup"
+msgstr "_Puloguramu olutandika, sistemu yewangire ebibondo ebiwangika"
+
+#: ../data/ui/pref.glade.h:45
+msgid "Mo_unt removable media automatically when they are inserted"
+msgstr ""
+"Ebitereka data ebyetongovu ol_ubiyunga ku kompyuta, sisitemu ewange ebibondo "
+"byabyo"
+
+#: ../data/ui/pref.glade.h:46
+msgid "_Show available options for removable media when they are inserted"
+msgstr ""
+"Ebitereka data ebyetongovu bwe biyungibwanga ku kompyuta endagenga bye "
+"n_sobola okubikolako"
+
+#: ../data/ui/pref.glade.h:47
+msgid "_Open mounted removable media in new tab instead of new window"
+msgstr ""
+"_Ebitereka data ebyetongovu bwe biwangibwanga bibukkulibwenga mu ludda "
+"olupya mu kifo kya ddirisa ppya"
+
+#: ../data/ui/pref.glade.h:48
+msgid "Clos_e tab containing removable medium when it is unmounted"
+msgstr ""
+"Ebiter_eka data ebyetongovu bwe biwangulwanga ku kompyuta n'oludda mwe "
+"bibadde biragibwa luvengawo"
+
+#: ../data/ui/pref.glade.h:49
+msgid "_Volume Management"
+msgstr "_Enteekateeka y'ebibondo"
+
+#: ../data/ui/pref.glade.h:50
+msgid "<b>Programs</b>"
+msgstr "<b>Puloguramu</b>"
+
+#: ../data/ui/pref.glade.h:51
+msgid "_Terminal emulator:"
+msgstr "_Kika kya kiwandikiro:"
+
+#: ../data/ui/pref.glade.h:52
+msgid "_Switch user command:"
+msgstr "_Ekiragiro ekikyusa akawunti gy'okoleramu:"
+
+#: ../data/ui/pref.glade.h:54
 #, no-c-format
 msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
@@ -253,28 +375,17 @@ msgstr ""
 "akawunti gy'okoleramu. %s = kiragiro ky'oyagala kiyisibwa mu kiwandikiro oba "
 "nga otandise okukolera mu akawunti endala."
 
-#: ../data/ui/pref.glade.h:28
-msgid "Hid_e 'Close tab' buttons"
-msgstr "Tola_ga amapeesa aga 'Gyawo oludda'"
+#: ../data/ui/pref.glade.h:56
+msgid "A_rchiver integration:"
+msgstr "_Puloguramu enaapakiranga n'okupakulula fayiro:"
 
-#: ../data/ui/pref.glade.h:29
-msgid "Hide _folder content border"
-msgstr "Ekitundu _ekiraga ebiri mu tterekero kireme kubaako olusalosalo"
-
-#: ../data/ui/pref.glade.h:30
-msgid "Hide _side pane buttons"
-msgstr "Tolaga mapee_sa ag'oku kadirisa ak'okubbali"
-
-#: ../data/ui/pref.glade.h:31
-msgid "Hide e_xpander on empty or locked folder"
+#: ../data/ui/pref.glade.h:57
+msgid "_Use Application Startup Notify by default"
 msgstr ""
-"Amat_erekero amakalu n'agasibidwa galeme kubako akakonda ak'okulaga bigalimu"
+"_Puloguramu bwe'banga erina ekabonero aka yo akalaga nti etandika, ke "
+"kabanga kakola"
 
-#: ../data/ui/pref.glade.h:32
-msgid "Icon View"
-msgstr "Bufaananyi obuyunzi"
-
-#: ../data/ui/pref.glade.h:33
+#: ../data/ui/pref.glade.h:58
 msgid ""
 "If checked then use Startup Notify for application if another not stated "
 "explicitly.\n"
@@ -285,174 +396,63 @@ msgstr ""
 "Bw'oba tokironze puloguram etandika tekozesa akabonero aka Startup Notify "
 "okugyakonga ogiragidde."
 
-#: ../data/ui/pref.glade.h:35
-msgid "Mo_unt removable media automatically when they are inserted"
-msgstr ""
-"Ebitereka data ebyetongovu ol_ubiyunga ku kompyuta, sisitemu ewange ebibondo "
-"byabyo"
-
-#: ../data/ui/pref.glade.h:36
-msgid "Move"
-msgstr "Simbuliza"
-
-#: ../data/ui/pref.glade.h:37
-msgid "Opened in Current Tab"
-msgstr "Bubikkulibwenga ku ludda oluliwo"
-
-#: ../data/ui/pref.glade.h:38
-msgid "Opened in New Tab"
-msgstr "Bubikkulibwenga ku ludda olupya"
-
-#: ../data/ui/pref.glade.h:39
-msgid "Opened in New Window"
-msgstr "Bubikkulibwenga mu ddirisa ppya"
-
-#: ../data/ui/pref.glade.h:40
-msgid "Preferences"
-msgstr "Enteekateeka"
-
-#: ../data/ui/pref.glade.h:41
-msgid "Size of _big icons:"
-msgstr "Ebipimo _by'obufaananyi obuyunzi obunene:"
-
-#: ../data/ui/pref.glade.h:42
-msgid "Size of _thumbnails:"
-msgstr "Ebipimo _eby'obulozako bwa fayiro:"
-
-#: ../data/ui/pref.glade.h:43
-msgid "Size of side _pane icons:"
-msgstr "Ebi_pimo by'obufaananyi obuyunzi obw'omu kadirisa ak'okubbali:"
-
-#: ../data/ui/pref.glade.h:44
-msgid "Size of small _icons:"
-msgstr "Eb_ipimo by'obufaananyi obuyunzi obutono:"
-
-#: ../data/ui/pref.glade.h:45
-msgid "Thumbnail View"
-msgstr "Kulozako kwa fayiro"
-
-#: ../data/ui/pref.glade.h:46
-msgid "Treat backup files as _hidden"
-msgstr "Koppi za fayiro ez'okwerinda _zikisibwenga"
-
-#: ../data/ui/pref.glade.h:47
-msgid "Us_e SI decimal prefixes instead of IEC binary prefixes"
-msgstr ""
-"Koz_esa obutandikwa obwa SI ennengakkumi mu kifo ky'obwa IEC ennengabbiri"
-
-#: ../data/ui/pref.glade.h:48
-msgid "Vie_w Mode:"
-msgstr "E_ndabika:"
-
-#: ../data/ui/pref.glade.h:49
+#: ../data/ui/pref.glade.h:60
 msgid "_Advanced"
 msgstr "_Ebyetaagisa bumanyirivu"
 
-#: ../data/ui/pref.glade.h:50
-msgid "_Bookmarks:"
-msgstr "_Obukwatakifo:"
-
-#: ../data/ui/pref.glade.h:51
-msgid "_Display"
-msgstr "_Laga"
-
-#: ../data/ui/pref.glade.h:52
-msgid "_Erase files on removable media instead of \"trash bin\" creation"
-msgstr ""
-"_Fayiro ez'okubitereka data ebyetongovu zigyengawo mukifo eky'okubissa mu "
-"\"bisuulidwa\""
-
-#: ../data/ui/pref.glade.h:53
-msgid "_General"
-msgstr "E_bitalibimu"
-
-#: ../data/ui/pref.glade.h:54
-msgid "_Home Directory"
-msgstr "_Tterekero Ly'akawunti"
-
-#: ../data/ui/pref.glade.h:55
-msgid "_Layout"
-msgstr "_Entereeza"
-
-#: ../data/ui/pref.glade.h:56
-msgid "_Mount mountable volumes automatically on program startup"
-msgstr "_Puloguramu olutandika, sistemu yewangire ebibondo ebiwangika"
-
-#: ../data/ui/pref.glade.h:57
-msgid "_Move deleted files to \"trash bin\" instead of erasing from disk"
-msgstr ""
-"_Fayiro ezigyidwawo zigendenga mu \"bisuulidwa\" mu kifo "
-"eky'okuzisiimuliraddala okuva ku disiki"
-
-#: ../data/ui/pref.glade.h:58
-msgid "_Only show thumbnails for local files"
-msgstr "T_olaga obulozako bwa fayiro ezitali ku sisitemu eno"
-
-#: ../data/ui/pref.glade.h:59
-msgid "_Open files with single click"
-msgstr "Fayir_o zibikkulire ku lukoona olumu"
-
-#: ../data/ui/pref.glade.h:60
-msgid "_Open mounted removable media in new tab instead of new window"
-msgstr ""
-"_Ebitereka data ebyetongovu bwe biwangibwanga bibukkulibwenga mu ludda "
-"olupya mu kifo kya ddirisa ppya"
-
 #: ../data/ui/pref.glade.h:61
-msgid "_Show available options for removable media when they are inserted"
+msgid "Auto (move if on the same FS, copy otherwise)"
 msgstr ""
-"Ebitereka data ebyetongovu bwe biyungibwanga ku kompyuta endagenga bye "
-"n_sobola okubikolako"
+"Ekolebukozi (ebiri ku sisitem eya fayiro y'emu ebisimbulize, ebirala "
+"ekolengamu koppi)"
 
 #: ../data/ui/pref.glade.h:62
-msgid "_Show thumbnails of files"
-msgstr "_Ndaganga obulozako bwa fayiro"
+msgid "Copy"
+msgstr "Koppa"
 
 #: ../data/ui/pref.glade.h:63
-msgid "_Switch user command:"
-msgstr "_Ekiragiro ekikyusa akawunti gy'okoleramu:"
+msgid "Move"
+msgstr "Simbuliza"
 
 #: ../data/ui/pref.glade.h:64
-msgid "_Terminal emulator:"
-msgstr "_Kika kya kiwandikiro:"
+msgid "Ask"
+msgstr "Ebuuzenga ekiba kikolebwa"
 
 #: ../data/ui/pref.glade.h:65
-msgid "_Trash bin"
-msgstr "_Ebisuulidwa"
+msgid "Icon View"
+msgstr "Bufaananyi obuyunzi"
 
 #: ../data/ui/pref.glade.h:66
-msgid "_Unfold tab when files are dragged onto tab button"
-msgstr "Ol_udda lubikkukenga nga lusuulidwako fayiro"
+msgid "Compact View"
+msgstr "Mu bufunze"
 
 #: ../data/ui/pref.glade.h:67
-msgid "_Use Application Startup Notify by default"
-msgstr ""
-"_Puloguramu bwe'banga erina ekabonero aka yo akalaga nti etandika, ke "
-"kabanga kakola"
+msgid "Thumbnail View"
+msgstr "Kulozako kwa fayiro"
 
 #: ../data/ui/pref.glade.h:68
-msgid "_Volume Management"
-msgstr "_Enteekateeka y'ebibondo"
+msgid "Detailed List View"
+msgstr "Mu bujjuvu"
 
 #: ../data/ui/autorun.glade.h:1
-msgid "<b>Removable medium is inserted</b>"
-msgstr "<b>Kompyuta eyungidwako ekitereka data ekyetongovu</b>"
-
-#: ../data/ui/autorun.glade.h:2
-msgid "Detecting..."
-msgstr "Nkebera..."
-
-#: ../data/ui/autorun.glade.h:3
-msgid "Please select the action you want to perform:"
-msgstr "Londako kyoyagala okukola:"
-
-#: ../data/ui/autorun.glade.h:4
 msgid "Removable medium is inserted"
 msgstr "Kompyuta eyungidwako ekitereka data ekyetongovu"
 
-#: ../data/ui/autorun.glade.h:5
+#: ../data/ui/autorun.glade.h:2
+msgid "<b>Removable medium is inserted</b>"
+msgstr "<b>Kompyuta eyungidwako ekitereka data ekyetongovu</b>"
+
+#: ../data/ui/autorun.glade.h:3
 msgid "Type of medium:"
 msgstr "Kika ky'ekitereka data:"
+
+#: ../data/ui/autorun.glade.h:4
+msgid "Detecting..."
+msgstr "Nkebera..."
+
+#: ../data/ui/autorun.glade.h:5
+msgid "Please select the action you want to perform:"
+msgstr "Londako kyoyagala okukola:"
 
 #: ../src/volume-manager.c:164
 msgid "Removable Disk"
@@ -732,15 +732,15 @@ msgstr "Enkwatagana y'amaterekero"
 msgid "Remote"
 msgstr "Ku kompyuta ndala"
 
-#: ../src/main-win.c:544
+#: ../src/main-win.c:542
 msgid "You are in super user mode"
 msgstr "Kati okozesa buyinza bwa muteesiteesi"
 
-#: ../src/main-win.c:715 ../src/main-win.c:723
+#: ../src/main-win.c:713 ../src/main-win.c:721
 msgid "Keyboard navigation"
 msgstr "Amapeesa agakutambuliza mu puloguramu eno"
 
-#: ../src/main-win.c:717
+#: ../src/main-win.c:715
 msgid ""
 "Tab: cycle focus Folder View -> Side Pane -> Tools Bar\n"
 "Shift+Tab: cycle focus Tools Bar -> Side Pane -> Folder View\n"
@@ -764,11 +764,11 @@ msgstr ""
 "Aga Ctrl + L oba Alt + D:\n"
 "Gakutwala w'owandikira amakubo agatuuka ku fayiro"
 
-#: ../src/main-win.c:753
+#: ../src/main-win.c:751
 msgid "Switch user command is not set."
 msgstr "Totegese kiragiro ekikyusa akawunti gy'okoleramu."
 
-#: ../src/main-win.c:1108
+#: ../src/main-win.c:1106
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -779,7 +779,7 @@ msgstr ""
 "'%s'\n"
 "Wandika erinnya ly'akakwatakifo ka kyo:"
 
-#: ../src/main-win.c:1112
+#: ../src/main-win.c:1110
 msgid "Add to Bookmarks"
 msgstr "Kwata ekifo kifo kino"
 
@@ -872,26 +872,26 @@ msgstr "Totegese kika kya kiwandikiro."
 msgid "Open in New T_ab"
 msgstr "Bikkulira ku Ludda Ol_upya"
 
-#: ../src/tab-page.c:244
+#: ../src/tab-page.c:245
 #, c-format
 msgid "%d item selected"
 msgid_plural "%d items selected"
 msgstr[0] "Ekintu %d kirondedwa"
 msgstr[1] "Ebintu %d birondedwa"
 
-#: ../src/tab-page.c:399
+#: ../src/tab-page.c:400
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Ekifo ekisigadde mu kibondo: %s (Kigendamu: %s)"
 
-#: ../src/tab-page.c:419
+#: ../src/tab-page.c:420
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] "Ekintu %d"
 msgstr[1] "Ebintu %d"
 
-#: ../src/tab-page.c:420
+#: ../src/tab-page.c:421
 #, c-format
 msgid " (%d hidden)"
 msgid_plural " (%d hidden)"
@@ -899,18 +899,18 @@ msgstr[0] " (%d ekikise)"
 msgstr[1] " (%d ebikise)"
 
 #: ../data/pcmanfm.desktop.in.h:1
-msgid "Browse the file system and manage the files"
-msgstr "Lambula n'okuteekateeka fayiro eziri ku sisitemu yonna"
+msgid "File Manager PCManFM"
+msgstr "Kiteekateekafayiro ekya PCManFM"
 
 #: ../data/pcmanfm.desktop.in.h:2
 msgid "File Manager"
 msgstr "Gulawo Ekiteekateekafayiro"
 
 #: ../data/pcmanfm.desktop.in.h:3
-msgid "File Manager PCManFM"
-msgstr "Kiteekateekafayiro ekya PCManFM"
+msgid "Browse the file system and manage the files"
+msgstr "Lambula n'okuteekateeka fayiro eziri ku sisitemu yonna"
 
-#: ../data/pcmanfm-desktop-pref.desktop.in.h:1
+#: ../data/pcmanfm-desktop-pref.desktop.in.h:2
 msgid "Change desktop wallpapers and behavior of desktop manager"
 msgstr ""
 "Teekateka endabika y'obwaliriro bw'awakolerwa n'enkola y'ekiruŋamya "

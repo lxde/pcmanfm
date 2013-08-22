@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-08-12 14:50+0300\n"
+"POT-Creation-Date: 2013-08-22 20:34+0200\n"
 "PO-Revision-Date: 2011-08-18 01:24+0400\n"
 "Last-Translator: Ainur Shakirov <ainur.shakirov.tt@gmail.com>\n"
 "Language: tt_RU\n"
@@ -35,230 +35,366 @@ msgstr ""
 msgid "translator-credits"
 msgstr "Ainur Shakirov <ainur.shakirov.tt@gmail.com>"
 
-#: ../data/ui/desktop-pref.glade.h:1
-msgid "<b>Background</b>"
-msgstr "<b>Җирлек</b>"
-
-#: ../data/ui/desktop-pref.glade.h:2
-msgid "<b>Show desktop icons</b>"
-msgstr "<b>Эш өстәлендә билгечекләрне күрсәтергә</b>"
-
-#: ../data/ui/desktop-pref.glade.h:3
-msgid "<b>Text</b>"
-msgstr "<b>Текст</b>"
-
-#: ../data/ui/desktop-pref.glade.h:4
-#, fuzzy
-msgid "Ad_vanced"
-msgstr "Өстәмә көйләүләр"
-
-#: ../data/ui/desktop-pref.glade.h:5
-#, fuzzy
-msgid "C_olor of label text:"
-msgstr "Файл сылтаманың текст төсе:"
-
-#: ../data/ui/desktop-pref.glade.h:6
-msgid "Center on the screen"
-msgstr "Экранның уртасы буенча"
-
-#: ../data/ui/desktop-pref.glade.h:7
-#, fuzzy
-msgid "Color of _shadow:"
-msgstr "Күләгә төсе:"
-
-#: ../data/ui/desktop-pref.glade.h:8 ../src/desktop-ui.c:34
-#: ../data/pcmanfm-desktop-pref.desktop.in.h:2
+#: ../data/ui/desktop-pref.glade.h:1 ../src/desktop-ui.c:34
+#: ../data/pcmanfm-desktop-pref.desktop.in.h:1
 msgid "Desktop Preferences"
 msgstr "Эш өстәле көйләүләре"
 
-#: ../data/ui/desktop-pref.glade.h:9
-msgid "Fill with background color only"
-msgstr "Җирлек төсе белән генә буяу"
+#: ../data/ui/desktop-pref.glade.h:2
+msgid "<b>Background</b>"
+msgstr "<b>Җирлек</b>"
 
-#: ../data/ui/desktop-pref.glade.h:10
+#: ../data/ui/desktop-pref.glade.h:3
+#, fuzzy
+msgid "_Wallpaper:"
+msgstr "Обой:"
+
+#: ../data/ui/desktop-pref.glade.h:4
 msgid "Please select an image file"
 msgstr "Рәсем файлын сайлагыз"
 
-#: ../data/ui/desktop-pref.glade.h:11
-#, fuzzy
-msgid "S_how icons of volumes on desktop"
-msgstr "Эш өстәлендә диск билгечекләрен күрсәтү"
+#: ../data/ui/desktop-pref.glade.h:5
+msgid "_Use the same wallpaper on all desktops"
+msgstr ""
 
-#: ../data/ui/desktop-pref.glade.h:12
-#, fuzzy
-msgid "Show \"_My Computer\" icon on desktop"
-msgstr "Эш өстәлендә \"Минем компьютер\" билгечеген күрсәтү"
-
-#: ../data/ui/desktop-pref.glade.h:13
-#, fuzzy
-msgid "Show \"_Trash Bin\" icon on desktop"
-msgstr "Эш өстәлендә \"Чүп чиләге\" билгечеген күрсәтү"
-
-#: ../data/ui/desktop-pref.glade.h:14
-msgid "Stretch to fill the entire screen"
-msgstr "Бөтен экранга тарттыру"
-
-#: ../data/ui/desktop-pref.glade.h:15
-msgid "Stretch to fit the screen"
-msgstr "Экран зурлыгы буенча тарттыру"
-
-#: ../data/ui/desktop-pref.glade.h:16
-msgid "Tile the image to fill the entire screen"
-msgstr "Бөтен экранга рәсем белән таш итеп җәю"
-
-#: ../data/ui/desktop-pref.glade.h:17
-#, fuzzy
-msgid "Wallpaper _mode:"
-msgstr "Обойның күрсәтү тәртибе:"
-
-#: ../data/ui/desktop-pref.glade.h:18
-#, fuzzy
-msgid "_Appearance"
-msgstr "Тышкы кыяфәт"
-
-#: ../data/ui/desktop-pref.glade.h:19
+#: ../data/ui/desktop-pref.glade.h:6
 #, fuzzy
 msgid "_Background color:"
 msgstr "Җирлекнең төсе:"
 
-#: ../data/ui/desktop-pref.glade.h:20
+#: ../data/ui/desktop-pref.glade.h:7
 #, fuzzy
-msgid "_Desktop Icons"
-msgstr "Эш өстәле билгечекләре"
+msgid "Wallpaper _mode:"
+msgstr "Обойның күрсәтү тәртибе:"
 
-#: ../data/ui/desktop-pref.glade.h:21
+#: ../data/ui/desktop-pref.glade.h:8
+msgid "<b>Text</b>"
+msgstr "<b>Текст</b>"
+
+#: ../data/ui/desktop-pref.glade.h:9
 #, fuzzy
 msgid "_Font of label text:"
 msgstr "Файл сылтамасының текст хәрефе:"
 
-#: ../data/ui/desktop-pref.glade.h:22
+#: ../data/ui/desktop-pref.glade.h:10
+#, fuzzy
+msgid "C_olor of label text:"
+msgstr "Файл сылтаманың текст төсе:"
+
+#: ../data/ui/desktop-pref.glade.h:11
+#, fuzzy
+msgid "Color of _shadow:"
+msgstr "Күләгә төсе:"
+
+#: ../data/ui/desktop-pref.glade.h:12
+#, fuzzy
+msgid "_Appearance"
+msgstr "Тышкы кыяфәт"
+
+#: ../data/ui/desktop-pref.glade.h:13
+msgid "<b>Show desktop icons</b>"
+msgstr "<b>Эш өстәлендә билгечекләрне күрсәтергә</b>"
+
+#: ../data/ui/desktop-pref.glade.h:14
 #, fuzzy
 msgid "_Show \"My Documents\" icon on desktop"
 msgstr "Эш өстәлендә \"Минем документлар\" билгечеген күрсәтү"
 
-#: ../data/ui/desktop-pref.glade.h:23
+#: ../data/ui/desktop-pref.glade.h:15
+#, fuzzy
+msgid "Show \"_My Computer\" icon on desktop"
+msgstr "Эш өстәлендә \"Минем компьютер\" билгечеген күрсәтү"
+
+#: ../data/ui/desktop-pref.glade.h:16
+#, fuzzy
+msgid "Show \"_Trash Bin\" icon on desktop"
+msgstr "Эш өстәлендә \"Чүп чиләге\" билгечеген күрсәтү"
+
+#: ../data/ui/desktop-pref.glade.h:17
+#, fuzzy
+msgid "S_how icons of volumes on desktop"
+msgstr "Эш өстәлендә диск билгечекләрен күрсәтү"
+
+#: ../data/ui/desktop-pref.glade.h:18
+#, fuzzy
+msgid "_Desktop Icons"
+msgstr "Эш өстәле билгечекләре"
+
+#: ../data/ui/desktop-pref.glade.h:19
 #, fuzzy
 msgid "_Show menus provided by window managers when desktop is clicked"
 msgstr ""
 "Эш өстәленә басуга эш өстәле белән идарә итүченең контекст менюсын күрсәтү"
 
+#: ../data/ui/desktop-pref.glade.h:20
+#, fuzzy
+msgid "Ad_vanced"
+msgstr "Өстәмә көйләүләр"
+
+#: ../data/ui/desktop-pref.glade.h:21
+msgid "Fill with background color only"
+msgstr "Җирлек төсе белән генә буяу"
+
+#: ../data/ui/desktop-pref.glade.h:22
+msgid "Stretch to fill the entire screen"
+msgstr "Бөтен экранга тарттыру"
+
+#: ../data/ui/desktop-pref.glade.h:23
+msgid "Stretch to fit the screen"
+msgstr "Экран зурлыгы буенча тарттыру"
+
 #: ../data/ui/desktop-pref.glade.h:24
-msgid "_Use the same wallpaper on all desktops"
-msgstr ""
+msgid "Center on the screen"
+msgstr "Экранның уртасы буенча"
 
 #: ../data/ui/desktop-pref.glade.h:25
-#, fuzzy
-msgid "_Wallpaper:"
-msgstr "Обой:"
+msgid "Tile the image to fill the entire screen"
+msgstr "Бөтен экранга рәсем белән таш итеп җәю"
 
 #: ../data/ui/pref.glade.h:1
-msgid "<b>Auto-mount</b>"
-msgstr "<b>Автоматик кору</b>"
+msgid "Opened in Current Tab"
+msgstr "Бу өстәмә биттә ачу"
 
 #: ../data/ui/pref.glade.h:2
+msgid "Opened in New Tab"
+msgstr "Яңа өстәмә биттә ачу"
+
+#: ../data/ui/pref.glade.h:3
+msgid "Opened in New Window"
+msgstr "Яңа тәрәзәдә ачу"
+
+#: ../data/ui/pref.glade.h:4
+msgid "Preferences"
+msgstr "Көйләүләр"
+
+#: ../data/ui/pref.glade.h:5
 msgid "<b>Behavior</b>"
 msgstr "<b>Гадәт</b>"
 
-#: ../data/ui/pref.glade.h:3
-msgid "<b>Default View</b>"
-msgstr "<b>Үрнәкле кыяфәт</b>"
-
-#: ../data/ui/pref.glade.h:4
-#, fuzzy
-msgid "<b>Directories Tree</b>"
-msgstr "Каталоглар агачы"
-
-#: ../data/ui/pref.glade.h:5
-msgid "<b>Icons</b>"
-msgstr "<b>Билгечекләр</b>"
-
 #: ../data/ui/pref.glade.h:6
-msgid "<b>Programs</b>"
-msgstr "<b>Кушымталар</b>"
+#, fuzzy
+msgid "_Open files with single click"
+msgstr "Файлларны бер басудан ачырга"
 
 #: ../data/ui/pref.glade.h:7
-#, fuzzy
-msgid "<b>Show in Places:</b>"
-msgstr "<b>Эш өстәлендә билгечекләрне күрсәтергә</b>"
+msgid "Delay of auto-selection in single click mode (0 to disable)"
+msgstr ""
 
 #: ../data/ui/pref.glade.h:8
-msgid "<b>User Interface</b>"
-msgstr "<b>Кулланучы интерфейсы</b>"
-
-#: ../data/ui/pref.glade.h:9
-#, fuzzy
-msgid "A_rchiver integration:"
-msgstr "Кысучы:"
-
-#: ../data/ui/pref.glade.h:10
-#, fuzzy
-msgid "Al_ways show full file names"
-msgstr "Өстәмә бит панелен һәрвакыт күрсәтү"
-
-#: ../data/ui/pref.glade.h:11
-#, fuzzy
-msgid "Al_ways show the tab bar"
-msgstr "Өстәмә бит панелен һәрвакыт күрсәтү"
-
-#: ../data/ui/pref.glade.h:12
-#, fuzzy
-msgid "App_lications"
-msgstr "Кушымталар"
-
-#: ../data/ui/pref.glade.h:13
-msgid "Ask"
-msgstr ""
-
-#: ../data/ui/pref.glade.h:14
-msgid "Auto (move if on the same FS, copy otherwise)"
-msgstr ""
-
-#: ../data/ui/pref.glade.h:15
-#, fuzzy
-msgid "Clos_e tab containing removable medium when it is unmounted"
-msgstr "Тоташтырылган алынмалы җайланмалар өчен булган көйләүләрне күрсәтү"
-
-#: ../data/ui/pref.glade.h:16
 #, fuzzy
 msgid "Co_nfirm before deleting files"
 msgstr "Файлны бетерү алдыннан раслауны сорау"
 
-#: ../data/ui/pref.glade.h:17
-msgid "Compact View"
-msgstr "Җыйнак кыяфәт"
+#: ../data/ui/pref.glade.h:9
+#, fuzzy
+msgid "_Move deleted files to \"trash bin\" instead of erasing from disk"
+msgstr "Бетерә торган файлларны юк итү урынына «чүп чиләгенә» күчерергә"
 
-#: ../data/ui/pref.glade.h:18
+#: ../data/ui/pref.glade.h:10
+msgid "_Erase files on removable media instead of \"trash bin\" creation"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:11
 #, fuzzy
 msgid "Confi_rm before moving files into \"trash bi_n\""
 msgstr "Файлны бетерү алдыннан раслауны сорау"
 
-#: ../data/ui/pref.glade.h:19
-msgid "Copy"
-msgstr ""
+#: ../data/ui/pref.glade.h:12
+#, fuzzy
+msgid "_Bookmarks:"
+msgstr "Кыстыргычлар:"
 
-#: ../data/ui/pref.glade.h:20
+#: ../data/ui/pref.glade.h:13
 msgid "Defaul_t drop action:"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:21
-msgid "Delay of auto-selection in single click mode (0 to disable)"
+#: ../data/ui/pref.glade.h:14
+msgid "_Unfold tab when files are dragged onto tab button"
 msgstr ""
+
+#: ../data/ui/pref.glade.h:15
+msgid "<b>Default View</b>"
+msgstr "<b>Үрнәкле кыяфәт</b>"
+
+#: ../data/ui/pref.glade.h:16
+#, fuzzy
+msgid "Vie_w Mode:"
+msgstr "Күрсәтү тәртибе:"
+
+#: ../data/ui/pref.glade.h:17
+#, fuzzy
+msgid "_General"
+msgstr "_Төп"
+
+#: ../data/ui/pref.glade.h:18
+msgid "<b>Icons</b>"
+msgstr "<b>Билгечекләр</b>"
+
+#: ../data/ui/pref.glade.h:19
+#, fuzzy
+msgid "Size of small _icons:"
+msgstr "Кече билгечек зурлыгы:"
+
+#: ../data/ui/pref.glade.h:20
+#, fuzzy
+msgid "Size of _big icons:"
+msgstr "Зур билгечек зурлыгы:"
+
+#: ../data/ui/pref.glade.h:21
+#, fuzzy
+msgid "Size of _thumbnails:"
+msgstr "Кече рәсем зурлыгы:"
 
 #: ../data/ui/pref.glade.h:22
 #, fuzzy
-msgid "Des_ktop Folder"
-msgstr "Эш өстәле каталогы"
+msgid "Size of side _pane icons:"
+msgstr "Ян панель билгечек зурлыгы:"
 
 #: ../data/ui/pref.glade.h:23
-msgid "Detailed List View"
-msgstr "Җентекле исемлек"
+#, fuzzy
+msgid "_Show thumbnails of files"
+msgstr "Кечерәсемнәрне күрсәтергә"
 
 #: ../data/ui/pref.glade.h:24
+#, fuzzy
+msgid "_Only show thumbnails for local files"
+msgstr "Кечерәсемнәрне локаль файллар өчен генә күрсәтергә"
+
+#: ../data/ui/pref.glade.h:25
 #, fuzzy
 msgid "Do _not generate thumbnails for files exceeding this size:"
 msgstr "Моннан зуррак файллар өчен кече рәсемне чагылдырмаска:"
 
 #: ../data/ui/pref.glade.h:26
+msgid "<b>User Interface</b>"
+msgstr "<b>Кулланучы интерфейсы</b>"
+
+#: ../data/ui/pref.glade.h:27
+#, fuzzy
+msgid "Us_e SI decimal prefixes instead of IEC binary prefixes"
+msgstr ""
+"IEC алкушымчалар урынына СИ системаның унарлы алкушымчаларын кулланырга"
+
+#: ../data/ui/pref.glade.h:28
+msgid "Treat backup files as _hidden"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:29
+#, fuzzy
+msgid "Al_ways show full file names"
+msgstr "Өстәмә бит панелен һәрвакыт күрсәтү"
+
+#: ../data/ui/pref.glade.h:30
+#, fuzzy
+msgid "_Display"
+msgstr "_Экран"
+
+#: ../data/ui/pref.glade.h:31
+#, fuzzy
+msgid "Hide _folder content border"
+msgstr "Каталогның эчтәлек чиген качыру"
+
+#: ../data/ui/pref.glade.h:32
+#, fuzzy
+msgid "Hide _side pane buttons"
+msgstr "Панельнең ян төймәләрен качыру"
+
+#: ../data/ui/pref.glade.h:33
+#, fuzzy
+msgid "Hid_e 'Close tab' buttons"
+msgstr "«Өстәмә битне ябу» төймәсен качыру"
+
+#: ../data/ui/pref.glade.h:34
+#, fuzzy
+msgid "Al_ways show the tab bar"
+msgstr "Өстәмә бит панелен һәрвакыт күрсәтү"
+
+#: ../data/ui/pref.glade.h:35
+#, fuzzy
+msgid "<b>Directories Tree</b>"
+msgstr "Каталоглар агачы"
+
+#: ../data/ui/pref.glade.h:36
+msgid "Hide e_xpander on empty or locked folder"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:37
+#, fuzzy
+msgid "<b>Show in Places:</b>"
+msgstr "<b>Эш өстәлендә билгечекләрне күрсәтергә</b>"
+
+#: ../data/ui/pref.glade.h:38
+#, fuzzy
+msgid "_Home Directory"
+msgstr "Каталоглар агачы"
+
+#: ../data/ui/pref.glade.h:39
+#, fuzzy
+msgid "Des_ktop Folder"
+msgstr "Эш өстәле каталогы"
+
+#: ../data/ui/pref.glade.h:40
+#, fuzzy
+msgid "App_lications"
+msgstr "Кушымталар"
+
+#: ../data/ui/pref.glade.h:41
+#, fuzzy
+msgid "_Trash bin"
+msgstr "Чүп чиләге"
+
+#: ../data/ui/pref.glade.h:42
+msgid "_Layout"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:43
+msgid "<b>Auto-mount</b>"
+msgstr "<b>Автоматик кору</b>"
+
+#: ../data/ui/pref.glade.h:44
+#, fuzzy
+msgid "_Mount mountable volumes automatically on program startup"
+msgstr "Корыла торган дискларны кушымта җибәрелү вакытында автоматик кору"
+
+#: ../data/ui/pref.glade.h:45
+#, fuzzy
+msgid "Mo_unt removable media automatically when they are inserted"
+msgstr "Алынмалы җайланмаларны тоташтырган вакытта автоматик кору"
+
+#: ../data/ui/pref.glade.h:46
+#, fuzzy
+msgid "_Show available options for removable media when they are inserted"
+msgstr "Тоташтырылган алынмалы җайланмалар өчен булган көйләүләрне күрсәтү"
+
+#: ../data/ui/pref.glade.h:47
+msgid "_Open mounted removable media in new tab instead of new window"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:48
+#, fuzzy
+msgid "Clos_e tab containing removable medium when it is unmounted"
+msgstr "Тоташтырылган алынмалы җайланмалар өчен булган көйләүләрне күрсәтү"
+
+#: ../data/ui/pref.glade.h:49
+#, fuzzy
+msgid "_Volume Management"
+msgstr "_Дисклар белән идарә итү"
+
+#: ../data/ui/pref.glade.h:50
+msgid "<b>Programs</b>"
+msgstr "<b>Кушымталар</b>"
+
+#: ../data/ui/pref.glade.h:51
+#, fuzzy
+msgid "_Terminal emulator:"
+msgstr "Терминал эмуляторы:"
+
+#: ../data/ui/pref.glade.h:52
+#, fuzzy
+msgid "_Switch user command:"
+msgstr "Икенче кулланучыга күчерүче команда:"
+
+#: ../data/ui/pref.glade.h:54
 #, no-c-format
 msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
@@ -268,213 +404,77 @@ msgstr ""
 "«gksu %s».\n"
 "%s=терминал яки su аша сез җибәрергә теләгән команда."
 
-#: ../data/ui/pref.glade.h:28
+#: ../data/ui/pref.glade.h:56
 #, fuzzy
-msgid "Hid_e 'Close tab' buttons"
-msgstr "«Өстәмә битне ябу» төймәсен качыру"
+msgid "A_rchiver integration:"
+msgstr "Кысучы:"
 
-#: ../data/ui/pref.glade.h:29
-#, fuzzy
-msgid "Hide _folder content border"
-msgstr "Каталогның эчтәлек чиген качыру"
-
-#: ../data/ui/pref.glade.h:30
-#, fuzzy
-msgid "Hide _side pane buttons"
-msgstr "Панельнең ян төймәләрен качыру"
-
-#: ../data/ui/pref.glade.h:31
-msgid "Hide e_xpander on empty or locked folder"
+#: ../data/ui/pref.glade.h:57
+msgid "_Use Application Startup Notify by default"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:32
-msgid "Icon View"
-msgstr "Билгечекләр"
-
-#: ../data/ui/pref.glade.h:33
+#: ../data/ui/pref.glade.h:58
 msgid ""
 "If checked then use Startup Notify for application if another not stated "
 "explicitly.\n"
 "If unchecked then use Startup Notify only if that is defined for application."
 msgstr ""
 
-#: ../data/ui/pref.glade.h:35
-#, fuzzy
-msgid "Mo_unt removable media automatically when they are inserted"
-msgstr "Алынмалы җайланмаларны тоташтырган вакытта автоматик кору"
-
-#: ../data/ui/pref.glade.h:36
-msgid "Move"
-msgstr ""
-
-#: ../data/ui/pref.glade.h:37
-msgid "Opened in Current Tab"
-msgstr "Бу өстәмә биттә ачу"
-
-#: ../data/ui/pref.glade.h:38
-msgid "Opened in New Tab"
-msgstr "Яңа өстәмә биттә ачу"
-
-#: ../data/ui/pref.glade.h:39
-msgid "Opened in New Window"
-msgstr "Яңа тәрәзәдә ачу"
-
-#: ../data/ui/pref.glade.h:40
-msgid "Preferences"
-msgstr "Көйләүләр"
-
-#: ../data/ui/pref.glade.h:41
-#, fuzzy
-msgid "Size of _big icons:"
-msgstr "Зур билгечек зурлыгы:"
-
-#: ../data/ui/pref.glade.h:42
-#, fuzzy
-msgid "Size of _thumbnails:"
-msgstr "Кече рәсем зурлыгы:"
-
-#: ../data/ui/pref.glade.h:43
-#, fuzzy
-msgid "Size of side _pane icons:"
-msgstr "Ян панель билгечек зурлыгы:"
-
-#: ../data/ui/pref.glade.h:44
-#, fuzzy
-msgid "Size of small _icons:"
-msgstr "Кече билгечек зурлыгы:"
-
-#: ../data/ui/pref.glade.h:45
-msgid "Thumbnail View"
-msgstr "Кечерәсемнәр"
-
-#: ../data/ui/pref.glade.h:46
-msgid "Treat backup files as _hidden"
-msgstr ""
-
-#: ../data/ui/pref.glade.h:47
-#, fuzzy
-msgid "Us_e SI decimal prefixes instead of IEC binary prefixes"
-msgstr ""
-"IEC алкушымчалар урынына СИ системаның унарлы алкушымчаларын кулланырга"
-
-#: ../data/ui/pref.glade.h:48
-#, fuzzy
-msgid "Vie_w Mode:"
-msgstr "Күрсәтү тәртибе:"
-
-#: ../data/ui/pref.glade.h:49
+#: ../data/ui/pref.glade.h:60
 msgid "_Advanced"
 msgstr "_Өстәмә"
 
-#: ../data/ui/pref.glade.h:50
-#, fuzzy
-msgid "_Bookmarks:"
-msgstr "Кыстыргычлар:"
-
-#: ../data/ui/pref.glade.h:51
-#, fuzzy
-msgid "_Display"
-msgstr "_Экран"
-
-#: ../data/ui/pref.glade.h:52
-msgid "_Erase files on removable media instead of \"trash bin\" creation"
-msgstr ""
-
-#: ../data/ui/pref.glade.h:53
-#, fuzzy
-msgid "_General"
-msgstr "_Төп"
-
-#: ../data/ui/pref.glade.h:54
-#, fuzzy
-msgid "_Home Directory"
-msgstr "Каталоглар агачы"
-
-#: ../data/ui/pref.glade.h:55
-msgid "_Layout"
-msgstr ""
-
-#: ../data/ui/pref.glade.h:56
-#, fuzzy
-msgid "_Mount mountable volumes automatically on program startup"
-msgstr "Корыла торган дискларны кушымта җибәрелү вакытында автоматик кору"
-
-#: ../data/ui/pref.glade.h:57
-#, fuzzy
-msgid "_Move deleted files to \"trash bin\" instead of erasing from disk"
-msgstr "Бетерә торган файлларны юк итү урынына «чүп чиләгенә» күчерергә"
-
-#: ../data/ui/pref.glade.h:58
-#, fuzzy
-msgid "_Only show thumbnails for local files"
-msgstr "Кечерәсемнәрне локаль файллар өчен генә күрсәтергә"
-
-#: ../data/ui/pref.glade.h:59
-#, fuzzy
-msgid "_Open files with single click"
-msgstr "Файлларны бер басудан ачырга"
-
-#: ../data/ui/pref.glade.h:60
-msgid "_Open mounted removable media in new tab instead of new window"
-msgstr ""
-
 #: ../data/ui/pref.glade.h:61
-#, fuzzy
-msgid "_Show available options for removable media when they are inserted"
-msgstr "Тоташтырылган алынмалы җайланмалар өчен булган көйләүләрне күрсәтү"
+msgid "Auto (move if on the same FS, copy otherwise)"
+msgstr ""
 
 #: ../data/ui/pref.glade.h:62
-#, fuzzy
-msgid "_Show thumbnails of files"
-msgstr "Кечерәсемнәрне күрсәтергә"
+msgid "Copy"
+msgstr ""
 
 #: ../data/ui/pref.glade.h:63
-#, fuzzy
-msgid "_Switch user command:"
-msgstr "Икенче кулланучыга күчерүче команда:"
+msgid "Move"
+msgstr ""
 
 #: ../data/ui/pref.glade.h:64
-#, fuzzy
-msgid "_Terminal emulator:"
-msgstr "Терминал эмуляторы:"
+msgid "Ask"
+msgstr ""
 
 #: ../data/ui/pref.glade.h:65
-#, fuzzy
-msgid "_Trash bin"
-msgstr "Чүп чиләге"
+msgid "Icon View"
+msgstr "Билгечекләр"
 
 #: ../data/ui/pref.glade.h:66
-msgid "_Unfold tab when files are dragged onto tab button"
-msgstr ""
+msgid "Compact View"
+msgstr "Җыйнак кыяфәт"
 
 #: ../data/ui/pref.glade.h:67
-msgid "_Use Application Startup Notify by default"
-msgstr ""
+msgid "Thumbnail View"
+msgstr "Кечерәсемнәр"
 
 #: ../data/ui/pref.glade.h:68
-#, fuzzy
-msgid "_Volume Management"
-msgstr "_Дисклар белән идарә итү"
+msgid "Detailed List View"
+msgstr "Җентекле исемлек"
 
 #: ../data/ui/autorun.glade.h:1
-msgid "<b>Removable medium is inserted</b>"
-msgstr "<b>Алынмалы  тоташтырылды</b>"
-
-#: ../data/ui/autorun.glade.h:2
-msgid "Detecting..."
-msgstr "Билгеләү..."
-
-#: ../data/ui/autorun.glade.h:3
-msgid "Please select the action you want to perform:"
-msgstr "Теләгән эшне сайлагыз:"
-
-#: ../data/ui/autorun.glade.h:4
 msgid "Removable medium is inserted"
 msgstr "Алынмалы җайланма тоташтырылды"
 
-#: ../data/ui/autorun.glade.h:5
+#: ../data/ui/autorun.glade.h:2
+msgid "<b>Removable medium is inserted</b>"
+msgstr "<b>Алынмалы  тоташтырылды</b>"
+
+#: ../data/ui/autorun.glade.h:3
 msgid "Type of medium:"
 msgstr "Җайланма төре:"
+
+#: ../data/ui/autorun.glade.h:4
+msgid "Detecting..."
+msgstr "Билгеләү..."
+
+#: ../data/ui/autorun.glade.h:5
+msgid "Please select the action you want to perform:"
+msgstr "Теләгән эшне сайлагыз:"
 
 #: ../src/volume-manager.c:164
 msgid "Removable Disk"
@@ -785,15 +785,15 @@ msgstr "Каталоглар агачы"
 msgid "Remote"
 msgstr "Челтәр"
 
-#: ../src/main-win.c:544
+#: ../src/main-win.c:542
 msgid "You are in super user mode"
 msgstr "Сез баш кулланучы хокукларына ия"
 
-#: ../src/main-win.c:715 ../src/main-win.c:723
+#: ../src/main-win.c:713 ../src/main-win.c:721
 msgid "Keyboard navigation"
 msgstr ""
 
-#: ../src/main-win.c:717
+#: ../src/main-win.c:715
 msgid ""
 "Tab: cycle focus Folder View -> Side Pane -> Tools Bar\n"
 "Shift+Tab: cycle focus Tools Bar -> Side Pane -> Folder View\n"
@@ -803,11 +803,11 @@ msgid ""
 "Ctrl+L or Alt+D: jump focus to Path Bar"
 msgstr ""
 
-#: ../src/main-win.c:753
+#: ../src/main-win.c:751
 msgid "Switch user command is not set."
 msgstr "Икенче кулланучыга күчү командасы теркәлмәгән."
 
-#: ../src/main-win.c:1108
+#: ../src/main-win.c:1106
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -818,7 +818,7 @@ msgstr ""
 "'%s'\n"
 "Яңа кыстыргыч өчен исем кушыгыз:"
 
-#: ../src/main-win.c:1112
+#: ../src/main-win.c:1110
 msgid "Add to Bookmarks"
 msgstr "Кыстыргыч өстәү"
 
@@ -911,43 +911,43 @@ msgstr "Терминал эмуляторы күрсәтелмәгән."
 msgid "Open in New T_ab"
 msgstr "Яңа өстәмә биттә ачу"
 
-#: ../src/tab-page.c:244
+#: ../src/tab-page.c:245
 #, c-format
 msgid "%d item selected"
 msgid_plural "%d items selected"
 msgstr[0] "%d өлеш сайланган"
 
-#: ../src/tab-page.c:399
+#: ../src/tab-page.c:400
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Буш урын: %s (Барлык: %s)"
 
-#: ../src/tab-page.c:419
+#: ../src/tab-page.c:420
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] "%d өлеш"
 
-#: ../src/tab-page.c:420
+#: ../src/tab-page.c:421
 #, c-format
 msgid " (%d hidden)"
 msgid_plural " (%d hidden)"
 msgstr[0] " (%d качырылган)"
 
 #: ../data/pcmanfm.desktop.in.h:1
-msgid "Browse the file system and manage the files"
-msgstr "Файл системасын карау һәм файллар белән идарә итү"
+#, fuzzy
+msgid "File Manager PCManFM"
+msgstr "Файл-менеджер"
 
 #: ../data/pcmanfm.desktop.in.h:2
 msgid "File Manager"
 msgstr "Файл-менеджер"
 
 #: ../data/pcmanfm.desktop.in.h:3
-#, fuzzy
-msgid "File Manager PCManFM"
-msgstr "Файл-менеджер"
+msgid "Browse the file system and manage the files"
+msgstr "Файл системасын карау һәм файллар белән идарә итү"
 
-#: ../data/pcmanfm-desktop-pref.desktop.in.h:1
+#: ../data/pcmanfm-desktop-pref.desktop.in.h:2
 msgid "Change desktop wallpapers and behavior of desktop manager"
 msgstr ""
 
