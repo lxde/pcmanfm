@@ -257,11 +257,11 @@ static void on_bookmark(GtkMenuItem* mi, FmMainWin* win)
 
 static void create_bookmarks_menu(FmMainWin* win)
 {
-    GList* l;
+    const GList *l;
     GtkWidget* mi;
     int i = 0;
 
-    for(l=win->bookmarks->items;l;l=l->next)
+    for(l=fm_bookmarks_list_all(win->bookmarks);l;l=l->next)
     {
         FmBookmarkItem* item = (FmBookmarkItem*)l->data;
         mi = gtk_image_menu_item_new_with_label(item->name);
