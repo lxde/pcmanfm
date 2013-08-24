@@ -738,7 +738,8 @@ static void update_background(FmDesktop* desktop, int is_it)
     GtkWidget* widget = (GtkWidget*)desktop;
     GdkPixbuf* pix, *scaled;
     cairo_t* cr;
-    GdkWindow* root = gdk_screen_get_root_window(gtk_widget_get_screen(widget));
+    GdkScreen *screen = gtk_widget_get_screen(widget);
+    GdkWindow* root = gdk_screen_get_root_window(screen);
     GdkWindow *window = gtk_widget_get_window(widget);
     FmBackgroundCache *cache;
 #if GTK_CHECK_VERSION(3, 0, 0)
@@ -746,9 +747,9 @@ static void update_background(FmDesktop* desktop, int is_it)
 #endif
 
     Display* xdisplay;
-    Pixmap xpixmap = 0;
+    Pixmap xpixmap;
     Window xroot;
-    int screen_num;
+    int screen_num = gdk_screen_get_number(screen);
 
     char *wallpaper;
 
@@ -857,14 +858,29 @@ static void update_background(FmDesktop* desktop, int is_it)
         }
         else
         {
-            GdkScreen* screen = gtk_widget_get_screen(widget);
             GdkRectangle geom;
             gdk_screen_get_monitor_geometry(screen, desktop->monitor, &geom);
             dest_w = geom.width;
             dest_h = geom.height;
         }
 #if GTK_CHECK_VERSION(3, 0, 0)
-        cache->bg = cairo_image_surface_create(CAIRO_FORMAT_RGB24, dest_w, dest_h);
+        /* this code is taken from libgnome-desktop */
+        xdisplay = XOpenDisplay(gdk_display_get_name(gdk_screen_get_display(screen)));
+        if (xdisplay == NULL)
+        {
+            g_warning("Unable to open display when setting background pixmap");
+            return;
+        }
+        /* Desktop background pixmap should be created from
+         * dummy X client since most applications will try to
+         * kill it with XKillClient later when changing pixmap */
+        XSetCloseDownMode(xdisplay, RetainPermanent);
+        xpixmap = XCreatePixmap(xdisplay, RootWindow(xdisplay, screen_num),
+                                dest_w, dest_h, DefaultDepth(xdisplay, screen_num));
+        XCloseDisplay(xdisplay);
+        cache->bg = cairo_xlib_surface_create(GDK_SCREEN_XDISPLAY(screen), xpixmap,
+                                              GDK_VISUAL_XVISUAL(gdk_screen_get_system_visual(screen)),
+                                              dest_w, dest_h);
         cr = cairo_create(cache->bg);
 #else
         cache->bg = gdk_pixmap_new(window, dest_w, dest_h, -1);
@@ -927,7 +943,6 @@ static void update_background(FmDesktop* desktop, int is_it)
 #endif
 
     /* set root map here */
-    screen_num = gdk_screen_get_number(gtk_widget_get_screen(widget));
     xdisplay = GDK_WINDOW_XDISPLAY(root);
     xroot = RootWindow(xdisplay, screen_num);
 
