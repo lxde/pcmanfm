@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: 0.9.9\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-08-22 20:34+0200\n"
-"PO-Revision-Date: 2013-07-19 11:42+0000\n"
+"PO-Revision-Date: 2013-08-25 18:48+0000\n"
 "Last-Translator: kizito <kbirabwa@yahoo.co.uk>\n"
 "Language-Team: lg <kbirabwa@yahoo.co.uk>\n"
 "Language: lg\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1374234127.0\n"
+"X-POOTLE-MTIME: 1377456489.0\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2013"
@@ -142,11 +142,11 @@ msgstr "Yongerawo kopi z'ekifaananyi zimaleyo olutimbe"
 
 #: ../data/ui/pref.glade.h:1
 msgid "Opened in Current Tab"
-msgstr "Bubikkulibwenga ku ludda oluliwo"
+msgstr "Bubikkulibwenga ku katimbe akaliwo"
 
 #: ../data/ui/pref.glade.h:2
 msgid "Opened in New Tab"
-msgstr "Bubikkulibwenga ku ludda olupya"
+msgstr "Bubikkulibwenga ku katimbe akapya"
 
 #: ../data/ui/pref.glade.h:3
 msgid "Opened in New Window"
@@ -200,7 +200,7 @@ msgstr "Ekib_a kikolebwangawo nga otadde ky'ova kukulula:"
 
 #: ../data/ui/pref.glade.h:14
 msgid "_Unfold tab when files are dragged onto tab button"
-msgstr "Ol_udda lubikkukenga nga lusuulidwako fayiro"
+msgstr "_Akatimbe kabikkukenga nga kasuulidwako fayiro"
 
 #: ../data/ui/pref.glade.h:15
 msgid "<b>Default View</b>"
@@ -265,7 +265,7 @@ msgstr "A_manya ga fayiro galabikenga mu bujjuvu"
 
 #: ../data/ui/pref.glade.h:30
 msgid "_Display"
-msgstr "_Laga"
+msgstr "_Ndabika"
 
 #: ../data/ui/pref.glade.h:31
 msgid "Hide _folder content border"
@@ -277,11 +277,11 @@ msgstr "Tolaga mapee_sa ag'oku kadirisa ak'okubbali"
 
 #: ../data/ui/pref.glade.h:33
 msgid "Hid_e 'Close tab' buttons"
-msgstr "Tola_ga amapeesa aga 'Gyawo oludda'"
+msgstr "Tola_ga amapeesa aga 'Gyawo katimbe'"
 
 #: ../data/ui/pref.glade.h:34
 msgid "Al_ways show the tab bar"
-msgstr "Ol_ubaawo olw'emikonda bulijjo lulabikenga"
+msgstr "Wa_bengawo obupande bwa ku butimbe"
 
 #: ../data/ui/pref.glade.h:35
 msgid "<b>Directories Tree</b>"
@@ -339,14 +339,14 @@ msgstr ""
 #: ../data/ui/pref.glade.h:47
 msgid "_Open mounted removable media in new tab instead of new window"
 msgstr ""
-"_Ebitereka data ebyetongovu bwe biwangibwanga bibukkulibwenga mu ludda "
-"olupya mu kifo kya ddirisa ppya"
+"_Ebitereka data ebyetongovu bwe biwangibwanga bibukkulibwenga mu katimbe "
+"kapya mu kifo kya ddirisa ppya"
 
 #: ../data/ui/pref.glade.h:48
 msgid "Clos_e tab containing removable medium when it is unmounted"
 msgstr ""
-"Ebiter_eka data ebyetongovu bwe biwangulwanga ku kompyuta n'oludda mwe "
-"bibadde biragibwa luvengawo"
+"Ebiter_eka data ebyetongovu bwe biwangulwanga ku kompyuta n'akatimbe mwe "
+"bibadde biragibwa kavengawo"
 
 #: ../data/ui/pref.glade.h:49
 msgid "_Volume Management"
@@ -464,7 +464,7 @@ msgstr "Bikkulira mu kiteekateekafayiro"
 
 #: ../src/desktop-ui.c:51
 msgid "Open in New Ta_b"
-msgstr "_Bikkulira ku ludda olupya"
+msgstr "Bikkulira mu Ka_timbe Kapya"
 
 #: ../src/desktop-ui.c:52 ../src/tab-page.c:53
 msgid "Open in New Win_dow"
@@ -492,11 +492,11 @@ msgstr "_Ddirisa ppya"
 
 #: ../src/main-win-ui.c:129
 msgid "New T_ab"
-msgstr "Ludda _Lupya"
+msgstr "Kat_imbe Kapya"
 
 #: ../src/main-win-ui.c:129
 msgid "Create new tab for this folder"
-msgstr "Etterekero lino likolerewo oludda olupya"
+msgstr "Etterekero lino likolerewo akatimbe akapya"
 
 #: ../src/main-win-ui.c:130
 msgid "C_reate New..."
@@ -504,7 +504,7 @@ msgstr "Ko_lawo..."
 
 #: ../src/main-win-ui.c:131
 msgid "_Close Tab"
-msgstr "_Gyawo oludda"
+msgstr "_Gyawo akatimbe"
 
 #: ../src/main-win-ui.c:132
 msgid "Close _Window"
@@ -666,7 +666,7 @@ msgstr "Terekero"
 
 #: ../src/main-win-ui.c:180
 msgid "Empty File"
-msgstr ""
+msgstr "Fayiro Njereere"
 
 #: ../src/main-win-ui.c:186
 msgid "Show Hidde_n"
@@ -870,7 +870,7 @@ msgstr "Totegese kika kya kiwandikiro."
 
 #: ../src/tab-page.c:52
 msgid "Open in New T_ab"
-msgstr "Bikkulira ku Ludda Ol_upya"
+msgstr "Bikkulira mu Kat_imbe Kapya"
 
 #: ../src/tab-page.c:245
 #, c-format
