@@ -1,7 +1,7 @@
 .\" Process this file with
 .\" groff -man -Tascii pcmanfm.1
 .\"
-.TH PCManFM 1 "June 2012" "@PACKAGE@ @VERSION@" "User Manuals"
+.TH PCManFM 1 "August 2013" "@PACKAGE@ @VERSION@" "User Manuals"
 .SH NAME
 PCManFM \- A lightweight Gtk+ based file manager for X Window.
 .SH SYNOPSIS
@@ -102,6 +102,10 @@ positions will be remembered individually for each of monitors.
 .I XDG_CURRENT_DESKTOP
 The current desktop environment. This variable affects items which will be
 shown in menu://applications/ folder.
+.TP
+.I XDG_MENU_PREFIX
+The prefix for XDG menu definition XML file. This variable affects layout
+of items shown in menu://applications/ folder.
 
 .SH FILES
 .PD 0
