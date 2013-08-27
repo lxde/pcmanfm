@@ -8,20 +8,21 @@ msgstr ""
 "Project-Id-Version: pcmanfm 1.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-08-22 20:34+0200\n"
-"PO-Revision-Date: 2013-07-16 22:17+0200\n"
-"Last-Translator: Piotr Sokół <psokol@jabster.pl>\n"
+"PO-Revision-Date: 2013-08-27 13:43+0000\n"
+"Last-Translator: Piotr <strebski@o2.pl>\n"
 "Language-Team: polski <>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bits\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : ((n%10>=2 && n%10<=4 && (n"
-"%100<10 || n%100>=20)) ? 1 : 2));\n"
-"X-Generator: Gtranslator 2.91.5\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+"X-Generator: Pootle 2.5.0\n"
+"X-POOTLE-MTIME: 1377611034.0\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2013"
-msgstr "Copyright (C) 2009 - 2013"
+msgstr "Prawa autorskie (C) 2009 - 2013"
 
 #: ../data/ui/about.glade.in.h:2
 msgid ""
@@ -39,7 +40,8 @@ msgid "translator-credits"
 msgstr ""
 "Grzegorz Gibas <amigib@gmail.com>, 2010.\n"
 "Franciszek Janowski <nobange@poczta.onet.pl>, 2013.\n"
-"Piotr Sokół <psokol@jabster.pl>, 2010, 2011, 2012, 2013."
+"Piotr Sokół <psokol@jabster.pl>, 2010, 2011, 2012, 2013.\n"
+"Piotr Strębski <strebski@o2.pl>, 2013."
 
 #: ../data/ui/desktop-pref.glade.h:1 ../src/desktop-ui.c:34
 #: ../data/pcmanfm-desktop-pref.desktop.in.h:1
@@ -52,7 +54,7 @@ msgstr "<b>Tło</b>"
 
 #: ../data/ui/desktop-pref.glade.h:3
 msgid "_Wallpaper:"
-msgstr "_Obraz:"
+msgstr "_Tapeta:"
 
 #: ../data/ui/desktop-pref.glade.h:4
 msgid "Please select an image file"
@@ -64,11 +66,11 @@ msgstr "_Wyświetlanie tego samego tła na wszystkich obszarach roboczych"
 
 #: ../data/ui/desktop-pref.glade.h:6
 msgid "_Background color:"
-msgstr "_Kolor:"
+msgstr "_Kolor tła:"
 
 #: ../data/ui/desktop-pref.glade.h:7
 msgid "Wallpaper _mode:"
-msgstr "T_ryb:"
+msgstr "T_ryb tapety:"
 
 #: ../data/ui/desktop-pref.glade.h:8
 msgid "<b>Text</b>"
@@ -96,11 +98,11 @@ msgstr "<b>Wyświetlanie ikon na pulpicie</b>"
 
 #: ../data/ui/desktop-pref.glade.h:14
 msgid "_Show \"My Documents\" icon on desktop"
-msgstr "_Wyświetlanie ikony „Dokumenty” na pulpicie"
+msgstr "_Wyświetlanie ikony „Moje dokumenty” na pulpicie"
 
 #: ../data/ui/desktop-pref.glade.h:15
 msgid "Show \"_My Computer\" icon on desktop"
-msgstr "Wyświetlanie ikony „_Komputer” na pulpicie"
+msgstr "Wyświetlanie ikony „Mój _Komputer” na pulpicie"
 
 #: ../data/ui/desktop-pref.glade.h:16
 msgid "Show \"_Trash Bin\" icon on desktop"
@@ -124,7 +126,7 @@ msgstr "_Zaawansowane"
 
 #: ../data/ui/desktop-pref.glade.h:21
 msgid "Fill with background color only"
-msgstr "Wypełnienie kolorem"
+msgstr "Tylko wypełnienie kolorem"
 
 #: ../data/ui/desktop-pref.glade.h:22
 msgid "Stretch to fill the entire screen"
@@ -177,24 +179,24 @@ msgstr "Wyświetla_nie pytania przed usuwaniem plików"
 
 #: ../data/ui/pref.glade.h:9
 msgid "_Move deleted files to \"trash bin\" instead of erasing from disk"
-msgstr "_Przenoszenie plików do kosza zamiast usuwania"
+msgstr "_Przenoszenie plików do \"Kosza\" zamiast usuwania"
 
 #: ../data/ui/pref.glade.h:10
 msgid "_Erase files on removable media instead of \"trash bin\" creation"
 msgstr ""
-"_Usuwanie plików z nośników wymiennych zamiast tworzenia katalogu kosza"
+"_Usuwanie plików z nośników wymiennych zamiast tworzenia katalogu \"Kosza\""
 
 #: ../data/ui/pref.glade.h:11
 msgid "Confi_rm before moving files into \"trash bi_n\""
-msgstr "Wyświetlanie py_tania przed przenoszeniem plików do kosza"
+msgstr "Wyświetlanie py_tania przed przenoszeniem plików do \"Kosza\""
 
 #: ../data/ui/pref.glade.h:12
 msgid "_Bookmarks:"
-msgstr "Otwieranie _zakładek:"
+msgstr "_Zakładki:"
 
 #: ../data/ui/pref.glade.h:13
 msgid "Defaul_t drop action:"
-msgstr "Domyślna działanie przeciągania plików:"
+msgstr "Domyślne działanie przeciągania plików:"
 
 #: ../data/ui/pref.glade.h:14
 msgid "_Unfold tab when files are dragged onto tab button"
@@ -340,7 +342,7 @@ msgstr "Zamykani_e kart nośników wymiennych po odmontowaniu"
 
 #: ../data/ui/pref.glade.h:49
 msgid "_Volume Management"
-msgstr "_Wolumeny"
+msgstr "Zarządzanie _wolumenami"
 
 #: ../data/ui/pref.glade.h:50
 msgid "<b>Programs</b>"
@@ -407,7 +409,7 @@ msgstr "Wyświetlanie pytania"
 
 #: ../data/ui/pref.glade.h:65
 msgid "Icon View"
-msgstr "Ikony"
+msgstr "Widok ikon"
 
 #: ../data/ui/pref.glade.h:66
 msgid "Compact View"
@@ -431,7 +433,7 @@ msgstr "<b>Wsunięto nośnik wymienny</b>"
 
 #: ../data/ui/autorun.glade.h:3
 msgid "Type of medium:"
-msgstr "Typ:"
+msgstr "Typ nośnika:"
 
 #: ../data/ui/autorun.glade.h:4
 msgid "Detecting..."
@@ -535,7 +537,7 @@ msgstr "_Wczytaj ponownie"
 
 #: ../src/main-win-ui.c:146
 msgid "Reload current folder"
-msgstr "Wczytuje ponownie zawartość bieżącego katalogu"
+msgstr "Wczytuje ponownie zawartość bieżącego katalogu"
 
 #: ../src/main-win-ui.c:147
 msgid "Side _Pane"
@@ -544,7 +546,7 @@ msgstr "Panel _boczny"
 #. other see below: 'ShowHidden' 'ShowStatus' 'Fullscreen' 'IconView'...
 #: ../src/main-win-ui.c:149
 msgid "S_ort Files"
-msgstr "_Sortowanie"
+msgstr "_Sortowanie plików"
 
 #: ../src/main-win-ui.c:150
 msgid "_Help"
@@ -560,19 +562,19 @@ msgstr "P_rzejdź"
 
 #: ../src/main-win-ui.c:154
 msgid "_Previous Folder"
-msgstr "_Wstecz"
+msgstr "_Poprzedni katalog"
 
 #: ../src/main-win-ui.c:154
 msgid "Previous Folder"
-msgstr "Wstecz"
+msgstr "Poprzedni katalog"
 
 #: ../src/main-win-ui.c:155
 msgid "_Next Folder"
-msgstr "_Naprzód"
+msgstr "_Następny katalog"
 
 #: ../src/main-win-ui.c:155
 msgid "Next Folder"
-msgstr "Naprzód"
+msgstr "Następny katalog"
 
 #: ../src/main-win-ui.c:156
 msgid "Pa_rent Folder"
@@ -600,7 +602,7 @@ msgstr "Katalog pulpitu"
 
 #: ../src/main-win-ui.c:159
 msgid "_My Computer"
-msgstr "_Komputer"
+msgstr "_Mój komputer"
 
 #: ../src/main-win-ui.c:160
 msgid "_Trash Can"
@@ -628,7 +630,7 @@ msgstr "_Zakładki"
 
 #: ../src/main-win-ui.c:165
 msgid "_Add To Bookmarks"
-msgstr "_Dodaj"
+msgstr "_Dodaj do zakładek"
 
 #: ../src/main-win-ui.c:166
 msgid "Tool_s"
@@ -661,11 +663,11 @@ msgstr "Wyświetlanie _ukrytych plików"
 
 #: ../src/main-win-ui.c:187
 msgid "Sho_w Side Pane"
-msgstr "_Wyświetlanie"
+msgstr "_Wyświetlanie panelu bocznego"
 
 #: ../src/main-win-ui.c:188
 msgid "Show Status B_ar"
-msgstr "Pasek _stanu"
+msgstr "Wyświetlanie paska _stanu"
 
 #: ../src/main-win-ui.c:189
 msgid "T_win Pane Mode"
@@ -761,12 +763,12 @@ msgstr ""
 
 #: ../src/main-win.c:1110
 msgid "Add to Bookmarks"
-msgstr "Nowa zakładka"
+msgstr "Dodaj do zakładek"
 
 #. options only acceptable by first pcmanfm instance. These options are not passed through IPC
 #: ../src/pcmanfm.c:76
 msgid "Name of configuration profile"
-msgstr "Określa nazwę profilu ustawień"
+msgstr "Nazwa profilu ustawień"
 
 #: ../src/pcmanfm.c:76
 msgid "PROFILE"
@@ -783,11 +785,11 @@ msgstr "Brak funkcji. Zapewnia kompatybilność z programem Nautilus."
 #. options that are acceptable for every instance of pcmanfm and will be passed through IPC.
 #: ../src/pcmanfm.c:81
 msgid "Launch desktop manager"
-msgstr "Włącza zarządzanie pulpitem"
+msgstr "Włącza menedżera pulpitu"
 
 #: ../src/pcmanfm.c:82
 msgid "Turn off desktop manager if it's running"
-msgstr "Wyłącza zarządzanie pulpitu jeśli jest włączone"
+msgstr "Wyłącza menedżera pulpitu jeśli jest włączony"
 
 #: ../src/pcmanfm.c:83
 msgid "Open desktop preference dialog"
@@ -799,7 +801,7 @@ msgstr "Używa opcji --desktop tylko dla jednego ekranu"
 
 #: ../src/pcmanfm.c:85
 msgid "Set desktop wallpaper from image FILE"
-msgstr "Ustala tło pulpitu jako PLIK"
+msgstr "Ustala tło pulpitu z PLIKU obrazu"
 
 #: ../src/pcmanfm.c:85
 msgid "FILE"
@@ -834,7 +836,7 @@ msgstr "Określa typ okna używany przez menedżera okien"
 
 #: ../src/pcmanfm.c:91
 msgid "ROLE"
-msgstr "ROLE"
+msgstr "ROLA"
 
 #: ../src/pcmanfm.c:92
 msgid "[FILE1, FILE2,...]"
