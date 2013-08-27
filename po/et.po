@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-08-22 20:34+0200\n"
-"PO-Revision-Date: 2013-08-27 14:54+0000\n"
-"Last-Translator: Martin <brother@bsnet.se>\n"
+"PO-Revision-Date: 2013-08-27 15:40+0000\n"
+"Last-Translator: Anari <anari.jalakas@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: et\n"
 "MIME-Version: 1.0\n"
@@ -16,11 +16,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1377615266.0\n"
+"X-POOTLE-MTIME: 1377618021.0\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2013"
-msgstr "Copyright (C) 2009 - 2013"
+msgstr "Autoriõigus (C) 2009 - 2013"
 
 #: ../data/ui/about.glade.in.h:2
 msgid ""
@@ -74,7 +74,7 @@ msgstr "<b>Tekst</b>"
 
 #: ../data/ui/desktop-pref.glade.h:9
 msgid "_Font of label text:"
-msgstr "Teksti _font:"
+msgstr "_Teksti font:"
 
 #: ../data/ui/desktop-pref.glade.h:10
 msgid "C_olor of label text:"
@@ -356,8 +356,7 @@ msgid ""
 "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
 "%s = the command line you want to execute with terminal or su."
 msgstr ""
-"Näiteks: \"xterm -e %s\" terminali jaoks või \"gksu %s\" kasutaja "
-"vahetamiseks.\n"
+"Näiteks: \"xterm -e %s\" terminali jaoks või \"gksu %s\" kasutaja vahetamiseks.\n"
 "%s = käsklus mida soovid terminalis või \"su\" abil käivitada."
 
 #: ../data/ui/pref.glade.h:56
@@ -720,10 +719,9 @@ msgstr "Oled administraatori õigustes"
 
 #: ../src/main-win.c:713 ../src/main-win.c:721
 msgid "Keyboard navigation"
-msgstr "Klaviatuuri navigatsioon"
+msgstr "Klaviatuuri kiirkäsud"
 
 #: ../src/main-win.c:715
-#, fuzzy
 msgid ""
 "Tab: cycle focus Folder View -> Side Pane -> Tools Bar\n"
 "Shift+Tab: cycle focus Tools Bar -> Side Pane -> Folder View\n"
@@ -731,7 +729,13 @@ msgid ""
 "F8: focus divider between Side pane and Folder view\n"
 "F10: activate main menu\n"
 "Ctrl+L or Alt+D: jump focus to Path Bar"
-msgstr "Klaviatuuri kiirkäsud"
+msgstr ""
+"Tab: fookuse liigutamine: Kaustavaade -> Külgpaneel -> Tööriistariba\n"
+"Shift+Tab: fookuse liigutamine: Tööriistariba -> Külgpaneel -> Kaustavaade\n"
+"F6: fookuse vahetamine: Külgpaneel <-> Kaustavaade\n"
+"F8: fookus Külgpaneeli ja Kaustavaate vahel\n"
+"F10: põhimenüü aktiveerimine\n"
+"Ctrl+L või Alt+D: fookus asukoha ribale"
 
 #: ../src/main-win.c:751
 msgid "Switch user command is not set."
