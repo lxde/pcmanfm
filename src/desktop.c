@@ -73,11 +73,14 @@ struct _FmBackgroundCache
 };
 
 static void queue_layout_items(FmDesktop* desktop);
+static void redraw_item(FmDesktop* desktop, FmDesktopItem* item);
 
 static FmFileInfoList* _dup_selected_files(FmFolderView* fv);
 static FmPathList* _dup_selected_file_paths(FmFolderView* fv);
 static void _select_all(FmFolderView* fv);
 static void _unselect_all(FmFolderView* fv);
+
+static FmDesktopItem* hit_test(FmDesktop* self, GtkTreeIter *it, int x, int y);
 
 static void fm_desktop_view_init(FmFolderViewInterface* iface);
 
@@ -364,6 +367,913 @@ static GList* get_selected_items(FmDesktop* desktop, int* n_items)
     if(n_items)
         *n_items = n;
     return items;
+}
+
+
+/* ---------------------------------------------------------------------
+    accessibility handlers */
+
+static void set_focused_item(FmDesktop* desktop, FmDesktopItem* item);
+static inline gint fm_desktop_accessible_index(GtkWidget *desktop, gpointer item);
+
+/* ---- accessible item mirror ---- */
+typedef struct _FmDesktopItemAccessible FmDesktopItemAccessible;
+typedef struct _FmDesktopItemAccessibleClass FmDesktopItemAccessibleClass;
+#define FM_TYPE_DESKTOP_ITEM_ACCESSIBLE      (fm_desktop_item_accessible_get_type ())
+#define FM_DESKTOP_ITEM_ACCESSIBLE(obj)      (G_TYPE_CHECK_INSTANCE_CAST((obj), \
+                                              FM_TYPE_DESKTOP_ITEM_ACCESSIBLE, FmDesktopItemAccessible))
+#define FM_IS_DESKTOP_ITEM_ACCESSIBLE(obj)   (G_TYPE_CHECK_INSTANCE_TYPE((obj), \
+                                              FM_TYPE_DESKTOP_ITEM_ACCESSIBLE))
+
+static GType fm_desktop_item_accessible_get_type (void);
+
+struct _FmDesktopItemAccessible
+{
+    AtkObject parent;
+    FmDesktopItem *item;
+    GtkWidget *widget;
+    AtkStateSet *state_set;
+    guint action_idle_handler;
+    gint action_type;
+};
+
+struct _FmDesktopItemAccessibleClass
+{
+    AtkObjectClass parent_class;
+};
+
+static void atk_component_item_interface_init(AtkComponentIface *iface);
+static void atk_action_item_interface_init(AtkActionIface *iface);
+static void atk_image_item_interface_init(AtkImageIface *iface);
+
+G_DEFINE_TYPE_WITH_CODE(FmDesktopItemAccessible, fm_desktop_item_accessible, ATK_TYPE_OBJECT,
+                        G_IMPLEMENT_INTERFACE(ATK_TYPE_COMPONENT, atk_component_item_interface_init)
+                        G_IMPLEMENT_INTERFACE(ATK_TYPE_ACTION, atk_action_item_interface_init)
+                        G_IMPLEMENT_INTERFACE(ATK_TYPE_IMAGE, atk_image_item_interface_init))
+
+static void fm_desktop_item_accessible_init(FmDesktopItemAccessible *item)
+{
+    item->state_set = atk_state_set_new();
+    atk_state_set_add_state(item->state_set, ATK_STATE_ENABLED);
+    atk_state_set_add_state(item->state_set, ATK_STATE_FOCUSABLE);
+    atk_state_set_add_state(item->state_set, ATK_STATE_SENSITIVE);
+    atk_state_set_add_state(item->state_set, ATK_STATE_SELECTABLE);
+    atk_state_set_add_state(item->state_set, ATK_STATE_VISIBLE);
+    item->action_idle_handler = 0;
+}
+
+static void fm_desktop_item_accessible_finalize(GObject *object)
+{
+    FmDesktopItemAccessible *item = (FmDesktopItemAccessible *)object;
+
+    g_return_if_fail(item != NULL);
+    g_return_if_fail(FM_IS_DESKTOP_ITEM_ACCESSIBLE(item));
+
+    if (item->widget)
+        g_object_remove_weak_pointer(G_OBJECT(item->widget), (gpointer)&item->widget);
+    if (item->state_set)
+        g_object_unref (item->state_set);
+    if (item->action_idle_handler)
+    {
+        g_source_remove(item->action_idle_handler);
+        item->action_idle_handler = 0;
+    }
+}
+
+static FmDesktopItemAccessible *fm_desktop_item_accessible_new(FmDesktop *desktop,
+                                                               FmDesktopItem *item)
+{
+    const char *name;
+    FmDesktopItemAccessible *atk_item;
+
+    name = fm_file_info_get_disp_name(item->fi);
+    atk_item = g_object_new(FM_TYPE_DESKTOP_ITEM_ACCESSIBLE,
+                            "accessible-name", name, NULL);
+    atk_item->item = item;
+    atk_item->widget = GTK_WIDGET(desktop);
+    g_object_add_weak_pointer(G_OBJECT(desktop), (gpointer)&atk_item->widget);
+    return atk_item;
+}
+
+/* item interfaces */
+static void fm_desktop_item_accessible_get_extents(AtkComponent *component,
+                                                   gint *x, gint *y,
+                                                   gint *width, gint *height,
+                                                   AtkCoordType coord_type)
+{
+    FmDesktopItemAccessible *item;
+    AtkObject *parent_obj;
+    gint l_x, l_y;
+
+    g_return_if_fail(FM_IS_DESKTOP_ITEM_ACCESSIBLE(component));
+    item = FM_DESKTOP_ITEM_ACCESSIBLE(component);
+    if (item->widget == NULL)
+        return;
+    if (atk_state_set_contains_state(item->state_set, ATK_STATE_DEFUNCT))
+        return;
+
+    *width = item->item->area.width;
+    *height = item->item->area.height;
+    parent_obj = gtk_widget_get_accessible(item->widget);
+    atk_component_get_position(ATK_COMPONENT(parent_obj), &l_x, &l_y, coord_type);
+    *x = l_x + item->item->area.x;
+    *y = l_y + item->item->area.y;
+}
+
+static gboolean fm_desktop_item_accessible_grab_focus(AtkComponent *component)
+{
+    FmDesktopItemAccessible *item;
+
+    g_return_val_if_fail(FM_IS_DESKTOP_ITEM_ACCESSIBLE(component), FALSE);
+    item = FM_DESKTOP_ITEM_ACCESSIBLE(component);
+    if (item->widget == NULL)
+        return FALSE;
+    if (atk_state_set_contains_state(item->state_set, ATK_STATE_DEFUNCT))
+        return FALSE;
+
+    gtk_widget_grab_focus(item->widget);
+    set_focused_item(FM_DESKTOP(item->widget), item->item);
+    return TRUE;
+}
+
+static void atk_component_item_interface_init(AtkComponentIface *iface)
+{
+    iface->get_extents = fm_desktop_item_accessible_get_extents;
+    iface->grab_focus = fm_desktop_item_accessible_grab_focus;
+}
+
+/* NOTE: this is not very fast */
+static GtkTreePath *fm_desktop_item_get_tree_path(FmDesktop *self, FmDesktopItem *item)
+{
+    GtkTreeModel *model = GTK_TREE_MODEL(self->model);
+    GtkTreeIter it;
+
+    if(gtk_tree_model_get_iter_first(model, &it)) do
+    {
+        if (fm_folder_model_get_item_userdata(self->model, &it) == item)
+            return gtk_tree_model_get_path(model, &it);
+    }
+    while (gtk_tree_model_iter_next(model, &it));
+    return NULL;
+}
+
+static gboolean fm_desktop_item_accessible_idle_do_action(gpointer data)
+{
+    FmDesktopItemAccessible *item;
+    GtkTreePath *tp;
+
+    if(g_source_is_destroyed(g_main_current_source()))
+        return FALSE;
+
+    item = FM_DESKTOP_ITEM_ACCESSIBLE(data);
+    item->action_idle_handler = 0;
+    if (item->widget != NULL)
+    {
+        tp = fm_desktop_item_get_tree_path(FM_DESKTOP(item->widget), item->item);
+        if (tp)
+        {
+            fm_folder_view_item_clicked(FM_FOLDER_VIEW(item->widget), tp,
+                                        item->action_type == 0 ? FM_FV_ACTIVATED : FM_FV_CONTEXT_MENU);
+            gtk_tree_path_free(tp);
+        }
+    }
+    return FALSE;
+}
+
+static gboolean fm_desktop_item_accessible_action_do_action(AtkAction *action,
+                                                            gint i)
+{
+    FmDesktopItemAccessible *item;
+
+    if (i != 0 && i != 1)
+        return FALSE;
+
+    item = FM_DESKTOP_ITEM_ACCESSIBLE(action);
+    if (item->widget == NULL)
+        return FALSE;
+    if (atk_state_set_contains_state(item->state_set, ATK_STATE_DEFUNCT))
+        return FALSE;
+    if (!item->action_idle_handler)
+    {
+        item->action_type = i;
+        item->action_idle_handler = gdk_threads_add_idle(fm_desktop_item_accessible_idle_do_action, item);
+    }
+    return TRUE;
+}
+
+static gint fm_desktop_item_accessible_action_get_n_actions(AtkAction *action)
+{
+    return 2;
+}
+
+static const gchar *fm_desktop_item_accessible_action_get_description(AtkAction *action, gint i)
+{
+    if (i == 0)
+        return _("Activate file");
+    else if (i == 1)
+        return _("Show file menu");
+    return NULL;
+}
+
+static const gchar *fm_desktop_item_accessible_action_get_name(AtkAction *action, gint i)
+{
+    if (i == 0)
+        return "activate";
+    if (i == 1)
+        return "menu";
+    return NULL;
+}
+
+static void atk_action_item_interface_init(AtkActionIface *iface)
+{
+    iface->do_action = fm_desktop_item_accessible_action_do_action;
+    iface->get_n_actions = fm_desktop_item_accessible_action_get_n_actions;
+    iface->get_description = fm_desktop_item_accessible_action_get_description;
+    iface->get_name = fm_desktop_item_accessible_action_get_name;
+    /* NOTE: we don't support descriptions change */
+}
+
+static const gchar *fm_desktop_item_accessible_image_get_image_description(AtkImage *image)
+{
+    FmDesktopItemAccessible *item = FM_DESKTOP_ITEM_ACCESSIBLE(image);
+
+    /* FIXME: is there a better way to handle this? */
+    return fm_file_info_get_desc(item->item->fi);
+}
+
+static void fm_desktop_item_accessible_image_get_image_size(AtkImage *image,
+                                                            gint *width,
+                                                            gint *height)
+{
+    FmDesktopItemAccessible *item = FM_DESKTOP_ITEM_ACCESSIBLE(image);
+
+    if (item->widget == NULL)
+        return;
+    if (atk_state_set_contains_state(item->state_set, ATK_STATE_DEFUNCT))
+        return;
+
+    *width = item->item->icon_rect.width;
+    *height = item->item->icon_rect.height;
+}
+
+static void fm_desktop_item_accessible_image_get_image_position(AtkImage *image,
+                                                                gint *x,
+                                                                gint *y,
+                                                                AtkCoordType coord_type)
+{
+    FmDesktopItemAccessible *item = FM_DESKTOP_ITEM_ACCESSIBLE(image);
+
+    if (item->widget == NULL)
+        return;
+    if (atk_state_set_contains_state(item->state_set, ATK_STATE_DEFUNCT))
+        return;
+
+    atk_component_get_position(ATK_COMPONENT(image), x, y, coord_type);
+    *x += item->item->icon_rect.x - item->item->area.x;
+    *y += item->item->icon_rect.y - item->item->area.y;
+}
+
+static void atk_image_item_interface_init(AtkImageIface *iface)
+{
+    iface->get_image_description = fm_desktop_item_accessible_image_get_image_description;
+    /* NOTE: we don't support descriptions change */
+    iface->get_image_size = fm_desktop_item_accessible_image_get_image_size;
+    iface->get_image_position = fm_desktop_item_accessible_image_get_image_position;
+}
+
+static AtkObject *fm_desktop_item_accessible_get_parent(AtkObject *obj)
+{
+    FmDesktopItemAccessible *item = FM_DESKTOP_ITEM_ACCESSIBLE(obj);
+
+    return item->widget ? gtk_widget_get_accessible(item->widget) : NULL;
+}
+
+static gint fm_desktop_item_accessible_get_index_in_parent(AtkObject *obj)
+{
+    FmDesktopItemAccessible *item = FM_DESKTOP_ITEM_ACCESSIBLE(obj);
+
+    return item->widget ? fm_desktop_accessible_index(item->widget, item) : -1;
+}
+
+static AtkStateSet *fm_desktop_item_accessible_ref_state_set(AtkObject *obj)
+{
+    FmDesktopItemAccessible *item = FM_DESKTOP_ITEM_ACCESSIBLE(obj);
+    FmDesktop *desktop;
+
+    g_return_val_if_fail(item->state_set, NULL);
+
+    /* update states first */
+    if (item->widget != NULL)
+    {
+        desktop = (FmDesktop *)item->widget;
+        if (desktop->focus == item->item)
+            atk_state_set_add_state(item->state_set, ATK_STATE_FOCUSED);
+        else
+            atk_state_set_remove_state(item->state_set, ATK_STATE_FOCUSED);
+    }
+    if (item->item->is_selected)
+        atk_state_set_add_state(item->state_set, ATK_STATE_SELECTED);
+    else
+        atk_state_set_remove_state(item->state_set, ATK_STATE_SELECTED);
+    return g_object_ref(item->state_set);
+}
+
+static void fm_desktop_item_accessible_class_init(FmDesktopItemAccessibleClass *klass)
+{
+    GObjectClass *gobject_class = G_OBJECT_CLASS(klass);
+    AtkObjectClass *atk_class = ATK_OBJECT_CLASS(klass);
+
+    gobject_class->finalize = fm_desktop_item_accessible_finalize;
+
+    atk_class->get_index_in_parent = fm_desktop_item_accessible_get_index_in_parent;
+    atk_class->get_parent = fm_desktop_item_accessible_get_parent;
+    atk_class->ref_state_set = fm_desktop_item_accessible_ref_state_set;
+}
+
+static gboolean fm_desktop_item_accessible_add_state(FmDesktopItemAccessible *item,
+                                                     AtkStateType state_type)
+{
+    gboolean rc;
+
+    rc = atk_state_set_add_state(item->state_set, state_type);
+    atk_object_notify_state_change(ATK_OBJECT (item), state_type, TRUE);
+    /* If state_type is ATK_STATE_VISIBLE, additional notification */
+    if (state_type == ATK_STATE_VISIBLE)
+        g_signal_emit_by_name(item, "visible-data-changed");
+    return rc;
+}
+
+/* ---- accessible widget mirror ---- */
+typedef struct _FmDesktopAccessible FmDesktopAccessible;
+typedef struct _FmDesktopAccessibleClass FmDesktopAccessibleClass;
+#define FM_TYPE_DESKTOP_ACCESSIBLE      (fm_desktop_accessible_get_type())
+#define FM_DESKTOP_ACCESSIBLE(obj)      (G_TYPE_CHECK_INSTANCE_CAST((obj), \
+                                         FM_TYPE_DESKTOP_ACCESSIBLE, FmDesktopAccessible))
+#define FM_IS_DESKTOP_ACCESSIBLE(obj)   (G_TYPE_CHECK_INSTANCE_TYPE((obj), \
+                                         FM_TYPE_DESKTOP_ACCESSIBLE))
+
+static GType fm_desktop_accessible_get_type (void);
+
+typedef struct _FmDesktopAccessiblePriv FmDesktopAccessiblePriv;
+struct _FmDesktopAccessiblePriv
+{
+    /* we don't catch model index but have own index in items list instead */
+    GList *items;
+    guint action_idle_handler;
+};
+
+#define FM_DESKTOP_ACCESSIBLE_GET_PRIVATE(_d_) G_TYPE_INSTANCE_GET_PRIVATE(_d_, FM_TYPE_DESKTOP_ACCESSIBLE, FmDesktopAccessiblePriv)
+
+static void atk_component_interface_init(AtkComponentIface *iface);
+static void atk_selection_interface_init(AtkSelectionIface *iface);
+static void atk_action_interface_init(AtkActionIface *iface);
+
+/* we cannot use G_DEFINE_TYPE_WITH_CODE - no GtkWindowAccessible before 3.2.0 */
+static void fm_desktop_accessible_init(FmDesktopAccessible *self);
+static void fm_desktop_accessible_class_init(FmDesktopAccessibleClass *klass);
+static gpointer fm_desktop_accessible_parent_class = NULL;
+
+static void fm_desktop_accessible_class_intern_init(gpointer klass)
+{
+    fm_desktop_accessible_parent_class = g_type_class_peek_parent(klass);
+    fm_desktop_accessible_class_init((FmDesktopAccessibleClass*)klass);
+}
+
+GType fm_desktop_accessible_get_type(void)
+{
+    static volatile gsize type_id_volatile = 0;
+
+    if (g_once_init_enter(&type_id_volatile))
+    {
+        /*
+         * Figure out the size of the class and instance
+         * we are deriving from
+         */
+        AtkObjectFactory *factory;
+        GTypeQuery query;
+        GType derived_atk_type;
+        GType g_define_type_id;
+
+        factory = atk_registry_get_factory(atk_get_default_registry(),
+                                           g_type_parent(FM_TYPE_DESKTOP));
+        derived_atk_type = atk_object_factory_get_accessible_type(factory);
+        g_type_query(derived_atk_type, &query);
+        g_define_type_id = g_type_register_static_simple(derived_atk_type,
+                                g_intern_static_string("FmDesktopAccessible"),
+                                query.class_size,
+                                (GClassInitFunc)fm_desktop_accessible_class_intern_init,
+                                query.instance_size,
+                                (GInstanceInitFunc)fm_desktop_accessible_init,
+                                0);
+        G_IMPLEMENT_INTERFACE(ATK_TYPE_COMPONENT, atk_component_interface_init)
+        G_IMPLEMENT_INTERFACE(ATK_TYPE_SELECTION, atk_selection_interface_init)
+        G_IMPLEMENT_INTERFACE(ATK_TYPE_ACTION, atk_action_interface_init)
+        g_once_init_leave(&type_id_volatile, g_define_type_id);
+    }
+    return type_id_volatile;
+}
+
+static inline GList *fm_desktop_find_accessible_for_item(FmDesktopAccessiblePriv *priv, FmDesktopItem *item)
+{
+    GList *items = priv->items;
+
+    while (items)
+    {
+        if (((FmDesktopItemAccessible *)items->data)->item == item)
+            return items;
+        items = items->next;
+    }
+    return NULL;
+}
+
+/* widget interfaces */
+static AtkObject *fm_desktop_accessible_ref_accessible_at_point(AtkComponent *component,
+                                                                gint x, gint y,
+                                                                AtkCoordType coord_type)
+{
+    GtkWidget *widget = gtk_accessible_get_widget(GTK_ACCESSIBLE(component));
+    FmDesktop *desktop;
+    gint x_pos, y_pos;
+    FmDesktopItem *item;
+    GList *obj_l = NULL;
+    GtkTreeIter it;
+
+    if (widget == NULL)
+        return NULL;
+    desktop = FM_DESKTOP(widget);
+    atk_component_get_extents(component, &x_pos, &y_pos, NULL, NULL, coord_type);
+    item = hit_test(desktop, &it, x - x_pos, y - y_pos);
+    if (item)
+        obj_l = fm_desktop_find_accessible_for_item(FM_DESKTOP_ACCESSIBLE_GET_PRIVATE(component), item);
+    if (obj_l)
+        return g_object_ref(obj_l->data);
+    return NULL;
+}
+
+static void atk_component_interface_init(AtkComponentIface *iface)
+{
+    iface->ref_accessible_at_point = fm_desktop_accessible_ref_accessible_at_point;
+}
+
+static gboolean fm_desktop_accessible_add_selection(AtkSelection *selection, gint i)
+{
+    GtkWidget *widget = gtk_accessible_get_widget(GTK_ACCESSIBLE(selection));
+    FmDesktop *desktop;
+    FmDesktopAccessiblePriv *priv;
+    FmDesktopItemAccessible *item;
+
+    if (widget == NULL)
+        return FALSE;
+
+    desktop = FM_DESKTOP(widget);
+    priv = FM_DESKTOP_ACCESSIBLE_GET_PRIVATE(selection);
+    item = g_list_nth_data(priv->items, i);
+    if (!item)
+        return FALSE;
+    item->item->is_selected = TRUE;
+    redraw_item(desktop, item->item);
+    atk_object_notify_state_change(ATK_OBJECT(item), ATK_STATE_SELECTED, TRUE);
+    return TRUE;
+}
+
+static gboolean fm_desktop_accessible_clear_selection(AtkSelection *selection)
+{
+    GtkWidget *widget = gtk_accessible_get_widget(GTK_ACCESSIBLE(selection));
+
+    if (widget == NULL)
+        return FALSE;
+
+    _unselect_all(FM_FOLDER_VIEW(widget));
+    return TRUE;
+}
+
+static AtkObject *fm_desktop_accessible_ref_selection(AtkSelection *selection,
+                                                      gint i)
+{
+    FmDesktopAccessiblePriv *priv;
+    FmDesktopItemAccessible *item;
+    GList *items;
+
+    if (i < 0)
+        return NULL;
+
+    priv = FM_DESKTOP_ACCESSIBLE_GET_PRIVATE(selection);
+    for (items = priv->items; items; items = items->next)
+    {
+        item = items->data;
+        if (item->item->is_selected)
+            if (i-- == 0)
+                return g_object_ref(item);
+    }
+    return NULL;
+}
+
+static gint fm_desktop_accessible_get_selection_count(AtkSelection *selection)
+{
+    FmDesktopAccessiblePriv *priv = FM_DESKTOP_ACCESSIBLE_GET_PRIVATE(selection);
+    FmDesktopItemAccessible *item;
+    GList *items;
+    gint i = 0;
+
+    for (items = priv->items; items; items = items->next)
+    {
+        item = items->data;
+        if (item->item->is_selected)
+            i++;
+    }
+    return i;
+}
+
+static gboolean fm_desktop_accessible_is_child_selected(AtkSelection *selection,
+                                                        gint i)
+{
+    FmDesktopAccessiblePriv *priv = FM_DESKTOP_ACCESSIBLE_GET_PRIVATE(selection);
+    FmDesktopItemAccessible *item = g_list_nth_data(priv->items, i);
+
+    if (item == NULL)
+        return FALSE;
+    return item->item->is_selected;
+}
+
+static gboolean fm_desktop_accessible_remove_selection(AtkSelection *selection,
+                                                       gint i)
+{
+    GtkWidget *widget = gtk_accessible_get_widget(GTK_ACCESSIBLE(selection));
+    FmDesktop *desktop;
+    FmDesktopAccessiblePriv *priv;
+    FmDesktopItemAccessible *item;
+    GList *items;
+
+    if (i < 0)
+        return FALSE;
+    if (widget == NULL)
+        return FALSE;
+    desktop = FM_DESKTOP(widget);
+
+    priv = FM_DESKTOP_ACCESSIBLE_GET_PRIVATE(selection);
+    for (items = priv->items; items; items = items->next)
+    {
+        item = items->data;
+        if (item->item->is_selected)
+            if (i-- == 0)
+            {
+                item->item->is_selected = FALSE;
+                redraw_item(desktop, item->item);
+                atk_object_notify_state_change(ATK_OBJECT(item), ATK_STATE_SELECTED, FALSE);
+                return TRUE;
+            }
+    }
+    return FALSE;
+}
+
+static gboolean fm_desktop_accessible_select_all_selection(AtkSelection *selection)
+{
+    GtkWidget *widget = gtk_accessible_get_widget(GTK_ACCESSIBLE(selection));
+
+    if (widget == NULL)
+        return FALSE;
+
+    _select_all(FM_FOLDER_VIEW(widget));
+    return TRUE;
+}
+
+static void atk_selection_interface_init(AtkSelectionIface *iface)
+{
+    iface->add_selection = fm_desktop_accessible_add_selection;
+    iface->clear_selection = fm_desktop_accessible_clear_selection;
+    iface->ref_selection = fm_desktop_accessible_ref_selection;
+    iface->get_selection_count = fm_desktop_accessible_get_selection_count;
+    iface->is_child_selected = fm_desktop_accessible_is_child_selected;
+    iface->remove_selection = fm_desktop_accessible_remove_selection;
+    iface->select_all_selection = fm_desktop_accessible_select_all_selection;
+}
+
+static gboolean fm_desktop_accessible_idle_do_action(gpointer data)
+{
+    GtkWidget *widget;
+    FmDesktopAccessiblePriv *priv;
+
+    if(g_source_is_destroyed(g_main_current_source()))
+        return FALSE;
+
+    priv = FM_DESKTOP_ACCESSIBLE_GET_PRIVATE(data);
+    priv->action_idle_handler = 0;
+    widget = gtk_accessible_get_widget(data);
+    if (widget)
+        fm_folder_view_item_clicked(FM_FOLDER_VIEW(widget), NULL, FM_FV_CONTEXT_MENU);
+    return FALSE;
+}
+
+static gboolean fm_desktop_accessible_action_do_action(AtkAction *action, gint i)
+{
+    FmDesktopAccessiblePriv *priv;
+
+    if (i != 0)
+        return FALSE;
+    if (gtk_accessible_get_widget(GTK_ACCESSIBLE(action)) == NULL)
+        return FALSE;
+
+    priv = FM_DESKTOP_ACCESSIBLE_GET_PRIVATE(action);
+    if (!priv->action_idle_handler)
+        priv->action_idle_handler = gdk_threads_add_idle(fm_desktop_accessible_idle_do_action, action);
+    return TRUE;
+}
+
+static gint fm_desktop_accessible_action_get_n_actions(AtkAction *action)
+{
+    return 1;
+}
+
+static const gchar *fm_desktop_accessible_action_get_description(AtkAction *action, gint i)
+{
+    if (i == 0)
+        return _("Show desktop menu");
+    return NULL;
+}
+
+static const gchar *fm_desktop_accessible_action_get_name(AtkAction *action, gint i)
+{
+    if (i == 0)
+        return "menu";
+    return NULL;
+}
+
+static void atk_action_interface_init(AtkActionIface *iface)
+{
+    iface->do_action = fm_desktop_accessible_action_do_action;
+    iface->get_n_actions = fm_desktop_accessible_action_get_n_actions;
+    iface->get_description = fm_desktop_accessible_action_get_description;
+    iface->get_name = fm_desktop_accessible_action_get_name;
+    /* NOTE: we don't support descriptions change */
+}
+
+static void fm_desktop_accessible_finalize(GObject *object)
+{
+    FmDesktopAccessiblePriv *priv = FM_DESKTOP_ACCESSIBLE_GET_PRIVATE(object);
+    FmDesktopItemAccessible *item;
+
+    /* FIXME: should we g_assert(priv->items) here instead? */
+    while (priv->items)
+    {
+        item = priv->items->data;
+        item->item = NULL;
+        fm_desktop_item_accessible_add_state(item, ATK_STATE_DEFUNCT);
+        g_signal_emit_by_name(item, "children-changed::remove", 0, NULL, NULL);
+        priv->items = g_list_remove_link(priv->items, priv->items);
+        g_object_unref(item);
+    }
+    if (priv->action_idle_handler)
+    {
+        g_source_remove(priv->action_idle_handler);
+        priv->action_idle_handler = 0;
+    }
+    G_OBJECT_CLASS(fm_desktop_accessible_parent_class)->finalize(object);
+}
+
+static gint fm_desktop_accessible_get_n_children(AtkObject *accessible)
+{
+    FmDesktopAccessiblePriv *priv = FM_DESKTOP_ACCESSIBLE_GET_PRIVATE(accessible);
+
+    return g_list_length(priv->items);
+}
+
+static AtkObject *fm_desktop_accessible_ref_child(AtkObject *accessible,
+                                                  gint index)
+{
+    FmDesktopAccessiblePriv *priv;
+    FmDesktopItemAccessible *item;
+
+    if (index < 0)
+        return NULL;
+
+    priv = FM_DESKTOP_ACCESSIBLE_GET_PRIVATE(accessible);
+    item = g_list_nth_data(priv->items, index);
+    if (!item)
+        return NULL;
+    return g_object_ref(item);
+}
+
+static void fm_desktop_accessible_initialize(AtkObject *accessible, gpointer data)
+{
+    if (ATK_OBJECT_CLASS(fm_desktop_accessible_parent_class)->initialize)
+        ATK_OBJECT_CLASS(fm_desktop_accessible_parent_class)->initialize(accessible, data);
+    atk_object_set_role(accessible, ATK_ROLE_WINDOW);
+    /* FIXME: set name by monitor */
+    atk_object_set_name(accessible, _("Desktop"));
+}
+
+static void fm_desktop_accessible_init(FmDesktopAccessible *object)
+{
+    FmDesktopAccessiblePriv *priv = FM_DESKTOP_ACCESSIBLE_GET_PRIVATE(object);
+
+    priv->items = NULL;
+}
+
+static void fm_desktop_accessible_class_init(FmDesktopAccessibleClass *klass)
+{
+    GObjectClass *gobject_class = G_OBJECT_CLASS(klass);
+    AtkObjectClass *atk_class = ATK_OBJECT_CLASS(klass);
+
+    gobject_class->finalize = fm_desktop_accessible_finalize;
+
+    atk_class->get_n_children = fm_desktop_accessible_get_n_children;
+    atk_class->ref_child = fm_desktop_accessible_ref_child;
+    atk_class->initialize = fm_desktop_accessible_initialize;
+
+    g_type_class_add_private(klass, sizeof(FmDesktopAccessiblePriv));
+}
+
+/* ---- interface implementation ---- */
+/* handy ATK support is added only in 3.2.0 so we should handle it manually */
+static GType fm_desktop_accessible_factory_get_type (void);
+
+typedef struct {
+    AtkObjectFactory parent;
+} FmDesktopAccessibleFactory;
+
+typedef struct {
+    AtkObjectFactoryClass parent_class;
+} FmDesktopAccessibleFactoryClass;
+
+G_DEFINE_TYPE(FmDesktopAccessibleFactory, fm_desktop_accessible_factory, ATK_TYPE_OBJECT_FACTORY)
+
+static GType fm_desktop_accessible_factory_get_accessible_type(void)
+{
+    return FM_TYPE_DESKTOP_ACCESSIBLE;
+}
+
+static AtkObject *fm_desktop_accessible_factory_create_accessible(GObject *object)
+{
+    AtkObject *accessible;
+
+    g_return_val_if_fail(FM_IS_DESKTOP(object), NULL);
+
+    accessible = g_object_new(FM_TYPE_DESKTOP_ACCESSIBLE, NULL);
+    atk_object_initialize(accessible, object);
+    return accessible;
+}
+
+static void fm_desktop_accessible_factory_class_init(FmDesktopAccessibleFactoryClass *klass)
+{
+    AtkObjectFactoryClass *factory_class = (AtkObjectFactoryClass *)klass;
+
+    factory_class->create_accessible = fm_desktop_accessible_factory_create_accessible;
+    factory_class->get_accessible_type = fm_desktop_accessible_factory_get_accessible_type;
+}
+
+static void fm_desktop_accessible_factory_init(FmDesktopAccessibleFactory *factory)
+{
+}
+
+static AtkObject *fm_desktop_get_accessible(GtkWidget *widget)
+{
+    static gboolean first_time = TRUE;
+
+    if (first_time)
+    {
+        AtkObjectFactory *factory;
+        GType derived_atk_type;
+
+        /*
+         * Figure out whether accessibility is enabled by looking at the
+         * type of the accessible object which would be created for
+         * the parent type of FmDesktop.
+         */
+        factory = atk_registry_get_factory(atk_get_default_registry(),
+                                           g_type_parent(FM_TYPE_DESKTOP));
+        derived_atk_type = atk_object_factory_get_accessible_type(factory);
+        if (g_type_is_a(derived_atk_type, GTK_TYPE_ACCESSIBLE))
+            atk_registry_set_factory_type(atk_get_default_registry(),
+                                          FM_TYPE_DESKTOP,
+                                          fm_desktop_accessible_factory_get_type());
+        first_time = FALSE;
+    }
+    return GTK_WIDGET_CLASS(fm_desktop_parent_class)->get_accessible(widget);
+}
+
+static inline gint fm_desktop_accessible_index(GtkWidget *desktop, gpointer item)
+{
+    AtkObject *desktop_atk = gtk_widget_get_accessible(desktop);
+    FmDesktopAccessiblePriv *priv = FM_DESKTOP_ACCESSIBLE_GET_PRIVATE(desktop_atk);
+
+    return g_list_index(priv->items, item);
+}
+
+static void fm_desktop_accessible_item_deleted(FmDesktop *desktop, FmDesktopItem *item)
+{
+    AtkObject *obj;
+    FmDesktopAccessiblePriv *priv;
+    GList *item_atk_l;
+    FmDesktopItemAccessible *item_atk;
+    gint index;
+
+    obj = gtk_widget_get_accessible(GTK_WIDGET(desktop));
+    if (obj != NULL && FM_IS_DESKTOP_ACCESSIBLE(obj))
+    {
+        priv = FM_DESKTOP_ACCESSIBLE_GET_PRIVATE(obj);
+        item_atk_l = fm_desktop_find_accessible_for_item(priv, item);
+        g_return_if_fail(item_atk_l != NULL);
+        item_atk = item_atk_l->data;
+        item_atk->item = NULL;
+        index = g_list_position(priv->items, item_atk_l);
+        fm_desktop_item_accessible_add_state(item_atk, ATK_STATE_DEFUNCT);
+        g_signal_emit_by_name(obj, "children-changed::remove", index, NULL, NULL);
+        priv->items = g_list_remove_link(priv->items, item_atk_l);
+        g_object_unref(item_atk);
+    }
+}
+
+static void fm_desktop_accessible_item_added(FmDesktop *desktop, FmDesktopItem *item,
+                                             guint index)
+{
+    AtkObject *obj;
+    FmDesktopAccessiblePriv *priv;
+    FmDesktopItemAccessible *item_atk;
+
+    obj = gtk_widget_get_accessible(GTK_WIDGET(desktop));
+    if (obj != NULL && FM_IS_DESKTOP_ACCESSIBLE(obj))
+    {
+        priv = FM_DESKTOP_ACCESSIBLE_GET_PRIVATE(obj);
+        item_atk = fm_desktop_item_accessible_new(desktop, item);
+        g_warn_if_fail(index <= g_list_length(priv->items));
+        priv->items = g_list_insert(priv->items, g_object_ref(item_atk), index);
+        g_signal_emit_by_name(obj, "children-changed::add", index, NULL, NULL);
+    }
+}
+
+static void fm_desktop_accessible_items_reordered(FmDesktop *desktop,
+                                                  GtkTreeModel *model,
+                                                  gint *new_order)
+{
+    AtkObject *obj;
+    FmDesktopAccessiblePriv *priv;
+    GList *new_list = NULL;
+    int length, i;
+
+    obj = gtk_widget_get_accessible(GTK_WIDGET(desktop));
+    if (obj != NULL && FM_IS_DESKTOP_ACCESSIBLE(obj))
+    {
+        priv = FM_DESKTOP_ACCESSIBLE_GET_PRIVATE(obj);
+        length = gtk_tree_model_iter_n_children(model, NULL);
+        g_return_if_fail(length == (gint)g_list_length(priv->items));
+        for (i = 0; i < length; i++)
+        {
+            g_assert(new_order[i] >= 0 && new_order[i] < length);
+            new_list = g_list_prepend(new_list,
+                                      g_list_nth_data(priv->items, new_order[i]));
+        }
+        g_list_free(priv->items);
+        priv->items = g_list_reverse(new_list);
+    }
+}
+
+static void fm_desktop_item_selected_changed(FmDesktop *desktop, FmDesktopItem *item)
+{
+    AtkObject *obj;
+    FmDesktopAccessiblePriv *priv;
+    GList *item_atk_l;
+
+    obj = gtk_widget_get_accessible(GTK_WIDGET(desktop));
+    if (obj != NULL && FM_IS_DESKTOP_ACCESSIBLE(obj))
+    {
+        priv = FM_DESKTOP_ACCESSIBLE_GET_PRIVATE(obj);
+        item_atk_l = fm_desktop_find_accessible_for_item(priv, item);
+        g_return_if_fail(item_atk_l != NULL);
+        atk_object_notify_state_change(item_atk_l->data, ATK_STATE_SELECTED,
+                                       item->is_selected);
+    }
+}
+
+static void fm_desktop_accessible_focus_set(FmDesktop *desktop, FmDesktopItem *item)
+{
+    AtkObject *obj;
+    FmDesktopAccessiblePriv *priv;
+    GList *item_atk_l;
+
+    obj = gtk_widget_get_accessible(GTK_WIDGET(desktop));
+    if (obj != NULL && FM_IS_DESKTOP_ACCESSIBLE(obj))
+    {
+        priv = FM_DESKTOP_ACCESSIBLE_GET_PRIVATE(obj);
+        item_atk_l = fm_desktop_find_accessible_for_item(priv, item);
+        g_return_if_fail(item_atk_l != NULL);
+        atk_object_notify_state_change(item_atk_l->data, ATK_STATE_FOCUSED, TRUE);
+    }
+}
+
+static void fm_desktop_accessible_focus_unset(FmDesktop *desktop, FmDesktopItem *item)
+{
+    AtkObject *obj;
+    FmDesktopAccessiblePriv *priv;
+    GList *item_atk_l;
+
+    obj = gtk_widget_get_accessible(GTK_WIDGET(desktop));
+    if (obj != NULL && FM_IS_DESKTOP_ACCESSIBLE(obj))
+    {
+        priv = FM_DESKTOP_ACCESSIBLE_GET_PRIVATE(obj);
+        item_atk_l = fm_desktop_find_accessible_for_item(priv, item);
+        g_return_if_fail(item_atk_l != NULL);
+        atk_object_notify_state_change(item_atk_l->data, ATK_STATE_FOCUSED, FALSE);
+    }
 }
 
 
@@ -696,6 +1606,7 @@ static void update_rubberbanding(FmDesktop* self, int newx, int newy)
         {
             item->is_selected = selected;
             redraw_item(self, item);
+            fm_desktop_item_selected_changed(self, item);
         }
     }
     while(gtk_tree_model_iter_next(model, &it));
@@ -1051,7 +1962,6 @@ static void on_row_deleting(FmFolderModel* model, GtkTreePath* tp,
 {
     GList *l;
 
-    desktop_item_free(data);
     for(l = desktop->fixed_items; l; l = l->next)
         if(l->data == data)
         {
@@ -1061,6 +1971,7 @@ static void on_row_deleting(FmFolderModel* model, GtkTreePath* tp,
     if((gpointer)desktop->focus == data)
     {
         GtkTreeIter it = *iter;
+        fm_desktop_accessible_focus_unset(desktop, data);
         if(gtk_tree_model_iter_next(GTK_TREE_MODEL(model), &it))
             desktop->focus = fm_folder_model_get_item_userdata(model, &it);
         else
@@ -1074,16 +1985,22 @@ static void on_row_deleting(FmFolderModel* model, GtkTreePath* tp,
             else
                 desktop->focus = NULL;
         }
+        if (desktop->focus)
+            fm_desktop_accessible_focus_set(desktop, desktop->focus);
     }
     if((gpointer)desktop->drop_hilight == data)
         desktop->drop_hilight = NULL;
     if((gpointer)desktop->hover_item == data)
         desktop->hover_item = NULL;
+    fm_desktop_accessible_item_deleted(desktop, data);
+    desktop_item_free(data);
 }
 
 static void on_row_inserted(FmFolderModel* mod, GtkTreePath* tp, GtkTreeIter* it, FmDesktop* desktop)
 {
     FmDesktopItem* item = desktop_item_new(mod, it);
+    gint *indices = gtk_tree_path_get_indices(tp);
+    fm_desktop_accessible_item_added(desktop, item, indices[0]);
     fm_folder_model_set_item_userdata(mod, it, item);
     queue_layout_items(desktop);
 }
@@ -1105,8 +2022,9 @@ static void on_row_changed(FmFolderModel* model, GtkTreePath* tp, GtkTreeIter* i
     /* queue_layout_items(desktop); */
 }
 
-static void on_rows_reordered(FmFolderModel* model, GtkTreePath* parent_tp, GtkTreeIter* parent_it, gpointer arg3, FmDesktop* desktop)
+static void on_rows_reordered(FmFolderModel* model, GtkTreePath* parent_tp, GtkTreeIter* parent_it, gpointer new_order, FmDesktop* desktop)
 {
+    fm_desktop_accessible_items_reordered(desktop, GTK_TREE_MODEL(model), new_order);
     queue_layout_items(desktop);
 }
 
@@ -1625,9 +2543,15 @@ static void set_focused_item(FmDesktop* desktop, FmDesktopItem* item)
         FmDesktopItem* old_focus = desktop->focus;
         desktop->focus = item;
         if(old_focus)
+        {
             redraw_item(desktop, old_focus);
+            fm_desktop_accessible_focus_unset(desktop, old_focus);
+        }
         if(item)
+        {
             redraw_item(desktop, item);
+            fm_desktop_accessible_focus_set(desktop, item);
+        }
     }
 }
 
@@ -1876,15 +2800,20 @@ static gboolean on_button_press(GtkWidget* w, GdkEventButton* evt)
                 clicked_item->is_selected = ! clicked_item->is_selected;
             else
                 clicked_item->is_selected = TRUE;
+            fm_desktop_item_selected_changed(self, clicked_item);
 
             if(self->focus && self->focus != item)
             {
                 FmDesktopItem* old_focus = self->focus;
                 self->focus = NULL;
                 if(old_focus)
-                    redraw_item(FM_DESKTOP(w), old_focus);
+                {
+                    redraw_item(self, old_focus);
+                    fm_desktop_accessible_focus_unset(self, old_focus);
+                }
             }
             self->focus = clicked_item;
+            fm_desktop_accessible_focus_set(self, clicked_item);
             redraw_item(self, clicked_item);
 
             if(evt->button == 3)  /* right click, context menu */
@@ -2134,6 +3063,7 @@ static gboolean on_key_press(GtkWidget* w, GdkEventKey* evt)
             {
                 _unselect_all(FM_FOLDER_VIEW(desktop));
                 item->is_selected = TRUE;
+                fm_desktop_item_selected_changed(desktop, item);
             }
             set_focused_item(desktop, item);
         }
@@ -2147,6 +3077,7 @@ static gboolean on_key_press(GtkWidget* w, GdkEventKey* evt)
             {
                 _unselect_all(FM_FOLDER_VIEW(desktop));
                 item->is_selected = TRUE;
+                fm_desktop_item_selected_changed(desktop, item);
             }
             set_focused_item(desktop, item);
         }
@@ -2160,6 +3091,7 @@ static gboolean on_key_press(GtkWidget* w, GdkEventKey* evt)
             {
                 _unselect_all(FM_FOLDER_VIEW(desktop));
                 item->is_selected = TRUE;
+                fm_desktop_item_selected_changed(desktop, item);
             }
             set_focused_item(desktop, item);
         }
@@ -2173,6 +3105,7 @@ static gboolean on_key_press(GtkWidget* w, GdkEventKey* evt)
             {
                 _unselect_all(FM_FOLDER_VIEW(desktop));
                 item->is_selected = TRUE;
+                fm_desktop_item_selected_changed(desktop, item);
             }
             set_focused_item(desktop, item);
         }
@@ -2185,6 +3118,7 @@ static gboolean on_key_press(GtkWidget* w, GdkEventKey* evt)
             {
                 desktop->focus->is_selected = !desktop->focus->is_selected;
                 redraw_item(desktop, desktop->focus);
+                fm_desktop_item_selected_changed(desktop, desktop->focus);
             }
             return TRUE;
         }
@@ -2252,7 +3186,10 @@ static gboolean on_focus_in(GtkWidget* w, GdkEventFocus* evt)
     GTK_WIDGET_SET_FLAGS(w, GTK_HAS_FOCUS);
 #endif
     if(!self->focus && gtk_tree_model_get_iter_first(GTK_TREE_MODEL(self->model), &it))
+    {
         self->focus = fm_folder_model_get_item_userdata(self->model, &it);
+        fm_desktop_accessible_focus_set(self, self->focus);
+    }
     if(self->focus)
         redraw_item(self, self->focus);
     return FALSE;
@@ -2633,6 +3570,7 @@ static void fm_desktop_class_init(FmDesktopClass *klass)
     widget_class->focus_out_event = on_focus_out;
     /* widget_class->scroll_event = on_scroll; */
     widget_class->delete_event = (DeleteEvtHandler)gtk_true;
+    widget_class->get_accessible = fm_desktop_get_accessible;
 
     widget_class->drag_motion = on_drag_motion;
     widget_class->drag_drop = on_drag_drop;
@@ -2803,6 +3741,7 @@ static void _select_all(FmFolderView* fv)
         {
             item->is_selected = TRUE;
             redraw_item(desktop, item);
+            fm_desktop_item_selected_changed(desktop, item);
         }
     }
     while(gtk_tree_model_iter_next(model, &it));
@@ -2822,6 +3761,7 @@ static void _unselect_all(FmFolderView* fv)
         {
             item->is_selected = FALSE;
             redraw_item(desktop, item);
+            fm_desktop_item_selected_changed(desktop, item);
         }
     }
     while(gtk_tree_model_iter_next(model, &it));
