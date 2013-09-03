@@ -235,8 +235,6 @@ int main(int argc, char** argv)
         fm_volume_manager_init();
         gtk_main();
         /* g_debug("main loop ended"); */
-        if(desktop_running)
-            fm_desktop_manager_finalize();
 
         pcmanfm_save_config(TRUE);
         if(save_config_idle)
@@ -269,7 +267,6 @@ gboolean pcmanfm_run(gint screen_num)
                 fm_desktop_manager_init(one_screen ? screen_num : -1);
                 desktop_running = TRUE;
                 one_screen = FALSE;
-                pcmanfm_ref();
             }
             show_desktop = FALSE;
             return TRUE;
@@ -280,7 +277,6 @@ gboolean pcmanfm_run(gint screen_num)
             {
                 desktop_running = FALSE;
                 fm_desktop_manager_finalize();
-                pcmanfm_unref();
             }
             desktop_off = FALSE;
             return FALSE;
