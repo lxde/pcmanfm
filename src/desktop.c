@@ -1094,7 +1094,10 @@ typedef struct {
     AtkObjectFactoryClass parent_class;
 } FmDesktopAccessibleFactoryClass;
 
-G_DEFINE_TYPE(FmDesktopAccessibleFactory, fm_desktop_accessible_factory, ATK_TYPE_OBJECT_FACTORY)
+G_DEFINE_TYPE_WITH_CODE(FmDesktopAccessibleFactory, fm_desktop_accessible_factory, ATK_TYPE_OBJECT_FACTORY,
+                        atk_registry_set_factory_type(atk_get_default_registry(),
+                                                      FM_TYPE_DESKTOP,
+                                                      g_define_type_id); )
 
 static GType fm_desktop_accessible_factory_get_accessible_type(void)
 {
@@ -1126,27 +1129,7 @@ static void fm_desktop_accessible_factory_init(FmDesktopAccessibleFactory *facto
 
 static AtkObject *fm_desktop_get_accessible(GtkWidget *widget)
 {
-    static gboolean first_time = TRUE;
-
-    if (first_time)
-    {
-        AtkObjectFactory *factory;
-        GType derived_atk_type;
-
-        /*
-         * Figure out whether accessibility is enabled by looking at the
-         * type of the accessible object which would be created for
-         * the parent type of FmDesktop.
-         */
-        factory = atk_registry_get_factory(atk_get_default_registry(),
-                                           g_type_parent(FM_TYPE_DESKTOP));
-        derived_atk_type = atk_object_factory_get_accessible_type(factory);
-        if (g_type_is_a(derived_atk_type, GTK_TYPE_ACCESSIBLE))
-            atk_registry_set_factory_type(atk_get_default_registry(),
-                                          FM_TYPE_DESKTOP,
-                                          fm_desktop_accessible_factory_get_type());
-        first_time = FALSE;
-    }
+    fm_desktop_accessible_factory_get_type(); /* just to activate it */
     return GTK_WIDGET_CLASS(fm_desktop_parent_class)->get_accessible(widget);
 }
 
