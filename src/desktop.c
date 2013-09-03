@@ -182,7 +182,7 @@ static inline void desktop_item_free(FmDesktopItem* item)
 static void calc_item_size(FmDesktop* desktop, FmDesktopItem* item, GdkPixbuf* icon)
 {
     //int text_x, text_y, text_w, text_h;    /* Probably goes along with the FIXME in this function */
-    PangoRectangle rc, rc2;
+    PangoRectangle rc2;
 
     /* icon rect */
     if(icon)
@@ -205,12 +205,11 @@ static void calc_item_size(FmDesktop* desktop, FmDesktopItem* item, GdkPixbuf* i
 
     /* text label rect */
     pango_layout_set_text(desktop->pl, NULL, 0);
-    /* FIXME: we should cache text_h * PANGO_SCALE and text_w * PANGO_SCALE */
     pango_layout_set_height(desktop->pl, desktop->pango_text_h);
     pango_layout_set_width(desktop->pl, desktop->pango_text_w);
     pango_layout_set_text(desktop->pl, fm_file_info_get_disp_name(item->fi), -1);
 
-    pango_layout_get_pixel_extents(desktop->pl, &rc, &rc2);
+    pango_layout_get_pixel_extents(desktop->pl, NULL, &rc2);
     pango_layout_set_text(desktop->pl, NULL, 0);
 
     /* FIXME: RTL */
@@ -1473,6 +1472,11 @@ static void paint_item(FmDesktop* self, FmDesktopItem* item, cairo_t* cr, GdkRec
 #endif
                         item->text_rect.x, item->text_rect.y, item->text_rect.width, item->text_rect.height);
 
+    if(item == self->hover_item) /* hovered */
+        g_object_set(G_OBJECT(self), "tooltip-text", fm_file_info_get_disp_name(item->fi), NULL);
+    else
+        g_object_set(G_OBJECT(self), "tooltip-text", NULL, NULL);
+
     /* draw the icon */
     g_object_set(self->icon_render, "pixbuf", icon, "info", item->fi, NULL);
 #if GTK_CHECK_VERSION(3, 0, 0)
@@ -2703,6 +2707,7 @@ static void on_size_allocate(GtkWidget* w, GtkAllocation* alloc)
     PangoContext* pc;
     PangoFontMetrics *metrics;
     int font_h;
+
     pc = gtk_widget_get_pango_context((GtkWidget*)self);
 
     metrics = pango_context_get_metrics(pc, NULL, NULL);
@@ -2717,6 +2722,11 @@ static void on_size_allocate(GtkWidget* w, GtkAllocation* alloc)
     self->xmargin = self->ymargin = MARGIN;
     self->text_h = font_h * 2;
     self->text_w = 100;
+#if 0
+    if (fm_config->show_full_names)
+        self->pango_text_h = -1;
+    else
+#endif
     self->pango_text_h = self->text_h * PANGO_SCALE;
     self->pango_text_w = self->text_w * PANGO_SCALE;
     self->text_h += 4;
@@ -2962,9 +2972,10 @@ static gboolean on_motion_notify(GtkWidget* w, GdkEventMotion* evt)
         {
             GtkTreeIter it;
             FmDesktopItem* item = hit_test(self, &it, evt->x, evt->y);
+            FmDesktopItem *hover_item = self->hover_item;
             GdkWindow* window;
 
-            if(item != self->hover_item)
+            if(item != hover_item)
             {
                 if(0 != self->single_click_timeout_handler)
                 {
@@ -2972,8 +2983,12 @@ static gboolean on_motion_notify(GtkWidget* w, GdkEventMotion* evt)
                     self->single_click_timeout_handler = 0;
                 }
                 window = gtk_widget_get_window(w);
+                self->hover_item = item;
+                if (hover_item)
+                    redraw_item(self, hover_item);
                 if(item)
                 {
+                    redraw_item(self, item);
                     gdk_window_set_cursor(window, hand_cursor);
                     /* FIXME: timeout should be customizable */
                     if(self->single_click_timeout_handler == 0)
@@ -2985,7 +3000,21 @@ static gboolean on_motion_notify(GtkWidget* w, GdkEventMotion* evt)
                 {
                     gdk_window_set_cursor(window, NULL);
                 }
+            }
+        }
+        else
+        {
+            GtkTreeIter it;
+            FmDesktopItem* item = hit_test(self, &it, evt->x, evt->y);
+            FmDesktopItem *hover_item = self->hover_item;
+
+            if(item != hover_item)
+            {
                 self->hover_item = item;
+                if (hover_item)
+                    redraw_item(self, hover_item);
+                if(item)
+                    redraw_item(self, item);
             }
         }
         return TRUE;
@@ -3469,6 +3498,11 @@ static GObject* fm_desktop_constructor(GType type, guint n_construct_properties,
     //pc = gtk_widget_get_pango_context((GtkWidget*)self);
     self->pl = gtk_widget_create_pango_layout((GtkWidget*)self, NULL);
     pango_layout_set_alignment(self->pl, PANGO_ALIGN_CENTER);
+#if 0
+    if (fm_config->show_full_names)
+        pango_layout_set_ellipsize(self->pl, PANGO_ELLIPSIZE_NONE);
+    else
+#endif
     pango_layout_set_ellipsize(self->pl, PANGO_ELLIPSIZE_END);
     pango_layout_set_wrap(self->pl, PANGO_WRAP_WORD_CHAR);
 
