@@ -50,8 +50,7 @@
 struct _FmDesktopItem
 {
     FmFileInfo* fi;
-    int x; /* position of the item on the desktop */
-    int y;
+    GdkRectangle area; /* position of the item on the desktop */
     GdkRectangle icon_rect;
     GdkRectangle text_rect;
     gboolean is_special : 1; /* is this a special item like "My Computer", mounted volume, or "Trash" */
@@ -187,16 +186,17 @@ static void calc_item_size(FmDesktop* desktop, FmDesktopItem* item, GdkPixbuf* i
     {
         item->icon_rect.width = gdk_pixbuf_get_width(icon);
         item->icon_rect.height = gdk_pixbuf_get_height(icon);
-        item->icon_rect.x = item->x + (desktop->cell_w - item->icon_rect.width) / 2;
-        item->icon_rect.y = item->y + desktop->ypad + (fm_config->big_icon_size - item->icon_rect.height) / 2;
+        /* FIXME: RTL */
+        item->icon_rect.x = item->area.x + (desktop->cell_w - item->icon_rect.width) / 2;
+        item->icon_rect.y = item->area.y + desktop->ypad + (fm_config->big_icon_size - item->icon_rect.height) / 2;
         item->icon_rect.height += desktop->spacing;
     }
     else
     {
         item->icon_rect.width = fm_config->big_icon_size;
         item->icon_rect.height = fm_config->big_icon_size;
-        item->icon_rect.x = item->x + desktop->ypad;
-        item->icon_rect.y = item->y + desktop->ypad;
+        item->icon_rect.x = item->area.x + desktop->ypad;
+        item->icon_rect.y = item->area.y + desktop->ypad;
         item->icon_rect.height += desktop->spacing;
     }
 
@@ -210,10 +210,13 @@ static void calc_item_size(FmDesktop* desktop, FmDesktopItem* item, GdkPixbuf* i
     pango_layout_get_pixel_extents(desktop->pl, &rc, &rc2);
     pango_layout_set_text(desktop->pl, NULL, 0);
 
-    item->text_rect.x = item->x + (desktop->cell_w - rc2.width - 4) / 2;
+    /* FIXME: RTL */
+    item->text_rect.x = item->area.x + (desktop->cell_w - rc2.width - 4) / 2;
     item->text_rect.y = item->icon_rect.y + item->icon_rect.height + rc2.y;
     item->text_rect.width = rc2.width + 4;
     item->text_rect.height = rc2.height + 4;
+    item->area.width = MAX(item->icon_rect.width, item->text_rect.width);
+    item->area.height = item->icon_rect.height + rc2.y + item->text_rect.height;
 }
 
 static inline void load_items(FmDesktop* desktop)
@@ -244,8 +247,8 @@ static inline void load_items(FmDesktop* desktop)
                 gtk_tree_model_get(model, &it, COL_FILE_ICON, &icon, -1);
                 desktop->fixed_items = g_list_prepend(desktop->fixed_items, item);
                 item->fixed_pos = TRUE;
-                item->x = g_key_file_get_integer(kf, name, "x", NULL);
-                item->y = g_key_file_get_integer(kf, name, "y", NULL);
+                item->area.x = g_key_file_get_integer(kf, name, "x", NULL);
+                item->area.y = g_key_file_get_integer(kf, name, "y", NULL);
                 calc_item_size(desktop, item, icon);
                 if(icon)
                     g_object_unref(icon);
@@ -323,7 +326,7 @@ static void save_item_pos(FmDesktop* desktop)
         g_string_append(buf, "]\n");
         g_string_append_printf(buf, "x=%d\n"
                                     "y=%d\n\n",
-                                    item->x, item->y);
+                                    item->area.x, item->area.y);
     }
     g_file_set_contents(path, buf->str, buf->len, NULL);
     g_free(path);
@@ -417,8 +420,8 @@ static void layout_items(FmDesktop* self)
             else
             {
 _next_position:
-                item->x = self->working_area.x + x;
-                item->y = self->working_area.y + y;
+                item->area.x = self->working_area.x + x;
+                item->area.y = self->working_area.y + y;
                 calc_item_size(self, item, icon);
                 y += self->cell_h;
                 if(y > bottom)
@@ -448,8 +451,8 @@ _next_position:
             else
             {
 _next_position_rtl:
-                item->x = self->working_area.x + x;
-                item->y = self->working_area.y + y;
+                item->area.x = self->working_area.x + x;
+                item->area.y = self->working_area.y + y;
                 calc_item_size(self, item, icon);
                 y += self->cell_h;
                 if(y > bottom)
@@ -512,7 +515,7 @@ static void paint_item(FmDesktop* self, FmDesktopItem* item, cairo_t* cr, GdkRec
     pango_layout_set_text(self->pl, fm_file_info_get_disp_name(item->fi), -1);
 
     /* FIXME: do we need to cache this? */
-    text_x = item->x + (self->cell_w - self->text_w)/2 + 2;
+    text_x = item->area.x + (self->cell_w - self->text_w)/2 + 2;
     text_y = item->icon_rect.y + item->icon_rect.height + 2;
 
     if(item->is_selected || item == self->drop_hilight) /* draw background for text label */
@@ -588,11 +591,11 @@ static void move_item(FmDesktop* desktop, FmDesktopItem* item, int x, int y, gbo
     if(redraw)
         redraw_item(desktop, item);
 
-    dx = x - item->x;
-    dy = y - item->y;
+    dx = x - item->area.x;
+    dy = y - item->area.y;
 
-    item->x = x;
-    item->y = y;
+    item->area.x = x;
+    item->area.y = y;
 
     /* calc_item_size(desktop, item); */
     item->icon_rect.x += dx;
@@ -1439,8 +1442,8 @@ static void on_snap_to_grid(GtkAction* act, gpointer user_data)
         item = (FmDesktopItem*)l->data;
         if(!item->fixed_pos)
             continue;
-        new_x = x + _round((double)(item->x - x) / desktop->cell_w) * desktop->cell_w;
-        new_y = y + _round((double)(item->y - y) / desktop->cell_h) * desktop->cell_h;
+        new_x = x + _round((double)(item->area.x - x) / desktop->cell_w) * desktop->cell_w;
+        new_y = y + _round((double)(item->area.y - y) / desktop->cell_h) * desktop->cell_h;
         move_item(desktop, item, new_x, new_y, FALSE);
     }
     g_list_free(items);
@@ -1493,19 +1496,19 @@ static FmDesktopItem* get_nearest_item(FmDesktop* desktop, FmDesktopItem* item, 
         do
         {
             item2 = fm_folder_model_get_item_userdata(desktop->model, &it);
-            if(item2->x >= item->x)
+            if(item2->area.x >= item->area.x)
                 continue;
-            dist = item->x - item2->x;
+            dist = item->area.x - item2->area.x;
             if(dist < min_x_dist)
             {
                 ret = item2;
                 min_x_dist = dist;
-                min_y_dist = ABS(item->y - item2->y);
+                min_y_dist = ABS(item->area.y - item2->area.y);
             }
             else if(dist == min_x_dist && item2 != ret) /* if there is another item of the same x distance */
             {
                 /* get the one with smaller y distance */
-                dist = ABS(item2->y - item->y);
+                dist = ABS(item2->area.y - item->area.y);
                 if(dist < min_y_dist)
                 {
                     ret = item2;
@@ -1519,19 +1522,19 @@ static FmDesktopItem* get_nearest_item(FmDesktop* desktop, FmDesktopItem* item, 
         do
         {
             item2 = fm_folder_model_get_item_userdata(desktop->model, &it);
-            if(item2->x <= item->x)
+            if(item2->area.x <= item->area.x)
                 continue;
-            dist = item2->x - item->x;
+            dist = item2->area.x - item->area.x;
             if(dist < min_x_dist)
             {
                 ret = item2;
                 min_x_dist = dist;
-                min_y_dist = ABS(item->y - item2->y);
+                min_y_dist = ABS(item->area.y - item2->area.y);
             }
             else if(dist == min_x_dist && item2 != ret) /* if there is another item of the same x distance */
             {
                 /* get the one with smaller y distance */
-                dist = ABS(item2->y - item->y);
+                dist = ABS(item2->area.y - item->area.y);
                 if(dist < min_y_dist)
                 {
                     ret = item2;
@@ -1545,19 +1548,19 @@ static FmDesktopItem* get_nearest_item(FmDesktop* desktop, FmDesktopItem* item, 
         do
         {
             item2 = fm_folder_model_get_item_userdata(desktop->model, &it);
-            if(item2->y >= item->y)
+            if(item2->area.y >= item->area.y)
                 continue;
-            dist = item->y - item2->y;
+            dist = item->area.y - item2->area.y;
             if(dist < min_y_dist)
             {
                 ret = item2;
                 min_y_dist = dist;
-                min_x_dist = ABS(item->x - item2->x);
+                min_x_dist = ABS(item->area.x - item2->area.x);
             }
             else if(dist == min_y_dist && item2 != ret) /* if there is another item of the same y distance */
             {
                 /* get the one with smaller x distance */
-                dist = ABS(item2->x - item->x);
+                dist = ABS(item2->area.x - item->area.x);
                 if(dist < min_x_dist)
                 {
                     ret = item2;
@@ -1571,19 +1574,19 @@ static FmDesktopItem* get_nearest_item(FmDesktop* desktop, FmDesktopItem* item, 
         do
         {
             item2 = fm_folder_model_get_item_userdata(desktop->model, &it);
-            if(item2->y <= item->y)
+            if(item2->area.y <= item->area.y)
                 continue;
-            dist = item2->y - item->y;
+            dist = item2->area.y - item->area.y;
             if(dist < min_y_dist)
             {
                 ret = item2;
                 min_y_dist = dist;
-                min_x_dist = ABS(item->x - item2->x);
+                min_x_dist = ABS(item->area.x - item2->area.x);
             }
             else if(dist == min_y_dist && item2 != ret) /* if there is another item of the same y distance */
             {
                 /* get the one with smaller x distance */
-                dist = ABS(item2->x - item->x);
+                dist = ABS(item2->area.x - item->area.x);
                 if(dist < min_x_dist)
                 {
                     ret = item2;
@@ -2378,7 +2381,7 @@ static void on_drag_data_received (GtkWidget *dest_widget,
     for(l = items; l; l=l->next)
     {
         FmDesktopItem* item = (FmDesktopItem*)l->data;
-        move_item(desktop, item, item->x + offset_x, item->y + offset_y, FALSE);
+        move_item(desktop, item, item->area.x + offset_x, item->area.y + offset_y, FALSE);
     }
     g_list_free(items);
 
