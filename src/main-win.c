@@ -106,7 +106,7 @@ static void on_notebook_page_removed(GtkNotebook* nb, GtkWidget* page, guint num
 #include "main-win-ui.c" /* ui xml definitions and actions */
 
 static GSList* all_wins = NULL;
-static GtkDialog* about_dlg = NULL;
+static GtkAboutDialog* about_dlg = NULL;
 static GtkWidget* key_nav_list_dlg = NULL;
 
 static void fm_main_win_class_init(FmMainWinClass *klass)
@@ -673,7 +673,7 @@ static void on_unrealize(GtkWidget* widget)
     (*GTK_WIDGET_CLASS(fm_main_win_parent_class)->unrealize)(widget);
 }
 
-static void on_about_response(GtkDialog* dlg, gint response, GtkDialog **dlgptr)
+static void on_about_response(GtkDialog* dlg, gint response, GtkAboutDialog **dlgptr)
 {
     g_signal_handlers_disconnect_by_func(dlg, on_about_response, dlgptr);
     *dlgptr = NULL;
@@ -686,8 +686,16 @@ static void on_about(GtkAction* act, FmMainWin* win)
     if(!about_dlg)
     {
         GtkBuilder* builder = gtk_builder_new();
+        GString *comments = g_string_new(_("Lightweight file manager\n"));
+
         gtk_builder_add_from_file(builder, PACKAGE_UI_DIR "/about.ui", NULL);
-        about_dlg = GTK_DIALOG(gtk_builder_get_object(builder, "dlg"));
+        about_dlg = GTK_ABOUT_DIALOG(gtk_builder_get_object(builder, "dlg"));
+#if FM_CHECK_VERSION(1, 2, 0)
+        g_string_append_printf(comments, _("using LibFM ver. %s\n"), fm_version());
+#endif
+        g_string_append(comments, _("\nDeveloped by Hon Jen Yee (PCMan)"));
+        gtk_about_dialog_set_comments(about_dlg, comments->str);
+        g_string_free(comments, TRUE);
         g_object_unref(builder);
         g_signal_connect(about_dlg, "response", G_CALLBACK(on_about_response), (gpointer)&about_dlg);
         pcmanfm_ref();
