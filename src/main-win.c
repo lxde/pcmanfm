@@ -455,6 +455,8 @@ static void fm_main_win_init(FmMainWin *win)
     GtkActionGroup* act_grp;
     GtkAction* act;
     GtkAccelGroup* accel_grp;
+    AtkObject *atk_obj, *atk_view;
+    AtkRelation *relation;
     GtkShadowType shadow_type;
 
     pcmanfm_ref();
@@ -526,6 +528,11 @@ static void fm_main_win_init(FmMainWin *win)
     win->history_menu = gtk_menu_new();
     gtk_menu_tool_button_set_menu(GTK_MENU_TOOL_BUTTON(toolitem), win->history_menu);
     g_signal_connect(toolitem, "show-menu", G_CALLBACK(on_show_history_menu), win);
+    gtk_menu_tool_button_set_arrow_tooltip_text(GTK_MENU_TOOL_BUTTON(toolitem),
+                                                _("Show history of visited folders"));
+    atk_obj = gtk_widget_get_accessible(GTK_WIDGET(toolitem));
+    if (atk_obj)
+        atk_object_set_name(atk_obj, _("History"));
 
     gtk_box_pack_start( vbox, menubar, FALSE, TRUE, 0 );
     gtk_box_pack_start( vbox, GTK_WIDGET(win->toolbar), FALSE, TRUE, 0 );
@@ -585,6 +592,23 @@ static void fm_main_win_init(FmMainWin *win)
 
     g_object_unref(act_grp);
     win->ui = ui;
+
+    /* accessibility: setup relation for Go button and location entry */
+    atk_obj = gtk_widget_get_accessible(GTK_WIDGET(win->location));
+    relation = atk_relation_new(&atk_obj, 1, ATK_RELATION_LABEL_FOR);
+    /* use atk_view for button temporarily */
+    atk_view = gtk_widget_get_accessible(gtk_ui_manager_get_widget(ui, "/toolbar/Go"));
+    atk_relation_set_add(atk_object_ref_relation_set(atk_view), relation);
+    g_object_unref(relation);
+    /* setup relations with view */
+    atk_view = gtk_widget_get_accessible(GTK_WIDGET(win->notebook));
+    relation = atk_relation_new(&atk_obj, 1, ATK_RELATION_CONTROLLED_BY);
+    atk_relation_set_add(atk_object_ref_relation_set(atk_view), relation);
+    g_object_unref(relation);
+    atk_obj = gtk_widget_get_accessible(GTK_WIDGET(win->statusbar));
+    relation = atk_relation_new(&atk_obj, 1, ATK_RELATION_DESCRIBED_BY);
+    atk_relation_set_add(atk_object_ref_relation_set(atk_view), relation);
+    g_object_unref(relation);
 
     gtk_container_add(GTK_CONTAINER(win), GTK_WIDGET(vbox));
 }

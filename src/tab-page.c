@@ -502,6 +502,8 @@ static void fm_tab_page_init(FmTabPage *page)
     FmTabLabel* tab_label;
     FmFolderView* folder_view;
     GList* focus_chain = NULL;
+    AtkObject *atk_widget, *atk_label;
+    AtkRelation *relation;
     FmSidePaneMode mode = app_config->side_pane_mode;
 
     page->side_pane = fm_side_pane_new();
@@ -539,6 +541,12 @@ static void fm_tab_page_init(FmTabPage *page)
     gtk_label_set_ellipsize(tab_label->label, PANGO_ELLIPSIZE_END);
 #endif
     page->tab_label = tab_label;
+
+    atk_widget = gtk_widget_get_accessible(GTK_WIDGET(folder_view));
+    atk_label = gtk_widget_get_accessible(GTK_WIDGET(tab_label));
+    relation = atk_relation_new(&atk_widget, 1, ATK_RELATION_LABEL_FOR);
+    atk_relation_set_add(atk_object_ref_relation_set(atk_label), relation);
+    g_object_unref(relation);
 
     g_signal_connect(folder_view, "sel-changed",
                      G_CALLBACK(on_folder_view_sel_changed), page);
