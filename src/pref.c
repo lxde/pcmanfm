@@ -31,7 +31,8 @@
 #include "app-config.h"
 #include "desktop.h"
 
-#define INIT_BOOL(b, st, name, changed_notify)  init_bool(b, #name, G_STRUCT_OFFSET(st, name), changed_notify)
+#define INIT_BOOL(b, st, name, changed_notify)  init_bool(b, #name, G_STRUCT_OFFSET(st, name), changed_notify, FALSE)
+#define INIT_BOOL_SHOW(b, st, name, changed_notify)  init_bool(b, #name, G_STRUCT_OFFSET(st, name), changed_notify, TRUE)
 #define INIT_COMBO(b, st, name, changed_notify) init_combo(b, #name, G_STRUCT_OFFSET(st, name), changed_notify)
 #define INIT_ICON_SIZES(b, name) init_icon_sizes(b, #name, G_STRUCT_OFFSET(FmConfig, name))
 #define INIT_COLOR(b, st, name, changed_notify)  init_color(b, #name, G_STRUCT_OFFSET(st, name), changed_notify)
@@ -162,6 +163,30 @@ static void init_archiver_combo(GtkBuilder* builder)
     g_signal_connect(combo, "changed", G_CALLBACK(on_archiver_combo_changed), NULL);
 }
 
+#if FM_CHECK_VERSION(1, 2, 0)
+static void on_auto_sel_changed(GtkRange *scale, gpointer unused)
+{
+    gint new_val = gtk_range_get_value(scale) * 1000;
+
+    if (new_val != fm_config->auto_selection_delay)
+    {
+        fm_config->auto_selection_delay = new_val;
+        fm_config_emit_changed(fm_config, "auto_selection_delay");
+    }
+}
+
+static void init_auto_selection_delay_scale(GtkBuilder* builder)
+{
+    GtkScale *scale;
+    gdouble val = fm_config->auto_selection_delay * 0.001;
+
+    scale = GTK_SCALE(gtk_builder_get_object(builder, "auto_selection_delay"));
+    gtk_range_set_value(GTK_RANGE(scale), val);
+    g_signal_connect(scale, "value-changed", G_CALLBACK(on_auto_sel_changed), NULL);
+    gtk_widget_show(GTK_WIDGET(gtk_builder_get_object(builder, "auto_sel_box")));
+}
+#endif
+
 static void on_toggled(GtkToggleButton* btn, gpointer _off)
 {
     gsize off = GPOINTER_TO_SIZE(_off);
@@ -177,14 +202,43 @@ static void on_toggled(GtkToggleButton* btn, gpointer _off)
     }
 }
 
-static void init_bool(GtkBuilder* b, const char* name, gsize off, const char* changed_notify)
+static void init_bool(GtkBuilder* b, const char* name, gsize off,
+                      const char* changed_notify, gboolean force_show)
 {
     GtkToggleButton* btn = GTK_TOGGLE_BUTTON(gtk_builder_get_object(b, name));
     gboolean* val = (gboolean*)G_STRUCT_MEMBER_P(fm_config, off);
     if(changed_notify)
         g_object_set_data_full(G_OBJECT(btn), "changed", g_strdup(changed_notify), g_free);
+    if(force_show)
+        gtk_widget_show(GTK_WIDGET(btn));
     gtk_toggle_button_set_active(btn, *val);
     g_signal_connect(btn, "toggled", G_CALLBACK(on_toggled), GSIZE_TO_POINTER(off));
+}
+
+static void on_single_click_toggled(GtkToggleButton* btn, gpointer auto_sel_box)
+{
+    gboolean new_val = gtk_toggle_button_get_active(btn);
+
+    if (new_val != fm_config->single_click)
+    {
+        fm_config->single_click = new_val;
+        fm_config_emit_changed(fm_config, "single_click");
+    }
+    if (auto_sel_box)
+        gtk_widget_set_sensitive(auto_sel_box, new_val);
+}
+
+static void on_use_trash_toggled(GtkToggleButton* btn, gpointer vbox_trash)
+{
+    gboolean new_val = gtk_toggle_button_get_active(btn);
+
+    if (new_val != fm_config->use_trash)
+    {
+        fm_config->use_trash = new_val;
+        fm_config_emit_changed(fm_config, "use_trash");
+    }
+    if (vbox_trash)
+        gtk_widget_set_sensitive(vbox_trash, new_val);
 }
 
 static void on_color_set(GtkColorButton* btn, gpointer _off)
@@ -305,37 +359,109 @@ void fm_edit_preference( GtkWindow* parent, int page )
         pref_dlg = GTK_WINDOW(gtk_builder_get_object(builder, "dlg"));
         notebook = GTK_NOTEBOOK(gtk_builder_get_object(builder, "notebook"));
 
-        INIT_BOOL(builder, FmConfig, single_click, NULL);
+        /* General tab */
+        /* special handling for single_click */
+        g_signal_connect(gtk_builder_get_object(builder, "single_click"),
+                         "toggled", G_CALLBACK(on_single_click_toggled),
+                         gtk_builder_get_object(builder, "auto_sel_box"));
+        gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(gtk_builder_get_object(builder, "single_click")),
+                                     fm_config->single_click);
+#if FM_CHECK_VERSION(1, 2, 0)
+        init_auto_selection_delay_scale(builder);
+#endif
         INIT_BOOL(builder, FmConfig, confirm_del, NULL);
-        INIT_BOOL(builder, FmConfig, use_trash, NULL);
+        /* special handling for use_trash */
+        g_signal_connect(gtk_builder_get_object(builder, "use_trash"),
+                         "toggled", G_CALLBACK(on_use_trash_toggled),
+                         gtk_builder_get_object(builder, "vbox_trash"));
+        gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(gtk_builder_get_object(builder, "use_trash")),
+                                     fm_config->use_trash);
+#if FM_CHECK_VERSION(1, 0, 2)
+        INIT_BOOL_SHOW(builder, FmConfig, no_usb_trash, NULL);
+#endif
+#if FM_CHECK_VERSION(1, 2, 0)
+        INIT_BOOL_SHOW(builder, FmConfig, confirm_trash, NULL);
+#endif
 
-        INIT_BOOL(builder, FmConfig, show_thumbnail, NULL);
-        INIT_BOOL(builder, FmConfig, thumbnail_local, NULL);
-        INIT_SPIN(builder, FmConfig, thumbnail_max, NULL);
-
-        INIT_BOOL(builder, FmAppConfig, mount_on_startup, NULL);
-        INIT_BOOL(builder, FmAppConfig, mount_removable, NULL);
-        INIT_BOOL(builder, FmAppConfig, autorun, NULL);
-
-        INIT_BOOL(builder, FmAppConfig, always_show_tabs, NULL);
-        INIT_BOOL(builder, FmAppConfig, hide_close_btn, NULL);
-        INIT_BOOL(builder, FmConfig, si_unit, NULL);
-        INIT_BOOL(builder, FmConfig, backup_as_hidden, NULL);
+#if FM_CHECK_VERSION(1, 2, 0)
+        INIT_BOOL_SHOW(builder, FmConfig, quick_exec, NULL);
+#endif
 
         INIT_COMBO(builder, FmAppConfig, bm_open_method, NULL);
+#if FM_CHECK_VERSION(1, 2, 0)
+        INIT_COMBO(builder, FmConfig, drop_default_action, NULL);
+        /* FIXME: translate FmDndDestDropAction <-> GtkListStore index */
+        gtk_widget_show(GTK_WIDGET(gtk_builder_get_object(builder, "drop_default_action")));
+        gtk_widget_show(GTK_WIDGET(gtk_builder_get_object(builder, "drop_default_action_label")));
+#endif
+        //INIT_BOOL(builder, FmAppConfig, change_tab_on_drop, NULL);
         INIT_COMBO(builder, FmAppConfig, view_mode, NULL);
+        /* FIXME: translate FmStandardViewMode <-> GtkListStore index */
 
+        /* 'Display' tab */
         INIT_ICON_SIZES(builder, big_icon_size);
         INIT_ICON_SIZES(builder, small_icon_size);
         INIT_ICON_SIZES(builder, thumbnail_size);
         INIT_ICON_SIZES(builder, pane_icon_size);
 
+        INIT_BOOL(builder, FmConfig, show_thumbnail, NULL);
+        INIT_BOOL(builder, FmConfig, thumbnail_local, NULL);
+        INIT_SPIN(builder, FmConfig, thumbnail_max, NULL);
+
+        INIT_BOOL(builder, FmConfig, si_unit, NULL);
+        INIT_BOOL(builder, FmConfig, backup_as_hidden, NULL);
+#if FM_CHECK_VERSION(1, 2, 0)
+        INIT_BOOL_SHOW(builder, FmConfig, show_full_names, NULL);
+        INIT_BOOL_SHOW(builder, FmConfig, shadow_hidden, NULL);
+#endif
+
+        /* 'Layout' tab */
+        INIT_BOOL(builder, FmAppConfig, hide_close_btn, NULL);
+        INIT_BOOL(builder, FmAppConfig, always_show_tabs, NULL);
+        INIT_SPIN(builder, FmAppConfig, max_tab_chars, NULL);
+
+#if FM_CHECK_VERSION(1, 0, 2)
+        INIT_BOOL(builder, FmConfig, no_child_non_expandable, NULL);
+        gtk_widget_show(GTK_WIDGET(gtk_builder_get_object(builder, "vbox_dir_tree")));
+#endif
+
+#if FM_CHECK_VERSION(1, 2, 0)
+        INIT_BOOL(builder, FmConfig, places_home, NULL);
+        INIT_BOOL(builder, FmConfig, places_desktop, NULL);
+        INIT_BOOL(builder, FmConfig, places_applications, NULL);
+        INIT_BOOL(builder, FmConfig, places_trash, NULL);
+        INIT_BOOL(builder, FmConfig, places_root, NULL);
+        INIT_BOOL(builder, FmConfig, places_computer, NULL);
+        INIT_BOOL(builder, FmConfig, places_network, NULL);
+        gtk_widget_show(GTK_WIDGET(gtk_builder_get_object(builder, "vbox_places")));
+#endif
+
+        /* 'Volume management' tab */
+        INIT_BOOL(builder, FmAppConfig, mount_on_startup, NULL);
+        INIT_BOOL(builder, FmAppConfig, mount_removable, NULL);
+        INIT_BOOL(builder, FmAppConfig, autorun, NULL);
+        //INIT_BOOL(builder, FmAppConfig, media_in_new_tab, NULL);
+        //INIT_BOOL(builder, FmAppConfig, close_on_unmount, NULL);
+
+        /* 'Advanced' tab */
         INIT_ENTRY(builder, FmConfig, terminal, NULL);
         INIT_ENTRY(builder, FmAppConfig, su_cmd, NULL);
-        INIT_BOOL(builder, FmConfig, force_startup_notify, NULL);
+#if FM_CHECK_VERSION(1, 2, 0)
+        INIT_BOOL(builder, FmConfig, format_cmd, NULL);
+        gtk_widget_show(GTK_WIDGET(gtk_builder_get_object(builder, "hbox_format")));
+#endif
 
         /* archiver integration */
         init_archiver_combo(builder);
+
+#if FM_CHECK_VERSION(1, 2, 0)
+        INIT_BOOL(builder, FmConfig, only_user_templates, NULL);
+        INIT_BOOL(builder, FmConfig, template_type_once, NULL);
+        INIT_BOOL(builder, FmConfig, template_run_app, NULL);
+        gtk_widget_show(GTK_WIDGET(gtk_builder_get_object(builder, "vbox_templates")));
+        INIT_BOOL_SHOW(builder, FmConfig, defer_content_test, NULL);
+#endif
+        INIT_BOOL(builder, FmConfig, force_startup_notify, NULL);
 
         /* initialize the left side list used for switching among tabs */
         tab_label_list = GTK_TREE_VIEW(gtk_builder_get_object(builder, "tab_label_list"));

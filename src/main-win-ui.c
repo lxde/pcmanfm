@@ -60,8 +60,8 @@ static const char main_menu_xml[] =
     "<separator/>"
     "<menuitem action='Home'/>"
     "<menuitem action='Desktop'/>"
-    "<menuitem action='Computer'/>"
     "<menuitem action='Trash'/>"
+    "<menuitem action='Computer'/>"
     "<menuitem action='Network'/>"
     "<menuitem action='Apps'/>"
   "</menu>"
@@ -156,8 +156,8 @@ static GtkActionEntry main_win_actions[]=
         {"Up", GTK_STOCK_GO_UP, N_("Pa_rent Folder"), "<Alt>Up", N_("Go to parent Folder"), G_CALLBACK(on_go_up)},
         {"Home", "user-home", N_("H_ome Folder"), "<Alt>Home", N_("Go to home folder"), G_CALLBACK(on_go_home)},
         {"Desktop", "user-desktop", N_("_Desktop"), NULL, N_("Go to desktop folder"), G_CALLBACK(on_go_desktop)},
-        {"Computer", "computer", N_("_My Computer"), NULL, N_("Go to list of volumes in the computer"), G_CALLBACK(on_go_computer)},
         {"Trash", "user-trash", N_("_Trash Can"), NULL, N_("Open trash can"), G_CALLBACK(on_go_trash)},
+        {"Computer", "computer", N_("_Computer Drives"), NULL, N_("Go to list of volumes in the computer"), G_CALLBACK(on_go_computer)},
         {"Network", GTK_STOCK_NETWORK, N_("Net_work Drives"), NULL, N_("Go to list of volumes on the network"), G_CALLBACK(on_go_network)},
         {"Apps", "system-software-install", N_("_Applications"), NULL, N_("Go to root of applications menu folder"), G_CALLBACK(on_go_apps)},
         {"Go", GTK_STOCK_JUMP_TO, NULL, NULL, N_("Open folder entered in location entry"), G_CALLBACK(on_go)},
