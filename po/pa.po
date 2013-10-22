@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-08-22 20:34+0200\n"
+"POT-Creation-Date: 2013-10-16 23:12+0300\n"
 "PO-Revision-Date: 2010-10-10 08:50+0530\n"
 "Last-Translator: A S Alam <aalam@users.sf.net>\n"
 "Language-Team: Punjabi/Panjabi <punjabi-users@lists.sf.net>\n"
@@ -21,455 +21,492 @@ msgstr ""
 msgid "Copyright (C) 2009 - 2013"
 msgstr "Copyright (C) 2009 - 2013"
 
-#: ../data/ui/about.glade.in.h:2
-msgid ""
-"Lightweight file manager\n"
-"\n"
-"Developed by Hon Jen Yee (PCMan)"
-msgstr ""
-"ਹਲਕਾ ਫਾਇਲ ਮੈਨੇਜਰ\n"
-"\n"
-"ਡਿਵੈਲਪ ਕੀਤਾ ਹੁਨ ਜੀ ਯੀ (PCMan)"
-
 #. Please replace this line with your own names, one name per line.
-#: ../data/ui/about.glade.in.h:6
+#: ../data/ui/about.glade.in.h:3
 msgid "translator-credits"
 msgstr ""
 "ਅਮਨਪਰੀਤ ਸਿੰਘ ਆਲਮ ੨੦੧੦\n"
 "ਪੰਜਾਬੀ ਓਪਨਸੋਰਸ ਟੀਮ (POST)\n"
 "http://www.satuj.com"
 
-#: ../data/ui/desktop-pref.glade.h:1 ../src/desktop-ui.c:34
-#: ../data/pcmanfm-desktop-pref.desktop.in.h:1
-msgid "Desktop Preferences"
-msgstr "ਡੈਸਕਟਾਪ ਪਸੰਦ"
-
-#: ../data/ui/desktop-pref.glade.h:2
+#: ../data/ui/desktop-pref.glade.h:1
 msgid "<b>Background</b>"
 msgstr "<b>ਬੈਕਗਰਾਊਂਡ</b>"
 
-#: ../data/ui/desktop-pref.glade.h:3
-#, fuzzy
-msgid "_Wallpaper:"
-msgstr "ਵਾਲਪੇਪਰ:"
-
-#: ../data/ui/desktop-pref.glade.h:4
-msgid "Please select an image file"
-msgstr "ਚਿੱਤਰ ਫਾਇਲ ਚੁਣੋ ਜੀ"
-
-#: ../data/ui/desktop-pref.glade.h:5
-msgid "_Use the same wallpaper on all desktops"
-msgstr ""
-
-#: ../data/ui/desktop-pref.glade.h:6
-#, fuzzy
-msgid "_Background color:"
-msgstr "ਬੈਕਗਰਾਊਂਡ ਰੰਗ:"
-
-#: ../data/ui/desktop-pref.glade.h:7
-#, fuzzy
-msgid "Wallpaper _mode:"
-msgstr "ਵਾਲਪੇਪਰ ਮੋਡ:"
-
-#: ../data/ui/desktop-pref.glade.h:8
-msgid "<b>Text</b>"
-msgstr "<b>ਟੈਕਸਟ</b>"
-
-#: ../data/ui/desktop-pref.glade.h:9
-#, fuzzy
-msgid "_Font of label text:"
-msgstr "ਲੇਬਲ ਟੈਕਸਟ ਲਈ ਫੋਂਟ:"
-
-#: ../data/ui/desktop-pref.glade.h:10
-#, fuzzy
-msgid "C_olor of label text:"
-msgstr "ਲੇਬਲ ਟੈਕਸਟ ਲਈ ਰੰਗ:"
-
-#: ../data/ui/desktop-pref.glade.h:11
-#, fuzzy
-msgid "Color of _shadow:"
-msgstr "ਸ਼ੈਡੋ ਦਾ ਰੰਗ:"
-
-#: ../data/ui/desktop-pref.glade.h:12
-#, fuzzy
-msgid "_Appearance"
-msgstr "ਦਿੱਖ"
-
-#: ../data/ui/desktop-pref.glade.h:13
+#: ../data/ui/desktop-pref.glade.h:2
 msgid "<b>Show desktop icons</b>"
 msgstr "<b>ਡੈਸਕਟਾਪ ਆਈਕਾਨ ਵੇਖੋ</b>"
 
-#: ../data/ui/desktop-pref.glade.h:14
-#, fuzzy
-msgid "_Show \"My Documents\" icon on desktop"
-msgstr "ਡੈਸਕਟਾਪ ਉੱਤੇ \"ਮੇਰੇ ਡੌਕੂਮੈਂਟ\" ਆਈਕਾਨ ਵੇਖੋ"
+#: ../data/ui/desktop-pref.glade.h:3
+msgid "<b>Text</b>"
+msgstr "<b>ਟੈਕਸਟ</b>"
 
-#: ../data/ui/desktop-pref.glade.h:15
-#, fuzzy
-msgid "Show \"_My Computer\" icon on desktop"
-msgstr "ਡੈਸਕਟਾਪ ਉੱਤੇ \"ਮੇਰਾ ਕੰਪਿਊਟਰ\" ਆਈਕਾਨ ਵੇਖੋ"
-
-#: ../data/ui/desktop-pref.glade.h:16
-#, fuzzy
-msgid "Show \"_Trash Bin\" icon on desktop"
-msgstr "\"ਰੱਦੀ\" ਆਈਕਾਨ ਡੈਸਕਟਾਪ ਵਿੱਚ ਵੇਖੋ"
-
-#: ../data/ui/desktop-pref.glade.h:17
-#, fuzzy
-msgid "S_how icons of volumes on desktop"
-msgstr "ਡੈਸਕਟਾਪ ਉੱਤੇ ਵਾਲੀਅਮ ਦਾ ਆਈਕਾਨ ਵੇਖੋ"
-
-#: ../data/ui/desktop-pref.glade.h:18
-#, fuzzy
-msgid "_Desktop Icons"
-msgstr "ਡੈਸਕਟਾਪ ਆਈਕਾਨ"
-
-#: ../data/ui/desktop-pref.glade.h:19
-#, fuzzy
-msgid "_Show menus provided by window managers when desktop is clicked"
-msgstr "ਜਦੋਂ ਡੈਸਕਟਾਪ ਕਲਿੱਕ ਕੀਤਾ ਜਾਵੇ ਤਾਂ ਡੈਸਕਟਾਪ ਮੈਨੇਜਰ ਵਲੋਂ ਦਿੱਤੇ ਮੇਨੂ ਵੇਖੋ"
-
-#: ../data/ui/desktop-pref.glade.h:20
+#: ../data/ui/desktop-pref.glade.h:4
 #, fuzzy
 msgid "Ad_vanced"
 msgstr "ਤਕਨੀਕੀ"
 
-#: ../data/ui/desktop-pref.glade.h:21
-msgid "Fill with background color only"
-msgstr "ਕੇਵਲ ਬੈਕਗਰਾਊਂਡ ਰੰਗ ਨਾਲ ਹੀ ਭਰੋ"
+#: ../data/ui/desktop-pref.glade.h:5
+#, fuzzy
+msgid "C_olor of label text:"
+msgstr "ਲੇਬਲ ਟੈਕਸਟ ਲਈ ਰੰਗ:"
 
-#: ../data/ui/desktop-pref.glade.h:22
-msgid "Stretch to fill the entire screen"
-msgstr "ਪੂਰੀ ਸਕਰੀਨ ਭਰਨ ਲਈ ਤਾਣੋ"
-
-#: ../data/ui/desktop-pref.glade.h:23
-msgid "Stretch to fit the screen"
-msgstr "ਪੂਰੀ ਕਰਨੀ ਭਰਨ ਲਈ ਤਾਣੋ"
-
-#: ../data/ui/desktop-pref.glade.h:24
+#: ../data/ui/desktop-pref.glade.h:6
 msgid "Center on the screen"
 msgstr "ਸਕਰੀਨ ਦੇ ਸੈਂਟਰ 'ਚ"
 
-#: ../data/ui/desktop-pref.glade.h:25
+#: ../data/ui/desktop-pref.glade.h:7
+#, fuzzy
+msgid "Color of _shadow:"
+msgstr "ਸ਼ੈਡੋ ਦਾ ਰੰਗ:"
+
+#: ../data/ui/desktop-pref.glade.h:8 ../src/desktop-ui.c:34
+#: ../data/pcmanfm-desktop-pref.desktop.in.h:2
+msgid "Desktop Preferences"
+msgstr "ਡੈਸਕਟਾਪ ਪਸੰਦ"
+
+#: ../data/ui/desktop-pref.glade.h:9
+msgid "Fill with background color only"
+msgstr "ਕੇਵਲ ਬੈਕਗਰਾਊਂਡ ਰੰਗ ਨਾਲ ਹੀ ਭਰੋ"
+
+#: ../data/ui/desktop-pref.glade.h:10
+msgid "Please select an image file"
+msgstr "ਚਿੱਤਰ ਫਾਇਲ ਚੁਣੋ ਜੀ"
+
+#: ../data/ui/desktop-pref.glade.h:11
+#, fuzzy
+msgid "S_how icons of volumes on desktop"
+msgstr "ਡੈਸਕਟਾਪ ਉੱਤੇ ਵਾਲੀਅਮ ਦਾ ਆਈਕਾਨ ਵੇਖੋ"
+
+#: ../data/ui/desktop-pref.glade.h:12
+#, fuzzy
+msgid "Show \"_My Computer\" icon on desktop"
+msgstr "ਡੈਸਕਟਾਪ ਉੱਤੇ \"ਮੇਰਾ ਕੰਪਿਊਟਰ\" ਆਈਕਾਨ ਵੇਖੋ"
+
+#: ../data/ui/desktop-pref.glade.h:13
+#, fuzzy
+msgid "Show \"_Trash Can\" icon on desktop"
+msgstr "\"ਰੱਦੀ\" ਆਈਕਾਨ ਡੈਸਕਟਾਪ ਵਿੱਚ ਵੇਖੋ"
+
+#: ../data/ui/desktop-pref.glade.h:14
+msgid "Stretch to fill the entire screen"
+msgstr "ਪੂਰੀ ਸਕਰੀਨ ਭਰਨ ਲਈ ਤਾਣੋ"
+
+#: ../data/ui/desktop-pref.glade.h:15
+msgid "Stretch to fit the screen"
+msgstr "ਪੂਰੀ ਕਰਨੀ ਭਰਨ ਲਈ ਤਾਣੋ"
+
+#: ../data/ui/desktop-pref.glade.h:16
 msgid "Tile the image to fill the entire screen"
 msgstr ""
 
+#: ../data/ui/desktop-pref.glade.h:17
+#, fuzzy
+msgid "Wallpaper _mode:"
+msgstr "ਵਾਲਪੇਪਰ ਮੋਡ:"
+
+#: ../data/ui/desktop-pref.glade.h:18
+#, fuzzy
+msgid "_Appearance"
+msgstr "ਦਿੱਖ"
+
+#: ../data/ui/desktop-pref.glade.h:19
+#, fuzzy
+msgid "_Background color:"
+msgstr "ਬੈਕਗਰਾਊਂਡ ਰੰਗ:"
+
+#: ../data/ui/desktop-pref.glade.h:20
+#, fuzzy
+msgid "_Desktop Icons"
+msgstr "ਡੈਸਕਟਾਪ ਆਈਕਾਨ"
+
+#: ../data/ui/desktop-pref.glade.h:21
+#, fuzzy
+msgid "_Font of label text:"
+msgstr "ਲੇਬਲ ਟੈਕਸਟ ਲਈ ਫੋਂਟ:"
+
+#: ../data/ui/desktop-pref.glade.h:22
+#, fuzzy
+msgid "_Show \"My Documents\" icon on desktop"
+msgstr "ਡੈਸਕਟਾਪ ਉੱਤੇ \"ਮੇਰੇ ਡੌਕੂਮੈਂਟ\" ਆਈਕਾਨ ਵੇਖੋ"
+
+#: ../data/ui/desktop-pref.glade.h:23
+#, fuzzy
+msgid "_Show menus provided by window managers when desktop is clicked"
+msgstr "ਜਦੋਂ ਡੈਸਕਟਾਪ ਕਲਿੱਕ ਕੀਤਾ ਜਾਵੇ ਤਾਂ ਡੈਸਕਟਾਪ ਮੈਨੇਜਰ ਵਲੋਂ ਦਿੱਤੇ ਮੇਨੂ ਵੇਖੋ"
+
+#: ../data/ui/desktop-pref.glade.h:24
+msgid "_Use the same wallpaper on all desktops"
+msgstr ""
+
+#: ../data/ui/desktop-pref.glade.h:25
+#, fuzzy
+msgid "_Wallpaper:"
+msgstr "ਵਾਲਪੇਪਰ:"
+
 #: ../data/ui/pref.glade.h:1
-msgid "Opened in Current Tab"
-msgstr "ਮੌਜੂਦਾ ਟੈਬ 'ਚ ਖੋਲ੍ਹੋ"
+msgid "\"C_omputer\" special folder"
+msgstr ""
 
 #: ../data/ui/pref.glade.h:2
-msgid "Opened in New Tab"
-msgstr "ਨਵੀਂ ਟੈਬ 'ਚ ਖੋਲ੍ਹੋ"
+msgid "<b>Auto-mount</b>"
+msgstr "<b>ਆਟੋ-ਮਾਊਂਟ</b>"
 
 #: ../data/ui/pref.glade.h:3
-msgid "Opened in New Window"
-msgstr "ਨਵੀਂ ਵਿੰਡੋ 'ਚ ਖੋਲ੍ਹੋ"
-
-#: ../data/ui/pref.glade.h:4
-msgid "Preferences"
-msgstr "ਮੇਰੀ ਪਸੰਦ"
-
-#: ../data/ui/pref.glade.h:5
 msgid "<b>Behavior</b>"
 msgstr "<b>ਰਵੱਈਆ</b>"
 
-#: ../data/ui/pref.glade.h:6
-#, fuzzy
-msgid "_Open files with single click"
-msgstr "ਫਾਇਲਾਂ ਇੱਕ ਵਾਰ ਕਲਿੱਕ ਕਰਨ ਨਾਲ ਖੋਲ੍ਹੋ"
-
-#: ../data/ui/pref.glade.h:7
-msgid "Delay of auto-selection in single click mode (0 to disable)"
-msgstr ""
-
-#: ../data/ui/pref.glade.h:8
-#, fuzzy
-msgid "Co_nfirm before deleting files"
-msgstr "ਫਾਇਲਾਂ ਹਟਾਉਣ ਤੋਂ ਪਹਿਲਾਂ ਪੁਸ਼ਟੀ"
-
-#: ../data/ui/pref.glade.h:9
-#, fuzzy
-msgid "_Move deleted files to \"trash bin\" instead of erasing from disk"
-msgstr "ਹਟਾਈ ਗਈਆਂ ਫਾਇਲਾਂ ਨੂੰ ਡਿਸਕ ਤੋਂ ਹਟਾਉਣ ਦੀ ਬਜਾਏ 'ਰੱਦੀ' ਭੇਜੋ"
-
-#: ../data/ui/pref.glade.h:10
-msgid "_Erase files on removable media instead of \"trash bin\" creation"
-msgstr ""
-
-#: ../data/ui/pref.glade.h:11
-#, fuzzy
-msgid "Confi_rm before moving files into \"trash bi_n\""
-msgstr "ਫਾਇਲਾਂ ਹਟਾਉਣ ਤੋਂ ਪਹਿਲਾਂ ਪੁਸ਼ਟੀ"
-
-#: ../data/ui/pref.glade.h:12
-#, fuzzy
-msgid "_Bookmarks:"
-msgstr "ਬੁੱਕਮਾਰਕ:"
-
-#: ../data/ui/pref.glade.h:13
-msgid "Defaul_t drop action:"
-msgstr ""
-
-#: ../data/ui/pref.glade.h:14
-msgid "_Unfold tab when files are dragged onto tab button"
-msgstr ""
-
-#: ../data/ui/pref.glade.h:15
+#: ../data/ui/pref.glade.h:4
 msgid "<b>Default View</b>"
 msgstr "<b>ਡਿਫਾਲਟ ਰਵੱਈਆ</b>"
 
-#: ../data/ui/pref.glade.h:16
-#, fuzzy
-msgid "Vie_w Mode:"
-msgstr "ਵੇਖਣ ਮੋਡ"
-
-#: ../data/ui/pref.glade.h:17
-#, fuzzy
-msgid "_General"
-msgstr "ਆਮ(_G)"
-
-#: ../data/ui/pref.glade.h:18
-msgid "<b>Icons</b>"
-msgstr "<b>ਆਈਕਾਨ</b>"
-
-#: ../data/ui/pref.glade.h:19
-#, fuzzy
-msgid "Size of small _icons:"
-msgstr "ਛੋਟੇ ਆਈਕਾਨ ਲਈ ਆਕਾਰ:"
-
-#: ../data/ui/pref.glade.h:20
-#, fuzzy
-msgid "Size of _big icons:"
-msgstr "ਵੱਡੇ ਆਈਕਾਨ ਲਈ ਆਕਾਰ:"
-
-#: ../data/ui/pref.glade.h:21
-#, fuzzy
-msgid "Size of _thumbnails:"
-msgstr "ਥੰਮਨੇਲ ਲਈ ਆਕਾਰ:"
-
-#: ../data/ui/pref.glade.h:22
-#, fuzzy
-msgid "Size of side _pane icons:"
-msgstr "ਬਾਹੀ ਆਈਕਾਨ ਲਈ ਆਕਾਰ:"
-
-#: ../data/ui/pref.glade.h:23
-#, fuzzy
-msgid "_Show thumbnails of files"
-msgstr "ਫਾਇਲਾਂ ਲਈ ਥੰਮਨੇਲ ਵੇਖੋ"
-
-#: ../data/ui/pref.glade.h:24
-#, fuzzy
-msgid "_Only show thumbnails for local files"
-msgstr "ਕੇਵਲ ਲੋਕਲ ਫਾਇਲਾਂ ਲਈ ਹੀ ਥੰਮਨੇਲ ਵੇਖੋ"
-
-#: ../data/ui/pref.glade.h:25
-msgid "Do _not generate thumbnails for files exceeding this size:"
-msgstr ""
-
-#: ../data/ui/pref.glade.h:26
-msgid "<b>User Interface</b>"
-msgstr "<b>ਯੂਜ਼ਰ ਇੰਟਰਫੇਸ</b>"
-
-#: ../data/ui/pref.glade.h:27
-msgid "Us_e SI decimal prefixes instead of IEC binary prefixes"
-msgstr ""
-
-#: ../data/ui/pref.glade.h:28
-msgid "Treat backup files as _hidden"
-msgstr ""
-
-#: ../data/ui/pref.glade.h:29
-#, fuzzy
-msgid "Al_ways show full file names"
-msgstr "ਟੈਬ ਪੱਟੀ ਹਮੇਸ਼ਾ ਵੇਖੋ"
-
-#: ../data/ui/pref.glade.h:30
-#, fuzzy
-msgid "_Display"
-msgstr "ਡਿਸਪਲੇਅ(_D)"
-
-#: ../data/ui/pref.glade.h:31
-#, fuzzy
-msgid "Hide _folder content border"
-msgstr "ਫੋਲਡਰ ਸਮੱਗਰੀ ਬਾਰਡਰ ਓਹਲੇ"
-
-#: ../data/ui/pref.glade.h:32
-#, fuzzy
-msgid "Hide _side pane buttons"
-msgstr "ਬਾਹੀ ਪੈਨ ਬਟਨ ਓਹਲੇ"
-
-#: ../data/ui/pref.glade.h:33
-#, fuzzy
-msgid "Hid_e 'Close tab' buttons"
-msgstr "'ਟੈਬ ਬੰਦ ਕਰੋ' ਬਟਨ ਓਹਲੇ"
-
-#: ../data/ui/pref.glade.h:34
-#, fuzzy
-msgid "Al_ways show the tab bar"
-msgstr "ਟੈਬ ਪੱਟੀ ਹਮੇਸ਼ਾ ਵੇਖੋ"
-
-#: ../data/ui/pref.glade.h:35
+#: ../data/ui/pref.glade.h:5
 msgid "<b>Directories Tree</b>"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:36
-msgid "Hide e_xpander on empty or locked folder"
-msgstr ""
+#: ../data/ui/pref.glade.h:6
+msgid "<b>Icons</b>"
+msgstr "<b>ਆਈਕਾਨ</b>"
 
-#: ../data/ui/pref.glade.h:37
+#: ../data/ui/pref.glade.h:7
+#, fuzzy
+msgid "<b>Other options</b>"
+msgstr "<b>ਡੈਸਕਟਾਪ ਆਈਕਾਨ ਵੇਖੋ</b>"
+
+#: ../data/ui/pref.glade.h:8
+msgid "<b>Programs</b>"
+msgstr "<b>ਪਰੋਗਰਾਮ</b>"
+
+#: ../data/ui/pref.glade.h:9
 #, fuzzy
 msgid "<b>Show in Places:</b>"
 msgstr "<b>ਡੈਸਕਟਾਪ ਆਈਕਾਨ ਵੇਖੋ</b>"
 
-#: ../data/ui/pref.glade.h:38
-msgid "_Home Directory"
+#: ../data/ui/pref.glade.h:10
+#, fuzzy
+msgid "<b>Templates</b>"
+msgstr "<b>ਟੈਕਸਟ</b>"
+
+#: ../data/ui/pref.glade.h:11
+msgid "<b>User Interface</b>"
+msgstr "<b>ਯੂਜ਼ਰ ਇੰਟਰਫੇਸ</b>"
+
+#: ../data/ui/pref.glade.h:12
+msgid "<i>Commands below may include extra switches if necessary.</i>"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:39
-#, fuzzy
-msgid "Des_ktop Folder"
-msgstr "ਡੈਸਕਟਾਪ ਫੋਲਡਰ"
-
-#: ../data/ui/pref.glade.h:40
-#, fuzzy
-msgid "App_lications"
-msgstr "ਐਪਲੀਕੇਸ਼ਨ"
-
-#: ../data/ui/pref.glade.h:41
-#, fuzzy
-msgid "_Trash bin"
-msgstr "ਰੱਦੀ"
-
-#: ../data/ui/pref.glade.h:42
-msgid "_Layout"
-msgstr ""
-
-#: ../data/ui/pref.glade.h:43
-msgid "<b>Auto-mount</b>"
-msgstr "<b>ਆਟੋ-ਮਾਊਂਟ</b>"
-
-#: ../data/ui/pref.glade.h:44
-#, fuzzy
-msgid "_Mount mountable volumes automatically on program startup"
-msgstr "ਪਰੋਗਰਾਮ ਸ਼ੁਰੂ ਕਰਨ ਸਮੇਂ ਮਾਊਂਟ ਹੋਣ ਯੋਗ ਵਾਲੀਅਮ ਨੂੰ ਆਟੋਮੈਟਿਕ ਹੀ ਮਾਊਂਟ ਕਰੋ"
-
-#: ../data/ui/pref.glade.h:45
-#, fuzzy
-msgid "Mo_unt removable media automatically when they are inserted"
-msgstr "ਹਟਾਉਣਯੋਗ ਮੀਡੀਅਮ ਨੂੰ ਆਟੋਮੈਟਿਕ ਹੀ ਮਾਊਂਟ ਕਰੋ, ਜਦੋਂ ਉਹ ਪਾਏ ਜਾਣ"
-
-#: ../data/ui/pref.glade.h:46
-#, fuzzy
-msgid "_Show available options for removable media when they are inserted"
-msgstr "ਹਟਾਉਣਯੋਗ ਮੀਡਿਆ ਲਈ ਉਪਲੱਬਧ ਚੋਣਾਂ ਵੇਖੋ, ਜਦੋਂ ਉਹ ਪਾਏ ਜਾਣ"
-
-#: ../data/ui/pref.glade.h:47
-msgid "_Open mounted removable media in new tab instead of new window"
-msgstr ""
-
-#: ../data/ui/pref.glade.h:48
-#, fuzzy
-msgid "Clos_e tab containing removable medium when it is unmounted"
-msgstr "ਹਟਾਉਣਯੋਗ ਮੀਡਿਆ ਲਈ ਉਪਲੱਬਧ ਚੋਣਾਂ ਵੇਖੋ, ਜਦੋਂ ਉਹ ਪਾਏ ਜਾਣ"
-
-#: ../data/ui/pref.glade.h:49
-#, fuzzy
-msgid "_Volume Management"
-msgstr "ਵਾਲੀਅਮ ਪਰਬੰਧ(_V)"
-
-#: ../data/ui/pref.glade.h:50
-msgid "<b>Programs</b>"
-msgstr "<b>ਪਰੋਗਰਾਮ</b>"
-
-#: ../data/ui/pref.glade.h:51
-#, fuzzy
-msgid "_Terminal emulator:"
-msgstr "ਟਰਮੀਨਲ ਸਮਰੂਪ:"
-
-#: ../data/ui/pref.glade.h:52
-#, fuzzy
-msgid "_Switch user command:"
-msgstr "ਯੂਜ਼ਰ ਸਵਿੱਚ ਕਮਾਂਡ:"
-
-#: ../data/ui/pref.glade.h:54
-#, no-c-format
-msgid ""
-"Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
-"%s = the command line you want to execute with terminal or su."
-msgstr ""
-
-#: ../data/ui/pref.glade.h:56
+#: ../data/ui/pref.glade.h:13
 #, fuzzy
 msgid "A_rchiver integration:"
 msgstr "ਅਕਾਇਵਰ ਜੋੜਨਾ:"
 
-#: ../data/ui/pref.glade.h:57
-msgid "_Use Application Startup Notify by default"
+#: ../data/ui/pref.glade.h:14
+#, fuzzy
+msgid "Al_ways show full file names"
+msgstr "ਟੈਬ ਪੱਟੀ ਹਮੇਸ਼ਾ ਵੇਖੋ"
+
+#: ../data/ui/pref.glade.h:15
+#, fuzzy
+msgid "Al_ways show the tab bar"
+msgstr "ਟੈਬ ਪੱਟੀ ਹਮੇਸ਼ਾ ਵੇਖੋ"
+
+#: ../data/ui/pref.glade.h:16
+#, fuzzy
+msgid "App_lications"
+msgstr "ਐਪਲੀਕੇਸ਼ਨ"
+
+#: ../data/ui/pref.glade.h:17
+msgid "Ask"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:58
+#: ../data/ui/pref.glade.h:18
+msgid "Auto (move if on the same FS, copy otherwise)"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:19
+#, fuzzy
+msgid "Clos_e tab containing removable medium when it is unmounted"
+msgstr "ਹਟਾਉਣਯੋਗ ਮੀਡਿਆ ਲਈ ਉਪਲੱਬਧ ਚੋਣਾਂ ਵੇਖੋ, ਜਦੋਂ ਉਹ ਪਾਏ ਜਾਣ"
+
+#: ../data/ui/pref.glade.h:20
+#, fuzzy
+msgid "Co_nfirm before deleting files"
+msgstr "ਫਾਇਲਾਂ ਹਟਾਉਣ ਤੋਂ ਪਹਿਲਾਂ ਪੁਸ਼ਟੀ"
+
+#: ../data/ui/pref.glade.h:21
+msgid "Compact View"
+msgstr "ਸੰਖੇਪ ਝਲਕ"
+
+#: ../data/ui/pref.glade.h:22
+#, fuzzy
+msgid "Confi_rm before moving files into \"trash can\""
+msgstr "ਫਾਇਲਾਂ ਹਟਾਉਣ ਤੋਂ ਪਹਿਲਾਂ ਪੁਸ਼ਟੀ"
+
+#: ../data/ui/pref.glade.h:23
+msgid "Copy"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:24
+msgid "D_efer test for content type on folder loading"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:25
+msgid "Defaul_t drop action:"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:26
+msgid "Delay of auto-selection in single click mode (0 to disable)"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:27
+#, fuzzy
+msgid "Des_ktop Folder"
+msgstr "ਡੈਸਕਟਾਪ ਫੋਲਡਰ"
+
+#: ../data/ui/pref.glade.h:28
+msgid "Detailed List View"
+msgstr "ਵੇਰਵੇ ਸਮੇਤ ਝਲਕ"
+
+#: ../data/ui/pref.glade.h:29
+msgid "Do _not generate thumbnails for files exceeding this size:"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:30
+msgid "Don't ask options on _launch executable file"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:31
+#, fuzzy
+msgid "Hid_e 'Close tab' buttons"
+msgstr "'ਟੈਬ ਬੰਦ ਕਰੋ' ਬਟਨ ਓਹਲੇ"
+
+#: ../data/ui/pref.glade.h:32
+msgid "Hide e_xpander on empty or locked folder"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:33
+msgid "Icon View"
+msgstr "ਆਈਕਾਨ ਝਲਕ"
+
+#: ../data/ui/pref.glade.h:34
 msgid ""
 "If checked then use Startup Notify for application if another not stated "
 "explicitly.\n"
 "If unchecked then use Startup Notify only if that is defined for application."
 msgstr ""
 
-#: ../data/ui/pref.glade.h:60
-msgid "_Advanced"
-msgstr "ਤਕਨੀਕੀ(_A)"
+#: ../data/ui/pref.glade.h:36
+#, fuzzy
+msgid "Mo_unt removable media automatically when they are inserted"
+msgstr "ਹਟਾਉਣਯੋਗ ਮੀਡੀਅਮ ਨੂੰ ਆਟੋਮੈਟਿਕ ਹੀ ਮਾਊਂਟ ਕਰੋ, ਜਦੋਂ ਉਹ ਪਾਏ ਜਾਣ"
 
-#: ../data/ui/pref.glade.h:61
-msgid "Auto (move if on the same FS, copy otherwise)"
-msgstr ""
-
-#: ../data/ui/pref.glade.h:62
-msgid "Copy"
-msgstr ""
-
-#: ../data/ui/pref.glade.h:63
+#: ../data/ui/pref.glade.h:37
 msgid "Move"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:64
-msgid "Ask"
+#: ../data/ui/pref.glade.h:38
+msgid "Opened in Current Tab"
+msgstr "ਮੌਜੂਦਾ ਟੈਬ 'ਚ ਖੋਲ੍ਹੋ"
+
+#: ../data/ui/pref.glade.h:39
+msgid "Opened in New Tab"
+msgstr "ਨਵੀਂ ਟੈਬ 'ਚ ਖੋਲ੍ਹੋ"
+
+#: ../data/ui/pref.glade.h:40
+msgid "Opened in New Window"
+msgstr "ਨਵੀਂ ਵਿੰਡੋ 'ਚ ਖੋਲ੍ਹੋ"
+
+#: ../data/ui/pref.glade.h:41
+msgid "Preferences"
+msgstr "ਮੇਰੀ ਪਸੰਦ"
+
+#: ../data/ui/pref.glade.h:42
+msgid "Ru_n default application after creation from template"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:65
-msgid "Icon View"
-msgstr "ਆਈਕਾਨ ਝਲਕ"
+#: ../data/ui/pref.glade.h:43
+msgid "S_how only user defined templates in menu"
+msgstr ""
 
-#: ../data/ui/pref.glade.h:66
-msgid "Compact View"
-msgstr "ਸੰਖੇਪ ਝਲਕ"
+#: ../data/ui/pref.glade.h:44
+msgid "Show _only one template for each MIME type"
+msgstr ""
 
-#: ../data/ui/pref.glade.h:67
+#: ../data/ui/pref.glade.h:45
+msgid "Show icons of bac_kup files shadowed"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:46
+#, fuzzy
+msgid "Size of _big icons:"
+msgstr "ਵੱਡੇ ਆਈਕਾਨ ਲਈ ਆਕਾਰ:"
+
+#: ../data/ui/pref.glade.h:47
+#, fuzzy
+msgid "Size of _thumbnails:"
+msgstr "ਥੰਮਨੇਲ ਲਈ ਆਕਾਰ:"
+
+#: ../data/ui/pref.glade.h:48
+#, fuzzy
+msgid "Size of side _pane icons:"
+msgstr "ਬਾਹੀ ਆਈਕਾਨ ਲਈ ਆਕਾਰ:"
+
+#: ../data/ui/pref.glade.h:49
+#, fuzzy
+msgid "Size of small _icons:"
+msgstr "ਛੋਟੇ ਆਈਕਾਨ ਲਈ ਆਕਾਰ:"
+
+#: ../data/ui/pref.glade.h:50
 msgid "Thumbnail View"
 msgstr "ਥੰਮਨੇਲ ਝਲਕ"
 
+#: ../data/ui/pref.glade.h:51
+msgid "Treat backup files as _hidden"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:52
+msgid "Us_e SI decimal prefixes instead of IEC binary prefixes"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:53
+#, fuzzy
+msgid "Vie_w Mode:"
+msgstr "ਵੇਖਣ ਮੋਡ"
+
+#: ../data/ui/pref.glade.h:54
+msgid "_Advanced"
+msgstr "ਤਕਨੀਕੀ(_A)"
+
+#: ../data/ui/pref.glade.h:55
+#, fuzzy
+msgid "_Bookmarks:"
+msgstr "ਬੁੱਕਮਾਰਕ:"
+
+#: ../data/ui/pref.glade.h:56
+#, fuzzy
+msgid "_Display"
+msgstr "ਡਿਸਪਲੇਅ(_D)"
+
+#: ../data/ui/pref.glade.h:57
+msgid "_Erase files on removable media instead of \"trash can\" creation"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:58
+msgid "_File system root"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:59
+msgid "_Format command:"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:60
+#, fuzzy
+msgid "_General"
+msgstr "ਆਮ(_G)"
+
+#: ../data/ui/pref.glade.h:61
+msgid "_Home Directory"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:62
+msgid "_Layout"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:63
+msgid "_Maximum width of tab label:"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:64
+#, fuzzy
+msgid "_Mount mountable volumes automatically on program startup"
+msgstr "ਪਰੋਗਰਾਮ ਸ਼ੁਰੂ ਕਰਨ ਸਮੇਂ ਮਾਊਂਟ ਹੋਣ ਯੋਗ ਵਾਲੀਅਮ ਨੂੰ ਆਟੋਮੈਟਿਕ ਹੀ ਮਾਊਂਟ ਕਰੋ"
+
+#: ../data/ui/pref.glade.h:65
+#, fuzzy
+msgid "_Move deleted files to \"trash can\" instead of erasing from disk"
+msgstr "ਹਟਾਈ ਗਈਆਂ ਫਾਇਲਾਂ ਨੂੰ ਡਿਸਕ ਤੋਂ ਹਟਾਉਣ ਦੀ ਬਜਾਏ 'ਰੱਦੀ' ਭੇਜੋ"
+
+#: ../data/ui/pref.glade.h:66
+#, fuzzy
+msgid "_Network places"
+msgstr "ਨੈੱਟਵਰਕ ਡਰਾਇਵ"
+
+#: ../data/ui/pref.glade.h:67
+#, fuzzy
+msgid "_Only show thumbnails for local files"
+msgstr "ਕੇਵਲ ਲੋਕਲ ਫਾਇਲਾਂ ਲਈ ਹੀ ਥੰਮਨੇਲ ਵੇਖੋ"
+
 #: ../data/ui/pref.glade.h:68
-msgid "Detailed List View"
-msgstr "ਵੇਰਵੇ ਸਮੇਤ ਝਲਕ"
+#, fuzzy
+msgid "_Open files with single click"
+msgstr "ਫਾਇਲਾਂ ਇੱਕ ਵਾਰ ਕਲਿੱਕ ਕਰਨ ਨਾਲ ਖੋਲ੍ਹੋ"
+
+#: ../data/ui/pref.glade.h:69
+msgid "_Open mounted removable media in new tab instead of new window"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:70
+#, fuzzy
+msgid "_Show available options for removable media when they are inserted"
+msgstr "ਹਟਾਉਣਯੋਗ ਮੀਡਿਆ ਲਈ ਉਪਲੱਬਧ ਚੋਣਾਂ ਵੇਖੋ, ਜਦੋਂ ਉਹ ਪਾਏ ਜਾਣ"
+
+#: ../data/ui/pref.glade.h:71
+#, fuzzy
+msgid "_Show thumbnails of files"
+msgstr "ਫਾਇਲਾਂ ਲਈ ਥੰਮਨੇਲ ਵੇਖੋ"
+
+#: ../data/ui/pref.glade.h:72
+#, fuzzy
+msgid "_Switch user command:"
+msgstr "ਯੂਜ਼ਰ ਸਵਿੱਚ ਕਮਾਂਡ:"
+
+#: ../data/ui/pref.glade.h:73
+#, fuzzy
+msgid "_Terminal emulator:"
+msgstr "ਟਰਮੀਨਲ ਸਮਰੂਪ:"
+
+#: ../data/ui/pref.glade.h:74
+#, fuzzy
+msgid "_Trash can"
+msgstr "ਰੱਦੀ"
+
+#: ../data/ui/pref.glade.h:75
+msgid "_Unfold tab when files are dragged onto tab button"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:76
+msgid "_Use Application Startup Notify by default"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:77
+#, fuzzy
+msgid "_Volume Management"
+msgstr "ਵਾਲੀਅਮ ਪਰਬੰਧ(_V)"
+
+#. Use genitive case here, context is: width is XXX characters
+#: ../data/ui/pref.glade.h:79
+msgid "characters"
+msgstr ""
 
 #: ../data/ui/autorun.glade.h:1
-msgid "Removable medium is inserted"
-msgstr "ਹਟਾਉਣਯੋਗ ਮੀਡੀਅਮ ਪਾਇਆ ਗਿਆ ਹੈ"
-
-#: ../data/ui/autorun.glade.h:2
 msgid "<b>Removable medium is inserted</b>"
 msgstr "<b>ਹਟਾਉਣਯੋਗ ਮੀਡਿਅਮ ਪਾਇਆ ਗਿਆ</b>"
 
-#: ../data/ui/autorun.glade.h:3
-msgid "Type of medium:"
-msgstr "ਮੀਡੀਅਮ ਦੀ ਕਿਸਮ:"
-
-#: ../data/ui/autorun.glade.h:4
+#: ../data/ui/autorun.glade.h:2
 msgid "Detecting..."
 msgstr "ਖੋਜਿਆ ਜਾ ਰਿਹਾ ਹੈ..."
 
-#: ../data/ui/autorun.glade.h:5
+#: ../data/ui/autorun.glade.h:3
 msgid "Please select the action you want to perform:"
 msgstr "ਐਕਸ਼ਨ ਚੁਣੋ, ਜੋ ਕਿ ਤੁਸੀਂ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ:"
+
+#: ../data/ui/autorun.glade.h:4
+msgid "Removable medium is inserted"
+msgstr "ਹਟਾਉਣਯੋਗ ਮੀਡੀਅਮ ਪਾਇਆ ਗਿਆ ਹੈ"
+
+#: ../data/ui/autorun.glade.h:5
+msgid "Type of medium:"
+msgstr "ਮੀਡੀਅਮ ਦੀ ਕਿਸਮ:"
 
 #: ../src/volume-manager.c:164
 msgid "Removable Disk"
@@ -503,6 +540,27 @@ msgstr "ਮੌਜੂਦਾ ਸਥਿਤੀ ਨਾਲ ਜੁੜੇ ਰਹੋ"
 #, fuzzy
 msgid "Snap to _Grid"
 msgstr "ਗਰਿੱਡ 'ਤੇ ਸਨੈਪ"
+
+#: ../src/desktop.c:571
+#, fuzzy
+msgid "Activate file"
+msgstr "<image file>"
+
+#: ../src/desktop.c:573
+#, fuzzy
+msgid "Show file menu"
+msgstr "ਲੁਕਵੇ ਵੇਖੋ(_H)"
+
+#: ../src/desktop.c:989
+#, fuzzy
+msgid "Show desktop menu"
+msgstr "<b>ਡੈਸਕਟਾਪ ਆਈਕਾਨ ਵੇਖੋ</b>"
+
+#. FIXME: set name by monitor
+#: ../src/desktop.c:1061
+#, fuzzy
+msgid "Desktop"
+msgstr "ਡੈਸਕਟਾਪ"
 
 #: ../src/main-win-ui.c:127
 msgid "_File"
@@ -611,8 +669,8 @@ msgid "_Previous Folder"
 msgstr "ਪਿਛਲਾ ਫੋਲਡਰ"
 
 #: ../src/main-win-ui.c:154
-msgid "Previous Folder"
-msgstr "ਪਿਛਲਾ ਫੋਲਡਰ"
+msgid "Return to previous folder in history"
+msgstr ""
 
 #: ../src/main-win-ui.c:155
 #, fuzzy
@@ -620,8 +678,8 @@ msgid "_Next Folder"
 msgstr "ਅਗਲਾ ਫੋਲਡਰ"
 
 #: ../src/main-win-ui.c:155
-msgid "Next Folder"
-msgstr "ਅਗਲਾ ਫੋਲਡਰ"
+msgid "Go forward to next folder in history"
+msgstr ""
 
 #: ../src/main-win-ui.c:156
 #, fuzzy
@@ -638,8 +696,9 @@ msgid "H_ome Folder"
 msgstr "ਘਰ ਫੋਲਡਰ"
 
 #: ../src/main-win-ui.c:157
-msgid "Home Folder"
-msgstr "ਘਰ ਫੋਲਡਰ"
+#, fuzzy
+msgid "Go to home folder"
+msgstr "ਮੁੱਢਲੇ ਫੋਲਡਰ ਉੱਤੇ ਜਾਓ"
 
 #: ../src/main-win-ui.c:158
 #, fuzzy
@@ -647,23 +706,38 @@ msgid "_Desktop"
 msgstr "ਡੈਸਕਟਾਪ"
 
 #: ../src/main-win-ui.c:158
-msgid "Desktop Folder"
-msgstr "ਡੈਸਕਟਾਪ ਫੋਲਡਰ"
+#, fuzzy
+msgid "Go to desktop folder"
+msgstr "ਮੁੱਢਲੇ ਫੋਲਡਰ ਉੱਤੇ ਜਾਓ"
 
 #: ../src/main-win-ui.c:159
 #, fuzzy
-msgid "_My Computer"
-msgstr "ਮੇਰਾ ਕੰਪਿਊਟਰ"
+msgid "_Trash Can"
+msgstr "ਰੱਦੀ"
+
+#: ../src/main-win-ui.c:159
+msgid "Open trash can"
+msgstr ""
 
 #: ../src/main-win-ui.c:160
 #, fuzzy
-msgid "_Trash Can"
-msgstr "ਰੱਦੀ"
+msgid "_Computer Drives"
+msgstr "ਨੈੱਟਵਰਕ ਡਰਾਇਵ"
+
+#: ../src/main-win-ui.c:160
+#, fuzzy
+msgid "Go to list of volumes in the computer"
+msgstr "ਡੈਸਕਟਾਪ ਉੱਤੇ ਵਾਲੀਅਮ ਦਾ ਆਈਕਾਨ ਵੇਖੋ"
 
 #: ../src/main-win-ui.c:161
 #, fuzzy
 msgid "Net_work Drives"
 msgstr "ਨੈੱਟਵਰਕ ਡਰਾਇਵ"
+
+#: ../src/main-win-ui.c:161
+#, fuzzy
+msgid "Go to list of volumes on the network"
+msgstr "ਡੈਸਕਟਾਪ ਉੱਤੇ ਵਾਲੀਅਮ ਦਾ ਆਈਕਾਨ ਵੇਖੋ"
 
 #: ../src/main-win-ui.c:162
 #, fuzzy
@@ -671,13 +745,12 @@ msgid "_Applications"
 msgstr "ਐਪਲੀਕੇਸ਼ਨ"
 
 #: ../src/main-win-ui.c:162
-msgid "Installed Applications"
-msgstr "ਇੰਸਟਾਲ ਹੋਈਆਂ ਐਪਲੀਕੇਸ਼ਨ"
+msgid "Go to root of applications menu folder"
+msgstr ""
 
 #: ../src/main-win-ui.c:163
-#, fuzzy
-msgid "Open entered folder"
-msgstr "ਮੁੱਢਲਾ ਫੋਲਡਰ"
+msgid "Open folder entered in location entry"
+msgstr ""
 
 #: ../src/main-win-ui.c:164
 msgid "_Bookmarks"
@@ -687,6 +760,10 @@ msgstr "ਬੁੱਕਮਾਰਕ(_B)"
 #, fuzzy
 msgid "_Add To Bookmarks"
 msgstr "ਬੁੱਕਮਾਰਕ ਵਿੱਚ ਜੋੜੋ"
+
+#: ../src/main-win-ui.c:165
+msgid "Add current folder to bookmarks list"
+msgstr ""
 
 #: ../src/main-win-ui.c:166
 #, fuzzy
@@ -705,6 +782,11 @@ msgstr "ਮੌਜੂਦਾ ਫੋਲਡਰ ਰੂਟ ਵਜੋਂ ਖੋਲ੍�
 #, fuzzy
 msgid "Fin_d Files"
 msgstr "ਫਾਇਲਾਂ ਲੜੀਬੱਧ(_S)"
+
+#: ../src/main-win-ui.c:170
+#, fuzzy
+msgid "Open search dialog"
+msgstr "ਡੈਸਕਟਾਪ ਪਸੰਦ ਡਾਈਲਾਗ ਖੋਲ੍ਹੋ"
 
 #. for popup menu - these entries exist in FmFolderView popup still
 #: ../src/main-win-ui.c:179
@@ -781,15 +863,46 @@ msgstr ""
 msgid "Remote"
 msgstr ""
 
-#: ../src/main-win.c:542
+#: ../src/main-win.c:532
+msgid "Show history of visited folders"
+msgstr ""
+
+#: ../src/main-win.c:535
+msgid "History"
+msgstr ""
+
+#: ../src/main-win.c:549
 msgid "You are in super user mode"
 msgstr "ਤੁਸੀਂ ਸੁਪਰ ਯੂਜ਼ਰ ਮੋਡ 'ਚ ਹੋ"
 
-#: ../src/main-win.c:713 ../src/main-win.c:721
+#: ../src/main-win.c:713
+#, fuzzy
+msgid "Lightweight file manager\n"
+msgstr ""
+"ਹਲਕਾ ਫਾਇਲ ਮੈਨੇਜਰ\n"
+"\n"
+"ਡਿਵੈਲਪ ਕੀਤਾ ਹੁਨ ਜੀ ਯੀ (PCMan)"
+
+#: ../src/main-win.c:718
+#, c-format
+msgid "using LibFM ver. %s\n"
+msgstr ""
+
+#: ../src/main-win.c:720
+#, fuzzy
+msgid ""
+"\n"
+"Developed by Hon Jen Yee (PCMan)"
+msgstr ""
+"ਹਲਕਾ ਫਾਇਲ ਮੈਨੇਜਰ\n"
+"\n"
+"ਡਿਵੈਲਪ ਕੀਤਾ ਹੁਨ ਜੀ ਯੀ (PCMan)"
+
+#: ../src/main-win.c:745 ../src/main-win.c:753
 msgid "Keyboard navigation"
 msgstr ""
 
-#: ../src/main-win.c:715
+#: ../src/main-win.c:747
 msgid ""
 "Tab: cycle focus Folder View -> Side Pane -> Tools Bar\n"
 "Shift+Tab: cycle focus Tools Bar -> Side Pane -> Folder View\n"
@@ -799,11 +912,11 @@ msgid ""
 "Ctrl+L or Alt+D: jump focus to Path Bar"
 msgstr ""
 
-#: ../src/main-win.c:751
+#: ../src/main-win.c:783
 msgid "Switch user command is not set."
 msgstr "ਯੂਜ਼ਰ ਬਦਲਣ ਕਮਾਂਡ ਸੈੱਟ ਨਹੀਂ ਕੀਤੀ ਹੈ।"
 
-#: ../src/main-win.c:1106
+#: ../src/main-win.c:1138
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -814,7 +927,7 @@ msgstr ""
 "'%s'\n"
 "ਨਵੀਂ ਬੁੱਕਮਾਰਕ ਕੀਤੀ ਆਈਟਮ ਲਈ ਨਾਂ ਦਿਓ:"
 
-#: ../src/main-win.c:1110
+#: ../src/main-win.c:1142
 msgid "Add to Bookmarks"
 msgstr "ਬੁੱਕਮਾਰਕ ਵਿੱਚ ਜੋੜੋ"
 
@@ -897,7 +1010,7 @@ msgstr ""
 msgid "[FILE1, FILE2,...]"
 msgstr "[FILE1, FILE2,...]"
 
-#: ../src/pcmanfm.c:532
+#: ../src/pcmanfm.c:528
 msgid "Terminal emulator is not set."
 msgstr "ਟਰਮੀਨਲ ਸਮਰੂਪ ਸੈੱਟ ਨਹੀਂ ਹੈ।"
 
@@ -933,21 +1046,56 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: ../data/pcmanfm.desktop.in.h:1
-#, fuzzy
-msgid "File Manager PCManFM"
-msgstr "ਫਾਇਲ ਮੈਨੇਜਰ"
+msgid "Browse the file system and manage the files"
+msgstr "ਫਾਇਲ ਸਿਸਟਮ ਵੇਖੋ ਤੇ ਫਾਇਲਾਂ ਦਾ ਪਰਬੰਧ ਕਰੋ"
 
 #: ../data/pcmanfm.desktop.in.h:2
 msgid "File Manager"
 msgstr "ਫਾਇਲ ਮੈਨੇਜਰ"
 
 #: ../data/pcmanfm.desktop.in.h:3
-msgid "Browse the file system and manage the files"
-msgstr "ਫਾਇਲ ਸਿਸਟਮ ਵੇਖੋ ਤੇ ਫਾਇਲਾਂ ਦਾ ਪਰਬੰਧ ਕਰੋ"
+#, fuzzy
+msgid "File Manager PCManFM"
+msgstr "ਫਾਇਲ ਮੈਨੇਜਰ"
 
-#: ../data/pcmanfm-desktop-pref.desktop.in.h:2
+#: ../data/pcmanfm-desktop-pref.desktop.in.h:1
 msgid "Change desktop wallpapers and behavior of desktop manager"
 msgstr ""
+
+#, fuzzy
+#~ msgid "Hide _folder content border"
+#~ msgstr "ਫੋਲਡਰ ਸਮੱਗਰੀ ਬਾਰਡਰ ਓਹਲੇ"
+
+#, fuzzy
+#~ msgid "Hide _side pane buttons"
+#~ msgstr "ਬਾਹੀ ਪੈਨ ਬਟਨ ਓਹਲੇ"
+
+#, fuzzy
+#~ msgid "_Trash bin"
+#~ msgstr "ਰੱਦੀ"
+
+#~ msgid "Previous Folder"
+#~ msgstr "ਪਿਛਲਾ ਫੋਲਡਰ"
+
+#~ msgid "Next Folder"
+#~ msgstr "ਅਗਲਾ ਫੋਲਡਰ"
+
+#~ msgid "Home Folder"
+#~ msgstr "ਘਰ ਫੋਲਡਰ"
+
+#~ msgid "Desktop Folder"
+#~ msgstr "ਡੈਸਕਟਾਪ ਫੋਲਡਰ"
+
+#, fuzzy
+#~ msgid "_My Computer"
+#~ msgstr "ਮੇਰਾ ਕੰਪਿਊਟਰ"
+
+#~ msgid "Installed Applications"
+#~ msgstr "ਇੰਸਟਾਲ ਹੋਈਆਂ ਐਪਲੀਕੇਸ਼ਨ"
+
+#, fuzzy
+#~ msgid "Open entered folder"
+#~ msgstr "ਮੁੱਢਲਾ ਫੋਲਡਰ"
 
 #~ msgid "Blank File"
 #~ msgstr "ਖਾਲੀ ਫਾਇਲ"
@@ -958,9 +1106,6 @@ msgstr ""
 
 #~ msgid "Invert Selection"
 #~ msgstr "ਉਲਟ ਚੋਣ"
-
-#~ msgid "<image file>"
-#~ msgstr "<image file>"
 
 #~ msgid "<mode>"
 #~ msgstr "<mode>"

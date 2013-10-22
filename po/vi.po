@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm 0.9.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-08-22 20:34+0200\n"
+"POT-Creation-Date: 2013-10-16 23:12+0300\n"
 "PO-Revision-Date: 2012-10-20 01:59+0200\n"
 "Last-Translator: Duy Hung <nguyentieuhau@gmail.com>\n"
 "Language: vi\n"
@@ -22,359 +22,254 @@ msgstr ""
 msgid "Copyright (C) 2009 - 2013"
 msgstr "Bản quyền © 2009 - 2013"
 
-#: ../data/ui/about.glade.in.h:2
-msgid ""
-"Lightweight file manager\n"
-"\n"
-"Developed by Hon Jen Yee (PCMan)"
-msgstr ""
-"Bộ quản lý tập tin gọn nhẹ\n"
-"\n"
-"Phát triển bởi Hon Jen Yee (PCMan)"
-
 #. Please replace this line with your own names, one name per line.
-#: ../data/ui/about.glade.in.h:6
+#: ../data/ui/about.glade.in.h:3
 msgid "translator-credits"
 msgstr ""
 "Công dịch thuật\n"
 "Tran Duy Hung <nguyentieuhau@gmail.com>"
 
-#: ../data/ui/desktop-pref.glade.h:1 ../src/desktop-ui.c:34
-#: ../data/pcmanfm-desktop-pref.desktop.in.h:1
-msgid "Desktop Preferences"
-msgstr "Tùy chỉnh màn hình nền"
-
-#: ../data/ui/desktop-pref.glade.h:2
+#: ../data/ui/desktop-pref.glade.h:1
 msgid "<b>Background</b>"
 msgstr "<b>Hình nền</b>"
 
-#: ../data/ui/desktop-pref.glade.h:3
-msgid "_Wallpaper:"
-msgstr "Ảnh _nền:"
-
-#: ../data/ui/desktop-pref.glade.h:4
-msgid "Please select an image file"
-msgstr "Vui lòng chọn một tập tin ảnh"
-
-#: ../data/ui/desktop-pref.glade.h:5
-msgid "_Use the same wallpaper on all desktops"
-msgstr "_Dùng chung ảnh nền trên tất cả màn hình nền"
-
-#: ../data/ui/desktop-pref.glade.h:6
-msgid "_Background color:"
-msgstr "_Màu nền:"
-
-#: ../data/ui/desktop-pref.glade.h:7
-msgid "Wallpaper _mode:"
-msgstr "_Chế độ ảnh nền:"
-
-#: ../data/ui/desktop-pref.glade.h:8
-msgid "<b>Text</b>"
-msgstr "<b>Văn bản</b>"
-
-#: ../data/ui/desktop-pref.glade.h:9
-msgid "_Font of label text:"
-msgstr "_Phông của nhãn:"
-
-#: ../data/ui/desktop-pref.glade.h:10
-msgid "C_olor of label text:"
-msgstr "_Màu của nhãn:"
-
-#: ../data/ui/desktop-pref.glade.h:11
-msgid "Color of _shadow:"
-msgstr "Màu của _bóng:"
-
-#: ../data/ui/desktop-pref.glade.h:12
-msgid "_Appearance"
-msgstr "_Diện mạo"
-
-#: ../data/ui/desktop-pref.glade.h:13
+#: ../data/ui/desktop-pref.glade.h:2
 msgid "<b>Show desktop icons</b>"
 msgstr "<b>Hiển thị biểu tượng trên màn hình nền</b>"
 
-#: ../data/ui/desktop-pref.glade.h:14
-msgid "_Show \"My Documents\" icon on desktop"
-msgstr "_Hiển thị biểu tượng \"Tài liệu của tôi\" trên màn hình nền"
+#: ../data/ui/desktop-pref.glade.h:3
+msgid "<b>Text</b>"
+msgstr "<b>Văn bản</b>"
 
-#: ../data/ui/desktop-pref.glade.h:15
-msgid "Show \"_My Computer\" icon on desktop"
-msgstr "Hiển thị biểu tượng \"_Máy tính của tôi\" trên màn hình nền"
+#: ../data/ui/desktop-pref.glade.h:4
+msgid "Ad_vanced"
+msgstr "_Nâng cao"
 
-#: ../data/ui/desktop-pref.glade.h:16
-msgid "Show \"_Trash Bin\" icon on desktop"
-msgstr "Hiển thị biểu tượng \"_Thùng rác\" trên màn hình nền"
+#: ../data/ui/desktop-pref.glade.h:5
+msgid "C_olor of label text:"
+msgstr "_Màu của nhãn:"
 
-#: ../data/ui/desktop-pref.glade.h:17
+#: ../data/ui/desktop-pref.glade.h:6
+msgid "Center on the screen"
+msgstr "Giữa màn hình"
+
+#: ../data/ui/desktop-pref.glade.h:7
+msgid "Color of _shadow:"
+msgstr "Màu của _bóng:"
+
+#: ../data/ui/desktop-pref.glade.h:8 ../src/desktop-ui.c:34
+#: ../data/pcmanfm-desktop-pref.desktop.in.h:2
+msgid "Desktop Preferences"
+msgstr "Tùy chỉnh màn hình nền"
+
+#: ../data/ui/desktop-pref.glade.h:9
+msgid "Fill with background color only"
+msgstr "Chỉ hiển thị màu nền"
+
+#: ../data/ui/desktop-pref.glade.h:10
+msgid "Please select an image file"
+msgstr "Vui lòng chọn một tập tin ảnh"
+
+#: ../data/ui/desktop-pref.glade.h:11
 msgid "S_how icons of volumes on desktop"
 msgstr "Hiển thị _biểu tượng thiết bị trên màn hình nền"
 
+#: ../data/ui/desktop-pref.glade.h:12
+msgid "Show \"_My Computer\" icon on desktop"
+msgstr "Hiển thị biểu tượng \"_Máy tính của tôi\" trên màn hình nền"
+
+#: ../data/ui/desktop-pref.glade.h:13
+#, fuzzy
+msgid "Show \"_Trash Can\" icon on desktop"
+msgstr "Hiển thị biểu tượng \"_Thùng rác\" trên màn hình nền"
+
+#: ../data/ui/desktop-pref.glade.h:14
+msgid "Stretch to fill the entire screen"
+msgstr "Căng toàn bộ màn hình"
+
+#: ../data/ui/desktop-pref.glade.h:15
+msgid "Stretch to fit the screen"
+msgstr "Căng vừa màn hình"
+
+#: ../data/ui/desktop-pref.glade.h:16
+msgid "Tile the image to fill the entire screen"
+msgstr "Sắp xếp hình ảnh cạnh nhau để lắp đầy toàn bộ màn hình"
+
+#: ../data/ui/desktop-pref.glade.h:17
+msgid "Wallpaper _mode:"
+msgstr "_Chế độ ảnh nền:"
+
 #: ../data/ui/desktop-pref.glade.h:18
+msgid "_Appearance"
+msgstr "_Diện mạo"
+
+#: ../data/ui/desktop-pref.glade.h:19
+msgid "_Background color:"
+msgstr "_Màu nền:"
+
+#: ../data/ui/desktop-pref.glade.h:20
 msgid "_Desktop Icons"
 msgstr "Biểu tượng _màn hình nền"
 
-#: ../data/ui/desktop-pref.glade.h:19
+#: ../data/ui/desktop-pref.glade.h:21
+msgid "_Font of label text:"
+msgstr "_Phông của nhãn:"
+
+#: ../data/ui/desktop-pref.glade.h:22
+msgid "_Show \"My Documents\" icon on desktop"
+msgstr "_Hiển thị biểu tượng \"Tài liệu của tôi\" trên màn hình nền"
+
+#: ../data/ui/desktop-pref.glade.h:23
 msgid "_Show menus provided by window managers when desktop is clicked"
 msgstr ""
 "Hiển thị trình đơn _cung cấp bởi bộ quản lý cửa sổ khi nhấp chuột vào màn "
 "hình nền"
 
-#: ../data/ui/desktop-pref.glade.h:20
-msgid "Ad_vanced"
-msgstr "_Nâng cao"
-
-#: ../data/ui/desktop-pref.glade.h:21
-msgid "Fill with background color only"
-msgstr "Chỉ hiển thị màu nền"
-
-#: ../data/ui/desktop-pref.glade.h:22
-msgid "Stretch to fill the entire screen"
-msgstr "Căng toàn bộ màn hình"
-
-#: ../data/ui/desktop-pref.glade.h:23
-msgid "Stretch to fit the screen"
-msgstr "Căng vừa màn hình"
-
 #: ../data/ui/desktop-pref.glade.h:24
-msgid "Center on the screen"
-msgstr "Giữa màn hình"
+msgid "_Use the same wallpaper on all desktops"
+msgstr "_Dùng chung ảnh nền trên tất cả màn hình nền"
 
 #: ../data/ui/desktop-pref.glade.h:25
-msgid "Tile the image to fill the entire screen"
-msgstr "Sắp xếp hình ảnh cạnh nhau để lắp đầy toàn bộ màn hình"
+msgid "_Wallpaper:"
+msgstr "Ảnh _nền:"
 
 #: ../data/ui/pref.glade.h:1
-msgid "Opened in Current Tab"
-msgstr "Đã được mở trong thẻ hiện tại"
+msgid "\"C_omputer\" special folder"
+msgstr ""
 
 #: ../data/ui/pref.glade.h:2
-msgid "Opened in New Tab"
-msgstr "Đã được mở trong thẻ mới"
-
-#: ../data/ui/pref.glade.h:3
-msgid "Opened in New Window"
-msgstr "Đã được mở trong cửa sổ mới"
-
-#: ../data/ui/pref.glade.h:4
-msgid "Preferences"
-msgstr "Tùy chỉnh"
-
-#: ../data/ui/pref.glade.h:5
-msgid "<b>Behavior</b>"
-msgstr "<b>Động thái</b>"
-
-#: ../data/ui/pref.glade.h:6
-msgid "_Open files with single click"
-msgstr "_Mở tập tin với cú nhấp chuột đơn"
-
-#: ../data/ui/pref.glade.h:7
-msgid "Delay of auto-selection in single click mode (0 to disable)"
-msgstr "Độ trễ của việc chọn tự động trong chế độ click chuột đơn (0 để tắt)"
-
-#: ../data/ui/pref.glade.h:8
-msgid "Co_nfirm before deleting files"
-msgstr "Hỏi trước khi _xóa tập tin"
-
-#: ../data/ui/pref.glade.h:9
-msgid "_Move deleted files to \"trash bin\" instead of erasing from disk"
-msgstr ""
-"_Chuyển những tập tin bị xóa vào \"thùng rác\" thay vì xóa ngay trên đĩa"
-
-#: ../data/ui/pref.glade.h:10
-msgid "_Erase files on removable media instead of \"trash bin\" creation"
-msgstr ""
-"_Xóa tập tin ngay trên phương tiện di động thay vì chuyển vào \"thùng rác\""
-
-#: ../data/ui/pref.glade.h:11
-msgid "Confi_rm before moving files into \"trash bi_n\""
-msgstr "_Hỏi trước khi chuyển tập tin vào \"thùng rác\""
-
-#: ../data/ui/pref.glade.h:12
-msgid "_Bookmarks:"
-msgstr "Đánh _dấu:"
-
-#: ../data/ui/pref.glade.h:13
-msgid "Defaul_t drop action:"
-msgstr "Hành động thả _mặc định:"
-
-#: ../data/ui/pref.glade.h:14
-msgid "_Unfold tab when files are dragged onto tab button"
-msgstr "_Mở thẻ khi tập tin được kéo lên nút thẻ"
-
-#: ../data/ui/pref.glade.h:15
-msgid "<b>Default View</b>"
-msgstr "<b>Hiển thị mặc định</b>"
-
-#: ../data/ui/pref.glade.h:16
-msgid "Vie_w Mode:"
-msgstr "_Chế độ hiển thị:"
-
-#: ../data/ui/pref.glade.h:17
-msgid "_General"
-msgstr "_Chung"
-
-#: ../data/ui/pref.glade.h:18
-msgid "<b>Icons</b>"
-msgstr "<b>Biểu tượng</b>"
-
-#: ../data/ui/pref.glade.h:19
-msgid "Size of small _icons:"
-msgstr "Kích thước của biểu tượng _nhỏ:"
-
-#: ../data/ui/pref.glade.h:20
-msgid "Size of _big icons:"
-msgstr "Kích thước của biểu tượng _lớn:"
-
-#: ../data/ui/pref.glade.h:21
-msgid "Size of _thumbnails:"
-msgstr "Kích thước _của ảnh nhỏ:"
-
-#: ../data/ui/pref.glade.h:22
-msgid "Size of side _pane icons:"
-msgstr "_Kích thước của biểu tượng khung lề:"
-
-#: ../data/ui/pref.glade.h:23
-msgid "_Show thumbnails of files"
-msgstr "_Hiển thị ảnh nhỏ cho tập tin"
-
-#: ../data/ui/pref.glade.h:24
-msgid "_Only show thumbnails for local files"
-msgstr "_Chỉ hiển thị ảnh nhỏ cho tập tin nội bộ"
-
-#: ../data/ui/pref.glade.h:25
-msgid "Do _not generate thumbnails for files exceeding this size:"
-msgstr "_Không tạo ảnh nhỏ cho những tập tin vượt quá kích cỡ này:"
-
-#: ../data/ui/pref.glade.h:26
-msgid "<b>User Interface</b>"
-msgstr "<b>Giao diện người dùng</b>"
-
-#: ../data/ui/pref.glade.h:27
-msgid "Us_e SI decimal prefixes instead of IEC binary prefixes"
-msgstr "_Dùng tiền tố thập phân SI thay vì tiền tố nhị phân IEC"
-
-#: ../data/ui/pref.glade.h:28
-msgid "Treat backup files as _hidden"
-msgstr "_Xem tập tin sao lưu như tập tin ẩn"
-
-#: ../data/ui/pref.glade.h:29
-msgid "Al_ways show full file names"
-msgstr "_Luôn hiển thị đầy đủ tên tập tin"
-
-#: ../data/ui/pref.glade.h:30
-msgid "_Display"
-msgstr "_Hiển thị"
-
-#: ../data/ui/pref.glade.h:31
-msgid "Hide _folder content border"
-msgstr "Ẩn đường _viền nội dung thư mục"
-
-#: ../data/ui/pref.glade.h:32
-msgid "Hide _side pane buttons"
-msgstr "Ẩn _nút ở khung lề"
-
-#: ../data/ui/pref.glade.h:33
-msgid "Hid_e 'Close tab' buttons"
-msgstr "Ẩn nút 'Đóng _thẻ'"
-
-#: ../data/ui/pref.glade.h:34
-msgid "Al_ways show the tab bar"
-msgstr "_Luôn hiển thị thanh thẻ"
-
-#: ../data/ui/pref.glade.h:35
-msgid "<b>Directories Tree</b>"
-msgstr "<b>Cây thư mục</b>"
-
-#: ../data/ui/pref.glade.h:36
-msgid "Hide e_xpander on empty or locked folder"
-msgstr "Ẩn biểu tượng co _giãn cho thư mục rỗng hay thư mục bị khóa"
-
-#: ../data/ui/pref.glade.h:37
-msgid "<b>Show in Places:</b>"
-msgstr "<b>Hiển thị trong Nơi:</b>"
-
-#: ../data/ui/pref.glade.h:38
-msgid "_Home Directory"
-msgstr "_Thư mục nhà"
-
-#: ../data/ui/pref.glade.h:39
-msgid "Des_ktop Folder"
-msgstr "Thư _mục màn hình nền"
-
-#: ../data/ui/pref.glade.h:40
-msgid "App_lications"
-msgstr "Ứng _dụng"
-
-#: ../data/ui/pref.glade.h:41
-msgid "_Trash bin"
-msgstr "_Thùng rác"
-
-#: ../data/ui/pref.glade.h:42
-msgid "_Layout"
-msgstr "_Bố trí"
-
-#: ../data/ui/pref.glade.h:43
 msgid "<b>Auto-mount</b>"
 msgstr "<b>Tự động kết nối</b>"
 
-#: ../data/ui/pref.glade.h:44
-msgid "_Mount mountable volumes automatically on program startup"
-msgstr ""
-"_Tự động kết nối với những thiết bị có thể kết nối khi chương trình bắt đầu"
+#: ../data/ui/pref.glade.h:3
+msgid "<b>Behavior</b>"
+msgstr "<b>Động thái</b>"
 
-#: ../data/ui/pref.glade.h:45
-msgid "Mo_unt removable media automatically when they are inserted"
-msgstr "Tự động _kết nối những thiết bị di động khi chúng được gắn vào"
+#: ../data/ui/pref.glade.h:4
+msgid "<b>Default View</b>"
+msgstr "<b>Hiển thị mặc định</b>"
 
-#: ../data/ui/pref.glade.h:46
-msgid "_Show available options for removable media when they are inserted"
-msgstr ""
-"_Hiển thị những tùy chọn có thể cho những thiết bị di động khi chúng được "
-"gắn vào"
+#: ../data/ui/pref.glade.h:5
+msgid "<b>Directories Tree</b>"
+msgstr "<b>Cây thư mục</b>"
 
-#: ../data/ui/pref.glade.h:47
-msgid "_Open mounted removable media in new tab instead of new window"
-msgstr ""
-"_Mở những thiết bị đã được gắn trong một thẻ mới thay vì một cửa sổ mới"
+#: ../data/ui/pref.glade.h:6
+msgid "<b>Icons</b>"
+msgstr "<b>Biểu tượng</b>"
 
-#: ../data/ui/pref.glade.h:48
-msgid "Clos_e tab containing removable medium when it is unmounted"
-msgstr "Đóng thẻ _chứa thiết bị di động khi nó được tháo"
+#: ../data/ui/pref.glade.h:7
+#, fuzzy
+msgid "<b>Other options</b>"
+msgstr "<b>Hiển thị biểu tượng trên màn hình nền</b>"
 
-#: ../data/ui/pref.glade.h:49
-msgid "_Volume Management"
-msgstr "_Quản lý đĩa"
-
-#: ../data/ui/pref.glade.h:50
+#: ../data/ui/pref.glade.h:8
 msgid "<b>Programs</b>"
 msgstr "<b>Chương trình</b>"
 
-#: ../data/ui/pref.glade.h:51
-msgid "_Terminal emulator:"
-msgstr "_Bộ mô phỏng thiết bị đầu cuối:"
+#: ../data/ui/pref.glade.h:9
+msgid "<b>Show in Places:</b>"
+msgstr "<b>Hiển thị trong Nơi:</b>"
 
-#: ../data/ui/pref.glade.h:52
-msgid "_Switch user command:"
-msgstr "_Lệnh chuyển đổi người dùng:"
+#: ../data/ui/pref.glade.h:10
+#, fuzzy
+msgid "<b>Templates</b>"
+msgstr "<b>Văn bản</b>"
 
-#: ../data/ui/pref.glade.h:54
-#, no-c-format
-msgid ""
-"Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
-"%s = the command line you want to execute with terminal or su."
+#: ../data/ui/pref.glade.h:11
+msgid "<b>User Interface</b>"
+msgstr "<b>Giao diện người dùng</b>"
+
+#: ../data/ui/pref.glade.h:12
+msgid "<i>Commands below may include extra switches if necessary.</i>"
 msgstr ""
-"Ví dụ: \"xterm -e %s\" cho cửa sổ dòng lệnh hay \"gksu %s\" để chuyển đổi "
-"người dùng.\n"
-"%s = dòng lệnh bạn muốn thực thi với cửa sổ dòng lệnh hay siêu người dùng."
 
-#: ../data/ui/pref.glade.h:56
+#: ../data/ui/pref.glade.h:13
 msgid "A_rchiver integration:"
 msgstr "Tích _hợp bộ lưu trữ:"
 
-#: ../data/ui/pref.glade.h:57
-msgid "_Use Application Startup Notify by default"
-msgstr "_Mặc định dùng Thông báo khởi tạo ứng dụng"
+#: ../data/ui/pref.glade.h:14
+msgid "Al_ways show full file names"
+msgstr "_Luôn hiển thị đầy đủ tên tập tin"
 
-#: ../data/ui/pref.glade.h:58
+#: ../data/ui/pref.glade.h:15
+msgid "Al_ways show the tab bar"
+msgstr "_Luôn hiển thị thanh thẻ"
+
+#: ../data/ui/pref.glade.h:16
+msgid "App_lications"
+msgstr "Ứng _dụng"
+
+#: ../data/ui/pref.glade.h:17
+msgid "Ask"
+msgstr "Hỏi"
+
+#: ../data/ui/pref.glade.h:18
+msgid "Auto (move if on the same FS, copy otherwise)"
+msgstr ""
+"Tự động (di chuyển nếu trên cùng một hệ thống tập tin, nếu không sẽ sao chép)"
+
+#: ../data/ui/pref.glade.h:19
+msgid "Clos_e tab containing removable medium when it is unmounted"
+msgstr "Đóng thẻ _chứa thiết bị di động khi nó được tháo"
+
+#: ../data/ui/pref.glade.h:20
+msgid "Co_nfirm before deleting files"
+msgstr "Hỏi trước khi _xóa tập tin"
+
+#: ../data/ui/pref.glade.h:21
+msgid "Compact View"
+msgstr "Hiển thị thu gọn"
+
+#: ../data/ui/pref.glade.h:22
+#, fuzzy
+msgid "Confi_rm before moving files into \"trash can\""
+msgstr "_Hỏi trước khi chuyển tập tin vào \"thùng rác\""
+
+#: ../data/ui/pref.glade.h:23
+msgid "Copy"
+msgstr "Sao chép"
+
+#: ../data/ui/pref.glade.h:24
+msgid "D_efer test for content type on folder loading"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:25
+msgid "Defaul_t drop action:"
+msgstr "Hành động thả _mặc định:"
+
+#: ../data/ui/pref.glade.h:26
+msgid "Delay of auto-selection in single click mode (0 to disable)"
+msgstr "Độ trễ của việc chọn tự động trong chế độ click chuột đơn (0 để tắt)"
+
+#: ../data/ui/pref.glade.h:27
+msgid "Des_ktop Folder"
+msgstr "Thư _mục màn hình nền"
+
+#: ../data/ui/pref.glade.h:28
+msgid "Detailed List View"
+msgstr "Hiển thị danh sách chi tiết"
+
+#: ../data/ui/pref.glade.h:29
+msgid "Do _not generate thumbnails for files exceeding this size:"
+msgstr "_Không tạo ảnh nhỏ cho những tập tin vượt quá kích cỡ này:"
+
+#: ../data/ui/pref.glade.h:30
+msgid "Don't ask options on _launch executable file"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:31
+msgid "Hid_e 'Close tab' buttons"
+msgstr "Ẩn nút 'Đóng _thẻ'"
+
+#: ../data/ui/pref.glade.h:32
+msgid "Hide e_xpander on empty or locked folder"
+msgstr "Ẩn biểu tượng co _giãn cho thư mục rỗng hay thư mục bị khóa"
+
+#: ../data/ui/pref.glade.h:33
+msgid "Icon View"
+msgstr "Hiển thị biểu tượng"
+
+#: ../data/ui/pref.glade.h:34
 msgid ""
 "If checked then use Startup Notify for application if another not stated "
 "explicitly.\n"
@@ -385,62 +280,208 @@ msgstr ""
 "Nếu không chọn sẽ sử dụng Thông Báo Khởi Tạo chỉ khi nó được xác định cho "
 "ứng dụng."
 
-#: ../data/ui/pref.glade.h:60
-msgid "_Advanced"
-msgstr "_Nâng cao"
+#: ../data/ui/pref.glade.h:36
+msgid "Mo_unt removable media automatically when they are inserted"
+msgstr "Tự động _kết nối những thiết bị di động khi chúng được gắn vào"
 
-#: ../data/ui/pref.glade.h:61
-msgid "Auto (move if on the same FS, copy otherwise)"
-msgstr ""
-"Tự động (di chuyển nếu trên cùng một hệ thống tập tin, nếu không sẽ sao chép)"
-
-#: ../data/ui/pref.glade.h:62
-msgid "Copy"
-msgstr "Sao chép"
-
-#: ../data/ui/pref.glade.h:63
+#: ../data/ui/pref.glade.h:37
 msgid "Move"
 msgstr "Di chuyển"
 
-#: ../data/ui/pref.glade.h:64
-msgid "Ask"
-msgstr "Hỏi"
+#: ../data/ui/pref.glade.h:38
+msgid "Opened in Current Tab"
+msgstr "Đã được mở trong thẻ hiện tại"
 
-#: ../data/ui/pref.glade.h:65
-msgid "Icon View"
-msgstr "Hiển thị biểu tượng"
+#: ../data/ui/pref.glade.h:39
+msgid "Opened in New Tab"
+msgstr "Đã được mở trong thẻ mới"
 
-#: ../data/ui/pref.glade.h:66
-msgid "Compact View"
-msgstr "Hiển thị thu gọn"
+#: ../data/ui/pref.glade.h:40
+msgid "Opened in New Window"
+msgstr "Đã được mở trong cửa sổ mới"
 
-#: ../data/ui/pref.glade.h:67
+#: ../data/ui/pref.glade.h:41
+msgid "Preferences"
+msgstr "Tùy chỉnh"
+
+#: ../data/ui/pref.glade.h:42
+msgid "Ru_n default application after creation from template"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:43
+msgid "S_how only user defined templates in menu"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:44
+msgid "Show _only one template for each MIME type"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:45
+msgid "Show icons of bac_kup files shadowed"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:46
+msgid "Size of _big icons:"
+msgstr "Kích thước của biểu tượng _lớn:"
+
+#: ../data/ui/pref.glade.h:47
+msgid "Size of _thumbnails:"
+msgstr "Kích thước _của ảnh nhỏ:"
+
+#: ../data/ui/pref.glade.h:48
+msgid "Size of side _pane icons:"
+msgstr "_Kích thước của biểu tượng khung lề:"
+
+#: ../data/ui/pref.glade.h:49
+msgid "Size of small _icons:"
+msgstr "Kích thước của biểu tượng _nhỏ:"
+
+#: ../data/ui/pref.glade.h:50
 msgid "Thumbnail View"
 msgstr "Hiển thị ảnh nhỏ"
 
+#: ../data/ui/pref.glade.h:51
+msgid "Treat backup files as _hidden"
+msgstr "_Xem tập tin sao lưu như tập tin ẩn"
+
+#: ../data/ui/pref.glade.h:52
+msgid "Us_e SI decimal prefixes instead of IEC binary prefixes"
+msgstr "_Dùng tiền tố thập phân SI thay vì tiền tố nhị phân IEC"
+
+#: ../data/ui/pref.glade.h:53
+msgid "Vie_w Mode:"
+msgstr "_Chế độ hiển thị:"
+
+#: ../data/ui/pref.glade.h:54
+msgid "_Advanced"
+msgstr "_Nâng cao"
+
+#: ../data/ui/pref.glade.h:55
+msgid "_Bookmarks:"
+msgstr "Đánh _dấu:"
+
+#: ../data/ui/pref.glade.h:56
+msgid "_Display"
+msgstr "_Hiển thị"
+
+#: ../data/ui/pref.glade.h:57
+#, fuzzy
+msgid "_Erase files on removable media instead of \"trash can\" creation"
+msgstr ""
+"_Xóa tập tin ngay trên phương tiện di động thay vì chuyển vào \"thùng rác\""
+
+#: ../data/ui/pref.glade.h:58
+msgid "_File system root"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:59
+msgid "_Format command:"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:60
+msgid "_General"
+msgstr "_Chung"
+
+#: ../data/ui/pref.glade.h:61
+msgid "_Home Directory"
+msgstr "_Thư mục nhà"
+
+#: ../data/ui/pref.glade.h:62
+msgid "_Layout"
+msgstr "_Bố trí"
+
+#: ../data/ui/pref.glade.h:63
+msgid "_Maximum width of tab label:"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:64
+msgid "_Mount mountable volumes automatically on program startup"
+msgstr ""
+"_Tự động kết nối với những thiết bị có thể kết nối khi chương trình bắt đầu"
+
+#: ../data/ui/pref.glade.h:65
+#, fuzzy
+msgid "_Move deleted files to \"trash can\" instead of erasing from disk"
+msgstr ""
+"_Chuyển những tập tin bị xóa vào \"thùng rác\" thay vì xóa ngay trên đĩa"
+
+#: ../data/ui/pref.glade.h:66
+#, fuzzy
+msgid "_Network places"
+msgstr "Ổ đĩa _mạng"
+
+#: ../data/ui/pref.glade.h:67
+msgid "_Only show thumbnails for local files"
+msgstr "_Chỉ hiển thị ảnh nhỏ cho tập tin nội bộ"
+
 #: ../data/ui/pref.glade.h:68
-msgid "Detailed List View"
-msgstr "Hiển thị danh sách chi tiết"
+msgid "_Open files with single click"
+msgstr "_Mở tập tin với cú nhấp chuột đơn"
+
+#: ../data/ui/pref.glade.h:69
+msgid "_Open mounted removable media in new tab instead of new window"
+msgstr ""
+"_Mở những thiết bị đã được gắn trong một thẻ mới thay vì một cửa sổ mới"
+
+#: ../data/ui/pref.glade.h:70
+msgid "_Show available options for removable media when they are inserted"
+msgstr ""
+"_Hiển thị những tùy chọn có thể cho những thiết bị di động khi chúng được "
+"gắn vào"
+
+#: ../data/ui/pref.glade.h:71
+msgid "_Show thumbnails of files"
+msgstr "_Hiển thị ảnh nhỏ cho tập tin"
+
+#: ../data/ui/pref.glade.h:72
+msgid "_Switch user command:"
+msgstr "_Lệnh chuyển đổi người dùng:"
+
+#: ../data/ui/pref.glade.h:73
+msgid "_Terminal emulator:"
+msgstr "_Bộ mô phỏng thiết bị đầu cuối:"
+
+#: ../data/ui/pref.glade.h:74
+#, fuzzy
+msgid "_Trash can"
+msgstr "Thùng _rác"
+
+#: ../data/ui/pref.glade.h:75
+msgid "_Unfold tab when files are dragged onto tab button"
+msgstr "_Mở thẻ khi tập tin được kéo lên nút thẻ"
+
+#: ../data/ui/pref.glade.h:76
+msgid "_Use Application Startup Notify by default"
+msgstr "_Mặc định dùng Thông báo khởi tạo ứng dụng"
+
+#: ../data/ui/pref.glade.h:77
+msgid "_Volume Management"
+msgstr "_Quản lý đĩa"
+
+#. Use genitive case here, context is: width is XXX characters
+#: ../data/ui/pref.glade.h:79
+msgid "characters"
+msgstr ""
 
 #: ../data/ui/autorun.glade.h:1
-msgid "Removable medium is inserted"
-msgstr "Những phương tiện di động đã được gắn"
-
-#: ../data/ui/autorun.glade.h:2
 msgid "<b>Removable medium is inserted</b>"
 msgstr "<b>Những phương tiện di động đã được gắn</b>"
 
-#: ../data/ui/autorun.glade.h:3
-msgid "Type of medium:"
-msgstr "Loại thiết bị:"
-
-#: ../data/ui/autorun.glade.h:4
+#: ../data/ui/autorun.glade.h:2
 msgid "Detecting..."
 msgstr "Đang dò..."
 
-#: ../data/ui/autorun.glade.h:5
+#: ../data/ui/autorun.glade.h:3
 msgid "Please select the action you want to perform:"
 msgstr "Vui lòng chọn hành động bạn muốn thực hiện:"
+
+#: ../data/ui/autorun.glade.h:4
+msgid "Removable medium is inserted"
+msgstr "Những phương tiện di động đã được gắn"
+
+#: ../data/ui/autorun.glade.h:5
+msgid "Type of medium:"
+msgstr "Loại thiết bị:"
 
 #: ../src/volume-manager.c:164
 msgid "Removable Disk"
@@ -469,6 +510,27 @@ msgstr "Gắn vào vị trí _hiện tại"
 #: ../src/desktop-ui.c:75
 msgid "Snap to _Grid"
 msgstr "Bám vào lưới"
+
+#: ../src/desktop.c:571
+#, fuzzy
+msgid "Activate file"
+msgstr "<image file>"
+
+#: ../src/desktop.c:573
+#, fuzzy
+msgid "Show file menu"
+msgstr "Hiển thị _nội dung ẩn"
+
+#: ../src/desktop.c:989
+#, fuzzy
+msgid "Show desktop menu"
+msgstr "<b>Hiển thị biểu tượng trên màn hình nền</b>"
+
+#. FIXME: set name by monitor
+#: ../src/desktop.c:1061
+#, fuzzy
+msgid "Desktop"
+msgstr "_Màn hình nền"
 
 #: ../src/main-win-ui.c:127
 msgid "_File"
@@ -564,16 +626,16 @@ msgid "_Previous Folder"
 msgstr "Thư mục _trước"
 
 #: ../src/main-win-ui.c:154
-msgid "Previous Folder"
-msgstr "Thư mục trước"
+msgid "Return to previous folder in history"
+msgstr ""
 
 #: ../src/main-win-ui.c:155
 msgid "_Next Folder"
 msgstr "Thư mục _sau"
 
 #: ../src/main-win-ui.c:155
-msgid "Next Folder"
-msgstr "Thư mục sau"
+msgid "Go forward to next folder in history"
+msgstr ""
 
 #: ../src/main-win-ui.c:156
 msgid "Pa_rent Folder"
@@ -588,40 +650,57 @@ msgid "H_ome Folder"
 msgstr "Thư mục _nhà"
 
 #: ../src/main-win-ui.c:157
-msgid "Home Folder"
-msgstr "Thư mục nhà"
+#, fuzzy
+msgid "Go to home folder"
+msgstr "Đi đến thư mục cha"
 
 #: ../src/main-win-ui.c:158
 msgid "_Desktop"
 msgstr "_Màn hình nền"
 
 #: ../src/main-win-ui.c:158
-msgid "Desktop Folder"
-msgstr "Thư mục màn hình nền"
+#, fuzzy
+msgid "Go to desktop folder"
+msgstr "Đi đến thư mục cha"
 
 #: ../src/main-win-ui.c:159
-msgid "_My Computer"
-msgstr "_Máy tính của tôi"
-
-#: ../src/main-win-ui.c:160
 msgid "_Trash Can"
 msgstr "Thùng _rác"
+
+#: ../src/main-win-ui.c:159
+msgid "Open trash can"
+msgstr ""
+
+#: ../src/main-win-ui.c:160
+#, fuzzy
+msgid "_Computer Drives"
+msgstr "Ổ đĩa _mạng"
+
+#: ../src/main-win-ui.c:160
+#, fuzzy
+msgid "Go to list of volumes in the computer"
+msgstr "Hiển thị _biểu tượng thiết bị trên màn hình nền"
 
 #: ../src/main-win-ui.c:161
 msgid "Net_work Drives"
 msgstr "Ổ đĩa _mạng"
+
+#: ../src/main-win-ui.c:161
+#, fuzzy
+msgid "Go to list of volumes on the network"
+msgstr "Hiển thị _biểu tượng thiết bị trên màn hình nền"
 
 #: ../src/main-win-ui.c:162
 msgid "_Applications"
 msgstr "Ứng _dụng"
 
 #: ../src/main-win-ui.c:162
-msgid "Installed Applications"
-msgstr "Ứng dụng đã cài đặt"
+msgid "Go to root of applications menu folder"
+msgstr ""
 
 #: ../src/main-win-ui.c:163
-msgid "Open entered folder"
-msgstr "Mở thư mục"
+msgid "Open folder entered in location entry"
+msgstr ""
 
 #: ../src/main-win-ui.c:164
 msgid "_Bookmarks"
@@ -630,6 +709,10 @@ msgstr "Đá_nh dấu"
 #: ../src/main-win-ui.c:165
 msgid "_Add To Bookmarks"
 msgstr "_Thêm vào đánh dấu"
+
+#: ../src/main-win-ui.c:165
+msgid "Add current folder to bookmarks list"
+msgstr ""
 
 #: ../src/main-win-ui.c:166
 msgid "Tool_s"
@@ -646,6 +729,11 @@ msgstr "Mở thư mục hiện tại với _quyền quản trị"
 #: ../src/main-win-ui.c:170
 msgid "Fin_d Files"
 msgstr "_Tìm tập tin"
+
+#: ../src/main-win-ui.c:170
+#, fuzzy
+msgid "Open search dialog"
+msgstr "Mở hộp thoại tùy chỉnh màn hình nền"
 
 #. for popup menu - these entries exist in FmFolderView popup still
 #: ../src/main-win-ui.c:179
@@ -720,15 +808,46 @@ msgstr "Cây thư mục"
 msgid "Remote"
 msgstr "Từ xa"
 
-#: ../src/main-win.c:542
+#: ../src/main-win.c:532
+msgid "Show history of visited folders"
+msgstr ""
+
+#: ../src/main-win.c:535
+msgid "History"
+msgstr ""
+
+#: ../src/main-win.c:549
 msgid "You are in super user mode"
 msgstr "Bạn đang trong chế độ quản trị"
 
-#: ../src/main-win.c:713 ../src/main-win.c:721
+#: ../src/main-win.c:713
+#, fuzzy
+msgid "Lightweight file manager\n"
+msgstr ""
+"Bộ quản lý tập tin gọn nhẹ\n"
+"\n"
+"Phát triển bởi Hon Jen Yee (PCMan)"
+
+#: ../src/main-win.c:718
+#, c-format
+msgid "using LibFM ver. %s\n"
+msgstr ""
+
+#: ../src/main-win.c:720
+#, fuzzy
+msgid ""
+"\n"
+"Developed by Hon Jen Yee (PCMan)"
+msgstr ""
+"Bộ quản lý tập tin gọn nhẹ\n"
+"\n"
+"Phát triển bởi Hon Jen Yee (PCMan)"
+
+#: ../src/main-win.c:745 ../src/main-win.c:753
 msgid "Keyboard navigation"
 msgstr "Điều hướng bàn phím"
 
-#: ../src/main-win.c:715
+#: ../src/main-win.c:747
 msgid ""
 "Tab: cycle focus Folder View -> Side Pane -> Tools Bar\n"
 "Shift+Tab: cycle focus Tools Bar -> Side Pane -> Folder View\n"
@@ -744,11 +863,11 @@ msgstr ""
 "F10: kích hoạt trình đơn chính\n"
 "Ctrl+L or Alt+D: tập trung vào thanh đường dẫn"
 
-#: ../src/main-win.c:751
+#: ../src/main-win.c:783
 msgid "Switch user command is not set."
 msgstr "Lệnh chuyển đổi người dùng chưa được thiết lập."
 
-#: ../src/main-win.c:1106
+#: ../src/main-win.c:1138
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -759,7 +878,7 @@ msgstr ""
 "'%s'\n"
 "Nhập tên cho hạng mục đánh dấu mới:"
 
-#: ../src/main-win.c:1110
+#: ../src/main-win.c:1142
 msgid "Add to Bookmarks"
 msgstr "Thêm vào Đánh dấu"
 
@@ -839,7 +958,7 @@ msgstr "ROLE"
 msgid "[FILE1, FILE2,...]"
 msgstr "[FILE1, FILE2,...]"
 
-#: ../src/pcmanfm.c:532
+#: ../src/pcmanfm.c:528
 msgid "Terminal emulator is not set."
 msgstr "Bộ mô phỏng thiết bị đầu cuối chưa được thiết lập."
 
@@ -871,20 +990,59 @@ msgid_plural " (%d hidden)"
 msgstr[0] " (%d đã ẩn)"
 
 #: ../data/pcmanfm.desktop.in.h:1
-msgid "File Manager PCManFM"
-msgstr "Bộ quản lý tập tin PCManFM"
+msgid "Browse the file system and manage the files"
+msgstr "Xem hệ thống tập tin và quản lý dữ liệu"
 
 #: ../data/pcmanfm.desktop.in.h:2
 msgid "File Manager"
 msgstr "Bộ quản lý Tập tin"
 
 #: ../data/pcmanfm.desktop.in.h:3
-msgid "Browse the file system and manage the files"
-msgstr "Xem hệ thống tập tin và quản lý dữ liệu"
+msgid "File Manager PCManFM"
+msgstr "Bộ quản lý tập tin PCManFM"
 
-#: ../data/pcmanfm-desktop-pref.desktop.in.h:2
+#: ../data/pcmanfm-desktop-pref.desktop.in.h:1
 msgid "Change desktop wallpapers and behavior of desktop manager"
 msgstr "Thay đổi ảnh nền và trạng thái của bộ quản lý màn hình nền"
+
+#~ msgid "Hide _folder content border"
+#~ msgstr "Ẩn đường _viền nội dung thư mục"
+
+#~ msgid "Hide _side pane buttons"
+#~ msgstr "Ẩn _nút ở khung lề"
+
+#~ msgid "_Trash bin"
+#~ msgstr "_Thùng rác"
+
+#~ msgid ""
+#~ "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching "
+#~ "user.\n"
+#~ "%s = the command line you want to execute with terminal or su."
+#~ msgstr ""
+#~ "Ví dụ: \"xterm -e %s\" cho cửa sổ dòng lệnh hay \"gksu %s\" để chuyển đổi "
+#~ "người dùng.\n"
+#~ "%s = dòng lệnh bạn muốn thực thi với cửa sổ dòng lệnh hay siêu người dùng."
+
+#~ msgid "Previous Folder"
+#~ msgstr "Thư mục trước"
+
+#~ msgid "Next Folder"
+#~ msgstr "Thư mục sau"
+
+#~ msgid "Home Folder"
+#~ msgstr "Thư mục nhà"
+
+#~ msgid "Desktop Folder"
+#~ msgstr "Thư mục màn hình nền"
+
+#~ msgid "_My Computer"
+#~ msgstr "_Máy tính của tôi"
+
+#~ msgid "Installed Applications"
+#~ msgstr "Ứng dụng đã cài đặt"
+
+#~ msgid "Open entered folder"
+#~ msgstr "Mở thư mục"
 
 #~ msgid "Blank File"
 #~ msgstr "Tập tin trắng"
@@ -897,9 +1055,6 @@ msgstr "Thay đổi ảnh nền và trạng thái của bộ quản lý màn hì
 
 #~ msgid "Invert Selection"
 #~ msgstr "Đảo Lựa chọn"
-
-#~ msgid "<image file>"
-#~ msgstr "<image file>"
 
 #~ msgid "<mode>"
 #~ msgstr "<mode>"

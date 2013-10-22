@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-08-22 20:34+0200\n"
+"POT-Creation-Date: 2013-10-16 23:12+0300\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Ivan Masár <helix84@centrum.sk>\n"
 "Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
@@ -22,460 +22,496 @@ msgstr ""
 msgid "Copyright (C) 2009 - 2013"
 msgstr "Copyright (C) 2009 - 2013"
 
-#: ../data/ui/about.glade.in.h:2
-msgid ""
-"Lightweight file manager\n"
-"\n"
-"Developed by Hon Jen Yee (PCMan)"
-msgstr ""
-"Odľahčený správca súborov\n"
-"\n"
-"Vyvinul Hon Jen Yee (PCMan)"
-
 #. Please replace this line with your own names, one name per line.
-#: ../data/ui/about.glade.in.h:6
+#: ../data/ui/about.glade.in.h:3
 msgid "translator-credits"
 msgstr "Ivan Masár <helix84@centrum.sk>, 2009."
 
-#: ../data/ui/desktop-pref.glade.h:1 ../src/desktop-ui.c:34
-#: ../data/pcmanfm-desktop-pref.desktop.in.h:1
-msgid "Desktop Preferences"
-msgstr "Nastavenie pracovného prostredia"
-
-#: ../data/ui/desktop-pref.glade.h:2
+#: ../data/ui/desktop-pref.glade.h:1
 msgid "<b>Background</b>"
 msgstr "<b>Pozadie</b>"
 
-#: ../data/ui/desktop-pref.glade.h:3
-#, fuzzy
-msgid "_Wallpaper:"
-msgstr "Tapeta:"
-
-#: ../data/ui/desktop-pref.glade.h:4
-msgid "Please select an image file"
-msgstr "Prosím, vyberte súbor obrázka"
-
-#: ../data/ui/desktop-pref.glade.h:5
-msgid "_Use the same wallpaper on all desktops"
-msgstr ""
-
-#: ../data/ui/desktop-pref.glade.h:6
-#, fuzzy
-msgid "_Background color:"
-msgstr "Farba pozadia:"
-
-#: ../data/ui/desktop-pref.glade.h:7
-#, fuzzy
-msgid "Wallpaper _mode:"
-msgstr "Režim tapety:"
-
-#: ../data/ui/desktop-pref.glade.h:8
-msgid "<b>Text</b>"
-msgstr "<b>Text</b>"
-
-#: ../data/ui/desktop-pref.glade.h:9
-#, fuzzy
-msgid "_Font of label text:"
-msgstr "Písmo textu návestia:"
-
-#: ../data/ui/desktop-pref.glade.h:10
-#, fuzzy
-msgid "C_olor of label text:"
-msgstr "Farba textu návestia:"
-
-#: ../data/ui/desktop-pref.glade.h:11
-#, fuzzy
-msgid "Color of _shadow:"
-msgstr "Farba tieňa:"
-
-#: ../data/ui/desktop-pref.glade.h:12
-#, fuzzy
-msgid "_Appearance"
-msgstr "Vzhľad"
-
-#: ../data/ui/desktop-pref.glade.h:13
+#: ../data/ui/desktop-pref.glade.h:2
 msgid "<b>Show desktop icons</b>"
 msgstr "<b>Zobrazovať ikony na ploche</b>"
 
-#: ../data/ui/desktop-pref.glade.h:14
-#, fuzzy
-msgid "_Show \"My Documents\" icon on desktop"
-msgstr "Zobraziť na ploche ikonu „Moje dokumenty“"
+#: ../data/ui/desktop-pref.glade.h:3
+msgid "<b>Text</b>"
+msgstr "<b>Text</b>"
 
-#: ../data/ui/desktop-pref.glade.h:15
-#, fuzzy
-msgid "Show \"_My Computer\" icon on desktop"
-msgstr "Zobraziť na ploche ikonu „Môj počítač“"
-
-#: ../data/ui/desktop-pref.glade.h:16
-#, fuzzy
-msgid "Show \"_Trash Bin\" icon on desktop"
-msgstr "Zobraziť na ploche ikonu „Kôš“"
-
-#: ../data/ui/desktop-pref.glade.h:17
-#, fuzzy
-msgid "S_how icons of volumes on desktop"
-msgstr "Zobraziť na ploche ikony zväzkov"
-
-#: ../data/ui/desktop-pref.glade.h:18
-#, fuzzy
-msgid "_Desktop Icons"
-msgstr "Ikony na ploche"
-
-#: ../data/ui/desktop-pref.glade.h:19
-#, fuzzy
-msgid "_Show menus provided by window managers when desktop is clicked"
-msgstr "Zobraziť po kliknutí na plochu menu správcu okien"
-
-#: ../data/ui/desktop-pref.glade.h:20
+#: ../data/ui/desktop-pref.glade.h:4
 #, fuzzy
 msgid "Ad_vanced"
 msgstr "Rozšírené"
 
-#: ../data/ui/desktop-pref.glade.h:21
-msgid "Fill with background color only"
-msgstr "Vyplniť iba farbou pozadia"
+#: ../data/ui/desktop-pref.glade.h:5
+#, fuzzy
+msgid "C_olor of label text:"
+msgstr "Farba textu návestia:"
 
-#: ../data/ui/desktop-pref.glade.h:22
-msgid "Stretch to fill the entire screen"
-msgstr "Roztiahnuť na celú obrazovku"
-
-#: ../data/ui/desktop-pref.glade.h:23
-msgid "Stretch to fit the screen"
-msgstr "Roztiahnuť na obrazovku"
-
-#: ../data/ui/desktop-pref.glade.h:24
+#: ../data/ui/desktop-pref.glade.h:6
 msgid "Center on the screen"
 msgstr "Vycentrovať na obrazovke"
 
-#: ../data/ui/desktop-pref.glade.h:25
+#: ../data/ui/desktop-pref.glade.h:7
+#, fuzzy
+msgid "Color of _shadow:"
+msgstr "Farba tieňa:"
+
+#: ../data/ui/desktop-pref.glade.h:8 ../src/desktop-ui.c:34
+#: ../data/pcmanfm-desktop-pref.desktop.in.h:2
+msgid "Desktop Preferences"
+msgstr "Nastavenie pracovného prostredia"
+
+#: ../data/ui/desktop-pref.glade.h:9
+msgid "Fill with background color only"
+msgstr "Vyplniť iba farbou pozadia"
+
+#: ../data/ui/desktop-pref.glade.h:10
+msgid "Please select an image file"
+msgstr "Prosím, vyberte súbor obrázka"
+
+#: ../data/ui/desktop-pref.glade.h:11
+#, fuzzy
+msgid "S_how icons of volumes on desktop"
+msgstr "Zobraziť na ploche ikony zväzkov"
+
+#: ../data/ui/desktop-pref.glade.h:12
+#, fuzzy
+msgid "Show \"_My Computer\" icon on desktop"
+msgstr "Zobraziť na ploche ikonu „Môj počítač“"
+
+#: ../data/ui/desktop-pref.glade.h:13
+#, fuzzy
+msgid "Show \"_Trash Can\" icon on desktop"
+msgstr "Zobraziť na ploche ikonu „Kôš“"
+
+#: ../data/ui/desktop-pref.glade.h:14
+msgid "Stretch to fill the entire screen"
+msgstr "Roztiahnuť na celú obrazovku"
+
+#: ../data/ui/desktop-pref.glade.h:15
+msgid "Stretch to fit the screen"
+msgstr "Roztiahnuť na obrazovku"
+
+#: ../data/ui/desktop-pref.glade.h:16
 msgid "Tile the image to fill the entire screen"
 msgstr "Vydláždiť obrázkom celú obrazovku"
 
+#: ../data/ui/desktop-pref.glade.h:17
+#, fuzzy
+msgid "Wallpaper _mode:"
+msgstr "Režim tapety:"
+
+#: ../data/ui/desktop-pref.glade.h:18
+#, fuzzy
+msgid "_Appearance"
+msgstr "Vzhľad"
+
+#: ../data/ui/desktop-pref.glade.h:19
+#, fuzzy
+msgid "_Background color:"
+msgstr "Farba pozadia:"
+
+#: ../data/ui/desktop-pref.glade.h:20
+#, fuzzy
+msgid "_Desktop Icons"
+msgstr "Ikony na ploche"
+
+#: ../data/ui/desktop-pref.glade.h:21
+#, fuzzy
+msgid "_Font of label text:"
+msgstr "Písmo textu návestia:"
+
+#: ../data/ui/desktop-pref.glade.h:22
+#, fuzzy
+msgid "_Show \"My Documents\" icon on desktop"
+msgstr "Zobraziť na ploche ikonu „Moje dokumenty“"
+
+#: ../data/ui/desktop-pref.glade.h:23
+#, fuzzy
+msgid "_Show menus provided by window managers when desktop is clicked"
+msgstr "Zobraziť po kliknutí na plochu menu správcu okien"
+
+#: ../data/ui/desktop-pref.glade.h:24
+msgid "_Use the same wallpaper on all desktops"
+msgstr ""
+
+#: ../data/ui/desktop-pref.glade.h:25
+#, fuzzy
+msgid "_Wallpaper:"
+msgstr "Tapeta:"
+
 #: ../data/ui/pref.glade.h:1
-msgid "Opened in Current Tab"
-msgstr "Otvorené na aktuálnej _karte"
+msgid "\"C_omputer\" special folder"
+msgstr ""
 
 #: ../data/ui/pref.glade.h:2
-msgid "Opened in New Tab"
-msgstr "Otvorené na novej _karte"
+msgid "<b>Auto-mount</b>"
+msgstr "<b>Automatické pripájanie</b>"
 
 #: ../data/ui/pref.glade.h:3
-msgid "Opened in New Window"
-msgstr "Otvorené v novom _okne"
-
-#: ../data/ui/pref.glade.h:4
-msgid "Preferences"
-msgstr "Nastavenie"
-
-#: ../data/ui/pref.glade.h:5
 msgid "<b>Behavior</b>"
 msgstr "<b>Správanie</b>"
 
-#: ../data/ui/pref.glade.h:6
-#, fuzzy
-msgid "_Open files with single click"
-msgstr "Otvoriť súbory jednoduchým kliknutím"
-
-#: ../data/ui/pref.glade.h:7
-msgid "Delay of auto-selection in single click mode (0 to disable)"
-msgstr ""
-
-#: ../data/ui/pref.glade.h:8
-#, fuzzy
-msgid "Co_nfirm before deleting files"
-msgstr "Potvrdenie pred zmazaním súborov"
-
-#: ../data/ui/pref.glade.h:9
-#, fuzzy
-msgid "_Move deleted files to \"trash bin\" instead of erasing from disk"
-msgstr "Presúvať zmazané súbory do „Koša“ namiesto vymazania z disku"
-
-#: ../data/ui/pref.glade.h:10
-msgid "_Erase files on removable media instead of \"trash bin\" creation"
-msgstr ""
-
-#: ../data/ui/pref.glade.h:11
-#, fuzzy
-msgid "Confi_rm before moving files into \"trash bi_n\""
-msgstr "Potvrdenie pred zmazaním súborov"
-
-#: ../data/ui/pref.glade.h:12
-#, fuzzy
-msgid "_Bookmarks:"
-msgstr "Záložky:"
-
-#: ../data/ui/pref.glade.h:13
-msgid "Defaul_t drop action:"
-msgstr ""
-
-#: ../data/ui/pref.glade.h:14
-msgid "_Unfold tab when files are dragged onto tab button"
-msgstr ""
-
-#: ../data/ui/pref.glade.h:15
+#: ../data/ui/pref.glade.h:4
 msgid "<b>Default View</b>"
 msgstr "<b>Predvolené zobrazenie</b>"
 
-#: ../data/ui/pref.glade.h:16
-#, fuzzy
-msgid "Vie_w Mode:"
-msgstr "Režim zobrazenia:"
-
-#: ../data/ui/pref.glade.h:17
-msgid "_General"
-msgstr "_Všeobecné"
-
-#: ../data/ui/pref.glade.h:18
-msgid "<b>Icons</b>"
-msgstr "<b>Ikony</b>"
-
-#: ../data/ui/pref.glade.h:19
-#, fuzzy
-msgid "Size of small _icons:"
-msgstr "Veľkosť malých ikon:"
-
-#: ../data/ui/pref.glade.h:20
-#, fuzzy
-msgid "Size of _big icons:"
-msgstr "Veľkosť veľkých ikon:"
-
-#: ../data/ui/pref.glade.h:21
-#, fuzzy
-msgid "Size of _thumbnails:"
-msgstr "Veľkosť náhľadov:"
-
-#: ../data/ui/pref.glade.h:22
-#, fuzzy
-msgid "Size of side _pane icons:"
-msgstr "Veľkosť ikon bočného panela:"
-
-#: ../data/ui/pref.glade.h:23
-#, fuzzy
-msgid "_Show thumbnails of files"
-msgstr "Zobrazovať náhľady súborov"
-
-#: ../data/ui/pref.glade.h:24
-#, fuzzy
-msgid "_Only show thumbnails for local files"
-msgstr "Zobrazovať náhľady iba lokálnych súborov"
-
-#: ../data/ui/pref.glade.h:25
-#, fuzzy
-msgid "Do _not generate thumbnails for files exceeding this size:"
-msgstr "Nevytvárať náhľadu súborov prekračujúcich túto veľkosť:"
-
-#: ../data/ui/pref.glade.h:26
-msgid "<b>User Interface</b>"
-msgstr "<b>Používateľské rozhranie</b>"
-
-#: ../data/ui/pref.glade.h:27
-#, fuzzy
-msgid "Us_e SI decimal prefixes instead of IEC binary prefixes"
-msgstr "Používať desiatkové predpony SI namiesto dvojkových predpon IEC"
-
-#: ../data/ui/pref.glade.h:28
-msgid "Treat backup files as _hidden"
-msgstr ""
-
-#: ../data/ui/pref.glade.h:29
-#, fuzzy
-msgid "Al_ways show full file names"
-msgstr "Vždy zobrazovať tento panel s kartami"
-
-#: ../data/ui/pref.glade.h:30
-#, fuzzy
-msgid "_Display"
-msgstr "_Zobrazenie"
-
-#: ../data/ui/pref.glade.h:31
-#, fuzzy
-msgid "Hide _folder content border"
-msgstr "Skryť okraj obsahu priečinka"
-
-#: ../data/ui/pref.glade.h:32
-#, fuzzy
-msgid "Hide _side pane buttons"
-msgstr "Skryť tlačidlá bočného panelu"
-
-#: ../data/ui/pref.glade.h:33
-#, fuzzy
-msgid "Hid_e 'Close tab' buttons"
-msgstr "Skryť tlačidlá „Zatvoriť kartu“"
-
-#: ../data/ui/pref.glade.h:34
-#, fuzzy
-msgid "Al_ways show the tab bar"
-msgstr "Vždy zobrazovať tento panel s kartami"
-
-#: ../data/ui/pref.glade.h:35
+#: ../data/ui/pref.glade.h:5
 #, fuzzy
 msgid "<b>Directories Tree</b>"
 msgstr "Strom adresárov"
 
-#: ../data/ui/pref.glade.h:36
-msgid "Hide e_xpander on empty or locked folder"
-msgstr ""
+#: ../data/ui/pref.glade.h:6
+msgid "<b>Icons</b>"
+msgstr "<b>Ikony</b>"
 
-#: ../data/ui/pref.glade.h:37
+#: ../data/ui/pref.glade.h:7
+#, fuzzy
+msgid "<b>Other options</b>"
+msgstr "<b>Ostatní používatelia:</b>"
+
+#: ../data/ui/pref.glade.h:8
+msgid "<b>Programs</b>"
+msgstr "<b>Programy</b>"
+
+#: ../data/ui/pref.glade.h:9
 #, fuzzy
 msgid "<b>Show in Places:</b>"
 msgstr "<b>Zobrazovať ikony na ploche</b>"
 
-#: ../data/ui/pref.glade.h:38
+#: ../data/ui/pref.glade.h:10
 #, fuzzy
-msgid "_Home Directory"
-msgstr "Domovský adresár"
+msgid "<b>Templates</b>"
+msgstr "<b>Text</b>"
 
-#: ../data/ui/pref.glade.h:39
-#, fuzzy
-msgid "Des_ktop Folder"
-msgstr "Priečinok Plocha"
+#: ../data/ui/pref.glade.h:11
+msgid "<b>User Interface</b>"
+msgstr "<b>Používateľské rozhranie</b>"
 
-#: ../data/ui/pref.glade.h:40
-#, fuzzy
-msgid "App_lications"
-msgstr "Aplikácie"
-
-#: ../data/ui/pref.glade.h:41
-#, fuzzy
-msgid "_Trash bin"
-msgstr "Kôš"
-
-#: ../data/ui/pref.glade.h:42
-#, fuzzy
-msgid "_Layout"
-msgstr "Režim rozloženia"
-
-#: ../data/ui/pref.glade.h:43
-msgid "<b>Auto-mount</b>"
-msgstr "<b>Automatické pripájanie</b>"
-
-#: ../data/ui/pref.glade.h:44
-#, fuzzy
-msgid "_Mount mountable volumes automatically on program startup"
-msgstr "Pripájať pripojiteľné zväzky automaticky pri spustení programu"
-
-#: ../data/ui/pref.glade.h:45
-#, fuzzy
-msgid "Mo_unt removable media automatically when they are inserted"
-msgstr "Pripájať pripojiteľné zväzky automaticky po vložení"
-
-#: ../data/ui/pref.glade.h:46
-#, fuzzy
-msgid "_Show available options for removable media when they are inserted"
-msgstr "Zobrazovať dostupné možnosti prenosného média po vložení"
-
-#: ../data/ui/pref.glade.h:47
-msgid "_Open mounted removable media in new tab instead of new window"
+#: ../data/ui/pref.glade.h:12
+msgid "<i>Commands below may include extra switches if necessary.</i>"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:48
-#, fuzzy
-msgid "Clos_e tab containing removable medium when it is unmounted"
-msgstr "Zobrazovať dostupné možnosti prenosného média po vložení"
-
-#: ../data/ui/pref.glade.h:49
-#, fuzzy
-msgid "_Volume Management"
-msgstr "_Správa zväzkov"
-
-#: ../data/ui/pref.glade.h:50
-msgid "<b>Programs</b>"
-msgstr "<b>Programy</b>"
-
-#: ../data/ui/pref.glade.h:51
-#, fuzzy
-msgid "_Terminal emulator:"
-msgstr "Emulátor terminálu:"
-
-#: ../data/ui/pref.glade.h:52
-#, fuzzy
-msgid "_Switch user command:"
-msgstr "Príkaz na prepnutie používateľa:"
-
-#: ../data/ui/pref.glade.h:54
-#, no-c-format
-msgid ""
-"Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
-"%s = the command line you want to execute with terminal or su."
-msgstr ""
-"Príklady: terminál - „xterm -e %s“ alebo prepnutie používateľa - „gksu %s“.\n"
-"%s = príkazový riadok, ktorý chcete aby terminál alebo su vykonalo."
-
-#: ../data/ui/pref.glade.h:56
+#: ../data/ui/pref.glade.h:13
 #, fuzzy
 msgid "A_rchiver integration:"
 msgstr "Integrácia s archivačným programom:"
 
-#: ../data/ui/pref.glade.h:57
-msgid "_Use Application Startup Notify by default"
+#: ../data/ui/pref.glade.h:14
+#, fuzzy
+msgid "Al_ways show full file names"
+msgstr "Vždy zobrazovať tento panel s kartami"
+
+#: ../data/ui/pref.glade.h:15
+#, fuzzy
+msgid "Al_ways show the tab bar"
+msgstr "Vždy zobrazovať tento panel s kartami"
+
+#: ../data/ui/pref.glade.h:16
+#, fuzzy
+msgid "App_lications"
+msgstr "Aplikácie"
+
+#: ../data/ui/pref.glade.h:17
+msgid "Ask"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:58
+#: ../data/ui/pref.glade.h:18
+msgid "Auto (move if on the same FS, copy otherwise)"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:19
+#, fuzzy
+msgid "Clos_e tab containing removable medium when it is unmounted"
+msgstr "Zobrazovať dostupné možnosti prenosného média po vložení"
+
+#: ../data/ui/pref.glade.h:20
+#, fuzzy
+msgid "Co_nfirm before deleting files"
+msgstr "Potvrdenie pred zmazaním súborov"
+
+#: ../data/ui/pref.glade.h:21
+msgid "Compact View"
+msgstr "Kompaktné zobrazenie"
+
+#: ../data/ui/pref.glade.h:22
+#, fuzzy
+msgid "Confi_rm before moving files into \"trash can\""
+msgstr "Potvrdenie pred zmazaním súborov"
+
+#: ../data/ui/pref.glade.h:23
+#, fuzzy
+msgid "Copy"
+msgstr "Skopírovať:"
+
+#: ../data/ui/pref.glade.h:24
+msgid "D_efer test for content type on folder loading"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:25
+msgid "Defaul_t drop action:"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:26
+msgid "Delay of auto-selection in single click mode (0 to disable)"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:27
+#, fuzzy
+msgid "Des_ktop Folder"
+msgstr "Priečinok Plocha"
+
+#: ../data/ui/pref.glade.h:28
+msgid "Detailed List View"
+msgstr "Zobrazenie Podrobný zoznam"
+
+#: ../data/ui/pref.glade.h:29
+#, fuzzy
+msgid "Do _not generate thumbnails for files exceeding this size:"
+msgstr "Nevytvárať náhľadu súborov prekračujúcich túto veľkosť:"
+
+#: ../data/ui/pref.glade.h:30
+msgid "Don't ask options on _launch executable file"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:31
+#, fuzzy
+msgid "Hid_e 'Close tab' buttons"
+msgstr "Skryť tlačidlá „Zatvoriť kartu“"
+
+#: ../data/ui/pref.glade.h:32
+msgid "Hide e_xpander on empty or locked folder"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:33
+msgid "Icon View"
+msgstr "Zobrazenie ikon"
+
+#: ../data/ui/pref.glade.h:34
 msgid ""
 "If checked then use Startup Notify for application if another not stated "
 "explicitly.\n"
 "If unchecked then use Startup Notify only if that is defined for application."
 msgstr ""
 
-#: ../data/ui/pref.glade.h:60
-msgid "_Advanced"
-msgstr "_Rozšírené"
-
-#: ../data/ui/pref.glade.h:61
-msgid "Auto (move if on the same FS, copy otherwise)"
-msgstr ""
-
-#: ../data/ui/pref.glade.h:62
+#: ../data/ui/pref.glade.h:36
 #, fuzzy
-msgid "Copy"
-msgstr "Skopírovať:"
+msgid "Mo_unt removable media automatically when they are inserted"
+msgstr "Pripájať pripojiteľné zväzky automaticky po vložení"
 
-#: ../data/ui/pref.glade.h:63
+#: ../data/ui/pref.glade.h:37
 #, fuzzy
 msgid "Move"
 msgstr "Presunúť:"
 
-#: ../data/ui/pref.glade.h:64
-msgid "Ask"
+#: ../data/ui/pref.glade.h:38
+msgid "Opened in Current Tab"
+msgstr "Otvorené na aktuálnej _karte"
+
+#: ../data/ui/pref.glade.h:39
+msgid "Opened in New Tab"
+msgstr "Otvorené na novej _karte"
+
+#: ../data/ui/pref.glade.h:40
+msgid "Opened in New Window"
+msgstr "Otvorené v novom _okne"
+
+#: ../data/ui/pref.glade.h:41
+msgid "Preferences"
+msgstr "Nastavenie"
+
+#: ../data/ui/pref.glade.h:42
+msgid "Ru_n default application after creation from template"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:65
-msgid "Icon View"
-msgstr "Zobrazenie ikon"
+#: ../data/ui/pref.glade.h:43
+msgid "S_how only user defined templates in menu"
+msgstr ""
 
-#: ../data/ui/pref.glade.h:66
-msgid "Compact View"
-msgstr "Kompaktné zobrazenie"
+#: ../data/ui/pref.glade.h:44
+msgid "Show _only one template for each MIME type"
+msgstr ""
 
-#: ../data/ui/pref.glade.h:67
+#: ../data/ui/pref.glade.h:45
+msgid "Show icons of bac_kup files shadowed"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:46
+#, fuzzy
+msgid "Size of _big icons:"
+msgstr "Veľkosť veľkých ikon:"
+
+#: ../data/ui/pref.glade.h:47
+#, fuzzy
+msgid "Size of _thumbnails:"
+msgstr "Veľkosť náhľadov:"
+
+#: ../data/ui/pref.glade.h:48
+#, fuzzy
+msgid "Size of side _pane icons:"
+msgstr "Veľkosť ikon bočného panela:"
+
+#: ../data/ui/pref.glade.h:49
+#, fuzzy
+msgid "Size of small _icons:"
+msgstr "Veľkosť malých ikon:"
+
+#: ../data/ui/pref.glade.h:50
 msgid "Thumbnail View"
 msgstr "Zobrazenie náhľadov"
 
+#: ../data/ui/pref.glade.h:51
+msgid "Treat backup files as _hidden"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:52
+#, fuzzy
+msgid "Us_e SI decimal prefixes instead of IEC binary prefixes"
+msgstr "Používať desiatkové predpony SI namiesto dvojkových predpon IEC"
+
+#: ../data/ui/pref.glade.h:53
+#, fuzzy
+msgid "Vie_w Mode:"
+msgstr "Režim zobrazenia:"
+
+#: ../data/ui/pref.glade.h:54
+msgid "_Advanced"
+msgstr "_Rozšírené"
+
+#: ../data/ui/pref.glade.h:55
+#, fuzzy
+msgid "_Bookmarks:"
+msgstr "Záložky:"
+
+#: ../data/ui/pref.glade.h:56
+#, fuzzy
+msgid "_Display"
+msgstr "_Zobrazenie"
+
+#: ../data/ui/pref.glade.h:57
+msgid "_Erase files on removable media instead of \"trash can\" creation"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:58
+#, fuzzy
+msgid "_File system root"
+msgstr "Súborový systém"
+
+#: ../data/ui/pref.glade.h:59
+msgid "_Format command:"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:60
+msgid "_General"
+msgstr "_Všeobecné"
+
+#: ../data/ui/pref.glade.h:61
+#, fuzzy
+msgid "_Home Directory"
+msgstr "Domovský adresár"
+
+#: ../data/ui/pref.glade.h:62
+#, fuzzy
+msgid "_Layout"
+msgstr "Režim rozloženia"
+
+#: ../data/ui/pref.glade.h:63
+msgid "_Maximum width of tab label:"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:64
+#, fuzzy
+msgid "_Mount mountable volumes automatically on program startup"
+msgstr "Pripájať pripojiteľné zväzky automaticky pri spustení programu"
+
+#: ../data/ui/pref.glade.h:65
+#, fuzzy
+msgid "_Move deleted files to \"trash can\" instead of erasing from disk"
+msgstr "Presúvať zmazané súbory do „Koša“ namiesto vymazania z disku"
+
+#: ../data/ui/pref.glade.h:66
+#, fuzzy
+msgid "_Network places"
+msgstr "Sieťové jednotky"
+
+#: ../data/ui/pref.glade.h:67
+#, fuzzy
+msgid "_Only show thumbnails for local files"
+msgstr "Zobrazovať náhľady iba lokálnych súborov"
+
 #: ../data/ui/pref.glade.h:68
-msgid "Detailed List View"
-msgstr "Zobrazenie Podrobný zoznam"
+#, fuzzy
+msgid "_Open files with single click"
+msgstr "Otvoriť súbory jednoduchým kliknutím"
+
+#: ../data/ui/pref.glade.h:69
+msgid "_Open mounted removable media in new tab instead of new window"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:70
+#, fuzzy
+msgid "_Show available options for removable media when they are inserted"
+msgstr "Zobrazovať dostupné možnosti prenosného média po vložení"
+
+#: ../data/ui/pref.glade.h:71
+#, fuzzy
+msgid "_Show thumbnails of files"
+msgstr "Zobrazovať náhľady súborov"
+
+#: ../data/ui/pref.glade.h:72
+#, fuzzy
+msgid "_Switch user command:"
+msgstr "Príkaz na prepnutie používateľa:"
+
+#: ../data/ui/pref.glade.h:73
+#, fuzzy
+msgid "_Terminal emulator:"
+msgstr "Emulátor terminálu:"
+
+#: ../data/ui/pref.glade.h:74
+#, fuzzy
+msgid "_Trash can"
+msgstr "Kôš"
+
+#: ../data/ui/pref.glade.h:75
+msgid "_Unfold tab when files are dragged onto tab button"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:76
+msgid "_Use Application Startup Notify by default"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:77
+#, fuzzy
+msgid "_Volume Management"
+msgstr "_Správa zväzkov"
+
+#. Use genitive case here, context is: width is XXX characters
+#: ../data/ui/pref.glade.h:79
+msgid "characters"
+msgstr ""
 
 #: ../data/ui/autorun.glade.h:1
-msgid "Removable medium is inserted"
-msgstr "Bolo vložené prenosné médium"
-
-#: ../data/ui/autorun.glade.h:2
 msgid "<b>Removable medium is inserted</b>"
 msgstr "<b>Bolo vložené prenosné médium</b>"
 
-#: ../data/ui/autorun.glade.h:3
-msgid "Type of medium:"
-msgstr "Typ média:"
-
-#: ../data/ui/autorun.glade.h:4
+#: ../data/ui/autorun.glade.h:2
 msgid "Detecting..."
 msgstr "Zisťuje sa..."
 
-#: ../data/ui/autorun.glade.h:5
+#: ../data/ui/autorun.glade.h:3
 msgid "Please select the action you want to perform:"
 msgstr "Prosím, vyberte operáciu, ktorú chcete vykonať:"
+
+#: ../data/ui/autorun.glade.h:4
+msgid "Removable medium is inserted"
+msgstr "Bolo vložené prenosné médium"
+
+#: ../data/ui/autorun.glade.h:5
+msgid "Type of medium:"
+msgstr "Typ média:"
 
 #: ../src/volume-manager.c:164
 msgid "Removable Disk"
@@ -507,6 +543,26 @@ msgstr ""
 #: ../src/desktop-ui.c:75
 msgid "Snap to _Grid"
 msgstr ""
+
+#: ../src/desktop.c:571
+#, fuzzy
+msgid "Activate file"
+msgstr "<súbor obrázka>"
+
+#: ../src/desktop.c:573
+#, fuzzy
+msgid "Show file menu"
+msgstr "Zobrazovať _skryté"
+
+#: ../src/desktop.c:989
+#, fuzzy
+msgid "Show desktop menu"
+msgstr "<b>Zobrazovať ikony na ploche</b>"
+
+#. FIXME: set name by monitor
+#: ../src/desktop.c:1061
+msgid "Desktop"
+msgstr "Plocha"
 
 #: ../src/main-win-ui.c:127
 msgid "_File"
@@ -614,8 +670,8 @@ msgid "_Previous Folder"
 msgstr "Predošlý priečinok"
 
 #: ../src/main-win-ui.c:154
-msgid "Previous Folder"
-msgstr "Predošlý priečinok"
+msgid "Return to previous folder in history"
+msgstr ""
 
 #: ../src/main-win-ui.c:155
 #, fuzzy
@@ -623,8 +679,8 @@ msgid "_Next Folder"
 msgstr "Ďalší priečinok"
 
 #: ../src/main-win-ui.c:155
-msgid "Next Folder"
-msgstr "Ďalší priečinok"
+msgid "Go forward to next folder in history"
+msgstr ""
 
 #: ../src/main-win-ui.c:156
 #, fuzzy
@@ -641,31 +697,47 @@ msgid "H_ome Folder"
 msgstr "Domovský priečinok"
 
 #: ../src/main-win-ui.c:157
-msgid "Home Folder"
-msgstr "Domovský priečinok"
+#, fuzzy
+msgid "Go to home folder"
+msgstr "Prejsť do priečinka"
 
 #: ../src/main-win-ui.c:158
 msgid "_Desktop"
 msgstr "_Plocha"
 
 #: ../src/main-win-ui.c:158
-msgid "Desktop Folder"
-msgstr "Priečinok Plocha"
+#, fuzzy
+msgid "Go to desktop folder"
+msgstr "Prejsť do priečinka"
 
 #: ../src/main-win-ui.c:159
 #, fuzzy
-msgid "_My Computer"
-msgstr "Môj počítač"
+msgid "_Trash Can"
+msgstr "Kôš"
+
+#: ../src/main-win-ui.c:159
+msgid "Open trash can"
+msgstr ""
 
 #: ../src/main-win-ui.c:160
 #, fuzzy
-msgid "_Trash Can"
-msgstr "Kôš"
+msgid "_Computer Drives"
+msgstr "Sieťové jednotky"
+
+#: ../src/main-win-ui.c:160
+#, fuzzy
+msgid "Go to list of volumes in the computer"
+msgstr "Zobraziť na ploche ikony zväzkov"
 
 #: ../src/main-win-ui.c:161
 #, fuzzy
 msgid "Net_work Drives"
 msgstr "Sieťové jednotky"
+
+#: ../src/main-win-ui.c:161
+#, fuzzy
+msgid "Go to list of volumes on the network"
+msgstr "Zobraziť na ploche ikony zväzkov"
 
 #: ../src/main-win-ui.c:162
 #, fuzzy
@@ -673,13 +745,12 @@ msgid "_Applications"
 msgstr "Aplikácie"
 
 #: ../src/main-win-ui.c:162
-msgid "Installed Applications"
-msgstr "Nainštalované aplikácie"
+msgid "Go to root of applications menu folder"
+msgstr ""
 
 #: ../src/main-win-ui.c:163
-#, fuzzy
-msgid "Open entered folder"
-msgstr "Otvoriť nadradený _priečinok"
+msgid "Open folder entered in location entry"
+msgstr ""
 
 #: ../src/main-win-ui.c:164
 msgid "_Bookmarks"
@@ -689,6 +760,10 @@ msgstr "_Záložky"
 #, fuzzy
 msgid "_Add To Bookmarks"
 msgstr "Pridať medzi záložky"
+
+#: ../src/main-win-ui.c:165
+msgid "Add current folder to bookmarks list"
+msgstr ""
 
 #: ../src/main-win-ui.c:166
 #, fuzzy
@@ -707,6 +782,11 @@ msgstr "Otvoriť aktuálny priečinok ako _root"
 #, fuzzy
 msgid "Fin_d Files"
 msgstr "_Nájsť súbory"
+
+#: ../src/main-win-ui.c:170
+#, fuzzy
+msgid "Open search dialog"
+msgstr "Otvoriť dialóg nastavení pracovného prostredia"
 
 #. for popup menu - these entries exist in FmFolderView popup still
 #: ../src/main-win-ui.c:179
@@ -784,15 +864,46 @@ msgstr "Strom adresárov"
 msgid "Remote"
 msgstr ""
 
-#: ../src/main-win.c:542
+#: ../src/main-win.c:532
+msgid "Show history of visited folders"
+msgstr ""
+
+#: ../src/main-win.c:535
+msgid "History"
+msgstr ""
+
+#: ../src/main-win.c:549
 msgid "You are in super user mode"
 msgstr "Nachádzate sa v režime superpoužívateľa"
 
-#: ../src/main-win.c:713 ../src/main-win.c:721
+#: ../src/main-win.c:713
+#, fuzzy
+msgid "Lightweight file manager\n"
+msgstr ""
+"Odľahčený správca súborov\n"
+"\n"
+"Vyvinul Hon Jen Yee (PCMan)"
+
+#: ../src/main-win.c:718
+#, c-format
+msgid "using LibFM ver. %s\n"
+msgstr ""
+
+#: ../src/main-win.c:720
+#, fuzzy
+msgid ""
+"\n"
+"Developed by Hon Jen Yee (PCMan)"
+msgstr ""
+"Odľahčený správca súborov\n"
+"\n"
+"Vyvinul Hon Jen Yee (PCMan)"
+
+#: ../src/main-win.c:745 ../src/main-win.c:753
 msgid "Keyboard navigation"
 msgstr ""
 
-#: ../src/main-win.c:715
+#: ../src/main-win.c:747
 msgid ""
 "Tab: cycle focus Folder View -> Side Pane -> Tools Bar\n"
 "Shift+Tab: cycle focus Tools Bar -> Side Pane -> Folder View\n"
@@ -802,11 +913,11 @@ msgid ""
 "Ctrl+L or Alt+D: jump focus to Path Bar"
 msgstr ""
 
-#: ../src/main-win.c:751
+#: ../src/main-win.c:783
 msgid "Switch user command is not set."
 msgstr "Príkaz na prepnutie používateľa nie je nastavený."
 
-#: ../src/main-win.c:1106
+#: ../src/main-win.c:1138
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -817,7 +928,7 @@ msgstr ""
 "„%s“\n"
 "Zadajte názov pre novú záložku:"
 
-#: ../src/main-win.c:1110
+#: ../src/main-win.c:1142
 msgid "Add to Bookmarks"
 msgstr "Pridať medzi záložky"
 
@@ -905,7 +1016,7 @@ msgstr ""
 msgid "[FILE1, FILE2,...]"
 msgstr "[SÚBOR1, SÚBOR2,...]"
 
-#: ../src/pcmanfm.c:532
+#: ../src/pcmanfm.c:528
 msgid "Terminal emulator is not set."
 msgstr "Nebol nastavený emulátor terminálu."
 
@@ -944,9 +1055,8 @@ msgstr[1] "%d skryté"
 msgstr[2] "%d skrytých"
 
 #: ../data/pcmanfm.desktop.in.h:1
-#, fuzzy
-msgid "File Manager PCManFM"
-msgstr "Otvoriť v Správcovi súborov"
+msgid "Browse the file system and manage the files"
+msgstr ""
 
 #: ../data/pcmanfm.desktop.in.h:2
 #, fuzzy
@@ -954,12 +1064,57 @@ msgid "File Manager"
 msgstr "Otvoriť v Správcovi súborov"
 
 #: ../data/pcmanfm.desktop.in.h:3
-msgid "Browse the file system and manage the files"
-msgstr ""
+#, fuzzy
+msgid "File Manager PCManFM"
+msgstr "Otvoriť v Správcovi súborov"
 
-#: ../data/pcmanfm-desktop-pref.desktop.in.h:2
+#: ../data/pcmanfm-desktop-pref.desktop.in.h:1
 msgid "Change desktop wallpapers and behavior of desktop manager"
 msgstr ""
+
+#, fuzzy
+#~ msgid "Hide _folder content border"
+#~ msgstr "Skryť okraj obsahu priečinka"
+
+#, fuzzy
+#~ msgid "Hide _side pane buttons"
+#~ msgstr "Skryť tlačidlá bočného panelu"
+
+#, fuzzy
+#~ msgid "_Trash bin"
+#~ msgstr "Kôš"
+
+#~ msgid ""
+#~ "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching "
+#~ "user.\n"
+#~ "%s = the command line you want to execute with terminal or su."
+#~ msgstr ""
+#~ "Príklady: terminál - „xterm -e %s“ alebo prepnutie používateľa - „gksu "
+#~ "%s“.\n"
+#~ "%s = príkazový riadok, ktorý chcete aby terminál alebo su vykonalo."
+
+#~ msgid "Previous Folder"
+#~ msgstr "Predošlý priečinok"
+
+#~ msgid "Next Folder"
+#~ msgstr "Ďalší priečinok"
+
+#~ msgid "Home Folder"
+#~ msgstr "Domovský priečinok"
+
+#~ msgid "Desktop Folder"
+#~ msgstr "Priečinok Plocha"
+
+#, fuzzy
+#~ msgid "_My Computer"
+#~ msgstr "Môj počítač"
+
+#~ msgid "Installed Applications"
+#~ msgstr "Nainštalované aplikácie"
+
+#, fuzzy
+#~ msgid "Open entered folder"
+#~ msgstr "Otvoriť nadradený _priečinok"
 
 #~ msgid "Blank File"
 #~ msgstr "Prázdny súbor"
@@ -976,12 +1131,6 @@ msgstr ""
 
 #~ msgid "Invert Selection"
 #~ msgstr "Invertovať výber"
-
-#~ msgid "Desktop"
-#~ msgstr "Plocha"
-
-#~ msgid "<image file>"
-#~ msgstr "<súbor obrázka>"
 
 #~ msgid "<mode>"
 #~ msgstr "<režim>"
@@ -1125,9 +1274,6 @@ msgstr ""
 #~ msgid "<b>Open _with:</b>"
 #~ msgstr "<b>Otvoriť čí_m:</b>"
 
-#~ msgid "<b>Other Users:</b>"
-#~ msgstr "<b>Ostatní používatelia:</b>"
-
 #~ msgid "<b>Size on Disk:</b>"
 #~ msgstr "<b>Veľkosť na disku:</b>"
 
@@ -1249,9 +1395,6 @@ msgstr ""
 
 #~ msgid "Video Files (avi, mpg,...)"
 #~ msgstr "Video súbory (avi, mpg,...)"
-
-#~ msgid "Go to folder"
-#~ msgstr "Prejsť do priečinka"
 
 #~ msgid "<b>Wallpaper</b>"
 #~ msgstr "<b>Tapeta</b>"
@@ -1738,9 +1881,6 @@ msgstr ""
 
 #~ msgid "Command:"
 #~ msgstr "Príkaz:"
-
-#~ msgid "File System"
-#~ msgstr "Súborový systém"
 
 #~ msgid "No Sub Folder"
 #~ msgstr "Žiadny podadresár"

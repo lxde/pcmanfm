@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm 1.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-08-22 20:34+0200\n"
+"POT-Creation-Date: 2013-10-16 23:12+0300\n"
 "PO-Revision-Date: 2013-09-03 14:13-0000\n"
 "Last-Translator: Sérgio Marques <smarquespt@gmail.com>\n"
 "Language-Team: \n"
@@ -22,354 +22,253 @@ msgstr ""
 msgid "Copyright (C) 2009 - 2013"
 msgstr "Direitos de autor (C) 2009 - 2013"
 
-#: ../data/ui/about.glade.in.h:2
-msgid ""
-"Lightweight file manager\n"
-"\n"
-"Developed by Hon Jen Yee (PCMan)"
-msgstr ""
-"Gestor de ficheiros leve e rápido\n"
-"\n"
-"Desenvolvido por Hon Jen Yee (PCMan)"
-
 #. Please replace this line with your own names, one name per line.
-#: ../data/ui/about.glade.in.h:6
+#: ../data/ui/about.glade.in.h:3
 msgid "translator-credits"
 msgstr ""
 "Nuno Miguel <nunis@netcabo.pt>\n"
 "Sérgio Marques <smarquespt@gmail.com>"
 
-#: ../data/ui/desktop-pref.glade.h:1 ../src/desktop-ui.c:34
-#: ../data/pcmanfm-desktop-pref.desktop.in.h:1
-msgid "Desktop Preferences"
-msgstr "Preferências da área de trabalho"
-
-#: ../data/ui/desktop-pref.glade.h:2
+#: ../data/ui/desktop-pref.glade.h:1
 msgid "<b>Background</b>"
 msgstr "<b>Fundo</b>"
 
-#: ../data/ui/desktop-pref.glade.h:3
-msgid "_Wallpaper:"
-msgstr "_Papel de parede:"
-
-#: ../data/ui/desktop-pref.glade.h:4
-msgid "Please select an image file"
-msgstr "Por favor escolha uma imagem"
-
-#: ../data/ui/desktop-pref.glade.h:5
-msgid "_Use the same wallpaper on all desktops"
-msgstr "_Utilizar o mesmo papel de parede em todas as áreas de trabalho"
-
-#: ../data/ui/desktop-pref.glade.h:6
-msgid "_Background color:"
-msgstr "Cor de _fundo:"
-
-#: ../data/ui/desktop-pref.glade.h:7
-msgid "Wallpaper _mode:"
-msgstr "_Modo do papel de parede::"
-
-#: ../data/ui/desktop-pref.glade.h:8
-msgid "<b>Text</b>"
-msgstr "<b>Texto</b>"
-
-#: ../data/ui/desktop-pref.glade.h:9
-msgid "_Font of label text:"
-msgstr "_Tipo de letra do texto:"
-
-#: ../data/ui/desktop-pref.glade.h:10
-msgid "C_olor of label text:"
-msgstr "C_or do texto:"
-
-#: ../data/ui/desktop-pref.glade.h:11
-msgid "Color of _shadow:"
-msgstr "Cor da _sombra:"
-
-#: ../data/ui/desktop-pref.glade.h:12
-msgid "_Appearance"
-msgstr "_Aparência"
-
-#: ../data/ui/desktop-pref.glade.h:13
+#: ../data/ui/desktop-pref.glade.h:2
 msgid "<b>Show desktop icons</b>"
 msgstr "<b>Mostrar ícones na área de trabalho</b>"
 
-#: ../data/ui/desktop-pref.glade.h:14
-msgid "_Show \"My Documents\" icon on desktop"
-msgstr "Mo_strar \"Meus documentos\" na área de trabalho"
+#: ../data/ui/desktop-pref.glade.h:3
+msgid "<b>Text</b>"
+msgstr "<b>Texto</b>"
 
-#: ../data/ui/desktop-pref.glade.h:15
-msgid "Show \"_My Computer\" icon on desktop"
-msgstr "_Mostrar \"Meu computador\" na área de trabalho"
-
-#: ../data/ui/desktop-pref.glade.h:16
-msgid "Show \"_Trash Bin\" icon on desktop"
-msgstr "Mostrar \"Lixo\" na área de _trabalho"
-
-#: ../data/ui/desktop-pref.glade.h:17
-msgid "S_how icons of volumes on desktop"
-msgstr "Mostrar ícones de volumes na área de trabal_ho"
-
-#: ../data/ui/desktop-pref.glade.h:18
-msgid "_Desktop Icons"
-msgstr "Ícones _da área de trabalho"
-
-#: ../data/ui/desktop-pref.glade.h:19
-msgid "_Show menus provided by window managers when desktop is clicked"
-msgstr "Mo_strar menu do gestor de janelas ao clicar na área de trabalho"
-
-#: ../data/ui/desktop-pref.glade.h:20
+#: ../data/ui/desktop-pref.glade.h:4
 msgid "Ad_vanced"
 msgstr "A_vançado"
 
-#: ../data/ui/desktop-pref.glade.h:21
-msgid "Fill with background color only"
-msgstr "Preencher com a cor de fundo"
+#: ../data/ui/desktop-pref.glade.h:5
+msgid "C_olor of label text:"
+msgstr "C_or do texto:"
 
-#: ../data/ui/desktop-pref.glade.h:22
-msgid "Stretch to fill the entire screen"
-msgstr "Esticar para preencher totalmente o ecrã"
-
-#: ../data/ui/desktop-pref.glade.h:23
-msgid "Stretch to fit the screen"
-msgstr "Esticar para ajustar ao ecrã"
-
-#: ../data/ui/desktop-pref.glade.h:24
+#: ../data/ui/desktop-pref.glade.h:6
 msgid "Center on the screen"
 msgstr "Centrar no ecrã"
 
-#: ../data/ui/desktop-pref.glade.h:25
+#: ../data/ui/desktop-pref.glade.h:7
+msgid "Color of _shadow:"
+msgstr "Cor da _sombra:"
+
+#: ../data/ui/desktop-pref.glade.h:8 ../src/desktop-ui.c:34
+#: ../data/pcmanfm-desktop-pref.desktop.in.h:2
+msgid "Desktop Preferences"
+msgstr "Preferências da área de trabalho"
+
+#: ../data/ui/desktop-pref.glade.h:9
+msgid "Fill with background color only"
+msgstr "Preencher com a cor de fundo"
+
+#: ../data/ui/desktop-pref.glade.h:10
+msgid "Please select an image file"
+msgstr "Por favor escolha uma imagem"
+
+#: ../data/ui/desktop-pref.glade.h:11
+msgid "S_how icons of volumes on desktop"
+msgstr "Mostrar ícones de volumes na área de trabal_ho"
+
+#: ../data/ui/desktop-pref.glade.h:12
+msgid "Show \"_My Computer\" icon on desktop"
+msgstr "_Mostrar \"Meu computador\" na área de trabalho"
+
+#: ../data/ui/desktop-pref.glade.h:13
+#, fuzzy
+msgid "Show \"_Trash Can\" icon on desktop"
+msgstr "Mostrar \"Lixo\" na área de _trabalho"
+
+#: ../data/ui/desktop-pref.glade.h:14
+msgid "Stretch to fill the entire screen"
+msgstr "Esticar para preencher totalmente o ecrã"
+
+#: ../data/ui/desktop-pref.glade.h:15
+msgid "Stretch to fit the screen"
+msgstr "Esticar para ajustar ao ecrã"
+
+#: ../data/ui/desktop-pref.glade.h:16
 msgid "Tile the image to fill the entire screen"
 msgstr "Ladrilhar imagem para preencher totalmente o ecrã"
 
+#: ../data/ui/desktop-pref.glade.h:17
+msgid "Wallpaper _mode:"
+msgstr "_Modo do papel de parede::"
+
+#: ../data/ui/desktop-pref.glade.h:18
+msgid "_Appearance"
+msgstr "_Aparência"
+
+#: ../data/ui/desktop-pref.glade.h:19
+msgid "_Background color:"
+msgstr "Cor de _fundo:"
+
+#: ../data/ui/desktop-pref.glade.h:20
+msgid "_Desktop Icons"
+msgstr "Ícones _da área de trabalho"
+
+#: ../data/ui/desktop-pref.glade.h:21
+msgid "_Font of label text:"
+msgstr "_Tipo de letra do texto:"
+
+#: ../data/ui/desktop-pref.glade.h:22
+msgid "_Show \"My Documents\" icon on desktop"
+msgstr "Mo_strar \"Meus documentos\" na área de trabalho"
+
+#: ../data/ui/desktop-pref.glade.h:23
+msgid "_Show menus provided by window managers when desktop is clicked"
+msgstr "Mo_strar menu do gestor de janelas ao clicar na área de trabalho"
+
+#: ../data/ui/desktop-pref.glade.h:24
+msgid "_Use the same wallpaper on all desktops"
+msgstr "_Utilizar o mesmo papel de parede em todas as áreas de trabalho"
+
+#: ../data/ui/desktop-pref.glade.h:25
+msgid "_Wallpaper:"
+msgstr "_Papel de parede:"
+
 #: ../data/ui/pref.glade.h:1
-msgid "Opened in Current Tab"
-msgstr "Abrir no separador atual"
+msgid "\"C_omputer\" special folder"
+msgstr ""
 
 #: ../data/ui/pref.glade.h:2
-msgid "Opened in New Tab"
-msgstr "Abrir em novo separador"
-
-#: ../data/ui/pref.glade.h:3
-msgid "Opened in New Window"
-msgstr "Abrir em nova janela"
-
-#: ../data/ui/pref.glade.h:4
-msgid "Preferences"
-msgstr "Preferências"
-
-#: ../data/ui/pref.glade.h:5
-msgid "<b>Behavior</b>"
-msgstr "<b>Comportamento</b>"
-
-#: ../data/ui/pref.glade.h:6
-msgid "_Open files with single click"
-msgstr "Abrir ficheir_os com um clique"
-
-#: ../data/ui/pref.glade.h:7
-msgid "Delay of auto-selection in single click mode (0 to disable)"
-msgstr "Atraso para seleção automática no modo de um clique (0 para desativar)"
-
-#: ../data/ui/pref.glade.h:8
-msgid "Co_nfirm before deleting files"
-msgstr "Co_nfirmar antes de eliminar ficheiros"
-
-#: ../data/ui/pref.glade.h:9
-msgid "_Move deleted files to \"trash bin\" instead of erasing from disk"
-msgstr "_Mover ficheiros eliminados para o lixo em vez de os eliminar do disco"
-
-#: ../data/ui/pref.glade.h:10
-msgid "_Erase files on removable media instead of \"trash bin\" creation"
-msgstr ""
-"_Eliminar ficheiros dos discos amovíveis em vez de os enviar para o lixo"
-
-#: ../data/ui/pref.glade.h:11
-msgid "Confi_rm before moving files into \"trash bi_n\""
-msgstr "Confirma_r antes de enviar os ficheiros para o lixo"
-
-#: ../data/ui/pref.glade.h:12
-msgid "_Bookmarks:"
-msgstr "_Marcadores:"
-
-#: ../data/ui/pref.glade.h:13
-msgid "Defaul_t drop action:"
-msgstr "_Ação pré-definida ao largar:"
-
-#: ../data/ui/pref.glade.h:14
-msgid "_Unfold tab when files are dragged onto tab button"
-msgstr ""
-"E_xpandir separador se os ficheiros forem largados no botão do separador"
-
-#: ../data/ui/pref.glade.h:15
-msgid "<b>Default View</b>"
-msgstr "<b>Visualização pré-definida</b>"
-
-#: ../data/ui/pref.glade.h:16
-msgid "Vie_w Mode:"
-msgstr "Modo de _visualização:"
-
-#: ../data/ui/pref.glade.h:17
-msgid "_General"
-msgstr "_Geral"
-
-#: ../data/ui/pref.glade.h:18
-msgid "<b>Icons</b>"
-msgstr "<b>Ícones</b>"
-
-#: ../data/ui/pref.glade.h:19
-msgid "Size of small _icons:"
-msgstr "Tamanho dos ícones pequeno_s:"
-
-#: ../data/ui/pref.glade.h:20
-msgid "Size of _big icons:"
-msgstr "Tamanho dos ícones gr_andes:"
-
-#: ../data/ui/pref.glade.h:21
-msgid "Size of _thumbnails:"
-msgstr "_Tamanho das miniaturas:"
-
-#: ../data/ui/pref.glade.h:22
-msgid "Size of side _pane icons:"
-msgstr "Tamanho dos ícones do _painel lateral:"
-
-#: ../data/ui/pref.glade.h:23
-msgid "_Show thumbnails of files"
-msgstr "Mo_strar miniaturas dos ficheiros"
-
-#: ../data/ui/pref.glade.h:24
-msgid "_Only show thumbnails for local files"
-msgstr "M_ostrar apenas para ficheiros locais"
-
-#: ../data/ui/pref.glade.h:25
-msgid "Do _not generate thumbnails for files exceeding this size:"
-msgstr "_Não gerar miniaturas para os ficheiros que excedam este tamanho:"
-
-#: ../data/ui/pref.glade.h:26
-msgid "<b>User Interface</b>"
-msgstr "<b>Interface de utilizador</b>"
-
-#: ../data/ui/pref.glade.h:27
-msgid "Us_e SI decimal prefixes instead of IEC binary prefixes"
-msgstr "Utilizar pr_efixos decimais SI em vez de prefixos binários IEC"
-
-#: ../data/ui/pref.glade.h:28
-msgid "Treat backup files as _hidden"
-msgstr "Tratar cópias de segurança como fic_heiros ocultos"
-
-#: ../data/ui/pref.glade.h:29
-msgid "Al_ways show full file names"
-msgstr "Mos_trar sempre o nome completo dos ficheiros"
-
-#: ../data/ui/pref.glade.h:30
-msgid "_Display"
-msgstr "E_xibição"
-
-#: ../data/ui/pref.glade.h:31
-msgid "Hide _folder content border"
-msgstr "Ocultar li_mite do conteúdo de pastas"
-
-#: ../data/ui/pref.glade.h:32
-msgid "Hide _side pane buttons"
-msgstr "Ocultar botõe_s do painel lateral"
-
-#: ../data/ui/pref.glade.h:33
-msgid "Hid_e 'Close tab' buttons"
-msgstr "Ocultar botão \"F_echar separador\""
-
-#: ../data/ui/pref.glade.h:34
-msgid "Al_ways show the tab bar"
-msgstr "Mos_trar sempre barra de separadores"
-
-#: ../data/ui/pref.glade.h:35
-msgid "<b>Directories Tree</b>"
-msgstr "<b>Árvore de diretórios</b>"
-
-#: ../data/ui/pref.glade.h:36
-msgid "Hide e_xpander on empty or locked folder"
-msgstr "Ocultar e_xpansão se em pasta vazia ou bloqueada"
-
-#: ../data/ui/pref.glade.h:37
-msgid "<b>Show in Places:</b>"
-msgstr "<b>Mostrar em Locais:</b>"
-
-#: ../data/ui/pref.glade.h:38
-msgid "_Home Directory"
-msgstr "Pasta pe_ssoal"
-
-#: ../data/ui/pref.glade.h:39
-msgid "Des_ktop Folder"
-msgstr "Pasta _da área de trabalho"
-
-#: ../data/ui/pref.glade.h:40
-msgid "App_lications"
-msgstr "Ap_licações"
-
-#: ../data/ui/pref.glade.h:41
-msgid "_Trash bin"
-msgstr "Li_xo"
-
-#: ../data/ui/pref.glade.h:42
-msgid "_Layout"
-msgstr "_Esquema"
-
-#: ../data/ui/pref.glade.h:43
 msgid "<b>Auto-mount</b>"
 msgstr "<b>Montar automaticamente</b>"
 
-#: ../data/ui/pref.glade.h:44
-msgid "_Mount mountable volumes automatically on program startup"
-msgstr "Ao iniciar, _montar automaticamente os discos amovíveis"
+#: ../data/ui/pref.glade.h:3
+msgid "<b>Behavior</b>"
+msgstr "<b>Comportamento</b>"
 
-#: ../data/ui/pref.glade.h:45
-msgid "Mo_unt removable media automatically when they are inserted"
-msgstr "Ao inserir o disco amovível, montar a_utomaticamente"
+#: ../data/ui/pref.glade.h:4
+msgid "<b>Default View</b>"
+msgstr "<b>Visualização pré-definida</b>"
 
-#: ../data/ui/pref.glade.h:46
-msgid "_Show available options for removable media when they are inserted"
-msgstr "Ao inserir o di_sco amovível, mostrar opções disponíveis"
+#: ../data/ui/pref.glade.h:5
+msgid "<b>Directories Tree</b>"
+msgstr "<b>Árvore de diretórios</b>"
 
-#: ../data/ui/pref.glade.h:47
-msgid "_Open mounted removable media in new tab instead of new window"
-msgstr ""
-"A_o montar um disco amovível, abrir um novo separador e não uma nova janela"
+#: ../data/ui/pref.glade.h:6
+msgid "<b>Icons</b>"
+msgstr "<b>Ícones</b>"
 
-#: ../data/ui/pref.glade.h:48
-msgid "Clos_e tab containing removable medium when it is unmounted"
-msgstr "Ao d_esmontar um disco amovível, fechar o separador correspondente"
+#: ../data/ui/pref.glade.h:7
+#, fuzzy
+msgid "<b>Other options</b>"
+msgstr "<b>Mostrar ícones na área de trabalho</b>"
 
-#: ../data/ui/pref.glade.h:49
-msgid "_Volume Management"
-msgstr "Gestão de _volumes"
-
-#: ../data/ui/pref.glade.h:50
+#: ../data/ui/pref.glade.h:8
 msgid "<b>Programs</b>"
 msgstr "<b>Programas</b>"
 
-#: ../data/ui/pref.glade.h:51
-msgid "_Terminal emulator:"
-msgstr "Emulador de _terminal:"
+#: ../data/ui/pref.glade.h:9
+msgid "<b>Show in Places:</b>"
+msgstr "<b>Mostrar em Locais:</b>"
 
-#: ../data/ui/pref.glade.h:52
-msgid "_Switch user command:"
-msgstr "Comando para trocar de utili_zador:"
+#: ../data/ui/pref.glade.h:10
+#, fuzzy
+msgid "<b>Templates</b>"
+msgstr "<b>Texto</b>"
 
-#: ../data/ui/pref.glade.h:54
-#, no-c-format
-msgid ""
-"Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching user.\n"
-"%s = the command line you want to execute with terminal or su."
+#: ../data/ui/pref.glade.h:11
+msgid "<b>User Interface</b>"
+msgstr "<b>Interface de utilizador</b>"
+
+#: ../data/ui/pref.glade.h:12
+msgid "<i>Commands below may include extra switches if necessary.</i>"
 msgstr ""
-"Exemplos: \"xterm -e %s\" para terminal ou \"gksu %s\" para trocar "
-"utilizadores.\n"
-"%s é a linha de comandos a executar com o terminal ou com su."
 
-#: ../data/ui/pref.glade.h:56
+#: ../data/ui/pref.glade.h:13
 msgid "A_rchiver integration:"
 msgstr "Integ_ração do arquivador:"
 
-#: ../data/ui/pref.glade.h:57
-msgid "_Use Application Startup Notify by default"
-msgstr "Por definição, _utilizar notificação ao arrancar aplicações"
+#: ../data/ui/pref.glade.h:14
+msgid "Al_ways show full file names"
+msgstr "Mos_trar sempre o nome completo dos ficheiros"
 
-#: ../data/ui/pref.glade.h:58
+#: ../data/ui/pref.glade.h:15
+msgid "Al_ways show the tab bar"
+msgstr "Mos_trar sempre barra de separadores"
+
+#: ../data/ui/pref.glade.h:16
+msgid "App_lications"
+msgstr "Ap_licações"
+
+#: ../data/ui/pref.glade.h:17
+msgid "Ask"
+msgstr "Perguntar"
+
+#: ../data/ui/pref.glade.h:18
+msgid "Auto (move if on the same FS, copy otherwise)"
+msgstr ""
+"Automático (se estiver no mesmo sistema de ficheiros mover e se não estiver "
+"copiar)"
+
+#: ../data/ui/pref.glade.h:19
+msgid "Clos_e tab containing removable medium when it is unmounted"
+msgstr "Ao d_esmontar um disco amovível, fechar o separador correspondente"
+
+#: ../data/ui/pref.glade.h:20
+msgid "Co_nfirm before deleting files"
+msgstr "Co_nfirmar antes de eliminar ficheiros"
+
+#: ../data/ui/pref.glade.h:21
+msgid "Compact View"
+msgstr "Compacta"
+
+#: ../data/ui/pref.glade.h:22
+#, fuzzy
+msgid "Confi_rm before moving files into \"trash can\""
+msgstr "Confirma_r antes de enviar os ficheiros para o lixo"
+
+#: ../data/ui/pref.glade.h:23
+msgid "Copy"
+msgstr "Copiar"
+
+#: ../data/ui/pref.glade.h:24
+msgid "D_efer test for content type on folder loading"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:25
+msgid "Defaul_t drop action:"
+msgstr "_Ação pré-definida ao largar:"
+
+#: ../data/ui/pref.glade.h:26
+msgid "Delay of auto-selection in single click mode (0 to disable)"
+msgstr "Atraso para seleção automática no modo de um clique (0 para desativar)"
+
+#: ../data/ui/pref.glade.h:27
+msgid "Des_ktop Folder"
+msgstr "Pasta _da área de trabalho"
+
+#: ../data/ui/pref.glade.h:28
+msgid "Detailed List View"
+msgstr "Lista detalhada"
+
+#: ../data/ui/pref.glade.h:29
+msgid "Do _not generate thumbnails for files exceeding this size:"
+msgstr "_Não gerar miniaturas para os ficheiros que excedam este tamanho:"
+
+#: ../data/ui/pref.glade.h:30
+msgid "Don't ask options on _launch executable file"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:31
+msgid "Hid_e 'Close tab' buttons"
+msgstr "Ocultar botão \"F_echar separador\""
+
+#: ../data/ui/pref.glade.h:32
+msgid "Hide e_xpander on empty or locked folder"
+msgstr "Ocultar e_xpansão se em pasta vazia ou bloqueada"
+
+#: ../data/ui/pref.glade.h:33
+msgid "Icon View"
+msgstr "Ícones"
+
+#: ../data/ui/pref.glade.h:34
 msgid ""
 "If checked then use Startup Notify for application if another not stated "
 "explicitly.\n"
@@ -380,63 +279,205 @@ msgstr ""
 "Se inativa, só utiliza a notificação de arranque se estiver definida para a "
 "aplicação"
 
-#: ../data/ui/pref.glade.h:60
-msgid "_Advanced"
-msgstr "_Avançado"
+#: ../data/ui/pref.glade.h:36
+msgid "Mo_unt removable media automatically when they are inserted"
+msgstr "Ao inserir o disco amovível, montar a_utomaticamente"
 
-#: ../data/ui/pref.glade.h:61
-msgid "Auto (move if on the same FS, copy otherwise)"
-msgstr ""
-"Automático (se estiver no mesmo sistema de ficheiros mover e se não estiver "
-"copiar)"
-
-#: ../data/ui/pref.glade.h:62
-msgid "Copy"
-msgstr "Copiar"
-
-#: ../data/ui/pref.glade.h:63
+#: ../data/ui/pref.glade.h:37
 msgid "Move"
 msgstr "Mover"
 
-#: ../data/ui/pref.glade.h:64
-msgid "Ask"
-msgstr "Perguntar"
+#: ../data/ui/pref.glade.h:38
+msgid "Opened in Current Tab"
+msgstr "Abrir no separador atual"
 
-#: ../data/ui/pref.glade.h:65
-msgid "Icon View"
-msgstr "Ícones"
+#: ../data/ui/pref.glade.h:39
+msgid "Opened in New Tab"
+msgstr "Abrir em novo separador"
 
-#: ../data/ui/pref.glade.h:66
-msgid "Compact View"
-msgstr "Compacta"
+#: ../data/ui/pref.glade.h:40
+msgid "Opened in New Window"
+msgstr "Abrir em nova janela"
 
-#: ../data/ui/pref.glade.h:67
+#: ../data/ui/pref.glade.h:41
+msgid "Preferences"
+msgstr "Preferências"
+
+#: ../data/ui/pref.glade.h:42
+msgid "Ru_n default application after creation from template"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:43
+msgid "S_how only user defined templates in menu"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:44
+msgid "Show _only one template for each MIME type"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:45
+msgid "Show icons of bac_kup files shadowed"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:46
+msgid "Size of _big icons:"
+msgstr "Tamanho dos ícones gr_andes:"
+
+#: ../data/ui/pref.glade.h:47
+msgid "Size of _thumbnails:"
+msgstr "_Tamanho das miniaturas:"
+
+#: ../data/ui/pref.glade.h:48
+msgid "Size of side _pane icons:"
+msgstr "Tamanho dos ícones do _painel lateral:"
+
+#: ../data/ui/pref.glade.h:49
+msgid "Size of small _icons:"
+msgstr "Tamanho dos ícones pequeno_s:"
+
+#: ../data/ui/pref.glade.h:50
 msgid "Thumbnail View"
 msgstr "Miniaturas"
 
+#: ../data/ui/pref.glade.h:51
+msgid "Treat backup files as _hidden"
+msgstr "Tratar cópias de segurança como fic_heiros ocultos"
+
+#: ../data/ui/pref.glade.h:52
+msgid "Us_e SI decimal prefixes instead of IEC binary prefixes"
+msgstr "Utilizar pr_efixos decimais SI em vez de prefixos binários IEC"
+
+#: ../data/ui/pref.glade.h:53
+msgid "Vie_w Mode:"
+msgstr "Modo de _visualização:"
+
+#: ../data/ui/pref.glade.h:54
+msgid "_Advanced"
+msgstr "_Avançado"
+
+#: ../data/ui/pref.glade.h:55
+msgid "_Bookmarks:"
+msgstr "_Marcadores:"
+
+#: ../data/ui/pref.glade.h:56
+msgid "_Display"
+msgstr "E_xibição"
+
+#: ../data/ui/pref.glade.h:57
+#, fuzzy
+msgid "_Erase files on removable media instead of \"trash can\" creation"
+msgstr ""
+"_Eliminar ficheiros dos discos amovíveis em vez de os enviar para o lixo"
+
+#: ../data/ui/pref.glade.h:58
+msgid "_File system root"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:59
+msgid "_Format command:"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:60
+msgid "_General"
+msgstr "_Geral"
+
+#: ../data/ui/pref.glade.h:61
+msgid "_Home Directory"
+msgstr "Pasta pe_ssoal"
+
+#: ../data/ui/pref.glade.h:62
+msgid "_Layout"
+msgstr "_Esquema"
+
+#: ../data/ui/pref.glade.h:63
+msgid "_Maximum width of tab label:"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:64
+msgid "_Mount mountable volumes automatically on program startup"
+msgstr "Ao iniciar, _montar automaticamente os discos amovíveis"
+
+#: ../data/ui/pref.glade.h:65
+#, fuzzy
+msgid "_Move deleted files to \"trash can\" instead of erasing from disk"
+msgstr "_Mover ficheiros eliminados para o lixo em vez de os eliminar do disco"
+
+#: ../data/ui/pref.glade.h:66
+#, fuzzy
+msgid "_Network places"
+msgstr "_Unidades de rede"
+
+#: ../data/ui/pref.glade.h:67
+msgid "_Only show thumbnails for local files"
+msgstr "M_ostrar apenas para ficheiros locais"
+
 #: ../data/ui/pref.glade.h:68
-msgid "Detailed List View"
-msgstr "Lista detalhada"
+msgid "_Open files with single click"
+msgstr "Abrir ficheir_os com um clique"
+
+#: ../data/ui/pref.glade.h:69
+msgid "_Open mounted removable media in new tab instead of new window"
+msgstr ""
+"A_o montar um disco amovível, abrir um novo separador e não uma nova janela"
+
+#: ../data/ui/pref.glade.h:70
+msgid "_Show available options for removable media when they are inserted"
+msgstr "Ao inserir o di_sco amovível, mostrar opções disponíveis"
+
+#: ../data/ui/pref.glade.h:71
+msgid "_Show thumbnails of files"
+msgstr "Mo_strar miniaturas dos ficheiros"
+
+#: ../data/ui/pref.glade.h:72
+msgid "_Switch user command:"
+msgstr "Comando para trocar de utili_zador:"
+
+#: ../data/ui/pref.glade.h:73
+msgid "_Terminal emulator:"
+msgstr "Emulador de _terminal:"
+
+#: ../data/ui/pref.glade.h:74
+#, fuzzy
+msgid "_Trash can"
+msgstr "_Lixo"
+
+#: ../data/ui/pref.glade.h:75
+msgid "_Unfold tab when files are dragged onto tab button"
+msgstr ""
+"E_xpandir separador se os ficheiros forem largados no botão do separador"
+
+#: ../data/ui/pref.glade.h:76
+msgid "_Use Application Startup Notify by default"
+msgstr "Por definição, _utilizar notificação ao arrancar aplicações"
+
+#: ../data/ui/pref.glade.h:77
+msgid "_Volume Management"
+msgstr "Gestão de _volumes"
+
+#. Use genitive case here, context is: width is XXX characters
+#: ../data/ui/pref.glade.h:79
+msgid "characters"
+msgstr ""
 
 #: ../data/ui/autorun.glade.h:1
-msgid "Removable medium is inserted"
-msgstr "Disco amovível inserido"
-
-#: ../data/ui/autorun.glade.h:2
 msgid "<b>Removable medium is inserted</b>"
 msgstr "<b>Disco amovível inserido</b>"
 
-#: ../data/ui/autorun.glade.h:3
-msgid "Type of medium:"
-msgstr "Tipo de disco:"
-
-#: ../data/ui/autorun.glade.h:4
+#: ../data/ui/autorun.glade.h:2
 msgid "Detecting..."
 msgstr "A detetar..."
 
-#: ../data/ui/autorun.glade.h:5
+#: ../data/ui/autorun.glade.h:3
 msgid "Please select the action you want to perform:"
 msgstr "Por favor selecione a ação a executar:"
+
+#: ../data/ui/autorun.glade.h:4
+msgid "Removable medium is inserted"
+msgstr "Disco amovível inserido"
+
+#: ../data/ui/autorun.glade.h:5
+msgid "Type of medium:"
+msgstr "Tipo de disco:"
 
 #: ../src/volume-manager.c:164
 msgid "Removable Disk"
@@ -465,6 +506,27 @@ msgstr "Fi_xar na posição atual"
 #: ../src/desktop-ui.c:75
 msgid "Snap to _Grid"
 msgstr "Ajustar à _grelha"
+
+#: ../src/desktop.c:571
+#, fuzzy
+msgid "Activate file"
+msgstr "<imagem>"
+
+#: ../src/desktop.c:573
+#, fuzzy
+msgid "Show file menu"
+msgstr "Mostrar oc_ultos"
+
+#: ../src/desktop.c:989
+#, fuzzy
+msgid "Show desktop menu"
+msgstr "<b>Mostrar ícones na área de trabalho</b>"
+
+#. FIXME: set name by monitor
+#: ../src/desktop.c:1061
+#, fuzzy
+msgid "Desktop"
+msgstr "Área _de trabalho"
 
 #: ../src/main-win-ui.c:127
 msgid "_File"
@@ -560,16 +622,16 @@ msgid "_Previous Folder"
 msgstr "_Pasta anterior"
 
 #: ../src/main-win-ui.c:154
-msgid "Previous Folder"
-msgstr "Pasta anterior"
+msgid "Return to previous folder in history"
+msgstr ""
 
 #: ../src/main-win-ui.c:155
 msgid "_Next Folder"
 msgstr "Pasta segui_nte"
 
 #: ../src/main-win-ui.c:155
-msgid "Next Folder"
-msgstr "Pasta seguinte"
+msgid "Go forward to next folder in history"
+msgstr ""
 
 #: ../src/main-win-ui.c:156
 msgid "Pa_rent Folder"
@@ -584,40 +646,57 @@ msgid "H_ome Folder"
 msgstr "P_asta pessoal"
 
 #: ../src/main-win-ui.c:157
-msgid "Home Folder"
-msgstr "Pasta pessoal"
+#, fuzzy
+msgid "Go to home folder"
+msgstr "Ir para pasta superior"
 
 #: ../src/main-win-ui.c:158
 msgid "_Desktop"
 msgstr "Área _de trabalho"
 
 #: ../src/main-win-ui.c:158
-msgid "Desktop Folder"
-msgstr "Pasta da área de trabalho"
+#, fuzzy
+msgid "Go to desktop folder"
+msgstr "Ir para pasta superior"
 
 #: ../src/main-win-ui.c:159
-msgid "_My Computer"
-msgstr "_Meu computador"
-
-#: ../src/main-win-ui.c:160
 msgid "_Trash Can"
 msgstr "_Lixo"
+
+#: ../src/main-win-ui.c:159
+msgid "Open trash can"
+msgstr ""
+
+#: ../src/main-win-ui.c:160
+#, fuzzy
+msgid "_Computer Drives"
+msgstr "_Unidades de rede"
+
+#: ../src/main-win-ui.c:160
+#, fuzzy
+msgid "Go to list of volumes in the computer"
+msgstr "Mostrar ícones de volumes na área de trabal_ho"
 
 #: ../src/main-win-ui.c:161
 msgid "Net_work Drives"
 msgstr "_Unidades de rede"
+
+#: ../src/main-win-ui.c:161
+#, fuzzy
+msgid "Go to list of volumes on the network"
+msgstr "Mostrar ícones de volumes na área de trabal_ho"
 
 #: ../src/main-win-ui.c:162
 msgid "_Applications"
 msgstr "_Aplicações"
 
 #: ../src/main-win-ui.c:162
-msgid "Installed Applications"
-msgstr "Aplicações instaladas"
+msgid "Go to root of applications menu folder"
+msgstr ""
 
 #: ../src/main-win-ui.c:163
-msgid "Open entered folder"
-msgstr "Clique para abrir"
+msgid "Open folder entered in location entry"
+msgstr ""
 
 #: ../src/main-win-ui.c:164
 msgid "_Bookmarks"
@@ -626,6 +705,10 @@ msgstr "_Marcadores"
 #: ../src/main-win-ui.c:165
 msgid "_Add To Bookmarks"
 msgstr "_Adicionar aos marcadores"
+
+#: ../src/main-win-ui.c:165
+msgid "Add current folder to bookmarks list"
+msgstr ""
 
 #: ../src/main-win-ui.c:166
 msgid "Tool_s"
@@ -642,6 +725,11 @@ msgstr "Abrir pasta atual como _root"
 #: ../src/main-win-ui.c:170
 msgid "Fin_d Files"
 msgstr "_Procurar ficheiros"
+
+#: ../src/main-win-ui.c:170
+#, fuzzy
+msgid "Open search dialog"
+msgstr "Abrir preferências da área de trabalho"
 
 #. for popup menu - these entries exist in FmFolderView popup still
 #: ../src/main-win-ui.c:179
@@ -716,15 +804,46 @@ msgstr "Árvore de diretórios"
 msgid "Remote"
 msgstr "Remoto"
 
-#: ../src/main-win.c:542
+#: ../src/main-win.c:532
+msgid "Show history of visited folders"
+msgstr ""
+
+#: ../src/main-win.c:535
+msgid "History"
+msgstr ""
+
+#: ../src/main-win.c:549
 msgid "You are in super user mode"
 msgstr "Está no modo de super utilizador"
 
-#: ../src/main-win.c:713 ../src/main-win.c:721
+#: ../src/main-win.c:713
+#, fuzzy
+msgid "Lightweight file manager\n"
+msgstr ""
+"Gestor de ficheiros leve e rápido\n"
+"\n"
+"Desenvolvido por Hon Jen Yee (PCMan)"
+
+#: ../src/main-win.c:718
+#, c-format
+msgid "using LibFM ver. %s\n"
+msgstr ""
+
+#: ../src/main-win.c:720
+#, fuzzy
+msgid ""
+"\n"
+"Developed by Hon Jen Yee (PCMan)"
+msgstr ""
+"Gestor de ficheiros leve e rápido\n"
+"\n"
+"Desenvolvido por Hon Jen Yee (PCMan)"
+
+#: ../src/main-win.c:745 ../src/main-win.c:753
 msgid "Keyboard navigation"
 msgstr "Navegação com o teclado"
 
-#: ../src/main-win.c:715
+#: ../src/main-win.c:747
 msgid ""
 "Tab: cycle focus Folder View -> Side Pane -> Tools Bar\n"
 "Shift+Tab: cycle focus Tools Bar -> Side Pane -> Folder View\n"
@@ -742,11 +861,11 @@ msgstr ""
 "F10: ativar menu principal\n"
 "Ctrl+L ou Alt+D: mudar foco para a Barra de caminho"
 
-#: ../src/main-win.c:751
+#: ../src/main-win.c:783
 msgid "Switch user command is not set."
 msgstr "O comando para trocar de utilizador não está definido."
 
-#: ../src/main-win.c:1106
+#: ../src/main-win.c:1138
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -757,7 +876,7 @@ msgstr ""
 "\"%s\"\n"
 "Indique o nome para o novo marcador:"
 
-#: ../src/main-win.c:1110
+#: ../src/main-win.c:1142
 msgid "Add to Bookmarks"
 msgstr "Adicionar aos marcadores"
 
@@ -838,7 +957,7 @@ msgstr "Estilo"
 msgid "[FILE1, FILE2,...]"
 msgstr "[Ficheiro1, Ficheiro2,...]"
 
-#: ../src/pcmanfm.c:532
+#: ../src/pcmanfm.c:528
 msgid "Terminal emulator is not set."
 msgstr "O emulador de terminal não está definido."
 
@@ -873,21 +992,60 @@ msgstr[0] " (%d oculto)"
 msgstr[1] " (%d ocultos)"
 
 #: ../data/pcmanfm.desktop.in.h:1
-msgid "File Manager PCManFM"
-msgstr "Gestor de ficheiros PCManFM"
+msgid "Browse the file system and manage the files"
+msgstr "Explorar o sistema de ficheiros e gerir ficheiros"
 
 #: ../data/pcmanfm.desktop.in.h:2
 msgid "File Manager"
 msgstr "Gestor de ficheiros"
 
 #: ../data/pcmanfm.desktop.in.h:3
-msgid "Browse the file system and manage the files"
-msgstr "Explorar o sistema de ficheiros e gerir ficheiros"
+msgid "File Manager PCManFM"
+msgstr "Gestor de ficheiros PCManFM"
 
-#: ../data/pcmanfm-desktop-pref.desktop.in.h:2
+#: ../data/pcmanfm-desktop-pref.desktop.in.h:1
 msgid "Change desktop wallpapers and behavior of desktop manager"
 msgstr ""
 "Alterar o papel de parede e o comportamento do gestor de áreas de trabalho"
+
+#~ msgid "Hide _folder content border"
+#~ msgstr "Ocultar li_mite do conteúdo de pastas"
+
+#~ msgid "Hide _side pane buttons"
+#~ msgstr "Ocultar botõe_s do painel lateral"
+
+#~ msgid "_Trash bin"
+#~ msgstr "Li_xo"
+
+#~ msgid ""
+#~ "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching "
+#~ "user.\n"
+#~ "%s = the command line you want to execute with terminal or su."
+#~ msgstr ""
+#~ "Exemplos: \"xterm -e %s\" para terminal ou \"gksu %s\" para trocar "
+#~ "utilizadores.\n"
+#~ "%s é a linha de comandos a executar com o terminal ou com su."
+
+#~ msgid "Previous Folder"
+#~ msgstr "Pasta anterior"
+
+#~ msgid "Next Folder"
+#~ msgstr "Pasta seguinte"
+
+#~ msgid "Home Folder"
+#~ msgstr "Pasta pessoal"
+
+#~ msgid "Desktop Folder"
+#~ msgstr "Pasta da área de trabalho"
+
+#~ msgid "_My Computer"
+#~ msgstr "_Meu computador"
+
+#~ msgid "Installed Applications"
+#~ msgstr "Aplicações instaladas"
+
+#~ msgid "Open entered folder"
+#~ msgstr "Clique para abrir"
 
 #~ msgid "Blank File"
 #~ msgstr "Ficheiro vazio"
@@ -900,9 +1058,6 @@ msgstr ""
 
 #~ msgid "Invert Selection"
 #~ msgstr "Inverter seleção"
-
-#~ msgid "<image file>"
-#~ msgstr "<imagem>"
 
 #~ msgid "<mode>"
 #~ msgstr "<modo>"
