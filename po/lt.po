@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-10-16 23:12+0300\n"
-"PO-Revision-Date: 2013-08-12 12:58+0200\n"
+"PO-Revision-Date: 2013-10-23 08:17+0200\n"
 "Last-Translator: Algimantas Margevičius <margevicius.algimantas@gmail.com>\n"
 "Language-Team: Lietuvių <>\n"
 "Language: lt\n"
@@ -81,7 +81,6 @@ msgid "Show \"_My Computer\" icon on desktop"
 msgstr "Darbastalyje rodyti _kompiuterio piktogramą"
 
 #: ../data/ui/desktop-pref.glade.h:13
-#, fuzzy
 msgid "Show \"_Trash Can\" icon on desktop"
 msgstr "Darbastalyje rodyti šiukšlinės _piktogramą"
 
@@ -136,7 +135,7 @@ msgstr "F_onas:"
 
 #: ../data/ui/pref.glade.h:1
 msgid "\"C_omputer\" special folder"
-msgstr ""
+msgstr "„Kompiuteris“ specialus aplankas"
 
 #: ../data/ui/pref.glade.h:2
 msgid "<b>Auto-mount</b>"
@@ -159,9 +158,8 @@ msgid "<b>Icons</b>"
 msgstr "<b>Piktogramos</b>"
 
 #: ../data/ui/pref.glade.h:7
-#, fuzzy
 msgid "<b>Other options</b>"
-msgstr "<b>Rodyti darbastalio piktogramas</b>"
+msgstr "<b>Kitos parinktysRodyti darbastalio piktogramas</b>"
 
 #: ../data/ui/pref.glade.h:8
 msgid "<b>Programs</b>"
@@ -172,9 +170,8 @@ msgid "<b>Show in Places:</b>"
 msgstr "<b>Rodyti vietose:</b>"
 
 #: ../data/ui/pref.glade.h:10
-#, fuzzy
 msgid "<b>Templates</b>"
-msgstr "<b>Tekstas</b>"
+msgstr "<b>Šablonai</b>"
 
 #: ../data/ui/pref.glade.h:11
 msgid "<b>User Interface</b>"
@@ -182,7 +179,7 @@ msgstr "<b>Naudotojo sąsaja</b>"
 
 #: ../data/ui/pref.glade.h:12
 msgid "<i>Commands below may include extra switches if necessary.</i>"
-msgstr ""
+msgstr "<i>Šioms komandoms gali būti naudojamos papildomos parinktys.</i>"
 
 #: ../data/ui/pref.glade.h:13
 msgid "A_rchiver integration:"
@@ -221,7 +218,6 @@ msgid "Compact View"
 msgstr "Kompaktiškas vaizdas"
 
 #: ../data/ui/pref.glade.h:22
-#, fuzzy
 msgid "Confi_rm before moving files into \"trash can\""
 msgstr "_Patvirtinti prieš perkeliant į šiukšlinę"
 
@@ -231,7 +227,7 @@ msgstr "Kopijuoti"
 
 #: ../data/ui/pref.glade.h:24
 msgid "D_efer test for content type on folder loading"
-msgstr ""
+msgstr "Įkeliant _aplanką nenustatinėti failo tipo"
 
 #: ../data/ui/pref.glade.h:25
 msgid "Defaul_t drop action:"
@@ -256,7 +252,7 @@ msgstr "_Negeneruoti miniatiūrų, jei failas didesnis nei:"
 
 #: ../data/ui/pref.glade.h:30
 msgid "Don't ask options on _launch executable file"
-msgstr ""
+msgstr "Neprašyti parinkčių _paleidus vykdomą failą"
 
 #: ../data/ui/pref.glade.h:31
 msgid "Hid_e 'Close tab' buttons"
@@ -307,19 +303,19 @@ msgstr "Nustatymai"
 
 #: ../data/ui/pref.glade.h:42
 msgid "Ru_n default application after creation from template"
-msgstr ""
+msgstr "_Sukūrus šabloną, vykdyti numatytąją programą"
 
 #: ../data/ui/pref.glade.h:43
 msgid "S_how only user defined templates in menu"
-msgstr ""
+msgstr "_Meniu rodyti tik naudotojo nustatytus šablonus"
 
 #: ../data/ui/pref.glade.h:44
 msgid "Show _only one template for each MIME type"
-msgstr ""
+msgstr "Kiekvienam MIME tipui rodyti tik vieną šabloną"
 
 #: ../data/ui/pref.glade.h:45
 msgid "Show icons of bac_kup files shadowed"
-msgstr ""
+msgstr "Atsarginės _kopijos failų piktogramas rodyti nespalvotai"
 
 #: ../data/ui/pref.glade.h:46
 msgid "Size of _big icons:"
@@ -366,17 +362,16 @@ msgid "_Display"
 msgstr "_Rodymas"
 
 #: ../data/ui/pref.glade.h:57
-#, fuzzy
 msgid "_Erase files on removable media instead of \"trash can\" creation"
 msgstr "_Išimamoje laikmenoje nekurti šiukšlinės, failus ištrinti iškarto"
 
 #: ../data/ui/pref.glade.h:58
 msgid "_File system root"
-msgstr ""
+msgstr "_Failų sistemos šakninis aplankas"
 
 #: ../data/ui/pref.glade.h:59
 msgid "_Format command:"
-msgstr ""
+msgstr "_Formatavimo komanda:"
 
 #: ../data/ui/pref.glade.h:60
 msgid "_General"
@@ -392,21 +387,19 @@ msgstr "_Išdėstymas"
 
 #: ../data/ui/pref.glade.h:63
 msgid "_Maximum width of tab label:"
-msgstr ""
+msgstr "_Didžiausias kortelės etiketės ilgis:"
 
 #: ../data/ui/pref.glade.h:64
 msgid "_Mount mountable volumes automatically on program startup"
 msgstr "_Paleidžiant programą automatiškai prijungti prijungiamus tomus"
 
 #: ../data/ui/pref.glade.h:65
-#, fuzzy
 msgid "_Move deleted files to \"trash can\" instead of erasing from disk"
 msgstr "_Ištrintus failus perkelti į šiukšlinę, o ne ištrinti iš disko"
 
 #: ../data/ui/pref.glade.h:66
-#, fuzzy
 msgid "_Network places"
-msgstr "_Tinklo įrenginiai"
+msgstr "_Tinklo vietos"
 
 #: ../data/ui/pref.glade.h:67
 msgid "_Only show thumbnails for local files"
@@ -438,7 +431,6 @@ msgid "_Terminal emulator:"
 msgstr "_Terminalo emuliatorius:"
 
 #: ../data/ui/pref.glade.h:74
-#, fuzzy
 msgid "_Trash can"
 msgstr "Š_iukšlinė"
 
@@ -457,7 +449,7 @@ msgstr "_Tomų tvarkymas"
 #. Use genitive case here, context is: width is XXX characters
 #: ../data/ui/pref.glade.h:79
 msgid "characters"
-msgstr ""
+msgstr "simbolių"
 
 #: ../data/ui/autorun.glade.h:1
 msgid "<b>Removable medium is inserted</b>"
@@ -508,25 +500,21 @@ msgid "Snap to _Grid"
 msgstr "L_aikytis lygiavimo"
 
 #: ../src/desktop.c:571
-#, fuzzy
 msgid "Activate file"
-msgstr "<paveikslėlis>"
+msgstr "Aktyvuoti failą"
 
 #: ../src/desktop.c:573
-#, fuzzy
 msgid "Show file menu"
-msgstr "Rodyti _paslėptus"
+msgstr "Rodyti failo meniu"
 
 #: ../src/desktop.c:989
-#, fuzzy
 msgid "Show desktop menu"
-msgstr "<b>Rodyti darbastalio piktogramas</b>"
+msgstr "Rodyti darbastalio meniu"
 
 #. FIXME: set name by monitor
 #: ../src/desktop.c:1061
-#, fuzzy
 msgid "Desktop"
-msgstr "_Darbastalis"
+msgstr "Darbastalis"
 
 #: ../src/main-win-ui.c:127
 msgid "_File"
@@ -623,7 +611,7 @@ msgstr "_Ankstesnis aplankas"
 
 #: ../src/main-win-ui.c:154
 msgid "Return to previous folder in history"
-msgstr ""
+msgstr "Grįžti prie ankstesnio istorijos aplanko"
 
 #: ../src/main-win-ui.c:155
 msgid "_Next Folder"
@@ -631,7 +619,7 @@ msgstr "_Sekantis aplankas"
 
 #: ../src/main-win-ui.c:155
 msgid "Go forward to next folder in history"
-msgstr ""
+msgstr "Pereiti prie sekančio aplanko istorijoje"
 
 #: ../src/main-win-ui.c:156
 msgid "Pa_rent Folder"
@@ -646,18 +634,16 @@ msgid "H_ome Folder"
 msgstr "_Namų aplankas"
 
 #: ../src/main-win-ui.c:157
-#, fuzzy
 msgid "Go to home folder"
-msgstr "Eiti aukštyn"
+msgstr "Eiti į namų aplanką"
 
 #: ../src/main-win-ui.c:158
 msgid "_Desktop"
 msgstr "_Darbastalis"
 
 #: ../src/main-win-ui.c:158
-#, fuzzy
 msgid "Go to desktop folder"
-msgstr "Eiti aukštyn"
+msgstr "Eiti į darbastalio aplanką"
 
 #: ../src/main-win-ui.c:159
 msgid "_Trash Can"
@@ -665,26 +651,23 @@ msgstr "Š_iukšlinė"
 
 #: ../src/main-win-ui.c:159
 msgid "Open trash can"
-msgstr ""
+msgstr "Atverti šiukšlinę"
 
 #: ../src/main-win-ui.c:160
-#, fuzzy
 msgid "_Computer Drives"
-msgstr "_Tinklo įrenginiai"
+msgstr "_Kompiuterio įrenginiai"
 
 #: ../src/main-win-ui.c:160
-#, fuzzy
 msgid "Go to list of volumes in the computer"
-msgstr "_Darbastalyje rodyti prijungtų skirsnių piktogramas"
+msgstr "Pereiti prie kompiuterio skirsnių"
 
 #: ../src/main-win-ui.c:161
 msgid "Net_work Drives"
 msgstr "_Tinklo įrenginiai"
 
 #: ../src/main-win-ui.c:161
-#, fuzzy
 msgid "Go to list of volumes on the network"
-msgstr "_Darbastalyje rodyti prijungtų skirsnių piktogramas"
+msgstr "Pereiti prie tinklo skirsnių sąrašo"
 
 #: ../src/main-win-ui.c:162
 msgid "_Applications"
@@ -692,11 +675,11 @@ msgstr "_Programos"
 
 #: ../src/main-win-ui.c:162
 msgid "Go to root of applications menu folder"
-msgstr ""
+msgstr "Pereiti į programų meniu aplanko pradžią"
 
 #: ../src/main-win-ui.c:163
 msgid "Open folder entered in location entry"
-msgstr ""
+msgstr "Atverti aplanką nurodytą vietos įvestyje"
 
 #: ../src/main-win-ui.c:164
 msgid "_Bookmarks"
@@ -708,7 +691,7 @@ msgstr "Į_traukti į žymeles"
 
 #: ../src/main-win-ui.c:165
 msgid "Add current folder to bookmarks list"
-msgstr ""
+msgstr "Pridėti dabartinį aplanką prie žymelių"
 
 #: ../src/main-win-ui.c:166
 msgid "Tool_s"
@@ -727,9 +710,8 @@ msgid "Fin_d Files"
 msgstr "_Ieškoti failų"
 
 #: ../src/main-win-ui.c:170
-#, fuzzy
 msgid "Open search dialog"
-msgstr "Atverti darbastalio nustatymų dialogą"
+msgstr "Atverti paieškos dialogą"
 
 #. for popup menu - these entries exist in FmFolderView popup still
 #: ../src/main-win-ui.c:179
@@ -806,36 +788,30 @@ msgstr "Nutolęs"
 
 #: ../src/main-win.c:532
 msgid "Show history of visited folders"
-msgstr ""
+msgstr "Rodyti lankytų aplankų istoriją"
 
 #: ../src/main-win.c:535
 msgid "History"
-msgstr ""
+msgstr "Istorija"
 
 #: ../src/main-win.c:549
 msgid "You are in super user mode"
 msgstr "Jūs esate super naudotojo režime"
 
 #: ../src/main-win.c:713
-#, fuzzy
 msgid "Lightweight file manager\n"
-msgstr ""
-"Lengva ir greita failų tvarkyklė\n"
-"\n"
-"Kūrėjas Hon Jen Yee (PCMan)"
+msgstr "Lengva ir greita failų tvarkyklė\n"
 
 #: ../src/main-win.c:718
 #, c-format
 msgid "using LibFM ver. %s\n"
-msgstr ""
+msgstr "naudojama LibFM versija %s\n"
 
 #: ../src/main-win.c:720
-#, fuzzy
 msgid ""
 "\n"
 "Developed by Hon Jen Yee (PCMan)"
 msgstr ""
-"Lengva ir greita failų tvarkyklė\n"
 "\n"
 "Kūrėjas Hon Jen Yee (PCMan)"
 
