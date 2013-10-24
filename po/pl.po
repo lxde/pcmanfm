@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm 1.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-10-16 23:12+0300\n"
-"PO-Revision-Date: 2013-10-24 08:32+0000\n"
+"PO-Revision-Date: 2013-10-24 09:12+0000\n"
 "Last-Translator: Piotr <strebski@o2.pl>\n"
 "Language-Team: polski <>\n"
 "Language: pl\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1382603552.0\n"
+"X-POOTLE-MTIME: 1382605944.0\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2013"
@@ -183,6 +183,8 @@ msgstr "<b>Interfejs użytkownika</b>"
 #: ../data/ui/pref.glade.h:12
 msgid "<i>Commands below may include extra switches if necessary.</i>"
 msgstr ""
+"<i>Polecenia poniżej mogą zawierać, jeśli to konieczne, dodatkowe "
+"przełączniki.</i>"
 
 #: ../data/ui/pref.glade.h:13
 msgid "A_rchiver integration:"
@@ -234,7 +236,7 @@ msgstr "Kopiowanie"
 
 #: ../data/ui/pref.glade.h:24
 msgid "D_efer test for content type on folder loading"
-msgstr ""
+msgstr "Opóźni_enie testu typu zawartości podczas ładowania katalogu"
 
 #: ../data/ui/pref.glade.h:25
 msgid "Defaul_t drop action:"
@@ -259,7 +261,7 @@ msgstr "Pomijanie generowania miniatur plików o _rozmiarze większym niż:"
 
 #: ../data/ui/pref.glade.h:30
 msgid "Don't ask options on _launch executable file"
-msgstr ""
+msgstr "Nie pytaj o opcje uruchomienia p_liku wykonalnego"
 
 #: ../data/ui/pref.glade.h:31
 msgid "Hid_e 'Close tab' buttons"
@@ -310,19 +312,19 @@ msgstr "Preferencje"
 
 #: ../data/ui/pref.glade.h:42
 msgid "Ru_n default application after creation from template"
-msgstr ""
+msgstr "Uruchom domyśl_ny program po utworzeniu z szablonu"
 
 #: ../data/ui/pref.glade.h:43
 msgid "S_how only user defined templates in menu"
-msgstr ""
+msgstr "Po_kazuj w menu tylko szablony określone przez użytkownika"
 
 #: ../data/ui/pref.glade.h:44
 msgid "Show _only one template for each MIME type"
-msgstr ""
+msgstr "P_okazuj tylko jeden szablon dla każdego typu MIME"
 
 #: ../data/ui/pref.glade.h:45
 msgid "Show icons of bac_kup files shadowed"
-msgstr ""
+msgstr "Poka_zuj ikony plików zapasowych jako zamglone"
 
 #: ../data/ui/pref.glade.h:46
 msgid "Size of _big icons:"
@@ -369,18 +371,17 @@ msgid "_Display"
 msgstr "_Wyświetlanie"
 
 #: ../data/ui/pref.glade.h:57
-#, fuzzy
 msgid "_Erase files on removable media instead of \"trash can\" creation"
 msgstr ""
 "_Usuwanie plików z nośników wymiennych zamiast tworzenia katalogu \"Kosza\""
 
 #: ../data/ui/pref.glade.h:58
 msgid "_File system root"
-msgstr ""
+msgstr "Ka_talog główny systemu plików"
 
 #: ../data/ui/pref.glade.h:59
 msgid "_Format command:"
-msgstr ""
+msgstr "Polecenie _formatowania:"
 
 #: ../data/ui/pref.glade.h:60
 msgid "_General"
@@ -396,21 +397,19 @@ msgstr "_Układ"
 
 #: ../data/ui/pref.glade.h:63
 msgid "_Maximum width of tab label:"
-msgstr ""
+msgstr "_Maksymalna szerokość etykiety karty:"
 
 #: ../data/ui/pref.glade.h:64
 msgid "_Mount mountable volumes automatically on program startup"
 msgstr "_Montowanie wolumenów podczas uruchamiania programu"
 
 #: ../data/ui/pref.glade.h:65
-#, fuzzy
 msgid "_Move deleted files to \"trash can\" instead of erasing from disk"
-msgstr "_Przenoszenie plików do \"Kosza\" zamiast usuwania"
+msgstr "_Przenoszenie plików do \"Kosza\" zamiast ich usuwania z dysku"
 
 #: ../data/ui/pref.glade.h:66
-#, fuzzy
 msgid "_Network places"
-msgstr "_Napędy sieciowe"
+msgstr "Miejsca _sieciowe"
 
 #: ../data/ui/pref.glade.h:67
 msgid "_Only show thumbnails for local files"
@@ -443,7 +442,6 @@ msgid "_Terminal emulator:"
 msgstr "Emulator _terminala:"
 
 #: ../data/ui/pref.glade.h:74
-#, fuzzy
 msgid "_Trash can"
 msgstr "_Kosz"
 
@@ -624,7 +622,7 @@ msgstr "_Poprzedni katalog"
 
 #: ../src/main-win-ui.c:154
 msgid "Return to previous folder in history"
-msgstr ""
+msgstr "Wróć do poprzedniego katalogu z historii"
 
 #: ../src/main-win-ui.c:155
 msgid "_Next Folder"
@@ -632,7 +630,7 @@ msgstr "_Następny katalog"
 
 #: ../src/main-win-ui.c:155
 msgid "Go forward to next folder in history"
-msgstr ""
+msgstr "Przejdź dalej do następnego katalogu z historii"
 
 #: ../src/main-win-ui.c:156
 msgid "Pa_rent Folder"
@@ -664,7 +662,7 @@ msgstr "_Kosz"
 
 #: ../src/main-win-ui.c:159
 msgid "Open trash can"
-msgstr ""
+msgstr "Otwórz kosz"
 
 #: ../src/main-win-ui.c:160
 msgid "_Computer Drives"
@@ -688,11 +686,11 @@ msgstr "Progr_amy"
 
 #: ../src/main-win-ui.c:162
 msgid "Go to root of applications menu folder"
-msgstr ""
+msgstr "Przejdź do katalogu głównego menu programów"
 
 #: ../src/main-win-ui.c:163
 msgid "Open folder entered in location entry"
-msgstr ""
+msgstr "Otwórz katalog wpisany w pasek położenia"
 
 #: ../src/main-win-ui.c:164
 msgid "_Bookmarks"
@@ -704,7 +702,7 @@ msgstr "_Dodaj do zakładek"
 
 #: ../src/main-win-ui.c:165
 msgid "Add current folder to bookmarks list"
-msgstr ""
+msgstr "Dodaj bieżący katalog do listy zakładek"
 
 #: ../src/main-win-ui.c:166
 msgid "Tool_s"
@@ -801,11 +799,11 @@ msgstr "Zdalne"
 
 #: ../src/main-win.c:532
 msgid "Show history of visited folders"
-msgstr ""
+msgstr "Pokaż historię odwiedzonych katalogów"
 
 #: ../src/main-win.c:535
 msgid "History"
-msgstr ""
+msgstr "Historia"
 
 #: ../src/main-win.c:549
 msgid "You are in super user mode"
@@ -818,7 +816,7 @@ msgstr "Lekki menedżer plików\n"
 #: ../src/main-win.c:718
 #, c-format
 msgid "using LibFM ver. %s\n"
-msgstr ""
+msgstr "użycie LibFM wer. %s\n"
 
 #: ../src/main-win.c:720
 msgid ""
