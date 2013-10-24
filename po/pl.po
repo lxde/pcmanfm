@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm 1.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-10-16 23:12+0300\n"
-"PO-Revision-Date: 2013-09-04 12:53+0000\n"
+"PO-Revision-Date: 2013-10-24 08:32+0000\n"
 "Last-Translator: Piotr <strebski@o2.pl>\n"
 "Language-Team: polski <>\n"
 "Language: pl\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1378299208.0\n"
+"X-POOTLE-MTIME: 1382603552.0\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2013"
@@ -80,12 +80,11 @@ msgstr "Wyświetlanie _ikon wolumenów na pulpicie"
 
 #: ../data/ui/desktop-pref.glade.h:12
 msgid "Show \"_My Computer\" icon on desktop"
-msgstr "Wyświetlanie ikony „Mój _Komputer” na pulpicie"
+msgstr "Wyświetlanie ikony \"_Mój komputer\" na pulpicie"
 
 #: ../data/ui/desktop-pref.glade.h:13
-#, fuzzy
 msgid "Show \"_Trash Can\" icon on desktop"
-msgstr "Wyświetlanie ikony „K_osz” na pulpicie"
+msgstr "Wyświetlanie ikony \"_Kosz\" na pulpicie"
 
 #: ../data/ui/desktop-pref.glade.h:14
 msgid "Stretch to fill the entire screen"
@@ -139,7 +138,7 @@ msgstr "_Tapeta:"
 
 #: ../data/ui/pref.glade.h:1
 msgid "\"C_omputer\" special folder"
-msgstr ""
+msgstr "Katalog specjalny \"K_omputer\""
 
 #: ../data/ui/pref.glade.h:2
 msgid "<b>Auto-mount</b>"
@@ -162,9 +161,8 @@ msgid "<b>Icons</b>"
 msgstr "<b>Ikony</b>"
 
 #: ../data/ui/pref.glade.h:7
-#, fuzzy
 msgid "<b>Other options</b>"
-msgstr "<b>Wyświetlanie ikon na pulpicie</b>"
+msgstr "<b>Inne opcje</b>"
 
 #: ../data/ui/pref.glade.h:8
 msgid "<b>Programs</b>"
@@ -175,9 +173,8 @@ msgid "<b>Show in Places:</b>"
 msgstr "<b>Elementy wyświetlane w położeniach:</b>"
 
 #: ../data/ui/pref.glade.h:10
-#, fuzzy
 msgid "<b>Templates</b>"
-msgstr "<b>Tekst</b>"
+msgstr "<b>Szablony</b>"
 
 #: ../data/ui/pref.glade.h:11
 msgid "<b>User Interface</b>"
@@ -189,7 +186,9 @@ msgstr ""
 
 #: ../data/ui/pref.glade.h:13
 msgid "A_rchiver integration:"
-msgstr "Menedżer _archiwów:"
+msgstr ""
+"<i>Polecenia poniżej mogą zawierać, wedle potrzeby, dodatkowe "
+"przełączniki.</i>"
 
 #: ../data/ui/pref.glade.h:14
 msgid "Al_ways show full file names"
@@ -226,9 +225,8 @@ msgid "Compact View"
 msgstr "Zwarty"
 
 #: ../data/ui/pref.glade.h:22
-#, fuzzy
 msgid "Confi_rm before moving files into \"trash can\""
-msgstr "Wyświetlanie py_tania przed przenoszeniem plików do \"Kosza\""
+msgstr "Potwie_rdź przed przeniesieniem plików do \"Kosza\""
 
 #: ../data/ui/pref.glade.h:23
 msgid "Copy"
@@ -464,7 +462,7 @@ msgstr "Zarządzanie _wolumenami"
 #. Use genitive case here, context is: width is XXX characters
 #: ../data/ui/pref.glade.h:79
 msgid "characters"
-msgstr ""
+msgstr "znaki"
 
 #: ../data/ui/autorun.glade.h:1
 msgid "<b>Removable medium is inserted</b>"
@@ -515,25 +513,21 @@ msgid "Snap to _Grid"
 msgstr "Wyrównanie do _siatki"
 
 #: ../src/desktop.c:571
-#, fuzzy
 msgid "Activate file"
-msgstr "<PLIK>"
+msgstr "Aktywuj plik"
 
 #: ../src/desktop.c:573
-#, fuzzy
 msgid "Show file menu"
-msgstr "Wyświetlanie _ukrytych plików"
+msgstr "Pokaż menu pliku"
 
 #: ../src/desktop.c:989
-#, fuzzy
 msgid "Show desktop menu"
-msgstr "<b>Wyświetlanie ikon na pulpicie</b>"
+msgstr "Pokaż menu pulpitu"
 
 #. FIXME: set name by monitor
 #: ../src/desktop.c:1061
-#, fuzzy
 msgid "Desktop"
-msgstr "_Pulpit"
+msgstr "Pulpit"
 
 #: ../src/main-win-ui.c:127
 msgid "_File"
@@ -653,18 +647,16 @@ msgid "H_ome Folder"
 msgstr "Katal_og użytkownika"
 
 #: ../src/main-win-ui.c:157
-#, fuzzy
 msgid "Go to home folder"
-msgstr "Przechodzi do katalogu nadrzędnego"
+msgstr "Przejdź do katalogu użytkownika"
 
 #: ../src/main-win-ui.c:158
 msgid "_Desktop"
 msgstr "_Pulpit"
 
 #: ../src/main-win-ui.c:158
-#, fuzzy
 msgid "Go to desktop folder"
-msgstr "Przechodzi do katalogu nadrzędnego"
+msgstr "Przejdź do katalogu pulpitu"
 
 #: ../src/main-win-ui.c:159
 msgid "_Trash Can"
@@ -675,23 +667,20 @@ msgid "Open trash can"
 msgstr ""
 
 #: ../src/main-win-ui.c:160
-#, fuzzy
 msgid "_Computer Drives"
-msgstr "_Napędy sieciowe"
+msgstr "_Napędy komputera"
 
 #: ../src/main-win-ui.c:160
-#, fuzzy
 msgid "Go to list of volumes in the computer"
-msgstr "Wyświetlanie _ikon wolumenów na pulpicie"
+msgstr "Przejdź do listy wolumenów komputera"
 
 #: ../src/main-win-ui.c:161
 msgid "Net_work Drives"
 msgstr "_Napędy sieciowe"
 
 #: ../src/main-win-ui.c:161
-#, fuzzy
 msgid "Go to list of volumes on the network"
-msgstr "Wyświetlanie _ikon wolumenów na pulpicie"
+msgstr "Przejdź do listy wolumenów w sieci"
 
 #: ../src/main-win-ui.c:162
 msgid "_Applications"
@@ -734,9 +723,8 @@ msgid "Fin_d Files"
 msgstr "_Wyszukaj pliki"
 
 #: ../src/main-win-ui.c:170
-#, fuzzy
 msgid "Open search dialog"
-msgstr "Wyświetla okno preferencji pulpitu"
+msgstr "Otwórz okno wyszukiwania"
 
 #. for popup menu - these entries exist in FmFolderView popup still
 #: ../src/main-win-ui.c:179
@@ -824,12 +812,8 @@ msgid "You are in super user mode"
 msgstr "W użyciu tryb super użytkownika"
 
 #: ../src/main-win.c:713
-#, fuzzy
 msgid "Lightweight file manager\n"
-msgstr ""
-"Menedżer plików\n"
-"\n"
-"Autor: Hon Jen Yee (PCMan)"
+msgstr "Lekki menedżer plików\n"
 
 #: ../src/main-win.c:718
 #, c-format
@@ -837,14 +821,12 @@ msgid "using LibFM ver. %s\n"
 msgstr ""
 
 #: ../src/main-win.c:720
-#, fuzzy
 msgid ""
 "\n"
 "Developed by Hon Jen Yee (PCMan)"
 msgstr ""
-"Menedżer plików\n"
 "\n"
-"Autor: Hon Jen Yee (PCMan)"
+"Rozwijany przez Hon Jen Yee (PCMan)"
 
 #: ../src/main-win.c:745 ../src/main-win.c:753
 msgid "Keyboard navigation"
