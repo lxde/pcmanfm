@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-10-16 23:12+0300\n"
-"PO-Revision-Date: 2013-10-23 06:19+0000\n"
+"PO-Revision-Date: 2013-10-28 08:31+0000\n"
 "Last-Translator: Klemen <klemen913@gmail.com>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || "
 "n%100==4 ? 3 : 0);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1382509142.0\n"
+"X-POOTLE-MTIME: 1382949113.0\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2013"
@@ -368,7 +368,7 @@ msgstr "Koren _datotečnega sistema"
 
 #: ../data/ui/pref.glade.h:59
 msgid "_Format command:"
-msgstr ""
+msgstr "Ukaz za _obliko:"
 
 #: ../data/ui/pref.glade.h:60
 msgid "_General"
@@ -391,7 +391,6 @@ msgid "_Mount mountable volumes automatically on program startup"
 msgstr "Samodejno _priklopi nosilce ob zagonu programa"
 
 #: ../data/ui/pref.glade.h:65
-#, fuzzy
 msgid "_Move deleted files to \"trash can\" instead of erasing from disk"
 msgstr "Izbrisane datoteke premakni v »_Smeti«"
 
@@ -502,9 +501,8 @@ msgid "Activate file"
 msgstr ""
 
 #: ../src/desktop.c:573
-#, fuzzy
 msgid "Show file menu"
-msgstr "Pokaži _skrite datoteke"
+msgstr "Pokaži meni _datoteke"
 
 #: ../src/desktop.c:989
 msgid "Show desktop menu"
@@ -610,7 +608,7 @@ msgstr "_Predhodna mapa"
 
 #: ../src/main-win-ui.c:154
 msgid "Return to previous folder in history"
-msgstr ""
+msgstr "Premakni se v prejšnjo mapo v zgodovini"
 
 #: ../src/main-win-ui.c:155
 msgid "_Next Folder"
@@ -618,7 +616,7 @@ msgstr "_Naslednja mapa"
 
 #: ../src/main-win-ui.c:155
 msgid "Go forward to next folder in history"
-msgstr ""
+msgstr "Premakni se v naslednjo mapo v zgodovini"
 
 #: ../src/main-win-ui.c:156
 msgid "Pa_rent Folder"
@@ -658,18 +656,16 @@ msgid "_Computer Drives"
 msgstr "O_mrežni pogoni"
 
 #: ../src/main-win-ui.c:160
-#, fuzzy
 msgid "Go to list of volumes in the computer"
-msgstr "Pojdi na seznam nosilcev na računalniku"
+msgstr "Pojdi na seznam nosilcev v računalniku"
 
 #: ../src/main-win-ui.c:161
 msgid "Net_work Drives"
 msgstr "O_mrežni pogoni"
 
 #: ../src/main-win-ui.c:161
-#, fuzzy
 msgid "Go to list of volumes on the network"
-msgstr "Na namizju pokaži ikone _nosilcev"
+msgstr "Pojdi na seznam nosilcev v omrežju"
 
 #: ../src/main-win-ui.c:162
 msgid "_Applications"
@@ -712,9 +708,8 @@ msgid "Fin_d Files"
 msgstr "_Najdi datoteke"
 
 #: ../src/main-win-ui.c:170
-#, fuzzy
 msgid "Open search dialog"
-msgstr "Odpre pogovorno okno možnosti namizja."
+msgstr "Odpri iskalno okno"
 
 #. for popup menu - these entries exist in FmFolderView popup still
 #: ../src/main-win-ui.c:179
