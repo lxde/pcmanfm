@@ -447,7 +447,7 @@ void fm_edit_preference( GtkWindow* parent, int page )
         INIT_ENTRY(builder, FmConfig, terminal, NULL);
         INIT_ENTRY(builder, FmAppConfig, su_cmd, NULL);
 #if FM_CHECK_VERSION(1, 2, 0)
-        INIT_BOOL(builder, FmConfig, format_cmd, NULL);
+        INIT_ENTRY(builder, FmConfig, format_cmd, NULL);
         gtk_widget_show(GTK_WIDGET(gtk_builder_get_object(builder, "hbox_format")));
 #endif
 
