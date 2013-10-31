@@ -317,7 +317,11 @@ static void load_bookmarks(FmMainWin* win, GtkUIManager* ui)
 static void on_history_item(GtkMenuItem* mi, FmMainWin* win)
 {
     FmTabPage* page = win->current_page;
+#if FM_CHECK_VERSION(1, 0, 2)
+    guint l = GPOINTER_TO_UINT(g_object_get_data(G_OBJECT(mi), "path"));
+#else
     GList* l = g_object_get_data(G_OBJECT(mi), "path");
+#endif
     fm_tab_page_history(page, l);
 }
 
@@ -338,19 +342,33 @@ static void on_history_selection_done(GtkMenuShell* menu, gpointer win)
 static void on_show_history_menu(GtkMenuToolButton* btn, FmMainWin* win)
 {
     GtkMenuShell* menu = (GtkMenuShell*)gtk_menu_tool_button_get_menu(btn);
+#if FM_CHECK_VERSION(1, 0, 2)
+    guint i, cur = fm_nav_history_get_cur_index(win->nav_history);
+    FmPath* path;
+#else
     const GList* l;
     const GList* cur = fm_nav_history_get_cur_link(win->nav_history);
+#endif
 
     /* delete old items */
     gtk_container_foreach(GTK_CONTAINER(menu), (GtkCallback)gtk_widget_destroy, NULL);
 
+#if FM_CHECK_VERSION(1, 0, 2)
+    for (i = 0; (path = fm_nav_history_get_nth_path(win->nav_history, i)); i++)
+    {
+#else
     for(l = fm_nav_history_list(win->nav_history); l; l=l->next)
     {
         const FmNavHistoryItem* item = (FmNavHistoryItem*)l->data;
         FmPath* path = item->path;
+#endif
         char* str = fm_path_display_name(path, TRUE);
         GtkWidget* mi;
+#if FM_CHECK_VERSION(1, 0, 2)
+        if (i == cur)
+#else
         if( l == cur )
+#endif
         {
             mi = gtk_check_menu_item_new_with_label(str);
             gtk_check_menu_item_set_draw_as_radio(GTK_CHECK_MENU_ITEM(mi), TRUE);
@@ -361,7 +379,11 @@ static void on_show_history_menu(GtkMenuToolButton* btn, FmMainWin* win)
         g_free(str);
 
         /* FIXME: need to avoid cast from const GList */
+#if FM_CHECK_VERSION(1, 0, 2)
+        g_object_set_data(G_OBJECT(mi), "path", GUINT_TO_POINTER(i));
+#else
         g_object_set_data_full(G_OBJECT(mi), "path", (gpointer)l, NULL);
+#endif
         g_signal_connect(mi, "activate", G_CALLBACK(on_history_item), win);
         gtk_menu_shell_append(menu, mi);
     }
@@ -758,9 +780,16 @@ static void on_key_nav_list(GtkAction* act, FmMainWin* win)
 
 static void on_open_in_terminal(GtkAction* act, FmMainWin* win)
 {
+    FmPath *path;
+#if FM_CHECK_VERSION(1, 0, 2)
+    path = fm_nav_history_get_nth_path(win->nav_history,
+                                fm_nav_history_get_cur_index(win->nav_history));
+    if (path)
+#else
     const FmNavHistoryItem* item = fm_nav_history_get_cur(win->nav_history);
-    if(item && item->path)
-        pcmanfm_open_folder_in_terminal(GTK_WINDOW(win), item->path);
+    if(item && (path = item->path))
+#endif
+        pcmanfm_open_folder_in_terminal(GTK_WINDOW(win), path);
 }
 
 static const char* su_cmd_subst(char opt, gpointer user_data)
@@ -944,7 +973,11 @@ static void _update_hist_buttons(FmMainWin* win)
     FmNavHistory *nh = fm_tab_page_get_history(win->current_page);
 
     act = gtk_ui_manager_get_action(win->ui, "/menubar/GoMenu/Next");
+#if FM_CHECK_VERSION(1, 0, 2)
+    gtk_action_set_sensitive(act, fm_nav_history_get_cur_index(nh) > 0);
+#else
     gtk_action_set_sensitive(act, fm_nav_history_can_forward(nh));
+#endif
     act = gtk_ui_manager_get_action(win->ui, "/menubar/GoMenu/Prev");
     gtk_action_set_sensitive(act, fm_nav_history_can_back(nh));
 }

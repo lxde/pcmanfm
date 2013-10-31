@@ -333,7 +333,9 @@ static void on_folder_start_loading(FmFolder* folder, FmTabPage* page)
 static void on_folder_finish_loading(FmFolder* folder, FmTabPage* page)
 {
     FmFolderView* fv = page->folder_view;
+#if !FM_CHECK_VERSION(1, 0, 2)
     const FmNavHistoryItem* item;
+#endif
     GtkScrolledWindow* scroll = GTK_SCROLLED_WINDOW(fv);
 
     /* Note: most of the time, we delay the creation of the 
@@ -360,8 +362,13 @@ static void on_folder_finish_loading(FmFolder* folder, FmTabPage* page)
 
     // fm_path_entry_set_path(entry, path);
     /* scroll to recorded position */
+#if FM_CHECK_VERSION(1, 0, 2)
+    gtk_adjustment_set_value(gtk_scrolled_window_get_vadjustment(scroll),
+                             fm_nav_history_get_scroll_pos(page->nav_history));
+#else
     item = fm_nav_history_get_cur(page->nav_history);
     gtk_adjustment_set_value(gtk_scrolled_window_get_vadjustment(scroll), item->scroll_pos);
+#endif
 
     /* update status bar */
     /* update status text */
@@ -660,14 +667,27 @@ FmNavHistory* fm_tab_page_get_history(FmTabPage* page)
 
 void fm_tab_page_forward(FmTabPage* page)
 {
+#if FM_CHECK_VERSION(1, 0, 2)
+    guint index = fm_nav_history_get_cur_index(page->nav_history);
+
+    if (index > 0)
+#else
     if(fm_nav_history_can_forward(page->nav_history))
+#endif
     {
+#if !FM_CHECK_VERSION(1, 0, 2)
         const FmNavHistoryItem* item;
+#endif
         GtkAdjustment* vadjustment = gtk_scrolled_window_get_vadjustment(GTK_SCROLLED_WINDOW(page->folder_view));
         int scroll_pos = gtk_adjustment_get_value(vadjustment);
+#if FM_CHECK_VERSION(1, 0, 2)
+        FmPath *path = fm_nav_history_go_to(page->nav_history, index - 1, scroll_pos);
+        fm_tab_page_chdir_without_history(page, path);
+#else
         fm_nav_history_forward(page->nav_history, scroll_pos);
         item = fm_nav_history_get_cur(page->nav_history);
         fm_tab_page_chdir_without_history(page, item->path);
+#endif
     }
 }
 
@@ -675,15 +695,32 @@ void fm_tab_page_back(FmTabPage* page)
 {
     if(fm_nav_history_can_back(page->nav_history))
     {
+#if !FM_CHECK_VERSION(1, 0, 2)
         const FmNavHistoryItem* item;
+#endif
         GtkAdjustment* vadjustment = gtk_scrolled_window_get_vadjustment(GTK_SCROLLED_WINDOW(page->folder_view));
         int scroll_pos = gtk_adjustment_get_value(vadjustment);
+#if FM_CHECK_VERSION(1, 0, 2)
+        guint index = fm_nav_history_get_cur_index(page->nav_history);
+        FmPath *path = fm_nav_history_go_to(page->nav_history, index + 1, scroll_pos);
+        fm_tab_page_chdir_without_history(page, path);
+#else
         fm_nav_history_back(page->nav_history, scroll_pos);
         item = fm_nav_history_get_cur(page->nav_history);
         fm_tab_page_chdir_without_history(page, item->path);
+#endif
     }
 }
 
+#if FM_CHECK_VERSION(1, 0, 2)
+void fm_tab_page_history(FmTabPage* page, guint history_item)
+{
+    GtkAdjustment* vadjustment = gtk_scrolled_window_get_vadjustment(GTK_SCROLLED_WINDOW(page->folder_view));
+    int scroll_pos = gtk_adjustment_get_value(vadjustment);
+    FmPath *path = fm_nav_history_go_to(page->nav_history, history_item, scroll_pos);
+    fm_tab_page_chdir_without_history(page, path);
+}
+#else
 void fm_tab_page_history(FmTabPage* page, GList* history_item_link)
 {
     const FmNavHistoryItem* item = (FmNavHistoryItem*)history_item_link->data;
@@ -693,6 +730,7 @@ void fm_tab_page_history(FmTabPage* page, GList* history_item_link)
     item = fm_nav_history_get_cur(page->nav_history);
     fm_tab_page_chdir_without_history(page, item->path);
 }
+#endif
 
 const char* fm_tab_page_get_title(FmTabPage* page)
 {

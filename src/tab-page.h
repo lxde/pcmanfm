@@ -100,7 +100,11 @@ void fm_tab_page_forward(FmTabPage* page);
 void fm_tab_page_back(FmTabPage* page);
 
 /* jump to specified history item */
+#if FM_CHECK_VERSION(1, 0, 2)
+void fm_tab_page_history(FmTabPage* page, guint history_item);
+#else
 void fm_tab_page_history(FmTabPage* page, GList* history_item_link);
+#endif
 
 /* get window title of this page */
 const char* fm_tab_page_get_title(FmTabPage* page);
