@@ -87,10 +87,18 @@ static void fm_app_config_init(FmAppConfig *cfg)
     cfg->view_mode = FM_FV_ICON_VIEW;
     cfg->show_hidden = FALSE;
     cfg->sort_type = GTK_SORT_ASCENDING;
+#if FM_CHECK_VERSION(1, 0, 2)
+    cfg->sort_by = FM_FOLDER_MODEL_COL_NAME;
+#else
     cfg->sort_by = COL_FILE_NAME;
+#endif
 
     cfg->desktop_sort_type = GTK_SORT_ASCENDING;
+#if FM_CHECK_VERSION(1, 0, 2)
+    cfg->desktop_sort_by = FM_FOLDER_MODEL_COL_MTIME;
+#else
     cfg->desktop_sort_by = COL_FILE_MTIME;
+#endif
 
     cfg->wallpaper_common = TRUE;
 }
@@ -181,7 +189,11 @@ void fm_app_config_load_from_key_file(FmAppConfig* cfg, GKeyFile* kf)
     else
         cfg->desktop_sort_type = GTK_SORT_ASCENDING;
     if(fm_key_file_get_int(kf, "desktop", "sort_by", &tmp_int) &&
+#if FM_CHECK_VERSION(1, 2, 0)
+       fm_folder_model_col_is_valid((guint)tmp_int))
+#else
        FM_FOLDER_MODEL_COL_IS_VALID((guint)tmp_int))
+#endif
         cfg->desktop_sort_by = tmp_int;
 
     /* ui */
@@ -210,8 +222,13 @@ void fm_app_config_load_from_key_file(FmAppConfig* cfg, GKeyFile* kf)
     else
         cfg->sort_type = GTK_SORT_ASCENDING;
     fm_key_file_get_int(kf, "ui", "sort_by", &cfg->sort_by);
+#if FM_CHECK_VERSION(1, 2, 0)
+    if(!fm_folder_model_col_is_valid(cfg->sort_by))
+        cfg->sort_by = FM_FOLDER_MODEL_COL_NAME;
+#else
     if(!FM_FOLDER_MODEL_COL_IS_VALID(cfg->sort_by))
         cfg->sort_by = COL_FILE_NAME;
+#endif
 }
 
 void fm_app_config_load_from_profile(FmAppConfig* cfg, const char* name)

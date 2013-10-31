@@ -206,10 +206,17 @@ static GtkRadioActionEntry main_win_sort_type_actions[]=
 
 static GtkRadioActionEntry main_win_sort_by_actions[]=
 {
+#if FM_CHECK_VERSION(1, 0, 2)
+    {"ByName", NULL, N_("By _Name"), "<Alt><Ctrl>1", NULL, FM_FOLDER_MODEL_COL_NAME},
+    {"ByMTime", NULL, N_("By _Modification Time"), "<Alt><Ctrl>2", NULL, FM_FOLDER_MODEL_COL_MTIME},
+    {"BySize", NULL, N_("By _Size"), "<Alt><Ctrl>3", NULL, FM_FOLDER_MODEL_COL_SIZE},
+    {"ByType", NULL, N_("By File _Type"), "<Alt><Ctrl>4", NULL, FM_FOLDER_MODEL_COL_DESC}
+#else
     {"ByName", NULL, N_("By _Name"), "<Alt><Ctrl>1", NULL, COL_FILE_NAME},
     {"ByMTime", NULL, N_("By _Modification Time"), "<Alt><Ctrl>2", NULL, COL_FILE_MTIME},
     {"BySize", NULL, N_("By _Size"), "<Alt><Ctrl>3", NULL, COL_FILE_SIZE},
     {"ByType", NULL, N_("By File _Type"), "<Alt><Ctrl>4", NULL, COL_FILE_DESC}
+#endif
 };
 
 static GtkRadioActionEntry main_win_side_bar_mode_actions[]=

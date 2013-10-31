@@ -43,6 +43,12 @@
 
 #include "gseal-gtk-compat.h"
 
+/* compatibility with LibFM < 1.0.2 */
+#if !FM_CHECK_VERSION(1, 0, 2)
+# define FM_FOLDER_MODEL_COL_INFO COL_FILE_INFO
+# define FM_FOLDER_MODEL_COL_ICON COL_FILE_ICON
+#endif
+
 #define SPACING 2
 #define PADDING 6
 #define MARGIN  2
@@ -167,7 +173,7 @@ static inline FmDesktopItem* desktop_item_new(FmFolderModel* model, GtkTreeIter*
 {
     FmDesktopItem* item = g_slice_new0(FmDesktopItem);
     fm_folder_model_set_item_userdata(model, it, item);
-    gtk_tree_model_get(GTK_TREE_MODEL(model), it, COL_FILE_INFO, &item->fi, -1);
+    gtk_tree_model_get(GTK_TREE_MODEL(model), it, FM_FOLDER_MODEL_COL_INFO, &item->fi, -1);
     fm_file_info_ref(item->fi);
     return item;
 }
@@ -246,7 +252,7 @@ static inline void load_items(FmDesktop* desktop)
             name = fm_file_info_get_name(item->fi);
             if(g_key_file_has_group(kf, name))
             {
-                gtk_tree_model_get(model, &it, COL_FILE_ICON, &icon, -1);
+                gtk_tree_model_get(model, &it, FM_FOLDER_MODEL_COL_ICON, &icon, -1);
                 desktop->fixed_items = g_list_prepend(desktop->fixed_items, item);
                 item->fixed_pos = TRUE;
                 item->area.x = g_key_file_get_integer(kf, name, "x", NULL);
@@ -1306,7 +1312,7 @@ static void layout_items(FmDesktop* self)
         {
             item = fm_folder_model_get_item_userdata(self->model, &it);
             icon = NULL;
-            gtk_tree_model_get(model, &it, COL_FILE_ICON, &icon, -1);
+            gtk_tree_model_get(model, &it, FM_FOLDER_MODEL_COL_ICON, &icon, -1);
             if(item->fixed_pos)
                 calc_item_size(self, item, icon);
             else
@@ -1337,7 +1343,7 @@ _next_position:
         {
             item = fm_folder_model_get_item_userdata(self->model, &it);
             icon = NULL;
-            gtk_tree_model_get(model, &it, COL_FILE_ICON, &icon, -1);
+            gtk_tree_model_get(model, &it, FM_FOLDER_MODEL_COL_ICON, &icon, -1);
             if(item->fixed_pos)
                 calc_item_size(self, item, icon);
             else
@@ -2002,7 +2008,7 @@ static void on_row_changed(FmFolderModel* model, GtkTreePath* tp, GtkTreeIter* i
     FmDesktopItem* item = fm_folder_model_get_item_userdata(model, it);
 
     fm_file_info_unref(item->fi);
-    gtk_tree_model_get(GTK_TREE_MODEL(model), it, COL_FILE_INFO, &item->fi, -1);
+    gtk_tree_model_get(GTK_TREE_MODEL(model), it, FM_FOLDER_MODEL_COL_INFO, &item->fi, -1);
     fm_file_info_ref(item->fi);
 
     redraw_item(desktop, item);
@@ -2666,7 +2672,7 @@ static gboolean on_expose(GtkWidget* w, GdkEventExpose* evt)
 
         if(intersect)
         {
-            gtk_tree_model_get(model, &it, COL_FILE_ICON, &icon, -1);
+            gtk_tree_model_get(model, &it, FM_FOLDER_MODEL_COL_ICON, &icon, -1);
             paint_item(self, item, cr, intersect, icon);
             if(icon)
                 g_object_unref(icon);
@@ -3637,6 +3643,7 @@ static GtkSelectionMode _get_sel_mode(FmFolderView* fv)
     return GTK_SELECTION_MULTIPLE;
 }
 
+#if !FM_CHECK_VERSION(1, 0, 2)
 static void _set_sort(FmFolderView* fv, GtkSortType type, FmFolderModelViewCol by)
 {
     if(type == (GtkSortType)app_config->desktop_sort_type &&
@@ -3656,6 +3663,7 @@ static void _get_sort(FmFolderView* fv, GtkSortType* type, FmFolderModelViewCol*
     if(by)
         *by = app_config->desktop_sort_by;
 }
+#endif
 
 static void _set_show_hidden(FmFolderView* fv, gboolean show)
 {
@@ -3809,8 +3817,10 @@ static void fm_desktop_view_init(FmFolderViewInterface* iface)
 {
     iface->set_sel_mode = _set_sel_mode;
     iface->get_sel_mode = _get_sel_mode;
+#if !FM_CHECK_VERSION(1, 0, 2)
     iface->set_sort = _set_sort;
     iface->get_sort = _get_sort;
+#endif
     iface->set_show_hidden = _set_show_hidden;
     iface->get_show_hidden = _get_show_hidden;
     iface->get_folder = _get_folder;

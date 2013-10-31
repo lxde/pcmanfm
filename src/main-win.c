@@ -171,15 +171,25 @@ static void update_sort_menu(FmMainWin* win)
 {
     GtkAction* act;
     FmFolderView* fv = win->folder_view;
-    FmFolderModelViewCol by = fm_folder_view_get_sort_by(fv);
+    GtkSortType type;
 #if FM_CHECK_VERSION(1, 0, 2)
+    FmFolderModelCol by;
+    FmSortMode mode;
+
     if(fv == NULL || fm_folder_view_get_model(fv) == NULL)
         /* since 1.0.2 libfm have sorting only in FmFolderModel therefore
            if there is no model then we cannot get last sorting from it */
         return;
+    if(!fm_folder_model_get_sort(fm_folder_view_get_model(fv), &by, &mode))
+        return;
+    type = FM_SORT_IS_ASCENDING(mode) ? GTK_SORT_ASCENDING : GTK_SORT_DESCENDING;
+#else
+    FmFolderModelViewCol by = fm_folder_view_get_sort_by(fv);
+
+    type = fm_folder_view_get_sort_type(fv);
 #endif
     act = gtk_ui_manager_get_action(win->ui, "/menubar/ViewMenu/Sort/Asc");
-    gtk_radio_action_set_current_value(GTK_RADIO_ACTION(act), fm_folder_view_get_sort_type(fv));
+    gtk_radio_action_set_current_value(GTK_RADIO_ACTION(act), type);
     act = gtk_ui_manager_get_action(win->ui, "/menubar/ViewMenu/Sort/ByName");
 #if FM_CHECK_VERSION(1, 0, 2)
     if(by == FM_FOLDER_MODEL_COL_DEFAULT)
@@ -257,11 +267,16 @@ static void on_bookmark(GtkMenuItem* mi, FmMainWin* win)
 
 static void create_bookmarks_menu(FmMainWin* win)
 {
-    const GList *l;
+    const GList *list, *l;
     GtkWidget* mi;
     int i = 0;
 
-    for(l=fm_bookmarks_list_all(win->bookmarks);l;l=l->next)
+#if FM_CHECK_VERSION(1, 0, 2)
+    list = fm_bookmarks_get_all(win->bookmarks);
+#else
+    list = fm_bookmarks_list_all(win->bookmarks);
+#endif
+    for(l=list;l;l=l->next)
     {
         FmBookmarkItem* item = (FmBookmarkItem*)l->data;
         mi = gtk_image_menu_item_new_with_label(item->name);
@@ -271,6 +286,9 @@ static void create_bookmarks_menu(FmMainWin* win)
         gtk_menu_shell_insert(win->bookmarks_menu, mi, i);
         ++i;
     }
+#if FM_CHECK_VERSION(1, 0, 2)
+    g_list_free_full((GList*)list, (GDestroyNotify)fm_bookmark_item_unref);
+#endif
     if(i > 0)
     {
         mi = gtk_separator_menu_item_new();
@@ -900,7 +918,14 @@ static void on_change_mode(GtkRadioAction* act, GtkRadioAction *cur, FmMainWin* 
 static void on_sort_by(GtkRadioAction* act, GtkRadioAction *cur, FmMainWin* win)
 {
     int val = gtk_radio_action_get_current_value(cur);
+#if FM_CHECK_VERSION(1, 0, 2)
+    FmFolderModel *model = fm_folder_view_get_model(win->folder_view);
+
+    if (model)
+        fm_folder_model_set_sort(model, val, FM_SORT_DEFAULT);
+#else
     fm_folder_view_sort(win->folder_view, -1, val);
+#endif
     if(val != app_config->sort_by)
     {
         app_config->sort_by = val;
@@ -911,7 +936,20 @@ static void on_sort_by(GtkRadioAction* act, GtkRadioAction *cur, FmMainWin* win)
 static void on_sort_type(GtkRadioAction* act, GtkRadioAction *cur, FmMainWin* win)
 {
     guint val = gtk_radio_action_get_current_value(cur);
+#if FM_CHECK_VERSION(1, 0, 2)
+    FmFolderModel *model = fm_folder_view_get_model(win->folder_view);
+    FmSortMode mode;
+
+    if (model)
+    {
+        fm_folder_model_get_sort(model, NULL, &mode);
+        mode &= ~FM_SORT_ORDER_MASK;
+        mode |= (val == GTK_SORT_ASCENDING) ? FM_SORT_ASCENDING : FM_SORT_DESCENDING;
+        fm_folder_model_set_sort(model, -1, mode);
+    }
+#else
     fm_folder_view_sort(win->folder_view, val, -1);
+#endif
     if(val != app_config->sort_type)
     {
         app_config->sort_type = val;
