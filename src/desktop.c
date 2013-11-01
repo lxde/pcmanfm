@@ -1685,8 +1685,27 @@ static void update_background(FmDesktop* desktop, int is_it)
                 wallpaper = app_config->wallpapers[cur_desktop];
             else
                 wallpaper = NULL;
-            g_free(app_config->wallpaper); /* update to current desktop */
-            app_config->wallpaper = g_strdup(wallpaper);
+            if (wallpaper == NULL && app_config->wallpaper != NULL)
+            {
+                /* if we have wallpaper set for previous desktop but have not
+                   for current one, it may mean one of two cases:
+                   - we expanded number of desktops;
+                   - we recently switched wallpaper_common off.
+                   If we selected to use wallpaper image but current desktop
+                   has no image set (i.e. one of cases above is happening),
+                   it is reasonable and correct to use last selected image for
+                   newly selected desktop instead of show plain color on it */
+                wallpaper = app_config->wallpaper;
+                if ((gint)cur_desktop < app_config->wallpapers_configured)
+                    /* this means app_config->wallpapers[cur_desktop] is NULL,
+                       see above, we have to update it too in this case */
+                    app_config->wallpapers[cur_desktop] = g_strdup(wallpaper);
+            }
+            else
+            {
+                g_free(app_config->wallpaper); /* update to current desktop */
+                app_config->wallpaper = g_strdup(wallpaper);
+            }
         }
     }
     else
