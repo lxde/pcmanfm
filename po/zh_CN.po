@@ -8,15 +8,16 @@ msgstr ""
 "Project-Id-Version: pcmanfm 1.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-10-16 23:12+0300\n"
-"PO-Revision-Date: 2013-06-11 10:21+0800\n"
-"Last-Translator: Wylmer Wang <wantinghard@gmail.com>\n"
+"PO-Revision-Date: 2013-11-05 03:09+0000\n"
+"Last-Translator: Wylmer <wantinghard@gmail.com>\n"
 "Language-Team: Chinese (simplified) <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Pootle 2.0.5\n"
+"X-Generator: Pootle 2.5.0\n"
+"X-POOTLE-MTIME: 1383620942.0\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2013"
@@ -77,7 +78,6 @@ msgid "Show \"_My Computer\" icon on desktop"
 msgstr "在桌面上显示“我的电脑”图标(_M)"
 
 #: ../data/ui/desktop-pref.glade.h:13
-#, fuzzy
 msgid "Show \"_Trash Can\" icon on desktop"
 msgstr "在桌面上显示“回收站”图标(_T)"
 
@@ -131,7 +131,7 @@ msgstr "壁纸(_W)："
 
 #: ../data/ui/pref.glade.h:1
 msgid "\"C_omputer\" special folder"
-msgstr ""
+msgstr "“计算机”特殊文件夹(_O)"
 
 #: ../data/ui/pref.glade.h:2
 msgid "<b>Auto-mount</b>"
@@ -154,9 +154,8 @@ msgid "<b>Icons</b>"
 msgstr "<b>图标</b>"
 
 #: ../data/ui/pref.glade.h:7
-#, fuzzy
 msgid "<b>Other options</b>"
-msgstr "<b>显示桌面图标</b>"
+msgstr "<b>其他选项</b>"
 
 #: ../data/ui/pref.glade.h:8
 msgid "<b>Programs</b>"
@@ -167,9 +166,8 @@ msgid "<b>Show in Places:</b>"
 msgstr "<b>在位置处显示：</b>"
 
 #: ../data/ui/pref.glade.h:10
-#, fuzzy
 msgid "<b>Templates</b>"
-msgstr "<b>文本</b>"
+msgstr "<b>模板</b>"
 
 #: ../data/ui/pref.glade.h:11
 msgid "<b>User Interface</b>"
@@ -177,7 +175,7 @@ msgstr "<b>用户界面</b>"
 
 #: ../data/ui/pref.glade.h:12
 msgid "<i>Commands below may include extra switches if necessary.</i>"
-msgstr ""
+msgstr "<i>以下命令在必要时可带额外的开关选项。</i>"
 
 #: ../data/ui/pref.glade.h:13
 msgid "A_rchiver integration:"
@@ -216,7 +214,6 @@ msgid "Compact View"
 msgstr "紧凑视图"
 
 #: ../data/ui/pref.glade.h:22
-#, fuzzy
 msgid "Confi_rm before moving files into \"trash can\""
 msgstr "在将文件移到“回收站”前请求确认(_R)"
 
@@ -226,7 +223,7 @@ msgstr "复制"
 
 #: ../data/ui/pref.glade.h:24
 msgid "D_efer test for content type on folder loading"
-msgstr ""
+msgstr "推迟文件夹载入时的内容类型检测(_E)"
 
 #: ../data/ui/pref.glade.h:25
 msgid "Defaul_t drop action:"
@@ -250,7 +247,7 @@ msgstr "对于大小超过这个尺寸的文件不生成缩略图(_N)："
 
 #: ../data/ui/pref.glade.h:30
 msgid "Don't ask options on _launch executable file"
-msgstr ""
+msgstr "启动可执行文件时不询问选择(_L)"
 
 #: ../data/ui/pref.glade.h:31
 msgid "Hid_e 'Close tab' buttons"
@@ -299,19 +296,19 @@ msgstr "偏好设置"
 
 #: ../data/ui/pref.glade.h:42
 msgid "Ru_n default application after creation from template"
-msgstr ""
+msgstr "在从模板创建后运行默认应用程序(_N)"
 
 #: ../data/ui/pref.glade.h:43
 msgid "S_how only user defined templates in menu"
-msgstr ""
+msgstr "菜单中只显示用户定义的模板(_H)"
 
 #: ../data/ui/pref.glade.h:44
 msgid "Show _only one template for each MIME type"
-msgstr ""
+msgstr "对每种 MIME 类型只显示一个模板(_O)"
 
 #: ../data/ui/pref.glade.h:45
 msgid "Show icons of bac_kup files shadowed"
-msgstr ""
+msgstr "显示隐藏的备份文件的图标(_K)"
 
 #: ../data/ui/pref.glade.h:46
 msgid "Size of _big icons:"
@@ -358,17 +355,16 @@ msgid "_Display"
 msgstr "显示(_D)"
 
 #: ../data/ui/pref.glade.h:57
-#, fuzzy
 msgid "_Erase files on removable media instead of \"trash can\" creation"
-msgstr "擦除可移动媒质上的文件，而非创建“回收站”(_E)"
+msgstr "擦除可移动媒体上的文件，而非创建“回收站”(_E)"
 
 #: ../data/ui/pref.glade.h:58
 msgid "_File system root"
-msgstr ""
+msgstr "根文件系统(_F)"
 
 #: ../data/ui/pref.glade.h:59
 msgid "_Format command:"
-msgstr ""
+msgstr "格式化命令(_F)："
 
 #: ../data/ui/pref.glade.h:60
 msgid "_General"
@@ -384,21 +380,19 @@ msgstr "布局(_L)"
 
 #: ../data/ui/pref.glade.h:63
 msgid "_Maximum width of tab label:"
-msgstr ""
+msgstr "标签页文字最大宽度(_M)："
 
 #: ../data/ui/pref.glade.h:64
 msgid "_Mount mountable volumes automatically on program startup"
 msgstr "在程序启动时自动挂载可挂载的卷(_M)"
 
 #: ../data/ui/pref.glade.h:65
-#, fuzzy
 msgid "_Move deleted files to \"trash can\" instead of erasing from disk"
 msgstr "将删除的文件移动到“回收站”而不是从磁盘中擦除(_M)"
 
 #: ../data/ui/pref.glade.h:66
-#, fuzzy
 msgid "_Network places"
-msgstr "网络驱动器(_W)"
+msgstr "网络位置(_N)"
 
 #: ../data/ui/pref.glade.h:67
 msgid "_Only show thumbnails for local files"
@@ -429,7 +423,6 @@ msgid "_Terminal emulator:"
 msgstr "终端模拟器(_T)："
 
 #: ../data/ui/pref.glade.h:74
-#, fuzzy
 msgid "_Trash can"
 msgstr "回收站(_T)"
 
@@ -448,7 +441,7 @@ msgstr "卷管理(_V)"
 #. Use genitive case here, context is: width is XXX characters
 #: ../data/ui/pref.glade.h:79
 msgid "characters"
-msgstr ""
+msgstr "字符"
 
 #: ../data/ui/autorun.glade.h:1
 msgid "<b>Removable medium is inserted</b>"
@@ -499,25 +492,21 @@ msgid "Snap to _Grid"
 msgstr "吸附到网格(_G)"
 
 #: ../src/desktop.c:571
-#, fuzzy
 msgid "Activate file"
-msgstr "<图像文件>"
+msgstr "激活文件"
 
 #: ../src/desktop.c:573
-#, fuzzy
 msgid "Show file menu"
-msgstr "显示隐藏内容(_N)"
+msgstr "显示文件菜单"
 
 #: ../src/desktop.c:989
-#, fuzzy
 msgid "Show desktop menu"
-msgstr "<b>显示桌面图标</b>"
+msgstr "显示桌面菜单"
 
 #. FIXME: set name by monitor
 #: ../src/desktop.c:1061
-#, fuzzy
 msgid "Desktop"
-msgstr "桌面(_D)"
+msgstr "桌面"
 
 #: ../src/main-win-ui.c:127
 msgid "_File"
@@ -614,7 +603,7 @@ msgstr "上一个文件夹(_P)"
 
 #: ../src/main-win-ui.c:154
 msgid "Return to previous folder in history"
-msgstr ""
+msgstr "返回历史中的上个文件夹"
 
 #: ../src/main-win-ui.c:155
 msgid "_Next Folder"
@@ -622,7 +611,7 @@ msgstr "下一个文件夹(_N)"
 
 #: ../src/main-win-ui.c:155
 msgid "Go forward to next folder in history"
-msgstr ""
+msgstr "前进到历史中的下个文件夹"
 
 #: ../src/main-win-ui.c:156
 msgid "Pa_rent Folder"
@@ -637,18 +626,16 @@ msgid "H_ome Folder"
 msgstr "主文件夹(_O)"
 
 #: ../src/main-win-ui.c:157
-#, fuzzy
 msgid "Go to home folder"
-msgstr "转到上级文件夹"
+msgstr "转到主文件夹"
 
 #: ../src/main-win-ui.c:158
 msgid "_Desktop"
 msgstr "桌面(_D)"
 
 #: ../src/main-win-ui.c:158
-#, fuzzy
 msgid "Go to desktop folder"
-msgstr "转到上级文件夹"
+msgstr "转到桌面文件夹"
 
 #: ../src/main-win-ui.c:159
 msgid "_Trash Can"
@@ -656,26 +643,23 @@ msgstr "回收站(_T)"
 
 #: ../src/main-win-ui.c:159
 msgid "Open trash can"
-msgstr ""
+msgstr "打开回收站"
 
 #: ../src/main-win-ui.c:160
-#, fuzzy
 msgid "_Computer Drives"
-msgstr "网络驱动器(_W)"
+msgstr "计算机驱动器(_C)"
 
 #: ../src/main-win-ui.c:160
-#, fuzzy
 msgid "Go to list of volumes in the computer"
-msgstr "在桌面上显示挂载的卷(_H)"
+msgstr "转到计算机上的卷列表(_H)"
 
 #: ../src/main-win-ui.c:161
 msgid "Net_work Drives"
 msgstr "网络驱动器(_W)"
 
 #: ../src/main-win-ui.c:161
-#, fuzzy
 msgid "Go to list of volumes on the network"
-msgstr "在桌面上显示挂载的卷(_H)"
+msgstr "转到网络上的卷列表"
 
 #: ../src/main-win-ui.c:162
 msgid "_Applications"
@@ -683,11 +667,11 @@ msgstr "应用程序(_A)"
 
 #: ../src/main-win-ui.c:162
 msgid "Go to root of applications menu folder"
-msgstr ""
+msgstr "转到应用程序菜单文件夹顶层"
 
 #: ../src/main-win-ui.c:163
 msgid "Open folder entered in location entry"
-msgstr ""
+msgstr "打开在地址框中输入的文件夹位置"
 
 #: ../src/main-win-ui.c:164
 msgid "_Bookmarks"
@@ -699,7 +683,7 @@ msgstr "添加到书签中(_A)"
 
 #: ../src/main-win-ui.c:165
 msgid "Add current folder to bookmarks list"
-msgstr ""
+msgstr "将当前文件夹加到书签列表"
 
 #: ../src/main-win-ui.c:166
 msgid "Tool_s"
@@ -718,9 +702,8 @@ msgid "Fin_d Files"
 msgstr "排序文件(_D)"
 
 #: ../src/main-win-ui.c:170
-#, fuzzy
 msgid "Open search dialog"
-msgstr "打开桌面偏好设置对话框"
+msgstr "打开搜索对话框"
 
 #. for popup menu - these entries exist in FmFolderView popup still
 #: ../src/main-win-ui.c:179
@@ -797,36 +780,30 @@ msgstr "远程"
 
 #: ../src/main-win.c:532
 msgid "Show history of visited folders"
-msgstr ""
+msgstr "显示访问文件夹历史"
 
 #: ../src/main-win.c:535
 msgid "History"
-msgstr ""
+msgstr "历史"
 
 #: ../src/main-win.c:549
 msgid "You are in super user mode"
 msgstr "您正处于超级用户模式"
 
 #: ../src/main-win.c:713
-#, fuzzy
 msgid "Lightweight file manager\n"
-msgstr ""
-"轻巧的文件管理器\n"
-"\n"
-"由 Hon Jen Yee(PCMan) 开发"
+msgstr "轻巧的文件管理器\n"
 
 #: ../src/main-win.c:718
 #, c-format
 msgid "using LibFM ver. %s\n"
-msgstr ""
+msgstr "使用 LibFM 版本 %s\n"
 
 #: ../src/main-win.c:720
-#, fuzzy
 msgid ""
 "\n"
 "Developed by Hon Jen Yee (PCMan)"
 msgstr ""
-"轻巧的文件管理器\n"
 "\n"
 "由 Hon Jen Yee(PCMan) 开发"
 
