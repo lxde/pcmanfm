@@ -8,15 +8,16 @@ msgstr ""
 "Project-Id-Version: pcmanfm 1.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-10-16 23:12+0300\n"
-"PO-Revision-Date: 2013-06-05 08:24+0600\n"
-"Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>\n"
+"PO-Revision-Date: 2013-11-05 03:02+0000\n"
+"Last-Translator: sotrud_nik <baurthefirst@gmail.com>\n"
 "Language-Team: Kazakh <kk_KZ@googlegroups.com>\n"
 "Language: kk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Pootle 2.5.0\n"
+"X-POOTLE-MTIME: 1383620538.0\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2013"
@@ -77,9 +78,8 @@ msgid "Show \"_My Computer\" icon on desktop"
 msgstr "\"Менің _компьютерім\" таңбашасын жұмыс үстелде көрсету"
 
 #: ../data/ui/desktop-pref.glade.h:13
-#, fuzzy
 msgid "Show \"_Trash Can\" icon on desktop"
-msgstr "\"Қоқыс _шелегі\" таңбашасын жұмыс үстелде көрсету"
+msgstr "Жұмыс үстелде \"Қоқыс _шелегі\" таңбашасын көрсету"
 
 #: ../data/ui/desktop-pref.glade.h:14
 msgid "Stretch to fill the entire screen"
@@ -133,7 +133,7 @@ msgstr "_Түсқағаз:"
 
 #: ../data/ui/pref.glade.h:1
 msgid "\"C_omputer\" special folder"
-msgstr ""
+msgstr "\"Комп_ьютер\" бумасы"
 
 #: ../data/ui/pref.glade.h:2
 msgid "<b>Auto-mount</b>"
@@ -156,9 +156,8 @@ msgid "<b>Icons</b>"
 msgstr "<b>Таңбашалар</b>"
 
 #: ../data/ui/pref.glade.h:7
-#, fuzzy
 msgid "<b>Other options</b>"
-msgstr "<b>Жұмыс үстел таңбашаларын көрсету</b>"
+msgstr "<b>Басқа опциялар</b>"
 
 #: ../data/ui/pref.glade.h:8
 msgid "<b>Programs</b>"
@@ -169,9 +168,8 @@ msgid "<b>Show in Places:</b>"
 msgstr "<b>Орында көрсету:</b>"
 
 #: ../data/ui/pref.glade.h:10
-#, fuzzy
 msgid "<b>Templates</b>"
-msgstr "<b>Мәтін</b>"
+msgstr "<b>Үлгілер</b>"
 
 #: ../data/ui/pref.glade.h:11
 msgid "<b>User Interface</b>"
@@ -180,6 +178,8 @@ msgstr "<b>Пайдаланушы интерфейсі</b>"
 #: ../data/ui/pref.glade.h:12
 msgid "<i>Commands below may include extra switches if necessary.</i>"
 msgstr ""
+"<i>Командаларда, керек болған кезде, басқа да ауыстырғыштар болуы "
+"мүмкін.</i>"
 
 #: ../data/ui/pref.glade.h:13
 msgid "A_rchiver integration:"
@@ -218,9 +218,8 @@ msgid "Compact View"
 msgstr "Ықшам көрінісі"
 
 #: ../data/ui/pref.glade.h:22
-#, fuzzy
 msgid "Confi_rm before moving files into \"trash can\""
-msgstr "Фа_йлдарды \"қоқыс шелегіне\" тастау алдында растау"
+msgstr "Файлдарды \"қоқыс шелегіне\" тастау алдында рас_тау"
 
 #: ../data/ui/pref.glade.h:23
 msgid "Copy"
@@ -228,7 +227,7 @@ msgstr "Көшіру"
 
 #: ../data/ui/pref.glade.h:24
 msgid "D_efer test for content type on folder loading"
-msgstr ""
+msgstr "Буманы жүктеу кезінде файлдар түрлерін анықтауды к_ейінге қалдыру"
 
 #: ../data/ui/pref.glade.h:25
 msgid "Defaul_t drop action:"
@@ -252,7 +251,7 @@ msgstr "Келесі өлшемнен асатын файлдар үшін кі�
 
 #: ../data/ui/pref.glade.h:30
 msgid "Don't ask options on _launch executable file"
-msgstr ""
+msgstr "Жөнелтілетін файлды ор_ындау кезінде таңдауды сұрамау"
 
 #: ../data/ui/pref.glade.h:31
 msgid "Hid_e 'Close tab' buttons"
@@ -303,19 +302,19 @@ msgstr "Баптаулар"
 
 #: ../data/ui/pref.glade.h:42
 msgid "Ru_n default application after creation from template"
-msgstr ""
+msgstr "Ү_лгіден жасалған соң, файл үшін үнсіз келісім қолданбасын жөнелту"
 
 #: ../data/ui/pref.glade.h:43
 msgid "S_how only user defined templates in menu"
-msgstr ""
+msgstr "Мәзірде тек пайдаланушы үлгілерін көр_сету"
 
 #: ../data/ui/pref.glade.h:44
 msgid "Show _only one template for each MIME type"
-msgstr ""
+msgstr "Әр MIME түрін үшін тек _бір үлгіні көрсету"
 
 #: ../data/ui/pref.glade.h:45
 msgid "Show icons of bac_kup files shadowed"
-msgstr ""
+msgstr "Қор көшірме файлдар таңбашаларын көлеңкелеп көрсе_ту"
 
 #: ../data/ui/pref.glade.h:46
 msgid "Size of _big icons:"
@@ -362,18 +361,16 @@ msgid "_Display"
 msgstr "Көр_сету"
 
 #: ../data/ui/pref.glade.h:57
-#, fuzzy
 msgid "_Erase files on removable media instead of \"trash can\" creation"
-msgstr ""
-"Ауыстыр_малы тасушыларда \"қоқыс шелегін\" жасау орнына, файлдарды өшіру"
+msgstr "Ауыстыр_малы тасушыларда \"қоқыс шелегін\" жасау орнына файлдарды өшіру"
 
 #: ../data/ui/pref.glade.h:58
 msgid "_File system root"
-msgstr ""
+msgstr "_Файлдық жүйенің түбірі"
 
 #: ../data/ui/pref.glade.h:59
 msgid "_Format command:"
-msgstr ""
+msgstr "_Пішімдеу командасы:"
 
 #: ../data/ui/pref.glade.h:60
 msgid "_General"
@@ -389,21 +386,19 @@ msgstr "Жа_йма"
 
 #: ../data/ui/pref.glade.h:63
 msgid "_Maximum width of tab label:"
-msgstr ""
+msgstr "Бет белгісінің _максималды ені:"
 
 #: ../data/ui/pref.glade.h:64
 msgid "_Mount mountable volumes automatically on program startup"
 msgstr "Бағдарлама іске қосылған кезде тіркеуге болатын бөлімдерді а_втотіркеу"
 
 #: ../data/ui/pref.glade.h:65
-#, fuzzy
 msgid "_Move deleted files to \"trash can\" instead of erasing from disk"
 msgstr "Ө_шірілетін файлдарды дисктен жою орнына \"қоқыс шелегіне\" жылжыту"
 
 #: ../data/ui/pref.glade.h:66
-#, fuzzy
 msgid "_Network places"
-msgstr "Же_лілік дисктер"
+msgstr "Же_лілік орындар"
 
 #: ../data/ui/pref.glade.h:67
 msgid "_Only show thumbnails for local files"
@@ -436,7 +431,6 @@ msgid "_Terminal emulator:"
 msgstr "Терминал _эмуляторы:"
 
 #: ../data/ui/pref.glade.h:74
-#, fuzzy
 msgid "_Trash can"
 msgstr "Қоқыс _шелегі"
 
@@ -455,7 +449,7 @@ msgstr "Бөлімдерді б_асқару"
 #. Use genitive case here, context is: width is XXX characters
 #: ../data/ui/pref.glade.h:79
 msgid "characters"
-msgstr ""
+msgstr "таңба"
 
 #: ../data/ui/autorun.glade.h:1
 msgid "<b>Removable medium is inserted</b>"
@@ -506,25 +500,21 @@ msgid "Snap to _Grid"
 msgstr "Т_орға бекіту"
 
 #: ../src/desktop.c:571
-#, fuzzy
 msgid "Activate file"
-msgstr "<сурет файлы>"
+msgstr "Файлды белсендіру"
 
 #: ../src/desktop.c:573
-#, fuzzy
 msgid "Show file menu"
-msgstr "Жас_ырынды көрсету"
+msgstr "Файл мәзірін көрсету"
 
 #: ../src/desktop.c:989
-#, fuzzy
 msgid "Show desktop menu"
-msgstr "<b>Жұмыс үстел таңбашаларын көрсету</b>"
+msgstr "Жұмыс үстел мәзірін көрсету"
 
 #. FIXME: set name by monitor
 #: ../src/desktop.c:1061
-#, fuzzy
 msgid "Desktop"
-msgstr "Жұ_мыс үстелі"
+msgstr "Жұмыс үстелі"
 
 #: ../src/main-win-ui.c:127
 msgid "_File"
@@ -621,7 +611,7 @@ msgstr "А_лдыңғы бума"
 
 #: ../src/main-win-ui.c:154
 msgid "Return to previous folder in history"
-msgstr ""
+msgstr "Тарихтағы алдыңғы бумаға қайту"
 
 #: ../src/main-win-ui.c:155
 msgid "_Next Folder"
@@ -629,7 +619,7 @@ msgstr "Кел_есі бума"
 
 #: ../src/main-win-ui.c:155
 msgid "Go forward to next folder in history"
-msgstr ""
+msgstr "Тарихтағы келесі бумаға өту"
 
 #: ../src/main-win-ui.c:156
 msgid "Pa_rent Folder"
@@ -644,18 +634,16 @@ msgid "H_ome Folder"
 msgstr "Ү_й бумасы"
 
 #: ../src/main-win-ui.c:157
-#, fuzzy
 msgid "Go to home folder"
-msgstr "Аталық бумаға өту"
+msgstr "Үй бумасына өту"
 
 #: ../src/main-win-ui.c:158
 msgid "_Desktop"
 msgstr "Жұ_мыс үстелі"
 
 #: ../src/main-win-ui.c:158
-#, fuzzy
 msgid "Go to desktop folder"
-msgstr "Аталық бумаға өту"
+msgstr "Жұмыс үстел бумасына өту"
 
 #: ../src/main-win-ui.c:159
 msgid "_Trash Can"
@@ -663,26 +651,23 @@ msgstr "Қоқыс _шелегі"
 
 #: ../src/main-win-ui.c:159
 msgid "Open trash can"
-msgstr ""
+msgstr "Қоқыс шелегін ашу"
 
 #: ../src/main-win-ui.c:160
-#, fuzzy
 msgid "_Computer Drives"
-msgstr "Же_лілік дисктер"
+msgstr "_Компьютер (құрылғылар)"
 
 #: ../src/main-win-ui.c:160
-#, fuzzy
 msgid "Go to list of volumes in the computer"
-msgstr "Бөлі_мдер таңбашаларын жұмыс үстелде көрсету"
+msgstr "Компьютерде қожетерлік томдар тізіміне өту"
 
 #: ../src/main-win-ui.c:161
 msgid "Net_work Drives"
 msgstr "Же_лілік дисктер"
 
 #: ../src/main-win-ui.c:161
-#, fuzzy
 msgid "Go to list of volumes on the network"
-msgstr "Бөлі_мдер таңбашаларын жұмыс үстелде көрсету"
+msgstr "Желіде қожетерлік томдар тізіміне өту"
 
 #: ../src/main-win-ui.c:162
 msgid "_Applications"
@@ -690,11 +675,11 @@ msgstr "Қол_данбалар"
 
 #: ../src/main-win-ui.c:162
 msgid "Go to root of applications menu folder"
-msgstr ""
+msgstr "Қолданбалар мәзірінің түбіріне өту"
 
 #: ../src/main-win-ui.c:163
 msgid "Open folder entered in location entry"
-msgstr ""
+msgstr "Енгізу өрісінде көрсетілген бумаға өту"
 
 #: ../src/main-win-ui.c:164
 msgid "_Bookmarks"
@@ -706,7 +691,7 @@ msgstr "Бе_тбелгілерге қосу"
 
 #: ../src/main-win-ui.c:165
 msgid "Add current folder to bookmarks list"
-msgstr ""
+msgstr "Ағымдағы буманы бетбелгілерге қосу"
 
 #: ../src/main-win-ui.c:166
 msgid "Tool_s"
@@ -725,9 +710,8 @@ msgid "Fin_d Files"
 msgstr "Файлдарды _табу"
 
 #: ../src/main-win-ui.c:170
-#, fuzzy
 msgid "Open search dialog"
-msgstr "Жұмыс үстелі баптаулар сұхбатын ашу"
+msgstr "Файлдарды іздеу сұхбатын ашу"
 
 #. for popup menu - these entries exist in FmFolderView popup still
 #: ../src/main-win-ui.c:179
@@ -804,36 +788,30 @@ msgstr "Кашықтағы"
 
 #: ../src/main-win.c:532
 msgid "Show history of visited folders"
-msgstr ""
+msgstr "Қаралған бумалар тарихын көрсету"
 
 #: ../src/main-win.c:535
 msgid "History"
-msgstr ""
+msgstr "Тарихы"
 
 #: ../src/main-win.c:549
 msgid "You are in super user mode"
 msgstr "Сіз әкімші ретінде жұмыс істеудесіз"
 
 #: ../src/main-win.c:713
-#, fuzzy
 msgid "Lightweight file manager\n"
-msgstr ""
-"Файлдарды жеңіл басқарушысы\n"
-"\n"
-"Жасаған Hon Jen Yee (PCMan)"
+msgstr "Файлдарды жеңіл басқарушысы\n"
 
 #: ../src/main-win.c:718
 #, c-format
 msgid "using LibFM ver. %s\n"
-msgstr ""
+msgstr "(LibFM %s нұсқасын қолдануда)\n"
 
 #: ../src/main-win.c:720
-#, fuzzy
 msgid ""
 "\n"
 "Developed by Hon Jen Yee (PCMan)"
 msgstr ""
-"Файлдарды жеңіл басқарушысы\n"
 "\n"
 "Жасаған Hon Jen Yee (PCMan)"
 
