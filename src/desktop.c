@@ -3714,7 +3714,7 @@ static gint _count_selected_files(FmFolderView* fv)
     FmDesktop* desktop = FM_DESKTOP(fv);
     GtkTreeModel* model = GTK_TREE_MODEL(desktop->model);
     GtkTreeIter it;
-    gint n;
+    gint n = 0;
     if(!gtk_tree_model_get_iter_first(model, &it))
         return 0;
     do
