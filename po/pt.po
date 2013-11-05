@@ -8,15 +8,16 @@ msgstr ""
 "Project-Id-Version: pcmanfm 1.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-10-16 23:12+0300\n"
-"PO-Revision-Date: 2013-09-03 14:13-0000\n"
-"Last-Translator: Sérgio Marques <smarquespt@gmail.com>\n"
+"PO-Revision-Date: 2013-11-05 12:06+0000\n"
+"Last-Translator: Sérgio <smarquespt@gmail.com>\n"
 "Language-Team: \n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.5.7\n"
+"X-Generator: Pootle 2.5.0\n"
+"X-POOTLE-MTIME: 1383653215.0\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2013"
@@ -79,7 +80,6 @@ msgid "Show \"_My Computer\" icon on desktop"
 msgstr "_Mostrar \"Meu computador\" na área de trabalho"
 
 #: ../data/ui/desktop-pref.glade.h:13
-#, fuzzy
 msgid "Show \"_Trash Can\" icon on desktop"
 msgstr "Mostrar \"Lixo\" na área de _trabalho"
 
@@ -156,9 +156,8 @@ msgid "<b>Icons</b>"
 msgstr "<b>Ícones</b>"
 
 #: ../data/ui/pref.glade.h:7
-#, fuzzy
 msgid "<b>Other options</b>"
-msgstr "<b>Mostrar ícones na área de trabalho</b>"
+msgstr "<b>Outras opções</b>"
 
 #: ../data/ui/pref.glade.h:8
 msgid "<b>Programs</b>"
@@ -169,9 +168,8 @@ msgid "<b>Show in Places:</b>"
 msgstr "<b>Mostrar em Locais:</b>"
 
 #: ../data/ui/pref.glade.h:10
-#, fuzzy
 msgid "<b>Templates</b>"
-msgstr "<b>Texto</b>"
+msgstr "<b>Modelos</b>"
 
 #: ../data/ui/pref.glade.h:11
 msgid "<b>User Interface</b>"
@@ -220,7 +218,6 @@ msgid "Compact View"
 msgstr "Compacta"
 
 #: ../data/ui/pref.glade.h:22
-#, fuzzy
 msgid "Confi_rm before moving files into \"trash can\""
 msgstr "Confirma_r antes de enviar os ficheiros para o lixo"
 
@@ -254,7 +251,7 @@ msgstr "_Não gerar miniaturas para os ficheiros que excedam este tamanho:"
 
 #: ../data/ui/pref.glade.h:30
 msgid "Don't ask options on _launch executable file"
-msgstr ""
+msgstr "Não pedir opções ao abrir ficheiros e_xecutáveis"
 
 #: ../data/ui/pref.glade.h:31
 msgid "Hid_e 'Close tab' buttons"
@@ -305,15 +302,15 @@ msgstr "Preferências"
 
 #: ../data/ui/pref.glade.h:42
 msgid "Ru_n default application after creation from template"
-msgstr ""
+msgstr "Executar aplicação pré-defi_nida ao criar de um modelo"
 
 #: ../data/ui/pref.glade.h:43
 msgid "S_how only user defined templates in menu"
-msgstr ""
+msgstr "Apenas mostrar no menu os modelos do utili_zador"
 
 #: ../data/ui/pref.glade.h:44
 msgid "Show _only one template for each MIME type"
-msgstr ""
+msgstr "Apenas m_ostrar um modelo para cada tipo MIME"
 
 #: ../data/ui/pref.glade.h:45
 msgid "Show icons of bac_kup files shadowed"
@@ -364,14 +361,13 @@ msgid "_Display"
 msgstr "E_xibição"
 
 #: ../data/ui/pref.glade.h:57
-#, fuzzy
 msgid "_Erase files on removable media instead of \"trash can\" creation"
 msgstr ""
 "_Eliminar ficheiros dos discos amovíveis em vez de os enviar para o lixo"
 
 #: ../data/ui/pref.glade.h:58
 msgid "_File system root"
-msgstr ""
+msgstr "Sistema de _ficheiros raiz"
 
 #: ../data/ui/pref.glade.h:59
 msgid "_Format command:"
@@ -391,21 +387,19 @@ msgstr "_Esquema"
 
 #: ../data/ui/pref.glade.h:63
 msgid "_Maximum width of tab label:"
-msgstr ""
+msgstr "Largura _máxima do texto do separador:"
 
 #: ../data/ui/pref.glade.h:64
 msgid "_Mount mountable volumes automatically on program startup"
 msgstr "Ao iniciar, _montar automaticamente os discos amovíveis"
 
 #: ../data/ui/pref.glade.h:65
-#, fuzzy
 msgid "_Move deleted files to \"trash can\" instead of erasing from disk"
 msgstr "_Mover ficheiros eliminados para o lixo em vez de os eliminar do disco"
 
 #: ../data/ui/pref.glade.h:66
-#, fuzzy
 msgid "_Network places"
-msgstr "_Unidades de rede"
+msgstr "Locais _de rede"
 
 #: ../data/ui/pref.glade.h:67
 msgid "_Only show thumbnails for local files"
@@ -437,7 +431,6 @@ msgid "_Terminal emulator:"
 msgstr "Emulador de _terminal:"
 
 #: ../data/ui/pref.glade.h:74
-#, fuzzy
 msgid "_Trash can"
 msgstr "_Lixo"
 
@@ -457,7 +450,7 @@ msgstr "Gestão de _volumes"
 #. Use genitive case here, context is: width is XXX characters
 #: ../data/ui/pref.glade.h:79
 msgid "characters"
-msgstr ""
+msgstr "caracteres"
 
 #: ../data/ui/autorun.glade.h:1
 msgid "<b>Removable medium is inserted</b>"
@@ -508,25 +501,21 @@ msgid "Snap to _Grid"
 msgstr "Ajustar à _grelha"
 
 #: ../src/desktop.c:571
-#, fuzzy
 msgid "Activate file"
-msgstr "<imagem>"
+msgstr "Ativar ficheiro"
 
 #: ../src/desktop.c:573
-#, fuzzy
 msgid "Show file menu"
-msgstr "Mostrar oc_ultos"
+msgstr "Mostrar menu de ficheiros"
 
 #: ../src/desktop.c:989
-#, fuzzy
 msgid "Show desktop menu"
-msgstr "<b>Mostrar ícones na área de trabalho</b>"
+msgstr "Mostrar menu da área de trabalho"
 
 #. FIXME: set name by monitor
 #: ../src/desktop.c:1061
-#, fuzzy
 msgid "Desktop"
-msgstr "Área _de trabalho"
+msgstr "Área de trabalho"
 
 #: ../src/main-win-ui.c:127
 msgid "_File"
@@ -623,7 +612,7 @@ msgstr "_Pasta anterior"
 
 #: ../src/main-win-ui.c:154
 msgid "Return to previous folder in history"
-msgstr ""
+msgstr "Ir para a anterior pasta do histórico"
 
 #: ../src/main-win-ui.c:155
 msgid "_Next Folder"
@@ -631,7 +620,7 @@ msgstr "Pasta segui_nte"
 
 #: ../src/main-win-ui.c:155
 msgid "Go forward to next folder in history"
-msgstr ""
+msgstr "Ir para a próxima pasta do histórico"
 
 #: ../src/main-win-ui.c:156
 msgid "Pa_rent Folder"
@@ -646,18 +635,16 @@ msgid "H_ome Folder"
 msgstr "P_asta pessoal"
 
 #: ../src/main-win-ui.c:157
-#, fuzzy
 msgid "Go to home folder"
-msgstr "Ir para pasta superior"
+msgstr "Ir para a pasta pessoal"
 
 #: ../src/main-win-ui.c:158
 msgid "_Desktop"
 msgstr "Área _de trabalho"
 
 #: ../src/main-win-ui.c:158
-#, fuzzy
 msgid "Go to desktop folder"
-msgstr "Ir para pasta superior"
+msgstr "Ir para pasta da área de trabalho"
 
 #: ../src/main-win-ui.c:159
 msgid "_Trash Can"
@@ -665,26 +652,23 @@ msgstr "_Lixo"
 
 #: ../src/main-win-ui.c:159
 msgid "Open trash can"
-msgstr ""
+msgstr "Abrir lixo"
 
 #: ../src/main-win-ui.c:160
-#, fuzzy
 msgid "_Computer Drives"
-msgstr "_Unidades de rede"
+msgstr "Unidades do _computador"
 
 #: ../src/main-win-ui.c:160
-#, fuzzy
 msgid "Go to list of volumes in the computer"
-msgstr "Mostrar ícones de volumes na área de trabal_ho"
+msgstr "Ir para a lista de unidades do computador"
 
 #: ../src/main-win-ui.c:161
 msgid "Net_work Drives"
 msgstr "_Unidades de rede"
 
 #: ../src/main-win-ui.c:161
-#, fuzzy
 msgid "Go to list of volumes on the network"
-msgstr "Mostrar ícones de volumes na área de trabal_ho"
+msgstr "Ira para a lista de unidades de rede"
 
 #: ../src/main-win-ui.c:162
 msgid "_Applications"
@@ -692,7 +676,7 @@ msgstr "_Aplicações"
 
 #: ../src/main-win-ui.c:162
 msgid "Go to root of applications menu folder"
-msgstr ""
+msgstr "Ir para pasta de menu da raiz de aplicações "
 
 #: ../src/main-win-ui.c:163
 msgid "Open folder entered in location entry"
@@ -708,7 +692,7 @@ msgstr "_Adicionar aos marcadores"
 
 #: ../src/main-win-ui.c:165
 msgid "Add current folder to bookmarks list"
-msgstr ""
+msgstr "Adicionar pasta atual aos marcadores"
 
 #: ../src/main-win-ui.c:166
 msgid "Tool_s"
@@ -727,9 +711,8 @@ msgid "Fin_d Files"
 msgstr "_Procurar ficheiros"
 
 #: ../src/main-win-ui.c:170
-#, fuzzy
 msgid "Open search dialog"
-msgstr "Abrir preferências da área de trabalho"
+msgstr "Abrir janela de procura"
 
 #. for popup menu - these entries exist in FmFolderView popup still
 #: ../src/main-win-ui.c:179
@@ -806,36 +789,30 @@ msgstr "Remoto"
 
 #: ../src/main-win.c:532
 msgid "Show history of visited folders"
-msgstr ""
+msgstr "Mostrar histórico de pastas acedidas"
 
 #: ../src/main-win.c:535
 msgid "History"
-msgstr ""
+msgstr "Histórico"
 
 #: ../src/main-win.c:549
 msgid "You are in super user mode"
 msgstr "Está no modo de super utilizador"
 
 #: ../src/main-win.c:713
-#, fuzzy
 msgid "Lightweight file manager\n"
-msgstr ""
-"Gestor de ficheiros leve e rápido\n"
-"\n"
-"Desenvolvido por Hon Jen Yee (PCMan)"
+msgstr "Gestor de ficheiros leve e rápido\n"
 
 #: ../src/main-win.c:718
 #, c-format
 msgid "using LibFM ver. %s\n"
-msgstr ""
+msgstr "utilizando LibFM %s.\n"
 
 #: ../src/main-win.c:720
-#, fuzzy
 msgid ""
 "\n"
 "Developed by Hon Jen Yee (PCMan)"
 msgstr ""
-"Gestor de ficheiros leve e rápido\n"
 "\n"
 "Desenvolvido por Hon Jen Yee (PCMan)"
 
