@@ -512,7 +512,7 @@ void pcmanfm_save_config(gboolean immediate)
     {
         /* install an idle handler to save the config file. */
         if( 0 == save_config_idle)
-            save_config_idle = g_idle_add_full(G_PRIORITY_LOW, (GSourceFunc)on_save_config_idle, NULL, NULL);
+            save_config_idle = gdk_threads_add_idle_full(G_PRIORITY_LOW, (GSourceFunc)on_save_config_idle, NULL, NULL);
     }
 }
 

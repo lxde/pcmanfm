@@ -319,7 +319,7 @@ _end:
 void fm_volume_manager_init()
 {
     /* init the volume manager when idle */
-    on_idle_handler = g_idle_add_full(G_PRIORITY_LOW, fm_volume_manager_delay_init, NULL, NULL);
+    on_idle_handler = gdk_threads_add_idle_full(G_PRIORITY_LOW, fm_volume_manager_delay_init, NULL, NULL);
 }
 
 void fm_volume_manager_finalize()

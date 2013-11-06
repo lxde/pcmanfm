@@ -164,7 +164,7 @@ static void on_location_activate(GtkEntry* entry, FmMainWin* win)
      * priority than GtkEntry's idle function (They use G_PRIORITY_HIGH).
      */
     if(win->idle_handler == 0)
-        win->idle_handler = g_idle_add_full(G_PRIORITY_LOW, idle_focus_view, win, NULL);
+        win->idle_handler = gdk_threads_add_idle_full(G_PRIORITY_LOW, idle_focus_view, win, NULL);
 }
 
 static void update_sort_menu(FmMainWin* win)

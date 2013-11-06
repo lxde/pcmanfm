@@ -371,7 +371,7 @@ static void queue_config_save(FmDesktop *desktop)
     desktop->conf.configured = TRUE;
     desktop->conf.changed = TRUE;
     if (idle_config_save == 0)
-        idle_config_save = g_idle_add(on_config_save_idle, NULL);
+        idle_config_save = gdk_threads_add_idle(on_config_save_idle, NULL);
 }
 
 static GList* get_selected_items(FmDesktop* desktop, int* n_items)
@@ -1439,7 +1439,7 @@ static gboolean on_idle_layout(FmDesktop* desktop)
 static void queue_layout_items(FmDesktop* desktop)
 {
     if(0 == desktop->idle_layout)
-        desktop->idle_layout = g_idle_add((GSourceFunc)on_idle_layout, desktop);
+        desktop->idle_layout = gdk_threads_add_idle((GSourceFunc)on_idle_layout, desktop);
 }
 
 static void paint_item(FmDesktop* self, FmDesktopItem* item, cairo_t* cr, GdkRectangle* expose_area, GdkPixbuf* icon)
@@ -3014,7 +3014,7 @@ static gboolean on_motion_notify(GtkWidget* w, GdkEventMotion* evt)
                     gdk_window_set_cursor(window, hand_cursor);
                     /* FIXME: timeout should be customizable */
                     if(self->single_click_timeout_handler == 0)
-                        self->single_click_timeout_handler = g_timeout_add(400, on_single_click_timeout, self); //400 ms
+                        self->single_click_timeout_handler = gdk_threads_add_timeout(400, on_single_click_timeout, self); //400 ms
                         /* Making a loop to aviod the selection of the item */
                         /* on_single_click_timeout(self); */
                 }
