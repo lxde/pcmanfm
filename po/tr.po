@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: 0.9.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-10-16 23:12+0300\n"
-"PO-Revision-Date: 2013-11-05 00:38+0000\n"
+"PO-Revision-Date: 2013-11-06 21:38+0000\n"
 "Last-Translator: vgezer <volkangezer@gmail.com>\n"
 "Language-Team: tr <tr@li.org>\n"
 "Language: tr\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1383611882.0\n"
+"X-POOTLE-MTIME: 1383773904.0\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2013"
@@ -139,7 +139,7 @@ msgstr "\"B_ilgisayar\" özel klasörü"
 
 #: ../data/ui/pref.glade.h:2
 msgid "<b>Auto-mount</b>"
-msgstr "\"B_ilgisayar\" özel klasörü"
+msgstr "<b>Otomatik bağla</b>"
 
 #: ../data/ui/pref.glade.h:3
 msgid "<b>Behavior</b>"
@@ -806,7 +806,7 @@ msgstr "Hafif dosya yöneticisi\n"
 #: ../src/main-win.c:718
 #, c-format
 msgid "using LibFM ver. %s\n"
-msgstr "kullanılan LibFM sürümü %s\n"
+msgstr "kullanılan LibFM sürüm. %s\n"
 
 #: ../src/main-win.c:720
 msgid ""
@@ -891,7 +891,7 @@ msgstr "Sadece bir ekran için --desktop seçeneğini kullan"
 
 #: ../src/pcmanfm.c:85
 msgid "Set desktop wallpaper from image FILE"
-msgstr "Masaüstü duvarkağıdını DOSYADAN ayarla"
+msgstr "Masaüstü duvar kağıdını resim DOSYAsından ayarla"
 
 #: ../src/pcmanfm.c:85
 msgid "FILE"
@@ -902,7 +902,7 @@ msgstr "DOSYA"
 msgid "Set mode of desktop wallpaper. MODE=(color|stretch|fit|center|tile)"
 msgstr ""
 "Masaüstü duvar kağıdı görüntüleme kipini seç. "
-"KİP=(color|stretch|fit|center|tile)"
+"KİP=(renk|ger|uydur|ortala|döşe)"
 
 #: ../src/pcmanfm.c:87
 msgid "MODE"
