@@ -49,16 +49,19 @@ static void fm_app_config_finalize(GObject *object)
     g_return_if_fail(IS_FM_APP_CONFIG(object));
 
     cfg = FM_APP_CONFIG(object);
-    if(cfg->wallpapers_configured > 0)
+    if (cfg->desktop_section.configured)
     {
+      if(cfg->desktop_section.wallpapers_configured > 0)
+      {
         int i;
 
-        for(i = 0; i < cfg->wallpapers_configured; i++)
-            g_free(cfg->wallpapers[i]);
-        g_free(cfg->wallpapers);
+        for(i = 0; i < cfg->desktop_section.wallpapers_configured; i++)
+            g_free(cfg->desktop_section.wallpapers[i]);
+        g_free(cfg->desktop_section.wallpapers);
+      }
+      g_free(cfg->desktop_section.wallpaper);
+      g_free(cfg->desktop_section.desktop_font);
     }
-    g_free(cfg->wallpaper);
-    g_free(cfg->desktop_font);
     g_free(cfg->su_cmd);
 
     G_OBJECT_CLASS(fm_app_config_parent_class)->finalize(object);
@@ -76,7 +79,7 @@ static void fm_app_config_init(FmAppConfig *cfg)
     cfg->mount_removable = TRUE;
     cfg->autorun = TRUE;
 
-    cfg->desktop_fg.red = cfg->desktop_fg.green = cfg->desktop_fg.blue = 65535;
+    cfg->desktop_section.desktop_fg.red = cfg->desktop_section.desktop_fg.green = cfg->desktop_section.desktop_fg.blue = 65535;
     cfg->win_width = 640;
     cfg->win_height = 480;
     cfg->splitter_pos = 150;
@@ -92,15 +95,13 @@ static void fm_app_config_init(FmAppConfig *cfg)
 #else
     cfg->sort_by = COL_FILE_NAME;
 #endif
-
-    cfg->desktop_sort_type = GTK_SORT_ASCENDING;
+    cfg->desktop_section.desktop_sort_type = GTK_SORT_ASCENDING;
 #if FM_CHECK_VERSION(1, 0, 2)
-    cfg->desktop_sort_by = FM_FOLDER_MODEL_COL_MTIME;
+    cfg->desktop_section.desktop_sort_by = FM_FOLDER_MODEL_COL_MTIME;
 #else
-    cfg->desktop_sort_by = COL_FILE_MTIME;
+    cfg->desktop_section.desktop_sort_by = COL_FILE_MTIME;
 #endif
-
-    cfg->wallpaper_common = TRUE;
+    cfg->desktop_section.wallpaper_common = TRUE;
 }
 
 
@@ -109,23 +110,16 @@ FmConfig *fm_app_config_new(void)
     return (FmConfig*)g_object_new(FM_APP_CONFIG_TYPE, NULL);
 }
 
-void fm_app_config_load_from_key_file(FmAppConfig* cfg, GKeyFile* kf)
+void fm_app_config_load_desktop_config(GKeyFile *kf, const char *group, FmDesktopConfig *cfg)
 {
     char* tmp;
     int tmp_int;
-    /* behavior */
-    fm_key_file_get_int(kf, "config", "bm_open_method", &cfg->bm_open_method);
-    tmp = g_key_file_get_string(kf, "config", "su_cmd", NULL);
-    g_free(cfg->su_cmd);
-    cfg->su_cmd = tmp;
 
-    /* volume management */
-    fm_key_file_get_bool(kf, "volume", "mount_on_startup", &cfg->mount_on_startup);
-    fm_key_file_get_bool(kf, "volume", "mount_removable", &cfg->mount_removable);
-    fm_key_file_get_bool(kf, "volume", "autorun", &cfg->autorun);
+    if (!g_key_file_has_group(kf, group))
+        return;
 
-    /* desktop */
-    if(fm_key_file_get_int(kf, "desktop", "wallpaper_mode", &tmp_int))
+    cfg->configured = TRUE;
+    if(fm_key_file_get_int(kf, group, "wallpaper_mode", &tmp_int))
         cfg->wallpaper_mode = (FmWallpaperMode)tmp_int;
 
     if(cfg->wallpapers_configured > 0)
@@ -138,7 +132,7 @@ void fm_app_config_load_from_key_file(FmAppConfig* cfg, GKeyFile* kf)
     }
     g_free(cfg->wallpaper);
     cfg->wallpaper = NULL;
-    fm_key_file_get_int(kf, "desktop", "wallpapers_configured", &cfg->wallpapers_configured);
+    fm_key_file_get_int(kf, group, "wallpapers_configured", &cfg->wallpapers_configured);
     if(cfg->wallpapers_configured > 0)
     {
         char wpn_buf[32];
@@ -148,53 +142,74 @@ void fm_app_config_load_from_key_file(FmAppConfig* cfg, GKeyFile* kf)
         for(i = 0; i < cfg->wallpapers_configured; i++)
         {
             snprintf(wpn_buf, sizeof(wpn_buf), "wallpaper%d", i);
-            tmp = g_key_file_get_string(kf, "desktop", wpn_buf, NULL);
+            tmp = g_key_file_get_string(kf, group, wpn_buf, NULL);
             cfg->wallpapers[i] = tmp;
         }
     }
-    fm_key_file_get_bool(kf, "desktop", "wallpaper_common", &cfg->wallpaper_common);
+    fm_key_file_get_bool(kf, group, "wallpaper_common", &cfg->wallpaper_common);
     if (cfg->wallpaper_common)
     {
-        tmp = g_key_file_get_string(kf, "desktop", "wallpaper", NULL);
+        tmp = g_key_file_get_string(kf, group, "wallpaper", NULL);
+        g_free(cfg->wallpaper);
         cfg->wallpaper = tmp;
     }
 
-    tmp = g_key_file_get_string(kf, "desktop", "desktop_bg", NULL);
+    tmp = g_key_file_get_string(kf, group, "desktop_bg", NULL);
     if(tmp)
     {
         gdk_color_parse(tmp, &cfg->desktop_bg);
         g_free(tmp);
     }
-    tmp = g_key_file_get_string(kf, "desktop", "desktop_fg", NULL);
+    tmp = g_key_file_get_string(kf, group, "desktop_fg", NULL);
     if(tmp)
     {
         gdk_color_parse(tmp, &cfg->desktop_fg);
         g_free(tmp);
     }
-    tmp = g_key_file_get_string(kf, "desktop", "desktop_shadow", NULL);
+    tmp = g_key_file_get_string(kf, group, "desktop_shadow", NULL);
     if(tmp)
     {
         gdk_color_parse(tmp, &cfg->desktop_shadow);
         g_free(tmp);
     }
 
-    tmp = g_key_file_get_string(kf, "desktop", "desktop_font", NULL);
+    tmp = g_key_file_get_string(kf, group, "desktop_font", NULL);
     g_free(cfg->desktop_font);
     cfg->desktop_font = tmp;
 
-    fm_key_file_get_bool(kf, "desktop", "show_wm_menu", &cfg->show_wm_menu);
-    if(fm_key_file_get_int(kf, "desktop", "sort_type", &tmp_int) &&
+    fm_key_file_get_bool(kf, group, "show_wm_menu", &cfg->show_wm_menu);
+    if(fm_key_file_get_int(kf, group, "sort_type", &tmp_int) &&
        tmp_int == GTK_SORT_DESCENDING)
         cfg->desktop_sort_type = GTK_SORT_DESCENDING;
     else
         cfg->desktop_sort_type = GTK_SORT_ASCENDING;
-    if(fm_key_file_get_int(kf, "desktop", "sort_by", &tmp_int) &&
+    if(fm_key_file_get_int(kf, group, "sort_by", &tmp_int) &&
 #if FM_CHECK_VERSION(1, 2, 0)
        fm_folder_model_col_is_valid((guint)tmp_int))
 #else
        FM_FOLDER_MODEL_COL_IS_VALID((guint)tmp_int))
 #endif
         cfg->desktop_sort_by = tmp_int;
+}
+
+void fm_app_config_load_from_key_file(FmAppConfig* cfg, GKeyFile* kf)
+{
+    char* tmp;
+    int tmp_int;
+
+    /* behavior */
+    fm_key_file_get_int(kf, "config", "bm_open_method", &cfg->bm_open_method);
+    tmp = g_key_file_get_string(kf, "config", "su_cmd", NULL);
+    g_free(cfg->su_cmd);
+    cfg->su_cmd = tmp;
+
+    /* volume management */
+    fm_key_file_get_bool(kf, "volume", "mount_on_startup", &cfg->mount_on_startup);
+    fm_key_file_get_bool(kf, "volume", "mount_removable", &cfg->mount_removable);
+    fm_key_file_get_bool(kf, "volume", "autorun", &cfg->autorun);
+
+    /* [desktop] section */
+    fm_app_config_load_desktop_config(kf, "desktop", &cfg->desktop_section);
 
     /* ui */
     fm_key_file_get_int(kf, "ui", "always_show_tabs", &cfg->always_show_tabs);
@@ -286,10 +301,41 @@ void fm_app_config_load_from_profile(FmAppConfig* cfg, const char* name)
     g_free(path);
 
     g_key_file_free(kf);
+}
 
-    /* set some additional default values when needed. */
-    if(!cfg->desktop_font) /* set a proper desktop font if needed */
-        cfg->desktop_font = g_strdup("Sans 12");
+void fm_app_config_save_desktop_config(GString *buf, const char *group, FmDesktopConfig *cfg)
+{
+    g_string_append_printf(buf, "[%s]\n"
+                                "wallpaper_mode=%d\n", group, cfg->wallpaper_mode);
+    g_string_append_printf(buf, "wallpaper_common=%d\n", cfg->wallpaper_common);
+    if (cfg->wallpapers && cfg->wallpapers_configured > 0)
+    {
+        int i;
+
+        g_string_append_printf(buf, "wallpapers_configured=%d\n", cfg->wallpapers_configured);
+        for (i = 0; i < cfg->wallpapers_configured; i++)
+            if (cfg->wallpapers[i])
+                g_string_append_printf(buf, "wallpaper%d=%s\n", i, cfg->wallpapers[i]);
+    }
+    if (cfg->wallpaper_common && cfg->wallpaper)
+        g_string_append_printf(buf, "wallpaper=%s\n", cfg->wallpaper);
+    g_string_append_printf(buf, "desktop_bg=#%02x%02x%02x\n",
+                           cfg->desktop_bg.red/257,
+                           cfg->desktop_bg.green/257,
+                           cfg->desktop_bg.blue/257);
+    g_string_append_printf(buf, "desktop_fg=#%02x%02x%02x\n",
+                           cfg->desktop_fg.red/257,
+                           cfg->desktop_fg.green/257,
+                           cfg->desktop_fg.blue/257);
+    g_string_append_printf(buf, "desktop_shadow=#%02x%02x%02x\n",
+                           cfg->desktop_shadow.red/257,
+                           cfg->desktop_shadow.green/257,
+                           cfg->desktop_shadow.blue/257);
+    if(cfg->desktop_font && *cfg->desktop_font)
+        g_string_append_printf(buf, "desktop_font=%s\n", cfg->desktop_font);
+    g_string_append_printf(buf, "show_wm_menu=%d\n", cfg->show_wm_menu);
+    g_string_append_printf(buf, "sort_type=%d\n", cfg->desktop_sort_type);
+    g_string_append_printf(buf, "sort_by=%d\n", cfg->desktop_sort_by);
 }
 
 void fm_app_config_save_profile(FmAppConfig* cfg, const char* name)
@@ -315,30 +361,6 @@ void fm_app_config_save_profile(FmAppConfig* cfg, const char* name)
         g_string_append_printf(buf, "mount_removable=%d\n", cfg->mount_removable);
         g_string_append_printf(buf, "autorun=%d\n", cfg->autorun);
 
-        g_string_append(buf, "\n[desktop]\n");
-        g_string_append_printf(buf, "wallpaper_mode=%d\n", cfg->wallpaper_mode);
-        g_string_append_printf(buf, "wallpaper_common=%d\n", cfg->wallpaper_common);
-        if (cfg->wallpapers && cfg->wallpapers_configured > 0)
-        {
-            int i;
-
-            g_string_append_printf(buf, "wallpapers_configured=%d\n", cfg->wallpapers_configured);
-            for (i = 0; i < cfg->wallpapers_configured; i++)
-                if (cfg->wallpapers[i])
-                    g_string_append_printf(buf, "wallpaper%d=%s\n", i, cfg->wallpapers[i]);
-        }
-        if (cfg->wallpaper_common)
-            g_string_append_printf(buf, "wallpaper=%s\n", cfg->wallpaper ? cfg->wallpaper : "");
-        //FIXME: should desktop_bg and wallpaper_mode be set for each desktop too?
-        g_string_append_printf(buf, "desktop_bg=#%02x%02x%02x\n", cfg->desktop_bg.red/257, cfg->desktop_bg.green/257, cfg->desktop_bg.blue/257);
-        g_string_append_printf(buf, "desktop_fg=#%02x%02x%02x\n", cfg->desktop_fg.red/257, cfg->desktop_fg.green/257, cfg->desktop_fg.blue/257);
-        g_string_append_printf(buf, "desktop_shadow=#%02x%02x%02x\n", cfg->desktop_shadow.red/257, cfg->desktop_shadow.green/257, cfg->desktop_shadow.blue/257);
-        if(cfg->desktop_font && *cfg->desktop_font)
-            g_string_append_printf(buf, "desktop_font=%s\n", cfg->desktop_font);
-        g_string_append_printf(buf, "show_wm_menu=%d\n", cfg->show_wm_menu);
-        g_string_append_printf(buf, "sort_type=%d\n", cfg->desktop_sort_type);
-        g_string_append_printf(buf, "sort_by=%d\n", cfg->desktop_sort_by);
-
         g_string_append(buf, "\n[ui]\n");
         g_string_append_printf(buf, "always_show_tabs=%d\n", cfg->always_show_tabs);
         g_string_append_printf(buf, "max_tab_chars=%d\n", cfg->max_tab_chars);
@@ -359,4 +381,3 @@ void fm_app_config_save_profile(FmAppConfig* cfg, const char* name)
     }
     g_free(dir_path);
 }
-

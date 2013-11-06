@@ -36,8 +36,6 @@ typedef enum {
 
 void fm_edit_preference( GtkWindow* parent, int page );
 
-void fm_desktop_preference(GtkAction* act, GtkWindow* parent);
-
 G_END_DECLS
 
 #endif

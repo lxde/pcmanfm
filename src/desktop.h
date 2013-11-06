@@ -26,6 +26,8 @@
 #include <gtk/gtk.h>
 #include <libfm/fm-gtk.h>
 
+#include "app-config.h"
+
 G_BEGIN_DECLS
 
 #define FM_TYPE_DESKTOP             (fm_desktop_get_type())
@@ -79,6 +81,8 @@ struct _FmDesktop
     FmFolderModel* model;
     guint cur_desktop;
     gint monitor;
+    /* desktop settings for this monitor */
+    FmDesktopConfig conf;
 };
 
 struct _FmDesktopClass
@@ -89,7 +93,10 @@ struct _FmDesktopClass
 GType       fm_desktop_get_type     (void);
 FmDesktop*  fm_desktop_new          (GdkScreen* screen, gint monitor);
 
-FmDesktop*  fm_desktop_get          (guint screen, guint monitor);
+FmDesktop*  fm_desktop_get          (gint screen, gint monitor);
+
+void        fm_desktop_preference   (GtkAction *act, FmDesktop *desktop);
+void        fm_desktop_wallpaper_changed(FmDesktop *desktop);
 
 void fm_desktop_manager_init(gint on_screen);
 void fm_desktop_manager_finalize();

@@ -61,6 +61,24 @@ typedef enum
 typedef struct _FmAppConfig         FmAppConfig;
 typedef struct _FmAppConfigClass        FmAppConfigClass;
 
+typedef struct
+{
+    FmWallpaperMode wallpaper_mode;
+    char* wallpaper;
+    char** wallpapers;
+    int wallpapers_configured;
+    gboolean wallpaper_common;
+    gint configured : 1;
+    gint changed : 1;
+    GdkColor desktop_bg;
+    GdkColor desktop_fg;
+    GdkColor desktop_shadow;
+    char* desktop_font;
+    gboolean show_wm_menu;
+    GtkSortType desktop_sort_type;
+    int desktop_sort_by;
+} FmDesktopConfig;
+
 struct _FmAppConfig
 {
     FmConfig parent;
@@ -90,24 +108,8 @@ struct _FmAppConfig
 
     char* su_cmd;
 
-    /* desktop manager */
-    /* FIXME: make these setting per FmDesktop */
-    /* emit "changed::wallpaper" */
-    FmWallpaperMode wallpaper_mode;
-    char* wallpaper;
-    char** wallpapers;
-    int wallpapers_configured;
-    gboolean wallpaper_common;
-    GdkColor desktop_bg;
-    /* emit "changed::desktop_text" */
-    GdkColor desktop_fg;
-    GdkColor desktop_shadow;
-    /* emit "changed::desktop_font" */
-    char* desktop_font;
-
-    gboolean show_wm_menu;
-    GtkSortType desktop_sort_type;
-    int desktop_sort_by;
+    /* pre-1.2.0 style config - common settings for all monitors */
+    FmDesktopConfig desktop_section;
 };
 
 struct _FmAppConfigClass
@@ -124,6 +126,8 @@ void fm_app_config_load_from_key_file(FmAppConfig* cfg, GKeyFile* kf);
 
 void fm_app_config_save_profile(FmAppConfig* cfg, const char* name);
 
+void fm_app_config_load_desktop_config(GKeyFile *kf, const char *group, FmDesktopConfig *cfg);
+void fm_app_config_save_desktop_config(GString *buf, const char *group, FmDesktopConfig *cfg);
 
 G_END_DECLS
 

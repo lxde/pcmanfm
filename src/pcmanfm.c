@@ -259,6 +259,9 @@ gboolean pcmanfm_run(gint screen_num)
 
     if(!files_to_open)
     {
+        /* FIXME: use screen number from client and pointer position */
+        FmDesktop *desktop = fm_desktop_get(0, 0);
+
         /* Launch desktop manager */
         if(show_desktop)
         {
@@ -281,23 +284,22 @@ gboolean pcmanfm_run(gint screen_num)
             desktop_off = FALSE;
             return FALSE;
         }
+        else if(desktop == NULL)
+            /* ignore desktop-oriented commands if no desktop support */;
         else if(show_pref > 0)
         {
-            /* FIXME: pass screen number from client */
-            fm_edit_preference(GTK_WINDOW(fm_desktop_get(0, 0)), show_pref - 1);
+            fm_edit_preference(GTK_WINDOW(desktop), show_pref - 1);
             show_pref = -1;
             return TRUE;
         }
         else if(desktop_pref)
         {
-            /* FIXME: pass screen number from client */
-            fm_desktop_preference(NULL, GTK_WINDOW(fm_desktop_get(0, 0)));
+            fm_desktop_preference(NULL, desktop);
             desktop_pref = FALSE;
             return TRUE;
         }
-        else
+        else if(wallpaper_mode || set_wallpaper)
         {
-            gboolean need_to_exit = (wallpaper_mode || set_wallpaper);
             gboolean wallpaper_changed = FALSE;
             if(set_wallpaper) /* a new wallpaper is assigned */
             {
@@ -305,14 +307,14 @@ gboolean pcmanfm_run(gint screen_num)
                 /* Make sure this is a support image file. */
                 if(gdk_pixbuf_get_file_info(set_wallpaper, NULL, NULL))
                 {
-                    if(app_config->wallpaper)
-                        g_free(app_config->wallpaper);
-                    app_config->wallpaper = set_wallpaper;
+                    if(desktop->conf.wallpaper)
+                        g_free(desktop->conf.wallpaper);
+                    desktop->conf.wallpaper = set_wallpaper;
                     if(! wallpaper_mode) /* if wallpaper mode is not specified */
                     {
                         /* do not use solid color mode; otherwise wallpaper won't be shown. */
-                        if(app_config->wallpaper_mode == FM_WP_COLOR)
-                            app_config->wallpaper_mode = FM_WP_FIT;
+                        if(desktop->conf.wallpaper_mode == FM_WP_COLOR)
+                            desktop->conf.wallpaper_mode = FM_WP_FIT;
                     }
                     wallpaper_changed = TRUE;
                 }
@@ -328,9 +330,9 @@ gboolean pcmanfm_run(gint screen_num)
                 {
                     if(strcmp(valid_wallpaper_modes[i], wallpaper_mode) == 0)
                     {
-                        if(i != app_config->wallpaper_mode)
+                        if(i != desktop->conf.wallpaper_mode)
                         {
-                            app_config->wallpaper_mode = i;
+                            desktop->conf.wallpaper_mode = i;
                             wallpaper_changed = TRUE;
                         }
                         break;
@@ -341,13 +343,9 @@ gboolean pcmanfm_run(gint screen_num)
             }
 
             if(wallpaper_changed)
-            {
-                fm_config_emit_changed(FM_CONFIG(app_config), "wallpaper");
-                fm_app_config_save_profile(app_config, profile);
-            }
+                fm_desktop_wallpaper_changed(desktop);
 
-            if(need_to_exit)
-                return FALSE;
+            return FALSE;
         }
     }
 

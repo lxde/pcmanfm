@@ -1,3 +1,30 @@
+Changes on 1.2.0 since 1.1.0:
+
+* Implemented accessibility for the desktop managed by pcmanfm.
+
+* Added missing accessibility relations between main window parts.
+
+* Added tooltips for desktop items. Tooltips contain full file names,
+    while desktop text shows them truncated in case of long names.
+
+* For LibFM version 1.2.0 (and newer) show version of LibFM in the About
+    window as well, not just PCManFM version.
+
+* Added support for configuration options of LibFM 1.1.0 and 1.2.0 into
+    Preferences dialog.
+
+* Adopted new LibFM APIs and disabled all the deprecated calls.
+
+* Implemented separated desktop configuration for each monitor. The
+    Desktop Preferences dialog will be applied only to current monitor.
+    If no setup was ever done for secondary monitor then setup will be
+    copied from primary one. Configuration will be converted into new
+    style from old one on the first start of PCManFM desktop manager.
+    The new configuration will be not known to old version of PCManFM so
+    if you start old one again, it will gain default configuration for
+    the desktop instead.
+
+
 Changes on 1.1.0 since 1.0.1:
 
 * Corrected underscores (mnemonics) on every menu and dialog.

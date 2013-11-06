@@ -35,7 +35,6 @@
 #define INIT_BOOL_SHOW(b, st, name, changed_notify)  init_bool(b, #name, G_STRUCT_OFFSET(st, name), changed_notify, TRUE)
 #define INIT_COMBO(b, st, name, changed_notify) init_combo(b, #name, G_STRUCT_OFFSET(st, name), changed_notify)
 #define INIT_ICON_SIZES(b, name) init_icon_sizes(b, #name, G_STRUCT_OFFSET(FmConfig, name))
-#define INIT_COLOR(b, st, name, changed_notify)  init_color(b, #name, G_STRUCT_OFFSET(st, name), changed_notify)
 #define INIT_SPIN(b, st, name, changed_notify)  init_spin(b, #name, G_STRUCT_OFFSET(st, name), changed_notify)
 #define INIT_ENTRY(b, st, name, changed_notify)  init_entry(b, #name, G_STRUCT_OFFSET(st, name), changed_notify)
 
@@ -46,8 +45,6 @@ static GtkWidget* icon_size_combo[3] = {0};
 static GtkWidget* bookmark_combo = NULL
 static GtkWidget* use_trash;
 */
-
-static GtkWindow* desktop_pref_dlg = NULL;
 
 static void on_response(GtkDialog* dlg, int res, GtkWindow** pdlg)
 {
@@ -239,32 +236,6 @@ static void on_use_trash_toggled(GtkToggleButton* btn, gpointer vbox_trash)
     }
     if (vbox_trash)
         gtk_widget_set_sensitive(vbox_trash, new_val);
-}
-
-static void on_color_set(GtkColorButton* btn, gpointer _off)
-{
-    gsize off = GPOINTER_TO_SIZE(_off);
-    GdkColor* val = (GdkColor*)G_STRUCT_MEMBER_P(fm_config, off);
-    GdkColor new_val;
-    gtk_color_button_get_color(btn, &new_val);
-    if( !gdk_color_equal(val, &new_val) )
-    {
-        const char* name = g_object_get_data((GObject*)btn, "changed");
-        if(!name)
-            name = gtk_buildable_get_name((GtkBuildable*)btn);
-        *val = new_val;
-        fm_config_emit_changed(fm_config, name);
-    }
-}
-
-static void init_color(GtkBuilder* b, const char* name, gsize off, const char* changed_notify)
-{
-    GtkColorButton* btn = GTK_COLOR_BUTTON(gtk_builder_get_object(b, name));
-    GdkColor* val = (GdkColor*)G_STRUCT_MEMBER_P(fm_config, off);
-    if(changed_notify)
-        g_object_set_data_full(G_OBJECT(btn), "changed", g_strdup(changed_notify), g_free);
-    gtk_color_button_set_color(btn, val);
-    g_signal_connect(btn, "color-set", G_CALLBACK(on_color_set), GSIZE_TO_POINTER(off));
 }
 
 static void on_spin_changed(GtkSpinButton* btn, gpointer _off)
@@ -496,89 +467,4 @@ void fm_edit_preference( GtkWindow* parent, int page )
         page = 0;
     gtk_notebook_set_current_page(notebook, page);
     gtk_window_present(pref_dlg);
-}
-
-static void on_wallpaper_set(GtkFileChooserButton* btn, gpointer user_data)
-{
-    char* file = gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(btn));
-    g_free(app_config->wallpaper);
-    app_config->wallpaper = file;
-    fm_config_emit_changed(fm_config, "wallpaper");
-}
-
-static void on_update_img_preview( GtkFileChooser *chooser, GtkImage* img )
-{
-    char* file = gtk_file_chooser_get_preview_filename( chooser );
-    GdkPixbuf* pix = NULL;
-    if( file )
-    {
-        pix = gdk_pixbuf_new_from_file_at_scale( file, 128, 128, TRUE, NULL );
-        g_free( file );
-    }
-    if( pix )
-    {
-        gtk_file_chooser_set_preview_widget_active(chooser, TRUE);
-        gtk_image_set_from_pixbuf( img, pix );
-        g_object_unref( pix );
-    }
-    else
-    {
-        gtk_image_clear( img );
-        gtk_file_chooser_set_preview_widget_active(chooser, FALSE);
-    }
-}
-
-static void on_desktop_font_set(GtkFontButton* btn, gpointer user_data)
-{
-    const char* font = gtk_font_button_get_font_name(btn);
-    if(font)
-    {
-        g_free(app_config->desktop_font);
-        app_config->desktop_font = g_strdup(font);
-        fm_config_emit_changed(fm_config, "desktop_font");
-    }
-}
-
-void fm_desktop_preference(GtkAction* act, GtkWindow* parent)
-{
-    if(!desktop_pref_dlg)
-    {
-        GtkBuilder* builder = gtk_builder_new();
-        GtkWidget* item, *img_preview;
-        gtk_builder_add_from_file(builder, PACKAGE_UI_DIR "/desktop-pref.ui", NULL);
-        desktop_pref_dlg = GTK_WINDOW(gtk_builder_get_object(builder, "dlg"));
-
-        item = (GtkWidget*)gtk_builder_get_object(builder, "wallpaper");
-        g_signal_connect(item, "file-set", G_CALLBACK(on_wallpaper_set), NULL);
-        img_preview = gtk_image_new();
-        gtk_misc_set_alignment(GTK_MISC(img_preview), 0.5, 0.0);
-        gtk_widget_set_size_request( img_preview, 128, 128 );
-        gtk_file_chooser_set_preview_widget(GTK_FILE_CHOOSER(item), img_preview);
-        g_signal_connect( item, "update-preview", G_CALLBACK(on_update_img_preview), img_preview );
-        if(app_config->wallpaper)
-            gtk_file_chooser_set_filename(GTK_FILE_CHOOSER(item), app_config->wallpaper);
-
-        INIT_COMBO(builder, FmAppConfig, wallpaper_mode, "wallpaper");
-        INIT_COLOR(builder, FmAppConfig, desktop_bg, "wallpaper");
-        INIT_BOOL(builder, FmAppConfig, wallpaper_common, "wallpaper");
-
-        INIT_COLOR(builder, FmAppConfig, desktop_fg, "desktop_text");
-        INIT_COLOR(builder, FmAppConfig, desktop_shadow, "desktop_text");
-
-        INIT_BOOL(builder, FmAppConfig, show_wm_menu, NULL);
-
-        item = (GtkWidget*)gtk_builder_get_object(builder, "desktop_font");
-        if(app_config->desktop_font)
-            gtk_font_button_set_font_name(GTK_FONT_BUTTON(item), app_config->desktop_font);
-        g_signal_connect(item, "font-set", G_CALLBACK(on_desktop_font_set), NULL);
-
-        g_signal_connect(desktop_pref_dlg, "response", G_CALLBACK(on_response), &desktop_pref_dlg);
-        g_object_unref(builder);
-
-        pcmanfm_ref();
-        g_signal_connect(desktop_pref_dlg, "destroy", G_CALLBACK(pcmanfm_unref), NULL);
-        if(parent)
-            gtk_window_set_transient_for(desktop_pref_dlg, parent);
-    }
-    gtk_window_present(desktop_pref_dlg);
 }
