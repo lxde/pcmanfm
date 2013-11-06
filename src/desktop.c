@@ -2354,7 +2354,7 @@ static void on_fix_pos(GtkToggleAction* act, gpointer user_data)
         layout_items(desktop);
     }
     g_list_free(items);
-    save_item_pos(desktop);
+    queue_config_save(desktop);
 }
 
 /* round() is only available in C99. Don't use it now for portability. */
@@ -3375,9 +3375,8 @@ static void on_drag_data_received (GtkWidget *dest_widget,
     }
     g_list_free(items);
 
-    /* FIXME: save position of desktop icons everytime is
-     * extremely inefficient, but currently inevitable. */
-    save_item_pos(desktop);
+    /* save position of desktop icons on next idle */
+    queue_config_save(desktop);
 
     queue_layout_items(desktop);
 }
@@ -4204,8 +4203,6 @@ void fm_desktop_manager_finalize()
     }
     for(i = 0; i < n_screens; i++)
     {
-        if(desktops[i]->monitor >= 0)
-            save_item_pos(desktops[i]);
         gtk_widget_destroy(GTK_WIDGET(desktops[i]));
     }
     g_free(desktops);
