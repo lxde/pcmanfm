@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: pcmanfm 0.9\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-10-16 23:12+0300\n"
-"PO-Revision-Date: 2013-06-03 08:24+0200\n"
-"Last-Translator: Klaus Knopper <knoppix@knopper.net>\n"
+"PO-Revision-Date: 2013-11-07 22:00+0000\n"
+"Last-Translator: Dar_Kuntu <ZAck13@gmx.at>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.0.5\n"
-"X-Poedit-Language: German\n"
+"X-Generator: Pootle 2.5.0\n"
+"X-POOTLE-MTIME: 1383861636.0\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2013"
@@ -81,9 +81,8 @@ msgid "Show \"_My Computer\" icon on desktop"
 msgstr "»Mein _Computer« auf der Arbeitsfläche anzeigen"
 
 #: ../data/ui/desktop-pref.glade.h:13
-#, fuzzy
 msgid "Show \"_Trash Can\" icon on desktop"
-msgstr "»_Papierkorb« auf der Arbeitsfläche anzeigen"
+msgstr "\"_Papierkorb\" auf Desktop anzeigen"
 
 #: ../data/ui/desktop-pref.glade.h:14
 msgid "Stretch to fill the entire screen"
@@ -160,9 +159,8 @@ msgid "<b>Icons</b>"
 msgstr "<b>Symbole</b>"
 
 #: ../data/ui/pref.glade.h:7
-#, fuzzy
 msgid "<b>Other options</b>"
-msgstr "<b>Desktop-Symbole anzeigen</b>"
+msgstr "<b>Zusätzliche Optionen</b>"
 
 #: ../data/ui/pref.glade.h:8
 msgid "<b>Programs</b>"
@@ -173,9 +171,8 @@ msgid "<b>Show in Places:</b>"
 msgstr "<b>In Orten anzeigen:</b>"
 
 #: ../data/ui/pref.glade.h:10
-#, fuzzy
 msgid "<b>Templates</b>"
-msgstr "<b>Text</b>"
+msgstr "<b>Vorlagen</b>"
 
 #: ../data/ui/pref.glade.h:11
 msgid "<b>User Interface</b>"
@@ -223,10 +220,9 @@ msgid "Compact View"
 msgstr "Listenansicht"
 
 #: ../data/ui/pref.glade.h:22
-#, fuzzy
 msgid "Confi_rm before moving files into \"trash can\""
 msgstr ""
-"Löschen von Dateien _bestätigen, bevor sie in den »Papierkorb« verschoben "
+"Löschen von Dateien _bestätigen, bevor sie in den \"Papierkorb\" verschoben "
 "werden"
 
 #: ../data/ui/pref.glade.h:23
@@ -371,11 +367,10 @@ msgid "_Display"
 msgstr "_Anzeige"
 
 #: ../data/ui/pref.glade.h:57
-#, fuzzy
 msgid "_Erase files on removable media instead of \"trash can\" creation"
 msgstr ""
-"Dateien auf _Wechseldatenträgern löschen anstatt sie in den den »Papierkorb« "
-"zu verschieben"
+"Dateien auf _Wechseldatenträgern löschen anstatt sie in den \"Papierkorb\" zu "
+"verschieben"
 
 #: ../data/ui/pref.glade.h:58
 msgid "_File system root"
@@ -406,14 +401,14 @@ msgid "_Mount mountable volumes automatically on program startup"
 msgstr "Datenträger bei Programmstart automatisch einhängen"
 
 #: ../data/ui/pref.glade.h:65
-#, fuzzy
 msgid "_Move deleted files to \"trash can\" instead of erasing from disk"
-msgstr "Dateien in den »_Papierkorb« verschieben anstatt sie zu löschen"
+msgstr ""
+"Gelöschte Dateien in den \"Papierkorb\" _verschieben anstatt sie von der "
+"Festplatte zu löschen"
 
 #: ../data/ui/pref.glade.h:66
-#, fuzzy
 msgid "_Network places"
-msgstr "_Netzwerk"
+msgstr "_Netzwerkumgebung"
 
 #: ../data/ui/pref.glade.h:67
 msgid "_Only show thumbnails for local files"
@@ -444,7 +439,6 @@ msgid "_Terminal emulator:"
 msgstr "_Terminal Emulator:"
 
 #: ../data/ui/pref.glade.h:74
-#, fuzzy
 msgid "_Trash can"
 msgstr "_Papierkorb"
 
@@ -515,25 +509,21 @@ msgid "Snap to _Grid"
 msgstr "_Am Raster ausrichten"
 
 #: ../src/desktop.c:571
-#, fuzzy
 msgid "Activate file"
-msgstr "<Bilddatei>"
+msgstr "Aktiviere Datei"
 
 #: ../src/desktop.c:573
-#, fuzzy
 msgid "Show file menu"
-msgstr "_Verborgene Dateien anzeigen"
+msgstr "Dateimenü anzeigen"
 
 #: ../src/desktop.c:989
-#, fuzzy
 msgid "Show desktop menu"
-msgstr "<b>Desktop-Symbole anzeigen</b>"
+msgstr "Desktop Menü anzeigen"
 
 #. FIXME: set name by monitor
 #: ../src/desktop.c:1061
-#, fuzzy
 msgid "Desktop"
-msgstr "_Desktop"
+msgstr "Desktop"
 
 #: ../src/main-win-ui.c:127
 msgid "_File"
@@ -675,9 +665,8 @@ msgid "Open trash can"
 msgstr ""
 
 #: ../src/main-win-ui.c:160
-#, fuzzy
 msgid "_Computer Drives"
-msgstr "_Netzwerk"
+msgstr "_Laufwerke"
 
 #: ../src/main-win-ui.c:160
 #, fuzzy
