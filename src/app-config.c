@@ -28,6 +28,58 @@
 
 #include "app-config.h"
 
+#if FM_CHECK_VERSION(1, 0, 2)
+static void _parse_sort(GKeyFile *kf, const char *group, FmSortMode *mode, FmFolderModelCol *col)
+{
+    int tmp_int;
+
+    /* FIXME: parse "sort" strings list first */
+    /* parse fallback old style sort config */
+    if(fm_key_file_get_int(kf, group, "sort_type", &tmp_int) &&
+       tmp_int == GTK_SORT_DESCENDING)
+        *mode = FM_SORT_DESCENDING;
+    else
+        *mode = FM_SORT_ASCENDING;
+    if(fm_key_file_get_int(kf, group, "sort_by", &tmp_int) &&
+#if FM_CHECK_VERSION(1, 2, 0)
+       fm_folder_model_col_is_valid((guint)tmp_int))
+#else
+       FM_FOLDER_MODEL_COL_IS_VALID((guint)tmp_int))
+#endif
+        *col = tmp_int;
+}
+#else /* < 1.0.2 */
+static void _parse_sort(GKeyFile *kf, const char *group, GtkSortType *mode, int *col)
+{
+    int tmp_int;
+
+    if(fm_key_file_get_int(kf, group, "sort_type", &tmp_int) &&
+       tmp_int == GTK_SORT_DESCENDING)
+        *mode = GTK_SORT_DESCENDING;
+    else
+        *mode = GTK_SORT_ASCENDING;
+    if(fm_key_file_get_int(kf, group, "sort_by", &tmp_int) &&
+       FM_FOLDER_MODEL_COL_IS_VALID((guint)tmp_int))
+        *col = tmp_int;
+}
+#endif
+
+#if FM_CHECK_VERSION(1, 0, 2)
+static void _save_sort(GString *buf, FmSortMode mode, FmFolderModelCol col)
+{
+    /* FIXME: save "sort" strings list instead */
+    g_string_append_printf(buf, "sort_type=%d\n", FM_SORT_IS_ASCENDING(mode) ? 0 : 1);
+    g_string_append_printf(buf, "sort_by=%d\n", col);
+}
+#else
+static void _save_sort(GString *buf, GtkSortType type, int col)
+{
+    g_string_append_printf(buf, "sort_type=%d\n", sort_type);
+    g_string_append_printf(buf, "sort_by=%d\n", col);
+}
+#endif
+
+
 static void fm_app_config_finalize              (GObject *object);
 
 G_DEFINE_TYPE(FmAppConfig, fm_app_config, FM_CONFIG_TYPE);
@@ -89,16 +141,15 @@ static void fm_app_config_init(FmAppConfig *cfg)
 
     cfg->view_mode = FM_FV_ICON_VIEW;
     cfg->show_hidden = FALSE;
-    cfg->sort_type = GTK_SORT_ASCENDING;
 #if FM_CHECK_VERSION(1, 0, 2)
+    cfg->sort_type = FM_SORT_ASCENDING;
     cfg->sort_by = FM_FOLDER_MODEL_COL_NAME;
-#else
-    cfg->sort_by = COL_FILE_NAME;
-#endif
-    cfg->desktop_section.desktop_sort_type = GTK_SORT_ASCENDING;
-#if FM_CHECK_VERSION(1, 0, 2)
+    cfg->desktop_section.desktop_sort_type = FM_SORT_ASCENDING;
     cfg->desktop_section.desktop_sort_by = FM_FOLDER_MODEL_COL_MTIME;
 #else
+    cfg->sort_type = GTK_SORT_ASCENDING;
+    cfg->sort_by = COL_FILE_NAME;
+    cfg->desktop_section.desktop_sort_type = GTK_SORT_ASCENDING;
     cfg->desktop_section.desktop_sort_by = COL_FILE_MTIME;
 #endif
     cfg->desktop_section.wallpaper_common = TRUE;
@@ -178,18 +229,7 @@ void fm_app_config_load_desktop_config(GKeyFile *kf, const char *group, FmDeskto
     cfg->desktop_font = tmp;
 
     fm_key_file_get_bool(kf, group, "show_wm_menu", &cfg->show_wm_menu);
-    if(fm_key_file_get_int(kf, group, "sort_type", &tmp_int) &&
-       tmp_int == GTK_SORT_DESCENDING)
-        cfg->desktop_sort_type = GTK_SORT_DESCENDING;
-    else
-        cfg->desktop_sort_type = GTK_SORT_ASCENDING;
-    if(fm_key_file_get_int(kf, group, "sort_by", &tmp_int) &&
-#if FM_CHECK_VERSION(1, 2, 0)
-       fm_folder_model_col_is_valid((guint)tmp_int))
-#else
-       FM_FOLDER_MODEL_COL_IS_VALID((guint)tmp_int))
-#endif
-        cfg->desktop_sort_by = tmp_int;
+    _parse_sort(kf, group, &cfg->desktop_sort_type, &cfg->desktop_sort_by);
 }
 
 void fm_app_config_load_from_key_file(FmAppConfig* cfg, GKeyFile* kf)
@@ -231,19 +271,7 @@ void fm_app_config_load_from_key_file(FmAppConfig* cfg, GKeyFile* kf)
     else
         cfg->view_mode = tmp_int;
     fm_key_file_get_bool(kf, "ui", "show_hidden", &cfg->show_hidden);
-    if(fm_key_file_get_int(kf, "ui", "sort_type", &tmp_int) &&
-       tmp_int == GTK_SORT_DESCENDING)
-        cfg->sort_type = GTK_SORT_DESCENDING;
-    else
-        cfg->sort_type = GTK_SORT_ASCENDING;
-    fm_key_file_get_int(kf, "ui", "sort_by", &cfg->sort_by);
-#if FM_CHECK_VERSION(1, 2, 0)
-    if(!fm_folder_model_col_is_valid(cfg->sort_by))
-        cfg->sort_by = FM_FOLDER_MODEL_COL_NAME;
-#else
-    if(!FM_FOLDER_MODEL_COL_IS_VALID(cfg->sort_by))
-        cfg->sort_by = COL_FILE_NAME;
-#endif
+    _parse_sort(kf, "ui", &cfg->sort_type, &cfg->sort_by);
 }
 
 void fm_app_config_load_from_profile(FmAppConfig* cfg, const char* name)
@@ -334,8 +362,7 @@ void fm_app_config_save_desktop_config(GString *buf, const char *group, FmDeskto
     if(cfg->desktop_font && *cfg->desktop_font)
         g_string_append_printf(buf, "desktop_font=%s\n", cfg->desktop_font);
     g_string_append_printf(buf, "show_wm_menu=%d\n", cfg->show_wm_menu);
-    g_string_append_printf(buf, "sort_type=%d\n", cfg->desktop_sort_type);
-    g_string_append_printf(buf, "sort_by=%d\n", cfg->desktop_sort_by);
+    _save_sort(buf, cfg->desktop_sort_type, cfg->desktop_sort_by);
 }
 
 void fm_app_config_save_profile(FmAppConfig* cfg, const char* name)
@@ -371,8 +398,7 @@ void fm_app_config_save_profile(FmAppConfig* cfg, const char* name)
         g_string_append_printf(buf, "side_pane_mode=%d\n", cfg->side_pane_mode);
         g_string_append_printf(buf, "view_mode=%d\n", cfg->view_mode);
         g_string_append_printf(buf, "show_hidden=%d\n", cfg->show_hidden);
-        g_string_append_printf(buf, "sort_type=%d\n", cfg->sort_type);
-        g_string_append_printf(buf, "sort_by=%d\n", cfg->sort_by);
+        _save_sort(buf, cfg->sort_type, cfg->sort_by);
 
         path = g_build_filename(dir_path, "pcmanfm.conf", NULL);
         g_file_set_contents(path, buf->str, buf->len, NULL);

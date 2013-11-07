@@ -526,7 +526,11 @@ static void fm_main_win_init(FmMainWin *win)
                                        G_CALLBACK(on_change_mode), win);
     gtk_action_group_add_radio_actions(act_grp, main_win_sort_type_actions,
                                        G_N_ELEMENTS(main_win_sort_type_actions),
+#if FM_CHECK_VERSION(1, 0, 2)
+                                       FM_SORT_IS_ASCENDING(app_config->sort_type) ? GTK_SORT_ASCENDING : GTK_SORT_DESCENDING,
+#else
                                        app_config->sort_type,
+#endif
                                        G_CALLBACK(on_sort_type), win);
     gtk_action_group_add_radio_actions(act_grp, main_win_sort_by_actions,
                                        G_N_ELEMENTS(main_win_sort_by_actions),
@@ -926,7 +930,7 @@ static void on_sort_by(GtkRadioAction* act, GtkRadioAction *cur, FmMainWin* win)
 #else
     fm_folder_view_sort(win->folder_view, -1, val);
 #endif
-    if(val != app_config->sort_by)
+    if(val != (int)app_config->sort_by)
     {
         app_config->sort_by = val;
         pcmanfm_save_config(FALSE);
@@ -946,15 +950,20 @@ static void on_sort_type(GtkRadioAction* act, GtkRadioAction *cur, FmMainWin* wi
         mode &= ~FM_SORT_ORDER_MASK;
         mode |= (val == GTK_SORT_ASCENDING) ? FM_SORT_ASCENDING : FM_SORT_DESCENDING;
         fm_folder_model_set_sort(model, -1, mode);
+        if(mode != app_config->sort_type)
+        {
+            app_config->sort_type = mode;
+            pcmanfm_save_config(FALSE);
+        }
     }
 #else
     fm_folder_view_sort(win->folder_view, val, -1);
-#endif
     if(val != app_config->sort_type)
     {
         app_config->sort_type = val;
         pcmanfm_save_config(FALSE);
     }
+#endif
 }
 
 static void on_side_pane_mode(GtkRadioAction* act, GtkRadioAction *cur, FmMainWin* win)

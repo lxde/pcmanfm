@@ -320,9 +320,7 @@ static void on_folder_start_loading(FmFolder* folder, FmTabPage* page)
            model is much faster without handlers connected to its signals */
         FmFolderModel* model = fm_folder_model_new(folder, FALSE);
         fm_folder_view_set_model(fv, model);
-        fm_folder_model_set_sort(model, app_config->sort_by,
-                                 (app_config->sort_type == GTK_SORT_ASCENDING) ?
-                                        FM_SORT_ASCENDING : FM_SORT_DESCENDING);
+        fm_folder_model_set_sort(model, app_config->sort_by, app_config->sort_type);
         g_object_unref(model);
     }
     else
@@ -352,9 +350,7 @@ static void on_folder_finish_loading(FmFolder* folder, FmTabPage* page)
         fm_folder_view_set_model(fv, model);
 #if FM_CHECK_VERSION(1, 0, 2)
         /* since 1.0.2 sorting should be applied on model instead of view */
-        fm_folder_model_set_sort(model, app_config->sort_by,
-                                 (app_config->sort_type == GTK_SORT_ASCENDING) ?
-                                        FM_SORT_ASCENDING : FM_SORT_DESCENDING);
+        fm_folder_model_set_sort(model, app_config->sort_by, app_config->sort_type);
 #endif
         g_object_unref(model);
     }

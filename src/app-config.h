@@ -75,8 +75,13 @@ typedef struct
     GdkColor desktop_shadow;
     char* desktop_font;
     gboolean show_wm_menu;
+#if FM_CHECK_VERSION(1, 0, 2)
+    FmSortMode desktop_sort_type;
+    FmFolderModelCol desktop_sort_by;
+#else
     GtkSortType desktop_sort_type;
     int desktop_sort_by;
+#endif
 } FmDesktopConfig;
 
 struct _FmAppConfig
@@ -103,8 +108,13 @@ struct _FmAppConfig
     /* default values for folder views */
     guint view_mode;
     gboolean show_hidden;
+#if FM_CHECK_VERSION(1, 0, 2)
+    FmSortMode sort_type;
+    FmFolderModelCol sort_by;
+#else
     GtkSortType sort_type;
     int sort_by;
+#endif
 
     char* su_cmd;
 

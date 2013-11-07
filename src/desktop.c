@@ -3405,13 +3405,13 @@ static void on_desktop_model_destroy(gpointer data, GObject* model)
 #if FM_CHECK_VERSION(1, 0, 2)
 static void on_sort_changed(GtkTreeSortable *model, FmDesktop *desktop)
 {
-    int by;
-    GtkSortType type;
+    FmFolderModelCol by;
+    FmSortMode type;
 
-    if (!gtk_tree_sortable_get_sort_column_id(model, &by, &type))
+    if (!fm_folder_model_get_sort(FM_FOLDER_MODEL(model), &by, &type))
         /* FIXME: print error if failed */
         return;
-    if (type == (GtkSortType)desktop->conf.desktop_sort_type &&
+    if (type == desktop->conf.desktop_sort_type &&
         by == desktop->conf.desktop_sort_by) /* not changed */
         return;
     desktop->conf.desktop_sort_type = type;
@@ -3432,11 +3432,14 @@ static inline void connect_model(FmDesktop* desktop)
     g_signal_connect(desktop->model, "row-deleted", G_CALLBACK(on_row_deleted), desktop);
     g_signal_connect(desktop->model, "row-changed", G_CALLBACK(on_row_changed), desktop);
     g_signal_connect(desktop->model, "rows-reordered", G_CALLBACK(on_rows_reordered), desktop);
+#if FM_CHECK_VERSION(1, 0, 2)
+    fm_folder_model_set_sort(desktop->model, desktop->conf.desktop_sort_by,
+                             desktop->conf.desktop_sort_type);
+    g_signal_connect(desktop->model, "sort-column-changed", G_CALLBACK(on_sort_changed), desktop);
+#else
     gtk_tree_sortable_set_sort_column_id(GTK_TREE_SORTABLE(desktop->model),
                                          desktop->conf.desktop_sort_by,
                                          desktop->conf.desktop_sort_type);
-#if FM_CHECK_VERSION(1, 0, 2)
-    g_signal_connect(desktop->model, "sort-column-changed", G_CALLBACK(on_sort_changed), desktop);
 #endif
 }
 
@@ -4176,9 +4179,15 @@ void fm_desktop_manager_init(gint on_screen)
             pc = gtk_widget_get_pango_context(widget);
             pango_context_set_font_description(pc, font_desc);
             pango_font_description_free(font_desc);
+#if FM_CHECK_VERSION(1, 0, 2)
+            fm_folder_model_set_sort(desktop->model,
+                                     desktop->conf.desktop_sort_by,
+                                     desktop->conf.desktop_sort_type);
+#else
             gtk_tree_sortable_set_sort_column_id(GTK_TREE_SORTABLE(desktop->model),
                                                  desktop->conf.desktop_sort_by,
                                                  desktop->conf.desktop_sort_type);
+#endif
             gtk_widget_realize(widget);  /* without this, setting wallpaper won't work */
             gtk_widget_show_all(widget);
             gdk_window_lower(gtk_widget_get_window(widget));
