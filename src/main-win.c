@@ -183,6 +183,12 @@ static void update_sort_menu(FmMainWin* win)
     if(!fm_folder_model_get_sort(fm_folder_view_get_model(fv), &by, &mode))
         return;
     type = FM_SORT_IS_ASCENDING(mode) ? GTK_SORT_ASCENDING : GTK_SORT_DESCENDING;
+    /* we don't handle extended modes in radio actions so do that here */
+    if(mode != app_config->sort_type)
+    {
+        app_config->sort_type = mode;
+        pcmanfm_save_config(FALSE);
+    }
 #else
     FmFolderModelViewCol by = fm_folder_view_get_sort_by(fv);
 
