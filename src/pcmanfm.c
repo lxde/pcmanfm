@@ -175,7 +175,6 @@ int main(int argc, char** argv)
 {
     FmConfig* config;
     GError* err = NULL;
-    gpointer null_model;
     SingleInstData inst;
 
 #ifdef ENABLE_NLS
@@ -226,9 +225,14 @@ int main(int argc, char** argv)
 
     fm_gtk_init(config);
 
+#if FM_CHECK_VERSION(1, 0, 2)
+#  if !FM_CHECK_VERSION(1, 2, 0)
+    /* the sort_by value isn't loaded with LibFM 1.1.x so we need a workaround */
     /* a little trick to initialize FmFolderModel class */
-    null_model = fm_folder_model_new(NULL, FALSE);
+    gpointer null_model = fm_folder_model_new(NULL, FALSE);
     g_object_unref(null_model);
+#  endif
+#endif
 
     /* load pcmanfm-specific config file */
     fm_app_config_load_from_profile(FM_APP_CONFIG(config), profile);
