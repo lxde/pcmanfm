@@ -26,6 +26,7 @@
 
 #include <libfm/fm-gtk.h>
 #include <stdio.h>
+#include <string.h>
 
 #include "app-config.h"
 
@@ -33,8 +34,36 @@
 static void _parse_sort(GKeyFile *kf, const char *group, FmSortMode *mode, FmFolderModelCol *col)
 {
     int tmp_int;
+    char **sort;
 
-    /* FIXME: parse "sort" strings list first */
+    /* parse "sort" strings list first */
+    sort = g_key_file_get_string_list(kf, group, "sort", NULL, NULL);
+    if (sort)
+    {
+        FmSortMode tmp_mode = 0;
+        FmFolderModelCol tmp_col = FM_FOLDER_MODEL_COL_DEFAULT;
+
+        for (tmp_int = 0; sort[tmp_int]; tmp_int++)
+        {
+            if (tmp_int == 0) /* column should be first! */
+                tmp_col = fm_folder_model_get_col_by_name(sort[tmp_int]);
+            else if (strcmp(sort[tmp_int], "ascending") == 0)
+                tmp_mode = (tmp_mode & ~FM_SORT_ORDER_MASK) | FM_SORT_ASCENDING;
+            else if (strcmp(sort[tmp_int], "descending") == 0)
+                tmp_mode = (tmp_mode & ~FM_SORT_ORDER_MASK) | FM_SORT_DESCENDING;
+            else if (strcmp(sort[tmp_int], "case") == 0)
+                tmp_mode |= FM_SORT_CASE_SENSITIVE;
+#if FM_CHECK_VERSION(1, 2, 0)
+            else if (strcmp(sort[tmp_int], "mingle") == 0)
+                tmp_mode |= FM_SORT_NO_FOLDER_FIRST;
+#endif
+        }
+        *mode = tmp_mode;
+        if (tmp_col != FM_FOLDER_MODEL_COL_DEFAULT)
+            *col = tmp_col;
+        g_strfreev(sort);
+        return;
+    }
     /* parse fallback old style sort config */
     if(fm_key_file_get_int(kf, group, "sort_type", &tmp_int) &&
        tmp_int == GTK_SORT_DESCENDING)
@@ -68,9 +97,19 @@ static void _parse_sort(GKeyFile *kf, const char *group, GtkSortType *mode, int 
 #if FM_CHECK_VERSION(1, 0, 2)
 static void _save_sort(GString *buf, FmSortMode mode, FmFolderModelCol col)
 {
-    /* FIXME: save "sort" strings list instead */
-    g_string_append_printf(buf, "sort_type=%d\n", FM_SORT_IS_ASCENDING(mode) ? 0 : 1);
-    g_string_append_printf(buf, "sort_by=%d\n", col);
+    const char *name = fm_folder_model_col_get_name(col);
+
+    if (name == NULL) /* FM_FOLDER_MODEL_COL_NAME is always valid */
+        name = fm_folder_model_col_get_name(FM_FOLDER_MODEL_COL_NAME);
+    g_string_append_printf(buf, "sort=%s;%s;", name,
+                           FM_SORT_IS_ASCENDING(mode) ? "ascending" : "descending");
+    if (mode & FM_SORT_CASE_SENSITIVE)
+        g_string_append(buf, "case;");
+#if FM_CHECK_VERSION(1, 2, 0)
+    if (mode & FM_SORT_NO_FOLDER_FIRST)
+        g_string_append(buf, "mingle;");
+#endif
+    g_string_append_c(buf, '\n');
 }
 #else
 static void _save_sort(GString *buf, GtkSortType type, int col)
