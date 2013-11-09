@@ -112,6 +112,8 @@ struct _FmAppConfig
 #if FM_CHECK_VERSION(1, 0, 2)
     FmSortMode sort_type;
     FmFolderModelCol sort_by;
+    /* list of columns formatted as name[:size] */
+    char **columns;
 #else
     GtkSortType sort_type;
     int sort_by;

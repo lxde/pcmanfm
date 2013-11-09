@@ -32,6 +32,8 @@
 
 #include "gseal-gtk-compat.h"
 
+#include <stdlib.h>
+
 /* Additional entries for FmFileMenu popup */
 static const char folder_menu_xml[]=
 "<popup>"
@@ -78,6 +80,9 @@ static void on_folder_content_changed(FmFolder* folder, FmTabPage* page);
 static FmJobErrorAction on_folder_error(FmFolder* folder, GError* err, FmJobErrorSeverity severity, FmTabPage* page);
 
 static void on_folder_view_sel_changed(FmFolderView* fv, gint n_sel, FmTabPage* page);
+#if FM_CHECK_VERSION(1, 2, 0)
+static void  on_folder_view_columns_changed(FmFolderView *fv, FmTabPage *page);
+#endif
 static char* format_status_text(FmTabPage* page);
 
 #if GTK_CHECK_VERSION(3, 0, 0)
@@ -190,6 +195,9 @@ void fm_tab_page_destroy(GtkObject *object)
     if(page->folder_view)
     {
         g_signal_handlers_disconnect_by_func(page->folder_view, on_folder_view_sel_changed, page);
+#if FM_CHECK_VERSION(1, 2, 0)
+        g_signal_handlers_disconnect_by_func(page->folder_view, on_folder_view_columns_changed, page);
+#endif
         g_object_unref(page->folder_view);
         page->folder_view = NULL;
     }
@@ -252,6 +260,35 @@ static void on_folder_view_sel_changed(FmFolderView* fv, gint n_sel, FmTabPage* 
     g_signal_emit(page, signals[STATUS], 0,
                   (guint)FM_STATUS_TEXT_SELECTED_FILES, msg);
 }
+
+#if FM_CHECK_VERSION(1, 2, 0)
+static void  on_folder_view_columns_changed(FmFolderView *fv, FmTabPage *page)
+{
+    GSList *columns = fm_folder_view_get_columns(fv), *l;
+    char **cols;
+    guint i;
+
+    if (columns == NULL)
+        return;
+    i = g_slist_length(columns);
+    cols = g_new(char *, i+1);
+    for (i = 0, l = columns; l; i++, l = l->next)
+    {
+        FmFolderViewColumnInfo *info = l->data;
+
+        if (info->width > 0)
+            cols[i] = g_strdup_printf("%s:%d",
+                                      fm_folder_model_col_get_name(info->col_id),
+                                      info->width);
+        else
+            cols[i] = g_strdup(fm_folder_model_col_get_name(info->col_id));
+    }
+    cols[i] = NULL; /* terminate the list */
+    g_strfreev(app_config->columns);
+    app_config->columns = cols;
+    pcmanfm_save_config(FALSE);
+}
+#endif
 
 static FmJobErrorAction on_folder_error(FmFolder* folder, GError* err, FmJobErrorSeverity severity, FmTabPage* page)
 {
@@ -524,6 +561,33 @@ static void fm_tab_page_init(FmTabPage *page)
 #if !FM_CHECK_VERSION(1, 0, 2)
     /* since 1.0.2 sorting should be applied on model instead */
     fm_folder_view_sort(folder_view, app_config->sort_type, app_config->sort_by);
+#else
+    /* update columns from config */
+    if (app_config->columns)
+    {
+        guint i, n = g_strv_length(app_config->columns);
+        FmFolderViewColumnInfo *infos = g_new(FmFolderViewColumnInfo, n);
+        GSList *infos_list = NULL;
+
+        for (i = 0; i < n; i++)
+        {
+            char *name = g_strdup(app_config->columns[i]), *delim;
+
+            infos[i].width = 0;
+            delim = strchr(name, ':');
+            if (delim)
+            {
+                *delim++ = '\0';
+                infos[i].width = atoi(delim);
+            }
+            infos[i].col_id = fm_folder_model_get_col_by_name(name);
+            g_free(name);
+            infos_list = g_slist_append(infos_list, &infos[i]);
+        }
+        fm_folder_view_set_columns(folder_view, infos_list);
+        g_slist_free(infos_list);
+        g_free(infos);
+    }
 #endif
     fm_folder_view_set_selection_mode(folder_view, GTK_SELECTION_MULTIPLE);
     page->nav_history = fm_nav_history_new();
@@ -554,6 +618,10 @@ static void fm_tab_page_init(FmTabPage *page)
 
     g_signal_connect(folder_view, "sel-changed",
                      G_CALLBACK(on_folder_view_sel_changed), page);
+#if FM_CHECK_VERSION(1, 2, 0)
+    g_signal_connect(folder_view, "columns-changed",
+                     G_CALLBACK(on_folder_view_columns_changed), page);
+#endif
     /*
     g_signal_connect(page->folder_view, "chdir",
                      G_CALLBACK(on_folder_view_chdir), page);

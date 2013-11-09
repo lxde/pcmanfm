@@ -275,6 +275,9 @@ void fm_app_config_load_desktop_config(GKeyFile *kf, const char *group, FmDeskto
 void fm_app_config_load_from_key_file(FmAppConfig* cfg, GKeyFile* kf)
 {
     char* tmp;
+#if FM_CHECK_VERSION(1, 0, 2)
+    char **tmpv;
+#endif
     int tmp_int;
 
     /* behavior */
@@ -312,6 +315,14 @@ void fm_app_config_load_from_key_file(FmAppConfig* cfg, GKeyFile* kf)
         cfg->view_mode = tmp_int;
     fm_key_file_get_bool(kf, "ui", "show_hidden", &cfg->show_hidden);
     _parse_sort(kf, "ui", &cfg->sort_type, &cfg->sort_by);
+#if FM_CHECK_VERSION(1, 0, 2)
+    tmpv = g_key_file_get_string_list(kf, "ui", "columns", NULL, NULL);
+    if (tmpv)
+    {
+        g_strfreev(cfg->columns);
+        cfg->columns = tmpv;
+    }
+#endif
 }
 
 void fm_app_config_load_from_profile(FmAppConfig* cfg, const char* name)
@@ -439,6 +450,17 @@ void fm_app_config_save_profile(FmAppConfig* cfg, const char* name)
         g_string_append_printf(buf, "view_mode=%d\n", cfg->view_mode);
         g_string_append_printf(buf, "show_hidden=%d\n", cfg->show_hidden);
         _save_sort(buf, cfg->sort_type, cfg->sort_by);
+#if FM_CHECK_VERSION(1, 0, 2)
+        if (cfg->columns && cfg->columns[0])
+        {
+            char **colptr = cfg->columns;
+
+            g_string_append(buf, "columns=");
+            for (colptr = cfg->columns; *colptr; colptr++)
+                g_string_append_printf(buf, "%s;", *colptr);
+            g_string_append_c(buf, '\n');
+        }
+#endif
 
         path = g_build_filename(dir_path, "pcmanfm.conf", NULL);
         g_file_set_contents(path, buf->str, buf->len, NULL);
