@@ -1,23 +1,21 @@
-# Serbian translation for PCManFM package
+# Serbian translation of PCManFM package
 # Copyright (C) 2010 the LXDE team
 # This file is distributed under the same license as the PCManFM package.
-# Jay A. Fleming <tito.nehru.naser@gmail.com>, 2010.
-#
+# Jay A. Fleming <tito.nehru.naser@gmail.com>, 2010-2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: PCManFM\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-10-16 23:12+0300\n"
-"PO-Revision-Date: 2013-09-06 20:39+0100\n"
-"Last-Translator: Jay A.Fleming <tito.nehru.naser@gmail.com>\n"
+"PO-Revision-Date: 2013-11-09 09:27+0100\n"
+"Last-Translator: Jay Alexander Fleming <tito.nehru.naser@gmail.com>\n"
 "Language-Team: \n"
 "Language: sr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Pootle 2.0.5\n"
 
 #: ../data/ui/about.glade.in.h:1
@@ -57,7 +55,8 @@ msgstr "Na sred ekrana"
 msgid "Color of _shadow:"
 msgstr "Boja _senke:"
 
-#: ../data/ui/desktop-pref.glade.h:8 ../src/desktop-ui.c:34
+#: ../data/ui/desktop-pref.glade.h:8
+#: ../src/desktop-ui.c:34
 #: ../data/pcmanfm-desktop-pref.desktop.in.h:2
 msgid "Desktop Preferences"
 msgstr "Postavke radne površi"
@@ -79,9 +78,8 @@ msgid "Show \"_My Computer\" icon on desktop"
 msgstr "Prikaži ikonu „_Računar“ na radnoj površi"
 
 #: ../data/ui/desktop-pref.glade.h:13
-#, fuzzy
 msgid "Show \"_Trash Can\" icon on desktop"
-msgstr "Prikaži ikonu „_Nepotrebno“ na radnoj površi"
+msgstr "Prikaži „_Nepotrebno“ na radnoj površi"
 
 #: ../data/ui/desktop-pref.glade.h:14
 msgid "Stretch to fill the entire screen"
@@ -133,7 +131,7 @@ msgstr "_Pozadinska slika:"
 
 #: ../data/ui/pref.glade.h:1
 msgid "\"C_omputer\" special folder"
-msgstr ""
+msgstr "„Računar“ poseban direktorijum"
 
 #: ../data/ui/pref.glade.h:2
 msgid "<b>Auto-mount</b>"
@@ -156,9 +154,8 @@ msgid "<b>Icons</b>"
 msgstr "<b>Ikone</b>"
 
 #: ../data/ui/pref.glade.h:7
-#, fuzzy
 msgid "<b>Other options</b>"
-msgstr "<b>Prikaži ikone radne površi</b>"
+msgstr "<b>Druge opcije</b>"
 
 #: ../data/ui/pref.glade.h:8
 msgid "<b>Programs</b>"
@@ -169,9 +166,8 @@ msgid "<b>Show in Places:</b>"
 msgstr "<b>Prikaži pod „Mesta“:</b>"
 
 #: ../data/ui/pref.glade.h:10
-#, fuzzy
 msgid "<b>Templates</b>"
-msgstr "<b>Tekst</b>"
+msgstr "<b>Predložak</b>"
 
 #: ../data/ui/pref.glade.h:11
 msgid "<b>User Interface</b>"
@@ -179,7 +175,7 @@ msgstr "<b>Korisničko okruženje</b>"
 
 #: ../data/ui/pref.glade.h:12
 msgid "<i>Commands below may include extra switches if necessary.</i>"
-msgstr ""
+msgstr "<i>Po potrebi, donja naredba može uključiti i dodatne parametre.</i>"
 
 #: ../data/ui/pref.glade.h:13
 msgid "A_rchiver integration:"
@@ -203,8 +199,7 @@ msgstr "Pitaj"
 
 #: ../data/ui/pref.glade.h:18
 msgid "Auto (move if on the same FS, copy otherwise)"
-msgstr ""
-"Automatski (premesti ako je na istom sistemu datoteka, u suprotnom umnoži)"
+msgstr "Sam odluči (premeštanje na istom sistemu datoteka, u suprotnom umnožavanje)"
 
 #: ../data/ui/pref.glade.h:19
 msgid "Clos_e tab containing removable medium when it is unmounted"
@@ -219,7 +214,6 @@ msgid "Compact View"
 msgstr "Zbijeni pregled"
 
 #: ../data/ui/pref.glade.h:22
-#, fuzzy
 msgid "Confi_rm before moving files into \"trash can\""
 msgstr "Potv_rda pre premeštanja datoteka u „Nepotrebno“"
 
@@ -237,8 +231,7 @@ msgstr "Podrazumevana radnja kod pre_vlačenja:"
 
 #: ../data/ui/pref.glade.h:26
 msgid "Delay of auto-selection in single click mode (0 to disable)"
-msgstr ""
-"Kašnjenje samo-odabira u režimu jednostrukog klika (0 za onemogućavanje)"
+msgstr "Kašnjenje samo-odabira u režimu jednostrukog klika (0 za onemogućavanje)"
 
 #: ../data/ui/pref.glade.h:27
 msgid "Des_ktop Folder"
@@ -246,7 +239,7 @@ msgstr "Direktorijum radne _površi"
 
 #: ../data/ui/pref.glade.h:28
 msgid "Detailed List View"
-msgstr "Detaljni pregled u obliku liste"
+msgstr "Detaljni pregled u obliku spiska"
 
 #: ../data/ui/pref.glade.h:29
 msgid "Do _not generate thumbnails for files exceeding this size:"
@@ -254,7 +247,7 @@ msgstr "_Ne pravi umanjeni prikaz datoteka čija veličina prelazi:"
 
 #: ../data/ui/pref.glade.h:30
 msgid "Don't ask options on _launch executable file"
-msgstr ""
+msgstr "Kod pokretanja programa ne zahtevaj dodatne _opcije"
 
 #: ../data/ui/pref.glade.h:31
 msgid "Hid_e 'Close tab' buttons"
@@ -270,12 +263,10 @@ msgstr "Pregled ikona"
 
 #: ../data/ui/pref.glade.h:34
 msgid ""
-"If checked then use Startup Notify for application if another not stated "
-"explicitly.\n"
+"If checked then use Startup Notify for application if another not stated explicitly.\n"
 "If unchecked then use Startup Notify only if that is defined for application."
 msgstr ""
-"Ako je označeno koristi „Startup Notify“ za program ako već nije drugačije "
-"navedeno.\n"
+"Ako je označeno koristi „Startup Notify“ za program ako već nije drugačije navedeno.\n"
 "U suprotnom koristi „Startup Notify“ samo ukoliko je to određeno u programu."
 
 #: ../data/ui/pref.glade.h:36
@@ -304,19 +295,19 @@ msgstr "Postavke"
 
 #: ../data/ui/pref.glade.h:42
 msgid "Ru_n default application after creation from template"
-msgstr ""
+msgstr "Pokreni podrazumeva_ni program po stvaranju posredstvom predloška"
 
 #: ../data/ui/pref.glade.h:43
 msgid "S_how only user defined templates in menu"
-msgstr ""
+msgstr "Prikaži u meniju _samo korisnički određene predloške"
 
 #: ../data/ui/pref.glade.h:44
 msgid "Show _only one template for each MIME type"
-msgstr ""
+msgstr "Prikaži sam_o jedan predložak po MIME vrsti"
 
 #: ../data/ui/pref.glade.h:45
 msgid "Show icons of bac_kup files shadowed"
-msgstr ""
+msgstr "Prikaži ikone datoteka rezervnih _kopija osenčeno"
 
 #: ../data/ui/pref.glade.h:46
 msgid "Size of _big icons:"
@@ -363,19 +354,16 @@ msgid "_Display"
 msgstr "_Prikaz"
 
 #: ../data/ui/pref.glade.h:57
-#, fuzzy
 msgid "_Erase files on removable media instead of \"trash can\" creation"
-msgstr ""
-"Um_esto stvaranja „Nepotrebno“ direktorijuma na izmenjivim medijima, trajno "
-"briši datoteke sa istih"
+msgstr "Briši datoteke sa izmenjivih medija bez stvaranja direktorijuma „Nepotrebno“ na njima!"
 
 #: ../data/ui/pref.glade.h:58
 msgid "_File system root"
-msgstr ""
+msgstr "_Koreni sistem datoteka"
 
 #: ../data/ui/pref.glade.h:59
 msgid "_Format command:"
-msgstr ""
+msgstr "Naredba za _formatiranje:"
 
 #: ../data/ui/pref.glade.h:60
 msgid "_General"
@@ -391,21 +379,19 @@ msgstr "_Razmeštaj"
 
 #: ../data/ui/pref.glade.h:63
 msgid "_Maximum width of tab label:"
-msgstr ""
+msgstr "Najveća _širina oznake lista:"
 
 #: ../data/ui/pref.glade.h:64
 msgid "_Mount mountable volumes automatically on program startup"
 msgstr "Po pokretanju programa _priključi dostupne particije"
 
 #: ../data/ui/pref.glade.h:65
-#, fuzzy
 msgid "_Move deleted files to \"trash can\" instead of erasing from disk"
-msgstr "Ne briši datoteke sa diska već ih pre_mesti u „Nepotrebno“"
+msgstr "Ne briši datoteke — pre_mesti ih u „Nepotrebno“!"
 
 #: ../data/ui/pref.glade.h:66
-#, fuzzy
 msgid "_Network places"
-msgstr "Mrežni _diskovi"
+msgstr "Mesta _na mreži"
 
 #: ../data/ui/pref.glade.h:67
 msgid "_Only show thumbnails for local files"
@@ -417,8 +403,7 @@ msgstr "Otvaraj datoteke _jednostrukim klikom"
 
 #: ../data/ui/pref.glade.h:69
 msgid "_Open mounted removable media in new tab instead of new window"
-msgstr ""
-"Umesto u novom prozoru, prikaži sadržaj izmenjivog medija u _novom listu"
+msgstr "Umesto u novom prozoru, prikaži sadržaj izmenjivog medija u _novom listu"
 
 #: ../data/ui/pref.glade.h:70
 msgid "_Show available options for removable media when they are inserted"
@@ -437,7 +422,6 @@ msgid "_Terminal emulator:"
 msgstr "Emulator _terminala:"
 
 #: ../data/ui/pref.glade.h:74
-#, fuzzy
 msgid "_Trash can"
 msgstr "Nepo_trebno"
 
@@ -456,7 +440,7 @@ msgstr "Upravljanje logičkim _diskovima"
 #. Use genitive case here, context is: width is XXX characters
 #: ../data/ui/pref.glade.h:79
 msgid "characters"
-msgstr ""
+msgstr "znakova"
 
 #: ../data/ui/autorun.glade.h:1
 msgid "<b>Removable medium is inserted</b>"
@@ -490,11 +474,13 @@ msgstr "Otvori upravnikom datoteka"
 msgid "Open in New Ta_b"
 msgstr "Otvori u _novom listu"
 
-#: ../src/desktop-ui.c:52 ../src/tab-page.c:53
+#: ../src/desktop-ui.c:52
+#: ../src/tab-page.c:53
 msgid "Open in New Win_dow"
 msgstr "Otvori u novom _prozoru"
 
-#: ../src/desktop-ui.c:54 ../src/tab-page.c:55
+#: ../src/desktop-ui.c:54
+#: ../src/tab-page.c:55
 msgid "Open in Termina_l"
 msgstr "Otvori u _terminalu"
 
@@ -511,20 +497,17 @@ msgid "Activate file"
 msgstr ""
 
 #: ../src/desktop.c:573
-#, fuzzy
 msgid "Show file menu"
-msgstr "Prikaži skrive_ne datoteke"
+msgstr "Prikaži meni datoteke"
 
 #: ../src/desktop.c:989
-#, fuzzy
 msgid "Show desktop menu"
-msgstr "<b>Prikaži ikone radne površi</b>"
+msgstr "Prikaži meni radne površi"
 
 #. FIXME: set name by monitor
 #: ../src/desktop.c:1061
-#, fuzzy
 msgid "Desktop"
-msgstr "Radna _površ"
+msgstr "Radna površ"
 
 #: ../src/main-win-ui.c:127
 msgid "_File"
@@ -544,11 +527,11 @@ msgstr "Stvori novi list za ovaj direktorijum"
 
 #: ../src/main-win-ui.c:130
 msgid "C_reate New..."
-msgstr "Nap_ravi nov..."
+msgstr "_Stvori nov..."
 
 #: ../src/main-win-ui.c:131
 msgid "_Close Tab"
-msgstr "_Zatvori list"
+msgstr "Z_atvori list"
 
 #: ../src/main-win-ui.c:132
 msgid "Close _Window"
@@ -621,7 +604,7 @@ msgstr "Na_zad"
 
 #: ../src/main-win-ui.c:154
 msgid "Return to previous folder in history"
-msgstr ""
+msgstr "Vrati se u prethodni direktorijum istorijata"
 
 #: ../src/main-win-ui.c:155
 msgid "_Next Folder"
@@ -629,7 +612,7 @@ msgstr "Na_pred"
 
 #: ../src/main-win-ui.c:155
 msgid "Go forward to next folder in history"
-msgstr ""
+msgstr "Idi u naredni direktorijum istorijata"
 
 #: ../src/main-win-ui.c:156
 msgid "Pa_rent Folder"
@@ -644,18 +627,16 @@ msgid "H_ome Folder"
 msgstr "Li_čne datoteke"
 
 #: ../src/main-win-ui.c:157
-#, fuzzy
 msgid "Go to home folder"
-msgstr "Idi u naddirektorijum"
+msgstr "Idi u „Lične datoteke“"
 
 #: ../src/main-win-ui.c:158
 msgid "_Desktop"
 msgstr "Radna _površ"
 
 #: ../src/main-win-ui.c:158
-#, fuzzy
 msgid "Go to desktop folder"
-msgstr "Idi u naddirektorijum"
+msgstr "Idi u „Radna površ“"
 
 #: ../src/main-win-ui.c:159
 msgid "_Trash Can"
@@ -663,26 +644,23 @@ msgstr "Nepo_trebno"
 
 #: ../src/main-win-ui.c:159
 msgid "Open trash can"
-msgstr ""
+msgstr "Otvori „Nepotrebno“"
 
 #: ../src/main-win-ui.c:160
-#, fuzzy
 msgid "_Computer Drives"
-msgstr "Mrežni _diskovi"
+msgstr " _Diskovi u računaru"
 
 #: ../src/main-win-ui.c:160
-#, fuzzy
 msgid "Go to list of volumes in the computer"
-msgstr "Prikaži ikone logičkih _diskova na radnoj površi"
+msgstr "Prikaži spisak logičkih diskova na ovom računaru"
 
 #: ../src/main-win-ui.c:161
 msgid "Net_work Drives"
-msgstr "Mrežni _diskovi"
+msgstr "Diskovi na _mreži"
 
 #: ../src/main-win-ui.c:161
-#, fuzzy
 msgid "Go to list of volumes on the network"
-msgstr "Prikaži ikone logičkih _diskova na radnoj površi"
+msgstr "Prikaži spisak logičkih diskova na mreži"
 
 #: ../src/main-win-ui.c:162
 msgid "_Applications"
@@ -690,11 +668,12 @@ msgstr "Progr_ami"
 
 #: ../src/main-win-ui.c:162
 msgid "Go to root of applications menu folder"
-msgstr ""
+msgstr "Idi u polazni direktorijum programskog menija"
 
 #: ../src/main-win-ui.c:163
+#, fuzzy
 msgid "Open folder entered in location entry"
-msgstr ""
+msgstr "Otvori direktorijum unet u polje mesta"
 
 #: ../src/main-win-ui.c:164
 msgid "_Bookmarks"
@@ -706,7 +685,7 @@ msgstr "Dod_aj u obeleživače"
 
 #: ../src/main-win-ui.c:165
 msgid "Add current folder to bookmarks list"
-msgstr ""
+msgstr "Dodajte tekući direktorijum u spisak obeleživača"
 
 #: ../src/main-win-ui.c:166
 msgid "Tool_s"
@@ -718,16 +697,15 @@ msgstr "Otvori tekući direktorijum u _terminalu"
 
 #: ../src/main-win-ui.c:168
 msgid "Open Current Folder as _Root"
-msgstr "Otvori tekući direktorijum kao administrator"
+msgstr "Otvo_ri tekući direktorijum kao administrator"
 
 #: ../src/main-win-ui.c:170
 msgid "Fin_d Files"
 msgstr "P_ronađi datoteke"
 
 #: ../src/main-win-ui.c:170
-#, fuzzy
 msgid "Open search dialog"
-msgstr "Otvori podešavanja radne površi"
+msgstr "Otvori prozorče za pretragu"
 
 #. for popup menu - these entries exist in FmFolderView popup still
 #: ../src/main-win-ui.c:179
@@ -736,7 +714,7 @@ msgstr "Direktorijum"
 
 #: ../src/main-win-ui.c:180
 msgid "Empty File"
-msgstr "Prazna datoteka"
+msgstr "Praznu datoteku"
 
 #: ../src/main-win-ui.c:186
 msgid "Show Hidde_n"
@@ -804,40 +782,35 @@ msgstr "Udaljeno"
 
 #: ../src/main-win.c:532
 msgid "Show history of visited folders"
-msgstr ""
+msgstr "Prikaži spisak posećivanih direktorijuma"
 
 #: ../src/main-win.c:535
 msgid "History"
-msgstr ""
+msgstr "Istorijat"
 
 #: ../src/main-win.c:549
 msgid "You are in super user mode"
-msgstr "UPOZORENJE: Koristite program sa administratorskim privilegijama"
+msgstr "Koristite program sa administratorskim privilegijama"
 
 #: ../src/main-win.c:713
-#, fuzzy
 msgid "Lightweight file manager\n"
-msgstr ""
-"Lagani upravnik datoteka\n"
-"\n"
-"Priredio: Hon Jen Yee (PCMan)"
+msgstr "Lagani upravnik datoteka\n"
 
 #: ../src/main-win.c:718
 #, c-format
 msgid "using LibFM ver. %s\n"
-msgstr ""
+msgstr "koristeći LibFM, izdanje %s\n"
 
 #: ../src/main-win.c:720
-#, fuzzy
 msgid ""
 "\n"
 "Developed by Hon Jen Yee (PCMan)"
 msgstr ""
-"Lagani upravnik datoteka\n"
 "\n"
 "Priredio: Hon Jen Yee (PCMan)"
 
-#: ../src/main-win.c:745 ../src/main-win.c:753
+#: ../src/main-win.c:745
+#: ../src/main-win.c:753
 msgid "Keyboard navigation"
 msgstr "Upravljanje tastaturom"
 
@@ -850,10 +823,8 @@ msgid ""
 "F10: activate main menu\n"
 "Ctrl+L or Alt+D: jump focus to Path Bar"
 msgstr ""
-"Tab: kružni fokus — Prikaz direktorijuma -> Bočni panel -> Traka sa "
-"alatkama\n"
-"Shift+Tab: kružni fokus — Traka sa alatkama -> Bočni panel -> Prikaz "
-"direktorijuma\n"
+"Tab: kružni fokus — Prikaz direktorijuma -> Bočni panel -> Traka sa alatkama\n"
+"Shift+Tab: kružni fokus — Traka sa alatkama -> Bočni panel -> Prikaz direktorijuma\n"
 "F6: menja fokus — Bočni panel -> Prikaz direktorijuma\n"
 "F8: delitelj fokusa između Bočnog panela i Prikaza direktorijuma\n"
 "F10: glavni meni programa\n"
@@ -889,21 +860,20 @@ msgstr "PROFIL"
 
 #: ../src/pcmanfm.c:77
 msgid "Run PCManFM as a daemon"
-msgstr "Pokreni PCManFM program u pozadini"
+msgstr "Pokreni upravnika datoteka kao pozadinski proces"
 
 #: ../src/pcmanfm.c:78
 msgid "No function. Just to be compatible with nautilus"
-msgstr ""
-"Ova funkcija ne postoji, a ovde je zbog usaglašenosti sa programom „Nautilus“"
+msgstr "Ova funkcija ne postoji, a ovde je zbog usaglašenosti sa programom „Nautilus“"
 
 #. options that are acceptable for every instance of pcmanfm and will be passed through IPC.
 #: ../src/pcmanfm.c:81
 msgid "Launch desktop manager"
-msgstr "Pokreni upravnik radne površi"
+msgstr "Pokreni upravnika radne površi"
 
 #: ../src/pcmanfm.c:82
 msgid "Turn off desktop manager if it's running"
-msgstr "Zaustavi upravnik radne površi ukoliko je pokrenut"
+msgstr "Zaustavi upravnika radne površi ukoliko je pokrenut"
 
 #: ../src/pcmanfm.c:83
 msgid "Open desktop preference dialog"
@@ -924,8 +894,7 @@ msgstr "DATOTEKA"
 #. don't translate list of modes in description, please
 #: ../src/pcmanfm.c:87
 msgid "Set mode of desktop wallpaper. MODE=(color|stretch|fit|center|tile)"
-msgstr ""
-"Režim prikaza pozadinske slike. <režim>=(color|stretch|fit|center|tile)"
+msgstr "Režim prikaza pozadinske slike. MODE=(color|stretch|fit|center|tile)"
 
 #: ../src/pcmanfm.c:87
 msgid "MODE"
@@ -1003,47 +972,9 @@ msgstr "Upravnik datoteka"
 
 #: ../data/pcmanfm.desktop.in.h:3
 msgid "File Manager PCManFM"
-msgstr "Upravnik datoteka"
+msgstr "Upravnik datoteka PiSiManFM"
 
 #: ../data/pcmanfm-desktop-pref.desktop.in.h:1
 msgid "Change desktop wallpapers and behavior of desktop manager"
 msgstr "Promeni sliku na radnim površima i ponašanje Upravnika radnim površima"
 
-#~ msgid "Hide _folder content border"
-#~ msgstr "Sakrij _ivicu sadržaja direktorijuma"
-
-#~ msgid "Hide _side pane buttons"
-#~ msgstr "_Sakrij dugmad bočne površi"
-
-#~ msgid "_Trash bin"
-#~ msgstr "Nepo_trebno"
-
-#~ msgid ""
-#~ "Examples: \"xterm -e %s\" for terminal or \"gksu %s\" for switching "
-#~ "user.\n"
-#~ "%s = the command line you want to execute with terminal or su."
-#~ msgstr ""
-#~ "Primeri: „xterm -e %s“ za terminal ili „gksu %s“ za prebacivanje između "
-#~ "korisnika.\n"
-#~ "%s = naredba koja želite da se izvrši u terminalu ili sa „su“."
-
-#~ msgid "Previous Folder"
-#~ msgstr "Nazad"
-
-#~ msgid "Next Folder"
-#~ msgstr "Napred"
-
-#~ msgid "Home Folder"
-#~ msgstr "Lične datoteke"
-
-#~ msgid "Desktop Folder"
-#~ msgstr "Direktorijum radne površi"
-
-#~ msgid "_My Computer"
-#~ msgstr "_Računar"
-
-#~ msgid "Installed Applications"
-#~ msgstr "Instalirani programi"
-
-#~ msgid "Open entered folder"
-#~ msgstr "Otvori upisani direktorijum"
