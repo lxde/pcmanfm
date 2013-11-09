@@ -283,6 +283,7 @@ static void  on_folder_view_columns_changed(FmFolderView *fv, FmTabPage *page)
         else
             cols[i] = g_strdup(fm_folder_model_col_get_name(info->col_id));
     }
+    g_slist_free(columns);
     cols[i] = NULL; /* terminate the list */
     g_strfreev(app_config->columns);
     app_config->columns = cols;
