@@ -347,6 +347,9 @@ static void on_history_item(GtkMenuItem* mi, FmMainWin* win)
     GList* l = g_object_get_data(G_OBJECT(mi), "path");
 #endif
     fm_tab_page_history(page, l);
+    /* update folder popup */
+    fm_folder_view_set_active(win->folder_view, FALSE);
+    fm_folder_view_add_popup(win->folder_view, GTK_WINDOW(win), NULL);
 }
 
 static void disconnect_history_item(GtkWidget* mi, gpointer win)
@@ -1038,12 +1041,18 @@ static void _update_hist_buttons(FmMainWin* win)
 static void on_go_back(GtkAction* act, FmMainWin* win)
 {
     fm_tab_page_back(win->current_page);
+    /* update folder popup */
+    fm_folder_view_set_active(win->folder_view, FALSE);
+    fm_folder_view_add_popup(win->folder_view, GTK_WINDOW(win), NULL);
     _update_hist_buttons(win);
 }
 
 static void on_go_forward(GtkAction* act, FmMainWin* win)
 {
     fm_tab_page_forward(win->current_page);
+    /* update folder popup */
+    fm_folder_view_set_active(win->folder_view, FALSE);
+    fm_folder_view_add_popup(win->folder_view, GTK_WINDOW(win), NULL);
     _update_hist_buttons(win);
 }
 
@@ -1097,6 +1106,9 @@ void fm_main_win_chdir(FmMainWin* win, FmPath* path)
      * trigger on_side_pane_chdir() callback. So we need to block it here. */
     g_signal_handlers_block_by_func(win->side_pane, on_side_pane_chdir, win);
     fm_tab_page_chdir(win->current_page, path);
+    /* update folder popup */
+    fm_folder_view_set_active(win->folder_view, FALSE);
+    fm_folder_view_add_popup(win->folder_view, GTK_WINDOW(win), NULL);
     g_signal_handlers_unblock_by_func(win->side_pane, on_side_pane_chdir, win);
     _update_hist_buttons(win);
 }
