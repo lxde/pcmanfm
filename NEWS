@@ -24,6 +24,30 @@ Changes on 1.2.0 since 1.1.0:
     if you start old one again, it will gain default configuration for
     the desktop instead.
 
+* Changed representing of sort mode in config file: instead of numerics
+    'sort_type' and 'sort_by' it's saved as 'sort=<list>' text setting.
+    Thus it is possible to save extended modes such as 'case' or 'mingle'
+    and save sort by extended columns (see LibFM new APIs).
+
+* Implemented saving of columns (works for Detailed List View mode). The
+    list of columns is represented as <name>[:<width]. This feature will
+    work with LibFM 1.0.2 or newer. The LibFM 1.1.x will get some benefit
+    only, the PCManFM can load that list from config. The possibility to
+    catch columns change is available since LibFM 1.2.0 so this feature
+    will work in full only with LibFM 1.2.0 or newer.
+
+* Changed strings to follow common Human Interface Guidelines for strings
+    capitalization.
+
+* New tab with Search Results now opened in Detailed List View mode with
+    columns: Name, Description, Location, Size, Modified. Since Search
+    Results is a special folder, its layout should be other than default.
+
+* The 'Tools'->'Open Current Folder as Root' menu item is removed along
+    with 'su_cmd' configuration option. That mode is too much dangerous
+    and appropriate functionality can be achieved using DES-EMA extension
+    for context menu, no need to hardcode it into PCManFM.
+
 
 Changes on 1.1.0 since 1.0.1:
 
