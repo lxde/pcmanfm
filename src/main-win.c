@@ -876,12 +876,44 @@ static void on_open_as_root(GtkAction* act, FmMainWin* win)
 }
 
 #if FM_CHECK_VERSION(1, 0, 2)
+/* this is modified version of pcmanfm_open_folder() really */
+static gboolean open_search_func(GAppLaunchContext* ctx, GList* folder_infos, gpointer user_data, GError** err)
+{
+    FmMainWin* win = user_data;
+    GList* l = folder_infos;
+    FmFileInfo* fi = (FmFileInfo*)l->data;
+    GSList* cols = NULL;
+    FmTabPage* page;
+    FmFolderView* folder_view;
+    gint page_num;
+    const FmFolderViewColumnInfo col_infos[] = {
+        {FM_FOLDER_MODEL_COL_NAME},
+        {FM_FOLDER_MODEL_COL_DESC},
+        {FM_FOLDER_MODEL_COL_DIRNAME},
+        {FM_FOLDER_MODEL_COL_SIZE},
+        {FM_FOLDER_MODEL_COL_MTIME} };
+    guint i;
+
+    /* FIXME: open search in new window if requested */
+    page_num = fm_main_win_add_tab(win, fm_file_info_get_path(fi));
+    page = (FmTabPage*)gtk_notebook_get_nth_page(win->notebook, page_num);
+    folder_view = fm_tab_page_get_folder_view(page);
+    fm_standard_view_set_mode(FM_STANDARD_VIEW(folder_view), FM_FV_LIST_VIEW);
+    for(i = 0; i < G_N_ELEMENTS(col_infos); i++)
+        cols = g_slist_append(cols, (gpointer)&col_infos[i]);
+    fm_folder_view_set_columns(folder_view, cols);
+    g_slist_free(cols);
+    gtk_window_present(GTK_WINDOW(win));
+    /* FIXME: can folder_infos contain more that one path? */
+    return TRUE;
+}
+
 static void on_search(GtkAction* act, FmMainWin* win)
 {
     FmTabPage* page = win->current_page;
     FmPath* cwd = fm_tab_page_get_cwd(page);
     GList* l = g_list_append(NULL, cwd);
-    fm_launch_search_simple(GTK_WINDOW(win), NULL, l, pcmanfm_open_folder, NULL);
+    fm_launch_search_simple(GTK_WINDOW(win), NULL, l, open_search_func, win);
     g_list_free(l);
 }
 #endif
