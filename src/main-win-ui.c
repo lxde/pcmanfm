@@ -99,7 +99,7 @@ static const char main_menu_xml[] =
   "</menu>"
   "<menu action='ToolMenu'>"
     "<menuitem action='Term'/>"
-    "<menuitem action='AsRoot'/>"
+    /* "<menuitem action='AsRoot'/>" */
 #if FM_CHECK_VERSION(1, 0, 2)
     "<menuitem action='Search'/>"
 #endif
@@ -167,7 +167,7 @@ static GtkActionEntry main_win_actions[]=
         {"AddBookmark", GTK_STOCK_ADD, N_("_Add to Bookmarks"), "<Ctrl>D", N_("Add current folder to bookmarks list"), G_CALLBACK(on_add_bookmark)},
     {"ToolMenu", NULL, N_("Tool_s"), NULL, NULL, NULL},
         {"Term", "utilities-terminal", N_("Open Current Folder in _Terminal"), "F4", NULL, G_CALLBACK(on_open_in_terminal)},
-        {"AsRoot", GTK_STOCK_DIALOG_AUTHENTICATION, N_("Open Current Folder as _Root"), NULL, NULL, G_CALLBACK(on_open_as_root)},
+        /*{"AsRoot", GTK_STOCK_DIALOG_AUTHENTICATION, N_("Open Current Folder as _Root"), NULL, NULL, G_CALLBACK(on_open_as_root)},*/
 #if FM_CHECK_VERSION(1, 0, 2)
         {"Search", GTK_STOCK_FIND, N_("Fin_d Files"), "<Ctrl><Shift>F", N_("Open search dialog"), G_CALLBACK(on_search)},
 #endif

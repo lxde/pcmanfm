@@ -119,7 +119,7 @@ struct _FmAppConfig
     int sort_by;
 #endif
 
-    char* su_cmd;
+    /*char* su_cmd;*/
 
     /* pre-1.2.0 style config - common settings for all monitors */
     FmDesktopConfig desktop_section;

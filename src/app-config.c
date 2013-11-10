@@ -154,7 +154,7 @@ static void fm_app_config_finalize(GObject *object)
       g_free(cfg->desktop_section.wallpaper);
       g_free(cfg->desktop_section.desktop_font);
     }
-    g_free(cfg->su_cmd);
+    /*g_free(cfg->su_cmd);*/
 
     G_OBJECT_CLASS(fm_app_config_parent_class)->finalize(object);
 }
@@ -274,7 +274,7 @@ void fm_app_config_load_desktop_config(GKeyFile *kf, const char *group, FmDeskto
 
 void fm_app_config_load_from_key_file(FmAppConfig* cfg, GKeyFile* kf)
 {
-    char* tmp;
+    /*char* tmp;*/
 #if FM_CHECK_VERSION(1, 0, 2)
     char **tmpv;
 #endif
@@ -282,9 +282,9 @@ void fm_app_config_load_from_key_file(FmAppConfig* cfg, GKeyFile* kf)
 
     /* behavior */
     fm_key_file_get_int(kf, "config", "bm_open_method", &cfg->bm_open_method);
-    tmp = g_key_file_get_string(kf, "config", "su_cmd", NULL);
+    /*tmp = g_key_file_get_string(kf, "config", "su_cmd", NULL);
     g_free(cfg->su_cmd);
-    cfg->su_cmd = tmp;
+    cfg->su_cmd = tmp;*/
 
     /* volume management */
     fm_key_file_get_bool(kf, "volume", "mount_on_startup", &cfg->mount_on_startup);
@@ -431,8 +431,8 @@ void fm_app_config_save_profile(FmAppConfig* cfg, const char* name)
 
         g_string_append(buf, "[config]\n");
         g_string_append_printf(buf, "bm_open_method=%d\n", cfg->bm_open_method);
-        if(cfg->su_cmd && *cfg->su_cmd)
-            g_string_append_printf(buf, "su_cmd=%s\n", cfg->su_cmd);
+        /*if(cfg->su_cmd && *cfg->su_cmd)
+            g_string_append_printf(buf, "su_cmd=%s\n", cfg->su_cmd);*/
 
         g_string_append(buf, "\n[volume]\n");
         g_string_append_printf(buf, "mount_on_startup=%d\n", cfg->mount_on_startup);

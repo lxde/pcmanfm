@@ -91,7 +91,7 @@ static void on_side_pane_mode(GtkRadioAction* act, GtkRadioAction *cur, FmMainWi
 static void on_about(GtkAction* act, FmMainWin* win);
 static void on_key_nav_list(GtkAction* act, FmMainWin* win);
 static void on_open_in_terminal(GtkAction* act, FmMainWin* win);
-static void on_open_as_root(GtkAction* act, FmMainWin* win);
+/*static void on_open_as_root(GtkAction* act, FmMainWin* win);*/
 #if FM_CHECK_VERSION(1, 0, 2)
 static void on_search(GtkAction* act, FmMainWin* win);
 #endif
@@ -823,6 +823,7 @@ static void on_open_in_terminal(GtkAction* act, FmMainWin* win)
         pcmanfm_open_folder_in_terminal(GTK_WINDOW(win), path);
 }
 
+#if 0
 static const char* su_cmd_subst(char opt, gpointer user_data)
 {
     return user_data;
@@ -874,6 +875,7 @@ static void on_open_as_root(GtkAction* act, FmMainWin* win)
         g_object_unref(app);
     }
 }
+#endif
 
 #if FM_CHECK_VERSION(1, 0, 2)
 /* this is modified version of pcmanfm_open_folder() really */
