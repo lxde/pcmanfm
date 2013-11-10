@@ -62,9 +62,9 @@ static const char main_menu_xml[] =
     "<menuitem action='Home'/>"
     "<menuitem action='Desktop'/>"
     "<menuitem action='Trash'/>"
+    "<menuitem action='Apps'/>"
     "<menuitem action='Computer'/>"
     "<menuitem action='Network'/>"
-    "<menuitem action='Apps'/>"
   "</menu>"
   "<menu action='BookmarksMenu'>"
     "<menuitem action='AddBookmark'/>"
@@ -150,7 +150,7 @@ static GtkActionEntry main_win_actions[]=
         {"Sort", NULL, N_("S_ort Files"), NULL, NULL, NULL},
     {"HelpMenu", NULL, N_("_Help"), NULL, NULL, NULL},
         {"About", GTK_STOCK_ABOUT, NULL, NULL, NULL, G_CALLBACK(on_about)},
-        {"KeyNavList", GTK_STOCK_INFO, N_("_Keyboard navigation"), NULL, NULL, G_CALLBACK(on_key_nav_list)},
+        {"KeyNavList", GTK_STOCK_INFO, N_("_Keyboard Navigation"), NULL, NULL, G_CALLBACK(on_key_nav_list)},
     {"GoMenu", NULL, N_("_Go"), NULL, NULL, NULL},
         {"Prev", GTK_STOCK_GO_BACK, N_("_Previous Folder"), "<Alt>Left", N_("Return to previous folder in history"), G_CALLBACK(on_go_back)},
         {"Next", GTK_STOCK_GO_FORWARD, N_("_Next Folder"), "<Alt>Right", N_("Go forward to next folder in history"), G_CALLBACK(on_go_forward)},
@@ -158,12 +158,13 @@ static GtkActionEntry main_win_actions[]=
         {"Home", "user-home", N_("H_ome Folder"), "<Alt>Home", N_("Go to home folder"), G_CALLBACK(on_go_home)},
         {"Desktop", "user-desktop", N_("_Desktop"), NULL, N_("Go to desktop folder"), G_CALLBACK(on_go_desktop)},
         {"Trash", "user-trash", N_("_Trash Can"), NULL, N_("Open trash can"), G_CALLBACK(on_go_trash)},
-        {"Computer", "computer", N_("_Computer Drives"), NULL, N_("Go to list of volumes in the computer"), G_CALLBACK(on_go_computer)},
-        {"Network", GTK_STOCK_NETWORK, N_("Net_work Drives"), NULL, N_("Go to list of volumes on the network"), G_CALLBACK(on_go_network)},
+        {"Root", "drive-harddisk", N_("Filesyste_m Root"), NULL, N_("Go fo filesystem root"), NULL},
         {"Apps", "system-software-install", N_("_Applications"), NULL, N_("Go to root of applications menu folder"), G_CALLBACK(on_go_apps)},
-        {"Go", GTK_STOCK_JUMP_TO, NULL, NULL, N_("Open folder entered in location entry"), G_CALLBACK(on_go)},
+        {"Computer", "computer", N_("Devi_ces"), NULL, N_("Go to list of devices connected to the computer"), G_CALLBACK(on_go_computer)},
+        {"Network", GTK_STOCK_NETWORK, N_("Net_work"), NULL, N_("Go to list of places on the network"), G_CALLBACK(on_go_network)},
+        {"Go", GTK_STOCK_JUMP_TO, NULL, NULL, N_("Go to the path in the location bar"), G_CALLBACK(on_go)},
     {"BookmarksMenu", NULL, N_("_Bookmarks"), NULL, NULL, NULL},
-        {"AddBookmark", GTK_STOCK_ADD, N_("_Add To Bookmarks"), "<Ctrl>D", N_("Add current folder to bookmarks list"), G_CALLBACK(on_add_bookmark)},
+        {"AddBookmark", GTK_STOCK_ADD, N_("_Add to Bookmarks"), "<Ctrl>D", N_("Add current folder to bookmarks list"), G_CALLBACK(on_add_bookmark)},
     {"ToolMenu", NULL, N_("Tool_s"), NULL, NULL, NULL},
         {"Term", "utilities-terminal", N_("Open Current Folder in _Terminal"), "F4", NULL, G_CALLBACK(on_open_in_terminal)},
         {"AsRoot", GTK_STOCK_DIALOG_AUTHENTICATION, N_("Open Current Folder as _Root"), NULL, NULL, G_CALLBACK(on_open_as_root)},

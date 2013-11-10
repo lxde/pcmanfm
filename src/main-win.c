@@ -795,7 +795,7 @@ static void on_key_nav_list(GtkAction* act, FmMainWin* win)
         key_nav_list_dlg = gtk_message_dialog_new(NULL, 0,
                                                   GTK_MESSAGE_INFO,
                                                   GTK_BUTTONS_OK,
-                                                  _("Keyboard navigation"));
+                                                  _("Keyboard Navigation"));
         gtk_message_dialog_format_secondary_text(GTK_MESSAGE_DIALOG(key_nav_list_dlg),
                          _("Tab: cycle focus Folder View -> Side Pane -> Tools Bar\n"
                            "Shift+Tab: cycle focus Tools Bar -> Side Pane -> Folder View\n"
@@ -803,7 +803,7 @@ static void on_key_nav_list(GtkAction* act, FmMainWin* win)
                            "F8: focus divider between Side pane and Folder view\n"
                            "F10: activate main menu\n"
                            "Ctrl+L or Alt+D: jump focus to Path Bar"));
-        gtk_window_set_title(GTK_WINDOW(key_nav_list_dlg), _("Keyboard navigation"));
+        gtk_window_set_title(GTK_WINDOW(key_nav_list_dlg), _("Keyboard Navigation"));
         g_signal_connect(key_nav_list_dlg, "response", G_CALLBACK(on_key_nav_list_response), (gpointer)&key_nav_list_dlg);
     }
     gtk_window_present(GTK_WINDOW(key_nav_list_dlg));
