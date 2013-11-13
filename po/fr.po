@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PCManFM\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-16 23:12+0300\n"
+"POT-Creation-Date: 2013-11-13 22:34+0100\n"
 "PO-Revision-Date: 2013-08-09 19:53+0000\n"
 "Last-Translator: Julien <Julius22@laposte.net>\n"
 "Language-Team: \n"
@@ -34,253 +34,415 @@ msgstr ""
 "Sébastien MAURICE\n"
 "<drole2zebre57@yahoo.fr>"
 
-#: ../data/ui/desktop-pref.glade.h:1
-msgid "<b>Background</b>"
-msgstr "<b>Arrière-plan</b>"
-
-#: ../data/ui/desktop-pref.glade.h:2
-msgid "<b>Show desktop icons</b>"
-msgstr "<b>Afficher les icônes du bureau</b>"
-
-#: ../data/ui/desktop-pref.glade.h:3
-msgid "<b>Text</b>"
-msgstr "<b>Texte</b>"
-
-#: ../data/ui/desktop-pref.glade.h:4
-msgid "Ad_vanced"
-msgstr "A_vancé"
-
-#: ../data/ui/desktop-pref.glade.h:5
-msgid "C_olor of label text:"
-msgstr "Couleur du _texte :"
-
-#: ../data/ui/desktop-pref.glade.h:6
-msgid "Center on the screen"
-msgstr "Centrer sur l’écran"
-
-#: ../data/ui/desktop-pref.glade.h:7
-msgid "Color of _shadow:"
-msgstr "Couleur de l’_ombre :"
-
-#: ../data/ui/desktop-pref.glade.h:8 ../src/desktop-ui.c:34
-#: ../data/pcmanfm-desktop-pref.desktop.in.h:2
+#: ../data/ui/desktop-pref.glade.h:1 ../src/desktop-ui.c:34
+#: ../data/pcmanfm-desktop-pref.desktop.in.h:1
 msgid "Desktop Preferences"
 msgstr "Préférences du bureau"
 
-#: ../data/ui/desktop-pref.glade.h:9
-msgid "Fill with background color only"
-msgstr "Remplir seulement avec la couleur d’arrière-plan"
+#: ../data/ui/desktop-pref.glade.h:2
+msgid "<b>Background</b>"
+msgstr "<b>Arrière-plan</b>"
 
-#: ../data/ui/desktop-pref.glade.h:10
+#: ../data/ui/desktop-pref.glade.h:3
+msgid "_Wallpaper:"
+msgstr "_Fond d’écran :"
+
+#: ../data/ui/desktop-pref.glade.h:4
 msgid "Please select an image file"
 msgstr "Veuillez sélectionner une image"
 
+#: ../data/ui/desktop-pref.glade.h:5
+msgid "_Use the same wallpaper on all desktops"
+msgstr "_Utiliser le même fond d’écran sur tous les bureaux"
+
+#: ../data/ui/desktop-pref.glade.h:6
+msgid "_Background color:"
+msgstr "Couleur de l’arrière-p_lan :"
+
+#: ../data/ui/desktop-pref.glade.h:7
+msgid "Wallpaper _mode:"
+msgstr "_Positionnement du fond d’écran :"
+
+#: ../data/ui/desktop-pref.glade.h:8
+msgid "<b>Text</b>"
+msgstr "<b>Texte</b>"
+
+#: ../data/ui/desktop-pref.glade.h:9
+msgid "_Font of label text:"
+msgstr "Po_lice du texte :"
+
+#: ../data/ui/desktop-pref.glade.h:10
+msgid "C_olor of label text:"
+msgstr "Couleur du _texte :"
+
 #: ../data/ui/desktop-pref.glade.h:11
-msgid "S_how icons of volumes on desktop"
-msgstr "Afficher les icônes des supports amovibles sur le bureau"
+msgid "Color of _shadow:"
+msgstr "Couleur de l’_ombre :"
 
 #: ../data/ui/desktop-pref.glade.h:12
-msgid "Show \"_My Computer\" icon on desktop"
-msgstr "Afficher l’icône « Mon ordinateur » sur le bureau"
+msgid "_Appearance"
+msgstr "_Apparence"
 
 #: ../data/ui/desktop-pref.glade.h:13
+msgid "<b>Show desktop icons</b>"
+msgstr "<b>Afficher les icônes du bureau</b>"
+
+# Il manque l'indication du caractère de raccourci clavier en français
+#: ../data/ui/desktop-pref.glade.h:14
+#, fuzzy
+msgid "_Show \"Documents\" icon on desktop"
+msgstr "Afficher l’icône « Mes documents » sur le bureau"
+
+# Il manque l'indication du caractère de raccourci clavier en français
+#: ../data/ui/desktop-pref.glade.h:15
+#, fuzzy
+msgid "Sho_w \"Devices\" icon on desktop"
+msgstr "Afficher l’icône « Mes documents » sur le bureau"
+
+#: ../data/ui/desktop-pref.glade.h:16
 #, fuzzy
 msgid "Show \"_Trash Can\" icon on desktop"
 msgstr "Afficher l’icône « Corbeille » sur le bureau"
 
-#: ../data/ui/desktop-pref.glade.h:14
-msgid "Stretch to fill the entire screen"
-msgstr "Étirer pour remplir tout l’écran"
-
-#: ../data/ui/desktop-pref.glade.h:15
-msgid "Stretch to fit the screen"
-msgstr "Ajuster à la taille de l’écran"
-
-#: ../data/ui/desktop-pref.glade.h:16
-msgid "Tile the image to fill the entire screen"
-msgstr "Faire une mosaïque avec l’image pour remplir l’écran"
-
 #: ../data/ui/desktop-pref.glade.h:17
-msgid "Wallpaper _mode:"
-msgstr "_Positionnement du fond d’écran :"
+msgid "S_how icons of volumes on desktop"
+msgstr "Afficher les icônes des supports amovibles sur le bureau"
 
 #: ../data/ui/desktop-pref.glade.h:18
-msgid "_Appearance"
-msgstr "_Apparence"
-
-#: ../data/ui/desktop-pref.glade.h:19
-msgid "_Background color:"
-msgstr "Couleur de l’arrière-p_lan :"
-
-#: ../data/ui/desktop-pref.glade.h:20
 msgid "_Desktop Icons"
 msgstr "Icônes du _bureau"
 
-#: ../data/ui/desktop-pref.glade.h:21
-msgid "_Font of label text:"
-msgstr "Po_lice du texte :"
-
-# Il manque l'indication du caractère de raccourci clavier en français
-#: ../data/ui/desktop-pref.glade.h:22
-msgid "_Show \"My Documents\" icon on desktop"
-msgstr "Afficher l’icône « Mes documents » sur le bureau"
-
-#: ../data/ui/desktop-pref.glade.h:23
+#: ../data/ui/desktop-pref.glade.h:19
 msgid "_Show menus provided by window managers when desktop is clicked"
 msgstr ""
 "Afficher le menu fourni par le ge_stionnaire de fenêtres lors d’un clic sur "
 "le bureau"
 
+#: ../data/ui/desktop-pref.glade.h:20
+msgid "Ad_vanced"
+msgstr "A_vancé"
+
+#: ../data/ui/desktop-pref.glade.h:21
+msgid "Fill with background color only"
+msgstr "Remplir seulement avec la couleur d’arrière-plan"
+
+#: ../data/ui/desktop-pref.glade.h:22
+msgid "Stretch to fill the entire screen"
+msgstr "Étirer pour remplir tout l’écran"
+
+#: ../data/ui/desktop-pref.glade.h:23
+msgid "Stretch to fit the screen"
+msgstr "Ajuster à la taille de l’écran"
+
 #: ../data/ui/desktop-pref.glade.h:24
-msgid "_Use the same wallpaper on all desktops"
-msgstr "_Utiliser le même fond d’écran sur tous les bureaux"
+msgid "Center on the screen"
+msgstr "Centrer sur l’écran"
 
 #: ../data/ui/desktop-pref.glade.h:25
-msgid "_Wallpaper:"
-msgstr "_Fond d’écran :"
+msgid "Tile the image to fill the entire screen"
+msgstr "Faire une mosaïque avec l’image pour remplir l’écran"
 
 #: ../data/ui/pref.glade.h:1
-msgid "\"C_omputer\" special folder"
-msgstr ""
+msgid "Opened in Current Tab"
+msgstr "Ouvrir dans l’onglet courant"
 
 #: ../data/ui/pref.glade.h:2
-msgid "<b>Auto-mount</b>"
-msgstr "<b>Auto-montage</b>"
+msgid "Opened in New Tab"
+msgstr "Ouvrir dans un nouvel onglet"
 
 #: ../data/ui/pref.glade.h:3
+msgid "Opened in New Window"
+msgstr "Ouvrir dans une nouvelle fenêtre"
+
+#: ../data/ui/pref.glade.h:4
+msgid "Preferences"
+msgstr "Préférences"
+
+#: ../data/ui/pref.glade.h:5
 msgid "<b>Behavior</b>"
 msgstr "<b>Comportement</b>"
 
-#: ../data/ui/pref.glade.h:4
-msgid "<b>Default View</b>"
-msgstr "<b>Vue par défaut</b>"
-
-#: ../data/ui/pref.glade.h:5
-msgid "<b>Directories Tree</b>"
-msgstr "<b>Arborescence</b>"
-
+# Il manque l'indication du caractère pour le raccourci clavier
 #: ../data/ui/pref.glade.h:6
-msgid "<b>Icons</b>"
-msgstr "<b>Icônes</b>"
+msgid "_Open files with single click"
+msgstr "Ouvrir les fichiers en utilisant le simple clic"
 
 #: ../data/ui/pref.glade.h:7
-#, fuzzy
-msgid "<b>Other options</b>"
-msgstr "<b>Afficher les icônes du bureau</b>"
-
-#: ../data/ui/pref.glade.h:8
-msgid "<b>Programs</b>"
-msgstr "<b>Applications</b>"
-
-#: ../data/ui/pref.glade.h:9
-msgid "<b>Show in Places:</b>"
-msgstr "<b>Afficher dans les emplacements :</b>"
-
-#: ../data/ui/pref.glade.h:10
-#, fuzzy
-msgid "<b>Templates</b>"
-msgstr "<b>Texte</b>"
-
-#: ../data/ui/pref.glade.h:11
-msgid "<b>User Interface</b>"
-msgstr "<b>Interface utilisateur</b>"
-
-#: ../data/ui/pref.glade.h:12
-msgid "<i>Commands below may include extra switches if necessary.</i>"
-msgstr ""
-
-#: ../data/ui/pref.glade.h:13
-msgid "A_rchiver integration:"
-msgstr "Intégration de l’a_rchiveur :"
-
-#: ../data/ui/pref.glade.h:14
-msgid "Al_ways show full file names"
-msgstr "Tou_jours afficher les noms de fichier complets"
-
-#: ../data/ui/pref.glade.h:15
-msgid "Al_ways show the tab bar"
-msgstr "Tou_jours afficher la barre des onglets"
-
-#: ../data/ui/pref.glade.h:16
-msgid "App_lications"
-msgstr "App_lications"
-
-#: ../data/ui/pref.glade.h:17
-msgid "Ask"
-msgstr "Demander"
-
-#: ../data/ui/pref.glade.h:18
-msgid "Auto (move if on the same FS, copy otherwise)"
-msgstr ""
-"Automatique (déplacer si c'est dans le même système de fichier, sinon copier)"
-
-#: ../data/ui/pref.glade.h:19
-msgid "Clos_e tab containing removable medium when it is unmounted"
-msgstr "F_ermer l'onglet du support amovible une fois démonté"
+msgid "Delay of auto-selection in single click mode (0 to disable)"
+msgstr "Délai d'auto-sélection en mode simple clic (0 pour désactiver)"
 
 # Il manque l'indication du caractère pour le raccourci clavier
-#: ../data/ui/pref.glade.h:20
+#: ../data/ui/pref.glade.h:8
 msgid "Co_nfirm before deleting files"
 msgstr "Confirmer avant de supprimer des fichiers"
 
-#: ../data/ui/pref.glade.h:21
-msgid "Compact View"
-msgstr "Vue compacte"
+# Il manque l'indication du caractère pour le raccourci clavier
+#: ../data/ui/pref.glade.h:9
+#, fuzzy
+msgid "_Move deleted files to \"trash can\" instead of erasing from disk"
+msgstr ""
+"Mettre les fichiers à la « Corbeille » au lieu de les effacer du disque"
 
 # Il manque l'indication du caractère pour le raccourci clavier
-#: ../data/ui/pref.glade.h:22
+#: ../data/ui/pref.glade.h:10
+#, fuzzy
+msgid "_Erase files on removable media instead of \"trash can\" creation"
+msgstr ""
+"Supprimer les fichiers des supports amovibles au lieu de les mettre à la « "
+"Corbeille »"
+
+# Il manque l'indication du caractère pour le raccourci clavier
+#: ../data/ui/pref.glade.h:11
 #, fuzzy
 msgid "Confi_rm before moving files into \"trash can\""
 msgstr "Confirmation avant de mettre les fichiers à la corbeille"
 
-#: ../data/ui/pref.glade.h:23
-msgid "Copy"
-msgstr "Copier"
-
-#: ../data/ui/pref.glade.h:24
-msgid "D_efer test for content type on folder loading"
-msgstr ""
-
-#: ../data/ui/pref.glade.h:25
-msgid "Defaul_t drop action:"
-msgstr "Action de glissement par défau_t :"
-
-#: ../data/ui/pref.glade.h:26
-msgid "Delay of auto-selection in single click mode (0 to disable)"
-msgstr "Délai d'auto-sélection en mode simple clic (0 pour désactiver)"
-
-#: ../data/ui/pref.glade.h:27
-msgid "Des_ktop Folder"
-msgstr "_Bureau"
-
-#: ../data/ui/pref.glade.h:28
-msgid "Detailed List View"
-msgstr "Vue en liste détaillée"
-
-# Il manque l'indication du caractère pour le raccourci clavier
-#: ../data/ui/pref.glade.h:29
-msgid "Do _not generate thumbnails for files exceeding this size:"
-msgstr "Ne pas générer d’aperçus pour les fichiers dépassant cette taille :"
-
-#: ../data/ui/pref.glade.h:30
+#: ../data/ui/pref.glade.h:12
 msgid "Don't ask options on _launch executable file"
 msgstr ""
 
 # Il manque l'indication du caractère pour le raccourci clavier
+#: ../data/ui/pref.glade.h:13
+msgid "_Bookmarks:"
+msgstr "Marque-pages :"
+
+#: ../data/ui/pref.glade.h:14
+msgid "Defaul_t drop action:"
+msgstr "Action de glissement par défau_t :"
+
+# Il manque l'indication du caractère pour le raccourci clavier
+#: ../data/ui/pref.glade.h:15
+msgid "_Unfold tab when files are dragged onto tab button"
+msgstr "Déplier l'onglet lorsque des fichiers sont glissés sur son bouton"
+
+#: ../data/ui/pref.glade.h:16
+msgid "<b>Default View</b>"
+msgstr "<b>Vue par défaut</b>"
+
+# Il manque l'indication du caractère pour le raccourci clavier
+#: ../data/ui/pref.glade.h:17
+msgid "Vie_w Mode:"
+msgstr "Mode d’affichage :"
+
+#: ../data/ui/pref.glade.h:18
+msgid "_General"
+msgstr "_Général"
+
+#: ../data/ui/pref.glade.h:19
+msgid "<b>Icons</b>"
+msgstr "<b>Icônes</b>"
+
+# Il manque l'indication du caractère pour le raccourci clavier
+#: ../data/ui/pref.glade.h:20
+msgid "Size of _big icons:"
+msgstr "Taille des grandes icônes :"
+
+# Il manque l'indication du caractère pour le raccourci clavier
+#: ../data/ui/pref.glade.h:21
+msgid "Size of small _icons:"
+msgstr "Taille des petites icônes :"
+
+# Il manque l'indication du caractère pour le raccourci clavier
+#: ../data/ui/pref.glade.h:22
+msgid "Size of _thumbnails:"
+msgstr "Taille des aperçus :"
+
+# Il manque l'indication du caractère pour le raccourci clavier
+#: ../data/ui/pref.glade.h:23
+msgid "Size of side _pane icons:"
+msgstr "Taille des icônes du panneau latéral :"
+
+#: ../data/ui/pref.glade.h:24
+msgid "_Show thumbnails of files"
+msgstr "Afficher un aperçu pour les fichier_s"
+
+#: ../data/ui/pref.glade.h:25
+msgid "_Only show thumbnails for local files"
+msgstr "Afficher les aperçus seulement p_our les fichiers locaux"
+
+# Il manque l'indication du caractère pour le raccourci clavier
+#: ../data/ui/pref.glade.h:26
+msgid "Do _not generate thumbnails for files exceeding this size:"
+msgstr "Ne pas générer d’aperçus pour les fichiers dépassant cette taille :"
+
+#: ../data/ui/pref.glade.h:27
+msgid "<b>User Interface</b>"
+msgstr "<b>Interface utilisateur</b>"
+
+# Il manque l'indication du caractère pour le raccourci clavier
+#: ../data/ui/pref.glade.h:28
+msgid "Us_e SI decimal prefixes instead of IEC binary prefixes"
+msgstr ""
+"Utiliser les préfixes décimaux SI au lieu des préfixes binaires de l’IEC"
+
+#: ../data/ui/pref.glade.h:29
+msgid "Treat backup files as _hidden"
+msgstr "Considérer les fichiers de sauvegarde comme cac_hés"
+
+#: ../data/ui/pref.glade.h:30
+msgid "Al_ways show full file names"
+msgstr "Tou_jours afficher les noms de fichier complets"
+
 #: ../data/ui/pref.glade.h:31
+msgid "Show icons of bac_kup files shadowed"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:32
+msgid "_Display"
+msgstr "_Affichage"
+
+# Il manque l'indication du caractère pour le raccourci clavier
+#: ../data/ui/pref.glade.h:33
 msgid "Hid_e 'Close tab' buttons"
 msgstr "Masquer les boutons « Fermer l’onglet »"
 
+#: ../data/ui/pref.glade.h:34
+msgid "Al_ways show the tab bar"
+msgstr "Tou_jours afficher la barre des onglets"
+
+#: ../data/ui/pref.glade.h:35
+msgid "_Maximum width of tab label:"
+msgstr ""
+
+#. Use genitive case here, context is: width is XXX characters
+#: ../data/ui/pref.glade.h:37
+msgid "characters"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:38
+msgid "<b>Directories Tree</b>"
+msgstr "<b>Arborescence</b>"
+
 # Il manque l'indication du caractère pour le raccourci clavier
-#: ../data/ui/pref.glade.h:32
+#: ../data/ui/pref.glade.h:39
 msgid "Hide e_xpander on empty or locked folder"
 msgstr "Masquer le dérouleur en cas de dossier vide ou verrouillé"
 
-#: ../data/ui/pref.glade.h:33
-msgid "Icon View"
-msgstr "Vue en icônes"
+#: ../data/ui/pref.glade.h:40
+msgid "<b>Show in Places:</b>"
+msgstr "<b>Afficher dans les emplacements :</b>"
 
-#: ../data/ui/pref.glade.h:34
+#: ../data/ui/pref.glade.h:41
+#, fuzzy
+msgid "_Home Folder"
+msgstr "Dossier personnel"
+
+#: ../data/ui/pref.glade.h:42
+#, fuzzy
+msgid "Des_ktop"
+msgstr "_Bureau"
+
+#: ../data/ui/pref.glade.h:43 ../src/main-win-ui.c:160
+msgid "_Trash Can"
+msgstr "_Corbeille"
+
+#: ../data/ui/pref.glade.h:44
+msgid "_Filesystem Root"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:45
+msgid "App_lications"
+msgstr "App_lications"
+
+#: ../data/ui/pref.glade.h:46
+msgid "Dev_ices"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:47
+#, fuzzy
+msgid "_Network"
+msgstr "Dis_ques réseau"
+
+#: ../data/ui/pref.glade.h:48
+msgid "_Layout"
+msgstr "Agence_ment"
+
+#: ../data/ui/pref.glade.h:49
+msgid "<b>Auto-mount</b>"
+msgstr "<b>Auto-montage</b>"
+
+# Il manque l'indication du caractère pour le raccourci clavier
+#: ../data/ui/pref.glade.h:50
+msgid "_Mount mountable volumes automatically on program startup"
+msgstr "Monter automatiquement les supports amovibles disponibles au lancement"
+
+# Il manque l'indication du caractère pour le raccourci clavier
+#: ../data/ui/pref.glade.h:51
+msgid "Mo_unt removable media automatically when they are inserted"
+msgstr "Monter les supports amovibles automatiquement quand ils sont insérés"
+
+#: ../data/ui/pref.glade.h:52
+msgid "_Show available options for removable media when they are inserted"
+msgstr ""
+"Afficher les options di_sponibles pour les supports amovibles quand ils sont "
+"insérés"
+
+#: ../data/ui/pref.glade.h:53
+msgid "_Open mounted removable media in new tab instead of new window"
+msgstr ""
+"_Ouvrir le support amovible une fois monté dans un nouvel onglet plutôt que "
+"dans une nouvelle fenêtre"
+
+#: ../data/ui/pref.glade.h:54
+msgid "Clos_e tab containing removable medium when it is unmounted"
+msgstr "F_ermer l'onglet du support amovible une fois démonté"
+
+#: ../data/ui/pref.glade.h:55
+msgid "_Volume Management"
+msgstr "Gestion des sup_ports amovibles"
+
+#: ../data/ui/pref.glade.h:56
+msgid "<b>Programs</b>"
+msgstr "<b>Applications</b>"
+
+#: ../data/ui/pref.glade.h:57
+msgid "<i>Commands below may include extra options if necessary.</i>"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:58
+msgid "_Terminal emulator:"
+msgstr "Émulateur de _terminal :"
+
+#: ../data/ui/pref.glade.h:59
+msgid "_Switch user command:"
+msgstr "Commande de changement d’utili_sateur :"
+
+#. Application command to format some drive
+#: ../data/ui/pref.glade.h:61
+msgid "_Format command:"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:62
+msgid "A_rchiver integration:"
+msgstr "Intégration de l’a_rchiveur :"
+
+#: ../data/ui/pref.glade.h:63
+#, fuzzy
+msgid "<b>Templates</b>"
+msgstr "<b>Texte</b>"
+
+#: ../data/ui/pref.glade.h:64
+msgid "S_how only user defined templates in menu"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:65
+msgid "Show _only one template for each MIME type"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:66
+msgid "Ru_n default application after creation from template"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:67
+#, fuzzy
+msgid "<b>Other Options</b>"
+msgstr "<b>Afficher les icônes du bureau</b>"
+
+#: ../data/ui/pref.glade.h:68
+msgid "_Use Application Startup Notify by default"
+msgstr "_Utiliser la notification de démarrage d'application par défaut"
+
+#: ../data/ui/pref.glade.h:69
 msgid ""
 "If checked then use Startup Notify for application if another not stated "
 "explicitly.\n"
@@ -291,223 +453,66 @@ msgstr ""
 "Si décoché, utiliser la notification de démarrage seulement si cela a été "
 "défini pour cette application."
 
-# Il manque l'indication du caractère pour le raccourci clavier
-#: ../data/ui/pref.glade.h:36
-msgid "Mo_unt removable media automatically when they are inserted"
-msgstr "Monter les supports amovibles automatiquement quand ils sont insérés"
-
-#: ../data/ui/pref.glade.h:37
-msgid "Move"
-msgstr "Déplacer"
-
-#: ../data/ui/pref.glade.h:38
-msgid "Opened in Current Tab"
-msgstr "Ouvrir dans l’onglet courant"
-
-#: ../data/ui/pref.glade.h:39
-msgid "Opened in New Tab"
-msgstr "Ouvrir dans un nouvel onglet"
-
-#: ../data/ui/pref.glade.h:40
-msgid "Opened in New Window"
-msgstr "Ouvrir dans une nouvelle fenêtre"
-
-#: ../data/ui/pref.glade.h:41
-msgid "Preferences"
-msgstr "Préférences"
-
-#: ../data/ui/pref.glade.h:42
-msgid "Ru_n default application after creation from template"
+#: ../data/ui/pref.glade.h:71
+msgid "D_efer test for content type on folder loading"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:43
-msgid "S_how only user defined templates in menu"
-msgstr ""
-
-#: ../data/ui/pref.glade.h:44
-msgid "Show _only one template for each MIME type"
-msgstr ""
-
-#: ../data/ui/pref.glade.h:45
-msgid "Show icons of bac_kup files shadowed"
-msgstr ""
-
-# Il manque l'indication du caractère pour le raccourci clavier
-#: ../data/ui/pref.glade.h:46
-msgid "Size of _big icons:"
-msgstr "Taille des grandes icônes :"
-
-# Il manque l'indication du caractère pour le raccourci clavier
-#: ../data/ui/pref.glade.h:47
-msgid "Size of _thumbnails:"
-msgstr "Taille des aperçus :"
-
-# Il manque l'indication du caractère pour le raccourci clavier
-#: ../data/ui/pref.glade.h:48
-msgid "Size of side _pane icons:"
-msgstr "Taille des icônes du panneau latéral :"
-
-# Il manque l'indication du caractère pour le raccourci clavier
-#: ../data/ui/pref.glade.h:49
-msgid "Size of small _icons:"
-msgstr "Taille des petites icônes :"
-
-#: ../data/ui/pref.glade.h:50
-msgid "Thumbnail View"
-msgstr "Vue en miniatures"
-
-#: ../data/ui/pref.glade.h:51
-msgid "Treat backup files as _hidden"
-msgstr "Considérer les fichiers de sauvegarde comme cac_hés"
-
-# Il manque l'indication du caractère pour le raccourci clavier
-#: ../data/ui/pref.glade.h:52
-msgid "Us_e SI decimal prefixes instead of IEC binary prefixes"
-msgstr ""
-"Utiliser les préfixes décimaux SI au lieu des préfixes binaires de l’IEC"
-
-# Il manque l'indication du caractère pour le raccourci clavier
-#: ../data/ui/pref.glade.h:53
-msgid "Vie_w Mode:"
-msgstr "Mode d’affichage :"
-
-#: ../data/ui/pref.glade.h:54
+#: ../data/ui/pref.glade.h:72
 msgid "_Advanced"
 msgstr "_Avancé"
 
-# Il manque l'indication du caractère pour le raccourci clavier
-#: ../data/ui/pref.glade.h:55
-msgid "_Bookmarks:"
-msgstr "Marque-pages :"
-
-#: ../data/ui/pref.glade.h:56
-msgid "_Display"
-msgstr "_Affichage"
-
-# Il manque l'indication du caractère pour le raccourci clavier
-#: ../data/ui/pref.glade.h:57
-#, fuzzy
-msgid "_Erase files on removable media instead of \"trash can\" creation"
-msgstr ""
-"Supprimer les fichiers des supports amovibles au lieu de les mettre à la « "
-"Corbeille »"
-
-#: ../data/ui/pref.glade.h:58
-msgid "_File system root"
-msgstr ""
-
-#: ../data/ui/pref.glade.h:59
-msgid "_Format command:"
-msgstr ""
-
-#: ../data/ui/pref.glade.h:60
-msgid "_General"
-msgstr "_Général"
-
-#: ../data/ui/pref.glade.h:61
-msgid "_Home Directory"
-msgstr "Dossier person_nel"
-
-#: ../data/ui/pref.glade.h:62
-msgid "_Layout"
-msgstr "Agence_ment"
-
-#: ../data/ui/pref.glade.h:63
-msgid "_Maximum width of tab label:"
-msgstr ""
-
-# Il manque l'indication du caractère pour le raccourci clavier
-#: ../data/ui/pref.glade.h:64
-msgid "_Mount mountable volumes automatically on program startup"
-msgstr "Monter automatiquement les supports amovibles disponibles au lancement"
-
-# Il manque l'indication du caractère pour le raccourci clavier
-#: ../data/ui/pref.glade.h:65
-#, fuzzy
-msgid "_Move deleted files to \"trash can\" instead of erasing from disk"
-msgstr ""
-"Mettre les fichiers à la « Corbeille » au lieu de les effacer du disque"
-
-#: ../data/ui/pref.glade.h:66
-#, fuzzy
-msgid "_Network places"
-msgstr "Dis_ques réseau"
-
-#: ../data/ui/pref.glade.h:67
-msgid "_Only show thumbnails for local files"
-msgstr "Afficher les aperçus seulement p_our les fichiers locaux"
-
-# Il manque l'indication du caractère pour le raccourci clavier
-#: ../data/ui/pref.glade.h:68
-msgid "_Open files with single click"
-msgstr "Ouvrir les fichiers en utilisant le simple clic"
-
-#: ../data/ui/pref.glade.h:69
-msgid "_Open mounted removable media in new tab instead of new window"
-msgstr ""
-"_Ouvrir le support amovible une fois monté dans un nouvel onglet plutôt que "
-"dans une nouvelle fenêtre"
-
-#: ../data/ui/pref.glade.h:70
-msgid "_Show available options for removable media when they are inserted"
-msgstr ""
-"Afficher les options di_sponibles pour les supports amovibles quand ils sont "
-"insérés"
-
-#: ../data/ui/pref.glade.h:71
-msgid "_Show thumbnails of files"
-msgstr "Afficher un aperçu pour les fichier_s"
-
-#: ../data/ui/pref.glade.h:72
-msgid "_Switch user command:"
-msgstr "Commande de changement d’utili_sateur :"
-
 #: ../data/ui/pref.glade.h:73
-msgid "_Terminal emulator:"
-msgstr "Émulateur de _terminal :"
+msgid "Auto (move if on the same FS, copy otherwise)"
+msgstr ""
+"Automatique (déplacer si c'est dans le même système de fichier, sinon copier)"
 
 #: ../data/ui/pref.glade.h:74
-#, fuzzy
-msgid "_Trash can"
-msgstr "_Corbeille"
+msgid "Copy"
+msgstr "Copier"
 
-# Il manque l'indication du caractère pour le raccourci clavier
 #: ../data/ui/pref.glade.h:75
-msgid "_Unfold tab when files are dragged onto tab button"
-msgstr "Déplier l'onglet lorsque des fichiers sont glissés sur son bouton"
+msgid "Move"
+msgstr "Déplacer"
 
 #: ../data/ui/pref.glade.h:76
-msgid "_Use Application Startup Notify by default"
-msgstr "_Utiliser la notification de démarrage d'application par défaut"
+msgid "Ask"
+msgstr "Demander"
 
 #: ../data/ui/pref.glade.h:77
-msgid "_Volume Management"
-msgstr "Gestion des sup_ports amovibles"
+msgid "Icon View"
+msgstr "Vue en icônes"
 
-#. Use genitive case here, context is: width is XXX characters
+#: ../data/ui/pref.glade.h:78
+msgid "Compact View"
+msgstr "Vue compacte"
+
 #: ../data/ui/pref.glade.h:79
-msgid "characters"
-msgstr ""
+msgid "Thumbnail View"
+msgstr "Vue en miniatures"
+
+#: ../data/ui/pref.glade.h:80
+msgid "Detailed List View"
+msgstr "Vue en liste détaillée"
 
 #: ../data/ui/autorun.glade.h:1
-msgid "<b>Removable medium is inserted</b>"
-msgstr "<b>Périphérique amovible inséré</b>"
-
-#: ../data/ui/autorun.glade.h:2
-msgid "Detecting..."
-msgstr "Détection..."
-
-#: ../data/ui/autorun.glade.h:3
-msgid "Please select the action you want to perform:"
-msgstr "Veuillez sélectionner l’action à effectuer :"
-
-#: ../data/ui/autorun.glade.h:4
 msgid "Removable medium is inserted"
 msgstr "Périphérique amovible inséré"
 
-#: ../data/ui/autorun.glade.h:5
+#: ../data/ui/autorun.glade.h:2
+msgid "<b>Removable medium is inserted</b>"
+msgstr "<b>Périphérique amovible inséré</b>"
+
+#: ../data/ui/autorun.glade.h:3
 msgid "Type of medium:"
 msgstr "Type de support :"
+
+#: ../data/ui/autorun.glade.h:4
+msgid "Detecting..."
+msgstr "Détection..."
+
+#: ../data/ui/autorun.glade.h:5
+msgid "Please select the action you want to perform:"
+msgstr "Veuillez sélectionner l’action à effectuer :"
 
 #: ../src/volume-manager.c:164
 msgid "Removable Disk"
@@ -521,11 +526,11 @@ msgstr "Ouvrir dans le gestionnaire de fichiers"
 msgid "Open in New Ta_b"
 msgstr "Ouvrir dans un nouvel on_glet"
 
-#: ../src/desktop-ui.c:52 ../src/tab-page.c:53
+#: ../src/desktop-ui.c:52 ../src/tab-page.c:56
 msgid "Open in New Win_dow"
 msgstr "Ouvrir _dans une nouvelle fenêtre"
 
-#: ../src/desktop-ui.c:54 ../src/tab-page.c:55
+#: ../src/desktop-ui.c:54 ../src/tab-page.c:58
 msgid "Open in Termina_l"
 msgstr "Ouvrir dans un _terminal"
 
@@ -537,184 +542,170 @@ msgstr "Blo_quer à la position courante"
 msgid "Snap to _Grid"
 msgstr "Aligner sur la _grille"
 
-#: ../src/desktop.c:571
+#: ../src/desktop.c:636
 #, fuzzy
 msgid "Activate file"
 msgstr "<fichier image>"
 
-#: ../src/desktop.c:573
+#: ../src/desktop.c:638
 #, fuzzy
 msgid "Show file menu"
 msgstr "Afficher les fichiers _cachés"
 
-#: ../src/desktop.c:989
+#: ../src/desktop.c:1054
 #, fuzzy
 msgid "Show desktop menu"
 msgstr "<b>Afficher les icônes du bureau</b>"
 
 #. FIXME: set name by monitor
-#: ../src/desktop.c:1061
+#: ../src/desktop.c:1126
 #, fuzzy
 msgid "Desktop"
 msgstr "_Bureau"
 
-#: ../src/main-win-ui.c:127
+#: ../src/main-win-ui.c:128
 msgid "_File"
 msgstr "_Fichier"
 
-#: ../src/main-win-ui.c:128
+#: ../src/main-win-ui.c:129
 msgid "_New Window"
 msgstr "_Nouvelle fenêtre"
 
-#: ../src/main-win-ui.c:129
+#: ../src/main-win-ui.c:130
 msgid "New T_ab"
 msgstr "Nouvel _onglet"
 
-#: ../src/main-win-ui.c:129
+#: ../src/main-win-ui.c:130
 msgid "Create new tab for this folder"
 msgstr "Créer un nouvel onglet pour ce dossier"
 
-#: ../src/main-win-ui.c:130
+#: ../src/main-win-ui.c:131
 msgid "C_reate New..."
 msgstr "C_réer un nouveau..."
 
-#: ../src/main-win-ui.c:131
+#: ../src/main-win-ui.c:132
 msgid "_Close Tab"
 msgstr "Fermer l’o_nglet"
 
-#: ../src/main-win-ui.c:132
+#: ../src/main-win-ui.c:133
 msgid "Close _Window"
 msgstr "_Fermer la fenêtre"
 
-#: ../src/main-win-ui.c:133
+#: ../src/main-win-ui.c:134
 msgid "_Edit"
 msgstr "Édit_ion"
 
-#: ../src/main-win-ui.c:138
+#: ../src/main-win-ui.c:139
 msgid "_Rename"
 msgstr "_Renommer"
 
-#: ../src/main-win-ui.c:139
+#: ../src/main-win-ui.c:140
 msgid "Create Symlin_k"
 msgstr "Créer un lien symboli_que"
 
-#: ../src/main-win-ui.c:140
+#: ../src/main-win-ui.c:141
 msgid "_Move To..."
 msgstr "Déplacer _vers..."
 
-#: ../src/main-win-ui.c:141
+#: ../src/main-win-ui.c:142
 msgid "C_opy To..."
 msgstr "C_opier vers..."
 
-#: ../src/main-win-ui.c:143
+#: ../src/main-win-ui.c:144
 msgid "_Invert Selection"
 msgstr "_Inverser la sélection"
 
-#: ../src/main-win-ui.c:144
+#: ../src/main-win-ui.c:145
 msgid "Prefere_nces"
 msgstr "Préfére_nces"
 
-#: ../src/main-win-ui.c:145
+#: ../src/main-win-ui.c:146
 msgid "_View"
 msgstr "_Voir"
 
-#: ../src/main-win-ui.c:146
+#: ../src/main-win-ui.c:147
 msgid "_Reload Folder"
 msgstr "Actualise_r"
 
-#: ../src/main-win-ui.c:146
+#: ../src/main-win-ui.c:147
 msgid "Reload current folder"
 msgstr "Actualiser le dossier"
 
-#: ../src/main-win-ui.c:147
+#: ../src/main-win-ui.c:148
 msgid "Side _Pane"
 msgstr "_Panneau latéral"
 
 #. other see below: 'ShowHidden' 'ShowStatus' 'Fullscreen' 'IconView'...
-#: ../src/main-win-ui.c:149
+#: ../src/main-win-ui.c:150
 msgid "S_ort Files"
 msgstr "_Trier les fichiers"
 
-#: ../src/main-win-ui.c:150
+#: ../src/main-win-ui.c:151
 msgid "_Help"
 msgstr "_Aide"
 
-#: ../src/main-win-ui.c:152
-msgid "_Keyboard navigation"
+#: ../src/main-win-ui.c:153
+#, fuzzy
+msgid "_Keyboard Navigation"
 msgstr "_Raccourcis clavier"
 
-#: ../src/main-win-ui.c:153
+#: ../src/main-win-ui.c:154
 msgid "_Go"
 msgstr "A_ller à"
 
-#: ../src/main-win-ui.c:154
+#: ../src/main-win-ui.c:155
 msgid "_Previous Folder"
 msgstr "Dossier _précédent"
 
-#: ../src/main-win-ui.c:154
+#: ../src/main-win-ui.c:155
 msgid "Return to previous folder in history"
 msgstr ""
 
-#: ../src/main-win-ui.c:155
+#: ../src/main-win-ui.c:156
 msgid "_Next Folder"
 msgstr "Dossier suiva_nt"
 
-#: ../src/main-win-ui.c:155
+#: ../src/main-win-ui.c:156
 msgid "Go forward to next folder in history"
 msgstr ""
 
-#: ../src/main-win-ui.c:156
+#: ../src/main-win-ui.c:157
 msgid "Pa_rent Folder"
 msgstr "Dossier pa_rent"
 
-#: ../src/main-win-ui.c:156
+#: ../src/main-win-ui.c:157
 msgid "Go to parent Folder"
 msgstr "Aller au dossier parent"
 
-#: ../src/main-win-ui.c:157
+#: ../src/main-win-ui.c:158
 msgid "H_ome Folder"
 msgstr "D_ossier personnel"
 
-#: ../src/main-win-ui.c:157
+#: ../src/main-win-ui.c:158
 #, fuzzy
 msgid "Go to home folder"
 msgstr "Aller au dossier parent"
 
-#: ../src/main-win-ui.c:158
+#: ../src/main-win-ui.c:159
 msgid "_Desktop"
 msgstr "_Bureau"
 
-#: ../src/main-win-ui.c:158
+#: ../src/main-win-ui.c:159
 #, fuzzy
 msgid "Go to desktop folder"
 msgstr "Aller au dossier parent"
 
-#: ../src/main-win-ui.c:159
-msgid "_Trash Can"
-msgstr "_Corbeille"
-
-#: ../src/main-win-ui.c:159
+#: ../src/main-win-ui.c:160
 msgid "Open trash can"
 msgstr ""
 
-#: ../src/main-win-ui.c:160
-#, fuzzy
-msgid "_Computer Drives"
-msgstr "Dis_ques réseau"
-
-#: ../src/main-win-ui.c:160
-#, fuzzy
-msgid "Go to list of volumes in the computer"
-msgstr "Afficher les icônes des supports amovibles sur le bureau"
+#: ../src/main-win-ui.c:161
+msgid "Filesyste_m Root"
+msgstr ""
 
 #: ../src/main-win-ui.c:161
-msgid "Net_work Drives"
-msgstr "Dis_ques réseau"
-
-#: ../src/main-win-ui.c:161
-#, fuzzy
-msgid "Go to list of volumes on the network"
-msgstr "Afficher les icônes des supports amovibles sur le bureau"
+msgid "Go fo filesystem root"
+msgstr ""
 
 #: ../src/main-win-ui.c:162
 msgid "_Applications"
@@ -725,131 +716,147 @@ msgid "Go to root of applications menu folder"
 msgstr ""
 
 #: ../src/main-win-ui.c:163
-msgid "Open folder entered in location entry"
+msgid "Devi_ces"
 msgstr ""
 
+#: ../src/main-win-ui.c:163
+#, fuzzy
+msgid "Go to list of devices connected to the computer"
+msgstr "Afficher les icônes des supports amovibles sur le bureau"
+
 #: ../src/main-win-ui.c:164
-msgid "_Bookmarks"
-msgstr "_Marque-pages"
+#, fuzzy
+msgid "Net_work"
+msgstr "Dis_ques réseau"
 
-# Il manque l'indication du caractère pour le raccourci clavier
-#: ../src/main-win-ui.c:165
-msgid "_Add To Bookmarks"
-msgstr "Ajouter aux marque-pages"
+#: ../src/main-win-ui.c:164
+#, fuzzy
+msgid "Go to list of places on the network"
+msgstr "Afficher les icônes des supports amovibles sur le bureau"
 
 #: ../src/main-win-ui.c:165
-msgid "Add current folder to bookmarks list"
+msgid "Go to the path in the location bar"
 msgstr ""
 
 #: ../src/main-win-ui.c:166
+msgid "_Bookmarks"
+msgstr "_Marque-pages"
+
+# Duplicate?
+#: ../src/main-win-ui.c:167
+#, fuzzy
+msgid "_Add to Bookmarks"
+msgstr "Ajouter aux marque-pages"
+
+#: ../src/main-win-ui.c:167
+msgid "Add current folder to bookmarks list"
+msgstr ""
+
+#: ../src/main-win-ui.c:168
 msgid "Tool_s"
 msgstr "_Outils"
 
-#: ../src/main-win-ui.c:167
+#: ../src/main-win-ui.c:169
 msgid "Open Current Folder in _Terminal"
 msgstr "Ouvrir le dossier courant dans un _terminal"
 
-#: ../src/main-win-ui.c:168
-msgid "Open Current Folder as _Root"
-msgstr "Ouvrir le dossier courant en tant que _root"
-
-#: ../src/main-win-ui.c:170
+#: ../src/main-win-ui.c:172
 msgid "Fin_d Files"
 msgstr "_Rechercher des fichiers"
 
-#: ../src/main-win-ui.c:170
+#: ../src/main-win-ui.c:172
 #, fuzzy
 msgid "Open search dialog"
 msgstr "Ouvrir la fenêtre des préférences du bureau"
 
 #. for popup menu - these entries exist in FmFolderView popup still
-#: ../src/main-win-ui.c:179
+#: ../src/main-win-ui.c:181
 msgid "Folder"
 msgstr "Dossier"
 
-#: ../src/main-win-ui.c:180
+#: ../src/main-win-ui.c:182
 msgid "Empty File"
 msgstr "Fichier vide"
 
-#: ../src/main-win-ui.c:186
+#: ../src/main-win-ui.c:188
 msgid "Show Hidde_n"
 msgstr "Afficher les fichiers _cachés"
 
 # Il manque l'indication du caractère pour le raccourci clavier
-#: ../src/main-win-ui.c:187
+#: ../src/main-win-ui.c:189
 msgid "Sho_w Side Pane"
 msgstr "Afficher le panneau latéral"
 
-#: ../src/main-win-ui.c:188
+#: ../src/main-win-ui.c:190
 msgid "Show Status B_ar"
 msgstr "Afficher la barre d'ét_at"
 
-#: ../src/main-win-ui.c:189
+#: ../src/main-win-ui.c:191
 msgid "T_win Pane Mode"
 msgstr "Mode panneau do_uble"
 
-#: ../src/main-win-ui.c:190
+#: ../src/main-win-ui.c:192
 msgid "Fullscreen _Mode"
 msgstr "_Mode plein écran"
 
-#: ../src/main-win-ui.c:195
+#: ../src/main-win-ui.c:197
 msgid "_Icon View"
 msgstr "Vue en _icônes"
 
-#: ../src/main-win-ui.c:196
+#: ../src/main-win-ui.c:198
 msgid "_Thumbnail View"
 msgstr "Vue en _miniatures"
 
-#: ../src/main-win-ui.c:197
+#: ../src/main-win-ui.c:199
 msgid "_Compact View"
 msgstr "Vue _compacte"
 
-#: ../src/main-win-ui.c:198
+#: ../src/main-win-ui.c:200
 msgid "Detailed _List View"
 msgstr "Vue en _liste détaillée"
 
-#: ../src/main-win-ui.c:209
+#: ../src/main-win-ui.c:212 ../src/main-win-ui.c:217
 msgid "By _Name"
 msgstr "Par _nom"
 
-#: ../src/main-win-ui.c:210
+#: ../src/main-win-ui.c:213 ../src/main-win-ui.c:218
 msgid "By _Modification Time"
 msgstr "Par date de _modification"
 
-#: ../src/main-win-ui.c:211
+#: ../src/main-win-ui.c:214 ../src/main-win-ui.c:219
 msgid "By _Size"
 msgstr "Par _taille"
 
-#: ../src/main-win-ui.c:212
+#: ../src/main-win-ui.c:215 ../src/main-win-ui.c:220
 msgid "By File _Type"
 msgstr "Par t_ype de fichier"
 
-#: ../src/main-win-ui.c:217
+#: ../src/main-win-ui.c:226
 msgid "Places"
 msgstr "Emplacements"
 
-#: ../src/main-win-ui.c:218
+#: ../src/main-win-ui.c:227
 msgid "Directory Tree"
 msgstr "Arborescence"
 
 # It's in the same combobox as Places and Directory Tree, so I beleive it's Remote places. In french would be too long, used a translation "ala Windows"...
-#: ../src/main-win-ui.c:219
+#: ../src/main-win-ui.c:228
 msgid "Remote"
 msgstr "Réseau"
 
-#: ../src/main-win.c:532
+#: ../src/main-win.c:585
 msgid "Show history of visited folders"
 msgstr ""
 
-#: ../src/main-win.c:535
+#: ../src/main-win.c:588
 msgid "History"
 msgstr ""
 
-#: ../src/main-win.c:549
+#: ../src/main-win.c:602
 msgid "You are in super user mode"
 msgstr "Vous êtes en mode super-utilisateur"
 
-#: ../src/main-win.c:713
+#: ../src/main-win.c:766
 #, fuzzy
 msgid "Lightweight file manager\n"
 msgstr ""
@@ -857,12 +864,12 @@ msgstr ""
 "\n"
 "Développé par Hon Jen Yee (PCMan)"
 
-#: ../src/main-win.c:718
+#: ../src/main-win.c:771
 #, c-format
 msgid "using LibFM ver. %s\n"
 msgstr ""
 
-#: ../src/main-win.c:720
+#: ../src/main-win.c:773
 #, fuzzy
 msgid ""
 "\n"
@@ -872,11 +879,12 @@ msgstr ""
 "\n"
 "Développé par Hon Jen Yee (PCMan)"
 
-#: ../src/main-win.c:745 ../src/main-win.c:753
-msgid "Keyboard navigation"
+#: ../src/main-win.c:798 ../src/main-win.c:806
+#, fuzzy
+msgid "Keyboard Navigation"
 msgstr "Raccourcis clavier"
 
-#: ../src/main-win.c:747
+#: ../src/main-win.c:800
 msgid ""
 "Tab: cycle focus Folder View -> Side Pane -> Tools Bar\n"
 "Shift+Tab: cycle focus Tools Bar -> Side Pane -> Folder View\n"
@@ -895,11 +903,11 @@ msgstr ""
 "F10 : Dérouler le menu principal\n"
 "Ctrl+L ou Alt+D : Sélectionner le chemin dans la barre d'adresses"
 
-#: ../src/main-win.c:783
+#: ../src/main-win.c:844
 msgid "Switch user command is not set."
 msgstr "La commande de changement d’utilisateur n'est pas configurée."
 
-#: ../src/main-win.c:1138
+#: ../src/main-win.c:1270
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -911,7 +919,7 @@ msgstr ""
 "Entrez un nom pour ce marque-page :"
 
 # Duplicate?
-#: ../src/main-win.c:1142
+#: ../src/main-win.c:1274
 msgid "Add to Bookmarks"
 msgstr "Ajouter aux marque-pages"
 
@@ -993,44 +1001,45 @@ msgstr "RÔLE"
 msgid "[FILE1, FILE2,...]"
 msgstr "[FICHIER1, FICHIER2, ...]"
 
-#: ../src/pcmanfm.c:528
+#: ../src/pcmanfm.c:536
 msgid "Terminal emulator is not set."
 msgstr "L’émulateur de terminal n’est pas configuré."
 
 # Il manque l'indication du caractère pour le raccourci clavier
-#: ../src/tab-page.c:52
+#: ../src/tab-page.c:55
 msgid "Open in New T_ab"
 msgstr "Ouvrir dans un nouvel onglet"
 
-#: ../src/tab-page.c:245
+#: ../src/tab-page.c:254
 #, c-format
 msgid "%d item selected"
 msgid_plural "%d items selected"
 msgstr[0] "%d élément sélectionné"
 msgstr[1] "%d éléments sélectionnés"
 
-#: ../src/tab-page.c:400
+#: ../src/tab-page.c:442
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Espace libre : %s (total : %s)"
 
-#: ../src/tab-page.c:420
+#: ../src/tab-page.c:462
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] "%d élément"
 msgstr[1] "%d éléments"
 
-#: ../src/tab-page.c:421
+#: ../src/tab-page.c:463
 #, c-format
 msgid " (%d hidden)"
 msgid_plural " (%d hidden)"
 msgstr[0] " (%d caché)"
 msgstr[1] " (%d cachés)"
 
+# File manager had been translated as "Open in the file manager", which obviously was not correct. The above "Gestionnaire de fichiers" is the correct translation.
 #: ../data/pcmanfm.desktop.in.h:1
-msgid "Browse the file system and manage the files"
-msgstr "Parcourir le système de fichiers et gérer les fichiers"
+msgid "File Manager PCManFM"
+msgstr "Gestionnaire de fichiers PCManFM"
 
 # File manager had been translated as "Open in the file manager", which obviously was not correct. The above "Gestionnaire de fichiers" is the correct translation.
 #
@@ -1038,15 +1047,38 @@ msgstr "Parcourir le système de fichiers et gérer les fichiers"
 msgid "File Manager"
 msgstr "Gestionnaire de fichiers"
 
-# File manager had been translated as "Open in the file manager", which obviously was not correct. The above "Gestionnaire de fichiers" is the correct translation.
 #: ../data/pcmanfm.desktop.in.h:3
-msgid "File Manager PCManFM"
-msgstr "Gestionnaire de fichiers PCManFM"
+msgid "Browse the file system and manage the files"
+msgstr "Parcourir le système de fichiers et gérer les fichiers"
 
-#: ../data/pcmanfm-desktop-pref.desktop.in.h:1
+#: ../data/pcmanfm-desktop-pref.desktop.in.h:2
 msgid "Change desktop wallpapers and behavior of desktop manager"
 msgstr ""
 "Modifier les fonds d’écran et le comportement du gestionnaire de bureau"
+
+#~ msgid "Show \"_My Computer\" icon on desktop"
+#~ msgstr "Afficher l’icône « Mon ordinateur » sur le bureau"
+
+#~ msgid "Des_ktop Folder"
+#~ msgstr "_Bureau"
+
+#~ msgid "_Home Directory"
+#~ msgstr "Dossier person_nel"
+
+#, fuzzy
+#~ msgid "_Trash can"
+#~ msgstr "_Corbeille"
+
+#, fuzzy
+#~ msgid "_Computer Drives"
+#~ msgstr "Dis_ques réseau"
+
+# Il manque l'indication du caractère pour le raccourci clavier
+#~ msgid "_Add To Bookmarks"
+#~ msgstr "Ajouter aux marque-pages"
+
+#~ msgid "Open Current Folder as _Root"
+#~ msgstr "Ouvrir le dossier courant en tant que _root"
 
 #~ msgid "Hide _folder content border"
 #~ msgstr "Masquer la bordure autour du contenu du _dossier"
@@ -1072,9 +1104,6 @@ msgstr ""
 
 #~ msgid "Next Folder"
 #~ msgstr "Dossier suivant"
-
-#~ msgid "Home Folder"
-#~ msgstr "Dossier personnel"
 
 #~ msgid "Desktop Folder"
 #~ msgstr "Dossier du bureau"

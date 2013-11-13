@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm 0.9.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-16 23:12+0300\n"
+"POT-Creation-Date: 2013-11-13 22:34+0100\n"
 "PO-Revision-Date: 2013-10-27 07:36+0000\n"
 "Last-Translator: Juhani <juhaninumminen0@gmail.com>\n"
 "Language: fi\n"
@@ -31,243 +31,386 @@ msgstr ""
 "Jesse Jaara\n"
 "Juhani Numminen <juhaninumminen0@gmail.com>"
 
-#: ../data/ui/desktop-pref.glade.h:1
-msgid "<b>Background</b>"
-msgstr "<b>Tausta</b>"
-
-#: ../data/ui/desktop-pref.glade.h:2
-msgid "<b>Show desktop icons</b>"
-msgstr "<b>Näytä työpöydän kuvakkeet</b>"
-
-#: ../data/ui/desktop-pref.glade.h:3
-msgid "<b>Text</b>"
-msgstr "<b>Teksti</b>"
-
-#: ../data/ui/desktop-pref.glade.h:4
-msgid "Ad_vanced"
-msgstr "_Kehittyneet"
-
-#: ../data/ui/desktop-pref.glade.h:5
-msgid "C_olor of label text:"
-msgstr "_Otsikkotekstin väri:"
-
-#: ../data/ui/desktop-pref.glade.h:6
-msgid "Center on the screen"
-msgstr "Keskitä näytölle"
-
-#: ../data/ui/desktop-pref.glade.h:7
-msgid "Color of _shadow:"
-msgstr "_Varjon väri:"
-
-#: ../data/ui/desktop-pref.glade.h:8 ../src/desktop-ui.c:34
-#: ../data/pcmanfm-desktop-pref.desktop.in.h:2
+#: ../data/ui/desktop-pref.glade.h:1 ../src/desktop-ui.c:34
+#: ../data/pcmanfm-desktop-pref.desktop.in.h:1
 msgid "Desktop Preferences"
 msgstr "Työpöydän asetukset"
 
-#: ../data/ui/desktop-pref.glade.h:9
-msgid "Fill with background color only"
-msgstr "Täytä pelkästään taustavärillä"
+#: ../data/ui/desktop-pref.glade.h:2
+msgid "<b>Background</b>"
+msgstr "<b>Tausta</b>"
 
-#: ../data/ui/desktop-pref.glade.h:10
-msgid "Please select an image file"
-msgstr "Valitse kuva tiedosto"
-
-#: ../data/ui/desktop-pref.glade.h:11
-msgid "S_how icons of volumes on desktop"
-msgstr "Nä_ytä levyasemien kuvakkeet työpöydällä"
-
-#: ../data/ui/desktop-pref.glade.h:12
-msgid "Show \"_My Computer\" icon on desktop"
-msgstr "Näytä ”_Tietokone”-kuvake työpöydällä"
-
-#: ../data/ui/desktop-pref.glade.h:13
-msgid "Show \"_Trash Can\" icon on desktop"
-msgstr "Näytä ”_Roskakori”-kuvake työpöydällä"
-
-#: ../data/ui/desktop-pref.glade.h:14
-msgid "Stretch to fill the entire screen"
-msgstr "Venytä koko näytölle"
-
-#: ../data/ui/desktop-pref.glade.h:15
-msgid "Stretch to fit the screen"
-msgstr "Venytä mahtumaan näytölle"
-
-#: ../data/ui/desktop-pref.glade.h:16
-msgid "Tile the image to fill the entire screen"
-msgstr "Täytä ruutu laittamalla kuvia vierekkäin"
-
-#: ../data/ui/desktop-pref.glade.h:17
-msgid "Wallpaper _mode:"
-msgstr "_Taustakuvatila:"
-
-#: ../data/ui/desktop-pref.glade.h:18
-msgid "_Appearance"
-msgstr "_Ulkoasu"
-
-#: ../data/ui/desktop-pref.glade.h:19
-msgid "_Background color:"
-msgstr "T_austaväri:"
-
-#: ../data/ui/desktop-pref.glade.h:20
-msgid "_Desktop Icons"
-msgstr "Työ_pöydän kuvakkeet"
-
-#: ../data/ui/desktop-pref.glade.h:21
-msgid "_Font of label text:"
-msgstr "_Otsikon kirjasin:"
-
-#: ../data/ui/desktop-pref.glade.h:22
-msgid "_Show \"My Documents\" icon on desktop"
-msgstr "Näytä ”Tiedostoni”-kuvake työpöydällä"
-
-#: ../data/ui/desktop-pref.glade.h:23
-msgid "_Show menus provided by window managers when desktop is clicked"
-msgstr "_Näytä ikkunanhallinnan valikko, kun työpöytää klikataan"
-
-#: ../data/ui/desktop-pref.glade.h:24
-msgid "_Use the same wallpaper on all desktops"
-msgstr "_Käytä samaa taustakuvaa kaikilla työpöydillä"
-
-#: ../data/ui/desktop-pref.glade.h:25
+#: ../data/ui/desktop-pref.glade.h:3
 msgid "_Wallpaper:"
 msgstr "_Taustakuva:"
 
+#: ../data/ui/desktop-pref.glade.h:4
+msgid "Please select an image file"
+msgstr "Valitse kuva tiedosto"
+
+#: ../data/ui/desktop-pref.glade.h:5
+msgid "_Use the same wallpaper on all desktops"
+msgstr "_Käytä samaa taustakuvaa kaikilla työpöydillä"
+
+#: ../data/ui/desktop-pref.glade.h:6
+msgid "_Background color:"
+msgstr "T_austaväri:"
+
+#: ../data/ui/desktop-pref.glade.h:7
+msgid "Wallpaper _mode:"
+msgstr "_Taustakuvatila:"
+
+#: ../data/ui/desktop-pref.glade.h:8
+msgid "<b>Text</b>"
+msgstr "<b>Teksti</b>"
+
+#: ../data/ui/desktop-pref.glade.h:9
+msgid "_Font of label text:"
+msgstr "_Otsikon kirjasin:"
+
+#: ../data/ui/desktop-pref.glade.h:10
+msgid "C_olor of label text:"
+msgstr "_Otsikkotekstin väri:"
+
+#: ../data/ui/desktop-pref.glade.h:11
+msgid "Color of _shadow:"
+msgstr "_Varjon väri:"
+
+#: ../data/ui/desktop-pref.glade.h:12
+msgid "_Appearance"
+msgstr "_Ulkoasu"
+
+#: ../data/ui/desktop-pref.glade.h:13
+msgid "<b>Show desktop icons</b>"
+msgstr "<b>Näytä työpöydän kuvakkeet</b>"
+
+#: ../data/ui/desktop-pref.glade.h:14
+#, fuzzy
+msgid "_Show \"Documents\" icon on desktop"
+msgstr "Näytä ”Tiedostoni”-kuvake työpöydällä"
+
+#: ../data/ui/desktop-pref.glade.h:15
+#, fuzzy
+msgid "Sho_w \"Devices\" icon on desktop"
+msgstr "Näytä ”Tiedostoni”-kuvake työpöydällä"
+
+#: ../data/ui/desktop-pref.glade.h:16
+msgid "Show \"_Trash Can\" icon on desktop"
+msgstr "Näytä ”_Roskakori”-kuvake työpöydällä"
+
+#: ../data/ui/desktop-pref.glade.h:17
+msgid "S_how icons of volumes on desktop"
+msgstr "Nä_ytä levyasemien kuvakkeet työpöydällä"
+
+#: ../data/ui/desktop-pref.glade.h:18
+msgid "_Desktop Icons"
+msgstr "Työ_pöydän kuvakkeet"
+
+#: ../data/ui/desktop-pref.glade.h:19
+msgid "_Show menus provided by window managers when desktop is clicked"
+msgstr "_Näytä ikkunanhallinnan valikko, kun työpöytää klikataan"
+
+#: ../data/ui/desktop-pref.glade.h:20
+msgid "Ad_vanced"
+msgstr "_Kehittyneet"
+
+#: ../data/ui/desktop-pref.glade.h:21
+msgid "Fill with background color only"
+msgstr "Täytä pelkästään taustavärillä"
+
+#: ../data/ui/desktop-pref.glade.h:22
+msgid "Stretch to fill the entire screen"
+msgstr "Venytä koko näytölle"
+
+#: ../data/ui/desktop-pref.glade.h:23
+msgid "Stretch to fit the screen"
+msgstr "Venytä mahtumaan näytölle"
+
+#: ../data/ui/desktop-pref.glade.h:24
+msgid "Center on the screen"
+msgstr "Keskitä näytölle"
+
+#: ../data/ui/desktop-pref.glade.h:25
+msgid "Tile the image to fill the entire screen"
+msgstr "Täytä ruutu laittamalla kuvia vierekkäin"
+
 #: ../data/ui/pref.glade.h:1
-msgid "\"C_omputer\" special folder"
-msgstr "”T_ietokone”-erityiskansio"
+msgid "Opened in Current Tab"
+msgstr "Avaa nykyiseen välilehteen"
 
 #: ../data/ui/pref.glade.h:2
-msgid "<b>Auto-mount</b>"
-msgstr "<b>Liitä automaattisesti</b>"
+msgid "Opened in New Tab"
+msgstr "Avaa uuteen välilehteen"
 
 #: ../data/ui/pref.glade.h:3
+msgid "Opened in New Window"
+msgstr "Avaa uuteen ikkunaan"
+
+#: ../data/ui/pref.glade.h:4
+msgid "Preferences"
+msgstr "Asetukset"
+
+#: ../data/ui/pref.glade.h:5
 msgid "<b>Behavior</b>"
 msgstr "<b>Toimintatapa</b>"
 
-#: ../data/ui/pref.glade.h:4
-msgid "<b>Default View</b>"
-msgstr "<b>Oletusnäkymä</b>"
-
-#: ../data/ui/pref.glade.h:5
-msgid "<b>Directories Tree</b>"
-msgstr "<b>Hakemistopuu</b>"
-
 #: ../data/ui/pref.glade.h:6
-msgid "<b>Icons</b>"
-msgstr "<b>Kuvakkeet</b>"
+msgid "_Open files with single click"
+msgstr "_Avaa tiedostot yhdellä klikkauksella"
 
 #: ../data/ui/pref.glade.h:7
-msgid "<b>Other options</b>"
-msgstr "<b>Muut vaihtoehdot</b>"
-
-#: ../data/ui/pref.glade.h:8
-msgid "<b>Programs</b>"
-msgstr "<b>Ohjelmat</b>"
-
-#: ../data/ui/pref.glade.h:9
-msgid "<b>Show in Places:</b>"
-msgstr "<b>Näytä sijainneissa:</b>"
-
-#: ../data/ui/pref.glade.h:10
-msgid "<b>Templates</b>"
-msgstr "<b>Pohjat</b>"
-
-#: ../data/ui/pref.glade.h:11
-msgid "<b>User Interface</b>"
-msgstr "<b>Käyttöliittymä</b>"
-
-#: ../data/ui/pref.glade.h:12
-msgid "<i>Commands below may include extra switches if necessary.</i>"
-msgstr ""
-"<i>Tarvittaessa alle olevat komennot voivat sisältää lisävalitsimia.</i>"
-
-#: ../data/ui/pref.glade.h:13
-msgid "A_rchiver integration:"
-msgstr "P_akkausohjelma:"
-
-#: ../data/ui/pref.glade.h:14
-msgid "Al_ways show full file names"
-msgstr "Näytä _aina koko tiedostonimi"
-
-#: ../data/ui/pref.glade.h:15
-msgid "Al_ways show the tab bar"
-msgstr "Näytä aina _välilehtipalkki"
-
-#: ../data/ui/pref.glade.h:16
-msgid "App_lications"
-msgstr "_Ohjelmat"
-
-#: ../data/ui/pref.glade.h:17
-msgid "Ask"
-msgstr "Kysy"
-
-#: ../data/ui/pref.glade.h:18
-msgid "Auto (move if on the same FS, copy otherwise)"
-msgstr ""
-"Automaattinen (jos samalla tiedostojärjestelmällä, siirrä, muulloin kopioi)"
-
-#: ../data/ui/pref.glade.h:19
-msgid "Clos_e tab containing removable medium when it is unmounted"
-msgstr "_Sulje siirrettävän taltion välilehti, kun laite irrotetaan"
-
-#: ../data/ui/pref.glade.h:20
-msgid "Co_nfirm before deleting files"
-msgstr "_Vahvista ennen poistoa"
-
-#: ../data/ui/pref.glade.h:21
-msgid "Compact View"
-msgstr "Kompakti näkymä"
-
-#: ../data/ui/pref.glade.h:22
-msgid "Confi_rm before moving files into \"trash can\""
-msgstr "Vahvista ennen ”_roskakoriin” siirtämistä"
-
-#: ../data/ui/pref.glade.h:23
-msgid "Copy"
-msgstr "Kopioi"
-
-#: ../data/ui/pref.glade.h:24
-msgid "D_efer test for content type on folder loading"
-msgstr "_Lykkää sisältötyypin tunnistamista kansiota ladattaessa"
-
-#: ../data/ui/pref.glade.h:25
-msgid "Defaul_t drop action:"
-msgstr "_Raahaamisen oletustoiminto:"
-
-#: ../data/ui/pref.glade.h:26
 msgid "Delay of auto-selection in single click mode (0 to disable)"
 msgstr ""
 "Automaattisen valinnan viive yksi klikkaus -tilassa (0 poistaa käytöstä)"
 
-#: ../data/ui/pref.glade.h:27
-msgid "Des_ktop Folder"
-msgstr "_Työpöytäkansio"
+#: ../data/ui/pref.glade.h:8
+msgid "Co_nfirm before deleting files"
+msgstr "_Vahvista ennen poistoa"
 
-#: ../data/ui/pref.glade.h:28
-msgid "Detailed List View"
-msgstr "Yksityiskohdat"
+#: ../data/ui/pref.glade.h:9
+msgid "_Move deleted files to \"trash can\" instead of erasing from disk"
+msgstr "_Siirrä poistetut tiedostot ”roskakoriin” levyltä poistamisen sijaan"
 
-#: ../data/ui/pref.glade.h:29
-msgid "Do _not generate thumbnails for files exceeding this size:"
-msgstr "Ä_lä luo esikatselukuvia tiedostoille, jotka ovat suurempia kuin:"
+#: ../data/ui/pref.glade.h:10
+msgid "_Erase files on removable media instead of \"trash can\" creation"
+msgstr "Poista irrotettavan laitteen tiedostot ”_roskakorin” luomisen sijaan"
 
-#: ../data/ui/pref.glade.h:30
+#: ../data/ui/pref.glade.h:11
+msgid "Confi_rm before moving files into \"trash can\""
+msgstr "Vahvista ennen ”_roskakoriin” siirtämistä"
+
+#: ../data/ui/pref.glade.h:12
 msgid "Don't ask options on _launch executable file"
 msgstr "Älä kysy vaihtoehtoja _suoritettavia tiedostoja käynnistettäessä"
 
+#: ../data/ui/pref.glade.h:13
+msgid "_Bookmarks:"
+msgstr "_Kirjanmerkit:"
+
+#: ../data/ui/pref.glade.h:14
+msgid "Defaul_t drop action:"
+msgstr "_Raahaamisen oletustoiminto:"
+
+#: ../data/ui/pref.glade.h:15
+msgid "_Unfold tab when files are dragged onto tab button"
+msgstr "_Avaa välilehti, kun tiedosto raahataan välilehden painikkeeseen"
+
+#: ../data/ui/pref.glade.h:16
+msgid "<b>Default View</b>"
+msgstr "<b>Oletusnäkymä</b>"
+
+#: ../data/ui/pref.glade.h:17
+msgid "Vie_w Mode:"
+msgstr "_Näkymä:"
+
+#: ../data/ui/pref.glade.h:18
+msgid "_General"
+msgstr "_Yleiset"
+
+#: ../data/ui/pref.glade.h:19
+msgid "<b>Icons</b>"
+msgstr "<b>Kuvakkeet</b>"
+
+#: ../data/ui/pref.glade.h:20
+msgid "Size of _big icons:"
+msgstr "_Suurten kuvakkeiden koko:"
+
+#: ../data/ui/pref.glade.h:21
+msgid "Size of small _icons:"
+msgstr "_Pienten kuvakkeiden koko:"
+
+#: ../data/ui/pref.glade.h:22
+msgid "Size of _thumbnails:"
+msgstr "_Esikatseluiden koko:"
+
+#: ../data/ui/pref.glade.h:23
+msgid "Size of side _pane icons:"
+msgstr "_Sivupaneelin kuvakkeiden koko:"
+
+#: ../data/ui/pref.glade.h:24
+msgid "_Show thumbnails of files"
+msgstr "_Näytä tiedostojen esikatselut"
+
+#: ../data/ui/pref.glade.h:25
+msgid "_Only show thumbnails for local files"
+msgstr "Näytä esikatselukuvat vain _paikallisille tiedostoille"
+
+#: ../data/ui/pref.glade.h:26
+msgid "Do _not generate thumbnails for files exceeding this size:"
+msgstr "Ä_lä luo esikatselukuvia tiedostoille, jotka ovat suurempia kuin:"
+
+#: ../data/ui/pref.glade.h:27
+msgid "<b>User Interface</b>"
+msgstr "<b>Käyttöliittymä</b>"
+
+#: ../data/ui/pref.glade.h:28
+msgid "Us_e SI decimal prefixes instead of IEC binary prefixes"
+msgstr ""
+"_Käytä SI-järjestelmän desimaalietuliitteitä IEC-binaarietuliitteiden sijaan"
+
+#: ../data/ui/pref.glade.h:29
+msgid "Treat backup files as _hidden"
+msgstr "Käsittele varmuuskopiotiedostoja _piilotettuina"
+
+#: ../data/ui/pref.glade.h:30
+msgid "Al_ways show full file names"
+msgstr "Näytä _aina koko tiedostonimi"
+
 #: ../data/ui/pref.glade.h:31
+msgid "Show icons of bac_kup files shadowed"
+msgstr "Näytä va_rmuuskopiotiedostojen kuvakkeet tummennettuina"
+
+#: ../data/ui/pref.glade.h:32
+msgid "_Display"
+msgstr "_Näyttö"
+
+#: ../data/ui/pref.glade.h:33
 msgid "Hid_e 'Close tab' buttons"
 msgstr "_Piilota ”Sulje välilehti” -painikkeet"
 
-#: ../data/ui/pref.glade.h:32
+#: ../data/ui/pref.glade.h:34
+msgid "Al_ways show the tab bar"
+msgstr "Näytä aina _välilehtipalkki"
+
+#: ../data/ui/pref.glade.h:35
+msgid "_Maximum width of tab label:"
+msgstr "Vä_lilehden otsikon suurin leveys:"
+
+#. Use genitive case here, context is: width is XXX characters
+#: ../data/ui/pref.glade.h:37
+msgid "characters"
+msgstr "merkkiä"
+
+#: ../data/ui/pref.glade.h:38
+msgid "<b>Directories Tree</b>"
+msgstr "<b>Hakemistopuu</b>"
+
+#: ../data/ui/pref.glade.h:39
 msgid "Hide e_xpander on empty or locked folder"
 msgstr "Piilota tyhjien tai lukittujen kansioiden laa_jennuspainike"
 
-#: ../data/ui/pref.glade.h:33
-msgid "Icon View"
-msgstr "Kuvakenäkymä"
+#: ../data/ui/pref.glade.h:40
+msgid "<b>Show in Places:</b>"
+msgstr "<b>Näytä sijainneissa:</b>"
 
-#: ../data/ui/pref.glade.h:34
+#: ../data/ui/pref.glade.h:41
+#, fuzzy
+msgid "_Home Folder"
+msgstr "Kotikansio"
+
+#: ../data/ui/pref.glade.h:42
+#, fuzzy
+msgid "Des_ktop"
+msgstr "Työpöytä"
+
+#: ../data/ui/pref.glade.h:43 ../src/main-win-ui.c:160
+msgid "_Trash Can"
+msgstr "_Roskakori"
+
+#: ../data/ui/pref.glade.h:44
+#, fuzzy
+msgid "_Filesystem Root"
+msgstr "T_iedostojärjestelmän juuri"
+
+#: ../data/ui/pref.glade.h:45
+msgid "App_lications"
+msgstr "_Ohjelmat"
+
+#: ../data/ui/pref.glade.h:46
+msgid "Dev_ices"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:47
+#, fuzzy
+msgid "_Network"
+msgstr "_Verkkosijainnit"
+
+#: ../data/ui/pref.glade.h:48
+msgid "_Layout"
+msgstr "_Asettelu"
+
+#: ../data/ui/pref.glade.h:49
+msgid "<b>Auto-mount</b>"
+msgstr "<b>Liitä automaattisesti</b>"
+
+#: ../data/ui/pref.glade.h:50
+msgid "_Mount mountable volumes automatically on program startup"
+msgstr "Liitä irrotettavat asemat auto_maattisesti ohjelman käynnistyessä"
+
+#: ../data/ui/pref.glade.h:51
+msgid "Mo_unt removable media automatically when they are inserted"
+msgstr "_Liitä irrotettavat asemat kun ne kytketään koneeseen"
+
+#: ../data/ui/pref.glade.h:52
+msgid "_Show available options for removable media when they are inserted"
+msgstr "_Kysy mitä tehdään kun irrotettava asema liitetään"
+
+#: ../data/ui/pref.glade.h:53
+msgid "_Open mounted removable media in new tab instead of new window"
+msgstr ""
+"_Avaa liitetty irrotettava asema uuteen välilehteen uuden ikkunan sijaan"
+
+#: ../data/ui/pref.glade.h:54
+msgid "Clos_e tab containing removable medium when it is unmounted"
+msgstr "_Sulje siirrettävän taltion välilehti, kun laite irrotetaan"
+
+#: ../data/ui/pref.glade.h:55
+msgid "_Volume Management"
+msgstr "_Asemien hallinta"
+
+#: ../data/ui/pref.glade.h:56
+msgid "<b>Programs</b>"
+msgstr "<b>Ohjelmat</b>"
+
+#: ../data/ui/pref.glade.h:57
+#, fuzzy
+msgid "<i>Commands below may include extra options if necessary.</i>"
+msgstr ""
+"<i>Tarvittaessa alle olevat komennot voivat sisältää lisävalitsimia.</i>"
+
+#: ../data/ui/pref.glade.h:58
+msgid "_Terminal emulator:"
+msgstr "_Terminaaliemulaattori:"
+
+#: ../data/ui/pref.glade.h:59
+msgid "_Switch user command:"
+msgstr "Käyttäjän_vaihtokomento:"
+
+#. Application command to format some drive
+#: ../data/ui/pref.glade.h:61
+msgid "_Format command:"
+msgstr "_Muotoilukomento:"
+
+#: ../data/ui/pref.glade.h:62
+msgid "A_rchiver integration:"
+msgstr "P_akkausohjelma:"
+
+#: ../data/ui/pref.glade.h:63
+msgid "<b>Templates</b>"
+msgstr "<b>Pohjat</b>"
+
+#: ../data/ui/pref.glade.h:64
+msgid "S_how only user defined templates in menu"
+msgstr "Näytä valikossa _vain käyttäjän määrittelemät mallit"
+
+#: ../data/ui/pref.glade.h:65
+msgid "Show _only one template for each MIME type"
+msgstr "Näytä v_ain yksi malli kullekin MIME-tyypille"
+
+#: ../data/ui/pref.glade.h:66
+msgid "Ru_n default application after creation from template"
+msgstr "_Suorita oletussovellus mallista luomisen jälkeen"
+
+#: ../data/ui/pref.glade.h:67
+#, fuzzy
+msgid "<b>Other Options</b>"
+msgstr "<b>Muut vaihtoehdot</b>"
+
+#: ../data/ui/pref.glade.h:68
+msgid "_Use Application Startup Notify by default"
+msgstr "Kä_ytä käynnistyksen huomautusta oletusarvoisesti"
+
+#: ../data/ui/pref.glade.h:69
 msgid ""
 "If checked then use Startup Notify for application if another not stated "
 "explicitly.\n"
@@ -278,200 +421,66 @@ msgstr ""
 "Jos asetus on pois päältä, käytä käytä käynnistyksen huomautusta vain, jos "
 "se on määritetty kyseiselle ohjelmalle."
 
-#: ../data/ui/pref.glade.h:36
-msgid "Mo_unt removable media automatically when they are inserted"
-msgstr "_Liitä irrotettavat asemat kun ne kytketään koneeseen"
+#: ../data/ui/pref.glade.h:71
+msgid "D_efer test for content type on folder loading"
+msgstr "_Lykkää sisältötyypin tunnistamista kansiota ladattaessa"
 
-#: ../data/ui/pref.glade.h:37
-msgid "Move"
-msgstr "Siirrä"
-
-#: ../data/ui/pref.glade.h:38
-msgid "Opened in Current Tab"
-msgstr "Avaa nykyiseen välilehteen"
-
-#: ../data/ui/pref.glade.h:39
-msgid "Opened in New Tab"
-msgstr "Avaa uuteen välilehteen"
-
-#: ../data/ui/pref.glade.h:40
-msgid "Opened in New Window"
-msgstr "Avaa uuteen ikkunaan"
-
-#: ../data/ui/pref.glade.h:41
-msgid "Preferences"
-msgstr "Asetukset"
-
-#: ../data/ui/pref.glade.h:42
-msgid "Ru_n default application after creation from template"
-msgstr "_Suorita oletussovellus mallista luomisen jälkeen"
-
-#: ../data/ui/pref.glade.h:43
-msgid "S_how only user defined templates in menu"
-msgstr "Näytä valikossa _vain käyttäjän määrittelemät mallit"
-
-#: ../data/ui/pref.glade.h:44
-msgid "Show _only one template for each MIME type"
-msgstr "Näytä v_ain yksi malli kullekin MIME-tyypille"
-
-#: ../data/ui/pref.glade.h:45
-msgid "Show icons of bac_kup files shadowed"
-msgstr "Näytä va_rmuuskopiotiedostojen kuvakkeet tummennettuina"
-
-#: ../data/ui/pref.glade.h:46
-msgid "Size of _big icons:"
-msgstr "_Suurten kuvakkeiden koko:"
-
-#: ../data/ui/pref.glade.h:47
-msgid "Size of _thumbnails:"
-msgstr "_Esikatseluiden koko:"
-
-#: ../data/ui/pref.glade.h:48
-msgid "Size of side _pane icons:"
-msgstr "_Sivupaneelin kuvakkeiden koko:"
-
-#: ../data/ui/pref.glade.h:49
-msgid "Size of small _icons:"
-msgstr "_Pienten kuvakkeiden koko:"
-
-#: ../data/ui/pref.glade.h:50
-msgid "Thumbnail View"
-msgstr "Esikatselu näkymä"
-
-#: ../data/ui/pref.glade.h:51
-msgid "Treat backup files as _hidden"
-msgstr "Käsittele varmuuskopiotiedostoja _piilotettuina"
-
-#: ../data/ui/pref.glade.h:52
-msgid "Us_e SI decimal prefixes instead of IEC binary prefixes"
-msgstr ""
-"_Käytä SI-järjestelmän desimaalietuliitteitä IEC-binaarietuliitteiden sijaan"
-
-#: ../data/ui/pref.glade.h:53
-msgid "Vie_w Mode:"
-msgstr "_Näkymä:"
-
-#: ../data/ui/pref.glade.h:54
+#: ../data/ui/pref.glade.h:72
 msgid "_Advanced"
 msgstr "_Lisäasetukset"
 
-#: ../data/ui/pref.glade.h:55
-msgid "_Bookmarks:"
-msgstr "_Kirjanmerkit:"
-
-#: ../data/ui/pref.glade.h:56
-msgid "_Display"
-msgstr "_Näyttö"
-
-#: ../data/ui/pref.glade.h:57
-msgid "_Erase files on removable media instead of \"trash can\" creation"
-msgstr "Poista irrotettavan laitteen tiedostot ”_roskakorin” luomisen sijaan"
-
-#: ../data/ui/pref.glade.h:58
-msgid "_File system root"
-msgstr "T_iedostojärjestelmän juuri"
-
-#: ../data/ui/pref.glade.h:59
-msgid "_Format command:"
-msgstr "_Muotoilukomento:"
-
-#: ../data/ui/pref.glade.h:60
-msgid "_General"
-msgstr "_Yleiset"
-
-#: ../data/ui/pref.glade.h:61
-msgid "_Home Directory"
-msgstr "_Kotihakemisto"
-
-#: ../data/ui/pref.glade.h:62
-msgid "_Layout"
-msgstr "_Asettelu"
-
-#: ../data/ui/pref.glade.h:63
-msgid "_Maximum width of tab label:"
-msgstr "Vä_lilehden otsikon suurin leveys:"
-
-#: ../data/ui/pref.glade.h:64
-msgid "_Mount mountable volumes automatically on program startup"
-msgstr "Liitä irrotettavat asemat auto_maattisesti ohjelman käynnistyessä"
-
-#: ../data/ui/pref.glade.h:65
-msgid "_Move deleted files to \"trash can\" instead of erasing from disk"
-msgstr "_Siirrä poistetut tiedostot ”roskakoriin” levyltä poistamisen sijaan"
-
-#: ../data/ui/pref.glade.h:66
-msgid "_Network places"
-msgstr "_Verkkosijainnit"
-
-#: ../data/ui/pref.glade.h:67
-msgid "_Only show thumbnails for local files"
-msgstr "Näytä esikatselukuvat vain _paikallisille tiedostoille"
-
-#: ../data/ui/pref.glade.h:68
-msgid "_Open files with single click"
-msgstr "_Avaa tiedostot yhdellä klikkauksella"
-
-#: ../data/ui/pref.glade.h:69
-msgid "_Open mounted removable media in new tab instead of new window"
-msgstr ""
-"_Avaa liitetty irrotettava asema uuteen välilehteen uuden ikkunan sijaan"
-
-#: ../data/ui/pref.glade.h:70
-msgid "_Show available options for removable media when they are inserted"
-msgstr "_Kysy mitä tehdään kun irrotettava asema liitetään"
-
-#: ../data/ui/pref.glade.h:71
-msgid "_Show thumbnails of files"
-msgstr "_Näytä tiedostojen esikatselut"
-
-#: ../data/ui/pref.glade.h:72
-msgid "_Switch user command:"
-msgstr "Käyttäjän_vaihtokomento:"
-
 #: ../data/ui/pref.glade.h:73
-msgid "_Terminal emulator:"
-msgstr "_Terminaaliemulaattori:"
+msgid "Auto (move if on the same FS, copy otherwise)"
+msgstr ""
+"Automaattinen (jos samalla tiedostojärjestelmällä, siirrä, muulloin kopioi)"
 
 #: ../data/ui/pref.glade.h:74
-msgid "_Trash can"
-msgstr "_Roskakori"
+msgid "Copy"
+msgstr "Kopioi"
 
 #: ../data/ui/pref.glade.h:75
-msgid "_Unfold tab when files are dragged onto tab button"
-msgstr "_Avaa välilehti, kun tiedosto raahataan välilehden painikkeeseen"
+msgid "Move"
+msgstr "Siirrä"
 
 #: ../data/ui/pref.glade.h:76
-msgid "_Use Application Startup Notify by default"
-msgstr "Kä_ytä käynnistyksen huomautusta oletusarvoisesti"
+msgid "Ask"
+msgstr "Kysy"
 
 #: ../data/ui/pref.glade.h:77
-msgid "_Volume Management"
-msgstr "_Asemien hallinta"
+msgid "Icon View"
+msgstr "Kuvakenäkymä"
 
-#. Use genitive case here, context is: width is XXX characters
+#: ../data/ui/pref.glade.h:78
+msgid "Compact View"
+msgstr "Kompakti näkymä"
+
 #: ../data/ui/pref.glade.h:79
-msgid "characters"
-msgstr "merkkiä"
+msgid "Thumbnail View"
+msgstr "Esikatselu näkymä"
+
+#: ../data/ui/pref.glade.h:80
+msgid "Detailed List View"
+msgstr "Yksityiskohdat"
 
 #: ../data/ui/autorun.glade.h:1
-msgid "<b>Removable medium is inserted</b>"
-msgstr "<b>Irrotettava asema liitetty koneeseen</b>"
-
-#: ../data/ui/autorun.glade.h:2
-msgid "Detecting..."
-msgstr "Tunnistetaan…"
-
-#: ../data/ui/autorun.glade.h:3
-msgid "Please select the action you want to perform:"
-msgstr "Valitse toiminto jonka haluat suorittaa:"
-
-#: ../data/ui/autorun.glade.h:4
 msgid "Removable medium is inserted"
 msgstr "Irrotettava asema on liitetty koneeseen"
 
-#: ../data/ui/autorun.glade.h:5
+#: ../data/ui/autorun.glade.h:2
+msgid "<b>Removable medium is inserted</b>"
+msgstr "<b>Irrotettava asema liitetty koneeseen</b>"
+
+#: ../data/ui/autorun.glade.h:3
 msgid "Type of medium:"
 msgstr "Laitteen tyyppi:"
+
+#: ../data/ui/autorun.glade.h:4
+msgid "Detecting..."
+msgstr "Tunnistetaan…"
+
+#: ../data/ui/autorun.glade.h:5
+msgid "Please select the action you want to perform:"
+msgstr "Valitse toiminto jonka haluat suorittaa:"
 
 #: ../src/volume-manager.c:164
 msgid "Removable Disk"
@@ -485,11 +494,11 @@ msgstr "Avaa tiedoston hallinnassa"
 msgid "Open in New Ta_b"
 msgstr "_Avaa uuteen välilehteen"
 
-#: ../src/desktop-ui.c:52 ../src/tab-page.c:53
+#: ../src/desktop-ui.c:52 ../src/tab-page.c:56
 msgid "Open in New Win_dow"
 msgstr "Avaa uuteen _ikkunaan"
 
-#: ../src/desktop-ui.c:54 ../src/tab-page.c:55
+#: ../src/desktop-ui.c:54 ../src/tab-page.c:58
 msgid "Open in Termina_l"
 msgstr "Avaa _terminaalissa"
 
@@ -501,175 +510,166 @@ msgstr "_Lukitse paikka"
 msgid "Snap to _Grid"
 msgstr "Kiinnitä _ruudukkoon"
 
-#: ../src/desktop.c:571
+#: ../src/desktop.c:636
 msgid "Activate file"
 msgstr "Aktivoi tiedosto"
 
-#: ../src/desktop.c:573
+#: ../src/desktop.c:638
 msgid "Show file menu"
 msgstr "Näytä tiedostovalikko"
 
-#: ../src/desktop.c:989
+#: ../src/desktop.c:1054
 msgid "Show desktop menu"
 msgstr "Näytä työpöytävalikko"
 
 #. FIXME: set name by monitor
-#: ../src/desktop.c:1061
+#: ../src/desktop.c:1126
 msgid "Desktop"
 msgstr "Työpöytä"
 
-#: ../src/main-win-ui.c:127
+#: ../src/main-win-ui.c:128
 msgid "_File"
 msgstr "_Tiedosto"
 
-#: ../src/main-win-ui.c:128
+#: ../src/main-win-ui.c:129
 msgid "_New Window"
 msgstr "_Uusi ikkuna"
 
-#: ../src/main-win-ui.c:129
+#: ../src/main-win-ui.c:130
 msgid "New T_ab"
 msgstr "Uusi _välilehti"
 
-#: ../src/main-win-ui.c:129
+#: ../src/main-win-ui.c:130
 msgid "Create new tab for this folder"
 msgstr "Avaa uusi välilehti tätä kansiota varten"
 
-#: ../src/main-win-ui.c:130
+#: ../src/main-win-ui.c:131
 msgid "C_reate New..."
 msgstr "_Luo uusi…"
 
-#: ../src/main-win-ui.c:131
+#: ../src/main-win-ui.c:132
 msgid "_Close Tab"
 msgstr "_Sulje välilehti"
 
-#: ../src/main-win-ui.c:132
+#: ../src/main-win-ui.c:133
 msgid "Close _Window"
 msgstr "Sulj_e ikkuna"
 
-#: ../src/main-win-ui.c:133
+#: ../src/main-win-ui.c:134
 msgid "_Edit"
 msgstr "_Muokkaa"
 
-#: ../src/main-win-ui.c:138
+#: ../src/main-win-ui.c:139
 msgid "_Rename"
 msgstr "_Nimeä uudelleen"
 
-#: ../src/main-win-ui.c:139
+#: ../src/main-win-ui.c:140
 msgid "Create Symlin_k"
 msgstr "Luo sy_mbolinen linkki"
 
-#: ../src/main-win-ui.c:140
+#: ../src/main-win-ui.c:141
 msgid "_Move To..."
 msgstr "_Siirrä…"
 
-#: ../src/main-win-ui.c:141
+#: ../src/main-win-ui.c:142
 msgid "C_opy To..."
 msgstr "_Kopioi…"
 
-#: ../src/main-win-ui.c:143
+#: ../src/main-win-ui.c:144
 msgid "_Invert Selection"
 msgstr "_Käännä valinta"
 
-#: ../src/main-win-ui.c:144
+#: ../src/main-win-ui.c:145
 msgid "Prefere_nces"
 msgstr "Aset_ukset"
 
-#: ../src/main-win-ui.c:145
+#: ../src/main-win-ui.c:146
 msgid "_View"
 msgstr "_Näkymä"
 
-#: ../src/main-win-ui.c:146
+#: ../src/main-win-ui.c:147
 msgid "_Reload Folder"
 msgstr "_Lataa kansio uudelleen"
 
-#: ../src/main-win-ui.c:146
+#: ../src/main-win-ui.c:147
 msgid "Reload current folder"
 msgstr "Avaa nykyinen kansio uudelleen"
 
-#: ../src/main-win-ui.c:147
+#: ../src/main-win-ui.c:148
 msgid "Side _Pane"
 msgstr "_Sivupaneeli"
 
 #. other see below: 'ShowHidden' 'ShowStatus' 'Fullscreen' 'IconView'...
-#: ../src/main-win-ui.c:149
+#: ../src/main-win-ui.c:150
 msgid "S_ort Files"
 msgstr "_Järjestä tiedostot"
 
-#: ../src/main-win-ui.c:150
+#: ../src/main-win-ui.c:151
 msgid "_Help"
 msgstr "_Ohje"
 
-#: ../src/main-win-ui.c:152
-msgid "_Keyboard navigation"
+#: ../src/main-win-ui.c:153
+#, fuzzy
+msgid "_Keyboard Navigation"
 msgstr "_Näppäimistöllä liikkuminen"
 
-#: ../src/main-win-ui.c:153
+#: ../src/main-win-ui.c:154
 msgid "_Go"
 msgstr "_Siirry"
 
-#: ../src/main-win-ui.c:154
+#: ../src/main-win-ui.c:155
 msgid "_Previous Folder"
 msgstr "E_dellinen kansio"
 
-#: ../src/main-win-ui.c:154
+#: ../src/main-win-ui.c:155
 msgid "Return to previous folder in history"
 msgstr "Palaa edelliseen vierailtuun kansioon"
 
-#: ../src/main-win-ui.c:155
+#: ../src/main-win-ui.c:156
 msgid "_Next Folder"
 msgstr "_Seuraava kansio"
 
-#: ../src/main-win-ui.c:155
+#: ../src/main-win-ui.c:156
 msgid "Go forward to next folder in history"
 msgstr "Siirry seuraavaan vierailtuun kansioon"
 
-#: ../src/main-win-ui.c:156
+#: ../src/main-win-ui.c:157
 msgid "Pa_rent Folder"
 msgstr "_Yläkansio"
 
-#: ../src/main-win-ui.c:156
+#: ../src/main-win-ui.c:157
 msgid "Go to parent Folder"
 msgstr "Siirry yläkansioon"
 
-#: ../src/main-win-ui.c:157
+#: ../src/main-win-ui.c:158
 msgid "H_ome Folder"
 msgstr "_Kotikansio"
 
-#: ../src/main-win-ui.c:157
+#: ../src/main-win-ui.c:158
 msgid "Go to home folder"
 msgstr "Siirry kotikansioon"
 
-#: ../src/main-win-ui.c:158
+#: ../src/main-win-ui.c:159
 msgid "_Desktop"
 msgstr "_Työpöytä"
 
-#: ../src/main-win-ui.c:158
+#: ../src/main-win-ui.c:159
 msgid "Go to desktop folder"
 msgstr "Siirry työpöytäkansioon"
 
-#: ../src/main-win-ui.c:159
-msgid "_Trash Can"
-msgstr "_Roskakori"
-
-#: ../src/main-win-ui.c:159
+#: ../src/main-win-ui.c:160
 msgid "Open trash can"
 msgstr "Avaa roskakori"
 
-#: ../src/main-win-ui.c:160
-msgid "_Computer Drives"
-msgstr "_Tietokoneen asemat"
-
-#: ../src/main-win-ui.c:160
-msgid "Go to list of volumes in the computer"
-msgstr "Siirry tietokoneen levyasemien näkymään"
+#: ../src/main-win-ui.c:161
+#, fuzzy
+msgid "Filesyste_m Root"
+msgstr "T_iedostojärjestelmän juuri"
 
 #: ../src/main-win-ui.c:161
-msgid "Net_work Drives"
-msgstr "_Verkkoasemat"
-
-#: ../src/main-win-ui.c:161
-msgid "Go to list of volumes on the network"
-msgstr "Siirry verkkosijaintien näkymään"
+#, fuzzy
+msgid "Go fo filesystem root"
+msgstr "T_iedostojärjestelmän juuri"
 
 #: ../src/main-win-ui.c:162
 msgid "_Applications"
@@ -680,136 +680,152 @@ msgid "Go to root of applications menu folder"
 msgstr "Siirry sovellusvalikkokansion juureen"
 
 #: ../src/main-win-ui.c:163
-msgid "Open folder entered in location entry"
-msgstr "Avaa sijaintikenttään kirjoitettu kansio"
+msgid "Devi_ces"
+msgstr ""
+
+#: ../src/main-win-ui.c:163
+#, fuzzy
+msgid "Go to list of devices connected to the computer"
+msgstr "Siirry tietokoneen levyasemien näkymään"
 
 #: ../src/main-win-ui.c:164
+#, fuzzy
+msgid "Net_work"
+msgstr "_Verkkoasemat"
+
+#: ../src/main-win-ui.c:164
+#, fuzzy
+msgid "Go to list of places on the network"
+msgstr "Siirry verkkosijaintien näkymään"
+
+#: ../src/main-win-ui.c:165
+msgid "Go to the path in the location bar"
+msgstr ""
+
+#: ../src/main-win-ui.c:166
 msgid "_Bookmarks"
 msgstr "_Kirjanmerkit"
 
-#: ../src/main-win-ui.c:165
-msgid "_Add To Bookmarks"
-msgstr "_Lisää kirjanmerkkeihin"
+#: ../src/main-win-ui.c:167
+#, fuzzy
+msgid "_Add to Bookmarks"
+msgstr "Lisää kirjanmerkkeihin"
 
-#: ../src/main-win-ui.c:165
+#: ../src/main-win-ui.c:167
 msgid "Add current folder to bookmarks list"
 msgstr "Lisää tämä kansio kirjanmerkkeihin"
 
-#: ../src/main-win-ui.c:166
+#: ../src/main-win-ui.c:168
 msgid "Tool_s"
 msgstr "_Työkalut"
 
-#: ../src/main-win-ui.c:167
+#: ../src/main-win-ui.c:169
 msgid "Open Current Folder in _Terminal"
 msgstr "Avaa nykyinen kansio _terminaalissa"
 
-#: ../src/main-win-ui.c:168
-msgid "Open Current Folder as _Root"
-msgstr "Avaa nykyinen kansio _root-käyttäjänä"
-
-#: ../src/main-win-ui.c:170
+#: ../src/main-win-ui.c:172
 msgid "Fin_d Files"
 msgstr "_Etsi tiedostoja"
 
-#: ../src/main-win-ui.c:170
+#: ../src/main-win-ui.c:172
 msgid "Open search dialog"
 msgstr "Avaa hakuikkuna"
 
 #. for popup menu - these entries exist in FmFolderView popup still
-#: ../src/main-win-ui.c:179
+#: ../src/main-win-ui.c:181
 msgid "Folder"
 msgstr "Kansio"
 
-#: ../src/main-win-ui.c:180
+#: ../src/main-win-ui.c:182
 msgid "Empty File"
 msgstr "Tyhjä tiedosto"
 
-#: ../src/main-win-ui.c:186
+#: ../src/main-win-ui.c:188
 msgid "Show Hidde_n"
 msgstr "Näytä _piilotetut"
 
-#: ../src/main-win-ui.c:187
+#: ../src/main-win-ui.c:189
 msgid "Sho_w Side Pane"
 msgstr "Näytä _sivupaneeli"
 
-#: ../src/main-win-ui.c:188
+#: ../src/main-win-ui.c:190
 msgid "Show Status B_ar"
 msgstr "Näytä t_ilarivi"
 
-#: ../src/main-win-ui.c:189
+#: ../src/main-win-ui.c:191
 msgid "T_win Pane Mode"
 msgstr "_Kahden paneelin tila"
 
-#: ../src/main-win-ui.c:190
+#: ../src/main-win-ui.c:192
 msgid "Fullscreen _Mode"
 msgstr "Koko _näytön tila"
 
-#: ../src/main-win-ui.c:195
+#: ../src/main-win-ui.c:197
 msgid "_Icon View"
 msgstr "_Kuvakenäkymä"
 
-#: ../src/main-win-ui.c:196
+#: ../src/main-win-ui.c:198
 msgid "_Thumbnail View"
 msgstr "_Esikatselunäkymä"
 
-#: ../src/main-win-ui.c:197
+#: ../src/main-win-ui.c:199
 msgid "_Compact View"
 msgstr "_Kompakti näkymä"
 
-#: ../src/main-win-ui.c:198
+#: ../src/main-win-ui.c:200
 msgid "Detailed _List View"
 msgstr "_Yksityiskohtainen näkymä"
 
-#: ../src/main-win-ui.c:209
+#: ../src/main-win-ui.c:212 ../src/main-win-ui.c:217
 msgid "By _Name"
 msgstr "_Nimen mukaan"
 
-#: ../src/main-win-ui.c:210
+#: ../src/main-win-ui.c:213 ../src/main-win-ui.c:218
 msgid "By _Modification Time"
 msgstr "_Muokkausajan mukaan"
 
-#: ../src/main-win-ui.c:211
+#: ../src/main-win-ui.c:214 ../src/main-win-ui.c:219
 msgid "By _Size"
 msgstr "_Koon mukaan"
 
-#: ../src/main-win-ui.c:212
+#: ../src/main-win-ui.c:215 ../src/main-win-ui.c:220
 msgid "By File _Type"
 msgstr "_Tiedostotyypin mukaan"
 
-#: ../src/main-win-ui.c:217
+#: ../src/main-win-ui.c:226
 msgid "Places"
 msgstr "Kirjanmerkit"
 
-#: ../src/main-win-ui.c:218
+#: ../src/main-win-ui.c:227
 msgid "Directory Tree"
 msgstr "Hakemistopuu"
 
-#: ../src/main-win-ui.c:219
+#: ../src/main-win-ui.c:228
 msgid "Remote"
 msgstr "Etähakemistot"
 
-#: ../src/main-win.c:532
+#: ../src/main-win.c:585
 msgid "Show history of visited folders"
 msgstr "Näytä vierailtujen kansioiden historia"
 
-#: ../src/main-win.c:535
+#: ../src/main-win.c:588
 msgid "History"
 msgstr "Historia"
 
-#: ../src/main-win.c:549
+#: ../src/main-win.c:602
 msgid "You are in super user mode"
 msgstr "Olet pääkäyttäjätilassa"
 
-#: ../src/main-win.c:713
+#: ../src/main-win.c:766
 msgid "Lightweight file manager\n"
 msgstr "Kevyt tiedostonhallintaohjelma\n"
 
-#: ../src/main-win.c:718
+#: ../src/main-win.c:771
 #, c-format
 msgid "using LibFM ver. %s\n"
 msgstr "käytössä LibFM:n versio %s\n"
 
-#: ../src/main-win.c:720
+#: ../src/main-win.c:773
 msgid ""
 "\n"
 "Developed by Hon Jen Yee (PCMan)"
@@ -817,11 +833,12 @@ msgstr ""
 "\n"
 "Kehittäjä: Hon Jen Yee (PCMan)"
 
-#: ../src/main-win.c:745 ../src/main-win.c:753
-msgid "Keyboard navigation"
+#: ../src/main-win.c:798 ../src/main-win.c:806
+#, fuzzy
+msgid "Keyboard Navigation"
 msgstr "Näppäimistöllä liikkuminen"
 
-#: ../src/main-win.c:747
+#: ../src/main-win.c:800
 msgid ""
 "Tab: cycle focus Folder View -> Side Pane -> Tools Bar\n"
 "Shift+Tab: cycle focus Tools Bar -> Side Pane -> Folder View\n"
@@ -838,11 +855,11 @@ msgstr ""
 "F10: avaa päävalikko\n"
 "Ctrl+L tai Alt+D: valitse tiedostopolkupalkki"
 
-#: ../src/main-win.c:783
+#: ../src/main-win.c:844
 msgid "Switch user command is not set."
 msgstr "Käyttäjän vaihto-ohjelmaa ei ole valittu."
 
-#: ../src/main-win.c:1138
+#: ../src/main-win.c:1270
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -852,7 +869,7 @@ msgstr ""
 "Lisää kansio '%s' kirjanmerkkeihin\n"
 "Anna uudelle kirjanmerkille nimi:"
 
-#: ../src/main-win.c:1142
+#: ../src/main-win.c:1274
 msgid "Add to Bookmarks"
 msgstr "Lisää kirjanmerkkeihin"
 
@@ -932,34 +949,34 @@ msgstr "ROOLI"
 msgid "[FILE1, FILE2,...]"
 msgstr "[TIEDOSTO1, TIEDOSTO2, …]"
 
-#: ../src/pcmanfm.c:528
+#: ../src/pcmanfm.c:536
 msgid "Terminal emulator is not set."
 msgstr "Terminaaliemulaattoria ei ole valittu."
 
-#: ../src/tab-page.c:52
+#: ../src/tab-page.c:55
 msgid "Open in New T_ab"
 msgstr "Avaa _uuteen välilehteen"
 
-#: ../src/tab-page.c:245
+#: ../src/tab-page.c:254
 #, c-format
 msgid "%d item selected"
 msgid_plural "%d items selected"
 msgstr[0] "%d tiedosto valittu"
 msgstr[1] "%d tiedostoa valittu"
 
-#: ../src/tab-page.c:400
+#: ../src/tab-page.c:442
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Vapaata tilaa: %s (Yhteensä: %s)"
 
-#: ../src/tab-page.c:420
+#: ../src/tab-page.c:462
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] "%d tiedosto"
 msgstr[1] "%d tiedostoa"
 
-#: ../src/tab-page.c:421
+#: ../src/tab-page.c:463
 #, c-format
 msgid " (%d hidden)"
 msgid_plural " (%d hidden)"
@@ -967,20 +984,47 @@ msgstr[0] " (%d piilotettu)"
 msgstr[1] " (%d piilotettua)"
 
 #: ../data/pcmanfm.desktop.in.h:1
-msgid "Browse the file system and manage the files"
-msgstr "Selaa tiedostojärjestelmää ja hallitse tiedostoja"
+msgid "File Manager PCManFM"
+msgstr "Tiedostonhallinta"
 
 #: ../data/pcmanfm.desktop.in.h:2
 msgid "File Manager"
 msgstr "Tiedostonhallinta"
 
 #: ../data/pcmanfm.desktop.in.h:3
-msgid "File Manager PCManFM"
-msgstr "Tiedostonhallinta"
+msgid "Browse the file system and manage the files"
+msgstr "Selaa tiedostojärjestelmää ja hallitse tiedostoja"
 
-#: ../data/pcmanfm-desktop-pref.desktop.in.h:1
+#: ../data/pcmanfm-desktop-pref.desktop.in.h:2
 msgid "Change desktop wallpapers and behavior of desktop manager"
 msgstr "Vaihda työpöydän taustakuvia ja käyttäytymistä"
+
+#~ msgid "Show \"_My Computer\" icon on desktop"
+#~ msgstr "Näytä ”_Tietokone”-kuvake työpöydällä"
+
+#~ msgid "\"C_omputer\" special folder"
+#~ msgstr "”T_ietokone”-erityiskansio"
+
+#~ msgid "Des_ktop Folder"
+#~ msgstr "_Työpöytäkansio"
+
+#~ msgid "_Home Directory"
+#~ msgstr "_Kotihakemisto"
+
+#~ msgid "_Trash can"
+#~ msgstr "_Roskakori"
+
+#~ msgid "_Computer Drives"
+#~ msgstr "_Tietokoneen asemat"
+
+#~ msgid "Open folder entered in location entry"
+#~ msgstr "Avaa sijaintikenttään kirjoitettu kansio"
+
+#~ msgid "_Add To Bookmarks"
+#~ msgstr "_Lisää kirjanmerkkeihin"
+
+#~ msgid "Open Current Folder as _Root"
+#~ msgstr "Avaa nykyinen kansio _root-käyttäjänä"
 
 #~ msgid "Hide _folder content border"
 #~ msgstr "Piil_ota kansion sisällön reuna"
@@ -1005,9 +1049,6 @@ msgstr "Vaihda työpöydän taustakuvia ja käyttäytymistä"
 
 #~ msgid "Next Folder"
 #~ msgstr "Seuraava kansio"
-
-#~ msgid "Home Folder"
-#~ msgstr "Kotikansio"
 
 #~ msgid "Desktop Folder"
 #~ msgstr "Työpöytäkansio"
