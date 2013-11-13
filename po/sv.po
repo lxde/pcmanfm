@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: PCManFM\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-13 22:34+0100\n"
-"PO-Revision-Date: 2013-10-22 19:10+0000\n"
+"PO-Revision-Date: 2013-11-13 21:57+0000\n"
 "Last-Translator: Martin <brother@bsnet.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1382469059.0\n"
+"X-POOTLE-MTIME: 1384379851.0\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2013"
@@ -92,14 +92,12 @@ msgid "<b>Show desktop icons</b>"
 msgstr "<b>Visa skrivbordsikoner</b>"
 
 #: ../data/ui/desktop-pref.glade.h:14
-#, fuzzy
 msgid "_Show \"Documents\" icon on desktop"
 msgstr "Vi_sa ikonen \"Mina dokument\" på skrivbordet"
 
 #: ../data/ui/desktop-pref.glade.h:15
-#, fuzzy
 msgid "Sho_w \"Devices\" icon on desktop"
-msgstr "Vi_sa ikonen \"Mina dokument\" på skrivbordet"
+msgstr "_Visa ikonen \"Enheter\" på skrivbordet"
 
 #: ../data/ui/desktop-pref.glade.h:16
 msgid "Show \"_Trash Can\" icon on desktop"
@@ -303,21 +301,18 @@ msgid "<b>Show in Places:</b>"
 msgstr "<b>Visa i Platser</b>"
 
 #: ../data/ui/pref.glade.h:41
-#, fuzzy
 msgid "_Home Folder"
-msgstr "Hemkatalog"
+msgstr "_Hemkatalog"
 
 #: ../data/ui/pref.glade.h:42
-#, fuzzy
 msgid "Des_ktop"
-msgstr "Skrivbord"
+msgstr "S_krivbord"
 
 #: ../data/ui/pref.glade.h:43 ../src/main-win-ui.c:160
 msgid "_Trash Can"
 msgstr "_Papperskorg"
 
 #: ../data/ui/pref.glade.h:44
-#, fuzzy
 msgid "_Filesystem Root"
 msgstr "_Filsystemsrot"
 
@@ -328,12 +323,11 @@ msgstr "_Program"
 
 #: ../data/ui/pref.glade.h:46
 msgid "Dev_ices"
-msgstr ""
+msgstr "_Enheter"
 
 #: ../data/ui/pref.glade.h:47
-#, fuzzy
 msgid "_Network"
-msgstr "Nät_verksplatser"
+msgstr "_Nätverk"
 
 #: ../data/ui/pref.glade.h:48
 msgid "_Layout"
@@ -372,7 +366,6 @@ msgid "<b>Programs</b>"
 msgstr "<b>Program</b>"
 
 #: ../data/ui/pref.glade.h:57
-#, fuzzy
 msgid "<i>Commands below may include extra options if necessary.</i>"
 msgstr "<i>Kommandon nedan kan innehålla extra flaggor om så behövs.</i>"
 
@@ -410,9 +403,8 @@ msgid "Ru_n default application after creation from template"
 msgstr "K_ör standardapplikation efter skapande från mall"
 
 #: ../data/ui/pref.glade.h:67
-#, fuzzy
 msgid "<b>Other Options</b>"
-msgstr "<b>Övriga alternativ</b>"
+msgstr "<b>Andra alternativ</b>"
 
 #: ../data/ui/pref.glade.h:68
 msgid "_Use Application Startup Notify by default"
@@ -616,7 +608,6 @@ msgid "_Help"
 msgstr "_Hjälp"
 
 #: ../src/main-win-ui.c:153
-#, fuzzy
 msgid "_Keyboard Navigation"
 msgstr "_Tangentbordsnavigering"
 
@@ -669,14 +660,12 @@ msgid "Open trash can"
 msgstr "Öppna papperskorgen"
 
 #: ../src/main-win-ui.c:161
-#, fuzzy
 msgid "Filesyste_m Root"
 msgstr "_Filsystemsrot"
 
 #: ../src/main-win-ui.c:161
-#, fuzzy
 msgid "Go fo filesystem root"
-msgstr "_Filsystemsrot"
+msgstr "Gå till filsystemsroten"
 
 # Inte översätta mime-typer
 #: ../src/main-win-ui.c:162
@@ -689,35 +678,31 @@ msgstr "Gå till toppen på applikationsmappen"
 
 #: ../src/main-win-ui.c:163
 msgid "Devi_ces"
-msgstr ""
+msgstr "_Enheter"
 
 #: ../src/main-win-ui.c:163
-#, fuzzy
 msgid "Go to list of devices connected to the computer"
-msgstr "Gå till listan för volymer i datorn"
+msgstr "Gå till listan för enheter anslutna till datorn"
 
 #: ../src/main-win-ui.c:164
-#, fuzzy
 msgid "Net_work"
-msgstr "Nät_verksenhet"
+msgstr "Nät_verk"
 
 #: ../src/main-win-ui.c:164
-#, fuzzy
 msgid "Go to list of places on the network"
-msgstr "Go till listan för volymer på nätverket"
+msgstr "Gå till listan för platser på nätverket"
 
 #: ../src/main-win-ui.c:165
 msgid "Go to the path in the location bar"
-msgstr ""
+msgstr "Ladda sökvägen i platsfältet"
 
 #: ../src/main-win-ui.c:166
 msgid "_Bookmarks"
 msgstr "_Bokmärken"
 
 #: ../src/main-win-ui.c:167
-#, fuzzy
 msgid "_Add to Bookmarks"
-msgstr "Lägg till i bokmärken"
+msgstr "_Lägg till i bokmärken"
 
 #: ../src/main-win-ui.c:167
 msgid "Add current folder to bookmarks list"
@@ -842,7 +827,6 @@ msgstr ""
 "Utvecklad av Hon Jen Yee (PCMan)"
 
 #: ../src/main-win.c:798 ../src/main-win.c:806
-#, fuzzy
 msgid "Keyboard Navigation"
 msgstr "Tangentbordsnavigering"
 
