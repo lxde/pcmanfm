@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm 1.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-13 22:34+0100\n"
-"PO-Revision-Date: 2013-11-08 17:33+0000\n"
+"PO-Revision-Date: 2013-11-14 18:11+0000\n"
 "Last-Translator: Daniele <daniele@forsi.it>\n"
 "Language-Team: Italian <debian-l10n-italian@lists.debian.org>\n"
 "Language: it\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1383932039.0\n"
+"X-POOTLE-MTIME: 1384452687.0\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2013"
@@ -84,14 +84,12 @@ msgid "<b>Show desktop icons</b>"
 msgstr "<b>Mostra icone sulla scrivania</b>"
 
 #: ../data/ui/desktop-pref.glade.h:14
-#, fuzzy
 msgid "_Show \"Documents\" icon on desktop"
 msgstr "Mo_stra l'icona «Documenti» sulla scrivania"
 
 #: ../data/ui/desktop-pref.glade.h:15
-#, fuzzy
 msgid "Sho_w \"Devices\" icon on desktop"
-msgstr "Mo_stra l'icona «Documenti» sulla scrivania"
+msgstr "Mo_stra l'icona «Dispositivi» sulla scrivania"
 
 #: ../data/ui/desktop-pref.glade.h:16
 msgid "Show \"_Trash Can\" icon on desktop"
@@ -296,21 +294,18 @@ msgid "<b>Show in Places:</b>"
 msgstr "<b>Mostra nelle risorse:</b>"
 
 #: ../data/ui/pref.glade.h:41
-#, fuzzy
 msgid "_Home Folder"
-msgstr "Cartella Home"
+msgstr "Cartella _Home"
 
 #: ../data/ui/pref.glade.h:42
-#, fuzzy
 msgid "Des_ktop"
-msgstr "Scrivania"
+msgstr "_Scrivania"
 
 #: ../data/ui/pref.glade.h:43 ../src/main-win-ui.c:160
 msgid "_Trash Can"
 msgstr "Ces_tino"
 
 #: ../data/ui/pref.glade.h:44
-#, fuzzy
 msgid "_Filesystem Root"
 msgstr "Radice del _file system"
 
@@ -320,12 +315,11 @@ msgstr "App_licazioni"
 
 #: ../data/ui/pref.glade.h:46
 msgid "Dev_ices"
-msgstr ""
+msgstr "D_ispositivi"
 
 #: ../data/ui/pref.glade.h:47
-#, fuzzy
 msgid "_Network"
-msgstr "_Unità di rete"
+msgstr "_Rete"
 
 #: ../data/ui/pref.glade.h:48
 msgid "_Layout"
@@ -367,10 +361,9 @@ msgid "<b>Programs</b>"
 msgstr "<b>Programmi</b>"
 
 #: ../data/ui/pref.glade.h:57
-#, fuzzy
 msgid "<i>Commands below may include extra options if necessary.</i>"
 msgstr ""
-"<i>I comandi seguenti possono includere delle opzioni se necessario.</I>"
+"<i>I comandi seguenti possono includere delle opzioni se necessario.</i>"
 
 #: ../data/ui/pref.glade.h:58
 msgid "_Terminal emulator:"
@@ -406,7 +399,6 @@ msgid "Ru_n default application after creation from template"
 msgstr "Esegui l'applicazione predefi_nita dopo la creazione dal modello"
 
 #: ../data/ui/pref.glade.h:67
-#, fuzzy
 msgid "<b>Other Options</b>"
 msgstr "<b>Altre opzioni</b>"
 
@@ -611,7 +603,6 @@ msgid "_Help"
 msgstr "A_iuto"
 
 #: ../src/main-win-ui.c:153
-#, fuzzy
 msgid "_Keyboard Navigation"
 msgstr "Navigazione da _tastiera"
 
@@ -665,14 +656,12 @@ msgid "Open trash can"
 msgstr "Apre il cestino"
 
 #: ../src/main-win-ui.c:161
-#, fuzzy
 msgid "Filesyste_m Root"
 msgstr "Radice del _file system"
 
 #: ../src/main-win-ui.c:161
-#, fuzzy
 msgid "Go fo filesystem root"
-msgstr "Radice del _file system"
+msgstr "Va alla radice del file system"
 
 #: ../src/main-win-ui.c:162
 msgid "_Applications"
@@ -684,35 +673,31 @@ msgstr "Va alla radice della cartella del menu delle applicazioni"
 
 #: ../src/main-win-ui.c:163
 msgid "Devi_ces"
-msgstr ""
+msgstr "D_ispositivi"
 
 #: ../src/main-win-ui.c:163
-#, fuzzy
 msgid "Go to list of devices connected to the computer"
-msgstr "Va all'elenco dei volumi nel computer"
+msgstr "Va all'elenco dei dispositivi collegati al computer"
 
 #: ../src/main-win-ui.c:164
-#, fuzzy
 msgid "Net_work"
-msgstr "_Unità di rete"
+msgstr "_Rete"
 
 #: ../src/main-win-ui.c:164
-#, fuzzy
 msgid "Go to list of places on the network"
-msgstr "Va all'elenco dei volumi nella rete"
+msgstr "Va all'elenco delle destinazioni nella rete"
 
 #: ../src/main-win-ui.c:165
 msgid "Go to the path in the location bar"
-msgstr ""
+msgstr "Va al percorso nella barra della posizione"
 
 #: ../src/main-win-ui.c:166
 msgid "_Bookmarks"
 msgstr "S_egnalibri"
 
 #: ../src/main-win-ui.c:167
-#, fuzzy
 msgid "_Add to Bookmarks"
-msgstr "Aggiungi ai segnalibri"
+msgstr "A_ggiungi ai segnalibri"
 
 #: ../src/main-win-ui.c:167
 msgid "Add current folder to bookmarks list"
@@ -838,7 +823,6 @@ msgstr ""
 "Sviluppato da Hon Jen Yee (PCMan)"
 
 #: ../src/main-win.c:798 ../src/main-win.c:806
-#, fuzzy
 msgid "Keyboard Navigation"
 msgstr "Navigazione da tastiera"
 
