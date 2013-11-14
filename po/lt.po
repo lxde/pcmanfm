@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-13 22:34+0100\n"
-"PO-Revision-Date: 2013-10-23 08:17+0200\n"
+"PO-Revision-Date: 2013-11-14 06:43+0200\n"
 "Last-Translator: Algimantas Margevičius <margevicius.algimantas@gmail.com>\n"
 "Language-Team: Lietuvių <>\n"
 "Language: lt\n"
@@ -85,14 +85,12 @@ msgid "<b>Show desktop icons</b>"
 msgstr "<b>Rodyti darbastalio piktogramas</b>"
 
 #: ../data/ui/desktop-pref.glade.h:14
-#, fuzzy
 msgid "_Show \"Documents\" icon on desktop"
-msgstr "Darbastalyje rodyti _dokumentų piktogramą"
+msgstr "_Darbastalyje rodyti „Mano dokumentai“ piktogramą"
 
 #: ../data/ui/desktop-pref.glade.h:15
-#, fuzzy
 msgid "Sho_w \"Devices\" icon on desktop"
-msgstr "Darbastalyje rodyti _dokumentų piktogramą"
+msgstr "Darbastalyje _rodyti „Įrenginiai“ piktogramą"
 
 #: ../data/ui/desktop-pref.glade.h:16
 msgid "Show \"_Trash Can\" icon on desktop"
@@ -294,21 +292,18 @@ msgid "<b>Show in Places:</b>"
 msgstr "<b>Rodyti vietose:</b>"
 
 #: ../data/ui/pref.glade.h:41
-#, fuzzy
 msgid "_Home Folder"
-msgstr "Namų aplankas"
+msgstr "N_amų aplankas"
 
 #: ../data/ui/pref.glade.h:42
-#, fuzzy
 msgid "Des_ktop"
-msgstr "Darbastalis"
+msgstr "Dar_bastalis"
 
 #: ../data/ui/pref.glade.h:43 ../src/main-win-ui.c:160
 msgid "_Trash Can"
 msgstr "Š_iukšlinė"
 
 #: ../data/ui/pref.glade.h:44
-#, fuzzy
 msgid "_Filesystem Root"
 msgstr "_Failų sistemos šakninis aplankas"
 
@@ -318,10 +313,9 @@ msgstr "_Programos"
 
 #: ../data/ui/pref.glade.h:46
 msgid "Dev_ices"
-msgstr ""
+msgstr "Į_renginiai"
 
 #: ../data/ui/pref.glade.h:47
-#, fuzzy
 msgid "_Network"
 msgstr "_Tinklo vietos"
 
@@ -363,7 +357,6 @@ msgid "<b>Programs</b>"
 msgstr "<b>Programos</b>"
 
 #: ../data/ui/pref.glade.h:57
-#, fuzzy
 msgid "<i>Commands below may include extra options if necessary.</i>"
 msgstr "<i>Šioms komandoms gali būti naudojamos papildomos parinktys.</i>"
 
@@ -401,9 +394,8 @@ msgid "Ru_n default application after creation from template"
 msgstr "_Sukūrus šabloną, vykdyti numatytąją programą"
 
 #: ../data/ui/pref.glade.h:67
-#, fuzzy
 msgid "<b>Other Options</b>"
-msgstr "<b>Kitos parinktysRodyti darbastalio piktogramas</b>"
+msgstr "<b>Kitos parinktys</b>"
 
 #: ../data/ui/pref.glade.h:68
 msgid "_Use Application Startup Notify by default"
@@ -607,7 +599,6 @@ msgid "_Help"
 msgstr "Ž_inynas"
 
 #: ../src/main-win-ui.c:153
-#, fuzzy
 msgid "_Keyboard Navigation"
 msgstr "_Naršymas klaviatūra"
 
@@ -660,14 +651,12 @@ msgid "Open trash can"
 msgstr "Atverti šiukšlinę"
 
 #: ../src/main-win-ui.c:161
-#, fuzzy
 msgid "Filesyste_m Root"
 msgstr "_Failų sistemos šakninis aplankas"
 
 #: ../src/main-win-ui.c:161
-#, fuzzy
 msgid "Go fo filesystem root"
-msgstr "_Failų sistemos šakninis aplankas"
+msgstr "Eiti į failų sistemos šakninį aplanką"
 
 #: ../src/main-win-ui.c:162
 msgid "_Applications"
@@ -679,35 +668,31 @@ msgstr "Pereiti į programų meniu aplanko pradžią"
 
 #: ../src/main-win-ui.c:163
 msgid "Devi_ces"
-msgstr ""
+msgstr "Įr_enginiai"
 
 #: ../src/main-win-ui.c:163
-#, fuzzy
 msgid "Go to list of devices connected to the computer"
-msgstr "Pereiti prie kompiuterio skirsnių"
+msgstr "Pereiti prie prijungtų įrenginių sąrašo"
 
 #: ../src/main-win-ui.c:164
-#, fuzzy
 msgid "Net_work"
-msgstr "_Tinklo įrenginiai"
+msgstr "_Tinklas"
 
 #: ../src/main-win-ui.c:164
-#, fuzzy
 msgid "Go to list of places on the network"
 msgstr "Pereiti prie tinklo skirsnių sąrašo"
 
 #: ../src/main-win-ui.c:165
 msgid "Go to the path in the location bar"
-msgstr ""
+msgstr "Eiti į aplanką iš vietos juostos"
 
 #: ../src/main-win-ui.c:166
 msgid "_Bookmarks"
 msgstr "_Žymelės"
 
 #: ../src/main-win-ui.c:167
-#, fuzzy
 msgid "_Add to Bookmarks"
-msgstr "Įtraukti į žymeles"
+msgstr "Įtra_ukti į žymeles"
 
 #: ../src/main-win-ui.c:167
 msgid "Add current folder to bookmarks list"
@@ -832,7 +817,6 @@ msgstr ""
 "Kūrėjas Hon Jen Yee (PCMan)"
 
 #: ../src/main-win.c:798 ../src/main-win.c:806
-#, fuzzy
 msgid "Keyboard Navigation"
 msgstr "Naršymas klaviatūra"
 
