@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm 0.9.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-13 22:34+0100\n"
-"PO-Revision-Date: 2013-10-27 07:36+0000\n"
+"PO-Revision-Date: 2013-11-14 17:34+0000\n"
 "Last-Translator: Juhani <juhaninumminen0@gmail.com>\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
@@ -18,7 +18,7 @@ msgstr ""
 "X-Generator: Pootle 2.5.0\n"
 "X-Language: fi_FI\n"
 "X-Source-Language: C\n"
-"X-POOTLE-MTIME: 1382859396.0\n"
+"X-POOTLE-MTIME: 1384450477.0\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2013"
@@ -85,14 +85,12 @@ msgid "<b>Show desktop icons</b>"
 msgstr "<b>Näytä työpöydän kuvakkeet</b>"
 
 #: ../data/ui/desktop-pref.glade.h:14
-#, fuzzy
 msgid "_Show \"Documents\" icon on desktop"
-msgstr "Näytä ”Tiedostoni”-kuvake työpöydällä"
+msgstr "_Näytä ”Tiedostoni”-kuvake työpöydällä"
 
 #: ../data/ui/desktop-pref.glade.h:15
-#, fuzzy
 msgid "Sho_w \"Devices\" icon on desktop"
-msgstr "Näytä ”Tiedostoni”-kuvake työpöydällä"
+msgstr "Nä_ytä ”Laitteet”-kuvake työpöydällä"
 
 #: ../data/ui/desktop-pref.glade.h:16
 msgid "Show \"_Trash Can\" icon on desktop"
@@ -294,21 +292,18 @@ msgid "<b>Show in Places:</b>"
 msgstr "<b>Näytä sijainneissa:</b>"
 
 #: ../data/ui/pref.glade.h:41
-#, fuzzy
 msgid "_Home Folder"
-msgstr "Kotikansio"
+msgstr "_Kotikansio"
 
 #: ../data/ui/pref.glade.h:42
-#, fuzzy
 msgid "Des_ktop"
-msgstr "Työpöytä"
+msgstr "Työ_pöytä"
 
 #: ../data/ui/pref.glade.h:43 ../src/main-win-ui.c:160
 msgid "_Trash Can"
 msgstr "_Roskakori"
 
 #: ../data/ui/pref.glade.h:44
-#, fuzzy
 msgid "_Filesystem Root"
 msgstr "T_iedostojärjestelmän juuri"
 
@@ -318,12 +313,11 @@ msgstr "_Ohjelmat"
 
 #: ../data/ui/pref.glade.h:46
 msgid "Dev_ices"
-msgstr ""
+msgstr "_Laitteet"
 
 #: ../data/ui/pref.glade.h:47
-#, fuzzy
 msgid "_Network"
-msgstr "_Verkkosijainnit"
+msgstr "_Verkko"
 
 #: ../data/ui/pref.glade.h:48
 msgid "_Layout"
@@ -363,10 +357,9 @@ msgid "<b>Programs</b>"
 msgstr "<b>Ohjelmat</b>"
 
 #: ../data/ui/pref.glade.h:57
-#, fuzzy
 msgid "<i>Commands below may include extra options if necessary.</i>"
 msgstr ""
-"<i>Tarvittaessa alle olevat komennot voivat sisältää lisävalitsimia.</i>"
+"<i>Alla olevat komennot voivat tarvittaessa sisältää lisävalitsimia.</i>"
 
 #: ../data/ui/pref.glade.h:58
 msgid "_Terminal emulator:"
@@ -402,7 +395,6 @@ msgid "Ru_n default application after creation from template"
 msgstr "_Suorita oletussovellus mallista luomisen jälkeen"
 
 #: ../data/ui/pref.glade.h:67
-#, fuzzy
 msgid "<b>Other Options</b>"
 msgstr "<b>Muut vaihtoehdot</b>"
 
@@ -609,7 +601,6 @@ msgid "_Help"
 msgstr "_Ohje"
 
 #: ../src/main-win-ui.c:153
-#, fuzzy
 msgid "_Keyboard Navigation"
 msgstr "_Näppäimistöllä liikkuminen"
 
@@ -662,14 +653,12 @@ msgid "Open trash can"
 msgstr "Avaa roskakori"
 
 #: ../src/main-win-ui.c:161
-#, fuzzy
 msgid "Filesyste_m Root"
 msgstr "T_iedostojärjestelmän juuri"
 
 #: ../src/main-win-ui.c:161
-#, fuzzy
 msgid "Go fo filesystem root"
-msgstr "T_iedostojärjestelmän juuri"
+msgstr "Siirry t_iedostojärjestelmän juureen"
 
 #: ../src/main-win-ui.c:162
 msgid "_Applications"
@@ -681,35 +670,31 @@ msgstr "Siirry sovellusvalikkokansion juureen"
 
 #: ../src/main-win-ui.c:163
 msgid "Devi_ces"
-msgstr ""
+msgstr "Laitte_et"
 
 #: ../src/main-win-ui.c:163
-#, fuzzy
 msgid "Go to list of devices connected to the computer"
-msgstr "Siirry tietokoneen levyasemien näkymään"
+msgstr "Siirry tietokoneeseen liitettyjen laitteiden näkymään"
 
 #: ../src/main-win-ui.c:164
-#, fuzzy
 msgid "Net_work"
-msgstr "_Verkkoasemat"
+msgstr "_Verkko"
 
 #: ../src/main-win-ui.c:164
-#, fuzzy
 msgid "Go to list of places on the network"
 msgstr "Siirry verkkosijaintien näkymään"
 
 #: ../src/main-win-ui.c:165
 msgid "Go to the path in the location bar"
-msgstr ""
+msgstr "Siirry sijaintipalkin polkuun"
 
 #: ../src/main-win-ui.c:166
 msgid "_Bookmarks"
 msgstr "_Kirjanmerkit"
 
 #: ../src/main-win-ui.c:167
-#, fuzzy
 msgid "_Add to Bookmarks"
-msgstr "Lisää kirjanmerkkeihin"
+msgstr "_Lisää kirjanmerkkeihin"
 
 #: ../src/main-win-ui.c:167
 msgid "Add current folder to bookmarks list"
@@ -834,7 +819,6 @@ msgstr ""
 "Kehittäjä: Hon Jen Yee (PCMan)"
 
 #: ../src/main-win.c:798 ../src/main-win.c:806
-#, fuzzy
 msgid "Keyboard Navigation"
 msgstr "Näppäimistöllä liikkuminen"
 
