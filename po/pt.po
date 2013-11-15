@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm 1.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-13 22:34+0100\n"
-"PO-Revision-Date: 2013-11-05 12:06+0000\n"
+"PO-Revision-Date: 2013-11-15 10:10+0000\n"
 "Last-Translator: Sérgio <smarquespt@gmail.com>\n"
 "Language-Team: \n"
 "Language: pt\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1383653215.0\n"
+"X-POOTLE-MTIME: 1384510241.0\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2013"
@@ -84,14 +84,12 @@ msgid "<b>Show desktop icons</b>"
 msgstr "<b>Mostrar ícones na área de trabalho</b>"
 
 #: ../data/ui/desktop-pref.glade.h:14
-#, fuzzy
 msgid "_Show \"Documents\" icon on desktop"
-msgstr "Mo_strar \"Meus documentos\" na área de trabalho"
+msgstr "Mo_strar \"Documentos\" na área de trabalho"
 
 #: ../data/ui/desktop-pref.glade.h:15
-#, fuzzy
 msgid "Sho_w \"Devices\" icon on desktop"
-msgstr "Mo_strar \"Meus documentos\" na área de trabalho"
+msgstr "Mostrar \"Disp_ositivos\" na área de trabalho"
 
 #: ../data/ui/desktop-pref.glade.h:16
 msgid "Show \"_Trash Can\" icon on desktop"
@@ -257,7 +255,7 @@ msgstr "Mos_trar sempre o nome completo dos ficheiros"
 
 #: ../data/ui/pref.glade.h:31
 msgid "Show icons of bac_kup files shadowed"
-msgstr ""
+msgstr "Sombrear ícones dos ficheiros de bac_kup"
 
 #: ../data/ui/pref.glade.h:32
 msgid "_Display"
@@ -293,23 +291,20 @@ msgid "<b>Show in Places:</b>"
 msgstr "<b>Mostrar em Locais:</b>"
 
 #: ../data/ui/pref.glade.h:41
-#, fuzzy
 msgid "_Home Folder"
-msgstr "Pasta pessoal"
+msgstr "_Pasta pessoal"
 
 #: ../data/ui/pref.glade.h:42
-#, fuzzy
 msgid "Des_ktop"
-msgstr "Área de trabalho"
+msgstr "Área de _trabalho"
 
 #: ../data/ui/pref.glade.h:43 ../src/main-win-ui.c:160
 msgid "_Trash Can"
 msgstr "_Lixo"
 
 #: ../data/ui/pref.glade.h:44
-#, fuzzy
 msgid "_Filesystem Root"
-msgstr "Sistema de _ficheiros raiz"
+msgstr "Sistema de _ficheiros"
 
 #: ../data/ui/pref.glade.h:45
 msgid "App_lications"
@@ -317,12 +312,11 @@ msgstr "Ap_licações"
 
 #: ../data/ui/pref.glade.h:46
 msgid "Dev_ices"
-msgstr ""
+msgstr "D_ispositivos"
 
 #: ../data/ui/pref.glade.h:47
-#, fuzzy
 msgid "_Network"
-msgstr "Locais _de rede"
+msgstr "_Rede"
 
 #: ../data/ui/pref.glade.h:48
 msgid "_Layout"
@@ -363,7 +357,7 @@ msgstr "<b>Programas</b>"
 
 #: ../data/ui/pref.glade.h:57
 msgid "<i>Commands below may include extra options if necessary.</i>"
-msgstr ""
+msgstr "<i>Aos comandos abaixo, podem ser incrementadas opções extra.</i>"
 
 #: ../data/ui/pref.glade.h:58
 msgid "_Terminal emulator:"
@@ -376,7 +370,7 @@ msgstr "Comando para trocar de utili_zador:"
 #. Application command to format some drive
 #: ../data/ui/pref.glade.h:61
 msgid "_Format command:"
-msgstr ""
+msgstr "Comando de _formatação:"
 
 #: ../data/ui/pref.glade.h:62
 msgid "A_rchiver integration:"
@@ -399,7 +393,6 @@ msgid "Ru_n default application after creation from template"
 msgstr "Executar aplicação pré-defi_nida ao criar de um modelo"
 
 #: ../data/ui/pref.glade.h:67
-#, fuzzy
 msgid "<b>Other Options</b>"
 msgstr "<b>Outras opções</b>"
 
@@ -420,7 +413,7 @@ msgstr ""
 
 #: ../data/ui/pref.glade.h:71
 msgid "D_efer test for content type on folder loading"
-msgstr ""
+msgstr "D_eferir análise do tipo de conteúdo ao carregar pastas"
 
 #: ../data/ui/pref.glade.h:72
 msgid "_Advanced"
@@ -607,7 +600,6 @@ msgid "_Help"
 msgstr "Aj_uda"
 
 #: ../src/main-win-ui.c:153
-#, fuzzy
 msgid "_Keyboard Navigation"
 msgstr "Navegação com o te_clado"
 
@@ -660,14 +652,12 @@ msgid "Open trash can"
 msgstr "Abrir lixo"
 
 #: ../src/main-win-ui.c:161
-#, fuzzy
 msgid "Filesyste_m Root"
-msgstr "Sistema de _ficheiros raiz"
+msgstr "Siste_ma de ficheiros"
 
 #: ../src/main-win-ui.c:161
-#, fuzzy
 msgid "Go fo filesystem root"
-msgstr "Sistema de _ficheiros raiz"
+msgstr "Ir para o sistema de ficheiros"
 
 #: ../src/main-win-ui.c:162
 msgid "_Applications"
@@ -679,35 +669,31 @@ msgstr "Ir para pasta de menu da raiz de aplicações "
 
 #: ../src/main-win-ui.c:163
 msgid "Devi_ces"
-msgstr ""
+msgstr "Dispositi_vos"
 
 #: ../src/main-win-ui.c:163
-#, fuzzy
 msgid "Go to list of devices connected to the computer"
-msgstr "Ir para a lista de unidades do computador"
+msgstr "Ir para a lista de dispositivos ligados ao computador"
 
 #: ../src/main-win-ui.c:164
-#, fuzzy
 msgid "Net_work"
-msgstr "_Unidades de rede"
+msgstr "R_ede"
 
 #: ../src/main-win-ui.c:164
-#, fuzzy
 msgid "Go to list of places on the network"
-msgstr "Ira para a lista de unidades de rede"
+msgstr "Ir para a lista de locais de rede"
 
 #: ../src/main-win-ui.c:165
 msgid "Go to the path in the location bar"
-msgstr ""
+msgstr "Ir para o caminho da barra de localização"
 
 #: ../src/main-win-ui.c:166
 msgid "_Bookmarks"
 msgstr "_Marcadores"
 
 #: ../src/main-win-ui.c:167
-#, fuzzy
 msgid "_Add to Bookmarks"
-msgstr "Adicionar aos marcadores"
+msgstr "_Adicionar aos marcadores"
 
 #: ../src/main-win-ui.c:167
 msgid "Add current folder to bookmarks list"
@@ -832,7 +818,6 @@ msgstr ""
 "Desenvolvido por Hon Jen Yee (PCMan)"
 
 #: ../src/main-win.c:798 ../src/main-win.c:806
-#, fuzzy
 msgid "Keyboard Navigation"
 msgstr "Navegação com o teclado"
 
