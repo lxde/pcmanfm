@@ -3,7 +3,7 @@
 
 AC_PREREQ([2.63])
 AC_INIT([pcmanfm], [1.1.99.2], [http://pcmanfm.sf.net/])
-AM_INIT_AUTOMAKE([-Wall -Werror foreign])
+AM_INIT_AUTOMAKE([-Wall -Werror foreign no-dist-gzip dist-xz])
 
 AC_CONFIG_HEADERS([config.h])
 
