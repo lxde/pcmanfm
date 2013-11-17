@@ -48,6 +48,7 @@ struct _FmMainWin
     GtkWindowGroup* win_group;
 
     GtkUIManager* ui;
+    GtkRadioAction* first_view_mode;
     GtkToolbar* toolbar;
     FmPathEntry* location;
     GtkNotebook* notebook;

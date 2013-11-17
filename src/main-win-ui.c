@@ -80,13 +80,23 @@ static const char main_menu_xml[] =
     "</menu>"
     /* "<menuitem action='ShowStatus'/>" */
     /* "<menuitem action='TwinPane'/>" */
+    /* "<menu action='Toolbar'>"
+      "<menuitem action='ShowToolbar'/>"
+      "<separator/>"
+      "<menuitem action='ToolbarNewTab'/>"
+      "<menuitem action='ToolbarNav'/>"
+      "<menuitem action='ToolbarHome'/>"
+    "</menu>" */
     "<menuitem action='Fullscreen' />"
     "<separator/>"
+#if FM_CHECK_VERSION(1, 2, 0)
+    "<placeholder name='ViewModes'/>"
+#else
     "<menuitem action='IconView'/>"
     "<menuitem action='ThumbnailView'/>"
     "<menuitem action='CompactView'/>"
     "<menuitem action='ListView'/>"
-    "<separator/>"
+#endif
     "<menu action='Sort'>"
       "<menuitem action='Asc'/>"
       "<menuitem action='Desc'/>"
@@ -206,13 +216,15 @@ static GtkToggleActionEntry main_win_toggle_actions[]=
     {"Fullscreen", NULL, N_("Fullscreen _Mode"), "F11", NULL, G_CALLBACK(on_fullscreen), FALSE}
 };
 
+#if !FM_CHECK_VERSION(1, 2, 0)
 static GtkRadioActionEntry main_win_mode_actions[]=
 {
     {"IconView", NULL, N_("_Icon View"), "<Ctrl>1", NULL, FM_FV_ICON_VIEW},
-    {"ThumbnailView", NULL, N_("_Thumbnail View"), "<Ctrl>2", NULL, FM_FV_THUMBNAIL_VIEW},
-    {"CompactView", NULL, N_("_Compact View"), "<Ctrl>3", NULL, FM_FV_COMPACT_VIEW},
+    {"CompactView", NULL, N_("_Compact View"), "<Ctrl>2", NULL, FM_FV_COMPACT_VIEW},
+    {"ThumbnailView", NULL, N_("_Thumbnail View"), "<Ctrl>3", NULL, FM_FV_THUMBNAIL_VIEW},
     {"ListView", NULL, N_("Detailed _List View"), "<Ctrl>4", NULL, FM_FV_LIST_VIEW},
 };
+#endif
 
 static GtkRadioActionEntry main_win_sort_type_actions[]=
 {

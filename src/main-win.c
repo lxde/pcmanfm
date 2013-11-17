@@ -226,8 +226,7 @@ static void update_view_menu(FmMainWin* win)
     FmFolderView* fv = win->folder_view;
     act = gtk_ui_manager_get_action(win->ui, "/menubar/ViewMenu/ShowHidden");
     gtk_toggle_action_set_active(GTK_TOGGLE_ACTION(act), fm_folder_view_get_show_hidden(fv));
-    act = gtk_ui_manager_get_action(win->ui, "/menubar/ViewMenu/IconView");
-    gtk_radio_action_set_current_value(GTK_RADIO_ACTION(act),
+    gtk_radio_action_set_current_value(win->first_view_mode,
                                        fm_standard_view_get_mode(FM_STANDARD_VIEW(fv)));
 }
 
@@ -522,6 +521,14 @@ static void fm_main_win_init(FmMainWin *win)
     GtkAccelGroup* accel_grp;
     AtkObject *atk_obj, *atk_view;
     AtkRelation *relation;
+#if FM_CHECK_VERSION(1, 2, 0)
+    GtkRadioAction *mode_action;
+    GSList *radio_group;
+    GString *str, *xml;
+    static char accel_str[] = "<Ctrl>1";
+    int i;
+    gboolean is_first;
+#endif
     GtkShadowType shadow_type;
 
     pcmanfm_ref();
@@ -545,10 +552,48 @@ static void fm_main_win_init(FmMainWin *win)
     gtk_action_group_add_actions(act_grp, main_win_actions, G_N_ELEMENTS(main_win_actions), win);
     gtk_action_group_add_toggle_actions(act_grp, main_win_toggle_actions,
                                         G_N_ELEMENTS(main_win_toggle_actions), win);
+#if FM_CHECK_VERSION(1, 2, 0)
+    /* generate list of modes dynamically from FmStandardView widget data */
+    radio_group = NULL;
+    is_first = TRUE;
+    str = g_string_new("Mode:");
+    xml = g_string_new("<menubar><menu action='ViewMenu'><placeholder name='ViewModes'>");
+    accel_str[6] = '1';
+    for(i = 0; i < fm_standard_view_get_n_modes(); i++)
+    {
+        if(fm_standard_view_get_mode_label(i))
+        {
+            g_string_append(str, fm_standard_view_mode_to_str(i));
+            mode_action = gtk_radio_action_new(str->str,
+                                               fm_standard_view_get_mode_label(i),
+                                               fm_standard_view_get_mode_tooltip(i),
+                                               fm_standard_view_get_mode_icon(i),
+                                               i);
+            gtk_radio_action_set_group(mode_action, radio_group);
+            radio_group = gtk_radio_action_get_group(mode_action);
+            gtk_action_group_add_action_with_accel(act_grp,
+                                                   GTK_ACTION(mode_action),
+                                                   accel_str);
+            if (is_first) /* work on first one only */
+            {
+                win->first_view_mode = mode_action;
+                g_signal_connect(mode_action, "changed", G_CALLBACK(on_change_mode), win);
+            }
+            is_first = FALSE;
+            g_object_unref(mode_action);
+            g_string_append_printf(xml, "<menuitem action='%s'/>", str->str);
+            accel_str[6]++; /* <Ctrl>2 and so on */
+            g_string_truncate(str, 5); /* reset it to just "Mode:" */
+        }
+    }
+    g_string_append(xml, "</placeholder></menu></menubar>");
+    g_string_free(str, TRUE);
+#else
     gtk_action_group_add_radio_actions(act_grp, main_win_mode_actions,
                                        G_N_ELEMENTS(main_win_mode_actions),
                                        app_config->view_mode,
                                        G_CALLBACK(on_change_mode), win);
+#endif
     gtk_action_group_add_radio_actions(act_grp, main_win_sort_type_actions,
                                        G_N_ELEMENTS(main_win_sort_type_actions),
 #if FM_CHECK_VERSION(1, 0, 2)
@@ -571,8 +616,16 @@ static void fm_main_win_init(FmMainWin *win)
 
     gtk_ui_manager_insert_action_group(ui, act_grp, 0);
     gtk_ui_manager_add_ui_from_string(ui, main_menu_xml, -1, NULL);
-    act = gtk_ui_manager_get_action(ui, "/menubar/ViewMenu/ShowHidden");
+#if FM_CHECK_VERSION(1, 2, 0)
+    /* add ui generated above */
+    gtk_ui_manager_add_ui_from_string(ui, xml->str, xml->len, NULL);
+    g_string_free(xml, TRUE);
+#else
+    act = gtk_ui_manager_get_action(win->ui, "/menubar/ViewMenu/IconView");
+    win->first_view_mode = GTK_RADIO_ACTION(act);
+#endif
 #if !FM_CHECK_VERSION(1, 0, 2)
+    act = gtk_ui_manager_get_action(ui, "/menubar/ViewMenu/ShowHidden");
     /* we cannot keep it in sync without callback from folder view which
        is available only in 1.0.2 so just hide it */
     gtk_action_set_visible(act, FALSE);
