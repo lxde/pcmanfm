@@ -83,6 +83,12 @@ static void on_go_network(GtkAction* act, FmMainWin* win);
 static void on_go_apps(GtkAction* act, FmMainWin* win);
 static void on_reload(GtkAction* act, FmMainWin* win);
 static void on_show_hidden(GtkToggleAction* act, FmMainWin* win);
+#if FM_CHECK_VERSION(1, 2, 0)
+static void on_mingle_dirs(GtkToggleAction* act, FmMainWin* win);
+#endif
+#if FM_CHECK_VERSION(1, 0, 2)
+static void on_sort_ignore_case(GtkToggleAction* act, FmMainWin* win);
+#endif
 static void on_show_side_pane(GtkToggleAction* act, FmMainWin* win);
 static void on_change_mode(GtkRadioAction* act, GtkRadioAction *cur, FmMainWin* win);
 static void on_sort_by(GtkRadioAction* act, GtkRadioAction *cur, FmMainWin* win);
@@ -202,6 +208,16 @@ static void update_sort_menu(FmMainWin* win)
         by = FM_FOLDER_MODEL_COL_NAME;
 #endif
     gtk_radio_action_set_current_value(GTK_RADIO_ACTION(act), by);
+#if FM_CHECK_VERSION(1, 0, 2)
+    act = gtk_ui_manager_get_action(win->ui, "/menubar/ViewMenu/Sort/SortIgnoreCase");
+    gtk_toggle_action_set_active(GTK_TOGGLE_ACTION(act),
+                                 (mode & FM_SORT_CASE_SENSITIVE) == 0);
+#endif
+#if FM_CHECK_VERSION(1, 2, 0)
+    act = gtk_ui_manager_get_action(win->ui, "/menubar/ViewMenu/Sort/MingleDirs");
+    gtk_toggle_action_set_active(GTK_TOGGLE_ACTION(act),
+                                 (mode & FM_SORT_NO_FOLDER_FIRST) != 0);
+#endif
 }
 
 static void update_view_menu(FmMainWin* win)
@@ -1008,6 +1024,56 @@ static void on_sort_type(GtkRadioAction* act, GtkRadioAction *cur, FmMainWin* wi
     }
 #endif
 }
+
+#if FM_CHECK_VERSION(1, 2, 0)
+static void on_mingle_dirs(GtkToggleAction* act, FmMainWin* win)
+{
+    FmFolderView *fv = win->folder_view;
+    FmFolderModel *model = fm_folder_view_get_model(fv);
+    FmSortMode mode;
+    gboolean active;
+
+    if (model)
+    {
+        fm_folder_model_get_sort(model, NULL, &mode);
+        active = gtk_toggle_action_get_active(act);
+        mode &= ~FM_SORT_NO_FOLDER_FIRST;
+        if (active)
+            mode |= FM_SORT_NO_FOLDER_FIRST;
+        fm_folder_model_set_sort(model, -1, mode);
+        if(mode != app_config->sort_type)
+        {
+            app_config->sort_type = mode;
+            pcmanfm_save_config(FALSE);
+        }
+    }
+}
+#endif
+
+#if FM_CHECK_VERSION(1, 0, 2)
+static void on_sort_ignore_case(GtkToggleAction* act, FmMainWin* win)
+{
+    FmFolderView *fv = win->folder_view;
+    FmFolderModel *model = fm_folder_view_get_model(fv);
+    FmSortMode mode;
+    gboolean active;
+
+    if (model)
+    {
+        fm_folder_model_get_sort(model, NULL, &mode);
+        active = gtk_toggle_action_get_active(act);
+        mode &= ~FM_SORT_CASE_SENSITIVE;
+        if (!active)
+            mode |= FM_SORT_CASE_SENSITIVE;
+        fm_folder_model_set_sort(model, -1, mode);
+        if(mode != app_config->sort_type)
+        {
+            app_config->sort_type = mode;
+            pcmanfm_save_config(FALSE);
+        }
+    }
+}
+#endif
 
 static void on_side_pane_mode(GtkRadioAction* act, GtkRadioAction *cur, FmMainWin* win)
 {

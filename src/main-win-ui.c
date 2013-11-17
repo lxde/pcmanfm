@@ -95,6 +95,13 @@ static const char main_menu_xml[] =
       "<menuitem action='ByMTime'/>"
       "<menuitem action='BySize'/>"
       "<menuitem action='ByType'/>"
+#if FM_CHECK_VERSION(1, 0, 2)
+      "<separator/>"
+#if FM_CHECK_VERSION(1, 2, 0)
+      "<menuitem action='MingleDirs'/>"
+#endif
+      "<menuitem action='SortIgnoreCase'/>"
+#endif
     "</menu>"
   "</menu>"
   "<menu action='ToolMenu'>"
@@ -186,6 +193,13 @@ static GtkActionEntry main_win_actions[]=
 static GtkToggleActionEntry main_win_toggle_actions[]=
 {
     {"ShowHidden", NULL, N_("Show Hidde_n"), "<Ctrl>H", NULL, G_CALLBACK(on_show_hidden), FALSE},
+#if FM_CHECK_VERSION(1, 2, 0)
+    /* Note to translators: "Mingle..." means "Do not put folders before files" but make the translation as short as possible, please! */
+    {"MingleDirs", NULL, N_("Mingle _Files and Folders"), NULL, NULL, G_CALLBACK(on_mingle_dirs), FALSE},
+#endif
+#if FM_CHECK_VERSION(1, 0, 2)
+    {"SortIgnoreCase", NULL, N_("_Ignore Name Case"), NULL, NULL, G_CALLBACK(on_sort_ignore_case), TRUE},
+#endif
     {"ShowSidePane", NULL, N_("Sho_w Side Pane"), "F9", NULL, G_CALLBACK(on_show_side_pane), TRUE},
     {"ShowStatus", NULL, N_("Show Status B_ar"), "<Ctrl>B", NULL, NULL, TRUE},
     {"TwinPane", NULL, N_("T_win Pane Mode"), "F3", NULL, NULL, TRUE},
