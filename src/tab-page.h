@@ -24,6 +24,8 @@
 #include <gtk/gtk.h>
 #include <libfm/fm.h>
 
+#include "pcmanfm.h"
+
 G_BEGIN_DECLS
 
 
@@ -58,6 +60,17 @@ struct _FmTabPage
     FmNavHistory* nav_history;
     char* status_text[FM_STATUS_TEXT_NUM];
     FmFolder* folder;
+    /* Use sort_type, sort_by, show_hidden to setup model after folder loading */
+#if FM_CHECK_VERSION(1, 0, 2)
+    FmSortMode sort_type;
+    FmFolderModelCol sort_by;
+    char **columns; /* NULL if own_config is FALSE */
+#else
+    GtkSortType sort_type;
+    int sort_by;
+#endif
+    gboolean show_hidden : 1;
+    gboolean own_config : 1;
     gboolean busy : 1;
 };
 

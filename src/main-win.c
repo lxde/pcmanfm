@@ -89,6 +89,7 @@ static void on_mingle_dirs(GtkToggleAction* act, FmMainWin* win);
 #if FM_CHECK_VERSION(1, 0, 2)
 static void on_sort_ignore_case(GtkToggleAction* act, FmMainWin* win);
 #endif
+static void on_save_per_folder(GtkToggleAction* act, FmMainWin* win);
 static void on_show_side_pane(GtkToggleAction* act, FmMainWin* win);
 static void on_change_mode(GtkRadioAction* act, GtkRadioAction *cur, FmMainWin* win);
 static void on_sort_by(GtkRadioAction* act, GtkRadioAction *cur, FmMainWin* win);
@@ -182,6 +183,9 @@ static void update_sort_menu(FmMainWin* win)
     FmFolderModelCol by;
     FmSortMode mode;
 
+    /* we have to update this any time */
+    act = gtk_ui_manager_get_action(win->ui, "/menubar/ViewMenu/SavePerFolder");
+    gtk_toggle_action_set_active(GTK_TOGGLE_ACTION(act), win->current_page->own_config);
     if(fv == NULL || fm_folder_view_get_model(fv) == NULL)
         /* since 1.0.2 libfm have sorting only in FmFolderModel therefore
            if there is no model then we cannot get last sorting from it */
@@ -190,10 +194,21 @@ static void update_sort_menu(FmMainWin* win)
         return;
     type = FM_SORT_IS_ASCENDING(mode) ? GTK_SORT_ASCENDING : GTK_SORT_DESCENDING;
     /* we don't handle extended modes in radio actions so do that here */
-    if(mode != app_config->sort_type)
+    if(mode != win->current_page->sort_type)
     {
-        app_config->sort_type = mode;
-        pcmanfm_save_config(FALSE);
+        win->current_page->sort_type = mode;
+        if (win->current_page->own_config)
+        {
+            fm_app_config_save_config_for_path(fm_folder_view_get_cwd(fv),
+                                               mode, by, -1,
+                                               win->current_page->show_hidden,
+                                               NULL);
+        }
+        else
+        {
+            app_config->sort_type = mode;
+            pcmanfm_save_config(FALSE);
+        }
     }
 #else
     FmFolderModelViewCol by = fm_folder_view_get_sort_by(fv);
@@ -947,6 +962,7 @@ static void on_open_as_root(GtkAction* act, FmMainWin* win)
 #endif
 
 #if FM_CHECK_VERSION(1, 0, 2)
+#if 0
 /* this is modified version of pcmanfm_open_folder() really */
 static gboolean open_search_func(GAppLaunchContext* ctx, GList* folder_infos, gpointer user_data, GError** err)
 {
@@ -978,13 +994,13 @@ static gboolean open_search_func(GAppLaunchContext* ctx, GList* folder_infos, gp
     /* FIXME: can folder_infos contain more that one path? */
     return TRUE;
 }
-
+#endif
 static void on_search(GtkAction* act, FmMainWin* win)
 {
     FmTabPage* page = win->current_page;
     FmPath* cwd = fm_tab_page_get_cwd(page);
     GList* l = g_list_append(NULL, cwd);
-    fm_launch_search_simple(GTK_WINDOW(win), NULL, l, open_search_func, win);
+    fm_launch_search_simple(GTK_WINDOW(win), NULL, l, pcmanfm_open_folder, NULL);
     g_list_free(l);
 }
 #endif
@@ -1029,31 +1045,73 @@ static void on_change_mode(GtkRadioAction* act, GtkRadioAction *cur, FmMainWin* 
 {
     int mode = gtk_radio_action_get_current_value(cur);
     fm_standard_view_set_mode(FM_STANDARD_VIEW(win->folder_view), mode);
+    if (win->current_page->own_config)
+        fm_app_config_save_config_for_path(fm_folder_view_get_cwd(win->folder_view),
+                                           win->current_page->sort_type,
+                                           win->current_page->sort_by, mode,
+                                           win->current_page->show_hidden, NULL);
 }
 
 static void on_sort_by(GtkRadioAction* act, GtkRadioAction *cur, FmMainWin* win)
 {
     int val = gtk_radio_action_get_current_value(cur);
+    FmFolderView *fv = win->folder_view;
 #if FM_CHECK_VERSION(1, 0, 2)
-    FmFolderModel *model = fm_folder_view_get_model(win->folder_view);
+    FmFolderModel *model = fm_folder_view_get_model(fv);
 
     if (model)
         fm_folder_model_set_sort(model, val, FM_SORT_DEFAULT);
 #else
-    fm_folder_view_sort(win->folder_view, -1, val);
+    fm_folder_view_sort(fv, -1, val);
 #endif
-    if(val != (int)app_config->sort_by)
+    if(val != (int)win->current_page->sort_by)
     {
-        app_config->sort_by = val;
-        pcmanfm_save_config(FALSE);
+        win->current_page->sort_by = val;
+        if (win->current_page->own_config)
+        {
+            fm_app_config_save_config_for_path(fm_folder_view_get_cwd(fv),
+                                               win->current_page->sort_type,
+                                               val, -1,
+                                               win->current_page->show_hidden,
+                                               NULL);
+        }
+        else
+        {
+            app_config->sort_by = val;
+            pcmanfm_save_config(FALSE);
+        }
+    }
+}
+
+#if FM_CHECK_VERSION(1, 0, 2)
+static inline void update_sort_type_for_page(FmTabPage *page, FmFolderView *fv, FmSortMode mode)
+#else
+static inline void update_sort_type_for_page(FmTabPage *page, FmFolderView *fv, guint mode)
+#endif
+{
+    if(mode != page->sort_type)
+    {
+        page->sort_type = mode;
+        if (page->own_config)
+        {
+            fm_app_config_save_config_for_path(fm_folder_view_get_cwd(fv), mode,
+                                               page->sort_by, -1,
+                                               page->show_hidden, NULL);
+        }
+        else
+        {
+            app_config->sort_type = mode;
+            pcmanfm_save_config(FALSE);
+        }
     }
 }
 
 static void on_sort_type(GtkRadioAction* act, GtkRadioAction *cur, FmMainWin* win)
 {
     guint val = gtk_radio_action_get_current_value(cur);
+    FmFolderView *fv = win->folder_view;
 #if FM_CHECK_VERSION(1, 0, 2)
-    FmFolderModel *model = fm_folder_view_get_model(win->folder_view);
+    FmFolderModel *model = fm_folder_view_get_model(fv);
     FmSortMode mode;
 
     if (model)
@@ -1062,19 +1120,11 @@ static void on_sort_type(GtkRadioAction* act, GtkRadioAction *cur, FmMainWin* wi
         mode &= ~FM_SORT_ORDER_MASK;
         mode |= (val == GTK_SORT_ASCENDING) ? FM_SORT_ASCENDING : FM_SORT_DESCENDING;
         fm_folder_model_set_sort(model, -1, mode);
-        if(mode != app_config->sort_type)
-        {
-            app_config->sort_type = mode;
-            pcmanfm_save_config(FALSE);
-        }
+        update_sort_type_for_page(win->current_page, fv, mode);
     }
 #else
     fm_folder_view_sort(win->folder_view, val, -1);
-    if(val != app_config->sort_type)
-    {
-        app_config->sort_type = val;
-        pcmanfm_save_config(FALSE);
-    }
+    update_sort_type_for_page(win->current_page, fv, val);
 #endif
 }
 
@@ -1094,11 +1144,7 @@ static void on_mingle_dirs(GtkToggleAction* act, FmMainWin* win)
         if (active)
             mode |= FM_SORT_NO_FOLDER_FIRST;
         fm_folder_model_set_sort(model, -1, mode);
-        if(mode != app_config->sort_type)
-        {
-            app_config->sort_type = mode;
-            pcmanfm_save_config(FALSE);
-        }
+        update_sort_type_for_page(win->current_page, fv, mode);
     }
 }
 #endif
@@ -1119,14 +1165,44 @@ static void on_sort_ignore_case(GtkToggleAction* act, FmMainWin* win)
         if (!active)
             mode |= FM_SORT_CASE_SENSITIVE;
         fm_folder_model_set_sort(model, -1, mode);
-        if(mode != app_config->sort_type)
-        {
-            app_config->sort_type = mode;
-            pcmanfm_save_config(FALSE);
-        }
+        update_sort_type_for_page(win->current_page, fv, mode);
     }
 }
 #endif
+
+static void on_save_per_folder(GtkToggleAction* act, FmMainWin* win)
+{
+    gboolean active = gtk_toggle_action_get_active(act);
+    FmTabPage *page = win->current_page;
+    FmFolderView *fv = win->folder_view;
+
+    if (active)
+    {
+        if (page->own_config) /* not changed */
+            return;
+        page->own_config = TRUE;
+#if FM_CHECK_VERSION(1, 0, 2)
+        page->columns = g_strdupv(app_config->columns);
+#endif
+        fm_app_config_save_config_for_path(fm_folder_view_get_cwd(fv),
+                                           page->sort_type, page->sort_by,
+                                           fm_standard_view_get_mode(FM_STANDARD_VIEW(fv)),
+#if FM_CHECK_VERSION(1, 0, 2)
+                                           page->show_hidden, page->columns);
+#else
+                                           page->show_hidden, NULL);
+#endif
+    }
+    else if (page->own_config) /* attribute removed */
+    {
+        page->own_config = FALSE;
+#if FM_CHECK_VERSION(1, 0, 2)
+        g_strfreev(page->columns);
+        page->columns = NULL;
+#endif
+        fm_app_config_clear_config_for_path(fm_folder_view_get_cwd(fv));
+    }
+}
 
 static void on_side_pane_mode(GtkRadioAction* act, GtkRadioAction *cur, FmMainWin* win)
 {
@@ -1484,10 +1560,21 @@ static void on_folder_view_filter_changed(FmFolderView* fv, FmMainWin* win)
 
     act = gtk_ui_manager_get_action(win->ui, "/menubar/ViewMenu/ShowHidden");
     gtk_toggle_action_set_active(GTK_TOGGLE_ACTION(act), active);
-    if(active != app_config->show_hidden)
+    if(active != win->current_page->show_hidden)
     {
-        app_config->show_hidden = active;
-        pcmanfm_save_config(FALSE);
+        win->current_page->show_hidden = active;
+        if (win->current_page->own_config)
+        {
+            fm_app_config_save_config_for_path(fm_folder_view_get_cwd(fv),
+                                               win->current_page->sort_type,
+                                               win->current_page->sort_by, -1,
+                                               active, NULL);
+        }
+        else
+        {
+            app_config->show_hidden = active;
+            pcmanfm_save_config(FALSE);
+        }
     }
 }
 #endif

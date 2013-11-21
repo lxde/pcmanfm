@@ -30,8 +30,206 @@
 
 #include "app-config.h"
 
+#if !FM_CHECK_VERSION(1, 2, 1)
+typedef struct
+{
+    GKeyFile *kf;
+    char *group; /* allocated if not in cache */
+    char *filepath; /* NULL if in cache */
+    gboolean changed;
+} FmFolderConfig;
+
+static GKeyFile *fc_cache = NULL;
+
+static gboolean dir_cache_changed = FALSE;
+
+static FmFolderConfig *fm_folder_config_open(FmPath *path)
+{
+    FmFolderConfig *fc = g_slice_new(FmFolderConfig);
+    FmPath *sub_path;
+
+    fc->changed = FALSE;
+    /* clear .directory file first */
+    sub_path = fm_path_new_child(path, ".directory");
+    fc->filepath = fm_path_to_str(sub_path);
+    fm_path_unref(sub_path);
+    if (g_file_test(fc->filepath, G_FILE_TEST_EXISTS))
+    {
+        fc->kf = g_key_file_new();
+        if (g_key_file_load_from_file(fc->kf, fc->filepath,
+                                      G_KEY_FILE_KEEP_COMMENTS | G_KEY_FILE_KEEP_TRANSLATIONS,
+                                      NULL) &&
+            g_key_file_has_group(fc->kf, "File Manager"))
+        {
+            fc->group = "File Manager";
+            return fc;
+        }
+        g_key_file_free(fc->kf);
+    }
+    g_free(fc->filepath);
+    fc->filepath = NULL;
+    fc->group = fm_path_to_str(path);
+    fc->kf = fc_cache;
+    return fc;
+}
+
+static gboolean fm_folder_config_close(FmFolderConfig *fc, GError **error)
+{
+    gboolean ret = TRUE;
+
+    if (fc->filepath)
+    {
+        if (fc->changed)
+        {
+            char *out;
+            gsize len;
+
+            out = g_key_file_to_data(fc->kf, &len, error);
+            if (!out || !g_file_set_contents(fc->filepath, out, len, error))
+                ret = FALSE;
+            g_free(out);
+        }
+        g_free(fc->filepath);
+        g_key_file_free(fc->kf);
+    }
+    else
+    {
+        if (fc->changed)
+        {
+            /* raise 'changed' flag and schedule config save */
+            dir_cache_changed = TRUE;
+            pcmanfm_save_config(FALSE);
+        }
+        g_free(fc->group);
+    }
+
+    g_slice_free(FmFolderConfig, fc);
+    return ret;
+}
+
+static gboolean fm_folder_config_is_empty(FmFolderConfig *fc)
+{
+    return !g_key_file_has_group(fc->kf, fc->group);
+}
+
+static gboolean fm_folder_config_get_integer(FmFolderConfig *fc, const char *key,
+                                             gint *val)
+{
+    return fm_key_file_get_int(fc->kf, fc->group, key, val);
+}
+
+static gboolean fm_folder_config_get_boolean(FmFolderConfig *fc, const char *key,
+                                             gboolean *val)
+{
+    return fm_key_file_get_bool(fc->kf, fc->group, key, val);
+}
+
+static char *fm_folder_config_get_string(FmFolderConfig *fc, const char *key)
+{
+    return g_key_file_get_string(fc->kf, fc->group, key, NULL);
+}
+
+static char **fm_folder_config_get_string_list(FmFolderConfig *fc,
+                                               const char *key, gsize *length)
+{
+    return g_key_file_get_string_list(fc->kf, fc->group, key, length, NULL);
+}
+
+#if !FM_CHECK_VERSION(1, 0, 2)
+static void fm_folder_config_set_integer(FmFolderConfig *fc, const char *key,
+                                         gint val)
+{
+    fc->changed = TRUE;
+    g_key_file_set_integer(fc->kf, fc->group, key, val);
+}
+#endif
+
+static void fm_folder_config_set_boolean(FmFolderConfig *fc, const char *key,
+                                         gboolean val)
+{
+    fc->changed = TRUE;
+    g_key_file_set_boolean(fc->kf, fc->group, key, val);
+}
+
+static void fm_folder_config_set_string(FmFolderConfig *fc, const char *key,
+                                        const char *string)
+{
+    fc->changed = TRUE;
+    g_key_file_set_string(fc->kf, fc->group, key, string);
+}
+
+static void fm_folder_config_set_string_list(FmFolderConfig *fc, const char *key,
+                                             const gchar * const list[],
+                                             gsize length)
+{
+    fc->changed = TRUE;
+    g_key_file_set_string_list(fc->kf, fc->group, key, list, length);
+}
+
+static void fm_folder_config_remove_key(FmFolderConfig *fc, const char *key)
+{
+    fc->changed = TRUE;
+    g_key_file_remove_key(fc->kf, fc->group, key, NULL);
+}
+
+static void fm_folder_config_purge(FmFolderConfig *fc)
+{
+    fc->changed = TRUE;
+    g_key_file_remove_group(fc->kf, fc->group, NULL);
+}
+
+static void fm_folder_config_save_cache(const char *dir_path)
+{
+    char *path, *path2, *path3;
+    char *out;
+    gsize len;
+
+    /* if per-directory cache was changed since last invocation then save it */
+    if (dir_cache_changed)
+    {
+        out = g_key_file_to_data(fc_cache, &len, NULL);
+        if (out)
+        {
+            /* create temp file with settings */
+            path = g_build_filename(dir_path, "dir-settings.conf", NULL);
+            path2 = g_build_filename(dir_path, "dir-settings.tmp", NULL);
+            path3 = g_build_filename(dir_path, "dir-settings.backup", NULL);
+            /* do safe replace now, the file is important enough to be lost */
+            if (g_file_set_contents(path2, out, len, NULL))
+            {
+                /* backup old cache file */
+                g_unlink(path3);
+                if (!g_file_test(path, G_FILE_TEST_EXISTS) ||
+                    g_rename(path, path3) == 0)
+                {
+                    /* rename temp file */
+                    if (g_rename(path2, path) == 0)
+                    {
+                        /* success! remove the old cache file */
+                        g_unlink(path3);
+                        /* reset the 'changed' flag */
+                        dir_cache_changed = FALSE;
+                    }
+                    else
+                        g_warning("cannot rename %s to %s", path2, path);
+                }
+                else
+                    g_warning("cannot rename %s to %s", path, path3);
+            }
+            else
+                g_warning("cannot save %s", path2);
+            g_free(path);
+            g_free(path2);
+            g_free(path3);
+            g_free(out);
+        }
+    }
+}
+#endif
+
 #if FM_CHECK_VERSION(1, 0, 2)
-static void _parse_sort(GKeyFile *kf, const char *group, FmSortMode *mode, FmFolderModelCol *col)
+static void _parse_sort(GKeyFile *kf, const char *group, FmSortMode *mode,
+                        FmFolderModelCol *col)
 {
     int tmp_int;
     char **sort;
@@ -79,7 +277,8 @@ static void _parse_sort(GKeyFile *kf, const char *group, FmSortMode *mode, FmFol
         *col = tmp_int;
 }
 #else /* < 1.0.2 */
-static void _parse_sort(GKeyFile *kf, const char *group, GtkSortType *mode, int *col)
+static void _parse_sort(GKeyFile *kf, const char *group, GtkSortType *mode,
+                        int *col)
 {
     int tmp_int;
 
@@ -119,6 +318,91 @@ static void _save_sort(GString *buf, GtkSortType type, int col)
 }
 #endif
 
+/* we use capitalized keys here because it is de-facto standard for
+   desktop entry files and we use those keys in '.directory' as well */
+#if FM_CHECK_VERSION(1, 0, 2)
+static gboolean _parse_config_for_path(FmFolderConfig *fc,
+                                       FmSortMode *mode, FmFolderModelCol *by,
+#else
+static gboolean _parse_config_for_path(FmFolderConfig *fc,
+                                       GtkSortType *mode, gint *by,
+#endif
+                                       FmStandardViewMode *view_mode,
+                                       gboolean *show_hidden, char ***columns)
+{
+    char *tmp;
+    int tmp_int;
+    /* we cannot use _parse_sort() here because we have no access to GKeyFile */
+#if FM_CHECK_VERSION(1, 0, 2)
+    char **sort;
+
+    /* parse "sort" strings list first */
+    sort = fm_folder_config_get_string_list(fc, "Sort", NULL);
+    if (sort)
+    {
+        FmSortMode tmp_mode = 0;
+        FmFolderModelCol tmp_col = FM_FOLDER_MODEL_COL_DEFAULT;
+
+        for (tmp_int = 0; sort[tmp_int]; tmp_int++)
+        {
+            if (tmp_int == 0) /* column should be first! */
+                tmp_col = fm_folder_model_get_col_by_name(sort[tmp_int]);
+            else if (strcmp(sort[tmp_int], "ascending") == 0)
+                tmp_mode = (tmp_mode & ~FM_SORT_ORDER_MASK) | FM_SORT_ASCENDING;
+            else if (strcmp(sort[tmp_int], "descending") == 0)
+                tmp_mode = (tmp_mode & ~FM_SORT_ORDER_MASK) | FM_SORT_DESCENDING;
+            else if (strcmp(sort[tmp_int], "case") == 0)
+                tmp_mode |= FM_SORT_CASE_SENSITIVE;
+#if FM_CHECK_VERSION(1, 2, 0)
+            else if (strcmp(sort[tmp_int], "mingle") == 0)
+                tmp_mode |= FM_SORT_NO_FOLDER_FIRST;
+#endif
+        }
+        *mode = tmp_mode;
+        if (tmp_col != FM_FOLDER_MODEL_COL_DEFAULT)
+            *by = tmp_col;
+        g_strfreev(sort);
+    }
+    else
+    {
+        /* parse fallback old style sort config */
+        if(fm_folder_config_get_integer(fc, "sort_type", &tmp_int) &&
+           tmp_int == GTK_SORT_DESCENDING)
+            *mode = FM_SORT_DESCENDING;
+        else
+            *mode = FM_SORT_ASCENDING;
+        if(fm_folder_config_get_integer(fc, "sort_by", &tmp_int) &&
+#if FM_CHECK_VERSION(1, 2, 0)
+           fm_folder_model_col_is_valid((guint)tmp_int))
+#else
+           FM_FOLDER_MODEL_COL_IS_VALID((guint)tmp_int))
+#endif
+            *by = tmp_int;
+    }
+#else /* < 1.0.2 */
+    if(fm_folder_config_get_integer(fc, "sort_type", &tmp_int) &&
+       tmp_int == GTK_SORT_DESCENDING)
+        *mode = GTK_SORT_DESCENDING;
+    else
+        *mode = GTK_SORT_ASCENDING;
+    if(fm_folder_config_get_integer(fc, "sort_by", &tmp_int) &&
+       FM_FOLDER_MODEL_COL_IS_VALID((guint)tmp_int))
+        *by = tmp_int;
+#endif
+    if (view_mode && (tmp = fm_folder_config_get_string(fc, "ViewMode")))
+    {
+        *view_mode = fm_standard_view_mode_from_str(tmp);
+        g_free(tmp);
+    }
+    if (show_hidden)
+        fm_folder_config_get_boolean(fc, "ShowHidden", show_hidden);
+#if FM_CHECK_VERSION(1, 0, 2)
+    if (columns)
+        *columns = fm_folder_config_get_string_list(fc, "Columns", NULL);
+#endif
+    return TRUE;
+}
+
 
 static void fm_app_config_finalize              (GObject *object);
 
@@ -155,6 +439,11 @@ static void fm_app_config_finalize(GObject *object)
       g_free(cfg->desktop_section.desktop_font);
     }
     /*g_free(cfg->su_cmd);*/
+
+#if !FM_CHECK_VERSION(1, 2, 1)
+    g_key_file_free(fc_cache);
+    fc_cache = NULL;
+#endif
 
     G_OBJECT_CLASS(fm_app_config_parent_class)->finalize(object);
 }
@@ -378,8 +667,186 @@ void fm_app_config_load_from_profile(FmAppConfig* cfg, const char* name)
             fm_app_config_load_from_key_file(cfg, kf);
     }
     g_free(path);
-
     g_key_file_free(kf);
+
+#if !FM_CHECK_VERSION(1, 2, 1)
+    fc_cache = g_key_file_new();
+    path = g_build_filename(g_get_user_config_dir(), "pcmanfm", name,
+                            "dir-settings.conf", NULL);
+    g_key_file_load_from_file(fc_cache, path, 0, NULL);
+    g_free(path);
+#endif
+}
+
+/**
+ * fm_app_config_get_config_for_path
+ * @path: path to get config
+ * @mode: (allow-none) (out): location to save sort mode
+ * @by: (allow-none) (out): location to save sort columns
+ * @view_mode: (allow-none) (out): location to save view mode
+ * @show_hidden: (allow-none) (out): location to save show hidden flag
+ * @columns: (allow-none) (out) (transfer none): location to save columns list
+ *
+ * Returns: %TRUE if @path has individual configuration.
+ */
+#if FM_CHECK_VERSION(1, 0, 2)
+gboolean fm_app_config_get_config_for_path(FmPath *path, FmSortMode *mode,
+                                           FmFolderModelCol *by,
+#else
+gboolean fm_app_config_get_config_for_path(FmPath *path, GtkSortType *mode,
+                                           gint *by,
+#endif
+                                           FmStandardViewMode *view_mode,
+                                           gboolean *show_hidden,
+                                           char ***columns)
+{
+    FmPath *sub_path;
+    FmFolderConfig *fc;
+    gboolean ret = TRUE;
+
+    /* preload defaults */
+    if (mode)
+        *mode = app_config->sort_type;
+    if (by)
+        *by = app_config->sort_by;
+    if (view_mode)
+        *view_mode = app_config->view_mode;
+    if (show_hidden)
+        *show_hidden = app_config->show_hidden;
+#if FM_CHECK_VERSION(1, 0, 2)
+    if (columns)
+        *columns = app_config->columns;
+#endif
+    fc = fm_folder_config_open(path);
+    if (!fm_folder_config_is_empty(fc))
+        _parse_config_for_path(fc, mode, by, view_mode, show_hidden, columns);
+    else if (!fm_path_is_native(path))
+    {
+        /* if path is non-native then try the scheme */
+#if FM_CHECK_VERSION(1, 2, 0)
+        sub_path = fm_path_get_scheme_path(path);
+#else
+        for (sub_path = path; fm_path_get_parent(sub_path) != NULL; )
+            sub_path = fm_path_get_parent(sub_path);
+#endif
+        fm_folder_config_close(fc, NULL);
+        fc = fm_folder_config_open(sub_path);
+        if (!fm_folder_config_is_empty(fc))
+            _parse_config_for_path(fc, mode, by, view_mode, show_hidden, columns);
+        /* if path is search://... then use predefined values */
+        else if (strncmp(fm_path_get_basename(sub_path), "search:", 7) == 0)
+        {
+            if (view_mode)
+                *view_mode = FM_FV_LIST_VIEW;
+            if (show_hidden)
+                *show_hidden = TRUE;
+#if FM_CHECK_VERSION(1, 0, 2)
+            if (columns)
+            {
+                static char *def[] = {"name", "desc", "dirname", "size", "mtime", NULL};
+                *columns = def;
+            }
+#endif
+        }
+        else
+            ret = FALSE;
+    }
+    else
+        ret = FALSE;
+    fm_folder_config_close(fc, NULL);
+    return ret;
+}
+
+/**
+ * @path, @mode, @by, @show_hidden are mandatory
+ * @view_mode may be -1 to not change
+ * @columns may be %NULL to not change
+ */
+#if FM_CHECK_VERSION(1, 0, 2)
+void fm_app_config_save_config_for_path(FmPath *path, FmSortMode mode,
+                                        FmFolderModelCol by,
+#else
+void fm_app_config_save_config_for_path(FmPath *path, GtkSortType mode, gint by,
+#endif
+                                        FmStandardViewMode view_mode,
+                                        gboolean show_hidden, char **columns)
+{
+    FmPath *sub_path;
+    FmFolderConfig *fc;
+#if FM_CHECK_VERSION(1, 0, 2)
+    char const *list[5];
+    int n = 2;
+#endif
+
+    /* if path is search://... then use search: instead */
+#if FM_CHECK_VERSION(1, 2, 0)
+    sub_path = fm_path_get_scheme_path(path);
+#else
+    for (sub_path = path; fm_path_get_parent(sub_path) != NULL; )
+        sub_path = fm_path_get_parent(sub_path);
+#endif
+    if (strncmp(fm_path_get_basename(sub_path), "search:", 7) == 0)
+    {
+        path = fm_path_new_for_uri("search:///");
+        fc = fm_folder_config_open(path);
+        fm_path_unref(path);
+        /* allow to create new entry only if we got valid columns */
+        if (fm_folder_config_is_empty(fc) && (columns != NULL && columns[0] != NULL))
+        {
+            fm_folder_config_close(fc, NULL);
+            /* save columns is mandatory for search view */
+            return;
+        }
+        view_mode = FM_FV_LIST_VIEW; /* search view mode should be immutable */
+    }
+    else
+        fc = fm_folder_config_open(path);
+#if FM_CHECK_VERSION(1, 0, 2)
+    list[0] = fm_folder_model_col_get_name(by);
+    if (list[0] == NULL) /* FM_FOLDER_MODEL_COL_NAME is always valid */
+        list[0] = fm_folder_model_col_get_name(FM_FOLDER_MODEL_COL_NAME);
+    list[1] = FM_SORT_IS_ASCENDING(mode) ? "ascending" : "descending";
+    if (mode & FM_SORT_CASE_SENSITIVE)
+        list[n++] = "case";
+#if FM_CHECK_VERSION(1, 2, 0)
+    if (mode & FM_SORT_NO_FOLDER_FIRST)
+        list[n++] = "mingle";
+#endif
+    list[n] = NULL;
+    fm_folder_config_set_string_list(fc, "Sort", list, n);
+    if (FM_STANDARD_VIEW_MODE_IS_VALID(view_mode))
+        fm_folder_config_set_string(fc, "ViewMode",
+                                    fm_standard_view_mode_to_str(view_mode));
+    if (columns && columns[0])
+        fm_folder_config_set_string_list(fc, "Columns",
+                                         (const char *const *)columns,
+                                         g_strv_length(columns));
+    else if (columns) /* empty list means we should reset columns */
+        fm_folder_config_remove_key(fc, "Columns");
+#else /* pre-1.0.2 */
+    if (FM_FOLDER_VIEW_MODE_IS_VALID(view_mode))
+        fm_folder_config_set_integer(fc, "ViewMode", view_mode);
+    fm_folder_config_set_integer(fc, "sort_type", mode);
+    fm_folder_config_set_integer(fc, "sort_by", by);
+#endif
+    fm_folder_config_set_boolean(fc, "ShowHidden", show_hidden);
+    fm_folder_config_close(fc, NULL);
+#if FM_CHECK_VERSION(1, 2, 1)
+    /* raise 'changed' flag and schedule config save */
+    pcmanfm_save_config(FALSE);
+#endif
+}
+
+void fm_app_config_clear_config_for_path(FmPath *path)
+{
+    FmFolderConfig *fc = fm_folder_config_open(path);
+
+    fm_folder_config_purge(fc);
+    fm_folder_config_close(fc, NULL);
+#if FM_CHECK_VERSION(1, 2, 1)
+    /* raise 'changed' flag and schedule config save */
+    pcmanfm_save_config(FALSE);
+#endif
 }
 
 void fm_app_config_save_desktop_config(GString *buf, const char *group, FmDesktopConfig *cfg)
@@ -453,7 +920,7 @@ void fm_app_config_save_profile(FmAppConfig* cfg, const char* name)
 #if FM_CHECK_VERSION(1, 0, 2)
         if (cfg->columns && cfg->columns[0])
         {
-            char **colptr = cfg->columns;
+            char **colptr;
 
             g_string_append(buf, "columns=");
             for (colptr = cfg->columns; *colptr; colptr++)
@@ -464,8 +931,15 @@ void fm_app_config_save_profile(FmAppConfig* cfg, const char* name)
 
         path = g_build_filename(dir_path, "pcmanfm.conf", NULL);
         g_file_set_contents(path, buf->str, buf->len, NULL);
-        g_string_free(buf, TRUE);
         g_free(path);
+        g_string_free(buf, TRUE);
+
+#if FM_CHECK_VERSION(1, 2, 1)
+        /* libfm does not have any profile things */
+        fm_folder_config_save_cache();
+#else
+        fm_folder_config_save_cache(dir_path);
+#endif
     }
     g_free(dir_path);
 }

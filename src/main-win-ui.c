@@ -71,7 +71,7 @@ static const char main_menu_xml[] =
   "</menu>"
   "<menu action='ViewMenu'>"
     "<menuitem action='Reload'/>"
-    "<menuitem action='ShowHidden'/>"
+    "<separator/>"
     "<menu action='SidePane'>"
       "<menuitem action='ShowSidePane' />"
       "<separator/>"
@@ -113,6 +113,8 @@ static const char main_menu_xml[] =
       "<menuitem action='SortIgnoreCase'/>"
 #endif
     "</menu>"
+    "<menuitem action='ShowHidden'/>"
+    "<menuitem action='SavePerFolder'/>"
   "</menu>"
   "<menu action='ToolMenu'>"
     "<menuitem action='Term'/>"
@@ -210,6 +212,10 @@ static GtkToggleActionEntry main_win_toggle_actions[]=
 #if FM_CHECK_VERSION(1, 0, 2)
     {"SortIgnoreCase", NULL, N_("_Ignore Name Case"), NULL, NULL, G_CALLBACK(on_sort_ignore_case), TRUE},
 #endif
+    /* Note to translators: this save is meant for folder's settings such as sort */
+    {"SavePerFolder", NULL, N_("Save for This Folder"), NULL,
+            N_("Check to remember sort as folder setting rather than global one"),
+            G_CALLBACK(on_save_per_folder), FALSE},
     {"ShowSidePane", NULL, N_("Sho_w Side Pane"), "F9", NULL, G_CALLBACK(on_show_side_pane), TRUE},
     {"ShowStatus", NULL, N_("Show Status B_ar"), "<Ctrl>B", NULL, NULL, TRUE},
     {"TwinPane", NULL, N_("T_win Pane Mode"), "F3", NULL, NULL, TRUE},
