@@ -28,7 +28,6 @@
 #include "app-config.h"
 #include "main-win.h"
 #include "tab-page.h"
-#include "pcmanfm.h"
 
 #include "gseal-gtk-compat.h"
 
@@ -201,6 +200,10 @@ void fm_tab_page_destroy(GtkObject *object)
         g_object_unref(page->folder_view);
         page->folder_view = NULL;
     }
+#if FM_CHECK_VERSION(1, 0, 2)
+    g_strfreev(page->columns);
+    page->columns = NULL;
+#endif
 
 #if GTK_CHECK_VERSION(3, 0, 0)
     if(GTK_WIDGET_CLASS(fm_tab_page_parent_class)->destroy)
@@ -285,9 +288,20 @@ static void  on_folder_view_columns_changed(FmFolderView *fv, FmTabPage *page)
     }
     g_slist_free(columns);
     cols[i] = NULL; /* terminate the list */
-    g_strfreev(app_config->columns);
-    app_config->columns = cols;
-    pcmanfm_save_config(FALSE);
+    if (page->own_config)
+    {
+        g_strfreev(page->columns);
+        page->columns = cols;
+        fm_app_config_save_config_for_path(fm_folder_view_get_cwd(fv),
+                                           page->sort_type, page->sort_by, -1,
+                                           page->show_hidden, cols);
+    }
+    else
+    {
+        g_strfreev(app_config->columns);
+        app_config->columns = cols;
+        pcmanfm_save_config(FALSE);
+    }
 }
 #endif
 
@@ -357,9 +371,9 @@ static void on_folder_start_loading(FmFolder* folder, FmTabPage* page)
         /* create a model for the folder and set it to the view
            it is delayed for non-incremental folders since adding rows into
            model is much faster without handlers connected to its signals */
-        FmFolderModel* model = fm_folder_model_new(folder, FALSE);
+        FmFolderModel* model = fm_folder_model_new(folder, page->show_hidden);
         fm_folder_view_set_model(fv, model);
-        fm_folder_model_set_sort(model, app_config->sort_by, app_config->sort_type);
+        fm_folder_model_set_sort(model, page->sort_by, page->sort_type);
         g_object_unref(model);
     }
     else
@@ -385,11 +399,11 @@ static void on_folder_finish_loading(FmFolder* folder, FmTabPage* page)
     if(fm_folder_view_get_model(fv) == NULL)
     {
         /* create a model for the folder and set it to the view */
-        FmFolderModel* model = fm_folder_model_new(folder, app_config->show_hidden);
+        FmFolderModel* model = fm_folder_model_new(folder, page->show_hidden);
         fm_folder_view_set_model(fv, model);
 #if FM_CHECK_VERSION(1, 0, 2)
         /* since 1.0.2 sorting should be applied on model instead of view */
-        fm_folder_model_set_sort(model, app_config->sort_by, app_config->sort_type);
+        fm_folder_model_set_sort(model, page->sort_by, page->sort_type);
 #endif
         g_object_unref(model);
     }
@@ -558,38 +572,11 @@ static void fm_tab_page_init(FmTabPage *page)
     folder_view = (FmFolderView*)fm_standard_view_new(app_config->view_mode,
                                                       update_files_popup,
                                                       open_folder_func);
+    /* FIXME: it is inefficient to set view mode to default one then change
+       it per-folder but it will be default in most cases but might it be
+       even more inefficient to add an object property for the mode and set
+       it in fm_tab_page_init() from the property? let make it later */
     page->folder_view = g_object_ref_sink(folder_view);
-#if !FM_CHECK_VERSION(1, 0, 2)
-    /* since 1.0.2 sorting should be applied on model instead */
-    fm_folder_view_sort(folder_view, app_config->sort_type, app_config->sort_by);
-#else
-    /* update columns from config */
-    if (app_config->columns)
-    {
-        guint i, n = g_strv_length(app_config->columns);
-        FmFolderViewColumnInfo *infos = g_new(FmFolderViewColumnInfo, n);
-        GSList *infos_list = NULL;
-
-        for (i = 0; i < n; i++)
-        {
-            char *name = g_strdup(app_config->columns[i]), *delim;
-
-            infos[i].width = 0;
-            delim = strchr(name, ':');
-            if (delim)
-            {
-                *delim++ = '\0';
-                infos[i].width = atoi(delim);
-            }
-            infos[i].col_id = fm_folder_model_get_col_by_name(name);
-            g_free(name);
-            infos_list = g_slist_append(infos_list, &infos[i]);
-        }
-        fm_folder_view_set_columns(folder_view, infos_list);
-        g_slist_free(infos_list);
-        g_free(infos);
-    }
-#endif
     fm_folder_view_set_selection_mode(folder_view, GTK_SELECTION_MULTIPLE);
     page->nav_history = fm_nav_history_new();
     gtk_paned_add2(paned, GTK_WIDGET(folder_view));
@@ -642,6 +629,7 @@ FmTabPage *fm_tab_page_new(FmPath* path)
 {
     FmTabPage* page = (FmTabPage*)g_object_new(FM_TYPE_TAB_PAGE, NULL);
 
+    /* FIXME: does setting show_hidden have any effect here? */
     fm_folder_view_set_show_hidden(page->folder_view, app_config->show_hidden);
     fm_tab_page_chdir(page, path);
     return page;
@@ -650,10 +638,15 @@ FmTabPage *fm_tab_page_new(FmPath* path)
 static void fm_tab_page_chdir_without_history(FmTabPage* page, FmPath* path)
 {
     char* disp_name = fm_path_display_basename(path);
+    char *disp_path;
+    FmStandardViewMode view_mode;
+    gboolean show_hidden;
+    char **columns; /* unused with libfm < 1.0.2 */
+
     fm_tab_label_set_text(page->tab_label, disp_name);
     g_free(disp_name);
 
-    char * disp_path = fm_path_display_name(path, FALSE);
+    disp_path = fm_path_display_name(path, FALSE);
     fm_tab_label_set_tooltip_text(FM_TAB_LABEL(page->tab_label), disp_path);
     g_free(disp_path);
 
@@ -669,6 +662,14 @@ static void fm_tab_page_chdir_without_history(FmTabPage* page, FmPath* path)
     g_signal_connect(page->folder, "unmount", G_CALLBACK(on_folder_unmount), page);
     g_signal_connect(page->folder, "content-changed", G_CALLBACK(on_folder_content_changed), page);
 
+    /* get sort and view modes for new path */
+    page->own_config = fm_app_config_get_config_for_path(path, &page->sort_type,
+                                                         &page->sort_by,
+                                                         &view_mode,
+                                                         &show_hidden, &columns);
+    page->show_hidden = show_hidden;
+    fm_folder_view_set_show_hidden(page->folder_view, show_hidden);
+
     if(fm_folder_is_loaded(page->folder))
     {
         on_folder_start_loading(page->folder, page);
@@ -677,6 +678,50 @@ static void fm_tab_page_chdir_without_history(FmTabPage* page, FmPath* path)
     }
     else
         on_folder_start_loading(page->folder, page);
+
+    /* change view and sort modes according to new path */
+    fm_standard_view_set_mode(FM_STANDARD_VIEW(page->folder_view), view_mode);
+#if FM_CHECK_VERSION(1, 0, 2)
+    /* update columns from config */
+    if (columns)
+    {
+        guint i, n = g_strv_length(columns);
+        FmFolderViewColumnInfo *infos = g_new(FmFolderViewColumnInfo, n);
+        GSList *infos_list = NULL;
+
+        for (i = 0; i < n; i++)
+        {
+            char *name = g_strdup(columns[i]), *delim;
+
+            infos[i].width = 0;
+            delim = strchr(name, ':');
+            if (delim)
+            {
+                *delim++ = '\0';
+                infos[i].width = atoi(delim);
+            }
+            infos[i].col_id = fm_folder_model_get_col_by_name(name);
+            g_free(name);
+            infos_list = g_slist_append(infos_list, &infos[i]);
+        }
+#if FM_CHECK_VERSION(1, 2, 0)
+        g_signal_handlers_block_by_func(page->folder_view,
+                                        on_folder_view_columns_changed, page);
+#endif
+        fm_folder_view_set_columns(page->folder_view, infos_list);
+#if FM_CHECK_VERSION(1, 2, 0)
+        g_signal_handlers_unblock_by_func(page->folder_view,
+                                          on_folder_view_columns_changed, page);
+#endif
+        g_slist_free(infos_list);
+        g_free(infos);
+        if (page->own_config)
+            page->columns = g_strdupv(columns);
+    }
+#else
+    /* since 1.0.2 sorting should be applied on model instead */
+    fm_folder_view_sort(page->folder_view, page->sort_type, page->sort_by);
+#endif
 
     fm_side_pane_chdir(page->side_pane, path);
 

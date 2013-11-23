@@ -28,6 +28,8 @@
 #include <libfm/fm-gtk.h>
 #include <gtk/gtk.h>
 
+#include "pcmanfm.h"
+
 G_BEGIN_DECLS
 
 #define app_config   ((FmAppConfig*)fm_config)
@@ -141,6 +143,27 @@ void fm_app_config_save_profile(FmAppConfig* cfg, const char* name);
 
 void fm_app_config_load_desktop_config(GKeyFile *kf, const char *group, FmDesktopConfig *cfg);
 void fm_app_config_save_desktop_config(GString *buf, const char *group, FmDesktopConfig *cfg);
+
+#if FM_CHECK_VERSION(1, 0, 2)
+gboolean fm_app_config_get_config_for_path(FmPath *path, FmSortMode *mode,
+                                           FmFolderModelCol *by,
+                                           FmStandardViewMode *view_mode,
+                                           gboolean *show_hidden,
+                                           char ***columns);
+void fm_app_config_save_config_for_path(FmPath *path, FmSortMode mode,
+                                        FmFolderModelCol by,
+                                        FmStandardViewMode view_mode,
+                                        gboolean show_hidden,
+                                        char **columns);
+#else
+gboolean fm_app_config_get_config_for_path(FmPath *path, GtkSortType *mode,
+                                           gint *by, FmStandardViewMode *view_mode,
+                                           gboolean *show_hidden, char ***columns);
+void fm_app_config_save_config_for_path(FmPath *path, GtkSortType mode, gint by,
+                                        FmStandardViewMode view_mode,
+                                        gboolean show_hidden, char **columns);
+#endif
+void fm_app_config_clear_config_for_path(FmPath *path);
 
 G_END_DECLS
 
