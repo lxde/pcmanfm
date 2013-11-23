@@ -63,6 +63,7 @@ enum {
     CHDIR,
     OPEN_DIR,
     STATUS,
+    GOT_FOCUS,
     N_SIGNALS
 };
 
@@ -82,6 +83,7 @@ static void on_folder_view_sel_changed(FmFolderView* fv, gint n_sel, FmTabPage* 
 #if FM_CHECK_VERSION(1, 2, 0)
 static void  on_folder_view_columns_changed(FmFolderView *fv, FmTabPage *page);
 #endif
+static gboolean on_folder_view_focus_in(GtkWidget *widget, GdkEvent *event, FmTabPage *page);
 static char* format_status_text(FmTabPage* page);
 
 #if GTK_CHECK_VERSION(3, 0, 0)
@@ -141,6 +143,15 @@ static void fm_tab_page_class_init(FmTabPageClass *klass)
                     NULL, NULL,
                     g_cclosure_marshal_VOID__UINT_POINTER,
                     G_TYPE_NONE, 2, G_TYPE_UINT, G_TYPE_POINTER);
+    /* folder view received the focus */
+    signals[GOT_FOCUS] =
+        g_signal_new("got-focus",
+                    G_TYPE_FROM_CLASS(klass),
+                    G_SIGNAL_RUN_FIRST,
+                    G_STRUCT_OFFSET (FmTabPageClass, got_focus),
+                    NULL, NULL,
+                    g_cclosure_marshal_VOID__VOID,
+                    G_TYPE_NONE, 0);
 }
 
 
@@ -176,6 +187,48 @@ static void free_folder(FmTabPage* page)
     }
 }
 
+/* workaround on FmStandardView: it should forward focus-in events but doesn't do */
+static void on_folder_view_add(GtkContainer *container, GtkWidget *child, FmTabPage *page)
+{
+    g_signal_connect(child, "focus-in-event",
+                     G_CALLBACK(on_folder_view_focus_in), page);
+}
+
+static void on_folder_view_remove(GtkContainer *container, GtkWidget *child, FmTabPage *page)
+{
+    g_signal_handlers_disconnect_by_func(child, on_folder_view_focus_in, page);
+}
+
+static void _connect_focus_in(FmFolderView *folder_view, FmTabPage *page)
+{
+    GList *children, *l;
+
+    g_signal_connect(folder_view, "focus-in-event",
+                     G_CALLBACK(on_folder_view_focus_in), page);
+    g_signal_connect(folder_view, "add",
+                     G_CALLBACK(on_folder_view_add), page);
+    g_signal_connect(folder_view, "remove",
+                     G_CALLBACK(on_folder_view_remove), page);
+    children = gtk_container_get_children(GTK_CONTAINER(folder_view));
+    for (l = children; l; l = l->next)
+        g_signal_connect(l->data, "focus-in-event",
+                         G_CALLBACK(on_folder_view_focus_in), page);
+    g_list_free(children);
+}
+
+static void _disconnect_focus_in(FmFolderView *folder_view, FmTabPage *page)
+{
+    GList *children, *l;
+
+    g_signal_handlers_disconnect_by_func(folder_view, on_folder_view_focus_in, page);
+    g_signal_handlers_disconnect_by_func(folder_view, on_folder_view_add, page);
+    g_signal_handlers_disconnect_by_func(folder_view, on_folder_view_remove, page);
+    children = gtk_container_get_children(GTK_CONTAINER(folder_view));
+    for (l = children; l; l = l->next)
+        g_signal_handlers_disconnect_by_func(l->data, on_folder_view_focus_in, page);
+    g_list_free(children);
+}
+
 #if GTK_CHECK_VERSION(3, 0, 0)
 void fm_tab_page_destroy(GtkWidget *object)
 #else
@@ -183,6 +236,7 @@ void fm_tab_page_destroy(GtkObject *object)
 #endif
 {
     FmTabPage* page = FM_TAB_PAGE(object);
+
     g_debug("fm_tab_page_destroy, folder: %s",
             page->folder ? fm_path_get_basename(fm_folder_get_path(page->folder)) : "(none)");
     free_folder(page);
@@ -193,10 +247,28 @@ void fm_tab_page_destroy(GtkObject *object)
     }
     if(page->folder_view)
     {
+        /* tab page may be inactive now and there is a chance it does not contain
+           own view therefore we have to destroy own folder view widget manually */
+        GtkWidget *fv = GTK_WIDGET(page->folder_view);
+        GtkWidget *parent = gtk_widget_get_parent(fv);
+        GList *panes, *l;
+
+        if (parent)
+        {
+            panes = gtk_container_get_children(GTK_CONTAINER(page->views));
+            for (l = panes; l; l = l->next)
+                if ((GtkWidget*)l->data == fv)
+                    break;
+            if (l == NULL)
+                gtk_container_remove(GTK_CONTAINER(parent), fv);
+            g_list_free(panes);
+        }
+
         g_signal_handlers_disconnect_by_func(page->folder_view, on_folder_view_sel_changed, page);
 #if FM_CHECK_VERSION(1, 2, 0)
         g_signal_handlers_disconnect_by_func(page->folder_view, on_folder_view_columns_changed, page);
 #endif
+        _disconnect_focus_in(page->folder_view, page);
         g_object_unref(page->folder_view);
         page->folder_view = NULL;
     }
@@ -304,6 +376,12 @@ static void  on_folder_view_columns_changed(FmFolderView *fv, FmTabPage *page)
     }
 }
 #endif
+
+static gboolean on_folder_view_focus_in(GtkWidget *widget, GdkEvent *event, FmTabPage *page)
+{
+    g_signal_emit(page, signals[GOT_FOCUS], 0);
+    return FALSE;
+}
 
 static FmJobErrorAction on_folder_error(FmFolder* folder, GError* err, FmJobErrorSeverity severity, FmTabPage* page)
 {
@@ -582,8 +660,10 @@ static void fm_tab_page_init(FmTabPage *page)
     page->folder_view = g_object_ref_sink(folder_view);
     fm_folder_view_set_selection_mode(folder_view, GTK_SELECTION_MULTIPLE);
     page->nav_history = fm_nav_history_new();
-    gtk_paned_add2(paned, GTK_WIDGET(folder_view));
-    focus_chain = g_list_prepend(focus_chain, folder_view);
+    page->views = GTK_BOX(gtk_hbox_new(TRUE, 4));
+    gtk_box_pack_start(page->views, GTK_WIDGET(folder_view), TRUE, TRUE, 0);
+    gtk_paned_add2(paned, GTK_WIDGET(page->views));
+    focus_chain = g_list_prepend(focus_chain, page->views);
 
     /* We need this to change tab order to focus folder view before left pane. */
     gtk_container_set_focus_chain(GTK_CONTAINER(page), focus_chain);
@@ -613,6 +693,7 @@ static void fm_tab_page_init(FmTabPage *page)
     g_signal_connect(folder_view, "columns-changed",
                      G_CALLBACK(on_folder_view_columns_changed), page);
 #endif
+    _connect_focus_in(folder_view, page);
     /*
     g_signal_connect(page->folder_view, "chdir",
                      G_CALLBACK(on_folder_view_chdir), page);
@@ -869,4 +950,108 @@ void fm_tab_page_reload(FmTabPage* page)
     FmFolder* folder = fm_folder_view_get_folder(page->folder_view);
     if(folder)
         fm_folder_reload(folder);
+}
+
+/**
+ * fm_tab_page_take_view_back
+ * @page: the page instance
+ *
+ * If folder view that is bound to page isn't present in the container,
+ * then moves it from the container where it is currently, to the @page.
+ * This API should be called only in single-pane mode, for two-pane use
+ * fm_tab_page_set_passive_view() instead.
+ *
+ * Returns: %TRUE if folder was not in @page and moved successfully.
+ */
+gboolean fm_tab_page_take_view_back(FmTabPage *page)
+{
+    GList *panes, *l;
+    GtkWidget *folder_view = GTK_WIDGET(page->folder_view);
+
+    gtk_widget_set_state(folder_view, GTK_STATE_NORMAL);
+    panes = gtk_container_get_children(GTK_CONTAINER(page->views));
+    for (l = panes; l; l = l->next)
+        if ((GtkWidget*)l->data == folder_view)
+            break;
+    g_list_free(panes);
+    if (l)
+        return FALSE;
+    /* we already keep the reference, no need to do it again */
+    gtk_container_remove(GTK_CONTAINER(gtk_widget_get_parent(folder_view)),
+                         folder_view);
+    gtk_box_pack_start(page->views, folder_view, TRUE, TRUE, 0);
+    return TRUE;
+}
+
+/**
+ * fm_tab_page_set_passive_view
+ * @page: the page instance
+ * @view: the folder view to add
+ * @on_right: %TRUE if @view should be moved to right pane
+ *
+ * If folder @view isn't already in designed place then moves it from the
+ * container where it is currently, to the @page. If @on_right is %TRUE
+ * then attempts to move into right pane. If @on_right is %FALSE then
+ * attempts to move into left pane.
+ *
+ * Also if folder view that is bound to @page isn't presented in the
+ * container, then moves it from the container where it is currently, to
+ * the @page on the side opposite to @view.
+ *
+ * See also: fm_tab_page_take_view_back().
+ *
+ * Returns: %TRUE if @view was moved successfully.
+ */
+gboolean fm_tab_page_set_passive_view(FmTabPage *page, FmFolderView *view,
+                                      gboolean on_right)
+{
+    GtkWidget *pane;
+
+    g_return_val_if_fail(page != NULL && view != NULL, FALSE);
+    if (!fm_tab_page_take_view_back(page))
+    {
+#if FM_CHECK_VERSION(1, 2, 0)
+        /* workaround on ExoIconView bug - it doesn't follow state change
+           so we re-add the folder view into our container to force change */
+        GtkWidget *fv = GTK_WIDGET(page->folder_view);
+
+        /* we already keep the reference, no need to do it again */
+        gtk_container_remove(GTK_CONTAINER(gtk_widget_get_parent(fv)), fv);
+        gtk_box_pack_start(page->views, fv, TRUE, TRUE, 0);
+#endif
+    }
+    pane = GTK_WIDGET(view);
+    gtk_widget_set_state(pane, GTK_STATE_ACTIVE);
+    g_object_ref(view);
+    /* gtk_widget_reparent() is buggy so we do it manually */
+    if (gtk_widget_get_parent(pane))
+        gtk_container_remove(GTK_CONTAINER(gtk_widget_get_parent(pane)), pane);
+    gtk_box_pack_start(page->views, pane, TRUE, TRUE, 0);
+    g_object_unref(view);
+    if (!on_right)
+        gtk_box_reorder_child(page->views, pane, 0);
+    return TRUE;
+}
+
+/**
+ * fm_tab_page_get_passive_view
+ * @page: the page instance
+ *
+ * Checks if the @page contains some folder view that was added via call
+ * to fm_tab_page_set_passive_view() and was not moved out yet.
+ *
+ * Returns: (transfer none): the folder view or %NULL.
+ */
+FmFolderView *fm_tab_page_get_passive_view(FmTabPage *page)
+{
+    GList *panes, *l;
+    FmFolderView *view;
+
+    panes = gtk_container_get_children(GTK_CONTAINER(page->views));
+    for (l = panes; l; l = l->next)
+        if ((FmFolderView*)l->data != page->folder_view)
+            break;
+    view = l ? l->data : NULL;
+    g_list_free(panes);
+    return view;
 }

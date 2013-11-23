@@ -56,6 +56,7 @@ struct _FmTabPage
     GtkHPaned parent;
     FmSidePane* side_pane;
     FmFolderView* folder_view;
+    GtkBox *views;
     FmTabLabel* tab_label;
     FmNavHistory* nav_history;
     char* status_text[FM_STATUS_TEXT_NUM];
@@ -81,6 +82,7 @@ struct _FmTabPageClass
     void (*chdir)(FmTabPage* page, FmPath* path);
     //void (*open_dir)(FmTabPage* page, guint where, FmPath* path);
     void (*status)(FmTabPage* page, guint type, const char* status_text);
+    void (*got_focus)(FmTabPage* page);
 };
 
 /* Side Pane mode extensions */
@@ -125,6 +127,11 @@ const char* fm_tab_page_get_title(FmTabPage* page);
 
 /* get normal status text */
 const char* fm_tab_page_get_status_text(FmTabPage* page, FmStatusTextType type);
+
+/* passive view panel management */
+gboolean fm_tab_page_take_view_back(FmTabPage *page);
+gboolean fm_tab_page_set_passive_view(FmTabPage *page, FmFolderView *view, gboolean on_right);
+FmFolderView *fm_tab_page_get_passive_view(FmTabPage *page);
 
 G_END_DECLS
 

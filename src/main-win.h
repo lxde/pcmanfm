@@ -68,6 +68,8 @@ struct _FmMainWin
     guint idle_handler; /* fix for GtkEntry bug */
     gboolean fullscreen;
     gboolean in_update;
+    gboolean enable_passive_view;
+    gboolean passive_view_on_right;
 };
 
 struct _FmMainWinClass

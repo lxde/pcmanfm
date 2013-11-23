@@ -72,14 +72,6 @@ static const char main_menu_xml[] =
   "<menu action='ViewMenu'>"
     "<menuitem action='Reload'/>"
     "<separator/>"
-    "<menu action='SidePane'>"
-      "<menuitem action='ShowSidePane' />"
-      "<separator/>"
-      "<menuitem action='Places' />"
-      "<menuitem action='DirTree' />"
-    "</menu>"
-    /* "<menuitem action='ShowStatus'/>" */
-    /* "<menuitem action='TwinPane'/>" */
     /* "<menu action='Toolbar'>"
       "<menuitem action='ShowToolbar'/>"
       "<separator/>"
@@ -87,6 +79,14 @@ static const char main_menu_xml[] =
       "<menuitem action='ToolbarNav'/>"
       "<menuitem action='ToolbarHome'/>"
     "</menu>" */
+    "<menu action='SidePane'>"
+      "<menuitem action='ShowSidePane' />"
+      "<separator/>"
+      "<menuitem action='Places' />"
+      "<menuitem action='DirTree' />"
+    "</menu>"
+    "<menuitem action='DualPane'/>"
+    /* "<menuitem action='ShowStatus'/>" */
     "<menuitem action='Fullscreen' />"
     "<separator/>"
 #if FM_CHECK_VERSION(1, 2, 0)
@@ -218,7 +218,7 @@ static GtkToggleActionEntry main_win_toggle_actions[]=
             G_CALLBACK(on_save_per_folder), FALSE},
     {"ShowSidePane", NULL, N_("Sho_w Side Pane"), "F9", NULL, G_CALLBACK(on_show_side_pane), TRUE},
     {"ShowStatus", NULL, N_("Show Status B_ar"), "<Ctrl>B", NULL, NULL, TRUE},
-    {"TwinPane", NULL, N_("T_win Pane Mode"), "F3", NULL, NULL, TRUE},
+    {"DualPane", NULL, N_("_Dual Pane Mode"), "F3", N_("Show two panels with folder views"), G_CALLBACK(on_dual_pane), FALSE},
     {"Fullscreen", NULL, N_("Fullscreen _Mode"), "F11", NULL, G_CALLBACK(on_fullscreen), FALSE}
 };
 

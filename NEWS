@@ -63,13 +63,21 @@ Changes on 1.2.0 since 1.1.0:
     folders but only if 'View'->'Save for This Folder' checkbox in the
     main menu is checked, and will be forgotten after it's unchecked.
 
-Changed representing of view mode in config file: instead of numeric
+* Changed representing of view mode in config file: instead of numeric
     'view_mode' it is saved in portable way as string defined by widget
     FmStandardView.
 
-Changed representing of side pane mode in config file: instead of numeric
-    'side_pane_mode' it is saved in portable way as string defined by
-    widget FmSidePane.
+* Changed representing of side pane mode in config file: instead of
+    numeric 'side_pane_mode' it is saved now in portable way as string
+    defined by widget FmSidePane.
+
+* Implemented Dual Pane mode which can be toggled on anytime. If there is
+    some tab next to current then it will be used for inactive pane, and
+    if there is only one tab present in the window then new tab will be
+    created (for the same directory as current view). When tab that is
+    shown in inactive pane is closed then Dual Pane mode is terminated
+    and may be toggled on again by user if needed. The Dual Pane mode can
+    be toggled either via the main menu or by pressing a key 'F3'.
 
 
 Changes on 1.1.0 since 1.0.1:

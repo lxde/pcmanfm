@@ -91,6 +91,7 @@ static void on_sort_ignore_case(GtkToggleAction* act, FmMainWin* win);
 #endif
 static void on_save_per_folder(GtkToggleAction* act, FmMainWin* win);
 static void on_show_side_pane(GtkToggleAction* act, FmMainWin* win);
+static void on_dual_pane(GtkToggleAction* act, FmMainWin* win);
 static void on_change_mode(GtkRadioAction* act, GtkRadioAction *cur, FmMainWin* win);
 static void on_sort_by(GtkRadioAction* act, GtkRadioAction *cur, FmMainWin* win);
 static void on_sort_type(GtkRadioAction* act, GtkRadioAction *cur, FmMainWin* win);
@@ -249,6 +250,7 @@ static void update_view_menu(FmMainWin* win)
 {
     GtkAction* act;
     FmFolderView* fv = win->folder_view;
+
     act = gtk_ui_manager_get_action(win->ui, "/menubar/ViewMenu/ShowHidden");
     if (win->in_update)
         return;
@@ -948,7 +950,7 @@ static void on_open_as_root(GtkAction* act, FmMainWin* win)
     char* cmd;
     if(!app_config->su_cmd)
     {
-        fm_show_error(GTK_WINDOW(win), NULL, _("Switch user command is not set."));
+//        fm_show_error(GTK_WINDOW(win), NULL, _("Switch user command is not set."));
         fm_edit_preference(GTK_WINDOW(win), PREF_ADVANCED);
         return;
     }
@@ -1576,6 +1578,13 @@ static void on_tab_page_chdir(FmTabPage* page, FmPath* path, FmMainWin* win)
     gtk_window_set_title(GTK_WINDOW(win), fm_tab_page_get_title(page));
 }
 
+static void on_tab_page_got_focus(FmTabPage* page, FmMainWin* win)
+{
+    int n = gtk_notebook_page_num(win->notebook, GTK_WIDGET(page));
+    if (n >= 0)
+        gtk_notebook_set_current_page(win->notebook, n);
+}
+
 #if FM_CHECK_VERSION(1, 0, 2)
 static void on_folder_view_filter_changed(FmFolderView* fv, FmMainWin* win)
 {
@@ -1608,10 +1617,25 @@ static void on_folder_view_filter_changed(FmFolderView* fv, FmMainWin* win)
 }
 #endif
 
+static inline FmTabPage *_find_tab_page(FmMainWin *win, FmFolderView *fv)
+{
+    FmTabPage *page;
+    gint n;
+
+    for (n = gtk_notebook_get_n_pages(win->notebook); n > 0; )
+    {
+        page = FM_TAB_PAGE(gtk_notebook_get_nth_page(win->notebook, --n));
+        if (fv == fm_tab_page_get_folder_view(page))
+            return page;
+    }
+    return NULL;
+}
+
 static void on_notebook_switch_page(GtkNotebook* nb, gpointer* new_page, guint num, FmMainWin* win)
 {
     GtkWidget* sw_page = gtk_notebook_get_nth_page(nb, num);
     FmTabPage* page;
+    FmFolderView *old_view = NULL, *passive_view = NULL;
 
     g_return_if_fail(FM_IS_TAB_PAGE(sw_page));
     page = (FmTabPage*)sw_page;
@@ -1622,6 +1646,13 @@ static void on_notebook_switch_page(GtkNotebook* nb, gpointer* new_page, guint n
         g_object_unref(win->folder_view);
     }
 
+    /* remember old views for checks below */
+    if (win->current_page)
+    {
+        passive_view = fm_tab_page_get_passive_view(win->current_page);
+        old_view = fm_tab_page_get_folder_view(win->current_page);
+    }
+
     /* connect to the new active page */
     win->current_page = page;
     win->folder_view = fm_tab_page_get_folder_view(page);
@@ -1629,6 +1660,31 @@ static void on_notebook_switch_page(GtkNotebook* nb, gpointer* new_page, guint n
         g_object_ref(win->folder_view);
     win->nav_history = fm_tab_page_get_history(page);
     win->side_pane = fm_tab_page_get_side_pane(page);
+
+    /* set active and passive panes */
+    if (win->enable_passive_view && passive_view)
+    {
+        FmTabPage *psv_page;
+
+        if (win->folder_view == passive_view)
+        {
+            /* we moved to other pane so we have to set passive_view_on_right */
+            win->passive_view_on_right = win->passive_view_on_right ? FALSE : TRUE;
+            passive_view = old_view;
+        }
+        /* now set it */
+        fm_tab_page_set_passive_view(page, passive_view, win->passive_view_on_right);
+        /* FIXME: log errors */
+        /* ok, passive view was just changed, we have to update the button */
+        psv_page = _find_tab_page(win, passive_view);
+        if (psv_page)
+            gtk_widget_set_state(GTK_WIDGET(psv_page->tab_label), GTK_STATE_SELECTED);
+    }
+    else
+    {
+        /* FIXME: log errors */
+        fm_tab_page_take_view_back(page);
+    }
 
     /* reactivate gestures */
     fm_folder_view_set_active(win->folder_view, TRUE);
@@ -1661,10 +1717,9 @@ static void on_notebook_switch_page(GtkNotebook* nb, gpointer* new_page, guint n
     update_view_menu(win);
     update_statusbar(win);
 
-    /* FIXME: this does not work sometimes due to limitation of GtkNotebook.
-     * So weird. After page switching with mouse button, GTK+ always tries
-     * to focus the left pane, instead of the folder_view we specified. */
-    gtk_widget_grab_focus(GTK_WIDGET(win->folder_view));
+    if(win->idle_handler == 0)
+        win->idle_handler = gdk_threads_add_idle_full(G_PRIORITY_LOW,
+                                                      idle_focus_view, win, NULL);
 }
 
 static void on_notebook_page_added(GtkNotebook* nb, GtkWidget* page, guint num, FmMainWin* win)
@@ -1677,6 +1732,8 @@ static void on_notebook_page_added(GtkNotebook* nb, GtkWidget* page, guint num, 
                      G_CALLBACK(on_tab_page_chdir), win);
     g_signal_connect(tab_page, "status",
                      G_CALLBACK(on_tab_page_status_text), win);
+    g_signal_connect(tab_page, "got-focus",
+                     G_CALLBACK(on_tab_page_got_focus), win);
     /* FIXME: remove direct access */
     g_signal_connect(tab_page->folder_view, "sort-changed",
                      G_CALLBACK(on_folder_view_sort_changed), win);
@@ -1711,6 +1768,7 @@ static void on_notebook_page_removed(GtkNotebook* nb, GtkWidget* page, guint num
 {
     FmTabPage* tab_page = FM_TAB_PAGE(page);
     FmFolderView* folder_view = fm_tab_page_get_folder_view(tab_page);
+    GtkAction* act;
 
     g_debug("FmMainWin[%p]: removed page %u[%p](view=%p); %u pages left", win,
             num, page, folder_view, gtk_notebook_get_n_pages(nb));
@@ -1721,6 +1779,8 @@ static void on_notebook_page_removed(GtkNotebook* nb, GtkWidget* page, guint num
                                          on_tab_page_chdir, win);
     g_signal_handlers_disconnect_by_func(tab_page,
                                          on_tab_page_status_text, win);
+    g_signal_handlers_disconnect_by_func(tab_page,
+                                         on_tab_page_got_focus, win);
     if(folder_view)
     {
         g_signal_handlers_disconnect_by_func(folder_view,
@@ -1735,6 +1795,14 @@ static void on_notebook_page_removed(GtkNotebook* nb, GtkWidget* page, guint num
 #endif
         g_signal_handlers_disconnect_by_func(folder_view,
                                              on_folder_view_clicked, win);
+        /* update menu if passive pane was removed */
+        if (win->current_page && win->enable_passive_view &&
+            fm_tab_page_get_passive_view(win->current_page) == folder_view)
+        {
+            win->enable_passive_view = FALSE;
+            act = gtk_ui_manager_get_action(win->ui, "/menubar/ViewMenu/DualPane");
+            gtk_toggle_action_set_active(GTK_TOGGLE_ACTION(act), FALSE);
+        }
     }
     g_signal_handlers_disconnect_by_func(tab_page->side_pane,
                                          on_side_pane_mode_changed, win);
@@ -1902,5 +1970,63 @@ static void on_show_side_pane(GtkToggleAction* act, FmMainWin* win)
     {
         app_config->side_pane_mode |= FM_SP_HIDE;
         gtk_widget_hide(GTK_WIDGET(win->side_pane));
+    }
+}
+
+static void on_dual_pane(GtkToggleAction* act, FmMainWin* win)
+{
+    gboolean active;
+    int num;
+    FmFolderView *fv;
+    GtkWidget *page;
+
+    active = gtk_toggle_action_get_active(act);
+    g_debug("on_dual_pane: %d", active); // TODO
+    if (active && !win->enable_passive_view)
+    {
+        num = gtk_notebook_get_n_pages(win->notebook);
+        if (num < 2) /* single page yet */
+        {
+            win->passive_view_on_right = FALSE;
+            num = fm_main_win_add_tab(win, fm_tab_page_get_cwd(win->current_page));
+            g_debug("on_dual_pane: added duplicate of the single page");
+            page = gtk_notebook_get_nth_page(win->notebook, 0);
+        }
+        else if (gtk_notebook_get_current_page(win->notebook) < num - 1)
+        {
+            /* there is a page on right */
+            win->passive_view_on_right = TRUE;
+            num = gtk_notebook_get_current_page(win->notebook) + 1;
+            g_debug("on_dual_pane: adding passive page %d to right pane", num);
+            page = gtk_notebook_get_nth_page(win->notebook, num);
+        }
+        else
+        {
+            /* it is the most right page */
+            win->passive_view_on_right = FALSE;
+            g_debug("on_dual_pane: adding passive page %d to left pane", num - 2);
+            page = gtk_notebook_get_nth_page(win->notebook, num - 2);
+        }
+        fv = fm_tab_page_get_folder_view(FM_TAB_PAGE(page));
+        fm_tab_page_set_passive_view(win->current_page, fv,
+                                     win->passive_view_on_right);
+        /* ok, passive view was just changed, we have to update the button */
+        gtk_widget_set_state(GTK_WIDGET(FM_TAB_PAGE(page)->tab_label), GTK_STATE_SELECTED);
+        win->enable_passive_view = TRUE;
+    }
+    else if (!active && win->enable_passive_view)
+    {
+        /* take passive pane back to the tab page */
+        fv = fm_tab_page_get_passive_view(win->current_page);
+        if (fv)
+        {
+            FmTabPage *tp = _find_tab_page(win, fv);
+            if (tp)
+            {
+                fm_tab_page_take_view_back(tp);
+                gtk_widget_set_state(GTK_WIDGET(FM_TAB_PAGE(tp)->tab_label), GTK_STATE_ACTIVE);
+            }
+        }
+        win->enable_passive_view = FALSE;
     }
 }
