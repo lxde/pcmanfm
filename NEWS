@@ -63,6 +63,10 @@ Changes on 1.2.0 since 1.1.0:
     folders but only if 'View'->'Save for This Folder' checkbox in the
     main menu is checked, and will be forgotten after it's unchecked.
 
+Changed representing of view mode in config file: instead of numeric
+    'view_mode' it is saved in portable way as string defined by widget
+    FmStandardView.
+
 
 Changes on 1.1.0 since 1.0.1:
 

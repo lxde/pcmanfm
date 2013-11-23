@@ -24,11 +24,12 @@
 #include <config.h>
 #endif
 
+#include "app-config.h"
+
 #include <libfm/fm-gtk.h>
 #include <stdio.h>
 #include <string.h>
-
-#include "app-config.h"
+#include <stdlib.h>
 
 #if !FM_CHECK_VERSION(1, 2, 0)
 typedef struct
@@ -563,8 +564,8 @@ void fm_app_config_load_desktop_config(GKeyFile *kf, const char *group, FmDeskto
 
 void fm_app_config_load_from_key_file(FmAppConfig* cfg, GKeyFile* kf)
 {
-    /*char* tmp;*/
 #if FM_CHECK_VERSION(1, 0, 2)
+    char *tmp;
     char **tmpv;
 #endif
     int tmp_int;
@@ -597,7 +598,20 @@ void fm_app_config_load_from_key_file(FmAppConfig* cfg, GKeyFile* kf)
         cfg->side_pane_mode = (FmSidePaneMode)tmp_int;
 
     /* default values for folder views */
+#if FM_CHECK_VERSION(1, 0, 2)
+    tmp = g_key_file_get_string(kf, "config", "view_mode", NULL);
+    if (tmp)
+    {
+        if (tmp[0] >= '0' && tmp[0] <= '9') /* backward compatibility */
+            tmp_int = atoi(tmp);
+        else /* portable way */
+            tmp_int = fm_standard_view_mode_from_str(tmp);
+        g_free(tmp);
+    }
+    if (tmp == NULL ||
+#else
     if(!fm_key_file_get_int(kf, "ui", "view_mode", &tmp_int) ||
+#endif
        !FM_STANDARD_VIEW_MODE_IS_VALID(tmp_int))
         cfg->view_mode = FM_FV_ICON_VIEW;
     else
@@ -914,7 +928,11 @@ void fm_app_config_save_profile(FmAppConfig* cfg, const char* name)
         g_string_append_printf(buf, "win_height=%d\n", cfg->win_height);
         g_string_append_printf(buf, "splitter_pos=%d\n", cfg->splitter_pos);
         g_string_append_printf(buf, "side_pane_mode=%d\n", cfg->side_pane_mode);
+#if FM_CHECK_VERSION(1, 0, 2)
+        g_string_append_printf(buf, "view_mode=%s\n", fm_standard_view_mode_to_str(cfg->view_mode));
+#else
         g_string_append_printf(buf, "view_mode=%d\n", cfg->view_mode);
+#endif
         g_string_append_printf(buf, "show_hidden=%d\n", cfg->show_hidden);
         _save_sort(buf, cfg->sort_type, cfg->sort_by);
 #if FM_CHECK_VERSION(1, 0, 2)
