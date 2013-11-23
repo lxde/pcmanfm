@@ -30,7 +30,7 @@
 
 #include "app-config.h"
 
-#if !FM_CHECK_VERSION(1, 2, 1)
+#if !FM_CHECK_VERSION(1, 2, 0)
 typedef struct
 {
     GKeyFile *kf;
@@ -225,7 +225,7 @@ static void fm_folder_config_save_cache(const char *dir_path)
         }
     }
 }
-#endif
+#endif /* LibFM < 1.2.0 */
 
 #if FM_CHECK_VERSION(1, 0, 2)
 static void _parse_sort(GKeyFile *kf, const char *group, FmSortMode *mode,
@@ -440,7 +440,7 @@ static void fm_app_config_finalize(GObject *object)
     }
     /*g_free(cfg->su_cmd);*/
 
-#if !FM_CHECK_VERSION(1, 2, 1)
+#if !FM_CHECK_VERSION(1, 2, 0)
     g_key_file_free(fc_cache);
     fc_cache = NULL;
 #endif
@@ -669,7 +669,7 @@ void fm_app_config_load_from_profile(FmAppConfig* cfg, const char* name)
     g_free(path);
     g_key_file_free(kf);
 
-#if !FM_CHECK_VERSION(1, 2, 1)
+#if !FM_CHECK_VERSION(1, 2, 0)
     fc_cache = g_key_file_new();
     path = g_build_filename(g_get_user_config_dir(), "pcmanfm", name,
                             "dir-settings.conf", NULL);
@@ -831,7 +831,7 @@ void fm_app_config_save_config_for_path(FmPath *path, GtkSortType mode, gint by,
 #endif
     fm_folder_config_set_boolean(fc, "ShowHidden", show_hidden);
     fm_folder_config_close(fc, NULL);
-#if FM_CHECK_VERSION(1, 2, 1)
+#if FM_CHECK_VERSION(1, 2, 0)
     /* raise 'changed' flag and schedule config save */
     pcmanfm_save_config(FALSE);
 #endif
@@ -843,7 +843,7 @@ void fm_app_config_clear_config_for_path(FmPath *path)
 
     fm_folder_config_purge(fc);
     fm_folder_config_close(fc, NULL);
-#if FM_CHECK_VERSION(1, 2, 1)
+#if FM_CHECK_VERSION(1, 2, 0)
     /* raise 'changed' flag and schedule config save */
     pcmanfm_save_config(FALSE);
 #endif
@@ -934,7 +934,7 @@ void fm_app_config_save_profile(FmAppConfig* cfg, const char* name)
         g_free(path);
         g_string_free(buf, TRUE);
 
-#if FM_CHECK_VERSION(1, 2, 1)
+#if FM_CHECK_VERSION(1, 2, 0)
         /* libfm does not have any profile things */
         fm_folder_config_save_cache();
 #else

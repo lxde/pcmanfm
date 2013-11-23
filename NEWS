@@ -48,6 +48,21 @@ Changes on 1.2.0 since 1.1.0:
     and appropriate functionality can be achieved using DES-EMA extension
     for context menu, no need to hardcode it into PCManFM.
 
+* Added support for extended sort modes into main menu.
+
+* If used with LibFM 1.2.0 or newer then list of view modes in the main
+    menu will be not hardcoded but list of supported view modes retrieved
+    from FmStandardView widget.
+
+* Added support for per-folder configurations: sort mode, show_hidden,
+    and view mode. The settings will be loaded from the file .directory
+    if it exists, the file ~/.config/pcmanfm/<profile>/dir-settings.conf
+    will be used otherwise (and if linked with LibFM 1.2.0 or newer then
+    the file ~/.config/libfm/dir-settings.conf will be used instead by
+    the LibFM). Those settings will be saved not for each of the visited
+    folders but only if 'View'->'Save for This Folder' checkbox in the
+    main menu is checked, and will be forgotten after it's unchecked.
+
 
 Changes on 1.1.0 since 1.0.1:
 
