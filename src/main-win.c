@@ -1581,7 +1581,12 @@ static void on_tab_page_chdir(FmTabPage* page, FmPath* path, FmMainWin* win)
 static void on_tab_page_got_focus(FmTabPage* page, FmMainWin* win)
 {
     int n = gtk_notebook_page_num(win->notebook, GTK_WIDGET(page));
-    if (n >= 0)
+    /* sometimes views receive focus while they are in rendering process
+       therefore click on tab will not always work as expected because it
+       is reset in this callback, the trick is if notebook is in update
+       process then focus change is pending (see on_notebook_switch_page()
+       for details) therefore we can check that and do nothing */
+    if (n >= 0 && win->idle_handler == 0) /* don't change page if it is pending */
         gtk_notebook_set_current_page(win->notebook, n);
 }
 
