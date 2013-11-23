@@ -599,7 +599,7 @@ void fm_app_config_load_from_key_file(FmAppConfig* cfg, GKeyFile* kf)
 
     /* default values for folder views */
 #if FM_CHECK_VERSION(1, 0, 2)
-    tmp = g_key_file_get_string(kf, "config", "view_mode", NULL);
+    tmp = g_key_file_get_string(kf, "ui", "view_mode", NULL);
     if (tmp)
     {
         if (tmp[0] >= '0' && tmp[0] <= '9') /* backward compatibility */
@@ -608,13 +608,11 @@ void fm_app_config_load_from_key_file(FmAppConfig* cfg, GKeyFile* kf)
             tmp_int = fm_standard_view_mode_from_str(tmp);
         g_free(tmp);
     }
-    if (tmp == NULL ||
+    if (tmp &&
 #else
-    if(!fm_key_file_get_int(kf, "ui", "view_mode", &tmp_int) ||
+    if(fm_key_file_get_int(kf, "ui", "view_mode", &tmp_int) &&
 #endif
-       !FM_STANDARD_VIEW_MODE_IS_VALID(tmp_int))
-        cfg->view_mode = FM_FV_ICON_VIEW;
-    else
+       FM_STANDARD_VIEW_MODE_IS_VALID(tmp_int))
         cfg->view_mode = tmp_int;
     fm_key_file_get_bool(kf, "ui", "show_hidden", &cfg->show_hidden);
     _parse_sort(kf, "ui", &cfg->sort_type, &cfg->sort_by);
