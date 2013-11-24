@@ -4215,6 +4215,7 @@ void fm_desktop_manager_finalize()
         gtk_widget_destroy(GTK_WIDGET(desktops[i]));
     }
     g_free(desktops);
+    n_screens = 0;
     g_object_unref(win_group);
     win_group = NULL;
 
