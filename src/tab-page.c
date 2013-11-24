@@ -1010,7 +1010,7 @@ gboolean fm_tab_page_set_passive_view(FmTabPage *page, FmFolderView *view,
     g_return_val_if_fail(page != NULL && view != NULL, FALSE);
     if (!fm_tab_page_take_view_back(page))
     {
-#if FM_CHECK_VERSION(1, 2, 0)
+#if !FM_CHECK_VERSION(1, 2, 0)
         /* workaround on ExoIconView bug - it doesn't follow state change
            so we re-add the folder view into our container to force change */
         GtkWidget *fv = GTK_WIDGET(page->folder_view);
