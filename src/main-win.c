@@ -153,7 +153,11 @@ static gboolean idle_focus_view(gpointer user_data)
 static void on_location_activate(GtkEntry* entry, FmMainWin* win)
 {
     FmPath* path = fm_path_entry_get_path(FM_PATH_ENTRY(entry));
+
+    /* bug #3615243 seems to be thread-related issue, let ref the path now */
+    fm_path_ref(path);
     fm_main_win_chdir(win, path);
+    fm_path_unref(path);
 
     /* FIXME: due to bug #650114 in GTK+, GtkEntry still call a
      * idle function for GtkEntryCompletion even if the completion
@@ -1265,7 +1269,8 @@ static void on_close_tab(GtkAction* act, FmMainWin* win)
 
 static void on_go(GtkAction* act, FmMainWin* win)
 {
-    fm_main_win_chdir_by_name(win, gtk_entry_get_text(GTK_ENTRY(win->location)));
+    /* fm_main_win_chdir_by_name(win, gtk_entry_get_text(GTK_ENTRY(win->location))); */
+    on_location_activate(GTK_ENTRY(win->location), win);
 }
 
 static void _update_hist_buttons(FmMainWin* win)
