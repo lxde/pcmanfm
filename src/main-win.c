@@ -1270,7 +1270,7 @@ static void on_close_tab(GtkAction* act, FmMainWin* win)
 static void on_go(GtkAction* act, FmMainWin* win)
 {
     /* fm_main_win_chdir_by_name(win, gtk_entry_get_text(GTK_ENTRY(win->location))); */
-    on_location_activate(GTK_ENTRY(win->location), win);
+    g_signal_emit_by_name(win->location, "activate");
 }
 
 static void _update_hist_buttons(FmMainWin* win)
