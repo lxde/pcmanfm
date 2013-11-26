@@ -69,6 +69,7 @@ struct _FmTabPage
     GtkSortType sort_type;
     int sort_by;
 #endif
+    guint view_mode;
     gboolean show_hidden : 1;
     gboolean own_config : 1;
     gboolean busy : 1;

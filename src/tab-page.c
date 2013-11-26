@@ -568,6 +568,9 @@ static void fm_tab_page_init(FmTabPage *page)
     gtk_paned_add1(paned, GTK_WIDGET(page->side_pane));
     focus_chain = g_list_prepend(focus_chain, page->side_pane);
 
+    /* setup initial view mode for the tab from configuration */
+    page->view_mode = app_config->view_mode;
+
     /* handlers below will be used when FmMainWin detects new page added */
     folder_view = (FmFolderView*)fm_standard_view_new(app_config->view_mode,
                                                       update_files_popup,
@@ -667,6 +670,9 @@ static void fm_tab_page_chdir_without_history(FmTabPage* page, FmPath* path)
                                                          &page->sort_by,
                                                          &view_mode,
                                                          &show_hidden, &columns);
+    if (!page->own_config)
+        /* bug #3615242: view mode is reset to default when changing directory */
+        view_mode = page->view_mode;
     page->show_hidden = show_hidden;
     fm_folder_view_set_show_hidden(page->folder_view, show_hidden);
 

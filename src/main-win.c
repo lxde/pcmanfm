@@ -1050,6 +1050,8 @@ static void on_change_mode(GtkRadioAction* act, GtkRadioAction *cur, FmMainWin* 
                                            win->current_page->sort_type,
                                            win->current_page->sort_by, mode,
                                            win->current_page->show_hidden, NULL);
+    else
+        win->current_page->view_mode = mode;
 }
 
 static void on_sort_by(GtkRadioAction* act, GtkRadioAction *cur, FmMainWin* win)
