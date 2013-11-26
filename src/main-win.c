@@ -183,9 +183,11 @@ static void update_sort_menu(FmMainWin* win)
     FmFolderModelCol by;
     FmSortMode mode;
 
+    win->in_update = TRUE;
     /* we have to update this any time */
     act = gtk_ui_manager_get_action(win->ui, "/menubar/ViewMenu/SavePerFolder");
     gtk_toggle_action_set_active(GTK_TOGGLE_ACTION(act), win->current_page->own_config);
+    win->in_update = FALSE;
     if(fv == NULL || fm_folder_view_get_model(fv) == NULL)
         /* since 1.0.2 libfm have sorting only in FmFolderModel therefore
            if there is no model then we cannot get last sorting from it */
@@ -215,6 +217,7 @@ static void update_sort_menu(FmMainWin* win)
 
     type = fm_folder_view_get_sort_type(fv);
 #endif
+    win->in_update = TRUE;
     act = gtk_ui_manager_get_action(win->ui, "/menubar/ViewMenu/Sort/Asc");
     gtk_radio_action_set_current_value(GTK_RADIO_ACTION(act), type);
     act = gtk_ui_manager_get_action(win->ui, "/menubar/ViewMenu/Sort/ByName");
@@ -233,6 +236,7 @@ static void update_sort_menu(FmMainWin* win)
     gtk_toggle_action_set_active(GTK_TOGGLE_ACTION(act),
                                  (mode & FM_SORT_NO_FOLDER_FIRST) != 0);
 #endif
+    win->in_update = FALSE;
 }
 
 static void update_view_menu(FmMainWin* win)
@@ -240,9 +244,11 @@ static void update_view_menu(FmMainWin* win)
     GtkAction* act;
     FmFolderView* fv = win->folder_view;
     act = gtk_ui_manager_get_action(win->ui, "/menubar/ViewMenu/ShowHidden");
+    win->in_update = TRUE;
     gtk_toggle_action_set_active(GTK_TOGGLE_ACTION(act), fm_folder_view_get_show_hidden(fv));
     gtk_radio_action_set_current_value(win->first_view_mode,
                                        fm_standard_view_get_mode(FM_STANDARD_VIEW(fv)));
+    win->in_update = FALSE;
 }
 
 static void on_folder_view_sort_changed(FmFolderView* fv, FmMainWin* win)
@@ -1010,7 +1016,7 @@ static void on_show_hidden(GtkToggleAction* act, FmMainWin* win)
     FmTabPage* page = win->current_page;
     gboolean active;
 
-    if(!page)
+    if(!page || win->in_update)
         return; /* it's fresh created window, do nothing */
 
     active = gtk_toggle_action_get_active(act);
@@ -1044,6 +1050,8 @@ static void on_fullscreen(GtkToggleAction* act, FmMainWin* win)
 static void on_change_mode(GtkRadioAction* act, GtkRadioAction *cur, FmMainWin* win)
 {
     int mode = gtk_radio_action_get_current_value(cur);
+    if (win->in_update)
+        return;
     fm_standard_view_set_mode(FM_STANDARD_VIEW(win->folder_view), mode);
     if (win->current_page->own_config)
         fm_app_config_save_config_for_path(fm_folder_view_get_cwd(win->folder_view),
@@ -1066,7 +1074,7 @@ static void on_sort_by(GtkRadioAction* act, GtkRadioAction *cur, FmMainWin* win)
 #else
     fm_folder_view_sort(fv, -1, val);
 #endif
-    if(val != (int)win->current_page->sort_by)
+    if(val != (int)win->current_page->sort_by && !win->in_update)
     {
         win->current_page->sort_by = val;
         if (win->current_page->own_config)
@@ -1116,6 +1124,8 @@ static void on_sort_type(GtkRadioAction* act, GtkRadioAction *cur, FmMainWin* wi
     FmFolderModel *model = fm_folder_view_get_model(fv);
     FmSortMode mode;
 
+    if (win->in_update)
+        return;
     if (model)
     {
         fm_folder_model_get_sort(model, NULL, &mode);
@@ -1125,6 +1135,8 @@ static void on_sort_type(GtkRadioAction* act, GtkRadioAction *cur, FmMainWin* wi
         update_sort_type_for_page(win->current_page, fv, mode);
     }
 #else
+    if (win->in_update)
+        return;
     fm_folder_view_sort(win->folder_view, val, -1);
     update_sort_type_for_page(win->current_page, fv, val);
 #endif
@@ -1138,7 +1150,7 @@ static void on_mingle_dirs(GtkToggleAction* act, FmMainWin* win)
     FmSortMode mode;
     gboolean active;
 
-    if (model)
+    if (model && !win->in_update)
     {
         fm_folder_model_get_sort(model, NULL, &mode);
         active = gtk_toggle_action_get_active(act);
@@ -1159,7 +1171,7 @@ static void on_sort_ignore_case(GtkToggleAction* act, FmMainWin* win)
     FmSortMode mode;
     gboolean active;
 
-    if (model)
+    if (model && !win->in_update)
     {
         fm_folder_model_get_sort(model, NULL, &mode);
         active = gtk_toggle_action_get_active(act);
@@ -1178,6 +1190,8 @@ static void on_save_per_folder(GtkToggleAction* act, FmMainWin* win)
     FmTabPage *page = win->current_page;
     FmFolderView *fv = win->folder_view;
 
+    if (win->in_update)
+        return;
     if (active)
     {
         if (page->own_config) /* not changed */
@@ -1342,6 +1356,7 @@ void fm_main_win_chdir(FmMainWin* win, FmPath* path)
     fm_folder_view_add_popup(win->folder_view, GTK_WINDOW(win), NULL);
     g_signal_handlers_unblock_by_func(win->side_pane, on_side_pane_chdir, win);
     _update_hist_buttons(win);
+    update_view_menu(win);
 }
 
 #if 0

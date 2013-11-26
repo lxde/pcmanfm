@@ -67,6 +67,7 @@ struct _FmMainWin
     FmBookmarks* bookmarks;
     guint idle_handler; /* fix for GtkEntry bug */
     gboolean fullscreen;
+    gboolean in_update;
 };
 
 struct _FmMainWinClass
