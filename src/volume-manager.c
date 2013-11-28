@@ -261,10 +261,19 @@ inline static gboolean automount_volume(GVolume* vol, gboolean silent)
     return TRUE;
 }
 
+static gboolean on_vol_added_timeout(gpointer vol)
+{
+    automount_volume(vol, FALSE);
+    g_object_unref(vol);
+    return FALSE;
+}
+
 static void on_vol_added(GVolumeMonitor* vm, GVolume* vol, gpointer user_data)
 {
     if(app_config->mount_removable)
-        automount_volume(vol, FALSE);
+        /* bug #3615195: GLib reports unrelated volume after mount sometimes
+           if it's mounted before reported so let delay it a tiny bit */
+        gdk_threads_add_timeout(100, on_vol_added_timeout, g_object_ref(vol));
     /* TODO: show icons in systray */
 }
 
