@@ -486,7 +486,16 @@ static void on_side_pane_chdir(FmSidePane* sp, guint button, FmPath* path, FmMai
         return;
 
     if(button == 2) /* middle click */
+    {
+        FmPath *prev_path = NULL;
+
+        if (win->folder_view)
+            prev_path = fm_folder_view_get_cwd(win->folder_view);
         fm_main_win_add_tab(win, path);
+        /* the side pane activates row itself so let reset it back */
+        if (prev_path)
+            fm_side_pane_chdir(sp, prev_path);
+    }
     else
         fm_main_win_chdir(win, path);
 
