@@ -699,12 +699,16 @@ static void fm_tab_page_chdir_without_history(FmTabPage* page, FmPath* path)
         {
             char *name = g_strdup(columns[i]), *delim;
 
+#if FM_CHECK_VERSION(1, 2, 0)
             infos[i].width = 0;
+#endif
             delim = strchr(name, ':');
             if (delim)
             {
                 *delim++ = '\0';
+#if FM_CHECK_VERSION(1, 2, 0)
                 infos[i].width = atoi(delim);
+#endif
             }
             infos[i].col_id = fm_folder_model_get_col_by_name(name);
             g_free(name);
