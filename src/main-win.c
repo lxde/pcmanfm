@@ -659,7 +659,7 @@ static void fm_main_win_init(FmMainWin *win)
     gtk_ui_manager_add_ui_from_string(ui, xml->str, xml->len, NULL);
     g_string_free(xml, TRUE);
 #else
-    act = gtk_ui_manager_get_action(win->ui, "/menubar/ViewMenu/IconView");
+    act = gtk_ui_manager_get_action(ui, "/menubar/ViewMenu/IconView");
     win->first_view_mode = GTK_RADIO_ACTION(act);
 #endif
 #if !FM_CHECK_VERSION(1, 0, 2)
