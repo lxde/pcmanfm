@@ -1783,6 +1783,8 @@ static void update_background(FmDesktop* desktop, int is_it)
             {
                 /* the same file but mode was changed */
 #if GTK_CHECK_VERSION(3, 0, 0)
+                XFreePixmap(cairo_xlib_surface_get_display(cache->bg),
+                            cairo_xlib_surface_get_drawable(cache->bg));
                 cairo_surface_destroy(cache->bg);
 #else
                 g_object_unref(cache->bg);
@@ -3453,6 +3455,8 @@ static void _clear_bg_cache(FmDesktop *self)
 
         self->cache = bg->next;
 #if GTK_CHECK_VERSION(3, 0, 0)
+        XFreePixmap(cairo_xlib_surface_get_display(bg->bg),
+                    cairo_xlib_surface_get_drawable(bg->bg));
         cairo_surface_destroy(bg->bg);
 #else
         g_object_unref(bg->bg);
