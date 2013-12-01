@@ -1851,25 +1851,14 @@ static void update_background(FmDesktop* desktop, int is_it)
             dest_h = geom.height;
         }
 #if GTK_CHECK_VERSION(3, 0, 0)
+        xdisplay = GDK_WINDOW_XDISPLAY(root);
         /* this code is taken from libgnome-desktop */
-        xdisplay = XOpenDisplay(gdk_display_get_name(gdk_screen_get_display(screen)));
-        if (xdisplay == NULL)
-        {
-            g_warning("Unable to open display when setting background pixmap");
-            return;
-        }
-        /* Desktop background pixmap should be created from
-         * dummy X client since most applications will try to
-         * kill it with XKillClient later when changing pixmap */
-        XSetCloseDownMode(xdisplay, RetainPermanent);
         xpixmap = XCreatePixmap(xdisplay, RootWindow(xdisplay, screen_num),
                                 dest_w, dest_h, DefaultDepth(xdisplay, screen_num));
-        XCloseDisplay(xdisplay);
         cache->bg = cairo_xlib_surface_create(GDK_SCREEN_XDISPLAY(screen), xpixmap,
                                               GDK_VISUAL_XVISUAL(gdk_screen_get_system_visual(screen)),
                                               dest_w, dest_h);
         cr = cairo_create(cache->bg);
-        /* FIXME: code above is rough and will lead to X-server memory leak */
 #else
         cache->bg = gdk_pixmap_new(window, dest_w, dest_h, -1);
         cr = gdk_cairo_create(cache->bg);
