@@ -82,6 +82,7 @@ struct _FmDesktop
     FmFolderModel* model;
     guint cur_desktop;
     gint monitor;
+    FmBackgroundCache *cache;
     /* desktop settings for this monitor */
     FmDesktopConfig conf;
 };

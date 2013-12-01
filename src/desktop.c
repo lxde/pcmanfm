@@ -108,8 +108,6 @@ static Atom XA_XROOTPMAP_ID = 0;
 
 static GdkCursor* hand_cursor = NULL;
 
-static FmBackgroundCache* all_wallpapers = NULL;
-
 static guint idle_config_save = 0;
 
 enum {
@@ -1774,7 +1772,7 @@ static void update_background(FmDesktop* desktop, int is_it)
 
     if(desktop->conf.wallpaper_mode != FM_WP_COLOR && wallpaper && *wallpaper)
     {
-        for(cache = all_wallpapers; cache; cache = cache->next)
+        for(cache = desktop->cache; cache; cache = cache->next)
             if(strcmp(wallpaper, cache->filename) == 0)
                 break;
         if(cache && cache->wallpaper_mode == desktop->conf.wallpaper_mode)
@@ -1791,15 +1789,15 @@ static void update_background(FmDesktop* desktop, int is_it)
 #endif
                 cache->bg = NULL;
             }
-            else if(all_wallpapers)
+            else if(desktop->cache)
             {
-                for(cache = all_wallpapers; cache->next; )
+                for(cache = desktop->cache; cache->next; )
                     cache = cache->next;
                 cache->next = g_new0(FmBackgroundCache, 1);
                 cache = cache->next;
             }
             else
-                all_wallpapers = cache = g_new0(FmBackgroundCache, 1);
+                desktop->cache = cache = g_new0(FmBackgroundCache, 1);
             if(!cache->filename)
                 cache->filename = g_strdup(wallpaper);
             g_debug("adding new FmBackgroundCache for %s", wallpaper);
@@ -3447,6 +3445,23 @@ static inline void disconnect_model(FmDesktop* desktop)
     desktop->model = NULL;
 }
 
+static void _clear_bg_cache(FmDesktop *self)
+{
+    while(self->cache)
+    {
+        FmBackgroundCache *bg = self->cache;
+
+        self->cache = bg->next;
+#if GTK_CHECK_VERSION(3, 0, 0)
+        cairo_surface_destroy(bg->bg);
+#else
+        g_object_unref(bg->bg);
+#endif
+        g_free(bg->filename);
+        g_free(bg);
+    }
+}
+
 #if GTK_CHECK_VERSION(3, 0, 0)
 static void fm_desktop_destroy(GtkWidget *object)
 #else
@@ -3499,6 +3514,8 @@ static void fm_desktop_destroy(GtkObject *object)
         }
         g_free(self->conf.desktop_font);
     }
+
+    _clear_bg_cache(self);
 
 #if GTK_CHECK_VERSION(3, 0, 0)
     GTK_WIDGET_CLASS(fm_desktop_parent_class)->destroy(object);
@@ -4227,20 +4244,6 @@ void fm_desktop_manager_finalize()
     {
         gdk_cursor_unref(hand_cursor);
         hand_cursor = NULL;
-    }
-
-    while(all_wallpapers)
-    {
-        FmBackgroundCache *bg = all_wallpapers;
-
-        all_wallpapers = bg->next;
-#if GTK_CHECK_VERSION(3, 0, 0)
-        cairo_surface_destroy(bg->bg);
-#else
-        g_object_unref(bg->bg);
-#endif
-        g_free(bg->filename);
-        g_free(bg);
     }
 
     pcmanfm_unref();

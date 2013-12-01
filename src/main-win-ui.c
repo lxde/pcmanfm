@@ -163,7 +163,7 @@ static GtkActionEntry main_win_actions[]=
         {"InvSel", NULL, N_("_Invert Selection"), "<Ctrl>I", NULL, G_CALLBACK(bounce_action)},
         {"Pref", GTK_STOCK_PREFERENCES, N_("Prefere_nces"), NULL, NULL, G_CALLBACK(on_preference)},
     {"ViewMenu", NULL, N_("_View"), NULL, NULL, NULL},
-        {"Reload", NULL, N_("_Reload Folder"), "F5", N_("Reload current folder"), G_CALLBACK(on_reload)},
+        {"Reload", GTK_STOCK_REFRESH, N_("_Reload Folder"), "F5", N_("Reload current folder"), G_CALLBACK(on_reload)},
         {"SidePane", NULL, N_("Side _Pane"), NULL, NULL, NULL},
         /* other see below: 'ShowHidden' 'ShowStatus' 'Fullscreen' 'IconView'... */
         {"Sort", NULL, N_("S_ort Files"), NULL, NULL, NULL},
