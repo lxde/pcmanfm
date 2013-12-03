@@ -964,7 +964,19 @@ void fm_tab_page_reload(FmTabPage* page)
     FmFolder* folder = fm_folder_view_get_folder(page->folder_view);
 
     if(folder)
+    {
+        GtkAdjustment* vadjustment = gtk_scrolled_window_get_vadjustment(GTK_SCROLLED_WINDOW(page->folder_view));
+        int scroll_pos = gtk_adjustment_get_value(vadjustment);
+        /* save the scroll position before reload */
+#if FM_CHECK_VERSION(1, 0, 2)
+        int idx = fm_nav_history_get_cur_index(page->nav_history);
+        fm_nav_history_go_to(page->nav_history, idx, scroll_pos);
+#else
+        const FmNavHistoryItem* item = fm_nav_history_get_cur(page->nav_history);
+        item->scroll_pos = scroll_pos;
+#endif
         fm_folder_reload(folder);
+    }
 }
 
 /**
