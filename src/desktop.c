@@ -1855,7 +1855,7 @@ static void update_background(FmDesktop* desktop, int is_it)
         /* this code is taken from libgnome-desktop */
         xpixmap = XCreatePixmap(xdisplay, RootWindow(xdisplay, screen_num),
                                 dest_w, dest_h, DefaultDepth(xdisplay, screen_num));
-        cache->bg = cairo_xlib_surface_create(GDK_SCREEN_XDISPLAY(screen), xpixmap,
+        cache->bg = cairo_xlib_surface_create(xdisplay, xpixmap,
                                               GDK_VISUAL_XVISUAL(gdk_screen_get_system_visual(screen)),
                                               dest_w, dest_h);
         cr = cairo_create(cache->bg);
