@@ -74,6 +74,7 @@ struct _FmTabPage
     gboolean show_hidden : 1;
     gboolean own_config : 1;
     gboolean busy : 1;
+    guint update_scroll_id;
 };
 
 struct _FmTabPageClass

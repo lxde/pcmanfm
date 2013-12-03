@@ -276,6 +276,11 @@ void fm_tab_page_destroy(GtkObject *object)
     g_strfreev(page->columns);
     page->columns = NULL;
 #endif
+    if(page->update_scroll_id)
+    {
+        g_source_remove(page->update_scroll_id);
+        page->update_scroll_id = 0;
+    }
 
 #if GTK_CHECK_VERSION(3, 0, 0)
     if(GTK_WIDGET_CLASS(fm_tab_page_parent_class)->destroy)
@@ -459,13 +464,27 @@ static void on_folder_start_loading(FmFolder* folder, FmTabPage* page)
         fm_folder_view_set_model(fv, NULL);
 }
 
+static gboolean update_scroll(gpointer data)
+{
+    FmTabPage* page = data;
+    GtkScrolledWindow* scroll = GTK_SCROLLED_WINDOW(page->folder_view);
+#if !FM_CHECK_VERSION(1, 0, 2)
+    const FmNavHistoryItem* item;
+
+    item = fm_nav_history_get_cur(page->nav_history);
+    /* scroll to recorded position */
+    gtk_adjustment_set_value(gtk_scrolled_window_get_vadjustment(scroll), item->scroll_pos);
+#else
+    gtk_adjustment_set_value(gtk_scrolled_window_get_vadjustment(scroll),
+                             fm_nav_history_get_scroll_pos(page->nav_history));
+#endif
+    page->update_scroll_id = 0;
+    return FALSE;
+}
+
 static void on_folder_finish_loading(FmFolder* folder, FmTabPage* page)
 {
     FmFolderView* fv = page->folder_view;
-#if !FM_CHECK_VERSION(1, 0, 2)
-    const FmNavHistoryItem* item;
-#endif
-    GtkScrolledWindow* scroll = GTK_SCROLLED_WINDOW(fv);
 
     /* Note: most of the time, we delay the creation of the 
      * folder model and do it after the whole folder is loaded.
@@ -488,14 +507,9 @@ static void on_folder_finish_loading(FmFolder* folder, FmTabPage* page)
     fm_folder_query_filesystem_info(folder); /* FIXME: is this needed? */
 
     // fm_path_entry_set_path(entry, path);
-    /* scroll to recorded position */
-#if FM_CHECK_VERSION(1, 0, 2)
-    gtk_adjustment_set_value(gtk_scrolled_window_get_vadjustment(scroll),
-                             fm_nav_history_get_scroll_pos(page->nav_history));
-#else
-    item = fm_nav_history_get_cur(page->nav_history);
-    gtk_adjustment_set_value(gtk_scrolled_window_get_vadjustment(scroll), item->scroll_pos);
-#endif
+    /* delaying scrolling since drawing folder view is delayed */
+    if(!page->update_scroll_id)
+        page->update_scroll_id = g_timeout_add(20, update_scroll, page);
 
     /* update status bar */
     /* update status text */
@@ -948,6 +962,7 @@ const char* fm_tab_page_get_status_text(FmTabPage* page, FmStatusTextType type)
 void fm_tab_page_reload(FmTabPage* page)
 {
     FmFolder* folder = fm_folder_view_get_folder(page->folder_view);
+
     if(folder)
         fm_folder_reload(folder);
 }
