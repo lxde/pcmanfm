@@ -107,6 +107,10 @@ static void on_fullscreen(GtkToggleAction* act, FmMainWin* win);
 
 static void on_location(GtkAction* act, FmMainWin* win);
 
+static void on_size_increment(GtkAction *act, FmMainWin *win);
+static void on_size_decrement(GtkAction *act, FmMainWin *win);
+static void on_size_default(GtkAction *act, FmMainWin *win);
+
 static void on_notebook_switch_page(GtkNotebook* nb, gpointer* page, guint num, FmMainWin* win);
 static void on_notebook_page_added(GtkNotebook* nb, GtkWidget* page, guint num, FmMainWin* win);
 static void on_notebook_page_removed(GtkNotebook* nb, GtkWidget* page, guint num, FmMainWin* win);
@@ -1516,6 +1520,166 @@ static void bounce_action(GtkAction* act, FmMainWin* win)
 {
     g_debug("bouncing action %s to popup", gtk_action_get_name(act));
     fm_folder_view_bounce_action(act, FM_FOLDER_VIEW(win->folder_view));
+}
+
+static guint icon_sizes[] =
+{
+    8,
+    10,
+    12,
+    16,
+    20,
+    24,
+    32, /* 30 would be better */
+    40, /* 38 */
+    48,
+    64, /* 60 */
+    80, /* 76 */
+    96,
+    128, /* 120 */
+    160, /* 152 */
+    192,
+    224,
+    256
+};
+
+static void on_size_decrement(GtkAction *act, FmMainWin *win)
+{
+    FmStandardViewMode mode;
+    guint size, i;
+
+    if (win->folder_view == NULL)
+        return;
+    mode = fm_standard_view_get_mode(FM_STANDARD_VIEW(win->folder_view));
+    switch (mode)
+    {
+    case FM_FV_ICON_VIEW:
+        size = fm_config->big_icon_size;
+        if (size < 24)
+            return;
+        break;
+    case FM_FV_COMPACT_VIEW:
+    case FM_FV_LIST_VIEW:
+        size = fm_config->small_icon_size;
+        if (size < 10)
+            return;
+        break;
+    case FM_FV_THUMBNAIL_VIEW:
+        size = fm_config->thumbnail_size;
+        if (size < 80)
+            return;
+        break;
+    default:
+        return;
+    }
+    for (i = G_N_ELEMENTS(icon_sizes); i > 0; )
+    {
+        i--;
+        if (icon_sizes[i] < size)
+            break;
+    }
+    switch (mode)
+    {
+    case FM_FV_ICON_VIEW:
+        fm_config->big_icon_size = icon_sizes[i];
+        fm_config_emit_changed(fm_config, "big_icon_size");
+        break;
+    case FM_FV_COMPACT_VIEW:
+    case FM_FV_LIST_VIEW:
+        fm_config->small_icon_size = icon_sizes[i];
+        fm_config_emit_changed(fm_config, "small_icon_size");
+        break;
+    case FM_FV_THUMBNAIL_VIEW:
+        fm_config->thumbnail_size = icon_sizes[i];
+        fm_config_emit_changed(fm_config, "thumbnail_size");
+    }
+    pcmanfm_save_config(FALSE);
+}
+
+static void on_size_increment(GtkAction *act, FmMainWin *win)
+{
+    FmStandardViewMode mode;
+    guint size, i;
+
+    if (win->folder_view == NULL)
+        return;
+    mode = fm_standard_view_get_mode(FM_STANDARD_VIEW(win->folder_view));
+    switch (mode)
+    {
+    case FM_FV_ICON_VIEW:
+        size = fm_config->big_icon_size;
+        if (size > 80)
+            return;
+        break;
+    case FM_FV_COMPACT_VIEW:
+    case FM_FV_LIST_VIEW:
+        size = fm_config->small_icon_size;
+        if (size > 40)
+            return;
+        break;
+    case FM_FV_THUMBNAIL_VIEW:
+        size = fm_config->thumbnail_size;
+        if (size > 224)
+            return;
+        break;
+    default:
+        return;
+    }
+    for (i = 1; i < G_N_ELEMENTS(icon_sizes); i++)
+    {
+        if (icon_sizes[i] > size)
+            break;
+    }
+    switch (mode)
+    {
+    case FM_FV_ICON_VIEW:
+        fm_config->big_icon_size = icon_sizes[i];
+        fm_config_emit_changed(fm_config, "big_icon_size");
+        break;
+    case FM_FV_COMPACT_VIEW:
+    case FM_FV_LIST_VIEW:
+        fm_config->small_icon_size = icon_sizes[i];
+        fm_config_emit_changed(fm_config, "small_icon_size");
+        break;
+    case FM_FV_THUMBNAIL_VIEW:
+        fm_config->thumbnail_size = icon_sizes[i];
+        fm_config_emit_changed(fm_config, "thumbnail_size");
+    }
+    pcmanfm_save_config(FALSE);
+}
+
+static void on_size_default(GtkAction *act, FmMainWin *win)
+{
+    FmStandardViewMode mode;
+
+    if (win->folder_view == NULL)
+        return;
+    mode = fm_standard_view_get_mode(FM_STANDARD_VIEW(win->folder_view));
+    switch (mode)
+    {
+    case FM_FV_ICON_VIEW:
+        if (fm_config->big_icon_size == 48)
+            return;
+        fm_config->big_icon_size = 48;
+        fm_config_emit_changed(fm_config, "big_icon_size");
+        break;
+    case FM_FV_COMPACT_VIEW:
+    case FM_FV_LIST_VIEW:
+        if (fm_config->small_icon_size == 20)
+            return;
+        fm_config->small_icon_size = 20;
+        fm_config_emit_changed(fm_config, "small_icon_size");
+        break;
+    case FM_FV_THUMBNAIL_VIEW:
+        if (fm_config->thumbnail_size == 128)
+            return;
+        fm_config->thumbnail_size = 128;
+        fm_config_emit_changed(fm_config, "thumbnail_size");
+        break;
+    default:
+        return;
+    }
+    pcmanfm_save_config(FALSE);
 }
 
 /* This callback is only connected to folder view of current active tab page. */
