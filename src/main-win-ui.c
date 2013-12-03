@@ -89,6 +89,10 @@ static const char main_menu_xml[] =
     /* "<menuitem action='ShowStatus'/>" */
     "<menuitem action='Fullscreen' />"
     "<separator/>"
+    "<menuitem action='SizeBigger'/>"
+    "<menuitem action='SizeSmaller'/>"
+    "<menuitem action='SizeDefault'/>"
+    "<separator/>"
 #if FM_CHECK_VERSION(1, 2, 0)
     "<placeholder name='ViewModes'/>"
 #else
@@ -167,6 +171,9 @@ static GtkActionEntry main_win_actions[]=
         {"SidePane", NULL, N_("Side _Pane"), NULL, NULL, NULL},
         /* other see below: 'ShowHidden' 'ShowStatus' 'Fullscreen' 'IconView'... */
         {"Sort", NULL, N_("S_ort Files"), NULL, NULL, NULL},
+        {"SizeBigger", GTK_STOCK_ZOOM_IN, N_("_Zoom In"), "<Ctrl>KP_Add", NULL, G_CALLBACK(on_size_increment)},
+        {"SizeSmaller", GTK_STOCK_ZOOM_OUT, N_("Zoom O_ut"), "<Ctrl>KP_Subtract", NULL, G_CALLBACK(on_size_decrement)},
+        {"SizeDefault", GTK_STOCK_ZOOM_100, N_("Norm_al Size"), "<Ctrl>0", NULL, G_CALLBACK(on_size_default)},
     {"HelpMenu", NULL, N_("_Help"), NULL, NULL, NULL},
         {"About", GTK_STOCK_ABOUT, NULL, NULL, NULL, G_CALLBACK(on_about)},
         {"KeyNavList", GTK_STOCK_INFO, N_("_Keyboard Navigation"), NULL, NULL, G_CALLBACK(on_key_nav_list)},
