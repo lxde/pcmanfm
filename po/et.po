@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-13 22:34+0100\n"
-"PO-Revision-Date: 2013-08-27 15:40+0000\n"
+"PO-Revision-Date: 2013-12-03 21:32+0000\n"
 "Last-Translator: Anari <anari.jalakas@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: et\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1377618021.0\n"
+"X-POOTLE-MTIME: 1386106367.0\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2013"
@@ -26,7 +26,7 @@ msgstr "Autoriõigus (C) 2009 - 2013"
 #: ../data/ui/about.glade.in.h:3
 msgid "translator-credits"
 msgstr ""
-"Anari Jalakas <anari.jalakas@gmail.com>, 2012-2013\n"
+"Anari Jalakas <anari.jalakas@gmail.com>, 2012 - 2013\n"
 "veeall, 2012"
 
 #: ../data/ui/desktop-pref.glade.h:1 ../src/desktop-ui.c:34
@@ -83,19 +83,16 @@ msgid "<b>Show desktop icons</b>"
 msgstr "<b>Näita töölaua ikoone</b>"
 
 #: ../data/ui/desktop-pref.glade.h:14
-#, fuzzy
 msgid "_Show \"Documents\" icon on desktop"
-msgstr "Näita töölaual kausta \"Minu _dokumendid\""
+msgstr "Töölaual kausta \"_Dokumendid\" näitamine"
 
 #: ../data/ui/desktop-pref.glade.h:15
-#, fuzzy
 msgid "Sho_w \"Devices\" icon on desktop"
-msgstr "Näita töölaual kausta \"Minu _dokumendid\""
+msgstr "Töölaual kausta \"_Seadmed\" näitamine"
 
 #: ../data/ui/desktop-pref.glade.h:16
-#, fuzzy
 msgid "Show \"_Trash Can\" icon on desktop"
-msgstr "Näita töölaual kausta \"_Prügikast\""
+msgstr "Töölaual kausta \"_Prügikast\" näitamine"
 
 #: ../data/ui/desktop-pref.glade.h:17
 msgid "S_how icons of volumes on desktop"
@@ -166,24 +163,23 @@ msgid "Co_nfirm before deleting files"
 msgstr "_Küsi enne failide kustutamist"
 
 #: ../data/ui/pref.glade.h:9
-#, fuzzy
 msgid "_Move deleted files to \"trash can\" instead of erasing from disk"
-msgstr "_Liiguta kustutatavad failid \"prügikasti\" ilma neid kustutamata"
+msgstr ""
+"_Liiguta kustutatavad failid \"prügikasti\" ilma neid seadmelt eemaldamata"
 
 #: ../data/ui/pref.glade.h:10
-#, fuzzy
 msgid "_Erase files on removable media instead of \"trash can\" creation"
 msgstr ""
-"Eemaldatava _mäluseadme failide kustutatamine ilma \"prügikasti\" viskamata"
+"Eemaldatava _mäluseadme failide kustutatamine ilma neid \"prügikasti\" "
+"viskamata"
 
 #: ../data/ui/pref.glade.h:11
-#, fuzzy
 msgid "Confi_rm before moving files into \"trash can\""
-msgstr "_Küsi enne failide \"prügikasti\" tõstmist"
+msgstr "_Kinnituse küsimine enne failide \"prügikasti\" liigutamist"
 
 #: ../data/ui/pref.glade.h:12
 msgid "Don't ask options on _launch executable file"
-msgstr ""
+msgstr "Käivitatava faili valikute _mittenäitamine"
 
 #: ../data/ui/pref.glade.h:13
 msgid "_Bookmarks:"
@@ -260,7 +256,7 @@ msgstr "Näita alati _täielikke failinimesid"
 
 #: ../data/ui/pref.glade.h:31
 msgid "Show icons of bac_kup files shadowed"
-msgstr ""
+msgstr "Varundusfailide ikoone näidatakse _uduselt"
 
 #: ../data/ui/pref.glade.h:32
 msgid "_Display"
@@ -276,12 +272,12 @@ msgstr "Kaardiriba on _alati nähtaval"
 
 #: ../data/ui/pref.glade.h:35
 msgid "_Maximum width of tab label:"
-msgstr ""
+msgstr "Kaardinime maksimaalne laius:"
 
 #. Use genitive case here, context is: width is XXX characters
 #: ../data/ui/pref.glade.h:37
 msgid "characters"
-msgstr ""
+msgstr "sümbolit"
 
 #: ../data/ui/pref.glade.h:38
 msgid "<b>Directories Tree</b>"
@@ -296,12 +292,10 @@ msgid "<b>Show in Places:</b>"
 msgstr "<b>Näita asukohtades:</b>"
 
 #: ../data/ui/pref.glade.h:41
-#, fuzzy
 msgid "_Home Folder"
-msgstr "Kodukaust"
+msgstr "_Kodukaust"
 
 #: ../data/ui/pref.glade.h:42
-#, fuzzy
 msgid "Des_ktop"
 msgstr "_Töölaud"
 
@@ -311,7 +305,7 @@ msgstr "_Prügikast"
 
 #: ../data/ui/pref.glade.h:44
 msgid "_Filesystem Root"
-msgstr ""
+msgstr "_Failisüsteemi juurkataloog"
 
 #: ../data/ui/pref.glade.h:45
 msgid "App_lications"
@@ -319,12 +313,11 @@ msgstr "_Rakendused"
 
 #: ../data/ui/pref.glade.h:46
 msgid "Dev_ices"
-msgstr ""
+msgstr "_Seadmed"
 
 #: ../data/ui/pref.glade.h:47
-#, fuzzy
 msgid "_Network"
-msgstr "_Võrgukettad"
+msgstr "_Võrk"
 
 #: ../data/ui/pref.glade.h:48
 msgid "_Layout"
@@ -364,7 +357,7 @@ msgstr "<b>Programmid</b>"
 
 #: ../data/ui/pref.glade.h:57
 msgid "<i>Commands below may include extra options if necessary.</i>"
-msgstr ""
+msgstr "<i>Järgnev käsk võib vajadusel sisaldada täiendavaid valikuid.</i>"
 
 #: ../data/ui/pref.glade.h:58
 msgid "_Terminal emulator:"
@@ -377,33 +370,31 @@ msgstr "Kasutaja _vahetamise käsklus:"
 #. Application command to format some drive
 #: ../data/ui/pref.glade.h:61
 msgid "_Format command:"
-msgstr ""
+msgstr "_Vormindamise käsk:"
 
 #: ../data/ui/pref.glade.h:62
 msgid "A_rchiver integration:"
 msgstr "_Arhiveerija kaasamine:"
 
 #: ../data/ui/pref.glade.h:63
-#, fuzzy
 msgid "<b>Templates</b>"
-msgstr "<b>Tekst</b>"
+msgstr "<b>Mallid</b>"
 
 #: ../data/ui/pref.glade.h:64
 msgid "S_how only user defined templates in menu"
-msgstr ""
+msgstr "Näita menüüs ainult kasutaja määratud malle"
 
 #: ../data/ui/pref.glade.h:65
 msgid "Show _only one template for each MIME type"
-msgstr ""
+msgstr "I_ga MIME tüübi kohta näidatakse ainult ühte malli"
 
 #: ../data/ui/pref.glade.h:66
 msgid "Ru_n default application after creation from template"
-msgstr ""
+msgstr "Pärast mallist loomist käivitatakse vaikimisi rakendusi"
 
 #: ../data/ui/pref.glade.h:67
-#, fuzzy
 msgid "<b>Other Options</b>"
-msgstr "<b>Näita töölaua ikoone</b>"
+msgstr "<b>Muud valikud</b>"
 
 #: ../data/ui/pref.glade.h:68
 msgid "_Use Application Startup Notify by default"
@@ -421,7 +412,7 @@ msgstr ""
 
 #: ../data/ui/pref.glade.h:71
 msgid "D_efer test for content type on folder loading"
-msgstr ""
+msgstr "Laetava kausta sisu testimise edasilükkamine"
 
 #: ../data/ui/pref.glade.h:72
 msgid "_Advanced"
@@ -510,25 +501,21 @@ msgid "Snap to _Grid"
 msgstr "Tõmme _alusvõrgule"
 
 #: ../src/desktop.c:636
-#, fuzzy
 msgid "Activate file"
-msgstr "<pildifail>"
+msgstr "Faili aktiveerimine"
 
 #: ../src/desktop.c:638
-#, fuzzy
 msgid "Show file menu"
-msgstr "Näita _peidetud faile"
+msgstr "Fail menüü näitamine"
 
 #: ../src/desktop.c:1054
-#, fuzzy
 msgid "Show desktop menu"
-msgstr "<b>Näita töölaua ikoone</b>"
+msgstr "Töölaua menüü näitamine"
 
 #. FIXME: set name by monitor
 #: ../src/desktop.c:1126
-#, fuzzy
 msgid "Desktop"
-msgstr "_Töölaud"
+msgstr "Töölaud"
 
 #: ../src/main-win-ui.c:128
 msgid "_File"
@@ -612,7 +599,6 @@ msgid "_Help"
 msgstr "_Abi"
 
 #: ../src/main-win-ui.c:153
-#, fuzzy
 msgid "_Keyboard Navigation"
 msgstr "Klaviatuuri _kiirkäsud"
 
@@ -626,7 +612,7 @@ msgstr "_Eelmine kaust"
 
 #: ../src/main-win-ui.c:155
 msgid "Return to previous folder in history"
-msgstr ""
+msgstr "Liigu tagasi eelmisesse kausta"
 
 #: ../src/main-win-ui.c:156
 msgid "_Next Folder"
@@ -634,7 +620,7 @@ msgstr "_Järgmine kaust"
 
 #: ../src/main-win-ui.c:156
 msgid "Go forward to next folder in history"
-msgstr ""
+msgstr "Liigu edasi järgmisesse kausta"
 
 #: ../src/main-win-ui.c:157
 msgid "Pa_rent Folder"
@@ -649,30 +635,28 @@ msgid "H_ome Folder"
 msgstr "_Kodukaust"
 
 #: ../src/main-win-ui.c:158
-#, fuzzy
 msgid "Go to home folder"
-msgstr "Mine ülemkausta"
+msgstr "Mine kodukausta"
 
 #: ../src/main-win-ui.c:159
 msgid "_Desktop"
 msgstr "_Töölaud"
 
 #: ../src/main-win-ui.c:159
-#, fuzzy
 msgid "Go to desktop folder"
-msgstr "Mine ülemkausta"
+msgstr "Mine töölaua kausta"
 
 #: ../src/main-win-ui.c:160
 msgid "Open trash can"
-msgstr ""
+msgstr "Prügikasti avamine"
 
 #: ../src/main-win-ui.c:161
 msgid "Filesyste_m Root"
-msgstr ""
+msgstr "Failisüstee_mi juurkataloog"
 
 #: ../src/main-win-ui.c:161
 msgid "Go fo filesystem root"
-msgstr ""
+msgstr "Mine failisüstee_mi juurkataloogi"
 
 #: ../src/main-win-ui.c:162
 msgid "_Applications"
@@ -680,43 +664,39 @@ msgstr "_Rakendused"
 
 #: ../src/main-win-ui.c:162
 msgid "Go to root of applications menu folder"
-msgstr ""
+msgstr "Mine rakendute peakausta"
 
 #: ../src/main-win-ui.c:163
 msgid "Devi_ces"
-msgstr ""
+msgstr "Sea_dmed"
 
 #: ../src/main-win-ui.c:163
-#, fuzzy
 msgid "Go to list of devices connected to the computer"
-msgstr "Näita töölaual kettaseadmete _ikoone"
+msgstr "Liigu arvutiga ühendatud seadmete nimekirja"
 
 #: ../src/main-win-ui.c:164
-#, fuzzy
 msgid "Net_work"
-msgstr "_Võrgukettad"
+msgstr "Võr_k"
 
 #: ../src/main-win-ui.c:164
-#, fuzzy
 msgid "Go to list of places on the network"
-msgstr "Näita töölaual kettaseadmete _ikoone"
+msgstr "Liigu võrguasukohtade nimekirja"
 
 #: ../src/main-win-ui.c:165
 msgid "Go to the path in the location bar"
-msgstr ""
+msgstr "Liigu asukohariba asukohta"
 
 #: ../src/main-win-ui.c:166
 msgid "_Bookmarks"
 msgstr "_Järjehoidjad"
 
 #: ../src/main-win-ui.c:167
-#, fuzzy
 msgid "_Add to Bookmarks"
-msgstr "Lisa järjehoidjatesse"
+msgstr "_Lisa järjehoidjasse"
 
 #: ../src/main-win-ui.c:167
 msgid "Add current folder to bookmarks list"
-msgstr ""
+msgstr "Lisa praegune kaust järjehoidjasse"
 
 #: ../src/main-win-ui.c:168
 msgid "Tool_s"
@@ -731,9 +711,8 @@ msgid "Fin_d Files"
 msgstr "_Otsi faile"
 
 #: ../src/main-win-ui.c:172
-#, fuzzy
 msgid "Open search dialog"
-msgstr "Ava töölaua eelistuste valikud"
+msgstr "Otsinguakna avamine"
 
 #. for popup menu - these entries exist in FmFolderView popup still
 #: ../src/main-win-ui.c:181
@@ -810,41 +789,34 @@ msgstr "Võrgus"
 
 #: ../src/main-win.c:585
 msgid "Show history of visited folders"
-msgstr ""
+msgstr "Külastatud kaustade ajaloo vaatamine"
 
 #: ../src/main-win.c:588
 msgid "History"
-msgstr ""
+msgstr "Ajalugu"
 
 #: ../src/main-win.c:602
 msgid "You are in super user mode"
 msgstr "Oled administraatori õigustes"
 
 #: ../src/main-win.c:766
-#, fuzzy
 msgid "Lightweight file manager\n"
-msgstr ""
-"Sulgkerge failihaldur\n"
-"\n"
-"Autor: Hon Jen Yee (PCMan)"
+msgstr "Sulgkerge failihaldur\n"
 
 #: ../src/main-win.c:771
 #, c-format
 msgid "using LibFM ver. %s\n"
-msgstr ""
+msgstr "kasutab LibFM ver. %s\n"
 
 #: ../src/main-win.c:773
-#, fuzzy
 msgid ""
 "\n"
 "Developed by Hon Jen Yee (PCMan)"
 msgstr ""
-"Sulgkerge failihaldur\n"
 "\n"
 "Autor: Hon Jen Yee (PCMan)"
 
 #: ../src/main-win.c:798 ../src/main-win.c:806
-#, fuzzy
 msgid "Keyboard Navigation"
 msgstr "Klaviatuuri kiirkäsud"
 
@@ -898,7 +870,7 @@ msgstr "Käivita PCManFM deemonina"
 
 #: ../src/pcmanfm.c:78
 msgid "No function. Just to be compatible with nautilus"
-msgstr "Ilma funktsioonita. Ainult programmiga \"Nautilus\" ühilduvuseks"
+msgstr "Ilma funktsioonita. Ainult programmiga \"nautilus\" ühilduvuseks"
 
 #. options that are acceptable for every instance of pcmanfm and will be passed through IPC.
 #: ../src/pcmanfm.c:81
