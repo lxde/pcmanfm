@@ -5,8 +5,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm 1.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-03 23:27+0200\n"
-"PO-Revision-Date: 2013-12-04 00:18+0200\n"
+"POT-Creation-Date: 2013-12-04 22:28+0200\n"
+"PO-Revision-Date: 2013-12-04 23:00+0200\n"
 "Last-Translator: LStranger <andrej@rep.kiev.ua>\n"
 "Language-Team: Russian <>\n"
 "Language: ru\n"
@@ -299,7 +299,7 @@ msgstr "Домашняя _папка"
 msgid "Des_ktop"
 msgstr "_Рабочий стол"
 
-#: ../data/ui/pref.glade.h:43 ../src/main-win-ui.c:186
+#: ../data/ui/pref.glade.h:43 ../src/main-win-ui.c:187
 msgid "_Trash Can"
 msgstr "_Корзина"
 
@@ -588,158 +588,158 @@ msgid "Reload current folder"
 msgstr "Обновить текущую папку"
 
 #: ../src/main-win-ui.c:171
+msgid "Tool_bar"
+msgstr "Пена_л"
+
+#: ../src/main-win-ui.c:172
 msgid "Side _Pane"
 msgstr "Боковая панель"
 
 #. other see below: 'ShowHidden' 'ShowStatus' 'Fullscreen' 'IconView'...
-#: ../src/main-win-ui.c:173
+#: ../src/main-win-ui.c:174
 msgid "S_ort Files"
 msgstr "_Сортировать файлы"
 
-#: ../src/main-win-ui.c:174
+#: ../src/main-win-ui.c:175
 msgid "_Zoom In"
 msgstr "У_величить"
 
-#: ../src/main-win-ui.c:175
+#: ../src/main-win-ui.c:176
 msgid "Zoom O_ut"
 msgstr "У_меньшить"
 
-#: ../src/main-win-ui.c:176
-msgid "Norm_al Size"
+#: ../src/main-win-ui.c:177
+msgid "_Normal Size"
 msgstr "Об_ычный размер"
 
-#: ../src/main-win-ui.c:177
+#: ../src/main-win-ui.c:178
 msgid "_Help"
 msgstr "_Справка"
 
-#: ../src/main-win-ui.c:179
+#: ../src/main-win-ui.c:180
 msgid "_Keyboard Navigation"
 msgstr "_Управление с клавиатуры"
 
-#: ../src/main-win-ui.c:180
+#: ../src/main-win-ui.c:181
 msgid "_Go"
 msgstr "_Перейти"
 
-#: ../src/main-win-ui.c:181
+#: ../src/main-win-ui.c:182
 msgid "_Previous Folder"
 msgstr "Предыдущая папка"
 
-#: ../src/main-win-ui.c:181
+#: ../src/main-win-ui.c:182
 msgid "Return to previous folder in history"
 msgstr "Вернуться к предыдущей папке в истории"
 
-#: ../src/main-win-ui.c:182
+#: ../src/main-win-ui.c:183
 msgid "_Next Folder"
 msgstr "Следующая папка"
 
-#: ../src/main-win-ui.c:182
+#: ../src/main-win-ui.c:183
 msgid "Go forward to next folder in history"
 msgstr "Перейти к следующей папке в истории"
 
-#: ../src/main-win-ui.c:183
+#: ../src/main-win-ui.c:184
 msgid "Pa_rent Folder"
 msgstr "Родительская папка"
 
-#: ../src/main-win-ui.c:183
+#: ../src/main-win-ui.c:184
 msgid "Go to parent Folder"
 msgstr "Перейти в родительскую папку"
 
-#: ../src/main-win-ui.c:184
+#: ../src/main-win-ui.c:185
 msgid "H_ome Folder"
 msgstr "Домашняя папка"
 
-#: ../src/main-win-ui.c:184
+#: ../src/main-win-ui.c:185
 msgid "Go to home folder"
 msgstr "Перейти в домашнюю папку"
 
-#: ../src/main-win-ui.c:185
+#: ../src/main-win-ui.c:186
 msgid "_Desktop"
 msgstr "Рабочий стол"
 
-#: ../src/main-win-ui.c:185
+#: ../src/main-win-ui.c:186
 msgid "Go to desktop folder"
 msgstr "Перейти в папку рабочего стола"
 
-#: ../src/main-win-ui.c:186
+#: ../src/main-win-ui.c:187
 msgid "Open trash can"
 msgstr "Открыть Корзину"
 
-#: ../src/main-win-ui.c:187
+#: ../src/main-win-ui.c:188
 msgid "Filesyste_m Root"
 msgstr "Кор_ень файловой системы"
 
-#: ../src/main-win-ui.c:187
+#: ../src/main-win-ui.c:188
 msgid "Go fo filesystem root"
 msgstr "Перейти к корню файловой системы"
 
-#: ../src/main-win-ui.c:188
+#: ../src/main-win-ui.c:189
 msgid "_Applications"
 msgstr "Приложения"
 
-#: ../src/main-win-ui.c:188
+#: ../src/main-win-ui.c:189
 msgid "Go to root of applications menu folder"
 msgstr "Перейти к корню меню приложений"
 
-#: ../src/main-win-ui.c:189
+#: ../src/main-win-ui.c:190
 msgid "Devi_ces"
 msgstr "_Устройства"
 
-#: ../src/main-win-ui.c:189
+#: ../src/main-win-ui.c:190
 msgid "Go to list of devices connected to the computer"
 msgstr "Перейти к списку устройств, доступных на компьютере"
 
-#: ../src/main-win-ui.c:190
+#: ../src/main-win-ui.c:191
 msgid "Net_work"
 msgstr "_Сеть"
 
-#: ../src/main-win-ui.c:190
+#: ../src/main-win-ui.c:191
 msgid "Go to list of places on the network"
 msgstr "Перейти к списку мест, доступных в сети"
 
-#: ../src/main-win-ui.c:191
+#: ../src/main-win-ui.c:192
 msgid "Go to the path in the location bar"
 msgstr "Перейти к папке по пути, введеному в поле адреса"
 
-#: ../src/main-win-ui.c:192
+#: ../src/main-win-ui.c:193
 msgid "_Bookmarks"
 msgstr "_Закладки"
 
-#: ../src/main-win-ui.c:193
+#: ../src/main-win-ui.c:194
 msgid "_Add to Bookmarks"
 msgstr "Добавить в _закладки"
 
-#: ../src/main-win-ui.c:193
+#: ../src/main-win-ui.c:194
 msgid "Add current folder to bookmarks list"
 msgstr "Добавить текущую папку в закладки"
 
-#: ../src/main-win-ui.c:194
+#: ../src/main-win-ui.c:195
 msgid "Tool_s"
 msgstr "_Инструменты"
 
-#: ../src/main-win-ui.c:195
+#: ../src/main-win-ui.c:196
 msgid "Open Current Folder in _Terminal"
 msgstr "Открыть текущую папку в _терминале"
 
-#: ../src/main-win-ui.c:198
-msgid "Fin_d Files"
-msgstr "_Поиск файлов"
+#: ../src/main-win-ui.c:199
+msgid "Fin_d Files..."
+msgstr "_Поиск файлов..."
 
-#: ../src/main-win-ui.c:198
+#: ../src/main-win-ui.c:199
 msgid "Open search dialog"
 msgstr "Открыть диалог поиска файлов"
 
 #. for popup menu - these entries exist in FmFolderView popup still
-#: ../src/main-win-ui.c:207
+#: ../src/main-win-ui.c:208
 msgid "Folder"
 msgstr "Папка"
 
-#: ../src/main-win-ui.c:208
+#: ../src/main-win-ui.c:209
 msgid "Empty File"
 msgstr "Пустой файл"
-
-#: ../src/main-win-ui.c:214
-msgid "Show Hidde_n"
-msgstr "_Показать скрытые файлы"
 
 #. Note to translators: "Mingle..." means "Do not put folders before files" but make the translation as short as possible, please!
 #: ../src/main-win-ui.c:217
@@ -750,102 +750,122 @@ msgstr "Показывать папки и файлы _вперемешку"
 msgid "_Ignore Name Case"
 msgstr "_Игнорировать регистр в имени"
 
+#: ../src/main-win-ui.c:222
+msgid "Sho_w Hidden"
+msgstr "_Показать скрытые файлы"
+
 #. Note to translators: this save is meant for folder's settings such as sort
-#: ../src/main-win-ui.c:223
+#: ../src/main-win-ui.c:224
 msgid "Preserve This Folder's Settings"
 msgstr "Помнить настройки этой папки"
 
-#: ../src/main-win-ui.c:224
+#: ../src/main-win-ui.c:225
 msgid ""
 "Check to remember view and sort as folder setting rather than global one"
 msgstr "Отметить, чтобы запоминать вид и сортировку отдельно от общих настроек"
 
-#: ../src/main-win-ui.c:226
+#: ../src/main-win-ui.c:227
+msgid "Show _Toolbar"
+msgstr "_Показать пенал"
+
+#: ../src/main-win-ui.c:228
+msgid "Show 'Ne_w Tab' Button"
+msgstr "Показать кнопку 'Новая _вкладка'"
+
+#: ../src/main-win-ui.c:229
+msgid "Show _Navigation Buttons"
+msgstr "Показать кнопки _навигации"
+
+#: ../src/main-win-ui.c:230
+msgid "Show '_Home' Button"
+msgstr "Показать кнопку _домашней папки"
+
+#: ../src/main-win-ui.c:231
 msgid "Sho_w Side Pane"
 msgstr "_Показать боковую панель"
 
-#: ../src/main-win-ui.c:227
+#: ../src/main-win-ui.c:232
 msgid "Show Status B_ar"
 msgstr "_Показать панель статуса"
 
-#: ../src/main-win-ui.c:228
+#: ../src/main-win-ui.c:233
 msgid "_Dual Pane Mode"
 msgstr "_Двухпанельный режим"
 
-#: ../src/main-win-ui.c:228
+#: ../src/main-win-ui.c:233
 msgid "Show two panels with folder views"
 msgstr "Показывать две панели с папками"
 
-#: ../src/main-win-ui.c:229
+#: ../src/main-win-ui.c:234
 msgid "Fullscreen _Mode"
 msgstr "Полноэкранный режим"
 
-#: ../src/main-win-ui.c:235
+#: ../src/main-win-ui.c:240
 msgid "_Icon View"
 msgstr "_Значки"
 
-#: ../src/main-win-ui.c:236
+#: ../src/main-win-ui.c:241
 msgid "_Compact View"
 msgstr "_Компактный вид"
 
-#: ../src/main-win-ui.c:237
+#: ../src/main-win-ui.c:242
 msgid "_Thumbnail View"
 msgstr "_Миниатюры"
 
-#: ../src/main-win-ui.c:238
+#: ../src/main-win-ui.c:243
 msgid "Detailed _List View"
 msgstr "_Подробности"
 
-#: ../src/main-win-ui.c:251 ../src/main-win-ui.c:256
+#: ../src/main-win-ui.c:256 ../src/main-win-ui.c:261
 msgid "By _Name"
 msgstr "По _имени"
 
-#: ../src/main-win-ui.c:252 ../src/main-win-ui.c:257
+#: ../src/main-win-ui.c:257 ../src/main-win-ui.c:262
 msgid "By _Modification Time"
 msgstr "По _времени изменения"
 
-#: ../src/main-win-ui.c:253 ../src/main-win-ui.c:258
+#: ../src/main-win-ui.c:258 ../src/main-win-ui.c:263
 msgid "By _Size"
 msgstr "По _размеру"
 
-#: ../src/main-win-ui.c:254 ../src/main-win-ui.c:259
+#: ../src/main-win-ui.c:259 ../src/main-win-ui.c:264
 msgid "By File _Type"
 msgstr "По _типу файла"
 
-#: ../src/main-win-ui.c:265
+#: ../src/main-win-ui.c:270
 msgid "Places"
 msgstr "Точки входа"
 
-#: ../src/main-win-ui.c:266
+#: ../src/main-win-ui.c:271
 msgid "Directory Tree"
 msgstr "Дерево директорий"
 
-#: ../src/main-win-ui.c:267
+#: ../src/main-win-ui.c:272
 msgid "Remote"
 msgstr "Сеть"
 
-#: ../src/main-win.c:698
+#: ../src/main-win.c:702
 msgid "Show history of visited folders"
 msgstr "Показать историю посещённых папок"
 
-#: ../src/main-win.c:701
+#: ../src/main-win.c:705
 msgid "History"
 msgstr "История"
 
-#: ../src/main-win.c:715
+#: ../src/main-win.c:719
 msgid "You are in super user mode"
 msgstr "Вы находитесь в режиме суперпользователя"
 
-#: ../src/main-win.c:879
+#: ../src/main-win.c:883
 msgid "Lightweight file manager\n"
 msgstr "Легковесный файловый менеджер\n"
 
-#: ../src/main-win.c:884
+#: ../src/main-win.c:888
 #, c-format
 msgid "using LibFM ver. %s\n"
 msgstr "(использует LibFM версии %s)\n"
 
-#: ../src/main-win.c:886
+#: ../src/main-win.c:890
 msgid ""
 "\n"
 "Developed by Hon Jen Yee (PCMan)"
@@ -853,11 +873,11 @@ msgstr ""
 "\n"
 "Разработчик Hon Jen Yee (PCMan)"
 
-#: ../src/main-win.c:911 ../src/main-win.c:919
+#: ../src/main-win.c:915 ../src/main-win.c:923
 msgid "Keyboard Navigation"
 msgstr "Управление с клавиатуры"
 
-#: ../src/main-win.c:913
+#: ../src/main-win.c:917
 msgid ""
 "Tab: cycle focus Folder View -> Side Pane -> Tools Bar\n"
 "Shift+Tab: cycle focus Tools Bar -> Side Pane -> Folder View\n"
@@ -875,7 +895,7 @@ msgstr ""
 "F10: Вызов основного меню\n"
 "Ctrl+L или Alt+D: фокус на строку пути файла"
 
-#: ../src/main-win.c:1500
+#: ../src/main-win.c:1515
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -886,7 +906,7 @@ msgstr ""
 "'%s'\n"
 "Введите имя новой закладки:"
 
-#: ../src/main-win.c:1504
+#: ../src/main-win.c:1519
 msgid "Add to Bookmarks"
 msgstr "Добавить в закладки"
 
