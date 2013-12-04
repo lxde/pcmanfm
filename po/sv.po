@@ -5,13 +5,12 @@
 # Mikael Magnusson, <mikachu@gmail.com>, 2008.
 # Martin Bagge <brother@bsnet.se>, 2009.
 # Daniel Nylander <po@danielnylander.se>, 2009.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: PCManFM\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-13 22:34+0100\n"
-"PO-Revision-Date: 2013-11-13 21:57+0000\n"
+"POT-Creation-Date: 2013-12-04 22:28+0200\n"
+"PO-Revision-Date: 2013-12-04 22:04+0000\n"
 "Last-Translator: Martin <brother@bsnet.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
@@ -20,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1384379851.0\n"
+"X-POOTLE-MTIME: 1386194642.0\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2013"
@@ -180,8 +179,8 @@ msgstr ""
 #: ../data/ui/pref.glade.h:10
 msgid "_Erase files on removable media instead of \"trash can\" creation"
 msgstr ""
-"Rad_era filer på flyttbart media istället för att flytta till \"papperskorgen"
-"\""
+"Rad_era filer på flyttbart media istället för att flytta till "
+"\"papperskorgen\""
 
 #: ../data/ui/pref.glade.h:11
 msgid "Confi_rm before moving files into \"trash can\""
@@ -308,7 +307,7 @@ msgstr "_Hemkatalog"
 msgid "Des_ktop"
 msgstr "S_krivbord"
 
-#: ../data/ui/pref.glade.h:43 ../src/main-win-ui.c:160
+#: ../data/ui/pref.glade.h:43 ../src/main-win-ui.c:187
 msgid "_Trash Can"
 msgstr "_Papperskorg"
 
@@ -493,11 +492,11 @@ msgstr "Öppna i filhanterare"
 msgid "Open in New Ta_b"
 msgstr "Öppn_a i ny flik"
 
-#: ../src/desktop-ui.c:52 ../src/tab-page.c:56
+#: ../src/desktop-ui.c:52 ../src/tab-page.c:55
 msgid "Open in New Win_dow"
 msgstr "Öpp_na i nytt fönster"
 
-#: ../src/desktop-ui.c:54 ../src/tab-page.c:58
+#: ../src/desktop-ui.c:54 ../src/tab-page.c:57
 msgid "Open in Termina_l"
 msgstr "Öppna i _terminal"
 
@@ -509,316 +508,371 @@ msgstr "Håll _kvar vid nuvarande position"
 msgid "Snap to _Grid"
 msgstr "Justera till _rutnät"
 
-#: ../src/desktop.c:636
+#: ../src/desktop.c:634
 msgid "Activate file"
 msgstr "Aktivera fil"
 
-#: ../src/desktop.c:638
+#: ../src/desktop.c:636
 msgid "Show file menu"
 msgstr "Visa filmeny"
 
-#: ../src/desktop.c:1054
+#: ../src/desktop.c:1052
 msgid "Show desktop menu"
 msgstr "Visa skrivbordsmeny"
 
 #. FIXME: set name by monitor
-#: ../src/desktop.c:1126
+#: ../src/desktop.c:1124
 msgid "Desktop"
 msgstr "Skrivbord"
 
-#: ../src/main-win-ui.c:128
+#: ../src/main-win-ui.c:151
 msgid "_File"
 msgstr "_Arkiv"
 
-#: ../src/main-win-ui.c:129
+#: ../src/main-win-ui.c:152
 msgid "_New Window"
 msgstr "_Nytt fönster"
 
-#: ../src/main-win-ui.c:130
+#: ../src/main-win-ui.c:153
 msgid "New T_ab"
 msgstr "Ny _flik"
 
-#: ../src/main-win-ui.c:130
+#: ../src/main-win-ui.c:153
 msgid "Create new tab for this folder"
 msgstr "Skapa ny flik för denna katalog"
 
-#: ../src/main-win-ui.c:131
+#: ../src/main-win-ui.c:154
 msgid "C_reate New..."
 msgstr "_Skapa ny..."
 
-#: ../src/main-win-ui.c:132
+#: ../src/main-win-ui.c:155
 msgid "_Close Tab"
 msgstr "Stäng fli_k"
 
-#: ../src/main-win-ui.c:133
+#: ../src/main-win-ui.c:156
 msgid "Close _Window"
 msgstr "Stäng _fönster"
 
-#: ../src/main-win-ui.c:134
+#: ../src/main-win-ui.c:157
 msgid "_Edit"
 msgstr "_Redigera"
 
-#: ../src/main-win-ui.c:139
+#: ../src/main-win-ui.c:162
 msgid "_Rename"
 msgstr "_Byt namn"
 
-#: ../src/main-win-ui.c:140
+#: ../src/main-win-ui.c:163
 msgid "Create Symlin_k"
 msgstr "Skapa s_ymlänk"
 
-#: ../src/main-win-ui.c:141
+#: ../src/main-win-ui.c:164
 msgid "_Move To..."
 msgstr "_Flytta till..."
 
-#: ../src/main-win-ui.c:142
+#: ../src/main-win-ui.c:165
 msgid "C_opy To..."
 msgstr "K_opiera till..."
 
-#: ../src/main-win-ui.c:144
+#: ../src/main-win-ui.c:167
 msgid "_Invert Selection"
 msgstr "_Invertera markering"
 
-#: ../src/main-win-ui.c:145
+#: ../src/main-win-ui.c:168
 msgid "Prefere_nces"
 msgstr "I_nställningar"
 
-#: ../src/main-win-ui.c:146
+#: ../src/main-win-ui.c:169
 msgid "_View"
 msgstr "_Visa"
 
-#: ../src/main-win-ui.c:147
+#: ../src/main-win-ui.c:170
 msgid "_Reload Folder"
 msgstr "_Läs om mapp"
 
-#: ../src/main-win-ui.c:147
+#: ../src/main-win-ui.c:170
 msgid "Reload current folder"
 msgstr "Läs om aktuell mapp"
 
-#: ../src/main-win-ui.c:148
+#: ../src/main-win-ui.c:171
+msgid "Tool_bar"
+msgstr "_Verktygsrad"
+
+#: ../src/main-win-ui.c:172
 msgid "Side _Pane"
 msgstr "Sido_panel"
 
 #. other see below: 'ShowHidden' 'ShowStatus' 'Fullscreen' 'IconView'...
-#: ../src/main-win-ui.c:150
+#: ../src/main-win-ui.c:174
 msgid "S_ort Files"
 msgstr "S_ortera filer"
 
-#: ../src/main-win-ui.c:151
+#: ../src/main-win-ui.c:175
+msgid "_Zoom In"
+msgstr "_Zooma in"
+
+#: ../src/main-win-ui.c:176
+msgid "Zoom O_ut"
+msgstr "Zooma _ut"
+
+#: ../src/main-win-ui.c:177
+msgid "_Normal Size"
+msgstr "_Normal storlek"
+
+#: ../src/main-win-ui.c:178
 msgid "_Help"
 msgstr "_Hjälp"
 
-#: ../src/main-win-ui.c:153
+#: ../src/main-win-ui.c:180
 msgid "_Keyboard Navigation"
 msgstr "_Tangentbordsnavigering"
 
-#: ../src/main-win-ui.c:154
+#: ../src/main-win-ui.c:181
 msgid "_Go"
 msgstr "_Gå"
 
-#: ../src/main-win-ui.c:155
+#: ../src/main-win-ui.c:182
 msgid "_Previous Folder"
 msgstr "Föregående map_p"
 
-#: ../src/main-win-ui.c:155
+#: ../src/main-win-ui.c:182
 msgid "Return to previous folder in history"
 msgstr "Återgå till föregående mapp i historiken"
 
-#: ../src/main-win-ui.c:156
+#: ../src/main-win-ui.c:183
 msgid "_Next Folder"
 msgstr "_Nästa mapp"
 
-#: ../src/main-win-ui.c:156
+#: ../src/main-win-ui.c:183
 msgid "Go forward to next folder in history"
 msgstr "Gå vidare till nästa mapp i historiken"
 
-#: ../src/main-win-ui.c:157
+#: ../src/main-win-ui.c:184
 msgid "Pa_rent Folder"
 msgstr "Fö_räldramapp"
 
-#: ../src/main-win-ui.c:157
+#: ../src/main-win-ui.c:184
 msgid "Go to parent Folder"
 msgstr "Gå till föräldramapp"
 
-#: ../src/main-win-ui.c:158
+#: ../src/main-win-ui.c:185
 msgid "H_ome Folder"
 msgstr "Hemkatal_og"
 
-#: ../src/main-win-ui.c:158
+#: ../src/main-win-ui.c:185
 msgid "Go to home folder"
 msgstr "Gå till hemmappen"
 
-#: ../src/main-win-ui.c:159
+#: ../src/main-win-ui.c:186
 msgid "_Desktop"
 msgstr "_Skrivbord"
 
-#: ../src/main-win-ui.c:159
+#: ../src/main-win-ui.c:186
 msgid "Go to desktop folder"
 msgstr "Gå till skrivbordsmappen"
 
-#: ../src/main-win-ui.c:160
+#: ../src/main-win-ui.c:187
 msgid "Open trash can"
 msgstr "Öppna papperskorgen"
 
-#: ../src/main-win-ui.c:161
+#: ../src/main-win-ui.c:188
 msgid "Filesyste_m Root"
 msgstr "_Filsystemsrot"
 
-#: ../src/main-win-ui.c:161
+#: ../src/main-win-ui.c:188
 msgid "Go fo filesystem root"
 msgstr "Gå till filsystemsroten"
 
 # Inte översätta mime-typer
-#: ../src/main-win-ui.c:162
+#: ../src/main-win-ui.c:189
 msgid "_Applications"
 msgstr "Progr_am"
 
-#: ../src/main-win-ui.c:162
+#: ../src/main-win-ui.c:189
 msgid "Go to root of applications menu folder"
 msgstr "Gå till toppen på applikationsmappen"
 
-#: ../src/main-win-ui.c:163
+#: ../src/main-win-ui.c:190
 msgid "Devi_ces"
 msgstr "_Enheter"
 
-#: ../src/main-win-ui.c:163
+#: ../src/main-win-ui.c:190
 msgid "Go to list of devices connected to the computer"
 msgstr "Gå till listan för enheter anslutna till datorn"
 
-#: ../src/main-win-ui.c:164
+#: ../src/main-win-ui.c:191
 msgid "Net_work"
 msgstr "Nät_verk"
 
-#: ../src/main-win-ui.c:164
+#: ../src/main-win-ui.c:191
 msgid "Go to list of places on the network"
 msgstr "Gå till listan för platser på nätverket"
 
-#: ../src/main-win-ui.c:165
+#: ../src/main-win-ui.c:192
 msgid "Go to the path in the location bar"
 msgstr "Ladda sökvägen i platsfältet"
 
-#: ../src/main-win-ui.c:166
+#: ../src/main-win-ui.c:193
 msgid "_Bookmarks"
 msgstr "_Bokmärken"
 
-#: ../src/main-win-ui.c:167
+#: ../src/main-win-ui.c:194
 msgid "_Add to Bookmarks"
 msgstr "_Lägg till i bokmärken"
 
-#: ../src/main-win-ui.c:167
+#: ../src/main-win-ui.c:194
 msgid "Add current folder to bookmarks list"
 msgstr "Lägg till aktuell mapp till bokmärkeslistan"
 
-#: ../src/main-win-ui.c:168
+#: ../src/main-win-ui.c:195
 msgid "Tool_s"
 msgstr "Ver_ktyg"
 
-#: ../src/main-win-ui.c:169
+#: ../src/main-win-ui.c:196
 msgid "Open Current Folder in _Terminal"
 msgstr "Öppna aktuell mapp i _terminal"
 
-#: ../src/main-win-ui.c:172
-msgid "Fin_d Files"
+#: ../src/main-win-ui.c:199
+msgid "Fin_d Files..."
 msgstr "_Sök efter filer"
 
-#: ../src/main-win-ui.c:172
+#: ../src/main-win-ui.c:199
 msgid "Open search dialog"
 msgstr "Öppna sökdialog"
 
 #. for popup menu - these entries exist in FmFolderView popup still
-#: ../src/main-win-ui.c:181
+#: ../src/main-win-ui.c:208
 msgid "Folder"
 msgstr "Mapp"
 
-#: ../src/main-win-ui.c:182
+#: ../src/main-win-ui.c:209
 msgid "Empty File"
 msgstr "Tom fil"
 
-#: ../src/main-win-ui.c:188
-msgid "Show Hidde_n"
+#. Note to translators: "Mingle..." means "Do not put folders before files" but make the translation as short as possible, please!
+#: ../src/main-win-ui.c:217
+msgid "Mingle _Files and Folders"
+msgstr "Låt _filer och kataloger blandas"
+
+#: ../src/main-win-ui.c:220
+msgid "_Ignore Name Case"
+msgstr "_Ignorera skiftlägesskillnad"
+
+#: ../src/main-win-ui.c:222
+msgid "Sho_w Hidden"
 msgstr "Visa _dolda"
 
-#: ../src/main-win-ui.c:189
+#. Note to translators: this save is meant for folder's settings such as sort
+#: ../src/main-win-ui.c:224
+msgid "Preserve This Folder's Settings"
+msgstr "Bevara katalogens inställningar"
+
+#: ../src/main-win-ui.c:225
+msgid ""
+"Check to remember view and sort as folder setting rather than global one"
+msgstr "Kryssa i för att spara visning och sortering för katalogen"
+
+#: ../src/main-win-ui.c:227
+msgid "Show _Toolbar"
+msgstr "Visa verk_tygsrad"
+
+#: ../src/main-win-ui.c:228
+msgid "Show 'Ne_w Tab' Button"
+msgstr "Visa knapp för n_y flik"
+
+#: ../src/main-win-ui.c:229
+msgid "Show _Navigation Buttons"
+msgstr "Visa _navigationsknappar"
+
+#: ../src/main-win-ui.c:230
+msgid "Show '_Home' Button"
+msgstr "Visa _hem-knapp"
+
+#: ../src/main-win-ui.c:231
 msgid "Sho_w Side Pane"
 msgstr "_Visa sidopanel"
 
-#: ../src/main-win-ui.c:190
+#: ../src/main-win-ui.c:232
 msgid "Show Status B_ar"
 msgstr "Visa status_fält"
 
-#: ../src/main-win-ui.c:191
-msgid "T_win Pane Mode"
-msgstr "Läge med d_ubbla paneler"
+#: ../src/main-win-ui.c:233
+msgid "_Dual Pane Mode"
+msgstr "Dubbelvy"
 
-#: ../src/main-win-ui.c:192
+#: ../src/main-win-ui.c:233
+msgid "Show two panels with folder views"
+msgstr "Visar två paneler med kataloger"
+
+#: ../src/main-win-ui.c:234
 msgid "Fullscreen _Mode"
 msgstr "_Fullskärmsläge"
 
-#: ../src/main-win-ui.c:197
+#: ../src/main-win-ui.c:240
 msgid "_Icon View"
 msgstr "_Ikonvy"
 
-#: ../src/main-win-ui.c:198
-msgid "_Thumbnail View"
-msgstr "_Tumnagelvy"
-
-#: ../src/main-win-ui.c:199
+#: ../src/main-win-ui.c:241
 msgid "_Compact View"
 msgstr "_Kompakt vy"
 
-#: ../src/main-win-ui.c:200
+#: ../src/main-win-ui.c:242
+msgid "_Thumbnail View"
+msgstr "_Tumnagelvy"
+
+#: ../src/main-win-ui.c:243
 msgid "Detailed _List View"
 msgstr "Detaljerad _listvy"
 
-#: ../src/main-win-ui.c:212 ../src/main-win-ui.c:217
+#: ../src/main-win-ui.c:256 ../src/main-win-ui.c:261
 msgid "By _Name"
 msgstr "Efter _namn"
 
-#: ../src/main-win-ui.c:213 ../src/main-win-ui.c:218
+#: ../src/main-win-ui.c:257 ../src/main-win-ui.c:262
 msgid "By _Modification Time"
 msgstr "Efter ändringsdatu_m"
 
-#: ../src/main-win-ui.c:214 ../src/main-win-ui.c:219
+#: ../src/main-win-ui.c:258 ../src/main-win-ui.c:263
 msgid "By _Size"
 msgstr "Efter _storlek"
 
-#: ../src/main-win-ui.c:215 ../src/main-win-ui.c:220
+#: ../src/main-win-ui.c:259 ../src/main-win-ui.c:264
 msgid "By File _Type"
 msgstr "Efter _filtyp"
 
-#: ../src/main-win-ui.c:226
+#: ../src/main-win-ui.c:270
 msgid "Places"
 msgstr "Platser"
 
-#: ../src/main-win-ui.c:227
+#: ../src/main-win-ui.c:271
 msgid "Directory Tree"
 msgstr "Katalogträd"
 
-#: ../src/main-win-ui.c:228
+#: ../src/main-win-ui.c:272
 msgid "Remote"
 msgstr "Fjärr"
 
-#: ../src/main-win.c:585
+#: ../src/main-win.c:702
 msgid "Show history of visited folders"
 msgstr "Visa historik över besökta mappar"
 
-#: ../src/main-win.c:588
+#: ../src/main-win.c:705
 msgid "History"
 msgstr "Historik"
 
-#: ../src/main-win.c:602
+#: ../src/main-win.c:719
 msgid "You are in super user mode"
 msgstr "Du är i administratörsläge"
 
-#: ../src/main-win.c:766
+#: ../src/main-win.c:883
 msgid "Lightweight file manager\n"
 msgstr "Resurssnål filhanterare\n"
 
-#: ../src/main-win.c:771
+#: ../src/main-win.c:888
 #, c-format
 msgid "using LibFM ver. %s\n"
 msgstr "använder LibFM ver. %s\n"
 
-#: ../src/main-win.c:773
+#: ../src/main-win.c:890
 msgid ""
 "\n"
 "Developed by Hon Jen Yee (PCMan)"
@@ -826,11 +880,11 @@ msgstr ""
 "\n"
 "Utvecklad av Hon Jen Yee (PCMan)"
 
-#: ../src/main-win.c:798 ../src/main-win.c:806
+#: ../src/main-win.c:915 ../src/main-win.c:923
 msgid "Keyboard Navigation"
 msgstr "Tangentbordsnavigering"
 
-#: ../src/main-win.c:800
+#: ../src/main-win.c:917
 msgid ""
 "Tab: cycle focus Folder View -> Side Pane -> Tools Bar\n"
 "Shift+Tab: cycle focus Tools Bar -> Side Pane -> Folder View\n"
@@ -846,11 +900,7 @@ msgstr ""
 "F10: aktivera huvudmenyn\n"
 "Ctrl+L eller Alt+D: Sätt fokus på adressfältet"
 
-#: ../src/main-win.c:844
-msgid "Switch user command is not set."
-msgstr "Kommando för att byta användare är inte angivet."
-
-#: ../src/main-win.c:1270
+#: ../src/main-win.c:1515
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -861,7 +911,7 @@ msgstr ""
 "\"%s\"\n"
 "Ange namn för bokmärke:"
 
-#: ../src/main-win.c:1274
+#: ../src/main-win.c:1519
 msgid "Add to Bookmarks"
 msgstr "Lägg till i bokmärken"
 
@@ -912,8 +962,8 @@ msgstr "FIL"
 #: ../src/pcmanfm.c:87
 msgid "Set mode of desktop wallpaper. MODE=(color|stretch|fit|center|tile)"
 msgstr ""
-"Ange visningsläge för skrivbordsbakgrund. LÄGE = (color|stretch|fit|center|"
-"tile)"
+"Ange visningsläge för skrivbordsbakgrund. LÄGE = "
+"(color|stretch|fit|center|tile)"
 
 #: ../src/pcmanfm.c:87
 msgid "MODE"
@@ -948,30 +998,30 @@ msgstr "[FIL1, FIL2,...]"
 msgid "Terminal emulator is not set."
 msgstr "Terminalprogram har inte angivits."
 
-#: ../src/tab-page.c:55
+#: ../src/tab-page.c:54
 msgid "Open in New T_ab"
 msgstr "Öppna i ny _flik"
 
-#: ../src/tab-page.c:254
+#: ../src/tab-page.c:334
 #, c-format
 msgid "%d item selected"
 msgid_plural "%d items selected"
 msgstr[0] "%d objekt markerat"
 msgstr[1] "%d objekt markerade"
 
-#: ../src/tab-page.c:442
+#: ../src/tab-page.c:548
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Ledigt utrymme: %s (Totalt: %s )"
 
-#: ../src/tab-page.c:462
+#: ../src/tab-page.c:568
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] "%d objekt"
 msgstr[1] "%d objekt"
 
-#: ../src/tab-page.c:463
+#: ../src/tab-page.c:569
 #, c-format
 msgid " (%d hidden)"
 msgid_plural " (%d hidden)"
@@ -993,6 +1043,18 @@ msgstr "Utforska filsystemet och hantera filerna"
 #: ../data/pcmanfm-desktop-pref.desktop.in.h:2
 msgid "Change desktop wallpapers and behavior of desktop manager"
 msgstr "Ändra bakgrundsbild och hur skrivbordshanteraren beter sig"
+
+#~ msgid "Fin_d Files"
+#~ msgstr "_Sök efter filer"
+
+#~ msgid "Show Hidde_n"
+#~ msgstr "Visa _dolda"
+
+#~ msgid "T_win Pane Mode"
+#~ msgstr "Läge med d_ubbla paneler"
+
+#~ msgid "Switch user command is not set."
+#~ msgstr "Kommando för att byta användare är inte angivet."
 
 #~ msgid "Show \"_My Computer\" icon on desktop"
 #~ msgstr "_Visa ikonen \"Den här datorn\" på skrivbordet"
