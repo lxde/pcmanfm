@@ -31,6 +31,8 @@
 #include <string.h>
 #include <stdlib.h>
 
+#include "tab-page.h"
+
 #if !FM_CHECK_VERSION(1, 2, 0)
 typedef struct
 {
@@ -595,13 +597,29 @@ void fm_app_config_load_from_key_file(FmAppConfig* cfg, GKeyFile* kf)
     fm_key_file_get_int(kf, "ui", "splitter_pos", &cfg->splitter_pos);
 
 #if FM_CHECK_VERSION(1, 2, 0)
-    tmp = g_key_file_get_string(kf, "ui", "side_pane_mode", NULL);
-    if (tmp && tmp[0] >= '0' && tmp[0] <= '9') /* backward compatibility */
-        tmp_int = atoi(tmp);
-    else /* portable way */
-        tmp_int = fm_side_pane_get_mode_by_name(tmp);
-    g_free(tmp);
-    if (tmp_int != FM_SP_NONE)
+    tmp_int = FM_SP_NONE;
+    tmpv = g_key_file_get_string_list(kf, "ui", "side_pane_mode", NULL, NULL);
+    if (tmpv)
+    {
+        int i;
+
+        for (i = 0; tmpv[i]; i++)
+        {
+            tmp = tmpv[i];
+            if (strcmp(tmp, "hidden") == 0)
+                tmp_int |= FM_SP_HIDE;
+            else
+            {
+                tmp_int &= ~FM_SP_MODE_MASK;
+                if (tmp[0] >= '0' && tmp[0] <= '9') /* backward compatibility */
+                    tmp_int |= atoi(tmp);
+                else /* portable way */
+                    tmp_int |= fm_side_pane_get_mode_by_name(tmp);
+            }
+        }
+        g_strfreev(tmpv);
+    }
+    if ((tmp_int & FM_SP_MODE_MASK) != FM_SP_NONE)
 #else
     if(fm_key_file_get_int(kf, "ui", "side_pane_mode", &tmp_int))
 #endif
@@ -936,7 +954,11 @@ void fm_app_config_save_profile(FmAppConfig* cfg, const char* name)
         g_string_append_printf(buf, "win_height=%d\n", cfg->win_height);
         g_string_append_printf(buf, "splitter_pos=%d\n", cfg->splitter_pos);
 #if FM_CHECK_VERSION(1, 2, 0)
-        g_string_append_printf(buf, "side_pane_mode=%s\n", fm_side_pane_get_mode_name(cfg->side_pane_mode));
+        g_string_append(buf, "side_pane_mode=");
+        if (cfg->side_pane_mode & FM_SP_HIDE)
+            g_string_append(buf, "hidden;");
+        g_string_append_printf(buf, "%s\n",
+                               fm_side_pane_get_mode_name(cfg->side_pane_mode & FM_SP_MODE_MASK));
 #else
         g_string_append_printf(buf, "side_pane_mode=%d\n", cfg->side_pane_mode);
 #endif
