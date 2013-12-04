@@ -125,6 +125,14 @@ struct _FmAppConfig
 
     /* pre-1.2.0 style config - common settings for all monitors */
     FmDesktopConfig desktop_section;
+
+    /* toolbar settings */
+    struct {
+        gboolean visible : 1;
+        gboolean new_tab : 1;
+        gboolean nav : 1;
+        gboolean home : 1;
+    } tb;
 };
 
 struct _FmAppConfigClass

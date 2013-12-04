@@ -485,6 +485,7 @@ static void fm_app_config_init(FmAppConfig *cfg)
     cfg->desktop_section.desktop_sort_by = COL_FILE_MTIME;
 #endif
     cfg->desktop_section.wallpaper_common = TRUE;
+    cfg->tb.visible = cfg->tb.new_tab = cfg->tb.nav = cfg->tb.home = TRUE;
 }
 
 
@@ -570,7 +571,7 @@ void fm_app_config_load_from_key_file(FmAppConfig* cfg, GKeyFile* kf)
     char *tmp;
     char **tmpv;
 #endif
-    int tmp_int;
+    int tmp_int, i;
 
     /* behavior */
     fm_key_file_get_int(kf, "config", "bm_open_method", &cfg->bm_open_method);
@@ -601,8 +602,6 @@ void fm_app_config_load_from_key_file(FmAppConfig* cfg, GKeyFile* kf)
     tmpv = g_key_file_get_string_list(kf, "ui", "side_pane_mode", NULL, NULL);
     if (tmpv)
     {
-        int i;
-
         for (i = 0; tmpv[i]; i++)
         {
             tmp = tmpv[i];
@@ -652,6 +651,27 @@ void fm_app_config_load_from_key_file(FmAppConfig* cfg, GKeyFile* kf)
         cfg->columns = tmpv;
     }
 #endif
+    tmpv = g_key_file_get_string_list(kf, "ui", "toolbar", NULL, NULL);
+    if (tmpv)
+    {
+        /* reset defaults */
+        cfg->tb.visible = TRUE;
+        cfg->tb.new_tab = cfg->tb.nav = cfg->tb.home = FALSE;
+        /* parse the array */
+        for (i = 0; tmpv[i]; i++)
+        {
+            tmp = tmpv[i];
+            if (cfg->tb.visible && strcmp(tmp, "hidden") == 0)
+                cfg->tb.visible = FALSE;
+            else if (!cfg->tb.new_tab && strcmp(tmp, "newtab") == 0)
+                cfg->tb.new_tab = TRUE;
+            else if (!cfg->tb.nav && strcmp(tmp, "navigation") == 0)
+                cfg->tb.nav = TRUE;
+            else if (!cfg->tb.home && strcmp(tmp, "home") == 0)
+                cfg->tb.home = TRUE;
+        }
+        g_strfreev(tmpv);
+    }
 }
 
 void fm_app_config_load_from_profile(FmAppConfig* cfg, const char* name)
@@ -980,6 +1000,16 @@ void fm_app_config_save_profile(FmAppConfig* cfg, const char* name)
             g_string_append_c(buf, '\n');
         }
 #endif
+        g_string_append(buf, "toolbar=");
+        if (!cfg->tb.visible)
+            g_string_append(buf, "hidden;");
+        if (cfg->tb.new_tab)
+            g_string_append(buf, "newtab;");
+        if (cfg->tb.nav)
+            g_string_append(buf, "navigation;");
+        if (cfg->tb.home)
+            g_string_append(buf, "home;");
+        g_string_append_c(buf, '\n');
 
         path = g_build_filename(dir_path, "pcmanfm.conf", NULL);
         g_file_set_contents(path, buf->str, buf->len, NULL);

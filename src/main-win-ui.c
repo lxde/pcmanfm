@@ -72,13 +72,13 @@ static const char main_menu_xml[] =
   "<menu action='ViewMenu'>"
     "<menuitem action='Reload'/>"
     "<separator/>"
-    /* "<menu action='Toolbar'>"
+    "<menu action='Toolbar'>"
       "<menuitem action='ShowToolbar'/>"
       "<separator/>"
       "<menuitem action='ToolbarNewTab'/>"
       "<menuitem action='ToolbarNav'/>"
       "<menuitem action='ToolbarHome'/>"
-    "</menu>" */
+    "</menu>"
     "<menu action='SidePane'>"
       "<menuitem action='ShowSidePane' />"
       "<separator/>"
@@ -168,6 +168,7 @@ static GtkActionEntry main_win_actions[]=
         {"Pref", GTK_STOCK_PREFERENCES, N_("Prefere_nces"), NULL, NULL, G_CALLBACK(on_preference)},
     {"ViewMenu", NULL, N_("_View"), NULL, NULL, NULL},
         {"Reload", GTK_STOCK_REFRESH, N_("_Reload Folder"), "F5", N_("Reload current folder"), G_CALLBACK(on_reload)},
+        {"Toolbar", NULL, N_("Tool_bar"), NULL, NULL, NULL},
         {"SidePane", NULL, N_("Side _Pane"), NULL, NULL, NULL},
         /* other see below: 'ShowHidden' 'ShowStatus' 'Fullscreen' 'IconView'... */
         {"Sort", NULL, N_("S_ort Files"), NULL, NULL, NULL},
@@ -223,6 +224,10 @@ static GtkToggleActionEntry main_win_toggle_actions[]=
     {"SavePerFolder", NULL, N_("Preserve This Folder's Settings"), NULL,
             N_("Check to remember view and sort as folder setting rather than global one"),
             G_CALLBACK(on_save_per_folder), FALSE},
+    {"ShowToolbar", NULL, N_("Show _Toolbar"), NULL, NULL, G_CALLBACK(on_show_toolbar), TRUE},
+    {"ToolbarNewTab", NULL, N_("Show 'Ne_w Tab' Button"), NULL, NULL, G_CALLBACK(on_toolbar_new_tab), TRUE},
+    {"ToolbarNav", NULL, N_("Show _Navigation Buttons"), NULL, NULL, G_CALLBACK(on_toolbar_nav), TRUE},
+    {"ToolbarHome", NULL, N_("Show '_Home' Button"), NULL, NULL, G_CALLBACK(on_toolbar_home), TRUE},
     {"ShowSidePane", NULL, N_("Sho_w Side Pane"), "F9", NULL, G_CALLBACK(on_show_side_pane), TRUE},
     {"ShowStatus", NULL, N_("Show Status B_ar"), "<Ctrl>B", NULL, NULL, TRUE},
     {"DualPane", NULL, N_("_Dual Pane Mode"), "F3", N_("Show two panels with folder views"), G_CALLBACK(on_dual_pane), FALSE},

@@ -92,6 +92,10 @@ static void on_sort_ignore_case(GtkToggleAction* act, FmMainWin* win);
 static void on_save_per_folder(GtkToggleAction* act, FmMainWin* win);
 static void on_show_side_pane(GtkToggleAction* act, FmMainWin* win);
 static void on_dual_pane(GtkToggleAction* act, FmMainWin* win);
+static void on_show_toolbar(GtkToggleAction *action, FmMainWin *win);
+static void on_toolbar_new_tab(GtkToggleAction *act, FmMainWin *win);
+static void on_toolbar_nav(GtkToggleAction *act, FmMainWin *win);
+static void on_toolbar_home(GtkToggleAction *act, FmMainWin *win);
 static void on_change_mode(GtkRadioAction* act, GtkRadioAction *cur, FmMainWin* win);
 static void on_sort_by(GtkRadioAction* act, GtkRadioAction *cur, FmMainWin* win);
 static void on_sort_type(GtkRadioAction* act, GtkRadioAction *cur, FmMainWin* win);
@@ -1446,6 +1450,8 @@ gint fm_main_win_add_tab(FmMainWin* win, FmPath* path)
 
 FmMainWin* fm_main_win_add_win(FmMainWin* win, FmPath* path)
 {
+    GtkAction *act;
+
     win = fm_main_win_new();
     gtk_window_set_default_size(GTK_WINDOW(win),
                                 app_config->win_width,
@@ -1454,6 +1460,15 @@ FmMainWin* fm_main_win_add_win(FmMainWin* win, FmPath* path)
     /* create new tab */
     fm_main_win_add_tab(win, path);
     gtk_window_present(GTK_WINDOW(win));
+    /* set toolbar visibility and menu toggleables from config */
+    act = gtk_ui_manager_get_action(win->ui, "/menubar/ViewMenu/Toolbar/ShowToolbar");
+    gtk_toggle_action_set_active(GTK_TOGGLE_ACTION(act), app_config->tb.visible);
+    act = gtk_ui_manager_get_action(win->ui, "/menubar/ViewMenu/Toolbar/ToolbarNewTab");
+    gtk_toggle_action_set_active(GTK_TOGGLE_ACTION(act), app_config->tb.new_tab);
+    act = gtk_ui_manager_get_action(win->ui, "/menubar/ViewMenu/Toolbar/ToolbarNav");
+    gtk_toggle_action_set_active(GTK_TOGGLE_ACTION(act), app_config->tb.nav);
+    act = gtk_ui_manager_get_action(win->ui, "/menubar/ViewMenu/Toolbar/ToolbarHome");
+    gtk_toggle_action_set_active(GTK_TOGGLE_ACTION(act), app_config->tb.home);
     return win;
 }
 
@@ -1509,6 +1524,67 @@ static void on_add_bookmark(GtkAction* act, FmMainWin* win)
         fm_bookmarks_append(win->bookmarks, cwd, name);
         g_free(name);
     }
+}
+
+static void on_show_toolbar(GtkToggleAction *action, FmMainWin *win)
+{
+    gboolean active = gtk_toggle_action_get_active(action);
+    GtkAction* act;
+
+    app_config->tb.visible = active;
+    gtk_widget_set_visible(GTK_WIDGET(win->toolbar), active);
+    act = gtk_ui_manager_get_action(win->ui, "/menubar/ViewMenu/Toolbar/ToolbarNewTab");
+    gtk_action_set_sensitive(act, active);
+    act = gtk_ui_manager_get_action(win->ui, "/menubar/ViewMenu/Toolbar/ToolbarNav");
+    gtk_action_set_sensitive(act, active);
+    act = gtk_ui_manager_get_action(win->ui, "/menubar/ViewMenu/Toolbar/ToolbarHome");
+    gtk_action_set_sensitive(act, active);
+    pcmanfm_save_config(FALSE);
+}
+
+/* toolbar items: NewTab Prev (Hist) Next Up Home (Location) Go */
+static void on_toolbar_new_tab(GtkToggleAction *act, FmMainWin *win)
+{
+    gboolean active = gtk_toggle_action_get_active(act);
+    GtkWidget *toolitem;
+
+    app_config->tb.new_tab = active;
+    toolitem = gtk_ui_manager_get_widget(win->ui, "/toolbar/NewTab");
+    gtk_widget_set_visible(toolitem, active);
+    pcmanfm_save_config(FALSE);
+}
+
+static void on_toolbar_nav(GtkToggleAction *act, FmMainWin *win)
+{
+    gboolean active = gtk_toggle_action_get_active(act);
+    GtkWidget *toolitem;
+    int n;
+
+    app_config->tb.nav = active;
+    toolitem = gtk_ui_manager_get_widget(win->ui, "/toolbar/Next");
+    gtk_widget_set_visible(toolitem, active);
+    n = gtk_toolbar_get_item_index(win->toolbar, GTK_TOOL_ITEM(toolitem));
+    gtk_widget_set_visible(GTK_WIDGET(gtk_toolbar_get_nth_item(win->toolbar, n-1)),
+                           active); /* Hist */
+#if FM_CHECK_VERSION(1, 2, 1)
+    gtk_widget_set_visible(GTK_WIDGET(gtk_toolbar_get_nth_item(win->toolbar, n-2)),
+                           active); /* Prev */
+#endif
+    gtk_widget_set_visible(GTK_WIDGET(gtk_toolbar_get_nth_item(win->toolbar, n+1)),
+                           active); /* Up */
+    /* FIXME: update toolbars on other windows? */
+    pcmanfm_save_config(FALSE);
+}
+
+static void on_toolbar_home(GtkToggleAction *act, FmMainWin *win)
+{
+    gboolean active = gtk_toggle_action_get_active(act);
+    GtkWidget *toolitem;
+
+    app_config->tb.home = active;
+    toolitem = gtk_ui_manager_get_widget(win->ui, "/toolbar/Home");
+    gtk_widget_set_visible(toolitem, active);
+    pcmanfm_save_config(FALSE);
 }
 
 static void on_location(GtkAction* act, FmMainWin* win)
