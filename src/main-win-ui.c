@@ -173,7 +173,7 @@ static GtkActionEntry main_win_actions[]=
         {"Sort", NULL, N_("S_ort Files"), NULL, NULL, NULL},
         {"SizeBigger", GTK_STOCK_ZOOM_IN, N_("_Zoom In"), "<Ctrl>KP_Add", NULL, G_CALLBACK(on_size_increment)},
         {"SizeSmaller", GTK_STOCK_ZOOM_OUT, N_("Zoom O_ut"), "<Ctrl>KP_Subtract", NULL, G_CALLBACK(on_size_decrement)},
-        {"SizeDefault", GTK_STOCK_ZOOM_100, N_("Norm_al Size"), "<Ctrl>0", NULL, G_CALLBACK(on_size_default)},
+        {"SizeDefault", GTK_STOCK_ZOOM_100, N_("_Normal Size"), "<Ctrl>0", NULL, G_CALLBACK(on_size_default)},
     {"HelpMenu", NULL, N_("_Help"), NULL, NULL, NULL},
         {"About", GTK_STOCK_ABOUT, NULL, NULL, NULL, G_CALLBACK(on_about)},
         {"KeyNavList", GTK_STOCK_INFO, N_("_Keyboard Navigation"), NULL, NULL, G_CALLBACK(on_key_nav_list)},
@@ -195,7 +195,7 @@ static GtkActionEntry main_win_actions[]=
         {"Term", "utilities-terminal", N_("Open Current Folder in _Terminal"), "F4", NULL, G_CALLBACK(on_open_in_terminal)},
         /*{"AsRoot", GTK_STOCK_DIALOG_AUTHENTICATION, N_("Open Current Folder as _Root"), NULL, NULL, G_CALLBACK(on_open_as_root)},*/
 #if FM_CHECK_VERSION(1, 0, 2)
-        {"Search", GTK_STOCK_FIND, N_("Fin_d Files"), "<Ctrl><Shift>F", N_("Open search dialog"), G_CALLBACK(on_search)},
+        {"Search", GTK_STOCK_FIND, N_("Fin_d Files..."), "<Ctrl><Shift>F", N_("Open search dialog"), G_CALLBACK(on_search)},
 #endif
     /* for accelerators */
     {"Location", NULL, NULL, "<Alt>d", NULL, G_CALLBACK(on_location)},
@@ -211,7 +211,6 @@ static GtkActionEntry main_win_actions[]=
 /* main_win_toggle_actions+main_win_mode_actions - see 'ViewMenu' for mnemonics */
 static GtkToggleActionEntry main_win_toggle_actions[]=
 {
-    {"ShowHidden", NULL, N_("Show Hidde_n"), "<Ctrl>H", NULL, G_CALLBACK(on_show_hidden), FALSE},
 #if FM_CHECK_VERSION(1, 2, 0)
     /* Note to translators: "Mingle..." means "Do not put folders before files" but make the translation as short as possible, please! */
     {"MingleDirs", NULL, N_("Mingle _Files and Folders"), NULL, NULL, G_CALLBACK(on_mingle_dirs), FALSE},
@@ -219,6 +218,7 @@ static GtkToggleActionEntry main_win_toggle_actions[]=
 #if FM_CHECK_VERSION(1, 0, 2)
     {"SortIgnoreCase", NULL, N_("_Ignore Name Case"), NULL, NULL, G_CALLBACK(on_sort_ignore_case), TRUE},
 #endif
+    {"ShowHidden", NULL, N_("Sho_w Hidden"), "<Ctrl>H", NULL, G_CALLBACK(on_show_hidden), FALSE},
     /* Note to translators: this save is meant for folder's settings such as sort */
     {"SavePerFolder", NULL, N_("Preserve This Folder's Settings"), NULL,
             N_("Check to remember view and sort as folder setting rather than global one"),
