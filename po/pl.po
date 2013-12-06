@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm 1.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-12-04 22:28+0200\n"
-"PO-Revision-Date: 2013-12-06 10:50+0000\n"
+"PO-Revision-Date: 2013-12-06 10:56+0000\n"
 "Last-Translator: Piotr <strebski@o2.pl>\n"
 "Language-Team: polski <>\n"
 "Language: pl\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1386327042.0\n"
+"X-POOTLE-MTIME: 1386327361.0\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2013"
@@ -770,22 +770,24 @@ msgstr "Zachowaj ustawienia tego katalogu"
 msgid ""
 "Check to remember view and sort as folder setting rather than global one"
 msgstr ""
+"Kliknij, aby zapamiętać widok i sortowanie jako ustawienie katalogu, zamiast "
+"używać globalnych"
 
 #: ../src/main-win-ui.c:227
 msgid "Show _Toolbar"
-msgstr ""
+msgstr "Po_każ pasek narzędziowy"
 
 #: ../src/main-win-ui.c:228
 msgid "Show 'Ne_w Tab' Button"
-msgstr ""
+msgstr "Pokaż przycisk \"No_wa karta\""
 
 #: ../src/main-win-ui.c:229
 msgid "Show _Navigation Buttons"
-msgstr ""
+msgstr "Pokaż przyciski _nawigacji"
 
 #: ../src/main-win-ui.c:230
 msgid "Show '_Home' Button"
-msgstr ""
+msgstr "Pokaż przycisk 'Katalog _domowy'"
 
 #: ../src/main-win-ui.c:231
 msgid "Sho_w Side Pane"
@@ -797,11 +799,11 @@ msgstr "Wyświetlanie paska _stanu"
 
 #: ../src/main-win-ui.c:233
 msgid "_Dual Pane Mode"
-msgstr ""
+msgstr "Tryb dwó_ch paneli"
 
 #: ../src/main-win-ui.c:233
 msgid "Show two panels with folder views"
-msgstr ""
+msgstr "Pokaż dwa panele z widokiem katalogów"
 
 #: ../src/main-win-ui.c:234
 msgid "Fullscreen _Mode"
