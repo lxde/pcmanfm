@@ -37,6 +37,7 @@
 #include "main-win.h"
 #include "pref.h"
 #include "tab-page.h"
+#include "connect-server.h"
 
 #include "gseal-gtk-compat.h"
 
@@ -81,6 +82,7 @@ static void on_go_trash(GtkAction* act, FmMainWin* win);
 static void on_go_computer(GtkAction* act, FmMainWin* win);
 static void on_go_network(GtkAction* act, FmMainWin* win);
 static void on_go_apps(GtkAction* act, FmMainWin* win);
+static void on_go_connect(GtkAction* act, FmMainWin* win);
 static void on_reload(GtkAction* act, FmMainWin* win);
 static void on_show_hidden(GtkToggleAction* act, FmMainWin* win);
 #if FM_CHECK_VERSION(1, 2, 0)
@@ -1358,6 +1360,11 @@ static void on_go_network(GtkAction* act, FmMainWin* win)
 static void on_go_apps(GtkAction* act, FmMainWin* win)
 {
     fm_main_win_chdir(win, fm_path_get_apps_menu());
+}
+
+static void on_go_connect(GtkAction* act, FmMainWin* win)
+{
+    open_connect_dialog(GTK_WINDOW(win));
 }
 
 void fm_main_win_chdir_by_name(FmMainWin* win, const char* path_str)

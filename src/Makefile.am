@@ -16,6 +16,7 @@ pcmanfm_SOURCES = \
 	volume-manager.c \
 	pref.c \
 	single-inst.c \
+	connect-server.c \
 	$(NULL)
 
 EXTRA_DIST= \
@@ -29,6 +30,7 @@ EXTRA_DIST= \
 	volume-manager.h \
 	pref.h \
 	single-inst.h \
+	connect-server.h \
 	gseal-gtk-compat.h \
 	$(NULL)
 

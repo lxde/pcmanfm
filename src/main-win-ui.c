@@ -65,6 +65,8 @@ static const char main_menu_xml[] =
     "<menuitem action='Apps'/>"
     "<menuitem action='Computer'/>"
     "<menuitem action='Network'/>"
+    "<separator/>"
+    "<menuitem action='Connect'/>"
   "</menu>"
   "<menu action='BookmarksMenu'>"
     "<menuitem action='AddBookmark'/>"
@@ -187,8 +189,9 @@ static GtkActionEntry main_win_actions[]=
         {"Trash", "user-trash", N_("_Trash Can"), NULL, N_("Open trash can"), G_CALLBACK(on_go_trash)},
         {"Root", "drive-harddisk", N_("Filesyste_m Root"), NULL, N_("Go fo filesystem root"), NULL},
         {"Apps", "system-software-install", N_("_Applications"), NULL, N_("Go to root of applications menu folder"), G_CALLBACK(on_go_apps)},
-        {"Computer", "computer", N_("Devi_ces"), NULL, N_("Go to list of devices connected to the computer"), G_CALLBACK(on_go_computer)},
+        {"Computer", "computer", N_("Dev_ices"), NULL, N_("Go to list of devices connected to the computer"), G_CALLBACK(on_go_computer)},
         {"Network", GTK_STOCK_NETWORK, N_("Net_work"), NULL, N_("Go to list of places on the network"), G_CALLBACK(on_go_network)},
+        {"Connect", NULL, N_("_Connect to Server..."), NULL, N_("Open a window to choose remote folder location"), G_CALLBACK(on_go_connect)},
         {"Go", GTK_STOCK_JUMP_TO, NULL, NULL, N_("Go to the path in the location bar"), G_CALLBACK(on_go)},
     {"BookmarksMenu", NULL, N_("_Bookmarks"), NULL, NULL, NULL},
         {"AddBookmark", GTK_STOCK_ADD, N_("_Add to Bookmarks"), "<Ctrl>D", N_("Add current folder to bookmarks list"), G_CALLBACK(on_add_bookmark)},

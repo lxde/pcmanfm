@@ -6,6 +6,7 @@ ui_SOURCES = \
 	pref.glade \
 	desktop-pref.glade \
 	autorun.glade \
+	connect.glade \
 	$(NULL)
 ui_in_files= \
 	$(ui_SOURCES) \
