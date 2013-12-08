@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm 1.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-04 22:28+0200\n"
-"PO-Revision-Date: 2013-12-06 05:17+0000\n"
+"POT-Creation-Date: 2013-12-08 23:54+0200\n"
+"PO-Revision-Date: 2013-12-08 22:52+0000\n"
 "Last-Translator: Adolfo <fitoschido@ubuntu.com>\n"
 "Language-Team: Spanish (Castilian) <translation@mailinglist.lxde.org>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1386307049.0\n"
+"X-POOTLE-MTIME: 1386543152.0\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2013"
@@ -285,7 +285,7 @@ msgstr "caracteres"
 
 #: ../data/ui/pref.glade.h:38
 msgid "<b>Directories Tree</b>"
-msgstr "<b>Árbol de directorios</b>"
+msgstr "<b>Árbol de carpetas</b>"
 
 #: ../data/ui/pref.glade.h:39
 msgid "Hide e_xpander on empty or locked folder"
@@ -303,7 +303,7 @@ msgstr "Carpeta _personal"
 msgid "Des_ktop"
 msgstr "_Escritorio"
 
-#: ../data/ui/pref.glade.h:43 ../src/main-win-ui.c:187
+#: ../data/ui/pref.glade.h:43 ../src/main-win-ui.c:189
 msgid "_Trash Can"
 msgstr "_Papelera"
 
@@ -315,7 +315,7 @@ msgstr "Raí_z del sistema de archivos"
 msgid "App_lications"
 msgstr "Ap_licaciones"
 
-#: ../data/ui/pref.glade.h:46
+#: ../data/ui/pref.glade.h:46 ../src/main-win-ui.c:192
 msgid "Dev_ices"
 msgstr "D_ispositivos"
 
@@ -480,6 +480,50 @@ msgstr "Detectando…"
 msgid "Please select the action you want to perform:"
 msgstr "Seleccione la acción que quiere realizar:"
 
+#: ../data/ui/connect.glade.h:1
+msgid "Connect to remote server"
+msgstr "Conectar con un servidor remoto"
+
+#: ../data/ui/connect.glade.h:2
+msgid "<b>Specify remote folder to connect</b>"
+msgstr "<b>Especifique la carpeta remota para conectarse</b>"
+
+#: ../data/ui/connect.glade.h:3
+msgid "_Type:"
+msgstr "_Tipo:"
+
+#: ../data/ui/connect.glade.h:4
+msgid "_Host:"
+msgstr "_Equipo:"
+
+#: ../data/ui/connect.glade.h:5
+msgid "_Port:"
+msgstr "_Puerto:"
+
+#: ../data/ui/connect.glade.h:6
+msgid "Pat_h:"
+msgstr "_Ruta:"
+
+#: ../data/ui/connect.glade.h:7
+msgid "_Anonymous login"
+msgstr "Iniciar la sesión _anónimamente"
+
+#: ../data/ui/connect.glade.h:8
+msgid "_Login as:"
+msgstr "Iniciar la sesión _como:"
+
+#: ../data/ui/connect.glade.h:9
+msgid "SSH"
+msgstr "SSH"
+
+#: ../data/ui/connect.glade.h:10
+msgid "FTP"
+msgstr "FTP"
+
+#: ../data/ui/connect.glade.h:11
+msgid "WebDAV"
+msgstr "WebDAV"
+
 #: ../src/volume-manager.c:164
 msgid "Removable Disk"
 msgstr "Disco extraíble"
@@ -525,355 +569,359 @@ msgstr "Mostrar el menú del escritorio"
 msgid "Desktop"
 msgstr "Escritorio"
 
-#: ../src/main-win-ui.c:151
+#: ../src/main-win-ui.c:153
 msgid "_File"
 msgstr "_Archivo"
 
-#: ../src/main-win-ui.c:152
+#: ../src/main-win-ui.c:154
 msgid "_New Window"
 msgstr "_Ventana nueva"
 
-#: ../src/main-win-ui.c:153
+#: ../src/main-win-ui.c:155
 msgid "New T_ab"
 msgstr "Pestaña _nueva"
 
-#: ../src/main-win-ui.c:153
+#: ../src/main-win-ui.c:155
 msgid "Create new tab for this folder"
 msgstr "Crear una pestaña nueva para esta carpeta"
 
-#: ../src/main-win-ui.c:154
+#: ../src/main-win-ui.c:156
 msgid "C_reate New..."
 msgstr "C_rear nuevo…"
 
-#: ../src/main-win-ui.c:155
+#: ../src/main-win-ui.c:157
 msgid "_Close Tab"
 msgstr "_Cerrar la pestaña"
 
-#: ../src/main-win-ui.c:156
+#: ../src/main-win-ui.c:158
 msgid "Close _Window"
 msgstr "Cerrar la _ventana"
 
-#: ../src/main-win-ui.c:157
+#: ../src/main-win-ui.c:159
 msgid "_Edit"
 msgstr "_Editar"
 
-#: ../src/main-win-ui.c:162
+#: ../src/main-win-ui.c:164
 msgid "_Rename"
 msgstr "_Renombrar"
 
-#: ../src/main-win-ui.c:163
+#: ../src/main-win-ui.c:165
 msgid "Create Symlin_k"
 msgstr "Crear enlace _simbólico"
 
-#: ../src/main-win-ui.c:164
+#: ../src/main-win-ui.c:166
 msgid "_Move To..."
 msgstr "_Mover a…"
 
-#: ../src/main-win-ui.c:165
+#: ../src/main-win-ui.c:167
 msgid "C_opy To..."
 msgstr "C_opiar en…"
 
-#: ../src/main-win-ui.c:167
+#: ../src/main-win-ui.c:169
 msgid "_Invert Selection"
 msgstr "_Invertir la selección"
 
-#: ../src/main-win-ui.c:168
+#: ../src/main-win-ui.c:170
 msgid "Prefere_nces"
 msgstr "Prefere_ncias"
 
-#: ../src/main-win-ui.c:169
+#: ../src/main-win-ui.c:171
 msgid "_View"
 msgstr "_Ver"
 
-#: ../src/main-win-ui.c:170
+#: ../src/main-win-ui.c:172
 msgid "_Reload Folder"
 msgstr "_Recargar la carpeta"
 
-#: ../src/main-win-ui.c:170
+#: ../src/main-win-ui.c:172
 msgid "Reload current folder"
 msgstr "Recargar la carpeta actual"
 
-#: ../src/main-win-ui.c:171
+#: ../src/main-win-ui.c:173
 msgid "Tool_bar"
 msgstr "_Barra de herramientas"
 
-#: ../src/main-win-ui.c:172
+#: ../src/main-win-ui.c:174
 msgid "Side _Pane"
 msgstr "Panel _lateral"
 
 #. other see below: 'ShowHidden' 'ShowStatus' 'Fullscreen' 'IconView'...
-#: ../src/main-win-ui.c:174
+#: ../src/main-win-ui.c:176
 msgid "S_ort Files"
 msgstr "_Ordenar los archivos"
 
-#: ../src/main-win-ui.c:175
+#: ../src/main-win-ui.c:177
 msgid "_Zoom In"
 msgstr "_Ampliar"
 
-#: ../src/main-win-ui.c:176
+#: ../src/main-win-ui.c:178
 msgid "Zoom O_ut"
 msgstr "_Reducir"
 
-#: ../src/main-win-ui.c:177
+#: ../src/main-win-ui.c:179
 msgid "_Normal Size"
 msgstr "Tamaño _normal"
 
-#: ../src/main-win-ui.c:178
+#: ../src/main-win-ui.c:180
 msgid "_Help"
 msgstr "Ay_uda"
 
-#: ../src/main-win-ui.c:180
+#: ../src/main-win-ui.c:182
 msgid "_Keyboard Navigation"
 msgstr "_Navegación con el teclado"
 
-#: ../src/main-win-ui.c:181
+#: ../src/main-win-ui.c:183
 msgid "_Go"
 msgstr "_Ir"
 
-#: ../src/main-win-ui.c:182
+#: ../src/main-win-ui.c:184
 msgid "_Previous Folder"
 msgstr "Carpeta _anterior"
 
-#: ../src/main-win-ui.c:182
+#: ../src/main-win-ui.c:184
 msgid "Return to previous folder in history"
 msgstr "Volver a la carpeta anterior del histórico"
 
-#: ../src/main-win-ui.c:183
+#: ../src/main-win-ui.c:185
 msgid "_Next Folder"
 msgstr "Carpeta _siguiente"
 
-#: ../src/main-win-ui.c:183
+#: ../src/main-win-ui.c:185
 msgid "Go forward to next folder in history"
 msgstr "Ir a la carpeta siguiente del histórico"
 
-#: ../src/main-win-ui.c:184
+#: ../src/main-win-ui.c:186
 msgid "Pa_rent Folder"
 msgstr "Carpeta s_uperior"
 
-#: ../src/main-win-ui.c:184
+#: ../src/main-win-ui.c:186
 msgid "Go to parent Folder"
 msgstr "Ir a la carpeta superior"
 
-#: ../src/main-win-ui.c:185
+#: ../src/main-win-ui.c:187
 msgid "H_ome Folder"
 msgstr "Carpeta de _inicio"
 
-#: ../src/main-win-ui.c:185
+#: ../src/main-win-ui.c:187
 msgid "Go to home folder"
 msgstr "Ir a la carpeta personal"
 
-#: ../src/main-win-ui.c:186
+#: ../src/main-win-ui.c:188
 msgid "_Desktop"
 msgstr "_Escritorio"
 
-#: ../src/main-win-ui.c:186
+#: ../src/main-win-ui.c:188
 msgid "Go to desktop folder"
 msgstr "Ir a la carpeta Escritorio"
 
-#: ../src/main-win-ui.c:187
+#: ../src/main-win-ui.c:189
 msgid "Open trash can"
 msgstr "Abrir la papelera"
 
-#: ../src/main-win-ui.c:188
+#: ../src/main-win-ui.c:190
 msgid "Filesyste_m Root"
 msgstr "Raíz del siste_ma de archivos"
 
-#: ../src/main-win-ui.c:188
+#: ../src/main-win-ui.c:190
 msgid "Go fo filesystem root"
 msgstr "Ir a la raíz del sistema de archivos"
 
-#: ../src/main-win-ui.c:189
+#: ../src/main-win-ui.c:191
 msgid "_Applications"
 msgstr "_Aplicaciones"
 
-#: ../src/main-win-ui.c:189
+#: ../src/main-win-ui.c:191
 msgid "Go to root of applications menu folder"
 msgstr "Ir a la carpeta raíz del menú de aplicaciones"
 
-#: ../src/main-win-ui.c:190
-msgid "Devi_ces"
-msgstr "Dispositi_vos"
-
-#: ../src/main-win-ui.c:190
+#: ../src/main-win-ui.c:192
 msgid "Go to list of devices connected to the computer"
 msgstr "Ir a la lista de dispositivos conectados al equipo"
 
-#: ../src/main-win-ui.c:191
+#: ../src/main-win-ui.c:193
 msgid "Net_work"
 msgstr "_Red"
 
-#: ../src/main-win-ui.c:191
+#: ../src/main-win-ui.c:193
 msgid "Go to list of places on the network"
 msgstr "Ir a la lista de lugares en la red"
 
-#: ../src/main-win-ui.c:192
+#: ../src/main-win-ui.c:194
+msgid "_Connect to Server..."
+msgstr "_Conectar con un servidor…"
+
+#: ../src/main-win-ui.c:194
+msgid "Open a window to choose remote folder location"
+msgstr "Abrir una ventana para elegir la ubicación de la carpeta remota"
+
+#: ../src/main-win-ui.c:195
 msgid "Go to the path in the location bar"
 msgstr "Ir a la ruta de la barra de ubicación"
 
-#: ../src/main-win-ui.c:193
+#: ../src/main-win-ui.c:196
 msgid "_Bookmarks"
 msgstr "_Marcadores"
 
-#: ../src/main-win-ui.c:194
+#: ../src/main-win-ui.c:197
 msgid "_Add to Bookmarks"
 msgstr "_Añadir a los marcadores"
 
-#: ../src/main-win-ui.c:194
+#: ../src/main-win-ui.c:197
 msgid "Add current folder to bookmarks list"
 msgstr "Añadir la carpeta actual a la lista de marcadores"
 
-#: ../src/main-win-ui.c:195
+#: ../src/main-win-ui.c:198
 msgid "Tool_s"
 msgstr "_Herramientas"
 
-#: ../src/main-win-ui.c:196
+#: ../src/main-win-ui.c:199
 msgid "Open Current Folder in _Terminal"
 msgstr "Abrir la carpeta actual en un _terminal"
 
-#: ../src/main-win-ui.c:199
+#: ../src/main-win-ui.c:202
 msgid "Fin_d Files..."
 msgstr "_Buscar archivos…"
 
-#: ../src/main-win-ui.c:199
+#: ../src/main-win-ui.c:202
 msgid "Open search dialog"
 msgstr "Abrir el diálogo de búsqueda"
 
 #. for popup menu - these entries exist in FmFolderView popup still
-#: ../src/main-win-ui.c:208
+#: ../src/main-win-ui.c:211
 msgid "Folder"
 msgstr "Carpeta"
 
-#: ../src/main-win-ui.c:209
+#: ../src/main-win-ui.c:212
 msgid "Empty File"
 msgstr "Archivo vacío"
 
 #. Note to translators: "Mingle..." means "Do not put folders before files" but make the translation as short as possible, please!
-#: ../src/main-win-ui.c:217
+#: ../src/main-win-ui.c:220
 msgid "Mingle _Files and Folders"
 msgstr "Me_zclar archivos y carpetas"
 
-#: ../src/main-win-ui.c:220
+#: ../src/main-win-ui.c:223
 msgid "_Ignore Name Case"
 msgstr "_Ignorar mayús./minús. en nombres"
 
-#: ../src/main-win-ui.c:222
+#: ../src/main-win-ui.c:225
 msgid "Sho_w Hidden"
 msgstr "Mostrar lo _oculto"
 
 #. Note to translators: this save is meant for folder's settings such as sort
-#: ../src/main-win-ui.c:224
+#: ../src/main-win-ui.c:227
 msgid "Preserve This Folder's Settings"
 msgstr "Conservar ajustes de esta carpeta"
 
-#: ../src/main-win-ui.c:225
+#: ../src/main-win-ui.c:228
 msgid ""
 "Check to remember view and sort as folder setting rather than global one"
 msgstr ""
 "Márquela para recordar la vista y ordenación como ajuste de la carpeta en "
 "vez de uno global"
 
-#: ../src/main-win-ui.c:227
+#: ../src/main-win-ui.c:230
 msgid "Show _Toolbar"
 msgstr "Mostrar la barra de _herramientas"
 
-#: ../src/main-win-ui.c:228
+#: ../src/main-win-ui.c:231
 msgid "Show 'Ne_w Tab' Button"
 msgstr "Mostrar el botón «Pestaña nue_va»"
 
-#: ../src/main-win-ui.c:229
+#: ../src/main-win-ui.c:232
 msgid "Show _Navigation Buttons"
 msgstr "Mostrar los botones de _navegación"
 
-#: ../src/main-win-ui.c:230
+#: ../src/main-win-ui.c:233
 msgid "Show '_Home' Button"
 msgstr "Mostrar el botón «Carpeta _personal»"
 
-#: ../src/main-win-ui.c:231
+#: ../src/main-win-ui.c:234
 msgid "Sho_w Side Pane"
 msgstr "Mostrar el panel _lateral"
 
-#: ../src/main-win-ui.c:232
+#: ../src/main-win-ui.c:235
 msgid "Show Status B_ar"
 msgstr "Mostrar la b_arra de estado"
 
-#: ../src/main-win-ui.c:233
+#: ../src/main-win-ui.c:236
 msgid "_Dual Pane Mode"
 msgstr "Modo de panel _doble"
 
-#: ../src/main-win-ui.c:233
+#: ../src/main-win-ui.c:236
 msgid "Show two panels with folder views"
 msgstr "Mostrar dos paneles con vistas de carpeta"
 
-#: ../src/main-win-ui.c:234
+#: ../src/main-win-ui.c:237
 msgid "Fullscreen _Mode"
 msgstr "_Modo de pantalla completa"
 
-#: ../src/main-win-ui.c:240
+#: ../src/main-win-ui.c:243
 msgid "_Icon View"
 msgstr "Vista de _iconos"
 
-#: ../src/main-win-ui.c:241
+#: ../src/main-win-ui.c:244
 msgid "_Compact View"
 msgstr "Vista _compacta"
 
-#: ../src/main-win-ui.c:242
+#: ../src/main-win-ui.c:245
 msgid "_Thumbnail View"
 msgstr "Vista de _miniaturas"
 
-#: ../src/main-win-ui.c:243
+#: ../src/main-win-ui.c:246
 msgid "Detailed _List View"
 msgstr "Vista _detallada"
 
-#: ../src/main-win-ui.c:256 ../src/main-win-ui.c:261
+#: ../src/main-win-ui.c:259 ../src/main-win-ui.c:264
 msgid "By _Name"
 msgstr "Por _nombre"
 
-#: ../src/main-win-ui.c:257 ../src/main-win-ui.c:262
+#: ../src/main-win-ui.c:260 ../src/main-win-ui.c:265
 msgid "By _Modification Time"
 msgstr "Por _fecha de modificación"
 
-#: ../src/main-win-ui.c:258 ../src/main-win-ui.c:263
+#: ../src/main-win-ui.c:261 ../src/main-win-ui.c:266
 msgid "By _Size"
 msgstr "Por _tamaño"
 
-#: ../src/main-win-ui.c:259 ../src/main-win-ui.c:264
+#: ../src/main-win-ui.c:262 ../src/main-win-ui.c:267
 msgid "By File _Type"
 msgstr "Por _tipo de archivo"
 
-#: ../src/main-win-ui.c:270
+#: ../src/main-win-ui.c:273
 msgid "Places"
 msgstr "Lugares"
 
-#: ../src/main-win-ui.c:271
+#: ../src/main-win-ui.c:274
 msgid "Directory Tree"
 msgstr "Árbol de directorios"
 
-#: ../src/main-win-ui.c:272
+#: ../src/main-win-ui.c:275
 msgid "Remote"
 msgstr "Remoto"
 
-#: ../src/main-win.c:702
+#: ../src/main-win.c:704
 msgid "Show history of visited folders"
 msgstr "Mostrar el histórico de carpetas visitadas"
 
-#: ../src/main-win.c:705
+#: ../src/main-win.c:707
 msgid "History"
 msgstr "Histórico"
 
-#: ../src/main-win.c:719
+#: ../src/main-win.c:721
 msgid "You are in super user mode"
 msgstr "Está en modo de super usuario"
 
-#: ../src/main-win.c:883
+#: ../src/main-win.c:885
 msgid "Lightweight file manager\n"
 msgstr "Gestor de archivos ligero\n"
 
-#: ../src/main-win.c:888
+#: ../src/main-win.c:890
 #, c-format
 msgid "using LibFM ver. %s\n"
 msgstr "que usa LibFM ver. %s\n"
 
-#: ../src/main-win.c:890
+#: ../src/main-win.c:892
 msgid ""
 "\n"
 "Developed by Hon Jen Yee (PCMan)"
@@ -881,11 +929,11 @@ msgstr ""
 "\n"
 "Desarrollado por Hon Jen Yee (PCMan)"
 
-#: ../src/main-win.c:915 ../src/main-win.c:923
+#: ../src/main-win.c:917 ../src/main-win.c:925
 msgid "Keyboard Navigation"
 msgstr "Navegación con el teclado"
 
-#: ../src/main-win.c:917
+#: ../src/main-win.c:919
 msgid ""
 "Tab: cycle focus Folder View -> Side Pane -> Tools Bar\n"
 "Shift+Tab: cycle focus Tools Bar -> Side Pane -> Folder View\n"
@@ -903,7 +951,7 @@ msgstr ""
 "F10: activar el menú principal\n"
 "Ctrl+L o Alt+D: enfocar la barra de ruta"
 
-#: ../src/main-win.c:1515
+#: ../src/main-win.c:1522
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -914,7 +962,7 @@ msgstr ""
 "«%s»\n"
 "Escriba un nombre para el marcador nuevo:"
 
-#: ../src/main-win.c:1519
+#: ../src/main-win.c:1526
 msgid "Add to Bookmarks"
 msgstr "Añadir a los marcadores"
 
@@ -1045,6 +1093,9 @@ msgstr "Explore el sistema de archivos y gestione los archivos"
 #: ../data/pcmanfm-desktop-pref.desktop.in.h:2
 msgid "Change desktop wallpapers and behavior of desktop manager"
 msgstr "Cambiar el fondo y el comportamiento del escritorio"
+
+#~ msgid "Devi_ces"
+#~ msgstr "Dispositi_vos"
 
 #~ msgid "Fin_d Files"
 #~ msgstr "_Buscar archivos"
