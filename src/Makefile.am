@@ -9,27 +9,27 @@ bin_PROGRAMS = pcmanfm
 
 pcmanfm_SOURCES = \
 	pcmanfm.c \
-	pcmanfm.h \
 	app-config.c \
-	app-config.h \
 	main-win.c \
-	main-win.h \
 	tab-page.c \
-	tab-page.h \
 	desktop.c \
-	desktop.h \
 	volume-manager.c \
-	volume-manager.h \
 	pref.c \
-	pref.h \
-	gseal-gtk-compat.h \
 	single-inst.c \
-	single-inst.h \
 	$(NULL)
 
 EXTRA_DIST= \
 	main-win-ui.c \
 	desktop-ui.c \
+	pcmanfm.h \
+	app-config.h \
+	main-win.h \
+	tab-page.h \
+	desktop.h \
+	volume-manager.h \
+	pref.h \
+	single-inst.h \
+	gseal-gtk-compat.h \
 	$(NULL)
 
 pcmanfm_CFLAGS = \
