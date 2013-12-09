@@ -2,24 +2,22 @@
 # Copyright (C) 2010
 # This file is distributed under the same license as the pcmanfm package.
 # Yarema aka Knedlyk <yupadmin@gmail.com>, 2010.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm-1.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-08 23:54+0200\n"
-"PO-Revision-Date: 2013-12-09 00:15+0200\n"
-"Last-Translator: LStranger <andrej@rep.kiev.ua>\n"
+"POT-Creation-Date: 2013-12-10 00:17+0200\n"
+"PO-Revision-Date: 2013-12-09 22:23+0000\n"
+"Last-Translator: Andriy <andrej@rep.kiev.ua>\n"
 "Language-Team: Ukrainian <translation@linux.org.ua>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Pootle 2.0.5\n"
-"X-Poedit-Language: Ukrainian\n"
-"X-Poedit-Country: Ukraine\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Pootle 2.5.0\n"
+"X-POOTLE-MTIME: 1386627808.0\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2013"
@@ -110,26 +108,30 @@ msgid "_Show menus provided by window managers when desktop is clicked"
 msgstr "Показати _меню менеджера вікон при клацанні на стільниці"
 
 #: ../data/ui/desktop-pref.glade.h:20
+msgid "_Open folder from desktop in new window"
+msgstr "_Відкривати теку зі стільниці в новому вікні."
+
+#: ../data/ui/desktop-pref.glade.h:21
 msgid "Ad_vanced"
 msgstr "_Додатково"
 
-#: ../data/ui/desktop-pref.glade.h:21
+#: ../data/ui/desktop-pref.glade.h:22
 msgid "Fill with background color only"
 msgstr "Заповнити лише кольором тла"
 
-#: ../data/ui/desktop-pref.glade.h:22
+#: ../data/ui/desktop-pref.glade.h:23
 msgid "Stretch to fill the entire screen"
 msgstr "Розтягнути для заповнення всієї стільниці"
 
-#: ../data/ui/desktop-pref.glade.h:23
+#: ../data/ui/desktop-pref.glade.h:24
 msgid "Stretch to fit the screen"
 msgstr "Розтягнути, щоб вмістити на стільниці"
 
-#: ../data/ui/desktop-pref.glade.h:24
+#: ../data/ui/desktop-pref.glade.h:25
 msgid "Center on the screen"
 msgstr "Центр на екрані"
 
-#: ../data/ui/desktop-pref.glade.h:25
+#: ../data/ui/desktop-pref.glade.h:26
 msgid "Tile the image to fill the entire screen"
 msgstr "Розмножити зображення, щоб заповнити весь екран"
 
@@ -493,7 +495,7 @@ msgid "_Port:"
 msgstr "_Порт:"
 
 #: ../data/ui/connect.glade.h:6
-msgid "Pat_h:"
+msgid "Pa_th:"
 msgstr "_Шлях:"
 
 #: ../data/ui/connect.glade.h:7
@@ -516,11 +518,11 @@ msgstr "FTP"
 msgid "WebDAV"
 msgstr "WebDAV"
 
-#: ../src/volume-manager.c:164
+#: ../src/volume-manager.c:167
 msgid "Removable Disk"
 msgstr "Зовнішній диск"
 
-#: ../src/volume-manager.c:217
+#: ../src/volume-manager.c:220
 msgid "Open in File Manager"
 msgstr "Відкрити в менеджері файлів"
 
@@ -528,11 +530,11 @@ msgstr "Відкрити в менеджері файлів"
 msgid "Open in New Ta_b"
 msgstr "Відкрити у новій _вкладці"
 
-#: ../src/desktop-ui.c:52 ../src/tab-page.c:55
+#: ../src/desktop-ui.c:52 ../src/tab-page.c:56
 msgid "Open in New Win_dow"
 msgstr "Відкрити у _новому вікні"
 
-#: ../src/desktop-ui.c:54 ../src/tab-page.c:57
+#: ../src/desktop-ui.c:54 ../src/tab-page.c:58
 msgid "Open in Termina_l"
 msgstr "Відкрити в _терміналі"
 
@@ -1034,15 +1036,15 @@ msgstr "РОЛЬ"
 msgid "[FILE1, FILE2,...]"
 msgstr "[ФАЙЛ1, ФАЙЛ2,...]"
 
-#: ../src/pcmanfm.c:536
+#: ../src/pcmanfm.c:541
 msgid "Terminal emulator is not set."
 msgstr "Емулятор терміналу не встановлено."
 
-#: ../src/tab-page.c:54
+#: ../src/tab-page.c:55
 msgid "Open in New T_ab"
 msgstr "Відкрити у новій вк_ладці"
 
-#: ../src/tab-page.c:334
+#: ../src/tab-page.c:342
 #, c-format
 msgid "%d item selected"
 msgid_plural "%d items selected"
@@ -1050,12 +1052,12 @@ msgstr[0] "%d позицію обрано"
 msgstr[1] "%d позиції обрано"
 msgstr[2] "%d позицій обрано"
 
-#: ../src/tab-page.c:548
+#: ../src/tab-page.c:556
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Вільний простір: %s (Всього: %s )"
 
-#: ../src/tab-page.c:568
+#: ../src/tab-page.c:576
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
@@ -1063,7 +1065,7 @@ msgstr[0] "%d позиція"
 msgstr[1] "%d позиції"
 msgstr[2] "%d позицій"
 
-#: ../src/tab-page.c:569
+#: ../src/tab-page.c:577
 #, c-format
 msgid " (%d hidden)"
 msgid_plural " (%d hidden)"
@@ -1086,6 +1088,9 @@ msgstr "Показує файлову систему і керує файлам�
 #: ../data/pcmanfm-desktop-pref.desktop.in.h:2
 msgid "Change desktop wallpapers and behavior of desktop manager"
 msgstr "Налаштування шпалер та поведінки менеджера стільниці"
+
+#~ msgid "Pat_h:"
+#~ msgstr "_Шлях:"
 
 #~ msgid "Devi_ces"
 #~ msgstr "При_строї"
