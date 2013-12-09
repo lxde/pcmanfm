@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-08 23:54+0200\n"
+"POT-Creation-Date: 2013-12-10 00:17+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -105,26 +105,30 @@ msgid "_Show menus provided by window managers when desktop is clicked"
 msgstr ""
 
 #: ../data/ui/desktop-pref.glade.h:20
-msgid "Ad_vanced"
+msgid "_Open folder from desktop in new window"
 msgstr ""
 
 #: ../data/ui/desktop-pref.glade.h:21
-msgid "Fill with background color only"
+msgid "Ad_vanced"
 msgstr ""
 
 #: ../data/ui/desktop-pref.glade.h:22
-msgid "Stretch to fill the entire screen"
+msgid "Fill with background color only"
 msgstr ""
 
 #: ../data/ui/desktop-pref.glade.h:23
-msgid "Stretch to fit the screen"
+msgid "Stretch to fill the entire screen"
 msgstr ""
 
 #: ../data/ui/desktop-pref.glade.h:24
-msgid "Center on the screen"
+msgid "Stretch to fit the screen"
 msgstr ""
 
 #: ../data/ui/desktop-pref.glade.h:25
+msgid "Center on the screen"
+msgstr ""
+
+#: ../data/ui/desktop-pref.glade.h:26
 msgid "Tile the image to fill the entire screen"
 msgstr ""
 
@@ -482,7 +486,7 @@ msgid "_Port:"
 msgstr ""
 
 #: ../data/ui/connect.glade.h:6
-msgid "Pat_h:"
+msgid "Pa_th:"
 msgstr ""
 
 #: ../data/ui/connect.glade.h:7
@@ -505,11 +509,11 @@ msgstr ""
 msgid "WebDAV"
 msgstr ""
 
-#: ../src/volume-manager.c:164
+#: ../src/volume-manager.c:167
 msgid "Removable Disk"
 msgstr ""
 
-#: ../src/volume-manager.c:217
+#: ../src/volume-manager.c:220
 msgid "Open in File Manager"
 msgstr ""
 
@@ -517,11 +521,11 @@ msgstr ""
 msgid "Open in New Ta_b"
 msgstr ""
 
-#: ../src/desktop-ui.c:52 ../src/tab-page.c:55
+#: ../src/desktop-ui.c:52 ../src/tab-page.c:56
 msgid "Open in New Win_dow"
 msgstr ""
 
-#: ../src/desktop-ui.c:54 ../src/tab-page.c:57
+#: ../src/desktop-ui.c:54 ../src/tab-page.c:58
 msgid "Open in Termina_l"
 msgstr ""
 
@@ -1008,34 +1012,34 @@ msgstr ""
 msgid "[FILE1, FILE2,...]"
 msgstr ""
 
-#: ../src/pcmanfm.c:536
+#: ../src/pcmanfm.c:541
 msgid "Terminal emulator is not set."
 msgstr ""
 
-#: ../src/tab-page.c:54
+#: ../src/tab-page.c:55
 msgid "Open in New T_ab"
 msgstr ""
 
-#: ../src/tab-page.c:334
+#: ../src/tab-page.c:342
 #, c-format
 msgid "%d item selected"
 msgid_plural "%d items selected"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../src/tab-page.c:548
+#: ../src/tab-page.c:556
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr ""
 
-#: ../src/tab-page.c:568
+#: ../src/tab-page.c:576
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../src/tab-page.c:569
+#: ../src/tab-page.c:577
 #, c-format
 msgid " (%d hidden)"
 msgid_plural " (%d hidden)"
