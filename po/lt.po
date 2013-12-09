@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-13 22:34+0100\n"
-"PO-Revision-Date: 2013-11-14 06:43+0200\n"
+"POT-Creation-Date: 2013-12-08 23:54+0200\n"
+"PO-Revision-Date: 2013-12-09 09:53+0200\n"
 "Last-Translator: Algimantas Margevičius <margevicius.algimantas@gmail.com>\n"
 "Language-Team: Lietuvių <>\n"
 "Language: lt\n"
@@ -18,7 +18,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
 "%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Poedit 1.5.7\n"
+"X-Generator: Poedit 1.6.1\n"
+"X-POOTLE-MTIME: 1386572421.0\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2013"
@@ -299,7 +300,7 @@ msgstr "N_amų aplankas"
 msgid "Des_ktop"
 msgstr "Dar_bastalis"
 
-#: ../data/ui/pref.glade.h:43 ../src/main-win-ui.c:160
+#: ../data/ui/pref.glade.h:43 ../src/main-win-ui.c:189
 msgid "_Trash Can"
 msgstr "Š_iukšlinė"
 
@@ -311,7 +312,7 @@ msgstr "_Failų sistemos šakninis aplankas"
 msgid "App_lications"
 msgstr "_Programos"
 
-#: ../data/ui/pref.glade.h:46
+#: ../data/ui/pref.glade.h:46 ../src/main-win-ui.c:192
 msgid "Dev_ices"
 msgstr "Į_renginiai"
 
@@ -472,6 +473,50 @@ msgstr "Aptinkama..."
 msgid "Please select the action you want to perform:"
 msgstr "Pasirinkite veiksmą kurį norite atlikti:"
 
+#: ../data/ui/connect.glade.h:1
+msgid "Connect to remote server"
+msgstr "Prisijungti prie nutolusio serverio"
+
+#: ../data/ui/connect.glade.h:2
+msgid "<b>Specify remote folder to connect</b>"
+msgstr "<b>Nurodykite nutolusį aplanką prie kurio prisijungti</b>"
+
+#: ../data/ui/connect.glade.h:3
+msgid "_Type:"
+msgstr "_Tipas:"
+
+#: ../data/ui/connect.glade.h:4
+msgid "_Host:"
+msgstr "_Kompiuteris:"
+
+#: ../data/ui/connect.glade.h:5
+msgid "_Port:"
+msgstr "_Prievadas:"
+
+#: ../data/ui/connect.glade.h:6
+msgid "Pat_h:"
+msgstr "_Kelias:"
+
+#: ../data/ui/connect.glade.h:7
+msgid "_Anonymous login"
+msgstr "_Anonimimis prisijungimas"
+
+#: ../data/ui/connect.glade.h:8
+msgid "_Login as:"
+msgstr "P_risijungti kaip:"
+
+#: ../data/ui/connect.glade.h:9
+msgid "SSH"
+msgstr "SSH"
+
+#: ../data/ui/connect.glade.h:10
+msgid "FTP"
+msgstr "FTP"
+
+#: ../data/ui/connect.glade.h:11
+msgid "WebDAV"
+msgstr "WebDAV"
+
 #: ../src/volume-manager.c:164
 msgid "Removable Disk"
 msgstr "Išimamas diskas"
@@ -484,11 +529,11 @@ msgstr "Atverti failų tvarkyklėje"
 msgid "Open in New Ta_b"
 msgstr "Atverti _naujoje kortelėje"
 
-#: ../src/desktop-ui.c:52 ../src/tab-page.c:56
+#: ../src/desktop-ui.c:52 ../src/tab-page.c:55
 msgid "Open in New Win_dow"
 msgstr "_Atverti naujame lange"
 
-#: ../src/desktop-ui.c:54 ../src/tab-page.c:58
+#: ../src/desktop-ui.c:54 ../src/tab-page.c:57
 msgid "Open in Termina_l"
 msgstr "Atverti _terminale"
 
@@ -500,315 +545,375 @@ msgstr "_Laikytis dabartinės pozicijos"
 msgid "Snap to _Grid"
 msgstr "L_aikytis lygiavimo"
 
-#: ../src/desktop.c:636
+#: ../src/desktop.c:634
 msgid "Activate file"
 msgstr "Aktyvuoti failą"
 
-#: ../src/desktop.c:638
+#: ../src/desktop.c:636
 msgid "Show file menu"
 msgstr "Rodyti failo meniu"
 
-#: ../src/desktop.c:1054
+#: ../src/desktop.c:1052
 msgid "Show desktop menu"
 msgstr "Rodyti darbastalio meniu"
 
 #. FIXME: set name by monitor
-#: ../src/desktop.c:1126
+#: ../src/desktop.c:1124
 msgid "Desktop"
 msgstr "Darbastalis"
 
-#: ../src/main-win-ui.c:128
+#: ../src/main-win-ui.c:153
 msgid "_File"
 msgstr "_Failas"
 
-#: ../src/main-win-ui.c:129
+#: ../src/main-win-ui.c:154
 msgid "_New Window"
 msgstr "Naujas _langas"
 
-#: ../src/main-win-ui.c:130
+#: ../src/main-win-ui.c:155
 msgid "New T_ab"
 msgstr "_Nauja kortelė"
 
-#: ../src/main-win-ui.c:130
+#: ../src/main-win-ui.c:155
 msgid "Create new tab for this folder"
 msgstr "Šiam aplankui sukurti naują kortelę"
 
-#: ../src/main-win-ui.c:131
+#: ../src/main-win-ui.c:156
 msgid "C_reate New..."
 msgstr "_Sukurti naują..."
 
-#: ../src/main-win-ui.c:132
+#: ../src/main-win-ui.c:157
 msgid "_Close Tab"
 msgstr "_Užverti kortelę"
 
-#: ../src/main-win-ui.c:133
+#: ../src/main-win-ui.c:158
 msgid "Close _Window"
 msgstr "_Užverti langą"
 
-#: ../src/main-win-ui.c:134
+#: ../src/main-win-ui.c:159
 msgid "_Edit"
 msgstr "_Taisa"
 
-#: ../src/main-win-ui.c:139
+#: ../src/main-win-ui.c:164
 msgid "_Rename"
 msgstr "_Pervadinti"
 
-#: ../src/main-win-ui.c:140
+#: ../src/main-win-ui.c:165
 msgid "Create Symlin_k"
 msgstr "_Sukurti simbolinę nuorodą"
 
-#: ../src/main-win-ui.c:141
+#: ../src/main-win-ui.c:166
 msgid "_Move To..."
 msgstr "_Perkelti į..."
 
-#: ../src/main-win-ui.c:142
+#: ../src/main-win-ui.c:167
 msgid "C_opy To..."
 msgstr "_Kopijuoti į..."
 
-#: ../src/main-win-ui.c:144
+#: ../src/main-win-ui.c:169
 msgid "_Invert Selection"
 msgstr "_Pasirinkti atvirkščiai"
 
-#: ../src/main-win-ui.c:145
+#: ../src/main-win-ui.c:170
 msgid "Prefere_nces"
 msgstr "_Nustatymai"
 
-#: ../src/main-win-ui.c:146
+#: ../src/main-win-ui.c:171
 msgid "_View"
 msgstr "_Rodymas"
 
-#: ../src/main-win-ui.c:147
+#: ../src/main-win-ui.c:172
 msgid "_Reload Folder"
 msgstr "Į_kelti aplanką iš naujo"
 
-#: ../src/main-win-ui.c:147
+#: ../src/main-win-ui.c:172
 msgid "Reload current folder"
 msgstr "Įkelti šį aplanką iš naujo"
 
-#: ../src/main-win-ui.c:148
+#: ../src/main-win-ui.c:173
+msgid "Tool_bar"
+msgstr "Įr_ankinė"
+
+#: ../src/main-win-ui.c:174
 msgid "Side _Pane"
 msgstr "Šoninė _juosta"
 
 #. other see below: 'ShowHidden' 'ShowStatus' 'Fullscreen' 'IconView'...
-#: ../src/main-win-ui.c:150
+#: ../src/main-win-ui.c:176
 msgid "S_ort Files"
 msgstr "_Rūšiuoti failus"
 
-#: ../src/main-win-ui.c:151
+#: ../src/main-win-ui.c:177
+msgid "_Zoom In"
+msgstr "Pr_itraukti"
+
+#: ../src/main-win-ui.c:178
+msgid "Zoom O_ut"
+msgstr "_Atitolinti"
+
+#: ../src/main-win-ui.c:179
+msgid "_Normal Size"
+msgstr "Į_prastinis dydis"
+
+#: ../src/main-win-ui.c:180
 msgid "_Help"
 msgstr "Ž_inynas"
 
-#: ../src/main-win-ui.c:153
+#: ../src/main-win-ui.c:182
 msgid "_Keyboard Navigation"
 msgstr "_Naršymas klaviatūra"
 
-#: ../src/main-win-ui.c:154
+#: ../src/main-win-ui.c:183
 msgid "_Go"
 msgstr "_Eiti"
 
-#: ../src/main-win-ui.c:155
+#: ../src/main-win-ui.c:184
 msgid "_Previous Folder"
 msgstr "_Ankstesnis aplankas"
 
-#: ../src/main-win-ui.c:155
+#: ../src/main-win-ui.c:184
 msgid "Return to previous folder in history"
 msgstr "Grįžti prie ankstesnio istorijos aplanko"
 
-#: ../src/main-win-ui.c:156
+#: ../src/main-win-ui.c:185
 msgid "_Next Folder"
 msgstr "_Sekantis aplankas"
 
-#: ../src/main-win-ui.c:156
+#: ../src/main-win-ui.c:185
 msgid "Go forward to next folder in history"
 msgstr "Pereiti prie sekančio aplanko istorijoje"
 
-#: ../src/main-win-ui.c:157
+#: ../src/main-win-ui.c:186
 msgid "Pa_rent Folder"
 msgstr "_Aukštesnis aplankas"
 
-#: ../src/main-win-ui.c:157
+#: ../src/main-win-ui.c:186
 msgid "Go to parent Folder"
 msgstr "Eiti aukštyn"
 
-#: ../src/main-win-ui.c:158
+#: ../src/main-win-ui.c:187
 msgid "H_ome Folder"
 msgstr "_Namų aplankas"
 
-#: ../src/main-win-ui.c:158
+#: ../src/main-win-ui.c:187
 msgid "Go to home folder"
 msgstr "Eiti į namų aplanką"
 
-#: ../src/main-win-ui.c:159
+#: ../src/main-win-ui.c:188
 msgid "_Desktop"
 msgstr "_Darbastalis"
 
-#: ../src/main-win-ui.c:159
+#: ../src/main-win-ui.c:188
 msgid "Go to desktop folder"
 msgstr "Eiti į darbastalio aplanką"
 
-#: ../src/main-win-ui.c:160
+#: ../src/main-win-ui.c:189
 msgid "Open trash can"
 msgstr "Atverti šiukšlinę"
 
-#: ../src/main-win-ui.c:161
+#: ../src/main-win-ui.c:190
 msgid "Filesyste_m Root"
 msgstr "_Failų sistemos šakninis aplankas"
 
-#: ../src/main-win-ui.c:161
+#: ../src/main-win-ui.c:190
 msgid "Go fo filesystem root"
 msgstr "Eiti į failų sistemos šakninį aplanką"
 
-#: ../src/main-win-ui.c:162
+#: ../src/main-win-ui.c:191
 msgid "_Applications"
 msgstr "_Programos"
 
-#: ../src/main-win-ui.c:162
+#: ../src/main-win-ui.c:191
 msgid "Go to root of applications menu folder"
 msgstr "Pereiti į programų meniu aplanko pradžią"
 
-#: ../src/main-win-ui.c:163
-msgid "Devi_ces"
-msgstr "Įr_enginiai"
-
-#: ../src/main-win-ui.c:163
+#: ../src/main-win-ui.c:192
 msgid "Go to list of devices connected to the computer"
 msgstr "Pereiti prie prijungtų įrenginių sąrašo"
 
-#: ../src/main-win-ui.c:164
+#: ../src/main-win-ui.c:193
 msgid "Net_work"
 msgstr "_Tinklas"
 
-#: ../src/main-win-ui.c:164
+#: ../src/main-win-ui.c:193
 msgid "Go to list of places on the network"
 msgstr "Pereiti prie tinklo skirsnių sąrašo"
 
-#: ../src/main-win-ui.c:165
+#: ../src/main-win-ui.c:194
+msgid "_Connect to Server..."
+msgstr "_Prisijungti prie serverio..."
+
+#: ../src/main-win-ui.c:194
+msgid "Open a window to choose remote folder location"
+msgstr "Atverti langą ir pasirinkti nutolusio aplanko vietą"
+
+#: ../src/main-win-ui.c:195
 msgid "Go to the path in the location bar"
 msgstr "Eiti į aplanką iš vietos juostos"
 
-#: ../src/main-win-ui.c:166
+#: ../src/main-win-ui.c:196
 msgid "_Bookmarks"
 msgstr "_Žymelės"
 
-#: ../src/main-win-ui.c:167
+#: ../src/main-win-ui.c:197
 msgid "_Add to Bookmarks"
 msgstr "Įtra_ukti į žymeles"
 
-#: ../src/main-win-ui.c:167
+#: ../src/main-win-ui.c:197
 msgid "Add current folder to bookmarks list"
 msgstr "Pridėti dabartinį aplanką prie žymelių"
 
-#: ../src/main-win-ui.c:168
+#: ../src/main-win-ui.c:198
 msgid "Tool_s"
 msgstr "Įra_nkiai"
 
-#: ../src/main-win-ui.c:169
+#: ../src/main-win-ui.c:199
 msgid "Open Current Folder in _Terminal"
 msgstr "Atverti šį aplanką _terminale"
 
-#: ../src/main-win-ui.c:172
-msgid "Fin_d Files"
-msgstr "_Ieškoti failų"
+#: ../src/main-win-ui.c:202
+msgid "Fin_d Files..."
+msgstr "_Ieškoti failų..."
 
-#: ../src/main-win-ui.c:172
+#: ../src/main-win-ui.c:202
 msgid "Open search dialog"
 msgstr "Atverti paieškos dialogą"
 
 #. for popup menu - these entries exist in FmFolderView popup still
-#: ../src/main-win-ui.c:181
+#: ../src/main-win-ui.c:211
 msgid "Folder"
 msgstr "Aplanką"
 
-#: ../src/main-win-ui.c:182
+#: ../src/main-win-ui.c:212
 msgid "Empty File"
 msgstr "Tuščias failas"
 
-#: ../src/main-win-ui.c:188
-msgid "Show Hidde_n"
+#. Note to translators: "Mingle..." means "Do not put folders before files" but make the translation as short as possible, please!
+#: ../src/main-win-ui.c:220
+msgid "Mingle _Files and Folders"
+msgstr "_Nebūtinai failai prieš aplankus"
+
+#: ../src/main-win-ui.c:223
+msgid "_Ignore Name Case"
+msgstr "_Nepaisyti pavadinimo raidžių dydžio"
+
+#: ../src/main-win-ui.c:225
+msgid "Sho_w Hidden"
 msgstr "Rodyti _paslėptus"
 
-#: ../src/main-win-ui.c:189
+#. Note to translators: this save is meant for folder's settings such as sort
+#: ../src/main-win-ui.c:227
+msgid "Preserve This Folder's Settings"
+msgstr "Išsaugoti šio aplanko nustatymus"
+
+#: ../src/main-win-ui.c:228
+msgid ""
+"Check to remember view and sort as folder setting rather than global one"
+msgstr ""
+"Pažymėkite jei norite jog šis nustatymas būtų prisimintas tik šiam aplankui"
+
+#: ../src/main-win-ui.c:230
+msgid "Show _Toolbar"
+msgstr "Rodyti į_rankinę"
+
+#: ../src/main-win-ui.c:231
+msgid "Show 'Ne_w Tab' Button"
+msgstr "Rodyti „_Nauja kortelė“ mygtuką"
+
+#: ../src/main-win-ui.c:232
+msgid "Show _Navigation Buttons"
+msgstr "Rodyti _naršymo mygtukus"
+
+#: ../src/main-win-ui.c:233
+msgid "Show '_Home' Button"
+msgstr "Rodyti „_Namų“ mygtuką"
+
+#: ../src/main-win-ui.c:234
 msgid "Sho_w Side Pane"
 msgstr "Rodyti šoninę _juostą"
 
-#: ../src/main-win-ui.c:190
+#: ../src/main-win-ui.c:235
 msgid "Show Status B_ar"
 msgstr "Rodyti _būsenos juostą"
 
-#: ../src/main-win-ui.c:191
-msgid "T_win Pane Mode"
-msgstr "_Dviejų juostų režimas"
+#: ../src/main-win-ui.c:236
+msgid "_Dual Pane Mode"
+msgstr "_Dviejų panelių režimas"
 
-#: ../src/main-win-ui.c:192
+#: ../src/main-win-ui.c:236
+msgid "Show two panels with folder views"
+msgstr "Rodyti du skydelius su aplanko peržiūromis"
+
+#: ../src/main-win-ui.c:237
 msgid "Fullscreen _Mode"
 msgstr "_Viso ekrano režimas"
 
-#: ../src/main-win-ui.c:197
+#: ../src/main-win-ui.c:243
 msgid "_Icon View"
 msgstr "_Piktogramos"
 
-#: ../src/main-win-ui.c:198
-msgid "_Thumbnail View"
-msgstr "_Miniatiūros"
-
-#: ../src/main-win-ui.c:199
+#: ../src/main-win-ui.c:244
 msgid "_Compact View"
 msgstr "_Kompaktiškas"
 
-#: ../src/main-win-ui.c:200
+#: ../src/main-win-ui.c:245
+msgid "_Thumbnail View"
+msgstr "_Miniatiūros"
+
+#: ../src/main-win-ui.c:246
 msgid "Detailed _List View"
 msgstr "_Išsamus sąrašas"
 
-#: ../src/main-win-ui.c:212 ../src/main-win-ui.c:217
+#: ../src/main-win-ui.c:259 ../src/main-win-ui.c:264
 msgid "By _Name"
 msgstr "Pagal _pavadinimą"
 
-#: ../src/main-win-ui.c:213 ../src/main-win-ui.c:218
+#: ../src/main-win-ui.c:260 ../src/main-win-ui.c:265
 msgid "By _Modification Time"
 msgstr "Pagal _keitimo datą"
 
-#: ../src/main-win-ui.c:214 ../src/main-win-ui.c:219
+#: ../src/main-win-ui.c:261 ../src/main-win-ui.c:266
 msgid "By _Size"
 msgstr "Pagal _dydį"
 
-#: ../src/main-win-ui.c:215 ../src/main-win-ui.c:220
+#: ../src/main-win-ui.c:262 ../src/main-win-ui.c:267
 msgid "By File _Type"
 msgstr "Pagal failo _tipą"
 
-#: ../src/main-win-ui.c:226
+#: ../src/main-win-ui.c:273
 msgid "Places"
 msgstr "Vietos"
 
-#: ../src/main-win-ui.c:227
+#: ../src/main-win-ui.c:274
 msgid "Directory Tree"
 msgstr "Aplankų medis"
 
-#: ../src/main-win-ui.c:228
+#: ../src/main-win-ui.c:275
 msgid "Remote"
 msgstr "Nutolęs"
 
-#: ../src/main-win.c:585
+#: ../src/main-win.c:704
 msgid "Show history of visited folders"
 msgstr "Rodyti lankytų aplankų istoriją"
 
-#: ../src/main-win.c:588
+#: ../src/main-win.c:707
 msgid "History"
 msgstr "Istorija"
 
-#: ../src/main-win.c:602
+#: ../src/main-win.c:721
 msgid "You are in super user mode"
 msgstr "Jūs esate super naudotojo režime"
 
-#: ../src/main-win.c:766
+#: ../src/main-win.c:885
 msgid "Lightweight file manager\n"
 msgstr "Lengva ir greita failų tvarkyklė\n"
 
-#: ../src/main-win.c:771
+#: ../src/main-win.c:890
 #, c-format
 msgid "using LibFM ver. %s\n"
 msgstr "naudojama LibFM versija %s\n"
 
-#: ../src/main-win.c:773
+#: ../src/main-win.c:892
 msgid ""
 "\n"
 "Developed by Hon Jen Yee (PCMan)"
@@ -816,11 +921,11 @@ msgstr ""
 "\n"
 "Kūrėjas Hon Jen Yee (PCMan)"
 
-#: ../src/main-win.c:798 ../src/main-win.c:806
+#: ../src/main-win.c:917 ../src/main-win.c:925
 msgid "Keyboard Navigation"
 msgstr "Naršymas klaviatūra"
 
-#: ../src/main-win.c:800
+#: ../src/main-win.c:919
 msgid ""
 "Tab: cycle focus Folder View -> Side Pane -> Tools Bar\n"
 "Shift+Tab: cycle focus Tools Bar -> Side Pane -> Folder View\n"
@@ -837,11 +942,7 @@ msgstr ""
 "F10: aktyvuoti pagrindinį meniu\n"
 "Ctrl+L ar Alt+D: peršokti į Kelio juostą"
 
-#: ../src/main-win.c:844
-msgid "Switch user command is not set."
-msgstr "Nenustatyta naudotojo perjungimo komanda."
-
-#: ../src/main-win.c:1270
+#: ../src/main-win.c:1522
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -852,7 +953,7 @@ msgstr ""
 "„%s“\n"
 "Įveskite naujos žymelės pavadinimą:"
 
-#: ../src/main-win.c:1274
+#: ../src/main-win.c:1526
 msgid "Add to Bookmarks"
 msgstr "Įtraukti į žymeles"
 
@@ -936,11 +1037,11 @@ msgstr "[FAILAS1, FAILAS2,...]"
 msgid "Terminal emulator is not set."
 msgstr "Nenustatytas terminalo emuliatorius."
 
-#: ../src/tab-page.c:55
+#: ../src/tab-page.c:54
 msgid "Open in New T_ab"
 msgstr "_Atverti naujoje kortelėje"
 
-#: ../src/tab-page.c:254
+#: ../src/tab-page.c:334
 #, c-format
 msgid "%d item selected"
 msgid_plural "%d items selected"
@@ -948,12 +1049,12 @@ msgstr[0] "pasirinktas %d elementas"
 msgstr[1] "pasirinkti %d elementai"
 msgstr[2] "pasirinkta %d elementų"
 
-#: ../src/tab-page.c:442
+#: ../src/tab-page.c:548
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Laisvos vietos: %s (Iš viso: %s )"
 
-#: ../src/tab-page.c:462
+#: ../src/tab-page.c:568
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
@@ -961,7 +1062,7 @@ msgstr[0] "%d elementas"
 msgstr[1] "%d elementai"
 msgstr[2] "%d elementų"
 
-#: ../src/tab-page.c:463
+#: ../src/tab-page.c:569
 #, c-format
 msgid " (%d hidden)"
 msgid_plural " (%d hidden)"
@@ -984,6 +1085,21 @@ msgstr "Naršykite failų sistemą ir tvarkykite failus"
 #: ../data/pcmanfm-desktop-pref.desktop.in.h:2
 msgid "Change desktop wallpapers and behavior of desktop manager"
 msgstr "Keiskite darbastalio foną ir darbastalio tvarkyklės elgseną"
+
+#~ msgid "Devi_ces"
+#~ msgstr "Įr_enginiai"
+
+#~ msgid "Fin_d Files"
+#~ msgstr "_Ieškoti failų"
+
+#~ msgid "Show Hidde_n"
+#~ msgstr "Rodyti _paslėptus"
+
+#~ msgid "T_win Pane Mode"
+#~ msgstr "_Dviejų juostų režimas"
+
+#~ msgid "Switch user command is not set."
+#~ msgstr "Nenustatyta naudotojo perjungimo komanda."
 
 #~ msgid "Show \"_My Computer\" icon on desktop"
 #~ msgstr "Darbastalyje rodyti _kompiuterio piktogramą"
