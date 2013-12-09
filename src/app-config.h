@@ -105,6 +105,7 @@ struct _FmAppConfig
     int win_width;
     int win_height;
     int splitter_pos;
+    gboolean media_in_new_tab;
 
     FmSidePaneMode side_pane_mode;
 

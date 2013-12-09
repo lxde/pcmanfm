@@ -86,6 +86,15 @@ Changes on 1.2.0 since 1.1.0:
 * Added configuration for toolbar: it can be now hidden, and elements on
     it (New Tab, navigations, Home) can be hidden individually as well.
 
+* Added menu option 'Go'->'Connect to Server...". If selected it opens a
+    dialog window to select type of remote folder and few parameters
+    (host, port, path, login) for the connection. If not cancelled then
+    selected remote folder will be opened in new tab.
+
+* Implemented new config option 'media_in_new_tab', defaulted to false.
+    If set then automounted folder will be opened in new tab instead of
+    new window.
+
 
 Changes on 1.1.0 since 1.0.1:
 

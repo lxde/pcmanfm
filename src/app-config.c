@@ -468,6 +468,7 @@ static void fm_app_config_init(FmAppConfig *cfg)
     cfg->win_height = 480;
     cfg->splitter_pos = 150;
     cfg->max_tab_chars = 32;
+    cfg->media_in_new_tab = FALSE;
 
     cfg->side_pane_mode = FM_SP_PLACES;
 
@@ -588,7 +589,7 @@ void fm_app_config_load_from_key_file(FmAppConfig* cfg, GKeyFile* kf)
     fm_app_config_load_desktop_config(kf, "desktop", &cfg->desktop_section);
 
     /* ui */
-    fm_key_file_get_int(kf, "ui", "always_show_tabs", &cfg->always_show_tabs);
+    fm_key_file_get_bool(kf, "ui", "always_show_tabs", &cfg->always_show_tabs);
     fm_key_file_get_int(kf, "ui", "hide_close_btn", &cfg->hide_close_btn);
     fm_key_file_get_int(kf, "ui", "max_tab_chars", &cfg->max_tab_chars);
 
@@ -596,6 +597,8 @@ void fm_app_config_load_from_key_file(FmAppConfig* cfg, GKeyFile* kf)
     fm_key_file_get_int(kf, "ui", "win_height", &cfg->win_height);
 
     fm_key_file_get_int(kf, "ui", "splitter_pos", &cfg->splitter_pos);
+
+    fm_key_file_get_bool(kf, "ui", "media_in_new_tab", &cfg->media_in_new_tab);
 
 #if FM_CHECK_VERSION(1, 2, 0)
     tmp_int = FM_SP_NONE;
@@ -973,6 +976,7 @@ void fm_app_config_save_profile(FmAppConfig* cfg, const char* name)
         g_string_append_printf(buf, "win_width=%d\n", cfg->win_width);
         g_string_append_printf(buf, "win_height=%d\n", cfg->win_height);
         g_string_append_printf(buf, "splitter_pos=%d\n", cfg->splitter_pos);
+        g_string_append_printf(buf, "media_in_new_tab=%d\n", cfg->media_in_new_tab);
 #if FM_CHECK_VERSION(1, 2, 0)
         g_string_append(buf, "side_pane_mode=");
         if (cfg->side_pane_mode & FM_SP_HIDE)

@@ -88,7 +88,10 @@ static void on_dlg_response(GtkDialog* dlg, int res, gpointer user_data)
             {
                 GFile* gf = g_mount_get_root(data->mount);
                 FmPath* path = fm_path_new_for_gfile(gf);
-                fm_main_win_add_win(NULL, path);
+                if (app_config->media_in_new_tab)
+                    fm_main_win_open_in_last_active(path);
+                else
+                    fm_main_win_add_win(NULL, path);
                 fm_path_unref(path);
                 g_object_unref(gf);
             }

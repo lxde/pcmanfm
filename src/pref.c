@@ -412,7 +412,8 @@ void fm_edit_preference( GtkWindow* parent, int page )
         INIT_BOOL(builder, FmAppConfig, mount_on_startup, NULL);
         INIT_BOOL(builder, FmAppConfig, mount_removable, NULL);
         INIT_BOOL(builder, FmAppConfig, autorun, NULL);
-        //INIT_BOOL(builder, FmAppConfig, media_in_new_tab, NULL);
+        INIT_BOOL(builder, FmAppConfig, media_in_new_tab, NULL);
+        gtk_widget_show(GTK_WIDGET(gtk_builder_get_object(builder, "media_in_new_tab")));
         //INIT_BOOL(builder, FmAppConfig, close_on_unmount, NULL);
 
         /* 'Advanced' tab */
