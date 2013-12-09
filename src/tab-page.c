@@ -34,6 +34,7 @@
 #include <stdlib.h>
 
 /* Additional entries for FmFileMenu popup */
+/* it is also used for FmSidePane context menu popup */
 static const char folder_menu_xml[]=
 "<popup>"
   "<placeholder name='ph1'>"
@@ -95,6 +96,8 @@ static void fm_tab_page_destroy(GtkObject *page);
 static void fm_tab_page_realize(GtkWidget *page);
 static void fm_tab_page_unrealize(GtkWidget *page);
 
+static GQuark popup_qdata;
+
 G_DEFINE_TYPE(FmTabPage, fm_tab_page, GTK_TYPE_HPANED)
 
 static void fm_tab_page_class_init(FmTabPageClass *klass)
@@ -152,6 +155,8 @@ static void fm_tab_page_class_init(FmTabPageClass *klass)
                     NULL, NULL,
                     g_cclosure_marshal_VOID__VOID,
                     G_TYPE_NONE, 0);
+
+    popup_qdata = g_quark_from_static_string("tab-page::popup-filelist");
 }
 
 
@@ -281,6 +286,9 @@ void fm_tab_page_destroy(GtkObject *object)
         g_source_remove(page->update_scroll_id);
         page->update_scroll_id = 0;
     }
+#if FM_CHECK_VERSION(1, 2, 0)
+    fm_side_pane_set_popup_updater(page->side_pane, NULL, NULL);
+#endif
 
 #if GTK_CHECK_VERSION(3, 0, 0)
     if(GTK_WIDGET_CLASS(fm_tab_page_parent_class)->destroy)
@@ -578,39 +586,50 @@ static char* format_status_text(FmTabPage* page)
 
 static void on_open_in_new_tab(GtkAction* act, FmMainWin* win)
 {
-    FmPathList* sels = fm_folder_view_dup_selected_file_paths(win->folder_view);
+    GObject* act_grp;
+    FmFileInfoList* sels;
     GList* l;
-    for( l = fm_path_list_peek_head_link(sels); l; l=l->next )
+
+    g_object_get(act, "action-group", &act_grp, NULL);
+    sels = g_object_get_qdata(act_grp, popup_qdata);
+    g_object_unref(act_grp);
+    for( l = fm_file_info_list_peek_head_link(sels); l; l=l->next )
     {
-        FmPath* path = (FmPath*)l->data;
-        fm_main_win_add_tab(win, path);
+        FmFileInfo* fi = (FmFileInfo*)l->data;
+        fm_main_win_add_tab(win, fm_file_info_get_path(fi));
     }
-    fm_path_list_unref(sels);
 }
 
 static void on_open_in_new_win(GtkAction* act, FmMainWin* win)
 {
-    FmPathList* sels = fm_folder_view_dup_selected_file_paths(win->folder_view);
+    GObject* act_grp;
+    FmFileInfoList* sels;
     GList* l;
-    for( l = fm_path_list_peek_head_link(sels); l; l=l->next )
+
+    g_object_get(act, "action-group", &act_grp, NULL);
+    sels = g_object_get_qdata(act_grp, popup_qdata);
+    g_object_unref(act_grp);
+    for( l = fm_file_info_list_peek_head_link(sels); l; l=l->next )
     {
-        FmPath* path = (FmPath*)l->data;
-        fm_main_win_add_win(win, path);
+        FmFileInfo* fi = (FmFileInfo*)l->data;
+        fm_main_win_add_win(win, fm_file_info_get_path(fi));
     }
-    fm_path_list_unref(sels);
 }
 
 static void on_open_folder_in_terminal(GtkAction* act, FmMainWin* win)
 {
-    FmFileInfoList* files = fm_folder_view_dup_selected_files(win->folder_view);
+    GObject* act_grp;
+    FmFileInfoList* files;
     GList* l;
+
+    g_object_get(act, "action-group", &act_grp, NULL);
+    files = g_object_get_qdata(act_grp, popup_qdata);
+    g_object_unref(act_grp);
     for(l=fm_file_info_list_peek_head_link(files);l;l=l->next)
     {
         FmFileInfo* fi = (FmFileInfo*)l->data;
-        if(fm_file_info_is_dir(fi) /*&& !fm_file_info_is_virtual(fi)*/)
-            pcmanfm_open_folder_in_terminal(GTK_WINDOW(win), fm_file_info_get_path(fi));
+        pcmanfm_open_folder_in_terminal(GTK_WINDOW(win), fm_file_info_get_path(fi));
     }
-    fm_file_info_list_unref(files);
 }
 
 /* folder view popups */
@@ -623,6 +642,9 @@ static void update_files_popup(FmFolderView* fv, GtkWindow* win,
     for(l = fm_file_info_list_peek_head_link(files); l; l = l->next)
         if(!fm_file_info_is_dir(l->data))
             return; /* actions are valid only if all selected are directories */
+    g_object_set_qdata_full(G_OBJECT(act_grp), popup_qdata,
+                            fm_file_info_list_ref(files),
+                            (GDestroyNotify)fm_file_info_list_unref);
     gtk_action_group_set_translation_domain(act_grp, NULL);
     gtk_action_group_add_actions(act_grp, folder_menu_actions,
                                  G_N_ELEMENTS(folder_menu_actions), win);
@@ -644,6 +666,32 @@ static gboolean open_folder_func(GAppLaunchContext* ctx, GList* folder_infos, gp
     return TRUE;
 }
 
+#if FM_CHECK_VERSION(1, 2, 0)
+void _update_sidepane_popup(FmSidePane* sp, GtkUIManager* ui,
+                            GtkActionGroup* act_grp,
+                            FmFileInfo* file, gpointer user_data)
+{
+    FmMainWin *win = GET_MAIN_WIN(user_data); /* user_data is FmTabPage */
+    FmFileInfoList* files;
+
+    /* bookmark may contain not a directory */
+    if (G_UNLIKELY(!file || !fm_file_info_is_dir(file)))
+        return;
+    /* well, it should be FmMainWin but let safeguard it */
+    if (G_UNLIKELY(!IS_FM_MAIN_WIN(win)))
+        return;
+    files = fm_file_info_list_new();
+    fm_file_info_list_push_tail(files, file);
+    g_object_set_qdata_full(G_OBJECT(act_grp), popup_qdata, files,
+                            (GDestroyNotify)fm_file_info_list_unref);
+    gtk_action_group_set_translation_domain(act_grp, NULL);
+    gtk_action_group_add_actions(act_grp, folder_menu_actions,
+                                 G_N_ELEMENTS(folder_menu_actions), win);
+    /* we use the same XML for simplicity */
+    gtk_ui_manager_add_ui_from_string(ui, folder_menu_xml, -1, NULL);
+}
+#endif
+
 static void fm_tab_page_init(FmTabPage *page)
 {
     GtkPaned* paned = GTK_PANED(page);
@@ -656,6 +704,9 @@ static void fm_tab_page_init(FmTabPage *page)
 
     page->side_pane = fm_side_pane_new();
     fm_side_pane_set_mode(page->side_pane, (mode & FM_SP_MODE_MASK));
+#if FM_CHECK_VERSION(1, 2, 0)
+    fm_side_pane_set_popup_updater(page->side_pane, _update_sidepane_popup, page);
+#endif
     /* TODO: add a close button to side pane */
     gtk_paned_add1(paned, GTK_WIDGET(page->side_pane));
     focus_chain = g_list_prepend(focus_chain, page->side_pane);
