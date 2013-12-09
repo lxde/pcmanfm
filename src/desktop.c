@@ -4065,6 +4065,12 @@ static void on_desktop_font_set(GtkFontButton* btn, FmDesktop *desktop)
     }
 }
 
+static void on_desktop_folder_new_win_toggled(GtkToggleButton* btn, FmDesktop *desktop)
+{
+    app_config->desktop_folder_new_win = gtk_toggle_button_get_active(btn);
+    pcmanfm_save_config(FALSE);
+}
+
 void fm_desktop_preference(GtkAction *act, FmDesktop *desktop)
 {
     if (desktop == NULL)
@@ -4110,6 +4116,10 @@ void fm_desktop_preference(GtkAction *act, FmDesktop *desktop)
         if(desktop->conf.desktop_font)
             gtk_font_button_set_font_name(GTK_FONT_BUTTON(item), desktop->conf.desktop_font);
         g_signal_connect(item, "font-set", G_CALLBACK(on_desktop_font_set), desktop);
+        item = gtk_builder_get_object(builder, "desktop_folder_new_win");
+        gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(item), app_config->desktop_folder_new_win);
+        gtk_widget_show(GTK_WIDGET(item));
+        g_signal_connect(item, "toggled", G_CALLBACK(on_desktop_folder_new_win_toggled), desktop);
 
         g_signal_connect(desktop_pref_dlg, "response", G_CALLBACK(on_response), &desktop_pref_dlg);
         g_object_unref(builder);

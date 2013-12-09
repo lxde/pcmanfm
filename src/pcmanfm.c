@@ -485,7 +485,12 @@ static void move_window_to_desktop(FmMainWin* win, FmDesktop* desktop)
 gboolean pcmanfm_open_folder(GAppLaunchContext* ctx, GList* folder_infos, gpointer user_data, GError** err)
 {
     GList* l = folder_infos;
-    if(new_win)
+    gboolean use_new_win = new_win;
+
+    /* for desktop folder open it in new win if set in config */
+    if (!use_new_win && user_data && FM_IS_DESKTOP(user_data))
+        use_new_win = app_config->desktop_folder_new_win;
+    if(use_new_win)
     {
         FmMainWin *win = fm_main_win_add_win(NULL,
                                 fm_file_info_get_path((FmFileInfo*)l->data));
