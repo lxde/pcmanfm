@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm 1.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-08 23:54+0200\n"
-"PO-Revision-Date: 2013-12-08 22:52+0000\n"
+"POT-Creation-Date: 2013-12-10 00:17+0200\n"
+"PO-Revision-Date: 2013-12-13 01:44+0000\n"
 "Last-Translator: Adolfo <fitoschido@ubuntu.com>\n"
 "Language-Team: Spanish (Castilian) <translation@mailinglist.lxde.org>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1386543152.0\n"
+"X-POOTLE-MTIME: 1386899046.0\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2013"
@@ -109,26 +109,30 @@ msgid "_Show menus provided by window managers when desktop is clicked"
 msgstr "Mo_strar menús del gestor de ventanas al hacer clic en el escritorio"
 
 #: ../data/ui/desktop-pref.glade.h:20
+msgid "_Open folder from desktop in new window"
+msgstr "Abrir carpetas en el escritori_o en una ventana nueva"
+
+#: ../data/ui/desktop-pref.glade.h:21
 msgid "Ad_vanced"
 msgstr "A_vanzado"
 
-#: ../data/ui/desktop-pref.glade.h:21
+#: ../data/ui/desktop-pref.glade.h:22
 msgid "Fill with background color only"
 msgstr "Rellenar con el color del fondo"
 
-#: ../data/ui/desktop-pref.glade.h:22
+#: ../data/ui/desktop-pref.glade.h:23
 msgid "Stretch to fill the entire screen"
 msgstr "Estirar para llenar toda la pantalla"
 
-#: ../data/ui/desktop-pref.glade.h:23
+#: ../data/ui/desktop-pref.glade.h:24
 msgid "Stretch to fit the screen"
 msgstr "Estirar para ajustarse a la pantalla"
 
-#: ../data/ui/desktop-pref.glade.h:24
+#: ../data/ui/desktop-pref.glade.h:25
 msgid "Center on the screen"
 msgstr "Centrar en la pantalla"
 
-#: ../data/ui/desktop-pref.glade.h:25
+#: ../data/ui/desktop-pref.glade.h:26
 msgid "Tile the image to fill the entire screen"
 msgstr "Usar la imagen en mosaico para llenar la pantalla"
 
@@ -501,8 +505,8 @@ msgid "_Port:"
 msgstr "_Puerto:"
 
 #: ../data/ui/connect.glade.h:6
-msgid "Pat_h:"
-msgstr "_Ruta:"
+msgid "Pa_th:"
+msgstr "Ru_ta:"
 
 #: ../data/ui/connect.glade.h:7
 msgid "_Anonymous login"
@@ -524,11 +528,11 @@ msgstr "FTP"
 msgid "WebDAV"
 msgstr "WebDAV"
 
-#: ../src/volume-manager.c:164
+#: ../src/volume-manager.c:167
 msgid "Removable Disk"
 msgstr "Disco extraíble"
 
-#: ../src/volume-manager.c:217
+#: ../src/volume-manager.c:220
 msgid "Open in File Manager"
 msgstr "Abrir en el gestor de archivos"
 
@@ -536,11 +540,11 @@ msgstr "Abrir en el gestor de archivos"
 msgid "Open in New Ta_b"
 msgstr "Abrir en una _pestaña nueva"
 
-#: ../src/desktop-ui.c:52 ../src/tab-page.c:55
+#: ../src/desktop-ui.c:52 ../src/tab-page.c:56
 msgid "Open in New Win_dow"
 msgstr "Abrir en una _ventana nueva"
 
-#: ../src/desktop-ui.c:54 ../src/tab-page.c:57
+#: ../src/desktop-ui.c:54 ../src/tab-page.c:58
 msgid "Open in Termina_l"
 msgstr "Abrir en el termina_l"
 
@@ -1044,34 +1048,34 @@ msgstr "ROL"
 msgid "[FILE1, FILE2,...]"
 msgstr "[ARCHIVO1, ARCHIVO2, ...]"
 
-#: ../src/pcmanfm.c:536
+#: ../src/pcmanfm.c:541
 msgid "Terminal emulator is not set."
 msgstr "No se ha establecido el emulador de terminal."
 
-#: ../src/tab-page.c:54
+#: ../src/tab-page.c:55
 msgid "Open in New T_ab"
 msgstr "Abrir en una nueva pes_taña"
 
-#: ../src/tab-page.c:334
+#: ../src/tab-page.c:342
 #, c-format
 msgid "%d item selected"
 msgid_plural "%d items selected"
 msgstr[0] "%d elemento seleccionado"
 msgstr[1] "%d elementos seleccionados"
 
-#: ../src/tab-page.c:548
+#: ../src/tab-page.c:556
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Espacio libre: %s (Total: %s)"
 
-#: ../src/tab-page.c:568
+#: ../src/tab-page.c:576
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] "%d elemento"
 msgstr[1] "%d elementos"
 
-#: ../src/tab-page.c:569
+#: ../src/tab-page.c:577
 #, c-format
 msgid " (%d hidden)"
 msgid_plural " (%d hidden)"
@@ -1093,6 +1097,9 @@ msgstr "Explore el sistema de archivos y gestione los archivos"
 #: ../data/pcmanfm-desktop-pref.desktop.in.h:2
 msgid "Change desktop wallpapers and behavior of desktop manager"
 msgstr "Cambiar el fondo y el comportamiento del escritorio"
+
+#~ msgid "Pat_h:"
+#~ msgstr "_Ruta:"
 
 #~ msgid "Devi_ces"
 #~ msgstr "Dispositi_vos"
