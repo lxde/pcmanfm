@@ -2,13 +2,12 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-13 22:34+0100\n"
-"PO-Revision-Date: 2013-10-16 06:00+0000\n"
+"POT-Creation-Date: 2013-12-10 00:17+0200\n"
+"PO-Revision-Date: 2013-12-17 15:01+0000\n"
 "Last-Translator: wwycheuk <wwycheuk@gmail.com>\n"
 "Language-Team: zh_TW <zh_TW@li.org>\n"
 "Language: zh_TW\n"
@@ -18,7 +17,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Pootle 2.5.0\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-POOTLE-MTIME: 1381903238.0\n"
+"X-POOTLE-MTIME: 1387292477.0\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2013"
@@ -83,14 +82,12 @@ msgid "<b>Show desktop icons</b>"
 msgstr "<b>顯示桌面圖示</b>"
 
 #: ../data/ui/desktop-pref.glade.h:14
-#, fuzzy
 msgid "_Show \"Documents\" icon on desktop"
-msgstr "在桌面顯示「我的文件」圖示(_S)"
+msgstr "在桌面顯示「文件」圖示(_S)"
 
 #: ../data/ui/desktop-pref.glade.h:15
-#, fuzzy
 msgid "Sho_w \"Devices\" icon on desktop"
-msgstr "在桌面顯示「我的文件」圖示(_S)"
+msgstr "在桌面顯示「裝置」圖示(_W)"
 
 #: ../data/ui/desktop-pref.glade.h:16
 #, fuzzy
@@ -110,26 +107,31 @@ msgid "_Show menus provided by window managers when desktop is clicked"
 msgstr "點擊桌面時，顯示視窗管理員提供的選單(_S)"
 
 #: ../data/ui/desktop-pref.glade.h:20
+#, fuzzy
+msgid "_Open folder from desktop in new window"
+msgstr "在新視窗開啟來自桌面的資料夾(_O)"
+
+#: ../data/ui/desktop-pref.glade.h:21
 msgid "Ad_vanced"
 msgstr "進階(_V)"
 
-#: ../data/ui/desktop-pref.glade.h:21
+#: ../data/ui/desktop-pref.glade.h:22
 msgid "Fill with background color only"
 msgstr "只以背景色填滿"
 
-#: ../data/ui/desktop-pref.glade.h:22
+#: ../data/ui/desktop-pref.glade.h:23
 msgid "Stretch to fill the entire screen"
 msgstr "延展至填滿整個螢幕"
 
-#: ../data/ui/desktop-pref.glade.h:23
+#: ../data/ui/desktop-pref.glade.h:24
 msgid "Stretch to fit the screen"
 msgstr "延展到適合螢幕大小"
 
-#: ../data/ui/desktop-pref.glade.h:24
+#: ../data/ui/desktop-pref.glade.h:25
 msgid "Center on the screen"
 msgstr "置於螢幕中央"
 
-#: ../data/ui/desktop-pref.glade.h:25
+#: ../data/ui/desktop-pref.glade.h:26
 msgid "Tile the image to fill the entire screen"
 msgstr "並排影像填滿整個螢幕"
 
@@ -181,8 +183,9 @@ msgid "Confi_rm before moving files into \"trash can\""
 msgstr "將檔案移至「垃圾桶」前先確認(_R)"
 
 #: ../data/ui/pref.glade.h:12
+#, fuzzy
 msgid "Don't ask options on _launch executable file"
-msgstr ""
+msgstr "啟動執行檔時不詢問選項(_L)"
 
 #: ../data/ui/pref.glade.h:13
 msgid "_Bookmarks:"
@@ -257,8 +260,9 @@ msgid "Al_ways show full file names"
 msgstr "一定顯示完整檔案名(_W)"
 
 #: ../data/ui/pref.glade.h:31
+#, fuzzy
 msgid "Show icons of bac_kup files shadowed"
-msgstr ""
+msgstr "顯示隱藏備份檔案的圖示(_K)"
 
 #: ../data/ui/pref.glade.h:32
 msgid "_Display"
@@ -273,13 +277,14 @@ msgid "Al_ways show the tab bar"
 msgstr "一定顯示分頁列(_W)"
 
 #: ../data/ui/pref.glade.h:35
+#, fuzzy
 msgid "_Maximum width of tab label:"
-msgstr ""
+msgstr "分頁標籤最大寬度(_M)："
 
 #. Use genitive case here, context is: width is XXX characters
 #: ../data/ui/pref.glade.h:37
 msgid "characters"
-msgstr ""
+msgstr "字元"
 
 #: ../data/ui/pref.glade.h:38
 msgid "<b>Directories Tree</b>"
@@ -296,33 +301,33 @@ msgstr "<b>在「地點」欄顯示：</b>"
 #: ../data/ui/pref.glade.h:41
 #, fuzzy
 msgid "_Home Folder"
-msgstr "家目錄"
+msgstr "家目錄(_H)"
 
 #: ../data/ui/pref.glade.h:42
-#, fuzzy
 msgid "Des_ktop"
-msgstr "桌面(_D)"
+msgstr "桌面(_K)"
 
-#: ../data/ui/pref.glade.h:43 ../src/main-win-ui.c:160
+#: ../data/ui/pref.glade.h:43 ../src/main-win-ui.c:189
 msgid "_Trash Can"
 msgstr "垃圾桶(_T)"
 
 #: ../data/ui/pref.glade.h:44
+#, fuzzy
 msgid "_Filesystem Root"
-msgstr ""
+msgstr "檔案系統根目錄(_F)"
 
 #: ../data/ui/pref.glade.h:45
 msgid "App_lications"
 msgstr "應用程式(_L)"
 
-#: ../data/ui/pref.glade.h:46
+#: ../data/ui/pref.glade.h:46 ../src/main-win-ui.c:192
 msgid "Dev_ices"
-msgstr ""
+msgstr "裝置(_I)"
 
 #: ../data/ui/pref.glade.h:47
 #, fuzzy
 msgid "_Network"
-msgstr "網路磁碟(_W)"
+msgstr "網路(_N)"
 
 #: ../data/ui/pref.glade.h:48
 msgid "_Layout"
@@ -362,7 +367,7 @@ msgstr "<b>程式</b>"
 
 #: ../data/ui/pref.glade.h:57
 msgid "<i>Commands below may include extra options if necessary.</i>"
-msgstr ""
+msgstr "<i>以下指令在需要時可包含額外選項。</i>"
 
 #: ../data/ui/pref.glade.h:58
 msgid "_Terminal emulator:"
@@ -375,7 +380,7 @@ msgstr "切換使用者之指令(_S)："
 #. Application command to format some drive
 #: ../data/ui/pref.glade.h:61
 msgid "_Format command:"
-msgstr ""
+msgstr "格式化指令(_F)："
 
 #: ../data/ui/pref.glade.h:62
 msgid "A_rchiver integration:"
@@ -391,17 +396,18 @@ msgid "S_how only user defined templates in menu"
 msgstr ""
 
 #: ../data/ui/pref.glade.h:65
+#, fuzzy
 msgid "Show _only one template for each MIME type"
-msgstr ""
+msgstr "對每種 MIME 類型只顯示一個模板(_O)"
 
 #: ../data/ui/pref.glade.h:66
+#, fuzzy
 msgid "Ru_n default application after creation from template"
-msgstr ""
+msgstr "在從模板建立後執行預設應用程式(_N)"
 
 #: ../data/ui/pref.glade.h:67
-#, fuzzy
 msgid "<b>Other Options</b>"
-msgstr "<b>顯示桌面圖示</b>"
+msgstr "<b>其他選項</b>"
 
 #: ../data/ui/pref.glade.h:68
 msgid "_Use Application Startup Notify by default"
@@ -418,7 +424,7 @@ msgstr ""
 
 #: ../data/ui/pref.glade.h:71
 msgid "D_efer test for content type on folder loading"
-msgstr ""
+msgstr "推遲載入資料夾時的內容類型檢測(_E)"
 
 #: ../data/ui/pref.glade.h:72
 msgid "_Advanced"
@@ -476,11 +482,56 @@ msgstr "正在偵測..."
 msgid "Please select the action you want to perform:"
 msgstr "請選擇要執行的動作："
 
-#: ../src/volume-manager.c:164
+#: ../data/ui/connect.glade.h:1
+msgid "Connect to remote server"
+msgstr "連接遠端伺服器"
+
+#: ../data/ui/connect.glade.h:2
+msgid "<b>Specify remote folder to connect</b>"
+msgstr "<b>指定要連接的遠端資料夾</b>"
+
+#: ../data/ui/connect.glade.h:3
+msgid "_Type:"
+msgstr "類型(_T)："
+
+#: ../data/ui/connect.glade.h:4
+msgid "_Host:"
+msgstr "主機(_H)："
+
+#: ../data/ui/connect.glade.h:5
+msgid "_Port:"
+msgstr "連接埠(_P)："
+
+#: ../data/ui/connect.glade.h:6
+msgid "Pa_th:"
+msgstr ""
+
+#: ../data/ui/connect.glade.h:7
+msgid "_Anonymous login"
+msgstr ""
+
+#: ../data/ui/connect.glade.h:8
+msgid "_Login as:"
+msgstr ""
+
+#: ../data/ui/connect.glade.h:9
+msgid "SSH"
+msgstr ""
+
+#: ../data/ui/connect.glade.h:10
+msgid "FTP"
+msgstr ""
+
+#: ../data/ui/connect.glade.h:11
+#, fuzzy
+msgid "WebDAV"
+msgstr "WebDAV"
+
+#: ../src/volume-manager.c:167
 msgid "Removable Disk"
 msgstr "移除式磁碟"
 
-#: ../src/volume-manager.c:217
+#: ../src/volume-manager.c:220
 msgid "Open in File Manager"
 msgstr "在檔案管理程式開啟"
 
@@ -504,346 +555,404 @@ msgstr "固定在目前位置(_K)"
 msgid "Snap to _Grid"
 msgstr "貼齊格線(_G)"
 
-#: ../src/desktop.c:636
+#: ../src/desktop.c:634
 #, fuzzy
 msgid "Activate file"
-msgstr "<影像檔>"
+msgstr "啟動檔案"
 
-#: ../src/desktop.c:638
-#, fuzzy
+#: ../src/desktop.c:636
 msgid "Show file menu"
-msgstr "顯示隱藏檔(_N)"
+msgstr "顯示檔案選單"
 
-#: ../src/desktop.c:1054
-#, fuzzy
+#: ../src/desktop.c:1052
 msgid "Show desktop menu"
-msgstr "<b>顯示桌面圖示</b>"
+msgstr "顯示桌面選單"
 
 #. FIXME: set name by monitor
-#: ../src/desktop.c:1126
-#, fuzzy
+#: ../src/desktop.c:1124
 msgid "Desktop"
-msgstr "桌面(_D)"
+msgstr "桌面"
 
-#: ../src/main-win-ui.c:128
+#: ../src/main-win-ui.c:153
 msgid "_File"
 msgstr "檔案(_F)"
 
-#: ../src/main-win-ui.c:129
+#: ../src/main-win-ui.c:154
 msgid "_New Window"
 msgstr "新視窗(_N)"
 
-#: ../src/main-win-ui.c:130
+#: ../src/main-win-ui.c:155
 msgid "New T_ab"
 msgstr "新分頁(_A)"
 
-#: ../src/main-win-ui.c:130
+#: ../src/main-win-ui.c:155
 msgid "Create new tab for this folder"
 msgstr "為此資料夾建立新分頁"
 
-#: ../src/main-win-ui.c:131
+#: ../src/main-win-ui.c:156
 msgid "C_reate New..."
 msgstr "新建(_R)..."
 
-#: ../src/main-win-ui.c:132
+#: ../src/main-win-ui.c:157
 msgid "_Close Tab"
 msgstr "關閉分頁(_C)"
 
-#: ../src/main-win-ui.c:133
+#: ../src/main-win-ui.c:158
 msgid "Close _Window"
 msgstr "關閉視窗(_W)"
 
-#: ../src/main-win-ui.c:134
+#: ../src/main-win-ui.c:159
 msgid "_Edit"
 msgstr "編輯(_E)"
 
-#: ../src/main-win-ui.c:139
+#: ../src/main-win-ui.c:164
 msgid "_Rename"
 msgstr "重新命名(_R)"
 
-#: ../src/main-win-ui.c:140
+#: ../src/main-win-ui.c:165
 msgid "Create Symlin_k"
 msgstr "建立符號連結(_K)"
 
-#: ../src/main-win-ui.c:141
+#: ../src/main-win-ui.c:166
 msgid "_Move To..."
 msgstr "移動到(_M)..."
 
-#: ../src/main-win-ui.c:142
+#: ../src/main-win-ui.c:167
 msgid "C_opy To..."
 msgstr "複製到(_O)..."
 
-#: ../src/main-win-ui.c:144
+#: ../src/main-win-ui.c:169
 msgid "_Invert Selection"
 msgstr "反相選取(_I)"
 
-#: ../src/main-win-ui.c:145
+#: ../src/main-win-ui.c:170
 msgid "Prefere_nces"
 msgstr "偏好設定(_N)"
 
-#: ../src/main-win-ui.c:146
+#: ../src/main-win-ui.c:171
 msgid "_View"
 msgstr "檢視(_V)"
 
-#: ../src/main-win-ui.c:147
+#: ../src/main-win-ui.c:172
 msgid "_Reload Folder"
 msgstr "重讀資料夾(_R)"
 
-#: ../src/main-win-ui.c:147
+#: ../src/main-win-ui.c:172
 msgid "Reload current folder"
 msgstr "重讀目前資料夾"
 
-#: ../src/main-win-ui.c:148
+#: ../src/main-win-ui.c:173
+msgid "Tool_bar"
+msgstr "工具列(_B)"
+
+#: ../src/main-win-ui.c:174
 msgid "Side _Pane"
 msgstr "側邊欄(_P)"
 
 #. other see below: 'ShowHidden' 'ShowStatus' 'Fullscreen' 'IconView'...
-#: ../src/main-win-ui.c:150
+#: ../src/main-win-ui.c:176
 msgid "S_ort Files"
 msgstr "排序檔案(_O)"
 
-#: ../src/main-win-ui.c:151
+#: ../src/main-win-ui.c:177
+msgid "_Zoom In"
+msgstr "放大(_Z)"
+
+#: ../src/main-win-ui.c:178
+msgid "Zoom O_ut"
+msgstr "縮小(_U)"
+
+#: ../src/main-win-ui.c:179
+msgid "_Normal Size"
+msgstr "普通大小(_N)"
+
+#: ../src/main-win-ui.c:180
 msgid "_Help"
 msgstr "說明(_H)"
 
-#: ../src/main-win-ui.c:153
+#: ../src/main-win-ui.c:182
 #, fuzzy
 msgid "_Keyboard Navigation"
 msgstr "鍵盤導覽(_K)"
 
-#: ../src/main-win-ui.c:154
+#: ../src/main-win-ui.c:183
 msgid "_Go"
 msgstr "到(_G)"
 
-#: ../src/main-win-ui.c:155
+#: ../src/main-win-ui.c:184
 msgid "_Previous Folder"
 msgstr "上一個資料夾(_P)"
 
-#: ../src/main-win-ui.c:155
+#: ../src/main-win-ui.c:184
 msgid "Return to previous folder in history"
 msgstr ""
 
-#: ../src/main-win-ui.c:156
+#: ../src/main-win-ui.c:185
 msgid "_Next Folder"
 msgstr "下一個資料夾(_N)"
 
-#: ../src/main-win-ui.c:156
+#: ../src/main-win-ui.c:185
 msgid "Go forward to next folder in history"
 msgstr ""
 
-#: ../src/main-win-ui.c:157
+#: ../src/main-win-ui.c:186
 msgid "Pa_rent Folder"
 msgstr "上層資料夾(_R)"
 
-#: ../src/main-win-ui.c:157
+#: ../src/main-win-ui.c:186
 msgid "Go to parent Folder"
 msgstr "到上層資料夾"
 
-#: ../src/main-win-ui.c:158
+#: ../src/main-win-ui.c:187
 msgid "H_ome Folder"
 msgstr "家目錄(_O)"
 
-#: ../src/main-win-ui.c:158
+#: ../src/main-win-ui.c:187
 #, fuzzy
 msgid "Go to home folder"
 msgstr "到上層資料夾"
 
-#: ../src/main-win-ui.c:159
+#: ../src/main-win-ui.c:188
 msgid "_Desktop"
 msgstr "桌面(_D)"
 
-#: ../src/main-win-ui.c:159
+#: ../src/main-win-ui.c:188
 #, fuzzy
 msgid "Go to desktop folder"
 msgstr "到上層資料夾"
 
-#: ../src/main-win-ui.c:160
+#: ../src/main-win-ui.c:189
 msgid "Open trash can"
 msgstr ""
 
-#: ../src/main-win-ui.c:161
+#: ../src/main-win-ui.c:190
 msgid "Filesyste_m Root"
 msgstr ""
 
-#: ../src/main-win-ui.c:161
+#: ../src/main-win-ui.c:190
+#, fuzzy
 msgid "Go fo filesystem root"
-msgstr ""
+msgstr "前往檔案系統根目錄"
 
-#: ../src/main-win-ui.c:162
+#: ../src/main-win-ui.c:191
 msgid "_Applications"
 msgstr "應用程式(_A)"
 
-#: ../src/main-win-ui.c:162
+#: ../src/main-win-ui.c:191
+#, fuzzy
 msgid "Go to root of applications menu folder"
-msgstr ""
+msgstr "前往應用程式選單資料夾頂層"
 
-#: ../src/main-win-ui.c:163
-msgid "Devi_ces"
-msgstr ""
-
-#: ../src/main-win-ui.c:163
+#: ../src/main-win-ui.c:192
 #, fuzzy
 msgid "Go to list of devices connected to the computer"
-msgstr "在桌面顯示磁碟圖示(_H)"
+msgstr "前往連接電腦的裝置清單"
 
-#: ../src/main-win-ui.c:164
+#: ../src/main-win-ui.c:193
 #, fuzzy
 msgid "Net_work"
-msgstr "網路磁碟(_W)"
+msgstr "網路(_W)"
 
-#: ../src/main-win-ui.c:164
+#: ../src/main-win-ui.c:193
 #, fuzzy
 msgid "Go to list of places on the network"
-msgstr "在桌面顯示磁碟圖示(_H)"
+msgstr "前往網路地方清單"
 
-#: ../src/main-win-ui.c:165
+#: ../src/main-win-ui.c:194
+msgid "_Connect to Server..."
+msgstr "連接伺服器(_C)..."
+
+#: ../src/main-win-ui.c:194
+msgid "Open a window to choose remote folder location"
+msgstr "開啟視窗以選擇遠端資料夾位置"
+
+#: ../src/main-win-ui.c:195
+#, fuzzy
 msgid "Go to the path in the location bar"
-msgstr ""
+msgstr "前往位址列的路徑"
 
-#: ../src/main-win-ui.c:166
+#: ../src/main-win-ui.c:196
 msgid "_Bookmarks"
 msgstr "書籤(_B)"
 
-#: ../src/main-win-ui.c:167
+#: ../src/main-win-ui.c:197
 #, fuzzy
 msgid "_Add to Bookmarks"
-msgstr "新增到書籤"
+msgstr "新增到書籤(_A)"
 
-#: ../src/main-win-ui.c:167
+#: ../src/main-win-ui.c:197
 msgid "Add current folder to bookmarks list"
 msgstr ""
 
-#: ../src/main-win-ui.c:168
+#: ../src/main-win-ui.c:198
 msgid "Tool_s"
 msgstr "工具(_S)"
 
-#: ../src/main-win-ui.c:169
+#: ../src/main-win-ui.c:199
 msgid "Open Current Folder in _Terminal"
 msgstr "以終端機開啟目前資料夾(_T)"
 
-#: ../src/main-win-ui.c:172
-msgid "Fin_d Files"
+#: ../src/main-win-ui.c:202
+#, fuzzy
+msgid "Fin_d Files..."
 msgstr "尋找檔案(_D)"
 
-#: ../src/main-win-ui.c:172
+#: ../src/main-win-ui.c:202
 #, fuzzy
 msgid "Open search dialog"
 msgstr "開啟桌面偏好設定"
 
 #. for popup menu - these entries exist in FmFolderView popup still
-#: ../src/main-win-ui.c:181
+#: ../src/main-win-ui.c:211
 msgid "Folder"
 msgstr "資料夾"
 
-#: ../src/main-win-ui.c:182
+#: ../src/main-win-ui.c:212
 msgid "Empty File"
 msgstr "空白檔案"
 
-#: ../src/main-win-ui.c:188
-msgid "Show Hidde_n"
+#. Note to translators: "Mingle..." means "Do not put folders before files" but make the translation as short as possible, please!
+#: ../src/main-win-ui.c:220
+msgid "Mingle _Files and Folders"
+msgstr ""
+
+#: ../src/main-win-ui.c:223
+msgid "_Ignore Name Case"
+msgstr ""
+
+#: ../src/main-win-ui.c:225
+#, fuzzy
+msgid "Sho_w Hidden"
 msgstr "顯示隱藏檔(_N)"
 
-#: ../src/main-win-ui.c:189
+#. Note to translators: this save is meant for folder's settings such as sort
+#: ../src/main-win-ui.c:227
+msgid "Preserve This Folder's Settings"
+msgstr ""
+
+#: ../src/main-win-ui.c:228
+#, fuzzy
+msgid ""
+"Check to remember view and sort as folder setting rather than global one"
+msgstr "勾選以記住資料夾的檢視和排列設定，而非使用全域設定"
+
+#: ../src/main-win-ui.c:230
+msgid "Show _Toolbar"
+msgstr "顯示工具列(_T)"
+
+#: ../src/main-win-ui.c:231
+msgid "Show 'Ne_w Tab' Button"
+msgstr "顯示「新分頁」按鈕(_W)"
+
+#: ../src/main-win-ui.c:232
+msgid "Show _Navigation Buttons"
+msgstr "顯示導覽按鈕(_N)"
+
+#: ../src/main-win-ui.c:233
+msgid "Show '_Home' Button"
+msgstr "顯示「家目錄」按鈕(_H)"
+
+#: ../src/main-win-ui.c:234
 msgid "Sho_w Side Pane"
 msgstr "顯示側邊欄(_W)"
 
-#: ../src/main-win-ui.c:190
+#: ../src/main-win-ui.c:235
 msgid "Show Status B_ar"
 msgstr "顯示狀態列(_A)"
 
-#: ../src/main-win-ui.c:191
-msgid "T_win Pane Mode"
-msgstr "雙面板模式(_W)"
+#: ../src/main-win-ui.c:236
+msgid "_Dual Pane Mode"
+msgstr "雙窗格模式(_D)"
 
-#: ../src/main-win-ui.c:192
+#: ../src/main-win-ui.c:236
+msgid "Show two panels with folder views"
+msgstr "顯示帶資料夾檢視的兩個面板"
+
+#: ../src/main-win-ui.c:237
 msgid "Fullscreen _Mode"
 msgstr "全螢幕模式(_M)"
 
-#: ../src/main-win-ui.c:197
+#: ../src/main-win-ui.c:243
 msgid "_Icon View"
 msgstr "以大圖示檢視(_I)"
 
-#: ../src/main-win-ui.c:198
-msgid "_Thumbnail View"
-msgstr "縮圖檢視(_T)"
-
-#: ../src/main-win-ui.c:199
+#: ../src/main-win-ui.c:244
 msgid "_Compact View"
 msgstr "以簡潔清單檢視(_C)"
 
-#: ../src/main-win-ui.c:200
+#: ../src/main-win-ui.c:245
+msgid "_Thumbnail View"
+msgstr "縮圖檢視(_T)"
+
+#: ../src/main-win-ui.c:246
 msgid "Detailed _List View"
 msgstr "以詳細清單檢視(_L)"
 
-#: ../src/main-win-ui.c:212 ../src/main-win-ui.c:217
+#: ../src/main-win-ui.c:259 ../src/main-win-ui.c:264
 msgid "By _Name"
 msgstr "依名稱(_N)"
 
-#: ../src/main-win-ui.c:213 ../src/main-win-ui.c:218
+#: ../src/main-win-ui.c:260 ../src/main-win-ui.c:265
 msgid "By _Modification Time"
 msgstr "依修改時間(_M)"
 
-#: ../src/main-win-ui.c:214 ../src/main-win-ui.c:219
+#: ../src/main-win-ui.c:261 ../src/main-win-ui.c:266
 msgid "By _Size"
 msgstr "依大小(_S)"
 
-#: ../src/main-win-ui.c:215 ../src/main-win-ui.c:220
+#: ../src/main-win-ui.c:262 ../src/main-win-ui.c:267
 msgid "By File _Type"
 msgstr "依檔案類型(_T)"
 
-#: ../src/main-win-ui.c:226
+#: ../src/main-win-ui.c:273
 msgid "Places"
 msgstr "位置"
 
-#: ../src/main-win-ui.c:227
+#: ../src/main-win-ui.c:274
 msgid "Directory Tree"
 msgstr "目錄樹"
 
-#: ../src/main-win-ui.c:228
+#: ../src/main-win-ui.c:275
 msgid "Remote"
 msgstr "遠端"
 
-#: ../src/main-win.c:585
+#: ../src/main-win.c:704
+#, fuzzy
 msgid "Show history of visited folders"
-msgstr ""
+msgstr "顯示檢視資料夾的歷史"
 
-#: ../src/main-win.c:588
+#: ../src/main-win.c:707
 msgid "History"
-msgstr ""
+msgstr "歷史"
 
-#: ../src/main-win.c:602
+#: ../src/main-win.c:721
 msgid "You are in super user mode"
 msgstr "你正在使用超級使用者模式"
 
-#: ../src/main-win.c:766
+#: ../src/main-win.c:885
 #, fuzzy
 msgid "Lightweight file manager\n"
-msgstr ""
-"輕量級的檔案管理程式\n"
-"\n"
-"由洪任諭 (PCMan) 開發"
+msgstr "輕巧的檔案管理員程式\n"
 
-#: ../src/main-win.c:771
-#, c-format
+#: ../src/main-win.c:890
+#, c-format, fuzzy
 msgid "using LibFM ver. %s\n"
-msgstr ""
+msgstr "使用 LibFM 第 %s 版\n"
 
-#: ../src/main-win.c:773
+#: ../src/main-win.c:892
 #, fuzzy
 msgid ""
 "\n"
 "Developed by Hon Jen Yee (PCMan)"
 msgstr ""
-"輕量級的檔案管理程式\n"
 "\n"
 "由洪任諭 (PCMan) 開發"
 
-#: ../src/main-win.c:798 ../src/main-win.c:806
-#, fuzzy
+#: ../src/main-win.c:917 ../src/main-win.c:925
 msgid "Keyboard Navigation"
 msgstr "鍵盤導覽"
 
-#: ../src/main-win.c:800
+#: ../src/main-win.c:919
 msgid ""
 "Tab: cycle focus Folder View -> Side Pane -> Tools Bar\n"
 "Shift+Tab: cycle focus Tools Bar -> Side Pane -> Folder View\n"
@@ -859,11 +968,7 @@ msgstr ""
 "F10：啟用主選單\n"
 "Ctrl+L 或 Alt+D：選取路徑列"
 
-#: ../src/main-win.c:844
-msgid "Switch user command is not set."
-msgstr "切換使用者的命令尚未設定。"
-
-#: ../src/main-win.c:1270
+#: ../src/main-win.c:1522
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -874,7 +979,7 @@ msgstr ""
 "'%s'\n"
 "輸入新書籤的名稱:"
 
-#: ../src/main-win.c:1274
+#: ../src/main-win.c:1526
 msgid "Add to Bookmarks"
 msgstr "新增到書籤"
 
@@ -954,7 +1059,7 @@ msgstr ""
 msgid "[FILE1, FILE2,...]"
 msgstr "[檔案1, 檔案2,...]"
 
-#: ../src/pcmanfm.c:536
+#: ../src/pcmanfm.c:541
 msgid "Terminal emulator is not set."
 msgstr "尚未設定終端機模擬器。"
 
@@ -962,24 +1067,24 @@ msgstr "尚未設定終端機模擬器。"
 msgid "Open in New T_ab"
 msgstr "在新分頁開啟(_A)"
 
-#: ../src/tab-page.c:254
+#: ../src/tab-page.c:342
 #, c-format
 msgid "%d item selected"
 msgid_plural "%d items selected"
 msgstr[0] "已選取 %d 個項目"
 
-#: ../src/tab-page.c:442
+#: ../src/tab-page.c:556
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "可用空間：%s (總共：%s )"
 
-#: ../src/tab-page.c:462
+#: ../src/tab-page.c:576
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] "%d 個項目"
 
-#: ../src/tab-page.c:463
+#: ../src/tab-page.c:577
 #, c-format
 msgid " (%d hidden)"
 msgid_plural " (%d hidden)"
@@ -1000,6 +1105,18 @@ msgstr "瀏覽檔案系統及管理檔案"
 #: ../data/pcmanfm-desktop-pref.desktop.in.h:2
 msgid "Change desktop wallpapers and behavior of desktop manager"
 msgstr "變更桌面管現程式的桌布及行為"
+
+#~ msgid "Fin_d Files"
+#~ msgstr "尋找檔案(_D)"
+
+#~ msgid "Show Hidde_n"
+#~ msgstr "顯示隱藏檔(_N)"
+
+#~ msgid "T_win Pane Mode"
+#~ msgstr "雙面板模式(_W)"
+
+#~ msgid "Switch user command is not set."
+#~ msgstr "切換使用者的命令尚未設定。"
 
 #~ msgid "Show \"_My Computer\" icon on desktop"
 #~ msgstr "在桌面顯示「我的電腦」圖示(_M)"
