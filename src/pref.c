@@ -183,6 +183,30 @@ static void init_auto_selection_delay_scale(GtkBuilder* builder)
     g_signal_connect(scale, "value-changed", G_CALLBACK(on_auto_sel_changed), NULL);
     gtk_widget_show(GTK_WIDGET(gtk_builder_get_object(builder, "auto_sel_box")));
 }
+
+static void on_drop_default_action_changed(GtkComboBox* combo, gpointer smart_desktop_autodrop)
+{
+    int sel = gtk_combo_box_get_active(combo);
+
+    if (sel != fm_config->drop_default_action)
+    {
+        fm_config->drop_default_action = sel;
+        fm_config_emit_changed(fm_config, "drop_default_action");
+        gtk_widget_set_sensitive(smart_desktop_autodrop, sel == FM_DND_DEST_DROP_AUTO);
+    }
+}
+
+static void init_drop_default_action_combo(GtkBuilder* builder)
+{
+    GObject *combo = gtk_builder_get_object(builder, "drop_default_action");
+    GObject *smart_desktop_autodrop = gtk_builder_get_object(builder, "smart_desktop_autodrop");
+
+    gtk_combo_box_set_active((GtkComboBox*)combo, fm_config->drop_default_action);
+    gtk_widget_set_sensitive(GTK_WIDGET(smart_desktop_autodrop),
+                             fm_config->drop_default_action == FM_DND_DEST_DROP_AUTO);
+    g_signal_connect(combo, "changed", G_CALLBACK(on_drop_default_action_changed),
+                     smart_desktop_autodrop);
+}
 #endif
 
 static void on_toggled(GtkToggleButton* btn, gpointer _off)
@@ -361,10 +385,11 @@ void fm_edit_preference( GtkWindow* parent, int page )
 
         INIT_COMBO(builder, FmAppConfig, bm_open_method, NULL);
 #if FM_CHECK_VERSION(1, 2, 0)
-        INIT_COMBO(builder, FmConfig, drop_default_action, NULL);
+        init_drop_default_action_combo(builder);
         /* FIXME: translate FmDndDestDropAction <-> GtkListStore index */
         gtk_widget_show(GTK_WIDGET(gtk_builder_get_object(builder, "drop_default_action")));
         gtk_widget_show(GTK_WIDGET(gtk_builder_get_object(builder, "drop_default_action_label")));
+        INIT_BOOL_SHOW(builder, FmConfig, smart_desktop_autodrop, NULL);
 #endif
         //INIT_BOOL(builder, FmAppConfig, change_tab_on_drop, NULL);
         INIT_COMBO(builder, FmAppConfig, view_mode, NULL);
