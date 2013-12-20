@@ -478,7 +478,11 @@ static void fm_app_config_init(FmAppConfig *cfg)
 #if FM_CHECK_VERSION(1, 0, 2)
     cfg->sort_type = FM_SORT_ASCENDING;
     cfg->sort_by = FM_FOLDER_MODEL_COL_NAME;
+#if FM_CHECK_VERSION(1, 2, 0)
+    cfg->desktop_section.desktop_sort_type = FM_SORT_ASCENDING | FM_SORT_NO_FOLDER_FIRST;
+#else
     cfg->desktop_section.desktop_sort_type = FM_SORT_ASCENDING;
+#endif
     cfg->desktop_section.desktop_sort_by = FM_FOLDER_MODEL_COL_MTIME;
 #else
     cfg->sort_type = GTK_SORT_ASCENDING;
@@ -504,6 +508,20 @@ void fm_app_config_load_desktop_config(GKeyFile *kf, const char *group, FmDeskto
     if (!g_key_file_has_group(kf, group))
         return;
 
+    /* set some defaults, assuming config is zeroed now */
+    cfg->desktop_fg.red = cfg->desktop_fg.green = cfg->desktop_fg.blue = 65535;
+#if FM_CHECK_VERSION(1, 0, 2)
+#if FM_CHECK_VERSION(1, 2, 0)
+    cfg->desktop_sort_type = FM_SORT_ASCENDING | FM_SORT_NO_FOLDER_FIRST;
+#else
+    cfg->desktop_sort_type = FM_SORT_ASCENDING;
+#endif
+    cfg->desktop_sort_by = FM_FOLDER_MODEL_COL_MTIME;
+#else
+    cfg->desktop_sort_type = GTK_SORT_ASCENDING;
+    cfg->desktop_sort_by = COL_FILE_MTIME;
+#endif
+    cfg->wallpaper_common = TRUE;
     cfg->configured = TRUE;
     if(fm_key_file_get_int(kf, group, "wallpaper_mode", &tmp_int))
         cfg->wallpaper_mode = (FmWallpaperMode)tmp_int;
