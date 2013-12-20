@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-12-10 00:17+0200\n"
-"PO-Revision-Date: 2013-12-20 10:17+0000\n"
+"PO-Revision-Date: 2013-12-20 11:12+0000\n"
 "Last-Translator: mahfiaz <mahfiaz@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: et\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1387534673.0\n"
+"X-POOTLE-MTIME: 1387537921.0\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2013"
@@ -141,7 +141,7 @@ msgstr "Avatakse samal kaardil"
 
 #: ../data/ui/pref.glade.h:2
 msgid "Opened in New Tab"
-msgstr "Avatakse uues aknas"
+msgstr "Avatakse uuel kaardil"
 
 #: ../data/ui/pref.glade.h:3
 msgid "Opened in New Window"
@@ -246,7 +246,7 @@ msgstr "<b>Kasutajaliides</b>"
 
 #: ../data/ui/pref.glade.h:28
 msgid "Us_e SI decimal prefixes instead of IEC binary prefixes"
-msgstr "Kasuta _SI-kümnendik eesliiteid IEC-binaarsete asemel"
+msgstr "_SI-kümnendeesliidete kasutamine IEC-binaarsete asemel"
 
 #: ../data/ui/pref.glade.h:29
 msgid "Treat backup files as _hidden"
@@ -270,11 +270,11 @@ msgstr "Peida 'Sulge kaart' _nupp"
 
 #: ../data/ui/pref.glade.h:34
 msgid "Al_ways show the tab bar"
-msgstr "Kaardiriba on _alati nähtaval"
+msgstr "Sakiriba on _alati nähtaval"
 
 #: ../data/ui/pref.glade.h:35
 msgid "_Maximum width of tab label:"
-msgstr "Kaardinime maksimaalne laius:"
+msgstr "Kaardi nime maksimaalne laius:"
 
 #. Use genitive case here, context is: width is XXX characters
 #: ../data/ui/pref.glade.h:37
@@ -376,7 +376,7 @@ msgstr "_Vormindamise käsk:"
 
 #: ../data/ui/pref.glade.h:62
 msgid "A_rchiver integration:"
-msgstr "_Arhiveerija kaasamine:"
+msgstr "Integreeritud _arhiveerija:"
 
 #: ../data/ui/pref.glade.h:63
 msgid "<b>Templates</b>"
@@ -400,7 +400,7 @@ msgstr "<b>Muud valikud</b>"
 
 #: ../data/ui/pref.glade.h:68
 msgid "_Use Application Startup Notify by default"
-msgstr "_Programmi valiku küsimine faili avamiseks"
+msgstr "_Faili avamisel valitakse alati selleks programm"
 
 #: ../data/ui/pref.glade.h:69
 msgid ""
@@ -532,7 +532,7 @@ msgstr "Ava uuel _kaardil"
 
 #: ../src/desktop-ui.c:52 ../src/tab-page.c:56
 msgid "Open in New Win_dow"
-msgstr "Ava uues _aknas"
+msgstr "Ava uues ak_nas"
 
 #: ../src/desktop-ui.c:54 ../src/tab-page.c:58
 msgid "Open in Termina_l"
@@ -573,7 +573,7 @@ msgstr "Uus ake_n"
 
 #: ../src/main-win-ui.c:155
 msgid "New T_ab"
-msgstr "Uus _kaart"
+msgstr "Uus kaar_t"
 
 #: ../src/main-win-ui.c:155
 msgid "Create new tab for this folder"
@@ -642,7 +642,7 @@ msgstr "Külg_paneel"
 #. other see below: 'ShowHidden' 'ShowStatus' 'Fullscreen' 'IconView'...
 #: ../src/main-win-ui.c:176
 msgid "S_ort Files"
-msgstr "_Järjesta"
+msgstr "_Järjestus"
 
 #: ../src/main-win-ui.c:177
 msgid "_Zoom In"
@@ -690,7 +690,7 @@ msgstr "Ü_lemkaust"
 
 #: ../src/main-win-ui.c:186
 msgid "Go to parent Folder"
-msgstr "Mine ülemkausta"
+msgstr "Ülemkausta liikumine"
 
 #: ../src/main-win-ui.c:187
 msgid "H_ome Folder"
@@ -758,11 +758,11 @@ msgstr "_Järjehoidjad"
 
 #: ../src/main-win-ui.c:197
 msgid "_Add to Bookmarks"
-msgstr "_Lisa järjehoidjasse"
+msgstr "_Lisa järjehoidja"
 
 #: ../src/main-win-ui.c:197
 msgid "Add current folder to bookmarks list"
-msgstr "Lisa praegune kaust järjehoidjasse"
+msgstr "Praeguse kausta lisamine järjehoidjaks"
 
 #: ../src/main-win-ui.c:198
 msgid "Tool_s"
@@ -770,7 +770,7 @@ msgstr "_Tööriistad"
 
 #: ../src/main-win-ui.c:199
 msgid "Open Current Folder in _Terminal"
-msgstr "Ava praegune kaust _terminalis"
+msgstr "Ava kaust _terminalis"
 
 #: ../src/main-win-ui.c:202
 msgid "Fin_d Files..."
@@ -820,7 +820,7 @@ msgstr "_Tööriistariba näitamine"
 
 #: ../src/main-win-ui.c:231
 msgid "Show 'Ne_w Tab' Button"
-msgstr "Näita nuppu 'Uus _kaart'"
+msgstr "Näita nuppu 'Uus kaart'"
 
 #: ../src/main-win-ui.c:232
 msgid "Show _Navigation Buttons"
@@ -832,7 +832,7 @@ msgstr "Näita nuppu '_Kodukaust'"
 
 #: ../src/main-win-ui.c:234
 msgid "Sho_w Side Pane"
-msgstr "Näita _külgpaneeli"
+msgstr "_Külgpaneeli näitamine"
 
 #: ../src/main-win-ui.c:235
 msgid "Show Status B_ar"
@@ -848,7 +848,7 @@ msgstr "Näita kahte paneeli kaustavaatega"
 
 #: ../src/main-win-ui.c:237
 msgid "Fullscreen _Mode"
-msgstr "Täis_ekraanvaade"
+msgstr "Täis_ekraanil"
 
 #: ../src/main-win-ui.c:243
 msgid "_Icon View"
@@ -950,13 +950,13 @@ msgid ""
 "'%s'\n"
 "Enter a name for the new bookmark item:"
 msgstr ""
-"Lisa järgmine kausta järjehoidjatesse:\n"
+"Järgmise kausta lisamine järjehoidjatesse:\n"
 "'%s'\n"
 "Sisesta uue järjehoidja nimi:"
 
 #: ../src/main-win.c:1526
 msgid "Add to Bookmarks"
-msgstr "Lisa järjehoidjatesse"
+msgstr "Järjehoidja lisamine"
 
 #. options only acceptable by first pcmanfm instance. These options are not passed through IPC
 #: ../src/pcmanfm.c:76
@@ -1054,7 +1054,7 @@ msgstr[1] "%d kirjet valitud"
 #: ../src/tab-page.c:556
 #, c-format
 msgid "Free space: %s (Total: %s)"
-msgstr "Vaba ruum: %s (Kokku: %s)"
+msgstr "Vaba ruum: %s (kokku: %s)"
 
 #: ../src/tab-page.c:576
 #, c-format
