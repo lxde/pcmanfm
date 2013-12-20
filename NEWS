@@ -108,6 +108,19 @@ Changes on 1.2.0 since 1.1.0:
     users - we add something to Desktop, then we see it after all already
     added items, not after other folders.
 
+* Implemented handling for extra items on the desktop:
+    - Trash Can
+    - "Documents" folder
+    - external media
+    Those items have not be in the Desktop folder, they will be added to
+    the view by desktop manager internally. Corresponding config options
+    are 'show_trash', 'show_documents', 'show_mounts' - those are set in
+    the desktop config for each monitor. Default is true for 'show_trash'
+    and false for other items. Note that all those items are not links of
+    any kind but folders itself so weird operations with them may lead to
+    weird results.
+    This feature will work only if linked against libfm 1.2.0 or newer.
+
 
 Changes on 1.1.0 since 1.0.1:
 

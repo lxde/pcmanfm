@@ -54,6 +54,21 @@ static const GtkActionEntry folder_menu_actions[]=
     {"Term", "utilities-terminal", N_("Open in Termina_l"), NULL, NULL, G_CALLBACK(on_open_folder_in_terminal)}
 };
 
+#if FM_CHECK_VERSION(1, 2, 0)
+static const char extra_item_menu_xml[]=
+"<popup>"
+  "<placeholder name='ph2'>"
+    "<separator/>"
+    "<menuitem action='Disable'/>"
+  "</placeholder>"
+"</popup>";
+
+static const GtkActionEntry extra_item_menu_actions[]=
+{
+    {"Disable", NULL, N_("_Remove from Desktop"), NULL, NULL, G_CALLBACK(on_disable)}
+};
+#endif
+
 /* xml definition for desktop item placement */
 static const char desktop_icon_menu_xml[]=
 "<popup>"

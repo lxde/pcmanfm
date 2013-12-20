@@ -491,6 +491,11 @@ static void fm_app_config_init(FmAppConfig *cfg)
     cfg->desktop_section.desktop_sort_by = COL_FILE_MTIME;
 #endif
     cfg->desktop_section.wallpaper_common = TRUE;
+#if FM_CHECK_VERSION(1, 2, 0)
+    cfg->desktop_section.show_documents = FALSE;
+    cfg->desktop_section.show_trash = TRUE;
+    cfg->desktop_section.show_mounts = FALSE;
+#endif
     cfg->tb.visible = cfg->tb.new_tab = cfg->tb.nav = cfg->tb.home = TRUE;
 }
 
@@ -522,6 +527,9 @@ void fm_app_config_load_desktop_config(GKeyFile *kf, const char *group, FmDeskto
     cfg->desktop_sort_by = COL_FILE_MTIME;
 #endif
     cfg->wallpaper_common = TRUE;
+#if FM_CHECK_VERSION(1, 2, 0)
+    cfg->show_trash = TRUE;
+#endif
     cfg->configured = TRUE;
     if(fm_key_file_get_int(kf, group, "wallpaper_mode", &tmp_int))
         cfg->wallpaper_mode = (FmWallpaperMode)tmp_int;
@@ -583,6 +591,11 @@ void fm_app_config_load_desktop_config(GKeyFile *kf, const char *group, FmDeskto
 
     fm_key_file_get_bool(kf, group, "show_wm_menu", &cfg->show_wm_menu);
     _parse_sort(kf, group, &cfg->desktop_sort_type, &cfg->desktop_sort_by);
+#if FM_CHECK_VERSION(1, 2, 0)
+    fm_key_file_get_bool(kf, group, "show_documents", &cfg->show_documents);
+    fm_key_file_get_bool(kf, group, "show_trash", &cfg->show_trash);
+    fm_key_file_get_bool(kf, group, "show_mounts", &cfg->show_mounts);
+#endif
 }
 
 void fm_app_config_load_from_key_file(FmAppConfig* cfg, GKeyFile* kf)
@@ -964,6 +977,11 @@ void fm_app_config_save_desktop_config(GString *buf, const char *group, FmDeskto
         g_string_append_printf(buf, "desktop_font=%s\n", cfg->desktop_font);
     g_string_append_printf(buf, "show_wm_menu=%d\n", cfg->show_wm_menu);
     _save_sort(buf, cfg->desktop_sort_type, cfg->desktop_sort_by);
+#if FM_CHECK_VERSION(1, 2, 0)
+    g_string_append_printf(buf, "show_documents=%d\n", cfg->show_documents);
+    g_string_append_printf(buf, "show_trash=%d\n", cfg->show_trash);
+    g_string_append_printf(buf, "show_mounts=%d\n", cfg->show_mounts);
+#endif
 }
 
 void fm_app_config_save_profile(FmAppConfig* cfg, const char* name)

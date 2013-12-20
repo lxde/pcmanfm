@@ -140,6 +140,10 @@ static void on_open_folder_in_terminal(GtkAction* act, gpointer user_data);
 static void on_fix_pos(GtkToggleAction* act, gpointer user_data);
 static void on_snap_to_grid(GtkAction* act, gpointer user_data);
 
+#if FM_CHECK_VERSION(1, 2, 0)
+static void on_disable(GtkAction* act, gpointer user_data);
+#endif
+
 /* insert GtkUIManager XML definitions */
 #include "desktop-ui.c"
 
@@ -431,6 +435,259 @@ static void copy_desktop_config(FmDesktopConfig *dst, FmDesktopConfig *src)
     dst->desktop_sort_type = src->desktop_sort_type;
     dst->desktop_sort_by = src->desktop_sort_by;
 }
+
+#if FM_CHECK_VERSION(1, 2, 0)
+/* ---------------------------------------------------------------------
+    mounts handlers */
+
+typedef struct
+{
+    GMount *mount; /* NULL for non-mounts */
+    FmPath *path;
+    FmFileInfo *fi;
+    FmFileInfoJob *job;
+} FmDesktopExtraItem;
+
+static FmDesktopExtraItem *documents = NULL;
+//static FmDesktopExtraItem *computer = NULL;
+static FmDesktopExtraItem *trash_can = NULL;
+//static FmDesktopExtraItem *applications = NULL;
+
+static GVolumeMonitor *vol_mon = NULL;
+/* under GDK lock */
+static GSList *mounts = NULL;
+
+static void _free_extra_item(FmDesktopExtraItem *item);
+
+static gboolean on_idle_extra_item_add(gpointer user_data)
+{
+    FmDesktopExtraItem *item = user_data;
+    int i;
+
+    /* if mount is not NULL then it's new mount so add it to the list */
+    if (item->mount)
+    {
+        mounts = g_slist_append(mounts, item);
+        /* add it to all models that watch mounts */
+        for (i = 0; i < n_screens; i++)
+            if (desktops[i]->monitor >= 0 && desktops[i]->conf.show_mounts)
+                fm_folder_model_extra_file_add(desktops[i]->model, item->fi,
+                                               FM_FOLDER_MODEL_ITEMPOS_POST);
+    }
+    else if (item == documents)
+    {
+        /* add it to all models that watch documents */
+        for (i = 0; i < n_screens; i++)
+            if (desktops[i]->monitor >= 0 && desktops[i]->conf.show_documents)
+            {
+                fm_folder_model_extra_file_add(desktops[i]->model, item->fi,
+                                               FM_FOLDER_MODEL_ITEMPOS_PRE);
+                /* if this is extra item it might be loaded after the folder
+                   therefore we have to reload fixed positions again to apply */
+                unload_items(desktops[i]);
+                load_items(desktops[i]);
+            }
+    }
+    else if (item == trash_can)
+    {
+        /* add it to all models that watch trash can */
+        for (i = 0; i < n_screens; i++)
+            if (desktops[i]->monitor >= 0 && desktops[i]->conf.show_trash)
+            {
+                fm_folder_model_extra_file_add(desktops[i]->model, item->fi,
+                                               FM_FOLDER_MODEL_ITEMPOS_PRE);
+                unload_items(desktops[i]);
+                load_items(desktops[i]);
+            }
+    }
+    else
+    {
+        g_critical("got file info for unknown desktop item %s",
+                   fm_path_get_basename(item->path));
+        _free_extra_item(item);
+    }
+    return FALSE;
+}
+
+static gboolean trash_is_empty = FALSE; /* startup default */
+
+/* returns TRUE if model should be updated */
+static gboolean _update_trash_icon(FmDesktopExtraItem *item)
+{
+    GFile *gf = fm_file_new_for_uri("trash:///");
+    GFileInfo *inf = g_file_query_info(gf, G_FILE_ATTRIBUTE_TRASH_ITEM_COUNT, 0, NULL, NULL);
+    const char *icon_name;
+    GIcon *icon;
+    guint32 n;
+
+    g_object_unref(gf);
+    if (!inf)
+        return FALSE;
+
+    n = g_file_info_get_attribute_uint32(inf, G_FILE_ATTRIBUTE_TRASH_ITEM_COUNT);
+    g_object_unref(inf);
+    if (n > 0 && trash_is_empty)
+        icon_name = "user-trash-full";
+    else if (n == 0 && !trash_is_empty)
+        icon_name = "user-trash";
+    else /* not changed */
+        return FALSE;
+    trash_is_empty = (n == 0);
+    icon = g_themed_icon_new_with_default_fallbacks(icon_name);
+    fm_file_info_set_icon(item->fi, icon);
+    g_object_unref(icon);
+    return TRUE;
+}
+
+static void on_file_info_job_finished(FmFileInfoJob* job, gpointer user_data)
+{
+    FmDesktopExtraItem *item = user_data;
+    FmFileInfo *fi;
+    char *name;
+    GIcon *icon;
+
+    if(fm_file_info_list_is_empty(job->file_infos))
+    {
+        /* failed */
+        g_critical("FmFileInfoJob failed on desktop mount update");
+        _free_extra_item(item);
+        return;
+    }
+    fi = fm_file_info_list_peek_head(job->file_infos);
+    /* FIXME: check for duplicates? */
+    item->fi = fm_file_info_ref(fi);
+    item->job = NULL;
+    g_object_unref(job);
+    /* update some data with those from the mount */
+    if (item->mount)
+    {
+        name = g_mount_get_name(item->mount);
+        fm_file_info_set_disp_name(fi, name);
+        g_free(name);
+        icon = g_mount_get_icon(item->mount);
+        fm_file_info_set_icon(fi, icon);
+        g_object_unref(icon);
+    }
+    /* update trash can icon */
+    else if (item == trash_can)
+        _update_trash_icon(item);
+    /* queue adding item to the list and folder models */
+    gdk_threads_add_idle(on_idle_extra_item_add, item);
+}
+
+static void _free_extra_item(FmDesktopExtraItem *item)
+{
+    if (item->mount)
+        g_object_unref(item->mount);
+    fm_path_unref(item->path);
+    if (item->fi)
+        fm_file_info_unref(item->fi);
+    if (item->job)
+    {
+        g_signal_handlers_disconnect_by_func(item->job, on_file_info_job_finished, item);
+        fm_job_cancel(FM_JOB(item->job));
+        g_object_unref(item->job);
+    }
+    g_slice_free(FmDesktopExtraItem, item);
+}
+
+static void on_mount_added(GVolumeMonitor *volume_monitor, GMount *mount,
+                           gpointer _unused)
+{
+    GFile *file;
+    FmDesktopExtraItem *item;
+
+    /* get file info for the mount point */
+    item = g_slice_new(FmDesktopExtraItem);
+    item->mount = g_object_ref(mount);
+    file = g_mount_get_root(mount);
+    item->path = fm_path_new_for_gfile(file);
+    g_object_unref(file);
+    item->fi = NULL;
+    item->job = fm_file_info_job_new(NULL, FM_FILE_INFO_JOB_NONE);
+    fm_file_info_job_add(item->job, item->path);
+    g_signal_connect(item->job, "finished", G_CALLBACK(on_file_info_job_finished), item);
+    if (!fm_job_run_async(FM_JOB(item->job)))
+    {
+        g_critical("fm_job_run_async() failed on desktop mount update");
+        _free_extra_item(item);
+    }
+}
+
+static gboolean on_idle_extra_item_remove(gpointer user_data)
+{
+    GMount *mount = user_data;
+    GSList *sl;
+    FmDesktopExtraItem *item;
+    int i;
+
+    for (sl = mounts; sl; sl = sl->next)
+    {
+        item = sl->data;
+        if (item->mount == mount)
+            break;
+    }
+    if (sl)
+    {
+        for (i = 0; i < n_screens; i++)
+            if (desktops[i]->monitor >= 0 && desktops[i]->conf.show_mounts)
+                fm_folder_model_extra_file_remove(desktops[i]->model, item->fi);
+        mounts = g_slist_delete_link(mounts, sl);
+        _free_extra_item(item);
+    }
+    else
+        g_warning("got unmount for unknown desktop item");
+    g_object_unref(mount);
+    return FALSE;
+}
+
+static void on_mount_removed(GVolumeMonitor *volume_monitor, GMount *mount,
+                             gpointer _unused)
+{
+    gdk_threads_add_idle(on_idle_extra_item_remove, g_object_ref(mount));
+}
+
+
+/* ---------------------------------------------------------------------
+    special items handlers */
+
+static GFileMonitor *trash_monitor = NULL;
+
+static void on_trash_changed(GFileMonitor *monitor, GFile *gf, GFile *other,
+                             GFileMonitorEvent evt, FmDesktopExtraItem *item)
+{
+    int i;
+
+    if (!_update_trash_icon(item))
+        return;
+    for (i = 0; i < n_screens; i++)
+        if (desktops[i]->monitor >= 0 && desktops[i]->conf.show_trash)
+            fm_folder_model_file_changed(desktops[i]->model, item->fi);
+}
+
+static FmDesktopExtraItem *_add_extra_item(const char *path_str)
+{
+    FmDesktopExtraItem *item;
+
+    if (path_str == NULL) /* special directory does not exist */
+        return NULL;
+
+    item = g_slice_new(FmDesktopExtraItem);
+    item->mount = NULL;
+    item->path = fm_path_new_for_str(path_str);
+    item->fi = NULL;
+    item->job = fm_file_info_job_new(NULL, FM_FILE_INFO_JOB_NONE);
+    fm_file_info_job_add(item->job, item->path);
+    g_signal_connect(item->job, "finished", G_CALLBACK(on_file_info_job_finished), item);
+    if (!fm_job_run_async(FM_JOB(item->job)))
+    {
+        g_critical("fm_job_run_async() failed on desktop special item update");
+        _free_extra_item(item);
+        item = NULL;
+    }
+    return item;
+}
+#endif
 
 /* ---------------------------------------------------------------------
     accessibility handlers */
@@ -1988,7 +2245,6 @@ static void on_folder_start_loading(FmFolder* folder, gpointer user_data)
 static void on_folder_finish_loading(FmFolder* folder, gpointer user_data)
 {
     int i;
-    /* FIXME: we need to free old positions first?? */
 
     /* the desktop folder is just loaded, apply desktop items and positions */
     for(i = 0; i < n_screens; i++)
@@ -2274,6 +2530,23 @@ static void fm_desktop_update_item_popup(FmFolderView* fv, GtkWindow* window,
                                      G_N_ELEMENTS(folder_menu_actions), fv);
         gtk_ui_manager_add_ui_from_string(ui, folder_menu_xml, -1, NULL);
     }
+#if FM_CHECK_VERSION(1, 2, 0)
+    if (fm_file_info_list_get_length(files) == 1 &&
+        ((trash_can && trash_can->fi == fi) ||
+         (documents && documents->fi == fi)))
+    {
+        gtk_action_group_add_actions(act_grp, extra_item_menu_actions,
+                                     G_N_ELEMENTS(extra_item_menu_actions), fv);
+        gtk_ui_manager_add_ui_from_string(ui, extra_item_menu_xml, -1, NULL);
+        /* some menu items should be never available for extra items */
+        act = gtk_action_group_get_action(act_grp, "Cut");
+        gtk_action_set_visible(act, FALSE);
+        act = gtk_action_group_get_action(act_grp, "Del");
+        gtk_action_set_visible(act, FALSE);
+        act = gtk_action_group_get_action(act_grp, "Rename");
+        gtk_action_set_visible(act, FALSE);
+    }
+#endif
 
     /* merge desktop icon specific items */
     gtk_action_group_add_actions(act_grp, desktop_icon_actions,
@@ -2345,6 +2618,32 @@ static void on_fix_pos(GtkToggleAction* act, gpointer user_data)
     g_list_free(items);
     queue_config_save(desktop);
 }
+
+#if FM_CHECK_VERSION(1, 2, 0)
+static void on_disable(GtkAction* act, gpointer user_data)
+{
+    FmDesktop *desktop = FM_DESKTOP(user_data);
+    GList *items = get_selected_items(desktop, NULL);
+    FmDesktopItem *item = (FmDesktopItem*)items->data;
+
+    g_list_free(items);
+    if (trash_can && trash_can->fi == item->fi)
+    {
+        desktop->conf.show_trash = FALSE;
+    }
+    else if (documents && documents->fi == item->fi)
+    {
+        desktop->conf.show_documents = FALSE;
+    }
+    else /* else is error */
+    {
+        g_warning("invalid item to remove from desktop");
+        return;
+    }
+    queue_config_save(desktop);
+    fm_folder_model_extra_file_remove(desktop->model, item->fi);
+}
+#endif
 
 /* round() is only available in C99. Don't use it now for portability. */
 static inline double _round(double x)
@@ -4071,6 +4370,67 @@ static void on_desktop_folder_new_win_toggled(GtkToggleButton* btn, FmDesktop *d
     pcmanfm_save_config(FALSE);
 }
 
+#if FM_CHECK_VERSION(1, 2, 0)
+static void on_show_documents_toggled(GtkToggleButton* btn, FmDesktop *desktop)
+{
+    gboolean new_val = gtk_toggle_button_get_active(btn);
+
+    if(desktop->conf.show_documents != new_val)
+    {
+        desktop->conf.show_documents = new_val;
+        queue_config_save(desktop);
+        if (documents && documents->fi)
+        {
+            if (new_val)
+                fm_folder_model_extra_file_add(desktop->model, documents->fi,
+                                               FM_FOLDER_MODEL_ITEMPOS_PRE);
+            else
+                fm_folder_model_extra_file_remove(desktop->model, documents->fi);
+        }
+    }
+}
+
+static void on_show_trash_toggled(GtkToggleButton* btn, FmDesktop *desktop)
+{
+    gboolean new_val = gtk_toggle_button_get_active(btn);
+
+    if(desktop->conf.show_trash != new_val)
+    {
+        desktop->conf.show_trash = new_val;
+        queue_config_save(desktop);
+        if (trash_can && trash_can->fi)
+        {
+            if (new_val)
+                fm_folder_model_extra_file_add(desktop->model, trash_can->fi,
+                                               FM_FOLDER_MODEL_ITEMPOS_PRE);
+            else
+                fm_folder_model_extra_file_remove(desktop->model, trash_can->fi);
+        }
+    }
+}
+
+static void on_show_mounts_toggled(GtkToggleButton* btn, FmDesktop *desktop)
+{
+    GSList *msl;
+    gboolean new_val = gtk_toggle_button_get_active(btn);
+
+    if(desktop->conf.show_mounts != new_val)
+    {
+        desktop->conf.show_mounts = new_val;
+        queue_config_save(desktop);
+        for (msl = mounts; msl; msl = msl->next)
+        {
+            FmDesktopExtraItem *mount = msl->data;
+            if (new_val)
+                fm_folder_model_extra_file_add(desktop->model, mount->fi,
+                                               FM_FOLDER_MODEL_ITEMPOS_POST);
+            else
+                fm_folder_model_extra_file_remove(desktop->model, mount->fi);
+        }
+    }
+}
+#endif
+
 void fm_desktop_preference(GtkAction *act, FmDesktop *desktop)
 {
     if (desktop == NULL)
@@ -4120,6 +4480,20 @@ void fm_desktop_preference(GtkAction *act, FmDesktop *desktop)
         gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(item), app_config->desktop_folder_new_win);
         gtk_widget_show(GTK_WIDGET(item));
         g_signal_connect(item, "toggled", G_CALLBACK(on_desktop_folder_new_win_toggled), desktop);
+#if FM_CHECK_VERSION(1, 2, 0)
+        item = gtk_builder_get_object(builder, "show_documents");
+        gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(item), desktop->conf.show_documents);
+        gtk_widget_set_sensitive(GTK_WIDGET(item), documents != NULL);
+        g_signal_connect(item, "toggled", G_CALLBACK(on_show_documents_toggled), desktop);
+        item = gtk_builder_get_object(builder, "show_trash");
+        gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(item), desktop->conf.show_trash);
+        gtk_widget_set_sensitive(GTK_WIDGET(item), trash_can != NULL);
+        g_signal_connect(item, "toggled", G_CALLBACK(on_show_trash_toggled), desktop);
+        item = gtk_builder_get_object(builder, "show_mounts");
+        gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(item), desktop->conf.show_mounts);
+        g_signal_connect(item, "toggled", G_CALLBACK(on_show_mounts_toggled), desktop);
+        gtk_widget_show(GTK_WIDGET(gtk_builder_get_object(builder, "icons_page")));
+#endif
 
         g_signal_connect(desktop_pref_dlg, "response", G_CALLBACK(on_response), &desktop_pref_dlg);
         g_object_unref(builder);
@@ -4142,6 +4516,9 @@ void fm_desktop_manager_init(gint on_screen)
     GdkDisplay * gdpy;
     int i, n_scr, n_mon, scr, mon;
     const char* desktop_path;
+#if FM_CHECK_VERSION(1, 2, 0)
+    GFile *gf;
+#endif
 
     if(! win_group)
         win_group = gtk_window_group_new();
@@ -4218,6 +4595,39 @@ void fm_desktop_manager_init(gint on_screen)
 
     hand_cursor = gdk_cursor_new(GDK_HAND2);
 
+#if FM_CHECK_VERSION(1, 2, 0)
+    /* create extra items */
+    gf = fm_file_new_for_uri("trash:///");
+    if (g_file_query_exists(gf, NULL))
+        trash_can = _add_extra_item("trash:///");
+    else
+        trash_can = NULL;
+    if (G_LIKELY(trash_can))
+    {
+        trash_monitor = fm_monitor_directory(gf, NULL);
+        g_signal_connect(trash_monitor, "changed", G_CALLBACK(on_trash_changed), trash_can);
+    }
+    g_object_unref(gf);
+    documents = _add_extra_item(g_get_user_special_dir(G_USER_DIRECTORY_DOCUMENTS));
+    /* FIXME: support some other dirs */
+    vol_mon = g_volume_monitor_get();
+    if (G_LIKELY(vol_mon))
+    {
+        GList *ml = g_volume_monitor_get_mounts(vol_mon), *l;
+
+        /* if some mounts are already there, add them to own list */
+        for (l = ml; l; l = l->next)
+        {
+            GMount *mount = G_MOUNT(l->data);
+            on_mount_added(vol_mon, mount, NULL);
+            g_object_unref(mount);
+        }
+        g_list_free(ml);
+        g_signal_connect(vol_mon, "mount-added", G_CALLBACK(on_mount_added), NULL);
+        g_signal_connect(vol_mon, "mount-removed", G_CALLBACK(on_mount_removed), NULL);
+    }
+#endif
+
     pcmanfm_ref();
 }
 
@@ -4259,6 +4669,33 @@ void fm_desktop_manager_finalize()
         gdk_cursor_unref(hand_cursor);
         hand_cursor = NULL;
     }
+
+#if FM_CHECK_VERSION(1, 2, 0)
+    if (G_LIKELY(documents))
+    {
+        _free_extra_item(documents);
+        documents = NULL;
+    }
+    if (G_LIKELY(trash_can))
+    {
+        g_signal_handlers_disconnect_by_func(trash_monitor, on_trash_changed, trash_can);
+        g_object_unref(trash_monitor);
+        _free_extra_item(trash_can);
+        trash_can = NULL;
+    }
+    if (G_LIKELY(vol_mon))
+    {
+        g_signal_handlers_disconnect_by_func(vol_mon, on_mount_added, NULL);
+        g_signal_handlers_disconnect_by_func(vol_mon, on_mount_removed, NULL);
+        g_object_unref(vol_mon);
+        vol_mon = NULL;
+    }
+    while (mounts)
+    {
+        _free_extra_item(mounts->data);
+        mounts = g_slist_delete_link(mounts, mounts);
+    }
+#endif
 
     pcmanfm_unref();
 }

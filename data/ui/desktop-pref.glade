@@ -470,8 +470,9 @@
                             <property name="can_focus">False</property>
                             <property name="spacing">6</property>
                             <child>
-                              <object class="GtkCheckButton" id="show_my_doc">
-                                <property name="label" translatable="yes">_Show "Documents" icon on desktop</property>
+                              <object class="GtkCheckButton" id="show_documents">
+                                <property name="label" translatable="yes">_Show "Documents" folder on desktop</property>
+                                <property name="visible">True</property>
                                 <property name="can_focus">True</property>
                                 <property name="receives_default">False</property>
                                 <property name="use_action_appearance">False</property>
@@ -486,7 +487,7 @@
                             </child>
                             <child>
                               <object class="GtkCheckButton" id="show_my_computer">
-                                <property name="label" translatable="yes">Sho_w "Devices" icon on desktop</property>
+                                <property name="label" translatable="yes">Sho_w "Devices" icon on the desktop</property>
                                 <property name="can_focus">True</property>
                                 <property name="receives_default">False</property>
                                 <property name="use_action_appearance">False</property>
@@ -501,7 +502,8 @@
                             </child>
                             <child>
                               <object class="GtkCheckButton" id="show_trash">
-                                <property name="label" translatable="yes">Show "_Trash Can" icon on desktop</property>
+                                <property name="label" translatable="yes">Show "_Trash Can" folder on the desktop</property>
+                                <property name="visible">True</property>
                                 <property name="can_focus">True</property>
                                 <property name="receives_default">False</property>
                                 <property name="use_action_appearance">False</property>
@@ -515,8 +517,9 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkCheckButton" id="show_volumes">
-                                <property name="label" translatable="yes">S_how icons of volumes on desktop</property>
+                              <object class="GtkCheckButton" id="show_mounts">
+                                <property name="label" translatable="yes">S_how connected volumes on the desktop</property>
+                                <property name="visible">True</property>
                                 <property name="can_focus">True</property>
                                 <property name="receives_default">False</property>
                                 <property name="use_action_appearance">False</property>

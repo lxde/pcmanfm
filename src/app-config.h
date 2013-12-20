@@ -85,6 +85,11 @@ typedef struct
     GtkSortType desktop_sort_type;
     int desktop_sort_by;
 #endif
+#if FM_CHECK_VERSION(1, 2, 0)
+    gboolean show_documents;
+    gboolean show_trash;
+    gboolean show_mounts;
+#endif
 } FmDesktopConfig;
 
 struct _FmAppConfig
