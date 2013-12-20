@@ -6,9 +6,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-04 22:28+0200\n"
-"PO-Revision-Date: 2013-12-07 11:26+0000\n"
-"Last-Translator: Anari <anari.jalakas@gmail.com>\n"
+"POT-Creation-Date: 2013-12-10 00:17+0200\n"
+"PO-Revision-Date: 2013-12-20 10:17+0000\n"
+"Last-Translator: mahfiaz <mahfiaz@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: et\n"
 "MIME-Version: 1.0\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1386415589.0\n"
+"X-POOTLE-MTIME: 1387534673.0\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2013"
@@ -27,7 +27,8 @@ msgstr "Autoriõigus (C) 2009 - 2013"
 msgid "translator-credits"
 msgstr ""
 "Anari Jalakas <anari.jalakas@gmail.com>, 2012 - 2013\n"
-"veeall, 2012"
+"veeall, 2012\n"
+"Mattias Põldaru, 2013"
 
 #: ../data/ui/desktop-pref.glade.h:1 ../src/desktop-ui.c:34
 #: ../data/pcmanfm-desktop-pref.desktop.in.h:1
@@ -44,11 +45,11 @@ msgstr "_Taustapilt:"
 
 #: ../data/ui/desktop-pref.glade.h:4
 msgid "Please select an image file"
-msgstr "Vali pildifail"
+msgstr "Pildifaili valimine"
 
 #: ../data/ui/desktop-pref.glade.h:5
 msgid "_Use the same wallpaper on all desktops"
-msgstr "_Kasuta sama taustapilti kõikidel monitoridel"
+msgstr "_Sama taustapilti kasutatakse kõikidel monitoridel"
 
 #: ../data/ui/desktop-pref.glade.h:6
 msgid "_Background color:"
@@ -80,7 +81,7 @@ msgstr "_Välimus"
 
 #: ../data/ui/desktop-pref.glade.h:13
 msgid "<b>Show desktop icons</b>"
-msgstr "<b>Näita töölaua ikoone</b>"
+msgstr "<b>Töölaua ikoonide näitamine</b>"
 
 #: ../data/ui/desktop-pref.glade.h:14
 msgid "_Show \"Documents\" icon on desktop"
@@ -96,7 +97,7 @@ msgstr "Töölaual kausta \"_Prügikast\" näitamine"
 
 #: ../data/ui/desktop-pref.glade.h:17
 msgid "S_how icons of volumes on desktop"
-msgstr "Näita töölaual kettaseadmete _ikoone"
+msgstr "Töölaual kettaseadmete _ikoonide näitamine"
 
 #: ../data/ui/desktop-pref.glade.h:18
 msgid "_Desktop Icons"
@@ -107,40 +108,44 @@ msgid "_Show menus provided by window managers when desktop is clicked"
 msgstr "Töölaual _klõpsates avaneb aknahalduri menüü"
 
 #: ../data/ui/desktop-pref.glade.h:20
+msgid "_Open folder from desktop in new window"
+msgstr "_Uues töölaual olevad kaustad avatakse uues aknas"
+
+#: ../data/ui/desktop-pref.glade.h:21
 msgid "Ad_vanced"
 msgstr "_Laiendatud"
 
-#: ../data/ui/desktop-pref.glade.h:21
+#: ../data/ui/desktop-pref.glade.h:22
 msgid "Fill with background color only"
 msgstr "Ainult taustavärv"
 
-#: ../data/ui/desktop-pref.glade.h:22
-msgid "Stretch to fill the entire screen"
-msgstr "Suurenda töölaua mõõtmeteni"
-
 #: ../data/ui/desktop-pref.glade.h:23
-msgid "Stretch to fit the screen"
-msgstr "Vähenda töölaua mõõtmeteni"
+msgid "Stretch to fill the entire screen"
+msgstr "Venitatakse töölaua mõõtmeteni"
 
 #: ../data/ui/desktop-pref.glade.h:24
-msgid "Center on the screen"
-msgstr "Joonda keskele"
+msgid "Stretch to fit the screen"
+msgstr "Mahutatakse töölauale"
 
 #: ../data/ui/desktop-pref.glade.h:25
+msgid "Center on the screen"
+msgstr "Ekraani keskel"
+
+#: ../data/ui/desktop-pref.glade.h:26
 msgid "Tile the image to fill the entire screen"
-msgstr "Kasuta pilti mosaiigina"
+msgstr "Mosaiikpilt"
 
 #: ../data/ui/pref.glade.h:1
 msgid "Opened in Current Tab"
-msgstr "Ava aktiivsel kaardil"
+msgstr "Avatakse samal kaardil"
 
 #: ../data/ui/pref.glade.h:2
 msgid "Opened in New Tab"
-msgstr "Ava uuel kaardil"
+msgstr "Avatakse uues aknas"
 
 #: ../data/ui/pref.glade.h:3
 msgid "Opened in New Window"
-msgstr "Ava uues aknas"
+msgstr "Avatakse uues aknas"
 
 #: ../data/ui/pref.glade.h:4
 msgid "Preferences"
@@ -152,7 +157,7 @@ msgstr "<b>Käitumine</b>"
 
 #: ../data/ui/pref.glade.h:6
 msgid "_Open files with single click"
-msgstr "_Failide avamine ühe klõpsuga"
+msgstr "_Fail avatakse ühe klõpsuga"
 
 #: ../data/ui/pref.glade.h:7
 msgid "Delay of auto-selection in single click mode (0 to disable)"
@@ -160,12 +165,11 @@ msgstr "Automaatse valiku viivitus ühe klõpsu režiimis (0 blokeerimiseks)"
 
 #: ../data/ui/pref.glade.h:8
 msgid "Co_nfirm before deleting files"
-msgstr "_Küsi enne failide kustutamist"
+msgstr "_Enne faili kustutamist küsitakse luba"
 
 #: ../data/ui/pref.glade.h:9
 msgid "_Move deleted files to \"trash can\" instead of erasing from disk"
-msgstr ""
-"_Liiguta kustutatavad failid \"prügikasti\" ilma neid seadmelt eemaldamata"
+msgstr "_Fail liigutatakse \"prügikasti\" kettalt kustutamise asemel"
 
 #: ../data/ui/pref.glade.h:10
 msgid "_Erase files on removable media instead of \"trash can\" creation"
@@ -190,11 +194,11 @@ msgstr "_Vaikimisi tegevus lahtilaskmisel:"
 
 #: ../data/ui/pref.glade.h:15
 msgid "_Unfold tab when files are dragged onto tab button"
-msgstr "_Ava kaart kui faile liigutatakse kaardi nupule"
+msgstr "_Ava kaart, kui fail lohistatakse kaardi nupule"
 
 #: ../data/ui/pref.glade.h:16
 msgid "<b>Default View</b>"
-msgstr "_Vaade:"
+msgstr "<b>Vaikimisi vaade</b>"
 
 #: ../data/ui/pref.glade.h:17
 msgid "Vie_w Mode:"
@@ -210,7 +214,7 @@ msgstr "<b>Ikoonid</b>"
 
 #: ../data/ui/pref.glade.h:20
 msgid "Size of _big icons:"
-msgstr "_Ikoonivaate ikoonid:"
+msgstr "_Suured ikoonid:"
 
 #: ../data/ui/pref.glade.h:21
 msgid "Size of small _icons:"
@@ -226,7 +230,7 @@ msgstr "_Külgpaneeli ikoonid:"
 
 #: ../data/ui/pref.glade.h:24
 msgid "_Show thumbnails of files"
-msgstr "Kuva failide _pisipilte"
+msgstr "Failide _pisipiltide kuvamine"
 
 #: ../data/ui/pref.glade.h:25
 msgid "_Only show thumbnails for local files"
@@ -234,7 +238,7 @@ msgstr "Pisipilte kuvatakse ainult _kohalike failidega"
 
 #: ../data/ui/pref.glade.h:26
 msgid "Do _not generate thumbnails for files exceeding this size:"
-msgstr "Ära loo pisipilte _suurematest failidest kui:"
+msgstr "Pisipilte ei looda _suurematest failidest kui:"
 
 #: ../data/ui/pref.glade.h:27
 msgid "<b>User Interface</b>"
@@ -250,7 +254,7 @@ msgstr "Varundamise faile käsitletakse _peidetuna"
 
 #: ../data/ui/pref.glade.h:30
 msgid "Al_ways show full file names"
-msgstr "Näita alati _täielikke failinimesid"
+msgstr "Alati näidatakse _täielikke failinimesid"
 
 #: ../data/ui/pref.glade.h:31
 msgid "Show icons of bac_kup files shadowed"
@@ -297,7 +301,7 @@ msgstr "_Kodukaust"
 msgid "Des_ktop"
 msgstr "_Töölaud"
 
-#: ../data/ui/pref.glade.h:43 ../src/main-win-ui.c:187
+#: ../data/ui/pref.glade.h:43 ../src/main-win-ui.c:189
 msgid "_Trash Can"
 msgstr "_Prügikast"
 
@@ -309,7 +313,7 @@ msgstr "_Failisüsteemi juurkataloog"
 msgid "App_lications"
 msgstr "_Rakendused"
 
-#: ../data/ui/pref.glade.h:46
+#: ../data/ui/pref.glade.h:46 ../src/main-win-ui.c:192
 msgid "Dev_ices"
 msgstr "_Seadmed"
 
@@ -380,7 +384,7 @@ msgstr "<b>Mallid</b>"
 
 #: ../data/ui/pref.glade.h:64
 msgid "S_how only user defined templates in menu"
-msgstr "Näita menüüs ainult kasutaja määratud malle"
+msgstr "_Menüüs näidatakse ainult kasutaja määratud malle"
 
 #: ../data/ui/pref.glade.h:65
 msgid "Show _only one template for each MIME type"
@@ -404,8 +408,8 @@ msgid ""
 "explicitly.\n"
 "If unchecked then use Startup Notify only if that is defined for application."
 msgstr ""
-"Kui märgistatud siis küsitakse alati programmi, millega faili avada.\n"
-"Kui märkimata siis kasutatakse võimalusel määratud programmi ja küsitakse, "
+"Kui märgistatud, siis küsitakse alati, millise programmiga faili avada.\n"
+"Kui märkimata, siis kasutatakse võimalusel määratud programmi ja küsitakse, "
 "kui see on määramata."
 
 #: ../data/ui/pref.glade.h:71
@@ -464,17 +468,61 @@ msgstr "Andmekandja tüüp:"
 
 #: ../data/ui/autorun.glade.h:4
 msgid "Detecting..."
-msgstr "Tuvastan..."
+msgstr "Tuvastamine..."
 
 #: ../data/ui/autorun.glade.h:5
 msgid "Please select the action you want to perform:"
 msgstr "Vali toiming:"
 
-#: ../src/volume-manager.c:164
+#: ../data/ui/connect.glade.h:1
+msgid "Connect to remote server"
+msgstr "Ühendumine serveriga"
+
+#: ../data/ui/connect.glade.h:2
+msgid "<b>Specify remote folder to connect</b>"
+msgstr "<b>Määra kataloog, millega ühenduda</b>"
+
+#: ../data/ui/connect.glade.h:3
+msgid "_Type:"
+msgstr "_Liik:"
+
+#: ../data/ui/connect.glade.h:4
+msgid "_Host:"
+msgstr "_Host:"
+
+#: ../data/ui/connect.glade.h:5
+msgid "_Port:"
+msgstr "_Port:"
+
+#: ../data/ui/connect.glade.h:6
+msgid "Pa_th:"
+msgstr "_Asukoht:"
+
+#: ../data/ui/connect.glade.h:7
+msgid "_Anonymous login"
+msgstr "Anonüümne _sisselogimine"
+
+#: ../data/ui/connect.glade.h:8
+msgid "_Login as:"
+msgstr "_Kasutajanimi:"
+
+#: ../data/ui/connect.glade.h:9
+msgid "SSH"
+msgstr "SSH"
+
+#: ../data/ui/connect.glade.h:10
+msgid "FTP"
+msgstr "FTP"
+
+#: ../data/ui/connect.glade.h:11
+msgid "WebDAV"
+msgstr "WebDAV"
+
+#: ../src/volume-manager.c:167
 msgid "Removable Disk"
 msgstr "Eemaldatav ketas"
 
-#: ../src/volume-manager.c:217
+#: ../src/volume-manager.c:220
 msgid "Open in File Manager"
 msgstr "Ava failihalduris"
 
@@ -482,11 +530,11 @@ msgstr "Ava failihalduris"
 msgid "Open in New Ta_b"
 msgstr "Ava uuel _kaardil"
 
-#: ../src/desktop-ui.c:52 ../src/tab-page.c:55
+#: ../src/desktop-ui.c:52 ../src/tab-page.c:56
 msgid "Open in New Win_dow"
 msgstr "Ava uues _aknas"
 
-#: ../src/desktop-ui.c:54 ../src/tab-page.c:57
+#: ../src/desktop-ui.c:54 ../src/tab-page.c:58
 msgid "Open in Termina_l"
 msgstr "Ava _terminalis"
 
@@ -515,355 +563,359 @@ msgstr "Töölaua menüü näitamine"
 msgid "Desktop"
 msgstr "Töölaud"
 
-#: ../src/main-win-ui.c:151
+#: ../src/main-win-ui.c:153
 msgid "_File"
 msgstr "_Fail"
 
-#: ../src/main-win-ui.c:152
+#: ../src/main-win-ui.c:154
 msgid "_New Window"
-msgstr "_Uus aken"
+msgstr "Uus ake_n"
 
-#: ../src/main-win-ui.c:153
+#: ../src/main-win-ui.c:155
 msgid "New T_ab"
 msgstr "Uus _kaart"
 
-#: ../src/main-win-ui.c:153
+#: ../src/main-win-ui.c:155
 msgid "Create new tab for this folder"
 msgstr "Loo uus kaart selle kaustaga"
 
-#: ../src/main-win-ui.c:154
+#: ../src/main-win-ui.c:156
 msgid "C_reate New..."
 msgstr "Loo _uus..."
 
-#: ../src/main-win-ui.c:155
+#: ../src/main-win-ui.c:157
 msgid "_Close Tab"
 msgstr "_Sulge kaart"
 
-#: ../src/main-win-ui.c:156
+#: ../src/main-win-ui.c:158
 msgid "Close _Window"
 msgstr "Sulge _aken"
 
-#: ../src/main-win-ui.c:157
+#: ../src/main-win-ui.c:159
 msgid "_Edit"
 msgstr "_Redigeerimine"
 
-#: ../src/main-win-ui.c:162
+#: ../src/main-win-ui.c:164
 msgid "_Rename"
 msgstr "_Nimeta ümber"
 
-#: ../src/main-win-ui.c:163
+#: ../src/main-win-ui.c:165
 msgid "Create Symlin_k"
 msgstr "Loo _nimeviit"
 
-#: ../src/main-win-ui.c:164
+#: ../src/main-win-ui.c:166
 msgid "_Move To..."
 msgstr "_Liiguta..."
 
-#: ../src/main-win-ui.c:165
+#: ../src/main-win-ui.c:167
 msgid "C_opy To..."
 msgstr "_Kopeeri..."
 
-#: ../src/main-win-ui.c:167
+#: ../src/main-win-ui.c:169
 msgid "_Invert Selection"
 msgstr "_Pööra valik"
 
-#: ../src/main-win-ui.c:168
+#: ../src/main-win-ui.c:170
 msgid "Prefere_nces"
 msgstr "_Eelistused"
 
-#: ../src/main-win-ui.c:169
+#: ../src/main-win-ui.c:171
 msgid "_View"
 msgstr "_Vaade"
 
-#: ../src/main-win-ui.c:170
+#: ../src/main-win-ui.c:172
 msgid "_Reload Folder"
-msgstr "_Uuestilae kaust"
+msgstr "_Laadi kaust uuesti"
 
-#: ../src/main-win-ui.c:170
+#: ../src/main-win-ui.c:172
 msgid "Reload current folder"
-msgstr "Uuestilae praegune kaust"
+msgstr "Praeguse kausta uuesti avamine"
 
-#: ../src/main-win-ui.c:171
+#: ../src/main-win-ui.c:173
 msgid "Tool_bar"
 msgstr "_Tööriistariba"
 
-#: ../src/main-win-ui.c:172
+#: ../src/main-win-ui.c:174
 msgid "Side _Pane"
 msgstr "Külg_paneel"
 
 #. other see below: 'ShowHidden' 'ShowStatus' 'Fullscreen' 'IconView'...
-#: ../src/main-win-ui.c:174
+#: ../src/main-win-ui.c:176
 msgid "S_ort Files"
 msgstr "_Järjesta"
 
-#: ../src/main-win-ui.c:175
+#: ../src/main-win-ui.c:177
 msgid "_Zoom In"
 msgstr "_Suurenda"
 
-#: ../src/main-win-ui.c:176
+#: ../src/main-win-ui.c:178
 msgid "Zoom O_ut"
 msgstr "_Vähenda"
 
-#: ../src/main-win-ui.c:177
+#: ../src/main-win-ui.c:179
 msgid "_Normal Size"
 msgstr "_Normaalsuurus"
 
-#: ../src/main-win-ui.c:178
-msgid "_Help"
-msgstr "_Abi"
-
 #: ../src/main-win-ui.c:180
+msgid "_Help"
+msgstr "A_bi"
+
+#: ../src/main-win-ui.c:182
 msgid "_Keyboard Navigation"
 msgstr "Klaviatuuri _kiirkäsud"
 
-#: ../src/main-win-ui.c:181
+#: ../src/main-win-ui.c:183
 msgid "_Go"
 msgstr "_Liikumine"
 
-#: ../src/main-win-ui.c:182
+#: ../src/main-win-ui.c:184
 msgid "_Previous Folder"
 msgstr "_Eelmine kaust"
 
-#: ../src/main-win-ui.c:182
+#: ../src/main-win-ui.c:184
 msgid "Return to previous folder in history"
 msgstr "Liigu tagasi eelmisesse kausta"
 
-#: ../src/main-win-ui.c:183
+#: ../src/main-win-ui.c:185
 msgid "_Next Folder"
 msgstr "_Järgmine kaust"
 
-#: ../src/main-win-ui.c:183
+#: ../src/main-win-ui.c:185
 msgid "Go forward to next folder in history"
 msgstr "Liigu edasi järgmisesse kausta"
 
-#: ../src/main-win-ui.c:184
+#: ../src/main-win-ui.c:186
 msgid "Pa_rent Folder"
 msgstr "Ü_lemkaust"
 
-#: ../src/main-win-ui.c:184
+#: ../src/main-win-ui.c:186
 msgid "Go to parent Folder"
 msgstr "Mine ülemkausta"
 
-#: ../src/main-win-ui.c:185
+#: ../src/main-win-ui.c:187
 msgid "H_ome Folder"
 msgstr "_Kodukaust"
 
-#: ../src/main-win-ui.c:185
+#: ../src/main-win-ui.c:187
 msgid "Go to home folder"
 msgstr "Mine kodukausta"
 
-#: ../src/main-win-ui.c:186
+#: ../src/main-win-ui.c:188
 msgid "_Desktop"
 msgstr "_Töölaud"
 
-#: ../src/main-win-ui.c:186
+#: ../src/main-win-ui.c:188
 msgid "Go to desktop folder"
 msgstr "Mine töölaua kausta"
 
-#: ../src/main-win-ui.c:187
+#: ../src/main-win-ui.c:189
 msgid "Open trash can"
 msgstr "Prügikasti avamine"
 
-#: ../src/main-win-ui.c:188
+#: ../src/main-win-ui.c:190
 msgid "Filesyste_m Root"
 msgstr "Failisüstee_mi juurkataloog"
 
-#: ../src/main-win-ui.c:188
+#: ../src/main-win-ui.c:190
 msgid "Go fo filesystem root"
-msgstr "Mine failisüstee_mi juurkataloogi"
+msgstr "Failisüsteemi juurkataloogi liikumine"
 
-#: ../src/main-win-ui.c:189
+#: ../src/main-win-ui.c:191
 msgid "_Applications"
 msgstr "_Rakendused"
 
-#: ../src/main-win-ui.c:189
+#: ../src/main-win-ui.c:191
 msgid "Go to root of applications menu folder"
-msgstr "Mine rakendute peakausta"
+msgstr "Mine rakenduste peakausta"
 
-#: ../src/main-win-ui.c:190
-msgid "Devi_ces"
-msgstr "Sea_dmed"
-
-#: ../src/main-win-ui.c:190
+#: ../src/main-win-ui.c:192
 msgid "Go to list of devices connected to the computer"
 msgstr "Liigu arvutiga ühendatud seadmete nimekirja"
 
-#: ../src/main-win-ui.c:191
+#: ../src/main-win-ui.c:193
 msgid "Net_work"
 msgstr "Võr_k"
 
-#: ../src/main-win-ui.c:191
+#: ../src/main-win-ui.c:193
 msgid "Go to list of places on the network"
 msgstr "Liigu võrguasukohtade nimekirja"
 
-#: ../src/main-win-ui.c:192
-msgid "Go to the path in the location bar"
-msgstr "Liigu asukohariba asukohta"
+#: ../src/main-win-ui.c:194
+msgid "_Connect to Server..."
+msgstr "Ühendu _serveriga..."
 
-#: ../src/main-win-ui.c:193
+#: ../src/main-win-ui.c:194
+msgid "Open a window to choose remote folder location"
+msgstr "Akna avamine kaugkataloogi asukoha valimiseks"
+
+#: ../src/main-win-ui.c:195
+msgid "Go to the path in the location bar"
+msgstr "Asukoharibal näidatud kataloogi liikumine"
+
+#: ../src/main-win-ui.c:196
 msgid "_Bookmarks"
 msgstr "_Järjehoidjad"
 
-#: ../src/main-win-ui.c:194
+#: ../src/main-win-ui.c:197
 msgid "_Add to Bookmarks"
 msgstr "_Lisa järjehoidjasse"
 
-#: ../src/main-win-ui.c:194
+#: ../src/main-win-ui.c:197
 msgid "Add current folder to bookmarks list"
 msgstr "Lisa praegune kaust järjehoidjasse"
 
-#: ../src/main-win-ui.c:195
+#: ../src/main-win-ui.c:198
 msgid "Tool_s"
 msgstr "_Tööriistad"
 
-#: ../src/main-win-ui.c:196
-msgid "Open Current Folder in _Terminal"
-msgstr "Ava praegune kaust _Terminalis"
-
 #: ../src/main-win-ui.c:199
+msgid "Open Current Folder in _Terminal"
+msgstr "Ava praegune kaust _terminalis"
+
+#: ../src/main-win-ui.c:202
 msgid "Fin_d Files..."
 msgstr "Faili_de otsimine..."
 
-#: ../src/main-win-ui.c:199
+#: ../src/main-win-ui.c:202
 msgid "Open search dialog"
 msgstr "Otsinguakna avamine"
 
 #. for popup menu - these entries exist in FmFolderView popup still
-#: ../src/main-win-ui.c:208
+#: ../src/main-win-ui.c:211
 msgid "Folder"
 msgstr "Kaust"
 
-#: ../src/main-win-ui.c:209
+#: ../src/main-win-ui.c:212
 msgid "Empty File"
 msgstr "Tühi fail"
 
 #. Note to translators: "Mingle..." means "Do not put folders before files" but make the translation as short as possible, please!
-#: ../src/main-win-ui.c:217
-msgid "Mingle _Files and Folders"
-msgstr "Failid ja _kaustad eraldamata"
-
 #: ../src/main-win-ui.c:220
+msgid "Mingle _Files and Folders"
+msgstr "Failid ja _kaustad segamini"
+
+#: ../src/main-win-ui.c:223
 msgid "_Ignore Name Case"
 msgstr "_Nime suurtähe eiramine"
 
-#: ../src/main-win-ui.c:222
+#: ../src/main-win-ui.c:225
 msgid "Sho_w Hidden"
 msgstr "Näita _peidetuid"
 
 #. Note to translators: this save is meant for folder's settings such as sort
-#: ../src/main-win-ui.c:224
+#: ../src/main-win-ui.c:227
 msgid "Preserve This Folder's Settings"
 msgstr "Säilita kausta seaded"
 
-#: ../src/main-win-ui.c:225
+#: ../src/main-win-ui.c:228
 msgid ""
 "Check to remember view and sort as folder setting rather than global one"
 msgstr ""
 "Märgi, et kasutada määratud kaustavaadet ja sorteerimist globaalsete seadete "
-"asemele"
+"asemel"
 
-#: ../src/main-win-ui.c:227
+#: ../src/main-win-ui.c:230
 msgid "Show _Toolbar"
 msgstr "_Tööriistariba näitamine"
 
-#: ../src/main-win-ui.c:228
+#: ../src/main-win-ui.c:231
 msgid "Show 'Ne_w Tab' Button"
 msgstr "Näita nuppu 'Uus _kaart'"
 
-#: ../src/main-win-ui.c:229
+#: ../src/main-win-ui.c:232
 msgid "Show _Navigation Buttons"
 msgstr "Näita _navigatsiooni nuppusid"
 
-#: ../src/main-win-ui.c:230
+#: ../src/main-win-ui.c:233
 msgid "Show '_Home' Button"
 msgstr "Näita nuppu '_Kodukaust'"
 
-#: ../src/main-win-ui.c:231
+#: ../src/main-win-ui.c:234
 msgid "Sho_w Side Pane"
 msgstr "Näita _külgpaneeli"
 
-#: ../src/main-win-ui.c:232
+#: ../src/main-win-ui.c:235
 msgid "Show Status B_ar"
 msgstr "Olekuriba _näitamine"
 
-#: ../src/main-win-ui.c:233
+#: ../src/main-win-ui.c:236
 msgid "_Dual Pane Mode"
 msgstr "Topelt_paneeli režiim"
 
-#: ../src/main-win-ui.c:233
+#: ../src/main-win-ui.c:236
 msgid "Show two panels with folder views"
 msgstr "Näita kahte paneeli kaustavaatega"
 
-#: ../src/main-win-ui.c:234
+#: ../src/main-win-ui.c:237
 msgid "Fullscreen _Mode"
 msgstr "Täis_ekraanvaade"
 
-#: ../src/main-win-ui.c:240
+#: ../src/main-win-ui.c:243
 msgid "_Icon View"
 msgstr "_Ikoonivaade"
 
-#: ../src/main-win-ui.c:241
+#: ../src/main-win-ui.c:244
 msgid "_Compact View"
 msgstr "_Kompaktne vaade"
 
-#: ../src/main-win-ui.c:242
+#: ../src/main-win-ui.c:245
 msgid "_Thumbnail View"
 msgstr "_Pisipildivaade"
 
-#: ../src/main-win-ui.c:243
+#: ../src/main-win-ui.c:246
 msgid "Detailed _List View"
 msgstr "Detailne _nimekiri"
 
-#: ../src/main-win-ui.c:256 ../src/main-win-ui.c:261
+#: ../src/main-win-ui.c:259 ../src/main-win-ui.c:264
 msgid "By _Name"
 msgstr "_Nime järgi"
 
-#: ../src/main-win-ui.c:257 ../src/main-win-ui.c:262
+#: ../src/main-win-ui.c:260 ../src/main-win-ui.c:265
 msgid "By _Modification Time"
 msgstr "_Muutmisaja järgi"
 
-#: ../src/main-win-ui.c:258 ../src/main-win-ui.c:263
+#: ../src/main-win-ui.c:261 ../src/main-win-ui.c:266
 msgid "By _Size"
 msgstr "_Suuruse järgi"
 
-#: ../src/main-win-ui.c:259 ../src/main-win-ui.c:264
+#: ../src/main-win-ui.c:262 ../src/main-win-ui.c:267
 msgid "By File _Type"
 msgstr "Faili_tüübi järgi"
 
-#: ../src/main-win-ui.c:270
+#: ../src/main-win-ui.c:273
 msgid "Places"
 msgstr "Asukohad"
 
-#: ../src/main-win-ui.c:271
+#: ../src/main-win-ui.c:274
 msgid "Directory Tree"
 msgstr "Kaustapuu"
 
-#: ../src/main-win-ui.c:272
+#: ../src/main-win-ui.c:275
 msgid "Remote"
 msgstr "Võrgus"
 
-#: ../src/main-win.c:702
+#: ../src/main-win.c:704
 msgid "Show history of visited folders"
 msgstr "Külastatud kaustade ajaloo vaatamine"
 
-#: ../src/main-win.c:705
+#: ../src/main-win.c:707
 msgid "History"
 msgstr "Ajalugu"
 
-#: ../src/main-win.c:719
+#: ../src/main-win.c:721
 msgid "You are in super user mode"
 msgstr "Oled administraatori õigustes"
 
-#: ../src/main-win.c:883
+#: ../src/main-win.c:885
 msgid "Lightweight file manager\n"
 msgstr "Sulgkerge failihaldur\n"
 
-#: ../src/main-win.c:888
+#: ../src/main-win.c:890
 #, c-format
 msgid "using LibFM ver. %s\n"
 msgstr "kasutab LibFM ver. %s\n"
 
-#: ../src/main-win.c:890
+#: ../src/main-win.c:892
 msgid ""
 "\n"
 "Developed by Hon Jen Yee (PCMan)"
@@ -871,11 +923,11 @@ msgstr ""
 "\n"
 "Autor: Hon Jen Yee (PCMan)"
 
-#: ../src/main-win.c:915 ../src/main-win.c:923
+#: ../src/main-win.c:917 ../src/main-win.c:925
 msgid "Keyboard Navigation"
 msgstr "Klaviatuuri kiirkäsud"
 
-#: ../src/main-win.c:917
+#: ../src/main-win.c:919
 msgid ""
 "Tab: cycle focus Folder View -> Side Pane -> Tools Bar\n"
 "Shift+Tab: cycle focus Tools Bar -> Side Pane -> Folder View\n"
@@ -887,11 +939,11 @@ msgstr ""
 "Tab: fookuse liigutamine: Kaustavaade -> Külgpaneel -> Tööriistariba\n"
 "Shift+Tab: fookuse liigutamine: Tööriistariba -> Külgpaneel -> Kaustavaade\n"
 "F6: fookuse vahetamine: Külgpaneel <-> Kaustavaade\n"
-"F8: fookus Külgpaneeli ja Kaustavaate vahel\n"
+"F8: fookus külgpaneeli ja kaustavaate eraldajal\n"
 "F10: põhimenüü aktiveerimine\n"
-"Ctrl+L või Alt+D: fookus asukoha ribale"
+"Ctrl+L või Alt+D: fookus asukoharibale"
 
-#: ../src/main-win.c:1515
+#: ../src/main-win.c:1522
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -902,7 +954,7 @@ msgstr ""
 "'%s'\n"
 "Sisesta uue järjehoidja nimi:"
 
-#: ../src/main-win.c:1519
+#: ../src/main-win.c:1526
 msgid "Add to Bookmarks"
 msgstr "Lisa järjehoidjatesse"
 
@@ -913,7 +965,7 @@ msgstr "Seadistusprofiili nimi"
 
 #: ../src/pcmanfm.c:76
 msgid "PROFILE"
-msgstr "PROFILE"
+msgstr "PROFIIL"
 
 #: ../src/pcmanfm.c:77
 msgid "Run PCManFM as a daemon"
@@ -942,21 +994,22 @@ msgstr "Kasuta --desktop valikut ainult ühel ekraanil"
 
 #: ../src/pcmanfm.c:85
 msgid "Set desktop wallpaper from image FILE"
-msgstr "Taustapildi määramine pildifailist FILE"
+msgstr "Taustapildi määramine pildifailist FAIL"
 
 #: ../src/pcmanfm.c:85
 msgid "FILE"
-msgstr "FILE"
+msgstr "FAIL"
 
 #. don't translate list of modes in description, please
 #: ../src/pcmanfm.c:87
 msgid "Set mode of desktop wallpaper. MODE=(color|stretch|fit|center|tile)"
 msgstr ""
-"Töölaua taustapildi režiimi määramine. MODE=(color|stretch|fit|center|tile)"
+"Töölaua taustapildi režiimi määramine. "
+"REŽIIM=(color|stretch|fit|center|tile)"
 
 #: ../src/pcmanfm.c:87
 msgid "MODE"
-msgstr "MODE"
+msgstr "REŽIIM"
 
 #: ../src/pcmanfm.c:88
 msgid "Open Preferences dialog on the page N"
@@ -977,40 +1030,40 @@ msgstr "Akna roll aknahalduri kasutuse jaoks"
 
 #: ../src/pcmanfm.c:91
 msgid "ROLE"
-msgstr "ROLE"
+msgstr "ROLL"
 
 #: ../src/pcmanfm.c:92
 msgid "[FILE1, FILE2,...]"
 msgstr "[FAIL1, FAIL2,...]"
 
-#: ../src/pcmanfm.c:536
+#: ../src/pcmanfm.c:541
 msgid "Terminal emulator is not set."
 msgstr "Terminaliemulaator on määramata."
 
-#: ../src/tab-page.c:54
+#: ../src/tab-page.c:55
 msgid "Open in New T_ab"
 msgstr "Ava uuel _kaardil"
 
-#: ../src/tab-page.c:334
+#: ../src/tab-page.c:342
 #, c-format
 msgid "%d item selected"
 msgid_plural "%d items selected"
 msgstr[0] "%d kirje valitud"
 msgstr[1] "%d kirjet valitud"
 
-#: ../src/tab-page.c:548
+#: ../src/tab-page.c:556
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Vaba ruum: %s (Kokku: %s)"
 
-#: ../src/tab-page.c:568
+#: ../src/tab-page.c:576
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] "%d kirje"
 msgstr[1] "%d kirjet"
 
-#: ../src/tab-page.c:569
+#: ../src/tab-page.c:577
 #, c-format
 msgid " (%d hidden)"
 msgid_plural " (%d hidden)"
@@ -1027,11 +1080,14 @@ msgstr "Failihaldur"
 
 #: ../data/pcmanfm.desktop.in.h:3
 msgid "Browse the file system and manage the files"
-msgstr "Sirvi failisüsteemi ja halda faile"
+msgstr "Failisüsteemi sirvimine ja failide haldamine"
 
 #: ../data/pcmanfm-desktop-pref.desktop.in.h:2
 msgid "Change desktop wallpapers and behavior of desktop manager"
 msgstr "Töölaua taustapiltide ja ekraanihalduri käitumise muutmine"
+
+#~ msgid "Devi_ces"
+#~ msgstr "Sea_dmed"
 
 #~ msgid "Fin_d Files"
 #~ msgstr "_Otsi faile"
