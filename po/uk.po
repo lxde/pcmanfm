@@ -6,16 +6,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm-1.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-10 00:17+0200\n"
-"PO-Revision-Date: 2013-12-09 22:23+0000\n"
-"Last-Translator: Andriy <andrej@rep.kiev.ua>\n"
+"POT-Creation-Date: 2013-12-20 22:41+0200\n"
+"PO-Revision-Date: 2013-12-20 23:19+0200\n"
+"Last-Translator: LStranger <andrej@rep.kiev.ua>\n"
 "Language-Team: Ukrainian <translation@linux.org.ua>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
-"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Pootle 2.5.0\n"
 "X-POOTLE-MTIME: 1386627808.0\n"
 
@@ -84,20 +84,20 @@ msgid "<b>Show desktop icons</b>"
 msgstr "<b>Показати значки на стільниці</b>"
 
 #: ../data/ui/desktop-pref.glade.h:14
-msgid "_Show \"Documents\" icon on desktop"
-msgstr "Показати значок \"Доку_менти\" на стільниці"
+msgid "_Show \"Documents\" folder on the desktop"
+msgstr "Показати теку \"Доку_менти\" на стільниці"
 
 #: ../data/ui/desktop-pref.glade.h:15
-msgid "Sho_w \"Devices\" icon on desktop"
-msgstr "Показати _значок \"Пристрої\" на стільниці"
+msgid "Sho_w \"Devices\" folder on the desktop"
+msgstr "Показати _теку \"Пристрої\" на стільниці"
 
 #: ../data/ui/desktop-pref.glade.h:16
-msgid "Show \"_Trash Can\" icon on desktop"
-msgstr "Показати значок \"_Смітник\" на стільниці"
+msgid "Show \"_Trash Can\" folder on the desktop"
+msgstr "Показати теку \"_Смітник\" на стільниці"
 
 #: ../data/ui/desktop-pref.glade.h:17
-msgid "S_how icons of volumes on desktop"
-msgstr "_Показати значки дисків на стільниці"
+msgid "S_how connected volumes on the desktop"
+msgstr "_Показати під'єднані пристрої на стільниці"
 
 #: ../data/ui/desktop-pref.glade.h:18
 msgid "_Desktop Icons"
@@ -108,8 +108,8 @@ msgid "_Show menus provided by window managers when desktop is clicked"
 msgstr "Показати _меню менеджера вікон при клацанні на стільниці"
 
 #: ../data/ui/desktop-pref.glade.h:20
-msgid "_Open folder from desktop in new window"
-msgstr "_Відкривати теку зі стільниці в новому вікні."
+msgid "_Open folders from desktop in new window"
+msgstr "_Відкривати теки зі стільниці в новому вікні"
 
 #: ../data/ui/desktop-pref.glade.h:21
 msgid "Ad_vanced"
@@ -193,217 +193,234 @@ msgid "Defaul_t drop action:"
 msgstr "_Типова дія при киданні:"
 
 #: ../data/ui/pref.glade.h:15
+msgid "\"_Smart shortcut\" auto-action on drop to Desktop folder"
+msgstr "\"_Розумний\" автовибір дії з файлами при киданні на Стільницю"
+
+#: ../data/ui/pref.glade.h:16
+msgid ""
+"If enabled then \"Auto\" action on drop file onto Desktop folder will be:\n"
+"- for files on internal drives a symlink will be created\n"
+"- files on removable media will be copied\n"
+"- for some external URI a shortcut will be created"
+msgstr ""
+"Якщо ввімкнено, тоді \"Автоматично\" буде вибирати дію при киданні на теку "
+"стільниці:\n"
+"- для файлів у комп'ютері створюватиметься символічне посилання\n"
+"- файли з під'єднаних пристроїв будуть скопійовані\n"
+"- на зовнішній URI створюватиметься посилання"
+
+#: ../data/ui/pref.glade.h:20
 msgid "_Unfold tab when files are dragged onto tab button"
 msgstr "_Розгортати вкладку при перетягуванні файлів на її кнопку"
 
-#: ../data/ui/pref.glade.h:16
+#: ../data/ui/pref.glade.h:21
 msgid "<b>Default View</b>"
 msgstr "<b>Типовий вигляд</b>"
 
-#: ../data/ui/pref.glade.h:17
+#: ../data/ui/pref.glade.h:22
 msgid "Vie_w Mode:"
 msgstr "Ре_жим перегляду:"
 
-#: ../data/ui/pref.glade.h:18
+#: ../data/ui/pref.glade.h:23
 msgid "_General"
 msgstr "_Загальне"
 
-#: ../data/ui/pref.glade.h:19
+#: ../data/ui/pref.glade.h:24
 msgid "<b>Icons</b>"
 msgstr "<b>Значки</b>"
 
-#: ../data/ui/pref.glade.h:20
+#: ../data/ui/pref.glade.h:25
 msgid "Size of _big icons:"
 msgstr "Розмір _великих значків:"
 
-#: ../data/ui/pref.glade.h:21
+#: ../data/ui/pref.glade.h:26
 msgid "Size of small _icons:"
 msgstr "_Розмір малих значків:"
 
-#: ../data/ui/pref.glade.h:22
+#: ../data/ui/pref.glade.h:27
 msgid "Size of _thumbnails:"
 msgstr "Розмір _малих мініатюр:"
 
-#: ../data/ui/pref.glade.h:23
+#: ../data/ui/pref.glade.h:28
 msgid "Size of side _pane icons:"
 msgstr "Розмір значків _бічної панелі:"
 
-#: ../data/ui/pref.glade.h:24
+#: ../data/ui/pref.glade.h:29
 msgid "_Show thumbnails of files"
 msgstr "_Показати мініатюри файлів"
 
-#: ../data/ui/pref.glade.h:25
+#: ../data/ui/pref.glade.h:30
 msgid "_Only show thumbnails for local files"
 msgstr "Показувати _лише мініатюри для локальних файлів"
 
-#: ../data/ui/pref.glade.h:26
+#: ../data/ui/pref.glade.h:31
 msgid "Do _not generate thumbnails for files exceeding this size:"
 msgstr "_Не генерувати іконки для файлів, що перевищують цей розмір:"
 
-#: ../data/ui/pref.glade.h:27
+#: ../data/ui/pref.glade.h:32
 msgid "<b>User Interface</b>"
 msgstr "<b>Інтерфейс користувача</b>"
 
-#: ../data/ui/pref.glade.h:28
+#: ../data/ui/pref.glade.h:33
 msgid "Us_e SI decimal prefixes instead of IEC binary prefixes"
 msgstr "В_икористовувати десяткові префікси SI замість двійкових префіксів IEC"
 
-#: ../data/ui/pref.glade.h:29
+#: ../data/ui/pref.glade.h:34
 msgid "Treat backup files as _hidden"
 msgstr "Вважати резервні файли при_хованими"
 
-#: ../data/ui/pref.glade.h:30
+#: ../data/ui/pref.glade.h:35
 msgid "Al_ways show full file names"
 msgstr "Зав_жди показувати імена файлів цілком"
 
-#: ../data/ui/pref.glade.h:31
+#: ../data/ui/pref.glade.h:36
 msgid "Show icons of bac_kup files shadowed"
 msgstr "Показувати значки резервних файлів _тмяними"
 
-#: ../data/ui/pref.glade.h:32
+#: ../data/ui/pref.glade.h:37
 msgid "_Display"
 msgstr "_Відображення"
 
-#: ../data/ui/pref.glade.h:33
+#: ../data/ui/pref.glade.h:38
 msgid "Hid_e 'Close tab' buttons"
 msgstr "При_ховати кнопки 'Закрити вкладку'"
 
-#: ../data/ui/pref.glade.h:34
+#: ../data/ui/pref.glade.h:39
 msgid "Al_ways show the tab bar"
 msgstr "Завжд_и показувати панель вкладок"
 
-#: ../data/ui/pref.glade.h:35
+#: ../data/ui/pref.glade.h:40
 msgid "_Maximum width of tab label:"
 msgstr "_Максимальна ширина ярлику вкладки:"
 
 #. Use genitive case here, context is: width is XXX characters
-#: ../data/ui/pref.glade.h:37
+#: ../data/ui/pref.glade.h:42
 msgid "characters"
 msgstr "символів"
 
-#: ../data/ui/pref.glade.h:38
+#: ../data/ui/pref.glade.h:43
 msgid "<b>Directories Tree</b>"
 msgstr "<b>Дерево тек</b>"
 
-#: ../data/ui/pref.glade.h:39
+#: ../data/ui/pref.glade.h:44
 msgid "Hide e_xpander on empty or locked folder"
 msgstr "Ховати розгортувач порожн_ьої чи замкненої теки"
 
-#: ../data/ui/pref.glade.h:40
+#: ../data/ui/pref.glade.h:45
 msgid "<b>Show in Places:</b>"
 msgstr "<b>Показати у Місцях:</b>"
 
-#: ../data/ui/pref.glade.h:41
+#: ../data/ui/pref.glade.h:46
 msgid "_Home Folder"
 msgstr "_Домашня тека"
 
-#: ../data/ui/pref.glade.h:42
+#: ../data/ui/pref.glade.h:47
 msgid "Des_ktop"
 msgstr "_Стільниця"
 
-#: ../data/ui/pref.glade.h:43 ../src/main-win-ui.c:189
+#: ../data/ui/pref.glade.h:48 ../src/main-win-ui.c:189
 msgid "_Trash Can"
 msgstr "Смі_тник"
 
-#: ../data/ui/pref.glade.h:44
+#: ../data/ui/pref.glade.h:49
 msgid "_Filesystem Root"
 msgstr "К_орінь файловоі системи"
 
-#: ../data/ui/pref.glade.h:45
+#: ../data/ui/pref.glade.h:50
 msgid "App_lications"
 msgstr "Про_грами"
 
-#: ../data/ui/pref.glade.h:46 ../src/main-win-ui.c:192
+#: ../data/ui/pref.glade.h:51 ../src/main-win-ui.c:192
 msgid "Dev_ices"
 msgstr "_Пристрої"
 
-#: ../data/ui/pref.glade.h:47
+#: ../data/ui/pref.glade.h:52
 msgid "_Network"
 msgstr "Мере_жa"
 
-#: ../data/ui/pref.glade.h:48
+#: ../data/ui/pref.glade.h:53
 msgid "_Layout"
 msgstr "_Розміщення"
 
-#: ../data/ui/pref.glade.h:49
+#: ../data/ui/pref.glade.h:54
 msgid "<b>Auto-mount</b>"
 msgstr "<b>Автомонтування</b>"
 
-#: ../data/ui/pref.glade.h:50
+#: ../data/ui/pref.glade.h:55
 msgid "_Mount mountable volumes automatically on program startup"
 msgstr "Якщо можливо, змонтувати диски _автоматично під час старту"
 
-#: ../data/ui/pref.glade.h:51
+#: ../data/ui/pref.glade.h:56
 msgid "Mo_unt removable media automatically when they are inserted"
 msgstr "Монтувати зовнішні _носії при їх вставлянні"
 
-#: ../data/ui/pref.glade.h:52
+#: ../data/ui/pref.glade.h:57
 msgid "_Show available options for removable media when they are inserted"
 msgstr "_Показати можливі опції для змінних носіїв при їх вставлянні"
 
-#: ../data/ui/pref.glade.h:53
+#: ../data/ui/pref.glade.h:58
 msgid "_Open mounted removable media in new tab instead of new window"
 msgstr ""
 "Відкривати _змонтовані зовнішні носії у новій вкладці замість нового вікна"
 
-#: ../data/ui/pref.glade.h:54
+#: ../data/ui/pref.glade.h:59
 msgid "Clos_e tab containing removable medium when it is unmounted"
 msgstr "Закрити вкладку, що містить зовнішній носій, при _його відмонтуванні"
 
-#: ../data/ui/pref.glade.h:55
+#: ../data/ui/pref.glade.h:60
 msgid "_Volume Management"
 msgstr "_Керування дисками"
 
-#: ../data/ui/pref.glade.h:56
+#: ../data/ui/pref.glade.h:61
 msgid "<b>Programs</b>"
 msgstr "<b>Програми</b>"
 
-#: ../data/ui/pref.glade.h:57
+#: ../data/ui/pref.glade.h:62
 msgid "<i>Commands below may include extra options if necessary.</i>"
 msgstr "<i>Команди нижче можуть мати додаткові опції якщо потрібно.</i>"
 
-#: ../data/ui/pref.glade.h:58
+#: ../data/ui/pref.glade.h:63
 msgid "_Terminal emulator:"
 msgstr "_Емулятор терміналу:"
 
-#: ../data/ui/pref.glade.h:59
+#: ../data/ui/pref.glade.h:64
 msgid "_Switch user command:"
 msgstr "_Команда зміни користувача:"
 
 #. Application command to format some drive
-#: ../data/ui/pref.glade.h:61
+#: ../data/ui/pref.glade.h:66
 msgid "_Format command:"
 msgstr "Кома_нда форматування:"
 
-#: ../data/ui/pref.glade.h:62
+#: ../data/ui/pref.glade.h:67
 msgid "A_rchiver integration:"
 msgstr "_Інтеграція з архіватором:"
 
-#: ../data/ui/pref.glade.h:63
+#: ../data/ui/pref.glade.h:68
 msgid "<b>Templates</b>"
 msgstr "<b>Шаблони</b>"
 
-#: ../data/ui/pref.glade.h:64
+#: ../data/ui/pref.glade.h:69
 msgid "S_how only user defined templates in menu"
 msgstr "_Показувати в спискові лише шаблони, визначені користувачем"
 
-#: ../data/ui/pref.glade.h:65
+#: ../data/ui/pref.glade.h:70
 msgid "Show _only one template for each MIME type"
 msgstr "Показувати _лише один шаблон для кожного типу файлу"
 
-#: ../data/ui/pref.glade.h:66
+#: ../data/ui/pref.glade.h:71
 msgid "Ru_n default application after creation from template"
 msgstr "Запустити типову програму для файлу, створеного з _шаблону"
 
-#: ../data/ui/pref.glade.h:67
+#: ../data/ui/pref.glade.h:72
 msgid "<b>Other Options</b>"
 msgstr "<b>Інші налаштування</b>"
 
-#: ../data/ui/pref.glade.h:68
+#: ../data/ui/pref.glade.h:73
 msgid "_Use Application Startup Notify by default"
 msgstr "_Типово використовувати Сповіщення Запуску"
 
-#: ../data/ui/pref.glade.h:69
+#: ../data/ui/pref.glade.h:74
 msgid ""
 "If checked then use Startup Notify for application if another not stated "
 "explicitly.\n"
@@ -414,43 +431,43 @@ msgstr ""
 "Якщо вимкнено - використовувати Сповіщення Запуску Програми, лише якщо це "
 "вказано у ярлику."
 
-#: ../data/ui/pref.glade.h:71
+#: ../data/ui/pref.glade.h:76
 msgid "D_efer test for content type on folder loading"
 msgstr "_Відкладене визначення вмісту при завантаженні теки"
 
-#: ../data/ui/pref.glade.h:72
+#: ../data/ui/pref.glade.h:77
 msgid "_Advanced"
 msgstr "_Додатково"
 
-#: ../data/ui/pref.glade.h:73
+#: ../data/ui/pref.glade.h:78
 msgid "Auto (move if on the same FS, copy otherwise)"
 msgstr "Автоматично (перенести в межах ФС, інакше - копіювати)"
 
-#: ../data/ui/pref.glade.h:74
+#: ../data/ui/pref.glade.h:79
 msgid "Copy"
 msgstr "Копіювати"
 
-#: ../data/ui/pref.glade.h:75
+#: ../data/ui/pref.glade.h:80
 msgid "Move"
 msgstr "Перенести"
 
-#: ../data/ui/pref.glade.h:76
+#: ../data/ui/pref.glade.h:81
 msgid "Ask"
 msgstr "Спитати"
 
-#: ../data/ui/pref.glade.h:77
+#: ../data/ui/pref.glade.h:82
 msgid "Icon View"
 msgstr "Вигляд значками"
 
-#: ../data/ui/pref.glade.h:78
+#: ../data/ui/pref.glade.h:83
 msgid "Compact View"
 msgstr "Компактний вигляд"
 
-#: ../data/ui/pref.glade.h:79
+#: ../data/ui/pref.glade.h:84
 msgid "Thumbnail View"
 msgstr "Вигляд мініатюрами"
 
-#: ../data/ui/pref.glade.h:80
+#: ../data/ui/pref.glade.h:85
 msgid "Detailed List View"
 msgstr "Детальний вигляд списком"
 
@@ -538,28 +555,32 @@ msgstr "Відкрити у _новому вікні"
 msgid "Open in Termina_l"
 msgstr "Відкрити в _терміналі"
 
-#: ../src/desktop-ui.c:70
+#: ../src/desktop-ui.c:68
+msgid "_Remove from Desktop"
+msgstr "Прибрати _зі стільниці"
+
+#: ../src/desktop-ui.c:85
 msgid "Stic_k to Current Position"
 msgstr "Дотримуватися _поточної позиції"
 
-#: ../src/desktop-ui.c:75
+#: ../src/desktop-ui.c:90
 msgid "Snap to _Grid"
 msgstr "Дотримуватися _сітки"
 
-#: ../src/desktop.c:634
+#: ../src/desktop.c:891
 msgid "Activate file"
 msgstr "Активувати файл"
 
-#: ../src/desktop.c:636
+#: ../src/desktop.c:893
 msgid "Show file menu"
 msgstr "Показати меню файлу"
 
-#: ../src/desktop.c:1052
+#: ../src/desktop.c:1309
 msgid "Show desktop menu"
 msgstr "Показати меню стільниці"
 
 #. FIXME: set name by monitor
-#: ../src/desktop.c:1124
+#: ../src/desktop.c:1381
 msgid "Desktop"
 msgstr "Стільниця"
 
