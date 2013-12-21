@@ -127,6 +127,8 @@ static GSList* all_wins = NULL;
 static GtkAboutDialog* about_dlg = NULL;
 static GtkWidget* key_nav_list_dlg = NULL;
 
+static GQuark main_win_qdata;
+
 static void fm_main_win_class_init(FmMainWinClass *klass)
 {
     GObjectClass *g_object_class = G_OBJECT_CLASS(klass);
@@ -147,6 +149,8 @@ static void fm_main_win_class_init(FmMainWinClass *klass)
     widget_class->unrealize = on_unrealize;
 
     fm_main_win_parent_class = (GtkWindowClass*)g_type_class_peek(GTK_TYPE_WINDOW);
+
+    main_win_qdata = g_quark_from_static_string("FmMainWin::data");
 }
 
 static gboolean idle_focus_view(gpointer user_data)
@@ -312,7 +316,7 @@ static gboolean on_view_key_press_event(FmFolderView* fv, GdkEventKey* evt, FmMa
 
 static void on_bookmark(GtkMenuItem* mi, FmMainWin* win)
 {
-    FmPath* path = (FmPath*)g_object_get_data(G_OBJECT(mi), "path");
+    FmPath* path = (FmPath*)g_object_get_qdata(G_OBJECT(mi), main_win_qdata);
     switch(app_config->bm_open_method)
     {
     case FM_OPEN_IN_CURRENT_TAB: /* current tab */
@@ -343,7 +347,8 @@ static void create_bookmarks_menu(FmMainWin* win)
         FmBookmarkItem* item = (FmBookmarkItem*)l->data;
         mi = gtk_image_menu_item_new_with_label(item->name);
         gtk_widget_show(mi);
-        g_object_set_data_full(G_OBJECT(mi), "path", fm_path_ref(item->path), (GDestroyNotify)fm_path_unref);
+        g_object_set_qdata_full(G_OBJECT(mi), main_win_qdata,
+                                fm_path_ref(item->path), (GDestroyNotify)fm_path_unref);
         g_signal_connect(mi, "activate", G_CALLBACK(on_bookmark), win);
         gtk_menu_shell_insert(win->bookmarks_menu, mi, i);
         ++i;
@@ -367,7 +372,7 @@ static void on_bookmarks_changed(FmBookmarks* bm, FmMainWin* win)
     for(l = mis;l;l=l->next)
     {
         GtkWidget* item = (GtkWidget*)l->data;
-        if( g_object_get_data(G_OBJECT(item), "path") )
+        if( g_object_get_qdata(G_OBJECT(item), main_win_qdata) )
         {
             g_signal_handlers_disconnect_by_func(item, on_bookmark, win);
             gtk_widget_destroy(item);
@@ -398,9 +403,9 @@ static void on_history_item(GtkMenuItem* mi, FmMainWin* win)
 {
     FmTabPage* page = win->current_page;
 #if FM_CHECK_VERSION(1, 0, 2)
-    guint l = GPOINTER_TO_UINT(g_object_get_data(G_OBJECT(mi), "path"));
+    guint l = GPOINTER_TO_UINT(g_object_get_qdata(G_OBJECT(mi), main_win_qdata));
 #else
-    GList* l = g_object_get_data(G_OBJECT(mi), "path");
+    GList* l = g_object_get_qdata(G_OBJECT(mi), main_win_qdata);
 #endif
     fm_tab_page_history(page, l);
     /* update folder popup */
@@ -463,9 +468,9 @@ static void on_show_history_menu(GtkMenuToolButton* btn, FmMainWin* win)
 
         /* FIXME: need to avoid cast from const GList */
 #if FM_CHECK_VERSION(1, 0, 2)
-        g_object_set_data(G_OBJECT(mi), "path", GUINT_TO_POINTER(i));
+        g_object_set_qdata(G_OBJECT(mi), main_win_qdata, GUINT_TO_POINTER(i));
 #else
-        g_object_set_data_full(G_OBJECT(mi), "path", (gpointer)l, NULL);
+        g_object_set_qdata_full(G_OBJECT(mi), main_win_qdata, (gpointer)l, NULL);
 #endif
         g_signal_connect(mi, "activate", G_CALLBACK(on_history_item), win);
         gtk_menu_shell_append(menu, mi);
