@@ -689,6 +689,21 @@ static void fm_main_win_init(FmMainWin *win)
     gtk_toggle_action_set_active(GTK_TOGGLE_ACTION(act),
                                  (app_config->side_pane_mode & FM_SP_HIDE) == 0);
 
+#if FM_CHECK_VERSION(1, 2, 0)
+    /* disable "Find Files" button if module isn't available */
+    if (!fm_module_is_in_use("vfs", "search"))
+    {
+        act = gtk_ui_manager_get_action(ui, "/menubar/EditMenu/Search");
+        gtk_action_set_sensitive(act, FALSE);
+    }
+    /* disable "Applications" button if module isn't available */
+    if (!fm_module_is_in_use("vfs", "menu"))
+    {
+        act = gtk_ui_manager_get_action(ui, "/menubar/GoMenu/Apps");
+        gtk_action_set_sensitive(act, FALSE);
+    }
+#endif
+
     menubar = gtk_ui_manager_get_widget(ui, "/menubar");
     win->toolbar = GTK_TOOLBAR(gtk_ui_manager_get_widget(ui, "/toolbar"));
     /* FIXME: should make these optional */
