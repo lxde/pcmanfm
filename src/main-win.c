@@ -427,9 +427,17 @@ static void on_history_selection_done(GtkMenuShell* menu, gpointer win)
     gtk_container_foreach(GTK_CONTAINER(menu), disconnect_history_item, win);
 }
 
+#if FM_CHECK_VERSION(1, 2, 0)
+static void on_show_history_menu(FmMenuToolItem* btn, FmMainWin* win)
+#else
 static void on_show_history_menu(GtkMenuToolButton* btn, FmMainWin* win)
+#endif
 {
+#if FM_CHECK_VERSION(1, 2, 0)
+    GtkMenuShell* menu = (GtkMenuShell*)fm_menu_tool_item_get_menu(btn);
+#else
     GtkMenuShell* menu = (GtkMenuShell*)gtk_menu_tool_button_get_menu(btn);
+#endif
 #if FM_CHECK_VERSION(1, 0, 2)
     guint i, cur = fm_nav_history_get_cur_index(win->nav_history);
     FmPath* path;
@@ -710,18 +718,29 @@ static void fm_main_win_init(FmMainWin *win)
     gtk_toolbar_set_icon_size(win->toolbar, GTK_ICON_SIZE_SMALL_TOOLBAR);
     gtk_toolbar_set_style(win->toolbar, GTK_TOOLBAR_ICONS);
 
+#if FM_CHECK_VERSION(1, 2, 0)
+    /* create history button after 'Prev' and add a popup menu to it */
+    toolitem = fm_menu_tool_item_new();
+    gtk_toolbar_insert(win->toolbar, toolitem, 2);
+#else
     /* create 'Prev' button manually and add a popup menu to it */
     toolitem = (GtkToolItem*)g_object_new(GTK_TYPE_MENU_TOOL_BUTTON, NULL);
     gtk_toolbar_insert(win->toolbar, toolitem, 1);
     act = gtk_ui_manager_get_action(ui, "/menubar/GoMenu/Prev");
     gtk_activatable_set_related_action(GTK_ACTIVATABLE(toolitem), act);
+#endif
 
     /* set up history menu */
     win->history_menu = gtk_menu_new();
+#if FM_CHECK_VERSION(1, 2, 0)
+    fm_menu_tool_item_set_menu(FM_MENU_TOOL_ITEM(toolitem), win->history_menu);
+    gtk_tool_item_set_tooltip_text(toolitem, _("Show history of visited folders"));
+#else
     gtk_menu_tool_button_set_menu(GTK_MENU_TOOL_BUTTON(toolitem), win->history_menu);
-    g_signal_connect(toolitem, "show-menu", G_CALLBACK(on_show_history_menu), win);
     gtk_menu_tool_button_set_arrow_tooltip_text(GTK_MENU_TOOL_BUTTON(toolitem),
                                                 _("Show history of visited folders"));
+#endif
+    g_signal_connect(toolitem, "show-menu", G_CALLBACK(on_show_history_menu), win);
     atk_obj = gtk_widget_get_accessible(GTK_WIDGET(toolitem));
     if (atk_obj)
         atk_object_set_name(atk_obj, _("History"));
@@ -1593,7 +1612,7 @@ static void on_toolbar_nav(GtkToggleAction *act, FmMainWin *win)
     n = gtk_toolbar_get_item_index(win->toolbar, GTK_TOOL_ITEM(toolitem));
     gtk_widget_set_visible(GTK_WIDGET(gtk_toolbar_get_nth_item(win->toolbar, n-1)),
                            active); /* Hist */
-#if FM_CHECK_VERSION(1, 2, 1)
+#if FM_CHECK_VERSION(1, 2, 0)
     gtk_widget_set_visible(GTK_WIDGET(gtk_toolbar_get_nth_item(win->toolbar, n-2)),
                            active); /* Prev */
 #endif

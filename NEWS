@@ -121,6 +121,17 @@ Changes on 1.2.0 since 1.1.0:
     weird results.
     This feature will work only if linked against libfm 1.2.0 or newer.
 
+* Folder view modes moved to separate submenu to make View menu shorter.
+
+* Items of too short Tools menu moved to other (more appropriate) menus
+    to follow common Human Interface Guidelines.
+
+* Reordered View, Bookmarks, and Go menus placement in menu bar to follow
+    common order used by other applications and file managers.
+
+* Made insensitive menu items 'Go'->'Applications' and 'Edit'->'Search'
+    if appropriate modules were not loaded.
+
 
 Changes on 1.1.0 since 1.0.1:
 

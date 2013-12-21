@@ -144,6 +144,9 @@ static const char main_menu_xml[] =
 "</menubar>"
 "<toolbar>"
     "<toolitem action='NewTab'/>"
+#if FM_CHECK_VERSION(1, 2, 0)
+    "<toolitem action='Prev'/>"
+#endif
     "<toolitem action='Next'/>"
     "<toolitem action='Up'/>"
     "<toolitem action='Home'/>"
