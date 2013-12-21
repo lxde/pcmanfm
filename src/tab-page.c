@@ -638,10 +638,13 @@ static void update_files_popup(FmFolderView* fv, GtkWindow* win,
                                FmFileInfoList* files)
 {
     GList* l;
+    gboolean all_native = TRUE;
 
     for(l = fm_file_info_list_peek_head_link(files); l; l = l->next)
         if(!fm_file_info_is_dir(l->data))
             return; /* actions are valid only if all selected are directories */
+        else if (!fm_file_info_is_native(l->data))
+            all_native = FALSE;
     g_object_set_qdata_full(G_OBJECT(act_grp), popup_qdata,
                             fm_file_info_list_ref(files),
                             (GDestroyNotify)fm_file_info_list_unref);
@@ -649,6 +652,8 @@ static void update_files_popup(FmFolderView* fv, GtkWindow* win,
     gtk_action_group_add_actions(act_grp, folder_menu_actions,
                                  G_N_ELEMENTS(folder_menu_actions), win);
     gtk_ui_manager_add_ui_from_string(ui, folder_menu_xml, -1, NULL);
+    if (!all_native)
+        gtk_action_set_visible(gtk_action_group_get_action(act_grp, "Term"), FALSE);
 }
 
 static gboolean open_folder_func(GAppLaunchContext* ctx, GList* folder_infos, gpointer user_data, GError** err)
@@ -689,6 +694,8 @@ void _update_sidepane_popup(FmSidePane* sp, GtkUIManager* ui,
                                  G_N_ELEMENTS(folder_menu_actions), win);
     /* we use the same XML for simplicity */
     gtk_ui_manager_add_ui_from_string(ui, folder_menu_xml, -1, NULL);
+    if (!fm_file_info_is_native(file))
+        gtk_action_set_visible(gtk_action_group_get_action(act_grp, "Term"), FALSE);
 }
 #endif
 
