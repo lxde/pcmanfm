@@ -607,7 +607,7 @@ static void fm_main_win_init(FmMainWin *win)
     radio_group = NULL;
     is_first = TRUE;
     str = g_string_new("Mode:");
-    xml = g_string_new("<menubar><menu action='ViewMenu'><placeholder name='ViewModes'>");
+    xml = g_string_new("<menubar><menu action='ViewMenu'><menu action='FolderView'><placeholder name='ViewModes'>");
     accel_str[6] = '1';
     for(i = 0; i < fm_standard_view_get_n_modes(); i++)
     {
@@ -636,7 +636,7 @@ static void fm_main_win_init(FmMainWin *win)
             g_string_truncate(str, 5); /* reset it to just "Mode:" */
         }
     }
-    g_string_append(xml, "</placeholder></menu></menubar>");
+    g_string_append(xml, "</placeholder></menu></menu></menubar>");
     g_string_free(str, TRUE);
 #else
     gtk_action_group_add_radio_actions(act_grp, main_win_mode_actions,

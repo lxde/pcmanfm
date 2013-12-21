@@ -87,6 +87,7 @@ static const char main_menu_xml[] =
       "<menuitem action='Places' />"
       "<menuitem action='DirTree' />"
     "</menu>"
+    "<separator/>"
     "<menuitem action='DualPane'/>"
     /* "<menuitem action='ShowStatus'/>" */
     "<menuitem action='Fullscreen' />"
@@ -95,14 +96,16 @@ static const char main_menu_xml[] =
     "<menuitem action='SizeSmaller'/>"
     "<menuitem action='SizeDefault'/>"
     "<separator/>"
+    "<menu action='FolderView'>"
 #if FM_CHECK_VERSION(1, 2, 0)
-    "<placeholder name='ViewModes'/>"
+      "<placeholder name='ViewModes'/>"
 #else
-    "<menuitem action='IconView'/>"
-    "<menuitem action='ThumbnailView'/>"
-    "<menuitem action='CompactView'/>"
-    "<menuitem action='ListView'/>"
+      "<menuitem action='IconView'/>"
+      "<menuitem action='ThumbnailView'/>"
+      "<menuitem action='CompactView'/>"
+      "<menuitem action='ListView'/>"
 #endif
+    "</menu>"
     "<menu action='Sort'>"
       "<menuitem action='Asc'/>"
       "<menuitem action='Desc'/>"
@@ -171,8 +174,9 @@ static GtkActionEntry main_win_actions[]=
     {"ViewMenu", NULL, N_("_View"), NULL, NULL, NULL},
         {"Reload", GTK_STOCK_REFRESH, N_("_Reload Folder"), "F5", N_("Reload current folder"), G_CALLBACK(on_reload)},
         {"Toolbar", NULL, N_("Tool_bar"), NULL, NULL, NULL},
-        {"SidePane", NULL, N_("Side _Pane"), NULL, NULL, NULL},
+        {"SidePane", "view-sidetree", N_("Side _Pane"), NULL, NULL, NULL},
         /* other see below: 'ShowHidden' 'ShowStatus' 'Fullscreen' 'IconView'... */
+        {"FolderView", "view-choose", N_("Fo_lder View Mode"), NULL, NULL, NULL},
         {"Sort", NULL, N_("S_ort Files"), NULL, NULL, NULL},
         {"SizeBigger", GTK_STOCK_ZOOM_IN, N_("_Zoom In"), "<Ctrl>KP_Add", NULL, G_CALLBACK(on_size_increment)},
         {"SizeSmaller", GTK_STOCK_ZOOM_OUT, N_("Zoom O_ut"), "<Ctrl>KP_Subtract", NULL, G_CALLBACK(on_size_decrement)},
