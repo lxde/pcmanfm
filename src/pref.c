@@ -320,24 +320,48 @@ static void on_tab_label_list_sel_changed(GtkTreeSelection* tree_sel, gpointer u
     GtkTreePath* tp;
     GtkTreeIter it;
     GtkTreeModel* model;
-    gtk_tree_selection_get_selected(tree_sel, &model, &it);
+    int page;
+    if (!gtk_tree_selection_get_selected(tree_sel, &model, &it))
+    {
+        g_warning("pref: on_tab_label_list_sel_changed() got no selection");
+        return;
+    }
     tp = gtk_tree_model_get_path(model, &it);
-    gtk_notebook_set_current_page(notebook, gtk_tree_path_get_indices(tp)[0]);
+    page = gtk_tree_path_get_indices(tp)[0];
+    if (gtk_notebook_get_current_page(notebook) != page)
+        gtk_notebook_set_current_page(notebook, page);
     gtk_tree_path_free(tp);
 }
 
 static void on_notebook_page_changed(GtkNotebook *notebook, gpointer page,
-                                     guint n, GtkTreeSelection* tree_sel)
+                                     guint n, GtkTreeView *view)
 {
-    GtkTreeIter it;
-    GtkTreeModel* model;
-    char path_str[8];
+    GtkTreePath *tp;
 
-    snprintf(path_str, sizeof(path_str), "%u", n);
     /* g_debug("changed pref page: %u", n); */
-    gtk_tree_selection_get_selected(tree_sel, &model, &it);
-    gtk_tree_model_get_iter_from_string(model, &it, path_str);
-    gtk_tree_selection_select_iter(tree_sel, &it);
+    gtk_tree_view_get_cursor(view, &tp, NULL);
+    if (gtk_tree_path_get_indices(tp)[0] != (int)n)
+    {
+        gtk_tree_path_free(tp);
+        tp = gtk_tree_path_new_from_indices(n, -1);
+        gtk_tree_view_set_cursor(view, tp, NULL, FALSE);
+    }
+    gtk_tree_path_free(tp);
+}
+
+static gboolean on_key_press(GtkWidget* w, GdkEventKey* evt, GtkNotebook *notebook)
+{
+    int modifier = (evt->state & gtk_accelerator_get_default_mod_mask());
+
+    if (modifier == GDK_MOD1_MASK) /* Alt */
+    {
+        if(evt->keyval >= '1' && evt->keyval <= '9') /* Alt + 1 ~ 9, nth tab */
+        {
+            gtk_notebook_set_current_page(notebook, evt->keyval - '1');
+            return TRUE;
+        }
+    }
+    return FALSE;
 }
 
 void fm_edit_preference( GtkWindow* parent, int page )
@@ -474,15 +498,18 @@ void fm_edit_preference( GtkWindow* parent, int page )
             gtk_list_store_insert_with_values(tab_label_model, NULL, i, 0, title, -1);
         }
         gtk_tree_view_set_model(tab_label_list, GTK_TREE_MODEL(tab_label_model));
+        gtk_tree_view_set_enable_search(tab_label_list, FALSE);
         gtk_tree_model_get_iter_first(GTK_TREE_MODEL(tab_label_model), &it);
         tree_sel = gtk_tree_view_get_selection(tab_label_list);
+        gtk_tree_selection_set_mode(tree_sel, GTK_SELECTION_BROWSE);
         gtk_tree_selection_select_iter(tree_sel, &it);
         g_object_unref(tab_label_model);
         g_signal_connect(tree_sel, "changed", G_CALLBACK(on_tab_label_list_sel_changed), notebook);
-        g_signal_connect(notebook, "switch-page", G_CALLBACK(on_notebook_page_changed), tree_sel);
+        g_signal_connect(notebook, "switch-page", G_CALLBACK(on_notebook_page_changed), tab_label_list);
         gtk_notebook_set_show_tabs(notebook, FALSE);
 
         g_signal_connect(pref_dlg, "response", G_CALLBACK(on_response), &pref_dlg);
+        g_signal_connect(pref_dlg, "key-press-event", G_CALLBACK(on_key_press), notebook);
         g_object_unref(builder);
 
         pcmanfm_ref();
