@@ -32,6 +32,8 @@ static const char main_menu_xml[] =
       "<menuitem action='NewFolder'/>"
       "<menuitem action='NewBlank'/>"
     "</menu>"
+    /* "<separator/>"
+    "<menuitem action='Open'/>" */
     "<separator/>"
     "<menuitem action='Term'/>"
     /* "<separator/>"
@@ -53,6 +55,8 @@ static const char main_menu_xml[] =
     "<menuitem action='Duplicate'/>" */
     "<menuitem action='MoveTo'/>"
     "<menuitem action='CopyTo'/>"
+    /* "<separator/>"
+    "<menuitem action='FileProp'/>" */
     "<separator/>"
     "<menuitem action='SelAll'/>"
     "<menuitem action='InvSel'/>"
@@ -165,7 +169,11 @@ static GtkActionEntry main_win_actions[]=
         {"New", GTK_STOCK_NEW, N_("_New Window"), "<Ctrl>N", NULL, G_CALLBACK(on_new_win)},
         {"NewTab", "tab-new", N_("New T_ab"), "<Ctrl>T", N_("Create new tab for this folder"), G_CALLBACK(on_new_tab)},
         {"CreateNew", GTK_STOCK_ADD, N_("C_reate New..."), "", NULL, NULL},
+            {"NewFolder", "folder", N_("Folder"), "<Ctrl><Shift>N", NULL, G_CALLBACK(bounce_action)},
+            {"NewBlank", NULL, N_("Empty File"), "<Ctrl><Alt>N", NULL, G_CALLBACK(bounce_action)},
+        {"Open", GTK_STOCK_OPEN, N_("_Open Selected"), NULL, NULL, /*G_CALLBACK(bounce_file_action)*/NULL},
         {"Term", "utilities-terminal", N_("Open Current Folder in _Terminal"), "F4", NULL, G_CALLBACK(on_open_in_terminal)},
+        {"Prop", GTK_STOCK_PROPERTIES, N_("Folder Propertie_s"), NULL, NULL, G_CALLBACK(bounce_action)},
         {"CloseTab", GTK_STOCK_CLOSE, N_("_Close Tab"), "<Ctrl>W", NULL, G_CALLBACK(on_close_tab)},
         {"Close", GTK_STOCK_QUIT, N_("Close _Window"), "<Ctrl>Q", NULL, G_CALLBACK(on_close_win)},
     {"EditMenu", NULL, N_("_Edit"), NULL, NULL, NULL},
@@ -173,10 +181,12 @@ static GtkActionEntry main_win_actions[]=
         {"Copy", GTK_STOCK_COPY, NULL, NULL, NULL, G_CALLBACK(bounce_action)},
         {"Paste", GTK_STOCK_PASTE, NULL, NULL, NULL, G_CALLBACK(bounce_action)},
         {"Del", GTK_STOCK_DELETE, NULL, "Delete", NULL, G_CALLBACK(bounce_action)},
-        {"Rename", NULL, N_("_Rename"), "F2", NULL, G_CALLBACK(on_rename)},
+        {"Rename", NULL, N_("_Rename..."), "F2", NULL, G_CALLBACK(on_rename)},
         {"Link", NULL, N_("Create Symlin_k"), NULL, NULL, NULL},
+        {"Duplicate", NULL, N_("D_uplicate the File"), NULL, NULL, NULL},
         {"MoveTo", NULL, N_("_Move To..."), NULL, NULL, G_CALLBACK(on_move_to)},
         {"CopyTo", NULL, N_("C_opy To..."), NULL, NULL, G_CALLBACK(on_copy_to)},
+        {"FileProp", GTK_STOCK_PROPERTIES, N_("Propertie_s"), "<Alt>Return", NULL, G_CALLBACK(bounce_action)},
         {"SelAll", GTK_STOCK_SELECT_ALL, NULL, "<Ctrl>A", NULL, G_CALLBACK(bounce_action)},
         {"InvSel", NULL, N_("_Invert Selection"), "<Ctrl>I", NULL, G_CALLBACK(bounce_action)},
 #if FM_CHECK_VERSION(1, 0, 2)
@@ -219,9 +229,6 @@ static GtkActionEntry main_win_actions[]=
     {"Prev2", NULL, NULL, "XF86Back", NULL, G_CALLBACK(on_go_back)},
     {"Next2", NULL, NULL, "XF86Forward", NULL, G_CALLBACK(on_go_forward)},
     {"Reload2", NULL, NULL, "<Ctrl>R", NULL, G_CALLBACK(on_reload)},
-    /* for popup menu - these entries exist in FmFolderView popup still */
-    {"NewFolder", "folder", N_("Folder"), "<Ctrl><Shift>N", NULL, G_CALLBACK(bounce_action)},
-    {"NewBlank", NULL, N_("Empty File"), "<Ctrl><Alt>N", NULL, G_CALLBACK(bounce_action)}
 };
 
 /* main_win_toggle_actions+main_win_mode_actions - see 'ViewMenu' for mnemonics */
