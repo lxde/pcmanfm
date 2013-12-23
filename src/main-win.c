@@ -277,6 +277,15 @@ static void update_view_menu(FmMainWin* win)
     win->in_update = FALSE;
 }
 
+static void update_file_menu(FmMainWin* win, FmPath *path)
+{
+    GtkAction *act;
+    /* FmFolderView *fv = win->folder_view; */
+
+    act = gtk_ui_manager_get_action(win->ui, "/menubar/FileMenu/Term");
+    gtk_action_set_sensitive(act, path && fm_path_is_native(path));
+}
+
 static void on_folder_view_sort_changed(FmFolderView* fv, FmMainWin* win)
 {
     if(fv != win->folder_view)
@@ -298,7 +307,7 @@ static void on_folder_view_sel_changed(FmFolderView* fv, gint n_sel, FmMainWin* 
     act = gtk_ui_manager_get_action(win->ui, "/menubar/EditMenu/Del");
     gtk_action_set_sensitive(act, has_selected);
     act = gtk_ui_manager_get_action(win->ui, "/menubar/EditMenu/Rename");
-    gtk_action_set_sensitive(act, has_selected);
+    gtk_action_set_sensitive(act, n_sel == 1); /* can rename only single file */
     act = gtk_ui_manager_get_action(win->ui, "/menubar/EditMenu/CopyTo");
     gtk_action_set_sensitive(act, has_selected);
     act = gtk_ui_manager_get_action(win->ui, "/menubar/EditMenu/MoveTo");
@@ -479,7 +488,6 @@ static void on_show_history_menu(GtkMenuToolButton* btn, FmMainWin* win)
             mi = gtk_menu_item_new_with_label(str);
         g_free(str);
 
-        /* FIXME: need to avoid cast from const GList */
 #if FM_CHECK_VERSION(1, 0, 2)
         g_object_set_qdata(G_OBJECT(mi), main_win_qdata, GUINT_TO_POINTER(i));
 #else
@@ -1349,6 +1357,7 @@ static void _update_hist_buttons(FmMainWin* win)
 #endif
     act = gtk_ui_manager_get_action(win->ui, "/menubar/GoMenu/Prev");
     gtk_action_set_sensitive(act, fm_nav_history_can_back(nh));
+    update_file_menu(win, fm_tab_page_get_cwd(win->current_page));
 }
 
 static void on_go_back(GtkAction* act, FmMainWin* win)
@@ -1430,6 +1439,7 @@ void fm_main_win_chdir(FmMainWin* win, FmPath* path)
     g_signal_handlers_unblock_by_func(win->side_pane, on_side_pane_chdir, win);
     _update_hist_buttons(win);
     update_view_menu(win);
+    update_file_menu(win, path);
 }
 
 #if 0
@@ -2011,6 +2021,7 @@ static void on_notebook_switch_page(GtkNotebook* nb, gpointer* new_page, guint n
 
     update_sort_menu(win);
     update_view_menu(win);
+    update_file_menu(win, fm_tab_page_get_cwd(page));
     update_statusbar(win);
 
     if(win->idle_handler == 0)

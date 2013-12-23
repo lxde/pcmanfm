@@ -46,6 +46,7 @@ static const char main_menu_xml[] =
     "<menuitem action='Cut'/>"
     "<menuitem action='Copy'/>"
     "<menuitem action='Paste'/>"
+    /* FIXME: replace with 2: 'Move to Trash' + 'Remove' */
     "<menuitem action='Del'/>"
     "<separator/>"
     "<menuitem action='Rename'/>"
