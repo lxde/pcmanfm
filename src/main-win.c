@@ -284,6 +284,8 @@ static void update_file_menu(FmMainWin* win, FmPath *path)
 
     act = gtk_ui_manager_get_action(win->ui, "/menubar/FileMenu/Term");
     gtk_action_set_sensitive(act, path && fm_path_is_native(path));
+    act = gtk_ui_manager_get_action(win->ui, "/menubar/GoMenu/Up");
+    gtk_action_set_sensitive(act, path && fm_path_get_parent(path));
 }
 
 static void on_folder_view_sort_changed(FmFolderView* fv, FmMainWin* win)
