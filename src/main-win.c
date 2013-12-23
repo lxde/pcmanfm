@@ -401,6 +401,8 @@ static void load_bookmarks(FmMainWin* win, GtkUIManager* ui)
     create_bookmarks_menu(win);
 }
 
+static void _update_hist_buttons(FmMainWin* win);
+
 static void on_history_item(GtkMenuItem* mi, FmMainWin* win)
 {
     FmTabPage* page = win->current_page;
@@ -413,6 +415,7 @@ static void on_history_item(GtkMenuItem* mi, FmMainWin* win)
     /* update folder popup */
     fm_folder_view_set_active(win->folder_view, FALSE);
     fm_folder_view_add_popup(win->folder_view, GTK_WINDOW(win), NULL);
+    _update_hist_buttons(win);
 }
 
 static void disconnect_history_item(GtkWidget* mi, gpointer win)
