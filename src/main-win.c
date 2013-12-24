@@ -64,14 +64,13 @@ static void on_new_win(GtkAction* act, FmMainWin* win);
 static void on_new_tab(GtkAction* act, FmMainWin* win);
 static void on_close_tab(GtkAction* act, FmMainWin* win);
 static void on_close_win(GtkAction* act, FmMainWin* win);
+static void on_open(GtkAction* act, FmMainWin* win);
 
 static void on_copy_to(GtkAction* act, FmMainWin* win);
 static void on_move_to(GtkAction* act, FmMainWin* win);
 static void on_rename(GtkAction* act, FmMainWin* win);
-
 static void on_trash(GtkAction* act, FmMainWin* win);
 static void on_del(GtkAction* act, FmMainWin* win);
-
 static void on_preference(GtkAction* act, FmMainWin* win);
 
 static void on_add_bookmark(GtkAction* act, FmMainWin* win);
@@ -305,6 +304,8 @@ static void on_folder_view_sel_changed(FmFolderView* fv, gint n_sel, FmMainWin* 
 
     if(fv != win->folder_view)
         return;
+    act = gtk_ui_manager_get_action(win->ui, "/menubar/FileMenu/Open");
+    gtk_action_set_sensitive(act, has_selected);
     act = gtk_ui_manager_get_action(win->ui, "/menubar/EditMenu/Cut");
     gtk_action_set_sensitive(act, has_selected);
     act = gtk_ui_manager_get_action(win->ui, "/menubar/EditMenu/Copy");
@@ -1436,6 +1437,18 @@ FmMainWin* fm_main_win_add_win(FmMainWin* win, FmPath* path)
     act = gtk_ui_manager_get_action(win->ui, "/menubar/ViewMenu/Toolbar/ToolbarHome");
     gtk_toggle_action_set_active(GTK_TOGGLE_ACTION(act), app_config->tb.home);
     return win;
+}
+
+static void on_open(GtkAction* act, FmMainWin* win)
+{
+    FmFileInfoList *files = fm_folder_view_dup_selected_files(win->folder_view);
+    if(files)
+    {
+        GList* l = fm_file_info_list_peek_head_link(files);
+        if (g_list_length(l) > 0)
+            fm_launch_files_simple(GTK_WINDOW(win), NULL, l, pcmanfm_open_folder, NULL);
+        fm_file_info_list_unref(files);
+    }
 }
 
 static void on_copy_to(GtkAction* act, FmMainWin* win)

@@ -32,8 +32,8 @@ static const char main_menu_xml[] =
       "<menuitem action='NewFolder'/>"
       "<menuitem action='NewBlank'/>"
     "</menu>"
-    /* "<separator/>"
-    "<menuitem action='Open'/>" */
+    "<separator/>"
+    "<menuitem action='Open'/>"
     "<separator/>"
     "<menuitem action='Term'/>"
     "<separator/>"
@@ -172,7 +172,7 @@ static GtkActionEntry main_win_actions[]=
         {"CreateNew", GTK_STOCK_ADD, N_("C_reate New..."), "", NULL, NULL},
             {"NewFolder", "folder", N_("Folder"), "<Ctrl><Shift>N", NULL, G_CALLBACK(bounce_action)},
             {"NewBlank", NULL, N_("Empty File"), "<Ctrl><Alt>N", NULL, G_CALLBACK(bounce_action)},
-        {"Open", GTK_STOCK_OPEN, N_("_Open Selected Files"), NULL, NULL, /*G_CALLBACK(on_open)*/NULL},
+        {"Open", GTK_STOCK_OPEN, N_("_Open Selected Files"), "Return", NULL, G_CALLBACK(on_open)},
         {"Term", "utilities-terminal", N_("Open Current Folder in _Terminal"), "F4", NULL, G_CALLBACK(on_open_in_terminal)},
         {"Prop", GTK_STOCK_PROPERTIES, N_("Folder Propertie_s"), NULL, NULL, G_CALLBACK(bounce_action)},
         {"CloseTab", GTK_STOCK_CLOSE, N_("_Close Tab"), "<Ctrl>W", NULL, G_CALLBACK(on_close_tab)},
