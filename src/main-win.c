@@ -583,7 +583,53 @@ static void on_side_pane_mode_changed(FmSidePane* sp, FmMainWin* win)
     }
 }
 
-static void on_show_statusbar_changed(FmAppConfig *cfg, FmMainWin *win)
+static void on_toolsbar_changed(FmAppConfig *cfg, FmMainWin *win)
+{
+    GtkAction* act;
+    GtkWidget *toolitem;
+    int n;
+    gboolean active;
+
+    if (win->in_update)
+        return;
+    win->in_update = TRUE; /* avoid recursion */
+    active = cfg->tb.visible;
+    gtk_widget_set_visible(GTK_WIDGET(win->toolbar), active);
+    act = gtk_ui_manager_get_action(win->ui, "/menubar/ViewMenu/Toolbar/ToolbarNewTab");
+    gtk_action_set_sensitive(act, active);
+    if (gtk_toggle_action_get_active(GTK_TOGGLE_ACTION(act)) != app_config->tb.new_tab)
+        gtk_toggle_action_set_active(GTK_TOGGLE_ACTION(act), app_config->tb.new_tab);
+    act = gtk_ui_manager_get_action(win->ui, "/menubar/ViewMenu/Toolbar/ToolbarNav");
+    gtk_action_set_sensitive(act, active);
+    if (gtk_toggle_action_get_active(GTK_TOGGLE_ACTION(act)) != app_config->tb.nav)
+        gtk_toggle_action_set_active(GTK_TOGGLE_ACTION(act), app_config->tb.nav);
+    act = gtk_ui_manager_get_action(win->ui, "/menubar/ViewMenu/Toolbar/ToolbarHome");
+    gtk_action_set_sensitive(act, active);
+    if (gtk_toggle_action_get_active(GTK_TOGGLE_ACTION(act)) != app_config->tb.home)
+        gtk_toggle_action_set_active(GTK_TOGGLE_ACTION(act), app_config->tb.home);
+    if (active) /* it it's hidden no reason to update its children */
+    {
+        toolitem = gtk_ui_manager_get_widget(win->ui, "/toolbar/NewTab");
+        gtk_widget_set_visible(toolitem, cfg->tb.new_tab);
+        active = cfg->tb.nav;
+        toolitem = gtk_ui_manager_get_widget(win->ui, "/toolbar/Next");
+        gtk_widget_set_visible(toolitem, active);
+        n = gtk_toolbar_get_item_index(win->toolbar, GTK_TOOL_ITEM(toolitem));
+        toolitem = GTK_WIDGET(gtk_toolbar_get_nth_item(win->toolbar, n-1));
+        gtk_widget_set_visible(toolitem, active); /* Hist */
+#if FM_CHECK_VERSION(1, 2, 0)
+        toolitem = GTK_WIDGET(gtk_toolbar_get_nth_item(win->toolbar, n-2));
+        gtk_widget_set_visible(toolitem, active); /* Prev */
+#endif
+        toolitem = GTK_WIDGET(gtk_toolbar_get_nth_item(win->toolbar, n+1));
+        gtk_widget_set_visible(toolitem, active); /* Up */
+        toolitem = gtk_ui_manager_get_widget(win->ui, "/toolbar/Home");
+        gtk_widget_set_visible(toolitem, cfg->tb.home);
+    }
+    win->in_update = FALSE;
+}
+
+static void on_statusbar_changed(FmAppConfig *cfg, FmMainWin *win)
 {
     gtk_widget_set_visible(GTK_WIDGET(win->statusbar), cfg->show_statusbar);
     update_statusbar(win);
@@ -786,6 +832,8 @@ static void fm_main_win_init(FmMainWin *win)
     gtk_container_add(GTK_CONTAINER(toolitem), GTK_WIDGET(win->location));
     gtk_tool_item_set_expand(toolitem, TRUE);
     gtk_toolbar_insert(win->toolbar, toolitem, gtk_toolbar_get_n_items(win->toolbar) - 1);
+    g_signal_connect(app_config, "changed::toolsbar",
+                     G_CALLBACK(on_toolsbar_changed), win);
 
     /* notebook - it contains both side pane and folder view(s) */
     win->notebook = (GtkNotebook*)gtk_notebook_new();
@@ -816,8 +864,8 @@ static void fm_main_win_init(FmMainWin *win)
     gtk_box_pack_start( vbox, GTK_WIDGET(win->statusbar), FALSE, TRUE, 0 );
     win->statusbar_ctx = gtk_statusbar_get_context_id(win->statusbar, "status");
     win->statusbar_ctx2 = gtk_statusbar_get_context_id(win->statusbar, "status2");
-    g_signal_connect(app_config, "changed::show_statusbar",
-                     G_CALLBACK(on_show_statusbar_changed), win);
+    g_signal_connect(app_config, "changed::statusbar",
+                     G_CALLBACK(on_statusbar_changed), win);
 
     g_object_unref(act_grp);
     win->ui = ui;
@@ -868,7 +916,8 @@ static void fm_main_win_destroy(GtkObject *object)
         g_signal_handlers_disconnect_by_func(win->notebook, on_notebook_switch_page, win);
         g_signal_handlers_disconnect_by_func(win->notebook, on_notebook_page_added, win);
         g_signal_handlers_disconnect_by_func(win->notebook, on_notebook_page_removed, win);
-        g_signal_handlers_disconnect_by_func(app_config, on_show_statusbar_changed, win);
+        g_signal_handlers_disconnect_by_func(app_config, on_toolsbar_changed, win);
+        g_signal_handlers_disconnect_by_func(app_config, on_statusbar_changed, win);
 
         gtk_window_group_remove_window(win->win_group, GTK_WINDOW(win));
         g_object_unref(win->win_group);
@@ -1562,16 +1611,9 @@ static void on_add_bookmark(GtkAction* act, FmMainWin* win)
 static void on_show_toolbar(GtkToggleAction *action, FmMainWin *win)
 {
     gboolean active = gtk_toggle_action_get_active(action);
-    GtkAction* act;
 
     app_config->tb.visible = active;
-    gtk_widget_set_visible(GTK_WIDGET(win->toolbar), active);
-    act = gtk_ui_manager_get_action(win->ui, "/menubar/ViewMenu/Toolbar/ToolbarNewTab");
-    gtk_action_set_sensitive(act, active);
-    act = gtk_ui_manager_get_action(win->ui, "/menubar/ViewMenu/Toolbar/ToolbarNav");
-    gtk_action_set_sensitive(act, active);
-    act = gtk_ui_manager_get_action(win->ui, "/menubar/ViewMenu/Toolbar/ToolbarHome");
-    gtk_action_set_sensitive(act, active);
+    fm_config_emit_changed(fm_config, "toolsbar");
     pcmanfm_save_config(FALSE);
 }
 
@@ -1579,44 +1621,27 @@ static void on_show_toolbar(GtkToggleAction *action, FmMainWin *win)
 static void on_toolbar_new_tab(GtkToggleAction *act, FmMainWin *win)
 {
     gboolean active = gtk_toggle_action_get_active(act);
-    GtkWidget *toolitem;
 
     app_config->tb.new_tab = active;
-    toolitem = gtk_ui_manager_get_widget(win->ui, "/toolbar/NewTab");
-    gtk_widget_set_visible(toolitem, active);
+    fm_config_emit_changed(fm_config, "toolsbar");
     pcmanfm_save_config(FALSE);
 }
 
 static void on_toolbar_nav(GtkToggleAction *act, FmMainWin *win)
 {
     gboolean active = gtk_toggle_action_get_active(act);
-    GtkWidget *toolitem;
-    int n;
 
     app_config->tb.nav = active;
-    toolitem = gtk_ui_manager_get_widget(win->ui, "/toolbar/Next");
-    gtk_widget_set_visible(toolitem, active);
-    n = gtk_toolbar_get_item_index(win->toolbar, GTK_TOOL_ITEM(toolitem));
-    gtk_widget_set_visible(GTK_WIDGET(gtk_toolbar_get_nth_item(win->toolbar, n-1)),
-                           active); /* Hist */
-#if FM_CHECK_VERSION(1, 2, 0)
-    gtk_widget_set_visible(GTK_WIDGET(gtk_toolbar_get_nth_item(win->toolbar, n-2)),
-                           active); /* Prev */
-#endif
-    gtk_widget_set_visible(GTK_WIDGET(gtk_toolbar_get_nth_item(win->toolbar, n+1)),
-                           active); /* Up */
-    /* FIXME: update toolbars on other windows? */
+    fm_config_emit_changed(fm_config, "toolsbar");
     pcmanfm_save_config(FALSE);
 }
 
 static void on_toolbar_home(GtkToggleAction *act, FmMainWin *win)
 {
     gboolean active = gtk_toggle_action_get_active(act);
-    GtkWidget *toolitem;
 
     app_config->tb.home = active;
-    toolitem = gtk_ui_manager_get_widget(win->ui, "/toolbar/Home");
-    gtk_widget_set_visible(toolitem, active);
+    fm_config_emit_changed(fm_config, "toolsbar");
     pcmanfm_save_config(FALSE);
 }
 
@@ -2349,7 +2374,7 @@ static void on_show_status(GtkToggleAction *action, FmMainWin *win)
     if (active != app_config->show_statusbar)
     {
         app_config->show_statusbar = active;
-        fm_config_emit_changed(fm_config, "show_statusbar");
+        fm_config_emit_changed(fm_config, "statusbar");
         pcmanfm_save_config(FALSE);
     }
 }
