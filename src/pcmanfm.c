@@ -64,7 +64,9 @@ static gboolean desktop_pref = FALSE;
 static char* set_wallpaper = NULL;
 static char* wallpaper_mode = NULL;
 static gboolean new_win = FALSE;
+#if FM_CHECK_VERSION(1, 0, 2)
 static gboolean find_files = FALSE;
+#endif
 static char* ipc_cwd = NULL;
 static char* window_role = NULL;
 
@@ -87,7 +89,9 @@ static GOptionEntry opt_entries[] =
     { "wallpaper-mode", '\0', 0, G_OPTION_ARG_STRING, &wallpaper_mode, N_("Set mode of desktop wallpaper. MODE=(color|stretch|fit|center|tile)"), N_("MODE") },
     { "show-pref", '\0', 0, G_OPTION_ARG_INT, &show_pref, N_("Open Preferences dialog on the page N"), N_("N") },
     { "new-win", 'n', 0, G_OPTION_ARG_NONE, &new_win, N_("Open new window"), NULL },
-    /* { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL }, */
+#if FM_CHECK_VERSION(1, 0, 2)
+    { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open a Find Files window"), NULL },
+#endif
     { "role", '\0', 0, G_OPTION_ARG_STRING, &window_role, N_("Window role for usage by window manager"), N_("ROLE") },
     {G_OPTION_REMAINING, 0, 0, G_OPTION_ARG_FILENAME_ARRAY, &files_to_open, NULL, N_("[FILE1, FILE2,...]")},
     { NULL }
@@ -264,7 +268,7 @@ int main(int argc, char** argv)
 
 gboolean pcmanfm_run(gint screen_num)
 {
-    FmMainWin *win;
+    FmMainWin *win = NULL;
     gboolean ret = TRUE;
 
     if(!files_to_open)
@@ -359,12 +363,6 @@ gboolean pcmanfm_run(gint screen_num)
         }
     }
 
-    if(G_UNLIKELY(find_files))
-    {
-        /* FIXME: find files */
-    }
-    else
-    {
         if(files_to_open)
         {
             char** filename;
@@ -417,7 +415,7 @@ gboolean pcmanfm_run(gint screen_num)
                * #3397444 - pcmanfm dont show window in daemon mode if i call 'pcmanfm' */
                 pcmanfm_ref();
             }
-            else
+            else if (G_LIKELY(!find_files || n_pcmanfm_ref < 1))
             {
                 /* If we're not in daemon mode, or pcmanfm_run() is called because another
                * instance send signal to us, open cwd by default. */
@@ -432,7 +430,14 @@ gboolean pcmanfm_run(gint screen_num)
                 ipc_cwd = NULL;
             }
         }
-    }
+
+#if FM_CHECK_VERSION(1, 0, 2)
+    /* we got a reference at this point so we can open a search dialog */
+    if (ret && find_files)
+        fm_launch_search_simple(GTK_WINDOW(win), NULL, NULL,
+                                pcmanfm_open_folder, NULL);
+    find_files = FALSE;
+#endif
     return ret;
 }
 

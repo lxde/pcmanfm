@@ -164,6 +164,12 @@ Changes on 1.2.0 since 1.1.0:
 * Added new menu option 'File'->'Create Symlink...' to create link(s) on
     the selected file(s) into some directory.
 
+* Implemented a runtime option to open Find Files dialog window. It will
+    not replace any other options, i.e. if used alone and no other window
+    nor desktop manager is active, it will open new default window. It
+    will not open any additional window if used when an other window or
+    desktop manager is active though.
+
 
 Changes on 1.1.0 since 1.0.1:
 
