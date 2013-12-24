@@ -188,6 +188,21 @@ static void on_drop_default_action_changed(GtkComboBox* combo, gpointer smart_de
 {
     int sel = gtk_combo_box_get_active(combo);
 
+    /* translate FmDndDestDropAction <- GtkListStore index */
+    switch (sel)
+    {
+    case 0:
+        sel = FM_DND_DEST_DROP_AUTO;
+        break;
+    case 1:
+        sel = FM_DND_DEST_DROP_COPY;
+        break;
+    case 2:
+        sel = FM_DND_DEST_DROP_MOVE;
+        break;
+    default:
+        sel = FM_DND_DEST_DROP_ASK;
+    }
     if (sel != fm_config->drop_default_action)
     {
         fm_config->drop_default_action = sel;
@@ -200,8 +215,24 @@ static void init_drop_default_action_combo(GtkBuilder* builder)
 {
     GObject *combo = gtk_builder_get_object(builder, "drop_default_action");
     GObject *smart_desktop_autodrop = gtk_builder_get_object(builder, "smart_desktop_autodrop");
+    gint var;
 
-    gtk_combo_box_set_active((GtkComboBox*)combo, fm_config->drop_default_action);
+    /* translate FmDndDestDropAction -> GtkListStore index */
+    switch (fm_config->drop_default_action)
+    {
+    case FM_DND_DEST_DROP_COPY:
+        var = 1;
+        break;
+    case FM_DND_DEST_DROP_MOVE:
+        var = 2;
+        break;
+    case FM_DND_DEST_DROP_ASK:
+        var = 3;
+        break;
+    default:
+        var = 0;
+    }
+    gtk_combo_box_set_active((GtkComboBox*)combo, var);
     gtk_widget_set_sensitive(GTK_WIDGET(smart_desktop_autodrop),
                              fm_config->drop_default_action == FM_DND_DEST_DROP_AUTO);
     g_signal_connect(combo, "changed", G_CALLBACK(on_drop_default_action_changed),
@@ -464,7 +495,6 @@ void fm_edit_preference( GtkWindow* parent, int page )
         INIT_COMBO(builder, FmAppConfig, bm_open_method, NULL);
 #if FM_CHECK_VERSION(1, 2, 0)
         init_drop_default_action_combo(builder);
-        /* FIXME: translate FmDndDestDropAction <-> GtkListStore index */
         gtk_widget_show(GTK_WIDGET(gtk_builder_get_object(builder, "drop_default_action")));
         gtk_widget_show(GTK_WIDGET(gtk_builder_get_object(builder, "drop_default_action_label")));
         INIT_BOOL_SHOW(builder, FmConfig, smart_desktop_autodrop, NULL);

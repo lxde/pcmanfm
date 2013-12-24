@@ -69,6 +69,9 @@ static void on_copy_to(GtkAction* act, FmMainWin* win);
 static void on_move_to(GtkAction* act, FmMainWin* win);
 static void on_rename(GtkAction* act, FmMainWin* win);
 
+static void on_trash(GtkAction* act, FmMainWin* win);
+static void on_del(GtkAction* act, FmMainWin* win);
+
 static void on_preference(GtkAction* act, FmMainWin* win);
 
 static void on_add_bookmark(GtkAction* act, FmMainWin* win);
@@ -305,6 +308,8 @@ static void on_folder_view_sel_changed(FmFolderView* fv, gint n_sel, FmMainWin* 
     act = gtk_ui_manager_get_action(win->ui, "/menubar/EditMenu/Cut");
     gtk_action_set_sensitive(act, has_selected);
     act = gtk_ui_manager_get_action(win->ui, "/menubar/EditMenu/Copy");
+    gtk_action_set_sensitive(act, has_selected);
+    act = gtk_ui_manager_get_action(win->ui, "/menubar/EditMenu/ToTrash");
     gtk_action_set_sensitive(act, has_selected);
     act = gtk_ui_manager_get_action(win->ui, "/menubar/EditMenu/Del");
     gtk_action_set_sensitive(act, has_selected);
@@ -551,29 +556,12 @@ static void on_side_pane_chdir(FmSidePane* sp, guint button, FmPath* path, FmMai
 /* This callback is only connected to side pane of current active tab page. */
 static void on_side_pane_mode_changed(FmSidePane* sp, FmMainWin* win)
 {
-#if 0
-    GList* children;
-    GList* child;
-#endif
     FmSidePaneMode mode;
 
     if(sp != win->side_pane)
         return;
 
-#if 0
-    children = gtk_container_get_children(GTK_CONTAINER(win->notebook));
-#endif
     mode = fm_side_pane_get_mode(sp);
-#if 0
-    /* set the side pane mode to all other tab pages */
-    for(child = children; child; child = child->next)
-    {
-        FmTabPage* page = FM_TAB_PAGE(child->data);
-        if(page != win->current_page)
-            fm_side_pane_set_mode(fm_tab_page_get_side_pane(page), mode);
-    }
-    g_list_free(children);
-#endif
 
     /* update menu */
     gtk_radio_action_set_current_value(GTK_RADIO_ACTION(gtk_ui_manager_get_action(win->ui,
@@ -996,94 +984,7 @@ static void on_open_in_terminal(GtkAction* act, FmMainWin* win)
         pcmanfm_open_folder_in_terminal(GTK_WINDOW(win), path);
 }
 
-#if 0
-static const char* su_cmd_subst(char opt, gpointer user_data)
-{
-    return user_data;
-}
-
-static FmAppCommandParseOption su_cmd_opts[] =
-{
-    { 's', su_cmd_subst },
-    { 0, NULL }
-};
-
-static void on_open_as_root(GtkAction* act, FmMainWin* win)
-{
-    GAppInfo* app;
-    char* cmd;
-    if(!app_config->su_cmd)
-    {
-//        fm_show_error(GTK_WINDOW(win), NULL, _("Switch user command is not set."));
-        fm_edit_preference(GTK_WINDOW(win), PREF_ADVANCED);
-        return;
-    }
-    /* FIXME: need to rename to pcmanfm when we reach stable release. */
-    if(fm_app_command_parse(app_config->su_cmd, su_cmd_opts, &cmd, "pcmanfm %U") == 0)
-    {
-        /* no %s found so just append to it */
-        g_free(cmd);
-        cmd = g_strconcat(app_config->su_cmd, " pcmanfm %U", NULL);
-    }
-    app = g_app_info_create_from_commandline(cmd, NULL, 0, NULL);
-    g_free(cmd);
-    if(app)
-    {
-        FmPath* cwd = fm_tab_page_get_cwd(win->current_page);
-        GError* err = NULL;
-        GdkAppLaunchContext* ctx = gdk_app_launch_context_new();
-        char* uri = fm_path_to_uri(cwd);
-        GList* uris = g_list_prepend(NULL, uri);
-        gdk_app_launch_context_set_screen(ctx, gtk_widget_get_screen(GTK_WIDGET(win)));
-        gdk_app_launch_context_set_timestamp(ctx, gtk_get_current_event_time());
-        if(!g_app_info_launch_uris(app, uris, G_APP_LAUNCH_CONTEXT(ctx), &err))
-        {
-            fm_show_error(GTK_WINDOW(win), NULL, err->message);
-            g_error_free(err);
-            fm_edit_preference(GTK_WINDOW(win), PREF_ADVANCED);
-        }
-        g_list_free(uris);
-        g_free(uri);
-        g_object_unref(ctx);
-        g_object_unref(app);
-    }
-}
-#endif
-
 #if FM_CHECK_VERSION(1, 0, 2)
-#if 0
-/* this is modified version of pcmanfm_open_folder() really */
-static gboolean open_search_func(GAppLaunchContext* ctx, GList* folder_infos, gpointer user_data, GError** err)
-{
-    FmMainWin* win = user_data;
-    GList* l = folder_infos;
-    FmFileInfo* fi = (FmFileInfo*)l->data;
-    GSList* cols = NULL;
-    FmTabPage* page;
-    FmFolderView* folder_view;
-    gint page_num;
-    const FmFolderViewColumnInfo col_infos[] = {
-        {FM_FOLDER_MODEL_COL_NAME},
-        {FM_FOLDER_MODEL_COL_DESC},
-        {FM_FOLDER_MODEL_COL_DIRNAME},
-        {FM_FOLDER_MODEL_COL_SIZE},
-        {FM_FOLDER_MODEL_COL_MTIME} };
-    guint i;
-
-    /* FIXME: open search in new window if requested */
-    page_num = fm_main_win_add_tab(win, fm_file_info_get_path(fi));
-    page = (FmTabPage*)gtk_notebook_get_nth_page(win->notebook, page_num);
-    folder_view = fm_tab_page_get_folder_view(page);
-    fm_standard_view_set_mode(FM_STANDARD_VIEW(folder_view), FM_FV_LIST_VIEW);
-    for(i = 0; i < G_N_ELEMENTS(col_infos); i++)
-        cols = g_slist_append(cols, (gpointer)&col_infos[i]);
-    fm_folder_view_set_columns(folder_view, cols);
-    g_slist_free(cols);
-    gtk_window_present(GTK_WINDOW(win));
-    /* FIXME: can folder_infos contain more that one path? */
-    return TRUE;
-}
-#endif
 static void on_search(GtkAction* act, FmMainWin* win)
 {
     FmTabPage* page = win->current_page;
@@ -1562,6 +1463,26 @@ static void on_rename(GtkAction* act, FmMainWin* win)
     {
         fm_rename_file(GTK_WINDOW(win), fm_path_list_peek_head(files));
         /* FIXME: is it ok to only rename the first selected file here? */
+        fm_path_list_unref(files);
+    }
+}
+
+static void on_trash(GtkAction* act, FmMainWin* win)
+{
+    FmPathList* files = fm_folder_view_dup_selected_file_paths(win->folder_view);
+    if(files)
+    {
+        fm_trash_files(GTK_WINDOW(win), files);
+        fm_path_list_unref(files);
+    }
+}
+
+static void on_del(GtkAction* act, FmMainWin* win)
+{
+    FmPathList* files = fm_folder_view_dup_selected_file_paths(win->folder_view);
+    if(files)
+    {
+        fm_delete_files(GTK_WINDOW(win), files);
         fm_path_list_unref(files);
     }
 }
