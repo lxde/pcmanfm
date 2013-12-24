@@ -49,15 +49,14 @@ static const char main_menu_xml[] =
     "<menuitem action='ToTrash'/>"
     "<menuitem action='Del'/>"
     "<separator/>"
+    "<menuitem action='FileProp'/>"
+    "<separator/>"
     "<menuitem action='Rename'/>"
-    /* TODO: implement symlink creation.
     "<menuitem action='Link'/>"
-    TODO: implement "Create a duplicate" action
+    /* TODO: implement "Create a duplicate" action
     "<menuitem action='Duplicate'/>" */
     "<menuitem action='MoveTo'/>"
     "<menuitem action='CopyTo'/>"
-    "<separator/>"
-    "<menuitem action='FileProp'/>"
     "<separator/>"
     "<menuitem action='SelAll'/>"
     "<menuitem action='InvSel'/>"
@@ -185,7 +184,7 @@ static GtkActionEntry main_win_actions[]=
         {"Del", GTK_STOCK_REMOVE, NULL, "", NULL, G_CALLBACK(on_del)},
         {"Rename", NULL, N_("_Rename..."), "F2", NULL, G_CALLBACK(on_rename)},
         {"Duplicate", NULL, N_("D_uplicate..."), "<Ctrl>U", NULL, NULL},
-        {"Link", NULL, N_("Create Symlin_k..."), NULL, NULL, NULL},
+        {"Link", NULL, N_("Create Symlin_k..."), NULL, NULL, G_CALLBACK(on_link)},
         {"MoveTo", NULL, N_("_Move To..."), NULL, NULL, G_CALLBACK(on_move_to)},
         {"CopyTo", NULL, N_("C_opy To..."), NULL, NULL, G_CALLBACK(on_copy_to)},
         {"FileProp", GTK_STOCK_PROPERTIES, N_("Propertie_s"), "<Alt>Return", NULL, G_CALLBACK(bounce_action)},
