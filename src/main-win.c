@@ -319,7 +319,7 @@ static void on_folder_view_sel_changed(FmFolderView* fv, gint n_sel, FmMainWin* 
     act = gtk_ui_manager_get_action(win->ui, "/menubar/EditMenu/Rename");
     gtk_action_set_sensitive(act, n_sel == 1); /* can rename only single file */
     act = gtk_ui_manager_get_action(win->ui, "/menubar/EditMenu/Link");
-    gtk_action_set_sensitive(act, n_sel == 1); /* can link only single file */
+    gtk_action_set_sensitive(act, has_selected);
     act = gtk_ui_manager_get_action(win->ui, "/menubar/EditMenu/CopyTo");
     gtk_action_set_sensitive(act, has_selected);
     act = gtk_ui_manager_get_action(win->ui, "/menubar/EditMenu/MoveTo");
@@ -1475,14 +1475,11 @@ static void on_link(GtkAction *act, FmMainWin *win)
     FmPathList *files = fm_folder_view_dup_selected_file_paths(win->folder_view);
     if (files)
     {
-        if (fm_path_list_get_length(files) == 1)
+        FmPath *dest = fm_select_folder(GTK_WINDOW(win), NULL);
+        if (dest)
         {
-            FmPath *dest = fm_select_folder(GTK_WINDOW(win), NULL);
-            if (dest)
-            {
-                fm_link_files(GTK_WINDOW(win), files, dest);
-                fm_path_unref(dest);
-            }
+            fm_link_files(GTK_WINDOW(win), files, dest);
+            fm_path_unref(dest);
         }
         fm_path_list_unref(files);
     }
