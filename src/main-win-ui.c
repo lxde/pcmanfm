@@ -56,8 +56,8 @@ static const char main_menu_xml[] =
     "<menuitem action='Duplicate'/>" */
     "<menuitem action='MoveTo'/>"
     "<menuitem action='CopyTo'/>"
-    /* "<separator/>"
-    "<menuitem action='FileProp'/>" */
+    "<separator/>"
+    "<menuitem action='FileProp'/>"
     "<separator/>"
     "<menuitem action='SelAll'/>"
     "<menuitem action='InvSel'/>"

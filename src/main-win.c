@@ -319,6 +319,8 @@ static void on_folder_view_sel_changed(FmFolderView* fv, gint n_sel, FmMainWin* 
     gtk_action_set_sensitive(act, has_selected);
     act = gtk_ui_manager_get_action(win->ui, "/menubar/EditMenu/MoveTo");
     gtk_action_set_sensitive(act, has_selected);
+    act = gtk_ui_manager_get_action(win->ui, "/menubar/EditMenu/FileProp");
+    gtk_action_set_sensitive(act, has_selected);
 }
 
 static gboolean on_view_key_press_event(FmFolderView* fv, GdkEventKey* evt, FmMainWin* win)
