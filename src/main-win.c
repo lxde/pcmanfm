@@ -55,6 +55,7 @@ static void update_statusbar(FmMainWin* win);
 static gboolean on_focus_in(GtkWidget* w, GdkEventFocus* evt);
 static gboolean on_key_press_event(GtkWidget* w, GdkEventKey* evt);
 static gboolean on_button_press_event(GtkWidget* w, GdkEventButton* evt);
+static gboolean on_scroll_event(GtkWidget* w, GdkEventScroll* evt);
 static void on_unrealize(GtkWidget* widget);
 
 static void bounce_action(GtkAction* act, FmMainWin* win);
@@ -146,6 +147,7 @@ static void fm_main_win_class_init(FmMainWinClass *klass)
     widget_class->focus_in_event = on_focus_in;
     widget_class->key_press_event = on_key_press_event;
     widget_class->button_press_event = on_button_press_event;
+    widget_class->scroll_event = on_scroll_event;
     widget_class->unrealize = on_unrealize;
 
     fm_main_win_parent_class = (GtkWindowClass*)g_type_class_peek(GTK_TYPE_WINDOW);
@@ -275,6 +277,17 @@ static void update_view_menu(FmMainWin* win)
     win->in_update = FALSE;
 }
 
+static void update_file_menu(FmMainWin* win, FmPath *path)
+{
+    GtkAction *act;
+    /* FmFolderView *fv = win->folder_view; */
+
+    act = gtk_ui_manager_get_action(win->ui, "/menubar/FileMenu/Term");
+    gtk_action_set_sensitive(act, path && fm_path_is_native(path));
+    act = gtk_ui_manager_get_action(win->ui, "/menubar/GoMenu/Up");
+    gtk_action_set_sensitive(act, path && fm_path_get_parent(path));
+}
+
 static void on_folder_view_sort_changed(FmFolderView* fv, FmMainWin* win)
 {
     if(fv != win->folder_view)
@@ -296,7 +309,7 @@ static void on_folder_view_sel_changed(FmFolderView* fv, gint n_sel, FmMainWin* 
     act = gtk_ui_manager_get_action(win->ui, "/menubar/EditMenu/Del");
     gtk_action_set_sensitive(act, has_selected);
     act = gtk_ui_manager_get_action(win->ui, "/menubar/EditMenu/Rename");
-    gtk_action_set_sensitive(act, has_selected);
+    gtk_action_set_sensitive(act, n_sel == 1); /* can rename only single file */
     act = gtk_ui_manager_get_action(win->ui, "/menubar/EditMenu/CopyTo");
     gtk_action_set_sensitive(act, has_selected);
     act = gtk_ui_manager_get_action(win->ui, "/menubar/EditMenu/MoveTo");
@@ -399,6 +412,8 @@ static void load_bookmarks(FmMainWin* win, GtkUIManager* ui)
     create_bookmarks_menu(win);
 }
 
+static void _update_hist_buttons(FmMainWin* win);
+
 static void on_history_item(GtkMenuItem* mi, FmMainWin* win)
 {
     FmTabPage* page = win->current_page;
@@ -411,6 +426,7 @@ static void on_history_item(GtkMenuItem* mi, FmMainWin* win)
     /* update folder popup */
     fm_folder_view_set_active(win->folder_view, FALSE);
     fm_folder_view_add_popup(win->folder_view, GTK_WINDOW(win), NULL);
+    _update_hist_buttons(win);
 }
 
 static void disconnect_history_item(GtkWidget* mi, gpointer win)
@@ -474,7 +490,6 @@ static void on_show_history_menu(GtkMenuToolButton* btn, FmMainWin* win)
             mi = gtk_menu_item_new_with_label(str);
         g_free(str);
 
-        /* FIXME: need to avoid cast from const GList */
 #if FM_CHECK_VERSION(1, 0, 2)
         g_object_set_qdata(G_OBJECT(mi), main_win_qdata, GUINT_TO_POINTER(i));
 #else
@@ -1344,6 +1359,7 @@ static void _update_hist_buttons(FmMainWin* win)
 #endif
     act = gtk_ui_manager_get_action(win->ui, "/menubar/GoMenu/Prev");
     gtk_action_set_sensitive(act, fm_nav_history_can_back(nh));
+    update_file_menu(win, fm_tab_page_get_cwd(win->current_page));
 }
 
 static void on_go_back(GtkAction* act, FmMainWin* win)
@@ -1425,6 +1441,7 @@ void fm_main_win_chdir(FmMainWin* win, FmPath* path)
     g_signal_handlers_unblock_by_func(win->side_pane, on_side_pane_chdir, win);
     _update_hist_buttons(win);
     update_view_menu(win);
+    update_file_menu(win, path);
 }
 
 #if 0
@@ -2006,6 +2023,7 @@ static void on_notebook_switch_page(GtkNotebook* nb, gpointer* new_page, guint n
 
     update_sort_menu(win);
     update_view_menu(win);
+    update_file_menu(win, fm_tab_page_get_cwd(page));
     update_statusbar(win);
 
     if(win->idle_handler == 0)
@@ -2225,6 +2243,7 @@ static gboolean on_button_press_event(GtkWidget* w, GdkEventButton* evt)
 {
     FmMainWin* win = FM_MAIN_WIN(w);
     GtkAction* act;
+
     if(evt->button == 8) /* back */
     {
         act = gtk_ui_manager_get_action(win->ui, "/Prev2");
@@ -2237,6 +2256,32 @@ static gboolean on_button_press_event(GtkWidget* w, GdkEventButton* evt)
     }
     if(GTK_WIDGET_CLASS(fm_main_win_parent_class)->button_press_event)
         return GTK_WIDGET_CLASS(fm_main_win_parent_class)->button_press_event(w, evt);
+    else
+        return FALSE;
+}
+
+static gboolean on_scroll_event(GtkWidget* w, GdkEventScroll* evt)
+{
+    FmMainWin* win = FM_MAIN_WIN(w);
+    GtkAction* act;
+    int modifier = evt->state & gtk_accelerator_get_default_mod_mask();
+
+    /* g_debug("on_scroll_event:%d", evt->direction); */
+    if (modifier != GDK_CONTROL_MASK) ;
+    else if(evt->direction == GDK_SCROLL_UP)
+    {
+        act = gtk_ui_manager_get_action(win->ui, "/menubar/ViewMenu/SizeBigger");
+        gtk_action_activate(act);
+        return TRUE;
+    }
+    else if(evt->direction == GDK_SCROLL_DOWN)
+    {
+        act = gtk_ui_manager_get_action(win->ui, "/menubar/ViewMenu/SizeSmaller");
+        gtk_action_activate(act);
+        return TRUE;
+    }
+    if(GTK_WIDGET_CLASS(fm_main_win_parent_class)->scroll_event)
+        return GTK_WIDGET_CLASS(fm_main_win_parent_class)->scroll_event(w, evt);
     else
         return FALSE;
 }
@@ -2272,7 +2317,7 @@ static void on_dual_pane(GtkToggleAction* act, FmMainWin* win)
     GtkWidget *page;
 
     active = gtk_toggle_action_get_active(act);
-    g_debug("on_dual_pane: %d", active); // TODO
+    /* g_debug("on_dual_pane: %d", active); */
     if (active && !win->enable_passive_view)
     {
         num = gtk_notebook_get_n_pages(win->notebook);

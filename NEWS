@@ -132,6 +132,17 @@ Changes on 1.2.0 since 1.1.0:
 * Made insensitive menu items 'Go'->'Applications' and 'Edit'->'Search'
     if appropriate modules were not loaded.
 
+* Added new section 'autorun' into config where last choices made by user
+    for some kind of inserted media is remembered. Added a checkbutton
+    'Always perform this action on this media type' into the dialog where
+    user selects an action so user can remember the choice and never ask
+    again for that kind of media. The button is not available for unknown
+    or mixed media types. The 'do nothing' kind of choice is allowed to
+    remember as well if user selects not ask again and press the 'Cancel'
+    button in the dialog. The choice 'not ask' is saved in config file as
+    asterisk (*) prepended to application ID. The choice of view in the
+    PCManFM itself is saved as pseudo-ID "pcmanfm".
+
 
 Changes on 1.1.0 since 1.0.1:
 

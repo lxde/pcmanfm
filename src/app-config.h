@@ -92,6 +92,12 @@ typedef struct
 #endif
 } FmDesktopConfig;
 
+typedef struct
+{
+    char *last_used;
+    gboolean dont_ask;
+} FmAutorunChoice;
+
 struct _FmAppConfig
 {
     FmConfig parent;
@@ -102,6 +108,7 @@ struct _FmAppConfig
     gboolean mount_on_startup;
     gboolean mount_removable;
     gboolean autorun;
+    GHashTable *autorun_choices;
 
     /* ui */
     gboolean always_show_tabs;
@@ -179,6 +186,10 @@ void fm_app_config_save_config_for_path(FmPath *path, GtkSortType mode, gint by,
                                         gboolean show_hidden, char **columns);
 #endif
 void fm_app_config_clear_config_for_path(FmPath *path);
+
+void fm_app_config_set_autorun_choice(FmAppConfig *cfg,
+                                      const char *content_type,
+                                      const char *app, gboolean dont_ask);
 
 G_END_DECLS
 
