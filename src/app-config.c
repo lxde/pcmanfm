@@ -442,6 +442,7 @@ static void fm_app_config_finalize(GObject *object)
       g_free(cfg->desktop_section.desktop_font);
     }
     /*g_free(cfg->su_cmd);*/
+    g_hash_table_unref(cfg->autorun_choices);
 
 #if !FM_CHECK_VERSION(1, 2, 0)
     g_key_file_free(fc_cache);
@@ -451,6 +452,13 @@ static void fm_app_config_finalize(GObject *object)
     G_OBJECT_CLASS(fm_app_config_parent_class)->finalize(object);
 }
 
+static void _free_archoice(gpointer data)
+{
+    FmAutorunChoice *choice = data;
+
+    g_free(choice->last_used);
+    g_slice_free(FmAutorunChoice, choice);
+}
 
 static void fm_app_config_init(FmAppConfig *cfg)
 {
@@ -497,6 +505,8 @@ static void fm_app_config_init(FmAppConfig *cfg)
     cfg->desktop_section.show_mounts = FALSE;
 #endif
     cfg->tb.visible = cfg->tb.new_tab = cfg->tb.nav = cfg->tb.home = TRUE;
+    cfg->autorun_choices = g_hash_table_new_full(g_str_hash, g_str_equal,
+                                                 g_free, _free_archoice);
 }
 
 
@@ -705,6 +715,25 @@ void fm_app_config_load_from_key_file(FmAppConfig* cfg, GKeyFile* kf)
                 cfg->tb.nav = TRUE;
             else if (!cfg->tb.home && strcmp(tmp, "home") == 0)
                 cfg->tb.home = TRUE;
+        }
+        g_strfreev(tmpv);
+    }
+    if (g_key_file_has_group(kf, "autorun"))
+    {
+        tmpv = g_key_file_get_keys(kf, "autorun", NULL, NULL);
+        for (i = 0; tmpv[i]; i++)
+        {
+            tmp = g_key_file_get_string(kf, "autorun", tmpv[i], NULL);
+            if (tmp && tmp[0])
+            {
+                if (tmp[0] == '*')
+                    fm_app_config_set_autorun_choice(cfg, tmpv[i],
+                                                     tmp[1] ? &tmp[1] : NULL,
+                                                     TRUE);
+                else
+                    fm_app_config_set_autorun_choice(cfg, tmpv[i], tmp, FALSE);
+            }
+            g_free(tmp);
         }
         g_strfreev(tmpv);
     }
@@ -984,6 +1013,17 @@ void fm_app_config_save_desktop_config(GString *buf, const char *group, FmDeskto
 #endif
 }
 
+static void _save_choice(gpointer key, gpointer val, gpointer buf)
+{
+    FmAutorunChoice *choice = val;
+
+    if (!choice->dont_ask && !choice->last_used)
+        return;
+    g_string_append_printf(buf, "%s=%s%s\n", (char*)key,
+                           choice->dont_ask ? "*" : "",
+                           choice->last_used ? choice->last_used : "");
+}
+
 void fm_app_config_save_profile(FmAppConfig* cfg, const char* name)
 {
     char* path = NULL;;
@@ -1006,6 +1046,12 @@ void fm_app_config_save_profile(FmAppConfig* cfg, const char* name)
         g_string_append_printf(buf, "mount_on_startup=%d\n", cfg->mount_on_startup);
         g_string_append_printf(buf, "mount_removable=%d\n", cfg->mount_removable);
         g_string_append_printf(buf, "autorun=%d\n", cfg->autorun);
+
+        if (g_hash_table_size(cfg->autorun_choices) > 0)
+        {
+            g_string_append(buf, "\n[autorun]\n");
+            g_hash_table_foreach(cfg->autorun_choices, _save_choice, buf);
+        }
 
         g_string_append(buf, "\n[ui]\n");
         g_string_append_printf(buf, "always_show_tabs=%d\n", cfg->always_show_tabs);
@@ -1067,4 +1113,24 @@ void fm_app_config_save_profile(FmAppConfig* cfg, const char* name)
 #endif
     }
     g_free(dir_path);
+}
+
+void fm_app_config_set_autorun_choice(FmAppConfig *cfg,
+                                      const char *content_type,
+                                      const char *app, gboolean dont_ask)
+{
+    FmAutorunChoice *choice;
+
+    if (content_type == NULL)
+        return;
+    choice = g_hash_table_lookup(cfg->autorun_choices, content_type);
+    if (choice)
+        g_free(choice->last_used);
+    else
+    {
+        choice = g_slice_new(FmAutorunChoice);
+        g_hash_table_insert(cfg->autorun_choices, g_strdup(content_type), choice);
+    }
+    choice->last_used = g_strdup(app);
+    choice->dont_ask = dont_ask;
 }

@@ -364,6 +364,59 @@ static gboolean on_key_press(GtkWidget* w, GdkEventKey* evt, GtkNotebook *notebo
     return FALSE;
 }
 
+static void on_autorun_toggled(GtkToggleButton* btn, GtkWidget *autorun_choices_area)
+{
+    gboolean new_val = gtk_toggle_button_get_active(btn);
+
+    if (new_val != app_config->autorun)
+    {
+        app_config->autorun = new_val;
+        fm_config_emit_changed(fm_config, "autorun");
+    }
+    if (autorun_choices_area)
+        gtk_widget_set_sensitive(autorun_choices_area, new_val);
+}
+
+static void on_remove_autorun_choice_clicked(GtkButton *button, GtkTreeView *view)
+{
+    GtkTreeSelection *tree_sel = gtk_tree_view_get_selection(view);
+    GtkTreeModel *model;
+    GList *rows = gtk_tree_selection_get_selected_rows(tree_sel, &model), *l;
+    GtkTreeIter it;
+
+    /* convert paths to references */
+    for (l = rows; l; l = l->next)
+    {
+        GtkTreePath *tp = l->data;
+        l->data = gtk_tree_row_reference_new(model, tp);
+        gtk_tree_path_free(tp);
+    }
+    /* remove rows from model */
+    for (l = rows; l; l = l->next)
+    {
+        if (gtk_tree_model_get_iter(model, &it, gtk_tree_row_reference_get_path(l->data)))
+        {
+            char *type;
+
+            gtk_tree_model_get(model, &it, 2, &type, -1);
+g_debug("removing %d: %s",gtk_tree_path_get_indices(gtk_tree_row_reference_get_path(l->data))[0],type);
+            if (type)
+                g_hash_table_remove(app_config->autorun_choices, type);
+            g_free(type);
+            gtk_list_store_remove(GTK_LIST_STORE(model), &it);
+        }
+        else
+            g_critical("autorun_choice not found in model");
+        gtk_tree_row_reference_free(l->data);
+    }
+    g_list_free(rows);
+}
+
+static void on_choices_sel_changed(GtkTreeSelection *selection, GtkWidget *btn)
+{
+    gtk_widget_set_sensitive(btn, gtk_tree_selection_count_selected_rows(selection) > 0);
+}
+
 void fm_edit_preference( GtkWindow* parent, int page )
 {
     if(!pref_dlg)
@@ -372,6 +425,7 @@ void fm_edit_preference( GtkWindow* parent, int page )
         GtkTreeView* tab_label_list;
         GtkTreeSelection* tree_sel;
         GtkListStore* tab_label_model;
+        GObject *obj;
         GtkTreeIter it;
         int i, n;
 
@@ -460,10 +514,63 @@ void fm_edit_preference( GtkWindow* parent, int page )
         /* 'Volume management' tab */
         INIT_BOOL(builder, FmAppConfig, mount_on_startup, NULL);
         INIT_BOOL(builder, FmAppConfig, mount_removable, NULL);
-        INIT_BOOL(builder, FmAppConfig, autorun, NULL);
+        obj = gtk_builder_get_object(builder, "autorun");
+        gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(obj), app_config->autorun);
+        g_signal_connect(obj, "toggled", G_CALLBACK(on_autorun_toggled),
+                         gtk_builder_get_object(builder, "autorun_choices_area"));
         INIT_BOOL(builder, FmAppConfig, media_in_new_tab, NULL);
         gtk_widget_show(GTK_WIDGET(gtk_builder_get_object(builder, "media_in_new_tab")));
         //INIT_BOOL(builder, FmAppConfig, close_on_unmount, NULL);
+
+        /* autorun choices editing area */
+        obj = gtk_builder_get_object(builder, "autorun_choices_area");
+        if (obj)
+        {
+            GtkTreeView *view = GTK_TREE_VIEW(gtk_builder_get_object(builder, "autorun_choices"));
+            GtkListStore *model = gtk_list_store_new(3, G_TYPE_ICON, G_TYPE_STRING, G_TYPE_STRING);
+            GtkTreeSelection *tree_sel;
+            GtkTreeViewColumn *col;
+            GtkCellRenderer *render;
+            GIcon *icon;
+            char *desc;
+            GList *keys, *l;
+            GtkTreeIter it;
+
+            gtk_widget_set_sensitive(GTK_WIDGET(obj), app_config->autorun);
+            gtk_widget_show(GTK_WIDGET(obj));
+
+            tree_sel = gtk_tree_view_get_selection(view);
+            gtk_tree_selection_set_mode(tree_sel, GTK_SELECTION_MULTIPLE);
+
+            col = gtk_tree_view_column_new();
+            render = gtk_cell_renderer_pixbuf_new();
+            gtk_tree_view_column_pack_start(col, render, FALSE);
+            gtk_tree_view_column_set_attributes(col, render, "gicon", 0, NULL);
+            render = gtk_cell_renderer_text_new();
+            gtk_tree_view_column_pack_start(col, render, FALSE);
+            gtk_tree_view_column_set_attributes(col, render, "text", 1, NULL);
+            gtk_tree_view_append_column(view, col);
+            keys = g_hash_table_get_keys(app_config->autorun_choices);
+            for (l = keys; l; l = l->next)
+            {
+                gtk_list_store_append(model, &it);
+                desc = g_content_type_get_description(l->data);
+                icon = g_content_type_get_icon(l->data);
+                gtk_list_store_set(model, &it, 0, icon, 1, desc, 2, l->data, -1);
+                if (icon)
+                    g_object_unref(icon);
+                g_free(desc);
+            }
+            g_list_free(keys);
+            gtk_tree_view_set_model(view, GTK_TREE_MODEL(model));
+            /* handle 'Remove selected' button */
+            obj = gtk_builder_get_object(builder, "remove_autorun_choice");
+            g_signal_connect(obj, "clicked", G_CALLBACK(on_remove_autorun_choice_clicked),
+                             view);
+            /* update button sensitivity by tree selection */
+            g_signal_connect(tree_sel, "changed", G_CALLBACK(on_choices_sel_changed),
+                             obj);
+        }
 
         /* 'Advanced' tab */
         INIT_ENTRY(builder, FmConfig, terminal, NULL);

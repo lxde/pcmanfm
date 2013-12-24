@@ -26,6 +26,7 @@
 #include "volume-manager.h"
 #include <libfm/fm-gtk.h>
 #include <glib/gi18n.h>
+#include <gio/gdesktopappinfo.h>
 #include "pcmanfm.h"
 #include "main-win.h"
 #include "app-config.h"
@@ -40,9 +41,12 @@ struct _AutoRun
     GtkDialog* dlg;
     GtkTreeView* view;
     GtkLabel* type;
+    GtkToggleButton *dont_ask;
     GtkListStore* store;
     GMount* mount;
     GCancellable* cancel;
+    char *content_type;
+    gboolean skipped;
 };
 
 static void on_dlg_response(GtkDialog* dlg, int res, gpointer user_data);
@@ -59,14 +63,45 @@ static void on_row_activated(GtkTreeView* view, GtkTreePath* tp, GtkTreeViewColu
     on_dlg_response(data->dlg, GTK_RESPONSE_OK, data);
 }
 
+/* will unref app */
+static void _run_app(GAppInfo *app, GMount *mount)
+{
+    GFile* gf = g_mount_get_root(mount);
+
+    if(app)
+    {
+        GList* filelist = g_list_prepend(NULL, gf);
+
+        g_app_info_launch(app, filelist, NULL, NULL);
+        g_list_free(filelist);
+        g_object_unref(app);
+    }
+    else
+    {
+        FmPath* path = fm_path_new_for_gfile(gf);
+
+        if (app_config->media_in_new_tab)
+            fm_main_win_open_in_last_active(path);
+        else
+            fm_main_win_add_win(NULL, path);
+        fm_path_unref(path);
+    }
+    g_object_unref(gf);
+}
+
 static void on_dlg_response(GtkDialog* dlg, int res, gpointer user_data)
 {
     AutoRun* data = (AutoRun*)user_data;
+    gboolean dont_ask = FALSE;
 
     /* stop the detection */
     g_cancellable_cancel(data->cancel);
 
-    if(res == GTK_RESPONSE_OK)
+    if (data->dont_ask)
+        dont_ask = gtk_toggle_button_get_active(data->dont_ask);
+    if (data->skipped)
+        ; /* do nothing */
+    else if(res == GTK_RESPONSE_OK)
     {
         GtkTreeModel* model;
         GtkTreeSelection* sel = gtk_tree_view_get_selection(data->view);
@@ -74,28 +109,19 @@ static void on_dlg_response(GtkDialog* dlg, int res, gpointer user_data)
         if( gtk_tree_selection_get_selected(sel, &model, &it) )
         {
             GAppInfo* app;
+
             gtk_tree_model_get(model, &it, 2, &app, -1);
-            if(app)
-            {
-                GFile* gf = g_mount_get_root(data->mount);
-                GList* filelist = g_list_prepend(NULL, gf);
-                g_app_info_launch(app, filelist, NULL, NULL);
-                g_list_free(filelist);
-                g_object_unref(gf);
-                g_object_unref(app);
-            }
-            else
-            {
-                GFile* gf = g_mount_get_root(data->mount);
-                FmPath* path = fm_path_new_for_gfile(gf);
-                if (app_config->media_in_new_tab)
-                    fm_main_win_open_in_last_active(path);
-                else
-                    fm_main_win_add_win(NULL, path);
-                fm_path_unref(path);
-                g_object_unref(gf);
-            }
+            fm_app_config_set_autorun_choice(app_config, data->content_type,
+                                             app ? g_app_info_get_id(app) : "pcmanfm",
+                                             dont_ask);
+            _run_app(app, data->mount);
+            pcmanfm_save_config(FALSE);
         }
+    }
+    else if (dont_ask) /* user chose don't ask and don't run */
+    {
+        fm_app_config_set_autorun_choice(app_config, data->content_type, NULL, TRUE);
+        pcmanfm_save_config(FALSE);
     }
     g_signal_handlers_disconnect_by_func(dlg, on_dlg_response, data);
     g_signal_handlers_disconnect_by_func(data->view, on_row_activated, data);
@@ -105,6 +131,7 @@ static void on_dlg_response(GtkDialog* dlg, int res, gpointer user_data)
     g_object_unref(data->cancel);
     g_object_unref(data->store);
     g_object_unref(data->mount);
+    g_free(data->content_type);
     g_slice_free(AutoRun, data);
 
     pcmanfm_unref();
@@ -116,6 +143,9 @@ static void on_content_type_finished(GObject* src_obj, GAsyncResult* res, gpoint
     GMount* mount = G_MOUNT(src_obj);
     char** types;
     char* desc = NULL;
+    const char *def_type = NULL;
+    GAppInfo *app;
+    gboolean mixed_content = FALSE;
 
     types = g_mount_guess_content_type_finish(mount, res, NULL);
     if(types)
@@ -123,26 +153,70 @@ static void on_content_type_finished(GObject* src_obj, GAsyncResult* res, gpoint
         GtkTreeIter it;
         GList* apps = NULL, *l;
         char** type;
+        int pos = 0;
         if(types[0])
         {
+            FmAutorunChoice *choice;
+            choice = g_hash_table_lookup(app_config->autorun_choices, types[0]);
+            data->content_type = g_strdup(types[0]);
+            if (choice)
+            {
+                def_type = choice->last_used;
+                if (choice->dont_ask)
+                {
+                    /* skip the dialog and run the app */
+                    if (def_type)
+                    {
+                        if (strcmp(def_type, "pcmanfm") == 0)
+                            _run_app(NULL, data->mount);
+                        else if ((app = G_APP_INFO(g_desktop_app_info_new(def_type))))
+                            _run_app(app, data->mount);
+                        else /* chosen application doesn't exist anymore */
+                            goto _do_types;
+                    }
+                    /* else user has chosen don't run anything */
+                    g_strfreev(types);
+                    data->skipped = TRUE;
+                    on_dlg_response(data->dlg, GTK_RESPONSE_CLOSE, data);
+                    return;
+                }
+            }
+_do_types:
             for(type=types;*type;++type)
             {
                 l = g_app_info_get_all_for_type(*type);
                 if(l)
                     apps = g_list_concat(apps, l);
             }
-            desc = g_content_type_get_description(types[0]);
+            if (types[1])
+                mixed_content = TRUE;
+            else
+                desc = g_content_type_get_description(types[0]);
         }
         g_strfreev(types);
 
+        if (def_type)
+        {
+            if (strcmp(def_type, "pcmanfm") == 0)
+                pos++; /* leave internal handler in row 0 */
+            else if ((app = G_APP_INFO(g_desktop_app_info_new(def_type))))
+            {
+                gtk_list_store_insert_with_values(data->store, &it, pos++,
+                                                      0, g_app_info_get_icon(app),
+                                                      1, g_app_info_get_name(app),
+                                                      2, app, -1);
+                g_object_unref(app);
+            }
+        }
+
         if(apps)
         {
-            int pos = 0;
             GtkTreePath* tp;
             for(l = apps; l; l=l->next, ++pos)
             {
-                GAppInfo* app = G_APP_INFO(l->data);
-                gtk_list_store_insert_with_values(data->store, &it, pos,
+                app = G_APP_INFO(l->data);
+                if (g_strcmp0(def_type, g_app_info_get_id(app)) != 0)
+                    gtk_list_store_insert_with_values(data->store, &it, pos,
                                    0, g_app_info_get_icon(app),
                                    1, g_app_info_get_name(app),
                                    2, app, -1);
@@ -158,13 +232,17 @@ static void on_content_type_finished(GObject* src_obj, GAsyncResult* res, gpoint
         }
     }
 
-    if(desc)
+    if (mixed_content)
+        gtk_label_set_text(data->type, _("mixed content"));
+    else if(desc)
     {
+        if (data->dont_ask)
+            gtk_widget_show(GTK_WIDGET(data->dont_ask));
         gtk_label_set_text(data->type, desc);
         g_free(desc);
     }
     else
-        gtk_label_set_text(data->type, _("Removable Disk"));
+        gtk_label_set_text(data->type, _("removable disk"));
 
 }
 
@@ -188,6 +266,9 @@ inline static void show_autorun_dlg(GVolume* vol, GMount* mount)
     data->dlg = GTK_DIALOG(gtk_builder_get_object(builder, "dlg"));
     data->view = GTK_TREE_VIEW(gtk_builder_get_object(builder, "listview"));
     data->type = GTK_LABEL(gtk_builder_get_object(builder, "type"));
+    data->dont_ask = (GtkToggleButton*)gtk_builder_get_object(builder, "dont_ask");
+    data->content_type = NULL;
+    data->skipped = FALSE;
     icon = GTK_IMAGE(gtk_builder_get_object(builder, "icon"));
     g_object_unref(builder);
 
