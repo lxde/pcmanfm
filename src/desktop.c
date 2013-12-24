@@ -3300,9 +3300,14 @@ static gboolean on_motion_notify(GtkWidget* w, GdkEventMotion* evt)
                 {
                     redraw_item(self, item);
                     gdk_window_set_cursor(window, hand_cursor);
-                    /* FIXME: timeout should be customizable */
                     if(self->single_click_timeout_handler == 0)
+#if FM_CHECK_VERSION(1, 2, 0)
+                        if(fm_config->auto_selection_delay > 0)
+                            self->single_click_timeout_handler = gdk_threads_add_timeout(fm_config->auto_selection_delay,
+                                                                                         on_single_click_timeout, self);
+#else
                         self->single_click_timeout_handler = gdk_threads_add_timeout(400, on_single_click_timeout, self); //400 ms
+#endif
                         /* Making a loop to aviod the selection of the item */
                         /* on_single_click_timeout(self); */
                 }
