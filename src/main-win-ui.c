@@ -36,8 +36,8 @@ static const char main_menu_xml[] =
     "<menuitem action='Open'/>" */
     "<separator/>"
     "<menuitem action='Term'/>"
-    /* "<separator/>"
-    "<menuitem action='Prop'/>" */
+    "<separator/>"
+    "<menuitem action='Prop'/>"
     "<separator/>"
     "<menuitem action='CloseTab'/>"
     "<menuitem action='Close'/>"
