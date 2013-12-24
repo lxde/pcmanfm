@@ -185,7 +185,6 @@ static inline void desktop_item_free(FmDesktopItem* item)
 
 static void calc_item_size(FmDesktop* desktop, FmDesktopItem* item, GdkPixbuf* icon)
 {
-    //int text_x, text_y, text_w, text_h;    /* Probably goes along with the FIXME in this function */
     PangoRectangle rc2;
 
     /* icon rect */
@@ -202,7 +201,7 @@ static void calc_item_size(FmDesktop* desktop, FmDesktopItem* item, GdkPixbuf* i
     {
         item->icon_rect.width = fm_config->big_icon_size;
         item->icon_rect.height = fm_config->big_icon_size;
-        item->icon_rect.x = item->area.x + desktop->ypad;
+        item->icon_rect.x = item->area.x + desktop->xpad;
         item->icon_rect.y = item->area.y + desktop->ypad;
         item->icon_rect.height += desktop->spacing;
     }
@@ -1635,14 +1634,17 @@ _next_position:
                 item->area.x = self->working_area.x + x;
                 item->area.y = self->working_area.y + y;
                 calc_item_size(self, item, icon);
-                y += self->cell_h;
+                while (y < item->area.y + item->area.height)
+                    y += self->cell_h;
                 if(y > bottom)
                 {
                     x += self->cell_w;
                     y = self->ymargin;
                 }
                 /* check if this position is occupied by a fixed item */
-                if(is_pos_occupied(self, item))
+                /* or its height does not fit into space that left */
+                if(item->area.y + item->area.height > bottom ||
+                   is_pos_occupied(self, item))
                     goto _next_position;
             }
             if(icon)
@@ -1666,14 +1668,17 @@ _next_position_rtl:
                 item->area.x = self->working_area.x + x;
                 item->area.y = self->working_area.y + y;
                 calc_item_size(self, item, icon);
-                y += self->cell_h;
+                while (y < item->area.y + item->area.height)
+                    y += self->cell_h;
                 if(y > bottom)
                 {
                     x -= self->cell_w;
                     y = self->ymargin;
                 }
                 /* check if this position is occupied by a fixed item */
-                if(is_pos_occupied(self, item))
+                /* or its height does not fit into space that left */
+                if(item->area.y + item->area.height > bottom ||
+                   is_pos_occupied(self, item))
                     goto _next_position_rtl;
             }
             if(icon)
@@ -3032,12 +3037,12 @@ static void on_size_allocate(GtkWidget* w, GtkAllocation* alloc)
     self->xmargin = self->ymargin = MARGIN;
     self->text_h = font_h * 2;
     self->text_w = 100;
-#if 0
+#if FM_CHECK_VERSION(1, 2, 0)
     if (fm_config->show_full_names)
         self->pango_text_h = -1;
     else
 #endif
-    self->pango_text_h = self->text_h * PANGO_SCALE;
+        self->pango_text_h = self->text_h * PANGO_SCALE;
     self->pango_text_w = self->text_w * PANGO_SCALE;
     self->text_h += 4;
     self->text_w += 4; /* 4 is for drawing border */
@@ -3770,6 +3775,23 @@ static void _clear_bg_cache(FmDesktop *self)
     }
 }
 
+#if FM_CHECK_VERSION(1, 2, 0)
+static void on_show_full_names_changed(FmConfig *cfg, FmDesktop *self)
+{
+    if (fm_config->show_full_names)
+    {
+        self->pango_text_h = -1;
+        pango_layout_set_ellipsize(self->pl, PANGO_ELLIPSIZE_NONE);
+    }
+    else
+    {
+        self->pango_text_h = self->text_h * PANGO_SCALE;
+        pango_layout_set_ellipsize(self->pl, PANGO_ELLIPSIZE_END);
+    }
+    queue_layout_items(self);
+}
+#endif
+
 #if GTK_CHECK_VERSION(3, 0, 0)
 static void fm_desktop_destroy(GtkWidget *object)
 #else
@@ -3786,6 +3808,9 @@ static void fm_desktop_destroy(GtkObject *object)
         gdk_window_remove_filter(gdk_screen_get_root_window(screen), on_root_event, self);
 
         g_signal_handlers_disconnect_by_func(screen, on_screen_size_changed, self);
+#if FM_CHECK_VERSION(1, 2, 0)
+        g_signal_handlers_disconnect_by_func(app_config, on_show_full_names_changed, self);
+#endif
 
         gtk_window_group_remove_window(win_group, (GtkWindow*)self);
 
@@ -3877,13 +3902,17 @@ static GObject* fm_desktop_constructor(GType type, guint n_construct_properties,
     //pc = gtk_widget_get_pango_context((GtkWidget*)self);
     self->pl = gtk_widget_create_pango_layout((GtkWidget*)self, NULL);
     pango_layout_set_alignment(self->pl, PANGO_ALIGN_CENTER);
-#if 0
+#if FM_CHECK_VERSION(1, 2, 0)
     if (fm_config->show_full_names)
         pango_layout_set_ellipsize(self->pl, PANGO_ELLIPSIZE_NONE);
     else
 #endif
-    pango_layout_set_ellipsize(self->pl, PANGO_ELLIPSIZE_END);
+        pango_layout_set_ellipsize(self->pl, PANGO_ELLIPSIZE_END);
     pango_layout_set_wrap(self->pl, PANGO_WRAP_WORD_CHAR);
+#if FM_CHECK_VERSION(1, 2, 0)
+    g_signal_connect(app_config, "changed::show_full_names",
+                     G_CALLBACK(on_show_full_names_changed), self);
+#endif
 
     root = gdk_screen_get_root_window(screen);
     gdk_window_set_events(root, gdk_window_get_events(root)|GDK_PROPERTY_CHANGE_MASK);
