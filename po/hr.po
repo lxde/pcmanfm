@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-20 22:41+0200\n"
-"PO-Revision-Date: 2013-12-22 00:44+0000\n"
+"POT-Creation-Date: 2013-12-24 04:02+0200\n"
+"PO-Revision-Date: 2013-12-24 06:18+0000\n"
 "Last-Translator: Ivica <ikoli@yahoo.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: hr\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
 "10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1387673099.0\n"
+"X-POOTLE-MTIME: 1387865938.0\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2013"
@@ -84,19 +84,19 @@ msgstr "<b>Pokaži ikone radne površine</b>"
 
 #: ../data/ui/desktop-pref.glade.h:14
 msgid "_Show \"Documents\" folder on the desktop"
-msgstr ""
+msgstr "_Pokaži mapu \"Dokumenti\" na radnoj površini"
 
 #: ../data/ui/desktop-pref.glade.h:15
 msgid "Sho_w \"Devices\" folder on the desktop"
-msgstr ""
+msgstr "Pokaž_i mapu \"Uređaji\" na radnoj površini"
 
 #: ../data/ui/desktop-pref.glade.h:16
 msgid "Show \"_Trash Can\" folder on the desktop"
-msgstr ""
+msgstr "Pokaži mapu \"_Smeće\" na radnoj površini"
 
 #: ../data/ui/desktop-pref.glade.h:17
 msgid "S_how connected volumes on the desktop"
-msgstr ""
+msgstr "P_okaži spojene particije na radnoj površini"
 
 #: ../data/ui/desktop-pref.glade.h:18
 msgid "_Desktop Icons"
@@ -110,7 +110,7 @@ msgstr ""
 
 #: ../data/ui/desktop-pref.glade.h:20
 msgid "_Open folders from desktop in new window"
-msgstr ""
+msgstr "_Otvori mape sa radne površine u novom prozoru"
 
 #: ../data/ui/desktop-pref.glade.h:21
 msgid "Ad_vanced"
@@ -314,7 +314,7 @@ msgstr "_Osobna mapa"
 msgid "Des_ktop"
 msgstr "Rad_na površina"
 
-#: ../data/ui/pref.glade.h:48 ../src/main-win-ui.c:189
+#: ../data/ui/pref.glade.h:48 ../src/main-win-ui.c:216
 msgid "_Trash Can"
 msgstr "_Smeće"
 
@@ -326,7 +326,7 @@ msgstr ""
 msgid "App_lications"
 msgstr "Pro_grami"
 
-#: ../data/ui/pref.glade.h:51 ../src/main-win-ui.c:192
+#: ../data/ui/pref.glade.h:51 ../src/main-win-ui.c:219
 msgid "Dev_ices"
 msgstr "Ure_đaji"
 
@@ -355,111 +355,115 @@ msgid "_Show available options for removable media when they are inserted"
 msgstr "_Prikaži dostupne opcije za uklonjive uređaje nakon što su umetnuti"
 
 #: ../data/ui/pref.glade.h:58
+msgid "Do_n't show available options for those media types:"
+msgstr "N_e prikazuj dostupne opcije za ovu vrstu medija:"
+
+#: ../data/ui/pref.glade.h:59
 msgid "_Open mounted removable media in new tab instead of new window"
 msgstr ""
 "_Otvori montirani uklonjivi medij u novoj kartici umjesto u novom prozoru"
 
-#: ../data/ui/pref.glade.h:59
+#: ../data/ui/pref.glade.h:60
 msgid "Clos_e tab containing removable medium when it is unmounted"
 msgstr "Zatvor_i karticu koja sadrži uklonjivi medij kada je medij odmontiran"
 
-#: ../data/ui/pref.glade.h:60
+#: ../data/ui/pref.glade.h:61
 msgid "_Volume Management"
 msgstr "_Upravljanje particijama"
 
-#: ../data/ui/pref.glade.h:61
+#: ../data/ui/pref.glade.h:62
 msgid "<b>Programs</b>"
 msgstr "<b>Programi</b>"
 
-#: ../data/ui/pref.glade.h:62
+#: ../data/ui/pref.glade.h:63
 msgid "<i>Commands below may include extra options if necessary.</i>"
 msgstr "<i>Donje naredbe mogu uključivati dodatne opcije ako je neophodno.</i>"
 
-#: ../data/ui/pref.glade.h:63
+#: ../data/ui/pref.glade.h:64
 msgid "_Terminal emulator:"
 msgstr "_Emulator terminala:"
 
-#: ../data/ui/pref.glade.h:64
+#: ../data/ui/pref.glade.h:65
 msgid "_Switch user command:"
 msgstr "_Naredba zamjena korisnika:"
 
 #. Application command to format some drive
-#: ../data/ui/pref.glade.h:66
+#: ../data/ui/pref.glade.h:67
 msgid "_Format command:"
 msgstr "_Naredba formatiranja:"
 
-#: ../data/ui/pref.glade.h:67
+#: ../data/ui/pref.glade.h:68
 msgid "A_rchiver integration:"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:68
+#: ../data/ui/pref.glade.h:69
 msgid "<b>Templates</b>"
 msgstr "<b>Predlošci</b>"
 
-#: ../data/ui/pref.glade.h:69
+#: ../data/ui/pref.glade.h:70
 msgid "S_how only user defined templates in menu"
 msgstr "P_okaži u izborniku samo predloške koje je definirao korisnik"
 
-#: ../data/ui/pref.glade.h:70
+#: ../data/ui/pref.glade.h:71
 msgid "Show _only one template for each MIME type"
 msgstr "Pokaži _samo jedan predložak za svaki  MIME type"
 
-#: ../data/ui/pref.glade.h:71
-msgid "Ru_n default application after creation from template"
-msgstr ""
-
 #: ../data/ui/pref.glade.h:72
+msgid "Ru_n default application after creation from template"
+msgstr "Pokren_i zadani program nakon stvaranja iz predloška"
+
+#: ../data/ui/pref.glade.h:73
 msgid "<b>Other Options</b>"
 msgstr "<b>Ostale opcije</b>"
 
-#: ../data/ui/pref.glade.h:73
+#: ../data/ui/pref.glade.h:74
 msgid "_Use Application Startup Notify by default"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:74
+#: ../data/ui/pref.glade.h:75
 msgid ""
 "If checked then use Startup Notify for application if another not stated "
 "explicitly.\n"
 "If unchecked then use Startup Notify only if that is defined for application."
 msgstr ""
 
-#: ../data/ui/pref.glade.h:76
+#: ../data/ui/pref.glade.h:77
 msgid "D_efer test for content type on folder loading"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:77
+#: ../data/ui/pref.glade.h:78
 msgid "_Advanced"
 msgstr "_Napredno"
 
-#: ../data/ui/pref.glade.h:78
+#: ../data/ui/pref.glade.h:79
 msgid "Auto (move if on the same FS, copy otherwise)"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:79
+#: ../data/ui/pref.glade.h:80
 msgid "Copy"
 msgstr "Kopiraj"
 
-#: ../data/ui/pref.glade.h:80
+#: ../data/ui/pref.glade.h:81
 msgid "Move"
 msgstr "Premjesti"
 
-#: ../data/ui/pref.glade.h:81
+#: ../data/ui/pref.glade.h:82
 msgid "Ask"
 msgstr "Pitaj"
 
-#: ../data/ui/pref.glade.h:82
+#: ../data/ui/pref.glade.h:83
 msgid "Icon View"
 msgstr "Pogled ikona"
 
-#: ../data/ui/pref.glade.h:83
+#: ../data/ui/pref.glade.h:84
 msgid "Compact View"
 msgstr "Zbijeni pogled"
 
-#: ../data/ui/pref.glade.h:84
+#: ../data/ui/pref.glade.h:85
 msgid "Thumbnail View"
 msgstr "Pogled sličica"
 
-#: ../data/ui/pref.glade.h:85
+#: ../data/ui/pref.glade.h:86
 msgid "Detailed List View"
 msgstr "Pogled dataljne liste"
 
@@ -483,9 +487,13 @@ msgstr "Otkrivam..."
 msgid "Please select the action you want to perform:"
 msgstr "Odaberite akciju koju želite izvršiti:"
 
+#: ../data/ui/autorun.glade.h:6
+msgid "_Always perform this action on this media type"
+msgstr "_Uvijek upotrebi ovu radnju kod ove vrste medija"
+
 #: ../data/ui/connect.glade.h:1
 msgid "Connect to remote server"
-msgstr ""
+msgstr "Spoji se na udaljeni poslužitelj"
 
 #: ../data/ui/connect.glade.h:2
 msgid "<b>Specify remote folder to connect</b>"
@@ -493,45 +501,49 @@ msgstr ""
 
 #: ../data/ui/connect.glade.h:3
 msgid "_Type:"
-msgstr ""
+msgstr "_Vrsta:"
 
 #: ../data/ui/connect.glade.h:4
 msgid "_Host:"
-msgstr ""
+msgstr "_Računalo:"
 
 #: ../data/ui/connect.glade.h:5
 msgid "_Port:"
-msgstr ""
+msgstr "_Port:"
 
 #: ../data/ui/connect.glade.h:6
 msgid "Pa_th:"
-msgstr ""
+msgstr "Puta_nja:"
 
 #: ../data/ui/connect.glade.h:7
 msgid "_Anonymous login"
-msgstr ""
+msgstr "_Anonimna prijava"
 
 #: ../data/ui/connect.glade.h:8
 msgid "_Login as:"
-msgstr ""
+msgstr "_Prijavi se kao:"
 
 #: ../data/ui/connect.glade.h:9
 msgid "SSH"
-msgstr ""
+msgstr "SSH"
 
 #: ../data/ui/connect.glade.h:10
 msgid "FTP"
-msgstr ""
+msgstr "FTP"
 
 #: ../data/ui/connect.glade.h:11
 msgid "WebDAV"
 msgstr ""
 
-#: ../src/volume-manager.c:167
-msgid "Removable Disk"
-msgstr "Uklonjivi disk"
+#: ../src/volume-manager.c:236
+msgid "mixed content"
+msgstr ""
 
-#: ../src/volume-manager.c:220
+#: ../src/volume-manager.c:245
+msgid "removable disk"
+msgstr "uklonjivi disk"
+
+#: ../src/volume-manager.c:301
 msgid "Open in File Manager"
 msgstr "Otvori upravitelj datotekama"
 
@@ -549,7 +561,7 @@ msgstr "Otvori u _treminal_u"
 
 #: ../src/desktop-ui.c:68
 msgid "_Remove from Desktop"
-msgstr ""
+msgstr "_Ukoni sa radne površine"
 
 #: ../src/desktop-ui.c:85
 msgid "Stic_k to Current Position"
@@ -576,357 +588,373 @@ msgstr "Pokaži izbornik radne površine"
 msgid "Desktop"
 msgstr "Radna površina"
 
-#: ../src/main-win-ui.c:153
+#: ../src/main-win-ui.c:169
 msgid "_File"
 msgstr "_Datoteka"
 
-#: ../src/main-win-ui.c:154
+#: ../src/main-win-ui.c:170
 msgid "_New Window"
 msgstr "_Novi prozor"
 
-#: ../src/main-win-ui.c:155
+#: ../src/main-win-ui.c:171
 msgid "New T_ab"
 msgstr "Nova k_artica"
 
-#: ../src/main-win-ui.c:155
+#: ../src/main-win-ui.c:171
 msgid "Create new tab for this folder"
 msgstr "Napravi novu karticu za ovu mapu"
 
-#: ../src/main-win-ui.c:156
+#: ../src/main-win-ui.c:172
 msgid "C_reate New..."
 msgstr "N_apravi novi..."
 
-#: ../src/main-win-ui.c:157
+#: ../src/main-win-ui.c:173
+msgid "Folder"
+msgstr "Mapa"
+
+#: ../src/main-win-ui.c:174
+msgid "Empty File"
+msgstr "Prazna datoteka"
+
+#: ../src/main-win-ui.c:175
+msgid "_Open Selected Files"
+msgstr "_Otvori odabrane datoteke"
+
+#. G_CALLBACK(on_open)
+#: ../src/main-win-ui.c:176
+msgid "Open Current Folder in _Terminal"
+msgstr "Otvori trenutnu mapu u _treminalu"
+
+#: ../src/main-win-ui.c:177
+msgid "Folder Propertie_s"
+msgstr "Svojstva map_e"
+
+#: ../src/main-win-ui.c:178
 msgid "_Close Tab"
 msgstr "_Zatvori karticu"
 
-#: ../src/main-win-ui.c:158
+#: ../src/main-win-ui.c:179
 msgid "Close _Window"
 msgstr "Zatvori _prozor"
 
-#: ../src/main-win-ui.c:159
+#: ../src/main-win-ui.c:180
 msgid "_Edit"
 msgstr "_Uredi"
 
-#: ../src/main-win-ui.c:164
-msgid "_Rename"
-msgstr "_Preimenuj"
+#: ../src/main-win-ui.c:185
+msgid "_Rename..."
+msgstr "_Preimenuj..."
 
-#: ../src/main-win-ui.c:165
-msgid "Create Symlin_k"
-msgstr "Napravi simboličku poveznic_u"
+#: ../src/main-win-ui.c:186
+msgid "D_uplicate..."
+msgstr ""
 
-#: ../src/main-win-ui.c:166
+#: ../src/main-win-ui.c:187
+msgid "Create Symlin_k..."
+msgstr "Napravi simboličku poveznic_u..."
+
+#: ../src/main-win-ui.c:188
 msgid "_Move To..."
 msgstr "_Premjesti u..."
 
-#: ../src/main-win-ui.c:167
+#: ../src/main-win-ui.c:189
 msgid "C_opy To..."
 msgstr "K_opiraj u..."
 
-#: ../src/main-win-ui.c:169
+#: ../src/main-win-ui.c:190
+msgid "Propertie_s"
+msgstr "Svojstv_a"
+
+#: ../src/main-win-ui.c:192
 msgid "_Invert Selection"
 msgstr "_Obrnuti odabir"
 
-#: ../src/main-win-ui.c:170
+#: ../src/main-win-ui.c:194
+msgid "Fin_d Files..."
+msgstr "Nađ_i datoteke..."
+
+#: ../src/main-win-ui.c:194
+msgid "Open search dialog"
+msgstr "Otvori dijalog traženja"
+
+#: ../src/main-win-ui.c:196
 msgid "Prefere_nces"
 msgstr "Osobi_tosti"
 
-#: ../src/main-win-ui.c:171
+#: ../src/main-win-ui.c:197
 msgid "_View"
 msgstr "_Pogled"
 
-#: ../src/main-win-ui.c:172
+#: ../src/main-win-ui.c:198
 msgid "_Reload Folder"
 msgstr "_Ponovno učitaj mapu"
 
-#: ../src/main-win-ui.c:172
+#: ../src/main-win-ui.c:198
 msgid "Reload current folder"
 msgstr "Ponovno učitaj trenutnu mapu"
 
-#: ../src/main-win-ui.c:173
+#: ../src/main-win-ui.c:199
 msgid "Tool_bar"
-msgstr ""
+msgstr "Alatna _traka"
 
-#: ../src/main-win-ui.c:174
+#: ../src/main-win-ui.c:200
 msgid "Side _Pane"
 msgstr "Bočna _ploča"
 
 #. other see below: 'ShowHidden' 'ShowStatus' 'Fullscreen' 'IconView'...
-#: ../src/main-win-ui.c:176
+#: ../src/main-win-ui.c:202
+msgid "Fo_lder View Mode"
+msgstr ""
+
+#: ../src/main-win-ui.c:203
 msgid "S_ort Files"
 msgstr "P_osloži datoteke"
 
-#: ../src/main-win-ui.c:177
+#: ../src/main-win-ui.c:204
 msgid "_Zoom In"
 msgstr ""
 
-#: ../src/main-win-ui.c:178
+#: ../src/main-win-ui.c:205
 msgid "Zoom O_ut"
 msgstr ""
 
-#: ../src/main-win-ui.c:179
+#: ../src/main-win-ui.c:206
 msgid "_Normal Size"
-msgstr ""
+msgstr "_Normalna Veličina"
 
-#: ../src/main-win-ui.c:180
+#: ../src/main-win-ui.c:207
 msgid "_Help"
 msgstr "_Pomoć"
 
-#: ../src/main-win-ui.c:182
+#: ../src/main-win-ui.c:209
 msgid "_Keyboard Navigation"
 msgstr ""
 
-#: ../src/main-win-ui.c:183
+#: ../src/main-win-ui.c:210
 msgid "_Go"
 msgstr "_Idi"
 
-#: ../src/main-win-ui.c:184
+#: ../src/main-win-ui.c:211
 msgid "_Previous Folder"
 msgstr "_Prethodna mapa"
 
-#: ../src/main-win-ui.c:184
+#: ../src/main-win-ui.c:211
 msgid "Return to previous folder in history"
 msgstr "Povratak u prethodnu mapu u povijesti"
 
-#: ../src/main-win-ui.c:185
+#: ../src/main-win-ui.c:212
 msgid "_Next Folder"
 msgstr "_Slijedeća mapa"
 
-#: ../src/main-win-ui.c:185
+#: ../src/main-win-ui.c:212
 msgid "Go forward to next folder in history"
 msgstr "Idi naprijed u slijedeću mapu u povijesti"
 
-#: ../src/main-win-ui.c:186
+#: ../src/main-win-ui.c:213
 msgid "Pa_rent Folder"
 msgstr ""
 
-#: ../src/main-win-ui.c:186
+#: ../src/main-win-ui.c:213
 msgid "Go to parent Folder"
 msgstr ""
 
-#: ../src/main-win-ui.c:187
+#: ../src/main-win-ui.c:214
 msgid "H_ome Folder"
 msgstr "O_sobna mapa"
 
-#: ../src/main-win-ui.c:187
+#: ../src/main-win-ui.c:214
 msgid "Go to home folder"
 msgstr "Idi u osobnu mapu"
 
-#: ../src/main-win-ui.c:188
+#: ../src/main-win-ui.c:215
 msgid "_Desktop"
 msgstr "_Radna površina"
 
-#: ../src/main-win-ui.c:188
+#: ../src/main-win-ui.c:215
 msgid "Go to desktop folder"
 msgstr "Idi u mapu radne površine"
 
-#: ../src/main-win-ui.c:189
+#: ../src/main-win-ui.c:216
 msgid "Open trash can"
 msgstr "Otvori smeće"
 
-#: ../src/main-win-ui.c:190
+#: ../src/main-win-ui.c:217
 msgid "Filesyste_m Root"
 msgstr ""
 
-#: ../src/main-win-ui.c:190
+#: ../src/main-win-ui.c:217
 msgid "Go fo filesystem root"
 msgstr ""
 
-#: ../src/main-win-ui.c:191
+#: ../src/main-win-ui.c:218
 msgid "_Applications"
 msgstr "_Programi"
 
-#: ../src/main-win-ui.c:191
+#: ../src/main-win-ui.c:218
 msgid "Go to root of applications menu folder"
 msgstr ""
 
-#: ../src/main-win-ui.c:192
+#: ../src/main-win-ui.c:219
 msgid "Go to list of devices connected to the computer"
 msgstr "Idi na listu uređaja spojenih na računalo"
 
-#: ../src/main-win-ui.c:193
+#: ../src/main-win-ui.c:220
 msgid "Net_work"
 msgstr "Mre_ža"
 
-#: ../src/main-win-ui.c:193
+#: ../src/main-win-ui.c:220
 msgid "Go to list of places on the network"
 msgstr "Idi na listu mjesta na mreži"
 
-#: ../src/main-win-ui.c:194
+#: ../src/main-win-ui.c:221
 msgid "_Connect to Server..."
 msgstr ""
 
-#: ../src/main-win-ui.c:194
+#: ../src/main-win-ui.c:221
 msgid "Open a window to choose remote folder location"
 msgstr ""
 
-#: ../src/main-win-ui.c:195
+#: ../src/main-win-ui.c:222
 msgid "Go to the path in the location bar"
 msgstr ""
 
-#: ../src/main-win-ui.c:196
+#: ../src/main-win-ui.c:223
 msgid "_Bookmarks"
 msgstr "_Zabilješke"
 
-#: ../src/main-win-ui.c:197
+#: ../src/main-win-ui.c:224
 msgid "_Add to Bookmarks"
 msgstr "_Dodaj u zabilješke"
 
-#: ../src/main-win-ui.c:197
+#: ../src/main-win-ui.c:224
 msgid "Add current folder to bookmarks list"
 msgstr "Dodaj trennutnu mapu na listu zabilješki"
 
-#: ../src/main-win-ui.c:198
-msgid "Tool_s"
-msgstr "Alat_i"
-
-#: ../src/main-win-ui.c:199
-msgid "Open Current Folder in _Terminal"
-msgstr "Otvori trenutnu mapu u _treminalu"
-
-#: ../src/main-win-ui.c:202
-msgid "Fin_d Files..."
-msgstr ""
-
-#: ../src/main-win-ui.c:202
-msgid "Open search dialog"
-msgstr "Otvori dijalog traženja"
-
-#. for popup menu - these entries exist in FmFolderView popup still
-#: ../src/main-win-ui.c:211
-msgid "Folder"
-msgstr "Mapa"
-
-#: ../src/main-win-ui.c:212
-msgid "Empty File"
-msgstr "Prazna datoteka"
-
 #. Note to translators: "Mingle..." means "Do not put folders before files" but make the translation as short as possible, please!
-#: ../src/main-win-ui.c:220
+#: ../src/main-win-ui.c:240
 msgid "Mingle _Files and Folders"
 msgstr ""
 
-#: ../src/main-win-ui.c:223
+#: ../src/main-win-ui.c:243
 msgid "_Ignore Name Case"
 msgstr ""
 
-#: ../src/main-win-ui.c:225
+#: ../src/main-win-ui.c:245
 msgid "Sho_w Hidden"
-msgstr ""
+msgstr "Pokaž_i skriveo"
 
 #. Note to translators: this save is meant for folder's settings such as sort
-#: ../src/main-win-ui.c:227
+#: ../src/main-win-ui.c:247
 msgid "Preserve This Folder's Settings"
 msgstr ""
 
-#: ../src/main-win-ui.c:228
+#: ../src/main-win-ui.c:248
 msgid ""
 "Check to remember view and sort as folder setting rather than global one"
 msgstr ""
 
-#: ../src/main-win-ui.c:230
+#: ../src/main-win-ui.c:250
 msgid "Show _Toolbar"
 msgstr ""
 
-#: ../src/main-win-ui.c:231
+#: ../src/main-win-ui.c:251
 msgid "Show 'Ne_w Tab' Button"
 msgstr ""
 
-#: ../src/main-win-ui.c:232
+#: ../src/main-win-ui.c:252
 msgid "Show _Navigation Buttons"
 msgstr ""
 
-#: ../src/main-win-ui.c:233
+#: ../src/main-win-ui.c:253
 msgid "Show '_Home' Button"
-msgstr ""
+msgstr "Pokaži gumb '_Osobna mapa'"
 
-#: ../src/main-win-ui.c:234
+#: ../src/main-win-ui.c:254
 msgid "Sho_w Side Pane"
 msgstr "Pokaž_i bočnu ploču"
 
-#: ../src/main-win-ui.c:235
+#: ../src/main-win-ui.c:255
 msgid "Show Status B_ar"
 msgstr "Pokaži statusnu t_raku"
 
-#: ../src/main-win-ui.c:236
+#: ../src/main-win-ui.c:256
 msgid "_Dual Pane Mode"
 msgstr ""
 
-#: ../src/main-win-ui.c:236
+#: ../src/main-win-ui.c:256
 msgid "Show two panels with folder views"
 msgstr ""
 
-#: ../src/main-win-ui.c:237
+#: ../src/main-win-ui.c:257
 msgid "Fullscreen _Mode"
 msgstr "Preko cijelog _zaslona"
 
-#: ../src/main-win-ui.c:243
+#: ../src/main-win-ui.c:263
 msgid "_Icon View"
 msgstr "_Pogled ikona"
 
-#: ../src/main-win-ui.c:244
+#: ../src/main-win-ui.c:264
 msgid "_Compact View"
 msgstr "_Zbijeni pogled"
 
-#: ../src/main-win-ui.c:245
+#: ../src/main-win-ui.c:265
 msgid "_Thumbnail View"
 msgstr "_Pogled sličica"
 
-#: ../src/main-win-ui.c:246
+#: ../src/main-win-ui.c:266
 msgid "Detailed _List View"
 msgstr "Detaljna _lista"
 
-#: ../src/main-win-ui.c:259 ../src/main-win-ui.c:264
+#: ../src/main-win-ui.c:279 ../src/main-win-ui.c:284
 msgid "By _Name"
 msgstr "Po _imenu"
 
-#: ../src/main-win-ui.c:260 ../src/main-win-ui.c:265
+#: ../src/main-win-ui.c:280 ../src/main-win-ui.c:285
 msgid "By _Modification Time"
 msgstr "Po _vremenu izmjene"
 
-#: ../src/main-win-ui.c:261 ../src/main-win-ui.c:266
+#: ../src/main-win-ui.c:281 ../src/main-win-ui.c:286
 msgid "By _Size"
 msgstr "Po _veličini"
 
-#: ../src/main-win-ui.c:262 ../src/main-win-ui.c:267
+#: ../src/main-win-ui.c:282 ../src/main-win-ui.c:287
 msgid "By File _Type"
 msgstr "Po tipu _datoteke"
 
-#: ../src/main-win-ui.c:273
+#: ../src/main-win-ui.c:293
 msgid "Places"
 msgstr "Mjesta"
 
-#: ../src/main-win-ui.c:274
+#: ../src/main-win-ui.c:294
 msgid "Directory Tree"
 msgstr "Stablo direktorija"
 
-#: ../src/main-win-ui.c:275
+#: ../src/main-win-ui.c:295
 msgid "Remote"
 msgstr "Udaljeno"
 
-#: ../src/main-win.c:704
+#: ../src/main-win.c:752 ../src/main-win.c:756
 msgid "Show history of visited folders"
 msgstr "Pokaži povijest posjećenih mapa"
 
-#: ../src/main-win.c:707
+#: ../src/main-win.c:761
 msgid "History"
 msgstr "Povijest"
 
-#: ../src/main-win.c:721
+#: ../src/main-win.c:775
 msgid "You are in super user mode"
 msgstr "Vi koristite super korisnički način rada"
 
-#: ../src/main-win.c:885
+#: ../src/main-win.c:939
 msgid "Lightweight file manager\n"
 msgstr "Lagani upravitelj datotekama\n"
 
-#: ../src/main-win.c:890
+#: ../src/main-win.c:944
 #, c-format
 msgid "using LibFM ver. %s\n"
 msgstr "koristim LibFM ver. %s\n"
 
-#: ../src/main-win.c:892
+#: ../src/main-win.c:946
 msgid ""
 "\n"
 "Developed by Hon Jen Yee (PCMan)"
@@ -934,11 +962,11 @@ msgstr ""
 "\n"
 "Razvio Hon Jen Yee (PCMan)"
 
-#: ../src/main-win.c:917 ../src/main-win.c:925
+#: ../src/main-win.c:971 ../src/main-win.c:979
 msgid "Keyboard Navigation"
 msgstr ""
 
-#: ../src/main-win.c:919
+#: ../src/main-win.c:973
 msgid ""
 "Tab: cycle focus Folder View -> Side Pane -> Tools Bar\n"
 "Shift+Tab: cycle focus Tools Bar -> Side Pane -> Folder View\n"
@@ -948,7 +976,7 @@ msgid ""
 "Ctrl+L or Alt+D: jump focus to Path Bar"
 msgstr ""
 
-#: ../src/main-win.c:1522
+#: ../src/main-win.c:1578
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -959,7 +987,7 @@ msgstr ""
 "'%s'\n"
 "Unesi ime nove stavke zabilješki:"
 
-#: ../src/main-win.c:1526
+#: ../src/main-win.c:1582
 msgid "Add to Bookmarks"
 msgstr "Dodaj u zabilješke"
 
@@ -1093,6 +1121,18 @@ msgid "Change desktop wallpapers and behavior of desktop manager"
 msgstr ""
 "Promjeni pozadinske slike radne površine i ponašanje upravitelja radnom "
 "površinom"
+
+#~ msgid "Removable Disk"
+#~ msgstr "Uklonjivi disk"
+
+#~ msgid "_Rename"
+#~ msgstr "_Preimenuj"
+
+#~ msgid "Create Symlin_k"
+#~ msgstr "Napravi simboličku poveznic_u"
+
+#~ msgid "Tool_s"
+#~ msgstr "Alat_i"
 
 #~ msgid "_Show \"Documents\" icon on desktop"
 #~ msgstr "_Pokaži ikonu \"Dokumenti\" na radnoj površini"
