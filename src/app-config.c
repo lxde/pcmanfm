@@ -507,6 +507,7 @@ static void fm_app_config_init(FmAppConfig *cfg)
     cfg->tb.visible = cfg->tb.new_tab = cfg->tb.nav = cfg->tb.home = TRUE;
     cfg->autorun_choices = g_hash_table_new_full(g_str_hash, g_str_equal,
                                                  g_free, _free_archoice);
+    cfg->show_statusbar = TRUE;
 }
 
 
@@ -718,6 +719,7 @@ void fm_app_config_load_from_key_file(FmAppConfig* cfg, GKeyFile* kf)
         }
         g_strfreev(tmpv);
     }
+    fm_key_file_get_bool(kf, "ui", "show_statusbar", &cfg->show_statusbar);
     if (g_key_file_has_group(kf, "autorun"))
     {
         tmpv = g_key_file_get_keys(kf, "autorun", NULL, NULL);
@@ -1099,6 +1101,7 @@ void fm_app_config_save_profile(FmAppConfig* cfg, const char* name)
         if (cfg->tb.home)
             g_string_append(buf, "home;");
         g_string_append_c(buf, '\n');
+        g_string_append_printf(buf, "show_statusbar=%d\n", cfg->show_statusbar);
 
         path = g_build_filename(dir_path, "pcmanfm.conf", NULL);
         g_file_set_contents(path, buf->str, buf->len, NULL);

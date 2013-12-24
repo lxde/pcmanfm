@@ -101,6 +101,7 @@ static void on_show_toolbar(GtkToggleAction *action, FmMainWin *win);
 static void on_toolbar_new_tab(GtkToggleAction *act, FmMainWin *win);
 static void on_toolbar_nav(GtkToggleAction *act, FmMainWin *win);
 static void on_toolbar_home(GtkToggleAction *act, FmMainWin *win);
+static void on_show_status(GtkToggleAction *action, FmMainWin *win);
 static void on_change_mode(GtkRadioAction* act, GtkRadioAction *cur, FmMainWin* win);
 static void on_sort_by(GtkRadioAction* act, GtkRadioAction *cur, FmMainWin* win);
 static void on_sort_type(GtkRadioAction* act, GtkRadioAction *cur, FmMainWin* win);
@@ -579,6 +580,12 @@ static void on_side_pane_mode_changed(FmSidePane* sp, FmMainWin* win)
     }
 }
 
+static void on_show_statusbar_changed(FmAppConfig *cfg, FmMainWin *win)
+{
+    gtk_widget_set_visible(GTK_WIDGET(win->statusbar), cfg->show_statusbar);
+    update_statusbar(win);
+}
+
 static void fm_main_win_init(FmMainWin *win)
 {
     GtkBox *vbox;
@@ -806,6 +813,8 @@ static void fm_main_win_init(FmMainWin *win)
     gtk_box_pack_start( vbox, GTK_WIDGET(win->statusbar), FALSE, TRUE, 0 );
     win->statusbar_ctx = gtk_statusbar_get_context_id(win->statusbar, "status");
     win->statusbar_ctx2 = gtk_statusbar_get_context_id(win->statusbar, "status2");
+    g_signal_connect(app_config, "changed::show_statusbar",
+                     G_CALLBACK(on_show_statusbar_changed), win);
 
     g_object_unref(act_grp);
     win->ui = ui;
@@ -856,6 +865,7 @@ static void fm_main_win_destroy(GtkObject *object)
         g_signal_handlers_disconnect_by_func(win->notebook, on_notebook_switch_page, win);
         g_signal_handlers_disconnect_by_func(win->notebook, on_notebook_page_added, win);
         g_signal_handlers_disconnect_by_func(win->notebook, on_notebook_page_removed, win);
+        g_signal_handlers_disconnect_by_func(app_config, on_show_statusbar_changed, win);
 
         gtk_window_group_remove_window(win->win_group, GTK_WINDOW(win));
         g_object_unref(win->win_group);
@@ -1371,6 +1381,8 @@ static void update_statusbar(FmMainWin* win)
 {
     FmTabPage* page = win->current_page;
     const char* text;
+    if (!app_config->show_statusbar)
+        return; /* don't waste time on it */
     gtk_statusbar_pop(win->statusbar, win->statusbar_ctx);
     text = fm_tab_page_get_status_text(page, FM_STATUS_TEXT_NORMAL);
     if(text)
@@ -1436,6 +1448,10 @@ FmMainWin* fm_main_win_add_win(FmMainWin* win, FmPath* path)
     gtk_toggle_action_set_active(GTK_TOGGLE_ACTION(act), app_config->tb.nav);
     act = gtk_ui_manager_get_action(win->ui, "/menubar/ViewMenu/Toolbar/ToolbarHome");
     gtk_toggle_action_set_active(GTK_TOGGLE_ACTION(act), app_config->tb.home);
+    /* the same for statusbar */
+    act = gtk_ui_manager_get_action(win->ui, "/menubar/ViewMenu/ShowStatus");
+    gtk_toggle_action_set_active(GTK_TOGGLE_ACTION(act), app_config->show_statusbar);
+    gtk_widget_set_visible(GTK_WIDGET(win->statusbar), app_config->show_statusbar);
     return win;
 }
 
@@ -1781,6 +1797,8 @@ static void on_folder_view_clicked(FmFolderView* fv, FmFolderViewClickType type,
 static void on_tab_page_status_text(FmTabPage* page, guint type, const char* status_text, FmMainWin* win)
 {
     if(page != win->current_page)
+        return;
+    if (!app_config->show_statusbar)
         return;
 
     switch(type)
@@ -2243,6 +2261,8 @@ static void on_show_side_pane(GtkToggleAction* act, FmMainWin* win)
         app_config->side_pane_mode |= FM_SP_HIDE;
         gtk_widget_hide(GTK_WIDGET(win->side_pane));
     }
+    /* FIXME: propagate the event to other windows? */
+    pcmanfm_save_config(FALSE);
 }
 
 static void on_dual_pane(GtkToggleAction* act, FmMainWin* win)
@@ -2300,5 +2320,18 @@ static void on_dual_pane(GtkToggleAction* act, FmMainWin* win)
             }
         }
         win->enable_passive_view = FALSE;
+    }
+}
+
+static void on_show_status(GtkToggleAction *action, FmMainWin *win)
+{
+    gboolean active;
+
+    active = gtk_toggle_action_get_active(action);
+    if (active != app_config->show_statusbar)
+    {
+        app_config->show_statusbar = active;
+        fm_config_emit_changed(fm_config, "show_statusbar");
+        pcmanfm_save_config(FALSE);
     }
 }

@@ -134,6 +134,7 @@ struct _FmAppConfig
     GtkSortType sort_type;
     int sort_by;
 #endif
+    gboolean show_statusbar;
 
     /*char* su_cmd;*/
 
