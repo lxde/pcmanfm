@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-20 22:41+0200\n"
+"POT-Creation-Date: 2013-12-24 04:02+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -309,7 +309,7 @@ msgstr ""
 msgid "Des_ktop"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:48 ../src/main-win-ui.c:189
+#: ../data/ui/pref.glade.h:48 ../src/main-win-ui.c:216
 msgid "_Trash Can"
 msgstr ""
 
@@ -321,7 +321,7 @@ msgstr ""
 msgid "App_lications"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:51 ../src/main-win-ui.c:192
+#: ../data/ui/pref.glade.h:51 ../src/main-win-ui.c:219
 msgid "Dev_ices"
 msgstr ""
 
@@ -350,110 +350,114 @@ msgid "_Show available options for removable media when they are inserted"
 msgstr ""
 
 #: ../data/ui/pref.glade.h:58
-msgid "_Open mounted removable media in new tab instead of new window"
+msgid "Do_n't show available options for those media types:"
 msgstr ""
 
 #: ../data/ui/pref.glade.h:59
-msgid "Clos_e tab containing removable medium when it is unmounted"
+msgid "_Open mounted removable media in new tab instead of new window"
 msgstr ""
 
 #: ../data/ui/pref.glade.h:60
-msgid "_Volume Management"
+msgid "Clos_e tab containing removable medium when it is unmounted"
 msgstr ""
 
 #: ../data/ui/pref.glade.h:61
-msgid "<b>Programs</b>"
+msgid "_Volume Management"
 msgstr ""
 
 #: ../data/ui/pref.glade.h:62
-msgid "<i>Commands below may include extra options if necessary.</i>"
+msgid "<b>Programs</b>"
 msgstr ""
 
 #: ../data/ui/pref.glade.h:63
-msgid "_Terminal emulator:"
+msgid "<i>Commands below may include extra options if necessary.</i>"
 msgstr ""
 
 #: ../data/ui/pref.glade.h:64
+msgid "_Terminal emulator:"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:65
 msgid "_Switch user command:"
 msgstr ""
 
 #. Application command to format some drive
-#: ../data/ui/pref.glade.h:66
+#: ../data/ui/pref.glade.h:67
 msgid "_Format command:"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:67
+#: ../data/ui/pref.glade.h:68
 msgid "A_rchiver integration:"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:68
+#: ../data/ui/pref.glade.h:69
 msgid "<b>Templates</b>"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:69
+#: ../data/ui/pref.glade.h:70
 msgid "S_how only user defined templates in menu"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:70
+#: ../data/ui/pref.glade.h:71
 msgid "Show _only one template for each MIME type"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:71
+#: ../data/ui/pref.glade.h:72
 msgid "Ru_n default application after creation from template"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:72
+#: ../data/ui/pref.glade.h:73
 msgid "<b>Other Options</b>"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:73
+#: ../data/ui/pref.glade.h:74
 msgid "_Use Application Startup Notify by default"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:74
+#: ../data/ui/pref.glade.h:75
 msgid ""
 "If checked then use Startup Notify for application if another not stated "
 "explicitly.\n"
 "If unchecked then use Startup Notify only if that is defined for application."
 msgstr ""
 
-#: ../data/ui/pref.glade.h:76
+#: ../data/ui/pref.glade.h:77
 msgid "D_efer test for content type on folder loading"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:77
+#: ../data/ui/pref.glade.h:78
 msgid "_Advanced"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:78
+#: ../data/ui/pref.glade.h:79
 msgid "Auto (move if on the same FS, copy otherwise)"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:79
+#: ../data/ui/pref.glade.h:80
 msgid "Copy"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:80
+#: ../data/ui/pref.glade.h:81
 msgid "Move"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:81
+#: ../data/ui/pref.glade.h:82
 msgid "Ask"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:82
+#: ../data/ui/pref.glade.h:83
 msgid "Icon View"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:83
+#: ../data/ui/pref.glade.h:84
 msgid "Compact View"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:84
+#: ../data/ui/pref.glade.h:85
 msgid "Thumbnail View"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:85
+#: ../data/ui/pref.glade.h:86
 msgid "Detailed List View"
 msgstr ""
 
@@ -475,6 +479,10 @@ msgstr ""
 
 #: ../data/ui/autorun.glade.h:5
 msgid "Please select the action you want to perform:"
+msgstr ""
+
+#: ../data/ui/autorun.glade.h:6
+msgid "_Always perform this action on this media type"
 msgstr ""
 
 #: ../data/ui/connect.glade.h:1
@@ -521,11 +529,15 @@ msgstr ""
 msgid "WebDAV"
 msgstr ""
 
-#: ../src/volume-manager.c:167
-msgid "Removable Disk"
+#: ../src/volume-manager.c:236
+msgid "mixed content"
 msgstr ""
 
-#: ../src/volume-manager.c:220
+#: ../src/volume-manager.c:245
+msgid "removable disk"
+msgstr ""
+
+#: ../src/volume-manager.c:301
 msgid "Open in File Manager"
 msgstr ""
 
@@ -570,367 +582,383 @@ msgstr ""
 msgid "Desktop"
 msgstr ""
 
-#: ../src/main-win-ui.c:153
+#: ../src/main-win-ui.c:169
 msgid "_File"
 msgstr ""
 
-#: ../src/main-win-ui.c:154
+#: ../src/main-win-ui.c:170
 msgid "_New Window"
 msgstr ""
 
-#: ../src/main-win-ui.c:155
+#: ../src/main-win-ui.c:171
 msgid "New T_ab"
 msgstr ""
 
-#: ../src/main-win-ui.c:155
+#: ../src/main-win-ui.c:171
 msgid "Create new tab for this folder"
 msgstr ""
 
-#: ../src/main-win-ui.c:156
+#: ../src/main-win-ui.c:172
 msgid "C_reate New..."
 msgstr ""
 
-#: ../src/main-win-ui.c:157
-msgid "_Close Tab"
-msgstr ""
-
-#: ../src/main-win-ui.c:158
-msgid "Close _Window"
-msgstr ""
-
-#: ../src/main-win-ui.c:159
-msgid "_Edit"
-msgstr ""
-
-#: ../src/main-win-ui.c:164
-msgid "_Rename"
-msgstr ""
-
-#: ../src/main-win-ui.c:165
-msgid "Create Symlin_k"
-msgstr ""
-
-#: ../src/main-win-ui.c:166
-msgid "_Move To..."
-msgstr ""
-
-#: ../src/main-win-ui.c:167
-msgid "C_opy To..."
-msgstr ""
-
-#: ../src/main-win-ui.c:169
-msgid "_Invert Selection"
-msgstr ""
-
-#: ../src/main-win-ui.c:170
-msgid "Prefere_nces"
-msgstr ""
-
-#: ../src/main-win-ui.c:171
-msgid "_View"
-msgstr ""
-
-#: ../src/main-win-ui.c:172
-msgid "_Reload Folder"
-msgstr ""
-
-#: ../src/main-win-ui.c:172
-msgid "Reload current folder"
-msgstr ""
-
 #: ../src/main-win-ui.c:173
-msgid "Tool_bar"
+msgid "Folder"
 msgstr ""
 
 #: ../src/main-win-ui.c:174
+msgid "Empty File"
+msgstr ""
+
+#: ../src/main-win-ui.c:175
+msgid "_Open Selected Files"
+msgstr ""
+
+#. G_CALLBACK(on_open)
+#: ../src/main-win-ui.c:176
+msgid "Open Current Folder in _Terminal"
+msgstr ""
+
+#: ../src/main-win-ui.c:177
+msgid "Folder Propertie_s"
+msgstr ""
+
+#: ../src/main-win-ui.c:178
+msgid "_Close Tab"
+msgstr ""
+
+#: ../src/main-win-ui.c:179
+msgid "Close _Window"
+msgstr ""
+
+#: ../src/main-win-ui.c:180
+msgid "_Edit"
+msgstr ""
+
+#: ../src/main-win-ui.c:185
+msgid "_Rename..."
+msgstr ""
+
+#: ../src/main-win-ui.c:186
+msgid "D_uplicate..."
+msgstr ""
+
+#: ../src/main-win-ui.c:187
+msgid "Create Symlin_k..."
+msgstr ""
+
+#: ../src/main-win-ui.c:188
+msgid "_Move To..."
+msgstr ""
+
+#: ../src/main-win-ui.c:189
+msgid "C_opy To..."
+msgstr ""
+
+#: ../src/main-win-ui.c:190
+msgid "Propertie_s"
+msgstr ""
+
+#: ../src/main-win-ui.c:192
+msgid "_Invert Selection"
+msgstr ""
+
+#: ../src/main-win-ui.c:194
+msgid "Fin_d Files..."
+msgstr ""
+
+#: ../src/main-win-ui.c:194
+msgid "Open search dialog"
+msgstr ""
+
+#: ../src/main-win-ui.c:196
+msgid "Prefere_nces"
+msgstr ""
+
+#: ../src/main-win-ui.c:197
+msgid "_View"
+msgstr ""
+
+#: ../src/main-win-ui.c:198
+msgid "_Reload Folder"
+msgstr ""
+
+#: ../src/main-win-ui.c:198
+msgid "Reload current folder"
+msgstr ""
+
+#: ../src/main-win-ui.c:199
+msgid "Tool_bar"
+msgstr ""
+
+#: ../src/main-win-ui.c:200
 msgid "Side _Pane"
 msgstr ""
 
 #. other see below: 'ShowHidden' 'ShowStatus' 'Fullscreen' 'IconView'...
-#: ../src/main-win-ui.c:176
+#: ../src/main-win-ui.c:202
+msgid "Fo_lder View Mode"
+msgstr ""
+
+#: ../src/main-win-ui.c:203
 msgid "S_ort Files"
 msgstr ""
 
-#: ../src/main-win-ui.c:177
+#: ../src/main-win-ui.c:204
 msgid "_Zoom In"
 msgstr ""
 
-#: ../src/main-win-ui.c:178
+#: ../src/main-win-ui.c:205
 msgid "Zoom O_ut"
 msgstr ""
 
-#: ../src/main-win-ui.c:179
+#: ../src/main-win-ui.c:206
 msgid "_Normal Size"
 msgstr ""
 
-#: ../src/main-win-ui.c:180
+#: ../src/main-win-ui.c:207
 msgid "_Help"
 msgstr ""
 
-#: ../src/main-win-ui.c:182
+#: ../src/main-win-ui.c:209
 msgid "_Keyboard Navigation"
 msgstr ""
 
-#: ../src/main-win-ui.c:183
+#: ../src/main-win-ui.c:210
 msgid "_Go"
 msgstr ""
 
-#: ../src/main-win-ui.c:184
+#: ../src/main-win-ui.c:211
 msgid "_Previous Folder"
 msgstr ""
 
-#: ../src/main-win-ui.c:184
+#: ../src/main-win-ui.c:211
 msgid "Return to previous folder in history"
 msgstr ""
 
-#: ../src/main-win-ui.c:185
+#: ../src/main-win-ui.c:212
 msgid "_Next Folder"
 msgstr ""
 
-#: ../src/main-win-ui.c:185
+#: ../src/main-win-ui.c:212
 msgid "Go forward to next folder in history"
 msgstr ""
 
-#: ../src/main-win-ui.c:186
+#: ../src/main-win-ui.c:213
 msgid "Pa_rent Folder"
 msgstr ""
 
-#: ../src/main-win-ui.c:186
+#: ../src/main-win-ui.c:213
 msgid "Go to parent Folder"
 msgstr ""
 
-#: ../src/main-win-ui.c:187
+#: ../src/main-win-ui.c:214
 msgid "H_ome Folder"
 msgstr ""
 
-#: ../src/main-win-ui.c:187
+#: ../src/main-win-ui.c:214
 msgid "Go to home folder"
 msgstr ""
 
-#: ../src/main-win-ui.c:188
+#: ../src/main-win-ui.c:215
 msgid "_Desktop"
 msgstr ""
 
-#: ../src/main-win-ui.c:188
+#: ../src/main-win-ui.c:215
 msgid "Go to desktop folder"
 msgstr ""
 
-#: ../src/main-win-ui.c:189
+#: ../src/main-win-ui.c:216
 msgid "Open trash can"
 msgstr ""
 
-#: ../src/main-win-ui.c:190
+#: ../src/main-win-ui.c:217
 msgid "Filesyste_m Root"
 msgstr ""
 
-#: ../src/main-win-ui.c:190
+#: ../src/main-win-ui.c:217
 msgid "Go fo filesystem root"
 msgstr ""
 
-#: ../src/main-win-ui.c:191
+#: ../src/main-win-ui.c:218
 msgid "_Applications"
 msgstr ""
 
-#: ../src/main-win-ui.c:191
+#: ../src/main-win-ui.c:218
 msgid "Go to root of applications menu folder"
 msgstr ""
 
-#: ../src/main-win-ui.c:192
+#: ../src/main-win-ui.c:219
 msgid "Go to list of devices connected to the computer"
 msgstr ""
 
-#: ../src/main-win-ui.c:193
+#: ../src/main-win-ui.c:220
 msgid "Net_work"
 msgstr ""
 
-#: ../src/main-win-ui.c:193
+#: ../src/main-win-ui.c:220
 msgid "Go to list of places on the network"
 msgstr ""
 
-#: ../src/main-win-ui.c:194
+#: ../src/main-win-ui.c:221
 msgid "_Connect to Server..."
 msgstr ""
 
-#: ../src/main-win-ui.c:194
+#: ../src/main-win-ui.c:221
 msgid "Open a window to choose remote folder location"
 msgstr ""
 
-#: ../src/main-win-ui.c:195
+#: ../src/main-win-ui.c:222
 msgid "Go to the path in the location bar"
 msgstr ""
 
-#: ../src/main-win-ui.c:196
+#: ../src/main-win-ui.c:223
 msgid "_Bookmarks"
 msgstr ""
 
-#: ../src/main-win-ui.c:197
+#: ../src/main-win-ui.c:224
 msgid "_Add to Bookmarks"
 msgstr ""
 
-#: ../src/main-win-ui.c:197
+#: ../src/main-win-ui.c:224
 msgid "Add current folder to bookmarks list"
 msgstr ""
 
-#: ../src/main-win-ui.c:198
-msgid "Tool_s"
-msgstr ""
-
-#: ../src/main-win-ui.c:199
-msgid "Open Current Folder in _Terminal"
-msgstr ""
-
-#: ../src/main-win-ui.c:202
-msgid "Fin_d Files..."
-msgstr ""
-
-#: ../src/main-win-ui.c:202
-msgid "Open search dialog"
-msgstr ""
-
-#. for popup menu - these entries exist in FmFolderView popup still
-#: ../src/main-win-ui.c:211
-msgid "Folder"
-msgstr ""
-
-#: ../src/main-win-ui.c:212
-msgid "Empty File"
-msgstr ""
-
 #. Note to translators: "Mingle..." means "Do not put folders before files" but make the translation as short as possible, please!
-#: ../src/main-win-ui.c:220
+#: ../src/main-win-ui.c:240
 msgid "Mingle _Files and Folders"
 msgstr ""
 
-#: ../src/main-win-ui.c:223
+#: ../src/main-win-ui.c:243
 msgid "_Ignore Name Case"
 msgstr ""
 
-#: ../src/main-win-ui.c:225
+#: ../src/main-win-ui.c:245
 msgid "Sho_w Hidden"
 msgstr ""
 
 #. Note to translators: this save is meant for folder's settings such as sort
-#: ../src/main-win-ui.c:227
+#: ../src/main-win-ui.c:247
 msgid "Preserve This Folder's Settings"
 msgstr ""
 
-#: ../src/main-win-ui.c:228
+#: ../src/main-win-ui.c:248
 msgid ""
 "Check to remember view and sort as folder setting rather than global one"
 msgstr ""
 
-#: ../src/main-win-ui.c:230
+#: ../src/main-win-ui.c:250
 msgid "Show _Toolbar"
 msgstr ""
 
-#: ../src/main-win-ui.c:231
+#: ../src/main-win-ui.c:251
 msgid "Show 'Ne_w Tab' Button"
 msgstr ""
 
-#: ../src/main-win-ui.c:232
+#: ../src/main-win-ui.c:252
 msgid "Show _Navigation Buttons"
 msgstr ""
 
-#: ../src/main-win-ui.c:233
+#: ../src/main-win-ui.c:253
 msgid "Show '_Home' Button"
 msgstr ""
 
-#: ../src/main-win-ui.c:234
+#: ../src/main-win-ui.c:254
 msgid "Sho_w Side Pane"
 msgstr ""
 
-#: ../src/main-win-ui.c:235
+#: ../src/main-win-ui.c:255
 msgid "Show Status B_ar"
 msgstr ""
 
-#: ../src/main-win-ui.c:236
+#: ../src/main-win-ui.c:256
 msgid "_Dual Pane Mode"
 msgstr ""
 
-#: ../src/main-win-ui.c:236
+#: ../src/main-win-ui.c:256
 msgid "Show two panels with folder views"
 msgstr ""
 
-#: ../src/main-win-ui.c:237
+#: ../src/main-win-ui.c:257
 msgid "Fullscreen _Mode"
 msgstr ""
 
-#: ../src/main-win-ui.c:243
+#: ../src/main-win-ui.c:263
 msgid "_Icon View"
 msgstr ""
 
-#: ../src/main-win-ui.c:244
+#: ../src/main-win-ui.c:264
 msgid "_Compact View"
 msgstr ""
 
-#: ../src/main-win-ui.c:245
+#: ../src/main-win-ui.c:265
 msgid "_Thumbnail View"
 msgstr ""
 
-#: ../src/main-win-ui.c:246
+#: ../src/main-win-ui.c:266
 msgid "Detailed _List View"
 msgstr ""
 
-#: ../src/main-win-ui.c:259 ../src/main-win-ui.c:264
+#: ../src/main-win-ui.c:279 ../src/main-win-ui.c:284
 msgid "By _Name"
 msgstr ""
 
-#: ../src/main-win-ui.c:260 ../src/main-win-ui.c:265
+#: ../src/main-win-ui.c:280 ../src/main-win-ui.c:285
 msgid "By _Modification Time"
 msgstr ""
 
-#: ../src/main-win-ui.c:261 ../src/main-win-ui.c:266
+#: ../src/main-win-ui.c:281 ../src/main-win-ui.c:286
 msgid "By _Size"
 msgstr ""
 
-#: ../src/main-win-ui.c:262 ../src/main-win-ui.c:267
+#: ../src/main-win-ui.c:282 ../src/main-win-ui.c:287
 msgid "By File _Type"
 msgstr ""
 
-#: ../src/main-win-ui.c:273
+#: ../src/main-win-ui.c:293
 msgid "Places"
 msgstr ""
 
-#: ../src/main-win-ui.c:274
+#: ../src/main-win-ui.c:294
 msgid "Directory Tree"
 msgstr ""
 
-#: ../src/main-win-ui.c:275
+#: ../src/main-win-ui.c:295
 msgid "Remote"
 msgstr ""
 
-#: ../src/main-win.c:704
+#: ../src/main-win.c:752 ../src/main-win.c:756
 msgid "Show history of visited folders"
 msgstr ""
 
-#: ../src/main-win.c:707
+#: ../src/main-win.c:761
 msgid "History"
 msgstr ""
 
-#: ../src/main-win.c:721
+#: ../src/main-win.c:775
 msgid "You are in super user mode"
 msgstr ""
 
-#: ../src/main-win.c:885
+#: ../src/main-win.c:939
 msgid "Lightweight file manager\n"
 msgstr ""
 
-#: ../src/main-win.c:890
+#: ../src/main-win.c:944
 #, c-format
 msgid "using LibFM ver. %s\n"
 msgstr ""
 
-#: ../src/main-win.c:892
+#: ../src/main-win.c:946
 msgid ""
 "\n"
 "Developed by Hon Jen Yee (PCMan)"
 msgstr ""
 
-#: ../src/main-win.c:917 ../src/main-win.c:925
+#: ../src/main-win.c:971 ../src/main-win.c:979
 msgid "Keyboard Navigation"
 msgstr ""
 
-#: ../src/main-win.c:919
+#: ../src/main-win.c:973
 msgid ""
 "Tab: cycle focus Folder View -> Side Pane -> Tools Bar\n"
 "Shift+Tab: cycle focus Tools Bar -> Side Pane -> Folder View\n"
@@ -940,7 +968,7 @@ msgid ""
 "Ctrl+L or Alt+D: jump focus to Path Bar"
 msgstr ""
 
-#: ../src/main-win.c:1522
+#: ../src/main-win.c:1578
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -948,7 +976,7 @@ msgid ""
 "Enter a name for the new bookmark item:"
 msgstr ""
 
-#: ../src/main-win.c:1526
+#: ../src/main-win.c:1582
 msgid "Add to Bookmarks"
 msgstr ""
 
