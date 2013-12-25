@@ -3109,6 +3109,26 @@ static gboolean on_button_press(GtkWidget* w, GdkEventButton* evt)
             self->drag_start_x = evt->x;
             self->drag_start_y = evt->y;
         }
+        else if (self->rubber_bending)
+        {
+            /* LP #1071121: right click stops rubberbanding but
+               leaves the selection area on the desktop.
+               To avoid that weird thing we reset and stop rubberbanding now */
+            /* re-enable Gtk+ DnD callbacks again */
+            gpointer drag_data = g_object_get_data(G_OBJECT(self),
+                                    g_intern_static_string("gtk-site-data"));
+            if(G_LIKELY(drag_data != NULL))
+            {
+                g_signal_handlers_unblock_matched(G_OBJECT(self), G_SIGNAL_MATCH_DATA,
+                                                  0, 0, NULL, NULL, drag_data);
+            }
+            /* reset the selection area and stop rubberbanding */
+            self->rubber_bending_x = evt->x;
+            self->rubber_bending_y = evt->y;
+            update_rubberbanding(self, evt->x, evt->y);
+            gtk_grab_remove(w);
+            self->rubber_bending = FALSE;
+        }
 
         /* if ctrl / shift is not pressed, deselect all. */
         /* FIXME: do [un]selection on button release */
