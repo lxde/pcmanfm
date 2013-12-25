@@ -583,6 +583,14 @@ static void on_side_pane_mode_changed(FmSidePane* sp, FmMainWin* win)
     }
 }
 
+static void on_always_show_tabs_changed(FmAppConfig *cfg, FmMainWin *win)
+{
+    /* it will affect only the case when window has exactly 1 tab,
+       all other cases will be handled when tab is added or removed */
+    if (gtk_notebook_get_n_pages(win->notebook) == 1)
+        gtk_notebook_set_show_tabs(win->notebook, app_config->always_show_tabs);
+}
+
 static void on_toolsbar_changed(FmAppConfig *cfg, FmMainWin *win)
 {
     GtkAction* act;
@@ -851,6 +859,8 @@ static void fm_main_win_init(FmMainWin *win)
     g_signal_connect(win->notebook, "page-removed", G_CALLBACK(on_notebook_page_removed), win);
 
     gtk_box_pack_start(vbox, GTK_WIDGET(win->notebook), TRUE, TRUE, 0);
+    g_signal_connect(app_config, "changed::always_show_tabs",
+                     G_CALLBACK(on_always_show_tabs_changed), win);
 
     /* status bar */
     win->statusbar = (GtkStatusbar*)gtk_statusbar_new();
@@ -918,6 +928,7 @@ static void fm_main_win_destroy(GtkObject *object)
         g_signal_handlers_disconnect_by_func(win->notebook, on_notebook_page_removed, win);
         g_signal_handlers_disconnect_by_func(app_config, on_toolsbar_changed, win);
         g_signal_handlers_disconnect_by_func(app_config, on_statusbar_changed, win);
+        g_signal_handlers_disconnect_by_func(app_config, on_always_show_tabs_changed, win);
 
         gtk_window_group_remove_window(win->win_group, GTK_WINDOW(win));
         g_object_unref(win->win_group);
