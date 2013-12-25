@@ -75,6 +75,7 @@ struct _FmBackgroundCache
     GdkPixmap *bg;
 #endif
     FmWallpaperMode wallpaper_mode;
+    time_t mtime;
 };
 
 static void queue_layout_items(FmDesktop* desktop);
@@ -2034,10 +2035,17 @@ static void update_background(FmDesktop* desktop, int is_it)
 
     if(desktop->conf.wallpaper_mode != FM_WP_COLOR && wallpaper && *wallpaper)
     {
+        struct stat st; /* for mtime */
+
+        /* bug #3613571 - replacing the file will not affect the desktop
+           we will call stat on each desktop change but it's inevitable */
+        if (stat(wallpaper, &st) < 0)
+            st.st_mtime = 0;
         for(cache = desktop->cache; cache; cache = cache->next)
             if(strcmp(wallpaper, cache->filename) == 0)
                 break;
-        if(cache && cache->wallpaper_mode == desktop->conf.wallpaper_mode)
+        if(cache && cache->wallpaper_mode == desktop->conf.wallpaper_mode
+           && st.st_mtime == cache->mtime)
             pix = NULL; /* no new pix for it */
         else if((pix = gdk_pixbuf_new_from_file(wallpaper, NULL)))
         {
@@ -2064,6 +2072,7 @@ static void update_background(FmDesktop* desktop, int is_it)
                 desktop->cache = cache = g_new0(FmBackgroundCache, 1);
             if(!cache->filename)
                 cache->filename = g_strdup(wallpaper);
+            cache->mtime = st.st_mtime;
             g_debug("adding new FmBackgroundCache for %s", wallpaper);
         }
         else
