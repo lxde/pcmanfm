@@ -61,6 +61,7 @@ struct _FmDesktopItem
     gboolean is_special : 1; /* is this a special item like "My Computer", mounted volume, or "Trash" */
     gboolean is_mount : 1; /* is this a mounted volume*/
     gboolean is_selected : 1;
+    gboolean is_rubber_banded : 1;
     gboolean is_prelight : 1;
     gboolean fixed_pos : 1;
 };
@@ -1915,12 +1916,15 @@ static void update_rubberbanding(FmDesktop* self, int newx, int newy)
         else
             selected = FALSE;
 
-        if(item->is_selected != selected)
+        /* we cannot compare booleans, TRUE may be 1 or -1 */
+        if ((item->is_rubber_banded && !selected) ||
+            (!item->is_rubber_banded && selected))
         {
             item->is_selected = selected;
             redraw_item(self, item);
             fm_desktop_item_selected_changed(self, item);
         }
+        item->is_rubber_banded = self->rubber_bending && selected;
     }
     while(gtk_tree_model_iter_next(model, &it));
 }
@@ -3132,11 +3136,9 @@ static gboolean on_button_press(GtkWidget* w, GdkEventButton* evt)
                                                   0, 0, NULL, NULL, drag_data);
             }
             /* reset the selection area and stop rubberbanding */
-            self->rubber_bending_x = evt->x;
-            self->rubber_bending_y = evt->y;
-            update_rubberbanding(self, evt->x, evt->y);
-            gtk_grab_remove(w);
             self->rubber_bending = FALSE;
+            update_rubberbanding(self, self->drag_start_x, self->drag_start_y);
+            gtk_grab_remove(w);
         }
 
         /* if ctrl / shift is not pressed, deselect all. */
@@ -3252,9 +3254,9 @@ static gboolean on_button_release(GtkWidget* w, GdkEventButton* evt)
             g_signal_handlers_unblock_matched(G_OBJECT(self), G_SIGNAL_MATCH_DATA,
                                               0, 0, NULL, NULL, drag_data);
         }
+        self->rubber_bending = FALSE;
         update_rubberbanding(self, evt->x, evt->y);
         gtk_grab_remove(w);
-        self->rubber_bending = FALSE;
     }
     else if(self->dragging)
     {
