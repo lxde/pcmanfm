@@ -3105,6 +3105,21 @@ static void on_size_request(GtkWidget* w, GtkRequisition* req)
 }
 #endif
 
+static void _stop_rubberbanding(FmDesktop *self, gint x, gint y)
+{
+    /* re-enable Gtk+ DnD callbacks again */
+    gpointer drag_data = g_object_get_data(G_OBJECT(self),
+                            g_intern_static_string("gtk-site-data"));
+    if(G_LIKELY(drag_data != NULL))
+    {
+        g_signal_handlers_unblock_matched(G_OBJECT(self), G_SIGNAL_MATCH_DATA,
+                                          0, 0, NULL, NULL, drag_data);
+    }
+    self->rubber_bending = FALSE;
+    update_rubberbanding(self, x, y);
+    gtk_grab_remove(GTK_WIDGET(self));
+}
+
 static gboolean on_button_press(GtkWidget* w, GdkEventButton* evt)
 {
     FmDesktop* self = (FmDesktop*)w;
@@ -3127,18 +3142,7 @@ static gboolean on_button_press(GtkWidget* w, GdkEventButton* evt)
             /* LP #1071121: right click stops rubberbanding but
                leaves the selection area on the desktop.
                To avoid that weird thing we reset and stop rubberbanding now */
-            /* re-enable Gtk+ DnD callbacks again */
-            gpointer drag_data = g_object_get_data(G_OBJECT(self),
-                                    g_intern_static_string("gtk-site-data"));
-            if(G_LIKELY(drag_data != NULL))
-            {
-                g_signal_handlers_unblock_matched(G_OBJECT(self), G_SIGNAL_MATCH_DATA,
-                                                  0, 0, NULL, NULL, drag_data);
-            }
-            /* reset the selection area and stop rubberbanding */
-            self->rubber_bending = FALSE;
-            update_rubberbanding(self, self->drag_start_x, self->drag_start_y);
-            gtk_grab_remove(w);
+            _stop_rubberbanding(self, self->drag_start_x, self->drag_start_y);
         }
 
         /* if ctrl / shift is not pressed, deselect all. */
@@ -3246,17 +3250,7 @@ static gboolean on_button_release(GtkWidget* w, GdkEventButton* evt)
 
     if(self->rubber_bending)
     {
-        /* re-enable Gtk+ DnD callbacks again */
-        gpointer drag_data = g_object_get_data(G_OBJECT(self),
-                                    g_intern_static_string("gtk-site-data"));
-        if(G_LIKELY(drag_data != NULL))
-        {
-            g_signal_handlers_unblock_matched(G_OBJECT(self), G_SIGNAL_MATCH_DATA,
-                                              0, 0, NULL, NULL, drag_data);
-        }
-        self->rubber_bending = FALSE;
-        update_rubberbanding(self, evt->x, evt->y);
-        gtk_grab_remove(w);
+        _stop_rubberbanding(self, evt->x, evt->y);
     }
     else if(self->dragging)
     {
@@ -3435,6 +3429,14 @@ static gboolean on_key_press(GtkWidget* w, GdkEventKey* evt)
     GtkTreeIter it;
     switch (evt->keyval)
     {
+    case GDK_KEY_Escape:
+        if (desktop->rubber_bending)
+        {
+            /* cancel rubberbanding now */
+            _stop_rubberbanding(desktop, desktop->drag_start_x, desktop->drag_start_y);
+            return TRUE;
+        }
+        break;
     case GDK_KEY_Left:
         item = get_nearest_item(desktop, desktop->focus, GTK_DIR_LEFT);
         if(item)
@@ -3448,7 +3450,6 @@ static gboolean on_key_press(GtkWidget* w, GdkEventKey* evt)
             set_focused_item(desktop, item);
         }
         return TRUE;
-        break;
     case GDK_KEY_Right:
         item = get_nearest_item(desktop, desktop->focus, GTK_DIR_RIGHT);
         if(item)
@@ -3462,7 +3463,6 @@ static gboolean on_key_press(GtkWidget* w, GdkEventKey* evt)
             set_focused_item(desktop, item);
         }
         return TRUE;
-        break;
     case GDK_KEY_Up:
         item = get_nearest_item(desktop, desktop->focus, GTK_DIR_UP);
         if(item)
@@ -3476,7 +3476,6 @@ static gboolean on_key_press(GtkWidget* w, GdkEventKey* evt)
             set_focused_item(desktop, item);
         }
         return TRUE;
-        break;
     case GDK_KEY_Down:
         item = get_nearest_item(desktop, desktop->focus, GTK_DIR_DOWN);
         if(item)
@@ -3490,7 +3489,6 @@ static gboolean on_key_press(GtkWidget* w, GdkEventKey* evt)
             set_focused_item(desktop, item);
         }
         return TRUE;
-        break;
     case GDK_KEY_space:
         if(modifier & GDK_CONTROL_MASK)
         {
@@ -3509,6 +3507,7 @@ static gboolean on_key_press(GtkWidget* w, GdkEventKey* evt)
         {
             fm_rename_file(GTK_WINDOW(desktop), fm_path_list_peek_head(sels));
             fm_path_list_unref(sels);
+            return TRUE;
         }
         break;
     case GDK_KEY_Return:
@@ -3524,6 +3523,7 @@ static gboolean on_key_press(GtkWidget* w, GdkEventKey* evt)
                 if(tp)
                     gtk_tree_path_free(tp);
             }
+            return TRUE;
         }
         break;
     }
