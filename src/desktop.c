@@ -3527,7 +3527,9 @@ static gboolean on_key_press(GtkWidget* w, GdkEventKey* evt)
         }
         break;
     }
-    return GTK_WIDGET_CLASS(fm_desktop_parent_class)->key_press_event(w, evt);
+    if (GTK_WIDGET_CLASS(fm_desktop_parent_class)->key_press_event(w, evt))
+        return TRUE;
+    return FALSE;
 }
 
 #if 0
@@ -4624,7 +4626,8 @@ void fm_desktop_manager_init(gint on_screen)
             desktops[i++] = desktop;
             if(mon_init < 0)
                 continue;
-            load_items(desktop);
+            /* realize it: without this, setting wallpaper or font won't work */
+            gtk_widget_realize(widget);
             /* setup desktop->conf now if it wasn't loaded above */
             if (!desktop->conf.configured)
             {
@@ -4650,7 +4653,7 @@ void fm_desktop_manager_init(gint on_screen)
                                                  desktop->conf.desktop_sort_by,
                                                  desktop->conf.desktop_sort_type);
 #endif
-            gtk_widget_realize(widget);  /* without this, setting wallpaper won't work */
+            load_items(desktop);
             gtk_widget_show_all(widget);
             gdk_window_lower(gtk_widget_get_window(widget));
         }
