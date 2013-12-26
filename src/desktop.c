@@ -226,16 +226,33 @@ static void calc_item_size(FmDesktop* desktop, FmDesktopItem* item, GdkPixbuf* i
     item->area.height = item->icon_rect.height + rc2.y + item->text_rect.height;
 }
 
+/* unfortunately we cannot load the "*" together with items because
+   otherwise we will update pango layout on each load_items() which
+   is resource wasting so we load config file once more instead */
+static inline void load_config(FmDesktop* desktop)
+{
+    char* path;
+    GKeyFile* kf;
+
+    path = get_config_file(desktop, FALSE);
+    if(!path)
+        return;
+    kf = g_key_file_new();
+    if(g_key_file_load_from_file(kf, path, 0, NULL))
+        /* item "*" is desktop config */
+        fm_app_config_load_desktop_config(kf, "*", &desktop->conf);
+    g_free(path);
+    g_key_file_free(kf);
+}
+
 static inline void load_items(FmDesktop* desktop)
 {
     GtkTreeIter it;
     char* path;
     GtkTreeModel* model = GTK_TREE_MODEL(desktop->model);
     GKeyFile* kf;
-    gboolean got_items;
 
-    got_items = gtk_tree_model_get_iter_first(model, &it);
-    if(!got_items && desktop->conf.configured)
+    if (!gtk_tree_model_get_iter_first(model, &it))
         return;
     path = get_config_file(desktop, FALSE);
     if(!path)
@@ -243,7 +260,7 @@ static inline void load_items(FmDesktop* desktop)
     kf = g_key_file_new();
     if(g_key_file_load_from_file(kf, path, 0, NULL))
     {
-        if (got_items) do
+        do
         {
             FmDesktopItem* item;
             const char* name;
@@ -264,8 +281,6 @@ static inline void load_items(FmDesktop* desktop)
             }
         }
         while(gtk_tree_model_iter_next(model, &it));
-        /* item "*" is desktop config */
-        fm_app_config_load_desktop_config(kf, "*", &desktop->conf);
     }
     g_free(path);
     g_key_file_free(kf);
@@ -4628,6 +4643,7 @@ void fm_desktop_manager_init(gint on_screen)
                 continue;
             /* realize it: without this, setting wallpaper or font won't work */
             gtk_widget_realize(widget);
+            load_config(desktop);
             /* setup desktop->conf now if it wasn't loaded above */
             if (!desktop->conf.configured)
             {
