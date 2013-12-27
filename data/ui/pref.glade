@@ -401,8 +401,9 @@
                                             <property name="can_focus">True</property>
                                             <property name="receives_default">False</property>
                                             <property name="tooltip_text" translatable="yes">If enabled then "Auto" action on drop file onto Desktop folder will be:
-- for files on internal drives a symlink will be created
-- files on removable media will be copied
+- for files directly in Home folder a symlink will be created
+- files on the same file system will be moved
+- other files (e.g. on removable media) will be copied
 - for some external URI a shortcut will be created</property>
                                             <property name="use_action_appearance">False</property>
                                             <property name="use_underline">True</property>
