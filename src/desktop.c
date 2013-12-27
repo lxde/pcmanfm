@@ -4356,6 +4356,14 @@ static void on_wallpaper_mode_changed(GtkComboBox* combo, FmDesktop *desktop)
     }
 }
 
+static void on_wallpaper_mode_changed2(GtkComboBox *combo, GtkWidget *wallpaper_box)
+{
+    /* update the box */
+    if (wallpaper_box)
+        gtk_widget_set_sensitive(wallpaper_box,
+                                 gtk_combo_box_get_active(combo) != FM_WP_COLOR);
+}
+
 static void on_bg_color_set(GtkColorButton *btn, FmDesktop *desktop)
 {
     GdkColor new_val;
@@ -4539,6 +4547,15 @@ void fm_desktop_preference(GtkAction *act, FmDesktop *desktop)
         item = gtk_builder_get_object(builder, "wallpaper_mode");
         gtk_combo_box_set_active(GTK_COMBO_BOX(item), desktop->conf.wallpaper_mode);
         g_signal_connect(item, "changed", G_CALLBACK(on_wallpaper_mode_changed), desktop);
+        item = gtk_builder_get_object(builder, "wallpaper_box");
+        if (item)
+        {
+            g_signal_connect(gtk_builder_get_object(builder, "wallpaper_mode"),
+                             "changed", G_CALLBACK(on_wallpaper_mode_changed2),
+                             item);
+            gtk_widget_set_sensitive(GTK_WIDGET(item),
+                                     desktop->conf.wallpaper_mode != FM_WP_COLOR);
+        }
         item = gtk_builder_get_object(builder, "desktop_bg");
         gtk_color_button_set_color(GTK_COLOR_BUTTON(item), &desktop->conf.desktop_bg);
         g_signal_connect(item, "color-set", G_CALLBACK(on_bg_color_set), desktop);
