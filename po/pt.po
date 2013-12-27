@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: pcmanfm 1.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-12-27 13:13+0200\n"
-"PO-Revision-Date: 2013-12-27 15:50+0000\n"
-"Last-Translator: Sérgio <smarquespt@gmail.com>\n"
+"PO-Revision-Date: 2013-12-27 16:05-0000\n"
+"Last-Translator: Sérgio Marques <smarquespt@gmail.com>\n"
 "Language-Team: \n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.5.0\n"
+"X-Generator: Poedit 1.6.3\n"
 "X-POOTLE-MTIME: 1388159441.0\n"
 
 #: ../data/ui/about.glade.in.h:1
@@ -133,7 +133,7 @@ msgstr "Centrar no ecrã"
 
 #: ../data/ui/desktop-pref.glade.h:26
 msgid "Tile the image to fill the entire screen"
-msgstr "Ladrilhar imagem para preencher totalmente o ecrã"
+msgstr "Imagem lado a lado para preencher totalmente o ecrã"
 
 #: ../data/ui/pref.glade.h:1
 msgid "Open in current tab"
@@ -217,7 +217,7 @@ msgstr ""
 
 #: ../data/ui/pref.glade.h:21
 msgid "<b>Default View</b>"
-msgstr "<b>Visualização pré-definida</b>"
+msgstr "<b>Vista pré-definida</b>"
 
 #: ../data/ui/pref.glade.h:22
 msgid "Vie_w Mode:"
@@ -395,7 +395,7 @@ msgstr "Emulador de _terminal:"
 
 #: ../data/ui/pref.glade.h:66
 msgid "_Switch user command:"
-msgstr "Comando para trocar de utili_zador:"
+msgstr "Comando para troca de utili_zador:"
 
 #. Application command to format some drive
 #: ../data/ui/pref.glade.h:68
@@ -428,7 +428,7 @@ msgstr "<b>Outras opções</b>"
 
 #: ../data/ui/pref.glade.h:75
 msgid "_Use Application Startup Notify by default"
-msgstr "Por definição, _utilizar notificação ao arrancar aplicações"
+msgstr "_Utilizar notificação ao arrancar aplicações"
 
 #: ../data/ui/pref.glade.h:76
 msgid ""
@@ -497,7 +497,7 @@ msgstr "Tipo de disco:"
 
 #: ../data/ui/autorun.glade.h:4
 msgid "Detecting..."
-msgstr "A detetar..."
+msgstr "Deteção..."
 
 #: ../data/ui/autorun.glade.h:5
 msgid "Please select the action you want to perform:"
@@ -513,7 +513,7 @@ msgstr "Ligar a um servidor remoto"
 
 #: ../data/ui/connect.glade.h:2
 msgid "<b>Specify remote folder to connect</b>"
-msgstr "<b>Especifique a pasta remota para ligação</b>"
+msgstr "<b>Especifique a pasta remota da ligação</b>"
 
 #: ../data/ui/connect.glade.h:3
 msgid "_Type:"
@@ -537,7 +537,7 @@ msgstr "_Autenticação anónima"
 
 #: ../data/ui/connect.glade.h:8
 msgid "_Login as:"
-msgstr "Iniciar sessão _como:"
+msgstr "Sessão _como:"
 
 #: ../data/ui/connect.glade.h:9
 msgid "SSH"
@@ -723,7 +723,7 @@ msgstr "_Painel lateral"
 #. other see below: 'ShowHidden' 'ShowStatus' 'Fullscreen' 'IconView'...
 #: ../src/main-win-ui.c:202
 msgid "Fo_lder View Mode"
-msgstr ""
+msgstr "Vista de _pastas"
 
 #: ../src/main-win-ui.c:203
 msgid "S_ort Files"
@@ -739,7 +739,7 @@ msgstr "Red_uzir"
 
 #: ../src/main-win-ui.c:206
 msgid "_Normal Size"
-msgstr ""
+msgstr "Tamanho _normal"
 
 #: ../src/main-win-ui.c:207
 msgid "_Help"
@@ -852,34 +852,35 @@ msgstr "Adicionar pasta atual aos marcadores"
 #. Note to translators: "Mingle..." means "Do not put folders before files" but make the translation as short as possible, please!
 #: ../src/main-win-ui.c:240
 msgid "Mingle _Files and Folders"
-msgstr ""
+msgstr "Combinar _ficheiros e pastas"
 
 #: ../src/main-win-ui.c:243
 msgid "_Ignore Name Case"
 msgstr ""
 
 #: ../src/main-win-ui.c:245
-#, fuzzy
 msgid "Sho_w Hidden"
 msgstr "Mostrar oc_ultos"
 
 #. Note to translators: this save is meant for folder's settings such as sort
 #: ../src/main-win-ui.c:247
 msgid "Preserve This Folder's Settings"
-msgstr ""
+msgstr "Manter definições desta pasta"
 
 #: ../src/main-win-ui.c:248
 msgid ""
 "Check to remember view and sort as folder setting rather than global one"
 msgstr ""
+"Assinale para memorizar a vista e ordenar por pasta em vez da ordenação "
+"global"
 
 #: ../src/main-win-ui.c:250
 msgid "Show _Toolbar"
-msgstr ""
+msgstr "Mos_trar barra de ferramentas"
 
 #: ../src/main-win-ui.c:251
 msgid "Show 'Ne_w Tab' Button"
-msgstr ""
+msgstr "Mostrar botão \"Novo _separador\""
 
 #: ../src/main-win-ui.c:252
 msgid "Show _Navigation Buttons"
@@ -887,11 +888,11 @@ msgstr "Mostrar botões de _navegação"
 
 #: ../src/main-win-ui.c:253
 msgid "Show '_Home' Button"
-msgstr ""
+msgstr "Mostrar botão \"_Pasta pessoal\""
 
 #: ../src/main-win-ui.c:254
 msgid "Sho_w Side Pane"
-msgstr "Mo_strar painel lateral"
+msgstr "Mostrar painel _lateral"
 
 #: ../src/main-win-ui.c:255
 msgid "Show Status B_ar"
@@ -899,11 +900,11 @@ msgstr "Mostr_ar barra de estado"
 
 #: ../src/main-win-ui.c:256
 msgid "_Dual Pane Mode"
-msgstr ""
+msgstr "Modo de dois painéis"
 
 #: ../src/main-win-ui.c:256
 msgid "Show two panels with folder views"
-msgstr ""
+msgstr "Mostrar dois painéis na vista de pastas"
 
 #: ../src/main-win-ui.c:257
 msgid "Fullscreen _Mode"
@@ -995,7 +996,8 @@ msgid ""
 "F10: activate main menu\n"
 "Ctrl+L or Alt+D: jump focus to Path Bar"
 msgstr ""
-"Tab: alterar entre Vista de pastas -> Painel lateral -> Barra de ferramentas\n"
+"Tab: alterar entre Vista de pastas -> Painel lateral -> Barra de "
+"ferramentas\n"
 "Shift+Tab: alterar entre Barra de ferramentas -> Painel lateral -> Vista de "
 "pastas\n"
 "F6: alterar entre Painel lateral <-> Vista de pastas\n"
@@ -1063,7 +1065,7 @@ msgstr "Ficheiro"
 #. don't translate list of modes in description, please
 #: ../src/pcmanfm.c:89
 msgid "Set mode of desktop wallpaper. MODE=(color|stretch|fit|center|tile)"
-msgstr "Definir o modo do papel de parede. Modo=(color|stretch|fit|center|tile)"
+msgstr "Definir modo do papel de parede. Modo=(color|stretch|fit|center|tile)"
 
 #: ../src/pcmanfm.c:89
 msgid "MODE"
@@ -1145,8 +1147,7 @@ msgstr "Explorar o sistema de ficheiros e gerir ficheiros"
 
 #: ../data/pcmanfm-desktop-pref.desktop.in.h:2
 msgid "Change desktop wallpapers and behavior of desktop manager"
-msgstr ""
-"Alterar o papel de parede e o comportamento do gestor de áreas de trabalho"
+msgstr "Mudar papel de parede e comportamento do gestor de áreas de trabalho"
 
 #~ msgid "Opened in Current Tab"
 #~ msgstr "Abrir no separador atual"
