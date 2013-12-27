@@ -52,6 +52,9 @@
 #define PADDING 6
 #define MARGIN  2
 
+/* the search dialog timeout (in ms) */
+#define DESKTOP_SEARCH_DIALOG_TIMEOUT (5000)
+
 struct _FmDesktopItem
 {
     FmFileInfo* fi;
@@ -3433,6 +3436,426 @@ static gboolean get_focused_item(FmDesktopItem* focus, GtkTreeModel* model, GtkT
     return FALSE;
 }
 
+/* ---- Interactive search funcs: mostly picked from ExoIconView ---- */
+
+/* Cut and paste from gtkwindow.c & gtkwidget.c */
+static void send_focus_change(GtkWidget *widget, gboolean in)
+{
+  GdkEvent *fevent = gdk_event_new (GDK_FOCUS_CHANGE);
+
+  fevent->focus_change.type = GDK_FOCUS_CHANGE;
+  fevent->focus_change.window = g_object_ref (gtk_widget_get_window (widget));
+  fevent->focus_change.in = in;
+
+#if GTK_CHECK_VERSION(2, 22, 0)
+  gtk_widget_send_focus_change (widget, fevent);
+#else
+  g_object_ref (widget);
+  if (in)
+    GTK_OBJECT_FLAGS (widget) |= GTK_HAS_FOCUS;
+  else
+    GTK_OBJECT_FLAGS (widget) &= ~(GTK_HAS_FOCUS);
+  gtk_widget_event (widget, fevent);
+  g_object_notify (G_OBJECT (widget), "has-focus");
+  g_object_unref (widget);
+#endif
+
+  gdk_event_free (fevent);
+}
+
+static void desktop_search_dialog_hide(GtkWidget *search_dialog, FmDesktop *desktop)
+{
+    /* disconnect the "changed" signal handler */
+    if (desktop->search_entry_changed_id != 0)
+    {
+        g_signal_handler_disconnect(desktop->search_entry, desktop->search_entry_changed_id);
+        desktop->search_entry_changed_id = 0;
+    }
+
+    /* disable the flush timeout */
+    if (desktop->search_timeout_id != 0)
+    {
+        g_source_remove(desktop->search_timeout_id);
+        desktop->search_timeout_id = 0;
+    }
+
+    /* send focus-out event */
+    send_focus_change(desktop->search_entry, FALSE);
+    gtk_widget_hide(search_dialog);
+    gtk_entry_set_text(GTK_ENTRY(desktop->search_entry), "");
+}
+
+static gboolean desktop_search_delete_event(GtkWidget *widget, GdkEventAny *evt,
+                                            FmDesktop *desktop)
+{
+    /* hide the search dialog */
+    desktop_search_dialog_hide(widget, desktop);
+    return TRUE;
+}
+
+static gboolean desktop_search_timeout(gpointer user_data)
+{
+    FmDesktop *desktop = FM_DESKTOP(user_data);
+
+    if (!g_source_is_destroyed(g_main_current_source()))
+        desktop_search_dialog_hide(desktop->search_window, desktop);
+    return FALSE;
+}
+
+static void desktop_search_timeout_destroy(gpointer user_data)
+{
+    FM_DESKTOP(user_data)->search_timeout_id = 0;
+}
+
+static void desktop_search_move(GtkWidget *widget, FmDesktop *desktop,
+                                gboolean move_up)
+{
+    GtkTreeModel *model;
+    const gchar *text;
+    char *casefold, *key, *name;
+    FmDesktopItem *item;
+    GtkTreeIter it;
+    gboolean found = FALSE;
+
+    /* check if we have a model */
+    if (desktop->model == NULL)
+        return;
+    model = GTK_TREE_MODEL(desktop->model);
+
+    /* determine the current text for the search entry */
+    text = gtk_entry_get_text(GTK_ENTRY(desktop->search_entry));
+    if (G_UNLIKELY(text == NULL || text[0] == '\0'))
+        return;
+
+    /* determine the iterator of the focused item */
+    if (!get_focused_item(desktop->focus, model, &it))
+        return;
+
+    /* normalize the pattern */
+    casefold = g_utf8_casefold(text, -1);
+    key = g_utf8_normalize(casefold, -1, G_NORMALIZE_ALL);
+    g_free(casefold);
+    /* let find matched item now */
+    if (move_up)
+    {
+#if GTK_CHECK_VERSION(3, 0, 0)
+        while (!found && gtk_tree_model_iter_previous(model, &it))
+#else
+        GtkTreePath *tp = gtk_tree_model_get_path(model, &it);
+        while (!found && gtk_tree_path_prev(tp) && gtk_tree_model_get_iter(model, &it, tp))
+#endif
+        {
+            item = fm_folder_model_get_item_userdata(desktop->model, &it);
+            casefold = g_utf8_casefold(fm_file_info_get_disp_name(item->fi), -1);
+            name = g_utf8_normalize(casefold, -1, G_NORMALIZE_ALL);
+            g_free(casefold);
+            found = (strncmp(name, key, strlen(key)) == 0);
+            g_free(name);
+        }
+#if !GTK_CHECK_VERSION(3, 0, 0)
+        gtk_tree_path_free(tp);
+#endif
+    }
+    else
+    {
+        while (!found && gtk_tree_model_iter_next(model, &it))
+        {
+            item = fm_folder_model_get_item_userdata(desktop->model, &it);
+            casefold = g_utf8_casefold(fm_file_info_get_disp_name(item->fi), -1);
+            name = g_utf8_normalize(casefold, -1, G_NORMALIZE_ALL);
+            g_free(casefold);
+            found = (strncmp(name, key, strlen(key)) == 0);
+            g_free(name);
+        }
+    }
+    g_free(key);
+
+    if (!found)
+        return;
+
+    /* unselect all items */
+    _unselect_all(FM_FOLDER_VIEW(desktop));
+    /* focus found item */
+    item->is_selected = TRUE;
+    fm_desktop_item_selected_changed(desktop, item);
+    set_focused_item(desktop, item);
+}
+
+static gboolean desktop_search_scroll_event(GtkWidget *widget,
+                                            GdkEventScroll *evt,
+                                            FmDesktop *desktop)
+{
+    g_return_val_if_fail(GTK_IS_WIDGET(widget), FALSE);
+    g_return_val_if_fail(FM_IS_DESKTOP(desktop), FALSE);
+
+    if (evt->direction == GDK_SCROLL_UP)
+        desktop_search_move(widget, desktop, TRUE);
+    else if (evt->direction == GDK_SCROLL_DOWN)
+        desktop_search_move(widget, desktop, FALSE);
+    else
+        return FALSE;
+
+    return TRUE;
+}
+
+static void desktop_search_update_timeout(FmDesktop *desktop)
+{
+    if (desktop->search_timeout_id == 0)
+        return;
+    /* drop the previous timeout */
+    g_source_remove(desktop->search_timeout_id);
+    /* schedule a new timeout */
+    desktop->search_timeout_id = gdk_threads_add_timeout_full(G_PRIORITY_LOW,
+                                                              DESKTOP_SEARCH_DIALOG_TIMEOUT,
+                                                              desktop_search_timeout,
+                                                              desktop,
+                                                              desktop_search_timeout_destroy);
+}
+
+static gboolean desktop_search_key_press_event(GtkWidget *widget,
+                                               GdkEventKey *evt,
+                                               FmDesktop *desktop)
+{
+    g_return_val_if_fail(GTK_IS_WIDGET(widget), FALSE);
+    g_return_val_if_fail(FM_IS_DESKTOP(desktop), FALSE);
+
+    /* close window and cancel the search */
+    if (evt->keyval == GDK_KEY_Escape || evt->keyval == GDK_KEY_Tab)
+        desktop_search_dialog_hide(widget, desktop);
+
+    /* select previous matching iter */
+    else if (evt->keyval == GDK_KEY_Up || evt->keyval == GDK_KEY_KP_Up)
+        desktop_search_move(widget, desktop, TRUE);
+
+    else if (((evt->state & (GDK_CONTROL_MASK | GDK_SHIFT_MASK)) == (GDK_CONTROL_MASK | GDK_SHIFT_MASK))
+             && (evt->keyval == GDK_KEY_g || evt->keyval == GDK_KEY_G))
+        desktop_search_move(widget, desktop, TRUE);
+
+    /* select next matching iter */
+    else if (evt->keyval == GDK_KEY_Down || evt->keyval == GDK_KEY_KP_Down)
+        desktop_search_move(widget, desktop, FALSE);
+
+    else if (((evt->state & (GDK_CONTROL_MASK | GDK_SHIFT_MASK)) == GDK_CONTROL_MASK)
+             && (evt->keyval == GDK_KEY_g || evt->keyval == GDK_KEY_G))
+        desktop_search_move(widget, desktop, FALSE);
+
+    else
+        return FALSE;
+
+    /* renew the flush timeout */
+    desktop_search_update_timeout(desktop);
+
+    return TRUE;
+}
+
+static void desktop_search_activate(GtkEntry *entry, FmDesktop *desktop)
+{
+    GtkTreeModel *model;
+    GtkTreePath *tp;
+    GtkTreeIter it;
+
+    /* hide the interactive search dialog */
+    desktop_search_dialog_hide(desktop->search_window, desktop);
+
+    /* check if we have a cursor item, and if so, activate it */
+    if (desktop->focus)
+    {
+        /* only activate the cursor item if it's selected */
+        if (desktop->focus->is_selected)
+        {
+            model = GTK_TREE_MODEL(desktop->model);
+            if(get_focused_item(desktop->focus, model, &it))
+            {
+                tp = gtk_tree_model_get_path(model, &it);
+                fm_folder_view_item_clicked(FM_FOLDER_VIEW(desktop), tp, FM_FV_ACTIVATED);
+                if(tp)
+                    gtk_tree_path_free(tp);
+            }
+        }
+    }
+}
+
+#if GTK_CHECK_VERSION(2, 20, 0)
+static void desktop_search_preedit_changed(GtkEntry *entry, gchar *preedit,
+                                           FmDesktop *desktop)
+#else
+static void desktop_search_preedit_changed(GtkIMContext *im_context,
+                                           FmDesktop *desktop)
+#endif
+{
+    desktop->search_imcontext_changed = TRUE;
+
+    /* re-register the search timeout */
+    desktop_search_update_timeout(desktop);
+}
+
+static void desktop_search_position(FmDesktop *desktop)
+{
+    GtkRequisition requisition;
+    gint x, y;
+
+    /* make sure the search dialog is realized */
+    gtk_widget_realize(desktop->search_window);
+
+#if GTK_CHECK_VERSION(3, 0, 0)
+    gtk_widget_get_preferred_size(desktop->search_window, NULL, &requisition);
+#else
+    gtk_widget_size_request(desktop->search_window, &requisition);
+#endif
+
+    /* put it into right upper corner */
+    x = desktop->working_area.x + desktop->working_area.width - requisition.width;
+    y = desktop->working_area.y;
+
+    gtk_window_move(GTK_WINDOW(desktop->search_window), x, y);
+}
+
+static void desktop_search_init(GtkWidget *search_entry, FmDesktop *desktop)
+{
+    GtkTreeModel *model;
+    const gchar *text;
+    char *casefold, *key, *name;
+    FmDesktopItem *item;
+    GtkTreeIter it;
+    gboolean found = FALSE;
+
+    /* check if we have a model */
+    if (desktop->model == NULL)
+        return;
+    model = GTK_TREE_MODEL(desktop->model);
+
+    /* renew the flush timeout */
+    desktop_search_update_timeout(desktop);
+
+    /* determine the current text for the search entry */
+    text = gtk_entry_get_text(GTK_ENTRY(desktop->search_entry));
+    if (G_UNLIKELY(text == NULL || text[0] == '\0'))
+        return;
+
+    /* unselect all items */
+    _unselect_all(FM_FOLDER_VIEW(desktop));
+
+    /* normalize the pattern */
+    casefold = g_utf8_casefold(text, -1);
+    key = g_utf8_normalize(casefold, -1, G_NORMALIZE_ALL);
+    g_free(casefold);
+    /* find first matched item now */
+    if (gtk_tree_model_get_iter_first(model, &it)) do
+    {
+        item = fm_folder_model_get_item_userdata(desktop->model, &it);
+        casefold = g_utf8_casefold(fm_file_info_get_disp_name(item->fi), -1);
+        name = g_utf8_normalize(casefold, -1, G_NORMALIZE_ALL);
+        g_free(casefold);
+        found = (strncmp(name, key, strlen(key)) == 0);
+        g_free(name);
+    }
+    while (!found && gtk_tree_model_iter_next(model, &it));
+    g_free(key);
+
+    /* focus found item */
+    if (!found)
+        return;
+    item->is_selected = TRUE;
+    fm_desktop_item_selected_changed(desktop, item);
+    set_focused_item(desktop, item);
+}
+
+static void desktop_search_ensure_window(FmDesktop *desktop)
+{
+    GtkWindow *window;
+    GtkWidget *frame;
+    GtkWidget *vbox;
+
+    /* check if we already have a search window */
+    if (G_LIKELY(desktop->search_window != NULL))
+        return;
+
+    /* allocate a new search window */
+    desktop->search_window = gtk_window_new(GTK_WINDOW_POPUP);
+    window = GTK_WINDOW(desktop->search_window);
+    gtk_window_group_add_window(win_group, window);
+    gtk_window_set_modal(window, TRUE);
+    gtk_window_set_screen(window, gtk_widget_get_screen(GTK_WIDGET(desktop)));
+    /* connect signal handlers */
+    g_signal_connect(window, "delete-event", G_CALLBACK(desktop_search_delete_event), desktop);
+    g_signal_connect(window, "scroll-event", G_CALLBACK(desktop_search_scroll_event), desktop);
+    g_signal_connect(window, "key-press-event", G_CALLBACK(desktop_search_key_press_event), desktop);
+
+    /* allocate the frame widget */
+    frame = g_object_new(GTK_TYPE_FRAME, "shadow-type", GTK_SHADOW_ETCHED_IN, NULL);
+    gtk_container_add(GTK_CONTAINER(window), frame);
+    gtk_widget_show(frame);
+
+    /* allocate the vertical box */
+    vbox = g_object_new(GTK_TYPE_VBOX, "border-width", 3, NULL);
+    gtk_container_add(GTK_CONTAINER(frame), vbox);
+    gtk_widget_show(vbox);
+
+    /* allocate the search entry widget */
+    desktop->search_entry = gtk_entry_new();
+    g_signal_connect(desktop->search_entry, "activate", G_CALLBACK(desktop_search_activate), desktop);
+#if GTK_CHECK_VERSION(2, 20, 0)
+    g_signal_connect(desktop->search_entry, "preedit-changed",
+                     G_CALLBACK(desktop_search_preedit_changed), desktop);
+#else
+    g_signal_connect(GTK_ENTRY(desktop->search_entry)->im_context, "preedit-changed",
+                     G_CALLBACK(desktop_search_preedit_changed), desktop);
+#endif
+    gtk_box_pack_start(GTK_BOX(vbox), desktop->search_entry, TRUE, TRUE, 0);
+    gtk_widget_realize(desktop->search_entry);
+    gtk_widget_show(desktop->search_entry);
+}
+
+static gboolean desktop_search_start(FmDesktop *desktop, gboolean keybinding)
+{
+    GTypeClass *klass;
+
+    /* check if we already display the search window */
+    if (desktop->search_window != NULL && gtk_widget_get_visible(desktop->search_window))
+        return TRUE;
+
+    desktop_search_ensure_window(desktop);
+
+    /* clear search entry if we were started by a keybinding */
+    if (G_UNLIKELY(keybinding))
+        gtk_entry_set_text(GTK_ENTRY(desktop->search_entry), "");
+
+    /* determine the position for the search dialog */
+    desktop_search_position(desktop);
+
+    /* display the search dialog */
+    gtk_widget_show(desktop->search_window);
+
+    /* connect "changed" signal for the entry */
+    if (G_UNLIKELY(desktop->search_entry_changed_id == 0))
+        desktop->search_entry_changed_id = g_signal_connect(G_OBJECT(desktop->search_entry),
+                                                            "changed",
+                                                            G_CALLBACK(desktop_search_init),
+                                                            desktop);
+
+    /* start the search timeout */
+    desktop->search_timeout_id = gdk_threads_add_timeout_full(G_PRIORITY_LOW,
+                                                              DESKTOP_SEARCH_DIALOG_TIMEOUT,
+                                                              desktop_search_timeout,
+                                                              desktop,
+                                                              desktop_search_timeout_destroy);
+
+    /* grab focus will select all the text, we don't want that to happen, so we
+     * call the parent instance and bypass the selection change. This is probably
+     * really hackish, but GtkTreeView does it as well *hrhr*
+     */
+    klass = g_type_class_peek_parent(GTK_ENTRY_GET_CLASS(desktop->search_entry));
+    (*GTK_WIDGET_CLASS(klass)->grab_focus)(desktop->search_entry);
+
+    /* send focus-in event */
+    send_focus_change(desktop->search_entry, TRUE);
+
+    /* search first matching iter */
+    desktop_search_init(desktop->search_entry, desktop);
+
+    return TRUE;
+}
+
 static gboolean on_key_press(GtkWidget* w, GdkEventKey* evt)
 {
     FmDesktop* desktop = (FmDesktop*)w;
@@ -3442,6 +3865,12 @@ static gboolean on_key_press(GtkWidget* w, GdkEventKey* evt)
     GtkTreeModel* model;
     GtkTreePath* tp = NULL;
     GtkTreeIter it;
+    char *old_text, *new_text;
+    GdkScreen *screen;
+    GdkEvent *new_event;
+    guint popup_menu_id;
+    gboolean retval;
+
     switch (evt->keyval)
     {
     case GDK_KEY_Escape:
@@ -3541,9 +3970,72 @@ static gboolean on_key_press(GtkWidget* w, GdkEventKey* evt)
             return TRUE;
         }
         break;
+    case GDK_KEY_F:
+    case GDK_KEY_f:
+        if (modifier == GDK_CONTROL_MASK)
+            return desktop_search_start(desktop, TRUE);
+        break;
     }
     if (GTK_WIDGET_CLASS(fm_desktop_parent_class)->key_press_event(w, evt))
         return TRUE;
+
+    /* well, let try interactive search now */
+    desktop_search_ensure_window(desktop);
+
+    /* make sure the search window is realized */
+    gtk_widget_realize(desktop->search_window);
+
+    /* make a copy of the current text */
+    old_text = gtk_editable_get_chars(GTK_EDITABLE(desktop->search_entry), 0, -1);
+
+    /* make sure we don't accidently popup the context menu */
+    popup_menu_id = g_signal_connect(desktop->search_entry, "popup-menu", G_CALLBACK(gtk_true), NULL);
+
+    /* move the search window offscreen */
+    screen = gtk_widget_get_screen(w);
+    gtk_window_move(GTK_WINDOW(desktop->search_window),
+                    gdk_screen_get_width(screen) + 1,
+                    gdk_screen_get_height(screen) + 1);
+    gtk_widget_show(desktop->search_window);
+
+    /* allocate a new event to forward */
+    new_event = gdk_event_copy((GdkEvent *)evt);
+    g_object_unref(new_event->key.window);
+    new_event->key.window = g_object_ref(gtk_widget_get_window(desktop->search_entry));
+
+    /* send the event to the search entry. If the "preedit-changed" signal is
+     * emitted during this event, priv->search_imcontext_changed will be set. */
+    desktop->search_imcontext_changed = FALSE;
+    retval = gtk_widget_event(desktop->search_entry, new_event);
+    gtk_widget_hide(desktop->search_window);
+
+    /* release the temporary event */
+    gdk_event_free(new_event);
+
+    /* disconnect the popup menu prevention */
+    g_signal_handler_disconnect(desktop->search_entry, popup_menu_id);
+
+    /* we check to make sure that the entry tried to handle the,
+     * and that the text has actually changed. */
+    new_text = gtk_editable_get_chars(GTK_EDITABLE(desktop->search_entry), 0, -1);
+    retval = retval && (strcmp(new_text, old_text) != 0);
+    g_free(old_text);
+    g_free(new_text);
+
+    /* if we're in a preedit or the text was modified */
+    if (desktop->search_imcontext_changed || retval)
+    {
+        if (desktop_search_start(desktop, FALSE))
+        {
+            gtk_widget_grab_focus(w);
+            return TRUE;
+        }
+        else
+        {
+            gtk_entry_set_text(GTK_ENTRY(desktop->search_entry), "");
+            return FALSE;
+        }
+    }
     return FALSE;
 }
 
@@ -3897,6 +4389,24 @@ static void fm_desktop_destroy(GtkObject *object)
     }
 
     _clear_bg_cache(self);
+
+    /* cancel any pending search timeout */
+    if (G_UNLIKELY(self->search_timeout_id))
+    {
+        g_source_remove(self->search_timeout_id);
+        self->search_timeout_id = 0;
+    }
+
+    /* destroy the interactive search dialog */
+    if (G_UNLIKELY(self->search_window))
+    {
+        g_signal_handlers_disconnect_by_func(self->search_window, desktop_search_delete_event, self);
+        g_signal_handlers_disconnect_by_func(self->search_window, desktop_search_scroll_event, self);
+        g_signal_handlers_disconnect_by_func(self->search_window, desktop_search_key_press_event, self);
+        gtk_widget_destroy(self->search_window);
+        self->search_entry = NULL;
+        self->search_window = NULL;
+    }
 
 #if GTK_CHECK_VERSION(3, 0, 0)
     GTK_WIDGET_CLASS(fm_desktop_parent_class)->destroy(object);

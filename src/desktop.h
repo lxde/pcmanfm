@@ -83,6 +83,12 @@ struct _FmDesktop
     guint cur_desktop;
     gint monitor;
     FmBackgroundCache *cache;
+    /* interactive search subwindow */
+    GtkWidget *search_window;
+    GtkWidget *search_entry;
+    gboolean search_imcontext_changed : 1;
+    guint search_entry_changed_id;
+    guint search_timeout_id;
     /* desktop settings for this monitor */
     FmDesktopConfig conf;
 };
