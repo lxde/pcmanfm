@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm 1.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-12-27 13:13+0200\n"
-"PO-Revision-Date: 2013-12-27 15:26+0000\n"
+"PO-Revision-Date: 2013-12-27 15:50+0000\n"
 "Last-Translator: Sérgio <smarquespt@gmail.com>\n"
 "Language-Team: \n"
 "Language: pt\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1388157987.0\n"
+"X-POOTLE-MTIME: 1388159441.0\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2013"
@@ -513,39 +513,39 @@ msgstr "Ligar a um servidor remoto"
 
 #: ../data/ui/connect.glade.h:2
 msgid "<b>Specify remote folder to connect</b>"
-msgstr ""
+msgstr "<b>Especifique a pasta remota para ligação</b>"
 
 #: ../data/ui/connect.glade.h:3
 msgid "_Type:"
-msgstr ""
+msgstr "_Tipo:"
 
 #: ../data/ui/connect.glade.h:4
 msgid "_Host:"
-msgstr ""
+msgstr "Ser_vidor:"
 
 #: ../data/ui/connect.glade.h:5
 msgid "_Port:"
-msgstr ""
+msgstr "_Porta:"
 
 #: ../data/ui/connect.glade.h:6
 msgid "Pa_th:"
-msgstr ""
+msgstr "Camin_ho:"
 
 #: ../data/ui/connect.glade.h:7
 msgid "_Anonymous login"
-msgstr ""
+msgstr "_Autenticação anónima"
 
 #: ../data/ui/connect.glade.h:8
 msgid "_Login as:"
-msgstr ""
+msgstr "Iniciar sessão _como:"
 
 #: ../data/ui/connect.glade.h:9
 msgid "SSH"
-msgstr ""
+msgstr "SSH"
 
 #: ../data/ui/connect.glade.h:10
 msgid "FTP"
-msgstr ""
+msgstr "FTP"
 
 #: ../data/ui/connect.glade.h:11
 msgid "WebDAV"
@@ -669,32 +669,28 @@ msgid "D_uplicate..."
 msgstr "D_uplicar..."
 
 #: ../src/main-win-ui.c:187
-#, fuzzy
 msgid "Create Lin_k..."
-msgstr "_Criar ligação simbólica"
+msgstr "Criar li_gação..."
 
 #: ../src/main-win-ui.c:188
-#, fuzzy
 msgid "_Move to..."
 msgstr "_Mover para..."
 
 #: ../src/main-win-ui.c:189
-#, fuzzy
 msgid "C_opy to..."
 msgstr "C_opiar para..."
 
 #: ../src/main-win-ui.c:190
 msgid "Propertie_s"
-msgstr ""
+msgstr "Propriedade_s"
 
 #: ../src/main-win-ui.c:192
 msgid "_Invert Selection"
 msgstr "_Inverter seleção"
 
 #: ../src/main-win-ui.c:194
-#, fuzzy
 msgid "Fin_d Files..."
-msgstr "_Procurar ficheiros"
+msgstr "_Procurar ficheiros..."
 
 #: ../src/main-win-ui.c:194
 msgid "Open search dialog"
@@ -718,7 +714,7 @@ msgstr "Recarregar pasta atual"
 
 #: ../src/main-win-ui.c:199
 msgid "Tool_bar"
-msgstr ""
+msgstr "_Barra de ferramentas"
 
 #: ../src/main-win-ui.c:200
 msgid "Side _Pane"
@@ -735,11 +731,11 @@ msgstr "_Ordenar ficheiros"
 
 #: ../src/main-win-ui.c:204
 msgid "_Zoom In"
-msgstr ""
+msgstr "_Ampliar"
 
 #: ../src/main-win-ui.c:205
 msgid "Zoom O_ut"
-msgstr ""
+msgstr "Red_uzir"
 
 #: ../src/main-win-ui.c:206
 msgid "_Normal Size"
@@ -887,7 +883,7 @@ msgstr ""
 
 #: ../src/main-win-ui.c:252
 msgid "Show _Navigation Buttons"
-msgstr ""
+msgstr "Mostrar botões de _navegação"
 
 #: ../src/main-win-ui.c:253
 msgid "Show '_Home' Button"
@@ -1087,7 +1083,7 @@ msgstr "Abrir nova janela"
 
 #: ../src/pcmanfm.c:93
 msgid "Open a Find Files window"
-msgstr ""
+msgstr "Abrir janela de procura de ficheiros"
 
 #: ../src/pcmanfm.c:95
 msgid "Window role for usage by window manager"
