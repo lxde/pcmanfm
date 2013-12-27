@@ -6,18 +6,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm-1.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-24 04:02+0200\n"
-"PO-Revision-Date: 2013-12-25 01:47+0200\n"
+"POT-Creation-Date: 2013-12-25 02:02+0200\n"
+"PO-Revision-Date: 2013-12-25 02:21+0200\n"
 "Last-Translator: LStranger <andrej@rep.kiev.ua>\n"
 "Language-Team: Ukrainian <translation@linux.org.ua>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
-"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1387928348.0\n"
+"X-POOTLE-MTIME: 1387852507.0\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2013"
@@ -136,16 +136,16 @@ msgid "Tile the image to fill the entire screen"
 msgstr "Розмножити зображення, щоб заповнити весь екран"
 
 #: ../data/ui/pref.glade.h:1
-msgid "Opened in Current Tab"
-msgstr "Відкрити в поточній вкладці"
+msgid "Open in current tab"
+msgstr "Відкривати в поточній вкладці"
 
 #: ../data/ui/pref.glade.h:2
-msgid "Opened in New Tab"
-msgstr "Відкрити в новій вкладці"
+msgid "Open in new tab"
+msgstr "Відкривати у новій вкладці"
 
 #: ../data/ui/pref.glade.h:3
-msgid "Opened in New Window"
-msgstr "Відкрити в новому вікні"
+msgid "Open in new window"
+msgstr "Відкривати у новому вікні"
 
 #: ../data/ui/pref.glade.h:4
 msgid "Preferences"
@@ -352,79 +352,83 @@ msgstr "Якщо можливо, змонтувати диски _автомат
 
 #: ../data/ui/pref.glade.h:56
 msgid "Mo_unt removable media automatically when they are inserted"
-msgstr "Монтувати зовнішні _носії при їх вставлянні"
+msgstr "_Монтувати зовнішні носії при їх вставлянні"
 
 #: ../data/ui/pref.glade.h:57
 msgid "_Show available options for removable media when they are inserted"
-msgstr "_Показати можливі опції для змінних носіїв при їх вставлянні"
+msgstr "Показати можливі _опції для змінних носіїв при їх вставлянні"
 
 #: ../data/ui/pref.glade.h:58
 msgid "Do_n't show available options for those media types:"
-msgstr "Не показувати _опції для нижченаведених типів носіїв:"
+msgstr "_Не показувати опції для нижченаведених типів носіїв:"
 
 #: ../data/ui/pref.glade.h:59
-msgid "_Open mounted removable media in new tab instead of new window"
-msgstr ""
-"Відкривати _змонтовані зовнішні носії у новій вкладці замість нового вікна"
+msgid "_Remove selected"
+msgstr "Видалити _позначені"
 
 #: ../data/ui/pref.glade.h:60
+msgid "_Open mounted removable media in new tab instead of new window"
+msgstr ""
+"_Відкривати змонтовані зовнішні носії у новій вкладці замість нового вікна"
+
+#: ../data/ui/pref.glade.h:61
 msgid "Clos_e tab containing removable medium when it is unmounted"
 msgstr "Закрити вкладку, що містить зовнішній носій, при _його відмонтуванні"
 
-#: ../data/ui/pref.glade.h:61
+#: ../data/ui/pref.glade.h:62
 msgid "_Volume Management"
 msgstr "_Керування дисками"
 
-#: ../data/ui/pref.glade.h:62
+#: ../data/ui/pref.glade.h:63
 msgid "<b>Programs</b>"
 msgstr "<b>Програми</b>"
 
-#: ../data/ui/pref.glade.h:63
+#: ../data/ui/pref.glade.h:64
 msgid "<i>Commands below may include extra options if necessary.</i>"
 msgstr "<i>Команди нижче можуть мати додаткові опції якщо потрібно.</i>"
 
-#: ../data/ui/pref.glade.h:64
+#: ../data/ui/pref.glade.h:65
 msgid "_Terminal emulator:"
 msgstr "_Емулятор терміналу:"
 
-#: ../data/ui/pref.glade.h:65
+#: ../data/ui/pref.glade.h:66
 msgid "_Switch user command:"
 msgstr "_Команда зміни користувача:"
 
 #. Application command to format some drive
-#: ../data/ui/pref.glade.h:67
+#: ../data/ui/pref.glade.h:68
 msgid "_Format command:"
 msgstr "Кома_нда форматування:"
 
-#: ../data/ui/pref.glade.h:68
+#: ../data/ui/pref.glade.h:69
 msgid "A_rchiver integration:"
 msgstr "_Інтеграція з архіватором:"
 
-#: ../data/ui/pref.glade.h:69
+#: ../data/ui/pref.glade.h:70
 msgid "<b>Templates</b>"
 msgstr "<b>Шаблони</b>"
 
-#: ../data/ui/pref.glade.h:70
+#: ../data/ui/pref.glade.h:71
 msgid "S_how only user defined templates in menu"
 msgstr "_Показувати в спискові лише шаблони, визначені користувачем"
 
-#: ../data/ui/pref.glade.h:71
+#: ../data/ui/pref.glade.h:72
 msgid "Show _only one template for each MIME type"
 msgstr "Показувати _лише один шаблон для кожного типу файлу"
 
-#: ../data/ui/pref.glade.h:72
+#: ../data/ui/pref.glade.h:73
 msgid "Ru_n default application after creation from template"
 msgstr "Запустити типову програму для файлу, створеного з _шаблону"
 
-#: ../data/ui/pref.glade.h:73
+#: ../data/ui/pref.glade.h:74
 msgid "<b>Other Options</b>"
 msgstr "<b>Інші налаштування</b>"
 
-#: ../data/ui/pref.glade.h:74
+#: ../data/ui/pref.glade.h:75
 msgid "_Use Application Startup Notify by default"
 msgstr "_Типово використовувати Сповіщення Запуску"
 
-#: ../data/ui/pref.glade.h:75
+#: ../data/ui/pref.glade.h:76
 msgid ""
 "If checked then use Startup Notify for application if another not stated "
 "explicitly.\n"
@@ -435,44 +439,44 @@ msgstr ""
 "Якщо вимкнено - використовувати Сповіщення Запуску Програми, лише якщо це "
 "вказано у ярлику."
 
-#: ../data/ui/pref.glade.h:77
+#: ../data/ui/pref.glade.h:78
 msgid "D_efer test for content type on folder loading"
 msgstr "_Відкладене визначення вмісту при завантаженні теки"
 
-#: ../data/ui/pref.glade.h:78
+#: ../data/ui/pref.glade.h:79
 msgid "_Advanced"
 msgstr "_Додатково"
 
-#: ../data/ui/pref.glade.h:79
+#: ../data/ui/pref.glade.h:80
 msgid "Auto (move if on the same FS, copy otherwise)"
 msgstr "Автоматично (перенести в межах ФС, інакше - копіювати)"
 
-#: ../data/ui/pref.glade.h:80
+#: ../data/ui/pref.glade.h:81
 msgid "Copy"
 msgstr "Копіювати"
 
-#: ../data/ui/pref.glade.h:81
+#: ../data/ui/pref.glade.h:82
 msgid "Move"
 msgstr "Перенести"
 
-#: ../data/ui/pref.glade.h:82
+#: ../data/ui/pref.glade.h:83
 msgid "Ask"
 msgstr "Спитати"
 
-#: ../data/ui/pref.glade.h:83
-msgid "Icon View"
+#: ../data/ui/pref.glade.h:84
+msgid "Icon view"
 msgstr "Вигляд значками"
 
-#: ../data/ui/pref.glade.h:84
-msgid "Compact View"
+#: ../data/ui/pref.glade.h:85
+msgid "Compact view"
 msgstr "Компактний вигляд"
 
-#: ../data/ui/pref.glade.h:85
-msgid "Thumbnail View"
+#: ../data/ui/pref.glade.h:86
+msgid "Thumbnail view"
 msgstr "Вигляд мініатюрами"
 
-#: ../data/ui/pref.glade.h:86
-msgid "Detailed List View"
+#: ../data/ui/pref.glade.h:87
+msgid "Detailed list view"
 msgstr "Детальний вигляд списком"
 
 #: ../data/ui/autorun.glade.h:1
@@ -579,75 +583,78 @@ msgstr "Дотримуватися _поточної позиції"
 msgid "Snap to _Grid"
 msgstr "Дотримуватися _сітки"
 
-#: ../src/desktop.c:891
+#: ../src/desktop.c:890
 msgid "Activate file"
 msgstr "Активувати файл"
 
-#: ../src/desktop.c:893
+#: ../src/desktop.c:892
 msgid "Show file menu"
 msgstr "Показати меню файлу"
 
-#: ../src/desktop.c:1309
+#: ../src/desktop.c:1308
 msgid "Show desktop menu"
 msgstr "Показати меню стільниці"
 
 #. FIXME: set name by monitor
-#: ../src/desktop.c:1381
+#: ../src/desktop.c:1380
 msgid "Desktop"
 msgstr "Стільниця"
 
-#: ../src/main-win-ui.c:169
+#: ../src/main-win-ui.c:168
 msgid "_File"
 msgstr "_Файл"
 
-#: ../src/main-win-ui.c:170
+#: ../src/main-win-ui.c:169
 msgid "_New Window"
 msgstr "_Нове вікно"
 
-#: ../src/main-win-ui.c:171
+#: ../src/main-win-ui.c:170
 msgid "New T_ab"
 msgstr "Нова вк_ладка"
 
-#: ../src/main-win-ui.c:171
+#: ../src/main-win-ui.c:170
 msgid "Create new tab for this folder"
 msgstr "Відкрити нову вкладку для поточної теки"
 
-#: ../src/main-win-ui.c:172
+#: ../src/main-win-ui.c:171
 msgid "C_reate New..."
 msgstr "Ст_ворити..."
 
-#: ../src/main-win-ui.c:173
+#: ../src/main-win-ui.c:172
 msgid "Folder"
 msgstr "Теку"
 
-#: ../src/main-win-ui.c:174
+#: ../src/main-win-ui.c:173
 msgid "Empty File"
 msgstr "Порожній файл"
 
-#: ../src/main-win-ui.c:175
+#: ../src/main-win-ui.c:174
 msgid "_Open Selected Files"
 msgstr "Відкрити _позначені файли"
 
-#. G_CALLBACK(on_open)
-#: ../src/main-win-ui.c:176
+#: ../src/main-win-ui.c:175
 msgid "Open Current Folder in _Terminal"
 msgstr "Відкрити поточну теку у _терміналі"
 
-#: ../src/main-win-ui.c:177
+#: ../src/main-win-ui.c:176
 msgid "Folder Propertie_s"
 msgstr "Властивості тек_и"
 
-#: ../src/main-win-ui.c:178
+#: ../src/main-win-ui.c:177
 msgid "_Close Tab"
 msgstr "З_акрити вкладку"
 
-#: ../src/main-win-ui.c:179
+#: ../src/main-win-ui.c:178
 msgid "Close _Window"
 msgstr "Закрити вікн_о"
 
-#: ../src/main-win-ui.c:180
+#: ../src/main-win-ui.c:179
 msgid "_Edit"
 msgstr "_Редагувати"
+
+#: ../src/main-win-ui.c:183
+msgid "Move to _Trash"
+msgstr "П_еренести до смітника"
 
 #: ../src/main-win-ui.c:185
 msgid "_Rename..."
@@ -658,8 +665,8 @@ msgid "D_uplicate..."
 msgstr "Створити к_опію..."
 
 #: ../src/main-win-ui.c:187
-msgid "Create Symlin_k..."
-msgstr "Створити си_мвольне посилання..."
+msgid "Create Lin_k..."
+msgstr "С_творити посилання..."
 
 #: ../src/main-win-ui.c:188
 msgid "_Move To..."
@@ -943,28 +950,28 @@ msgstr "Дерево тек"
 msgid "Remote"
 msgstr "Віддалене"
 
-#: ../src/main-win.c:752 ../src/main-win.c:756
+#: ../src/main-win.c:799 ../src/main-win.c:803
 msgid "Show history of visited folders"
 msgstr "Показати історію відвіданих тек"
 
-#: ../src/main-win.c:761
+#: ../src/main-win.c:808
 msgid "History"
 msgstr "Історія"
 
-#: ../src/main-win.c:775
+#: ../src/main-win.c:822
 msgid "You are in super user mode"
 msgstr "Ви в режимі суперкористувача"
 
-#: ../src/main-win.c:939
+#: ../src/main-win.c:992
 msgid "Lightweight file manager\n"
 msgstr "Легкий менеджер файлів\n"
 
-#: ../src/main-win.c:944
+#: ../src/main-win.c:997
 #, c-format
 msgid "using LibFM ver. %s\n"
 msgstr "(використовує LibFM %s)\n"
 
-#: ../src/main-win.c:946
+#: ../src/main-win.c:999
 msgid ""
 "\n"
 "Developed by Hon Jen Yee (PCMan)"
@@ -972,11 +979,11 @@ msgstr ""
 "\n"
 "Розроблений Hon Jen Yee (PCMan)"
 
-#: ../src/main-win.c:971 ../src/main-win.c:979
+#: ../src/main-win.c:1024 ../src/main-win.c:1032
 msgid "Keyboard Navigation"
 msgstr "Навігація з клавіатури"
 
-#: ../src/main-win.c:973
+#: ../src/main-win.c:1026
 msgid ""
 "Tab: cycle focus Folder View -> Side Pane -> Tools Bar\n"
 "Shift+Tab: cycle focus Tools Bar -> Side Pane -> Folder View\n"
@@ -992,7 +999,7 @@ msgstr ""
 "F10: активувати головне меню\n"
 "Ctrl+L або Alt+D: перейти до панелі вводу адреси"
 
-#: ../src/main-win.c:1578
+#: ../src/main-win.c:1597
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -1003,89 +1010,92 @@ msgstr ""
 "'%s'\n"
 "Введіть назву для нової закладки:"
 
-#: ../src/main-win.c:1582
+#: ../src/main-win.c:1601
 msgid "Add to Bookmarks"
 msgstr "Додати до закладок"
 
 #. options only acceptable by first pcmanfm instance. These options are not passed through IPC
-#: ../src/pcmanfm.c:76
+#: ../src/pcmanfm.c:78
 msgid "Name of configuration profile"
 msgstr "Назва профілю конфігурації"
 
-#: ../src/pcmanfm.c:76
+#: ../src/pcmanfm.c:78
 msgid "PROFILE"
 msgstr "ПРОФІЛЬ"
 
-#: ../src/pcmanfm.c:77
+#: ../src/pcmanfm.c:79
 msgid "Run PCManFM as a daemon"
 msgstr "Запустити PCManFM як демон"
 
-#: ../src/pcmanfm.c:78
+#: ../src/pcmanfm.c:80
 msgid "No function. Just to be compatible with nautilus"
 msgstr "Немає функції. Лише для сумісності з nautilus"
 
 #. options that are acceptable for every instance of pcmanfm and will be passed through IPC.
-#: ../src/pcmanfm.c:81
+#: ../src/pcmanfm.c:83
 msgid "Launch desktop manager"
 msgstr "Запустити менеджер стільниці"
 
-#: ../src/pcmanfm.c:82
+#: ../src/pcmanfm.c:84
 msgid "Turn off desktop manager if it's running"
 msgstr "Вимкнути менеджер стільниці, якщо його запущено"
 
-#: ../src/pcmanfm.c:83
+#: ../src/pcmanfm.c:85
 msgid "Open desktop preference dialog"
 msgstr "Відкрити вікно налаштування стільниці"
 
-#: ../src/pcmanfm.c:84
+#: ../src/pcmanfm.c:86
 msgid "Use --desktop option only for one screen"
 msgstr "Використати параметр --desktop лише на одному екрані"
 
-#: ../src/pcmanfm.c:85
+#: ../src/pcmanfm.c:87
 msgid "Set desktop wallpaper from image FILE"
 msgstr "Встановити шпалери стільниці з ФАЙЛу"
 
-#: ../src/pcmanfm.c:85
+#: ../src/pcmanfm.c:87
 msgid "FILE"
 msgstr "ФАЙЛ"
 
 # color|stretch|fit|center|tile - має бути не перекладене, інакше не буде опрацьовуватись.
 #. don't translate list of modes in description, please
-#: ../src/pcmanfm.c:87
+#: ../src/pcmanfm.c:89
 msgid "Set mode of desktop wallpaper. MODE=(color|stretch|fit|center|tile)"
 msgstr ""
 "Встановити режим шпалер стільниці. РЕЖИМ=(color|stretch|fit|center|tile)"
 
-#: ../src/pcmanfm.c:87
+#: ../src/pcmanfm.c:89
 msgid "MODE"
 msgstr "РЕЖИМ"
 
-#: ../src/pcmanfm.c:88
+#: ../src/pcmanfm.c:90
 msgid "Open Preferences dialog on the page N"
 msgstr "Відкрити сторінку N налаштувань стільниці"
 
-#: ../src/pcmanfm.c:88
+#: ../src/pcmanfm.c:90
 msgid "N"
 msgstr "N"
 
-#: ../src/pcmanfm.c:89
+#: ../src/pcmanfm.c:91
 msgid "Open new window"
 msgstr "Відкрити у новому вікні"
 
-#. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
-#: ../src/pcmanfm.c:91
+#: ../src/pcmanfm.c:93
+msgid "Open a Find Files window"
+msgstr "Відкрити вікно пошуку файлів"
+
+#: ../src/pcmanfm.c:95
 msgid "Window role for usage by window manager"
 msgstr "Роль вікна, яка використовується менеджером вікон"
 
-#: ../src/pcmanfm.c:91
+#: ../src/pcmanfm.c:95
 msgid "ROLE"
 msgstr "РОЛЬ"
 
-#: ../src/pcmanfm.c:92
+#: ../src/pcmanfm.c:96
 msgid "[FILE1, FILE2,...]"
 msgstr "[ФАЙЛ1, ФАЙЛ2,...]"
 
-#: ../src/pcmanfm.c:541
+#: ../src/pcmanfm.c:546
 msgid "Terminal emulator is not set."
 msgstr "Емулятор терміналу не встановлено."
 
@@ -1137,6 +1147,12 @@ msgstr "Показує файлову систему і керує файлам�
 #: ../data/pcmanfm-desktop-pref.desktop.in.h:2
 msgid "Change desktop wallpapers and behavior of desktop manager"
 msgstr "Налаштування шпалер та поведінки менеджера стільниці"
+
+#~ msgid "Opened in New Tab"
+#~ msgstr "Відкрити в новій вкладці"
+
+#~ msgid "Opened in New Window"
+#~ msgstr "Відкрити в новому вікні"
 
 #~ msgid "Removable Disk"
 #~ msgstr "Зовнішній диск"
@@ -1261,9 +1277,6 @@ msgstr "Налаштування шпалер та поведінки менед
 
 #~ msgid "_New"
 #~ msgstr "_Новий"
-
-#~ msgid "Open Find Files utility"
-#~ msgstr "Відкрити утиліту пошуку файлів"
 
 #~ msgid ""
 #~ "Open folders in new tabs of the last used window instead of creating new "
