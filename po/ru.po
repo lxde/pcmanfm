@@ -4,16 +4,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm 1.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-24 04:02+0200\n"
-"PO-Revision-Date: 2013-12-24 02:24+0000\n"
-"Last-Translator: Andriy <andrej@rep.kiev.ua>\n"
+"POT-Creation-Date: 2013-12-25 02:02+0200\n"
+"PO-Revision-Date: 2013-12-25 02:28+0000\n"
+"Last-Translator: LStranger <andrej@rep.kiev.ua>\n"
 "Language-Team: Russian <>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
-"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Pootle 2.5.0\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-POOTLE-MTIME: 1387851869.0\n"
@@ -106,8 +106,7 @@ msgstr "Значки рабочего стола"
 #: ../data/ui/desktop-pref.glade.h:19
 msgid "_Show menus provided by window managers when desktop is clicked"
 msgstr ""
-"При клике на рабочем столе показать контекстное меню менеджера рабочего "
-"стола"
+"При клике на рабочем столе показать контекстное меню менеджера рабочего стола"
 
 #: ../data/ui/desktop-pref.glade.h:20
 msgid "_Open folders from desktop in new window"
@@ -138,15 +137,15 @@ msgid "Tile the image to fill the entire screen"
 msgstr "Замостить изображением весь экран"
 
 #: ../data/ui/pref.glade.h:1
-msgid "Opened in Current Tab"
+msgid "Open in current tab"
 msgstr "Открывать в текущей вкладке"
 
 #: ../data/ui/pref.glade.h:2
-msgid "Opened in New Tab"
+msgid "Open in new tab"
 msgstr "Открывать в новой вкладке"
 
 #: ../data/ui/pref.glade.h:3
-msgid "Opened in New Window"
+msgid "Open in new window"
 msgstr "Открывать в новом окне"
 
 #: ../data/ui/pref.glade.h:4
@@ -204,7 +203,8 @@ msgid ""
 "- files on removable media will be copied\n"
 "- for some external URI a shortcut will be created"
 msgstr ""
-"Если включено, то \"Авто\" действие при бросании в папку Рабочего стола будет:\n"
+"Если включено, то \"Авто\" действие при бросании в папку Рабочего стола "
+"будет:\n"
 "- для файлов в компьютере создавать символическую ссылку\n"
 "- файлы с подключенных внешних устройств копировать\n"
 "- для внешних URI (например: веб-ссылки) создавать ярлык"
@@ -363,70 +363,74 @@ msgid "Do_n't show available options for those media types:"
 msgstr "_Не показывать доступные действия для следующих типов носителей:"
 
 #: ../data/ui/pref.glade.h:59
+msgid "_Remove selected"
+msgstr "_Удалить выбранные"
+
+#: ../data/ui/pref.glade.h:60
 msgid "_Open mounted removable media in new tab instead of new window"
 msgstr ""
 "_Открывать примонтированные внешние устройства в новой вкладке вместо нового "
 "окна"
 
-#: ../data/ui/pref.glade.h:60
-msgid "Clos_e tab containing removable medium when it is unmounted"
-msgstr "Закрывать вкладку внешнего устройства при его размонтировании"
-
 #: ../data/ui/pref.glade.h:61
+msgid "Clos_e tab containing removable medium when it is unmounted"
+msgstr "Закрывать _вкладку внешнего устройства при его размонтировании"
+
+#: ../data/ui/pref.glade.h:62
 msgid "_Volume Management"
 msgstr "_Управление томами"
 
-#: ../data/ui/pref.glade.h:62
+#: ../data/ui/pref.glade.h:63
 msgid "<b>Programs</b>"
 msgstr "<b>Программы</b>"
 
-#: ../data/ui/pref.glade.h:63
+#: ../data/ui/pref.glade.h:64
 msgid "<i>Commands below may include extra options if necessary.</i>"
 msgstr ""
 "<i>Команды ниже могут содержать дополнительные ключи при необходимости.</i>"
 
-#: ../data/ui/pref.glade.h:64
+#: ../data/ui/pref.glade.h:65
 msgid "_Terminal emulator:"
 msgstr "_Эмулятор терминала:"
 
-#: ../data/ui/pref.glade.h:65
+#: ../data/ui/pref.glade.h:66
 msgid "_Switch user command:"
 msgstr "Команда переключения пользователей:"
 
 #. Application command to format some drive
-#: ../data/ui/pref.glade.h:67
+#: ../data/ui/pref.glade.h:68
 msgid "_Format command:"
 msgstr "_Команда форматирования:"
 
-#: ../data/ui/pref.glade.h:68
+#: ../data/ui/pref.glade.h:69
 msgid "A_rchiver integration:"
 msgstr "Интеграция _архиватора:"
 
-#: ../data/ui/pref.glade.h:69
+#: ../data/ui/pref.glade.h:70
 msgid "<b>Templates</b>"
 msgstr "<b>Шаблоны</b>"
 
-#: ../data/ui/pref.glade.h:70
+#: ../data/ui/pref.glade.h:71
 msgid "S_how only user defined templates in menu"
 msgstr "_Показать в списке только шаблоны, созданные пользователем"
 
-#: ../data/ui/pref.glade.h:71
+#: ../data/ui/pref.glade.h:72
 msgid "Show _only one template for each MIME type"
 msgstr "Показать _только один шаблон для каждого типа файла"
 
-#: ../data/ui/pref.glade.h:72
+#: ../data/ui/pref.glade.h:73
 msgid "Ru_n default application after creation from template"
 msgstr "Запустить приложение по умолчанию для файла, создаваемого из _шаблона"
 
-#: ../data/ui/pref.glade.h:73
+#: ../data/ui/pref.glade.h:74
 msgid "<b>Other Options</b>"
 msgstr "<b>Прочие настройки</b>"
 
-#: ../data/ui/pref.glade.h:74
+#: ../data/ui/pref.glade.h:75
 msgid "_Use Application Startup Notify by default"
 msgstr "По умолчанию _использовать Оповещение Запуска"
 
-#: ../data/ui/pref.glade.h:75
+#: ../data/ui/pref.glade.h:76
 msgid ""
 "If checked then use Startup Notify for application if another not stated "
 "explicitly.\n"
@@ -437,44 +441,44 @@ msgstr ""
 "Если выключено, то использовать Оповещение Запуска для программы, только "
 "если определено в ярлыке."
 
-#: ../data/ui/pref.glade.h:77
+#: ../data/ui/pref.glade.h:78
 msgid "D_efer test for content type on folder loading"
 msgstr "_Отложенное определение типа файлов при загрузке папки"
 
-#: ../data/ui/pref.glade.h:78
+#: ../data/ui/pref.glade.h:79
 msgid "_Advanced"
 msgstr "_Расширенные"
 
-#: ../data/ui/pref.glade.h:79
+#: ../data/ui/pref.glade.h:80
 msgid "Auto (move if on the same FS, copy otherwise)"
 msgstr "Авто (перемещать внутри одной ФС, иначе копировать)"
 
-#: ../data/ui/pref.glade.h:80
+#: ../data/ui/pref.glade.h:81
 msgid "Copy"
 msgstr "Копировать"
 
-#: ../data/ui/pref.glade.h:81
+#: ../data/ui/pref.glade.h:82
 msgid "Move"
 msgstr "Переместить"
 
-#: ../data/ui/pref.glade.h:82
+#: ../data/ui/pref.glade.h:83
 msgid "Ask"
 msgstr "Спросить"
 
-#: ../data/ui/pref.glade.h:83
-msgid "Icon View"
-msgstr "Значки"
-
 #: ../data/ui/pref.glade.h:84
-msgid "Compact View"
-msgstr "Компактный вид"
+msgid "Icon view"
+msgstr "В виде значков"
 
 #: ../data/ui/pref.glade.h:85
-msgid "Thumbnail View"
-msgstr "Миниатюры"
+msgid "Compact view"
+msgstr "Компактный вид"
 
 #: ../data/ui/pref.glade.h:86
-msgid "Detailed List View"
+msgid "Thumbnail view"
+msgstr "В виде миниатюр"
+
+#: ../data/ui/pref.glade.h:87
+msgid "Detailed list view"
 msgstr "Подробный список"
 
 #: ../data/ui/autorun.glade.h:1
@@ -581,75 +585,78 @@ msgstr "Прикрепить к текущему положению"
 msgid "Snap to _Grid"
 msgstr "Привязка к сетке"
 
-#: ../src/desktop.c:891
+#: ../src/desktop.c:890
 msgid "Activate file"
 msgstr "Активировать файл"
 
-#: ../src/desktop.c:893
+#: ../src/desktop.c:892
 msgid "Show file menu"
 msgstr "Показать контекстное меню файла"
 
-#: ../src/desktop.c:1309
+#: ../src/desktop.c:1308
 msgid "Show desktop menu"
 msgstr "Показать меню рабочего стола"
 
 #. FIXME: set name by monitor
-#: ../src/desktop.c:1381
+#: ../src/desktop.c:1380
 msgid "Desktop"
 msgstr "Рабочий стол"
 
-#: ../src/main-win-ui.c:169
+#: ../src/main-win-ui.c:168
 msgid "_File"
 msgstr "_Файл"
 
-#: ../src/main-win-ui.c:170
+#: ../src/main-win-ui.c:169
 msgid "_New Window"
 msgstr "_Новое окно"
 
-#: ../src/main-win-ui.c:171
+#: ../src/main-win-ui.c:170
 msgid "New T_ab"
 msgstr "Новая _вкладка"
 
-#: ../src/main-win-ui.c:171
+#: ../src/main-win-ui.c:170
 msgid "Create new tab for this folder"
 msgstr "Создать новую вкладку для этой папки"
 
-#: ../src/main-win-ui.c:172
+#: ../src/main-win-ui.c:171
 msgid "C_reate New..."
 msgstr "Создать новый..."
 
-#: ../src/main-win-ui.c:173
+#: ../src/main-win-ui.c:172
 msgid "Folder"
 msgstr "Папка"
 
-#: ../src/main-win-ui.c:174
+#: ../src/main-win-ui.c:173
 msgid "Empty File"
 msgstr "Пустой файл"
 
-#: ../src/main-win-ui.c:175
+#: ../src/main-win-ui.c:174
 msgid "_Open Selected Files"
 msgstr "_Открыть выбранные файлы"
 
-#. G_CALLBACK(on_open)
-#: ../src/main-win-ui.c:176
+#: ../src/main-win-ui.c:175
 msgid "Open Current Folder in _Terminal"
 msgstr "Открыть текущую папку в _терминале"
 
-#: ../src/main-win-ui.c:177
+#: ../src/main-win-ui.c:176
 msgid "Folder Propertie_s"
 msgstr "Свойства папк_и"
 
-#: ../src/main-win-ui.c:178
+#: ../src/main-win-ui.c:177
 msgid "_Close Tab"
 msgstr "_Закрыть вкладку"
 
-#: ../src/main-win-ui.c:179
+#: ../src/main-win-ui.c:178
 msgid "Close _Window"
 msgstr "Закрыть окно"
 
-#: ../src/main-win-ui.c:180
+#: ../src/main-win-ui.c:179
 msgid "_Edit"
 msgstr "_Правка"
+
+#: ../src/main-win-ui.c:183
+msgid "Move to _Trash"
+msgstr "Переместить в _корзину"
 
 #: ../src/main-win-ui.c:185
 msgid "_Rename..."
@@ -660,8 +667,8 @@ msgid "D_uplicate..."
 msgstr "Создать _дубликат..."
 
 #: ../src/main-win-ui.c:187
-msgid "Create Symlin_k..."
-msgstr "Создать символьную сс_ылку..."
+msgid "Create Lin_k..."
+msgstr "Создать сс_ылку..."
 
 #: ../src/main-win-ui.c:188
 msgid "_Move To..."
@@ -943,28 +950,28 @@ msgstr "Дерево директорий"
 msgid "Remote"
 msgstr "Сеть"
 
-#: ../src/main-win.c:752 ../src/main-win.c:756
+#: ../src/main-win.c:799 ../src/main-win.c:803
 msgid "Show history of visited folders"
 msgstr "Показать историю посещённых папок"
 
-#: ../src/main-win.c:761
+#: ../src/main-win.c:808
 msgid "History"
 msgstr "История"
 
-#: ../src/main-win.c:775
+#: ../src/main-win.c:822
 msgid "You are in super user mode"
 msgstr "Вы находитесь в режиме суперпользователя"
 
-#: ../src/main-win.c:939
+#: ../src/main-win.c:992
 msgid "Lightweight file manager\n"
 msgstr "Легковесный файловый менеджер\n"
 
-#: ../src/main-win.c:944
+#: ../src/main-win.c:997
 #, c-format
 msgid "using LibFM ver. %s\n"
 msgstr "(использует LibFM версии %s)\n"
 
-#: ../src/main-win.c:946
+#: ../src/main-win.c:999
 msgid ""
 "\n"
 "Developed by Hon Jen Yee (PCMan)"
@@ -972,11 +979,11 @@ msgstr ""
 "\n"
 "Разработчик Hon Jen Yee (PCMan)"
 
-#: ../src/main-win.c:971 ../src/main-win.c:979
+#: ../src/main-win.c:1024 ../src/main-win.c:1032
 msgid "Keyboard Navigation"
 msgstr "Управление с клавиатуры"
 
-#: ../src/main-win.c:973
+#: ../src/main-win.c:1026
 msgid ""
 "Tab: cycle focus Folder View -> Side Pane -> Tools Bar\n"
 "Shift+Tab: cycle focus Tools Bar -> Side Pane -> Folder View\n"
@@ -994,7 +1001,7 @@ msgstr ""
 "F10: Вызов основного меню\n"
 "Ctrl+L или Alt+D: фокус на строку пути файла"
 
-#: ../src/main-win.c:1578
+#: ../src/main-win.c:1597
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -1005,89 +1012,92 @@ msgstr ""
 "'%s'\n"
 "Введите имя новой закладки:"
 
-#: ../src/main-win.c:1582
+#: ../src/main-win.c:1601
 msgid "Add to Bookmarks"
 msgstr "Добавить в закладки"
 
 #. options only acceptable by first pcmanfm instance. These options are not passed through IPC
-#: ../src/pcmanfm.c:76
+#: ../src/pcmanfm.c:78
 msgid "Name of configuration profile"
 msgstr "Имя профиля конфигурации"
 
-#: ../src/pcmanfm.c:76
+#: ../src/pcmanfm.c:78
 msgid "PROFILE"
 msgstr "PROFILE"
 
-#: ../src/pcmanfm.c:77
+#: ../src/pcmanfm.c:79
 msgid "Run PCManFM as a daemon"
 msgstr "Запустить PCManFM как демон"
 
-#: ../src/pcmanfm.c:78
+#: ../src/pcmanfm.c:80
 msgid "No function. Just to be compatible with nautilus"
 msgstr "Нет функции. Для совместимости с Nautilus"
 
 #. options that are acceptable for every instance of pcmanfm and will be passed through IPC.
-#: ../src/pcmanfm.c:81
+#: ../src/pcmanfm.c:83
 msgid "Launch desktop manager"
 msgstr "Запустить менеджер рабочего стола"
 
-#: ../src/pcmanfm.c:82
+#: ../src/pcmanfm.c:84
 msgid "Turn off desktop manager if it's running"
 msgstr "Выключить менеджер рабочего стола, если он запущен"
 
-#: ../src/pcmanfm.c:83
+#: ../src/pcmanfm.c:85
 msgid "Open desktop preference dialog"
 msgstr "Открыть диалог параметров рабочего стола"
 
-#: ../src/pcmanfm.c:84
+#: ../src/pcmanfm.c:86
 msgid "Use --desktop option only for one screen"
 msgstr "Использовать параметр --desktop только на одном экране"
 
-#: ../src/pcmanfm.c:85
+#: ../src/pcmanfm.c:87
 msgid "Set desktop wallpaper from image FILE"
 msgstr "Установить обои рабочего стола из файла FILE"
 
-#: ../src/pcmanfm.c:85
+#: ../src/pcmanfm.c:87
 msgid "FILE"
 msgstr "FILE"
 
 #. don't translate list of modes in description, please
-#: ../src/pcmanfm.c:87
+#: ../src/pcmanfm.c:89
 msgid "Set mode of desktop wallpaper. MODE=(color|stretch|fit|center|tile)"
 msgstr ""
-"Установить режим для обоев рабочего стола. "
-"<режим>=(color|stretch|fit|center|tile)"
+"Установить режим для обоев рабочего стола. <режим>=(color|stretch|fit|center|"
+"tile)"
 
-#: ../src/pcmanfm.c:87
+#: ../src/pcmanfm.c:89
 msgid "MODE"
 msgstr "MODE"
 
-#: ../src/pcmanfm.c:88
+#: ../src/pcmanfm.c:90
 msgid "Open Preferences dialog on the page N"
 msgstr "Открыть диалог параметров на странице N"
 
-#: ../src/pcmanfm.c:88
+#: ../src/pcmanfm.c:90
 msgid "N"
 msgstr "N"
 
-#: ../src/pcmanfm.c:89
+#: ../src/pcmanfm.c:91
 msgid "Open new window"
 msgstr "Открыть новое окно"
 
-#. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
-#: ../src/pcmanfm.c:91
+#: ../src/pcmanfm.c:93
+msgid "Open a Find Files window"
+msgstr "Открыть поиск файлов"
+
+#: ../src/pcmanfm.c:95
 msgid "Window role for usage by window manager"
 msgstr "Роль окна в оконном мендежере"
 
-#: ../src/pcmanfm.c:91
+#: ../src/pcmanfm.c:95
 msgid "ROLE"
 msgstr "ROLE"
 
-#: ../src/pcmanfm.c:92
+#: ../src/pcmanfm.c:96
 msgid "[FILE1, FILE2,...]"
 msgstr "[FILE1, FILE2,...]"
 
-#: ../src/pcmanfm.c:541
+#: ../src/pcmanfm.c:546
 msgid "Terminal emulator is not set."
 msgstr "Не задан эмулятор терминала."
 
@@ -1139,6 +1149,12 @@ msgstr "Просмотр файловой системы и управление
 #: ../data/pcmanfm-desktop-pref.desktop.in.h:2
 msgid "Change desktop wallpapers and behavior of desktop manager"
 msgstr "Смена обоев рабочего стола и поведения менеджера рабочего стола"
+
+#~ msgid "Opened in New Tab"
+#~ msgstr "Открывать в новой вкладке"
+
+#~ msgid "Opened in New Window"
+#~ msgstr "Открывать в новом окне"
 
 #~ msgid "Removable Disk"
 #~ msgstr "Сменный диск"
@@ -1275,9 +1291,6 @@ msgstr "Смена обоев рабочего стола и поведения 
 
 #~ msgid "_New"
 #~ msgstr "_Новый"
-
-#~ msgid "Open Find Files utility"
-#~ msgstr "Открыть поиск файлов"
 
 #~ msgid ""
 #~ "Open folders in new tabs of the last used window instead of creating new "
