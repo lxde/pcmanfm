@@ -1663,8 +1663,17 @@ static void on_location(GtkAction* act, FmMainWin* win)
 
 static void bounce_action(GtkAction* act, FmMainWin* win)
 {
+    GtkWindow *window = GTK_WINDOW(win);
+    GtkWidget *current_focus;
+
     g_debug("bouncing action %s to popup", gtk_action_get_name(act));
-    fm_folder_view_bounce_action(act, FM_FOLDER_VIEW(win->folder_view));
+    /* save current focus */
+    current_focus = gtk_window_get_focus(window);
+    /* bug #3615003: if folder view does not have the focus, action will not work */
+    gtk_window_set_focus(window, GTK_WIDGET(win->folder_view));
+    fm_folder_view_bounce_action(act, win->folder_view);
+    /* restore focus back */
+    gtk_window_set_focus(window, current_focus);
 }
 
 static guint icon_sizes[] =
