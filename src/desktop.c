@@ -197,19 +197,15 @@ static void calc_item_size(FmDesktop* desktop, FmDesktopItem* item, GdkPixbuf* i
     {
         item->icon_rect.width = gdk_pixbuf_get_width(icon);
         item->icon_rect.height = gdk_pixbuf_get_height(icon);
-        /* FIXME: RTL */
-        item->icon_rect.x = item->area.x + (desktop->cell_w - item->icon_rect.width) / 2;
-        item->icon_rect.y = item->area.y + desktop->ypad + (fm_config->big_icon_size - item->icon_rect.height) / 2;
-        item->icon_rect.height += desktop->spacing;
     }
     else
     {
         item->icon_rect.width = fm_config->big_icon_size;
         item->icon_rect.height = fm_config->big_icon_size;
-        item->icon_rect.x = item->area.x + desktop->xpad;
-        item->icon_rect.y = item->area.y + desktop->ypad;
-        item->icon_rect.height += desktop->spacing;
     }
+    item->icon_rect.x = item->area.x + (desktop->cell_w - item->icon_rect.width) / 2;
+    item->icon_rect.y = item->area.y + desktop->ypad + (fm_config->big_icon_size - item->icon_rect.height) / 2;
+    item->icon_rect.height += desktop->spacing;
 
     /* text label rect */
     pango_layout_set_text(desktop->pl, NULL, 0);
@@ -358,6 +354,9 @@ static void save_item_pos(FmDesktop* desktop)
                 break;
             case '\\':
                 g_string_append(buf, "\\\\");
+                break;
+            case ']':
+                g_string_append(buf, "\\]");
                 break;
             default:
                 g_string_append_c(buf, *p);
@@ -2373,11 +2372,17 @@ static void on_row_deleted(FmFolderModel* mod, GtkTreePath* tp, FmDesktop* deskt
 static void on_row_changed(FmFolderModel* model, GtkTreePath* tp, GtkTreeIter* it, FmDesktop* desktop)
 {
     FmDesktopItem* item = fm_folder_model_get_item_userdata(model, it);
+    GdkPixbuf *icon;
 
     fm_file_info_unref(item->fi);
-    gtk_tree_model_get(GTK_TREE_MODEL(model), it, FM_FOLDER_MODEL_COL_INFO, &item->fi, -1);
+    gtk_tree_model_get(GTK_TREE_MODEL(model), it,
+                       FM_FOLDER_MODEL_COL_INFO, &item->fi,
+                       FM_FOLDER_MODEL_COL_ICON, &icon, -1);
     fm_file_info_ref(item->fi);
 
+    calc_item_size(desktop, item, icon);
+    if (icon)
+        g_object_unref(icon);
     redraw_item(desktop, item);
     /* queue_layout_items(desktop); */
 }
