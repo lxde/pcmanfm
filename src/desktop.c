@@ -123,12 +123,12 @@ enum {
 #endif
 };
 
-GtkTargetEntry dnd_targets[] =
+static GtkTargetEntry dnd_targets[] =
 {
     {"application/x-desktop-item", GTK_TARGET_SAME_WIDGET, FM_DND_DEST_DESKTOP_ITEM}
 };
 
-GdkAtom desktop_atom;
+static GdkAtom desktop_atom;
 
 enum
 {
@@ -4217,6 +4217,8 @@ static void on_drag_data_received (GtkWidget *dest_widget,
     queue_config_save(desktop);
 
     queue_layout_items(desktop);
+
+    gtk_drag_finish(drag_context, TRUE, FALSE, time);
 }
 
 static void on_dnd_src_data_get(FmDndSrc* ds, FmDesktop* desktop)
