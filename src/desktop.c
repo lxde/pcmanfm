@@ -2392,9 +2392,29 @@ static void on_rows_reordered(FmFolderModel* model, GtkTreePath* parent_tp, GtkT
 /* ---------------------------------------------------------------------
     Events handlers */
 
+static void _clear_bg_cache(FmDesktop *self)
+{
+    while(self->cache)
+    {
+        FmBackgroundCache *bg = self->cache;
+
+        self->cache = bg->next;
+#if GTK_CHECK_VERSION(3, 0, 0)
+        XFreePixmap(cairo_xlib_surface_get_display(bg->bg),
+                    cairo_xlib_surface_get_drawable(bg->bg));
+        cairo_surface_destroy(bg->bg);
+#else
+        g_object_unref(bg->bg);
+#endif
+        g_free(bg->filename);
+        g_free(bg);
+    }
+}
+
 static void update_working_area(FmDesktop* desktop)
 {
     GdkScreen* screen = gtk_widget_get_screen((GtkWidget*)desktop);
+    gint old_w = desktop->working_area.width, old_h = desktop->working_area.height;
 #if GTK_CHECK_VERSION(3, 4, 0)
     gdk_screen_get_monitor_workarea(screen, desktop->monitor, &desktop->working_area);
 #else
@@ -2461,6 +2481,15 @@ static void update_working_area(FmDesktop* desktop)
     XFree(prop);
 _out:
 #endif
+    /* bug #3614866: after monitor geometry was changed we need to redraw
+       the background, but of course don't redraw it if it wasn't drawn yet */
+    if (old_w > 0 && old_h > 0
+        && (old_w != desktop->working_area.width || old_h != desktop->working_area.height))
+    {
+        /* size was changed so all the cache became invalid */
+        _clear_bg_cache(desktop);
+        update_background(desktop, -1);
+    }
     queue_layout_items(desktop);
     return;
 }
@@ -4322,25 +4351,6 @@ static inline void disconnect_model(FmDesktop* desktop)
 #endif
     g_object_unref(desktop->model);
     desktop->model = NULL;
-}
-
-static void _clear_bg_cache(FmDesktop *self)
-{
-    while(self->cache)
-    {
-        FmBackgroundCache *bg = self->cache;
-
-        self->cache = bg->next;
-#if GTK_CHECK_VERSION(3, 0, 0)
-        XFreePixmap(cairo_xlib_surface_get_display(bg->bg),
-                    cairo_xlib_surface_get_drawable(bg->bg));
-        cairo_surface_destroy(bg->bg);
-#else
-        g_object_unref(bg->bg);
-#endif
-        g_free(bg->filename);
-        g_free(bg);
-    }
 }
 
 #if FM_CHECK_VERSION(1, 2, 0)
