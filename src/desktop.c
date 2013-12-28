@@ -2910,6 +2910,13 @@ static void set_focused_item(FmDesktop* desktop, FmDesktopItem* item)
     }
 }
 
+static void _focus_and_select_focused_item(FmDesktop *desktop, FmDesktopItem *item)
+{
+    item->is_selected = TRUE;
+    fm_desktop_item_selected_changed(desktop, item);
+    set_focused_item(desktop, item);
+}
+
 /* This function is taken from xfdesktop */
 static void forward_event_to_rootwin(GdkScreen *gscreen, GdkEvent *event)
 {
@@ -3152,6 +3159,13 @@ static gboolean on_button_press(GtkWidget* w, GdkEventButton* evt)
 
     clicked_item = hit_test(FM_DESKTOP(w), &it, (int)evt->x, (int)evt->y);
 
+    /* reset auto-selection now */
+    if (self->single_click_timeout_handler != 0)
+    {
+        g_source_remove(self->single_click_timeout_handler);
+        self->single_click_timeout_handler = 0;
+    }
+
     if(evt->type == GDK_BUTTON_PRESS)
     {
         if(evt->button == 1)  /* left button */
@@ -3300,29 +3314,41 @@ static gboolean on_single_click_timeout(gpointer user_data)
 {
     FmDesktop* self = (FmDesktop*)user_data;
     GtkWidget* w = (GtkWidget*)self;
-    GdkEventButton evt;
     GdkWindow* window;
     int x, y;
+    FmDesktopItem *item;
+    GdkModifierType state;
+    GtkTreeIter it;
 
     if(g_source_is_destroyed(g_main_current_source()))
         return FALSE;
-    window = gtk_widget_get_window(w);
-    /* generate a fake button press */
-    /* FIXME: will this cause any problem? needs to be redesigned later */
-    evt.type = GDK_BUTTON_PRESS;
-    evt.window = window;
-    gdk_window_get_pointer(window, &x, &y, &evt.state);
-    evt.x = x;
-    evt.y = y;
-    evt.state |= GDK_BUTTON_PRESS_MASK;
-    evt.state &= ~GDK_BUTTON_MOTION_MASK;
-    on_button_press(GTK_WIDGET(self), &evt);
-    evt.type = GDK_BUTTON_RELEASE;
-    evt.state &= ~GDK_BUTTON_PRESS_MASK;
-    evt.state |= ~GDK_BUTTON_RELEASE_MASK;
-    on_button_release(GTK_WIDGET(self), &evt);
 
     self->single_click_timeout_handler = 0;
+    /* ensure we are still in single-click mode and have hovered item */
+    if (!fm_config->single_click || !self->hover_item)
+        return FALSE;
+    /* ensure we are still on the same item */
+    window = gtk_widget_get_window(w);
+    gdk_window_get_pointer(window, &x, &y, &state);
+    item = hit_test(self, &it, x, y);
+    if (item != self->hover_item)
+        return FALSE;
+    /* ok, let select the item then */
+    state &= gtk_accelerator_get_default_mod_mask();
+    if (state == 0) /* no modifiers - drop selection and select this item */
+    {
+        _unselect_all(FM_FOLDER_VIEW(self));
+        item->is_selected = TRUE;
+    }
+    else if (state == GDK_CONTROL_MASK) /* invert selection on the item */
+    {
+        item->is_selected = ! item->is_selected;
+    }
+    else /* ignore other modifiers */
+        return FALSE;
+    fm_desktop_item_selected_changed(self, item);
+    set_focused_item(self, item);
+
     return FALSE;
 }
 
@@ -3353,13 +3379,12 @@ static gboolean on_motion_notify(GtkWidget* w, GdkEventMotion* evt)
                 {
                     redraw_item(self, item);
                     gdk_window_set_cursor(window, hand_cursor);
-                    if(self->single_click_timeout_handler == 0)
 #if FM_CHECK_VERSION(1, 2, 0)
-                        if(fm_config->auto_selection_delay > 0)
-                            self->single_click_timeout_handler = gdk_threads_add_timeout(fm_config->auto_selection_delay,
-                                                                                         on_single_click_timeout, self);
+                    if(fm_config->auto_selection_delay > 0)
+                        self->single_click_timeout_handler = gdk_threads_add_timeout(fm_config->auto_selection_delay,
+                                                                                     on_single_click_timeout, self);
 #else
-                        self->single_click_timeout_handler = gdk_threads_add_timeout(400, on_single_click_timeout, self); //400 ms
+                    self->single_click_timeout_handler = gdk_threads_add_timeout(400, on_single_click_timeout, self); //400 ms
 #endif
                         /* Making a loop to aviod the selection of the item */
                         /* on_single_click_timeout(self); */
@@ -3581,9 +3606,7 @@ static void desktop_search_move(GtkWidget *widget, FmDesktop *desktop,
     /* unselect all items */
     _unselect_all(FM_FOLDER_VIEW(desktop));
     /* focus found item */
-    item->is_selected = TRUE;
-    fm_desktop_item_selected_changed(desktop, item);
-    set_focused_item(desktop, item);
+    _focus_and_select_focused_item(desktop, item);
 }
 
 static gboolean desktop_search_scroll_event(GtkWidget *widget,
@@ -3760,9 +3783,7 @@ static void desktop_search_init(GtkWidget *search_entry, FmDesktop *desktop)
     /* focus found item */
     if (!found)
         return;
-    item->is_selected = TRUE;
-    fm_desktop_item_selected_changed(desktop, item);
-    set_focused_item(desktop, item);
+    _focus_and_select_focused_item(desktop, item);
 }
 
 static void desktop_search_ensure_window(FmDesktop *desktop)
