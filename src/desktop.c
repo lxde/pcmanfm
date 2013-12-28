@@ -2683,7 +2683,7 @@ static void on_fix_pos(GtkToggleAction* act, gpointer user_data)
             item->fixed_pos = FALSE;
             desktop->fixed_items = g_list_remove(desktop->fixed_items, item);
         }
-        layout_items(desktop);
+        queue_layout_items(desktop);
     }
     g_list_free(items);
     queue_config_save(desktop);
@@ -4995,10 +4995,8 @@ static void on_desktop_font_set(GtkFontButton* btn, FmDesktop *desktop)
             pango_context_set_font_description(pc, font_desc);
             pango_layout_context_changed(desktop->pl);
             gtk_widget_queue_resize(GTK_WIDGET(desktop));
-            /* layout_items(desktop); */
             pango_font_description_free(font_desc);
         }
-        /* gtk_widget_queue_draw(GTK_WIDGET(desktop)); */
     }
 }
 
