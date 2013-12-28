@@ -544,6 +544,8 @@ void fm_app_config_load_desktop_config(GKeyFile *kf, const char *group, FmDeskto
     cfg->configured = TRUE;
     if(fm_key_file_get_int(kf, group, "wallpaper_mode", &tmp_int))
         cfg->wallpaper_mode = (FmWallpaperMode)tmp_int;
+    if (cfg->wallpaper_mode > FM_WP_TILE) /* invalid mode */
+        cfg->wallpaper_mode = FM_WP_COLOR;
 
     if(cfg->wallpapers_configured > 0)
     {
@@ -573,6 +575,11 @@ void fm_app_config_load_desktop_config(GKeyFile *kf, const char *group, FmDeskto
     if (cfg->wallpaper_common)
     {
         tmp = g_key_file_get_string(kf, group, "wallpaper", NULL);
+        if (tmp && tmp[0] == '\0') /* ignore empty string */
+        {
+            g_free(tmp);
+            tmp = NULL;
+        }
         g_free(cfg->wallpaper);
         cfg->wallpaper = tmp;
     }

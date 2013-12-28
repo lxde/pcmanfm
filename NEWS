@@ -170,6 +170,16 @@ Changes on 1.2.0 since 1.1.0:
     will not open any additional window if used when an other window or
     desktop manager is active though.
 
+* When wallpaper mode is color-only, the file chooser for wallpaper image
+    is not clickable anymore because it has no reasons to be clickable.
+
+* Implemented the interactive search for desktop contents. It is similar
+    to that in GtkTreeView and ExoIconView, activated by just typing or
+    pressing Ctrl+F. This small search entry window is opened at the top
+    right corner of workspace. It supports the same shortcuts as those
+    GtkTreeView - Ctrl+G for "find next" or "Shift+Ctrl+G for backward,
+    scroll gestures also possible.
+
 
 Changes on 1.1.0 since 1.0.1:
 
