@@ -1305,6 +1305,14 @@ static void on_new_tab(GtkAction* act, FmMainWin* win)
 {
     FmPath* path = fm_tab_page_get_cwd(win->current_page);
     fm_main_win_add_tab(win, path);
+    /* FR #1967725: focus location bar for newly created tab */
+    gtk_window_set_focus(GTK_WINDOW(win), GTK_WIDGET(win->location));
+    if (win->idle_handler)
+    {
+        /* it will steal focus so cancel it */
+        g_source_remove(win->idle_handler);
+        win->idle_handler = 0;
+    }
 }
 
 static void on_close_win(GtkAction* act, FmMainWin* win)
