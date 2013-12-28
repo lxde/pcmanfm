@@ -298,6 +298,7 @@ static inline void unload_items(FmDesktop* desktop)
     desktop->focus = NULL;
     desktop->drop_hilight = NULL;
     desktop->hover_item = NULL;
+    g_object_set(G_OBJECT(desktop), "tooltip-text", NULL, NULL);
 }
 
 static gint get_desktop_for_root_window(GdkWindow *root)
@@ -2346,7 +2347,11 @@ static void on_row_deleting(FmFolderModel* model, GtkTreePath* tp,
     if((gpointer)desktop->drop_hilight == data)
         desktop->drop_hilight = NULL;
     if((gpointer)desktop->hover_item == data)
+    {
         desktop->hover_item = NULL;
+        /* bug #3615015: after deleting the item tooltip stuck on the desktop */
+        g_object_set(G_OBJECT(desktop), "tooltip-text", NULL, NULL);
+    }
     fm_desktop_accessible_item_deleted(desktop, data);
     desktop_item_free(data);
 }
