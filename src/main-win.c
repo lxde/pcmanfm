@@ -829,7 +829,7 @@ static void fm_main_win_init(FmMainWin *win)
     g_signal_connect(win->location, "activate", G_CALLBACK(on_location_activate), win);
     if(geteuid() == 0) /* if we're using root, Give the user some warnings */
     {
-        GtkWidget* warning = gtk_image_new_from_stock(GTK_STOCK_DIALOG_AUTHENTICATION, GTK_ICON_SIZE_SMALL_TOOLBAR);
+        GtkWidget* warning = gtk_image_new_from_stock(GTK_STOCK_DIALOG_WARNING, GTK_ICON_SIZE_SMALL_TOOLBAR);
         gtk_widget_set_tooltip_markup(warning, _("You are in super user mode"));
 
         toolitem = gtk_tool_item_new();
