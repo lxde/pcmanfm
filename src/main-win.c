@@ -88,6 +88,9 @@ static void on_go_network(GtkAction* act, FmMainWin* win);
 static void on_go_apps(GtkAction* act, FmMainWin* win);
 static void on_go_connect(GtkAction* act, FmMainWin* win);
 static void on_reload(GtkAction* act, FmMainWin* win);
+#if FM_CHECK_VERSION(1, 0, 2)
+static void on_filter(GtkAction* act, FmMainWin* win);
+#endif
 static void on_show_hidden(GtkToggleAction* act, FmMainWin* win);
 #if FM_CHECK_VERSION(1, 2, 0)
 static void on_mingle_dirs(GtkToggleAction* act, FmMainWin* win);
@@ -2308,6 +2311,27 @@ static void on_reload(GtkAction* act, FmMainWin* win)
     FmTabPage* page = win->current_page;
     fm_tab_page_reload(page);
 }
+
+#if FM_CHECK_VERSION(1, 0, 2)
+static void on_filter(GtkAction* act, FmMainWin* win)
+{
+    FmTabPage *page = win->current_page;
+    const char *old_filter = page->filter_pattern ? page->filter_pattern : "*";
+    char *new_filter;
+
+    new_filter = fm_get_user_input(GTK_WINDOW(win), _("Select filter"),
+                                   _("Choose a new shell pattern to show files:"),
+                                   old_filter);
+    if (!new_filter) /* cancelled */
+        return;
+    if (strcmp(new_filter, "*"))
+        fm_tab_page_set_filter_pattern(page, new_filter);
+    else
+        fm_tab_page_set_filter_pattern(page, NULL);
+    g_free(new_filter);
+    gtk_window_set_title(GTK_WINDOW(win), fm_tab_page_get_title(page));
+}
+#endif
 
 static void on_show_side_pane(GtkToggleAction* act, FmMainWin* win)
 {

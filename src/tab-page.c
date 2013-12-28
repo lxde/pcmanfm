@@ -173,6 +173,10 @@ static void fm_tab_page_finalize(GObject *object)
     for(i = 0; i < FM_STATUS_TEXT_NUM; ++i)
         g_free(page->status_text[i]);
 
+#if FM_CHECK_VERSION(1, 0, 2)
+    g_free(page->filter_pattern);
+#endif
+
     G_OBJECT_CLASS(fm_tab_page_parent_class)->finalize(object);
 }
 
@@ -449,6 +453,55 @@ static void _tab_unset_busy_cursor(FmTabPage* page)
         fm_unset_busy_cursor(GTK_WIDGET(page));
 }
 
+#if FM_CHECK_VERSION(1, 0, 2)
+static gboolean _match_to_filter(const char *key, const char *pattern)
+{
+    switch (pattern[0])
+    {
+    case '?': /* exactly one char */
+        if (!key[0])
+            return FALSE;
+        return _match_to_filter(&key[1], &pattern[1]);
+    case '*': /* zero or more chars */
+        if (pattern[1] == '\0') /* "*" matches any string */
+            return TRUE;
+        while (*key)
+            if (_match_to_filter(key++, &pattern[1]))
+                return TRUE;
+        return FALSE; /* no match was found */
+    case '\0': /* empty string */
+        return (key[0] == '\0');
+    case '\\': /* escaped next char */
+        pattern++;
+        /* continue with the char */
+    default: /* char to match */
+        if (key[0] != pattern[0])
+            return FALSE;
+        return _match_to_filter(&key[1], &pattern[1]);
+    }
+}
+
+static gboolean fm_tab_page_path_filter(FmFileInfo *file, gpointer user_data)
+{
+    FmTabPage *page;
+    const char *disp_name;
+    char *casefold, *key;
+    gboolean result;
+
+    g_return_val_if_fail(FM_IS_TAB_PAGE(user_data), FALSE);
+    page = (FmTabPage*)user_data;
+    if (page->filter_pattern == NULL)
+        return TRUE;
+    disp_name = fm_file_info_get_disp_name(file);
+    casefold = g_utf8_casefold(disp_name, -1);
+    key = g_utf8_normalize(casefold, -1, G_NORMALIZE_ALL);
+    g_free(casefold);
+    result = _match_to_filter(key, page->filter_pattern);
+    g_free(key);
+    return result;
+}
+#endif
+
 static void on_folder_start_loading(FmFolder* folder, FmTabPage* page)
 {
     FmFolderView* fv = page->folder_view;
@@ -463,6 +516,11 @@ static void on_folder_start_loading(FmFolder* folder, FmTabPage* page)
            it is delayed for non-incremental folders since adding rows into
            model is much faster without handlers connected to its signals */
         FmFolderModel* model = fm_folder_model_new(folder, page->show_hidden);
+        if (page->filter_pattern)
+        {
+            fm_folder_model_add_filter(model, fm_tab_page_path_filter, page);
+            fm_folder_model_apply_filters(model);
+        }
         fm_folder_view_set_model(fv, model);
         fm_folder_model_set_sort(model, page->sort_by, page->sort_type);
         g_object_unref(model);
@@ -507,6 +565,11 @@ static void on_folder_finish_loading(FmFolder* folder, FmTabPage* page)
         FmFolderModel* model = fm_folder_model_new(folder, page->show_hidden);
         fm_folder_view_set_model(fv, model);
 #if FM_CHECK_VERSION(1, 0, 2)
+        if (page->filter_pattern)
+        {
+            fm_folder_model_add_filter(model, fm_tab_page_path_filter, page);
+            fm_folder_model_apply_filters(model);
+        }
         /* since 1.0.2 sorting should be applied on model instead of view */
         fm_folder_model_set_sort(model, page->sort_by, page->sort_type);
 #endif
@@ -799,6 +862,15 @@ static void fm_tab_page_chdir_without_history(FmTabPage* page, FmPath* path)
     gboolean show_hidden;
     char **columns; /* unused with libfm < 1.0.2 */
 
+#if FM_CHECK_VERSION(1, 0, 2)
+    if (page->filter_pattern && page->filter_pattern[0])
+    {
+        /* include pattern into page title */
+        char *text = g_strdup_printf("%s [%s]", disp_name, page->filter_pattern);
+        g_free(disp_name);
+        disp_name = text;
+    }
+#endif
     fm_tab_label_set_text(page->tab_label, disp_name);
     g_free(disp_name);
 
@@ -1140,3 +1212,59 @@ FmFolderView *fm_tab_page_get_passive_view(FmTabPage *page)
     g_list_free(panes);
     return view;
 }
+
+#if FM_CHECK_VERSION(1, 0, 2)
+/**
+ * fm_tab_page_set_filter_pattern
+ * @page: the page instance
+ * @pattern: (allow-none): new pattern
+ *
+ * Changes filter for the folder view in the @page. If @pattern is %NULL
+ * then folder contents will be not filtered anymore.
+ */
+void fm_tab_page_set_filter_pattern(FmTabPage *page, const char *pattern)
+{
+    FmFolderModel *model = NULL;
+    char *disp_name;
+
+    /* validate pattern */
+    if (pattern && pattern[0] == '\0')
+        pattern = NULL;
+    if (page->folder_view != NULL)
+        model = fm_folder_view_get_model(page->folder_view);
+    if (page->filter_pattern == NULL && pattern == NULL)
+        return; /* nothing to change */
+    /* if we have model then update filter chain in it */
+    if (model)
+    {
+        if (page->filter_pattern == NULL && pattern)
+            fm_folder_model_add_filter(model, fm_tab_page_path_filter, page);
+        else if (page->filter_pattern && pattern == NULL)
+            fm_folder_model_remove_filter(model, fm_tab_page_path_filter, page);
+    }
+    /* update page own data */
+    g_free(page->filter_pattern);
+    if (pattern)
+    {
+        char *casefold = g_utf8_casefold(pattern, -1);
+        page->filter_pattern = g_utf8_normalize(casefold, -1, G_NORMALIZE_ALL);
+        g_free(casefold);
+    }
+    else
+        page->filter_pattern = NULL;
+    /* apply changes if needed */
+    if (model)
+        fm_folder_model_apply_filters(model);
+    /* update tab page title */
+    disp_name = fm_path_display_basename(fm_folder_view_get_cwd(page->folder_view));
+    if (page->filter_pattern)
+    {
+        /* include pattern into page title */
+        char *text = g_strdup_printf("%s [%s]", disp_name, page->filter_pattern);
+        g_free(disp_name);
+        disp_name = text;
+    }
+    fm_tab_label_set_text(page->tab_label, disp_name);
+    g_free(disp_name);
+}
+#endif

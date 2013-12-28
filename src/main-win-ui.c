@@ -91,6 +91,10 @@ static const char main_menu_xml[] =
     "<menuitem action='SizeBigger'/>"
     "<menuitem action='SizeSmaller'/>"
     "<menuitem action='SizeDefault'/>"
+#if FM_CHECK_VERSION(1, 0, 2)
+    "<separator/>"
+    "<menuitem action='Filter'/>"
+#endif
     "<separator/>"
     "<menu action='FolderView'>"
 #if FM_CHECK_VERSION(1, 2, 0)
@@ -204,6 +208,9 @@ static GtkActionEntry main_win_actions[]=
         {"SizeBigger", GTK_STOCK_ZOOM_IN, N_("_Zoom In"), "<Ctrl>KP_Add", NULL, G_CALLBACK(on_size_increment)},
         {"SizeSmaller", GTK_STOCK_ZOOM_OUT, N_("Zoom O_ut"), "<Ctrl>KP_Subtract", NULL, G_CALLBACK(on_size_decrement)},
         {"SizeDefault", GTK_STOCK_ZOOM_100, N_("_Normal Size"), "<Ctrl>0", NULL, G_CALLBACK(on_size_default)},
+#if FM_CHECK_VERSION(1, 0, 2)
+        {"Filter", "view-filter", N_("Fil_ter..."), "<Ctrl>E", NULL, G_CALLBACK(on_filter)},
+#endif
     {"HelpMenu", NULL, N_("_Help"), NULL, NULL, NULL},
         {"About", GTK_STOCK_ABOUT, NULL, NULL, NULL, G_CALLBACK(on_about)},
         {"KeyNavList", GTK_STOCK_INFO, N_("_Keyboard Navigation"), NULL, NULL, G_CALLBACK(on_key_nav_list)},
@@ -221,7 +228,7 @@ static GtkActionEntry main_win_actions[]=
         {"Connect", NULL, N_("_Connect to Server..."), NULL, N_("Open a window to choose remote folder location"), G_CALLBACK(on_go_connect)},
         {"Go", GTK_STOCK_JUMP_TO, NULL, NULL, N_("Go to the path in the location bar"), G_CALLBACK(on_go)},
     {"BookmarksMenu", NULL, N_("_Bookmarks"), NULL, NULL, NULL},
-        {"AddBookmark", GTK_STOCK_ADD, N_("_Add to Bookmarks"), "<Ctrl>D", N_("Add current folder to bookmarks list"), G_CALLBACK(on_add_bookmark)},
+        {"AddBookmark", GTK_STOCK_ADD, N_("_Add to Bookmarks..."), "<Ctrl>D", N_("Add current folder to bookmarks list"), G_CALLBACK(on_add_bookmark)},
     /*{"ToolMenu", NULL, N_("Tool_s"), NULL, NULL, NULL},
         {"AsRoot", GTK_STOCK_DIALOG_AUTHENTICATION, N_("Open Current Folder as _Root"), NULL, NULL, G_CALLBACK(on_open_as_root)},*/
     /* for accelerators */
