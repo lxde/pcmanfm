@@ -427,7 +427,10 @@ static void fm_app_config_finalize(GObject *object)
     g_return_if_fail(object != NULL);
     g_return_if_fail(IS_FM_APP_CONFIG(object));
 
-    cfg = FM_APP_CONFIG(object);
+    cfg = (FmAppConfig*)object;
+#if FM_CHECK_VERSION(1, 0, 2)
+    g_strfreev(cfg->columns);
+#endif
     if (cfg->desktop_section.configured)
     {
       if(cfg->desktop_section.wallpapers_configured > 0)

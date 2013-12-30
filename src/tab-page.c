@@ -293,6 +293,11 @@ void fm_tab_page_destroy(GtkObject *object)
 #if FM_CHECK_VERSION(1, 2, 0)
     fm_side_pane_set_popup_updater(page->side_pane, NULL, NULL);
 #endif
+    if (page->dd)
+    {
+        g_object_unref(page->dd);
+        page->dd = NULL;
+    }
 
 #if GTK_CHECK_VERSION(3, 0, 0)
     if(GTK_WIDGET_CLASS(fm_tab_page_parent_class)->destroy)
