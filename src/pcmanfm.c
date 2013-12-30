@@ -363,73 +363,73 @@ gboolean pcmanfm_run(gint screen_num)
         }
     }
 
-        if(files_to_open)
+    if(files_to_open)
+    {
+        char** filename;
+        FmPath* cwd = NULL;
+        GList* paths = NULL;
+        for(filename=files_to_open; *filename; ++filename)
         {
-            char** filename;
-            FmPath* cwd = NULL;
-            GList* paths = NULL;
-            for(filename=files_to_open; *filename; ++filename)
+            FmPath* path;
+            if( **filename == '/') /* absolute path */
+                path = fm_path_new_for_path(*filename);
+            else if(strstr(*filename, ":/") ) /* URI */
+                path = fm_path_new_for_uri(*filename);
+            else if( strcmp(*filename, "~") == 0 ) /* special case for home dir */
             {
-                FmPath* path;
-                if( **filename == '/') /* absolute path */
-                    path = fm_path_new_for_path(*filename);
-                else if(strstr(*filename, ":/") ) /* URI */
-                    path = fm_path_new_for_uri(*filename);
-                else if( strcmp(*filename, "~") == 0 ) /* special case for home dir */
-                {
-                    path = fm_path_get_home();
-                    win = fm_main_win_add_win(NULL, path);
-                    if(new_win && window_role)
-                        gtk_window_set_role(GTK_WINDOW(win), window_role);
-                    continue;
-                }
-                else /* basename */
-                {
-                    if(G_UNLIKELY(!cwd))
-                    {
-                        char* cwd_str = g_get_current_dir();
-                        cwd = fm_path_new_for_str(cwd_str);
-                        g_free(cwd_str);
-                    }
-                    path = fm_path_new_relative(cwd, *filename);
-                }
-                paths = g_list_append(paths, path);
-            }
-            if(cwd)
-                fm_path_unref(cwd);
-            fm_launch_paths_simple(NULL, NULL, paths, pcmanfm_open_folder, NULL);
-            g_list_foreach(paths, (GFunc)fm_path_unref, NULL);
-            g_list_free(paths);
-            ret = (n_pcmanfm_ref >= 1); /* if there is opened window, return true to run the main loop. */
-
-            g_strfreev(files_to_open);
-            files_to_open = NULL;
-        }
-        else
-        {
-            if(first_run && daemon_mode)
-            {
-                /* If the function is called the first time and we're in daemon mode,
-               * don't open any folder.
-               * Checking if pcmanfm_run() is called the first time is needed to fix
-               * #3397444 - pcmanfm dont show window in daemon mode if i call 'pcmanfm' */
-                pcmanfm_ref();
-            }
-            else if (G_LIKELY(!find_files || n_pcmanfm_ref < 1))
-            {
-                /* If we're not in daemon mode, or pcmanfm_run() is called because another
-               * instance send signal to us, open cwd by default. */
-                FmPath* path;
-                char* cwd = ipc_cwd ? ipc_cwd : g_get_current_dir();
-                path = fm_path_new_for_path(cwd);
+                path = fm_path_get_home();
                 win = fm_main_win_add_win(NULL, path);
                 if(new_win && window_role)
                     gtk_window_set_role(GTK_WINDOW(win), window_role);
-                fm_path_unref(path);
-                g_free(cwd);
-                ipc_cwd = NULL;
+                continue;
             }
+            else /* basename */
+            {
+                if(G_UNLIKELY(!cwd))
+                {
+                    char* cwd_str = ipc_cwd ? ipc_cwd : g_get_current_dir();
+                    cwd = fm_path_new_for_str(cwd_str);
+                    g_free(cwd_str);
+                }
+                path = fm_path_new_relative(cwd, *filename);
+            }
+            paths = g_list_append(paths, path);
         }
+        if(cwd)
+            fm_path_unref(cwd);
+        fm_launch_paths_simple(NULL, NULL, paths, pcmanfm_open_folder, NULL);
+        g_list_foreach(paths, (GFunc)fm_path_unref, NULL);
+        g_list_free(paths);
+        ret = (n_pcmanfm_ref >= 1); /* if there is opened window, return true to run the main loop. */
+
+        g_strfreev(files_to_open);
+        files_to_open = NULL;
+    }
+    else
+    {
+        if(first_run && daemon_mode)
+        {
+            /* If the function is called the first time and we're in daemon mode,
+           * don't open any folder.
+           * Checking if pcmanfm_run() is called the first time is needed to fix
+           * #3397444 - pcmanfm dont show window in daemon mode if i call 'pcmanfm' */
+            pcmanfm_ref();
+        }
+        else if (G_LIKELY(!find_files || n_pcmanfm_ref < 1))
+        {
+            /* If we're not in daemon mode, or pcmanfm_run() is called because another
+             * instance send signal to us, open cwd by default. */
+            FmPath* path;
+            char* cwd = ipc_cwd ? ipc_cwd : g_get_current_dir();
+            path = fm_path_new_for_path(cwd);
+            win = fm_main_win_add_win(NULL, path);
+            if(new_win && window_role)
+                gtk_window_set_role(GTK_WINDOW(win), window_role);
+            fm_path_unref(path);
+            g_free(cwd);
+            ipc_cwd = NULL;
+        }
+    }
 
 #if FM_CHECK_VERSION(1, 0, 2)
     /* we got a reference at this point so we can open a search dialog */
