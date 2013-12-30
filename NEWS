@@ -184,6 +184,17 @@ Changes on 1.2.0 since 1.1.0:
     pattern to files currently shown in the view. The pattern is case
     insensitive.
 
+* After creation of new tab using keyboard Ctrl+T (or main menu option)
+    the Location Bar of new created tab will be focused to allow easy
+    change path. Any other created new tabs will have the focus as usual.
+
+* Added new config option 'change_tab_on_drop', defaulted to true to keep
+    old behavior: when you drag file(s) on tab label then tab will be
+    unfolded so you can drop files into folder view. If set to false (new
+    behavior) then the tab will be not unfolded but you can drop files
+    directly on tab label using any wanted gestures and files will end up
+    in the folder that tab label points to.
+
 
 Changes on 1.1.0 since 1.0.1:
 

@@ -61,6 +61,7 @@ struct _FmTabPage
     FmNavHistory* nav_history;
     char* status_text[FM_STATUS_TEXT_NUM];
     FmFolder* folder;
+    FmDndDest *dd; /* handler for drop on label */
     /* Use sort_type, sort_by, show_hidden to setup model after folder loading */
 #if FM_CHECK_VERSION(1, 0, 2)
     FmSortMode sort_type;

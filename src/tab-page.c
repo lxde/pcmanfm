@@ -762,6 +762,29 @@ void _update_sidepane_popup(FmSidePane* sp, GtkUIManager* ui,
 }
 #endif
 
+static gboolean on_drag_motion(FmTabLabel *label, GdkDragContext *drag_context,
+                               gint x, gint y, guint time, FmTabPage *page)
+{
+    GdkAtom target;
+    GdkDragAction action = 0;
+    FmFileInfo *file_info = NULL;
+
+    /* if change_tab_on_drop is set then we should ignore it and drop file
+       using classic behavior - drop after it unfolded, so not drop on label */
+    if (!app_config->change_tab_on_drop && page->folder_view)
+        file_info = fm_folder_view_get_cwd_info(page->folder_view);
+    fm_dnd_dest_set_dest_file(page->dd, file_info);
+    if (file_info == NULL)
+        return FALSE; /* not in drop zone */
+    target = fm_dnd_dest_find_target(page->dd, drag_context);
+    if (target != GDK_NONE && fm_dnd_dest_is_target_supported(page->dd, target))
+        action = fm_dnd_dest_get_default_action(page->dd, drag_context, target);
+    if (action == 0)
+        return FALSE; /* cannot drop on that destination */
+    gdk_drag_status(drag_context, action, time);
+    return TRUE;
+}
+
 static void fm_tab_page_init(FmTabPage *page)
 {
     GtkPaned* paned = GTK_PANED(page);
@@ -837,6 +860,10 @@ static void fm_tab_page_init(FmTabPage *page)
     g_signal_connect(page->folder_view, "error",
                      G_CALLBACK(on_folder_view_error), page);
     */
+
+    /* setup D&D on the tab label */
+    page->dd = fm_dnd_dest_new_with_handlers(GTK_WIDGET(tab_label));
+    g_signal_connect(tab_label, "drag-motion", G_CALLBACK(on_drag_motion), page);
 
     /* the folder view is already loded, call the "loaded" callback ourself. */
     //if(fm_folder_view_is_loaded(folder_view))

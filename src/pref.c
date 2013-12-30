@@ -499,7 +499,7 @@ void fm_edit_preference( GtkWindow* parent, int page )
         gtk_widget_show(GTK_WIDGET(gtk_builder_get_object(builder, "drop_default_action_label")));
         INIT_BOOL_SHOW(builder, FmConfig, smart_desktop_autodrop, NULL);
 #endif
-        //INIT_BOOL(builder, FmAppConfig, change_tab_on_drop, NULL);
+        INIT_BOOL_SHOW(builder, FmAppConfig, change_tab_on_drop, NULL);
         INIT_COMBO(builder, FmAppConfig, view_mode, NULL);
         /* FIXME: translate FmStandardViewMode <-> GtkListStore index */
 

@@ -646,6 +646,35 @@ static void on_statusbar_changed(FmAppConfig *cfg, FmMainWin *win)
     update_statusbar(win);
 }
 
+static gboolean settings_hack_done = FALSE;
+static gint old_gtk_timeout_expand = 0;
+
+static void on_change_tab_on_drop_changed(FmAppConfig *cfg, gpointer _unused)
+{
+    if (app_config->change_tab_on_drop)
+        g_object_set(gtk_settings_get_default(), "gtk-timeout-expand",
+                     old_gtk_timeout_expand, NULL);
+    else
+        g_object_set(gtk_settings_get_default(), "gtk-timeout-expand", 600000, NULL);
+}
+
+static void _do_settings_hack(void)
+{
+    GtkSettings *settings;
+
+    if (settings_hack_done)
+        return;
+    settings_hack_done = TRUE;
+    settings = gtk_settings_get_default();
+    g_object_get(settings, "gtk-timeout-expand", &old_gtk_timeout_expand, NULL);
+    if (!app_config->change_tab_on_drop)
+        /* dirty hack to override crazy GtkNotebook which unfolds tab
+           each time it sees some drag comes to the tab label */
+        g_object_set(settings, "gtk-timeout-expand", 600000, NULL);
+    g_signal_connect(app_config, "changed::change_tab_on_drop",
+                     G_CALLBACK(on_change_tab_on_drop_changed), NULL);
+}
+
 static void fm_main_win_init(FmMainWin *win)
 {
     GtkBox *vbox;
@@ -851,6 +880,7 @@ static void fm_main_win_init(FmMainWin *win)
     gtk_notebook_set_scrollable(win->notebook, TRUE);
     gtk_container_set_border_width(GTK_CONTAINER(win->notebook), 0);
     gtk_notebook_set_show_border(win->notebook, FALSE);
+    _do_settings_hack(); /* do it after GtkNotebook initialized */
 
     /* We need to use connect_after here.
      * GtkNotebook handles the real page switching stuff in default

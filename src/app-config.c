@@ -508,6 +508,7 @@ static void fm_app_config_init(FmAppConfig *cfg)
     cfg->autorun_choices = g_hash_table_new_full(g_str_hash, g_str_equal,
                                                  g_free, _free_archoice);
     cfg->show_statusbar = TRUE;
+    cfg->change_tab_on_drop = TRUE;
 }
 
 
@@ -650,6 +651,7 @@ void fm_app_config_load_from_key_file(FmAppConfig* cfg, GKeyFile* kf)
 
     fm_key_file_get_bool(kf, "ui", "media_in_new_tab", &cfg->media_in_new_tab);
     fm_key_file_get_bool(kf, "ui", "desktop_folder_new_win", &cfg->desktop_folder_new_win);
+    fm_key_file_get_bool(kf, "ui", "change_tab_on_drop", &cfg->change_tab_on_drop);
 
 #if FM_CHECK_VERSION(1, 2, 0)
     tmp_int = FM_SP_NONE;
@@ -1071,6 +1073,7 @@ void fm_app_config_save_profile(FmAppConfig* cfg, const char* name)
         g_string_append_printf(buf, "splitter_pos=%d\n", cfg->splitter_pos);
         g_string_append_printf(buf, "media_in_new_tab=%d\n", cfg->media_in_new_tab);
         g_string_append_printf(buf, "desktop_folder_new_win=%d\n", cfg->desktop_folder_new_win);
+        g_string_append_printf(buf, "change_tab_on_drop=%d\n", cfg->change_tab_on_drop);
 #if FM_CHECK_VERSION(1, 2, 0)
         g_string_append(buf, "side_pane_mode=");
         if (cfg->side_pane_mode & FM_SP_HIDE)
