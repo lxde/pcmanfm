@@ -72,6 +72,7 @@ static void on_move_to(GtkAction* act, FmMainWin* win);
 static void on_rename(GtkAction* act, FmMainWin* win);
 static void on_trash(GtkAction* act, FmMainWin* win);
 static void on_del(GtkAction* act, FmMainWin* win);
+static void on_copy_path(GtkAction* act, FmMainWin* win);
 static void on_preference(GtkAction* act, FmMainWin* win);
 
 static void on_add_bookmark(GtkAction* act, FmMainWin* win);
@@ -1635,6 +1636,26 @@ static void on_del(GtkAction* act, FmMainWin* win)
         fm_delete_files(GTK_WINDOW(win), files);
         fm_path_list_unref(files);
     }
+}
+
+static void on_copy_path(GtkAction* action, FmMainWin* win)
+{
+    GdkDisplay *dpy = gtk_widget_get_display(GTK_WIDGET(win));
+    GtkClipboard *clipboard = gtk_clipboard_get_for_display(dpy, GDK_SELECTION_CLIPBOARD);
+    GString *str = g_string_sized_new(128);
+    FmPathList *files = fm_folder_view_dup_selected_file_paths(win->folder_view);
+    GList *fl;
+
+    for (fl = fm_path_list_peek_head_link(files); fl; fl = fl->next)
+    {
+        char *path = fm_path_to_str(fl->data);
+        if (str->len > 0)
+            g_string_append_c(str, '\n');
+        g_string_append(str, path);
+        g_free(path);
+    }
+    gtk_clipboard_set_text(clipboard, str->str, str->len);
+    g_string_free(str, TRUE);
 }
 
 static void on_preference(GtkAction* act, FmMainWin* win)

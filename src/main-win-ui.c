@@ -48,6 +48,7 @@ static const char main_menu_xml[] =
     "<menuitem action='Paste'/>"
     "<menuitem action='ToTrash'/>"
     "<menuitem action='Del'/>"
+    "<menuitem action='CopyPath'/>"
     "<separator/>"
     "<menuitem action='FileProp'/>"
     "<separator/>"
@@ -186,6 +187,7 @@ static GtkActionEntry main_win_actions[]=
         {"Paste", GTK_STOCK_PASTE, NULL, NULL, NULL, G_CALLBACK(bounce_action)},
         {"ToTrash", GTK_STOCK_DELETE, N_("Move to _Trash"), "", NULL, G_CALLBACK(on_trash)},
         {"Del", GTK_STOCK_REMOVE, NULL, "", NULL, G_CALLBACK(on_del)},
+        {"CopyPath", NULL, N_("Copy Path(s)"), NULL, NULL, G_CALLBACK(on_copy_path)},
         {"Rename", NULL, N_("_Rename..."), "F2", NULL, G_CALLBACK(on_rename)},
         {"Duplicate", NULL, N_("D_uplicate..."), "<Ctrl>U", NULL, NULL},
         {"Link", NULL, N_("Create Lin_k..."), NULL, NULL, G_CALLBACK(on_link)},
