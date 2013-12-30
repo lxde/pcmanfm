@@ -1408,7 +1408,12 @@ static void on_go_up(GtkAction* act, FmMainWin* win)
 
 static void on_go_home(GtkAction* act, FmMainWin* win)
 {
-    fm_main_win_chdir( win, fm_path_get_home());
+#if FM_CHECK_VERSION(1, 2, 0)
+    if (app_config->home_path && app_config->home_path[0])
+        fm_main_win_chdir_by_name(win, app_config->home_path);
+    else
+#endif
+        fm_main_win_chdir( win, fm_path_get_home());
 }
 
 static void on_go_desktop(GtkAction* act, FmMainWin* win)

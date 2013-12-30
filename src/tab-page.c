@@ -238,6 +238,17 @@ static void _disconnect_focus_in(FmFolderView *folder_view, FmTabPage *page)
     g_list_free(children);
 }
 
+#if FM_CHECK_VERSION(1, 2, 0)
+static void on_home_path_changed(FmAppConfig *cfg, FmSidePane *sp)
+{
+    gboolean res;
+    if (cfg->home_path && cfg->home_path[0])
+        res = fm_side_pane_set_home_dir(sp, cfg->home_path);
+    else
+        res = fm_side_pane_set_home_dir(sp, fm_get_home_dir());
+}
+#endif
+
 #if GTK_CHECK_VERSION(3, 0, 0)
 void fm_tab_page_destroy(GtkWidget *object)
 #else
@@ -276,6 +287,9 @@ void fm_tab_page_destroy(GtkObject *object)
         g_signal_handlers_disconnect_by_func(page->folder_view, on_folder_view_sel_changed, page);
 #if FM_CHECK_VERSION(1, 2, 0)
         g_signal_handlers_disconnect_by_func(page->folder_view, on_folder_view_columns_changed, page);
+#endif
+#if FM_CHECK_VERSION(1, 2, 0)
+        g_signal_handlers_disconnect_by_func(app_config, on_home_path_changed, page->side_pane);
 #endif
         _disconnect_focus_in(page->folder_view, page);
         g_object_unref(page->folder_view);
@@ -349,6 +363,8 @@ static void on_folder_view_sel_changed(FmFolderView* fv, gint n_sel, FmTabPage* 
         else
         {
             msg = g_strdup_printf(ngettext("%d item selected", "%d items selected", n_sel), n_sel);
+            /* FIXME: can we show some more info on selection?
+               that isn't lightweight if a lot of files are selected */
         }
     }
     else
@@ -804,6 +820,10 @@ static void fm_tab_page_init(FmTabPage *page)
     fm_side_pane_set_mode(page->side_pane, (mode & FM_SP_MODE_MASK));
 #if FM_CHECK_VERSION(1, 2, 0)
     fm_side_pane_set_popup_updater(page->side_pane, _update_sidepane_popup, page);
+    if (app_config->home_path && app_config->home_path[0])
+        fm_side_pane_set_home_dir(page->side_pane, app_config->home_path);
+    g_signal_connect(app_config, "changed::home_path",
+                     G_CALLBACK(on_home_path_changed), page->side_pane);
 #endif
     /* TODO: add a close button to side pane */
     gtk_paned_add1(paned, GTK_WIDGET(page->side_pane));

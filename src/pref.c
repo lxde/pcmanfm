@@ -31,6 +31,9 @@
 #include "pref.h"
 #include "app-config.h"
 #include "desktop.h"
+#include "main-win.h"
+
+#include <string.h>
 
 #define INIT_BOOL(b, st, name, changed_notify)  init_bool(b, #name, G_STRUCT_OFFSET(st, name), changed_notify, FALSE)
 #define INIT_BOOL_SHOW(b, st, name, changed_notify)  init_bool(b, #name, G_STRUCT_OFFSET(st, name), changed_notify, TRUE)
@@ -448,6 +451,54 @@ static void on_choices_sel_changed(GtkTreeSelection *selection, GtkWidget *btn)
     gtk_widget_set_sensitive(btn, gtk_tree_selection_count_selected_rows(selection) > 0);
 }
 
+#if FM_CHECK_VERSION(1, 2, 0)
+static void on_use_home_path_toggled(GtkToggleButton *btn, GtkWidget *home_path_custom)
+{
+    gboolean active = gtk_toggle_button_get_active(btn);
+
+    gtk_widget_set_sensitive(home_path_custom, active);
+}
+
+static void on_use_home_path_toggled2(GtkToggleButton *btn, GtkEntry *home_path)
+{
+    if (!gtk_toggle_button_get_active(btn))
+        gtk_entry_set_text(home_path, fm_get_home_dir());
+}
+
+static void on_home_path_changed(GtkEntry *home_path, FmAppConfig *cfg)
+{
+    const char *path = gtk_entry_get_text(home_path);
+
+    if (path[0] && strcmp(path, fm_get_home_dir()) != 0)
+    {
+        if (g_strcmp0(path, cfg->home_path) == 0) /* not changed */
+            return;
+        g_free(cfg->home_path);
+        cfg->home_path = g_strdup(path);
+    }
+    else
+    {
+        g_free(cfg->home_path);
+        cfg->home_path = NULL;
+    }
+    fm_config_emit_changed(FM_CONFIG(cfg), "home_path");
+}
+
+static void on_home_path_current_clicked(GtkButton *button, GtkEntry *home_path)
+{
+    FmMainWin *win = fm_main_win_get_last_active();
+    FmPath *cwd;
+    char *path;
+
+    if (win == NULL || win->folder_view == NULL)
+        return; /* FIXME: print warning? */
+    cwd = fm_folder_view_get_cwd(win->folder_view);
+    path = fm_path_to_str(cwd);
+    gtk_entry_set_text(home_path, path);
+    g_free(path);
+}
+#endif
+
 void fm_edit_preference( GtkWindow* parent, int page )
 {
     if(!pref_dlg)
@@ -641,6 +692,38 @@ void fm_edit_preference( GtkWindow* parent, int page )
         gtk_tree_selection_set_mode(tree_sel, GTK_SELECTION_BROWSE);
         gtk_tree_selection_select_iter(tree_sel, &it);
         g_object_unref(tab_label_model);
+#if FM_CHECK_VERSION(1, 2, 0)
+        obj = gtk_builder_get_object(builder, "home_path_vbox");
+        if (obj)
+        {
+            gboolean is_set;
+
+            gtk_widget_show(GTK_WIDGET(obj));
+            obj = gtk_builder_get_object(builder, "use_home_path");
+            g_signal_connect(obj, "toggled", G_CALLBACK(on_use_home_path_toggled),
+                             gtk_builder_get_object(builder, "home_path_custom"));
+            g_signal_connect(obj, "toggled", G_CALLBACK(on_use_home_path_toggled2),
+                             gtk_builder_get_object(builder, "home_path"));
+            is_set = app_config->home_path &&
+                     strcmp(app_config->home_path, fm_get_home_dir()) != 0;
+            if (is_set)
+                gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(obj), TRUE);
+            else
+                gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(gtk_builder_get_object(builder, "use_home_default")), TRUE);
+            obj = gtk_builder_get_object(builder, "home_path");
+            if (is_set)
+                gtk_entry_set_text(GTK_ENTRY(obj), app_config->home_path);
+            else
+                gtk_entry_set_text(GTK_ENTRY(obj), fm_get_home_dir());
+            g_signal_connect(obj, "changed", G_CALLBACK(on_home_path_changed), app_config);
+            obj = gtk_builder_get_object(builder, "home_path_current");
+            if (parent && IS_FM_MAIN_WIN(parent)) /* is called from menu */
+                g_signal_connect(obj, "clicked", G_CALLBACK(on_home_path_current_clicked),
+                                 gtk_builder_get_object(builder, "home_path"));
+            else
+                gtk_widget_set_sensitive(GTK_WIDGET(obj), FALSE);
+        }
+#endif
         g_signal_connect(tree_sel, "changed", G_CALLBACK(on_tab_label_list_sel_changed), notebook);
         g_signal_connect(notebook, "switch-page", G_CALLBACK(on_notebook_page_changed), tab_label_list);
         gtk_notebook_set_show_tabs(notebook, FALSE);

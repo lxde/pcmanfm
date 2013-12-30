@@ -452,6 +452,10 @@ static void fm_app_config_finalize(GObject *object)
     fc_cache = NULL;
 #endif
 
+#if FM_CHECK_VERSION(1, 2, 0)
+    g_free(cfg->home_path);
+#endif
+
     G_OBJECT_CLASS(fm_app_config_parent_class)->finalize(object);
 }
 
@@ -511,6 +515,9 @@ static void fm_app_config_init(FmAppConfig *cfg)
     cfg->autorun_choices = g_hash_table_new_full(g_str_hash, g_str_equal,
                                                  g_free, _free_archoice);
     cfg->show_statusbar = TRUE;
+#if FM_CHECK_VERSION(1, 2, 0)
+    cfg->home_path = NULL;
+#endif
     cfg->change_tab_on_drop = TRUE;
 }
 
@@ -633,6 +640,10 @@ void fm_app_config_load_from_key_file(FmAppConfig* cfg, GKeyFile* kf)
     /*tmp = g_key_file_get_string(kf, "config", "su_cmd", NULL);
     g_free(cfg->su_cmd);
     cfg->su_cmd = tmp;*/
+#if FM_CHECK_VERSION(1, 2, 0)
+    g_free(cfg->home_path);
+    cfg->home_path = g_key_file_get_string(kf, "config", "home_path", NULL);
+#endif
 
     /* volume management */
     fm_key_file_get_bool(kf, "volume", "mount_on_startup", &cfg->mount_on_startup);
@@ -1055,6 +1066,11 @@ void fm_app_config_save_profile(FmAppConfig* cfg, const char* name)
         g_string_append_printf(buf, "bm_open_method=%d\n", cfg->bm_open_method);
         /*if(cfg->su_cmd && *cfg->su_cmd)
             g_string_append_printf(buf, "su_cmd=%s\n", cfg->su_cmd);*/
+#if FM_CHECK_VERSION(1, 2, 0)
+        if (cfg->home_path && cfg->home_path[0]
+            && strcmp(cfg->home_path, fm_get_home_dir()) != 0)
+            g_string_append_printf(buf, "home_path=%s\n", cfg->home_path);
+#endif
 
         g_string_append(buf, "\n[volume]\n");
         g_string_append_printf(buf, "mount_on_startup=%d\n", cfg->mount_on_startup);
