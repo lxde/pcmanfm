@@ -290,7 +290,7 @@ static void update_file_menu(FmMainWin* win, FmPath *path)
     GtkAction *act;
     /* FmFolderView *fv = win->folder_view; */
 
-    act = gtk_ui_manager_get_action(win->ui, "/menubar/FileMenu/Term");
+    act = gtk_ui_manager_get_action(win->ui, "/menubar/ToolMenu/Term");
     gtk_action_set_sensitive(act, path && fm_path_is_native(path));
     act = gtk_ui_manager_get_action(win->ui, "/menubar/GoMenu/Up");
     gtk_action_set_sensitive(act, path && fm_path_get_parent(path));
@@ -310,7 +310,7 @@ static void on_folder_view_sel_changed(FmFolderView* fv, gint n_sel, FmMainWin* 
 
     if(fv != win->folder_view)
         return;
-    act = gtk_ui_manager_get_action(win->ui, "/menubar/FileMenu/Open");
+    act = gtk_ui_manager_get_action(win->ui, "/menubar/EditMenu/Open");
     gtk_action_set_sensitive(act, has_selected);
     act = gtk_ui_manager_get_action(win->ui, "/menubar/EditMenu/Cut");
     gtk_action_set_sensitive(act, has_selected);
@@ -319,6 +319,8 @@ static void on_folder_view_sel_changed(FmFolderView* fv, gint n_sel, FmMainWin* 
     act = gtk_ui_manager_get_action(win->ui, "/menubar/EditMenu/ToTrash");
     gtk_action_set_sensitive(act, has_selected);
     act = gtk_ui_manager_get_action(win->ui, "/menubar/EditMenu/Del");
+    gtk_action_set_sensitive(act, has_selected);
+    act = gtk_ui_manager_get_action(win->ui, "/menubar/EditMenu/CopyPath");
     gtk_action_set_sensitive(act, has_selected);
     act = gtk_ui_manager_get_action(win->ui, "/menubar/EditMenu/Rename");
     gtk_action_set_sensitive(act, n_sel == 1); /* can rename only single file */
@@ -804,7 +806,7 @@ static void fm_main_win_init(FmMainWin *win)
     /* disable "Find Files" button if module isn't available */
     if (!fm_module_is_in_use("vfs", "search"))
     {
-        act = gtk_ui_manager_get_action(ui, "/menubar/EditMenu/Search");
+        act = gtk_ui_manager_get_action(ui, "/menubar/ToolMenu/Search");
         gtk_action_set_sensitive(act, FALSE);
     }
     /* disable "Applications" button if module isn't available */

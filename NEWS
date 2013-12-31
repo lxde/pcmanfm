@@ -123,14 +123,11 @@ Changes on 1.2.0 since 1.1.0:
 
 * Folder view modes moved to separate submenu to make View menu shorter.
 
-* Items of too short Tools menu moved to other (more appropriate) menus
-    to follow common Human Interface Guidelines.
-
 * Reordered View, Bookmarks, and Go menus placement in menu bar to follow
     common order used by other applications and file managers.
 
-* Made insensitive menu items 'Go'->'Applications' and 'Edit'->'Search'
-    if appropriate modules were not loaded.
+* The menu items 'Go'->'Applications' and 'Tools'->'Find Files...' should
+    become insensitive now if appropriate modules were not loaded.
 
 * Added new section 'autorun' into config where last choices made by user
     for some kind of inserted media is remembered. Added a checkbutton
@@ -154,15 +151,15 @@ Changes on 1.2.0 since 1.1.0:
 * Added new menu option 'Edit'->'Properties' from the selection context
     menu for those who cannot use the context menu.
 
-* Added new menu option 'File'->'Open Selected Files' to launch selection
-    for those who cannot use neither keyboard nor selection context menu.
+* Added new menu option 'Edit'->'Open' to launch selection for those who
+    can use neither keyboard nor selection context menu.
 
 * Added new config option 'show_statusbar' with default to true which
     defines should status bar be shown or hidden. It's controllable via
     menu 'View'->'Show Status Bar'.
 
-* Added new menu option 'File'->'Create Symlink...' to create link(s) on
-    the selected file(s) into some directory.
+* Added new menu option 'File'->'Create Link...' to create link(s) on the
+    selected file(s) into some directory.
 
 * Implemented a runtime option to open Find Files dialog window. It will
     not replace any other options, i.e. if used alone and no other window
