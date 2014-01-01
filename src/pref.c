@@ -2,7 +2,7 @@
  *      pref.c
  *
  *      Copyright 2009 PCMan <pcman.tw@gmail.com>
- *      Copyright 2012-2013 Andriy Grytsenko (LStranger) <andrej@rep.kiev.ua>
+ *      Copyright 2012-2014 Andriy Grytsenko (LStranger) <andrej@rep.kiev.ua>
  *
  *      This program is free software; you can redistribute it and/or modify
  *      it under the terms of the GNU General Public License as published by
@@ -297,6 +297,17 @@ static void on_use_trash_toggled(GtkToggleButton* btn, gpointer vbox_trash)
         gtk_widget_set_sensitive(vbox_trash, new_val);
 }
 
+static void on_close_on_unmount_toggled(GtkToggleButton *btn, FmAppConfig *cfg)
+{
+    gboolean new_val = gtk_toggle_button_get_active(btn);
+
+    if (new_val != cfg->close_on_unmount)
+    {
+        cfg->close_on_unmount = new_val;
+        fm_config_emit_changed(fm_config, "close_on_unmount");
+    }
+}
+
 static void on_spin_changed(GtkSpinButton* btn, gpointer _off)
 {
     gsize off = GPOINTER_TO_SIZE(_off);
@@ -552,6 +563,13 @@ void fm_edit_preference( GtkWindow* parent, int page )
         INIT_BOOL_SHOW(builder, FmAppConfig, focus_previous, NULL);
 #endif
         INIT_BOOL_SHOW(builder, FmAppConfig, change_tab_on_drop, NULL);
+        gtk_widget_show(GTK_WIDGET(gtk_builder_get_object(builder, "on_unmount_vbox")));
+        if (app_config->close_on_unmount)
+            gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(gtk_builder_get_object(builder, "close_on_unmount")), TRUE);
+        else
+            gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(gtk_builder_get_object(builder, "go_home_on_unmount")), TRUE);
+        g_signal_connect(gtk_builder_get_object(builder, "close_on_unmount"),
+                         "toggled", G_CALLBACK(on_close_on_unmount_toggled), app_config);
         INIT_COMBO(builder, FmAppConfig, view_mode, NULL);
         /* FIXME: translate FmStandardViewMode <-> GtkListStore index */
 

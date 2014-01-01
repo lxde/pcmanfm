@@ -205,6 +205,12 @@ Changes on 1.2.0 since 1.1.0:
     from when we go into parent directory. It's available only with LibFM
     1.2.0 or newer.
 
+* Added new config option 'close_on_unmount' defaulted to true. If set to
+    true then tab containing a folder that is vanished (that happens if
+    the folder either was deleted or was renamed or was unmounted) will
+    be closed. If set to false then such tab will go to the 'Home Folder'
+    instead (with respect to 'home_path' config option).
+
 
 Changes on 1.1.0 since 1.0.1:
 

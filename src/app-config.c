@@ -2,7 +2,7 @@
  *      app-config.c
  *
  *      Copyright 2010 PCMan <pcman.tw@gmail.com>
- *      Copyright 2012-2013 Andriy Grytsenko (LStranger) <andrej@rep.kiev.ua>
+ *      Copyright 2012-2014 Andriy Grytsenko (LStranger) <andrej@rep.kiev.ua>
  *
  *      This program is free software; you can redistribute it and/or modify
  *      it under the terms of the GNU General Public License as published by
@@ -520,6 +520,7 @@ static void fm_app_config_init(FmAppConfig *cfg)
     cfg->focus_previous = FALSE;
 #endif
     cfg->change_tab_on_drop = TRUE;
+    cfg->close_on_unmount = TRUE;
 }
 
 
@@ -668,6 +669,7 @@ void fm_app_config_load_from_key_file(FmAppConfig* cfg, GKeyFile* kf)
     fm_key_file_get_bool(kf, "ui", "media_in_new_tab", &cfg->media_in_new_tab);
     fm_key_file_get_bool(kf, "ui", "desktop_folder_new_win", &cfg->desktop_folder_new_win);
     fm_key_file_get_bool(kf, "ui", "change_tab_on_drop", &cfg->change_tab_on_drop);
+    fm_key_file_get_bool(kf, "ui", "close_on_unmount", &cfg->close_on_unmount);
 
 #if FM_CHECK_VERSION(1, 2, 0)
     fm_key_file_get_bool(kf, "ui", "focus_previous", &cfg->focus_previous);
@@ -1098,6 +1100,7 @@ void fm_app_config_save_profile(FmAppConfig* cfg, const char* name)
         g_string_append_printf(buf, "media_in_new_tab=%d\n", cfg->media_in_new_tab);
         g_string_append_printf(buf, "desktop_folder_new_win=%d\n", cfg->desktop_folder_new_win);
         g_string_append_printf(buf, "change_tab_on_drop=%d\n", cfg->change_tab_on_drop);
+        g_string_append_printf(buf, "close_on_unmount=%d\n", cfg->close_on_unmount);
 #if FM_CHECK_VERSION(1, 2, 0)
         g_string_append_printf(buf, "focus_previous=%d\n", cfg->focus_previous);
         g_string_append(buf, "side_pane_mode=");

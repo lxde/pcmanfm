@@ -630,12 +630,38 @@ static void on_folder_finish_loading(FmFolder* folder, FmTabPage* page)
 
 static void on_folder_unmount(FmFolder* folder, FmTabPage* page)
 {
-    gtk_widget_destroy(GTK_WIDGET(page));
+    if (app_config->close_on_unmount)
+        gtk_widget_destroy(GTK_WIDGET(page));
+    else
+#if FM_CHECK_VERSION(1, 2, 0)
+    if (app_config->home_path && app_config->home_path[0])
+    {
+        FmPath *path = fm_path_new_for_str(app_config->home_path);
+
+        fm_tab_page_chdir(page, path);
+        fm_path_unref(path);
+    }
+    else
+#endif
+        fm_tab_page_chdir(page, fm_path_get_home());
 }
 
 static void on_folder_removed(FmFolder* folder, FmTabPage* page)
 {
-    gtk_widget_destroy(GTK_WIDGET(page));
+    if (app_config->close_on_unmount)
+        gtk_widget_destroy(GTK_WIDGET(page));
+    else
+#if FM_CHECK_VERSION(1, 2, 0)
+    if (app_config->home_path && app_config->home_path[0])
+    {
+        FmPath *path = fm_path_new_for_str(app_config->home_path);
+
+        fm_tab_page_chdir(page, path);
+        fm_path_unref(path);
+    }
+    else
+#endif
+        fm_tab_page_chdir(page, fm_path_get_home());
 }
 
 static void on_folder_fs_info(FmFolder* folder, FmTabPage* page)
