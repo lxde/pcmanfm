@@ -221,7 +221,7 @@ static void calc_item_size(FmDesktop* desktop, FmDesktopItem* item, GdkPixbuf* i
     item->text_rect.y = item->icon_rect.y + item->icon_rect.height + rc2.y;
     item->text_rect.width = rc2.width + 4;
     item->text_rect.height = rc2.height + 4;
-    item->area.width = MAX(item->icon_rect.width, item->text_rect.width);
+    item->area.width = (desktop->cell_w + MAX(item->icon_rect.width, item->text_rect.width)) / 2;
     item->area.height = item->icon_rect.height + rc2.y + item->text_rect.height;
 }
 
@@ -264,6 +264,7 @@ static inline void load_items(FmDesktop* desktop)
             FmDesktopItem* item;
             const char* name;
             GdkPixbuf* icon = NULL;
+            int out; /* out of bounds */
 
             item = fm_folder_model_get_item_userdata(desktop->model, &it);
             name = fm_file_info_get_name(item->fi);
@@ -274,7 +275,31 @@ static inline void load_items(FmDesktop* desktop)
                 item->fixed_pos = TRUE;
                 item->area.x = g_key_file_get_integer(kf, name, "x", NULL);
                 item->area.y = g_key_file_get_integer(kf, name, "y", NULL);
+                /* pull item into screen bounds */
+                if (item->area.x < desktop->xmargin)
+                    item->area.x = desktop->xmargin;
+                if (item->area.y < desktop->ymargin)
+                    item->area.y = desktop->ymargin;
                 calc_item_size(desktop, item, icon);
+                /* check if item is in screen bounds and pull it if it's not */
+                out = item->area.x + item->area.width + desktop->xmargin - desktop->working_area.width;
+                if (out > 0)
+                {
+                    if (out > item->area.x - desktop->xmargin)
+                        out = item->area.x - desktop->xmargin;
+                    item->area.x -= out;
+                    item->icon_rect.x -= out;
+                    item->text_rect.x -= out;
+                }
+                out = item->area.y + item->area.height + desktop->ymargin - desktop->working_area.height;
+                if (out > 0)
+                {
+                    if (out > item->area.y - desktop->ymargin)
+                        out = item->area.y - desktop->ymargin;
+                    item->area.y -= out;
+                    item->icon_rect.y -= out;
+                    item->text_rect.y -= out;
+                }
                 if(icon)
                     g_object_unref(icon);
             }
@@ -1631,7 +1656,7 @@ static void layout_items(FmDesktop* self)
     GtkTextDirection direction = gtk_widget_get_direction(GTK_WIDGET(self));
 
     y = self->ymargin;
-    bottom = self->working_area.height - self->ymargin - self->cell_h;
+    bottom = self->working_area.height - self->ymargin;
 
     if(!gtk_tree_model_get_iter_first(model, &it))
     {
@@ -1833,6 +1858,16 @@ static void move_item(FmDesktop* desktop, FmDesktopItem* item, int x, int y, gbo
     if(redraw)
         redraw_item(desktop, item);
 
+    /* correct coords to put item within working area still */
+    if (x > desktop->working_area.width - desktop->xmargin - item->area.width)
+        x = desktop->working_area.width - desktop->xmargin - item->area.width;
+    if (x < desktop->xmargin)
+        x = desktop->xmargin;
+    if (y > desktop->working_area.height - desktop->ymargin - item->area.height)
+        y = desktop->working_area.height - desktop->ymargin - item->area.height;
+    if (y < desktop->ymargin)
+        y = desktop->ymargin;
+
     dx = x - item->area.x;
     dy = y - item->area.y;
 
@@ -1855,14 +1890,6 @@ static void move_item(FmDesktop* desktop, FmDesktopItem* item, int x, int y, gbo
     /* move the item to a new place, and queue a redraw for the new rect. */
     if(redraw)
         redraw_item(desktop, item);
-
-#if 0
-    /* check if the item is overlapped with another item */
-    for(l = desktop->items; l; l=l->next)
-    {
-        FmDesktopItem* item2 = (FmDesktopItem*)l->data;
-    }
-#endif
 }
 
 static void calc_rubber_banding_rect(FmDesktop* self, int x, int y, GdkRectangle* rect)

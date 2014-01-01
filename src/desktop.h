@@ -56,8 +56,8 @@ struct _FmDesktop
     guint xpad;
     guint ypad;
     guint spacing;
-    guint xmargin;
-    guint ymargin;
+    gint xmargin;
+    gint ymargin;
     guint text_h;
     guint text_w;
     guint pango_text_h;
