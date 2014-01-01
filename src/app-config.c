@@ -517,6 +517,7 @@ static void fm_app_config_init(FmAppConfig *cfg)
     cfg->show_statusbar = TRUE;
 #if FM_CHECK_VERSION(1, 2, 0)
     cfg->home_path = NULL;
+    cfg->focus_previous = FALSE;
 #endif
     cfg->change_tab_on_drop = TRUE;
 }
@@ -660,6 +661,7 @@ void fm_app_config_load_from_key_file(FmAppConfig* cfg, GKeyFile* kf)
 
     fm_key_file_get_int(kf, "ui", "win_width", &cfg->win_width);
     fm_key_file_get_int(kf, "ui", "win_height", &cfg->win_height);
+    fm_key_file_get_bool(kf, "ui", "maximized", &cfg->maximized);
 
     fm_key_file_get_int(kf, "ui", "splitter_pos", &cfg->splitter_pos);
 
@@ -668,6 +670,7 @@ void fm_app_config_load_from_key_file(FmAppConfig* cfg, GKeyFile* kf)
     fm_key_file_get_bool(kf, "ui", "change_tab_on_drop", &cfg->change_tab_on_drop);
 
 #if FM_CHECK_VERSION(1, 2, 0)
+    fm_key_file_get_bool(kf, "ui", "focus_previous", &cfg->focus_previous);
     tmp_int = FM_SP_NONE;
     tmpv = g_key_file_get_string_list(kf, "ui", "side_pane_mode", NULL, NULL);
     if (tmpv)
@@ -1089,11 +1092,14 @@ void fm_app_config_save_profile(FmAppConfig* cfg, const char* name)
         /* g_string_append_printf(buf, "hide_close_btn=%d\n", cfg->hide_close_btn); */
         g_string_append_printf(buf, "win_width=%d\n", cfg->win_width);
         g_string_append_printf(buf, "win_height=%d\n", cfg->win_height);
+        if (cfg->maximized)
+            g_string_append(buf, "maximized=1\n");
         g_string_append_printf(buf, "splitter_pos=%d\n", cfg->splitter_pos);
         g_string_append_printf(buf, "media_in_new_tab=%d\n", cfg->media_in_new_tab);
         g_string_append_printf(buf, "desktop_folder_new_win=%d\n", cfg->desktop_folder_new_win);
         g_string_append_printf(buf, "change_tab_on_drop=%d\n", cfg->change_tab_on_drop);
 #if FM_CHECK_VERSION(1, 2, 0)
+        g_string_append_printf(buf, "focus_previous=%d\n", cfg->focus_previous);
         g_string_append(buf, "side_pane_mode=");
         if (cfg->side_pane_mode & FM_SP_HIDE)
             g_string_append(buf, "hidden;");

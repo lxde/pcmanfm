@@ -200,6 +200,11 @@ Changes on 1.2.0 since 1.1.0:
     in side pane, toolbar, or menu. Available only with LibFM 1.2.0 or
     newer.
 
+* Added new config option 'focus_previous' defaulted to false (preserving
+    old behavior) which allows select and focus the folder where we came
+    from when we go into parent directory. It's available only with LibFM
+    1.2.0 or newer.
+
 
 Changes on 1.1.0 since 1.0.1:
 

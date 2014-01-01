@@ -120,6 +120,10 @@ struct _FmAppConfig
     gboolean media_in_new_tab;
     gboolean desktop_folder_new_win;
     gboolean change_tab_on_drop;
+#if FM_CHECK_VERSION(1, 2, 0)
+    gboolean focus_previous;
+#endif
+    gboolean maximized;
 
     FmSidePaneMode side_pane_mode;
 

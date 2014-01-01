@@ -439,6 +439,21 @@
                                     <property name="position">7</property>
                                   </packing>
                                 </child>
+                                <child>
+                                  <object class="GtkCheckButton" id="focus_previous">
+                                    <property name="label" translatable="yes">_Focus previous folder after coming to its parent</property>
+                                    <property name="can_focus">True</property>
+                                    <property name="receives_default">False</property>
+                                    <property name="use_action_appearance">False</property>
+                                    <property name="use_underline">True</property>
+                                    <property name="draw_indicator">True</property>
+                                  </object>
+                                  <packing>
+                                    <property name="expand">False</property>
+                                    <property name="fill">True</property>
+                                    <property name="position">8</property>
+                                  </packing>
+                                </child>
                               </object>
                             </child>
                           </object>
@@ -1753,17 +1768,16 @@
                                   </packing>
                                 </child>
                                 <child>
-                                  <object class="GtkHBox" id="hbox6">
+                                  <object class="GtkHBox" id="hbox_format">
                                     <property name="can_focus">False</property>
                                     <property name="spacing">12</property>
                                     <child>
-                                      <object class="GtkLabel" id="label14">
+                                      <object class="GtkLabel" id="label28">
                                         <property name="visible">True</property>
                                         <property name="can_focus">False</property>
-                                        <property name="xalign">0</property>
-                                        <property name="label" translatable="yes">_Switch user command:</property>
+                                        <property name="label" translatable="yes" comments="Application command to format some drive">_Format command:</property>
                                         <property name="use_underline">True</property>
-                                        <property name="mnemonic_widget">su_cmd</property>
+                                        <property name="mnemonic_widget">format_cmd</property>
                                       </object>
                                       <packing>
                                         <property name="expand">False</property>
@@ -1772,7 +1786,7 @@
                                       </packing>
                                     </child>
                                     <child>
-                                      <object class="GtkEntry" id="su_cmd">
+                                      <object class="GtkEntry" id="format_cmd">
                                         <property name="visible">True</property>
                                         <property name="can_focus">True</property>
                                         <property name="activates_default">True</property>
@@ -1796,16 +1810,17 @@
                                   </packing>
                                 </child>
                                 <child>
-                                  <object class="GtkHBox" id="hbox_format">
+                                  <object class="GtkHBox" id="hbox6">
                                     <property name="can_focus">False</property>
                                     <property name="spacing">12</property>
                                     <child>
-                                      <object class="GtkLabel" id="label28">
+                                      <object class="GtkLabel" id="label14">
                                         <property name="visible">True</property>
                                         <property name="can_focus">False</property>
-                                        <property name="label" translatable="yes" comments="Application command to format some drive">_Format command:</property>
+                                        <property name="xalign">0</property>
+                                        <property name="label" translatable="yes">_Switch user command:</property>
                                         <property name="use_underline">True</property>
-                                        <property name="mnemonic_widget">format_cmd</property>
+                                        <property name="mnemonic_widget">su_cmd</property>
                                       </object>
                                       <packing>
                                         <property name="expand">False</property>
@@ -1814,7 +1829,7 @@
                                       </packing>
                                     </child>
                                     <child>
-                                      <object class="GtkEntry" id="format_cmd">
+                                      <object class="GtkEntry" id="su_cmd">
                                         <property name="visible">True</property>
                                         <property name="can_focus">True</property>
                                         <property name="activates_default">True</property>

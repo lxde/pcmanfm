@@ -1,7 +1,7 @@
 //      fm-tab-page.c
 //
 //      Copyright 2011 Hong Jen Yee (PCMan) <pcman.tw@gmail.com>
-//      Copyright 2012-2013 Andriy Grytsenko (LStranger) <andrej@rep.kiev.ua>
+//      Copyright 2012-2014 Andriy Grytsenko (LStranger) <andrej@rep.kiev.ua>
 //
 //      This program is free software; you can redistribute it and/or modify
 //      it under the terms of the GNU General Public License as published by
@@ -193,6 +193,11 @@ static void free_folder(FmTabPage* page)
         g_signal_handlers_disconnect_by_func(page->folder, on_folder_unmount, page);
         g_object_unref(page->folder);
         page->folder = NULL;
+#if FM_CHECK_VERSION(1, 2, 0)
+        if (page->want_focus)
+            fm_path_unref(page->want_focus);
+        page->want_focus = NULL;
+#endif
     }
 }
 
@@ -241,11 +246,10 @@ static void _disconnect_focus_in(FmFolderView *folder_view, FmTabPage *page)
 #if FM_CHECK_VERSION(1, 2, 0)
 static void on_home_path_changed(FmAppConfig *cfg, FmSidePane *sp)
 {
-    gboolean res;
     if (cfg->home_path && cfg->home_path[0])
-        res = fm_side_pane_set_home_dir(sp, cfg->home_path);
+        fm_side_pane_set_home_dir(sp, cfg->home_path);
     else
-        res = fm_side_pane_set_home_dir(sp, fm_get_home_dir());
+        fm_side_pane_set_home_dir(sp, fm_get_home_dir());
 }
 #endif
 
@@ -564,6 +568,15 @@ static gboolean update_scroll(gpointer data)
 #else
     gtk_adjustment_set_value(gtk_scrolled_window_get_vadjustment(scroll),
                              fm_nav_history_get_scroll_pos(page->nav_history));
+#endif
+#if FM_CHECK_VERSION(1, 2, 0)
+    if (page->want_focus)
+    {
+        fm_folder_view_select_file_path(page->folder_view, page->want_focus);
+        fm_folder_view_scroll_to_path(page->folder_view, page->want_focus, TRUE);
+        fm_path_unref(page->want_focus);
+        page->want_focus = NULL;
+    }
 #endif
     page->update_scroll_id = 0;
     return FALSE;
@@ -913,6 +926,9 @@ static void fm_tab_page_chdir_without_history(FmTabPage* page, FmPath* path)
     FmStandardViewMode view_mode;
     gboolean show_hidden;
     char **columns; /* unused with libfm < 1.0.2 */
+#if FM_CHECK_VERSION(1, 2, 0)
+    FmPath *prev_path = NULL;
+#endif
 
 #if FM_CHECK_VERSION(1, 0, 2)
     if (page->filter_pattern && page->filter_pattern[0])
@@ -925,6 +941,17 @@ static void fm_tab_page_chdir_without_history(FmTabPage* page, FmPath* path)
 #endif
     fm_tab_label_set_text(page->tab_label, disp_name);
     g_free(disp_name);
+
+#if FM_CHECK_VERSION(1, 2, 0)
+    if (app_config->focus_previous && page->folder)
+    {
+        prev_path = fm_folder_get_path(page->folder);
+        if (fm_path_equal(fm_path_get_parent(prev_path), path))
+            fm_path_ref(prev_path);
+        else
+            prev_path = NULL;
+    }
+#endif
 
     disp_path = fm_path_display_name(path, FALSE);
     fm_tab_label_set_tooltip_text(FM_TAB_LABEL(page->tab_label), disp_path);
@@ -941,6 +968,10 @@ static void fm_tab_page_chdir_without_history(FmTabPage* page, FmPath* path)
     g_signal_connect(page->folder, "removed", G_CALLBACK(on_folder_removed), page);
     g_signal_connect(page->folder, "unmount", G_CALLBACK(on_folder_unmount), page);
     g_signal_connect(page->folder, "content-changed", G_CALLBACK(on_folder_content_changed), page);
+
+#if FM_CHECK_VERSION(1, 2, 0)
+    page->want_focus = prev_path;
+#endif
 
     /* get sort and view modes for new path */
     page->own_config = fm_app_config_get_config_for_path(path, &page->sort_type,
