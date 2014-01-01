@@ -2,7 +2,7 @@
  *      main-win.c
  *
  *      Copyright 2009 - 2012 Hong Jen Yee (PCMan) <pcman.tw@gmail.com>
- *      Copyright 2012-2013 Andriy Grytsenko (LStranger) <andrej@rep.kiev.ua>
+ *      Copyright 2012-2014 Andriy Grytsenko (LStranger) <andrej@rep.kiev.ua>
  *
  *      This program is free software; you can redistribute it and/or modify
  *      it under the terms of the GNU General Public License as published by
@@ -1011,13 +1011,19 @@ static void fm_main_win_finalize(GObject *object)
 static void on_unrealize(GtkWidget* widget)
 {
     int w, h;
+    FmMainWin *win = FM_MAIN_WIN(widget);
 
     gtk_window_get_size(GTK_WINDOW(widget), &w, &h);
-    if(!FM_MAIN_WIN(widget)->fullscreen &&
+    if(!win->fullscreen && !win->maximized &&
        (w != app_config->win_width || h != app_config->win_height))
     {
         app_config->win_width = w;
         app_config->win_height = h;
+        pcmanfm_save_config(FALSE);
+    }
+    if (win->maximized != app_config->maximized)
+    {
+        app_config->maximized = win->maximized;
         pcmanfm_save_config(FALSE);
     }
     (*GTK_WIDGET_CLASS(fm_main_win_parent_class)->unrealize)(widget);
@@ -1539,6 +1545,15 @@ gint fm_main_win_add_tab(FmMainWin* win, FmPath* path)
     return ret;
 }
 
+static gboolean on_window_state_event(GtkWidget *widget, GdkEventWindowState *evt, FmMainWin *win)
+{
+    if (evt->changed_mask & GDK_WINDOW_STATE_FULLSCREEN)
+        win->fullscreen = ((evt->new_window_state & GDK_WINDOW_STATE_FULLSCREEN) != 0);
+    if (evt->changed_mask & GDK_WINDOW_STATE_MAXIMIZED)
+        win->maximized = app_config->maximized = ((evt->new_window_state & GDK_WINDOW_STATE_MAXIMIZED) != 0);
+    return FALSE;
+}
+
 FmMainWin* fm_main_win_add_win(FmMainWin* win, FmPath* path)
 {
     GtkAction *act;
@@ -1547,7 +1562,10 @@ FmMainWin* fm_main_win_add_win(FmMainWin* win, FmPath* path)
     gtk_window_set_default_size(GTK_WINDOW(win),
                                 app_config->win_width,
                                 app_config->win_height);
+    if (app_config->maximized)
+        gtk_window_maximize(GTK_WINDOW(win));
     gtk_widget_show_all(GTK_WIDGET(win));
+    g_signal_connect(win, "window-state-event", G_CALLBACK(on_window_state_event), win);
     /* create new tab */
     fm_main_win_add_tab(win, path);
     gtk_window_present(GTK_WINDOW(win));
