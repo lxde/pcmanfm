@@ -2537,6 +2537,18 @@ static GdkFilterReturn on_root_event(GdkXEvent *xevent, GdkEvent *event, gpointe
 static void on_screen_size_changed(GdkScreen* screen, FmDesktop* desktop)
 {
     GdkRectangle geom;
+    if (desktop->monitor >= gdk_screen_get_n_monitors(screen))
+    {
+        gint i;
+        /* our monitor was disconnected... remove FmDesktop now! */
+        for (i = 0; i < n_screens; i++)
+            if (desktops[i] == desktop)
+                break;
+        if (i < n_screens)
+            desktops[i] = fm_desktop_new(screen, desktop->monitor ? -2 : -1);
+        gtk_widget_destroy(GTK_WIDGET(desktop));
+        return;
+    }
     gdk_screen_get_monitor_geometry(screen, desktop->monitor, &geom);
     gtk_window_resize((GtkWindow*)desktop, geom.width, geom.height);
 }
@@ -4732,7 +4744,7 @@ static void fm_desktop_class_init(FmDesktopClass *klass)
     g_object_class_install_property(object_class, PROP_MONITOR,
         g_param_spec_int("monitor", "Monitor",
                          "Monitor number where desktop is",
-                         0, 127, 0, G_PARAM_CONSTRUCT_ONLY | G_PARAM_WRITABLE));
+                         -2, 127, 0, G_PARAM_CONSTRUCT_ONLY | G_PARAM_WRITABLE));
 
     desktop_atom = gdk_atom_intern_static_string(dnd_targets[0].target);
 }
