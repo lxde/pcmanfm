@@ -323,6 +323,12 @@ static inline void unload_items(FmDesktop* desktop)
     g_object_set(G_OBJECT(desktop), "tooltip-text", NULL, NULL);
 }
 
+static inline void reload_items(FmDesktop *desktop)
+{
+    unload_items(desktop);
+    load_items(desktop);
+}
+
 static gint get_desktop_for_root_window(GdkWindow *root)
 {
     gint desktop = -1;
@@ -532,8 +538,7 @@ static gboolean on_idle_extra_item_add(gpointer user_data)
                                                FM_FOLDER_MODEL_ITEMPOS_PRE);
                 /* if this is extra item it might be loaded after the folder
                    therefore we have to reload fixed positions again to apply */
-                unload_items(desktops[i]);
-                load_items(desktops[i]);
+                reload_items(desktops[i]);
             }
     }
     else if (item == trash_can)
@@ -545,8 +550,7 @@ static gboolean on_idle_extra_item_add(gpointer user_data)
             {
                 fm_folder_model_extra_file_add(desktops[i]->model, item->fi,
                                                FM_FOLDER_MODEL_ITEMPOS_PRE);
-                unload_items(desktops[i]);
-                load_items(desktops[i]);
+                reload_items(desktops[i]);
             }
     }
     else
@@ -2437,7 +2441,6 @@ static void _clear_bg_cache(FmDesktop *self)
 static void update_working_area(FmDesktop* desktop)
 {
     GdkScreen* screen = gtk_widget_get_screen((GtkWidget*)desktop);
-    gint old_w = desktop->working_area.width, old_h = desktop->working_area.height;
 #if GTK_CHECK_VERSION(3, 4, 0)
     gdk_screen_get_monitor_workarea(screen, desktop->monitor, &desktop->working_area);
 #else
@@ -2504,15 +2507,6 @@ static void update_working_area(FmDesktop* desktop)
     XFree(prop);
 _out:
 #endif
-    /* bug #3614866: after monitor geometry was changed we need to redraw
-       the background, but of course don't redraw it if it wasn't drawn yet */
-    if (old_w > 0 && old_h > 0
-        && (old_w != desktop->working_area.width || old_h != desktop->working_area.height))
-    {
-        /* size was changed so all the cache became invalid */
-        _clear_bg_cache(desktop);
-        update_background(desktop, -1);
-    }
     queue_layout_items(desktop);
     return;
 }
@@ -2587,7 +2581,7 @@ static void fm_desktop_update_popup(FmFolderView* fv, GtkWindow* window,
     act = gtk_action_group_get_action(act_grp, "Prop");
     gtk_action_set_visible(act, FALSE);
     //gtk_action_group_remove_action(act_grp, act);
-#if !FM_CHECK_VESRION(1, 2, 0)
+#if !FM_CHECK_VERSION(1, 2, 0)
     if(fm_folder_view_get_model(fv) == NULL)
     {
         /* hide folder-oriented actions if there is no folder */
@@ -3173,6 +3167,9 @@ static void on_size_allocate(GtkWidget* w, GtkAllocation* alloc)
     /* scale the wallpaper */
     if(gtk_widget_get_realized(w))
     {
+        /* bug #3614866: after monitor geometry was changed we need to redraw
+           the background invalidating all the cache */
+        _clear_bg_cache(desktop);
         if(self->conf.wallpaper_mode != FM_WP_COLOR && self->conf.wallpaper_mode != FM_WP_TILE)
             update_background(self, -1);
     }
@@ -4357,8 +4354,7 @@ static void on_folder_finish_loading(FmFolder* folder, gpointer user_data)
         return;
     fm_folder_view_add_popup(FM_FOLDER_VIEW(desktop), GTK_WINDOW(desktop),
                              fm_desktop_update_popup);
-    unload_items(desktop);
-    load_items(desktop);
+    reload_items(desktop);
 }
 
 static FmJobErrorAction on_folder_error(FmFolder* folder, GError* err, FmJobErrorSeverity severity, gpointer user_data)
@@ -4624,7 +4620,7 @@ static GObject* fm_desktop_constructor(GType type, guint n_construct_properties,
     root = gdk_screen_get_root_window(screen);
     gdk_window_set_events(root, gdk_window_get_events(root)|GDK_PROPERTY_CHANGE_MASK);
     gdk_window_add_filter(root, on_root_event, self);
-    g_signal_connect(screen, "size-changed", G_CALLBACK(on_screen_size_changed), self);
+    g_signal_connect(screen, "monitors-changed", G_CALLBACK(on_screen_size_changed), self);
 
     n = get_desktop_for_root_window(root);
     if(n < 0)
