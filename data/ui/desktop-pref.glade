@@ -606,7 +606,7 @@
                     <property name="spacing">6</property>
                     <child>
                       <object class="GtkCheckButton" id="use_desktop_folder">
-                        <property name="label" translatable="yes">_Use desktop as a folder (show icons on it):</property>
+                        <property name="label" translatable="yes">_Use desktop as a folder (show icons on it) by path:</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">False</property>
@@ -637,7 +637,7 @@
                                 <property name="spacing">12</property>
                                 <child>
                                   <object class="GtkRadioButton" id="desktop_folder_default">
-                                    <property name="label" translatable="yes" context="Use desktop as a folder: Default / Custom: ...">Default</property>
+                                    <property name="label" translatable="yes" context="Use path for some folder: ...">Default</property>
                                     <property name="visible">True</property>
                                     <property name="can_focus">True</property>
                                     <property name="receives_default">False</property>
@@ -654,7 +654,7 @@
                                 </child>
                                 <child>
                                   <object class="GtkRadioButton" id="desktop_folder_set">
-                                    <property name="label" translatable="yes" context="Use desktop as a folder: Default / Custom: ...">Custom:</property>
+                                    <property name="label" translatable="yes" context="Use path for some folder: ...">Custom:</property>
                                     <property name="visible">True</property>
                                     <property name="can_focus">True</property>
                                     <property name="receives_default">False</property>
