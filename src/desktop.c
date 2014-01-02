@@ -2551,6 +2551,9 @@ static void on_screen_size_changed(GdkScreen* screen, FmDesktop* desktop)
     }
     gdk_screen_get_monitor_geometry(screen, desktop->monitor, &geom);
     gtk_window_resize((GtkWindow*)desktop, geom.width, geom.height);
+    /* bug #3614780: if monitor was moved desktop should be moved too */
+    gtk_window_move((GtkWindow*)desktop, geom.x, geom.y);
+    /* FIXME: check if new monitor was added! */
 }
 
 static void reload_icons()
