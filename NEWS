@@ -211,6 +211,13 @@ Changes on 1.2.0 since 1.1.0:
     be closed. If set to false then such tab will go to the 'Home Folder'
     instead (with respect to 'home_path' config option).
 
+* Implemented possibility to set custom folder to display on desktop. It
+    is saved in monitor config option 'folder'. If that config option is
+    unset that implies default desktop folder. If that config option is
+    set to empty string then desktop icons support and drag&drop support
+    will be disabled for that monitor. Otherwise mentioned path will be
+    used to display on the desktop instead of Desktop Folder.
+
 
 Changes on 1.1.0 since 1.0.1:
 

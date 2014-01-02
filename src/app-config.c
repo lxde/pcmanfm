@@ -443,6 +443,7 @@ static void fm_app_config_finalize(GObject *object)
       }
       g_free(cfg->desktop_section.wallpaper);
       g_free(cfg->desktop_section.desktop_font);
+      g_free(cfg->desktop_section.folder);
     }
     /*g_free(cfg->su_cmd);*/
     g_hash_table_unref(cfg->autorun_choices);
@@ -511,6 +512,7 @@ static void fm_app_config_init(FmAppConfig *cfg)
     cfg->desktop_section.show_trash = TRUE;
     cfg->desktop_section.show_mounts = FALSE;
 #endif
+    cfg->desktop_section.folder = NULL;
     cfg->tb.visible = cfg->tb.new_tab = cfg->tb.nav = cfg->tb.home = TRUE;
     cfg->autorun_choices = g_hash_table_new_full(g_str_hash, g_str_equal,
                                                  g_free, _free_archoice);
@@ -619,6 +621,9 @@ void fm_app_config_load_desktop_config(GKeyFile *kf, const char *group, FmDeskto
     tmp = g_key_file_get_string(kf, group, "desktop_font", NULL);
     g_free(cfg->desktop_font);
     cfg->desktop_font = tmp;
+
+    g_free(cfg->folder);
+    cfg->folder = g_key_file_get_string(kf, group, "folder", NULL);
 
     fm_key_file_get_bool(kf, group, "show_wm_menu", &cfg->show_wm_menu);
     _parse_sort(kf, group, &cfg->desktop_sort_type, &cfg->desktop_sort_by);
@@ -1034,6 +1039,8 @@ void fm_app_config_save_desktop_config(GString *buf, const char *group, FmDeskto
                            cfg->desktop_shadow.blue/257);
     if(cfg->desktop_font && *cfg->desktop_font)
         g_string_append_printf(buf, "desktop_font=%s\n", cfg->desktop_font);
+    if(cfg->folder)
+        g_string_append_printf(buf, "folder=%s\n", cfg->folder);
     g_string_append_printf(buf, "show_wm_menu=%d\n", cfg->show_wm_menu);
     _save_sort(buf, cfg->desktop_sort_type, cfg->desktop_sort_by);
 #if FM_CHECK_VERSION(1, 2, 0)

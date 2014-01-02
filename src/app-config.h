@@ -77,6 +77,7 @@ typedef struct
     GdkColor desktop_fg;
     GdkColor desktop_shadow;
     char* desktop_font;
+    char *folder; /* NULL if default, empty if no icons, else path */
     gboolean show_wm_menu;
 #if FM_CHECK_VERSION(1, 0, 2)
     FmSortMode desktop_sort_type;
