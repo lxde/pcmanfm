@@ -103,6 +103,7 @@ static void on_save_per_folder(GtkToggleAction* act, FmMainWin* win);
 static void on_show_side_pane(GtkToggleAction* act, FmMainWin* win);
 static void on_dual_pane(GtkToggleAction* act, FmMainWin* win);
 static void on_show_toolbar(GtkToggleAction *action, FmMainWin *win);
+static void on_toolbar_new_win(GtkToggleAction *act, FmMainWin *win);
 static void on_toolbar_new_tab(GtkToggleAction *act, FmMainWin *win);
 static void on_toolbar_nav(GtkToggleAction *act, FmMainWin *win);
 static void on_toolbar_home(GtkToggleAction *act, FmMainWin *win);
@@ -635,6 +636,10 @@ static void on_toolsbar_changed(FmAppConfig *cfg, FmMainWin *win)
     win->in_update = TRUE; /* avoid recursion */
     active = cfg->tb.visible;
     gtk_widget_set_visible(GTK_WIDGET(win->toolbar), active);
+    act = gtk_ui_manager_get_action(win->ui, "/menubar/ViewMenu/Toolbar/ToolbarNewWin");
+    gtk_action_set_sensitive(act, active);
+    if (gtk_toggle_action_get_active(GTK_TOGGLE_ACTION(act)) != app_config->tb.new_win)
+        gtk_toggle_action_set_active(GTK_TOGGLE_ACTION(act), app_config->tb.new_win);
     act = gtk_ui_manager_get_action(win->ui, "/menubar/ViewMenu/Toolbar/ToolbarNewTab");
     gtk_action_set_sensitive(act, active);
     if (gtk_toggle_action_get_active(GTK_TOGGLE_ACTION(act)) != app_config->tb.new_tab)
@@ -649,6 +654,8 @@ static void on_toolsbar_changed(FmAppConfig *cfg, FmMainWin *win)
         gtk_toggle_action_set_active(GTK_TOGGLE_ACTION(act), app_config->tb.home);
     if (active) /* it it's hidden no reason to update its children */
     {
+        toolitem = gtk_ui_manager_get_widget(win->ui, "/toolbar/New");
+        gtk_widget_set_visible(toolitem, cfg->tb.new_win);
         toolitem = gtk_ui_manager_get_widget(win->ui, "/toolbar/NewTab");
         gtk_widget_set_visible(toolitem, cfg->tb.new_tab);
         active = cfg->tb.nav;
@@ -856,7 +863,7 @@ static void fm_main_win_init(FmMainWin *win)
 #if FM_CHECK_VERSION(1, 2, 0)
     /* create history button after 'Prev' and add a popup menu to it */
     toolitem = fm_menu_tool_item_new();
-    gtk_toolbar_insert(win->toolbar, toolitem, 2);
+    gtk_toolbar_insert(win->toolbar, toolitem, 3);
 #else
     /* create 'Prev' button manually and add a popup menu to it */
     toolitem = (GtkToolItem*)g_object_new(GTK_TYPE_MENU_TOOL_BUTTON, NULL);
@@ -1608,6 +1615,8 @@ FmMainWin* fm_main_win_add_win(FmMainWin* win, FmPath* path)
     /* set toolbar visibility and menu toggleables from config */
     act = gtk_ui_manager_get_action(win->ui, "/menubar/ViewMenu/Toolbar/ShowToolbar");
     gtk_toggle_action_set_active(GTK_TOGGLE_ACTION(act), app_config->tb.visible);
+    act = gtk_ui_manager_get_action(win->ui, "/menubar/ViewMenu/Toolbar/ToolbarNewWin");
+    gtk_toggle_action_set_active(GTK_TOGGLE_ACTION(act), app_config->tb.new_win);
     act = gtk_ui_manager_get_action(win->ui, "/menubar/ViewMenu/Toolbar/ToolbarNewTab");
     gtk_toggle_action_set_active(GTK_TOGGLE_ACTION(act), app_config->tb.new_tab);
     act = gtk_ui_manager_get_action(win->ui, "/menubar/ViewMenu/Toolbar/ToolbarNav");
@@ -1755,7 +1764,16 @@ static void on_show_toolbar(GtkToggleAction *action, FmMainWin *win)
     pcmanfm_save_config(FALSE);
 }
 
-/* toolbar items: NewTab Prev (Hist) Next Up Home (Location) Go */
+/* toolbar items: NewWin NewTab Prev (Hist) Next Up Home (Location) Go */
+static void on_toolbar_new_win(GtkToggleAction *act, FmMainWin *win)
+{
+    gboolean active = gtk_toggle_action_get_active(act);
+
+    app_config->tb.new_win = active;
+    fm_config_emit_changed(fm_config, "toolsbar");
+    pcmanfm_save_config(FALSE);
+}
+
 static void on_toolbar_new_tab(GtkToggleAction *act, FmMainWin *win)
 {
     gboolean active = gtk_toggle_action_get_active(act);

@@ -157,6 +157,7 @@ struct _FmAppConfig
     /* toolbar settings */
     struct {
         gboolean visible : 1;
+        gboolean new_win : 1;
         gboolean new_tab : 1;
         gboolean nav : 1;
         gboolean home : 1;

@@ -514,6 +514,7 @@ static void fm_app_config_init(FmAppConfig *cfg)
 #endif
     cfg->desktop_section.folder = NULL;
     cfg->tb.visible = cfg->tb.new_tab = cfg->tb.nav = cfg->tb.home = TRUE;
+    cfg->tb.new_win = FALSE;
     cfg->autorun_choices = g_hash_table_new_full(g_str_hash, g_str_equal,
                                                  g_free, _free_archoice);
     cfg->show_statusbar = TRUE;
@@ -744,13 +745,15 @@ void fm_app_config_load_from_key_file(FmAppConfig* cfg, GKeyFile* kf)
     {
         /* reset defaults */
         cfg->tb.visible = TRUE;
-        cfg->tb.new_tab = cfg->tb.nav = cfg->tb.home = FALSE;
+        cfg->tb.new_win = cfg->tb.new_tab = cfg->tb.nav = cfg->tb.home = FALSE;
         /* parse the array */
         for (i = 0; tmpv[i]; i++)
         {
             tmp = tmpv[i];
             if (cfg->tb.visible && strcmp(tmp, "hidden") == 0)
                 cfg->tb.visible = FALSE;
+            else if (!cfg->tb.new_win && strcmp(tmp, "newwin") == 0)
+                cfg->tb.new_win = TRUE;
             else if (!cfg->tb.new_tab && strcmp(tmp, "newtab") == 0)
                 cfg->tb.new_tab = TRUE;
             else if (!cfg->tb.nav && strcmp(tmp, "navigation") == 0)
@@ -1149,6 +1152,8 @@ void fm_app_config_save_profile(FmAppConfig* cfg, const char* name)
         g_string_append(buf, "toolbar=");
         if (!cfg->tb.visible)
             g_string_append(buf, "hidden;");
+        if (cfg->tb.new_win)
+            g_string_append(buf, "newwin;");
         if (cfg->tb.new_tab)
             g_string_append(buf, "newtab;");
         if (cfg->tb.nav)

@@ -2,7 +2,7 @@
  *      main-win-ui.c
  *
  *      Copyright 2009 - 2012 Hong Jen Yee (PCMan) <pcman.tw@gmail.com>
- *      Copyright 2012-2013 Andriy Grytsenko (LStranger) <andrej@rep.kiev.ua>
+ *      Copyright 2012-2014 Andriy Grytsenko (LStranger) <andrej@rep.kiev.ua>
  *
  *      This program is free software; you can redistribute it and/or modify
  *      it under the terms of the GNU General Public License as published by
@@ -68,6 +68,7 @@ static const char main_menu_xml[] =
     "<menu action='Toolbar'>"
       "<menuitem action='ShowToolbar'/>"
       "<separator/>"
+      "<menuitem action='ToolbarNewWin'/>"
       "<menuitem action='ToolbarNewTab'/>"
       "<menuitem action='ToolbarNav'/>"
       "<menuitem action='ToolbarHome'/>"
@@ -155,6 +156,7 @@ static const char main_menu_xml[] =
   "</menu>"
 "</menubar>"
 "<toolbar>"
+    "<toolitem action='New'/>"
     "<toolitem action='NewTab'/>"
 #if FM_CHECK_VERSION(1, 2, 0)
     "<toolitem action='Prev'/>"
@@ -259,8 +261,9 @@ static GtkToggleActionEntry main_win_toggle_actions[]=
     {"SavePerFolder", NULL, N_("Preserve This Folder's Settings"), NULL,
             N_("Check to remember view and sort as folder setting rather than global one"),
             G_CALLBACK(on_save_per_folder), FALSE},
-    {"ShowToolbar", NULL, N_("Show _Toolbar"), NULL, NULL, G_CALLBACK(on_show_toolbar), TRUE},
-    {"ToolbarNewTab", NULL, N_("Show 'Ne_w Tab' Button"), NULL, NULL, G_CALLBACK(on_toolbar_new_tab), TRUE},
+    {"ShowToolbar", NULL, N_("_Show Toolbar"), NULL, NULL, G_CALLBACK(on_show_toolbar), TRUE},
+    {"ToolbarNewWin", NULL, N_("Show 'New _Window' Button"), NULL, NULL, G_CALLBACK(on_toolbar_new_win), TRUE},
+    {"ToolbarNewTab", NULL, N_("Show 'New _Tab' Button"), NULL, NULL, G_CALLBACK(on_toolbar_new_tab), TRUE},
     {"ToolbarNav", NULL, N_("Show _Navigation Buttons"), NULL, NULL, G_CALLBACK(on_toolbar_nav), TRUE},
     {"ToolbarHome", NULL, N_("Show '_Home' Button"), NULL, NULL, G_CALLBACK(on_toolbar_home), TRUE},
     {"ShowSidePane", NULL, N_("Sho_w Side Pane"), "F9", NULL, G_CALLBACK(on_show_side_pane), TRUE},
