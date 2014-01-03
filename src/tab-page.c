@@ -972,8 +972,6 @@ FmTabPage *fm_tab_page_new(FmPath* path)
 {
     FmTabPage* page = (FmTabPage*)g_object_new(FM_TYPE_TAB_PAGE, NULL);
 
-    /* FIXME: does setting show_hidden have any effect here? */
-    fm_folder_view_set_show_hidden(page->folder_view, app_config->show_hidden);
     fm_tab_page_chdir(page, path);
     return page;
 }
@@ -1042,6 +1040,9 @@ static void fm_tab_page_chdir_without_history(FmTabPage* page, FmPath* path)
         view_mode = page->view_mode;
     page->show_hidden = show_hidden;
     fm_folder_view_set_show_hidden(page->folder_view, show_hidden);
+#if FM_CHECK_VERSION(1, 2, 0)
+    fm_side_pane_set_show_hidden(page->side_pane, show_hidden);
+#endif
 
     if(fm_folder_is_loaded(page->folder))
     {
@@ -1120,6 +1121,9 @@ void fm_tab_page_chdir(FmTabPage* page, FmPath* path)
 void fm_tab_page_set_show_hidden(FmTabPage* page, gboolean show_hidden)
 {
     fm_folder_view_set_show_hidden(page->folder_view, show_hidden);
+#if FM_CHECK_VERSION(1, 2, 0)
+    fm_side_pane_set_show_hidden(page->side_pane, show_hidden);
+#endif
     /* update status text */
     g_free(page->status_text[FM_STATUS_TEXT_NORMAL]);
     page->status_text[FM_STATUS_TEXT_NORMAL] = format_status_text(page);
