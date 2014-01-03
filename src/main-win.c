@@ -183,6 +183,13 @@ static void on_location_activate(GtkEntry* entry, FmMainWin* win)
     fm_path_ref(path);
     fm_main_win_chdir(win, path);
     fm_path_unref(path);
+    if (app_config->pathbar_mode_buttons)
+    {
+        /* recover from Ctrl+L mode change */
+        gtk_widget_hide(GTK_WIDGET(win->location));
+        gtk_widget_hide(gtk_ui_manager_get_widget(win->ui, "/toolbar/Go"));
+        gtk_widget_show(GTK_WIDGET(win->path_bar));
+    }
 
     /* FIXME: due to bug #650114 in GTK+, GtkEntry still call a
      * idle function for GtkEntryCompletion even if the completion
@@ -201,6 +208,25 @@ static void on_location_activate(GtkEntry* entry, FmMainWin* win)
      */
     if(win->idle_handler == 0)
         win->idle_handler = gdk_threads_add_idle_full(G_PRIORITY_LOW, idle_focus_view, win, NULL);
+}
+
+static void on_path_bar_chdir(FmPathBar *bar, FmPath *path, FmMainWin *win)
+{
+    fm_main_win_chdir(win, path);
+}
+
+static void on_path_bar_mode(GtkRadioAction *act, GtkRadioAction *cur, FmMainWin *win)
+{
+    int mode = gtk_radio_action_get_current_value(cur);
+
+    if (app_config->pathbar_mode_buttons != mode)
+    {
+        app_config->pathbar_mode_buttons = mode;
+        pcmanfm_save_config(FALSE);
+    }
+    gtk_widget_set_visible(GTK_WIDGET(win->location), mode == 0);
+    gtk_widget_set_visible(gtk_ui_manager_get_widget(win->ui, "/toolbar/Go"), mode == 0);
+    gtk_widget_set_visible(GTK_WIDGET(win->path_bar), mode);
 }
 
 static void update_sort_menu(FmMainWin* win)
@@ -682,6 +708,7 @@ static void fm_main_win_init(FmMainWin *win)
 {
     GtkBox *vbox;
     GtkWidget *menubar;
+    GtkBox *pathbox;
     GtkToolItem *toolitem;
     GtkUIManager* ui;
     GtkActionGroup* act_grp;
@@ -778,6 +805,9 @@ static void fm_main_win_init(FmMainWin *win)
                                        G_N_ELEMENTS(main_win_side_bar_mode_actions),
                                        (app_config->side_pane_mode & FM_SP_MODE_MASK),
                                        G_CALLBACK(on_side_pane_mode), win);
+    gtk_action_group_add_radio_actions(act_grp, main_win_path_bar_mode_actions,
+                                       G_N_ELEMENTS(main_win_path_bar_mode_actions),
+                                       0, G_CALLBACK(on_path_bar_mode), win);
 
     accel_grp = gtk_ui_manager_get_accel_group(ui);
     gtk_window_add_accel_group(GTK_WINDOW(win), accel_grp);
@@ -871,8 +901,14 @@ static void fm_main_win_init(FmMainWin *win)
         gtk_toolbar_insert(win->toolbar, toolitem, 0);
     }
 
+    win->path_bar = fm_path_bar_new();
+    g_signal_connect(win->path_bar, "chdir", G_CALLBACK(on_path_bar_chdir), win);
+    pathbox = (GtkBox*)gtk_hbox_new(FALSE, 0);
+    gtk_box_pack_start(pathbox, GTK_WIDGET(win->location), TRUE, TRUE, 0);
+    gtk_box_pack_start(pathbox, GTK_WIDGET(win->path_bar), TRUE, TRUE, 0);
+
     toolitem = (GtkToolItem*)gtk_tool_item_new();
-    gtk_container_add(GTK_CONTAINER(toolitem), GTK_WIDGET(win->location));
+    gtk_container_add(GTK_CONTAINER(toolitem), GTK_WIDGET(pathbox));
     gtk_tool_item_set_expand(toolitem, TRUE);
     gtk_toolbar_insert(win->toolbar, toolitem, gtk_toolbar_get_n_items(win->toolbar) - 1);
     g_signal_connect(app_config, "changed::toolsbar",
@@ -1550,7 +1586,7 @@ static gboolean on_window_state_event(GtkWidget *widget, GdkEventWindowState *ev
     if (evt->changed_mask & GDK_WINDOW_STATE_FULLSCREEN)
         win->fullscreen = ((evt->new_window_state & GDK_WINDOW_STATE_FULLSCREEN) != 0);
     if (evt->changed_mask & GDK_WINDOW_STATE_MAXIMIZED)
-        win->maximized = app_config->maximized = ((evt->new_window_state & GDK_WINDOW_STATE_MAXIMIZED) != 0);
+        win->maximized = ((evt->new_window_state & GDK_WINDOW_STATE_MAXIMIZED) != 0);
     return FALSE;
 }
 
@@ -1582,6 +1618,10 @@ FmMainWin* fm_main_win_add_win(FmMainWin* win, FmPath* path)
     act = gtk_ui_manager_get_action(win->ui, "/menubar/ViewMenu/ShowStatus");
     gtk_toggle_action_set_active(GTK_TOGGLE_ACTION(act), app_config->show_statusbar);
     gtk_widget_set_visible(GTK_WIDGET(win->statusbar), app_config->show_statusbar);
+    /* the same for path bar mode */
+    gtk_widget_hide(GTK_WIDGET(win->path_bar));
+    act = gtk_ui_manager_get_action(win->ui, "/menubar/ViewMenu/PathMode/PathEntry");
+    gtk_radio_action_set_current_value(GTK_RADIO_ACTION(act), app_config->pathbar_mode_buttons);
     return win;
 }
 
@@ -1746,6 +1786,12 @@ static void on_toolbar_home(GtkToggleAction *act, FmMainWin *win)
 static void on_location(GtkAction* act, FmMainWin* win)
 {
     gtk_widget_grab_focus(GTK_WIDGET(win->location));
+    if (app_config->pathbar_mode_buttons)
+    {
+        gtk_widget_show(GTK_WIDGET(win->location));
+        gtk_widget_show(gtk_ui_manager_get_widget(win->ui, "/toolbar/Go"));
+        gtk_widget_hide(GTK_WIDGET(win->path_bar));
+    }
 }
 
 static void bounce_action(GtkAction* act, FmMainWin* win)
@@ -1982,6 +2028,7 @@ static void on_tab_page_chdir(FmTabPage* page, FmPath* path, FmMainWin* win)
         return;
 
     fm_path_entry_set_path(win->location, path);
+    fm_path_bar_set_path(win->path_bar, path);
     gtk_window_set_title(GTK_WINDOW(win), fm_tab_page_get_title(page));
 }
 
@@ -2123,6 +2170,7 @@ static void on_notebook_switch_page(GtkNotebook* nb, gpointer* new_page, guint n
     }
 
     fm_path_entry_set_path(win->location, fm_tab_page_get_cwd(page));
+    fm_path_bar_set_path(win->path_bar, fm_tab_page_get_cwd(page));
     gtk_window_set_title((GtkWindow*)win, fm_tab_page_get_title(page));
 
     update_sort_menu(win);
@@ -2337,6 +2385,8 @@ static gboolean on_key_press_event(GtkWidget* w, GdkEventKey* evt)
             gtk_widget_grab_focus(GTK_WIDGET(win->folder_view));
             fm_path_entry_set_path(win->location,
                                    fm_tab_page_get_cwd(win->current_page));
+            fm_path_bar_set_path(win->path_bar,
+                                 fm_tab_page_get_cwd(win->current_page));
             return TRUE;
         }
     }

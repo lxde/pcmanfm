@@ -72,6 +72,10 @@ static const char main_menu_xml[] =
       "<menuitem action='ToolbarNav'/>"
       "<menuitem action='ToolbarHome'/>"
     "</menu>"
+    "<menu action='PathMode'>"
+      "<menuitem action='PathEntry'/>"
+      "<menuitem action='PathBar'/>"
+    "</menu>"
     "<menu action='SidePane'>"
       "<menuitem action='ShowSidePane' />"
       "<separator/>"
@@ -135,6 +139,7 @@ static const char main_menu_xml[] =
     "<menuitem action='Computer'/>"
     "<menuitem action='Network'/>"
     "<separator/>"
+    "<menuitem action='Location'/>"
     "<menuitem action='Connect'/>"
   "</menu>"
   "<menu action='ToolMenu'>"
@@ -159,7 +164,6 @@ static const char main_menu_xml[] =
     "<toolitem action='Home'/>"
     "<toolitem action='Go'/>"
 "</toolbar>"
-"<accelerator action='Location'/>"
 "<accelerator action='Location2'/>"
 "<accelerator action='Prev2'/>"
 "<accelerator action='Next2'/>"
@@ -197,6 +201,7 @@ static GtkActionEntry main_win_actions[]=
     {"ViewMenu", NULL, N_("_View"), NULL, NULL, NULL},
         {"Reload", GTK_STOCK_REFRESH, N_("_Reload Folder"), "F5", N_("Reload current folder"), G_CALLBACK(on_reload)},
         {"Toolbar", NULL, N_("Tool_bar"), NULL, NULL, NULL},
+        {"PathMode", NULL, N_("Pat_h Bar"), NULL, NULL, NULL},
         {"SidePane", "view-sidetree", N_("Side _Pane"), NULL, NULL, NULL},
         /* other see below: 'ShowHidden' 'ShowStatus' 'Fullscreen' 'IconView'... */
         {"FolderView", "view-choose", N_("Fo_lder View Mode"), NULL, NULL, NULL},
@@ -221,6 +226,7 @@ static GtkActionEntry main_win_actions[]=
         {"Apps", "system-software-install", N_("_Applications"), NULL, N_("Go to root of applications menu folder"), G_CALLBACK(on_go_apps)},
         {"Computer", "computer", N_("Dev_ices"), NULL, N_("Go to list of devices connected to the computer"), G_CALLBACK(on_go_computer)},
         {"Network", GTK_STOCK_NETWORK, N_("Net_work"), NULL, N_("Go to list of places on the network"), G_CALLBACK(on_go_network)},
+        {"Location", GTK_STOCK_JUMP_TO, N_("_Go to path..."), "<Ctrl>L", NULL, G_CALLBACK(on_location)},
         {"Connect", NULL, N_("_Connect to Server..."), NULL, N_("Open a window to choose remote folder location"), G_CALLBACK(on_go_connect)},
         {"Go", GTK_STOCK_JUMP_TO, NULL, NULL, N_("Go to the path in the location bar"), G_CALLBACK(on_go)},
     {"BookmarksMenu", NULL, N_("_Bookmarks"), NULL, NULL, NULL},
@@ -232,8 +238,7 @@ static GtkActionEntry main_win_actions[]=
 #endif
         /*{"AsRoot", GTK_STOCK_DIALOG_AUTHENTICATION, N_("Open Current Folder as _Root"), NULL, NULL, G_CALLBACK(on_open_as_root)},*/
     /* for accelerators */
-    {"Location", NULL, NULL, "<Alt>d", NULL, G_CALLBACK(on_location)},
-    {"Location2", NULL, NULL, "<Ctrl>L", NULL, G_CALLBACK(on_location)},
+    {"Location2", NULL, NULL, "<Alt>d", NULL, G_CALLBACK(on_location)},
     {"Prev2", NULL, NULL, "XF86Back", NULL, G_CALLBACK(on_go_back)},
     {"Next2", NULL, NULL, "XF86Forward", NULL, G_CALLBACK(on_go_forward)},
     {"Reload2", NULL, NULL, "<Ctrl>R", NULL, G_CALLBACK(on_reload)},
@@ -300,5 +305,11 @@ static GtkRadioActionEntry main_win_side_bar_mode_actions[]=
     {"Places", NULL, N_("Places"), "<Ctrl>6", NULL, FM_SP_PLACES},
     {"DirTree", NULL, N_("Directory Tree"), "<Ctrl>7", NULL, FM_SP_DIR_TREE},
     {"Remote", NULL, N_("Remote"), "<Ctrl>8", NULL, FM_SP_REMOTE},
+};
+
+static GtkRadioActionEntry main_win_path_bar_mode_actions[]=
+{
+    {"PathEntry", NULL, N_("_Location"), NULL, NULL, 0},
+    {"PathBar", NULL, N_("_Buttons"), NULL, NULL, 1}
 };
 
