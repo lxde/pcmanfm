@@ -240,6 +240,13 @@ Changes on 1.2.0 since 1.1.0:
 * Added optional 'New Window' button to the toolbar left to 'New Tab' one
     to those who don't like tabbed view.
 
+* The statusbar can show total size of selected files if some conditions
+    are met. Conditions are:
+    - number of selected files should be less than 1000;
+    - selection should contain no directories.
+    Those limitations are due to lightweight nature of the file manager
+    and otherwise counting will take too much resources.
+
 
 Changes on 1.1.0 since 1.0.1:
 

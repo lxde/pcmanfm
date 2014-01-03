@@ -366,7 +366,40 @@ static void on_folder_view_sel_changed(FmFolderView* fv, gint n_sel, FmTabPage* 
         }
         else
         {
-            msg = g_strdup_printf(ngettext("%d item selected", "%d items selected", n_sel), n_sel);
+            FmFileInfoList* files;
+            goffset sum = -1;
+            GList *l;
+            char size_str[128];
+
+            /* don't count if too many files are selected, that isn't lightweight */
+            if (n_sel < 1000)
+            {
+                sum = 0;
+                files = fm_folder_view_dup_selected_files(fv);
+                for (l = fm_file_info_list_peek_head_link(files); l; l = l->next)
+                {
+                    if (fm_file_info_is_dir(l->data))
+                    {
+                        /* if we got a directory then we cannot tell it's size
+                           unless we do deep count but we cannot afford it */
+                        sum = -1;
+                        break;
+                    }
+                    sum += fm_file_info_get_size(l->data);
+                }
+                fm_file_info_list_unref(files);
+            }
+            if (sum >= 0)
+            {
+                size_str[0] = ' ', size_str[1] = '(';
+                fm_file_size_to_str(&size_str[2], sizeof(size_str)-3, sum,
+                                    fm_config->si_unit);
+                strcpy(&size_str[strlen(size_str)], ")");
+            }
+            else
+                size_str[0] = '\0';
+            msg = g_strdup_printf(ngettext("%d item selected%s", "%d items selected%s", n_sel),
+                                  n_sel, size_str);
             /* FIXME: can we show some more info on selection?
                that isn't lightweight if a lot of files are selected */
         }
