@@ -2200,8 +2200,18 @@ static void update_background(FmDesktop* desktop, int is_it)
         {
             GdkRectangle geom;
             gdk_screen_get_monitor_geometry(screen, desktop->monitor, &geom);
-            dest_w = geom.width;
-            dest_h = geom.height;
+            if (desktop->conf.wallpaper_mode == FM_WP_SCREEN)
+            {
+                dest_w = gdk_screen_get_width(screen);
+                dest_h = gdk_screen_get_height(screen);
+                x = -geom.x;
+                y = -geom.y;
+            }
+            else
+            {
+                dest_w = geom.width;
+                dest_h = geom.height;
+            }
         }
 #if GTK_CHECK_VERSION(3, 0, 0)
         xdisplay = GDK_WINDOW_XDISPLAY(root);
@@ -2230,6 +2240,7 @@ static void update_background(FmDesktop* desktop, int is_it)
         case FM_WP_TILE:
             break;
         case FM_WP_STRETCH:
+        case FM_WP_SCREEN:
             if(dest_w == src_w && dest_h == src_h)
                 scaled = (GdkPixbuf*)g_object_ref(pix);
             else

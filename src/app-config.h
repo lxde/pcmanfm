@@ -51,7 +51,8 @@ typedef enum
     FM_WP_FIT,
     FM_WP_CENTER,
     FM_WP_TILE,
-    FM_WP_CROP
+    FM_WP_CROP,
+    FM_WP_SCREEN
 }FmWallpaperMode;
 
 typedef enum

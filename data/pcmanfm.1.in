@@ -71,8 +71,9 @@ Set mode of desktop wallpaper, \fImode\fP is:
  \fBstretch\fP (stretch to fill entire monitor),
  \fBfit\fP (stretch to fit monitor size),
  \fBcenter\fP (place on center of monitor),
- \fBtile\fP (tile to fill entire monitor), or
- \fBcrop\fP (stretch and crop to fill monitor)
+ \fBtile\fP (tile to fill entire monitor),
+ \fBcrop\fP (stretch and crop to fill monitor), or
+ \fBscreen\fP (stretch to fill entire screen)
 .TP
 .BI \-w " file" "\fR,\fP \-\^\-set\-wallpaper=" file
 set desktop wallpaper from image \fIfile\fP

@@ -226,6 +226,12 @@ Changes on 1.2.0 since 1.1.0:
     image will fill whole monitor area and will be cropped if it's bigger
     than the monitor.
 
+* Added new wallpaper mode 'screen' that will scale image to fill the
+    entire screen size and display appropriate part on the monitor it is
+    configured for. This mode is useful when people have an appropriate
+    wallpaper and want their screen composed of two monitors to show the
+    whole image - a part on first monitor and other part on second.
+
 
 Changes on 1.1.0 since 1.0.1:
 

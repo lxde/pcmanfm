@@ -1202,7 +1202,8 @@ static const _WPModeDesc _wp_modes[] = {
     { "fit", FM_WP_FIT },
     { "center", FM_WP_CENTER },
     { "tile", FM_WP_TILE },
-    { "crop", FM_WP_CROP }
+    { "crop", FM_WP_CROP },
+    { "screen", FM_WP_SCREEN }
 };
 
 FmWallpaperMode fm_app_wallpaper_get_mode_by_name(const char *name)
