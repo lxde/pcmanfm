@@ -534,7 +534,6 @@ FmConfig *fm_app_config_new(void)
 void fm_app_config_load_desktop_config(GKeyFile *kf, const char *group, FmDesktopConfig *cfg)
 {
     char* tmp;
-    int tmp_int;
 
     if (!g_key_file_has_group(kf, group))
         return;
@@ -557,10 +556,17 @@ void fm_app_config_load_desktop_config(GKeyFile *kf, const char *group, FmDeskto
     cfg->show_trash = TRUE;
 #endif
     cfg->configured = TRUE;
-    if(fm_key_file_get_int(kf, group, "wallpaper_mode", &tmp_int))
-        cfg->wallpaper_mode = (FmWallpaperMode)tmp_int;
-    if (cfg->wallpaper_mode > FM_WP_TILE) /* invalid mode */
-        cfg->wallpaper_mode = FM_WP_COLOR;
+    tmp = g_key_file_get_string(kf, group, "wallpaper_mode", NULL);
+    if (tmp)
+    {
+        if (tmp[0] >= '0' && tmp[0] <= '4') /* backward compatibility */
+            cfg->wallpaper_mode = tmp[0] - '0';
+        else
+            cfg->wallpaper_mode = fm_app_wallpaper_get_mode_by_name(tmp);
+        if (cfg->wallpaper_mode == (FmWallpaperMode)-1)
+            cfg->wallpaper_mode = FM_WP_COLOR; /* fallback */
+        g_free(tmp);
+    }
 
     if(cfg->wallpapers_configured > 0)
     {
@@ -1012,7 +1018,8 @@ void fm_app_config_clear_config_for_path(FmPath *path)
 void fm_app_config_save_desktop_config(GString *buf, const char *group, FmDesktopConfig *cfg)
 {
     g_string_append_printf(buf, "[%s]\n"
-                                "wallpaper_mode=%d\n", group, cfg->wallpaper_mode);
+                                "wallpaper_mode=%s\n", group,
+                           fm_app_wallpaper_get_mode_name(cfg->wallpaper_mode));
     g_string_append_printf(buf, "wallpaper_common=%d\n", cfg->wallpaper_common);
     if (cfg->wallpapers && cfg->wallpapers_configured > 0)
     {
@@ -1181,4 +1188,37 @@ void fm_app_config_set_autorun_choice(FmAppConfig *cfg,
     }
     choice->last_used = g_strdup(app);
     choice->dont_ask = dont_ask;
+}
+
+typedef struct
+{
+    const char *name;
+    FmWallpaperMode mode;
+} _WPModeDesc;
+
+static const _WPModeDesc _wp_modes[] = {
+    { "color", FM_WP_COLOR },
+    { "stretch", FM_WP_STRETCH },
+    { "fit", FM_WP_FIT },
+    { "center", FM_WP_CENTER },
+    { "tile", FM_WP_TILE },
+    { "crop", FM_WP_CROP }
+};
+
+FmWallpaperMode fm_app_wallpaper_get_mode_by_name(const char *name)
+{
+    guint i;
+    if (name) for (i = 0; i < G_N_ELEMENTS(_wp_modes); i++)
+        if (strcmp(_wp_modes[i].name, name) == 0)
+            return _wp_modes[i].mode;
+    return (FmWallpaperMode)-1;
+}
+
+const char *fm_app_wallpaper_get_mode_name(FmWallpaperMode mode)
+{
+    guint i;
+    for (i = 0; i < G_N_ELEMENTS(_wp_modes); i++)
+        if (_wp_modes[i].mode == mode)
+            return _wp_modes[i].name;
+    return NULL;
 }

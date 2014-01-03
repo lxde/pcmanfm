@@ -2243,7 +2243,7 @@ static void update_background(FmDesktop* desktop, int is_it)
             {
                 gdouble w_ratio = (float)dest_w / src_w;
                 gdouble h_ratio = (float)dest_h / src_h;
-                gdouble ratio = app_config->wallpaper_mode == FM_WP_FIT
+                gdouble ratio = (desktop->conf.wallpaper_mode == FM_WP_FIT)
                     ? MIN(w_ratio, h_ratio)
                     : MAX(w_ratio, h_ratio);
                 if(ratio != 1.0)
@@ -3187,7 +3187,7 @@ static void on_size_allocate(GtkWidget* w, GtkAllocation* alloc)
     {
         /* bug #3614866: after monitor geometry was changed we need to redraw
            the background invalidating all the cache */
-        _clear_bg_cache(desktop);
+        _clear_bg_cache(self);
         if(self->conf.wallpaper_mode != FM_WP_COLOR && self->conf.wallpaper_mode != FM_WP_TILE)
             update_background(self, -1);
     }

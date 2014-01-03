@@ -218,6 +218,14 @@ Changes on 1.2.0 since 1.1.0:
     will be disabled for that monitor. Otherwise mentioned path will be
     used to display on the desktop instead of Desktop Folder.
 
+* Changed saving option 'wallpaper_mode' into desktop config, it will be
+    saved as text instead of number to allow further improvements.
+
+* Added new wallpaper mode 'crop' that will scale image proportionally to
+    match the monitor size fut in difference to the 'fit' mode the scaled
+    image will fill whole monitor area and will be cropped if it's bigger
+    than the monitor.
+
 
 Changes on 1.1.0 since 1.0.1:
 

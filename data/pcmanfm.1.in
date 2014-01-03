@@ -1,7 +1,7 @@
 .\" Process this file with
 .\" groff -man -Tascii pcmanfm.1
 .\"
-.TH PCManFM 1 "August 2013" "@PACKAGE@ @VERSION@" "User Manuals"
+.TH PCManFM 1 "January 2014" "@PACKAGE@ @VERSION@" "User Manuals"
 .SH NAME
 PCManFM \- A lightweight Gtk+ based file manager for X Window.
 .SH SYNOPSIS
@@ -68,10 +68,11 @@ set X role for window (only if \fB\-n\fP is used)
 .BI \-\^\-wallpaper\-mode= mode
 Set mode of desktop wallpaper, \fImode\fP is:
  \fBcolor\fP (fill with solid color),
- \fBstretch\fP (stretch to fill entire screen),
- \fBfit\fP (stretch to fit screen size),
- \fBcenter\fP (place on center of screen), or
- \fBtile\fP (tile to fill entire screen)
+ \fBstretch\fP (stretch to fill entire monitor),
+ \fBfit\fP (stretch to fit monitor size),
+ \fBcenter\fP (place on center of monitor),
+ \fBtile\fP (tile to fill entire monitor), or
+ \fBcrop\fP (stretch and crop to fill monitor)
 .TP
 .BI \-w " file" "\fR,\fP \-\^\-set\-wallpaper=" file
 set desktop wallpaper from image \fIfile\fP

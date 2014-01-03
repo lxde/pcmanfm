@@ -2,7 +2,7 @@
  *      pcmanfm.c
  *
  *      Copyright 2009 - 2010 Hong Jen Yee (PCMan) <pcman.tw@gmail.com>
- *      Copyright 2012-2013 Andriy Grytsenko (LStranger) <andrej@rep.kiev.ua>
+ *      Copyright 2012-2014 Andriy Grytsenko (LStranger) <andrej@rep.kiev.ua>
  *
  *      This program is free software; you can redistribute it and/or modify
  *      it under the terms of the GNU General Public License as published by
@@ -96,8 +96,6 @@ static GOptionEntry opt_entries[] =
     {G_OPTION_REMAINING, 0, 0, G_OPTION_ARG_FILENAME_ARRAY, &files_to_open, NULL, N_("[FILE1, FILE2,...]")},
     { NULL }
 };
-
-static const char* valid_wallpaper_modes[] = {"color", "stretch", "fit", "crop", "center", "tile"};
 
 static gboolean pcmanfm_run(gint screen_num);
 
@@ -339,18 +337,13 @@ gboolean pcmanfm_run(gint screen_num)
 
             if(wallpaper_mode)
             {
-                guint i = 0;
-                for(i = 0; i < G_N_ELEMENTS(valid_wallpaper_modes); ++i)
+                FmWallpaperMode mode = fm_app_wallpaper_get_mode_by_name(wallpaper_mode);
+
+                if (mode != (FmWallpaperMode)-1
+                    && mode != desktop->conf.wallpaper_mode)
                 {
-                    if(strcmp(valid_wallpaper_modes[i], wallpaper_mode) == 0)
-                    {
-                        if(i != desktop->conf.wallpaper_mode)
-                        {
-                            desktop->conf.wallpaper_mode = i;
-                            wallpaper_changed = TRUE;
-                        }
-                        break;
-                    }
+                    desktop->conf.wallpaper_mode = mode;
+                    wallpaper_changed = TRUE;
                 }
                 g_free(wallpaper_mode);
                 wallpaper_mode = NULL;

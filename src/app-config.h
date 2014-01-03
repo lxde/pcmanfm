@@ -49,9 +49,9 @@ typedef enum
     FM_WP_COLOR,
     FM_WP_STRETCH,
     FM_WP_FIT,
-    FM_WP_CROP,
     FM_WP_CENTER,
-    FM_WP_TILE
+    FM_WP_TILE,
+    FM_WP_CROP
 }FmWallpaperMode;
 
 typedef enum
@@ -202,6 +202,9 @@ void fm_app_config_clear_config_for_path(FmPath *path);
 void fm_app_config_set_autorun_choice(FmAppConfig *cfg,
                                       const char *content_type,
                                       const char *app, gboolean dont_ask);
+
+FmWallpaperMode fm_app_wallpaper_get_mode_by_name(const char *name);
+const char *fm_app_wallpaper_get_mode_name(FmWallpaperMode mode);
 
 G_END_DECLS
 
