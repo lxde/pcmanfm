@@ -31,6 +31,7 @@ EXTRA_DIST= \
 	pref.h \
 	single-inst.h \
 	connect-server.h \
+	pcmanfm-modules.h \
 	gseal-gtk-compat.h \
 	$(NULL)
 

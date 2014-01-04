@@ -339,38 +339,59 @@ static void on_folder_content_changed(FmFolder* folder, FmTabPage* page)
 static void on_folder_view_sel_changed(FmFolderView* fv, gint n_sel, FmTabPage* page)
 {
     char* msg = page->status_text[FM_STATUS_TEXT_SELECTED_FILES];
+    GString *str;
     g_free(msg);
 
     if(n_sel > 0)
     {
+        str = g_string_sized_new(64);
         /* FIXME: display total size of all selected files. */
         if(n_sel == 1) /* only one file is selected */
         {
             FmFileInfoList* files = fm_folder_view_dup_selected_files(fv);
             FmFileInfo* fi = fm_file_info_list_peek_head(files);
             const char* size_str = fm_file_info_get_disp_size(fi);
+#if FM_CHECK_VERSION(1, 2, 0)
+            GList *l;
+#endif
             if(size_str)
             {
-                msg = g_strdup_printf("\"%s\" (%s) %s",
+                g_string_printf(str, "\"%s\" (%s) %s",
                             fm_file_info_get_disp_name(fi),
                             size_str ? size_str : "",
                             fm_file_info_get_desc(fi));
             }
             else
             {
-                msg = g_strdup_printf("\"%s\" %s",
+                g_string_printf(str, "\"%s\" %s",
                             fm_file_info_get_disp_name(fi),
                             fm_file_info_get_desc(fi));
             }
+#if FM_CHECK_VERSION(1, 2, 0)
+            /* ---- statusbar plugins support ---- */
+            CHECK_MODULES();
+            for (l = _tab_page_modules; l; l = l->next)
+            {
+                FmTabPageStatusInit *module = l->data;
+                char *message = module->sel_message(files, n_sel);
+                if (message && message[0])
+                {
+                    g_string_append_c(str, ' ');
+                    g_string_append(str, message);
+                }
+                g_free(message);
+            }
+#endif
             fm_file_info_list_unref(files);
         }
         else
         {
             FmFileInfoList* files;
-            goffset sum = -1;
+            goffset sum;
             GList *l;
             char size_str[128];
 
+            g_string_printf(str, ngettext("%d item selected", "%d items selected", n_sel), n_sel);
             /* don't count if too many files are selected, that isn't lightweight */
             if (n_sel < 1000)
             {
@@ -387,22 +408,33 @@ static void on_folder_view_sel_changed(FmFolderView* fv, gint n_sel, FmTabPage* 
                     }
                     sum += fm_file_info_get_size(l->data);
                 }
+                if (sum >= 0)
+                {
+                    fm_file_size_to_str(size_str, sizeof(size_str), sum,
+                                        fm_config->si_unit);
+                    g_string_append_printf(str, " (%s)", size_str);
+                }
+#if FM_CHECK_VERSION(1, 2, 0)
+                /* ---- statusbar plugins support ---- */
+                CHECK_MODULES();
+                for (l = _tab_page_modules; l; l = l->next)
+                {
+                    FmTabPageStatusInit *module = l->data;
+                    char *message = module->sel_message(files, n_sel);
+                    if (message && message[0])
+                    {
+                        g_string_append_c(str, ' ');
+                        g_string_append(str, message);
+                    }
+                    g_free(message);
+                }
+#endif
                 fm_file_info_list_unref(files);
             }
-            if (sum >= 0)
-            {
-                size_str[0] = ' ', size_str[1] = '(';
-                fm_file_size_to_str(&size_str[2], sizeof(size_str)-3, sum,
-                                    fm_config->si_unit);
-                strcpy(&size_str[strlen(size_str)], ")");
-            }
-            else
-                size_str[0] = '\0';
-            msg = g_strdup_printf(ngettext("%d item selected%s", "%d items selected%s", n_sel),
-                                  n_sel, size_str);
             /* FIXME: can we show some more info on selection?
                that isn't lightweight if a lot of files are selected */
         }
+        msg = g_string_free(str, FALSE);
     }
     else
         msg = NULL;

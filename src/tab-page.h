@@ -143,6 +143,12 @@ FmFolderView *fm_tab_page_get_passive_view(FmTabPage *page);
 void fm_tab_page_set_filter_pattern(FmTabPage *page, const char *pattern);
 #endif
 
+#if FM_CHECK_VERSION(1, 2, 0)
+#include "pcmanfm-modules.h"
+
+GList *_tab_page_modules; /* in pcmanfm.c */
+#endif
+
 G_END_DECLS
 
 #endif /* __FM_TAB_PAGE_H__ */

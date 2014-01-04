@@ -173,6 +173,22 @@ static void single_inst_cb(const char* cwd, int screen_num)
     window_role = NULL; /* reset it for clients callbacks */
 }
 
+#if FM_CHECK_VERSION(1, 2, 0)
+/* ---- statusbar plugins support ---- */
+FM_MODULE_DEFINE_TYPE(tab_page_status, FmTabPageStatusInit, 1)
+
+GList *_tab_page_modules = NULL;
+
+static gboolean fm_module_callback_tab_page_status(const char *name, gpointer init, int ver)
+{
+    /* add module callbacks into own data list */
+    if (((FmTabPageStatusInit*)init)->sel_message == NULL)
+        return FALSE;
+    _tab_page_modules = g_list_append(_tab_page_modules, init);
+    return TRUE;
+}
+#endif
+
 int main(int argc, char** argv)
 {
     FmConfig* config;
@@ -239,6 +255,11 @@ int main(int argc, char** argv)
     /* load pcmanfm-specific config file */
     fm_app_config_load_from_profile(FM_APP_CONFIG(config), profile);
 
+#if FM_CHECK_VERSION(1, 2, 0)
+    /* register our modules */
+    fm_module_register_tab_page_status();
+#endif
+
     /* the main part */
     if(pcmanfm_run(gdk_screen_get_number(gdk_screen_get_default())))
     {
@@ -256,6 +277,12 @@ int main(int argc, char** argv)
         }
         fm_volume_manager_finalize();
     }
+
+#if FM_CHECK_VERSION(1, 2, 0)
+    fm_module_unregister_type("tab_page_status");
+    g_list_free(_tab_page_modules);
+    _tab_page_modules = NULL;
+#endif
 
     single_inst_finalize(&inst);
     fm_gtk_finalize();
