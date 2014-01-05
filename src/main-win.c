@@ -119,6 +119,7 @@ static void on_open_in_terminal(GtkAction* act, FmMainWin* win);
 #if FM_CHECK_VERSION(1, 0, 2)
 static void on_search(GtkAction* act, FmMainWin* win);
 #endif
+static void on_launch(GtkAction* act, FmMainWin* win);
 static void on_fullscreen(GtkToggleAction* act, FmMainWin* win);
 
 static void on_location(GtkAction* act, FmMainWin* win);
@@ -318,6 +319,8 @@ static void update_file_menu(FmMainWin* win, FmPath *path)
     /* FmFolderView *fv = win->folder_view; */
 
     act = gtk_ui_manager_get_action(win->ui, "/menubar/ToolMenu/Term");
+    gtk_action_set_sensitive(act, path && fm_path_is_native(path));
+    act = gtk_ui_manager_get_action(win->ui, "/menubar/ToolMenu/Launch");
     gtk_action_set_sensitive(act, path && fm_path_is_native(path));
     act = gtk_ui_manager_get_action(win->ui, "/menubar/GoMenu/Up");
     gtk_action_set_sensitive(act, path && fm_path_get_parent(path));
@@ -1155,6 +1158,32 @@ static void on_search(GtkAction* act, FmMainWin* win)
     g_list_free(l);
 }
 #endif
+
+static void on_launch(GtkAction* act, FmMainWin* win)
+{
+    char *cmd, *cwd, *def;
+
+    cmd = fm_get_user_input(GTK_WINDOW(win), _("Run a command"),
+                            _("Enter a command to run:"), NULL);
+    if (cmd == NULL || cmd[0] == '\0') /* cancelled or empty */
+        return;
+    cwd = fm_path_to_str(fm_tab_page_get_cwd(win->current_page));
+    def = g_get_current_dir();
+    if (chdir(cwd) != 0) /* error */
+    {
+        fm_show_error(GTK_WINDOW(win), _("Current folder is inaccessible"), NULL);
+    }
+    else /* run and return back */
+    {
+        fm_launch_command_simple(GTK_WINDOW(win), NULL, 0, cmd, NULL);
+        /* return back */
+        if(chdir(def) != 0)
+            g_warning("on_launch(): chdir() failed");
+    }
+    g_free(cmd);
+    g_free(cwd);
+    g_free(def);
+}
 
 static void on_show_hidden(GtkToggleAction* act, FmMainWin* win)
 {
