@@ -31,9 +31,10 @@ EXTRA_DIST= \
 	pref.h \
 	single-inst.h \
 	connect-server.h \
-	pcmanfm-modules.h \
 	gseal-gtk-compat.h \
 	$(NULL)
+
+include_HEADERS = pcmanfm-modules.h
 
 pcmanfm_CFLAGS = \
 	$(XLIB_CFLAGS) \
