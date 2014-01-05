@@ -3,6 +3,7 @@ NULL=
 AM_CPPFLAGS = \
 	-DPACKAGE_DATA_DIR=\""$(datadir)/pcmanfm"\" \
 	-DPACKAGE_UI_DIR=\""$(datadir)/pcmanfm/ui"\" \
+	-DPACKAGE_MODULES_DIR=\""$(libdir)/pcmanfm"\" \
 	-DPACKAGE_LOCALE_DIR=\""$(prefix)/$(DATADIRNAME)/locale"\"
 
 bin_PROGRAMS = pcmanfm

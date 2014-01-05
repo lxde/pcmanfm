@@ -248,6 +248,12 @@ int main(int argc, char** argv)
 
     fm_gtk_init(config);
 
+#if FM_CHECK_VERSION(1, 2, 0)
+    /* register our modules */
+    fm_modules_add_directory(PACKAGE_MODULES_DIR);
+    fm_module_register_tab_page_status();
+#endif
+
 #if FM_CHECK_VERSION(1, 0, 2)
 #  if !FM_CHECK_VERSION(1, 2, 0)
     /* the sort_by value isn't loaded with LibFM 1.1.x so we need a workaround */
@@ -259,11 +265,6 @@ int main(int argc, char** argv)
 
     /* load pcmanfm-specific config file */
     fm_app_config_load_from_profile(FM_APP_CONFIG(config), profile);
-
-#if FM_CHECK_VERSION(1, 2, 0)
-    /* register our modules */
-    fm_module_register_tab_page_status();
-#endif
 
     /* the main part */
     if(pcmanfm_run(gdk_screen_get_number(gdk_screen_get_default())))
