@@ -184,6 +184,8 @@ static gboolean fm_module_callback_tab_page_status(const char *name, gpointer in
     /* add module callbacks into own data list */
     if (((FmTabPageStatusInit*)init)->sel_message == NULL)
         return FALSE;
+    if (((FmTabPageStatusInit*)init)->init && !((FmTabPageStatusInit*)init)->init())
+        return FALSE;
     _tab_page_modules = g_list_append(_tab_page_modules, init);
     return TRUE;
 }
@@ -194,6 +196,9 @@ int main(int argc, char** argv)
     FmConfig* config;
     GError* err = NULL;
     SingleInstData inst;
+#if FM_CHECK_VERSION(1, 2, 0)
+    GList *l;
+#endif
 
 #ifdef ENABLE_NLS
     bindtextdomain ( GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR );
@@ -280,6 +285,9 @@ int main(int argc, char** argv)
 
 #if FM_CHECK_VERSION(1, 2, 0)
     fm_module_unregister_type("tab_page_status");
+    for (l = _tab_page_modules; l; l = l->next)
+        if (((FmTabPageStatusInit*)l->data)->finalize)
+            ((FmTabPageStatusInit*)l->data)->finalize();
     g_list_free(_tab_page_modules);
     _tab_page_modules = NULL;
 #endif

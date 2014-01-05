@@ -33,19 +33,29 @@ G_BEGIN_DECLS
 
 /**
  * FmTabPageStatusInit:
+ * @init: (allow-none): once-done initialization callback
+ * @finalize: (allow-none): once-done finalization callback
  * @sel_message: callback to make selection-specific statusbar addition
  *
  * The structure describing callbacks for FmTabPage statusbar update
- * extension specific for some file type.
+ * extension specific for some file type - tab_page_status plugins.
  *
  * The @sel_message callback is called when the page statusbar for the
  * selected files is about to be updated so module may add some specific
  * message to the end of the status text. Returned text should either be
  * allocated or %NULL.
  *
+ * The @init callback is done once on module loading. It it exists then
+ * it should return %TRUE after successful initialization.
+ *
+ * The @finalize is done on the file manager termination. It should free
+ * any resources allocated in @init callback.
+ *
  * The key for module of this type is ignored in this implementation.
  */
 typedef struct {
+    gboolean (*init)(void);
+    void (*finalize)(void);
     char * (*sel_message)(FmFileInfoList *files, gint n_files);
 } FmTabPageStatusInit;
 
