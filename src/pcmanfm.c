@@ -284,10 +284,10 @@ int main(int argc, char** argv)
     }
 
 #if FM_CHECK_VERSION(1, 2, 0)
-    fm_module_unregister_type("tab_page_status");
     for (l = _tab_page_modules; l; l = l->next)
         if (((FmTabPageStatusInit*)l->data)->finalize)
             ((FmTabPageStatusInit*)l->data)->finalize();
+    fm_module_unregister_type("tab_page_status");
     g_list_free(_tab_page_modules);
     _tab_page_modules = NULL;
 #endif
