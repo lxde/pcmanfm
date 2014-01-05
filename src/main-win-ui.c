@@ -114,6 +114,9 @@ static const char main_menu_xml[] =
       "<menuitem action='ByMTime'/>"
       "<menuitem action='BySize'/>"
       "<menuitem action='ByType'/>"
+#if FM_CHECK_VERSION(1, 2, 0)
+      "<menuitem action='ByExt'/>"
+#endif
 #if FM_CHECK_VERSION(1, 0, 2)
       "<separator/>"
 #if FM_CHECK_VERSION(1, 2, 0)
@@ -294,7 +297,10 @@ static GtkRadioActionEntry main_win_sort_by_actions[]=
     {"ByName", NULL, N_("By _Name"), "<Alt><Ctrl>1", NULL, FM_FOLDER_MODEL_COL_NAME},
     {"ByMTime", NULL, N_("By _Modification Time"), "<Alt><Ctrl>2", NULL, FM_FOLDER_MODEL_COL_MTIME},
     {"BySize", NULL, N_("By _Size"), "<Alt><Ctrl>3", NULL, FM_FOLDER_MODEL_COL_SIZE},
-    {"ByType", NULL, N_("By File _Type"), "<Alt><Ctrl>4", NULL, FM_FOLDER_MODEL_COL_DESC}
+    {"ByType", NULL, N_("By File _Type"), "<Alt><Ctrl>4", NULL, FM_FOLDER_MODEL_COL_DESC},
+#if FM_CHECK_VERSION(1, 2, 0)
+    {"ByExt", NULL, N_("By _Extension"), "<Alt><Ctrl>5", NULL, FM_FOLDER_MODEL_COL_EXT}
+#endif
 #else
     {"ByName", NULL, N_("By _Name"), "<Alt><Ctrl>1", NULL, COL_FILE_NAME},
     {"ByMTime", NULL, N_("By _Modification Time"), "<Alt><Ctrl>2", NULL, COL_FILE_MTIME},
