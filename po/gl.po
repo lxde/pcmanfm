@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm 1.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-03 21:49+0200\n"
-"PO-Revision-Date: 2014-01-04 11:41+0000\n"
+"POT-Creation-Date: 2014-01-05 01:20+0200\n"
+"PO-Revision-Date: 2014-01-05 09:56+0000\n"
 "Last-Translator: Miguel Anxo <mbouzada@gmail.com>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
 "Language: gl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1388835664.0\n"
+"X-POOTLE-MTIME: 1388915801.0\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2014"
@@ -872,8 +872,8 @@ msgid "Go to list of places on the network"
 msgstr "Ir á lista de lugares na rede"
 
 #: ../src/main-win-ui.c:231
-msgid "_Go to path..."
-msgstr "_Ir á ruta…"
+msgid "_Go to Location..."
+msgstr "Ir á localización"
 
 #: ../src/main-win-ui.c:232
 msgid "_Connect to Server..."
@@ -1191,7 +1191,7 @@ msgstr "ESTILO"
 msgid "[FILE1, FILE2,...]"
 msgstr "[FICHEIRO1, FICHEIRO2,...]"
 
-#: ../src/pcmanfm.c:539
+#: ../src/pcmanfm.c:566
 msgid "Terminal emulator is not set."
 msgstr "No se configurou o emulador de terminal."
 
@@ -1199,26 +1199,26 @@ msgstr "No se configurou o emulador de terminal."
 msgid "Open in New T_ab"
 msgstr "Abrir nunha nova l_apela"
 
-#: ../src/tab-page.c:369
+#: ../src/tab-page.c:394
 #, c-format
 msgid "%d item selected"
 msgid_plural "%d items selected"
 msgstr[0] "%d elemento seleccionado"
 msgstr[1] "%d elementos seleccionados"
 
-#: ../src/tab-page.c:679
+#: ../src/tab-page.c:744
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Espazo libre: %s (total: %s )"
 
-#: ../src/tab-page.c:699
+#: ../src/tab-page.c:764
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] "%d elemento"
 msgstr[1] "%d elementos"
 
-#: ../src/tab-page.c:700
+#: ../src/tab-page.c:765
 #, c-format
 msgid " (%d hidden)"
 msgid_plural " (%d hidden)"
@@ -1240,6 +1240,9 @@ msgstr "Navegar polo sistema de ficheiros e xestionar os ficheiros"
 #: ../data/pcmanfm-desktop-pref.desktop.in.h:2
 msgid "Change desktop wallpapers and behavior of desktop manager"
 msgstr "Cambio de fondos de pantalla e comportamento do xestor do escritorio"
+
+#~ msgid "_Go to path..."
+#~ msgstr "_Ir á ruta…"
 
 #~ msgid "Stretch to fill the entire screen"
 #~ msgstr "Estirar para encher a pantalla completa"
