@@ -191,6 +191,11 @@ static gboolean fm_module_callback_tab_page_status(const char *name, gpointer in
 }
 #endif
 
+static void on_config_changed(FmAppConfig *cfg, gpointer _unused)
+{
+    pcmanfm_save_config(FALSE);
+}
+
 int main(int argc, char** argv)
 {
     FmConfig* config;
@@ -265,6 +270,7 @@ int main(int argc, char** argv)
 
     /* load pcmanfm-specific config file */
     fm_app_config_load_from_profile(FM_APP_CONFIG(config), profile);
+    g_signal_connect(config, "changed::saved_search", G_CALLBACK(on_config_changed), NULL);
 
     /* the main part */
     if(pcmanfm_run(gdk_screen_get_number(gdk_screen_get_default())))
