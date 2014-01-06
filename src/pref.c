@@ -33,6 +33,7 @@
 #include "desktop.h"
 #include "main-win.h"
 
+#include <glib/gi18n.h>
 #include <string.h>
 
 #define INIT_BOOL(b, st, name, changed_notify)  init_bool(b, #name, G_STRUCT_OFFSET(st, name), changed_notify, FALSE)
@@ -444,7 +445,6 @@ static void on_remove_autorun_choice_clicked(GtkButton *button, GtkTreeView *vie
             char *type;
 
             gtk_tree_model_get(model, &it, 2, &type, -1);
-g_debug("removing %d: %s",gtk_tree_path_get_indices(gtk_tree_row_reference_get_path(l->data))[0],type);
             if (type)
                 g_hash_table_remove(app_config->autorun_choices, type);
             g_free(type);
@@ -507,6 +507,167 @@ static void on_home_path_current_clicked(GtkButton *button, GtkEntry *home_path)
     path = fm_path_to_str(cwd);
     gtk_entry_set_text(home_path, path);
     g_free(path);
+}
+
+static void on_add_to_blacklist_clicked(GtkButton *button, GtkListStore *model)
+{
+    char *item = fm_get_user_input(NULL, _("Add to Modules Blacklist"),
+                                   _("Enter a blacklisted module mask:"), NULL);
+    int i;
+    GtkTreeIter it;
+
+    if (item == NULL || item[0] == '\0') /* cancelled or empty */
+        return;
+    /* add a row to list */
+    gtk_list_store_append(model, &it);
+    gtk_list_store_set(model, &it, 0, item, 1, TRUE, -1);
+    /* rebuild the blacklist */
+    i = fm_config->modules_blacklist ? g_strv_length(fm_config->modules_blacklist) : 0;
+    fm_config->modules_blacklist = g_renew(char *, fm_config->modules_blacklist, i + 2);
+    fm_config->modules_blacklist[i+1] = NULL;
+    fm_config->modules_blacklist[i] = item;
+}
+
+static void on_remove_from_blacklist_clicked(GtkButton *button, GtkTreeView *view)
+{
+    GtkTreeSelection *tree_sel = gtk_tree_view_get_selection(view);
+    GtkTreeModel *model;
+    GList *rows = gtk_tree_selection_get_selected_rows(tree_sel, &model), *l;
+    char *item;
+    char **bl;
+    int i;
+    GtkTreeIter it;
+
+    /* convert paths to references */
+    for (l = rows; l; l = l->next)
+    {
+        GtkTreePath *tp = l->data;
+        l->data = gtk_tree_row_reference_new(model, tp);
+        gtk_tree_path_free(tp);
+    }
+    /* remove rows from model */
+    for (l = rows; l; l = l->next)
+    {
+        if (gtk_tree_model_get_iter(model, &it, gtk_tree_row_reference_get_path(l->data)))
+            gtk_list_store_remove(GTK_LIST_STORE(model), &it);
+        else
+            g_critical("the item not found in model");
+        gtk_tree_row_reference_free(l->data);
+    }
+    g_list_free(rows);
+    /* rebuild the blacklist */
+    if (gtk_tree_model_get_iter_first(model, &it))
+    {
+        bl = g_new(char *, gtk_tree_model_iter_n_children(model, NULL) + 1);
+        i = 0;
+        do
+        {
+            gtk_tree_model_get(model, &it, 0, &item, -1);
+            bl[i++] = item;
+        } while (gtk_tree_model_iter_next(model, &it));
+        bl[i] = NULL;
+    }
+    else
+        bl = NULL;
+    g_strfreev(fm_config->modules_blacklist);
+    fm_config->modules_blacklist = bl;
+}
+
+static void on_blacklist_sel_changed(GtkTreeSelection *selection, GtkWidget *btn)
+{
+    GList *rows, *l;
+    GtkTreeModel *model;
+    GtkTreePath *tp;
+    GtkTreeIter it;
+    gboolean can_del;
+
+    if (gtk_tree_selection_count_selected_rows(selection) == 0)
+    {
+        gtk_widget_set_sensitive(btn, FALSE);
+        return;
+    }
+    rows = gtk_tree_selection_get_selected_rows(selection, &model);
+    can_del = TRUE;
+    for (l = rows; l; l = l->next)
+    {
+        tp = l->data;
+        if (can_del && gtk_tree_model_get_iter(model, &it, tp))
+            gtk_tree_model_get(model, &it, 1, &can_del, -1);
+        else
+            can_del = FALSE;
+        gtk_tree_path_free(tp);
+    }
+    g_list_free(rows);
+    gtk_widget_set_sensitive(btn, can_del);
+}
+
+static void on_add_to_whitelist_clicked(GtkButton *button, GtkListStore *model)
+{
+    char *item = fm_get_user_input(NULL, _("Add to Modules Whitelist"),
+                                   _("Enter a whitelisted module mask:"), NULL);
+    int i;
+    GtkTreeIter it;
+
+    if (item == NULL || item[0] == '\0') /* cancelled or empty */
+        return;
+    /* add a row to list */
+    gtk_list_store_append(model, &it);
+    gtk_list_store_set(model, &it, 0, item, -1);
+    /* rebuild the blacklist */
+    i = fm_config->modules_whitelist ? g_strv_length(fm_config->modules_whitelist) : 0;
+    fm_config->modules_whitelist = g_renew(char *, fm_config->modules_whitelist, i + 2);
+    fm_config->modules_whitelist[i+1] = NULL;
+    fm_config->modules_whitelist[i] = item;
+}
+
+static void on_remove_from_whitelist_clicked(GtkButton *button, GtkTreeView *view)
+{
+    GtkTreeSelection *tree_sel = gtk_tree_view_get_selection(view);
+    GtkTreeModel *model;
+    GList *rows = gtk_tree_selection_get_selected_rows(tree_sel, &model), *l;
+    char *item;
+    char **wl;
+    int i;
+    GtkTreeIter it;
+
+    /* convert paths to references */
+    for (l = rows; l; l = l->next)
+    {
+        GtkTreePath *tp = l->data;
+        l->data = gtk_tree_row_reference_new(model, tp);
+        gtk_tree_path_free(tp);
+    }
+    /* remove rows from model */
+    for (l = rows; l; l = l->next)
+    {
+        if (gtk_tree_model_get_iter(model, &it, gtk_tree_row_reference_get_path(l->data)))
+            gtk_list_store_remove(GTK_LIST_STORE(model), &it);
+        else
+            g_critical("the item not found in model");
+        gtk_tree_row_reference_free(l->data);
+    }
+    g_list_free(rows);
+    /* rebuild the blacklist */
+    if (gtk_tree_model_get_iter_first(model, &it))
+    {
+        wl = g_new(char *, gtk_tree_model_iter_n_children(model, NULL) + 1);
+        i = 0;
+        do
+        {
+            gtk_tree_model_get(model, &it, 0, &item, -1);
+            wl[i++] = item;
+        } while (gtk_tree_model_iter_next(model, &it));
+        wl[i] = NULL;
+    }
+    else
+        wl = NULL;
+    g_strfreev(fm_config->modules_whitelist);
+    fm_config->modules_whitelist = wl;
+}
+
+static void on_whitelist_sel_changed(GtkTreeSelection *selection, GtkWidget *btn)
+{
+    gtk_widget_set_sensitive(btn, gtk_tree_selection_count_selected_rows(selection) > 0);
 }
 #endif
 
@@ -741,6 +902,81 @@ void fm_edit_preference( GtkWindow* parent, int page )
                                  gtk_builder_get_object(builder, "home_path"));
             else
                 gtk_widget_set_sensitive(GTK_WIDGET(obj), FALSE);
+        }
+        /* modules blacklist and whitelist */
+        obj = gtk_builder_get_object(builder, "modules_tab");
+        if (obj)
+        {
+            GtkTreeView *view = GTK_TREE_VIEW(gtk_builder_get_object(builder, "modules_blacklist"));
+            GtkListStore *model = gtk_list_store_new(2, G_TYPE_STRING, G_TYPE_BOOLEAN);
+            GtkTreeSelection *tree_sel;
+            GtkTreeViewColumn *col;
+            GtkCellRenderer *render;
+            char **item;
+            GtkTreeIter it;
+
+            gtk_widget_show(GTK_WIDGET(obj));
+
+            /* blacklist */
+            tree_sel = gtk_tree_view_get_selection(view);
+            gtk_tree_selection_set_mode(tree_sel, GTK_SELECTION_MULTIPLE);
+
+            col = gtk_tree_view_column_new();
+            render = gtk_cell_renderer_text_new();
+            gtk_tree_view_column_pack_start(col, render, FALSE);
+            gtk_tree_view_column_set_attributes(col, render, "text", 0, NULL);
+            gtk_tree_view_append_column(view, col);
+            for (item = fm_config->system_modules_blacklist; item && *item; item++)
+            {
+                gtk_list_store_append(model, &it);
+                gtk_list_store_set(model, &it, 0, *item, 1, FALSE, -1);
+            }
+            for (item = fm_config->modules_blacklist; item && *item; item++)
+            {
+                gtk_list_store_append(model, &it);
+                gtk_list_store_set(model, &it, 0, *item, 1, TRUE, -1);
+            }
+            gtk_tree_view_set_model(view, GTK_TREE_MODEL(model));
+            /* handle 'Add' button */
+            obj = gtk_builder_get_object(builder, "add_to_blacklist");
+            g_signal_connect(obj, "clicked", G_CALLBACK(on_add_to_blacklist_clicked),
+                             model);
+            /* handle 'Remove' button */
+            obj = gtk_builder_get_object(builder, "remove_from_blacklist");
+            g_signal_connect(obj, "clicked", G_CALLBACK(on_remove_from_blacklist_clicked),
+                             view);
+            /* update button sensitivity by tree selection */
+            g_signal_connect(tree_sel, "changed", G_CALLBACK(on_blacklist_sel_changed),
+                             obj);
+
+            /* whitelist */
+            view = GTK_TREE_VIEW(gtk_builder_get_object(builder, "modules_whitelist"));
+            model = gtk_list_store_new(1, G_TYPE_STRING);
+            tree_sel = gtk_tree_view_get_selection(view);
+            gtk_tree_selection_set_mode(tree_sel, GTK_SELECTION_MULTIPLE);
+
+            col = gtk_tree_view_column_new();
+            render = gtk_cell_renderer_text_new();
+            gtk_tree_view_column_pack_start(col, render, FALSE);
+            gtk_tree_view_column_set_attributes(col, render, "text", 0, NULL);
+            gtk_tree_view_append_column(view, col);
+            for (item = fm_config->modules_whitelist; item && *item; item++)
+            {
+                gtk_list_store_append(model, &it);
+                gtk_list_store_set(model, &it, 0, *item, -1);
+            }
+            gtk_tree_view_set_model(view, GTK_TREE_MODEL(model));
+            /* handle 'Add' button */
+            obj = gtk_builder_get_object(builder, "add_to_whitelist");
+            g_signal_connect(obj, "clicked", G_CALLBACK(on_add_to_whitelist_clicked),
+                             model);
+            /* handle 'Remove' button */
+            obj = gtk_builder_get_object(builder, "remove_from_whitelist");
+            g_signal_connect(obj, "clicked", G_CALLBACK(on_remove_from_whitelist_clicked),
+                             view);
+            /* update button sensitivity by tree selection */
+            g_signal_connect(tree_sel, "changed", G_CALLBACK(on_whitelist_sel_changed),
+                             obj);
         }
 #endif
         g_signal_connect(tree_sel, "changed", G_CALLBACK(on_tab_label_list_sel_changed), notebook);
