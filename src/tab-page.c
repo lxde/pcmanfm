@@ -32,6 +32,7 @@
 #include "gseal-gtk-compat.h"
 
 #include <stdlib.h>
+#include <fnmatch.h>
 
 /* Additional entries for FmFileMenu popup */
 /* it is also used for FmSidePane context menu popup */
@@ -544,33 +545,6 @@ static void _tab_unset_busy_cursor(FmTabPage* page)
 }
 
 #if FM_CHECK_VERSION(1, 0, 2)
-static gboolean _match_to_filter(const char *key, const char *pattern)
-{
-    switch (pattern[0])
-    {
-    case '?': /* exactly one char */
-        if (!key[0])
-            return FALSE;
-        return _match_to_filter(&key[1], &pattern[1]);
-    case '*': /* zero or more chars */
-        if (pattern[1] == '\0') /* "*" matches any string */
-            return TRUE;
-        while (*key)
-            if (_match_to_filter(key++, &pattern[1]))
-                return TRUE;
-        return FALSE; /* no match was found */
-    case '\0': /* empty string */
-        return (key[0] == '\0');
-    case '\\': /* escaped next char */
-        pattern++;
-        /* continue with the char */
-    default: /* char to match */
-        if (key[0] != pattern[0])
-            return FALSE;
-        return _match_to_filter(&key[1], &pattern[1]);
-    }
-}
-
 static gboolean fm_tab_page_path_filter(FmFileInfo *file, gpointer user_data)
 {
     FmTabPage *page;
@@ -586,7 +560,7 @@ static gboolean fm_tab_page_path_filter(FmFileInfo *file, gpointer user_data)
     casefold = g_utf8_casefold(disp_name, -1);
     key = g_utf8_normalize(casefold, -1, G_NORMALIZE_ALL);
     g_free(casefold);
-    result = _match_to_filter(key, page->filter_pattern);
+    result = (fnmatch(page->filter_pattern, key, 0) == 0);
     g_free(key);
     return result;
 }
