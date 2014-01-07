@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm 1.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-05 01:20+0200\n"
-"PO-Revision-Date: 2014-01-05 09:56+0000\n"
+"POT-Creation-Date: 2014-01-07 02:40+0200\n"
+"PO-Revision-Date: 2014-01-07 11:08+0000\n"
 "Last-Translator: Miguel Anxo <mbouzada@gmail.com>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
 "Language: gl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1388915801.0\n"
+"X-POOTLE-MTIME: 1389092915.0\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2014"
@@ -355,7 +355,7 @@ msgstr "_Cartafol persoal"
 msgid "Des_ktop"
 msgstr "Escri_torio"
 
-#: ../data/ui/pref.glade.h:50 ../src/main-win-ui.c:226
+#: ../data/ui/pref.glade.h:50 ../src/main-win-ui.c:230
 msgid "_Trash Can"
 msgstr "_Cesta do lixo"
 
@@ -367,7 +367,7 @@ msgstr "_Sistema de ficheiros raíz"
 msgid "App_lications"
 msgstr "A_plicativos"
 
-#: ../data/ui/pref.glade.h:53 ../src/main-win-ui.c:229
+#: ../data/ui/pref.glade.h:53 ../src/main-win-ui.c:233
 msgid "Dev_ices"
 msgstr "D_ispositivos"
 
@@ -439,14 +439,14 @@ msgstr ""
 msgid "_Terminal emulator:"
 msgstr "Emulador de _terminal:"
 
-#. Application command to format some drive
-#: ../data/ui/pref.glade.h:71
-msgid "_Format command:"
-msgstr "Orde de _formato:"
-
-#: ../data/ui/pref.glade.h:72
+#: ../data/ui/pref.glade.h:70
 msgid "_Switch user command:"
 msgstr "_Orde para cambiar de usuario:"
+
+#. Application command to format some drive
+#: ../data/ui/pref.glade.h:72
+msgid "_Format command:"
+msgstr "Orde de _formato:"
 
 #: ../data/ui/pref.glade.h:73
 msgid "A_rchiver integration:"
@@ -505,35 +505,47 @@ msgid "_Advanced"
 msgstr "_Avanzado"
 
 #: ../data/ui/pref.glade.h:88
+msgid "<b>_Do not load modules matching:</b>"
+msgstr "<b>_Non cargar os módulos que coincidan con:</b>"
+
+#: ../data/ui/pref.glade.h:89
+msgid "<b>_Load these modules anyway:</b>"
+msgstr "<b>_Cargar estes módulos aínda así:</b>"
+
+#: ../data/ui/pref.glade.h:90
+msgid "Modules"
+msgstr "Módulos"
+
+#: ../data/ui/pref.glade.h:91
 msgid "Auto (move if on the same FS, copy otherwise)"
 msgstr ""
 "Automático (se se move no mesmo sistema de ficheiros, senón fai unha copia)"
 
-#: ../data/ui/pref.glade.h:89
+#: ../data/ui/pref.glade.h:92
 msgid "Copy"
 msgstr "Copiar"
 
-#: ../data/ui/pref.glade.h:90
+#: ../data/ui/pref.glade.h:93
 msgid "Move"
 msgstr "Mover"
 
-#: ../data/ui/pref.glade.h:91
+#: ../data/ui/pref.glade.h:94
 msgid "Ask"
 msgstr "Preguntar"
 
-#: ../data/ui/pref.glade.h:92
+#: ../data/ui/pref.glade.h:95
 msgid "Icon view"
 msgstr "Vista de iconas"
 
-#: ../data/ui/pref.glade.h:93
+#: ../data/ui/pref.glade.h:96
 msgid "Compact view"
 msgstr "Vista compacta"
 
-#: ../data/ui/pref.glade.h:94
+#: ../data/ui/pref.glade.h:97
 msgid "Thumbnail view"
 msgstr "Vista de miniaturas"
 
-#: ../data/ui/pref.glade.h:95
+#: ../data/ui/pref.glade.h:98
 msgid "Detailed list view"
 msgstr "Ver como lista detallada"
 
@@ -621,11 +633,11 @@ msgstr "Abrir no xestor de ficheiros"
 msgid "Open in New Ta_b"
 msgstr "Abrir nunha nova _lapela"
 
-#: ../src/desktop-ui.c:52 ../src/tab-page.c:56
+#: ../src/desktop-ui.c:52 ../src/tab-page.c:57
 msgid "Open in New Win_dow"
 msgstr "Abrir nunha nova _xanela"
 
-#: ../src/desktop-ui.c:54 ../src/tab-page.c:58
+#: ../src/desktop-ui.c:54 ../src/tab-page.c:59
 msgid "Open in Termina_l"
 msgstr "Abrir nu termina_l"
 
@@ -658,402 +670,410 @@ msgstr "Amosar o menú de escritorio"
 msgid "Desktop"
 msgstr "Escritorio"
 
-#: ../src/main-win-ui.c:177
+#: ../src/main-win-ui.c:181
 msgid "_File"
 msgstr "_Ficheiro"
 
-#: ../src/main-win-ui.c:178
+#: ../src/main-win-ui.c:182
 msgid "_New Window"
 msgstr "_Nova xanela"
 
-#: ../src/main-win-ui.c:179
+#: ../src/main-win-ui.c:183
 msgid "New T_ab"
 msgstr "No_va lapela"
 
-#: ../src/main-win-ui.c:179
+#: ../src/main-win-ui.c:183
 msgid "Create new tab for this folder"
 msgstr "Crear unha nova lapela para este cartafol"
 
-#: ../src/main-win-ui.c:180
+#: ../src/main-win-ui.c:184
 msgid "C_reate New..."
 msgstr "C_rear novo..."
 
-#: ../src/main-win-ui.c:181
+#: ../src/main-win-ui.c:185
 msgid "Folder"
 msgstr "Cartafol"
 
-#: ../src/main-win-ui.c:182
+#: ../src/main-win-ui.c:186
 msgid "Empty File"
 msgstr "Ficheiro baleiro"
 
-#: ../src/main-win-ui.c:183
+#: ../src/main-win-ui.c:187
 msgid "Folder Propertie_s"
 msgstr "Propiedade_s do cartafol"
 
-#: ../src/main-win-ui.c:184
+#: ../src/main-win-ui.c:188
 msgid "_Close Tab"
 msgstr "_Pechar a lapela"
 
-#: ../src/main-win-ui.c:185
+#: ../src/main-win-ui.c:189
 msgid "Close _Window"
 msgstr "Pechar a _xanela"
 
-#: ../src/main-win-ui.c:186
+#: ../src/main-win-ui.c:190
 msgid "_Edit"
 msgstr "_Editar"
 
-#: ../src/main-win-ui.c:188
+#: ../src/main-win-ui.c:192
 msgid "C_ut"
 msgstr "Cor_tar"
 
-#: ../src/main-win-ui.c:191
+#: ../src/main-win-ui.c:195
 msgid "Move to _Trash"
 msgstr "Mover ao _lixo"
 
-#: ../src/main-win-ui.c:193
+#: ../src/main-win-ui.c:197
 msgid "Copy Pat_h(s)"
 msgstr "Copiar a(s) ruta(s)"
 
-#: ../src/main-win-ui.c:194
+#: ../src/main-win-ui.c:198
 msgid "R_ename..."
 msgstr "R_enomear..."
 
-#: ../src/main-win-ui.c:195
+#: ../src/main-win-ui.c:199
 msgid "D_uplicate..."
 msgstr "D_uplicado..."
 
-#: ../src/main-win-ui.c:196
+#: ../src/main-win-ui.c:200
 msgid "Create Lin_k..."
 msgstr "Crear liga_zón..."
 
-#: ../src/main-win-ui.c:197
+#: ../src/main-win-ui.c:201
 msgid "_Move to..."
 msgstr "_Mover a..."
 
-#: ../src/main-win-ui.c:198
+#: ../src/main-win-ui.c:202
 msgid "Copy to_..."
 msgstr "C_opiar a..."
 
-#: ../src/main-win-ui.c:199
+#: ../src/main-win-ui.c:203
 msgid "Propertie_s"
 msgstr "Propiedade_s"
 
-#: ../src/main-win-ui.c:201
+#: ../src/main-win-ui.c:205
 msgid "_Invert Selection"
 msgstr "_Inverter a selección"
 
-#: ../src/main-win-ui.c:202
+#: ../src/main-win-ui.c:206
 msgid "Prefere_nces"
 msgstr "Prefere_ncias"
 
-#: ../src/main-win-ui.c:203
+#: ../src/main-win-ui.c:207
 msgid "_View"
 msgstr "_Ver"
 
-#: ../src/main-win-ui.c:204
+#: ../src/main-win-ui.c:208
 msgid "_Reload Folder"
 msgstr "Volve_r cargar o cartafol"
 
-#: ../src/main-win-ui.c:204
+#: ../src/main-win-ui.c:208
 msgid "Reload current folder"
 msgstr "Volver cargar o cartafol actual"
 
-#: ../src/main-win-ui.c:205
+#: ../src/main-win-ui.c:209
 msgid "Tool_bar"
 msgstr "_Barra de Ferramentas"
 
-#: ../src/main-win-ui.c:206
+#: ../src/main-win-ui.c:210
 msgid "Pat_h Bar"
 msgstr "Barra de _rutas"
 
-#: ../src/main-win-ui.c:207
+#: ../src/main-win-ui.c:211
 msgid "Side _Pane"
 msgstr "_Panel lateral"
 
 #. other see below: 'ShowHidden' 'ShowStatus' 'Fullscreen' 'IconView'...
-#: ../src/main-win-ui.c:209
+#: ../src/main-win-ui.c:213
 msgid "Fo_lder View Mode"
 msgstr "Modo de _vista do cartafol"
 
-#: ../src/main-win-ui.c:210
+#: ../src/main-win-ui.c:214
 msgid "S_ort Files"
 msgstr "_Ordenar ficheiros"
 
-#: ../src/main-win-ui.c:212
+#: ../src/main-win-ui.c:216
 msgid "Zoom O_ut"
 msgstr "_Reducir"
 
-#: ../src/main-win-ui.c:215
+#: ../src/main-win-ui.c:219
 msgid "Fil_ter..."
 msgstr "Fil_tro..."
 
-#: ../src/main-win-ui.c:217
+#: ../src/main-win-ui.c:221
 msgid "_Help"
 msgstr "_Axuda"
 
-#: ../src/main-win-ui.c:219
+#: ../src/main-win-ui.c:223
 msgid "_Keyboard Navigation"
 msgstr "_Navegación co teclado"
 
-#: ../src/main-win-ui.c:220
+#: ../src/main-win-ui.c:224
 msgid "_Go"
 msgstr "_Ir"
 
-#: ../src/main-win-ui.c:221
+#: ../src/main-win-ui.c:225
 msgid "_Previous Folder"
 msgstr "Cartafol _anterior"
 
-#: ../src/main-win-ui.c:221
+#: ../src/main-win-ui.c:225
 msgid "Return to previous folder in history"
 msgstr "Volver ao anterior cartafol no historial"
 
-#: ../src/main-win-ui.c:222
+#: ../src/main-win-ui.c:226
 msgid "_Next Folder"
 msgstr "_Seguinte cartafol"
 
-#: ../src/main-win-ui.c:222
+#: ../src/main-win-ui.c:226
 msgid "Go forward to next folder in history"
 msgstr "Ir ao seguinte cartafol no historial"
 
-#: ../src/main-win-ui.c:223
+#: ../src/main-win-ui.c:227
 msgid "Pa_rent Folder"
 msgstr "Cartafol su_perior"
 
-#: ../src/main-win-ui.c:223
+#: ../src/main-win-ui.c:227
 msgid "Go to parent Folder"
 msgstr "Ir ao cartafol superior"
 
-#: ../src/main-win-ui.c:224
+#: ../src/main-win-ui.c:228
 msgid "H_ome Folder"
 msgstr "Carta_fol persoal"
 
-#: ../src/main-win-ui.c:224
+#: ../src/main-win-ui.c:228
 msgid "Go to home folder"
 msgstr "Ir ao cartafol persoal"
 
-#: ../src/main-win-ui.c:225
+#: ../src/main-win-ui.c:229
 msgid "_Desktop"
 msgstr "_Escritorio"
 
-#: ../src/main-win-ui.c:225
+#: ../src/main-win-ui.c:229
 msgid "Go to desktop folder"
 msgstr "Ir ao cartafol do escritorio"
 
-#: ../src/main-win-ui.c:226
+#: ../src/main-win-ui.c:230
 msgid "Open trash can"
 msgstr "Abrir o cesto do lixo"
 
-#: ../src/main-win-ui.c:227
+#: ../src/main-win-ui.c:231
 msgid "Filesyste_m Root"
 msgstr "Siste_ma de ficheiros raíz"
 
-#: ../src/main-win-ui.c:227
+#: ../src/main-win-ui.c:231
 msgid "Go fo filesystem root"
 msgstr "Ir ao sistema de ficheiros raíz"
 
-#: ../src/main-win-ui.c:228
+#: ../src/main-win-ui.c:232
 msgid "_Applications"
 msgstr "_Aplicativos"
 
-#: ../src/main-win-ui.c:228
+#: ../src/main-win-ui.c:232
 msgid "Go to root of applications menu folder"
 msgstr "Ir á raíz do cartafol do menú de aplicativos"
 
-#: ../src/main-win-ui.c:229
+#: ../src/main-win-ui.c:233
 msgid "Go to list of devices connected to the computer"
 msgstr "Ir á lista de dispositivos conectados neste computador"
 
-#: ../src/main-win-ui.c:230
+#: ../src/main-win-ui.c:234
 msgid "Net_work"
 msgstr "_Rede"
 
-#: ../src/main-win-ui.c:230
+#: ../src/main-win-ui.c:234
 msgid "Go to list of places on the network"
 msgstr "Ir á lista de lugares na rede"
 
-#: ../src/main-win-ui.c:231
+#: ../src/main-win-ui.c:235
 msgid "_Go to Location..."
 msgstr "Ir á localización"
 
-#: ../src/main-win-ui.c:232
+#: ../src/main-win-ui.c:236
 msgid "_Connect to Server..."
 msgstr "_Conectar co servidor…"
 
-#: ../src/main-win-ui.c:232
+#: ../src/main-win-ui.c:236
 msgid "Open a window to choose remote folder location"
 msgstr "Abrir unha xanela para escoller a localización do cartafol remoto"
 
-#: ../src/main-win-ui.c:233
+#: ../src/main-win-ui.c:237
 msgid "Go to the path in the location bar"
 msgstr "Ir á ruta na barra de localización"
 
-#: ../src/main-win-ui.c:234
+#: ../src/main-win-ui.c:238
 msgid "_Bookmarks"
 msgstr "_Marcadores"
 
-#: ../src/main-win-ui.c:235
+#: ../src/main-win-ui.c:239
 msgid "_Add to Bookmarks..."
 msgstr "_Engadir aos marcadores..."
 
-#: ../src/main-win-ui.c:235
+#: ../src/main-win-ui.c:239
 msgid "Add current folder to bookmarks list"
 msgstr "Engadir o cartafol actual na lista de marcadores"
 
-#: ../src/main-win-ui.c:236
+#: ../src/main-win-ui.c:240
 msgid "Too_ls"
 msgstr "Ferra_mentas"
 
-#: ../src/main-win-ui.c:237
+#: ../src/main-win-ui.c:241
 msgid "Open Current Folder in _Terminal"
 msgstr "Abrir o cartafol actual nun _terminal"
 
-#: ../src/main-win-ui.c:239
+#: ../src/main-win-ui.c:243
 msgid "Fin_d Files..."
 msgstr "_Buscar ficheiros..."
 
-#: ../src/main-win-ui.c:239
+#: ../src/main-win-ui.c:243
 msgid "Open search dialog"
 msgstr "Abrir o diálogo de buscas"
 
+#: ../src/main-win-ui.c:245
+msgid "_Run a Command in Current Folder..."
+msgstr "Executar a _orde no cartafol actual... "
+
 #. Note to translators: "Mingle..." means "Do not put folders before files" but make the translation as short as possible, please!
-#: ../src/main-win-ui.c:254
+#: ../src/main-win-ui.c:259
 msgid "Mingle _Files and Folders"
 msgstr "Mesturar os _ficheiros e cartafoles"
 
-#: ../src/main-win-ui.c:257
+#: ../src/main-win-ui.c:262
 msgid "_Ignore Name Case"
 msgstr "_Ignorar maiúsculas e minúsculas no nome"
 
-#: ../src/main-win-ui.c:259
+#: ../src/main-win-ui.c:264
 msgid "Sho_w Hidden"
 msgstr "A_mosar os ficheiros agochados"
 
 #. Note to translators: this save is meant for folder's settings such as sort
-#: ../src/main-win-ui.c:261
+#: ../src/main-win-ui.c:266
 msgid "Preserve This Folder's Settings"
 msgstr "Manter os axustes deste cartafol"
 
-#: ../src/main-win-ui.c:262
+#: ../src/main-win-ui.c:267
 msgid ""
 "Check to remember view and sort as folder setting rather than global one"
 msgstr ""
 "Márqueo para lembrar a vista e a ordenación no canto de estabelecer un "
 "global"
 
-#: ../src/main-win-ui.c:264
+#: ../src/main-win-ui.c:269
 msgid "_Show Toolbar"
 msgstr "Amosar a _barra de ferramentas"
 
-#: ../src/main-win-ui.c:265
+#: ../src/main-win-ui.c:270
 msgid "Show 'New _Window' Button"
 msgstr "Amosar o botón «Nova _xanela»"
 
-#: ../src/main-win-ui.c:266
+#: ../src/main-win-ui.c:271
 msgid "Show 'New _Tab' Button"
 msgstr "Amosar o botón «No_va lapela»"
 
-#: ../src/main-win-ui.c:267
+#: ../src/main-win-ui.c:272
 msgid "Show _Navigation Buttons"
 msgstr "Amosar os botóns de _navegación"
 
-#: ../src/main-win-ui.c:268
+#: ../src/main-win-ui.c:273
 msgid "Show '_Home' Button"
 msgstr "Amosar o botón «_Inicio»"
 
-#: ../src/main-win-ui.c:269
+#: ../src/main-win-ui.c:274
 msgid "Sho_w Side Pane"
 msgstr "Amo_sar o panel lateral"
 
-#: ../src/main-win-ui.c:270
+#: ../src/main-win-ui.c:275
 msgid "Show Status B_ar"
 msgstr "Amosar a _barra de estado"
 
-#: ../src/main-win-ui.c:271
+#: ../src/main-win-ui.c:276
 msgid "_Dual Pane Mode"
 msgstr "Modo de _duplo panel"
 
-#: ../src/main-win-ui.c:271
+#: ../src/main-win-ui.c:276
 msgid "Show two panels with folder views"
 msgstr "Amosar dous paneis coas vistas de cartafoles"
 
-#: ../src/main-win-ui.c:272
+#: ../src/main-win-ui.c:277
 msgid "Fullscreen _Mode"
 msgstr "Modo de _pantalla completa"
 
-#: ../src/main-win-ui.c:278
+#: ../src/main-win-ui.c:283
 msgid "_Icon View"
 msgstr "Vista de _iconas"
 
-#: ../src/main-win-ui.c:279
+#: ../src/main-win-ui.c:284
 msgid "_Compact View"
 msgstr "Vista _compacta"
 
-#: ../src/main-win-ui.c:280
+#: ../src/main-win-ui.c:285
 msgid "_Thumbnail View"
 msgstr "Vista de _miniaturas"
 
-#: ../src/main-win-ui.c:281
+#: ../src/main-win-ui.c:286
 msgid "Detailed _List View"
 msgstr "Ver como lista _detallada"
 
-#: ../src/main-win-ui.c:294 ../src/main-win-ui.c:299
+#: ../src/main-win-ui.c:299 ../src/main-win-ui.c:307
 msgid "By _Name"
 msgstr "Por _nome"
 
-#: ../src/main-win-ui.c:295 ../src/main-win-ui.c:300
+#: ../src/main-win-ui.c:300 ../src/main-win-ui.c:308
 msgid "By _Modification Time"
 msgstr "Por data de _modificación"
 
-#: ../src/main-win-ui.c:296 ../src/main-win-ui.c:301
+#: ../src/main-win-ui.c:301 ../src/main-win-ui.c:309
 msgid "By _Size"
 msgstr "Por _tamaño"
 
-#: ../src/main-win-ui.c:297 ../src/main-win-ui.c:302
+#: ../src/main-win-ui.c:302 ../src/main-win-ui.c:310
 msgid "By File _Type"
 msgstr "Por tipo de _ficheiro"
 
-#: ../src/main-win-ui.c:308
+#: ../src/main-win-ui.c:304
+msgid "By _Extension"
+msgstr "Por _extensión"
+
+#: ../src/main-win-ui.c:316
 msgid "Places"
 msgstr "Lugares"
 
-#: ../src/main-win-ui.c:309
+#: ../src/main-win-ui.c:317
 msgid "Directory Tree"
 msgstr "Árbore de cartafoles"
 
-#: ../src/main-win-ui.c:310
+#: ../src/main-win-ui.c:318
 msgid "Remote"
 msgstr "Remoto"
 
-#: ../src/main-win-ui.c:315
+#: ../src/main-win-ui.c:323
 msgid "_Location"
 msgstr "_Localización"
 
-#: ../src/main-win-ui.c:316
+#: ../src/main-win-ui.c:324
 msgid "_Buttons"
 msgstr "_Botóns"
 
-#: ../src/main-win.c:879 ../src/main-win.c:883
+#: ../src/main-win.c:882 ../src/main-win.c:886
 msgid "Show history of visited folders"
 msgstr "Amosar o historial de cartafoles visitados"
 
-#: ../src/main-win.c:888
+#: ../src/main-win.c:891
 msgid "History"
 msgstr "Historial"
 
-#: ../src/main-win.c:902
+#: ../src/main-win.c:905
 msgid "You are in super user mode"
 msgstr "Vostede está en modo superusuario"
 
-#: ../src/main-win.c:1088
+#: ../src/main-win.c:1091
 msgid "Lightweight file manager\n"
 msgstr "Xestor de ficheiros lixeiro\n"
 
-#: ../src/main-win.c:1093
+#: ../src/main-win.c:1096
 #, c-format
 msgid "using LibFM ver. %s\n"
 msgstr "usando LibFM ver. %s\n"
 
-#: ../src/main-win.c:1095
+#: ../src/main-win.c:1098
 msgid ""
 "\n"
 "Developed by Hon Jen Yee (PCMan)"
@@ -1061,11 +1081,11 @@ msgstr ""
 "\n"
 "Desenvolvido por Hon Jen Yee (PCMan)"
 
-#: ../src/main-win.c:1120 ../src/main-win.c:1128
+#: ../src/main-win.c:1123 ../src/main-win.c:1131
 msgid "Keyboard Navigation"
 msgstr "Navegación co teclado"
 
-#: ../src/main-win.c:1122
+#: ../src/main-win.c:1125
 msgid ""
 "Tab: cycle focus Folder View -> Side Pane -> Tools Bar\n"
 "Shift+Tab: cycle focus Tools Bar -> Side Pane -> Folder View\n"
@@ -1083,7 +1103,19 @@ msgstr ""
 "F10: activar o menú principal\n"
 "Ctrl+L ou Alt+D: cambiar o foco para a Barra de rutas"
 
-#: ../src/main-win.c:1744
+#: ../src/main-win.c:1166
+msgid "Run a command"
+msgstr "Executar unha orde"
+
+#: ../src/main-win.c:1167
+msgid "Enter a command to run:"
+msgstr "Introduza a orde a executar:"
+
+#: ../src/main-win.c:1174
+msgid "Current folder is inaccessible"
+msgstr "O cartafol actual non é accesíbel"
+
+#: ../src/main-win.c:1773
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -1094,15 +1126,15 @@ msgstr ""
 "'%s'\n"
 "Introduza un nome para o novo elemento marcador:"
 
-#: ../src/main-win.c:1748
+#: ../src/main-win.c:1777
 msgid "Add to Bookmarks"
 msgstr "Engadir a marcadores"
 
-#: ../src/main-win.c:2474
+#: ../src/main-win.c:2503
 msgid "Select filter"
 msgstr "Escoller o filtro"
 
-#: ../src/main-win.c:2475
+#: ../src/main-win.c:2504
 msgid "Choose a new shell pattern to show files:"
 msgstr "Escolla un novo patrón para amosar os ficheiros:"
 
@@ -1191,39 +1223,55 @@ msgstr "ESTILO"
 msgid "[FILE1, FILE2,...]"
 msgstr "[FICHEIRO1, FICHEIRO2,...]"
 
-#: ../src/pcmanfm.c:566
+#: ../src/pcmanfm.c:581
 msgid "Terminal emulator is not set."
 msgstr "No se configurou o emulador de terminal."
 
-#: ../src/tab-page.c:55
+#: ../src/tab-page.c:56
 msgid "Open in New T_ab"
 msgstr "Abrir nunha nova l_apela"
 
-#: ../src/tab-page.c:394
+#: ../src/tab-page.c:395
 #, c-format
 msgid "%d item selected"
 msgid_plural "%d items selected"
 msgstr[0] "%d elemento seleccionado"
 msgstr[1] "%d elementos seleccionados"
 
-#: ../src/tab-page.c:744
+#: ../src/tab-page.c:718
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Espazo libre: %s (total: %s )"
 
-#: ../src/tab-page.c:764
+#: ../src/tab-page.c:738
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] "%d elemento"
 msgstr[1] "%d elementos"
 
-#: ../src/tab-page.c:765
+#: ../src/tab-page.c:739
 #, c-format
 msgid " (%d hidden)"
 msgid_plural " (%d hidden)"
 msgstr[0] " (%d agochado)"
 msgstr[1] " (%d agochados)"
+
+#: ../src/pref.c:514
+msgid "Add to Modules Blacklist"
+msgstr "Engadir na lista negra de módulos"
+
+#: ../src/pref.c:515
+msgid "Enter a blacklisted module mask:"
+msgstr "Introduza unha máscara de lista negra de módulos:"
+
+#: ../src/pref.c:606
+msgid "Add to Modules Whitelist"
+msgstr "Engadir na lista branca de módulos"
+
+#: ../src/pref.c:607
+msgid "Enter a whitelisted module mask:"
+msgstr "Introduza unha máscara de lista branca de módulos:"
 
 #: ../data/pcmanfm.desktop.in.h:1
 msgid "File Manager PCManFM"
