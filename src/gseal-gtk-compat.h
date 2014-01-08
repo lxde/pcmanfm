@@ -56,6 +56,14 @@ G_BEGIN_DECLS
 #define gtk_widget_get_visible(widget)          GTK_WIDGET_VISIBLE(widget)
 #endif /* GTK+ < 2.18.0 */
 
+#if !GLIB_CHECK_VERSION(2, 28, 0)
+/* This API was added in glib 2.28 */
+#define g_list_free_full(list, free_func)       \
+{ \
+g_list_foreach(list, (GFunc)free_func, NULL); \
+g_list_free(list); \
+}
+#endif
 
 G_END_DECLS
 
