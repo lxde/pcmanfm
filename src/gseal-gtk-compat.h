@@ -39,13 +39,14 @@ G_BEGIN_DECLS
 #define GDK_KEY_Left                            GDK_Left
 #define GDK_KEY_Right                           GDK_Right
 #define GDK_KEY_Up                              GDK_Up
+#define GDK_KEY_KP_Up                           GDK_KP_Up
 #define GDK_KEY_Down                            GDK_Down
+#define GDK_KEY_KP_Down                         GDK_KP_Down
 #define GDK_KEY_space                           GDK_space
 #define GDK_KEY_F2                              GDK_F2
 #define GDK_KEY_Return                          GDK_Return
 #define GDK_KEY_ISO_Enter                       GDK_ISO_Enter
 #define GDK_KEY_KP_Enter                        GDK_KP_Enter
-#define GDK_KEY_KP_Down                         GDK_KP_Down
 #define GDK_KEY_G                               GDK_G
 #define GDK_KEY_g                               GDK_g
 #define GDK_KEY_F                               GDK_F
