@@ -1332,7 +1332,7 @@ static gboolean fm_desktop_accessible_idle_do_action(gpointer data)
 
     priv = FM_DESKTOP_ACCESSIBLE_GET_PRIVATE(data);
     priv->action_idle_handler = 0;
-    widget = gtk_accessible_get_widget((GtkAccessible*)data);
+    widget = gtk_accessible_get_widget(GTK_ACCESSIBLE(data));
     if (widget)
         fm_folder_view_item_clicked(FM_FOLDER_VIEW(widget), NULL, FM_FV_CONTEXT_MENU);
     return FALSE;
