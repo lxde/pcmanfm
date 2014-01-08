@@ -26,6 +26,7 @@ G_BEGIN_DECLS
 #if !GTK_CHECK_VERSION(2, 22, 0)
 #  define gdk_drag_context_get_actions(drag_context) \
         drag_context->actions
+#  define gtk_accessible_get_widget(accessible) accessible->widget
 #endif /* GTK < 2.22.0 */
 
 #if !GTK_CHECK_VERSION(2, 21, 0)
@@ -44,6 +45,11 @@ G_BEGIN_DECLS
 #define GDK_KEY_Return                          GDK_Return
 #define GDK_KEY_ISO_Enter                       GDK_ISO_Enter
 #define GDK_KEY_KP_Enter                        GDK_KP_Enter
+#define GDK_KEY_KP_Down                         GDK_KP_Down
+#define GDK_KEY_KP_G                            GDK_KP_G
+#define GDK_KEY_KP_g                            GDK_KP_g
+#define GDK_KEY_KP_F                            GDK_KP_F
+#define GDK_KEY_KP_f                            GDK_KP_f
 #endif
 
 #if !GTK_CHECK_VERSION (2, 20, 0)
