@@ -49,6 +49,7 @@ struct _FmMainWin
 
     GtkUIManager* ui;
     GtkRadioAction* first_view_mode;
+    GtkRadioAction* first_side_pane_mode;
     GtkToolbar* toolbar;
     FmPathEntry* location;
     FmPathBar* path_bar;

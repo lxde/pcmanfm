@@ -80,8 +80,12 @@ static const char main_menu_xml[] =
     "<menu action='SidePane'>"
       "<menuitem action='ShowSidePane' />"
       "<separator/>"
+#if FM_CHECK_VERSION(1, 2, 0)
+      "<placeholder name='SidePaneModes'/>"
+#else
       "<menuitem action='Places' />"
       "<menuitem action='DirTree' />"
+#endif
     "</menu>"
     "<menuitem action='ShowStatus'/>"
     "<separator/>"
@@ -311,12 +315,14 @@ static GtkRadioActionEntry main_win_sort_by_actions[]=
 #endif
 };
 
+#if !FM_CHECK_VERSION(1, 2, 0)
 static GtkRadioActionEntry main_win_side_bar_mode_actions[]=
 {
     {"Places", NULL, N_("Places"), "<Ctrl>6", NULL, FM_SP_PLACES},
     {"DirTree", NULL, N_("Directory Tree"), "<Ctrl>7", NULL, FM_SP_DIR_TREE},
     {"Remote", NULL, N_("Remote"), "<Ctrl>8", NULL, FM_SP_REMOTE},
 };
+#endif
 
 static GtkRadioActionEntry main_win_path_bar_mode_actions[]=
 {

@@ -607,9 +607,7 @@ static void on_side_pane_mode_changed(FmSidePane* sp, FmMainWin* win)
     mode = fm_side_pane_get_mode(sp);
 
     /* update menu */
-    gtk_radio_action_set_current_value(GTK_RADIO_ACTION(gtk_ui_manager_get_action(win->ui,
-                                           "/menubar/ViewMenu/SidePane/Places")),
-                                       mode);
+    gtk_radio_action_set_current_value(win->first_side_pane_mode, mode);
 
     if(mode != (app_config->side_pane_mode & FM_SP_MODE_MASK))
     {
@@ -761,7 +759,7 @@ static void fm_main_win_init(FmMainWin *win)
     /* generate list of modes dynamically from FmStandardView widget data */
     radio_group = NULL;
     is_first = TRUE;
-    str = g_string_new("Mode:");
+    str = g_string_new("ViewMode:");
     xml = g_string_new("<menubar><menu action='ViewMenu'><menu action='FolderView'><placeholder name='ViewModes'>");
     accel_str[6] = '1';
     for(i = 0; i < fm_standard_view_get_n_modes(); i++)
@@ -788,11 +786,10 @@ static void fm_main_win_init(FmMainWin *win)
             g_object_unref(mode_action);
             g_string_append_printf(xml, "<menuitem action='%s'/>", str->str);
             accel_str[6]++; /* <Ctrl>2 and so on */
-            g_string_truncate(str, 5); /* reset it to just "Mode:" */
+            g_string_truncate(str, 9); /* reset it to just "ViewMode:" */
         }
     }
-    g_string_append(xml, "</placeholder></menu></menu></menubar>");
-    g_string_free(str, TRUE);
+    g_string_append(xml, "</placeholder></menu>"); /* it will be continued below */
 #else
     gtk_action_group_add_radio_actions(act_grp, main_win_mode_actions,
                                        G_N_ELEMENTS(main_win_mode_actions),
@@ -811,10 +808,50 @@ static void fm_main_win_init(FmMainWin *win)
                                        G_N_ELEMENTS(main_win_sort_by_actions),
                                        app_config->sort_by,
                                        G_CALLBACK(on_sort_by), win);
+#if FM_CHECK_VERSION(1, 2, 0)
+    /* generate list of modes dynamically from FmSidePane widget data */
+    radio_group = NULL;
+    is_first = TRUE;
+    g_string_assign(str, "SidePaneMode:");
+    g_string_append(xml, "<menu action='SidePane'><placeholder name='SidePaneModes'>");
+    accel_str[6] = '6';
+    for(i = 1; i <= fm_side_pane_get_n_modes(); i++)
+    {
+        if(fm_side_pane_get_mode_label(i))
+        {
+            g_string_append(str, fm_side_pane_get_mode_name(i));
+            mode_action = gtk_radio_action_new(str->str,
+                                               fm_side_pane_get_mode_label(i),
+                                               fm_side_pane_get_mode_tooltip(i),
+                                               NULL,
+                                               i);
+            gtk_radio_action_set_group(mode_action, radio_group);
+            radio_group = gtk_radio_action_get_group(mode_action);
+            gtk_action_group_add_action_with_accel(act_grp,
+                                                   GTK_ACTION(mode_action),
+                                                   accel_str);
+            if (is_first) /* work on first one only */
+            {
+                win->first_side_pane_mode = mode_action;
+                g_signal_connect(mode_action, "changed", G_CALLBACK(on_side_pane_mode), win);
+            }
+            is_first = FALSE;
+            g_object_unref(mode_action);
+            g_string_append_printf(xml, "<menuitem action='%s'/>", str->str);
+            accel_str[6]++; /* <Ctrl>7 and so on */
+            g_string_truncate(str, 13); /* reset it to just "SidePaneMode:" */
+        }
+    }
+    gtk_radio_action_set_current_value(win->first_side_pane_mode,
+                                       (app_config->side_pane_mode & FM_SP_MODE_MASK));
+    g_string_append(xml, "</placeholder></menu></menu></menubar>");
+    g_string_free(str, TRUE);
+#else
     gtk_action_group_add_radio_actions(act_grp, main_win_side_bar_mode_actions,
                                        G_N_ELEMENTS(main_win_side_bar_mode_actions),
                                        (app_config->side_pane_mode & FM_SP_MODE_MASK),
                                        G_CALLBACK(on_side_pane_mode), win);
+#endif
     gtk_action_group_add_radio_actions(act_grp, main_win_path_bar_mode_actions,
                                        G_N_ELEMENTS(main_win_path_bar_mode_actions),
                                        0, G_CALLBACK(on_path_bar_mode), win);
@@ -831,6 +868,8 @@ static void fm_main_win_init(FmMainWin *win)
 #else
     act = gtk_ui_manager_get_action(ui, "/menubar/ViewMenu/IconView");
     win->first_view_mode = GTK_RADIO_ACTION(act);
+    act = gtk_ui_manager_get_action(win->ui, "/menubar/ViewMenu/SidePane/Places");
+    win->first_side_pane_mode = GTK_RADIO_ACTION(act);
 #endif
 #if !FM_CHECK_VERSION(1, 0, 2)
     act = gtk_ui_manager_get_action(ui, "/menubar/ViewMenu/ShowHidden");
@@ -1391,7 +1430,11 @@ static void on_save_per_folder(GtkToggleAction* act, FmMainWin* win)
 static void on_side_pane_mode(GtkRadioAction* act, GtkRadioAction *cur, FmMainWin* win)
 {
     FmTabPage* cur_page = win->current_page;
-    FmSidePane* sp = fm_tab_page_get_side_pane(cur_page);
+    FmSidePane* sp;
+
+    if (cur_page == NULL) /* it can be NULL if we are in FmMainWin setup */
+        return;
+    sp = fm_tab_page_get_side_pane(cur_page);
     int val = gtk_radio_action_get_current_value(cur);
     fm_side_pane_set_mode(sp, val);
 }
