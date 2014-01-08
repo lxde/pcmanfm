@@ -46,10 +46,10 @@ G_BEGIN_DECLS
 #define GDK_KEY_ISO_Enter                       GDK_ISO_Enter
 #define GDK_KEY_KP_Enter                        GDK_KP_Enter
 #define GDK_KEY_KP_Down                         GDK_KP_Down
-#define GDK_KEY_KP_G                            GDK_KP_G
-#define GDK_KEY_KP_g                            GDK_KP_g
-#define GDK_KEY_KP_F                            GDK_KP_F
-#define GDK_KEY_KP_f                            GDK_KP_f
+#define GDK_KEY_G                               GDK_G
+#define GDK_KEY_g                               GDK_g
+#define GDK_KEY_F                               GDK_F
+#define GDK_KEY_f                               GDK_f
 #endif
 
 #if !GTK_CHECK_VERSION (2, 20, 0)
