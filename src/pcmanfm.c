@@ -450,7 +450,11 @@ gboolean pcmanfm_run(gint screen_num)
            * #3397444 - pcmanfm dont show window in daemon mode if i call 'pcmanfm' */
             pcmanfm_ref();
         }
+#if FM_CHECK_VERSION(1, 0, 2)
         else if (G_LIKELY(!find_files || n_pcmanfm_ref < 1))
+#else
+        else
+#endif
         {
             /* If we're not in daemon mode, or pcmanfm_run() is called because another
              * instance send signal to us, open cwd by default. */

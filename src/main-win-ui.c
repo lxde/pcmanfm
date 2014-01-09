@@ -155,7 +155,9 @@ static const char main_menu_xml[] =
 #if FM_CHECK_VERSION(1, 0, 2)
     "<menuitem action='Search'/>"
 #endif
+#if FM_CHECK_VERSION(1, 2, 0)
     "<menuitem action='Launch'/>"
+#endif
     /* "<menuitem action='AsRoot'/>" */
   "</menu>"
   "<menu action='HelpMenu'>"
@@ -246,7 +248,9 @@ static GtkActionEntry main_win_actions[]=
 #if FM_CHECK_VERSION(1, 0, 2)
         {"Search", GTK_STOCK_FIND, N_("Fin_d Files..."), "<Ctrl><Shift>F", N_("Open search dialog"), G_CALLBACK(on_search)},
 #endif
+#if FM_CHECK_VERSION(1, 2, 0)
         {"Launch", GTK_STOCK_EXECUTE, N_("_Run a Command in Current Folder..."), NULL, NULL, G_CALLBACK(on_launch)},
+#endif
         /*{"AsRoot", GTK_STOCK_DIALOG_AUTHENTICATION, N_("Open Current Folder as _Root"), NULL, NULL, G_CALLBACK(on_open_as_root)},*/
     /* for accelerators */
     {"Location2", NULL, NULL, "<Alt>d", NULL, G_CALLBACK(on_location)},

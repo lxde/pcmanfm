@@ -127,6 +127,7 @@ static gboolean fm_folder_config_get_boolean(FmFolderConfig *fc, const char *key
     return fm_key_file_get_bool(fc->kf, fc->group, key, val);
 }
 
+#if FM_CHECK_VERSION(1, 0, 2)
 static char *fm_folder_config_get_string(FmFolderConfig *fc, const char *key)
 {
     return g_key_file_get_string(fc->kf, fc->group, key, NULL);
@@ -138,7 +139,7 @@ static char **fm_folder_config_get_string_list(FmFolderConfig *fc,
     return g_key_file_get_string_list(fc->kf, fc->group, key, length, NULL);
 }
 
-#if !FM_CHECK_VERSION(1, 0, 2)
+#else
 static void fm_folder_config_set_integer(FmFolderConfig *fc, const char *key,
                                          gint val)
 {
@@ -154,6 +155,7 @@ static void fm_folder_config_set_boolean(FmFolderConfig *fc, const char *key,
     g_key_file_set_boolean(fc->kf, fc->group, key, val);
 }
 
+#if FM_CHECK_VERSION(1, 0, 2)
 static void fm_folder_config_set_string(FmFolderConfig *fc, const char *key,
                                         const char *string)
 {
@@ -174,6 +176,7 @@ static void fm_folder_config_remove_key(FmFolderConfig *fc, const char *key)
     fc->changed = TRUE;
     g_key_file_remove_key(fc->kf, fc->group, key, NULL);
 }
+#endif
 
 static void fm_folder_config_purge(FmFolderConfig *fc)
 {
@@ -316,7 +319,7 @@ static void _save_sort(GString *buf, FmSortMode mode, FmFolderModelCol col)
 #else
 static void _save_sort(GString *buf, GtkSortType type, int col)
 {
-    g_string_append_printf(buf, "sort_type=%d\n", sort_type);
+    g_string_append_printf(buf, "sort_type=%d\n", type);
     g_string_append_printf(buf, "sort_by=%d\n", col);
 }
 #endif
@@ -333,10 +336,10 @@ static gboolean _parse_config_for_path(FmFolderConfig *fc,
                                        FmStandardViewMode *view_mode,
                                        gboolean *show_hidden, char ***columns)
 {
-    char *tmp;
     int tmp_int;
     /* we cannot use _parse_sort() here because we have no access to GKeyFile */
 #if FM_CHECK_VERSION(1, 0, 2)
+    char *tmp;
     char **sort;
 
     /* parse "sort" strings list first */
@@ -392,11 +395,17 @@ static gboolean _parse_config_for_path(FmFolderConfig *fc,
        FM_FOLDER_MODEL_COL_IS_VALID((guint)tmp_int))
         *by = tmp_int;
 #endif
+#if FM_CHECK_VERSION(1, 0, 2)
     if (view_mode && (tmp = fm_folder_config_get_string(fc, "ViewMode")))
     {
         *view_mode = fm_standard_view_mode_from_str(tmp);
         g_free(tmp);
     }
+#else
+    if (view_mode && fm_folder_config_get_integer(fc, "ViewMode", &tmp_int) &&
+        FM_STANDARD_VIEW_MODE_IS_VALID(tmp_int))
+        *view_mode = tmp_int;
+#endif
     if (show_hidden)
         fm_folder_config_get_boolean(fc, "ShowHidden", show_hidden);
 #if FM_CHECK_VERSION(1, 0, 2)
@@ -645,10 +654,8 @@ void fm_app_config_load_desktop_config(GKeyFile *kf, const char *group, FmDeskto
 
 void fm_app_config_load_from_key_file(FmAppConfig* cfg, GKeyFile* kf)
 {
-#if FM_CHECK_VERSION(1, 0, 2)
     char *tmp;
     char **tmpv;
-#endif
     int tmp_int, i;
 
     /* behavior */

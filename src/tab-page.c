@@ -1254,7 +1254,8 @@ void fm_tab_page_reload(FmTabPage* page)
         int idx = fm_nav_history_get_cur_index(page->nav_history);
         fm_nav_history_go_to(page->nav_history, idx, scroll_pos);
 #else
-        const FmNavHistoryItem* item = fm_nav_history_get_cur(page->nav_history);
+        FmNavHistoryItem* item = (FmNavHistoryItem*)fm_nav_history_get_cur(page->nav_history);
+        /* NOTE: ignoring const modifier due to invalid pre-1.0.2 design */
         item->scroll_pos = scroll_pos;
 #endif
         fm_folder_reload(folder);

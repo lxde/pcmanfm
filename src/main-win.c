@@ -119,7 +119,9 @@ static void on_open_in_terminal(GtkAction* act, FmMainWin* win);
 #if FM_CHECK_VERSION(1, 0, 2)
 static void on_search(GtkAction* act, FmMainWin* win);
 #endif
+#if FM_CHECK_VERSION(1, 2, 0)
 static void on_launch(GtkAction* act, FmMainWin* win);
+#endif
 static void on_fullscreen(GtkToggleAction* act, FmMainWin* win);
 
 static void on_location(GtkAction* act, FmMainWin* win);
@@ -320,8 +322,10 @@ static void update_file_menu(FmMainWin* win, FmPath *path)
 
     act = gtk_ui_manager_get_action(win->ui, "/menubar/ToolMenu/Term");
     gtk_action_set_sensitive(act, path && fm_path_is_native(path));
+#if FM_CHECK_VERSION(1, 2, 0)
     act = gtk_ui_manager_get_action(win->ui, "/menubar/ToolMenu/Launch");
     gtk_action_set_sensitive(act, path && fm_path_is_native(path));
+#endif
     act = gtk_ui_manager_get_action(win->ui, "/menubar/GoMenu/Up");
     gtk_action_set_sensitive(act, path && fm_path_get_parent(path));
 }
@@ -866,9 +870,9 @@ static void fm_main_win_init(FmMainWin *win)
     gtk_ui_manager_add_ui_from_string(ui, xml->str, xml->len, NULL);
     g_string_free(xml, TRUE);
 #else
-    act = gtk_ui_manager_get_action(ui, "/menubar/ViewMenu/IconView");
+    act = gtk_ui_manager_get_action(ui, "/menubar/ViewMenu/FolderView/IconView");
     win->first_view_mode = GTK_RADIO_ACTION(act);
-    act = gtk_ui_manager_get_action(win->ui, "/menubar/ViewMenu/SidePane/Places");
+    act = gtk_ui_manager_get_action(ui, "/menubar/ViewMenu/SidePane/Places");
     win->first_side_pane_mode = GTK_RADIO_ACTION(act);
 #endif
 #if !FM_CHECK_VERSION(1, 0, 2)
@@ -1198,6 +1202,7 @@ static void on_search(GtkAction* act, FmMainWin* win)
 }
 #endif
 
+#if FM_CHECK_VERSION(1, 2, 0)
 static void on_launch(GtkAction* act, FmMainWin* win)
 {
     char *cmd, *cwd, *def;
@@ -1223,6 +1228,7 @@ static void on_launch(GtkAction* act, FmMainWin* win)
     g_free(cwd);
     g_free(def);
 }
+#endif
 
 static void on_show_hidden(GtkToggleAction* act, FmMainWin* win)
 {
