@@ -8,21 +8,20 @@ msgstr ""
 "Project-Id-Version: pcmanfm 1.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-01-09 09:41+0100\n"
-"PO-Revision-Date: 2013-12-27 16:05-0000\n"
-"Last-Translator: Sérgio Marques <smarquespt@gmail.com>\n"
+"PO-Revision-Date: 2014-01-09 15:51+0000\n"
+"Last-Translator: Sérgio <smarquespt@gmail.com>\n"
 "Language-Team: \n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.6.3\n"
-"X-POOTLE-MTIME: 1388159441.0\n"
+"X-Generator: Pootle 2.5.0\n"
+"X-POOTLE-MTIME: 1389282678.0\n"
 
 #: ../data/ui/about.glade.in.h:1
-#, fuzzy
 msgid "Copyright (C) 2009 - 2014"
-msgstr "Direitos de autor (C) 2009 - 2013"
+msgstr "Direitos de autor (C) 2009 - 2014"
 
 #. Please replace this line with your own names, one name per line.
 #: ../data/ui/about.glade.in.h:3
@@ -110,22 +109,21 @@ msgstr "Mo_strar menu do gestor de janelas ao clicar na área de trabalho"
 
 #: ../data/ui/desktop-pref.glade.h:20
 msgid "_Use desktop as a folder (show icons on it) by path:"
-msgstr ""
+msgstr "_Utilizar área de trabalho como pasta (mostrar ícones) por caminho:"
 
 #: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:84
 msgctxt "Use path for some folder: ..."
 msgid "Default"
-msgstr ""
+msgstr "Predefinido"
 
 #: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:85
 msgctxt "Use path for some folder: ..."
 msgid "Custom:"
-msgstr ""
+msgstr "Personalizado:"
 
 #: ../data/ui/desktop-pref.glade.h:23
-#, fuzzy
 msgid "Select a Desktop Folder"
-msgstr "Pasta da área de trabalho"
+msgstr "Escolha a pasta da área de trabalho"
 
 #: ../data/ui/desktop-pref.glade.h:24
 msgid "_Open folders from desktop in new window"
@@ -140,31 +138,26 @@ msgid "Fill with background color only"
 msgstr "Preencher com a cor de fundo"
 
 #: ../data/ui/desktop-pref.glade.h:27
-#, fuzzy
 msgid "Stretch to fill the entire monitor area"
-msgstr "Esticar para preencher totalmente o ecrã"
+msgstr "Esticar para preencher totalmente o monitor"
 
 #: ../data/ui/desktop-pref.glade.h:28
-#, fuzzy
 msgid "Stretch to fit the monitor area"
-msgstr "Esticar para ajustar ao ecrã"
+msgstr "Esticar para ajustar à área do monitor"
 
 #: ../data/ui/desktop-pref.glade.h:29
 msgid "Center unscaled image on the monitor"
-msgstr ""
+msgstr "Centrar imagem no monitor"
 
 #: ../data/ui/desktop-pref.glade.h:30
-#, fuzzy
 msgid "Tile the image to fill the entire monitor area"
-msgstr "Imagem lado a lado para preencher totalmente o ecrã"
+msgstr "Imagem lado a lado para preencher totalmente o monitor"
 
 #: ../data/ui/desktop-pref.glade.h:31
-#, fuzzy
 msgid "Stretch and crop to fill the monitor area"
-msgstr "Esticar para preencher totalmente o ecrã"
+msgstr "Esticar e recortar para preencher a área do monitor"
 
 #: ../data/ui/desktop-pref.glade.h:32
-#, fuzzy
 msgid "Stretch to fill the complete screen"
 msgstr "Esticar para preencher totalmente o ecrã"
 
@@ -231,7 +224,6 @@ msgstr ""
 "Criar \"Atalho inteligente\" ao arra_star para a pasta da área de trabalho"
 
 #: ../data/ui/pref.glade.h:16
-#, fuzzy
 msgid ""
 "If enabled then \"Auto\" action on drop file onto Desktop folder will be:\n"
 "- for files directly in Home folder a symlink will be created\n"
@@ -241,9 +233,10 @@ msgid ""
 msgstr ""
 "Se ativa, a ação \"Automática\" ao arrastar para a pasta da área de trabalho "
 "será:\n"
-"- para ficheiros em unidades internas será criada uma ligação simbólica\n"
-"- os ficheiros em unidades amovíveis serão copiados\n"
-"- para os URI externos será criado um atalho"
+"- para os ficheiros da pasta pessoal será criada uma ligação simbólica\n"
+"- os ficheiros no mesmo sistema de ficheiros serão movido\n"
+"- outros ficheiros (por exemplo, em unidades amovíveis) serão copiados\n"
+"- para URIs externos será criado um atalho"
 
 #: ../data/ui/pref.glade.h:21
 msgid "_Unfold tab when files are dragged onto tab button"
@@ -315,9 +308,8 @@ msgid "Al_ways show full file names"
 msgstr "Mos_trar sempre o nome completo dos ficheiros"
 
 #: ../data/ui/pref.glade.h:38
-#, fuzzy
 msgid "Show icons of hidden _files shadowed"
-msgstr "Sombrear ícones dos ficheiros de bac_kup"
+msgstr "Sombrear ícones dos _ficheiros ocultos"
 
 #: ../data/ui/pref.glade.h:39
 msgid "_Display"
@@ -414,18 +406,16 @@ msgstr ""
 "A_o montar um disco amovível, abrir um novo separador e não uma nova janela"
 
 #: ../data/ui/pref.glade.h:63
-#, fuzzy
 msgid "When removable medium unmounted:"
-msgstr "Disco amovível inserido"
+msgstr "Ao desmontar um disco amovível:"
 
 #: ../data/ui/pref.glade.h:64
-#, fuzzy
 msgid "Clos_e tab containing removable medium"
-msgstr "Ao d_esmontar um disco amovível, fechar o separador correspondente"
+msgstr "F_echar o separador correspondente ao disco"
 
 #: ../data/ui/pref.glade.h:65
 msgid "Change folder in the tab to _Home Folder"
-msgstr ""
+msgstr "Mudar da pasta no separador para a pasta pe_ssoal"
 
 #: ../data/ui/pref.glade.h:66
 msgid "_Volume Management"
@@ -477,7 +467,6 @@ msgid "<b>Other Options</b>"
 msgstr "<b>Outras opções</b>"
 
 #: ../data/ui/pref.glade.h:79
-#, fuzzy
 msgid "Use Application Startup Notify _by default"
 msgstr "_Utilizar notificação ao arrancar aplicações"
 
@@ -498,11 +487,11 @@ msgstr "D_eferir análise do tipo de conteúdo ao carregar pastas"
 
 #: ../data/ui/pref.glade.h:83
 msgid "Use path for \"Home Folder\" button:"
-msgstr ""
+msgstr "Utilizar caminho para o botão \"Pasta pessoal\":"
 
 #: ../data/ui/pref.glade.h:86
 msgid "_Use current"
-msgstr ""
+msgstr "_Utilizar atual"
 
 #: ../data/ui/pref.glade.h:87
 msgid "_Advanced"
@@ -510,15 +499,15 @@ msgstr "_Avançado"
 
 #: ../data/ui/pref.glade.h:88
 msgid "<b>_Do not load modules matching:</b>"
-msgstr ""
+msgstr "<b>Não carregar mó_dulos coincidentes com:</b>"
 
 #: ../data/ui/pref.glade.h:89
 msgid "<b>_Load these modules anyway:</b>"
-msgstr ""
+msgstr "<b>Carregar sempre estes módu_los:</b>"
 
 #: ../data/ui/pref.glade.h:90
 msgid "Modules"
-msgstr ""
+msgstr "Módulos"
 
 #: ../data/ui/pref.glade.h:91
 msgid "Auto (move if on the same FS, copy otherwise)"
@@ -721,7 +710,7 @@ msgstr "_Editar"
 
 #: ../src/main-win-ui.c:198
 msgid "C_ut"
-msgstr ""
+msgstr "C_ortar"
 
 #: ../src/main-win-ui.c:201
 msgid "Move to _Trash"
@@ -729,12 +718,11 @@ msgstr "Mover para o _lixo"
 
 #: ../src/main-win-ui.c:203
 msgid "Copy Pat_h(s)"
-msgstr ""
+msgstr "Copiar camin_ho(s)"
 
 #: ../src/main-win-ui.c:204
-#, fuzzy
 msgid "R_ename..."
-msgstr "Muda_r nome..."
+msgstr "Mudar nom_e..."
 
 #: ../src/main-win-ui.c:205
 msgid "D_uplicate..."
@@ -749,9 +737,8 @@ msgid "_Move to..."
 msgstr "_Mover para..."
 
 #: ../src/main-win-ui.c:208
-#, fuzzy
 msgid "Copy to_..."
-msgstr "C_opiar para..."
+msgstr "Copiar para_..."
 
 #: ../src/main-win-ui.c:209
 msgid "Propertie_s"
@@ -783,7 +770,7 @@ msgstr "_Barra de ferramentas"
 
 #: ../src/main-win-ui.c:216
 msgid "Pat_h Bar"
-msgstr ""
+msgstr "Barra de camin_ho"
 
 #: ../src/main-win-ui.c:217
 msgid "Side _Pane"
@@ -804,7 +791,7 @@ msgstr "Red_uzir"
 
 #: ../src/main-win-ui.c:225
 msgid "Fil_ter..."
-msgstr ""
+msgstr "Fil_tro..."
 
 #: ../src/main-win-ui.c:227
 msgid "_Help"
@@ -892,7 +879,7 @@ msgstr "Ir para a lista de locais de rede"
 
 #: ../src/main-win-ui.c:241
 msgid "_Go to Location..."
-msgstr ""
+msgstr "Ir para locali_zação..."
 
 #: ../src/main-win-ui.c:242
 msgid "_Connect to Server..."
@@ -911,9 +898,8 @@ msgid "_Bookmarks"
 msgstr "_Marcadores"
 
 #: ../src/main-win-ui.c:245
-#, fuzzy
 msgid "_Add to Bookmarks..."
-msgstr "_Adicionar aos marcadores"
+msgstr "_Adicionar aos marcadores..."
 
 #: ../src/main-win-ui.c:245
 msgid "Add current folder to bookmarks list"
@@ -921,7 +907,7 @@ msgstr "Adicionar pasta atual aos marcadores"
 
 #: ../src/main-win-ui.c:246
 msgid "Too_ls"
-msgstr ""
+msgstr "Fe_rramentas"
 
 #: ../src/main-win-ui.c:247
 msgid "Open Current Folder in _Terminal"
@@ -936,9 +922,8 @@ msgid "Open search dialog"
 msgstr "Abrir janela de procura"
 
 #: ../src/main-win-ui.c:252
-#, fuzzy
 msgid "_Run a Command in Current Folder..."
-msgstr "Recarregar pasta atual"
+msgstr "E_xecutar comando na pasta atual..."
 
 #. Note to translators: "Mingle..." means "Do not put folders before files" but make the translation as short as possible, please!
 #: ../src/main-win-ui.c:267
@@ -966,17 +951,14 @@ msgstr ""
 "global"
 
 #: ../src/main-win-ui.c:277
-#, fuzzy
 msgid "_Show Toolbar"
-msgstr "Mos_trar barra de ferramentas"
+msgstr "Mo_strar barra de ferramentas"
 
 #: ../src/main-win-ui.c:278
-#, fuzzy
 msgid "Show 'New _Window' Button"
-msgstr "Mostrar botão \"Novo _separador\""
+msgstr "Mostrar botão \"Nova _janela\""
 
 #: ../src/main-win-ui.c:279
-#, fuzzy
 msgid "Show 'New _Tab' Button"
 msgstr "Mostrar botão \"Novo _separador\""
 
@@ -1042,7 +1024,7 @@ msgstr "Por _tipo de ficheiro"
 
 #: ../src/main-win-ui.c:312
 msgid "By _Extension"
-msgstr ""
+msgstr "Por _extensão"
 
 #: ../src/main-win-ui.c:325
 msgid "Places"
@@ -1057,13 +1039,12 @@ msgid "Remote"
 msgstr "Remoto"
 
 #: ../src/main-win-ui.c:333
-#, fuzzy
 msgid "_Location"
-msgstr "Ap_licações"
+msgstr "_Localização"
 
 #: ../src/main-win-ui.c:334
 msgid "_Buttons"
-msgstr ""
+msgstr "_Botões"
 
 #: ../src/main-win.c:925 ../src/main-win.c:929
 msgid "Show history of visited folders"
@@ -1117,18 +1098,16 @@ msgstr ""
 "Ctrl+L ou Alt+D: mudar foco para a Barra de caminho"
 
 #: ../src/main-win.c:1210
-#, fuzzy
 msgid "Run a command"
-msgstr "Comando de _formatação:"
+msgstr "Executar um comando"
 
 #: ../src/main-win.c:1211
 msgid "Enter a command to run:"
-msgstr ""
+msgstr "Introduza o comando a executar:"
 
 #: ../src/main-win.c:1218
-#, fuzzy
 msgid "Current folder is inaccessible"
-msgstr "Abrir pasta atual no _terminal"
+msgstr "A pasta atual não está acessível"
 
 #: ../src/main-win.c:1822
 #, c-format
@@ -1146,13 +1125,12 @@ msgid "Add to Bookmarks"
 msgstr "Adicionar aos marcadores"
 
 #: ../src/main-win.c:2552
-#, fuzzy
 msgid "Select filter"
-msgstr "Abrir ficheir_os selecionados"
+msgstr "Selecionar filtro"
 
 #: ../src/main-win.c:2553
 msgid "Choose a new shell pattern to show files:"
-msgstr ""
+msgstr "Escolha o novo padrão de consola para mostrar ficheiros:"
 
 #. options only acceptable by first pcmanfm instance. These options are not passed through IPC
 #: ../src/pcmanfm.c:78
@@ -1198,11 +1176,12 @@ msgstr "Ficheiro"
 
 #. don't translate list of modes in description, please
 #: ../src/pcmanfm.c:89
-#, fuzzy
 msgid ""
 "Set mode of desktop wallpaper. MODE=(color|stretch|fit|crop|center|tile|"
 "screen)"
-msgstr "Definir modo do papel de parede. Modo=(color|stretch|fit|center|tile)"
+msgstr ""
+"Definir modo do papel de parede. "
+"Modo=(color|stretch|fit|crop|center|tile|screen)"
 
 #: ../src/pcmanfm.c:89
 msgid "MODE"
@@ -1272,19 +1251,19 @@ msgstr[1] " (%d ocultos)"
 
 #: ../src/pref.c:514
 msgid "Add to Modules Blacklist"
-msgstr ""
+msgstr "Adicionar à lista de módulos não permitidos"
 
 #: ../src/pref.c:515
 msgid "Enter a blacklisted module mask:"
-msgstr ""
+msgstr "Introduza a máscara do módulo não permitido:"
 
 #: ../src/pref.c:606
 msgid "Add to Modules Whitelist"
-msgstr ""
+msgstr "Adicionar à lista de módulos permitidos"
 
 #: ../src/pref.c:607
 msgid "Enter a whitelisted module mask:"
-msgstr ""
+msgstr "Introduza a máscara do módulo permitido:"
 
 #: ../data/pcmanfm.desktop.in.h:1
 msgid "File Manager PCManFM"
