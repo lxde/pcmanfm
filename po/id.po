@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm 1.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-01-09 09:41+0100\n"
-"PO-Revision-Date: 2013-11-15 05:12+0000\n"
+"PO-Revision-Date: 2014-01-09 15:43+0000\n"
 "Last-Translator: Andika <andika@gmail.com>\n"
 "Language-Team: Indonesian Translation Team <id@li.org>\n"
 "Language: id\n"
@@ -17,12 +17,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1384492346.0\n"
+"X-POOTLE-MTIME: 1389282195.0\n"
 
 #: ../data/ui/about.glade.in.h:1
-#, fuzzy
 msgid "Copyright (C) 2009 - 2014"
-msgstr "Hak Cipta (C) 2009 - 2013"
+msgstr "Hak Cipta (C) 2009 - 2014"
 
 #. Please replace this line with your own names, one name per line.
 #: ../data/ui/about.glade.in.h:3
@@ -83,24 +82,20 @@ msgid "<b>Show desktop icons</b>"
 msgstr "<b>Tampilkan ikon desktop</b>"
 
 #: ../data/ui/desktop-pref.glade.h:14
-#, fuzzy
 msgid "_Show \"Documents\" folder on the desktop"
-msgstr "Tampilkan ikon \"Dokumen\" pada de_sktop"
+msgstr "Tampilkan folder \"Dokumen\" pada de_sktop"
 
 #: ../data/ui/desktop-pref.glade.h:15
-#, fuzzy
 msgid "Sho_w \"Devices\" folder on the desktop"
-msgstr "Tampilkan ikon \"Perangkat\" pa_da desktop"
+msgstr "Tampil_kan folder \"Perangkat\" pada desktop"
 
 #: ../data/ui/desktop-pref.glade.h:16
-#, fuzzy
 msgid "Show \"_Trash Can\" folder on the desktop"
-msgstr "Tampilkan ikon \"_Tong Sampah\" pada desktop"
+msgstr "Tampilkan folder \"_Tong Sampah\" pada desktop"
 
 #: ../data/ui/desktop-pref.glade.h:17
-#, fuzzy
 msgid "S_how connected volumes on the desktop"
-msgstr "Tamp_ilkan ikon dari volume pada desktop"
+msgstr "Tamp_ilkan volume yang tersambung pada desktop"
 
 #: ../data/ui/desktop-pref.glade.h:18
 msgid "_Desktop Icons"
@@ -114,26 +109,25 @@ msgstr ""
 #: ../data/ui/desktop-pref.glade.h:20
 msgid "_Use desktop as a folder (show icons on it) by path:"
 msgstr ""
+"G_unakan desktop sebagai suatu folder (tampilkan ikon padanya) menurut path:"
 
 #: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:84
 msgctxt "Use path for some folder: ..."
 msgid "Default"
-msgstr ""
+msgstr "Baku"
 
 #: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:85
 msgctxt "Use path for some folder: ..."
 msgid "Custom:"
-msgstr ""
+msgstr "Ubahan:"
 
 #: ../data/ui/desktop-pref.glade.h:23
-#, fuzzy
 msgid "Select a Desktop Folder"
-msgstr "Folder Desktop"
+msgstr "Pilih suatu Folder Desktop"
 
 #: ../data/ui/desktop-pref.glade.h:24
-#, fuzzy
 msgid "_Open folders from desktop in new window"
-msgstr "Dibuka di Jendela Baru"
+msgstr "Buka f_older dari desktop dalam jendela baru"
 
 #: ../data/ui/desktop-pref.glade.h:25
 msgid "Ad_vanced"
@@ -144,48 +138,40 @@ msgid "Fill with background color only"
 msgstr "Penuhi hanya dengan warna latar belakang"
 
 #: ../data/ui/desktop-pref.glade.h:27
-#, fuzzy
 msgid "Stretch to fill the entire monitor area"
-msgstr "Regangkan agar mengisi seluruh layar"
+msgstr "Regangkan untuk mengisi seluruh area monitor"
 
 #: ../data/ui/desktop-pref.glade.h:28
-#, fuzzy
 msgid "Stretch to fit the monitor area"
-msgstr "Regangkan agar tepat seukuran layar"
+msgstr "Regangkan agar pas dengan area monitor"
 
 #: ../data/ui/desktop-pref.glade.h:29
 msgid "Center unscaled image on the monitor"
-msgstr ""
+msgstr "Letakkan citra tanpa diubah skalanya di tengah monitor"
 
 #: ../data/ui/desktop-pref.glade.h:30
-#, fuzzy
 msgid "Tile the image to fill the entire monitor area"
-msgstr "Jajarkan gambar agar memenuhi seluruh layar"
+msgstr "Jajarkan citra agar memenuhi seluruh area monitor"
 
 #: ../data/ui/desktop-pref.glade.h:31
-#, fuzzy
 msgid "Stretch and crop to fill the monitor area"
-msgstr "Regangkan agar mengisi seluruh layar"
+msgstr "Regangkan dan potong agar memenuhi area monitor"
 
 #: ../data/ui/desktop-pref.glade.h:32
-#, fuzzy
 msgid "Stretch to fill the complete screen"
 msgstr "Regangkan agar mengisi seluruh layar"
 
 #: ../data/ui/pref.glade.h:1
-#, fuzzy
 msgid "Open in current tab"
-msgstr "Dibuka di Tab Kini"
+msgstr "Buka di tab kini"
 
 #: ../data/ui/pref.glade.h:2
-#, fuzzy
 msgid "Open in new tab"
-msgstr "Buka di Ta_b baru"
+msgstr "Buka di tab baru"
 
 #: ../data/ui/pref.glade.h:3
-#, fuzzy
 msgid "Open in new window"
-msgstr "Buka jendela baru"
+msgstr "Buka di jendela baru"
 
 #: ../data/ui/pref.glade.h:4
 msgid "Preferences"
@@ -235,7 +221,7 @@ msgstr "Aksi menja_tuhkan baku:"
 
 #: ../data/ui/pref.glade.h:15
 msgid "\"_Smart shortcut\" auto-action on drop to Desktop folder"
-msgstr ""
+msgstr "Aksi otomatis \"Pinta_san cerdas\" saat penjatuhan ke folder Desktop"
 
 #: ../data/ui/pref.glade.h:16
 msgid ""
@@ -245,6 +231,12 @@ msgid ""
 "- other files (e.g. on removable media) will be copied\n"
 "- for some external URI a shortcut will be created"
 msgstr ""
+"Bila difungsikan maka aksi \"Otomatis\" saat penjatuhan ke folder Desktop "
+"akan:\n"
+"- untuk berkas langsung di folder Rumah akan dibuat suatu symlink\n"
+"- berkas pada sistem berkas yang sama akan dipindahkan\n"
+"- berkas lain (mis. pada media lepas pasang) akan disalin\n"
+"- untuk beberapa URI eksternal akan dibuat suatu pintasan"
 
 #: ../data/ui/pref.glade.h:21
 msgid "_Unfold tab when files are dragged onto tab button"
@@ -252,7 +244,7 @@ msgstr "B_uka lipatan tab ketika berkas diseret ke tombol tab"
 
 #: ../data/ui/pref.glade.h:22
 msgid "_Focus previous folder after coming to its parent"
-msgstr ""
+msgstr "_Fokus ke folder sebelumnya setelah datang ke induknya"
 
 #: ../data/ui/pref.glade.h:23
 msgid "<b>Default View</b>"
@@ -316,9 +308,8 @@ msgid "Al_ways show full file names"
 msgstr "_Selalu tampilkan nama lengkap berkas"
 
 #: ../data/ui/pref.glade.h:38
-#, fuzzy
 msgid "Show icons of hidden _files shadowed"
-msgstr "Tampilkan i_kon dari berkas cadangan yang di-shadow"
+msgstr "Tampilkan i_kon berbayang untuk berkas tersembunyi"
 
 #: ../data/ui/pref.glade.h:39
 msgid "_Display"
@@ -404,33 +395,28 @@ msgstr ""
 "Tampilkan pilihan yang tersedia bagi media lepas pa_sang ketika ditancapkan"
 
 #: ../data/ui/pref.glade.h:60
-#, fuzzy
 msgid "Do_n't show available options for those media types:"
-msgstr ""
-"Tampilkan pilihan yang tersedia bagi media lepas pa_sang ketika ditancapkan"
+msgstr "Ja_ngan tampilkan opsi yang tersedia untuk tipe media tersebut:"
 
 #: ../data/ui/pref.glade.h:61
-#, fuzzy
 msgid "_Remove selected"
-msgstr "%d butir dipilih"
+msgstr "_Buang yang dipilih"
 
 #: ../data/ui/pref.glade.h:62
 msgid "_Open mounted removable media in new tab instead of new window"
 msgstr "Buk_a media lepas pasang yang dikait pada tab baru, bukan jendela baru"
 
 #: ../data/ui/pref.glade.h:63
-#, fuzzy
 msgid "When removable medium unmounted:"
-msgstr "Medium yang dapat dilepas sedang ditancapkan"
+msgstr "Ketika media lepas pasang dilepas kaitnya:"
 
 #: ../data/ui/pref.glade.h:64
-#, fuzzy
 msgid "Clos_e tab containing removable medium"
-msgstr "Tutup tab yang m_emuat medium lepas pasang ketika dilepas kaitnya"
+msgstr "Tutup tab yang memuat m_edia lepas pasang"
 
 #: ../data/ui/pref.glade.h:65
 msgid "Change folder in the tab to _Home Folder"
-msgstr ""
+msgstr "Ubah folder dalam tab ke Folder Ruma_h"
 
 #: ../data/ui/pref.glade.h:66
 msgid "_Volume Management"
@@ -482,9 +468,8 @@ msgid "<b>Other Options</b>"
 msgstr "<b>Opsi Lain</b>"
 
 #: ../data/ui/pref.glade.h:79
-#, fuzzy
 msgid "Use Application Startup Notify _by default"
-msgstr "Secara bak_u pakai Pemberitahuan Awal Mula Aplikasi"
+msgstr "Secara _baku pakai Pemberitahuan Awal Mula Aplikasi"
 
 #: ../data/ui/pref.glade.h:80
 msgid ""
@@ -503,11 +488,11 @@ msgstr "Tunda p_engujian tipe isi saat memuat folder"
 
 #: ../data/ui/pref.glade.h:83
 msgid "Use path for \"Home Folder\" button:"
-msgstr ""
+msgstr "Pakai path untuk tombol \"Folder Rumah\":"
 
 #: ../data/ui/pref.glade.h:86
 msgid "_Use current"
-msgstr ""
+msgstr "G_unakan yang saat ini"
 
 #: ../data/ui/pref.glade.h:87
 msgid "_Advanced"
@@ -515,15 +500,15 @@ msgstr "Tingk_at lanjut"
 
 #: ../data/ui/pref.glade.h:88
 msgid "<b>_Do not load modules matching:</b>"
-msgstr ""
+msgstr "<b>Jangan muat mo_dul yang cocok:</b>"
 
 #: ../data/ui/pref.glade.h:89
 msgid "<b>_Load these modules anyway:</b>"
-msgstr ""
+msgstr "<b>Muat saja modu_l-modul ini:</b>"
 
 #: ../data/ui/pref.glade.h:90
 msgid "Modules"
-msgstr ""
+msgstr "Modul"
 
 #: ../data/ui/pref.glade.h:91
 msgid "Auto (move if on the same FS, copy otherwise)"
@@ -542,24 +527,20 @@ msgid "Ask"
 msgstr "Tanyakan"
 
 #: ../data/ui/pref.glade.h:95
-#, fuzzy
 msgid "Icon view"
-msgstr "Tampilan Ikon"
+msgstr "Tilikan ikon"
 
 #: ../data/ui/pref.glade.h:96
-#, fuzzy
 msgid "Compact view"
-msgstr "Tampilan Rapat"
+msgstr "Tilikan ringkas"
 
 #: ../data/ui/pref.glade.h:97
-#, fuzzy
 msgid "Thumbnail view"
-msgstr "Tilikan Gambar Kecil"
+msgstr "Tilikan gambar mini"
 
 #: ../data/ui/pref.glade.h:98
-#, fuzzy
 msgid "Detailed list view"
-msgstr "Tilikan Daftar Terrinci"
+msgstr "Tilikan daftar terrinci"
 
 #: ../data/ui/autorun.glade.h:1
 msgid "Removable medium is inserted"
@@ -583,60 +564,59 @@ msgstr "Silakan pilih aksi yang ingin Anda lakukan:"
 
 #: ../data/ui/autorun.glade.h:6
 msgid "_Always perform this action on this media type"
-msgstr ""
+msgstr "Sel_alu lalukan aksi ini pada tipe media ini"
 
 #: ../data/ui/connect.glade.h:1
 msgid "Connect to remote server"
-msgstr ""
+msgstr "Hubungkan ke server remote"
 
 #: ../data/ui/connect.glade.h:2
 msgid "<b>Specify remote folder to connect</b>"
-msgstr ""
+msgstr "<b>Nyatakan folder remote yang akan dihubungi</b>"
 
 #: ../data/ui/connect.glade.h:3
 msgid "_Type:"
-msgstr ""
+msgstr "_Tipe:"
 
 #: ../data/ui/connect.glade.h:4
 msgid "_Host:"
-msgstr ""
+msgstr "_Host:"
 
 #: ../data/ui/connect.glade.h:5
 msgid "_Port:"
-msgstr ""
+msgstr "_Port:"
 
 #: ../data/ui/connect.glade.h:6
 msgid "Pa_th:"
-msgstr ""
+msgstr "Pa_th:"
 
 #: ../data/ui/connect.glade.h:7
 msgid "_Anonymous login"
-msgstr ""
+msgstr "Log masuk _anonim"
 
 #: ../data/ui/connect.glade.h:8
 msgid "_Login as:"
-msgstr ""
+msgstr "Masuk _log sebagai:"
 
 #: ../data/ui/connect.glade.h:9
 msgid "SSH"
-msgstr ""
+msgstr "SSH"
 
 #: ../data/ui/connect.glade.h:10
 msgid "FTP"
-msgstr ""
+msgstr "FTP"
 
 #: ../data/ui/connect.glade.h:11
 msgid "WebDAV"
-msgstr ""
+msgstr "WebDAV"
 
 #: ../src/volume-manager.c:237
 msgid "mixed content"
-msgstr ""
+msgstr "isi campuran"
 
 #: ../src/volume-manager.c:246
-#, fuzzy
 msgid "removable disk"
-msgstr "Disk Yang Dapat Dilepas"
+msgstr "disk lepas pasang"
 
 #: ../src/volume-manager.c:302
 msgid "Open in File Manager"
@@ -656,7 +636,7 @@ msgstr "Buka di Termina_l"
 
 #: ../src/desktop-ui.c:68
 msgid "_Remove from Desktop"
-msgstr ""
+msgstr "Hapus da_ri Desktop"
 
 #: ../src/desktop-ui.c:85
 msgid "Stic_k to Current Position"
@@ -713,7 +693,7 @@ msgstr "Berkas Kosong"
 
 #: ../src/main-win-ui.c:193
 msgid "Folder Propertie_s"
-msgstr ""
+msgstr "_Properti Folder"
 
 #: ../src/main-win-ui.c:194
 msgid "_Close Tab"
@@ -729,43 +709,39 @@ msgstr "_Sunting"
 
 #: ../src/main-win-ui.c:198
 msgid "C_ut"
-msgstr ""
+msgstr "P_otong"
 
 #: ../src/main-win-ui.c:201
 msgid "Move to _Trash"
-msgstr ""
+msgstr "Pindah ke _Tong Sampah"
 
 #: ../src/main-win-ui.c:203
 msgid "Copy Pat_h(s)"
-msgstr ""
+msgstr "Salin Pat_h"
 
 #: ../src/main-win-ui.c:204
-#, fuzzy
 msgid "R_ename..."
-msgstr "_Ubah Nama"
+msgstr "Ubah _nama..."
 
 #: ../src/main-win-ui.c:205
 msgid "D_uplicate..."
-msgstr ""
+msgstr "D_uplikat..."
 
 #: ../src/main-win-ui.c:206
-#, fuzzy
 msgid "Create Lin_k..."
-msgstr "Buat Symlin_k"
+msgstr "Buat _Taut..."
 
 #: ../src/main-win-ui.c:207
-#, fuzzy
 msgid "_Move to..."
-msgstr "Pi_ndah Ke..."
+msgstr "Pi_ndah ke..."
 
 #: ../src/main-win-ui.c:208
-#, fuzzy
 msgid "Copy to_..."
 msgstr "S_alin ke..."
 
 #: ../src/main-win-ui.c:209
 msgid "Propertie_s"
-msgstr ""
+msgstr "_Properti"
 
 #: ../src/main-win-ui.c:211
 msgid "_Invert Selection"
@@ -788,13 +764,12 @@ msgid "Reload current folder"
 msgstr "Muat ulang folder kini"
 
 #: ../src/main-win-ui.c:215
-#, fuzzy
 msgid "Tool_bar"
-msgstr "Perkaka_s"
+msgstr "_Bilah Alat"
 
 #: ../src/main-win-ui.c:216
 msgid "Pat_h Bar"
-msgstr ""
+msgstr "Bilah Pat_h"
 
 #: ../src/main-win-ui.c:217
 msgid "Side _Pane"
@@ -802,9 +777,8 @@ msgstr "_Panel Sisi"
 
 #. other see below: 'ShowHidden' 'ShowStatus' 'Fullscreen' 'IconView'...
 #: ../src/main-win-ui.c:219
-#, fuzzy
 msgid "Fo_lder View Mode"
-msgstr "Mode _Tilik:"
+msgstr "Mode Tilikan Fo_lder"
 
 #: ../src/main-win-ui.c:220
 msgid "S_ort Files"
@@ -812,11 +786,11 @@ msgstr "Ur_utkan Berkas"
 
 #: ../src/main-win-ui.c:222
 msgid "Zoom O_ut"
-msgstr ""
+msgstr "Per_kecil"
 
 #: ../src/main-win-ui.c:225
 msgid "Fil_ter..."
-msgstr ""
+msgstr "_Saring..."
 
 #: ../src/main-win-ui.c:227
 msgid "_Help"
@@ -905,15 +879,15 @@ msgstr "Pergi ke daftar tempat pada jaringan"
 
 #: ../src/main-win-ui.c:241
 msgid "_Go to Location..."
-msgstr ""
+msgstr "_Ke Lokasi..."
 
 #: ../src/main-win-ui.c:242
 msgid "_Connect to Server..."
-msgstr ""
+msgstr "_Menyambung ke Server..."
 
 #: ../src/main-win-ui.c:242
 msgid "Open a window to choose remote folder location"
-msgstr ""
+msgstr "Buka suatu jendela untuk memilih lokasi folder jauh"
 
 #: ../src/main-win-ui.c:243
 msgid "Go to the path in the location bar"
@@ -924,9 +898,8 @@ msgid "_Bookmarks"
 msgstr "_Penanda Tautan"
 
 #: ../src/main-win-ui.c:245
-#, fuzzy
 msgid "_Add to Bookmarks..."
-msgstr "T_ambahkan ke Penanda Tautan"
+msgstr "T_ambahkan ke Penanda Taut..."
 
 #: ../src/main-win-ui.c:245
 msgid "Add current folder to bookmarks list"
@@ -934,69 +907,68 @@ msgstr "Tambahkan folder saat ini ke daftar tanda taut"
 
 #: ../src/main-win-ui.c:246
 msgid "Too_ls"
-msgstr ""
+msgstr "Pera_latan"
 
 #: ../src/main-win-ui.c:247
 msgid "Open Current Folder in _Terminal"
 msgstr "Buka Folder Kini di _Terminal"
 
 #: ../src/main-win-ui.c:249
-#, fuzzy
 msgid "Fin_d Files..."
-msgstr "Ca_ri Berkas"
+msgstr "Ca_ri Berkas..."
 
 #: ../src/main-win-ui.c:249
 msgid "Open search dialog"
 msgstr "Buka dialog pencarian"
 
 #: ../src/main-win-ui.c:252
-#, fuzzy
 msgid "_Run a Command in Current Folder..."
-msgstr "Muat ulang folder kini"
+msgstr "Jalankan Per_intah pada Folder Saat Ini..."
 
 #. Note to translators: "Mingle..." means "Do not put folders before files" but make the translation as short as possible, please!
 #: ../src/main-win-ui.c:267
 msgid "Mingle _Files and Folders"
-msgstr ""
+msgstr "Campur Berkas dan _Folder"
 
 #: ../src/main-win-ui.c:270
 msgid "_Ignore Name Case"
-msgstr ""
+msgstr "Aba_ikan Besar Kecil Huruf Nama"
 
 #: ../src/main-win-ui.c:272
-#, fuzzy
 msgid "Sho_w Hidden"
 msgstr "Tampilka_n Yang Tersembunyi"
 
 #. Note to translators: this save is meant for folder's settings such as sort
 #: ../src/main-win-ui.c:274
 msgid "Preserve This Folder's Settings"
-msgstr ""
+msgstr "Lestarikan Pengaturan Folder Ini"
 
 #: ../src/main-win-ui.c:275
 msgid ""
 "Check to remember view and sort as folder setting rather than global one"
 msgstr ""
+"Klik untuk mengingat tilikan dan uruta sebagai pengaturan folder bukan yang "
+"global"
 
 #: ../src/main-win-ui.c:277
 msgid "_Show Toolbar"
-msgstr ""
+msgstr "Tampilkan Bilah Perkaka_s"
 
 #: ../src/main-win-ui.c:278
 msgid "Show 'New _Window' Button"
-msgstr ""
+msgstr "Tampilkan Tombol '_Jendela Baru'"
 
 #: ../src/main-win-ui.c:279
 msgid "Show 'New _Tab' Button"
-msgstr ""
+msgstr "Tampilkan Tombol '_Tab Baru'"
 
 #: ../src/main-win-ui.c:280
 msgid "Show _Navigation Buttons"
-msgstr ""
+msgstr "Tampilkan Tombol _Navigasi"
 
 #: ../src/main-win-ui.c:281
 msgid "Show '_Home' Button"
-msgstr ""
+msgstr "Tampilkan Tombol 'Ruma_h'"
 
 #: ../src/main-win-ui.c:282
 msgid "Sho_w Side Pane"
@@ -1007,13 +979,12 @@ msgid "Show Status B_ar"
 msgstr "Tampilkan Bil_ah Status"
 
 #: ../src/main-win-ui.c:284
-#, fuzzy
 msgid "_Dual Pane Mode"
-msgstr "Mode Panel _Kembar"
+msgstr "Mode Panel Gan_da"
 
 #: ../src/main-win-ui.c:284
 msgid "Show two panels with folder views"
-msgstr ""
+msgstr "Tampilkan dua panel dengan tilikan folder"
 
 #: ../src/main-win-ui.c:285
 msgid "Fullscreen _Mode"
@@ -1053,7 +1024,7 @@ msgstr "Berdasar _Jenis Berkas"
 
 #: ../src/main-win-ui.c:312
 msgid "By _Extension"
-msgstr ""
+msgstr "Menurut _Ekstensi"
 
 #: ../src/main-win-ui.c:325
 msgid "Places"
@@ -1068,13 +1039,12 @@ msgid "Remote"
 msgstr "Jauh"
 
 #: ../src/main-win-ui.c:333
-#, fuzzy
 msgid "_Location"
-msgstr "Ap_likasi"
+msgstr "_Lokasi"
 
 #: ../src/main-win-ui.c:334
 msgid "_Buttons"
-msgstr ""
+msgstr "Tom_bol"
 
 #: ../src/main-win.c:925 ../src/main-win.c:929
 msgid "Show history of visited folders"
@@ -1126,18 +1096,16 @@ msgstr ""
 "Ctrl+L atau Alt+D: lompatkan fokus ke Bilah Path"
 
 #: ../src/main-win.c:1210
-#, fuzzy
 msgid "Run a command"
-msgstr "Perintah _format:"
+msgstr "Jalankan perintah"
 
 #: ../src/main-win.c:1211
 msgid "Enter a command to run:"
-msgstr ""
+msgstr "Masukkan perintah yang akan dijalankan:"
 
 #: ../src/main-win.c:1218
-#, fuzzy
 msgid "Current folder is inaccessible"
-msgstr "Buka Folder Kini di _Terminal"
+msgstr "Folder saat ini tak bisa diakses"
 
 #: ../src/main-win.c:1822
 #, c-format
@@ -1156,11 +1124,11 @@ msgstr "Tambahkan ke Penanda Tautan"
 
 #: ../src/main-win.c:2552
 msgid "Select filter"
-msgstr ""
+msgstr "Pilih penyaring"
 
 #: ../src/main-win.c:2553
 msgid "Choose a new shell pattern to show files:"
-msgstr ""
+msgstr "Pilih pola shell baru untuk menampilkan berkas:"
 
 #. options only acceptable by first pcmanfm instance. These options are not passed through IPC
 #: ../src/pcmanfm.c:78
@@ -1206,11 +1174,12 @@ msgstr "BERKAS"
 
 #. don't translate list of modes in description, please
 #: ../src/pcmanfm.c:89
-#, fuzzy
 msgid ""
 "Set mode of desktop wallpaper. MODE=(color|stretch|fit|crop|center|tile|"
 "screen)"
-msgstr "Tata mode gambar latar desktop. MODE=(color|stretch|fit|center|tile)"
+msgstr ""
+"Tata mode gambar latar desktop. "
+"MODE=(color|stretch|fit|crop|center|tile|screen)"
 
 #: ../src/pcmanfm.c:89
 msgid "MODE"
@@ -1229,9 +1198,8 @@ msgid "Open new window"
 msgstr "Buka jendela baru"
 
 #: ../src/pcmanfm.c:93
-#, fuzzy
 msgid "Open a Find Files window"
-msgstr "Buka jendela baru"
+msgstr "Buka jendela Cari Berkas"
 
 #: ../src/pcmanfm.c:95
 msgid "Window role for usage by window manager"
@@ -1278,19 +1246,19 @@ msgstr[0] "%d tersembunyi"
 
 #: ../src/pref.c:514
 msgid "Add to Modules Blacklist"
-msgstr ""
+msgstr "Tambahkan ke Daftar Hitam Modul"
 
 #: ../src/pref.c:515
 msgid "Enter a blacklisted module mask:"
-msgstr ""
+msgstr "Masukkan suatu mask modul yang dicekal:"
 
 #: ../src/pref.c:606
 msgid "Add to Modules Whitelist"
-msgstr ""
+msgstr "Tambahkan ke Daftar Putih Modul"
 
 #: ../src/pref.c:607
 msgid "Enter a whitelisted module mask:"
-msgstr ""
+msgstr "Masukkan suatu mask modul yang bebas cekal:"
 
 #: ../data/pcmanfm.desktop.in.h:1
 msgid "File Manager PCManFM"
