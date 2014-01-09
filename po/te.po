@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-13 22:34+0100\n"
+"POT-Creation-Date: 2014-01-09 09:41+0100\n"
 "PO-Revision-Date: 2012-07-09 19:13+0200\n"
 "Last-Translator: PraveenIlla <mail2ipn@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,7 +19,8 @@ msgstr ""
 "X-Generator: Pootle 2.0.5\n"
 
 #: ../data/ui/about.glade.in.h:1
-msgid "Copyright (C) 2009 - 2013"
+#, fuzzy
+msgid "Copyright (C) 2009 - 2014"
 msgstr "నకలుహక్కు (C) 2009 - 2013"
 
 #. Please replace this line with your own names, one name per line.
@@ -38,27 +39,27 @@ msgstr "<b>నేపథ్యం</b>"
 
 #: ../data/ui/desktop-pref.glade.h:3
 #, fuzzy
+msgid "Wallpaper _mode:"
+msgstr "నేపథ్యచిత్ర విధము:"
+
+#: ../data/ui/desktop-pref.glade.h:4
+#, fuzzy
 msgid "_Wallpaper:"
 msgstr "నేపథ్యచిత్రం:"
 
-#: ../data/ui/desktop-pref.glade.h:4
+#: ../data/ui/desktop-pref.glade.h:5
 msgid "Please select an image file"
 msgstr "దయచేసి ఒక బొమ్మ ఫైలును ఎంచుకోండి"
 
-#: ../data/ui/desktop-pref.glade.h:5
+#: ../data/ui/desktop-pref.glade.h:6
 #, fuzzy
 msgid "_Use the same wallpaper on all desktops"
 msgstr "అన్ని డెస్క్‍టాపులలోను ఇదే నేపథ్యచిత్రాన్ని వాడు"
 
-#: ../data/ui/desktop-pref.glade.h:6
+#: ../data/ui/desktop-pref.glade.h:7
 #, fuzzy
 msgid "_Background color:"
 msgstr "నేపథ్యం రంగు:"
-
-#: ../data/ui/desktop-pref.glade.h:7
-#, fuzzy
-msgid "Wallpaper _mode:"
-msgstr "నేపథ్యచిత్ర విధము:"
 
 #: ../data/ui/desktop-pref.glade.h:8
 msgid "<b>Text</b>"
@@ -90,22 +91,22 @@ msgstr "<b>డెస్క్‍టాప్ ప్రతీకలను చూ�
 
 #: ../data/ui/desktop-pref.glade.h:14
 #, fuzzy
-msgid "_Show \"Documents\" icon on desktop"
+msgid "_Show \"Documents\" folder on the desktop"
 msgstr "\"నా పత్రాలు\" ప్రతీకను డెస్క్‍టాప్ పై చూపించు"
 
 #: ../data/ui/desktop-pref.glade.h:15
 #, fuzzy
-msgid "Sho_w \"Devices\" icon on desktop"
+msgid "Sho_w \"Devices\" folder on the desktop"
 msgstr "\"నా పత్రాలు\" ప్రతీకను డెస్క్‍టాప్ పై చూపించు"
 
 #: ../data/ui/desktop-pref.glade.h:16
 #, fuzzy
-msgid "Show \"_Trash Can\" icon on desktop"
+msgid "Show \"_Trash Can\" folder on the desktop"
 msgstr "\"చెత్తబుట్ట\" ప్రతీకను డెస్క్‍టాప్ పై చూపించు"
 
 #: ../data/ui/desktop-pref.glade.h:17
 #, fuzzy
-msgid "S_how icons of volumes on desktop"
+msgid "S_how connected volumes on the desktop"
 msgstr "సంపుటముల యొక్క ప్రతీకలను డెస్క్‍టాప్ పై చూపించు"
 
 #: ../data/ui/desktop-pref.glade.h:18
@@ -119,41 +120,81 @@ msgid "_Show menus provided by window managers when desktop is clicked"
 msgstr "డెస్క్‍టాప్‌ను క్లిక్ చేసినపుడు విండో నిర్వాహకంచే సమకూర్చబడిన మెనూలను చూపించు"
 
 #: ../data/ui/desktop-pref.glade.h:20
+msgid "_Use desktop as a folder (show icons on it) by path:"
+msgstr ""
+
+#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:84
+msgctxt "Use path for some folder: ..."
+msgid "Default"
+msgstr ""
+
+#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:85
+msgctxt "Use path for some folder: ..."
+msgid "Custom:"
+msgstr ""
+
+#: ../data/ui/desktop-pref.glade.h:23
+#, fuzzy
+msgid "Select a Desktop Folder"
+msgstr "డెస్క్‍టాప్ సంచయం"
+
+#: ../data/ui/desktop-pref.glade.h:24
+#, fuzzy
+msgid "_Open folders from desktop in new window"
+msgstr "కొత్త విండోలో తెరువు"
+
+#: ../data/ui/desktop-pref.glade.h:25
 #, fuzzy
 msgid "Ad_vanced"
 msgstr "ఉన్నత"
 
-#: ../data/ui/desktop-pref.glade.h:21
+#: ../data/ui/desktop-pref.glade.h:26
 msgid "Fill with background color only"
 msgstr "నేపథ్య రంగుతో మాత్రమే నింపు"
 
-#: ../data/ui/desktop-pref.glade.h:22
-msgid "Stretch to fill the entire screen"
+#: ../data/ui/desktop-pref.glade.h:27
+#, fuzzy
+msgid "Stretch to fill the entire monitor area"
 msgstr "పూర్తి తెరను నింపుటకు సాగదీయి"
 
-#: ../data/ui/desktop-pref.glade.h:23
-msgid "Stretch to fit the screen"
+#: ../data/ui/desktop-pref.glade.h:28
+#, fuzzy
+msgid "Stretch to fit the monitor area"
 msgstr "తెరకు అమర్చుటకు సాగదీయి"
 
-#: ../data/ui/desktop-pref.glade.h:24
-msgid "Center on the screen"
-msgstr "తెరకు మధ్యలో"
+#: ../data/ui/desktop-pref.glade.h:29
+msgid "Center unscaled image on the monitor"
+msgstr ""
 
-#: ../data/ui/desktop-pref.glade.h:25
-msgid "Tile the image to fill the entire screen"
+#: ../data/ui/desktop-pref.glade.h:30
+#, fuzzy
+msgid "Tile the image to fill the entire monitor area"
 msgstr "పూర్తి తెర నింపుటకు బొమ్మను పలకల వలె చేయి"
 
+#: ../data/ui/desktop-pref.glade.h:31
+#, fuzzy
+msgid "Stretch and crop to fill the monitor area"
+msgstr "పూర్తి తెరను నింపుటకు సాగదీయి"
+
+#: ../data/ui/desktop-pref.glade.h:32
+#, fuzzy
+msgid "Stretch to fill the complete screen"
+msgstr "పూర్తి తెరను నింపుటకు సాగదీయి"
+
 #: ../data/ui/pref.glade.h:1
-msgid "Opened in Current Tab"
+#, fuzzy
+msgid "Open in current tab"
 msgstr "ప్రస్తుత ట్యాబ్‌లో తెరువు"
 
 #: ../data/ui/pref.glade.h:2
-msgid "Opened in New Tab"
-msgstr "కొత్త ట్యాబ్‌లో తెరువు"
+#, fuzzy
+msgid "Open in new tab"
+msgstr "కొత్త ట్యాబ్‌లో తెరువుము"
 
 #: ../data/ui/pref.glade.h:3
-msgid "Opened in New Window"
-msgstr "కొత్త విండోలో తెరువు"
+#, fuzzy
+msgid "Open in new window"
+msgstr "కొత్త విండోలో తెరువుము"
 
 #: ../data/ui/pref.glade.h:4
 msgid "Preferences"
@@ -205,291 +246,351 @@ msgid "Defaul_t drop action:"
 msgstr ""
 
 #: ../data/ui/pref.glade.h:15
-msgid "_Unfold tab when files are dragged onto tab button"
+msgid "\"_Smart shortcut\" auto-action on drop to Desktop folder"
 msgstr ""
 
 #: ../data/ui/pref.glade.h:16
+msgid ""
+"If enabled then \"Auto\" action on drop file onto Desktop folder will be:\n"
+"- for files directly in Home folder a symlink will be created\n"
+"- files on the same file system will be moved\n"
+"- other files (e.g. on removable media) will be copied\n"
+"- for some external URI a shortcut will be created"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:21
+msgid "_Unfold tab when files are dragged onto tab button"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:22
+msgid "_Focus previous folder after coming to its parent"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:23
 msgid "<b>Default View</b>"
 msgstr "<b>అప్రమేయ వీక్షణ</b>"
 
-#: ../data/ui/pref.glade.h:17
+#: ../data/ui/pref.glade.h:24
 #, fuzzy
 msgid "Vie_w Mode:"
 msgstr "వీక్షణ విధము:"
 
-#: ../data/ui/pref.glade.h:18
+#: ../data/ui/pref.glade.h:25
 #, fuzzy
 msgid "_General"
 msgstr "సాధారణం"
 
-#: ../data/ui/pref.glade.h:19
+#: ../data/ui/pref.glade.h:26
 msgid "<b>Icons</b>"
 msgstr "<b>ప్రతీకలు</b>"
 
-#: ../data/ui/pref.glade.h:20
+#: ../data/ui/pref.glade.h:27
 #, fuzzy
 msgid "Size of _big icons:"
 msgstr "పెద్ద ప్రతీకల యొక్క పరిమాణం:"
 
-#: ../data/ui/pref.glade.h:21
+#: ../data/ui/pref.glade.h:28
 #, fuzzy
 msgid "Size of small _icons:"
 msgstr "చిన్న ప్రతీకల యొక్క పరిమాణం:"
 
-#: ../data/ui/pref.glade.h:22
+#: ../data/ui/pref.glade.h:29
 #, fuzzy
 msgid "Size of _thumbnails:"
 msgstr "థంబ్‌నైళ్ళ యొక్క పరిమాణం:"
 
-#: ../data/ui/pref.glade.h:23
+#: ../data/ui/pref.glade.h:30
 #, fuzzy
 msgid "Size of side _pane icons:"
 msgstr "ప్రక్క పేన్ ప్రతీకల యొక్క పరిమాణం:"
 
-#: ../data/ui/pref.glade.h:24
+#: ../data/ui/pref.glade.h:31
 #, fuzzy
 msgid "_Show thumbnails of files"
 msgstr "ఫైళ్ళ యొక్క థంబ్‌నైళ్ళను చూపించు"
 
-#: ../data/ui/pref.glade.h:25
+#: ../data/ui/pref.glade.h:32
 #, fuzzy
 msgid "_Only show thumbnails for local files"
 msgstr "స్థానిక ఫైళ్ళకు మాత్రమే థంబ్‌నైళ్ళను చూపించు"
 
-#: ../data/ui/pref.glade.h:26
+#: ../data/ui/pref.glade.h:33
 #, fuzzy
 msgid "Do _not generate thumbnails for files exceeding this size:"
 msgstr "ఈ పరిమాణం దాటిన ఫైళ్ళకు థంబ్‌నైళ్ళను ఉత్పత్తిచేయవద్దు:"
 
-#: ../data/ui/pref.glade.h:27
+#: ../data/ui/pref.glade.h:34
 msgid "<b>User Interface</b>"
 msgstr "<b>వాడుకరి అంతరవర్తి</b>"
 
-#: ../data/ui/pref.glade.h:28
+#: ../data/ui/pref.glade.h:35
 #, fuzzy
 msgid "Us_e SI decimal prefixes instead of IEC binary prefixes"
 msgstr "IEC బైనరీ ప్రిఫిక్స్‍లకు బదులుగా SI దశాంశా ప్రిఫిక్స్‍లను వాడు"
 
-#: ../data/ui/pref.glade.h:29
+#: ../data/ui/pref.glade.h:36
 msgid "Treat backup files as _hidden"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:30
+#: ../data/ui/pref.glade.h:37
 #, fuzzy
 msgid "Al_ways show full file names"
 msgstr "ట్యాబ్ పట్టీని ఎల్లప్పుడూ చూపించు"
 
-#: ../data/ui/pref.glade.h:31
-msgid "Show icons of bac_kup files shadowed"
+#: ../data/ui/pref.glade.h:38
+msgid "Show icons of hidden _files shadowed"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:32
+#: ../data/ui/pref.glade.h:39
 #, fuzzy
 msgid "_Display"
 msgstr "ప్రదర్శన"
 
-#: ../data/ui/pref.glade.h:33
+#: ../data/ui/pref.glade.h:40
 #, fuzzy
 msgid "Hid_e 'Close tab' buttons"
 msgstr "'ట్యాబ్ మూయి' బటన్లను దాయి"
 
-#: ../data/ui/pref.glade.h:34
+#: ../data/ui/pref.glade.h:41
 #, fuzzy
 msgid "Al_ways show the tab bar"
 msgstr "ట్యాబ్ పట్టీని ఎల్లప్పుడూ చూపించు"
 
-#: ../data/ui/pref.glade.h:35
+#: ../data/ui/pref.glade.h:42
 msgid "_Maximum width of tab label:"
 msgstr ""
 
 #. Use genitive case here, context is: width is XXX characters
-#: ../data/ui/pref.glade.h:37
-msgid "characters"
-msgstr ""
-
-#: ../data/ui/pref.glade.h:38
-#, fuzzy
-msgid "<b>Directories Tree</b>"
-msgstr "సంచయపు వృక్షం"
-
-#: ../data/ui/pref.glade.h:39
-msgid "Hide e_xpander on empty or locked folder"
-msgstr ""
-
-#: ../data/ui/pref.glade.h:40
-#, fuzzy
-msgid "<b>Show in Places:</b>"
-msgstr "<b>డెస్క్‍టాప్ ప్రతీకలను చూపించు</b>"
-
-#: ../data/ui/pref.glade.h:41
-#, fuzzy
-msgid "_Home Folder"
-msgstr "నివాస సంచయం"
-
-#: ../data/ui/pref.glade.h:42
-#, fuzzy
-msgid "Des_ktop"
-msgstr "డెస్క్‍టాప్"
-
-#: ../data/ui/pref.glade.h:43 ../src/main-win-ui.c:160
-#, fuzzy
-msgid "_Trash Can"
-msgstr "చెత్తబుట్ట"
-
 #: ../data/ui/pref.glade.h:44
-msgid "_Filesystem Root"
+msgid "characters"
 msgstr ""
 
 #: ../data/ui/pref.glade.h:45
 #, fuzzy
-msgid "App_lications"
-msgstr "అనువర్తనాలు"
+msgid "<b>Directories Tree</b>"
+msgstr "సంచయపు వృక్షం"
 
 #: ../data/ui/pref.glade.h:46
-msgid "Dev_ices"
+msgid "Hide e_xpander on empty or locked folder"
 msgstr ""
 
 #: ../data/ui/pref.glade.h:47
 #, fuzzy
-msgid "_Network"
-msgstr "నెట్‌వర్క్ డ్రైవర్లు"
+msgid "<b>Show in Places:</b>"
+msgstr "<b>డెస్క్‍టాప్ ప్రతీకలను చూపించు</b>"
 
 #: ../data/ui/pref.glade.h:48
-msgid "_Layout"
-msgstr ""
+#, fuzzy
+msgid "_Home Folder"
+msgstr "నివాస సంచయం"
 
 #: ../data/ui/pref.glade.h:49
-msgid "<b>Auto-mount</b>"
-msgstr "<b>స్వయం-అధిరోహిణం</b>"
-
-#: ../data/ui/pref.glade.h:50
 #, fuzzy
-msgid "_Mount mountable volumes automatically on program startup"
-msgstr "ప్రోగ్రాం ప్రారంభంలో అధిరోహించదగిన సంపుటాలను స్వయంచాలకంగా అధిరోహించు"
+msgid "Des_ktop"
+msgstr "డెస్క్‍టాప్"
+
+#: ../data/ui/pref.glade.h:50 ../src/main-win-ui.c:236
+#, fuzzy
+msgid "_Trash Can"
+msgstr "చెత్తబుట్ట"
 
 #: ../data/ui/pref.glade.h:51
-#, fuzzy
-msgid "Mo_unt removable media automatically when they are inserted"
-msgstr "తొలగించదగిన మాధ్యమం ప్రవేశపెట్టినపుడు దానిని స్వయంచాలకంగా అధిరోహించు"
+msgid "_Filesystem Root"
+msgstr ""
 
 #: ../data/ui/pref.glade.h:52
 #, fuzzy
-msgid "_Show available options for removable media when they are inserted"
-msgstr "తొలగించదగిన మాధ్యమం ప్రవేశపెట్టినపుడు వాటికి అందుబాటులోనున్న ఐచ్ఛికాలను చూపించు"
+msgid "App_lications"
+msgstr "అనువర్తనాలు"
 
-#: ../data/ui/pref.glade.h:53
-msgid "_Open mounted removable media in new tab instead of new window"
+#: ../data/ui/pref.glade.h:53 ../src/main-win-ui.c:239
+msgid "Dev_ices"
 msgstr ""
 
 #: ../data/ui/pref.glade.h:54
 #, fuzzy
-msgid "Clos_e tab containing removable medium when it is unmounted"
-msgstr "తొలగించదగిన మాధ్యమం ప్రవేశపెట్టినపుడు వాటికి అందుబాటులోనున్న ఐచ్ఛికాలను చూపించు"
+msgid "_Network"
+msgstr "నెట్‌వర్క్ డ్రైవర్లు"
 
 #: ../data/ui/pref.glade.h:55
+msgid "_Layout"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:56
+msgid "<b>Auto-mount</b>"
+msgstr "<b>స్వయం-అధిరోహిణం</b>"
+
+#: ../data/ui/pref.glade.h:57
+#, fuzzy
+msgid "_Mount mountable volumes automatically on program startup"
+msgstr "ప్రోగ్రాం ప్రారంభంలో అధిరోహించదగిన సంపుటాలను స్వయంచాలకంగా అధిరోహించు"
+
+#: ../data/ui/pref.glade.h:58
+#, fuzzy
+msgid "Mo_unt removable media automatically when they are inserted"
+msgstr "తొలగించదగిన మాధ్యమం ప్రవేశపెట్టినపుడు దానిని స్వయంచాలకంగా అధిరోహించు"
+
+#: ../data/ui/pref.glade.h:59
+#, fuzzy
+msgid "_Show available options for removable media when they are inserted"
+msgstr "తొలగించదగిన మాధ్యమం ప్రవేశపెట్టినపుడు వాటికి అందుబాటులోనున్న ఐచ్ఛికాలను చూపించు"
+
+#: ../data/ui/pref.glade.h:60
+#, fuzzy
+msgid "Do_n't show available options for those media types:"
+msgstr "తొలగించదగిన మాధ్యమం ప్రవేశపెట్టినపుడు వాటికి అందుబాటులోనున్న ఐచ్ఛికాలను చూపించు"
+
+#: ../data/ui/pref.glade.h:61
+#, fuzzy
+msgid "_Remove selected"
+msgstr "%d అంశము ఎంచుకోబడింది"
+
+#: ../data/ui/pref.glade.h:62
+msgid "_Open mounted removable media in new tab instead of new window"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:63
+#, fuzzy
+msgid "When removable medium unmounted:"
+msgstr "తొలగించదగిన మాధ్యమం ప్రవేశపెట్టబడింది"
+
+#: ../data/ui/pref.glade.h:64
+#, fuzzy
+msgid "Clos_e tab containing removable medium"
+msgstr "తొలగించదగిన మాధ్యమం ప్రవేశపెట్టినపుడు వాటికి అందుబాటులోనున్న ఐచ్ఛికాలను చూపించు"
+
+#: ../data/ui/pref.glade.h:65
+msgid "Change folder in the tab to _Home Folder"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:66
 #, fuzzy
 msgid "_Volume Management"
 msgstr "సంపుటం నిర్వాహణ"
 
-#: ../data/ui/pref.glade.h:56
+#: ../data/ui/pref.glade.h:67
 msgid "<b>Programs</b>"
 msgstr "<b>ప్రోగ్రాములు</b>"
 
-#: ../data/ui/pref.glade.h:57
+#: ../data/ui/pref.glade.h:68
 msgid "<i>Commands below may include extra options if necessary.</i>"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:58
+#: ../data/ui/pref.glade.h:69
 #, fuzzy
 msgid "_Terminal emulator:"
 msgstr "టెర్మినల్ ఎమ్యులేటర్:"
 
-#: ../data/ui/pref.glade.h:59
+#: ../data/ui/pref.glade.h:70
 #, fuzzy
 msgid "_Switch user command:"
 msgstr "వాడుకరిని మార్చుటకు ఆదేశం:"
 
 #. Application command to format some drive
-#: ../data/ui/pref.glade.h:61
+#: ../data/ui/pref.glade.h:72
 msgid "_Format command:"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:62
+#: ../data/ui/pref.glade.h:73
 #, fuzzy
 msgid "A_rchiver integration:"
 msgstr "ఆర్చీవర్ విలీనత:"
 
-#: ../data/ui/pref.glade.h:63
+#: ../data/ui/pref.glade.h:74
 #, fuzzy
 msgid "<b>Templates</b>"
 msgstr "<b>పాఠ్యం</b>"
 
-#: ../data/ui/pref.glade.h:64
+#: ../data/ui/pref.glade.h:75
 msgid "S_how only user defined templates in menu"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:65
+#: ../data/ui/pref.glade.h:76
 msgid "Show _only one template for each MIME type"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:66
+#: ../data/ui/pref.glade.h:77
 msgid "Ru_n default application after creation from template"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:67
+#: ../data/ui/pref.glade.h:78
 #, fuzzy
 msgid "<b>Other Options</b>"
 msgstr "<b>డెస్క్‍టాప్ ప్రతీకలను చూపించు</b>"
 
-#: ../data/ui/pref.glade.h:68
-msgid "_Use Application Startup Notify by default"
+#: ../data/ui/pref.glade.h:79
+msgid "Use Application Startup Notify _by default"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:69
+#: ../data/ui/pref.glade.h:80
 msgid ""
 "If checked then use Startup Notify for application if another not stated "
 "explicitly.\n"
 "If unchecked then use Startup Notify only if that is defined for application."
 msgstr ""
 
-#: ../data/ui/pref.glade.h:71
+#: ../data/ui/pref.glade.h:82
 msgid "D_efer test for content type on folder loading"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:72
+#: ../data/ui/pref.glade.h:83
+msgid "Use path for \"Home Folder\" button:"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:86
+msgid "_Use current"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:87
 msgid "_Advanced"
 msgstr "ఉన్నత (_A)"
 
-#: ../data/ui/pref.glade.h:73
+#: ../data/ui/pref.glade.h:88
+msgid "<b>_Do not load modules matching:</b>"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:89
+msgid "<b>_Load these modules anyway:</b>"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:90
+msgid "Modules"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:91
 msgid "Auto (move if on the same FS, copy otherwise)"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:74
+#: ../data/ui/pref.glade.h:92
 msgid "Copy"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:75
+#: ../data/ui/pref.glade.h:93
 msgid "Move"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:76
+#: ../data/ui/pref.glade.h:94
 msgid "Ask"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:77
-msgid "Icon View"
+#: ../data/ui/pref.glade.h:95
+#, fuzzy
+msgid "Icon view"
 msgstr "ప్రతీక వీక్షణం"
 
-#: ../data/ui/pref.glade.h:78
-msgid "Compact View"
+#: ../data/ui/pref.glade.h:96
+#, fuzzy
+msgid "Compact view"
 msgstr "సౌలభ్య వీక్షణ"
 
-#: ../data/ui/pref.glade.h:79
-msgid "Thumbnail View"
+#: ../data/ui/pref.glade.h:97
+#, fuzzy
+msgid "Thumbnail view"
 msgstr "థంబ్‌నైళ్ళ వీక్షణం"
 
-#: ../data/ui/pref.glade.h:80
-msgid "Detailed List View"
+#: ../data/ui/pref.glade.h:98
+#, fuzzy
+msgid "Detailed list view"
 msgstr "పూర్తి జాబితా వీక్షణ"
 
 #: ../data/ui/autorun.glade.h:1
@@ -512,11 +613,64 @@ msgstr "కనుగొంటున్నది..."
 msgid "Please select the action you want to perform:"
 msgstr "దయచేసి మీరు చేయాలనుకుంటున్న చర్యను ఎంచుకోండి:"
 
-#: ../src/volume-manager.c:164
-msgid "Removable Disk"
+#: ../data/ui/autorun.glade.h:6
+msgid "_Always perform this action on this media type"
+msgstr ""
+
+#: ../data/ui/connect.glade.h:1
+msgid "Connect to remote server"
+msgstr ""
+
+#: ../data/ui/connect.glade.h:2
+msgid "<b>Specify remote folder to connect</b>"
+msgstr ""
+
+#: ../data/ui/connect.glade.h:3
+msgid "_Type:"
+msgstr ""
+
+#: ../data/ui/connect.glade.h:4
+msgid "_Host:"
+msgstr ""
+
+#: ../data/ui/connect.glade.h:5
+msgid "_Port:"
+msgstr ""
+
+#: ../data/ui/connect.glade.h:6
+msgid "Pa_th:"
+msgstr ""
+
+#: ../data/ui/connect.glade.h:7
+msgid "_Anonymous login"
+msgstr ""
+
+#: ../data/ui/connect.glade.h:8
+msgid "_Login as:"
+msgstr ""
+
+#: ../data/ui/connect.glade.h:9
+msgid "SSH"
+msgstr ""
+
+#: ../data/ui/connect.glade.h:10
+msgid "FTP"
+msgstr ""
+
+#: ../data/ui/connect.glade.h:11
+msgid "WebDAV"
+msgstr ""
+
+#: ../src/volume-manager.c:237
+msgid "mixed content"
+msgstr ""
+
+#: ../src/volume-manager.c:246
+#, fuzzy
+msgid "removable disk"
 msgstr "తొలగించదగిన డిస్కు"
 
-#: ../src/volume-manager.c:217
+#: ../src/volume-manager.c:302
 msgid "Open in File Manager"
 msgstr "ఫైల్ నిర్వాహకములో తెరువుము"
 
@@ -525,358 +679,475 @@ msgstr "ఫైల్ నిర్వాహకములో తెరువుమ�
 msgid "Open in New Ta_b"
 msgstr "కొత్త ట్యాబ్‌లో తెరువుము"
 
-#: ../src/desktop-ui.c:52 ../src/tab-page.c:56
+#: ../src/desktop-ui.c:52 ../src/tab-page.c:57
 #, fuzzy
 msgid "Open in New Win_dow"
 msgstr "కొత్త విండోలో తెరువుము"
 
-#: ../src/desktop-ui.c:54 ../src/tab-page.c:58
+#: ../src/desktop-ui.c:54 ../src/tab-page.c:59
 #, fuzzy
 msgid "Open in Termina_l"
 msgstr "టెర్మినల్‌లో తెరువు (_T)"
 
-#: ../src/desktop-ui.c:70
+#: ../src/desktop-ui.c:68
+msgid "_Remove from Desktop"
+msgstr ""
+
+#: ../src/desktop-ui.c:85
 #, fuzzy
 msgid "Stic_k to Current Position"
 msgstr "ప్రస్తుత స్థానమునకు తగిలించు"
 
-#: ../src/desktop-ui.c:75
+#: ../src/desktop-ui.c:90
 #, fuzzy
 msgid "Snap to _Grid"
 msgstr "స్నాప్ టు గ్రిడ్"
 
-#: ../src/desktop.c:636
+#: ../src/desktop.c:946
 #, fuzzy
 msgid "Activate file"
 msgstr "<బొమ్మ ఫైలు>"
 
-#: ../src/desktop.c:638
+#: ../src/desktop.c:948
 #, fuzzy
 msgid "Show file menu"
 msgstr "దాచబడినవాటిని చూపించు (_H)"
 
-#: ../src/desktop.c:1054
+#: ../src/desktop.c:1364
 #, fuzzy
 msgid "Show desktop menu"
 msgstr "<b>డెస్క్‍టాప్ ప్రతీకలను చూపించు</b>"
 
 #. FIXME: set name by monitor
-#: ../src/desktop.c:1126
+#: ../src/desktop.c:1436
 #, fuzzy
 msgid "Desktop"
 msgstr "డెస్క్‍టాప్"
 
-#: ../src/main-win-ui.c:128
+#: ../src/main-win-ui.c:187
 msgid "_File"
 msgstr "ఫైల్ (_F)"
 
-#: ../src/main-win-ui.c:129
+#: ../src/main-win-ui.c:188
 msgid "_New Window"
 msgstr "కొత్త విండో (_N)"
 
-#: ../src/main-win-ui.c:130
+#: ../src/main-win-ui.c:189
 #, fuzzy
 msgid "New T_ab"
 msgstr "కొత్త ట్యాబ్ (_T)"
 
-#: ../src/main-win-ui.c:130
+#: ../src/main-win-ui.c:189
 msgid "Create new tab for this folder"
 msgstr ""
 
-#: ../src/main-win-ui.c:131
+#: ../src/main-win-ui.c:190
 #, fuzzy
 msgid "C_reate New..."
 msgstr "కొత్తది సృష్టించు..."
 
-#: ../src/main-win-ui.c:132
+#: ../src/main-win-ui.c:191
+msgid "Folder"
+msgstr "సంచయం"
+
+#: ../src/main-win-ui.c:192
+msgid "Empty File"
+msgstr ""
+
+#: ../src/main-win-ui.c:193
+msgid "Folder Propertie_s"
+msgstr ""
+
+#: ../src/main-win-ui.c:194
 msgid "_Close Tab"
 msgstr "ట్యాబును మూయి (_C)"
 
-#: ../src/main-win-ui.c:133
+#: ../src/main-win-ui.c:195
 #, fuzzy
 msgid "Close _Window"
 msgstr "విండోను మూసివేయి"
 
-#: ../src/main-win-ui.c:134
+#: ../src/main-win-ui.c:196
 msgid "_Edit"
 msgstr "సవరణ(_E)"
 
-#: ../src/main-win-ui.c:139
+#: ../src/main-win-ui.c:198
+msgid "C_ut"
+msgstr ""
+
+#: ../src/main-win-ui.c:201
+msgid "Move to _Trash"
+msgstr ""
+
+#: ../src/main-win-ui.c:203
+msgid "Copy Pat_h(s)"
+msgstr ""
+
+#: ../src/main-win-ui.c:204
 #, fuzzy
-msgid "_Rename"
+msgid "R_ename..."
 msgstr "పేరుమార్చు"
 
-#: ../src/main-win-ui.c:140
-#, fuzzy
-msgid "Create Symlin_k"
-msgstr "Symlink సృష్టించు"
+#: ../src/main-win-ui.c:205
+msgid "D_uplicate..."
+msgstr ""
 
-#: ../src/main-win-ui.c:141
+#: ../src/main-win-ui.c:206
 #, fuzzy
-msgid "_Move To..."
+msgid "Create Lin_k..."
+msgstr "కొత్తది సృష్టించు...(_N)"
+
+#: ../src/main-win-ui.c:207
+#, fuzzy
+msgid "_Move to..."
 msgstr "ఇచటకు తరలించు..."
 
-#: ../src/main-win-ui.c:142
+#: ../src/main-win-ui.c:208
 #, fuzzy
-msgid "C_opy To..."
+msgid "Copy to_..."
 msgstr "ఇచటకు నకలుచేయి..."
 
-#: ../src/main-win-ui.c:144
+#: ../src/main-win-ui.c:209
+msgid "Propertie_s"
+msgstr ""
+
+#: ../src/main-win-ui.c:211
 msgid "_Invert Selection"
 msgstr "ఎంపికను విలోమకరించు (_I)"
 
-#: ../src/main-win-ui.c:145
+#: ../src/main-win-ui.c:212
 #, fuzzy
 msgid "Prefere_nces"
 msgstr "ప్రాధాన్యతలు"
 
-#: ../src/main-win-ui.c:146
+#: ../src/main-win-ui.c:213
 msgid "_View"
 msgstr "వీక్షణ (_V)"
 
-#: ../src/main-win-ui.c:147
+#: ../src/main-win-ui.c:214
 #, fuzzy
 msgid "_Reload Folder"
 msgstr "సంచయాన్ని తిరిగినింపు"
 
-#: ../src/main-win-ui.c:147
+#: ../src/main-win-ui.c:214
 msgid "Reload current folder"
 msgstr "ప్రస్తుత సంచయాన్ని తిరిగినింపు"
 
-#: ../src/main-win-ui.c:148
+#: ../src/main-win-ui.c:215
+#, fuzzy
+msgid "Tool_bar"
+msgstr "సాధనాలు (_T)"
+
+#: ../src/main-win-ui.c:216
+msgid "Pat_h Bar"
+msgstr ""
+
+#: ../src/main-win-ui.c:217
 #, fuzzy
 msgid "Side _Pane"
 msgstr "పక్క పట్టీ"
 
 #. other see below: 'ShowHidden' 'ShowStatus' 'Fullscreen' 'IconView'...
-#: ../src/main-win-ui.c:150
+#: ../src/main-win-ui.c:219
+#, fuzzy
+msgid "Fo_lder View Mode"
+msgstr "వీక్షణ విధము:"
+
+#: ../src/main-win-ui.c:220
 #, fuzzy
 msgid "S_ort Files"
 msgstr "ఫైళ్ళ క్రమబద్దీకరణ (_S)"
 
-#: ../src/main-win-ui.c:151
+#: ../src/main-win-ui.c:222
+msgid "Zoom O_ut"
+msgstr ""
+
+#: ../src/main-win-ui.c:225
+msgid "Fil_ter..."
+msgstr ""
+
+#: ../src/main-win-ui.c:227
 msgid "_Help"
 msgstr "సహాయం (_H)"
 
-#: ../src/main-win-ui.c:153
+#: ../src/main-win-ui.c:229
 msgid "_Keyboard Navigation"
 msgstr ""
 
-#: ../src/main-win-ui.c:154
+#: ../src/main-win-ui.c:230
 msgid "_Go"
 msgstr "వెళ్ళు (_G)"
 
-#: ../src/main-win-ui.c:155
+#: ../src/main-win-ui.c:231
 #, fuzzy
 msgid "_Previous Folder"
 msgstr "మునుపటి సంచయం"
 
-#: ../src/main-win-ui.c:155
+#: ../src/main-win-ui.c:231
 msgid "Return to previous folder in history"
 msgstr ""
 
-#: ../src/main-win-ui.c:156
+#: ../src/main-win-ui.c:232
 #, fuzzy
 msgid "_Next Folder"
 msgstr "తరువాయి సంచయం"
 
-#: ../src/main-win-ui.c:156
+#: ../src/main-win-ui.c:232
 msgid "Go forward to next folder in history"
 msgstr ""
 
-#: ../src/main-win-ui.c:157
+#: ../src/main-win-ui.c:233
 #, fuzzy
 msgid "Pa_rent Folder"
 msgstr "మూల సంచయం"
 
-#: ../src/main-win-ui.c:157
+#: ../src/main-win-ui.c:233
 msgid "Go to parent Folder"
 msgstr "మూల సంచయమునకు వెళ్ళు"
 
-#: ../src/main-win-ui.c:158
+#: ../src/main-win-ui.c:234
 #, fuzzy
 msgid "H_ome Folder"
 msgstr "నివాస సంచయం"
 
-#: ../src/main-win-ui.c:158
+#: ../src/main-win-ui.c:234
 #, fuzzy
 msgid "Go to home folder"
 msgstr "మూల సంచయమునకు వెళ్ళు"
 
-#: ../src/main-win-ui.c:159
+#: ../src/main-win-ui.c:235
 #, fuzzy
 msgid "_Desktop"
 msgstr "డెస్క్‍టాప్"
 
-#: ../src/main-win-ui.c:159
+#: ../src/main-win-ui.c:235
 #, fuzzy
 msgid "Go to desktop folder"
 msgstr "మూల సంచయమునకు వెళ్ళు"
 
-#: ../src/main-win-ui.c:160
+#: ../src/main-win-ui.c:236
 msgid "Open trash can"
 msgstr ""
 
-#: ../src/main-win-ui.c:161
+#: ../src/main-win-ui.c:237
 msgid "Filesyste_m Root"
 msgstr ""
 
-#: ../src/main-win-ui.c:161
+#: ../src/main-win-ui.c:237
 msgid "Go fo filesystem root"
 msgstr ""
 
-#: ../src/main-win-ui.c:162
+#: ../src/main-win-ui.c:238
 #, fuzzy
 msgid "_Applications"
 msgstr "అనువర్తనాలు"
 
-#: ../src/main-win-ui.c:162
+#: ../src/main-win-ui.c:238
 msgid "Go to root of applications menu folder"
 msgstr ""
 
-#: ../src/main-win-ui.c:163
-msgid "Devi_ces"
-msgstr ""
-
-#: ../src/main-win-ui.c:163
+#: ../src/main-win-ui.c:239
 #, fuzzy
 msgid "Go to list of devices connected to the computer"
 msgstr "సంపుటముల యొక్క ప్రతీకలను డెస్క్‍టాప్ పై చూపించు"
 
-#: ../src/main-win-ui.c:164
+#: ../src/main-win-ui.c:240
 #, fuzzy
 msgid "Net_work"
 msgstr "నెట్‌వర్క్ డ్రైవర్లు"
 
-#: ../src/main-win-ui.c:164
+#: ../src/main-win-ui.c:240
 #, fuzzy
 msgid "Go to list of places on the network"
 msgstr "సంపుటముల యొక్క ప్రతీకలను డెస్క్‍టాప్ పై చూపించు"
 
-#: ../src/main-win-ui.c:165
+#: ../src/main-win-ui.c:241
+msgid "_Go to Location..."
+msgstr ""
+
+#: ../src/main-win-ui.c:242
+msgid "_Connect to Server..."
+msgstr ""
+
+#: ../src/main-win-ui.c:242
+msgid "Open a window to choose remote folder location"
+msgstr ""
+
+#: ../src/main-win-ui.c:243
 msgid "Go to the path in the location bar"
 msgstr ""
 
-#: ../src/main-win-ui.c:166
+#: ../src/main-win-ui.c:244
 msgid "_Bookmarks"
 msgstr "ఇష్టాంశాలు (_B)"
 
-#: ../src/main-win-ui.c:167
+#: ../src/main-win-ui.c:245
 #, fuzzy
-msgid "_Add to Bookmarks"
+msgid "_Add to Bookmarks..."
 msgstr "ఇష్టాంశములకు జతచేయి"
 
-#: ../src/main-win-ui.c:167
+#: ../src/main-win-ui.c:245
 msgid "Add current folder to bookmarks list"
 msgstr ""
 
-#: ../src/main-win-ui.c:168
-#, fuzzy
-msgid "Tool_s"
-msgstr "సాధనాలు (_T)"
+#: ../src/main-win-ui.c:246
+msgid "Too_ls"
+msgstr ""
 
-#: ../src/main-win-ui.c:169
+#: ../src/main-win-ui.c:247
 msgid "Open Current Folder in _Terminal"
 msgstr "ప్రస్తుత సంచయమును టెర్మినల్‌లో తెరువుము (_T)"
 
-#: ../src/main-win-ui.c:172
+#: ../src/main-win-ui.c:249
 #, fuzzy
-msgid "Fin_d Files"
+msgid "Fin_d Files..."
 msgstr "ఫైళ్ళ క్రమబద్దీకరణ (_S)"
 
-#: ../src/main-win-ui.c:172
+#: ../src/main-win-ui.c:249
 #, fuzzy
 msgid "Open search dialog"
 msgstr "డెస్క్‍టాప్ ప్రాధాన్య డైలాగును తెరువు"
 
-#. for popup menu - these entries exist in FmFolderView popup still
-#: ../src/main-win-ui.c:181
-msgid "Folder"
-msgstr "సంచయం"
+#: ../src/main-win-ui.c:252
+#, fuzzy
+msgid "_Run a Command in Current Folder..."
+msgstr "ప్రస్తుత సంచయాన్ని తిరిగినింపు"
 
-#: ../src/main-win-ui.c:182
-msgid "Empty File"
+#. Note to translators: "Mingle..." means "Do not put folders before files" but make the translation as short as possible, please!
+#: ../src/main-win-ui.c:267
+msgid "Mingle _Files and Folders"
 msgstr ""
 
-#: ../src/main-win-ui.c:188
+#: ../src/main-win-ui.c:270
+msgid "_Ignore Name Case"
+msgstr ""
+
+#: ../src/main-win-ui.c:272
 #, fuzzy
-msgid "Show Hidde_n"
+msgid "Sho_w Hidden"
 msgstr "దాచబడినవాటిని చూపించు (_H)"
 
-#: ../src/main-win-ui.c:189
+#. Note to translators: this save is meant for folder's settings such as sort
+#: ../src/main-win-ui.c:274
+msgid "Preserve This Folder's Settings"
+msgstr ""
+
+#: ../src/main-win-ui.c:275
+msgid ""
+"Check to remember view and sort as folder setting rather than global one"
+msgstr ""
+
+#: ../src/main-win-ui.c:277
+msgid "_Show Toolbar"
+msgstr ""
+
+#: ../src/main-win-ui.c:278
+msgid "Show 'New _Window' Button"
+msgstr ""
+
+#: ../src/main-win-ui.c:279
+msgid "Show 'New _Tab' Button"
+msgstr ""
+
+#: ../src/main-win-ui.c:280
+msgid "Show _Navigation Buttons"
+msgstr ""
+
+#: ../src/main-win-ui.c:281
+msgid "Show '_Home' Button"
+msgstr ""
+
+#: ../src/main-win-ui.c:282
 #, fuzzy
 msgid "Sho_w Side Pane"
 msgstr "పక్క పట్టీని చూపించు"
 
-#: ../src/main-win-ui.c:190
+#: ../src/main-win-ui.c:283
 msgid "Show Status B_ar"
 msgstr ""
 
-#: ../src/main-win-ui.c:191
-msgid "T_win Pane Mode"
+#: ../src/main-win-ui.c:284
+msgid "_Dual Pane Mode"
 msgstr ""
 
-#: ../src/main-win-ui.c:192
+#: ../src/main-win-ui.c:284
+msgid "Show two panels with folder views"
+msgstr ""
+
+#: ../src/main-win-ui.c:285
 msgid "Fullscreen _Mode"
 msgstr ""
 
-#: ../src/main-win-ui.c:197
+#: ../src/main-win-ui.c:291
 msgid "_Icon View"
 msgstr "ప్రతీక వీక్షణం (_I)"
 
-#: ../src/main-win-ui.c:198
-msgid "_Thumbnail View"
-msgstr "థంబ్‌నైళ్ళ వీక్షణం (_T)"
-
-#: ../src/main-win-ui.c:199
+#: ../src/main-win-ui.c:292
 msgid "_Compact View"
 msgstr "సౌలభ్య వీక్షణం (_C)"
 
-#: ../src/main-win-ui.c:200
+#: ../src/main-win-ui.c:293
+msgid "_Thumbnail View"
+msgstr "థంబ్‌నైళ్ళ వీక్షణం (_T)"
+
+#: ../src/main-win-ui.c:294
 msgid "Detailed _List View"
 msgstr "వివరణాత్మక జాబితా వీక్షణం (_L)"
 
-#: ../src/main-win-ui.c:212 ../src/main-win-ui.c:217
+#: ../src/main-win-ui.c:307 ../src/main-win-ui.c:315
 msgid "By _Name"
 msgstr "పేరును బట్టి (_N)"
 
-#: ../src/main-win-ui.c:213 ../src/main-win-ui.c:218
+#: ../src/main-win-ui.c:308 ../src/main-win-ui.c:316
 msgid "By _Modification Time"
 msgstr "సవరించబడిన సమయముని బట్టి"
 
-#: ../src/main-win-ui.c:214 ../src/main-win-ui.c:219
+#: ../src/main-win-ui.c:309 ../src/main-win-ui.c:317
 msgid "By _Size"
 msgstr "పరిమాణముని బట్టి(_S)"
 
-#: ../src/main-win-ui.c:215 ../src/main-win-ui.c:220
+#: ../src/main-win-ui.c:310 ../src/main-win-ui.c:318
 msgid "By File _Type"
 msgstr "ఫైల్ రకాన్ని బట్టి (_T)"
 
-#: ../src/main-win-ui.c:226
+#: ../src/main-win-ui.c:312
+msgid "By _Extension"
+msgstr ""
+
+#: ../src/main-win-ui.c:325
 msgid "Places"
 msgstr "స్థలములు"
 
-#: ../src/main-win-ui.c:227
+#: ../src/main-win-ui.c:326
 msgid "Directory Tree"
 msgstr "సంచయపు వృక్షం"
 
-#: ../src/main-win-ui.c:228
+#: ../src/main-win-ui.c:327
 msgid "Remote"
 msgstr "దూరస్థం"
 
-#: ../src/main-win.c:585
+#: ../src/main-win-ui.c:333
+#, fuzzy
+msgid "_Location"
+msgstr "అనువర్తనాలు"
+
+#: ../src/main-win-ui.c:334
+msgid "_Buttons"
+msgstr ""
+
+#: ../src/main-win.c:925 ../src/main-win.c:929
 msgid "Show history of visited folders"
 msgstr ""
 
-#: ../src/main-win.c:588
+#: ../src/main-win.c:934
 msgid "History"
 msgstr ""
 
-#: ../src/main-win.c:602
+#: ../src/main-win.c:948
 msgid "You are in super user mode"
 msgstr "మీరు సూపర్ వాడుకరి విధములో ఉన్నారు"
 
-#: ../src/main-win.c:766
+#: ../src/main-win.c:1134
 #, fuzzy
 msgid "Lightweight file manager\n"
 msgstr ""
@@ -884,12 +1155,12 @@ msgstr ""
 "\n"
 "హాన్ జెన్ యీ చే అభివృద్ధిచేయబడింది (పిసిమ్యాన్)"
 
-#: ../src/main-win.c:771
+#: ../src/main-win.c:1139
 #, c-format
 msgid "using LibFM ver. %s\n"
 msgstr ""
 
-#: ../src/main-win.c:773
+#: ../src/main-win.c:1141
 #, fuzzy
 msgid ""
 "\n"
@@ -899,11 +1170,11 @@ msgstr ""
 "\n"
 "హాన్ జెన్ యీ చే అభివృద్ధిచేయబడింది (పిసిమ్యాన్)"
 
-#: ../src/main-win.c:798 ../src/main-win.c:806
+#: ../src/main-win.c:1166 ../src/main-win.c:1174
 msgid "Keyboard Navigation"
 msgstr ""
 
-#: ../src/main-win.c:800
+#: ../src/main-win.c:1168
 msgid ""
 "Tab: cycle focus Folder View -> Side Pane -> Tools Bar\n"
 "Shift+Tab: cycle focus Tools Bar -> Side Pane -> Folder View\n"
@@ -913,11 +1184,20 @@ msgid ""
 "Ctrl+L or Alt+D: jump focus to Path Bar"
 msgstr ""
 
-#: ../src/main-win.c:844
-msgid "Switch user command is not set."
-msgstr "వాడుకరి మార్పు ఆదేశము అమర్చబడలేదు."
+#: ../src/main-win.c:1210
+msgid "Run a command"
+msgstr ""
 
-#: ../src/main-win.c:1270
+#: ../src/main-win.c:1211
+msgid "Enter a command to run:"
+msgstr ""
+
+#: ../src/main-win.c:1218
+#, fuzzy
+msgid "Current folder is inaccessible"
+msgstr "ప్రస్తుత సంచయమును టెర్మినల్‌లో తెరువుము (_T)"
+
+#: ../src/main-win.c:1822
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -928,124 +1208,154 @@ msgstr ""
 "'%s'\n"
 "కొత్త ఇష్టాంశమునకు ఒక పేరును ప్రవేశపెట్టండి:"
 
-#: ../src/main-win.c:1274
+#: ../src/main-win.c:1826
 msgid "Add to Bookmarks"
 msgstr "ఇష్టాంశములకు జతచేయి"
 
+#: ../src/main-win.c:2552
+msgid "Select filter"
+msgstr ""
+
+#: ../src/main-win.c:2553
+msgid "Choose a new shell pattern to show files:"
+msgstr ""
+
 #. options only acceptable by first pcmanfm instance. These options are not passed through IPC
-#: ../src/pcmanfm.c:76
+#: ../src/pcmanfm.c:78
 msgid "Name of configuration profile"
 msgstr "కాన్ఫిగరేషన్ ప్రొఫైల్ యొక్క పేరు"
 
-#: ../src/pcmanfm.c:76
+#: ../src/pcmanfm.c:78
 msgid "PROFILE"
 msgstr ""
 
-#: ../src/pcmanfm.c:77
+#: ../src/pcmanfm.c:79
 msgid "Run PCManFM as a daemon"
 msgstr "PCManFM ను డెమోన్ వలె నడుపు"
 
-#: ../src/pcmanfm.c:78
+#: ../src/pcmanfm.c:80
 msgid "No function. Just to be compatible with nautilus"
 msgstr "ఏ ప్రమేయంలేదు. కేవలం నాటిలస్‌తో అనుకూలము"
 
 #. options that are acceptable for every instance of pcmanfm and will be passed through IPC.
-#: ../src/pcmanfm.c:81
+#: ../src/pcmanfm.c:83
 msgid "Launch desktop manager"
 msgstr "డెస్క్‍టాప్ నిర్వాహకాన్ని ప్రారంభించు"
 
-#: ../src/pcmanfm.c:82
+#: ../src/pcmanfm.c:84
 msgid "Turn off desktop manager if it's running"
 msgstr "ఒకవేళ డెస్క్‍టాప్ నిర్వాహకం ఇంకా నడుస్తూవుంటే దానిని ఆపుము"
 
-#: ../src/pcmanfm.c:83
+#: ../src/pcmanfm.c:85
 msgid "Open desktop preference dialog"
 msgstr "డెస్క్‍టాప్ ప్రాధాన్య డైలాగును తెరువు"
 
-#: ../src/pcmanfm.c:84
+#: ../src/pcmanfm.c:86
 msgid "Use --desktop option only for one screen"
 msgstr ""
 
-#: ../src/pcmanfm.c:85
+#: ../src/pcmanfm.c:87
 #, fuzzy
 msgid "Set desktop wallpaper from image FILE"
 msgstr "డెస్క్‍టాప్ నేపథ్యచిత్రాన్ని అమర్చు"
 
-#: ../src/pcmanfm.c:85
+#: ../src/pcmanfm.c:87
 msgid "FILE"
 msgstr ""
 
 #. don't translate list of modes in description, please
-#: ../src/pcmanfm.c:87
+#: ../src/pcmanfm.c:89
 #, fuzzy
-msgid "Set mode of desktop wallpaper. MODE=(color|stretch|fit|center|tile)"
+msgid ""
+"Set mode of desktop wallpaper. MODE=(color|stretch|fit|crop|center|tile|"
+"screen)"
 msgstr "డెస్క్‍టాప్ నేపథ్యచిత్ర విధమును అమర్చు. <విధము>=(రంగు|సాగదీయి|సరిగ్గాఅమర్చు|మధ్యస్థం|పలక)"
 
-#: ../src/pcmanfm.c:87
+#: ../src/pcmanfm.c:89
 msgid "MODE"
 msgstr ""
 
-#: ../src/pcmanfm.c:88
+#: ../src/pcmanfm.c:90
 #, fuzzy
 msgid "Open Preferences dialog on the page N"
 msgstr "డెస్క్‍టాప్ ప్రాధాన్య డైలాగును తెరువు"
 
-#: ../src/pcmanfm.c:88
+#: ../src/pcmanfm.c:90
 msgid "N"
 msgstr ""
 
-#: ../src/pcmanfm.c:89
+#: ../src/pcmanfm.c:91
 #, fuzzy
 msgid "Open new window"
 msgstr "కొత్త విండోలో తెరువుము"
 
-#. { "find-files", 'f', 0, G_OPTION_ARG_NONE, &find_files, N_("Open Find Files utility"), NULL },
-#: ../src/pcmanfm.c:91
+#: ../src/pcmanfm.c:93
+#, fuzzy
+msgid "Open a Find Files window"
+msgstr "కొత్త విండోలో తెరువుము"
+
+#: ../src/pcmanfm.c:95
 msgid "Window role for usage by window manager"
 msgstr ""
 
-#: ../src/pcmanfm.c:91
+#: ../src/pcmanfm.c:95
 msgid "ROLE"
 msgstr ""
 
-#: ../src/pcmanfm.c:92
+#: ../src/pcmanfm.c:96
 msgid "[FILE1, FILE2,...]"
 msgstr "[FILE1, FILE2,...]"
 
-#: ../src/pcmanfm.c:536
+#: ../src/pcmanfm.c:585
 msgid "Terminal emulator is not set."
 msgstr "టెర్మినల్ ఎమ్యులేటర్ అమర్చబడలేదు."
 
-#: ../src/tab-page.c:55
+#: ../src/tab-page.c:56
 #, fuzzy
 msgid "Open in New T_ab"
 msgstr "కొత్త ట్యాబ్‌లో తెరువుము"
 
-#: ../src/tab-page.c:254
+#: ../src/tab-page.c:395
 #, c-format
 msgid "%d item selected"
 msgid_plural "%d items selected"
 msgstr[0] "%d అంశము ఎంచుకోబడింది"
 msgstr[1] "%d అంశాలు ఎంచుకోబడ్డాయి"
 
-#: ../src/tab-page.c:442
+#: ../src/tab-page.c:718
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "ఖాళీ స్థలము: %s (మొత్తం: %s)"
 
-#: ../src/tab-page.c:462
+#: ../src/tab-page.c:738
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] "%d అంశము"
 msgstr[1] "%d అంశాలు"
 
-#: ../src/tab-page.c:463
+#: ../src/tab-page.c:739
 #, c-format
 msgid " (%d hidden)"
 msgid_plural " (%d hidden)"
 msgstr[0] "(%d దాచబడింది)"
 msgstr[1] "(%d దాచబడినవి)"
+
+#: ../src/pref.c:514
+msgid "Add to Modules Blacklist"
+msgstr ""
+
+#: ../src/pref.c:515
+msgid "Enter a blacklisted module mask:"
+msgstr ""
+
+#: ../src/pref.c:606
+msgid "Add to Modules Whitelist"
+msgstr ""
+
+#: ../src/pref.c:607
+msgid "Enter a whitelisted module mask:"
+msgstr ""
 
 #: ../data/pcmanfm.desktop.in.h:1
 msgid "File Manager PCManFM"
@@ -1062,6 +1372,19 @@ msgstr "ఫైల్ వ్యవస్థను అన్వేషించు 
 #: ../data/pcmanfm-desktop-pref.desktop.in.h:2
 msgid "Change desktop wallpapers and behavior of desktop manager"
 msgstr "డెస్క్‍టాప్ నేపథ్యచిత్రము, డెస్క్‍టాప్ నిర్వాహకము యొక్క ప్రవర్తనను మార్చు"
+
+#~ msgid "Center on the screen"
+#~ msgstr "తెరకు మధ్యలో"
+
+#~ msgid "Opened in New Tab"
+#~ msgstr "కొత్త ట్యాబ్‌లో తెరువు"
+
+#, fuzzy
+#~ msgid "Create Symlin_k"
+#~ msgstr "Symlink సృష్టించు"
+
+#~ msgid "Switch user command is not set."
+#~ msgstr "వాడుకరి మార్పు ఆదేశము అమర్చబడలేదు."
 
 #, fuzzy
 #~ msgid "Show \"_My Computer\" icon on desktop"
@@ -1116,9 +1439,6 @@ msgstr "డెస్క్‍టాప్ నేపథ్యచిత్రమ�
 #~ msgid "Next Folder"
 #~ msgstr "తరువాయి సంచయం"
 
-#~ msgid "Desktop Folder"
-#~ msgstr "డెస్క్‍టాప్ సంచయం"
-
 #, fuzzy
 #~ msgid "_My Computer"
 #~ msgstr "నా కంప్యూటర్"
@@ -1132,9 +1452,6 @@ msgstr "డెస్క్‍టాప్ నేపథ్యచిత్రమ�
 
 #~ msgid "Blank File"
 #~ msgstr "శూన్య ఫైల్"
-
-#~ msgid "Create _New..."
-#~ msgstr "కొత్తది సృష్టించు...(_N)"
 
 #~ msgid "Shortcut"
 #~ msgstr "అడ్డదారి"
