@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PCManFM\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-01-09 09:41+0100\n"
-"PO-Revision-Date: 2014-01-09 16:18+0000\n"
+"PO-Revision-Date: 2014-01-10 08:35+0000\n"
 "Last-Translator: Martin <brother@bsnet.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1389284334.0\n"
+"X-POOTLE-MTIME: 1389342921.0\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2014"
@@ -116,17 +116,17 @@ msgstr "Vi_sa menyer från fönsterhanteraren när skrivbordet klickas"
 
 #: ../data/ui/desktop-pref.glade.h:20
 msgid "_Use desktop as a folder (show icons on it) by path:"
-msgstr ""
+msgstr "_Använd följande sökväg som skrivbord (plats att visa ikonerna från):"
 
 #: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:84
 msgctxt "Use path for some folder: ..."
 msgid "Default"
-msgstr ""
+msgstr "Standard"
 
 #: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:85
 msgctxt "Use path for some folder: ..."
 msgid "Custom:"
-msgstr ""
+msgstr "Anpassad:"
 
 #: ../data/ui/desktop-pref.glade.h:23
 msgid "Select a Desktop Folder"
@@ -154,7 +154,7 @@ msgstr "Sträck för att passa skärmen"
 
 #: ../data/ui/desktop-pref.glade.h:29
 msgid "Center unscaled image on the monitor"
-msgstr ""
+msgstr "Centrera en bild utan anpassning till skärmen"
 
 #: ../data/ui/desktop-pref.glade.h:30
 msgid "Tile the image to fill the entire monitor area"
@@ -231,6 +231,7 @@ msgstr "Standardå_tgärd för släpp:"
 #: ../data/ui/pref.glade.h:15
 msgid "\"_Smart shortcut\" auto-action on drop to Desktop folder"
 msgstr ""
+"_Automatiskt åtgärd vid drag-och-släpp på skrivbordet för \"smart genväg\""
 
 #: ../data/ui/pref.glade.h:16
 msgid ""
@@ -240,6 +241,12 @@ msgid ""
 "- other files (e.g. on removable media) will be copied\n"
 "- for some external URI a shortcut will be created"
 msgstr ""
+"Om detta aktiveras kommer den automatiska åtgärden vid drag-och-släpp på "
+"skrivbordet att vara:\n"
+"- filer i hemkatalogen skapar en symbolisk länk\n"
+"- filer på samma filsystem kommer att flyttas\n"
+"- andra filer (exempelvis från flyttbart media) kommer att kopieras\n"
+"- externa URI:er kommer att skapa en genväg"
 
 #: ../data/ui/pref.glade.h:21
 msgid "_Unfold tab when files are dragged onto tab button"
@@ -247,7 +254,7 @@ msgstr "Vik _ut flik när filer dras till flikknappen"
 
 #: ../data/ui/pref.glade.h:22
 msgid "_Focus previous folder after coming to its parent"
-msgstr ""
+msgstr "Sätt _fokus på föregående katalog vid travesring uppåt i hierakin"
 
 #: ../data/ui/pref.glade.h:23
 msgid "<b>Default View</b>"
@@ -408,18 +415,16 @@ msgid "_Open mounted removable media in new tab instead of new window"
 msgstr "_Öppna monterad flyttbart media i ny flik istället för i nytt fönster"
 
 #: ../data/ui/pref.glade.h:63
-#, fuzzy
 msgid "When removable medium unmounted:"
-msgstr "Flyttbart media anslutet"
+msgstr "När flyttbart media avmonteras:"
 
 #: ../data/ui/pref.glade.h:64
-#, fuzzy
 msgid "Clos_e tab containing removable medium"
-msgstr "Stäng flik för flyttbart m_edia när det avmonteras"
+msgstr "St_äng flik med flyttbart media"
 
 #: ../data/ui/pref.glade.h:65
 msgid "Change folder in the tab to _Home Folder"
-msgstr ""
+msgstr "Byt katalog till _Hemkatalogen"
 
 #: ../data/ui/pref.glade.h:66
 msgid "_Volume Management"
@@ -471,7 +476,6 @@ msgid "<b>Other Options</b>"
 msgstr "<b>Andra alternativ</b>"
 
 #: ../data/ui/pref.glade.h:79
-#, fuzzy
 msgid "Use Application Startup Notify _by default"
 msgstr "_Använd notifiering vid programstart som standard"
 
@@ -492,11 +496,11 @@ msgstr "S_enarelägg test av innehållstyp vid inläsning av katalog"
 
 #: ../data/ui/pref.glade.h:83
 msgid "Use path for \"Home Folder\" button:"
-msgstr ""
+msgstr "Använd följande sökväg för knappen för \"Hemkatalog\":"
 
 #: ../data/ui/pref.glade.h:86
 msgid "_Use current"
-msgstr ""
+msgstr "Använd _nuvarande"
 
 #: ../data/ui/pref.glade.h:87
 msgid "_Advanced"
@@ -504,15 +508,15 @@ msgstr "A_vancerat"
 
 #: ../data/ui/pref.glade.h:88
 msgid "<b>_Do not load modules matching:</b>"
-msgstr ""
+msgstr "<b>Läs inte in _moduler motsvarande:</b>"
 
 #: ../data/ui/pref.glade.h:89
 msgid "<b>_Load these modules anyway:</b>"
-msgstr ""
+msgstr "<b>Läs in _följande moduler ändå:</b>"
 
 #: ../data/ui/pref.glade.h:90
 msgid "Modules"
-msgstr ""
+msgstr "Moduler"
 
 #: ../data/ui/pref.glade.h:91
 msgid "Auto (move if on the same FS, copy otherwise)"
@@ -531,24 +535,20 @@ msgid "Ask"
 msgstr "Fråga"
 
 #: ../data/ui/pref.glade.h:95
-#, fuzzy
 msgid "Icon view"
 msgstr "Ikonvy"
 
 #: ../data/ui/pref.glade.h:96
-#, fuzzy
 msgid "Compact view"
 msgstr "Kompakt vy"
 
 #: ../data/ui/pref.glade.h:97
-#, fuzzy
 msgid "Thumbnail view"
 msgstr "Tumnagelvy"
 
 #: ../data/ui/pref.glade.h:98
-#, fuzzy
 msgid "Detailed list view"
-msgstr "Detaljerad vy"
+msgstr "Detaljerad listvy"
 
 #: ../data/ui/autorun.glade.h:1
 msgid "Removable medium is inserted"
@@ -572,60 +572,59 @@ msgstr "Ange åtgärd som du vill utföra:"
 
 #: ../data/ui/autorun.glade.h:6
 msgid "_Always perform this action on this media type"
-msgstr ""
+msgstr "_Utför alltid denna åtgärd för den här mediatypen"
 
 #: ../data/ui/connect.glade.h:1
 msgid "Connect to remote server"
-msgstr ""
+msgstr "Anslut till fjärrserver"
 
 #: ../data/ui/connect.glade.h:2
 msgid "<b>Specify remote folder to connect</b>"
-msgstr ""
+msgstr "<b>Ange fjärrkatalog att ansluta till</b>"
 
 #: ../data/ui/connect.glade.h:3
 msgid "_Type:"
-msgstr ""
+msgstr "_Typ:"
 
 #: ../data/ui/connect.glade.h:4
 msgid "_Host:"
-msgstr ""
+msgstr "_Värd:"
 
 #: ../data/ui/connect.glade.h:5
 msgid "_Port:"
-msgstr ""
+msgstr "_Port:"
 
 #: ../data/ui/connect.glade.h:6
 msgid "Pa_th:"
-msgstr ""
+msgstr "Sö_kväg:"
 
 #: ../data/ui/connect.glade.h:7
 msgid "_Anonymous login"
-msgstr ""
+msgstr "_Anonym inloggning"
 
 #: ../data/ui/connect.glade.h:8
 msgid "_Login as:"
-msgstr ""
+msgstr "_Logga in som:"
 
 #: ../data/ui/connect.glade.h:9
 msgid "SSH"
-msgstr ""
+msgstr "SSH"
 
 #: ../data/ui/connect.glade.h:10
 msgid "FTP"
-msgstr ""
+msgstr "FTP"
 
 #: ../data/ui/connect.glade.h:11
 msgid "WebDAV"
-msgstr ""
+msgstr "WebDAV"
 
 #: ../src/volume-manager.c:237
 msgid "mixed content"
-msgstr ""
+msgstr "blandat innehåll"
 
 #: ../src/volume-manager.c:246
-#, fuzzy
 msgid "removable disk"
-msgstr "Flyttbar enhet"
+msgstr "flyttbar enhet"
 
 #: ../src/volume-manager.c:302
 msgid "Open in File Manager"
@@ -645,7 +644,7 @@ msgstr "Öppna i _terminal"
 
 #: ../src/desktop-ui.c:68
 msgid "_Remove from Desktop"
-msgstr ""
+msgstr "_Radera från skrivbordet"
 
 #: ../src/desktop-ui.c:85
 msgid "Stic_k to Current Position"
@@ -701,9 +700,8 @@ msgid "Empty File"
 msgstr "Tom fil"
 
 #: ../src/main-win-ui.c:193
-#, fuzzy
 msgid "Folder Propertie_s"
-msgstr "Filegenskaper"
+msgstr "_Katalogegenskaper"
 
 #: ../src/main-win-ui.c:194
 msgid "_Close Tab"
@@ -719,27 +717,25 @@ msgstr "_Redigera"
 
 #: ../src/main-win-ui.c:198
 msgid "C_ut"
-msgstr ""
+msgstr "Klipp _ut"
 
 #: ../src/main-win-ui.c:201
 msgid "Move to _Trash"
-msgstr ""
+msgstr "Flytta till _papperskorgen"
 
 #: ../src/main-win-ui.c:203
 msgid "Copy Pat_h(s)"
-msgstr ""
+msgstr "Kopiera _sökväg(ar)"
 
 #: ../src/main-win-ui.c:204
-#, fuzzy
 msgid "R_ename..."
-msgstr "Byt namn"
+msgstr "_Byt namn..."
 
 #: ../src/main-win-ui.c:205
 msgid "D_uplicate..."
-msgstr ""
+msgstr "D_uplicera..."
 
 #: ../src/main-win-ui.c:206
-#, fuzzy
 msgid "Create Lin_k..."
 msgstr "Skapa län_k..."
 
@@ -781,7 +777,7 @@ msgstr "_Verktygsrad"
 
 #: ../src/main-win-ui.c:216
 msgid "Pat_h Bar"
-msgstr ""
+msgstr "Verktygsfält för sökväg"
 
 #: ../src/main-win-ui.c:217
 msgid "Side _Pane"
@@ -789,9 +785,8 @@ msgstr "Sido_panel"
 
 #. other see below: 'ShowHidden' 'ShowStatus' 'Fullscreen' 'IconView'...
 #: ../src/main-win-ui.c:219
-#, fuzzy
 msgid "Fo_lder View Mode"
-msgstr "V_ytyp:"
+msgstr "Vytyp för katalog"
 
 #: ../src/main-win-ui.c:220
 msgid "S_ort Files"
@@ -803,7 +798,7 @@ msgstr "Zooma _ut"
 
 #: ../src/main-win-ui.c:225
 msgid "Fil_ter..."
-msgstr ""
+msgstr "Fil_ter..."
 
 #: ../src/main-win-ui.c:227
 msgid "_Help"
@@ -892,15 +887,15 @@ msgstr "Gå till listan för platser på nätverket"
 
 #: ../src/main-win-ui.c:241
 msgid "_Go to Location..."
-msgstr ""
+msgstr "_Gå till sökväg..."
 
 #: ../src/main-win-ui.c:242
 msgid "_Connect to Server..."
-msgstr ""
+msgstr "An_slut till server..."
 
 #: ../src/main-win-ui.c:242
 msgid "Open a window to choose remote folder location"
-msgstr ""
+msgstr "Öppna ett fönster för att välja fjärrplats"
 
 #: ../src/main-win-ui.c:243
 msgid "Go to the path in the location bar"
@@ -911,9 +906,8 @@ msgid "_Bookmarks"
 msgstr "_Bokmärken"
 
 #: ../src/main-win-ui.c:245
-#, fuzzy
 msgid "_Add to Bookmarks..."
-msgstr "_Lägg till i bokmärken"
+msgstr "_Lägg till i bokmärken..."
 
 #: ../src/main-win-ui.c:245
 msgid "Add current folder to bookmarks list"
@@ -921,7 +915,7 @@ msgstr "Lägg till aktuell mapp till bokmärkeslistan"
 
 #: ../src/main-win-ui.c:246
 msgid "Too_ls"
-msgstr ""
+msgstr "_Verktyg"
 
 #: ../src/main-win-ui.c:247
 msgid "Open Current Folder in _Terminal"
@@ -936,9 +930,8 @@ msgid "Open search dialog"
 msgstr "Öppna sökdialog"
 
 #: ../src/main-win-ui.c:252
-#, fuzzy
 msgid "_Run a Command in Current Folder..."
-msgstr "Läs om aktuell mapp"
+msgstr "_Kör kommando i aktuell katalog..."
 
 #. Note to translators: "Mingle..." means "Do not put folders before files" but make the translation as short as possible, please!
 #: ../src/main-win-ui.c:267
@@ -964,19 +957,16 @@ msgid ""
 msgstr "Kryssa i för att spara visning och sortering för katalogen"
 
 #: ../src/main-win-ui.c:277
-#, fuzzy
 msgid "_Show Toolbar"
 msgstr "Visa verk_tygsrad"
 
 #: ../src/main-win-ui.c:278
-#, fuzzy
 msgid "Show 'New _Window' Button"
-msgstr "Visa knapp för n_y flik"
+msgstr "Visa knapp för \"nytt _fönster\""
 
 #: ../src/main-win-ui.c:279
-#, fuzzy
 msgid "Show 'New _Tab' Button"
-msgstr "Visa knapp för n_y flik"
+msgstr "Visa knapp för \"n_y flik\""
 
 #: ../src/main-win-ui.c:280
 msgid "Show _Navigation Buttons"
@@ -1040,7 +1030,7 @@ msgstr "Efter _filtyp"
 
 #: ../src/main-win-ui.c:312
 msgid "By _Extension"
-msgstr ""
+msgstr "_Efter filändelse"
 
 #: ../src/main-win-ui.c:325
 msgid "Places"
@@ -1055,13 +1045,12 @@ msgid "Remote"
 msgstr "Fjärr"
 
 #: ../src/main-win-ui.c:333
-#, fuzzy
 msgid "_Location"
-msgstr "<b>Plats:</b>"
+msgstr "_Plats"
 
 #: ../src/main-win-ui.c:334
 msgid "_Buttons"
-msgstr ""
+msgstr "_Knappar"
 
 #: ../src/main-win.c:925 ../src/main-win.c:929
 msgid "Show history of visited folders"
@@ -1113,18 +1102,16 @@ msgstr ""
 "Ctrl+L eller Alt+D: Sätt fokus på adressfältet"
 
 #: ../src/main-win.c:1210
-#, fuzzy
 msgid "Run a command"
-msgstr "Kommando för _formatering:"
+msgstr "Kör ett kommando"
 
 #: ../src/main-win.c:1211
 msgid "Enter a command to run:"
-msgstr ""
+msgstr "Ange ett kommando att köra:"
 
 #: ../src/main-win.c:1218
-#, fuzzy
 msgid "Current folder is inaccessible"
-msgstr "Öppna aktuell mapp i _terminal"
+msgstr "Aktuell katalog kan inte kommas åt"
 
 #: ../src/main-win.c:1822
 #, c-format
@@ -1143,11 +1130,11 @@ msgstr "Lägg till i bokmärken"
 
 #: ../src/main-win.c:2552
 msgid "Select filter"
-msgstr ""
+msgstr "Välj filter"
 
 #: ../src/main-win.c:2553
 msgid "Choose a new shell pattern to show files:"
-msgstr ""
+msgstr "Ange nytt skalmönster för att visa filer:"
 
 #. options only acceptable by first pcmanfm instance. These options are not passed through IPC
 #: ../src/pcmanfm.c:78
@@ -1194,13 +1181,12 @@ msgstr "FIL"
 # kreativ förklaring av vad varje grejj gör? (color|stretch|fit|center|tile)
 #. don't translate list of modes in description, please
 #: ../src/pcmanfm.c:89
-#, fuzzy
 msgid ""
 "Set mode of desktop wallpaper. MODE=(color|stretch|fit|crop|center|tile|"
 "screen)"
 msgstr ""
-"Ange visningsläge för skrivbordsbakgrund. LÄGE = (color|stretch|fit|center|"
-"tile)"
+"Ange visningsläge för skrivbordsbakgrund. "
+"LÄGE=(color|stretch|fit|center|tile|screen)"
 
 #: ../src/pcmanfm.c:89
 msgid "MODE"
@@ -1219,9 +1205,8 @@ msgid "Open new window"
 msgstr "Öppna nytt fönster"
 
 #: ../src/pcmanfm.c:93
-#, fuzzy
 msgid "Open a Find Files window"
-msgstr "Öppna verktyg för filsök"
+msgstr "Öppnar fönster för filsökning"
 
 #: ../src/pcmanfm.c:95
 msgid "Window role for usage by window manager"
@@ -1271,19 +1256,19 @@ msgstr[1] " (%d dolda)"
 
 #: ../src/pref.c:514
 msgid "Add to Modules Blacklist"
-msgstr ""
+msgstr "Lägg till modul i spärrlista"
 
 #: ../src/pref.c:515
 msgid "Enter a blacklisted module mask:"
-msgstr ""
+msgstr "Ange mönster för modul i spärrlista:"
 
 #: ../src/pref.c:606
 msgid "Add to Modules Whitelist"
-msgstr ""
+msgstr "Lägg till modul i undantag"
 
 #: ../src/pref.c:607
 msgid "Enter a whitelisted module mask:"
-msgstr ""
+msgstr "Ange mönster för modul i undantag:"
 
 #: ../data/pcmanfm.desktop.in.h:1
 msgid "File Manager PCManFM"
