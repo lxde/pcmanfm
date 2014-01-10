@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm 1.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-01-09 09:41+0100\n"
-"PO-Revision-Date: 2013-12-22 07:53+0000\n"
+"PO-Revision-Date: 2014-01-10 09:40+0000\n"
 "Last-Translator: Wylmer <wantinghard@gmail.com>\n"
 "Language-Team: Chinese (simplified) <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
@@ -16,12 +16,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1387698799.0\n"
+"X-POOTLE-MTIME: 1389346821.0\n"
 
 #: ../data/ui/about.glade.in.h:1
-#, fuzzy
 msgid "Copyright (C) 2009 - 2014"
-msgstr "版权所有 (C) 2009 - 2013"
+msgstr "版权所有 (C) 2009 - 2014"
 
 #. Please replace this line with your own names, one name per line.
 #: ../data/ui/about.glade.in.h:3
@@ -107,22 +106,21 @@ msgstr "在点击桌面时显示窗口管理器提供的菜单(_S)"
 
 #: ../data/ui/desktop-pref.glade.h:20
 msgid "_Use desktop as a folder (show icons on it) by path:"
-msgstr ""
+msgstr "将此路径对应的文件夹作为桌面(在其中显示图标)(_U)："
 
 #: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:84
 msgctxt "Use path for some folder: ..."
 msgid "Default"
-msgstr ""
+msgstr "默认"
 
 #: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:85
 msgctxt "Use path for some folder: ..."
 msgid "Custom:"
-msgstr ""
+msgstr "自定义："
 
 #: ../data/ui/desktop-pref.glade.h:23
-#, fuzzy
 msgid "Select a Desktop Folder"
-msgstr "桌面文件夹"
+msgstr "选择桌面文件夹"
 
 #: ../data/ui/desktop-pref.glade.h:24
 msgid "_Open folders from desktop in new window"
@@ -137,48 +135,40 @@ msgid "Fill with background color only"
 msgstr "只用背景色填充"
 
 #: ../data/ui/desktop-pref.glade.h:27
-#, fuzzy
 msgid "Stretch to fill the entire monitor area"
-msgstr "伸展以充满整个屏幕"
+msgstr "伸展以充满整个显示区域"
 
 #: ../data/ui/desktop-pref.glade.h:28
-#, fuzzy
 msgid "Stretch to fit the monitor area"
-msgstr "伸展以适合屏幕"
+msgstr "伸展以适合显示区域"
 
 #: ../data/ui/desktop-pref.glade.h:29
 msgid "Center unscaled image on the monitor"
-msgstr ""
+msgstr "居中显示不缩放的图像"
 
 #: ../data/ui/desktop-pref.glade.h:30
-#, fuzzy
 msgid "Tile the image to fill the entire monitor area"
-msgstr "平铺图像以充满整个屏幕"
+msgstr "平铺图像以充满整个显示区域"
 
 #: ../data/ui/desktop-pref.glade.h:31
-#, fuzzy
 msgid "Stretch and crop to fill the monitor area"
-msgstr "伸展以充满整个屏幕"
+msgstr "伸展并裁剪以充满整个显示区域"
 
 #: ../data/ui/desktop-pref.glade.h:32
-#, fuzzy
 msgid "Stretch to fill the complete screen"
 msgstr "伸展以充满整个屏幕"
 
 #: ../data/ui/pref.glade.h:1
-#, fuzzy
 msgid "Open in current tab"
-msgstr "在当前标签中打开文件"
+msgstr "在当前标签中打开"
 
 #: ../data/ui/pref.glade.h:2
-#, fuzzy
 msgid "Open in new tab"
-msgstr "在新标签中打开(_B)"
+msgstr "在新标签中打开"
 
 #: ../data/ui/pref.glade.h:3
-#, fuzzy
 msgid "Open in new window"
-msgstr "打开新窗口"
+msgstr "在新窗口中打开"
 
 #: ../data/ui/pref.glade.h:4
 msgid "Preferences"
@@ -229,7 +219,6 @@ msgid "\"_Smart shortcut\" auto-action on drop to Desktop folder"
 msgstr "“智能快捷方式”-在拖放到 桌面 文件夹时自动执行操作"
 
 #: ../data/ui/pref.glade.h:16
-#, fuzzy
 msgid ""
 "If enabled then \"Auto\" action on drop file onto Desktop folder will be:\n"
 "- for files directly in Home folder a symlink will be created\n"
@@ -238,9 +227,10 @@ msgid ""
 "- for some external URI a shortcut will be created"
 msgstr ""
 "如果启用，在将文件拖放到 桌面 文件夹时会“自动”：\n"
-"- 对于本机磁盘上的文件，会创建一个符号链接\n"
-"- 对于可移动媒体上的文件，会执行复制\n"
-"- 对于外部 URI，会创建一个快捷方式"
+"- 对于就在 桌面 文件夹中的文风，会创建一个符号链接\n"
+"- 对于同一文件系统中的文件，会将其移除\n"
+"- 其他文件(如可移动媒体上的文件)，会执行复制\n"
+"- 对于一些外部 URI，会创建一个快捷方式"
 
 #: ../data/ui/pref.glade.h:21
 msgid "_Unfold tab when files are dragged onto tab button"
@@ -252,7 +242,7 @@ msgstr ""
 
 #: ../data/ui/pref.glade.h:22
 msgid "_Focus previous folder after coming to its parent"
-msgstr ""
+msgstr "转到上一级后，选中该文件夹(_F)"
 
 #: ../data/ui/pref.glade.h:23
 msgid "<b>Default View</b>"
@@ -315,9 +305,8 @@ msgid "Al_ways show full file names"
 msgstr "总是显示完整文件名(_W)"
 
 #: ../data/ui/pref.glade.h:38
-#, fuzzy
 msgid "Show icons of hidden _files shadowed"
-msgstr "显示隐藏的备份文件的图标(_K)"
+msgstr "显示已屏蔽(shadowed)隐藏文件的图标(_F)"
 
 #: ../data/ui/pref.glade.h:39
 msgid "_Display"
@@ -401,32 +390,28 @@ msgid "_Show available options for removable media when they are inserted"
 msgstr "在插入可移动媒质时显示可用操作(_S)"
 
 #: ../data/ui/pref.glade.h:60
-#, fuzzy
 msgid "Do_n't show available options for those media types:"
-msgstr "在插入可移动媒质时显示可用操作(_S)"
+msgstr "在插入以下类型的媒质时不显示可用操作(_N)："
 
 #: ../data/ui/pref.glade.h:61
-#, fuzzy
 msgid "_Remove selected"
-msgstr "选择了 %d 项"
+msgstr "删除选中项(_R)"
 
 #: ../data/ui/pref.glade.h:62
 msgid "_Open mounted removable media in new tab instead of new window"
 msgstr "在新标签页中打开挂载的可移动媒质，而非打开新窗口(_O)"
 
 #: ../data/ui/pref.glade.h:63
-#, fuzzy
 msgid "When removable medium unmounted:"
-msgstr "插入了可移动媒质"
+msgstr "当卸载可移动媒质时："
 
 #: ../data/ui/pref.glade.h:64
-#, fuzzy
 msgid "Clos_e tab containing removable medium"
-msgstr "在卸载可移动媒质时关闭相应的标签页(_E)"
+msgstr "关闭包含可移动媒质的标签页(_E)"
 
 #: ../data/ui/pref.glade.h:65
 msgid "Change folder in the tab to _Home Folder"
-msgstr ""
+msgstr "将标签页文件夹切换到主目录(_H)"
 
 #: ../data/ui/pref.glade.h:66
 msgid "_Volume Management"
@@ -478,9 +463,8 @@ msgid "<b>Other Options</b>"
 msgstr "<b>其他选项</b>"
 
 #: ../data/ui/pref.glade.h:79
-#, fuzzy
 msgid "Use Application Startup Notify _by default"
-msgstr "默认使用“应用程序启动通知”(_U)"
+msgstr "默认使用应用程序启动通知(_B)"
 
 #: ../data/ui/pref.glade.h:80
 msgid ""
@@ -497,11 +481,11 @@ msgstr "推迟文件夹载入时的内容类型检测(_E)"
 
 #: ../data/ui/pref.glade.h:83
 msgid "Use path for \"Home Folder\" button:"
-msgstr ""
+msgstr "“主目录”按钮使用该路径："
 
 #: ../data/ui/pref.glade.h:86
 msgid "_Use current"
-msgstr ""
+msgstr "使用当前(_U)"
 
 #: ../data/ui/pref.glade.h:87
 msgid "_Advanced"
@@ -509,15 +493,15 @@ msgstr "高级(_A)"
 
 #: ../data/ui/pref.glade.h:88
 msgid "<b>_Do not load modules matching:</b>"
-msgstr ""
+msgstr "<b>不加载匹配以下模式的模块：</b>"
 
 #: ../data/ui/pref.glade.h:89
 msgid "<b>_Load these modules anyway:</b>"
-msgstr ""
+msgstr "<b>强制加载这些模块：</b>"
 
 #: ../data/ui/pref.glade.h:90
 msgid "Modules"
-msgstr ""
+msgstr "模块"
 
 #: ../data/ui/pref.glade.h:91
 msgid "Auto (move if on the same FS, copy otherwise)"
@@ -536,22 +520,18 @@ msgid "Ask"
 msgstr "询问"
 
 #: ../data/ui/pref.glade.h:95
-#, fuzzy
 msgid "Icon view"
 msgstr "图标视图"
 
 #: ../data/ui/pref.glade.h:96
-#, fuzzy
 msgid "Compact view"
 msgstr "紧凑视图"
 
 #: ../data/ui/pref.glade.h:97
-#, fuzzy
 msgid "Thumbnail view"
 msgstr "缩略视图"
 
 #: ../data/ui/pref.glade.h:98
-#, fuzzy
 msgid "Detailed list view"
 msgstr "详细列表视图"
 
@@ -577,7 +557,7 @@ msgstr "请您选择想执行的操作："
 
 #: ../data/ui/autorun.glade.h:6
 msgid "_Always perform this action on this media type"
-msgstr ""
+msgstr "总是对此类媒质执行此操作(_A)"
 
 #: ../data/ui/connect.glade.h:1
 msgid "Connect to remote server"
@@ -625,10 +605,9 @@ msgstr "WebDAV"
 
 #: ../src/volume-manager.c:237
 msgid "mixed content"
-msgstr ""
+msgstr "混合内容"
 
 #: ../src/volume-manager.c:246
-#, fuzzy
 msgid "removable disk"
 msgstr "可移动磁盘"
 
@@ -707,7 +686,7 @@ msgstr "空文件"
 
 #: ../src/main-win-ui.c:193
 msgid "Folder Propertie_s"
-msgstr ""
+msgstr "文件夹属性(_S)"
 
 #: ../src/main-win-ui.c:194
 msgid "_Close Tab"
@@ -723,43 +702,39 @@ msgstr "编辑(_E)"
 
 #: ../src/main-win-ui.c:198
 msgid "C_ut"
-msgstr ""
+msgstr "剪切(_U)"
 
 #: ../src/main-win-ui.c:201
 msgid "Move to _Trash"
-msgstr ""
+msgstr "移到回收站(_T)"
 
 #: ../src/main-win-ui.c:203
 msgid "Copy Pat_h(s)"
-msgstr ""
+msgstr "复制路径(_H)"
 
 #: ../src/main-win-ui.c:204
-#, fuzzy
 msgid "R_ename..."
-msgstr "重命名(_R)"
+msgstr "重命名(_E)..."
 
 #: ../src/main-win-ui.c:205
 msgid "D_uplicate..."
-msgstr ""
+msgstr "就地复制(_U)..."
 
 #: ../src/main-win-ui.c:206
-#, fuzzy
 msgid "Create Lin_k..."
-msgstr "新建(_N)..."
+msgstr "创建链接(_K)..."
 
 #: ../src/main-win-ui.c:207
-#, fuzzy
 msgid "_Move to..."
 msgstr "移动到(_M)..."
 
 #: ../src/main-win-ui.c:208
-#, fuzzy
 msgid "Copy to_..."
 msgstr "复制到(_O)..."
 
 #: ../src/main-win-ui.c:209
 msgid "Propertie_s"
-msgstr ""
+msgstr "属性(_S)"
 
 #: ../src/main-win-ui.c:211
 msgid "_Invert Selection"
@@ -787,7 +762,7 @@ msgstr "工具栏(_B)"
 
 #: ../src/main-win-ui.c:216
 msgid "Pat_h Bar"
-msgstr ""
+msgstr "路径栏(_H)"
 
 #: ../src/main-win-ui.c:217
 msgid "Side _Pane"
@@ -795,9 +770,8 @@ msgstr "侧窗格(_P)"
 
 #. other see below: 'ShowHidden' 'ShowStatus' 'Fullscreen' 'IconView'...
 #: ../src/main-win-ui.c:219
-#, fuzzy
 msgid "Fo_lder View Mode"
-msgstr "查看方式(_W)："
+msgstr "文件夹查看方式(_L)"
 
 #: ../src/main-win-ui.c:220
 msgid "S_ort Files"
@@ -809,7 +783,7 @@ msgstr "缩小(_U)"
 
 #: ../src/main-win-ui.c:225
 msgid "Fil_ter..."
-msgstr ""
+msgstr "过滤器(_T)..."
 
 #: ../src/main-win-ui.c:227
 msgid "_Help"
@@ -897,7 +871,7 @@ msgstr "转到网络上的位置列表"
 
 #: ../src/main-win-ui.c:241
 msgid "_Go to Location..."
-msgstr ""
+msgstr "转到位置(_G)..."
 
 #: ../src/main-win-ui.c:242
 msgid "_Connect to Server..."
@@ -916,9 +890,8 @@ msgid "_Bookmarks"
 msgstr "书签(_B)"
 
 #: ../src/main-win-ui.c:245
-#, fuzzy
 msgid "_Add to Bookmarks..."
-msgstr "添加到书签(_A)"
+msgstr "添加为书签(_A)..."
 
 #: ../src/main-win-ui.c:245
 msgid "Add current folder to bookmarks list"
@@ -926,7 +899,7 @@ msgstr "将当前文件夹加到书签列表"
 
 #: ../src/main-win-ui.c:246
 msgid "Too_ls"
-msgstr ""
+msgstr "工具(_L)"
 
 #: ../src/main-win-ui.c:247
 msgid "Open Current Folder in _Terminal"
@@ -941,9 +914,8 @@ msgid "Open search dialog"
 msgstr "打开搜索对话框"
 
 #: ../src/main-win-ui.c:252
-#, fuzzy
 msgid "_Run a Command in Current Folder..."
-msgstr "重新载入当前文件夹"
+msgstr "在当前文件夹中运行命令(_R)..."
 
 #. Note to translators: "Mingle..." means "Do not put folders before files" but make the translation as short as possible, please!
 #: ../src/main-win-ui.c:267
@@ -969,19 +941,16 @@ msgid ""
 msgstr "勾选来记住此文件夹单独的视图和排序设置"
 
 #: ../src/main-win-ui.c:277
-#, fuzzy
 msgid "_Show Toolbar"
-msgstr "显示工具栏(_T)"
+msgstr "显示工具栏(_S)"
 
 #: ../src/main-win-ui.c:278
-#, fuzzy
 msgid "Show 'New _Window' Button"
-msgstr "显示“新标签页”按钮(_W)"
+msgstr "显示“新窗口”按钮(_W)"
 
 #: ../src/main-win-ui.c:279
-#, fuzzy
 msgid "Show 'New _Tab' Button"
-msgstr "显示“新标签页”按钮(_W)"
+msgstr "显示“新标签页”按钮(_T)"
 
 #: ../src/main-win-ui.c:280
 msgid "Show _Navigation Buttons"
@@ -1045,7 +1014,7 @@ msgstr "按文件类型(_T)"
 
 #: ../src/main-win-ui.c:312
 msgid "By _Extension"
-msgstr ""
+msgstr "按扩展名(_E)"
 
 #: ../src/main-win-ui.c:325
 msgid "Places"
@@ -1060,13 +1029,12 @@ msgid "Remote"
 msgstr "远程"
 
 #: ../src/main-win-ui.c:333
-#, fuzzy
 msgid "_Location"
-msgstr "应用程序(_L)"
+msgstr "位置(_L)"
 
 #: ../src/main-win-ui.c:334
 msgid "_Buttons"
-msgstr ""
+msgstr "按钮(_B)"
 
 #: ../src/main-win.c:925 ../src/main-win.c:929
 msgid "Show history of visited folders"
@@ -1118,18 +1086,16 @@ msgstr ""
 "Ctrl+L 或 Alt+D：聚焦到路径栏"
 
 #: ../src/main-win.c:1210
-#, fuzzy
 msgid "Run a command"
-msgstr "格式化命令(_F)："
+msgstr "运行一条命令"
 
 #: ../src/main-win.c:1211
 msgid "Enter a command to run:"
-msgstr ""
+msgstr "输入要运行的命令："
 
 #: ../src/main-win.c:1218
-#, fuzzy
 msgid "Current folder is inaccessible"
-msgstr "在终端中打开当前文件夹(_T)"
+msgstr "当前文件夹无法访问"
 
 #: ../src/main-win.c:1822
 #, c-format
@@ -1148,11 +1114,11 @@ msgstr "添加到书签中"
 
 #: ../src/main-win.c:2552
 msgid "Select filter"
-msgstr ""
+msgstr "选择过滤器"
 
 #: ../src/main-win.c:2553
 msgid "Choose a new shell pattern to show files:"
-msgstr ""
+msgstr "选择显示文件的新 shell 模式："
 
 #. options only acceptable by first pcmanfm instance. These options are not passed through IPC
 #: ../src/pcmanfm.c:78
@@ -1198,11 +1164,10 @@ msgstr "文件"
 
 #. don't translate list of modes in description, please
 #: ../src/pcmanfm.c:89
-#, fuzzy
 msgid ""
 "Set mode of desktop wallpaper. MODE=(color|stretch|fit|crop|center|tile|"
 "screen)"
-msgstr "设置桌面壁纸模式。模式=(color|stretch|fit|center|tile)"
+msgstr "设置桌面壁纸模式。MODE=(color|stretch|fit|crop|center|tile|screen)"
 
 #: ../src/pcmanfm.c:89
 msgid "MODE"
@@ -1221,9 +1186,8 @@ msgid "Open new window"
 msgstr "打开新窗口"
 
 #: ../src/pcmanfm.c:93
-#, fuzzy
 msgid "Open a Find Files window"
-msgstr "打开新窗口"
+msgstr "打开 查找文件 窗口"
 
 #: ../src/pcmanfm.c:95
 msgid "Window role for usage by window manager"
@@ -1270,19 +1234,19 @@ msgstr[0] " (%d 项隐藏)"
 
 #: ../src/pref.c:514
 msgid "Add to Modules Blacklist"
-msgstr ""
+msgstr "添加到模块黑名单"
 
 #: ../src/pref.c:515
 msgid "Enter a blacklisted module mask:"
-msgstr ""
+msgstr "输入拉黑模块掩码："
 
 #: ../src/pref.c:606
 msgid "Add to Modules Whitelist"
-msgstr ""
+msgstr "添加到模块白名单"
 
 #: ../src/pref.c:607
 msgid "Enter a whitelisted module mask:"
-msgstr ""
+msgstr "输入加白名单模块掩码："
 
 #: ../data/pcmanfm.desktop.in.h:1
 msgid "File Manager PCManFM"
