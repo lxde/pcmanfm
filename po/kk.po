@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm 1.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-01-09 09:41+0100\n"
-"PO-Revision-Date: 2014-01-12 13:16+0000\n"
+"PO-Revision-Date: 2014-01-12 15:25+0000\n"
 "Last-Translator: sotrud_nik <baurthefirst@gmail.com>\n"
 "Language-Team: Kazakh <kk_KZ@googlegroups.com>\n"
 "Language: kk\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1389532573.0\n"
+"X-POOTLE-MTIME: 1389540323.0\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2014"
@@ -109,7 +109,7 @@ msgstr ""
 
 #: ../data/ui/desktop-pref.glade.h:20
 msgid "_Use desktop as a folder (show icons on it) by path:"
-msgstr ""
+msgstr "Жұмыс үстелін бума ретінде қ_олдану (таңбашаларын көрсету), орналасуы:"
 
 #: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:84
 msgctxt "Use path for some folder: ..."
@@ -220,7 +220,7 @@ msgstr "Тастау_дың бастапқы әрекеті:"
 
 #: ../data/ui/pref.glade.h:15
 msgid "\"_Smart shortcut\" auto-action on drop to Desktop folder"
-msgstr ""
+msgstr "Жұмыс үстеліне тастау кезінде әрекетті \"ақ_ылды\" таңдау"
 
 #: ../data/ui/pref.glade.h:16
 msgid ""
@@ -230,6 +230,12 @@ msgid ""
 "- other files (e.g. on removable media) will be copied\n"
 "- for some external URI a shortcut will be created"
 msgstr ""
+"Егер іске қосылған болса, онда Жұмыс үстелі бумасына тастау кезінде \"Авто\" "
+"әрекеті келесідей болады:\n"
+"- Үй бумасынан файлдары үшін символдық сілтеме жасалады\n"
+"- дәл сол файлдық жүйедегі файлдар жылжытылады\n"
+"- басқа файлдар (сыртқы құрылғылардан) көшіріледі\n"
+"- сыртқы URI үшін (мыс: веб-сілтемелері) жарлық жасалады"
 
 #: ../data/ui/pref.glade.h:21
 msgid "_Unfold tab when files are dragged onto tab button"
@@ -237,7 +243,7 @@ msgstr "Файлды оған тар_тып әкелгенде бетті ашу
 
 #: ../data/ui/pref.glade.h:22
 msgid "_Focus previous folder after coming to its parent"
-msgstr ""
+msgstr "Аталық бумасына өткенде _фокусты алдыңғы бумаға орнату"
 
 #: ../data/ui/pref.glade.h:23
 msgid "<b>Default View</b>"
@@ -300,9 +306,8 @@ msgid "Al_ways show full file names"
 msgstr "Файлдардың толық аттарын әрқаш_ан көрсету"
 
 #: ../data/ui/pref.glade.h:38
-#, fuzzy
 msgid "Show icons of hidden _files shadowed"
-msgstr "Қор көшірме файлдар таңбашаларын көлеңкелеп көрсе_ту"
+msgstr "Жасырын файлдар таңбашаларын көлеңкелеп көрсе_ту"
 
 #: ../data/ui/pref.glade.h:39
 msgid "_Display"
@@ -388,34 +393,29 @@ msgstr ""
 "көр_сету"
 
 #: ../data/ui/pref.glade.h:60
-#, fuzzy
 msgid "Do_n't show available options for those media types:"
 msgstr ""
-"Ауыстырмалы тасушылар салынған кезде олар үшін қолжетерлік опцияларды "
-"көр_сету"
+"Келесі ауыстырмалы тасушылар түрлері үшін қолжетерлік опцияларды көрсетп_еу:"
 
 #: ../data/ui/pref.glade.h:61
-#, fuzzy
 msgid "_Remove selected"
-msgstr "%d нәрсе ерекшеленді"
+msgstr "Таңдалғанды ө_шіру"
 
 #: ../data/ui/pref.glade.h:62
 msgid "_Open mounted removable media in new tab instead of new window"
 msgstr "Тіркелген ауыстырмалы тасушыны жаңа бетте _ашу, терезеде емес"
 
 #: ../data/ui/pref.glade.h:63
-#, fuzzy
 msgid "When removable medium unmounted:"
-msgstr "Ауыстырмалы тасушы салынды"
+msgstr "Ауыстырмалы тасушы алынса:"
 
 #: ../data/ui/pref.glade.h:64
-#, fuzzy
 msgid "Clos_e tab containing removable medium"
 msgstr "Ауыстырмалы тасушы алынған кезде ол ашылған бетті жа_бу"
 
 #: ../data/ui/pref.glade.h:65
 msgid "Change folder in the tab to _Home Folder"
-msgstr ""
+msgstr "Бет бумасын Ү_й бумасына ауыстыру"
 
 #: ../data/ui/pref.glade.h:66
 msgid "_Volume Management"
@@ -922,16 +922,15 @@ msgstr "Ағымдағы буманы бетбелгілерге қосу"
 
 #: ../src/main-win-ui.c:246
 msgid "Too_ls"
-msgstr ""
+msgstr "_Саймандар"
 
 #: ../src/main-win-ui.c:247
 msgid "Open Current Folder in _Terminal"
 msgstr "Ағымдағы буманы _терминалда ашу"
 
 #: ../src/main-win-ui.c:249
-#, fuzzy
 msgid "Fin_d Files..."
-msgstr "Файлдарды _табу"
+msgstr "Файлдарды _табу..."
 
 #: ../src/main-win-ui.c:249
 msgid "Open search dialog"
@@ -1056,13 +1055,12 @@ msgid "Remote"
 msgstr "Кашықтағы"
 
 #: ../src/main-win-ui.c:333
-#, fuzzy
 msgid "_Location"
-msgstr "Қол_данбалар"
+msgstr "_Адрес"
 
 #: ../src/main-win-ui.c:334
 msgid "_Buttons"
-msgstr ""
+msgstr "_Батырмалар"
 
 #: ../src/main-win.c:925 ../src/main-win.c:929
 msgid "Show history of visited folders"
