@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm 1.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-01-09 09:41+0100\n"
-"PO-Revision-Date: 2014-01-12 15:25+0000\n"
+"PO-Revision-Date: 2014-01-13 05:04+0000\n"
 "Last-Translator: sotrud_nik <baurthefirst@gmail.com>\n"
 "Language-Team: Kazakh <kk_KZ@googlegroups.com>\n"
 "Language: kk\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1389540323.0\n"
+"X-POOTLE-MTIME: 1389589471.0\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2014"
@@ -426,10 +426,10 @@ msgid "<b>Programs</b>"
 msgstr "<b>Бағдарламалар</b>"
 
 #: ../data/ui/pref.glade.h:68
-#, fuzzy
 msgid "<i>Commands below may include extra options if necessary.</i>"
 msgstr ""
-"<i>Командаларда, керек болған кезде, басқа да ауыстырғыштар болуы мүмкін.</i>"
+"<i>Төмендегі командаларда, керек болған кезде, басқа да ауыстырғыштар болуы "
+"мүмкін.</i>"
 
 #: ../data/ui/pref.glade.h:69
 msgid "_Terminal emulator:"
@@ -465,14 +465,12 @@ msgid "Ru_n default application after creation from template"
 msgstr "Ү_лгіден жасалған соң, файл үшін үнсіз келісім қолданбасын жөнелту"
 
 #: ../data/ui/pref.glade.h:78
-#, fuzzy
 msgid "<b>Other Options</b>"
 msgstr "<b>Басқа опциялар</b>"
 
 #: ../data/ui/pref.glade.h:79
-#, fuzzy
 msgid "Use Application Startup Notify _by default"
-msgstr "Үнсіз келісім бойынша жөнелту туралы ха_барлауды қолдану"
+msgstr "Үнсіз келісім бойынша Жөнелту туралы ха_барлауды қолдану"
 
 #: ../data/ui/pref.glade.h:80
 msgid ""
@@ -491,11 +489,11 @@ msgstr "Буманы жүктеу кезінде файлдар түрлерін
 
 #: ../data/ui/pref.glade.h:83
 msgid "Use path for \"Home Folder\" button:"
-msgstr ""
+msgstr "\"Үй бумасы\" батырмасы үшін жолды қолдану:"
 
 #: ../data/ui/pref.glade.h:86
 msgid "_Use current"
-msgstr ""
+msgstr "Ағымдағыны қ_олдану"
 
 #: ../data/ui/pref.glade.h:87
 msgid "_Advanced"
@@ -503,11 +501,11 @@ msgstr "Кеңейтіл_ген"
 
 #: ../data/ui/pref.glade.h:88
 msgid "<b>_Do not load modules matching:</b>"
-msgstr ""
+msgstr "<b>Келесі модульдерді жүкте_меу:</b>"
 
 #: ../data/ui/pref.glade.h:89
 msgid "<b>_Load these modules anyway:</b>"
-msgstr ""
+msgstr "<b>Бірақ, ке_лесі модульдерді жүктеу:</b>"
 
 #: ../data/ui/pref.glade.h:90
 msgid "Modules"
@@ -567,39 +565,39 @@ msgstr "Орындау үшін әрекетті таңдаңыз:"
 
 #: ../data/ui/autorun.glade.h:6
 msgid "_Always perform this action on this media type"
-msgstr ""
+msgstr "_Бұл тасушы түрі үшін осы әрекетті әрқашан орындау"
 
 #: ../data/ui/connect.glade.h:1
 msgid "Connect to remote server"
-msgstr ""
+msgstr "Сервермен байланысу"
 
 #: ../data/ui/connect.glade.h:2
 msgid "<b>Specify remote folder to connect</b>"
-msgstr ""
+msgstr "<b>Байланысу үшін қашықтағы буманы көрсетіңіз</b>"
 
 #: ../data/ui/connect.glade.h:3
 msgid "_Type:"
-msgstr ""
+msgstr "_Түрі:"
 
 #: ../data/ui/connect.glade.h:4
 msgid "_Host:"
-msgstr ""
+msgstr "Х_ост:"
 
 #: ../data/ui/connect.glade.h:5
 msgid "_Port:"
-msgstr ""
+msgstr "_Порт:"
 
 #: ../data/ui/connect.glade.h:6
 msgid "Pa_th:"
-msgstr ""
+msgstr "Жо_лы:"
 
 #: ../data/ui/connect.glade.h:7
 msgid "_Anonymous login"
-msgstr ""
+msgstr "_Анонимды кіру"
 
 #: ../data/ui/connect.glade.h:8
 msgid "_Login as:"
-msgstr ""
+msgstr "_Ретінде кіру:"
 
 #: ../data/ui/connect.glade.h:9
 msgid "SSH"
@@ -639,7 +637,7 @@ msgstr "Терм_иналда ашу"
 
 #: ../src/desktop-ui.c:68
 msgid "_Remove from Desktop"
-msgstr ""
+msgstr "Жұмыс үстелінен ө_шіру"
 
 #: ../src/desktop-ui.c:85
 msgid "Stic_k to Current Position"
@@ -696,7 +694,7 @@ msgstr "Бос файл"
 
 #: ../src/main-win-ui.c:193
 msgid "Folder Propertie_s"
-msgstr ""
+msgstr "Бума қа_сиеттері"
 
 #: ../src/main-win-ui.c:194
 msgid "_Close Tab"
@@ -712,43 +710,39 @@ msgstr "Тү_зету"
 
 #: ../src/main-win-ui.c:198
 msgid "C_ut"
-msgstr ""
+msgstr "Қ_иып алу"
 
 #: ../src/main-win-ui.c:201
 msgid "Move to _Trash"
-msgstr ""
+msgstr "Қоқы_с шелегіне тастау"
 
 #: ../src/main-win-ui.c:203
 msgid "Copy Pat_h(s)"
-msgstr ""
+msgstr "Жо_л(дар)ды көшіру"
 
 #: ../src/main-win-ui.c:204
-#, fuzzy
 msgid "R_ename..."
-msgstr "_Атын ауыстыру"
+msgstr "_Атын ауыстыру..."
 
 #: ../src/main-win-ui.c:205
 msgid "D_uplicate..."
-msgstr ""
+msgstr "Кө_шірмесін жасау..."
 
 #: ../src/main-win-ui.c:206
-#, fuzzy
 msgid "Create Lin_k..."
-msgstr "Жаңа жа_сау..."
+msgstr "Сілтемені жа_сау..."
 
 #: ../src/main-win-ui.c:207
-#, fuzzy
 msgid "_Move to..."
-msgstr "Қайда _жылжыту"
+msgstr "Қайда _жылжыту..."
 
 #: ../src/main-win-ui.c:208
-#, fuzzy
 msgid "Copy to_..."
 msgstr "Қайда _көшіру..."
 
 #: ../src/main-win-ui.c:209
 msgid "Propertie_s"
-msgstr ""
+msgstr "Қа_сиеттері"
 
 #: ../src/main-win-ui.c:211
 msgid "_Invert Selection"
@@ -771,13 +765,12 @@ msgid "Reload current folder"
 msgstr "Ағымдағы буманы қайта жүктеу"
 
 #: ../src/main-win-ui.c:215
-#, fuzzy
 msgid "Tool_bar"
-msgstr "Са_ймандар"
+msgstr "Са_ймандар панелі"
 
 #: ../src/main-win-ui.c:216
 msgid "Pat_h Bar"
-msgstr ""
+msgstr "Ор_наласулар панелі"
 
 #: ../src/main-win-ui.c:217
 msgid "Side _Pane"
@@ -785,9 +778,8 @@ msgstr "Бүйір _панелі"
 
 #. other see below: 'ShowHidden' 'ShowStatus' 'Fullscreen' 'IconView'...
 #: ../src/main-win-ui.c:219
-#, fuzzy
 msgid "Fo_lder View Mode"
-msgstr "Көрі_ніс түрі:"
+msgstr "Көрі_ніс түрі"
 
 #: ../src/main-win-ui.c:220
 msgid "S_ort Files"
@@ -795,18 +787,17 @@ msgstr "Файлдарды _сұрыптау"
 
 #: ../src/main-win-ui.c:222
 msgid "Zoom O_ut"
-msgstr ""
+msgstr "Кішіре_йту"
 
 #: ../src/main-win-ui.c:225
 msgid "Fil_ter..."
-msgstr ""
+msgstr "Сүз_гі..."
 
 #: ../src/main-win-ui.c:227
 msgid "_Help"
 msgstr "_Көмек"
 
 #: ../src/main-win-ui.c:229
-#, fuzzy
 msgid "_Keyboard Navigation"
 msgstr "_Пернетақта навигациясы"
 
@@ -859,14 +850,12 @@ msgid "Open trash can"
 msgstr "Қоқыс шелегін ашу"
 
 #: ../src/main-win-ui.c:237
-#, fuzzy
 msgid "Filesyste_m Root"
 msgstr "_Файлдық жүйенің түбірі"
 
 #: ../src/main-win-ui.c:237
-#, fuzzy
 msgid "Go fo filesystem root"
-msgstr "_Файлдық жүйенің түбірі"
+msgstr "_Файлдық жүйенің түбіріне өту"
 
 #: ../src/main-win-ui.c:238
 msgid "_Applications"
@@ -877,44 +866,40 @@ msgid "Go to root of applications menu folder"
 msgstr "Қолданбалар мәзірінің түбіріне өту"
 
 #: ../src/main-win-ui.c:239
-#, fuzzy
 msgid "Go to list of devices connected to the computer"
-msgstr "Компьютерде қожетерлік томдар тізіміне өту"
+msgstr "Компьютерде қолжетерлік құрылғылар тізіміне өту"
 
 #: ../src/main-win-ui.c:240
-#, fuzzy
 msgid "Net_work"
-msgstr "Же_лілік дисктер"
+msgstr "Же_лі"
 
 #: ../src/main-win-ui.c:240
-#, fuzzy
 msgid "Go to list of places on the network"
-msgstr "Желіде қожетерлік томдар тізіміне өту"
+msgstr "Желіде қолжетерлік томдар тізіміне өту"
 
 #: ../src/main-win-ui.c:241
 msgid "_Go to Location..."
-msgstr ""
+msgstr "Адрес бойынша ө_ту..."
 
 #: ../src/main-win-ui.c:242
 msgid "_Connect to Server..."
-msgstr ""
+msgstr "Сервермен байланы_су..."
 
 #: ../src/main-win-ui.c:242
 msgid "Open a window to choose remote folder location"
-msgstr ""
+msgstr "Қашықтағы буманың параметрлері терезесін ашу және байланысты орнату"
 
 #: ../src/main-win-ui.c:243
 msgid "Go to the path in the location bar"
-msgstr ""
+msgstr "Адрес жолағында енгізілген жолы бойынша орналасқан бумаға өту"
 
 #: ../src/main-win-ui.c:244
 msgid "_Bookmarks"
 msgstr "Б_етбелгілер"
 
 #: ../src/main-win-ui.c:245
-#, fuzzy
 msgid "_Add to Bookmarks..."
-msgstr "Бетбелгілерге қосу"
+msgstr "Бетбелгілерге қ_осу..."
 
 #: ../src/main-win-ui.c:245
 msgid "Add current folder to bookmarks list"
@@ -937,53 +922,53 @@ msgid "Open search dialog"
 msgstr "Файлдарды іздеу сұхбатын ашу"
 
 #: ../src/main-win-ui.c:252
-#, fuzzy
 msgid "_Run a Command in Current Folder..."
-msgstr "Ағымдағы буманы қайта жүктеу"
+msgstr "Команданы ағымдағы бумада жө_нелту..."
 
 #. Note to translators: "Mingle..." means "Do not put folders before files" but make the translation as short as possible, please!
 #: ../src/main-win-ui.c:267
 msgid "Mingle _Files and Folders"
-msgstr ""
+msgstr "Файл мен бумаларды ара_ластырып көрсету"
 
 #: ../src/main-win-ui.c:270
 msgid "_Ignore Name Case"
-msgstr ""
+msgstr "Атаудың регистрін еле_меу"
 
 #: ../src/main-win-ui.c:272
-#, fuzzy
 msgid "Sho_w Hidden"
-msgstr "Жас_ырынды көрсету"
+msgstr "Жас_ырын файлдарды көрсету"
 
 #. Note to translators: this save is meant for folder's settings such as sort
 #: ../src/main-win-ui.c:274
 msgid "Preserve This Folder's Settings"
-msgstr ""
+msgstr "Бұл буманың баптауларын есте сақтау"
 
 #: ../src/main-win-ui.c:275
 msgid ""
 "Check to remember view and sort as folder setting rather than global one"
 msgstr ""
+"Көрініс және сұрыптау баптауларын жалпы баптаулардан бөлек сақтау үшін осыны "
+"белгілеу керек"
 
 #: ../src/main-win-ui.c:277
 msgid "_Show Toolbar"
-msgstr ""
+msgstr "Са_ймандар панелін көрсету"
 
 #: ../src/main-win-ui.c:278
 msgid "Show 'New _Window' Button"
-msgstr ""
+msgstr "'Жаңа _терезе' батырмасын көрсету"
 
 #: ../src/main-win-ui.c:279
 msgid "Show 'New _Tab' Button"
-msgstr ""
+msgstr "'Жаңа _бет' батырмасын көрсету"
 
 #: ../src/main-win-ui.c:280
 msgid "Show _Navigation Buttons"
-msgstr ""
+msgstr "_Навигация батырмаларын көрсету"
 
 #: ../src/main-win-ui.c:281
 msgid "Show '_Home' Button"
-msgstr ""
+msgstr "Ү_й бумасы батырмасын көрсету"
 
 #: ../src/main-win-ui.c:282
 msgid "Sho_w Side Pane"
@@ -994,13 +979,12 @@ msgid "Show Status B_ar"
 msgstr "Қал_ып-күй жолағын көрсету"
 
 #: ../src/main-win-ui.c:284
-#, fuzzy
 msgid "_Dual Pane Mode"
 msgstr "Қо_с панель режимі"
 
 #: ../src/main-win-ui.c:284
 msgid "Show two panels with folder views"
-msgstr ""
+msgstr "Бумалары бар екі панельді көрсету"
 
 #: ../src/main-win-ui.c:285
 msgid "Fullscreen _Mode"
@@ -1040,7 +1024,7 @@ msgstr "Файл _түрі бойынша"
 
 #: ../src/main-win-ui.c:312
 msgid "By _Extension"
-msgstr ""
+msgstr "К_еңейтуі бойынша"
 
 #: ../src/main-win-ui.c:325
 msgid "Places"
@@ -1118,7 +1102,7 @@ msgstr "Команданы орындау"
 
 #: ../src/main-win.c:1211
 msgid "Enter a command to run:"
-msgstr ""
+msgstr "Жөнелту үшін команданы енгізіңіз:"
 
 #: ../src/main-win.c:1218
 msgid "Current folder is inaccessible"
@@ -1141,11 +1125,11 @@ msgstr "Бетбелгілерге қосу"
 
 #: ../src/main-win.c:2552
 msgid "Select filter"
-msgstr ""
+msgstr "Сүзгіні таңдаңыз"
 
 #: ../src/main-win.c:2553
 msgid "Choose a new shell pattern to show files:"
-msgstr ""
+msgstr "Файлдарды көрсету үшін жаңа үлгісін таңдаңыз:"
 
 #. options only acceptable by first pcmanfm instance. These options are not passed through IPC
 #: ../src/pcmanfm.c:78
@@ -1263,19 +1247,19 @@ msgstr[0] " (%d жасырын)"
 
 #: ../src/pref.c:514
 msgid "Add to Modules Blacklist"
-msgstr ""
+msgstr "Қара тізімге қосу"
 
 #: ../src/pref.c:515
 msgid "Enter a blacklisted module mask:"
-msgstr ""
+msgstr "Қара тізімге сақтау үшін модульдер атауларының үлгісін енгізіңіз:"
 
 #: ../src/pref.c:606
 msgid "Add to Modules Whitelist"
-msgstr ""
+msgstr "Ақ тізімге қосу"
 
 #: ../src/pref.c:607
 msgid "Enter a whitelisted module mask:"
-msgstr ""
+msgstr "Ақ тізімге сақтау үшін модульдер атауларының үлгісін енгізіңіз:"
 
 #: ../data/pcmanfm.desktop.in.h:1
 msgid "File Manager PCManFM"
