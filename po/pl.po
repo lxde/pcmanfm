@@ -1,28 +1,28 @@
 # Polish translation of pcmanfm package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the pcmanfm package.
-# Piotr Sokół <psokol@jabster.pl>, 2010, 2011, 2012, 2013.
+# Piotr Sokół <psokol@jabster.pl>, 2010, 2011, 2012, 2013, 2014.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: pcmanfm 1.1\n"
+"Project-Id-Version: pcmanfm 1.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-01-09 09:41+0100\n"
-"PO-Revision-Date: 2013-12-06 10:56+0000\n"
-"Last-Translator: Piotr <strebski@o2.pl>\n"
+"PO-Revision-Date: 2014-01-13 11:06+0100\n"
+"Last-Translator: Piotr Sokół <psokol@jabster.pl>\n"
 "Language-Team: polski <>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bits\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
-"|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Pootle 2.5.0\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : ((n%10>=2 && n%10<=4 && (n"
+"%100<10 || n%100>=20)) ? 1 : 2));\n"
+"X-Generator: Gtranslator 2.91.5\n"
 "X-POOTLE-MTIME: 1386327361.0\n"
 
 #: ../data/ui/about.glade.in.h:1
-#, fuzzy
 msgid "Copyright (C) 2009 - 2014"
-msgstr "Prawa autorskie (C) 2009 - 2013"
+msgstr "Copyright (C) 2009 - 2014"
 
 #. Please replace this line with your own names, one name per line.
 #: ../data/ui/about.glade.in.h:3
@@ -44,7 +44,7 @@ msgstr "<b>Tło</b>"
 
 #: ../data/ui/desktop-pref.glade.h:3
 msgid "Wallpaper _mode:"
-msgstr "T_ryb tapety:"
+msgstr "T_ryb:"
 
 #: ../data/ui/desktop-pref.glade.h:4
 msgid "_Wallpaper:"
@@ -87,24 +87,20 @@ msgid "<b>Show desktop icons</b>"
 msgstr "<b>Wyświetlanie ikon na pulpicie</b>"
 
 #: ../data/ui/desktop-pref.glade.h:14
-#, fuzzy
 msgid "_Show \"Documents\" folder on the desktop"
-msgstr "Wyświetlanie ikony \"Moje _dokumenty\" na pulpicie"
+msgstr "Wyświetlanie katalogu „_Dokumenty”"
 
 #: ../data/ui/desktop-pref.glade.h:15
-#, fuzzy
 msgid "Sho_w \"Devices\" folder on the desktop"
-msgstr "Wyświetlanie ikony \"_Urządzenia\" na pulpicie"
+msgstr "Wyświetlanie katalogu „_Urządzenia”"
 
 #: ../data/ui/desktop-pref.glade.h:16
-#, fuzzy
 msgid "Show \"_Trash Can\" folder on the desktop"
-msgstr "Wyświetlanie ikony \"_Kosz\" na pulpicie"
+msgstr "Wyświetlanie katalogu „_Kosz”"
 
 #: ../data/ui/desktop-pref.glade.h:17
-#, fuzzy
 msgid "S_how connected volumes on the desktop"
-msgstr "Wyświetlanie _ikon wolumenów na pulpicie"
+msgstr "Wyświetlanie _ikon zamontowanych wolumenów"
 
 #: ../data/ui/desktop-pref.glade.h:18
 msgid "_Desktop Icons"
@@ -313,7 +309,7 @@ msgstr "Używani_e dziesiętnych prefiksów SI zamiast binarnych IEC"
 
 #: ../data/ui/pref.glade.h:36
 msgid "Treat backup files as _hidden"
-msgstr "Traktowanie plików zapasowych jako _ukrytych"
+msgstr "_Ukrywanie plików zapasowych"
 
 #: ../data/ui/pref.glade.h:37
 msgid "Al_ways show full file names"
@@ -350,8 +346,9 @@ msgid "<b>Directories Tree</b>"
 msgstr "<b>Drzewo katalogów</b>"
 
 #: ../data/ui/pref.glade.h:46
+#, fuzzy
 msgid "Hide e_xpander on empty or locked folder"
-msgstr "Ukryj"
+msgstr "Ukrywanie "
 
 #: ../data/ui/pref.glade.h:47
 msgid "<b>Show in Places:</b>"
@@ -529,7 +526,7 @@ msgstr ""
 
 #: ../data/ui/pref.glade.h:90
 msgid "Modules"
-msgstr ""
+msgstr "Moduły"
 
 #: ../data/ui/pref.glade.h:91
 msgid "Auto (move if on the same FS, copy otherwise)"
@@ -603,39 +600,40 @@ msgstr ""
 
 #: ../data/ui/connect.glade.h:3
 msgid "_Type:"
-msgstr ""
+msgstr "_Typ:"
 
 #: ../data/ui/connect.glade.h:4
+#, fuzzy
 msgid "_Host:"
-msgstr ""
+msgstr "_Komputer:"
 
 #: ../data/ui/connect.glade.h:5
 msgid "_Port:"
-msgstr ""
+msgstr "_Port:"
 
 #: ../data/ui/connect.glade.h:6
 msgid "Pa_th:"
-msgstr ""
+msgstr "Ś_cieżka:"
 
 #: ../data/ui/connect.glade.h:7
 msgid "_Anonymous login"
-msgstr ""
+msgstr "_Anonimowe logowanie"
 
 #: ../data/ui/connect.glade.h:8
 msgid "_Login as:"
-msgstr ""
+msgstr "_Zalogowanie jako:"
 
 #: ../data/ui/connect.glade.h:9
 msgid "SSH"
-msgstr ""
+msgstr "SSH"
 
 #: ../data/ui/connect.glade.h:10
 msgid "FTP"
-msgstr ""
+msgstr "FTP"
 
 #: ../data/ui/connect.glade.h:11
 msgid "WebDAV"
-msgstr ""
+msgstr "WebDAV"
 
 #: ../src/volume-manager.c:237
 msgid "mixed content"
@@ -721,15 +719,15 @@ msgstr "Pusty plik"
 
 #: ../src/main-win-ui.c:193
 msgid "Folder Propertie_s"
-msgstr ""
+msgstr "_Właściwości katalogu"
 
 #: ../src/main-win-ui.c:194
 msgid "_Close Tab"
-msgstr "_Zamknij kartę"
+msgstr "Z_amknij kartę"
 
 #: ../src/main-win-ui.c:195
 msgid "Close _Window"
-msgstr "_Zamknij okno"
+msgstr "Za_mknij okno"
 
 #: ../src/main-win-ui.c:196
 msgid "_Edit"
@@ -737,43 +735,39 @@ msgstr "_Edycja"
 
 #: ../src/main-win-ui.c:198
 msgid "C_ut"
-msgstr ""
+msgstr "_Wytnij"
 
 #: ../src/main-win-ui.c:201
 msgid "Move to _Trash"
-msgstr ""
+msgstr "Przenieś do _kosza"
 
 #: ../src/main-win-ui.c:203
 msgid "Copy Pat_h(s)"
-msgstr ""
+msgstr "Skopiuj ś_cieżkę"
 
 #: ../src/main-win-ui.c:204
-#, fuzzy
 msgid "R_ename..."
-msgstr "_Zmień nazwę"
+msgstr "_Zmień nazwę..."
 
 #: ../src/main-win-ui.c:205
 msgid "D_uplicate..."
-msgstr ""
+msgstr "_Powiel..."
 
 #: ../src/main-win-ui.c:206
-#, fuzzy
 msgid "Create Lin_k..."
-msgstr "Utwórz _nowy..."
+msgstr "Utwórz _dowiązanie..."
 
 #: ../src/main-win-ui.c:207
-#, fuzzy
 msgid "_Move to..."
 msgstr "_Przenieś do..."
 
 #: ../src/main-win-ui.c:208
-#, fuzzy
 msgid "Copy to_..."
 msgstr "K_opiuj do..."
 
 #: ../src/main-win-ui.c:209
 msgid "Propertie_s"
-msgstr ""
+msgstr "_Właściwości"
 
 #: ../src/main-win-ui.c:211
 msgid "_Invert Selection"
@@ -781,7 +775,7 @@ msgstr "_Odwróć zaznaczenie"
 
 #: ../src/main-win-ui.c:212
 msgid "Prefere_nces"
-msgstr "P_referencje"
+msgstr "P_referencje..."
 
 #: ../src/main-win-ui.c:213
 msgid "_View"
@@ -789,7 +783,7 @@ msgstr "_Widok"
 
 #: ../src/main-win-ui.c:214
 msgid "_Reload Folder"
-msgstr "_Wczytaj ponownie"
+msgstr "W_czytaj ponownie"
 
 #: ../src/main-win-ui.c:214
 msgid "Reload current folder"
@@ -797,11 +791,11 @@ msgstr "Wczytuje ponownie zawartość bieżącego katalogu"
 
 #: ../src/main-win-ui.c:215
 msgid "Tool_bar"
-msgstr "Pasek _narzędzi"
+msgstr "Pasek _narzędziowy"
 
 #: ../src/main-win-ui.c:216
 msgid "Pat_h Bar"
-msgstr ""
+msgstr "Pasek ś_cieżki"
 
 #: ../src/main-win-ui.c:217
 msgid "Side _Pane"
@@ -809,9 +803,8 @@ msgstr "Panel _boczny"
 
 #. other see below: 'ShowHidden' 'ShowStatus' 'Fullscreen' 'IconView'...
 #: ../src/main-win-ui.c:219
-#, fuzzy
 msgid "Fo_lder View Mode"
-msgstr "Try_b widoku:"
+msgstr "_Tryb widoku"
 
 #: ../src/main-win-ui.c:220
 msgid "S_ort Files"
@@ -819,7 +812,7 @@ msgstr "_Sortowanie plików"
 
 #: ../src/main-win-ui.c:222
 msgid "Zoom O_ut"
-msgstr "Po_mniejszenie"
+msgstr "Po_mniejsz"
 
 #: ../src/main-win-ui.c:225
 msgid "Fil_ter..."
@@ -843,7 +836,7 @@ msgstr "_Poprzedni katalog"
 
 #: ../src/main-win-ui.c:231
 msgid "Return to previous folder in history"
-msgstr "Wróć do poprzedniego katalogu z historii"
+msgstr "Przechodzi do ostatnio odwiedzonego położenia"
 
 #: ../src/main-win-ui.c:232
 msgid "_Next Folder"
@@ -851,7 +844,7 @@ msgstr "_Następny katalog"
 
 #: ../src/main-win-ui.c:232
 msgid "Go forward to next folder in history"
-msgstr "Przejdź dalej do następnego katalogu z historii"
+msgstr "Przechodzi do położenia odwiedzonego w następnej kolejności"
 
 #: ../src/main-win-ui.c:233
 msgid "Pa_rent Folder"
@@ -867,7 +860,7 @@ msgstr "Katal_og użytkownika"
 
 #: ../src/main-win-ui.c:234
 msgid "Go to home folder"
-msgstr "Przejdź do katalogu użytkownika"
+msgstr "Przechodzi do katalogu użytkownika"
 
 #: ../src/main-win-ui.c:235
 msgid "_Desktop"
@@ -875,31 +868,31 @@ msgstr "_Pulpit"
 
 #: ../src/main-win-ui.c:235
 msgid "Go to desktop folder"
-msgstr "Przejdź do katalogu pulpitu"
+msgstr "Przechodzi do katalogu pulpitu"
 
 #: ../src/main-win-ui.c:236
 msgid "Open trash can"
-msgstr "Otwórz kosz"
+msgstr "Wyświetla zawartość kosza"
 
 #: ../src/main-win-ui.c:237
 msgid "Filesyste_m Root"
-msgstr "Katalog głó_wny systemu plików"
+msgstr "Katalog głó_wny"
 
 #: ../src/main-win-ui.c:237
 msgid "Go fo filesystem root"
-msgstr "Pr_zejdź do katalogu głównego systemu plików"
+msgstr "Przechodzi do głównego katalogu systemu plików"
 
 #: ../src/main-win-ui.c:238
 msgid "_Applications"
-msgstr "Progr_amy"
+msgstr "_Programy"
 
 #: ../src/main-win-ui.c:238
 msgid "Go to root of applications menu folder"
-msgstr "Przejdź do katalogu głównego menu programów"
+msgstr "Przechodzi do głównego katalogu menu programów"
 
 #: ../src/main-win-ui.c:239
 msgid "Go to list of devices connected to the computer"
-msgstr "Przejdź do listy urządzeń podłączonych do komputera"
+msgstr "Wyświetla listę nośników podłączonych do komputera"
 
 #: ../src/main-win-ui.c:240
 msgid "Net_work"
@@ -911,11 +904,11 @@ msgstr "Przejdź do listy miejsc w sieci"
 
 #: ../src/main-win-ui.c:241
 msgid "_Go to Location..."
-msgstr ""
+msgstr "_Położenie..."
 
 #: ../src/main-win-ui.c:242
 msgid "_Connect to Server..."
-msgstr ""
+msgstr "P_ołącz z serwerem..."
 
 #: ../src/main-win-ui.c:242
 msgid "Open a window to choose remote folder location"
@@ -923,24 +916,23 @@ msgstr ""
 
 #: ../src/main-win-ui.c:243
 msgid "Go to the path in the location bar"
-msgstr "Przejdź do ścieżki na pasku położenia"
+msgstr "Uaktywnia pole położenia na pasku ścieżki"
 
 #: ../src/main-win-ui.c:244
 msgid "_Bookmarks"
 msgstr "_Zakładki"
 
 #: ../src/main-win-ui.c:245
-#, fuzzy
 msgid "_Add to Bookmarks..."
-msgstr "_Dodaj do zakładek"
+msgstr "_Dodaj zakładkę..."
 
 #: ../src/main-win-ui.c:245
 msgid "Add current folder to bookmarks list"
-msgstr "Dodaj bieżący katalog do listy zakładek"
+msgstr "Dodaje bieżący katalog do listy zakładek"
 
 #: ../src/main-win-ui.c:246
 msgid "Too_ls"
-msgstr ""
+msgstr "_Narzędzia"
 
 #: ../src/main-win-ui.c:247
 msgid "Open Current Folder in _Terminal"
@@ -948,16 +940,15 @@ msgstr "Otwórz położenie w _terminalu"
 
 #: ../src/main-win-ui.c:249
 msgid "Fin_d Files..."
-msgstr "Znaj_dź pliki..."
+msgstr "_Wyszukaj pliki..."
 
 #: ../src/main-win-ui.c:249
 msgid "Open search dialog"
-msgstr "Otwórz okno wyszukiwania"
+msgstr "Otwiera okno wyszukiwania"
 
 #: ../src/main-win-ui.c:252
-#, fuzzy
 msgid "_Run a Command in Current Folder..."
-msgstr "Wczytuje ponownie zawartość bieżącego katalogu"
+msgstr "_Wykonaj polecenie w bieżącym położeniu..."
 
 #. Note to translators: "Mingle..." means "Do not put folders before files" but make the translation as short as possible, please!
 #: ../src/main-win-ui.c:267
@@ -970,7 +961,7 @@ msgstr "_Ignorowanie wielkości liter w nazwach"
 
 #: ../src/main-win-ui.c:272
 msgid "Sho_w Hidden"
-msgstr "_Wyświetlanie ukrytych"
+msgstr "Wyświetlanie _ukrytych plików"
 
 #. Note to translators: this save is meant for folder's settings such as sort
 #: ../src/main-win-ui.c:274
@@ -985,43 +976,40 @@ msgstr ""
 "używać globalnych"
 
 #: ../src/main-win-ui.c:277
-#, fuzzy
 msgid "_Show Toolbar"
-msgstr "Po_każ pasek narzędziowy"
+msgstr "_Wyświetlanie"
 
 #: ../src/main-win-ui.c:278
-#, fuzzy
 msgid "Show 'New _Window' Button"
-msgstr "Pokaż przycisk \"No_wa karta\""
+msgstr "Przycisk „Nowe _okno”"
 
 #: ../src/main-win-ui.c:279
-#, fuzzy
 msgid "Show 'New _Tab' Button"
-msgstr "Pokaż przycisk \"No_wa karta\""
+msgstr "Przycisk „Nowa _karta”"
 
 #: ../src/main-win-ui.c:280
 msgid "Show _Navigation Buttons"
-msgstr "Pokaż przyciski _nawigacji"
+msgstr "Przyciski _nawigacji"
 
 #: ../src/main-win-ui.c:281
 msgid "Show '_Home' Button"
-msgstr "Pokaż przycisk 'Katalog _domowy'"
+msgstr "Przycisk „Katalog _użytkownika”"
 
 #: ../src/main-win-ui.c:282
 msgid "Sho_w Side Pane"
-msgstr "_Wyświetlanie panelu bocznego"
+msgstr "_Wyświetlanie"
 
 #: ../src/main-win-ui.c:283
 msgid "Show Status B_ar"
-msgstr "Wyświetlanie paska _stanu"
+msgstr "Pasek _stanu"
 
 #: ../src/main-win-ui.c:284
 msgid "_Dual Pane Mode"
-msgstr "Tryb dwó_ch paneli"
+msgstr "Tryb _dwóch paneli"
 
 #: ../src/main-win-ui.c:284
 msgid "Show two panels with folder views"
-msgstr "Pokaż dwa panele z widokiem katalogów"
+msgstr "Wyświetla dwa panele z zawartością katalogów"
 
 #: ../src/main-win-ui.c:285
 msgid "Fullscreen _Mode"
@@ -1061,7 +1049,7 @@ msgstr "Według _typu"
 
 #: ../src/main-win-ui.c:312
 msgid "By _Extension"
-msgstr ""
+msgstr "Według _rozszerzenia"
 
 #: ../src/main-win-ui.c:325
 msgid "Places"
@@ -1076,17 +1064,16 @@ msgid "Remote"
 msgstr "Zdalne"
 
 #: ../src/main-win-ui.c:333
-#, fuzzy
 msgid "_Location"
-msgstr "_Programy"
+msgstr "_Pole położenia"
 
 #: ../src/main-win-ui.c:334
 msgid "_Buttons"
-msgstr ""
+msgstr "_Przyciski"
 
 #: ../src/main-win.c:925 ../src/main-win.c:929
 msgid "Show history of visited folders"
-msgstr "Pokaż historię odwiedzonych katalogów"
+msgstr "Wyświetla historię odwiedzonych katalogów"
 
 #: ../src/main-win.c:934
 msgid "History"
@@ -1097,13 +1084,14 @@ msgid "You are in super user mode"
 msgstr "W użyciu tryb super użytkownika"
 
 #: ../src/main-win.c:1134
+#, fuzzy
 msgid "Lightweight file manager\n"
 msgstr "Lekki menedżer plików\n"
 
 #: ../src/main-win.c:1139
 #, c-format
 msgid "using LibFM ver. %s\n"
-msgstr "użycie LibFM wer. %s\n"
+msgstr "używa LibFM wersja %s\n"
 
 #: ../src/main-win.c:1141
 msgid ""
@@ -1136,13 +1124,12 @@ msgstr ""
 "Ctrl+L or Alt+D: przechodzi do pola paska ścieżki"
 
 #: ../src/main-win.c:1210
-#, fuzzy
 msgid "Run a command"
-msgstr "Polecenie _formatowania:"
+msgstr "Wykonywanie polecenia"
 
 #: ../src/main-win.c:1211
 msgid "Enter a command to run:"
-msgstr ""
+msgstr "Proszę wprowadzić polecenie do wykonania:"
 
 #: ../src/main-win.c:1218
 #, fuzzy
@@ -1161,11 +1148,11 @@ msgstr ""
 
 #: ../src/main-win.c:1826
 msgid "Add to Bookmarks"
-msgstr "Dodaj do zakładek"
+msgstr "Dodaj zakładkę"
 
 #: ../src/main-win.c:2552
 msgid "Select filter"
-msgstr ""
+msgstr "Wybór filtra"
 
 #: ../src/main-win.c:2553
 msgid "Choose a new shell pattern to show files:"
@@ -1215,12 +1202,12 @@ msgstr "PLIK"
 
 #. don't translate list of modes in description, please
 #: ../src/pcmanfm.c:89
-#, fuzzy
 msgid ""
 "Set mode of desktop wallpaper. MODE=(color|stretch|fit|crop|center|tile|"
 "screen)"
 msgstr ""
-"Ustala tryb wyświetlania tła pulpitu. TRYB=(color|stretch|fit|center|tile)"
+"Ustala tryb wyświetlania tła pulpitu. TRYB=(color|stretch|fit|crop|center|"
+"tile|screen)"
 
 #: ../src/pcmanfm.c:89
 msgid "MODE"
@@ -1239,9 +1226,8 @@ msgid "Open new window"
 msgstr "Otwiera nowe okno"
 
 #: ../src/pcmanfm.c:93
-#, fuzzy
 msgid "Open a Find Files window"
-msgstr "Otwórz program Wyszukiwanie Plików"
+msgstr "Otwiera okno wyszukiwania plików"
 
 #: ../src/pcmanfm.c:95
 msgid "Window role for usage by window manager"
