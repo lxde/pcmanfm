@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm 1.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-01-09 09:41+0100\n"
-"PO-Revision-Date: 2014-01-14 10:49+0100\n"
+"PO-Revision-Date: 2014-01-15 10:16+0100\n"
 "Last-Translator: Piotr Sokół <psokol@jabster.pl>\n"
 "Language-Team: polski <>\n"
 "Language: pl\n"
@@ -235,7 +235,7 @@ msgstr "_Działanie przeciągania plików:"
 
 #: ../data/ui/pref.glade.h:15
 msgid "\"_Smart shortcut\" auto-action on drop to Desktop folder"
-msgstr ""
+msgstr "_Tworzenie skrótów przeciągając elementy do katalogu pulpitu"
 
 #: ../data/ui/pref.glade.h:16
 msgid ""
@@ -245,14 +245,22 @@ msgid ""
 "- other files (e.g. on removable media) will be copied\n"
 "- for some external URI a shortcut will be created"
 msgstr ""
+"Przeciągając elementy do katalogu pulpitu:\n"
+"- tworzy dowiązania symboliczne plików znajdujących się w katalogu "
+"użytkownika,\n"
+"- przenosi pliki znajdujące się w tym samym systemie plików,\n"
+"- kopiuje pliki znajdujące się w innych położeniach (np. na nośnikach "
+"wymiennych),\n"
+"- tworzy skróty niektórych elementów posiadających zewnętrzny adres URI."
 
 #: ../data/ui/pref.glade.h:21
 msgid "_Unfold tab when files are dragged onto tab button"
-msgstr "_Uaktywnienie karty po przeciągnięciu na nią pliku"
+msgstr "Uaktywnienie _karty po przeciągnięciu na nią pliku"
 
 #: ../data/ui/pref.glade.h:22
 msgid "_Focus previous folder after coming to its parent"
 msgstr ""
+"Uaktywnienie p_oprzedniego katalogu po przejściu do katalogu nadrzędnego"
 
 #: ../data/ui/pref.glade.h:23
 msgid "<b>Default View</b>"
@@ -315,9 +323,8 @@ msgid "Al_ways show full file names"
 msgstr "_Wyświetlanie pełnych nazw plików"
 
 #: ../data/ui/pref.glade.h:38
-#, fuzzy
 msgid "Show icons of hidden _files shadowed"
-msgstr "Poka_zuj ikony plików zapasowych jako zamglone"
+msgstr "Wyświetlanie za_cienionych ikon ukrytych plików"
 
 #: ../data/ui/pref.glade.h:39
 msgid "_Display"
@@ -354,7 +361,7 @@ msgstr "<b>Elementy wyświetlane w położeniach:</b>"
 
 #: ../data/ui/pref.glade.h:48
 msgid "_Home Folder"
-msgstr "_Katalog domowy"
+msgstr "Katalog _użytkownika"
 
 #: ../data/ui/pref.glade.h:49
 msgid "Des_ktop"
@@ -366,7 +373,7 @@ msgstr "_Kosz"
 
 #: ../data/ui/pref.glade.h:51
 msgid "_Filesystem Root"
-msgstr "Katalog _główny systemu plików"
+msgstr "Katalog głó_wny"
 
 #: ../data/ui/pref.glade.h:52
 msgid "App_lications"
@@ -374,7 +381,7 @@ msgstr "_Programy"
 
 #: ../data/ui/pref.glade.h:53 ../src/main-win-ui.c:239
 msgid "Dev_ices"
-msgstr "Urządzen_ia"
+msgstr "_Nośniki"
 
 #: ../data/ui/pref.glade.h:54
 msgid "_Network"
@@ -438,8 +445,7 @@ msgstr "<b>Programy</b>"
 
 #: ../data/ui/pref.glade.h:68
 msgid "<i>Commands below may include extra options if necessary.</i>"
-msgstr ""
-"<i>Polecenia poniżej mogą zawierać, jeśli to konieczne, dodatkowe opcje.</i>"
+msgstr "<i>Poniższe polecenia mogą zawierać dodatkowe opcje.</i>"
 
 #: ../data/ui/pref.glade.h:69
 msgid "_Terminal emulator:"
@@ -456,9 +462,7 @@ msgstr "Polecenie _formatowania:"
 
 #: ../data/ui/pref.glade.h:73
 msgid "A_rchiver integration:"
-msgstr ""
-"<i>Polecenia poniżej mogą zawierać, wedle potrzeby, dodatkowe przełączniki.</"
-"i>"
+msgstr "Menedżer _archiwów:"
 
 #: ../data/ui/pref.glade.h:74
 msgid "<b>Templates</b>"
@@ -466,24 +470,23 @@ msgstr "<b>Szablony</b>"
 
 #: ../data/ui/pref.glade.h:75
 msgid "S_how only user defined templates in menu"
-msgstr "Po_kazuj w menu tylko szablony określone przez użytkownika"
+msgstr "_Wyświetlanie w menu tylko szablonów określonych przez użytkownika"
 
 #: ../data/ui/pref.glade.h:76
 msgid "Show _only one template for each MIME type"
-msgstr "P_okazuj tylko jeden szablon dla każdego typu MIME"
+msgstr "Wyświetlanie tylko j_ednego szablonu dla każdego typu MIME"
 
 #: ../data/ui/pref.glade.h:77
 msgid "Ru_n default application after creation from template"
-msgstr "Uruchom domyśl_ny program po utworzeniu z szablonu"
+msgstr "_Uruchomienie domyślnego programu po użyciu szablonu"
 
 #: ../data/ui/pref.glade.h:78
 msgid "<b>Other Options</b>"
 msgstr "<b>Inne</b>"
 
 #: ../data/ui/pref.glade.h:79
-#, fuzzy
 msgid "Use Application Startup Notify _by default"
-msgstr "_Domyślne powiadamianie o uruchomieniu programów"
+msgstr "_Domyślne powiadamianie o uruchamianiu programów"
 
 #: ../data/ui/pref.glade.h:80
 msgid ""
@@ -514,11 +517,11 @@ msgstr "_Zaawansowane"
 
 #: ../data/ui/pref.glade.h:88
 msgid "<b>_Do not load modules matching:</b>"
-msgstr ""
+msgstr "<b>Moduły p_omijane podczas wczytywania:</b>"
 
 #: ../data/ui/pref.glade.h:89
 msgid "<b>_Load these modules anyway:</b>"
-msgstr ""
+msgstr "<b>Zawsze _wczytywane moduły:</b>"
 
 #: ../data/ui/pref.glade.h:90
 msgid "Modules"
@@ -578,15 +581,15 @@ msgstr "Proszę wybrać czynność:"
 
 #: ../data/ui/autorun.glade.h:6
 msgid "_Always perform this action on this media type"
-msgstr ""
+msgstr "Wykonywanie tej czynności _zawsze dla zawartości tego typu"
 
 #: ../data/ui/connect.glade.h:1
 msgid "Connect to remote server"
-msgstr ""
+msgstr "Nawiązywania połączenia z serwerem"
 
 #: ../data/ui/connect.glade.h:2
 msgid "<b>Specify remote folder to connect</b>"
-msgstr ""
+msgstr "<b>Proszę określić zdalne położenie, aby nawiązać połączenie</b>"
 
 #: ../data/ui/connect.glade.h:3
 msgid "_Type:"
@@ -1136,7 +1139,7 @@ msgstr ""
 
 #: ../src/main-win.c:1826
 msgid "Add to Bookmarks"
-msgstr "Dodaj zakładkę"
+msgstr "Dodawanie zakładki"
 
 #: ../src/main-win.c:2552
 msgid "Select filter"
