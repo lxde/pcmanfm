@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-01-09 09:41+0100\n"
-"PO-Revision-Date: 2013-12-20 11:12+0000\n"
+"PO-Revision-Date: 2014-01-15 13:10+0000\n"
 "Last-Translator: mahfiaz <mahfiaz@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: et\n"
@@ -16,12 +16,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1387537921.0\n"
+"X-POOTLE-MTIME: 1389791442.0\n"
 
 #: ../data/ui/about.glade.in.h:1
-#, fuzzy
 msgid "Copyright (C) 2009 - 2014"
-msgstr "Autoriõigus (C) 2009 - 2013"
+msgstr "Autoriõigus (C) 2009 - 2014"
 
 #. Please replace this line with your own names, one name per line.
 #: ../data/ui/about.glade.in.h:3
@@ -29,7 +28,7 @@ msgid "translator-credits"
 msgstr ""
 "Anari Jalakas <anari.jalakas@gmail.com>, 2012 - 2013\n"
 "veeall, 2012\n"
-"Mattias Põldaru, 2013"
+"Mattias Põldaru, 2013, 2014"
 
 #: ../data/ui/desktop-pref.glade.h:1 ../src/desktop-ui.c:34
 #: ../data/pcmanfm-desktop-pref.desktop.in.h:1
@@ -85,24 +84,20 @@ msgid "<b>Show desktop icons</b>"
 msgstr "<b>Töölaua ikoonide näitamine</b>"
 
 #: ../data/ui/desktop-pref.glade.h:14
-#, fuzzy
 msgid "_Show \"Documents\" folder on the desktop"
-msgstr "Töölaual kausta \"_Dokumendid\" näitamine"
+msgstr "Töölaual kausta \"Dokumendid\" _näitamine"
 
 #: ../data/ui/desktop-pref.glade.h:15
-#, fuzzy
 msgid "Sho_w \"Devices\" folder on the desktop"
-msgstr "Töölaual kausta \"_Seadmed\" näitamine"
+msgstr "Töölaual _kausta \"Seadmed\" näitamine"
 
 #: ../data/ui/desktop-pref.glade.h:16
-#, fuzzy
 msgid "Show \"_Trash Can\" folder on the desktop"
-msgstr "Töölaual kausta \"_Prügikast\" näitamine"
+msgstr "Töölaual kausta \"Prügikast\" näi_tamine"
 
 #: ../data/ui/desktop-pref.glade.h:17
-#, fuzzy
 msgid "S_how connected volumes on the desktop"
-msgstr "Töölaual kettaseadmete _ikoonide näitamine"
+msgstr "Töölaual ühendatud kettaseadmete _näitamine"
 
 #: ../data/ui/desktop-pref.glade.h:18
 msgid "_Desktop Icons"
@@ -114,27 +109,25 @@ msgstr "Töölaual _klõpsates avaneb aknahalduri menüü"
 
 #: ../data/ui/desktop-pref.glade.h:20
 msgid "_Use desktop as a folder (show icons on it) by path:"
-msgstr ""
+msgstr "_Töölaua jaoks kasutatakse järgnevat kasuta (näidatakse selle ikoone):"
 
 #: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:84
 msgctxt "Use path for some folder: ..."
 msgid "Default"
-msgstr ""
+msgstr "Vaikimisi"
 
 #: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:85
 msgctxt "Use path for some folder: ..."
 msgid "Custom:"
-msgstr ""
+msgstr "Kohandatud:"
 
 #: ../data/ui/desktop-pref.glade.h:23
-#, fuzzy
 msgid "Select a Desktop Folder"
-msgstr "Töölaua kaust"
+msgstr "Töölaua kausta valimine"
 
 #: ../data/ui/desktop-pref.glade.h:24
-#, fuzzy
 msgid "_Open folders from desktop in new window"
-msgstr "_Uues töölaual olevad kaustad avatakse uues aknas"
+msgstr "_Töölaual olevad kaustad avatakse uues aknas"
 
 #: ../data/ui/desktop-pref.glade.h:25
 msgid "Ad_vanced"
@@ -145,48 +138,40 @@ msgid "Fill with background color only"
 msgstr "Ainult taustavärv"
 
 #: ../data/ui/desktop-pref.glade.h:27
-#, fuzzy
 msgid "Stretch to fill the entire monitor area"
-msgstr "Venitatakse töölaua mõõtmeteni"
+msgstr "Venitatakse ekraani mõõtmeteni"
 
 #: ../data/ui/desktop-pref.glade.h:28
-#, fuzzy
 msgid "Stretch to fit the monitor area"
-msgstr "Mahutatakse töölauale"
+msgstr "Mahutatakse ekraanile"
 
 #: ../data/ui/desktop-pref.glade.h:29
 msgid "Center unscaled image on the monitor"
-msgstr ""
+msgstr "Õiges suuruses pilt ekraani keskel"
 
 #: ../data/ui/desktop-pref.glade.h:30
-#, fuzzy
 msgid "Tile the image to fill the entire monitor area"
-msgstr "Mosaiikpilt"
+msgstr "Mosaiikpilt, täidab kogu ekraani"
 
 #: ../data/ui/desktop-pref.glade.h:31
-#, fuzzy
 msgid "Stretch and crop to fill the monitor area"
-msgstr "Venitatakse töölaua mõõtmeteni"
+msgstr "Suurendatakse nii, et täidab kogu ekraani"
 
 #: ../data/ui/desktop-pref.glade.h:32
-#, fuzzy
 msgid "Stretch to fill the complete screen"
-msgstr "Venitatakse töölaua mõõtmeteni"
+msgstr "Suurendatakse nii, et täidab kõik ekraanid"
 
 #: ../data/ui/pref.glade.h:1
-#, fuzzy
 msgid "Open in current tab"
-msgstr "Avatakse samal kaardil"
+msgstr "Avamine samal kaardil"
 
 #: ../data/ui/pref.glade.h:2
-#, fuzzy
 msgid "Open in new tab"
-msgstr "Ava uuel _kaardil"
+msgstr "Avamine uuel kaardil"
 
 #: ../data/ui/pref.glade.h:3
-#, fuzzy
 msgid "Open in new window"
-msgstr "Ava uus aken"
+msgstr "Avamine uues aknas"
 
 #: ../data/ui/pref.glade.h:4
 msgid "Preferences"
@@ -236,7 +221,7 @@ msgstr "_Vaikimisi tegevus lahtilaskmisel:"
 
 #: ../data/ui/pref.glade.h:15
 msgid "\"_Smart shortcut\" auto-action on drop to Desktop folder"
-msgstr ""
+msgstr "Töölauale lohistamisel on vaikimisi tegevus \"_Nutikas otseviide\""
 
 #: ../data/ui/pref.glade.h:16
 msgid ""
@@ -246,6 +231,11 @@ msgid ""
 "- other files (e.g. on removable media) will be copied\n"
 "- for some external URI a shortcut will be created"
 msgstr ""
+"Kui lubatud, siis \"Automaatne\" tegevus faili lohistamisel töölauale on:\n"
+"- otse kodukaustas asuvatele failidele luuakse sümbolviide\n"
+"- samas failisüsteemis asuvad failid liigutatakse sinna\n"
+"- teised failid (nt mälupulgal) kopeeritakse\n"
+"- väliste URIde jaoks luuakse otseviide"
 
 #: ../data/ui/pref.glade.h:21
 msgid "_Unfold tab when files are dragged onto tab button"
@@ -253,7 +243,7 @@ msgstr "_Ava kaart, kui fail lohistatakse kaardi nupule"
 
 #: ../data/ui/pref.glade.h:22
 msgid "_Focus previous folder after coming to its parent"
-msgstr ""
+msgstr "_Fookus on eelmisel kaustal pärast puus üles liikumist"
 
 #: ../data/ui/pref.glade.h:23
 msgid "<b>Default View</b>"
@@ -316,9 +306,8 @@ msgid "Al_ways show full file names"
 msgstr "Alati näidatakse _täielikke failinimesid"
 
 #: ../data/ui/pref.glade.h:38
-#, fuzzy
 msgid "Show icons of hidden _files shadowed"
-msgstr "Varundusfailide ikoone näidatakse _uduselt"
+msgstr "Varjatud failide ikoone näidatakse _varjutatult"
 
 #: ../data/ui/pref.glade.h:39
 msgid "_Display"
@@ -402,32 +391,28 @@ msgid "_Show available options for removable media when they are inserted"
 msgstr "_Näita eemaldatava andmekandja sisestamisel kasutatavaid võimalusi"
 
 #: ../data/ui/pref.glade.h:60
-#, fuzzy
 msgid "Do_n't show available options for those media types:"
-msgstr "_Näita eemaldatava andmekandja sisestamisel kasutatavaid võimalusi"
+msgstr "_Järgnevate meediatüüpide jaoks ei näidata saadaolevaid valikuid:"
 
 #: ../data/ui/pref.glade.h:61
-#, fuzzy
 msgid "_Remove selected"
-msgstr "%d kirje valitud"
+msgstr "_Eemalda valitud"
 
 #: ../data/ui/pref.glade.h:62
 msgid "_Open mounted removable media in new tab instead of new window"
 msgstr "_Eemaldatava andmekandja sisu avamine uue akna asemel uuel kaardil"
 
 #: ../data/ui/pref.glade.h:63
-#, fuzzy
 msgid "When removable medium unmounted:"
-msgstr "Ühendati eemaldatav andmekandja"
+msgstr "Kui eemaldatav andmekandja eemaldatakse:"
 
 #: ../data/ui/pref.glade.h:64
-#, fuzzy
 msgid "Clos_e tab containing removable medium"
-msgstr "_Sulge eemaldatava andmekandja kaart selle eemaldamisel"
+msgstr "_Sulgub eemaldatava andmekandja kaart"
 
 #: ../data/ui/pref.glade.h:65
 msgid "Change folder in the tab to _Home Folder"
-msgstr ""
+msgstr "Praegusel kaardil _kodukausta avamine"
 
 #: ../data/ui/pref.glade.h:66
 msgid "_Volume Management"
@@ -479,9 +464,8 @@ msgid "<b>Other Options</b>"
 msgstr "<b>Muud valikud</b>"
 
 #: ../data/ui/pref.glade.h:79
-#, fuzzy
 msgid "Use Application Startup Notify _by default"
-msgstr "_Faili avamisel valitakse alati selleks programm"
+msgstr "Näidatakse rakenduse käivitamise _teadet"
 
 #: ../data/ui/pref.glade.h:80
 msgid ""
@@ -499,11 +483,11 @@ msgstr "Laetava kausta sisu testimise edasilükkamine"
 
 #: ../data/ui/pref.glade.h:83
 msgid "Use path for \"Home Folder\" button:"
-msgstr ""
+msgstr "\"Kodukausta\" nupu jaoks kasutatav kaust:"
 
 #: ../data/ui/pref.glade.h:86
 msgid "_Use current"
-msgstr ""
+msgstr "_Kasutatakse praegust"
 
 #: ../data/ui/pref.glade.h:87
 msgid "_Advanced"
@@ -511,15 +495,15 @@ msgstr "L_aiendatud"
 
 #: ../data/ui/pref.glade.h:88
 msgid "<b>_Do not load modules matching:</b>"
-msgstr ""
+msgstr "<b>_Ei laadita mooduleid, mis vastavad mustrile:</b>"
 
 #: ../data/ui/pref.glade.h:89
 msgid "<b>_Load these modules anyway:</b>"
-msgstr ""
+msgstr "<b>_Need moodulid laaditakse igal juhul:</b>"
 
 #: ../data/ui/pref.glade.h:90
 msgid "Modules"
-msgstr ""
+msgstr "Moodulid"
 
 #: ../data/ui/pref.glade.h:91
 msgid "Auto (move if on the same FS, copy otherwise)"
@@ -540,22 +524,18 @@ msgid "Ask"
 msgstr "Küsitakse"
 
 #: ../data/ui/pref.glade.h:95
-#, fuzzy
 msgid "Icon view"
 msgstr "Ikoonivaade"
 
 #: ../data/ui/pref.glade.h:96
-#, fuzzy
 msgid "Compact view"
-msgstr "Kompaktvaade"
+msgstr "Kompaktne vaade"
 
 #: ../data/ui/pref.glade.h:97
-#, fuzzy
 msgid "Thumbnail view"
-msgstr "Pisipildivaade"
+msgstr "Pildivaade"
 
 #: ../data/ui/pref.glade.h:98
-#, fuzzy
 msgid "Detailed list view"
 msgstr "Detailne vaade"
 
@@ -581,7 +561,7 @@ msgstr "Vali toiming:"
 
 #: ../data/ui/autorun.glade.h:6
 msgid "_Always perform this action on this media type"
-msgstr ""
+msgstr "_Alati viiakse läbi see tegevus seda liiki meedia korral"
 
 #: ../data/ui/connect.glade.h:1
 msgid "Connect to remote server"
@@ -629,12 +609,11 @@ msgstr "WebDAV"
 
 #: ../src/volume-manager.c:237
 msgid "mixed content"
-msgstr ""
+msgstr "erinevat liiki sisu"
 
 #: ../src/volume-manager.c:246
-#, fuzzy
 msgid "removable disk"
-msgstr "Eemaldatav ketas"
+msgstr "eemaldatav ketas"
 
 #: ../src/volume-manager.c:302
 msgid "Open in File Manager"
@@ -654,7 +633,7 @@ msgstr "Ava _terminalis"
 
 #: ../src/desktop-ui.c:68
 msgid "_Remove from Desktop"
-msgstr ""
+msgstr "_Eemalda töölaualt"
 
 #: ../src/desktop-ui.c:85
 msgid "Stic_k to Current Position"
@@ -711,7 +690,7 @@ msgstr "Tühi fail"
 
 #: ../src/main-win-ui.c:193
 msgid "Folder Propertie_s"
-msgstr ""
+msgstr "Kausta _omadused"
 
 #: ../src/main-win-ui.c:194
 msgid "_Close Tab"
@@ -727,43 +706,39 @@ msgstr "_Redigeerimine"
 
 #: ../src/main-win-ui.c:198
 msgid "C_ut"
-msgstr ""
+msgstr "_Lõika"
 
 #: ../src/main-win-ui.c:201
 msgid "Move to _Trash"
-msgstr ""
+msgstr "Viska _prügikasti"
 
 #: ../src/main-win-ui.c:203
 msgid "Copy Pat_h(s)"
-msgstr ""
+msgstr "_Kopeeri asukoht"
 
 #: ../src/main-win-ui.c:204
-#, fuzzy
 msgid "R_ename..."
-msgstr "_Nimeta ümber"
+msgstr "_Muuda nime"
 
 #: ../src/main-win-ui.c:205
 msgid "D_uplicate..."
-msgstr ""
+msgstr "_Dubleeri..."
 
 #: ../src/main-win-ui.c:206
-#, fuzzy
 msgid "Create Lin_k..."
-msgstr "Loo _uus..."
+msgstr "Loo _link..."
 
 #: ../src/main-win-ui.c:207
-#, fuzzy
 msgid "_Move to..."
-msgstr "_Liiguta..."
+msgstr "_Liiguta kohta..."
 
 #: ../src/main-win-ui.c:208
-#, fuzzy
 msgid "Copy to_..."
-msgstr "_Kopeeri..."
+msgstr "_Kopeeri kohta..."
 
 #: ../src/main-win-ui.c:209
 msgid "Propertie_s"
-msgstr ""
+msgstr "_Omadused"
 
 #: ../src/main-win-ui.c:211
 msgid "_Invert Selection"
@@ -791,7 +766,7 @@ msgstr "_Tööriistariba"
 
 #: ../src/main-win-ui.c:216
 msgid "Pat_h Bar"
-msgstr ""
+msgstr "_Asukohariba"
 
 #: ../src/main-win-ui.c:217
 msgid "Side _Pane"
@@ -799,9 +774,8 @@ msgstr "Külg_paneel"
 
 #. other see below: 'ShowHidden' 'ShowStatus' 'Fullscreen' 'IconView'...
 #: ../src/main-win-ui.c:219
-#, fuzzy
 msgid "Fo_lder View Mode"
-msgstr "_Vaated:"
+msgstr "_Kaustavaade"
 
 #: ../src/main-win-ui.c:220
 msgid "S_ort Files"
@@ -813,7 +787,7 @@ msgstr "_Vähenda"
 
 #: ../src/main-win-ui.c:225
 msgid "Fil_ter..."
-msgstr ""
+msgstr "_Filter..."
 
 #: ../src/main-win-ui.c:227
 msgid "_Help"
@@ -901,7 +875,7 @@ msgstr "Liigu võrguasukohtade nimekirja"
 
 #: ../src/main-win-ui.c:241
 msgid "_Go to Location..."
-msgstr ""
+msgstr "_Mine kataloogi..."
 
 #: ../src/main-win-ui.c:242
 msgid "_Connect to Server..."
@@ -920,9 +894,8 @@ msgid "_Bookmarks"
 msgstr "_Järjehoidjad"
 
 #: ../src/main-win-ui.c:245
-#, fuzzy
 msgid "_Add to Bookmarks..."
-msgstr "_Lisa järjehoidja"
+msgstr "_Lisa järjehoidja..."
 
 #: ../src/main-win-ui.c:245
 msgid "Add current folder to bookmarks list"
@@ -930,7 +903,7 @@ msgstr "Praeguse kausta lisamine järjehoidjaks"
 
 #: ../src/main-win-ui.c:246
 msgid "Too_ls"
-msgstr ""
+msgstr "_Tööriistad"
 
 #: ../src/main-win-ui.c:247
 msgid "Open Current Folder in _Terminal"
@@ -945,9 +918,8 @@ msgid "Open search dialog"
 msgstr "Otsinguakna avamine"
 
 #: ../src/main-win-ui.c:252
-#, fuzzy
 msgid "_Run a Command in Current Folder..."
-msgstr "Praeguse kausta uuesti avamine"
+msgstr "_Käivita käsk selles kaustas..."
 
 #. Note to translators: "Mingle..." means "Do not put folders before files" but make the translation as short as possible, please!
 #: ../src/main-win-ui.c:267
@@ -975,19 +947,16 @@ msgstr ""
 "asemel"
 
 #: ../src/main-win-ui.c:277
-#, fuzzy
 msgid "_Show Toolbar"
 msgstr "_Tööriistariba näitamine"
 
 #: ../src/main-win-ui.c:278
-#, fuzzy
 msgid "Show 'New _Window' Button"
-msgstr "Näita nuppu 'Uus kaart'"
+msgstr "Nupu 'Uus _aken' näitamine"
 
 #: ../src/main-win-ui.c:279
-#, fuzzy
 msgid "Show 'New _Tab' Button"
-msgstr "Näita nuppu 'Uus kaart'"
+msgstr "Nupu 'Uus _kaart' näitamine"
 
 #: ../src/main-win-ui.c:280
 msgid "Show _Navigation Buttons"
@@ -1051,7 +1020,7 @@ msgstr "Faili_tüübi järgi"
 
 #: ../src/main-win-ui.c:312
 msgid "By _Extension"
-msgstr ""
+msgstr "_Laienduse järgi"
 
 #: ../src/main-win-ui.c:325
 msgid "Places"
@@ -1066,13 +1035,12 @@ msgid "Remote"
 msgstr "Võrgus"
 
 #: ../src/main-win-ui.c:333
-#, fuzzy
 msgid "_Location"
-msgstr "_Rakendused"
+msgstr "_Asukoht"
 
 #: ../src/main-win-ui.c:334
 msgid "_Buttons"
-msgstr ""
+msgstr "_Nupud"
 
 #: ../src/main-win.c:925 ../src/main-win.c:929
 msgid "Show history of visited folders"
@@ -1124,18 +1092,16 @@ msgstr ""
 "Ctrl+L või Alt+D: fookus asukoharibale"
 
 #: ../src/main-win.c:1210
-#, fuzzy
 msgid "Run a command"
-msgstr "_Vormindamise käsk:"
+msgstr "Käivita käsk"
 
 #: ../src/main-win.c:1211
 msgid "Enter a command to run:"
-msgstr ""
+msgstr "Sisesta käsk, mida käivitada:"
 
 #: ../src/main-win.c:1218
-#, fuzzy
 msgid "Current folder is inaccessible"
-msgstr "Ava kaust _terminalis"
+msgstr "Praegune kaust ei ole kättesaadav"
 
 #: ../src/main-win.c:1822
 #, c-format
@@ -1154,11 +1120,11 @@ msgstr "Järjehoidja lisamine"
 
 #: ../src/main-win.c:2552
 msgid "Select filter"
-msgstr ""
+msgstr "Vali filter"
 
 #: ../src/main-win.c:2553
 msgid "Choose a new shell pattern to show files:"
-msgstr ""
+msgstr "Vali uus muster, mille järgi faile kuvada:"
 
 #. options only acceptable by first pcmanfm instance. These options are not passed through IPC
 #: ../src/pcmanfm.c:78
@@ -1204,12 +1170,10 @@ msgstr "FAIL"
 
 #. don't translate list of modes in description, please
 #: ../src/pcmanfm.c:89
-#, fuzzy
 msgid ""
 "Set mode of desktop wallpaper. MODE=(color|stretch|fit|crop|center|tile|"
 "screen)"
-msgstr ""
-"Töölaua taustapildi režiimi määramine. REŽIIM=(color|stretch|fit|center|tile)"
+msgstr "Töölaua taustapildi paigutus. MODE=(color|stretch|fit|center|tile)"
 
 #: ../src/pcmanfm.c:89
 msgid "MODE"
@@ -1228,9 +1192,8 @@ msgid "Open new window"
 msgstr "Ava uus aken"
 
 #: ../src/pcmanfm.c:93
-#, fuzzy
 msgid "Open a Find Files window"
-msgstr "Ava uus aken"
+msgstr "Ava failide otsimine uues aknas"
 
 #: ../src/pcmanfm.c:95
 msgid "Window role for usage by window manager"
@@ -1280,19 +1243,19 @@ msgstr[1] " (%d peidetud)"
 
 #: ../src/pref.c:514
 msgid "Add to Modules Blacklist"
-msgstr ""
+msgstr "Moodulite lisamine musta nimekirja"
 
 #: ../src/pref.c:515
 msgid "Enter a blacklisted module mask:"
-msgstr ""
+msgstr "Sisesta mooduli jaoks musta nimekirja mask:"
 
 #: ../src/pref.c:606
 msgid "Add to Modules Whitelist"
-msgstr ""
+msgstr "Moodulite lisamine valgesse nimekirja"
 
 #: ../src/pref.c:607
 msgid "Enter a whitelisted module mask:"
-msgstr ""
+msgstr "Sisesta mooduli jaoks valge nimekirja mask:"
 
 #: ../data/pcmanfm.desktop.in.h:1
 msgid "File Manager PCManFM"
