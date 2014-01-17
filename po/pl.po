@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm 1.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-01-09 09:41+0100\n"
-"PO-Revision-Date: 2014-01-15 10:16+0100\n"
+"PO-Revision-Date: 2014-01-17 10:15+0100\n"
 "Last-Translator: Piotr Sokół <psokol@jabster.pl>\n"
 "Language-Team: polski <>\n"
 "Language: pl\n"
@@ -33,13 +33,13 @@ msgid "translator-credits"
 msgstr ""
 "Grzegorz Gibas <amigib@gmail.com>, 2010.\n"
 "Franciszek Janowski <nobange@poczta.onet.pl>, 2013.\n"
-"Piotr Sokół <psokol@jabster.pl>, 2010, 2011, 2012, 2013, 2014.\n"
-"Piotr Strębski <strebski@o2.pl>, 2013."
+"Piotr Strębski <strebski@o2.pl>, 2013.\n"
+"Piotr Sokół <psokol@jabster.pl>, 2010, 2011, 2012, 2013, 2014."
 
 #: ../data/ui/desktop-pref.glade.h:1 ../src/desktop-ui.c:34
 #: ../data/pcmanfm-desktop-pref.desktop.in.h:1
 msgid "Desktop Preferences"
-msgstr "Preferencje pulpitu"
+msgstr "Ustawienia pulpitu"
 
 #: ../data/ui/desktop-pref.glade.h:2
 msgid "<b>Background</b>"
@@ -91,23 +91,23 @@ msgstr "<b>Wyświetlanie ikon na pulpicie</b>"
 
 #: ../data/ui/desktop-pref.glade.h:14
 msgid "_Show \"Documents\" folder on the desktop"
-msgstr "Wyświetlanie katalogu „_Dokumenty”"
+msgstr "Katalog „_Dokumenty”"
 
 #: ../data/ui/desktop-pref.glade.h:15
 msgid "Sho_w \"Devices\" folder on the desktop"
-msgstr "Wyświetlanie katalogu „_Nośniki”"
+msgstr "Katalog „_Nośniki”"
 
 #: ../data/ui/desktop-pref.glade.h:16
 msgid "Show \"_Trash Can\" folder on the desktop"
-msgstr "Wyświetlanie katalogu „_Kosz”"
+msgstr "Katalog „_Kosz”"
 
 #: ../data/ui/desktop-pref.glade.h:17
 msgid "S_how connected volumes on the desktop"
-msgstr "Wyświetlanie _ikon zamontowanych wolumenów"
+msgstr "_Zamontowane wolumeny"
 
 #: ../data/ui/desktop-pref.glade.h:18
 msgid "_Desktop Icons"
-msgstr "_Ikony pulpitu"
+msgstr "_Ikony"
 
 #: ../data/ui/desktop-pref.glade.h:19
 msgid "_Show menus provided by window managers when desktop is clicked"
@@ -117,7 +117,7 @@ msgstr ""
 
 #: ../data/ui/desktop-pref.glade.h:20
 msgid "_Use desktop as a folder (show icons on it) by path:"
-msgstr ""
+msgstr "_Wyświetlanie zawartości katalogu na pulpicie określając jego ścieżkę:"
 
 #: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:84
 msgctxt "Use path for some folder: ..."
@@ -130,14 +130,12 @@ msgid "Custom:"
 msgstr "Własna:"
 
 #: ../data/ui/desktop-pref.glade.h:23
-#, fuzzy
 msgid "Select a Desktop Folder"
-msgstr "Katalog pulpitu"
+msgstr "Wybór katalogu pulpitu"
 
 #: ../data/ui/desktop-pref.glade.h:24
-#, fuzzy
 msgid "_Open folders from desktop in new window"
-msgstr "W nowym oknie"
+msgstr "_Otwieranie katalogów pulpitu w nowym oknie"
 
 #: ../data/ui/desktop-pref.glade.h:25
 msgid "Ad_vanced"
@@ -145,34 +143,29 @@ msgstr "_Zaawansowane"
 
 #: ../data/ui/desktop-pref.glade.h:26
 msgid "Fill with background color only"
-msgstr "Tylko wypełnienie kolorem"
+msgstr "Wypełnienie kolorem"
 
 #: ../data/ui/desktop-pref.glade.h:27
-#, fuzzy
 msgid "Stretch to fill the entire monitor area"
 msgstr "Rozciągnięcie do rozmiaru ekranu"
 
 #: ../data/ui/desktop-pref.glade.h:28
-#, fuzzy
 msgid "Stretch to fit the monitor area"
 msgstr "Dopasowanie do rozmiaru ekranu"
 
 #: ../data/ui/desktop-pref.glade.h:29
 msgid "Center unscaled image on the monitor"
-msgstr ""
+msgstr "Wyśrodkowanie"
 
 #: ../data/ui/desktop-pref.glade.h:30
-#, fuzzy
 msgid "Tile the image to fill the entire monitor area"
 msgstr "Rozmieszczenie sąsiadująco"
 
 #: ../data/ui/desktop-pref.glade.h:31
-#, fuzzy
 msgid "Stretch and crop to fill the monitor area"
-msgstr "Rozciągnięcie do rozmiaru ekranu"
+msgstr "Rozciągnięcie i skadrowanie do rozmiaru ekranu"
 
 #: ../data/ui/desktop-pref.glade.h:32
-#, fuzzy
 msgid "Stretch to fill the complete screen"
 msgstr "Rozciągnięcie do rozmiaru ekranu"
 
@@ -412,7 +405,6 @@ msgid "Do_n't show available options for those media types:"
 msgstr "_Pomijanie wyświetlania czynności dla poniższych typów nośników:"
 
 #: ../data/ui/pref.glade.h:61
-#, fuzzy
 msgid "_Remove selected"
 msgstr "_Usuń zaznaczony"
 
@@ -427,13 +419,12 @@ msgid "When removable medium unmounted:"
 msgstr "Działanie odmontowania nośnika wymiennego:"
 
 #: ../data/ui/pref.glade.h:64
-#, fuzzy
 msgid "Clos_e tab containing removable medium"
-msgstr "Za_mknięcie karty zawierającej położenie nośnika wymiennego"
+msgstr "Za_mknięcie karty"
 
 #: ../data/ui/pref.glade.h:65
 msgid "Change folder in the tab to _Home Folder"
-msgstr ""
+msgstr "Przejście do katalogu _użytkownika"
 
 #: ../data/ui/pref.glade.h:66
 msgid "_Volume Management"
@@ -494,10 +485,8 @@ msgid ""
 "explicitly.\n"
 "If unchecked then use Startup Notify only if that is defined for application."
 msgstr ""
-"Jeśli zaznaczone, używa Startup Notify dla aplikacji jeżeli wyraźnie nie "
-"określono inaczej.\n"
-"Jeśli odznaczone, używa Startup Notify tylko jeżeli jest tak określone dla "
-"aplikacji."
+"Przełącza pomiędzy powiadamianiem o uruchamianiu wszystkich programów poza "
+"wykluczonymi, a powiadamianiem o uruchomieniu określonych programów"
 
 #: ../data/ui/pref.glade.h:82
 msgid "D_efer test for content type on folder loading"
@@ -629,12 +618,11 @@ msgstr "WebDAV"
 
 #: ../src/volume-manager.c:237
 msgid "mixed content"
-msgstr ""
+msgstr "różna zawartość"
 
 #: ../src/volume-manager.c:246
-#, fuzzy
 msgid "removable disk"
-msgstr "Nośnik wymienny"
+msgstr "nośnik wymienny"
 
 #: ../src/volume-manager.c:302
 msgid "Open in File Manager"
@@ -654,7 +642,7 @@ msgstr "Otwórz w _terminalu"
 
 #: ../src/desktop-ui.c:68
 msgid "_Remove from Desktop"
-msgstr ""
+msgstr "_Usuń z pulpitu"
 
 #: ../src/desktop-ui.c:85
 msgid "Stic_k to Current Position"
@@ -670,11 +658,11 @@ msgstr "Aktywuj plik"
 
 #: ../src/desktop.c:948
 msgid "Show file menu"
-msgstr "Pokaż menu pliku"
+msgstr "Wyświetla menu pliku"
 
 #: ../src/desktop.c:1364
 msgid "Show desktop menu"
-msgstr "Pokaż menu pulpitu"
+msgstr "Wyświetla menu pulpitu"
 
 #. FIXME: set name by monitor
 #: ../src/desktop.c:1436
@@ -699,7 +687,7 @@ msgstr "Otwiera katalog w nowej karcie"
 
 #: ../src/main-win-ui.c:190
 msgid "C_reate New..."
-msgstr "_Utwórz nowy..."
+msgstr "Utwórz _nowy..."
 
 #: ../src/main-win-ui.c:191
 msgid "Folder"
@@ -715,7 +703,7 @@ msgstr "_Właściwości katalogu"
 
 #: ../src/main-win-ui.c:194
 msgid "_Close Tab"
-msgstr "Z_amknij kartę"
+msgstr "Zamknij k_artę"
 
 #: ../src/main-win-ui.c:195
 msgid "Close _Window"
@@ -731,7 +719,7 @@ msgstr "_Wytnij"
 
 #: ../src/main-win-ui.c:201
 msgid "Move to _Trash"
-msgstr "Przenieś do _kosza"
+msgstr "Przeni_eś do kosza"
 
 #: ../src/main-win-ui.c:203
 msgid "Copy Pat_h(s)"
@@ -755,7 +743,7 @@ msgstr "_Przenieś do..."
 
 #: ../src/main-win-ui.c:208
 msgid "Copy to_..."
-msgstr "K_opiuj do..."
+msgstr "Kop_iuj do..."
 
 #: ../src/main-win-ui.c:209
 msgid "Propertie_s"
@@ -763,7 +751,7 @@ msgstr "_Właściwości"
 
 #: ../src/main-win-ui.c:211
 msgid "_Invert Selection"
-msgstr "_Odwróć zaznaczenie"
+msgstr "Odwróć zaz_naczenie"
 
 #: ../src/main-win-ui.c:212
 msgid "Prefere_nces"
@@ -876,7 +864,7 @@ msgstr "Przechodzi do głównego katalogu systemu plików"
 
 #: ../src/main-win-ui.c:238
 msgid "_Applications"
-msgstr "_Programy"
+msgstr "P_rogramy"
 
 #: ../src/main-win-ui.c:238
 msgid "Go to root of applications menu folder"
@@ -896,15 +884,15 @@ msgstr "Przechodzi do listy położeń sieciowych"
 
 #: ../src/main-win-ui.c:241
 msgid "_Go to Location..."
-msgstr "_Położenie..."
+msgstr "P_ołożenie..."
 
 #: ../src/main-win-ui.c:242
 msgid "_Connect to Server..."
-msgstr "P_ołącz z serwerem..."
+msgstr "Połą_cz z serwerem..."
 
 #: ../src/main-win-ui.c:242
 msgid "Open a window to choose remote folder location"
-msgstr ""
+msgstr "Otwiera okno wyboru zdalnego położenia"
 
 #: ../src/main-win-ui.c:243
 msgid "Go to the path in the location bar"
@@ -940,7 +928,7 @@ msgstr "Otwiera okno wyszukiwania"
 
 #: ../src/main-win-ui.c:252
 msgid "_Run a Command in Current Folder..."
-msgstr "_Wykonaj polecenie w bieżącym położeniu..."
+msgstr "Wy_konaj polecenie w bieżącym położeniu..."
 
 #. Note to translators: "Mingle..." means "Do not put folders before files" but make the translation as short as possible, please!
 #: ../src/main-win-ui.c:267
@@ -1061,7 +1049,7 @@ msgstr "_Pole ścieżki"
 
 #: ../src/main-win-ui.c:334
 msgid "_Buttons"
-msgstr "_Przyciski"
+msgstr "P_rzyciski"
 
 #: ../src/main-win.c:925 ../src/main-win.c:929
 msgid "Show history of visited folders"
@@ -1076,14 +1064,15 @@ msgid "You are in super user mode"
 msgstr "W użyciu tryb super użytkownika"
 
 #: ../src/main-win.c:1134
-#, fuzzy
 msgid "Lightweight file manager\n"
-msgstr "Lekki menedżer plików\n"
+msgstr ""
+"Zarządza zawartością sytemu plików, wyróżniając się\n"
+"małą ilością zużywanych zasobów.\n"
 
 #: ../src/main-win.c:1139
 #, c-format
 msgid "using LibFM ver. %s\n"
-msgstr "używa LibFM wersja %s\n"
+msgstr "Używa LibFM w wersji %s\n"
 
 #: ../src/main-win.c:1141
 msgid ""
@@ -1271,19 +1260,19 @@ msgstr[2] " (%d ukrytych)"
 
 #: ../src/pref.c:514
 msgid "Add to Modules Blacklist"
-msgstr ""
+msgstr "Dodawanie do listy pomijanych modułów"
 
 #: ../src/pref.c:515
 msgid "Enter a blacklisted module mask:"
-msgstr ""
+msgstr "Proszę wprowadzić wzór pomijanych modułów:"
 
 #: ../src/pref.c:606
 msgid "Add to Modules Whitelist"
-msgstr ""
+msgstr "Dodawanie do listy wczytywanych modułów"
 
 #: ../src/pref.c:607
 msgid "Enter a whitelisted module mask:"
-msgstr ""
+msgstr "Proszę wprowadzić wzór zawsze wczytywanych modułów:"
 
 #: ../data/pcmanfm.desktop.in.h:1
 msgid "File Manager PCManFM"
