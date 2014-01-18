@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm 0.9\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-01-09 09:41+0100\n"
-"PO-Revision-Date: 2014-01-18 22:36+0000\n"
+"PO-Revision-Date: 2014-01-18 22:47+0000\n"
 "Last-Translator: Dar_Kuntu <ZAck13@gmx.at>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1390084561.0\n"
+"X-POOTLE-MTIME: 1390085248.0\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2014"
@@ -34,7 +34,7 @@ msgstr ""
 #: ../data/ui/desktop-pref.glade.h:1 ../src/desktop-ui.c:34
 #: ../data/pcmanfm-desktop-pref.desktop.in.h:1
 msgid "Desktop Preferences"
-msgstr "Einstellungen der Arbeitsfläche"
+msgstr "Desktop Einstellungen"
 
 #: ../data/ui/desktop-pref.glade.h:2
 msgid "<b>Background</b>"
@@ -55,7 +55,7 @@ msgstr "Hintergrundbild wählen"
 
 #: ../data/ui/desktop-pref.glade.h:6
 msgid "_Use the same wallpaper on all desktops"
-msgstr "_Das gleiche Hintergrundbild für alle Arbeitsflächen benutzen"
+msgstr "_Das gleiche Hintergrundbild für alle Desktops benutzen"
 
 #: ../data/ui/desktop-pref.glade.h:7
 msgid "_Background color:"
@@ -87,30 +87,27 @@ msgstr "<b>Desktop-Symbole anzeigen</b>"
 
 #: ../data/ui/desktop-pref.glade.h:14
 msgid "_Show \"Documents\" folder on the desktop"
-msgstr "Zeige \"_Dokumente\" Symbol auf der Arbeitsfläche"
+msgstr "Zeige \"_Dokumente\" Symbol auf dem Desktop"
 
 #: ../data/ui/desktop-pref.glade.h:15
 msgid "Sho_w \"Devices\" folder on the desktop"
-msgstr "Zeige \"_Geräte\" Symbol auf der Arbeitsfläche"
+msgstr "Zeige \"_Geräte\" Symbol auf dem Desktop"
 
 #: ../data/ui/desktop-pref.glade.h:16
-#, fuzzy
 msgid "Show \"_Trash Can\" folder on the desktop"
-msgstr "\"_Papierkorb\" auf Desktop anzeigen"
+msgstr "Zeige \"_Papierkorb\" Symbol auf dem Desktop"
 
 #: ../data/ui/desktop-pref.glade.h:17
-#, fuzzy
 msgid "S_how connected volumes on the desktop"
-msgstr "_Symbole für Datenträger auf dem Desktop anzeigen"
+msgstr "Zeige \"_Laufwerke\" Symbol auf dem Desktop"
 
 #: ../data/ui/desktop-pref.glade.h:18
 msgid "_Desktop Icons"
-msgstr "_Arbeitsflächen-Symbole"
+msgstr "_Desktop-Symbole"
 
 #: ../data/ui/desktop-pref.glade.h:19
 msgid "_Show menus provided by window managers when desktop is clicked"
-msgstr ""
-"_Beim Klicken auf die Arbeitsfläche die Menüs des Fenstermanagers anzeigen"
+msgstr "_Beim Klicken auf den Desktop die Menüs des Fenstermanagers anzeigen"
 
 #: ../data/ui/desktop-pref.glade.h:20
 msgid "_Use desktop as a folder (show icons on it) by path:"
@@ -1334,7 +1331,7 @@ msgstr "Das Dateisystem durchsuchen und Dateien verwalten"
 
 #: ../data/pcmanfm-desktop-pref.desktop.in.h:2
 msgid "Change desktop wallpapers and behavior of desktop manager"
-msgstr "Hintergrundbilder und Verhalten der Arbeitsflächenverwaltung ändern"
+msgstr "Hintergrundbilder und Verhalten der Desktopverwaltung ändern"
 
 #~ msgid "Center on the screen"
 #~ msgstr "Zentriert"
