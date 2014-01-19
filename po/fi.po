@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm 0.9.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-01-09 09:41+0100\n"
-"PO-Revision-Date: 2014-01-08 14:25+0000\n"
+"PO-Revision-Date: 2014-01-19 14:15+0000\n"
 "Last-Translator: Juhani <juhaninumminen0@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: fi\n"
@@ -18,7 +18,7 @@ msgstr ""
 "X-Generator: Pootle 2.5.0\n"
 "X-Language: fi_FI\n"
 "X-Source-Language: C\n"
-"X-POOTLE-MTIME: 1389191118.0\n"
+"X-POOTLE-MTIME: 1390140958.0\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2014"
@@ -151,7 +151,6 @@ msgid "Center unscaled image on the monitor"
 msgstr "Keskitä skaalaamaton kuva näytölle"
 
 #: ../data/ui/desktop-pref.glade.h:30
-#, fuzzy
 msgid "Tile the image to fill the entire monitor area"
 msgstr "Täytä ruutu laittamalla kuvia vierekkäin"
 
@@ -160,24 +159,20 @@ msgid "Stretch and crop to fill the monitor area"
 msgstr "Venytä ja leikkaa näytön kokoiseksi"
 
 #: ../data/ui/desktop-pref.glade.h:32
-#, fuzzy
 msgid "Stretch to fill the complete screen"
 msgstr "Venytä koko näytölle"
 
 #: ../data/ui/pref.glade.h:1
-#, fuzzy
 msgid "Open in current tab"
 msgstr "Avaa nykyiseen välilehteen"
 
 #: ../data/ui/pref.glade.h:2
-#, fuzzy
 msgid "Open in new tab"
-msgstr "_Avaa uuteen välilehteen"
+msgstr "Avaa uuteen välilehteen"
 
 #: ../data/ui/pref.glade.h:3
-#, fuzzy
 msgid "Open in new window"
-msgstr "Avaa uuteen _ikkunaan"
+msgstr "Avaa uuteen ikkunaan"
 
 #: ../data/ui/pref.glade.h:4
 msgid "Preferences"
@@ -227,6 +222,8 @@ msgstr "_Raahaamisen oletustoiminto:"
 #: ../data/ui/pref.glade.h:15
 msgid "\"_Smart shortcut\" auto-action on drop to Desktop folder"
 msgstr ""
+"”Äl_ykkään pikakuvakkeen” automaattinen tunnistus pudotettaessa "
+"työpöytäkansioon"
 
 #: ../data/ui/pref.glade.h:16
 msgid ""
@@ -307,9 +304,8 @@ msgid "Al_ways show full file names"
 msgstr "Näytä _aina koko tiedostonimi"
 
 #: ../data/ui/pref.glade.h:38
-#, fuzzy
 msgid "Show icons of hidden _files shadowed"
-msgstr "Näytä va_rmuuskopiotiedostojen kuvakkeet tummennettuina"
+msgstr "Näytä _piilotiedostojen kuvakkeet varjostettuina"
 
 #: ../data/ui/pref.glade.h:39
 msgid "_Display"
@@ -468,7 +464,6 @@ msgid "<b>Other Options</b>"
 msgstr "<b>Muut vaihtoehdot</b>"
 
 #: ../data/ui/pref.glade.h:79
-#, fuzzy
 msgid "Use Application Startup Notify _by default"
 msgstr "Kä_ytä käynnistyksen huomautusta oletusarvoisesti"
 
@@ -489,11 +484,11 @@ msgstr "_Lykkää sisältötyypin tunnistamista kansiota ladattaessa"
 
 #: ../data/ui/pref.glade.h:83
 msgid "Use path for \"Home Folder\" button:"
-msgstr ""
+msgstr "Käytä ”Kotikansio”-painikkeelle polkua:"
 
 #: ../data/ui/pref.glade.h:86
 msgid "_Use current"
-msgstr ""
+msgstr "_Käytä nykyistä"
 
 #: ../data/ui/pref.glade.h:87
 msgid "_Advanced"
@@ -501,15 +496,15 @@ msgstr "_Lisäasetukset"
 
 #: ../data/ui/pref.glade.h:88
 msgid "<b>_Do not load modules matching:</b>"
-msgstr ""
+msgstr "<b>Älä lataa _moduuleja, jotka täsmäävät:</b>"
 
 #: ../data/ui/pref.glade.h:89
 msgid "<b>_Load these modules anyway:</b>"
-msgstr ""
+msgstr "<b>Lataa nämä moduulit _joka tapauksessa:</b>"
 
 #: ../data/ui/pref.glade.h:90
 msgid "Modules"
-msgstr ""
+msgstr "Moduulit"
 
 #: ../data/ui/pref.glade.h:91
 msgid "Auto (move if on the same FS, copy otherwise)"
@@ -529,24 +524,20 @@ msgid "Ask"
 msgstr "Kysy"
 
 #: ../data/ui/pref.glade.h:95
-#, fuzzy
 msgid "Icon view"
 msgstr "Kuvakenäkymä"
 
 #: ../data/ui/pref.glade.h:96
-#, fuzzy
 msgid "Compact view"
-msgstr "Kompakti näkymä"
+msgstr "Tiivis näkymä"
 
 #: ../data/ui/pref.glade.h:97
-#, fuzzy
 msgid "Thumbnail view"
-msgstr "Esikatselu näkymä"
+msgstr "Esikatselunäkymä"
 
 #: ../data/ui/pref.glade.h:98
-#, fuzzy
 msgid "Detailed list view"
-msgstr "Yksityiskohdat"
+msgstr "Yksityiskohtainen listanäkymä"
 
 #: ../data/ui/autorun.glade.h:1
 msgid "Removable medium is inserted"
@@ -720,38 +711,35 @@ msgstr ""
 
 #: ../src/main-win-ui.c:201
 msgid "Move to _Trash"
-msgstr ""
+msgstr "Siirrä _roskakoriin"
 
 #: ../src/main-win-ui.c:203
 msgid "Copy Pat_h(s)"
-msgstr ""
+msgstr "Kopioi _polut"
 
 #: ../src/main-win-ui.c:204
 msgid "R_ename..."
-msgstr ""
+msgstr "_Nimeä uudelleen…"
 
 #: ../src/main-win-ui.c:205
 msgid "D_uplicate..."
-msgstr ""
+msgstr "Kah_denna…"
 
 #: ../src/main-win-ui.c:206
-#, fuzzy
 msgid "Create Lin_k..."
-msgstr "Luo sy_mbolinen linkki"
+msgstr "Luo _linkki…"
 
 #: ../src/main-win-ui.c:207
-#, fuzzy
 msgid "_Move to..."
 msgstr "_Siirrä…"
 
 #: ../src/main-win-ui.c:208
-#, fuzzy
 msgid "Copy to_..."
 msgstr "_Kopioi…"
 
 #: ../src/main-win-ui.c:209
 msgid "Propertie_s"
-msgstr ""
+msgstr "Ominai_suudet"
 
 #: ../src/main-win-ui.c:211
 msgid "_Invert Selection"
@@ -788,7 +776,7 @@ msgstr "_Sivupaneeli"
 #. other see below: 'ShowHidden' 'ShowStatus' 'Fullscreen' 'IconView'...
 #: ../src/main-win-ui.c:219
 msgid "Fo_lder View Mode"
-msgstr ""
+msgstr "_Kansion näkymä"
 
 #: ../src/main-win-ui.c:220
 msgid "S_ort Files"
@@ -939,21 +927,20 @@ msgstr ""
 #. Note to translators: "Mingle..." means "Do not put folders before files" but make the translation as short as possible, please!
 #: ../src/main-win-ui.c:267
 msgid "Mingle _Files and Folders"
-msgstr ""
+msgstr "Tiedostot ja k_ansiot sekaisin"
 
 #: ../src/main-win-ui.c:270
 msgid "_Ignore Name Case"
-msgstr ""
+msgstr "_Älä huomioi suuria ja pieniä kirjaimia"
 
 #: ../src/main-win-ui.c:272
-#, fuzzy
 msgid "Sho_w Hidden"
 msgstr "Näytä _piilotetut"
 
 #. Note to translators: this save is meant for folder's settings such as sort
 #: ../src/main-win-ui.c:274
 msgid "Preserve This Folder's Settings"
-msgstr ""
+msgstr "Säilytä kansion asetukset"
 
 #: ../src/main-win-ui.c:275
 msgid ""
