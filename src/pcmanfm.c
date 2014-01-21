@@ -287,9 +287,9 @@ int main(int argc, char** argv)
         GDK_THREADS_LEAVE();
 #endif
 
-        pcmanfm_save_config(TRUE);
         if(save_config_idle)
         {
+            pcmanfm_save_config(TRUE);
             g_source_remove(save_config_idle);
             save_config_idle = 0;
         }
