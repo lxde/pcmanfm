@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-01-09 09:41+0100\n"
-"PO-Revision-Date: 2013-12-17 15:01+0000\n"
+"PO-Revision-Date: 2014-01-21 06:45+0000\n"
 "Last-Translator: wwycheuk <wwycheuk@gmail.com>\n"
 "Language-Team: zh_TW <zh_TW@li.org>\n"
 "Language: zh_TW\n"
@@ -17,12 +17,11 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Pootle 2.5.0\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-POOTLE-MTIME: 1387292477.0\n"
+"X-POOTLE-MTIME: 1390286721.0\n"
 
 #: ../data/ui/about.glade.in.h:1
-#, fuzzy
 msgid "Copyright (C) 2009 - 2014"
-msgstr "版權所有 (C) 2009 - 2013"
+msgstr "著作權 (C) 2009 - 2014"
 
 #. Please replace this line with your own names, one name per line.
 #: ../data/ui/about.glade.in.h:3
@@ -83,24 +82,20 @@ msgid "<b>Show desktop icons</b>"
 msgstr "<b>顯示桌面圖示</b>"
 
 #: ../data/ui/desktop-pref.glade.h:14
-#, fuzzy
 msgid "_Show \"Documents\" folder on the desktop"
-msgstr "在桌面顯示「文件」圖示(_S)"
+msgstr "在桌面顯示「文件」資料夾(_S)"
 
 #: ../data/ui/desktop-pref.glade.h:15
-#, fuzzy
 msgid "Sho_w \"Devices\" folder on the desktop"
-msgstr "在桌面顯示「裝置」圖示(_W)"
+msgstr "在桌面顯示「裝置」資料夾(_W)"
 
 #: ../data/ui/desktop-pref.glade.h:16
-#, fuzzy
 msgid "Show \"_Trash Can\" folder on the desktop"
-msgstr "在桌面顯示「垃圾桶」圖示(_T)"
+msgstr "在桌面顯示「垃圾桶」資料夾(_T)"
 
 #: ../data/ui/desktop-pref.glade.h:17
-#, fuzzy
 msgid "S_how connected volumes on the desktop"
-msgstr "在桌面顯示磁碟圖示(_H)"
+msgstr "在桌面顯示連接的儲存區(_H)"
 
 #: ../data/ui/desktop-pref.glade.h:18
 msgid "_Desktop Icons"
@@ -117,20 +112,18 @@ msgstr ""
 #: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:84
 msgctxt "Use path for some folder: ..."
 msgid "Default"
-msgstr ""
+msgstr "預設"
 
 #: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:85
 msgctxt "Use path for some folder: ..."
 msgid "Custom:"
-msgstr ""
+msgstr "自訂："
 
 #: ../data/ui/desktop-pref.glade.h:23
-#, fuzzy
 msgid "Select a Desktop Folder"
-msgstr "桌面資料夾"
+msgstr "選取桌面資料夾"
 
 #: ../data/ui/desktop-pref.glade.h:24
-#, fuzzy
 msgid "_Open folders from desktop in new window"
 msgstr "在新視窗開啟來自桌面的資料夾(_O)"
 
@@ -143,18 +136,16 @@ msgid "Fill with background color only"
 msgstr "只以背景色填滿"
 
 #: ../data/ui/desktop-pref.glade.h:27
-#, fuzzy
 msgid "Stretch to fill the entire monitor area"
 msgstr "延展至填滿整個螢幕"
 
 #: ../data/ui/desktop-pref.glade.h:28
-#, fuzzy
 msgid "Stretch to fit the monitor area"
 msgstr "延展到適合螢幕大小"
 
 #: ../data/ui/desktop-pref.glade.h:29
 msgid "Center unscaled image on the monitor"
-msgstr ""
+msgstr "將無延展的影像放在螢幕中央"
 
 #: ../data/ui/desktop-pref.glade.h:30
 #, fuzzy
@@ -164,7 +155,7 @@ msgstr "並排影像填滿整個螢幕"
 #: ../data/ui/desktop-pref.glade.h:31
 #, fuzzy
 msgid "Stretch and crop to fill the monitor area"
-msgstr "延展至填滿整個螢幕"
+msgstr "延展並剪裁至填滿整個螢幕"
 
 #: ../data/ui/desktop-pref.glade.h:32
 #, fuzzy
@@ -172,19 +163,16 @@ msgid "Stretch to fill the complete screen"
 msgstr "延展至填滿整個螢幕"
 
 #: ../data/ui/pref.glade.h:1
-#, fuzzy
 msgid "Open in current tab"
 msgstr "在目前分頁開啟"
 
 #: ../data/ui/pref.glade.h:2
-#, fuzzy
 msgid "Open in new tab"
-msgstr "在新分頁開啟(_B)"
+msgstr "在新分頁開啟"
 
 #: ../data/ui/pref.glade.h:3
-#, fuzzy
 msgid "Open in new window"
-msgstr "開啟新視窗"
+msgstr "在新視窗開啟"
 
 #: ../data/ui/pref.glade.h:4
 msgid "Preferences"
@@ -207,22 +195,18 @@ msgid "Co_nfirm before deleting files"
 msgstr "刪除檔案前先確認(_N)"
 
 #: ../data/ui/pref.glade.h:9
-#, fuzzy
 msgid "_Move deleted files to \"trash can\" instead of erasing from disk"
-msgstr "將刪除的檔案移到「垃圾桶」而不真的從磁碟清除(_M)"
+msgstr "將刪除的檔案丟到「垃圾桶」而非真的從磁碟清除(_M)"
 
 #: ../data/ui/pref.glade.h:10
-#, fuzzy
 msgid "_Erase files on removable media instead of \"trash can\" creation"
 msgstr "當刪除移除式媒體的檔案時直接刪除，而非建立「垃圾桶」(_E)"
 
 #: ../data/ui/pref.glade.h:11
-#, fuzzy
 msgid "Confi_rm before moving files into \"trash can\""
-msgstr "將檔案移至「垃圾桶」前先確認(_R)"
+msgstr "將檔案丟至「垃圾桶」前要先確認(_R)"
 
 #: ../data/ui/pref.glade.h:12
-#, fuzzy
 msgid "Don't ask options on _launch executable file"
 msgstr "啟動執行檔時不詢問選項(_L)"
 
@@ -381,7 +365,6 @@ msgid "Dev_ices"
 msgstr "裝置(_I)"
 
 #: ../data/ui/pref.glade.h:54
-#, fuzzy
 msgid "_Network"
 msgstr "網路(_N)"
 
@@ -406,32 +389,28 @@ msgid "_Show available options for removable media when they are inserted"
 msgstr "當插入移除式媒體時，顯示可用的選項(_S)"
 
 #: ../data/ui/pref.glade.h:60
-#, fuzzy
 msgid "Do_n't show available options for those media types:"
-msgstr "當插入移除式媒體時，顯示可用的選項(_S)"
+msgstr "不要顯示此等媒體類型的可用選項(_N)"
 
 #: ../data/ui/pref.glade.h:61
-#, fuzzy
 msgid "_Remove selected"
-msgstr "已選取 %d 個項目"
+msgstr "移除所選項目(_R)"
 
 #: ../data/ui/pref.glade.h:62
 msgid "_Open mounted removable media in new tab instead of new window"
 msgstr "在新分頁而非新視窗開啟移除式媒體(_O)"
 
 #: ../data/ui/pref.glade.h:63
-#, fuzzy
 msgid "When removable medium unmounted:"
-msgstr "插入了移除式媒體"
+msgstr "卸載移除式媒體時："
 
 #: ../data/ui/pref.glade.h:64
-#, fuzzy
 msgid "Clos_e tab containing removable medium"
-msgstr "當卸載移除式媒體時，關閉其分頁(_E)"
+msgstr "關閉包含移除式媒體的分頁(_E)"
 
 #: ../data/ui/pref.glade.h:65
 msgid "Change folder in the tab to _Home Folder"
-msgstr ""
+msgstr "將分頁的資料夾改為家目錄(_H)"
 
 #: ../data/ui/pref.glade.h:66
 msgid "_Volume Management"
@@ -463,16 +442,14 @@ msgid "A_rchiver integration:"
 msgstr "壓縮軟體整合(_R)："
 
 #: ../data/ui/pref.glade.h:74
-#, fuzzy
 msgid "<b>Templates</b>"
-msgstr "<b>文字</b>"
+msgstr "<b>模板</b>"
 
 #: ../data/ui/pref.glade.h:75
 msgid "S_how only user defined templates in menu"
-msgstr ""
+msgstr "選單只顯示使用者自訂的模板(_H)"
 
 #: ../data/ui/pref.glade.h:76
-#, fuzzy
 msgid "Show _only one template for each MIME type"
 msgstr "對每種 MIME 類型只顯示一個模板(_O)"
 
@@ -486,9 +463,8 @@ msgid "<b>Other Options</b>"
 msgstr "<b>其他選項</b>"
 
 #: ../data/ui/pref.glade.h:79
-#, fuzzy
 msgid "Use Application Startup Notify _by default"
-msgstr "預設使用應用程式啟動通知(_U)"
+msgstr "預設使用應用程式啟動通知(_B)"
 
 #: ../data/ui/pref.glade.h:80
 msgid ""
@@ -549,17 +525,14 @@ msgid "Icon view"
 msgstr "圖示檢視"
 
 #: ../data/ui/pref.glade.h:96
-#, fuzzy
 msgid "Compact view"
-msgstr "簡潔清單檢視"
+msgstr "簡潔檢視"
 
 #: ../data/ui/pref.glade.h:97
-#, fuzzy
 msgid "Thumbnail view"
 msgstr "縮圖檢視"
 
 #: ../data/ui/pref.glade.h:98
-#, fuzzy
 msgid "Detailed list view"
 msgstr "詳細清單檢視"
 
@@ -585,7 +558,7 @@ msgstr "請選擇要執行的動作："
 
 #: ../data/ui/autorun.glade.h:6
 msgid "_Always perform this action on this media type"
-msgstr ""
+msgstr "對此類媒體必定進行此 動作(_A)"
 
 #: ../data/ui/connect.glade.h:1
 msgid "Connect to remote server"
@@ -609,23 +582,25 @@ msgstr "連接埠(_P)："
 
 #: ../data/ui/connect.glade.h:6
 msgid "Pa_th:"
-msgstr ""
+msgstr "路徑(_T)："
 
 #: ../data/ui/connect.glade.h:7
 msgid "_Anonymous login"
-msgstr ""
+msgstr "匿名登入(_A)"
 
 #: ../data/ui/connect.glade.h:8
 msgid "_Login as:"
-msgstr ""
+msgstr "登入身分(_L)："
 
 #: ../data/ui/connect.glade.h:9
+#, fuzzy
 msgid "SSH"
-msgstr ""
+msgstr "SSH"
 
 #: ../data/ui/connect.glade.h:10
+#, fuzzy
 msgid "FTP"
-msgstr ""
+msgstr "FTP"
 
 #: ../data/ui/connect.glade.h:11
 #, fuzzy
@@ -744,32 +719,28 @@ msgid "Copy Pat_h(s)"
 msgstr ""
 
 #: ../src/main-win-ui.c:204
-#, fuzzy
 msgid "R_ename..."
-msgstr "重新命名(_R)"
+msgstr "重新命名(_E)..."
 
 #: ../src/main-win-ui.c:205
 msgid "D_uplicate..."
-msgstr ""
+msgstr "製作複本(_U)..."
 
 #: ../src/main-win-ui.c:206
-#, fuzzy
 msgid "Create Lin_k..."
-msgstr "新建...(_N)"
+msgstr "建立連結(_K)..."
 
 #: ../src/main-win-ui.c:207
-#, fuzzy
 msgid "_Move to..."
-msgstr "移動到(_M)..."
+msgstr "移至(_M)..."
 
 #: ../src/main-win-ui.c:208
-#, fuzzy
 msgid "Copy to_..."
-msgstr "複製到(_O)..."
+msgstr "複製至_..."
 
 #: ../src/main-win-ui.c:209
 msgid "Propertie_s"
-msgstr ""
+msgstr "屬性(_S)"
 
 #: ../src/main-win-ui.c:211
 msgid "_Invert Selection"
@@ -797,7 +768,7 @@ msgstr "工具列(_B)"
 
 #: ../src/main-win-ui.c:216
 msgid "Pat_h Bar"
-msgstr ""
+msgstr "路徑列(_H)"
 
 #: ../src/main-win-ui.c:217
 msgid "Side _Pane"
@@ -805,9 +776,8 @@ msgstr "側邊欄(_P)"
 
 #. other see below: 'ShowHidden' 'ShowStatus' 'Fullscreen' 'IconView'...
 #: ../src/main-win-ui.c:219
-#, fuzzy
 msgid "Fo_lder View Mode"
-msgstr "檢視模式(_W)："
+msgstr "資料夾檢視模式(_L)"
 
 #: ../src/main-win-ui.c:220
 msgid "S_ort Files"
@@ -819,7 +789,7 @@ msgstr "縮小(_U)"
 
 #: ../src/main-win-ui.c:225
 msgid "Fil_ter..."
-msgstr ""
+msgstr "篩選(_T)..."
 
 #: ../src/main-win-ui.c:227
 msgid "_Help"
@@ -904,18 +874,16 @@ msgid "Go to list of devices connected to the computer"
 msgstr "前往連接電腦的裝置清單"
 
 #: ../src/main-win-ui.c:240
-#, fuzzy
 msgid "Net_work"
 msgstr "網路(_W)"
 
 #: ../src/main-win-ui.c:240
-#, fuzzy
 msgid "Go to list of places on the network"
-msgstr "前往網路地方清單"
+msgstr "前往網路地點清單"
 
 #: ../src/main-win-ui.c:241
 msgid "_Go to Location..."
-msgstr ""
+msgstr "前往位置(_G)..."
 
 #: ../src/main-win-ui.c:242
 msgid "_Connect to Server..."
@@ -926,9 +894,8 @@ msgid "Open a window to choose remote folder location"
 msgstr "開啟視窗以選擇遠端資料夾位置"
 
 #: ../src/main-win-ui.c:243
-#, fuzzy
 msgid "Go to the path in the location bar"
-msgstr "前往位址列的路徑"
+msgstr "前往位置列的路徑"
 
 #: ../src/main-win-ui.c:244
 msgid "_Bookmarks"
@@ -937,11 +904,11 @@ msgstr "書籤(_B)"
 #: ../src/main-win-ui.c:245
 #, fuzzy
 msgid "_Add to Bookmarks..."
-msgstr "新增到書籤(_A)"
+msgstr "新增到書籤(_A)..."
 
 #: ../src/main-win-ui.c:245
 msgid "Add current folder to bookmarks list"
-msgstr ""
+msgstr "把目前資料夾加到書籤清單"
 
 #: ../src/main-win-ui.c:246
 msgid "Too_ls"
@@ -992,19 +959,16 @@ msgid ""
 msgstr "勾選以記住資料夾的檢視和排列設定，而非使用全域設定"
 
 #: ../src/main-win-ui.c:277
-#, fuzzy
 msgid "_Show Toolbar"
-msgstr "顯示工具列(_T)"
+msgstr "顯示工具列(_S)"
 
 #: ../src/main-win-ui.c:278
-#, fuzzy
 msgid "Show 'New _Window' Button"
-msgstr "顯示「新分頁」按鈕(_W)"
+msgstr "顯示「新視窗」按鈕(_W)"
 
 #: ../src/main-win-ui.c:279
-#, fuzzy
 msgid "Show 'New _Tab' Button"
-msgstr "顯示「新分頁」按鈕(_W)"
+msgstr "顯示「新分頁」按鈕(_T)"
 
 #: ../src/main-win-ui.c:280
 msgid "Show _Navigation Buttons"
@@ -1068,11 +1032,11 @@ msgstr "依檔案類型(_T)"
 
 #: ../src/main-win-ui.c:312
 msgid "By _Extension"
-msgstr ""
+msgstr "依延伸檔名(_E)"
 
 #: ../src/main-win-ui.c:325
 msgid "Places"
-msgstr "位置"
+msgstr "地點"
 
 #: ../src/main-win-ui.c:326
 msgid "Directory Tree"
@@ -1083,18 +1047,17 @@ msgid "Remote"
 msgstr "遠端"
 
 #: ../src/main-win-ui.c:333
-#, fuzzy
 msgid "_Location"
-msgstr "應用程式(_L)"
+msgstr "位置(_L)"
 
 #: ../src/main-win-ui.c:334
 msgid "_Buttons"
-msgstr ""
+msgstr "按鈕(_B)"
 
 #: ../src/main-win.c:925 ../src/main-win.c:929
 #, fuzzy
 msgid "Show history of visited folders"
-msgstr "顯示檢視資料夾的歷史"
+msgstr "顯示到訪資料夾的歷史"
 
 #: ../src/main-win.c:934
 msgid "History"
@@ -1110,12 +1073,11 @@ msgid "Lightweight file manager\n"
 msgstr "輕巧的檔案管理員程式\n"
 
 #: ../src/main-win.c:1139
-#, fuzzy, c-format
+#, c-format
 msgid "using LibFM ver. %s\n"
 msgstr "使用 LibFM 第 %s 版\n"
 
 #: ../src/main-win.c:1141
-#, fuzzy
 msgid ""
 "\n"
 "Developed by Hon Jen Yee (PCMan)"
@@ -1144,18 +1106,16 @@ msgstr ""
 "Ctrl+L 或 Alt+D：選取路徑列"
 
 #: ../src/main-win.c:1210
-#, fuzzy
 msgid "Run a command"
-msgstr "格式化指令(_F)："
+msgstr "執行指令"
 
 #: ../src/main-win.c:1211
 msgid "Enter a command to run:"
-msgstr ""
+msgstr "輸入要執行的指令："
 
 #: ../src/main-win.c:1218
-#, fuzzy
 msgid "Current folder is inaccessible"
-msgstr "以終端機開啟目前資料夾(_T)"
+msgstr "無法存取目前的資料夾"
 
 #: ../src/main-win.c:1822
 #, c-format
@@ -1174,11 +1134,11 @@ msgstr "新增到書籤"
 
 #: ../src/main-win.c:2552
 msgid "Select filter"
-msgstr ""
+msgstr "選取篩選"
 
 #: ../src/main-win.c:2553
 msgid "Choose a new shell pattern to show files:"
-msgstr ""
+msgstr "選擇新的 shell 式樣以顯示檔案："
 
 #. options only acceptable by first pcmanfm instance. These options are not passed through IPC
 #: ../src/pcmanfm.c:78
@@ -1224,11 +1184,10 @@ msgstr "<檔案>"
 
 #. don't translate list of modes in description, please
 #: ../src/pcmanfm.c:89
-#, fuzzy
 msgid ""
 "Set mode of desktop wallpaper. MODE=(color|stretch|fit|crop|center|tile|"
 "screen)"
-msgstr "設定桌布模式。<模式>=(color|stretch|fit|center|tile)"
+msgstr "設定桌布模式。<模式>=(color|stretch|fit|crop|center|tile|screen)"
 
 #: ../src/pcmanfm.c:89
 msgid "MODE"
@@ -1247,9 +1206,8 @@ msgid "Open new window"
 msgstr "開啟新視窗"
 
 #: ../src/pcmanfm.c:93
-#, fuzzy
 msgid "Open a Find Files window"
-msgstr "開啟尋找檔案工具"
+msgstr "開啟尋找檔案視窗"
 
 #: ../src/pcmanfm.c:95
 msgid "Window role for usage by window manager"
@@ -1296,19 +1254,19 @@ msgstr[0] "(%d 個隱藏項目)"
 
 #: ../src/pref.c:514
 msgid "Add to Modules Blacklist"
-msgstr ""
+msgstr "加入至模組黑名單"
 
 #: ../src/pref.c:515
 msgid "Enter a blacklisted module mask:"
-msgstr ""
+msgstr "輸入已加入黑名單的模組遮罩："
 
 #: ../src/pref.c:606
 msgid "Add to Modules Whitelist"
-msgstr ""
+msgstr "加入至模組白名單"
 
 #: ../src/pref.c:607
 msgid "Enter a whitelisted module mask:"
-msgstr ""
+msgstr "輸入已加入白名單的模組遮罩："
 
 #: ../data/pcmanfm.desktop.in.h:1
 msgid "File Manager PCManFM"
