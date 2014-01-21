@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm 0.9\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-01-09 09:41+0100\n"
-"PO-Revision-Date: 2014-01-18 22:47+0000\n"
+"PO-Revision-Date: 2014-01-21 22:41+0000\n"
 "Last-Translator: Dar_Kuntu <ZAck13@gmx.at>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1390085248.0\n"
+"X-POOTLE-MTIME: 1390344113.0\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2014"
@@ -116,22 +116,20 @@ msgstr ""
 #: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:84
 msgctxt "Use path for some folder: ..."
 msgid "Default"
-msgstr ""
+msgstr "Default"
 
 #: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:85
 msgctxt "Use path for some folder: ..."
 msgid "Custom:"
-msgstr ""
+msgstr "Benutzerdefiniert:"
 
 #: ../data/ui/desktop-pref.glade.h:23
-#, fuzzy
 msgid "Select a Desktop Folder"
-msgstr "Desktop-Ordner"
+msgstr "Wähle einen Desktop-Ordner"
 
 #: ../data/ui/desktop-pref.glade.h:24
-#, fuzzy
 msgid "_Open folders from desktop in new window"
-msgstr "In einem neuen Fenster öffnen"
+msgstr "Öffne _Ordner vom Desktop in einem neuen Fenster"
 
 #: ../data/ui/desktop-pref.glade.h:25
 msgid "Ad_vanced"
@@ -142,48 +140,40 @@ msgid "Fill with background color only"
 msgstr "mit Hintergrundfarbe füllen"
 
 #: ../data/ui/desktop-pref.glade.h:27
-#, fuzzy
 msgid "Stretch to fill the entire monitor area"
-msgstr "Bildschirm füllen"
+msgstr "Gestreckt"
 
 #: ../data/ui/desktop-pref.glade.h:28
-#, fuzzy
 msgid "Stretch to fit the monitor area"
-msgstr "Skalieren"
+msgstr "Gefüllt"
 
 #: ../data/ui/desktop-pref.glade.h:29
 msgid "Center unscaled image on the monitor"
-msgstr ""
+msgstr "Zentriert"
 
 #: ../data/ui/desktop-pref.glade.h:30
-#, fuzzy
 msgid "Tile the image to fill the entire monitor area"
-msgstr "Kacheln"
+msgstr "Nebeneinander"
 
 #: ../data/ui/desktop-pref.glade.h:31
-#, fuzzy
 msgid "Stretch and crop to fill the monitor area"
-msgstr "Bildschirm füllen"
+msgstr "Angepasst"
 
 #: ../data/ui/desktop-pref.glade.h:32
-#, fuzzy
 msgid "Stretch to fill the complete screen"
-msgstr "Bildschirm füllen"
+msgstr "Gestreckt über alle Monitore"
 
 #: ../data/ui/pref.glade.h:1
-#, fuzzy
 msgid "Open in current tab"
-msgstr "Im aktuellen Reiter öffnen"
+msgstr "Im aktuellen Tab öffnen"
 
 #: ../data/ui/pref.glade.h:2
-#, fuzzy
 msgid "Open in new tab"
-msgstr "In einem _neuen Reiter öffnen"
+msgstr "In neuem Tab öffnen"
 
 #: ../data/ui/pref.glade.h:3
-#, fuzzy
 msgid "Open in new window"
-msgstr "Neues Fenster öffnen"
+msgstr "In neuem Fenster öffnen"
 
 #: ../data/ui/pref.glade.h:4
 msgid "Preferences"
@@ -228,6 +218,7 @@ msgstr ""
 #: ../data/ui/pref.glade.h:12
 msgid "Don't ask options on _launch executable file"
 msgstr ""
+"Abfragen von Optionen beim _Starten von ausführbaren Dateien deaktivieren"
 
 #: ../data/ui/pref.glade.h:13
 msgid "_Bookmarks:"
@@ -239,7 +230,7 @@ msgstr "Standard Aktion beim Loslassen:"
 
 #: ../data/ui/pref.glade.h:15
 msgid "\"_Smart shortcut\" auto-action on drop to Desktop folder"
-msgstr ""
+msgstr "\"_Smart Verknüpfung\" auto-action beim Ziehen auf den Desktop"
 
 #: ../data/ui/pref.glade.h:16
 msgid ""
@@ -249,6 +240,12 @@ msgid ""
 "- other files (e.g. on removable media) will be copied\n"
 "- for some external URI a shortcut will be created"
 msgstr ""
+"Auswirkungen beim Ziehen von Dateien auf den Desktop, wenn \"auto-action\" "
+"aktiviert ist:\n"
+"- für Dateien im Benutzerordner wird ein Symlink erstellt\n"
+"- Dateien auf dem selben Dateisystem werden verschoben\n"
+"- anderen Dateien (z.B.: von Wechseldatenträger) werden kopiert\n"
+"- für externe URI werden Verknüpfungen erstellt"
 
 #: ../data/ui/pref.glade.h:21
 msgid "_Unfold tab when files are dragged onto tab button"
