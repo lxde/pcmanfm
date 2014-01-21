@@ -386,9 +386,10 @@ static void on_notebook_page_changed(GtkNotebook *notebook, gpointer page,
 
     /* g_debug("changed pref page: %u", n); */
     gtk_tree_view_get_cursor(view, &tp, NULL);
-    if (gtk_tree_path_get_indices(tp)[0] != (int)n)
+    if (tp == NULL || gtk_tree_path_get_indices(tp)[0] != (int)n)
     {
-        gtk_tree_path_free(tp);
+        if (tp)
+            gtk_tree_path_free(tp);
         tp = gtk_tree_path_new_from_indices(n, -1);
         gtk_tree_view_set_cursor(view, tp, NULL, FALSE);
     }

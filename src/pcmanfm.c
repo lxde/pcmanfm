@@ -344,6 +344,12 @@ gboolean pcmanfm_run(gint screen_num)
             desktop_off = FALSE;
             return FALSE;
         }
+        else if(show_pref > 0)
+        {
+            fm_edit_preference(GTK_WINDOW(desktop), show_pref - 1);
+            show_pref = -1;
+            return TRUE;
+        }
         else if(desktop == NULL)
         {
             /* ignore desktop-oriented commands if no desktop support */
@@ -352,12 +358,6 @@ gboolean pcmanfm_run(gint screen_num)
                 fm_show_error(NULL, NULL, _("Desktop manager is not active."));
                 return FALSE;
             }
-        }
-        else if(show_pref > 0)
-        {
-            fm_edit_preference(GTK_WINDOW(desktop), show_pref - 1);
-            show_pref = -1;
-            return TRUE;
         }
         else if(desktop_pref)
         {
