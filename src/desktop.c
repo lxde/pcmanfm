@@ -4186,13 +4186,32 @@ static void on_direction_changed(GtkWidget* w, GtkTextDirection prev)
 static void on_realize(GtkWidget* w)
 {
     FmDesktop* self = (FmDesktop*)w;
+    PangoFontDescription *font_desc;
+    PangoContext* pc;
 
     GTK_WIDGET_CLASS(fm_desktop_parent_class)->realize(w);
     gtk_window_set_skip_pager_hint(GTK_WINDOW(w), TRUE);
     gtk_window_set_skip_taskbar_hint(GTK_WINDOW(w), TRUE);
     gtk_window_set_resizable((GtkWindow*)w, FALSE);
 
+    load_config(self);
+    /* setup self->conf now if it wasn't loaded above */
+    if (!self->conf.configured)
+    {
+        copy_desktop_config(&self->conf, &app_config->desktop_section);
+        queue_config_save(self);
+    }
+    /* copy found configuration to use by next monitor */
+    else if (!app_config->desktop_section.configured)
+        copy_desktop_config(&app_config->desktop_section, &self->conf);
     update_background(self, -1);
+    /* set a proper desktop font if needed */
+    if (self->conf.desktop_font == NULL)
+        self->conf.desktop_font = g_strdup("Sans 12");
+    font_desc = pango_font_description_from_string(self->conf.desktop_font);
+    pc = gtk_widget_get_pango_context(w);
+    pango_context_set_font_description(pc, font_desc);
+    pango_font_description_free(font_desc);
 }
 
 static gboolean on_focus_in(GtkWidget* w, GdkEventFocus* evt)
@@ -5494,31 +5513,13 @@ void fm_desktop_manager_init(gint on_screen)
             FmDesktop *desktop = fm_desktop_new(screen, mon_init);
             GtkWidget *widget = GTK_WIDGET(desktop);
             FmFolder *desktop_folder;
-            PangoFontDescription *font_desc;
-            PangoContext* pc;
 
             desktops[i++] = desktop;
             if(mon_init < 0)
                 continue;
             /* realize it: without this, setting wallpaper or font won't work */
             gtk_widget_realize(widget);
-            load_config(desktop);
-            /* setup desktop->conf now if it wasn't loaded above */
-            if (!desktop->conf.configured)
-            {
-                copy_desktop_config(&desktop->conf, &app_config->desktop_section);
-                queue_config_save(desktop);
-            }
-            /* copy found configuration to use by next monitor */
-            else if (!app_config->desktop_section.configured)
-                copy_desktop_config(&app_config->desktop_section, &desktop->conf);
-            /* set a proper desktop font if needed */
-            if (desktop->conf.desktop_font == NULL)
-                desktop->conf.desktop_font = g_strdup("Sans 12");
-            font_desc = pango_font_description_from_string(desktop->conf.desktop_font);
-            pc = gtk_widget_get_pango_context(widget);
-            pango_context_set_font_description(pc, font_desc);
-            pango_font_description_free(font_desc);
+            /* realizing also loads config */
             if (desktop->conf.folder)
             {
                 if (desktop->conf.folder[0])
