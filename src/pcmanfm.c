@@ -278,8 +278,14 @@ int main(int argc, char** argv)
         first_run = FALSE;
         window_role = NULL; /* reset it for clients callbacks */
         fm_volume_manager_init();
+#if !GTK_CHECK_VERSION(3, 6, 0)
+        GDK_THREADS_ENTER();
+#endif
         gtk_main();
         /* g_debug("main loop ended"); */
+#if !GTK_CHECK_VERSION(3, 6, 0)
+        GDK_THREADS_LEAVE();
+#endif
 
         pcmanfm_save_config(TRUE);
         if(save_config_idle)
