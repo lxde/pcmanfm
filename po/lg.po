@@ -2,13 +2,12 @@
 # Copyright (C) 2009 - 2010
 # This file is distributed under the same license as the pcmanfm package.
 # Kizito Birabwa <kbirabwa@yahoo.co.uk>, 2010.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.9.9\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-09 09:41+0100\n"
-"PO-Revision-Date: 2013-10-24 22:08+0000\n"
+"POT-Creation-Date: 2014-01-22 00:33+0200\n"
+"PO-Revision-Date: 2014-01-22 13:01+0000\n"
 "Last-Translator: kizito <kbirabwa@yahoo.co.uk>\n"
 "Language-Team: lg <kbirabwa@yahoo.co.uk>\n"
 "Language: lg\n"
@@ -17,12 +16,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1382652537.0\n"
+"X-POOTLE-MTIME: 1390395696.0\n"
 
 #: ../data/ui/about.glade.in.h:1
-#, fuzzy
 msgid "Copyright (C) 2009 - 2014"
-msgstr "Obuyinza bw'ebikugizo eby'obwa nannyini (C) 2009 - 2013"
+msgstr "Obuyinza bw'ebikugizo eby'obwa nannyini (C) 2009 - 2014"
 
 #. Please replace this line with your own names, one name per line.
 #: ../data/ui/about.glade.in.h:3
@@ -83,14 +81,12 @@ msgid "<b>Show desktop icons</b>"
 msgstr "<b>Awakolerwa wabeeko obufaananyi obuyunzi</b>"
 
 #: ../data/ui/desktop-pref.glade.h:14
-#, fuzzy
 msgid "_Show \"Documents\" folder on the desktop"
 msgstr "_Awakolerwa kubeko n'akafaananyi akayunzi aka \"Biwandiko byange\""
 
 #: ../data/ui/desktop-pref.glade.h:15
-#, fuzzy
 msgid "Sho_w \"Devices\" folder on the desktop"
-msgstr "_Awakolerwa kubeko n'akafaananyi akayunzi aka \"Biwandiko byange\""
+msgstr "_Awakolerwa kubeko n'akafaananyi akayunzi aka \"Byuma\""
 
 #: ../data/ui/desktop-pref.glade.h:16
 #, fuzzy
@@ -1252,8 +1248,8 @@ msgid ""
 "Set mode of desktop wallpaper. MODE=(color|stretch|fit|crop|center|tile|"
 "screen)"
 msgstr ""
-"Tegeka entimba y'ekifaananyi ku bwaliriro bw'awakolerwa. MODE=(color|stretch|"
-"fit|center|tile)"
+"Tegeka entimba y'ekifaananyi ku bwaliriro bw'awakolerwa. "
+"MODE=(color|stretch|fit|center|tile)"
 
 #: ../src/pcmanfm.c:89
 msgid "MODE"
@@ -1288,7 +1284,11 @@ msgstr "MULIMU"
 msgid "[FILE1, FILE2,...]"
 msgstr "[FAYIRO1, FAYIRO2,...]"
 
-#: ../src/pcmanfm.c:585
+#: ../src/pcmanfm.c:352
+msgid "Desktop manager is not active."
+msgstr ""
+
+#: ../src/pcmanfm.c:598
 msgid "Terminal emulator is not set."
 msgstr "Totegese kika kya kiwandikiro."
 
