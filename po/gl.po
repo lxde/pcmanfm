@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm 1.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-09 09:41+0100\n"
-"PO-Revision-Date: 2014-01-07 11:08+0000\n"
+"POT-Creation-Date: 2014-01-22 00:33+0200\n"
+"PO-Revision-Date: 2014-01-22 07:15+0000\n"
 "Last-Translator: Miguel Anxo <mbouzada@gmail.com>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
 "Language: gl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1389092915.0\n"
+"X-POOTLE-MTIME: 1390374932.0\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2014"
@@ -953,7 +953,8 @@ msgstr "Manter os axustes deste cartafol"
 msgid ""
 "Check to remember view and sort as folder setting rather than global one"
 msgstr ""
-"Márqueo para lembrar a vista e a ordenación no canto de estabelecer un global"
+"Márqueo para lembrar a vista e a ordenación no canto de estabelecer un "
+"global"
 
 #: ../src/main-win-ui.c:277
 msgid "_Show Toolbar"
@@ -1185,14 +1186,14 @@ msgid ""
 "Set mode of desktop wallpaper. MODE=(color|stretch|fit|crop|center|tile|"
 "screen)"
 msgstr ""
-"Axuste o modo de fondo de escritorio. MODE=(color|stretch|fit|crop|center|"
-"tile|screen)"
+"Axuste o modo de fondo de escritorio. "
+"MODE=(color|stretch|fit|crop|center|tile|screen)"
 
 #: ../src/pcmanfm.c:89
 msgid "MODE"
 msgstr ""
-"Axuste o modo de fondo de escritorio. MODO=(color|stretch|fit|crop|center|"
-"tile|screen)"
+"Axuste o modo de fondo de escritorio. "
+"MODO=(color|stretch|fit|crop|center|tile|screen)"
 
 #: ../src/pcmanfm.c:90
 msgid "Open Preferences dialog on the page N"
@@ -1222,7 +1223,11 @@ msgstr "ESTILO"
 msgid "[FILE1, FILE2,...]"
 msgstr "[FICHEIRO1, FICHEIRO2,...]"
 
-#: ../src/pcmanfm.c:585
+#: ../src/pcmanfm.c:352
+msgid "Desktop manager is not active."
+msgstr "O xestor de escritorio non está activado."
+
+#: ../src/pcmanfm.c:598
 msgid "Terminal emulator is not set."
 msgstr "No se configurou o emulador de terminal."
 
