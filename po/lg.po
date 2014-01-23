@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: 0.9.9\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-01-22 00:33+0200\n"
-"PO-Revision-Date: 2014-01-23 20:31+0000\n"
+"PO-Revision-Date: 2014-01-23 20:36+0000\n"
 "Last-Translator: kizito <kbirabwa@yahoo.co.uk>\n"
 "Language-Team: lg <kbirabwa@yahoo.co.uk>\n"
 "Language: lg\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1390509085.0\n"
+"X-POOTLE-MTIME: 1390509407.0\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2014"
@@ -774,9 +774,8 @@ msgid "Reload current folder"
 msgstr "Ddamu okubikkula etterekero lino"
 
 #: ../src/main-win-ui.c:215
-#, fuzzy
 msgid "Tool_bar"
-msgstr "E_biyamba"
+msgstr "Lubaawo lw'e_biyamba"
 
 #: ../src/main-win-ui.c:216
 msgid "Pat_h Bar"
@@ -788,7 +787,6 @@ msgstr "Akadirisa ak'oku _Mabbali"
 
 #. other see below: 'ShowHidden' 'ShowStatus' 'Fullscreen' 'IconView'...
 #: ../src/main-win-ui.c:219
-#, fuzzy
 msgid "Fo_lder View Mode"
 msgstr "E_ndabika:"
 
@@ -809,7 +807,6 @@ msgid "_Help"
 msgstr "_Nyamba"
 
 #: ../src/main-win-ui.c:229
-#, fuzzy
 msgid "_Keyboard Navigation"
 msgstr "_Amapeesa agakutambuliza mu puloguramu eno"
 
@@ -862,14 +859,12 @@ msgid "Open trash can"
 msgstr "Kebera mu bisuulidwa"
 
 #: ../src/main-win-ui.c:237
-#, fuzzy
 msgid "Filesyste_m Root"
-msgstr "Musingi gwa sisitemu ya _fayiro"
+msgstr "Musingi gwa sisite_mu ya fayiro"
 
 #: ../src/main-win-ui.c:237
-#, fuzzy
 msgid "Go fo filesystem root"
-msgstr "Musingi gwa sisitemu ya _fayiro"
+msgstr "Genda ku musingi gwa sisitemu ya fayiro"
 
 #: ../src/main-win-ui.c:238
 msgid "_Applications"
@@ -880,19 +875,16 @@ msgid "Go to root of applications menu folder"
 msgstr "Genda ku musingi gwa tterekero lya menyu ya puloguramu"
 
 #: ../src/main-win-ui.c:239
-#, fuzzy
 msgid "Go to list of devices connected to the computer"
-msgstr "Genda ku lukalala lwa volyumu eziri ku kompyuta eno"
+msgstr "Genda ku lukalala lw'ebyuma ebiyungidwa ku kompyuta eno"
 
 #: ../src/main-win-ui.c:240
-#, fuzzy
 msgid "Net_work"
-msgstr "Ebibondo ebiri ku Ka_yungirizi"
+msgstr "Ka_yungirizi"
 
 #: ../src/main-win-ui.c:240
-#, fuzzy
 msgid "Go to list of places on the network"
-msgstr "Genda ku lukalala lwa volyumu eziri ku kayungirizi"
+msgstr "Genda ku lukalala lw'ebifo ebiri ku kayungirizi"
 
 #: ../src/main-win-ui.c:241
 msgid "_Go to Location..."
@@ -915,9 +907,8 @@ msgid "_Bookmarks"
 msgstr "_Obukwatakifo"
 
 #: ../src/main-win-ui.c:245
-#, fuzzy
 msgid "_Add to Bookmarks..."
-msgstr "Kwata ekifo kifo kino"
+msgstr "_Kwata ekifo kino..."
 
 #: ../src/main-win-ui.c:245
 msgid "Add current folder to bookmarks list"
