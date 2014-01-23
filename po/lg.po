@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: 0.9.9\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-01-22 00:33+0200\n"
-"PO-Revision-Date: 2014-01-23 13:02+0000\n"
+"PO-Revision-Date: 2014-01-23 20:31+0000\n"
 "Last-Translator: kizito <kbirabwa@yahoo.co.uk>\n"
 "Language-Team: lg <kbirabwa@yahoo.co.uk>\n"
 "Language: lg\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1390482159.0\n"
+"X-POOTLE-MTIME: 1390509085.0\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2014"
@@ -394,16 +394,14 @@ msgstr ""
 "n_sobola okubikolako"
 
 #: ../data/ui/pref.glade.h:60
-#, fuzzy
 msgid "Do_n't show available options for those media types:"
 msgstr ""
-"Ebitereka data ebyetongovu bwe biyungibwanga ku kompyuta endagenga bye "
-"n_sobola okubikolako"
+"Ko_mpyuta ereme okulaganga by'osobola okukola ku bitereka data eby'ebika "
+"bino:"
 
 #: ../data/ui/pref.glade.h:61
-#, fuzzy
 msgid "_Remove selected"
-msgstr "Ekintu %d kirondedwa"
+msgstr "_Gyawo ebirondedwa"
 
 #: ../data/ui/pref.glade.h:62
 msgid "_Open mounted removable media in new tab instead of new window"
@@ -412,12 +410,10 @@ msgstr ""
 "kapya mu kifo kya ddirisa ppya"
 
 #: ../data/ui/pref.glade.h:63
-#, fuzzy
 msgid "When removable medium unmounted:"
-msgstr "Kompyuta eyungidwako ekitereka data ekyetongovu"
+msgstr "Ekitereka data ekyetongovu bwe kiwangulwa:"
 
 #: ../data/ui/pref.glade.h:64
-#, fuzzy
 msgid "Clos_e tab containing removable medium"
 msgstr ""
 "Ebiter_eka data ebyetongovu bwe biwangulwanga ku kompyuta n'akatimbe mwe "
@@ -436,7 +432,6 @@ msgid "<b>Programs</b>"
 msgstr "<b>Puloguramu</b>"
 
 #: ../data/ui/pref.glade.h:68
-#, fuzzy
 msgid "<i>Commands below may include extra options if necessary.</i>"
 msgstr "<i>Ebiragiro ebiddako okkirizibwa kubyongerako obuwayiro.</i>"
 
@@ -475,15 +470,13 @@ msgstr ""
 "Olu_mala kukola fayiro okuva mu lutiba gibikkulire mu puloguramu eya bulijjo"
 
 #: ../data/ui/pref.glade.h:78
-#, fuzzy
 msgid "<b>Other Options</b>"
 msgstr "<b>Ebisoboka ebirala</b>"
 
 #: ../data/ui/pref.glade.h:79
-#, fuzzy
 msgid "Use Application Startup Notify _by default"
 msgstr ""
-"_Puloguramu bwe'banga erina ekabonero aka yo akalaga nti etandika, ke "
+"_Puloguramu bwe'banga erina akabonero aka yo akalaga nti etandika, ke "
 "kabanga kakola"
 
 #: ../data/ui/pref.glade.h:80
@@ -544,22 +537,18 @@ msgid "Ask"
 msgstr "Ebuuzenga ekiba kikolebwa"
 
 #: ../data/ui/pref.glade.h:95
-#, fuzzy
 msgid "Icon view"
 msgstr "Bufaananyi obuyunzi"
 
 #: ../data/ui/pref.glade.h:96
-#, fuzzy
 msgid "Compact view"
 msgstr "Mu bufunze"
 
 #: ../data/ui/pref.glade.h:97
-#, fuzzy
 msgid "Thumbnail view"
 msgstr "Kulozako kwa fayiro"
 
 #: ../data/ui/pref.glade.h:98
-#, fuzzy
 msgid "Detailed list view"
 msgstr "Mu bujjuvu"
 
@@ -636,7 +625,6 @@ msgid "mixed content"
 msgstr ""
 
 #: ../src/volume-manager.c:246
-#, fuzzy
 msgid "removable disk"
 msgstr "Disiki egyikamu"
 
@@ -669,14 +657,12 @@ msgid "Snap to _Grid"
 msgstr "Ebintu byetereere_ze ku musekese"
 
 #: ../src/desktop.c:946
-#, fuzzy
 msgid "Activate file"
-msgstr "<fayiro ey'ekifaananyi>"
+msgstr "Zuukusa fayiro"
 
 #: ../src/desktop.c:948
-#, fuzzy
 msgid "Show file menu"
-msgstr "Ndaga Fayiro En_kise"
+msgstr "Menyu ekola ku fayiro erabike"
 
 #: ../src/desktop.c:1364
 msgid "Show desktop menu"
@@ -744,26 +730,22 @@ msgid "Copy Pat_h(s)"
 msgstr ""
 
 #: ../src/main-win-ui.c:204
-#, fuzzy
 msgid "R_ename..."
-msgstr "_Kyusa linnya"
+msgstr "K_yusa linnya..."
 
 #: ../src/main-win-ui.c:205
 msgid "D_uplicate..."
 msgstr ""
 
 #: ../src/main-win-ui.c:206
-#, fuzzy
 msgid "Create Lin_k..."
-msgstr "_Kolawo..."
+msgstr "Kolawo nyun_zi..."
 
 #: ../src/main-win-ui.c:207
-#, fuzzy
 msgid "_Move to..."
 msgstr "_Gijjulule egende ku..."
 
 #: ../src/main-win-ui.c:208
-#, fuzzy
 msgid "Copy to_..."
 msgstr "Gyamu k_oppi eteekebwe mu..."
 
@@ -950,18 +932,16 @@ msgid "Open Current Folder in _Terminal"
 msgstr "Terekero lino libikkulire mu _kiwandikiro"
 
 #: ../src/main-win-ui.c:249
-#, fuzzy
 msgid "Fin_d Files..."
-msgstr "_Noonya Fayiro"
+msgstr "Noo_nya Fayiro..."
 
 #: ../src/main-win-ui.c:249
 msgid "Open search dialog"
 msgstr "Leeta kadirisa ka kunoonya"
 
 #: ../src/main-win-ui.c:252
-#, fuzzy
 msgid "_Run a Command in Current Folder..."
-msgstr "Ddamu okubikkula etterekero lino"
+msgstr "_Yisiza ekiragiro mu tterekero lino..."
 
 #. Note to translators: "Mingle..." means "Do not put folders before files" but make the translation as short as possible, please!
 #: ../src/main-win-ui.c:267
@@ -973,9 +953,8 @@ msgid "_Ignore Name Case"
 msgstr ""
 
 #: ../src/main-win-ui.c:272
-#, fuzzy
 msgid "Sho_w Hidden"
-msgstr "Ndaga Fayiro En_kise"
+msgstr "Ndaga Fayiro N_kise"
 
 #. Note to translators: this save is meant for folder's settings such as sort
 #: ../src/main-win-ui.c:274
@@ -1016,9 +995,8 @@ msgid "Show Status B_ar"
 msgstr "Akab_aawo akalaga ebibumbujja kalabike"
 
 #: ../src/main-win-ui.c:284
-#, fuzzy
 msgid "_Dual Pane Mode"
-msgstr "Bi_tundu Bibiri"
+msgstr "_Bitundu Bibiri"
 
 #: ../src/main-win-ui.c:284
 msgid "Show two panels with folder views"
@@ -1077,9 +1055,8 @@ msgid "Remote"
 msgstr "Ku kompyuta ndala"
 
 #: ../src/main-win-ui.c:333
-#, fuzzy
 msgid "_Location"
-msgstr "Pu_loguramu"
+msgstr "_Busangiro"
 
 #: ../src/main-win-ui.c:334
 msgid "_Buttons"
@@ -1115,7 +1092,6 @@ msgstr ""
 "Kyayizibwa Hon Jan Yee (PCMan)"
 
 #: ../src/main-win.c:1166 ../src/main-win.c:1174
-#, fuzzy
 msgid "Keyboard Navigation"
 msgstr "Amapeesa agakutambuliza mu puloguramu eno"
 
@@ -1152,9 +1128,8 @@ msgid "Enter a command to run:"
 msgstr ""
 
 #: ../src/main-win.c:1218
-#, fuzzy
 msgid "Current folder is inaccessible"
-msgstr "Terekero lino libikkulire mu _kiwandikiro"
+msgstr "Terekero lino teriyingirikamu"
 
 #: ../src/main-win.c:1822
 #, c-format
@@ -1226,13 +1201,12 @@ msgstr "FAYIRO"
 
 #. don't translate list of modes in description, please
 #: ../src/pcmanfm.c:89
-#, fuzzy
 msgid ""
 "Set mode of desktop wallpaper. MODE=(color|stretch|fit|crop|center|tile|"
 "screen)"
 msgstr ""
-"Tegeka entimba y'ekifaananyi ku bwaliriro bw'awakolerwa. "
-"MODE=(color|stretch|fit|center|tile)"
+"Tegeka ntimba y'ekifaananyi ku bwaliriro bw'awakolerwa. "
+"MODE=(color|stretch|fit|crop|center|tile|screen)"
 
 #: ../src/pcmanfm.c:89
 msgid "MODE"
@@ -1251,9 +1225,8 @@ msgid "Open new window"
 msgstr "Gulawo eddirisa eppya"
 
 #: ../src/pcmanfm.c:93
-#, fuzzy
 msgid "Open a Find Files window"
-msgstr "Gulawo eddirisa eppya"
+msgstr "Gulawo ddirisa ery'okunoonya fayira"
 
 #: ../src/pcmanfm.c:95
 msgid "Window role for usage by window manager"
