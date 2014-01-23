@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: 0.9.9\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-01-22 00:33+0200\n"
-"PO-Revision-Date: 2014-01-23 20:36+0000\n"
+"PO-Revision-Date: 2014-01-23 21:20+0000\n"
 "Last-Translator: kizito <kbirabwa@yahoo.co.uk>\n"
 "Language-Team: lg <kbirabwa@yahoo.co.uk>\n"
 "Language: lg\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1390509407.0\n"
+"X-POOTLE-MTIME: 1390512033.0\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2014"
@@ -112,12 +112,12 @@ msgstr ""
 #: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:84
 msgctxt "Use path for some folder: ..."
 msgid "Default"
-msgstr ""
+msgstr "Ekya bulijjo"
 
 #: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:85
 msgctxt "Use path for some folder: ..."
 msgid "Custom:"
-msgstr ""
+msgstr "Teekawo bibyo:"
 
 #: ../data/ui/desktop-pref.glade.h:23
 msgid "Select a Desktop Folder"
@@ -145,7 +145,7 @@ msgstr "Ekifaananyi kinaanule kijje ku lutimbe"
 
 #: ../data/ui/desktop-pref.glade.h:29
 msgid "Center unscaled image on the monitor"
-msgstr ""
+msgstr "Ekifaananyi kisimbebusimbi mu makkati g'olutimbe"
 
 #: ../data/ui/desktop-pref.glade.h:30
 msgid "Tile the image to fill the entire monitor area"
@@ -212,6 +212,8 @@ msgstr "Soo_ka kukakasa nga fayiro zigenda kutwalibwa mu \"bisuulidwa\""
 #: ../data/ui/pref.glade.h:12
 msgid "Don't ask options on _launch executable file"
 msgstr ""
+"Kompyuta _bw'etandika fayiro eya puloguramu ereme kubuuza oba oyagala "
+"kw'ongerako buwayiro"
 
 #: ../data/ui/pref.glade.h:13
 msgid "_Bookmarks:"
@@ -224,6 +226,8 @@ msgstr "Ekib_a kikolebwangawo nga otadde ky'ova kukulula:"
 #: ../data/ui/pref.glade.h:15
 msgid "\"_Smart shortcut\" auto-action on drop to Desktop folder"
 msgstr ""
+"\"_Kasaliikiriza aketeekateka\" kye kaba kakolawo bw'osuula fayiro mu "
+"tterekero erya Awakolerwa"
 
 #: ../data/ui/pref.glade.h:16
 msgid ""
@@ -233,6 +237,13 @@ msgid ""
 "- other files (e.g. on removable media) will be copied\n"
 "- for some external URI a shortcut will be created"
 msgstr ""
+"\"Kasaliikiriza aketeekateka\" bw'oba okazuukusizza bino bye binaakolebwangawo "
+"buli lw'osuula fayiro mu tterekero erye Awakolerwa:\n"
+"- fayiro bw'eba ku sisitemu ya fayiro y'emu ejjanga kusimbulizibwa\n"
+"- fayiro eyo bw'eba mu tterekro erya akawunti wajjakukolebwawo nyunzi\n"
+"- fayiro ndala (nga eziri ku disiki ezijjikamu) zijjanga kukolebwamu koppi\n"
+"- bw'eba ndagiriro y'ekiri ku kayungirizi, URI, wajjanga kukolebwawo nyunzi "
+"ekiggukako"
 
 #: ../data/ui/pref.glade.h:21
 msgid "_Unfold tab when files are dragged onto tab button"
@@ -240,7 +251,7 @@ msgstr "_Akatimbe kabikkukenga nga kasuulidwako fayiro"
 
 #: ../data/ui/pref.glade.h:22
 msgid "_Focus previous folder after coming to its parent"
-msgstr ""
+msgstr "_Tangaaza tterekero mw'ovudde"
 
 #: ../data/ui/pref.glade.h:23
 msgid "<b>Default View</b>"
@@ -321,12 +332,12 @@ msgstr "Wa_bengawo obupande bwa ku butimbe"
 
 #: ../data/ui/pref.glade.h:42
 msgid "_Maximum width of tab label:"
-msgstr ""
+msgstr "_Kkomo ly'obuwanvu bw'ekipande kya ku katimbe:"
 
 #. Use genitive case here, context is: width is XXX characters
 #: ../data/ui/pref.glade.h:44
 msgid "characters"
-msgstr ""
+msgstr "Bubonero"
 
 #: ../data/ui/pref.glade.h:45
 msgid "<b>Directories Tree</b>"
@@ -363,7 +374,7 @@ msgstr "Pu_loguramu"
 
 #: ../data/ui/pref.glade.h:53 ../src/main-win-ui.c:239
 msgid "Dev_ices"
-msgstr ""
+msgstr "B_yuma"
 
 #: ../data/ui/pref.glade.h:54
 msgid "_Network"
@@ -421,7 +432,7 @@ msgstr ""
 
 #: ../data/ui/pref.glade.h:65
 msgid "Change folder in the tab to _Home Folder"
-msgstr ""
+msgstr "Tterekero era akawunti y'eba erabika mu katimbe"
 
 #: ../data/ui/pref.glade.h:66
 msgid "_Volume Management"
@@ -446,7 +457,7 @@ msgstr "_Ekiragiro ekikyusa akawunti gy'okoleramu:"
 #. Application command to format some drive
 #: ../data/ui/pref.glade.h:72
 msgid "_Format command:"
-msgstr ""
+msgstr "_Kiragiro ekikolawo sisitemu ya fayiro:"
 
 #: ../data/ui/pref.glade.h:73
 msgid "A_rchiver integration:"
@@ -492,15 +503,15 @@ msgstr ""
 
 #: ../data/ui/pref.glade.h:82
 msgid "D_efer test for content type on folder loading"
-msgstr ""
+msgstr "T_osooka kukebera bika bya fayiro eziri mu tterekero eryakabikkulibwa"
 
 #: ../data/ui/pref.glade.h:83
 msgid "Use path for \"Home Folder\" button:"
-msgstr ""
+msgstr "Ekkubo erigobererwa nga onyize ppeesa erya \"Tterekero lya Akawunti\":"
 
 #: ../data/ui/pref.glade.h:86
 msgid "_Use current"
-msgstr ""
+msgstr "_Teekawo ery'ekifo ekirabika kakano"
 
 #: ../data/ui/pref.glade.h:87
 msgid "_Advanced"
@@ -646,7 +657,7 @@ msgstr "Bikkulira mu k_iwandikiro"
 
 #: ../src/desktop-ui.c:68
 msgid "_Remove from Desktop"
-msgstr ""
+msgstr "_Giggye Awakolerwa"
 
 #: ../src/desktop-ui.c:85
 msgid "Stic_k to Current Position"
@@ -703,7 +714,7 @@ msgstr "Fayiro Njereere"
 
 #: ../src/main-win-ui.c:193
 msgid "Folder Propertie_s"
-msgstr ""
+msgstr "Ebi_kwata ku Tterekero"
 
 #: ../src/main-win-ui.c:194
 msgid "_Close Tab"
@@ -719,11 +730,11 @@ msgstr "_Kyusa"
 
 #: ../src/main-win-ui.c:198
 msgid "C_ut"
-msgstr ""
+msgstr "S_itulawo"
 
 #: ../src/main-win-ui.c:201
 msgid "Move to _Trash"
-msgstr ""
+msgstr "Twala mu _Bisuulidwa"
 
 #: ../src/main-win-ui.c:203
 msgid "Copy Pat_h(s)"
@@ -888,11 +899,11 @@ msgstr "Genda ku lukalala lw'ebifo ebiri ku kayungirizi"
 
 #: ../src/main-win-ui.c:241
 msgid "_Go to Location..."
-msgstr ""
+msgstr "_Genda mu kifo..."
 
 #: ../src/main-win-ui.c:242
 msgid "_Connect to Server..."
-msgstr ""
+msgstr "_Kwatagana ne kompyuta..."
 
 #: ../src/main-win-ui.c:242
 msgid "Open a window to choose remote folder location"
