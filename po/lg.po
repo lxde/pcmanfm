@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: 0.9.9\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-01-22 00:33+0200\n"
-"PO-Revision-Date: 2014-01-22 13:01+0000\n"
+"PO-Revision-Date: 2014-01-23 13:02+0000\n"
 "Last-Translator: kizito <kbirabwa@yahoo.co.uk>\n"
 "Language-Team: lg <kbirabwa@yahoo.co.uk>\n"
 "Language: lg\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1390395696.0\n"
+"X-POOTLE-MTIME: 1390482159.0\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2014"
@@ -89,12 +89,10 @@ msgid "Sho_w \"Devices\" folder on the desktop"
 msgstr "_Awakolerwa kubeko n'akafaananyi akayunzi aka \"Byuma\""
 
 #: ../data/ui/desktop-pref.glade.h:16
-#, fuzzy
 msgid "Show \"_Trash Can\" folder on the desktop"
 msgstr "Awakolerwa kubeko n'akafaananyi akayunzi aka \"Ebi_suulidwa\""
 
 #: ../data/ui/desktop-pref.glade.h:17
-#, fuzzy
 msgid "S_how connected volumes on the desktop"
 msgstr "A_wakolerwa kubeko n'obufaananyi obuyunzi obw'ebibondo"
 
@@ -122,14 +120,12 @@ msgid "Custom:"
 msgstr ""
 
 #: ../data/ui/desktop-pref.glade.h:23
-#, fuzzy
 msgid "Select a Desktop Folder"
-msgstr "Terekero ey'awakolerwa"
+msgstr "Londa tterekero ery'awakolerwa"
 
 #: ../data/ui/desktop-pref.glade.h:24
-#, fuzzy
 msgid "_Open folders from desktop in new window"
-msgstr "Bubikkulibwenga mu ddirisa ppya"
+msgstr "_Materekero agali awakolerwa gabikkulibwenga mu maddirisa mapya"
 
 #: ../data/ui/desktop-pref.glade.h:25
 msgid "Ad_vanced"
@@ -140,48 +136,40 @@ msgid "Fill with background color only"
 msgstr "Juzisamu langi ey'obwaliriro yokka"
 
 #: ../data/ui/desktop-pref.glade.h:27
-#, fuzzy
 msgid "Stretch to fill the entire monitor area"
 msgstr "Ekifaananyi kinaanule kimaleyo olutimbe"
 
 #: ../data/ui/desktop-pref.glade.h:28
-#, fuzzy
 msgid "Stretch to fit the monitor area"
-msgstr "Ekifaananyi kifuule kijje ku lutimbe"
+msgstr "Ekifaananyi kinaanule kijje ku lutimbe"
 
 #: ../data/ui/desktop-pref.glade.h:29
 msgid "Center unscaled image on the monitor"
 msgstr ""
 
 #: ../data/ui/desktop-pref.glade.h:30
-#, fuzzy
 msgid "Tile the image to fill the entire monitor area"
 msgstr "Yongerawo kopi z'ekifaananyi zimaleyo olutimbe"
 
 #: ../data/ui/desktop-pref.glade.h:31
-#, fuzzy
 msgid "Stretch and crop to fill the monitor area"
-msgstr "Ekifaananyi kinaanule kimaleyo olutimbe"
+msgstr "Naanula n'okukomola kifaananyi kimaleyo olutimbe"
 
 #: ../data/ui/desktop-pref.glade.h:32
-#, fuzzy
 msgid "Stretch to fill the complete screen"
 msgstr "Ekifaananyi kinaanule kimaleyo olutimbe"
 
 #: ../data/ui/pref.glade.h:1
-#, fuzzy
 msgid "Open in current tab"
-msgstr "Bubikkulibwenga ku katimbe akaliwo"
+msgstr "Bikkulira mu katimbe akaliwo"
 
 #: ../data/ui/pref.glade.h:2
-#, fuzzy
 msgid "Open in new tab"
-msgstr "Bikkulira mu Ka_timbe Kapya"
+msgstr "Bikkulira mu katimbe kapya"
 
 #: ../data/ui/pref.glade.h:3
-#, fuzzy
 msgid "Open in new window"
-msgstr "Gulawo eddirisa eppya"
+msgstr "Bikkulira mu ddirisa ppya"
 
 #: ../data/ui/pref.glade.h:4
 msgid "Preferences"
@@ -316,9 +304,8 @@ msgid "Al_ways show full file names"
 msgstr "A_manya ga fayiro galabikenga mu bujjuvu"
 
 #: ../data/ui/pref.glade.h:38
-#, fuzzy
 msgid "Show icons of hidden _files shadowed"
-msgstr "Obufaananyi bwa _koppi ez'okwerinda bulabike ng'obusiikirizidwa"
+msgstr "Obufaananyi bwa _fayiro nkise bulabike ng'obusiikirizidwa"
 
 #: ../data/ui/pref.glade.h:39
 msgid "_Display"
@@ -355,21 +342,18 @@ msgid "<b>Show in Places:</b>"
 msgstr "<b>Laga bino mu Ebifo:</b>"
 
 #: ../data/ui/pref.glade.h:48
-#, fuzzy
 msgid "_Home Folder"
-msgstr "Terekero ery'eka"
+msgstr "Terekero lya _Akawunti"
 
 #: ../data/ui/pref.glade.h:49
-#, fuzzy
 msgid "Des_ktop"
-msgstr "Awakolerwa"
+msgstr "A_wakolerwa"
 
 #: ../data/ui/pref.glade.h:50 ../src/main-win-ui.c:236
 msgid "_Trash Can"
 msgstr "Ebi_suulidwa"
 
 #: ../data/ui/pref.glade.h:51
-#, fuzzy
 msgid "_Filesystem Root"
 msgstr "Musingi gwa sisitemu ya _fayiro"
 
@@ -382,9 +366,8 @@ msgid "Dev_ices"
 msgstr ""
 
 #: ../data/ui/pref.glade.h:54
-#, fuzzy
 msgid "_Network"
-msgstr "Ebibondo ebiri ku Ka_yungirizi"
+msgstr "Ka_yungirizi"
 
 #: ../data/ui/pref.glade.h:55
 msgid "_Layout"
