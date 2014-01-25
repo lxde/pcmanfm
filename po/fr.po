@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PCManFM\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-09 09:41+0100\n"
-"PO-Revision-Date: 2013-08-09 19:53+0000\n"
+"POT-Creation-Date: 2014-01-22 00:33+0200\n"
+"PO-Revision-Date: 2014-01-25 10:46+0000\n"
 "Last-Translator: Julien <Julius22@laposte.net>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -17,12 +17,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1376078035.0\n"
+"X-POOTLE-MTIME: 1390646791.0\n"
 
 #: ../data/ui/about.glade.in.h:1
-#, fuzzy
 msgid "Copyright (C) 2009 - 2014"
-msgstr "Copyright (C) 2009 - 2012"
+msgstr "Copyright (C) 2009 - 2014"
 
 #. Please replace this line with your own names, one name per line.
 #: ../data/ui/about.glade.in.h:3
@@ -91,23 +90,20 @@ msgstr "<b>Afficher les icônes du bureau</b>"
 #: ../data/ui/desktop-pref.glade.h:14
 #, fuzzy
 msgid "_Show \"Documents\" folder on the desktop"
-msgstr "Afficher l’icône « Mes documents » sur le bureau"
+msgstr "Afficher le répertoire « Mes documents » _sur le bureau"
 
 # Il manque l'indication du caractère de raccourci clavier en français
 #: ../data/ui/desktop-pref.glade.h:15
-#, fuzzy
 msgid "Sho_w \"Devices\" folder on the desktop"
-msgstr "Afficher l’icône « Mes documents » sur le bureau"
+msgstr "Afficher le répertoire « Périphériques » sur le bureau"
 
 #: ../data/ui/desktop-pref.glade.h:16
-#, fuzzy
 msgid "Show \"_Trash Can\" folder on the desktop"
-msgstr "Afficher l’icône « Corbeille » sur le bureau"
+msgstr "Afficher le réper_toire « Corbeille » sur le bureau"
 
 #: ../data/ui/desktop-pref.glade.h:17
-#, fuzzy
 msgid "S_how connected volumes on the desktop"
-msgstr "Afficher les icônes des supports amovibles sur le bureau"
+msgstr "Affic_her les volumes connectés sur le bureau"
 
 #: ../data/ui/desktop-pref.glade.h:18
 msgid "_Desktop Icons"
@@ -122,26 +118,26 @@ msgstr ""
 #: ../data/ui/desktop-pref.glade.h:20
 msgid "_Use desktop as a folder (show icons on it) by path:"
 msgstr ""
+"_Utiliser le bureau comme un répertoire (montrer les icônes dessus) par "
+"chemin :"
 
 #: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:84
 msgctxt "Use path for some folder: ..."
 msgid "Default"
-msgstr ""
+msgstr "Par défaut"
 
 #: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:85
 msgctxt "Use path for some folder: ..."
 msgid "Custom:"
-msgstr ""
+msgstr "Personnalisé :"
 
 #: ../data/ui/desktop-pref.glade.h:23
-#, fuzzy
 msgid "Select a Desktop Folder"
-msgstr "Dossier du bureau"
+msgstr "Sélectionnez un répertoire de bureau"
 
 #: ../data/ui/desktop-pref.glade.h:24
-#, fuzzy
 msgid "_Open folders from desktop in new window"
-msgstr "Ouvrir dans une nouvelle fenêtre"
+msgstr "Depuis le bureau, _ouvrir les répertoires dans une nouvelle fenêtre"
 
 #: ../data/ui/desktop-pref.glade.h:25
 msgid "Ad_vanced"
@@ -152,46 +148,38 @@ msgid "Fill with background color only"
 msgstr "Remplir seulement avec la couleur d’arrière-plan"
 
 #: ../data/ui/desktop-pref.glade.h:27
-#, fuzzy
 msgid "Stretch to fill the entire monitor area"
 msgstr "Étirer pour remplir tout l’écran"
 
 #: ../data/ui/desktop-pref.glade.h:28
-#, fuzzy
 msgid "Stretch to fit the monitor area"
 msgstr "Ajuster à la taille de l’écran"
 
 #: ../data/ui/desktop-pref.glade.h:29
 msgid "Center unscaled image on the monitor"
-msgstr ""
+msgstr "Centrer une image à l'échelle originale sur l'écran"
 
 #: ../data/ui/desktop-pref.glade.h:30
-#, fuzzy
 msgid "Tile the image to fill the entire monitor area"
 msgstr "Faire une mosaïque avec l’image pour remplir l’écran"
 
 #: ../data/ui/desktop-pref.glade.h:31
-#, fuzzy
 msgid "Stretch and crop to fill the monitor area"
-msgstr "Étirer pour remplir tout l’écran"
+msgstr "Étirer et couper pour remplir tout l’écran"
 
 #: ../data/ui/desktop-pref.glade.h:32
-#, fuzzy
 msgid "Stretch to fill the complete screen"
 msgstr "Étirer pour remplir tout l’écran"
 
 #: ../data/ui/pref.glade.h:1
-#, fuzzy
 msgid "Open in current tab"
 msgstr "Ouvrir dans l’onglet courant"
 
 #: ../data/ui/pref.glade.h:2
-#, fuzzy
 msgid "Open in new tab"
-msgstr "Ouvrir dans un nouvel on_glet"
+msgstr "Ouvrir dans un nouvel onglet"
 
 #: ../data/ui/pref.glade.h:3
-#, fuzzy
 msgid "Open in new window"
 msgstr "Ouvrir dans une nouvelle fenêtre"
 
@@ -219,28 +207,26 @@ msgstr "Confirmer avant de supprimer des fichiers"
 
 # Il manque l'indication du caractère pour le raccourci clavier
 #: ../data/ui/pref.glade.h:9
-#, fuzzy
 msgid "_Move deleted files to \"trash can\" instead of erasing from disk"
 msgstr ""
-"Mettre les fichiers à la « Corbeille » au lieu de les effacer du disque"
+"_Mettre les fichiers supprimés à la « Corbeille » au lieu de les effacer du "
+"disque"
 
 # Il manque l'indication du caractère pour le raccourci clavier
 #: ../data/ui/pref.glade.h:10
-#, fuzzy
 msgid "_Erase files on removable media instead of \"trash can\" creation"
 msgstr ""
-"Supprimer les fichiers des supports amovibles au lieu de les mettre à la « "
+"Supprim_er les fichiers des supports amovibles au lieu de les mettre à la « "
 "Corbeille »"
 
 # Il manque l'indication du caractère pour le raccourci clavier
 #: ../data/ui/pref.glade.h:11
-#, fuzzy
 msgid "Confi_rm before moving files into \"trash can\""
-msgstr "Confirmation avant de mettre les fichiers à la corbeille"
+msgstr "Confi_rmer avant de mettre des fichiers à la « Corbeille »"
 
 #: ../data/ui/pref.glade.h:12
 msgid "Don't ask options on _launch executable file"
-msgstr ""
+msgstr "Ne pas demander d'options au _lancement d'un fichier exécutable"
 
 # Il manque l'indication du caractère pour le raccourci clavier
 #: ../data/ui/pref.glade.h:13
@@ -254,6 +240,8 @@ msgstr "Action de glissement par défau_t :"
 #: ../data/ui/pref.glade.h:15
 msgid "\"_Smart shortcut\" auto-action on drop to Desktop folder"
 msgstr ""
+"Action automatique « Raccourci _intelligent » au dépôt dans le répertoire de "
+"bureau"
 
 #: ../data/ui/pref.glade.h:16
 msgid ""
@@ -263,6 +251,13 @@ msgid ""
 "- other files (e.g. on removable media) will be copied\n"
 "- for some external URI a shortcut will be created"
 msgstr ""
+"Si activé, l'action « Auto. » sur dépôt de fichier vers le répertoire de "
+"bureau sera alors :\n"
+" - pour des fichiers directement dans le répertoire personnel, un lien "
+"symbolique sera créé ;\n"
+" - des fichiers sur le même système de fichiers seront déplacés ;\n"
+" - les autres fichiers (par ex. sur un support amovible) seront copiés ;\n"
+" - pour certains URI externes, un raccourci sera créé."
 
 # Il manque l'indication du caractère pour le raccourci clavier
 #: ../data/ui/pref.glade.h:21
@@ -271,7 +266,7 @@ msgstr "Déplier l'onglet lorsque des fichiers sont glissés sur son bouton"
 
 #: ../data/ui/pref.glade.h:22
 msgid "_Focus previous folder after coming to its parent"
-msgstr ""
+msgstr "_Sélectionner le répertoire précédent après s'être déplacé à son parent"
 
 #: ../data/ui/pref.glade.h:23
 msgid "<b>Default View</b>"
@@ -343,7 +338,7 @@ msgstr "Tou_jours afficher les noms de fichier complets"
 
 #: ../data/ui/pref.glade.h:38
 msgid "Show icons of hidden _files shadowed"
-msgstr ""
+msgstr "Montrer des icônes ombragées pour les _fichiers cachés"
 
 #: ../data/ui/pref.glade.h:39
 msgid "_Display"
@@ -360,7 +355,7 @@ msgstr "Tou_jours afficher la barre des onglets"
 
 #: ../data/ui/pref.glade.h:42
 msgid "_Maximum width of tab label:"
-msgstr ""
+msgstr "Largeur _maximale d'étiquette d'onglet :"
 
 #. Use genitive case here, context is: width is XXX characters
 #: ../data/ui/pref.glade.h:44
@@ -565,7 +560,8 @@ msgstr ""
 #: ../data/ui/pref.glade.h:91
 msgid "Auto (move if on the same FS, copy otherwise)"
 msgstr ""
-"Automatique (déplacer si c'est dans le même système de fichier, sinon copier)"
+"Automatique (déplacer si c'est dans le même système de fichier, sinon "
+"copier)"
 
 #: ../data/ui/pref.glade.h:92
 msgid "Copy"
@@ -1273,8 +1269,8 @@ msgid ""
 "Set mode of desktop wallpaper. MODE=(color|stretch|fit|crop|center|tile|"
 "screen)"
 msgstr ""
-"Sélectionner le mode d’affichage du fond d’écran. MODE=(color|stretch|fit|"
-"center|tile)"
+"Sélectionner le mode d’affichage du fond d’écran. "
+"MODE=(color|stretch|fit|center|tile)"
 
 #: ../src/pcmanfm.c:89
 msgid "MODE"
@@ -1309,7 +1305,11 @@ msgstr "RÔLE"
 msgid "[FILE1, FILE2,...]"
 msgstr "[FICHIER1, FICHIER2, ...]"
 
-#: ../src/pcmanfm.c:585
+#: ../src/pcmanfm.c:352
+msgid "Desktop manager is not active."
+msgstr ""
+
+#: ../src/pcmanfm.c:598
 msgid "Terminal emulator is not set."
 msgstr "L’émulateur de terminal n’est pas configuré."
 
@@ -1377,8 +1377,7 @@ msgstr "Parcourir le système de fichiers et gérer les fichiers"
 
 #: ../data/pcmanfm-desktop-pref.desktop.in.h:2
 msgid "Change desktop wallpapers and behavior of desktop manager"
-msgstr ""
-"Modifier les fonds d’écran et le comportement du gestionnaire de bureau"
+msgstr "Modifier les fonds d’écran et le comportement du gestionnaire de bureau"
 
 #~ msgid "Center on the screen"
 #~ msgstr "Centrer sur l’écran"
