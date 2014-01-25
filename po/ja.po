@@ -3,14 +3,13 @@
 # Copyright (C) 2010-2013 THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Hironao Komatsu <hironao@users.sourceforge.net>, 2010-2013.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: PcmanFM 1.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-09 09:41+0100\n"
-"PO-Revision-Date: 2013-11-25 11:35+0000\n"
-"Last-Translator: Martin <brother@bsnet.se>\n"
+"POT-Creation-Date: 2014-01-22 00:33+0200\n"
+"PO-Revision-Date: 2014-01-25 01:30+0000\n"
+"Last-Translator: Hironao <hirkmt@gmail.com>\n"
 "Language-Team: Japanese <translation-team-ja@lists.sourceforge.net>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
@@ -18,12 +17,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1385379346.0\n"
+"X-POOTLE-MTIME: 1390613407.0\n"
 
 #: ../data/ui/about.glade.in.h:1
-#, fuzzy
 msgid "Copyright (C) 2009 - 2014"
-msgstr "Copyright (C) 2009 - 2013"
+msgstr "Copyright (C) 2009 - 2014"
 
 #. Please replace this line with your own names, one name per line.
 #: ../data/ui/about.glade.in.h:3
@@ -84,24 +82,20 @@ msgid "<b>Show desktop icons</b>"
 msgstr "<b>デスクトップアイコンを表示する</b>"
 
 #: ../data/ui/desktop-pref.glade.h:14
-#, fuzzy
 msgid "_Show \"Documents\" folder on the desktop"
-msgstr "デスクトップに \"ドキュメント\" のアイコンを表示する(_S)"
+msgstr "デスクトップに \"ドキュメント\" のフォルダを表示する(_S)"
 
 #: ../data/ui/desktop-pref.glade.h:15
-#, fuzzy
 msgid "Sho_w \"Devices\" folder on the desktop"
-msgstr "デスクトップに \"デバイス\" のアイコンを表示する(_W)"
+msgstr "デスクトップに \"デバイス\" のフォルダを表示する(_W)"
 
 #: ../data/ui/desktop-pref.glade.h:16
-#, fuzzy
 msgid "Show \"_Trash Can\" folder on the desktop"
-msgstr "デスクトップに \"ゴミ箱\" のアイコンを表示する(_T)"
+msgstr "デスクトップに \"ゴミ箱\" のフォルダを表示する(_T)"
 
 #: ../data/ui/desktop-pref.glade.h:17
-#, fuzzy
 msgid "S_how connected volumes on the desktop"
-msgstr "ボリュームのアイコンをデスクトップに表示する(_H)"
+msgstr "接続されたボリュームをデスクトップに表示する(_H)"
 
 #: ../data/ui/desktop-pref.glade.h:18
 msgid "_Desktop Icons"
@@ -109,32 +103,29 @@ msgstr "デスクトップアイコン(_D)"
 
 #: ../data/ui/desktop-pref.glade.h:19
 msgid "_Show menus provided by window managers when desktop is clicked"
-msgstr ""
-"デスクトップをクリックしたときウィンドウマネージャのメニューを表示する(_S)"
+msgstr "デスクトップをクリックしたときウィンドウマネージャのメニューを表示する(_S)"
 
 #: ../data/ui/desktop-pref.glade.h:20
 msgid "_Use desktop as a folder (show icons on it) by path:"
-msgstr ""
+msgstr "以下のパスについて、デスクトップをそのフォルダを表示するのに使う(_U):"
 
 #: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:84
 msgctxt "Use path for some folder: ..."
 msgid "Default"
-msgstr ""
+msgstr "デフォルト"
 
 #: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:85
 msgctxt "Use path for some folder: ..."
 msgid "Custom:"
-msgstr ""
+msgstr "カスタム:"
 
 #: ../data/ui/desktop-pref.glade.h:23
-#, fuzzy
 msgid "Select a Desktop Folder"
-msgstr "デスクトップフォルダ"
+msgstr "デスクトップフォルダの選択"
 
 #: ../data/ui/desktop-pref.glade.h:24
-#, fuzzy
 msgid "_Open folders from desktop in new window"
-msgstr "新規ウィンドウで開く"
+msgstr "デスクトップからフォルダを開く時は新規ウィンドウで開く(_O)"
 
 #: ../data/ui/desktop-pref.glade.h:25
 msgid "Ad_vanced"
@@ -145,48 +136,40 @@ msgid "Fill with background color only"
 msgstr "背景色のみで塗りつぶす"
 
 #: ../data/ui/desktop-pref.glade.h:27
-#, fuzzy
 msgid "Stretch to fill the entire monitor area"
 msgstr "画面いっぱいに延ばす"
 
 #: ../data/ui/desktop-pref.glade.h:28
-#, fuzzy
 msgid "Stretch to fit the monitor area"
 msgstr "縦横比をそのままに延ばす"
 
 #: ../data/ui/desktop-pref.glade.h:29
 msgid "Center unscaled image on the monitor"
-msgstr ""
+msgstr "原寸大のまま中央に配置する"
 
 #: ../data/ui/desktop-pref.glade.h:30
-#, fuzzy
 msgid "Tile the image to fill the entire monitor area"
 msgstr "画面いっぱいに敷き詰める"
 
 #: ../data/ui/desktop-pref.glade.h:31
-#, fuzzy
 msgid "Stretch and crop to fill the monitor area"
-msgstr "画面いっぱいに延ばす"
+msgstr "画面いっぱいに延ばし、はみ出た部分を捨てる"
 
 #: ../data/ui/desktop-pref.glade.h:32
-#, fuzzy
 msgid "Stretch to fill the complete screen"
-msgstr "画面いっぱいに延ばす"
+msgstr "画面全体に延ばす"
 
 #: ../data/ui/pref.glade.h:1
-#, fuzzy
 msgid "Open in current tab"
 msgstr "現在のタブで開く"
 
 #: ../data/ui/pref.glade.h:2
-#, fuzzy
 msgid "Open in new tab"
-msgstr "新規タブで開く(_B)"
+msgstr "新規タブで開く"
 
 #: ../data/ui/pref.glade.h:3
-#, fuzzy
 msgid "Open in new window"
-msgstr "新規ウィンドウを開く"
+msgstr "新規ウィンドウで開く"
 
 #: ../data/ui/pref.glade.h:4
 msgid "Preferences"
@@ -234,7 +217,7 @@ msgstr "デフォルトのドロップの動作(_T):"
 
 #: ../data/ui/pref.glade.h:15
 msgid "\"_Smart shortcut\" auto-action on drop to Desktop folder"
-msgstr ""
+msgstr "デスクトップへのドロップについては実行するアクションを自動で判断する"
 
 #: ../data/ui/pref.glade.h:16
 msgid ""
@@ -244,6 +227,11 @@ msgid ""
 "- other files (e.g. on removable media) will be copied\n"
 "- for some external URI a shortcut will be created"
 msgstr ""
+"有効な時、デスクトップにドロップされたファイルは:\n"
+"- ホームフォルダからの時はシンボリックリンクを作成する\n"
+"- 同一のファイルシステム上のファイルについては移動する\n"
+"- リムーバブルメディアなど、他のファイルシステムであればコピーする\n"
+"- 外部URIについてはショートカットを作成する"
 
 #: ../data/ui/pref.glade.h:21
 msgid "_Unfold tab when files are dragged onto tab button"
@@ -251,7 +239,7 @@ msgstr "ファイルがタブボタンにドラッグされたときタブを展
 
 #: ../data/ui/pref.glade.h:22
 msgid "_Focus previous folder after coming to its parent"
-msgstr ""
+msgstr "親フォルダに移動した時、元いたフォルダをフォーカスする(_F)"
 
 #: ../data/ui/pref.glade.h:23
 msgid "<b>Default View</b>"
@@ -314,9 +302,8 @@ msgid "Al_ways show full file names"
 msgstr "常に完全なファイル名を表示する(_W)"
 
 #: ../data/ui/pref.glade.h:38
-#, fuzzy
 msgid "Show icons of hidden _files shadowed"
-msgstr "バックアップファイルのアイコンには影を入れる"
+msgstr "隠しファイルのアイコンには影を入れる(_F)"
 
 #: ../data/ui/pref.glade.h:39
 msgid "_Display"
@@ -389,9 +376,7 @@ msgstr "<b>自動マウント</b>"
 
 #: ../data/ui/pref.glade.h:57
 msgid "_Mount mountable volumes automatically on program startup"
-msgstr ""
-"プログラムのスタートアップ時にマウントできるボリュームを自動でマウントする"
-"(_M)"
+msgstr "プログラムのスタートアップ時にマウントできるボリュームを自動でマウントする(_M)"
 
 #: ../data/ui/pref.glade.h:58
 msgid "Mo_unt removable media automatically when they are inserted"
@@ -402,35 +387,28 @@ msgid "_Show available options for removable media when they are inserted"
 msgstr "リムーバブルメディアが挿入されたとき、可能な選択肢を表示する(_S)"
 
 #: ../data/ui/pref.glade.h:60
-#, fuzzy
 msgid "Do_n't show available options for those media types:"
-msgstr "リムーバブルメディアが挿入されたとき、可能な選択肢を表示する(_S)"
+msgstr "以下のメディアタイプには可能な選択肢を表示しない(_N)"
 
 #: ../data/ui/pref.glade.h:61
-#, fuzzy
 msgid "_Remove selected"
-msgstr "%d 個のアイテムが選択されています"
+msgstr "選択を除去(_R)"
 
 #: ../data/ui/pref.glade.h:62
 msgid "_Open mounted removable media in new tab instead of new window"
-msgstr ""
-"マウントされたリムーバブルメディアは新規ウィンドウでなく新規タブとして開く"
-"(_O)"
+msgstr "マウントされたリムーバブルメディアは新規ウィンドウでなく新規タブとして開く(_O)"
 
 #: ../data/ui/pref.glade.h:63
-#, fuzzy
 msgid "When removable medium unmounted:"
-msgstr "リムーバブルメディアの挿入"
+msgstr "リムーバブルメディアがアンマウントされた時:"
 
 #: ../data/ui/pref.glade.h:64
-#, fuzzy
 msgid "Clos_e tab containing removable medium"
-msgstr ""
-"リムーバブルメディアがアンマウントされたとき、それを含むタブを閉じる(_E)"
+msgstr "リムーバブルメディアを含むタブを閉じる(_E)"
 
 #: ../data/ui/pref.glade.h:65
 msgid "Change folder in the tab to _Home Folder"
-msgstr ""
+msgstr "そのタブが開くフォルダをホームに切り替える(_H)"
 
 #: ../data/ui/pref.glade.h:66
 msgid "_Volume Management"
@@ -442,8 +420,7 @@ msgstr "<b>プログラム</b>"
 
 #: ../data/ui/pref.glade.h:68
 msgid "<i>Commands below may include extra options if necessary.</i>"
-msgstr ""
-"<i>これらのコマンドには必要なら追加のオプションを含めることができます。</i>"
+msgstr "<i>これらのコマンドには必要なら追加のオプションを含めることができます。</i>"
 
 #: ../data/ui/pref.glade.h:69
 msgid "_Terminal emulator:"
@@ -476,18 +453,15 @@ msgstr "各 MIME タイプにつき一つだけテンプレートを表示する
 
 #: ../data/ui/pref.glade.h:77
 msgid "Ru_n default application after creation from template"
-msgstr ""
-"テンプレートからファイルを作った後、デフォルトのアプリケーションでそれを開く"
-"(_N)"
+msgstr "テンプレートからファイルを作った後、デフォルトのアプリケーションでそれを開く(_N)"
 
 #: ../data/ui/pref.glade.h:78
 msgid "<b>Other Options</b>"
 msgstr "<b>その他のオプション</b>"
 
 #: ../data/ui/pref.glade.h:79
-#, fuzzy
 msgid "Use Application Startup Notify _by default"
-msgstr "アプリケーションスタートアップ通知の使用をデフォルトにする(_U)"
+msgstr "アプリケーションスタートアップ通知の使用をデフォルトにする(_B)"
 
 #: ../data/ui/pref.glade.h:80
 msgid ""
@@ -495,8 +469,7 @@ msgid ""
 "explicitly.\n"
 "If unchecked then use Startup Notify only if that is defined for application."
 msgstr ""
-"これがチェックされているとき、他に記述がない限りはスタートアップ通知を使用す"
-"る。\n"
+"これがチェックされているとき、他に記述がない限りはスタートアップ通知を使用する。\n"
 "でないときは、アプリケーションについて明示されている場合のみ使用する。"
 
 #: ../data/ui/pref.glade.h:82
@@ -505,11 +478,11 @@ msgstr "フォルダの読み込み時に、コンテントタイプの検査を
 
 #: ../data/ui/pref.glade.h:83
 msgid "Use path for \"Home Folder\" button:"
-msgstr ""
+msgstr "以下のフォルダを \"ホームフォルダ\" ボタンに割り当てる:"
 
 #: ../data/ui/pref.glade.h:86
 msgid "_Use current"
-msgstr ""
+msgstr "現在のフォルダ(_U)"
 
 #: ../data/ui/pref.glade.h:87
 msgid "_Advanced"
@@ -517,15 +490,15 @@ msgstr "高度な設定(_A)"
 
 #: ../data/ui/pref.glade.h:88
 msgid "<b>_Do not load modules matching:</b>"
-msgstr ""
+msgstr "<b>以下にマッチするモジュールをロードしない(_D):</b>"
 
 #: ../data/ui/pref.glade.h:89
 msgid "<b>_Load these modules anyway:</b>"
-msgstr ""
+msgstr "<b>設定にかかわらず以下のモジュールはロードする(_L)</b>"
 
 #: ../data/ui/pref.glade.h:90
 msgid "Modules"
-msgstr ""
+msgstr "モジュール"
 
 #: ../data/ui/pref.glade.h:91
 msgid "Auto (move if on the same FS, copy otherwise)"
@@ -544,22 +517,18 @@ msgid "Ask"
 msgstr "問い合わせる"
 
 #: ../data/ui/pref.glade.h:95
-#, fuzzy
 msgid "Icon view"
 msgstr "アイコン"
 
 #: ../data/ui/pref.glade.h:96
-#, fuzzy
 msgid "Compact view"
 msgstr "コンパクト"
 
 #: ../data/ui/pref.glade.h:97
-#, fuzzy
 msgid "Thumbnail view"
 msgstr "サムネイル"
 
 #: ../data/ui/pref.glade.h:98
-#, fuzzy
 msgid "Detailed list view"
 msgstr "詳細リスト"
 
@@ -585,58 +554,57 @@ msgstr "実行したい動作を選択してください:"
 
 #: ../data/ui/autorun.glade.h:6
 msgid "_Always perform this action on this media type"
-msgstr ""
+msgstr "このメディアタイプについては常にこのアクションを実行する(_A)"
 
 #: ../data/ui/connect.glade.h:1
 msgid "Connect to remote server"
-msgstr ""
+msgstr "リモートサーバへ接続"
 
 #: ../data/ui/connect.glade.h:2
 msgid "<b>Specify remote folder to connect</b>"
-msgstr ""
+msgstr "<b>接続先フォルダの指定</b>"
 
 #: ../data/ui/connect.glade.h:3
 msgid "_Type:"
-msgstr ""
+msgstr "タイプ(_T):"
 
 #: ../data/ui/connect.glade.h:4
 msgid "_Host:"
-msgstr ""
+msgstr "ホスト(_H):"
 
 #: ../data/ui/connect.glade.h:5
 msgid "_Port:"
-msgstr ""
+msgstr "ポート(_P):"
 
 #: ../data/ui/connect.glade.h:6
 msgid "Pa_th:"
-msgstr ""
+msgstr "パス(_T):"
 
 #: ../data/ui/connect.glade.h:7
 msgid "_Anonymous login"
-msgstr ""
+msgstr "匿名ログイン(_A)"
 
 #: ../data/ui/connect.glade.h:8
 msgid "_Login as:"
-msgstr ""
+msgstr "アカウント名(_L):"
 
 #: ../data/ui/connect.glade.h:9
 msgid "SSH"
-msgstr ""
+msgstr "SSH"
 
 #: ../data/ui/connect.glade.h:10
 msgid "FTP"
-msgstr ""
+msgstr "FTP"
 
 #: ../data/ui/connect.glade.h:11
 msgid "WebDAV"
-msgstr ""
+msgstr "WebDAV"
 
 #: ../src/volume-manager.c:237
 msgid "mixed content"
-msgstr ""
+msgstr "混成コンテント"
 
 #: ../src/volume-manager.c:246
-#, fuzzy
 msgid "removable disk"
 msgstr "リムーバブルディスク"
 
@@ -658,7 +626,7 @@ msgstr "端末で開く(_L)"
 
 #: ../src/desktop-ui.c:68
 msgid "_Remove from Desktop"
-msgstr ""
+msgstr "デスクトップから除去(_R)"
 
 #: ../src/desktop-ui.c:85
 msgid "Stic_k to Current Position"
@@ -715,7 +683,7 @@ msgstr "空のファイル"
 
 #: ../src/main-win-ui.c:193
 msgid "Folder Propertie_s"
-msgstr ""
+msgstr "フォルダのプロパティ(_S)"
 
 #: ../src/main-win-ui.c:194
 msgid "_Close Tab"
@@ -731,43 +699,39 @@ msgstr "編集(_E)"
 
 #: ../src/main-win-ui.c:198
 msgid "C_ut"
-msgstr ""
+msgstr "カット(_U)"
 
 #: ../src/main-win-ui.c:201
 msgid "Move to _Trash"
-msgstr ""
+msgstr "ゴミ箱へ移動(_T)"
 
 #: ../src/main-win-ui.c:203
 msgid "Copy Pat_h(s)"
-msgstr ""
+msgstr "パスをコピー(_H)"
 
 #: ../src/main-win-ui.c:204
-#, fuzzy
 msgid "R_ename..."
-msgstr "名前を変更する(_R)"
+msgstr "名前を変更する(_E)"
 
 #: ../src/main-win-ui.c:205
 msgid "D_uplicate..."
-msgstr ""
+msgstr "コピーの作成(_U)"
 
 #: ../src/main-win-ui.c:206
-#, fuzzy
 msgid "Create Lin_k..."
 msgstr "シンボリック・リンクを作成する(_K)"
 
 #: ../src/main-win-ui.c:207
-#, fuzzy
 msgid "_Move to..."
 msgstr "送り先へ移動する(_M)"
 
 #: ../src/main-win-ui.c:208
-#, fuzzy
 msgid "Copy to_..."
-msgstr "送り先へコピーする(_O)"
+msgstr "送り先へコピーする(_.)"
 
 #: ../src/main-win-ui.c:209
 msgid "Propertie_s"
-msgstr ""
+msgstr "プロパティ(_S)"
 
 #: ../src/main-win-ui.c:211
 msgid "_Invert Selection"
@@ -790,13 +754,12 @@ msgid "Reload current folder"
 msgstr "現在のフォルダを再読み込みする"
 
 #: ../src/main-win-ui.c:215
-#, fuzzy
 msgid "Tool_bar"
-msgstr "ツール(_S)"
+msgstr "ツールバー(_B)"
 
 #: ../src/main-win-ui.c:216
 msgid "Pat_h Bar"
-msgstr ""
+msgstr "パス・バー(_H)"
 
 #: ../src/main-win-ui.c:217
 msgid "Side _Pane"
@@ -804,9 +767,8 @@ msgstr "サイドペイン(_P)"
 
 #. other see below: 'ShowHidden' 'ShowStatus' 'Fullscreen' 'IconView'...
 #: ../src/main-win-ui.c:219
-#, fuzzy
 msgid "Fo_lder View Mode"
-msgstr "ビューのモード(_W):"
+msgstr "フォルダ・ビューのモード(_L):"
 
 #: ../src/main-win-ui.c:220
 msgid "S_ort Files"
@@ -814,11 +776,11 @@ msgstr "ファイルを整列する(_O)"
 
 #: ../src/main-win-ui.c:222
 msgid "Zoom O_ut"
-msgstr ""
+msgstr "縮小(_U)"
 
 #: ../src/main-win-ui.c:225
 msgid "Fil_ter..."
-msgstr ""
+msgstr "フィルタ(_T)"
 
 #: ../src/main-win-ui.c:227
 msgid "_Help"
@@ -906,15 +868,15 @@ msgstr "ネットワーク上の場所のリストへ移動する"
 
 #: ../src/main-win-ui.c:241
 msgid "_Go to Location..."
-msgstr ""
+msgstr "指定先へ移動(_G)"
 
 #: ../src/main-win-ui.c:242
 msgid "_Connect to Server..."
-msgstr ""
+msgstr "サーバに接続(_C)"
 
 #: ../src/main-win-ui.c:242
 msgid "Open a window to choose remote folder location"
-msgstr ""
+msgstr "ウィンドウを開き接続先を選ぶ"
 
 #: ../src/main-win-ui.c:243
 msgid "Go to the path in the location bar"
@@ -925,7 +887,6 @@ msgid "_Bookmarks"
 msgstr "ブックマーク(_B)"
 
 #: ../src/main-win-ui.c:245
-#, fuzzy
 msgid "_Add to Bookmarks..."
 msgstr "ブックマークへ追加(_A)"
 
@@ -935,69 +896,66 @@ msgstr "現在のフォルダをブックマークに追加する"
 
 #: ../src/main-win-ui.c:246
 msgid "Too_ls"
-msgstr ""
+msgstr "ツール(_L)"
 
 #: ../src/main-win-ui.c:247
 msgid "Open Current Folder in _Terminal"
 msgstr "現在のフォルダを端末で開く(_T)"
 
 #: ../src/main-win-ui.c:249
-#, fuzzy
 msgid "Fin_d Files..."
-msgstr "ファイルを検索する(_D)"
+msgstr "ファイルを検索する...(_D)"
 
 #: ../src/main-win-ui.c:249
 msgid "Open search dialog"
 msgstr "検索ダイアログを開く"
 
 #: ../src/main-win-ui.c:252
-#, fuzzy
 msgid "_Run a Command in Current Folder..."
-msgstr "現在のフォルダを再読み込みする"
+msgstr "現在のフォルダでコマンドを実行する...(_R)"
 
 #. Note to translators: "Mingle..." means "Do not put folders before files" but make the translation as short as possible, please!
 #: ../src/main-win-ui.c:267
 msgid "Mingle _Files and Folders"
-msgstr ""
+msgstr "ファイルとフォルダを混ぜて表示する(_F)"
 
 #: ../src/main-win-ui.c:270
 msgid "_Ignore Name Case"
-msgstr ""
+msgstr "大文字・小文字を区別しない(_I)"
 
 #: ../src/main-win-ui.c:272
-#, fuzzy
 msgid "Sho_w Hidden"
-msgstr "隠しファイルを表示する(_N)"
+msgstr "隠しファイルを表示する(_W)"
 
 #. Note to translators: this save is meant for folder's settings such as sort
 #: ../src/main-win-ui.c:274
 msgid "Preserve This Folder's Settings"
-msgstr ""
+msgstr "このフォルダの設定を保存する"
 
 #: ../src/main-win-ui.c:275
 msgid ""
 "Check to remember view and sort as folder setting rather than global one"
-msgstr ""
+msgstr "このフォルダのビューとソートの設定を記憶し、全体設定より優先して適用します"
 
 #: ../src/main-win-ui.c:277
 msgid "_Show Toolbar"
-msgstr ""
+msgstr "ツールバーの表示(_S)"
 
 #: ../src/main-win-ui.c:278
 msgid "Show 'New _Window' Button"
-msgstr ""
+msgstr "'新規ウィンドウ' ボタンを表示する"
 
 #: ../src/main-win-ui.c:279
 msgid "Show 'New _Tab' Button"
-msgstr ""
+msgstr "'新規タブ' ボタンを表示する(_T)"
 
 #: ../src/main-win-ui.c:280
 msgid "Show _Navigation Buttons"
-msgstr ""
+msgstr "移動ボタンを表示する(_N)"
 
 #: ../src/main-win-ui.c:281
 msgid "Show '_Home' Button"
-msgstr ""
+msgstr "'ホーム' ボタンを表示する(_H)"
 
 #: ../src/main-win-ui.c:282
 msgid "Sho_w Side Pane"
@@ -1008,13 +966,12 @@ msgid "Show Status B_ar"
 msgstr "ステータスバーを表示する(_A)"
 
 #: ../src/main-win-ui.c:284
-#, fuzzy
 msgid "_Dual Pane Mode"
-msgstr "二面ペインモード(_W)"
+msgstr "二面ペインモード(_D)"
 
 #: ../src/main-win-ui.c:284
 msgid "Show two panels with folder views"
-msgstr ""
+msgstr "２つのパネルにそれそれフォルダを表示する"
 
 #: ../src/main-win-ui.c:285
 msgid "Fullscreen _Mode"
@@ -1054,7 +1011,7 @@ msgstr "ファイルタイプ(_T)"
 
 #: ../src/main-win-ui.c:312
 msgid "By _Extension"
-msgstr ""
+msgstr "拡張子(_E)"
 
 #: ../src/main-win-ui.c:325
 msgid "Places"
@@ -1069,13 +1026,12 @@ msgid "Remote"
 msgstr "リモート"
 
 #: ../src/main-win-ui.c:333
-#, fuzzy
 msgid "_Location"
-msgstr "アプリケーション(_L)"
+msgstr "場所(_L)"
 
 #: ../src/main-win-ui.c:334
 msgid "_Buttons"
-msgstr ""
+msgstr "ボタン(_B)"
 
 #: ../src/main-win.c:925 ../src/main-win.c:929
 msgid "Show history of visited folders"
@@ -1119,28 +1075,24 @@ msgid ""
 "F10: activate main menu\n"
 "Ctrl+L or Alt+D: jump focus to Path Bar"
 msgstr ""
-"Tab: フォルダ・ビュー -> サイド・ペイン -> ツールバーへとフォーカスを循環させ"
-"る\n"
-"Shift+Tab: ツールバー -> サイド・ペイン -> フォルダ・ビューへとフォーカスを循"
-"環させる\n"
+"Tab: フォルダ・ビュー -> サイド・ペイン -> ツールバーへとフォーカスを循環させる\n"
+"Shift+Tab: ツールバー -> サイド・ペイン -> フォルダ・ビューへとフォーカスを循環させる\n"
 "F6: サイド・ペインとフォルダ・ビューの間でフォーカスを切り替える\n"
 "F8: サイド・ペインとフォルダ・ビューの間の境界線をフォーカスする\n"
 "F10: メイン/メニューを開く\n"
 "Ctrl+L or Alt+D: パス・バーへフォーカスを移す"
 
 #: ../src/main-win.c:1210
-#, fuzzy
 msgid "Run a command"
-msgstr "フォーマットのコマンド(_F)"
+msgstr "コマンドの実行"
 
 #: ../src/main-win.c:1211
 msgid "Enter a command to run:"
-msgstr ""
+msgstr "実行するコマンドを入力してください:"
 
 #: ../src/main-win.c:1218
-#, fuzzy
 msgid "Current folder is inaccessible"
-msgstr "現在のフォルダを端末で開く(_T)"
+msgstr "現在のフォルダへはアクセスできません"
 
 #: ../src/main-win.c:1822
 #, c-format
@@ -1159,11 +1111,11 @@ msgstr "ブックマークへ追加"
 
 #: ../src/main-win.c:2552
 msgid "Select filter"
-msgstr ""
+msgstr "フィルタの選択"
 
 #: ../src/main-win.c:2553
 msgid "Choose a new shell pattern to show files:"
-msgstr ""
+msgstr "表示するファイルを示すシェルパターンを新たに選んでください:"
 
 #. options only acceptable by first pcmanfm instance. These options are not passed through IPC
 #: ../src/pcmanfm.c:78
@@ -1209,11 +1161,10 @@ msgstr "FILE"
 
 #. don't translate list of modes in description, please
 #: ../src/pcmanfm.c:89
-#, fuzzy
 msgid ""
 "Set mode of desktop wallpaper. MODE=(color|stretch|fit|crop|center|tile|"
 "screen)"
-msgstr "デスクトップ壁紙のモード設定。 MODE=(color|stretch|fit|center|tile)"
+msgstr "デスクトップ壁紙のモード設定。 MODE=(color|stretch|fit|crop|center|tile|screen)"
 
 #: ../src/pcmanfm.c:89
 msgid "MODE"
@@ -1232,9 +1183,8 @@ msgid "Open new window"
 msgstr "新規ウィンドウを開く"
 
 #: ../src/pcmanfm.c:93
-#, fuzzy
 msgid "Open a Find Files window"
-msgstr "新規ウィンドウを開く"
+msgstr "ファイル検索ウィンドウを開く"
 
 #: ../src/pcmanfm.c:95
 msgid "Window role for usage by window manager"
@@ -1248,7 +1198,11 @@ msgstr "ROLE"
 msgid "[FILE1, FILE2,...]"
 msgstr "[ファイル1, ファイル2,...]"
 
-#: ../src/pcmanfm.c:585
+#: ../src/pcmanfm.c:352
+msgid "Desktop manager is not active."
+msgstr "デスクトップマネージャはアクティブでありません。"
+
+#: ../src/pcmanfm.c:598
 msgid "Terminal emulator is not set."
 msgstr "端末エミュレータが設定されていません。"
 
@@ -1281,19 +1235,19 @@ msgstr[0] " (隠しアイテム %d個)"
 
 #: ../src/pref.c:514
 msgid "Add to Modules Blacklist"
-msgstr ""
+msgstr "モジュールの使用不可リストへ追加"
 
 #: ../src/pref.c:515
 msgid "Enter a blacklisted module mask:"
-msgstr ""
+msgstr "使用が不可なモジュールのマスクの入力:"
 
 #: ../src/pref.c:606
 msgid "Add to Modules Whitelist"
-msgstr ""
+msgstr "モジュールの使用許可リストへ追加"
 
 #: ../src/pref.c:607
 msgid "Enter a whitelisted module mask:"
-msgstr ""
+msgstr "使用を許可するモジュールのマスクの入力:"
 
 #: ../data/pcmanfm.desktop.in.h:1
 msgid "File Manager PCManFM"
