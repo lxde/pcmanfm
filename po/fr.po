@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PCManFM\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-01-22 00:33+0200\n"
-"PO-Revision-Date: 2014-01-25 10:46+0000\n"
+"PO-Revision-Date: 2014-01-25 11:09+0000\n"
 "Last-Translator: Julien <Julius22@laposte.net>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1390646791.0\n"
+"X-POOTLE-MTIME: 1390648155.0\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2014"
@@ -88,7 +88,6 @@ msgstr "<b>Afficher les icônes du bureau</b>"
 
 # Il manque l'indication du caractère de raccourci clavier en français
 #: ../data/ui/desktop-pref.glade.h:14
-#, fuzzy
 msgid "_Show \"Documents\" folder on the desktop"
 msgstr "Afficher le répertoire « Mes documents » _sur le bureau"
 
@@ -360,7 +359,7 @@ msgstr "Largeur _maximale d'étiquette d'onglet :"
 #. Use genitive case here, context is: width is XXX characters
 #: ../data/ui/pref.glade.h:44
 msgid "characters"
-msgstr ""
+msgstr "caractères"
 
 #: ../data/ui/pref.glade.h:45
 msgid "<b>Directories Tree</b>"
@@ -376,12 +375,10 @@ msgid "<b>Show in Places:</b>"
 msgstr "<b>Afficher dans les emplacements :</b>"
 
 #: ../data/ui/pref.glade.h:48
-#, fuzzy
 msgid "_Home Folder"
-msgstr "Dossier personnel"
+msgstr "Dossier _personnel"
 
 #: ../data/ui/pref.glade.h:49
-#, fuzzy
 msgid "Des_ktop"
 msgstr "_Bureau"
 
@@ -391,7 +388,7 @@ msgstr "_Corbeille"
 
 #: ../data/ui/pref.glade.h:51
 msgid "_Filesystem Root"
-msgstr ""
+msgstr "Racine du système de _fichiers"
 
 #: ../data/ui/pref.glade.h:52
 msgid "App_lications"
@@ -399,12 +396,11 @@ msgstr "App_lications"
 
 #: ../data/ui/pref.glade.h:53 ../src/main-win-ui.c:239
 msgid "Dev_ices"
-msgstr ""
+msgstr "Appare_ils"
 
 #: ../data/ui/pref.glade.h:54
-#, fuzzy
 msgid "_Network"
-msgstr "Dis_ques réseau"
+msgstr "_Réseau"
 
 #: ../data/ui/pref.glade.h:55
 msgid "_Layout"
@@ -431,16 +427,12 @@ msgstr ""
 "insérés"
 
 #: ../data/ui/pref.glade.h:60
-#, fuzzy
 msgid "Do_n't show available options for those media types:"
-msgstr ""
-"Afficher les options di_sponibles pour les supports amovibles quand ils sont "
-"insérés"
+msgstr "_Ne pas afficher les options disponibles pour ces types de médias :"
 
 #: ../data/ui/pref.glade.h:61
-#, fuzzy
 msgid "_Remove selected"
-msgstr "%d élément sélectionné"
+msgstr "Supprime_r la sélection"
 
 #: ../data/ui/pref.glade.h:62
 msgid "_Open mounted removable media in new tab instead of new window"
@@ -449,18 +441,16 @@ msgstr ""
 "dans une nouvelle fenêtre"
 
 #: ../data/ui/pref.glade.h:63
-#, fuzzy
 msgid "When removable medium unmounted:"
-msgstr "Périphérique amovible inséré"
+msgstr "Lorsqu'un support amovible est démonté :"
 
 #: ../data/ui/pref.glade.h:64
-#, fuzzy
 msgid "Clos_e tab containing removable medium"
-msgstr "F_ermer l'onglet du support amovible une fois démonté"
+msgstr "F_ermer l'onglet du support amovible"
 
 #: ../data/ui/pref.glade.h:65
 msgid "Change folder in the tab to _Home Folder"
-msgstr ""
+msgstr "C_hanger le répertoire dans l'onglet pour le répertoire personnel"
 
 #: ../data/ui/pref.glade.h:66
 msgid "_Volume Management"
@@ -473,6 +463,8 @@ msgstr "<b>Applications</b>"
 #: ../data/ui/pref.glade.h:68
 msgid "<i>Commands below may include extra options if necessary.</i>"
 msgstr ""
+"<i>Les commandes ci-dessous peuvent comporter des options complémentaires si "
+"nécessaire.</i>"
 
 #: ../data/ui/pref.glade.h:69
 msgid "_Terminal emulator:"
@@ -485,38 +477,35 @@ msgstr "Commande de changement d’utili_sateur :"
 #. Application command to format some drive
 #: ../data/ui/pref.glade.h:72
 msgid "_Format command:"
-msgstr ""
+msgstr "Commande de _formatage :"
 
 #: ../data/ui/pref.glade.h:73
 msgid "A_rchiver integration:"
 msgstr "Intégration de l’a_rchiveur :"
 
 #: ../data/ui/pref.glade.h:74
-#, fuzzy
 msgid "<b>Templates</b>"
-msgstr "<b>Texte</b>"
+msgstr "<b>Modèles</b>"
 
 #: ../data/ui/pref.glade.h:75
 msgid "S_how only user defined templates in menu"
-msgstr ""
+msgstr "_Montrer uniquement les modèles définis par l'utilisateur dans le menu"
 
 #: ../data/ui/pref.glade.h:76
 msgid "Show _only one template for each MIME type"
-msgstr ""
+msgstr "M_ontrer uniquement un modèle par type Mime"
 
 #: ../data/ui/pref.glade.h:77
 msgid "Ru_n default application after creation from template"
-msgstr ""
+msgstr "La_ncer l'application par défaut à partir du modèle après la création"
 
 #: ../data/ui/pref.glade.h:78
-#, fuzzy
 msgid "<b>Other Options</b>"
-msgstr "<b>Afficher les icônes du bureau</b>"
+msgstr "<b>Autres options</b>"
 
 #: ../data/ui/pref.glade.h:79
-#, fuzzy
 msgid "Use Application Startup Notify _by default"
-msgstr "_Utiliser la notification de démarrage d'application par défaut"
+msgstr "Utiliser la notification de démarrage d'application _par défaut"
 
 #: ../data/ui/pref.glade.h:80
 msgid ""
@@ -531,15 +520,16 @@ msgstr ""
 
 #: ../data/ui/pref.glade.h:82
 msgid "D_efer test for content type on folder loading"
-msgstr ""
+msgstr "Différ_er le test de type de contenu au chargement de répertoire"
 
 #: ../data/ui/pref.glade.h:83
 msgid "Use path for \"Home Folder\" button:"
-msgstr ""
+msgstr "Utiliser le chemin suivant pour le bouton « Répertoire personnel » :"
 
 #: ../data/ui/pref.glade.h:86
+#, fuzzy
 msgid "_Use current"
-msgstr ""
+msgstr "_Utiliser actuel"
 
 #: ../data/ui/pref.glade.h:87
 msgid "_Advanced"
@@ -547,15 +537,15 @@ msgstr "_Avancé"
 
 #: ../data/ui/pref.glade.h:88
 msgid "<b>_Do not load modules matching:</b>"
-msgstr ""
+msgstr "<b>Ne pas charger les mo_dules correspondant à :</b>"
 
 #: ../data/ui/pref.glade.h:89
 msgid "<b>_Load these modules anyway:</b>"
-msgstr ""
+msgstr "<b>Charger ces modu_les de toute façon :</b>"
 
 #: ../data/ui/pref.glade.h:90
 msgid "Modules"
-msgstr ""
+msgstr "Modules"
 
 #: ../data/ui/pref.glade.h:91
 msgid "Auto (move if on the same FS, copy otherwise)"
@@ -576,22 +566,18 @@ msgid "Ask"
 msgstr "Demander"
 
 #: ../data/ui/pref.glade.h:95
-#, fuzzy
 msgid "Icon view"
 msgstr "Vue en icônes"
 
 #: ../data/ui/pref.glade.h:96
-#, fuzzy
 msgid "Compact view"
 msgstr "Vue compacte"
 
 #: ../data/ui/pref.glade.h:97
-#, fuzzy
 msgid "Thumbnail view"
 msgstr "Vue en miniatures"
 
 #: ../data/ui/pref.glade.h:98
-#, fuzzy
 msgid "Detailed list view"
 msgstr "Vue en liste détaillée"
 
@@ -617,51 +603,51 @@ msgstr "Veuillez sélectionner l’action à effectuer :"
 
 #: ../data/ui/autorun.glade.h:6
 msgid "_Always perform this action on this media type"
-msgstr ""
+msgstr "Toujours effectuer cette _action avec ce type de médias"
 
 #: ../data/ui/connect.glade.h:1
 msgid "Connect to remote server"
-msgstr ""
+msgstr "Se connecter à un serveur distant"
 
 #: ../data/ui/connect.glade.h:2
 msgid "<b>Specify remote folder to connect</b>"
-msgstr ""
+msgstr "<b>Spécifier le répertoire distant auquel se connecter</b>"
 
 #: ../data/ui/connect.glade.h:3
 msgid "_Type:"
-msgstr ""
+msgstr "_Type :"
 
 #: ../data/ui/connect.glade.h:4
 msgid "_Host:"
-msgstr ""
+msgstr "_Hôte :"
 
 #: ../data/ui/connect.glade.h:5
 msgid "_Port:"
-msgstr ""
+msgstr "_Port :"
 
 #: ../data/ui/connect.glade.h:6
 msgid "Pa_th:"
-msgstr ""
+msgstr "Ch_emin :"
 
 #: ../data/ui/connect.glade.h:7
 msgid "_Anonymous login"
-msgstr ""
+msgstr "Identification _anonyme"
 
 #: ../data/ui/connect.glade.h:8
 msgid "_Login as:"
-msgstr ""
+msgstr "S'_identifier comme :"
 
 #: ../data/ui/connect.glade.h:9
 msgid "SSH"
-msgstr ""
+msgstr "SSH"
 
 #: ../data/ui/connect.glade.h:10
 msgid "FTP"
-msgstr ""
+msgstr "FTP"
 
 #: ../data/ui/connect.glade.h:11
 msgid "WebDAV"
-msgstr ""
+msgstr "WebDAV"
 
 #: ../src/volume-manager.c:237
 msgid "mixed content"
@@ -862,9 +848,8 @@ msgid "_Help"
 msgstr "_Aide"
 
 #: ../src/main-win-ui.c:229
-#, fuzzy
 msgid "_Keyboard Navigation"
-msgstr "_Raccourcis clavier"
+msgstr "Navigation au _clavier"
 
 #: ../src/main-win-ui.c:230
 msgid "_Go"
@@ -876,11 +861,11 @@ msgstr "Dossier _précédent"
 
 #: ../src/main-win-ui.c:231
 msgid "Return to previous folder in history"
-msgstr ""
+msgstr "Retourner au répertoire précédent dans l'historique"
 
 #: ../src/main-win-ui.c:232
 msgid "_Next Folder"
-msgstr "Dossier suiva_nt"
+msgstr "Aller au répertoire suivant dans l'historique"
 
 #: ../src/main-win-ui.c:232
 msgid "Go forward to next folder in history"
