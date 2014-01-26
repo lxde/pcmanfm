@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PCManFM\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-01-22 00:33+0200\n"
-"PO-Revision-Date: 2014-01-25 11:09+0000\n"
+"PO-Revision-Date: 2014-01-26 10:30+0000\n"
 "Last-Translator: Julien <Julius22@laposte.net>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1390648155.0\n"
+"X-POOTLE-MTIME: 1390732217.0\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2014"
@@ -651,12 +651,11 @@ msgstr "WebDAV"
 
 #: ../src/volume-manager.c:237
 msgid "mixed content"
-msgstr ""
+msgstr "contenu mélangé"
 
 #: ../src/volume-manager.c:246
-#, fuzzy
 msgid "removable disk"
-msgstr "Disque amovible"
+msgstr "disque amovible"
 
 #: ../src/volume-manager.c:302
 msgid "Open in File Manager"
@@ -676,7 +675,7 @@ msgstr "Ouvrir dans un _terminal"
 
 #: ../src/desktop-ui.c:68
 msgid "_Remove from Desktop"
-msgstr ""
+msgstr "_Retirer du bureau"
 
 #: ../src/desktop-ui.c:85
 msgid "Stic_k to Current Position"
@@ -687,25 +686,21 @@ msgid "Snap to _Grid"
 msgstr "Aligner sur la _grille"
 
 #: ../src/desktop.c:946
-#, fuzzy
 msgid "Activate file"
-msgstr "<fichier image>"
+msgstr "Activer le fichier"
 
 #: ../src/desktop.c:948
-#, fuzzy
 msgid "Show file menu"
-msgstr "Afficher les fichiers _cachés"
+msgstr "Afficher le menu fichier"
 
 #: ../src/desktop.c:1364
-#, fuzzy
 msgid "Show desktop menu"
-msgstr "<b>Afficher les icônes du bureau</b>"
+msgstr "Afficher le menu du bureau"
 
 #. FIXME: set name by monitor
 #: ../src/desktop.c:1436
-#, fuzzy
 msgid "Desktop"
-msgstr "_Bureau"
+msgstr "Bureau"
 
 #: ../src/main-win-ui.c:187
 msgid "_File"
@@ -737,7 +732,7 @@ msgstr "Fichier vide"
 
 #: ../src/main-win-ui.c:193
 msgid "Folder Propertie_s"
-msgstr ""
+msgstr "Propriété_s du dossier"
 
 #: ../src/main-win-ui.c:194
 msgid "_Close Tab"
@@ -753,29 +748,28 @@ msgstr "Édit_ion"
 
 #: ../src/main-win-ui.c:198
 msgid "C_ut"
-msgstr ""
+msgstr "Co_uper"
 
 #: ../src/main-win-ui.c:201
 msgid "Move to _Trash"
-msgstr ""
+msgstr "Me_ttre à la corbeille"
 
 #: ../src/main-win-ui.c:203
 msgid "Copy Pat_h(s)"
-msgstr ""
+msgstr "Copier le(s) c_hemin(s)"
 
 #: ../src/main-win-ui.c:204
-#, fuzzy
 msgid "R_ename..."
-msgstr "_Renommer"
+msgstr "R_enommer..."
 
 #: ../src/main-win-ui.c:205
 msgid "D_uplicate..."
-msgstr ""
+msgstr "D_upliquer..."
 
 #: ../src/main-win-ui.c:206
 #, fuzzy
 msgid "Create Lin_k..."
-msgstr "Créer un _nouveau..."
+msgstr "Créer un lien..."
 
 #: ../src/main-win-ui.c:207
 #, fuzzy
@@ -789,7 +783,7 @@ msgstr "C_opier vers..."
 
 #: ../src/main-win-ui.c:209
 msgid "Propertie_s"
-msgstr ""
+msgstr "Propriété_s"
 
 #: ../src/main-win-ui.c:211
 msgid "_Invert Selection"
@@ -812,13 +806,12 @@ msgid "Reload current folder"
 msgstr "Actualiser le dossier"
 
 #: ../src/main-win-ui.c:215
-#, fuzzy
 msgid "Tool_bar"
-msgstr "_Outils"
+msgstr "_Barre d'outils"
 
 #: ../src/main-win-ui.c:216
 msgid "Pat_h Bar"
-msgstr ""
+msgstr "Barre de c_hemin"
 
 #: ../src/main-win-ui.c:217
 msgid "Side _Pane"
@@ -829,19 +822,20 @@ msgstr "_Panneau latéral"
 #: ../src/main-win-ui.c:219
 #, fuzzy
 msgid "Fo_lder View Mode"
-msgstr "Mode d’affichage :"
+msgstr "Mode de vue en répertoires"
 
 #: ../src/main-win-ui.c:220
 msgid "S_ort Files"
 msgstr "_Trier les fichiers"
 
 #: ../src/main-win-ui.c:222
+#, fuzzy
 msgid "Zoom O_ut"
-msgstr ""
+msgstr "Dézoomer"
 
 #: ../src/main-win-ui.c:225
 msgid "Fil_ter..."
-msgstr ""
+msgstr "Fil_trer..."
 
 #: ../src/main-win-ui.c:227
 msgid "_Help"
@@ -869,7 +863,7 @@ msgstr "Aller au répertoire suivant dans l'historique"
 
 #: ../src/main-win-ui.c:232
 msgid "Go forward to next folder in history"
-msgstr ""
+msgstr "Aller au répertoire suivant dans l'historique"
 
 #: ../src/main-win-ui.c:233
 msgid "Pa_rent Folder"
@@ -884,30 +878,28 @@ msgid "H_ome Folder"
 msgstr "D_ossier personnel"
 
 #: ../src/main-win-ui.c:234
-#, fuzzy
 msgid "Go to home folder"
-msgstr "Aller au dossier parent"
+msgstr "Aller au répertoire personnel"
 
 #: ../src/main-win-ui.c:235
 msgid "_Desktop"
 msgstr "_Bureau"
 
 #: ../src/main-win-ui.c:235
-#, fuzzy
 msgid "Go to desktop folder"
-msgstr "Aller au dossier parent"
+msgstr "Aller au répertoire parent"
 
 #: ../src/main-win-ui.c:236
 msgid "Open trash can"
-msgstr ""
+msgstr "Ouvrir la corbeille"
 
 #: ../src/main-win-ui.c:237
 msgid "Filesyste_m Root"
-msgstr ""
+msgstr "Racine du systè_me de fichiers"
 
 #: ../src/main-win-ui.c:237
 msgid "Go fo filesystem root"
-msgstr ""
+msgstr "Aller à la racine du système de fichiers"
 
 #: ../src/main-win-ui.c:238
 msgid "_Applications"
@@ -915,38 +907,37 @@ msgstr "_Applications"
 
 #: ../src/main-win-ui.c:238
 msgid "Go to root of applications menu folder"
-msgstr ""
+msgstr "Aller à la racine du répertoire du menu des applications"
 
 #: ../src/main-win-ui.c:239
-#, fuzzy
 msgid "Go to list of devices connected to the computer"
-msgstr "Afficher les icônes des supports amovibles sur le bureau"
+msgstr "Aller à la liste des appareils connectés à l'ordinateur"
 
 #: ../src/main-win-ui.c:240
 #, fuzzy
 msgid "Net_work"
-msgstr "Dis_ques réseau"
+msgstr "Réseau"
 
 #: ../src/main-win-ui.c:240
-#, fuzzy
 msgid "Go to list of places on the network"
-msgstr "Afficher les icônes des supports amovibles sur le bureau"
+msgstr "Aller à la liste des emplacements sur le réseau"
 
 #: ../src/main-win-ui.c:241
+#, fuzzy
 msgid "_Go to Location..."
-msgstr ""
+msgstr "Aller à l'emplacement..."
 
 #: ../src/main-win-ui.c:242
 msgid "_Connect to Server..."
-msgstr ""
+msgstr "Se _connecter au serveur..."
 
 #: ../src/main-win-ui.c:242
 msgid "Open a window to choose remote folder location"
-msgstr ""
+msgstr "Ouvrir une fenêtre pour choisir l'emplacement du répertoire distant"
 
 #: ../src/main-win-ui.c:243
 msgid "Go to the path in the location bar"
-msgstr ""
+msgstr "Aller au chemin dans la barre d'emplacement"
 
 #: ../src/main-win-ui.c:244
 msgid "_Bookmarks"
@@ -954,31 +945,28 @@ msgstr "_Marque-pages"
 
 # Duplicate?
 #: ../src/main-win-ui.c:245
-#, fuzzy
 msgid "_Add to Bookmarks..."
-msgstr "Ajouter aux marque-pages"
+msgstr "_Ajouter aux marque-pages..."
 
 #: ../src/main-win-ui.c:245
 msgid "Add current folder to bookmarks list"
-msgstr ""
+msgstr "Ajouter le répertoire actuel à la liste des marque-pages"
 
 #: ../src/main-win-ui.c:246
 msgid "Too_ls"
-msgstr ""
+msgstr "Outi_ls"
 
 #: ../src/main-win-ui.c:247
 msgid "Open Current Folder in _Terminal"
 msgstr "Ouvrir le dossier courant dans un _terminal"
 
 #: ../src/main-win-ui.c:249
-#, fuzzy
 msgid "Fin_d Files..."
-msgstr "_Rechercher des fichiers"
+msgstr "_Rechercher des fichiers..."
 
 #: ../src/main-win-ui.c:249
-#, fuzzy
 msgid "Open search dialog"
-msgstr "Ouvrir la fenêtre des préférences du bureau"
+msgstr "Ouvrir la boîte de dialogue de recherche"
 
 #: ../src/main-win-ui.c:252
 #, fuzzy
@@ -1085,7 +1073,7 @@ msgstr "Par t_ype de fichier"
 
 #: ../src/main-win-ui.c:312
 msgid "By _Extension"
-msgstr ""
+msgstr "Par _extension"
 
 #: ../src/main-win-ui.c:325
 msgid "Places"
@@ -1101,53 +1089,45 @@ msgid "Remote"
 msgstr "Réseau"
 
 #: ../src/main-win-ui.c:333
-#, fuzzy
 msgid "_Location"
-msgstr "App_lications"
+msgstr "Emp_lacement"
 
 #: ../src/main-win-ui.c:334
 msgid "_Buttons"
-msgstr ""
+msgstr "_Boutons"
 
 #: ../src/main-win.c:925 ../src/main-win.c:929
 msgid "Show history of visited folders"
-msgstr ""
+msgstr "Montrer l'historique des répertoires visités"
 
 #: ../src/main-win.c:934
 msgid "History"
-msgstr ""
+msgstr "Historique"
 
 #: ../src/main-win.c:948
 msgid "You are in super user mode"
 msgstr "Vous êtes en mode super-utilisateur"
 
 #: ../src/main-win.c:1134
-#, fuzzy
 msgid "Lightweight file manager\n"
-msgstr ""
-"Gestionnaire de fichiers léger\n"
-"\n"
-"Développé par Hon Jen Yee (PCMan)"
+msgstr "Gestionnaire de fichiers léger\n"
 
 #: ../src/main-win.c:1139
 #, c-format
 msgid "using LibFM ver. %s\n"
-msgstr ""
+msgstr "utilise LibFM ver. %s\n"
 
 #: ../src/main-win.c:1141
-#, fuzzy
 msgid ""
 "\n"
 "Developed by Hon Jen Yee (PCMan)"
 msgstr ""
-"Gestionnaire de fichiers léger\n"
 "\n"
 "Développé par Hon Jen Yee (PCMan)"
 
 #: ../src/main-win.c:1166 ../src/main-win.c:1174
-#, fuzzy
 msgid "Keyboard Navigation"
-msgstr "Raccourcis clavier"
+msgstr "Navigation au clavier"
 
 #: ../src/main-win.c:1168
 msgid ""
@@ -1170,16 +1150,15 @@ msgstr ""
 
 #: ../src/main-win.c:1210
 msgid "Run a command"
-msgstr ""
+msgstr "Exécuter une commande"
 
 #: ../src/main-win.c:1211
 msgid "Enter a command to run:"
-msgstr ""
+msgstr "Entrez une commande à exécuter :"
 
 #: ../src/main-win.c:1218
-#, fuzzy
 msgid "Current folder is inaccessible"
-msgstr "Ouvrir le dossier courant dans un _terminal"
+msgstr "Le répertoire courant est inaccessible"
 
 #: ../src/main-win.c:1822
 #, c-format
@@ -1199,11 +1178,14 @@ msgstr "Ajouter aux marque-pages"
 
 #: ../src/main-win.c:2552
 msgid "Select filter"
-msgstr ""
+msgstr "Sélectionner un filtre"
 
 #: ../src/main-win.c:2553
+#, fuzzy
 msgid "Choose a new shell pattern to show files:"
 msgstr ""
+"Choisissez un nouveau patron d'invite de commande pour montrer les fichiers "
+":"
 
 #. options only acceptable by first pcmanfm instance. These options are not passed through IPC
 #: ../src/pcmanfm.c:78
@@ -1249,12 +1231,11 @@ msgstr "FICHIER"
 
 #. don't translate list of modes in description, please
 #: ../src/pcmanfm.c:89
-#, fuzzy
 msgid ""
 "Set mode of desktop wallpaper. MODE=(color|stretch|fit|crop|center|tile|"
 "screen)"
 msgstr ""
-"Sélectionner le mode d’affichage du fond d’écran. "
+"Sélectionnez le mode d’affichage du fond d’écran du bureau. "
 "MODE=(color|stretch|fit|center|tile)"
 
 #: ../src/pcmanfm.c:89
@@ -1274,9 +1255,8 @@ msgid "Open new window"
 msgstr "Ouvrir dans une nouvelle fenêtre"
 
 #: ../src/pcmanfm.c:93
-#, fuzzy
 msgid "Open a Find Files window"
-msgstr "Ouvrir dans une nouvelle fenêtre"
+msgstr "Ouvrir une fenêtre de recherche de fichiers"
 
 #: ../src/pcmanfm.c:95
 msgid "Window role for usage by window manager"
@@ -1292,7 +1272,7 @@ msgstr "[FICHIER1, FICHIER2, ...]"
 
 #: ../src/pcmanfm.c:352
 msgid "Desktop manager is not active."
-msgstr ""
+msgstr "Le gestionnaire de bureau est inactif."
 
 #: ../src/pcmanfm.c:598
 msgid "Terminal emulator is not set."
@@ -1331,19 +1311,19 @@ msgstr[1] " (%d cachés)"
 
 #: ../src/pref.c:514
 msgid "Add to Modules Blacklist"
-msgstr ""
+msgstr "Ajouter à la liste noire des modules"
 
 #: ../src/pref.c:515
 msgid "Enter a blacklisted module mask:"
-msgstr ""
+msgstr "Entrez un masque de module sur liste noire :"
 
 #: ../src/pref.c:606
 msgid "Add to Modules Whitelist"
-msgstr ""
+msgstr "Ajouter à la liste blanche des modules"
 
 #: ../src/pref.c:607
 msgid "Enter a whitelisted module mask:"
-msgstr ""
+msgstr "Entrez un masque de module sur liste blanche :"
 
 # File manager had been translated as "Open in the file manager", which obviously was not correct. The above "Gestionnaire de fichiers" is the correct translation.
 #: ../data/pcmanfm.desktop.in.h:1
