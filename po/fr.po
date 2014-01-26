@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PCManFM\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-01-22 00:33+0200\n"
-"PO-Revision-Date: 2014-01-26 10:41+0000\n"
+"PO-Revision-Date: 2014-01-26 10:49+0000\n"
 "Last-Translator: Julien <Julius22@laposte.net>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1390732860.0\n"
+"X-POOTLE-MTIME: 1390733354.0\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2014"
@@ -29,9 +29,9 @@ msgid "translator-credits"
 msgstr ""
 "Emmanuel Trillaud\n"
 "Cilyan Olowen <gaknar@gmail.com>\n"
-"\n"
 "Sébastien MAURICE\n"
-"<drole2zebre57@yahoo.fr>"
+"<drole2zebre57@yahoo.fr>\n"
+"Julien Henry"
 
 #: ../data/ui/desktop-pref.glade.h:1 ../src/desktop-ui.c:34
 #: ../data/pcmanfm-desktop-pref.desktop.in.h:1
@@ -94,7 +94,7 @@ msgstr "Afficher le répertoire « Mes documents » _sur le bureau"
 # Il manque l'indication du caractère de raccourci clavier en français
 #: ../data/ui/desktop-pref.glade.h:15
 msgid "Sho_w \"Devices\" folder on the desktop"
-msgstr "Afficher le répertoire « Périphériques » sur le bureau"
+msgstr "Afficher le répertoire « Appareils » sur le bureau"
 
 #: ../data/ui/desktop-pref.glade.h:16
 msgid "Show \"_Trash Can\" folder on the desktop"
@@ -117,7 +117,7 @@ msgstr ""
 #: ../data/ui/desktop-pref.glade.h:20
 msgid "_Use desktop as a folder (show icons on it) by path:"
 msgstr ""
-"_Utiliser le bureau comme un répertoire (montrer les icônes dessus) par "
+"_Utiliser le bureau comme un répertoire (afficher les icônes dessus) par "
 "chemin :"
 
 #: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:84
@@ -337,7 +337,7 @@ msgstr "Tou_jours afficher les noms de fichier complets"
 
 #: ../data/ui/pref.glade.h:38
 msgid "Show icons of hidden _files shadowed"
-msgstr "Montrer des icônes ombragées pour les _fichiers cachés"
+msgstr "Afficher des icônes ombragées pour les _fichiers cachés"
 
 #: ../data/ui/pref.glade.h:39
 msgid "_Display"
@@ -489,11 +489,11 @@ msgstr "<b>Modèles</b>"
 
 #: ../data/ui/pref.glade.h:75
 msgid "S_how only user defined templates in menu"
-msgstr "_Montrer uniquement les modèles définis par l'utilisateur dans le menu"
+msgstr "Affic_her uniquement les modèles définis par l'utilisateur dans le menu"
 
 #: ../data/ui/pref.glade.h:76
 msgid "Show _only one template for each MIME type"
-msgstr "M_ontrer uniquement un modèle par type Mime"
+msgstr "Afficher uniquement un m_odèle par type Mime"
 
 #: ../data/ui/pref.glade.h:77
 msgid "Ru_n default application after creation from template"
@@ -591,7 +591,7 @@ msgstr "<b>Périphérique amovible inséré</b>"
 
 #: ../data/ui/autorun.glade.h:3
 msgid "Type of medium:"
-msgstr "Type de support :"
+msgstr "Type de média :"
 
 #: ../data/ui/autorun.glade.h:4
 msgid "Detecting..."
