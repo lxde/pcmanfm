@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PCManFM\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-01-22 00:33+0200\n"
-"PO-Revision-Date: 2014-01-26 10:30+0000\n"
+"PO-Revision-Date: 2014-01-26 10:41+0000\n"
 "Last-Translator: Julien <Julius22@laposte.net>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1390732217.0\n"
+"X-POOTLE-MTIME: 1390732860.0\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2014"
@@ -976,11 +976,11 @@ msgstr "Actualiser le dossier"
 #. Note to translators: "Mingle..." means "Do not put folders before files" but make the translation as short as possible, please!
 #: ../src/main-win-ui.c:267
 msgid "Mingle _Files and Folders"
-msgstr ""
+msgstr "Mélanger les _fichiers et les répertoires"
 
 #: ../src/main-win-ui.c:270
 msgid "_Ignore Name Case"
-msgstr ""
+msgstr "_Ignorer la casse des noms"
 
 #: ../src/main-win-ui.c:272
 #, fuzzy
@@ -990,32 +990,36 @@ msgstr "Afficher les fichiers _cachés"
 #. Note to translators: this save is meant for folder's settings such as sort
 #: ../src/main-win-ui.c:274
 msgid "Preserve This Folder's Settings"
-msgstr ""
+msgstr "Préserver les réglages de ce répertoire"
 
 #: ../src/main-win-ui.c:275
 msgid ""
 "Check to remember view and sort as folder setting rather than global one"
 msgstr ""
+"Cocher pour se souvenir du réglage de vue et de tri du dossier plutôt que "
+"d'utiliser le réglage global"
 
 #: ../src/main-win-ui.c:277
 msgid "_Show Toolbar"
-msgstr ""
+msgstr "Afficher la barre d'outil_s"
 
 #: ../src/main-win-ui.c:278
+#, fuzzy
 msgid "Show 'New _Window' Button"
-msgstr ""
+msgstr "Afficher le bouton « Nouvelle fenêtre »"
 
 #: ../src/main-win-ui.c:279
+#, fuzzy
 msgid "Show 'New _Tab' Button"
-msgstr ""
+msgstr "Afficher le bouton « Nouvel onglet »"
 
 #: ../src/main-win-ui.c:280
 msgid "Show _Navigation Buttons"
-msgstr ""
+msgstr "Afficher les boutons de _navigation"
 
 #: ../src/main-win-ui.c:281
 msgid "Show '_Home' Button"
-msgstr ""
+msgstr "Affic_her le bouton « Répertoire utilisateur »"
 
 # Il manque l'indication du caractère pour le raccourci clavier
 #: ../src/main-win-ui.c:282
@@ -1033,7 +1037,7 @@ msgstr "Mode panneau do_uble"
 
 #: ../src/main-win-ui.c:284
 msgid "Show two panels with folder views"
-msgstr ""
+msgstr "Afficher deux panneaux dans les vues de répertoires"
 
 #: ../src/main-win-ui.c:285
 msgid "Fullscreen _Mode"
