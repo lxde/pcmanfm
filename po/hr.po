@@ -7,21 +7,20 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-09 09:41+0100\n"
-"PO-Revision-Date: 2013-12-24 06:18+0000\n"
+"POT-Creation-Date: 2014-01-22 00:33+0200\n"
+"PO-Revision-Date: 2014-01-13 22:59+0000\n"
 "Last-Translator: Ivica <ikoli@yahoo.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1387865938.0\n"
+"X-POOTLE-MTIME: 1389653980.0\n"
 
 #: ../data/ui/about.glade.in.h:1
-#, fuzzy
 msgid "Copyright (C) 2009 - 2014"
 msgstr "Autorska prava (C) 2009 - 2013"
 
@@ -116,17 +115,16 @@ msgstr ""
 #: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:84
 msgctxt "Use path for some folder: ..."
 msgid "Default"
-msgstr ""
+msgstr "Zadano"
 
 #: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:85
 msgctxt "Use path for some folder: ..."
 msgid "Custom:"
-msgstr ""
+msgstr "Prilagođeno:"
 
 #: ../data/ui/desktop-pref.glade.h:23
-#, fuzzy
 msgid "Select a Desktop Folder"
-msgstr "Ma_pa radne površine"
+msgstr "Odaberi mapu radne površine"
 
 #: ../data/ui/desktop-pref.glade.h:24
 msgid "_Open folders from desktop in new window"
@@ -141,12 +139,10 @@ msgid "Fill with background color only"
 msgstr "Ispuni samo pozadinskom bojom"
 
 #: ../data/ui/desktop-pref.glade.h:27
-#, fuzzy
 msgid "Stretch to fill the entire monitor area"
 msgstr "Rastegni da ispuni cijeli zaslon"
 
 #: ../data/ui/desktop-pref.glade.h:28
-#, fuzzy
 msgid "Stretch to fit the monitor area"
 msgstr "Raširi da stane na zaslon"
 
@@ -155,32 +151,26 @@ msgid "Center unscaled image on the monitor"
 msgstr ""
 
 #: ../data/ui/desktop-pref.glade.h:30
-#, fuzzy
 msgid "Tile the image to fill the entire monitor area"
 msgstr "Rastegni da ispuni cijeli zaslon"
 
 #: ../data/ui/desktop-pref.glade.h:31
-#, fuzzy
 msgid "Stretch and crop to fill the monitor area"
 msgstr "Rastegni da ispuni cijeli zaslon"
 
 #: ../data/ui/desktop-pref.glade.h:32
-#, fuzzy
 msgid "Stretch to fill the complete screen"
 msgstr "Rastegni da ispuni cijeli zaslon"
 
 #: ../data/ui/pref.glade.h:1
-#, fuzzy
 msgid "Open in current tab"
 msgstr "Otvori u trenutnoj kartici"
 
 #: ../data/ui/pref.glade.h:2
-#, fuzzy
 msgid "Open in new tab"
-msgstr "Otvori u novoj karti_ci"
+msgstr "Otvori u novoj kartici"
 
 #: ../data/ui/pref.glade.h:3
-#, fuzzy
 msgid "Open in new window"
 msgstr "Otvori u novom prozoru"
 
@@ -211,8 +201,7 @@ msgstr ""
 
 #: ../data/ui/pref.glade.h:10
 msgid "_Erase files on removable media instead of \"trash can\" creation"
-msgstr ""
-"_Izbrišite datoteke na uklonjivim medijima umjesto da stvarate \"smeće\""
+msgstr "_Izbrišite datoteke na uklonjivim medijima umjesto da stvarate \"smeće\""
 
 #: ../data/ui/pref.glade.h:11
 msgid "Confi_rm before moving files into \"trash can\""
@@ -401,9 +390,8 @@ msgid "Do_n't show available options for those media types:"
 msgstr "N_e prikazuj dostupne opcije za ovu vrstu medija:"
 
 #: ../data/ui/pref.glade.h:61
-#, fuzzy
 msgid "_Remove selected"
-msgstr "%d stavka odabrana"
+msgstr "_Ukloni odabrano"
 
 #: ../data/ui/pref.glade.h:62
 msgid "_Open mounted removable media in new tab instead of new window"
@@ -416,9 +404,8 @@ msgid "When removable medium unmounted:"
 msgstr "Uklonjivi medij je umetnut"
 
 #: ../data/ui/pref.glade.h:64
-#, fuzzy
 msgid "Clos_e tab containing removable medium"
-msgstr "Zatvor_i karticu koja sadrži uklonjivi medij kada je medij odmontiran"
+msgstr "Zatvor_i karticu koja sadrži uklonjivi medij"
 
 #: ../data/ui/pref.glade.h:65
 msgid "Change folder in the tab to _Home Folder"
@@ -529,22 +516,18 @@ msgid "Ask"
 msgstr "Pitaj"
 
 #: ../data/ui/pref.glade.h:95
-#, fuzzy
 msgid "Icon view"
 msgstr "Pogled ikona"
 
 #: ../data/ui/pref.glade.h:96
-#, fuzzy
 msgid "Compact view"
 msgstr "Zbijeni pogled"
 
 #: ../data/ui/pref.glade.h:97
-#, fuzzy
 msgid "Thumbnail view"
 msgstr "Pogled sličica"
 
 #: ../data/ui/pref.glade.h:98
-#, fuzzy
 msgid "Detailed list view"
 msgstr "Pogled dataljne liste"
 
@@ -726,28 +709,24 @@ msgid "Copy Pat_h(s)"
 msgstr ""
 
 #: ../src/main-win-ui.c:204
-#, fuzzy
 msgid "R_ename..."
-msgstr "_Preimenuj..."
+msgstr "P_reimenuj..."
 
 #: ../src/main-win-ui.c:205
 msgid "D_uplicate..."
 msgstr ""
 
 #: ../src/main-win-ui.c:206
-#, fuzzy
 msgid "Create Lin_k..."
-msgstr "Napravi simboličku poveznic_u..."
+msgstr "Napravi poveznic_u..."
 
 #: ../src/main-win-ui.c:207
-#, fuzzy
 msgid "_Move to..."
 msgstr "_Premjesti u..."
 
 #: ../src/main-win-ui.c:208
-#, fuzzy
 msgid "Copy to_..."
-msgstr "K_opiraj u..."
+msgstr "Kopiraj u_..."
 
 #: ../src/main-win-ui.c:209
 msgid "Propertie_s"
@@ -907,9 +886,8 @@ msgid "_Bookmarks"
 msgstr "_Zabilješke"
 
 #: ../src/main-win-ui.c:245
-#, fuzzy
 msgid "_Add to Bookmarks..."
-msgstr "_Dodaj u zabilješke"
+msgstr "_Dodaj u zabilješke..."
 
 #: ../src/main-win-ui.c:245
 msgid "Add current folder to bookmarks list"
@@ -960,19 +938,16 @@ msgid ""
 msgstr ""
 
 #: ../src/main-win-ui.c:277
-#, fuzzy
 msgid "_Show Toolbar"
-msgstr "Alatna _traka"
+msgstr "Pokaži _alatnu traku"
 
 #: ../src/main-win-ui.c:278
-#, fuzzy
 msgid "Show 'New _Window' Button"
-msgstr "Pokaži gumb '_Osobna mapa'"
+msgstr "Pokaži gumb 'Novi _prozor'"
 
 #: ../src/main-win-ui.c:279
-#, fuzzy
 msgid "Show 'New _Tab' Button"
-msgstr "Pokaži gumb '_Osobna mapa'"
+msgstr "Pokaži gumb 'Nova _kartica'"
 
 #: ../src/main-win-ui.c:280
 msgid "Show _Navigation Buttons"
@@ -1051,9 +1026,8 @@ msgid "Remote"
 msgstr "Udaljeno"
 
 #: ../src/main-win-ui.c:333
-#, fuzzy
 msgid "_Location"
-msgstr "Pro_grami"
+msgstr "_Lokacija"
 
 #: ../src/main-win-ui.c:334
 msgid "_Buttons"
@@ -1112,9 +1086,8 @@ msgid "Enter a command to run:"
 msgstr ""
 
 #: ../src/main-win.c:1218
-#, fuzzy
 msgid "Current folder is inaccessible"
-msgstr "Otvori trenutnu mapu u _treminalu"
+msgstr "Trenutna mapa nije dostupna"
 
 #: ../src/main-win.c:1822
 #, c-format
@@ -1222,7 +1195,11 @@ msgstr ""
 msgid "[FILE1, FILE2,...]"
 msgstr "[DATOTEKA1, DATOTEKA2,...]"
 
-#: ../src/pcmanfm.c:585
+#: ../src/pcmanfm.c:352
+msgid "Desktop manager is not active."
+msgstr ""
+
+#: ../src/pcmanfm.c:598
 msgid "Terminal emulator is not set."
 msgstr "Terminal emulator nije postavljen."
 
