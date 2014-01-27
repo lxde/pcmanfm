@@ -2,24 +2,23 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-09 09:41+0100\n"
-"PO-Revision-Date: 2010-09-09 10:46+0200\n"
-"Last-Translator: sisco <sisco.garcia@ubuntu.cat>\n"
+"POT-Creation-Date: 2014-01-22 00:33+0200\n"
+"PO-Revision-Date: 2014-01-07 23:13+0000\n"
+"Last-Translator: papapep <papapep@gmx.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.0.5\n"
+"X-Generator: Pootle 2.5.0\n"
+"X-POOTLE-MTIME: 1389136388.0\n"
 
 #: ../data/ui/about.glade.in.h:1
-#, fuzzy
 msgid "Copyright (C) 2009 - 2014"
 msgstr "Copyright (C) 2009 - 2013"
 
@@ -40,12 +39,10 @@ msgid "<b>Background</b>"
 msgstr "<b>Fons</b>"
 
 #: ../data/ui/desktop-pref.glade.h:3
-#, fuzzy
 msgid "Wallpaper _mode:"
-msgstr "Habilita el mode del fons de pantalla:"
+msgstr "_Mode del fons de pantalla:"
 
 #: ../data/ui/desktop-pref.glade.h:4
-#, fuzzy
 msgid "_Wallpaper:"
 msgstr "Fons de pantalla:"
 
@@ -55,68 +52,57 @@ msgstr "Si us plau seleccioneu un fitxer d'imatge"
 
 #: ../data/ui/desktop-pref.glade.h:6
 msgid "_Use the same wallpaper on all desktops"
-msgstr ""
+msgstr "_Utilitza el mateix fons de pantalla a tots els escriptoris"
 
 #: ../data/ui/desktop-pref.glade.h:7
-#, fuzzy
 msgid "_Background color:"
-msgstr "Color de fons:"
+msgstr "_Color de fons:"
 
 #: ../data/ui/desktop-pref.glade.h:8
 msgid "<b>Text</b>"
 msgstr "<b>Text</>"
 
 #: ../data/ui/desktop-pref.glade.h:9
-#, fuzzy
 msgid "_Font of label text:"
-msgstr "Font del text de l'etiqueta:"
+msgstr "_Font del text de l'etiqueta:"
 
 #: ../data/ui/desktop-pref.glade.h:10
-#, fuzzy
 msgid "C_olor of label text:"
-msgstr "Color del text de l'etiqueta:"
+msgstr "C_olor del text de l'etiqueta:"
 
 #: ../data/ui/desktop-pref.glade.h:11
-#, fuzzy
 msgid "Color of _shadow:"
-msgstr "Color de l`ombra:"
+msgstr "Color de l'ombra:"
 
 #: ../data/ui/desktop-pref.glade.h:12
-#, fuzzy
 msgid "_Appearance"
-msgstr "Aparença"
+msgstr "_Aparença"
 
 #: ../data/ui/desktop-pref.glade.h:13
 msgid "<b>Show desktop icons</b>"
 msgstr "<b>Mostra només les icones</b>"
 
 #: ../data/ui/desktop-pref.glade.h:14
-#, fuzzy
 msgid "_Show \"Documents\" folder on the desktop"
 msgstr "Mostra la icona de «Els meus documents» a l'escriptori"
 
 #: ../data/ui/desktop-pref.glade.h:15
-#, fuzzy
 msgid "Sho_w \"Devices\" folder on the desktop"
 msgstr "Mostra la icona de «Els meus documents» a l'escriptori"
 
 #: ../data/ui/desktop-pref.glade.h:16
-#, fuzzy
 msgid "Show \"_Trash Can\" folder on the desktop"
 msgstr "Mostra la icona «Paperera» a l'escriptori"
 
 #: ../data/ui/desktop-pref.glade.h:17
-#, fuzzy
 msgid "S_how connected volumes on the desktop"
 msgstr "Mostra icones dels volums a l'escriptori"
 
 #: ../data/ui/desktop-pref.glade.h:18
-#, fuzzy
 msgid "_Desktop Icons"
-msgstr "Organitza les icones de l'escriptori"
+msgstr "Icones de l'escriptori"
 
 #: ../data/ui/desktop-pref.glade.h:19
-#, fuzzy
 msgid "_Show menus provided by window managers when desktop is clicked"
 msgstr "Mostra els menús dels gestors de finestres en fer clic a l'escriptori"
 
@@ -135,17 +121,14 @@ msgid "Custom:"
 msgstr ""
 
 #: ../data/ui/desktop-pref.glade.h:23
-#, fuzzy
 msgid "Select a Desktop Folder"
 msgstr "Carpeta escriptori"
 
 #: ../data/ui/desktop-pref.glade.h:24
-#, fuzzy
 msgid "_Open folders from desktop in new window"
 msgstr "Obert en una nova finestra"
 
 #: ../data/ui/desktop-pref.glade.h:25
-#, fuzzy
 msgid "Ad_vanced"
 msgstr "Avançat"
 
@@ -154,12 +137,10 @@ msgid "Fill with background color only"
 msgstr "Omple només amb el color de fons"
 
 #: ../data/ui/desktop-pref.glade.h:27
-#, fuzzy
 msgid "Stretch to fill the entire monitor area"
 msgstr "Ajusta a pantalla sencera"
 
 #: ../data/ui/desktop-pref.glade.h:28
-#, fuzzy
 msgid "Stretch to fit the monitor area"
 msgstr "Ajusta a la pantalla"
 
@@ -169,32 +150,26 @@ msgstr ""
 
 # Entenc que és el que habitualment s'anomena «mosaic»
 #: ../data/ui/desktop-pref.glade.h:30
-#, fuzzy
 msgid "Tile the image to fill the entire monitor area"
 msgstr "Reprodueix la imatge fins omplir la pantalla sencera"
 
 #: ../data/ui/desktop-pref.glade.h:31
-#, fuzzy
 msgid "Stretch and crop to fill the monitor area"
 msgstr "Ajusta a pantalla sencera"
 
 #: ../data/ui/desktop-pref.glade.h:32
-#, fuzzy
 msgid "Stretch to fill the complete screen"
 msgstr "Ajusta a pantalla sencera"
 
 #: ../data/ui/pref.glade.h:1
-#, fuzzy
 msgid "Open in current tab"
 msgstr "Obert en la pestanya actual"
 
 #: ../data/ui/pref.glade.h:2
-#, fuzzy
 msgid "Open in new tab"
 msgstr "Obre a una nova pestanya"
 
 #: ../data/ui/pref.glade.h:3
-#, fuzzy
 msgid "Open in new window"
 msgstr "Obre en una nova finestra"
 
@@ -207,16 +182,14 @@ msgid "<b>Behavior</b>"
 msgstr "<b>Comportament</b>"
 
 #: ../data/ui/pref.glade.h:6
-#, fuzzy
 msgid "_Open files with single click"
-msgstr "Obre arxius amb un sol clic"
+msgstr "_Obre fitxers amb un sol clic"
 
 #: ../data/ui/pref.glade.h:7
 msgid "Delay of auto-selection in single click mode (0 to disable)"
-msgstr ""
+msgstr "Retard d'auto selecció en el mode d'un sol clic (0 per inhabilitar-lo)"
 
 #: ../data/ui/pref.glade.h:8
-#, fuzzy
 msgid "Co_nfirm before deleting files"
 msgstr "Confirmeu abans d'esborrar fitxers"
 
@@ -1274,8 +1247,8 @@ msgid ""
 "Set mode of desktop wallpaper. MODE=(color|stretch|fit|crop|center|tile|"
 "screen)"
 msgstr ""
-"Ajusta el mode del fons d'escriptori. <mode>=(color|escalat|ajustat|centrat|"
-"mosaic)"
+"Ajusta el mode del fons d'escriptori. "
+"<mode>=(color|escalat|ajustat|centrat|mosaic)"
 
 #: ../src/pcmanfm.c:89
 msgid "MODE"
@@ -1312,7 +1285,11 @@ msgstr ""
 msgid "[FILE1, FILE2,...]"
 msgstr "[Fitxer1, fitxer2 ,...]"
 
-#: ../src/pcmanfm.c:585
+#: ../src/pcmanfm.c:352
+msgid "Desktop manager is not active."
+msgstr ""
+
+#: ../src/pcmanfm.c:598
 msgid "Terminal emulator is not set."
 msgstr "L'emulador del terminal no està activat"
 
