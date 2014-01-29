@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm 1.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-01-22 00:33+0200\n"
-"PO-Revision-Date: 2014-01-12 08:55+0000\n"
+"PO-Revision-Date: 2014-01-29 08:44+0000\n"
 "Last-Translator: Yaron <sh.yaron@gmail.com>\n"
 "Language-Team: \n"
 "Language: he\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1389516917.0\n"
+"X-POOTLE-MTIME: 1390985085.0\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2014"
@@ -147,34 +147,28 @@ msgid "Center unscaled image on the monitor"
 msgstr "מרכוז תמונה בלתי מטופלת ביחס לצג"
 
 #: ../data/ui/desktop-pref.glade.h:30
-#, fuzzy
 msgid "Tile the image to fill the entire monitor area"
-msgstr "פריסת התמונה כך שתמלא את המסך כולו"
+msgstr "פריסת התמונה כך שתמלא את כל שטח המסך"
 
 #: ../data/ui/desktop-pref.glade.h:31
-#, fuzzy
 msgid "Stretch and crop to fill the monitor area"
-msgstr "מתיחה כדי למלא את המסך כולו"
+msgstr "מתיחה וחיתוך כדי למלא את כל שטח המסך"
 
 #: ../data/ui/desktop-pref.glade.h:32
-#, fuzzy
 msgid "Stretch to fill the complete screen"
-msgstr "מתיחה כדי למלא את המסך כולו"
+msgstr "מתיחה כדי למלא את כל המסך"
 
 #: ../data/ui/pref.glade.h:1
-#, fuzzy
 msgid "Open in current tab"
-msgstr "נפתח בלשונית הנוכחית"
+msgstr "פתיחה בלשונית הנוכחית"
 
 #: ../data/ui/pref.glade.h:2
-#, fuzzy
 msgid "Open in new tab"
-msgstr "פתיחה ב_לשונית חדשה"
+msgstr "פתיחה בלשונית חדשה"
 
 #: ../data/ui/pref.glade.h:3
-#, fuzzy
 msgid "Open in new window"
-msgstr "Open new window"
+msgstr "פתיחה בחלון חדש"
 
 #: ../data/ui/pref.glade.h:4
 msgid "Preferences"
@@ -574,25 +568,24 @@ msgid "<b>Specify remote folder to connect</b>"
 msgstr ""
 
 #: ../data/ui/connect.glade.h:3
-#, fuzzy
 msgid "_Type:"
-msgstr "סוג"
+msgstr "_סוג:"
 
 #: ../data/ui/connect.glade.h:4
 msgid "_Host:"
-msgstr ""
+msgstr "מ_ארח:"
 
 #: ../data/ui/connect.glade.h:5
 msgid "_Port:"
-msgstr ""
+msgstr "_פתחה:"
 
 #: ../data/ui/connect.glade.h:6
 msgid "Pa_th:"
-msgstr ""
+msgstr "_נתיב:"
 
 #: ../data/ui/connect.glade.h:7
 msgid "_Anonymous login"
-msgstr ""
+msgstr "כניסה _אלמונית"
 
 #: ../data/ui/connect.glade.h:8
 msgid "_Login as:"
@@ -692,9 +685,8 @@ msgid "Empty File"
 msgstr "קובץ ריק"
 
 #: ../src/main-win-ui.c:193
-#, fuzzy
 msgid "Folder Propertie_s"
-msgstr "מאפייני קובץ"
+msgstr "מאפייני _תיקייה"
 
 #: ../src/main-win-ui.c:194
 msgid "_Close Tab"
@@ -804,7 +796,6 @@ msgid "_Help"
 msgstr "ע_זרה"
 
 #: ../src/main-win-ui.c:229
-#, fuzzy
 msgid "_Keyboard Navigation"
 msgstr "_ניווט בעזרת המקלדת"
 
@@ -818,7 +809,7 @@ msgstr "לתיקייה ה_קודמת"
 
 #: ../src/main-win-ui.c:231
 msgid "Return to previous folder in history"
-msgstr ""
+msgstr "חזרה לתיקייה הקודמת בהיסטוריה"
 
 #: ../src/main-win-ui.c:232
 msgid "_Next Folder"
@@ -864,9 +855,8 @@ msgid "Filesyste_m Root"
 msgstr "מערכת קבצים"
 
 #: ../src/main-win-ui.c:237
-#, fuzzy
 msgid "Go fo filesystem root"
-msgstr "מערכת קבצים"
+msgstr "מעבר לשורש מערכת הקבצים"
 
 #: ../src/main-win-ui.c:238
 msgid "_Applications"
@@ -892,63 +882,57 @@ msgid "Go to list of places on the network"
 msgstr "הצגת סמלים לכרכי _אחסון על שולחן העבודה"
 
 #: ../src/main-win-ui.c:241
-#, fuzzy
 msgid "_Go to Location..."
-msgstr "מיקום"
+msgstr "מ_עבר למיקום..."
 
 #: ../src/main-win-ui.c:242
 msgid "_Connect to Server..."
-msgstr ""
+msgstr "הת_חברות לשרת..."
 
 #: ../src/main-win-ui.c:242
 msgid "Open a window to choose remote folder location"
-msgstr ""
+msgstr "פתיחת חלון לבחירת מיקום של תיקייה מרוחקת"
 
 #: ../src/main-win-ui.c:243
 msgid "Go to the path in the location bar"
-msgstr ""
+msgstr "מעבר לנתיב בסרגל המיקום"
 
 #: ../src/main-win-ui.c:244
 msgid "_Bookmarks"
 msgstr "_סימניות"
 
 #: ../src/main-win-ui.c:245
-#, fuzzy
 msgid "_Add to Bookmarks..."
-msgstr "הוספה לסימניות"
+msgstr "הוספה ל_סימניות..."
 
 #: ../src/main-win-ui.c:245
 msgid "Add current folder to bookmarks list"
-msgstr ""
+msgstr "הוספת התיקייה הנוכחית לרשימת הסימניות"
 
 #: ../src/main-win-ui.c:246
 msgid "Too_ls"
-msgstr ""
+msgstr "_כלים"
 
 #: ../src/main-win-ui.c:247
 msgid "Open Current Folder in _Terminal"
 msgstr "פתיחת התיקייה הנוכחית ב_מסוף"
 
 #: ../src/main-win-ui.c:249
-#, fuzzy
 msgid "Fin_d Files..."
-msgstr "_חיפוש קבצים"
+msgstr "_חיפוש קבצים..."
 
 #: ../src/main-win-ui.c:249
-#, fuzzy
 msgid "Open search dialog"
-msgstr "פתיחת דו־שיח העדפות שולחן העבודה"
+msgstr "פתיחת דו־שיח החיפוש"
 
 #: ../src/main-win-ui.c:252
-#, fuzzy
 msgid "_Run a Command in Current Folder..."
-msgstr "רענון התיקייה הנוכחית"
+msgstr "ה_פעלת פקודה בתיקייה הנוכחית..."
 
 #. Note to translators: "Mingle..." means "Do not put folders before files" but make the translation as short as possible, please!
 #: ../src/main-win-ui.c:267
-#, fuzzy
 msgid "Mingle _Files and Folders"
-msgstr "כל הקבצים והתיקיות"
+msgstr "_ערבוב בין קבצים ותיקיות"
 
 #: ../src/main-win-ui.c:270
 msgid "_Ignore Name Case"
