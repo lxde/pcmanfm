@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-09 09:41+0100\n"
-"PO-Revision-Date: 2014-01-21 06:45+0000\n"
+"POT-Creation-Date: 2014-01-22 00:33+0200\n"
+"PO-Revision-Date: 2014-01-31 07:45+0000\n"
 "Last-Translator: wwycheuk <wwycheuk@gmail.com>\n"
 "Language-Team: zh_TW <zh_TW@li.org>\n"
 "Language: zh_TW\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Pootle 2.5.0\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-POOTLE-MTIME: 1390286721.0\n"
+"X-POOTLE-MTIME: 1391154319.0\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2014"
@@ -220,7 +220,7 @@ msgstr "預設置放動作(_T)："
 
 #: ../data/ui/pref.glade.h:15
 msgid "\"_Smart shortcut\" auto-action on drop to Desktop folder"
-msgstr ""
+msgstr "「智能快捷鍵」在拖放到桌面資料夾時自動執行的操作(_S)"
 
 #: ../data/ui/pref.glade.h:16
 msgid ""
@@ -230,6 +230,11 @@ msgid ""
 "- other files (e.g. on removable media) will be copied\n"
 "- for some external URI a shortcut will be created"
 msgstr ""
+"如啟用，將檔案拖放到「桌面」資料夾時會自動：\n"
+"- 對於家目錄的檔案，會建立符號連結\n"
+"- 對於同一檔案系統的檔案，會將其移動\n"
+"- 其他檔案 (例如移除式媒體的檔案)，會執行複製\n"
+"- 對於一些外部 URI，會建立捷徑檔"
 
 #: ../data/ui/pref.glade.h:21
 msgid "_Unfold tab when files are dragged onto tab button"
@@ -300,9 +305,8 @@ msgid "Al_ways show full file names"
 msgstr "一定顯示完整檔案名(_W)"
 
 #: ../data/ui/pref.glade.h:38
-#, fuzzy
 msgid "Show icons of hidden _files shadowed"
-msgstr "顯示隱藏備份檔案的圖示(_K)"
+msgstr "將隱藏檔案的圖示加陰影顯示(_F)"
 
 #: ../data/ui/pref.glade.h:39
 msgid "_Display"
@@ -317,7 +321,6 @@ msgid "Al_ways show the tab bar"
 msgstr "一定顯示分頁列(_W)"
 
 #: ../data/ui/pref.glade.h:42
-#, fuzzy
 msgid "_Maximum width of tab label:"
 msgstr "分頁標籤最大寬度(_M)："
 
@@ -339,7 +342,6 @@ msgid "<b>Show in Places:</b>"
 msgstr "<b>在「地點」欄顯示：</b>"
 
 #: ../data/ui/pref.glade.h:48
-#, fuzzy
 msgid "_Home Folder"
 msgstr "家目錄(_H)"
 
@@ -352,7 +354,6 @@ msgid "_Trash Can"
 msgstr "垃圾桶(_T)"
 
 #: ../data/ui/pref.glade.h:51
-#, fuzzy
 msgid "_Filesystem Root"
 msgstr "檔案系統根目錄(_F)"
 
@@ -390,7 +391,7 @@ msgstr "當插入移除式媒體時，顯示可用的選項(_S)"
 
 #: ../data/ui/pref.glade.h:60
 msgid "Do_n't show available options for those media types:"
-msgstr "不要顯示此等媒體類型的可用選項(_N)"
+msgstr "不要顯示此等媒體類型的可用選項(_N)："
 
 #: ../data/ui/pref.glade.h:61
 msgid "_Remove selected"
@@ -454,7 +455,6 @@ msgid "Show _only one template for each MIME type"
 msgstr "對每種 MIME 類型只顯示一個模板(_O)"
 
 #: ../data/ui/pref.glade.h:77
-#, fuzzy
 msgid "Ru_n default application after creation from template"
 msgstr "在從模板建立後執行預設應用程式(_N)"
 
@@ -481,27 +481,29 @@ msgstr "推遲載入資料夾時的內容類型檢測(_E)"
 
 #: ../data/ui/pref.glade.h:83
 msgid "Use path for \"Home Folder\" button:"
-msgstr ""
+msgstr "「家目錄」按鈕使用的路徑："
 
 #: ../data/ui/pref.glade.h:86
 msgid "_Use current"
-msgstr ""
+msgstr "使用目前的(_U)"
 
 #: ../data/ui/pref.glade.h:87
 msgid "_Advanced"
 msgstr "進階(_A)"
 
 #: ../data/ui/pref.glade.h:88
+#, fuzzy
 msgid "<b>_Do not load modules matching:</b>"
-msgstr ""
+msgstr "<b>不載入匹配以下模式的模組：</b>"
 
 #: ../data/ui/pref.glade.h:89
+#, fuzzy
 msgid "<b>_Load these modules anyway:</b>"
-msgstr ""
+msgstr "<b>強制載入這些模組：</b>"
 
 #: ../data/ui/pref.glade.h:90
 msgid "Modules"
-msgstr ""
+msgstr "模組"
 
 #: ../data/ui/pref.glade.h:91
 msgid "Auto (move if on the same FS, copy otherwise)"
@@ -520,7 +522,6 @@ msgid "Ask"
 msgstr "詢問"
 
 #: ../data/ui/pref.glade.h:95
-#, fuzzy
 msgid "Icon view"
 msgstr "圖示檢視"
 
@@ -593,23 +594,21 @@ msgid "_Login as:"
 msgstr "登入身分(_L)："
 
 #: ../data/ui/connect.glade.h:9
-#, fuzzy
 msgid "SSH"
 msgstr "SSH"
 
 #: ../data/ui/connect.glade.h:10
-#, fuzzy
 msgid "FTP"
 msgstr "FTP"
 
 #: ../data/ui/connect.glade.h:11
-#, fuzzy
 msgid "WebDAV"
 msgstr "WebDAV"
 
 #: ../src/volume-manager.c:237
+#, fuzzy
 msgid "mixed content"
-msgstr ""
+msgstr "混合式內容"
 
 #: ../src/volume-manager.c:246
 #, fuzzy
@@ -634,7 +633,7 @@ msgstr "以終端機開啟(_L)"
 
 #: ../src/desktop-ui.c:68
 msgid "_Remove from Desktop"
-msgstr ""
+msgstr "從桌面移除(_R)"
 
 #: ../src/desktop-ui.c:85
 msgid "Stic_k to Current Position"
@@ -692,7 +691,7 @@ msgstr "空白檔案"
 
 #: ../src/main-win-ui.c:193
 msgid "Folder Propertie_s"
-msgstr ""
+msgstr "資料夾屬性(_S)"
 
 #: ../src/main-win-ui.c:194
 msgid "_Close Tab"
@@ -708,15 +707,15 @@ msgstr "編輯(_E)"
 
 #: ../src/main-win-ui.c:198
 msgid "C_ut"
-msgstr ""
+msgstr "切下(_U)"
 
 #: ../src/main-win-ui.c:201
 msgid "Move to _Trash"
-msgstr ""
+msgstr "丟到垃圾桶(_T)"
 
 #: ../src/main-win-ui.c:203
 msgid "Copy Pat_h(s)"
-msgstr ""
+msgstr "複製路徑(_H)"
 
 #: ../src/main-win-ui.c:204
 msgid "R_ename..."
@@ -809,16 +808,18 @@ msgid "_Previous Folder"
 msgstr "上一個資料夾(_P)"
 
 #: ../src/main-win-ui.c:231
+#, fuzzy
 msgid "Return to previous folder in history"
-msgstr ""
+msgstr "返回歷史中的上一個資料夾"
 
 #: ../src/main-win-ui.c:232
 msgid "_Next Folder"
 msgstr "下一個資料夾(_N)"
 
 #: ../src/main-win-ui.c:232
+#, fuzzy
 msgid "Go forward to next folder in history"
-msgstr ""
+msgstr "前進到歷史中的下一個資料夾"
 
 #: ../src/main-win-ui.c:233
 msgid "Pa_rent Folder"
@@ -833,9 +834,8 @@ msgid "H_ome Folder"
 msgstr "家目錄(_O)"
 
 #: ../src/main-win-ui.c:234
-#, fuzzy
 msgid "Go to home folder"
-msgstr "到上層資料夾"
+msgstr "前往家目錄"
 
 #: ../src/main-win-ui.c:235
 msgid "_Desktop"
@@ -848,14 +848,13 @@ msgstr "到上層資料夾"
 
 #: ../src/main-win-ui.c:236
 msgid "Open trash can"
-msgstr ""
+msgstr "開啟垃圾桶"
 
 #: ../src/main-win-ui.c:237
 msgid "Filesyste_m Root"
-msgstr ""
+msgstr "檔案系統根目錄(_M)"
 
 #: ../src/main-win-ui.c:237
-#, fuzzy
 msgid "Go fo filesystem root"
 msgstr "前往檔案系統根目錄"
 
@@ -912,26 +911,23 @@ msgstr "把目前資料夾加到書籤清單"
 
 #: ../src/main-win-ui.c:246
 msgid "Too_ls"
-msgstr ""
+msgstr "工具(_L)"
 
 #: ../src/main-win-ui.c:247
 msgid "Open Current Folder in _Terminal"
 msgstr "以終端機開啟目前資料夾(_T)"
 
 #: ../src/main-win-ui.c:249
-#, fuzzy
 msgid "Fin_d Files..."
-msgstr "尋找檔案(_D)"
+msgstr "尋找檔案(_D)..."
 
 #: ../src/main-win-ui.c:249
-#, fuzzy
 msgid "Open search dialog"
-msgstr "開啟桌面偏好設定"
+msgstr "開啟搜尋對話框"
 
 #: ../src/main-win-ui.c:252
-#, fuzzy
 msgid "_Run a Command in Current Folder..."
-msgstr "重讀目前資料夾"
+msgstr "在目前的資料夾執行指令(_R)..."
 
 #. Note to translators: "Mingle..." means "Do not put folders before files" but make the translation as short as possible, please!
 #: ../src/main-win-ui.c:267
@@ -940,17 +936,16 @@ msgstr ""
 
 #: ../src/main-win-ui.c:270
 msgid "_Ignore Name Case"
-msgstr ""
+msgstr "忽略名稱大小寫(_I)"
 
 #: ../src/main-win-ui.c:272
-#, fuzzy
 msgid "Sho_w Hidden"
-msgstr "顯示隱藏檔(_N)"
+msgstr "顯示隱藏檔(_W)"
 
 #. Note to translators: this save is meant for folder's settings such as sort
 #: ../src/main-win-ui.c:274
 msgid "Preserve This Folder's Settings"
-msgstr ""
+msgstr "保留此資料夾的設定"
 
 #: ../src/main-win-ui.c:275
 #, fuzzy
@@ -1221,7 +1216,11 @@ msgstr ""
 msgid "[FILE1, FILE2,...]"
 msgstr "[檔案1, 檔案2,...]"
 
-#: ../src/pcmanfm.c:585
+#: ../src/pcmanfm.c:352
+msgid "Desktop manager is not active."
+msgstr ""
+
+#: ../src/pcmanfm.c:598
 msgid "Terminal emulator is not set."
 msgstr "尚未設定終端機模擬器。"
 
