@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm 1.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-09 09:41+0100\n"
-"PO-Revision-Date: 2014-01-19 02:02+0000\n"
+"POT-Creation-Date: 2014-01-22 00:33+0200\n"
+"PO-Revision-Date: 2014-02-03 23:06+0000\n"
 "Last-Translator: Sérgio <smarquespt@gmail.com>\n"
 "Language-Team: \n"
 "Language: pt\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1390096961.0\n"
+"X-POOTLE-MTIME: 1391468818.0\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2014"
@@ -1088,8 +1088,7 @@ msgid ""
 "F10: activate main menu\n"
 "Ctrl+L or Alt+D: jump focus to Path Bar"
 msgstr ""
-"Tab: alterar entre Vista de pastas -> Painel lateral -> Barra de "
-"ferramentas\n"
+"Tab: alterar entre Vista de pastas -> Painel lateral -> Barra de ferramentas\n"
 "Shift+Tab: alterar entre Barra de ferramentas -> Painel lateral -> Vista de "
 "pastas\n"
 "F6: alterar entre Painel lateral <-> Vista de pastas\n"
@@ -1215,7 +1214,11 @@ msgstr "Estilo"
 msgid "[FILE1, FILE2,...]"
 msgstr "[Ficheiro1, Ficheiro2,...]"
 
-#: ../src/pcmanfm.c:585
+#: ../src/pcmanfm.c:352
+msgid "Desktop manager is not active."
+msgstr "O gestor da área de trabalho não está ativo."
+
+#: ../src/pcmanfm.c:598
 msgid "Terminal emulator is not set."
 msgstr "O emulador de terminal não está definido."
 
