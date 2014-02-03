@@ -5,23 +5,22 @@
 # Franciszek Janowski <nobange@poczta.onet.pl>, 2013.
 # Piotr Strębski <strebski@o2.pl>, 2013.
 # Piotr Sokół <psokol@jabster.pl>, 2010, 2011, 2012, 2013, 2014.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm 1.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-09 09:41+0100\n"
-"PO-Revision-Date: 2014-01-17 10:15+0100\n"
-"Last-Translator: Piotr Sokół <psokol@jabster.pl>\n"
+"POT-Creation-Date: 2014-01-22 00:33+0200\n"
+"PO-Revision-Date: 2014-02-03 06:44+0000\n"
+"Last-Translator: Piotr <strebski@o2.pl>\n"
 "Language-Team: polski <>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bits\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : ((n%10>=2 && n%10<=4 && (n"
-"%100<10 || n%100>=20)) ? 1 : 2));\n"
-"X-Generator: Gtranslator 2.91.5\n"
-"X-POOTLE-MTIME: 1386327361.0\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+"X-Generator: Pootle 2.5.0\n"
+"X-POOTLE-MTIME: 1391409865.0\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2014"
@@ -207,8 +206,7 @@ msgstr "P_rzenoszenie plików do „Kosza” zamiast ich usuwania z dysku"
 
 #: ../data/ui/pref.glade.h:10
 msgid "_Erase files on removable media instead of \"trash can\" creation"
-msgstr ""
-"_Usuwanie plików z nośników wymiennych zamiast tworzenia katalogu kosza"
+msgstr "_Usuwanie plików z nośników wymiennych zamiast tworzenia katalogu kosza"
 
 #: ../data/ui/pref.glade.h:11
 msgid "Confi_rm before moving files into \"trash can\""
@@ -1095,8 +1093,7 @@ msgid ""
 "F10: activate main menu\n"
 "Ctrl+L or Alt+D: jump focus to Path Bar"
 msgstr ""
-"Tab: przełącza uaktywnienie Widok katalogu -> Panel boczny -> Pasek "
-"narzędzi\n"
+"Tab: przełącza uaktywnienie Widok katalogu -> Panel boczny -> Pasek narzędzi\n"
 "Shift+Tab: przełącza uaktywnienie Pasek narzędzi -> Panel boczny -> Widok "
 "katalogu\n"
 "F6: przełącza uaktywnienie Panel boczny <-> Widok katalogu\n"
@@ -1186,8 +1183,8 @@ msgid ""
 "Set mode of desktop wallpaper. MODE=(color|stretch|fit|crop|center|tile|"
 "screen)"
 msgstr ""
-"Ustala tryb wyświetlania tła pulpitu. TRYB=(color|stretch|fit|crop|center|"
-"tile|screen)"
+"Ustala tryb wyświetlania tła pulpitu. "
+"TRYB=(color|stretch|fit|crop|center|tile|screen)"
 
 #: ../src/pcmanfm.c:89
 msgid "MODE"
@@ -1221,7 +1218,11 @@ msgstr "ROLA"
 msgid "[FILE1, FILE2,...]"
 msgstr "[PLIK1, PLIK2,...]"
 
-#: ../src/pcmanfm.c:585
+#: ../src/pcmanfm.c:352
+msgid "Desktop manager is not active."
+msgstr "Menadżer pulpitu jest nieaktywny."
+
+#: ../src/pcmanfm.c:598
 msgid "Terminal emulator is not set."
 msgstr "Nie zdefiniowano polecenia emulatora terminala."
 
