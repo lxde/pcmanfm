@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm 0.9.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-09 09:41+0100\n"
-"PO-Revision-Date: 2014-01-19 14:15+0000\n"
+"POT-Creation-Date: 2014-01-22 00:33+0200\n"
+"PO-Revision-Date: 2014-02-10 19:35+0000\n"
 "Last-Translator: Juhani <juhaninumminen0@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: fi\n"
@@ -18,7 +18,7 @@ msgstr ""
 "X-Generator: Pootle 2.5.0\n"
 "X-Language: fi_FI\n"
 "X-Source-Language: C\n"
-"X-POOTLE-MTIME: 1390140958.0\n"
+"X-POOTLE-MTIME: 1392060932.0\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2014"
@@ -561,23 +561,23 @@ msgstr "Valitse toiminto jonka haluat suorittaa:"
 
 #: ../data/ui/autorun.glade.h:6
 msgid "_Always perform this action on this media type"
-msgstr ""
+msgstr "_Suorita tämä toiminto aina tälle mediatyypille"
 
 #: ../data/ui/connect.glade.h:1
 msgid "Connect to remote server"
-msgstr ""
+msgstr "Yhdistä palvelimeen"
 
 #: ../data/ui/connect.glade.h:2
 msgid "<b>Specify remote folder to connect</b>"
-msgstr ""
+msgstr "<b>Aseta etäkansio, johon yhdistetään</b>"
 
 #: ../data/ui/connect.glade.h:3
 msgid "_Type:"
-msgstr ""
+msgstr "_Tyyppi:"
 
 #: ../data/ui/connect.glade.h:4
 msgid "_Host:"
-msgstr ""
+msgstr "P_alvelin:"
 
 #: ../data/ui/connect.glade.h:5
 msgid "_Port:"
@@ -609,12 +609,11 @@ msgstr "WebDAV"
 
 #: ../src/volume-manager.c:237
 msgid "mixed content"
-msgstr ""
+msgstr "yhdistelmäsisältö"
 
 #: ../src/volume-manager.c:246
-#, fuzzy
 msgid "removable disk"
-msgstr "Irrotettava asema"
+msgstr "irrotettava asema"
 
 #: ../src/volume-manager.c:302
 msgid "Open in File Manager"
@@ -691,7 +690,7 @@ msgstr "Tyhjä tiedosto"
 
 #: ../src/main-win-ui.c:193
 msgid "Folder Propertie_s"
-msgstr ""
+msgstr "Kan_sion ominaisuudet"
 
 #: ../src/main-win-ui.c:194
 msgid "_Close Tab"
@@ -707,7 +706,7 @@ msgstr "_Muokkaa"
 
 #: ../src/main-win-ui.c:198
 msgid "C_ut"
-msgstr ""
+msgstr "_Leikkaa"
 
 #: ../src/main-win-ui.c:201
 msgid "Move to _Trash"
@@ -784,11 +783,11 @@ msgstr "_Järjestä tiedostot"
 
 #: ../src/main-win-ui.c:222
 msgid "Zoom O_ut"
-msgstr ""
+msgstr "L_oitonna"
 
 #: ../src/main-win-ui.c:225
 msgid "Fil_ter..."
-msgstr ""
+msgstr "_Suodatin…"
 
 #: ../src/main-win-ui.c:227
 msgid "_Help"
@@ -876,15 +875,15 @@ msgstr "Siirry verkkosijaintien näkymään"
 
 #: ../src/main-win-ui.c:241
 msgid "_Go to Location..."
-msgstr ""
+msgstr "Sii_rry sijaintiin…"
 
 #: ../src/main-win-ui.c:242
 msgid "_Connect to Server..."
-msgstr ""
+msgstr "_Yhdistä palvelimeen…"
 
 #: ../src/main-win-ui.c:242
 msgid "Open a window to choose remote folder location"
-msgstr ""
+msgstr "Avaa etäkansion sijainnin valintaikkuna"
 
 #: ../src/main-win-ui.c:243
 msgid "Go to the path in the location bar"
@@ -895,9 +894,8 @@ msgid "_Bookmarks"
 msgstr "_Kirjanmerkit"
 
 #: ../src/main-win-ui.c:245
-#, fuzzy
 msgid "_Add to Bookmarks..."
-msgstr "_Lisää kirjanmerkkeihin"
+msgstr "_Lisää kirjanmerkkeihin…"
 
 #: ../src/main-win-ui.c:245
 msgid "Add current folder to bookmarks list"
@@ -905,16 +903,15 @@ msgstr "Lisää tämä kansio kirjanmerkkeihin"
 
 #: ../src/main-win-ui.c:246
 msgid "Too_ls"
-msgstr ""
+msgstr "T_yökalut"
 
 #: ../src/main-win-ui.c:247
 msgid "Open Current Folder in _Terminal"
 msgstr "Avaa nykyinen kansio _terminaalissa"
 
 #: ../src/main-win-ui.c:249
-#, fuzzy
 msgid "Fin_d Files..."
-msgstr "_Etsi tiedostoja"
+msgstr "_Etsi tiedostoja…"
 
 #: ../src/main-win-ui.c:249
 msgid "Open search dialog"
@@ -922,7 +919,7 @@ msgstr "Avaa hakuikkuna"
 
 #: ../src/main-win-ui.c:252
 msgid "_Run a Command in Current Folder..."
-msgstr ""
+msgstr "_Suorita komento nykyisessä kansiossa…"
 
 #. Note to translators: "Mingle..." means "Do not put folders before files" but make the translation as short as possible, please!
 #: ../src/main-win-ui.c:267
@@ -949,15 +946,15 @@ msgstr ""
 
 #: ../src/main-win-ui.c:277
 msgid "_Show Toolbar"
-msgstr ""
+msgstr "Näytä _työkalupalkki"
 
 #: ../src/main-win-ui.c:278
 msgid "Show 'New _Window' Button"
-msgstr ""
+msgstr "Näytä ’Uu_si ikkuna’ -painike"
 
 #: ../src/main-win-ui.c:279
 msgid "Show 'New _Tab' Button"
-msgstr ""
+msgstr "Näytä ’Uusi _välilehti’ -painike"
 
 #: ../src/main-win-ui.c:280
 msgid "Show _Navigation Buttons"
@@ -965,7 +962,7 @@ msgstr ""
 
 #: ../src/main-win-ui.c:281
 msgid "Show '_Home' Button"
-msgstr ""
+msgstr "Näytä ’_Koti’-painike"
 
 #: ../src/main-win-ui.c:282
 msgid "Sho_w Side Pane"
@@ -1021,7 +1018,7 @@ msgstr "_Tiedostotyypin mukaan"
 
 #: ../src/main-win-ui.c:312
 msgid "By _Extension"
-msgstr ""
+msgstr "Ti_edostopäätteen mukaan"
 
 #: ../src/main-win-ui.c:325
 msgid "Places"
@@ -1037,11 +1034,11 @@ msgstr "Etähakemistot"
 
 #: ../src/main-win-ui.c:333
 msgid "_Location"
-msgstr ""
+msgstr "_Sijainti"
 
 #: ../src/main-win-ui.c:334
 msgid "_Buttons"
-msgstr ""
+msgstr "P_ainikkeet"
 
 #: ../src/main-win.c:925 ../src/main-win.c:929
 msgid "Show history of visited folders"
@@ -1086,8 +1083,7 @@ msgid ""
 "Ctrl+L or Alt+D: jump focus to Path Bar"
 msgstr ""
 "Sarkain: vaihda valintaa: kansionäkymä -> sivupaneeli -> työkalupalkki\n"
-"Shift+Sarkain: vaihda valintaa: työkalupalkki -> sivupaneeli -> "
-"kansionäkymä\n"
+"Shift+Sarkain: vaihda valintaa: työkalupalkki -> sivupaneeli -> kansionäkymä\n"
 "F6: vaihda valintaa: sivupaneeli <-> kansionäkymä\n"
 "F8: valinnan jakaja sivupaneelin ja kansionäkymän välillä\n"
 "F10: avaa päävalikko\n"
@@ -1095,11 +1091,11 @@ msgstr ""
 
 #: ../src/main-win.c:1210
 msgid "Run a command"
-msgstr ""
+msgstr "Suorita komento"
 
 #: ../src/main-win.c:1211
 msgid "Enter a command to run:"
-msgstr ""
+msgstr "Kirjoita suoritettava komento:"
 
 #: ../src/main-win.c:1218
 msgid "Current folder is inaccessible"
@@ -1121,7 +1117,7 @@ msgstr "Lisää kirjanmerkkeihin"
 
 #: ../src/main-win.c:2552
 msgid "Select filter"
-msgstr ""
+msgstr "Valitse suodatin"
 
 #: ../src/main-win.c:2553
 msgid "Choose a new shell pattern to show files:"
@@ -1175,6 +1171,8 @@ msgid ""
 "Set mode of desktop wallpaper. MODE=(color|stretch|fit|crop|center|tile|"
 "screen)"
 msgstr ""
+"Aseta työpöydän taustakuvan tila. "
+"TILA=(color|stretch|fit|crop|center|tile|screen)"
 
 #: ../src/pcmanfm.c:89
 msgid "MODE"
@@ -1194,7 +1192,7 @@ msgstr "Avaa uusi ikkuna"
 
 #: ../src/pcmanfm.c:93
 msgid "Open a Find Files window"
-msgstr ""
+msgstr "Avaa tiedostojen etsintäikkuna"
 
 #: ../src/pcmanfm.c:95
 msgid "Window role for usage by window manager"
@@ -1208,7 +1206,11 @@ msgstr "ROOLI"
 msgid "[FILE1, FILE2,...]"
 msgstr "[TIEDOSTO1, TIEDOSTO2, …]"
 
-#: ../src/pcmanfm.c:585
+#: ../src/pcmanfm.c:352
+msgid "Desktop manager is not active."
+msgstr ""
+
+#: ../src/pcmanfm.c:598
 msgid "Terminal emulator is not set."
 msgstr "Terminaaliemulaattoria ei ole valittu."
 
