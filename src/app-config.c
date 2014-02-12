@@ -957,6 +957,8 @@ void fm_app_config_save_config_for_path(FmPath *path, GtkSortType mode, gint by,
     int n = 2;
 #endif
 
+    if (path == NULL) /* it seem called too early and folder isn't loaded yet */
+        return;
     /* if path is search://... then use search: instead */
 #if FM_CHECK_VERSION(1, 2, 0)
     sub_path = fm_path_get_scheme_path(path);
