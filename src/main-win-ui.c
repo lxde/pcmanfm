@@ -194,7 +194,7 @@ static GtkActionEntry main_win_actions[]=
         {"CloseTab", GTK_STOCK_CLOSE, N_("_Close Tab"), "<Ctrl>W", NULL, G_CALLBACK(on_close_tab)},
         {"Close", GTK_STOCK_QUIT, N_("Close _Window"), "<Ctrl>Q", NULL, G_CALLBACK(on_close_win)},
     {"EditMenu", NULL, N_("_Edit"), NULL, NULL, NULL},
-        {"Open", GTK_STOCK_OPEN, NULL, "Return", NULL, G_CALLBACK(on_open)},
+        {"Open", GTK_STOCK_OPEN, NULL, "", NULL, G_CALLBACK(on_open)},
         {"Cut", GTK_STOCK_CUT, N_("C_ut"), NULL, NULL, G_CALLBACK(bounce_action)},
         {"Copy", GTK_STOCK_COPY, NULL, NULL, NULL, G_CALLBACK(bounce_action)},
         {"Paste", GTK_STOCK_PASTE, NULL, NULL, NULL, G_CALLBACK(bounce_action)},
