@@ -2,14 +2,13 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the pcmanfm package.
 # Tareq Al Jurf <taljurf@fedoraproject.org>, 2010.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm 1.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-09 09:41+0100\n"
-"PO-Revision-Date: 2013-07-19 05:34+0000\n"
-"Last-Translator: SAGER <sagerahmed@gmail.com>\n"
+"POT-Creation-Date: 2014-01-22 00:33+0200\n"
+"PO-Revision-Date: 2013-12-21 09:44+0000\n"
+"Last-Translator: safaalfulaij <safa1996alfulaij@gmail.com>\n"
 "Language-Team: Arabic <trans-ar@lists.fedoraproject.org>\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
@@ -18,7 +17,7 @@ msgstr ""
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1374212088.0\n"
+"X-POOTLE-MTIME: 1387619090.0\n"
 
 #: ../data/ui/about.glade.in.h:1
 #, fuzzy
@@ -213,23 +212,20 @@ msgid "Co_nfirm before deleting files"
 msgstr "طلب التأكيد قبل _حذف الملفات"
 
 #: ../data/ui/pref.glade.h:9
-#, fuzzy
 msgid "_Move deleted files to \"trash can\" instead of erasing from disk"
-msgstr "نقل الملفات الم_حذوفة إلى \"سلة المحذوفات\" بدلًا من إزالتها من القرص"
+msgstr "ان_قل الملفات المحذوفة إلى \"سلة المهملات\" بدلًا من إزالتها من القرص"
 
 #: ../data/ui/pref.glade.h:10
-#, fuzzy
 msgid "_Erase files on removable media instead of \"trash can\" creation"
-msgstr "إ_زالة الملفات من الوسيط القابل للإزالة بدلا من إنشاء \"سلة محذوفات\""
+msgstr "أ_زل الملفات من الوسيط القابل للإزالة بدلًا من إنشاء \"سلة المهملات\""
 
 #: ../data/ui/pref.glade.h:11
-#, fuzzy
 msgid "Confi_rm before moving files into \"trash can\""
-msgstr "طلب التأكيد قبل نقل الملفات إلى \"سلة المحذوفات\""
+msgstr "أ_كِّد قبل نقل الملفات إلى \"سلة المهملات\""
 
 #: ../data/ui/pref.glade.h:12
 msgid "Don't ask options on _launch executable file"
-msgstr ""
+msgstr "لا تسأل عند إ_طلاق الملفات التنفيذية"
 
 #: ../data/ui/pref.glade.h:13
 msgid "_Bookmarks:"
@@ -338,7 +334,7 @@ msgstr "أظهر شريط الألس_نة دائمًا"
 
 #: ../data/ui/pref.glade.h:42
 msgid "_Maximum width of tab label:"
-msgstr ""
+msgstr "أ_قصى عرض للصيقة اللسان:"
 
 #. Use genitive case here, context is: width is XXX characters
 #: ../data/ui/pref.glade.h:44
@@ -358,12 +354,10 @@ msgid "<b>Show in Places:</b>"
 msgstr "<b>عرض في الأماكن:</b>"
 
 #: ../data/ui/pref.glade.h:48
-#, fuzzy
 msgid "_Home Folder"
-msgstr "المجلد المنزل"
+msgstr "المجلد المن_زل"
 
 #: ../data/ui/pref.glade.h:49
-#, fuzzy
 msgid "Des_ktop"
 msgstr "سط_ح المكتب"
 
@@ -373,7 +367,7 @@ msgstr "سلة المحذوفا_ت"
 
 #: ../data/ui/pref.glade.h:51
 msgid "_Filesystem Root"
-msgstr ""
+msgstr "جذر ن_ظام الملفات"
 
 #: ../data/ui/pref.glade.h:52
 msgid "App_lications"
@@ -381,12 +375,11 @@ msgstr "الت_طبيقات"
 
 #: ../data/ui/pref.glade.h:53 ../src/main-win-ui.c:239
 msgid "Dev_ices"
-msgstr ""
+msgstr "الأ_جهزة"
 
 #: ../data/ui/pref.glade.h:54
-#, fuzzy
 msgid "_Network"
-msgstr "أج_هزة الشبكة"
+msgstr "ال_شبكة"
 
 #: ../data/ui/pref.glade.h:55
 msgid "_Layout"
@@ -420,8 +413,7 @@ msgstr "%d عنصر محدد"
 
 #: ../data/ui/pref.glade.h:62
 msgid "_Open mounted removable media in new tab instead of new window"
-msgstr ""
-"_افتح الاقراص المحملة القابلة للازالة في تبويب جديد بدلا من نافذة جديدة"
+msgstr "_افتح الاقراص المحملة القابلة للازالة في تبويب جديد بدلا من نافذة جديدة"
 
 #: ../data/ui/pref.glade.h:63
 #, fuzzy
@@ -447,7 +439,7 @@ msgstr "<b>برامج</b>"
 
 #: ../data/ui/pref.glade.h:68
 msgid "<i>Commands below may include extra options if necessary.</i>"
-msgstr ""
+msgstr "<i>يمكن أن تحوي الأوامر أدناه خيارات إضافية إن دعت الحاجة إلى ذلك.</i>"
 
 #: ../data/ui/pref.glade.h:69
 msgid "_Terminal emulator:"
@@ -460,33 +452,31 @@ msgstr "أمر ت_بديل المستخدم:"
 #. Application command to format some drive
 #: ../data/ui/pref.glade.h:72
 msgid "_Format command:"
-msgstr ""
+msgstr "أمر ال_تنسيق:"
 
 #: ../data/ui/pref.glade.h:73
 msgid "A_rchiver integration:"
 msgstr "التوافق مع مدير الأر_شيفات:"
 
 #: ../data/ui/pref.glade.h:74
-#, fuzzy
 msgid "<b>Templates</b>"
-msgstr "<b>النص</b>"
+msgstr "<b>القوالب</b>"
 
 #: ../data/ui/pref.glade.h:75
 msgid "S_how only user defined templates in menu"
-msgstr ""
+msgstr "أ_ظهر القوالب المُعرَّفة من قِبل المستخدم فقط في القوائم"
 
 #: ../data/ui/pref.glade.h:76
 msgid "Show _only one template for each MIME type"
-msgstr ""
+msgstr "أظهر قالب واحد ف_قط لكل نوع MIME"
 
 #: ../data/ui/pref.glade.h:77
 msgid "Ru_n default application after creation from template"
-msgstr ""
+msgstr "ش_غّل التطبيق الافتراضي بعد الإنشاء من قالب"
 
 #: ../data/ui/pref.glade.h:78
-#, fuzzy
 msgid "<b>Other Options</b>"
-msgstr "<b>أظهر أيقونات سطح المكتب</b>"
+msgstr "<b>خيارات أكثر</b>"
 
 #: ../data/ui/pref.glade.h:79
 #, fuzzy
@@ -673,25 +663,21 @@ msgid "Snap to _Grid"
 msgstr "تجان_ب للشبكة"
 
 #: ../src/desktop.c:946
-#, fuzzy
 msgid "Activate file"
-msgstr "<ملف الصورة>"
+msgstr "فعّل الملف"
 
 #: ../src/desktop.c:948
-#, fuzzy
 msgid "Show file menu"
-msgstr "أظهر ال_مخفي"
+msgstr "أظهر قائمة الملف"
 
 #: ../src/desktop.c:1364
-#, fuzzy
 msgid "Show desktop menu"
-msgstr "<b>أظهر أيقونات سطح المكتب</b>"
+msgstr "أظهر قائمة سطح المكتب"
 
 #. FIXME: set name by monitor
 #: ../src/desktop.c:1436
-#, fuzzy
 msgid "Desktop"
-msgstr "سط_ح المكتب"
+msgstr "سطح المكتب"
 
 #: ../src/main-win-ui.c:187
 msgid "_File"
@@ -833,9 +819,8 @@ msgid "_Help"
 msgstr "_مساعدة"
 
 #: ../src/main-win-ui.c:229
-#, fuzzy
 msgid "_Keyboard Navigation"
-msgstr "التنقل _بلوحة المفاتيح"
+msgstr "التنقل بلوحة المفاتيح"
 
 #: ../src/main-win-ui.c:230
 msgid "_Go"
@@ -847,7 +832,7 @@ msgstr "المجلد الساب_ق"
 
 #: ../src/main-win-ui.c:231
 msgid "Return to previous folder in history"
-msgstr ""
+msgstr "ارجع إلى المجلد السابق في التأريخ"
 
 #: ../src/main-win-ui.c:232
 msgid "_Next Folder"
@@ -855,7 +840,7 @@ msgstr "المجلد التا_لي"
 
 #: ../src/main-win-ui.c:232
 msgid "Go forward to next folder in history"
-msgstr ""
+msgstr "اذهب أمامًا إلى المجلد التالي في التأريخ"
 
 #: ../src/main-win-ui.c:233
 msgid "Pa_rent Folder"
@@ -870,30 +855,28 @@ msgid "H_ome Folder"
 msgstr "مجلد المن_زل"
 
 #: ../src/main-win-ui.c:234
-#, fuzzy
 msgid "Go to home folder"
-msgstr "إذهب إلى المجلد العلوي"
+msgstr "اذهب إلى المجلد المنزل"
 
 #: ../src/main-win-ui.c:235
 msgid "_Desktop"
 msgstr "سط_ح المكتب"
 
 #: ../src/main-win-ui.c:235
-#, fuzzy
 msgid "Go to desktop folder"
-msgstr "إذهب إلى المجلد العلوي"
+msgstr "اذهب إلى مجلد سطح المكتب"
 
 #: ../src/main-win-ui.c:236
 msgid "Open trash can"
-msgstr ""
+msgstr "افتح سلة المهملات"
 
 #: ../src/main-win-ui.c:237
 msgid "Filesyste_m Root"
-msgstr ""
+msgstr "جذر ن_ظام الملفات"
 
 #: ../src/main-win-ui.c:237
 msgid "Go fo filesystem root"
-msgstr ""
+msgstr "اذهب إلى جذر نظام الملفات"
 
 #: ../src/main-win-ui.c:238
 msgid "_Applications"
@@ -901,22 +884,19 @@ msgstr "الت_طبيقات"
 
 #: ../src/main-win-ui.c:238
 msgid "Go to root of applications menu folder"
-msgstr ""
+msgstr "اذهب إلى جذر مجلد قائمة البرمجيات"
 
 #: ../src/main-win-ui.c:239
-#, fuzzy
 msgid "Go to list of devices connected to the computer"
-msgstr "عرض أي_قونات الأقراص في سطح المكتب"
+msgstr "اذهب إلى قائمة من الأجهزة الموصولة إلى الحاسوب"
 
 #: ../src/main-win-ui.c:240
-#, fuzzy
 msgid "Net_work"
-msgstr "أج_هزة الشبكة"
+msgstr "الشب_كة"
 
 #: ../src/main-win-ui.c:240
-#, fuzzy
 msgid "Go to list of places on the network"
-msgstr "عرض أي_قونات الأقراص في سطح المكتب"
+msgstr "اذهب إلى الأماكن في الشبكة"
 
 #: ../src/main-win-ui.c:241
 msgid "_Go to Location..."
@@ -932,7 +912,7 @@ msgstr ""
 
 #: ../src/main-win-ui.c:243
 msgid "Go to the path in the location bar"
-msgstr ""
+msgstr "اذهب إلى المسار في شريط الموقع"
 
 #: ../src/main-win-ui.c:244
 msgid "_Bookmarks"
@@ -945,7 +925,7 @@ msgstr "إضافة إلى العلامات"
 
 #: ../src/main-win-ui.c:245
 msgid "Add current folder to bookmarks list"
-msgstr ""
+msgstr "أضف المجلد الحالي إلى قائمة العلامات"
 
 #: ../src/main-win-ui.c:246
 msgid "Too_ls"
@@ -961,9 +941,8 @@ msgid "Fin_d Files..."
 msgstr "_جد الملفات"
 
 #: ../src/main-win-ui.c:249
-#, fuzzy
 msgid "Open search dialog"
-msgstr "فتح حوار تفضيلات سطح المكتب"
+msgstr "افتح حواري البحث"
 
 #: ../src/main-win-ui.c:252
 #, fuzzy
@@ -1094,41 +1073,34 @@ msgstr ""
 
 #: ../src/main-win.c:925 ../src/main-win.c:929
 msgid "Show history of visited folders"
-msgstr ""
+msgstr "أظهر تأريخ المجلدات المُزارة"
 
 #: ../src/main-win.c:934
 msgid "History"
-msgstr ""
+msgstr "التأريخ"
 
 #: ../src/main-win.c:948
 msgid "You are in super user mode"
 msgstr "أنت في نمط المستخدم الفائق"
 
 #: ../src/main-win.c:1134
-#, fuzzy
 msgid "Lightweight file manager\n"
-msgstr ""
-"مدير ملفات خفيف\n"
-"\n"
-"طور بواسطة Hon Jen Yee (PCMan)"
+msgstr "مدير ملفات خفيف\n"
 
 #: ../src/main-win.c:1139
 #, c-format
 msgid "using LibFM ver. %s\n"
-msgstr ""
+msgstr "يستخدم إصدار %s من LibFM\n"
 
 #: ../src/main-win.c:1141
-#, fuzzy
 msgid ""
 "\n"
 "Developed by Hon Jen Yee (PCMan)"
 msgstr ""
-"مدير ملفات خفيف\n"
 "\n"
-"طور بواسطة Hon Jen Yee (PCMan)"
+"طوّره Hon Jen Yee (PCMan)"
 
 #: ../src/main-win.c:1166 ../src/main-win.c:1174
-#, fuzzy
 msgid "Keyboard Navigation"
 msgstr "التنقل بلوحة المفاتيح"
 
@@ -1267,7 +1239,11 @@ msgstr "الدور"
 msgid "[FILE1, FILE2,...]"
 msgstr "[FILE1, FILE2,...]"
 
-#: ../src/pcmanfm.c:585
+#: ../src/pcmanfm.c:352
+msgid "Desktop manager is not active."
+msgstr ""
+
+#: ../src/pcmanfm.c:598
 msgid "Terminal emulator is not set."
 msgstr "محاكي الطرفية غير محدد."
 
