@@ -2,12 +2,11 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the pcmanfm package.
 # Radek Tříška <radek@fastlinux.eu>, 2010.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-09 09:41+0100\n"
+"POT-Creation-Date: 2014-01-22 00:33+0200\n"
 "PO-Revision-Date: 2012-10-26 10:31+0100\n"
 "Last-Translator: Alois Nešpor <info@aloisnespor.info>\n"
 "Language-Team: Czech <radek@fastlinux.eu>\n"
@@ -416,8 +415,7 @@ msgstr "%d položka vybrána"
 
 #: ../data/ui/pref.glade.h:62
 msgid "_Open mounted removable media in new tab instead of new window"
-msgstr ""
-"_Otevřít připojené připojitelné média v nové kartě namísto v novém okně"
+msgstr "_Otevřít připojené připojitelné média v nové kartě namísto v novém okně"
 
 #: ../data/ui/pref.glade.h:63
 #, fuzzy
@@ -1267,7 +1265,11 @@ msgstr "ROLE"
 msgid "[FILE1, FILE2,...]"
 msgstr "[SOUBOR1, SOUBOR2,...]"
 
-#: ../src/pcmanfm.c:585
+#: ../src/pcmanfm.c:352
+msgid "Desktop manager is not active."
+msgstr ""
+
+#: ../src/pcmanfm.c:598
 msgid "Terminal emulator is not set."
 msgstr "Emulátor terminálu není nastaven."
 
