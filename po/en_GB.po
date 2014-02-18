@@ -2,21 +2,20 @@
 # Copyright (C) LXDE translation team.
 # This file is distributed under the same license as the pcmanfm package.
 # Steve Cook <yorvik.ubunto@gmail.com>, 2010.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm 1.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-09 09:41+0100\n"
+"POT-Creation-Date: 2014-01-22 00:33+0200\n"
 "PO-Revision-Date: 2013-06-04 19:31+0100\n"
 "Last-Translator: Steve <yorvik.ubunto@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: en_GB\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.0.5\n"
-"X-Poedit-Country: UNITED KINGDOM\n"
 
 #: ../data/ui/about.glade.in.h:1
 #, fuzzy
@@ -1261,7 +1260,11 @@ msgstr "ROLE"
 msgid "[FILE1, FILE2,...]"
 msgstr "[FILE1, FILE2,...]"
 
-#: ../src/pcmanfm.c:585
+#: ../src/pcmanfm.c:352
+msgid "Desktop manager is not active."
+msgstr ""
+
+#: ../src/pcmanfm.c:598
 msgid "Terminal emulator is not set."
 msgstr "Terminal emulator is not set."
 
