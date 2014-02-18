@@ -7,12 +7,11 @@
 # Og Maciel <ogmaciel@gnome.org>, 2008, 2009.
 # Henrique P. Machado <zehrique@gmail.com>, 2009.
 # Sérgio B. Cipolla <secipolla@gmail.com>, 2010, 2011.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm 0.9.9\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-09 09:41+0100\n"
+"POT-Creation-Date: 2014-01-22 00:33+0200\n"
 "PO-Revision-Date: 2012-10-13 20:07+0200\n"
 "Last-Translator: Henrique P. <zehrique@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <ldp-br@bazar2.conectiva.com.br>\n"
@@ -1244,8 +1243,8 @@ msgid ""
 "Set mode of desktop wallpaper. MODE=(color|stretch|fit|crop|center|tile|"
 "screen)"
 msgstr ""
-"Definir o modo do papel de parede da área de trabalho. MODO=(color|stretch|"
-"fit|center|tile)"
+"Definir o modo do papel de parede da área de trabalho. "
+"MODO=(color|stretch|fit|center|tile)"
 
 #: ../src/pcmanfm.c:89
 msgid "MODE"
@@ -1280,7 +1279,11 @@ msgstr "ROLE"
 msgid "[FILE1, FILE2,...]"
 msgstr "[ARQUIVO1, ARQUIVO2,...]"
 
-#: ../src/pcmanfm.c:585
+#: ../src/pcmanfm.c:352
+msgid "Desktop manager is not active."
+msgstr ""
+
+#: ../src/pcmanfm.c:598
 msgid "Terminal emulator is not set."
 msgstr "O emulador de terminal não está configurado."
 
