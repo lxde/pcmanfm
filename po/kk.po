@@ -2,13 +2,12 @@
 # Copyright (C) 2012 The LXDE team
 # This file is distributed under the same license as the LXDE package.
 # Baurzhan Muftakhidinov <baurthefirst@gmail.com>, 2012-2013.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm 1.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-09 09:41+0100\n"
-"PO-Revision-Date: 2014-01-13 05:04+0000\n"
+"POT-Creation-Date: 2014-01-22 00:33+0200\n"
+"PO-Revision-Date: 2014-02-20 14:21+0000\n"
 "Last-Translator: sotrud_nik <baurthefirst@gmail.com>\n"
 "Language-Team: Kazakh <kk_KZ@googlegroups.com>\n"
 "Language: kk\n"
@@ -17,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1389589471.0\n"
+"X-POOTLE-MTIME: 1392906107.0\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2014"
@@ -199,8 +198,7 @@ msgstr "Ө_шірілетін файлдарды дисктен жою орны�
 
 #: ../data/ui/pref.glade.h:10
 msgid "_Erase files on removable media instead of \"trash can\" creation"
-msgstr ""
-"Ауыстыр_малы тасушыларда \"қоқыс шелегін\" жасау орнына файлдарды өшіру"
+msgstr "Ауыстыр_малы тасушыларда \"қоқыс шелегін\" жасау орнына файлдарды өшіру"
 
 #: ../data/ui/pref.glade.h:11
 msgid "Confi_rm before moving files into \"trash can\""
@@ -1214,7 +1212,11 @@ msgstr "ROLE"
 msgid "[FILE1, FILE2,...]"
 msgstr "[ФАЙЛ1, ФАЙЛ2,...]"
 
-#: ../src/pcmanfm.c:585
+#: ../src/pcmanfm.c:352
+msgid "Desktop manager is not active."
+msgstr "Жұмыс үстел басқарушысы белсенді емес."
+
+#: ../src/pcmanfm.c:598
 msgid "Terminal emulator is not set."
 msgstr "Терминал эмуляторы көрсетілмеген."
 
