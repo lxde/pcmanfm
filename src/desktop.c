@@ -486,6 +486,12 @@ static void copy_desktop_config(FmDesktopConfig *dst, FmDesktopConfig *src)
     dst->desktop_sort_type = src->desktop_sort_type;
     dst->desktop_sort_by = src->desktop_sort_by;
     dst->folder = g_strdup(src->folder);
+#if FM_CHECK_VERSION(1, 2, 0)
+    dst->show_documents = src->show_documents;
+    dst->show_trash = src->show_trash;
+    dst->show_mounts = src->show_mounts;
+#endif
+
 }
 
 #if FM_CHECK_VERSION(1, 2, 0)
