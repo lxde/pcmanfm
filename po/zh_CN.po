@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm 1.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-09 09:41+0100\n"
-"PO-Revision-Date: 2014-01-10 09:40+0000\n"
+"POT-Creation-Date: 2014-01-22 00:33+0200\n"
+"PO-Revision-Date: 2014-02-23 12:17+0000\n"
 "Last-Translator: Wylmer <wantinghard@gmail.com>\n"
 "Language-Team: Chinese (simplified) <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1389346821.0\n"
+"X-POOTLE-MTIME: 1393157859.0\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2014"
@@ -1201,7 +1201,11 @@ msgstr "角色"
 msgid "[FILE1, FILE2,...]"
 msgstr "[文件1, 文件2,...]"
 
-#: ../src/pcmanfm.c:585
+#: ../src/pcmanfm.c:352
+msgid "Desktop manager is not active."
+msgstr "桌面管理器未激活。"
+
+#: ../src/pcmanfm.c:598
 msgid "Terminal emulator is not set."
 msgstr "没有设置终端模拟器。"
 
