@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: 0.9.9\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-01-22 00:33+0200\n"
-"PO-Revision-Date: 2014-03-08 17:08+0000\n"
+"PO-Revision-Date: 2014-03-08 17:38+0000\n"
 "Last-Translator: kizito <kbirabwa@yahoo.co.uk>\n"
 "Language-Team: lg <kbirabwa@yahoo.co.uk>\n"
 "Language: lg\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1394298500.0\n"
+"X-POOTLE-MTIME: 1394300281.0\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2014"
@@ -980,7 +980,7 @@ msgstr "_Kabaawo k'ebiyamba kalabike"
 
 #: ../src/main-win-ui.c:278
 msgid "Show 'New _Window' Button"
-msgstr "Wabewo eppeesa erya \"Ddiria _Ppya\""
+msgstr "Wabewo eppeesa erya \"Ddirisa _Ppya\""
 
 #: ../src/main-win-ui.c:279
 msgid "Show 'New _Tab' Button"
@@ -1161,6 +1161,8 @@ msgstr "Londa ensunsula"
 #: ../src/main-win.c:2553
 msgid "Choose a new shell pattern to show files:"
 msgstr ""
+"Wandikawo ekiteekwa okusangibwa mu mannya ga fayiro ezinaalagibwa mu "
+"ddirisa:"
 
 #. options only acceptable by first pcmanfm instance. These options are not passed through IPC
 #: ../src/pcmanfm.c:78
@@ -1292,7 +1294,7 @@ msgstr "Buno buteeke ku lukalala lw'obubooledwa"
 
 #: ../src/pref.c:515
 msgid "Enter a blacklisted module mask:"
-msgstr "Wandika ekigambo ekigatta ebibooledwa:"
+msgstr "Wandika ekigambo ekisangibwa mu linnya ly'ekigenda okuboolebwa:"
 
 #: ../src/pref.c:606
 msgid "Add to Modules Whitelist"
@@ -1300,7 +1302,7 @@ msgstr "Buno buteeke ku lukalala lw'obutalina kabi"
 
 #: ../src/pref.c:607
 msgid "Enter a whitelisted module mask:"
-msgstr "Wandika ekigambo ekigatta ebitalina kabi:"
+msgstr "Wandika ekigambo ekisangibwa mu linnya lya kitalina kabi:"
 
 #: ../data/pcmanfm.desktop.in.h:1
 msgid "File Manager PCManFM"
