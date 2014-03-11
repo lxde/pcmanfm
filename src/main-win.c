@@ -356,8 +356,6 @@ static void on_folder_view_sel_changed(FmFolderView* fv, gint n_sel, FmMainWin* 
     gtk_action_set_sensitive(act, has_selected);
     act = gtk_ui_manager_get_action(win->ui, "/menubar/EditMenu/CopyPath");
     gtk_action_set_sensitive(act, has_selected);
-    act = gtk_ui_manager_get_action(win->ui, "/menubar/EditMenu/Rename");
-    gtk_action_set_sensitive(act, n_sel == 1); /* can rename only single file */
     act = gtk_ui_manager_get_action(win->ui, "/menubar/EditMenu/Link");
     gtk_action_set_sensitive(act, has_selected);
     act = gtk_ui_manager_get_action(win->ui, "/menubar/EditMenu/CopyTo");
@@ -365,6 +363,21 @@ static void on_folder_view_sel_changed(FmFolderView* fv, gint n_sel, FmMainWin* 
     act = gtk_ui_manager_get_action(win->ui, "/menubar/EditMenu/MoveTo");
     gtk_action_set_sensitive(act, has_selected);
     act = gtk_ui_manager_get_action(win->ui, "/menubar/EditMenu/FileProp");
+    gtk_action_set_sensitive(act, has_selected);
+    /* special handling for 'Rename' option: we can rename only single file,
+       and also because GIO doesn't support changing the .desktop files
+       display names, therefore we have to disable it in some cases */
+    has_selected = FALSE;
+    if (n_sel == 1)
+    {
+        FmFileInfoList *files = fm_folder_view_dup_selected_files(fv);
+        FmFileInfo *fi = fm_file_info_list_peek_head(files);
+        if (fm_file_info_can_set_name(fi) && !fm_file_info_is_shortcut(fi)
+            && !fm_file_info_is_desktop_entry(fi))
+            has_selected = TRUE;
+        fm_file_info_list_unref(files);
+    }
+    act = gtk_ui_manager_get_action(win->ui, "/menubar/EditMenu/Rename");
     gtk_action_set_sensitive(act, has_selected);
 }
 
