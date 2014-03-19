@@ -2,13 +2,12 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-09 09:41+0100\n"
-"PO-Revision-Date: 2013-07-09 20:48+0000\n"
+"POT-Creation-Date: 2014-01-22 00:33+0200\n"
+"PO-Revision-Date: 2014-03-19 20:37+0000\n"
 "Last-Translator: Asier <asier.iturralde@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: eu\n"
@@ -17,12 +16,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1373402899.0\n"
+"X-POOTLE-MTIME: 1395261449.0\n"
 
 #: ../data/ui/about.glade.in.h:1
-#, fuzzy
 msgid "Copyright (C) 2009 - 2014"
-msgstr "Copyright-a (C) 2009 - 2013"
+msgstr "Copyright-a (C) 2009 - 2014"
 
 #. Please replace this line with your own names, one name per line.
 #: ../data/ui/about.glade.in.h:3
@@ -83,24 +81,20 @@ msgid "<b>Show desktop icons</b>"
 msgstr "<b>Erakutsi mahaigaineko ikonoak</b>"
 
 #: ../data/ui/desktop-pref.glade.h:14
-#, fuzzy
 msgid "_Show \"Documents\" folder on the desktop"
-msgstr "_Erakutsi \"Nire dokumentuak\" ikonoa mahaigainean"
+msgstr "_Erakutsi \"Dokumentuak\" karpeta mahaigainean"
 
 #: ../data/ui/desktop-pref.glade.h:15
-#, fuzzy
 msgid "Sho_w \"Devices\" folder on the desktop"
-msgstr "_Erakutsi \"Nire dokumentuak\" ikonoa mahaigainean"
+msgstr "_Erakutsi \"Gailuak\" karpeta mahaigainean"
 
 #: ../data/ui/desktop-pref.glade.h:16
-#, fuzzy
 msgid "Show \"_Trash Can\" folder on the desktop"
-msgstr "Erakutsi \"_Zakarrontzia\" ikonoa mahaigainean"
+msgstr "Erakutsi \"_Zakarrontzia\" karpeta mahaigainean"
 
 #: ../data/ui/desktop-pref.glade.h:17
-#, fuzzy
 msgid "S_how connected volumes on the desktop"
-msgstr "E_rakutsi bolumenen ikonoak mahaigainean"
+msgstr "E_rakutsi konektatutako bolumenak mahaigainean"
 
 #: ../data/ui/desktop-pref.glade.h:18
 msgid "_Desktop Icons"
@@ -117,22 +111,20 @@ msgstr ""
 #: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:84
 msgctxt "Use path for some folder: ..."
 msgid "Default"
-msgstr ""
+msgstr "Lehenetsia"
 
 #: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:85
 msgctxt "Use path for some folder: ..."
 msgid "Custom:"
-msgstr ""
+msgstr "Pertsonalizatua:"
 
 #: ../data/ui/desktop-pref.glade.h:23
-#, fuzzy
 msgid "Select a Desktop Folder"
-msgstr "Mahaigaina karpeta"
+msgstr "Hautatu mahaigaineko karpeta bat"
 
 #: ../data/ui/desktop-pref.glade.h:24
-#, fuzzy
 msgid "_Open folders from desktop in new window"
-msgstr "Ireki leiho berrian"
+msgstr "_Ireki mahaigaineko karpetak leiho berrian"
 
 #: ../data/ui/desktop-pref.glade.h:25
 msgid "Ad_vanced"
@@ -172,14 +164,12 @@ msgid "Stretch to fill the complete screen"
 msgstr "Egokitu pantaila osoa betetzeko"
 
 #: ../data/ui/pref.glade.h:1
-#, fuzzy
 msgid "Open in current tab"
 msgstr "Ireki uneko fitxan"
 
 #: ../data/ui/pref.glade.h:2
-#, fuzzy
 msgid "Open in new tab"
-msgstr "Ireki fitxa _berrian"
+msgstr "Ireki fitxa berrian"
 
 #: ../data/ui/pref.glade.h:3
 #, fuzzy
@@ -333,12 +323,12 @@ msgstr "Erakutsi beti _fitxa-barra"
 
 #: ../data/ui/pref.glade.h:42
 msgid "_Maximum width of tab label:"
-msgstr ""
+msgstr "Fitxaren etiketaren zabalera _maximoa:"
 
 #. Use genitive case here, context is: width is XXX characters
 #: ../data/ui/pref.glade.h:44
 msgid "characters"
-msgstr ""
+msgstr "karaktere"
 
 #: ../data/ui/pref.glade.h:45
 msgid "<b>Directories Tree</b>"
@@ -353,12 +343,10 @@ msgid "<b>Show in Places:</b>"
 msgstr "<b>Erakutsi Lekuak-en:</b>"
 
 #: ../data/ui/pref.glade.h:48
-#, fuzzy
 msgid "_Home Folder"
-msgstr "Karpeta nagusia"
+msgstr "Karpeta _nagusia"
 
 #: ../data/ui/pref.glade.h:49
-#, fuzzy
 msgid "Des_ktop"
 msgstr "_Mahaigaina"
 
@@ -368,7 +356,7 @@ msgstr "_Zakarrontzia"
 
 #: ../data/ui/pref.glade.h:51
 msgid "_Filesystem Root"
-msgstr ""
+msgstr "_Fitxategi-sistemaren erroa"
 
 #: ../data/ui/pref.glade.h:52
 msgid "App_lications"
@@ -376,12 +364,11 @@ msgstr "_Aplikazioak"
 
 #: ../data/ui/pref.glade.h:53 ../src/main-win-ui.c:239
 msgid "Dev_ices"
-msgstr ""
+msgstr "_Gailuak"
 
 #: ../data/ui/pref.glade.h:54
-#, fuzzy
 msgid "_Network"
-msgstr "_Sareko unitateak"
+msgstr "_Sarea"
 
 #: ../data/ui/pref.glade.h:55
 msgid "_Layout"
@@ -411,9 +398,8 @@ msgstr ""
 "_Erakutsi gailu aldagarrientzat eskuragarri dauden aukerak hauek txertatzean"
 
 #: ../data/ui/pref.glade.h:61
-#, fuzzy
 msgid "_Remove selected"
-msgstr "elementu %d hautatuta"
+msgstr "_Kendu hautapena"
 
 #: ../data/ui/pref.glade.h:62
 msgid "_Open mounted removable media in new tab instead of new window"
@@ -464,9 +450,8 @@ msgid "A_rchiver integration:"
 msgstr "A_rtxibatzailearen integrazioa:"
 
 #: ../data/ui/pref.glade.h:74
-#, fuzzy
 msgid "<b>Templates</b>"
-msgstr "<b>Testua</b>"
+msgstr "<b>Txantiloiak</b>"
 
 #: ../data/ui/pref.glade.h:75
 msgid "S_how only user defined templates in menu"
@@ -481,9 +466,8 @@ msgid "Ru_n default application after creation from template"
 msgstr ""
 
 #: ../data/ui/pref.glade.h:78
-#, fuzzy
 msgid "<b>Other Options</b>"
-msgstr "<b>Erakutsi mahaigaineko ikonoak</b>"
+msgstr "<b>Beste aukerak</b>"
 
 #: ../data/ui/pref.glade.h:79
 #, fuzzy
@@ -1231,8 +1215,9 @@ msgid ""
 "Set mode of desktop wallpaper. MODE=(color|stretch|fit|crop|center|tile|"
 "screen)"
 msgstr ""
-"Ezarri mahaigaineko horma-paperaren modua. MODUA=(color|stretch|fit|center|"
-"tile) - > kolorea|egokitu|doitu|zentratu|lauza"
+"Ezarri mahaigaineko horma-paperaren modua. "
+"MODUA=(color|stretch|fit|center|tile) - > "
+"kolorea|egokitu|doitu|zentratu|lauza"
 
 #: ../src/pcmanfm.c:89
 msgid "MODE"
@@ -1267,7 +1252,11 @@ msgstr "ROLA"
 msgid "[FILE1, FILE2,...]"
 msgstr "[FITXATEGIA1, FITXATEGIA2,...]"
 
-#: ../src/pcmanfm.c:585
+#: ../src/pcmanfm.c:352
+msgid "Desktop manager is not active."
+msgstr ""
+
+#: ../src/pcmanfm.c:598
 msgid "Terminal emulator is not set."
 msgstr "Terminal-emuladorea ez dago ezarrita."
 
