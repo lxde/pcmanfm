@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PCManFM\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-01-22 00:33+0200\n"
-"PO-Revision-Date: 2014-01-26 10:49+0000\n"
-"Last-Translator: Julien <Julius22@laposte.net>\n"
+"PO-Revision-Date: 2014-03-25 17:35+0000\n"
+"Last-Translator: Pierre <lubuntu@pierregobin.fr>\n"
 "Language-Team: \n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1390733354.0\n"
+"X-POOTLE-MTIME: 1395768931.0\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2014"
@@ -527,7 +527,6 @@ msgid "Use path for \"Home Folder\" button:"
 msgstr "Utiliser le chemin suivant pour le bouton « Répertoire personnel » :"
 
 #: ../data/ui/pref.glade.h:86
-#, fuzzy
 msgid "_Use current"
 msgstr "_Utiliser actuel"
 
@@ -767,17 +766,14 @@ msgid "D_uplicate..."
 msgstr "D_upliquer..."
 
 #: ../src/main-win-ui.c:206
-#, fuzzy
 msgid "Create Lin_k..."
-msgstr "Créer un lien..."
+msgstr "Créer un _lien..."
 
 #: ../src/main-win-ui.c:207
-#, fuzzy
 msgid "_Move to..."
 msgstr "Déplacer _vers..."
 
 #: ../src/main-win-ui.c:208
-#, fuzzy
 msgid "Copy to_..."
 msgstr "C_opier vers..."
 
@@ -820,18 +816,16 @@ msgstr "_Panneau latéral"
 # Il manque l'indication du caractère pour le raccourci clavier
 #. other see below: 'ShowHidden' 'ShowStatus' 'Fullscreen' 'IconView'...
 #: ../src/main-win-ui.c:219
-#, fuzzy
 msgid "Fo_lder View Mode"
-msgstr "Mode de vue en répertoires"
+msgstr "M_ode de vue du répertoire"
 
 #: ../src/main-win-ui.c:220
 msgid "S_ort Files"
 msgstr "_Trier les fichiers"
 
 #: ../src/main-win-ui.c:222
-#, fuzzy
 msgid "Zoom O_ut"
-msgstr "Dézoomer"
+msgstr "Zoom a_rrière"
 
 #: ../src/main-win-ui.c:225
 msgid "Fil_ter..."
@@ -914,18 +908,16 @@ msgid "Go to list of devices connected to the computer"
 msgstr "Aller à la liste des appareils connectés à l'ordinateur"
 
 #: ../src/main-win-ui.c:240
-#, fuzzy
 msgid "Net_work"
-msgstr "Réseau"
+msgstr "_Réseau"
 
 #: ../src/main-win-ui.c:240
 msgid "Go to list of places on the network"
 msgstr "Aller à la liste des emplacements sur le réseau"
 
 #: ../src/main-win-ui.c:241
-#, fuzzy
 msgid "_Go to Location..."
-msgstr "Aller à l'emplacement..."
+msgstr "A_ller à l'emplacement..."
 
 #: ../src/main-win-ui.c:242
 msgid "_Connect to Server..."
@@ -969,9 +961,8 @@ msgid "Open search dialog"
 msgstr "Ouvrir la boîte de dialogue de recherche"
 
 #: ../src/main-win-ui.c:252
-#, fuzzy
 msgid "_Run a Command in Current Folder..."
-msgstr "Actualiser le dossier"
+msgstr "Lancer une _commande dans le dossier courant"
 
 #. Note to translators: "Mingle..." means "Do not put folders before files" but make the translation as short as possible, please!
 #: ../src/main-win-ui.c:267
@@ -983,7 +974,6 @@ msgid "_Ignore Name Case"
 msgstr "_Ignorer la casse des noms"
 
 #: ../src/main-win-ui.c:272
-#, fuzzy
 msgid "Sho_w Hidden"
 msgstr "Afficher les fichiers _cachés"
 
@@ -1004,14 +994,12 @@ msgid "_Show Toolbar"
 msgstr "Afficher la barre d'outil_s"
 
 #: ../src/main-win-ui.c:278
-#, fuzzy
 msgid "Show 'New _Window' Button"
-msgstr "Afficher le bouton « Nouvelle fenêtre »"
+msgstr "Afficher le bouton « Nouvelle _fenêtre »"
 
 #: ../src/main-win-ui.c:279
-#, fuzzy
 msgid "Show 'New _Tab' Button"
-msgstr "Afficher le bouton « Nouvel onglet »"
+msgstr "Afficher le bouton « Nouvel _onglet »"
 
 #: ../src/main-win-ui.c:280
 msgid "Show _Navigation Buttons"
@@ -1031,9 +1019,8 @@ msgid "Show Status B_ar"
 msgstr "Afficher la barre d'ét_at"
 
 #: ../src/main-win-ui.c:284
-#, fuzzy
 msgid "_Dual Pane Mode"
-msgstr "Mode panneau do_uble"
+msgstr "Mode panneau _double"
 
 #: ../src/main-win-ui.c:284
 msgid "Show two panels with folder views"
@@ -1185,10 +1172,9 @@ msgid "Select filter"
 msgstr "Sélectionner un filtre"
 
 #: ../src/main-win.c:2553
-#, fuzzy
 msgid "Choose a new shell pattern to show files:"
 msgstr ""
-"Choisissez un nouveau patron d'invite de commande pour montrer les fichiers "
+"Choisissez un nouveau modèle d'invite de commande pour montrer les fichiers "
 ":"
 
 #. options only acceptable by first pcmanfm instance. These options are not passed through IPC
