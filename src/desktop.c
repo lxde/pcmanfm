@@ -2048,6 +2048,19 @@ static void paint_rubber_banding_rect(FmDesktop* self, cairo_t* cr, GdkRectangle
     cairo_restore(cr);
 }
 
+static void _free_cache_image(FmBackgroundCache *cache)
+{
+#if GTK_CHECK_VERSION(3, 0, 0)
+    XFreePixmap(cairo_xlib_surface_get_display(cache->bg),
+                cairo_xlib_surface_get_drawable(cache->bg));
+    cairo_surface_destroy(cache->bg);
+#else
+    g_object_unref(cache->bg);
+#endif
+    cache->bg = NULL;
+    cache->wallpaper_mode = FM_WP_COLOR; /* for cache check */
+}
+
 static void update_background(FmDesktop* desktop, int is_it)
 {
     GtkWidget* widget = (GtkWidget*)desktop;
@@ -2086,6 +2099,7 @@ static void update_background(FmDesktop* desktop, int is_it)
                 desktop->conf.wallpapers[cur_desktop] = NULL;
                 desktop->conf.wallpapers_configured = cur_desktop + 1;
             }
+            /* FIXME: free old image if it's not used anymore */
             g_free(desktop->conf.wallpapers[cur_desktop]);
             desktop->conf.wallpapers[cur_desktop] = g_strdup(wallpaper);
         }
@@ -2119,6 +2133,7 @@ static void update_background(FmDesktop* desktop, int is_it)
         }
     }
     else
+        /* FIXME: free old image if it's not used anymore */
         wallpaper = desktop->conf.wallpaper;
 
     if(desktop->conf.wallpaper_mode != FM_WP_COLOR && wallpaper && *wallpaper)
@@ -2140,14 +2155,7 @@ static void update_background(FmDesktop* desktop, int is_it)
             if(cache)
             {
                 /* the same file but mode was changed */
-#if GTK_CHECK_VERSION(3, 0, 0)
-                XFreePixmap(cairo_xlib_surface_get_display(cache->bg),
-                            cairo_xlib_surface_get_drawable(cache->bg));
-                cairo_surface_destroy(cache->bg);
-#else
-                g_object_unref(cache->bg);
-#endif
-                cache->bg = NULL;
+                _free_cache_image(cache);
             }
             else if(desktop->cache)
             {
@@ -2446,13 +2454,7 @@ static void _clear_bg_cache(FmDesktop *self)
         FmBackgroundCache *bg = self->cache;
 
         self->cache = bg->next;
-#if GTK_CHECK_VERSION(3, 0, 0)
-        XFreePixmap(cairo_xlib_surface_get_display(bg->bg),
-                    cairo_xlib_surface_get_drawable(bg->bg));
-        cairo_surface_destroy(bg->bg);
-#else
-        g_object_unref(bg->bg);
-#endif
+        _free_cache_image(bg);
         g_free(bg->filename);
         g_free(bg);
     }
