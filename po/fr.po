@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PCManFM\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-01-22 00:33+0200\n"
-"PO-Revision-Date: 2014-03-25 17:35+0000\n"
-"Last-Translator: Pierre <lubuntu@pierregobin.fr>\n"
+"PO-Revision-Date: 2014-04-02 07:55+0000\n"
+"Last-Translator: DDZ <drole2zebre57@yahoo.fr>\n"
 "Language-Team: \n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1395768931.0\n"
+"X-POOTLE-MTIME: 1396425359.0\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2014"
@@ -44,7 +44,7 @@ msgstr "<b>Arrière-plan</b>"
 
 #: ../data/ui/desktop-pref.glade.h:3
 msgid "Wallpaper _mode:"
-msgstr "_Positionnement du fond d’écran :"
+msgstr "_Mode d'affichage du fond d'écran :"
 
 #: ../data/ui/desktop-pref.glade.h:4
 msgid "_Wallpaper:"
@@ -89,7 +89,7 @@ msgstr "<b>Afficher les icônes du bureau</b>"
 # Il manque l'indication du caractère de raccourci clavier en français
 #: ../data/ui/desktop-pref.glade.h:14
 msgid "_Show \"Documents\" folder on the desktop"
-msgstr "Afficher le répertoire « Mes documents » _sur le bureau"
+msgstr "Afficher le dossier « Mes documents » _sur le bureau"
 
 # Il manque l'indication du caractère de raccourci clavier en français
 #: ../data/ui/desktop-pref.glade.h:15
@@ -98,11 +98,11 @@ msgstr "Afficher le répertoire « Appareils » sur le bureau"
 
 #: ../data/ui/desktop-pref.glade.h:16
 msgid "Show \"_Trash Can\" folder on the desktop"
-msgstr "Afficher le réper_toire « Corbeille » sur le bureau"
+msgstr "Afficher la « Corbeille » sur le bureau"
 
 #: ../data/ui/desktop-pref.glade.h:17
 msgid "S_how connected volumes on the desktop"
-msgstr "Affic_her les volumes connectés sur le bureau"
+msgstr "Affic_her les volumes montés sur le bureau"
 
 #: ../data/ui/desktop-pref.glade.h:18
 msgid "_Desktop Icons"
@@ -132,11 +132,11 @@ msgstr "Personnalisé :"
 
 #: ../data/ui/desktop-pref.glade.h:23
 msgid "Select a Desktop Folder"
-msgstr "Sélectionnez un répertoire de bureau"
+msgstr "Sélectionnez un dossier de bureau"
 
 #: ../data/ui/desktop-pref.glade.h:24
 msgid "_Open folders from desktop in new window"
-msgstr "Depuis le bureau, _ouvrir les répertoires dans une nouvelle fenêtre"
+msgstr "_Ouvrir les dossiers provenant du bureau dans une nouvelle fenêtre"
 
 #: ../data/ui/desktop-pref.glade.h:25
 msgid "Ad_vanced"
@@ -239,7 +239,7 @@ msgstr "Action de glissement par défau_t :"
 #: ../data/ui/pref.glade.h:15
 msgid "\"_Smart shortcut\" auto-action on drop to Desktop folder"
 msgstr ""
-"Action automatique « Raccourci _intelligent » au dépôt dans le répertoire de "
+"Action automatique « raccourci _intelligent » au dépôt dans le dossier de "
 "bureau"
 
 #: ../data/ui/pref.glade.h:16
@@ -250,13 +250,14 @@ msgid ""
 "- other files (e.g. on removable media) will be copied\n"
 "- for some external URI a shortcut will be created"
 msgstr ""
-"Si activé, l'action « Auto. » sur dépôt de fichier vers le répertoire de "
-"bureau sera alors :\n"
-" - pour des fichiers directement dans le répertoire personnel, un lien "
+"Si activé, l'action « Auto. » sur dépôt de fichier vers le dossier de bureau "
+"sera alors :\n"
+" - pour des fichiers directement dans le dossier personnel, un lien "
 "symbolique sera créé ;\n"
 " - des fichiers sur le même système de fichiers seront déplacés ;\n"
 " - les autres fichiers (par ex. sur un support amovible) seront copiés ;\n"
-" - pour certains URI externes, un raccourci sera créé."
+" - pour certains identificateurs universels (URI) externes, un raccourci "
+"sera créé."
 
 # Il manque l'indication du caractère pour le raccourci clavier
 #: ../data/ui/pref.glade.h:21
@@ -265,7 +266,7 @@ msgstr "Déplier l'onglet lorsque des fichiers sont glissés sur son bouton"
 
 #: ../data/ui/pref.glade.h:22
 msgid "_Focus previous folder after coming to its parent"
-msgstr "_Sélectionner le répertoire précédent après s'être déplacé à son parent"
+msgstr "_Sélectionner le dossier parent aussitôt après y être allé"
 
 #: ../data/ui/pref.glade.h:23
 msgid "<b>Default View</b>"
@@ -428,7 +429,7 @@ msgstr ""
 
 #: ../data/ui/pref.glade.h:60
 msgid "Do_n't show available options for those media types:"
-msgstr "_Ne pas afficher les options disponibles pour ces types de médias :"
+msgstr "_Ne pas afficher les options disponibles pour ces types de supports :"
 
 #: ../data/ui/pref.glade.h:61
 msgid "_Remove selected"
@@ -450,7 +451,7 @@ msgstr "F_ermer l'onglet du support amovible"
 
 #: ../data/ui/pref.glade.h:65
 msgid "Change folder in the tab to _Home Folder"
-msgstr "C_hanger le répertoire dans l'onglet pour le répertoire personnel"
+msgstr "C_hanger le dossier dans l'onglet pour le dossier personnel"
 
 #: ../data/ui/pref.glade.h:66
 msgid "_Volume Management"
@@ -520,11 +521,11 @@ msgstr ""
 
 #: ../data/ui/pref.glade.h:82
 msgid "D_efer test for content type on folder loading"
-msgstr "Différ_er le test de type de contenu au chargement de répertoire"
+msgstr "Différ_er la vérification du type de contenu au chargement du dossier"
 
 #: ../data/ui/pref.glade.h:83
 msgid "Use path for \"Home Folder\" button:"
-msgstr "Utiliser le chemin suivant pour le bouton « Répertoire personnel » :"
+msgstr "Utiliser le chemin suivant pour le bouton « dossier personnel » :"
 
 #: ../data/ui/pref.glade.h:86
 msgid "_Use current"
@@ -540,7 +541,7 @@ msgstr "<b>Ne pas charger les mo_dules correspondant à :</b>"
 
 #: ../data/ui/pref.glade.h:89
 msgid "<b>_Load these modules anyway:</b>"
-msgstr "<b>Charger ces modu_les de toute façon :</b>"
+msgstr "<b>Charger ces modu_les quand même :</b>"
 
 #: ../data/ui/pref.glade.h:90
 msgid "Modules"
@@ -566,19 +567,19 @@ msgstr "Demander"
 
 #: ../data/ui/pref.glade.h:95
 msgid "Icon view"
-msgstr "Vue en icônes"
+msgstr "Icônes"
 
 #: ../data/ui/pref.glade.h:96
 msgid "Compact view"
-msgstr "Vue compacte"
+msgstr "Compact"
 
 #: ../data/ui/pref.glade.h:97
 msgid "Thumbnail view"
-msgstr "Vue en miniatures"
+msgstr "Miniatures"
 
 #: ../data/ui/pref.glade.h:98
 msgid "Detailed list view"
-msgstr "Vue en liste détaillée"
+msgstr "Liste détaillée"
 
 #: ../data/ui/autorun.glade.h:1
 msgid "Removable medium is inserted"
@@ -602,7 +603,7 @@ msgstr "Veuillez sélectionner l’action à effectuer :"
 
 #: ../data/ui/autorun.glade.h:6
 msgid "_Always perform this action on this media type"
-msgstr "Toujours effectuer cette _action avec ce type de médias"
+msgstr "Toujours effectuer cette _action avec ce type de supports"
 
 #: ../data/ui/connect.glade.h:1
 msgid "Connect to remote server"
@@ -610,7 +611,7 @@ msgstr "Se connecter à un serveur distant"
 
 #: ../data/ui/connect.glade.h:2
 msgid "<b>Specify remote folder to connect</b>"
-msgstr "<b>Spécifier le répertoire distant auquel se connecter</b>"
+msgstr "<b>Spécifier le dossier distant auquel se connecter</b>"
 
 #: ../data/ui/connect.glade.h:3
 msgid "_Type:"
@@ -630,11 +631,11 @@ msgstr "Ch_emin :"
 
 #: ../data/ui/connect.glade.h:7
 msgid "_Anonymous login"
-msgstr "Identification _anonyme"
+msgstr "Connexion _anonyme"
 
 #: ../data/ui/connect.glade.h:8
 msgid "_Login as:"
-msgstr "S'_identifier comme :"
+msgstr "Se connecter en _tant que :"
 
 #: ../data/ui/connect.glade.h:9
 msgid "SSH"
@@ -678,7 +679,7 @@ msgstr "_Retirer du bureau"
 
 #: ../src/desktop-ui.c:85
 msgid "Stic_k to Current Position"
-msgstr "Blo_quer à la position courante"
+msgstr "Blo_quer à la position actuelle"
 
 #: ../src/desktop-ui.c:90
 msgid "Snap to _Grid"
@@ -849,7 +850,7 @@ msgstr "Dossier _précédent"
 
 #: ../src/main-win-ui.c:231
 msgid "Return to previous folder in history"
-msgstr "Retourner au répertoire précédent dans l'historique"
+msgstr "Retourner au dossier précédent dans l'historique"
 
 #: ../src/main-win-ui.c:232
 msgid "_Next Folder"
@@ -950,7 +951,7 @@ msgstr "Outi_ls"
 
 #: ../src/main-win-ui.c:247
 msgid "Open Current Folder in _Terminal"
-msgstr "Ouvrir le dossier courant dans un _terminal"
+msgstr "Ouvrir le dossier actuel dans un _terminal"
 
 #: ../src/main-win-ui.c:249
 msgid "Fin_d Files..."
@@ -1032,19 +1033,19 @@ msgstr "_Mode plein écran"
 
 #: ../src/main-win-ui.c:291
 msgid "_Icon View"
-msgstr "Vue en _icônes"
+msgstr "_Icônes"
 
 #: ../src/main-win-ui.c:292
 msgid "_Compact View"
-msgstr "Vue _compacte"
+msgstr "_Compact"
 
 #: ../src/main-win-ui.c:293
 msgid "_Thumbnail View"
-msgstr "Vue en _miniatures"
+msgstr "_Miniatures"
 
 #: ../src/main-win-ui.c:294
 msgid "Detailed _List View"
-msgstr "Vue en _liste détaillée"
+msgstr "_Liste détaillée"
 
 #: ../src/main-win-ui.c:307 ../src/main-win-ui.c:315
 msgid "By _Name"
@@ -1201,7 +1202,7 @@ msgstr "Lancer le gestionnaire de bureau"
 
 #: ../src/pcmanfm.c:84
 msgid "Turn off desktop manager if it's running"
-msgstr "Fermer le gestionnaire de bureau s’il est en cours de fonctionnement"
+msgstr "Fermer le gestionnaire de bureau s’il est en cours d'utilisation"
 
 #: ../src/pcmanfm.c:85
 msgid "Open desktop preference dialog"
@@ -1213,7 +1214,7 @@ msgstr "Utiliser l'option --desktop pour un seul écran"
 
 #: ../src/pcmanfm.c:87
 msgid "Set desktop wallpaper from image FILE"
-msgstr "Sélectionner un fond d’écran depuis une image"
+msgstr "Sélectionner un fond d’écran à partir d'une image"
 
 #: ../src/pcmanfm.c:87
 msgid "FILE"
