@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-01-22 00:33+0200\n"
-"PO-Revision-Date: 2014-01-31 07:45+0000\n"
+"PO-Revision-Date: 2014-04-06 06:59+0000\n"
 "Last-Translator: wwycheuk <wwycheuk@gmail.com>\n"
 "Language-Team: zh_TW <zh_TW@li.org>\n"
 "Language: zh_TW\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Pootle 2.5.0\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-POOTLE-MTIME: 1391154319.0\n"
+"X-POOTLE-MTIME: 1396767553.0\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2014"
@@ -492,14 +492,12 @@ msgid "_Advanced"
 msgstr "進階(_A)"
 
 #: ../data/ui/pref.glade.h:88
-#, fuzzy
 msgid "<b>_Do not load modules matching:</b>"
-msgstr "<b>不載入匹配以下模式的模組：</b>"
+msgstr "<b>不載入匹配以下模式的模組(_D)：</b>"
 
 #: ../data/ui/pref.glade.h:89
-#, fuzzy
 msgid "<b>_Load these modules anyway:</b>"
-msgstr "<b>強制載入這些模組：</b>"
+msgstr "<b>強制載入這些模組(_L)：</b>"
 
 #: ../data/ui/pref.glade.h:90
 msgid "Modules"
@@ -842,9 +840,8 @@ msgid "_Desktop"
 msgstr "桌面(_D)"
 
 #: ../src/main-win-ui.c:235
-#, fuzzy
 msgid "Go to desktop folder"
-msgstr "到上層資料夾"
+msgstr "到桌面資料夾"
 
 #: ../src/main-win-ui.c:236
 msgid "Open trash can"
@@ -932,7 +929,7 @@ msgstr "在目前的資料夾執行指令(_R)..."
 #. Note to translators: "Mingle..." means "Do not put folders before files" but make the translation as short as possible, please!
 #: ../src/main-win-ui.c:267
 msgid "Mingle _Files and Folders"
-msgstr ""
+msgstr "混同檔案及資料夾(_F)"
 
 #: ../src/main-win-ui.c:270
 msgid "_Ignore Name Case"
