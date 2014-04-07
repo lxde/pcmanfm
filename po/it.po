@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm 1.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-09 09:41+0100\n"
-"PO-Revision-Date: 2013-11-14 18:11+0000\n"
+"POT-Creation-Date: 2014-01-22 00:33+0200\n"
+"PO-Revision-Date: 2014-04-07 17:31+0000\n"
 "Last-Translator: Daniele <daniele@forsi.it>\n"
 "Language-Team: Italian <debian-l10n-italian@lists.debian.org>\n"
 "Language: it\n"
@@ -17,12 +17,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1384452687.0\n"
+"X-POOTLE-MTIME: 1396891910.0\n"
 
 #: ../data/ui/about.glade.in.h:1
-#, fuzzy
 msgid "Copyright (C) 2009 - 2014"
-msgstr "Copyright © 2009 - 2013"
+msgstr "Copyright © 2009 - 2014"
 
 #. Please replace this line with your own names, one name per line.
 #: ../data/ui/about.glade.in.h:3
@@ -85,24 +84,20 @@ msgid "<b>Show desktop icons</b>"
 msgstr "<b>Mostra icone sulla scrivania</b>"
 
 #: ../data/ui/desktop-pref.glade.h:14
-#, fuzzy
 msgid "_Show \"Documents\" folder on the desktop"
-msgstr "Mo_stra l'icona «Documenti» sulla scrivania"
+msgstr "Mo_stra la cartella «Documenti» sulla scrivania"
 
 #: ../data/ui/desktop-pref.glade.h:15
-#, fuzzy
 msgid "Sho_w \"Devices\" folder on the desktop"
-msgstr "Mo_stra l'icona «Dispositivi» sulla scrivania"
+msgstr "Mostra la cartella «Dispositi_vi» sulla scrivania"
 
 #: ../data/ui/desktop-pref.glade.h:16
-#, fuzzy
 msgid "Show \"_Trash Can\" folder on the desktop"
-msgstr "Mostra l'icona «Ces_tino» sulla scrivania"
+msgstr "Mostra la cartella «Ces_tino» sulla scrivania"
 
 #: ../data/ui/desktop-pref.glade.h:17
-#, fuzzy
 msgid "S_how connected volumes on the desktop"
-msgstr "Mostra _icone dei volumi sulla scrivania"
+msgstr "Mostra i _volumi connessi sulla scrivania"
 
 #: ../data/ui/desktop-pref.glade.h:18
 msgid "_Desktop Icons"
@@ -116,26 +111,26 @@ msgstr ""
 #: ../data/ui/desktop-pref.glade.h:20
 msgid "_Use desktop as a folder (show icons on it) by path:"
 msgstr ""
+"_Usa la scrivania come una cartella (visualizza le icone) in base al "
+"percorso:"
 
 #: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:84
 msgctxt "Use path for some folder: ..."
 msgid "Default"
-msgstr ""
+msgstr "Predefinito"
 
 #: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:85
 msgctxt "Use path for some folder: ..."
 msgid "Custom:"
-msgstr ""
+msgstr "Personalizzato:"
 
 #: ../data/ui/desktop-pref.glade.h:23
-#, fuzzy
 msgid "Select a Desktop Folder"
-msgstr "Cartella scrivania"
+msgstr "Scegli una cartella per la scrivania"
 
 #: ../data/ui/desktop-pref.glade.h:24
-#, fuzzy
 msgid "_Open folders from desktop in new window"
-msgstr "Apri in una nuova finestra"
+msgstr "Apri le cartelle dalla scrivania in una nu_ova finestra"
 
 #: ../data/ui/desktop-pref.glade.h:25
 msgid "Ad_vanced"
@@ -146,47 +141,39 @@ msgid "Fill with background color only"
 msgstr "Riempi solo con il colore di sfondo"
 
 #: ../data/ui/desktop-pref.glade.h:27
-#, fuzzy
 msgid "Stretch to fill the entire monitor area"
-msgstr "Allarga per riempire l'intero schermo"
+msgstr "Allarga per riempire tutto lo schermo"
 
 #: ../data/ui/desktop-pref.glade.h:28
-#, fuzzy
 msgid "Stretch to fit the monitor area"
-msgstr "Allarga per adattare allo schermo"
+msgstr "Restringi per far entrare tutto nello schermo"
 
 #: ../data/ui/desktop-pref.glade.h:29
 msgid "Center unscaled image on the monitor"
-msgstr ""
+msgstr "Centra l'immagine non ridimensionata nello schermo"
 
 #: ../data/ui/desktop-pref.glade.h:30
-#, fuzzy
 msgid "Tile the image to fill the entire monitor area"
-msgstr "Ripeti l'immagine per riempire l'intero schermo"
+msgstr "Ripeti l'immagine per riempire tutto lo schermo"
 
 #: ../data/ui/desktop-pref.glade.h:31
-#, fuzzy
 msgid "Stretch and crop to fill the monitor area"
-msgstr "Allarga per riempire l'intero schermo"
+msgstr "Restringi e ritaglia per riempire tutto lo schermo"
 
 #: ../data/ui/desktop-pref.glade.h:32
-#, fuzzy
 msgid "Stretch to fill the complete screen"
-msgstr "Allarga per riempire l'intero schermo"
+msgstr "Allarga per riempire tutto lo schermo"
 
 # perferenze per l'apertura dei segnalibri
 #: ../data/ui/pref.glade.h:1
-#, fuzzy
 msgid "Open in current tab"
 msgstr "Apri nella scheda attuale"
 
 #: ../data/ui/pref.glade.h:2
-#, fuzzy
 msgid "Open in new tab"
-msgstr "Apri in una nuova _scheda"
+msgstr "Apri in una nuova scheda"
 
 #: ../data/ui/pref.glade.h:3
-#, fuzzy
 msgid "Open in new window"
 msgstr "Apri una nuova finestra"
 
@@ -319,9 +306,8 @@ msgid "Al_ways show full file names"
 msgstr "_Mostra sempre i nomi completi dei file"
 
 #: ../data/ui/pref.glade.h:38
-#, fuzzy
 msgid "Show icons of hidden _files shadowed"
-msgstr "Mostra ombreggiate le icone dei file di bac_kup"
+msgstr "Mostra ombreggiate le icone dei _file nascosti"
 
 #: ../data/ui/pref.glade.h:39
 msgid "_Display"
@@ -406,15 +392,12 @@ msgstr ""
 "Mo_stra opzioni disponibili per supporti rimovibili quando sono inseriti"
 
 #: ../data/ui/pref.glade.h:60
-#, fuzzy
 msgid "Do_n't show available options for those media types:"
-msgstr ""
-"Mo_stra opzioni disponibili per supporti rimovibili quando sono inseriti"
+msgstr "_Non mostrare le opzioni disponibili per questi tipi di supporto:"
 
 #: ../data/ui/pref.glade.h:61
-#, fuzzy
 msgid "_Remove selected"
-msgstr "%d elemento selezionato"
+msgstr "_Rimuovi selezionato"
 
 #: ../data/ui/pref.glade.h:62
 msgid "_Open mounted removable media in new tab instead of new window"
@@ -423,14 +406,12 @@ msgstr ""
 "finestre"
 
 #: ../data/ui/pref.glade.h:63
-#, fuzzy
 msgid "When removable medium unmounted:"
-msgstr "Un supporto rimovibile è stato inserito"
+msgstr "Quando un supporto rimovibile è smontato:"
 
 #: ../data/ui/pref.glade.h:64
-#, fuzzy
 msgid "Clos_e tab containing removable medium"
-msgstr "Chiudi sch_ede quando supporti rimovibili contenuti sono smontati"
+msgstr "Chiudi la sch_eda contenente il supporti rimovibile"
 
 #: ../data/ui/pref.glade.h:65
 msgid "Change folder in the tab to _Home Folder"
@@ -487,7 +468,6 @@ msgid "<b>Other Options</b>"
 msgstr "<b>Altre opzioni</b>"
 
 #: ../data/ui/pref.glade.h:79
-#, fuzzy
 msgid "Use Application Startup Notify _by default"
 msgstr "_Usa Application Startup Notify in maniera predefinita"
 
@@ -511,7 +491,7 @@ msgstr ""
 
 #: ../data/ui/pref.glade.h:86
 msgid "_Use current"
-msgstr ""
+msgstr "_Usa attuale"
 
 #: ../data/ui/pref.glade.h:87
 msgid "_Advanced"
@@ -519,15 +499,15 @@ msgstr "_Avanzate"
 
 #: ../data/ui/pref.glade.h:88
 msgid "<b>_Do not load modules matching:</b>"
-msgstr ""
+msgstr "<b>Non caricare i moduli che corrispon_dono a:</b>"
 
 #: ../data/ui/pref.glade.h:89
 msgid "<b>_Load these modules anyway:</b>"
-msgstr ""
+msgstr "<b>Carica questi modu_li in ogni caso:</b>"
 
 #: ../data/ui/pref.glade.h:90
 msgid "Modules"
-msgstr ""
+msgstr "Moduli"
 
 #: ../data/ui/pref.glade.h:91
 msgid "Auto (move if on the same FS, copy otherwise)"
@@ -546,22 +526,18 @@ msgid "Ask"
 msgstr "Chiedi"
 
 #: ../data/ui/pref.glade.h:95
-#, fuzzy
 msgid "Icon view"
 msgstr "Vista icone"
 
 #: ../data/ui/pref.glade.h:96
-#, fuzzy
 msgid "Compact view"
 msgstr "Vista compatta"
 
 #: ../data/ui/pref.glade.h:97
-#, fuzzy
 msgid "Thumbnail view"
 msgstr "Vista anteprime"
 
 #: ../data/ui/pref.glade.h:98
-#, fuzzy
 msgid "Detailed list view"
 msgstr "Vista lista dettagliata"
 
@@ -587,60 +563,59 @@ msgstr "Per favore scegli l'azione che vuoi effettuare:"
 
 #: ../data/ui/autorun.glade.h:6
 msgid "_Always perform this action on this media type"
-msgstr ""
+msgstr "Esegui sempre questa _azione su questo media type"
 
 #: ../data/ui/connect.glade.h:1
 msgid "Connect to remote server"
-msgstr ""
+msgstr "Connetti a un server remoto"
 
 #: ../data/ui/connect.glade.h:2
 msgid "<b>Specify remote folder to connect</b>"
-msgstr ""
+msgstr "<b>Specifica la cartella remota a cui connettersi</b>"
 
 #: ../data/ui/connect.glade.h:3
 msgid "_Type:"
-msgstr ""
+msgstr "_Tipo:"
 
 #: ../data/ui/connect.glade.h:4
 msgid "_Host:"
-msgstr ""
+msgstr "_Host:"
 
 #: ../data/ui/connect.glade.h:5
 msgid "_Port:"
-msgstr ""
+msgstr "_Porta:"
 
 #: ../data/ui/connect.glade.h:6
 msgid "Pa_th:"
-msgstr ""
+msgstr "Percors_o:"
 
 #: ../data/ui/connect.glade.h:7
 msgid "_Anonymous login"
-msgstr ""
+msgstr "_Accesso anonimo"
 
 #: ../data/ui/connect.glade.h:8
 msgid "_Login as:"
-msgstr ""
+msgstr "A_ccesso come:"
 
 #: ../data/ui/connect.glade.h:9
 msgid "SSH"
-msgstr ""
+msgstr "SSH"
 
 #: ../data/ui/connect.glade.h:10
 msgid "FTP"
-msgstr ""
+msgstr "FTP"
 
 #: ../data/ui/connect.glade.h:11
 msgid "WebDAV"
-msgstr ""
+msgstr "WebDAV"
 
 #: ../src/volume-manager.c:237
 msgid "mixed content"
-msgstr ""
+msgstr "contenuto misto"
 
 #: ../src/volume-manager.c:246
-#, fuzzy
 msgid "removable disk"
-msgstr "Disco rimovibile"
+msgstr "disco rimovibile"
 
 #: ../src/volume-manager.c:302
 msgid "Open in File Manager"
@@ -660,7 +635,7 @@ msgstr "Apri nel _terminale"
 
 #: ../src/desktop-ui.c:68
 msgid "_Remove from Desktop"
-msgstr ""
+msgstr "_Rimuovi dalla scrivania"
 
 #: ../src/desktop-ui.c:85
 msgid "Stic_k to Current Position"
@@ -717,7 +692,7 @@ msgstr "File vuoto"
 
 #: ../src/main-win-ui.c:193
 msgid "Folder Propertie_s"
-msgstr ""
+msgstr "Propri_età cartella"
 
 #: ../src/main-win-ui.c:194
 msgid "_Close Tab"
@@ -733,43 +708,39 @@ msgstr "_Modifica"
 
 #: ../src/main-win-ui.c:198
 msgid "C_ut"
-msgstr ""
+msgstr "_Taglia"
 
 #: ../src/main-win-ui.c:201
 msgid "Move to _Trash"
-msgstr ""
+msgstr "_Sposta nel cestino"
 
 #: ../src/main-win-ui.c:203
 msgid "Copy Pat_h(s)"
-msgstr ""
+msgstr "Copia p_ercorsi"
 
 #: ../src/main-win-ui.c:204
-#, fuzzy
 msgid "R_ename..."
-msgstr "_Rinomina"
+msgstr "_Rinomina..."
 
 #: ../src/main-win-ui.c:205
 msgid "D_uplicate..."
-msgstr ""
+msgstr "D_uplica..."
 
 #: ../src/main-win-ui.c:206
-#, fuzzy
 msgid "Create Lin_k..."
-msgstr "Crea _nuovo..."
+msgstr "Crea collegamen_to..."
 
 #: ../src/main-win-ui.c:207
-#, fuzzy
 msgid "_Move to..."
 msgstr "S_posta in..."
 
 #: ../src/main-win-ui.c:208
-#, fuzzy
 msgid "Copy to_..."
 msgstr "C_opia in..."
 
 #: ../src/main-win-ui.c:209
 msgid "Propertie_s"
-msgstr ""
+msgstr "_Proprietà"
 
 #: ../src/main-win-ui.c:211
 msgid "_Invert Selection"
@@ -792,13 +763,12 @@ msgid "Reload current folder"
 msgstr "Ricarica la cartella corrente"
 
 #: ../src/main-win-ui.c:215
-#, fuzzy
 msgid "Tool_bar"
 msgstr "_Strumenti"
 
 #: ../src/main-win-ui.c:216
 msgid "Pat_h Bar"
-msgstr ""
+msgstr "_Barra del percorso"
 
 #: ../src/main-win-ui.c:217
 msgid "Side _Pane"
@@ -806,9 +776,8 @@ msgstr "Ri_quadro laterale"
 
 #. other see below: 'ShowHidden' 'ShowStatus' 'Fullscreen' 'IconView'...
 #: ../src/main-win-ui.c:219
-#, fuzzy
 msgid "Fo_lder View Mode"
-msgstr "Modalità _vista:"
+msgstr "Moda_lità vista cartella"
 
 #: ../src/main-win-ui.c:220
 msgid "S_ort Files"
@@ -816,11 +785,11 @@ msgstr "_Ordina file"
 
 #: ../src/main-win-ui.c:222
 msgid "Zoom O_ut"
-msgstr ""
+msgstr "Rid_uci ingrandimento"
 
 #: ../src/main-win-ui.c:225
 msgid "Fil_ter..."
-msgstr ""
+msgstr "Fil_tro..."
 
 #: ../src/main-win-ui.c:227
 msgid "_Help"
@@ -909,11 +878,11 @@ msgstr "Va all'elenco delle destinazioni nella rete"
 
 #: ../src/main-win-ui.c:241
 msgid "_Go to Location..."
-msgstr ""
+msgstr "Vai alla posi_zione..."
 
 #: ../src/main-win-ui.c:242
 msgid "_Connect to Server..."
-msgstr ""
+msgstr "_Connetti al server..."
 
 #: ../src/main-win-ui.c:242
 msgid "Open a window to choose remote folder location"
@@ -928,9 +897,8 @@ msgid "_Bookmarks"
 msgstr "S_egnalibri"
 
 #: ../src/main-win-ui.c:245
-#, fuzzy
 msgid "_Add to Bookmarks..."
-msgstr "A_ggiungi ai segnalibri"
+msgstr "A_ggiungi ai segnalibri..."
 
 #: ../src/main-win-ui.c:245
 msgid "Add current folder to bookmarks list"
@@ -938,7 +906,7 @@ msgstr "Aggiunge la cartella corrente all'elenco dei segnalibri"
 
 #: ../src/main-win-ui.c:246
 msgid "Too_ls"
-msgstr ""
+msgstr "_Strumenti"
 
 #: ../src/main-win-ui.c:247
 msgid "Open Current Folder in _Terminal"
@@ -946,37 +914,34 @@ msgstr "Apri cartella corrente nel _terminale"
 
 # Nautilus usa _Search for files->C_erca file...
 #: ../src/main-win-ui.c:249
-#, fuzzy
 msgid "Fin_d Files..."
-msgstr "C_erca file"
+msgstr "C_erca file..."
 
 #: ../src/main-win-ui.c:249
 msgid "Open search dialog"
 msgstr "Apre la finestra di dialogo delle ricerche"
 
 #: ../src/main-win-ui.c:252
-#, fuzzy
 msgid "_Run a Command in Current Folder..."
-msgstr "Ricarica la cartella corrente"
+msgstr "Esegui un comando nella ca_rtella corrente..."
 
 #. Note to translators: "Mingle..." means "Do not put folders before files" but make the translation as short as possible, please!
 #: ../src/main-win-ui.c:267
 msgid "Mingle _Files and Folders"
-msgstr ""
+msgstr "Mescola _file e cartelle"
 
 #: ../src/main-win-ui.c:270
 msgid "_Ignore Name Case"
-msgstr ""
+msgstr "_Ignora maiuscole/minuscole"
 
 #: ../src/main-win-ui.c:272
-#, fuzzy
 msgid "Sho_w Hidden"
 msgstr "Mostra _nascosti"
 
 #. Note to translators: this save is meant for folder's settings such as sort
 #: ../src/main-win-ui.c:274
 msgid "Preserve This Folder's Settings"
-msgstr ""
+msgstr "Ricorda impostazioni cartella"
 
 #: ../src/main-win-ui.c:275
 msgid ""
@@ -985,23 +950,23 @@ msgstr ""
 
 #: ../src/main-win-ui.c:277
 msgid "_Show Toolbar"
-msgstr ""
+msgstr "Mo_stra barra strumenti"
 
 #: ../src/main-win-ui.c:278
 msgid "Show 'New _Window' Button"
-msgstr ""
+msgstr "Mostra pulsante «Nuova _finestra»"
 
 #: ../src/main-win-ui.c:279
 msgid "Show 'New _Tab' Button"
-msgstr ""
+msgstr "Mostra pulsante «Nuova sc_heda»"
 
 #: ../src/main-win-ui.c:280
 msgid "Show _Navigation Buttons"
-msgstr ""
+msgstr "Mostra i pulsanti di _navigazione"
 
 #: ../src/main-win-ui.c:281
 msgid "Show '_Home' Button"
-msgstr ""
+msgstr "Mostra pulsante «_Home»"
 
 #: ../src/main-win-ui.c:282
 msgid "Sho_w Side Pane"
@@ -1012,7 +977,6 @@ msgid "Show Status B_ar"
 msgstr "Mostra _barra di stato"
 
 #: ../src/main-win-ui.c:284
-#, fuzzy
 msgid "_Dual Pane Mode"
 msgstr "Modalità riquadri _gemelli"
 
@@ -1058,7 +1022,7 @@ msgstr "Per _tipo di file"
 
 #: ../src/main-win-ui.c:312
 msgid "By _Extension"
-msgstr ""
+msgstr "Per _estensione"
 
 #: ../src/main-win-ui.c:325
 msgid "Places"
@@ -1073,13 +1037,12 @@ msgid "Remote"
 msgstr "Remoto"
 
 #: ../src/main-win-ui.c:333
-#, fuzzy
 msgid "_Location"
-msgstr "App_licazioni"
+msgstr "_Posizione"
 
 #: ../src/main-win-ui.c:334
 msgid "_Buttons"
-msgstr ""
+msgstr "P_ulsanti"
 
 #: ../src/main-win.c:925 ../src/main-win.c:929
 msgid "Show history of visited folders"
@@ -1134,18 +1097,16 @@ msgstr ""
 "Ctrl+L o Alt+D: porta il focus sulla Barra del percorso"
 
 #: ../src/main-win.c:1210
-#, fuzzy
 msgid "Run a command"
-msgstr "Comando di _formattazione:"
+msgstr "Esegui un comando"
 
 #: ../src/main-win.c:1211
 msgid "Enter a command to run:"
-msgstr ""
+msgstr "Inserire il comando da eseguire:"
 
 #: ../src/main-win.c:1218
-#, fuzzy
 msgid "Current folder is inaccessible"
-msgstr "Apri cartella corrente nel _terminale"
+msgstr "La cartella corrente è inaccessibile"
 
 #: ../src/main-win.c:1822
 #, c-format
@@ -1164,7 +1125,7 @@ msgstr "Aggiungi ai segnalibri"
 
 #: ../src/main-win.c:2552
 msgid "Select filter"
-msgstr ""
+msgstr "Seleziona filtro"
 
 #: ../src/main-win.c:2553
 msgid "Choose a new shell pattern to show files:"
@@ -1214,13 +1175,12 @@ msgstr "FILE"
 
 #. don't translate list of modes in description, please
 #: ../src/pcmanfm.c:89
-#, fuzzy
 msgid ""
 "Set mode of desktop wallpaper. MODE=(color|stretch|fit|crop|center|tile|"
 "screen)"
 msgstr ""
-"Imposta lo stile per lo sfondo della scrivania. MODO=(color|stretch|fit|"
-"center|tile)"
+"Imposta lo stile per lo sfondo della scrivania. "
+"MODO=(color|stretch|fit|crop|center|tile|screen)"
 
 #: ../src/pcmanfm.c:89
 msgid "MODE"
@@ -1239,9 +1199,8 @@ msgid "Open new window"
 msgstr "Apri una nuova finestra"
 
 #: ../src/pcmanfm.c:93
-#, fuzzy
 msgid "Open a Find Files window"
-msgstr "Apri lo strumento Trova Files"
+msgstr "Apri la finestra «Trova file»"
 
 #: ../src/pcmanfm.c:95
 msgid "Window role for usage by window manager"
@@ -1255,7 +1214,11 @@ msgstr "RUOLO"
 msgid "[FILE1, FILE2,...]"
 msgstr "[FILE1, FILE2,...]"
 
-#: ../src/pcmanfm.c:585
+#: ../src/pcmanfm.c:352
+msgid "Desktop manager is not active."
+msgstr "Il gestore della scrivania non è attivo."
+
+#: ../src/pcmanfm.c:598
 msgid "Terminal emulator is not set."
 msgstr "L'emulatore di terminale non è impostato."
 
@@ -1319,8 +1282,7 @@ msgstr "Sfoglia il file system e gestisce i file"
 
 #: ../data/pcmanfm-desktop-pref.desktop.in.h:2
 msgid "Change desktop wallpapers and behavior of desktop manager"
-msgstr ""
-"Cambia lo sfondo della scrivania e il comportamento del desktop manager"
+msgstr "Cambia lo sfondo della scrivania e il comportamento del desktop manager"
 
 #~ msgid "Center on the screen"
 #~ msgstr "Centra nello schermo"
