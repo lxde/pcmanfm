@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-01-22 00:33+0200\n"
-"PO-Revision-Date: 2014-02-14 15:49+0000\n"
+"PO-Revision-Date: 2014-04-27 22:04+0000\n"
 "Last-Translator: Радослав <reckku@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: bg\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1392392982.0\n"
+"X-POOTLE-MTIME: 1398636269.0\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2014"
@@ -107,16 +107,17 @@ msgstr "Показва_й изскачащи менюта, когато е ак�
 #: ../data/ui/desktop-pref.glade.h:20
 msgid "_Use desktop as a folder (show icons on it) by path:"
 msgstr ""
+"Из_ползвай работния плот като посочена папка (показват се иконите в нея):"
 
 #: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:84
 msgctxt "Use path for some folder: ..."
 msgid "Default"
-msgstr ""
+msgstr "По подразбиране"
 
 #: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:85
 msgctxt "Use path for some folder: ..."
 msgid "Custom:"
-msgstr ""
+msgstr "По избор:"
 
 #: ../data/ui/desktop-pref.glade.h:23
 #, fuzzy
@@ -148,7 +149,7 @@ msgstr "Разширяване до ръба на екрана"
 
 #: ../data/ui/desktop-pref.glade.h:29
 msgid "Center unscaled image on the monitor"
-msgstr ""
+msgstr "Центриране на незапълващо монитора изображение"
 
 #: ../data/ui/desktop-pref.glade.h:30
 #, fuzzy
@@ -229,6 +230,7 @@ msgstr "_Действие при пускане:"
 #: ../data/ui/pref.glade.h:15
 msgid "\"_Smart shortcut\" auto-action on drop to Desktop folder"
 msgstr ""
+"Автоматично действие „_Умен пряк път“ при пускане в папка на Работния плот"
 
 #: ../data/ui/pref.glade.h:16
 msgid ""
@@ -238,6 +240,12 @@ msgid ""
 "- other files (e.g. on removable media) will be copied\n"
 "- for some external URI a shortcut will be created"
 msgstr ""
+"Ако е активирано тогава „Автоматично“ действие при пускане на файл върху "
+"папка на Работния плот ще се отнася за:\n"
+"- директно създаване на символни връзки за файлове от Домашна папка\n"
+"- преместване на файлове от същата файлова система\n"
+"- копиране на други файлове (например, периферни устройства)\n"
+"- създаване на пряк път за външни Интернет адреси"
 
 #: ../data/ui/pref.glade.h:21
 msgid "_Unfold tab when files are dragged onto tab button"
@@ -246,7 +254,7 @@ msgstr ""
 
 #: ../data/ui/pref.glade.h:22
 msgid "_Focus previous folder after coming to its parent"
-msgstr ""
+msgstr "Ф_окусиране на родителската папка при връщане към нея"
 
 #: ../data/ui/pref.glade.h:23
 msgid "<b>Default View</b>"
@@ -371,7 +379,7 @@ msgstr "П_риложения"
 
 #: ../data/ui/pref.glade.h:53 ../src/main-win-ui.c:239
 msgid "Dev_ices"
-msgstr ""
+msgstr "Устро_йства"
 
 #: ../data/ui/pref.glade.h:54
 #, fuzzy
@@ -430,7 +438,7 @@ msgstr ""
 
 #: ../data/ui/pref.glade.h:65
 msgid "Change folder in the tab to _Home Folder"
-msgstr ""
+msgstr "Смяна на папката в подопрозореца като _Домашна папка"
 
 #: ../data/ui/pref.glade.h:66
 msgid "_Volume Management"
@@ -507,11 +515,11 @@ msgstr "От_лагане на тест за вид на съдържаниет�
 
 #: ../data/ui/pref.glade.h:83
 msgid "Use path for \"Home Folder\" button:"
-msgstr ""
+msgstr "Използване на път за бутона „Домашна папка“:"
 
 #: ../data/ui/pref.glade.h:86
 msgid "_Use current"
-msgstr ""
+msgstr "И_зползване на настоящите"
 
 #: ../data/ui/pref.glade.h:87
 msgid "_Advanced"
