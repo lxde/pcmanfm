@@ -2061,6 +2061,19 @@ static void _free_cache_image(FmBackgroundCache *cache)
     cache->wallpaper_mode = FM_WP_COLOR; /* for cache check */
 }
 
+static void _clear_bg_cache(FmDesktop *self)
+{
+    while(self->cache)
+    {
+        FmBackgroundCache *bg = self->cache;
+
+        self->cache = bg->next;
+        _free_cache_image(bg);
+        g_free(bg->filename);
+        g_free(bg);
+    }
+}
+
 static void update_background(FmDesktop* desktop, int is_it)
 {
     GtkWidget* widget = (GtkWidget*)desktop;
@@ -2087,11 +2100,11 @@ static void update_background(FmDesktop* desktop, int is_it)
 
         if(is_it >= 0) /* signal "changed::wallpaper" */
         {
+            int i;
+
             wallpaper = desktop->conf.wallpaper;
             if((gint)cur_desktop >= desktop->conf.wallpapers_configured)
             {
-                int i;
-
                 desktop->conf.wallpapers = g_renew(char *, desktop->conf.wallpapers, cur_desktop + 1);
                 /* fill the gap with current wallpaper */
                 for(i = MAX(desktop->conf.wallpapers_configured,0); i < (int)cur_desktop; i++)
@@ -2099,9 +2112,29 @@ static void update_background(FmDesktop* desktop, int is_it)
                 desktop->conf.wallpapers[cur_desktop] = NULL;
                 desktop->conf.wallpapers_configured = cur_desktop + 1;
             }
-            /* FIXME: free old image if it's not used anymore */
-            g_free(desktop->conf.wallpapers[cur_desktop]);
-            desktop->conf.wallpapers[cur_desktop] = g_strdup(wallpaper);
+            /* free old image if it's not used anymore */
+            else if (g_strcmp0(desktop->conf.wallpapers[cur_desktop], wallpaper))
+            {
+                wallpaper = desktop->conf.wallpapers[cur_desktop];
+                if (wallpaper)
+                {
+                    for (i = 0; i < desktop->conf.wallpapers_configured; i++)
+                        if (i != (int)cur_desktop && /* test if it's used */
+                            g_strcmp0(desktop->conf.wallpapers[i], wallpaper) == 0)
+                            break;
+                    if (i == desktop->conf.wallpapers_configured) /* no matches */
+                    {
+                        for (cache = desktop->cache; cache; cache = cache->next)
+                            if (strcmp(wallpaper, cache->filename) == 0)
+                                break;
+                        if (cache)
+                            _free_cache_image(cache);
+                    }
+                    g_free(wallpaper);
+                }
+                wallpaper = desktop->conf.wallpaper;
+                desktop->conf.wallpapers[cur_desktop] = g_strdup(wallpaper);
+            }
         }
         else /* desktop refresh */
         {
@@ -2133,8 +2166,10 @@ static void update_background(FmDesktop* desktop, int is_it)
         }
     }
     else
-        /* FIXME: free old image if it's not used anymore */
+    {
+        _clear_bg_cache(desktop);
         wallpaper = desktop->conf.wallpaper;
+    }
 
     if(desktop->conf.wallpaper_mode != FM_WP_COLOR && wallpaper && *wallpaper)
     {
@@ -2446,19 +2481,6 @@ static void on_rows_reordered(FmFolderModel* model, GtkTreePath* parent_tp, GtkT
 
 /* ---------------------------------------------------------------------
     Events handlers */
-
-static void _clear_bg_cache(FmDesktop *self)
-{
-    while(self->cache)
-    {
-        FmBackgroundCache *bg = self->cache;
-
-        self->cache = bg->next;
-        _free_cache_image(bg);
-        g_free(bg->filename);
-        g_free(bg);
-    }
-}
 
 static void update_working_area(FmDesktop* desktop)
 {
