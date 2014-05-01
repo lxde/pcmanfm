@@ -3,7 +3,7 @@
  *
  *      This file is a part of the PCManFM project.
  *
- *      Copyright 2013 Andriy Grytsenko (LStranger) <andrej@rep.kiev.ua>
+ *      Copyright 2013-2014 Andriy Grytsenko (LStranger) <andrej@rep.kiev.ua>
  *
  *      This program is free software; you can redistribute it and/or modify
  *      it under the terms of the GNU General Public License as published by
@@ -48,6 +48,7 @@ static void on_response(GtkDialog *dialog, gint resp, ConnectDlg *dlg)
     char *scheme = NULL;
     const char *text;
     FmPath *path;
+    int def_port, used_port;
 
     if (resp == GTK_RESPONSE_OK && gtk_combo_box_get_active_iter(dlg->server_type, &iter))
         gtk_tree_model_get(gtk_combo_box_get_model(dlg->server_type), &iter, 1, &scheme, -1);
@@ -59,8 +60,16 @@ static void on_response(GtkDialog *dialog, gint resp, ConnectDlg *dlg)
         g_string_append(str, "://");
         if (gtk_toggle_button_get_active(dlg->user_user))
             g_string_append_printf(str, "%s@", gtk_entry_get_text(dlg->login_entry));
-        g_string_append_printf(str, "%s:%d", gtk_entry_get_text(dlg->server_host),
-                               (int)gtk_spin_button_get_value(dlg->server_port));
+        g_string_append(str, gtk_entry_get_text(dlg->server_host));
+        if (strcmp(scheme, "sftp") == 0)
+            def_port = 22;
+        else if (strcmp(scheme, "ftp") == 0)
+            def_port = 21;
+        else if (strcmp(scheme, "dav") == 0)
+            def_port = 80;
+        used_port = (int)gtk_spin_button_get_value(dlg->server_port);
+        if (def_port != used_port)
+            g_string_append_printf(str, ":%d", used_port);
         text = gtk_entry_get_text(dlg->server_path);
         if (text[0] != '/')
             g_string_append_c(str, '/');
