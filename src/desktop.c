@@ -277,13 +277,13 @@ static inline void load_items(FmDesktop* desktop)
                 item->area.x = g_key_file_get_integer(kf, name, "x", NULL);
                 item->area.y = g_key_file_get_integer(kf, name, "y", NULL);
                 /* pull item into screen bounds */
-                if (item->area.x < desktop->xmargin)
-                    item->area.x = desktop->xmargin;
-                if (item->area.y < desktop->ymargin)
-                    item->area.y = desktop->ymargin;
+                if (item->area.x < desktop->xmargin + desktop->working_area.x)
+                    item->area.x = desktop->xmargin + desktop->working_area.x;
+                if (item->area.y < desktop->ymargin + desktop->working_area.y)
+                    item->area.y = desktop->ymargin + desktop->working_area.y;
                 calc_item_size(desktop, item, icon);
                 /* check if item is in screen bounds and pull it if it's not */
-                out = item->area.x + item->area.width + desktop->xmargin - desktop->working_area.width;
+                out = item->area.x + item->area.width + desktop->xmargin - desktop->working_area.width - desktop->working_area.x;
                 if (out > 0)
                 {
                     if (out > item->area.x - desktop->xmargin)
@@ -292,7 +292,7 @@ static inline void load_items(FmDesktop* desktop)
                     item->icon_rect.x -= out;
                     item->text_rect.x -= out;
                 }
-                out = item->area.y + item->area.height + desktop->ymargin - desktop->working_area.height;
+                out = item->area.y + item->area.height + desktop->ymargin - desktop->working_area.height - desktop->working_area.y;
                 if (out > 0)
                 {
                     if (out > item->area.y - desktop->ymargin)
@@ -1718,7 +1718,7 @@ _next_position:
                 item->area.x = self->working_area.x + x;
                 item->area.y = self->working_area.y + y;
                 calc_item_size(self, item, icon);
-                while (y < item->area.y + item->area.height)
+                while (self->working_area.y + y < item->area.y + item->area.height)
                     y += self->cell_h;
                 if(y > bottom)
                 {
@@ -1752,7 +1752,7 @@ _next_position_rtl:
                 item->area.x = self->working_area.x + x;
                 item->area.y = self->working_area.y + y;
                 calc_item_size(self, item, icon);
-                while (y < item->area.y + item->area.height)
+                while (self->working_area.y + y < item->area.y + item->area.height)
                     y += self->cell_h;
                 if(y > bottom)
                 {
@@ -1898,14 +1898,14 @@ static void move_item(FmDesktop* desktop, FmDesktopItem* item, int x, int y, gbo
         redraw_item(desktop, item);
 
     /* correct coords to put item within working area still */
-    if (x > desktop->working_area.width - desktop->xmargin - item->area.width)
-        x = desktop->working_area.width - desktop->xmargin - item->area.width;
-    if (x < desktop->xmargin)
-        x = desktop->xmargin;
-    if (y > desktop->working_area.height - desktop->ymargin - item->area.height)
-        y = desktop->working_area.height - desktop->ymargin - item->area.height;
-    if (y < desktop->ymargin)
-        y = desktop->ymargin;
+    if (x > desktop->working_area.x + desktop->working_area.width - desktop->xmargin - item->area.width)
+        x = desktop->working_area.x + desktop->working_area.width - desktop->xmargin - item->area.width;
+    if (x < desktop->working_area.x + desktop->xmargin)
+        x = desktop->working_area.x + desktop->xmargin;
+    if (y > desktop->working_area.y + desktop->working_area.height - desktop->ymargin - item->area.height)
+        y = desktop->working_area.y + desktop->working_area.height - desktop->ymargin - item->area.height;
+    if (y < desktop->working_area.y + desktop->ymargin)
+        y = desktop->working_area.y + desktop->ymargin;
 
     dx = x - item->area.x;
     dy = y - item->area.y;
