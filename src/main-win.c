@@ -1597,6 +1597,8 @@ void fm_main_win_chdir_by_name(FmMainWin* win, const char* path_str)
 
 void fm_main_win_chdir(FmMainWin* win, FmPath* path)
 {
+    GtkWidget *current_focus;
+
     /* NOTE: fm_tab_page_chdir() calls fm_side_pane_chdir(), which can
      * trigger on_side_pane_chdir() callback. So we need to block it here. */
     g_signal_handlers_block_by_func(win->side_pane, on_side_pane_chdir, win);
@@ -1608,6 +1610,10 @@ void fm_main_win_chdir(FmMainWin* win, FmPath* path)
     _update_hist_buttons(win);
     update_view_menu(win);
     update_file_menu(win, path);
+    /* bug SF#842: if location is focused then set cursor at end of field */
+    current_focus = gtk_window_get_focus(GTK_WINDOW(win));
+    if (current_focus == (GtkWidget*)win->location)
+        gtk_editable_set_position(GTK_EDITABLE(win->location), -1);
 }
 
 #if 0
