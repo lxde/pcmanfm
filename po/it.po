@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm 1.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-01-22 00:33+0200\n"
-"PO-Revision-Date: 2014-04-07 17:31+0000\n"
+"PO-Revision-Date: 2014-05-11 14:02+0000\n"
 "Last-Translator: Daniele <daniele@forsi.it>\n"
 "Language-Team: Italian <debian-l10n-italian@lists.debian.org>\n"
 "Language: it\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1396891910.0\n"
+"X-POOTLE-MTIME: 1399816942.0\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2014"
@@ -226,6 +226,8 @@ msgstr "Azione predefini_ta per il rilascio:"
 #: ../data/ui/pref.glade.h:15
 msgid "\"_Smart shortcut\" auto-action on drop to Desktop folder"
 msgstr ""
+"Azione automatica «_Scorciatoia intelligente» quando si rilascia sulla "
+"Scrivania"
 
 #: ../data/ui/pref.glade.h:16
 msgid ""
@@ -235,6 +237,13 @@ msgid ""
 "- other files (e.g. on removable media) will be copied\n"
 "- for some external URI a shortcut will be created"
 msgstr ""
+"Se abilitata, l'azione «Automatica» quando si rilascia un file sulla "
+"Scrivania sarà:\n"
+"- per i file direttamente nella cartella Home verrà creato un collegamento "
+"simbolico\n"
+"- i file nello stesso filesystem verranno spostati\n"
+"- altri file (es. quelli su supporti rimovibili) saranno copiati\n"
+"- per alcuni URI esterni verrà creata una scorciatoia"
 
 #: ../data/ui/pref.glade.h:21
 msgid "_Unfold tab when files are dragged onto tab button"
@@ -244,6 +253,7 @@ msgstr ""
 #: ../data/ui/pref.glade.h:22
 msgid "_Focus previous folder after coming to its parent"
 msgstr ""
+"Sposta il _focus sulla cartella precedente dopo essere venuto sul genitore"
 
 #: ../data/ui/pref.glade.h:23
 msgid "<b>Default View</b>"
@@ -411,11 +421,11 @@ msgstr "Quando un supporto rimovibile è smontato:"
 
 #: ../data/ui/pref.glade.h:64
 msgid "Clos_e tab containing removable medium"
-msgstr "Chiudi la sch_eda contenente il supporti rimovibile"
+msgstr "Chiudi la sch_eda contenente il supporto rimovibile"
 
 #: ../data/ui/pref.glade.h:65
 msgid "Change folder in the tab to _Home Folder"
-msgstr ""
+msgstr "Cambia cartella in _Home nella linguetta"
 
 #: ../data/ui/pref.glade.h:66
 msgid "_Volume Management"
@@ -487,7 +497,7 @@ msgstr "Rinvia controllo tipo di cont_enuto al caricamento della cartella"
 
 #: ../data/ui/pref.glade.h:83
 msgid "Use path for \"Home Folder\" button:"
-msgstr ""
+msgstr "Percorso da usare per il pulsante «Home»:"
 
 #: ../data/ui/pref.glade.h:86
 msgid "_Use current"
@@ -886,7 +896,7 @@ msgstr "_Connetti al server..."
 
 #: ../src/main-win-ui.c:242
 msgid "Open a window to choose remote folder location"
-msgstr ""
+msgstr "Apre una finestra per scegliere la posizione della cartella remota"
 
 #: ../src/main-win-ui.c:243
 msgid "Go to the path in the location bar"
@@ -947,6 +957,8 @@ msgstr "Ricorda impostazioni cartella"
 msgid ""
 "Check to remember view and sort as folder setting rather than global one"
 msgstr ""
+"Selezionare per ricordare la visualizzazione e l'ordinamento come "
+"impostazioni della cartella invece che globali"
 
 #: ../src/main-win-ui.c:277
 msgid "_Show Toolbar"
@@ -982,7 +994,7 @@ msgstr "Modalità riquadri _gemelli"
 
 #: ../src/main-win-ui.c:284
 msgid "Show two panels with folder views"
-msgstr ""
+msgstr "Mostra due pannelli con le visualizzazioni delle cartelle"
 
 #: ../src/main-win-ui.c:285
 msgid "Fullscreen _Mode"
@@ -1129,7 +1141,7 @@ msgstr "Seleziona filtro"
 
 #: ../src/main-win.c:2553
 msgid "Choose a new shell pattern to show files:"
-msgstr ""
+msgstr "Scegli un nuovo modello della shell per mostrare i file:"
 
 #. options only acceptable by first pcmanfm instance. These options are not passed through IPC
 #: ../src/pcmanfm.c:78
@@ -1254,19 +1266,19 @@ msgstr[1] " (%d nascosti)"
 
 #: ../src/pref.c:514
 msgid "Add to Modules Blacklist"
-msgstr ""
+msgstr "Aggiungi all'elenco dei moduli vietati"
 
 #: ../src/pref.c:515
 msgid "Enter a blacklisted module mask:"
-msgstr ""
+msgstr "Inserisci una maschera per l'elenco dei moduli vietati:"
 
 #: ../src/pref.c:606
 msgid "Add to Modules Whitelist"
-msgstr ""
+msgstr "Aggiungi all'elenco dei moduli ammessi"
 
 #: ../src/pref.c:607
 msgid "Enter a whitelisted module mask:"
-msgstr ""
+msgstr "Inserisci una maschera per l'elenco dei moduli ammessi:"
 
 #: ../data/pcmanfm.desktop.in.h:1
 msgid "File Manager PCManFM"
