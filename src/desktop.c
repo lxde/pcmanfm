@@ -3001,24 +3001,6 @@ static FmDesktopItem* get_nearest_item(FmDesktop* desktop, FmDesktopItem* item, 
     return ret;
 }
 
-static gboolean has_selected_item(FmDesktop* desktop)
-{
-    GtkTreeModel* model;
-    GtkTreeIter it;
-
-    if (!desktop->model)
-        return FALSE;
-    model = GTK_TREE_MODEL(desktop->model);
-    if(gtk_tree_model_get_iter_first(model, &it)) do
-    {
-        FmDesktopItem* item = fm_folder_model_get_item_userdata(desktop->model, &it);
-        if(item->is_selected)
-            return TRUE;
-    }
-    while(gtk_tree_model_iter_next(model, &it));
-    return FALSE;
-}
-
 static void set_focused_item(FmDesktop* desktop, FmDesktopItem* item)
 {
     if(item != desktop->focus)
@@ -3422,6 +3404,10 @@ static gboolean on_button_release(GtkWidget* w, GdkEventButton* evt)
     else if(self->dragging)
     {
         self->dragging = FALSE;
+        /* FIXME: restore after drag
+        self->focus->is_dragged = FALSE;
+        redraw_item(self, self->focus);
+         */
     }
     else if(fm_config->single_click && evt->button == 1)
     {
@@ -3545,29 +3531,13 @@ static gboolean on_motion_notify(GtkWidget* w, GdkEventMotion* evt)
 
     if(self->dragging)
     {
+        /* FIXME: never reached */
     }
     else if(self->rubber_bending)
     {
         update_rubberbanding(self, evt->x, evt->y);
     }
-    else
-    {
-        if (gtk_drag_check_threshold(w,
-                                    self->drag_start_x,
-                                    self->drag_start_y,
-                                    evt->x, evt->y))
-        {
-            GtkTargetList* target_list;
-            if(has_selected_item(self))
-            {
-                self->dragging = TRUE;
-                target_list = gtk_drag_source_get_target_list(w);
-                gtk_drag_begin(w, target_list,
-                             GDK_ACTION_COPY|GDK_ACTION_MOVE|GDK_ACTION_LINK,
-                             1, (GdkEvent*)evt);
-            }
-        }
-    }
+    /* we use auto-DnD so no DnD check is possible here */
 
     return TRUE;
 }
@@ -4405,6 +4375,38 @@ static void on_drag_data_received (GtkWidget *dest_widget,
     gtk_drag_finish(drag_context, TRUE, FALSE, time);
 }
 
+static void on_drag_begin (GtkWidget *widget, GdkDragContext *drag_context)
+{
+    /* GTK auto-dragging started a drag, update state */
+    FmDesktop* desktop = FM_DESKTOP(widget);
+
+    /* FIXME: set drag cursor to current item icon
+    FmDesktopItem *item = desktop->focus;
+    if (item)
+    {
+        gint icon_size = fm_config->big_icon_size;
+        FmIcon *icon = fm_file_info_get_icon(item->fi);
+        if (icon)
+        {
+            GdkPixbuf *pix = fm_pixbuf_from_icon(icon, icon_size);
+            gint icon_x, icon_y;
+            if (pix)
+            {
+                icon_x = desktop->drag_start_x - item->icon_rect.x +
+                         (icon_size - item->icon_rect.width) / 2;
+                icon_y = desktop->drag_start_y - item->icon_rect.y +
+                         (icon_size - item->icon_rect.height) / 2;
+                gtk_drag_set_icon_pixbuf(drag_context, pix, icon_x, icon_y);
+                g_object_unref(pix);
+            }
+        }
+    }
+    item->is_dragged = TRUE;
+    redraw_item(desktop, item); */
+
+    desktop->dragging = TRUE;
+}
+
 static void on_dnd_src_data_get(FmDndSrc* ds, FmDesktop* desktop)
 {
     FmFileInfoList* files = _dup_selected_files(FM_FOLDER_VIEW(desktop));
@@ -4707,6 +4709,10 @@ static GObject* fm_desktop_constructor(GType type, guint n_construct_properties,
 
     /* init dnd support */
     self->dnd_src = fm_dnd_src_new((GtkWidget*)self);
+#if !FM_CHECK_VERSION(1, 2, 1)
+    /* FIXME: override pre-1.2.1 handler from FmDndSrc to allow icon change
+    g_signal_connect_after(self, "drag-begin", G_CALLBACK(on_drag_begin), NULL); */
+#endif
     /* add our own targets */
     fm_dnd_src_add_targets((GtkWidget*)self, dnd_targets, G_N_ELEMENTS(dnd_targets));
     g_signal_connect(self->dnd_src, "data-get", G_CALLBACK(on_dnd_src_data_get), self);
@@ -4791,6 +4797,9 @@ static void fm_desktop_class_init(FmDesktopClass *klass)
     widget_class->drag_drop = on_drag_drop;
     widget_class->drag_data_received = on_drag_data_received;
     widget_class->drag_leave = on_drag_leave;
+//FIXME: #if FM_CHECK_VERSION(1, 2, 1)
+    widget_class->drag_begin = on_drag_begin;
+//FIXME: #endif
     /* widget_class->drag_data_get = on_drag_data_get; */
 
     if(XInternAtoms(gdk_x11_get_default_xdisplay(), atom_names,
