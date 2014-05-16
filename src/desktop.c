@@ -2489,8 +2489,13 @@ static void on_rows_reordered(FmFolderModel* model, GtkTreePath* parent_tp, GtkT
 static void update_working_area(FmDesktop* desktop)
 {
     GdkScreen* screen = gtk_widget_get_screen((GtkWidget*)desktop);
+    GdkRectangle geom;
 #if GTK_CHECK_VERSION(3, 4, 0)
     gdk_screen_get_monitor_workarea(screen, desktop->monitor, &desktop->working_area);
+    /* we need working area coordinates within the monitor not the screen */
+    gdk_screen_get_monitor_geometry(screen, desktop->monitor, &geom);
+    desktop->working_area.x -= geom.x;
+    desktop->working_area.y -= geom.y;
 #else
     GdkWindow* root = gdk_screen_get_root_window(screen);
     Atom ret_type;
@@ -2501,7 +2506,9 @@ static void update_working_area(FmDesktop* desktop)
     gulong* working_area;
 
     /* default to screen size */
-    gdk_screen_get_monitor_geometry(screen, desktop->monitor, &desktop->working_area);
+    gdk_screen_get_monitor_geometry(screen, desktop->monitor, &geom);
+    desktop->working_area.width = geom.width;
+    desktop->working_area.height = geom.height;
 
     if(XGetWindowProperty(GDK_WINDOW_XDISPLAY(root), GDK_WINDOW_XID(root),
                        XA_NET_NUMBER_OF_DESKTOPS, 0, 1, False, XA_CARDINAL, &ret_type,
@@ -2533,24 +2540,23 @@ static void update_working_area(FmDesktop* desktop)
     }
     working_area = ((gulong*)prop) + cur_desktop * 4;
 
-    if((gint)working_area[0] > desktop->working_area.x &&
-       (gint)working_area[0] < desktop->working_area.x + desktop->working_area.width)
-    {
-        desktop->working_area.width -= (working_area[0] - desktop->working_area.x);
-        desktop->working_area.x = (gint)working_area[0];
-    }
-    if((gint)working_area[1] > desktop->working_area.y &&
-       (gint)working_area[1] < desktop->working_area.y + desktop->working_area.height)
-    {
-        desktop->working_area.height -= (working_area[1] - desktop->working_area.y);
-        desktop->working_area.y = (gint)working_area[1];
-    }
-    if((gint)(working_area[0] + working_area[2]) < desktop->working_area.x + desktop->working_area.width)
-        desktop->working_area.width = working_area[0] + working_area[2] - desktop->working_area.x;
-    if((gint)(working_area[1] + working_area[3]) < desktop->working_area.y + desktop->working_area.height)
-        desktop->working_area.height = working_area[1] + working_area[3] - desktop->working_area.y;
+    desktop->working_area.x = (gint)working_area[0] - geom.x;
+    desktop->working_area.y = (gint)working_area[1] - geom.y;
+    if(desktop->working_area.x > 0 &&
+       desktop->working_area.x < desktop->working_area.width)
+        desktop->working_area.width -= desktop->working_area.x;
+    if(desktop->working_area.y > 0 &&
+       desktop->working_area.y < desktop->working_area.height)
+        desktop->working_area.height -= desktop->working_area.y;
+    if(desktop->working_area.x + (gint)working_area[2] < desktop->working_area.width)
+        desktop->working_area.width = working_area[2] + desktop->working_area.x;
+    if(desktop->working_area.y + (gint)working_area[3] < desktop->working_area.height)
+        desktop->working_area.height = working_area[3] + desktop->working_area.y;
     g_debug("got working area: %d.%d.%d.%d", desktop->working_area.x, desktop->working_area.y,
             desktop->working_area.width, desktop->working_area.height);
+    /* we need working area coordinates within the monitor not the screen */
+    desktop->working_area.x = MAX(0, desktop->working_area.x);
+    desktop->working_area.y = MAX(0, desktop->working_area.y);
 
     XFree(prop);
 _out:
@@ -3825,6 +3831,7 @@ static void desktop_search_preedit_changed(GtkIMContext *im_context,
 static void desktop_search_position(FmDesktop *desktop)
 {
     GtkRequisition requisition;
+    GdkRectangle geom;
     gint x, y;
 
     /* make sure the search dialog is realized */
@@ -3837,8 +3844,10 @@ static void desktop_search_position(FmDesktop *desktop)
 #endif
 
     /* put it into right upper corner */
-    x = desktop->working_area.x + desktop->working_area.width - requisition.width;
-    y = desktop->working_area.y;
+    gdk_screen_get_monitor_geometry(gtk_widget_get_screen((GtkWidget*)desktop),
+                                    desktop->monitor, &geom);
+    x = geom.x + desktop->working_area.x + desktop->working_area.width - requisition.width;
+    y = geom.y + desktop->working_area.y;
 
     gtk_window_move(GTK_WINDOW(desktop->search_window), x, y);
 }
