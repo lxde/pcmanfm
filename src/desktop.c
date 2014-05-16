@@ -1802,6 +1802,10 @@ static void paint_item(FmDesktop* self, FmDesktopItem* item, cairo_t* cr, GdkRec
 #endif
     int text_x, text_y;
 
+    /* FIXME: don't draw dragged items on desktop, they are moved with mouse
+    if (item->is_selected && self->dragging)
+        return; */
+
 #if GTK_CHECK_VERSION(3, 0, 0)
     style = gtk_widget_get_style_context(widget);
 #else
@@ -2861,6 +2865,9 @@ static FmDesktopItem* hit_test(FmDesktop* self, GtkTreeIter *it, int x, int y)
     if(model && gtk_tree_model_get_iter_first(model, it)) do
     {
         item = fm_folder_model_get_item_userdata(self->model, it);
+        /* we cannot drop dragged items onto themselves */
+        if (item->is_selected && self->dragging)
+            continue;
         if(is_point_in_rect(&item->icon_rect, x, y)
          || is_point_in_rect(&item->text_rect, x, y))
             return item;
@@ -3405,9 +3412,7 @@ static gboolean on_button_release(GtkWidget* w, GdkEventButton* evt)
     {
         self->dragging = FALSE;
         /* FIXME: restore after drag
-        self->focus->is_dragged = FALSE;
-        redraw_item(self, self->focus);
-         */
+        queue_layout_items(self); */
     }
     else if(fm_config->single_click && evt->button == 1)
     {
@@ -4380,7 +4385,8 @@ static void on_drag_begin (GtkWidget *widget, GdkDragContext *drag_context)
     /* GTK auto-dragging started a drag, update state */
     FmDesktop* desktop = FM_DESKTOP(widget);
 
-    /* FIXME: set drag cursor to current item icon
+    desktop->dragging = TRUE;
+    /* FIXME: set drag cursor to selected items
     FmDesktopItem *item = desktop->focus;
     if (item)
     {
@@ -4401,10 +4407,7 @@ static void on_drag_begin (GtkWidget *widget, GdkDragContext *drag_context)
             }
         }
     }
-    item->is_dragged = TRUE;
-    redraw_item(desktop, item); */
-
-    desktop->dragging = TRUE;
+    queue_layout_items(desktop); */
 }
 
 static void on_dnd_src_data_get(FmDndSrc* ds, FmDesktop* desktop)
