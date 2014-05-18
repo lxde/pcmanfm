@@ -320,7 +320,7 @@ gboolean pcmanfm_run(gint screen_num)
     if(!files_to_open)
     {
         /* FIXME: use screen number from client and pointer position */
-        FmDesktop *desktop = fm_desktop_get(0, 0);
+        FmDesktop *desktop = fm_desktop_get(screen_num, 0);
 
         /* Launch desktop manager */
         if(show_desktop)
