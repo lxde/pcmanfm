@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-01-22 00:33+0200\n"
-"PO-Revision-Date: 2014-05-21 20:21+0000\n"
+"PO-Revision-Date: 2014-05-21 21:07+0000\n"
 "Last-Translator: Jan <jhelebrant@seznam.cz>\n"
 "Language-Team: Czech <radek@fastlinux.eu>\n"
 "Language: cs\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1400703688.0\n"
+"X-POOTLE-MTIME: 1400706447.0\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2014"
@@ -93,7 +93,6 @@ msgid "Sho_w \"Devices\" folder on the desktop"
 msgstr "Zo_brazit ikonu \"Dokumenty\" na ploše"
 
 #: ../data/ui/desktop-pref.glade.h:16
-#, fuzzy
 msgid "Show \"_Trash Can\" folder on the desktop"
 msgstr "Zobrazit ikonu \"_Koš\" na ploše"
 
@@ -124,7 +123,6 @@ msgid "Custom:"
 msgstr "Vlastní:"
 
 #: ../data/ui/desktop-pref.glade.h:23
-#, fuzzy
 msgid "Select a Desktop Folder"
 msgstr "Vyberte složku plochy"
 
@@ -141,12 +139,10 @@ msgid "Fill with background color only"
 msgstr "Vyplnit pouze barvou pozadí"
 
 #: ../data/ui/desktop-pref.glade.h:27
-#, fuzzy
 msgid "Stretch to fill the entire monitor area"
 msgstr "Roztáhnout na celou obrazovku"
 
 #: ../data/ui/desktop-pref.glade.h:28
-#, fuzzy
 msgid "Stretch to fit the monitor area"
 msgstr "Přizpůsobit obrazovce"
 
@@ -163,7 +159,6 @@ msgid "Stretch and crop to fill the monitor area"
 msgstr "Roztáhnout a oříznout na celou obrazovku"
 
 #: ../data/ui/desktop-pref.glade.h:32
-#, fuzzy
 msgid "Stretch to fill the complete screen"
 msgstr "Roztáhnout na celou obrazovku"
 
@@ -196,7 +191,6 @@ msgid "Delay of auto-selection in single click mode (0 to disable)"
 msgstr "Prodleva automatického výběru v režimu 1 kliknutí (0 vypne)"
 
 #: ../data/ui/pref.glade.h:8
-#, fuzzy
 msgid "Co_nfirm before deleting files"
 msgstr "_Přesouvat smazané soubory do \"Koše\" namísto smazání"
 
@@ -249,7 +243,7 @@ msgstr "_Rozvinout karty, pokud jsou soubory přetáhnuty do tlačítka karty"
 
 #: ../data/ui/pref.glade.h:22
 msgid "_Focus previous folder after coming to its parent"
-msgstr ""
+msgstr "_Označit předchozí složku po přechodu do její mateřské složky"
 
 #: ../data/ui/pref.glade.h:23
 msgid "<b>Default View</b>"
@@ -313,7 +307,7 @@ msgstr "Vž_dy zobrazovat lištu karet"
 
 #: ../data/ui/pref.glade.h:38
 msgid "Show icons of hidden _files shadowed"
-msgstr ""
+msgstr "Zobrazit ikony skrytých _souborů zašedlé"
 
 #: ../data/ui/pref.glade.h:39
 msgid "_Display"
@@ -329,12 +323,12 @@ msgstr "Vž_dy zobrazovat lištu karet"
 
 #: ../data/ui/pref.glade.h:42
 msgid "_Maximum width of tab label:"
-msgstr ""
+msgstr "_Maximální šířka popisky panelu:"
 
 #. Use genitive case here, context is: width is XXX characters
 #: ../data/ui/pref.glade.h:44
 msgid "characters"
-msgstr ""
+msgstr "znaků"
 
 #: ../data/ui/pref.glade.h:45
 msgid "<b>Directories Tree</b>"
@@ -349,9 +343,8 @@ msgid "<b>Show in Places:</b>"
 msgstr "<b>Zobrazit v Místech:</b>"
 
 #: ../data/ui/pref.glade.h:48
-#, fuzzy
 msgid "_Home Folder"
-msgstr "Domovská složka"
+msgstr "_Domovská složka"
 
 #: ../data/ui/pref.glade.h:49
 msgid "Des_ktop"
@@ -374,7 +367,6 @@ msgid "Dev_ices"
 msgstr "Zaří_zení"
 
 #: ../data/ui/pref.glade.h:54
-#, fuzzy
 msgid "_Network"
 msgstr "_Síť"
 
@@ -399,7 +391,6 @@ msgid "_Show available options for removable media when they are inserted"
 msgstr "_Zobrazit dostupné volby při vložení odpojitelného média"
 
 #: ../data/ui/pref.glade.h:60
-#, fuzzy
 msgid "Do_n't show available options for those media types:"
 msgstr "Ne_zobrazovat dostupné volby pro následující typy médií:"
 
@@ -412,7 +403,6 @@ msgid "_Open mounted removable media in new tab instead of new window"
 msgstr "_Otevřít připojené připojitelné média v nové kartě namísto v novém okně"
 
 #: ../data/ui/pref.glade.h:63
-#, fuzzy
 msgid "When removable medium unmounted:"
 msgstr "Když je odpojitelné médium odpojeno:"
 
@@ -434,7 +424,7 @@ msgstr "<b>Programy</b>"
 
 #: ../data/ui/pref.glade.h:68
 msgid "<i>Commands below may include extra options if necessary.</i>"
-msgstr ""
+msgstr "<i>Příkazy níže mohou zahrnovat extra možnosti pokud je potřeba.</i>"
 
 #: ../data/ui/pref.glade.h:69
 msgid "_Terminal emulator:"
@@ -447,24 +437,23 @@ msgstr "_Příkaz pro přepnutí uživatele:"
 #. Application command to format some drive
 #: ../data/ui/pref.glade.h:72
 msgid "_Format command:"
-msgstr ""
+msgstr "_Formátovací příkaz:"
 
 #: ../data/ui/pref.glade.h:73
 msgid "A_rchiver integration:"
 msgstr "In_tegrace archivátoru:"
 
 #: ../data/ui/pref.glade.h:74
-#, fuzzy
 msgid "<b>Templates</b>"
-msgstr "<b>Text</b>"
+msgstr "<b>Šablony</b>"
 
 #: ../data/ui/pref.glade.h:75
 msgid "S_how only user defined templates in menu"
-msgstr ""
+msgstr "Z_obrazit pouze uživatelem definované šablony v menu"
 
 #: ../data/ui/pref.glade.h:76
 msgid "Show _only one template for each MIME type"
-msgstr ""
+msgstr "Zobrazit pouze jednu šablonu pro každý MIME typ"
 
 #: ../data/ui/pref.glade.h:77
 msgid "Ru_n default application after creation from template"
@@ -668,18 +657,15 @@ msgid "Activate file"
 msgstr "Označit soubor"
 
 #: ../src/desktop.c:948
-#, fuzzy
 msgid "Show file menu"
 msgstr "Zobrazit menu souboru"
 
 #: ../src/desktop.c:1364
-#, fuzzy
 msgid "Show desktop menu"
 msgstr "Zobrazit menu plochy"
 
 #. FIXME: set name by monitor
 #: ../src/desktop.c:1436
-#, fuzzy
 msgid "Desktop"
 msgstr "Pracovní plocha"
 
@@ -737,29 +723,25 @@ msgstr "Přesunout do _Koše"
 
 #: ../src/main-win-ui.c:203
 msgid "Copy Pat_h(s)"
-msgstr ""
+msgstr "Kopírovat adres_u/y"
 
 #: ../src/main-win-ui.c:204
-#, fuzzy
 msgid "R_ename..."
-msgstr "_Přejmenovat"
+msgstr "P_řejmenovat"
 
 #: ../src/main-win-ui.c:205
 msgid "D_uplicate..."
-msgstr ""
+msgstr "D_uplikovat"
 
 #: ../src/main-win-ui.c:206
-#, fuzzy
 msgid "Create Lin_k..."
-msgstr "Vytvořit _nový..."
+msgstr "Vytvořit Odk_az..."
 
 #: ../src/main-win-ui.c:207
-#, fuzzy
 msgid "_Move to..."
 msgstr "_Přesunout do..."
 
 #: ../src/main-win-ui.c:208
-#, fuzzy
 msgid "Copy to_..."
 msgstr "K_opírovat do..."
 
@@ -860,30 +842,28 @@ msgid "H_ome Folder"
 msgstr "D_omovská složka"
 
 #: ../src/main-win-ui.c:234
-#, fuzzy
 msgid "Go to home folder"
-msgstr "Přejít do nadřazené složky"
+msgstr "Přejít do domovské složky"
 
 #: ../src/main-win-ui.c:235
 msgid "_Desktop"
 msgstr "_Pracovní plocha"
 
 #: ../src/main-win-ui.c:235
-#, fuzzy
 msgid "Go to desktop folder"
-msgstr "Přejít do nadřazené složky"
+msgstr "Přejít do složky plochy"
 
 #: ../src/main-win-ui.c:236
 msgid "Open trash can"
-msgstr ""
+msgstr "Otevřít koš"
 
 #: ../src/main-win-ui.c:237
 msgid "Filesyste_m Root"
-msgstr ""
+msgstr "Kořen sou_bor. systému"
 
 #: ../src/main-win-ui.c:237
 msgid "Go fo filesystem root"
-msgstr ""
+msgstr "Jít do kořene soubor. systému"
 
 #: ../src/main-win-ui.c:238
 msgid "_Applications"
@@ -891,22 +871,19 @@ msgstr "_Aplikace"
 
 #: ../src/main-win-ui.c:238
 msgid "Go to root of applications menu folder"
-msgstr ""
+msgstr "Přejít do kořenové složky menu aplikací"
 
 #: ../src/main-win-ui.c:239
-#, fuzzy
 msgid "Go to list of devices connected to the computer"
-msgstr "Z_obraz ikony svazků na ploše"
+msgstr "Přejít na seznam připojených zařízení"
 
 #: ../src/main-win-ui.c:240
-#, fuzzy
 msgid "Net_work"
 msgstr "Síť_ové jednotky"
 
 #: ../src/main-win-ui.c:240
-#, fuzzy
 msgid "Go to list of places on the network"
-msgstr "Z_obraz ikony svazků na ploše"
+msgstr "Přejít na seznam míst v síti"
 
 #: ../src/main-win-ui.c:241
 msgid "_Go to Location..."
@@ -956,45 +933,45 @@ msgid "Open search dialog"
 msgstr "Otevřít dialog pro nastavení pracovní plochy"
 
 #: ../src/main-win-ui.c:252
-#, fuzzy
 msgid "_Run a Command in Current Folder..."
-msgstr "Obnovit současnou složku"
+msgstr "_Spustit příkaz v aktuální složce..."
 
 #. Note to translators: "Mingle..." means "Do not put folders before files" but make the translation as short as possible, please!
 #: ../src/main-win-ui.c:267
 msgid "Mingle _Files and Folders"
-msgstr ""
+msgstr "Míchat _soubory a složky (složky nejsou vždy první)"
 
 #: ../src/main-win-ui.c:270
 msgid "_Ignore Name Case"
-msgstr ""
+msgstr "_Ignorovat VELKÁ/malá písmena v názvu"
 
 #: ../src/main-win-ui.c:272
-#, fuzzy
 msgid "Sho_w Hidden"
-msgstr "Zobrazit skryt_é"
+msgstr "Zo_brazit skryté"
 
 #. Note to translators: this save is meant for folder's settings such as sort
 #: ../src/main-win-ui.c:274
 msgid "Preserve This Folder's Settings"
-msgstr ""
+msgstr "Uchovat nastavení pro tuto složku"
 
 #: ../src/main-win-ui.c:275
 msgid ""
 "Check to remember view and sort as folder setting rather than global one"
 msgstr ""
+"Zaškrtněte pro zapamatování zobrazení jako nastavení složky místo globálního "
+"nastavení"
 
 #: ../src/main-win-ui.c:277
 msgid "_Show Toolbar"
-msgstr ""
+msgstr "_Zobrazit panel nástrojů"
 
 #: ../src/main-win-ui.c:278
 msgid "Show 'New _Window' Button"
-msgstr ""
+msgstr "Zobrazit tlačítko 'Nové _okno'"
 
 #: ../src/main-win-ui.c:279
 msgid "Show 'New _Tab' Button"
-msgstr ""
+msgstr "Zobrazit tlačítko 'Nový _panel'"
 
 #: ../src/main-win-ui.c:280
 msgid "Show _Navigation Buttons"
@@ -1095,30 +1072,23 @@ msgid "You are in super user mode"
 msgstr "Nacházíte se v superuživatelském režimu"
 
 #: ../src/main-win.c:1134
-#, fuzzy
 msgid "Lightweight file manager\n"
-msgstr ""
-"Jednoduchý správce souborů\n"
-"\n"
-"Vyvinul Hon Jen Yee (PCMan)"
+msgstr "Jednoduchý správce souborů\n"
 
 #: ../src/main-win.c:1139
 #, c-format
 msgid "using LibFM ver. %s\n"
-msgstr ""
+msgstr "používám LibFM ver. %s\n"
 
 #: ../src/main-win.c:1141
-#, fuzzy
 msgid ""
 "\n"
 "Developed by Hon Jen Yee (PCMan)"
 msgstr ""
-"Jednoduchý správce souborů\n"
 "\n"
 "Vyvinul Hon Jen Yee (PCMan)"
 
 #: ../src/main-win.c:1166 ../src/main-win.c:1174
-#, fuzzy
 msgid "Keyboard Navigation"
 msgstr "Klávesová navigace"
 
@@ -1130,13 +1100,7 @@ msgid ""
 "F8: focus divider between Side pane and Folder view\n"
 "F10: activate main menu\n"
 "Ctrl+L or Alt+D: jump focus to Path Bar"
-msgstr ""
-"Tab:  Zobrazení složky -> Postranní panel -> Nástrojová lišta\n"
-"Shift+Tab: Nástrojová lišta -> Postranní panel -> Zobrazení složky\n"
-"F6: změna zaměření Postranní panel <-> Zobrazení složky\n"
-"F8: dělit zaměření mezi Postranní panel a Zobrazení složky\n"
-"F10: Aktivace hlavního menu \n"
-"Ctrl+L nebo Alt+D: skok zaměření na lištu s cestou"
+msgstr "Spustit příkaz"
 
 #: ../src/main-win.c:1210
 msgid "Run a command"
