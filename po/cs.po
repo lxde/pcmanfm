@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-01-22 00:33+0200\n"
-"PO-Revision-Date: 2014-05-21 20:01+0000\n"
+"PO-Revision-Date: 2014-05-21 20:21+0000\n"
 "Last-Translator: Jan <jhelebrant@seznam.cz>\n"
 "Language-Team: Czech <radek@fastlinux.eu>\n"
 "Language: cs\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1400702474.0\n"
+"X-POOTLE-MTIME: 1400703688.0\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2014"
@@ -401,12 +401,11 @@ msgstr "_Zobrazit dostupné volby při vložení odpojitelného média"
 #: ../data/ui/pref.glade.h:60
 #, fuzzy
 msgid "Do_n't show available options for those media types:"
-msgstr "_Zobrazit dostupné volby při vložení odpojitelného média"
+msgstr "Ne_zobrazovat dostupné volby pro následující typy médií:"
 
 #: ../data/ui/pref.glade.h:61
-#, fuzzy
 msgid "_Remove selected"
-msgstr "%d položka vybrána"
+msgstr "_Odstranit vybrané"
 
 #: ../data/ui/pref.glade.h:62
 msgid "_Open mounted removable media in new tab instead of new window"
@@ -415,16 +414,15 @@ msgstr "_Otevřít připojené připojitelné média v nové kartě namísto v n
 #: ../data/ui/pref.glade.h:63
 #, fuzzy
 msgid "When removable medium unmounted:"
-msgstr "Je vloženo odpojitelné médium"
+msgstr "Když je odpojitelné médium odpojeno:"
 
 #: ../data/ui/pref.glade.h:64
-#, fuzzy
 msgid "Clos_e tab containing removable medium"
-msgstr "Zavř_ít kartu obsahující připojitelné médium při jeho odpojení"
+msgstr "Zavř_ít kartu obsahující připojitelné médium"
 
 #: ../data/ui/pref.glade.h:65
 msgid "Change folder in the tab to _Home Folder"
-msgstr ""
+msgstr "Změnit složku v panelu na složku _Domů"
 
 #: ../data/ui/pref.glade.h:66
 msgid "_Volume Management"
@@ -496,15 +494,15 @@ msgstr ""
 
 #: ../data/ui/pref.glade.h:82
 msgid "D_efer test for content type on folder loading"
-msgstr ""
+msgstr "O_dložit test typu obsahu při načítání složky"
 
 #: ../data/ui/pref.glade.h:83
 msgid "Use path for \"Home Folder\" button:"
-msgstr ""
+msgstr "Použít cestu pro tlačítko \"Domovská složka\":"
 
 #: ../data/ui/pref.glade.h:86
 msgid "_Use current"
-msgstr ""
+msgstr "_Použít aktuální"
 
 #: ../data/ui/pref.glade.h:87
 msgid "_Advanced"
@@ -512,15 +510,15 @@ msgstr "_Rozšířené"
 
 #: ../data/ui/pref.glade.h:88
 msgid "<b>_Do not load modules matching:</b>"
-msgstr ""
+msgstr "<b>_Nenačítat moduly odpovídající:</b>"
 
 #: ../data/ui/pref.glade.h:89
 msgid "<b>_Load these modules anyway:</b>"
-msgstr ""
+msgstr "<b>_Přesto načíst tyto moduly:</b>"
 
 #: ../data/ui/pref.glade.h:90
 msgid "Modules"
-msgstr ""
+msgstr "Moduly"
 
 #: ../data/ui/pref.glade.h:91
 msgid "Auto (move if on the same FS, copy otherwise)"
@@ -546,7 +544,6 @@ msgid "Icon view"
 msgstr "Ikonový pohled"
 
 #: ../data/ui/pref.glade.h:96
-#, fuzzy
 msgid "Compact view"
 msgstr "Kompaktní pohled"
 
@@ -582,47 +579,47 @@ msgstr "Vyberte požadovanou akci:"
 
 #: ../data/ui/autorun.glade.h:6
 msgid "_Always perform this action on this media type"
-msgstr ""
+msgstr "_Vždy provést tuto akci na tomto typu média"
 
 #: ../data/ui/connect.glade.h:1
 msgid "Connect to remote server"
-msgstr ""
+msgstr "Připojit ke vzdálenému serveru"
 
 #: ../data/ui/connect.glade.h:2
 msgid "<b>Specify remote folder to connect</b>"
-msgstr ""
+msgstr "<b>Určete vzdálenou složku pro připojení</b>"
 
 #: ../data/ui/connect.glade.h:3
 msgid "_Type:"
-msgstr ""
+msgstr "_Typ:"
 
 #: ../data/ui/connect.glade.h:4
 msgid "_Host:"
-msgstr ""
+msgstr "_Hostitel:"
 
 #: ../data/ui/connect.glade.h:5
 msgid "_Port:"
-msgstr ""
+msgstr "_Port:"
 
 #: ../data/ui/connect.glade.h:6
 msgid "Pa_th:"
-msgstr ""
+msgstr "Ce_sta:"
 
 #: ../data/ui/connect.glade.h:7
 msgid "_Anonymous login"
-msgstr ""
+msgstr "_Anonymní přihlášení"
 
 #: ../data/ui/connect.glade.h:8
 msgid "_Login as:"
-msgstr ""
+msgstr "_Přihlásit se jako:"
 
 #: ../data/ui/connect.glade.h:9
 msgid "SSH"
-msgstr ""
+msgstr "SSH"
 
 #: ../data/ui/connect.glade.h:10
 msgid "FTP"
-msgstr ""
+msgstr "FTP"
 
 #: ../data/ui/connect.glade.h:11
 msgid "WebDAV"
@@ -655,7 +652,7 @@ msgstr "Otevřít v terminál_u"
 
 #: ../src/desktop-ui.c:68
 msgid "_Remove from Desktop"
-msgstr ""
+msgstr "_Odstranit z plochy"
 
 #: ../src/desktop-ui.c:85
 msgid "Stic_k to Current Position"
@@ -668,23 +665,23 @@ msgstr "Přichytit k _mřížce"
 #: ../src/desktop.c:946
 #, fuzzy
 msgid "Activate file"
-msgstr "<obrázek>"
+msgstr "Označit soubor"
 
 #: ../src/desktop.c:948
 #, fuzzy
 msgid "Show file menu"
-msgstr "Zobrazit skryt_é"
+msgstr "Zobrazit menu souboru"
 
 #: ../src/desktop.c:1364
 #, fuzzy
 msgid "Show desktop menu"
-msgstr "<b>Zobrazit ikony na ploše</b>"
+msgstr "Zobrazit menu plochy"
 
 #. FIXME: set name by monitor
 #: ../src/desktop.c:1436
 #, fuzzy
 msgid "Desktop"
-msgstr "_Pracovní plocha"
+msgstr "Pracovní plocha"
 
 #: ../src/main-win-ui.c:187
 msgid "_File"
@@ -712,11 +709,11 @@ msgstr "Složka"
 
 #: ../src/main-win-ui.c:192
 msgid "Empty File"
-msgstr ""
+msgstr "Prázdný soubor"
 
 #: ../src/main-win-ui.c:193
 msgid "Folder Propertie_s"
-msgstr ""
+msgstr "Vlastnosti slo_žky"
 
 #: ../src/main-win-ui.c:194
 msgid "_Close Tab"
@@ -732,11 +729,11 @@ msgstr "_Upravit"
 
 #: ../src/main-win-ui.c:198
 msgid "C_ut"
-msgstr ""
+msgstr "V_yjmout"
 
 #: ../src/main-win-ui.c:201
 msgid "Move to _Trash"
-msgstr ""
+msgstr "Přesunout do _Koše"
 
 #: ../src/main-win-ui.c:203
 msgid "Copy Pat_h(s)"
