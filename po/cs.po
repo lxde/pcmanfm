@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-01-22 00:33+0200\n"
-"PO-Revision-Date: 2014-05-21 21:15+0000\n"
+"PO-Revision-Date: 2014-05-21 21:30+0000\n"
 "Last-Translator: Jan <jhelebrant@seznam.cz>\n"
 "Language-Team: Czech <radek@fastlinux.eu>\n"
 "Language: cs\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1400706959.0\n"
+"X-POOTLE-MTIME: 1400707823.0\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2014"
@@ -457,17 +457,15 @@ msgstr "Zobrazit pouze jednu šablonu pro každý MIME typ"
 
 #: ../data/ui/pref.glade.h:77
 msgid "Ru_n default application after creation from template"
-msgstr ""
+msgstr "Spu_stit výchozí aplikaci po vytvoření ze šablony"
 
 #: ../data/ui/pref.glade.h:78
-#, fuzzy
 msgid "<b>Other Options</b>"
-msgstr "<b>Zobrazit ikony na ploše</b>"
+msgstr "<b>Další možnosti</b>"
 
 #: ../data/ui/pref.glade.h:79
-#, fuzzy
 msgid "Use Application Startup Notify _by default"
-msgstr "_Použít Oznamování startu aplikace jako výchozí"
+msgstr "Použít Oznamování startu aplikace _jako výchozí"
 
 # velmi kostrbatý překlad!!!
 #: ../data/ui/pref.glade.h:80
@@ -819,7 +817,7 @@ msgstr "_Následující složka"
 
 #: ../src/main-win-ui.c:232
 msgid "Go forward to next folder in history"
-msgstr ""
+msgstr "Jít vpřed do následující složky v historii"
 
 #: ../src/main-win-ui.c:233
 msgid "Pa_rent Folder"
@@ -879,32 +877,31 @@ msgstr "Přejít na seznam míst v síti"
 
 #: ../src/main-win-ui.c:241
 msgid "_Go to Location..."
-msgstr ""
+msgstr "_Jít do umístění"
 
 #: ../src/main-win-ui.c:242
 msgid "_Connect to Server..."
-msgstr ""
+msgstr "_Připojit k serveru"
 
 #: ../src/main-win-ui.c:242
 msgid "Open a window to choose remote folder location"
-msgstr ""
+msgstr "Otevřít okno pro výběr vzdáleného umístění"
 
 #: ../src/main-win-ui.c:243
 msgid "Go to the path in the location bar"
-msgstr ""
+msgstr "Jít na umístění v adresním řádku"
 
 #: ../src/main-win-ui.c:244
 msgid "_Bookmarks"
 msgstr "_Záložky"
 
 #: ../src/main-win-ui.c:245
-#, fuzzy
 msgid "_Add to Bookmarks..."
 msgstr "Přidat do záložek"
 
 #: ../src/main-win-ui.c:245
 msgid "Add current folder to bookmarks list"
-msgstr ""
+msgstr "Přidat aktuální složku do záložek"
 
 #: ../src/main-win-ui.c:246
 msgid "Too_ls"
@@ -1025,7 +1022,7 @@ msgstr "Podle _přípony"
 
 #: ../src/main-win-ui.c:312
 msgid "By _Extension"
-msgstr ""
+msgstr "Podle _přípony"
 
 #: ../src/main-win-ui.c:325
 msgid "Places"
@@ -1040,21 +1037,20 @@ msgid "Remote"
 msgstr "Vzdálený"
 
 #: ../src/main-win-ui.c:333
-#, fuzzy
 msgid "_Location"
-msgstr "Ap_likace"
+msgstr "_Umístění"
 
 #: ../src/main-win-ui.c:334
 msgid "_Buttons"
-msgstr ""
+msgstr "_Tlačítka"
 
 #: ../src/main-win.c:925 ../src/main-win.c:929
 msgid "Show history of visited folders"
-msgstr ""
+msgstr "Zobrazit historii navštívených složek"
 
 #: ../src/main-win.c:934
 msgid "History"
-msgstr ""
+msgstr "Historie"
 
 #: ../src/main-win.c:948
 msgid "You are in super user mode"
@@ -1093,16 +1089,15 @@ msgstr "Spustit příkaz"
 
 #: ../src/main-win.c:1210
 msgid "Run a command"
-msgstr ""
+msgstr "Spustit příkaz"
 
 #: ../src/main-win.c:1211
 msgid "Enter a command to run:"
-msgstr ""
+msgstr "Zadejte příkaz ke spuštění:"
 
 #: ../src/main-win.c:1218
-#, fuzzy
 msgid "Current folder is inaccessible"
-msgstr "Otevřít současnou složku v _terminálu"
+msgstr "Aktuální složka je nepřístupná"
 
 #: ../src/main-win.c:1822
 #, c-format
@@ -1121,11 +1116,11 @@ msgstr "Přidat do záložek"
 
 #: ../src/main-win.c:2552
 msgid "Select filter"
-msgstr ""
+msgstr "Vybrat filtr"
 
 #: ../src/main-win.c:2553
 msgid "Choose a new shell pattern to show files:"
-msgstr ""
+msgstr "Vyberte novou šablonu shellu pro zobrazení souborů:"
 
 #. options only acceptable by first pcmanfm instance. These options are not passed through IPC
 #: ../src/pcmanfm.c:78
@@ -1171,7 +1166,6 @@ msgstr "SOUBOR"
 
 #. don't translate list of modes in description, please
 #: ../src/pcmanfm.c:89
-#, fuzzy
 msgid ""
 "Set mode of desktop wallpaper. MODE=(color|stretch|fit|crop|center|tile|"
 "screen)"
@@ -1194,7 +1188,6 @@ msgid "Open new window"
 msgstr "Otevřít nové okno"
 
 #: ../src/pcmanfm.c:93
-#, fuzzy
 msgid "Open a Find Files window"
 msgstr "Otevřít nástroj pro hledání souborů"
 
@@ -1212,7 +1205,7 @@ msgstr "[SOUBOR1, SOUBOR2,...]"
 
 #: ../src/pcmanfm.c:352
 msgid "Desktop manager is not active."
-msgstr ""
+msgstr "Správce plochy není aktivní."
 
 #: ../src/pcmanfm.c:598
 msgid "Terminal emulator is not set."
@@ -1253,19 +1246,19 @@ msgstr[2] " (%d skrytých)"
 
 #: ../src/pref.c:514
 msgid "Add to Modules Blacklist"
-msgstr ""
+msgstr "Přidat do blacklistu modulů"
 
 #: ../src/pref.c:515
 msgid "Enter a blacklisted module mask:"
-msgstr ""
+msgstr "Zadejte masku pro modul v blacklistu:"
 
 #: ../src/pref.c:606
 msgid "Add to Modules Whitelist"
-msgstr ""
+msgstr "Přidat do whitelistu modulů"
 
 #: ../src/pref.c:607
 msgid "Enter a whitelisted module mask:"
-msgstr ""
+msgstr "Zadejte masku pro modul ve whitelistu:"
 
 #: ../data/pcmanfm.desktop.in.h:1
 msgid "File Manager PCManFM"
