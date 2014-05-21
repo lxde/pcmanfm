@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-01-22 00:33+0200\n"
-"PO-Revision-Date: 2014-05-21 19:56+0000\n"
+"PO-Revision-Date: 2014-05-21 20:01+0000\n"
 "Last-Translator: Jan <jhelebrant@seznam.cz>\n"
 "Language-Team: Czech <radek@fastlinux.eu>\n"
 "Language: cs\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1400702176.0\n"
+"X-POOTLE-MTIME: 1400702474.0\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2014"
@@ -85,7 +85,6 @@ msgid "<b>Show desktop icons</b>"
 msgstr "<b>Zobrazit ikony na ploše</b>"
 
 #: ../data/ui/desktop-pref.glade.h:14
-#, fuzzy
 msgid "_Show \"Documents\" folder on the desktop"
 msgstr "_Zobrazit ikonu \"Dokumenty\" na ploše"
 
@@ -156,12 +155,10 @@ msgid "Center unscaled image on the monitor"
 msgstr "Vystředit obrázek na monitor bez změny velikosti"
 
 #: ../data/ui/desktop-pref.glade.h:30
-#, fuzzy
 msgid "Tile the image to fill the entire monitor area"
 msgstr "Vydlaždicovat na celou obrazovku"
 
 #: ../data/ui/desktop-pref.glade.h:31
-#, fuzzy
 msgid "Stretch and crop to fill the monitor area"
 msgstr "Roztáhnout a oříznout na celou obrazovku"
 
@@ -171,17 +168,14 @@ msgid "Stretch to fill the complete screen"
 msgstr "Roztáhnout na celou obrazovku"
 
 #: ../data/ui/pref.glade.h:1
-#, fuzzy
 msgid "Open in current tab"
 msgstr "Otevřít v současné kartě"
 
 #: ../data/ui/pref.glade.h:2
-#, fuzzy
 msgid "Open in new tab"
 msgstr "Otevřít v nové kart_ě"
 
 #: ../data/ui/pref.glade.h:3
-#, fuzzy
 msgid "Open in new window"
 msgstr "Otevřít v novém okně"
 
@@ -207,23 +201,20 @@ msgid "Co_nfirm before deleting files"
 msgstr "_Přesouvat smazané soubory do \"Koše\" namísto smazání"
 
 #: ../data/ui/pref.glade.h:9
-#, fuzzy
 msgid "_Move deleted files to \"trash can\" instead of erasing from disk"
 msgstr "_Přesouvat smazané soubory do \"Koše\" namísto smazání"
 
 #: ../data/ui/pref.glade.h:10
-#, fuzzy
 msgid "_Erase files on removable media instead of \"trash can\" creation"
 msgstr "_Smazat soubory na vyměnitelném médiu namísto vytvoření \"Koše\""
 
 #: ../data/ui/pref.glade.h:11
-#, fuzzy
 msgid "Confi_rm before moving files into \"trash can\""
 msgstr "Pot_vrdit před přesunutím souborů do \"Koše\""
 
 #: ../data/ui/pref.glade.h:12
 msgid "Don't ask options on _launch executable file"
-msgstr ""
+msgstr "Neptat se na možnosti při _spuštění spustitelného souboru"
 
 #: ../data/ui/pref.glade.h:13
 msgid "_Bookmarks:"
@@ -235,7 +226,7 @@ msgstr "Výchoz_í akce pro upustění:"
 
 #: ../data/ui/pref.glade.h:15
 msgid "\"_Smart shortcut\" auto-action on drop to Desktop folder"
-msgstr ""
+msgstr "\"_Chytrý zástupce\" auto-akce při puštění do složky Plocha"
 
 #: ../data/ui/pref.glade.h:16
 msgid ""
@@ -245,6 +236,12 @@ msgid ""
 "- other files (e.g. on removable media) will be copied\n"
 "- for some external URI a shortcut will be created"
 msgstr ""
+"Pokud je zapnuto tak \\\"Auto\\\" akce po upuštění souboru na složku Plochy "
+"bude:\n"
+"- pro soubory přímo v domovské složce se vytvoří symlink\n"
+"- soubory ve stejném souborovém systému budou přesunuty\n"
+"- ostatní soubory (např. na přenosných médiích) budou zkopírovány\n"
+"- pro některá externí URI se vytvoří zástupce"
 
 #: ../data/ui/pref.glade.h:21
 msgid "_Unfold tab when files are dragged onto tab button"
@@ -357,9 +354,8 @@ msgid "_Home Folder"
 msgstr "Domovská složka"
 
 #: ../data/ui/pref.glade.h:49
-#, fuzzy
 msgid "Des_ktop"
-msgstr "_Pracovní plocha"
+msgstr "Pra_covní plocha"
 
 #: ../data/ui/pref.glade.h:50 ../src/main-win-ui.c:236
 msgid "_Trash Can"
@@ -367,7 +363,7 @@ msgstr "_Koš"
 
 #: ../data/ui/pref.glade.h:51
 msgid "_Filesystem Root"
-msgstr ""
+msgstr "_Kořen souborového systému"
 
 #: ../data/ui/pref.glade.h:52
 msgid "App_lications"
@@ -375,12 +371,12 @@ msgstr "Ap_likace"
 
 #: ../data/ui/pref.glade.h:53 ../src/main-win-ui.c:239
 msgid "Dev_ices"
-msgstr ""
+msgstr "Zaří_zení"
 
 #: ../data/ui/pref.glade.h:54
 #, fuzzy
 msgid "_Network"
-msgstr "Síť_ové jednotky"
+msgstr "_Síť"
 
 #: ../data/ui/pref.glade.h:55
 msgid "_Layout"
