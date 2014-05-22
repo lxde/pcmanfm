@@ -355,6 +355,7 @@ gboolean pcmanfm_run(gint screen_num)
             /* ignore desktop-oriented commands if no desktop support */
             if (desktop_pref || wallpaper_mode || set_wallpaper)
             {
+                /* FIXME: add "on this X screen/monitor" into diagnostics */
                 fm_show_error(NULL, NULL, _("Desktop manager is not active."));
                 return FALSE;
             }
