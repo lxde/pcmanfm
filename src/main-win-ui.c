@@ -65,6 +65,38 @@ static const char main_menu_xml[] =
   "<menu action='ViewMenu'>"
     "<menuitem action='Reload'/>"
     "<separator/>"
+    "<menuitem action='ShowHidden'/>"
+    "<menu action='Sort'>"
+      "<menuitem action='Asc'/>"
+      "<menuitem action='Desc'/>"
+      "<separator/>"
+      "<menuitem action='ByName'/>"
+      "<menuitem action='ByMTime'/>"
+      "<menuitem action='BySize'/>"
+      "<menuitem action='ByType'/>"
+#if FM_CHECK_VERSION(1, 2, 0)
+      "<menuitem action='ByExt'/>"
+#endif
+#if FM_CHECK_VERSION(1, 0, 2)
+      "<separator/>"
+#if FM_CHECK_VERSION(1, 2, 0)
+      "<menuitem action='MingleDirs'/>"
+#endif
+      "<menuitem action='SortIgnoreCase'/>"
+#endif
+    "</menu>"
+    "<menu action='FolderView'>"
+#if FM_CHECK_VERSION(1, 2, 0)
+      "<placeholder name='ViewModes'/>"
+#else
+      "<menuitem action='IconView'/>"
+      "<menuitem action='ThumbnailView'/>"
+      "<menuitem action='CompactView'/>"
+      "<menuitem action='ListView'/>"
+#endif
+    "</menu>"
+    "<menuitem action='SavePerFolder'/>"
+    "<separator/>"
     "<menu action='Toolbar'>"
       "<menuitem action='ShowToolbar'/>"
       "<separator/>"
@@ -99,38 +131,6 @@ static const char main_menu_xml[] =
     "<separator/>"
     "<menuitem action='Filter'/>"
 #endif
-    "<separator/>"
-    "<menu action='FolderView'>"
-#if FM_CHECK_VERSION(1, 2, 0)
-      "<placeholder name='ViewModes'/>"
-#else
-      "<menuitem action='IconView'/>"
-      "<menuitem action='ThumbnailView'/>"
-      "<menuitem action='CompactView'/>"
-      "<menuitem action='ListView'/>"
-#endif
-    "</menu>"
-    "<menu action='Sort'>"
-      "<menuitem action='Asc'/>"
-      "<menuitem action='Desc'/>"
-      "<separator/>"
-      "<menuitem action='ByName'/>"
-      "<menuitem action='ByMTime'/>"
-      "<menuitem action='BySize'/>"
-      "<menuitem action='ByType'/>"
-#if FM_CHECK_VERSION(1, 2, 0)
-      "<menuitem action='ByExt'/>"
-#endif
-#if FM_CHECK_VERSION(1, 0, 2)
-      "<separator/>"
-#if FM_CHECK_VERSION(1, 2, 0)
-      "<menuitem action='MingleDirs'/>"
-#endif
-      "<menuitem action='SortIgnoreCase'/>"
-#endif
-    "</menu>"
-    "<menuitem action='ShowHidden'/>"
-    "<menuitem action='SavePerFolder'/>"
   "</menu>"
   "<menu action='BookmarksMenu'>"
     "<menuitem action='AddBookmark'/>"
