@@ -157,12 +157,12 @@ static void fm_tab_page_class_init(FmTabPageClass *klass)
                     NULL, NULL,
                     g_cclosure_marshal_VOID__VOID,
                     G_TYPE_NONE, 0);
-    /* folder view received the focus */
+    /* the folder finished loading */
     signals[LOADED] =
         g_signal_new("loaded",
                     G_TYPE_FROM_CLASS(klass),
                     G_SIGNAL_RUN_FIRST,
-                    G_STRUCT_OFFSET (FmTabPageClass, got_focus),
+                    G_STRUCT_OFFSET (FmTabPageClass, loaded),
                     NULL, NULL,
                     g_cclosure_marshal_VOID__VOID,
                     G_TYPE_NONE, 0);

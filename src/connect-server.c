@@ -67,6 +67,8 @@ static void on_response(GtkDialog *dialog, gint resp, ConnectDlg *dlg)
             def_port = 21;
         else if (strcmp(scheme, "dav") == 0)
             def_port = 80;
+        else
+            def_port = -1;
         used_port = (int)gtk_spin_button_get_value(dlg->server_port);
         if (def_port != used_port)
             g_string_append_printf(str, ":%d", used_port);
