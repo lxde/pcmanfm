@@ -1,3 +1,37 @@
+Changes on 1.2.1 since 1.2.0:
+
+* Fixed update desktop config from old settings.
+
+* Fixed 'Edit'->'Rename' menu item, it should be inactive if rename isn't
+    supported.
+
+* Fixed install and uninstall for modules directory.
+
+* Port number shouldn't be added in Connect to Server dialog if port is
+    default one.
+
+* Got rid of possible memory exhausting after changing wallpaper.
+
+* Fixed icons positioning when upper reserved area is not 0.
+
+* Fixed resetting cursor in location bar to beginning after navigation.
+
+* Corrected folder popup update on folder loading so context menu is now
+    correct for the folder shown.
+
+* Fixed dragging and dropping icons behavior on desktop.
+
+* Correctly use screen number to display all the windows.
+
+* Added "System;FileTools;" into Categories for pcmanfm.desktop, those
+    are recommended categories for the FileManager one.
+
+* Reordered 'View' menu items a bit to conform with HIG.
+
+* Implemented drawing icons of dragged items as cursor to see where they
+    will end up dropped.
+
+
 Changes on 1.2.0 since 1.1.0:
 
 * Implemented accessibility for the desktop managed by pcmanfm.
