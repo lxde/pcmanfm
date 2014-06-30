@@ -3417,8 +3417,8 @@ static gboolean on_button_release(GtkWidget* w, GdkEventButton* evt)
     else if(self->dragging)
     {
         self->dragging = FALSE;
-        /* FIXME: restore after drag
-        queue_layout_items(self); */
+        /* FIXME: restore after drag */
+        queue_layout_items(self);
     }
     else if(fm_config->single_click && evt->button == 1)
     {
@@ -4389,34 +4389,155 @@ static void on_drag_data_received (GtkWidget *dest_widget,
     gtk_drag_finish(drag_context, TRUE, FALSE, time);
 }
 
+static GdkPixbuf *_create_drag_icon(FmDesktop *desktop, gint *x, gint *y)
+{
+    GtkTreeModel *model;
+    FmDesktopItem *item;
+    cairo_surface_t *s;
+    GdkPixbuf *pixbuf;
+    cairo_t *cr;
+    GdkPixbuf *icon;
+    GtkTreeIter it;
+    GdkRectangle area, icon_rect;
+#if !GTK_CHECK_VERSION(3, 0, 0)
+    guchar *dest_data, *src_data;
+    int dest_stride, src_stride, _x, _y;
+#endif
+
+    if (!desktop->model)
+        return NULL;
+    model = GTK_TREE_MODEL(desktop->model);
+    if (!gtk_tree_model_get_iter_first(model, &it))
+        return NULL;
+
+    /* determine the size of complete pixbuf */
+    area.width = 0; /* mark it */
+    do
+    {
+        item = fm_folder_model_get_item_userdata(desktop->model, &it);
+        if (!item->is_selected)
+            continue;
+        if (area.width == 0)
+            area = item->icon_rect;
+        else
+        {
+            if (item->icon_rect.x < area.x)
+            {
+                area.width += (area.x - item->icon_rect.x);
+                area.x = item->icon_rect.x;
+            }
+            if (item->icon_rect.x + item->icon_rect.width > area.x + area.width)
+                area.width = item->icon_rect.x + item->icon_rect.width - area.x;
+            if (item->icon_rect.y < area.y)
+            {
+                area.height += (area.y - item->icon_rect.y);
+                area.y = item->icon_rect.y;
+            }
+            if (item->icon_rect.y + item->icon_rect.height > area.y + area.height)
+                area.height = item->icon_rect.y + item->icon_rect.height - area.y;
+        }
+    }
+    while(gtk_tree_model_iter_next(model, &it));
+
+    /* now create the pixbuf */
+    if (area.width == 0) /* no selection??? */
+        return NULL;
+    area.width += 2;
+    area.height += 2;
+    s = cairo_image_surface_create(CAIRO_FORMAT_ARGB32, area.width, area.height);
+    cr = cairo_create(s);
+
+    gtk_tree_model_get_iter_first(model, &it);
+    do
+    {
+        item = fm_folder_model_get_item_userdata(desktop->model, &it);
+        if (!item->is_selected)
+            continue;
+        /* FIXME: should we render name too, or is it too heavy? */
+        icon = NULL;
+        gtk_tree_model_get(model, &it, FM_FOLDER_MODEL_COL_ICON, &icon, -1);
+        /* draw the icon */
+        if (icon)
+        {
+            icon_rect.x = item->icon_rect.x - area.x + 1;
+            icon_rect.width = item->icon_rect.width;
+            icon_rect.y = item->icon_rect.y - area.y + 1;
+            icon_rect.height = item->icon_rect.height;
+//g_debug("icon at %d %d %d %d",icon_rect.x,icon_rect.y,icon_rect.width,icon_rect.height);
+            gdk_cairo_set_source_pixbuf(cr, icon, icon_rect.x, icon_rect.y);
+            gdk_cairo_rectangle(cr, &icon_rect);
+            cairo_fill(cr);
+            g_object_unref(icon);
+        }
+    }
+    while(gtk_tree_model_iter_next(model, &it));
+
+    cairo_destroy (cr);
+#if GTK_CHECK_VERSION(3, 0, 0)
+    pixbuf = gdk_pixbuf_get_from_surface(s, 0, 0, area.width, area.height);
+#else
+    /* GTK2 has no API gdk_pixbuf_get_from_surface() but we cannot
+       preserve transparency using gdk_pixbuf_get_from_drawable() so
+       therefore have to implement that API behavior here instead */
+    pixbuf = gdk_pixbuf_new(GDK_COLORSPACE_RGB, TRUE, 8, area.width, area.height);
+    cairo_surface_flush(s);
+    dest_data = gdk_pixbuf_get_pixels(pixbuf);
+    dest_stride = gdk_pixbuf_get_rowstride(pixbuf);
+    src_data = cairo_image_surface_get_data(s);
+    src_stride = cairo_image_surface_get_stride(s);
+
+    /* convert alpha from cairo_surface_t into GdkPixbuf format */
+    for (_y = 0; _y < area.height; _y++)
+    {
+        guint32 *src = (guint32 *) src_data;
+
+        for (_x = 0; _x < area.width; _x++)
+        {
+            guint alpha = src[_x] >> 24;
+
+            if (alpha == 0)
+            {
+                dest_data[_x * 4 + 0] = 0;
+                dest_data[_x * 4 + 1] = 0;
+                dest_data[_x * 4 + 2] = 0;
+            }
+            else
+            {
+                dest_data[_x * 4 + 0] = (((src[_x] & 0xff0000) >> 16) * 255 + alpha / 2) / alpha;
+                dest_data[_x * 4 + 1] = (((src[_x] & 0x00ff00) >>  8) * 255 + alpha / 2) / alpha;
+                dest_data[_x * 4 + 2] = (((src[_x] & 0x0000ff) >>  0) * 255 + alpha / 2) / alpha;
+            }
+            dest_data[_x * 4 + 3] = alpha;
+        }
+        src_data += src_stride;
+        dest_data += dest_stride;
+    }
+#endif
+    cairo_surface_destroy(s);
+    *x = area.x;
+    *y = area.y;
+    return pixbuf;
+}
+
 static void on_drag_begin (GtkWidget *widget, GdkDragContext *drag_context)
 {
     /* GTK auto-dragging started a drag, update state */
-    FmDesktop* desktop = FM_DESKTOP(widget);
+    FmDesktop *desktop = FM_DESKTOP(widget);
+    gint x, y, icon_x, icon_y;
+    GdkPixbuf *pix = _create_drag_icon(desktop, &x, &y);
 
     desktop->dragging = TRUE;
-    /* FIXME: set drag cursor to selected items
-    FmDesktopItem *item = desktop->focus;
-    if (item)
+
+    /* FIXME: set drag cursor to selected items */
+    if (pix)
     {
-        gint icon_size = fm_config->big_icon_size;
-        FmIcon *icon = fm_file_info_get_icon(item->fi);
-        if (icon)
-        {
-            GdkPixbuf *pix = fm_pixbuf_from_icon(icon, icon_size);
-            gint icon_x, icon_y;
-            if (pix)
-            {
-                icon_x = desktop->drag_start_x - item->icon_rect.x +
-                         (icon_size - item->icon_rect.width) / 2;
-                icon_y = desktop->drag_start_y - item->icon_rect.y +
-                         (icon_size - item->icon_rect.height) / 2;
-                gtk_drag_set_icon_pixbuf(drag_context, pix, icon_x, icon_y);
-                g_object_unref(pix);
-            }
-        }
+        icon_x = desktop->drag_start_x - x;
+        icon_y = desktop->drag_start_y - y;
+        gtk_drag_set_icon_pixbuf(drag_context, pix, icon_x, icon_y);
+        g_object_unref(pix);
     }
-    queue_layout_items(desktop); */
+
+    queue_layout_items(desktop);
 }
 
 static void on_dnd_src_data_get(FmDndSrc* ds, FmDesktop* desktop)
@@ -4722,8 +4843,8 @@ static GObject* fm_desktop_constructor(GType type, guint n_construct_properties,
     /* init dnd support */
     self->dnd_src = fm_dnd_src_new((GtkWidget*)self);
 #if !FM_CHECK_VERSION(1, 2, 1)
-    /* FIXME: override pre-1.2.1 handler from FmDndSrc to allow icon change
-    g_signal_connect_after(self, "drag-begin", G_CALLBACK(on_drag_begin), NULL); */
+    /* FIXME: override pre-1.2.1 handler from FmDndSrc to allow icon change */
+    g_signal_connect_after(self, "drag-begin", G_CALLBACK(on_drag_begin), NULL);
 #endif
     /* add our own targets */
     fm_dnd_src_add_targets((GtkWidget*)self, dnd_targets, G_N_ELEMENTS(dnd_targets));
@@ -4809,9 +4930,9 @@ static void fm_desktop_class_init(FmDesktopClass *klass)
     widget_class->drag_drop = on_drag_drop;
     widget_class->drag_data_received = on_drag_data_received;
     widget_class->drag_leave = on_drag_leave;
-//FIXME: #if FM_CHECK_VERSION(1, 2, 1)
+#if FM_CHECK_VERSION(1, 2, 1)
     widget_class->drag_begin = on_drag_begin;
-//FIXME: #endif
+#endif
     /* widget_class->drag_data_get = on_drag_data_get; */
 
     if(XInternAtoms(gdk_x11_get_default_xdisplay(), atom_names,
