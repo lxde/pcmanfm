@@ -2,7 +2,7 @@
 # Process this file with autoconf to produce a configure script.
 
 AC_PREREQ([2.63])
-AC_INIT([pcmanfm], [1.2.0], [http://pcmanfm.sf.net/])
+AC_INIT([pcmanfm], [1.2.1], [http://pcmanfm.sf.net/])
 AM_INIT_AUTOMAKE([-Wall -Werror foreign no-dist-gzip dist-xz])
 
 AC_CONFIG_HEADERS([config.h])
