@@ -179,7 +179,9 @@ static const char main_menu_xml[] =
 "<accelerator action='Location2'/>"
 "<accelerator action='Prev2'/>"
 "<accelerator action='Next2'/>"
-"<accelerator action='Reload2'/>";
+"<accelerator action='Reload2'/>"
+"<accelerator action='SizeBigger2'/>"
+"<accelerator action='SizeSmaller2'/>";
 
 /* For actions that are bounced to FmFolderView - check accels for accordance */
 static GtkActionEntry main_win_actions[]=
@@ -257,6 +259,8 @@ static GtkActionEntry main_win_actions[]=
     {"Prev2", NULL, NULL, "XF86Back", NULL, G_CALLBACK(on_go_back)},
     {"Next2", NULL, NULL, "XF86Forward", NULL, G_CALLBACK(on_go_forward)},
     {"Reload2", NULL, NULL, "<Ctrl>R", NULL, G_CALLBACK(on_reload)},
+    {"SizeBigger2", NULL, NULL, "<Ctrl>equal", NULL, G_CALLBACK(on_size_increment)},
+    {"SizeSmaller2", NULL, NULL, "<Ctrl>minus", NULL, G_CALLBACK(on_size_decrement)},
 };
 
 /* main_win_toggle_actions+main_win_mode_actions - see 'ViewMenu' for mnemonics */
