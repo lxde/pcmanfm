@@ -1802,9 +1802,9 @@ static void paint_item(FmDesktop* self, FmDesktopItem* item, cairo_t* cr, GdkRec
 #endif
     int text_x, text_y;
 
-    /* FIXME: don't draw dragged items on desktop, they are moved with mouse
+    /* don't draw dragged items on desktop, they are moved with mouse */
     if (item->is_selected && self->dragging)
-        return; */
+        return;
 
 #if GTK_CHECK_VERSION(3, 0, 0)
     style = gtk_widget_get_style_context(widget);
@@ -3417,7 +3417,7 @@ static gboolean on_button_release(GtkWidget* w, GdkEventButton* evt)
     else if(self->dragging)
     {
         self->dragging = FALSE;
-        /* FIXME: restore after drag */
+        /* restore after drag */
         queue_layout_items(self);
     }
     else if(fm_config->single_click && evt->button == 1)
@@ -4528,7 +4528,7 @@ static void on_drag_begin (GtkWidget *widget, GdkDragContext *drag_context)
 
     desktop->dragging = TRUE;
 
-    /* FIXME: set drag cursor to selected items */
+    /* set drag cursor to selected items */
     if (pix)
     {
         icon_x = desktop->drag_start_x - x;
@@ -4843,7 +4843,7 @@ static GObject* fm_desktop_constructor(GType type, guint n_construct_properties,
     /* init dnd support */
     self->dnd_src = fm_dnd_src_new((GtkWidget*)self);
 #if !FM_CHECK_VERSION(1, 2, 1)
-    /* FIXME: override pre-1.2.1 handler from FmDndSrc to allow icon change */
+    /* override pre-1.2.1 handler from FmDndSrc to allow icon change */
     g_signal_connect_after(self, "drag-begin", G_CALLBACK(on_drag_begin), NULL);
 #endif
     /* add our own targets */
@@ -5668,7 +5668,6 @@ void fm_desktop_manager_init(gint on_screen)
     g_mkdir_with_parents(desktop_path, 0700); /* ensure the existance of Desktop folder. */
     /* FIXME: should we store the desktop folder path in the annoying ~/.config/user-dirs.dirs file? */
 
-    /* FIXME: should add a possibility to use different folders on screens */
     gdpy = gdk_display_get_default();
     n_scr = gdk_display_get_n_screens(gdpy);
     n_screens = 0;
