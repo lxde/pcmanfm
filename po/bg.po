@@ -7,16 +7,16 @@ msgstr ""
 "Project-Id-Version: pcmanfm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-01-22 00:33+0200\n"
-"PO-Revision-Date: 2014-04-27 22:04+0000\n"
-"Last-Translator: Радослав <reckku@gmail.com>\n"
+"PO-Revision-Date: 2014-08-12 01:41+0000\n"
+"Last-Translator: Радослав Иванов <reckku@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: bg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1398636269.0\n"
+"X-Generator: Pootle 2.6.0-rc1\n"
+"X-POOTLE-MTIME: 1407807715.000000\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2014"
@@ -120,14 +120,12 @@ msgid "Custom:"
 msgstr "По избор:"
 
 #: ../data/ui/desktop-pref.glade.h:23
-#, fuzzy
 msgid "Select a Desktop Folder"
-msgstr "Папка на работния плот"
+msgstr "Изберете папка на Работния плот"
 
 #: ../data/ui/desktop-pref.glade.h:24
-#, fuzzy
 msgid "_Open folders from desktop in new window"
-msgstr "Отворени в Нов Прозорец"
+msgstr "_Отвори папките от Работния плот в нов прозорец"
 
 #: ../data/ui/desktop-pref.glade.h:25
 msgid "Ad_vanced"
@@ -138,48 +136,40 @@ msgid "Fill with background color only"
 msgstr "Изпълни само с цвета на средата"
 
 #: ../data/ui/desktop-pref.glade.h:27
-#, fuzzy
 msgid "Stretch to fill the entire monitor area"
-msgstr "Разширяване до изпълване на видимата част"
+msgstr "Разтягане до изпълване на видимата част"
 
 #: ../data/ui/desktop-pref.glade.h:28
-#, fuzzy
 msgid "Stretch to fit the monitor area"
-msgstr "Разширяване до ръба на екрана"
+msgstr "Разтягане до ръба на екрана"
 
 #: ../data/ui/desktop-pref.glade.h:29
 msgid "Center unscaled image on the monitor"
 msgstr "Центриране на незапълващо монитора изображение"
 
 #: ../data/ui/desktop-pref.glade.h:30
-#, fuzzy
 msgid "Tile the image to fill the entire monitor area"
 msgstr "Изпълване като мозайка"
 
 #: ../data/ui/desktop-pref.glade.h:31
-#, fuzzy
 msgid "Stretch and crop to fill the monitor area"
-msgstr "Разширяване до изпълване на видимата част"
+msgstr "Разтягане и изрязване до изпълване на видимата част"
 
 #: ../data/ui/desktop-pref.glade.h:32
-#, fuzzy
 msgid "Stretch to fill the complete screen"
-msgstr "Разширяване до изпълване на видимата част"
+msgstr "Разтягане до изпълване на видимата част"
 
 #: ../data/ui/pref.glade.h:1
-#, fuzzy
 msgid "Open in current tab"
-msgstr "Отворени в Текущия Раздел"
+msgstr "Отвори в текущия раздел"
 
 #: ../data/ui/pref.glade.h:2
-#, fuzzy
 msgid "Open in new tab"
-msgstr "Отвори в нов _раздел"
+msgstr "Отвори в нов раздел"
 
 #: ../data/ui/pref.glade.h:3
-#, fuzzy
 msgid "Open in new window"
-msgstr "Отвори нов прозорец"
+msgstr "Отвори в нов прозорец"
 
 #: ../data/ui/pref.glade.h:4
 msgid "Preferences"
@@ -317,9 +307,8 @@ msgid "Al_ways show full file names"
 msgstr "_Винаги да се показва пълното име на файла"
 
 #: ../data/ui/pref.glade.h:38
-#, fuzzy
 msgid "Show icons of hidden _files shadowed"
-msgstr "Показване на _икони в сенките на резервните копия"
+msgstr "Показвай иконите на скритите _файлове като сенки"
 
 #: ../data/ui/pref.glade.h:39
 msgid "_Display"
@@ -355,21 +344,18 @@ msgid "<b>Show in Places:</b>"
 msgstr "<b>Покажи в Места:</b>"
 
 #: ../data/ui/pref.glade.h:48
-#, fuzzy
 msgid "_Home Folder"
-msgstr "Домашна папка"
+msgstr "_Домашна папка"
 
 #: ../data/ui/pref.glade.h:49
-#, fuzzy
 msgid "Des_ktop"
-msgstr "Работен плот"
+msgstr "Ра_ботен плот"
 
 #: ../data/ui/pref.glade.h:50 ../src/main-win-ui.c:236
 msgid "_Trash Can"
 msgstr "_Кош"
 
 #: ../data/ui/pref.glade.h:51
-#, fuzzy
 msgid "_Filesystem Root"
 msgstr "_Корен на файлова система"
 
@@ -382,7 +368,6 @@ msgid "Dev_ices"
 msgstr "Устро_йства"
 
 #: ../data/ui/pref.glade.h:54
-#, fuzzy
 msgid "_Network"
 msgstr "_Места в мрежата"
 
@@ -409,32 +394,24 @@ msgstr ""
 "свързано"
 
 #: ../data/ui/pref.glade.h:60
-#, fuzzy
 msgid "Do_n't show available options for those media types:"
-msgstr ""
-"_Показване на наличните опции на устройство за преносима памет, когато е "
-"свързано"
+msgstr "Да _не се показват наличните опции за следните видове файлове:"
 
 #: ../data/ui/pref.glade.h:61
-#, fuzzy
 msgid "_Remove selected"
-msgstr "%d маркиран елемент"
+msgstr "П_ремахни избраното"
 
 #: ../data/ui/pref.glade.h:62
 msgid "_Open mounted removable media in new tab instead of new window"
 msgstr "_Отваряне на монтираното устройство за преносима памет в нов раздел"
 
 #: ../data/ui/pref.glade.h:63
-#, fuzzy
 msgid "When removable medium unmounted:"
-msgstr "Добавена е сменяема среда"
+msgstr "При размонтиране на преносим носител:"
 
 #: ../data/ui/pref.glade.h:64
-#, fuzzy
 msgid "Clos_e tab containing removable medium"
-msgstr ""
-"_Затваряне на раздела със съдържанието на преносимата памет, когато бъде "
-"демонтирана"
+msgstr "_Затваряне на раздела със съдържанието на преносимата памет"
 
 #: ../data/ui/pref.glade.h:65
 msgid "Change folder in the tab to _Home Folder"
@@ -449,11 +426,10 @@ msgid "<b>Programs</b>"
 msgstr "<b>Програми</b>"
 
 #: ../data/ui/pref.glade.h:68
-#, fuzzy
 msgid "<i>Commands below may include extra options if necessary.</i>"
 msgstr ""
 "<i>Ако е необходимо, следните команди могат да включват допълнителни "
-"ключове</i>"
+"опции.</i>"
 
 #: ../data/ui/pref.glade.h:69
 msgid "_Terminal emulator:"
@@ -489,14 +465,12 @@ msgid "Ru_n default application after creation from template"
 msgstr "Из_пълнение на приложението по подразбиране след създаване на шаблон "
 
 #: ../data/ui/pref.glade.h:78
-#, fuzzy
 msgid "<b>Other Options</b>"
 msgstr "<b>Други опции</b>"
 
 #: ../data/ui/pref.glade.h:79
-#, fuzzy
 msgid "Use Application Startup Notify _by default"
-msgstr "Да се _известява при стартиране на приложение"
+msgstr "Стандартно _известяване при стартиране на приложение"
 
 #: ../data/ui/pref.glade.h:80
 msgid ""
@@ -527,15 +501,15 @@ msgstr "_Разширени"
 
 #: ../data/ui/pref.glade.h:88
 msgid "<b>_Do not load modules matching:</b>"
-msgstr ""
+msgstr "<b>_Да не се зареждат модули включващи:</b>"
 
 #: ../data/ui/pref.glade.h:89
 msgid "<b>_Load these modules anyway:</b>"
-msgstr ""
+msgstr "<b>Все пак да се _заредят следните модули:</b>"
 
 #: ../data/ui/pref.glade.h:90
 msgid "Modules"
-msgstr ""
+msgstr "Модули"
 
 #: ../data/ui/pref.glade.h:91
 msgid "Auto (move if on the same FS, copy otherwise)"
@@ -556,24 +530,20 @@ msgid "Ask"
 msgstr "Попитай"
 
 #: ../data/ui/pref.glade.h:95
-#, fuzzy
 msgid "Icon view"
-msgstr "Преглед като икони"
+msgstr "Изглед като икони"
 
 #: ../data/ui/pref.glade.h:96
-#, fuzzy
 msgid "Compact view"
-msgstr "Стегнат преглед"
+msgstr "Стегнат изглед"
 
 #: ../data/ui/pref.glade.h:97
-#, fuzzy
 msgid "Thumbnail view"
-msgstr "Миниатюри"
+msgstr "Изглед като миниатюри"
 
 #: ../data/ui/pref.glade.h:98
-#, fuzzy
 msgid "Detailed list view"
-msgstr "Подробен списък"
+msgstr "Подробен изглед"
 
 #: ../data/ui/autorun.glade.h:1
 msgid "Removable medium is inserted"
@@ -597,60 +567,59 @@ msgstr "Моля зададете действието, което искате 
 
 #: ../data/ui/autorun.glade.h:6
 msgid "_Always perform this action on this media type"
-msgstr ""
+msgstr "_Винаги да се прилага това действие за този тип файл"
 
 #: ../data/ui/connect.glade.h:1
 msgid "Connect to remote server"
-msgstr ""
+msgstr "Свързване към отдалечен сървър"
 
 #: ../data/ui/connect.glade.h:2
 msgid "<b>Specify remote folder to connect</b>"
-msgstr ""
+msgstr "<b>Задайте отделечена папка, към която да се свържете</b>"
 
 #: ../data/ui/connect.glade.h:3
 msgid "_Type:"
-msgstr ""
+msgstr "Ви_д:"
 
 #: ../data/ui/connect.glade.h:4
 msgid "_Host:"
-msgstr ""
+msgstr "Д_омакин:"
 
 #: ../data/ui/connect.glade.h:5
 msgid "_Port:"
-msgstr ""
+msgstr "_Порт:"
 
 #: ../data/ui/connect.glade.h:6
 msgid "Pa_th:"
-msgstr ""
+msgstr "Пъте_ка:"
 
 #: ../data/ui/connect.glade.h:7
 msgid "_Anonymous login"
-msgstr ""
+msgstr "_Анонимно вписване"
 
 #: ../data/ui/connect.glade.h:8
 msgid "_Login as:"
-msgstr ""
+msgstr "_Вписване като:"
 
 #: ../data/ui/connect.glade.h:9
 msgid "SSH"
-msgstr ""
+msgstr "SSH"
 
 #: ../data/ui/connect.glade.h:10
 msgid "FTP"
-msgstr ""
+msgstr "FTP"
 
 #: ../data/ui/connect.glade.h:11
 msgid "WebDAV"
-msgstr ""
+msgstr "WebDAV"
 
 #: ../src/volume-manager.c:237
 msgid "mixed content"
-msgstr ""
+msgstr "смесено съдържание"
 
 #: ../src/volume-manager.c:246
-#, fuzzy
 msgid "removable disk"
-msgstr "Сменяем диск"
+msgstr "сменяем диск"
 
 #: ../src/volume-manager.c:302
 msgid "Open in File Manager"
@@ -670,7 +639,7 @@ msgstr "Отвори в _Терминал"
 
 #: ../src/desktop-ui.c:68
 msgid "_Remove from Desktop"
-msgstr ""
+msgstr "_Премахни от Работния плот"
 
 #: ../src/desktop-ui.c:85
 msgid "Stic_k to Current Position"
@@ -727,7 +696,7 @@ msgstr "Празен файл"
 
 #: ../src/main-win-ui.c:193
 msgid "Folder Propertie_s"
-msgstr ""
+msgstr "_Свойства на папката"
 
 #: ../src/main-win-ui.c:194
 msgid "_Close Tab"
@@ -743,43 +712,39 @@ msgstr "_Редактиране"
 
 #: ../src/main-win-ui.c:198
 msgid "C_ut"
-msgstr ""
+msgstr "И_зрязване"
 
 #: ../src/main-win-ui.c:201
 msgid "Move to _Trash"
-msgstr ""
+msgstr "П_ремести в Коша"
 
 #: ../src/main-win-ui.c:203
 msgid "Copy Pat_h(s)"
-msgstr ""
+msgstr "Копирай п_ътя"
 
 #: ../src/main-win-ui.c:204
-#, fuzzy
 msgid "R_ename..."
-msgstr "_Преименуване"
+msgstr "_Преименувай..."
 
 #: ../src/main-win-ui.c:205
 msgid "D_uplicate..."
-msgstr ""
+msgstr "К_лонирай..."
 
 #: ../src/main-win-ui.c:206
-#, fuzzy
 msgid "Create Lin_k..."
-msgstr "Създаване _на..."
+msgstr "Създай връ_зка..."
 
 #: ../src/main-win-ui.c:207
-#, fuzzy
 msgid "_Move to..."
 msgstr "Пр_емести в..."
 
 #: ../src/main-win-ui.c:208
-#, fuzzy
 msgid "Copy to_..."
 msgstr "_Копирай в..."
 
 #: ../src/main-win-ui.c:209
 msgid "Propertie_s"
-msgstr ""
+msgstr "Свой_ства"
 
 #: ../src/main-win-ui.c:211
 msgid "_Invert Selection"
@@ -802,13 +767,12 @@ msgid "Reload current folder"
 msgstr "Обновяване на текущата папка"
 
 #: ../src/main-win-ui.c:215
-#, fuzzy
 msgid "Tool_bar"
-msgstr "_Инструменти"
+msgstr "Лента с _инструменти"
 
 #: ../src/main-win-ui.c:216
 msgid "Pat_h Bar"
-msgstr ""
+msgstr "Лента с път_я"
 
 #: ../src/main-win-ui.c:217
 msgid "Side _Pane"
@@ -816,9 +780,8 @@ msgstr "_Страничен панел"
 
 #. other see below: 'ShowHidden' 'ShowStatus' 'Fullscreen' 'IconView'...
 #: ../src/main-win-ui.c:219
-#, fuzzy
 msgid "Fo_lder View Mode"
-msgstr "_Изглед:"
+msgstr "Режим на _изглед като папка"
 
 #: ../src/main-win-ui.c:220
 msgid "S_ort Files"
@@ -826,18 +789,17 @@ msgstr "_Пренареждане на файлове"
 
 #: ../src/main-win-ui.c:222
 msgid "Zoom O_ut"
-msgstr ""
+msgstr "Нама_ляване"
 
 #: ../src/main-win-ui.c:225
 msgid "Fil_ter..."
-msgstr ""
+msgstr "Филтри_ране..."
 
 #: ../src/main-win-ui.c:227
 msgid "_Help"
 msgstr "_Помощ"
 
 #: ../src/main-win-ui.c:229
-#, fuzzy
 msgid "_Keyboard Navigation"
 msgstr "_Управление от клавиатурата"
 
@@ -890,14 +852,12 @@ msgid "Open trash can"
 msgstr "Отвори Коша"
 
 #: ../src/main-win-ui.c:237
-#, fuzzy
 msgid "Filesyste_m Root"
 msgstr "_Корен на файлова система"
 
 #: ../src/main-win-ui.c:237
-#, fuzzy
 msgid "Go fo filesystem root"
-msgstr "_Корен на файлова система"
+msgstr "Отиване в корена на файловата система"
 
 #: ../src/main-win-ui.c:238
 msgid "_Applications"
@@ -908,44 +868,40 @@ msgid "Go to root of applications menu folder"
 msgstr "Отиване към папка в менюто корен на приложенията"
 
 #: ../src/main-win-ui.c:239
-#, fuzzy
 msgid "Go to list of devices connected to the computer"
-msgstr "Отиване към списъка с дялове на компютъра"
+msgstr "Отиване към списъка с устройства свързани към компютъра"
 
 #: ../src/main-win-ui.c:240
-#, fuzzy
 msgid "Net_work"
-msgstr "М_режови драйвери"
+msgstr "М_режа"
 
 #: ../src/main-win-ui.c:240
-#, fuzzy
 msgid "Go to list of places on the network"
-msgstr "Отиване към списък с дялове в мрежата"
+msgstr "Отиване към списъка с места в мрежата"
 
 #: ../src/main-win-ui.c:241
 msgid "_Go to Location..."
-msgstr ""
+msgstr "_Отиване до местоположение..."
 
 #: ../src/main-win-ui.c:242
 msgid "_Connect to Server..."
-msgstr ""
+msgstr "_Свързване към сървър..."
 
 #: ../src/main-win-ui.c:242
 msgid "Open a window to choose remote folder location"
-msgstr ""
+msgstr "Отваряне на прозорец за избор на местоположение на отдалечена папка"
 
 #: ../src/main-win-ui.c:243
 msgid "Go to the path in the location bar"
-msgstr ""
+msgstr "Отиване до пътя в лентата с местоположение"
 
 #: ../src/main-win-ui.c:244
 msgid "_Bookmarks"
 msgstr "_Отметки"
 
 #: ../src/main-win-ui.c:245
-#, fuzzy
 msgid "_Add to Bookmarks..."
-msgstr "Добави в Отметки"
+msgstr "_Добави в Отметки"
 
 #: ../src/main-win-ui.c:245
 msgid "Add current folder to bookmarks list"
@@ -953,69 +909,67 @@ msgstr "Добавяне на настоящата папка към списъ�
 
 #: ../src/main-win-ui.c:246
 msgid "Too_ls"
-msgstr ""
+msgstr "Инст_рументи"
 
 #: ../src/main-win-ui.c:247
 msgid "Open Current Folder in _Terminal"
 msgstr "Отвори текущата папка в _Терминал"
 
 #: ../src/main-win-ui.c:249
-#, fuzzy
 msgid "Fin_d Files..."
-msgstr "_Намиране на файлове"
+msgstr "_Намиране на файлове..."
 
 #: ../src/main-win-ui.c:249
 msgid "Open search dialog"
 msgstr "Отвори прозорец за търсене"
 
 #: ../src/main-win-ui.c:252
-#, fuzzy
 msgid "_Run a Command in Current Folder..."
-msgstr "Обновяване на текущата папка"
+msgstr "Из_пълняване на команда в текущата папка..."
 
 #. Note to translators: "Mingle..." means "Do not put folders before files" but make the translation as short as possible, please!
 #: ../src/main-win-ui.c:267
 msgid "Mingle _Files and Folders"
-msgstr ""
+msgstr "Смесване на _файлове и папки"
 
 #: ../src/main-win-ui.c:270
 msgid "_Ignore Name Case"
-msgstr ""
+msgstr "Пр_енебрегване на главни и малки букви"
 
 #: ../src/main-win-ui.c:272
-#, fuzzy
 msgid "Sho_w Hidden"
-msgstr "Показване на _Скритите"
+msgstr "Показване на с_критите"
 
 #. Note to translators: this save is meant for folder's settings such as sort
 #: ../src/main-win-ui.c:274
 msgid "Preserve This Folder's Settings"
-msgstr ""
+msgstr "Запази настройките за тази папка"
 
 #: ../src/main-win-ui.c:275
 msgid ""
 "Check to remember view and sort as folder setting rather than global one"
 msgstr ""
+"Изберете, за да се запомни изгледа и сортирането за всяка папка индивидуално"
 
 #: ../src/main-win-ui.c:277
 msgid "_Show Toolbar"
-msgstr ""
+msgstr "По_кажи лента с инструменти"
 
 #: ../src/main-win-ui.c:278
 msgid "Show 'New _Window' Button"
-msgstr ""
+msgstr "Показвай бутон за „_Нов прозорец“"
 
 #: ../src/main-win-ui.c:279
 msgid "Show 'New _Tab' Button"
-msgstr ""
+msgstr "Показвай бутон за „Нов _раздел“"
 
 #: ../src/main-win-ui.c:280
 msgid "Show _Navigation Buttons"
-msgstr ""
+msgstr "Показвай бутони за на_вигация"
 
 #: ../src/main-win-ui.c:281
 msgid "Show '_Home' Button"
-msgstr ""
+msgstr "Показвай бутон за „_Домашна папка“"
 
 #: ../src/main-win-ui.c:282
 msgid "Sho_w Side Pane"
@@ -1026,13 +980,12 @@ msgid "Show Status B_ar"
 msgstr "Показване на полето за с_ъстоянието"
 
 #: ../src/main-win-ui.c:284
-#, fuzzy
 msgid "_Dual Pane Mode"
-msgstr "Режим на прозорец _близнак"
+msgstr "Режим на двоен _панел"
 
 #: ../src/main-win-ui.c:284
 msgid "Show two panels with folder views"
-msgstr ""
+msgstr "Показване на два панела с изглед като папки"
 
 #: ../src/main-win-ui.c:285
 msgid "Fullscreen _Mode"
@@ -1072,7 +1025,7 @@ msgstr "По _Тип"
 
 #: ../src/main-win-ui.c:312
 msgid "By _Extension"
-msgstr ""
+msgstr "По _разширение"
 
 #: ../src/main-win-ui.c:325
 msgid "Places"
@@ -1087,13 +1040,12 @@ msgid "Remote"
 msgstr "Отдалеченост"
 
 #: ../src/main-win-ui.c:333
-#, fuzzy
 msgid "_Location"
-msgstr "П_риложения"
+msgstr "М_естоположение:"
 
 #: ../src/main-win-ui.c:334
 msgid "_Buttons"
-msgstr ""
+msgstr "_Бутони"
 
 #: ../src/main-win.c:925 ../src/main-win.c:929
 msgid "Show history of visited folders"
@@ -1125,7 +1077,6 @@ msgstr ""
 "Разбработен от Hon Jen Yee (PCMan)"
 
 #: ../src/main-win.c:1166 ../src/main-win.c:1174
-#, fuzzy
 msgid "Keyboard Navigation"
 msgstr "Управление от клавиатурата"
 
@@ -1148,18 +1099,16 @@ msgstr ""
 "Ctrl+L или Alt+D: фокусира в адресната лента "
 
 #: ../src/main-win.c:1210
-#, fuzzy
 msgid "Run a command"
-msgstr "Команда за _формат:"
+msgstr "Изпълняване на команда"
 
 #: ../src/main-win.c:1211
 msgid "Enter a command to run:"
-msgstr ""
+msgstr "Въведете команда за изпълнение:"
 
 #: ../src/main-win.c:1218
-#, fuzzy
 msgid "Current folder is inaccessible"
-msgstr "Отвори текущата папка в _Терминал"
+msgstr "Текущата папка е недостъпна"
 
 #: ../src/main-win.c:1822
 #, c-format
@@ -1178,11 +1127,11 @@ msgstr "Добави в Отметки"
 
 #: ../src/main-win.c:2552
 msgid "Select filter"
-msgstr ""
+msgstr "Изберете папка"
 
 #: ../src/main-win.c:2553
 msgid "Choose a new shell pattern to show files:"
-msgstr ""
+msgstr "Изберете нов критерий на обвивката за показване на файловете:"
 
 #. options only acceptable by first pcmanfm instance. These options are not passed through IPC
 #: ../src/pcmanfm.c:78
@@ -1228,11 +1177,10 @@ msgstr "ФАЙЛ"
 
 #. don't translate list of modes in description, please
 #: ../src/pcmanfm.c:89
-#, fuzzy
 msgid ""
 "Set mode of desktop wallpaper. MODE=(color|stretch|fit|crop|center|tile|"
 "screen)"
-msgstr "Задай режим на тапета. РЕЖИМ=(color|strech|fit|center|title)"
+msgstr "Задай режим на тапета.MODE=(color|strech|fit|center|title)"
 
 #: ../src/pcmanfm.c:89
 msgid "MODE"
@@ -1251,9 +1199,8 @@ msgid "Open new window"
 msgstr "Отвори нов прозорец"
 
 #: ../src/pcmanfm.c:93
-#, fuzzy
 msgid "Open a Find Files window"
-msgstr "Отвори Търсене на Файлове"
+msgstr "Отвори прозореца за търсене на файлове"
 
 #: ../src/pcmanfm.c:95
 msgid "Window role for usage by window manager"
@@ -1269,7 +1216,7 @@ msgstr "[ФАЙЛ1, ФАЙЛ2,...]"
 
 #: ../src/pcmanfm.c:352
 msgid "Desktop manager is not active."
-msgstr ""
+msgstr "Мениджърът на работния плот е неактивен."
 
 #: ../src/pcmanfm.c:598
 msgid "Terminal emulator is not set."
@@ -1307,19 +1254,19 @@ msgstr[1] "(%d скрити)"
 
 #: ../src/pref.c:514
 msgid "Add to Modules Blacklist"
-msgstr ""
+msgstr "Добави в черния списък с модули"
 
 #: ../src/pref.c:515
 msgid "Enter a blacklisted module mask:"
-msgstr ""
+msgstr "Въведете маска за модулите в черния списък:"
 
 #: ../src/pref.c:606
 msgid "Add to Modules Whitelist"
-msgstr ""
+msgstr "Добави в белия списък с модули"
 
 #: ../src/pref.c:607
 msgid "Enter a whitelisted module mask:"
-msgstr ""
+msgstr "Въведете маска за модулите в белия списък:"
 
 #: ../data/pcmanfm.desktop.in.h:1
 msgid "File Manager PCManFM"
