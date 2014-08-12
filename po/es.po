@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: pcmanfm 1.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-01-22 00:33+0200\n"
-"PO-Revision-Date: 2014-01-24 04:03+0000\n"
-"Last-Translator: Adolfo <fitoschido@ubuntu.com>\n"
+"PO-Revision-Date: 2014-07-29 11:45+0000\n"
+"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
 "Language-Team: Spanish (Castilian) <translation@mailinglist.lxde.org>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1390536239.0\n"
+"X-Generator: Pootle 2.6.0-rc1\n"
+"X-POOTLE-MTIME: 1406634346.000000\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2014"
@@ -27,7 +27,7 @@ msgstr "© 2009–2014"
 #: ../data/ui/about.glade.in.h:3
 msgid "translator-credits"
 msgstr ""
-"Adolfo Jayme Barrientos <fitoschido@ubuntu.com>, 2013-2014\n"
+"Adolfo Jayme Barrientos <fitojb@ubuntu.com>, 2013-2014\n"
 "Hugo Florentino <hugo@acdam.cu>, 2010-2013\n"
 "LinoSP <ljsp1@hotmail.com>, 2010"
 
@@ -66,11 +66,11 @@ msgstr "<b>Texto</b>"
 
 #: ../data/ui/desktop-pref.glade.h:9
 msgid "_Font of label text:"
-msgstr "_Fuente de la etiqueta:"
+msgstr "_Tipo de letra del texto:"
 
 #: ../data/ui/desktop-pref.glade.h:10
 msgid "C_olor of label text:"
-msgstr "C_olor de la etiqueta:"
+msgstr "C_olor del texto:"
 
 #: ../data/ui/desktop-pref.glade.h:11
 msgid "Color of _shadow:"
@@ -394,8 +394,7 @@ msgstr "Montar medios extraíbles a_utomáticamente cuando se inserten"
 
 #: ../data/ui/pref.glade.h:59
 msgid "_Show available options for removable media when they are inserted"
-msgstr ""
-"Mo_strar opciones disponibles para los medios extraíbles cuando se inserten"
+msgstr "Mo_strar opciones disponibles para los medios extraíbles al insertarlos"
 
 #: ../data/ui/pref.glade.h:60
 msgid "Do_n't show available options for those media types:"
@@ -486,7 +485,7 @@ msgstr ""
 "Si se marca, utilizar la notificación de inicio para la aplicación, si no se "
 "especifica otra.\n"
 "Si se desmarca, utilizar la notificación de inicio solo si está definido "
-"para ala aplicación."
+"para la aplicación."
 
 #: ../data/ui/pref.glade.h:82
 msgid "D_efer test for content type on folder loading"
@@ -599,11 +598,11 @@ msgstr "Ru_ta:"
 
 #: ../data/ui/connect.glade.h:7
 msgid "_Anonymous login"
-msgstr "Iniciar la sesión _anónimamente"
+msgstr "Acceso _anónimo"
 
 #: ../data/ui/connect.glade.h:8
 msgid "_Login as:"
-msgstr "Iniciar la sesión _como:"
+msgstr "Acceder _como:"
 
 #: ../data/ui/connect.glade.h:9
 msgid "SSH"
@@ -1038,7 +1037,7 @@ msgstr "Lugares"
 
 #: ../src/main-win-ui.c:326
 msgid "Directory Tree"
-msgstr "Árbol de directorios"
+msgstr "Árbol de carpetas"
 
 #: ../src/main-win-ui.c:327
 msgid "Remote"
@@ -1062,7 +1061,7 @@ msgstr "Histórico"
 
 #: ../src/main-win.c:948
 msgid "You are in super user mode"
-msgstr "Está en modo de super usuario"
+msgstr "Está en el modo de superusuario"
 
 #: ../src/main-win.c:1134
 msgid "Lightweight file manager\n"
@@ -1071,7 +1070,7 @@ msgstr "Gestor de archivos ligero\n"
 #: ../src/main-win.c:1139
 #, c-format
 msgid "using LibFM ver. %s\n"
-msgstr "que usa LibFM ver. %s\n"
+msgstr "que usa LibFM v. %s\n"
 
 #: ../src/main-win.c:1141
 msgid ""
@@ -1227,11 +1226,11 @@ msgstr "El gestor del escritorio no está activado."
 
 #: ../src/pcmanfm.c:598
 msgid "Terminal emulator is not set."
-msgstr "No se ha establecido el emulador de terminal."
+msgstr "No se estableció el emulador de terminal."
 
 #: ../src/tab-page.c:56
 msgid "Open in New T_ab"
-msgstr "Abrir en una nueva pes_taña"
+msgstr "Abrir en una pest_aña nueva"
 
 #: ../src/tab-page.c:395
 #, c-format
@@ -1243,7 +1242,7 @@ msgstr[1] "%d elementos seleccionados"
 #: ../src/tab-page.c:718
 #, c-format
 msgid "Free space: %s (Total: %s)"
-msgstr "Espacio libre: %s (Total: %s)"
+msgstr "Espacio libre: %s (total: %s)"
 
 #: ../src/tab-page.c:738
 #, c-format
