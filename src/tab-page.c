@@ -1056,6 +1056,9 @@ static void fm_tab_page_chdir_without_history(FmTabPage* page, FmPath* path)
         /* bug #3615242: view mode is reset to default when changing directory */
         view_mode = page->view_mode;
     page->show_hidden = show_hidden;
+    /* SF bug #898: settings from next folder are saved on previous if
+       show_hidden is different: we have to apply folder to the view first */
+    on_folder_start_loading(page->folder, page);
     fm_folder_view_set_show_hidden(page->folder_view, show_hidden);
 #if FM_CHECK_VERSION(1, 2, 0)
     fm_side_pane_set_show_hidden(page->side_pane, show_hidden);
@@ -1063,12 +1066,9 @@ static void fm_tab_page_chdir_without_history(FmTabPage* page, FmPath* path)
 
     if(fm_folder_is_loaded(page->folder))
     {
-        on_folder_start_loading(page->folder, page);
         on_folder_finish_loading(page->folder, page);
         on_folder_fs_info(page->folder, page);
     }
-    else
-        on_folder_start_loading(page->folder, page);
 
     /* change view and sort modes according to new path */
     fm_standard_view_set_mode(FM_STANDARD_VIEW(page->folder_view), view_mode);

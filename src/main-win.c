@@ -372,12 +372,10 @@ static void on_folder_view_sel_changed(FmFolderView* fv, gint n_sel, FmMainWin* 
     {
         FmFileInfoList *files = fm_folder_view_dup_selected_files(fv);
         FmFileInfo *fi = fm_file_info_list_peek_head(files);
-        if (
 #if FM_CHECK_VERSION(1, 2, 0)
-            fm_file_info_can_set_name(fi) &&
+        if (fm_file_info_can_set_name(fi))
 #endif
-            !fm_file_info_is_shortcut(fi)
-            && !fm_file_info_is_desktop_entry(fi))
+          if (!fm_file_info_is_shortcut(fi) && !fm_file_info_is_desktop_entry(fi))
             has_selected = TRUE;
         fm_file_info_list_unref(files);
     }
