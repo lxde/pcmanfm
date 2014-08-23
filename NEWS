@@ -1,3 +1,16 @@
+Changes on 1.2.2 since 1.2.1:
+
+* Fixed Ctrl+- and Ctrl+= key combinations for zooming.
+
+* Fixed compilation with libfm 1.1.x.
+
+* Disabled showing items on desktop that are being dragged, they should
+    be at the mouse cursor, visually dragged instead.
+
+* Fixed setting of custom settings on wrong folders which were set on
+    directory change where show hidden flag was different.
+
+
 Changes on 1.2.1 since 1.2.0:
 
 * Fixed update desktop config from old settings.
