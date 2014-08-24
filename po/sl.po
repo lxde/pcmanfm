@@ -8,22 +8,21 @@ msgstr ""
 "Project-Id-Version: pcmanfm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-01-09 09:41+0100\n"
-"PO-Revision-Date: 2013-10-28 08:31+0000\n"
-"Last-Translator: Klemen <klemen913@gmail.com>\n"
+"PO-Revision-Date: 2014-08-24 08:21+0000\n"
+"Last-Translator: Klemen Košir <klemen913@gmail.com>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
-"X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1382949113.0\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || "
+"n%100==4 ? 3 : 0);\n"
+"X-Generator: Pootle 2.6.0-rc1\n"
+"X-POOTLE-MTIME: 1408868503.000000\n"
 
 #: ../data/ui/about.glade.in.h:1
-#, fuzzy
 msgid "Copyright (C) 2009 - 2014"
-msgstr "Avtorske pravice © 2009 - 2013"
+msgstr "Avtorske pravice (C) 2009 - 2014"
 
 #. Please replace this line with your own names, one name per line.
 #: ../data/ui/about.glade.in.h:3
@@ -84,24 +83,20 @@ msgid "<b>Show desktop icons</b>"
 msgstr "<b>Pokaži ikone namizja</b>"
 
 #: ../data/ui/desktop-pref.glade.h:14
-#, fuzzy
 msgid "_Show \"Documents\" folder on the desktop"
-msgstr "Na namizju pokaži ikono »Moji _dokumenti«"
+msgstr "Na namizju pokaži ikono »_Dokumenti«"
 
 #: ../data/ui/desktop-pref.glade.h:15
-#, fuzzy
 msgid "Sho_w \"Devices\" folder on the desktop"
-msgstr "Na namizju pokaži ikono »Moji _dokumenti«"
+msgstr "Na namizju pokaži ikono »_Naprave«"
 
 #: ../data/ui/desktop-pref.glade.h:16
-#, fuzzy
 msgid "Show \"_Trash Can\" folder on the desktop"
 msgstr "Na namizju pokaži ikono »_Smeti«"
 
 #: ../data/ui/desktop-pref.glade.h:17
-#, fuzzy
 msgid "S_how connected volumes on the desktop"
-msgstr "Na namizju pokaži ikone _nosilcev"
+msgstr "Na namizju pokaži ikone priklopljenih _nosilcev"
 
 #: ../data/ui/desktop-pref.glade.h:18
 msgid "_Desktop Icons"
@@ -118,22 +113,20 @@ msgstr ""
 #: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:84
 msgctxt "Use path for some folder: ..."
 msgid "Default"
-msgstr ""
+msgstr "Privzeto"
 
 #: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:85
 msgctxt "Use path for some folder: ..."
 msgid "Custom:"
-msgstr ""
+msgstr "Po meri:"
 
 #: ../data/ui/desktop-pref.glade.h:23
-#, fuzzy
 msgid "Select a Desktop Folder"
-msgstr "Namizje"
+msgstr "Izberite mapo namizja"
 
 #: ../data/ui/desktop-pref.glade.h:24
-#, fuzzy
 msgid "_Open folders from desktop in new window"
-msgstr "Odpri v novem oknu"
+msgstr "_Odpri mape na namizju v novem oknu"
 
 #: ../data/ui/desktop-pref.glade.h:25
 msgid "Ad_vanced"
@@ -173,17 +166,14 @@ msgid "Stretch to fill the complete screen"
 msgstr "Razširi čez cel zaslon"
 
 #: ../data/ui/pref.glade.h:1
-#, fuzzy
 msgid "Open in current tab"
 msgstr "Odpri v trenutnem zavihku"
 
 #: ../data/ui/pref.glade.h:2
-#, fuzzy
 msgid "Open in new tab"
-msgstr "Odpri v novem _zavihku"
+msgstr "Odpri v novem zavihku"
 
 #: ../data/ui/pref.glade.h:3
-#, fuzzy
 msgid "Open in new window"
 msgstr "Odpri v novem oknu"
 
@@ -350,21 +340,18 @@ msgid "<b>Show in Places:</b>"
 msgstr "<b>Pokaži v meniju »Mesta«</b>"
 
 #: ../data/ui/pref.glade.h:48
-#, fuzzy
 msgid "_Home Folder"
-msgstr "Domača mapa"
+msgstr "_Domača mapa"
 
 #: ../data/ui/pref.glade.h:49
-#, fuzzy
 msgid "Des_ktop"
-msgstr "Namizje"
+msgstr "_Namizje"
 
 #: ../data/ui/pref.glade.h:50 ../src/main-win-ui.c:236
 msgid "_Trash Can"
 msgstr "_Smeti"
 
 #: ../data/ui/pref.glade.h:51
-#, fuzzy
 msgid "_Filesystem Root"
 msgstr "Koren _datotečnega sistema"
 
@@ -374,12 +361,11 @@ msgstr "_Programi"
 
 #: ../data/ui/pref.glade.h:53 ../src/main-win-ui.c:239
 msgid "Dev_ices"
-msgstr ""
+msgstr "Na_prave"
 
 #: ../data/ui/pref.glade.h:54
-#, fuzzy
 msgid "_Network"
-msgstr "_Omrežna mesta"
+msgstr "_Omrežje"
 
 #: ../data/ui/pref.glade.h:55
 msgid "_Layout"
@@ -422,13 +408,12 @@ msgid "When removable medium unmounted:"
 msgstr "Priključen je bil odstranljiv nosilec"
 
 #: ../data/ui/pref.glade.h:64
-#, fuzzy
 msgid "Clos_e tab containing removable medium"
-msgstr "Ob odklopu odstranljivega _nosilca zapri zavihek le-te naprave"
+msgstr "Zapri _zavihek, ki vsebuje odstranljiv nosilec"
 
 #: ../data/ui/pref.glade.h:65
 msgid "Change folder in the tab to _Home Folder"
-msgstr ""
+msgstr "Spremeni mapo v zavihku na _domačo mapo"
 
 #: ../data/ui/pref.glade.h:66
 msgid "_Volume Management"
@@ -476,7 +461,6 @@ msgid "Ru_n default application after creation from template"
 msgstr "_Zaženi privzeti program, ko se ustvari predloga"
 
 #: ../data/ui/pref.glade.h:78
-#, fuzzy
 msgid "<b>Other Options</b>"
 msgstr "<b>Druge možnosti</b>"
 
@@ -523,7 +507,7 @@ msgstr ""
 
 #: ../data/ui/pref.glade.h:90
 msgid "Modules"
-msgstr ""
+msgstr "Moduli"
 
 #: ../data/ui/pref.glade.h:91
 msgid "Auto (move if on the same FS, copy otherwise)"
@@ -542,22 +526,18 @@ msgid "Ask"
 msgstr "Vprašaj"
 
 #: ../data/ui/pref.glade.h:95
-#, fuzzy
 msgid "Icon view"
 msgstr "Ikone"
 
 #: ../data/ui/pref.glade.h:96
-#, fuzzy
 msgid "Compact view"
 msgstr "Strnjen seznam"
 
 #: ../data/ui/pref.glade.h:97
-#, fuzzy
 msgid "Thumbnail view"
 msgstr "Predogledne sličice"
 
 #: ../data/ui/pref.glade.h:98
-#, fuzzy
 msgid "Detailed list view"
 msgstr "Podroben seznam"
 
@@ -595,23 +575,23 @@ msgstr ""
 
 #: ../data/ui/connect.glade.h:3
 msgid "_Type:"
-msgstr ""
+msgstr "_Vrsta:"
 
 #: ../data/ui/connect.glade.h:4
 msgid "_Host:"
-msgstr ""
+msgstr "_Gostitelj:"
 
 #: ../data/ui/connect.glade.h:5
 msgid "_Port:"
-msgstr ""
+msgstr "_Vrata:"
 
 #: ../data/ui/connect.glade.h:6
 msgid "Pa_th:"
-msgstr ""
+msgstr "Po_t:"
 
 #: ../data/ui/connect.glade.h:7
 msgid "_Anonymous login"
-msgstr ""
+msgstr "_Brezimna prijava"
 
 #: ../data/ui/connect.glade.h:8
 msgid "_Login as:"
@@ -619,15 +599,15 @@ msgstr ""
 
 #: ../data/ui/connect.glade.h:9
 msgid "SSH"
-msgstr ""
+msgstr "SSH"
 
 #: ../data/ui/connect.glade.h:10
 msgid "FTP"
-msgstr ""
+msgstr "FTP"
 
 #: ../data/ui/connect.glade.h:11
 msgid "WebDAV"
-msgstr ""
+msgstr "WebDAV"
 
 #: ../src/volume-manager.c:237
 msgid "mixed content"
@@ -713,7 +693,7 @@ msgstr "Prazna datoteka"
 
 #: ../src/main-win-ui.c:193
 msgid "Folder Propertie_s"
-msgstr ""
+msgstr "_Lastnosti mape"
 
 #: ../src/main-win-ui.c:194
 msgid "_Close Tab"
@@ -733,39 +713,35 @@ msgstr ""
 
 #: ../src/main-win-ui.c:201
 msgid "Move to _Trash"
-msgstr ""
+msgstr "Premakni v _smeti"
 
 #: ../src/main-win-ui.c:203
 msgid "Copy Pat_h(s)"
-msgstr ""
+msgstr "Kopiraj _poti"
 
 #: ../src/main-win-ui.c:204
-#, fuzzy
 msgid "R_ename..."
-msgstr "Prei_menuj"
+msgstr "Prei_menuj ..."
 
 #: ../src/main-win-ui.c:205
 msgid "D_uplicate..."
-msgstr ""
+msgstr "Pod_voji ..."
 
 #: ../src/main-win-ui.c:206
-#, fuzzy
 msgid "Create Lin_k..."
-msgstr "Ustvari sim_bolno povezavo"
+msgstr "Ustvari _povezavo ..."
 
 #: ../src/main-win-ui.c:207
-#, fuzzy
 msgid "_Move to..."
-msgstr "_Premakni v ..."
+msgstr "Pre_makni v ..."
 
 #: ../src/main-win-ui.c:208
-#, fuzzy
 msgid "Copy to_..."
 msgstr "_Kopiraj v ..."
 
 #: ../src/main-win-ui.c:209
 msgid "Propertie_s"
-msgstr ""
+msgstr "_Lastnosti"
 
 #: ../src/main-win-ui.c:211
 msgid "_Invert Selection"
@@ -788,9 +764,8 @@ msgid "Reload current folder"
 msgstr "Osveži"
 
 #: ../src/main-win-ui.c:215
-#, fuzzy
 msgid "Tool_bar"
-msgstr "_Orodja"
+msgstr "Orodna _vrstica"
 
 #: ../src/main-win-ui.c:216
 msgid "Pat_h Bar"
@@ -881,9 +856,8 @@ msgid "Filesyste_m Root"
 msgstr "Koren _datotečnega sistema"
 
 #: ../src/main-win-ui.c:237
-#, fuzzy
 msgid "Go fo filesystem root"
-msgstr "Koren _datotečnega sistema"
+msgstr "Pojdi v koren datotečnega sistema"
 
 #: ../src/main-win-ui.c:238
 msgid "_Applications"
@@ -891,7 +865,7 @@ msgstr "_Programi"
 
 #: ../src/main-win-ui.c:238
 msgid "Go to root of applications menu folder"
-msgstr ""
+msgstr "Pojdi v koren mape menija programov"
 
 #: ../src/main-win-ui.c:239
 #, fuzzy
@@ -899,9 +873,8 @@ msgid "Go to list of devices connected to the computer"
 msgstr "Pojdi na seznam nosilcev v računalniku"
 
 #: ../src/main-win-ui.c:240
-#, fuzzy
 msgid "Net_work"
-msgstr "O_mrežni pogoni"
+msgstr "_Omrežje"
 
 #: ../src/main-win-ui.c:240
 #, fuzzy
@@ -929,9 +902,8 @@ msgid "_Bookmarks"
 msgstr "_Zaznamki"
 
 #: ../src/main-win-ui.c:245
-#, fuzzy
 msgid "_Add to Bookmarks..."
-msgstr "Dodaj med zaznamke"
+msgstr "_Dodaj med zaznamke ..."
 
 #: ../src/main-win-ui.c:245
 msgid "Add current folder to bookmarks list"
@@ -939,30 +911,28 @@ msgstr "Dodaj trenutno mapo med zaznamke"
 
 #: ../src/main-win-ui.c:246
 msgid "Too_ls"
-msgstr ""
+msgstr "Oro_dja"
 
 #: ../src/main-win-ui.c:247
 msgid "Open Current Folder in _Terminal"
 msgstr "Odpri trenutno mapo v _terminalu"
 
 #: ../src/main-win-ui.c:249
-#, fuzzy
 msgid "Fin_d Files..."
-msgstr "_Najdi datoteke"
+msgstr "_Najdi datoteke ..."
 
 #: ../src/main-win-ui.c:249
 msgid "Open search dialog"
 msgstr "Odpri iskalno okno"
 
 #: ../src/main-win-ui.c:252
-#, fuzzy
 msgid "_Run a Command in Current Folder..."
-msgstr "Osveži"
+msgstr "_Zaženi ukaz v trenutni mapi ..."
 
 #. Note to translators: "Mingle..." means "Do not put folders before files" but make the translation as short as possible, please!
 #: ../src/main-win-ui.c:267
 msgid "Mingle _Files and Folders"
-msgstr ""
+msgstr "Po_mešaj datoteke in mape"
 
 #: ../src/main-win-ui.c:270
 msgid "_Ignore Name Case"
@@ -985,15 +955,15 @@ msgstr ""
 
 #: ../src/main-win-ui.c:277
 msgid "_Show Toolbar"
-msgstr ""
+msgstr "Pokaži orodno vr_stico"
 
 #: ../src/main-win-ui.c:278
 msgid "Show 'New _Window' Button"
-msgstr ""
+msgstr "Pokaži gumb »Novo _okno«"
 
 #: ../src/main-win-ui.c:279
 msgid "Show 'New _Tab' Button"
-msgstr ""
+msgstr "Pokaži gumb »Nov _zavihek«"
 
 #: ../src/main-win-ui.c:280
 msgid "Show _Navigation Buttons"
@@ -1073,13 +1043,12 @@ msgid "Remote"
 msgstr "Oddaljeno"
 
 #: ../src/main-win-ui.c:333
-#, fuzzy
 msgid "_Location"
-msgstr "_Programi"
+msgstr "_Mesto"
 
 #: ../src/main-win-ui.c:334
 msgid "_Buttons"
-msgstr ""
+msgstr "_Gumbi"
 
 #: ../src/main-win.c:925 ../src/main-win.c:929
 msgid "Show history of visited folders"
@@ -1111,7 +1080,6 @@ msgstr ""
 "Razvijalec: Hon Jen Yee (PCMan)"
 
 #: ../src/main-win.c:1166 ../src/main-win.c:1174
-#, fuzzy
 msgid "Keyboard Navigation"
 msgstr "Krmarjenje s tipkovnico"
 
@@ -1132,18 +1100,16 @@ msgstr ""
 "Ctrl+L ali Alt+D: izbere vrstico s potjo do mape"
 
 #: ../src/main-win.c:1210
-#, fuzzy
 msgid "Run a command"
-msgstr "Ukaz za _obliko:"
+msgstr "Zaženi ukaz"
 
 #: ../src/main-win.c:1211
 msgid "Enter a command to run:"
 msgstr ""
 
 #: ../src/main-win.c:1218
-#, fuzzy
 msgid "Current folder is inaccessible"
-msgstr "Odpri trenutno mapo v _terminalu"
+msgstr "Trenutna mapa je nedostopna"
 
 #: ../src/main-win.c:1822
 #, c-format
@@ -1162,7 +1128,7 @@ msgstr "Dodaj med zaznamke"
 
 #: ../src/main-win.c:2552
 msgid "Select filter"
-msgstr ""
+msgstr "Izberite filter"
 
 #: ../src/main-win.c:2553
 msgid "Choose a new shell pattern to show files:"
@@ -1212,11 +1178,12 @@ msgstr "DATOTEKA"
 
 #. don't translate list of modes in description, please
 #: ../src/pcmanfm.c:89
-#, fuzzy
 msgid ""
 "Set mode of desktop wallpaper. MODE=(color|stretch|fit|crop|center|tile|"
 "screen)"
-msgstr "Nastavi način ozadja namizja. NAČIN=(color|stretch|fit|center|tile)"
+msgstr ""
+"Nastavi način ozadja namizja. "
+"NAČIN=(color|stretch|fit|crop|center|tile|screen)"
 
 #: ../src/pcmanfm.c:89
 msgid "MODE"
