@@ -1058,11 +1058,15 @@ static void fm_tab_page_chdir_without_history(FmTabPage* page, FmPath* path)
     page->show_hidden = show_hidden;
     /* SF bug #898: settings from next folder are saved on previous if
        show_hidden is different: we have to apply folder to the view first */
+    g_signal_handlers_block_matched(page->folder_view, G_SIGNAL_MATCH_DETAIL, 0,
+                                    g_quark_try_string("filter-changed"), NULL, NULL, NULL);
     on_folder_start_loading(page->folder, page);
     fm_folder_view_set_show_hidden(page->folder_view, show_hidden);
 #if FM_CHECK_VERSION(1, 2, 0)
     fm_side_pane_set_show_hidden(page->side_pane, show_hidden);
 #endif
+    g_signal_handlers_unblock_matched(page->folder_view, G_SIGNAL_MATCH_DETAIL, 0,
+                                      g_quark_try_string("filter-changed"), NULL, NULL, NULL);
 
     if(fm_folder_is_loaded(page->folder))
     {
