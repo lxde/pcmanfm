@@ -1,3 +1,11 @@
+* Disabled unrequested config save on changing dir if show_hidden changes.
+
+* Replaced deprecated atk_component_get_position() calls.
+
+* Fixed invalid callback get_image_position() on ATK icon, it could loop
+    and therefore hang the application.
+
+
 Changes on 1.2.2 since 1.2.1:
 
 * Fixed Ctrl+- and Ctrl+= key combinations for zooming.

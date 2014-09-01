@@ -855,7 +855,8 @@ static void fm_desktop_item_accessible_get_extents(AtkComponent *component,
     *width = item->item->area.width;
     *height = item->item->area.height;
     parent_obj = gtk_widget_get_accessible(item->widget);
-    atk_component_get_position(ATK_COMPONENT(parent_obj), &l_x, &l_y, coord_type);
+    atk_component_get_extents(ATK_COMPONENT(parent_obj), &l_x, &l_y, NULL, NULL,
+                              coord_type);
     *x = l_x + item->item->area.x;
     *y = l_y + item->item->area.y;
 }
@@ -1002,13 +1003,15 @@ static void fm_desktop_item_accessible_image_get_image_position(AtkImage *image,
                                                                 AtkCoordType coord_type)
 {
     FmDesktopItemAccessible *item = FM_DESKTOP_ITEM_ACCESSIBLE(image);
+    AtkObject *parent_obj;
 
     if (item->widget == NULL)
         return;
     if (atk_state_set_contains_state(item->state_set, ATK_STATE_DEFUNCT))
         return;
 
-    atk_component_get_position(ATK_COMPONENT(image), x, y, coord_type);
+    parent_obj = gtk_widget_get_accessible(item->widget);
+    atk_component_get_extents(ATK_COMPONENT(parent_obj), x, y, NULL, NULL, coord_type);
     *x += item->item->icon_rect.x - item->item->area.x;
     *y += item->item->icon_rect.y - item->item->area.y;
 }
