@@ -663,7 +663,7 @@ static void on_folder_finish_loading(FmFolder* folder, FmTabPage* page)
     // fm_path_entry_set_path(entry, path);
     /* delaying scrolling since drawing folder view is delayed */
     if(!page->update_scroll_id)
-        page->update_scroll_id = gdk_threads_add_timeout(20, update_scroll, page);
+        page->update_scroll_id = gdk_threads_add_timeout(50, update_scroll, page);
 
     /* update status bar */
     /* update status text */

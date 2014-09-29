@@ -5,6 +5,8 @@
 * Fixed invalid callback get_image_position() on ATK icon, it could loop
     and therefore hang the application.
 
+* Increased delay on restoring scroller position from 20 to 50 ms.
+
 
 Changes on 1.2.2 since 1.2.1:
 
