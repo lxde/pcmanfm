@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-01-22 00:33+0200\n"
-"PO-Revision-Date: 2014-10-29 18:06+0000\n"
+"PO-Revision-Date: 2014-10-30 10:40+0000\n"
 "Last-Translator: Pjotr  <pjotrvertaalt@gmail.com>\n"
 "Language-Team: Dutch\n"
 "Language: nl\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.6.0-rc2\n"
-"X-POOTLE-MTIME: 1414606017.000000\n"
+"X-POOTLE-MTIME: 1414665643.000000\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2014"
@@ -86,19 +86,19 @@ msgstr "<b>Toon bureaubladpictogrammen</b>"
 
 #: ../data/ui/desktop-pref.glade.h:14
 msgid "_Show \"Documents\" folder on the desktop"
-msgstr "Toon 'Documenten'-snelkoppeling op bureaublad"
+msgstr "Toon 'Documenten'-map op het bureaublad"
 
 #: ../data/ui/desktop-pref.glade.h:15
 msgid "Sho_w \"Devices\" folder on the desktop"
-msgstr "Toon 'Apparaten'-snelkoppeling op bureaublad"
+msgstr "Toon 'Apparaten'-map op het bureaublad"
 
 #: ../data/ui/desktop-pref.glade.h:16
 msgid "Show \"_Trash Can\" folder on the desktop"
-msgstr "Toon 'Prullenbak'-snelkoppeling op bureaublad"
+msgstr "Toon 'Prullenbak'-map op het bureaublad"
 
 #: ../data/ui/desktop-pref.glade.h:17
 msgid "S_how connected volumes on the desktop"
-msgstr "Toon aangekoppelde opslagmedia op bureaublad"
+msgstr "Toon aangekoppelde opslagmedia op het bureaublad"
 
 #: ../data/ui/desktop-pref.glade.h:18
 msgid "_Desktop Icons"
@@ -309,11 +309,11 @@ msgstr "Gebruik SI-decimale voorvoegsels in plaats van IEC-binaire voorvoegsels"
 
 #: ../data/ui/pref.glade.h:36
 msgid "Treat backup files as _hidden"
-msgstr "Behandel reservekopie-bestanden als verborgen"
+msgstr "Behandel reservekopiebestanden als verborgen"
 
 #: ../data/ui/pref.glade.h:37
 msgid "Al_ways show full file names"
-msgstr "Toon altijd volledige bestandnamen"
+msgstr "Toon altijd volledige bestandsnamen"
 
 #: ../data/ui/pref.glade.h:38
 msgid "Show icons of hidden _files shadowed"
@@ -404,7 +404,7 @@ msgstr ""
 
 #: ../data/ui/pref.glade.h:60
 msgid "Do_n't show available options for those media types:"
-msgstr "Toon niet de beschikbare opties voor deze mediatypes:"
+msgstr "Toon niet de beschikbare opties voor deze mediasoorten:"
 
 #: ../data/ui/pref.glade.h:61
 msgid "_Remove selected"
@@ -489,14 +489,14 @@ msgid ""
 "explicitly.\n"
 "If unchecked then use Startup Notify only if that is defined for application."
 msgstr ""
-"Indien aangevinkt, gebruik de opstartmelding voor een toepassing, indien er "
+"Indien aangevinkt, gebruik de opstartmelding voor een toepassing, als er "
 "niet uitdrukkelijk iets anders is opgegeven.\n"
-"Indien niet aangevinkt, gebruik opstartmelding alleen indien die is "
-"ingesteld voor een bepaalde toepassing."
+"Indien niet aangevinkt, gebruik opstartmelding alleen als die is ingesteld "
+"voor een bepaalde toepassing."
 
 #: ../data/ui/pref.glade.h:82
 msgid "D_efer test for content type on folder loading"
-msgstr "Stel proef inzake inhoudtype uit bij laden van map"
+msgstr "Stel bepalen van inhoudsoort uit bij laden van map"
 
 #: ../data/ui/pref.glade.h:83
 msgid "Use path for \"Home Folder\" button:"
@@ -578,7 +578,7 @@ msgstr "Kies alstublieft de actie die u wilt uitvoeren:"
 
 #: ../data/ui/autorun.glade.h:6
 msgid "_Always perform this action on this media type"
-msgstr "Voer altijd deze actie uit voor dit mediatype"
+msgstr "Voer altijd deze actie uit voor deze mediasoort"
 
 #: ../data/ui/connect.glade.h:1
 msgid "Connect to remote server"
@@ -735,7 +735,7 @@ msgstr "Kopieer pad(en)"
 
 #: ../src/main-win-ui.c:204
 msgid "R_ename..."
-msgstr "Hernoemen"
+msgstr "Hernoemen..."
 
 #: ../src/main-win-ui.c:205
 msgid "D_uplicate..."
