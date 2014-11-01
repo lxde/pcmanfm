@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-01-22 00:33+0200\n"
-"PO-Revision-Date: 2014-11-01 22:31+0000\n"
+"PO-Revision-Date: 2014-11-01 22:36+0000\n"
 "Last-Translator: armakolas <armakolas@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: el\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.6.0-rc2\n"
-"X-POOTLE-MTIME: 1414881111.000000\n"
+"X-POOTLE-MTIME: 1414881377.000000\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2014"
@@ -524,7 +524,7 @@ msgstr "Αρθρώματα"
 #: ../data/ui/pref.glade.h:91
 msgid "Auto (move if on the same FS, copy otherwise)"
 msgstr ""
-"Αυτόματα (μετακίνηση αν είναι στο ίδιο Σύστημα Αρχείων, αντιγραφή αλλιώς)"
+"Αυτόματα (μετακίνηση αν είναι στο ίδιο Σύστημα Αρχείων, ειδάλλως αντιγραφή)"
 
 #: ../data/ui/pref.glade.h:92
 msgid "Copy"
@@ -987,7 +987,7 @@ msgstr "Εμφάνιση Πλευρικής Στήλης"
 
 #: ../src/main-win-ui.c:283
 msgid "Show Status B_ar"
-msgstr "Εμφάνιση _γραμμής κατάστασης"
+msgstr "Εμφάνιση Γραμμής Κατάστασης"
 
 #: ../src/main-win-ui.c:284
 msgid "_Dual Pane Mode"
@@ -1146,7 +1146,7 @@ msgstr "Επίλεξε νέα ακολουθία κελύφους για εμφ�
 #. options only acceptable by first pcmanfm instance. These options are not passed through IPC
 #: ../src/pcmanfm.c:78
 msgid "Name of configuration profile"
-msgstr "Όνομα του προφίλ ρυθμίσεων"
+msgstr "Όνομα κατατομής ρυθμίσεων"
 
 #: ../src/pcmanfm.c:78
 msgid "PROFILE"
@@ -1282,7 +1282,7 @@ msgstr "Εισαγωγή μάσκας για αρθρώματα λευκής λ�
 
 #: ../data/pcmanfm.desktop.in.h:1
 msgid "File Manager PCManFM"
-msgstr "Διαχειριστής αρχείων PCManFM"
+msgstr "Διαχειριστής Αρχείων PCManFM"
 
 #: ../data/pcmanfm.desktop.in.h:2
 msgid "File Manager"
