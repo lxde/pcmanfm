@@ -1,27 +1,34 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-09 09:41+0100\n"
-"PO-Revision-Date: 2012-08-23 00:30+0200\n"
-"Last-Translator: George <forfolias@gmail.com>\n"
+"POT-Creation-Date: 2014-01-22 00:33+0200\n"
+"PO-Revision-Date: 2014-11-01 22:31+0000\n"
+"Last-Translator: armakolas <armakolas@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.0.5\n"
+"X-Generator: Pootle 2.6.0-rc2\n"
+"X-POOTLE-MTIME: 1414881111.000000\n"
 
 #: ../data/ui/about.glade.in.h:1
-#, fuzzy
 msgid "Copyright (C) 2009 - 2014"
-msgstr "Copyright (C) 2009 - 2013"
+msgstr "Πνευματικά δικαιώματα (C) 2009 - 2014"
 
 #. Please replace this line with your own names, one name per line.
 #: ../data/ui/about.glade.in.h:3
 msgid "translator-credits"
-msgstr "Βασιλάκος Γεώργιος <forfolias@linuxteam.cs.teilar.gr>"
+msgstr ""
+"Αρμακόλας Νικόλαος <armakolas@gmail.com> 2014\n"
+"Βασιλάκος Γεώργιος <forfolias@linuxteam.cs.teilar.gr>"
 
 #: ../data/ui/desktop-pref.glade.h:1 ../src/desktop-ui.c:34
 #: ../data/pcmanfm-desktop-pref.desktop.in.h:1
@@ -33,26 +40,22 @@ msgid "<b>Background</b>"
 msgstr "<b>Παρασκήνιο</b>"
 
 #: ../data/ui/desktop-pref.glade.h:3
-#, fuzzy
 msgid "Wallpaper _mode:"
-msgstr "Τύπος εφαρμογής ταπετσαρίας:"
+msgstr "Λειτουργία παρασκηνίου επιφάνειας εργασίας:"
 
 #: ../data/ui/desktop-pref.glade.h:4
-#, fuzzy
 msgid "_Wallpaper:"
-msgstr "Ταπετσαρία:"
+msgstr "Παρασκήνιο επιφάνειας εργασίας:"
 
 #: ../data/ui/desktop-pref.glade.h:5
 msgid "Please select an image file"
 msgstr "Παρακαλώ επιλέξτε ένα αρχείο εικόνας"
 
 #: ../data/ui/desktop-pref.glade.h:6
-#, fuzzy
 msgid "_Use the same wallpaper on all desktops"
-msgstr "Χρήση της ίδιας ταπετσαρίας σε όλες τις επιφάνειες εργασίας"
+msgstr "Χρήση του ίδιου παρασκηνίου σε όλες τις επιφάνειες εργασίας"
 
 #: ../data/ui/desktop-pref.glade.h:7
-#, fuzzy
 msgid "_Background color:"
 msgstr "Χρώμα παρασκηνίου:"
 
@@ -61,22 +64,18 @@ msgid "<b>Text</b>"
 msgstr "<b>Κείμενο</b>"
 
 #: ../data/ui/desktop-pref.glade.h:9
-#, fuzzy
 msgid "_Font of label text:"
 msgstr "Γραμματοσειρά κειμένου ετικέτας:"
 
 #: ../data/ui/desktop-pref.glade.h:10
-#, fuzzy
 msgid "C_olor of label text:"
 msgstr "Χρώμα κειμένου ετικέτας:"
 
 #: ../data/ui/desktop-pref.glade.h:11
-#, fuzzy
 msgid "Color of _shadow:"
 msgstr "Χρώμα σκιάς:"
 
 #: ../data/ui/desktop-pref.glade.h:12
-#, fuzzy
 msgid "_Appearance"
 msgstr "Εμφάνιση"
 
@@ -85,111 +84,96 @@ msgid "<b>Show desktop icons</b>"
 msgstr "<b>Εμφάνιση εικονιδίων επιφάνειας εργασίας</b>"
 
 #: ../data/ui/desktop-pref.glade.h:14
-#, fuzzy
 msgid "_Show \"Documents\" folder on the desktop"
-msgstr "Εμφάνιση του εικονιδίου \"Τα έγγραφά μου\" στην επιφάνεια εργασίας"
+msgstr "Εμφάνιση φακέλου «Έγγραφα» στην επιφάνεια εργασίας"
 
 #: ../data/ui/desktop-pref.glade.h:15
-#, fuzzy
 msgid "Sho_w \"Devices\" folder on the desktop"
-msgstr "Εμφάνιση του εικονιδίου \"Τα έγγραφά μου\" στην επιφάνεια εργασίας"
+msgstr "Εμφάνιση φακέλου «Συσκευές» στην επιφάνεια εργασίας"
 
 #: ../data/ui/desktop-pref.glade.h:16
-#, fuzzy
 msgid "Show \"_Trash Can\" folder on the desktop"
-msgstr "Εμφάνιση του εικονιδίου \"Απορρίμματα\" στην επιφάνεια εργασίας"
+msgstr "Εμφάνιση φακέλου «Απορρίμματα» στην επιφάνεια εργασίας"
 
 #: ../data/ui/desktop-pref.glade.h:17
-#, fuzzy
 msgid "S_how connected volumes on the desktop"
-msgstr "Εμφάνιση εικονιδίων των τόμων στην επιφάνεια εργασίας"
+msgstr "Εμφάνιση συνδεδεμένων τόμων στην επιφάνεια εργασίας"
 
 #: ../data/ui/desktop-pref.glade.h:18
-#, fuzzy
 msgid "_Desktop Icons"
 msgstr "Εικονίδια επιφάνειας εργασίας"
 
 #: ../data/ui/desktop-pref.glade.h:19
-#, fuzzy
 msgid "_Show menus provided by window managers when desktop is clicked"
 msgstr ""
-"Εμφάνιση του μενού του διαχειριστή παραθύρων όταν κάνετε κλικ στην επιφάνεια "
-"εργασίας"
+"Εμφάνιση των μενού των διαχειριστών παραθύρων όταν γίνεται κλικ στην "
+"επιφάνεια εργασίας"
 
 #: ../data/ui/desktop-pref.glade.h:20
 msgid "_Use desktop as a folder (show icons on it) by path:"
 msgstr ""
+"Χρησιμοποίησε την επιφάνεια εργασίας ως φάκελο (εμφάνισε εικονίδια επάνω της)"
+" κατά διαδρομή"
 
 #: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:84
 msgctxt "Use path for some folder: ..."
 msgid "Default"
-msgstr ""
+msgstr "Προεπιλογή"
 
 #: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:85
 msgctxt "Use path for some folder: ..."
 msgid "Custom:"
-msgstr ""
+msgstr "Προσωποποιημένο"
 
 #: ../data/ui/desktop-pref.glade.h:23
-#, fuzzy
 msgid "Select a Desktop Folder"
-msgstr "Φάκελος επιφάνειας εργασίας"
+msgstr "Επιλογή Φακέλου της Επιφάνειας Εργασίας"
 
 #: ../data/ui/desktop-pref.glade.h:24
-#, fuzzy
 msgid "_Open folders from desktop in new window"
-msgstr "Άνοιγμα σε νέο παράθυρο"
+msgstr "Άνοιγμα φακέλων επιφάνειας εργασίας σε νέο παράθυρο"
 
 #: ../data/ui/desktop-pref.glade.h:25
-#, fuzzy
 msgid "Ad_vanced"
-msgstr "Για προχωρημένους"
+msgstr "Προχωρημένα"
 
 #: ../data/ui/desktop-pref.glade.h:26
 msgid "Fill with background color only"
 msgstr "Γέμισμα μόνο με το χρώμα παρασκηνίου"
 
 #: ../data/ui/desktop-pref.glade.h:27
-#, fuzzy
 msgid "Stretch to fill the entire monitor area"
-msgstr "Τέντωμα ώστε να γεμίζει όλη την οθόνη"
+msgstr "Τέντωμα ώστε να γεμίζει όλη την έκταση της οθόνης"
 
 #: ../data/ui/desktop-pref.glade.h:28
-#, fuzzy
 msgid "Stretch to fit the monitor area"
-msgstr "Τέντωμα ώστε να χωρέσει στην οθόνη"
+msgstr "Τέντωμα ώστε να ταιριάξει στην έκταση της οθόνης"
 
 #: ../data/ui/desktop-pref.glade.h:29
 msgid "Center unscaled image on the monitor"
-msgstr ""
+msgstr "Στοίχισε μη κλιμακωμένη εικόνα στο κέντρο της οθόνης"
 
 #: ../data/ui/desktop-pref.glade.h:30
-#, fuzzy
 msgid "Tile the image to fill the entire monitor area"
-msgstr "Παράθεση εικόνας σε όλη την οθόνη"
+msgstr "Επανάληψη της εικόνας ώστε να γεμίσει ολόκληρη η επιφάνεια της οθόνης"
 
 #: ../data/ui/desktop-pref.glade.h:31
-#, fuzzy
 msgid "Stretch and crop to fill the monitor area"
-msgstr "Τέντωμα ώστε να γεμίζει όλη την οθόνη"
+msgstr "Τέντωμα και αποκοπή ώστε να γεμίσει η επιφάνεια της οθόνης"
 
 #: ../data/ui/desktop-pref.glade.h:32
-#, fuzzy
 msgid "Stretch to fill the complete screen"
-msgstr "Τέντωμα ώστε να γεμίζει όλη την οθόνη"
+msgstr "Τέντωμα ώστε να γεμίσει όλη την οθόνη"
 
 #: ../data/ui/pref.glade.h:1
-#, fuzzy
 msgid "Open in current tab"
 msgstr "Άνοιγμα στην παρούσα καρτέλα"
 
 #: ../data/ui/pref.glade.h:2
-#, fuzzy
 msgid "Open in new tab"
 msgstr "Άνοιγμα σε νέα καρτέλα"
 
 #: ../data/ui/pref.glade.h:3
-#, fuzzy
 msgid "Open in new window"
 msgstr "Άνοιγμα σε νέο παράθυρο"
 
@@ -202,54 +186,52 @@ msgid "<b>Behavior</b>"
 msgstr "<b>Συμπεριφορά</b>"
 
 #: ../data/ui/pref.glade.h:6
-#, fuzzy
 msgid "_Open files with single click"
 msgstr "Άνοιγμα αρχείων με μονό κλικ"
 
 #: ../data/ui/pref.glade.h:7
 msgid "Delay of auto-selection in single click mode (0 to disable)"
 msgstr ""
+"Καθυστέρηση αυτόματης επιλογής σε λειτουργία μονού κλικ (0 για "
+"απενεργοποίηση)"
 
 #: ../data/ui/pref.glade.h:8
-#, fuzzy
 msgid "Co_nfirm before deleting files"
-msgstr "Επιβεβαίωση πριν από τη διαγραφή αρχείων"
+msgstr "Επιβεβαίωση πριν τη διαγραφή αρχείων"
 
 #: ../data/ui/pref.glade.h:9
-#, fuzzy
 msgid "_Move deleted files to \"trash can\" instead of erasing from disk"
 msgstr ""
-"Μετακίνηση των αρχείων στα \"Απορρίμματα\" αντί για διαγραφή από το δίσκο"
+"Μετακίνηση διαγραμμένων αρχείων στον «κάδο απορριμάτων» αντί διαγραφής από "
+"το δίσκο"
 
 #: ../data/ui/pref.glade.h:10
-#, fuzzy
 msgid "_Erase files on removable media instead of \"trash can\" creation"
 msgstr ""
-"Διαγραφή των αρχείων από τους αφαιρούμενους δίσκους αντί δημιουργίας \"κάδου "
-"απορριμάτων\""
+"Διαγραφή των αρχείων από τους αφαιρούμενους δίσκους αντί δημιουργίας «κάδου "
+"απορριμάτων»"
 
 #: ../data/ui/pref.glade.h:11
-#, fuzzy
 msgid "Confi_rm before moving files into \"trash can\""
-msgstr "Επιβεβαίωση πριν τη μεταφορά των αρχείων στον κάδο απορριμάτων"
+msgstr "Επιβεβαίωση πριν τη μεταφορά αρχείων στον «κάδο απορριμάτων»"
 
 #: ../data/ui/pref.glade.h:12
 msgid "Don't ask options on _launch executable file"
-msgstr ""
+msgstr "Μη ζητάς επιλογές σε εκκίνηση εκτελέσιμου αρχείου"
 
 #: ../data/ui/pref.glade.h:13
-#, fuzzy
 msgid "_Bookmarks:"
 msgstr "Σελιδοδείκτες:"
 
 #: ../data/ui/pref.glade.h:14
-#, fuzzy
 msgid "Defaul_t drop action:"
-msgstr "Προεπιλεγμένη ενέργεια σε περίπτωση αποτυχίας"
+msgstr "Προεπιλεγμένη ενέργεια σε περίπτωση απόρριψης:"
 
 #: ../data/ui/pref.glade.h:15
 msgid "\"_Smart shortcut\" auto-action on drop to Desktop folder"
 msgstr ""
+"Αυτόματη ενέργεια «Έξυπνης συντόμευσης» σε απόθεση στο φάκελο Επιφάνειας "
+"Εργασίας"
 
 #: ../data/ui/pref.glade.h:16
 msgid ""
@@ -259,27 +241,30 @@ msgid ""
 "- other files (e.g. on removable media) will be copied\n"
 "- for some external URI a shortcut will be created"
 msgstr ""
+"Εάν ενεργοποιηθεί, τότε η «Αυτόματη» ενέργεια στην απόθεση αρχείου επάνω στο "
+"φάκελο Επιφάνεια Εργασίας θα είναι:\n"
+"- για αρχεία απευθείας στον «Προσωπικό» φάκελο, θα δημιουργηθεί ένας "
+"εικονικός δεσμός- για αρχεία στο ίδιο σύστημα αρχείων, θα μετακινηθεί\n"
+"- για άλλα αρχεία (πχ σε αφαιρούμενα μέσα), θα αντιγραφεί- για κάποιες "
+"εξωτερικές διαδικτυακές διευθύνσεις, θα δημιουργηθεί συντόμευση"
 
 #: ../data/ui/pref.glade.h:21
-#, fuzzy
 msgid "_Unfold tab when files are dragged onto tab button"
 msgstr "Ανάπτυξη καρτέλας όταν σύρονται αρχεία στο κουμπί καρτέλας"
 
 #: ../data/ui/pref.glade.h:22
 msgid "_Focus previous folder after coming to its parent"
-msgstr ""
+msgstr "Εστίασε στον προηγούμενο φάκελο αφότου πας στο γονικό του"
 
 #: ../data/ui/pref.glade.h:23
 msgid "<b>Default View</b>"
 msgstr "<b>Προεπιλεγμένη προβολή</b>"
 
 #: ../data/ui/pref.glade.h:24
-#, fuzzy
 msgid "Vie_w Mode:"
-msgstr "Τύπος προβολής:"
+msgstr "Κατάσταση Προβολής:"
 
 #: ../data/ui/pref.glade.h:25
-#, fuzzy
 msgid "_General"
 msgstr "Γενικά"
 
@@ -288,94 +273,80 @@ msgid "<b>Icons</b>"
 msgstr "<b>Εικονίδια</b>"
 
 #: ../data/ui/pref.glade.h:27
-#, fuzzy
 msgid "Size of _big icons:"
 msgstr "Μέγεθος μεγάλων εικονιδίων:"
 
 #: ../data/ui/pref.glade.h:28
-#, fuzzy
 msgid "Size of small _icons:"
 msgstr "Μέγεθος μικρών εικονιδίων:"
 
 #: ../data/ui/pref.glade.h:29
-#, fuzzy
 msgid "Size of _thumbnails:"
-msgstr "Μέγεθος μικρογραφίας:"
+msgstr "Μέγεθος μικρογραφιών:"
 
 #: ../data/ui/pref.glade.h:30
-#, fuzzy
 msgid "Size of side _pane icons:"
-msgstr "Μέγεθος εικονιδίων στο πλαϊνό ταμπλό:"
+msgstr "Μέγεθος εικονιδίων πλευρικής στήλης:"
 
 #: ../data/ui/pref.glade.h:31
-#, fuzzy
 msgid "_Show thumbnails of files"
-msgstr "Εμφάνιση μικρογραφίας αρχείων"
+msgstr "Εμφάνιση μικρογραφιών αρχείων"
 
 #: ../data/ui/pref.glade.h:32
-#, fuzzy
 msgid "_Only show thumbnails for local files"
-msgstr "Εμφάνιση προεπισκόπησης μόνο σε τοπικά αρχεία"
+msgstr "Εμφάνιση μικρογραφιών μόνο στα τοπικά αρχεία"
 
 #: ../data/ui/pref.glade.h:33
-#, fuzzy
 msgid "Do _not generate thumbnails for files exceeding this size:"
 msgstr ""
-"Μη δημιουργούνται μικρογραφίες για αρχεία που υπερβαίνουν αυτό το μέγεθος:"
+"Να μη δημιουργούνται μικρογραφίες για αρχεία που υπερβαίνουν αυτό το μέγεθος:"
 
 #: ../data/ui/pref.glade.h:34
 msgid "<b>User Interface</b>"
 msgstr "<b>Διεπαφή</b>"
 
 #: ../data/ui/pref.glade.h:35
-#, fuzzy
 msgid "Us_e SI decimal prefixes instead of IEC binary prefixes"
-msgstr "Χρήση SI δεκαδικών προθεμάτων αντί για IEC δυαδικών προθεμάτων"
+msgstr "Χρήση δεκαδικών προθεμάτων SI αντί δυαδικών προθεμάτων IEC"
 
 #: ../data/ui/pref.glade.h:36
-#, fuzzy
 msgid "Treat backup files as _hidden"
-msgstr "Χειρισμός αντιγράφων ασφαλείας ως κρυφά"
+msgstr "Χειρισμός αρχείων εφεδρείας ως κρυφά"
 
 #: ../data/ui/pref.glade.h:37
-#, fuzzy
 msgid "Al_ways show full file names"
-msgstr "Να εμφανίζεται πάντα η μπάρα με τις καρτέλες"
+msgstr "Να εμφανίζονται πάντα ολόκληρα τα ονόματα αρχείων"
 
 #: ../data/ui/pref.glade.h:38
 msgid "Show icons of hidden _files shadowed"
-msgstr ""
+msgstr "Να εμφανίζονται με σκιά τα εικονίδια των κρυφών αρχείων"
 
 #: ../data/ui/pref.glade.h:39
-#, fuzzy
 msgid "_Display"
 msgstr "Εμφάνιση"
 
 #: ../data/ui/pref.glade.h:40
-#, fuzzy
 msgid "Hid_e 'Close tab' buttons"
-msgstr "Απόκρυψη κουμπιών 'Κλείσιμο καρτέλας'"
+msgstr "Απόκρυψη κουμπιών «Κλείσιμο καρτέλας»"
 
 #: ../data/ui/pref.glade.h:41
-#, fuzzy
 msgid "Al_ways show the tab bar"
-msgstr "Να εμφανίζεται πάντα η μπάρα με τις καρτέλες"
+msgstr "Να εμφανίζεται πάντα η γραμμή με τις καρτέλες"
 
 #: ../data/ui/pref.glade.h:42
 msgid "_Maximum width of tab label:"
-msgstr ""
+msgstr "Μέγιστο πλάτος ετικέτας καρτέλας:"
 
 #. Use genitive case here, context is: width is XXX characters
 #: ../data/ui/pref.glade.h:44
 msgid "characters"
-msgstr ""
+msgstr "χαρακτήρες"
 
 #: ../data/ui/pref.glade.h:45
 msgid "<b>Directories Tree</b>"
 msgstr "<b>Δέντρο καταλόγων</b>"
 
 #: ../data/ui/pref.glade.h:46
-#, fuzzy
 msgid "Hide e_xpander on empty or locked folder"
 msgstr "Απόκρυψη επεκτάτη σε κενούς ή κλειδωμένους φακέλους"
 
@@ -384,40 +355,34 @@ msgid "<b>Show in Places:</b>"
 msgstr "<b>Εμφάνιση στις Τοποθεσίες:</b>"
 
 #: ../data/ui/pref.glade.h:48
-#, fuzzy
 msgid "_Home Folder"
-msgstr "Προσωπικός φάκελος"
+msgstr "Προσωπικός Φάκελος"
 
 #: ../data/ui/pref.glade.h:49
-#, fuzzy
 msgid "Des_ktop"
-msgstr "Επιφάνεια εργασίας"
+msgstr "Επιφάνεια Εργασίας"
 
 #: ../data/ui/pref.glade.h:50 ../src/main-win-ui.c:236
-#, fuzzy
 msgid "_Trash Can"
-msgstr "Απορρίμματα"
+msgstr "Κάδος Απορριμμάτων"
 
 #: ../data/ui/pref.glade.h:51
 msgid "_Filesystem Root"
-msgstr ""
+msgstr "Ριζικός Φάκελος Συστήματος Αρχείων"
 
 #: ../data/ui/pref.glade.h:52
-#, fuzzy
 msgid "App_lications"
 msgstr "Εφαρμογές"
 
 #: ../data/ui/pref.glade.h:53 ../src/main-win-ui.c:239
 msgid "Dev_ices"
-msgstr ""
+msgstr "Συσκευές"
 
 #: ../data/ui/pref.glade.h:54
-#, fuzzy
 msgid "_Network"
 msgstr "Δίκτυο"
 
 #: ../data/ui/pref.glade.h:55
-#, fuzzy
 msgid "_Layout"
 msgstr "Διάταξη"
 
@@ -426,56 +391,45 @@ msgid "<b>Auto-mount</b>"
 msgstr "<b>Αυτόματη προσάρτηση</b>"
 
 #: ../data/ui/pref.glade.h:57
-#, fuzzy
 msgid "_Mount mountable volumes automatically on program startup"
-msgstr "Αυτόματη προσάρτηση τόμων στην εκκίνηση του προγράμματος"
+msgstr "Αυτόματη προσάρτηση τόμων κατά την εκκίνηση του προγράμματος"
 
 #: ../data/ui/pref.glade.h:58
-#, fuzzy
 msgid "Mo_unt removable media automatically when they are inserted"
 msgstr "Αυτόματη προσάρτηση αφαιρούμενων δίσκων κατά την εισαγωγή τους"
 
 #: ../data/ui/pref.glade.h:59
-#, fuzzy
 msgid "_Show available options for removable media when they are inserted"
-msgstr ""
-"Εμφάνιση διαθέσιμων επιλογών αφαιρούμενων δίσκων κατά την εισαγωγή τους"
+msgstr "Εμφάνιση διαθέσιμων επιλογών αφαιρούμενων μέσων κατά την εισαγωγή τους"
 
 #: ../data/ui/pref.glade.h:60
-#, fuzzy
 msgid "Do_n't show available options for those media types:"
-msgstr ""
-"Εμφάνιση διαθέσιμων επιλογών αφαιρούμενων δίσκων κατά την εισαγωγή τους"
+msgstr "Να μην εμφανίζονται διαθέσιμες επιλογές για αυτούς τους τύπους μέσων:"
 
 #: ../data/ui/pref.glade.h:61
-#, fuzzy
 msgid "_Remove selected"
-msgstr "%d αντικείμενο επιλέχτηκε"
+msgstr "Αφαίρεση επιλεγμένου"
 
 #: ../data/ui/pref.glade.h:62
-#, fuzzy
 msgid "_Open mounted removable media in new tab instead of new window"
 msgstr ""
-"Άνοιγμα προσαρτημένων αφαιρούμενων μέσων σε νέα καρτέλα αντί για νέο παράθυρο"
+"Άνοιγμα προσαρτημένων αφαιρούμενων μέσων σε νέα καρτέλα αντί σε νέο παράθυρο"
 
 #: ../data/ui/pref.glade.h:63
-#, fuzzy
 msgid "When removable medium unmounted:"
-msgstr "Εισήχθη αφαιρούμενο μέσο"
+msgstr "Όταν αφαιρούμενο μέσο αποπροσαρτάται:"
 
 #: ../data/ui/pref.glade.h:64
-#, fuzzy
 msgid "Clos_e tab containing removable medium"
 msgstr "Κλείσιμο καρτελών αφαιρούμενων μέσων μετά την αποπροσάρτησή τους"
 
 #: ../data/ui/pref.glade.h:65
 msgid "Change folder in the tab to _Home Folder"
-msgstr ""
+msgstr "Αλλαγή φακέλου στην καρτέλα σε Προσωπικό Φάκελο"
 
 #: ../data/ui/pref.glade.h:66
-#, fuzzy
 msgid "_Volume Management"
-msgstr "Διαχειριστής τόμων"
+msgstr "Διαχείριση Τόμων"
 
 #: ../data/ui/pref.glade.h:67
 msgid "<b>Programs</b>"
@@ -484,53 +438,49 @@ msgstr "<b>Προγράμματα</b>"
 #: ../data/ui/pref.glade.h:68
 msgid "<i>Commands below may include extra options if necessary.</i>"
 msgstr ""
+"<i>Οι παρακάτω εντολές μπορεί να συμπεριλαμβάνουν επιπλέον επιλογές αν είναι "
+"απαραίτητο</i>"
 
 #: ../data/ui/pref.glade.h:69
-#, fuzzy
 msgid "_Terminal emulator:"
 msgstr "Τερματικό:"
 
 #: ../data/ui/pref.glade.h:70
-#, fuzzy
 msgid "_Switch user command:"
 msgstr "Εντολή αλλαγής χρήστη:"
 
 #. Application command to format some drive
 #: ../data/ui/pref.glade.h:72
 msgid "_Format command:"
-msgstr ""
+msgstr "Εντολή μορφοποίησης"
 
 #: ../data/ui/pref.glade.h:73
-#, fuzzy
 msgid "A_rchiver integration:"
-msgstr "Ενσωμάτωση από/συμπιεστή αρχείων:"
+msgstr "Ενσωμάτωση διαχειριστή συμπιεσμένων αρχείων:"
 
 #: ../data/ui/pref.glade.h:74
-#, fuzzy
 msgid "<b>Templates</b>"
-msgstr "<b>Κείμενο</b>"
+msgstr "<b>Πρότυπα</b>"
 
 #: ../data/ui/pref.glade.h:75
 msgid "S_how only user defined templates in menu"
-msgstr ""
+msgstr "Εμφάνισε στο μενού μόνο πρότυπα καθορισμένα από το χρήστη"
 
 #: ../data/ui/pref.glade.h:76
 msgid "Show _only one template for each MIME type"
-msgstr ""
+msgstr "Εμφάνισε μόνο ένα υπόδειγμα για κάθε τύπο MIME"
 
 #: ../data/ui/pref.glade.h:77
 msgid "Ru_n default application after creation from template"
-msgstr ""
+msgstr "Εκτέλεσε την εξ' ορισμού εφαρμογή μετά τη δημιουργία από πρότυπο"
 
 #: ../data/ui/pref.glade.h:78
-#, fuzzy
 msgid "<b>Other Options</b>"
-msgstr "<b>Εμφάνιση εικονιδίων επιφάνειας εργασίας</b>"
+msgstr "<b>Λοιπές Επιλογές</b>"
 
 #: ../data/ui/pref.glade.h:79
-#, fuzzy
 msgid "Use Application Startup Notify _by default"
-msgstr "Χρήση ειδοποίησης εκκίνησης εφαρμογής από προεπιλογή"
+msgstr "Χρήση Ειδοποίησης Εκκίνησης Εφαρμογής από προεπιλογή"
 
 #: ../data/ui/pref.glade.h:80
 msgid ""
@@ -545,15 +495,15 @@ msgstr ""
 
 #: ../data/ui/pref.glade.h:82
 msgid "D_efer test for content type on folder loading"
-msgstr ""
+msgstr "Ανάβαλε τη δοκιμή για τύπο περιεχομένου κατά τη φόρτωση φακέλου"
 
 #: ../data/ui/pref.glade.h:83
 msgid "Use path for \"Home Folder\" button:"
-msgstr ""
+msgstr "Χρησιμοποίησε διαδρομή για το πλήκτρο «Προσωπικός Φάκελος»"
 
 #: ../data/ui/pref.glade.h:86
 msgid "_Use current"
-msgstr ""
+msgstr "Χρησιμοποίησε το τρέχον"
 
 #: ../data/ui/pref.glade.h:87
 msgid "_Advanced"
@@ -561,15 +511,15 @@ msgstr "_Για προχωρημένους"
 
 #: ../data/ui/pref.glade.h:88
 msgid "<b>_Do not load modules matching:</b>"
-msgstr ""
+msgstr "<b>Να μη φορτώνονται τα αρθρώματα που ταιριάζουν:</b>"
 
 #: ../data/ui/pref.glade.h:89
 msgid "<b>_Load these modules anyway:</b>"
-msgstr ""
+msgstr "<b>Φόρτωσε αυτά τα αρθρώματα σε κάθε περίπτωση:</b>"
 
 #: ../data/ui/pref.glade.h:90
 msgid "Modules"
-msgstr ""
+msgstr "Αρθρώματα"
 
 #: ../data/ui/pref.glade.h:91
 msgid "Auto (move if on the same FS, copy otherwise)"
@@ -589,22 +539,18 @@ msgid "Ask"
 msgstr "Ερώτηση"
 
 #: ../data/ui/pref.glade.h:95
-#, fuzzy
 msgid "Icon view"
 msgstr "Προβολή εικονιδίων"
 
 #: ../data/ui/pref.glade.h:96
-#, fuzzy
 msgid "Compact view"
 msgstr "Συμπαγής προβολή"
 
 #: ../data/ui/pref.glade.h:97
-#, fuzzy
 msgid "Thumbnail view"
 msgstr "Προβολή μικρογραφιών"
 
 #: ../data/ui/pref.glade.h:98
-#, fuzzy
 msgid "Detailed list view"
 msgstr "Λεπτομερής προβολή"
 
@@ -630,114 +576,104 @@ msgstr "Παρακαλώ επιλέξτε την ενέργεια που επι�
 
 #: ../data/ui/autorun.glade.h:6
 msgid "_Always perform this action on this media type"
-msgstr ""
+msgstr "Πάντα να εκτελείται αυτή η ενέργεια σε αυτόν τον τύπο μέσου."
 
 #: ../data/ui/connect.glade.h:1
 msgid "Connect to remote server"
-msgstr ""
+msgstr "Σύνδεση σε απομακρυσμένο εξυπηρετητή"
 
 #: ../data/ui/connect.glade.h:2
 msgid "<b>Specify remote folder to connect</b>"
-msgstr ""
+msgstr "<b>Προσδιόρισε απομακρυσμένο φάκελο για να συνδεθεί</b>"
 
 #: ../data/ui/connect.glade.h:3
 msgid "_Type:"
-msgstr ""
+msgstr "Τύπος"
 
 #: ../data/ui/connect.glade.h:4
 msgid "_Host:"
-msgstr ""
+msgstr "Οικοδεσπότης"
 
 #: ../data/ui/connect.glade.h:5
 msgid "_Port:"
-msgstr ""
+msgstr "Θύρα"
 
 #: ../data/ui/connect.glade.h:6
 msgid "Pa_th:"
-msgstr ""
+msgstr "Διαδρομή"
 
 #: ../data/ui/connect.glade.h:7
 msgid "_Anonymous login"
-msgstr ""
+msgstr "Ανώνυμη σύνδεση"
 
 #: ../data/ui/connect.glade.h:8
 msgid "_Login as:"
-msgstr ""
+msgstr "Σύνδεση ως:"
 
 #: ../data/ui/connect.glade.h:9
 msgid "SSH"
-msgstr ""
+msgstr "SSH"
 
 #: ../data/ui/connect.glade.h:10
 msgid "FTP"
-msgstr ""
+msgstr "FTP"
 
 #: ../data/ui/connect.glade.h:11
 msgid "WebDAV"
-msgstr ""
+msgstr "WebDAV"
 
 #: ../src/volume-manager.c:237
 msgid "mixed content"
-msgstr ""
+msgstr "μεικτό περιεχόμενο"
 
 #: ../src/volume-manager.c:246
-#, fuzzy
 msgid "removable disk"
-msgstr "Αφαιρούμενος δίσκος"
+msgstr "αφαιρούμενος δίσκος"
 
 #: ../src/volume-manager.c:302
 msgid "Open in File Manager"
 msgstr "Άνοιγμα στο διαχειριστή αρχείων"
 
 #: ../src/desktop-ui.c:51
-#, fuzzy
 msgid "Open in New Ta_b"
-msgstr "Άνοιγμα σε νέα καρτέλα"
+msgstr "Άνοιγμα σε Νέα Καρτέλα"
 
 #: ../src/desktop-ui.c:52 ../src/tab-page.c:57
-#, fuzzy
 msgid "Open in New Win_dow"
-msgstr "Άνοιγμα σε νέο παράθυρο"
+msgstr "Άνοιγμα σε Νέο Παράθυρο"
 
 #: ../src/desktop-ui.c:54 ../src/tab-page.c:59
-#, fuzzy
 msgid "Open in Termina_l"
-msgstr "Άνοιγμα στο τερματικό"
+msgstr "Άνοιγμα στο Τερματικό"
 
 #: ../src/desktop-ui.c:68
 msgid "_Remove from Desktop"
-msgstr ""
+msgstr "Απομάκρυνση από την Επιφάνεια Εργασίας"
 
 #: ../src/desktop-ui.c:85
-#, fuzzy
 msgid "Stic_k to Current Position"
-msgstr "Κόλλημα στην τρέχουσα θέση"
+msgstr "Διατήρηση στην Τρέχουσα Θέση"
 
 #: ../src/desktop-ui.c:90
-#, fuzzy
 msgid "Snap to _Grid"
-msgstr "Στοίχιση στο πλέγμα"
+msgstr "Στοίχιση στο Πλέγμα"
 
 #: ../src/desktop.c:946
-#, fuzzy
 msgid "Activate file"
-msgstr "<αρχείο εικόνας>"
+msgstr "Ενεργοποίηση αρχείου"
 
 #: ../src/desktop.c:948
-#, fuzzy
 msgid "Show file menu"
-msgstr "Εμφάνιση _κρυφών αρχείων"
+msgstr "Εμφάνιση επιλογών αρχείου"
 
 #: ../src/desktop.c:1364
-#, fuzzy
 msgid "Show desktop menu"
-msgstr "<b>Εμφάνιση εικονιδίων επιφάνειας εργασίας</b>"
+msgstr "Εμφάνιση επιλογών επιφάνειας εργασίας"
 
 #. FIXME: set name by monitor
 #: ../src/desktop.c:1436
-#, fuzzy
 msgid "Desktop"
-msgstr "Επιφάνεια εργασίας"
+msgstr "Επιφάνεια Εργασίας"
 
 #: ../src/main-win-ui.c:187
 msgid "_File"
@@ -748,18 +684,16 @@ msgid "_New Window"
 msgstr "_Νέο παράθυρο"
 
 #: ../src/main-win-ui.c:189
-#, fuzzy
 msgid "New T_ab"
-msgstr "Νέα _Καρτέλα"
+msgstr "Νέα Καρτέλα"
 
 #: ../src/main-win-ui.c:189
 msgid "Create new tab for this folder"
-msgstr ""
+msgstr "Δημιούργησε νέα καρτέλα για αυτόν το φάκελο"
 
 #: ../src/main-win-ui.c:190
-#, fuzzy
 msgid "C_reate New..."
-msgstr "Δημιουργία νέου..."
+msgstr "Δημιουργία Νέου..."
 
 #: ../src/main-win-ui.c:191
 msgid "Folder"
@@ -767,20 +701,19 @@ msgstr "Φακέλου"
 
 #: ../src/main-win-ui.c:192
 msgid "Empty File"
-msgstr ""
+msgstr "Κενό Αρχείο"
 
 #: ../src/main-win-ui.c:193
 msgid "Folder Propertie_s"
-msgstr ""
+msgstr "Ιδιότητες Φακέλου"
 
 #: ../src/main-win-ui.c:194
 msgid "_Close Tab"
 msgstr "_Κλείσιμο καρτέλας"
 
 #: ../src/main-win-ui.c:195
-#, fuzzy
 msgid "Close _Window"
-msgstr "Κλείσιμο παραθύρου"
+msgstr "Κλείσιμο Παραθύρου"
 
 #: ../src/main-win-ui.c:196
 msgid "_Edit"
@@ -788,50 +721,45 @@ msgstr "_Επεξεργασία"
 
 #: ../src/main-win-ui.c:198
 msgid "C_ut"
-msgstr ""
+msgstr "Αποκοπή"
 
 #: ../src/main-win-ui.c:201
 msgid "Move to _Trash"
-msgstr ""
+msgstr "Μετακίνηση στα Απορρίμματα"
 
 #: ../src/main-win-ui.c:203
 msgid "Copy Pat_h(s)"
-msgstr ""
+msgstr "Αντιγραφή Διαδρομής(ών)"
 
 #: ../src/main-win-ui.c:204
-#, fuzzy
 msgid "R_ename..."
-msgstr "Μετονομασία"
+msgstr "Μετονομασία..."
 
 #: ../src/main-win-ui.c:205
 msgid "D_uplicate..."
-msgstr ""
+msgstr "Πιστή αντιγραφή..."
 
 #: ../src/main-win-ui.c:206
-#, fuzzy
 msgid "Create Lin_k..."
-msgstr "Δημιουργία _νέου..."
+msgstr "Δημιουργία Συνδέσμου..."
 
 #: ../src/main-win-ui.c:207
-#, fuzzy
 msgid "_Move to..."
 msgstr "Μετακίνηση στο..."
 
 #: ../src/main-win-ui.c:208
-#, fuzzy
 msgid "Copy to_..."
 msgstr "Αντιγραφή στο..."
 
 #: ../src/main-win-ui.c:209
 msgid "Propertie_s"
-msgstr ""
+msgstr "Ιδιότητες"
 
 #: ../src/main-win-ui.c:211
 msgid "_Invert Selection"
 msgstr "_Αντιστροφή επιλογής"
 
 #: ../src/main-win-ui.c:212
-#, fuzzy
 msgid "Prefere_nces"
 msgstr "Προτιμήσεις"
 
@@ -840,46 +768,41 @@ msgid "_View"
 msgstr "_Προβολή"
 
 #: ../src/main-win-ui.c:214
-#, fuzzy
 msgid "_Reload Folder"
-msgstr "Ανανέωση φακέλου"
+msgstr "Ανανέωση Φακέλου"
 
 #: ../src/main-win-ui.c:214
 msgid "Reload current folder"
 msgstr "Ανανέωση τρέχοντος φακέλου"
 
 #: ../src/main-win-ui.c:215
-#, fuzzy
 msgid "Tool_bar"
-msgstr "_Εργαλεία"
+msgstr "Γραμμή Εργαλείων"
 
 #: ../src/main-win-ui.c:216
 msgid "Pat_h Bar"
-msgstr ""
+msgstr "Γραμμή Διαδρομής"
 
 #: ../src/main-win-ui.c:217
-#, fuzzy
 msgid "Side _Pane"
-msgstr "Πλευρικό ταμπλό"
+msgstr "Πλευρική Στήλη"
 
 #. other see below: 'ShowHidden' 'ShowStatus' 'Fullscreen' 'IconView'...
 #: ../src/main-win-ui.c:219
-#, fuzzy
 msgid "Fo_lder View Mode"
-msgstr "Τύπος προβολής:"
+msgstr "Κατάσταση Προβολής Φακέλου"
 
 #: ../src/main-win-ui.c:220
-#, fuzzy
 msgid "S_ort Files"
-msgstr "_Ταξινόμηση αρχείων κατά"
+msgstr "Ταξινόμηση Aρχείων"
 
 #: ../src/main-win-ui.c:222
 msgid "Zoom O_ut"
-msgstr ""
+msgstr "Αποεστίαση"
 
 #: ../src/main-win-ui.c:225
 msgid "Fil_ter..."
-msgstr ""
+msgstr "Φίλτρο..."
 
 #: ../src/main-win-ui.c:227
 msgid "_Help"
@@ -887,195 +810,180 @@ msgstr "_Βοήθεια"
 
 #: ../src/main-win-ui.c:229
 msgid "_Keyboard Navigation"
-msgstr ""
+msgstr "Χειρισμός μέσω Πληκτρολογίου"
 
 #: ../src/main-win-ui.c:230
 msgid "_Go"
 msgstr "_Μετάβαση"
 
 #: ../src/main-win-ui.c:231
-#, fuzzy
 msgid "_Previous Folder"
-msgstr "Προηγούμενος φάκελος"
+msgstr "Προηγούμενος Φάκελος"
 
 #: ../src/main-win-ui.c:231
 msgid "Return to previous folder in history"
-msgstr ""
+msgstr "Επιστροφή στον προηγούμενο φάκελο του ιστορικού"
 
 #: ../src/main-win-ui.c:232
-#, fuzzy
 msgid "_Next Folder"
-msgstr "Επόμενος φάκελος"
+msgstr "Επόμενος Φάκελος"
 
 #: ../src/main-win-ui.c:232
 msgid "Go forward to next folder in history"
-msgstr ""
+msgstr "Προώθηση στον επόμενο φάκελο του ιστορικού"
 
 #: ../src/main-win-ui.c:233
-#, fuzzy
 msgid "Pa_rent Folder"
-msgstr "Γονικός φάκελος"
+msgstr "Γονικός Φάκελος"
 
 #: ../src/main-win-ui.c:233
 msgid "Go to parent Folder"
 msgstr "Μετάβαση στο γονικό φάκελο"
 
 #: ../src/main-win-ui.c:234
-#, fuzzy
 msgid "H_ome Folder"
-msgstr "Προσωπικός φάκελος"
+msgstr "Προσωπικός Φάκελος"
 
 #: ../src/main-win-ui.c:234
-#, fuzzy
 msgid "Go to home folder"
-msgstr "Μετάβαση στο γονικό φάκελο"
+msgstr "Μετάβαση στον προσωπικό φάκελο"
 
 #: ../src/main-win-ui.c:235
-#, fuzzy
 msgid "_Desktop"
-msgstr "Επιφάνεια εργασίας"
+msgstr "Επιφάνεια Εργασίας"
 
 #: ../src/main-win-ui.c:235
-#, fuzzy
 msgid "Go to desktop folder"
-msgstr "Μετάβαση στο γονικό φάκελο"
+msgstr "Μετάβαση στο φάκελο επιφάνειας εργασίας"
 
 #: ../src/main-win-ui.c:236
 msgid "Open trash can"
-msgstr ""
+msgstr "Άνοιγμα κάδου απορριμμάτων"
 
 #: ../src/main-win-ui.c:237
 msgid "Filesyste_m Root"
-msgstr ""
+msgstr "Ριζικός φάκελος συστήματος αρχείων"
 
 #: ../src/main-win-ui.c:237
 msgid "Go fo filesystem root"
-msgstr ""
+msgstr "Πήγαινε στο ριζικό φάκελο του συστήματος αρχείων"
 
 #: ../src/main-win-ui.c:238
-#, fuzzy
 msgid "_Applications"
 msgstr "Εφαρμογές"
 
 #: ../src/main-win-ui.c:238
 msgid "Go to root of applications menu folder"
-msgstr ""
+msgstr "Πήγαινε στο ριζικό φάκελο του καταλόγου εφαρμογών"
 
 #: ../src/main-win-ui.c:239
-#, fuzzy
 msgid "Go to list of devices connected to the computer"
-msgstr "Εμφάνιση εικονιδίων των τόμων στην επιφάνεια εργασίας"
+msgstr "Πήγαινε στον κατάλογο συνδεδεμένων συσκευών με τον υπολογιστή"
 
 #: ../src/main-win-ui.c:240
-#, fuzzy
 msgid "Net_work"
 msgstr "Δίκτυο"
 
 #: ../src/main-win-ui.c:240
-#, fuzzy
 msgid "Go to list of places on the network"
-msgstr "Εμφάνιση εικονιδίων των τόμων στην επιφάνεια εργασίας"
+msgstr "Πήγαινε στον κατάλογο θέσεων του δικτύου"
 
 #: ../src/main-win-ui.c:241
 msgid "_Go to Location..."
-msgstr ""
+msgstr "Πήγαινε στην Τοποθεσία..."
 
 #: ../src/main-win-ui.c:242
 msgid "_Connect to Server..."
-msgstr ""
+msgstr "Σύνδεση με Εξυπηρετητή..."
 
 #: ../src/main-win-ui.c:242
 msgid "Open a window to choose remote folder location"
-msgstr ""
+msgstr "Άνοιξε παράθυρο για επιλογή τοποθεσίας απομακρυσμένου φακέλου"
 
 #: ../src/main-win-ui.c:243
 msgid "Go to the path in the location bar"
-msgstr ""
+msgstr "Πήγαινε στη διαδρομή της γραμμής διεύθυνσης"
 
 #: ../src/main-win-ui.c:244
 msgid "_Bookmarks"
 msgstr "_Σελιδοδείκτες"
 
 #: ../src/main-win-ui.c:245
-#, fuzzy
 msgid "_Add to Bookmarks..."
-msgstr "Προσθήκη στους σελιδοδείκτες"
+msgstr "Προσθήκη στους Σελιδοδείκτες..."
 
 #: ../src/main-win-ui.c:245
 msgid "Add current folder to bookmarks list"
-msgstr ""
+msgstr "Πρόσθεσε τον τρέχοντα φάκελο στον κατάλογο σελιδοδεικτών"
 
 #: ../src/main-win-ui.c:246
 msgid "Too_ls"
-msgstr ""
+msgstr "Εργαλεία"
 
 #: ../src/main-win-ui.c:247
 msgid "Open Current Folder in _Terminal"
 msgstr "Άνοιγμα του τρέχοντος φακέλου στο _τερματικό"
 
 #: ../src/main-win-ui.c:249
-#, fuzzy
 msgid "Fin_d Files..."
-msgstr "_Ταξινόμηση αρχείων κατά"
+msgstr "Εύρεση Αρχείων..."
 
 #: ../src/main-win-ui.c:249
-#, fuzzy
 msgid "Open search dialog"
-msgstr "Ρυθμίσεις επιφάνειας εργασίας"
+msgstr "Άνοιξε το διάλογο αναζήτησης"
 
 #: ../src/main-win-ui.c:252
-#, fuzzy
 msgid "_Run a Command in Current Folder..."
-msgstr "Ανανέωση τρέχοντος φακέλου"
+msgstr "Εκτέλεση Εντολής στον Τρέχοντα Φάκελο..."
 
 #. Note to translators: "Mingle..." means "Do not put folders before files" but make the translation as short as possible, please!
 #: ../src/main-win-ui.c:267
 msgid "Mingle _Files and Folders"
-msgstr ""
+msgstr "Ανακάτεψε Αρχεία και Φακέλους"
 
 #: ../src/main-win-ui.c:270
 msgid "_Ignore Name Case"
-msgstr ""
+msgstr "Αγνόησε κεφαλαίους και πεζούς χαρακτήρες"
 
 #: ../src/main-win-ui.c:272
-#, fuzzy
 msgid "Sho_w Hidden"
-msgstr "Εμφάνιση _κρυφών αρχείων"
+msgstr "Εμφάνιση Κρυφών"
 
 #. Note to translators: this save is meant for folder's settings such as sort
 #: ../src/main-win-ui.c:274
 msgid "Preserve This Folder's Settings"
-msgstr ""
+msgstr "Διατήρησε τις Ρυθμίσεις αυτού του Φακέλου"
 
 #: ../src/main-win-ui.c:275
 msgid ""
 "Check to remember view and sort as folder setting rather than global one"
 msgstr ""
+"Επίλεξε για να θυμάται την προβολή και την ταξινόμηση ως ρύθμιση φακέλου "
+"αντί ως γενική"
 
 #: ../src/main-win-ui.c:277
 msgid "_Show Toolbar"
-msgstr ""
+msgstr "Εμφάνιση Γραμμής Εργαλείων"
 
 #: ../src/main-win-ui.c:278
 msgid "Show 'New _Window' Button"
-msgstr ""
+msgstr "Εμφάνιση πλήκτρου «Νέο Παράθυρο»"
 
 #: ../src/main-win-ui.c:279
 msgid "Show 'New _Tab' Button"
-msgstr ""
+msgstr "Εμφάνιση πλήκτρου «Νέα Καρτέλα» "
 
 #: ../src/main-win-ui.c:280
 msgid "Show _Navigation Buttons"
-msgstr ""
+msgstr "Εμφάνιση Πλήκτρων Χειρισμού"
 
 #: ../src/main-win-ui.c:281
 msgid "Show '_Home' Button"
-msgstr ""
+msgstr "Εμφάνιση πλήκτρου «Προσωπικός Φάκελος»"
 
 #: ../src/main-win-ui.c:282
-#, fuzzy
 msgid "Sho_w Side Pane"
-msgstr "Εμφάνιση πλευρικού ταμπλό"
+msgstr "Εμφάνιση Πλευρικής Στήλης"
 
 #: ../src/main-win-ui.c:283
 msgid "Show Status B_ar"
@@ -1083,16 +991,15 @@ msgstr "Εμφάνιση _γραμμής κατάστασης"
 
 #: ../src/main-win-ui.c:284
 msgid "_Dual Pane Mode"
-msgstr ""
+msgstr "Κατάσταση Διπλής Στήλης"
 
 #: ../src/main-win-ui.c:284
 msgid "Show two panels with folder views"
-msgstr ""
+msgstr "Εμφάνισε δύο στήλες με προβολές φακέλων"
 
 #: ../src/main-win-ui.c:285
-#, fuzzy
 msgid "Fullscreen _Mode"
-msgstr "Πλήρης οθόνη"
+msgstr "Κατάσταση Πλήρους Οθόνης"
 
 #: ../src/main-win-ui.c:291
 msgid "_Icon View"
@@ -1128,7 +1035,7 @@ msgstr "_Τύπο"
 
 #: ../src/main-win-ui.c:312
 msgid "By _Extension"
-msgstr ""
+msgstr "Κατά Επέκταση Αρχείου"
 
 #: ../src/main-win-ui.c:325
 msgid "Places"
@@ -1143,52 +1050,45 @@ msgid "Remote"
 msgstr "Απομακρυσμένο"
 
 #: ../src/main-win-ui.c:333
-#, fuzzy
 msgid "_Location"
-msgstr "Εφαρμογές"
+msgstr "Τοποθεσία"
 
 #: ../src/main-win-ui.c:334
 msgid "_Buttons"
-msgstr ""
+msgstr "Πλήκτρα"
 
 #: ../src/main-win.c:925 ../src/main-win.c:929
 msgid "Show history of visited folders"
-msgstr ""
+msgstr "Εμφάνιση ιστορικού επισκεφθέντων φακέλων"
 
 #: ../src/main-win.c:934
 msgid "History"
-msgstr ""
+msgstr "Ιστορικό"
 
 #: ../src/main-win.c:948
 msgid "You are in super user mode"
 msgstr "Είστε σε κατάσταση υπερχρήστη"
 
 #: ../src/main-win.c:1134
-#, fuzzy
 msgid "Lightweight file manager\n"
-msgstr ""
-"Ελαφρύς διαχειριστής αρχείων\n"
-"\n"
-"Αναπτύχθηκε από τον Hon Jen Yee (PCMan)"
+msgstr "Ελαφρύς διαχειριστής αρχείων\n"
 
 #: ../src/main-win.c:1139
 #, c-format
 msgid "using LibFM ver. %s\n"
-msgstr ""
+msgstr "χρησιμοποιείται LibFM έκδ. %s\n"
 
 #: ../src/main-win.c:1141
-#, fuzzy
 msgid ""
 "\n"
 "Developed by Hon Jen Yee (PCMan)"
 msgstr ""
-"Ελαφρύς διαχειριστής αρχείων\n"
 "\n"
 "Αναπτύχθηκε από τον Hon Jen Yee (PCMan)"
 
 #: ../src/main-win.c:1166 ../src/main-win.c:1174
 msgid "Keyboard Navigation"
-msgstr ""
+msgstr "Χειρισμός μέσω Πληκτρολογίου"
 
 #: ../src/main-win.c:1168
 msgid ""
@@ -1199,19 +1099,26 @@ msgid ""
 "F10: activate main menu\n"
 "Ctrl+L or Alt+D: jump focus to Path Bar"
 msgstr ""
+"Tab: κυκλική εναλλαγή εστίασης Προβολή Φακέλου -> Πλευρική Στήλη -> Γραμμή "
+"Εργαλείων\n"
+"Shift+Tab: κυκλική εναλλαγή εστίασης Γραμμή Εργαλείων -> Πλευρική Στήλη -> "
+"Προβολή Φακέλου\n"
+"F6: εναλλαγή εστίασης Πλευρική Στήλη <-> Προβολή Φακέλου\n"
+"F8: διαχωριστής εστίασης μεταξύ Πλευρικής Στήλης και Προβολής Φακέλου\n"
+"F10: ενεργοποίηση κυρίως μενού\n"
+"Ctrl+L ή Alt+D: άμεση εστίαση στη Γραμμή Διεύθυνσης"
 
 #: ../src/main-win.c:1210
 msgid "Run a command"
-msgstr ""
+msgstr "Εκτέλεσε εντολή"
 
 #: ../src/main-win.c:1211
 msgid "Enter a command to run:"
-msgstr ""
+msgstr "Εισαγωγή εντολής για εκτέλεση:"
 
 #: ../src/main-win.c:1218
-#, fuzzy
 msgid "Current folder is inaccessible"
-msgstr "Άνοιγμα του τρέχοντος φακέλου στο _τερματικό"
+msgstr "Ο τρέχων φάκελος είναι απρόσιτος"
 
 #: ../src/main-win.c:1822
 #, c-format
@@ -1230,11 +1137,11 @@ msgstr "Προσθήκη στους σελιδοδείκτες"
 
 #: ../src/main-win.c:2552
 msgid "Select filter"
-msgstr ""
+msgstr "Επιλογή φίλτρου"
 
 #: ../src/main-win.c:2553
 msgid "Choose a new shell pattern to show files:"
-msgstr ""
+msgstr "Επίλεξε νέα ακολουθία κελύφους για εμφάνιση αρχείων:"
 
 #. options only acceptable by first pcmanfm instance. These options are not passed through IPC
 #: ../src/pcmanfm.c:78
@@ -1243,7 +1150,7 @@ msgstr "Όνομα του προφίλ ρυθμίσεων"
 
 #: ../src/pcmanfm.c:78
 msgid "PROFILE"
-msgstr ""
+msgstr "ΚΑΤΑΤΟΜΗ"
 
 #: ../src/pcmanfm.c:79
 msgid "Run PCManFM as a daemon"
@@ -1268,70 +1175,68 @@ msgstr "Ρυθμίσεις επιφάνειας εργασίας"
 
 #: ../src/pcmanfm.c:86
 msgid "Use --desktop option only for one screen"
-msgstr ""
+msgstr "Χρησιμοποίησε την επιλογή --desktop μόνο για μια οθόνη"
 
 #: ../src/pcmanfm.c:87
-#, fuzzy
 msgid "Set desktop wallpaper from image FILE"
-msgstr "Ορισμός ταπετσαρίας επιφάνειας εργασίας"
+msgstr "Ορισμός εικόνας παρασκηνίου επιφάνειας εργασίας από ΑΡΧΕΙΟ εικόνας"
 
 #: ../src/pcmanfm.c:87
 msgid "FILE"
-msgstr ""
+msgstr "ΑΡΧΕΙΟ"
 
 #. don't translate list of modes in description, please
 #: ../src/pcmanfm.c:89
-#, fuzzy
 msgid ""
 "Set mode of desktop wallpaper. MODE=(color|stretch|fit|crop|center|tile|"
 "screen)"
 msgstr ""
-"Ρύθμιση του τρόπου εμφάνισης της ταπετσαρίας στην επιφάνεια εργασίας. "
-"<mode>=(χρώμα|τέντωμα|ταίριασμα|κέντρο|παράθεση)"
+"Ρύθμιση κατάστασης εμφάνισης του παρασκηνίου επιφάνειας εργασίας. "
+"ΚΑΤΑΣΤΑΣΗ=(χρώμα|τέντωμα|ταίριασμα|αποκοπή|κέντρο|παράθεση|οθόνη)"
 
 #: ../src/pcmanfm.c:89
 msgid "MODE"
-msgstr ""
+msgstr "ΚΑΤΑΣΤΑΣΗ"
 
 #: ../src/pcmanfm.c:90
-#, fuzzy
 msgid "Open Preferences dialog on the page N"
-msgstr "Ρυθμίσεις επιφάνειας εργασίας"
+msgstr "Άνοιγμα διαλόγου Προτιμήσεων στη σελίδα Ν"
 
 #: ../src/pcmanfm.c:90
 msgid "N"
-msgstr ""
+msgstr "Ν"
 
 #: ../src/pcmanfm.c:91
-#, fuzzy
 msgid "Open new window"
-msgstr "Άνοιγμα σε νέο παράθυρο"
+msgstr "Άνοιγμα νέου παραθύρου"
 
 #: ../src/pcmanfm.c:93
-#, fuzzy
 msgid "Open a Find Files window"
-msgstr "Άνοιγμα εργαλείου εύρεσης αρχείων"
+msgstr "Άνοιγμα παραθύρου Εύρεσης Αρχείων"
 
 #: ../src/pcmanfm.c:95
 msgid "Window role for usage by window manager"
-msgstr ""
+msgstr "Ρόλος παραθύρου για χρήση από το διαχειριστή παραθύρων"
 
 #: ../src/pcmanfm.c:95
 msgid "ROLE"
-msgstr ""
+msgstr "ΡΟΛΟΣ"
 
 #: ../src/pcmanfm.c:96
 msgid "[FILE1, FILE2,...]"
 msgstr "[ΑΡΧΕΙΟ1, ΑΡΧΕΙΟ2,...]"
 
-#: ../src/pcmanfm.c:585
+#: ../src/pcmanfm.c:352
+msgid "Desktop manager is not active."
+msgstr "Ο διαχειριστής επιφάνειας εργασίας δεν είναι ενεργός"
+
+#: ../src/pcmanfm.c:598
 msgid "Terminal emulator is not set."
 msgstr "Δεν έχει οριστεί κάποιο τερματικό."
 
 #: ../src/tab-page.c:56
-#, fuzzy
 msgid "Open in New T_ab"
-msgstr "Άνοιγμα σε νέα καρτέλα"
+msgstr "Άνοιγμα σε Νέα Καρτέλα"
 
 #: ../src/tab-page.c:395
 #, c-format
@@ -1361,19 +1266,19 @@ msgstr[1] " (%d κρυφά)"
 
 #: ../src/pref.c:514
 msgid "Add to Modules Blacklist"
-msgstr ""
+msgstr "Προσθήκη στη Μαύρη Λίστα των Αρθρωμάτων"
 
 #: ../src/pref.c:515
 msgid "Enter a blacklisted module mask:"
-msgstr ""
+msgstr "Εισαγωγή μάσκας για αρθρώματα μαύρης λίστας"
 
 #: ../src/pref.c:606
 msgid "Add to Modules Whitelist"
-msgstr ""
+msgstr "Προσθήκη στη Λευκή Λίστα των Αρθρωμάτων"
 
 #: ../src/pref.c:607
 msgid "Enter a whitelisted module mask:"
-msgstr ""
+msgstr "Εισαγωγή μάσκας για αρθρώματα λευκής λίστας "
 
 #: ../data/pcmanfm.desktop.in.h:1
 msgid "File Manager PCManFM"
