@@ -5610,10 +5610,10 @@ void fm_desktop_preference(GtkAction *act, FmDesktop *desktop)
                          G_CALLBACK(on_desktop_folder_set_toggled), data->chooser);
         /* the desktop folder chooser dialog */
         if (desktop->model)
-            path_str = fm_path_to_str(fm_folder_model_get_folder_path(desktop->model));
+            path_str = fm_path_to_uri(fm_folder_model_get_folder_path(desktop->model));
         else
-            path_str = fm_path_to_str(fm_path_get_desktop());
-        gtk_file_chooser_set_filename(data->chooser, path_str);
+            path_str = fm_path_to_uri(fm_path_get_desktop());
+        gtk_file_chooser_set_current_folder_uri(data->chooser, path_str);
         g_free(path_str);
         g_signal_connect(data->chooser, "file-set", G_CALLBACK(on_desktop_folder_set), data);
         g_signal_connect(data->chooser, "selection-changed", G_CALLBACK(on_desktop_folder_set), data);
