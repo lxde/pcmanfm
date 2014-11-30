@@ -1,3 +1,7 @@
+* Workarounded a bug in gtk_file_chooser_set_file() function (patch from
+    Simon Long).
+
+
 Changes on 1.2.3 since 1.2.2:
 
 * Disabled unrequested config save on changing dir if show_hidden changes.
