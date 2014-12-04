@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm 1.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-09 09:41+0100\n"
+"POT-Creation-Date: 2014-01-22 00:33+0200\n"
 "PO-Revision-Date: 2013-06-05 09:38+0900\n"
 "Last-Translator: Gheyret <gheyret@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
@@ -397,8 +397,8 @@ msgstr "<b>ئاپتوماتىك ئېگەرلەش</b>"
 #: ../data/ui/pref.glade.h:57
 msgid "_Mount mountable volumes automatically on program startup"
 msgstr ""
-"پروگرامما باشلانغاندا ئېگەرلىگىلى بولىدىغان دىسكىلارنى ئاپتوماتىك "
-"ئېگەرلىسۇن(_M)"
+"پروگرامما باشلانغاندا ئېگەرلىگىلى بولىدىغان دىسكىلارنى ئاپتوماتىك ئېگەرلىسۇن"
+"(_M)"
 
 #: ../data/ui/pref.glade.h:58
 msgid "Mo_unt removable media automatically when they are inserted"
@@ -407,15 +407,15 @@ msgstr "يۆتكىلىشچان ۋاسىتە قىستۇرۇلغان ھامان ئ
 #: ../data/ui/pref.glade.h:59
 msgid "_Show available options for removable media when they are inserted"
 msgstr ""
-"يۆتكىلىشچان ۋاسىتە قىستۇرۇلغاندا ئىشلەتكىلى بولىدىغان تاللانمىلارنى "
-"كۆرسەتسۇن(_S)"
+"يۆتكىلىشچان ۋاسىتە قىستۇرۇلغاندا ئىشلەتكىلى بولىدىغان تاللانمىلارنى كۆرسەتسۇن"
+"(_S)"
 
 #: ../data/ui/pref.glade.h:60
 #, fuzzy
 msgid "Do_n't show available options for those media types:"
 msgstr ""
-"يۆتكىلىشچان ۋاسىتە قىستۇرۇلغاندا ئىشلەتكىلى بولىدىغان تاللانمىلارنى "
-"كۆرسەتسۇن(_S)"
+"يۆتكىلىشچان ۋاسىتە قىستۇرۇلغاندا ئىشلەتكىلى بولىدىغان تاللانمىلارنى كۆرسەتسۇن"
+"(_S)"
 
 #: ../data/ui/pref.glade.h:61
 #, fuzzy
@@ -1276,7 +1276,11 @@ msgstr "ROLE"
 msgid "[FILE1, FILE2,...]"
 msgstr "[FILE1, FILE2,...]"
 
-#: ../src/pcmanfm.c:585
+#: ../src/pcmanfm.c:352
+msgid "Desktop manager is not active."
+msgstr ""
+
+#: ../src/pcmanfm.c:598
 msgid "Terminal emulator is not set."
 msgstr "تېرمىنال تەقلىدلىگۈچى بەلگىلەنمىگەن."
 

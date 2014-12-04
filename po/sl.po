@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-09 09:41+0100\n"
+"POT-Creation-Date: 2014-01-22 00:33+0200\n"
 "PO-Revision-Date: 2014-08-24 08:21+0000\n"
 "Last-Translator: Klemen Košir <klemen913@gmail.com>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -15,8 +15,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || "
-"n%100==4 ? 3 : 0);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
+"%100==4 ? 3 : 0);\n"
 "X-Generator: Pootle 2.6.0-rc1\n"
 "X-POOTLE-MTIME: 1408868503.000000\n"
 
@@ -1182,8 +1182,8 @@ msgid ""
 "Set mode of desktop wallpaper. MODE=(color|stretch|fit|crop|center|tile|"
 "screen)"
 msgstr ""
-"Nastavi način ozadja namizja. "
-"NAČIN=(color|stretch|fit|crop|center|tile|screen)"
+"Nastavi način ozadja namizja. NAČIN=(color|stretch|fit|crop|center|tile|"
+"screen)"
 
 #: ../src/pcmanfm.c:89
 msgid "MODE"
@@ -1218,7 +1218,11 @@ msgstr "VLOGA"
 msgid "[FILE1, FILE2,...]"
 msgstr "[DATOTEKA1, DATOTEKA2, ...]"
 
-#: ../src/pcmanfm.c:585
+#: ../src/pcmanfm.c:352
+msgid "Desktop manager is not active."
+msgstr ""
+
+#: ../src/pcmanfm.c:598
 msgid "Terminal emulator is not set."
 msgstr "Terminal ni nastavljen."
 
