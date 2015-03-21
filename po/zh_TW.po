@@ -7,17 +7,17 @@ msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-01-22 00:33+0200\n"
-"PO-Revision-Date: 2014-04-06 06:59+0000\n"
-"Last-Translator: wwycheuk <wwycheuk@gmail.com>\n"
+"PO-Revision-Date: 2015-03-21 00:27+0000\n"
+"Last-Translator: <wwycheuk@gmail.com>\n"
 "Language-Team: zh_TW <zh_TW@li.org>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Pootle 2.5.0\n"
+"X-Generator: Pootle 2.6.0-rc2\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-POOTLE-MTIME: 1396767553.0\n"
+"X-POOTLE-MTIME: 1426897675.000000\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2014"
@@ -1139,7 +1139,7 @@ msgstr "設定組合名稱"
 
 #: ../src/pcmanfm.c:78
 msgid "PROFILE"
-msgstr "<設定組合>"
+msgstr "〈設定組合〉"
 
 #: ../src/pcmanfm.c:79
 msgid "Run PCManFM as a daemon"
@@ -1168,22 +1168,22 @@ msgstr "只為一個螢幕使用 --desktop 選項"
 
 #: ../src/pcmanfm.c:87
 msgid "Set desktop wallpaper from image FILE"
-msgstr "將 <檔案> 圖片設為桌布"
+msgstr "將〈檔案〉圖片設為桌布"
 
 #: ../src/pcmanfm.c:87
 msgid "FILE"
-msgstr "<檔案>"
+msgstr "〈檔案〉"
 
 #. don't translate list of modes in description, please
 #: ../src/pcmanfm.c:89
 msgid ""
 "Set mode of desktop wallpaper. MODE=(color|stretch|fit|crop|center|tile|"
 "screen)"
-msgstr "設定桌布模式。<模式>=(color|stretch|fit|crop|center|tile|screen)"
+msgstr "設定桌布模式。〈模式〉=(color|stretch|fit|crop|center|tile|screen)"
 
 #: ../src/pcmanfm.c:89
 msgid "MODE"
-msgstr "<模式>"
+msgstr "〈模式〉"
 
 #: ../src/pcmanfm.c:90
 msgid "Open Preferences dialog on the page N"
@@ -1207,7 +1207,7 @@ msgstr ""
 
 #: ../src/pcmanfm.c:95
 msgid "ROLE"
-msgstr ""
+msgstr "〈角色〉"
 
 #: ../src/pcmanfm.c:96
 msgid "[FILE1, FILE2,...]"
@@ -1215,7 +1215,7 @@ msgstr "[檔案1, 檔案2,...]"
 
 #: ../src/pcmanfm.c:352
 msgid "Desktop manager is not active."
-msgstr ""
+msgstr "未有運行桌面管理員。"
 
 #: ../src/pcmanfm.c:598
 msgid "Terminal emulator is not set."
