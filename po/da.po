@@ -8,20 +8,22 @@ msgstr ""
 "Project-Id-Version: master\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-01-22 00:33+0200\n"
-"PO-Revision-Date: 2011-12-27 10:11+0200\n"
-"Last-Translator: mjjzf <mjjzf@syntaktisk.dk>\n"
+"PO-Revision-Date: 2014-12-04 15:58+0000\n"
+"Last-Translator: system user <>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.0.5\n"
+"X-Generator: Pootle 2.7.0-alpha1\n"
+"X-POOTLE-MTIME: 1417708715.000000\n"
+"X-Pootle-Path: /da/pcmanfm/po/da.po\n"
+"X-Pootle-Revision: 0\n"
 
 #: ../data/ui/about.glade.in.h:1
-#, fuzzy
 msgid "Copyright (C) 2009 - 2014"
-msgstr "Copyright (C) 2009 - 2013"
+msgstr "Ophavsret (C) 2009-2014"
 
 #. Please replace this line with your own names, one name per line.
 #: ../data/ui/about.glade.in.h:3
@@ -57,12 +59,11 @@ msgstr "Vælg venligst en billedfil"
 
 #: ../data/ui/desktop-pref.glade.h:6
 msgid "_Use the same wallpaper on all desktops"
-msgstr ""
+msgstr "_Brug det samme baggrundsbillede på alle skriveborde"
 
 #: ../data/ui/desktop-pref.glade.h:7
-#, fuzzy
 msgid "_Background color:"
-msgstr "Baggrundsfarve:"
+msgstr "_Baggrundsfarve:"
 
 #: ../data/ui/desktop-pref.glade.h:8
 msgid "<b>Text</b>"
@@ -129,12 +130,12 @@ msgstr ""
 #: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:84
 msgctxt "Use path for some folder: ..."
 msgid "Default"
-msgstr ""
+msgstr "Standard"
 
 #: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:85
 msgctxt "Use path for some folder: ..."
 msgid "Custom:"
-msgstr ""
+msgstr "Brugertilpasset:"
 
 #: ../data/ui/desktop-pref.glade.h:23
 #, fuzzy
@@ -172,14 +173,12 @@ msgstr ""
 
 # tile = arrangere side om side.
 #: ../data/ui/desktop-pref.glade.h:30
-#, fuzzy
 msgid "Tile the image to fill the entire monitor area"
-msgstr "Læg billedet så det fylder hele skærmen"
+msgstr "Arranger som fliser for at udfylde skærmområde"
 
 #: ../data/ui/desktop-pref.glade.h:31
-#, fuzzy
 msgid "Stretch and crop to fill the monitor area"
-msgstr "Stræk så hele skærmen fyldes"
+msgstr "Stræk billede for at udfylde skærmområde"
 
 #: ../data/ui/desktop-pref.glade.h:32
 #, fuzzy
@@ -187,17 +186,14 @@ msgid "Stretch to fill the complete screen"
 msgstr "Stræk så hele skærmen fyldes"
 
 #: ../data/ui/pref.glade.h:1
-#, fuzzy
 msgid "Open in current tab"
-msgstr "Åbnet i aktuelt faneblad"
+msgstr "Åben i aktuelt faneblad"
 
 #: ../data/ui/pref.glade.h:2
-#, fuzzy
 msgid "Open in new tab"
-msgstr "Åbn i nyt faneblad"
+msgstr "Åbnet i nyt faneblad"
 
 #: ../data/ui/pref.glade.h:3
-#, fuzzy
 msgid "Open in new window"
 msgstr "Åbn i nyt vindue"
 
@@ -373,9 +369,8 @@ msgid "characters"
 msgstr ""
 
 #: ../data/ui/pref.glade.h:45
-#, fuzzy
 msgid "<b>Directories Tree</b>"
-msgstr "Foldertræ"
+msgstr "<b>Bibliotekstræ</b>"
 
 #: ../data/ui/pref.glade.h:46
 msgid "Hide e_xpander on empty or locked folder"
@@ -448,9 +443,8 @@ msgid "Do_n't show available options for those media types:"
 msgstr "Vis tilgængelige indstillinger for eksterne medier når de indsættes"
 
 #: ../data/ui/pref.glade.h:61
-#, fuzzy
 msgid "_Remove selected"
-msgstr "%d objekt valgt"
+msgstr "Fje_rn valgte"
 
 #: ../data/ui/pref.glade.h:62
 msgid "_Open mounted removable media in new tab instead of new window"
@@ -711,9 +705,8 @@ msgid "Snap to _Grid"
 msgstr "Tilpas til gitter"
 
 #: ../src/desktop.c:946
-#, fuzzy
 msgid "Activate file"
-msgstr "<billedfil>"
+msgstr "Aktiver fil"
 
 #: ../src/desktop.c:948
 #, fuzzy
@@ -721,9 +714,8 @@ msgid "Show file menu"
 msgstr "Vis _skjulte"
 
 #: ../src/desktop.c:1364
-#, fuzzy
 msgid "Show desktop menu"
-msgstr "<b>Vis skrivebordsikoner</b>"
+msgstr "Vis Skrivebordsmenu"
 
 #. FIXME: set name by monitor
 #: ../src/desktop.c:1436
@@ -1155,12 +1147,8 @@ msgid "You are in super user mode"
 msgstr "Du er i tilstanden superbruger"
 
 #: ../src/main-win.c:1134
-#, fuzzy
 msgid "Lightweight file manager\n"
-msgstr ""
-"Letvægtsfilhåndtering\n"
-"\n"
-"Udviklet af Hon Jen Yee (PCMan)"
+msgstr "Letvægtsfilhåndtering\n"
 
 #: ../src/main-win.c:1139
 #, c-format
@@ -1168,12 +1156,10 @@ msgid "using LibFM ver. %s\n"
 msgstr ""
 
 #: ../src/main-win.c:1141
-#, fuzzy
 msgid ""
 "\n"
 "Developed by Hon Jen Yee (PCMan)"
 msgstr ""
-"Letvægtsfilhåndtering\n"
 "\n"
 "Udviklet af Hon Jen Yee (PCMan)"
 
@@ -1272,13 +1258,12 @@ msgstr ""
 
 #. don't translate list of modes in description, please
 #: ../src/pcmanfm.c:89
-#, fuzzy
 msgid ""
 "Set mode of desktop wallpaper. MODE=(color|stretch|fit|crop|center|tile|"
 "screen)"
 msgstr ""
-"Angiv tilstand på baggrundsbillede. <tilstand>=(color|stretch|fit|center|"
-"tile)"
+"Angiv tilstand på baggrundsbillede. "
+"TILSTAND=(farve|stræk|tilpas|centrer|flise|skærm)"
 
 #: ../src/pcmanfm.c:89
 msgid "MODE"

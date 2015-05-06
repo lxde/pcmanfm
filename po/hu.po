@@ -9,19 +9,21 @@ msgstr ""
 "Project-Id-Version: pcmanfm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-01-22 00:33+0200\n"
-"PO-Revision-Date: 2012-09-06 16:13+0200\n"
-"Last-Translator: Bendegúz <gyonkibendeguz@gmail.com>\n"
+"PO-Revision-Date: 2015-05-05 17:50+0000\n"
+"Last-Translator: Balázs Úr <urbalazs@gmail.com>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.0.5\n"
+"X-Generator: Pootle 2.7.0-alpha1\n"
+"X-POOTLE-MTIME: 1430848218.000000\n"
+"X-Pootle-Path: /hu/pcmanfm/po/hu.po\n"
+"X-Pootle-Revision: 1864\n"
 
 #: ../data/ui/about.glade.in.h:1
-#, fuzzy
 msgid "Copyright (C) 2009 - 2014"
-msgstr "Copyright (C) 2009 - 2013"
+msgstr "Copyright (C) 2009 - 2014"
 
 #. Please replace this line with your own names, one name per line.
 #: ../data/ui/about.glade.in.h:3
@@ -41,86 +43,73 @@ msgid "<b>Background</b>"
 msgstr "<b>Háttér</b>"
 
 #: ../data/ui/desktop-pref.glade.h:3
-#, fuzzy
 msgid "Wallpaper _mode:"
-msgstr "Tapéta mód:"
+msgstr "Háttérkép _mód:"
 
 #: ../data/ui/desktop-pref.glade.h:4
-#, fuzzy
 msgid "_Wallpaper:"
-msgstr "Tapéta:"
+msgstr "_Háttérkép:"
 
 #: ../data/ui/desktop-pref.glade.h:5
 msgid "Please select an image file"
 msgstr "Válassz egy képfájlt"
 
 #: ../data/ui/desktop-pref.glade.h:6
-#, fuzzy
 msgid "_Use the same wallpaper on all desktops"
-msgstr "Ugyanazt a háttérképet használja minden asztalon"
+msgstr "_Ugyanazon háttérkép használata minden asztalon"
 
 #: ../data/ui/desktop-pref.glade.h:7
-#, fuzzy
 msgid "_Background color:"
-msgstr "Háttér színe:"
+msgstr "_Háttérszín:"
 
 #: ../data/ui/desktop-pref.glade.h:8
 msgid "<b>Text</b>"
 msgstr "<b>Szöveg</b>"
 
 #: ../data/ui/desktop-pref.glade.h:9
-#, fuzzy
 msgid "_Font of label text:"
-msgstr "Címke szöveg betűje:"
+msgstr "Címkeszöveg _betűkészlete:"
 
 #: ../data/ui/desktop-pref.glade.h:10
-#, fuzzy
 msgid "C_olor of label text:"
-msgstr "Címke szöveg színe:"
+msgstr "Címkeszöveg _színe:"
 
 #: ../data/ui/desktop-pref.glade.h:11
-#, fuzzy
 msgid "Color of _shadow:"
-msgstr "Árnyék színe:"
+msgstr "Ár_nyék színe:"
 
 #: ../data/ui/desktop-pref.glade.h:12
-#, fuzzy
 msgid "_Appearance"
-msgstr "Megjelenés"
+msgstr "_Megjelenés"
 
 #: ../data/ui/desktop-pref.glade.h:13
 msgid "<b>Show desktop icons</b>"
 msgstr "<b>Asztali ikonok megjelenítése</b>"
 
 #: ../data/ui/desktop-pref.glade.h:14
-#, fuzzy
 msgid "_Show \"Documents\" folder on the desktop"
-msgstr "\"Dokumentumaim\" ikon megjelenítése az asztalon"
+msgstr "A „Dokumentumok” mappa _megjelenítése az asztalon"
 
 #: ../data/ui/desktop-pref.glade.h:15
-#, fuzzy
 msgid "Sho_w \"Devices\" folder on the desktop"
-msgstr "\"Dokumentumaim\" ikon megjelenítése az asztalon"
+msgstr "Az „Eszközök” mappa m_egjelenítése az asztalon"
 
 #: ../data/ui/desktop-pref.glade.h:16
-#, fuzzy
 msgid "Show \"_Trash Can\" folder on the desktop"
-msgstr "\"Kuka\" ikon megjelenítése az asztalon"
+msgstr "A „_Kuka” mappa megjelenítése az asztalon"
 
 #: ../data/ui/desktop-pref.glade.h:17
-#, fuzzy
 msgid "S_how connected volumes on the desktop"
-msgstr "Kötetikonok megjelenítése az asztalon"
+msgstr "Csatlakoztatott kötetek me_gjelenítése az asztalon"
 
 #: ../data/ui/desktop-pref.glade.h:18
-#, fuzzy
 msgid "_Desktop Icons"
-msgstr "Asztali ikonok"
+msgstr "_Asztali ikonok"
 
 #: ../data/ui/desktop-pref.glade.h:19
-#, fuzzy
 msgid "_Show menus provided by window managers when desktop is clicked"
-msgstr "Ablakkezelő menüinek megjelenítése az asztalra kattintva"
+msgstr ""
+"Az ablakkezelők által biztosított menük _megjelenítése az asztalra kattintva"
 
 #: ../data/ui/desktop-pref.glade.h:20
 msgid "_Use desktop as a folder (show icons on it) by path:"
@@ -129,12 +118,12 @@ msgstr ""
 #: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:84
 msgctxt "Use path for some folder: ..."
 msgid "Default"
-msgstr ""
+msgstr "Alapértelmezett"
 
 #: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:85
 msgctxt "Use path for some folder: ..."
 msgid "Custom:"
-msgstr ""
+msgstr "Egyéni:"
 
 #: ../data/ui/desktop-pref.glade.h:23
 #, fuzzy
@@ -142,14 +131,12 @@ msgid "Select a Desktop Folder"
 msgstr "Asztalmappa"
 
 #: ../data/ui/desktop-pref.glade.h:24
-#, fuzzy
 msgid "_Open folders from desktop in new window"
-msgstr "megnyitása új ablakban"
+msgstr "Mappák _megnyitása az asztalról új ablakban"
 
 #: ../data/ui/desktop-pref.glade.h:25
-#, fuzzy
 msgid "Ad_vanced"
-msgstr "Haladó"
+msgstr "_Speciális"
 
 #: ../data/ui/desktop-pref.glade.h:26
 msgid "Fill with background color only"
@@ -185,17 +172,14 @@ msgid "Stretch to fill the complete screen"
 msgstr "Egész képernyőre nyújtás"
 
 #: ../data/ui/pref.glade.h:1
-#, fuzzy
 msgid "Open in current tab"
-msgstr "megnyitása a jelenlegi lapon"
+msgstr "Megnyitás a jelenlegi lapon"
 
 #: ../data/ui/pref.glade.h:2
-#, fuzzy
 msgid "Open in new tab"
 msgstr "Megnyitás új lapon"
 
 #: ../data/ui/pref.glade.h:3
-#, fuzzy
 msgid "Open in new window"
 msgstr "Megnyitás új ablakban"
 
@@ -208,48 +192,42 @@ msgid "<b>Behavior</b>"
 msgstr "<b>Viselkedés</b>"
 
 #: ../data/ui/pref.glade.h:6
-#, fuzzy
 msgid "_Open files with single click"
-msgstr "Fájlok megnyitása egyszeres kattintással"
+msgstr "Fájlok _megnyitása egyszeres kattintással"
 
 #: ../data/ui/pref.glade.h:7
 msgid "Delay of auto-selection in single click mode (0 to disable)"
 msgstr ""
 
 #: ../data/ui/pref.glade.h:8
-#, fuzzy
 msgid "Co_nfirm before deleting files"
-msgstr "Fájlok törlésének megerősítése"
+msgstr "Fájlok törlésének _megerősítése"
 
 #: ../data/ui/pref.glade.h:9
-#, fuzzy
 msgid "_Move deleted files to \"trash can\" instead of erasing from disk"
-msgstr "Fájlok lomtárba helyezése a végleges törlés helyett"
+msgstr "Törölt fájlok át_helyezése a „lomtárba” a lemezről való törlés helyett"
 
 # removable media > cserélhető adathordozó
 #: ../data/ui/pref.glade.h:10
-#, fuzzy
 msgid "_Erase files on removable media instead of \"trash can\" creation"
-msgstr "Cserélhető adathordozón lévő fájlok végleges törlése"
+msgstr ""
+"Fájlok _törlése a cserélhető adathordozókról „lomtár” létrehozása helyett"
 
 #: ../data/ui/pref.glade.h:11
-#, fuzzy
 msgid "Confi_rm before moving files into \"trash can\""
-msgstr "Fájlok lomtárba helyezésének megerősítése"
+msgstr "_Megerősítés a fájlok „lomtárba” helyezése előtt"
 
 #: ../data/ui/pref.glade.h:12
 msgid "Don't ask options on _launch executable file"
 msgstr ""
 
 #: ../data/ui/pref.glade.h:13
-#, fuzzy
 msgid "_Bookmarks:"
-msgstr "Könyvjelzők:"
+msgstr "_Könyvjelzők:"
 
 #: ../data/ui/pref.glade.h:14
-#, fuzzy
 msgid "Defaul_t drop action:"
-msgstr "Alapértelmezett ejtési művelet:"
+msgstr "_Alapértelmezett ejtési művelet:"
 
 #: ../data/ui/pref.glade.h:15
 msgid "\"_Smart shortcut\" auto-action on drop to Desktop folder"
@@ -265,9 +243,8 @@ msgid ""
 msgstr ""
 
 #: ../data/ui/pref.glade.h:21
-#, fuzzy
 msgid "_Unfold tab when files are dragged onto tab button"
-msgstr "Fül kinyitása, ha a fülgombra fájlok kerülnek ejtésre"
+msgstr "_Lap kinyitása, ha a lapgombra fájlokat húznak"
 
 #: ../data/ui/pref.glade.h:22
 msgid "_Focus previous folder after coming to its parent"
@@ -278,48 +255,40 @@ msgid "<b>Default View</b>"
 msgstr "<b>Alapértelmezett nézet</b>"
 
 #: ../data/ui/pref.glade.h:24
-#, fuzzy
 msgid "Vie_w Mode:"
-msgstr "Nézetmód:"
+msgstr "_Nézetmód:"
 
 #: ../data/ui/pref.glade.h:25
-#, fuzzy
 msgid "_General"
-msgstr "Általá_nos"
+msgstr "Á_ltalános"
 
 #: ../data/ui/pref.glade.h:26
 msgid "<b>Icons</b>"
 msgstr "<b>Ikonok</b>"
 
 #: ../data/ui/pref.glade.h:27
-#, fuzzy
 msgid "Size of _big icons:"
-msgstr "Nagy ikonok mérete:"
+msgstr "_Nagy ikonok mérete:"
 
 #: ../data/ui/pref.glade.h:28
-#, fuzzy
 msgid "Size of small _icons:"
-msgstr "Kis ikonok mérete:"
+msgstr "_Kis ikonok mérete:"
 
 #: ../data/ui/pref.glade.h:29
-#, fuzzy
 msgid "Size of _thumbnails:"
-msgstr "Előképek mérete:"
+msgstr "_Bélyegképek mérete:"
 
 #: ../data/ui/pref.glade.h:30
-#, fuzzy
 msgid "Size of side _pane icons:"
-msgstr "Oldalsáv ikonjainak mérete:"
+msgstr "_Oldalsáv ikonjainak mérete:"
 
 #: ../data/ui/pref.glade.h:31
-#, fuzzy
 msgid "_Show thumbnails of files"
-msgstr "Fájlok előképeinek megjelenítése"
+msgstr "Fájlok bélyegképeinek _megjelenítése"
 
 #: ../data/ui/pref.glade.h:32
-#, fuzzy
 msgid "_Only show thumbnails for local files"
-msgstr "Előképek megjelenítése csak a helyi fájloknál"
+msgstr "Bélyegképek megjelenítése _csak helyi fájloknál"
 
 #: ../data/ui/pref.glade.h:33
 #, fuzzy
@@ -360,9 +329,8 @@ msgid "Hid_e 'Close tab' buttons"
 msgstr "'Fül bezárása' gombok elrejtése"
 
 #: ../data/ui/pref.glade.h:41
-#, fuzzy
 msgid "Al_ways show the tab bar"
-msgstr "Fül sáv állandó megjelenítése"
+msgstr "Lapsáv állan_dó megjelenítése"
 
 #: ../data/ui/pref.glade.h:42
 msgid "_Maximum width of tab label:"
@@ -375,68 +343,59 @@ msgstr ""
 
 #: ../data/ui/pref.glade.h:45
 msgid "<b>Directories Tree</b>"
-msgstr "Könyvtárstruktúra"
+msgstr "<b>Könyvtárszerkezet</b>"
 
 #: ../data/ui/pref.glade.h:46
-#, fuzzy
 msgid "Hide e_xpander on empty or locked folder"
-msgstr "Kibővítő elrejtése üres vagy zárolt mappa esetén"
+msgstr "Kibővítő el_rejtése üres vagy zárolt mappánál"
 
 #: ../data/ui/pref.glade.h:47
 msgid "<b>Show in Places:</b>"
 msgstr "<b>Asztali ikonok megjelenítése</b>"
 
 #: ../data/ui/pref.glade.h:48
-#, fuzzy
 msgid "_Home Folder"
-msgstr "Saját mappa"
+msgstr "_Saját mappa"
 
 #: ../data/ui/pref.glade.h:49
-#, fuzzy
 msgid "Des_ktop"
-msgstr "Asztal"
+msgstr "_Asztal"
 
 #: ../data/ui/pref.glade.h:50 ../src/main-win-ui.c:236
-#, fuzzy
 msgid "_Trash Can"
-msgstr "Kuka"
+msgstr "_Kuka"
 
 #: ../data/ui/pref.glade.h:51
 msgid "_Filesystem Root"
 msgstr ""
 
 #: ../data/ui/pref.glade.h:52
-#, fuzzy
 msgid "App_lications"
-msgstr "Alkalmazások"
+msgstr "Al_kalmazások"
 
 #: ../data/ui/pref.glade.h:53 ../src/main-win-ui.c:239
 msgid "Dev_ices"
 msgstr ""
 
 #: ../data/ui/pref.glade.h:54
-#, fuzzy
 msgid "_Network"
-msgstr "Hálózati meghajtók"
+msgstr "_Hálózat"
 
 #: ../data/ui/pref.glade.h:55
-#, fuzzy
 msgid "_Layout"
-msgstr "Elrendezés"
+msgstr "_Elrendezés"
 
 #: ../data/ui/pref.glade.h:56
 msgid "<b>Auto-mount</b>"
 msgstr "<b>Automatikus csatolás</b>"
 
 #: ../data/ui/pref.glade.h:57
-#, fuzzy
 msgid "_Mount mountable volumes automatically on program startup"
-msgstr "Csatolható kötetek automatikus csatolása programinduláskor"
+msgstr "_Csatolható kötetek automatikus csatolása programinduláskor"
 
 #: ../data/ui/pref.glade.h:58
-#, fuzzy
 msgid "Mo_unt removable media automatically when they are inserted"
-msgstr "Cserélhető adathordozó automatikus csatolása behelyezéskor"
+msgstr "Cs_erélhető adathordozó automatikus csatolása behelyezéskor"
 
 #: ../data/ui/pref.glade.h:59
 #, fuzzy
@@ -451,9 +410,8 @@ msgstr ""
 "Elérhető beállítások megjelenítése cserélhető adathordozó behelyezésekor"
 
 #: ../data/ui/pref.glade.h:61
-#, fuzzy
 msgid "_Remove selected"
-msgstr "%d elem kijelölve"
+msgstr "A _kijelölt eltávolítása"
 
 #: ../data/ui/pref.glade.h:62
 #, fuzzy
@@ -489,14 +447,12 @@ msgid "<i>Commands below may include extra options if necessary.</i>"
 msgstr ""
 
 #: ../data/ui/pref.glade.h:69
-#, fuzzy
 msgid "_Terminal emulator:"
-msgstr "Terminál:"
+msgstr "_Terminál emulátor:"
 
 #: ../data/ui/pref.glade.h:70
-#, fuzzy
 msgid "_Switch user command:"
-msgstr "Felhasználóváltási parancs:"
+msgstr "_Felhasználóváltás parancs:"
 
 #. Application command to format some drive
 #: ../data/ui/pref.glade.h:72
@@ -504,9 +460,8 @@ msgid "_Format command:"
 msgstr ""
 
 #: ../data/ui/pref.glade.h:73
-#, fuzzy
 msgid "A_rchiver integration:"
-msgstr "Tömörítő integrációja:"
+msgstr "_Tömörítő integráció:"
 
 #: ../data/ui/pref.glade.h:74
 #, fuzzy
@@ -531,9 +486,8 @@ msgid "<b>Other Options</b>"
 msgstr "<b>Asztali ikonok megjelenítése</b>"
 
 #: ../data/ui/pref.glade.h:79
-#, fuzzy
 msgid "Use Application Startup Notify _by default"
-msgstr "Alkalmazásindítási értesítés használata"
+msgstr "Alkalmazásindítási értesítés használata _alapértelmezetten"
 
 #: ../data/ui/pref.glade.h:80
 msgid ""
@@ -688,14 +642,12 @@ msgid "Open in File Manager"
 msgstr "Megnyitás fájlkezelőben"
 
 #: ../src/desktop-ui.c:51
-#, fuzzy
 msgid "Open in New Ta_b"
-msgstr "Megnyitás új lapon"
+msgstr "Megnyitás új _lapon"
 
 #: ../src/desktop-ui.c:52 ../src/tab-page.c:57
-#, fuzzy
 msgid "Open in New Win_dow"
-msgstr "Megnyitás új ablakban"
+msgstr "Megnyitás új _ablakban"
 
 #: ../src/desktop-ui.c:54 ../src/tab-page.c:59
 #, fuzzy
@@ -712,24 +664,20 @@ msgid "Stic_k to Current Position"
 msgstr "Jelenlegi helyzethez ragasztás"
 
 #: ../src/desktop-ui.c:90
-#, fuzzy
 msgid "Snap to _Grid"
-msgstr "Rácshoz illesztés"
+msgstr "_Rácshoz illesztés"
 
 #: ../src/desktop.c:946
-#, fuzzy
 msgid "Activate file"
-msgstr "<képfájl>"
+msgstr "Fájl aktiválása"
 
 #: ../src/desktop.c:948
-#, fuzzy
 msgid "Show file menu"
-msgstr "_Rejtett megjelenítése"
+msgstr "Fájlmenü megjelenítése"
 
 #: ../src/desktop.c:1364
-#, fuzzy
 msgid "Show desktop menu"
-msgstr "<b>Asztali ikonok megjelenítése</b>"
+msgstr "Asztali menü megjelenítése"
 
 #. FIXME: set name by monitor
 #: ../src/desktop.c:1436
@@ -755,9 +703,8 @@ msgid "Create new tab for this folder"
 msgstr ""
 
 #: ../src/main-win-ui.c:190
-#, fuzzy
 msgid "C_reate New..."
-msgstr "Új..."
+msgstr "Új _létrehozása…"
 
 #: ../src/main-win-ui.c:191
 msgid "Folder"
@@ -776,9 +723,8 @@ msgid "_Close Tab"
 msgstr "Lap be_zárása"
 
 #: ../src/main-win-ui.c:195
-#, fuzzy
 msgid "Close _Window"
-msgstr "Ablak bezárása"
+msgstr "_Ablak bezárása"
 
 #: ../src/main-win-ui.c:196
 msgid "_Edit"
@@ -797,9 +743,8 @@ msgid "Copy Pat_h(s)"
 msgstr ""
 
 #: ../src/main-win-ui.c:204
-#, fuzzy
 msgid "R_ename..."
-msgstr "Átnevezés"
+msgstr "Át_nevezés…"
 
 #: ../src/main-win-ui.c:205
 msgid "D_uplicate..."
@@ -811,9 +756,8 @@ msgid "Create Lin_k..."
 msgstr "Ú_j létrehozása..."
 
 #: ../src/main-win-ui.c:207
-#, fuzzy
 msgid "_Move to..."
-msgstr "Áthelyezés..."
+msgstr "Át_helyezés…"
 
 #: ../src/main-win-ui.c:208
 #, fuzzy
@@ -829,18 +773,16 @@ msgid "_Invert Selection"
 msgstr "Kijelölés meg_fordítása"
 
 #: ../src/main-win-ui.c:212
-#, fuzzy
 msgid "Prefere_nces"
-msgstr "Beállítások"
+msgstr "_Beállítások"
 
 #: ../src/main-win-ui.c:213
 msgid "_View"
 msgstr "_Nézet"
 
 #: ../src/main-win-ui.c:214
-#, fuzzy
 msgid "_Reload Folder"
-msgstr "Mappa újratöltése"
+msgstr "Mappa újra_töltése"
 
 #: ../src/main-win-ui.c:214
 msgid "Reload current folder"
@@ -856,15 +798,13 @@ msgid "Pat_h Bar"
 msgstr ""
 
 #: ../src/main-win-ui.c:217
-#, fuzzy
 msgid "Side _Pane"
-msgstr "Oldalsáv"
+msgstr "_Oldalsáv"
 
 #. other see below: 'ShowHidden' 'ShowStatus' 'Fullscreen' 'IconView'...
 #: ../src/main-win-ui.c:219
-#, fuzzy
 msgid "Fo_lder View Mode"
-msgstr "Nézetmód:"
+msgstr "_Mappanézet mód"
 
 #: ../src/main-win-ui.c:220
 #, fuzzy
@@ -892,36 +832,32 @@ msgid "_Go"
 msgstr "_Ugrás"
 
 #: ../src/main-win-ui.c:231
-#, fuzzy
 msgid "_Previous Folder"
-msgstr "Előző mappa"
+msgstr "_Előző mappa"
 
 #: ../src/main-win-ui.c:231
 msgid "Return to previous folder in history"
 msgstr ""
 
 #: ../src/main-win-ui.c:232
-#, fuzzy
 msgid "_Next Folder"
-msgstr "Következő mappa"
+msgstr "_Következő mappa"
 
 #: ../src/main-win-ui.c:232
 msgid "Go forward to next folder in history"
 msgstr ""
 
 #: ../src/main-win-ui.c:233
-#, fuzzy
 msgid "Pa_rent Folder"
-msgstr "Szülőmappa"
+msgstr "_Szülőmappa"
 
 #: ../src/main-win-ui.c:233
 msgid "Go to parent Folder"
 msgstr "Ugrás a szülőmappába"
 
 #: ../src/main-win-ui.c:234
-#, fuzzy
 msgid "H_ome Folder"
-msgstr "Saját mappa"
+msgstr "_Saját mappa"
 
 #: ../src/main-win-ui.c:234
 #, fuzzy
@@ -929,9 +865,8 @@ msgid "Go to home folder"
 msgstr "Ugrás a szülőmappába"
 
 #: ../src/main-win-ui.c:235
-#, fuzzy
 msgid "_Desktop"
-msgstr "Asztal"
+msgstr "_Asztal"
 
 #: ../src/main-win-ui.c:235
 #, fuzzy
@@ -951,9 +886,8 @@ msgid "Go fo filesystem root"
 msgstr ""
 
 #: ../src/main-win-ui.c:238
-#, fuzzy
 msgid "_Applications"
-msgstr "Alkalmazások"
+msgstr "_Alkalmazások"
 
 #: ../src/main-win-ui.c:238
 msgid "Go to root of applications menu folder"
@@ -965,9 +899,8 @@ msgid "Go to list of devices connected to the computer"
 msgstr "Kötetikonok megjelenítése az asztalon"
 
 #: ../src/main-win-ui.c:240
-#, fuzzy
 msgid "Net_work"
-msgstr "Hálózati meghajtók"
+msgstr "_Hálózat"
 
 #: ../src/main-win-ui.c:240
 #, fuzzy
@@ -995,9 +928,8 @@ msgid "_Bookmarks"
 msgstr "_Könyvjelzők"
 
 #: ../src/main-win-ui.c:245
-#, fuzzy
 msgid "_Add to Bookmarks..."
-msgstr "Hozzáadás a könyvjelzőkhöz"
+msgstr "_Hozzáadás a könyvjelzőkhöz…"
 
 #: ../src/main-win-ui.c:245
 msgid "Add current folder to bookmarks list"
@@ -1022,9 +954,8 @@ msgid "Open search dialog"
 msgstr "Asztal beállításai párbeszédablak megnyitása"
 
 #: ../src/main-win-ui.c:252
-#, fuzzy
 msgid "_Run a Command in Current Folder..."
-msgstr "Jelenlegi mappa újratöltése"
+msgstr "_Parancs futtatása a jelenlegi mappában…"
 
 #. Note to translators: "Mingle..." means "Do not put folders before files" but make the translation as short as possible, please!
 #: ../src/main-win-ui.c:267
@@ -1071,9 +1002,8 @@ msgid "Show '_Home' Button"
 msgstr ""
 
 #: ../src/main-win-ui.c:282
-#, fuzzy
 msgid "Sho_w Side Pane"
-msgstr "Oldalsáv megjelenítése"
+msgstr "Oldalsáv _megjelenítése"
 
 #: ../src/main-win-ui.c:283
 msgid "Show Status B_ar"
@@ -1088,9 +1018,8 @@ msgid "Show two panels with folder views"
 msgstr ""
 
 #: ../src/main-win-ui.c:285
-#, fuzzy
 msgid "Fullscreen _Mode"
-msgstr "Teljes képernyős mód"
+msgstr "_Teljes képernyős mód"
 
 #: ../src/main-win-ui.c:291
 msgid "_Icon View"
@@ -1141,9 +1070,8 @@ msgid "Remote"
 msgstr "Távoli"
 
 #: ../src/main-win-ui.c:333
-#, fuzzy
 msgid "_Location"
-msgstr "Alkalmazások"
+msgstr "_Hely"
 
 #: ../src/main-win-ui.c:334
 msgid "_Buttons"
@@ -1162,12 +1090,8 @@ msgid "You are in super user mode"
 msgstr "Rendszergazda módban vagy"
 
 #: ../src/main-win.c:1134
-#, fuzzy
 msgid "Lightweight file manager\n"
-msgstr ""
-"Pehelysúlyú fájlkezelő\n"
-"\n"
-"Készítette: Hon Jen Yee (PCMan)"
+msgstr "Pehelysúlyú fájlkezelő\n"
 
 #: ../src/main-win.c:1139
 #, c-format
@@ -1175,12 +1099,10 @@ msgid "using LibFM ver. %s\n"
 msgstr ""
 
 #: ../src/main-win.c:1141
-#, fuzzy
 msgid ""
 "\n"
 "Developed by Hon Jen Yee (PCMan)"
 msgstr ""
-"Pehelysúlyú fájlkezelő\n"
 "\n"
 "Készítette: Hon Jen Yee (PCMan)"
 
@@ -1207,9 +1129,8 @@ msgid "Enter a command to run:"
 msgstr ""
 
 #: ../src/main-win.c:1218
-#, fuzzy
 msgid "Current folder is inaccessible"
-msgstr "Jelenlegi mappa megnyitása _terminálban"
+msgstr "A jelenlegi mappa elérhetetlen"
 
 #: ../src/main-win.c:1822
 #, c-format
@@ -1279,12 +1200,12 @@ msgstr ""
 
 #. don't translate list of modes in description, please
 #: ../src/pcmanfm.c:89
-#, fuzzy
 msgid ""
 "Set mode of desktop wallpaper. MODE=(color|stretch|fit|crop|center|tile|"
 "screen)"
 msgstr ""
-"Asztali tapéta módjának beállítása. <mode>=(color|stretch|fit|center|tile)"
+"Asztali háttérkép módjának beállítása. "
+"MODE=(color|stretch|fit|crop|center|tile|screen)"
 
 #: ../src/pcmanfm.c:89
 msgid "MODE"
@@ -1330,9 +1251,8 @@ msgid "Terminal emulator is not set."
 msgstr "Terminál program nincs beállítva."
 
 #: ../src/tab-page.c:56
-#, fuzzy
 msgid "Open in New T_ab"
-msgstr "Megnyitás új lapon"
+msgstr "Megnyitás új _lapon"
 
 #: ../src/tab-page.c:395
 #, c-format

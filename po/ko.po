@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm.master\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-01-22 00:33+0200\n"
-"PO-Revision-Date: 2014-01-20 20:46+0900\n"
+"PO-Revision-Date: 2014-08-29 14:44+0000\n"
 "Last-Translator: Seong-ho Cho <darkcircle.0426@gmail.com>\n"
 "Language-Team: Seong-ho Cho <darkcircle.0426@gmail.com>\n"
 "Language: ko\n"
@@ -15,8 +15,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 1.5.5\n"
-"X-POOTLE-MTIME: 1387210835.0\n"
+"X-Generator: Pootle 2.7.0-alpha1\n"
+"X-POOTLE-MTIME: 1409323443.000000\n"
+"X-Pootle-Path: /ko/pcmanfm/po/ko.po\n"
+"X-Pootle-Revision: 0\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2014"
@@ -27,7 +29,7 @@ msgstr "Copyright (C) 2009 - 2014"
 msgid "translator-credits"
 msgstr ""
 "Seo Sanghyeon <sanxiyn@gmail.com>\n"
-"Seong-ho Cho <darkcircle.0426@gmail.com>"
+"Seong-ho Cho <shcho@gnome.org>"
 
 #: ../data/ui/desktop-pref.glade.h:1 ../src/desktop-ui.c:34
 #: ../data/pcmanfm-desktop-pref.desktop.in.h:1
@@ -470,8 +472,7 @@ msgid ""
 "explicitly.\n"
 "If unchecked then use Startup Notify only if that is defined for application."
 msgstr ""
-"이것을 표시하면 다른 프로그램의 상태가 명확하지 않을 경우 프로그램 시작 알림"
-"을 사용합니다.\n"
+"이것을 표시하면 다른 프로그램의 상태가 명확하지 않을 경우 프로그램 시작 알림을 사용합니다.\n"
 "표시하지 않으면 프로그램에 대해 정의한 시작 알림만을 사용합니다."
 
 #: ../data/ui/pref.glade.h:82
@@ -1104,7 +1105,8 @@ msgid ""
 "Enter a name for the new bookmark item:"
 msgstr ""
 "다음 폴더를 북마크에 추가합니다:\n"
-"%s새 북마크 항목의 이름을 입력하십시오:"
+"%s\n"
+"새 북마크 항목의 이름을 입력하십시오:"
 
 #: ../src/main-win.c:1826
 msgid "Add to Bookmarks"
@@ -1165,9 +1167,7 @@ msgstr "<파일>"
 msgid ""
 "Set mode of desktop wallpaper. MODE=(color|stretch|fit|crop|center|tile|"
 "screen)"
-msgstr ""
-"데스크톱 배경 모드를 설정하십시오. MODE=(color|stretch|fit|crop|center|tile|"
-"screen)"
+msgstr "데스크톱 배경 모드를 설정하십시오. MODE=(color|stretch|fit|crop|center|tile|screen)"
 
 #: ../src/pcmanfm.c:89
 msgid "MODE"
@@ -1203,7 +1203,7 @@ msgstr "[파일1, 파일2,...]"
 
 #: ../src/pcmanfm.c:352
 msgid "Desktop manager is not active."
-msgstr ""
+msgstr "데스크톱 관리자가 활성 상태가 아닙니다."
 
 #: ../src/pcmanfm.c:598
 msgid "Terminal emulator is not set."

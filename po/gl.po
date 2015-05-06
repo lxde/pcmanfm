@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm 1.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-01-22 00:33+0200\n"
-"PO-Revision-Date: 2014-11-28 11:23+0000\n"
+"PO-Revision-Date: 2015-03-24 07:20+0000\n"
 "Last-Translator: Miguel Anxo Bouzada <mbouzada@gmail.com>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
 "Language: gl\n"
@@ -15,8 +15,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.6.0-rc2\n"
-"X-POOTLE-MTIME: 1417173805.000000\n"
+"X-Generator: Pootle 2.7.0-alpha1\n"
+"X-POOTLE-MTIME: 1427181601.000000\n"
+"X-Pootle-Path: /gl/pcmanfm/po/gl.po\n"
+"X-Pootle-Revision: 44\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2014"
@@ -568,7 +570,7 @@ msgstr "Detectando..."
 
 #: ../data/ui/autorun.glade.h:5
 msgid "Please select the action you want to perform:"
-msgstr "Realizar _sempre esta acción neste tipo de medio"
+msgstr "Seleccione a acción que quere realizar:"
 
 #: ../data/ui/autorun.glade.h:6
 msgid "_Always perform this action on this media type"
@@ -725,7 +727,7 @@ msgstr "Mover ao _lixo"
 
 #: ../src/main-win-ui.c:203
 msgid "Copy Pat_h(s)"
-msgstr "Copiar a(s) ruta(s)"
+msgstr "Copiar a(s) _ruta(s)"
 
 #: ../src/main-win-ui.c:204
 msgid "R_ename..."
@@ -745,7 +747,7 @@ msgstr "_Mover a..."
 
 #: ../src/main-win-ui.c:208
 msgid "Copy to_..."
-msgstr "C_opiar a..."
+msgstr "Copiar a_..."
 
 #: ../src/main-win-ui.c:209
 msgid "Propertie_s"
@@ -886,7 +888,7 @@ msgstr "Ir á lista de lugares na rede"
 
 #: ../src/main-win-ui.c:241
 msgid "_Go to Location..."
-msgstr "Ir á localización"
+msgstr "_Ir á localización"
 
 #: ../src/main-win-ui.c:242
 msgid "_Connect to Server..."
@@ -954,7 +956,8 @@ msgstr "Manter os axustes deste cartafol"
 msgid ""
 "Check to remember view and sort as folder setting rather than global one"
 msgstr ""
-"Márqueo para lembrar a vista e a ordenación no canto de estabelecer un global"
+"Márqueo para lembrar a vista e a ordenación no canto de estabelecer un "
+"global"
 
 #: ../src/main-win-ui.c:277
 msgid "_Show Toolbar"
@@ -1186,8 +1189,8 @@ msgid ""
 "Set mode of desktop wallpaper. MODE=(color|stretch|fit|crop|center|tile|"
 "screen)"
 msgstr ""
-"Axuste o modo de fondo de escritorio. MODE=(color|stretch|fit|crop|center|"
-"tile|screen)"
+"Axuste o modo de fondo de escritorio. "
+"MODE=(color|stretch|fit|crop|center|tile|screen)"
 
 #: ../src/pcmanfm.c:89
 msgid "MODE"

@@ -7,16 +7,18 @@ msgstr ""
 "Project-Id-Version: pcmanfm2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-01-22 00:33+0200\n"
-"PO-Revision-Date: 2014-05-21 21:30+0000\n"
-"Last-Translator: Jan <jhelebrant@seznam.cz>\n"
+"PO-Revision-Date: 2015-03-26 21:31+0000\n"
+"Last-Translator: Pavel Fric <pavelfric@seznam.cz>\n"
 "Language-Team: Czech <radek@fastlinux.eu>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1400707823.0\n"
+"X-Generator: Pootle 2.7.0-alpha1\n"
+"X-POOTLE-MTIME: 1427405468.000000\n"
+"X-Pootle-Path: /cs/pcmanfm/po/cs.po\n"
+"X-Pootle-Revision: 133\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2014"
@@ -25,11 +27,7 @@ msgstr "Copyright (C) 2009 - 2014"
 #. Please replace this line with your own names, one name per line.
 #: ../data/ui/about.glade.in.h:3
 msgid "translator-credits"
-msgstr ""
-"Radek Tříška\n"
-"Michal Várady\n"
-"Alois Nešpor\n"
-"Jan Helebrant"
+msgstr "Radek Tříška, Michal Várady, Alois Nešpor, Jan Helebrant"
 
 #: ../data/ui/desktop-pref.glade.h:1 ../src/desktop-ui.c:34
 #: ../data/pcmanfm-desktop-pref.desktop.in.h:1
@@ -98,7 +96,7 @@ msgstr "Zobrazit ikonu \"_Koš\" na ploše"
 
 #: ../data/ui/desktop-pref.glade.h:17
 msgid "S_how connected volumes on the desktop"
-msgstr "Zobrazovat připojené svazky na ploše"
+msgstr "_Zobrazovat připojené svazky na ploše"
 
 #: ../data/ui/desktop-pref.glade.h:18
 msgid "_Desktop Icons"
@@ -168,7 +166,7 @@ msgstr "Otevřít v současné kartě"
 
 #: ../data/ui/pref.glade.h:2
 msgid "Open in new tab"
-msgstr "Otevřít v nové kart_ě"
+msgstr "Otevřít v nové kartě"
 
 #: ../data/ui/pref.glade.h:3
 msgid "Open in new window"
@@ -230,8 +228,8 @@ msgid ""
 "- other files (e.g. on removable media) will be copied\n"
 "- for some external URI a shortcut will be created"
 msgstr ""
-"Pokud je zapnuto tak \\\"Auto\\\" akce po upuštění souboru na složku Plochy "
-"bude:\n"
+"Pokud je zapnuto tak \"Auto\" akce po upuštění souboru na složku Plochy bude:"
+"\n"
 "- pro soubory přímo v domovské složce se vytvoří symlink\n"
 "- soubory ve stejném souborovém systému budou přesunuty\n"
 "- ostatní soubory (např. na přenosných médiích) budou zkopírovány\n"
@@ -400,8 +398,7 @@ msgstr "_Odstranit vybrané"
 
 #: ../data/ui/pref.glade.h:62
 msgid "_Open mounted removable media in new tab instead of new window"
-msgstr ""
-"_Otevřít připojené připojitelné média v nové kartě namísto v novém okně"
+msgstr "_Otevřít připojené připojitelné média v nové kartě namísto v novém okně"
 
 #: ../data/ui/pref.glade.h:63
 msgid "When removable medium unmounted:"
@@ -454,7 +451,7 @@ msgstr "Z_obrazit pouze uživatelem definované šablony v menu"
 
 #: ../data/ui/pref.glade.h:76
 msgid "Show _only one template for each MIME type"
-msgstr "Zobrazit pouze jednu šablonu pro každý MIME typ"
+msgstr "Zobrazit _pouze jednu šablonu pro každý MIME typ"
 
 #: ../data/ui/pref.glade.h:77
 msgid "Ru_n default application after creation from template"
@@ -737,7 +734,7 @@ msgstr "_Přesunout do..."
 
 #: ../src/main-win-ui.c:208
 msgid "Copy to_..."
-msgstr "K_opírovat do..."
+msgstr "Kopírovat do_..."
 
 #: ../src/main-win-ui.c:209
 msgid "Propertie_s"
@@ -898,7 +895,7 @@ msgstr "_Záložky"
 
 #: ../src/main-win-ui.c:245
 msgid "_Add to Bookmarks..."
-msgstr "Přidat do záložek"
+msgstr "_Přidat do záložek..."
 
 #: ../src/main-win-ui.c:245
 msgid "Add current folder to bookmarks list"
@@ -1003,7 +1000,7 @@ msgstr "_Pohled s náhledy"
 
 #: ../src/main-win-ui.c:294
 msgid "Detailed _List View"
-msgstr "Detailní pohled"
+msgstr "Podrobný _seznam"
 
 #: ../src/main-win-ui.c:307 ../src/main-win-ui.c:315
 msgid "By _Name"
@@ -1086,7 +1083,15 @@ msgid ""
 "F8: focus divider between Side pane and Folder view\n"
 "F10: activate main menu\n"
 "Ctrl+L or Alt+D: jump focus to Path Bar"
-msgstr "Spustit příkaz"
+msgstr ""
+"Tabulátor: Změna zaměření v pohledu na složku -> Postranní panel -> Pruh s "
+"nástroji\n"
+"Shift+Tab: Změna zaměření v pruhu s nástroji -> Postranní panel -> Pohled na "
+"složku\n"
+"F6: Změna zaměření v postranním panelu <-> Pohled na složku\n"
+"F8: Zaměření dělící příčky mezi postranním panelem a pohledem na složku\n"
+"F10: Zapnout hlavní nabídku\n"
+"Ctrl+L nebo Alt+D: Zaměřit adresní řádek"
 
 #: ../src/main-win.c:1210
 msgid "Run a command"

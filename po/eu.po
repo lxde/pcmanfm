@@ -7,16 +7,18 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-01-22 00:33+0200\n"
-"PO-Revision-Date: 2014-03-19 20:37+0000\n"
-"Last-Translator: Asier <asier.iturralde@gmail.com>\n"
+"PO-Revision-Date: 2015-05-03 16:40+0000\n"
+"Last-Translator: Asier Iturralde Sarasola <asier.iturralde@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1395261449.0\n"
+"X-Generator: Pootle 2.7.0-alpha1\n"
+"X-POOTLE-MTIME: 1430671201.000000\n"
+"X-Pootle-Path: /eu/pcmanfm/po/eu.po\n"
+"X-Pootle-Revision: 1323\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2014"
@@ -135,31 +137,26 @@ msgid "Fill with background color only"
 msgstr "Bete atzeko planoaren kolorearekin soilik"
 
 #: ../data/ui/desktop-pref.glade.h:27
-#, fuzzy
 msgid "Stretch to fill the entire monitor area"
-msgstr "Egokitu pantaila osoa betetzeko"
+msgstr "Egokitu monitorearen azalera osoa betetzeko"
 
 #: ../data/ui/desktop-pref.glade.h:28
-#, fuzzy
 msgid "Stretch to fit the monitor area"
-msgstr "Egokitu pantailara doitzeko"
+msgstr "Egokitu monitorearen azalerara doitzeko"
 
 #: ../data/ui/desktop-pref.glade.h:29
 msgid "Center unscaled image on the monitor"
-msgstr ""
+msgstr "Zentratu eskalatu gabeko irudia monitorean"
 
 #: ../data/ui/desktop-pref.glade.h:30
-#, fuzzy
 msgid "Tile the image to fill the entire monitor area"
-msgstr "Lauzatu irudia pantaila osoa betetzeko"
+msgstr "Lauzatu irudia monitorearen azalera osoa betetzeko"
 
 #: ../data/ui/desktop-pref.glade.h:31
-#, fuzzy
 msgid "Stretch and crop to fill the monitor area"
-msgstr "Egokitu pantaila osoa betetzeko"
+msgstr "Egokitu eta moztu monitorearen azalera osoa betetzeko"
 
 #: ../data/ui/desktop-pref.glade.h:32
-#, fuzzy
 msgid "Stretch to fill the complete screen"
 msgstr "Egokitu pantaila osoa betetzeko"
 
@@ -172,9 +169,8 @@ msgid "Open in new tab"
 msgstr "Ireki fitxa berrian"
 
 #: ../data/ui/pref.glade.h:3
-#, fuzzy
 msgid "Open in new window"
-msgstr "Ireki leiho berria"
+msgstr "Ireki leiho berrian"
 
 #: ../data/ui/pref.glade.h:4
 msgid "Preferences"
@@ -198,23 +194,20 @@ msgid "Co_nfirm before deleting files"
 msgstr "_Berretsi fitxategiak ezabatu aurretik"
 
 #: ../data/ui/pref.glade.h:9
-#, fuzzy
 msgid "_Move deleted files to \"trash can\" instead of erasing from disk"
 msgstr "_Bota fitxategiak \"zakarrontzira\" diskotik ezabatu ordez"
 
 #: ../data/ui/pref.glade.h:10
-#, fuzzy
 msgid "_Erase files on removable media instead of \"trash can\" creation"
 msgstr "_Ezabatu gailu aldagarrietako fitxategiak \"zakarrontzia\" sortu ordez"
 
 #: ../data/ui/pref.glade.h:11
-#, fuzzy
 msgid "Confi_rm before moving files into \"trash can\""
-msgstr "Berretsi fitxategiak \"_zakarrontzira\" bota aurretik"
+msgstr "_Berretsi fitxategiak \"zakarrontzira\" bota aurretik"
 
 #: ../data/ui/pref.glade.h:12
 msgid "Don't ask options on _launch executable file"
-msgstr ""
+msgstr "Ez galdetu aukerak fitxategi exekutagarria _abiaraztean"
 
 #: ../data/ui/pref.glade.h:13
 msgid "_Bookmarks:"
@@ -307,7 +300,7 @@ msgstr "Erakutsi _beti fitxategien izen osoak"
 
 #: ../data/ui/pref.glade.h:38
 msgid "Show icons of hidden _files shadowed"
-msgstr ""
+msgstr "Erakutsi ezkutuko _fitxategien ikonoak itzal bezala"
 
 #: ../data/ui/pref.glade.h:39
 msgid "_Display"
@@ -392,10 +385,8 @@ msgstr ""
 "_Erakutsi gailu aldagarrientzat eskuragarri dauden aukerak hauek txertatzean"
 
 #: ../data/ui/pref.glade.h:60
-#, fuzzy
 msgid "Do_n't show available options for those media types:"
-msgstr ""
-"_Erakutsi gailu aldagarrientzat eskuragarri dauden aukerak hauek txertatzean"
+msgstr "_Ez erakutsi erabilgarri dauden aukerak eduki mota hauentzat:"
 
 #: ../data/ui/pref.glade.h:61
 msgid "_Remove selected"
@@ -407,18 +398,16 @@ msgstr ""
 "_Ireki muntatutako gailu aldagarriak fitxa berrian leiho berrian ireki ordez"
 
 #: ../data/ui/pref.glade.h:63
-#, fuzzy
 msgid "When removable medium unmounted:"
-msgstr "Gailu aldagarria txertatuta dago"
+msgstr "Gailu aldagarria desmuntatzean:"
 
 #: ../data/ui/pref.glade.h:64
-#, fuzzy
 msgid "Clos_e tab containing removable medium"
-msgstr "_Itxi gailu aldagarriak dituzten fitxak gailua desmuntatzean"
+msgstr "_Itxi gailu aldagarriak dituen fitxa"
 
 #: ../data/ui/pref.glade.h:65
 msgid "Change folder in the tab to _Home Folder"
-msgstr ""
+msgstr "Aldatu fitxako karpeta _Karpeta nagusira"
 
 #: ../data/ui/pref.glade.h:66
 msgid "_Volume Management"
@@ -431,6 +420,7 @@ msgstr "<b>Programak</b>"
 #: ../data/ui/pref.glade.h:68
 msgid "<i>Commands below may include extra options if necessary.</i>"
 msgstr ""
+"<i>Beheko komandoek aukera gehigarriak izan ditzakete behar izanez gero.</i>"
 
 #: ../data/ui/pref.glade.h:69
 msgid "_Terminal emulator:"
@@ -455,24 +445,23 @@ msgstr "<b>Txantiloiak</b>"
 
 #: ../data/ui/pref.glade.h:75
 msgid "S_how only user defined templates in menu"
-msgstr ""
+msgstr "_Erakutsi erabiltzaileak definituriko txantiloiak soilik menuan"
 
 #: ../data/ui/pref.glade.h:76
 msgid "Show _only one template for each MIME type"
-msgstr ""
+msgstr "Erakutsi txantiloi _bakar bat MIME mota bakoitzeko"
 
 #: ../data/ui/pref.glade.h:77
 msgid "Ru_n default application after creation from template"
-msgstr ""
+msgstr "E_xekutatu aplikazio lehenetsia txantiloitik sortu ondoren"
 
 #: ../data/ui/pref.glade.h:78
 msgid "<b>Other Options</b>"
 msgstr "<b>Beste aukerak</b>"
 
 #: ../data/ui/pref.glade.h:79
-#, fuzzy
 msgid "Use Application Startup Notify _by default"
-msgstr "_Erabili 'Aplikazioaren abioko jakinarazpena' modu lehenetsian"
+msgstr "Erabili 'Aplikazioaren abioko jakinarazpena' modu _lehenetsian"
 
 #: ../data/ui/pref.glade.h:80
 msgid ""
@@ -495,7 +484,7 @@ msgstr ""
 
 #: ../data/ui/pref.glade.h:86
 msgid "_Use current"
-msgstr ""
+msgstr "Erabili _unekoa"
 
 #: ../data/ui/pref.glade.h:87
 msgid "_Advanced"
@@ -503,15 +492,15 @@ msgstr "_Aurreratua"
 
 #: ../data/ui/pref.glade.h:88
 msgid "<b>_Do not load modules matching:</b>"
-msgstr ""
+msgstr "<b>_Ez kargatu honekin bat datozen moduluak:</b>"
 
 #: ../data/ui/pref.glade.h:89
 msgid "<b>_Load these modules anyway:</b>"
-msgstr ""
+msgstr "<b>_Kargatu modulu hauek dena den:</b>"
 
 #: ../data/ui/pref.glade.h:90
 msgid "Modules"
-msgstr ""
+msgstr "Moduluak"
 
 #: ../data/ui/pref.glade.h:91
 msgid "Auto (move if on the same FS, copy otherwise)"
@@ -530,22 +519,18 @@ msgid "Ask"
 msgstr "Galdetu"
 
 #: ../data/ui/pref.glade.h:95
-#, fuzzy
 msgid "Icon view"
 msgstr "Ikono ikuspegia"
 
 #: ../data/ui/pref.glade.h:96
-#, fuzzy
 msgid "Compact view"
 msgstr "Ikuspegi trinkoa"
 
 #: ../data/ui/pref.glade.h:97
-#, fuzzy
 msgid "Thumbnail view"
 msgstr "Koadro txiki ikuspegia"
 
 #: ../data/ui/pref.glade.h:98
-#, fuzzy
 msgid "Detailed list view"
 msgstr "Zehazturiko zerrenda ikuspegia"
 
@@ -575,56 +560,55 @@ msgstr ""
 
 #: ../data/ui/connect.glade.h:1
 msgid "Connect to remote server"
-msgstr ""
+msgstr "Konektatu urruneko zerbitzarira"
 
 #: ../data/ui/connect.glade.h:2
 msgid "<b>Specify remote folder to connect</b>"
-msgstr ""
+msgstr "<b>Zehaztu urruneko karpeta konektatzeko</b>"
 
 #: ../data/ui/connect.glade.h:3
 msgid "_Type:"
-msgstr ""
+msgstr "_Mota:"
 
 #: ../data/ui/connect.glade.h:4
 msgid "_Host:"
-msgstr ""
+msgstr "_Ostalaria:"
 
 #: ../data/ui/connect.glade.h:5
 msgid "_Port:"
-msgstr ""
+msgstr "_Ataka:"
 
 #: ../data/ui/connect.glade.h:6
 msgid "Pa_th:"
-msgstr ""
+msgstr "_Bidea:"
 
 #: ../data/ui/connect.glade.h:7
 msgid "_Anonymous login"
-msgstr ""
+msgstr "Saio hasiera _anonimoa"
 
 #: ../data/ui/connect.glade.h:8
 msgid "_Login as:"
-msgstr ""
+msgstr "_Hasi saioa honela:"
 
 #: ../data/ui/connect.glade.h:9
 msgid "SSH"
-msgstr ""
+msgstr "SSH"
 
 #: ../data/ui/connect.glade.h:10
 msgid "FTP"
-msgstr ""
+msgstr "FTP"
 
 #: ../data/ui/connect.glade.h:11
 msgid "WebDAV"
-msgstr ""
+msgstr "WebDAV"
 
 #: ../src/volume-manager.c:237
 msgid "mixed content"
-msgstr ""
+msgstr "askotariko edukia"
 
 #: ../src/volume-manager.c:246
-#, fuzzy
 msgid "removable disk"
-msgstr "Disko aldagarria"
+msgstr "disko aldagarria"
 
 #: ../src/volume-manager.c:302
 msgid "Open in File Manager"
@@ -644,7 +628,7 @@ msgstr "Ireki _Terminalean"
 
 #: ../src/desktop-ui.c:68
 msgid "_Remove from Desktop"
-msgstr ""
+msgstr "_Kendu mahaigainetik"
 
 #: ../src/desktop-ui.c:85
 msgid "Stic_k to Current Position"
@@ -655,25 +639,21 @@ msgid "Snap to _Grid"
 msgstr "Atxiki _saretari"
 
 #: ../src/desktop.c:946
-#, fuzzy
 msgid "Activate file"
-msgstr "<irudi-fitxategia>"
+msgstr "Aktibatu fitxategia"
 
 #: ../src/desktop.c:948
-#, fuzzy
 msgid "Show file menu"
-msgstr "Erakutsi _ezkutukoak"
+msgstr "Erakutsi fitxategi-menua"
 
 #: ../src/desktop.c:1364
-#, fuzzy
 msgid "Show desktop menu"
-msgstr "<b>Erakutsi mahaigaineko ikonoak</b>"
+msgstr "Erakutsi mahaigaineko menua"
 
 #. FIXME: set name by monitor
 #: ../src/desktop.c:1436
-#, fuzzy
 msgid "Desktop"
-msgstr "_Mahaigaina"
+msgstr "Mahaigaina"
 
 #: ../src/main-win-ui.c:187
 msgid "_File"
@@ -705,7 +685,7 @@ msgstr "Fitxategi hutsa"
 
 #: ../src/main-win-ui.c:193
 msgid "Folder Propertie_s"
-msgstr ""
+msgstr "Karpetaren _propietateak"
 
 #: ../src/main-win-ui.c:194
 msgid "_Close Tab"
@@ -721,43 +701,39 @@ msgstr "_Editatu"
 
 #: ../src/main-win-ui.c:198
 msgid "C_ut"
-msgstr ""
+msgstr "_Ebaki"
 
 #: ../src/main-win-ui.c:201
 msgid "Move to _Trash"
-msgstr ""
+msgstr "Eraman _Zakarrontzira"
 
 #: ../src/main-win-ui.c:203
 msgid "Copy Pat_h(s)"
-msgstr ""
+msgstr "Kopiatu _bidea(k)"
 
 #: ../src/main-win-ui.c:204
-#, fuzzy
 msgid "R_ename..."
-msgstr "_Berrizendatu"
+msgstr "_Berrizendatu..."
 
 #: ../src/main-win-ui.c:205
 msgid "D_uplicate..."
-msgstr ""
+msgstr "_Bikoiztu..."
 
 #: ../src/main-win-ui.c:206
-#, fuzzy
 msgid "Create Lin_k..."
-msgstr "Sortu _berria..."
+msgstr "Sortu _esteka..."
 
 #: ../src/main-win-ui.c:207
-#, fuzzy
 msgid "_Move to..."
-msgstr "_Mugitu hona..."
+msgstr "_Eraman hona..."
 
 #: ../src/main-win-ui.c:208
-#, fuzzy
 msgid "Copy to_..."
 msgstr "_Kopiatu hona..."
 
 #: ../src/main-win-ui.c:209
 msgid "Propertie_s"
-msgstr ""
+msgstr "_Propietateak"
 
 #: ../src/main-win-ui.c:211
 msgid "_Invert Selection"
@@ -780,13 +756,12 @@ msgid "Reload current folder"
 msgstr "Birkargatu uneko karpeta"
 
 #: ../src/main-win-ui.c:215
-#, fuzzy
 msgid "Tool_bar"
-msgstr "_Tresnak"
+msgstr "_Tresna-barra"
 
 #: ../src/main-win-ui.c:216
 msgid "Pat_h Bar"
-msgstr ""
+msgstr "_Bide-barra"
 
 #: ../src/main-win-ui.c:217
 msgid "Side _Pane"
@@ -794,9 +769,8 @@ msgstr "Albo-_panela"
 
 #. other see below: 'ShowHidden' 'ShowStatus' 'Fullscreen' 'IconView'...
 #: ../src/main-win-ui.c:219
-#, fuzzy
 msgid "Fo_lder View Mode"
-msgstr "_Ikuspegi modua:"
+msgstr "Karpetaren _ikuspegi modua"
 
 #: ../src/main-win-ui.c:220
 msgid "S_ort Files"
@@ -808,14 +782,13 @@ msgstr ""
 
 #: ../src/main-win-ui.c:225
 msgid "Fil_ter..."
-msgstr ""
+msgstr "_Iragazi..."
 
 #: ../src/main-win-ui.c:227
 msgid "_Help"
 msgstr "_Laguntza"
 
 #: ../src/main-win-ui.c:229
-#, fuzzy
 msgid "_Keyboard Navigation"
 msgstr "_Teklatu bidezko nabigazioa"
 
@@ -829,7 +802,7 @@ msgstr "_Aurreko karpeta"
 
 #: ../src/main-win-ui.c:231
 msgid "Return to previous folder in history"
-msgstr ""
+msgstr "Itzuli historiako aurreko karpetara"
 
 #: ../src/main-win-ui.c:232
 msgid "_Next Folder"
@@ -837,7 +810,7 @@ msgstr "_Hurrengo karpeta"
 
 #: ../src/main-win-ui.c:232
 msgid "Go forward to next folder in history"
-msgstr ""
+msgstr "Joan historian aurrerantz hurrengo karpetara"
 
 #: ../src/main-win-ui.c:233
 msgid "Pa_rent Folder"
@@ -852,30 +825,28 @@ msgid "H_ome Folder"
 msgstr "Karpeta _nagusia"
 
 #: ../src/main-win-ui.c:234
-#, fuzzy
 msgid "Go to home folder"
-msgstr "Joan guraso-karpetara"
+msgstr "Joan karpeta nagusira"
 
 #: ../src/main-win-ui.c:235
 msgid "_Desktop"
 msgstr "_Mahaigaina"
 
 #: ../src/main-win-ui.c:235
-#, fuzzy
 msgid "Go to desktop folder"
-msgstr "Joan guraso-karpetara"
+msgstr "Joan mahaigaineko karpetara"
 
 #: ../src/main-win-ui.c:236
 msgid "Open trash can"
-msgstr ""
+msgstr "Ireki Zakarrontzia"
 
 #: ../src/main-win-ui.c:237
 msgid "Filesyste_m Root"
-msgstr ""
+msgstr "_Fitxategi-sistemaren erroa"
 
 #: ../src/main-win-ui.c:237
 msgid "Go fo filesystem root"
-msgstr ""
+msgstr "Joan fitxategi-sistemaren errora"
 
 #: ../src/main-win-ui.c:238
 msgid "_Applications"
@@ -886,27 +857,24 @@ msgid "Go to root of applications menu folder"
 msgstr ""
 
 #: ../src/main-win-ui.c:239
-#, fuzzy
 msgid "Go to list of devices connected to the computer"
-msgstr "E_rakutsi bolumenen ikonoak mahaigainean"
+msgstr "Joan ordenagailura konektatutako gailuen zerrendara"
 
 #: ../src/main-win-ui.c:240
-#, fuzzy
 msgid "Net_work"
-msgstr "_Sareko unitateak"
+msgstr "_Sarea"
 
 #: ../src/main-win-ui.c:240
-#, fuzzy
 msgid "Go to list of places on the network"
-msgstr "E_rakutsi bolumenen ikonoak mahaigainean"
+msgstr "Joan sareko lekuen zerrendara"
 
 #: ../src/main-win-ui.c:241
 msgid "_Go to Location..."
-msgstr ""
+msgstr "_Joan kokalekura..."
 
 #: ../src/main-win-ui.c:242
 msgid "_Connect to Server..."
-msgstr ""
+msgstr "_Konektatu zerbitzarira..."
 
 #: ../src/main-win-ui.c:242
 msgid "Open a window to choose remote folder location"
@@ -921,55 +889,50 @@ msgid "_Bookmarks"
 msgstr "_Laster-markak"
 
 #: ../src/main-win-ui.c:245
-#, fuzzy
 msgid "_Add to Bookmarks..."
-msgstr "Gehitu laster-markei"
+msgstr "_Gehitu laster-markei..."
 
 #: ../src/main-win-ui.c:245
 msgid "Add current folder to bookmarks list"
-msgstr ""
+msgstr "Gehitu uneko karpeta laster-marken zerrendara"
 
 #: ../src/main-win-ui.c:246
 msgid "Too_ls"
-msgstr ""
+msgstr "_Tresnak"
 
 #: ../src/main-win-ui.c:247
 msgid "Open Current Folder in _Terminal"
-msgstr "Ireki uneko karpeta Terminalean"
+msgstr "Ireki uneko karpeta _Terminalean"
 
 #: ../src/main-win-ui.c:249
-#, fuzzy
 msgid "Fin_d Files..."
-msgstr "_Bilatu fitxategiak"
+msgstr "_Bilatu fitxategiak..."
 
 #: ../src/main-win-ui.c:249
-#, fuzzy
 msgid "Open search dialog"
-msgstr "Ireki mahaigainaren hobespenen elkarrizketa"
+msgstr "Ireki bilaketaren elkarrizketa-koadroa"
 
 #: ../src/main-win-ui.c:252
-#, fuzzy
 msgid "_Run a Command in Current Folder..."
-msgstr "Birkargatu uneko karpeta"
+msgstr "_Exekutatu komandoa uneko karpetan..."
 
 #. Note to translators: "Mingle..." means "Do not put folders before files" but make the translation as short as possible, please!
 #: ../src/main-win-ui.c:267
 msgid "Mingle _Files and Folders"
-msgstr ""
+msgstr "_Fitxategi eta karpetak nahasian"
 
 #: ../src/main-win-ui.c:270
 msgid "_Ignore Name Case"
 msgstr ""
 
 #: ../src/main-win-ui.c:272
-#, fuzzy
 msgid "Sho_w Hidden"
 msgstr "Erakutsi _ezkutukoak"
 
 #. Note to translators: this save is meant for folder's settings such as sort
 #: ../src/main-win-ui.c:274
 msgid "Preserve This Folder's Settings"
-msgstr ""
+msgstr "Mantendu karpeta honen ezarpenak"
 
 #: ../src/main-win-ui.c:275
 msgid ""
@@ -978,23 +941,23 @@ msgstr ""
 
 #: ../src/main-win-ui.c:277
 msgid "_Show Toolbar"
-msgstr ""
+msgstr "_Erakutsi tresna-barra"
 
 #: ../src/main-win-ui.c:278
 msgid "Show 'New _Window' Button"
-msgstr ""
+msgstr "Erakutsi '_Leiho berria' botoia"
 
 #: ../src/main-win-ui.c:279
 msgid "Show 'New _Tab' Button"
-msgstr ""
+msgstr "Erakutsi '_Fitxa berria' botoia"
 
 #: ../src/main-win-ui.c:280
 msgid "Show _Navigation Buttons"
-msgstr ""
+msgstr "Erakutsi _nabigazioko botoiak"
 
 #: ../src/main-win-ui.c:281
 msgid "Show '_Home' Button"
-msgstr ""
+msgstr "Erakutsi '_Karpeta nagusia' botoia"
 
 #: ../src/main-win-ui.c:282
 msgid "Sho_w Side Pane"
@@ -1005,13 +968,12 @@ msgid "Show Status B_ar"
 msgstr "Erakutsi egoera-b_arra"
 
 #: ../src/main-win-ui.c:284
-#, fuzzy
 msgid "_Dual Pane Mode"
 msgstr "Panel _bikoitzeko modua"
 
 #: ../src/main-win-ui.c:284
 msgid "Show two panels with folder views"
-msgstr ""
+msgstr "Erakutsi bi panel karpeta ikuspegiekin"
 
 #: ../src/main-win-ui.c:285
 msgid "Fullscreen _Mode"
@@ -1051,7 +1013,7 @@ msgstr "_Fitxategi-motaren arabera"
 
 #: ../src/main-win-ui.c:312
 msgid "By _Extension"
-msgstr ""
+msgstr "_Luzapenaren arabera"
 
 #: ../src/main-win-ui.c:325
 msgid "Places"
@@ -1066,51 +1028,43 @@ msgid "Remote"
 msgstr "Urrunekoa"
 
 #: ../src/main-win-ui.c:333
-#, fuzzy
 msgid "_Location"
-msgstr "_Aplikazioak"
+msgstr "_Kokalekua"
 
 #: ../src/main-win-ui.c:334
 msgid "_Buttons"
-msgstr ""
+msgstr "_Botoiak"
 
 #: ../src/main-win.c:925 ../src/main-win.c:929
 msgid "Show history of visited folders"
-msgstr ""
+msgstr "Erakutsi bisitatutako karpeten historia"
 
 #: ../src/main-win.c:934
 msgid "History"
-msgstr ""
+msgstr "Historia"
 
 #: ../src/main-win.c:948
 msgid "You are in super user mode"
 msgstr "Super-erabiltzaile moduan zaude"
 
 #: ../src/main-win.c:1134
-#, fuzzy
 msgid "Lightweight file manager\n"
-msgstr ""
-"Fitxategi-kudeatzaile arina\n"
-"\n"
-"Hon Jen Yee-k garatua (PCMan)"
+msgstr "Fitxategi-kudeatzaile arina\n"
 
 #: ../src/main-win.c:1139
 #, c-format
 msgid "using LibFM ver. %s\n"
-msgstr ""
+msgstr "LibFMren %s bertsioa erabiltzen\n"
 
 #: ../src/main-win.c:1141
-#, fuzzy
 msgid ""
 "\n"
 "Developed by Hon Jen Yee (PCMan)"
 msgstr ""
-"Fitxategi-kudeatzaile arina\n"
 "\n"
 "Hon Jen Yee-k garatua (PCMan)"
 
 #: ../src/main-win.c:1166 ../src/main-win.c:1174
-#, fuzzy
 msgid "Keyboard Navigation"
 msgstr "Teklatu bidezko nabigazioa"
 
@@ -1132,16 +1086,15 @@ msgstr ""
 
 #: ../src/main-win.c:1210
 msgid "Run a command"
-msgstr ""
+msgstr "Exekutatu komandoa"
 
 #: ../src/main-win.c:1211
 msgid "Enter a command to run:"
-msgstr ""
+msgstr "Sartu komandoa exekutatzeko:"
 
 #: ../src/main-win.c:1218
-#, fuzzy
 msgid "Current folder is inaccessible"
-msgstr "Ireki uneko karpeta Terminalean"
+msgstr "Uneko karpeta ezin da atzitu"
 
 #: ../src/main-win.c:1822
 #, c-format
@@ -1160,7 +1113,7 @@ msgstr "Gehitu laster-markei"
 
 #: ../src/main-win.c:2552
 msgid "Select filter"
-msgstr ""
+msgstr "Hautatu iragazkia"
 
 #: ../src/main-win.c:2553
 msgid "Choose a new shell pattern to show files:"
@@ -1215,8 +1168,9 @@ msgid ""
 "Set mode of desktop wallpaper. MODE=(color|stretch|fit|crop|center|tile|"
 "screen)"
 msgstr ""
-"Ezarri mahaigaineko horma-paperaren modua. MODUA=(color|stretch|fit|center|"
-"tile) - > kolorea|egokitu|doitu|zentratu|lauza"
+"Ezarri mahaigaineko horma-paperaren modua. "
+"MODUA=(color|stretch|fit|center|tile) - > "
+"kolorea|egokitu|doitu|zentratu|lauza"
 
 #: ../src/pcmanfm.c:89
 msgid "MODE"
@@ -1235,9 +1189,8 @@ msgid "Open new window"
 msgstr "Ireki leiho berria"
 
 #: ../src/pcmanfm.c:93
-#, fuzzy
 msgid "Open a Find Files window"
-msgstr "Ireki leiho berria"
+msgstr "Ireki fitxategiak bilatzeko leihoa"
 
 #: ../src/pcmanfm.c:95
 msgid "Window role for usage by window manager"
@@ -1253,7 +1206,7 @@ msgstr "[FITXATEGIA1, FITXATEGIA2,...]"
 
 #: ../src/pcmanfm.c:352
 msgid "Desktop manager is not active."
-msgstr ""
+msgstr "Mahaigain-kudeatzailea ez dago aktibo."
 
 #: ../src/pcmanfm.c:598
 msgid "Terminal emulator is not set."
@@ -1291,7 +1244,7 @@ msgstr[1] " (%d ezkutatuta)"
 
 #: ../src/pref.c:514
 msgid "Add to Modules Blacklist"
-msgstr ""
+msgstr "Gehitu moduluen zerrenda beltzera"
 
 #: ../src/pref.c:515
 msgid "Enter a blacklisted module mask:"
@@ -1299,7 +1252,7 @@ msgstr ""
 
 #: ../src/pref.c:606
 msgid "Add to Modules Whitelist"
-msgstr ""
+msgstr "Gehitu moduluen zerrenda zurira"
 
 #: ../src/pref.c:607
 msgid "Enter a whitelisted module mask:"

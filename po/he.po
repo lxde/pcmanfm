@@ -4,16 +4,18 @@ msgstr ""
 "Project-Id-Version: pcmanfm 1.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-01-22 00:33+0200\n"
-"PO-Revision-Date: 2014-01-29 08:44+0000\n"
-"Last-Translator: Yaron <sh.yaron@gmail.com>\n"
+"PO-Revision-Date: 2014-09-26 08:30+0000\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: \n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1390985085.0\n"
+"X-Generator: Pootle 2.7.0-alpha1\n"
+"X-POOTLE-MTIME: 1411720224.000000\n"
+"X-Pootle-Path: /he/pcmanfm/po/he.po\n"
+"X-Pootle-Revision: 0\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2014"
@@ -390,18 +392,16 @@ msgid "Do_n't show available options for those media types:"
 msgstr "יש להציג את האפשרויות הזמינות עבור התקנים _נתיקים בעת החיבור"
 
 #: ../data/ui/pref.glade.h:61
-#, fuzzy
 msgid "_Remove selected"
-msgstr "נבחר פריט אחד"
+msgstr "ה_סרת הנבחרים"
 
 #: ../data/ui/pref.glade.h:62
 msgid "_Open mounted removable media in new tab instead of new window"
 msgstr "פתיחת התקנים נתיקים ב_לשונית חדשה במקום בחלון חדש"
 
 #: ../data/ui/pref.glade.h:63
-#, fuzzy
 msgid "When removable medium unmounted:"
-msgstr "התקן מדיה נשלף מחובר"
+msgstr "בעת ניתוק של התקן נתיק:"
 
 #: ../data/ui/pref.glade.h:64
 #, fuzzy
@@ -713,32 +713,28 @@ msgid "Copy Pat_h(s)"
 msgstr ""
 
 #: ../src/main-win-ui.c:204
-#, fuzzy
 msgid "R_ename..."
-msgstr "שינוי שם"
+msgstr "_שינוי שם…"
 
 #: ../src/main-win-ui.c:205
 msgid "D_uplicate..."
-msgstr ""
+msgstr "_שכפול…"
 
 #: ../src/main-win-ui.c:206
 msgid "Create Lin_k..."
 msgstr "יצירת _קישור..."
 
 #: ../src/main-win-ui.c:207
-#, fuzzy
 msgid "_Move to..."
 msgstr "הע_ברה אל..."
 
 #: ../src/main-win-ui.c:208
-#, fuzzy
 msgid "Copy to_..."
 msgstr "הע_תקה אל..."
 
 #: ../src/main-win-ui.c:209
-#, fuzzy
 msgid "Propertie_s"
-msgstr "_מאפיינים"
+msgstr "מ_אפיינים"
 
 #: ../src/main-win-ui.c:211
 msgid "_Invert Selection"
@@ -761,9 +757,8 @@ msgid "Reload current folder"
 msgstr "רענון התיקייה הנוכחית"
 
 #: ../src/main-win-ui.c:215
-#, fuzzy
 msgid "Tool_bar"
-msgstr "_כלים"
+msgstr "סרגל _כלים"
 
 #: ../src/main-win-ui.c:216
 msgid "Pat_h Bar"
@@ -789,7 +784,7 @@ msgstr ""
 
 #: ../src/main-win-ui.c:225
 msgid "Fil_ter..."
-msgstr ""
+msgstr "מ_סנן…"
 
 #: ../src/main-win-ui.c:227
 msgid "_Help"
@@ -832,22 +827,20 @@ msgid "H_ome Folder"
 msgstr "תיקיית ה_בית"
 
 #: ../src/main-win-ui.c:234
-#, fuzzy
 msgid "Go to home folder"
-msgstr "מעבר לתיקייה"
+msgstr "מעבר לתיקיית הבית"
 
 #: ../src/main-win-ui.c:235
 msgid "_Desktop"
 msgstr "_שולחן עבודה"
 
 #: ../src/main-win-ui.c:235
-#, fuzzy
 msgid "Go to desktop folder"
-msgstr "מעבר לתיקייה"
+msgstr "מעבר לתיקיית שולחן העבודה"
 
 #: ../src/main-win-ui.c:236
 msgid "Open trash can"
-msgstr ""
+msgstr "פתיחת סל המיחזור"
 
 #: ../src/main-win-ui.c:237
 #, fuzzy
@@ -872,9 +865,8 @@ msgid "Go to list of devices connected to the computer"
 msgstr "הצגת סמלים לכרכי _אחסון על שולחן העבודה"
 
 #: ../src/main-win-ui.c:240
-#, fuzzy
 msgid "Net_work"
-msgstr "כונני _רשת"
+msgstr "_רשת"
 
 #: ../src/main-win-ui.c:240
 #, fuzzy
@@ -1044,33 +1036,28 @@ msgid "Remote"
 msgstr "מרוחק"
 
 #: ../src/main-win-ui.c:333
-#, fuzzy
 msgid "_Location"
-msgstr "מיקום"
+msgstr "מי_קום"
 
 #: ../src/main-win-ui.c:334
 msgid "_Buttons"
-msgstr ""
+msgstr "_כפתורים"
 
 #: ../src/main-win.c:925 ../src/main-win.c:929
 msgid "Show history of visited folders"
-msgstr ""
+msgstr "הצגת היסטוריית התיקיות שביקרת בהן"
 
 #: ../src/main-win.c:934
 msgid "History"
-msgstr ""
+msgstr "היסטוריה"
 
 #: ../src/main-win.c:948
 msgid "You are in super user mode"
 msgstr "המצב הנוכחי הוא מצב משתמש על"
 
 #: ../src/main-win.c:1134
-#, fuzzy
 msgid "Lightweight file manager\n"
-msgstr ""
-"מנהל קבצים קליל\n"
-"\n"
-"פותח על ידי Hon Jen Yen (PCMan)‎"
+msgstr "מנהל קבצים קליל\n"
 
 #: ../src/main-win.c:1139
 #, c-format
@@ -1078,12 +1065,10 @@ msgid "using LibFM ver. %s\n"
 msgstr ""
 
 #: ../src/main-win.c:1141
-#, fuzzy
 msgid ""
 "\n"
 "Developed by Hon Jen Yee (PCMan)"
 msgstr ""
-"מנהל קבצים קליל\n"
 "\n"
 "פותח על ידי Hon Jen Yen (PCMan)‎"
 
@@ -1117,9 +1102,8 @@ msgid "Enter a command to run:"
 msgstr ""
 
 #: ../src/main-win.c:1218
-#, fuzzy
 msgid "Current folder is inaccessible"
-msgstr "פתיחת התיקייה הנוכחית ב_מסוף"
+msgstr "התיקייה הנוכחית אינה נגישה"
 
 #: ../src/main-win.c:1822
 #, c-format
@@ -1137,9 +1121,8 @@ msgid "Add to Bookmarks"
 msgstr "הוספה לסימניות"
 
 #: ../src/main-win.c:2552
-#, fuzzy
 msgid "Select filter"
-msgstr "בחירת תיקייה"
+msgstr "בחירת מסנן"
 
 #: ../src/main-win.c:2553
 msgid "Choose a new shell pattern to show files:"
@@ -1230,7 +1213,7 @@ msgstr "[FILE1, FILE2,...]"
 
 #: ../src/pcmanfm.c:352
 msgid "Desktop manager is not active."
-msgstr ""
+msgstr "מנהל שולחן העבודה אינו פעיל."
 
 #: ../src/pcmanfm.c:598
 msgid "Terminal emulator is not set."
@@ -1263,8 +1246,8 @@ msgstr[1] "%d פריטים"
 #, c-format
 msgid " (%d hidden)"
 msgid_plural " (%d hidden)"
-msgstr[0] "(אחד מוסתר)"
-msgstr[1] "(%d מוסתרים)"
+msgstr[0] " (אחד מוסתר)"
+msgstr[1] " (%d מוסתרים)"
 
 #: ../src/pref.c:514
 msgid "Add to Modules Blacklist"

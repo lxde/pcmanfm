@@ -8,16 +8,18 @@ msgstr ""
 "Project-Id-Version: PCManFM\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-01-22 00:33+0200\n"
-"PO-Revision-Date: 2014-04-02 07:55+0000\n"
-"Last-Translator: DDZ <drole2zebre57@yahoo.fr>\n"
+"PO-Revision-Date: 2015-03-23 23:50+0000\n"
+"Last-Translator: Jerome Leclanche <jerome@leclan.ch>\n"
 "Language-Team: \n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1396425359.0\n"
+"X-Generator: Pootle 2.7.0-alpha1\n"
+"X-POOTLE-MTIME: 1427154600.000000\n"
+"X-Pootle-Path: /fr/pcmanfm/po/fr.po\n"
+"X-Pootle-Revision: 39\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2014"
@@ -94,11 +96,11 @@ msgstr "Afficher le dossier « Mes documents » _sur le bureau"
 # Il manque l'indication du caractère de raccourci clavier en français
 #: ../data/ui/desktop-pref.glade.h:15
 msgid "Sho_w \"Devices\" folder on the desktop"
-msgstr "Afficher le répertoire « Appareils » sur le bureau"
+msgstr "A_fficher le répertoire « Appareils » sur le bureau"
 
 #: ../data/ui/desktop-pref.glade.h:16
 msgid "Show \"_Trash Can\" folder on the desktop"
-msgstr "Afficher la « Corbeille » sur le bureau"
+msgstr "Afficher la « _Corbeille » sur le bureau"
 
 #: ../data/ui/desktop-pref.glade.h:17
 msgid "S_how connected volumes on the desktop"
@@ -193,7 +195,7 @@ msgstr "<b>Comportement</b>"
 # Il manque l'indication du caractère pour le raccourci clavier
 #: ../data/ui/pref.glade.h:6
 msgid "_Open files with single click"
-msgstr "Ouvrir les fichiers en utilisant le simple clic"
+msgstr "_Ouvrir les fichiers en utilisant le simple clic"
 
 #: ../data/ui/pref.glade.h:7
 msgid "Delay of auto-selection in single click mode (0 to disable)"
@@ -202,7 +204,7 @@ msgstr "Délai d'auto-sélection en mode simple clic (0 pour désactiver)"
 # Il manque l'indication du caractère pour le raccourci clavier
 #: ../data/ui/pref.glade.h:8
 msgid "Co_nfirm before deleting files"
-msgstr "Confirmer avant de supprimer des fichiers"
+msgstr "Co_nfirmer avant de supprimer des fichiers"
 
 # Il manque l'indication du caractère pour le raccourci clavier
 #: ../data/ui/pref.glade.h:9
@@ -230,7 +232,7 @@ msgstr "Ne pas demander d'options au _lancement d'un fichier exécutable"
 # Il manque l'indication du caractère pour le raccourci clavier
 #: ../data/ui/pref.glade.h:13
 msgid "_Bookmarks:"
-msgstr "Marque-pages :"
+msgstr "_Marque-pages :"
 
 #: ../data/ui/pref.glade.h:14
 msgid "Defaul_t drop action:"
@@ -262,7 +264,7 @@ msgstr ""
 # Il manque l'indication du caractère pour le raccourci clavier
 #: ../data/ui/pref.glade.h:21
 msgid "_Unfold tab when files are dragged onto tab button"
-msgstr "Déplier l'onglet lorsque des fichiers sont glissés sur son bouton"
+msgstr "_Déplier l'onglet lorsque des fichiers sont glissés sur son bouton"
 
 #: ../data/ui/pref.glade.h:22
 msgid "_Focus previous folder after coming to its parent"
@@ -275,7 +277,7 @@ msgstr "<b>Vue par défaut</b>"
 # Il manque l'indication du caractère pour le raccourci clavier
 #: ../data/ui/pref.glade.h:24
 msgid "Vie_w Mode:"
-msgstr "Mode d’affichage :"
+msgstr "Mode d’_affichage :"
 
 #: ../data/ui/pref.glade.h:25
 msgid "_General"
@@ -288,22 +290,22 @@ msgstr "<b>Icônes</b>"
 # Il manque l'indication du caractère pour le raccourci clavier
 #: ../data/ui/pref.glade.h:27
 msgid "Size of _big icons:"
-msgstr "Taille des grandes icônes :"
+msgstr "Taille des _grandes icônes :"
 
 # Il manque l'indication du caractère pour le raccourci clavier
 #: ../data/ui/pref.glade.h:28
 msgid "Size of small _icons:"
-msgstr "Taille des petites icônes :"
+msgstr "Taille des petites _icônes :"
 
 # Il manque l'indication du caractère pour le raccourci clavier
 #: ../data/ui/pref.glade.h:29
 msgid "Size of _thumbnails:"
-msgstr "Taille des aperçus :"
+msgstr "_Taille des aperçus :"
 
 # Il manque l'indication du caractère pour le raccourci clavier
 #: ../data/ui/pref.glade.h:30
 msgid "Size of side _pane icons:"
-msgstr "Taille des icônes du panneau latéral :"
+msgstr "Taille des icônes du _panneau latéral :"
 
 #: ../data/ui/pref.glade.h:31
 msgid "_Show thumbnails of files"
@@ -316,7 +318,7 @@ msgstr "Afficher les aperçus seulement p_our les fichiers locaux"
 # Il manque l'indication du caractère pour le raccourci clavier
 #: ../data/ui/pref.glade.h:33
 msgid "Do _not generate thumbnails for files exceeding this size:"
-msgstr "Ne pas générer d’aperçus pour les fichiers dépassant cette taille :"
+msgstr "_Ne pas générer d’aperçus pour les fichiers dépassant cette taille :"
 
 #: ../data/ui/pref.glade.h:34
 msgid "<b>User Interface</b>"
@@ -326,7 +328,7 @@ msgstr "<b>Interface utilisateur</b>"
 #: ../data/ui/pref.glade.h:35
 msgid "Us_e SI decimal prefixes instead of IEC binary prefixes"
 msgstr ""
-"Utiliser les préfixes décimaux SI au lieu des préfixes binaires de l’IEC"
+"Utilis_er les préfixes décimaux SI au lieu des préfixes binaires de l’IEC"
 
 #: ../data/ui/pref.glade.h:36
 msgid "Treat backup files as _hidden"
@@ -347,7 +349,7 @@ msgstr "_Affichage"
 # Il manque l'indication du caractère pour le raccourci clavier
 #: ../data/ui/pref.glade.h:40
 msgid "Hid_e 'Close tab' buttons"
-msgstr "Masquer les boutons « Fermer l’onglet »"
+msgstr "Masqu_er les boutons « Fermer l’onglet »"
 
 #: ../data/ui/pref.glade.h:41
 msgid "Al_ways show the tab bar"
@@ -369,7 +371,7 @@ msgstr "<b>Arborescence</b>"
 # Il manque l'indication du caractère pour le raccourci clavier
 #: ../data/ui/pref.glade.h:46
 msgid "Hide e_xpander on empty or locked folder"
-msgstr "Masquer le dérouleur en cas de dossier vide ou verrouillé"
+msgstr "_Masquer le dérouleur en cas de dossier vide ou verrouillé"
 
 #: ../data/ui/pref.glade.h:47
 msgid "<b>Show in Places:</b>"
@@ -414,12 +416,12 @@ msgstr "<b>Auto-montage</b>"
 # Il manque l'indication du caractère pour le raccourci clavier
 #: ../data/ui/pref.glade.h:57
 msgid "_Mount mountable volumes automatically on program startup"
-msgstr "Monter automatiquement les supports amovibles disponibles au lancement"
+msgstr "_Monter automatiquement les supports amovibles disponibles au lancement"
 
 # Il manque l'indication du caractère pour le raccourci clavier
 #: ../data/ui/pref.glade.h:58
 msgid "Mo_unt removable media automatically when they are inserted"
-msgstr "Monter les supports amovibles automatiquement quand ils sont insérés"
+msgstr "M_onter les supports amovibles automatiquement quand ils sont insérés"
 
 #: ../data/ui/pref.glade.h:59
 msgid "_Show available options for removable media when they are inserted"
@@ -490,8 +492,7 @@ msgstr "<b>Modèles</b>"
 
 #: ../data/ui/pref.glade.h:75
 msgid "S_how only user defined templates in menu"
-msgstr ""
-"Affic_her uniquement les modèles définis par l'utilisateur dans le menu"
+msgstr "Affic_her uniquement les modèles définis par l'utilisateur dans le menu"
 
 #: ../data/ui/pref.glade.h:76
 msgid "Show _only one template for each MIME type"
@@ -776,7 +777,7 @@ msgstr "Déplacer _vers..."
 
 #: ../src/main-win-ui.c:208
 msgid "Copy to_..."
-msgstr "C_opier vers..."
+msgstr "Copier vers_..."
 
 #: ../src/main-win-ui.c:209
 msgid "Propertie_s"
@@ -854,7 +855,7 @@ msgstr "Retourner au dossier précédent dans l'historique"
 
 #: ../src/main-win-ui.c:232
 msgid "_Next Folder"
-msgstr "Aller au répertoire suivant dans l'historique"
+msgstr "Répertoire _suivant"
 
 #: ../src/main-win-ui.c:232
 msgid "Go forward to next folder in history"
@@ -1013,7 +1014,7 @@ msgstr "Affic_her le bouton « Répertoire utilisateur »"
 # Il manque l'indication du caractère pour le raccourci clavier
 #: ../src/main-win-ui.c:282
 msgid "Sho_w Side Pane"
-msgstr "Afficher le panneau latéral"
+msgstr "A_fficher le panneau latéral"
 
 #: ../src/main-win-ui.c:283
 msgid "Show Status B_ar"
@@ -1225,8 +1226,8 @@ msgid ""
 "Set mode of desktop wallpaper. MODE=(color|stretch|fit|crop|center|tile|"
 "screen)"
 msgstr ""
-"Sélectionnez le mode d’affichage du fond d’écran du bureau. MODE=(color|"
-"stretch|fit|center|tile)"
+"Sélectionnez le mode d’affichage du fond d’écran du bureau. "
+"MODE=(color|stretch|fit|center|tile)"
 
 #: ../src/pcmanfm.c:89
 msgid "MODE"
@@ -1271,7 +1272,7 @@ msgstr "L’émulateur de terminal n’est pas configuré."
 # Il manque l'indication du caractère pour le raccourci clavier
 #: ../src/tab-page.c:56
 msgid "Open in New T_ab"
-msgstr "Ouvrir dans un nouvel onglet"
+msgstr "Ouvrir dans un nouvel _onglet"
 
 #: ../src/tab-page.c:395
 #, c-format
@@ -1332,8 +1333,7 @@ msgstr "Parcourir le système de fichiers et gérer les fichiers"
 
 #: ../data/pcmanfm-desktop-pref.desktop.in.h:2
 msgid "Change desktop wallpapers and behavior of desktop manager"
-msgstr ""
-"Modifier les fonds d’écran et le comportement du gestionnaire de bureau"
+msgstr "Modifier les fonds d’écran et le comportement du gestionnaire de bureau"
 
 #~ msgid "Center on the screen"
 #~ msgstr "Centrer sur l’écran"

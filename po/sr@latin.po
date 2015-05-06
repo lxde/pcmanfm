@@ -2,22 +2,24 @@
 # Copyright (C) 2010 the LXDE team
 # This file is distributed under the same license as the PCManFM package.
 # Jay A. Fleming <tito.nehru.naser@gmail.com>, 2010-2013.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: PCManFM\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-01-22 00:33+0200\n"
-"PO-Revision-Date: 2013-11-09 09:27+0100\n"
-"Last-Translator: Jay Alexander Fleming <tito.nehru.naser@gmail.com>\n"
+"PO-Revision-Date: 2014-12-24 14:25+0000\n"
+"Last-Translator: markos <jezzivi@yahoo.com>\n"
 "Language-Team: \n"
-"Language: sr\n"
+"Language: sr@latin\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Pootle 2.0.5\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Pootle 2.6.0-rc2\n"
+"X-POOTLE-MTIME: 1419431158.000000\n"
+"X-Pootle-Path: /sr@latin/pcmanfm/po/sr@latin.po\n"
+"X-Pootle-Revision: 0\n"
 
 #: ../data/ui/about.glade.in.h:1
 #, fuzzy
@@ -112,17 +114,17 @@ msgstr "Prikaži meni _upravnika prozora klikom na radnu površ"
 
 #: ../data/ui/desktop-pref.glade.h:20
 msgid "_Use desktop as a folder (show icons on it) by path:"
-msgstr ""
+msgstr "_Koristi desktop kao direktoriju (prikaži ikone) na putanji:"
 
 #: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:84
 msgctxt "Use path for some folder: ..."
 msgid "Default"
-msgstr ""
+msgstr "Podrazumevano"
 
 #: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:85
 msgctxt "Use path for some folder: ..."
 msgid "Custom:"
-msgstr ""
+msgstr "Prilagođeno:"
 
 #: ../data/ui/desktop-pref.glade.h:23
 #, fuzzy
@@ -154,7 +156,7 @@ msgstr "Prilagodi veličini ekrana"
 
 #: ../data/ui/desktop-pref.glade.h:29
 msgid "Center unscaled image on the monitor"
-msgstr ""
+msgstr "Centriraj neskaliranu sliku na monitoru"
 
 #: ../data/ui/desktop-pref.glade.h:30
 #, fuzzy
@@ -236,6 +238,8 @@ msgstr "Podrazumevana radnja kod pre_vlačenja:"
 #: ../data/ui/pref.glade.h:15
 msgid "\"_Smart shortcut\" auto-action on drop to Desktop folder"
 msgstr ""
+"\"_Pametna prečica\" automatska akcija spuštanja na direktorijum  radne "
+"površi"
 
 #: ../data/ui/pref.glade.h:16
 msgid ""
@@ -252,7 +256,7 @@ msgstr "Prikaži _list pri prevlačenju datoteka preko dugmeta lista"
 
 #: ../data/ui/pref.glade.h:22
 msgid "_Focus previous folder after coming to its parent"
-msgstr ""
+msgstr "_Fokusiraj prethodni direktorijum, nakon dolaska nadređenog"
 
 #: ../data/ui/pref.glade.h:23
 msgid "<b>Default View</b>"
@@ -377,7 +381,7 @@ msgstr "Progr_ami"
 
 #: ../data/ui/pref.glade.h:53 ../src/main-win-ui.c:239
 msgid "Dev_ices"
-msgstr ""
+msgstr "Ure_đaji"
 
 #: ../data/ui/pref.glade.h:54
 #, fuzzy
@@ -410,9 +414,8 @@ msgid "Do_n't show available options for those media types:"
 msgstr "Kod ubacivanja izmenjivog medija _ponudi dostupne radnje za njega"
 
 #: ../data/ui/pref.glade.h:61
-#, fuzzy
 msgid "_Remove selected"
-msgstr "%d izabrana stavka"
+msgstr "_Ukloni odabrano"
 
 #: ../data/ui/pref.glade.h:62
 msgid "_Open mounted removable media in new tab instead of new window"
@@ -431,7 +434,7 @@ msgstr "Po isključivanju izmenjivog medija _zatvori list sa nj. sadržajem"
 
 #: ../data/ui/pref.glade.h:65
 msgid "Change folder in the tab to _Home Folder"
-msgstr ""
+msgstr "Promeni direktorijum u kartici za _Lični direktorijum"
 
 #: ../data/ui/pref.glade.h:66
 msgid "_Volume Management"
@@ -501,15 +504,15 @@ msgstr ""
 
 #: ../data/ui/pref.glade.h:82
 msgid "D_efer test for content type on folder loading"
-msgstr ""
+msgstr "Odloži test ovog sadržaja kod učitavanja direktorijuma"
 
 #: ../data/ui/pref.glade.h:83
 msgid "Use path for \"Home Folder\" button:"
-msgstr ""
+msgstr "Koristi putanju za dugme \"Lični direktorijum\":"
 
 #: ../data/ui/pref.glade.h:86
 msgid "_Use current"
-msgstr ""
+msgstr "_Koristi aktuelno"
 
 #: ../data/ui/pref.glade.h:87
 msgid "_Advanced"
@@ -517,15 +520,15 @@ msgstr "N_apredno"
 
 #: ../data/ui/pref.glade.h:88
 msgid "<b>_Do not load modules matching:</b>"
-msgstr ""
+msgstr "<b>_Ne učitavaj module koji se podudaraju:</b>"
 
 #: ../data/ui/pref.glade.h:89
 msgid "<b>_Load these modules anyway:</b>"
-msgstr ""
+msgstr "<b>_Učitaj ove module u svakom slučaju:</b>"
 
 #: ../data/ui/pref.glade.h:90
 msgid "Modules"
-msgstr ""
+msgstr "Moduli"
 
 #: ../data/ui/pref.glade.h:91
 msgid "Auto (move if on the same FS, copy otherwise)"
@@ -586,55 +589,55 @@ msgstr "Odaberite radnju koju želite da se izvrši:"
 
 #: ../data/ui/autorun.glade.h:6
 msgid "_Always perform this action on this media type"
-msgstr ""
+msgstr "_Uvek izvrši ovu radnju na ovom tipu medija"
 
 #: ../data/ui/connect.glade.h:1
 msgid "Connect to remote server"
-msgstr ""
+msgstr "Poveži sa udaljenim serverom"
 
 #: ../data/ui/connect.glade.h:2
 msgid "<b>Specify remote folder to connect</b>"
-msgstr ""
+msgstr "<b>Odredi udaljeni direktorijum za povezivanje</b>"
 
 #: ../data/ui/connect.glade.h:3
 msgid "_Type:"
-msgstr ""
+msgstr "_Tip:"
 
 #: ../data/ui/connect.glade.h:4
 msgid "_Host:"
-msgstr ""
+msgstr "_Domaćin:"
 
 #: ../data/ui/connect.glade.h:5
 msgid "_Port:"
-msgstr ""
+msgstr "_Port:"
 
 #: ../data/ui/connect.glade.h:6
 msgid "Pa_th:"
-msgstr ""
+msgstr "Pu_tanja:"
 
 #: ../data/ui/connect.glade.h:7
 msgid "_Anonymous login"
-msgstr ""
+msgstr "_Anonimna prijava"
 
 #: ../data/ui/connect.glade.h:8
 msgid "_Login as:"
-msgstr ""
+msgstr "_Prijavi se kao:"
 
 #: ../data/ui/connect.glade.h:9
 msgid "SSH"
-msgstr ""
+msgstr "SSH"
 
 #: ../data/ui/connect.glade.h:10
 msgid "FTP"
-msgstr ""
+msgstr "FTP"
 
 #: ../data/ui/connect.glade.h:11
 msgid "WebDAV"
-msgstr ""
+msgstr "WebDAV"
 
 #: ../src/volume-manager.c:237
 msgid "mixed content"
-msgstr ""
+msgstr "mešoviti sadržaj"
 
 #: ../src/volume-manager.c:246
 #, fuzzy
@@ -659,7 +662,7 @@ msgstr "Otvori u _terminalu"
 
 #: ../src/desktop-ui.c:68
 msgid "_Remove from Desktop"
-msgstr ""
+msgstr "_Ukloni sa radne površi"
 
 #: ../src/desktop-ui.c:85
 msgid "Stic_k to Current Position"
@@ -671,7 +674,7 @@ msgstr "Poravnaj kao u koordinatnoj mre_ži"
 
 #: ../src/desktop.c:946
 msgid "Activate file"
-msgstr ""
+msgstr "Aktiviraj datoteku"
 
 #: ../src/desktop.c:948
 msgid "Show file menu"
@@ -716,7 +719,7 @@ msgstr "Praznu datoteku"
 
 #: ../src/main-win-ui.c:193
 msgid "Folder Propertie_s"
-msgstr ""
+msgstr "Svojstva direktoriju_ma"
 
 #: ../src/main-win-ui.c:194
 msgid "_Close Tab"
@@ -732,15 +735,15 @@ msgstr "_Uredi"
 
 #: ../src/main-win-ui.c:198
 msgid "C_ut"
-msgstr ""
+msgstr "I_seci"
 
 #: ../src/main-win-ui.c:201
 msgid "Move to _Trash"
-msgstr ""
+msgstr "Prebaci u _kantu"
 
 #: ../src/main-win-ui.c:203
 msgid "Copy Pat_h(s)"
-msgstr ""
+msgstr "Umnoži put_anju(e)"
 
 #: ../src/main-win-ui.c:204
 #, fuzzy
@@ -749,7 +752,7 @@ msgstr "Pre_imenuj"
 
 #: ../src/main-win-ui.c:205
 msgid "D_uplicate..."
-msgstr ""
+msgstr "D_upliraj..."
 
 #: ../src/main-win-ui.c:206
 #, fuzzy
@@ -768,7 +771,7 @@ msgstr "Umn_oži u ..."
 
 #: ../src/main-win-ui.c:209
 msgid "Propertie_s"
-msgstr ""
+msgstr "Svoj_stva"
 
 #: ../src/main-win-ui.c:211
 msgid "_Invert Selection"
@@ -797,7 +800,7 @@ msgstr "_Alatke"
 
 #: ../src/main-win-ui.c:216
 msgid "Pat_h Bar"
-msgstr ""
+msgstr "Tra_ka putanje"
 
 #: ../src/main-win-ui.c:217
 msgid "Side _Pane"
@@ -815,11 +818,11 @@ msgstr "Po_ređaj datoteke"
 
 #: ../src/main-win-ui.c:222
 msgid "Zoom O_ut"
-msgstr ""
+msgstr "Sma_nji"
 
 #: ../src/main-win-ui.c:225
 msgid "Fil_ter..."
-msgstr ""
+msgstr "Fil_ter..."
 
 #: ../src/main-win-ui.c:227
 msgid "_Help"
@@ -913,19 +916,19 @@ msgstr "Prikaži spisak logičkih diskova na mreži"
 
 #: ../src/main-win-ui.c:241
 msgid "_Go to Location..."
-msgstr ""
+msgstr "_Idi na lokaciju..."
 
 #: ../src/main-win-ui.c:242
 msgid "_Connect to Server..."
-msgstr ""
+msgstr "_Poveži sa serverom..."
 
 #: ../src/main-win-ui.c:242
 msgid "Open a window to choose remote folder location"
-msgstr ""
+msgstr "Otvori prozor za izbor direktorijuma udaljene lokacije"
 
 #: ../src/main-win-ui.c:243
 msgid "Go to the path in the location bar"
-msgstr ""
+msgstr "Idi na putanju u baru lokacija"
 
 #: ../src/main-win-ui.c:244
 msgid "_Bookmarks"
@@ -942,7 +945,7 @@ msgstr "Dodajte tekući direktorijum u spisak obeleživača"
 
 #: ../src/main-win-ui.c:246
 msgid "Too_ls"
-msgstr ""
+msgstr "Ala_ti"
 
 #: ../src/main-win-ui.c:247
 msgid "Open Current Folder in _Terminal"
@@ -965,11 +968,11 @@ msgstr "Osveži prikaz tekućeg direktorijuma"
 #. Note to translators: "Mingle..." means "Do not put folders before files" but make the translation as short as possible, please!
 #: ../src/main-win-ui.c:267
 msgid "Mingle _Files and Folders"
-msgstr ""
+msgstr "Pomešaj _datoteke i direktorijume"
 
 #: ../src/main-win-ui.c:270
 msgid "_Ignore Name Case"
-msgstr ""
+msgstr "_Zanemari ime"
 
 #: ../src/main-win-ui.c:272
 #, fuzzy
@@ -979,7 +982,7 @@ msgstr "Prikaži skrive_ne datoteke"
 #. Note to translators: this save is meant for folder's settings such as sort
 #: ../src/main-win-ui.c:274
 msgid "Preserve This Folder's Settings"
-msgstr ""
+msgstr "Sačuvaj podešavanja ovog direktorijuma"
 
 #: ../src/main-win-ui.c:275
 msgid ""
@@ -988,23 +991,23 @@ msgstr ""
 
 #: ../src/main-win-ui.c:277
 msgid "_Show Toolbar"
-msgstr ""
+msgstr "_Prikaži traku alalta"
 
 #: ../src/main-win-ui.c:278
 msgid "Show 'New _Window' Button"
-msgstr ""
+msgstr "Prikaži dugme 'Novi _prozor'"
 
 #: ../src/main-win-ui.c:279
 msgid "Show 'New _Tab' Button"
-msgstr ""
+msgstr "Prikaži dugme 'Novi _list'  "
 
 #: ../src/main-win-ui.c:280
 msgid "Show _Navigation Buttons"
-msgstr ""
+msgstr "Prikaži _navigacione dugmiće"
 
 #: ../src/main-win-ui.c:281
 msgid "Show '_Home' Button"
-msgstr ""
+msgstr "Prikaži dugme '_Domaće'  "
 
 #: ../src/main-win-ui.c:282
 msgid "Sho_w Side Pane"
@@ -1021,7 +1024,7 @@ msgstr "_Dvo-panelni režim"
 
 #: ../src/main-win-ui.c:284
 msgid "Show two panels with folder views"
-msgstr ""
+msgstr "Prikaži dva panela sa pregledom"
 
 #: ../src/main-win-ui.c:285
 msgid "Fullscreen _Mode"
@@ -1061,7 +1064,7 @@ msgstr "Prema vr_sti"
 
 #: ../src/main-win-ui.c:312
 msgid "By _Extension"
-msgstr ""
+msgstr "Od _proširenja"
 
 #: ../src/main-win-ui.c:325
 msgid "Places"
@@ -1082,7 +1085,7 @@ msgstr "Progr_ami"
 
 #: ../src/main-win-ui.c:334
 msgid "_Buttons"
-msgstr ""
+msgstr "_Dugmići"
 
 #: ../src/main-win.c:925 ../src/main-win.c:929
 msgid "Show history of visited folders"
@@ -1131,10 +1134,10 @@ msgstr ""
 "alatkama\n"
 "Shift+Tab: kružni fokus — Traka sa alatkama -> Bočni panel -> Prikaz "
 "direktorijuma\n"
-"F6: menja fokus — Bočni panel -> Prikaz direktorijuma\n"
+"F6: menja fokus  Bočni panel <-> Prikaz direktorijuma\n"
 "F8: delitelj fokusa između Bočnog panela i Prikaza direktorijuma\n"
-"F10: glavni meni programa\n"
-"Ctrl+L ili Alt+D: prebacuje fokus na polje „Lokacija“ u traci sa alatkama"
+"F10: aktiviraj glavni meni\n"
+"Ctrl+L ili Alt+D: prebacuje fokus na traku putanje"
 
 #: ../src/main-win.c:1210
 #, fuzzy
@@ -1143,7 +1146,7 @@ msgstr "Naredba za _formatiranje:"
 
 #: ../src/main-win.c:1211
 msgid "Enter a command to run:"
-msgstr ""
+msgstr "Unesi komandu za pokretanje:"
 
 #: ../src/main-win.c:1218
 #, fuzzy
@@ -1167,11 +1170,11 @@ msgstr "Dodaj u obeleživače"
 
 #: ../src/main-win.c:2552
 msgid "Select filter"
-msgstr ""
+msgstr "Odredi filter"
 
 #: ../src/main-win.c:2553
 msgid "Choose a new shell pattern to show files:"
-msgstr ""
+msgstr "Izaberi novi obrazac za prikazivanje datoteka:"
 
 #. options only acceptable by first pcmanfm instance. These options are not passed through IPC
 #: ../src/pcmanfm.c:78
@@ -1300,19 +1303,19 @@ msgstr[2] " (%d skrivenih)"
 
 #: ../src/pref.c:514
 msgid "Add to Modules Blacklist"
-msgstr ""
+msgstr "Dodaj module na crnu listu"
 
 #: ../src/pref.c:515
 msgid "Enter a blacklisted module mask:"
-msgstr ""
+msgstr "Unesi masku za modul na crnoj listi:"
 
 #: ../src/pref.c:606
 msgid "Add to Modules Whitelist"
-msgstr ""
+msgstr "Dodaj module na belu listu"
 
 #: ../src/pref.c:607
 msgid "Enter a whitelisted module mask:"
-msgstr ""
+msgstr "Unesi masku za modul na beloj listi:"
 
 #: ../data/pcmanfm.desktop.in.h:1
 msgid "File Manager PCManFM"

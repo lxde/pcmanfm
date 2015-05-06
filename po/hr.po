@@ -8,21 +8,23 @@ msgstr ""
 "Project-Id-Version: pcmanfm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-01-22 00:33+0200\n"
-"PO-Revision-Date: 2014-03-27 10:59+0000\n"
-"Last-Translator: Ivica <ikoli@yahoo.com>\n"
+"PO-Revision-Date: 2015-04-02 10:35+0000\n"
+"Last-Translator: Ivica Kolić <ikoli@yahoo.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1395917944.0\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Pootle 2.7.0-alpha1\n"
+"X-POOTLE-MTIME: 1427970942.000000\n"
+"X-Pootle-Path: /hr/pcmanfm/po/hr.po\n"
+"X-Pootle-Revision: 216\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2014"
-msgstr "Autorska prava (C) 2009 - 2013"
+msgstr "Autorska prava (C) 2009 - 2014"
 
 #. Please replace this line with your own names, one name per line.
 #: ../data/ui/about.glade.in.h:3
@@ -201,8 +203,7 @@ msgstr ""
 
 #: ../data/ui/pref.glade.h:10
 msgid "_Erase files on removable media instead of \"trash can\" creation"
-msgstr ""
-"_Izbrišite datoteke na uklonjivim medijima umjesto da stvarate \"smeće\""
+msgstr "_Izbrišite datoteke na uklonjivim medijima umjesto da stvarate \"smeće\""
 
 #: ../data/ui/pref.glade.h:11
 msgid "Confi_rm before moving files into \"trash can\""
@@ -364,7 +365,7 @@ msgstr "Ure_đaji"
 
 #: ../data/ui/pref.glade.h:54
 msgid "_Network"
-msgstr "Mreža"
+msgstr "_Mreža"
 
 #: ../data/ui/pref.glade.h:55
 msgid "_Layout"
@@ -450,7 +451,7 @@ msgstr "P_okaži u izborniku samo predloške koje je definirao korisnik"
 
 #: ../data/ui/pref.glade.h:76
 msgid "Show _only one template for each MIME type"
-msgstr "Pokaži _samo jedan predložak za svaki  MIME type"
+msgstr "Pokaži _samo jedan predložak za svaki MIME type"
 
 #: ../data/ui/pref.glade.h:77
 msgid "Ru_n default application after creation from template"
@@ -481,7 +482,7 @@ msgstr ""
 
 #: ../data/ui/pref.glade.h:86
 msgid "_Use current"
-msgstr ""
+msgstr "_Koristi trenutno"
 
 #: ../data/ui/pref.glade.h:87
 msgid "_Advanced"
@@ -497,7 +498,7 @@ msgstr ""
 
 #: ../data/ui/pref.glade.h:90
 msgid "Modules"
-msgstr ""
+msgstr "Moduli"
 
 #: ../data/ui/pref.glade.h:91
 msgid "Auto (move if on the same FS, copy otherwise)"
@@ -597,11 +598,11 @@ msgstr "FTP"
 
 #: ../data/ui/connect.glade.h:11
 msgid "WebDAV"
-msgstr ""
+msgstr "WebDAV"
 
 #: ../src/volume-manager.c:237
 msgid "mixed content"
-msgstr ""
+msgstr "miješani sadržaj"
 
 #: ../src/volume-manager.c:246
 msgid "removable disk"
@@ -621,7 +622,7 @@ msgstr "Otvori u novom pro_zoru"
 
 #: ../src/desktop-ui.c:54 ../src/tab-page.c:59
 msgid "Open in Termina_l"
-msgstr "Otvori u _treminal_u"
+msgstr "Otvori u treminal_u"
 
 #: ../src/desktop-ui.c:68
 msgid "_Remove from Desktop"
@@ -698,11 +699,11 @@ msgstr "_Uredi"
 
 #: ../src/main-win-ui.c:198
 msgid "C_ut"
-msgstr ""
+msgstr "I_zreži"
 
 #: ../src/main-win-ui.c:201
 msgid "Move to _Trash"
-msgstr ""
+msgstr "Premjesti u _smeće"
 
 #: ../src/main-win-ui.c:203
 msgid "Copy Pat_h(s)"
@@ -758,7 +759,7 @@ msgstr "Alatna _traka"
 
 #: ../src/main-win-ui.c:216
 msgid "Pat_h Bar"
-msgstr ""
+msgstr "Trak_a putanje"
 
 #: ../src/main-win-ui.c:217
 msgid "Side _Pane"
@@ -779,7 +780,7 @@ msgstr ""
 
 #: ../src/main-win-ui.c:225
 msgid "Fil_ter..."
-msgstr ""
+msgstr "Fil_ter..."
 
 #: ../src/main-win-ui.c:227
 msgid "_Help"
@@ -787,7 +788,7 @@ msgstr "_Pomoć"
 
 #: ../src/main-win-ui.c:229
 msgid "_Keyboard Navigation"
-msgstr ""
+msgstr "_Navigacija tipkovnice"
 
 #: ../src/main-win-ui.c:230
 msgid "_Go"
@@ -867,15 +868,15 @@ msgstr "Idi na listu mjesta na mreži"
 
 #: ../src/main-win-ui.c:241
 msgid "_Go to Location..."
-msgstr ""
+msgstr "_Idi na lokaciju..."
 
 #: ../src/main-win-ui.c:242
 msgid "_Connect to Server..."
-msgstr ""
+msgstr "_Spoji se na poslužitelj..."
 
 #: ../src/main-win-ui.c:242
 msgid "Open a window to choose remote folder location"
-msgstr ""
+msgstr "Otvori prozor za odabir lokacije udaljene mape"
 
 #: ../src/main-win-ui.c:243
 msgid "Go to the path in the location bar"
@@ -895,7 +896,7 @@ msgstr "Dodaj trennutnu mapu na listu zabilješki"
 
 #: ../src/main-win-ui.c:246
 msgid "Too_ls"
-msgstr ""
+msgstr "Ala_ti"
 
 #: ../src/main-win-ui.c:247
 msgid "Open Current Folder in _Terminal"
@@ -938,7 +939,7 @@ msgstr ""
 
 #: ../src/main-win-ui.c:277
 msgid "_Show Toolbar"
-msgstr "Pokaži _alatnu traku"
+msgstr "_Pokaži alatnu traku"
 
 #: ../src/main-win-ui.c:278
 msgid "Show 'New _Window' Button"
@@ -1063,7 +1064,7 @@ msgstr ""
 
 #: ../src/main-win.c:1166 ../src/main-win.c:1174
 msgid "Keyboard Navigation"
-msgstr ""
+msgstr "Navigacija tipkovnice"
 
 #: ../src/main-win.c:1168
 msgid ""
@@ -1081,7 +1082,7 @@ msgstr "Pokreni naredbu"
 
 #: ../src/main-win.c:1211
 msgid "Enter a command to run:"
-msgstr ""
+msgstr "Unesi naredbu za pokretanje:"
 
 #: ../src/main-win.c:1218
 msgid "Current folder is inaccessible"
@@ -1193,7 +1194,7 @@ msgstr "[DATOTEKA1, DATOTEKA2,...]"
 
 #: ../src/pcmanfm.c:352
 msgid "Desktop manager is not active."
-msgstr ""
+msgstr "Upravitelj radnom površinom nije aktivan."
 
 #: ../src/pcmanfm.c:598
 msgid "Terminal emulator is not set."

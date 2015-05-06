@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PcmanFM 1.1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-01-22 00:33+0200\n"
-"PO-Revision-Date: 2014-10-27 21:13+0000\n"
+"PO-Revision-Date: 2015-05-04 04:36+0000\n"
 "Last-Translator: rago1975 <take1975@kumamoto.email.ne.jp>\n"
 "Language-Team: Japanese <translation-team-ja@lists.sourceforge.net>\n"
 "Language: ja\n"
@@ -16,8 +16,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Pootle 2.6.0-rc2\n"
-"X-POOTLE-MTIME: 1414444387.000000\n"
+"X-Generator: Pootle 2.7.0-alpha1\n"
+"X-POOTLE-MTIME: 1430714188.000000\n"
+"X-Pootle-Path: /ja/pcmanfm/po/ja.po\n"
+"X-Pootle-Revision: 1352\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2014"
@@ -103,8 +105,7 @@ msgstr "デスクトップアイコン(_D)"
 
 #: ../data/ui/desktop-pref.glade.h:19
 msgid "_Show menus provided by window managers when desktop is clicked"
-msgstr ""
-"デスクトップをクリックしたときウィンドウマネージャのメニューを表示する(_S)"
+msgstr "デスクトップをクリックしたときウィンドウマネージャのメニューを表示する(_S)"
 
 #: ../data/ui/desktop-pref.glade.h:20
 msgid "_Use desktop as a folder (show icons on it) by path:"
@@ -218,7 +219,7 @@ msgstr "デフォルトのドロップの動作(_T):"
 
 #: ../data/ui/pref.glade.h:15
 msgid "\"_Smart shortcut\" auto-action on drop to Desktop folder"
-msgstr "デスクトップへのドロップについては実行するアクションを自動で判断する"
+msgstr "\"スマートショートカット（_S）\" デスクトップフォルダに自動的にドロップする"
 
 #: ../data/ui/pref.glade.h:16
 msgid ""
@@ -320,7 +321,7 @@ msgstr "タブバーを常に表示する(_W)"
 
 #: ../data/ui/pref.glade.h:42
 msgid "_Maximum width of tab label:"
-msgstr "タブのラベルの最大幅:"
+msgstr "タブのラベルの最大幅（_M）:"
 
 #. Use genitive case here, context is: width is XXX characters
 #: ../data/ui/pref.glade.h:44
@@ -377,9 +378,7 @@ msgstr "<b>自動マウント</b>"
 
 #: ../data/ui/pref.glade.h:57
 msgid "_Mount mountable volumes automatically on program startup"
-msgstr ""
-"プログラムのスタートアップ時にマウントできるボリュームを自動でマウントする"
-"(_M)"
+msgstr "プログラムのスタートアップ時にマウントできるボリュームを自動でマウントする(_M)"
 
 #: ../data/ui/pref.glade.h:58
 msgid "Mo_unt removable media automatically when they are inserted"
@@ -399,9 +398,7 @@ msgstr "選択を除去(_R)"
 
 #: ../data/ui/pref.glade.h:62
 msgid "_Open mounted removable media in new tab instead of new window"
-msgstr ""
-"マウントされたリムーバブルメディアは新規ウィンドウでなく新規タブとして開く"
-"(_O)"
+msgstr "マウントされたリムーバブルメディアは新規ウィンドウでなく新規タブとして開く(_O)"
 
 #: ../data/ui/pref.glade.h:63
 msgid "When removable medium unmounted:"
@@ -425,8 +422,7 @@ msgstr "<b>プログラム</b>"
 
 #: ../data/ui/pref.glade.h:68
 msgid "<i>Commands below may include extra options if necessary.</i>"
-msgstr ""
-"<i>これらのコマンドには必要なら追加のオプションを含めることができます。</i>"
+msgstr "<i>これらのコマンドには必要なら追加のオプションを含めることができます。</i>"
 
 #: ../data/ui/pref.glade.h:69
 msgid "_Terminal emulator:"
@@ -459,9 +455,7 @@ msgstr "各 MIME タイプにつき一つだけテンプレートを表示する
 
 #: ../data/ui/pref.glade.h:77
 msgid "Ru_n default application after creation from template"
-msgstr ""
-"テンプレートからファイルを作った後、デフォルトのアプリケーションでそれを開く"
-"(_N)"
+msgstr "テンプレートからファイルを作った後、デフォルトのアプリケーションでそれを開く(_N)"
 
 #: ../data/ui/pref.glade.h:78
 msgid "<b>Other Options</b>"
@@ -477,8 +471,7 @@ msgid ""
 "explicitly.\n"
 "If unchecked then use Startup Notify only if that is defined for application."
 msgstr ""
-"これがチェックされているとき、他に記述がない限りはスタートアップ通知を使用す"
-"る。\n"
+"これがチェックされているとき、他に記述がない限りはスタートアップ通知を使用する。\n"
 "でないときは、アプリケーションについて明示されている場合のみ使用する。"
 
 #: ../data/ui/pref.glade.h:82
@@ -944,8 +937,7 @@ msgstr "このフォルダの設定を保存する"
 #: ../src/main-win-ui.c:275
 msgid ""
 "Check to remember view and sort as folder setting rather than global one"
-msgstr ""
-"このフォルダのビューとソートの設定を記憶し、全体設定より優先して適用します"
+msgstr "このフォルダのビューとソートの設定を記憶し、全体設定より優先して適用します"
 
 #: ../src/main-win-ui.c:277
 msgid "_Show Toolbar"
@@ -953,7 +945,7 @@ msgstr "ツールバーの表示(_S)"
 
 #: ../src/main-win-ui.c:278
 msgid "Show 'New _Window' Button"
-msgstr "'新規ウィンドウ' ボタンを表示する"
+msgstr "'新規ウィンドウ（_W）' ボタンを表示する"
 
 #: ../src/main-win-ui.c:279
 msgid "Show 'New _Tab' Button"
@@ -1085,10 +1077,8 @@ msgid ""
 "F10: activate main menu\n"
 "Ctrl+L or Alt+D: jump focus to Path Bar"
 msgstr ""
-"Tab: フォルダ・ビュー -> サイド・ペイン -> ツールバーへとフォーカスを循環させ"
-"る\n"
-"Shift+Tab: ツールバー -> サイド・ペイン -> フォルダ・ビューへとフォーカスを循"
-"環させる\n"
+"Tab: フォルダ・ビュー -> サイド・ペイン -> ツールバーへとフォーカスを循環させる\n"
+"Shift+Tab: ツールバー -> サイド・ペイン -> フォルダ・ビューへとフォーカスを循環させる\n"
 "F6: サイド・ペイン<->フォルダ・ビューの間でフォーカスを切り替える\n"
 "F8: サイド・ペインとフォルダ・ビューの間の境界線をフォーカスする\n"
 "F10: メイン/メニューを開く\n"
@@ -1176,9 +1166,7 @@ msgstr "FILE"
 msgid ""
 "Set mode of desktop wallpaper. MODE=(color|stretch|fit|crop|center|tile|"
 "screen)"
-msgstr ""
-"デスクトップ壁紙のモード設定。 MODE=(color|stretch|fit|crop|center|tile|"
-"screen)"
+msgstr "デスクトップ壁紙のモード設定。 MODE=(color|stretch|fit|crop|center|tile|screen)"
 
 #: ../src/pcmanfm.c:89
 msgid "MODE"
