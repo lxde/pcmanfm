@@ -170,7 +170,6 @@ static void single_inst_cb(const char* cwd, int screen_num)
         }
     }
     pcmanfm_run(screen_num);
-    window_role = NULL; /* reset it for clients callbacks */
 }
 
 #if FM_CHECK_VERSION(1, 2, 0)
@@ -276,7 +275,6 @@ int main(int argc, char** argv)
     if(pcmanfm_run(gdk_screen_get_number(gdk_screen_get_default())))
     {
         first_run = FALSE;
-        window_role = NULL; /* reset it for clients callbacks */
         fm_volume_manager_init();
 #if !GTK_CHECK_VERSION(3, 6, 0)
         GDK_THREADS_ENTER();
@@ -312,6 +310,28 @@ int main(int argc, char** argv)
     return 0;
 }
 
+static gboolean reset_options(void)
+{
+    show_desktop = FALSE;
+    desktop_off = FALSE;
+    desktop_pref = FALSE;
+    one_screen = FALSE;
+    g_free(set_wallpaper);
+    set_wallpaper = NULL;
+    g_free(wallpaper_mode);
+    wallpaper_mode = NULL;
+    show_pref = -1;
+    new_win = FALSE;
+#if FM_CHECK_VERSION(1, 0, 2)
+    find_files = FALSE;
+#endif
+    g_free(window_role);
+    window_role = NULL;
+    g_strfreev(files_to_open);
+    files_to_open = NULL;
+    return TRUE;
+}
+
 gboolean pcmanfm_run(gint screen_num)
 {
     FmMainWin *win = NULL;
@@ -329,10 +349,8 @@ gboolean pcmanfm_run(gint screen_num)
             {
                 fm_desktop_manager_init(one_screen ? screen_num : -1);
                 desktop_running = TRUE;
-                one_screen = FALSE;
             }
-            show_desktop = FALSE;
-            return TRUE;
+            return reset_options();
         }
         else if(desktop_off)
         {
@@ -341,14 +359,13 @@ gboolean pcmanfm_run(gint screen_num)
                 desktop_running = FALSE;
                 fm_desktop_manager_finalize();
             }
-            desktop_off = FALSE;
+            reset_options();
             return FALSE;
         }
         else if(show_pref > 0)
         {
             fm_edit_preference(GTK_WINDOW(desktop), show_pref - 1);
-            show_pref = -1;
-            return TRUE;
+            return reset_options();
         }
         else if(desktop == NULL)
         {
@@ -357,14 +374,14 @@ gboolean pcmanfm_run(gint screen_num)
             {
                 /* FIXME: add "on this X screen/monitor" into diagnostics */
                 fm_show_error(NULL, NULL, _("Desktop manager is not active."));
+                reset_options();
                 return FALSE;
             }
         }
         else if(desktop_pref)
         {
             fm_desktop_preference(NULL, desktop);
-            desktop_pref = FALSE;
-            return TRUE;
+            return reset_options();
         }
         else if(wallpaper_mode || set_wallpaper)
         {
@@ -385,10 +402,8 @@ gboolean pcmanfm_run(gint screen_num)
                             desktop->conf.wallpaper_mode = FM_WP_FIT;
                     }
                     wallpaper_changed = TRUE;
+                    set_wallpaper = NULL;
                 }
-                else
-                    g_free(set_wallpaper);
-                set_wallpaper = NULL;
             }
 
             if(wallpaper_mode)
@@ -401,13 +416,12 @@ gboolean pcmanfm_run(gint screen_num)
                     desktop->conf.wallpaper_mode = mode;
                     wallpaper_changed = TRUE;
                 }
-                g_free(wallpaper_mode);
-                wallpaper_mode = NULL;
             }
 
             if(wallpaper_changed)
                 fm_desktop_wallpaper_changed(desktop);
 
+            reset_options();
             return FALSE;
         }
     }
@@ -450,9 +464,6 @@ gboolean pcmanfm_run(gint screen_num)
         g_list_foreach(paths, (GFunc)fm_path_unref, NULL);
         g_list_free(paths);
         ret = (n_pcmanfm_ref >= 1); /* if there is opened window, return true to run the main loop. */
-
-        g_strfreev(files_to_open);
-        files_to_open = NULL;
     }
     else
     {
@@ -489,8 +500,8 @@ gboolean pcmanfm_run(gint screen_num)
     if (ret && find_files)
         fm_launch_search_simple(GTK_WINDOW(win), NULL, NULL,
                                 pcmanfm_open_folder, NULL);
-    find_files = FALSE;
 #endif
+    reset_options();
     return ret;
 }
 

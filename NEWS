@@ -1,6 +1,8 @@
 * Workarounded a bug in gtk_file_chooser_set_file() function (patch from
     Simon Long).
 
+* Fixed single instance options cleanup that might affect next call.
+
 
 Changes on 1.2.3 since 1.2.2:
 
