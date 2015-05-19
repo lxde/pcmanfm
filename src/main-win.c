@@ -2,7 +2,7 @@
  *      main-win.c
  *
  *      Copyright 2009 - 2012 Hong Jen Yee (PCMan) <pcman.tw@gmail.com>
- *      Copyright 2012-2014 Andriy Grytsenko (LStranger) <andrej@rep.kiev.ua>
+ *      Copyright 2012-2015 Andriy Grytsenko (LStranger) <andrej@rep.kiev.ua>
  *
  *      This program is free software; you can redistribute it and/or modify
  *      it under the terms of the GNU General Public License as published by
@@ -1636,6 +1636,7 @@ static void update_statusbar(FmMainWin* win)
     if(text)
         gtk_statusbar_push(win->statusbar, win->statusbar_ctx, text);
 
+    gtk_statusbar_pop(win->statusbar, win->statusbar_ctx2);
     text = fm_tab_page_get_status_text(page, FM_STATUS_TEXT_SELECTED_FILES);
     if(text)
         gtk_statusbar_push(win->statusbar, win->statusbar_ctx2, text);
@@ -2108,7 +2109,12 @@ static void on_tab_page_status_text(FmTabPage* page, guint type, const char* sta
         gtk_statusbar_pop(win->statusbar, win->statusbar_ctx);
         if(status_text)
             gtk_statusbar_push(win->statusbar, win->statusbar_ctx, status_text);
-        break;
+        else
+            break; /* no updates are required */
+        if (fm_folder_view_get_n_selected_files(win->folder_view) == 0)
+            break;
+        /* otherwise put selection info on statusbar, continue with update */
+        status_text = fm_tab_page_get_status_text(page, FM_STATUS_TEXT_SELECTED_FILES);
     case FM_STATUS_TEXT_SELECTED_FILES:
         gtk_statusbar_pop(win->statusbar, win->statusbar_ctx2);
         if(status_text)
