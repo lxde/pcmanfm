@@ -83,6 +83,7 @@ struct _FmDesktop
     guint cur_desktop;
     gint monitor;
     FmBackgroundCache *cache;
+    guint idle_update_background;
     /* interactive search subwindow */
     GtkWidget *search_window;
     GtkWidget *search_entry;

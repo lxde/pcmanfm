@@ -2,7 +2,7 @@
  *      desktop.c
  *
  *      Copyright 2010 - 2012 Hong Jen Yee (PCMan) <pcman.tw@gmail.com>
- *      Copyright 2012-2014 Andriy Grytsenko (LStranger) <andrej@rep.kiev.ua>
+ *      Copyright 2012-2015 Andriy Grytsenko (LStranger) <andrej@rep.kiev.ua>
  *
  *      This program is free software; you can redistribute it and/or modify
  *      it under the terms of the GNU General Public License as published by
@@ -4690,6 +4690,24 @@ static void on_show_full_names_changed(FmConfig *cfg, FmDesktop *self)
 }
 #endif
 
+static gboolean idle_update_background(gpointer desktop)
+{
+    if (g_source_is_destroyed(g_main_current_source()))
+        return FALSE;
+    update_background(desktop, -1);
+    FM_DESKTOP(desktop)->idle_update_background = 0;
+    return FALSE;
+}
+
+static void gtk_rc_settings_changed(GtkSettings *settings, GParamSpec *pspec,
+                                    FmDesktop *desktop)
+{
+    if (desktop->conf.wallpaper_mode == FM_WP_COLOR
+        && desktop->idle_update_background == 0)
+        desktop->idle_update_background = gdk_threads_add_idle(idle_update_background,
+                                                               desktop);
+}
+
 #if GTK_CHECK_VERSION(3, 0, 0)
 static void fm_desktop_destroy(GtkWidget *object)
 #else
@@ -4727,7 +4745,12 @@ static void fm_desktop_destroy(GtkObject *object)
         if(self->idle_layout)
             g_source_remove(self->idle_layout);
 
+        if(self->idle_update_background)
+            g_source_remove(self->idle_update_background);
+
         g_signal_handlers_disconnect_by_func(self->dnd_src, on_dnd_src_data_get, self);
+        g_signal_handlers_disconnect_by_func(gtk_settings_get_for_screen(screen),
+                                             gtk_rc_settings_changed, self);
         g_object_unref(self->dnd_src);
         g_object_unref(self->dnd_dest);
     }
@@ -4858,6 +4881,8 @@ static GObject* fm_desktop_constructor(GType type, guint n_construct_properties,
 
     gtk_window_group_add_window(win_group, GTK_WINDOW(self));
 
+    g_signal_connect(gtk_settings_get_for_screen(screen), "notify::gtk-theme-name",
+                     G_CALLBACK(gtk_rc_settings_changed), object);
     return object;
 }
 
