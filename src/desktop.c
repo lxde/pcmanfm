@@ -4206,7 +4206,7 @@ static void on_realize(GtkWidget* w)
     PangoFontDescription *font_desc;
     PangoContext* pc;
 #if GTK_CHECK_VERSION(3, 0, 0)
-    char *color_str, *css_data;
+    char *css_data;
 #endif
 
     GTK_WIDGET_CLASS(fm_desktop_parent_class)->realize(w);
@@ -4233,12 +4233,13 @@ static void on_realize(GtkWidget* w)
     pango_context_set_font_description(pc, font_desc);
     pango_font_description_free(font_desc);
 #if GTK_CHECK_VERSION(3, 0, 0)
-    color_str = gdk_color_to_string(&self->conf.desktop_bg);
     css_data = g_strdup_printf("FmDesktop {\n"
-                                   "background-color: %s\n"
-                               "}", color_str);
+                                   "background-color: #%02x%02x%02x\n"
+                               "}",
+                               self->conf.desktop_bg.red/256,
+                               self->conf.desktop_bg.green/256,
+                               self->conf.desktop_bg.blue/256);
     gtk_css_provider_load_from_data(self->css, css_data, -1, NULL);
-    g_free(color_str);
     g_free(css_data);
 #endif
 }
@@ -5334,12 +5335,11 @@ static void on_bg_color_set(GtkColorButton *btn, FmDesktop *desktop)
     if (!gdk_color_equal(&desktop->conf.desktop_bg, &new_val))
     {
 #if GTK_CHECK_VERSION(3, 0, 0)
-        char *color_str = gdk_color_to_string(&new_val);
         char *css_data = g_strdup_printf("FmDesktop {\n"
-                                            "background-color: %s\n"
-                                         "}", color_str);
+                                             "background-color: #%02x%02x%02x\n"
+                                         "}", new_val.red/256, new_val.green/256,
+                                         new_val.blue/256);
         gtk_css_provider_load_from_data(desktop->css, css_data, -1, NULL);
-        g_free(color_str);
         g_free(css_data);
 #endif
         desktop->conf.desktop_bg = new_val;
