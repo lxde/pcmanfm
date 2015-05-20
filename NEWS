@@ -6,8 +6,8 @@
 * Fixed wrong update of status text after folder update when there are
     selected files in the folder.
 
-* Forced desktop background repaint after style change if background set
-    to solid color.
+* Disabled using desktop background from the GTK+ style since there is
+    own color setting and changing the style may repaint the desktop.
 
 
 Changes on 1.2.3 since 1.2.2:

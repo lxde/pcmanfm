@@ -4205,6 +4205,9 @@ static void on_realize(GtkWidget* w)
     FmDesktop* self = (FmDesktop*)w;
     PangoFontDescription *font_desc;
     PangoContext* pc;
+#if GTK_CHECK_VERSION(3, 0, 0)
+    char *color_str, *css_data;
+#endif
 
     GTK_WIDGET_CLASS(fm_desktop_parent_class)->realize(w);
     gtk_window_set_skip_pager_hint(GTK_WINDOW(w), TRUE);
@@ -4229,6 +4232,15 @@ static void on_realize(GtkWidget* w)
     pc = gtk_widget_get_pango_context(w);
     pango_context_set_font_description(pc, font_desc);
     pango_font_description_free(font_desc);
+#if GTK_CHECK_VERSION(3, 0, 0)
+    color_str = gdk_color_to_string(&self->conf.desktop_bg);
+    css_data = g_strdup_printf("FmDesktop {\n"
+                                   "background-color: %s\n"
+                               "}", color_str);
+    gtk_css_provider_load_from_data(self->css, css_data, -1, NULL);
+    g_free(color_str);
+    g_free(css_data);
+#endif
 }
 
 static gboolean on_focus_in(GtkWidget* w, GdkEventFocus* evt)
@@ -4589,6 +4601,44 @@ static FmJobErrorAction on_folder_error(FmFolder* folder, GError* err, FmJobErro
 }
 
 
+#if !GTK_CHECK_VERSION(3, 0, 0)
+/* ---------------------------------------------------------------------
+   We should not follow background changes on the style so we create
+   a style class for the desktop with dummy set background operator.
+   For GTK+ 3.0 we add a style provider with high priority instead. */
+
+static void _dummy_set_background(GtkStyle *style, GdkWindow *window, GtkStateType state_type)
+{
+}
+
+#define FM_DESKTOP_TYPE_STYLE    (fm_desktop_style_get_type())
+
+typedef struct _FmDesktopStyle FmDesktopStyle;
+struct _FmDesktopStyle
+{
+    GtkStyle parent;
+};
+
+typedef struct _FmDesktopStyleClass FmDesktopStyleClass;
+struct _FmDesktopStyleClass
+{
+    GtkStyleClass parent_class;
+};
+
+G_DEFINE_TYPE(FmDesktopStyle, fm_desktop_style, GTK_TYPE_STYLE)
+
+static void fm_desktop_style_class_init(FmDesktopStyleClass *klass)
+{
+    GtkStyleClass *style_class = GTK_STYLE_CLASS(klass);
+
+    style_class->set_background = _dummy_set_background;
+}
+
+static void fm_desktop_style_init(FmDesktopStyle *self)
+{
+}
+#endif
+
 /* ---------------------------------------------------------------------
     FmDesktop class main handlers */
 
@@ -4690,24 +4740,6 @@ static void on_show_full_names_changed(FmConfig *cfg, FmDesktop *self)
 }
 #endif
 
-static gboolean idle_update_background(gpointer desktop)
-{
-    if (g_source_is_destroyed(g_main_current_source()))
-        return FALSE;
-    update_background(desktop, -1);
-    FM_DESKTOP(desktop)->idle_update_background = 0;
-    return FALSE;
-}
-
-static void gtk_rc_settings_changed(GtkSettings *settings, GParamSpec *pspec,
-                                    FmDesktop *desktop)
-{
-    if (desktop->conf.wallpaper_mode == FM_WP_COLOR
-        && desktop->idle_update_background == 0)
-        desktop->idle_update_background = gdk_threads_add_idle(idle_update_background,
-                                                               desktop);
-}
-
 #if GTK_CHECK_VERSION(3, 0, 0)
 static void fm_desktop_destroy(GtkWidget *object)
 #else
@@ -4745,12 +4777,7 @@ static void fm_desktop_destroy(GtkObject *object)
         if(self->idle_layout)
             g_source_remove(self->idle_layout);
 
-        if(self->idle_update_background)
-            g_source_remove(self->idle_update_background);
-
         g_signal_handlers_disconnect_by_func(self->dnd_src, on_dnd_src_data_get, self);
-        g_signal_handlers_disconnect_by_func(gtk_settings_get_for_screen(screen),
-                                             gtk_rc_settings_changed, self);
         g_object_unref(self->dnd_src);
         g_object_unref(self->dnd_dest);
     }
@@ -4793,6 +4820,8 @@ static void fm_desktop_destroy(GtkObject *object)
     }
 
 #if GTK_CHECK_VERSION(3, 0, 0)
+    g_object_unref(self->css);
+
     GTK_WIDGET_CLASS(fm_desktop_parent_class)->destroy(object);
 #else
     GTK_OBJECT_CLASS(fm_desktop_parent_class)->destroy(object);
@@ -4801,6 +4830,16 @@ static void fm_desktop_destroy(GtkObject *object)
 
 static void fm_desktop_init(FmDesktop *self)
 {
+#if GTK_CHECK_VERSION(3, 0, 0)
+    self->css = gtk_css_provider_new();
+    gtk_style_context_add_provider(gtk_widget_get_style_context((GtkWidget*)self),
+                                   GTK_STYLE_PROVIDER(self->css),
+                                   GTK_STYLE_PROVIDER_PRIORITY_USER);
+#else
+    GtkStyle *style = g_object_new(FM_DESKTOP_TYPE_STYLE, NULL);
+    gtk_widget_set_style((GtkWidget*)self, style);
+    g_object_unref(style);
+#endif
 }
 
 /* we should have a constructor to handle parameters */
@@ -4881,8 +4920,6 @@ static GObject* fm_desktop_constructor(GType type, guint n_construct_properties,
 
     gtk_window_group_add_window(win_group, GTK_WINDOW(self));
 
-    g_signal_connect(gtk_settings_get_for_screen(screen), "notify::gtk-theme-name",
-                     G_CALLBACK(gtk_rc_settings_changed), object);
     return object;
 }
 
@@ -5296,6 +5333,15 @@ static void on_bg_color_set(GtkColorButton *btn, FmDesktop *desktop)
     gtk_color_button_get_color(btn, &new_val);
     if (!gdk_color_equal(&desktop->conf.desktop_bg, &new_val))
     {
+#if GTK_CHECK_VERSION(3, 0, 0)
+        char *color_str = gdk_color_to_string(&new_val);
+        char *css_data = g_strdup_printf("FmDesktop {\n"
+                                            "background-color: %s\n"
+                                         "}", color_str);
+        gtk_css_provider_load_from_data(desktop->css, css_data, -1, NULL);
+        g_free(color_str);
+        g_free(css_data);
+#endif
         desktop->conf.desktop_bg = new_val;
         queue_config_save(desktop);
         update_background(desktop, 0);
