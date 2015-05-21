@@ -1142,10 +1142,14 @@ static void on_about(GtkAction* act, FmMainWin* win)
 {
     if(!about_dlg)
     {
-        GtkBuilder* builder = gtk_builder_new();
         GString *comments = g_string_new(_("Lightweight file manager\n"));
+#if GTK_CHECK_VERSION(3, 10, 0)
+        GtkBuilder* builder = gtk_builder_new_from_file(PACKAGE_UI_DIR "/about.ui");
+#else
+        GtkBuilder* builder = gtk_builder_new();
 
         gtk_builder_add_from_file(builder, PACKAGE_UI_DIR "/about.ui", NULL);
+#endif
         about_dlg = GTK_ABOUT_DIALOG(gtk_builder_get_object(builder, "dlg"));
 #if FM_CHECK_VERSION(1, 2, 0)
         g_string_append_printf(comments, _("using LibFM ver. %s\n"), fm_version());
