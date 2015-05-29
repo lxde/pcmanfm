@@ -75,6 +75,7 @@ struct _FmDesktop
     gboolean rubber_bending : 1;
     gboolean button_pressed : 1;
     gboolean dragging : 1;
+    gboolean layout_pending : 1;
     guint idle_layout;
     FmDndSrc* dnd_src;
     FmDndDest* dnd_dest;

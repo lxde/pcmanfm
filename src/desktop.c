@@ -1779,13 +1779,18 @@ _next_position_rtl:
 static gboolean on_idle_layout(FmDesktop* desktop)
 {
     desktop->idle_layout = 0;
+    desktop->layout_pending = FALSE;
     layout_items(desktop);
     return FALSE;
 }
 
 static void queue_layout_items(FmDesktop* desktop)
 {
-    if(0 == desktop->idle_layout)
+    /* don't try to layout items until config is loaded,
+       this may be cause of the bug #927 on SF.net */
+    if (!gtk_widget_get_realized(GTK_WIDGET(desktop)))
+        desktop->layout_pending = TRUE;
+    else if (0 == desktop->idle_layout)
         desktop->idle_layout = gdk_threads_add_idle((GSourceFunc)on_idle_layout, desktop);
 }
 
@@ -4249,6 +4254,8 @@ static void on_realize(GtkWidget* w)
     gtk_css_provider_load_from_data(self->css, css_data, -1, NULL);
     g_free(css_data);
 #endif
+    if (self->layout_pending)
+        queue_layout_items(self);
 }
 
 static gboolean on_focus_in(GtkWidget* w, GdkEventFocus* evt)
