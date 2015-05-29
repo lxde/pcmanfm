@@ -3224,6 +3224,13 @@ static void on_size_allocate(GtkWidget* w, GtkAllocation* alloc)
     /* scale the wallpaper */
     if(gtk_widget_get_realized(w))
     {
+#if GTK_CHECK_VERSION(3, 0, 0)
+        /* bug SF#958: with GTK 3.8+ font is reset to default after realizing
+           so let enforce font description on it right away */
+        PangoFontDescription *font_desc = pango_font_description_from_string(self->conf.desktop_font);
+        pango_context_set_font_description(pc, font_desc);
+        pango_font_description_free(font_desc);
+#endif
         /* bug #3614866: after monitor geometry was changed we need to redraw
            the background invalidating all the cache */
         _clear_bg_cache(self);
