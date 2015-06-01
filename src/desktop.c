@@ -1893,7 +1893,7 @@ static void paint_item(FmDesktop* self, FmDesktopItem* item, cairo_t* cr, GdkRec
 static void redraw_item(FmDesktop* desktop, FmDesktopItem* item)
 {
     GdkRectangle rect;
-    gdk_rectangle_union(&item->icon_rect, &item->text_rect, &rect);
+    get_item_rect(item, &rect);
     --rect.x;
     --rect.y;
     rect.width += 2;
@@ -2865,7 +2865,7 @@ static void on_snap_to_grid(GtkAction* act, gpointer user_data)
 
 static gboolean is_point_in_rect(GdkRectangle* rect, int x, int y)
 {
-    return rect->x < x && x < (rect->x + rect->width) && y > rect->y && y < (rect->y + rect->height);
+    return x >= rect->x && x < (rect->x + rect->width) && y >= rect->y && y < (rect->y + rect->height);
 }
 
 static FmDesktopItem* hit_test(FmDesktop* self, GtkTreeIter *it, int x, int y)
@@ -2878,11 +2878,16 @@ static FmDesktopItem* hit_test(FmDesktop* self, GtkTreeIter *it, int x, int y)
     model = GTK_TREE_MODEL(self->model);
     if(model && gtk_tree_model_get_iter_first(model, it)) do
     {
+        GdkRectangle icon_rect;
         item = fm_folder_model_get_item_userdata(self->model, it);
         /* we cannot drop dragged items onto themselves */
         if (item->is_selected && self->dragging)
             continue;
-        if(is_point_in_rect(&item->icon_rect, x, y)
+        /* SF bug #963: icon_rect and text_rect may be not contiguous,
+           so let expand icon test area up to text_rect */
+        icon_rect = item->icon_rect;
+        icon_rect.height = item->text_rect.y - icon_rect.y;
+        if(is_point_in_rect(&icon_rect, x, y)
          || is_point_in_rect(&item->text_rect, x, y))
             return item;
     }
