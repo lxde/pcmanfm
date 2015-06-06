@@ -73,13 +73,14 @@ struct _FmDesktop
     gint drag_start_x;
     gint drag_start_y;
     gboolean rubber_bending : 1;
-    gboolean button_pressed : 1;
+    gboolean forward_pending : 1;
     gboolean dragging : 1;
     gboolean layout_pending : 1;
     guint idle_layout;
     FmDndSrc* dnd_src;
     FmDndDest* dnd_dest;
     guint single_click_timeout_handler;
+    guint button_pressed;
     FmFolderModel* model;
     guint cur_desktop;
     gint monitor;

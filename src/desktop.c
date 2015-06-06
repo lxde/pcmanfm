@@ -3314,9 +3314,12 @@ static gboolean on_button_press(GtkWidget* w, GdkEventButton* evt)
 
     if(evt->type == GDK_BUTTON_PRESS)
     {
+        /* ignore another buttons while some is in progress */
+        if (self->button_pressed == 0)
+            self->button_pressed = evt->button;
         if(evt->button == 1)  /* left button */
         {
-            self->button_pressed = TRUE;    /* store button state for drag & drop */
+            /* store button state for drag & drop */
             self->drag_start_x = evt->x;
             self->drag_start_y = evt->y;
         }
@@ -3411,8 +3414,11 @@ static gboolean on_button_press(GtkWidget* w, GdkEventButton* evt)
             gtk_tree_path_free(tp);
     }
     /* forward the event to root window */
-    else if(evt->button != 1)
+    else if(evt->button != 1 && evt->button == self->button_pressed)
+    {
+        self->forward_pending = TRUE;
         forward_event_to_rootwin(gtk_widget_get_screen(w), (GdkEvent*)evt);
+    }
 
     if(! gtk_widget_has_focus(w))
     {
@@ -3425,10 +3431,6 @@ static gboolean on_button_press(GtkWidget* w, GdkEventButton* evt)
 static gboolean on_button_release(GtkWidget* w, GdkEventButton* evt)
 {
     FmDesktop* self = (FmDesktop*)w;
-    GtkTreeIter it;
-    FmDesktopItem* clicked_item = hit_test(self, &it, evt->x, evt->y);
-
-    self->button_pressed = FALSE;
 
     if(self->rubber_bending)
     {
@@ -3442,17 +3444,21 @@ static gboolean on_button_release(GtkWidget* w, GdkEventButton* evt)
     }
     else if(fm_config->single_click && evt->button == 1)
     {
+        GtkTreeIter it;
+        FmDesktopItem* clicked_item = hit_test(self, &it, evt->x, evt->y);
         if(clicked_item)
-        {
             /* left single click */
             fm_launch_file_simple(GTK_WINDOW(w), NULL, clicked_item->fi, pcmanfm_open_folder, w);
-            return TRUE;
-        }
     }
 
     /* forward the event to root window */
-    if(! clicked_item)
-        forward_event_to_rootwin(gtk_widget_get_screen(w), (GdkEvent*)evt);
+    if (self->button_pressed == evt->button)
+    {
+        if (self->forward_pending)
+            forward_event_to_rootwin(gtk_widget_get_screen(w), (GdkEvent*)evt);
+        self->button_pressed = 0;
+        self->forward_pending = FALSE;
+    }
 
     return TRUE;
 }
