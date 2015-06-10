@@ -1,7 +1,7 @@
 //      fm-tab-page.c
 //
 //      Copyright 2011 Hong Jen Yee (PCMan) <pcman.tw@gmail.com>
-//      Copyright 2012-2014 Andriy Grytsenko (LStranger) <andrej@rep.kiev.ua>
+//      Copyright 2012-2015 Andriy Grytsenko (LStranger) <andrej@rep.kiev.ua>
 //
 //      This program is free software; you can redistribute it and/or modify
 //      it under the terms of the GNU General Public License as published by
@@ -193,6 +193,12 @@ static void fm_tab_page_finalize(GObject *object)
 
 static void free_folder(FmTabPage* page)
 {
+    /* page might be just loaded so stop updating it in any case */
+    if(page->update_scroll_id)
+    {
+        g_source_remove(page->update_scroll_id);
+        page->update_scroll_id = 0;
+    }
     if(page->folder)
     {
         g_signal_handlers_disconnect_by_func(page->folder, on_folder_start_loading, page);
@@ -607,10 +613,15 @@ static void on_folder_start_loading(FmFolder* folder, FmTabPage* page)
 static gboolean update_scroll(gpointer data)
 {
     FmTabPage* page = data;
-    GtkScrolledWindow* scroll = GTK_SCROLLED_WINDOW(page->folder_view);
+    GtkScrolledWindow* scroll;
 #if !FM_CHECK_VERSION(1, 0, 2)
     const FmNavHistoryItem* item;
+#endif
 
+    if (g_source_is_destroyed(g_main_current_source()))
+        return FALSE;
+    scroll = GTK_SCROLLED_WINDOW(page->folder_view);
+#if !FM_CHECK_VERSION(1, 0, 2)
     item = fm_nav_history_get_cur(page->nav_history);
     /* scroll to recorded position */
     gtk_adjustment_set_value(gtk_scrolled_window_get_vadjustment(scroll), item->scroll_pos);
@@ -662,8 +673,9 @@ static void on_folder_finish_loading(FmFolder* folder, FmTabPage* page)
 
     // fm_path_entry_set_path(entry, path);
     /* delaying scrolling since drawing folder view is delayed */
-    if(!page->update_scroll_id)
-        page->update_scroll_id = gdk_threads_add_timeout(50, update_scroll, page);
+    if (page->update_scroll_id)
+        g_source_remove(page->update_scroll_id);
+    page->update_scroll_id = gdk_threads_add_timeout(50, update_scroll, page);
 
     /* update status bar */
     /* update status text */
