@@ -3412,6 +3412,8 @@ static gboolean on_button_press(GtkWidget* w, GdkEventButton* evt)
         fm_folder_view_item_clicked(FM_FOLDER_VIEW(self), tp, clicked);
         if(tp)
             gtk_tree_path_free(tp);
+        /* SF bug #929: after click the tooltip is still set to the item name */
+        self->hover_item = NULL;
     }
     /* forward the event to root window */
     else if(evt->button != 1 && evt->button == self->button_pressed)
