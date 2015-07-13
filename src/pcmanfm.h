@@ -45,6 +45,7 @@ gboolean pcmanfm_open_folder(GAppLaunchContext* ctx, GList* folder_infos, gpoint
 char* pcmanfm_get_profile_dir(gboolean create);
 void pcmanfm_save_config(gboolean immediate);
 
+gboolean pcmanfm_can_open_path_in_terminal(FmPath* dir);
 void pcmanfm_open_folder_in_terminal(GtkWindow* parent, FmPath* dir);
 
 G_END_DECLS

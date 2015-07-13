@@ -828,7 +828,7 @@ static void update_files_popup(FmFolderView* fv, GtkWindow* win,
     for(l = fm_file_info_list_peek_head_link(files); l; l = l->next)
         if(!fm_file_info_is_dir(l->data))
             return; /* actions are valid only if all selected are directories */
-        else if (!fm_file_info_is_native(l->data))
+        else if (!pcmanfm_can_open_path_in_terminal(fm_file_info_get_path(l->data)))
             all_native = FALSE;
     g_object_set_qdata_full(G_OBJECT(act_grp), popup_qdata,
                             fm_file_info_list_ref(files),
@@ -879,7 +879,7 @@ void _update_sidepane_popup(FmSidePane* sp, GtkUIManager* ui,
                                  G_N_ELEMENTS(folder_menu_actions), win);
     /* we use the same XML for simplicity */
     gtk_ui_manager_add_ui_from_string(ui, folder_menu_xml, -1, NULL);
-    if (!fm_file_info_is_native(file))
+    if (!pcmanfm_can_open_path_in_terminal(fm_file_info_get_path(file)))
         gtk_action_set_visible(gtk_action_group_get_action(act_grp, "Term"), FALSE);
 }
 #endif

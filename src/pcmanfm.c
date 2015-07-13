@@ -2,7 +2,7 @@
  *      pcmanfm.c
  *
  *      Copyright 2009 - 2010 Hong Jen Yee (PCMan) <pcman.tw@gmail.com>
- *      Copyright 2012-2014 Andriy Grytsenko (LStranger) <andrej@rep.kiev.ua>
+ *      Copyright 2012-2015 Andriy Grytsenko (LStranger) <andrej@rep.kiev.ua>
  *
  *      This program is free software; you can redistribute it and/or modify
  *      it under the terms of the GNU General Public License as published by
@@ -598,6 +598,20 @@ void pcmanfm_save_config(gboolean immediate)
         if( 0 == save_config_idle)
             save_config_idle = gdk_threads_add_idle_full(G_PRIORITY_LOW, (GSourceFunc)on_save_config_idle, NULL, NULL);
     }
+}
+
+gboolean pcmanfm_can_open_path_in_terminal(FmPath* dir)
+{
+    GFile *gf;
+    char *wd;
+
+    if (fm_path_is_native(dir))
+        return TRUE;
+    gf = fm_path_to_gfile(dir);
+    wd = g_file_get_path(gf);
+    g_object_unref(gf);
+    g_free(wd);
+    return (wd != NULL);
 }
 
 void pcmanfm_open_folder_in_terminal(GtkWindow* parent, FmPath* dir)

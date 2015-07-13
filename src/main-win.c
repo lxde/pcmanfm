@@ -319,12 +319,13 @@ static void update_file_menu(FmMainWin* win, FmPath *path)
 {
     GtkAction *act;
     /* FmFolderView *fv = win->folder_view; */
+    gboolean can_term = pcmanfm_can_open_path_in_terminal(path);
 
     act = gtk_ui_manager_get_action(win->ui, "/menubar/ToolMenu/Term");
-    gtk_action_set_sensitive(act, path && fm_path_is_native(path));
+    gtk_action_set_sensitive(act, path && can_term);
 #if FM_CHECK_VERSION(1, 2, 0)
     act = gtk_ui_manager_get_action(win->ui, "/menubar/ToolMenu/Launch");
-    gtk_action_set_sensitive(act, path && fm_path_is_native(path));
+    gtk_action_set_sensitive(act, path && can_term);
 #endif
     act = gtk_ui_manager_get_action(win->ui, "/menubar/GoMenu/Up");
     gtk_action_set_sensitive(act, path && fm_path_get_parent(path));
