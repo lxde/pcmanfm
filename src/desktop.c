@@ -203,7 +203,7 @@ static void calc_item_size(FmDesktop* desktop, FmDesktopItem* item, GdkPixbuf* i
     }
     item->icon_rect.x = item->area.x + (desktop->cell_w - item->icon_rect.width) / 2;
     item->icon_rect.y = item->area.y + desktop->ypad + (fm_config->big_icon_size - item->icon_rect.height) / 2;
-    item->icon_rect.height += desktop->spacing;
+    item->icon_rect.height += desktop->spacing; // FIXME: this is probably wrong
 
     /* text label rect */
     pango_layout_set_text(desktop->pl, NULL, 0);
@@ -216,9 +216,9 @@ static void calc_item_size(FmDesktop* desktop, FmDesktopItem* item, GdkPixbuf* i
 
     /* FIXME: RTL */
     item->text_rect.x = item->area.x + (desktop->cell_w - rc2.width - 4) / 2;
-    item->text_rect.y = item->area.y + desktop->ypad + fm_config->big_icon_size + desktop->spacing + rc2.y;
+    item->text_rect.y = item->area.y + desktop->ypad + fm_config->big_icon_size + desktop->spacing;
     item->text_rect.width = rc2.width + 4;
-    item->text_rect.height = rc2.height + 4;
+    item->text_rect.height = rc2.y + rc2.height + 4;
     item->area.width = (desktop->cell_w + MAX(item->icon_rect.width, item->text_rect.width)) / 2;
     item->area.height = item->text_rect.y + item->text_rect.height - item->area.y;
 }
@@ -1829,7 +1829,7 @@ static void paint_item(FmDesktop* self, FmDesktopItem* item, cairo_t* cr, GdkRec
 
     /* FIXME: do we need to cache this? */
     text_x = item->area.x + (self->cell_w - self->text_w)/2 + 2;
-    text_y = item->icon_rect.y + item->icon_rect.height + 2;
+    text_y = item->text_rect.y + 2;
 
     if(item->is_selected || item == self->drop_hilight) /* draw background for text label */
     {
