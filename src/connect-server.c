@@ -56,11 +56,6 @@ static void on_response(GtkDialog *dialog, gint resp, ConnectDlg *dlg)
     {
         /* make an URI from the data */
         str = g_string_new(scheme);
-        g_free(scheme);
-        g_string_append(str, "://");
-        if (gtk_toggle_button_get_active(dlg->user_user))
-            g_string_append_printf(str, "%s@", gtk_entry_get_text(dlg->login_entry));
-        g_string_append(str, gtk_entry_get_text(dlg->server_host));
         if (strcmp(scheme, "sftp") == 0)
             def_port = 22;
         else if (strcmp(scheme, "ftp") == 0)
@@ -69,6 +64,11 @@ static void on_response(GtkDialog *dialog, gint resp, ConnectDlg *dlg)
             def_port = 80;
         else
             def_port = -1;
+        g_free(scheme);
+        g_string_append(str, "://");
+        if (gtk_toggle_button_get_active(dlg->user_user))
+            g_string_append_printf(str, "%s@", gtk_entry_get_text(dlg->login_entry));
+        g_string_append(str, gtk_entry_get_text(dlg->server_host));
         used_port = (int)gtk_spin_button_get_value(dlg->server_port);
         if (def_port != used_port)
             g_string_append_printf(str, ":%d", used_port);
