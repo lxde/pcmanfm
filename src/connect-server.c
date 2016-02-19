@@ -3,7 +3,7 @@
  *
  *      This file is a part of the PCManFM project.
  *
- *      Copyright 2013-2014 Andriy Grytsenko (LStranger) <andrej@rep.kiev.ua>
+ *      Copyright 2013-2016 Andriy Grytsenko (LStranger) <andrej@rep.kiev.ua>
  *
  *      This program is free software; you can redistribute it and/or modify
  *      it under the terms of the GNU General Public License as published by
@@ -191,6 +191,26 @@ static void on_user_type(GtkToggleButton *user_anonymous, ConnectDlg *dlg)
     gtk_widget_set_sensitive(dlg->ok, ready);
 }
 
+static void on_login_entry(GtkEditable *editable, ConnectDlg *dlg)
+{
+    const char *text = gtk_entry_get_text(GTK_ENTRY(editable));
+    gboolean ready;
+
+    /* disable OK if entry is empty */
+    if (!text || !text[0])
+        ready = FALSE;
+    /* disable OK if type not selected */
+    else if (gtk_combo_box_get_active(dlg->server_type) == -1)
+        ready = FALSE;
+    /* enable OK if server host isn't empty */
+    else
+    {
+        text = gtk_entry_get_text(dlg->server_host);
+        ready = (text && text[0] != '\0');
+    }
+    gtk_widget_set_sensitive(dlg->ok, ready);
+}
+
 void open_connect_dialog(GtkWindow *parent)
 {
     GtkBuilder *builder = gtk_builder_new();
@@ -211,6 +231,7 @@ void open_connect_dialog(GtkWindow *parent)
     g_signal_connect(dlg->user_anonymous, "toggled", G_CALLBACK(on_user_type), dlg);
     dlg->user_user = GTK_TOGGLE_BUTTON(gtk_builder_get_object(builder, "user_user"));
     dlg->login_entry = GTK_ENTRY(gtk_builder_get_object(builder, "login_entry"));
+    g_signal_connect(dlg->login_entry, "changed", G_CALLBACK(on_login_entry), dlg);
     g_object_unref(builder);
 
     pcmanfm_ref();
