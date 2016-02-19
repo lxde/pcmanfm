@@ -32,7 +32,8 @@
 * Fixed possible memory corruption in the Connect to Server... dialog.
 
 * Support explicit mention of scheme in the Server line of the Connect to
-    Server... dialog, not duplicate it if it's present.
+    Server... dialog, not duplicate it if it's present. That includes the
+    https:// to fix support for secure WebDAV access as well.
 
 
 Changes on 1.2.3 since 1.2.2:

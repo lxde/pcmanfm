@@ -71,12 +71,13 @@ static void on_response(GtkDialog *dialog, gint resp, ConnectDlg *dlg)
         if (tmp != NULL)
         {
             /* support secure webdav here, see SF #992 */
-            if (def_port == 80 && g_str_has_prefix(text, "https"))
-            {
-                if (gtk_spin_button_get_value(dlg->server_port) != 80.0)
-                    def_port = 443;
-                g_string_assign(str, "https");
-            }
+            if (def_port == 80)
+                if (g_str_has_prefix(text, "https:") || g_str_has_prefix(text, "davs:"))
+                {
+                    if (gtk_spin_button_get_value(dlg->server_port) != 80.0)
+                        def_port = 443;
+                    g_string_assign(str, "davs");
+                }
             text = tmp + 3; /* after :// */
         }
         g_string_append(str, "://");
