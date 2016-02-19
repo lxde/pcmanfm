@@ -46,7 +46,7 @@ static void on_response(GtkDialog *dialog, gint resp, ConnectDlg *dlg)
     GString *str;
     GtkTreeIter iter;
     char *scheme = NULL;
-    const char *text;
+    const char *text, *tmp;
     FmPath *path;
     int def_port, used_port;
 
@@ -65,10 +65,24 @@ static void on_response(GtkDialog *dialog, gint resp, ConnectDlg *dlg)
         else
             def_port = -1;
         g_free(scheme);
+        /* let user explicitly enter scheme in the server field */
+        text = gtk_entry_get_text(dlg->server_host);
+        tmp = g_strstr_len(text, -1, "://");
+        if (tmp != NULL)
+        {
+            /* support secure webdav here, see SF #992 */
+            if (def_port == 80 && g_str_has_prefix(text, "https"))
+            {
+                if (gtk_spin_button_get_value(dlg->server_port) != 80.0)
+                    def_port = 443;
+                g_string_assign(str, "https");
+            }
+            text = tmp + 3; /* after :// */
+        }
         g_string_append(str, "://");
         if (gtk_toggle_button_get_active(dlg->user_user))
             g_string_append_printf(str, "%s@", gtk_entry_get_text(dlg->login_entry));
-        g_string_append(str, gtk_entry_get_text(dlg->server_host));
+        g_string_append(str, text);
         used_port = (int)gtk_spin_button_get_value(dlg->server_port);
         if (def_port != used_port)
             g_string_append_printf(str, ":%d", used_port);
