@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm.master\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-01-22 00:33+0200\n"
-"PO-Revision-Date: 2014-08-29 14:44+0000\n"
+"PO-Revision-Date: 2015-07-20 14:01+0000\n"
 "Last-Translator: Seong-ho Cho <darkcircle.0426@gmail.com>\n"
 "Language-Team: Seong-ho Cho <darkcircle.0426@gmail.com>\n"
 "Language: ko\n"
@@ -15,10 +15,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Pootle 2.7.0-alpha1\n"
-"X-POOTLE-MTIME: 1409323443.000000\n"
-"X-Pootle-Path: /ko/pcmanfm/po/ko.po\n"
-"X-Pootle-Revision: 0\n"
+"X-Generator: Pootle 2.7\n"
+"X-POOTLE-MTIME: 1437400909.000000\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2014"
@@ -1179,7 +1177,7 @@ msgstr "N번 페이지에 데스크톱 기본 설정 대화상자 열기"
 
 #: ../src/pcmanfm.c:90
 msgid "N"
-msgstr "<N>"
+msgstr "N"
 
 #: ../src/pcmanfm.c:91
 msgid "Open new window"
@@ -1234,7 +1232,7 @@ msgstr[0] "%d개 항목"
 #, c-format
 msgid " (%d hidden)"
 msgid_plural " (%d hidden)"
-msgstr[0] "(%d개 숨김)"
+msgstr[0] " (%d개 숨김) (%d개 숨김)"
 
 #: ../src/pref.c:514
 msgid "Add to Modules Blacklist"
