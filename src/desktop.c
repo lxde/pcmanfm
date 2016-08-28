@@ -4887,8 +4887,6 @@ static void fm_desktop_destroy(GtkObject *object)
     }
 
 #if GTK_CHECK_VERSION(3, 0, 0)
-    g_object_unref(self->css);
-
     GTK_WIDGET_CLASS(fm_desktop_parent_class)->destroy(object);
 #else
     GTK_OBJECT_CLASS(fm_desktop_parent_class)->destroy(object);
