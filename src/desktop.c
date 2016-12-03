@@ -3374,8 +3374,14 @@ static gboolean on_button_press(GtkWidget* w, GdkEventButton* evt)
         /* FIXME: do [un]selection on button release */
         if(! (evt->state & (GDK_SHIFT_MASK | GDK_CONTROL_MASK)))
         {
+            if (clicked_item == NULL)
+            {
+                if (evt->button == 1)
+                    /* SF bug #999: unselect all only on left button */
+                    _unselect_all(FM_FOLDER_VIEW(self));
+            }
             /* don't cancel selection if clicking on selected items */
-            if(!((evt->button == 1 || evt->button == 3) && clicked_item && clicked_item->is_selected))
+            else if (!((evt->button == 1 || evt->button == 3) && clicked_item->is_selected))
                 _unselect_all(FM_FOLDER_VIEW(self));
         }
 
