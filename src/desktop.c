@@ -2702,6 +2702,7 @@ static void fm_desktop_update_item_popup(FmFolderView* fv, GtkWindow* window,
     GList* sel_items, *l;
     GtkAction* act;
     gboolean all_fixed = TRUE, has_fixed = FALSE;
+    gboolean all_native = TRUE;
 #if FM_CHECK_VERSION(1, 2, 0)
     gboolean has_extra = FALSE, has_mount = FALSE;
 #endif
@@ -2714,6 +2715,8 @@ static void fm_desktop_update_item_popup(FmFolderView* fv, GtkWindow* window,
             has_fixed = TRUE;
         else
             all_fixed = FALSE;
+        if (!pcmanfm_can_open_path_in_terminal(fm_file_info_get_path(item->fi)))
+            all_native = FALSE;
 #if FM_CHECK_VERSION(1, 2, 0)
         if (item->is_special)
             has_extra = TRUE;
@@ -2750,6 +2753,10 @@ static void fm_desktop_update_item_popup(FmFolderView* fv, GtkWindow* window,
             gtk_action_set_visible(gtk_action_group_get_action(act_grp, "Disable"), FALSE);
     }
 #endif
+
+    /* disable terminal for non-native folders */
+    if (!all_native)
+        gtk_action_set_visible(gtk_action_group_get_action(act_grp, "Term"), FALSE);
 
     /* merge desktop icon specific items */
     gtk_action_group_add_actions(act_grp, desktop_icon_actions,
