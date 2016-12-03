@@ -2735,13 +2735,24 @@ static void fm_desktop_update_item_popup(FmFolderView* fv, GtkWindow* window,
         gtk_action_group_add_actions(act_grp, folder_menu_actions,
                                      G_N_ELEMENTS(folder_menu_actions), fv);
         gtk_ui_manager_add_ui_from_string(ui, folder_menu_xml, -1, NULL);
+        /* disable terminal for non-native folders */
+        act = gtk_action_group_get_action(act_grp, "Term");
+        gtk_action_set_visible(act, all_native);
     }
 #if FM_CHECK_VERSION(1, 2, 0)
-    if (has_extra && (has_mount || fm_file_info_list_get_length(files) == 1))
+    if (has_extra)
     {
-        gtk_action_group_add_actions(act_grp, extra_item_menu_actions,
-                                     G_N_ELEMENTS(extra_item_menu_actions), fv);
-        gtk_ui_manager_add_ui_from_string(ui, extra_item_menu_xml, -1, NULL);
+        if (fm_file_info_list_get_length(files) == 1)
+        {
+            gtk_action_group_add_actions(act_grp, extra_item_menu_actions,
+                                         G_N_ELEMENTS(extra_item_menu_actions), fv);
+            gtk_ui_manager_add_ui_from_string(ui, extra_item_menu_xml, -1, NULL);
+            if (has_mount)
+            {
+                act = gtk_action_group_get_action(act_grp, "Disable");
+                gtk_action_set_visible(act, FALSE);
+            }
+        }
         /* some menu items should be never available for extra items */
         act = gtk_action_group_get_action(act_grp, "Cut");
         gtk_action_set_visible(act, FALSE);
@@ -2749,14 +2760,8 @@ static void fm_desktop_update_item_popup(FmFolderView* fv, GtkWindow* window,
         gtk_action_set_visible(act, FALSE);
         act = gtk_action_group_get_action(act_grp, "Rename");
         gtk_action_set_visible(act, FALSE);
-        if (has_mount)
-            gtk_action_set_visible(gtk_action_group_get_action(act_grp, "Disable"), FALSE);
     }
 #endif
-
-    /* disable terminal for non-native folders */
-    if (!all_native)
-        gtk_action_set_visible(gtk_action_group_get_action(act_grp, "Term"), FALSE);
 
     /* merge desktop icon specific items */
     gtk_action_group_add_actions(act_grp, desktop_icon_actions,
