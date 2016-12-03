@@ -147,7 +147,7 @@ void fm_tab_page_set_filter_pattern(FmTabPage *page, const char *pattern);
 #if FM_CHECK_VERSION(1, 2, 0)
 #include "pcmanfm-modules.h"
 
-GList *_tab_page_modules; /* in pcmanfm.c */
+extern GList *_tab_page_modules; /* in pcmanfm.c */
 #endif
 
 G_END_DECLS
