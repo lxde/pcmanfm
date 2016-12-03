@@ -1,3 +1,8 @@
+* Removed options to Cut, Remove and Rename from context menu on mounted
+    drive on the desktop, user might accidentally recursively remove its
+    contents.
+
+
 Changes on 1.2.4 since 1.2.3:
 
 * Workarounded a bug in gtk_file_chooser_set_file() function (patch from

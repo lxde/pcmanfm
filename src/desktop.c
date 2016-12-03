@@ -150,6 +150,28 @@ static void on_disable(GtkAction* act, gpointer user_data);
 /* insert GtkUIManager XML definitions */
 #include "desktop-ui.c"
 
+#if FM_CHECK_VERSION(1, 2, 0)
+/* ---------------------------------------------------------------------
+    mounts handlers */
+
+#if FM_CHECK_VERSION(1, 2, 0)
+typedef struct
+{
+    GMount *mount; /* NULL for non-mounts */
+    FmPath *path;
+    FmFileInfo *fi;
+    FmFileInfoJob *job;
+} FmDesktopExtraItem;
+
+static FmDesktopExtraItem *documents = NULL;
+//static FmDesktopExtraItem *computer = NULL;
+static FmDesktopExtraItem *trash_can = NULL;
+//static FmDesktopExtraItem *applications = NULL;
+
+/* under GDK lock */
+static GSList *mounts = NULL;
+#endif
+
 
 /* ---------------------------------------------------------------------
     Items management and common functions */
@@ -173,9 +195,24 @@ static char* get_config_file(FmDesktop* desktop, gboolean create_dir)
 static inline FmDesktopItem* desktop_item_new(FmFolderModel* model, GtkTreeIter* it)
 {
     FmDesktopItem* item = g_slice_new0(FmDesktopItem);
+#if FM_CHECK_VERSION(1, 2, 0)
+    GSList *sl;
+#endif
     fm_folder_model_set_item_userdata(model, it, item);
     gtk_tree_model_get(GTK_TREE_MODEL(model), it, FM_FOLDER_MODEL_COL_INFO, &item->fi, -1);
     fm_file_info_ref(item->fi);
+#if FM_CHECK_VERSION(1, 2, 0)
+    if ((trash_can && trash_can->fi == item->fi) ||
+        (documents && documents->fi == item->fi))
+        item->is_special = TRUE;
+    else for (sl = mounts; sl; sl = sl->next)
+        if (((FmDesktopExtraItem *)sl->data)->fi == item->fi)
+        {
+            item->is_special = TRUE;
+            item->is_mount = TRUE;
+            break;
+        }
+#endif
     return item;
 }
 
@@ -494,26 +531,7 @@ static void copy_desktop_config(FmDesktopConfig *dst, FmDesktopConfig *src)
 
 }
 
-#if FM_CHECK_VERSION(1, 2, 0)
-/* ---------------------------------------------------------------------
-    mounts handlers */
-
-typedef struct
-{
-    GMount *mount; /* NULL for non-mounts */
-    FmPath *path;
-    FmFileInfo *fi;
-    FmFileInfoJob *job;
-} FmDesktopExtraItem;
-
-static FmDesktopExtraItem *documents = NULL;
-//static FmDesktopExtraItem *computer = NULL;
-static FmDesktopExtraItem *trash_can = NULL;
-//static FmDesktopExtraItem *applications = NULL;
-
 static GVolumeMonitor *vol_mon = NULL;
-/* under GDK lock */
-static GSList *mounts = NULL;
 
 static void _free_extra_item(FmDesktopExtraItem *item);
 
@@ -2684,6 +2702,9 @@ static void fm_desktop_update_item_popup(FmFolderView* fv, GtkWindow* window,
     GList* sel_items, *l;
     GtkAction* act;
     gboolean all_fixed = TRUE, has_fixed = FALSE;
+#if FM_CHECK_VERSION(1, 2, 0)
+    gboolean has_extra = FALSE, has_mount = FALSE;
+#endif
 
     sel_items = get_selected_items(FM_DESKTOP(fv), NULL);
     for(l = sel_items; l; l=l->next)
@@ -2693,6 +2714,12 @@ static void fm_desktop_update_item_popup(FmFolderView* fv, GtkWindow* window,
             has_fixed = TRUE;
         else
             all_fixed = FALSE;
+#if FM_CHECK_VERSION(1, 2, 0)
+        if (item->is_special)
+            has_extra = TRUE;
+        if (item->is_mount)
+            has_mount = TRUE;
+#endif
     }
     g_list_free(sel_items);
 
@@ -2707,9 +2734,7 @@ static void fm_desktop_update_item_popup(FmFolderView* fv, GtkWindow* window,
         gtk_ui_manager_add_ui_from_string(ui, folder_menu_xml, -1, NULL);
     }
 #if FM_CHECK_VERSION(1, 2, 0)
-    if (fm_file_info_list_get_length(files) == 1 &&
-        ((trash_can && trash_can->fi == fi) ||
-         (documents && documents->fi == fi)))
+    if (has_extra && (has_mount || fm_file_info_list_get_length(files) == 1))
     {
         gtk_action_group_add_actions(act_grp, extra_item_menu_actions,
                                      G_N_ELEMENTS(extra_item_menu_actions), fv);
@@ -2721,6 +2746,8 @@ static void fm_desktop_update_item_popup(FmFolderView* fv, GtkWindow* window,
         gtk_action_set_visible(act, FALSE);
         act = gtk_action_group_get_action(act_grp, "Rename");
         gtk_action_set_visible(act, FALSE);
+        if (has_mount)
+            gtk_action_set_visible(gtk_action_group_get_action(act_grp, "Disable"), FALSE);
     }
 #endif
 
