@@ -1739,17 +1739,18 @@ _next_position:
                 item->area.x = self->working_area.x + x;
                 item->area.y = self->working_area.y + y;
                 calc_item_size(self, item, icon);
-                while (self->working_area.y + y < item->area.y + item->area.height)
-                    y += self->cell_h;
-                if(y > bottom)
+                /* check if item does not fit into space that left */
+                if (item->area.y + item->area.height > bottom && y > self->ymargin)
                 {
                     x += self->cell_w;
                     y = self->ymargin;
+                    goto _next_position;
                 }
+                /* prepare position for next item */
+                while (self->working_area.y + y < item->area.y + item->area.height)
+                    y += self->cell_h;
                 /* check if this position is occupied by a fixed item */
-                /* or its height does not fit into space that left */
-                if(item->area.y + item->area.height > bottom ||
-                   is_pos_occupied(self, item))
+                if(is_pos_occupied(self, item))
                     goto _next_position;
             }
             if(icon)
@@ -1773,17 +1774,18 @@ _next_position_rtl:
                 item->area.x = self->working_area.x + x;
                 item->area.y = self->working_area.y + y;
                 calc_item_size(self, item, icon);
-                while (self->working_area.y + y < item->area.y + item->area.height)
-                    y += self->cell_h;
-                if(y > bottom)
+                /* check if item does not fit into space that left */
+                if (item->area.y + item->area.height > bottom && y > self->ymargin)
                 {
                     x -= self->cell_w;
                     y = self->ymargin;
+                    goto _next_position_rtl;
                 }
+                /* prepare position for next item */
+                while (self->working_area.y + y < item->area.y + item->area.height)
+                    y += self->cell_h;
                 /* check if this position is occupied by a fixed item */
-                /* or its height does not fit into space that left */
-                if(item->area.y + item->area.height > bottom ||
-                   is_pos_occupied(self, item))
+                if(is_pos_occupied(self, item))
                     goto _next_position_rtl;
             }
             if(icon)
