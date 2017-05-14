@@ -1,3 +1,7 @@
+* Fixed potential access violation, use runtime user dir instead of tmp dir
+    for single instance socket.
+
+
 Changes on 1.2.5 since 1.2.4:
 
 * Removed options to Cut, Remove and Rename from context menu on mounted

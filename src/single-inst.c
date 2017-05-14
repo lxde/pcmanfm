@@ -2,7 +2,7 @@
  *      single-inst.c: simple IPC mechanism for single instance app
  *
  *      Copyright 2010 Hong Jen Yee (PCMan) <pcman.tw@gmail.com>
- *      Copyright 2012 Andriy Grytsenko (LStranger) <andrej@rep.kiev.ua>
+ *      Copyright 2012-2017 Andriy Grytsenko (LStranger) <andrej@rep.kiev.ua>
  *
  *      This program is free software; you can redistribute it and/or modify
  *      it under the terms of the GNU General Public License as published by
@@ -404,11 +404,16 @@ static void get_socket_name(SingleInstData* data, char* buf, int len)
     }
     else
         dpynum = 0;
+#if GLIB_CHECK_VERSION(2, 28, 0)
+    g_snprintf(buf, len, "%s/%s-socket-%s-%d", g_get_user_runtime_dir(),
+               data->prog_name, host ? host : "", dpynum);
+#else
     g_snprintf(buf, len, "%s/.%s-socket-%s-%d-%s",
                 g_get_tmp_dir(),
                 data->prog_name,
                 host ? host : "",
                 dpynum,
                 g_get_user_name());
+#endif
 }
 
