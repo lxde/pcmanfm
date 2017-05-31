@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-01-22 00:33+0200\n"
-"PO-Revision-Date: 2015-06-09 14:55+0000\n"
+"PO-Revision-Date: 2017-05-30 16:42+0000\n"
 "Last-Translator: Davidmp <rbndavid@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: ca\n"
@@ -15,8 +15,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.7\n"
-"X-POOTLE-MTIME: 1433861712.000000\n"
+"X-Generator: Pootle 2.8\n"
+"X-POOTLE-MTIME: 1496162570.953763\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2014"
@@ -106,17 +106,17 @@ msgstr "Mostra els menús dels _gestors de finestres en fer clic a l'escriptori"
 
 #: ../data/ui/desktop-pref.glade.h:20
 msgid "_Use desktop as a folder (show icons on it) by path:"
-msgstr ""
+msgstr "_Usa l'escriptori com una carpeta (mostra-hi icones) per camí:"
 
 #: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:84
 msgctxt "Use path for some folder: ..."
 msgid "Default"
-msgstr ""
+msgstr "Per defecte"
 
 #: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:85
 msgctxt "Use path for some folder: ..."
 msgid "Custom:"
-msgstr ""
+msgstr "Personalitzat:"
 
 #: ../data/ui/desktop-pref.glade.h:23
 msgid "Select a Desktop Folder"
@@ -144,7 +144,7 @@ msgstr "Ajusta a la pantalla"
 
 #: ../data/ui/desktop-pref.glade.h:29
 msgid "Center unscaled image on the monitor"
-msgstr ""
+msgstr "Centra la imatge a la pantalla sense escalar"
 
 # Entenc que és el que habitualment s'anomena «mosaic»
 #: ../data/ui/desktop-pref.glade.h:30
@@ -199,6 +199,8 @@ msgstr ""
 #: ../data/ui/pref.glade.h:10
 msgid "_Erase files on removable media instead of \"trash can\" creation"
 msgstr ""
+"_Elimina els fitxers dels mitjans extraïbles en comptes d'enviar-los a la "
+"paperera"
 
 #: ../data/ui/pref.glade.h:11
 msgid "Confi_rm before moving files into \"trash can\""
@@ -206,7 +208,7 @@ msgstr "Confi_rmeu el moviment dels fixers esborrats cap a la «paperera» abans
 
 #: ../data/ui/pref.glade.h:12
 msgid "Don't ask options on _launch executable file"
-msgstr ""
+msgstr "No demanis opcions en _obrir fitxers executables"
 
 #: ../data/ui/pref.glade.h:13
 msgid "_Bookmarks:"
@@ -214,11 +216,13 @@ msgstr "A_dreces d'interès:"
 
 #: ../data/ui/pref.glade.h:14
 msgid "Defaul_t drop action:"
-msgstr ""
+msgstr "Acció per defec_te en deixar anar:"
 
 #: ../data/ui/pref.glade.h:15
 msgid "\"_Smart shortcut\" auto-action on drop to Desktop folder"
 msgstr ""
+"Acció automàtica «Drecera _intel·ligent» en deixar anar a la carpeta "
+"Escriptori"
 
 #: ../data/ui/pref.glade.h:16
 msgid ""
@@ -228,14 +232,20 @@ msgid ""
 "- other files (e.g. on removable media) will be copied\n"
 "- for some external URI a shortcut will be created"
 msgstr ""
+"Si s'activa, l'acción automàtica en deixar anar un fitxer a l'escriptori "
+"serà la següent:\n"
+"- per als fitxers a la carpeta personal es crearà un enllaç simbòlic\n"
+"- els fitxers del mateix sistema de fitxers es desplaçaran\n"
+"- altres fitxers (p.ex., en mitjans extraïbles) es copiaran\n"
+"- es crearà una drecera per a alguns URI externs"
 
 #: ../data/ui/pref.glade.h:21
 msgid "_Unfold tab when files are dragged onto tab button"
-msgstr ""
+msgstr "_Desplega la pestanya quan s'arrosseguin fitxers a un botó de pestanya"
 
 #: ../data/ui/pref.glade.h:22
 msgid "_Focus previous folder after coming to its parent"
-msgstr ""
+msgstr "Posa el _focus a la carpeta anterior en tornar a la carpeta pare"
 
 #: ../data/ui/pref.glade.h:23
 msgid "<b>Default View</b>"
@@ -246,7 +256,6 @@ msgid "Vie_w Mode:"
 msgstr "Mode de _visualització:"
 
 #: ../data/ui/pref.glade.h:25
-#, fuzzy
 msgid "_General"
 msgstr "_General"
 
@@ -292,7 +301,7 @@ msgstr "Utilitza pr_efixos decimals del SI en comptes de prefixos binaris IEC"
 
 #: ../data/ui/pref.glade.h:36
 msgid "Treat backup files as _hidden"
-msgstr ""
+msgstr "Tracta els fitxers de còpia de seguretat com a oc_ults"
 
 #: ../data/ui/pref.glade.h:37
 msgid "Al_ways show full file names"
@@ -300,12 +309,11 @@ msgstr "Mostra _sempre el nom complet dels fitxers"
 
 #: ../data/ui/pref.glade.h:38
 msgid "Show icons of hidden _files shadowed"
-msgstr ""
+msgstr "Mostra les icones dels fitxers ocults obrejades"
 
 #: ../data/ui/pref.glade.h:39
-#, fuzzy
 msgid "_Display"
-msgstr "_Mostra"
+msgstr "_Visualització"
 
 #: ../data/ui/pref.glade.h:40
 msgid "Hid_e 'Close tab' buttons"
@@ -317,16 +325,16 @@ msgstr "Mostra sempre la _barra de pestanyes"
 
 #: ../data/ui/pref.glade.h:42
 msgid "_Maximum width of tab label:"
-msgstr ""
+msgstr "_Amplada màxima d'etiqueta de pestanya:"
 
 #. Use genitive case here, context is: width is XXX characters
 #: ../data/ui/pref.glade.h:44
 msgid "characters"
-msgstr ""
+msgstr "caràcters"
 
 #: ../data/ui/pref.glade.h:45
 msgid "<b>Directories Tree</b>"
-msgstr ""
+msgstr "<b>Arbre de directoris</b>"
 
 #: ../data/ui/pref.glade.h:46
 msgid "Hide e_xpander on empty or locked folder"
