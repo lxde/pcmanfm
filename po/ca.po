@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-01-22 00:33+0200\n"
-"PO-Revision-Date: 2017-05-30 16:42+0000\n"
+"PO-Revision-Date: 2017-06-01 16:13+0000\n"
 "Last-Translator: Davidmp <rbndavid@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: ca\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.8\n"
-"X-POOTLE-MTIME: 1496162570.953763\n"
+"X-POOTLE-MTIME: 1496333599.288669\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2014"
@@ -338,12 +338,11 @@ msgstr "<b>Arbre de directoris</b>"
 
 #: ../data/ui/pref.glade.h:46
 msgid "Hide e_xpander on empty or locked folder"
-msgstr ""
+msgstr "Amaga l'e_xpansió en carpetes buides o bloquejades"
 
 #: ../data/ui/pref.glade.h:47
-#, fuzzy
 msgid "<b>Show in Places:</b>"
-msgstr "<b>Mostra només les icones</b>"
+msgstr "<b>Mostra a Llocs:</b>"
 
 #: ../data/ui/pref.glade.h:48
 msgid "_Home Folder"
@@ -359,7 +358,7 @@ msgstr "_Paperera"
 
 #: ../data/ui/pref.glade.h:51
 msgid "_Filesystem Root"
-msgstr ""
+msgstr "Sistema de _fitxers d'arrel"
 
 #: ../data/ui/pref.glade.h:52
 msgid "App_lications"
@@ -367,7 +366,7 @@ msgstr "_Aplicacions"
 
 #: ../data/ui/pref.glade.h:53 ../src/main-win-ui.c:239
 msgid "Dev_ices"
-msgstr ""
+msgstr "D_ispositius"
 
 #: ../data/ui/pref.glade.h:54
 msgid "_Network"
@@ -375,7 +374,7 @@ msgstr "_Xarxa"
 
 #: ../data/ui/pref.glade.h:55
 msgid "_Layout"
-msgstr ""
+msgstr "_Disposició"
 
 #: ../data/ui/pref.glade.h:56
 msgid "<b>Auto-mount</b>"
@@ -402,16 +401,17 @@ msgstr "_No mostris les opcions disponibles per a aquests tipus de dispositius:"
 
 #: ../data/ui/pref.glade.h:61
 msgid "_Remove selected"
-msgstr ""
+msgstr "_Elimina la selecció"
 
 #: ../data/ui/pref.glade.h:62
 msgid "_Open mounted removable media in new tab instead of new window"
 msgstr ""
+"_Obre els mitjans extraïbles muntats en una pestanya nova en lloc d'una "
+"finestra nova"
 
 #: ../data/ui/pref.glade.h:63
-#, fuzzy
 msgid "When removable medium unmounted:"
-msgstr "El dispositiu extraïble s'ha inserit"
+msgstr "Quan es desmunta un mitjà extraïble:"
 
 #: ../data/ui/pref.glade.h:64
 msgid "Clos_e tab containing removable medium"
@@ -419,12 +419,11 @@ msgstr "_Tanca la pestanya que contingui dispositius extraïbles"
 
 #: ../data/ui/pref.glade.h:65
 msgid "Change folder in the tab to _Home Folder"
-msgstr ""
+msgstr "Canvia la carpeta de la pestanya a la carpeta _personal"
 
 #: ../data/ui/pref.glade.h:66
-#, fuzzy
 msgid "_Volume Management"
-msgstr "Gestió del _Volum"
+msgstr "Gestió de volums"
 
 #: ../data/ui/pref.glade.h:67
 msgid "<b>Programs</b>"
@@ -433,6 +432,8 @@ msgstr "<b>Programes</b>"
 #: ../data/ui/pref.glade.h:68
 msgid "<i>Commands below may include extra options if necessary.</i>"
 msgstr ""
+"<i>Les ordres que hi ha a continuació poden incloure opcions extres si "
+"calen.</i>"
 
 #: ../data/ui/pref.glade.h:69
 msgid "_Terminal emulator:"
@@ -445,7 +446,7 @@ msgstr "Ordre de _canvi d'usuari:"
 #. Application command to format some drive
 #: ../data/ui/pref.glade.h:72
 msgid "_Format command:"
-msgstr ""
+msgstr "Odre de _formatació:"
 
 #: ../data/ui/pref.glade.h:73
 msgid "A_rchiver integration:"
