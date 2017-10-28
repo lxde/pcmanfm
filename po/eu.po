@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-01-22 00:33+0200\n"
-"PO-Revision-Date: 2015-05-03 16:40+0000\n"
+"PO-Revision-Date: 2017-10-11 19:43+0000\n"
 "Last-Translator: Asier Iturralde Sarasola <asier.iturralde@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: eu\n"
@@ -15,8 +15,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.7\n"
-"X-POOTLE-MTIME: 1430671201.000000\n"
+"X-Generator: Pootle 2.8\n"
+"X-POOTLE-MTIME: 1507750990.726270\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2016"
@@ -107,6 +107,8 @@ msgstr "_Erakutsi leiho-kudeatzaileek hornitutako menuak mahaigaina klikatzean"
 #: ../data/ui/desktop-pref.glade.h:20
 msgid "_Use desktop as a folder (show icons on it) by path:"
 msgstr ""
+"_Erabili mahaigaina karpeta bezala (erakutsi ikonoak bertan) bidearen "
+"arabera:"
 
 #: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:84
 msgctxt "Use path for some folder: ..."
@@ -218,6 +220,8 @@ msgstr "Ekintza _lehenetsia jaregitean:"
 #: ../data/ui/pref.glade.h:15
 msgid "\"_Smart shortcut\" auto-action on drop to Desktop folder"
 msgstr ""
+"\"Lasterbide _adimenduna\" ekintza automatikoa Mahaigaina karpetara "
+"jaregitean"
 
 #: ../data/ui/pref.glade.h:16
 msgid ""
@@ -227,6 +231,11 @@ msgid ""
 "- other files (e.g. on removable media) will be copied\n"
 "- for some external URI a shortcut will be created"
 msgstr ""
+"Gaituz gero fitxategiak Mahaigaina karpetara jaregitean hau gertatuko da:\n"
+"- Etxea karpetan dauden fitxategien esteka sinbolikoa sortuko da\n"
+"- Fitxategi sistema berean dauden fitxategiak lekuz aldatuko dira\n"
+"- Beste fitxategiak (adibidez, disko aldagarri batekoak) kopiatuko dira\n"
+"- Kanpoko URIen lasterbidea sortuko da"
 
 #: ../data/ui/pref.glade.h:21
 msgid "_Unfold tab when files are dragged onto tab button"
@@ -234,7 +243,7 @@ msgstr "_Zabaldu fitxa fitxategiak fitxaren botoira arrastatzean"
 
 #: ../data/ui/pref.glade.h:22
 msgid "_Focus previous folder after coming to its parent"
-msgstr ""
+msgstr "_Fokuratu aurreko karpeta bere gurasora joan ondoren"
 
 #: ../data/ui/pref.glade.h:23
 msgid "<b>Default View</b>"
@@ -431,7 +440,7 @@ msgstr "Erabiltzailea _aldatzeko komandoa:"
 #. Application command to format some drive
 #: ../data/ui/pref.glade.h:72
 msgid "_Format command:"
-msgstr ""
+msgstr "_Formateatzeko komandoa:"
 
 #: ../data/ui/pref.glade.h:73
 msgid "A_rchiver integration:"
@@ -474,11 +483,11 @@ msgstr ""
 
 #: ../data/ui/pref.glade.h:82
 msgid "D_efer test for content type on folder loading"
-msgstr ""
+msgstr "_Atzeratu eduki motaren testa karpeta kargatzean"
 
 #: ../data/ui/pref.glade.h:83
 msgid "Use path for \"Home Folder\" button:"
-msgstr ""
+msgstr "Erabili bide hau \"Etxea karpeta\" botoian:"
 
 #: ../data/ui/pref.glade.h:86
 msgid "_Use current"
@@ -554,7 +563,7 @@ msgstr "Mesedez hautatu gauzatu nahi duzun ekintza:"
 
 #: ../data/ui/autorun.glade.h:6
 msgid "_Always perform this action on this media type"
-msgstr ""
+msgstr "_Beti burutu ekintza hau multimedia mota honetan"
 
 #: ../data/ui/connect.glade.h:1
 msgid "Connect to remote server"
@@ -776,7 +785,7 @@ msgstr "_Ordenatu fitxategiak"
 
 #: ../src/main-win-ui.c:222
 msgid "Zoom O_ut"
-msgstr ""
+msgstr "_Txikiagotu"
 
 #: ../src/main-win-ui.c:225
 msgid "Fil_ter..."
@@ -852,7 +861,7 @@ msgstr "_Aplikazioak"
 
 #: ../src/main-win-ui.c:238
 msgid "Go to root of applications menu folder"
-msgstr ""
+msgstr "Joan aplikazioen menuko karpetaren errora"
 
 #: ../src/main-win-ui.c:239
 msgid "Go to list of devices connected to the computer"
@@ -876,11 +885,11 @@ msgstr "_Konektatu zerbitzarira..."
 
 #: ../src/main-win-ui.c:242
 msgid "Open a window to choose remote folder location"
-msgstr ""
+msgstr "Ireki leiho bat urruneko karpetaren kokalekua aukeratzeko"
 
 #: ../src/main-win-ui.c:243
 msgid "Go to the path in the location bar"
-msgstr ""
+msgstr "Joan kokaleku-barrako bidera"
 
 #: ../src/main-win-ui.c:244
 msgid "_Bookmarks"
@@ -921,7 +930,7 @@ msgstr "_Fitxategi eta karpetak nahasian"
 
 #: ../src/main-win-ui.c:270
 msgid "_Ignore Name Case"
-msgstr ""
+msgstr "_Ez bereizi maiuskulak eta minuskulak"
 
 #: ../src/main-win-ui.c:272
 msgid "Sho_w Hidden"
@@ -936,6 +945,8 @@ msgstr "Mantendu karpeta honen ezarpenak"
 msgid ""
 "Check to remember view and sort as folder setting rather than global one"
 msgstr ""
+"Hautatu ezarpen orokorraren ordez karpeta honetarako ikusi eta ordenatu "
+"ezarpena gogoratzeko"
 
 #: ../src/main-win-ui.c:277
 msgid "_Show Toolbar"
@@ -1115,7 +1126,7 @@ msgstr "Hautatu iragazkia"
 
 #: ../src/main-win.c:2553
 msgid "Choose a new shell pattern to show files:"
-msgstr ""
+msgstr "Aukeratu fitxategiak erakusteko shell-eko eredu berri bat:"
 
 #. options only acceptable by first pcmanfm instance. These options are not passed through IPC
 #: ../src/pcmanfm.c:78
@@ -1161,14 +1172,12 @@ msgstr "FITXATEGIA"
 
 #. don't translate list of modes in description, please
 #: ../src/pcmanfm.c:89
-#, fuzzy
 msgid ""
 "Set mode of desktop wallpaper. MODE=(color|stretch|fit|crop|center|tile|"
 "screen)"
 msgstr ""
 "Ezarri mahaigaineko horma-paperaren modua. "
-"MODUA=(color|stretch|fit|center|tile) - > "
-"kolorea|egokitu|doitu|zentratu|lauza"
+"MODUA=(color|stretch|fit|center|tile) (kolorea|egokitu|doitu|zentratu|lauza)"
 
 #: ../src/pcmanfm.c:89
 msgid "MODE"
@@ -1246,7 +1255,7 @@ msgstr "Gehitu moduluen zerrenda beltzera"
 
 #: ../src/pref.c:515
 msgid "Enter a blacklisted module mask:"
-msgstr ""
+msgstr "Sartu zerrenda beltzeko modulu maskara bat:"
 
 #: ../src/pref.c:606
 msgid "Add to Modules Whitelist"
@@ -1254,7 +1263,7 @@ msgstr "Gehitu moduluen zerrenda zurira"
 
 #: ../src/pref.c:607
 msgid "Enter a whitelisted module mask:"
-msgstr ""
+msgstr "Sartu zerrenda zuriko modulu maskara bat:"
 
 #: ../data/pcmanfm.desktop.in.h:1
 msgid "File Manager PCManFM"

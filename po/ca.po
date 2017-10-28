@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-01-22 00:33+0200\n"
-"PO-Revision-Date: 2017-06-28 16:08+0000\n"
+"PO-Revision-Date: 2017-09-15 14:18+0000\n"
 "Last-Translator: Davidmp <rbndavid@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: ca\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.8\n"
-"X-POOTLE-MTIME: 1498666134.255197\n"
+"X-POOTLE-MTIME: 1505485101.458276\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2014"
@@ -200,12 +200,11 @@ msgstr ""
 #: ../data/ui/pref.glade.h:10
 msgid "_Erase files on removable media instead of \"trash can\" creation"
 msgstr ""
-"_Elimina els fitxers dels mitjans extraïbles en comptes d'enviar-los a la "
-"paperera"
+"_Elimina els fitxers dels mitjans extraïbles en comptes de crear una paperera"
 
 #: ../data/ui/pref.glade.h:11
 msgid "Confi_rm before moving files into \"trash can\""
-msgstr "Confi_rmeu abans el moviment dels fitxers esborrats cap a la «paperera»"
+msgstr "Confi_rmeu abans el moviment dels fitxers cap a la paperera"
 
 #: ../data/ui/pref.glade.h:12
 msgid "Don't ask options on _launch executable file"
@@ -236,7 +235,7 @@ msgstr ""
 "Si s'activa, l'acció automàtica en deixar anar un fitxer a l'escriptori serà "
 "la següent:\n"
 "- per als fitxers a la carpeta personal es crearà un enllaç simbòlic\n"
-"- els fitxers del mateix sistema de fitxers es desplaçaran\n"
+"- els fitxers del mateix sistema de fitxers es mouran\n"
 "- altres fitxers (p.ex., en mitjans extraïbles) es copiaran\n"
 "- es crearà una drecera per a alguns URI externs"
 
@@ -643,7 +642,7 @@ msgstr "Obre en un termina_l"
 
 #: ../src/desktop-ui.c:68
 msgid "_Remove from Desktop"
-msgstr "Sup_rimeix de l'escriptori"
+msgstr "Elimina de l'esc_riptori"
 
 #: ../src/desktop-ui.c:85
 msgid "Stic_k to Current Position"
@@ -809,7 +808,7 @@ msgstr "Navegació amb el _teclat"
 
 #: ../src/main-win-ui.c:230
 msgid "_Go"
-msgstr "_Ves"
+msgstr "_Ves a..."
 
 #: ../src/main-win-ui.c:231
 msgid "_Previous Folder"
@@ -1062,11 +1061,11 @@ msgstr "Historial"
 
 #: ../src/main-win.c:948
 msgid "You are in super user mode"
-msgstr "Esteu en mode de super usuari"
+msgstr "Esteu en mode de superusuari"
 
 #: ../src/main-win.c:1134
 msgid "Lightweight file manager\n"
-msgstr "Gestor d'arxius lleuger\n"
+msgstr "Gestor de fitxers lleuger\n"
 
 #: ../src/main-win.c:1139
 #, c-format

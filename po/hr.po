@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-01-22 00:33+0200\n"
-"PO-Revision-Date: 2015-04-02 10:35+0000\n"
+"PO-Revision-Date: 2017-09-28 20:53+0000\n"
 "Last-Translator: Ivica Kolić <ikoli@yahoo.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: hr\n"
@@ -17,8 +17,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Pootle 2.7\n"
-"X-POOTLE-MTIME: 1427970942.000000\n"
+"X-Generator: Pootle 2.8\n"
+"X-POOTLE-MTIME: 1506632024.250899\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2016"
@@ -27,7 +27,7 @@ msgstr "Autorska prava (C) 2009 - 2016"
 #. Please replace this line with your own names, one name per line.
 #: ../data/ui/about.glade.in.h:3
 msgid "translator-credits"
-msgstr "Ivica Kolić <ikoli@yahoo.com>"
+msgstr "Ivica Kolić ikoli@yahoo.com"
 
 #: ../data/ui/desktop-pref.glade.h:1 ../src/desktop-ui.c:34
 #: ../data/pcmanfm-desktop-pref.desktop.in.h:1
@@ -111,6 +111,7 @@ msgstr ""
 #: ../data/ui/desktop-pref.glade.h:20
 msgid "_Use desktop as a folder (show icons on it) by path:"
 msgstr ""
+"_Koristi radnu površinu kao mapu ( pokaži ikone na njoj) koristeće putanju:"
 
 #: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:84
 msgctxt "Use path for some folder: ..."
@@ -302,7 +303,7 @@ msgstr "U_vijek pokaži puno ime datoteke"
 
 #: ../data/ui/pref.glade.h:38
 msgid "Show icons of hidden _files shadowed"
-msgstr ""
+msgstr "Pokaži ikone skrivenih _datoteka zasjenjene"
 
 #: ../data/ui/pref.glade.h:39
 msgid "_Display"
@@ -928,7 +929,7 @@ msgstr "Pokaž_i skriveo"
 #. Note to translators: this save is meant for folder's settings such as sort
 #: ../src/main-win-ui.c:274
 msgid "Preserve This Folder's Settings"
-msgstr ""
+msgstr "Zadrži postavke ove mape"
 
 #: ../src/main-win-ui.c:275
 msgid ""
@@ -1009,7 +1010,7 @@ msgstr "Po tipu _datoteke"
 
 #: ../src/main-win-ui.c:312
 msgid "By _Extension"
-msgstr ""
+msgstr "Prema _ekstenziji"
 
 #: ../src/main-win-ui.c:325
 msgid "Places"
@@ -1029,7 +1030,7 @@ msgstr "_Lokacija"
 
 #: ../src/main-win-ui.c:334
 msgid "_Buttons"
-msgstr ""
+msgstr "_Gumbi"
 
 #: ../src/main-win.c:925 ../src/main-win.c:929
 msgid "Show history of visited folders"
