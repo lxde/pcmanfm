@@ -1,6 +1,8 @@
 * Fixed potential access violation, use runtime user dir instead of tmp dir
     for single instance socket.
 
+* Fixed an issue with losing icons on desktop, when file name has a '[' char.
+
 
 Changes on 1.2.5 since 1.2.4:
 
