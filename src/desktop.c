@@ -457,6 +457,7 @@ static void save_item_pos(FmDesktop* desktop)
 static gboolean on_config_save_idle(gpointer _unused)
 {
     int screen;
+    idle_config_save = 0;
 
     if (g_source_is_destroyed(g_main_current_source()))
         return FALSE;
