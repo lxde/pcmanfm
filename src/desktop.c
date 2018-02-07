@@ -5799,6 +5799,55 @@ void fm_desktop_preference(GtkAction *act, FmDesktop *desktop)
 /* ---------------------------------------------------------------------
     Interface functions */
 
+static void fm_desktop_per_monitor_init(gint on_screen, GdkDisplay *dpy, int scr, int monitor, int *n_desktop)
+{
+    GdkScreen* screen = gdk_display_get_screen(dpy, scr);
+
+    gint mon_init = (on_screen < 0 || on_screen == (int)scr) ? (int)monitor : (monitor ? -2 : -1);
+    FmDesktop *desktop = fm_desktop_new(screen, mon_init);
+    GtkWidget *widget = GTK_WIDGET(desktop);
+    FmFolder *desktop_folder;
+
+    desktops[(*n_desktop)++] = desktop;
+    if(mon_init < 0)
+        return;
+    /* realize it: without this, setting wallpaper or font won't work */
+    gtk_widget_realize(widget);
+    /* realizing also loads config */
+    if (desktop->conf.folder)
+    {
+        if (desktop->conf.folder[0])
+            desktop_folder = fm_folder_from_path_name(desktop->conf.folder);
+        else
+            desktop_folder = NULL;
+    }
+    else
+        desktop_folder = fm_folder_from_path(fm_path_get_desktop());
+    if (desktop_folder)
+    {
+        connect_model(desktop, desktop_folder);
+        g_object_unref(desktop_folder);
+    }
+    else
+        /* we have to add popup here because it will be never
+           set by connect_model() as latter wasn't called */
+        fm_folder_view_add_popup(FM_FOLDER_VIEW(desktop),
+                                 GTK_WINDOW(desktop),
+                                 fm_desktop_update_popup);
+    if (desktop->model)
+#if FM_CHECK_VERSION(1, 0, 2)
+        fm_folder_model_set_sort(desktop->model,
+                                 desktop->conf.desktop_sort_by,
+                                 desktop->conf.desktop_sort_type);
+#else
+        gtk_tree_sortable_set_sort_column_id(GTK_TREE_SORTABLE(desktop->model),
+                                             desktop->conf.desktop_sort_by,
+                                             desktop->conf.desktop_sort_type);
+#endif
+    gtk_widget_show_all(widget);
+    gdk_window_lower(gtk_widget_get_window(widget));
+}
+
 void fm_desktop_manager_init(gint on_screen)
 {
     GdkDisplay * gdpy;
@@ -5829,49 +5878,7 @@ void fm_desktop_manager_init(gint on_screen)
         n_mon = gdk_screen_get_n_monitors(screen);
         for(mon = 0; mon < n_mon; mon++)
         {
-            gint mon_init = (on_screen < 0 || on_screen == (int)scr) ? (int)mon : (mon ? -2 : -1);
-            FmDesktop *desktop = fm_desktop_new(screen, mon_init);
-            GtkWidget *widget = GTK_WIDGET(desktop);
-            FmFolder *desktop_folder;
-
-            desktops[i++] = desktop;
-            if(mon_init < 0)
-                continue;
-            /* realize it: without this, setting wallpaper or font won't work */
-            gtk_widget_realize(widget);
-            /* realizing also loads config */
-            if (desktop->conf.folder)
-            {
-                if (desktop->conf.folder[0])
-                    desktop_folder = fm_folder_from_path_name(desktop->conf.folder);
-                else
-                    desktop_folder = NULL;
-            }
-            else
-                desktop_folder = fm_folder_from_path(fm_path_get_desktop());
-            if (desktop_folder)
-            {
-                connect_model(desktop, desktop_folder);
-                g_object_unref(desktop_folder);
-            }
-            else
-                /* we have to add popup here because it will be never
-                   set by connect_model() as latter wasn't called */
-                fm_folder_view_add_popup(FM_FOLDER_VIEW(desktop),
-                                         GTK_WINDOW(desktop),
-                                         fm_desktop_update_popup);
-            if (desktop->model)
-#if FM_CHECK_VERSION(1, 0, 2)
-                fm_folder_model_set_sort(desktop->model,
-                                         desktop->conf.desktop_sort_by,
-                                         desktop->conf.desktop_sort_type);
-#else
-                gtk_tree_sortable_set_sort_column_id(GTK_TREE_SORTABLE(desktop->model),
-                                                     desktop->conf.desktop_sort_by,
-                                                     desktop->conf.desktop_sort_type);
-#endif
-            gtk_widget_show_all(widget);
-            gdk_window_lower(gtk_widget_get_window(widget));
+            fm_desktop_per_monitor_init(on_screen, gdpy, scr, mon, &i);
         }
     }
 
