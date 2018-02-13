@@ -93,6 +93,7 @@ static void _unselect_all(FmFolderView* fv);
 static FmDesktopItem* hit_test(FmDesktop* self, GtkTreeIter *it, int x, int y);
 
 static void fm_desktop_view_init(FmFolderViewInterface* iface);
+static FmDesktop *fm_desktop_per_monitor_init(gint on_screen, GdkDisplay *dpy, int scr, int monitor);
 
 G_DEFINE_TYPE_WITH_CODE(FmDesktop, fm_desktop, GTK_TYPE_WINDOW,
                         G_IMPLEMENT_INTERFACE(FM_TYPE_FOLDER_VIEW, fm_desktop_view_init))
@@ -101,6 +102,7 @@ static GtkWindowGroup* win_group = NULL;
 static GList **lists_desktop_per_screen = NULL;
 static int n_screens = 0;
 static guint icon_theme_changed = 0;
+static gint g_on_screen = -1;
 static GtkAccelGroup* acc_grp = NULL;
 
 static Atom XA_NET_WORKAREA = 0;
@@ -147,6 +149,9 @@ static void on_snap_to_grid(GtkAction* act, gpointer user_data);
 static void on_disable(GtkAction* act, gpointer user_data);
 #endif
 
+/* gdk related supplement functions */
+static gint gdk_display_get_screen_num(GdkDisplay *dpy, GdkScreen *screen);
+
 /* insert GtkUIManager XML definitions */
 #include "desktop-ui.c"
 
@@ -178,6 +183,10 @@ static GSList *mounts = NULL;
 
 static char* get_config_file(FmDesktop* desktop, gboolean create_dir)
 {
+    /*
+        FIXME: if a new monitor is inserted, we may have to
+        rename config files which already exist.
+    */
     char *dir, *path;
     int i, screen;
     i = 0;
@@ -2709,6 +2718,47 @@ static void on_screen_size_changed(GdkScreen* screen, FmDesktop* desktop)
     /* bug #3614780: if monitor was moved desktop should be moved too */
     gtk_window_move((GtkWindow*)desktop, geom.x, geom.y);
     /* FIXME: check if new monitor was added! */
+}
+
+static void on_n_monitor_may_changed(GdkScreen* screen, GdkDisplay *dpy)
+{
+    gint screen_num = gdk_display_get_screen_num(dpy, screen);
+    if (screen_num < 0) return;
+    if ((g_on_screen >= 0) && (g_on_screen != screen_num)) return;
+
+    int n_monitor = gdk_screen_get_n_monitors(screen);
+    int monitor = 0;
+
+    GList *list_desktop = lists_desktop_per_screen[screen_num];
+    for (; list_desktop; list_desktop = list_desktop->next)
+    {
+        if (list_desktop->data)
+            monitor++;
+    }
+
+    for (; monitor < n_monitor; monitor++)
+    {
+        FmDesktop *desktop = fm_desktop_per_monitor_init(g_on_screen, dpy, screen_num, monitor);
+        if (desktop->model)
+        {
+            if (documents && documents->fi && desktop->conf.show_documents)
+                fm_folder_model_extra_file_add(desktop->model, documents->fi,
+                                               FM_FOLDER_MODEL_ITEMPOS_PRE);
+            if (trash_can && trash_can->fi && desktop->conf.show_trash)
+                fm_folder_model_extra_file_add(desktop->model, trash_can->fi,
+                                               FM_FOLDER_MODEL_ITEMPOS_PRE);
+            if (desktop->conf.show_mounts)
+            {
+                GSList *msl;
+                for (msl = mounts; msl; msl = msl->next)
+                {
+                    FmDesktopExtraItem *mount = msl->data;
+                    fm_folder_model_extra_file_add(desktop->model, mount->fi,
+                                                   FM_FOLDER_MODEL_ITEMPOS_POST);
+                }
+            }
+        }
+    }
 }
 
 static void reload_icons()
@@ -5876,19 +5926,18 @@ void fm_desktop_preference(GtkAction *act, FmDesktop *desktop)
 /* ---------------------------------------------------------------------
     Interface functions */
 
-static void fm_desktop_per_monitor_init(gint on_screen, GdkDisplay *dpy, int scr, int monitor)
+static FmDesktop *fm_desktop_per_monitor_init(gint on_screen, GdkDisplay *dpy, int scr, int monitor)
 {
     GdkScreen* screen = gdk_display_get_screen(dpy, scr);
     GList **list_desktop = &lists_desktop_per_screen[scr];
     FmFolder *desktop_folder;
-    FmDesktop *desktop;
 
     gint mon_init = (on_screen < 0 || on_screen == (int)scr) ? (int)monitor : (monitor ? -2 : -1);
-    desktop = fm_desktop_new(screen, mon_init);
+    FmDesktop *desktop = fm_desktop_new(screen, mon_init);
     /* prepend cannot be used here */
     *list_desktop = g_list_append(*list_desktop, desktop);
     if(mon_init < 0)
-        return;
+        return desktop;
     /* realize it: without this, setting wallpaper or font won't work */
     GtkWidget *widget = GTK_WIDGET(desktop);
     gtk_widget_realize(widget);
@@ -5925,6 +5974,8 @@ static void fm_desktop_per_monitor_init(gint on_screen, GdkDisplay *dpy, int scr
 #endif
     gtk_widget_show_all(widget);
     gdk_window_lower(gtk_widget_get_window(widget));
+
+    return desktop;
 }
 
 void fm_desktop_manager_init(gint on_screen)
@@ -5935,6 +5986,8 @@ void fm_desktop_manager_init(gint on_screen)
 #if FM_CHECK_VERSION(1, 2, 0)
     GFile *gf;
 #endif
+
+    g_on_screen = on_screen;
 
     if(! win_group)
         win_group = gtk_window_group_new();
@@ -5956,6 +6009,7 @@ void fm_desktop_manager_init(gint on_screen)
         {
             fm_desktop_per_monitor_init(on_screen, gdpy, scr, mon);
         }
+        g_signal_connect(screen, "monitors-changed", G_CALLBACK(on_n_monitor_may_changed), gdpy);
     }
 
     icon_theme_changed = g_signal_connect(gtk_icon_theme_get_default(), "changed", G_CALLBACK(on_icon_theme_changed), NULL);
@@ -6085,3 +6139,16 @@ void fm_desktop_wallpaper_changed(FmDesktop *desktop)
     queue_config_save(desktop);
     update_background(desktop, 0);
 }
+
+static gint gdk_display_get_screen_num(GdkDisplay *dpy, GdkScreen *screen)
+{
+    gint i;
+    for (i = 0; i < n_screens; i++)
+    {
+        GdkScreen *screen_candidate = gdk_display_get_screen(dpy, i);
+        if (screen == screen_candidate)
+            return i;
+    }
+    return -1;
+}
+
