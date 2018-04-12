@@ -187,7 +187,7 @@ static const char main_menu_xml[] =
 static GtkActionEntry main_win_actions[]=
 {
     {"FileMenu", NULL, N_("_File"), NULL, NULL, NULL},
-        {"New", GTK_STOCK_NEW, N_("_New Window"), "<Ctrl>N", NULL, G_CALLBACK(on_new_win)},
+        {"New", GTK_STOCK_NEW, N_("_New Window"), "<Ctrl>N", N_("Open new file manager window"), G_CALLBACK(on_new_win)},
         {"NewTab", "tab-new", N_("New T_ab"), "<Ctrl>T", N_("Create new tab for this folder"), G_CALLBACK(on_new_tab)},
         {"CreateNew", GTK_STOCK_ADD, N_("C_reate New..."), "", NULL, NULL},
             {"NewFolder", "folder", N_("Folder"), "<Ctrl><Shift>N", NULL, G_CALLBACK(bounce_action)},
