@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm 1.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-22 00:33+0200\n"
+"POT-Creation-Date: 2018-04-13 00:37+0300\n"
 "PO-Revision-Date: 2014-12-04 16:02+0000\n"
 "Last-Translator: system user <>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
@@ -365,7 +365,7 @@ msgstr "ماكان قىسقۇچ"
 msgid "Des_ktop"
 msgstr "ئۈستەلئۈستى(_D)"
 
-#: ../data/ui/pref.glade.h:50 ../src/main-win-ui.c:236
+#: ../data/ui/pref.glade.h:50 ../src/main-win-ui.c:238
 msgid "_Trash Can"
 msgstr "ئەخلەتخانا(_T)"
 
@@ -377,7 +377,7 @@ msgstr ""
 msgid "App_lications"
 msgstr "پروگراممىلار(_L)"
 
-#: ../data/ui/pref.glade.h:53 ../src/main-win-ui.c:239
+#: ../data/ui/pref.glade.h:53 ../src/main-win-ui.c:241
 msgid "Dev_ices"
 msgstr ""
 
@@ -397,8 +397,8 @@ msgstr "<b>ئاپتوماتىك ئېگەرلەش</b>"
 #: ../data/ui/pref.glade.h:57
 msgid "_Mount mountable volumes automatically on program startup"
 msgstr ""
-"پروگرامما باشلانغاندا ئېگەرلىگىلى بولىدىغان دىسكىلارنى ئاپتوماتىك ئېگەرلىسۇن"
-"(_M)"
+"پروگرامما باشلانغاندا ئېگەرلىگىلى بولىدىغان دىسكىلارنى ئاپتوماتىك "
+"ئېگەرلىسۇن(_M)"
 
 #: ../data/ui/pref.glade.h:58
 msgid "Mo_unt removable media automatically when they are inserted"
@@ -407,15 +407,15 @@ msgstr "يۆتكىلىشچان ۋاسىتە قىستۇرۇلغان ھامان ئ
 #: ../data/ui/pref.glade.h:59
 msgid "_Show available options for removable media when they are inserted"
 msgstr ""
-"يۆتكىلىشچان ۋاسىتە قىستۇرۇلغاندا ئىشلەتكىلى بولىدىغان تاللانمىلارنى كۆرسەتسۇن"
-"(_S)"
+"يۆتكىلىشچان ۋاسىتە قىستۇرۇلغاندا ئىشلەتكىلى بولىدىغان تاللانمىلارنى "
+"كۆرسەتسۇن(_S)"
 
 #: ../data/ui/pref.glade.h:60
 #, fuzzy
 msgid "Do_n't show available options for those media types:"
 msgstr ""
-"يۆتكىلىشچان ۋاسىتە قىستۇرۇلغاندا ئىشلەتكىلى بولىدىغان تاللانمىلارنى كۆرسەتسۇن"
-"(_S)"
+"يۆتكىلىشچان ۋاسىتە قىستۇرۇلغاندا ئىشلەتكىلى بولىدىغان تاللانمىلارنى "
+"كۆرسەتسۇن(_S)"
 
 #: ../data/ui/pref.glade.h:61
 msgid "_Remove selected"
@@ -676,446 +676,451 @@ msgstr "نۆۋەتتىكى ئورۇنغا مۇقىملاشتۇر(_K)"
 msgid "Snap to _Grid"
 msgstr "سېتكىغا توغرىلا(_G)"
 
-#: ../src/desktop.c:946
+#: ../src/desktop.c:974
 msgid "Activate file"
 msgstr "ھۆججەتنى ئاكتىپلا"
 
-#: ../src/desktop.c:948
+#: ../src/desktop.c:976
 #, fuzzy
 msgid "Show file menu"
 msgstr "يوشۇرۇنلىرىنى كۆرسەت(_N)"
 
-#: ../src/desktop.c:1364
+#: ../src/desktop.c:1394
 msgid "Show desktop menu"
 msgstr "ئۈستەلئۈستى تىزىملىكىنى كۆرسىتىدۇ"
 
 #. FIXME: set name by monitor
-#: ../src/desktop.c:1436
+#: ../src/desktop.c:1466
 #, fuzzy
 msgid "Desktop"
 msgstr "ئۈستەلئۈستى(_D)"
 
-#: ../src/main-win-ui.c:187
+#: ../src/main-win-ui.c:189
 msgid "_File"
 msgstr "ھۆججەت(_F)"
 
-#: ../src/main-win-ui.c:188
+#: ../src/main-win-ui.c:190
 msgid "_New Window"
 msgstr "يېڭى كۆزنەك(_N)"
 
-#: ../src/main-win-ui.c:189
+#: ../src/main-win-ui.c:190
+#, fuzzy
+msgid "Open new file manager window"
+msgstr "ھۆججەت باشقۇرغۇچتا ئاچ"
+
+#: ../src/main-win-ui.c:191
 msgid "New T_ab"
 msgstr "يېڭى بەتكۈچ(_A)"
 
-#: ../src/main-win-ui.c:189
+#: ../src/main-win-ui.c:191
 msgid "Create new tab for this folder"
 msgstr "مەزكۇر قىسقۇچ ئۈچۈن يېڭى بەتكۈچ قۇرىدۇ"
 
-#: ../src/main-win-ui.c:190
+#: ../src/main-win-ui.c:192
 msgid "C_reate New..."
 msgstr "يېڭىدىن قۇر(R)…"
 
-#: ../src/main-win-ui.c:191
+#: ../src/main-win-ui.c:193
 msgid "Folder"
 msgstr "مۇندەرىجە"
 
-#: ../src/main-win-ui.c:192
+#: ../src/main-win-ui.c:194
 msgid "Empty File"
 msgstr "قۇرۇق ھۆججەت"
 
-#: ../src/main-win-ui.c:193
+#: ../src/main-win-ui.c:195
 msgid "Folder Propertie_s"
 msgstr ""
 
-#: ../src/main-win-ui.c:194
+#: ../src/main-win-ui.c:196
 msgid "_Close Tab"
 msgstr "بەتكۈچنى ياپ(_C)"
 
-#: ../src/main-win-ui.c:195
+#: ../src/main-win-ui.c:197
 msgid "Close _Window"
 msgstr "كۆزنەكنى ياپ(_R)"
 
-#: ../src/main-win-ui.c:196
+#: ../src/main-win-ui.c:198
 msgid "_Edit"
 msgstr "تەھرىر(_E)"
 
-#: ../src/main-win-ui.c:198
+#: ../src/main-win-ui.c:200
 msgid "C_ut"
 msgstr ""
 
-#: ../src/main-win-ui.c:201
+#: ../src/main-win-ui.c:203
 msgid "Move to _Trash"
 msgstr ""
 
-#: ../src/main-win-ui.c:203
-msgid "Copy Pat_h(s)"
-msgstr ""
-
-#: ../src/main-win-ui.c:204
-#, fuzzy
-msgid "R_ename..."
-msgstr "ئاتىنى ئۆزگەرت(_R)"
-
 #: ../src/main-win-ui.c:205
-msgid "D_uplicate..."
+msgid "Copy Pat_h(s)"
 msgstr ""
 
 #: ../src/main-win-ui.c:206
 #, fuzzy
+msgid "R_ename..."
+msgstr "ئاتىنى ئۆزگەرت(_R)"
+
+#: ../src/main-win-ui.c:207
+msgid "D_uplicate..."
+msgstr ""
+
+#: ../src/main-win-ui.c:208
+#, fuzzy
 msgid "Create Lin_k..."
 msgstr "يېڭىدىن قۇر(_N)…"
 
-#: ../src/main-win-ui.c:207
+#: ../src/main-win-ui.c:209
 #, fuzzy
 msgid "_Move to..."
 msgstr "بۇ يەرگە يۆتكە(_M)…"
 
-#: ../src/main-win-ui.c:208
+#: ../src/main-win-ui.c:210
 #, fuzzy
 msgid "Copy to_..."
 msgstr "بۇ يەرگە كۆچۈر(_O)…"
 
-#: ../src/main-win-ui.c:209
+#: ../src/main-win-ui.c:211
 msgid "Propertie_s"
 msgstr ""
 
-#: ../src/main-win-ui.c:211
+#: ../src/main-win-ui.c:213
 msgid "_Invert Selection"
 msgstr "تاللاشنى تەتۈر قىل(_I)"
 
-#: ../src/main-win-ui.c:212
+#: ../src/main-win-ui.c:214
 msgid "Prefere_nces"
 msgstr "مايىللىق(_N)"
 
-#: ../src/main-win-ui.c:213
+#: ../src/main-win-ui.c:215
 msgid "_View"
 msgstr "كۆرۈنۈش(_V)"
 
-#: ../src/main-win-ui.c:214
+#: ../src/main-win-ui.c:216
 msgid "_Reload Folder"
 msgstr "قىسقۇچنى قايتا ئوقۇ(_R)"
 
-#: ../src/main-win-ui.c:214
+#: ../src/main-win-ui.c:216
 msgid "Reload current folder"
 msgstr "نۆۋەتتىكى قىسقۇچنى قايتا ئوقۇيدۇ"
 
-#: ../src/main-win-ui.c:215
+#: ../src/main-win-ui.c:217
 #, fuzzy
 msgid "Tool_bar"
 msgstr "قوراللار(_S)"
 
-#: ../src/main-win-ui.c:216
+#: ../src/main-win-ui.c:218
 msgid "Pat_h Bar"
 msgstr ""
 
-#: ../src/main-win-ui.c:217
+#: ../src/main-win-ui.c:219
 msgid "Side _Pane"
 msgstr "يان كۆزنەكچە(_P)"
 
 #. other see below: 'ShowHidden' 'ShowStatus' 'Fullscreen' 'IconView'...
-#: ../src/main-win-ui.c:219
+#: ../src/main-win-ui.c:221
 #, fuzzy
 msgid "Fo_lder View Mode"
 msgstr "كۆرۈنۈش(_W):"
 
-#: ../src/main-win-ui.c:220
+#: ../src/main-win-ui.c:222
 msgid "S_ort Files"
 msgstr "ھۆججەتلەرنى تەرتىپلەش(_O)"
 
-#: ../src/main-win-ui.c:222
+#: ../src/main-win-ui.c:224
 msgid "Zoom O_ut"
 msgstr ""
 
-#: ../src/main-win-ui.c:225
+#: ../src/main-win-ui.c:227
 msgid "Fil_ter..."
 msgstr ""
 
-#: ../src/main-win-ui.c:227
+#: ../src/main-win-ui.c:229
 msgid "_Help"
 msgstr "ياردەم(_H)"
 
-#: ../src/main-win-ui.c:229
+#: ../src/main-win-ui.c:231
 #, fuzzy
 msgid "_Keyboard Navigation"
 msgstr "ھەرپتاختا يېتەكچىسى(_K)"
 
-#: ../src/main-win-ui.c:230
+#: ../src/main-win-ui.c:232
 msgid "_Go"
 msgstr "يۆتكەل(_G)"
 
-#: ../src/main-win-ui.c:231
+#: ../src/main-win-ui.c:233
 msgid "_Previous Folder"
 msgstr "ئالدىنقى قىسقۇچ(_P)"
 
-#: ../src/main-win-ui.c:231
+#: ../src/main-win-ui.c:233
 msgid "Return to previous folder in history"
 msgstr ""
 
-#: ../src/main-win-ui.c:232
+#: ../src/main-win-ui.c:234
 msgid "_Next Folder"
 msgstr "كېيىنكى قىسقۇچ(_N)"
 
-#: ../src/main-win-ui.c:232
+#: ../src/main-win-ui.c:234
 msgid "Go forward to next folder in history"
 msgstr ""
 
-#: ../src/main-win-ui.c:233
+#: ../src/main-win-ui.c:235
 msgid "Pa_rent Folder"
 msgstr "ئاتا قىسقۇچ(_R)"
 
-#: ../src/main-win-ui.c:233
+#: ../src/main-win-ui.c:235
 msgid "Go to parent Folder"
 msgstr "ئاتا قىسقۇچقا يۆتكىلىش"
 
-#: ../src/main-win-ui.c:234
+#: ../src/main-win-ui.c:236
 msgid "H_ome Folder"
 msgstr "ماكان قىسقۇچ(_H)"
 
-#: ../src/main-win-ui.c:234
+#: ../src/main-win-ui.c:236
 #, fuzzy
 msgid "Go to home folder"
 msgstr "ئاتا قىسقۇچقا يۆتكىلىش"
 
-#: ../src/main-win-ui.c:235
+#: ../src/main-win-ui.c:237
 msgid "_Desktop"
 msgstr "ئۈستەلئۈستى(_D)"
 
-#: ../src/main-win-ui.c:235
+#: ../src/main-win-ui.c:237
 #, fuzzy
 msgid "Go to desktop folder"
 msgstr "ئاتا قىسقۇچقا يۆتكىلىش"
 
-#: ../src/main-win-ui.c:236
+#: ../src/main-win-ui.c:238
 msgid "Open trash can"
 msgstr ""
 
-#: ../src/main-win-ui.c:237
+#: ../src/main-win-ui.c:239
 msgid "Filesyste_m Root"
 msgstr ""
 
-#: ../src/main-win-ui.c:237
+#: ../src/main-win-ui.c:239
 msgid "Go fo filesystem root"
 msgstr ""
 
-#: ../src/main-win-ui.c:238
+#: ../src/main-win-ui.c:240
 msgid "_Applications"
 msgstr "پروگراممىلار(_A)"
 
-#: ../src/main-win-ui.c:238
+#: ../src/main-win-ui.c:240
 msgid "Go to root of applications menu folder"
 msgstr ""
 
-#: ../src/main-win-ui.c:239
+#: ../src/main-win-ui.c:241
 #, fuzzy
 msgid "Go to list of devices connected to the computer"
 msgstr "دىسكىلارنىڭ سىنبەلگىسىنى ئۈستەلئۈستىدە كۆرسەتسۇن(_H)"
 
-#: ../src/main-win-ui.c:240
+#: ../src/main-win-ui.c:242
 #, fuzzy
 msgid "Net_work"
 msgstr "تور قوزغاتقۇلىرى(_W)"
 
-#: ../src/main-win-ui.c:240
+#: ../src/main-win-ui.c:242
 #, fuzzy
 msgid "Go to list of places on the network"
 msgstr "دىسكىلارنىڭ سىنبەلگىسىنى ئۈستەلئۈستىدە كۆرسەتسۇن(_H)"
 
-#: ../src/main-win-ui.c:241
+#: ../src/main-win-ui.c:243
 msgid "_Go to Location..."
 msgstr ""
 
-#: ../src/main-win-ui.c:242
+#: ../src/main-win-ui.c:244
 msgid "_Connect to Server..."
 msgstr ""
 
-#: ../src/main-win-ui.c:242
+#: ../src/main-win-ui.c:244
 msgid "Open a window to choose remote folder location"
 msgstr ""
 
-#: ../src/main-win-ui.c:243
+#: ../src/main-win-ui.c:245
 msgid "Go to the path in the location bar"
 msgstr ""
 
-#: ../src/main-win-ui.c:244
+#: ../src/main-win-ui.c:246
 msgid "_Bookmarks"
 msgstr "خەتكۈش(_B)"
 
-#: ../src/main-win-ui.c:245
+#: ../src/main-win-ui.c:247
 #, fuzzy
 msgid "_Add to Bookmarks..."
 msgstr "خەتكۈچكە قوش"
 
-#: ../src/main-win-ui.c:245
+#: ../src/main-win-ui.c:247
 msgid "Add current folder to bookmarks list"
 msgstr ""
 
-#: ../src/main-win-ui.c:246
+#: ../src/main-win-ui.c:248
 msgid "Too_ls"
 msgstr ""
 
-#: ../src/main-win-ui.c:247
+#: ../src/main-win-ui.c:249
 msgid "Open Current Folder in _Terminal"
 msgstr "نۆۋەتتىكى قىسقۇچنى تېرمىنالدا ئاچ(_T)"
 
-#: ../src/main-win-ui.c:249
+#: ../src/main-win-ui.c:251
 #, fuzzy
 msgid "Fin_d Files..."
 msgstr "ھۆججەت ئىزدە(_D)"
 
-#: ../src/main-win-ui.c:249
+#: ../src/main-win-ui.c:251
 #, fuzzy
 msgid "Open search dialog"
 msgstr "ئۈستەلئۈستى مايىللىقى سۆزلەشكۈسىنى ئاچسۇن"
 
-#: ../src/main-win-ui.c:252
+#: ../src/main-win-ui.c:254
 #, fuzzy
 msgid "_Run a Command in Current Folder..."
 msgstr "نۆۋەتتىكى قىسقۇچنى قايتا ئوقۇيدۇ"
 
 #. Note to translators: "Mingle..." means "Do not put folders before files" but make the translation as short as possible, please!
-#: ../src/main-win-ui.c:267
+#: ../src/main-win-ui.c:271
 msgid "Mingle _Files and Folders"
 msgstr ""
 
-#: ../src/main-win-ui.c:270
+#: ../src/main-win-ui.c:274
 msgid "_Ignore Name Case"
 msgstr ""
 
-#: ../src/main-win-ui.c:272
+#: ../src/main-win-ui.c:276
 #, fuzzy
 msgid "Sho_w Hidden"
 msgstr "يوشۇرۇنلىرىنى كۆرسەت(_N)"
 
 #. Note to translators: this save is meant for folder's settings such as sort
-#: ../src/main-win-ui.c:274
+#: ../src/main-win-ui.c:278
 msgid "Preserve This Folder's Settings"
 msgstr ""
 
-#: ../src/main-win-ui.c:275
+#: ../src/main-win-ui.c:279
 msgid ""
 "Check to remember view and sort as folder setting rather than global one"
 msgstr ""
 
-#: ../src/main-win-ui.c:277
+#: ../src/main-win-ui.c:281
 msgid "_Show Toolbar"
 msgstr ""
 
-#: ../src/main-win-ui.c:278
+#: ../src/main-win-ui.c:282
 msgid "Show 'New _Window' Button"
 msgstr ""
 
-#: ../src/main-win-ui.c:279
+#: ../src/main-win-ui.c:283
 msgid "Show 'New _Tab' Button"
 msgstr ""
 
-#: ../src/main-win-ui.c:280
+#: ../src/main-win-ui.c:284
 msgid "Show _Navigation Buttons"
 msgstr ""
 
-#: ../src/main-win-ui.c:281
+#: ../src/main-win-ui.c:285
 msgid "Show '_Home' Button"
 msgstr ""
 
-#: ../src/main-win-ui.c:282
+#: ../src/main-win-ui.c:286
 msgid "Sho_w Side Pane"
 msgstr "يان كۆزنەكچىنى كۆرسەت(_W)"
 
-#: ../src/main-win-ui.c:283
+#: ../src/main-win-ui.c:287
 msgid "Show Status B_ar"
 msgstr "ھالەت بالدىقىنى كۆرسەت(_A)"
 
-#: ../src/main-win-ui.c:284
+#: ../src/main-win-ui.c:288
 #, fuzzy
 msgid "_Dual Pane Mode"
 msgstr "قوش كۆزنەكچە ھالىتى(_W)"
 
-#: ../src/main-win-ui.c:284
+#: ../src/main-win-ui.c:288
 msgid "Show two panels with folder views"
 msgstr ""
 
-#: ../src/main-win-ui.c:285
+#: ../src/main-win-ui.c:289
 msgid "Fullscreen _Mode"
 msgstr "تولۇق ئېكران ھالىتى(_M)"
 
-#: ../src/main-win-ui.c:291
+#: ../src/main-win-ui.c:295
 msgid "_Icon View"
 msgstr "سىنبەلگە كۆرۈنۈشى(_I)"
 
-#: ../src/main-win-ui.c:292
+#: ../src/main-win-ui.c:296
 msgid "_Compact View"
 msgstr "ئىخچام كۆرۈنۈش(_C)"
 
-#: ../src/main-win-ui.c:293
+#: ../src/main-win-ui.c:297
 msgid "_Thumbnail View"
 msgstr "كىچىكلىتىلگەن سۈرەت كۆرۈنۈشى(_V)"
 
-#: ../src/main-win-ui.c:294
+#: ../src/main-win-ui.c:298
 msgid "Detailed _List View"
 msgstr "تەپسىلىي تىزىم كۆرۈنۈشى(_L)"
 
-#: ../src/main-win-ui.c:307 ../src/main-win-ui.c:315
+#: ../src/main-win-ui.c:311 ../src/main-win-ui.c:319
 msgid "By _Name"
 msgstr "ئاتى بويىچە(_N)"
 
-#: ../src/main-win-ui.c:308 ../src/main-win-ui.c:316
+#: ../src/main-win-ui.c:312 ../src/main-win-ui.c:320
 msgid "By _Modification Time"
 msgstr "ئۆزگەرتىلگەن ۋاقتى بويىچە(_M)"
 
-#: ../src/main-win-ui.c:309 ../src/main-win-ui.c:317
+#: ../src/main-win-ui.c:313 ../src/main-win-ui.c:321
 msgid "By _Size"
 msgstr "چوڭلۇقى بويىچە(_S)"
 
-#: ../src/main-win-ui.c:310 ../src/main-win-ui.c:318
+#: ../src/main-win-ui.c:314 ../src/main-win-ui.c:322
 msgid "By File _Type"
 msgstr "ھۆججەت تىپى بويىچە(_T)"
 
-#: ../src/main-win-ui.c:312
+#: ../src/main-win-ui.c:316
 msgid "By _Extension"
 msgstr ""
 
-#: ../src/main-win-ui.c:325
+#: ../src/main-win-ui.c:329
 msgid "Places"
 msgstr "ئورۇنلار"
 
-#: ../src/main-win-ui.c:326
+#: ../src/main-win-ui.c:330
 msgid "Directory Tree"
 msgstr "مۇندەرىجە دەرىخى"
 
-#: ../src/main-win-ui.c:327
+#: ../src/main-win-ui.c:331
 msgid "Remote"
 msgstr "يىراق"
 
-#: ../src/main-win-ui.c:333
+#: ../src/main-win-ui.c:337
 #, fuzzy
 msgid "_Location"
 msgstr "پروگراممىلار(_L)"
 
-#: ../src/main-win-ui.c:334
+#: ../src/main-win-ui.c:338
 msgid "_Buttons"
 msgstr ""
 
-#: ../src/main-win.c:925 ../src/main-win.c:929
+#: ../src/main-win.c:938 ../src/main-win.c:942
 msgid "Show history of visited folders"
 msgstr ""
 
-#: ../src/main-win.c:934
+#: ../src/main-win.c:947
 msgid "History"
 msgstr ""
 
-#: ../src/main-win.c:948
+#: ../src/main-win.c:961
 msgid "You are in super user mode"
 msgstr "سىز ئالىي ئىشلەتكۈچى ھالىتىدە"
 
-#: ../src/main-win.c:1134
+#: ../src/main-win.c:1146
 msgid "Lightweight file manager\n"
 msgstr "يېنىك ھۆججەت باشقۇرغۇ\n"
 
-#: ../src/main-win.c:1139
+#: ../src/main-win.c:1156
 #, c-format
 msgid "using LibFM ver. %s\n"
 msgstr ""
 
-#: ../src/main-win.c:1141
+#: ../src/main-win.c:1158
 msgid ""
 "\n"
 "Developed by Hon Jen Yee (PCMan)"
@@ -1123,12 +1128,12 @@ msgstr ""
 "\n"
 "ئاپتورى: Hon Jen Yee (PCMan)"
 
-#: ../src/main-win.c:1166 ../src/main-win.c:1174
+#: ../src/main-win.c:1183 ../src/main-win.c:1191
 #, fuzzy
 msgid "Keyboard Navigation"
 msgstr "ھەرپتاختا يېتەكچىسى"
 
-#: ../src/main-win.c:1168
+#: ../src/main-win.c:1185
 msgid ""
 "Tab: cycle focus Folder View -> Side Pane -> Tools Bar\n"
 "Shift+Tab: cycle focus Tools Bar -> Side Pane -> Folder View\n"
@@ -1146,20 +1151,20 @@ msgstr ""
 "باش تىزىملىكنى ئاكتىپلا كۇنۇپكىسى F8 دۇر\n"
 "فوكۇسنى يول بالدىقىغا يۆتكەش كۇنۇپكىسى Ctrl+L ياكى Alt+D دۇر"
 
-#: ../src/main-win.c:1210
+#: ../src/main-win.c:1227
 msgid "Run a command"
 msgstr ""
 
-#: ../src/main-win.c:1211
+#: ../src/main-win.c:1228
 msgid "Enter a command to run:"
 msgstr ""
 
-#: ../src/main-win.c:1218
+#: ../src/main-win.c:1235
 #, fuzzy
 msgid "Current folder is inaccessible"
 msgstr "نۆۋەتتىكى قىسقۇچنى تېرمىنالدا ئاچ(_T)"
 
-#: ../src/main-win.c:1822
+#: ../src/main-win.c:1837
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -1170,15 +1175,15 @@ msgstr ""
 "‹%s›\n"
 "يېڭى خەتكۈچنىڭ تۈرىنىڭ ئاتىنى كىرگۈزۈڭ:"
 
-#: ../src/main-win.c:1826
+#: ../src/main-win.c:1841
 msgid "Add to Bookmarks"
 msgstr "خەتكۈچكە قوش"
 
-#: ../src/main-win.c:2552
+#: ../src/main-win.c:2587
 msgid "Select filter"
 msgstr ""
 
-#: ../src/main-win.c:2553
+#: ../src/main-win.c:2588
 msgid "Choose a new shell pattern to show files:"
 msgstr ""
 
@@ -1230,8 +1235,8 @@ msgid ""
 "Set mode of desktop wallpaper. MODE=(color|stretch|fit|crop|center|tile|"
 "screen)"
 msgstr ""
-"ئۈستەلئۈستى تام قەغىزىنىڭ ھالىتىنى "
-"بەلگىلەش.MODE=(color|stretch|fit|crop|center|tile|screen)"
+"ئۈستەلئۈستى تام قەغىزىنىڭ ھالىتىنى بەلگىلەش.MODE=(color|stretch|fit|crop|"
+"center|tile|screen)"
 
 #: ../src/pcmanfm.c:89
 msgid "MODE"
@@ -1266,11 +1271,12 @@ msgstr "ROLE"
 msgid "[FILE1, FILE2,...]"
 msgstr "[FILE1, FILE2,...]"
 
-#: ../src/pcmanfm.c:352
+#. FIXME: add "on this X screen/monitor" into diagnostics
+#: ../src/pcmanfm.c:376
 msgid "Desktop manager is not active."
 msgstr ""
 
-#: ../src/pcmanfm.c:598
+#: ../src/pcmanfm.c:627
 msgid "Terminal emulator is not set."
 msgstr "تېرمىنال تەقلىدلىگۈچى بەلگىلەنمىگەن."
 
@@ -1278,42 +1284,42 @@ msgstr "تېرمىنال تەقلىدلىگۈچى بەلگىلەنمىگەن."
 msgid "Open in New T_ab"
 msgstr "يېڭى بەتكۈچتە ئاچ(_A)"
 
-#: ../src/tab-page.c:395
+#: ../src/tab-page.c:411
 #, c-format
 msgid "%d item selected"
 msgid_plural "%d items selected"
 msgstr[0] "%d تۈر تاللاندى"
 
-#: ../src/tab-page.c:718
+#: ../src/tab-page.c:741
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "بىكار بوشلۇق: %s (جەمئىي: %s)"
 
-#: ../src/tab-page.c:738
+#: ../src/tab-page.c:761
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] "%d دانە تۈر بار"
 
-#: ../src/tab-page.c:739
+#: ../src/tab-page.c:762
 #, c-format
 msgid " (%d hidden)"
 msgid_plural " (%d hidden)"
 msgstr[0] " (%d يوشۇرۇن)"
 
-#: ../src/pref.c:514
+#: ../src/pref.c:515
 msgid "Add to Modules Blacklist"
 msgstr ""
 
-#: ../src/pref.c:515
+#: ../src/pref.c:516
 msgid "Enter a blacklisted module mask:"
 msgstr ""
 
-#: ../src/pref.c:606
+#: ../src/pref.c:607
 msgid "Add to Modules Whitelist"
 msgstr ""
 
-#: ../src/pref.c:607
+#: ../src/pref.c:608
 msgid "Enter a whitelisted module mask:"
 msgstr ""
 

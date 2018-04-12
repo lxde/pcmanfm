@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm 1.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-22 00:33+0200\n"
+"POT-Creation-Date: 2018-04-13 00:37+0300\n"
 "PO-Revision-Date: 2015-06-12 20:06+0000\n"
 "Last-Translator: Andriy Grytsenko <andrej@rep.kiev.ua>\n"
 "Language-Team: Russian <>\n"
@@ -12,8 +12,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Pootle 2.7\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-POOTLE-MTIME: 1434139589.000000\n"
@@ -231,7 +231,8 @@ msgid ""
 "- other files (e.g. on removable media) will be copied\n"
 "- for some external URI a shortcut will be created"
 msgstr ""
-"Если включено, то \"Авто\" действие при бросании в папку Рабочего стола будет:\n"
+"Если включено, то \"Авто\" действие при бросании в папку Рабочего стола "
+"будет:\n"
 "- для файлов из Домашней папки создавать символическую ссылку\n"
 "- файлы на той же самой файловой системе перемещать\n"
 "- другие файлы (с подключенных внешних устройств) копировать\n"
@@ -350,7 +351,7 @@ msgstr "Домашняя _папка"
 msgid "Des_ktop"
 msgstr "_Рабочий стол"
 
-#: ../data/ui/pref.glade.h:50 ../src/main-win-ui.c:236
+#: ../data/ui/pref.glade.h:50 ../src/main-win-ui.c:238
 msgid "_Trash Can"
 msgstr "_Корзина"
 
@@ -362,7 +363,7 @@ msgstr "Кор_ень файловой системы"
 msgid "App_lications"
 msgstr "Прило_жения"
 
-#: ../data/ui/pref.glade.h:53 ../src/main-win-ui.c:239
+#: ../data/ui/pref.glade.h:53 ../src/main-win-ui.c:241
 msgid "Dev_ices"
 msgstr "_Устройства"
 
@@ -645,425 +646,430 @@ msgstr "_Прикрепить к текущему положению"
 msgid "Snap to _Grid"
 msgstr "Привязка к _сетке"
 
-#: ../src/desktop.c:946
+#: ../src/desktop.c:974
 msgid "Activate file"
 msgstr "Активировать файл"
 
-#: ../src/desktop.c:948
+#: ../src/desktop.c:976
 msgid "Show file menu"
 msgstr "Показать контекстное меню файла"
 
-#: ../src/desktop.c:1364
+#: ../src/desktop.c:1394
 msgid "Show desktop menu"
 msgstr "Показать меню рабочего стола"
 
 #. FIXME: set name by monitor
-#: ../src/desktop.c:1436
+#: ../src/desktop.c:1466
 msgid "Desktop"
 msgstr "Рабочий стол"
 
-#: ../src/main-win-ui.c:187
+#: ../src/main-win-ui.c:189
 msgid "_File"
 msgstr "_Файл"
 
-#: ../src/main-win-ui.c:188
+#: ../src/main-win-ui.c:190
 msgid "_New Window"
 msgstr "_Новое окно"
 
-#: ../src/main-win-ui.c:189
+#: ../src/main-win-ui.c:190
+#, fuzzy
+msgid "Open new file manager window"
+msgstr "Открыть в файловом менеджере"
+
+#: ../src/main-win-ui.c:191
 msgid "New T_ab"
 msgstr "Новая _вкладка"
 
-#: ../src/main-win-ui.c:189
+#: ../src/main-win-ui.c:191
 msgid "Create new tab for this folder"
 msgstr "Создать новую вкладку для этой папки"
 
-#: ../src/main-win-ui.c:190
+#: ../src/main-win-ui.c:192
 msgid "C_reate New..."
 msgstr "Создать но_вый..."
 
-#: ../src/main-win-ui.c:191
+#: ../src/main-win-ui.c:193
 msgid "Folder"
 msgstr "Папка"
 
-#: ../src/main-win-ui.c:192
+#: ../src/main-win-ui.c:194
 msgid "Empty File"
 msgstr "Пустой файл"
 
-#: ../src/main-win-ui.c:193
+#: ../src/main-win-ui.c:195
 msgid "Folder Propertie_s"
 msgstr "Свойства папк_и"
 
-#: ../src/main-win-ui.c:194
+#: ../src/main-win-ui.c:196
 msgid "_Close Tab"
 msgstr "_Закрыть вкладку"
 
-#: ../src/main-win-ui.c:195
+#: ../src/main-win-ui.c:197
 msgid "Close _Window"
 msgstr "Закрыть _окно"
 
-#: ../src/main-win-ui.c:196
+#: ../src/main-win-ui.c:198
 msgid "_Edit"
 msgstr "_Правка"
 
-#: ../src/main-win-ui.c:198
+#: ../src/main-win-ui.c:200
 msgid "C_ut"
 msgstr "Выре_зать"
 
-#: ../src/main-win-ui.c:201
+#: ../src/main-win-ui.c:203
 msgid "Move to _Trash"
 msgstr "Переместить в _корзину"
 
-#: ../src/main-win-ui.c:203
+#: ../src/main-win-ui.c:205
 msgid "Copy Pat_h(s)"
 msgstr "Копироват_ь пути"
 
-#: ../src/main-win-ui.c:204
+#: ../src/main-win-ui.c:206
 msgid "R_ename..."
 msgstr "Пе_реименовать..."
 
-#: ../src/main-win-ui.c:205
+#: ../src/main-win-ui.c:207
 msgid "D_uplicate..."
 msgstr "Создать _дубликат..."
 
-#: ../src/main-win-ui.c:206
+#: ../src/main-win-ui.c:208
 msgid "Create Lin_k..."
 msgstr "Создать сс_ылку..."
 
-#: ../src/main-win-ui.c:207
+#: ../src/main-win-ui.c:209
 msgid "_Move to..."
 msgstr "Пере_местить в..."
 
-#: ../src/main-win-ui.c:208
+#: ../src/main-win-ui.c:210
 msgid "Copy to_..."
 msgstr "Ко_пировать в..."
 
-#: ../src/main-win-ui.c:209
+#: ../src/main-win-ui.c:211
 msgid "Propertie_s"
 msgstr "Сво_йства"
 
-#: ../src/main-win-ui.c:211
+#: ../src/main-win-ui.c:213
 msgid "_Invert Selection"
 msgstr "_Инвертировать выделение"
 
-#: ../src/main-win-ui.c:212
+#: ../src/main-win-ui.c:214
 msgid "Prefere_nces"
 msgstr "Параметр_ы"
 
-#: ../src/main-win-ui.c:213
+#: ../src/main-win-ui.c:215
 msgid "_View"
 msgstr "_Вид"
 
-#: ../src/main-win-ui.c:214
+#: ../src/main-win-ui.c:216
 msgid "_Reload Folder"
 msgstr "_Обновить папку"
 
-#: ../src/main-win-ui.c:214
+#: ../src/main-win-ui.c:216
 msgid "Reload current folder"
 msgstr "Обновить текущую папку"
 
-#: ../src/main-win-ui.c:215
+#: ../src/main-win-ui.c:217
 msgid "Tool_bar"
 msgstr "Пена_л"
 
-#: ../src/main-win-ui.c:216
+#: ../src/main-win-ui.c:218
 msgid "Pat_h Bar"
 msgstr "Панель пу_ти"
 
-#: ../src/main-win-ui.c:217
+#: ../src/main-win-ui.c:219
 msgid "Side _Pane"
 msgstr "Боковая _панель"
 
 #. other see below: 'ShowHidden' 'ShowStatus' 'Fullscreen' 'IconView'...
-#: ../src/main-win-ui.c:219
+#: ../src/main-win-ui.c:221
 msgid "Fo_lder View Mode"
 msgstr "Вид п_апки"
 
-#: ../src/main-win-ui.c:220
+#: ../src/main-win-ui.c:222
 msgid "S_ort Files"
 msgstr "_Сортировать файлы"
 
-#: ../src/main-win-ui.c:222
+#: ../src/main-win-ui.c:224
 msgid "Zoom O_ut"
 msgstr "У_меньшить"
 
-#: ../src/main-win-ui.c:225
+#: ../src/main-win-ui.c:227
 msgid "Fil_ter..."
 msgstr "_Фильтр..."
 
-#: ../src/main-win-ui.c:227
+#: ../src/main-win-ui.c:229
 msgid "_Help"
 msgstr "_Справка"
 
-#: ../src/main-win-ui.c:229
+#: ../src/main-win-ui.c:231
 msgid "_Keyboard Navigation"
 msgstr "_Управление с клавиатуры"
 
-#: ../src/main-win-ui.c:230
+#: ../src/main-win-ui.c:232
 msgid "_Go"
 msgstr "_Перейти"
 
-#: ../src/main-win-ui.c:231
+#: ../src/main-win-ui.c:233
 msgid "_Previous Folder"
 msgstr "_Предыдущая папка"
 
-#: ../src/main-win-ui.c:231
+#: ../src/main-win-ui.c:233
 msgid "Return to previous folder in history"
 msgstr "Вернуться к предыдущей папке в истории"
 
-#: ../src/main-win-ui.c:232
+#: ../src/main-win-ui.c:234
 msgid "_Next Folder"
 msgstr "_Следующая папка"
 
-#: ../src/main-win-ui.c:232
+#: ../src/main-win-ui.c:234
 msgid "Go forward to next folder in history"
 msgstr "Перейти к следующей папке в истории"
 
-#: ../src/main-win-ui.c:233
+#: ../src/main-win-ui.c:235
 msgid "Pa_rent Folder"
 msgstr "_Родительская папка"
 
-#: ../src/main-win-ui.c:233
+#: ../src/main-win-ui.c:235
 msgid "Go to parent Folder"
 msgstr "Перейти в родительскую папку"
 
-#: ../src/main-win-ui.c:234
+#: ../src/main-win-ui.c:236
 msgid "H_ome Folder"
 msgstr "_Домашняя папка"
 
-#: ../src/main-win-ui.c:234
+#: ../src/main-win-ui.c:236
 msgid "Go to home folder"
 msgstr "Перейти в домашнюю папку"
 
-#: ../src/main-win-ui.c:235
+#: ../src/main-win-ui.c:237
 msgid "_Desktop"
 msgstr "_Рабочий стол"
 
-#: ../src/main-win-ui.c:235
+#: ../src/main-win-ui.c:237
 msgid "Go to desktop folder"
 msgstr "Перейти в папку рабочего стола"
 
-#: ../src/main-win-ui.c:236
+#: ../src/main-win-ui.c:238
 msgid "Open trash can"
 msgstr "Открыть Корзину"
 
-#: ../src/main-win-ui.c:237
+#: ../src/main-win-ui.c:239
 msgid "Filesyste_m Root"
 msgstr "Кор_ень файловой системы"
 
-#: ../src/main-win-ui.c:237
+#: ../src/main-win-ui.c:239
 msgid "Go fo filesystem root"
 msgstr "Перейти к корню файловой системы"
 
-#: ../src/main-win-ui.c:238
+#: ../src/main-win-ui.c:240
 msgid "_Applications"
 msgstr "Прил_ожения"
 
-#: ../src/main-win-ui.c:238
+#: ../src/main-win-ui.c:240
 msgid "Go to root of applications menu folder"
 msgstr "Перейти к корню меню приложений"
 
-#: ../src/main-win-ui.c:239
+#: ../src/main-win-ui.c:241
 msgid "Go to list of devices connected to the computer"
 msgstr "Перейти к списку устройств, доступных на компьютере"
 
-#: ../src/main-win-ui.c:240
+#: ../src/main-win-ui.c:242
 msgid "Net_work"
 msgstr "_Сеть"
 
-#: ../src/main-win-ui.c:240
+#: ../src/main-win-ui.c:242
 msgid "Go to list of places on the network"
 msgstr "Перейти к списку мест, доступных в сети"
 
-#: ../src/main-win-ui.c:241
+#: ../src/main-win-ui.c:243
 msgid "_Go to Location..."
 msgstr "Перейти по _адресу..."
 
-#: ../src/main-win-ui.c:242
+#: ../src/main-win-ui.c:244
 msgid "_Connect to Server..."
 msgstr "С_оединиться с сервером..."
 
-#: ../src/main-win-ui.c:242
+#: ../src/main-win-ui.c:244
 msgid "Open a window to choose remote folder location"
 msgstr "Открыть окно параметров удалённой папки и соединиться"
 
-#: ../src/main-win-ui.c:243
+#: ../src/main-win-ui.c:245
 msgid "Go to the path in the location bar"
 msgstr "Перейти к папке по пути, введеному в поле адреса"
 
-#: ../src/main-win-ui.c:244
+#: ../src/main-win-ui.c:246
 msgid "_Bookmarks"
 msgstr "_Закладки"
 
-#: ../src/main-win-ui.c:245
+#: ../src/main-win-ui.c:247
 msgid "_Add to Bookmarks..."
 msgstr "Добавить в _закладки"
 
-#: ../src/main-win-ui.c:245
+#: ../src/main-win-ui.c:247
 msgid "Add current folder to bookmarks list"
 msgstr "Добавить текущую папку в закладки"
 
-#: ../src/main-win-ui.c:246
+#: ../src/main-win-ui.c:248
 msgid "Too_ls"
 msgstr "_Инструменты"
 
-#: ../src/main-win-ui.c:247
+#: ../src/main-win-ui.c:249
 msgid "Open Current Folder in _Terminal"
 msgstr "Открыть текущую папку в _терминале"
 
-#: ../src/main-win-ui.c:249
+#: ../src/main-win-ui.c:251
 msgid "Fin_d Files..."
 msgstr "_Поиск файлов..."
 
-#: ../src/main-win-ui.c:249
+#: ../src/main-win-ui.c:251
 msgid "Open search dialog"
 msgstr "Открыть диалог поиска файлов"
 
-#: ../src/main-win-ui.c:252
+#: ../src/main-win-ui.c:254
 msgid "_Run a Command in Current Folder..."
 msgstr "_Запустить команду в текущей папке..."
 
 #. Note to translators: "Mingle..." means "Do not put folders before files" but make the translation as short as possible, please!
-#: ../src/main-win-ui.c:267
+#: ../src/main-win-ui.c:271
 msgid "Mingle _Files and Folders"
 msgstr "Показывать папки и файлы _вперемешку"
 
-#: ../src/main-win-ui.c:270
+#: ../src/main-win-ui.c:274
 msgid "_Ignore Name Case"
 msgstr "_Игнорировать регистр в имени"
 
-#: ../src/main-win-ui.c:272
+#: ../src/main-win-ui.c:276
 msgid "Sho_w Hidden"
 msgstr "_Показать скрытые файлы"
 
 #. Note to translators: this save is meant for folder's settings such as sort
-#: ../src/main-win-ui.c:274
+#: ../src/main-win-ui.c:278
 msgid "Preserve This Folder's Settings"
 msgstr "Помнить настройки этой папки"
 
-#: ../src/main-win-ui.c:275
+#: ../src/main-win-ui.c:279
 msgid ""
 "Check to remember view and sort as folder setting rather than global one"
 msgstr "Отметить, чтобы запоминать вид и сортировку отдельно от общих настроек"
 
-#: ../src/main-win-ui.c:277
+#: ../src/main-win-ui.c:281
 msgid "_Show Toolbar"
 msgstr "_Показать пенал"
 
-#: ../src/main-win-ui.c:278
+#: ../src/main-win-ui.c:282
 msgid "Show 'New _Window' Button"
 msgstr "Показать кнопку 'Новое _окно'"
 
-#: ../src/main-win-ui.c:279
+#: ../src/main-win-ui.c:283
 msgid "Show 'New _Tab' Button"
 msgstr "Показать кнопку 'Новая _вкладка'"
 
-#: ../src/main-win-ui.c:280
+#: ../src/main-win-ui.c:284
 msgid "Show _Navigation Buttons"
 msgstr "Показать кнопки _навигации"
 
-#: ../src/main-win-ui.c:281
+#: ../src/main-win-ui.c:285
 msgid "Show '_Home' Button"
 msgstr "Показать кнопку _домашней папки"
 
-#: ../src/main-win-ui.c:282
+#: ../src/main-win-ui.c:286
 msgid "Sho_w Side Pane"
 msgstr "_Показать боковую панель"
 
-#: ../src/main-win-ui.c:283
+#: ../src/main-win-ui.c:287
 msgid "Show Status B_ar"
 msgstr "_Показать панель статуса"
 
-#: ../src/main-win-ui.c:284
+#: ../src/main-win-ui.c:288
 msgid "_Dual Pane Mode"
 msgstr "_Двухпанельный режим"
 
-#: ../src/main-win-ui.c:284
+#: ../src/main-win-ui.c:288
 msgid "Show two panels with folder views"
 msgstr "Показывать две панели с папками"
 
-#: ../src/main-win-ui.c:285
+#: ../src/main-win-ui.c:289
 msgid "Fullscreen _Mode"
 msgstr "Полно_экранный режим"
 
-#: ../src/main-win-ui.c:291
+#: ../src/main-win-ui.c:295
 msgid "_Icon View"
 msgstr "_Значки"
 
-#: ../src/main-win-ui.c:292
+#: ../src/main-win-ui.c:296
 msgid "_Compact View"
 msgstr "_Компактный вид"
 
-#: ../src/main-win-ui.c:293
+#: ../src/main-win-ui.c:297
 msgid "_Thumbnail View"
 msgstr "_Миниатюры"
 
-#: ../src/main-win-ui.c:294
+#: ../src/main-win-ui.c:298
 msgid "Detailed _List View"
 msgstr "_Подробности"
 
-#: ../src/main-win-ui.c:307 ../src/main-win-ui.c:315
+#: ../src/main-win-ui.c:311 ../src/main-win-ui.c:319
 msgid "By _Name"
 msgstr "По _имени"
 
-#: ../src/main-win-ui.c:308 ../src/main-win-ui.c:316
+#: ../src/main-win-ui.c:312 ../src/main-win-ui.c:320
 msgid "By _Modification Time"
 msgstr "По _времени изменения"
 
-#: ../src/main-win-ui.c:309 ../src/main-win-ui.c:317
+#: ../src/main-win-ui.c:313 ../src/main-win-ui.c:321
 msgid "By _Size"
 msgstr "По _размеру"
 
-#: ../src/main-win-ui.c:310 ../src/main-win-ui.c:318
+#: ../src/main-win-ui.c:314 ../src/main-win-ui.c:322
 msgid "By File _Type"
 msgstr "По _типу файла"
 
-#: ../src/main-win-ui.c:312
+#: ../src/main-win-ui.c:316
 msgid "By _Extension"
 msgstr "По рас_ширению"
 
-#: ../src/main-win-ui.c:325
+#: ../src/main-win-ui.c:329
 msgid "Places"
 msgstr "Точки входа"
 
-#: ../src/main-win-ui.c:326
+#: ../src/main-win-ui.c:330
 msgid "Directory Tree"
 msgstr "Дерево директорий"
 
-#: ../src/main-win-ui.c:327
+#: ../src/main-win-ui.c:331
 msgid "Remote"
 msgstr "Сеть"
 
-#: ../src/main-win-ui.c:333
+#: ../src/main-win-ui.c:337
 msgid "_Location"
 msgstr "_Адрес"
 
-#: ../src/main-win-ui.c:334
+#: ../src/main-win-ui.c:338
 msgid "_Buttons"
 msgstr "_Кнопки"
 
-#: ../src/main-win.c:925 ../src/main-win.c:929
+#: ../src/main-win.c:938 ../src/main-win.c:942
 msgid "Show history of visited folders"
 msgstr "Показать историю посещённых папок"
 
-#: ../src/main-win.c:934
+#: ../src/main-win.c:947
 msgid "History"
 msgstr "История"
 
-#: ../src/main-win.c:948
+#: ../src/main-win.c:961
 msgid "You are in super user mode"
 msgstr "Вы находитесь в режиме суперпользователя"
 
-#: ../src/main-win.c:1134
+#: ../src/main-win.c:1146
 msgid "Lightweight file manager\n"
 msgstr "Легковесный файловый менеджер\n"
 
-#: ../src/main-win.c:1139
+#: ../src/main-win.c:1156
 #, c-format
 msgid "using LibFM ver. %s\n"
 msgstr "(использует LibFM версии %s)\n"
 
-#: ../src/main-win.c:1141
+#: ../src/main-win.c:1158
 msgid ""
 "\n"
 "Developed by Hon Jen Yee (PCMan)"
@@ -1071,11 +1077,11 @@ msgstr ""
 "\n"
 "Разработчик Hon Jen Yee (PCMan)"
 
-#: ../src/main-win.c:1166 ../src/main-win.c:1174
+#: ../src/main-win.c:1183 ../src/main-win.c:1191
 msgid "Keyboard Navigation"
 msgstr "Управление с клавиатуры"
 
-#: ../src/main-win.c:1168
+#: ../src/main-win.c:1185
 msgid ""
 "Tab: cycle focus Folder View -> Side Pane -> Tools Bar\n"
 "Shift+Tab: cycle focus Tools Bar -> Side Pane -> Folder View\n"
@@ -1093,19 +1099,19 @@ msgstr ""
 "F10: Вызов основного меню\n"
 "Ctrl+L или Alt+D: фокус на строку пути файла"
 
-#: ../src/main-win.c:1210
+#: ../src/main-win.c:1227
 msgid "Run a command"
 msgstr "Выполнить команду"
 
-#: ../src/main-win.c:1211
+#: ../src/main-win.c:1228
 msgid "Enter a command to run:"
 msgstr "Введите команду для выполнения:"
 
-#: ../src/main-win.c:1218
+#: ../src/main-win.c:1235
 msgid "Current folder is inaccessible"
 msgstr "Текущая папка недоступна"
 
-#: ../src/main-win.c:1822
+#: ../src/main-win.c:1837
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -1116,15 +1122,15 @@ msgstr ""
 "'%s'\n"
 "Введите имя новой закладки:"
 
-#: ../src/main-win.c:1826
+#: ../src/main-win.c:1841
 msgid "Add to Bookmarks"
 msgstr "Добавить в закладки"
 
-#: ../src/main-win.c:2552
+#: ../src/main-win.c:2587
 msgid "Select filter"
 msgstr "Выберите фильтр"
 
-#: ../src/main-win.c:2553
+#: ../src/main-win.c:2588
 msgid "Choose a new shell pattern to show files:"
 msgstr "Выберите новую маску файлов для отображения:"
 
@@ -1176,8 +1182,8 @@ msgid ""
 "Set mode of desktop wallpaper. MODE=(color|stretch|fit|crop|center|tile|"
 "screen)"
 msgstr ""
-"Установить режим для обоев рабочего стола. "
-"РЕЖИМ=(color|stretch|fit|crop|center|tile|screen)"
+"Установить режим для обоев рабочего стола. РЕЖИМ=(color|stretch|fit|crop|"
+"center|tile|screen)"
 
 #: ../src/pcmanfm.c:89
 msgid "MODE"
@@ -1211,11 +1217,12 @@ msgstr "ROLE"
 msgid "[FILE1, FILE2,...]"
 msgstr "[FILE1, FILE2,...]"
 
-#: ../src/pcmanfm.c:352
+#. FIXME: add "on this X screen/monitor" into diagnostics
+#: ../src/pcmanfm.c:376
 msgid "Desktop manager is not active."
 msgstr "Менеджер рабочего стола не активен."
 
-#: ../src/pcmanfm.c:598
+#: ../src/pcmanfm.c:627
 msgid "Terminal emulator is not set."
 msgstr "Не задан эмулятор терминала."
 
@@ -1223,7 +1230,7 @@ msgstr "Не задан эмулятор терминала."
 msgid "Open in New T_ab"
 msgstr "Открыть в новой вк_ладке"
 
-#: ../src/tab-page.c:395
+#: ../src/tab-page.c:411
 #, c-format
 msgid "%d item selected"
 msgid_plural "%d items selected"
@@ -1231,12 +1238,12 @@ msgstr[0] "Выбран %d элемент"
 msgstr[1] "Выбрано %d элемента"
 msgstr[2] "Выбрано %d элементов"
 
-#: ../src/tab-page.c:718
+#: ../src/tab-page.c:741
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Свободное место: %s (Всего: %s)"
 
-#: ../src/tab-page.c:738
+#: ../src/tab-page.c:761
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
@@ -1244,7 +1251,7 @@ msgstr[0] "%d элемент"
 msgstr[1] "%d элемента"
 msgstr[2] "%d элементов"
 
-#: ../src/tab-page.c:739
+#: ../src/tab-page.c:762
 #, c-format
 msgid " (%d hidden)"
 msgid_plural " (%d hidden)"
@@ -1252,19 +1259,19 @@ msgstr[0] " (%d скрыт)"
 msgstr[1] " (%d скрыто)"
 msgstr[2] " (%d скрыто)"
 
-#: ../src/pref.c:514
+#: ../src/pref.c:515
 msgid "Add to Modules Blacklist"
 msgstr "Добавление в чёрный список"
 
-#: ../src/pref.c:515
+#: ../src/pref.c:516
 msgid "Enter a blacklisted module mask:"
 msgstr "Введите маску модулей для занесения в чёрный список:"
 
-#: ../src/pref.c:606
+#: ../src/pref.c:607
 msgid "Add to Modules Whitelist"
 msgstr "Добавление в белый список"
 
-#: ../src/pref.c:607
+#: ../src/pref.c:608
 msgid "Enter a whitelisted module mask:"
 msgstr "Введите маску модулей для занесения в белый список:"
 

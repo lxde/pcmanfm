@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm 1.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-22 00:33+0200\n"
+"POT-Creation-Date: 2018-04-13 00:37+0300\n"
 "PO-Revision-Date: 2015-08-17 01:31+0000\n"
 "Last-Translator: Anonymous Pootle User\n"
 "Language-Team: Indonesian Translation Team <id@li.org>\n"
@@ -287,7 +287,8 @@ msgstr "Hanya tampilkan gambar kecil bagi berkas l_okal"
 
 #: ../data/ui/pref.glade.h:33
 msgid "Do _not generate thumbnails for files exceeding this size:"
-msgstr "Ja_ngan jangkitkan gambar kecil bagi berkas yang lebih dari ukuran ini:"
+msgstr ""
+"Ja_ngan jangkitkan gambar kecil bagi berkas yang lebih dari ukuran ini:"
 
 #: ../data/ui/pref.glade.h:34
 msgid "<b>User Interface</b>"
@@ -350,7 +351,7 @@ msgstr "Folder Ruma_h"
 msgid "Des_ktop"
 msgstr "Des_ktop"
 
-#: ../data/ui/pref.glade.h:50 ../src/main-win-ui.c:236
+#: ../data/ui/pref.glade.h:50 ../src/main-win-ui.c:238
 msgid "_Trash Can"
 msgstr "_Tong Sampah"
 
@@ -362,7 +363,7 @@ msgstr "Root Sistem _Berkas"
 msgid "App_lications"
 msgstr "Ap_likasi"
 
-#: ../data/ui/pref.glade.h:53 ../src/main-win-ui.c:239
+#: ../data/ui/pref.glade.h:53 ../src/main-win-ui.c:241
 msgid "Dev_ices"
 msgstr "P_erangkat"
 
@@ -644,428 +645,433 @@ msgstr "Tetap Di Posisi _Kini"
 msgid "Snap to _Grid"
 msgstr "Lengketkan ke _Kisi"
 
-#: ../src/desktop.c:946
+#: ../src/desktop.c:974
 msgid "Activate file"
 msgstr "Aktifkan berkas"
 
-#: ../src/desktop.c:948
+#: ../src/desktop.c:976
 msgid "Show file menu"
 msgstr "Tampilkan menu berkas"
 
-#: ../src/desktop.c:1364
+#: ../src/desktop.c:1394
 msgid "Show desktop menu"
 msgstr "Tampilkan menu desktop"
 
 #. FIXME: set name by monitor
-#: ../src/desktop.c:1436
+#: ../src/desktop.c:1466
 msgid "Desktop"
 msgstr "Desktop"
 
-#: ../src/main-win-ui.c:187
+#: ../src/main-win-ui.c:189
 msgid "_File"
 msgstr "_Berkas"
 
-#: ../src/main-win-ui.c:188
+#: ../src/main-win-ui.c:190
 msgid "_New Window"
 msgstr "_Jendela Baru"
 
-#: ../src/main-win-ui.c:189
+#: ../src/main-win-ui.c:190
+#, fuzzy
+msgid "Open new file manager window"
+msgstr "Buka di Pengelola Berkas"
+
+#: ../src/main-win-ui.c:191
 msgid "New T_ab"
 msgstr "T_ab Baru"
 
-#: ../src/main-win-ui.c:189
+#: ../src/main-win-ui.c:191
 msgid "Create new tab for this folder"
 msgstr "Buat tab baru untuk folder ini"
 
-#: ../src/main-win-ui.c:190
+#: ../src/main-win-ui.c:192
 msgid "C_reate New..."
 msgstr "Buat Ba_ru..."
 
-#: ../src/main-win-ui.c:191
+#: ../src/main-win-ui.c:193
 msgid "Folder"
 msgstr "Folder"
 
-#: ../src/main-win-ui.c:192
+#: ../src/main-win-ui.c:194
 msgid "Empty File"
 msgstr "Berkas Kosong"
 
-#: ../src/main-win-ui.c:193
+#: ../src/main-win-ui.c:195
 msgid "Folder Propertie_s"
 msgstr "_Properti Folder"
 
-#: ../src/main-win-ui.c:194
+#: ../src/main-win-ui.c:196
 msgid "_Close Tab"
 msgstr "T_utup Tab"
 
-#: ../src/main-win-ui.c:195
+#: ../src/main-win-ui.c:197
 msgid "Close _Window"
 msgstr "Tutup _Jendela"
 
-#: ../src/main-win-ui.c:196
+#: ../src/main-win-ui.c:198
 msgid "_Edit"
 msgstr "_Sunting"
 
-#: ../src/main-win-ui.c:198
+#: ../src/main-win-ui.c:200
 msgid "C_ut"
 msgstr "P_otong"
 
-#: ../src/main-win-ui.c:201
+#: ../src/main-win-ui.c:203
 msgid "Move to _Trash"
 msgstr "Pindah ke _Tong Sampah"
 
-#: ../src/main-win-ui.c:203
+#: ../src/main-win-ui.c:205
 msgid "Copy Pat_h(s)"
 msgstr "Salin Pat_h"
 
-#: ../src/main-win-ui.c:204
+#: ../src/main-win-ui.c:206
 msgid "R_ename..."
 msgstr "Ubah _nama..."
 
-#: ../src/main-win-ui.c:205
+#: ../src/main-win-ui.c:207
 msgid "D_uplicate..."
 msgstr "D_uplikat..."
 
-#: ../src/main-win-ui.c:206
+#: ../src/main-win-ui.c:208
 msgid "Create Lin_k..."
 msgstr "Buat _Taut..."
 
-#: ../src/main-win-ui.c:207
+#: ../src/main-win-ui.c:209
 msgid "_Move to..."
 msgstr "Pi_ndah ke..."
 
-#: ../src/main-win-ui.c:208
+#: ../src/main-win-ui.c:210
 msgid "Copy to_..."
 msgstr "S_alin ke..."
 
-#: ../src/main-win-ui.c:209
+#: ../src/main-win-ui.c:211
 msgid "Propertie_s"
 msgstr "_Properti"
 
-#: ../src/main-win-ui.c:211
+#: ../src/main-win-ui.c:213
 msgid "_Invert Selection"
 msgstr "Balik P_ilihan"
 
-#: ../src/main-win-ui.c:212
+#: ../src/main-win-ui.c:214
 msgid "Prefere_nces"
 msgstr "Prefere_nsi"
 
-#: ../src/main-win-ui.c:213
+#: ../src/main-win-ui.c:215
 msgid "_View"
 msgstr "_Tilik"
 
-#: ../src/main-win-ui.c:214
+#: ../src/main-win-ui.c:216
 msgid "_Reload Folder"
 msgstr "Muat Ulang Folde_r"
 
-#: ../src/main-win-ui.c:214
+#: ../src/main-win-ui.c:216
 msgid "Reload current folder"
 msgstr "Muat ulang folder kini"
 
-#: ../src/main-win-ui.c:215
+#: ../src/main-win-ui.c:217
 msgid "Tool_bar"
 msgstr "_Bilah Alat"
 
-#: ../src/main-win-ui.c:216
+#: ../src/main-win-ui.c:218
 msgid "Pat_h Bar"
 msgstr "Bilah Pat_h"
 
-#: ../src/main-win-ui.c:217
+#: ../src/main-win-ui.c:219
 msgid "Side _Pane"
 msgstr "_Panel Sisi"
 
 #. other see below: 'ShowHidden' 'ShowStatus' 'Fullscreen' 'IconView'...
-#: ../src/main-win-ui.c:219
+#: ../src/main-win-ui.c:221
 msgid "Fo_lder View Mode"
 msgstr "Mode Tilikan Fo_lder"
 
-#: ../src/main-win-ui.c:220
+#: ../src/main-win-ui.c:222
 msgid "S_ort Files"
 msgstr "Ur_utkan Berkas"
 
-#: ../src/main-win-ui.c:222
+#: ../src/main-win-ui.c:224
 msgid "Zoom O_ut"
 msgstr "Per_kecil"
 
-#: ../src/main-win-ui.c:225
+#: ../src/main-win-ui.c:227
 msgid "Fil_ter..."
 msgstr "_Saring..."
 
-#: ../src/main-win-ui.c:227
+#: ../src/main-win-ui.c:229
 msgid "_Help"
 msgstr "Ba_ntuan"
 
-#: ../src/main-win-ui.c:229
+#: ../src/main-win-ui.c:231
 msgid "_Keyboard Navigation"
 msgstr "Navigasi Papan Ti_k"
 
-#: ../src/main-win-ui.c:230
+#: ../src/main-win-ui.c:232
 msgid "_Go"
 msgstr "_Lompat"
 
-#: ../src/main-win-ui.c:231
+#: ../src/main-win-ui.c:233
 msgid "_Previous Folder"
 msgstr "Folder Se_belumnya"
 
-#: ../src/main-win-ui.c:231
+#: ../src/main-win-ui.c:233
 msgid "Return to previous folder in history"
 msgstr "Kembali ke folder sebelumnya dalam riwayat"
 
-#: ../src/main-win-ui.c:232
+#: ../src/main-win-ui.c:234
 msgid "_Next Folder"
 msgstr "Folder Se_lanjutnya"
 
-#: ../src/main-win-ui.c:232
+#: ../src/main-win-ui.c:234
 msgid "Go forward to next folder in history"
 msgstr "Maju ke folder selanjutnya dalam riwayat"
 
-#: ../src/main-win-ui.c:233
+#: ../src/main-win-ui.c:235
 msgid "Pa_rent Folder"
 msgstr "Folde_r Induk"
 
-#: ../src/main-win-ui.c:233
+#: ../src/main-win-ui.c:235
 msgid "Go to parent Folder"
 msgstr "Pergi ke Folder induk"
 
-#: ../src/main-win-ui.c:234
+#: ../src/main-win-ui.c:236
 msgid "H_ome Folder"
 msgstr "F_older Rumah"
 
-#: ../src/main-win-ui.c:234
+#: ../src/main-win-ui.c:236
 msgid "Go to home folder"
 msgstr "Pergi ke folder rumah"
 
-#: ../src/main-win-ui.c:235
+#: ../src/main-win-ui.c:237
 msgid "_Desktop"
 msgstr "_Desktop"
 
-#: ../src/main-win-ui.c:235
+#: ../src/main-win-ui.c:237
 msgid "Go to desktop folder"
 msgstr "Pergi ke folder desktop"
 
-#: ../src/main-win-ui.c:236
+#: ../src/main-win-ui.c:238
 msgid "Open trash can"
 msgstr "Buka tong sampah"
 
-#: ../src/main-win-ui.c:237
+#: ../src/main-win-ui.c:239
 msgid "Filesyste_m Root"
 msgstr "Root Siste_m Berkas"
 
 # typo "fo"
-#: ../src/main-win-ui.c:237
+#: ../src/main-win-ui.c:239
 msgid "Go fo filesystem root"
 msgstr "Pergi ke root sistem berkas"
 
-#: ../src/main-win-ui.c:238
+#: ../src/main-win-ui.c:240
 msgid "_Applications"
 msgstr "_Aplikasi"
 
-#: ../src/main-win-ui.c:238
+#: ../src/main-win-ui.c:240
 msgid "Go to root of applications menu folder"
 msgstr "Pergi ke akar folder menu aplikasi"
 
-#: ../src/main-win-ui.c:239
+#: ../src/main-win-ui.c:241
 msgid "Go to list of devices connected to the computer"
 msgstr "Pergi ke daftar perangkat yang tersambung ke komputer"
 
-#: ../src/main-win-ui.c:240
+#: ../src/main-win-ui.c:242
 msgid "Net_work"
 msgstr "_Jaringan"
 
-#: ../src/main-win-ui.c:240
+#: ../src/main-win-ui.c:242
 msgid "Go to list of places on the network"
 msgstr "Pergi ke daftar tempat pada jaringan"
 
-#: ../src/main-win-ui.c:241
+#: ../src/main-win-ui.c:243
 msgid "_Go to Location..."
 msgstr "_Ke Lokasi..."
 
-#: ../src/main-win-ui.c:242
+#: ../src/main-win-ui.c:244
 msgid "_Connect to Server..."
 msgstr "_Menyambung ke Server..."
 
-#: ../src/main-win-ui.c:242
+#: ../src/main-win-ui.c:244
 msgid "Open a window to choose remote folder location"
 msgstr "Buka suatu jendela untuk memilih lokasi folder jauh"
 
-#: ../src/main-win-ui.c:243
+#: ../src/main-win-ui.c:245
 msgid "Go to the path in the location bar"
 msgstr "Pergi ke path dalam bilah lokasi"
 
-#: ../src/main-win-ui.c:244
+#: ../src/main-win-ui.c:246
 msgid "_Bookmarks"
 msgstr "_Penanda Tautan"
 
-#: ../src/main-win-ui.c:245
+#: ../src/main-win-ui.c:247
 msgid "_Add to Bookmarks..."
 msgstr "T_ambahkan ke Penanda Taut..."
 
-#: ../src/main-win-ui.c:245
+#: ../src/main-win-ui.c:247
 msgid "Add current folder to bookmarks list"
 msgstr "Tambahkan folder saat ini ke daftar tanda taut"
 
-#: ../src/main-win-ui.c:246
+#: ../src/main-win-ui.c:248
 msgid "Too_ls"
 msgstr "Pera_latan"
 
-#: ../src/main-win-ui.c:247
+#: ../src/main-win-ui.c:249
 msgid "Open Current Folder in _Terminal"
 msgstr "Buka Folder Kini di _Terminal"
 
-#: ../src/main-win-ui.c:249
+#: ../src/main-win-ui.c:251
 msgid "Fin_d Files..."
 msgstr "Ca_ri Berkas..."
 
-#: ../src/main-win-ui.c:249
+#: ../src/main-win-ui.c:251
 msgid "Open search dialog"
 msgstr "Buka dialog pencarian"
 
-#: ../src/main-win-ui.c:252
+#: ../src/main-win-ui.c:254
 msgid "_Run a Command in Current Folder..."
 msgstr "Jalankan Per_intah pada Folder Saat Ini..."
 
 #. Note to translators: "Mingle..." means "Do not put folders before files" but make the translation as short as possible, please!
-#: ../src/main-win-ui.c:267
+#: ../src/main-win-ui.c:271
 msgid "Mingle _Files and Folders"
 msgstr "Campur Berkas dan _Folder"
 
-#: ../src/main-win-ui.c:270
+#: ../src/main-win-ui.c:274
 msgid "_Ignore Name Case"
 msgstr "Aba_ikan Besar Kecil Huruf Nama"
 
-#: ../src/main-win-ui.c:272
+#: ../src/main-win-ui.c:276
 msgid "Sho_w Hidden"
 msgstr "Tampilka_n Yang Tersembunyi"
 
 #. Note to translators: this save is meant for folder's settings such as sort
-#: ../src/main-win-ui.c:274
+#: ../src/main-win-ui.c:278
 msgid "Preserve This Folder's Settings"
 msgstr "Lestarikan Pengaturan Folder Ini"
 
-#: ../src/main-win-ui.c:275
+#: ../src/main-win-ui.c:279
 msgid ""
 "Check to remember view and sort as folder setting rather than global one"
 msgstr ""
 "Klik untuk mengingat tilikan dan uruta sebagai pengaturan folder bukan yang "
 "global"
 
-#: ../src/main-win-ui.c:277
+#: ../src/main-win-ui.c:281
 msgid "_Show Toolbar"
 msgstr "Tampilkan Bilah Perkaka_s"
 
-#: ../src/main-win-ui.c:278
+#: ../src/main-win-ui.c:282
 msgid "Show 'New _Window' Button"
 msgstr "Tampilkan Tombol '_Jendela Baru'"
 
-#: ../src/main-win-ui.c:279
+#: ../src/main-win-ui.c:283
 msgid "Show 'New _Tab' Button"
 msgstr "Tampilkan Tombol '_Tab Baru'"
 
-#: ../src/main-win-ui.c:280
+#: ../src/main-win-ui.c:284
 msgid "Show _Navigation Buttons"
 msgstr "Tampilkan Tombol _Navigasi"
 
-#: ../src/main-win-ui.c:281
+#: ../src/main-win-ui.c:285
 msgid "Show '_Home' Button"
 msgstr "Tampilkan Tombol 'Ruma_h'"
 
-#: ../src/main-win-ui.c:282
+#: ../src/main-win-ui.c:286
 msgid "Sho_w Side Pane"
 msgstr "Tampilkan Panel _Sisi"
 
-#: ../src/main-win-ui.c:283
+#: ../src/main-win-ui.c:287
 msgid "Show Status B_ar"
 msgstr "Tampilkan Bil_ah Status"
 
-#: ../src/main-win-ui.c:284
+#: ../src/main-win-ui.c:288
 msgid "_Dual Pane Mode"
 msgstr "Mode Panel Gan_da"
 
-#: ../src/main-win-ui.c:284
+#: ../src/main-win-ui.c:288
 msgid "Show two panels with folder views"
 msgstr "Tampilkan dua panel dengan tilikan folder"
 
-#: ../src/main-win-ui.c:285
+#: ../src/main-win-ui.c:289
 msgid "Fullscreen _Mode"
 msgstr "_Mode Layar Penuh"
 
-#: ../src/main-win-ui.c:291
+#: ../src/main-win-ui.c:295
 msgid "_Icon View"
 msgstr "Tampilan _Ikon"
 
-#: ../src/main-win-ui.c:292
+#: ../src/main-win-ui.c:296
 msgid "_Compact View"
 msgstr "Tampilan _Rapat"
 
-#: ../src/main-win-ui.c:293
+#: ../src/main-win-ui.c:297
 msgid "_Thumbnail View"
 msgstr "_Tilikan Gambar Kecil"
 
-#: ../src/main-win-ui.c:294
+#: ../src/main-win-ui.c:298
 msgid "Detailed _List View"
 msgstr "Ti_likan Daftar Terrinci"
 
-#: ../src/main-win-ui.c:307 ../src/main-win-ui.c:315
+#: ../src/main-win-ui.c:311 ../src/main-win-ui.c:319
 msgid "By _Name"
 msgstr "Berdasarkan _Nama"
 
-#: ../src/main-win-ui.c:308 ../src/main-win-ui.c:316
+#: ../src/main-win-ui.c:312 ../src/main-win-ui.c:320
 msgid "By _Modification Time"
 msgstr "Berdasar _Waktu Perubahan"
 
-#: ../src/main-win-ui.c:309 ../src/main-win-ui.c:317
+#: ../src/main-win-ui.c:313 ../src/main-win-ui.c:321
 msgid "By _Size"
 msgstr "Berdasar _Ukuran"
 
-#: ../src/main-win-ui.c:310 ../src/main-win-ui.c:318
+#: ../src/main-win-ui.c:314 ../src/main-win-ui.c:322
 msgid "By File _Type"
 msgstr "Berdasar _Jenis Berkas"
 
-#: ../src/main-win-ui.c:312
+#: ../src/main-win-ui.c:316
 msgid "By _Extension"
 msgstr "Menurut _Ekstensi"
 
-#: ../src/main-win-ui.c:325
+#: ../src/main-win-ui.c:329
 msgid "Places"
 msgstr "Lokasi"
 
-#: ../src/main-win-ui.c:326
+#: ../src/main-win-ui.c:330
 msgid "Directory Tree"
 msgstr "Pohon Direktori"
 
-#: ../src/main-win-ui.c:327
+#: ../src/main-win-ui.c:331
 msgid "Remote"
 msgstr "Jauh"
 
-#: ../src/main-win-ui.c:333
+#: ../src/main-win-ui.c:337
 msgid "_Location"
 msgstr "_Lokasi"
 
-#: ../src/main-win-ui.c:334
+#: ../src/main-win-ui.c:338
 msgid "_Buttons"
 msgstr "Tom_bol"
 
-#: ../src/main-win.c:925 ../src/main-win.c:929
+#: ../src/main-win.c:938 ../src/main-win.c:942
 msgid "Show history of visited folders"
 msgstr "Tampilkan riwayat folder yang dikunjungi"
 
-#: ../src/main-win.c:934
+#: ../src/main-win.c:947
 msgid "History"
 msgstr "Riwayat"
 
-#: ../src/main-win.c:948
+#: ../src/main-win.c:961
 msgid "You are in super user mode"
 msgstr "Anda sedang berada pada mode pengguna super"
 
-#: ../src/main-win.c:1134
+#: ../src/main-win.c:1146
 msgid "Lightweight file manager\n"
 msgstr "Manajer berkas yang ringan\n"
 
-#: ../src/main-win.c:1139
+#: ../src/main-win.c:1156
 #, c-format
 msgid "using LibFM ver. %s\n"
 msgstr "memakai LibFM ver. %s\n"
 
-#: ../src/main-win.c:1141
+#: ../src/main-win.c:1158
 msgid ""
 "\n"
 "Developed by Hon Jen Yee (PCMan)"
@@ -1073,11 +1079,11 @@ msgstr ""
 "\n"
 "Dikembangkan oleh Hon Jen Yee (PCMan)"
 
-#: ../src/main-win.c:1166 ../src/main-win.c:1174
+#: ../src/main-win.c:1183 ../src/main-win.c:1191
 msgid "Keyboard Navigation"
 msgstr "Navigasi Papan Tik"
 
-#: ../src/main-win.c:1168
+#: ../src/main-win.c:1185
 msgid ""
 "Tab: cycle focus Folder View -> Side Pane -> Tools Bar\n"
 "Shift+Tab: cycle focus Tools Bar -> Side Pane -> Folder View\n"
@@ -1093,19 +1099,19 @@ msgstr ""
 "F10: aktifkan menu utama\n"
 "Ctrl+L atau Alt+D: lompatkan fokus ke Bilah Path"
 
-#: ../src/main-win.c:1210
+#: ../src/main-win.c:1227
 msgid "Run a command"
 msgstr "Jalankan perintah"
 
-#: ../src/main-win.c:1211
+#: ../src/main-win.c:1228
 msgid "Enter a command to run:"
 msgstr "Masukkan perintah yang akan dijalankan:"
 
-#: ../src/main-win.c:1218
+#: ../src/main-win.c:1235
 msgid "Current folder is inaccessible"
 msgstr "Folder saat ini tak bisa diakses"
 
-#: ../src/main-win.c:1822
+#: ../src/main-win.c:1837
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -1116,15 +1122,15 @@ msgstr ""
 "'%s'\n"
 "Masukkan nama bagi butir penanda tautan baru:"
 
-#: ../src/main-win.c:1826
+#: ../src/main-win.c:1841
 msgid "Add to Bookmarks"
 msgstr "Tambahkan ke Penanda Tautan"
 
-#: ../src/main-win.c:2552
+#: ../src/main-win.c:2587
 msgid "Select filter"
 msgstr "Pilih penyaring"
 
-#: ../src/main-win.c:2553
+#: ../src/main-win.c:2588
 msgid "Choose a new shell pattern to show files:"
 msgstr "Pilih pola shell baru untuk menampilkan berkas:"
 
@@ -1176,8 +1182,8 @@ msgid ""
 "Set mode of desktop wallpaper. MODE=(color|stretch|fit|crop|center|tile|"
 "screen)"
 msgstr ""
-"Tata mode gambar latar desktop. "
-"MODE=(color|stretch|fit|crop|center|tile|screen)"
+"Tata mode gambar latar desktop. MODE=(color|stretch|fit|crop|center|tile|"
+"screen)"
 
 #: ../src/pcmanfm.c:89
 msgid "MODE"
@@ -1211,11 +1217,12 @@ msgstr "PERAN"
 msgid "[FILE1, FILE2,...]"
 msgstr "[BERKAS1, BERKAS2,...]"
 
-#: ../src/pcmanfm.c:352
+#. FIXME: add "on this X screen/monitor" into diagnostics
+#: ../src/pcmanfm.c:376
 msgid "Desktop manager is not active."
 msgstr "Manajer desktop tidak aktif."
 
-#: ../src/pcmanfm.c:598
+#: ../src/pcmanfm.c:627
 msgid "Terminal emulator is not set."
 msgstr "Emulator terminal tak ditata."
 
@@ -1223,42 +1230,42 @@ msgstr "Emulator terminal tak ditata."
 msgid "Open in New T_ab"
 msgstr "Buka di T_ab baru"
 
-#: ../src/tab-page.c:395
+#: ../src/tab-page.c:411
 #, c-format
 msgid "%d item selected"
 msgid_plural "%d items selected"
 msgstr[0] "%d butir dipilih"
 
-#: ../src/tab-page.c:718
+#: ../src/tab-page.c:741
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Ruang bebas: %s (Total: %s)"
 
-#: ../src/tab-page.c:738
+#: ../src/tab-page.c:761
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] "%d butir"
 
-#: ../src/tab-page.c:739
+#: ../src/tab-page.c:762
 #, c-format
 msgid " (%d hidden)"
 msgid_plural " (%d hidden)"
 msgstr[0] "%d tersembunyi"
 
-#: ../src/pref.c:514
+#: ../src/pref.c:515
 msgid "Add to Modules Blacklist"
 msgstr "Tambahkan ke Daftar Hitam Modul"
 
-#: ../src/pref.c:515
+#: ../src/pref.c:516
 msgid "Enter a blacklisted module mask:"
 msgstr "Masukkan suatu mask modul yang dicekal:"
 
-#: ../src/pref.c:606
+#: ../src/pref.c:607
 msgid "Add to Modules Whitelist"
 msgstr "Tambahkan ke Daftar Putih Modul"
 
-#: ../src/pref.c:607
+#: ../src/pref.c:608
 msgid "Enter a whitelisted module mask:"
 msgstr "Masukkan suatu mask modul yang bebas cekal:"
 

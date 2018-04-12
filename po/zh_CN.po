@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm 1.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-22 00:33+0200\n"
+"POT-Creation-Date: 2018-04-13 00:37+0300\n"
 "PO-Revision-Date: 2014-12-03 12:16+0000\n"
 "Last-Translator: Wylmer Wang <wantinghard@gmail.com>\n"
 "Language-Team: Chinese (simplified) <i18n-zh@googlegroups.com>\n"
@@ -345,7 +345,7 @@ msgstr "主文件夹(_H)"
 msgid "Des_ktop"
 msgstr "桌面(_K)"
 
-#: ../data/ui/pref.glade.h:50 ../src/main-win-ui.c:236
+#: ../data/ui/pref.glade.h:50 ../src/main-win-ui.c:238
 msgid "_Trash Can"
 msgstr "回收站(_T)"
 
@@ -357,7 +357,7 @@ msgstr "文件系统根目录(_F)"
 msgid "App_lications"
 msgstr "应用程序(_L)"
 
-#: ../data/ui/pref.glade.h:53 ../src/main-win-ui.c:239
+#: ../data/ui/pref.glade.h:53 ../src/main-win-ui.c:241
 msgid "Dev_ices"
 msgstr "设备(_I)"
 
@@ -635,425 +635,430 @@ msgstr "粘在当前位置(_K)"
 msgid "Snap to _Grid"
 msgstr "吸附到网格(_G)"
 
-#: ../src/desktop.c:946
+#: ../src/desktop.c:974
 msgid "Activate file"
 msgstr "激活文件"
 
-#: ../src/desktop.c:948
+#: ../src/desktop.c:976
 msgid "Show file menu"
 msgstr "显示文件菜单"
 
-#: ../src/desktop.c:1364
+#: ../src/desktop.c:1394
 msgid "Show desktop menu"
 msgstr "显示桌面菜单"
 
 #. FIXME: set name by monitor
-#: ../src/desktop.c:1436
+#: ../src/desktop.c:1466
 msgid "Desktop"
 msgstr "桌面"
 
-#: ../src/main-win-ui.c:187
+#: ../src/main-win-ui.c:189
 msgid "_File"
 msgstr "文件(_F)"
 
-#: ../src/main-win-ui.c:188
+#: ../src/main-win-ui.c:190
 msgid "_New Window"
 msgstr "新窗口(_N)"
 
-#: ../src/main-win-ui.c:189
+#: ../src/main-win-ui.c:190
+#, fuzzy
+msgid "Open new file manager window"
+msgstr "在文件管理器中打开"
+
+#: ../src/main-win-ui.c:191
 msgid "New T_ab"
 msgstr "新标签(_A)"
 
-#: ../src/main-win-ui.c:189
+#: ../src/main-win-ui.c:191
 msgid "Create new tab for this folder"
 msgstr "在新标签中打开此文件夹"
 
-#: ../src/main-win-ui.c:190
+#: ../src/main-win-ui.c:192
 msgid "C_reate New..."
 msgstr "新建(_R)..."
 
-#: ../src/main-win-ui.c:191
+#: ../src/main-win-ui.c:193
 msgid "Folder"
 msgstr "文件夹"
 
-#: ../src/main-win-ui.c:192
+#: ../src/main-win-ui.c:194
 msgid "Empty File"
 msgstr "空文件"
 
-#: ../src/main-win-ui.c:193
+#: ../src/main-win-ui.c:195
 msgid "Folder Propertie_s"
 msgstr "文件夹属性(_S)"
 
-#: ../src/main-win-ui.c:194
+#: ../src/main-win-ui.c:196
 msgid "_Close Tab"
 msgstr "关闭标签(_C)"
 
-#: ../src/main-win-ui.c:195
+#: ../src/main-win-ui.c:197
 msgid "Close _Window"
 msgstr "关闭窗口(_W)"
 
-#: ../src/main-win-ui.c:196
+#: ../src/main-win-ui.c:198
 msgid "_Edit"
 msgstr "编辑(_E)"
 
-#: ../src/main-win-ui.c:198
+#: ../src/main-win-ui.c:200
 msgid "C_ut"
 msgstr "剪切(_U)"
 
-#: ../src/main-win-ui.c:201
+#: ../src/main-win-ui.c:203
 msgid "Move to _Trash"
 msgstr "移到回收站(_T)"
 
-#: ../src/main-win-ui.c:203
+#: ../src/main-win-ui.c:205
 msgid "Copy Pat_h(s)"
 msgstr "复制路径(_H)"
 
-#: ../src/main-win-ui.c:204
+#: ../src/main-win-ui.c:206
 msgid "R_ename..."
 msgstr "重命名(_E)..."
 
-#: ../src/main-win-ui.c:205
+#: ../src/main-win-ui.c:207
 msgid "D_uplicate..."
 msgstr "就地复制(_U)..."
 
-#: ../src/main-win-ui.c:206
+#: ../src/main-win-ui.c:208
 msgid "Create Lin_k..."
 msgstr "创建链接(_K)..."
 
-#: ../src/main-win-ui.c:207
+#: ../src/main-win-ui.c:209
 msgid "_Move to..."
 msgstr "移动到(_M)..."
 
-#: ../src/main-win-ui.c:208
+#: ../src/main-win-ui.c:210
 msgid "Copy to_..."
 msgstr "复制到(_O)..."
 
-#: ../src/main-win-ui.c:209
+#: ../src/main-win-ui.c:211
 msgid "Propertie_s"
 msgstr "属性(_S)"
 
-#: ../src/main-win-ui.c:211
+#: ../src/main-win-ui.c:213
 msgid "_Invert Selection"
 msgstr "反转选择(_I)"
 
-#: ../src/main-win-ui.c:212
+#: ../src/main-win-ui.c:214
 msgid "Prefere_nces"
 msgstr "偏好设置(_N)"
 
-#: ../src/main-win-ui.c:213
+#: ../src/main-win-ui.c:215
 msgid "_View"
 msgstr "视图(_V)"
 
-#: ../src/main-win-ui.c:214
+#: ../src/main-win-ui.c:216
 msgid "_Reload Folder"
 msgstr "重新载入文件夹(_R)"
 
-#: ../src/main-win-ui.c:214
+#: ../src/main-win-ui.c:216
 msgid "Reload current folder"
 msgstr "重新载入当前文件夹"
 
-#: ../src/main-win-ui.c:215
+#: ../src/main-win-ui.c:217
 msgid "Tool_bar"
 msgstr "工具栏(_B)"
 
-#: ../src/main-win-ui.c:216
+#: ../src/main-win-ui.c:218
 msgid "Pat_h Bar"
 msgstr "路径栏(_H)"
 
-#: ../src/main-win-ui.c:217
+#: ../src/main-win-ui.c:219
 msgid "Side _Pane"
 msgstr "侧窗格(_P)"
 
 #. other see below: 'ShowHidden' 'ShowStatus' 'Fullscreen' 'IconView'...
-#: ../src/main-win-ui.c:219
+#: ../src/main-win-ui.c:221
 msgid "Fo_lder View Mode"
 msgstr "文件夹查看方式(_L)"
 
-#: ../src/main-win-ui.c:220
+#: ../src/main-win-ui.c:222
 msgid "S_ort Files"
 msgstr "排序文件(_O)"
 
-#: ../src/main-win-ui.c:222
+#: ../src/main-win-ui.c:224
 msgid "Zoom O_ut"
 msgstr "缩小(_U)"
 
-#: ../src/main-win-ui.c:225
+#: ../src/main-win-ui.c:227
 msgid "Fil_ter..."
 msgstr "过滤器(_T)..."
 
-#: ../src/main-win-ui.c:227
+#: ../src/main-win-ui.c:229
 msgid "_Help"
 msgstr "帮助(_H)"
 
-#: ../src/main-win-ui.c:229
+#: ../src/main-win-ui.c:231
 msgid "_Keyboard Navigation"
 msgstr "键盘导航(_K)"
 
-#: ../src/main-win-ui.c:230
+#: ../src/main-win-ui.c:232
 msgid "_Go"
 msgstr "转到(_G)"
 
-#: ../src/main-win-ui.c:231
+#: ../src/main-win-ui.c:233
 msgid "_Previous Folder"
 msgstr "上一个文件夹(_P)"
 
-#: ../src/main-win-ui.c:231
+#: ../src/main-win-ui.c:233
 msgid "Return to previous folder in history"
 msgstr "返回历史中的上个文件夹"
 
-#: ../src/main-win-ui.c:232
+#: ../src/main-win-ui.c:234
 msgid "_Next Folder"
 msgstr "下一个文件夹(_N)"
 
-#: ../src/main-win-ui.c:232
+#: ../src/main-win-ui.c:234
 msgid "Go forward to next folder in history"
 msgstr "前进到历史中的下个文件夹"
 
-#: ../src/main-win-ui.c:233
+#: ../src/main-win-ui.c:235
 msgid "Pa_rent Folder"
 msgstr "上级文件夹(_R)"
 
-#: ../src/main-win-ui.c:233
+#: ../src/main-win-ui.c:235
 msgid "Go to parent Folder"
 msgstr "转到上级文件夹"
 
-#: ../src/main-win-ui.c:234
+#: ../src/main-win-ui.c:236
 msgid "H_ome Folder"
 msgstr "主文件夹(_O)"
 
-#: ../src/main-win-ui.c:234
+#: ../src/main-win-ui.c:236
 msgid "Go to home folder"
 msgstr "转到主文件夹"
 
-#: ../src/main-win-ui.c:235
+#: ../src/main-win-ui.c:237
 msgid "_Desktop"
 msgstr "桌面(_D)"
 
-#: ../src/main-win-ui.c:235
+#: ../src/main-win-ui.c:237
 msgid "Go to desktop folder"
 msgstr "转到桌面文件夹"
 
-#: ../src/main-win-ui.c:236
+#: ../src/main-win-ui.c:238
 msgid "Open trash can"
 msgstr "打开回收站"
 
-#: ../src/main-win-ui.c:237
+#: ../src/main-win-ui.c:239
 msgid "Filesyste_m Root"
 msgstr "文件系统根目录(_M)"
 
-#: ../src/main-win-ui.c:237
+#: ../src/main-win-ui.c:239
 msgid "Go fo filesystem root"
 msgstr "转到文件系统根目录"
 
-#: ../src/main-win-ui.c:238
+#: ../src/main-win-ui.c:240
 msgid "_Applications"
 msgstr "应用程序(_A)"
 
-#: ../src/main-win-ui.c:238
+#: ../src/main-win-ui.c:240
 msgid "Go to root of applications menu folder"
 msgstr "转到应用程序菜单文件夹顶层"
 
-#: ../src/main-win-ui.c:239
+#: ../src/main-win-ui.c:241
 msgid "Go to list of devices connected to the computer"
 msgstr "转到连接计算机的设备列表"
 
-#: ../src/main-win-ui.c:240
+#: ../src/main-win-ui.c:242
 msgid "Net_work"
 msgstr "网络(_W)"
 
-#: ../src/main-win-ui.c:240
+#: ../src/main-win-ui.c:242
 msgid "Go to list of places on the network"
 msgstr "转到网络上的位置列表"
 
-#: ../src/main-win-ui.c:241
+#: ../src/main-win-ui.c:243
 msgid "_Go to Location..."
 msgstr "转到位置(_G)..."
 
-#: ../src/main-win-ui.c:242
+#: ../src/main-win-ui.c:244
 msgid "_Connect to Server..."
 msgstr "连接服务器(_C)..."
 
-#: ../src/main-win-ui.c:242
+#: ../src/main-win-ui.c:244
 msgid "Open a window to choose remote folder location"
 msgstr "打开一个窗口来选择远程文件夹位置"
 
-#: ../src/main-win-ui.c:243
+#: ../src/main-win-ui.c:245
 msgid "Go to the path in the location bar"
 msgstr "转到地址栏中的路径"
 
-#: ../src/main-win-ui.c:244
+#: ../src/main-win-ui.c:246
 msgid "_Bookmarks"
 msgstr "书签(_B)"
 
-#: ../src/main-win-ui.c:245
+#: ../src/main-win-ui.c:247
 msgid "_Add to Bookmarks..."
 msgstr "添加为书签(_A)..."
 
-#: ../src/main-win-ui.c:245
+#: ../src/main-win-ui.c:247
 msgid "Add current folder to bookmarks list"
 msgstr "将当前文件夹加到书签列表"
 
-#: ../src/main-win-ui.c:246
+#: ../src/main-win-ui.c:248
 msgid "Too_ls"
 msgstr "工具(_L)"
 
-#: ../src/main-win-ui.c:247
+#: ../src/main-win-ui.c:249
 msgid "Open Current Folder in _Terminal"
 msgstr "在终端中打开当前文件夹(_T)"
 
-#: ../src/main-win-ui.c:249
+#: ../src/main-win-ui.c:251
 msgid "Fin_d Files..."
 msgstr "查找文件(_D)..."
 
-#: ../src/main-win-ui.c:249
+#: ../src/main-win-ui.c:251
 msgid "Open search dialog"
 msgstr "打开搜索对话框"
 
-#: ../src/main-win-ui.c:252
+#: ../src/main-win-ui.c:254
 msgid "_Run a Command in Current Folder..."
 msgstr "在当前文件夹中运行命令(_R)..."
 
 #. Note to translators: "Mingle..." means "Do not put folders before files" but make the translation as short as possible, please!
-#: ../src/main-win-ui.c:267
+#: ../src/main-win-ui.c:271
 msgid "Mingle _Files and Folders"
 msgstr "同等对待文件和文件夹(_F)"
 
-#: ../src/main-win-ui.c:270
+#: ../src/main-win-ui.c:274
 msgid "_Ignore Name Case"
 msgstr "忽略名称大小写(_I)"
 
-#: ../src/main-win-ui.c:272
+#: ../src/main-win-ui.c:276
 msgid "Sho_w Hidden"
 msgstr "显示隐藏内容(_W)"
 
 #. Note to translators: this save is meant for folder's settings such as sort
-#: ../src/main-win-ui.c:274
+#: ../src/main-win-ui.c:278
 msgid "Preserve This Folder's Settings"
 msgstr "保留此文件夹的设置"
 
-#: ../src/main-win-ui.c:275
+#: ../src/main-win-ui.c:279
 msgid ""
 "Check to remember view and sort as folder setting rather than global one"
 msgstr "勾选来记住此文件夹单独的视图和排序设置"
 
-#: ../src/main-win-ui.c:277
+#: ../src/main-win-ui.c:281
 msgid "_Show Toolbar"
 msgstr "显示工具栏(_S)"
 
-#: ../src/main-win-ui.c:278
+#: ../src/main-win-ui.c:282
 msgid "Show 'New _Window' Button"
 msgstr "显示“新窗口”按钮(_W)"
 
-#: ../src/main-win-ui.c:279
+#: ../src/main-win-ui.c:283
 msgid "Show 'New _Tab' Button"
 msgstr "显示“新标签页”按钮(_T)"
 
-#: ../src/main-win-ui.c:280
+#: ../src/main-win-ui.c:284
 msgid "Show _Navigation Buttons"
 msgstr "显示导航按钮(_N)"
 
-#: ../src/main-win-ui.c:281
+#: ../src/main-win-ui.c:285
 msgid "Show '_Home' Button"
 msgstr "显示“主文件夹”按钮"
 
-#: ../src/main-win-ui.c:282
+#: ../src/main-win-ui.c:286
 msgid "Sho_w Side Pane"
 msgstr "显示侧窗格(_W)"
 
-#: ../src/main-win-ui.c:283
+#: ../src/main-win-ui.c:287
 msgid "Show Status B_ar"
 msgstr "显示状态栏(_A)"
 
-#: ../src/main-win-ui.c:284
+#: ../src/main-win-ui.c:288
 msgid "_Dual Pane Mode"
 msgstr "双窗格模式(_D)"
 
-#: ../src/main-win-ui.c:284
+#: ../src/main-win-ui.c:288
 msgid "Show two panels with folder views"
 msgstr "显示两个文件夹查看窗格"
 
-#: ../src/main-win-ui.c:285
+#: ../src/main-win-ui.c:289
 msgid "Fullscreen _Mode"
 msgstr "全屏模式(_M)"
 
-#: ../src/main-win-ui.c:291
+#: ../src/main-win-ui.c:295
 msgid "_Icon View"
 msgstr "图标视图(_I)"
 
-#: ../src/main-win-ui.c:292
+#: ../src/main-win-ui.c:296
 msgid "_Compact View"
 msgstr "紧凑视图(_C)"
 
-#: ../src/main-win-ui.c:293
+#: ../src/main-win-ui.c:297
 msgid "_Thumbnail View"
 msgstr "缩略视图(_T)"
 
-#: ../src/main-win-ui.c:294
+#: ../src/main-win-ui.c:298
 msgid "Detailed _List View"
 msgstr "详细列表视图(_L)"
 
-#: ../src/main-win-ui.c:307 ../src/main-win-ui.c:315
+#: ../src/main-win-ui.c:311 ../src/main-win-ui.c:319
 msgid "By _Name"
 msgstr "按名称(_N)"
 
-#: ../src/main-win-ui.c:308 ../src/main-win-ui.c:316
+#: ../src/main-win-ui.c:312 ../src/main-win-ui.c:320
 msgid "By _Modification Time"
 msgstr "按修改时间(_M)"
 
-#: ../src/main-win-ui.c:309 ../src/main-win-ui.c:317
+#: ../src/main-win-ui.c:313 ../src/main-win-ui.c:321
 msgid "By _Size"
 msgstr "按大小(_S)"
 
-#: ../src/main-win-ui.c:310 ../src/main-win-ui.c:318
+#: ../src/main-win-ui.c:314 ../src/main-win-ui.c:322
 msgid "By File _Type"
 msgstr "按文件类型(_T)"
 
-#: ../src/main-win-ui.c:312
+#: ../src/main-win-ui.c:316
 msgid "By _Extension"
 msgstr "按扩展名(_E)"
 
-#: ../src/main-win-ui.c:325
+#: ../src/main-win-ui.c:329
 msgid "Places"
 msgstr "位置"
 
-#: ../src/main-win-ui.c:326
+#: ../src/main-win-ui.c:330
 msgid "Directory Tree"
 msgstr "目录树"
 
-#: ../src/main-win-ui.c:327
+#: ../src/main-win-ui.c:331
 msgid "Remote"
 msgstr "远程"
 
-#: ../src/main-win-ui.c:333
+#: ../src/main-win-ui.c:337
 msgid "_Location"
 msgstr "位置(_L)"
 
-#: ../src/main-win-ui.c:334
+#: ../src/main-win-ui.c:338
 msgid "_Buttons"
 msgstr "按钮(_B)"
 
-#: ../src/main-win.c:925 ../src/main-win.c:929
+#: ../src/main-win.c:938 ../src/main-win.c:942
 msgid "Show history of visited folders"
 msgstr "显示访问文件夹历史"
 
-#: ../src/main-win.c:934
+#: ../src/main-win.c:947
 msgid "History"
 msgstr "历史"
 
-#: ../src/main-win.c:948
+#: ../src/main-win.c:961
 msgid "You are in super user mode"
 msgstr "您正处于超级用户模式"
 
-#: ../src/main-win.c:1134
+#: ../src/main-win.c:1146
 msgid "Lightweight file manager\n"
 msgstr "轻巧的文件管理器\n"
 
-#: ../src/main-win.c:1139
+#: ../src/main-win.c:1156
 #, c-format
 msgid "using LibFM ver. %s\n"
 msgstr "使用 LibFM 版本 %s\n"
 
-#: ../src/main-win.c:1141
+#: ../src/main-win.c:1158
 msgid ""
 "\n"
 "Developed by Hon Jen Yee (PCMan)"
@@ -1061,11 +1066,11 @@ msgstr ""
 "\n"
 "由 Hon Jen Yee(PCMan) 开发"
 
-#: ../src/main-win.c:1166 ../src/main-win.c:1174
+#: ../src/main-win.c:1183 ../src/main-win.c:1191
 msgid "Keyboard Navigation"
 msgstr "键盘导航"
 
-#: ../src/main-win.c:1168
+#: ../src/main-win.c:1185
 msgid ""
 "Tab: cycle focus Folder View -> Side Pane -> Tools Bar\n"
 "Shift+Tab: cycle focus Tools Bar -> Side Pane -> Folder View\n"
@@ -1081,19 +1086,19 @@ msgstr ""
 "F10：激活主菜单\n"
 "Ctrl+L 或 Alt+D：聚焦到路径栏"
 
-#: ../src/main-win.c:1210
+#: ../src/main-win.c:1227
 msgid "Run a command"
 msgstr "运行一条命令"
 
-#: ../src/main-win.c:1211
+#: ../src/main-win.c:1228
 msgid "Enter a command to run:"
 msgstr "输入要运行的命令："
 
-#: ../src/main-win.c:1218
+#: ../src/main-win.c:1235
 msgid "Current folder is inaccessible"
 msgstr "当前文件夹无法访问"
 
-#: ../src/main-win.c:1822
+#: ../src/main-win.c:1837
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -1104,15 +1109,15 @@ msgstr ""
 "“%s”\n"
 "为新书签输入一个名称："
 
-#: ../src/main-win.c:1826
+#: ../src/main-win.c:1841
 msgid "Add to Bookmarks"
 msgstr "添加到书签中"
 
-#: ../src/main-win.c:2552
+#: ../src/main-win.c:2587
 msgid "Select filter"
 msgstr "选择过滤器"
 
-#: ../src/main-win.c:2553
+#: ../src/main-win.c:2588
 msgid "Choose a new shell pattern to show files:"
 msgstr "选择显示文件的新 shell 模式："
 
@@ -1197,11 +1202,12 @@ msgstr "角色"
 msgid "[FILE1, FILE2,...]"
 msgstr "[文件1, 文件2,...]"
 
-#: ../src/pcmanfm.c:352
+#. FIXME: add "on this X screen/monitor" into diagnostics
+#: ../src/pcmanfm.c:376
 msgid "Desktop manager is not active."
 msgstr "桌面管理器未激活。"
 
-#: ../src/pcmanfm.c:598
+#: ../src/pcmanfm.c:627
 msgid "Terminal emulator is not set."
 msgstr "没有设置终端模拟器。"
 
@@ -1209,42 +1215,42 @@ msgstr "没有设置终端模拟器。"
 msgid "Open in New T_ab"
 msgstr "在新标签中打开(_A)"
 
-#: ../src/tab-page.c:395
+#: ../src/tab-page.c:411
 #, c-format
 msgid "%d item selected"
 msgid_plural "%d items selected"
 msgstr[0] "选择了 %d 项"
 
-#: ../src/tab-page.c:718
+#: ../src/tab-page.c:741
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "可用空间：%s(共：%s)"
 
-#: ../src/tab-page.c:738
+#: ../src/tab-page.c:761
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] "%d 项"
 
-#: ../src/tab-page.c:739
+#: ../src/tab-page.c:762
 #, c-format
 msgid " (%d hidden)"
 msgid_plural " (%d hidden)"
 msgstr[0] " (%d 项隐藏)"
 
-#: ../src/pref.c:514
+#: ../src/pref.c:515
 msgid "Add to Modules Blacklist"
 msgstr "添加到模块黑名单"
 
-#: ../src/pref.c:515
+#: ../src/pref.c:516
 msgid "Enter a blacklisted module mask:"
 msgstr "输入拉黑模块掩码："
 
-#: ../src/pref.c:606
+#: ../src/pref.c:607
 msgid "Add to Modules Whitelist"
 msgstr "添加到模块白名单"
 
-#: ../src/pref.c:607
+#: ../src/pref.c:608
 msgid "Enter a whitelisted module mask:"
 msgstr "输入加白名单模块掩码："
 

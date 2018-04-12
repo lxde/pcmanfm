@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PcmanFM 1.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-22 00:33+0200\n"
+"POT-Creation-Date: 2018-04-13 00:37+0300\n"
 "PO-Revision-Date: 2015-05-04 04:36+0000\n"
 "Last-Translator: rago1975 <take1975@kumamoto.email.ne.jp>\n"
 "Language-Team: Japanese <translation-team-ja@lists.sourceforge.net>\n"
@@ -20,7 +20,8 @@ msgstr ""
 "X-POOTLE-MTIME: 1430714188.000000\n"
 
 #: ../data/ui/about.glade.in.h:1
-msgid "Copyright (C) 2009 - 2014"
+#, fuzzy
+msgid "Copyright (C) 2009 - 2016"
 msgstr "Copyright (C) 2009 - 2014"
 
 #. Please replace this line with your own names, one name per line.
@@ -103,7 +104,8 @@ msgstr "デスクトップアイコン(_D)"
 
 #: ../data/ui/desktop-pref.glade.h:19
 msgid "_Show menus provided by window managers when desktop is clicked"
-msgstr "デスクトップをクリックしたときウィンドウマネージャのメニューを表示する(_S)"
+msgstr ""
+"デスクトップをクリックしたときウィンドウマネージャのメニューを表示する(_S)"
 
 #: ../data/ui/desktop-pref.glade.h:20
 msgid "_Use desktop as a folder (show icons on it) by path:"
@@ -217,7 +219,8 @@ msgstr "デフォルトのドロップの動作(_T):"
 
 #: ../data/ui/pref.glade.h:15
 msgid "\"_Smart shortcut\" auto-action on drop to Desktop folder"
-msgstr "\"スマートショートカット（_S）\" デスクトップフォルダに自動的にドロップする"
+msgstr ""
+"\"スマートショートカット（_S）\" デスクトップフォルダに自動的にドロップする"
 
 #: ../data/ui/pref.glade.h:16
 msgid ""
@@ -346,7 +349,7 @@ msgstr "ホームフォルダ(_O)"
 msgid "Des_ktop"
 msgstr "デスクトップ(_K)"
 
-#: ../data/ui/pref.glade.h:50 ../src/main-win-ui.c:236
+#: ../data/ui/pref.glade.h:50 ../src/main-win-ui.c:238
 msgid "_Trash Can"
 msgstr "ゴミ箱(_T)"
 
@@ -358,7 +361,7 @@ msgstr "ファイルシステムのルート(_F)"
 msgid "App_lications"
 msgstr "アプリケーション(_L)"
 
-#: ../data/ui/pref.glade.h:53 ../src/main-win-ui.c:239
+#: ../data/ui/pref.glade.h:53 ../src/main-win-ui.c:241
 msgid "Dev_ices"
 msgstr "デバイス(_I)"
 
@@ -376,7 +379,9 @@ msgstr "<b>自動マウント</b>"
 
 #: ../data/ui/pref.glade.h:57
 msgid "_Mount mountable volumes automatically on program startup"
-msgstr "プログラムのスタートアップ時にマウントできるボリュームを自動でマウントする(_M)"
+msgstr ""
+"プログラムのスタートアップ時にマウントできるボリュームを自動でマウントする"
+"(_M)"
 
 #: ../data/ui/pref.glade.h:58
 msgid "Mo_unt removable media automatically when they are inserted"
@@ -396,7 +401,9 @@ msgstr "選択を除去(_R)"
 
 #: ../data/ui/pref.glade.h:62
 msgid "_Open mounted removable media in new tab instead of new window"
-msgstr "マウントされたリムーバブルメディアは新規ウィンドウでなく新規タブとして開く(_O)"
+msgstr ""
+"マウントされたリムーバブルメディアは新規ウィンドウでなく新規タブとして開く"
+"(_O)"
 
 #: ../data/ui/pref.glade.h:63
 msgid "When removable medium unmounted:"
@@ -420,7 +427,8 @@ msgstr "<b>プログラム</b>"
 
 #: ../data/ui/pref.glade.h:68
 msgid "<i>Commands below may include extra options if necessary.</i>"
-msgstr "<i>これらのコマンドには必要なら追加のオプションを含めることができます。</i>"
+msgstr ""
+"<i>これらのコマンドには必要なら追加のオプションを含めることができます。</i>"
 
 #: ../data/ui/pref.glade.h:69
 msgid "_Terminal emulator:"
@@ -453,7 +461,9 @@ msgstr "各 MIME タイプにつき一つだけテンプレートを表示する
 
 #: ../data/ui/pref.glade.h:77
 msgid "Ru_n default application after creation from template"
-msgstr "テンプレートからファイルを作った後、デフォルトのアプリケーションでそれを開く(_N)"
+msgstr ""
+"テンプレートからファイルを作った後、デフォルトのアプリケーションでそれを開く"
+"(_N)"
 
 #: ../data/ui/pref.glade.h:78
 msgid "<b>Other Options</b>"
@@ -469,7 +479,8 @@ msgid ""
 "explicitly.\n"
 "If unchecked then use Startup Notify only if that is defined for application."
 msgstr ""
-"これがチェックされているとき、他に記述がない限りはスタートアップ通知を使用する。\n"
+"これがチェックされているとき、他に記述がない限りはスタートアップ通知を使用す"
+"る。\n"
 "でないときは、アプリケーションについて明示されている場合のみ使用する。"
 
 #: ../data/ui/pref.glade.h:82
@@ -636,425 +647,431 @@ msgstr "現在位置に固定する(_K)"
 msgid "Snap to _Grid"
 msgstr "自動整列する(_G)"
 
-#: ../src/desktop.c:946
+#: ../src/desktop.c:974
 msgid "Activate file"
 msgstr "ファイルを立ち上げる"
 
-#: ../src/desktop.c:948
+#: ../src/desktop.c:976
 msgid "Show file menu"
 msgstr "ファイルメニューを表示する"
 
-#: ../src/desktop.c:1364
+#: ../src/desktop.c:1394
 msgid "Show desktop menu"
 msgstr "デスクトップメニューを表示する"
 
 #. FIXME: set name by monitor
-#: ../src/desktop.c:1436
+#: ../src/desktop.c:1466
 msgid "Desktop"
 msgstr "デスクトップ"
 
-#: ../src/main-win-ui.c:187
+#: ../src/main-win-ui.c:189
 msgid "_File"
 msgstr "ファイル(_F)"
 
-#: ../src/main-win-ui.c:188
+#: ../src/main-win-ui.c:190
 msgid "_New Window"
 msgstr "新規ウィンドウ(_N)"
 
-#: ../src/main-win-ui.c:189
+#: ../src/main-win-ui.c:190
+#, fuzzy
+msgid "Open new file manager window"
+msgstr "ファイルマネージャで開く"
+
+#: ../src/main-win-ui.c:191
 msgid "New T_ab"
 msgstr "新規タブ(_A)"
 
-#: ../src/main-win-ui.c:189
+#: ../src/main-win-ui.c:191
 msgid "Create new tab for this folder"
 msgstr "現在のフォルダを新規タブで開く"
 
-#: ../src/main-win-ui.c:190
+#: ../src/main-win-ui.c:192
 msgid "C_reate New..."
 msgstr "新規作成...(_R)"
 
-#: ../src/main-win-ui.c:191
+#: ../src/main-win-ui.c:193
 msgid "Folder"
 msgstr "フォルダ"
 
-#: ../src/main-win-ui.c:192
+#: ../src/main-win-ui.c:194
 msgid "Empty File"
 msgstr "空のファイル"
 
-#: ../src/main-win-ui.c:193
+#: ../src/main-win-ui.c:195
 msgid "Folder Propertie_s"
 msgstr "フォルダのプロパティ(_S)"
 
-#: ../src/main-win-ui.c:194
+#: ../src/main-win-ui.c:196
 msgid "_Close Tab"
 msgstr "タブを閉じる(_C)"
 
-#: ../src/main-win-ui.c:195
+#: ../src/main-win-ui.c:197
 msgid "Close _Window"
 msgstr "ウィンドウを閉じる(_W)"
 
-#: ../src/main-win-ui.c:196
+#: ../src/main-win-ui.c:198
 msgid "_Edit"
 msgstr "編集(_E)"
 
-#: ../src/main-win-ui.c:198
+#: ../src/main-win-ui.c:200
 msgid "C_ut"
 msgstr "カット(_U)"
 
-#: ../src/main-win-ui.c:201
+#: ../src/main-win-ui.c:203
 msgid "Move to _Trash"
 msgstr "ゴミ箱へ移動(_T)"
 
-#: ../src/main-win-ui.c:203
+#: ../src/main-win-ui.c:205
 msgid "Copy Pat_h(s)"
 msgstr "パスをコピー(_H)"
 
-#: ../src/main-win-ui.c:204
+#: ../src/main-win-ui.c:206
 msgid "R_ename..."
 msgstr "名前を変更する(_E)"
 
-#: ../src/main-win-ui.c:205
+#: ../src/main-win-ui.c:207
 msgid "D_uplicate..."
 msgstr "コピーの作成(_U)"
 
-#: ../src/main-win-ui.c:206
+#: ../src/main-win-ui.c:208
 msgid "Create Lin_k..."
 msgstr "シンボリック・リンクを作成する(_K)"
 
-#: ../src/main-win-ui.c:207
+#: ../src/main-win-ui.c:209
 msgid "_Move to..."
 msgstr "送り先へ移動する(_M)"
 
-#: ../src/main-win-ui.c:208
+#: ../src/main-win-ui.c:210
 msgid "Copy to_..."
 msgstr "送り先へコピーする(_.)"
 
-#: ../src/main-win-ui.c:209
+#: ../src/main-win-ui.c:211
 msgid "Propertie_s"
 msgstr "プロパティ(_S)"
 
-#: ../src/main-win-ui.c:211
+#: ../src/main-win-ui.c:213
 msgid "_Invert Selection"
 msgstr "選択を反転する(_I)"
 
-#: ../src/main-win-ui.c:212
+#: ../src/main-win-ui.c:214
 msgid "Prefere_nces"
 msgstr "設定(_N)"
 
-#: ../src/main-win-ui.c:213
+#: ../src/main-win-ui.c:215
 msgid "_View"
 msgstr "表示(_V)"
 
-#: ../src/main-win-ui.c:214
+#: ../src/main-win-ui.c:216
 msgid "_Reload Folder"
 msgstr "フォルダを再読み込み(_R)"
 
-#: ../src/main-win-ui.c:214
+#: ../src/main-win-ui.c:216
 msgid "Reload current folder"
 msgstr "現在のフォルダを再読み込みする"
 
-#: ../src/main-win-ui.c:215
+#: ../src/main-win-ui.c:217
 msgid "Tool_bar"
 msgstr "ツールバー(_B)"
 
-#: ../src/main-win-ui.c:216
+#: ../src/main-win-ui.c:218
 msgid "Pat_h Bar"
 msgstr "パス・バー(_H)"
 
-#: ../src/main-win-ui.c:217
+#: ../src/main-win-ui.c:219
 msgid "Side _Pane"
 msgstr "サイドペイン(_P)"
 
 #. other see below: 'ShowHidden' 'ShowStatus' 'Fullscreen' 'IconView'...
-#: ../src/main-win-ui.c:219
+#: ../src/main-win-ui.c:221
 msgid "Fo_lder View Mode"
 msgstr "フォルダ・ビューのモード(_L):"
 
-#: ../src/main-win-ui.c:220
+#: ../src/main-win-ui.c:222
 msgid "S_ort Files"
 msgstr "ファイルを整列する(_O)"
 
-#: ../src/main-win-ui.c:222
+#: ../src/main-win-ui.c:224
 msgid "Zoom O_ut"
 msgstr "縮小(_U)"
 
-#: ../src/main-win-ui.c:225
+#: ../src/main-win-ui.c:227
 msgid "Fil_ter..."
 msgstr "フィルタ(_T)"
 
-#: ../src/main-win-ui.c:227
+#: ../src/main-win-ui.c:229
 msgid "_Help"
 msgstr "ヘルプ(_H)"
 
-#: ../src/main-win-ui.c:229
+#: ../src/main-win-ui.c:231
 msgid "_Keyboard Navigation"
 msgstr "キーボード・ナビゲーション(_K)"
 
-#: ../src/main-win-ui.c:230
+#: ../src/main-win-ui.c:232
 msgid "_Go"
 msgstr "移動(_G)"
 
-#: ../src/main-win-ui.c:231
+#: ../src/main-win-ui.c:233
 msgid "_Previous Folder"
 msgstr "戻る(_R)"
 
-#: ../src/main-win-ui.c:231
+#: ../src/main-win-ui.c:233
 msgid "Return to previous folder in history"
 msgstr "履歴上の前のフォルダに戻る"
 
-#: ../src/main-win-ui.c:232
+#: ../src/main-win-ui.c:234
 msgid "_Next Folder"
 msgstr "進む(_N)"
 
-#: ../src/main-win-ui.c:232
+#: ../src/main-win-ui.c:234
 msgid "Go forward to next folder in history"
 msgstr "履歴上の次のフォルダへ進む"
 
-#: ../src/main-win-ui.c:233
+#: ../src/main-win-ui.c:235
 msgid "Pa_rent Folder"
 msgstr "親フォルダへ(_R)"
 
-#: ../src/main-win-ui.c:233
+#: ../src/main-win-ui.c:235
 msgid "Go to parent Folder"
 msgstr "親フォルダへ移動する"
 
-#: ../src/main-win-ui.c:234
+#: ../src/main-win-ui.c:236
 msgid "H_ome Folder"
 msgstr "ホーム(_O)"
 
-#: ../src/main-win-ui.c:234
+#: ../src/main-win-ui.c:236
 msgid "Go to home folder"
 msgstr "ホームフォルダへ移動する"
 
-#: ../src/main-win-ui.c:235
+#: ../src/main-win-ui.c:237
 msgid "_Desktop"
 msgstr "デスクトップ(_D)"
 
-#: ../src/main-win-ui.c:235
+#: ../src/main-win-ui.c:237
 msgid "Go to desktop folder"
 msgstr "デスクトップフォルダへ移動する"
 
-#: ../src/main-win-ui.c:236
+#: ../src/main-win-ui.c:238
 msgid "Open trash can"
 msgstr "ゴミ箱を開く"
 
-#: ../src/main-win-ui.c:237
+#: ../src/main-win-ui.c:239
 msgid "Filesyste_m Root"
 msgstr "ファイルシステムのルート(_M)"
 
-#: ../src/main-win-ui.c:237
+#: ../src/main-win-ui.c:239
 msgid "Go fo filesystem root"
 msgstr "ファイルシステムのルートへ移動する"
 
-#: ../src/main-win-ui.c:238
+#: ../src/main-win-ui.c:240
 msgid "_Applications"
 msgstr "アプリケーション(_A)"
 
-#: ../src/main-win-ui.c:238
+#: ../src/main-win-ui.c:240
 msgid "Go to root of applications menu folder"
 msgstr "アプリケーションメニューのルートのフォルダへ移動する"
 
-#: ../src/main-win-ui.c:239
+#: ../src/main-win-ui.c:241
 msgid "Go to list of devices connected to the computer"
 msgstr "コンピュータに接続されたデバイスのリストへ移動する"
 
-#: ../src/main-win-ui.c:240
+#: ../src/main-win-ui.c:242
 msgid "Net_work"
 msgstr "ネットワーク(_W)"
 
-#: ../src/main-win-ui.c:240
+#: ../src/main-win-ui.c:242
 msgid "Go to list of places on the network"
 msgstr "ネットワーク上の場所のリストへ移動する"
 
-#: ../src/main-win-ui.c:241
+#: ../src/main-win-ui.c:243
 msgid "_Go to Location..."
 msgstr "指定先へ移動(_G)"
 
-#: ../src/main-win-ui.c:242
+#: ../src/main-win-ui.c:244
 msgid "_Connect to Server..."
 msgstr "サーバに接続(_C)"
 
-#: ../src/main-win-ui.c:242
+#: ../src/main-win-ui.c:244
 msgid "Open a window to choose remote folder location"
 msgstr "ウィンドウを開き接続先を選ぶ"
 
-#: ../src/main-win-ui.c:243
+#: ../src/main-win-ui.c:245
 msgid "Go to the path in the location bar"
 msgstr "移動バーにあるパスへ移動する"
 
-#: ../src/main-win-ui.c:244
+#: ../src/main-win-ui.c:246
 msgid "_Bookmarks"
 msgstr "ブックマーク(_B)"
 
-#: ../src/main-win-ui.c:245
+#: ../src/main-win-ui.c:247
 msgid "_Add to Bookmarks..."
 msgstr "ブックマークへ追加(_A)"
 
-#: ../src/main-win-ui.c:245
+#: ../src/main-win-ui.c:247
 msgid "Add current folder to bookmarks list"
 msgstr "現在のフォルダをブックマークに追加する"
 
-#: ../src/main-win-ui.c:246
+#: ../src/main-win-ui.c:248
 msgid "Too_ls"
 msgstr "ツール(_L)"
 
-#: ../src/main-win-ui.c:247
+#: ../src/main-win-ui.c:249
 msgid "Open Current Folder in _Terminal"
 msgstr "現在のフォルダを端末で開く(_T)"
 
-#: ../src/main-win-ui.c:249
+#: ../src/main-win-ui.c:251
 msgid "Fin_d Files..."
 msgstr "ファイルを検索する...(_D)"
 
-#: ../src/main-win-ui.c:249
+#: ../src/main-win-ui.c:251
 msgid "Open search dialog"
 msgstr "検索ダイアログを開く"
 
-#: ../src/main-win-ui.c:252
+#: ../src/main-win-ui.c:254
 msgid "_Run a Command in Current Folder..."
 msgstr "現在のフォルダでコマンドを実行する...(_R)"
 
 #. Note to translators: "Mingle..." means "Do not put folders before files" but make the translation as short as possible, please!
-#: ../src/main-win-ui.c:267
+#: ../src/main-win-ui.c:271
 msgid "Mingle _Files and Folders"
 msgstr "ファイルとフォルダを混ぜて表示する(_F)"
 
-#: ../src/main-win-ui.c:270
+#: ../src/main-win-ui.c:274
 msgid "_Ignore Name Case"
 msgstr "大文字・小文字を区別しない(_I)"
 
-#: ../src/main-win-ui.c:272
+#: ../src/main-win-ui.c:276
 msgid "Sho_w Hidden"
 msgstr "隠しファイルを表示する(_W)"
 
 #. Note to translators: this save is meant for folder's settings such as sort
-#: ../src/main-win-ui.c:274
+#: ../src/main-win-ui.c:278
 msgid "Preserve This Folder's Settings"
 msgstr "このフォルダの設定を保存する"
 
-#: ../src/main-win-ui.c:275
+#: ../src/main-win-ui.c:279
 msgid ""
 "Check to remember view and sort as folder setting rather than global one"
-msgstr "このフォルダのビューとソートの設定を記憶し、全体設定より優先して適用します"
+msgstr ""
+"このフォルダのビューとソートの設定を記憶し、全体設定より優先して適用します"
 
-#: ../src/main-win-ui.c:277
+#: ../src/main-win-ui.c:281
 msgid "_Show Toolbar"
 msgstr "ツールバーの表示(_S)"
 
-#: ../src/main-win-ui.c:278
+#: ../src/main-win-ui.c:282
 msgid "Show 'New _Window' Button"
 msgstr "'新規ウィンドウ（_W）' ボタンを表示する"
 
-#: ../src/main-win-ui.c:279
+#: ../src/main-win-ui.c:283
 msgid "Show 'New _Tab' Button"
 msgstr "'新規タブ' ボタンを表示する(_T)"
 
-#: ../src/main-win-ui.c:280
+#: ../src/main-win-ui.c:284
 msgid "Show _Navigation Buttons"
 msgstr "移動ボタンを表示する(_N)"
 
-#: ../src/main-win-ui.c:281
+#: ../src/main-win-ui.c:285
 msgid "Show '_Home' Button"
 msgstr "'ホーム' ボタンを表示する(_H)"
 
-#: ../src/main-win-ui.c:282
+#: ../src/main-win-ui.c:286
 msgid "Sho_w Side Pane"
 msgstr "サイドペインを表示する(_W)"
 
-#: ../src/main-win-ui.c:283
+#: ../src/main-win-ui.c:287
 msgid "Show Status B_ar"
 msgstr "ステータスバーを表示する(_A)"
 
-#: ../src/main-win-ui.c:284
+#: ../src/main-win-ui.c:288
 msgid "_Dual Pane Mode"
 msgstr "二面ペインモード(_D)"
 
-#: ../src/main-win-ui.c:284
+#: ../src/main-win-ui.c:288
 msgid "Show two panels with folder views"
 msgstr "２つのパネルにそれそれフォルダを表示する"
 
-#: ../src/main-win-ui.c:285
+#: ../src/main-win-ui.c:289
 msgid "Fullscreen _Mode"
 msgstr "全画面(_M)"
 
-#: ../src/main-win-ui.c:291
+#: ../src/main-win-ui.c:295
 msgid "_Icon View"
 msgstr "アイコン(_I)"
 
-#: ../src/main-win-ui.c:292
+#: ../src/main-win-ui.c:296
 msgid "_Compact View"
 msgstr "コンパクト(_C)"
 
-#: ../src/main-win-ui.c:293
+#: ../src/main-win-ui.c:297
 msgid "_Thumbnail View"
 msgstr "サムネイル(_T)"
 
-#: ../src/main-win-ui.c:294
+#: ../src/main-win-ui.c:298
 msgid "Detailed _List View"
 msgstr "詳細リスト(_L)"
 
-#: ../src/main-win-ui.c:307 ../src/main-win-ui.c:315
+#: ../src/main-win-ui.c:311 ../src/main-win-ui.c:319
 msgid "By _Name"
 msgstr "名前(_N)"
 
-#: ../src/main-win-ui.c:308 ../src/main-win-ui.c:316
+#: ../src/main-win-ui.c:312 ../src/main-win-ui.c:320
 msgid "By _Modification Time"
 msgstr "更新時刻(_M)"
 
-#: ../src/main-win-ui.c:309 ../src/main-win-ui.c:317
+#: ../src/main-win-ui.c:313 ../src/main-win-ui.c:321
 msgid "By _Size"
 msgstr "サイズ(_S)"
 
-#: ../src/main-win-ui.c:310 ../src/main-win-ui.c:318
+#: ../src/main-win-ui.c:314 ../src/main-win-ui.c:322
 msgid "By File _Type"
 msgstr "ファイルタイプ(_T)"
 
-#: ../src/main-win-ui.c:312
+#: ../src/main-win-ui.c:316
 msgid "By _Extension"
 msgstr "拡張子(_E)"
 
-#: ../src/main-win-ui.c:325
+#: ../src/main-win-ui.c:329
 msgid "Places"
 msgstr "場所"
 
-#: ../src/main-win-ui.c:326
+#: ../src/main-win-ui.c:330
 msgid "Directory Tree"
 msgstr "ディレクトリツリー"
 
-#: ../src/main-win-ui.c:327
+#: ../src/main-win-ui.c:331
 msgid "Remote"
 msgstr "リモート"
 
-#: ../src/main-win-ui.c:333
+#: ../src/main-win-ui.c:337
 msgid "_Location"
 msgstr "場所(_L)"
 
-#: ../src/main-win-ui.c:334
+#: ../src/main-win-ui.c:338
 msgid "_Buttons"
 msgstr "ボタン(_B)"
 
-#: ../src/main-win.c:925 ../src/main-win.c:929
+#: ../src/main-win.c:938 ../src/main-win.c:942
 msgid "Show history of visited folders"
 msgstr "訪れたフォルダの履歴を表示する"
 
-#: ../src/main-win.c:934
+#: ../src/main-win.c:947
 msgid "History"
 msgstr "履歴"
 
-#: ../src/main-win.c:948
+#: ../src/main-win.c:961
 msgid "You are in super user mode"
 msgstr "現在あなたは管理者権限で操作しています"
 
-#: ../src/main-win.c:1134
+#: ../src/main-win.c:1146
 msgid "Lightweight file manager\n"
 msgstr "軽量ファイルマネージャ\n"
 
-#: ../src/main-win.c:1139
+#: ../src/main-win.c:1156
 #, c-format
 msgid "using LibFM ver. %s\n"
 msgstr "LibFM ver. %s を使用\n"
 
-#: ../src/main-win.c:1141
+#: ../src/main-win.c:1158
 msgid ""
 "\n"
 "Developed by Hon Jen Yee (PCMan)"
@@ -1062,11 +1079,11 @@ msgstr ""
 "\n"
 "Developed by Hon Jen Yee (PCMan)"
 
-#: ../src/main-win.c:1166 ../src/main-win.c:1174
+#: ../src/main-win.c:1183 ../src/main-win.c:1191
 msgid "Keyboard Navigation"
 msgstr "キーボード・ナビゲーション"
 
-#: ../src/main-win.c:1168
+#: ../src/main-win.c:1185
 msgid ""
 "Tab: cycle focus Folder View -> Side Pane -> Tools Bar\n"
 "Shift+Tab: cycle focus Tools Bar -> Side Pane -> Folder View\n"
@@ -1075,26 +1092,28 @@ msgid ""
 "F10: activate main menu\n"
 "Ctrl+L or Alt+D: jump focus to Path Bar"
 msgstr ""
-"Tab: フォルダ・ビュー -> サイド・ペイン -> ツールバーへとフォーカスを循環させる\n"
-"Shift+Tab: ツールバー -> サイド・ペイン -> フォルダ・ビューへとフォーカスを循環させる\n"
+"Tab: フォルダ・ビュー -> サイド・ペイン -> ツールバーへとフォーカスを循環させ"
+"る\n"
+"Shift+Tab: ツールバー -> サイド・ペイン -> フォルダ・ビューへとフォーカスを循"
+"環させる\n"
 "F6: サイド・ペイン<->フォルダ・ビューの間でフォーカスを切り替える\n"
 "F8: サイド・ペインとフォルダ・ビューの間の境界線をフォーカスする\n"
 "F10: メイン/メニューを開く\n"
 "Ctrl+L or Alt+D: パス・バーへフォーカスを移す"
 
-#: ../src/main-win.c:1210
+#: ../src/main-win.c:1227
 msgid "Run a command"
 msgstr "コマンドの実行"
 
-#: ../src/main-win.c:1211
+#: ../src/main-win.c:1228
 msgid "Enter a command to run:"
 msgstr "実行するコマンドを入力してください:"
 
-#: ../src/main-win.c:1218
+#: ../src/main-win.c:1235
 msgid "Current folder is inaccessible"
 msgstr "現在のフォルダへはアクセスできません"
 
-#: ../src/main-win.c:1822
+#: ../src/main-win.c:1837
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -1105,15 +1124,15 @@ msgstr ""
 "'%s'\n"
 "新規ブックマークアイテムの名前を入力してください:"
 
-#: ../src/main-win.c:1826
+#: ../src/main-win.c:1841
 msgid "Add to Bookmarks"
 msgstr "ブックマークへ追加"
 
-#: ../src/main-win.c:2552
+#: ../src/main-win.c:2587
 msgid "Select filter"
 msgstr "フィルタの選択"
 
-#: ../src/main-win.c:2553
+#: ../src/main-win.c:2588
 msgid "Choose a new shell pattern to show files:"
 msgstr "表示するファイルを示すシェルパターンを新たに選んでください:"
 
@@ -1164,7 +1183,9 @@ msgstr "FILE"
 msgid ""
 "Set mode of desktop wallpaper. MODE=(color|stretch|fit|crop|center|tile|"
 "screen)"
-msgstr "デスクトップ壁紙のモード設定。 MODE=(color|stretch|fit|crop|center|tile|screen)"
+msgstr ""
+"デスクトップ壁紙のモード設定。 MODE=(color|stretch|fit|crop|center|tile|"
+"screen)"
 
 #: ../src/pcmanfm.c:89
 msgid "MODE"
@@ -1198,11 +1219,12 @@ msgstr "ROLE"
 msgid "[FILE1, FILE2,...]"
 msgstr "[ファイル1, ファイル2,...]"
 
-#: ../src/pcmanfm.c:352
+#. FIXME: add "on this X screen/monitor" into diagnostics
+#: ../src/pcmanfm.c:376
 msgid "Desktop manager is not active."
 msgstr "デスクトップマネージャはアクティブでありません。"
 
-#: ../src/pcmanfm.c:598
+#: ../src/pcmanfm.c:627
 msgid "Terminal emulator is not set."
 msgstr "端末エミュレータが設定されていません。"
 
@@ -1210,42 +1232,42 @@ msgstr "端末エミュレータが設定されていません。"
 msgid "Open in New T_ab"
 msgstr "新規タブで開く(_A)"
 
-#: ../src/tab-page.c:395
+#: ../src/tab-page.c:411
 #, c-format
 msgid "%d item selected"
 msgid_plural "%d items selected"
 msgstr[0] "%d 個のアイテムが選択されています"
 
-#: ../src/tab-page.c:718
+#: ../src/tab-page.c:741
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "空き容量: %s (合計: %s)"
 
-#: ../src/tab-page.c:738
+#: ../src/tab-page.c:761
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] "%d 個のアイテム"
 
-#: ../src/tab-page.c:739
+#: ../src/tab-page.c:762
 #, c-format
 msgid " (%d hidden)"
 msgid_plural " (%d hidden)"
 msgstr[0] " (隠しアイテム %d個)"
 
-#: ../src/pref.c:514
+#: ../src/pref.c:515
 msgid "Add to Modules Blacklist"
 msgstr "モジュールの使用不可リストへ追加"
 
-#: ../src/pref.c:515
+#: ../src/pref.c:516
 msgid "Enter a blacklisted module mask:"
 msgstr "使用が不可なモジュールのマスクの入力:"
 
-#: ../src/pref.c:606
+#: ../src/pref.c:607
 msgid "Add to Modules Whitelist"
 msgstr "モジュールの使用許可リストへ追加"
 
-#: ../src/pref.c:607
+#: ../src/pref.c:608
 msgid "Enter a whitelisted module mask:"
 msgstr "使用を許可するモジュールのマスクの入力:"
 

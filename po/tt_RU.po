@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-22 00:33+0200\n"
+"POT-Creation-Date: 2018-04-13 00:37+0300\n"
 "PO-Revision-Date: 2015-08-17 01:31+0000\n"
 "Last-Translator: Anonymous Pootle User\n"
 "Language: tt_RU\n"
@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../data/ui/about.glade.in.h:1
 #, fuzzy
-msgid "Copyright (C) 2009 - 2014"
+msgid "Copyright (C) 2009 - 2016"
 msgstr "Copyright (C) 2009 - 2013"
 
 #. Please replace this line with your own names, one name per line.
@@ -389,7 +389,7 @@ msgstr "Өй каталогы"
 msgid "Des_ktop"
 msgstr "Эш өстәле"
 
-#: ../data/ui/pref.glade.h:50 ../src/main-win-ui.c:236
+#: ../data/ui/pref.glade.h:50 ../src/main-win-ui.c:238
 #, fuzzy
 msgid "_Trash Can"
 msgstr "Чүп чиләге"
@@ -403,7 +403,7 @@ msgstr ""
 msgid "App_lications"
 msgstr "Кушымталар"
 
-#: ../data/ui/pref.glade.h:53 ../src/main-win-ui.c:239
+#: ../data/ui/pref.glade.h:53 ../src/main-win-ui.c:241
 msgid "Dev_ices"
 msgstr ""
 
@@ -703,451 +703,456 @@ msgstr "Бу торышта беркетү"
 msgid "Snap to _Grid"
 msgstr "Ятьмәгә бәйләп кую"
 
-#: ../src/desktop.c:946
+#: ../src/desktop.c:974
 #, fuzzy
 msgid "Activate file"
 msgstr "<рәсем файлы>"
 
-#: ../src/desktop.c:948
+#: ../src/desktop.c:976
 #, fuzzy
 msgid "Show file menu"
 msgstr "Яшерен файлларны чагылдыру"
 
-#: ../src/desktop.c:1364
+#: ../src/desktop.c:1394
 #, fuzzy
 msgid "Show desktop menu"
 msgstr "<b>Эш өстәлендә билгечекләрне күрсәтергә</b>"
 
 #. FIXME: set name by monitor
-#: ../src/desktop.c:1436
+#: ../src/desktop.c:1466
 #, fuzzy
 msgid "Desktop"
 msgstr "Эш өстәле"
 
-#: ../src/main-win-ui.c:187
+#: ../src/main-win-ui.c:189
 msgid "_File"
 msgstr "_Файл"
 
-#: ../src/main-win-ui.c:188
+#: ../src/main-win-ui.c:190
 msgid "_New Window"
 msgstr "_Яңа тәрәзә"
 
-#: ../src/main-win-ui.c:189
+#: ../src/main-win-ui.c:190
+#, fuzzy
+msgid "Open new file manager window"
+msgstr "Файл-менеджерында ачу"
+
+#: ../src/main-win-ui.c:191
 #, fuzzy
 msgid "New T_ab"
 msgstr "Яңа _өстәмә бит"
 
-#: ../src/main-win-ui.c:189
+#: ../src/main-win-ui.c:191
 msgid "Create new tab for this folder"
 msgstr ""
 
-#: ../src/main-win-ui.c:190
+#: ../src/main-win-ui.c:192
 #, fuzzy
 msgid "C_reate New..."
 msgstr "Яңа..."
 
-#: ../src/main-win-ui.c:191
+#: ../src/main-win-ui.c:193
 msgid "Folder"
 msgstr "Каталог"
 
-#: ../src/main-win-ui.c:192
+#: ../src/main-win-ui.c:194
 msgid "Empty File"
 msgstr ""
 
-#: ../src/main-win-ui.c:193
+#: ../src/main-win-ui.c:195
 msgid "Folder Propertie_s"
 msgstr ""
 
-#: ../src/main-win-ui.c:194
+#: ../src/main-win-ui.c:196
 msgid "_Close Tab"
 msgstr "Өстәмә битне _ябу"
 
-#: ../src/main-win-ui.c:195
+#: ../src/main-win-ui.c:197
 #, fuzzy
 msgid "Close _Window"
 msgstr "Тәрәзәне ябу"
 
-#: ../src/main-win-ui.c:196
+#: ../src/main-win-ui.c:198
 msgid "_Edit"
 msgstr "_Үзгәртү"
 
-#: ../src/main-win-ui.c:198
+#: ../src/main-win-ui.c:200
 msgid "C_ut"
 msgstr ""
 
-#: ../src/main-win-ui.c:201
+#: ../src/main-win-ui.c:203
 msgid "Move to _Trash"
 msgstr ""
 
-#: ../src/main-win-ui.c:203
-msgid "Copy Pat_h(s)"
-msgstr ""
-
-#: ../src/main-win-ui.c:204
-#, fuzzy
-msgid "R_ename..."
-msgstr "Икенче исем кушу"
-
 #: ../src/main-win-ui.c:205
-msgid "D_uplicate..."
+msgid "Copy Pat_h(s)"
 msgstr ""
 
 #: ../src/main-win-ui.c:206
 #, fuzzy
+msgid "R_ename..."
+msgstr "Икенче исем кушу"
+
+#: ../src/main-win-ui.c:207
+msgid "D_uplicate..."
+msgstr ""
+
+#: ../src/main-win-ui.c:208
+#, fuzzy
 msgid "Create Lin_k..."
 msgstr "_Яңа..."
 
-#: ../src/main-win-ui.c:207
+#: ../src/main-win-ui.c:209
 #, fuzzy
 msgid "_Move to..."
 msgstr "Монда күчерү..."
 
-#: ../src/main-win-ui.c:208
+#: ../src/main-win-ui.c:210
 #, fuzzy
 msgid "Copy to_..."
 msgstr "Монда күчермә ясау..."
 
-#: ../src/main-win-ui.c:209
+#: ../src/main-win-ui.c:211
 msgid "Propertie_s"
 msgstr ""
 
-#: ../src/main-win-ui.c:211
+#: ../src/main-win-ui.c:213
 msgid "_Invert Selection"
 msgstr "_Сайлаганны бору"
 
-#: ../src/main-win-ui.c:212
+#: ../src/main-win-ui.c:214
 #, fuzzy
 msgid "Prefere_nces"
 msgstr "Көйләүләр"
 
-#: ../src/main-win-ui.c:213
+#: ../src/main-win-ui.c:215
 msgid "_View"
 msgstr "_Кыяфәт"
 
-#: ../src/main-win-ui.c:214
+#: ../src/main-win-ui.c:216
 #, fuzzy
 msgid "_Reload Folder"
 msgstr "Каталогны яңарту"
 
-#: ../src/main-win-ui.c:214
+#: ../src/main-win-ui.c:216
 msgid "Reload current folder"
 msgstr "Бу каталогны яңарту"
 
-#: ../src/main-win-ui.c:215
+#: ../src/main-win-ui.c:217
 #, fuzzy
 msgid "Tool_bar"
 msgstr "_Кораллар"
 
-#: ../src/main-win-ui.c:216
+#: ../src/main-win-ui.c:218
 msgid "Pat_h Bar"
 msgstr ""
 
-#: ../src/main-win-ui.c:217
+#: ../src/main-win-ui.c:219
 #, fuzzy
 msgid "Side _Pane"
 msgstr "Як панеле"
 
 #. other see below: 'ShowHidden' 'ShowStatus' 'Fullscreen' 'IconView'...
-#: ../src/main-win-ui.c:219
+#: ../src/main-win-ui.c:221
 #, fuzzy
 msgid "Fo_lder View Mode"
 msgstr "Күрсәтү тәртибе:"
 
-#: ../src/main-win-ui.c:220
+#: ../src/main-win-ui.c:222
 #, fuzzy
 msgid "S_ort Files"
 msgstr "_Файлларны сортлау"
 
-#: ../src/main-win-ui.c:222
+#: ../src/main-win-ui.c:224
 msgid "Zoom O_ut"
 msgstr ""
 
-#: ../src/main-win-ui.c:225
+#: ../src/main-win-ui.c:227
 msgid "Fil_ter..."
 msgstr ""
 
-#: ../src/main-win-ui.c:227
+#: ../src/main-win-ui.c:229
 msgid "_Help"
 msgstr "_Белешмә"
 
-#: ../src/main-win-ui.c:229
+#: ../src/main-win-ui.c:231
 msgid "_Keyboard Navigation"
 msgstr ""
 
-#: ../src/main-win-ui.c:230
+#: ../src/main-win-ui.c:232
 msgid "_Go"
 msgstr "_Күчү"
 
-#: ../src/main-win-ui.c:231
+#: ../src/main-win-ui.c:233
 #, fuzzy
 msgid "_Previous Folder"
 msgstr "Алдынгы каталог"
 
-#: ../src/main-win-ui.c:231
+#: ../src/main-win-ui.c:233
 msgid "Return to previous folder in history"
 msgstr ""
 
-#: ../src/main-win-ui.c:232
+#: ../src/main-win-ui.c:234
 #, fuzzy
 msgid "_Next Folder"
 msgstr "Алдагы каталог"
 
-#: ../src/main-win-ui.c:232
+#: ../src/main-win-ui.c:234
 msgid "Go forward to next folder in history"
 msgstr ""
 
-#: ../src/main-win-ui.c:233
+#: ../src/main-win-ui.c:235
 #, fuzzy
 msgid "Pa_rent Folder"
 msgstr "Баш каталог"
 
-#: ../src/main-win-ui.c:233
+#: ../src/main-win-ui.c:235
 msgid "Go to parent Folder"
 msgstr "Баш каталогына күчү"
 
-#: ../src/main-win-ui.c:234
+#: ../src/main-win-ui.c:236
 #, fuzzy
 msgid "H_ome Folder"
 msgstr "Өй каталогы"
 
-#: ../src/main-win-ui.c:234
+#: ../src/main-win-ui.c:236
 #, fuzzy
 msgid "Go to home folder"
 msgstr "Баш каталогына күчү"
 
-#: ../src/main-win-ui.c:235
+#: ../src/main-win-ui.c:237
 #, fuzzy
 msgid "_Desktop"
 msgstr "Эш өстәле"
 
-#: ../src/main-win-ui.c:235
+#: ../src/main-win-ui.c:237
 #, fuzzy
 msgid "Go to desktop folder"
 msgstr "Баш каталогына күчү"
 
-#: ../src/main-win-ui.c:236
+#: ../src/main-win-ui.c:238
 msgid "Open trash can"
 msgstr ""
 
-#: ../src/main-win-ui.c:237
+#: ../src/main-win-ui.c:239
 msgid "Filesyste_m Root"
 msgstr ""
 
-#: ../src/main-win-ui.c:237
+#: ../src/main-win-ui.c:239
 msgid "Go fo filesystem root"
 msgstr ""
 
-#: ../src/main-win-ui.c:238
+#: ../src/main-win-ui.c:240
 #, fuzzy
 msgid "_Applications"
 msgstr "Кушымталар"
 
-#: ../src/main-win-ui.c:238
+#: ../src/main-win-ui.c:240
 msgid "Go to root of applications menu folder"
 msgstr ""
 
-#: ../src/main-win-ui.c:239
+#: ../src/main-win-ui.c:241
 #, fuzzy
 msgid "Go to list of devices connected to the computer"
 msgstr "Эш өстәлендә диск билгечекләрен күрсәтү"
 
-#: ../src/main-win-ui.c:240
+#: ../src/main-win-ui.c:242
 #, fuzzy
 msgid "Net_work"
 msgstr "Челтәр җайланмалары"
 
-#: ../src/main-win-ui.c:240
+#: ../src/main-win-ui.c:242
 #, fuzzy
 msgid "Go to list of places on the network"
 msgstr "Эш өстәлендә диск билгечекләрен күрсәтү"
 
-#: ../src/main-win-ui.c:241
+#: ../src/main-win-ui.c:243
 msgid "_Go to Location..."
 msgstr ""
 
-#: ../src/main-win-ui.c:242
+#: ../src/main-win-ui.c:244
 msgid "_Connect to Server..."
 msgstr ""
 
-#: ../src/main-win-ui.c:242
+#: ../src/main-win-ui.c:244
 msgid "Open a window to choose remote folder location"
 msgstr ""
 
-#: ../src/main-win-ui.c:243
+#: ../src/main-win-ui.c:245
 msgid "Go to the path in the location bar"
 msgstr ""
 
-#: ../src/main-win-ui.c:244
+#: ../src/main-win-ui.c:246
 msgid "_Bookmarks"
 msgstr "_Кыстыргычлар"
 
-#: ../src/main-win-ui.c:245
+#: ../src/main-win-ui.c:247
 #, fuzzy
 msgid "_Add to Bookmarks..."
 msgstr "Кыстыргыч өстәү"
 
-#: ../src/main-win-ui.c:245
+#: ../src/main-win-ui.c:247
 msgid "Add current folder to bookmarks list"
 msgstr ""
 
-#: ../src/main-win-ui.c:246
+#: ../src/main-win-ui.c:248
 msgid "Too_ls"
 msgstr ""
 
-#: ../src/main-win-ui.c:247
+#: ../src/main-win-ui.c:249
 msgid "Open Current Folder in _Terminal"
 msgstr "Бу каталогны _терминалда ачу"
 
-#: ../src/main-win-ui.c:249
+#: ../src/main-win-ui.c:251
 #, fuzzy
 msgid "Fin_d Files..."
 msgstr "_Файлларны сортлау"
 
-#: ../src/main-win-ui.c:249
+#: ../src/main-win-ui.c:251
 #, fuzzy
 msgid "Open search dialog"
 msgstr "Эш өстәленең көйләү диалогын ачу"
 
-#: ../src/main-win-ui.c:252
+#: ../src/main-win-ui.c:254
 #, fuzzy
 msgid "_Run a Command in Current Folder..."
 msgstr "Бу каталогны яңарту"
 
 #. Note to translators: "Mingle..." means "Do not put folders before files" but make the translation as short as possible, please!
-#: ../src/main-win-ui.c:267
+#: ../src/main-win-ui.c:271
 msgid "Mingle _Files and Folders"
 msgstr ""
 
-#: ../src/main-win-ui.c:270
+#: ../src/main-win-ui.c:274
 msgid "_Ignore Name Case"
 msgstr ""
 
-#: ../src/main-win-ui.c:272
+#: ../src/main-win-ui.c:276
 #, fuzzy
 msgid "Sho_w Hidden"
 msgstr "Яшерен файлларны чагылдыру"
 
 #. Note to translators: this save is meant for folder's settings such as sort
-#: ../src/main-win-ui.c:274
+#: ../src/main-win-ui.c:278
 msgid "Preserve This Folder's Settings"
 msgstr ""
 
-#: ../src/main-win-ui.c:275
+#: ../src/main-win-ui.c:279
 msgid ""
 "Check to remember view and sort as folder setting rather than global one"
 msgstr ""
 
-#: ../src/main-win-ui.c:277
+#: ../src/main-win-ui.c:281
 msgid "_Show Toolbar"
 msgstr ""
 
-#: ../src/main-win-ui.c:278
+#: ../src/main-win-ui.c:282
 msgid "Show 'New _Window' Button"
 msgstr ""
 
-#: ../src/main-win-ui.c:279
+#: ../src/main-win-ui.c:283
 msgid "Show 'New _Tab' Button"
 msgstr ""
 
-#: ../src/main-win-ui.c:280
+#: ../src/main-win-ui.c:284
 msgid "Show _Navigation Buttons"
 msgstr ""
 
-#: ../src/main-win-ui.c:281
+#: ../src/main-win-ui.c:285
 msgid "Show '_Home' Button"
 msgstr ""
 
-#: ../src/main-win-ui.c:282
+#: ../src/main-win-ui.c:286
 #, fuzzy
 msgid "Sho_w Side Pane"
 msgstr "Як панельне чагылдыру"
 
-#: ../src/main-win-ui.c:283
+#: ../src/main-win-ui.c:287
 msgid "Show Status B_ar"
 msgstr ""
 
-#: ../src/main-win-ui.c:284
+#: ../src/main-win-ui.c:288
 msgid "_Dual Pane Mode"
 msgstr ""
 
-#: ../src/main-win-ui.c:284
+#: ../src/main-win-ui.c:288
 msgid "Show two panels with folder views"
 msgstr ""
 
-#: ../src/main-win-ui.c:285
+#: ../src/main-win-ui.c:289
 msgid "Fullscreen _Mode"
 msgstr ""
 
-#: ../src/main-win-ui.c:291
+#: ../src/main-win-ui.c:295
 msgid "_Icon View"
 msgstr "_Билгечекләр"
 
-#: ../src/main-win-ui.c:292
+#: ../src/main-win-ui.c:296
 msgid "_Compact View"
 msgstr "_Җыйнак кыяфәт"
 
-#: ../src/main-win-ui.c:293
+#: ../src/main-win-ui.c:297
 msgid "_Thumbnail View"
 msgstr "_Кече рәсемнәр"
 
-#: ../src/main-win-ui.c:294
+#: ../src/main-win-ui.c:298
 msgid "Detailed _List View"
 msgstr "Җентекле _исемлек"
 
-#: ../src/main-win-ui.c:307 ../src/main-win-ui.c:315
+#: ../src/main-win-ui.c:311 ../src/main-win-ui.c:319
 msgid "By _Name"
 msgstr "_Исем буенча"
 
-#: ../src/main-win-ui.c:308 ../src/main-win-ui.c:316
+#: ../src/main-win-ui.c:312 ../src/main-win-ui.c:320
 msgid "By _Modification Time"
 msgstr "_Үзгәртү вакыты буенча"
 
-#: ../src/main-win-ui.c:309 ../src/main-win-ui.c:317
+#: ../src/main-win-ui.c:313 ../src/main-win-ui.c:321
 msgid "By _Size"
 msgstr "_Зурлыгы буенча"
 
-#: ../src/main-win-ui.c:310 ../src/main-win-ui.c:318
+#: ../src/main-win-ui.c:314 ../src/main-win-ui.c:322
 msgid "By File _Type"
 msgstr "Файл _төре буенча"
 
-#: ../src/main-win-ui.c:312
+#: ../src/main-win-ui.c:316
 msgid "By _Extension"
 msgstr ""
 
-#: ../src/main-win-ui.c:325
+#: ../src/main-win-ui.c:329
 msgid "Places"
 msgstr "Урыннар"
 
-#: ../src/main-win-ui.c:326
+#: ../src/main-win-ui.c:330
 msgid "Directory Tree"
 msgstr "Каталоглар агачы"
 
-#: ../src/main-win-ui.c:327
+#: ../src/main-win-ui.c:331
 msgid "Remote"
 msgstr "Челтәр"
 
-#: ../src/main-win-ui.c:333
+#: ../src/main-win-ui.c:337
 #, fuzzy
 msgid "_Location"
 msgstr "Кушымталар"
 
-#: ../src/main-win-ui.c:334
+#: ../src/main-win-ui.c:338
 msgid "_Buttons"
 msgstr ""
 
-#: ../src/main-win.c:925 ../src/main-win.c:929
+#: ../src/main-win.c:938 ../src/main-win.c:942
 msgid "Show history of visited folders"
 msgstr ""
 
-#: ../src/main-win.c:934
+#: ../src/main-win.c:947
 msgid "History"
 msgstr ""
 
-#: ../src/main-win.c:948
+#: ../src/main-win.c:961
 msgid "You are in super user mode"
 msgstr "Сез баш кулланучы хокукларына ия"
 
-#: ../src/main-win.c:1134
+#: ../src/main-win.c:1146
 #, fuzzy
 msgid "Lightweight file manager\n"
 msgstr ""
@@ -1155,12 +1160,12 @@ msgstr ""
 "\n"
 "Төзүчесе - Hon Jen Yee (PCMan)"
 
-#: ../src/main-win.c:1139
+#: ../src/main-win.c:1156
 #, c-format
 msgid "using LibFM ver. %s\n"
 msgstr ""
 
-#: ../src/main-win.c:1141
+#: ../src/main-win.c:1158
 #, fuzzy
 msgid ""
 "\n"
@@ -1170,11 +1175,11 @@ msgstr ""
 "\n"
 "Төзүчесе - Hon Jen Yee (PCMan)"
 
-#: ../src/main-win.c:1166 ../src/main-win.c:1174
+#: ../src/main-win.c:1183 ../src/main-win.c:1191
 msgid "Keyboard Navigation"
 msgstr ""
 
-#: ../src/main-win.c:1168
+#: ../src/main-win.c:1185
 msgid ""
 "Tab: cycle focus Folder View -> Side Pane -> Tools Bar\n"
 "Shift+Tab: cycle focus Tools Bar -> Side Pane -> Folder View\n"
@@ -1184,20 +1189,20 @@ msgid ""
 "Ctrl+L or Alt+D: jump focus to Path Bar"
 msgstr ""
 
-#: ../src/main-win.c:1210
+#: ../src/main-win.c:1227
 msgid "Run a command"
 msgstr ""
 
-#: ../src/main-win.c:1211
+#: ../src/main-win.c:1228
 msgid "Enter a command to run:"
 msgstr ""
 
-#: ../src/main-win.c:1218
+#: ../src/main-win.c:1235
 #, fuzzy
 msgid "Current folder is inaccessible"
 msgstr "Бу каталогны _терминалда ачу"
 
-#: ../src/main-win.c:1822
+#: ../src/main-win.c:1837
 #, c-format
 msgid ""
 "Add following folder to bookmarks:\n"
@@ -1208,15 +1213,15 @@ msgstr ""
 "'%s'\n"
 "Яңа кыстыргыч өчен исем кушыгыз:"
 
-#: ../src/main-win.c:1826
+#: ../src/main-win.c:1841
 msgid "Add to Bookmarks"
 msgstr "Кыстыргыч өстәү"
 
-#: ../src/main-win.c:2552
+#: ../src/main-win.c:2587
 msgid "Select filter"
 msgstr ""
 
-#: ../src/main-win.c:2553
+#: ../src/main-win.c:2588
 msgid "Choose a new shell pattern to show files:"
 msgstr ""
 
@@ -1306,11 +1311,12 @@ msgstr ""
 msgid "[FILE1, FILE2,...]"
 msgstr "[FILE1, FILE2,...]"
 
-#: ../src/pcmanfm.c:352
+#. FIXME: add "on this X screen/monitor" into diagnostics
+#: ../src/pcmanfm.c:376
 msgid "Desktop manager is not active."
 msgstr ""
 
-#: ../src/pcmanfm.c:598
+#: ../src/pcmanfm.c:627
 msgid "Terminal emulator is not set."
 msgstr "Терминал эмуляторы күрсәтелмәгән."
 
@@ -1319,42 +1325,42 @@ msgstr "Терминал эмуляторы күрсәтелмәгән."
 msgid "Open in New T_ab"
 msgstr "Яңа өстәмә биттә ачу"
 
-#: ../src/tab-page.c:395
+#: ../src/tab-page.c:411
 #, c-format
 msgid "%d item selected"
 msgid_plural "%d items selected"
 msgstr[0] "%d өлеш сайланган"
 
-#: ../src/tab-page.c:718
+#: ../src/tab-page.c:741
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Буш урын: %s (Барлык: %s)"
 
-#: ../src/tab-page.c:738
+#: ../src/tab-page.c:761
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] "%d өлеш"
 
-#: ../src/tab-page.c:739
+#: ../src/tab-page.c:762
 #, c-format
 msgid " (%d hidden)"
 msgid_plural " (%d hidden)"
 msgstr[0] " (%d качырылган)"
 
-#: ../src/pref.c:514
+#: ../src/pref.c:515
 msgid "Add to Modules Blacklist"
 msgstr ""
 
-#: ../src/pref.c:515
+#: ../src/pref.c:516
 msgid "Enter a blacklisted module mask:"
 msgstr ""
 
-#: ../src/pref.c:606
+#: ../src/pref.c:607
 msgid "Add to Modules Whitelist"
 msgstr ""
 
-#: ../src/pref.c:607
+#: ../src/pref.c:608
 msgid "Enter a whitelisted module mask:"
 msgstr ""
 
