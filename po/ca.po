@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-21 22:24+0300\n"
-"PO-Revision-Date: 2017-09-15 14:18+0000\n"
+"PO-Revision-Date: 2018-09-28 11:32+0000\n"
 "Last-Translator: Davidmp <rbndavid@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: ca\n"
@@ -16,12 +16,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.8\n"
-"X-POOTLE-MTIME: 1505485101.458276\n"
+"X-POOTLE-MTIME: 1538134366.120650\n"
 
 #: ../data/ui/about.glade.in.h:1
-#, fuzzy
 msgid "Copyright (C) 2009 - 2018"
-msgstr "Copyright (C) 2009 - 2014"
+msgstr "Copyright (C) 2009 - 2018"
 
 #. Please replace this line with your own names, one name per line.
 #: ../data/ui/about.glade.in.h:3
@@ -51,7 +50,7 @@ msgstr "Si us plau, seleccioneu un fitxer d'imatge"
 
 #: ../data/ui/desktop-pref.glade.h:6
 msgid "_Use the same wallpaper on all desktops"
-msgstr "_Utilitza el mateix fons de pantalla a tots els escriptoris"
+msgstr "_Usa el mateix fons de pantalla a tots els escriptoris"
 
 #: ../data/ui/desktop-pref.glade.h:7
 msgid "_Background color:"
@@ -191,17 +190,18 @@ msgstr ""
 
 #: ../data/ui/pref.glade.h:8
 msgid "Co_nfirm before deleting files"
-msgstr "Co_nfirmeu-ho abans d'eliminar fitxers"
+msgstr "Co_nfirmeu-ho abans de suprimir fitxers"
 
 #: ../data/ui/pref.glade.h:9
 msgid "_Move deleted files to \"trash can\" instead of erasing from disk"
 msgstr ""
-"_Mou els fitxers eliminats a la paperera en lloc d'eliminar-los del disc"
+"_Mou els fitxers suprimits a la paperera en lloc de suprimir-los del disc"
 
 #: ../data/ui/pref.glade.h:10
 msgid "_Erase files on removable media instead of \"trash can\" creation"
 msgstr ""
-"_Elimina els fitxers dels mitjans extraïbles en comptes de crear una paperera"
+"_Suprimeix els fitxers dels mitjans extraïbles en comptes de crear una "
+"paperera"
 
 #: ../data/ui/pref.glade.h:11
 msgid "Confi_rm before moving files into \"trash can\""
@@ -298,7 +298,7 @@ msgstr "<b>Interfície d'usuari</b>"
 
 #: ../data/ui/pref.glade.h:35
 msgid "Us_e SI decimal prefixes instead of IEC binary prefixes"
-msgstr "Utilitza pr_efixos decimals del SI en comptes de prefixos binaris IEC"
+msgstr "Usa pr_efixos decimals del SI en comptes de prefixos binaris IEC"
 
 #: ../data/ui/pref.glade.h:36
 msgid "Treat backup files as _hidden"
@@ -403,7 +403,7 @@ msgstr ""
 
 #: ../data/ui/pref.glade.h:61
 msgid "_Remove selected"
-msgstr "_Elimina la selecció"
+msgstr "_Suprimeix la selecció"
 
 #: ../data/ui/pref.glade.h:62
 msgid "_Open mounted removable media in new tab instead of new window"
@@ -644,7 +644,7 @@ msgstr "Obre en un termina_l"
 
 #: ../src/desktop-ui.c:68
 msgid "_Remove from Desktop"
-msgstr "Elimina de l'esc_riptori"
+msgstr "Suprimeix de l'esc_riptori"
 
 #: ../src/desktop-ui.c:85
 msgid "Stic_k to Current Position"
@@ -680,9 +680,8 @@ msgid "_New Window"
 msgstr "_Nova finestra"
 
 #: ../src/main-win-ui.c:190
-#, fuzzy
 msgid "Open new file manager window"
-msgstr "Obre amb el gestor de fitxers"
+msgstr "Obre una finestra nova del gestor de finestres"
 
 #: ../src/main-win-ui.c:191
 msgid "New T_ab"
@@ -953,7 +952,7 @@ msgstr "Mostra els elements oc_ults"
 #. Note to translators: this save is meant for folder's settings such as sort
 #: ../src/main-win-ui.c:278
 msgid "Preserve This Folder's Settings"
-msgstr "Preserva els paràmetres d'aquesta carpeta"
+msgstr "Preserva la configuració d'aquesta carpeta"
 
 #: ../src/main-win-ui.c:279
 msgid ""
@@ -1192,8 +1191,8 @@ msgid ""
 "Set mode of desktop wallpaper. MODE=(color|stretch|fit|crop|center|tile|"
 "screen)"
 msgstr ""
-"Ajusta el mode del fons d'escriptori. MODE=(color|escalat|ajustat|centrat|"
-"mosaic)"
+"Estableix el mode del fons d'escriptori. "
+"MODE=(color|escalat|ajustat|centrat|mosaic)"
 
 #: ../src/pcmanfm.c:89
 msgid "MODE"
