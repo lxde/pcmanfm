@@ -2,7 +2,7 @@
  *      main-win.c
  *
  *      Copyright 2009 - 2012 Hong Jen Yee (PCMan) <pcman.tw@gmail.com>
- *      Copyright 2012-2015 Andriy Grytsenko (LStranger) <andrej@rep.kiev.ua>
+ *      Copyright 2012-2018 Andriy Grytsenko (LStranger) <andrej@rep.kiev.ua>
  *
  *      This program is free software; you can redistribute it and/or modify
  *      it under the terms of the GNU General Public License as published by
@@ -1924,21 +1924,23 @@ static guint icon_sizes[] =
 {
     8,
     10,
-    12,
+    12, /* 12.6 */
     16,
     20,
-    24,
-    32, /* 30 would be better */
-    40, /* 38 */
-    48,
-    64, /* 60 */
-    80, /* 76 */
-    96,
-    128, /* 120 */
-    160, /* 152 */
-    192,
-    224,
-    256
+    24, /* 25.2 */
+    32,
+    40,
+    48, /* 50.4 */
+    64,
+    80,
+    96, /* 101 */
+    128, /* 127 */
+    160,
+    192, /* 202 */
+    256, /* 254 */
+    320,
+    400, /* 403 */
+    512
 };
 
 static void on_size_decrement(GtkAction *act, FmMainWin *win)
@@ -1964,7 +1966,7 @@ static void on_size_decrement(GtkAction *act, FmMainWin *win)
         break;
     case FM_FV_THUMBNAIL_VIEW:
         size = fm_config->thumbnail_size;
-        if (size < 80)
+        if (size < 64)
             return;
         break;
     default:
@@ -2006,18 +2008,18 @@ static void on_size_increment(GtkAction *act, FmMainWin *win)
     {
     case FM_FV_ICON_VIEW:
         size = fm_config->big_icon_size;
-        if (size > 80)
+        if (size > 200)
             return;
         break;
     case FM_FV_COMPACT_VIEW:
     case FM_FV_LIST_VIEW:
         size = fm_config->small_icon_size;
-        if (size > 40)
+        if (size > 100)
             return;
         break;
     case FM_FV_THUMBNAIL_VIEW:
         size = fm_config->thumbnail_size;
-        if (size > 224)
+        if (size > 400)
             return;
         break;
     default:
