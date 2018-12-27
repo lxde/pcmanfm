@@ -2465,7 +2465,7 @@ static gboolean on_key_press_event(GtkWidget* w, GdkEventKey* evt)
 
     if(modifier == GDK_MOD1_MASK) /* Alt */
     {
-        if(isdigit(evt->keyval)) /* Alt + 0 ~ 9, nth tab */
+        if(evt->keyval >= '0' && evt->keyval <= '9') /* Alt + 0 ~ 9, nth tab */
         {
             int n;
             if(evt->keyval == '0')
