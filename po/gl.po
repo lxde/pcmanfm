@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm 1.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-21 22:24+0300\n"
-"PO-Revision-Date: 2018-04-13 18:47+0000\n"
+"PO-Revision-Date: 2019-02-22 09:12+0000\n"
 "Last-Translator: Miguel Anxo Bouzada <mbouzada@gmail.com>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
 "Language: gl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.8\n"
-"X-POOTLE-MTIME: 1523645273.869624\n"
+"X-POOTLE-MTIME: 1550826757.572785\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2018"
@@ -342,7 +342,7 @@ msgstr "<b>Árbore de directorios</b>"
 
 #: ../data/ui/pref.glade.h:46
 msgid "Hide e_xpander on empty or locked folder"
-msgstr "Agochar o _despregue nun cartafol baleiro ou bloqueado"
+msgstr "Agachar o _despregue nun cartafol baleiro ou bloqueado"
 
 #: ../data/ui/pref.glade.h:47
 msgid "<b>Show in Places:</b>"
@@ -386,7 +386,7 @@ msgstr "<b>Montaxe automático</b>"
 
 #: ../data/ui/pref.glade.h:57
 msgid "_Mount mountable volumes automatically on program startup"
-msgstr "_Montar os volumes montábeis automaticamente no arrinque da aplicación"
+msgstr "_Montar os volumes montábeis automaticamente no arrinque do aplicativo"
 
 #: ../data/ui/pref.glade.h:58
 msgid "Mo_unt removable media automatically when they are inserted"
@@ -467,7 +467,7 @@ msgstr "Amosar _só un modelo por cada tipo MIME"
 
 #: ../data/ui/pref.glade.h:77
 msgid "Ru_n default application after creation from template"
-msgstr "E_xecutar a aplicación predeterminada despois de crear un modelo"
+msgstr "E_xecutar o aplicativo predeterminado após crear un modelo"
 
 #: ../data/ui/pref.glade.h:78
 msgid "<b>Other Options</b>"
@@ -476,7 +476,7 @@ msgstr "<b>Outras opcións</b>"
 #: ../data/ui/pref.glade.h:79
 msgid "Use Application Startup Notify _by default"
 msgstr ""
-"Empregar de xeito _predeterminado o notificador de inicio de aplicacións"
+"Empregar de xeito _predeterminado o notificador de inicio de aplicativos"
 
 #: ../data/ui/pref.glade.h:80
 msgid ""
@@ -484,10 +484,10 @@ msgid ""
 "explicitly.\n"
 "If unchecked then use Startup Notify only if that is defined for application."
 msgstr ""
-"Se está marcado, empregarase o notificador de inicio de aplicacións se non "
+"Se está marcado, empregarase o notificador de inicio de aplicativos se non "
 "hai outro declarado explicitamente.\n"
-"Se está desmarcado, entón empregarase o notificador de inicio de aplicacións "
-"só se está definido para a aplicación."
+"Se está desmarcado, entón empregarase o notificador de inicio de aplicativos "
+"só se está definido para o aplicativo."
 
 #: ../data/ui/pref.glade.h:82
 msgid "D_efer test for content type on folder loading"
@@ -870,11 +870,11 @@ msgstr "Ir ao sistema de ficheiros raíz"
 
 #: ../src/main-win-ui.c:240
 msgid "_Applications"
-msgstr "_Aplicacións"
+msgstr "_Aplicativos"
 
 #: ../src/main-win-ui.c:240
 msgid "Go to root of applications menu folder"
-msgstr "Ir á raíz do cartafol do menú de aplicacións"
+msgstr "Ir á raíz do cartafol do menú de aplicativos"
 
 #: ../src/main-win-ui.c:241
 msgid "Go to list of devices connected to the computer"

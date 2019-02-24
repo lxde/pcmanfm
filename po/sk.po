@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-21 22:24+0300\n"
-"PO-Revision-Date: 2018-12-13 18:39+0000\n"
+"PO-Revision-Date: 2019-01-18 00:19+0000\n"
 "Last-Translator: mirek <mirek@cnl.sk>\n"
 "Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
 "Language: sk\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 "X-Generator: Pootle 2.8\n"
-"X-POOTLE-MTIME: 1544726340.524583\n"
+"X-POOTLE-MTIME: 1547770750.033759\n"
 
 #: ../data/ui/about.glade.in.h:1
 msgid "Copyright (C) 2009 - 2018"
@@ -29,12 +29,12 @@ msgstr "Copyright (C) 2009 - 2018"
 msgid "translator-credits"
 msgstr ""
 "Ivan Masár <helix84@centrum.sk>, 2009\n"
-"Miroslav Biňas <mirek@cnl.sk>"
+"Miroslav Biňas <mirek@cnl.sk>, 2018, 2019"
 
 #: ../data/ui/desktop-pref.glade.h:1 ../src/desktop-ui.c:34
 #: ../data/pcmanfm-desktop-pref.desktop.in.h:1
 msgid "Desktop Preferences"
-msgstr "Nastavenie pracovného prostredia"
+msgstr "Nastavenie pracovnej plochy"
 
 #: ../data/ui/desktop-pref.glade.h:2
 msgid "<b>Background</b>"
@@ -115,12 +115,12 @@ msgstr "Po_užiť plochu ako priečinok (zobraziť na nej ikony) podľa cesty:"
 #: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:84
 msgctxt "Use path for some folder: ..."
 msgid "Default"
-msgstr ""
+msgstr "Predvolená"
 
 #: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:85
 msgctxt "Use path for some folder: ..."
 msgid "Custom:"
-msgstr ""
+msgstr "Vlastná:"
 
 #: ../data/ui/desktop-pref.glade.h:23
 msgid "Select a Desktop Folder"
@@ -139,7 +139,6 @@ msgid "Fill with background color only"
 msgstr "Vyplniť iba farbou pozadia"
 
 #: ../data/ui/desktop-pref.glade.h:27
-#, fuzzy
 msgid "Stretch to fill the entire monitor area"
 msgstr "Roztiahnuť na celú obrazovku"
 
@@ -158,9 +157,8 @@ msgid "Tile the image to fill the entire monitor area"
 msgstr "Vydláždiť obrázkom celú obrazovku"
 
 #: ../data/ui/desktop-pref.glade.h:31
-#, fuzzy
 msgid "Stretch and crop to fill the monitor area"
-msgstr "Roztiahnuť na celú obrazovku"
+msgstr "Roztiahnuť a orezať na celú obrazovku"
 
 #: ../data/ui/desktop-pref.glade.h:32
 #, fuzzy
@@ -285,9 +283,8 @@ msgid "_Only show thumbnails for local files"
 msgstr "Z_obrazovať náhľady iba lokálnych súborov"
 
 #: ../data/ui/pref.glade.h:33
-#, fuzzy
 msgid "Do _not generate thumbnails for files exceeding this size:"
-msgstr "Nevytvárať náhľadu súborov prekračujúcich túto veľkosť:"
+msgstr "Nevytvárať _náhľady súborov pre súbory prekračujúce túto veľkosť:"
 
 #: ../data/ui/pref.glade.h:34
 msgid "<b>User Interface</b>"
@@ -300,15 +297,16 @@ msgstr "Používať desiatkové predpony SI namiesto dvojkových predpon IEC"
 
 #: ../data/ui/pref.glade.h:36
 msgid "Treat backup files as _hidden"
-msgstr ""
+msgstr "Pracovať so záložnými súbormi ako so _skrytými"
 
 #: ../data/ui/pref.glade.h:37
 msgid "Al_ways show full file names"
 msgstr "_Vždy zobrazovať plné názvy súborov"
 
 #: ../data/ui/pref.glade.h:38
+#, fuzzy
 msgid "Show icons of hidden _files shadowed"
-msgstr ""
+msgstr "Zobraziť ikony skrytých súborov _vyblednuté"
 
 #: ../data/ui/pref.glade.h:39
 #, fuzzy
@@ -338,12 +336,11 @@ msgstr "<b>Strom priečinkov</b>"
 
 #: ../data/ui/pref.glade.h:46
 msgid "Hide e_xpander on empty or locked folder"
-msgstr ""
+msgstr "Skryť e_xpander na prázdny alebo zamknutý priečinok"
 
 #: ../data/ui/pref.glade.h:47
-#, fuzzy
 msgid "<b>Show in Places:</b>"
-msgstr "<b>Zobrazovať ikony na ploche</b>"
+msgstr "<b>Zobraziť v Miestach:</b>"
 
 #: ../data/ui/pref.glade.h:48
 msgid "_Home Folder"
@@ -358,9 +355,8 @@ msgid "_Trash Can"
 msgstr "_Kôš"
 
 #: ../data/ui/pref.glade.h:51
-#, fuzzy
 msgid "_Filesystem Root"
-msgstr "Súborový systém"
+msgstr "_Koreňový priečinok súborového systému"
 
 #: ../data/ui/pref.glade.h:52
 msgid "App_lications"
@@ -412,9 +408,8 @@ msgid "When removable medium unmounted:"
 msgstr "Keď bolo prenositeľné médium odpojené:"
 
 #: ../data/ui/pref.glade.h:64
-#, fuzzy
 msgid "Clos_e tab containing removable medium"
-msgstr "Zobrazovať dostupné možnosti prenosného média po vložení"
+msgstr "Zatvoriť kartu obsahujúcu pr_enosné médium"
 
 #: ../data/ui/pref.glade.h:65
 msgid "Change folder in the tab to _Home Folder"
@@ -432,11 +427,12 @@ msgstr "<b>Programy</b>"
 #: ../data/ui/pref.glade.h:68
 msgid "<i>Commands below may include extra options if necessary.</i>"
 msgstr ""
+"<i>Príkazy uvedené nižšie môžu v prípade potreby obsahovať ďalšie "
+"možnosti.</i>"
 
 #: ../data/ui/pref.glade.h:69
-#, fuzzy
 msgid "_Terminal emulator:"
-msgstr "Emulátor terminálu:"
+msgstr "Emulátor _terminálu:"
 
 #: ../data/ui/pref.glade.h:70
 msgid "_Switch user command:"
@@ -445,7 +441,7 @@ msgstr "_Príkaz na prepnutie používateľa:"
 #. Application command to format some drive
 #: ../data/ui/pref.glade.h:72
 msgid "_Format command:"
-msgstr ""
+msgstr "Príkaz na _formátovanie:"
 
 #: ../data/ui/pref.glade.h:73
 msgid "A_rchiver integration:"
@@ -488,11 +484,11 @@ msgstr ""
 
 #: ../data/ui/pref.glade.h:83
 msgid "Use path for \"Home Folder\" button:"
-msgstr ""
+msgstr "Použiť cestu pre tlačidlo \"Domovský priečinok\":"
 
 #: ../data/ui/pref.glade.h:86
 msgid "_Use current"
-msgstr ""
+msgstr "Po_užiť aktuálny"
 
 #: ../data/ui/pref.glade.h:87
 msgid "_Advanced"
@@ -585,11 +581,11 @@ msgstr "_Typ:"
 
 #: ../data/ui/connect.glade.h:4
 msgid "_Host:"
-msgstr ""
+msgstr "_Hostiteľ:"
 
 #: ../data/ui/connect.glade.h:5
 msgid "_Port:"
-msgstr "_Post:"
+msgstr "_Port:"
 
 #: ../data/ui/connect.glade.h:6
 msgid "Pa_th:"
@@ -649,7 +645,7 @@ msgstr ""
 
 #: ../src/desktop-ui.c:90
 msgid "Snap to _Grid"
-msgstr ""
+msgstr "Prichytiť ku _mriežke"
 
 #: ../src/desktop.c:974
 msgid "Activate file"
@@ -686,7 +682,7 @@ msgstr "Nová k_arta"
 
 #: ../src/main-win-ui.c:191
 msgid "Create new tab for this folder"
-msgstr ""
+msgstr "Vytvoriť novú kartu pre tento priečinok"
 
 #: ../src/main-win-ui.c:192
 msgid "C_reate New..."
@@ -781,7 +777,6 @@ msgid "Pat_h Bar"
 msgstr ""
 
 #: ../src/main-win-ui.c:219
-#, fuzzy
 msgid "Side _Pane"
 msgstr "Bočný _panel"
 
@@ -798,7 +793,7 @@ msgstr "_Usporiadať súbory"
 
 #: ../src/main-win-ui.c:224
 msgid "Zoom O_ut"
-msgstr ""
+msgstr "_Oddialiť"
 
 #: ../src/main-win-ui.c:227
 msgid "Fil_ter..."
@@ -817,69 +812,60 @@ msgid "_Go"
 msgstr "_Prejsť"
 
 #: ../src/main-win-ui.c:233
-#, fuzzy
 msgid "_Previous Folder"
-msgstr "Predošlý priečinok"
+msgstr "_Predchádzajúci priečinok"
 
 #: ../src/main-win-ui.c:233
 msgid "Return to previous folder in history"
-msgstr ""
+msgstr "Vráti sa do predchádzajúceho priečinku v histórii"
 
 #: ../src/main-win-ui.c:234
-#, fuzzy
 msgid "_Next Folder"
-msgstr "Ďalší priečinok"
+msgstr "_Ďalší priečinok"
 
 #: ../src/main-win-ui.c:234
 msgid "Go forward to next folder in history"
-msgstr ""
+msgstr "Prejde do ďalšieho priečinku v histórii"
 
 #: ../src/main-win-ui.c:235
-#, fuzzy
 msgid "Pa_rent Folder"
-msgstr "Nadradený priečinok"
+msgstr "Nad_radený priečinok"
 
 #: ../src/main-win-ui.c:235
 msgid "Go to parent Folder"
 msgstr "Prejsť do nadradeného priečinka"
 
 #: ../src/main-win-ui.c:236
-#, fuzzy
 msgid "H_ome Folder"
-msgstr "Domovský priečinok"
+msgstr "D_omovský priečinok"
 
 #: ../src/main-win-ui.c:236
-#, fuzzy
 msgid "Go to home folder"
-msgstr "Prejsť do priečinka"
+msgstr "Prejsť do domovského priečinka"
 
 #: ../src/main-win-ui.c:237
 msgid "_Desktop"
 msgstr "_Plocha"
 
 #: ../src/main-win-ui.c:237
-#, fuzzy
 msgid "Go to desktop folder"
-msgstr "Prejsť do priečinka"
+msgstr "Prejsť do priečinka pracovnej plochy"
 
 #: ../src/main-win-ui.c:238
 msgid "Open trash can"
-msgstr ""
+msgstr "Otvoriť kôš"
 
 #: ../src/main-win-ui.c:239
-#, fuzzy
 msgid "Filesyste_m Root"
-msgstr "Súborový systém"
+msgstr "Koreňový priečinok súborového systé_mu"
 
 #: ../src/main-win-ui.c:239
-#, fuzzy
 msgid "Go fo filesystem root"
-msgstr "Súborový systém"
+msgstr "Prejsť do koreňového priečinku súborového systému"
 
 #: ../src/main-win-ui.c:240
-#, fuzzy
 msgid "_Applications"
-msgstr "Aplikácie"
+msgstr "_Aplikácie"
 
 #: ../src/main-win-ui.c:240
 msgid "Go to root of applications menu folder"
@@ -896,9 +882,8 @@ msgid "Net_work"
 msgstr "Sieťové jednotky"
 
 #: ../src/main-win-ui.c:242
-#, fuzzy
 msgid "Go to list of places on the network"
-msgstr "Zobraziť na ploche ikony zväzkov"
+msgstr "Prejsť na zoznam miest v sieti"
 
 #: ../src/main-win-ui.c:243
 #, fuzzy
@@ -907,7 +892,7 @@ msgstr "Umiestnenie"
 
 #: ../src/main-win-ui.c:244
 msgid "_Connect to Server..."
-msgstr ""
+msgstr "Pripojiť sa na _server..."
 
 #: ../src/main-win-ui.c:244
 msgid "Open a window to choose remote folder location"
@@ -915,24 +900,23 @@ msgstr ""
 
 #: ../src/main-win-ui.c:245
 msgid "Go to the path in the location bar"
-msgstr ""
+msgstr "Prejsť do umiestnenia v adresnom riadku"
 
 #: ../src/main-win-ui.c:246
 msgid "_Bookmarks"
 msgstr "_Záložky"
 
 #: ../src/main-win-ui.c:247
-#, fuzzy
 msgid "_Add to Bookmarks..."
-msgstr "Pridať medzi záložky"
+msgstr "Prid_ať medzi záložky..."
 
 #: ../src/main-win-ui.c:247
 msgid "Add current folder to bookmarks list"
-msgstr ""
+msgstr "Pridať aktuálny priečinok medzi záložky"
 
 #: ../src/main-win-ui.c:248
 msgid "Too_ls"
-msgstr ""
+msgstr "_Nástroje"
 
 #: ../src/main-win-ui.c:249
 msgid "Open Current Folder in _Terminal"
@@ -943,29 +927,25 @@ msgid "Fin_d Files..."
 msgstr "_Hľadať súbory"
 
 #: ../src/main-win-ui.c:251
-#, fuzzy
 msgid "Open search dialog"
-msgstr "Otvoriť dialóg nastavení pracovného prostredia"
+msgstr "Otvoriť dialóg pre vyhľadávanie"
 
 #: ../src/main-win-ui.c:254
-#, fuzzy
 msgid "_Run a Command in Current Folder..."
-msgstr "Nadradený priečinok"
+msgstr "Spustiť p_ríkaz v aktuálnom priečinku..."
 
 #. Note to translators: "Mingle..." means "Do not put folders before files" but make the translation as short as possible, please!
 #: ../src/main-win-ui.c:271
-#, fuzzy
 msgid "Mingle _Files and Folders"
-msgstr "Všetky súbory a adresáre"
+msgstr "Miešať _súbory a priečinky"
 
 #: ../src/main-win-ui.c:274
 msgid "_Ignore Name Case"
-msgstr ""
+msgstr "_Ignorovať veľkosť znakov"
 
 #: ../src/main-win-ui.c:276
-#, fuzzy
 msgid "Sho_w Hidden"
-msgstr "Zobrazovať _skryté"
+msgstr "Zobraziť _skryté súbory"
 
 #. Note to translators: this save is meant for folder's settings such as sort
 #: ../src/main-win-ui.c:278
@@ -979,15 +959,15 @@ msgstr ""
 
 #: ../src/main-win-ui.c:281
 msgid "_Show Toolbar"
-msgstr ""
+msgstr "Zobraziť panel ná_strojov"
 
 #: ../src/main-win-ui.c:282
 msgid "Show 'New _Window' Button"
-msgstr ""
+msgstr "Zobraziť tlačidlo 'Nové _okno'"
 
 #: ../src/main-win-ui.c:283
 msgid "Show 'New _Tab' Button"
-msgstr ""
+msgstr "Zobraziť tlačidlo 'Nová _karta'"
 
 #: ../src/main-win-ui.c:284
 #, fuzzy
@@ -996,12 +976,11 @@ msgstr "Zobraziť panel _umiestneia"
 
 #: ../src/main-win-ui.c:285
 msgid "Show '_Home' Button"
-msgstr ""
+msgstr "Zobraziť tlačidlo '_Domov'"
 
 #: ../src/main-win-ui.c:286
-#, fuzzy
 msgid "Sho_w Side Pane"
-msgstr "Bočný _panel"
+msgstr "Zobraziť bočný _panel"
 
 #: ../src/main-win-ui.c:287
 msgid "Show Status B_ar"
@@ -1017,7 +996,7 @@ msgstr ""
 
 #: ../src/main-win-ui.c:289
 msgid "Fullscreen _Mode"
-msgstr ""
+msgstr "Na _celú obrazovku"
 
 #: ../src/main-win-ui.c:295
 msgid "_Icon View"
@@ -1053,11 +1032,11 @@ msgstr "Podľa _typu súboru"
 
 #: ../src/main-win-ui.c:316
 msgid "By _Extension"
-msgstr ""
+msgstr "Podľa _prípony"
 
 #: ../src/main-win-ui.c:329
 msgid "Places"
-msgstr ""
+msgstr "Miesta"
 
 #: ../src/main-win-ui.c:330
 msgid "Directory Tree"
@@ -1068,21 +1047,20 @@ msgid "Remote"
 msgstr ""
 
 #: ../src/main-win-ui.c:337
-#, fuzzy
 msgid "_Location"
-msgstr "Umiestnenie"
+msgstr "_Umiestnenie"
 
 #: ../src/main-win-ui.c:338
 msgid "_Buttons"
-msgstr ""
+msgstr "_Tlačidlá"
 
 #: ../src/main-win.c:938 ../src/main-win.c:942
 msgid "Show history of visited folders"
-msgstr ""
+msgstr "Zobraziť históriu navštívených priečinkov"
 
 #: ../src/main-win.c:947
 msgid "History"
-msgstr ""
+msgstr "História"
 
 #: ../src/main-win.c:961
 msgid "You are in super user mode"
@@ -1121,11 +1099,11 @@ msgstr ""
 
 #: ../src/main-win.c:1227
 msgid "Run a command"
-msgstr ""
+msgstr "Spustiť príkaz"
 
 #: ../src/main-win.c:1228
 msgid "Enter a command to run:"
-msgstr ""
+msgstr "Zadajte príkaz na spustenie:"
 
 #: ../src/main-win.c:1235
 #, fuzzy
@@ -1225,9 +1203,8 @@ msgid "N"
 msgstr ""
 
 #: ../src/pcmanfm.c:91
-#, fuzzy
 msgid "Open new window"
-msgstr "Otvoriť v novom _okne"
+msgstr "Otvoriť nové okno"
 
 #: ../src/pcmanfm.c:93
 msgid "Open a Find Files window"
@@ -1248,16 +1225,15 @@ msgstr "[SÚBOR1, SÚBOR2,...]"
 #. FIXME: add "on this X screen/monitor" into diagnostics
 #: ../src/pcmanfm.c:376
 msgid "Desktop manager is not active."
-msgstr ""
+msgstr "Správca pracovnej plochy nie je aktívny."
 
 #: ../src/pcmanfm.c:627
 msgid "Terminal emulator is not set."
 msgstr "Nebol nastavený emulátor terminálu."
 
 #: ../src/tab-page.c:56
-#, fuzzy
 msgid "Open in New T_ab"
-msgstr "Otvoriť na novej _karte"
+msgstr "Otvoriť na novej k_arte"
 
 #: ../src/tab-page.c:411
 #, c-format
@@ -1281,7 +1257,7 @@ msgstr[1] ""
 msgstr[2] ""
 
 #: ../src/tab-page.c:762
-#, fuzzy, c-format
+#, c-format
 msgid " (%d hidden)"
 msgid_plural " (%d hidden)"
 msgstr[0] "%d skrytý"
@@ -1305,14 +1281,12 @@ msgid "Enter a whitelisted module mask:"
 msgstr ""
 
 #: ../data/pcmanfm.desktop.in.h:1
-#, fuzzy
 msgid "File Manager PCManFM"
-msgstr "Otvoriť v Správcovi súborov"
+msgstr "Správca súborov PCManFM"
 
 #: ../data/pcmanfm.desktop.in.h:2
-#, fuzzy
 msgid "File Manager"
-msgstr "Otvoriť v Správcovi súborov"
+msgstr "Správca súborov"
 
 #: ../data/pcmanfm.desktop.in.h:3
 msgid "Browse the file system and manage the files"
