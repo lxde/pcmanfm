@@ -3,6 +3,7 @@
  *
  *      Copyright 2009 - 2010 Hong Jen Yee (PCMan) <pcman.tw@gmail.com>
  *      Copyright 2012-2015 Andriy Grytsenko (LStranger) <andrej@rep.kiev.ua>
+ *      Copyright 2020 Mamoru TASAKA <mtasaka@fedoraproject.org>
  *
  *      This program is free software; you can redistribute it and/or modify
  *      it under the terms of the GNU General Public License as published by
@@ -239,6 +240,7 @@ int main(int argc, char** argv)
     {
         GIOChannel* ch = g_io_channel_unix_new(signal_pipe[0]);
         g_io_add_watch(ch, G_IO_IN|G_IO_PRI, (GIOFunc)on_unix_signal, NULL);
+        g_io_channel_set_encoding(ch, NULL, NULL);
         g_io_channel_unref(ch);
 
         /* intercept signals */
