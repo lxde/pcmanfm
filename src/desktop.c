@@ -4875,11 +4875,11 @@ static void on_sort_changed(GtkTreeSortable *model, FmDesktop *desktop)
 
 static inline void connect_model(FmDesktop *desktop, FmFolder *folder)
 {
-    desktop->model = fm_folder_model_new(folder, FALSE);
+    desktop->model = fm_folder_model_new(NULL, FALSE);
+
     g_signal_connect(folder, "start-loading", G_CALLBACK(on_folder_start_loading), desktop);
     g_signal_connect(folder, "finish-loading", G_CALLBACK(on_folder_finish_loading), desktop);
     g_signal_connect(folder, "error", G_CALLBACK(on_folder_error), desktop);
-    fm_folder_model_set_icon_size(desktop->model, fm_config->big_icon_size);
     g_signal_connect(app_config, "changed::big_icon_size",
                      G_CALLBACK(on_big_icon_size_changed), desktop->model);
     g_signal_connect(desktop->model, "row-deleting", G_CALLBACK(on_row_deleting), desktop);
@@ -4887,6 +4887,10 @@ static inline void connect_model(FmDesktop *desktop, FmFolder *folder)
     g_signal_connect(desktop->model, "row-deleted", G_CALLBACK(on_row_deleted), desktop);
     g_signal_connect(desktop->model, "row-changed", G_CALLBACK(on_row_changed), desktop);
     g_signal_connect(desktop->model, "rows-reordered", G_CALLBACK(on_rows_reordered), desktop);
+
+    fm_folder_model_set_folder(desktop->model, folder);
+    fm_folder_model_set_icon_size(desktop->model, fm_config->big_icon_size);
+
 #if FM_CHECK_VERSION(1, 0, 2)
     fm_folder_model_set_sort(desktop->model, desktop->conf.desktop_sort_by,
                              desktop->conf.desktop_sort_type);
