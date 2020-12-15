@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-14 14:00+0100\n"
+"POT-Creation-Date: 2020-12-15 18:44+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1200,26 +1200,40 @@ msgstr ""
 msgid "Open in New T_ab"
 msgstr ""
 
-#: ../src/tab-page.c:411
+#. Note to translators: this is the information (name, size, type)
+#. about the selected file in the status bar
+#: ../src/tab-page.c:378
+#, c-format
+msgid "\"%s\" (%s) %s"
+msgstr ""
+
+#. Note to translators: this is the information (name, type)
+#. about the selected file in the status bar
+#: ../src/tab-page.c:387
+#, c-format
+msgid "\"%s\" %s"
+msgstr ""
+
+#: ../src/tab-page.c:415
 #, c-format
 msgid "%d item selected"
 msgid_plural "%d items selected"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../src/tab-page.c:741
+#: ../src/tab-page.c:745
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr ""
 
-#: ../src/tab-page.c:761
+#: ../src/tab-page.c:765
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../src/tab-page.c:762
+#: ../src/tab-page.c:766
 #, c-format
 msgid " (%d hidden)"
 msgid_plural " (%d hidden)"
