@@ -220,7 +220,7 @@ static GtkActionEntry main_win_actions[]=
         /* other see below: 'ShowHidden' 'ShowStatus' 'Fullscreen' 'IconView'... */
         {"FolderView", "view-choose", N_("Fo_lder View Mode"), NULL, NULL, NULL},
         {"Sort", NULL, N_("S_ort Files"), NULL, NULL, NULL},
-        {"SizeBigger", GTK_STOCK_ZOOM_IN, NULL, "<Ctrl>KP_Add", NULL, G_CALLBACK(on_size_increment)},
+        {"SizeBigger", GTK_STOCK_ZOOM_IN, N_("Zoom _In"), "<Ctrl>KP_Add", NULL, G_CALLBACK(on_size_increment)},
         {"SizeSmaller", GTK_STOCK_ZOOM_OUT, N_("Zoom O_ut"), "<Ctrl>KP_Subtract", NULL, G_CALLBACK(on_size_decrement)},
         {"SizeDefault", GTK_STOCK_ZOOM_100, NULL, "<Ctrl>0", NULL, G_CALLBACK(on_size_default)},
 #if FM_CHECK_VERSION(1, 0, 2)
