@@ -80,6 +80,12 @@ AC_ARG_WITH(gtk,
     [ac_with_gtk="${withval}"],
     [ac_with_gtk=2])
 
+AC_ARG_ENABLE(wayland,
+    [AC_HELP_STRING([--enable-wayland],
+        [Enable Wayland support])],
+    [enable_wayland="${enableval}"],
+    [enable_wayland=no])
+
 # Checks for libraries.
 
 PKG_CHECK_MODULES(XLIB, "x11")
@@ -95,9 +101,16 @@ fm_modules="$gio_modules glib-2.0 pango >= 1.20.0 libfm >= 1.0"
 case "$ac_with_gtk" in
     3|3.*)
         fm_modules="$fm_modules gtk+-3.0 libfm-gtk3 >= 1.0.1"
+        if test "x$enable_wayland" = "xyes"; then
+            fm_modules="$fm_modules gtk-layer-shell-0 >= 0.5.2"
+            AC_DEFINE(HAVE_WAYLAND, 1, [Have Wayland support])
+        fi
         ;;
     *)
         fm_modules="$fm_modules gtk+-2.0 libfm-gtk >= 1.0.1"
+        if test "x$enable_wayland" = "xyes"; then
+            AC_MSG_ERROR([Wayland only works with GTK3])
+        fi
         ;;
 esac
 PKG_CHECK_MODULES(FM, [$fm_modules])

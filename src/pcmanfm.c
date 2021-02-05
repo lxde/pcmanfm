@@ -575,7 +575,8 @@ gboolean pcmanfm_open_folder(GAppLaunchContext* ctx, GList* folder_infos, gpoint
         FmFileInfo* fi = (FmFileInfo*)l->data;
         fm_main_win_open_in_last_active(fm_file_info_get_path(fi));
     }
-    if(user_data && FM_IS_DESKTOP(user_data))
+    if(user_data && FM_IS_DESKTOP(user_data) &&
+            GDK_IS_X11_WINDOW(gtk_widget_get_window(GTK_WIDGET(user_data))))
         move_window_to_desktop(fm_main_win_get_last_active(), user_data);
     return TRUE;
 }

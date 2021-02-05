@@ -33,6 +33,9 @@
 #include <gdk/gdkkeysyms.h>
 #include <X11/Xlib.h>
 #include <X11/Xatom.h>
+#ifdef HAVE_WAYLAND
+#include <gtk-layer-shell/gtk-layer-shell.h>
+#endif
 #include <math.h>
 
 #include <cairo-xlib.h>
@@ -54,6 +57,8 @@
 
 /* the search dialog timeout (in ms) */
 #define DESKTOP_SEARCH_DIALOG_TIMEOUT (5000)
+
+#define IS_X11() (GDK_IS_X11_DISPLAY(gdk_display_get_default()))
 
 struct _FmDesktopItem
 {
@@ -2086,8 +2091,9 @@ static void paint_rubber_banding_rect(FmDesktop* self, cairo_t* cr, GdkRectangle
 static void _free_cache_image(FmBackgroundCache *cache)
 {
 #if GTK_CHECK_VERSION(3, 0, 0)
-    XFreePixmap(cairo_xlib_surface_get_display(cache->bg),
-                cairo_xlib_surface_get_drawable(cache->bg));
+    if(IS_X11())
+        XFreePixmap(cairo_xlib_surface_get_display(cache->bg),
+                    cairo_xlib_surface_get_drawable(cache->bg));
     cairo_surface_destroy(cache->bg);
 #else
     g_object_unref(cache->bg);
@@ -2298,13 +2304,18 @@ static void update_background(FmDesktop* desktop, int is_it)
             }
         }
 #if GTK_CHECK_VERSION(3, 0, 0)
-        xdisplay = GDK_WINDOW_XDISPLAY(root);
-        /* this code is taken from libgnome-desktop */
-        xpixmap = XCreatePixmap(xdisplay, RootWindow(xdisplay, screen_num),
-                                dest_w, dest_h, DefaultDepth(xdisplay, screen_num));
-        cache->bg = cairo_xlib_surface_create(xdisplay, xpixmap,
-                                              GDK_VISUAL_XVISUAL(gdk_screen_get_system_visual(screen)),
-                                              dest_w, dest_h);
+        if(IS_X11())
+        {
+            xdisplay = GDK_WINDOW_XDISPLAY(root);
+            /* this code is taken from libgnome-desktop */
+            xpixmap = XCreatePixmap(xdisplay, RootWindow(xdisplay, screen_num),
+                                    dest_w, dest_h, DefaultDepth(xdisplay, screen_num));
+            cache->bg = cairo_xlib_surface_create(xdisplay, xpixmap,
+                                                  GDK_VISUAL_XVISUAL(gdk_screen_get_system_visual(screen)),
+                                                  dest_w, dest_h);
+        } else {
+            cache->bg = cairo_image_surface_create(CAIRO_FORMAT_ARGB32, dest_w, dest_h);
+        }
         cr = cairo_create(cache->bg);
 #else
         cache->bg = gdk_pixmap_new(window, dest_w, dest_h, -1);
@@ -2370,55 +2381,58 @@ static void update_background(FmDesktop* desktop, int is_it)
     gdk_window_set_back_pixmap(window, cache->bg, FALSE);
 #endif
 
-    /* set root map here */
-    xdisplay = GDK_WINDOW_XDISPLAY(root);
-    xroot = RootWindow(xdisplay, screen_num);
+    if(IS_X11())
+    {
+        /* set root map here */
+        xdisplay = GDK_WINDOW_XDISPLAY(root);
+        xroot = RootWindow(xdisplay, screen_num);
 
 #if GTK_CHECK_VERSION(3, 0, 0)
-    xpixmap = cairo_xlib_surface_get_drawable(cache->bg);
+        xpixmap = cairo_xlib_surface_get_drawable(cache->bg);
 #else
-    xpixmap = GDK_WINDOW_XWINDOW(cache->bg);
+        xpixmap = GDK_WINDOW_XWINDOW(cache->bg);
 #endif
 
-    XChangeProperty(xdisplay, GDK_WINDOW_XID(root),
-                    XA_XROOTMAP_ID, XA_PIXMAP, 32, PropModeReplace, (guchar*)&xpixmap, 1);
+        XChangeProperty(xdisplay, GDK_WINDOW_XID(root),
+                        XA_XROOTMAP_ID, XA_PIXMAP, 32, PropModeReplace, (guchar*)&xpixmap, 1);
 
-    XGrabServer (xdisplay);
+        XGrabServer (xdisplay);
 
 #if 0
-    result = XGetWindowProperty (display,
-                                 RootWindow (display, screen_num),
-                                 gdk_x11_get_xatom_by_name ("ESETROOT_PMAP_ID"),
-                                 0L, 1L, False, XA_PIXMAP,
-                                 &type, &format, &nitems,
-                                 &bytes_after,
-                                 &data_esetroot);
+        result = XGetWindowProperty (display,
+                                     RootWindow (display, screen_num),
+                                     gdk_x11_get_xatom_by_name ("ESETROOT_PMAP_ID"),
+                                     0L, 1L, False, XA_PIXMAP,
+                                     &type, &format, &nitems,
+                                     &bytes_after,
+                                     &data_esetroot);
 
-    if (data_esetroot != NULL) {
-            if (result == Success && type == XA_PIXMAP &&
-                format == 32 &&
-                nitems == 1) {
-                    gdk_error_trap_push ();
-                    XKillClient (display, *(Pixmap *)data_esetroot);
-                    gdk_error_trap_pop_ignored ();
-            }
-            XFree (data_esetroot);
-    }
+        if (data_esetroot != NULL) {
+                if (result == Success && type == XA_PIXMAP &&
+                    format == 32 &&
+                    nitems == 1) {
+                        gdk_error_trap_push ();
+                        XKillClient (display, *(Pixmap *)data_esetroot);
+                        gdk_error_trap_pop_ignored ();
+                }
+                XFree (data_esetroot);
+        }
 
-    XChangeProperty (display, RootWindow (display, screen_num),
-                     gdk_x11_get_xatom_by_name ("ESETROOT_PMAP_ID"),
-                     XA_PIXMAP, 32, PropModeReplace,
-                     (guchar *) &xpixmap, 1);
+        XChangeProperty (display, RootWindow (display, screen_num),
+                         gdk_x11_get_xatom_by_name ("ESETROOT_PMAP_ID"),
+                         XA_PIXMAP, 32, PropModeReplace,
+                         (guchar *) &xpixmap, 1);
 #endif
 
-    XChangeProperty(xdisplay, xroot, XA_XROOTPMAP_ID, XA_PIXMAP, 32,
-                    PropModeReplace, (guchar*)&xpixmap, 1);
+        XChangeProperty(xdisplay, xroot, XA_XROOTPMAP_ID, XA_PIXMAP, 32,
+                        PropModeReplace, (guchar*)&xpixmap, 1);
 
-    XSetWindowBackgroundPixmap(xdisplay, xroot, xpixmap);
-    XClearWindow(xdisplay, xroot);
+        XSetWindowBackgroundPixmap(xdisplay, xroot, xpixmap);
+        XClearWindow(xdisplay, xroot);
 
-    XFlush(xdisplay);
-    XUngrabServer(xdisplay);
+        XFlush(xdisplay);
+        XUngrabServer(xdisplay);
+    }
 
     if(pix)
         g_object_unref(pix);
@@ -3469,7 +3483,8 @@ static gboolean on_button_press(GtkWidget* w, GdkEventButton* evt)
     else if(evt->button != 1 && evt->button == self->button_pressed)
     {
         self->forward_pending = TRUE;
-        forward_event_to_rootwin(gtk_widget_get_screen(w), (GdkEvent*)evt);
+        if(IS_X11())
+            forward_event_to_rootwin(gtk_widget_get_screen(w), (GdkEvent*)evt);
     }
 
     if(! gtk_widget_has_focus(w))
@@ -3506,7 +3521,7 @@ static gboolean on_button_release(GtkWidget* w, GdkEventButton* evt)
     /* forward the event to root window */
     if (self->button_pressed == evt->button)
     {
-        if (self->forward_pending)
+        if (self->forward_pending && IS_X11())
             forward_event_to_rootwin(gtk_widget_get_screen(w), (GdkEvent*)evt);
         self->button_pressed = 0;
         self->forward_pending = FALSE;
@@ -3922,10 +3937,18 @@ static void desktop_search_position(FmDesktop *desktop)
 #endif
 
     /* put it into right upper corner */
-    gdk_screen_get_monitor_geometry(gtk_widget_get_screen((GtkWidget*)desktop),
-                                    desktop->monitor, &geom);
-    x = geom.x + desktop->working_area.x + desktop->working_area.width - requisition.width;
-    y = geom.y + desktop->working_area.y;
+    if(IS_X11())
+    {
+        gdk_screen_get_monitor_geometry(gtk_widget_get_screen((GtkWidget*)desktop),
+                                        desktop->monitor, &geom);
+        x = geom.x + desktop->working_area.x + desktop->working_area.width - requisition.width;
+        y = geom.y + desktop->working_area.y;
+    }
+    else
+    {
+        x = desktop->working_area.x + desktop->working_area.width - requisition.width;
+        y = desktop->working_area.y;
+    }
 
     gtk_window_move(GTK_WINDOW(desktop->search_window), x, y);
 }
@@ -3994,6 +4017,7 @@ static void desktop_search_ensure_window(FmDesktop *desktop)
     gtk_window_group_add_window(win_group, window);
     gtk_window_set_modal(window, TRUE);
     gtk_window_set_screen(window, gtk_widget_get_screen(GTK_WIDGET(desktop)));
+    gtk_window_set_transient_for(window, GTK_WINDOW(desktop));
     /* connect signal handlers */
     g_signal_connect(window, "delete-event", G_CALLBACK(desktop_search_delete_event), desktop);
     g_signal_connect(window, "scroll-event", G_CALLBACK(desktop_search_scroll_event), desktop);
@@ -4043,6 +4067,11 @@ static gboolean desktop_search_start(FmDesktop *desktop, gboolean keybinding)
 
     /* display the search dialog */
     gtk_widget_show(desktop->search_window);
+
+#ifdef HAVE_WAYLAND
+    if(gtk_layer_is_layer_window(GTK_WINDOW(desktop)))
+        gtk_layer_set_keyboard_interactivity(GTK_WINDOW(desktop), TRUE);
+#endif
 
     /* connect "changed" signal for the entry */
     if (G_UNLIKELY(desktop->search_entry_changed_id == 0))
@@ -4831,7 +4860,8 @@ static void fm_desktop_destroy(GtkObject *object)
     if(self->icon_render) /* see bug #3533958 by korzhpavel@SF */
     {
         screen = gtk_widget_get_screen((GtkWidget*)self);
-        gdk_window_remove_filter(gdk_screen_get_root_window(screen), on_root_event, self);
+        if(IS_X11())
+            gdk_window_remove_filter(gdk_screen_get_root_window(screen), on_root_event, self);
 
         g_signal_handlers_disconnect_by_func(screen, on_screen_size_changed, self);
 #if FM_CHECK_VERSION(1, 2, 0)
@@ -4918,6 +4948,20 @@ static void fm_desktop_init(FmDesktop *self)
 #endif
 }
 
+#ifdef HAVE_WAYLAND
+static gboolean on_enter(GtkWidget *widget, GdkEvent *event)
+{
+    gtk_layer_set_keyboard_interactivity(GTK_WINDOW(widget), TRUE);
+    return FALSE;
+}
+
+static gboolean on_leave(GtkWidget *widget, GdkEvent *event)
+{
+    gtk_layer_set_keyboard_interactivity(GTK_WINDOW(widget), FALSE);
+    return FALSE;
+}
+#endif
+
 /* we should have a constructor to handle parameters */
 static GObject* fm_desktop_constructor(GType type, guint n_construct_properties,
                                        GObjectConstructParam *construct_properties)
@@ -4929,6 +4973,23 @@ static GObject* fm_desktop_constructor(GType type, guint n_construct_properties,
     guint i;
     gint n;
     GdkRectangle geom;
+
+#ifdef HAVE_WAYLAND
+    if(gtk_layer_is_supported())
+    {
+        gtk_widget_add_events(GTK_WIDGET(self), GDK_ENTER_NOTIFY_MASK | GDK_LEAVE_NOTIFY_MASK);
+        g_signal_connect(GTK_WIDGET(self), "enter-notify-event", G_CALLBACK(on_enter), NULL);
+        g_signal_connect(GTK_WIDGET(self), "leave-notify-event", G_CALLBACK(on_leave), NULL);
+
+        gtk_layer_init_for_window(GTK_WINDOW(self));
+        gtk_layer_set_layer(GTK_WINDOW(self), GTK_LAYER_SHELL_LAYER_BOTTOM);
+        gtk_layer_set_monitor(GTK_WINDOW(self), gdk_display_get_monitor(gdk_screen_get_display(screen), self->monitor));
+        gtk_layer_set_anchor(GTK_WINDOW(self), GTK_LAYER_SHELL_EDGE_LEFT, TRUE);
+        gtk_layer_set_anchor(GTK_WINDOW(self), GTK_LAYER_SHELL_EDGE_RIGHT, TRUE);
+        gtk_layer_set_anchor(GTK_WINDOW(self), GTK_LAYER_SHELL_EDGE_TOP, TRUE);
+        gtk_layer_set_anchor(GTK_WINDOW(self), GTK_LAYER_SHELL_EDGE_BOTTOM, TRUE);
+    }
+#endif
 
     for(i = 0; i < n_construct_properties; i++)
         if(!strcmp(construct_properties[i].pspec->name, "monitor")
@@ -4971,12 +5032,15 @@ static GObject* fm_desktop_constructor(GType type, guint n_construct_properties,
                      G_CALLBACK(on_show_full_names_changed), self);
 #endif
 
-    root = gdk_screen_get_root_window(screen);
-    gdk_window_set_events(root, gdk_window_get_events(root)|GDK_PROPERTY_CHANGE_MASK);
-    gdk_window_add_filter(root, on_root_event, self);
+    if(IS_X11())
+    {
+        root = gdk_screen_get_root_window(screen);
+        gdk_window_set_events(root, gdk_window_get_events(root)|GDK_PROPERTY_CHANGE_MASK);
+        gdk_window_add_filter(root, on_root_event, self);
+    }
     g_signal_connect(screen, "monitors-changed", G_CALLBACK(on_screen_size_changed), self);
 
-    n = get_desktop_for_root_window(root);
+    n = IS_X11() ? get_desktop_for_root_window(root) : 0;
     if(n < 0)
         n = 0;
     self->cur_desktop = (guint)n;
@@ -5076,7 +5140,8 @@ static void fm_desktop_class_init(FmDesktopClass *klass)
 #endif
     /* widget_class->drag_data_get = on_drag_data_get; */
 
-    if(XInternAtoms(gdk_x11_get_default_xdisplay(), atom_names,
+    if(IS_X11() &&
+            XInternAtoms(gdk_x11_get_default_xdisplay(), atom_names,
                     G_N_ELEMENTS(atom_names), False, atoms))
     {
         XA_NET_WORKAREA = atoms[0];
