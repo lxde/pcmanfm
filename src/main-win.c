@@ -69,6 +69,7 @@ static void on_open(GtkAction* act, FmMainWin* win);
 static void on_link(GtkAction* act, FmMainWin* win);
 static void on_copy_to(GtkAction* act, FmMainWin* win);
 static void on_move_to(GtkAction* act, FmMainWin* win);
+static void on_mail_to(GtkAction* act, FmMainWin* win);
 static void on_rename(GtkAction* act, FmMainWin* win);
 static void on_trash(GtkAction* act, FmMainWin* win);
 static void on_del(GtkAction* act, FmMainWin* win);
@@ -362,6 +363,8 @@ static void on_folder_view_sel_changed(FmFolderView* fv, gint n_sel, FmMainWin* 
     act = gtk_ui_manager_get_action(win->ui, "/menubar/EditMenu/CopyTo");
     gtk_action_set_sensitive(act, has_selected);
     act = gtk_ui_manager_get_action(win->ui, "/menubar/EditMenu/MoveTo");
+    gtk_action_set_sensitive(act, has_selected);
+    act = gtk_ui_manager_get_action(win->ui, "/menubar/EditMenu/MailTo");
     gtk_action_set_sensitive(act, has_selected);
     act = gtk_ui_manager_get_action(win->ui, "/menubar/EditMenu/FileProp");
     gtk_action_set_sensitive(act, has_selected);
@@ -1770,6 +1773,16 @@ static void on_move_to(GtkAction* act, FmMainWin* win)
     if(files)
     {
         fm_move_files_to(GTK_WINDOW(win), files);
+        fm_path_list_unref(files);
+    }
+}
+
+static void on_mail_to(GtkAction* act, FmMainWin* win)
+{
+    FmPathList* files = fm_folder_view_dup_selected_file_paths(win->folder_view);
+    if(files)
+    {
+        fm_launch_command_simple(GTK_WINDOW(win), NULL, 0, "xdg-email --attach", files);
         fm_path_list_unref(files);
     }
 }

@@ -56,6 +56,7 @@ static const char main_menu_xml[] =
     "<menuitem action='Duplicate'/>" */
     "<menuitem action='MoveTo'/>"
     "<menuitem action='CopyTo'/>"
+    "<menuitem action='MailTo'/>"
     "<separator/>"
     "<menuitem action='SelAll'/>"
     "<menuitem action='InvSel'/>"
@@ -208,6 +209,7 @@ static GtkActionEntry main_win_actions[]=
         {"Link", NULL, N_("Create Lin_k..."), NULL, NULL, G_CALLBACK(on_link)},
         {"MoveTo", NULL, N_("_Move to..."), NULL, NULL, G_CALLBACK(on_move_to)},
         {"CopyTo", NULL, N_("Copy to_..."), NULL, NULL, G_CALLBACK(on_copy_to)},
+        {"MailTo", NULL, N_("M_ail to..."), NULL, NULL, G_CALLBACK(on_mail_to)},
         {"FileProp", GTK_STOCK_PROPERTIES, N_("Propertie_s"), "<Alt>Return", NULL, G_CALLBACK(bounce_action)},
         {"SelAll", GTK_STOCK_SELECT_ALL, NULL, "<Ctrl>A", NULL, G_CALLBACK(bounce_action)},
         {"InvSel", NULL, N_("_Invert Selection"), "<Ctrl>I", NULL, G_CALLBACK(bounce_action)},
