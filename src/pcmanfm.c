@@ -37,6 +37,10 @@
 #include <signal.h>
 #include <unistd.h> /* for getcwd */
 
+#ifdef HAVE_WAYLAND
+#include <gtk-layer-shell/gtk-layer-shell.h>
+#endif
+
 #include <libfm/fm-gtk.h>
 #include "app-config.h"
 #include "main-win.h"
@@ -349,6 +353,19 @@ gboolean pcmanfm_run(gint screen_num)
         {
             if(!desktop_running)
             {
+                GdkDisplay *default_display = gdk_display_get_default();
+#if HAVE_WAYLAND
+                if(!GDK_IS_X11_DISPLAY(default_display) && !gtk_layer_is_supported())
+                {
+                    fm_show_error(NULL, NULL, _("Only X11 and Wayland (with wlr-layer-shell) are supported"));
+#else
+                if(!GDK_IS_X11_DISPLAY(default_display))
+                {
+                    fm_show_error(NULL, NULL, _("Only X11 is supported"));
+#endif
+                    reset_options();
+                    return FALSE;
+                }
                 fm_desktop_manager_init(one_screen ? screen_num : -1);
                 desktop_running = TRUE;
             }
