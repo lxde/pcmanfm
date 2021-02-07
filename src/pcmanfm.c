@@ -26,7 +26,11 @@
 #endif
 
 #include <gtk/gtk.h>
+#ifdef HAVE_X11
 #include <gdk/gdkx.h>
+#else
+#include <gdk/gdk.h>
+#endif
 #include <stdio.h>
 #include <glib/gi18n.h>
 
@@ -227,7 +231,9 @@ int main(int argc, char** argv)
     inst.prog_name = "pcmanfm";
     inst.cb = single_inst_cb;
     inst.opt_entries = opt_entries + 3;
+#ifdef HAVE_X11
     inst.screen_num = gdk_x11_get_default_screen();
+#endif
     switch(single_inst_init(&inst))
     {
     case SINGLE_INST_CLIENT: /* we're not the first instance. */
@@ -353,13 +359,18 @@ gboolean pcmanfm_run(gint screen_num)
         {
             if(!desktop_running)
             {
-                GdkDisplay *default_display = gdk_display_get_default();
-#if HAVE_WAYLAND
-                if(!GDK_IS_X11_DISPLAY(default_display) && !gtk_layer_is_supported())
+#ifdef HAVE_WAYLAND
+#ifdef HAVE_X11
+                if(!GDK_IS_X11_DISPLAY(gdk_display_get_default()) && !gtk_layer_is_supported())
                 {
                     fm_show_error(NULL, NULL, _("Only X11 and Wayland (with wlr-layer-shell) are supported"));
 #else
-                if(!GDK_IS_X11_DISPLAY(default_display))
+                if(!gtk_layer_is_supported())
+                {
+                    fm_show_error(NULL, NULL, _("Only Wayland (with wlr-layer-shell) is supported"));
+#endif
+#else
+                if(!GDK_IS_X11_DISPLAY(gdk_display_get_default()))
                 {
                     fm_show_error(NULL, NULL, _("Only X11 is supported"));
 #endif
@@ -542,6 +553,7 @@ void pcmanfm_unref()
         gtk_main_quit();
 }
 
+#ifdef HAVE_X11
 static void move_window_to_desktop(FmMainWin* win, FmDesktop* desktop)
 {
     GdkScreen* screen = gtk_widget_get_screen(GTK_WIDGET(desktop));
@@ -569,6 +581,7 @@ static void move_window_to_desktop(FmMainWin* win, FmDesktop* desktop)
                (SubstructureNotifyMask | SubstructureRedirectMask),
                (XEvent *) &xev);
 }
+#endif
 
 gboolean pcmanfm_open_folder(GAppLaunchContext* ctx, GList* folder_infos, gpointer user_data, GError** err)
 {
@@ -592,9 +605,11 @@ gboolean pcmanfm_open_folder(GAppLaunchContext* ctx, GList* folder_infos, gpoint
         FmFileInfo* fi = (FmFileInfo*)l->data;
         fm_main_win_open_in_last_active(fm_file_info_get_path(fi));
     }
+#ifdef HAVE_X11
     if(user_data && FM_IS_DESKTOP(user_data) &&
             GDK_IS_X11_WINDOW(gtk_widget_get_window(GTK_WIDGET(user_data))))
         move_window_to_desktop(fm_main_win_get_last_active(), user_data);
+#endif
     return TRUE;
 }
 
