@@ -2141,7 +2141,13 @@ static void _clear_bg_cache(FmDesktop *self)
 
 static void update_background(FmDesktop* desktop, int is_it)
 {
-    GtkWidget* widget = (GtkWidget*)desktop;
+    GtkWidget* widget;
+    if(IS_X11())
+        widget = (GtkWidget*)desktop;
+#ifdef HAVE_WAYLAND
+    else
+        widget = (GtkWidget*)desktop->wallpaper_window;
+#endif
     GdkPixbuf* pix, *scaled;
     cairo_t* cr;
     GdkScreen *screen = gtk_widget_get_screen(widget);
@@ -2566,11 +2572,20 @@ static void update_working_area(FmDesktop* desktop)
     GdkScreen* screen = gtk_widget_get_screen((GtkWidget*)desktop);
     GdkRectangle geom;
 #if GTK_CHECK_VERSION(3, 4, 0)
-    gdk_screen_get_monitor_workarea(screen, desktop->monitor, &desktop->working_area);
-    /* we need working area coordinates within the monitor not the screen */
-    gdk_screen_get_monitor_geometry(screen, desktop->monitor, &geom);
-    desktop->working_area.x -= geom.x;
-    desktop->working_area.y -= geom.y;
+    if(IS_X11())
+    {
+        gdk_screen_get_monitor_workarea(screen, desktop->monitor, &desktop->working_area);
+        /* we need working area coordinates within the monitor not the screen */
+        gdk_screen_get_monitor_geometry(screen, desktop->monitor, &geom);
+        desktop->working_area.x -= geom.x;
+        desktop->working_area.y -= geom.y;
+    }
+    else
+    {
+        desktop->working_area.x = 0;
+        desktop->working_area.y = 0;
+        gtk_window_get_size((GtkWindow*)desktop, &desktop->working_area.width, &desktop->working_area.height);
+    }
 #else
     GdkWindow* root = gdk_screen_get_root_window(screen);
     Atom ret_type;
@@ -2677,11 +2692,16 @@ static void on_screen_size_changed(GdkScreen* screen, FmDesktop* desktop)
                 break;
         if (i < n_screens)
             desktops[i] = fm_desktop_new(screen, desktop->monitor ? -2 : -1);
+#ifdef HAVE_WAYLAND
+        if (!IS_X11())
+            gtk_widget_destroy(GTK_WIDGET(desktop->wallpaper_window));
+#endif
         gtk_widget_destroy(GTK_WIDGET(desktop));
         return;
     }
     gdk_screen_get_monitor_geometry(screen, desktop->monitor, &geom);
-    gtk_window_resize((GtkWindow*)desktop, geom.width, geom.height);
+    if(IS_X11())
+        gtk_window_resize((GtkWindow*)desktop, geom.width, geom.height);
     /* bug #3614780: if monitor was moved desktop should be moved too */
     gtk_window_move((GtkWindow*)desktop, geom.x, geom.y);
     /* FIXME: check if new monitor was added! */
@@ -4354,7 +4374,8 @@ static void on_realize(GtkWidget* w)
     GTK_WIDGET_CLASS(fm_desktop_parent_class)->realize(w);
     gtk_window_set_skip_pager_hint(GTK_WINDOW(w), TRUE);
     gtk_window_set_skip_taskbar_hint(GTK_WINDOW(w), TRUE);
-    gtk_window_set_resizable((GtkWindow*)w, FALSE);
+    if(IS_X11())
+        gtk_window_set_resizable((GtkWindow*)w, FALSE);
 
     load_config(self);
     /* setup self->conf now if it wasn't loaded above */
@@ -5028,6 +5049,20 @@ static GObject* fm_desktop_constructor(GType type, guint n_construct_properties,
         gtk_layer_set_anchor(GTK_WINDOW(self), GTK_LAYER_SHELL_EDGE_RIGHT, TRUE);
         gtk_layer_set_anchor(GTK_WINDOW(self), GTK_LAYER_SHELL_EDGE_TOP, TRUE);
         gtk_layer_set_anchor(GTK_WINDOW(self), GTK_LAYER_SHELL_EDGE_BOTTOM, TRUE);
+        gtk_layer_set_exclusive_zone(GTK_WINDOW(self), 0);
+
+        self->wallpaper_window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
+        gtk_widget_set_app_paintable((GtkWidget*)self->wallpaper_window, TRUE);
+        gtk_layer_init_for_window(self->wallpaper_window);
+        gtk_layer_set_layer(self->wallpaper_window, GTK_LAYER_SHELL_LAYER_BACKGROUND);
+        gtk_layer_set_monitor(self->wallpaper_window, gdk_display_get_monitor(gdk_screen_get_display(screen), self->monitor));
+        gtk_layer_set_anchor(self->wallpaper_window, GTK_LAYER_SHELL_EDGE_LEFT, TRUE);
+        gtk_layer_set_anchor(self->wallpaper_window, GTK_LAYER_SHELL_EDGE_RIGHT, TRUE);
+        gtk_layer_set_anchor(self->wallpaper_window, GTK_LAYER_SHELL_EDGE_TOP, TRUE);
+        gtk_layer_set_anchor(self->wallpaper_window, GTK_LAYER_SHELL_EDGE_BOTTOM, TRUE);
+        gtk_layer_set_exclusive_zone(self->wallpaper_window, -1);
+        gtk_widget_realize((GtkWidget*)self->wallpaper_window);
+        gtk_widget_show((GtkWidget*)self->wallpaper_window);
     }
 #endif
 
@@ -5039,7 +5074,8 @@ static GObject* fm_desktop_constructor(GType type, guint n_construct_properties,
         return object; /* this monitor is disabled */
     g_debug("fm_desktop_constructor for monitor %d", self->monitor);
     gdk_screen_get_monitor_geometry(screen, self->monitor, &geom);
-    gtk_window_set_default_size((GtkWindow*)self, geom.width, geom.height);
+    if(IS_X11())
+        gtk_window_set_default_size((GtkWindow*)self, geom.width, geom.height);
     gtk_window_move(GTK_WINDOW(self), geom.x, geom.y);
     gtk_widget_set_app_paintable((GtkWidget*)self, TRUE);
     gtk_window_set_type_hint(GTK_WINDOW(self), GDK_WINDOW_TYPE_HINT_DESKTOP);
@@ -5154,8 +5190,11 @@ static void fm_desktop_class_init(FmDesktopClass *klass)
 #if GTK_CHECK_VERSION(3, 0, 0)
     widget_class->destroy = fm_desktop_destroy;
     widget_class->draw = on_draw;
-    widget_class->get_preferred_width = on_get_preferred_width;
-    widget_class->get_preferred_height = on_get_preferred_height;
+    if(IS_X11())
+    {
+        widget_class->get_preferred_width = on_get_preferred_width;
+        widget_class->get_preferred_height = on_get_preferred_height;
+    }
 #else
     GtkObjectClass *gtk_object_class = GTK_OBJECT_CLASS(klass);
     gtk_object_class->destroy = fm_desktop_destroy;
@@ -6040,6 +6079,10 @@ void fm_desktop_manager_finalize()
     }
     for(i = 0; i < n_screens; i++)
     {
+#ifdef HAVE_WAYLAND
+        if (!IS_X11())
+            gtk_widget_destroy(GTK_WIDGET(desktops[i]->wallpaper_window));
+#endif
         gtk_widget_destroy(GTK_WIDGET(desktops[i]));
     }
     g_free(desktops);
