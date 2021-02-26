@@ -2,7 +2,7 @@
  *      app-config.c
  *
  *      Copyright 2010 PCMan <pcman.tw@gmail.com>
- *      Copyright 2012-2014 Andriy Grytsenko (LStranger) <andrej@rep.kiev.ua>
+ *      Copyright 2012-2021 Andriy Grytsenko (LStranger) <andrej@rep.kiev.ua>
  *
  *      This program is free software; you can redistribute it and/or modify
  *      it under the terms of the GNU General Public License as published by
@@ -643,6 +643,11 @@ void fm_app_config_load_desktop_config(GKeyFile *kf, const char *group, FmDeskto
     g_free(cfg->folder);
     cfg->folder = g_key_file_get_string(kf, group, "folder", NULL);
 
+    g_free(cfg->plug_name);
+    cfg->plug_name = g_key_file_get_string(kf, group, "plug_name", NULL);
+    g_free(cfg->model);
+    cfg->model = g_key_file_get_string(kf, group, "model", NULL);
+
     fm_key_file_get_bool(kf, group, "show_wm_menu", &cfg->show_wm_menu);
     _parse_sort(kf, group, &cfg->desktop_sort_type, &cfg->desktop_sort_by);
 #if FM_CHECK_VERSION(1, 2, 0)
@@ -1063,6 +1068,10 @@ void fm_app_config_save_desktop_config(GString *buf, const char *group, FmDeskto
         g_string_append_printf(buf, "desktop_font=%s\n", cfg->desktop_font);
     if(cfg->folder)
         g_string_append_printf(buf, "folder=%s\n", cfg->folder);
+    if(cfg->plug_name)
+        g_string_append_printf(buf, "plug_name=%s\n", cfg->plug_name);
+    if(cfg->model)
+        g_string_append_printf(buf, "model=%s\n", cfg->model);
     g_string_append_printf(buf, "show_wm_menu=%d\n", cfg->show_wm_menu);
     _save_sort(buf, cfg->desktop_sort_type, cfg->desktop_sort_by);
 #if FM_CHECK_VERSION(1, 2, 0)
