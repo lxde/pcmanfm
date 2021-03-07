@@ -373,14 +373,18 @@ static void on_folder_view_sel_changed(FmFolderView* fv, gint n_sel, FmTabPage* 
 #endif
             if(size_str)
             {
-                g_string_printf(str, "\"%s\" (%s) %s",
+                /* Note to translators: this is the information (name, size, type)
+                   about the selected file in the status bar */
+                g_string_printf(str, _("\"%s\" (%s) %s"),
                             fm_file_info_get_disp_name(fi),
                             size_str ? size_str : "",
                             fm_file_info_get_desc(fi));
             }
             else
             {
-                g_string_printf(str, "\"%s\" %s",
+                /* Note to translators: this is the information (name, type)
+                   about the selected file in the status bar */
+                g_string_printf(str, _("\"%s\" %s"),
                             fm_file_info_get_disp_name(fi),
                             fm_file_info_get_desc(fi));
             }
