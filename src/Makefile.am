@@ -38,7 +38,6 @@ EXTRA_DIST= \
 include_HEADERS = pcmanfm-modules.h
 
 pcmanfm_CFLAGS = \
-	$(XLIB_CFLAGS) \
 	$(FM_CFLAGS) \
 	$(G_CAST_CHECKS) \
 	-Wall \
@@ -46,7 +45,6 @@ pcmanfm_CFLAGS = \
 	$(NULL)
 
 pcmanfm_LDADD = \
-	$(XLIB_LIBS) \
 	$(FM_LIBS) \
 	$(NULL)
 
