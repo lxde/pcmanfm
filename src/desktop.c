@@ -2,7 +2,7 @@
  *      desktop.c
  *
  *      Copyright 2010 - 2012 Hong Jen Yee (PCMan) <pcman.tw@gmail.com>
- *      Copyright 2012-2017 Andriy Grytsenko (LStranger) <andrej@rep.kiev.ua>
+ *      Copyright 2012-2021 Andriy Grytsenko (LStranger) <andrej@rep.kiev.ua>
  *
  *      This program is free software; you can redistribute it and/or modify
  *      it under the terms of the GNU General Public License as published by
@@ -85,6 +85,9 @@ struct _FmBackgroundCache
 static void queue_layout_items(FmDesktop* desktop);
 static void redraw_item(FmDesktop* desktop, FmDesktopItem* item);
 
+static void fm_desktop_add(GdkScreen* screen, int mon);
+static void copy_desktop_config(FmDesktopConfig *dst, FmDesktopConfig *src);
+
 static FmFileInfoList* _dup_selected_files(FmFolderView* fv);
 static FmPathList* _dup_selected_file_paths(FmFolderView* fv);
 static void _select_all(FmFolderView* fv);
@@ -98,8 +101,6 @@ G_DEFINE_TYPE_WITH_CODE(FmDesktop, fm_desktop, GTK_TYPE_WINDOW,
                         G_IMPLEMENT_INTERFACE(FM_TYPE_FOLDER_VIEW, fm_desktop_view_init))
 
 static GtkWindowGroup* win_group = NULL;
-static FmDesktop **desktops = NULL;
-static int n_screens = 0;
 static guint icon_theme_changed = 0;
 static GtkAccelGroup* acc_grp = NULL;
 
@@ -154,7 +155,6 @@ static void on_disable(GtkAction* act, gpointer user_data);
 /* ---------------------------------------------------------------------
     mounts handlers */
 
-#if FM_CHECK_VERSION(1, 2, 0)
 typedef struct
 {
     GMount *mount; /* NULL for non-mounts */
@@ -176,20 +176,213 @@ static GSList *mounts = NULL;
 /* ---------------------------------------------------------------------
     Items management and common functions */
 
-static char* get_config_file(FmDesktop* desktop, gboolean create_dir)
+static GSList *configs = NULL;
+
+static char* get_config_file(FmDesktopConfig *conf, gboolean create_dir)
 {
     char *dir, *path;
     int i;
 
-    for(i = 0; i < n_screens; i++)
-        if(desktops[i] == desktop)
-            break;
-    if(i >= n_screens)
+    i = g_slist_index(configs, conf);
+    if (i < 0)
         return NULL;
+
     dir = pcmanfm_get_profile_dir(create_dir);
     path = g_strdup_printf("%s/desktop-items-%u.conf", dir, i);
     g_free(dir);
     return path;
+}
+
+static void fm_desktop_config_free(gpointer data, gpointer user_data)
+{
+    FmDesktopConfig* self = data;
+    int i;
+
+    g_free(self->wallpaper);
+    for (i = 0; i < self->wallpapers_configured; i++)
+        g_free(self->wallpapers[i]);
+    g_free(self->wallpapers);
+    g_free(self->desktop_font);
+    g_free(self->folder);
+    g_free(self->plug_name);
+    g_free(self->model);
+    g_slice_free(FmDesktopConfig, self);
+}
+
+static void release_all_configs(void)
+{
+    g_slist_foreach(configs, fm_desktop_config_free, NULL);
+    g_slist_free(configs);
+    configs = NULL;
+}
+
+static FmDesktopConfig* fm_desktop_config_new(void)
+{
+    return g_slice_new0(FmDesktopConfig);
+}
+
+/* unfortunately we cannot load the "*" together with items because
+   otherwise we will update pango layout on each load_items() which
+   is resource wasting so we load config file once more instead */
+static void load_all_configs(void)
+{
+    char *dir, *path;
+    GKeyFile* kf;
+    int i;
+    gboolean res = TRUE;
+
+    dir = pcmanfm_get_profile_dir(FALSE);
+    for (i = 0; res; i++)
+    {
+        path = g_strdup_printf("%s/desktop-items-%u.conf", dir, i);
+        if(!path)
+            break;
+        kf = g_key_file_new();
+        res = g_key_file_load_from_file(kf, path, 0, NULL);
+        if (res)
+        {
+            /* item "*" is desktop config */
+            FmDesktopConfig *cfg = fm_desktop_config_new();
+            fm_app_config_load_desktop_config(kf, "*", cfg);
+            configs = g_slist_append(configs, cfg);
+        }
+        g_free(path);
+        g_key_file_free(kf);
+        /* load until error happens */
+    }
+    g_free(dir);
+}
+
+static inline guint get_monitor_index(FmDesktop* desktop)
+{
+    GdkDisplay *dpy = gdk_display_get_default();
+    int index = 0, n_scr = gdk_display_get_n_screens(dpy), i;
+    GdkScreen *d_scr = gtk_widget_get_screen(GTK_WIDGET(desktop)), *scr;
+
+    for (i = 0; i < n_scr; i++)
+    {
+        scr = gdk_display_get_screen(dpy, i);
+        if (d_scr == scr)
+            return index + desktop->monitor;
+        index += gdk_screen_get_n_monitors(scr);
+    }
+    g_warn_if_reached();
+    return index;
+}
+
+static FmDesktopConfig* get_config(FmDesktop* desktop)
+{
+    FmDesktopConfig *cfg;
+    GSList *l;
+
+#if GTK_CHECK_VERSION(3, 22, 0)
+    /* cycle one: find by model */
+    if (desktop->mon_model)
+    {
+        FmDesktopConfig *best_variant = NULL;
+
+        for (l = configs; l; l = l->next)
+        {
+            cfg = (FmDesktopConfig *)l->data;
+
+            if (cfg->desktop)
+                /* used already */
+                continue;
+            if (cfg->model && strcmp(desktop->mon_model, cfg->model) == 0)
+            {
+                best_variant = cfg;
+                /* monitor with the same model plugged in, check if plug matches */
+                if (!cfg->plug_name || !desktop->plug_name)
+                    /* no data, assume it matches */
+                    break;
+                if (strcmp(desktop->plug_name, cfg->plug_name) == 0)
+                    /* found matched one */
+                    return cfg;
+                /* otherwise it either other one, or moved around */
+            }
+        }
+        if (best_variant)
+        {
+            /* let assume monitor was just moved around */
+            if (g_strcmp0(cfg->plug_name, desktop->plug_name))
+            {
+                g_free(cfg->plug_name);
+                cfg->plug_name = g_strdup(desktop->plug_name);
+                cfg->changed = TRUE;
+            }
+            return cfg;
+        }
+    }
+#endif
+
+    /* cycle two: find by plug_name */
+    if (desktop->plug_name)
+        for (l = configs; l; l = l->next)
+        {
+            cfg = (FmDesktopConfig *)l->data;
+
+            if (cfg->plug_name && strcmp(desktop->plug_name, cfg->plug_name) == 0)
+            {
+                /* another monitor plugged in the same plug, use this config */
+                if (cfg->desktop)
+                {
+                    /* this should never happen, we cannot have two different
+                       monitors into the same plug, let warn and copy config */
+                    g_warning("seems a bug: two monitors in the same plug '%s'",
+                              cfg->plug_name);
+                    cfg = fm_desktop_config_new();
+                    configs = g_slist_append(configs, cfg);
+                    cfg->plug_name = g_strdup(desktop->plug_name);
+#if GTK_CHECK_VERSION(3, 22, 0)
+                    cfg->model = g_strdup(desktop->mon_model);
+#endif
+                    copy_desktop_config(cfg, l->data);
+                    cfg->changed = TRUE;
+                }
+#if GTK_CHECK_VERSION(3, 22, 0)
+                else if (g_strcmp0(cfg->model, desktop->mon_model))
+                {
+                    g_free(cfg->model);
+                    cfg->plug_name = g_strdup(desktop->mon_model);
+                    cfg->changed = TRUE;
+                }
+#endif
+                return cfg;
+            }
+        }
+
+    /* cycle threee: try to acquire it by number */
+    cfg = g_slist_nth_data(configs, get_monitor_index(desktop));
+    if (cfg && !cfg->desktop)
+    {
+        g_free(cfg->plug_name);
+#if GTK_CHECK_VERSION(3, 22, 0)
+        g_free(cfg->model);
+#endif
+        goto out;
+    }
+
+    /* cycle four: try to find some unused */
+    for (l = configs; l; l = l->next)
+    {
+        cfg = (FmDesktopConfig *)l->data;
+
+        if (!cfg->desktop && !cfg->plug_name && !cfg->model)
+            /* pre-1.4.0 configuration, let reuse it now */
+            goto out;
+    }
+
+    /* not found any, let create new empty configuration */
+    cfg = fm_desktop_config_new();
+    configs = g_slist_append(configs, cfg);
+out:
+    cfg->plug_name = g_strdup(desktop->plug_name);
+#if GTK_CHECK_VERSION(3, 22, 0)
+    cfg->model = g_strdup(desktop->mon_model);
+#endif
+    if (cfg->configured)
+        cfg->changed = TRUE;
+    return cfg;
 }
 
 static inline FmDesktopItem* desktop_item_new(FmFolderModel* model, GtkTreeIter* it)
@@ -260,25 +453,6 @@ static void calc_item_size(FmDesktop* desktop, FmDesktopItem* item, GdkPixbuf* i
     item->area.height = item->text_rect.y + item->text_rect.height - item->area.y;
 }
 
-/* unfortunately we cannot load the "*" together with items because
-   otherwise we will update pango layout on each load_items() which
-   is resource wasting so we load config file once more instead */
-static inline void load_config(FmDesktop* desktop)
-{
-    char* path;
-    GKeyFile* kf;
-
-    path = get_config_file(desktop, FALSE);
-    if(!path)
-        return;
-    kf = g_key_file_new();
-    if(g_key_file_load_from_file(kf, path, 0, NULL))
-        /* item "*" is desktop config */
-        fm_app_config_load_desktop_config(kf, "*", &desktop->conf);
-    g_free(path);
-    g_key_file_free(kf);
-}
-
 static inline void load_items(FmDesktop* desktop)
 {
     GtkTreeIter it;
@@ -291,7 +465,7 @@ static inline void load_items(FmDesktop* desktop)
     model = GTK_TREE_MODEL(desktop->model);
     if (!gtk_tree_model_get_iter_first(model, &it))
         return;
-    path = get_config_file(desktop, FALSE);
+    path = get_config_file(desktop->conf, FALSE);
     if(!path)
         return;
     kf = g_key_file_new();
@@ -390,16 +564,16 @@ static void save_item_pos(FmDesktop* desktop)
 {
     GList* l;
     GString* buf;
-    char* path = get_config_file(desktop, TRUE);
+    char* path = get_config_file(desktop->conf, TRUE);
 
     if(!path)
         return;
     buf = g_string_sized_new(1024);
 
     /* save desktop config */
-    if (desktop->conf.configured)
+    if (desktop->conf->configured)
     {
-        fm_app_config_save_desktop_config(buf, "*", &desktop->conf);
+        fm_app_config_save_desktop_config(buf, "*", desktop->conf);
         g_string_append_c(buf, '\n');
     }
 
@@ -442,27 +616,31 @@ static void save_item_pos(FmDesktop* desktop)
     g_file_set_contents(path, buf->str, buf->len, NULL);
     g_free(path);
     g_string_free(buf, TRUE);
-    desktop->conf.changed = FALSE; /* reset it since we saved it */
+    desktop->conf->changed = FALSE; /* reset it since we saved it */
 }
 
 static gboolean on_config_save_idle(gpointer _unused)
 {
-    int i;
+    GSList *l;
+    FmDesktopConfig *conf;
 
     if (g_source_is_destroyed(g_main_current_source()))
         return FALSE;
 
-    for (i = 0; i < n_screens; i++)
-        if (desktops[i]->conf.changed)
-            save_item_pos(desktops[i]);
+    for (l = configs; l; l = l->next)
+    {
+        conf = (FmDesktopConfig *)l->data;
+        if (conf->desktop && conf->changed)
+            save_item_pos(conf->desktop);
+    }
     idle_config_save = 0;
     return FALSE;
 }
 
 static void queue_config_save(FmDesktop *desktop)
 {
-    desktop->conf.configured = TRUE;
-    desktop->conf.changed = TRUE;
+    desktop->conf->configured = TRUE;
+    desktop->conf->changed = TRUE;
     if (idle_config_save == 0)
         idle_config_save = gdk_threads_add_idle(on_config_save_idle, NULL);
 }
@@ -500,6 +678,7 @@ static GList* get_selected_items(FmDesktop* desktop, int* n_items)
     return items;
 }
 
+/* does not touch dst->plug_name and dst->model */
 static void copy_desktop_config(FmDesktopConfig *dst, FmDesktopConfig *src)
 {
     int i;
@@ -531,9 +710,9 @@ static void copy_desktop_config(FmDesktopConfig *dst, FmDesktopConfig *src)
     dst->show_trash = src->show_trash;
     dst->show_mounts = src->show_mounts;
 #endif
-
 }
 
+#if FM_CHECK_VERSION(1, 2, 0)
 static GVolumeMonitor *vol_mon = NULL;
 
 static void _free_extra_item(FmDesktopExtraItem *item);
@@ -541,44 +720,51 @@ static void _free_extra_item(FmDesktopExtraItem *item);
 static gboolean on_idle_extra_item_add(gpointer user_data)
 {
     FmDesktopExtraItem *item = user_data;
-    int i;
+    GSList *l;
+    FmDesktopConfig *cfg;
 
     /* if mount is not NULL then it's new mount so add it to the list */
     if (item->mount)
     {
         mounts = g_slist_append(mounts, item);
         /* add it to all models that watch mounts */
-        for (i = 0; i < n_screens; i++)
-            if (desktops[i]->monitor >= 0 && desktops[i]->conf.show_mounts
-                && desktops[i]->model)
-                fm_folder_model_extra_file_add(desktops[i]->model, item->fi,
+        for (l = configs; l; l = l->next)
+        {
+            cfg = (FmDesktopConfig *)l->data;
+            if (cfg->desktop && cfg->show_mounts && cfg->desktop->model)
+                fm_folder_model_extra_file_add(cfg->desktop->model, item->fi,
                                                FM_FOLDER_MODEL_ITEMPOS_POST);
+        }
     }
     else if (item == documents)
     {
         /* add it to all models that watch documents */
-        for (i = 0; i < n_screens; i++)
-            if (desktops[i]->monitor >= 0 && desktops[i]->conf.show_documents
-                && desktops[i]->model)
+        for (l = configs; l; l = l->next)
+        {
+            cfg = (FmDesktopConfig *)l->data;
+            if (cfg->desktop && cfg->show_documents && cfg->desktop->model)
             {
-                fm_folder_model_extra_file_add(desktops[i]->model, item->fi,
+                fm_folder_model_extra_file_add(cfg->desktop->model, item->fi,
                                                FM_FOLDER_MODEL_ITEMPOS_PRE);
                 /* if this is extra item it might be loaded after the folder
                    therefore we have to reload fixed positions again to apply */
-                reload_items(desktops[i]);
+                reload_items(cfg->desktop);
             }
+        }
     }
     else if (item == trash_can)
     {
         /* add it to all models that watch trash can */
-        for (i = 0; i < n_screens; i++)
-            if (desktops[i]->monitor >= 0 && desktops[i]->conf.show_trash
-                && desktops[i]->model)
+        for (l = configs; l; l = l->next)
+        {
+            cfg = (FmDesktopConfig *)l->data;
+            if (cfg->desktop && cfg->show_trash && cfg->desktop->model)
             {
-                fm_folder_model_extra_file_add(desktops[i]->model, item->fi,
+                fm_folder_model_extra_file_add(cfg->desktop->model, item->fi,
                                                FM_FOLDER_MODEL_ITEMPOS_PRE);
-                reload_items(desktops[i]);
+                reload_items(cfg->desktop);
             }
+        }
     }
     else
     {
@@ -697,9 +883,9 @@ static void on_mount_added(GVolumeMonitor *volume_monitor, GMount *mount,
 static gboolean on_idle_extra_item_remove(gpointer user_data)
 {
     GMount *mount = user_data;
-    GSList *sl;
+    GSList *sl, *l;
     FmDesktopExtraItem *item;
-    int i;
+    FmDesktopConfig *cfg;
 
     for (sl = mounts; sl; sl = sl->next)
     {
@@ -709,10 +895,12 @@ static gboolean on_idle_extra_item_remove(gpointer user_data)
     }
     if (sl)
     {
-        for (i = 0; i < n_screens; i++)
-            if (desktops[i]->monitor >= 0 && desktops[i]->conf.show_mounts
-                && desktops[i]->model)
-                fm_folder_model_extra_file_remove(desktops[i]->model, item->fi);
+        for (l = configs; l; l = l->next)
+        {
+            cfg = (FmDesktopConfig *)l->data;
+            if (cfg->desktop && cfg->show_mounts && cfg->desktop->model)
+                fm_folder_model_extra_file_remove(cfg->desktop->model, item->fi);
+        }
         mounts = g_slist_delete_link(mounts, sl);
         _free_extra_item(item);
     }
@@ -737,14 +925,17 @@ static GFileMonitor *trash_monitor = NULL;
 static void on_trash_changed(GFileMonitor *monitor, GFile *gf, GFile *other,
                              GFileMonitorEvent evt, FmDesktopExtraItem *item)
 {
-    int i;
+    FmDesktopConfig *cfg;
+    GSList *l;
 
     if (!_update_trash_icon(item))
         return;
-    for (i = 0; i < n_screens; i++)
-        if (desktops[i]->monitor >= 0 && desktops[i]->conf.show_trash
-            && desktops[i]->model)
-            fm_folder_model_file_changed(desktops[i]->model, item->fi);
+    for (l = configs; l; l = l->next)
+    {
+        cfg = (FmDesktopConfig *)l->data;
+        if (cfg->desktop && cfg->show_trash && cfg->desktop->model)
+            fm_folder_model_file_changed(cfg->desktop->model, item->fi);
+    }
 }
 
 static FmDesktopExtraItem *_add_extra_item(const char *path_str)
@@ -1879,10 +2070,10 @@ static void paint_item(FmDesktop* self, FmDesktopItem* item, cairo_t* cr, GdkRec
     else
     {
         /* the shadow */
-        gdk_cairo_set_source_color(cr, &self->conf.desktop_shadow);
+        gdk_cairo_set_source_color(cr, &self->conf->desktop_shadow);
         cairo_move_to(cr, text_x + 1, text_y + 1);
         pango_cairo_show_layout(cr, self->pl);
-        gdk_cairo_set_source_color(cr, &self->conf.desktop_fg);
+        gdk_cairo_set_source_color(cr, &self->conf->desktop_fg);
     }
     /* real text */
     cairo_move_to(cr, text_x, text_y);
@@ -2129,7 +2320,7 @@ static void update_background(FmDesktop* desktop, int is_it)
 
     char *wallpaper;
 
-    if (!desktop->conf.wallpaper_common)
+    if (!desktop->conf->wallpaper_common)
     {
         guint32 cur_desktop = desktop->cur_desktop;
 
@@ -2137,27 +2328,27 @@ static void update_background(FmDesktop* desktop, int is_it)
         {
             int i;
 
-            wallpaper = desktop->conf.wallpaper;
-            if((gint)cur_desktop >= desktop->conf.wallpapers_configured)
+            wallpaper = desktop->conf->wallpaper;
+            if((gint)cur_desktop >= desktop->conf->wallpapers_configured)
             {
-                desktop->conf.wallpapers = g_renew(char *, desktop->conf.wallpapers, cur_desktop + 1);
+                desktop->conf->wallpapers = g_renew(char *, desktop->conf->wallpapers, cur_desktop + 1);
                 /* fill the gap with current wallpaper */
-                for(i = MAX(desktop->conf.wallpapers_configured,0); i < (int)cur_desktop; i++)
-                    desktop->conf.wallpapers[i] = g_strdup(wallpaper);
-                desktop->conf.wallpapers[cur_desktop] = NULL;
-                desktop->conf.wallpapers_configured = cur_desktop + 1;
+                for(i = MAX(desktop->conf->wallpapers_configured,0); i < (int)cur_desktop; i++)
+                    desktop->conf->wallpapers[i] = g_strdup(wallpaper);
+                desktop->conf->wallpapers[cur_desktop] = NULL;
+                desktop->conf->wallpapers_configured = cur_desktop + 1;
             }
             /* free old image if it's not used anymore */
-            else if (g_strcmp0(desktop->conf.wallpapers[cur_desktop], wallpaper))
+            else if (g_strcmp0(desktop->conf->wallpapers[cur_desktop], wallpaper))
             {
-                wallpaper = desktop->conf.wallpapers[cur_desktop];
+                wallpaper = desktop->conf->wallpapers[cur_desktop];
                 if (wallpaper)
                 {
-                    for (i = 0; i < desktop->conf.wallpapers_configured; i++)
+                    for (i = 0; i < desktop->conf->wallpapers_configured; i++)
                         if (i != (int)cur_desktop && /* test if it's used */
-                            g_strcmp0(desktop->conf.wallpapers[i], wallpaper) == 0)
+                            g_strcmp0(desktop->conf->wallpapers[i], wallpaper) == 0)
                             break;
-                    if (i == desktop->conf.wallpapers_configured) /* no matches */
+                    if (i == desktop->conf->wallpapers_configured) /* no matches */
                     {
                         for (cache = desktop->cache; cache; cache = cache->next)
                             if (strcmp(wallpaper, cache->filename) == 0)
@@ -2167,17 +2358,17 @@ static void update_background(FmDesktop* desktop, int is_it)
                     }
                     g_free(wallpaper);
                 }
-                wallpaper = desktop->conf.wallpaper;
-                desktop->conf.wallpapers[cur_desktop] = g_strdup(wallpaper);
+                wallpaper = desktop->conf->wallpaper;
+                desktop->conf->wallpapers[cur_desktop] = g_strdup(wallpaper);
             }
         }
         else /* desktop refresh */
         {
-            if((gint)cur_desktop < desktop->conf.wallpapers_configured)
-                wallpaper = desktop->conf.wallpapers[cur_desktop];
+            if((gint)cur_desktop < desktop->conf->wallpapers_configured)
+                wallpaper = desktop->conf->wallpapers[cur_desktop];
             else
                 wallpaper = NULL;
-            if (wallpaper == NULL && desktop->conf.wallpaper != NULL)
+            if (wallpaper == NULL && desktop->conf->wallpaper != NULL)
             {
                 /* if we have wallpaper set for previous desktop but have not
                    for current one, it may mean one of two cases:
@@ -2187,26 +2378,26 @@ static void update_background(FmDesktop* desktop, int is_it)
                    has no image set (i.e. one of cases above is happening),
                    it is reasonable and correct to use last selected image for
                    newly selected desktop instead of show plain color on it */
-                wallpaper = desktop->conf.wallpaper;
-                if ((gint)cur_desktop < desktop->conf.wallpapers_configured)
-                    /* this means desktop->conf.wallpapers[cur_desktop] is NULL,
+                wallpaper = desktop->conf->wallpaper;
+                if ((gint)cur_desktop < desktop->conf->wallpapers_configured)
+                    /* this means desktop->conf->wallpapers[cur_desktop] is NULL,
                        see above, we have to update it too in this case */
-                    desktop->conf.wallpapers[cur_desktop] = g_strdup(wallpaper);
+                    desktop->conf->wallpapers[cur_desktop] = g_strdup(wallpaper);
             }
             else
             {
-                g_free(desktop->conf.wallpaper); /* update to current desktop */
-                desktop->conf.wallpaper = g_strdup(wallpaper);
+                g_free(desktop->conf->wallpaper); /* update to current desktop */
+                desktop->conf->wallpaper = g_strdup(wallpaper);
             }
         }
     }
     else
     {
         _clear_bg_cache(desktop);
-        wallpaper = desktop->conf.wallpaper;
+        wallpaper = desktop->conf->wallpaper;
     }
 
-    if(desktop->conf.wallpaper_mode != FM_WP_COLOR && wallpaper && *wallpaper)
+    if(desktop->conf->wallpaper_mode != FM_WP_COLOR && wallpaper && *wallpaper)
     {
         struct stat st; /* for mtime */
 
@@ -2217,7 +2408,7 @@ static void update_background(FmDesktop* desktop, int is_it)
         for(cache = desktop->cache; cache; cache = cache->next)
             if(strcmp(wallpaper, cache->filename) == 0)
                 break;
-        if(cache && cache->wallpaper_mode == desktop->conf.wallpaper_mode
+        if(cache && cache->wallpaper_mode == desktop->conf->wallpaper_mode
            && st.st_mtime == cache->mtime)
             pix = NULL; /* no new pix for it */
         else if((pix = gdk_pixbuf_new_from_file(wallpaper, NULL)))
@@ -2252,13 +2443,13 @@ static void update_background(FmDesktop* desktop, int is_it)
     if(!cache) /* solid color only */
     {
 #if GTK_CHECK_VERSION(3, 0, 0)
-        pattern = cairo_pattern_create_rgb(desktop->conf.desktop_bg.red / 65535.0,
-                                           desktop->conf.desktop_bg.green / 65535.0,
-                                           desktop->conf.desktop_bg.blue / 65535.0);
+        pattern = cairo_pattern_create_rgb(desktop->conf->desktop_bg.red / 65535.0,
+                                           desktop->conf->desktop_bg.green / 65535.0,
+                                           desktop->conf->desktop_bg.blue / 65535.0);
         gdk_window_set_background_pattern(window, pattern);
         cairo_pattern_destroy(pattern);
 #else
-        GdkColor bg = desktop->conf.desktop_bg;
+        GdkColor bg = desktop->conf->desktop_bg;
 
         gdk_colormap_alloc_color(gdk_drawable_get_colormap(window), &bg, FALSE, TRUE);
         gdk_window_set_back_pixmap(window, NULL, FALSE);
@@ -2275,7 +2466,7 @@ static void update_background(FmDesktop* desktop, int is_it)
         int x = 0, y = 0;
         src_w = gdk_pixbuf_get_width(pix);
         src_h = gdk_pixbuf_get_height(pix);
-        if(desktop->conf.wallpaper_mode == FM_WP_TILE)
+        if(desktop->conf->wallpaper_mode == FM_WP_TILE)
         {
             dest_w = src_w;
             dest_h = src_h;
@@ -2284,7 +2475,7 @@ static void update_background(FmDesktop* desktop, int is_it)
         {
             GdkRectangle geom;
             gdk_screen_get_monitor_geometry(screen, desktop->monitor, &geom);
-            if (desktop->conf.wallpaper_mode == FM_WP_SCREEN)
+            if (desktop->conf->wallpaper_mode == FM_WP_SCREEN)
             {
                 dest_w = gdk_screen_get_width(screen);
                 dest_h = gdk_screen_get_height(screen);
@@ -2311,15 +2502,15 @@ static void update_background(FmDesktop* desktop, int is_it)
         cr = gdk_cairo_create(cache->bg);
 #endif
         if(gdk_pixbuf_get_has_alpha(pix)
-            || desktop->conf.wallpaper_mode == FM_WP_CENTER
-            || desktop->conf.wallpaper_mode == FM_WP_FIT)
+            || desktop->conf->wallpaper_mode == FM_WP_CENTER
+            || desktop->conf->wallpaper_mode == FM_WP_FIT)
         {
-            gdk_cairo_set_source_color(cr, &desktop->conf.desktop_bg);
+            gdk_cairo_set_source_color(cr, &desktop->conf->desktop_bg);
             cairo_rectangle(cr, 0, 0, dest_w, dest_h);
             cairo_fill(cr);
         }
 
-        switch(desktop->conf.wallpaper_mode)
+        switch(desktop->conf->wallpaper_mode)
         {
         case FM_WP_TILE:
             break;
@@ -2338,7 +2529,7 @@ static void update_background(FmDesktop* desktop, int is_it)
             {
                 gdouble w_ratio = (float)dest_w / src_w;
                 gdouble h_ratio = (float)dest_h / src_h;
-                gdouble ratio = (desktop->conf.wallpaper_mode == FM_WP_FIT)
+                gdouble ratio = (desktop->conf->wallpaper_mode == FM_WP_FIT)
                     ? MIN(w_ratio, h_ratio)
                     : MAX(w_ratio, h_ratio);
                 if(ratio != 1.0)
@@ -2360,7 +2551,7 @@ static void update_background(FmDesktop* desktop, int is_it)
         gdk_cairo_set_source_pixbuf(cr, pix, x, y);
         cairo_paint(cr);
         cairo_destroy(cr);
-        cache->wallpaper_mode = desktop->conf.wallpaper_mode;
+        cache->wallpaper_mode = desktop->conf->wallpaper_mode;
     }
 #if GTK_CHECK_VERSION(3, 0, 0)
     pattern = cairo_pattern_create_for_surface(cache->bg);
@@ -2611,7 +2802,7 @@ static GdkFilterReturn on_root_event(GdkXEvent *xevent, GdkEvent *event, gpointe
             if(desktop >= 0)
             {
                 self->cur_desktop = (guint)desktop;
-                if(!self->conf.wallpaper_common)
+                if(!self->conf->wallpaper_common)
                     update_background(self, -1);
             }
         }
@@ -2619,34 +2810,131 @@ static GdkFilterReturn on_root_event(GdkXEvent *xevent, GdkEvent *event, gpointe
     return GDK_FILTER_CONTINUE;
 }
 
+/* consumes plug_name */
+static gboolean renumber_monitors(GdkScreen *screen, int n_mon, char *plug_name,
+                                  FmDesktop *desktop)
+{
+    int i, j, n_desk = MAX(n_mon, desktop->monitor);
+    char *plug_names[n_mon];
+    FmDesktop *desktops[n_desk];
+    GSList *l;
+    gboolean dropped = FALSE;
+
+    memset(desktops, 0, n_desk * sizeof(FmDesktop *));
+    desktops[desktop->monitor] = desktop; /* already received */
+    if (desktop->monitor < n_mon)
+        plug_names[desktop->monitor] = plug_name;
+    /* fill plug_names[] */
+    for (i = 0; i < n_mon; i++)
+    {
+        if (i == desktop->monitor) /* already received */
+            continue;
+        plug_names[i] = gdk_screen_get_monitor_plug_name(screen, i);
+    }
+    /* fill desktops[] */
+    for (l = configs; l; l = l->next)
+    {
+        FmDesktopConfig *cfg = (FmDesktopConfig *)l->data;
+        if (!cfg->desktop || cfg->desktop == desktop)
+            continue;
+        if (G_UNLIKELY(gtk_widget_get_screen(GTK_WIDGET(cfg->desktop)) != screen))
+            continue;
+        g_assert(desktops[cfg->desktop->monitor] == NULL);
+        desktops[cfg->desktop->monitor] = cfg->desktop;
+    }
+    /* let renumber all */
+    for (i = 0; i < n_mon; i++)
+    {
+        if (plug_names[i] == NULL)
+            continue; /* see below, is that ever possible? */
+        for (j = 0; j < n_desk; i++)
+        {
+            if (desktops[j] && g_strcmp0(desktops[j]->plug_name, plug_names[i]) == 0)
+            {
+                /* found a match, let update it now */
+                desktops[j]->monitor = i;
+                desktops[j] = NULL;
+                break;
+            }
+        }
+        if (j == n_desk)
+        {
+            /* new monitor added, let go for it */
+            fm_desktop_add(screen, i);
+        }
+    }
+    /* pick up leftovers if some plug_name[] are failed to get
+       FIXME: is it possible at all? */
+    for (i = 0; i < n_mon; i++)
+    {
+        if (plug_names[i])
+            g_free(plug_names[i]);
+        else
+            for (j = 0; j < n_desk; i++)
+                if (desktops[j])
+                {
+                    desktops[j]->monitor = i;
+                    g_free(desktops[j]->plug_name);
+                    desktops[j]->plug_name = NULL;
+                    /* FIXME: is there any reason to update config? it looks like a bug */
+                    desktops[j] = NULL;
+                    break;
+                }
+    }
+    /* check if some monitor is missing now */
+    for (j = 0; j < n_desk; i++)
+    {
+        if (desktops[j] == desktop)
+            /* will be destroyed by caller */
+            dropped = TRUE;
+        else if (desktops[j])
+            /* it appears it disconnected, forget it now */
+            gtk_widget_destroy(GTK_WIDGET(desktops[j]));
+    }
+    return dropped;
+}
+
 static void on_screen_size_changed(GdkScreen* screen, FmDesktop* desktop)
 {
     GdkRectangle geom;
-    if (desktop->monitor >= gdk_screen_get_n_monitors(screen))
+    int n_mon = gdk_screen_get_n_monitors(screen);
+    char *plug_name;
+    gboolean dropped = FALSE;
+    if (desktop->monitor >= n_mon)
+        /* some monitor was disconnected */
+        dropped = renumber_monitors(screen, n_mon, NULL, desktop);
+    else
     {
-        gint i;
+        /* check if it's still the same number */
+        plug_name = gdk_screen_get_monitor_plug_name(screen, desktop->monitor);
+        if (g_strcmp0(plug_name, desktop->plug_name) != 0)
+            /* monitors get renumbered, let find correct number then */
+            dropped = renumber_monitors(screen, n_mon, plug_name, desktop);
+        else
+            g_free(plug_name);
+    }
+    if (dropped)
+    {
         /* our monitor was disconnected... remove FmDesktop now! */
-        for (i = 0; i < n_screens; i++)
-            if (desktops[i] == desktop)
-                break;
-        if (i < n_screens)
-            desktops[i] = fm_desktop_new(screen, desktop->monitor ? -2 : -1);
         gtk_widget_destroy(GTK_WIDGET(desktop));
         return;
     }
+    /* update geometry */
     gdk_screen_get_monitor_geometry(screen, desktop->monitor, &geom);
     gtk_window_resize((GtkWindow*)desktop, geom.width, geom.height);
     /* bug #3614780: if monitor was moved desktop should be moved too */
     gtk_window_move((GtkWindow*)desktop, geom.x, geom.y);
-    /* FIXME: check if new monitor was added! */
 }
 
 static void reload_icons()
 {
-    int i;
-    for(i=0; i < n_screens; ++i)
-        if(desktops[i]->monitor >= 0)
-            gtk_widget_queue_resize(GTK_WIDGET(desktops[i]));
+    GSList *l;
+    for (l = configs; l; l = l->next)
+    {
+        FmDesktopConfig *cfg = (FmDesktopConfig *)l->data;
+        if (cfg->desktop)
+            gtk_widget_queue_resize(GTK_WIDGET(cfg->desktop));
+    }
 }
 
 static void on_big_icon_size_changed(FmConfig* cfg, FmFolderModel* model)
@@ -2849,11 +3137,11 @@ static void on_disable(GtkAction* act, gpointer user_data)
     g_list_free(items);
     if (trash_can && trash_can->fi == item->fi)
     {
-        desktop->conf.show_trash = FALSE;
+        desktop->conf->show_trash = FALSE;
     }
     else if (documents && documents->fi == item->fi)
     {
-        desktop->conf.show_documents = FALSE;
+        desktop->conf->show_documents = FALSE;
     }
     else /* else is error */
     {
@@ -3281,14 +3569,14 @@ static void on_size_allocate(GtkWidget* w, GtkAllocation* alloc)
 #if GTK_CHECK_VERSION(3, 0, 0)
         /* bug SF#958: with GTK 3.8+ font is reset to default after realizing
            so let enforce font description on it right away */
-        PangoFontDescription *font_desc = pango_font_description_from_string(self->conf.desktop_font);
+        PangoFontDescription *font_desc = pango_font_description_from_string(self->conf->desktop_font);
         pango_context_set_font_description(pc, font_desc);
         pango_font_description_free(font_desc);
 #endif
         /* bug #3614866: after monitor geometry was changed we need to redraw
            the background invalidating all the cache */
         _clear_bg_cache(self);
-        if(self->conf.wallpaper_mode != FM_WP_COLOR && self->conf.wallpaper_mode != FM_WP_TILE)
+        if(self->conf->wallpaper_mode != FM_WP_COLOR && self->conf->wallpaper_mode != FM_WP_TILE)
             update_background(self, -1);
     }
 
@@ -3421,7 +3709,7 @@ static gboolean on_button_press(GtkWidget* w, GdkEventButton* evt)
         {
             if(evt->button == 3)  /* right click on the blank area => desktop popup menu */
             {
-                if(!self->conf.show_wm_menu)
+                if(!self->conf->show_wm_menu)
                     clicked = FM_FV_CONTEXT_MENU;
             }
             else if(evt->button == 1)
@@ -4289,21 +4577,20 @@ static void on_realize(GtkWidget* w)
     gtk_window_set_skip_taskbar_hint(GTK_WINDOW(w), TRUE);
     gtk_window_set_resizable((GtkWindow*)w, FALSE);
 
-    load_config(self);
-    /* setup self->conf now if it wasn't loaded above */
-    if (!self->conf.configured)
+    /* setup self->conf now if it wasn't loaded from file */
+    if (!self->conf->configured)
     {
-        copy_desktop_config(&self->conf, &app_config->desktop_section);
+        copy_desktop_config(self->conf, &app_config->desktop_section);
         queue_config_save(self);
     }
     /* copy found configuration to use by next monitor */
     else if (!app_config->desktop_section.configured)
-        copy_desktop_config(&app_config->desktop_section, &self->conf);
+        copy_desktop_config(&app_config->desktop_section, self->conf);
     update_background(self, -1);
     /* set a proper desktop font if needed */
-    if (self->conf.desktop_font == NULL)
-        self->conf.desktop_font = g_strdup("Sans 12");
-    font_desc = pango_font_description_from_string(self->conf.desktop_font);
+    if (self->conf->desktop_font == NULL)
+        self->conf->desktop_font = g_strdup("Sans 12");
+    font_desc = pango_font_description_from_string(self->conf->desktop_font);
     pc = gtk_widget_get_pango_context(w);
     pango_context_set_font_description(pc, font_desc);
     pango_font_description_free(font_desc);
@@ -4311,9 +4598,9 @@ static void on_realize(GtkWidget* w)
     css_data = g_strdup_printf("FmDesktop {\n"
                                    "background-color: #%02x%02x%02x\n"
                                "}",
-                               self->conf.desktop_bg.red/256,
-                               self->conf.desktop_bg.green/256,
-                               self->conf.desktop_bg.blue/256);
+                               self->conf->desktop_bg.red/256,
+                               self->conf->desktop_bg.green/256,
+                               self->conf->desktop_bg.blue/256);
     gtk_css_provider_load_from_data(self->css, css_data, -1, NULL);
     g_free(css_data);
 #endif
@@ -4656,8 +4943,6 @@ static void on_folder_finish_loading(FmFolder* folder, gpointer user_data)
     FmDesktop* desktop = user_data;
 
     /* the desktop folder is just loaded, apply desktop items and positions */
-    if(desktop->monitor < 0)
-        return;
     fm_folder_view_add_popup(FM_FOLDER_VIEW(desktop), GTK_WINDOW(desktop),
                              fm_desktop_update_popup);
     reload_items(desktop);
@@ -4737,11 +5022,11 @@ static void on_sort_changed(GtkTreeSortable *model, FmDesktop *desktop)
     if (!fm_folder_model_get_sort(FM_FOLDER_MODEL(model), &by, &type))
         /* FIXME: print error if failed */
         return;
-    if (type == desktop->conf.desktop_sort_type &&
-        by == desktop->conf.desktop_sort_by) /* not changed */
+    if (type == desktop->conf->desktop_sort_type &&
+        by == desktop->conf->desktop_sort_by) /* not changed */
         return;
-    desktop->conf.desktop_sort_type = type;
-    desktop->conf.desktop_sort_by = by;
+    desktop->conf->desktop_sort_type = type;
+    desktop->conf->desktop_sort_by = by;
     queue_config_save(desktop);
 }
 #endif
@@ -4761,13 +5046,13 @@ static inline void connect_model(FmDesktop *desktop, FmFolder *folder)
     g_signal_connect(desktop->model, "row-changed", G_CALLBACK(on_row_changed), desktop);
     g_signal_connect(desktop->model, "rows-reordered", G_CALLBACK(on_rows_reordered), desktop);
 #if FM_CHECK_VERSION(1, 0, 2)
-    fm_folder_model_set_sort(desktop->model, desktop->conf.desktop_sort_by,
-                             desktop->conf.desktop_sort_type);
+    fm_folder_model_set_sort(desktop->model, desktop->conf->desktop_sort_by,
+                             desktop->conf->desktop_sort_type);
     g_signal_connect(desktop->model, "sort-column-changed", G_CALLBACK(on_sort_changed), desktop);
 #else
     gtk_tree_sortable_set_sort_column_id(GTK_TREE_SORTABLE(desktop->model),
-                                         desktop->conf.desktop_sort_by,
-                                         desktop->conf.desktop_sort_type);
+                                         desktop->conf->desktop_sort_by,
+                                         desktop->conf->desktop_sort_type);
 #endif
     on_folder_start_loading(folder, desktop);
     if(fm_folder_is_loaded(folder))
@@ -4860,21 +5145,19 @@ static void fm_desktop_destroy(GtkObject *object)
         g_object_unref(self->dnd_dest);
     }
 
-    if (self->conf.configured)
+    g_free(self->plug_name);
+    self->plug_name = NULL;
+#if GTK_CHECK_VERSION(3, 22, 0)
+    g_free(self->mon_model);
+    self->mon_model = NULL;
+#endif
+
+    if (self->conf)
     {
-        self->conf.configured = FALSE;
-        if (self->conf.changed) /* if config was changed then save it now */
+        self->conf->desktop = NULL; /* mark it as unused now */
+        if (self->conf->changed) /* if config was changed then save it now */
             save_item_pos(self);
-        g_free(self->conf.wallpaper);
-        if (self->conf.wallpapers_configured > 0)
-        {
-            int i;
-            for (i = 0; i < self->conf.wallpapers_configured; i++)
-                g_free(self->conf.wallpapers[i]);
-            g_free(self->conf.wallpapers);
-        }
-        g_free(self->conf.desktop_font);
-        g_free(self->conf.folder);
+        self->conf = NULL;
     }
 
     _clear_bg_cache(self);
@@ -4948,6 +5231,16 @@ static GObject* fm_desktop_constructor(GType type, guint n_construct_properties,
                         GDK_BUTTON_RELEASE_MASK |
                         GDK_KEY_PRESS_MASK|
                         GDK_PROPERTY_CHANGE_MASK);
+
+    self->plug_name = gdk_screen_get_monitor_plug_name(screen, self->monitor);
+#if GTK_CHECK_VERSION(3, 22, 0)
+    GdkMonitor *monitor = gdk_display_get_monitor(gdk_screen_get_display(screen),
+                                                  self->monitor);
+    if (monitor)
+        self->mon_model = g_strdup(gdk_monitor_get_model(monitor));
+#endif
+    self->conf = get_config(self);
+    self->conf->desktop = self;
 
     self->icon_render = fm_cell_renderer_pixbuf_new();
     g_object_set(self->icon_render, "follow-state", TRUE, NULL);
@@ -5123,11 +5416,11 @@ static void _set_sort(FmFolderView* fv, GtkSortType type, FmFolderModelViewCol b
 {
     FmDesktop* desktop = FM_DESKTOP(fv);
 
-    if(type == (GtkSortType)desktop->conf.desktop_sort_type &&
-       by == (FmFolderModelViewCol)desktop->conf.desktop_sort_by)
+    if(type == (GtkSortType)desktop->conf->desktop_sort_type &&
+       by == (FmFolderModelViewCol)desktop->conf->desktop_sort_by)
         return;
-    desktop->conf.desktop_sort_type = type;
-    desktop->conf.desktop_sort_by = by;
+    desktop->conf->desktop_sort_type = type;
+    desktop->conf->desktop_sort_by = by;
     pcmanfm_save_config(FALSE);
     if (desktop->model)
         gtk_tree_sortable_set_sort_column_id(GTK_TREE_SORTABLE(desktop->model),
@@ -5139,9 +5432,9 @@ static void _get_sort(FmFolderView* fv, GtkSortType* type, FmFolderModelViewCol*
     FmDesktop* desktop = FM_DESKTOP(fv);
 
     if(type)
-        *type = desktop->conf.desktop_sort_type;
+        *type = desktop->conf->desktop_sort_type;
     if(by)
-        *by = desktop->conf.desktop_sort_by;
+        *by = desktop->conf->desktop_sort_by;
 }
 #endif
 
@@ -5354,8 +5647,8 @@ static void on_response(GtkDialog* dlg, int res, GtkWindow** pdlg)
 static void on_wallpaper_set(GtkFileChooserButton* btn, FmDesktop *desktop)
 {
     char* file = gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(btn));
-    g_free(desktop->conf.wallpaper);
-    desktop->conf.wallpaper = file;
+    g_free(desktop->conf->wallpaper);
+    desktop->conf->wallpaper = file;
     queue_config_save(desktop);
     update_background(desktop, 0);
 }
@@ -5386,9 +5679,9 @@ static void on_wallpaper_mode_changed(GtkComboBox* combo, FmDesktop *desktop)
 {
     int sel = gtk_combo_box_get_active(combo);
 
-    if(sel >= 0 && sel != (int)desktop->conf.wallpaper_mode)
+    if(sel >= 0 && sel != (int)desktop->conf->wallpaper_mode)
     {
-        desktop->conf.wallpaper_mode = sel;
+        desktop->conf->wallpaper_mode = sel;
         queue_config_save(desktop);
         update_background(desktop, 0);
     }
@@ -5407,7 +5700,7 @@ static void on_bg_color_set(GtkColorButton *btn, FmDesktop *desktop)
     GdkColor new_val;
 
     gtk_color_button_get_color(btn, &new_val);
-    if (!gdk_color_equal(&desktop->conf.desktop_bg, &new_val))
+    if (!gdk_color_equal(&desktop->conf->desktop_bg, &new_val))
     {
 #if GTK_CHECK_VERSION(3, 0, 0)
         char *css_data = g_strdup_printf("FmDesktop {\n"
@@ -5417,7 +5710,7 @@ static void on_bg_color_set(GtkColorButton *btn, FmDesktop *desktop)
         gtk_css_provider_load_from_data(desktop->css, css_data, -1, NULL);
         g_free(css_data);
 #endif
-        desktop->conf.desktop_bg = new_val;
+        desktop->conf->desktop_bg = new_val;
         queue_config_save(desktop);
         update_background(desktop, 0);
     }
@@ -5427,9 +5720,9 @@ static void on_wallpaper_common_toggled(GtkToggleButton* btn, FmDesktop *desktop
 {
     gboolean new_val = gtk_toggle_button_get_active(btn);
 
-    if(desktop->conf.wallpaper_common != new_val)
+    if(desktop->conf->wallpaper_common != new_val)
     {
-        desktop->conf.wallpaper_common = new_val;
+        desktop->conf->wallpaper_common = new_val;
         queue_config_save(desktop);
         update_background(desktop, 0);
     }
@@ -5440,9 +5733,9 @@ static void on_fg_color_set(GtkColorButton *btn, FmDesktop *desktop)
     GdkColor new_val;
 
     gtk_color_button_get_color(btn, &new_val);
-    if (!gdk_color_equal(&desktop->conf.desktop_fg, &new_val))
+    if (!gdk_color_equal(&desktop->conf->desktop_fg, &new_val))
     {
-        desktop->conf.desktop_fg = new_val;
+        desktop->conf->desktop_fg = new_val;
         queue_config_save(desktop);
         gtk_widget_queue_draw(GTK_WIDGET(desktop));
     }
@@ -5453,9 +5746,9 @@ static void on_shadow_color_set(GtkColorButton *btn, FmDesktop *desktop)
     GdkColor new_val;
 
     gtk_color_button_get_color(btn, &new_val);
-    if (!gdk_color_equal(&desktop->conf.desktop_shadow, &new_val))
+    if (!gdk_color_equal(&desktop->conf->desktop_shadow, &new_val))
     {
-        desktop->conf.desktop_shadow = new_val;
+        desktop->conf->desktop_shadow = new_val;
         queue_config_save(desktop);
         gtk_widget_queue_draw(GTK_WIDGET(desktop));
     }
@@ -5465,9 +5758,9 @@ static void on_wm_menu_toggled(GtkToggleButton* btn, FmDesktop *desktop)
 {
     gboolean new_val = gtk_toggle_button_get_active(btn);
 
-    if(desktop->conf.show_wm_menu != new_val)
+    if(desktop->conf->show_wm_menu != new_val)
     {
-        desktop->conf.show_wm_menu = new_val;
+        desktop->conf->show_wm_menu = new_val;
         queue_config_save(desktop);
     }
 }
@@ -5480,12 +5773,10 @@ static void on_desktop_font_set(GtkFontButton* btn, FmDesktop *desktop)
     {
         PangoFontDescription *font_desc;
 
-        g_free(desktop->conf.desktop_font);
-        desktop->conf.desktop_font = g_strdup(font);
+        g_free(desktop->conf->desktop_font);
+        desktop->conf->desktop_font = g_strdup(font);
         queue_config_save(desktop);
-        if(desktop->monitor < 0)
-            return;
-        font_desc = pango_font_description_from_string(desktop->conf.desktop_font);
+        font_desc = pango_font_description_from_string(desktop->conf->desktop_font);
         if(font_desc)
         {
             PangoContext* pc = gtk_widget_get_pango_context((GtkWidget*)desktop);
@@ -5509,9 +5800,9 @@ static void on_show_documents_toggled(GtkToggleButton* btn, FmDesktop *desktop)
 {
     gboolean new_val = gtk_toggle_button_get_active(btn);
 
-    if(desktop->conf.show_documents != new_val)
+    if(desktop->conf->show_documents != new_val)
     {
-        desktop->conf.show_documents = new_val;
+        desktop->conf->show_documents = new_val;
         queue_config_save(desktop);
         if (documents && documents->fi && desktop->model)
         {
@@ -5528,9 +5819,9 @@ static void on_show_trash_toggled(GtkToggleButton* btn, FmDesktop *desktop)
 {
     gboolean new_val = gtk_toggle_button_get_active(btn);
 
-    if(desktop->conf.show_trash != new_val)
+    if(desktop->conf->show_trash != new_val)
     {
-        desktop->conf.show_trash = new_val;
+        desktop->conf->show_trash = new_val;
         queue_config_save(desktop);
         if (trash_can && trash_can->fi && desktop->model)
         {
@@ -5548,9 +5839,9 @@ static void on_show_mounts_toggled(GtkToggleButton* btn, FmDesktop *desktop)
     GSList *msl;
     gboolean new_val = gtk_toggle_button_get_active(btn);
 
-    if(desktop->conf.show_mounts != new_val)
+    if(desktop->conf->show_mounts != new_val)
     {
-        desktop->conf.show_mounts = new_val;
+        desktop->conf->show_mounts = new_val;
         queue_config_save(desktop);
         if (desktop->model) for (msl = mounts; msl; msl = msl->next)
         {
@@ -5616,13 +5907,13 @@ static gboolean _chooser_timeout(gpointer user_data)
         else
             queue_layout_items(data->desktop);
     }
-    g_free(data->desktop->conf.folder);
+    g_free(data->desktop->conf->folder);
     if (G_UNLIKELY(data->desktop->model == NULL))
-        data->desktop->conf.folder = g_strdup("");
+        data->desktop->conf->folder = g_strdup("");
     else if (!fm_path_equal(fm_folder_get_path(folder), fm_path_get_desktop()))
-        data->desktop->conf.folder = g_file_get_path(gf);
+        data->desktop->conf->folder = g_file_get_path(gf);
     else
-        data->desktop->conf.folder = NULL;
+        data->desktop->conf->folder = NULL;
     queue_config_save(data->desktop);
     if (folder)
         g_object_unref(folder);
@@ -5659,8 +5950,8 @@ static void on_use_desktop_folder_toggled(GtkToggleButton *btn, FolderChooserDat
     {
         disconnect_model(data->desktop);
         queue_layout_items(data->desktop);
-        g_free(data->desktop->conf.folder);
-        data->desktop->conf.folder = g_strdup("");
+        g_free(data->desktop->conf->folder);
+        data->desktop->conf->folder = g_strdup("");
         queue_config_save(data->desktop);
         /* g_debug("*** desktop folder disabled"); */
     }
@@ -5689,10 +5980,10 @@ void fm_desktop_preference(GtkAction *act, FmDesktop *desktop)
         gtk_widget_set_size_request( img_preview, 128, 128 );
         gtk_file_chooser_set_preview_widget(GTK_FILE_CHOOSER(item), img_preview);
         g_signal_connect( item, "update-preview", G_CALLBACK(on_update_img_preview), img_preview );
-        if(desktop->conf.wallpaper)
-            gtk_file_chooser_set_filename(GTK_FILE_CHOOSER(item), desktop->conf.wallpaper);
+        if(desktop->conf->wallpaper)
+            gtk_file_chooser_set_filename(GTK_FILE_CHOOSER(item), desktop->conf->wallpaper);
         item = gtk_builder_get_object(builder, "wallpaper_mode");
-        gtk_combo_box_set_active(GTK_COMBO_BOX(item), desktop->conf.wallpaper_mode);
+        gtk_combo_box_set_active(GTK_COMBO_BOX(item), desktop->conf->wallpaper_mode);
         g_signal_connect(item, "changed", G_CALLBACK(on_wallpaper_mode_changed), desktop);
         item = gtk_builder_get_object(builder, "wallpaper_box");
         if (item)
@@ -5701,26 +5992,26 @@ void fm_desktop_preference(GtkAction *act, FmDesktop *desktop)
                              "changed", G_CALLBACK(on_wallpaper_mode_changed2),
                              item);
             gtk_widget_set_sensitive(GTK_WIDGET(item),
-                                     desktop->conf.wallpaper_mode != FM_WP_COLOR);
+                                     desktop->conf->wallpaper_mode != FM_WP_COLOR);
         }
         item = gtk_builder_get_object(builder, "desktop_bg");
-        gtk_color_button_set_color(GTK_COLOR_BUTTON(item), &desktop->conf.desktop_bg);
+        gtk_color_button_set_color(GTK_COLOR_BUTTON(item), &desktop->conf->desktop_bg);
         g_signal_connect(item, "color-set", G_CALLBACK(on_bg_color_set), desktop);
         item = gtk_builder_get_object(builder, "wallpaper_common");
-        gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(item), desktop->conf.wallpaper_common);
+        gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(item), desktop->conf->wallpaper_common);
         g_signal_connect(item, "toggled", G_CALLBACK(on_wallpaper_common_toggled), desktop);
         item = gtk_builder_get_object(builder, "desktop_fg");
-        gtk_color_button_set_color(GTK_COLOR_BUTTON(item), &desktop->conf.desktop_fg);
+        gtk_color_button_set_color(GTK_COLOR_BUTTON(item), &desktop->conf->desktop_fg);
         g_signal_connect(item, "color-set", G_CALLBACK(on_fg_color_set), desktop);
         item = gtk_builder_get_object(builder, "desktop_shadow");
-        gtk_color_button_set_color(GTK_COLOR_BUTTON(item), &desktop->conf.desktop_shadow);
+        gtk_color_button_set_color(GTK_COLOR_BUTTON(item), &desktop->conf->desktop_shadow);
         g_signal_connect(item, "color-set", G_CALLBACK(on_shadow_color_set), desktop);
         item = gtk_builder_get_object(builder, "show_wm_menu");
-        gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(item), desktop->conf.show_wm_menu);
+        gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(item), desktop->conf->show_wm_menu);
         g_signal_connect(item, "toggled", G_CALLBACK(on_wm_menu_toggled), desktop);
         item = gtk_builder_get_object(builder, "desktop_font");
-        if(desktop->conf.desktop_font)
-            gtk_font_button_set_font_name(GTK_FONT_BUTTON(item), desktop->conf.desktop_font);
+        if(desktop->conf->desktop_font)
+            gtk_font_button_set_font_name(GTK_FONT_BUTTON(item), desktop->conf->desktop_font);
         g_signal_connect(item, "font-set", G_CALLBACK(on_desktop_font_set), desktop);
 
         data = g_new(FolderChooserData, 1);
@@ -5769,15 +6060,15 @@ void fm_desktop_preference(GtkAction *act, FmDesktop *desktop)
         g_signal_connect(item, "toggled", G_CALLBACK(on_desktop_folder_new_win_toggled), desktop);
 #if FM_CHECK_VERSION(1, 2, 0)
         item = gtk_builder_get_object(builder, "show_documents");
-        gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(item), desktop->conf.show_documents);
+        gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(item), desktop->conf->show_documents);
         gtk_widget_set_sensitive(GTK_WIDGET(item), documents != NULL);
         g_signal_connect(item, "toggled", G_CALLBACK(on_show_documents_toggled), desktop);
         item = gtk_builder_get_object(builder, "show_trash");
-        gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(item), desktop->conf.show_trash);
+        gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(item), desktop->conf->show_trash);
         gtk_widget_set_sensitive(GTK_WIDGET(item), trash_can != NULL);
         g_signal_connect(item, "toggled", G_CALLBACK(on_show_trash_toggled), desktop);
         item = gtk_builder_get_object(builder, "show_mounts");
-        gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(item), desktop->conf.show_mounts);
+        gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(item), desktop->conf->show_mounts);
         g_signal_connect(item, "toggled", G_CALLBACK(on_show_mounts_toggled), desktop);
         data->icons_page = GTK_WIDGET(gtk_builder_get_object(builder, "icons_page"));
         gtk_widget_set_visible(data->icons_page, desktop->model != NULL);
@@ -5799,10 +6090,54 @@ void fm_desktop_preference(GtkAction *act, FmDesktop *desktop)
 /* ---------------------------------------------------------------------
     Interface functions */
 
+/* add new FmDesktop and set it up */
+static void fm_desktop_add(GdkScreen* screen, int mon)
+{
+    FmDesktop *desktop = fm_desktop_new(screen, mon);
+    GtkWidget *widget = GTK_WIDGET(desktop);
+    FmFolder *desktop_folder;
+
+    /* realize it: without this, setting wallpaper or font won't work */
+    gtk_widget_realize(widget);
+    /* realizing also loads config */
+    if (desktop->conf->folder)
+    {
+        if (desktop->conf->folder[0])
+            desktop_folder = fm_folder_from_path_name(desktop->conf->folder);
+        else
+            desktop_folder = NULL;
+    }
+    else
+        desktop_folder = fm_folder_from_path(fm_path_get_desktop());
+    if (desktop_folder)
+    {
+        connect_model(desktop, desktop_folder);
+        g_object_unref(desktop_folder);
+    }
+    else
+        /* we have to add popup here because it will be never
+           set by connect_model() as latter wasn't called */
+        fm_folder_view_add_popup(FM_FOLDER_VIEW(desktop),
+                                 GTK_WINDOW(desktop),
+                                 fm_desktop_update_popup);
+    if (desktop->model)
+#if FM_CHECK_VERSION(1, 0, 2)
+        fm_folder_model_set_sort(desktop->model,
+                                 desktop->conf->desktop_sort_by,
+                                 desktop->conf->desktop_sort_type);
+#else
+        gtk_tree_sortable_set_sort_column_id(GTK_TREE_SORTABLE(desktop->model),
+                                             desktop->conf->desktop_sort_by,
+                                             desktop->conf->desktop_sort_type);
+#endif
+    gtk_widget_show_all(widget);
+    gdk_window_lower(gtk_widget_get_window(widget));
+}
+
 void fm_desktop_manager_init(gint on_screen)
 {
     GdkDisplay * gdpy;
-    int i, n_scr, n_mon, scr, mon;
+    int n_scr, n_mon, scr, mon;
     const char* desktop_path;
 #if FM_CHECK_VERSION(1, 2, 0)
     GFile *gf;
@@ -5819,60 +6154,17 @@ void fm_desktop_manager_init(gint on_screen)
 
     gdpy = gdk_display_get_default();
     n_scr = gdk_display_get_n_screens(gdpy);
-    n_screens = 0;
-    for(i = 0; i < n_scr; i++)
-        n_screens += gdk_screen_get_n_monitors(gdk_display_get_screen(gdpy, i));
-    desktops = g_new(FmDesktop*, n_screens);
-    for(scr = 0, i = 0; scr < n_scr; scr++)
+    load_all_configs();
+    for(scr = 0; scr < n_scr; scr++)
     {
-        GdkScreen* screen = gdk_display_get_screen(gdpy, scr);
+        GdkScreen* screen;
+
+        if (on_screen >= 0 && scr != on_screen)
+            continue;
+        screen = gdk_display_get_screen(gdpy, scr);
         n_mon = gdk_screen_get_n_monitors(screen);
         for(mon = 0; mon < n_mon; mon++)
-        {
-            gint mon_init = (on_screen < 0 || on_screen == (int)scr) ? (int)mon : (mon ? -2 : -1);
-            FmDesktop *desktop = fm_desktop_new(screen, mon_init);
-            GtkWidget *widget = GTK_WIDGET(desktop);
-            FmFolder *desktop_folder;
-
-            desktops[i++] = desktop;
-            if(mon_init < 0)
-                continue;
-            /* realize it: without this, setting wallpaper or font won't work */
-            gtk_widget_realize(widget);
-            /* realizing also loads config */
-            if (desktop->conf.folder)
-            {
-                if (desktop->conf.folder[0])
-                    desktop_folder = fm_folder_from_path_name(desktop->conf.folder);
-                else
-                    desktop_folder = NULL;
-            }
-            else
-                desktop_folder = fm_folder_from_path(fm_path_get_desktop());
-            if (desktop_folder)
-            {
-                connect_model(desktop, desktop_folder);
-                g_object_unref(desktop_folder);
-            }
-            else
-                /* we have to add popup here because it will be never
-                   set by connect_model() as latter wasn't called */
-                fm_folder_view_add_popup(FM_FOLDER_VIEW(desktop),
-                                         GTK_WINDOW(desktop),
-                                         fm_desktop_update_popup);
-            if (desktop->model)
-#if FM_CHECK_VERSION(1, 0, 2)
-                fm_folder_model_set_sort(desktop->model,
-                                         desktop->conf.desktop_sort_by,
-                                         desktop->conf.desktop_sort_type);
-#else
-                gtk_tree_sortable_set_sort_column_id(GTK_TREE_SORTABLE(desktop->model),
-                                                     desktop->conf.desktop_sort_by,
-                                                     desktop->conf.desktop_sort_type);
-#endif
-            gtk_widget_show_all(widget);
-            gdk_window_lower(gtk_widget_get_window(widget));
-        }
+            fm_desktop_add(screen, mon);
     }
 
     icon_theme_changed = g_signal_connect(gtk_icon_theme_get_default(), "changed", G_CALLBACK(on_icon_theme_changed), NULL);
@@ -5917,19 +6209,20 @@ void fm_desktop_manager_init(gint on_screen)
 
 void fm_desktop_manager_finalize()
 {
-    int i;
+    GSList *l;
 
     if (idle_config_save)
     {
         g_source_remove(idle_config_save);
         idle_config_save = 0;
     }
-    for(i = 0; i < n_screens; i++)
+    for (l = configs; l; l = l->next)
     {
-        gtk_widget_destroy(GTK_WIDGET(desktops[i]));
+        FmDesktopConfig *cfg = (FmDesktopConfig *)l->data;
+        if (cfg->desktop)
+            gtk_widget_destroy(GTK_WIDGET(cfg->desktop));
     }
-    g_free(desktops);
-    n_screens = 0;
+    release_all_configs();
     g_object_unref(win_group);
     win_group = NULL;
 
@@ -5975,17 +6268,18 @@ void fm_desktop_manager_finalize()
     pcmanfm_unref();
 }
 
-FmDesktop* fm_desktop_get(gint screen, gint monitor)
+FmDesktop* fm_desktop_get(gint screen_num, gint monitor)
 {
-    int i = 0, n = 0;
-    while(i < n_screens && n <= screen)
+    GdkScreen *screen = gdk_display_get_screen(gdk_display_get_default(), screen_num);
+    GSList *l;
+
+    for (l = configs; l; l = l->next)
     {
-        if(n == screen && desktops[i]->monitor == monitor)
-            return desktops[i];
-        i++;
-        if(i < n_screens &&
-           (desktops[i]->monitor == 0 || desktops[i]->monitor == -1))
-            n++;
+        FmDesktopConfig *cfg = (FmDesktopConfig *)l->data;
+        if (cfg->desktop
+            && gtk_widget_get_screen(GTK_WIDGET(cfg->desktop)) == screen
+            && cfg->desktop->monitor == monitor)
+            return cfg->desktop;
     }
     return NULL;
 }
