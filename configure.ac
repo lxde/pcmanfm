@@ -76,9 +76,9 @@ IT_PROG_INTLTOOL([0.40.0])
 dnl libgtk version
 AC_ARG_WITH(gtk,
     [AC_HELP_STRING([--with-gtk=VER],
-        [choose Gtk+ version for libfm-gtk build (default=2)])],
+        [choose Gtk+ version for libfm-gtk build (default=3)])],
     [ac_with_gtk="${withval}"],
-    [ac_with_gtk=2])
+    [ac_with_gtk=3])
 
 AC_ARG_ENABLE(wayland,
     [AC_HELP_STRING([--enable-wayland],
@@ -100,17 +100,18 @@ fi
 fm_modules="gthread-2.0 gio-unix-2.0 >= 2.18.0 glib-2.0 pango >= 1.20.0 libfm >= 1.0"
 
 case "$ac_with_gtk" in
-    3|3.*)
+    2|2.*)
+        fm_modules="$fm_modules gtk+-2.0 libfm-gtk >= 1.0.1"
+        if test x"$enable_wayland" = "xyes"; then
+            AC_MSG_ERROR([Wayland only works with GTK3])
+        fi
+        ;;
+
+    *)
         fm_modules="$fm_modules gtk+-3.0 libfm-gtk3 >= 1.0.1"
         if test x"$enable_wayland" = "xyes"; then
             fm_modules="$fm_modules gtk-layer-shell-0 >= 0.5.2"
             AC_DEFINE(HAVE_WAYLAND, 1, [Have Wayland support])
-        fi
-        ;;
-    *)
-        fm_modules="$fm_modules gtk+-2.0 libfm-gtk >= 1.0.1"
-        if test x"$enable_wayland" = "xyes"; then
-            AC_MSG_ERROR([Wayland only works with GTK3])
         fi
         ;;
 esac
