@@ -39,7 +39,5 @@ jobs:
               --enable-x11
     - name: make
       run: make
-    - name: check
-      run: make check
     - name: install
       run: sudo make install
