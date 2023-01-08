@@ -19,13 +19,14 @@ jobs:
           sudo apt install debhelper dpkg-dev autotools-dev gtk-doc-tools \
               intltool libdbus-glib-1-dev  libglib2.0-dev libgtk-3-dev \
               libexif-dev libmenu-cache-dev libtool pkg-config valac \
-              libglib2.0-doc libgtk-3-doc -y
+              libglib2.0-doc libgtk-3-doc libgtk-layer-shell-dev -y
     - name: configure
       run: |
           autoreconf -fvi
           ./configure \
               --enable-debug \
-              --enable-udisks 
+              --enable-wayland \
+              --enable-x11
     - name: make
       run: make
     - name: check
