@@ -13,6 +13,16 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    - name: install libfm-gtk3
+      run: |
+          git clone https://github.com/LXGtk/libfm && cd libfm
+          sudo apt update
+          sudo apt install autotools-dev gtk-doc-tools intltool libdbus-glib-1-dev \
+              libglib2.0-dev libgtk-3-dev libexif-dev libmenu-cache-dev libtool \
+              pkg-config valac libglib2.0-doc libgtk-3-doc -y
+           autoreconf -fvi
+          ./configure --prefix=/usr
+          make && sudo make install 
     - name: install build dependencies
       run: |
           sudo apt update
