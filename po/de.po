@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm 0.9\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-21 22:24+0300\n"
-"PO-Revision-Date: 2020-12-14 12:39+0100\n"
+"PO-Revision-Date: 2023-05-18 16:14+0200\n"
 "Last-Translator: Ingo Brückl <ib@wupperonline.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: de\n"
@@ -326,7 +326,7 @@ msgstr "_Anzeige"
 
 #: ../data/ui/pref.glade.h:40
 msgid "Hid_e 'Close tab' buttons"
-msgstr "Schaltfläche zum Schließen des Reiters ausblenden"
+msgstr "Schaltfläche zum Schließen des Reiters verbergen"
 
 #: ../data/ui/pref.glade.h:41
 msgid "Al_ways show the tab bar"
@@ -567,7 +567,7 @@ msgstr "Art des Datenträgers:"
 
 #: ../data/ui/autorun.glade.h:4
 msgid "Detecting..."
-msgstr "wird ermittelt …"
+msgstr "wird ermittelt …"
 
 #: ../data/ui/autorun.glade.h:5
 msgid "Please select the action you want to perform:"
@@ -696,7 +696,7 @@ msgstr "Neuen Reiter für dieses Verzeichnis erstellen"
 
 #: ../src/main-win-ui.c:192
 msgid "C_reate New..."
-msgstr "Neu _anlegen …"
+msgstr "Neu _anlegen …"
 
 #: ../src/main-win-ui.c:193
 msgid "Folder"
@@ -736,24 +736,24 @@ msgstr "Datei_pfad kopieren"
 
 #: ../src/main-win-ui.c:206
 msgid "R_ename..."
-msgstr "Um_benennen …"
+msgstr "Um_benennen …"
 
 #: ../src/main-win-ui.c:207
 msgid "D_uplicate..."
-msgstr "D_uplizieren …"
+msgstr "D_uplizieren …"
 
 # Betrifft nicht nur Erstellen von Dateien (Dialogtitel nach dem Klick auf neu Erstellen)
 #: ../src/main-win-ui.c:208
 msgid "Create Lin_k..."
-msgstr "Neue Verk_nüpfung …"
+msgstr "Neue Verk_nüpfung …"
 
 #: ../src/main-win-ui.c:209
 msgid "_Move to..."
-msgstr "_Verschieben nach …"
+msgstr "_Verschieben nach …"
 
 #: ../src/main-win-ui.c:210
 msgid "Copy to_..."
-msgstr "K_opieren nach …"
+msgstr "K_opieren nach …"
 
 #: ../src/main-win-ui.c:211
 msgid "Propertie_s"
@@ -806,7 +806,7 @@ msgstr "Ver_kleinern"
 
 #: ../src/main-win-ui.c:227
 msgid "Fil_ter..."
-msgstr "Fil_tern …"
+msgstr "Fil_tern …"
 
 #: ../src/main-win-ui.c:229
 msgid "_Help"
@@ -898,7 +898,7 @@ msgstr "Adress_leiste"
 
 #: ../src/main-win-ui.c:244
 msgid "_Connect to Server..."
-msgstr "Mit Server _verbinden …"
+msgstr "Mit Server _verbinden …"
 
 #: ../src/main-win-ui.c:244
 msgid "Open a window to choose remote folder location"
@@ -914,7 +914,7 @@ msgstr "_Favoriten"
 
 #: ../src/main-win-ui.c:247
 msgid "_Add to Bookmarks..."
-msgstr "Zu Favoriten _hinzufügen …"
+msgstr "Zu Favoriten _hinzufügen …"
 
 #: ../src/main-win-ui.c:247
 msgid "Add current folder to bookmarks list"
@@ -930,7 +930,7 @@ msgstr "_Terminal im aktuellem Verzeichnis öffnen"
 
 #: ../src/main-win-ui.c:251
 msgid "Fin_d Files..."
-msgstr "_Dateien suchen …"
+msgstr "_Dateien suchen …"
 
 #: ../src/main-win-ui.c:251
 msgid "Open search dialog"
@@ -938,7 +938,7 @@ msgstr "Dialog zur Dateisuche öffnen"
 
 #: ../src/main-win-ui.c:254
 msgid "_Run a Command in Current Folder..."
-msgstr "Befehl im aktuellen Verzeichnis ausfüh_ren …"
+msgstr "Befehl im aktuellen Verzeichnis ausfüh_ren …"
 
 #. Note to translators: "Mingle..." means "Do not put folders before files" but make the translation as short as possible, please!
 #: ../src/main-win-ui.c:271
@@ -1294,8 +1294,8 @@ msgstr "Dateimanager"
 
 #: ../data/pcmanfm.desktop.in.h:3
 msgid "Browse the file system and manage the files"
-msgstr "Dateisystem durchsuchen und Dateien verwalten"
+msgstr "Durchsuchen des Dateisystems und Verwaltung von Dateien"
 
 #: ../data/pcmanfm-desktop-pref.desktop.in.h:2
 msgid "Change desktop wallpapers and behavior of desktop manager"
-msgstr "Hintergrundbilder und Verhalten der Desktopverwaltung ändern"
+msgstr "Ändern des Desktop-Hintergrundbildes und des Verhaltens des Desktop-Managers"
