@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.9.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-21 22:24+0300\n"
+"POT-Creation-Date: 2023-08-01 16:44+0200\n"
 "PO-Revision-Date: 2018-12-13 17:14+0000\n"
 "Last-Translator: nyucel <necdetyucel@gmail.com>\n"
 "Language-Team: tr <tr@li.org>\n"
@@ -790,6 +790,12 @@ msgstr "_Klasör Görünüm Kipi"
 msgid "S_ort Files"
 msgstr "Dosyaları _Sırala"
 
+#: ../src/main-win-ui.c:223
+#, fuzzy
+#| msgid "Zoom O_ut"
+msgid "Zoom _In"
+msgstr "_Uzaklaştır"
+
 #: ../src/main-win-ui.c:224
 msgid "Zoom O_ut"
 msgstr "_Uzaklaştır"
@@ -1127,58 +1133,58 @@ msgstr ""
 msgid "Add to Bookmarks"
 msgstr "Yer İmlerine Ekle"
 
-#: ../src/main-win.c:2587
+#: ../src/main-win.c:2589
 msgid "Select filter"
 msgstr "Filtre seç"
 
-#: ../src/main-win.c:2588
+#: ../src/main-win.c:2590
 msgid "Choose a new shell pattern to show files:"
 msgstr "Dosyaların gösterileceği yeni kabuk deseni seçin:"
 
 #. options only acceptable by first pcmanfm instance. These options are not passed through IPC
-#: ../src/pcmanfm.c:78
+#: ../src/pcmanfm.c:79
 msgid "Name of configuration profile"
 msgstr "Yapılandırma profilinin adı"
 
-#: ../src/pcmanfm.c:78
+#: ../src/pcmanfm.c:79
 msgid "PROFILE"
 msgstr "PROFİL"
 
-#: ../src/pcmanfm.c:79
+#: ../src/pcmanfm.c:80
 msgid "Run PCManFM as a daemon"
 msgstr "PCManFM'yi arkaplanda çalıştır"
 
-#: ../src/pcmanfm.c:80
+#: ../src/pcmanfm.c:81
 msgid "No function. Just to be compatible with nautilus"
 msgstr "İşlev yok. Nautilus ile uyumlu olmak için"
 
 #. options that are acceptable for every instance of pcmanfm and will be passed through IPC.
-#: ../src/pcmanfm.c:83
+#: ../src/pcmanfm.c:84
 msgid "Launch desktop manager"
 msgstr "Masaüstü yöneticisini başlat"
 
-#: ../src/pcmanfm.c:84
+#: ../src/pcmanfm.c:85
 msgid "Turn off desktop manager if it's running"
 msgstr "Eğer çalışıyorsa masaüstü yöneticisini durdur"
 
-#: ../src/pcmanfm.c:85
+#: ../src/pcmanfm.c:86
 msgid "Open desktop preference dialog"
 msgstr "Masaüstü seçenekleri diyaloğunu aç"
 
-#: ../src/pcmanfm.c:86
+#: ../src/pcmanfm.c:87
 msgid "Use --desktop option only for one screen"
 msgstr "Sadece bir ekran için --desktop seçeneğini kullan"
 
-#: ../src/pcmanfm.c:87
+#: ../src/pcmanfm.c:88
 msgid "Set desktop wallpaper from image FILE"
 msgstr "Masaüstü duvar kağıdını resim DOSYAsından ayarla"
 
-#: ../src/pcmanfm.c:87
+#: ../src/pcmanfm.c:88
 msgid "FILE"
 msgstr "DOSYA"
 
 #. don't translate list of modes in description, please
-#: ../src/pcmanfm.c:89
+#: ../src/pcmanfm.c:90
 msgid ""
 "Set mode of desktop wallpaper. MODE=(color|stretch|fit|crop|center|tile|"
 "screen)"
@@ -1186,44 +1192,44 @@ msgstr ""
 "Masaüstü duvar kağıdı görüntüleme kipini ayarla. KİP=(color|stretch|fit|crop|"
 "center|tile|screen)"
 
-#: ../src/pcmanfm.c:89
+#: ../src/pcmanfm.c:90
 msgid "MODE"
 msgstr "KİP"
 
-#: ../src/pcmanfm.c:90
+#: ../src/pcmanfm.c:91
 msgid "Open Preferences dialog on the page N"
 msgstr "Sayfa N'deki Tercihler penceresini aç"
 
-#: ../src/pcmanfm.c:90
+#: ../src/pcmanfm.c:91
 msgid "N"
 msgstr "N"
 
-#: ../src/pcmanfm.c:91
+#: ../src/pcmanfm.c:92
 msgid "Open new window"
 msgstr "Yeni pencere aç"
 
-#: ../src/pcmanfm.c:93
+#: ../src/pcmanfm.c:94
 msgid "Open a Find Files window"
 msgstr "Bir Dosya Bul penceresi aç"
 
-#: ../src/pcmanfm.c:95
+#: ../src/pcmanfm.c:96
 msgid "Window role for usage by window manager"
 msgstr "Pencere yöneticisinin pencere kullanım rolü"
 
-#: ../src/pcmanfm.c:95
+#: ../src/pcmanfm.c:96
 msgid "ROLE"
 msgstr "ROL"
 
-#: ../src/pcmanfm.c:96
+#: ../src/pcmanfm.c:97
 msgid "[FILE1, FILE2,...]"
 msgstr "[DOSYA1, DOSYA2,...]"
 
 #. FIXME: add "on this X screen/monitor" into diagnostics
-#: ../src/pcmanfm.c:376
+#: ../src/pcmanfm.c:378
 msgid "Desktop manager is not active."
 msgstr "Masaüstü yöneticisi etkin değil."
 
-#: ../src/pcmanfm.c:627
+#: ../src/pcmanfm.c:629
 msgid "Terminal emulator is not set."
 msgstr "Uçbirim öykünücüsü seçilmedi."
 
@@ -1231,24 +1237,38 @@ msgstr "Uçbirim öykünücüsü seçilmedi."
 msgid "Open in New T_ab"
 msgstr "Yeni _Sekmede Aç"
 
-#: ../src/tab-page.c:411
+#. Note to translators: this is the information (name, size, type)
+#. about the selected file in the status bar
+#: ../src/tab-page.c:378
+#, c-format
+msgid "\"%s\" (%s) %s"
+msgstr ""
+
+#. Note to translators: this is the information (name, type)
+#. about the selected file in the status bar
+#: ../src/tab-page.c:387
+#, c-format
+msgid "\"%s\" %s"
+msgstr ""
+
+#: ../src/tab-page.c:415
 #, c-format
 msgid "%d item selected"
 msgid_plural "%d items selected"
 msgstr[0] "%d parça seçildi"
 
-#: ../src/tab-page.c:741
+#: ../src/tab-page.c:745
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Boş alan: %s (Toplam: %s)"
 
-#: ../src/tab-page.c:761
+#: ../src/tab-page.c:765
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] "%d parça"
 
-#: ../src/tab-page.c:762
+#: ../src/tab-page.c:766
 #, c-format
 msgid " (%d hidden)"
 msgid_plural " (%d hidden)"

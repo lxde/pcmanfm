@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm 1.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-21 22:24+0300\n"
+"POT-Creation-Date: 2023-08-01 16:44+0200\n"
 "PO-Revision-Date: 2014-12-03 12:16+0000\n"
 "Last-Translator: Wylmer Wang <wantinghard@gmail.com>\n"
 "Language-Team: Chinese (simplified) <i18n-zh@googlegroups.com>\n"
@@ -778,6 +778,12 @@ msgstr "文件夹查看方式(_L)"
 msgid "S_ort Files"
 msgstr "排序文件(_O)"
 
+#: ../src/main-win-ui.c:223
+#, fuzzy
+#| msgid "_Zoom In"
+msgid "Zoom _In"
+msgstr "放大(_Z)"
+
 #: ../src/main-win-ui.c:224
 msgid "Zoom O_ut"
 msgstr "缩小(_U)"
@@ -1113,101 +1119,101 @@ msgstr ""
 msgid "Add to Bookmarks"
 msgstr "添加到书签中"
 
-#: ../src/main-win.c:2587
+#: ../src/main-win.c:2589
 msgid "Select filter"
 msgstr "选择过滤器"
 
-#: ../src/main-win.c:2588
+#: ../src/main-win.c:2590
 msgid "Choose a new shell pattern to show files:"
 msgstr "选择显示文件的新 shell 模式："
 
 #. options only acceptable by first pcmanfm instance. These options are not passed through IPC
-#: ../src/pcmanfm.c:78
+#: ../src/pcmanfm.c:79
 msgid "Name of configuration profile"
 msgstr "配置名称"
 
-#: ../src/pcmanfm.c:78
+#: ../src/pcmanfm.c:79
 msgid "PROFILE"
 msgstr "配置"
 
-#: ../src/pcmanfm.c:79
+#: ../src/pcmanfm.c:80
 msgid "Run PCManFM as a daemon"
 msgstr "以守护进程方式运行 PCManFM"
 
-#: ../src/pcmanfm.c:80
+#: ../src/pcmanfm.c:81
 msgid "No function. Just to be compatible with nautilus"
 msgstr "没有功能。仅为与 nautilus 兼容"
 
 #. options that are acceptable for every instance of pcmanfm and will be passed through IPC.
-#: ../src/pcmanfm.c:83
+#: ../src/pcmanfm.c:84
 msgid "Launch desktop manager"
 msgstr "启动桌面管理器"
 
-#: ../src/pcmanfm.c:84
+#: ../src/pcmanfm.c:85
 msgid "Turn off desktop manager if it's running"
 msgstr "若桌面管理器正在运行，关闭它"
 
-#: ../src/pcmanfm.c:85
+#: ../src/pcmanfm.c:86
 msgid "Open desktop preference dialog"
 msgstr "打开桌面偏好设置对话框"
 
-#: ../src/pcmanfm.c:86
+#: ../src/pcmanfm.c:87
 msgid "Use --desktop option only for one screen"
 msgstr "只在一个屏幕时使用 --desktop 选项"
 
-#: ../src/pcmanfm.c:87
+#: ../src/pcmanfm.c:88
 msgid "Set desktop wallpaper from image FILE"
 msgstr "从图像文件设置桌面壁纸"
 
-#: ../src/pcmanfm.c:87
+#: ../src/pcmanfm.c:88
 msgid "FILE"
 msgstr "文件"
 
 #. don't translate list of modes in description, please
-#: ../src/pcmanfm.c:89
+#: ../src/pcmanfm.c:90
 msgid ""
 "Set mode of desktop wallpaper. MODE=(color|stretch|fit|crop|center|tile|"
 "screen)"
 msgstr "设置桌面壁纸模式。MODE=(color|stretch|fit|crop|center|tile|screen)"
 
-#: ../src/pcmanfm.c:89
+#: ../src/pcmanfm.c:90
 msgid "MODE"
 msgstr "模式"
 
-#: ../src/pcmanfm.c:90
+#: ../src/pcmanfm.c:91
 msgid "Open Preferences dialog on the page N"
 msgstr "在第 N 页打开桌面偏好设置对话框"
 
-#: ../src/pcmanfm.c:90
+#: ../src/pcmanfm.c:91
 msgid "N"
 msgstr "N"
 
-#: ../src/pcmanfm.c:91
+#: ../src/pcmanfm.c:92
 msgid "Open new window"
 msgstr "打开新窗口"
 
-#: ../src/pcmanfm.c:93
+#: ../src/pcmanfm.c:94
 msgid "Open a Find Files window"
 msgstr "打开 查找文件 窗口"
 
-#: ../src/pcmanfm.c:95
+#: ../src/pcmanfm.c:96
 msgid "Window role for usage by window manager"
 msgstr "窗口管理器用的窗口角色"
 
-#: ../src/pcmanfm.c:95
+#: ../src/pcmanfm.c:96
 msgid "ROLE"
 msgstr "角色"
 
-#: ../src/pcmanfm.c:96
+#: ../src/pcmanfm.c:97
 msgid "[FILE1, FILE2,...]"
 msgstr "[文件1, 文件2,...]"
 
 #. FIXME: add "on this X screen/monitor" into diagnostics
-#: ../src/pcmanfm.c:376
+#: ../src/pcmanfm.c:378
 msgid "Desktop manager is not active."
 msgstr "桌面管理器未激活。"
 
-#: ../src/pcmanfm.c:627
+#: ../src/pcmanfm.c:629
 msgid "Terminal emulator is not set."
 msgstr "没有设置终端模拟器。"
 
@@ -1215,24 +1221,38 @@ msgstr "没有设置终端模拟器。"
 msgid "Open in New T_ab"
 msgstr "在新标签中打开(_A)"
 
-#: ../src/tab-page.c:411
+#. Note to translators: this is the information (name, size, type)
+#. about the selected file in the status bar
+#: ../src/tab-page.c:378
+#, c-format
+msgid "\"%s\" (%s) %s"
+msgstr ""
+
+#. Note to translators: this is the information (name, type)
+#. about the selected file in the status bar
+#: ../src/tab-page.c:387
+#, c-format
+msgid "\"%s\" %s"
+msgstr ""
+
+#: ../src/tab-page.c:415
 #, c-format
 msgid "%d item selected"
 msgid_plural "%d items selected"
 msgstr[0] "选择了 %d 项"
 
-#: ../src/tab-page.c:741
+#: ../src/tab-page.c:745
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "可用空间：%s(共：%s)"
 
-#: ../src/tab-page.c:761
+#: ../src/tab-page.c:765
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] "%d 项"
 
-#: ../src/tab-page.c:762
+#: ../src/tab-page.c:766
 #, c-format
 msgid " (%d hidden)"
 msgid_plural " (%d hidden)"
@@ -1281,9 +1301,6 @@ msgstr "更改桌面壁纸和桌面管理器行为"
 
 #~ msgid "Create Symlin_k"
 #~ msgstr "创建符号链接(_K)"
-
-#~ msgid "_Zoom In"
-#~ msgstr "放大(_Z)"
 
 #~ msgid "_Normal Size"
 #~ msgstr "正常大小(_N)"

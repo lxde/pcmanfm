@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm 1.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-21 22:24+0300\n"
+"POT-Creation-Date: 2023-08-01 16:44+0200\n"
 "PO-Revision-Date: 2014-09-26 08:30+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: \n"
@@ -781,6 +781,10 @@ msgstr "מ_צב התצוגה:"
 msgid "S_ort Files"
 msgstr "_מיון קבצים"
 
+#: ../src/main-win-ui.c:223
+msgid "Zoom _In"
+msgstr ""
+
 #: ../src/main-win-ui.c:224
 msgid "Zoom O_ut"
 msgstr ""
@@ -1123,103 +1127,103 @@ msgstr ""
 msgid "Add to Bookmarks"
 msgstr "הוספה לסימניות"
 
-#: ../src/main-win.c:2587
+#: ../src/main-win.c:2589
 msgid "Select filter"
 msgstr "בחירת מסנן"
 
-#: ../src/main-win.c:2588
+#: ../src/main-win.c:2590
 msgid "Choose a new shell pattern to show files:"
 msgstr ""
 
 #. options only acceptable by first pcmanfm instance. These options are not passed through IPC
-#: ../src/pcmanfm.c:78
+#: ../src/pcmanfm.c:79
 msgid "Name of configuration profile"
 msgstr "שם פרופיל התצורה"
 
-#: ../src/pcmanfm.c:78
+#: ../src/pcmanfm.c:79
 msgid "PROFILE"
 msgstr "PROFILE"
 
-#: ../src/pcmanfm.c:79
+#: ../src/pcmanfm.c:80
 msgid "Run PCManFM as a daemon"
 msgstr "הרצת PCManFM כסוכן ברקע"
 
-#: ../src/pcmanfm.c:80
+#: ../src/pcmanfm.c:81
 msgid "No function. Just to be compatible with nautilus"
 msgstr "אין פונקציה. נועד לצורכי תאימות עם nautilus"
 
 #. options that are acceptable for every instance of pcmanfm and will be passed through IPC.
-#: ../src/pcmanfm.c:83
+#: ../src/pcmanfm.c:84
 msgid "Launch desktop manager"
 msgstr "טעינת מנהל שולחן העבודה"
 
-#: ../src/pcmanfm.c:84
+#: ../src/pcmanfm.c:85
 msgid "Turn off desktop manager if it's running"
 msgstr "כיבוי מנהל שולחן העבודה במידה שהוא פעיל"
 
-#: ../src/pcmanfm.c:85
+#: ../src/pcmanfm.c:86
 msgid "Open desktop preference dialog"
 msgstr "פתיחת דו־שיח העדפות שולחן העבודה"
 
-#: ../src/pcmanfm.c:86
+#: ../src/pcmanfm.c:87
 msgid "Use --desktop option only for one screen"
 msgstr "Use --desktop option only for one screen"
 
-#: ../src/pcmanfm.c:87
+#: ../src/pcmanfm.c:88
 msgid "Set desktop wallpaper from image FILE"
 msgstr "Set desktop wallpaper from image FILE"
 
-#: ../src/pcmanfm.c:87
+#: ../src/pcmanfm.c:88
 msgid "FILE"
 msgstr "FILE"
 
 #. don't translate list of modes in description, please
-#: ../src/pcmanfm.c:89
+#: ../src/pcmanfm.c:90
 #, fuzzy
 msgid ""
 "Set mode of desktop wallpaper. MODE=(color|stretch|fit|crop|center|tile|"
 "screen)"
 msgstr "Set mode of desktop wallpaper. MODE=(color|stretch|fit|center|tile)"
 
-#: ../src/pcmanfm.c:89
+#: ../src/pcmanfm.c:90
 msgid "MODE"
 msgstr "MODE"
 
-#: ../src/pcmanfm.c:90
+#: ../src/pcmanfm.c:91
 msgid "Open Preferences dialog on the page N"
 msgstr "Open Preferences dialog on the page N"
 
-#: ../src/pcmanfm.c:90
+#: ../src/pcmanfm.c:91
 msgid "N"
 msgstr "N"
 
-#: ../src/pcmanfm.c:91
+#: ../src/pcmanfm.c:92
 msgid "Open new window"
 msgstr "Open new window"
 
-#: ../src/pcmanfm.c:93
+#: ../src/pcmanfm.c:94
 #, fuzzy
 msgid "Open a Find Files window"
 msgstr "פתיחת הכלי למציאת קבצים"
 
-#: ../src/pcmanfm.c:95
+#: ../src/pcmanfm.c:96
 msgid "Window role for usage by window manager"
 msgstr "Window role for usage by window manager"
 
-#: ../src/pcmanfm.c:95
+#: ../src/pcmanfm.c:96
 msgid "ROLE"
 msgstr "ROLE"
 
-#: ../src/pcmanfm.c:96
+#: ../src/pcmanfm.c:97
 msgid "[FILE1, FILE2,...]"
 msgstr "[FILE1, FILE2,...]"
 
 #. FIXME: add "on this X screen/monitor" into diagnostics
-#: ../src/pcmanfm.c:376
+#: ../src/pcmanfm.c:378
 msgid "Desktop manager is not active."
 msgstr "מנהל שולחן העבודה אינו פעיל."
 
-#: ../src/pcmanfm.c:627
+#: ../src/pcmanfm.c:629
 msgid "Terminal emulator is not set."
 msgstr "מדמה המסוף לא הוגדר."
 
@@ -1227,26 +1231,40 @@ msgstr "מדמה המסוף לא הוגדר."
 msgid "Open in New T_ab"
 msgstr "פתיחה ב_לשונית חדשה"
 
-#: ../src/tab-page.c:411
+#. Note to translators: this is the information (name, size, type)
+#. about the selected file in the status bar
+#: ../src/tab-page.c:378
+#, c-format
+msgid "\"%s\" (%s) %s"
+msgstr ""
+
+#. Note to translators: this is the information (name, type)
+#. about the selected file in the status bar
+#: ../src/tab-page.c:387
+#, c-format
+msgid "\"%s\" %s"
+msgstr ""
+
+#: ../src/tab-page.c:415
 #, c-format
 msgid "%d item selected"
 msgid_plural "%d items selected"
 msgstr[0] "נבחר פריט אחד"
 msgstr[1] "נבחרו %d פריטים"
 
-#: ../src/tab-page.c:741
+#: ../src/tab-page.c:745
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "מקום פנוי: %s (סך הכל: %s )"
 
-#: ../src/tab-page.c:761
+#: ../src/tab-page.c:765
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] "פריט אחד"
 msgstr[1] "%d פריטים"
 
-#: ../src/tab-page.c:762
+#: ../src/tab-page.c:766
 #, c-format
 msgid " (%d hidden)"
 msgid_plural " (%d hidden)"

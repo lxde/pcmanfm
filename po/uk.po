@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm-1.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-21 22:24+0300\n"
+"POT-Creation-Date: 2023-08-01 16:44+0200\n"
 "PO-Revision-Date: 2018-04-12 21:48+0000\n"
 "Last-Translator: Andriy Grytsenko <andrej@rep.kiev.ua>\n"
 "Language-Team: Ukrainian <translation@linux.org.ua>\n"
@@ -785,6 +785,12 @@ msgstr "Вигляд _теки"
 msgid "S_ort Files"
 msgstr "Сортуват_и файли"
 
+#: ../src/main-win-ui.c:223
+#, fuzzy
+#| msgid "_Zoom In"
+msgid "Zoom _In"
+msgstr "Збі_льшити"
+
 #: ../src/main-win-ui.c:224
 msgid "Zoom O_ut"
 msgstr "З_меншити"
@@ -1122,59 +1128,59 @@ msgstr ""
 msgid "Add to Bookmarks"
 msgstr "Додати до закладок"
 
-#: ../src/main-win.c:2587
+#: ../src/main-win.c:2589
 msgid "Select filter"
 msgstr "Обрати фільтр"
 
-#: ../src/main-win.c:2588
+#: ../src/main-win.c:2590
 msgid "Choose a new shell pattern to show files:"
 msgstr "Оберіть маску, за якою показувати файли:"
 
 #. options only acceptable by first pcmanfm instance. These options are not passed through IPC
-#: ../src/pcmanfm.c:78
+#: ../src/pcmanfm.c:79
 msgid "Name of configuration profile"
 msgstr "Назва профілю конфігурації"
 
-#: ../src/pcmanfm.c:78
+#: ../src/pcmanfm.c:79
 msgid "PROFILE"
 msgstr "ПРОФІЛЬ"
 
-#: ../src/pcmanfm.c:79
+#: ../src/pcmanfm.c:80
 msgid "Run PCManFM as a daemon"
 msgstr "Запустити PCManFM як демон"
 
-#: ../src/pcmanfm.c:80
+#: ../src/pcmanfm.c:81
 msgid "No function. Just to be compatible with nautilus"
 msgstr "Немає функції. Лише для сумісності з nautilus"
 
 #. options that are acceptable for every instance of pcmanfm and will be passed through IPC.
-#: ../src/pcmanfm.c:83
+#: ../src/pcmanfm.c:84
 msgid "Launch desktop manager"
 msgstr "Запустити менеджер стільниці"
 
-#: ../src/pcmanfm.c:84
+#: ../src/pcmanfm.c:85
 msgid "Turn off desktop manager if it's running"
 msgstr "Вимкнути менеджер стільниці, якщо його запущено"
 
-#: ../src/pcmanfm.c:85
+#: ../src/pcmanfm.c:86
 msgid "Open desktop preference dialog"
 msgstr "Відкрити вікно налаштування стільниці"
 
-#: ../src/pcmanfm.c:86
+#: ../src/pcmanfm.c:87
 msgid "Use --desktop option only for one screen"
 msgstr "Використати параметр --desktop лише на одному екрані"
 
-#: ../src/pcmanfm.c:87
+#: ../src/pcmanfm.c:88
 msgid "Set desktop wallpaper from image FILE"
 msgstr "Встановити шпалери стільниці з ФАЙЛу"
 
-#: ../src/pcmanfm.c:87
+#: ../src/pcmanfm.c:88
 msgid "FILE"
 msgstr "ФАЙЛ"
 
 # color|stretch|fit|center|tile - має бути не перекладене, інакше не буде опрацьовуватись.
 #. don't translate list of modes in description, please
-#: ../src/pcmanfm.c:89
+#: ../src/pcmanfm.c:90
 msgid ""
 "Set mode of desktop wallpaper. MODE=(color|stretch|fit|crop|center|tile|"
 "screen)"
@@ -1182,44 +1188,44 @@ msgstr ""
 "Встановити режим шпалер стільниці. РЕЖИМ=(color|stretch|fit|crop|center|tile|"
 "screen)"
 
-#: ../src/pcmanfm.c:89
+#: ../src/pcmanfm.c:90
 msgid "MODE"
 msgstr "РЕЖИМ"
 
-#: ../src/pcmanfm.c:90
+#: ../src/pcmanfm.c:91
 msgid "Open Preferences dialog on the page N"
 msgstr "Відкрити сторінку N налаштувань"
 
-#: ../src/pcmanfm.c:90
+#: ../src/pcmanfm.c:91
 msgid "N"
 msgstr "N"
 
-#: ../src/pcmanfm.c:91
+#: ../src/pcmanfm.c:92
 msgid "Open new window"
 msgstr "Відкрити у новому вікні"
 
-#: ../src/pcmanfm.c:93
+#: ../src/pcmanfm.c:94
 msgid "Open a Find Files window"
 msgstr "Відкрити вікно пошуку файлів"
 
-#: ../src/pcmanfm.c:95
+#: ../src/pcmanfm.c:96
 msgid "Window role for usage by window manager"
 msgstr "Роль вікна, яка використовується менеджером вікон"
 
-#: ../src/pcmanfm.c:95
+#: ../src/pcmanfm.c:96
 msgid "ROLE"
 msgstr "РОЛЬ"
 
-#: ../src/pcmanfm.c:96
+#: ../src/pcmanfm.c:97
 msgid "[FILE1, FILE2,...]"
 msgstr "[ФАЙЛ1, ФАЙЛ2,...]"
 
 #. FIXME: add "on this X screen/monitor" into diagnostics
-#: ../src/pcmanfm.c:376
+#: ../src/pcmanfm.c:378
 msgid "Desktop manager is not active."
 msgstr "Керування стільницею не активне."
 
-#: ../src/pcmanfm.c:627
+#: ../src/pcmanfm.c:629
 msgid "Terminal emulator is not set."
 msgstr "Емулятор терміналу не встановлено."
 
@@ -1227,7 +1233,21 @@ msgstr "Емулятор терміналу не встановлено."
 msgid "Open in New T_ab"
 msgstr "Відкрити у новій вк_ладці"
 
-#: ../src/tab-page.c:411
+#. Note to translators: this is the information (name, size, type)
+#. about the selected file in the status bar
+#: ../src/tab-page.c:378
+#, c-format
+msgid "\"%s\" (%s) %s"
+msgstr ""
+
+#. Note to translators: this is the information (name, type)
+#. about the selected file in the status bar
+#: ../src/tab-page.c:387
+#, c-format
+msgid "\"%s\" %s"
+msgstr ""
+
+#: ../src/tab-page.c:415
 #, c-format
 msgid "%d item selected"
 msgid_plural "%d items selected"
@@ -1235,12 +1255,12 @@ msgstr[0] "%d позицію обрано"
 msgstr[1] "%d позиції обрано"
 msgstr[2] "%d позицій обрано"
 
-#: ../src/tab-page.c:741
+#: ../src/tab-page.c:745
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Вільний простір: %s (Всього: %s )"
 
-#: ../src/tab-page.c:761
+#: ../src/tab-page.c:765
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
@@ -1248,7 +1268,7 @@ msgstr[0] "%d позиція"
 msgstr[1] "%d позиції"
 msgstr[2] "%d позицій"
 
-#: ../src/tab-page.c:762
+#: ../src/tab-page.c:766
 #, c-format
 msgid " (%d hidden)"
 msgid_plural " (%d hidden)"
@@ -1290,9 +1310,6 @@ msgstr "Налаштування шпалер та поведінки менед
 
 #~ msgid "Center on the screen"
 #~ msgstr "Центр на екрані"
-
-#~ msgid "_Zoom In"
-#~ msgstr "Збі_льшити"
 
 #~ msgid "_Normal Size"
 #~ msgstr "Зви_чайний розмір"

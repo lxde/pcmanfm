@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm 1.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-21 22:24+0300\n"
+"POT-Creation-Date: 2023-08-01 16:44+0200\n"
 "PO-Revision-Date: 2018-05-16 06:16+0000\n"
 "Last-Translator: Piotr Strębski <strebski@o2.pl>\n"
 "Language-Team: polski <>\n"
@@ -794,6 +794,12 @@ msgstr "_Tryb"
 msgid "S_ort Files"
 msgstr "So_rtowanie"
 
+#: ../src/main-win-ui.c:223
+#, fuzzy
+#| msgid "_Zoom In"
+msgid "Zoom _In"
+msgstr "Po_większenie"
+
 #: ../src/main-win-ui.c:224
 msgid "Zoom O_ut"
 msgstr "Po_mniejsz"
@@ -1133,58 +1139,58 @@ msgstr ""
 msgid "Add to Bookmarks"
 msgstr "Dodawanie zakładki"
 
-#: ../src/main-win.c:2587
+#: ../src/main-win.c:2589
 msgid "Select filter"
 msgstr "Wybór filtra"
 
-#: ../src/main-win.c:2588
+#: ../src/main-win.c:2590
 msgid "Choose a new shell pattern to show files:"
 msgstr "Proszę wprowadzić wzór filtra powłoki, aby wyświetlić określone pliki:"
 
 #. options only acceptable by first pcmanfm instance. These options are not passed through IPC
-#: ../src/pcmanfm.c:78
+#: ../src/pcmanfm.c:79
 msgid "Name of configuration profile"
 msgstr "Nazwa profilu ustawień"
 
-#: ../src/pcmanfm.c:78
+#: ../src/pcmanfm.c:79
 msgid "PROFILE"
 msgstr "PROFIL"
 
-#: ../src/pcmanfm.c:79
+#: ../src/pcmanfm.c:80
 msgid "Run PCManFM as a daemon"
 msgstr "Uruchamia program jako demon"
 
-#: ../src/pcmanfm.c:80
+#: ../src/pcmanfm.c:81
 msgid "No function. Just to be compatible with nautilus"
 msgstr "Brak funkcji. Zapewnia kompatybilność z programem Nautilus."
 
 #. options that are acceptable for every instance of pcmanfm and will be passed through IPC.
-#: ../src/pcmanfm.c:83
+#: ../src/pcmanfm.c:84
 msgid "Launch desktop manager"
 msgstr "Włącza menedżera pulpitu"
 
-#: ../src/pcmanfm.c:84
+#: ../src/pcmanfm.c:85
 msgid "Turn off desktop manager if it's running"
 msgstr "Wyłącza menedżera pulpitu jeśli jest włączony"
 
-#: ../src/pcmanfm.c:85
+#: ../src/pcmanfm.c:86
 msgid "Open desktop preference dialog"
 msgstr "Wyświetla okno preferencji pulpitu"
 
-#: ../src/pcmanfm.c:86
+#: ../src/pcmanfm.c:87
 msgid "Use --desktop option only for one screen"
 msgstr "Używa opcji --desktop tylko dla jednego ekranu"
 
-#: ../src/pcmanfm.c:87
+#: ../src/pcmanfm.c:88
 msgid "Set desktop wallpaper from image FILE"
 msgstr "Ustala tło pulpitu z PLIKU obrazu"
 
-#: ../src/pcmanfm.c:87
+#: ../src/pcmanfm.c:88
 msgid "FILE"
 msgstr "PLIK"
 
 #. don't translate list of modes in description, please
-#: ../src/pcmanfm.c:89
+#: ../src/pcmanfm.c:90
 msgid ""
 "Set mode of desktop wallpaper. MODE=(color|stretch|fit|crop|center|tile|"
 "screen)"
@@ -1192,44 +1198,44 @@ msgstr ""
 "Ustala tryb wyświetlania tła pulpitu. TRYB=(color|stretch|fit|crop|center|"
 "tile|screen)"
 
-#: ../src/pcmanfm.c:89
+#: ../src/pcmanfm.c:90
 msgid "MODE"
 msgstr "TRYB"
 
-#: ../src/pcmanfm.c:90
+#: ../src/pcmanfm.c:91
 msgid "Open Preferences dialog on the page N"
 msgstr "Otwiera okno preferencji na karcie N"
 
-#: ../src/pcmanfm.c:90
+#: ../src/pcmanfm.c:91
 msgid "N"
 msgstr "N"
 
-#: ../src/pcmanfm.c:91
+#: ../src/pcmanfm.c:92
 msgid "Open new window"
 msgstr "Otwiera nowe okno"
 
-#: ../src/pcmanfm.c:93
+#: ../src/pcmanfm.c:94
 msgid "Open a Find Files window"
 msgstr "Otwiera okno wyszukiwania plików"
 
-#: ../src/pcmanfm.c:95
+#: ../src/pcmanfm.c:96
 msgid "Window role for usage by window manager"
 msgstr "Określa typ okna używany przez menedżera okien"
 
-#: ../src/pcmanfm.c:95
+#: ../src/pcmanfm.c:96
 msgid "ROLE"
 msgstr "ROLA"
 
-#: ../src/pcmanfm.c:96
+#: ../src/pcmanfm.c:97
 msgid "[FILE1, FILE2,...]"
 msgstr "[PLIK1, PLIK2,...]"
 
 #. FIXME: add "on this X screen/monitor" into diagnostics
-#: ../src/pcmanfm.c:376
+#: ../src/pcmanfm.c:378
 msgid "Desktop manager is not active."
 msgstr "Menadżer pulpitu jest nieaktywny."
 
-#: ../src/pcmanfm.c:627
+#: ../src/pcmanfm.c:629
 msgid "Terminal emulator is not set."
 msgstr "Nie zdefiniowano polecenia emulatora terminala."
 
@@ -1237,7 +1243,21 @@ msgstr "Nie zdefiniowano polecenia emulatora terminala."
 msgid "Open in New T_ab"
 msgstr "Otwórz w _nowej karcie"
 
-#: ../src/tab-page.c:411
+#. Note to translators: this is the information (name, size, type)
+#. about the selected file in the status bar
+#: ../src/tab-page.c:378
+#, c-format
+msgid "\"%s\" (%s) %s"
+msgstr ""
+
+#. Note to translators: this is the information (name, type)
+#. about the selected file in the status bar
+#: ../src/tab-page.c:387
+#, c-format
+msgid "\"%s\" %s"
+msgstr ""
+
+#: ../src/tab-page.c:415
 #, c-format
 msgid "%d item selected"
 msgid_plural "%d items selected"
@@ -1245,12 +1265,12 @@ msgstr[0] "Zaznaczono %d element"
 msgstr[1] "Zaznaczono %d elementy"
 msgstr[2] "Zaznaczono %d elementów"
 
-#: ../src/tab-page.c:741
+#: ../src/tab-page.c:745
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Wolna przestrzeń: %s (całkowita: %s)"
 
-#: ../src/tab-page.c:761
+#: ../src/tab-page.c:765
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
@@ -1258,7 +1278,7 @@ msgstr[0] "%d element"
 msgstr[1] "%d elementy"
 msgstr[2] "%d elementów"
 
-#: ../src/tab-page.c:762
+#: ../src/tab-page.c:766
 #, c-format
 msgid " (%d hidden)"
 msgid_plural " (%d hidden)"
@@ -1306,9 +1326,6 @@ msgstr "Zmienia tło pulpitu i zachowanie menedżera pulpitu"
 
 #~ msgid "Create Symlin_k"
 #~ msgstr "Utwórz _dowiązanie"
-
-#~ msgid "_Zoom In"
-#~ msgstr "Po_większenie"
 
 #~ msgid "_Normal Size"
 #~ msgstr "_Normalny rozmiar"
