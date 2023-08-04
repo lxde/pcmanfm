@@ -1,4 +1,4 @@
-# European Portuguese translations for pcmanfm package
+# European Portuguese translation for pcmanfm package
 # Copyright (C) 2006 THE pcmanfm'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the pcmanfm package.
 # Nuno Miguel <nunis@netcabo.pt>, 2008, 2009.
@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: pcmanfm 1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-08-01 16:44+0200\n"
-"PO-Revision-Date: 2023-08-01 14:50+0100\n"
+"PO-Revision-Date: 2023-08-04 02:09+0100\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese\n"
 "Language: pt\n"
@@ -43,7 +43,7 @@ msgstr "<b>Fundo</b>"
 
 #: ../data/ui/desktop-pref.glade.h:3
 msgid "Wallpaper _mode:"
-msgstr "_Modo do papel de parede::"
+msgstr "_Modo do papel de parede:"
 
 #: ../data/ui/desktop-pref.glade.h:4
 msgid "_Wallpaper:"
@@ -233,11 +233,11 @@ msgid ""
 "- other files (e.g. on removable media) will be copied\n"
 "- for some external URI a shortcut will be created"
 msgstr ""
-"Se ativa, a ação \"Automática\" ao arrastar para a pasta da área de trabalho "
-"será:\n"
+"Se ativada, a ação \"Automática\" ao arrastar para a pasta da área de "
+"trabalho será:\n"
 "- para os ficheiros da pasta pessoal será criada uma ligação simbólica\n"
-"- os ficheiros no mesmo sistema de ficheiros serão movido\n"
-"- outros ficheiros (por exemplo, em unidades amovíveis) serão copiados\n"
+"- os ficheiros no mesmo sistema de ficheiros serão movidos\n"
+"- outros ficheiros (por exemplo, em unidades removíveis) serão copiados\n"
 "- para URI externos será criado um atalho"
 
 #: ../data/ui/pref.glade.h:21
@@ -319,7 +319,7 @@ msgstr "E_xibição"
 
 #: ../data/ui/pref.glade.h:40
 msgid "Hid_e 'Close tab' buttons"
-msgstr "Ocultar botão \"F_echar separador\""
+msgstr "Ocultar botão 'F_echar separador'"
 
 #: ../data/ui/pref.glade.h:41
 msgid "Al_ways show the tab bar"
@@ -792,10 +792,8 @@ msgid "S_ort Files"
 msgstr "_Ordenar ficheiros"
 
 #: ../src/main-win-ui.c:223
-#, fuzzy
-#| msgid "_Zoom In"
 msgid "Zoom _In"
-msgstr "_Ampliar"
+msgstr "Ampl_iar"
 
 #: ../src/main-win-ui.c:224
 msgid "Zoom O_ut"
@@ -968,11 +966,11 @@ msgstr "Mo_strar barra de ferramentas"
 
 #: ../src/main-win-ui.c:282
 msgid "Show 'New _Window' Button"
-msgstr "Mostrar botão \"Nova _janela\""
+msgstr "Mostrar botão 'Nova _janela'"
 
 #: ../src/main-win-ui.c:283
 msgid "Show 'New _Tab' Button"
-msgstr "Mostrar botão \"Novo _separador\""
+msgstr "Mostrar botão 'Novo _separador'"
 
 #: ../src/main-win-ui.c:284
 msgid "Show _Navigation Buttons"
@@ -980,7 +978,7 @@ msgstr "Mostrar botões de _navegação"
 
 #: ../src/main-win-ui.c:285
 msgid "Show '_Home' Button"
-msgstr "Mostrar botão \"_Pasta pessoal\""
+msgstr "Mostrar botão '_Pasta pessoal'"
 
 #: ../src/main-win-ui.c:286
 msgid "Sho_w Side Pane"
@@ -1129,7 +1127,7 @@ msgid ""
 "Enter a name for the new bookmark item:"
 msgstr ""
 "Adicionar a seguinte pasta aos marcadores:\n"
-"\"%s\"\n"
+"'%s'\n"
 "Indique o nome para o novo marcador:"
 
 #: ../src/main-win.c:1841
@@ -1159,7 +1157,7 @@ msgstr "Executar PcManFM como serviço"
 
 #: ../src/pcmanfm.c:81
 msgid "No function. Just to be compatible with nautilus"
-msgstr "Sem utilidade. Só serve para compatibilidade com o Nautilus"
+msgstr "Sem função. Apenas para ser compatível com o nautilus"
 
 #. options that are acceptable for every instance of pcmanfm and will be passed through IPC.
 #: ../src/pcmanfm.c:84
@@ -1176,7 +1174,7 @@ msgstr "Abrir preferências da área de trabalho"
 
 #: ../src/pcmanfm.c:87
 msgid "Use --desktop option only for one screen"
-msgstr "Utilizar a opção --desktop para só um ecrã"
+msgstr "Utilizar a opção --desktop apenas para um ecrã"
 
 #: ../src/pcmanfm.c:88
 msgid "Set desktop wallpaper from image FILE"
@@ -1225,7 +1223,7 @@ msgstr "Estilo"
 
 #: ../src/pcmanfm.c:97
 msgid "[FILE1, FILE2,...]"
-msgstr "[Ficheiro1, Ficheiro2,...]"
+msgstr "[FICHEIRO1, FICHEIRO2,...]"
 
 #. FIXME: add "on this X screen/monitor" into diagnostics
 #: ../src/pcmanfm.c:378
@@ -1245,14 +1243,14 @@ msgstr "Abrir em novo sep_arador"
 #: ../src/tab-page.c:378
 #, c-format
 msgid "\"%s\" (%s) %s"
-msgstr ""
+msgstr "\"%s\" (%s) %s"
 
 #. Note to translators: this is the information (name, type)
 #. about the selected file in the status bar
 #: ../src/tab-page.c:387
 #, c-format
 msgid "\"%s\" %s"
-msgstr ""
+msgstr "\"%s\" %s"
 
 #: ../src/tab-page.c:415
 #, c-format
