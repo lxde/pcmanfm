@@ -7,6 +7,10 @@ AM_INIT_AUTOMAKE([-Wall -Werror foreign no-dist-gzip dist-xz])
 
 AC_CONFIG_HEADERS([config.h])
 
+dnl Support silent build rules. Disable by either passing --disable-silent-rules
+dnl to configure or passing V=1 to make
+AM_SILENT_RULES([yes])
+
 # Checks for programs.
 AC_ISC_POSIX
 AC_PROG_CC
