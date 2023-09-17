@@ -94,6 +94,7 @@ AC_SUBST(GIO_LIBS)
 fm_modules="$gio_modules glib-2.0 pango >= 1.20.0 libfm >= 1.0"
 case "$ac_with_gtk" in
     3|3.*)
+        CFLAGS="$CFLAGS -Wno-deprecated-declarations"
         fm_modules="$fm_modules gtk+-3.0 libfm-gtk3 >= 1.0.1"
         ;;
     *)
