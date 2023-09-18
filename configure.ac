@@ -48,7 +48,7 @@ AC_ARG_ENABLE(debug,
     [enable_debug="${enableval}"],
     [enable_debug=no])
 
-if test "$enable_debug" = "yes"; then
+if test x"$enable_debug" = "xyes"; then
     # turn on debug and disable optimization
     CPPFLAGS="$CPPFLAGS -DG_ENABLE_DEBUG -O0 -g"
     case "$CC" in
@@ -84,27 +84,47 @@ AC_ARG_WITH(gtk,
     [ac_with_gtk="${withval}"],
     [ac_with_gtk=2])
 
+AC_ARG_ENABLE(wayland,
+    [AC_HELP_STRING([--enable-wayland],
+        [Enable Wayland support])],
+    [enable_wayland="${enableval}"],
+    [enable_wayland=no])
+
+AC_ARG_ENABLE(x11,
+    [AC_HELP_STRING([--enable-x11],
+        [Enable X11 support])],
+    [enable_x11="${enableval}"],
+    [enable_x11=yes])
+
+if test x"$enable_wayland" = "xno" -a x"&$enable_x11" = "xno"; then
+    AC_MSG_ERROR([At least one of X11 and Wayland needs to be enabled])
+fi
+
 # Checks for libraries.
+fm_modules="gthread-2.0 gio-unix-2.0 >= 2.18.0 glib-2.0 pango >= 1.20.0 libfm >= 1.0"
 
-PKG_CHECK_MODULES(XLIB, "x11")
-AC_SUBST(XLIB_CFLAGS)
-AC_SUBST(XLIB_LIBS)
-
-gio_modules="gthread-2.0 gio-unix-2.0 >= 2.18.0"
-PKG_CHECK_MODULES(GIO, [$gio_modules])
-AC_SUBST(GIO_CFLAGS)
-AC_SUBST(GIO_LIBS)
-
-fm_modules="$gio_modules glib-2.0 pango >= 1.20.0 libfm >= 1.0"
 case "$ac_with_gtk" in
     3|3.*)
         CFLAGS="$CFLAGS -Wno-deprecated-declarations"
         fm_modules="$fm_modules gtk+-3.0 libfm-gtk3 >= 1.0.1"
+        if test x"$enable_wayland" = "xyes"; then
+            fm_modules="$fm_modules gtk-layer-shell-0 >= 0.5.2"
+            AC_DEFINE(HAVE_WAYLAND, 1, [Have Wayland support])
+        fi
         ;;
     *)
         fm_modules="$fm_modules gtk+-2.0 libfm-gtk >= 1.0.1"
+        if test x"$enable_wayland" = "xyes"; then
+            AC_MSG_ERROR([Wayland only works with GTK3])
+        fi
         ;;
 esac
+
+if test x"$enable_x11" = "xyes"; then
+    fm_modules="$fm_modules x11"
+    AC_DEFINE(HAVE_X11, 1, [Have X11 support])
+fi
+
 PKG_CHECK_MODULES(FM, [$fm_modules])
 AC_SUBST(FM_CFLAGS)
 AC_SUBST(FM_LIBS)
