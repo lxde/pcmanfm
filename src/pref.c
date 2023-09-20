@@ -751,6 +751,7 @@ void fm_edit_preference( GtkWindow* parent, int page )
         INIT_BOOL_SHOW(builder, FmConfig, show_full_names, NULL);
         INIT_BOOL_SHOW(builder, FmConfig, shadow_hidden, NULL);
 #endif
+        INIT_ENTRY(builder, FmConfig, date_time_format, NULL);
 
         /* 'Layout' tab */
         INIT_BOOL(builder, FmAppConfig, hide_close_btn, NULL);
