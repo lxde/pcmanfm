@@ -102,7 +102,7 @@ case "$ac_with_gtk" in
         fm_modules="$fm_modules gtk+-3.0 libfm-gtk3 >= 1.0.1"
         ;;
     *)
-        fm_modules="$fm_modules gtk+-2.0 libfm-gtk >= 1.0.1"
+        fm_modules="$fm_modules gtk+-2.0 >= 2.16.0 libfm-gtk >= 1.0.1"
         ;;
 esac
 PKG_CHECK_MODULES(FM, [$fm_modules])

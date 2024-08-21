@@ -2,6 +2,7 @@
 /*
  *  Copyright © 2009 Thomas H.P. Andersen <phomes@gmail.com>,
  *              2009 Javier Jardón <jjardon@gnome.org>
+ *              2024 Ingo Brückl
  *
  *  This runtime is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU Lesser General Public License as published by
@@ -61,6 +62,9 @@ G_BEGIN_DECLS
 #if !GTK_CHECK_VERSION (2, 18, 0)
 #define gtk_widget_has_focus(widget)            GTK_WIDGET_HAS_FOCUS(widget)
 #define gtk_widget_get_visible(widget)          GTK_WIDGET_VISIBLE(widget)
+#define gtk_widget_set_visible(widget)          GTK_WIDGET_SET_FLAGS(widget, GTK_VISIBLE)
+#define gtk_widget_get_sensitive(widget)        GTK_WIDGET_SENSITIVE(widget)
+#define gtk_widget_get_state(widget)            GTK_WIDGET_STATE(widget)
 #endif /* GTK+ < 2.18.0 */
 
 #if !GLIB_CHECK_VERSION(2, 28, 0)
