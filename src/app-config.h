@@ -2,7 +2,7 @@
  *      app-config.h
  *
  *      Copyright 2010 - 2011 PCMan <pcman.tw@gmail.com>
- *      Copyright 2012-2014 Andriy Grytsenko (LStranger) <andrej@rep.kiev.ua>
+ *      Copyright 2012-2021 Andriy Grytsenko (LStranger) <andrej@rep.kiev.ua>
  *
  *      This program is free software; you can redistribute it and/or modify
  *      it under the terms of the GNU General Public License as published by
@@ -68,6 +68,7 @@ typedef struct _FmAppConfigClass        FmAppConfigClass;
 
 typedef struct
 {
+    struct _FmDesktop* desktop; /* where it is used */
     FmWallpaperMode wallpaper_mode;
     char* wallpaper;
     char** wallpapers;
@@ -80,6 +81,8 @@ typedef struct
     GdkColor desktop_shadow;
     char* desktop_font;
     char *folder; /* NULL if default, empty if no icons, else path */
+    char* plug_name;
+    char* model; /* only available in GTK+3 */
     gboolean show_wm_menu;
 #if FM_CHECK_VERSION(1, 0, 2)
     FmSortMode desktop_sort_type;

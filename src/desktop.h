@@ -2,7 +2,7 @@
  *      desktop.h
  *
  *      Copyright 2010 - 2012 Hong Jen Yee (PCMan) <pcman.tw@gmail.com>
- *      Copyright 2012-2013 Andriy Grytsenko (LStranger) <andrej@rep.kiev.ua>
+ *      Copyright 2012-2021 Andriy Grytsenko (LStranger) <andrej@rep.kiev.ua>
  *
  *      This program is free software; you can redistribute it and/or modify
  *      it under the terms of the GNU General Public License as published by
@@ -84,6 +84,10 @@ struct _FmDesktop
     FmFolderModel* model;
     guint cur_desktop;
     gint monitor;
+    char* plug_name;
+#if GTK_CHECK_VERSION(3, 22, 0)
+    char* mon_model;
+#endif
     FmBackgroundCache *cache;
 #if GTK_CHECK_VERSION(3, 0, 0)
     GtkCssProvider *css;
@@ -95,7 +99,7 @@ struct _FmDesktop
     guint search_entry_changed_id;
     guint search_timeout_id;
     /* desktop settings for this monitor */
-    FmDesktopConfig conf;
+    FmDesktopConfig *conf;
 };
 
 struct _FmDesktopClass
