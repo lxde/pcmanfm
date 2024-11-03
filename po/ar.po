@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm 1.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-01 16:44+0200\n"
+"POT-Creation-Date: 2024-11-03 14:35+0100\n"
 "PO-Revision-Date: 2014-08-16 09:03+0000\n"
 "Last-Translator: صفا الفليج <safa1996alfulaij@gmail.com>\n"
 "Language-Team: Arabic <doc@arabeyes.org>\n"
@@ -116,12 +116,12 @@ msgstr "أ_ظهر القوائم التي توفّرها مدراء النواف
 msgid "_Use desktop as a folder (show icons on it) by path:"
 msgstr "است_خدم سطح المكتب كمجلد (أظهر أيقونات عليه) بالمسار:"
 
-#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:84
+#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:85
 msgctxt "Use path for some folder: ..."
 msgid "Default"
 msgstr "الافتراضي"
 
-#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:85
+#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:86
 msgctxt "Use path for some folder: ..."
 msgid "Custom:"
 msgstr "مخصّص:"
@@ -301,176 +301,180 @@ msgid "Us_e SI decimal prefixes instead of IEC binary prefixes"
 msgstr "اس_تخدم سوابق SI العشرية بدلًا من سوابق IEC الثنائية"
 
 #: ../data/ui/pref.glade.h:36
+msgid "Show _date as YYYY-MM-DD instead of in locale format"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:37
 msgid "Treat backup files as _hidden"
 msgstr "عامِل ملفات النسخ الاحتياطي بأنها م_خفية"
 
-#: ../data/ui/pref.glade.h:37
+#: ../data/ui/pref.glade.h:38
 msgid "Al_ways show full file names"
 msgstr "أظهر أسماء الملفات بالكامل _دائمًا"
 
-#: ../data/ui/pref.glade.h:38
+#: ../data/ui/pref.glade.h:39
 msgid "Show icons of hidden _files shadowed"
 msgstr "أظهر أيقونات الملفات المخفية م_ظلّلة"
 
-#: ../data/ui/pref.glade.h:39
+#: ../data/ui/pref.glade.h:40
 msgid "_Display"
 msgstr "عر_ض"
 
-#: ../data/ui/pref.glade.h:40
+#: ../data/ui/pref.glade.h:41
 msgid "Hid_e 'Close tab' buttons"
 msgstr "أ_خفِ أزرار 'أغلق اللسان'"
 
-#: ../data/ui/pref.glade.h:41
+#: ../data/ui/pref.glade.h:42
 msgid "Al_ways show the tab bar"
 msgstr "أظهر شريط الألس_نة دائمًا"
 
-#: ../data/ui/pref.glade.h:42
+#: ../data/ui/pref.glade.h:43
 msgid "_Maximum width of tab label:"
 msgstr "أ_قصى عرض للصيقة اللسان:"
 
 #. Use genitive case here, context is: width is XXX characters
-#: ../data/ui/pref.glade.h:44
+#: ../data/ui/pref.glade.h:45
 msgid "characters"
 msgstr "محرف"
 
-#: ../data/ui/pref.glade.h:45
+#: ../data/ui/pref.glade.h:46
 msgid "<b>Directories Tree</b>"
 msgstr "<b>شجرة الأدلة</b>"
 
-#: ../data/ui/pref.glade.h:46
+#: ../data/ui/pref.glade.h:47
 msgid "Hide e_xpander on empty or locked folder"
 msgstr "أخفِ المُو_سِّع في المجلدات الفارغة أو المُقفلة"
 
-#: ../data/ui/pref.glade.h:47
+#: ../data/ui/pref.glade.h:48
 msgid "<b>Show in Places:</b>"
 msgstr "<b>أظهر في الأماكن:</b>"
 
-#: ../data/ui/pref.glade.h:48
+#: ../data/ui/pref.glade.h:49
 msgid "_Home Folder"
 msgstr "المجلد المن_زل"
 
-#: ../data/ui/pref.glade.h:49
+#: ../data/ui/pref.glade.h:50
 msgid "Des_ktop"
 msgstr "سط_ح المكتب"
 
-#: ../data/ui/pref.glade.h:50 ../src/main-win-ui.c:238
+#: ../data/ui/pref.glade.h:51 ../src/main-win-ui.c:239
 msgid "_Trash Can"
 msgstr "سلة الم_هملات"
 
-#: ../data/ui/pref.glade.h:51
+#: ../data/ui/pref.glade.h:52
 msgid "_Filesystem Root"
 msgstr "جذر ن_ظام الملفات"
 
-#: ../data/ui/pref.glade.h:52
+#: ../data/ui/pref.glade.h:53
 msgid "App_lications"
 msgstr "الت_طبيقات"
 
-#: ../data/ui/pref.glade.h:53 ../src/main-win-ui.c:241
+#: ../data/ui/pref.glade.h:54 ../src/main-win-ui.c:242
 msgid "Dev_ices"
 msgstr "الأ_جهزة"
 
-#: ../data/ui/pref.glade.h:54
+#: ../data/ui/pref.glade.h:55
 msgid "_Network"
 msgstr "ال_شبكة"
 
-#: ../data/ui/pref.glade.h:55
+#: ../data/ui/pref.glade.h:56
 msgid "_Layout"
 msgstr "ت_خطيط"
 
-#: ../data/ui/pref.glade.h:56
+#: ../data/ui/pref.glade.h:57
 msgid "<b>Auto-mount</b>"
 msgstr "<b>الضمّ الآلي</b>"
 
-#: ../data/ui/pref.glade.h:57
+#: ../data/ui/pref.glade.h:58
 msgid "_Mount mountable volumes automatically on program startup"
 msgstr "_ضمّ الأجزراء القابلة للضمّ آليًا عند بدء البرنامج"
 
-#: ../data/ui/pref.glade.h:58
+#: ../data/ui/pref.glade.h:59
 msgid "Mo_unt removable media automatically when they are inserted"
 msgstr "ضمّ الوسا_ئط القابلة للإزالة آيًا عندما تُدرج"
 
-#: ../data/ui/pref.glade.h:59
+#: ../data/ui/pref.glade.h:60
 msgid "_Show available options for removable media when they are inserted"
 msgstr "أظهر ال_خيارات المتوفّرة عندما يُدرَج وسيط قابل للإزالة"
 
-#: ../data/ui/pref.glade.h:60
+#: ../data/ui/pref.glade.h:61
 msgid "Do_n't show available options for those media types:"
 msgstr "لا تظهر الخيارات الم_توفّرة لأنواع الوسائط هذه:"
 
-#: ../data/ui/pref.glade.h:61
+#: ../data/ui/pref.glade.h:62
 msgid "_Remove selected"
 msgstr "أ_زل المحدّد"
 
-#: ../data/ui/pref.glade.h:62
+#: ../data/ui/pref.glade.h:63
 msgid "_Open mounted removable media in new tab instead of new window"
 msgstr "ا_فتح الوسيط القابل للإزالة المضموم في لسان بدلًا من نافذة جديدة"
 
-#: ../data/ui/pref.glade.h:63
+#: ../data/ui/pref.glade.h:64
 msgid "When removable medium unmounted:"
 msgstr "عندما يُلغى ضمّ الوسيط القابل للإزالة:"
 
-#: ../data/ui/pref.glade.h:64
+#: ../data/ui/pref.glade.h:65
 msgid "Clos_e tab containing removable medium"
 msgstr "أ_غلق اللسان الحاوي للوسيط القابل للإزالة"
 
-#: ../data/ui/pref.glade.h:65
+#: ../data/ui/pref.glade.h:66
 msgid "Change folder in the tab to _Home Folder"
 msgstr "غيّر المجلد في اللسان إلى المجلد المن_زل"
 
-#: ../data/ui/pref.glade.h:66
+#: ../data/ui/pref.glade.h:67
 msgid "_Volume Management"
 msgstr "إدارة الأق_راص"
 
-#: ../data/ui/pref.glade.h:67
+#: ../data/ui/pref.glade.h:68
 msgid "<b>Programs</b>"
 msgstr "<b>البرامج</b>"
 
-#: ../data/ui/pref.glade.h:68
+#: ../data/ui/pref.glade.h:69
 msgid "<i>Commands below may include extra options if necessary.</i>"
 msgstr "<i>قد تتضمّن الأوامر أدناه خيارات إضافية في حال احتجت إليها.</i>"
 
-#: ../data/ui/pref.glade.h:69
+#: ../data/ui/pref.glade.h:70
 msgid "_Terminal emulator:"
 msgstr "محاكي ال_طرفية:"
 
-#: ../data/ui/pref.glade.h:70
+#: ../data/ui/pref.glade.h:71
 msgid "_Switch user command:"
 msgstr "أمر ت_بديل المستخدِم:"
 
 #. Application command to format some drive
-#: ../data/ui/pref.glade.h:72
+#: ../data/ui/pref.glade.h:73
 msgid "_Format command:"
 msgstr "أمر الت_هيئة:"
 
-#: ../data/ui/pref.glade.h:73
+#: ../data/ui/pref.glade.h:74
 msgid "A_rchiver integration:"
 msgstr "التوافق مع مدير الأر_شيفات:"
 
-#: ../data/ui/pref.glade.h:74
+#: ../data/ui/pref.glade.h:75
 msgid "<b>Templates</b>"
 msgstr "<b>القوالب</b>"
 
-#: ../data/ui/pref.glade.h:75
+#: ../data/ui/pref.glade.h:76
 msgid "S_how only user defined templates in menu"
 msgstr "أ_ظهر القوالب التي عرّفها المستخدِم فقط في القوائم"
 
-#: ../data/ui/pref.glade.h:76
+#: ../data/ui/pref.glade.h:77
 msgid "Show _only one template for each MIME type"
 msgstr "أظهر قالب واحد ف_قط لكل نوع MIME"
 
-#: ../data/ui/pref.glade.h:77
+#: ../data/ui/pref.glade.h:78
 msgid "Ru_n default application after creation from template"
 msgstr "ش_غّل التطبيق الافتراضي بعد الإنشاء من قالب"
 
-#: ../data/ui/pref.glade.h:78
+#: ../data/ui/pref.glade.h:79
 msgid "<b>Other Options</b>"
 msgstr "<b>خيارات أخرى</b>"
 
-#: ../data/ui/pref.glade.h:79
+#: ../data/ui/pref.glade.h:80
 msgid "Use Application Startup Notify _by default"
 msgstr "ا_ستخدم إخطار بدء التطبيق افتراضيًا"
 
-#: ../data/ui/pref.glade.h:80
+#: ../data/ui/pref.glade.h:81
 #, fuzzy
 msgid ""
 "If checked then use Startup Notify for application if another not stated "
@@ -481,63 +485,63 @@ msgstr ""
 "آخر صراحة./n اذا لم يتم اختيار التطبيق ,استخدام قائمة (بدء التشغيل) فقط إلا "
 "إذا كان هذا هو تعريف للتطبيق"
 
-#: ../data/ui/pref.glade.h:82
+#: ../data/ui/pref.glade.h:83
 msgid "D_efer test for content type on folder loading"
 msgstr "أ_جّل اختبار نوع المحتوى عند تحميل المجلد"
 
-#: ../data/ui/pref.glade.h:83
+#: ../data/ui/pref.glade.h:84
 msgid "Use path for \"Home Folder\" button:"
 msgstr "استخدم مسار زر \"المجلد المنزل\":"
 
-#: ../data/ui/pref.glade.h:86
+#: ../data/ui/pref.glade.h:87
 msgid "_Use current"
 msgstr "ا_ستخدم الحالي"
 
-#: ../data/ui/pref.glade.h:87
+#: ../data/ui/pref.glade.h:88
 msgid "_Advanced"
 msgstr "مت_قّدم"
 
-#: ../data/ui/pref.glade.h:88
+#: ../data/ui/pref.glade.h:89
 msgid "<b>_Do not load modules matching:</b>"
 msgstr "<b>لا ت_حمّل الوحدات التي تطابق:</b>"
 
-#: ../data/ui/pref.glade.h:89
+#: ../data/ui/pref.glade.h:90
 msgid "<b>_Load these modules anyway:</b>"
 msgstr "<b>حمّل _هذه الوحدات بأي حال:</b>"
 
-#: ../data/ui/pref.glade.h:90
+#: ../data/ui/pref.glade.h:91
 msgid "Modules"
 msgstr "الوحدات"
 
-#: ../data/ui/pref.glade.h:91
+#: ../data/ui/pref.glade.h:92
 msgid "Auto (move if on the same FS, copy otherwise)"
 msgstr "آلي (انقل إذا كان نفس نظام الملفات، انسخ إذا كان غير ذلك)"
 
-#: ../data/ui/pref.glade.h:92
+#: ../data/ui/pref.glade.h:93
 msgid "Copy"
 msgstr "نسخ"
 
-#: ../data/ui/pref.glade.h:93
+#: ../data/ui/pref.glade.h:94
 msgid "Move"
 msgstr "نقل"
 
-#: ../data/ui/pref.glade.h:94
+#: ../data/ui/pref.glade.h:95
 msgid "Ask"
 msgstr "اسأل"
 
-#: ../data/ui/pref.glade.h:95
+#: ../data/ui/pref.glade.h:96
 msgid "Icon view"
 msgstr "منظور الأيقونات"
 
-#: ../data/ui/pref.glade.h:96
+#: ../data/ui/pref.glade.h:97
 msgid "Compact view"
 msgstr "منظور مدمج"
 
-#: ../data/ui/pref.glade.h:97
+#: ../data/ui/pref.glade.h:98
 msgid "Thumbnail view"
 msgstr "منظور المصغّرات"
 
-#: ../data/ui/pref.glade.h:98
+#: ../data/ui/pref.glade.h:99
 msgid "Detailed list view"
 msgstr "منظور قائمة مفصّلة"
 
@@ -625,11 +629,11 @@ msgstr "افتح في مدير الملفات"
 msgid "Open in New Ta_b"
 msgstr "فتح في لسا_ن جديد"
 
-#: ../src/desktop-ui.c:52 ../src/tab-page.c:57
+#: ../src/desktop-ui.c:52 ../src/tab-page.c:58
 msgid "Open in New Win_dow"
 msgstr "فتح في نا_فذة جديدة"
 
-#: ../src/desktop-ui.c:54 ../src/tab-page.c:59
+#: ../src/desktop-ui.c:54 ../src/tab-page.c:60
 msgid "Open in Termina_l"
 msgstr "افتح في الطر_فية"
 
@@ -662,394 +666,394 @@ msgstr "أظهر قائمة سطح المكتب"
 msgid "Desktop"
 msgstr "سطح المكتب"
 
-#: ../src/main-win-ui.c:189
+#: ../src/main-win-ui.c:190
 msgid "_File"
 msgstr "_ملف"
 
-#: ../src/main-win-ui.c:190
+#: ../src/main-win-ui.c:191
 msgid "_New Window"
 msgstr "نا_فذة جديدة"
 
-#: ../src/main-win-ui.c:190
+#: ../src/main-win-ui.c:191
 #, fuzzy
 msgid "Open new file manager window"
 msgstr "افتح في مدير الملفات"
 
-#: ../src/main-win-ui.c:191
+#: ../src/main-win-ui.c:192
 msgid "New T_ab"
 msgstr "_لسان جديد"
 
-#: ../src/main-win-ui.c:191
+#: ../src/main-win-ui.c:192
 msgid "Create new tab for this folder"
 msgstr "أنشئ لسان جديد لهذا المجلد"
 
-#: ../src/main-win-ui.c:192
+#: ../src/main-win-ui.c:193
 msgid "C_reate New..."
 msgstr "أن_شئ جديدًا..."
 
-#: ../src/main-win-ui.c:193
+#: ../src/main-win-ui.c:194
 msgid "Folder"
 msgstr "مجلد"
 
-#: ../src/main-win-ui.c:194
+#: ../src/main-win-ui.c:195
 msgid "Empty File"
 msgstr "ملف فارغ"
 
-#: ../src/main-win-ui.c:195
+#: ../src/main-win-ui.c:196
 msgid "Folder Propertie_s"
 msgstr "خ_صائص المجلد"
 
-#: ../src/main-win-ui.c:196
+#: ../src/main-win-ui.c:197
 msgid "_Close Tab"
 msgstr "أ_غلق اللسان"
 
-#: ../src/main-win-ui.c:197
+#: ../src/main-win-ui.c:198
 msgid "Close _Window"
 msgstr "أغلق النافذ_ة"
 
-#: ../src/main-win-ui.c:198
+#: ../src/main-win-ui.c:199
 msgid "_Edit"
 msgstr "ح_رّر"
 
-#: ../src/main-win-ui.c:200
+#: ../src/main-win-ui.c:201
 msgid "C_ut"
 msgstr "_قص"
 
-#: ../src/main-win-ui.c:203
+#: ../src/main-win-ui.c:204
 msgid "Move to _Trash"
 msgstr "انقل إلى الم_هملات"
 
-#: ../src/main-win-ui.c:205
+#: ../src/main-win-ui.c:206
 msgid "Copy Pat_h(s)"
 msgstr "انسخ الم_سار(ات)"
 
-#: ../src/main-win-ui.c:206
+#: ../src/main-win-ui.c:207
 msgid "R_ename..."
 msgstr "أ_عد التسمية..."
 
-#: ../src/main-win-ui.c:207
+#: ../src/main-win-ui.c:208
 msgid "D_uplicate..."
 msgstr "_ضاعِف..."
 
-#: ../src/main-win-ui.c:208
+#: ../src/main-win-ui.c:209
 msgid "Create Lin_k..."
 msgstr "أنشئ _وصلة..."
 
-#: ../src/main-win-ui.c:209
+#: ../src/main-win-ui.c:210
 msgid "_Move to..."
 msgstr "ان_قل إلى..."
 
-#: ../src/main-win-ui.c:210
+#: ../src/main-win-ui.c:211
 msgid "Copy to_..."
 msgstr "ان_سخ إلى..."
 
-#: ../src/main-win-ui.c:211
+#: ../src/main-win-ui.c:212
 msgid "Propertie_s"
 msgstr "_خصائص"
 
-#: ../src/main-win-ui.c:213
+#: ../src/main-win-ui.c:214
 msgid "_Invert Selection"
 msgstr "ا_عكس التحديد"
 
-#: ../src/main-win-ui.c:214
+#: ../src/main-win-ui.c:215
 msgid "Prefere_nces"
 msgstr "الت_فضيلات"
 
-#: ../src/main-win-ui.c:215
+#: ../src/main-win-ui.c:216
 msgid "_View"
 msgstr "من_ظور"
 
-#: ../src/main-win-ui.c:216
+#: ../src/main-win-ui.c:217
 msgid "_Reload Folder"
 msgstr "أ_عد تحميل المجلد"
 
-#: ../src/main-win-ui.c:216
+#: ../src/main-win-ui.c:217
 msgid "Reload current folder"
 msgstr "أعد تحميل المجلد الحالي"
 
-#: ../src/main-win-ui.c:217
+#: ../src/main-win-ui.c:218
 msgid "Tool_bar"
 msgstr "شري_ط الأدوات"
 
-#: ../src/main-win-ui.c:218
+#: ../src/main-win-ui.c:219
 msgid "Pat_h Bar"
 msgstr "شريط الم_سارات"
 
-#: ../src/main-win-ui.c:219
+#: ../src/main-win-ui.c:220
 msgid "Side _Pane"
 msgstr "اللوحة ال_جانبية"
 
 #. other see below: 'ShowHidden' 'ShowStatus' 'Fullscreen' 'IconView'...
-#: ../src/main-win-ui.c:221
+#: ../src/main-win-ui.c:222
 msgid "Fo_lder View Mode"
 msgstr "وضع منظور الم_جلد"
 
-#: ../src/main-win-ui.c:222
+#: ../src/main-win-ui.c:223
 msgid "S_ort Files"
 msgstr "_رتّب الملفات"
 
-#: ../src/main-win-ui.c:223
+#: ../src/main-win-ui.c:224
 #, fuzzy
 #| msgid "Zoom O_ut"
 msgid "Zoom _In"
 msgstr "بعّ_د"
 
-#: ../src/main-win-ui.c:224
+#: ../src/main-win-ui.c:225
 msgid "Zoom O_ut"
 msgstr "بعّ_د"
 
-#: ../src/main-win-ui.c:227
+#: ../src/main-win-ui.c:228
 msgid "Fil_ter..."
 msgstr "ر_شّح..."
 
-#: ../src/main-win-ui.c:229
+#: ../src/main-win-ui.c:230
 msgid "_Help"
 msgstr "م_ساعدة"
 
-#: ../src/main-win-ui.c:231
+#: ../src/main-win-ui.c:232
 msgid "_Keyboard Navigation"
 msgstr "التنقل بلو_حة المفاتيح"
 
-#: ../src/main-win-ui.c:232
+#: ../src/main-win-ui.c:233
 msgid "_Go"
 msgstr "ا_ذهب"
 
-#: ../src/main-win-ui.c:233
+#: ../src/main-win-ui.c:234
 msgid "_Previous Folder"
 msgstr "المجلد الساب_ق"
 
-#: ../src/main-win-ui.c:233
+#: ../src/main-win-ui.c:234
 msgid "Return to previous folder in history"
 msgstr "ارجع إلى المجلد السابق في التأريخ"
 
-#: ../src/main-win-ui.c:234
+#: ../src/main-win-ui.c:235
 msgid "_Next Folder"
 msgstr "المجلد ال_تالي"
 
-#: ../src/main-win-ui.c:234
+#: ../src/main-win-ui.c:235
 msgid "Go forward to next folder in history"
 msgstr "اذهب أمامًا إلى المجلد التالي في التأريخ"
 
-#: ../src/main-win-ui.c:235
+#: ../src/main-win-ui.c:236
 msgid "Pa_rent Folder"
 msgstr "المجلد الأ_مّ"
 
-#: ../src/main-win-ui.c:235
+#: ../src/main-win-ui.c:236
 msgid "Go to parent Folder"
 msgstr "اذهب إلى المجلد الأمّ"
 
-#: ../src/main-win-ui.c:236
+#: ../src/main-win-ui.c:237
 msgid "H_ome Folder"
 msgstr "مجلد المن_زل"
 
-#: ../src/main-win-ui.c:236
+#: ../src/main-win-ui.c:237
 msgid "Go to home folder"
 msgstr "اذهب إلى المجلد المنزل"
 
-#: ../src/main-win-ui.c:237
+#: ../src/main-win-ui.c:238
 msgid "_Desktop"
 msgstr "سط_ح المكتب"
 
-#: ../src/main-win-ui.c:237
+#: ../src/main-win-ui.c:238
 msgid "Go to desktop folder"
 msgstr "اذهب إلى مجلد سطح المكتب"
 
-#: ../src/main-win-ui.c:238
+#: ../src/main-win-ui.c:239
 msgid "Open trash can"
 msgstr "افتح سلة المهملات"
 
-#: ../src/main-win-ui.c:239
+#: ../src/main-win-ui.c:240
 msgid "Filesyste_m Root"
 msgstr "جذر ن_ظام الملفات"
 
-#: ../src/main-win-ui.c:239
+#: ../src/main-win-ui.c:240
 msgid "Go fo filesystem root"
 msgstr "اذهب إلى جذر نظام الملفات"
 
-#: ../src/main-win-ui.c:240
+#: ../src/main-win-ui.c:241
 msgid "_Applications"
 msgstr "الت_طبيقات"
 
-#: ../src/main-win-ui.c:240
+#: ../src/main-win-ui.c:241
 msgid "Go to root of applications menu folder"
 msgstr "اذهب إلى جذر مجلد قائمة البرمجيات"
 
-#: ../src/main-win-ui.c:241
+#: ../src/main-win-ui.c:242
 msgid "Go to list of devices connected to the computer"
 msgstr "اذهب إلى قائمة من الأجهزة المتّصلة بالحاسوب"
 
-#: ../src/main-win-ui.c:242
+#: ../src/main-win-ui.c:243
 msgid "Net_work"
 msgstr "الشب_كة"
 
-#: ../src/main-win-ui.c:242
+#: ../src/main-win-ui.c:243
 msgid "Go to list of places on the network"
 msgstr "اذهب إلى الأماكن في الشبكة"
 
-#: ../src/main-win-ui.c:243
+#: ../src/main-win-ui.c:244
 msgid "_Go to Location..."
 msgstr "ا_ذهب إلى الموقع..."
 
-#: ../src/main-win-ui.c:244
+#: ../src/main-win-ui.c:245
 msgid "_Connect to Server..."
 msgstr "اتّصل ب_خادوم..."
 
-#: ../src/main-win-ui.c:244
+#: ../src/main-win-ui.c:245
 msgid "Open a window to choose remote folder location"
 msgstr "افتح نافذة لاختيار موقع المجلد البعيد"
 
-#: ../src/main-win-ui.c:245
+#: ../src/main-win-ui.c:246
 msgid "Go to the path in the location bar"
 msgstr "اذهب إلى المسار في شريط الموقع"
 
-#: ../src/main-win-ui.c:246
+#: ../src/main-win-ui.c:247
 msgid "_Bookmarks"
 msgstr "_علامات"
 
-#: ../src/main-win-ui.c:247
+#: ../src/main-win-ui.c:248
 msgid "_Add to Bookmarks..."
 msgstr "أ_ضف إلى العلامات..."
 
-#: ../src/main-win-ui.c:247
+#: ../src/main-win-ui.c:248
 msgid "Add current folder to bookmarks list"
 msgstr "أضف المجلد الحالي إلى قائمة العلامات"
 
-#: ../src/main-win-ui.c:248
+#: ../src/main-win-ui.c:249
 msgid "Too_ls"
 msgstr "أ_دوات"
 
-#: ../src/main-win-ui.c:249
+#: ../src/main-win-ui.c:250
 msgid "Open Current Folder in _Terminal"
 msgstr "افتح المجلد الحالي في ال_طرفية"
 
-#: ../src/main-win-ui.c:251
+#: ../src/main-win-ui.c:252
 msgid "Fin_d Files..."
 msgstr "ا_عثر على ملفات..."
 
-#: ../src/main-win-ui.c:251
+#: ../src/main-win-ui.c:252
 msgid "Open search dialog"
 msgstr "افتح حواري البحث"
 
-#: ../src/main-win-ui.c:254
+#: ../src/main-win-ui.c:255
 msgid "_Run a Command in Current Folder..."
 msgstr "ش_غّل أمرًا في المجلد الحالي..."
 
 #. Note to translators: "Mingle..." means "Do not put folders before files" but make the translation as short as possible, please!
-#: ../src/main-win-ui.c:271
+#: ../src/main-win-ui.c:272
 msgid "Mingle _Files and Folders"
 msgstr "اخل_ط الملفات والمجلدات"
 
-#: ../src/main-win-ui.c:274
+#: ../src/main-win-ui.c:275
 msgid "_Ignore Name Case"
 msgstr "ت_جاهل حالة الاسم"
 
-#: ../src/main-win-ui.c:276
+#: ../src/main-win-ui.c:277
 msgid "Sho_w Hidden"
 msgstr "أظهر ال_مخفي"
 
 #. Note to translators: this save is meant for folder's settings such as sort
-#: ../src/main-win-ui.c:278
+#: ../src/main-win-ui.c:279
 msgid "Preserve This Folder's Settings"
 msgstr "حافظ على إعدادات المجلد هذه"
 
-#: ../src/main-win-ui.c:279
+#: ../src/main-win-ui.c:280
 msgid ""
 "Check to remember view and sort as folder setting rather than global one"
 msgstr "انقر لتذكّر إعدادات منظور وفرز المجلد بدل العمومية"
 
-#: ../src/main-win-ui.c:281
+#: ../src/main-win-ui.c:282
 msgid "_Show Toolbar"
 msgstr "أ_ظهر شريط الأدوات"
 
-#: ../src/main-win-ui.c:282
+#: ../src/main-win-ui.c:283
 msgid "Show 'New _Window' Button"
 msgstr "أظهر زر '_نافذة جديدة'"
 
-#: ../src/main-win-ui.c:283
+#: ../src/main-win-ui.c:284
 msgid "Show 'New _Tab' Button"
 msgstr "أظهر زر 'ل_سان جديد'"
 
-#: ../src/main-win-ui.c:284
+#: ../src/main-win-ui.c:285
 msgid "Show _Navigation Buttons"
 msgstr "أظهر أزرار التن_قّل"
 
-#: ../src/main-win-ui.c:285
+#: ../src/main-win-ui.c:286
 msgid "Show '_Home' Button"
 msgstr "أظهر زر 'المن_زل'"
 
-#: ../src/main-win-ui.c:286
+#: ../src/main-win-ui.c:287
 msgid "Sho_w Side Pane"
 msgstr "أ_ظهر اللوحة الجانبية"
 
-#: ../src/main-win-ui.c:287
+#: ../src/main-win-ui.c:288
 msgid "Show Status B_ar"
 msgstr "أظهر _شريط الحالة"
 
-#: ../src/main-win-ui.c:288
+#: ../src/main-win-ui.c:289
 msgid "_Dual Pane Mode"
 msgstr "وضع اللوحة الم_زدوجة"
 
-#: ../src/main-win-ui.c:288
+#: ../src/main-win-ui.c:289
 msgid "Show two panels with folder views"
 msgstr "أظهر لوحتين بمنظوريّ مجلدات"
 
-#: ../src/main-win-ui.c:289
+#: ../src/main-win-ui.c:290
 msgid "Fullscreen _Mode"
 msgstr "وضع ملء ال_شاشة"
 
-#: ../src/main-win-ui.c:295
+#: ../src/main-win-ui.c:296
 msgid "_Icon View"
 msgstr "منظور أي_قونات"
 
-#: ../src/main-win-ui.c:296
+#: ../src/main-win-ui.c:297
 msgid "_Compact View"
 msgstr "منظور م_دمج"
 
-#: ../src/main-win-ui.c:297
+#: ../src/main-win-ui.c:298
 msgid "_Thumbnail View"
 msgstr "منظور م_صغرات"
 
-#: ../src/main-win-ui.c:298
+#: ../src/main-win-ui.c:299
 msgid "Detailed _List View"
 msgstr "منظور قائمة م_فصّلة"
 
-#: ../src/main-win-ui.c:311 ../src/main-win-ui.c:319
+#: ../src/main-win-ui.c:312 ../src/main-win-ui.c:320
 msgid "By _Name"
 msgstr "بالا_سم"
 
-#: ../src/main-win-ui.c:312 ../src/main-win-ui.c:320
+#: ../src/main-win-ui.c:313 ../src/main-win-ui.c:321
 msgid "By _Modification Time"
 msgstr "بوقت الت_عديل"
 
-#: ../src/main-win-ui.c:313 ../src/main-win-ui.c:321
+#: ../src/main-win-ui.c:314 ../src/main-win-ui.c:322
 msgid "By _Size"
 msgstr "بالح_جم"
 
-#: ../src/main-win-ui.c:314 ../src/main-win-ui.c:322
+#: ../src/main-win-ui.c:315 ../src/main-win-ui.c:323
 msgid "By File _Type"
 msgstr "ب_نوع الملف"
 
-#: ../src/main-win-ui.c:316
+#: ../src/main-win-ui.c:317
 msgid "By _Extension"
 msgstr "بالام_تداد"
 
-#: ../src/main-win-ui.c:329
+#: ../src/main-win-ui.c:330
 msgid "Places"
 msgstr "الأماكن"
 
-#: ../src/main-win-ui.c:330
+#: ../src/main-win-ui.c:331
 msgid "Directory Tree"
 msgstr "شجرة الأدلة"
 
-#: ../src/main-win-ui.c:331
+#: ../src/main-win-ui.c:332
 msgid "Remote"
 msgstr "البعيد"
 
-#: ../src/main-win-ui.c:337
+#: ../src/main-win-ui.c:338
 msgid "_Location"
 msgstr "ال_مكان"
 
-#: ../src/main-win-ui.c:338
+#: ../src/main-win-ui.c:339
 msgid "_Buttons"
 msgstr "الأ_زرار"
 
@@ -1229,25 +1233,25 @@ msgstr "مدير سطح المكتب غير نشط."
 msgid "Terminal emulator is not set."
 msgstr "محاكي الطرفية لم يُعيَّن."
 
-#: ../src/tab-page.c:56
+#: ../src/tab-page.c:57
 msgid "Open in New T_ab"
 msgstr "افتح في لسا_ن جديد"
 
 #. Note to translators: this is the information (name, size, type)
 #. about the selected file in the status bar
-#: ../src/tab-page.c:378
+#: ../src/tab-page.c:379
 #, c-format
 msgid "\"%s\" (%s) %s"
 msgstr ""
 
 #. Note to translators: this is the information (name, type)
 #. about the selected file in the status bar
-#: ../src/tab-page.c:387
+#: ../src/tab-page.c:388
 #, c-format
 msgid "\"%s\" %s"
 msgstr ""
 
-#: ../src/tab-page.c:415
+#: ../src/tab-page.c:416
 #, c-format
 msgid "%d item selected"
 msgid_plural "%d items selected"
@@ -1258,12 +1262,12 @@ msgstr[3] "%d عناصر محددة"
 msgstr[4] "%d عنصرًا محدّدًا"
 msgstr[5] "%d عنصر محدّد"
 
-#: ../src/tab-page.c:745
+#: ../src/tab-page.c:746
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "مساحة الحرّة: %s (المجموع: %s)"
 
-#: ../src/tab-page.c:765
+#: ../src/tab-page.c:766
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
@@ -1274,7 +1278,7 @@ msgstr[3] "%d عناصر"
 msgstr[4] "%d عنصرًا"
 msgstr[5] "%d عنصر"
 
-#: ../src/tab-page.c:766
+#: ../src/tab-page.c:767
 #, c-format
 msgid " (%d hidden)"
 msgid_plural " (%d hidden)"

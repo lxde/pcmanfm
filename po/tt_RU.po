@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-01 16:44+0200\n"
+"POT-Creation-Date: 2024-11-03 14:35+0100\n"
 "PO-Revision-Date: 2015-08-17 01:31+0000\n"
 "Last-Translator: Anonymous Pootle User\n"
 "Language: tt_RU\n"
@@ -122,12 +122,12 @@ msgstr ""
 msgid "_Use desktop as a folder (show icons on it) by path:"
 msgstr ""
 
-#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:84
+#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:85
 msgctxt "Use path for some folder: ..."
 msgid "Default"
 msgstr ""
 
-#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:85
+#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:86
 msgctxt "Use path for some folder: ..."
 msgid "Custom:"
 msgstr ""
@@ -329,266 +329,270 @@ msgstr ""
 "IEC алкушымчалар урынына СИ системаның унарлы алкушымчаларын кулланырга"
 
 #: ../data/ui/pref.glade.h:36
-msgid "Treat backup files as _hidden"
+msgid "Show _date as YYYY-MM-DD instead of in locale format"
 msgstr ""
 
 #: ../data/ui/pref.glade.h:37
+msgid "Treat backup files as _hidden"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:38
 #, fuzzy
 msgid "Al_ways show full file names"
 msgstr "Өстәмә бит панелен һәрвакыт күрсәтү"
 
-#: ../data/ui/pref.glade.h:38
+#: ../data/ui/pref.glade.h:39
 msgid "Show icons of hidden _files shadowed"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:39
+#: ../data/ui/pref.glade.h:40
 #, fuzzy
 msgid "_Display"
 msgstr "_Экран"
 
-#: ../data/ui/pref.glade.h:40
+#: ../data/ui/pref.glade.h:41
 #, fuzzy
 msgid "Hid_e 'Close tab' buttons"
 msgstr "«Өстәмә битне ябу» төймәсен качыру"
 
-#: ../data/ui/pref.glade.h:41
+#: ../data/ui/pref.glade.h:42
 #, fuzzy
 msgid "Al_ways show the tab bar"
 msgstr "Өстәмә бит панелен һәрвакыт күрсәтү"
 
-#: ../data/ui/pref.glade.h:42
+#: ../data/ui/pref.glade.h:43
 msgid "_Maximum width of tab label:"
 msgstr ""
 
 #. Use genitive case here, context is: width is XXX characters
-#: ../data/ui/pref.glade.h:44
+#: ../data/ui/pref.glade.h:45
 msgid "characters"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:45
+#: ../data/ui/pref.glade.h:46
 #, fuzzy
 msgid "<b>Directories Tree</b>"
 msgstr "Каталоглар агачы"
 
-#: ../data/ui/pref.glade.h:46
+#: ../data/ui/pref.glade.h:47
 msgid "Hide e_xpander on empty or locked folder"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:47
+#: ../data/ui/pref.glade.h:48
 #, fuzzy
 msgid "<b>Show in Places:</b>"
 msgstr "<b>Эш өстәлендә билгечекләрне күрсәтергә</b>"
 
-#: ../data/ui/pref.glade.h:48
+#: ../data/ui/pref.glade.h:49
 #, fuzzy
 msgid "_Home Folder"
 msgstr "Өй каталогы"
 
-#: ../data/ui/pref.glade.h:49
+#: ../data/ui/pref.glade.h:50
 #, fuzzy
 msgid "Des_ktop"
 msgstr "Эш өстәле"
 
-#: ../data/ui/pref.glade.h:50 ../src/main-win-ui.c:238
+#: ../data/ui/pref.glade.h:51 ../src/main-win-ui.c:239
 #, fuzzy
 msgid "_Trash Can"
 msgstr "Чүп чиләге"
 
-#: ../data/ui/pref.glade.h:51
+#: ../data/ui/pref.glade.h:52
 msgid "_Filesystem Root"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:52
+#: ../data/ui/pref.glade.h:53
 #, fuzzy
 msgid "App_lications"
 msgstr "Кушымталар"
 
-#: ../data/ui/pref.glade.h:53 ../src/main-win-ui.c:241
+#: ../data/ui/pref.glade.h:54 ../src/main-win-ui.c:242
 msgid "Dev_ices"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:54
+#: ../data/ui/pref.glade.h:55
 #, fuzzy
 msgid "_Network"
 msgstr "Челтәр җайланмалары"
 
-#: ../data/ui/pref.glade.h:55
+#: ../data/ui/pref.glade.h:56
 msgid "_Layout"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:56
+#: ../data/ui/pref.glade.h:57
 msgid "<b>Auto-mount</b>"
 msgstr "<b>Автоматик кору</b>"
 
-#: ../data/ui/pref.glade.h:57
+#: ../data/ui/pref.glade.h:58
 #, fuzzy
 msgid "_Mount mountable volumes automatically on program startup"
 msgstr "Корыла торган дискларны кушымта җибәрелү вакытында автоматик кору"
 
-#: ../data/ui/pref.glade.h:58
+#: ../data/ui/pref.glade.h:59
 #, fuzzy
 msgid "Mo_unt removable media automatically when they are inserted"
 msgstr "Алынмалы җайланмаларны тоташтырган вакытта автоматик кору"
 
-#: ../data/ui/pref.glade.h:59
+#: ../data/ui/pref.glade.h:60
 #, fuzzy
 msgid "_Show available options for removable media when they are inserted"
 msgstr "Тоташтырылган алынмалы җайланмалар өчен булган көйләүләрне күрсәтү"
 
-#: ../data/ui/pref.glade.h:60
+#: ../data/ui/pref.glade.h:61
 #, fuzzy
 msgid "Do_n't show available options for those media types:"
 msgstr "Тоташтырылган алынмалы җайланмалар өчен булган көйләүләрне күрсәтү"
 
-#: ../data/ui/pref.glade.h:61
+#: ../data/ui/pref.glade.h:62
 #, fuzzy
 msgid "_Remove selected"
 msgstr "%d өлеш сайланган"
 
-#: ../data/ui/pref.glade.h:62
+#: ../data/ui/pref.glade.h:63
 msgid "_Open mounted removable media in new tab instead of new window"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:63
+#: ../data/ui/pref.glade.h:64
 #, fuzzy
 msgid "When removable medium unmounted:"
 msgstr "Алынмалы җайланма тоташтырылды"
 
-#: ../data/ui/pref.glade.h:64
+#: ../data/ui/pref.glade.h:65
 #, fuzzy
 msgid "Clos_e tab containing removable medium"
 msgstr "Тоташтырылган алынмалы җайланмалар өчен булган көйләүләрне күрсәтү"
 
-#: ../data/ui/pref.glade.h:65
+#: ../data/ui/pref.glade.h:66
 msgid "Change folder in the tab to _Home Folder"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:66
+#: ../data/ui/pref.glade.h:67
 #, fuzzy
 msgid "_Volume Management"
 msgstr "_Дисклар белән идарә итү"
 
-#: ../data/ui/pref.glade.h:67
+#: ../data/ui/pref.glade.h:68
 msgid "<b>Programs</b>"
 msgstr "<b>Кушымталар</b>"
 
-#: ../data/ui/pref.glade.h:68
+#: ../data/ui/pref.glade.h:69
 msgid "<i>Commands below may include extra options if necessary.</i>"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:69
+#: ../data/ui/pref.glade.h:70
 #, fuzzy
 msgid "_Terminal emulator:"
 msgstr "Терминал эмуляторы:"
 
-#: ../data/ui/pref.glade.h:70
+#: ../data/ui/pref.glade.h:71
 #, fuzzy
 msgid "_Switch user command:"
 msgstr "Икенче кулланучыга күчерүче команда:"
 
 #. Application command to format some drive
-#: ../data/ui/pref.glade.h:72
+#: ../data/ui/pref.glade.h:73
 msgid "_Format command:"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:73
+#: ../data/ui/pref.glade.h:74
 #, fuzzy
 msgid "A_rchiver integration:"
 msgstr "Кысучы:"
 
-#: ../data/ui/pref.glade.h:74
+#: ../data/ui/pref.glade.h:75
 #, fuzzy
 msgid "<b>Templates</b>"
 msgstr "<b>Текст</b>"
 
-#: ../data/ui/pref.glade.h:75
+#: ../data/ui/pref.glade.h:76
 msgid "S_how only user defined templates in menu"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:76
+#: ../data/ui/pref.glade.h:77
 msgid "Show _only one template for each MIME type"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:77
+#: ../data/ui/pref.glade.h:78
 msgid "Ru_n default application after creation from template"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:78
+#: ../data/ui/pref.glade.h:79
 #, fuzzy
 msgid "<b>Other Options</b>"
 msgstr "<b>Эш өстәлендә билгечекләрне күрсәтергә</b>"
 
-#: ../data/ui/pref.glade.h:79
+#: ../data/ui/pref.glade.h:80
 msgid "Use Application Startup Notify _by default"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:80
+#: ../data/ui/pref.glade.h:81
 msgid ""
 "If checked then use Startup Notify for application if another not stated "
 "explicitly.\n"
 "If unchecked then use Startup Notify only if that is defined for application."
 msgstr ""
 
-#: ../data/ui/pref.glade.h:82
+#: ../data/ui/pref.glade.h:83
 msgid "D_efer test for content type on folder loading"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:83
+#: ../data/ui/pref.glade.h:84
 msgid "Use path for \"Home Folder\" button:"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:86
+#: ../data/ui/pref.glade.h:87
 msgid "_Use current"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:87
+#: ../data/ui/pref.glade.h:88
 msgid "_Advanced"
 msgstr "_Өстәмә"
 
-#: ../data/ui/pref.glade.h:88
+#: ../data/ui/pref.glade.h:89
 msgid "<b>_Do not load modules matching:</b>"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:89
+#: ../data/ui/pref.glade.h:90
 msgid "<b>_Load these modules anyway:</b>"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:90
+#: ../data/ui/pref.glade.h:91
 msgid "Modules"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:91
+#: ../data/ui/pref.glade.h:92
 msgid "Auto (move if on the same FS, copy otherwise)"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:92
+#: ../data/ui/pref.glade.h:93
 msgid "Copy"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:93
+#: ../data/ui/pref.glade.h:94
 msgid "Move"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:94
+#: ../data/ui/pref.glade.h:95
 msgid "Ask"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:95
+#: ../data/ui/pref.glade.h:96
 #, fuzzy
 msgid "Icon view"
 msgstr "Билгечекләр"
 
-#: ../data/ui/pref.glade.h:96
+#: ../data/ui/pref.glade.h:97
 #, fuzzy
 msgid "Compact view"
 msgstr "Җыйнак кыяфәт"
 
-#: ../data/ui/pref.glade.h:97
+#: ../data/ui/pref.glade.h:98
 #, fuzzy
 msgid "Thumbnail view"
 msgstr "Кечерәсемнәр"
 
-#: ../data/ui/pref.glade.h:98
+#: ../data/ui/pref.glade.h:99
 #, fuzzy
 msgid "Detailed list view"
 msgstr "Җентекле исемлек"
@@ -679,12 +683,12 @@ msgstr "Файл-менеджерында ачу"
 msgid "Open in New Ta_b"
 msgstr "Яңа өстәмә биттә ачу"
 
-#: ../src/desktop-ui.c:52 ../src/tab-page.c:57
+#: ../src/desktop-ui.c:52 ../src/tab-page.c:58
 #, fuzzy
 msgid "Open in New Win_dow"
 msgstr "Яңа тәрәзәдә ачу"
 
-#: ../src/desktop-ui.c:54 ../src/tab-page.c:59
+#: ../src/desktop-ui.c:54 ../src/tab-page.c:60
 #, fuzzy
 msgid "Open in Termina_l"
 msgstr "_Терминалда ачу"
@@ -724,423 +728,423 @@ msgstr "<b>Эш өстәлендә билгечекләрне күрсәтерг
 msgid "Desktop"
 msgstr "Эш өстәле"
 
-#: ../src/main-win-ui.c:189
+#: ../src/main-win-ui.c:190
 msgid "_File"
 msgstr "_Файл"
 
-#: ../src/main-win-ui.c:190
+#: ../src/main-win-ui.c:191
 msgid "_New Window"
 msgstr "_Яңа тәрәзә"
 
-#: ../src/main-win-ui.c:190
+#: ../src/main-win-ui.c:191
 #, fuzzy
 msgid "Open new file manager window"
 msgstr "Файл-менеджерында ачу"
 
-#: ../src/main-win-ui.c:191
+#: ../src/main-win-ui.c:192
 #, fuzzy
 msgid "New T_ab"
 msgstr "Яңа _өстәмә бит"
 
-#: ../src/main-win-ui.c:191
+#: ../src/main-win-ui.c:192
 msgid "Create new tab for this folder"
 msgstr ""
 
-#: ../src/main-win-ui.c:192
+#: ../src/main-win-ui.c:193
 #, fuzzy
 msgid "C_reate New..."
 msgstr "Яңа..."
 
-#: ../src/main-win-ui.c:193
+#: ../src/main-win-ui.c:194
 msgid "Folder"
 msgstr "Каталог"
 
-#: ../src/main-win-ui.c:194
+#: ../src/main-win-ui.c:195
 msgid "Empty File"
 msgstr ""
 
-#: ../src/main-win-ui.c:195
+#: ../src/main-win-ui.c:196
 msgid "Folder Propertie_s"
 msgstr ""
 
-#: ../src/main-win-ui.c:196
+#: ../src/main-win-ui.c:197
 msgid "_Close Tab"
 msgstr "Өстәмә битне _ябу"
 
-#: ../src/main-win-ui.c:197
+#: ../src/main-win-ui.c:198
 #, fuzzy
 msgid "Close _Window"
 msgstr "Тәрәзәне ябу"
 
-#: ../src/main-win-ui.c:198
+#: ../src/main-win-ui.c:199
 msgid "_Edit"
 msgstr "_Үзгәртү"
 
-#: ../src/main-win-ui.c:200
+#: ../src/main-win-ui.c:201
 msgid "C_ut"
 msgstr ""
 
-#: ../src/main-win-ui.c:203
+#: ../src/main-win-ui.c:204
 msgid "Move to _Trash"
 msgstr ""
 
-#: ../src/main-win-ui.c:205
+#: ../src/main-win-ui.c:206
 msgid "Copy Pat_h(s)"
 msgstr ""
 
-#: ../src/main-win-ui.c:206
+#: ../src/main-win-ui.c:207
 #, fuzzy
 msgid "R_ename..."
 msgstr "Икенче исем кушу"
 
-#: ../src/main-win-ui.c:207
+#: ../src/main-win-ui.c:208
 msgid "D_uplicate..."
 msgstr ""
 
-#: ../src/main-win-ui.c:208
+#: ../src/main-win-ui.c:209
 #, fuzzy
 msgid "Create Lin_k..."
 msgstr "_Яңа..."
 
-#: ../src/main-win-ui.c:209
+#: ../src/main-win-ui.c:210
 #, fuzzy
 msgid "_Move to..."
 msgstr "Монда күчерү..."
 
-#: ../src/main-win-ui.c:210
+#: ../src/main-win-ui.c:211
 #, fuzzy
 msgid "Copy to_..."
 msgstr "Монда күчермә ясау..."
 
-#: ../src/main-win-ui.c:211
+#: ../src/main-win-ui.c:212
 msgid "Propertie_s"
 msgstr ""
 
-#: ../src/main-win-ui.c:213
+#: ../src/main-win-ui.c:214
 msgid "_Invert Selection"
 msgstr "_Сайлаганны бору"
 
-#: ../src/main-win-ui.c:214
+#: ../src/main-win-ui.c:215
 #, fuzzy
 msgid "Prefere_nces"
 msgstr "Көйләүләр"
 
-#: ../src/main-win-ui.c:215
+#: ../src/main-win-ui.c:216
 msgid "_View"
 msgstr "_Кыяфәт"
 
-#: ../src/main-win-ui.c:216
+#: ../src/main-win-ui.c:217
 #, fuzzy
 msgid "_Reload Folder"
 msgstr "Каталогны яңарту"
 
-#: ../src/main-win-ui.c:216
+#: ../src/main-win-ui.c:217
 msgid "Reload current folder"
 msgstr "Бу каталогны яңарту"
 
-#: ../src/main-win-ui.c:217
+#: ../src/main-win-ui.c:218
 #, fuzzy
 msgid "Tool_bar"
 msgstr "_Кораллар"
 
-#: ../src/main-win-ui.c:218
+#: ../src/main-win-ui.c:219
 msgid "Pat_h Bar"
 msgstr ""
 
-#: ../src/main-win-ui.c:219
+#: ../src/main-win-ui.c:220
 #, fuzzy
 msgid "Side _Pane"
 msgstr "Як панеле"
 
 #. other see below: 'ShowHidden' 'ShowStatus' 'Fullscreen' 'IconView'...
-#: ../src/main-win-ui.c:221
+#: ../src/main-win-ui.c:222
 #, fuzzy
 msgid "Fo_lder View Mode"
 msgstr "Күрсәтү тәртибе:"
 
-#: ../src/main-win-ui.c:222
+#: ../src/main-win-ui.c:223
 #, fuzzy
 msgid "S_ort Files"
 msgstr "_Файлларны сортлау"
 
-#: ../src/main-win-ui.c:223
+#: ../src/main-win-ui.c:224
 msgid "Zoom _In"
 msgstr ""
 
-#: ../src/main-win-ui.c:224
+#: ../src/main-win-ui.c:225
 msgid "Zoom O_ut"
 msgstr ""
 
-#: ../src/main-win-ui.c:227
+#: ../src/main-win-ui.c:228
 msgid "Fil_ter..."
 msgstr ""
 
-#: ../src/main-win-ui.c:229
+#: ../src/main-win-ui.c:230
 msgid "_Help"
 msgstr "_Белешмә"
 
-#: ../src/main-win-ui.c:231
+#: ../src/main-win-ui.c:232
 msgid "_Keyboard Navigation"
 msgstr ""
 
-#: ../src/main-win-ui.c:232
+#: ../src/main-win-ui.c:233
 msgid "_Go"
 msgstr "_Күчү"
 
-#: ../src/main-win-ui.c:233
+#: ../src/main-win-ui.c:234
 #, fuzzy
 msgid "_Previous Folder"
 msgstr "Алдынгы каталог"
 
-#: ../src/main-win-ui.c:233
+#: ../src/main-win-ui.c:234
 msgid "Return to previous folder in history"
 msgstr ""
 
-#: ../src/main-win-ui.c:234
+#: ../src/main-win-ui.c:235
 #, fuzzy
 msgid "_Next Folder"
 msgstr "Алдагы каталог"
 
-#: ../src/main-win-ui.c:234
+#: ../src/main-win-ui.c:235
 msgid "Go forward to next folder in history"
 msgstr ""
 
-#: ../src/main-win-ui.c:235
+#: ../src/main-win-ui.c:236
 #, fuzzy
 msgid "Pa_rent Folder"
 msgstr "Баш каталог"
 
-#: ../src/main-win-ui.c:235
+#: ../src/main-win-ui.c:236
 msgid "Go to parent Folder"
 msgstr "Баш каталогына күчү"
 
-#: ../src/main-win-ui.c:236
+#: ../src/main-win-ui.c:237
 #, fuzzy
 msgid "H_ome Folder"
 msgstr "Өй каталогы"
 
-#: ../src/main-win-ui.c:236
+#: ../src/main-win-ui.c:237
 #, fuzzy
 msgid "Go to home folder"
 msgstr "Баш каталогына күчү"
 
-#: ../src/main-win-ui.c:237
+#: ../src/main-win-ui.c:238
 #, fuzzy
 msgid "_Desktop"
 msgstr "Эш өстәле"
 
-#: ../src/main-win-ui.c:237
+#: ../src/main-win-ui.c:238
 #, fuzzy
 msgid "Go to desktop folder"
 msgstr "Баш каталогына күчү"
 
-#: ../src/main-win-ui.c:238
+#: ../src/main-win-ui.c:239
 msgid "Open trash can"
 msgstr ""
 
-#: ../src/main-win-ui.c:239
+#: ../src/main-win-ui.c:240
 msgid "Filesyste_m Root"
 msgstr ""
 
-#: ../src/main-win-ui.c:239
+#: ../src/main-win-ui.c:240
 msgid "Go fo filesystem root"
-msgstr ""
-
-#: ../src/main-win-ui.c:240
-#, fuzzy
-msgid "_Applications"
-msgstr "Кушымталар"
-
-#: ../src/main-win-ui.c:240
-msgid "Go to root of applications menu folder"
 msgstr ""
 
 #: ../src/main-win-ui.c:241
 #, fuzzy
+msgid "_Applications"
+msgstr "Кушымталар"
+
+#: ../src/main-win-ui.c:241
+msgid "Go to root of applications menu folder"
+msgstr ""
+
+#: ../src/main-win-ui.c:242
+#, fuzzy
 msgid "Go to list of devices connected to the computer"
 msgstr "Эш өстәлендә диск билгечекләрен күрсәтү"
 
-#: ../src/main-win-ui.c:242
+#: ../src/main-win-ui.c:243
 #, fuzzy
 msgid "Net_work"
 msgstr "Челтәр җайланмалары"
 
-#: ../src/main-win-ui.c:242
+#: ../src/main-win-ui.c:243
 #, fuzzy
 msgid "Go to list of places on the network"
 msgstr "Эш өстәлендә диск билгечекләрен күрсәтү"
 
-#: ../src/main-win-ui.c:243
+#: ../src/main-win-ui.c:244
 msgid "_Go to Location..."
 msgstr ""
 
-#: ../src/main-win-ui.c:244
+#: ../src/main-win-ui.c:245
 msgid "_Connect to Server..."
 msgstr ""
 
-#: ../src/main-win-ui.c:244
+#: ../src/main-win-ui.c:245
 msgid "Open a window to choose remote folder location"
 msgstr ""
 
-#: ../src/main-win-ui.c:245
+#: ../src/main-win-ui.c:246
 msgid "Go to the path in the location bar"
 msgstr ""
 
-#: ../src/main-win-ui.c:246
+#: ../src/main-win-ui.c:247
 msgid "_Bookmarks"
 msgstr "_Кыстыргычлар"
 
-#: ../src/main-win-ui.c:247
+#: ../src/main-win-ui.c:248
 #, fuzzy
 msgid "_Add to Bookmarks..."
 msgstr "Кыстыргыч өстәү"
 
-#: ../src/main-win-ui.c:247
+#: ../src/main-win-ui.c:248
 msgid "Add current folder to bookmarks list"
 msgstr ""
 
-#: ../src/main-win-ui.c:248
+#: ../src/main-win-ui.c:249
 msgid "Too_ls"
 msgstr ""
 
-#: ../src/main-win-ui.c:249
+#: ../src/main-win-ui.c:250
 msgid "Open Current Folder in _Terminal"
 msgstr "Бу каталогны _терминалда ачу"
 
-#: ../src/main-win-ui.c:251
+#: ../src/main-win-ui.c:252
 #, fuzzy
 msgid "Fin_d Files..."
 msgstr "_Файлларны сортлау"
 
-#: ../src/main-win-ui.c:251
+#: ../src/main-win-ui.c:252
 #, fuzzy
 msgid "Open search dialog"
 msgstr "Эш өстәленең көйләү диалогын ачу"
 
-#: ../src/main-win-ui.c:254
+#: ../src/main-win-ui.c:255
 #, fuzzy
 msgid "_Run a Command in Current Folder..."
 msgstr "Бу каталогны яңарту"
 
 #. Note to translators: "Mingle..." means "Do not put folders before files" but make the translation as short as possible, please!
-#: ../src/main-win-ui.c:271
+#: ../src/main-win-ui.c:272
 msgid "Mingle _Files and Folders"
 msgstr ""
 
-#: ../src/main-win-ui.c:274
+#: ../src/main-win-ui.c:275
 msgid "_Ignore Name Case"
 msgstr ""
 
-#: ../src/main-win-ui.c:276
+#: ../src/main-win-ui.c:277
 #, fuzzy
 msgid "Sho_w Hidden"
 msgstr "Яшерен файлларны чагылдыру"
 
 #. Note to translators: this save is meant for folder's settings such as sort
-#: ../src/main-win-ui.c:278
+#: ../src/main-win-ui.c:279
 msgid "Preserve This Folder's Settings"
 msgstr ""
 
-#: ../src/main-win-ui.c:279
+#: ../src/main-win-ui.c:280
 msgid ""
 "Check to remember view and sort as folder setting rather than global one"
 msgstr ""
 
-#: ../src/main-win-ui.c:281
+#: ../src/main-win-ui.c:282
 msgid "_Show Toolbar"
 msgstr ""
 
-#: ../src/main-win-ui.c:282
+#: ../src/main-win-ui.c:283
 msgid "Show 'New _Window' Button"
 msgstr ""
 
-#: ../src/main-win-ui.c:283
+#: ../src/main-win-ui.c:284
 msgid "Show 'New _Tab' Button"
 msgstr ""
 
-#: ../src/main-win-ui.c:284
+#: ../src/main-win-ui.c:285
 msgid "Show _Navigation Buttons"
 msgstr ""
 
-#: ../src/main-win-ui.c:285
+#: ../src/main-win-ui.c:286
 msgid "Show '_Home' Button"
 msgstr ""
 
-#: ../src/main-win-ui.c:286
+#: ../src/main-win-ui.c:287
 #, fuzzy
 msgid "Sho_w Side Pane"
 msgstr "Як панельне чагылдыру"
 
-#: ../src/main-win-ui.c:287
+#: ../src/main-win-ui.c:288
 msgid "Show Status B_ar"
 msgstr ""
 
-#: ../src/main-win-ui.c:288
+#: ../src/main-win-ui.c:289
 msgid "_Dual Pane Mode"
 msgstr ""
 
-#: ../src/main-win-ui.c:288
+#: ../src/main-win-ui.c:289
 msgid "Show two panels with folder views"
 msgstr ""
 
-#: ../src/main-win-ui.c:289
+#: ../src/main-win-ui.c:290
 msgid "Fullscreen _Mode"
 msgstr ""
 
-#: ../src/main-win-ui.c:295
+#: ../src/main-win-ui.c:296
 msgid "_Icon View"
 msgstr "_Билгечекләр"
 
-#: ../src/main-win-ui.c:296
+#: ../src/main-win-ui.c:297
 msgid "_Compact View"
 msgstr "_Җыйнак кыяфәт"
 
-#: ../src/main-win-ui.c:297
+#: ../src/main-win-ui.c:298
 msgid "_Thumbnail View"
 msgstr "_Кече рәсемнәр"
 
-#: ../src/main-win-ui.c:298
+#: ../src/main-win-ui.c:299
 msgid "Detailed _List View"
 msgstr "Җентекле _исемлек"
 
-#: ../src/main-win-ui.c:311 ../src/main-win-ui.c:319
+#: ../src/main-win-ui.c:312 ../src/main-win-ui.c:320
 msgid "By _Name"
 msgstr "_Исем буенча"
 
-#: ../src/main-win-ui.c:312 ../src/main-win-ui.c:320
+#: ../src/main-win-ui.c:313 ../src/main-win-ui.c:321
 msgid "By _Modification Time"
 msgstr "_Үзгәртү вакыты буенча"
 
-#: ../src/main-win-ui.c:313 ../src/main-win-ui.c:321
+#: ../src/main-win-ui.c:314 ../src/main-win-ui.c:322
 msgid "By _Size"
 msgstr "_Зурлыгы буенча"
 
-#: ../src/main-win-ui.c:314 ../src/main-win-ui.c:322
+#: ../src/main-win-ui.c:315 ../src/main-win-ui.c:323
 msgid "By File _Type"
 msgstr "Файл _төре буенча"
 
-#: ../src/main-win-ui.c:316
+#: ../src/main-win-ui.c:317
 msgid "By _Extension"
 msgstr ""
 
-#: ../src/main-win-ui.c:329
+#: ../src/main-win-ui.c:330
 msgid "Places"
 msgstr "Урыннар"
 
-#: ../src/main-win-ui.c:330
+#: ../src/main-win-ui.c:331
 msgid "Directory Tree"
 msgstr "Каталоглар агачы"
 
-#: ../src/main-win-ui.c:331
+#: ../src/main-win-ui.c:332
 msgid "Remote"
 msgstr "Челтәр"
 
-#: ../src/main-win-ui.c:337
+#: ../src/main-win-ui.c:338
 #, fuzzy
 msgid "_Location"
 msgstr "Кушымталар"
 
-#: ../src/main-win-ui.c:338
+#: ../src/main-win-ui.c:339
 msgid "_Buttons"
 msgstr ""
 
@@ -1324,43 +1328,43 @@ msgstr ""
 msgid "Terminal emulator is not set."
 msgstr "Терминал эмуляторы күрсәтелмәгән."
 
-#: ../src/tab-page.c:56
+#: ../src/tab-page.c:57
 #, fuzzy
 msgid "Open in New T_ab"
 msgstr "Яңа өстәмә биттә ачу"
 
 #. Note to translators: this is the information (name, size, type)
 #. about the selected file in the status bar
-#: ../src/tab-page.c:378
+#: ../src/tab-page.c:379
 #, c-format
 msgid "\"%s\" (%s) %s"
 msgstr ""
 
 #. Note to translators: this is the information (name, type)
 #. about the selected file in the status bar
-#: ../src/tab-page.c:387
+#: ../src/tab-page.c:388
 #, c-format
 msgid "\"%s\" %s"
 msgstr ""
 
-#: ../src/tab-page.c:415
+#: ../src/tab-page.c:416
 #, c-format
 msgid "%d item selected"
 msgid_plural "%d items selected"
 msgstr[0] "%d өлеш сайланган"
 
-#: ../src/tab-page.c:745
+#: ../src/tab-page.c:746
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Буш урын: %s (Барлык: %s)"
 
-#: ../src/tab-page.c:765
+#: ../src/tab-page.c:766
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] "%d өлеш"
 
-#: ../src/tab-page.c:766
+#: ../src/tab-page.c:767
 #, c-format
 msgid " (%d hidden)"
 msgid_plural " (%d hidden)"

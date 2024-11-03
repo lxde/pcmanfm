@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm 0.9.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-01 16:44+0200\n"
+"POT-Creation-Date: 2024-11-03 14:35+0100\n"
 "PO-Revision-Date: 2015-08-17 01:31+0000\n"
 "Last-Translator: Anonymous Pootle User\n"
 "Language: vi\n"
@@ -116,12 +116,12 @@ msgstr ""
 msgid "_Use desktop as a folder (show icons on it) by path:"
 msgstr ""
 
-#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:84
+#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:85
 msgctxt "Use path for some folder: ..."
 msgid "Default"
 msgstr ""
 
-#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:85
+#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:86
 msgctxt "Use path for some folder: ..."
 msgid "Custom:"
 msgstr ""
@@ -311,192 +311,196 @@ msgid "Us_e SI decimal prefixes instead of IEC binary prefixes"
 msgstr "_Dùng tiền tố thập phân SI thay vì tiền tố nhị phân IEC"
 
 #: ../data/ui/pref.glade.h:36
+msgid "Show _date as YYYY-MM-DD instead of in locale format"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:37
 msgid "Treat backup files as _hidden"
 msgstr "_Xem tập tin sao lưu như tập tin ẩn"
 
-#: ../data/ui/pref.glade.h:37
+#: ../data/ui/pref.glade.h:38
 msgid "Al_ways show full file names"
 msgstr "_Luôn hiển thị đầy đủ tên tập tin"
 
-#: ../data/ui/pref.glade.h:38
+#: ../data/ui/pref.glade.h:39
 msgid "Show icons of hidden _files shadowed"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:39
+#: ../data/ui/pref.glade.h:40
 msgid "_Display"
 msgstr "_Hiển thị"
 
-#: ../data/ui/pref.glade.h:40
+#: ../data/ui/pref.glade.h:41
 msgid "Hid_e 'Close tab' buttons"
 msgstr "Ẩn nút 'Đóng _thẻ'"
 
-#: ../data/ui/pref.glade.h:41
+#: ../data/ui/pref.glade.h:42
 msgid "Al_ways show the tab bar"
 msgstr "_Luôn hiển thị thanh thẻ"
 
-#: ../data/ui/pref.glade.h:42
+#: ../data/ui/pref.glade.h:43
 msgid "_Maximum width of tab label:"
 msgstr ""
 
 #. Use genitive case here, context is: width is XXX characters
-#: ../data/ui/pref.glade.h:44
+#: ../data/ui/pref.glade.h:45
 msgid "characters"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:45
+#: ../data/ui/pref.glade.h:46
 msgid "<b>Directories Tree</b>"
 msgstr "<b>Cây thư mục</b>"
 
-#: ../data/ui/pref.glade.h:46
+#: ../data/ui/pref.glade.h:47
 msgid "Hide e_xpander on empty or locked folder"
 msgstr "Ẩn biểu tượng co _giãn cho thư mục rỗng hay thư mục bị khóa"
 
-#: ../data/ui/pref.glade.h:47
+#: ../data/ui/pref.glade.h:48
 msgid "<b>Show in Places:</b>"
 msgstr "<b>Hiển thị trong Nơi:</b>"
 
-#: ../data/ui/pref.glade.h:48
+#: ../data/ui/pref.glade.h:49
 #, fuzzy
 msgid "_Home Folder"
 msgstr "Thư mục nhà"
 
-#: ../data/ui/pref.glade.h:49
+#: ../data/ui/pref.glade.h:50
 #, fuzzy
 msgid "Des_ktop"
 msgstr "_Màn hình nền"
 
-#: ../data/ui/pref.glade.h:50 ../src/main-win-ui.c:238
+#: ../data/ui/pref.glade.h:51 ../src/main-win-ui.c:239
 msgid "_Trash Can"
 msgstr "Thùng _rác"
 
-#: ../data/ui/pref.glade.h:51
+#: ../data/ui/pref.glade.h:52
 msgid "_Filesystem Root"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:52
+#: ../data/ui/pref.glade.h:53
 msgid "App_lications"
 msgstr "Ứng _dụng"
 
-#: ../data/ui/pref.glade.h:53 ../src/main-win-ui.c:241
+#: ../data/ui/pref.glade.h:54 ../src/main-win-ui.c:242
 msgid "Dev_ices"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:54
+#: ../data/ui/pref.glade.h:55
 #, fuzzy
 msgid "_Network"
 msgstr "Ổ đĩa _mạng"
 
-#: ../data/ui/pref.glade.h:55
+#: ../data/ui/pref.glade.h:56
 msgid "_Layout"
 msgstr "_Bố trí"
 
-#: ../data/ui/pref.glade.h:56
+#: ../data/ui/pref.glade.h:57
 msgid "<b>Auto-mount</b>"
 msgstr "<b>Tự động kết nối</b>"
 
-#: ../data/ui/pref.glade.h:57
+#: ../data/ui/pref.glade.h:58
 msgid "_Mount mountable volumes automatically on program startup"
 msgstr ""
 "_Tự động kết nối với những thiết bị có thể kết nối khi chương trình bắt đầu"
 
-#: ../data/ui/pref.glade.h:58
+#: ../data/ui/pref.glade.h:59
 msgid "Mo_unt removable media automatically when they are inserted"
 msgstr "Tự động _kết nối những thiết bị di động khi chúng được gắn vào"
 
-#: ../data/ui/pref.glade.h:59
-msgid "_Show available options for removable media when they are inserted"
-msgstr ""
-"_Hiển thị những tùy chọn có thể cho những thiết bị di động khi chúng được "
-"gắn vào"
-
 #: ../data/ui/pref.glade.h:60
-#, fuzzy
-msgid "Do_n't show available options for those media types:"
+msgid "_Show available options for removable media when they are inserted"
 msgstr ""
 "_Hiển thị những tùy chọn có thể cho những thiết bị di động khi chúng được "
 "gắn vào"
 
 #: ../data/ui/pref.glade.h:61
 #, fuzzy
+msgid "Do_n't show available options for those media types:"
+msgstr ""
+"_Hiển thị những tùy chọn có thể cho những thiết bị di động khi chúng được "
+"gắn vào"
+
+#: ../data/ui/pref.glade.h:62
+#, fuzzy
 msgid "_Remove selected"
 msgstr "%d mục đã được chọn"
 
-#: ../data/ui/pref.glade.h:62
+#: ../data/ui/pref.glade.h:63
 msgid "_Open mounted removable media in new tab instead of new window"
 msgstr ""
 "_Mở những thiết bị đã được gắn trong một thẻ mới thay vì một cửa sổ mới"
 
-#: ../data/ui/pref.glade.h:63
+#: ../data/ui/pref.glade.h:64
 #, fuzzy
 msgid "When removable medium unmounted:"
 msgstr "Những phương tiện di động đã được gắn"
 
-#: ../data/ui/pref.glade.h:64
+#: ../data/ui/pref.glade.h:65
 #, fuzzy
 msgid "Clos_e tab containing removable medium"
 msgstr "Đóng thẻ _chứa thiết bị di động khi nó được tháo"
 
-#: ../data/ui/pref.glade.h:65
+#: ../data/ui/pref.glade.h:66
 msgid "Change folder in the tab to _Home Folder"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:66
+#: ../data/ui/pref.glade.h:67
 msgid "_Volume Management"
 msgstr "_Quản lý đĩa"
 
-#: ../data/ui/pref.glade.h:67
+#: ../data/ui/pref.glade.h:68
 msgid "<b>Programs</b>"
 msgstr "<b>Chương trình</b>"
 
-#: ../data/ui/pref.glade.h:68
+#: ../data/ui/pref.glade.h:69
 msgid "<i>Commands below may include extra options if necessary.</i>"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:69
+#: ../data/ui/pref.glade.h:70
 msgid "_Terminal emulator:"
 msgstr "_Bộ mô phỏng thiết bị đầu cuối:"
 
-#: ../data/ui/pref.glade.h:70
+#: ../data/ui/pref.glade.h:71
 msgid "_Switch user command:"
 msgstr "_Lệnh chuyển đổi người dùng:"
 
 #. Application command to format some drive
-#: ../data/ui/pref.glade.h:72
+#: ../data/ui/pref.glade.h:73
 msgid "_Format command:"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:73
+#: ../data/ui/pref.glade.h:74
 msgid "A_rchiver integration:"
 msgstr "Tích _hợp bộ lưu trữ:"
 
-#: ../data/ui/pref.glade.h:74
+#: ../data/ui/pref.glade.h:75
 #, fuzzy
 msgid "<b>Templates</b>"
 msgstr "<b>Văn bản</b>"
 
-#: ../data/ui/pref.glade.h:75
+#: ../data/ui/pref.glade.h:76
 msgid "S_how only user defined templates in menu"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:76
+#: ../data/ui/pref.glade.h:77
 msgid "Show _only one template for each MIME type"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:77
+#: ../data/ui/pref.glade.h:78
 msgid "Ru_n default application after creation from template"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:78
+#: ../data/ui/pref.glade.h:79
 #, fuzzy
 msgid "<b>Other Options</b>"
 msgstr "<b>Hiển thị biểu tượng trên màn hình nền</b>"
 
-#: ../data/ui/pref.glade.h:79
+#: ../data/ui/pref.glade.h:80
 #, fuzzy
 msgid "Use Application Startup Notify _by default"
 msgstr "_Mặc định dùng Thông báo khởi tạo ứng dụng"
 
-#: ../data/ui/pref.glade.h:80
+#: ../data/ui/pref.glade.h:81
 msgid ""
 "If checked then use Startup Notify for application if another not stated "
 "explicitly.\n"
@@ -507,67 +511,67 @@ msgstr ""
 "Nếu không chọn sẽ sử dụng Thông Báo Khởi Tạo chỉ khi nó được xác định cho "
 "ứng dụng."
 
-#: ../data/ui/pref.glade.h:82
+#: ../data/ui/pref.glade.h:83
 msgid "D_efer test for content type on folder loading"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:83
+#: ../data/ui/pref.glade.h:84
 msgid "Use path for \"Home Folder\" button:"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:86
+#: ../data/ui/pref.glade.h:87
 msgid "_Use current"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:87
+#: ../data/ui/pref.glade.h:88
 msgid "_Advanced"
 msgstr "_Nâng cao"
 
-#: ../data/ui/pref.glade.h:88
+#: ../data/ui/pref.glade.h:89
 msgid "<b>_Do not load modules matching:</b>"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:89
+#: ../data/ui/pref.glade.h:90
 msgid "<b>_Load these modules anyway:</b>"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:90
+#: ../data/ui/pref.glade.h:91
 msgid "Modules"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:91
+#: ../data/ui/pref.glade.h:92
 msgid "Auto (move if on the same FS, copy otherwise)"
 msgstr ""
 "Tự động (di chuyển nếu trên cùng một hệ thống tập tin, nếu không sẽ sao chép)"
 
-#: ../data/ui/pref.glade.h:92
+#: ../data/ui/pref.glade.h:93
 msgid "Copy"
 msgstr "Sao chép"
 
-#: ../data/ui/pref.glade.h:93
+#: ../data/ui/pref.glade.h:94
 msgid "Move"
 msgstr "Di chuyển"
 
-#: ../data/ui/pref.glade.h:94
+#: ../data/ui/pref.glade.h:95
 msgid "Ask"
 msgstr "Hỏi"
 
-#: ../data/ui/pref.glade.h:95
+#: ../data/ui/pref.glade.h:96
 #, fuzzy
 msgid "Icon view"
 msgstr "Hiển thị biểu tượng"
 
-#: ../data/ui/pref.glade.h:96
+#: ../data/ui/pref.glade.h:97
 #, fuzzy
 msgid "Compact view"
 msgstr "Hiển thị thu gọn"
 
-#: ../data/ui/pref.glade.h:97
+#: ../data/ui/pref.glade.h:98
 #, fuzzy
 msgid "Thumbnail view"
 msgstr "Hiển thị ảnh nhỏ"
 
-#: ../data/ui/pref.glade.h:98
+#: ../data/ui/pref.glade.h:99
 #, fuzzy
 msgid "Detailed list view"
 msgstr "Hiển thị danh sách chi tiết"
@@ -657,11 +661,11 @@ msgstr "Mở trong bộ quản lý tập tin"
 msgid "Open in New Ta_b"
 msgstr "Mở trong thẻ _mới"
 
-#: ../src/desktop-ui.c:52 ../src/tab-page.c:57
+#: ../src/desktop-ui.c:52 ../src/tab-page.c:58
 msgid "Open in New Win_dow"
 msgstr "Mở trong _cửa sổ mới"
 
-#: ../src/desktop-ui.c:54 ../src/tab-page.c:59
+#: ../src/desktop-ui.c:54 ../src/tab-page.c:60
 msgid "Open in Termina_l"
 msgstr "Mở trong cửa sổ dòng _lệnh"
 
@@ -698,411 +702,411 @@ msgstr "<b>Hiển thị biểu tượng trên màn hình nền</b>"
 msgid "Desktop"
 msgstr "_Màn hình nền"
 
-#: ../src/main-win-ui.c:189
+#: ../src/main-win-ui.c:190
 msgid "_File"
 msgstr "_Tập tin"
 
-#: ../src/main-win-ui.c:190
+#: ../src/main-win-ui.c:191
 msgid "_New Window"
 msgstr "_Cửa sổ mới"
 
-#: ../src/main-win-ui.c:190
+#: ../src/main-win-ui.c:191
 #, fuzzy
 msgid "Open new file manager window"
 msgstr "Mở trong bộ quản lý tập tin"
 
-#: ../src/main-win-ui.c:191
+#: ../src/main-win-ui.c:192
 msgid "New T_ab"
 msgstr "_Thẻ mới"
 
-#: ../src/main-win-ui.c:191
+#: ../src/main-win-ui.c:192
 msgid "Create new tab for this folder"
 msgstr "Tạo thẻ mới cho thư mục này"
 
-#: ../src/main-win-ui.c:192
+#: ../src/main-win-ui.c:193
 msgid "C_reate New..."
 msgstr "_Tạo mới..."
 
-#: ../src/main-win-ui.c:193
+#: ../src/main-win-ui.c:194
 msgid "Folder"
 msgstr "Thư mục"
 
-#: ../src/main-win-ui.c:194
+#: ../src/main-win-ui.c:195
 msgid "Empty File"
 msgstr ""
 
-#: ../src/main-win-ui.c:195
+#: ../src/main-win-ui.c:196
 msgid "Folder Propertie_s"
 msgstr ""
 
-#: ../src/main-win-ui.c:196
+#: ../src/main-win-ui.c:197
 msgid "_Close Tab"
 msgstr "Đóng t_hẻ"
 
-#: ../src/main-win-ui.c:197
+#: ../src/main-win-ui.c:198
 msgid "Close _Window"
 msgstr "Đóng _cửa sổ"
 
-#: ../src/main-win-ui.c:198
+#: ../src/main-win-ui.c:199
 msgid "_Edit"
 msgstr "_Sửa"
 
-#: ../src/main-win-ui.c:200
+#: ../src/main-win-ui.c:201
 msgid "C_ut"
 msgstr ""
 
-#: ../src/main-win-ui.c:203
+#: ../src/main-win-ui.c:204
 msgid "Move to _Trash"
 msgstr ""
 
-#: ../src/main-win-ui.c:205
+#: ../src/main-win-ui.c:206
 msgid "Copy Pat_h(s)"
 msgstr ""
 
-#: ../src/main-win-ui.c:206
+#: ../src/main-win-ui.c:207
 #, fuzzy
 msgid "R_ename..."
 msgstr "Đổ_i tên"
 
-#: ../src/main-win-ui.c:207
+#: ../src/main-win-ui.c:208
 msgid "D_uplicate..."
 msgstr ""
 
-#: ../src/main-win-ui.c:208
+#: ../src/main-win-ui.c:209
 #, fuzzy
 msgid "Create Lin_k..."
 msgstr "Tạo _Mới..."
 
-#: ../src/main-win-ui.c:209
+#: ../src/main-win-ui.c:210
 #, fuzzy
 msgid "_Move to..."
 msgstr "_Chuyển đến..."
 
-#: ../src/main-win-ui.c:210
+#: ../src/main-win-ui.c:211
 #, fuzzy
 msgid "Copy to_..."
 msgstr "_Sao chép đến..."
 
-#: ../src/main-win-ui.c:211
+#: ../src/main-win-ui.c:212
 msgid "Propertie_s"
 msgstr ""
 
-#: ../src/main-win-ui.c:213
+#: ../src/main-win-ui.c:214
 msgid "_Invert Selection"
 msgstr "Đảo _lựa chọn"
 
-#: ../src/main-win-ui.c:214
+#: ../src/main-win-ui.c:215
 msgid "Prefere_nces"
 msgstr "Tù_y chỉnh"
 
-#: ../src/main-win-ui.c:215
+#: ../src/main-win-ui.c:216
 msgid "_View"
 msgstr "_Hiển thị"
 
-#: ../src/main-win-ui.c:216
+#: ../src/main-win-ui.c:217
 msgid "_Reload Folder"
 msgstr "Nạ_p lại thư mục"
 
-#: ../src/main-win-ui.c:216
+#: ../src/main-win-ui.c:217
 msgid "Reload current folder"
 msgstr "Nạp lại thư mục hiện tại"
 
-#: ../src/main-win-ui.c:217
+#: ../src/main-win-ui.c:218
 #, fuzzy
 msgid "Tool_bar"
 msgstr "_Công cụ"
 
-#: ../src/main-win-ui.c:218
+#: ../src/main-win-ui.c:219
 msgid "Pat_h Bar"
 msgstr ""
 
-#: ../src/main-win-ui.c:219
+#: ../src/main-win-ui.c:220
 msgid "Side _Pane"
 msgstr "Khung bên"
 
 #. other see below: 'ShowHidden' 'ShowStatus' 'Fullscreen' 'IconView'...
-#: ../src/main-win-ui.c:221
+#: ../src/main-win-ui.c:222
 #, fuzzy
 msgid "Fo_lder View Mode"
 msgstr "_Chế độ hiển thị:"
 
-#: ../src/main-win-ui.c:222
+#: ../src/main-win-ui.c:223
 msgid "S_ort Files"
 msgstr "_Sắp xếp tập tin"
 
-#: ../src/main-win-ui.c:223
+#: ../src/main-win-ui.c:224
 msgid "Zoom _In"
 msgstr ""
 
-#: ../src/main-win-ui.c:224
+#: ../src/main-win-ui.c:225
 msgid "Zoom O_ut"
 msgstr ""
 
-#: ../src/main-win-ui.c:227
+#: ../src/main-win-ui.c:228
 msgid "Fil_ter..."
 msgstr ""
 
-#: ../src/main-win-ui.c:229
+#: ../src/main-win-ui.c:230
 msgid "_Help"
 msgstr "_Trợ giúp"
 
-#: ../src/main-win-ui.c:231
+#: ../src/main-win-ui.c:232
 #, fuzzy
 msgid "_Keyboard Navigation"
 msgstr "Điều hướng _bàn phím"
 
-#: ../src/main-win-ui.c:232
+#: ../src/main-win-ui.c:233
 msgid "_Go"
 msgstr "Đ_i đến"
 
-#: ../src/main-win-ui.c:233
+#: ../src/main-win-ui.c:234
 msgid "_Previous Folder"
 msgstr "Thư mục _trước"
 
-#: ../src/main-win-ui.c:233
+#: ../src/main-win-ui.c:234
 msgid "Return to previous folder in history"
 msgstr ""
 
-#: ../src/main-win-ui.c:234
+#: ../src/main-win-ui.c:235
 msgid "_Next Folder"
 msgstr "Thư mục _sau"
 
-#: ../src/main-win-ui.c:234
+#: ../src/main-win-ui.c:235
 msgid "Go forward to next folder in history"
 msgstr ""
 
-#: ../src/main-win-ui.c:235
+#: ../src/main-win-ui.c:236
 msgid "Pa_rent Folder"
 msgstr "Thư mục _cha"
 
-#: ../src/main-win-ui.c:235
+#: ../src/main-win-ui.c:236
 msgid "Go to parent Folder"
 msgstr "Đi đến thư mục cha"
 
-#: ../src/main-win-ui.c:236
+#: ../src/main-win-ui.c:237
 msgid "H_ome Folder"
 msgstr "Thư mục _nhà"
 
-#: ../src/main-win-ui.c:236
+#: ../src/main-win-ui.c:237
 #, fuzzy
 msgid "Go to home folder"
 msgstr "Đi đến thư mục cha"
 
-#: ../src/main-win-ui.c:237
+#: ../src/main-win-ui.c:238
 msgid "_Desktop"
 msgstr "_Màn hình nền"
 
-#: ../src/main-win-ui.c:237
+#: ../src/main-win-ui.c:238
 #, fuzzy
 msgid "Go to desktop folder"
 msgstr "Đi đến thư mục cha"
 
-#: ../src/main-win-ui.c:238
+#: ../src/main-win-ui.c:239
 msgid "Open trash can"
 msgstr ""
 
-#: ../src/main-win-ui.c:239
+#: ../src/main-win-ui.c:240
 msgid "Filesyste_m Root"
 msgstr ""
 
-#: ../src/main-win-ui.c:239
+#: ../src/main-win-ui.c:240
 msgid "Go fo filesystem root"
 msgstr ""
 
-#: ../src/main-win-ui.c:240
+#: ../src/main-win-ui.c:241
 msgid "_Applications"
 msgstr "Ứng _dụng"
 
-#: ../src/main-win-ui.c:240
+#: ../src/main-win-ui.c:241
 msgid "Go to root of applications menu folder"
 msgstr ""
 
-#: ../src/main-win-ui.c:241
+#: ../src/main-win-ui.c:242
 #, fuzzy
 msgid "Go to list of devices connected to the computer"
 msgstr "Hiển thị _biểu tượng thiết bị trên màn hình nền"
 
-#: ../src/main-win-ui.c:242
+#: ../src/main-win-ui.c:243
 #, fuzzy
 msgid "Net_work"
 msgstr "Ổ đĩa _mạng"
 
-#: ../src/main-win-ui.c:242
+#: ../src/main-win-ui.c:243
 #, fuzzy
 msgid "Go to list of places on the network"
 msgstr "Hiển thị _biểu tượng thiết bị trên màn hình nền"
 
-#: ../src/main-win-ui.c:243
+#: ../src/main-win-ui.c:244
 msgid "_Go to Location..."
 msgstr ""
 
-#: ../src/main-win-ui.c:244
+#: ../src/main-win-ui.c:245
 msgid "_Connect to Server..."
 msgstr ""
 
-#: ../src/main-win-ui.c:244
+#: ../src/main-win-ui.c:245
 msgid "Open a window to choose remote folder location"
 msgstr ""
 
-#: ../src/main-win-ui.c:245
+#: ../src/main-win-ui.c:246
 msgid "Go to the path in the location bar"
 msgstr ""
 
-#: ../src/main-win-ui.c:246
+#: ../src/main-win-ui.c:247
 msgid "_Bookmarks"
 msgstr "Đá_nh dấu"
 
-#: ../src/main-win-ui.c:247
+#: ../src/main-win-ui.c:248
 #, fuzzy
 msgid "_Add to Bookmarks..."
 msgstr "Thêm vào Đánh dấu"
 
-#: ../src/main-win-ui.c:247
+#: ../src/main-win-ui.c:248
 msgid "Add current folder to bookmarks list"
 msgstr ""
 
-#: ../src/main-win-ui.c:248
+#: ../src/main-win-ui.c:249
 msgid "Too_ls"
 msgstr ""
 
-#: ../src/main-win-ui.c:249
+#: ../src/main-win-ui.c:250
 msgid "Open Current Folder in _Terminal"
 msgstr "Mở thư mục hiện tại trong _cửa sổ dòng lệnh"
 
-#: ../src/main-win-ui.c:251
+#: ../src/main-win-ui.c:252
 #, fuzzy
 msgid "Fin_d Files..."
 msgstr "_Tìm tập tin"
 
-#: ../src/main-win-ui.c:251
+#: ../src/main-win-ui.c:252
 #, fuzzy
 msgid "Open search dialog"
 msgstr "Mở hộp thoại tùy chỉnh màn hình nền"
 
-#: ../src/main-win-ui.c:254
+#: ../src/main-win-ui.c:255
 #, fuzzy
 msgid "_Run a Command in Current Folder..."
 msgstr "Nạp lại thư mục hiện tại"
 
 #. Note to translators: "Mingle..." means "Do not put folders before files" but make the translation as short as possible, please!
-#: ../src/main-win-ui.c:271
+#: ../src/main-win-ui.c:272
 msgid "Mingle _Files and Folders"
 msgstr ""
 
-#: ../src/main-win-ui.c:274
+#: ../src/main-win-ui.c:275
 msgid "_Ignore Name Case"
 msgstr ""
 
-#: ../src/main-win-ui.c:276
+#: ../src/main-win-ui.c:277
 #, fuzzy
 msgid "Sho_w Hidden"
 msgstr "Hiển thị _nội dung ẩn"
 
 #. Note to translators: this save is meant for folder's settings such as sort
-#: ../src/main-win-ui.c:278
+#: ../src/main-win-ui.c:279
 msgid "Preserve This Folder's Settings"
 msgstr ""
 
-#: ../src/main-win-ui.c:279
+#: ../src/main-win-ui.c:280
 msgid ""
 "Check to remember view and sort as folder setting rather than global one"
 msgstr ""
 
-#: ../src/main-win-ui.c:281
+#: ../src/main-win-ui.c:282
 msgid "_Show Toolbar"
 msgstr ""
 
-#: ../src/main-win-ui.c:282
+#: ../src/main-win-ui.c:283
 msgid "Show 'New _Window' Button"
 msgstr ""
 
-#: ../src/main-win-ui.c:283
+#: ../src/main-win-ui.c:284
 msgid "Show 'New _Tab' Button"
 msgstr ""
 
-#: ../src/main-win-ui.c:284
+#: ../src/main-win-ui.c:285
 msgid "Show _Navigation Buttons"
 msgstr ""
 
-#: ../src/main-win-ui.c:285
+#: ../src/main-win-ui.c:286
 msgid "Show '_Home' Button"
 msgstr ""
 
-#: ../src/main-win-ui.c:286
+#: ../src/main-win-ui.c:287
 msgid "Sho_w Side Pane"
 msgstr "Hiển thị _khung bên"
 
-#: ../src/main-win-ui.c:287
+#: ../src/main-win-ui.c:288
 msgid "Show Status B_ar"
 msgstr "Hiển thị thanh t_rạng thái"
 
-#: ../src/main-win-ui.c:288
+#: ../src/main-win-ui.c:289
 #, fuzzy
 msgid "_Dual Pane Mode"
 msgstr "Chế độ khung bên đôi"
 
-#: ../src/main-win-ui.c:288
+#: ../src/main-win-ui.c:289
 msgid "Show two panels with folder views"
 msgstr ""
 
-#: ../src/main-win-ui.c:289
+#: ../src/main-win-ui.c:290
 msgid "Fullscreen _Mode"
 msgstr "_Chế độ đầy màn hình"
 
-#: ../src/main-win-ui.c:295
+#: ../src/main-win-ui.c:296
 msgid "_Icon View"
 msgstr "Kiểu hiển thị _biểu tượng"
 
-#: ../src/main-win-ui.c:296
+#: ../src/main-win-ui.c:297
 msgid "_Compact View"
 msgstr "Kiểu hiển thị _thu gọn"
 
-#: ../src/main-win-ui.c:297
+#: ../src/main-win-ui.c:298
 msgid "_Thumbnail View"
 msgstr "Kiểu hiển thị ảnh n_hỏ"
 
-#: ../src/main-win-ui.c:298
+#: ../src/main-win-ui.c:299
 msgid "Detailed _List View"
 msgstr "Kiểu hiển thị _chi tiết"
 
-#: ../src/main-win-ui.c:311 ../src/main-win-ui.c:319
+#: ../src/main-win-ui.c:312 ../src/main-win-ui.c:320
 msgid "By _Name"
 msgstr "Bởi tê_n"
 
-#: ../src/main-win-ui.c:312 ../src/main-win-ui.c:320
+#: ../src/main-win-ui.c:313 ../src/main-win-ui.c:321
 msgid "By _Modification Time"
 msgstr "Bởi n_gày thay đổi"
 
-#: ../src/main-win-ui.c:313 ../src/main-win-ui.c:321
+#: ../src/main-win-ui.c:314 ../src/main-win-ui.c:322
 msgid "By _Size"
 msgstr "Bởi _kích thước"
 
-#: ../src/main-win-ui.c:314 ../src/main-win-ui.c:322
+#: ../src/main-win-ui.c:315 ../src/main-win-ui.c:323
 msgid "By File _Type"
 msgstr "Bởi k_iểu tập tin"
 
-#: ../src/main-win-ui.c:316
+#: ../src/main-win-ui.c:317
 msgid "By _Extension"
 msgstr ""
 
-#: ../src/main-win-ui.c:329
+#: ../src/main-win-ui.c:330
 msgid "Places"
 msgstr "Nơi"
 
-#: ../src/main-win-ui.c:330
+#: ../src/main-win-ui.c:331
 msgid "Directory Tree"
 msgstr "Cây thư mục"
 
-#: ../src/main-win-ui.c:331
+#: ../src/main-win-ui.c:332
 msgid "Remote"
 msgstr "Từ xa"
 
-#: ../src/main-win-ui.c:337
+#: ../src/main-win-ui.c:338
 #, fuzzy
 msgid "_Location"
 msgstr "Ứng _dụng"
 
-#: ../src/main-win-ui.c:338
+#: ../src/main-win-ui.c:339
 msgid "_Buttons"
 msgstr ""
 
@@ -1290,42 +1294,42 @@ msgstr ""
 msgid "Terminal emulator is not set."
 msgstr "Bộ mô phỏng thiết bị đầu cuối chưa được thiết lập."
 
-#: ../src/tab-page.c:56
+#: ../src/tab-page.c:57
 msgid "Open in New T_ab"
 msgstr "Mở trong thẻ _mới"
 
 #. Note to translators: this is the information (name, size, type)
 #. about the selected file in the status bar
-#: ../src/tab-page.c:378
+#: ../src/tab-page.c:379
 #, c-format
 msgid "\"%s\" (%s) %s"
 msgstr ""
 
 #. Note to translators: this is the information (name, type)
 #. about the selected file in the status bar
-#: ../src/tab-page.c:387
+#: ../src/tab-page.c:388
 #, c-format
 msgid "\"%s\" %s"
 msgstr ""
 
-#: ../src/tab-page.c:415
+#: ../src/tab-page.c:416
 #, c-format
 msgid "%d item selected"
 msgid_plural "%d items selected"
 msgstr[0] "%d mục đã được chọn"
 
-#: ../src/tab-page.c:745
+#: ../src/tab-page.c:746
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Không gian trống: %s (Tổng cộng: %s)"
 
-#: ../src/tab-page.c:765
+#: ../src/tab-page.c:766
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] "%d mục"
 
-#: ../src/tab-page.c:766
+#: ../src/tab-page.c:767
 #, c-format
 msgid " (%d hidden)"
 msgid_plural " (%d hidden)"

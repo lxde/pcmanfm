@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.9.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-01 16:44+0200\n"
+"POT-Creation-Date: 2024-11-03 14:35+0100\n"
 "PO-Revision-Date: 2018-12-13 17:14+0000\n"
 "Last-Translator: nyucel <necdetyucel@gmail.com>\n"
 "Language-Team: tr <tr@li.org>\n"
@@ -114,12 +114,12 @@ msgstr ""
 msgid "_Use desktop as a folder (show icons on it) by path:"
 msgstr "_Masaüstünü yol ile bir klasör olarak (üzerinde simgeler ile) göster:"
 
-#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:84
+#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:85
 msgctxt "Use path for some folder: ..."
 msgid "Default"
 msgstr "Öntanımlı"
 
-#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:85
+#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:86
 msgctxt "Use path for some folder: ..."
 msgid "Custom:"
 msgstr "Özel:"
@@ -302,178 +302,182 @@ msgid "Us_e SI decimal prefixes instead of IEC binary prefixes"
 msgstr "_ICE ikili önekleri yerine SI onlu önekleri kullan"
 
 #: ../data/ui/pref.glade.h:36
+msgid "Show _date as YYYY-MM-DD instead of in locale format"
+msgstr ""
+
+#: ../data/ui/pref.glade.h:37
 msgid "Treat backup files as _hidden"
 msgstr "_Yedekleme dosyalarına gizli dosya gibi davran"
 
-#: ../data/ui/pref.glade.h:37
+#: ../data/ui/pref.glade.h:38
 msgid "Al_ways show full file names"
 msgstr "Her _zaman tam dosya adlarını göster"
 
-#: ../data/ui/pref.glade.h:38
+#: ../data/ui/pref.glade.h:39
 msgid "Show icons of hidden _files shadowed"
 msgstr "G_ölgelenen gizli dosyaların simgelerini göster"
 
-#: ../data/ui/pref.glade.h:39
+#: ../data/ui/pref.glade.h:40
 msgid "_Display"
 msgstr "_Görüntüle"
 
-#: ../data/ui/pref.glade.h:40
+#: ../data/ui/pref.glade.h:41
 msgid "Hid_e 'Close tab' buttons"
 msgstr "'Sekmeyi _kapat' düğmelerini sakla"
 
-#: ../data/ui/pref.glade.h:41
+#: ../data/ui/pref.glade.h:42
 msgid "Al_ways show the tab bar"
 msgstr "Her _zaman sekme çubuğunu göster"
 
-#: ../data/ui/pref.glade.h:42
+#: ../data/ui/pref.glade.h:43
 msgid "_Maximum width of tab label:"
 msgstr "_Sekme etiketinin azami genişliği:"
 
 #. Use genitive case here, context is: width is XXX characters
-#: ../data/ui/pref.glade.h:44
+#: ../data/ui/pref.glade.h:45
 msgid "characters"
 msgstr "karakter"
 
-#: ../data/ui/pref.glade.h:45
+#: ../data/ui/pref.glade.h:46
 msgid "<b>Directories Tree</b>"
 msgstr "<b>Dizin Ağacı</b>"
 
-#: ../data/ui/pref.glade.h:46
+#: ../data/ui/pref.glade.h:47
 msgid "Hide e_xpander on empty or locked folder"
 msgstr "Boş _veya kilitli dizinlerde genişleticiyi gizle"
 
-#: ../data/ui/pref.glade.h:47
+#: ../data/ui/pref.glade.h:48
 msgid "<b>Show in Places:</b>"
 msgstr "<b>Yerleri Göster:</b>"
 
-#: ../data/ui/pref.glade.h:48
+#: ../data/ui/pref.glade.h:49
 msgid "_Home Folder"
 msgstr "_Ev Dizini"
 
-#: ../data/ui/pref.glade.h:49
+#: ../data/ui/pref.glade.h:50
 msgid "Des_ktop"
 msgstr "_Masaüstü"
 
-#: ../data/ui/pref.glade.h:50 ../src/main-win-ui.c:238
+#: ../data/ui/pref.glade.h:51 ../src/main-win-ui.c:239
 msgid "_Trash Can"
 msgstr "_Çöp Kutusu"
 
-#: ../data/ui/pref.glade.h:51
+#: ../data/ui/pref.glade.h:52
 msgid "_Filesystem Root"
 msgstr "_Dosya sistemi kök dizini"
 
-#: ../data/ui/pref.glade.h:52
+#: ../data/ui/pref.glade.h:53
 msgid "App_lications"
 msgstr "_Uygulamalar"
 
-#: ../data/ui/pref.glade.h:53 ../src/main-win-ui.c:241
+#: ../data/ui/pref.glade.h:54 ../src/main-win-ui.c:242
 msgid "Dev_ices"
 msgstr "_Aygıtlar"
 
-#: ../data/ui/pref.glade.h:54
+#: ../data/ui/pref.glade.h:55
 msgid "_Network"
 msgstr "_Ağ"
 
-#: ../data/ui/pref.glade.h:55
+#: ../data/ui/pref.glade.h:56
 msgid "_Layout"
 msgstr "_Yerleşim"
 
-#: ../data/ui/pref.glade.h:56
+#: ../data/ui/pref.glade.h:57
 msgid "<b>Auto-mount</b>"
 msgstr "<b>Otomatik bağla</b>"
 
-#: ../data/ui/pref.glade.h:57
+#: ../data/ui/pref.glade.h:58
 msgid "_Mount mountable volumes automatically on program startup"
 msgstr "Program başladığında bağlanabilir bölümleri otomatik olarak _bağla"
 
-#: ../data/ui/pref.glade.h:58
+#: ../data/ui/pref.glade.h:59
 msgid "Mo_unt removable media automatically when they are inserted"
 msgstr "_Çıkartılabilir ortam takıldığında otomatik olarak bağla"
 
-#: ../data/ui/pref.glade.h:59
+#: ../data/ui/pref.glade.h:60
 msgid "_Show available options for removable media when they are inserted"
 msgstr "_Yerleştirildiğinde çıkartılabilir ortam için seçenekleri görüntüle"
 
-#: ../data/ui/pref.glade.h:60
+#: ../data/ui/pref.glade.h:61
 msgid "Do_n't show available options for those media types:"
 msgstr "Şu ortam _türleri için kullanılabilir seçenekleri gösterme:"
 
-#: ../data/ui/pref.glade.h:61
+#: ../data/ui/pref.glade.h:62
 msgid "_Remove selected"
 msgstr "_Seçileni kaldır"
 
-#: ../data/ui/pref.glade.h:62
+#: ../data/ui/pref.glade.h:63
 msgid "_Open mounted removable media in new tab instead of new window"
 msgstr "Çıkarılabilir taşınabilir aygıtları iç_eren sekmeyi kapat"
 
-#: ../data/ui/pref.glade.h:63
+#: ../data/ui/pref.glade.h:64
 msgid "When removable medium unmounted:"
 msgstr "Çıkarılabilir ortam ayrıldığında:"
 
-#: ../data/ui/pref.glade.h:64
+#: ../data/ui/pref.glade.h:65
 msgid "Clos_e tab containing removable medium"
 msgstr "Çıkarılabilir taşınabilir aygıtları iç_eren sekmeyi kapat"
 
-#: ../data/ui/pref.glade.h:65
+#: ../data/ui/pref.glade.h:66
 msgid "Change folder in the tab to _Home Folder"
 msgstr "Sekmedeki klasörü _Ana dizine değiştir"
 
-#: ../data/ui/pref.glade.h:66
+#: ../data/ui/pref.glade.h:67
 msgid "_Volume Management"
 msgstr "_Hacim Yönetimi"
 
-#: ../data/ui/pref.glade.h:67
+#: ../data/ui/pref.glade.h:68
 msgid "<b>Programs</b>"
 msgstr "<b>Programlar</b>"
 
-#: ../data/ui/pref.glade.h:68
+#: ../data/ui/pref.glade.h:69
 msgid "<i>Commands below may include extra options if necessary.</i>"
 msgstr "<i>Aşağıdaki komutlar, gerektiğinde ek seçenekler içerebilirler.</i>"
 
-#: ../data/ui/pref.glade.h:69
+#: ../data/ui/pref.glade.h:70
 msgid "_Terminal emulator:"
 msgstr "_Uçbirim Öykünücüsü:"
 
-#: ../data/ui/pref.glade.h:70
+#: ../data/ui/pref.glade.h:71
 msgid "_Switch user command:"
 msgstr "_Kullanıcı Değiştirme Komutu:"
 
 #. Application command to format some drive
-#: ../data/ui/pref.glade.h:72
+#: ../data/ui/pref.glade.h:73
 msgid "_Format command:"
 msgstr "_Biçimlendirme komutu:"
 
 # Yahut "Arşiv Yöneticisi Entegrasyonu". Seçtiğim ifade daha açıklayıcı gibime
 # geliyor.
-#: ../data/ui/pref.glade.h:73
+#: ../data/ui/pref.glade.h:74
 msgid "A_rchiver integration:"
 msgstr "İlişkilendirilen A_rşiv Yöneticisi:"
 
-#: ../data/ui/pref.glade.h:74
+#: ../data/ui/pref.glade.h:75
 msgid "<b>Templates</b>"
 msgstr "<b>Şablonlar</b>"
 
-#: ../data/ui/pref.glade.h:75
+#: ../data/ui/pref.glade.h:76
 msgid "S_how only user defined templates in menu"
 msgstr "Menüde _sadece kullanıcı tanımlı şablonları göster"
 
-#: ../data/ui/pref.glade.h:76
+#: ../data/ui/pref.glade.h:77
 msgid "Show _only one template for each MIME type"
 msgstr "H_er MIME türü için sadece bir şablon göster"
 
-#: ../data/ui/pref.glade.h:77
+#: ../data/ui/pref.glade.h:78
 msgid "Ru_n default application after creation from template"
 msgstr "_Şablondan oluşturduktan sonra öntanımlı uygulamayı çalıştır"
 
-#: ../data/ui/pref.glade.h:78
+#: ../data/ui/pref.glade.h:79
 msgid "<b>Other Options</b>"
 msgstr "<b>Diğer Seçenekler</b>"
 
-#: ../data/ui/pref.glade.h:79
+#: ../data/ui/pref.glade.h:80
 msgid "Use Application Startup Notify _by default"
 msgstr "Varsayılan olarak _Uygulama Başlatma Uyarısını kullan"
 
-#: ../data/ui/pref.glade.h:80
+#: ../data/ui/pref.glade.h:81
 msgid ""
 "If checked then use Startup Notify for application if another not stated "
 "explicitly.\n"
@@ -484,63 +488,63 @@ msgstr ""
 "Eğer işaretli değilse, sadece uygulama için tanımlıysa Başlatma Uyarısını "
 "kullan."
 
-#: ../data/ui/pref.glade.h:82
+#: ../data/ui/pref.glade.h:83
 msgid "D_efer test for content type on folder loading"
 msgstr "K_lasör yüklemesinde içerik türü sınamasını ertele"
 
-#: ../data/ui/pref.glade.h:83
+#: ../data/ui/pref.glade.h:84
 msgid "Use path for \"Home Folder\" button:"
 msgstr "\"Ana Klasör\" düğmesi için yol kullan:"
 
-#: ../data/ui/pref.glade.h:86
+#: ../data/ui/pref.glade.h:87
 msgid "_Use current"
 msgstr "_Geçerli olanı kullan"
 
-#: ../data/ui/pref.glade.h:87
+#: ../data/ui/pref.glade.h:88
 msgid "_Advanced"
 msgstr "_Gelişmiş"
 
-#: ../data/ui/pref.glade.h:88
+#: ../data/ui/pref.glade.h:89
 msgid "<b>_Do not load modules matching:</b>"
 msgstr "<b>Şununla eşleşen modülleri yükleme:</b>"
 
-#: ../data/ui/pref.glade.h:89
+#: ../data/ui/pref.glade.h:90
 msgid "<b>_Load these modules anyway:</b>"
 msgstr "<b>_Bu modülleri yine de yükle:</b>"
 
-#: ../data/ui/pref.glade.h:90
+#: ../data/ui/pref.glade.h:91
 msgid "Modules"
 msgstr "Modüller"
 
-#: ../data/ui/pref.glade.h:91
+#: ../data/ui/pref.glade.h:92
 msgid "Auto (move if on the same FS, copy otherwise)"
 msgstr "Otomatik (aynı FS üzerindeyse taşı, değilse kopyala)"
 
-#: ../data/ui/pref.glade.h:92
+#: ../data/ui/pref.glade.h:93
 msgid "Copy"
 msgstr "Kopyala"
 
-#: ../data/ui/pref.glade.h:93
+#: ../data/ui/pref.glade.h:94
 msgid "Move"
 msgstr "Taşı"
 
-#: ../data/ui/pref.glade.h:94
+#: ../data/ui/pref.glade.h:95
 msgid "Ask"
 msgstr "Sor"
 
-#: ../data/ui/pref.glade.h:95
+#: ../data/ui/pref.glade.h:96
 msgid "Icon view"
 msgstr "Simge görünümü"
 
-#: ../data/ui/pref.glade.h:96
+#: ../data/ui/pref.glade.h:97
 msgid "Compact view"
 msgstr "Sıkışık görünüm"
 
-#: ../data/ui/pref.glade.h:97
+#: ../data/ui/pref.glade.h:98
 msgid "Thumbnail view"
 msgstr "Önizleme görünümü"
 
-#: ../data/ui/pref.glade.h:98
+#: ../data/ui/pref.glade.h:99
 msgid "Detailed list view"
 msgstr "Ayrıntılı liste görünümü"
 
@@ -628,11 +632,11 @@ msgstr "Dosya Yöneticisinde Aç"
 msgid "Open in New Ta_b"
 msgstr "_Yeni Sekmede Aç"
 
-#: ../src/desktop-ui.c:52 ../src/tab-page.c:57
+#: ../src/desktop-ui.c:52 ../src/tab-page.c:58
 msgid "Open in New Win_dow"
 msgstr "Yeni _Pencerede Aç"
 
-#: ../src/desktop-ui.c:54 ../src/tab-page.c:59
+#: ../src/desktop-ui.c:54 ../src/tab-page.c:60
 msgid "Open in Termina_l"
 msgstr "_Uçbirimde Aç"
 
@@ -665,395 +669,395 @@ msgstr "Masaüstü menüsünü göster"
 msgid "Desktop"
 msgstr "Masaüstü"
 
-#: ../src/main-win-ui.c:189
+#: ../src/main-win-ui.c:190
 msgid "_File"
 msgstr "_Dosya"
 
-#: ../src/main-win-ui.c:190
+#: ../src/main-win-ui.c:191
 msgid "_New Window"
 msgstr "_Yeni Pencere"
 
-#: ../src/main-win-ui.c:190
+#: ../src/main-win-ui.c:191
 msgid "Open new file manager window"
 msgstr "Yeni dosya yöneticisi penceresi aç"
 
-#: ../src/main-win-ui.c:191
+#: ../src/main-win-ui.c:192
 msgid "New T_ab"
 msgstr "Yeni _Sekme"
 
-#: ../src/main-win-ui.c:191
+#: ../src/main-win-ui.c:192
 msgid "Create new tab for this folder"
 msgstr "Bu dizin için yeni sekme oluştur"
 
-#: ../src/main-win-ui.c:192
+#: ../src/main-win-ui.c:193
 msgid "C_reate New..."
 msgstr "Yeni _Oluştur..."
 
-#: ../src/main-win-ui.c:193
+#: ../src/main-win-ui.c:194
 msgid "Folder"
 msgstr "Dizin"
 
-#: ../src/main-win-ui.c:194
+#: ../src/main-win-ui.c:195
 msgid "Empty File"
 msgstr "Boş Dosya"
 
-#: ../src/main-win-ui.c:195
+#: ../src/main-win-ui.c:196
 msgid "Folder Propertie_s"
 msgstr "_Klasör Özellikleri"
 
-#: ../src/main-win-ui.c:196
+#: ../src/main-win-ui.c:197
 msgid "_Close Tab"
 msgstr "Sekmeyi _Kapat"
 
-#: ../src/main-win-ui.c:197
+#: ../src/main-win-ui.c:198
 msgid "Close _Window"
 msgstr "_Pencereyi Kapat"
 
-#: ../src/main-win-ui.c:198
+#: ../src/main-win-ui.c:199
 msgid "_Edit"
 msgstr "_Düzenle"
 
-#: ../src/main-win-ui.c:200
+#: ../src/main-win-ui.c:201
 msgid "C_ut"
 msgstr "_Kes"
 
-#: ../src/main-win-ui.c:203
+#: ../src/main-win-ui.c:204
 msgid "Move to _Trash"
 msgstr "Çöpe _Taşı"
 
-#: ../src/main-win-ui.c:205
+#: ../src/main-win-ui.c:206
 msgid "Copy Pat_h(s)"
 msgstr "Yolları Kopyala"
 
-#: ../src/main-win-ui.c:206
+#: ../src/main-win-ui.c:207
 msgid "R_ename..."
 msgstr "Yeniden _Adlandır..."
 
-#: ../src/main-win-ui.c:207
+#: ../src/main-win-ui.c:208
 msgid "D_uplicate..."
 msgstr "_Çoğalt..."
 
-#: ../src/main-win-ui.c:208
+#: ../src/main-win-ui.c:209
 msgid "Create Lin_k..."
 msgstr "Bağ_lantı Oluştur..."
 
-#: ../src/main-win-ui.c:209
+#: ../src/main-win-ui.c:210
 msgid "_Move to..."
 msgstr "_Şuraya taşı..."
 
-#: ../src/main-win-ui.c:210
+#: ../src/main-win-ui.c:211
 msgid "Copy to_..."
 msgstr "Şuraya _kopyala..."
 
-#: ../src/main-win-ui.c:211
+#: ../src/main-win-ui.c:212
 msgid "Propertie_s"
 msgstr "Özellik_ler"
 
-#: ../src/main-win-ui.c:213
+#: ../src/main-win-ui.c:214
 msgid "_Invert Selection"
 msgstr "Seçimi _Tersine Çevir"
 
-#: ../src/main-win-ui.c:214
+#: ../src/main-win-ui.c:215
 msgid "Prefere_nces"
 msgstr "T_ercihler"
 
-#: ../src/main-win-ui.c:215
+#: ../src/main-win-ui.c:216
 msgid "_View"
 msgstr "_Görünüm"
 
-#: ../src/main-win-ui.c:216
+#: ../src/main-win-ui.c:217
 msgid "_Reload Folder"
 msgstr "_Dizini Yeniden Yükle"
 
-#: ../src/main-win-ui.c:216
+#: ../src/main-win-ui.c:217
 msgid "Reload current folder"
 msgstr "Mevcut Dizini yeniden Yükle"
 
-#: ../src/main-win-ui.c:217
+#: ../src/main-win-ui.c:218
 msgid "Tool_bar"
 msgstr "A_raç Çubuğu"
 
-#: ../src/main-win-ui.c:218
+#: ../src/main-win-ui.c:219
 msgid "Pat_h Bar"
 msgstr "Yo_l Çubuğu"
 
-#: ../src/main-win-ui.c:219
+#: ../src/main-win-ui.c:220
 msgid "Side _Pane"
 msgstr "Yan _Panel"
 
 #. other see below: 'ShowHidden' 'ShowStatus' 'Fullscreen' 'IconView'...
-#: ../src/main-win-ui.c:221
+#: ../src/main-win-ui.c:222
 msgid "Fo_lder View Mode"
 msgstr "_Klasör Görünüm Kipi"
 
-#: ../src/main-win-ui.c:222
+#: ../src/main-win-ui.c:223
 msgid "S_ort Files"
 msgstr "Dosyaları _Sırala"
 
-#: ../src/main-win-ui.c:223
+#: ../src/main-win-ui.c:224
 #, fuzzy
 #| msgid "Zoom O_ut"
 msgid "Zoom _In"
 msgstr "_Uzaklaştır"
 
-#: ../src/main-win-ui.c:224
+#: ../src/main-win-ui.c:225
 msgid "Zoom O_ut"
 msgstr "_Uzaklaştır"
 
-#: ../src/main-win-ui.c:227
+#: ../src/main-win-ui.c:228
 msgid "Fil_ter..."
 msgstr "Fi_ltre..."
 
-#: ../src/main-win-ui.c:229
+#: ../src/main-win-ui.c:230
 msgid "_Help"
 msgstr "_Yardım"
 
-#: ../src/main-win-ui.c:231
+#: ../src/main-win-ui.c:232
 msgid "_Keyboard Navigation"
 msgstr "_Klavye Gezintisi"
 
-#: ../src/main-win-ui.c:232
+#: ../src/main-win-ui.c:233
 msgid "_Go"
 msgstr "G_it"
 
-#: ../src/main-win-ui.c:233
+#: ../src/main-win-ui.c:234
 msgid "_Previous Folder"
 msgstr "_Önceki Dizin"
 
-#: ../src/main-win-ui.c:233
+#: ../src/main-win-ui.c:234
 msgid "Return to previous folder in history"
 msgstr "Geçmişteki önceki klasöre dön"
 
-#: ../src/main-win-ui.c:234
+#: ../src/main-win-ui.c:235
 msgid "_Next Folder"
 msgstr "_Sonraki Dizin"
 
-#: ../src/main-win-ui.c:234
+#: ../src/main-win-ui.c:235
 msgid "Go forward to next folder in history"
 msgstr "Geçmişteki sonraki klasöre git"
 
-#: ../src/main-win-ui.c:235
+#: ../src/main-win-ui.c:236
 msgid "Pa_rent Folder"
 msgstr "_Üst Dizin"
 
-#: ../src/main-win-ui.c:235
+#: ../src/main-win-ui.c:236
 msgid "Go to parent Folder"
 msgstr "Üst Dizine Git"
 
-#: ../src/main-win-ui.c:236
+#: ../src/main-win-ui.c:237
 msgid "H_ome Folder"
 msgstr "E_v Dizini"
 
-#: ../src/main-win-ui.c:236
+#: ../src/main-win-ui.c:237
 msgid "Go to home folder"
 msgstr "Ev klasörüne git"
 
-#: ../src/main-win-ui.c:237
+#: ../src/main-win-ui.c:238
 msgid "_Desktop"
 msgstr "_Masaüstü"
 
-#: ../src/main-win-ui.c:237
+#: ../src/main-win-ui.c:238
 msgid "Go to desktop folder"
 msgstr "Masaüstü klasörüne git"
 
-#: ../src/main-win-ui.c:238
+#: ../src/main-win-ui.c:239
 msgid "Open trash can"
 msgstr "Çöp kutusunu aç"
 
-#: ../src/main-win-ui.c:239
+#: ../src/main-win-ui.c:240
 msgid "Filesyste_m Root"
 msgstr "_Dosya sistemi kök dizini"
 
-#: ../src/main-win-ui.c:239
+#: ../src/main-win-ui.c:240
 msgid "Go fo filesystem root"
 msgstr "_Dosya sistemi kök dizini"
 
-#: ../src/main-win-ui.c:240
+#: ../src/main-win-ui.c:241
 msgid "_Applications"
 msgstr "_Uygulamalar"
 
-#: ../src/main-win-ui.c:240
+#: ../src/main-win-ui.c:241
 msgid "Go to root of applications menu folder"
 msgstr "Uygulama menü klasörü köküne git"
 
-#: ../src/main-win-ui.c:241
+#: ../src/main-win-ui.c:242
 msgid "Go to list of devices connected to the computer"
 msgstr "Bilgisayara bağlı aygıtlar listesine git"
 
-#: ../src/main-win-ui.c:242
+#: ../src/main-win-ui.c:243
 msgid "Net_work"
 msgstr "_Ağ"
 
-#: ../src/main-win-ui.c:242
+#: ../src/main-win-ui.c:243
 msgid "Go to list of places on the network"
 msgstr "Ağdaki konumlar listesine git"
 
-#: ../src/main-win-ui.c:243
+#: ../src/main-win-ui.c:244
 msgid "_Go to Location..."
 msgstr "_Konuma Git..."
 
-#: ../src/main-win-ui.c:244
+#: ../src/main-win-ui.c:245
 msgid "_Connect to Server..."
 msgstr "_Sunucuya Bağlan..."
 
-#: ../src/main-win-ui.c:244
+#: ../src/main-win-ui.c:245
 msgid "Open a window to choose remote folder location"
 msgstr "Uzak klasör konumunu seçmek üzere bir pencere aç"
 
-#: ../src/main-win-ui.c:245
+#: ../src/main-win-ui.c:246
 msgid "Go to the path in the location bar"
 msgstr "Konum çubuğundaki yola git"
 
-#: ../src/main-win-ui.c:246
+#: ../src/main-win-ui.c:247
 msgid "_Bookmarks"
 msgstr "_Yer İmleri"
 
-#: ../src/main-win-ui.c:247
+#: ../src/main-win-ui.c:248
 msgid "_Add to Bookmarks..."
 msgstr "_Yer İmlerine Ekle..."
 
-#: ../src/main-win-ui.c:247
+#: ../src/main-win-ui.c:248
 msgid "Add current folder to bookmarks list"
 msgstr "Geçerli klasörü yer imlerine ekle"
 
-#: ../src/main-win-ui.c:248
+#: ../src/main-win-ui.c:249
 msgid "Too_ls"
 msgstr "Ara_çlar"
 
-#: ../src/main-win-ui.c:249
+#: ../src/main-win-ui.c:250
 msgid "Open Current Folder in _Terminal"
 msgstr "Mevcut Dizini _Uçbirimde Aç"
 
-#: ../src/main-win-ui.c:251
+#: ../src/main-win-ui.c:252
 msgid "Fin_d Files..."
 msgstr "Dosyaları _Bul..."
 
-#: ../src/main-win-ui.c:251
+#: ../src/main-win-ui.c:252
 msgid "Open search dialog"
 msgstr "Arama penceresini aç"
 
-#: ../src/main-win-ui.c:254
+#: ../src/main-win-ui.c:255
 msgid "_Run a Command in Current Folder..."
 msgstr "_Geçerli Klasörde bir Komut Çalıştır..."
 
 #. Note to translators: "Mingle..." means "Do not put folders before files" but make the translation as short as possible, please!
-#: ../src/main-win-ui.c:271
+#: ../src/main-win-ui.c:272
 msgid "Mingle _Files and Folders"
 msgstr "_Dosya ve Klasörleri Karıştır"
 
-#: ../src/main-win-ui.c:274
+#: ../src/main-win-ui.c:275
 msgid "_Ignore Name Case"
 msgstr "_İsimde Harf Durumunu Yoksay"
 
-#: ../src/main-win-ui.c:276
+#: ../src/main-win-ui.c:277
 msgid "Sho_w Hidden"
 msgstr "_Gizlileri Göster"
 
 #. Note to translators: this save is meant for folder's settings such as sort
-#: ../src/main-win-ui.c:278
+#: ../src/main-win-ui.c:279
 msgid "Preserve This Folder's Settings"
 msgstr "Bu Klasör Ayarlarını Koru"
 
-#: ../src/main-win-ui.c:279
+#: ../src/main-win-ui.c:280
 msgid ""
 "Check to remember view and sort as folder setting rather than global one"
 msgstr ""
 "Görünüm ve sıralama ayarını genel bir ayar yerine klasör ayarı olarak "
 "hatırlamak için işaretieyin"
 
-#: ../src/main-win-ui.c:281
+#: ../src/main-win-ui.c:282
 msgid "_Show Toolbar"
 msgstr "Araç Çubuğunu _Göster"
 
-#: ../src/main-win-ui.c:282
+#: ../src/main-win-ui.c:283
 msgid "Show 'New _Window' Button"
 msgstr "'Yeni _Pencere' Düğmesini Göster"
 
-#: ../src/main-win-ui.c:283
+#: ../src/main-win-ui.c:284
 msgid "Show 'New _Tab' Button"
 msgstr "'Yeni _Sekme' Düğmesini Göster"
 
-#: ../src/main-win-ui.c:284
+#: ../src/main-win-ui.c:285
 msgid "Show _Navigation Buttons"
 msgstr "_Gezinme Düğmelerini Göster"
 
-#: ../src/main-win-ui.c:285
+#: ../src/main-win-ui.c:286
 msgid "Show '_Home' Button"
 msgstr "'_Ev' Düğmesini Göster"
 
-#: ../src/main-win-ui.c:286
+#: ../src/main-win-ui.c:287
 msgid "Sho_w Side Pane"
 msgstr "_Yan Bölmede Göster"
 
-#: ../src/main-win-ui.c:287
+#: ../src/main-win-ui.c:288
 msgid "Show Status B_ar"
 msgstr "_Araç Çubuğunda Göster"
 
-#: ../src/main-win-ui.c:288
+#: ../src/main-win-ui.c:289
 msgid "_Dual Pane Mode"
 msgstr "_İkili Panel Kipi"
 
-#: ../src/main-win-ui.c:288
+#: ../src/main-win-ui.c:289
 msgid "Show two panels with folder views"
 msgstr "Klasör görünümünde iki panel göster"
 
-#: ../src/main-win-ui.c:289
+#: ../src/main-win-ui.c:290
 msgid "Fullscreen _Mode"
 msgstr "_Tam Ekran Kipi"
 
-#: ../src/main-win-ui.c:295
+#: ../src/main-win-ui.c:296
 msgid "_Icon View"
 msgstr "_Simge Görünümü"
 
-#: ../src/main-win-ui.c:296
+#: ../src/main-win-ui.c:297
 msgid "_Compact View"
 msgstr "Sı_kışık Görünüm"
 
-#: ../src/main-win-ui.c:297
+#: ../src/main-win-ui.c:298
 msgid "_Thumbnail View"
 msgstr "Ö_nizleme Görünümü"
 
-#: ../src/main-win-ui.c:298
+#: ../src/main-win-ui.c:299
 msgid "Detailed _List View"
 msgstr "Ayrıntılı _Liste Görünümü"
 
-#: ../src/main-win-ui.c:311 ../src/main-win-ui.c:319
+#: ../src/main-win-ui.c:312 ../src/main-win-ui.c:320
 msgid "By _Name"
 msgstr "İ_sme Göre"
 
-#: ../src/main-win-ui.c:312 ../src/main-win-ui.c:320
+#: ../src/main-win-ui.c:313 ../src/main-win-ui.c:321
 msgid "By _Modification Time"
 msgstr "_Değişim Tarihine Göre"
 
-#: ../src/main-win-ui.c:313 ../src/main-win-ui.c:321
+#: ../src/main-win-ui.c:314 ../src/main-win-ui.c:322
 msgid "By _Size"
 msgstr "_Boyuta Göre"
 
-#: ../src/main-win-ui.c:314 ../src/main-win-ui.c:322
+#: ../src/main-win-ui.c:315 ../src/main-win-ui.c:323
 msgid "By File _Type"
 msgstr "_Türe Göre"
 
-#: ../src/main-win-ui.c:316
+#: ../src/main-win-ui.c:317
 msgid "By _Extension"
 msgstr "_Uzantıya Göre"
 
-#: ../src/main-win-ui.c:329
+#: ../src/main-win-ui.c:330
 msgid "Places"
 msgstr "Yerler"
 
-#: ../src/main-win-ui.c:330
+#: ../src/main-win-ui.c:331
 msgid "Directory Tree"
 msgstr "Dizin Ağacı"
 
-#: ../src/main-win-ui.c:331
+#: ../src/main-win-ui.c:332
 msgid "Remote"
 msgstr "Uzak"
 
-#: ../src/main-win-ui.c:337
+#: ../src/main-win-ui.c:338
 msgid "_Location"
 msgstr "_Konum"
 
-#: ../src/main-win-ui.c:338
+#: ../src/main-win-ui.c:339
 msgid "_Buttons"
 msgstr "_Düğmeler"
 
@@ -1233,42 +1237,42 @@ msgstr "Masaüstü yöneticisi etkin değil."
 msgid "Terminal emulator is not set."
 msgstr "Uçbirim öykünücüsü seçilmedi."
 
-#: ../src/tab-page.c:56
+#: ../src/tab-page.c:57
 msgid "Open in New T_ab"
 msgstr "Yeni _Sekmede Aç"
 
 #. Note to translators: this is the information (name, size, type)
 #. about the selected file in the status bar
-#: ../src/tab-page.c:378
+#: ../src/tab-page.c:379
 #, c-format
 msgid "\"%s\" (%s) %s"
 msgstr ""
 
 #. Note to translators: this is the information (name, type)
 #. about the selected file in the status bar
-#: ../src/tab-page.c:387
+#: ../src/tab-page.c:388
 #, c-format
 msgid "\"%s\" %s"
 msgstr ""
 
-#: ../src/tab-page.c:415
+#: ../src/tab-page.c:416
 #, c-format
 msgid "%d item selected"
 msgid_plural "%d items selected"
 msgstr[0] "%d parça seçildi"
 
-#: ../src/tab-page.c:745
+#: ../src/tab-page.c:746
 #, c-format
 msgid "Free space: %s (Total: %s)"
 msgstr "Boş alan: %s (Toplam: %s)"
 
-#: ../src/tab-page.c:765
+#: ../src/tab-page.c:766
 #, c-format
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] "%d parça"
 
-#: ../src/tab-page.c:766
+#: ../src/tab-page.c:767
 #, c-format
 msgid " (%d hidden)"
 msgid_plural " (%d hidden)"
