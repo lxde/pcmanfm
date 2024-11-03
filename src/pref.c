@@ -746,6 +746,9 @@ void fm_edit_preference( GtkWindow* parent, int page )
         INIT_SPIN(builder, FmConfig, thumbnail_max, NULL);
 
         INIT_BOOL(builder, FmConfig, si_unit, NULL);
+#if FM_CHECK_VERSION(1, 3, 3)
+        INIT_BOOL_SHOW(builder, FmConfig, date_iso_8601, NULL);
+#endif
         INIT_BOOL(builder, FmConfig, backup_as_hidden, NULL);
 #if FM_CHECK_VERSION(1, 2, 0)
         INIT_BOOL_SHOW(builder, FmConfig, show_full_names, NULL);
