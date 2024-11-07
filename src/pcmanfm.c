@@ -394,14 +394,14 @@ gboolean pcmanfm_run(gint screen_num)
                 /* Make sure this is a support image file. */
                 if(gdk_pixbuf_get_file_info(set_wallpaper, NULL, NULL))
                 {
-                    if(desktop->conf.wallpaper)
-                        g_free(desktop->conf.wallpaper);
-                    desktop->conf.wallpaper = set_wallpaper;
+                    if(desktop->conf->wallpaper)
+                        g_free(desktop->conf->wallpaper);
+                    desktop->conf->wallpaper = set_wallpaper;
                     if(! wallpaper_mode) /* if wallpaper mode is not specified */
                     {
                         /* do not use solid color mode; otherwise wallpaper won't be shown. */
-                        if(desktop->conf.wallpaper_mode == FM_WP_COLOR)
-                            desktop->conf.wallpaper_mode = FM_WP_FIT;
+                        if(desktop->conf->wallpaper_mode == FM_WP_COLOR)
+                            desktop->conf->wallpaper_mode = FM_WP_FIT;
                     }
                     wallpaper_changed = TRUE;
                     set_wallpaper = NULL;
@@ -413,9 +413,9 @@ gboolean pcmanfm_run(gint screen_num)
                 FmWallpaperMode mode = fm_app_wallpaper_get_mode_by_name(wallpaper_mode);
 
                 if (mode != (FmWallpaperMode)-1
-                    && mode != desktop->conf.wallpaper_mode)
+                    && mode != desktop->conf->wallpaper_mode)
                 {
-                    desktop->conf.wallpaper_mode = mode;
+                    desktop->conf->wallpaper_mode = mode;
                     wallpaper_changed = TRUE;
                 }
             }
