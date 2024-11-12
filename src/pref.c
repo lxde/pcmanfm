@@ -3,6 +3,7 @@
  *
  *      Copyright 2009 PCMan <pcman.tw@gmail.com>
  *      Copyright 2012-2014 Andriy Grytsenko (LStranger) <andrej@rep.kiev.ua>
+ *      Copyright 2024 Ingo Brückl
  *
  *      This program is free software; you can redistribute it and/or modify
  *      it under the terms of the GNU General Public License as published by
@@ -45,6 +46,7 @@
 
 static GtkWindow* pref_dlg = NULL;
 static GtkNotebook* notebook = NULL;
+static GObject *b_objects[2];
 /*
 static GtkWidget* icon_size_combo[3] = {0};
 static GtkWidget* bookmark_combo = NULL
@@ -272,7 +274,7 @@ static void init_bool(GtkBuilder* b, const char* name, gsize off,
     g_signal_connect(btn, "toggled", G_CALLBACK(on_toggled), GSIZE_TO_POINTER(off));
 }
 
-static void on_single_click_toggled(GtkToggleButton* btn, gpointer auto_sel_box)
+static void on_single_click_toggled(GtkToggleButton* btn, GObject **object)
 {
     gboolean new_val = gtk_toggle_button_get_active(btn);
 
@@ -281,9 +283,26 @@ static void on_single_click_toggled(GtkToggleButton* btn, gpointer auto_sel_box)
         fm_config->single_click = new_val;
         fm_config_emit_changed(fm_config, "single_click");
     }
-    if (auto_sel_box)
-        gtk_widget_set_sensitive(auto_sel_box, new_val);
+    if (object[0])
+        gtk_widget_set_sensitive(GTK_WIDGET(object[0]), new_val);
+    if (new_val && object[1])
+        gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(object[1]), FALSE);
 }
+
+#if FM_CHECK_VERSION(1, 3, 3)
+static void on_middle_click_toggled(GtkToggleButton* btn, gpointer single_click)
+{
+    gboolean new_val = gtk_toggle_button_get_active(btn);
+
+    if (new_val != fm_config->middle_click)
+    {
+        fm_config->middle_click = new_val;
+        fm_config_emit_changed(fm_config, "middle_click");
+    }
+    if (new_val)
+        gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(single_click), FALSE);
+}
+#endif
 
 static void on_use_trash_toggled(GtkToggleButton* btn, gpointer vbox_trash)
 {
@@ -690,11 +709,23 @@ void fm_edit_preference( GtkWindow* parent, int page )
 
         /* General tab */
         /* special handling for single_click */
+        b_objects[0] = gtk_builder_get_object(builder, "auto_sel_box");
+        b_objects[1] = gtk_builder_get_object(builder, "middle_click");
         g_signal_connect(gtk_builder_get_object(builder, "single_click"),
                          "toggled", G_CALLBACK(on_single_click_toggled),
-                         gtk_builder_get_object(builder, "auto_sel_box"));
+                         b_objects);
         gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(gtk_builder_get_object(builder, "single_click")),
                                      fm_config->single_click);
+#if FM_CHECK_VERSION(1, 3, 3)
+        /* special handling for middle_click */
+        g_signal_connect(gtk_builder_get_object(builder, "middle_click"),
+                         "toggled", G_CALLBACK(on_middle_click_toggled),
+                         gtk_builder_get_object(builder, "single_click"));
+        gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(gtk_builder_get_object(builder, "middle_click")),
+                                     fm_config->middle_click);
+        gtk_widget_show(GTK_WIDGET(gtk_builder_get_object(builder, "middle_click")));
+#endif
+
 #if FM_CHECK_VERSION(1, 2, 0)
         init_auto_selection_delay_scale(builder);
 #endif

@@ -3,6 +3,7 @@
  *
  *      Copyright 2010 - 2012 Hong Jen Yee (PCMan) <pcman.tw@gmail.com>
  *      Copyright 2012-2017 Andriy Grytsenko (LStranger) <andrej@rep.kiev.ua>
+ *      Copyright 2024 Ingo Brückl
  *
  *      This program is free software; you can redistribute it and/or modify
  *      it under the terms of the GNU General Public License as published by
@@ -3494,12 +3495,18 @@ static gboolean on_button_release(GtkWidget* w, GdkEventButton* evt)
         /* restore after drag */
         queue_layout_items(self);
     }
-    else if(fm_config->single_click && evt->button == 1)
+    else if((fm_config->single_click && evt->button == 1)
+#if FM_CHECK_VERSION(1, 3, 3)
+                                                          ||
+            (fm_config->middle_click && evt->button == 2))
+#else
+                                                         )
+#endif
     {
         GtkTreeIter it;
         FmDesktopItem* clicked_item = hit_test(self, &it, evt->x, evt->y);
         if(clicked_item)
-            /* left single click */
+            /* single click */
             fm_launch_file_simple(GTK_WINDOW(w), NULL, clicked_item->fi, pcmanfm_open_folder, w);
     }
 
