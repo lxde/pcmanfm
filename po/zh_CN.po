@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm 1.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-03 14:35+0100\n"
+"POT-Creation-Date: 2024-11-12 16:07+0100\n"
 "PO-Revision-Date: 2014-12-03 12:16+0000\n"
 "Last-Translator: Wylmer Wang <wantinghard@gmail.com>\n"
 "Language-Team: Chinese (simplified) <i18n-zh@googlegroups.com>\n"
@@ -108,12 +108,12 @@ msgstr "在点击桌面时显示窗口管理器提供的菜单(_S)"
 msgid "_Use desktop as a folder (show icons on it) by path:"
 msgstr "将此路径对应的文件夹作为桌面(在其中显示图标)(_U)："
 
-#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:85
+#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:86
 msgctxt "Use path for some folder: ..."
 msgid "Default"
 msgstr "默认"
 
-#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:86
+#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:87
 msgctxt "Use path for some folder: ..."
 msgid "Custom:"
 msgstr "自定义："
@@ -179,46 +179,56 @@ msgid "<b>Behavior</b>"
 msgstr "<b>行为</b>"
 
 #: ../data/ui/pref.glade.h:6
-msgid "_Open files with single click"
+#, fuzzy
+#| msgid "_Open files with single click"
+msgid "_Open files with a single left-click"
 msgstr "单击打开文件(_O)"
 
 #: ../data/ui/pref.glade.h:7
-msgid "Delay of auto-selection in single click mode (0 to disable)"
+#, fuzzy
+#| msgid "Delay of auto-selection in single click mode (0 to disable)"
+msgid "Delay of auto-selection in single left-click mode (0 to disable)"
 msgstr "单击模式中自动选中的延时(0 为禁用)"
 
 #: ../data/ui/pref.glade.h:8
+#, fuzzy
+#| msgid "_Open files with single click"
+msgid "O_pen files with a single middle-click"
+msgstr "单击打开文件(_O)"
+
+#: ../data/ui/pref.glade.h:9
 msgid "Co_nfirm before deleting files"
 msgstr "在删除文件前请求确认(_N)"
 
-#: ../data/ui/pref.glade.h:9
+#: ../data/ui/pref.glade.h:10
 msgid "_Move deleted files to \"trash can\" instead of erasing from disk"
 msgstr "将删除的文件移动到“回收站”而不是从磁盘中擦除(_M)"
 
-#: ../data/ui/pref.glade.h:10
+#: ../data/ui/pref.glade.h:11
 msgid "_Erase files on removable media instead of \"trash can\" creation"
 msgstr "擦除可移动媒体上的文件，而非创建“回收站”(_E)"
 
-#: ../data/ui/pref.glade.h:11
+#: ../data/ui/pref.glade.h:12
 msgid "Confi_rm before moving files into \"trash can\""
 msgstr "在将文件移到“回收站”前请求确认(_R)"
 
-#: ../data/ui/pref.glade.h:12
+#: ../data/ui/pref.glade.h:13
 msgid "Don't ask options on _launch executable file"
 msgstr "启动可执行文件时不询问选择(_L)"
 
-#: ../data/ui/pref.glade.h:13
+#: ../data/ui/pref.glade.h:14
 msgid "_Bookmarks:"
 msgstr "书签(_B)："
 
-#: ../data/ui/pref.glade.h:14
+#: ../data/ui/pref.glade.h:15
 msgid "Defaul_t drop action:"
 msgstr "放下的默认操作(_T)："
 
-#: ../data/ui/pref.glade.h:15
+#: ../data/ui/pref.glade.h:16
 msgid "\"_Smart shortcut\" auto-action on drop to Desktop folder"
 msgstr "“智能快捷方式”-在拖放到 桌面 文件夹时自动执行操作"
 
-#: ../data/ui/pref.glade.h:16
+#: ../data/ui/pref.glade.h:17
 msgid ""
 "If enabled then \"Auto\" action on drop file onto Desktop folder will be:\n"
 "- for files directly in Home folder a symlink will be created\n"
@@ -232,241 +242,241 @@ msgstr ""
 "- 其他文件(如可移动媒体上的文件)，会执行复制\n"
 "- 对于一些外部 URI，会创建一个快捷方式"
 
-#: ../data/ui/pref.glade.h:21
+#: ../data/ui/pref.glade.h:22
 msgid "_Unfold tab when files are dragged onto tab button"
 msgstr "将文件拖放到标签按钮时自动展开标签(_U)"
 
-#: ../data/ui/pref.glade.h:22
+#: ../data/ui/pref.glade.h:23
 msgid "_Focus previous folder after coming to its parent"
 msgstr "转到上一级后，选中该文件夹(_F)"
 
-#: ../data/ui/pref.glade.h:23
+#: ../data/ui/pref.glade.h:24
 msgid "<b>Default View</b>"
 msgstr "<b>默认视图</b>"
 
-#: ../data/ui/pref.glade.h:24
+#: ../data/ui/pref.glade.h:25
 msgid "Vie_w Mode:"
 msgstr "查看方式(_W)："
 
-#: ../data/ui/pref.glade.h:25
+#: ../data/ui/pref.glade.h:26
 msgid "_General"
 msgstr "常规(_G)"
 
-#: ../data/ui/pref.glade.h:26
+#: ../data/ui/pref.glade.h:27
 msgid "<b>Icons</b>"
 msgstr "<b>图标</b>"
 
-#: ../data/ui/pref.glade.h:27
+#: ../data/ui/pref.glade.h:28
 msgid "Size of _big icons:"
 msgstr "大图标的尺寸(_B)："
 
-#: ../data/ui/pref.glade.h:28
+#: ../data/ui/pref.glade.h:29
 msgid "Size of small _icons:"
 msgstr "小图标的尺寸(_I)："
 
-#: ../data/ui/pref.glade.h:29
+#: ../data/ui/pref.glade.h:30
 msgid "Size of _thumbnails:"
 msgstr "缩略图的尺寸(_T)："
 
-#: ../data/ui/pref.glade.h:30
+#: ../data/ui/pref.glade.h:31
 msgid "Size of side _pane icons:"
 msgstr "侧窗格图标的尺寸(_P)："
 
-#: ../data/ui/pref.glade.h:31
+#: ../data/ui/pref.glade.h:32
 msgid "_Show thumbnails of files"
 msgstr "显示文件的缩略图(_S)"
 
-#: ../data/ui/pref.glade.h:32
+#: ../data/ui/pref.glade.h:33
 msgid "_Only show thumbnails for local files"
 msgstr "只显示本地文件的缩略图(_O)"
 
-#: ../data/ui/pref.glade.h:33
+#: ../data/ui/pref.glade.h:34
 msgid "Do _not generate thumbnails for files exceeding this size:"
 msgstr "对于大小超过这个尺寸的文件不生成缩略图(_N)："
 
-#: ../data/ui/pref.glade.h:34
+#: ../data/ui/pref.glade.h:35
 msgid "<b>User Interface</b>"
 msgstr "<b>用户界面</b>"
 
-#: ../data/ui/pref.glade.h:35
+#: ../data/ui/pref.glade.h:36
 msgid "Us_e SI decimal prefixes instead of IEC binary prefixes"
 msgstr "使用国际单位制的十进制前缀而非 IEC 的二进制前缀(_E)"
 
-#: ../data/ui/pref.glade.h:36
+#: ../data/ui/pref.glade.h:37
 msgid "Show _date as YYYY-MM-DD instead of in locale format"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:37
+#: ../data/ui/pref.glade.h:38
 msgid "Treat backup files as _hidden"
 msgstr "将备份文件视为隐藏(_H)"
 
-#: ../data/ui/pref.glade.h:38
+#: ../data/ui/pref.glade.h:39
 msgid "Al_ways show full file names"
 msgstr "总是显示完整文件名(_W)"
 
-#: ../data/ui/pref.glade.h:39
+#: ../data/ui/pref.glade.h:40
 msgid "Show icons of hidden _files shadowed"
 msgstr "显示已屏蔽(shadowed)隐藏文件的图标(_F)"
 
-#: ../data/ui/pref.glade.h:40
+#: ../data/ui/pref.glade.h:41
 msgid "_Display"
 msgstr "显示(_D)"
 
-#: ../data/ui/pref.glade.h:41
+#: ../data/ui/pref.glade.h:42
 msgid "Hid_e 'Close tab' buttons"
 msgstr "隐藏“关闭标签”按钮(_E)"
 
-#: ../data/ui/pref.glade.h:42
+#: ../data/ui/pref.glade.h:43
 msgid "Al_ways show the tab bar"
 msgstr "总是显示标签栏(_W)"
 
-#: ../data/ui/pref.glade.h:43
+#: ../data/ui/pref.glade.h:44
 msgid "_Maximum width of tab label:"
 msgstr "标签页文字最大宽度(_M)："
 
 #. Use genitive case here, context is: width is XXX characters
-#: ../data/ui/pref.glade.h:45
+#: ../data/ui/pref.glade.h:46
 msgid "characters"
 msgstr "字符"
 
-#: ../data/ui/pref.glade.h:46
+#: ../data/ui/pref.glade.h:47
 msgid "<b>Directories Tree</b>"
 msgstr "<b>目录树</b>"
 
-#: ../data/ui/pref.glade.h:47
+#: ../data/ui/pref.glade.h:48
 msgid "Hide e_xpander on empty or locked folder"
 msgstr "隐藏空文件夹或锁定文件夹的展开控件(_X)"
 
-#: ../data/ui/pref.glade.h:48
+#: ../data/ui/pref.glade.h:49
 msgid "<b>Show in Places:</b>"
 msgstr "<b>在位置处显示：</b>"
 
-#: ../data/ui/pref.glade.h:49
+#: ../data/ui/pref.glade.h:50
 msgid "_Home Folder"
 msgstr "主文件夹(_H)"
 
-#: ../data/ui/pref.glade.h:50
+#: ../data/ui/pref.glade.h:51
 msgid "Des_ktop"
 msgstr "桌面(_K)"
 
-#: ../data/ui/pref.glade.h:51 ../src/main-win-ui.c:239
+#: ../data/ui/pref.glade.h:52 ../src/main-win-ui.c:239
 msgid "_Trash Can"
 msgstr "回收站(_T)"
 
-#: ../data/ui/pref.glade.h:52
+#: ../data/ui/pref.glade.h:53
 msgid "_Filesystem Root"
 msgstr "文件系统根目录(_F)"
 
-#: ../data/ui/pref.glade.h:53
+#: ../data/ui/pref.glade.h:54
 msgid "App_lications"
 msgstr "应用程序(_L)"
 
-#: ../data/ui/pref.glade.h:54 ../src/main-win-ui.c:242
+#: ../data/ui/pref.glade.h:55 ../src/main-win-ui.c:242
 msgid "Dev_ices"
 msgstr "设备(_I)"
 
-#: ../data/ui/pref.glade.h:55
+#: ../data/ui/pref.glade.h:56
 msgid "_Network"
 msgstr "网络(_N)"
 
-#: ../data/ui/pref.glade.h:56
+#: ../data/ui/pref.glade.h:57
 msgid "_Layout"
 msgstr "布局(_L)"
 
-#: ../data/ui/pref.glade.h:57
+#: ../data/ui/pref.glade.h:58
 msgid "<b>Auto-mount</b>"
 msgstr "<b>自动挂载</b>"
 
-#: ../data/ui/pref.glade.h:58
+#: ../data/ui/pref.glade.h:59
 msgid "_Mount mountable volumes automatically on program startup"
 msgstr "在程序启动时自动挂载可挂载的卷(_M)"
 
-#: ../data/ui/pref.glade.h:59
+#: ../data/ui/pref.glade.h:60
 msgid "Mo_unt removable media automatically when they are inserted"
 msgstr "在插入可移动媒质时自动挂载(_U)"
 
-#: ../data/ui/pref.glade.h:60
+#: ../data/ui/pref.glade.h:61
 msgid "_Show available options for removable media when they are inserted"
 msgstr "在插入可移动媒质时显示可用操作(_S)"
 
-#: ../data/ui/pref.glade.h:61
+#: ../data/ui/pref.glade.h:62
 msgid "Do_n't show available options for those media types:"
 msgstr "在插入以下类型的媒质时不显示可用操作(_N)："
 
-#: ../data/ui/pref.glade.h:62
+#: ../data/ui/pref.glade.h:63
 msgid "_Remove selected"
 msgstr "删除选中项(_R)"
 
-#: ../data/ui/pref.glade.h:63
+#: ../data/ui/pref.glade.h:64
 msgid "_Open mounted removable media in new tab instead of new window"
 msgstr "在新标签页中打开挂载的可移动媒质，而非打开新窗口(_O)"
 
-#: ../data/ui/pref.glade.h:64
+#: ../data/ui/pref.glade.h:65
 msgid "When removable medium unmounted:"
 msgstr "当卸载可移动媒质时："
 
-#: ../data/ui/pref.glade.h:65
+#: ../data/ui/pref.glade.h:66
 msgid "Clos_e tab containing removable medium"
 msgstr "关闭包含可移动媒质的标签页(_E)"
 
-#: ../data/ui/pref.glade.h:66
+#: ../data/ui/pref.glade.h:67
 msgid "Change folder in the tab to _Home Folder"
 msgstr "将标签页文件夹切换到主目录(_H)"
 
-#: ../data/ui/pref.glade.h:67
+#: ../data/ui/pref.glade.h:68
 msgid "_Volume Management"
 msgstr "卷管理(_V)"
 
-#: ../data/ui/pref.glade.h:68
+#: ../data/ui/pref.glade.h:69
 msgid "<b>Programs</b>"
 msgstr "<b>程序</b>"
 
-#: ../data/ui/pref.glade.h:69
+#: ../data/ui/pref.glade.h:70
 msgid "<i>Commands below may include extra options if necessary.</i>"
 msgstr "<i>以下命令在必要时可带额外的选项。</i>"
 
-#: ../data/ui/pref.glade.h:70
+#: ../data/ui/pref.glade.h:71
 msgid "_Terminal emulator:"
 msgstr "终端模拟器(_T)："
 
-#: ../data/ui/pref.glade.h:71
+#: ../data/ui/pref.glade.h:72
 msgid "_Switch user command:"
 msgstr "切换用户命令(_S)："
 
 #. Application command to format some drive
-#: ../data/ui/pref.glade.h:73
+#: ../data/ui/pref.glade.h:74
 msgid "_Format command:"
 msgstr "格式化命令(_F)："
 
-#: ../data/ui/pref.glade.h:74
+#: ../data/ui/pref.glade.h:75
 msgid "A_rchiver integration:"
 msgstr "档案管理器集成(_R)："
 
-#: ../data/ui/pref.glade.h:75
+#: ../data/ui/pref.glade.h:76
 msgid "<b>Templates</b>"
 msgstr "<b>模板</b>"
 
-#: ../data/ui/pref.glade.h:76
+#: ../data/ui/pref.glade.h:77
 msgid "S_how only user defined templates in menu"
 msgstr "菜单中只显示用户定义的模板(_H)"
 
-#: ../data/ui/pref.glade.h:77
+#: ../data/ui/pref.glade.h:78
 msgid "Show _only one template for each MIME type"
 msgstr "对每种 MIME 类型只显示一个模板(_O)"
 
-#: ../data/ui/pref.glade.h:78
+#: ../data/ui/pref.glade.h:79
 msgid "Ru_n default application after creation from template"
 msgstr "在从模板创建后运行默认应用程序(_N)"
 
-#: ../data/ui/pref.glade.h:79
+#: ../data/ui/pref.glade.h:80
 msgid "<b>Other Options</b>"
 msgstr "<b>其他选项</b>"
 
-#: ../data/ui/pref.glade.h:80
+#: ../data/ui/pref.glade.h:81
 msgid "Use Application Startup Notify _by default"
 msgstr "默认使用应用程序启动通知(_B)"
 
-#: ../data/ui/pref.glade.h:81
+#: ../data/ui/pref.glade.h:82
 msgid ""
 "If checked then use Startup Notify for application if another not stated "
 "explicitly.\n"
@@ -475,63 +485,63 @@ msgstr ""
 "若选中，会在未明确声明的情况下使用“启动通知”。\n"
 "如果不选中，只有为应用程序定义了“启动通知”时才会使用。"
 
-#: ../data/ui/pref.glade.h:83
+#: ../data/ui/pref.glade.h:84
 msgid "D_efer test for content type on folder loading"
 msgstr "推迟文件夹载入时的内容类型检测(_E)"
 
-#: ../data/ui/pref.glade.h:84
+#: ../data/ui/pref.glade.h:85
 msgid "Use path for \"Home Folder\" button:"
 msgstr "“主目录”按钮使用该路径："
 
-#: ../data/ui/pref.glade.h:87
+#: ../data/ui/pref.glade.h:88
 msgid "_Use current"
 msgstr "使用当前(_U)"
 
-#: ../data/ui/pref.glade.h:88
+#: ../data/ui/pref.glade.h:89
 msgid "_Advanced"
 msgstr "高级(_A)"
 
-#: ../data/ui/pref.glade.h:89
+#: ../data/ui/pref.glade.h:90
 msgid "<b>_Do not load modules matching:</b>"
 msgstr "<b>不加载匹配以下模式的模块：</b>"
 
-#: ../data/ui/pref.glade.h:90
+#: ../data/ui/pref.glade.h:91
 msgid "<b>_Load these modules anyway:</b>"
 msgstr "<b>强制加载这些模块：</b>"
 
-#: ../data/ui/pref.glade.h:91
+#: ../data/ui/pref.glade.h:92
 msgid "Modules"
 msgstr "模块"
 
-#: ../data/ui/pref.glade.h:92
+#: ../data/ui/pref.glade.h:93
 msgid "Auto (move if on the same FS, copy otherwise)"
 msgstr "自动(相同文件系统时移动，否则复制)"
 
-#: ../data/ui/pref.glade.h:93
+#: ../data/ui/pref.glade.h:94
 msgid "Copy"
 msgstr "复制"
 
-#: ../data/ui/pref.glade.h:94
+#: ../data/ui/pref.glade.h:95
 msgid "Move"
 msgstr "移动"
 
-#: ../data/ui/pref.glade.h:95
+#: ../data/ui/pref.glade.h:96
 msgid "Ask"
 msgstr "询问"
 
-#: ../data/ui/pref.glade.h:96
+#: ../data/ui/pref.glade.h:97
 msgid "Icon view"
 msgstr "图标视图"
 
-#: ../data/ui/pref.glade.h:97
+#: ../data/ui/pref.glade.h:98
 msgid "Compact view"
 msgstr "紧凑视图"
 
-#: ../data/ui/pref.glade.h:98
+#: ../data/ui/pref.glade.h:99
 msgid "Thumbnail view"
 msgstr "缩略视图"
 
-#: ../data/ui/pref.glade.h:99
+#: ../data/ui/pref.glade.h:100
 msgid "Detailed list view"
 msgstr "详细列表视图"
 
@@ -1123,11 +1133,11 @@ msgstr ""
 msgid "Add to Bookmarks"
 msgstr "添加到书签中"
 
-#: ../src/main-win.c:2589
+#: ../src/main-win.c:2594
 msgid "Select filter"
 msgstr "选择过滤器"
 
-#: ../src/main-win.c:2590
+#: ../src/main-win.c:2595
 msgid "Choose a new shell pattern to show files:"
 msgstr "选择显示文件的新 shell 模式："
 
@@ -1262,19 +1272,19 @@ msgid " (%d hidden)"
 msgid_plural " (%d hidden)"
 msgstr[0] " (%d 项隐藏)"
 
-#: ../src/pref.c:515
+#: ../src/pref.c:531
 msgid "Add to Modules Blacklist"
 msgstr "添加到模块黑名单"
 
-#: ../src/pref.c:516
+#: ../src/pref.c:532
 msgid "Enter a blacklisted module mask:"
 msgstr "输入拉黑模块掩码："
 
-#: ../src/pref.c:607
+#: ../src/pref.c:623
 msgid "Add to Modules Whitelist"
 msgstr "添加到模块白名单"
 
-#: ../src/pref.c:608
+#: ../src/pref.c:624
 msgid "Enter a whitelisted module mask:"
 msgstr "输入加白名单模块掩码："
 

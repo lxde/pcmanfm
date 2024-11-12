@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-03 14:35+0100\n"
+"POT-Creation-Date: 2024-11-12 16:07+0100\n"
 "PO-Revision-Date: 2015-06-19 10:12+0000\n"
 "Last-Translator: Praveen Illa <mail2ipn@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -119,12 +119,12 @@ msgstr "డెస్క్‍టాప్‌ను క్లిక్ చేస�
 msgid "_Use desktop as a folder (show icons on it) by path:"
 msgstr ""
 
-#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:85
+#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:86
 msgctxt "Use path for some folder: ..."
 msgid "Default"
 msgstr ""
 
-#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:86
+#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:87
 msgctxt "Use path for some folder: ..."
 msgid "Custom:"
 msgstr ""
@@ -202,50 +202,55 @@ msgstr "<b>ప్రవర్తన</b>"
 
 #: ../data/ui/pref.glade.h:6
 #, fuzzy
-msgid "_Open files with single click"
+msgid "_Open files with a single left-click"
 msgstr "ఒకే క్లిక్కుతో ఫైళ్ళను తెరువు"
 
 #: ../data/ui/pref.glade.h:7
-msgid "Delay of auto-selection in single click mode (0 to disable)"
+msgid "Delay of auto-selection in single left-click mode (0 to disable)"
 msgstr ""
 
 #: ../data/ui/pref.glade.h:8
 #, fuzzy
+msgid "O_pen files with a single middle-click"
+msgstr "ఒకే క్లిక్కుతో ఫైళ్ళను తెరువు"
+
+#: ../data/ui/pref.glade.h:9
+#, fuzzy
 msgid "Co_nfirm before deleting files"
 msgstr "ఫైళ్ళను తీసివేసేముందు ధృవీకరించు"
 
-#: ../data/ui/pref.glade.h:9
+#: ../data/ui/pref.glade.h:10
 #, fuzzy
 msgid "_Move deleted files to \"trash can\" instead of erasing from disk"
 msgstr "డిస్క్ నుంచి చెరిపివేసే బదులుగా తీసివేయదగిన ఫైళ్ళను 'చెత్తబుట్ట'కు తరలించు"
 
-#: ../data/ui/pref.glade.h:10
+#: ../data/ui/pref.glade.h:11
 msgid "_Erase files on removable media instead of \"trash can\" creation"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:11
+#: ../data/ui/pref.glade.h:12
 #, fuzzy
 msgid "Confi_rm before moving files into \"trash can\""
 msgstr "ఫైళ్ళను తీసివేసేముందు ధృవీకరించు"
 
-#: ../data/ui/pref.glade.h:12
+#: ../data/ui/pref.glade.h:13
 msgid "Don't ask options on _launch executable file"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:13
+#: ../data/ui/pref.glade.h:14
 #, fuzzy
 msgid "_Bookmarks:"
 msgstr "ఇష్టాంశాలు:"
 
-#: ../data/ui/pref.glade.h:14
+#: ../data/ui/pref.glade.h:15
 msgid "Defaul_t drop action:"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:15
+#: ../data/ui/pref.glade.h:16
 msgid "\"_Smart shortcut\" auto-action on drop to Desktop folder"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:16
+#: ../data/ui/pref.glade.h:17
 msgid ""
 "If enabled then \"Auto\" action on drop file onto Desktop folder will be:\n"
 "- for files directly in Home folder a symlink will be created\n"
@@ -254,339 +259,339 @@ msgid ""
 "- for some external URI a shortcut will be created"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:21
+#: ../data/ui/pref.glade.h:22
 msgid "_Unfold tab when files are dragged onto tab button"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:22
+#: ../data/ui/pref.glade.h:23
 msgid "_Focus previous folder after coming to its parent"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:23
+#: ../data/ui/pref.glade.h:24
 msgid "<b>Default View</b>"
 msgstr "<b>అప్రమేయ వీక్షణ</b>"
 
-#: ../data/ui/pref.glade.h:24
+#: ../data/ui/pref.glade.h:25
 #, fuzzy
 msgid "Vie_w Mode:"
 msgstr "వీక్షణ విధము:"
 
-#: ../data/ui/pref.glade.h:25
+#: ../data/ui/pref.glade.h:26
 #, fuzzy
 msgid "_General"
 msgstr "సాధారణం"
 
-#: ../data/ui/pref.glade.h:26
+#: ../data/ui/pref.glade.h:27
 msgid "<b>Icons</b>"
 msgstr "<b>ప్రతీకలు</b>"
 
-#: ../data/ui/pref.glade.h:27
+#: ../data/ui/pref.glade.h:28
 #, fuzzy
 msgid "Size of _big icons:"
 msgstr "పెద్ద ప్రతీకల యొక్క పరిమాణం:"
 
-#: ../data/ui/pref.glade.h:28
+#: ../data/ui/pref.glade.h:29
 #, fuzzy
 msgid "Size of small _icons:"
 msgstr "చిన్న ప్రతీకల యొక్క పరిమాణం:"
 
-#: ../data/ui/pref.glade.h:29
+#: ../data/ui/pref.glade.h:30
 #, fuzzy
 msgid "Size of _thumbnails:"
 msgstr "థంబ్‌నైళ్ళ యొక్క పరిమాణం:"
 
-#: ../data/ui/pref.glade.h:30
+#: ../data/ui/pref.glade.h:31
 #, fuzzy
 msgid "Size of side _pane icons:"
 msgstr "ప్రక్క పేన్ ప్రతీకల యొక్క పరిమాణం:"
 
-#: ../data/ui/pref.glade.h:31
+#: ../data/ui/pref.glade.h:32
 #, fuzzy
 msgid "_Show thumbnails of files"
 msgstr "ఫైళ్ళ యొక్క థంబ్‌నైళ్ళను చూపించు"
 
-#: ../data/ui/pref.glade.h:32
+#: ../data/ui/pref.glade.h:33
 #, fuzzy
 msgid "_Only show thumbnails for local files"
 msgstr "స్థానిక ఫైళ్ళకు మాత్రమే థంబ్‌నైళ్ళను చూపించు"
 
-#: ../data/ui/pref.glade.h:33
+#: ../data/ui/pref.glade.h:34
 #, fuzzy
 msgid "Do _not generate thumbnails for files exceeding this size:"
 msgstr "ఈ పరిమాణం దాటిన ఫైళ్ళకు థంబ్‌నైళ్ళను ఉత్పత్తిచేయవద్దు:"
 
-#: ../data/ui/pref.glade.h:34
+#: ../data/ui/pref.glade.h:35
 msgid "<b>User Interface</b>"
 msgstr "<b>వాడుకరి అంతరవర్తి</b>"
 
-#: ../data/ui/pref.glade.h:35
+#: ../data/ui/pref.glade.h:36
 #, fuzzy
 msgid "Us_e SI decimal prefixes instead of IEC binary prefixes"
 msgstr "IEC బైనరీ ప్రిఫిక్స్‍లకు బదులుగా SI దశాంశా ప్రిఫిక్స్‍లను వాడు"
 
-#: ../data/ui/pref.glade.h:36
+#: ../data/ui/pref.glade.h:37
 msgid "Show _date as YYYY-MM-DD instead of in locale format"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:37
+#: ../data/ui/pref.glade.h:38
 msgid "Treat backup files as _hidden"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:38
+#: ../data/ui/pref.glade.h:39
 #, fuzzy
 msgid "Al_ways show full file names"
 msgstr "ట్యాబ్ పట్టీని ఎల్లప్పుడూ చూపించు"
 
-#: ../data/ui/pref.glade.h:39
+#: ../data/ui/pref.glade.h:40
 msgid "Show icons of hidden _files shadowed"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:40
+#: ../data/ui/pref.glade.h:41
 #, fuzzy
 msgid "_Display"
 msgstr "ప్రదర్శన"
 
-#: ../data/ui/pref.glade.h:41
+#: ../data/ui/pref.glade.h:42
 #, fuzzy
 msgid "Hid_e 'Close tab' buttons"
 msgstr "'ట్యాబ్ మూయి' బటన్లను దాయి"
 
-#: ../data/ui/pref.glade.h:42
+#: ../data/ui/pref.glade.h:43
 #, fuzzy
 msgid "Al_ways show the tab bar"
 msgstr "ట్యాబ్ పట్టీని ఎల్లప్పుడూ చూపించు"
 
-#: ../data/ui/pref.glade.h:43
+#: ../data/ui/pref.glade.h:44
 msgid "_Maximum width of tab label:"
 msgstr ""
 
 #. Use genitive case here, context is: width is XXX characters
-#: ../data/ui/pref.glade.h:45
+#: ../data/ui/pref.glade.h:46
 msgid "characters"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:46
+#: ../data/ui/pref.glade.h:47
 msgid "<b>Directories Tree</b>"
 msgstr "<b>సంచయపు వృక్షం</b>"
 
-#: ../data/ui/pref.glade.h:47
+#: ../data/ui/pref.glade.h:48
 msgid "Hide e_xpander on empty or locked folder"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:48
+#: ../data/ui/pref.glade.h:49
 #, fuzzy
 msgid "<b>Show in Places:</b>"
 msgstr "<b>డెస్క్‍టాప్ ప్రతీకలను చూపించు</b>"
 
-#: ../data/ui/pref.glade.h:49
+#: ../data/ui/pref.glade.h:50
 #, fuzzy
 msgid "_Home Folder"
 msgstr "నివాస సంచయం"
 
-#: ../data/ui/pref.glade.h:50
+#: ../data/ui/pref.glade.h:51
 #, fuzzy
 msgid "Des_ktop"
 msgstr "డెస్క్‍టాప్"
 
-#: ../data/ui/pref.glade.h:51 ../src/main-win-ui.c:239
+#: ../data/ui/pref.glade.h:52 ../src/main-win-ui.c:239
 #, fuzzy
 msgid "_Trash Can"
 msgstr "చెత్తబుట్ట"
 
-#: ../data/ui/pref.glade.h:52
+#: ../data/ui/pref.glade.h:53
 msgid "_Filesystem Root"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:53
+#: ../data/ui/pref.glade.h:54
 #, fuzzy
 msgid "App_lications"
 msgstr "అనువర్తనాలు"
 
-#: ../data/ui/pref.glade.h:54 ../src/main-win-ui.c:242
+#: ../data/ui/pref.glade.h:55 ../src/main-win-ui.c:242
 msgid "Dev_ices"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:55
+#: ../data/ui/pref.glade.h:56
 #, fuzzy
 msgid "_Network"
 msgstr "నెట్‌వర్క్ డ్రైవర్లు"
 
-#: ../data/ui/pref.glade.h:56
+#: ../data/ui/pref.glade.h:57
 msgid "_Layout"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:57
+#: ../data/ui/pref.glade.h:58
 msgid "<b>Auto-mount</b>"
 msgstr "<b>స్వయం-అధిరోహిణం</b>"
 
-#: ../data/ui/pref.glade.h:58
+#: ../data/ui/pref.glade.h:59
 #, fuzzy
 msgid "_Mount mountable volumes automatically on program startup"
 msgstr "ప్రోగ్రాం ప్రారంభంలో అధిరోహించదగిన సంపుటాలను స్వయంచాలకంగా అధిరోహించు"
 
-#: ../data/ui/pref.glade.h:59
+#: ../data/ui/pref.glade.h:60
 #, fuzzy
 msgid "Mo_unt removable media automatically when they are inserted"
 msgstr "తొలగించదగిన మాధ్యమం ప్రవేశపెట్టినపుడు దానిని స్వయంచాలకంగా అధిరోహించు"
 
-#: ../data/ui/pref.glade.h:60
+#: ../data/ui/pref.glade.h:61
 #, fuzzy
 msgid "_Show available options for removable media when they are inserted"
 msgstr "తొలగించదగిన మాధ్యమం ప్రవేశపెట్టినపుడు వాటికి అందుబాటులోనున్న ఐచ్ఛికాలను చూపించు"
 
-#: ../data/ui/pref.glade.h:61
+#: ../data/ui/pref.glade.h:62
 #, fuzzy
 msgid "Do_n't show available options for those media types:"
 msgstr "తొలగించదగిన మాధ్యమం ప్రవేశపెట్టినపుడు వాటికి అందుబాటులోనున్న ఐచ్ఛికాలను చూపించు"
 
-#: ../data/ui/pref.glade.h:62
+#: ../data/ui/pref.glade.h:63
 msgid "_Remove selected"
 msgstr "ఎంచుకోబడింది తీసివేయి (_R)"
 
-#: ../data/ui/pref.glade.h:63
+#: ../data/ui/pref.glade.h:64
 msgid "_Open mounted removable media in new tab instead of new window"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:64
+#: ../data/ui/pref.glade.h:65
 #, fuzzy
 msgid "When removable medium unmounted:"
 msgstr "తొలగించదగిన మాధ్యమం ప్రవేశపెట్టబడింది"
 
-#: ../data/ui/pref.glade.h:65
+#: ../data/ui/pref.glade.h:66
 #, fuzzy
 msgid "Clos_e tab containing removable medium"
 msgstr "తొలగించదగిన మాధ్యమం ప్రవేశపెట్టినపుడు వాటికి అందుబాటులోనున్న ఐచ్ఛికాలను చూపించు"
 
-#: ../data/ui/pref.glade.h:66
+#: ../data/ui/pref.glade.h:67
 msgid "Change folder in the tab to _Home Folder"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:67
+#: ../data/ui/pref.glade.h:68
 #, fuzzy
 msgid "_Volume Management"
 msgstr "సంపుటం నిర్వాహణ"
 
-#: ../data/ui/pref.glade.h:68
+#: ../data/ui/pref.glade.h:69
 msgid "<b>Programs</b>"
 msgstr "<b>ప్రోగ్రాములు</b>"
 
-#: ../data/ui/pref.glade.h:69
+#: ../data/ui/pref.glade.h:70
 msgid "<i>Commands below may include extra options if necessary.</i>"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:70
+#: ../data/ui/pref.glade.h:71
 #, fuzzy
 msgid "_Terminal emulator:"
 msgstr "టెర్మినల్ ఎమ్యులేటర్:"
 
-#: ../data/ui/pref.glade.h:71
+#: ../data/ui/pref.glade.h:72
 #, fuzzy
 msgid "_Switch user command:"
 msgstr "వాడుకరిని మార్చుటకు ఆదేశం:"
 
 #. Application command to format some drive
-#: ../data/ui/pref.glade.h:73
+#: ../data/ui/pref.glade.h:74
 msgid "_Format command:"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:74
+#: ../data/ui/pref.glade.h:75
 #, fuzzy
 msgid "A_rchiver integration:"
 msgstr "ఆర్చీవర్ విలీనత:"
 
-#: ../data/ui/pref.glade.h:75
+#: ../data/ui/pref.glade.h:76
 #, fuzzy
 msgid "<b>Templates</b>"
 msgstr "<b>పాఠ్యం</b>"
 
-#: ../data/ui/pref.glade.h:76
+#: ../data/ui/pref.glade.h:77
 msgid "S_how only user defined templates in menu"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:77
+#: ../data/ui/pref.glade.h:78
 msgid "Show _only one template for each MIME type"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:78
+#: ../data/ui/pref.glade.h:79
 msgid "Ru_n default application after creation from template"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:79
+#: ../data/ui/pref.glade.h:80
 #, fuzzy
 msgid "<b>Other Options</b>"
 msgstr "<b>డెస్క్‍టాప్ ప్రతీకలను చూపించు</b>"
 
-#: ../data/ui/pref.glade.h:80
+#: ../data/ui/pref.glade.h:81
 msgid "Use Application Startup Notify _by default"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:81
+#: ../data/ui/pref.glade.h:82
 msgid ""
 "If checked then use Startup Notify for application if another not stated "
 "explicitly.\n"
 "If unchecked then use Startup Notify only if that is defined for application."
 msgstr ""
 
-#: ../data/ui/pref.glade.h:83
+#: ../data/ui/pref.glade.h:84
 msgid "D_efer test for content type on folder loading"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:84
+#: ../data/ui/pref.glade.h:85
 msgid "Use path for \"Home Folder\" button:"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:87
+#: ../data/ui/pref.glade.h:88
 msgid "_Use current"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:88
+#: ../data/ui/pref.glade.h:89
 msgid "_Advanced"
 msgstr "ఉన్నతం (_A)"
 
-#: ../data/ui/pref.glade.h:89
+#: ../data/ui/pref.glade.h:90
 msgid "<b>_Do not load modules matching:</b>"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:90
+#: ../data/ui/pref.glade.h:91
 msgid "<b>_Load these modules anyway:</b>"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:91
+#: ../data/ui/pref.glade.h:92
 msgid "Modules"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:92
+#: ../data/ui/pref.glade.h:93
 msgid "Auto (move if on the same FS, copy otherwise)"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:93
+#: ../data/ui/pref.glade.h:94
 msgid "Copy"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:94
+#: ../data/ui/pref.glade.h:95
 msgid "Move"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:95
+#: ../data/ui/pref.glade.h:96
 msgid "Ask"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:96
+#: ../data/ui/pref.glade.h:97
 #, fuzzy
 msgid "Icon view"
 msgstr "ప్రతీక వీక్షణం"
 
-#: ../data/ui/pref.glade.h:97
+#: ../data/ui/pref.glade.h:98
 #, fuzzy
 msgid "Compact view"
 msgstr "సౌలభ్య వీక్షణ"
 
-#: ../data/ui/pref.glade.h:98
+#: ../data/ui/pref.glade.h:99
 #, fuzzy
 msgid "Thumbnail view"
 msgstr "థంబ్‌నైళ్ళ వీక్షణం"
 
-#: ../data/ui/pref.glade.h:99
+#: ../data/ui/pref.glade.h:100
 #, fuzzy
 msgid "Detailed list view"
 msgstr "పూర్తి జాబితా వీక్షణ"
@@ -1211,11 +1216,11 @@ msgstr ""
 msgid "Add to Bookmarks"
 msgstr "ఇష్టాంశములకు జతచేయి"
 
-#: ../src/main-win.c:2589
+#: ../src/main-win.c:2594
 msgid "Select filter"
 msgstr ""
 
-#: ../src/main-win.c:2590
+#: ../src/main-win.c:2595
 msgid "Choose a new shell pattern to show files:"
 msgstr ""
 
@@ -1359,19 +1364,19 @@ msgid_plural " (%d hidden)"
 msgstr[0] "(%d దాచబడింది)"
 msgstr[1] "(%d దాచబడినవి)"
 
-#: ../src/pref.c:515
+#: ../src/pref.c:531
 msgid "Add to Modules Blacklist"
 msgstr ""
 
-#: ../src/pref.c:516
+#: ../src/pref.c:532
 msgid "Enter a blacklisted module mask:"
 msgstr ""
 
-#: ../src/pref.c:607
+#: ../src/pref.c:623
 msgid "Add to Modules Whitelist"
 msgstr ""
 
-#: ../src/pref.c:608
+#: ../src/pref.c:624
 msgid "Enter a whitelisted module mask:"
 msgstr ""
 

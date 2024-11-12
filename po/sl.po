@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-03 14:35+0100\n"
+"POT-Creation-Date: 2024-11-12 16:07+0100\n"
 "PO-Revision-Date: 2014-09-08 20:47+0000\n"
 "Last-Translator: Klemen Košir <klemen913@gmail.com>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -110,12 +110,12 @@ msgstr "Ob kliku na namizje pokaži meni upravljalnika o_ken"
 msgid "_Use desktop as a folder (show icons on it) by path:"
 msgstr ""
 
-#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:85
+#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:86
 msgctxt "Use path for some folder: ..."
 msgid "Default"
 msgstr "Privzeto"
 
-#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:86
+#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:87
 msgctxt "Use path for some folder: ..."
 msgid "Custom:"
 msgstr "Po meri:"
@@ -186,46 +186,56 @@ msgid "<b>Behavior</b>"
 msgstr "<b>Obnašanje</b>"
 
 #: ../data/ui/pref.glade.h:6
-msgid "_Open files with single click"
+#, fuzzy
+#| msgid "_Open files with single click"
+msgid "_Open files with a single left-click"
 msgstr "_Odpri datoteke z enojnim klikom"
 
 #: ../data/ui/pref.glade.h:7
-msgid "Delay of auto-selection in single click mode (0 to disable)"
+#, fuzzy
+#| msgid "Delay of auto-selection in single click mode (0 to disable)"
+msgid "Delay of auto-selection in single left-click mode (0 to disable)"
 msgstr "Zakasnitev samodejne izbire v načinu enojnega klika"
 
 #: ../data/ui/pref.glade.h:8
+#, fuzzy
+#| msgid "_Open files with single click"
+msgid "O_pen files with a single middle-click"
+msgstr "_Odpri datoteke z enojnim klikom"
+
+#: ../data/ui/pref.glade.h:9
 msgid "Co_nfirm before deleting files"
 msgstr "Vprašaj pred _brisanjem datotek"
 
-#: ../data/ui/pref.glade.h:9
+#: ../data/ui/pref.glade.h:10
 msgid "_Move deleted files to \"trash can\" instead of erasing from disk"
 msgstr "Izbrisane datoteke premakni v »_Smeti«"
 
-#: ../data/ui/pref.glade.h:10
+#: ../data/ui/pref.glade.h:11
 msgid "_Erase files on removable media instead of \"trash can\" creation"
 msgstr "Datoteke na odstranljivih nosilcih _izbriši brez premika v smeti"
 
-#: ../data/ui/pref.glade.h:11
+#: ../data/ui/pref.glade.h:12
 msgid "Confi_rm before moving files into \"trash can\""
 msgstr "Vprašaj pred premikom datotek v smeti"
 
-#: ../data/ui/pref.glade.h:12
+#: ../data/ui/pref.glade.h:13
 msgid "Don't ask options on _launch executable file"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:13
+#: ../data/ui/pref.glade.h:14
 msgid "_Bookmarks:"
 msgstr "_Zaznamki:"
 
-#: ../data/ui/pref.glade.h:14
+#: ../data/ui/pref.glade.h:15
 msgid "Defaul_t drop action:"
 msgstr "Privzeto _dejanje ob spustitvi:"
 
-#: ../data/ui/pref.glade.h:15
+#: ../data/ui/pref.glade.h:16
 msgid "\"_Smart shortcut\" auto-action on drop to Desktop folder"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:16
+#: ../data/ui/pref.glade.h:17
 msgid ""
 "If enabled then \"Auto\" action on drop file onto Desktop folder will be:\n"
 "- for files directly in Home folder a symlink will be created\n"
@@ -234,246 +244,246 @@ msgid ""
 "- for some external URI a shortcut will be created"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:21
+#: ../data/ui/pref.glade.h:22
 msgid "_Unfold tab when files are dragged onto tab button"
 msgstr "_Razpni zavihek, ko so datoteke premaknjene na gumb zavihka"
 
-#: ../data/ui/pref.glade.h:22
+#: ../data/ui/pref.glade.h:23
 msgid "_Focus previous folder after coming to its parent"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:23
+#: ../data/ui/pref.glade.h:24
 msgid "<b>Default View</b>"
 msgstr "<b>Privzeti pogled</b>"
 
-#: ../data/ui/pref.glade.h:24
+#: ../data/ui/pref.glade.h:25
 msgid "Vie_w Mode:"
 msgstr "Način po_gleda:"
 
-#: ../data/ui/pref.glade.h:25
+#: ../data/ui/pref.glade.h:26
 msgid "_General"
 msgstr "_Splošno"
 
-#: ../data/ui/pref.glade.h:26
+#: ../data/ui/pref.glade.h:27
 msgid "<b>Icons</b>"
 msgstr "<b>Ikone</b>"
 
-#: ../data/ui/pref.glade.h:27
+#: ../data/ui/pref.glade.h:28
 msgid "Size of _big icons:"
 msgstr "Velikost _velikih ikon:"
 
-#: ../data/ui/pref.glade.h:28
+#: ../data/ui/pref.glade.h:29
 msgid "Size of small _icons:"
 msgstr "Velikost _majhnih ikon:"
 
-#: ../data/ui/pref.glade.h:29
+#: ../data/ui/pref.glade.h:30
 msgid "Size of _thumbnails:"
 msgstr "Velikost predoglednih _sličic:"
 
-#: ../data/ui/pref.glade.h:30
+#: ../data/ui/pref.glade.h:31
 msgid "Size of side _pane icons:"
 msgstr "Velikost ikon stranskega _pladnja:"
 
-#: ../data/ui/pref.glade.h:31
+#: ../data/ui/pref.glade.h:32
 msgid "_Show thumbnails of files"
 msgstr "Pokaži predogledne _sličice datotek"
 
-#: ../data/ui/pref.glade.h:32
+#: ../data/ui/pref.glade.h:33
 msgid "_Only show thumbnails for local files"
 msgstr "Pokaži predogledne sličice le za _krajevne datoteke"
 
-#: ../data/ui/pref.glade.h:33
+#: ../data/ui/pref.glade.h:34
 msgid "Do _not generate thumbnails for files exceeding this size:"
 msgstr "Ne ustvari _predoglednih sličic za datoteke, večje od:"
 
-#: ../data/ui/pref.glade.h:34
+#: ../data/ui/pref.glade.h:35
 msgid "<b>User Interface</b>"
 msgstr "<b>Uporabniški vmesnik</b>"
 
-#: ../data/ui/pref.glade.h:35
+#: ../data/ui/pref.glade.h:36
 msgid "Us_e SI decimal prefixes instead of IEC binary prefixes"
 msgstr "_Namesto dvojiških predpon IEC uporabi decimalne predpone SI"
 
-#: ../data/ui/pref.glade.h:36
+#: ../data/ui/pref.glade.h:37
 msgid "Show _date as YYYY-MM-DD instead of in locale format"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:37
+#: ../data/ui/pref.glade.h:38
 msgid "Treat backup files as _hidden"
 msgstr "Obravnavaj varnostne kopije kot _skrite datoteke"
 
-#: ../data/ui/pref.glade.h:38
+#: ../data/ui/pref.glade.h:39
 msgid "Al_ways show full file names"
 msgstr "_Vedno pokaži celotno ime datoteke"
 
-#: ../data/ui/pref.glade.h:39
+#: ../data/ui/pref.glade.h:40
 msgid "Show icons of hidden _files shadowed"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:40
+#: ../data/ui/pref.glade.h:41
 msgid "_Display"
 msgstr "_Videz"
 
-#: ../data/ui/pref.glade.h:41
+#: ../data/ui/pref.glade.h:42
 msgid "Hid_e 'Close tab' buttons"
 msgstr "Skrij gumb »_Zapri zavihek«"
 
-#: ../data/ui/pref.glade.h:42
+#: ../data/ui/pref.glade.h:43
 msgid "Al_ways show the tab bar"
 msgstr "Vedno pokaži vrstico _zavihkov"
 
-#: ../data/ui/pref.glade.h:43
+#: ../data/ui/pref.glade.h:44
 msgid "_Maximum width of tab label:"
 msgstr "_Največja širina oznake zavihka:"
 
 #. Use genitive case here, context is: width is XXX characters
-#: ../data/ui/pref.glade.h:45
+#: ../data/ui/pref.glade.h:46
 msgid "characters"
 msgstr "znakov"
 
-#: ../data/ui/pref.glade.h:46
+#: ../data/ui/pref.glade.h:47
 msgid "<b>Directories Tree</b>"
 msgstr "<b>Drevo map</b>"
 
-#: ../data/ui/pref.glade.h:47
+#: ../data/ui/pref.glade.h:48
 msgid "Hide e_xpander on empty or locked folder"
 msgstr "Skrij _razširilnik na praznih ali zaklenjenih mapah"
 
-#: ../data/ui/pref.glade.h:48
+#: ../data/ui/pref.glade.h:49
 msgid "<b>Show in Places:</b>"
 msgstr "<b>Pokaži v meniju »Mesta«</b>"
 
-#: ../data/ui/pref.glade.h:49
+#: ../data/ui/pref.glade.h:50
 msgid "_Home Folder"
 msgstr "_Domača mapa"
 
-#: ../data/ui/pref.glade.h:50
+#: ../data/ui/pref.glade.h:51
 msgid "Des_ktop"
 msgstr "_Namizje"
 
-#: ../data/ui/pref.glade.h:51 ../src/main-win-ui.c:239
+#: ../data/ui/pref.glade.h:52 ../src/main-win-ui.c:239
 msgid "_Trash Can"
 msgstr "_Smeti"
 
-#: ../data/ui/pref.glade.h:52
+#: ../data/ui/pref.glade.h:53
 msgid "_Filesystem Root"
 msgstr "Koren _datotečnega sistema"
 
-#: ../data/ui/pref.glade.h:53
+#: ../data/ui/pref.glade.h:54
 msgid "App_lications"
 msgstr "_Programi"
 
-#: ../data/ui/pref.glade.h:54 ../src/main-win-ui.c:242
+#: ../data/ui/pref.glade.h:55 ../src/main-win-ui.c:242
 msgid "Dev_ices"
 msgstr "Na_prave"
 
-#: ../data/ui/pref.glade.h:55
+#: ../data/ui/pref.glade.h:56
 msgid "_Network"
 msgstr "_Omrežje"
 
-#: ../data/ui/pref.glade.h:56
+#: ../data/ui/pref.glade.h:57
 msgid "_Layout"
 msgstr "_Postavitev"
 
-#: ../data/ui/pref.glade.h:57
+#: ../data/ui/pref.glade.h:58
 msgid "<b>Auto-mount</b>"
 msgstr "<b>Samodejni priklop</b>"
 
-#: ../data/ui/pref.glade.h:58
+#: ../data/ui/pref.glade.h:59
 msgid "_Mount mountable volumes automatically on program startup"
 msgstr "Samodejno _priklopi nosilce ob zagonu programa"
 
-#: ../data/ui/pref.glade.h:59
+#: ../data/ui/pref.glade.h:60
 msgid "Mo_unt removable media automatically when they are inserted"
 msgstr "_Samodejno priklopi odstranljive nosilce"
 
-#: ../data/ui/pref.glade.h:60
-msgid "_Show available options for removable media when they are inserted"
-msgstr "Ob priključitvi odstranljivih nosilcev pokaži razpoložljive _možnosti"
-
 #: ../data/ui/pref.glade.h:61
-#, fuzzy
-msgid "Do_n't show available options for those media types:"
+msgid "_Show available options for removable media when they are inserted"
 msgstr "Ob priključitvi odstranljivih nosilcev pokaži razpoložljive _možnosti"
 
 #: ../data/ui/pref.glade.h:62
 #, fuzzy
+msgid "Do_n't show available options for those media types:"
+msgstr "Ob priključitvi odstranljivih nosilcev pokaži razpoložljive _možnosti"
+
+#: ../data/ui/pref.glade.h:63
+#, fuzzy
 msgid "_Remove selected"
 msgstr "Izbranih je %d predmetov"
 
-#: ../data/ui/pref.glade.h:63
+#: ../data/ui/pref.glade.h:64
 msgid "_Open mounted removable media in new tab instead of new window"
 msgstr ""
 "Odpri priklopljene odstranljive nosilce v novem _zavihku namesto v novem oknu"
 
-#: ../data/ui/pref.glade.h:64
+#: ../data/ui/pref.glade.h:65
 #, fuzzy
 msgid "When removable medium unmounted:"
 msgstr "Priključen je bil odstranljiv nosilec"
 
-#: ../data/ui/pref.glade.h:65
+#: ../data/ui/pref.glade.h:66
 msgid "Clos_e tab containing removable medium"
 msgstr "Zapri _zavihek, ki vsebuje odstranljiv nosilec"
 
-#: ../data/ui/pref.glade.h:66
+#: ../data/ui/pref.glade.h:67
 msgid "Change folder in the tab to _Home Folder"
 msgstr "Spremeni mapo v zavihku na _domačo mapo"
 
-#: ../data/ui/pref.glade.h:67
+#: ../data/ui/pref.glade.h:68
 msgid "_Volume Management"
 msgstr "Upravljanje z _nosilci"
 
-#: ../data/ui/pref.glade.h:68
+#: ../data/ui/pref.glade.h:69
 msgid "<b>Programs</b>"
 msgstr "<b>Programi</b>"
 
-#: ../data/ui/pref.glade.h:69
+#: ../data/ui/pref.glade.h:70
 msgid "<i>Commands below may include extra options if necessary.</i>"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:70
+#: ../data/ui/pref.glade.h:71
 msgid "_Terminal emulator:"
 msgstr "_Terminal:"
 
-#: ../data/ui/pref.glade.h:71
+#: ../data/ui/pref.glade.h:72
 msgid "_Switch user command:"
 msgstr "_Ukaz za preklop med uporabniki:"
 
 #. Application command to format some drive
-#: ../data/ui/pref.glade.h:73
+#: ../data/ui/pref.glade.h:74
 msgid "_Format command:"
 msgstr "Ukaz za _obliko:"
 
-#: ../data/ui/pref.glade.h:74
+#: ../data/ui/pref.glade.h:75
 msgid "A_rchiver integration:"
 msgstr "_Arhivnik:"
 
-#: ../data/ui/pref.glade.h:75
+#: ../data/ui/pref.glade.h:76
 msgid "<b>Templates</b>"
 msgstr "<b>Predloge</b>"
 
-#: ../data/ui/pref.glade.h:76
+#: ../data/ui/pref.glade.h:77
 msgid "S_how only user defined templates in menu"
 msgstr "V meniju _pokaži le uporabniško določene predloge"
 
-#: ../data/ui/pref.glade.h:77
+#: ../data/ui/pref.glade.h:78
 msgid "Show _only one template for each MIME type"
 msgstr "Pokaži le eno predlogo za vsako vrsto _MIME"
 
-#: ../data/ui/pref.glade.h:78
+#: ../data/ui/pref.glade.h:79
 msgid "Ru_n default application after creation from template"
 msgstr "_Zaženi privzeti program, ko se ustvari predloga"
 
-#: ../data/ui/pref.glade.h:79
+#: ../data/ui/pref.glade.h:80
 msgid "<b>Other Options</b>"
 msgstr "<b>Druge možnosti</b>"
 
-#: ../data/ui/pref.glade.h:80
+#: ../data/ui/pref.glade.h:81
 #, fuzzy
 msgid "Use Application Startup Notify _by default"
 msgstr "Privzeto uporabi _obveščanje o zagonu programov"
 
-#: ../data/ui/pref.glade.h:81
+#: ../data/ui/pref.glade.h:82
 msgid ""
 "If checked then use Startup Notify for application if another not stated "
 "explicitly.\n"
@@ -485,63 +495,63 @@ msgstr ""
 "programov, kjer\n"
 "je to določeno."
 
-#: ../data/ui/pref.glade.h:83
+#: ../data/ui/pref.glade.h:84
 msgid "D_efer test for content type on folder loading"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:84
+#: ../data/ui/pref.glade.h:85
 msgid "Use path for \"Home Folder\" button:"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:87
+#: ../data/ui/pref.glade.h:88
 msgid "_Use current"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:88
+#: ../data/ui/pref.glade.h:89
 msgid "_Advanced"
 msgstr "_Napredno"
 
-#: ../data/ui/pref.glade.h:89
+#: ../data/ui/pref.glade.h:90
 msgid "<b>_Do not load modules matching:</b>"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:90
+#: ../data/ui/pref.glade.h:91
 msgid "<b>_Load these modules anyway:</b>"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:91
+#: ../data/ui/pref.glade.h:92
 msgid "Modules"
 msgstr "Moduli"
 
-#: ../data/ui/pref.glade.h:92
+#: ../data/ui/pref.glade.h:93
 msgid "Auto (move if on the same FS, copy otherwise)"
 msgstr "Samodejno"
 
-#: ../data/ui/pref.glade.h:93
+#: ../data/ui/pref.glade.h:94
 msgid "Copy"
 msgstr "Kopiraj"
 
-#: ../data/ui/pref.glade.h:94
+#: ../data/ui/pref.glade.h:95
 msgid "Move"
 msgstr "Premakni"
 
-#: ../data/ui/pref.glade.h:95
+#: ../data/ui/pref.glade.h:96
 msgid "Ask"
 msgstr "Vprašaj"
 
-#: ../data/ui/pref.glade.h:96
+#: ../data/ui/pref.glade.h:97
 msgid "Icon view"
 msgstr "Ikone"
 
-#: ../data/ui/pref.glade.h:97
+#: ../data/ui/pref.glade.h:98
 msgid "Compact view"
 msgstr "Strnjen seznam"
 
-#: ../data/ui/pref.glade.h:98
+#: ../data/ui/pref.glade.h:99
 msgid "Thumbnail view"
 msgstr "Predogledne sličice"
 
-#: ../data/ui/pref.glade.h:99
+#: ../data/ui/pref.glade.h:100
 msgid "Detailed list view"
 msgstr "Podroben seznam"
 
@@ -1139,11 +1149,11 @@ msgstr ""
 msgid "Add to Bookmarks"
 msgstr "Dodaj med zaznamke"
 
-#: ../src/main-win.c:2589
+#: ../src/main-win.c:2594
 msgid "Select filter"
 msgstr "Izberite filter"
 
-#: ../src/main-win.c:2590
+#: ../src/main-win.c:2595
 msgid "Choose a new shell pattern to show files:"
 msgstr ""
 
@@ -1290,19 +1300,19 @@ msgstr[1] " (%d skrit)"
 msgstr[2] " (%d skrita)"
 msgstr[3] " (%d skriti)"
 
-#: ../src/pref.c:515
+#: ../src/pref.c:531
 msgid "Add to Modules Blacklist"
 msgstr ""
 
-#: ../src/pref.c:516
+#: ../src/pref.c:532
 msgid "Enter a blacklisted module mask:"
 msgstr ""
 
-#: ../src/pref.c:607
+#: ../src/pref.c:623
 msgid "Add to Modules Whitelist"
 msgstr ""
 
-#: ../src/pref.c:608
+#: ../src/pref.c:624
 msgid "Enter a whitelisted module mask:"
 msgstr ""
 

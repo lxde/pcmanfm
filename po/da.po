@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-03 14:35+0100\n"
+"POT-Creation-Date: 2024-11-12 16:07+0100\n"
 "PO-Revision-Date: 2018-04-16 01:43+0000\n"
 "Last-Translator: scootergrisen <scootergrisen@gmail.com>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
@@ -114,12 +114,12 @@ msgstr "Vis _menuer fra vindueshåndteringer når der klikkes på skrivebordet"
 msgid "_Use desktop as a folder (show icons on it) by path:"
 msgstr "_Brug skrivebordet som en mappe (vis ikoner på det) af sti:"
 
-#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:85
+#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:86
 msgctxt "Use path for some folder: ..."
 msgid "Default"
 msgstr "Standard"
 
-#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:86
+#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:87
 msgctxt "Use path for some folder: ..."
 msgid "Custom:"
 msgstr "Brugertilpasset:"
@@ -187,50 +187,60 @@ msgid "<b>Behavior</b>"
 msgstr "<b>Opførsel</b>"
 
 #: ../data/ui/pref.glade.h:6
-msgid "_Open files with single click"
+#, fuzzy
+#| msgid "_Open files with single click"
+msgid "_Open files with a single left-click"
 msgstr "_Åbn filer med ét klik"
 
 #: ../data/ui/pref.glade.h:7
-msgid "Delay of auto-selection in single click mode (0 to disable)"
+#, fuzzy
+#| msgid "Delay of auto-selection in single click mode (0 to disable)"
+msgid "Delay of auto-selection in single left-click mode (0 to disable)"
 msgstr ""
 "Forsinkelse af automatisk markering i ét klik-tilstand (0 for at deaktivere)"
 
 #: ../data/ui/pref.glade.h:8
+#, fuzzy
+#| msgid "_Open files with single click"
+msgid "O_pen files with a single middle-click"
+msgstr "_Åbn filer med ét klik"
+
+#: ../data/ui/pref.glade.h:9
 msgid "Co_nfirm before deleting files"
 msgstr "_Bekræft før sletning af filer"
 
-#: ../data/ui/pref.glade.h:9
+#: ../data/ui/pref.glade.h:10
 msgid "_Move deleted files to \"trash can\" instead of erasing from disk"
 msgstr ""
 "_Flyt slettede filer til \"papirkurven\" i stedet for at slette dem fra "
 "disken"
 
-#: ../data/ui/pref.glade.h:10
+#: ../data/ui/pref.glade.h:11
 msgid "_Erase files on removable media instead of \"trash can\" creation"
 msgstr ""
 "_Slet filer på flytbare medier i stedet for oprettelse af \"papirkurv\""
 
-#: ../data/ui/pref.glade.h:11
+#: ../data/ui/pref.glade.h:12
 msgid "Confi_rm before moving files into \"trash can\""
 msgstr "_Bekræft inden filer flyttes til \"papirkurv\""
 
-#: ../data/ui/pref.glade.h:12
+#: ../data/ui/pref.glade.h:13
 msgid "Don't ask options on _launch executable file"
 msgstr "Spørg ikke om indstillinger ved _start af eksekverbar fil"
 
-#: ../data/ui/pref.glade.h:13
+#: ../data/ui/pref.glade.h:14
 msgid "_Bookmarks:"
 msgstr "_Bogmærker:"
 
-#: ../data/ui/pref.glade.h:14
+#: ../data/ui/pref.glade.h:15
 msgid "Defaul_t drop action:"
 msgstr "Standard _slip-handling:"
 
-#: ../data/ui/pref.glade.h:15
+#: ../data/ui/pref.glade.h:16
 msgid "\"_Smart shortcut\" auto-action on drop to Desktop folder"
 msgstr "\"_Smart genvej\" auto-handling ved slip på skrivebordsmappe"
 
-#: ../data/ui/pref.glade.h:16
+#: ../data/ui/pref.glade.h:17
 msgid ""
 "If enabled then \"Auto\" action on drop file onto Desktop folder will be:\n"
 "- for files directly in Home folder a symlink will be created\n"
@@ -245,244 +255,244 @@ msgstr ""
 "- andre filer (f.eks. flytbare medier) vil blive kopieret\n"
 "- for nogle eksterne URI vil en genvej blive oprettet"
 
-#: ../data/ui/pref.glade.h:21
+#: ../data/ui/pref.glade.h:22
 msgid "_Unfold tab when files are dragged onto tab button"
 msgstr "_Udfold faneblad når filer trækkes hen på fanebladsknap"
 
-#: ../data/ui/pref.glade.h:22
+#: ../data/ui/pref.glade.h:23
 msgid "_Focus previous folder after coming to its parent"
 msgstr "_Fokuser forrige mappe efter at være kommet til dens forælder"
 
-#: ../data/ui/pref.glade.h:23
+#: ../data/ui/pref.glade.h:24
 msgid "<b>Default View</b>"
 msgstr "<b>Standardvisning</b>"
 
-#: ../data/ui/pref.glade.h:24
+#: ../data/ui/pref.glade.h:25
 msgid "Vie_w Mode:"
 msgstr "_Visningstilstand:"
 
-#: ../data/ui/pref.glade.h:25
+#: ../data/ui/pref.glade.h:26
 msgid "_General"
 msgstr "_Generelt"
 
-#: ../data/ui/pref.glade.h:26
+#: ../data/ui/pref.glade.h:27
 msgid "<b>Icons</b>"
 msgstr "<b>Ikoner</b>"
 
-#: ../data/ui/pref.glade.h:27
+#: ../data/ui/pref.glade.h:28
 msgid "Size of _big icons:"
 msgstr "Størrelse på _store ikoner:"
 
-#: ../data/ui/pref.glade.h:28
+#: ../data/ui/pref.glade.h:29
 msgid "Size of small _icons:"
 msgstr "Størrelse på små _ikoner:"
 
-#: ../data/ui/pref.glade.h:29
+#: ../data/ui/pref.glade.h:30
 msgid "Size of _thumbnails:"
 msgstr "Størrelse på _miniaturer:"
 
-#: ../data/ui/pref.glade.h:30
+#: ../data/ui/pref.glade.h:31
 msgid "Size of side _pane icons:"
 msgstr "Størrelse på ikoner i _rude:"
 
-#: ../data/ui/pref.glade.h:31
+#: ../data/ui/pref.glade.h:32
 msgid "_Show thumbnails of files"
 msgstr "_Vis miniaturer af filer"
 
-#: ../data/ui/pref.glade.h:32
+#: ../data/ui/pref.glade.h:33
 msgid "_Only show thumbnails for local files"
 msgstr "Vis _kun miniaturer for lokale filer"
 
-#: ../data/ui/pref.glade.h:33
+#: ../data/ui/pref.glade.h:34
 msgid "Do _not generate thumbnails for files exceeding this size:"
 msgstr "Generere _ikke miniaturer for filer som er større end:"
 
-#: ../data/ui/pref.glade.h:34
+#: ../data/ui/pref.glade.h:35
 msgid "<b>User Interface</b>"
 msgstr "<b>Brugergrænseflade</b>"
 
-#: ../data/ui/pref.glade.h:35
+#: ../data/ui/pref.glade.h:36
 msgid "Us_e SI decimal prefixes instead of IEC binary prefixes"
 msgstr "Brug _SI-decimal-præfiks i stedet for IEC-binær-præfiks"
 
-#: ../data/ui/pref.glade.h:36
+#: ../data/ui/pref.glade.h:37
 msgid "Show _date as YYYY-MM-DD instead of in locale format"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:37
+#: ../data/ui/pref.glade.h:38
 msgid "Treat backup files as _hidden"
 msgstr "Behandl sikkerhedskopieret filer som _skjulte"
 
-#: ../data/ui/pref.glade.h:38
+#: ../data/ui/pref.glade.h:39
 msgid "Al_ways show full file names"
 msgstr "Vis altid _fulde filnavne"
 
-#: ../data/ui/pref.glade.h:39
+#: ../data/ui/pref.glade.h:40
 msgid "Show icons of hidden _files shadowed"
 msgstr "Vis ikoner af skjulte _filer skygget"
 
-#: ../data/ui/pref.glade.h:40
+#: ../data/ui/pref.glade.h:41
 msgid "_Display"
 msgstr "_Skærm"
 
-#: ../data/ui/pref.glade.h:41
+#: ../data/ui/pref.glade.h:42
 msgid "Hid_e 'Close tab' buttons"
 msgstr "Skjul knapperne '_Luk faneblad'"
 
-#: ../data/ui/pref.glade.h:42
+#: ../data/ui/pref.glade.h:43
 msgid "Al_ways show the tab bar"
 msgstr "Vis altid _fanebladsbjælken"
 
-#: ../data/ui/pref.glade.h:43
+#: ../data/ui/pref.glade.h:44
 msgid "_Maximum width of tab label:"
 msgstr "_Maksimum bredde af fanebladsetiket:"
 
 #. Use genitive case here, context is: width is XXX characters
-#: ../data/ui/pref.glade.h:45
+#: ../data/ui/pref.glade.h:46
 msgid "characters"
 msgstr "tegn"
 
-#: ../data/ui/pref.glade.h:46
+#: ../data/ui/pref.glade.h:47
 msgid "<b>Directories Tree</b>"
 msgstr "<b>Bibliotekstræ</b>"
 
-#: ../data/ui/pref.glade.h:47
+#: ../data/ui/pref.glade.h:48
 msgid "Hide e_xpander on empty or locked folder"
 msgstr "Skjul _udvidder ved tomme eller låse mapper"
 
-#: ../data/ui/pref.glade.h:48
+#: ../data/ui/pref.glade.h:49
 msgid "<b>Show in Places:</b>"
 msgstr "<b>Vis i Steder:</b>"
 
-#: ../data/ui/pref.glade.h:49
+#: ../data/ui/pref.glade.h:50
 msgid "_Home Folder"
 msgstr "_Hjemmemappe"
 
-#: ../data/ui/pref.glade.h:50
+#: ../data/ui/pref.glade.h:51
 msgid "Des_ktop"
 msgstr "_Skrivebord"
 
-#: ../data/ui/pref.glade.h:51 ../src/main-win-ui.c:239
+#: ../data/ui/pref.glade.h:52 ../src/main-win-ui.c:239
 msgid "_Trash Can"
 msgstr "_Papirkurv"
 
-#: ../data/ui/pref.glade.h:52
+#: ../data/ui/pref.glade.h:53
 msgid "_Filesystem Root"
 msgstr "_Filsystemets rod"
 
-#: ../data/ui/pref.glade.h:53
+#: ../data/ui/pref.glade.h:54
 msgid "App_lications"
 msgstr "_Programmer"
 
-#: ../data/ui/pref.glade.h:54 ../src/main-win-ui.c:242
+#: ../data/ui/pref.glade.h:55 ../src/main-win-ui.c:242
 msgid "Dev_ices"
 msgstr "_Enheder"
 
-#: ../data/ui/pref.glade.h:55
+#: ../data/ui/pref.glade.h:56
 msgid "_Network"
 msgstr "_Netværk"
 
-#: ../data/ui/pref.glade.h:56
+#: ../data/ui/pref.glade.h:57
 msgid "_Layout"
 msgstr "_Layout"
 
-#: ../data/ui/pref.glade.h:57
+#: ../data/ui/pref.glade.h:58
 msgid "<b>Auto-mount</b>"
 msgstr "<b>Automonter</b>"
 
-#: ../data/ui/pref.glade.h:58
+#: ../data/ui/pref.glade.h:59
 msgid "_Mount mountable volumes automatically on program startup"
 msgstr "_Monter automatisk monterbare diskenheder ved programopstart"
 
-#: ../data/ui/pref.glade.h:59
+#: ../data/ui/pref.glade.h:60
 msgid "Mo_unt removable media automatically when they are inserted"
 msgstr "_Monter automatisk medier når de sættes i"
 
-#: ../data/ui/pref.glade.h:60
+#: ../data/ui/pref.glade.h:61
 msgid "_Show available options for removable media when they are inserted"
 msgstr "_Vis tilgængelige indstillinger for flytbare medier når de sætte i"
 
-#: ../data/ui/pref.glade.h:61
+#: ../data/ui/pref.glade.h:62
 msgid "Do_n't show available options for those media types:"
 msgstr "Vis _ikke tilgængelige indstillinger for disse medietyper:"
 
-#: ../data/ui/pref.glade.h:62
+#: ../data/ui/pref.glade.h:63
 msgid "_Remove selected"
 msgstr "Fje_rn valgte"
 
-#: ../data/ui/pref.glade.h:63
+#: ../data/ui/pref.glade.h:64
 msgid "_Open mounted removable media in new tab instead of new window"
 msgstr ""
 "Åbn _monterede flytbare medier i nye faneblade i stedet for nye vinduer"
 
-#: ../data/ui/pref.glade.h:64
+#: ../data/ui/pref.glade.h:65
 msgid "When removable medium unmounted:"
 msgstr "Når flytbart medie afmonteres:"
 
-#: ../data/ui/pref.glade.h:65
+#: ../data/ui/pref.glade.h:66
 msgid "Clos_e tab containing removable medium"
 msgstr "_Luk faneblade som indeholder flytbare medier"
 
-#: ../data/ui/pref.glade.h:66
+#: ../data/ui/pref.glade.h:67
 msgid "Change folder in the tab to _Home Folder"
 msgstr "Skift mappe i fanebladet til _hjemmemappe"
 
-#: ../data/ui/pref.glade.h:67
+#: ../data/ui/pref.glade.h:68
 msgid "_Volume Management"
 msgstr "_Diskenhedhåndtering"
 
-#: ../data/ui/pref.glade.h:68
+#: ../data/ui/pref.glade.h:69
 msgid "<b>Programs</b>"
 msgstr "<b>Programmer</b>"
 
-#: ../data/ui/pref.glade.h:69
+#: ../data/ui/pref.glade.h:70
 msgid "<i>Commands below may include extra options if necessary.</i>"
 msgstr ""
 "<i>Kommandoer nedenfor kan inkludere ekstra tilvalg hvis det er nødvendigt.</"
 "i>"
 
-#: ../data/ui/pref.glade.h:70
+#: ../data/ui/pref.glade.h:71
 msgid "_Terminal emulator:"
 msgstr "_Terminalemulator:"
 
-#: ../data/ui/pref.glade.h:71
+#: ../data/ui/pref.glade.h:72
 msgid "_Switch user command:"
 msgstr "_Kommando til at skifte bruger:"
 
 #. Application command to format some drive
-#: ../data/ui/pref.glade.h:73
+#: ../data/ui/pref.glade.h:74
 msgid "_Format command:"
 msgstr "_Formatér kommando:"
 
-#: ../data/ui/pref.glade.h:74
+#: ../data/ui/pref.glade.h:75
 msgid "A_rchiver integration:"
 msgstr "_Arkivintegration:"
 
-#: ../data/ui/pref.glade.h:75
+#: ../data/ui/pref.glade.h:76
 msgid "<b>Templates</b>"
 msgstr "<b>Skabeloner</b>"
 
-#: ../data/ui/pref.glade.h:76
+#: ../data/ui/pref.glade.h:77
 msgid "S_how only user defined templates in menu"
 msgstr "Vis kun _brugerdefinerede skabeloner i menu"
 
-#: ../data/ui/pref.glade.h:77
+#: ../data/ui/pref.glade.h:78
 msgid "Show _only one template for each MIME type"
 msgstr "Vis _kun én skabelon for hver MIME-type"
 
-#: ../data/ui/pref.glade.h:78
+#: ../data/ui/pref.glade.h:79
 msgid "Ru_n default application after creation from template"
 msgstr "_Kør standardprogram efter oprettelse fra skabelon"
 
-#: ../data/ui/pref.glade.h:79
+#: ../data/ui/pref.glade.h:80
 msgid "<b>Other Options</b>"
 msgstr "<b>Andre indstillinger</b>"
 
-#: ../data/ui/pref.glade.h:80
+#: ../data/ui/pref.glade.h:81
 msgid "Use Application Startup Notify _by default"
 msgstr "Brug programmets _opstartsnotifikation som standard"
 
-#: ../data/ui/pref.glade.h:81
+#: ../data/ui/pref.glade.h:82
 msgid ""
 "If checked then use Startup Notify for application if another not stated "
 "explicitly.\n"
@@ -493,63 +503,63 @@ msgstr ""
 "Hvis den er fravalgt så brug kun opstartsnotifikation hvis det er defineret "
 "til programmet."
 
-#: ../data/ui/pref.glade.h:83
+#: ../data/ui/pref.glade.h:84
 msgid "D_efer test for content type on folder loading"
 msgstr "_Udsæt test af indholdstype når mappe indlæses"
 
-#: ../data/ui/pref.glade.h:84
+#: ../data/ui/pref.glade.h:85
 msgid "Use path for \"Home Folder\" button:"
 msgstr "Brug sti til \"Hjemmemappe\"-knap:"
 
-#: ../data/ui/pref.glade.h:87
+#: ../data/ui/pref.glade.h:88
 msgid "_Use current"
 msgstr "_Brug nuværende"
 
-#: ../data/ui/pref.glade.h:88
+#: ../data/ui/pref.glade.h:89
 msgid "_Advanced"
 msgstr "_Avanceret"
 
-#: ../data/ui/pref.glade.h:89
+#: ../data/ui/pref.glade.h:90
 msgid "<b>_Do not load modules matching:</b>"
 msgstr "<b>Indlæs _ikke moduler som matcher:</b>"
 
-#: ../data/ui/pref.glade.h:90
+#: ../data/ui/pref.glade.h:91
 msgid "<b>_Load these modules anyway:</b>"
 msgstr "<b>_Indlæs i stedet disse moduler:</b>"
 
-#: ../data/ui/pref.glade.h:91
+#: ../data/ui/pref.glade.h:92
 msgid "Modules"
 msgstr "Moduler"
 
-#: ../data/ui/pref.glade.h:92
+#: ../data/ui/pref.glade.h:93
 msgid "Auto (move if on the same FS, copy otherwise)"
 msgstr "Auto (flyt hvis på samme FS, ellers kopiér)"
 
-#: ../data/ui/pref.glade.h:93
+#: ../data/ui/pref.glade.h:94
 msgid "Copy"
 msgstr "Kopiér"
 
-#: ../data/ui/pref.glade.h:94
+#: ../data/ui/pref.glade.h:95
 msgid "Move"
 msgstr "Flyt"
 
-#: ../data/ui/pref.glade.h:95
+#: ../data/ui/pref.glade.h:96
 msgid "Ask"
 msgstr "Spørg"
 
-#: ../data/ui/pref.glade.h:96
+#: ../data/ui/pref.glade.h:97
 msgid "Icon view"
 msgstr "Ikonvisning"
 
-#: ../data/ui/pref.glade.h:97
+#: ../data/ui/pref.glade.h:98
 msgid "Compact view"
 msgstr "Kompakt visning"
 
-#: ../data/ui/pref.glade.h:98
+#: ../data/ui/pref.glade.h:99
 msgid "Thumbnail view"
 msgstr "Miniaturevisning"
 
-#: ../data/ui/pref.glade.h:99
+#: ../data/ui/pref.glade.h:100
 msgid "Detailed list view"
 msgstr "Detaljeret listevisning"
 
@@ -1142,11 +1152,11 @@ msgstr ""
 msgid "Add to Bookmarks"
 msgstr "Tilføj til bogmærker"
 
-#: ../src/main-win.c:2589
+#: ../src/main-win.c:2594
 msgid "Select filter"
 msgstr "Vælg filter"
 
-#: ../src/main-win.c:2590
+#: ../src/main-win.c:2595
 msgid "Choose a new shell pattern to show files:"
 msgstr "Vælg et nyt skal-mønster til at vise filer:"
 
@@ -1286,19 +1296,19 @@ msgid_plural " (%d hidden)"
 msgstr[0] " (%d skjult)"
 msgstr[1] " (%d skjulte)"
 
-#: ../src/pref.c:515
+#: ../src/pref.c:531
 msgid "Add to Modules Blacklist"
 msgstr "Tilføj til modulets sortliste"
 
-#: ../src/pref.c:516
+#: ../src/pref.c:532
 msgid "Enter a blacklisted module mask:"
 msgstr "Indtast en sortlistet modulmaske:"
 
-#: ../src/pref.c:607
+#: ../src/pref.c:623
 msgid "Add to Modules Whitelist"
 msgstr "Tilføj til modulets hvidliste"
 
-#: ../src/pref.c:608
+#: ../src/pref.c:624
 msgid "Enter a whitelisted module mask:"
 msgstr "Indtast en hvidlistet modulmaske:"
 

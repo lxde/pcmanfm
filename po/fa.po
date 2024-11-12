@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pcmanfm 1.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-03 14:35+0100\n"
+"POT-Creation-Date: 2024-11-12 16:07+0100\n"
 "PO-Revision-Date: 2015-08-17 01:31+0000\n"
 "Last-Translator: Anonymous Pootle User\n"
 "Language-Team: Persian <trans-fa@lists.fedoraproject.org>\n"
@@ -117,12 +117,12 @@ msgstr "نمایش منوهای مدیر پنجره وقتی رومیزی کلی
 msgid "_Use desktop as a folder (show icons on it) by path:"
 msgstr ""
 
-#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:85
+#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:86
 msgctxt "Use path for some folder: ..."
 msgid "Default"
 msgstr ""
 
-#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:86
+#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:87
 msgctxt "Use path for some folder: ..."
 msgid "Custom:"
 msgstr ""
@@ -198,50 +198,60 @@ msgid "<b>Behavior</b>"
 msgstr "<b>رفتار</b>"
 
 #: ../data/ui/pref.glade.h:6
-msgid "_Open files with single click"
+#, fuzzy
+#| msgid "_Open files with single click"
+msgid "_Open files with a single left-click"
 msgstr "بازکردن پرونده‌ها با یک کلیک"
 
 #: ../data/ui/pref.glade.h:7
-msgid "Delay of auto-selection in single click mode (0 to disable)"
+#, fuzzy
+#| msgid "Delay of auto-selection in single click mode (0 to disable)"
+msgid "Delay of auto-selection in single left-click mode (0 to disable)"
 msgstr "تاخیر انتخاب خودکار در حالت تک کلیک (۰ برای غیر فعال سازی)"
 
 #: ../data/ui/pref.glade.h:8
+#, fuzzy
+#| msgid "_Open files with single click"
+msgid "O_pen files with a single middle-click"
+msgstr "بازکردن پرونده‌ها با یک کلیک"
+
+#: ../data/ui/pref.glade.h:9
 msgid "Co_nfirm before deleting files"
 msgstr "تایید قبل از حذف پرونده‌ها"
 
-#: ../data/ui/pref.glade.h:9
+#: ../data/ui/pref.glade.h:10
 #, fuzzy
 msgid "_Move deleted files to \"trash can\" instead of erasing from disk"
 msgstr ""
 "انتقال پرونده‌های پاک شده به \"سطل زباله‌دان\" به جای پاک کردن از روی دیسک"
 
-#: ../data/ui/pref.glade.h:10
+#: ../data/ui/pref.glade.h:11
 #, fuzzy
 msgid "_Erase files on removable media instead of \"trash can\" creation"
 msgstr "پاک کردن پرونده‌های رسانه جداشدنی به جای ساخت \"سطل زباله دان\""
 
-#: ../data/ui/pref.glade.h:11
+#: ../data/ui/pref.glade.h:12
 #, fuzzy
 msgid "Confi_rm before moving files into \"trash can\""
 msgstr "تایید پش از انتقال پرونده‌ها به \"سطل زباله‌دان\""
 
-#: ../data/ui/pref.glade.h:12
+#: ../data/ui/pref.glade.h:13
 msgid "Don't ask options on _launch executable file"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:13
+#: ../data/ui/pref.glade.h:14
 msgid "_Bookmarks:"
 msgstr "نشانک‌ها"
 
-#: ../data/ui/pref.glade.h:14
+#: ../data/ui/pref.glade.h:15
 msgid "Defaul_t drop action:"
 msgstr "پیش فرض حالت انداختن:"
 
-#: ../data/ui/pref.glade.h:15
+#: ../data/ui/pref.glade.h:16
 msgid "\"_Smart shortcut\" auto-action on drop to Desktop folder"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:16
+#: ../data/ui/pref.glade.h:17
 msgid ""
 "If enabled then \"Auto\" action on drop file onto Desktop folder will be:\n"
 "- for files directly in Home folder a symlink will be created\n"
@@ -250,251 +260,251 @@ msgid ""
 "- for some external URI a shortcut will be created"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:21
+#: ../data/ui/pref.glade.h:22
 msgid "_Unfold tab when files are dragged onto tab button"
 msgstr "هنگامی که پرونده‌ها در حال کپی شدن در لبه هستند از آن لبه عبور نشود"
 
-#: ../data/ui/pref.glade.h:22
+#: ../data/ui/pref.glade.h:23
 msgid "_Focus previous folder after coming to its parent"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:23
+#: ../data/ui/pref.glade.h:24
 msgid "<b>Default View</b>"
 msgstr "<b>نمایش پیشفرض</b>"
 
-#: ../data/ui/pref.glade.h:24
+#: ../data/ui/pref.glade.h:25
 msgid "Vie_w Mode:"
 msgstr "حالت دیدن:"
 
-#: ../data/ui/pref.glade.h:25
+#: ../data/ui/pref.glade.h:26
 msgid "_General"
 msgstr "کلی"
 
-#: ../data/ui/pref.glade.h:26
+#: ../data/ui/pref.glade.h:27
 msgid "<b>Icons</b>"
 msgstr "<b>آیکن‌ها</b>"
 
-#: ../data/ui/pref.glade.h:27
+#: ../data/ui/pref.glade.h:28
 msgid "Size of _big icons:"
 msgstr "اندازه ی آیکن‌های بزرگ:"
 
-#: ../data/ui/pref.glade.h:28
+#: ../data/ui/pref.glade.h:29
 msgid "Size of small _icons:"
 msgstr "اندازه ی آیکن‌های کوچک:"
 
-#: ../data/ui/pref.glade.h:29
+#: ../data/ui/pref.glade.h:30
 msgid "Size of _thumbnails:"
 msgstr "اندازه تصویر بندانگشتی‌ها:"
 
-#: ../data/ui/pref.glade.h:30
+#: ../data/ui/pref.glade.h:31
 msgid "Size of side _pane icons:"
 msgstr "اندازه ی آیکن‌های قطعه کناری:"
 
-#: ../data/ui/pref.glade.h:31
+#: ../data/ui/pref.glade.h:32
 msgid "_Show thumbnails of files"
 msgstr "نمایش تصاویر بندانگشتی پرونده‌ها"
 
-#: ../data/ui/pref.glade.h:32
+#: ../data/ui/pref.glade.h:33
 msgid "_Only show thumbnails for local files"
 msgstr "فقط نمایش تصاویر بندانگشتی برای پرونده های محلی"
 
-#: ../data/ui/pref.glade.h:33
+#: ../data/ui/pref.glade.h:34
 msgid "Do _not generate thumbnails for files exceeding this size:"
 msgstr "برای پرونده های بزرگتر از این اندازه تصویر بندانگشتی تولید نکن:"
 
-#: ../data/ui/pref.glade.h:34
+#: ../data/ui/pref.glade.h:35
 msgid "<b>User Interface</b>"
 msgstr "<b>رابط کاربری</b>"
 
-#: ../data/ui/pref.glade.h:35
+#: ../data/ui/pref.glade.h:36
 msgid "Us_e SI decimal prefixes instead of IEC binary prefixes"
 msgstr "استفاده از پسوند‌های دهدهی متریک به جای پسوندهای دودویی IEC"
 
-#: ../data/ui/pref.glade.h:36
+#: ../data/ui/pref.glade.h:37
 msgid "Show _date as YYYY-MM-DD instead of in locale format"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:37
+#: ../data/ui/pref.glade.h:38
 msgid "Treat backup files as _hidden"
 msgstr "رفتار با پرونده‌های پشتیبان مانند پرونده‌های مخفی "
 
-#: ../data/ui/pref.glade.h:38
+#: ../data/ui/pref.glade.h:39
 msgid "Al_ways show full file names"
 msgstr "نمایش دایمی نام کامل پرونده‌ها"
 
-#: ../data/ui/pref.glade.h:39
+#: ../data/ui/pref.glade.h:40
 msgid "Show icons of hidden _files shadowed"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:40
+#: ../data/ui/pref.glade.h:41
 msgid "_Display"
 msgstr "نمایش"
 
-#: ../data/ui/pref.glade.h:41
+#: ../data/ui/pref.glade.h:42
 msgid "Hid_e 'Close tab' buttons"
 msgstr "پنهان سازی دکمه‌های 'بستن زبانه'"
 
-#: ../data/ui/pref.glade.h:42
+#: ../data/ui/pref.glade.h:43
 msgid "Al_ways show the tab bar"
 msgstr "نمایش دایمی نوار زبانه"
 
-#: ../data/ui/pref.glade.h:43
+#: ../data/ui/pref.glade.h:44
 msgid "_Maximum width of tab label:"
 msgstr ""
 
 #. Use genitive case here, context is: width is XXX characters
-#: ../data/ui/pref.glade.h:45
+#: ../data/ui/pref.glade.h:46
 msgid "characters"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:46
+#: ../data/ui/pref.glade.h:47
 msgid "<b>Directories Tree</b>"
 msgstr "درختواره پوشه‌ها"
 
-#: ../data/ui/pref.glade.h:47
+#: ../data/ui/pref.glade.h:48
 msgid "Hide e_xpander on empty or locked folder"
 msgstr "پنهان سازی گسترش‌گر در پوشه‌های خالی یا قفل شده"
 
-#: ../data/ui/pref.glade.h:48
+#: ../data/ui/pref.glade.h:49
 msgid "<b>Show in Places:</b>"
 msgstr "<b>نمایش در محل:</b>"
 
-#: ../data/ui/pref.glade.h:49
+#: ../data/ui/pref.glade.h:50
 #, fuzzy
 msgid "_Home Folder"
 msgstr "پوشه خانگی"
 
-#: ../data/ui/pref.glade.h:50
+#: ../data/ui/pref.glade.h:51
 #, fuzzy
 msgid "Des_ktop"
 msgstr "رومیزی"
 
-#: ../data/ui/pref.glade.h:51 ../src/main-win-ui.c:239
+#: ../data/ui/pref.glade.h:52 ../src/main-win-ui.c:239
 msgid "_Trash Can"
 msgstr "سطل زباله"
 
-#: ../data/ui/pref.glade.h:52
+#: ../data/ui/pref.glade.h:53
 msgid "_Filesystem Root"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:53
+#: ../data/ui/pref.glade.h:54
 msgid "App_lications"
 msgstr "برنامه ها"
 
-#: ../data/ui/pref.glade.h:54 ../src/main-win-ui.c:242
+#: ../data/ui/pref.glade.h:55 ../src/main-win-ui.c:242
 msgid "Dev_ices"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:55
+#: ../data/ui/pref.glade.h:56
 #, fuzzy
 msgid "_Network"
 msgstr "درایوهای شبکه"
 
-#: ../data/ui/pref.glade.h:56
+#: ../data/ui/pref.glade.h:57
 msgid "_Layout"
 msgstr "طرح"
 
-#: ../data/ui/pref.glade.h:57
+#: ../data/ui/pref.glade.h:58
 msgid "<b>Auto-mount</b>"
 msgstr "<b>خودسوار</b>"
 
-#: ../data/ui/pref.glade.h:58
+#: ../data/ui/pref.glade.h:59
 msgid "_Mount mountable volumes automatically on program startup"
 msgstr "سوار کردن رسانه‌های جداشدنی به طور خودکار در آغاز برنامه"
 
-#: ../data/ui/pref.glade.h:59
+#: ../data/ui/pref.glade.h:60
 msgid "Mo_unt removable media automatically when they are inserted"
 msgstr "سوار کردن رسانه ی جداشدنی به طور خودکار وقتی متصل می شوند"
 
-#: ../data/ui/pref.glade.h:60
-msgid "_Show available options for removable media when they are inserted"
-msgstr "نمایش گزینه های موجود برای رسانه های جداشدنی وقتی وارد می شوند"
-
 #: ../data/ui/pref.glade.h:61
-#, fuzzy
-msgid "Do_n't show available options for those media types:"
+msgid "_Show available options for removable media when they are inserted"
 msgstr "نمایش گزینه های موجود برای رسانه های جداشدنی وقتی وارد می شوند"
 
 #: ../data/ui/pref.glade.h:62
 #, fuzzy
+msgid "Do_n't show available options for those media types:"
+msgstr "نمایش گزینه های موجود برای رسانه های جداشدنی وقتی وارد می شوند"
+
+#: ../data/ui/pref.glade.h:63
+#, fuzzy
 msgid "_Remove selected"
 msgstr "%d مورد انتخاب شده است"
 
-#: ../data/ui/pref.glade.h:63
+#: ../data/ui/pref.glade.h:64
 msgid "_Open mounted removable media in new tab instead of new window"
 msgstr "باز کردن رسانه‌های جداشدنی سوار شده در یک لبه به جای پنجره جدید"
 
-#: ../data/ui/pref.glade.h:64
+#: ../data/ui/pref.glade.h:65
 #, fuzzy
 msgid "When removable medium unmounted:"
 msgstr "رسانه جداشدنی وصل شد"
 
-#: ../data/ui/pref.glade.h:65
+#: ../data/ui/pref.glade.h:66
 #, fuzzy
 msgid "Clos_e tab containing removable medium"
 msgstr "بستن زبانه شامل رسانه جداشدانی هنگامی که این رسانه پیاده می‌شود"
 
-#: ../data/ui/pref.glade.h:66
+#: ../data/ui/pref.glade.h:67
 msgid "Change folder in the tab to _Home Folder"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:67
+#: ../data/ui/pref.glade.h:68
 msgid "_Volume Management"
 msgstr "مدیریت صدا"
 
-#: ../data/ui/pref.glade.h:68
+#: ../data/ui/pref.glade.h:69
 msgid "<b>Programs</b>"
 msgstr "<b>برنامه ها</b>"
 
-#: ../data/ui/pref.glade.h:69
+#: ../data/ui/pref.glade.h:70
 msgid "<i>Commands below may include extra options if necessary.</i>"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:70
+#: ../data/ui/pref.glade.h:71
 msgid "_Terminal emulator:"
 msgstr "شبیه ساز ترمینال:"
 
-#: ../data/ui/pref.glade.h:71
+#: ../data/ui/pref.glade.h:72
 msgid "_Switch user command:"
 msgstr "دستور تعویض کاربر:"
 
 #. Application command to format some drive
-#: ../data/ui/pref.glade.h:73
+#: ../data/ui/pref.glade.h:74
 msgid "_Format command:"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:74
+#: ../data/ui/pref.glade.h:75
 msgid "A_rchiver integration:"
 msgstr "یکپارچه سازی با آشیوساز:"
 
-#: ../data/ui/pref.glade.h:75
+#: ../data/ui/pref.glade.h:76
 #, fuzzy
 msgid "<b>Templates</b>"
 msgstr "<b>متن</b>"
 
-#: ../data/ui/pref.glade.h:76
+#: ../data/ui/pref.glade.h:77
 msgid "S_how only user defined templates in menu"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:77
+#: ../data/ui/pref.glade.h:78
 msgid "Show _only one template for each MIME type"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:78
+#: ../data/ui/pref.glade.h:79
 msgid "Ru_n default application after creation from template"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:79
+#: ../data/ui/pref.glade.h:80
 #, fuzzy
 msgid "<b>Other Options</b>"
 msgstr "<b>نمایش آیکن های رومیزی</b>"
 
-#: ../data/ui/pref.glade.h:80
+#: ../data/ui/pref.glade.h:81
 #, fuzzy
 msgid "Use Application Startup Notify _by default"
 msgstr "استفاده از اعلام آغاز به کار برنامه به صورت پیش‌فرض"
 
-#: ../data/ui/pref.glade.h:81
+#: ../data/ui/pref.glade.h:82
 msgid ""
 "If checked then use Startup Notify for application if another not stated "
 "explicitly.\n"
@@ -504,66 +514,66 @@ msgstr ""
 "استفاده کن.\n"
 "اگر تیک نداشت وبرای برنامه تعریف شده بود از آگاه‌سازی در زمان اجرااستفاده کن"
 
-#: ../data/ui/pref.glade.h:83
+#: ../data/ui/pref.glade.h:84
 msgid "D_efer test for content type on folder loading"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:84
+#: ../data/ui/pref.glade.h:85
 msgid "Use path for \"Home Folder\" button:"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:87
+#: ../data/ui/pref.glade.h:88
 msgid "_Use current"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:88
+#: ../data/ui/pref.glade.h:89
 msgid "_Advanced"
 msgstr "پیش رفته"
 
-#: ../data/ui/pref.glade.h:89
+#: ../data/ui/pref.glade.h:90
 msgid "<b>_Do not load modules matching:</b>"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:90
+#: ../data/ui/pref.glade.h:91
 msgid "<b>_Load these modules anyway:</b>"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:91
+#: ../data/ui/pref.glade.h:92
 msgid "Modules"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:92
+#: ../data/ui/pref.glade.h:93
 msgid "Auto (move if on the same FS, copy otherwise)"
 msgstr "خودکار (انتقال در صورت یکسان بودن پرونده سیستم، در غیر اینصورت کپی)"
 
-#: ../data/ui/pref.glade.h:93
+#: ../data/ui/pref.glade.h:94
 msgid "Copy"
 msgstr "کپی"
 
-#: ../data/ui/pref.glade.h:94
+#: ../data/ui/pref.glade.h:95
 msgid "Move"
 msgstr "انتقال"
 
-#: ../data/ui/pref.glade.h:95
+#: ../data/ui/pref.glade.h:96
 msgid "Ask"
 msgstr "بپرس"
 
-#: ../data/ui/pref.glade.h:96
+#: ../data/ui/pref.glade.h:97
 #, fuzzy
 msgid "Icon view"
 msgstr "دیدن آیکن"
 
-#: ../data/ui/pref.glade.h:97
+#: ../data/ui/pref.glade.h:98
 #, fuzzy
 msgid "Compact view"
 msgstr "نمایش فشرده"
 
-#: ../data/ui/pref.glade.h:98
+#: ../data/ui/pref.glade.h:99
 #, fuzzy
 msgid "Thumbnail view"
 msgstr "دیدن تصویر بندانگشتی"
 
-#: ../data/ui/pref.glade.h:99
+#: ../data/ui/pref.glade.h:100
 #, fuzzy
 msgid "Detailed list view"
 msgstr "نمایش لیست جزییات"
@@ -1186,11 +1196,11 @@ msgstr ""
 msgid "Add to Bookmarks"
 msgstr "افزودن به نشانکها"
 
-#: ../src/main-win.c:2589
+#: ../src/main-win.c:2594
 msgid "Select filter"
 msgstr ""
 
-#: ../src/main-win.c:2590
+#: ../src/main-win.c:2595
 msgid "Choose a new shell pattern to show files:"
 msgstr ""
 
@@ -1330,19 +1340,19 @@ msgid_plural " (%d hidden)"
 msgstr[0] "(%d مخفی شده)"
 msgstr[1] "(%d مخفی شده)"
 
-#: ../src/pref.c:515
+#: ../src/pref.c:531
 msgid "Add to Modules Blacklist"
 msgstr ""
 
-#: ../src/pref.c:516
+#: ../src/pref.c:532
 msgid "Enter a blacklisted module mask:"
 msgstr ""
 
-#: ../src/pref.c:607
+#: ../src/pref.c:623
 msgid "Add to Modules Whitelist"
 msgstr ""
 
-#: ../src/pref.c:608
+#: ../src/pref.c:624
 msgid "Enter a whitelisted module mask:"
 msgstr ""
 

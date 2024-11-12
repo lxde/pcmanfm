@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.9.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-03 14:35+0100\n"
+"POT-Creation-Date: 2024-11-12 16:07+0100\n"
 "PO-Revision-Date: 2018-12-13 17:14+0000\n"
 "Last-Translator: nyucel <necdetyucel@gmail.com>\n"
 "Language-Team: tr <tr@li.org>\n"
@@ -114,12 +114,12 @@ msgstr ""
 msgid "_Use desktop as a folder (show icons on it) by path:"
 msgstr "_Masaüstünü yol ile bir klasör olarak (üzerinde simgeler ile) göster:"
 
-#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:85
+#: ../data/ui/desktop-pref.glade.h:21 ../data/ui/pref.glade.h:86
 msgctxt "Use path for some folder: ..."
 msgid "Default"
 msgstr "Öntanımlı"
 
-#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:86
+#: ../data/ui/desktop-pref.glade.h:22 ../data/ui/pref.glade.h:87
 msgctxt "Use path for some folder: ..."
 msgid "Custom:"
 msgstr "Özel:"
@@ -186,47 +186,57 @@ msgid "<b>Behavior</b>"
 msgstr "<b>Davranış</b>"
 
 #: ../data/ui/pref.glade.h:6
-msgid "_Open files with single click"
+#, fuzzy
+#| msgid "_Open files with single click"
+msgid "_Open files with a single left-click"
 msgstr "Dosyaları _tek tıkla aç"
 
 #: ../data/ui/pref.glade.h:7
-msgid "Delay of auto-selection in single click mode (0 to disable)"
+#, fuzzy
+#| msgid "Delay of auto-selection in single click mode (0 to disable)"
+msgid "Delay of auto-selection in single left-click mode (0 to disable)"
 msgstr "Tek tıklama ile otomatik seçim gecikmesi (kapatmak için 0)"
 
 #: ../data/ui/pref.glade.h:8
+#, fuzzy
+#| msgid "_Open files with single click"
+msgid "O_pen files with a single middle-click"
+msgstr "Dosyaları _tek tıkla aç"
+
+#: ../data/ui/pref.glade.h:9
 msgid "Co_nfirm before deleting files"
 msgstr "Dosyaları silmeden önce _onay iste"
 
-#: ../data/ui/pref.glade.h:9
+#: ../data/ui/pref.glade.h:10
 msgid "_Move deleted files to \"trash can\" instead of erasing from disk"
 msgstr "S_ilinen dosyaları diskten silmek yerine \"çöp kutusu\"na taşı"
 
-#: ../data/ui/pref.glade.h:10
+#: ../data/ui/pref.glade.h:11
 msgid "_Erase files on removable media instead of \"trash can\" creation"
 msgstr "_Taşınabilir aygıttaki dosyaları \"çöp kutusu\"na göndermek yerine sil"
 
-#: ../data/ui/pref.glade.h:11
+#: ../data/ui/pref.glade.h:12
 msgid "Confi_rm before moving files into \"trash can\""
 msgstr "Dosyaları \"_çöp kutusu\"na göndermeden önce onay iste"
 
-#: ../data/ui/pref.glade.h:12
+#: ../data/ui/pref.glade.h:13
 msgid "Don't ask options on _launch executable file"
 msgstr "Uygu_lama dosyası çalıştırırken seçeneklerini sorma"
 
-#: ../data/ui/pref.glade.h:13
+#: ../data/ui/pref.glade.h:14
 msgid "_Bookmarks:"
 msgstr "_Yer İmleri:"
 
-#: ../data/ui/pref.glade.h:14
+#: ../data/ui/pref.glade.h:15
 msgid "Defaul_t drop action:"
 msgstr "_Varsayılan bırakma eylemi:"
 
-#: ../data/ui/pref.glade.h:15
+#: ../data/ui/pref.glade.h:16
 msgid "\"_Smart shortcut\" auto-action on drop to Desktop folder"
 msgstr ""
 "Masaüstü klasörüne bırakıldığında \"_Akıllı kısayol\"u otomatik etkin kıl"
 
-#: ../data/ui/pref.glade.h:16
+#: ../data/ui/pref.glade.h:17
 msgid ""
 "If enabled then \"Auto\" action on drop file onto Desktop folder will be:\n"
 "- for files directly in Home folder a symlink will be created\n"
@@ -241,243 +251,243 @@ msgstr ""
 "- diğer dosyalar (örn. bir taşınabilir ortam) kopyalanacak\n"
 "- harici adresler için bir kısayol oluşturulacak"
 
-#: ../data/ui/pref.glade.h:21
+#: ../data/ui/pref.glade.h:22
 msgid "_Unfold tab when files are dragged onto tab button"
 msgstr "Dosyalar _sekme düğmesine sürüklendiğinde sekmeyi aç"
 
-#: ../data/ui/pref.glade.h:22
+#: ../data/ui/pref.glade.h:23
 msgid "_Focus previous folder after coming to its parent"
 msgstr "_Üst klasöre gidildiğinde önceki klasöre odaklan"
 
-#: ../data/ui/pref.glade.h:23
+#: ../data/ui/pref.glade.h:24
 msgid "<b>Default View</b>"
 msgstr "<b>Varsayılan Görünüm</b>"
 
-#: ../data/ui/pref.glade.h:24
+#: ../data/ui/pref.glade.h:25
 msgid "Vie_w Mode:"
 msgstr "Görünüm _Kipi:"
 
-#: ../data/ui/pref.glade.h:25
+#: ../data/ui/pref.glade.h:26
 msgid "_General"
 msgstr "_Genel"
 
-#: ../data/ui/pref.glade.h:26
+#: ../data/ui/pref.glade.h:27
 msgid "<b>Icons</b>"
 msgstr "<b>Simgeler</b>"
 
-#: ../data/ui/pref.glade.h:27
+#: ../data/ui/pref.glade.h:28
 msgid "Size of _big icons:"
 msgstr "_Büyük simge boyutu:"
 
-#: ../data/ui/pref.glade.h:28
+#: ../data/ui/pref.glade.h:29
 msgid "Size of small _icons:"
 msgstr "Küçük _simge boyutu:"
 
-#: ../data/ui/pref.glade.h:29
+#: ../data/ui/pref.glade.h:30
 msgid "Size of _thumbnails:"
 msgstr "_Önizleme resmi boyutu:"
 
-#: ../data/ui/pref.glade.h:30
+#: ../data/ui/pref.glade.h:31
 msgid "Size of side _pane icons:"
 msgstr "_Yan panel simge boyutu:"
 
-#: ../data/ui/pref.glade.h:31
+#: ../data/ui/pref.glade.h:32
 msgid "_Show thumbnails of files"
 msgstr "_Dosyaların önizlemelerini göster"
 
-#: ../data/ui/pref.glade.h:32
+#: ../data/ui/pref.glade.h:33
 msgid "_Only show thumbnails for local files"
 msgstr "_Sadece yerel dosyaların önizlemelerini göster"
 
-#: ../data/ui/pref.glade.h:33
+#: ../data/ui/pref.glade.h:34
 msgid "Do _not generate thumbnails for files exceeding this size:"
 msgstr "_Şu boyutun üstündeki dosyalar için önizleme oluşturma:"
 
-#: ../data/ui/pref.glade.h:34
+#: ../data/ui/pref.glade.h:35
 msgid "<b>User Interface</b>"
 msgstr "<b>Kullanıcı Arayüzü</b>"
 
-#: ../data/ui/pref.glade.h:35
+#: ../data/ui/pref.glade.h:36
 msgid "Us_e SI decimal prefixes instead of IEC binary prefixes"
 msgstr "_ICE ikili önekleri yerine SI onlu önekleri kullan"
 
-#: ../data/ui/pref.glade.h:36
+#: ../data/ui/pref.glade.h:37
 msgid "Show _date as YYYY-MM-DD instead of in locale format"
 msgstr ""
 
-#: ../data/ui/pref.glade.h:37
+#: ../data/ui/pref.glade.h:38
 msgid "Treat backup files as _hidden"
 msgstr "_Yedekleme dosyalarına gizli dosya gibi davran"
 
-#: ../data/ui/pref.glade.h:38
+#: ../data/ui/pref.glade.h:39
 msgid "Al_ways show full file names"
 msgstr "Her _zaman tam dosya adlarını göster"
 
-#: ../data/ui/pref.glade.h:39
+#: ../data/ui/pref.glade.h:40
 msgid "Show icons of hidden _files shadowed"
 msgstr "G_ölgelenen gizli dosyaların simgelerini göster"
 
-#: ../data/ui/pref.glade.h:40
+#: ../data/ui/pref.glade.h:41
 msgid "_Display"
 msgstr "_Görüntüle"
 
-#: ../data/ui/pref.glade.h:41
+#: ../data/ui/pref.glade.h:42
 msgid "Hid_e 'Close tab' buttons"
 msgstr "'Sekmeyi _kapat' düğmelerini sakla"
 
-#: ../data/ui/pref.glade.h:42
+#: ../data/ui/pref.glade.h:43
 msgid "Al_ways show the tab bar"
 msgstr "Her _zaman sekme çubuğunu göster"
 
-#: ../data/ui/pref.glade.h:43
+#: ../data/ui/pref.glade.h:44
 msgid "_Maximum width of tab label:"
 msgstr "_Sekme etiketinin azami genişliği:"
 
 #. Use genitive case here, context is: width is XXX characters
-#: ../data/ui/pref.glade.h:45
+#: ../data/ui/pref.glade.h:46
 msgid "characters"
 msgstr "karakter"
 
-#: ../data/ui/pref.glade.h:46
+#: ../data/ui/pref.glade.h:47
 msgid "<b>Directories Tree</b>"
 msgstr "<b>Dizin Ağacı</b>"
 
-#: ../data/ui/pref.glade.h:47
+#: ../data/ui/pref.glade.h:48
 msgid "Hide e_xpander on empty or locked folder"
 msgstr "Boş _veya kilitli dizinlerde genişleticiyi gizle"
 
-#: ../data/ui/pref.glade.h:48
+#: ../data/ui/pref.glade.h:49
 msgid "<b>Show in Places:</b>"
 msgstr "<b>Yerleri Göster:</b>"
 
-#: ../data/ui/pref.glade.h:49
+#: ../data/ui/pref.glade.h:50
 msgid "_Home Folder"
 msgstr "_Ev Dizini"
 
-#: ../data/ui/pref.glade.h:50
+#: ../data/ui/pref.glade.h:51
 msgid "Des_ktop"
 msgstr "_Masaüstü"
 
-#: ../data/ui/pref.glade.h:51 ../src/main-win-ui.c:239
+#: ../data/ui/pref.glade.h:52 ../src/main-win-ui.c:239
 msgid "_Trash Can"
 msgstr "_Çöp Kutusu"
 
-#: ../data/ui/pref.glade.h:52
+#: ../data/ui/pref.glade.h:53
 msgid "_Filesystem Root"
 msgstr "_Dosya sistemi kök dizini"
 
-#: ../data/ui/pref.glade.h:53
+#: ../data/ui/pref.glade.h:54
 msgid "App_lications"
 msgstr "_Uygulamalar"
 
-#: ../data/ui/pref.glade.h:54 ../src/main-win-ui.c:242
+#: ../data/ui/pref.glade.h:55 ../src/main-win-ui.c:242
 msgid "Dev_ices"
 msgstr "_Aygıtlar"
 
-#: ../data/ui/pref.glade.h:55
+#: ../data/ui/pref.glade.h:56
 msgid "_Network"
 msgstr "_Ağ"
 
-#: ../data/ui/pref.glade.h:56
+#: ../data/ui/pref.glade.h:57
 msgid "_Layout"
 msgstr "_Yerleşim"
 
-#: ../data/ui/pref.glade.h:57
+#: ../data/ui/pref.glade.h:58
 msgid "<b>Auto-mount</b>"
 msgstr "<b>Otomatik bağla</b>"
 
-#: ../data/ui/pref.glade.h:58
+#: ../data/ui/pref.glade.h:59
 msgid "_Mount mountable volumes automatically on program startup"
 msgstr "Program başladığında bağlanabilir bölümleri otomatik olarak _bağla"
 
-#: ../data/ui/pref.glade.h:59
+#: ../data/ui/pref.glade.h:60
 msgid "Mo_unt removable media automatically when they are inserted"
 msgstr "_Çıkartılabilir ortam takıldığında otomatik olarak bağla"
 
-#: ../data/ui/pref.glade.h:60
+#: ../data/ui/pref.glade.h:61
 msgid "_Show available options for removable media when they are inserted"
 msgstr "_Yerleştirildiğinde çıkartılabilir ortam için seçenekleri görüntüle"
 
-#: ../data/ui/pref.glade.h:61
+#: ../data/ui/pref.glade.h:62
 msgid "Do_n't show available options for those media types:"
 msgstr "Şu ortam _türleri için kullanılabilir seçenekleri gösterme:"
 
-#: ../data/ui/pref.glade.h:62
+#: ../data/ui/pref.glade.h:63
 msgid "_Remove selected"
 msgstr "_Seçileni kaldır"
 
-#: ../data/ui/pref.glade.h:63
+#: ../data/ui/pref.glade.h:64
 msgid "_Open mounted removable media in new tab instead of new window"
 msgstr "Çıkarılabilir taşınabilir aygıtları iç_eren sekmeyi kapat"
 
-#: ../data/ui/pref.glade.h:64
+#: ../data/ui/pref.glade.h:65
 msgid "When removable medium unmounted:"
 msgstr "Çıkarılabilir ortam ayrıldığında:"
 
-#: ../data/ui/pref.glade.h:65
+#: ../data/ui/pref.glade.h:66
 msgid "Clos_e tab containing removable medium"
 msgstr "Çıkarılabilir taşınabilir aygıtları iç_eren sekmeyi kapat"
 
-#: ../data/ui/pref.glade.h:66
+#: ../data/ui/pref.glade.h:67
 msgid "Change folder in the tab to _Home Folder"
 msgstr "Sekmedeki klasörü _Ana dizine değiştir"
 
-#: ../data/ui/pref.glade.h:67
+#: ../data/ui/pref.glade.h:68
 msgid "_Volume Management"
 msgstr "_Hacim Yönetimi"
 
-#: ../data/ui/pref.glade.h:68
+#: ../data/ui/pref.glade.h:69
 msgid "<b>Programs</b>"
 msgstr "<b>Programlar</b>"
 
-#: ../data/ui/pref.glade.h:69
+#: ../data/ui/pref.glade.h:70
 msgid "<i>Commands below may include extra options if necessary.</i>"
 msgstr "<i>Aşağıdaki komutlar, gerektiğinde ek seçenekler içerebilirler.</i>"
 
-#: ../data/ui/pref.glade.h:70
+#: ../data/ui/pref.glade.h:71
 msgid "_Terminal emulator:"
 msgstr "_Uçbirim Öykünücüsü:"
 
-#: ../data/ui/pref.glade.h:71
+#: ../data/ui/pref.glade.h:72
 msgid "_Switch user command:"
 msgstr "_Kullanıcı Değiştirme Komutu:"
 
 #. Application command to format some drive
-#: ../data/ui/pref.glade.h:73
+#: ../data/ui/pref.glade.h:74
 msgid "_Format command:"
 msgstr "_Biçimlendirme komutu:"
 
 # Yahut "Arşiv Yöneticisi Entegrasyonu". Seçtiğim ifade daha açıklayıcı gibime
 # geliyor.
-#: ../data/ui/pref.glade.h:74
+#: ../data/ui/pref.glade.h:75
 msgid "A_rchiver integration:"
 msgstr "İlişkilendirilen A_rşiv Yöneticisi:"
 
-#: ../data/ui/pref.glade.h:75
+#: ../data/ui/pref.glade.h:76
 msgid "<b>Templates</b>"
 msgstr "<b>Şablonlar</b>"
 
-#: ../data/ui/pref.glade.h:76
+#: ../data/ui/pref.glade.h:77
 msgid "S_how only user defined templates in menu"
 msgstr "Menüde _sadece kullanıcı tanımlı şablonları göster"
 
-#: ../data/ui/pref.glade.h:77
+#: ../data/ui/pref.glade.h:78
 msgid "Show _only one template for each MIME type"
 msgstr "H_er MIME türü için sadece bir şablon göster"
 
-#: ../data/ui/pref.glade.h:78
+#: ../data/ui/pref.glade.h:79
 msgid "Ru_n default application after creation from template"
 msgstr "_Şablondan oluşturduktan sonra öntanımlı uygulamayı çalıştır"
 
-#: ../data/ui/pref.glade.h:79
+#: ../data/ui/pref.glade.h:80
 msgid "<b>Other Options</b>"
 msgstr "<b>Diğer Seçenekler</b>"
 
-#: ../data/ui/pref.glade.h:80
+#: ../data/ui/pref.glade.h:81
 msgid "Use Application Startup Notify _by default"
 msgstr "Varsayılan olarak _Uygulama Başlatma Uyarısını kullan"
 
-#: ../data/ui/pref.glade.h:81
+#: ../data/ui/pref.glade.h:82
 msgid ""
 "If checked then use Startup Notify for application if another not stated "
 "explicitly.\n"
@@ -488,63 +498,63 @@ msgstr ""
 "Eğer işaretli değilse, sadece uygulama için tanımlıysa Başlatma Uyarısını "
 "kullan."
 
-#: ../data/ui/pref.glade.h:83
+#: ../data/ui/pref.glade.h:84
 msgid "D_efer test for content type on folder loading"
 msgstr "K_lasör yüklemesinde içerik türü sınamasını ertele"
 
-#: ../data/ui/pref.glade.h:84
+#: ../data/ui/pref.glade.h:85
 msgid "Use path for \"Home Folder\" button:"
 msgstr "\"Ana Klasör\" düğmesi için yol kullan:"
 
-#: ../data/ui/pref.glade.h:87
+#: ../data/ui/pref.glade.h:88
 msgid "_Use current"
 msgstr "_Geçerli olanı kullan"
 
-#: ../data/ui/pref.glade.h:88
+#: ../data/ui/pref.glade.h:89
 msgid "_Advanced"
 msgstr "_Gelişmiş"
 
-#: ../data/ui/pref.glade.h:89
+#: ../data/ui/pref.glade.h:90
 msgid "<b>_Do not load modules matching:</b>"
 msgstr "<b>Şununla eşleşen modülleri yükleme:</b>"
 
-#: ../data/ui/pref.glade.h:90
+#: ../data/ui/pref.glade.h:91
 msgid "<b>_Load these modules anyway:</b>"
 msgstr "<b>_Bu modülleri yine de yükle:</b>"
 
-#: ../data/ui/pref.glade.h:91
+#: ../data/ui/pref.glade.h:92
 msgid "Modules"
 msgstr "Modüller"
 
-#: ../data/ui/pref.glade.h:92
+#: ../data/ui/pref.glade.h:93
 msgid "Auto (move if on the same FS, copy otherwise)"
 msgstr "Otomatik (aynı FS üzerindeyse taşı, değilse kopyala)"
 
-#: ../data/ui/pref.glade.h:93
+#: ../data/ui/pref.glade.h:94
 msgid "Copy"
 msgstr "Kopyala"
 
-#: ../data/ui/pref.glade.h:94
+#: ../data/ui/pref.glade.h:95
 msgid "Move"
 msgstr "Taşı"
 
-#: ../data/ui/pref.glade.h:95
+#: ../data/ui/pref.glade.h:96
 msgid "Ask"
 msgstr "Sor"
 
-#: ../data/ui/pref.glade.h:96
+#: ../data/ui/pref.glade.h:97
 msgid "Icon view"
 msgstr "Simge görünümü"
 
-#: ../data/ui/pref.glade.h:97
+#: ../data/ui/pref.glade.h:98
 msgid "Compact view"
 msgstr "Sıkışık görünüm"
 
-#: ../data/ui/pref.glade.h:98
+#: ../data/ui/pref.glade.h:99
 msgid "Thumbnail view"
 msgstr "Önizleme görünümü"
 
-#: ../data/ui/pref.glade.h:99
+#: ../data/ui/pref.glade.h:100
 msgid "Detailed list view"
 msgstr "Ayrıntılı liste görünümü"
 
@@ -1137,11 +1147,11 @@ msgstr ""
 msgid "Add to Bookmarks"
 msgstr "Yer İmlerine Ekle"
 
-#: ../src/main-win.c:2589
+#: ../src/main-win.c:2594
 msgid "Select filter"
 msgstr "Filtre seç"
 
-#: ../src/main-win.c:2590
+#: ../src/main-win.c:2595
 msgid "Choose a new shell pattern to show files:"
 msgstr "Dosyaların gösterileceği yeni kabuk deseni seçin:"
 
@@ -1278,19 +1288,19 @@ msgid " (%d hidden)"
 msgid_plural " (%d hidden)"
 msgstr[0] " (%d gizli)"
 
-#: ../src/pref.c:515
+#: ../src/pref.c:531
 msgid "Add to Modules Blacklist"
 msgstr "Modül Kara Listesine Ekle"
 
-#: ../src/pref.c:516
+#: ../src/pref.c:532
 msgid "Enter a blacklisted module mask:"
 msgstr "Kara listeden bir modül maskesi girin:"
 
-#: ../src/pref.c:607
+#: ../src/pref.c:623
 msgid "Add to Modules Whitelist"
 msgstr "Modül Beyaz Listesine Ekle"
 
-#: ../src/pref.c:608
+#: ../src/pref.c:624
 msgid "Enter a whitelisted module mask:"
 msgstr "Beyaz listeden bir modül maskesi girin:"
 
