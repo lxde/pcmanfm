@@ -2,6 +2,7 @@
  *      desktop-ui.c
  *
  *      Copyright 2010 PCMan <pcman.tw@gmail.com>
+ *      Copyright 2024 Ingo Brückl
  *
  *      This program is free software; you can redistribute it and/or modify
  *      it under the terms of the GNU General Public License as published by
@@ -48,7 +49,7 @@ static const char folder_menu_xml[]=
 /* Additional action entries for popup menus - check mnemonics in FmFileMenu */
 static const GtkActionEntry folder_menu_actions[]=
 {
-    {"NewTab", GTK_STOCK_NEW, N_("Open in New Ta_b"), NULL, NULL, G_CALLBACK(on_open_in_new_tab)},
+    {"NewTab", "tab-new", N_("Open in New Ta_b"), NULL, NULL, G_CALLBACK(on_open_in_new_tab)},
     {"NewWin", GTK_STOCK_NEW, N_("Open in New Win_dow"), NULL, NULL, G_CALLBACK(on_open_in_new_win)},
     {"Search", GTK_STOCK_FIND, NULL, NULL, NULL, NULL},
     {"Term", "utilities-terminal", N_("Open in Termina_l"), NULL, NULL, G_CALLBACK(on_open_folder_in_terminal)}

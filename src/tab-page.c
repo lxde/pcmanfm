@@ -2,7 +2,7 @@
 //
 //      Copyright 2011 Hong Jen Yee (PCMan) <pcman.tw@gmail.com>
 //      Copyright 2012-2015 Andriy Grytsenko (LStranger) <andrej@rep.kiev.ua>
-//      Copyright 2020 Ingo Brückl
+//      Copyright 2020,2024 Ingo Brückl
 //
 //      This program is free software; you can redistribute it and/or modify
 //      it under the terms of the GNU General Public License as published by
@@ -54,7 +54,7 @@ static void on_open_folder_in_terminal(GtkAction* act, FmMainWin* win);
 /* Action entries for popup menu entries above */
 static GtkActionEntry folder_menu_actions[]=
 {
-    {"NewTab", GTK_STOCK_NEW, N_("Open in New T_ab"), NULL, NULL, G_CALLBACK(on_open_in_new_tab)},
+    {"NewTab", "tab-new", N_("Open in New T_ab"), NULL, NULL, G_CALLBACK(on_open_in_new_tab)},
     {"NewWin", GTK_STOCK_NEW, N_("Open in New Win_dow"), NULL, NULL, G_CALLBACK(on_open_in_new_win)},
     {"Search", GTK_STOCK_FIND, NULL, NULL, NULL, NULL},
     {"Term", "utilities-terminal", N_("Open in Termina_l"), NULL, NULL, G_CALLBACK(on_open_folder_in_terminal)},
