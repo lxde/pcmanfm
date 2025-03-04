@@ -289,7 +289,7 @@ static void on_single_click_toggled(GtkToggleButton* btn, GObject **object)
         gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(object[1]), FALSE);
 }
 
-#if FM_CHECK_VERSION(1, 3, 3)
+#if FM_CHECK_VERSION(1, 4, 0)
 static void on_middle_click_toggled(GtkToggleButton* btn, gpointer single_click)
 {
     gboolean new_val = gtk_toggle_button_get_active(btn);
@@ -716,7 +716,7 @@ void fm_edit_preference( GtkWindow* parent, int page )
                          b_objects);
         gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(gtk_builder_get_object(builder, "single_click")),
                                      fm_config->single_click);
-#if FM_CHECK_VERSION(1, 3, 3)
+#if FM_CHECK_VERSION(1, 4, 0)
         /* special handling for middle_click */
         g_signal_connect(gtk_builder_get_object(builder, "middle_click"),
                          "toggled", G_CALLBACK(on_middle_click_toggled),
@@ -777,7 +777,7 @@ void fm_edit_preference( GtkWindow* parent, int page )
         INIT_SPIN(builder, FmConfig, thumbnail_max, NULL);
 
         INIT_BOOL(builder, FmConfig, si_unit, NULL);
-#if FM_CHECK_VERSION(1, 3, 3)
+#if FM_CHECK_VERSION(1, 4, 0)
         INIT_BOOL_SHOW(builder, FmConfig, date_iso_8601, NULL);
 #endif
         INIT_BOOL(builder, FmConfig, backup_as_hidden, NULL);

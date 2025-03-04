@@ -3496,7 +3496,7 @@ static gboolean on_button_release(GtkWidget* w, GdkEventButton* evt)
         queue_layout_items(self);
     }
     else if((fm_config->single_click && evt->button == 1)
-#if FM_CHECK_VERSION(1, 3, 3)
+#if FM_CHECK_VERSION(1, 4, 0)
          || (fm_config->middle_click && evt->button == 2)
 #endif
                                                          )
