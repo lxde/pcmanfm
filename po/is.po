@@ -1,22 +1,22 @@
 # Icelandic translation for Pcmanfm package.
-# Copyright (C) 2021 Free Software Foundation, Inc.
+# Copyright (C) 2025 Free Software Foundation, Inc.
 # This file is distributed under the same license as the Pcmanfm package.
-# Sveinn í Felli <sv1@fellsnet.is>, 2014, 2021.
+# SPDX-FileCopyrightText: 2014, 2021, 2025 Sveinn í Felli <sv1@fellsnet.is>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-11-12 16:07+0100\n"
-"PO-Revision-Date: 2021-03-04 09:35+0000\n"
+"PO-Revision-Date: 2025-03-30 16:55+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
-"Language-Team: Icelandic <translation-team-is@lists.sourceforge.net>\n"
+"Language-Team: Icelandic\n"
 "Language: is\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 2.0\n"
+"X-Generator: Lokalize 23.08.5\n"
 "X-POOTLE-MTIME: 1418031056.000000\n"
 
 #: ../data/ui/about.glade.in.h:1
@@ -39,7 +39,7 @@ msgstr "<b>Bakgrunnur</b>"
 
 #: ../data/ui/desktop-pref.glade.h:3
 msgid "Wallpaper _mode:"
-msgstr "Veggfóðurshamur:"
+msgstr "Hamur bakgrunnsmyndar:"
 
 #: ../data/ui/desktop-pref.glade.h:4
 msgid "_Wallpaper:"
@@ -180,20 +180,18 @@ msgid "<b>Behavior</b>"
 msgstr "<b>Hegðun</b>"
 
 #: ../data/ui/pref.glade.h:6
-#, fuzzy
 #| msgid "_Open files with single click"
 msgid "_Open files with a single left-click"
-msgstr "_Opna skrár með því að smella einu sinni á þær"
+msgstr "_Opna skrár með því að vinstri-smella einu sinni á þær"
 
 #: ../data/ui/pref.glade.h:7
 msgid "Delay of auto-selection in single left-click mode (0 to disable)"
 msgstr ""
 
 #: ../data/ui/pref.glade.h:8
-#, fuzzy
 #| msgid "_Open files with single click"
 msgid "O_pen files with a single middle-click"
-msgstr "_Opna skrár með því að smella einu sinni á þær"
+msgstr "O_pna skrár með því að miðju-smella einu sinni á þær"
 
 #: ../data/ui/pref.glade.h:9
 msgid "Co_nfirm before deleting files"
@@ -294,11 +292,11 @@ msgstr "<b>Notandaviðmót</b>"
 
 #: ../data/ui/pref.glade.h:36
 msgid "Us_e SI decimal prefixes instead of IEC binary prefixes"
-msgstr ""
+msgstr "Not_a SI-tugakerfisforskeyti í stað IEC-tvíundarforskeyta"
 
 #: ../data/ui/pref.glade.h:37
 msgid "Show _date as YYYY-MM-DD instead of in locale format"
-msgstr ""
+msgstr "Sýna _dagsetningu sem YYYY-MM-DD í stað staðfærðs dagsetningarsniðs"
 
 #: ../data/ui/pref.glade.h:38
 msgid "Treat backup files as _hidden"
@@ -383,11 +381,12 @@ msgstr "<b>Sjálfvirk tenging í skráakerfið</b>"
 
 #: ../data/ui/pref.glade.h:59
 msgid "_Mount mountable volumes automatically on program startup"
-msgstr ""
+msgstr "Ten_gja tengjanlega gagnamiðla sjálfkrafa í ræsingu forritsins"
 
 #: ../data/ui/pref.glade.h:60
 msgid "Mo_unt removable media automatically when they are inserted"
 msgstr ""
+"Teng_ja útskiptanlega gagnamiðla sjálfkrafa þegar þeim er stungið í samband"
 
 #: ../data/ui/pref.glade.h:61
 msgid "_Show available options for removable media when they are inserted"
@@ -405,7 +404,7 @@ msgstr "Fja_rlægja valið"
 
 #: ../data/ui/pref.glade.h:64
 msgid "_Open mounted removable media in new tab instead of new window"
-msgstr ""
+msgstr "_Opna tengda útskiptanlega gagnamiðla í nýjum flipa í stað nýs glugga"
 
 #: ../data/ui/pref.glade.h:65
 msgid "When removable medium unmounted:"
@@ -485,7 +484,7 @@ msgstr ""
 
 #: ../data/ui/pref.glade.h:85
 msgid "Use path for \"Home Folder\" button:"
-msgstr ""
+msgstr "Nota slóð fyrir \"Heimamappa\"-hnapp:"
 
 #: ../data/ui/pref.glade.h:88
 msgid "_Use current"
@@ -786,7 +785,6 @@ msgid "S_ort Files"
 msgstr "_Raða skrám"
 
 #: ../src/main-win-ui.c:224
-#, fuzzy
 #| msgid "Zoom O_ut"
 msgid "Zoom _In"
 msgstr "R_enna frá"
@@ -1112,6 +1110,9 @@ msgid ""
 "'%s'\n"
 "Enter a name for the new bookmark item:"
 msgstr ""
+"Bæta eftirfarandi möppu í bókamerki:\n"
+"'%s'\n"
+"Settu inn heiti fyrir nýja bókamerkisatriðið:"
 
 #: ../src/main-win.c:1841
 msgid "Add to Bookmarks"
@@ -1149,19 +1150,19 @@ msgstr "Ræsa skjáborðastjóra"
 
 #: ../src/pcmanfm.c:85
 msgid "Turn off desktop manager if it's running"
-msgstr ""
+msgstr "Slökkva á skjáborðsstjóra ef hann er keyrandi"
 
 #: ../src/pcmanfm.c:86
 msgid "Open desktop preference dialog"
-msgstr ""
+msgstr "Opna glugga með kjörstillingum skjáborðs"
 
 #: ../src/pcmanfm.c:87
 msgid "Use --desktop option only for one screen"
-msgstr ""
+msgstr "Nota --desktop rofann aðeins fyrir einn skjá"
 
 #: ../src/pcmanfm.c:88
 msgid "Set desktop wallpaper from image FILE"
-msgstr ""
+msgstr "Setja bakgrunnsmynd skjáborðs úr myndskrá"
 
 #: ../src/pcmanfm.c:88
 msgid "FILE"
@@ -1173,6 +1174,9 @@ msgid ""
 "Set mode of desktop wallpaper. MODE=(color|stretch|fit|crop|center|tile|"
 "screen)"
 msgstr ""
+"Stilla ham bakgrunnsmyndar skjáborðsins."
+" HAMUR=(color|stretch|fit|crop|center|tile|"
+"screen)"
 
 #: ../src/pcmanfm.c:90
 msgid "MODE"
@@ -1224,14 +1228,14 @@ msgstr "Opn_a í nýjum flipa"
 #: ../src/tab-page.c:379
 #, c-format
 msgid "\"%s\" (%s) %s"
-msgstr ""
+msgstr "\"%s\" (%s) %s"
 
 #. Note to translators: this is the information (name, type)
 #. about the selected file in the status bar
 #: ../src/tab-page.c:388
 #, c-format
 msgid "\"%s\" %s"
-msgstr ""
+msgstr "\"%s\" %s"
 
 #: ../src/tab-page.c:416
 #, c-format
