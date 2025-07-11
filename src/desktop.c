@@ -1268,7 +1268,7 @@ static AtkObject *fm_desktop_accessible_ref_selection(AtkSelection *selection,
         item = items->data;
         if (item->item->is_selected)
             if (i-- == 0)
-                return (AtkObject *)g_object_ref(item);
+                return ATK_OBJECT(g_object_ref(item));
     }
     return NULL;
 }
@@ -1455,7 +1455,7 @@ static AtkObject *fm_desktop_accessible_ref_child(AtkObject *accessible,
     item = g_list_nth_data(priv->items, index);
     if (!item)
         return NULL;
-    return (AtkObject *)g_object_ref(item);
+    return ATK_OBJECT(g_object_ref(item));
 }
 
 static void fm_desktop_accessible_initialize(AtkObject *accessible, gpointer data)
