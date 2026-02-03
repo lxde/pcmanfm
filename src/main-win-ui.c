@@ -206,7 +206,7 @@ static GtkActionEntry main_win_actions[]=
         {"CopyPath", NULL, N_("Copy Pat_h(s)"), NULL, NULL, G_CALLBACK(on_copy_path)},
         {"Rename", NULL, N_("R_ename..."), "F2", NULL, G_CALLBACK(on_rename)},
         {"Duplicate", NULL, N_("D_uplicate..."), "<Ctrl>U", NULL, NULL},
-        {"Link", NULL, N_("Create Lin_k..."), "<Ctrl>K", NULL, G_CALLBACK(on_link)},
+        {"Link", NULL, N_("Create Lin_k..."), NULL, NULL, G_CALLBACK(on_link)},
         {"MoveTo", NULL, N_("_Move to..."), NULL, NULL, G_CALLBACK(on_move_to)},
         {"CopyTo", NULL, N_("Copy to_..."), NULL, NULL, G_CALLBACK(on_copy_to)},
         {"FileProp", GTK_STOCK_PROPERTIES, N_("Propertie_s"), "<Alt>Return", NULL, G_CALLBACK(bounce_action)},

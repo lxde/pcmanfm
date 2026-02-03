@@ -1918,6 +1918,28 @@ static void bounce_action(GtkAction* act, FmMainWin* win)
     fm_folder_view_bounce_action(act, win->folder_view);
     /* restore focus back */
     gtk_window_set_focus(window, current_focus);
+
+    // If this is the Copy action, also copy paths as plain text to clipboard
+    const gchar* action_name = gtk_action_get_name(act);
+    if(action_name && strcmp(action_name, "Copy") == 0)
+    {
+        GdkDisplay *dpy = gtk_widget_get_display(GTK_WIDGET(win));
+        GtkClipboard *clipboard = gtk_clipboard_get_for_display(dpy, GDK_SELECTION_CLIPBOARD);
+        GString *str = g_string_sized_new(128);
+        FmPathList *files = fm_folder_view_dup_selected_file_paths(win->folder_view);
+        GList *fl;
+        for (fl = fm_path_list_peek_head_link(files); fl; fl = fl->next)
+        {
+            char *path = fm_path_to_str(fl->data);
+            if (str->len > 0)
+                g_string_append_c(str, '\n');
+            g_string_append(str, path);
+            g_free(path);
+        }
+        gtk_clipboard_set_text(clipboard, str->str, str->len);
+        g_string_free(str, TRUE);
+        fm_path_list_unref(files);
+    }
 }
 
 static guint icon_sizes[] =
