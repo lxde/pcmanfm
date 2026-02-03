@@ -52,7 +52,6 @@ static const char main_menu_xml[] =
     "<menuitem action='FileProp'/>"
     "<separator/>"
     "<menuitem action='Rename'/>"
-    "<menuitem action='Duplicate'/>"
     "<menuitem action='Link'/>"
     /* TODO: implement "Create a duplicate" action
     "<menuitem action='Duplicate'/>" */
