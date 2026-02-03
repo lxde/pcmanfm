@@ -153,6 +153,7 @@ static const char main_menu_xml[] =
   "</menu>"
   "<menu action='ToolMenu'>"
     "<menuitem action='Term'/>"
+    "<menuitem action='TermAltS'/>"
 #if FM_CHECK_VERSION(1, 0, 2)
     "<menuitem action='Search'/>"
 #endif
@@ -182,7 +183,9 @@ static const char main_menu_xml[] =
 "<accelerator action='Next2'/>"
 "<accelerator action='Reload2'/>"
 "<accelerator action='SizeBigger2'/>"
-"<accelerator action='SizeSmaller2'/>";
+"<accelerator action='SizeSmaller2'/>"
+"<accelerator action='TermShiftS'/>"
+"<accelerator action='TermShiftF4'/>";
 
 /* For actions that are bounced to FmFolderView - check accels for accordance */
 static GtkActionEntry main_win_actions[]=
@@ -193,7 +196,7 @@ static GtkActionEntry main_win_actions[]=
         {"CreateNew", GTK_STOCK_ADD, N_("C_reate New..."), "", NULL, NULL},
             {"NewFolder", "folder", N_("Folder"), "<Ctrl><Shift>N", NULL, G_CALLBACK(bounce_action)},
             {"NewBlank", NULL, N_("Empty File"), "<Ctrl><Alt>N", NULL, G_CALLBACK(bounce_action)},
-        {"Prop", GTK_STOCK_PROPERTIES, N_("Folder Propertie_s"), NULL, NULL, G_CALLBACK(bounce_action)},
+        {"Prop", GTK_STOCK_PROPERTIES, N_("Folder Propertie_s"), "<Alt>P", NULL, G_CALLBACK(bounce_action)},
         {"CloseTab", GTK_STOCK_CLOSE, N_("_Close Tab"), "<Ctrl>W", NULL, G_CALLBACK(on_close_tab)},
         {"Close", GTK_STOCK_QUIT, N_("Close _Window"), "<Ctrl>Q", NULL, G_CALLBACK(on_close_win)},
     {"EditMenu", NULL, N_("_Edit"), NULL, NULL, NULL},
@@ -206,13 +209,13 @@ static GtkActionEntry main_win_actions[]=
         {"CopyPath", NULL, N_("Copy Pat_h(s)"), NULL, NULL, G_CALLBACK(on_copy_path)},
         {"Rename", NULL, N_("R_ename..."), "F2", NULL, G_CALLBACK(on_rename)},
         {"Duplicate", NULL, N_("D_uplicate..."), "<Ctrl>U", NULL, NULL},
-        {"Link", NULL, N_("Create Lin_k..."), NULL, NULL, G_CALLBACK(on_link)},
+        {"Link", NULL, N_("Create Lin_k..."), "<Ctrl>K", NULL, G_CALLBACK(on_link)},
         {"MoveTo", NULL, N_("_Move to..."), NULL, NULL, G_CALLBACK(on_move_to)},
         {"CopyTo", NULL, N_("Copy to_..."), NULL, NULL, G_CALLBACK(on_copy_to)},
         {"FileProp", GTK_STOCK_PROPERTIES, N_("Propertie_s"), "<Alt>Return", NULL, G_CALLBACK(bounce_action)},
         {"SelAll", GTK_STOCK_SELECT_ALL, NULL, "<Ctrl>A", NULL, G_CALLBACK(bounce_action)},
         {"InvSel", NULL, N_("_Invert Selection"), "<Ctrl>I", NULL, G_CALLBACK(bounce_action)},
-        {"Pref", GTK_STOCK_PREFERENCES, N_("Prefere_nces"), NULL, NULL, G_CALLBACK(on_preference)},
+        {"Pref", GTK_STOCK_PREFERENCES, N_("Prefere_nces"), "<Ctrl>P"	, NULL, G_CALLBACK(on_preference)},
     {"ViewMenu", NULL, N_("_View"), NULL, NULL, NULL},
         {"Reload", GTK_STOCK_REFRESH, N_("_Reload Folder"), "F5", N_("Reload current folder"), G_CALLBACK(on_reload)},
         {"Toolbar", NULL, N_("Tool_bar"), NULL, NULL, NULL},
@@ -247,12 +250,14 @@ static GtkActionEntry main_win_actions[]=
     {"BookmarksMenu", NULL, N_("_Bookmarks"), NULL, NULL, NULL},
         {"AddBookmark", GTK_STOCK_ADD, N_("_Add to Bookmarks..."), "<Ctrl>D", N_("Add current folder to bookmarks list"), G_CALLBACK(on_add_bookmark)},
     {"ToolMenu", NULL, N_("Too_ls"), NULL, NULL, NULL},
-        {"Term", "utilities-terminal", N_("Open Current Folder in _Terminal"), "F4", NULL, G_CALLBACK(on_open_in_terminal)},
-#if FM_CHECK_VERSION(1, 0, 2)
+        {"Term", "utilities-terminal", N_("Open Current Folder in _Terminal"), "<Shift>S", NULL, G_CALLBACK(on_open_in_terminal)},
+        {"TermAltS", "utilities-terminal", N_("Open Current Folder in _Terminal"), "<Alt>S", NULL, G_CALLBACK(on_open_in_terminal)}, // sadly this doesnt work, handles the event to focusing the main Menu entry that begins with S.
+        #if FM_CHECK_VERSION(1, 0, 2)
         {"Search", GTK_STOCK_FIND, N_("Fin_d Files..."), "<Ctrl><Shift>F", N_("Open search dialog"), G_CALLBACK(on_search)},
 #endif
 #if FM_CHECK_VERSION(1, 2, 0)
-        {"Launch", GTK_STOCK_EXECUTE, N_("_Run a Command in Current Folder..."), NULL, NULL, G_CALLBACK(on_launch)},
+//        {"Launch", GTK_STOCK_EXECUTE, N_("_Run a Command in Current Folder..."), NULL, NULL, G_CALLBACK(on_launch)},
+        {"Launch", GTK_STOCK_EXECUTE, N_("_Run a Command in Current Folder..."), "<Ctrl><Alt>C", NULL, G_CALLBACK(on_launch)},
 #endif
         /*{"AsRoot", GTK_STOCK_DIALOG_AUTHENTICATION, N_("Open Current Folder as _Root"), NULL, NULL, G_CALLBACK(on_open_as_root)},*/
     /* for accelerators */
@@ -262,6 +267,9 @@ static GtkActionEntry main_win_actions[]=
     {"Reload2", NULL, NULL, "<Ctrl>R", NULL, G_CALLBACK(on_reload)},
     {"SizeBigger2", NULL, NULL, "<Ctrl>equal", NULL, G_CALLBACK(on_size_increment)},
     {"SizeSmaller2", NULL, NULL, "<Ctrl>minus", NULL, G_CALLBACK(on_size_decrement)},
+    {"TermShiftS", NULL, NULL, "F4", NULL, G_CALLBACK(on_open_in_terminal)},
+    {"TermShiftF4", NULL, NULL, "<Shift>F4", NULL, G_CALLBACK(on_open_in_terminal)},
+    
 };
 
 /* main_win_toggle_actions+main_win_mode_actions - see 'ViewMenu' for mnemonics */
