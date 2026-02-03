@@ -52,6 +52,7 @@ static const char main_menu_xml[] =
     "<menuitem action='FileProp'/>"
     "<separator/>"
     "<menuitem action='Rename'/>"
+    "<menuitem action='Duplicate'/>"
     "<menuitem action='Link'/>"
     /* TODO: implement "Create a duplicate" action
     "<menuitem action='Duplicate'/>" */
@@ -179,6 +180,7 @@ static const char main_menu_xml[] =
     "<toolitem action='Go'/>"
 "</toolbar>"
 "<accelerator action='Location2'/>"
+"<accelerator action='Link2'/>"
 "<accelerator action='Prev2'/>"
 "<accelerator action='Next2'/>"
 "<accelerator action='Reload2'/>"
@@ -209,7 +211,7 @@ static GtkActionEntry main_win_actions[]=
         {"CopyPath", NULL, N_("Copy Pat_h(s)"), NULL, NULL, G_CALLBACK(on_copy_path)},
         {"Rename", NULL, N_("R_ename..."), "F2", NULL, G_CALLBACK(on_rename)},
         {"Duplicate", NULL, N_("D_uplicate..."), "<Ctrl>U", NULL, NULL},
-        {"Link", NULL, N_("Create Lin_k..."), "<Ctrl>K", NULL, G_CALLBACK(on_link)},
+        {"Link", NULL, N_("Create Lin_k..."), "<Ctrl>L", NULL, G_CALLBACK(on_link)},
         {"MoveTo", NULL, N_("_Move to..."), NULL, NULL, G_CALLBACK(on_move_to)},
         {"CopyTo", NULL, N_("Copy to_..."), NULL, NULL, G_CALLBACK(on_copy_to)},
         {"FileProp", GTK_STOCK_PROPERTIES, N_("Propertie_s"), "<Alt>Return", NULL, G_CALLBACK(bounce_action)},
@@ -244,7 +246,7 @@ static GtkActionEntry main_win_actions[]=
         {"Apps", "system-software-install", N_("_Applications"), NULL, N_("Go to root of applications menu folder"), G_CALLBACK(on_go_apps)},
         {"Computer", "computer", N_("Dev_ices"), NULL, N_("Go to list of devices connected to the computer"), G_CALLBACK(on_go_computer)},
         {"Network", GTK_STOCK_NETWORK, N_("Net_work"), NULL, N_("Go to list of places on the network"), G_CALLBACK(on_go_network)},
-        {"Location", GTK_STOCK_JUMP_TO, N_("_Go to Location..."), "<Ctrl>L", NULL, G_CALLBACK(on_location)},
+        {"Location", GTK_STOCK_JUMP_TO, N_("_Go to Location..."), NULL, NULL, G_CALLBACK(on_location)},
         {"Connect", NULL, N_("_Connect to Server..."), NULL, N_("Open a window to choose remote folder location"), G_CALLBACK(on_go_connect)},
         {"Go", GTK_STOCK_JUMP_TO, NULL, NULL, N_("Go to the path in the location bar"), G_CALLBACK(on_go)},
     {"BookmarksMenu", NULL, N_("_Bookmarks"), NULL, NULL, NULL},
@@ -262,6 +264,7 @@ static GtkActionEntry main_win_actions[]=
         /*{"AsRoot", GTK_STOCK_DIALOG_AUTHENTICATION, N_("Open Current Folder as _Root"), NULL, NULL, G_CALLBACK(on_open_as_root)},*/
     /* for accelerators */
     {"Location2", NULL, NULL, "<Alt>d", NULL, G_CALLBACK(on_location)},
+    {"Link2", NULL, N_("Create Lin_k..."), "<Ctrl>K", NULL, G_CALLBACK(on_link)},
     {"Prev2", NULL, NULL, "XF86Back", NULL, G_CALLBACK(on_go_back)},
     {"Next2", NULL, NULL, "XF86Forward", NULL, G_CALLBACK(on_go_forward)},
     {"Reload2", NULL, NULL, "<Ctrl>R", NULL, G_CALLBACK(on_reload)},
