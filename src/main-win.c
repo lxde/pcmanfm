@@ -33,6 +33,8 @@
 
 #include "pcmanfm.h"
 
+#include <libfm/fm-gtk-utils.h>
+
 #include "app-config.h"
 #include "main-win.h"
 #include "pref.h"
@@ -1744,7 +1746,13 @@ static void on_link(GtkAction *act, FmMainWin *win)
     FmPathList *files = fm_folder_view_dup_selected_file_paths(win->folder_view);
     if (files)
     {
-        FmPath *dest = fm_select_folder(GTK_WINDOW(win), NULL);
+        /* Start the folder chooser in the directory of the first selected file */
+        FmPath *first = fm_path_list_peek_head(files);
+        FmPath *default_parent = NULL;
+        if (first)
+            default_parent = fm_path_get_parent(first);
+
+        FmPath *dest = fm_select_folder_with_default(GTK_WINDOW(win), default_parent, NULL);
         if (dest)
         {
             fm_link_files(GTK_WINDOW(win), files, dest);
