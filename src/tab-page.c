@@ -846,6 +846,37 @@ static void update_files_popup(FmFolderView* fv, GtkWindow* win,
         gtk_action_set_visible(gtk_action_group_get_action(act_grp, "Term"), FALSE);
 }
 
+/* update tab label after changing directory/filter */
+static void update_tab_label(FmTabLabel *tab_label, const char *disp_name)
+{
+#if GTK_CHECK_VERSION(3, 0, 0)
+    /* tab width dynamically follows string length up to max_tab_chars */
+    if (!app_config->fixed_width_tab)
+    {
+        glong len = g_utf8_strlen(disp_name, -1);
+
+        /* Pango sometimes ellipsizes string with length below max_tab_chars due to it using
+           average character width instead of string character count, so here we handle it manually.
+           This still has problem in handling i18n characters (e.g. CJK) where ellipsization
+           results in far lower (around half max_tab_chars) character count. In GTK2 it's even worse;
+           text just cuts off in the middle without ellipses when using PANGO_ELLIPSIZE_NONE.
+           Thus this feature is GTK3 only. */
+        if (len <= app_config->max_tab_chars)
+        {
+            gtk_label_set_width_chars(tab_label->label, len);
+            gtk_label_set_ellipsize(tab_label->label, PANGO_ELLIPSIZE_NONE);
+        }
+        else
+        {
+            gtk_label_set_width_chars(tab_label->label, app_config->max_tab_chars);
+            gtk_label_set_ellipsize(tab_label->label, PANGO_ELLIPSIZE_END);
+        }
+    }
+#endif
+
+    fm_tab_label_set_text(tab_label, disp_name);
+}
+
 static gboolean open_folder_func(GAppLaunchContext* ctx, GList* folder_infos, gpointer user_data, GError** err)
 {
     FmMainWin* win = FM_MAIN_WIN(user_data);
@@ -964,8 +995,14 @@ static void fm_tab_page_init(FmTabPage *page)
 
     /* create tab label */
     tab_label = (FmTabLabel*)fm_tab_label_new("");
+#if GTK_CHECK_VERSION(3, 0, 0)
+    if (app_config->fixed_width_tab)
+    {
+        gtk_label_set_width_chars(tab_label->label, app_config->max_tab_chars);
+        gtk_label_set_ellipsize(tab_label->label, PANGO_ELLIPSIZE_END);
+    }
+#else
     gtk_label_set_max_width_chars(tab_label->label, app_config->max_tab_chars);
-#if ! GTK_CHECK_VERSION(3, 0, 0)
     gtk_label_set_ellipsize(tab_label->label, PANGO_ELLIPSIZE_END);
 #endif
     page->tab_label = tab_label;
@@ -1030,7 +1067,7 @@ static void fm_tab_page_chdir_without_history(FmTabPage* page, FmPath* path)
         disp_name = text;
     }
 #endif
-    fm_tab_label_set_text(page->tab_label, disp_name);
+    update_tab_label(page->tab_label, disp_name);
     g_free(disp_name);
 
 #if FM_CHECK_VERSION(1, 2, 0)
@@ -1449,7 +1486,7 @@ void fm_tab_page_set_filter_pattern(FmTabPage *page, const char *pattern)
         g_free(disp_name);
         disp_name = text;
     }
-    fm_tab_label_set_text(page->tab_label, disp_name);
+    update_tab_label(page->tab_label, disp_name);
     g_free(disp_name);
 }
 #endif

@@ -678,6 +678,9 @@ void fm_app_config_load_from_key_file(FmAppConfig* cfg, GKeyFile* kf)
 
     /* ui */
     fm_key_file_get_bool(kf, "ui", "always_show_tabs", &cfg->always_show_tabs);
+#if GTK_CHECK_VERSION(3, 0, 0)
+    fm_key_file_get_bool(kf, "ui", "fixed_width_tab", &cfg->fixed_width_tab);
+#endif
     fm_key_file_get_int(kf, "ui", "hide_close_btn", &cfg->hide_close_btn);
     fm_key_file_get_int(kf, "ui", "max_tab_chars", &cfg->max_tab_chars);
 
@@ -1119,6 +1122,9 @@ void fm_app_config_save_profile(FmAppConfig* cfg, const char* name)
 
         g_string_append(buf, "\n[ui]\n");
         g_string_append_printf(buf, "always_show_tabs=%d\n", cfg->always_show_tabs);
+#if GTK_CHECK_VERSION(3, 0, 0)
+        g_string_append_printf(buf, "fixed_width_tab=%d\n", cfg->fixed_width_tab);
+#endif
         g_string_append_printf(buf, "max_tab_chars=%d\n", cfg->max_tab_chars);
         /* g_string_append_printf(buf, "hide_close_btn=%d\n", cfg->hide_close_btn); */
         g_string_append_printf(buf, "win_width=%d\n", cfg->win_width);

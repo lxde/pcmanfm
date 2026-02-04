@@ -115,6 +115,9 @@ struct _FmAppConfig
 
     /* ui */
     gboolean always_show_tabs;
+#if GTK_CHECK_VERSION(3, 0, 0)
+    gboolean fixed_width_tab;
+#endif
     gboolean hide_close_btn;
     int max_tab_chars;
     int win_width;
