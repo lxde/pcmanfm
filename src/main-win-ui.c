@@ -207,7 +207,7 @@ static GtkActionEntry main_win_actions[]=
         {"Paste", GTK_STOCK_PASTE, NULL, NULL, NULL, G_CALLBACK(bounce_action)},
         {"ToTrash", GTK_STOCK_DELETE, N_("Move to _Trash"), "", NULL, G_CALLBACK(on_trash)},
         {"Del", GTK_STOCK_REMOVE, NULL, "", NULL, G_CALLBACK(on_del)},
-        {"CopyPath", NULL, N_("Copy Pat_h(s)"), NULL, NULL, G_CALLBACK(on_copy_path)},
+        {"CopyPath", NULL, N_("Copy Pat_h(s)"), "<Alt>Insert", NULL, G_CALLBACK(on_copy_path)},
         {"Rename", NULL, N_("R_ename..."), "F2", NULL, G_CALLBACK(on_rename)},
         {"Duplicate", NULL, N_("D_uplicate..."), "<Ctrl>U", NULL, NULL},
         {"Link", NULL, N_("Create Lin_k..."), "<Ctrl>L", NULL, G_CALLBACK(on_link)},
