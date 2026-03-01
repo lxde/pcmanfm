@@ -33,6 +33,9 @@
 
 #include "pcmanfm.h"
 
+#include <libfm/fm-gtk-utils.h>
+#include <libfm/fm-clipboard.h>
+
 #include "app-config.h"
 #include "main-win.h"
 #include "pref.h"
@@ -1744,7 +1747,13 @@ static void on_link(GtkAction *act, FmMainWin *win)
     FmPathList *files = fm_folder_view_dup_selected_file_paths(win->folder_view);
     if (files)
     {
-        FmPath *dest = fm_select_folder(GTK_WINDOW(win), NULL);
+        /* Start the folder chooser in the directory of the first selected file */
+        FmPath *first = fm_path_list_peek_head(files);
+        FmPath *default_parent = NULL;
+        if (first)
+            default_parent = fm_path_get_parent(first);
+
+        FmPath *dest = fm_select_folder_with_default(GTK_WINDOW(win), default_parent, NULL);
         if (dest)
         {
             fm_link_files(GTK_WINDOW(win), files, dest);
@@ -1807,22 +1816,12 @@ static void on_del(GtkAction* act, FmMainWin* win)
 
 static void on_copy_path(GtkAction* action, FmMainWin* win)
 {
-    GdkDisplay *dpy = gtk_widget_get_display(GTK_WIDGET(win));
-    GtkClipboard *clipboard = gtk_clipboard_get_for_display(dpy, GDK_SELECTION_CLIPBOARD);
-    GString *str = g_string_sized_new(128);
     FmPathList *files = fm_folder_view_dup_selected_file_paths(win->folder_view);
-    GList *fl;
-
-    for (fl = fm_path_list_peek_head_link(files); fl; fl = fl->next)
+    if(files)
     {
-        char *path = fm_path_to_str(fl->data);
-        if (str->len > 0)
-            g_string_append_c(str, '\n');
-        g_string_append(str, path);
-        g_free(path);
+        fm_clipboard_copy_paths_as_text(GTK_WIDGET(win), files);
+        fm_path_list_unref(files);
     }
-    gtk_clipboard_set_text(clipboard, str->str, str->len);
-    g_string_free(str, TRUE);
 }
 
 static void on_preference(GtkAction* act, FmMainWin* win)
