@@ -101,6 +101,15 @@ of icons resembles folder view in main window of \fBpcmanfm\fP but icons on
 desktop can "remember" their position. If you have two or more monitors then
 desktop background and set of icons will be shown on each of them. Icons
 positions will be remembered individually for each of monitors.
+
+Pressing Space in the folder view can preview the selected items without
+opening them, if a preview command is set as \fBpreview_cmd\fP in the
+[config] group of \fIpcmanfm.conf\fP, for example
+\fBpreview_cmd=my\-previewer %F\fP. The command takes the field codes of a
+desktop entry's Exec key: %F or %U receive every selected item as paths or
+URIs, while %f or %u run the command once per item; %f is added when it has
+none. With nothing selected, Space selects and previews the item under the
+keyboard cursor. Without \fBpreview_cmd\fP Space keeps its usual meaning.
 .SH ENVIRONMENT
 .PD 0
 .TP

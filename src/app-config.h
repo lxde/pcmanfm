@@ -150,6 +150,8 @@ struct _FmAppConfig
 #endif
 
     /*char* su_cmd;*/
+    /* command run on the selected file when Space is pressed; NULL = off */
+    char *preview_cmd;
 
     /* pre-1.2.0 style config - common settings for all monitors */
     FmDesktopConfig desktop_section;
