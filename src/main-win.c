@@ -2458,10 +2458,81 @@ static void switch_to_prev_tab(FmMainWin* win)
     gtk_notebook_set_current_page(win->notebook, n);
 }
 
+/* With nothing selected, select the item under the keyboard cursor (the
+ * dashed focus outline), so Space previews it instead of opening it. */
+static void select_cursor_item(FmMainWin* win)
+{
+    GtkWidget *view = GTK_IS_BIN(win->folder_view)
+                      ? gtk_bin_get_child(GTK_BIN(win->folder_view)) : NULL;
+    GtkTreePath *path = NULL;
+
+    if (GTK_IS_TREE_VIEW(view)) /* list view */
+    {
+        gtk_tree_view_get_cursor(GTK_TREE_VIEW(view), &path, NULL);
+        if (path)
+        {
+            gtk_tree_selection_select_path(gtk_tree_view_get_selection(GTK_TREE_VIEW(view)), path);
+            gtk_tree_path_free(path);
+        }
+    }
+    /* ExoIconView, behind the icon, compact and thumbnail views */
+    else if (view && g_signal_lookup("select-cursor-item", G_OBJECT_TYPE(view)))
+        g_signal_emit_by_name(view, "select-cursor-item");
+}
+
+/* Space in the folder view runs the configured preview command on the
+ * selected items, like a quick look. Without preview_cmd nothing changes. */
+static gboolean preview_selected_file(FmMainWin* win)
+{
+    GtkWidget *focus = gtk_window_get_focus(GTK_WINDOW(win));
+    FmFileInfoList *files;
+    GAppInfo *app;
+    GList *l, *gfiles = NULL;
+    GdkAppLaunchContext *ctx;
+    GError *err = NULL;
+
+    if (!app_config->preview_cmd || !*app_config->preview_cmd)
+        return FALSE;
+    if (!win->folder_view || !focus
+        || (focus != GTK_WIDGET(win->folder_view)
+            && !gtk_widget_is_ancestor(focus, GTK_WIDGET(win->folder_view))))
+        return FALSE;
+    if (fm_folder_view_get_n_selected_files(win->folder_view) == 0)
+        select_cursor_item(win);
+    if (fm_folder_view_get_n_selected_files(win->folder_view) == 0)
+        return FALSE;
+
+    files = fm_folder_view_dup_selected_files(win->folder_view);
+    for (l = fm_file_info_list_peek_head_link(files); l; l = l->next)
+        gfiles = g_list_prepend(gfiles, fm_path_to_gfile(fm_file_info_get_path(l->data)));
+    gfiles = g_list_reverse(gfiles);
+    fm_file_info_list_unref(files);
+    /* GLib appends %f when the command has no field code of its own */
+    app = g_app_info_create_from_commandline(app_config->preview_cmd, NULL,
+                                             G_APP_INFO_CREATE_NONE, &err);
+    if (app)
+    {
+        ctx = gdk_display_get_app_launch_context(gtk_widget_get_display(GTK_WIDGET(win)));
+        g_app_info_launch(app, gfiles, G_APP_LAUNCH_CONTEXT(ctx), &err);
+        g_object_unref(ctx);
+        g_object_unref(app);
+    }
+    g_list_free_full(gfiles, g_object_unref);
+    if (err)
+    {
+        fm_show_error(GTK_WINDOW(win), NULL, err->message);
+        g_error_free(err);
+    }
+    return TRUE;
+}
+
 static gboolean on_key_press_event(GtkWidget* w, GdkEventKey* evt)
 {
     FmMainWin* win = FM_MAIN_WIN(w);
     int modifier = evt->state & gtk_accelerator_get_default_mod_mask();
+
+    if (modifier == 0 && evt->keyval == GDK_KEY_space && preview_selected_file(win))
+        return TRUE;
 
     if(modifier == GDK_MOD1_MASK) /* Alt */
     {
