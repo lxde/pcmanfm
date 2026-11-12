@@ -5,6 +5,7 @@ AC_PREREQ([2.63])
 AC_INIT([pcmanfm], [1.4.0], [http://pcmanfm.sf.net/])
 AM_INIT_AUTOMAKE([-Wall -Werror foreign no-dist-gzip dist-xz])
 
+AC_CONFIG_MACRO_DIRS([m4])
 AC_CONFIG_HEADERS([config.h])
 
 dnl Support silent build rules. Disable by either passing --disable-silent-rules
@@ -74,9 +75,6 @@ if test x"$cast_checks" = "xno"; then
 fi
 AC_SUBST(G_CAST_CHECKS)
 
-# intltool
-IT_PROG_INTLTOOL([0.40.0])
-
 dnl libgtk version
 AC_ARG_WITH(gtk,
     [AC_HELP_STRING([--with-gtk=VER],
@@ -122,7 +120,8 @@ do
     echo $lang >> $srcdir/po/LINGUAS
 done
 
-AM_GLIB_GNU_GETTEXT
+AM_GNU_GETTEXT([external])
+AM_GNU_GETTEXT_VERSION([0.19.8])
 AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$GETTEXT_PACKAGE", [Gettext package.])
 
 dnl Fix invalid sysconfdir when --prefix=/usr
