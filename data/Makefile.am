@@ -10,7 +10,9 @@ desktop_in_files= \
 	pcmanfm-desktop-pref.desktop.in \
 	$(NULL)
 desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
-@INTLTOOL_DESKTOP_RULE@
+SUFFIXES = .desktop.in .desktop
+.desktop.in.desktop:
+	$(AM_V_GEN)$(MSGFMT) --desktop --template $< -d $(top_srcdir)/po -o $@
 
 defconfdir=$(sysconfdir)/xdg/pcmanfm/default
 defconf_DATA = \
