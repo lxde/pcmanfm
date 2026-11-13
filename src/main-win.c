@@ -1159,6 +1159,7 @@ static void on_about(GtkAction* act, FmMainWin* win)
         gtk_about_dialog_set_comments(about_dlg, comments->str);
         g_string_free(comments, TRUE);
         g_object_unref(builder);
+        gtk_window_set_transient_for(GTK_WINDOW(about_dlg), GTK_WINDOW(win));
         g_signal_connect(about_dlg, "response", G_CALLBACK(on_about_response), (gpointer)&about_dlg);
         pcmanfm_ref();
     }
