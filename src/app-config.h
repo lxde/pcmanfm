@@ -129,6 +129,7 @@ struct _FmAppConfig
 #endif
     gboolean maximized;
     gboolean pathbar_mode_buttons;
+    gboolean dual_pane;
 
     FmSidePaneMode side_pane_mode;
 

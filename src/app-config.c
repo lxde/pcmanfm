@@ -535,6 +535,7 @@ static void fm_app_config_init(FmAppConfig *cfg)
     cfg->close_on_unmount = TRUE;
     cfg->maximized = FALSE;
     cfg->pathbar_mode_buttons = FALSE;
+    cfg->dual_pane = FALSE;
 }
 
 
@@ -691,6 +692,7 @@ void fm_app_config_load_from_key_file(FmAppConfig* cfg, GKeyFile* kf)
     fm_key_file_get_bool(kf, "ui", "maximized", &cfg->maximized);
 
     fm_key_file_get_int(kf, "ui", "splitter_pos", &cfg->splitter_pos);
+    fm_key_file_get_bool(kf, "ui", "dual_pane", &cfg->dual_pane);
 
     fm_key_file_get_bool(kf, "ui", "media_in_new_tab", &cfg->media_in_new_tab);
     fm_key_file_get_bool(kf, "ui", "desktop_folder_new_win", &cfg->desktop_folder_new_win);
@@ -1151,6 +1153,7 @@ void fm_app_config_save_profile(FmAppConfig* cfg, const char* name)
         if (cfg->maximized)
             g_string_append(buf, "maximized=1\n");
         g_string_append_printf(buf, "splitter_pos=%d\n", cfg->splitter_pos);
+        g_string_append_printf(buf, "dual_pane=%d\n", cfg->dual_pane);
         g_string_append_printf(buf, "media_in_new_tab=%d\n", cfg->media_in_new_tab);
         g_string_append_printf(buf, "desktop_folder_new_win=%d\n", cfg->desktop_folder_new_win);
         g_string_append_printf(buf, "change_tab_on_drop=%d\n", cfg->change_tab_on_drop);

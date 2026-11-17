@@ -822,6 +822,7 @@ void fm_edit_preference( GtkWindow* parent, int page )
         /* 'Layout' tab */
         INIT_BOOL(builder, FmAppConfig, hide_close_btn, NULL);
         INIT_BOOL(builder, FmAppConfig, always_show_tabs, NULL);
+        INIT_BOOL(builder, FmAppConfig, dual_pane, NULL);
         INIT_SPIN(builder, FmAppConfig, max_tab_chars, NULL);
 
 #if FM_CHECK_VERSION(1, 0, 2)

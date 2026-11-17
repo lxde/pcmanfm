@@ -1738,6 +1738,13 @@ FmMainWin* fm_main_win_add_win(FmMainWin* win, FmPath* path)
     gtk_widget_hide(GTK_WIDGET(win->path_bar));
     act = gtk_ui_manager_get_action(win->ui, "/menubar/ViewMenu/PathMode/PathEntry");
     gtk_radio_action_set_current_value(GTK_RADIO_ACTION(act), app_config->pathbar_mode_buttons);
+    /* restore dual pane mode if it was used last time */
+    if (app_config->dual_pane)
+    {
+        act = gtk_ui_manager_get_action(win->ui, "/menubar/ViewMenu/DualPane");
+        if (act)
+            gtk_toggle_action_set_active(GTK_TOGGLE_ACTION(act), TRUE);
+    }
     return win;
 }
 
@@ -2417,6 +2424,11 @@ static void on_notebook_page_removed(GtkNotebook* nb, GtkWidget* page, guint num
             fm_tab_page_get_passive_view(win->current_page) == folder_view)
         {
             win->enable_passive_view = FALSE;
+            if (app_config->dual_pane)
+            {
+                app_config->dual_pane = FALSE;
+                pcmanfm_save_config(FALSE);
+            }
             act = gtk_ui_manager_get_action(win->ui, "/menubar/ViewMenu/DualPane");
             gtk_toggle_action_set_active(GTK_TOGGLE_ACTION(act), FALSE);
         }
@@ -2697,6 +2709,12 @@ static void on_dual_pane(GtkToggleAction* act, FmMainWin* win)
             }
         }
         win->enable_passive_view = FALSE;
+    }
+    /* remember dual pane mode for the next window */
+    if (app_config->dual_pane != win->enable_passive_view)
+    {
+        app_config->dual_pane = win->enable_passive_view;
+        pcmanfm_save_config(FALSE);
     }
 }
 
