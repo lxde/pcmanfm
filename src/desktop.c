@@ -2130,13 +2130,16 @@ static void paint_rubber_banding_rect(FmDesktop* self, cairo_t* cr, GdkRectangle
 
 static void _free_cache_image(FmBackgroundCache *cache)
 {
+    if (cache->bg)
+    {
 #if GTK_CHECK_VERSION(3, 0, 0)
-    XFreePixmap(cairo_xlib_surface_get_display(cache->bg),
-                cairo_xlib_surface_get_drawable(cache->bg));
-    cairo_surface_destroy(cache->bg);
+        XFreePixmap(cairo_xlib_surface_get_display(cache->bg),
+                    cairo_xlib_surface_get_drawable(cache->bg));
+        cairo_surface_destroy(cache->bg);
 #else
-    g_object_unref(cache->bg);
+        g_object_unref(cache->bg);
 #endif
+    }
     cache->bg = NULL;
     cache->wallpaper_mode = FM_WP_COLOR; /* for cache check */
 }
@@ -2152,6 +2155,131 @@ static void _clear_bg_cache(FmDesktop *self)
         g_free(bg->filename);
         g_free(bg);
     }
+}
+
+/* Set the window background to the configured solid color. */
+static void set_solid_background(FmDesktop* desktop)
+{
+    GtkWidget* widget = (GtkWidget*)desktop;
+    GdkWindow* window = gtk_widget_get_window(widget);
+#if GTK_CHECK_VERSION(3, 0, 0)
+    cairo_pattern_t* pattern;
+
+    pattern = cairo_pattern_create_rgb(desktop->conf.desktop_bg.red / 65535.0,
+                                       desktop->conf.desktop_bg.green / 65535.0,
+                                       desktop->conf.desktop_bg.blue / 65535.0);
+    gdk_window_set_background_pattern(window, pattern);
+    cairo_pattern_destroy(pattern);
+#else
+    GdkColor bg = desktop->conf.desktop_bg;
+
+    gdk_colormap_alloc_color(gdk_drawable_get_colormap(window), &bg, FALSE, TRUE);
+    gdk_window_set_back_pixmap(window, NULL, FALSE);
+    gdk_window_set_background(window, &bg);
+#endif
+    gdk_window_invalidate_rect(window, NULL, TRUE);
+}
+
+/* Return the maximum size the wallpaper can be displayed at.  Decoding an
+ * image at its full resolution when it is much larger than the area it will
+ * be shown in can waste a lot of memory and even make the X server reject the
+ * wallpaper pixmap, so the image is loaded scaled down to these limits. */
+static void get_wallpaper_size_limits(FmDesktop* desktop, GdkScreen* screen,
+                                      int* max_w, int* max_h)
+{
+    int w, h;
+
+    if (desktop->conf.wallpaper_mode == FM_WP_SCREEN)
+    {
+        w = gdk_screen_get_width(screen);
+        h = gdk_screen_get_height(screen);
+    }
+    else if (desktop->monitor >= 0 &&
+             desktop->monitor < gdk_screen_get_n_monitors(screen))
+    {
+        GdkRectangle geom;
+
+        gdk_screen_get_monitor_geometry(screen, desktop->monitor, &geom);
+        w = geom.width;
+        h = geom.height;
+    }
+    else
+    {
+        w = gdk_screen_get_width(screen);
+        h = gdk_screen_get_height(screen);
+    }
+    *max_w = MAX(w, 1);
+    *max_h = MAX(h, 1);
+}
+
+/* Upper limit for the number of pixels decoded from a wallpaper image.  This
+ * is only a safety net against absurdly large images; normally the screen
+ * size is a much tighter limit.  32M pixels is 128M of RGBA data. */
+#define MAX_WALLPAPER_PIXELS (32 * 1024 * 1024)
+
+/* Load @filename, scaling it down while decoding if it is larger than the
+ * @max_w x @max_h box.  Scaling during loading avoids allocating a pixbuf at
+ * the full resolution of a huge image (and also lets libjpeg/libpng decode at
+ * a reduced size). */
+static GdkPixbuf* load_wallpaper_pixbuf(const char* filename,
+                                        int max_w, int max_h,
+                                        FmWallpaperMode mode)
+{
+    GdkPixbuf* pix;
+    int src_w = 0, src_h = 0;
+    int dest_w, dest_h;
+    gdouble w_ratio, h_ratio, scale;
+    guint64 src_pixels;
+
+    if (!filename || !*filename || max_w <= 0 || max_h <= 0)
+        return NULL;
+
+    if (!gdk_pixbuf_get_file_info(filename, &src_w, &src_h) ||
+        src_w <= 0 || src_h <= 0)
+    {
+        /* We cannot determine the size without loading.  Pass the limits to
+         * the loader anyway; this is still safer than loading the image
+         * unconditionally at its full resolution. */
+        return gdk_pixbuf_new_from_file_at_scale(filename, max_w, max_h,
+                                                 TRUE, NULL);
+    }
+
+    w_ratio = (gdouble)max_w / src_w;
+    h_ratio = (gdouble)max_h / src_h;
+    if (mode == FM_WP_CENTER)
+        /* Centered images are shown at their original size and just clipped
+         * by the screen, so only the absolute safety limit below applies. */
+        scale = 1.0;
+    else if (mode == FM_WP_CROP)
+        /* The image is cropped to the destination aspect ratio, so keep
+         * enough detail for the visible part. */
+        scale = MAX(w_ratio, h_ratio);
+    else
+        scale = MIN(w_ratio, h_ratio);
+
+    /* Never scale up: small images must keep their original size. */
+    scale = MIN(scale, 1.0);
+
+    /* Absolute safety limit for images with an extreme aspect ratio. */
+    src_pixels = (guint64)src_w * src_h;
+    if (scale > 0.0 &&
+        (gdouble)src_pixels * scale * scale > MAX_WALLPAPER_PIXELS)
+    {
+        gdouble safe = sqrt((gdouble)MAX_WALLPAPER_PIXELS / src_pixels);
+        if (safe < scale)
+            scale = safe;
+    }
+
+    dest_w = MAX((int)(src_w * scale + 0.5), 1);
+    dest_h = MAX((int)(src_h * scale + 0.5), 1);
+    /* A dimension may still exceed the limit when the other one is rounded
+     * up to a single pixel (extreme aspect ratio); keep both bounded. */
+    dest_w = MIN(dest_w, MAX_WALLPAPER_PIXELS);
+    dest_h = MIN(dest_h, MAX_WALLPAPER_PIXELS);
+
+    pix = gdk_pixbuf_new_from_file_at_scale(filename, dest_w, dest_h,
+                                            TRUE, NULL);
+    return pix;
 }
 
 /* Scale @pix according to the wallpaper mode so it either fits inside or
@@ -2175,28 +2303,49 @@ static GdkPixbuf* scale_wallpaper(GdkPixbuf* pix, int dest_w, int dest_h,
         new_w = dest_w;
         new_h = dest_h;
     }
-    else if (mode == FM_WP_FIT || mode == FM_WP_CROP)
+    else if (mode == FM_WP_FIT)
     {
         gdouble w_ratio = (gdouble)dest_w / src_w;
         gdouble h_ratio = (gdouble)dest_h / src_h;
-        gdouble ratio = (mode == FM_WP_FIT) ? MIN(w_ratio, h_ratio)
-                                            : MAX(w_ratio, h_ratio);
+        gdouble ratio = MIN(w_ratio, h_ratio);
+
+        if (!(ratio > 0.0))
+            return (GdkPixbuf*)g_object_ref(pix);
 
         /* Round instead of truncating.  Truncation could make the image one
-         * pixel smaller than the area it must cover, which leaves a visible
-         * line at the right/bottom edge in crop mode. */
-        new_w = (int)(src_w * ratio + 0.5);
-        new_h = (int)(src_h * ratio + 0.5);
-        if (mode == FM_WP_FIT)
-        {
-            new_w = MIN(new_w, dest_w);
-            new_h = MIN(new_h, dest_h);
-        }
-        else
-        {
-            new_w = MAX(new_w, dest_w);
-            new_h = MAX(new_h, dest_h);
-        }
+         * pixel smaller than the area it must fit in.  Clamp to the target
+         * size to keep the result bounded even for extreme ratios. */
+        new_w = (int)CLAMP(src_w * ratio + 0.5, 1.0, (gdouble)dest_w);
+        new_h = (int)CLAMP(src_h * ratio + 0.5, 1.0, (gdouble)dest_h);
+    }
+    else if (mode == FM_WP_CROP)
+    {
+        gdouble w_ratio = (gdouble)dest_w / src_w;
+        gdouble h_ratio = (gdouble)dest_h / src_h;
+        gdouble ratio = MAX(w_ratio, h_ratio);
+        GdkPixbuf* sub;
+        GdkPixbuf* result;
+        int crop_w, crop_h, crop_x, crop_y;
+
+        if (!(ratio > 0.0))
+            return (GdkPixbuf*)g_object_ref(pix);
+
+        /* Crop the source to the part that will stay visible and scale only
+         * that part.  Scaling the whole image to cover the destination first
+         * can require an enormous intermediate pixbuf when the source has an
+         * extreme aspect ratio (e.g. a very wide panorama). */
+        crop_w = (int)CLAMP((gdouble)dest_w / ratio + 0.5, 1.0, (gdouble)src_w);
+        crop_h = (int)CLAMP((gdouble)dest_h / ratio + 0.5, 1.0, (gdouble)src_h);
+        crop_x = (src_w - crop_w) / 2;
+        crop_y = (src_h - crop_h) / 2;
+
+        sub = gdk_pixbuf_new_subpixbuf(pix, crop_x, crop_y, crop_w, crop_h);
+        if (!sub)
+            return NULL;
+        result = gdk_pixbuf_scale_simple(sub, dest_w, dest_h,
+                                         GDK_INTERP_BILINEAR);
+        g_object_unref(sub);
+        return result;
     }
     else
         return (GdkPixbuf*)g_object_ref(pix);
@@ -2212,7 +2361,7 @@ static GdkPixbuf* scale_wallpaper(GdkPixbuf* pix, int dest_w, int dest_h,
 static void update_background(FmDesktop* desktop, int is_it)
 {
     GtkWidget* widget = (GtkWidget*)desktop;
-    GdkPixbuf* pix, *scaled;
+    GdkPixbuf* pix = NULL, *scaled;
     cairo_t* cr;
     GdkScreen *screen = gtk_widget_get_screen(widget);
     GdkWindow* root = gdk_screen_get_root_window(screen);
@@ -2317,54 +2466,50 @@ static void update_background(FmDesktop* desktop, int is_it)
         for(cache = desktop->cache; cache; cache = cache->next)
             if(strcmp(wallpaper, cache->filename) == 0)
                 break;
-        if(cache && cache->wallpaper_mode == desktop->conf.wallpaper_mode
+        if(cache && cache->bg
+           && cache->wallpaper_mode == desktop->conf.wallpaper_mode
            && st.st_mtime == cache->mtime)
             pix = NULL; /* no new pix for it */
-        else if((pix = gdk_pixbuf_new_from_file(wallpaper, NULL)))
+        else
         {
-            if(cache)
+            int max_w, max_h;
+
+            get_wallpaper_size_limits(desktop, screen, &max_w, &max_h);
+            pix = load_wallpaper_pixbuf(wallpaper, max_w, max_h,
+                                        desktop->conf.wallpaper_mode);
+            if(pix)
             {
-                /* the same file but mode was changed */
-                _free_cache_image(cache);
-            }
-            else if(desktop->cache)
-            {
-                for(cache = desktop->cache; cache->next; )
+                if(cache)
+                {
+                    /* the same file but mode was changed */
+                    _free_cache_image(cache);
+                }
+                else if(desktop->cache)
+                {
+                    for(cache = desktop->cache; cache->next; )
+                        cache = cache->next;
+                    cache->next = g_new0(FmBackgroundCache, 1);
                     cache = cache->next;
-                cache->next = g_new0(FmBackgroundCache, 1);
-                cache = cache->next;
+                }
+                else
+                    desktop->cache = cache = g_new0(FmBackgroundCache, 1);
+                if(!cache->filename)
+                    cache->filename = g_strdup(wallpaper);
+                cache->mtime = st.st_mtime;
+                g_debug("adding new FmBackgroundCache for %s", wallpaper);
             }
             else
-                desktop->cache = cache = g_new0(FmBackgroundCache, 1);
-            if(!cache->filename)
-                cache->filename = g_strdup(wallpaper);
-            cache->mtime = st.st_mtime;
-            g_debug("adding new FmBackgroundCache for %s", wallpaper);
+                /* if there is a cached image but with another mode and we cannot
+                   get it from file for new mode then just leave it in cache as is */
+                cache = NULL;
         }
-        else
-            /* if there is a cached image but with another mode and we cannot
-               get it from file for new mode then just leave it in cache as is */
-            cache = NULL;
     }
     else
         cache = NULL;
 
     if(!cache) /* solid color only */
     {
-#if GTK_CHECK_VERSION(3, 0, 0)
-        pattern = cairo_pattern_create_rgb(desktop->conf.desktop_bg.red / 65535.0,
-                                           desktop->conf.desktop_bg.green / 65535.0,
-                                           desktop->conf.desktop_bg.blue / 65535.0);
-        gdk_window_set_background_pattern(window, pattern);
-        cairo_pattern_destroy(pattern);
-#else
-        GdkColor bg = desktop->conf.desktop_bg;
-
-        gdk_colormap_alloc_color(gdk_drawable_get_colormap(window), &bg, FALSE, TRUE);
-        gdk_window_set_back_pixmap(window, NULL, FALSE);
-        gdk_window_set_background(window, &bg);
-#endif
-        gdk_window_invalidate_rect(window, NULL, TRUE);
+        set_solid_background(desktop);
         return;
     }
 
@@ -2373,6 +2518,15 @@ static void update_background(FmDesktop* desktop, int is_it)
         int src_w, src_h;
         int dest_w, dest_h;
         int x = 0, y = 0;
+
+        if (!pix)
+        {
+            /* A cache entry without an image is useless; make sure we never
+             * dereference a NULL pixbuf here. */
+            set_solid_background(desktop);
+            return;
+        }
+
         src_w = gdk_pixbuf_get_width(pix);
         src_h = gdk_pixbuf_get_height(pix);
         if(desktop->conf.wallpaper_mode == FM_WP_TILE)
@@ -2400,16 +2554,54 @@ static void update_background(FmDesktop* desktop, int is_it)
 #if GTK_CHECK_VERSION(3, 0, 0)
         xdisplay = GDK_WINDOW_XDISPLAY(root);
         /* this code is taken from libgnome-desktop */
+        gdk_error_trap_push();
         xpixmap = XCreatePixmap(xdisplay, RootWindow(xdisplay, screen_num),
                                 dest_w, dest_h, DefaultDepth(xdisplay, screen_num));
+        XSync(xdisplay, False);
+        if(gdk_error_trap_pop() != 0 || xpixmap == None)
+        {
+            g_warning("failed to create %dx%d wallpaper pixmap", dest_w, dest_h);
+            g_object_unref(pix);
+            set_solid_background(desktop);
+            return;
+        }
         cache->bg = cairo_xlib_surface_create(xdisplay, xpixmap,
                                               GDK_VISUAL_XVISUAL(gdk_screen_get_system_visual(screen)),
                                               dest_w, dest_h);
+        if(cairo_surface_status(cache->bg) != CAIRO_STATUS_SUCCESS)
+        {
+            g_warning("failed to create wallpaper surface: %s",
+                      cairo_status_to_string(cairo_surface_status(cache->bg)));
+            cairo_surface_destroy(cache->bg);
+            cache->bg = NULL;
+            XFreePixmap(xdisplay, xpixmap);
+            g_object_unref(pix);
+            set_solid_background(desktop);
+            return;
+        }
         cr = cairo_create(cache->bg);
 #else
         cache->bg = gdk_pixmap_new(window, dest_w, dest_h, -1);
+        if(!cache->bg)
+        {
+            g_warning("failed to create %dx%d wallpaper pixmap", dest_w, dest_h);
+            g_object_unref(pix);
+            set_solid_background(desktop);
+            return;
+        }
         cr = gdk_cairo_create(cache->bg);
 #endif
+        if(!cr || cairo_status(cr) != CAIRO_STATUS_SUCCESS)
+        {
+            g_warning("failed to create wallpaper drawing context");
+            if(cr)
+                cairo_destroy(cr);
+            _free_cache_image(cache);
+            g_object_unref(pix);
+            set_solid_background(desktop);
+            return;
+        }
+
         if(gdk_pixbuf_get_has_alpha(pix)
             || desktop->conf.wallpaper_mode == FM_WP_CENTER
             || desktop->conf.wallpaper_mode == FM_WP_FIT
