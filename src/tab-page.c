@@ -394,8 +394,8 @@ static void on_pane_bar_chdir(FmPathBar *bar, FmPath *path, FmTabPagePane *pane)
     gtk_widget_grab_focus(GTK_WIDGET(pane_get_view(pane)));
 }
 
-/* Close the extra pane this button belongs to and keep the window's pane
-   count in sync with the result. */
+/* Close the pane this button belongs to and keep the window's pane count in
+   sync with the result. */
 static void on_pane_close_clicked(GtkButton *btn, FmTabPagePane *pane)
 {
     FmTabPage *host = pane->host;
@@ -407,7 +407,7 @@ static void on_pane_close_clicked(GtkButton *btn, FmTabPagePane *pane)
     for (i = 0; i < host->panes->len; i++)
         if (g_ptr_array_index(host->panes, i) == pane)
             break;
-    if (i == 0 || i >= host->panes->len)
+    if (i >= host->panes->len)
         return;
     if (!fm_tab_page_close_pane(host, i))
         return;
@@ -476,12 +476,12 @@ static FmTabPagePane *_pane_new_primary(FmTabPage *page)
                      G_CALLBACK(on_pane_entry_activate), pane);
     g_signal_connect(pane->bar, "chdir",
                      G_CALLBACK(on_pane_bar_chdir), pane);
+    g_signal_connect(pane->close_btn, "clicked",
+                     G_CALLBACK(on_pane_close_clicked), pane);
     g_ptr_array_add(page->panes, pane);
     gtk_box_pack_start(page->views, pane->box, TRUE, TRUE, 0);
     /* the bar of the primary pane is shown only in multi-pane mode */
     gtk_widget_show_all(pane->box);
-    /* a primary pane can never be closed, only extra panes can */
-    gtk_widget_hide(pane->close_btn);
     /* show_all() reveals both widgets, apply the configured mode again */
     _set_pane_path_mode(pane, app_config->pathbar_mode_buttons);
     _update_primary_bar_visibility(page);
@@ -492,7 +492,19 @@ static void _pane_free(FmTabPagePane *pane)
 {
     if (pane->sub)
     {
-        gtk_widget_destroy(GTK_WIDGET(pane->sub));
+        FmTabPage *sub = pane->sub;
+        FmTabPagePane *sub_pane = (sub->panes && sub->panes->len > 0)
+                                  ? g_ptr_array_index(sub->panes, 0) : NULL;
+
+        /* the subpage signals carry this pane as user data; disconnect them
+           before the pane is freed, even if the widget is not finalized yet */
+        g_signal_handlers_disconnect_by_func(sub, on_subpage_chdir, pane);
+        g_signal_handlers_disconnect_by_func(sub, on_subpage_status, pane);
+        g_signal_handlers_disconnect_by_func(sub, on_subpage_got_focus, pane);
+        if (sub_pane && sub_pane->close_btn)
+            g_signal_handlers_disconnect_by_func(sub_pane->close_btn,
+                                                 on_pane_close_clicked, pane);
+        gtk_widget_destroy(GTK_WIDGET(sub));
         pane->sub = NULL;
     }
     g_slice_free(FmTabPagePane, pane);
@@ -564,7 +576,9 @@ void fm_tab_page_destroy(GtkObject *object)
         g_signal_handlers_disconnect_by_func(page->folder_view, on_folder_view_columns_changed, page);
 #endif
 #if FM_CHECK_VERSION(1, 2, 0)
-        g_signal_handlers_disconnect_by_func(app_config, on_home_path_changed, page->side_pane);
+        if (page->side_pane)
+            g_signal_handlers_disconnect_by_func(app_config, on_home_path_changed,
+                                                 page->side_pane);
 #endif
         _disconnect_focus_in(page->folder_view, page);
         g_object_unref(page->folder_view);
@@ -580,7 +594,8 @@ void fm_tab_page_destroy(GtkObject *object)
         page->update_scroll_id = 0;
     }
 #if FM_CHECK_VERSION(1, 2, 0)
-    fm_side_pane_set_popup_updater(page->side_pane, NULL, NULL);
+    if (page->side_pane)
+        fm_side_pane_set_popup_updater(page->side_pane, NULL, NULL);
 #endif
     if (page->dd)
     {
@@ -1220,6 +1235,12 @@ static gboolean on_drag_motion(FmTabLabel *label, GdkDragContext *drag_context,
     return TRUE;
 }
 
+static void on_side_pane_destroy(GtkWidget *widget, FmTabPage *page)
+{
+    if (page->side_pane == FM_SIDE_PANE(widget))
+        page->side_pane = NULL;
+}
+
 static void fm_tab_page_init(FmTabPage *page)
 {
     GtkPaned* paned = GTK_PANED(page);
@@ -1231,6 +1252,8 @@ static void fm_tab_page_init(FmTabPage *page)
     FmSidePaneMode mode = app_config->side_pane_mode;
 
     page->side_pane = fm_side_pane_new();
+    g_signal_connect(page->side_pane, "destroy",
+                     G_CALLBACK(on_side_pane_destroy), page);
     fm_side_pane_set_mode(page->side_pane, (mode & FM_SP_MODE_MASK));
 #if FM_CHECK_VERSION(1, 2, 0)
     fm_side_pane_set_popup_updater(page->side_pane, _update_sidepane_popup, page);
@@ -1758,7 +1781,7 @@ static void _update_pane_close_buttons(FmTabPage *page)
         if (pane->sub && pane->sub->panes && pane->sub->panes->len > 0)
             visible_pane = g_ptr_array_index(pane->sub->panes, 0);
         if (visible_pane->close_btn)
-            gtk_widget_set_visible(visible_pane->close_btn, i > 0);
+            gtk_widget_set_visible(visible_pane->close_btn, TRUE);
     }
 }
 
@@ -1790,14 +1813,105 @@ void fm_tab_page_set_active_pane(FmTabPage *page, guint index)
     g_signal_emit(page, signals[GOT_FOCUS], 0);
 }
 
-/* Remove one extra pane (index > 0) and keep the remaining panes consistent.
-   The primary pane cannot be closed this way. */
+/* Remove one pane and keep the remaining panes consistent. Closing the
+   primary pane promotes the next pane into the host page, because the host
+   page itself cannot be removed from the notebook tab. */
 gboolean fm_tab_page_close_pane(FmTabPage *page, guint index)
 {
     FmTabPagePane *pane;
 
-    if (!page->panes || index == 0 || index >= page->panes->len)
+    if (!page->panes || page->panes->len <= 1 || index >= page->panes->len)
         return FALSE;
+
+    if (index == 0)
+    {
+        FmTabPagePane *next = g_ptr_array_index(page->panes, 1);
+        FmTabPage *sub = next->sub;
+        FmPath *path = NULL;
+        FmStandardViewMode view_mode;
+        gboolean show_hidden;
+#if FM_CHECK_VERSION(1, 0, 2)
+        FmSortMode sort_type;
+        FmFolderModelCol sort_by;
+        FmFolderModel *model;
+        char *filter_pattern = NULL;
+#else
+        GtkSortType sort_type;
+        int sort_by;
+#endif
+
+        if (!sub)
+            return FALSE;
+
+        /* remember the state of the pane which is going to become primary */
+        if (sub->folder)
+        {
+            path = fm_folder_get_path(sub->folder);
+            fm_path_ref(path);
+        }
+        view_mode = fm_standard_view_get_mode(FM_STANDARD_VIEW(sub->folder_view));
+        show_hidden = sub->show_hidden;
+        sort_type = sub->sort_type;
+        sort_by = sub->sort_by;
+#if FM_CHECK_VERSION(1, 0, 2)
+        filter_pattern = g_strdup(sub->filter_pattern);
+#endif
+
+        /* switch the window away from the view which is about to be
+           destroyed before the pane disappears */
+        if (page->active_pane <= 1)
+            fm_tab_page_set_active_pane(page, 0);
+        g_ptr_array_remove_index(page->panes, 1);
+        _pane_free(next);
+        if (page->active_pane > 1)
+            page->active_pane--;
+
+        if (path)
+        {
+            FmMainWin *win = GET_MAIN_WIN(page);
+            GtkWidget *path_bar = (win && IS_FM_MAIN_WIN(win))
+                                  ? GTK_WIDGET(win->path_bar) : NULL;
+            guint sid = path_bar ? g_signal_lookup("chdir",
+                                                   G_OBJECT_TYPE(path_bar)) : 0;
+
+            /* changing the host folder also updates the window path bar;
+               its "chdir" signal must not navigate the active pane back to
+               the folder we are promoting into the host */
+            if (sid)
+                g_signal_handlers_block_matched(path_bar, G_SIGNAL_MATCH_ID,
+                                                sid, 0, NULL, NULL, NULL);
+            fm_tab_page_chdir_without_history(page, path);
+            if (sid)
+                g_signal_handlers_unblock_matched(path_bar, G_SIGNAL_MATCH_ID,
+                                                  sid, 0, NULL, NULL, NULL);
+            fm_path_unref(path);
+        }
+
+        /* re-apply the promoted pane's own view state, chdir() would have
+           taken the defaults from the folder config instead */
+        page->sort_type = sort_type;
+        page->sort_by = sort_by;
+        page->view_mode = view_mode;
+        fm_standard_view_set_mode(FM_STANDARD_VIEW(page->folder_view), view_mode);
+#if FM_CHECK_VERSION(1, 0, 2)
+        model = fm_folder_view_get_model(page->folder_view);
+        if (model)
+            fm_folder_model_set_sort(model, sort_by, sort_type);
+        fm_tab_page_set_filter_pattern(page, filter_pattern);
+        g_free(filter_pattern);
+#else
+        fm_folder_view_sort(page->folder_view, sort_type, sort_by);
+#endif
+        fm_tab_page_set_show_hidden(page, show_hidden);
+
+        _update_primary_bar_visibility(page);
+        _update_pane_states(page);
+        _update_pane_close_buttons(page);
+        _update_host_label(page);
+        g_signal_emit(page, signals[GOT_FOCUS], 0);
+        return TRUE;
+    }
+
     /* switch away before the pane's folder view is destroyed */
     if (page->active_pane == index)
         fm_tab_page_set_active_pane(page, index - 1);
@@ -1845,6 +1959,9 @@ void fm_tab_page_set_n_panes(FmTabPage *page, guint n_panes)
         g_signal_connect(sub, "status", G_CALLBACK(on_subpage_status), pane);
         g_signal_connect(sub, "got-focus",
                          G_CALLBACK(on_subpage_got_focus), pane);
+        /* the button belongs to the outer pane, not to the embedded page */
+        g_signal_handlers_disconnect_by_func(sub_pane->close_btn,
+                                             on_pane_close_clicked, sub_pane);
         g_signal_connect(sub_pane->close_btn, "clicked",
                          G_CALLBACK(on_pane_close_clicked), pane);
         gtk_box_pack_start(page->views, pane->box, TRUE, TRUE, 0);

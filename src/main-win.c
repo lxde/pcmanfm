@@ -226,22 +226,19 @@ static void on_path_bar_chdir(FmPathBar *bar, FmPath *path, FmMainWin *win)
     fm_main_win_chdir(win, path);
 }
 
-/* The toolbar location bar is used only in single-pane mode. In multi-pane
-   mode every pane has its own location bar, so the toolbar one is hidden. */
+/* The toolbar directory box stays at the top of the window in every mode.
+   In multi-pane mode it follows the active pane, while each pane keeps its
+   own location bar as well. */
 static void win_update_pathbar_visibility(FmMainWin *win)
 {
-    guint n_panes = win->current_page
-                    ? fm_tab_page_get_n_panes(win->current_page)
-                    : CLAMP(app_config->pane_count, 1, FM_MAX_PANES);
-    gboolean multi = n_panes > 1;
     gboolean buttons = app_config->pathbar_mode_buttons;
     GtkWidget *go = win->ui ? gtk_ui_manager_get_widget(win->ui, "/toolbar/Go")
                             : NULL;
 
-    gtk_widget_set_visible(GTK_WIDGET(win->location), !multi && !buttons);
+    gtk_widget_set_visible(GTK_WIDGET(win->location), !buttons);
     if (go)
-        gtk_widget_set_visible(go, !multi && !buttons);
-    gtk_widget_set_visible(GTK_WIDGET(win->path_bar), !multi && buttons);
+        gtk_widget_set_visible(go, !buttons);
+    gtk_widget_set_visible(GTK_WIDGET(win->path_bar), buttons);
 }
 
 static void on_path_bar_mode(GtkRadioAction *act, GtkRadioAction *cur, FmMainWin *win)
@@ -1574,7 +1571,7 @@ static void on_new_tab(GtkAction* act, FmMainWin* win)
 {
     FmPath* path = fm_tab_page_get_cwd(win->current_page);
     fm_main_win_add_tab(win, path);
-    /* FR #1967725: focus location bar for newly created tab */
+    /* FR #1967725: focus the location bar of the newly created tab */
     if (win->current_page && fm_tab_page_get_n_panes(win->current_page) > 1)
         fm_tab_page_focus_location(win->current_page);
     else
