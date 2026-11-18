@@ -53,6 +53,7 @@
 #define SPACING 2
 #define PADDING 6
 #define MARGIN  2
+#define LABEL_PADDING 6
 
 /* the search dialog timeout (in ms) */
 #define DESKTOP_SEARCH_DIALOG_TIMEOUT (5000)
@@ -228,7 +229,7 @@ static inline void desktop_item_free(FmDesktopItem* item)
 
 static void calc_item_size(FmDesktop* desktop, FmDesktopItem* item, GdkPixbuf* icon)
 {
-    PangoRectangle rc2;
+    PangoRectangle ink;
 
     /* icon rect */
     if(icon)
@@ -251,14 +252,16 @@ static void calc_item_size(FmDesktop* desktop, FmDesktopItem* item, GdkPixbuf* i
     pango_layout_set_width(desktop->pl, desktop->pango_text_w);
     pango_layout_set_text(desktop->pl, fm_file_info_get_disp_name(item->fi), -1);
 
-    pango_layout_get_pixel_extents(desktop->pl, NULL, &rc2);
+    pango_layout_get_pixel_extents(desktop->pl, &ink, NULL);
     pango_layout_set_text(desktop->pl, NULL, 0);
 
+    /* Give the selected-label background some breathing room around the
+       text instead of drawing it tight against the glyphs. */
+    item->text_rect.width = ink.width + LABEL_PADDING * 2;
+    item->text_rect.height = ink.height + LABEL_PADDING * 2;
     /* FIXME: RTL */
-    item->text_rect.x = item->area.x + (desktop->cell_w - rc2.width - 4) / 2;
+    item->text_rect.x = item->area.x + (desktop->cell_w - item->text_rect.width) / 2;
     item->text_rect.y = item->area.y + desktop->ypad + fm_config->big_icon_size + desktop->spacing;
-    item->text_rect.width = rc2.width + 4;
-    item->text_rect.height = rc2.y + rc2.height + 4;
     item->area.width = (desktop->cell_w + MAX(item->icon_rect.width, item->text_rect.width)) / 2;
     item->area.height = item->text_rect.y + item->text_rect.height - item->area.y;
 }
@@ -1879,6 +1882,7 @@ static void paint_item(FmDesktop* self, FmDesktopItem* item, cairo_t* cr, GdkRec
     GdkWindow* window;
 #endif
     int text_x, text_y;
+    PangoRectangle ink;
 
     /* don't draw dragged items on desktop, they are moved with mouse */
     if (item->is_selected && self->dragging)
@@ -1896,10 +1900,12 @@ static void paint_item(FmDesktop* self, FmDesktopItem* item, cairo_t* cr, GdkRec
     pango_layout_set_height(self->pl, self->pango_text_h);
 
     pango_layout_set_text(self->pl, fm_file_info_get_disp_name(item->fi), -1);
+    pango_layout_get_pixel_extents(self->pl, &ink, NULL);
 
-    /* FIXME: do we need to cache this? */
-    text_x = item->area.x + (self->cell_w - self->text_w)/2 + 2;
-    text_y = item->text_rect.y + 2;
+    /* Position the glyphs at the same inset that calc_item_size() used for
+       the highlight rectangle so the padding is even on all sides. */
+    text_x = item->text_rect.x + LABEL_PADDING - ink.x;
+    text_y = item->text_rect.y + LABEL_PADDING - ink.y;
 
     if(item->is_selected || item == self->drop_hilight) /* draw background for text label */
     {
@@ -3566,7 +3572,7 @@ static void on_size_allocate(GtkWidget* w, GtkAllocation* alloc)
 #endif
         self->pango_text_h = self->text_h * PANGO_SCALE;
     self->pango_text_w = self->text_w * PANGO_SCALE;
-    self->text_h += 4;
+    self->text_h += LABEL_PADDING * 2; /* room for the selected-label highlight */
     self->text_w += 4; /* 4 is for drawing border */
     self->cell_h = fm_config->big_icon_size + self->spacing + self->text_h + self->ypad * 2;
     self->cell_w = MAX((gint)self->text_w, fm_config->big_icon_size) + self->xpad * 2;

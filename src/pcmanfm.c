@@ -194,6 +194,39 @@ static void on_config_changed(FmAppConfig *cfg, gpointer _unused)
     pcmanfm_save_config(FALSE);
 }
 
+/* libfm gives text cell renderers only 2 px of padding, which makes the
+   selection highlight under icon captions hug the glyphs too tightly.
+   Patch the renderer constructor for this process so every caption created
+   by libfm gets a little more breathing room. */
+#define CAPTION_XPAD 6
+#define CAPTION_YPAD 4
+
+static GObject *(*fm_cell_renderer_text_ctor)(GType, guint, GObjectConstructParam *);
+
+static GObject *cell_renderer_text_ctor(GType type, guint n_params,
+                                        GObjectConstructParam *params)
+{
+    GObject *obj = fm_cell_renderer_text_ctor(type, n_params, params);
+
+    if (obj)
+        g_object_set(obj, "xpad", CAPTION_XPAD, "ypad", CAPTION_YPAD, NULL);
+    return obj;
+}
+
+static void setup_caption_padding(void)
+{
+    static gboolean installed = FALSE;
+
+    if (!installed)
+    {
+        GObjectClass *klass = g_type_class_ref(FM_CELL_RENDERER_TEXT_TYPE);
+
+        fm_cell_renderer_text_ctor = klass->constructor;
+        klass->constructor = cell_renderer_text_ctor;
+        installed = TRUE;
+    }
+}
+
 int main(int argc, char** argv)
 {
     FmConfig* config;
@@ -251,6 +284,7 @@ int main(int argc, char** argv)
     config = fm_app_config_new(); /* this automatically load libfm config file. */
 
     fm_gtk_init(config);
+    setup_caption_padding();
 
 #if FM_CHECK_VERSION(1, 2, 0)
     /* register our modules */
