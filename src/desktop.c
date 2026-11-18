@@ -34,6 +34,7 @@
 #include <gdk/gdkkeysyms.h>
 #include <X11/Xlib.h>
 #include <X11/Xatom.h>
+#include <unistd.h>
 #include <math.h>
 
 #include <cairo-xlib.h>
@@ -140,6 +141,7 @@ enum
 static void on_open_in_new_tab(GtkAction* act, gpointer user_data);
 static void on_open_in_new_win(GtkAction* act, gpointer user_data);
 static void on_open_folder_in_terminal(GtkAction* act, gpointer user_data);
+static void on_open_folder_as_root(GtkAction* act, gpointer user_data);
 
 static void on_fix_pos(GtkToggleAction* act, gpointer user_data);
 static void on_snap_to_grid(GtkAction* act, gpointer user_data);
@@ -3021,9 +3023,11 @@ static void fm_desktop_update_item_popup(FmFolderView* fv, GtkWindow* window,
         gtk_action_group_add_actions(act_grp, folder_menu_actions,
                                      G_N_ELEMENTS(folder_menu_actions), fv);
         gtk_ui_manager_add_ui_from_string(ui, folder_menu_xml, -1, NULL);
-        /* disable terminal for non-native folders */
+        /* disable terminal and root access for non-native folders */
         act = gtk_action_group_get_action(act_grp, "Term");
         gtk_action_set_visible(act, all_native);
+        act = gtk_action_group_get_action(act_grp, "AsRoot");
+        gtk_action_set_visible(act, all_native && geteuid() != 0);
     }
 #if FM_CHECK_VERSION(1, 2, 0)
     if (has_extra)
@@ -3087,6 +3091,20 @@ static void on_open_folder_in_terminal(GtkAction* act, gpointer user_data)
 
     if(desktop->focus /*&& !fm_file_info_is_virtual(fi)*/)
         pcmanfm_open_folder_in_terminal(NULL, fm_file_info_get_path(desktop->focus->fi));
+}
+
+static void on_open_folder_as_root(GtkAction* act, gpointer user_data)
+{
+    FmDesktop* desktop = FM_DESKTOP(user_data);
+    GList* paths;
+
+    if (desktop->focus)
+    {
+        paths = g_list_prepend(NULL,
+                    fm_file_info_get_path(desktop->focus->fi));
+        pcmanfm_open_folders_as_root(NULL, paths);
+        g_list_free(paths);
+    }
 }
 
 static void on_fix_pos(GtkToggleAction* act, gpointer user_data)

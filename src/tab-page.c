@@ -34,6 +34,7 @@
 
 #include <stdlib.h>
 #include <fnmatch.h>
+#include <unistd.h>
 
 /* Additional entries for FmFileMenu popup */
 /* it is also used for FmSidePane context menu popup */
@@ -45,6 +46,7 @@ static const char folder_menu_xml[]=
     "<menuitem action='OpenInOtherPane'/>"
     "<menuitem action='OpenInNewPane'/>"
     "<menuitem action='Term'/>"
+    "<menuitem action='AsRoot'/>"
     /* "<menuitem action='Search'/>" */
   "</placeholder>"
 "</popup>";
@@ -52,6 +54,7 @@ static const char folder_menu_xml[]=
 static void on_open_in_new_tab(GtkAction* act, FmMainWin* win);
 static void on_open_in_new_win(GtkAction* act, FmMainWin* win);
 static void on_open_folder_in_terminal(GtkAction* act, FmMainWin* win);
+static void on_open_folder_as_root(GtkAction* act, FmMainWin* win);
 static void on_open_in_other_pane(GtkAction* act, FmMainWin* win);
 static void on_open_in_new_pane(GtkAction* act, FmMainWin* win);
 
@@ -64,6 +67,7 @@ static GtkActionEntry folder_menu_actions[]=
     {"OpenInNewPane", NULL, N_("Open in New Pan_e"), NULL, NULL, G_CALLBACK(on_open_in_new_pane)},
     {"Search", GTK_STOCK_FIND, NULL, NULL, NULL, NULL},
     {"Term", "utilities-terminal", N_("Open in Termina_l"), NULL, NULL, G_CALLBACK(on_open_folder_in_terminal)},
+    {"AsRoot", GTK_STOCK_DIALOG_AUTHENTICATION, N_("Open as _Root"), NULL, NULL, G_CALLBACK(on_open_folder_as_root)},
 };
 
 #define GET_MAIN_WIN(page)   FM_MAIN_WIN(gtk_widget_get_toplevel(GTK_WIDGET(page)))
@@ -1090,6 +1094,39 @@ static void on_open_folder_in_terminal(GtkAction* act, FmMainWin* win)
     }
 }
 
+static void on_open_folder_as_root(GtkAction* act, FmMainWin* win)
+{
+    GObject* act_grp;
+    FmFileInfoList* files;
+    GList* l;
+    GList* paths = NULL;
+
+    g_object_get(act, "action-group", &act_grp, NULL);
+    files = g_object_get_qdata(act_grp, popup_qdata);
+    g_object_unref(act_grp);
+
+    if (files)
+    {
+        for (l = fm_file_info_list_peek_head_link(files); l; l = l->next)
+        {
+            FmFileInfo* fi = (FmFileInfo*)l->data;
+            if (fm_file_info_is_dir(fi))
+                paths = g_list_prepend(paths, fm_file_info_get_path(fi));
+        }
+    }
+    if (!paths && win->current_page)
+    {
+        FmPath* cwd = fm_tab_page_get_cwd(win->current_page);
+        if (cwd)
+            paths = g_list_prepend(paths, cwd);
+    }
+    if (paths)
+    {
+        pcmanfm_open_folders_as_root(GTK_WINDOW(win), paths);
+        g_list_free(paths);
+    }
+}
+
 static FmPath *popup_get_path(GtkAction *act, FmMainWin *win)
 {
     GObject *act_grp;
@@ -1167,6 +1204,8 @@ static void update_files_popup(FmFolderView* fv, GtkWindow* win,
     gtk_ui_manager_add_ui_from_string(ui, folder_menu_xml, -1, NULL);
     if (!all_native)
         gtk_action_set_visible(gtk_action_group_get_action(act_grp, "Term"), FALSE);
+    if (!all_native || geteuid() == 0)
+        gtk_action_set_visible(gtk_action_group_get_action(act_grp, "AsRoot"), FALSE);
 }
 
 static gboolean open_folder_func(GAppLaunchContext* ctx, GList* folder_infos, gpointer user_data, GError** err)
@@ -1209,6 +1248,8 @@ void _update_sidepane_popup(FmSidePane* sp, GtkUIManager* ui,
     gtk_ui_manager_add_ui_from_string(ui, folder_menu_xml, -1, NULL);
     if (!pcmanfm_can_open_path_in_terminal(fm_file_info_get_path(file)))
         gtk_action_set_visible(gtk_action_group_get_action(act_grp, "Term"), FALSE);
+    if (!pcmanfm_can_open_path_in_terminal(fm_file_info_get_path(file)) || geteuid() == 0)
+        gtk_action_set_visible(gtk_action_group_get_action(act_grp, "AsRoot"), FALSE);
 }
 #endif
 

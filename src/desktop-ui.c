@@ -42,6 +42,7 @@ static const char folder_menu_xml[]=
     "<menuitem action='NewTab'/>"
     "<menuitem action='NewWin'/>"
     "<menuitem action='Term'/>"
+    "<menuitem action='AsRoot'/>"
     /* "<menuitem action='Search'/>" */
   "</placeholder>"
 "</popup>";
@@ -52,7 +53,8 @@ static const GtkActionEntry folder_menu_actions[]=
     {"NewTab", "tab-new", N_("Open in New Ta_b"), NULL, NULL, G_CALLBACK(on_open_in_new_tab)},
     {"NewWin", GTK_STOCK_NEW, N_("Open in New Win_dow"), NULL, NULL, G_CALLBACK(on_open_in_new_win)},
     {"Search", GTK_STOCK_FIND, NULL, NULL, NULL, NULL},
-    {"Term", "utilities-terminal", N_("Open in Termina_l"), NULL, NULL, G_CALLBACK(on_open_folder_in_terminal)}
+    {"Term", "utilities-terminal", N_("Open in Termina_l"), NULL, NULL, G_CALLBACK(on_open_folder_in_terminal)},
+    {"AsRoot", GTK_STOCK_DIALOG_AUTHENTICATION, N_("Open as _Root"), NULL, NULL, G_CALLBACK(on_open_folder_as_root)}
 };
 
 #if FM_CHECK_VERSION(1, 2, 0)

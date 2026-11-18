@@ -454,7 +454,7 @@ static void fm_app_config_finalize(GObject *object)
       g_free(cfg->desktop_section.desktop_font);
       g_free(cfg->desktop_section.folder);
     }
-    /*g_free(cfg->su_cmd);*/
+    g_free(cfg->su_cmd);
     g_hash_table_unref(cfg->autorun_choices);
 
 #if !FM_CHECK_VERSION(1, 2, 0)
@@ -483,6 +483,7 @@ static void fm_app_config_init(FmAppConfig *cfg)
     fm_config_load_from_file((FmConfig*)cfg, NULL);
 
     cfg->bm_open_method = FM_OPEN_IN_CURRENT_TAB;
+    cfg->su_cmd = g_strdup("pkexec %s");
 
     cfg->mount_on_startup = TRUE;
     cfg->mount_removable = TRUE;
@@ -666,9 +667,12 @@ void fm_app_config_load_from_key_file(FmAppConfig* cfg, GKeyFile* kf)
 
     /* behavior */
     fm_key_file_get_int(kf, "config", "bm_open_method", &cfg->bm_open_method);
-    /*tmp = g_key_file_get_string(kf, "config", "su_cmd", NULL);
-    g_free(cfg->su_cmd);
-    cfg->su_cmd = tmp;*/
+    tmp = g_key_file_get_string(kf, "config", "su_cmd", NULL);
+    if (tmp)
+    {
+        g_free(cfg->su_cmd);
+        cfg->su_cmd = tmp;
+    }
 #if FM_CHECK_VERSION(1, 2, 0)
     g_free(cfg->home_path);
     cfg->home_path = g_key_file_get_string(kf, "config", "home_path", NULL);
@@ -1136,8 +1140,8 @@ void fm_app_config_save_profile(FmAppConfig* cfg, const char* name)
 
         g_string_append(buf, "[config]\n");
         g_string_append_printf(buf, "bm_open_method=%d\n", cfg->bm_open_method);
-        /*if(cfg->su_cmd && *cfg->su_cmd)
-            g_string_append_printf(buf, "su_cmd=%s\n", cfg->su_cmd);*/
+        if(cfg->su_cmd && *cfg->su_cmd)
+            g_string_append_printf(buf, "su_cmd=%s\n", cfg->su_cmd);
 #if FM_CHECK_VERSION(1, 2, 0)
         if (cfg->home_path && cfg->home_path[0]
             && strcmp(cfg->home_path, fm_get_home_dir()) != 0)

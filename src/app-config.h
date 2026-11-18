@@ -153,7 +153,7 @@ struct _FmAppConfig
     char *home_path;
 #endif
 
-    /*char* su_cmd;*/
+    char* su_cmd;
 
     /* pre-1.2.0 style config - common settings for all monitors */
     FmDesktopConfig desktop_section;

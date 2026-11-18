@@ -684,6 +684,90 @@ void pcmanfm_open_folder_in_terminal(GtkWindow* parent, FmPath* dir)
     }
 }
 
+static const char* su_cmd_subst(char opt, gpointer user_data)
+{
+    return (const char*)user_data;
+}
+
+static FmAppCommandParseOption su_cmd_opts[] =
+{
+    { 's', su_cmd_subst },
+    { 0, NULL }
+};
+
+void pcmanfm_open_folders_as_root(GtkWindow* parent, GList* paths)
+{
+    GAppInfo* app;
+    GError* err = NULL;
+    GdkAppLaunchContext* ctx;
+    GList* uris = NULL, *l;
+    char* cmd = NULL;
+
+    if (!app_config->su_cmd || !*app_config->su_cmd)
+    {
+        fm_show_error(parent, NULL, _("Switch user command is not set."));
+        fm_edit_preference(parent, PREF_ADVANCED);
+        return;
+    }
+
+    /* %s is the placeholder for the file manager command. If the configured
+       switch-user command already contains URI placeholders, use it as-is. */
+    if (fm_app_command_parse(app_config->su_cmd, su_cmd_opts, &cmd,
+                             "pcmanfm %U") > 0)
+    {
+        /* command was built by the substitution above */
+    }
+    else if (strstr(app_config->su_cmd, "%U")
+             || strstr(app_config->su_cmd, "%u")
+             || strstr(app_config->su_cmd, "%F")
+             || strstr(app_config->su_cmd, "%f"))
+        cmd = g_strdup(app_config->su_cmd);
+    else
+        cmd = g_strconcat(app_config->su_cmd, " pcmanfm %U", NULL);
+
+    for (l = paths; l; l = l->next)
+    {
+        FmPath* path = (FmPath*)l->data;
+        if (path)
+            uris = g_list_prepend(uris, fm_path_to_uri(path));
+    }
+    if (!uris)
+    {
+        g_free(cmd);
+        return;
+    }
+
+    app = g_app_info_create_from_commandline(cmd, NULL, 0, &err);
+    g_free(cmd);
+    if (!app)
+    {
+        fm_show_error(parent, NULL, err ? err->message
+                                        : _("Failed to open folder as root."));
+        if (err)
+            g_error_free(err);
+        g_list_free_full(uris, g_free);
+        return;
+    }
+
+    ctx = gdk_app_launch_context_new();
+    if (parent && gtk_widget_get_screen(GTK_WIDGET(parent)))
+        gdk_app_launch_context_set_screen(ctx,
+                            gtk_widget_get_screen(GTK_WIDGET(parent)));
+    gdk_app_launch_context_set_timestamp(ctx, gtk_get_current_event_time());
+
+    if (!g_app_info_launch_uris(app, uris, G_APP_LAUNCH_CONTEXT(ctx), &err))
+    {
+        fm_show_error(parent, NULL, err ? err->message
+                                        : _("Failed to open folder as root."));
+        if (err)
+            g_error_free(err);
+    }
+
+    g_object_unref(ctx);
+    g_object_unref(app);
+    g_list_free_full(uris, g_free);
+}
+
 char* pcmanfm_get_profile_dir(gboolean create)
 {
     char* dir = g_build_filename(g_get_user_config_dir(), "pcmanfm", profile ? profile : "default", NULL);
