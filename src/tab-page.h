@@ -144,6 +144,7 @@ guint fm_tab_page_get_n_panes(FmTabPage *page);
 guint fm_tab_page_get_active_pane(FmTabPage *page);
 void fm_tab_page_set_active_pane(FmTabPage *page, guint index);
 void fm_tab_page_set_n_panes(FmTabPage *page, guint n_panes);
+gboolean fm_tab_page_close_pane(FmTabPage *page, guint index);
 FmTabPage *fm_tab_page_get_active_subpage(FmTabPage *page);
 FmTabPage *fm_tab_page_get_nth_subpage(FmTabPage *page, guint index);
 FmFolderView *fm_tab_page_get_nth_view(FmTabPage *page, guint index);

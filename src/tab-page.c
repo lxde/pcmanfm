@@ -117,7 +117,11 @@ struct _FmTabPagePane
     GtkWidget *loc_box;
     GtkWidget *entry;
     GtkWidget *bar;
+    GtkWidget *close_btn;
 };
+
+static void on_pane_close_clicked(GtkButton *btn, FmTabPagePane *pane);
+static void _update_pane_close_buttons(FmTabPage *page);
 
 G_DEFINE_TYPE(FmTabPage, fm_tab_page, GTK_TYPE_HPANED)
 
@@ -390,6 +394,28 @@ static void on_pane_bar_chdir(FmPathBar *bar, FmPath *path, FmTabPagePane *pane)
     gtk_widget_grab_focus(GTK_WIDGET(pane_get_view(pane)));
 }
 
+/* Close the extra pane this button belongs to and keep the window's pane
+   count in sync with the result. */
+static void on_pane_close_clicked(GtkButton *btn, FmTabPagePane *pane)
+{
+    FmTabPage *host = pane->host;
+    FmMainWin *win;
+    guint i;
+
+    if (!host->panes)
+        return;
+    for (i = 0; i < host->panes->len; i++)
+        if (g_ptr_array_index(host->panes, i) == pane)
+            break;
+    if (i == 0 || i >= host->panes->len)
+        return;
+    if (!fm_tab_page_close_pane(host, i))
+        return;
+    win = GET_MAIN_WIN(host);
+    if (win && IS_FM_MAIN_WIN(win))
+        fm_main_win_set_pane_count(win, fm_tab_page_get_n_panes(host));
+}
+
 static void on_subpage_chdir(FmTabPage *sub, FmPath *path, FmTabPagePane *pane)
 {
     if (pane->host->active_pane < pane->host->panes->len
@@ -430,8 +456,19 @@ static FmTabPagePane *_pane_new_primary(FmTabPage *page)
     pane->loc_box = gtk_hbox_new(FALSE, 0);
     pane->entry = GTK_WIDGET(fm_path_entry_new());
     pane->bar = GTK_WIDGET(fm_path_bar_new());
+#if GTK_CHECK_VERSION(3, 0, 0)
+    pane->close_btn = gtk_button_new_from_icon_name("window-close",
+                                                    GTK_ICON_SIZE_MENU);
+#else
+    pane->close_btn = gtk_button_new_from_icon_name("gtk-close",
+                                                    GTK_ICON_SIZE_MENU);
+#endif
+    gtk_button_set_relief(GTK_BUTTON(pane->close_btn), GTK_RELIEF_NONE);
+    gtk_button_set_focus_on_click(GTK_BUTTON(pane->close_btn), FALSE);
+    gtk_widget_set_tooltip_text(pane->close_btn, _("Close this pane"));
     gtk_box_pack_start(GTK_BOX(pane->loc_box), pane->entry, TRUE, TRUE, 0);
     gtk_box_pack_start(GTK_BOX(pane->loc_box), pane->bar, TRUE, TRUE, 0);
+    gtk_box_pack_end(GTK_BOX(pane->loc_box), pane->close_btn, FALSE, FALSE, 0);
     gtk_box_pack_start(GTK_BOX(pane->box), pane->loc_box, FALSE, TRUE, 0);
     gtk_box_pack_start(GTK_BOX(pane->box), GTK_WIDGET(page->folder_view),
                        TRUE, TRUE, 0);
@@ -443,6 +480,8 @@ static FmTabPagePane *_pane_new_primary(FmTabPage *page)
     gtk_box_pack_start(page->views, pane->box, TRUE, TRUE, 0);
     /* the bar of the primary pane is shown only in multi-pane mode */
     gtk_widget_show_all(pane->box);
+    /* a primary pane can never be closed, only extra panes can */
+    gtk_widget_hide(pane->close_btn);
     /* show_all() reveals both widgets, apply the configured mode again */
     _set_pane_path_mode(pane, app_config->pathbar_mode_buttons);
     _update_primary_bar_visibility(page);
@@ -1704,6 +1743,25 @@ gint fm_tab_page_find_view(FmTabPage *page, FmFolderView *view)
     return -1;
 }
 
+static void _update_pane_close_buttons(FmTabPage *page)
+{
+    guint i;
+
+    if (!page->panes)
+        return;
+    for (i = 0; i < page->panes->len; i++)
+    {
+        FmTabPagePane *pane = g_ptr_array_index(page->panes, i);
+        FmTabPagePane *visible_pane = pane;
+
+        /* an extra pane is a child page, its widgets live on that page */
+        if (pane->sub && pane->sub->panes && pane->sub->panes->len > 0)
+            visible_pane = g_ptr_array_index(pane->sub->panes, 0);
+        if (visible_pane->close_btn)
+            gtk_widget_set_visible(visible_pane->close_btn, i > 0);
+    }
+}
+
 static void _update_pane_states(FmTabPage *page)
 {
     guint i;
@@ -1730,6 +1788,30 @@ void fm_tab_page_set_active_pane(FmTabPage *page, guint index)
     /* always notify: focus can move into an already active pane and the
        window still has to switch its notion of the active folder view */
     g_signal_emit(page, signals[GOT_FOCUS], 0);
+}
+
+/* Remove one extra pane (index > 0) and keep the remaining panes consistent.
+   The primary pane cannot be closed this way. */
+gboolean fm_tab_page_close_pane(FmTabPage *page, guint index)
+{
+    FmTabPagePane *pane;
+
+    if (!page->panes || index == 0 || index >= page->panes->len)
+        return FALSE;
+    /* switch away before the pane's folder view is destroyed */
+    if (page->active_pane == index)
+        fm_tab_page_set_active_pane(page, index - 1);
+    pane = g_ptr_array_index(page->panes, index);
+    g_ptr_array_remove_index(page->panes, index);
+    _pane_free(pane);
+    if (page->active_pane > index)
+        page->active_pane--;
+    _update_primary_bar_visibility(page);
+    _update_pane_states(page);
+    _update_pane_close_buttons(page);
+    _update_host_label(page);
+    g_signal_emit(page, signals[GOT_FOCUS], 0);
+    return TRUE;
 }
 
 void fm_tab_page_set_n_panes(FmTabPage *page, guint n_panes)
@@ -1763,6 +1845,8 @@ void fm_tab_page_set_n_panes(FmTabPage *page, guint n_panes)
         g_signal_connect(sub, "status", G_CALLBACK(on_subpage_status), pane);
         g_signal_connect(sub, "got-focus",
                          G_CALLBACK(on_subpage_got_focus), pane);
+        g_signal_connect(sub_pane->close_btn, "clicked",
+                         G_CALLBACK(on_pane_close_clicked), pane);
         gtk_box_pack_start(page->views, pane->box, TRUE, TRUE, 0);
         /* show all children first, then hide what is not needed */
         gtk_widget_show_all(pane->box);
@@ -1788,6 +1872,7 @@ void fm_tab_page_set_n_panes(FmTabPage *page, guint n_panes)
 
     _update_primary_bar_visibility(page);
     _update_pane_states(page);
+    _update_pane_close_buttons(page);
     _update_host_label(page);
 }
 
