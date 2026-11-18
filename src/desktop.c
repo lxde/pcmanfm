@@ -53,7 +53,8 @@
 #define SPACING 2
 #define PADDING 6
 #define MARGIN  2
-#define LABEL_PADDING 6
+#define LABEL_XPAD 6
+#define LABEL_YPAD 8
 
 /* the search dialog timeout (in ms) */
 #define DESKTOP_SEARCH_DIALOG_TIMEOUT (5000)
@@ -257,8 +258,8 @@ static void calc_item_size(FmDesktop* desktop, FmDesktopItem* item, GdkPixbuf* i
 
     /* Give the selected-label background some breathing room around the
        text instead of drawing it tight against the glyphs. */
-    item->text_rect.width = ink.width + LABEL_PADDING * 2;
-    item->text_rect.height = ink.height + LABEL_PADDING * 2;
+    item->text_rect.width = ink.width + LABEL_XPAD * 2;
+    item->text_rect.height = ink.height + LABEL_YPAD * 2;
     /* FIXME: RTL */
     item->text_rect.x = item->area.x + (desktop->cell_w - item->text_rect.width) / 2;
     item->text_rect.y = item->area.y + desktop->ypad + fm_config->big_icon_size + desktop->spacing;
@@ -1904,8 +1905,8 @@ static void paint_item(FmDesktop* self, FmDesktopItem* item, cairo_t* cr, GdkRec
 
     /* Position the glyphs at the same inset that calc_item_size() used for
        the highlight rectangle so the padding is even on all sides. */
-    text_x = item->text_rect.x + LABEL_PADDING - ink.x;
-    text_y = item->text_rect.y + LABEL_PADDING - ink.y;
+    text_x = item->text_rect.x + LABEL_XPAD - ink.x;
+    text_y = item->text_rect.y + LABEL_YPAD - ink.y;
 
     if(item->is_selected || item == self->drop_hilight) /* draw background for text label */
     {
@@ -3572,7 +3573,7 @@ static void on_size_allocate(GtkWidget* w, GtkAllocation* alloc)
 #endif
         self->pango_text_h = self->text_h * PANGO_SCALE;
     self->pango_text_w = self->text_w * PANGO_SCALE;
-    self->text_h += LABEL_PADDING * 2; /* room for the selected-label highlight */
+    self->text_h += LABEL_YPAD * 2; /* room for the selected-label highlight */
     self->text_w += 4; /* 4 is for drawing border */
     self->cell_h = fm_config->big_icon_size + self->spacing + self->text_h + self->ypad * 2;
     self->cell_w = MAX((gint)self->text_w, fm_config->big_icon_size) + self->xpad * 2;

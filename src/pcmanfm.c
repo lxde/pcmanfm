@@ -196,10 +196,11 @@ static void on_config_changed(FmAppConfig *cfg, gpointer _unused)
 
 /* libfm gives text cell renderers only 2 px of padding, which makes the
    selection highlight under icon captions hug the glyphs too tightly.
-   Patch the renderer constructor for this process so every caption created
-   by libfm gets a little more breathing room. */
+   Patch the renderer for this process so captions get more breathing room,
+   and include that padding in the renderer's size request: libfm draws the
+   padded highlight but still reports only the bare text height. */
 #define CAPTION_XPAD 6
-#define CAPTION_YPAD 4
+#define CAPTION_YPAD 8
 
 static GObject *(*fm_cell_renderer_text_ctor)(GType, guint, GObjectConstructParam *);
 
@@ -213,6 +214,63 @@ static GObject *cell_renderer_text_ctor(GType type, guint n_params,
     return obj;
 }
 
+#if GTK_CHECK_VERSION(3, 0, 0)
+static void (*fm_cell_renderer_text_get_width)(GtkCellRenderer *, GtkWidget *,
+                                               gint *, gint *);
+static void (*fm_cell_renderer_text_get_height)(GtkCellRenderer *, GtkWidget *,
+                                                gint *, gint *);
+static void (*fm_cell_renderer_text_get_height_for_width)(GtkCellRenderer *,
+                                                          GtkWidget *, gint,
+                                                          gint *, gint *);
+
+static void add_size_padding(gint *minimum, gint *natural, gint padding)
+{
+    if (minimum)
+        *minimum += padding;
+    if (natural)
+        *natural += padding;
+}
+
+static void caption_get_preferred_width(GtkCellRenderer *cell, GtkWidget *widget,
+                                        gint *minimum, gint *natural)
+{
+    gint xpad, ypad, wrap_width;
+
+    fm_cell_renderer_text_get_width(cell, widget, minimum, natural);
+
+    /* GtkCellRendererText already includes padding when wrap-width is unset;
+       libfm returns the raw wrap width when it is set. */
+    g_object_get(cell, "wrap-width", &wrap_width, NULL);
+    if (wrap_width > 0)
+    {
+        gtk_cell_renderer_get_padding(cell, &xpad, &ypad);
+        add_size_padding(minimum, natural, 2 * xpad);
+    }
+}
+
+static void caption_get_preferred_height(GtkCellRenderer *cell, GtkWidget *widget,
+                                         gint *minimum, gint *natural)
+{
+    gint xpad, ypad;
+
+    fm_cell_renderer_text_get_height(cell, widget, minimum, natural);
+    gtk_cell_renderer_get_padding(cell, &xpad, &ypad);
+    add_size_padding(minimum, natural, 2 * ypad);
+}
+
+static void caption_get_preferred_height_for_width(GtkCellRenderer *cell,
+                                                   GtkWidget *widget, gint width,
+                                                   gint *minimum, gint *natural)
+{
+    gint xpad, ypad;
+
+    fm_cell_renderer_text_get_height_for_width(cell, widget, width,
+                                               minimum, natural);
+    gtk_cell_renderer_get_padding(cell, &xpad, &ypad);
+    add_size_padding(minimum, natural, 2 * ypad);
+}
+#endif
+
 static void setup_caption_padding(void)
 {
     static gboolean installed = FALSE;
@@ -223,6 +281,19 @@ static void setup_caption_padding(void)
 
         fm_cell_renderer_text_ctor = klass->constructor;
         klass->constructor = cell_renderer_text_ctor;
+#if GTK_CHECK_VERSION(3, 0, 0)
+        {
+            GtkCellRendererClass *render_class = GTK_CELL_RENDERER_CLASS(klass);
+
+            fm_cell_renderer_text_get_width = render_class->get_preferred_width;
+            fm_cell_renderer_text_get_height = render_class->get_preferred_height;
+            fm_cell_renderer_text_get_height_for_width = render_class->get_preferred_height_for_width;
+
+            render_class->get_preferred_width = caption_get_preferred_width;
+            render_class->get_preferred_height = caption_get_preferred_height;
+            render_class->get_preferred_height_for_width = caption_get_preferred_height_for_width;
+        }
+#endif
         installed = TRUE;
     }
 }
