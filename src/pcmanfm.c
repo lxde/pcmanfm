@@ -481,16 +481,12 @@ gboolean pcmanfm_run(gint screen_num)
         else
 #endif
         {
-            /* If we're not in daemon mode, or pcmanfm_run() is called because another
-             * instance send signal to us, open cwd by default. */
-            FmPath* path;
-            char* cwd = ipc_cwd ? ipc_cwd : g_get_current_dir();
-            path = fm_path_new_for_path(cwd);
+            /* No folder was specified, so open the user's home folder
+             * instead of the process working directory. */
+            FmPath* path = fm_path_get_home();
             win = fm_main_win_add_win(NULL, path);
             if(new_win && window_role)
                 gtk_window_set_role(GTK_WINDOW(win), window_role);
-            fm_path_unref(path);
-            g_free(cwd);
             ipc_cwd = NULL;
         }
     }
