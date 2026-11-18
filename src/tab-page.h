@@ -50,6 +50,7 @@ typedef enum {
 
 typedef struct _FmTabPage            FmTabPage;
 typedef struct _FmTabPageClass        FmTabPageClass;
+typedef struct _FmTabPagePane        FmTabPagePane;
 
 struct _FmTabPage
 {
@@ -57,6 +58,9 @@ struct _FmTabPage
     FmSidePane* side_pane;
     FmFolderView* folder_view;
     GtkBox *views;
+    GPtrArray *panes; /* additional panes, each one is a child FmTabPage */
+    guint active_pane;
+    gboolean is_subpage : 1; /* this page is embedded into another one */
     FmTabLabel* tab_label;
     FmNavHistory* nav_history;
     char* status_text[FM_STATUS_TEXT_NUM];
@@ -135,10 +139,21 @@ const char* fm_tab_page_get_title(FmTabPage* page);
 /* get normal status text */
 const char* fm_tab_page_get_status_text(FmTabPage* page, FmStatusTextType type);
 
-/* passive view panel management */
-gboolean fm_tab_page_take_view_back(FmTabPage *page);
-gboolean fm_tab_page_set_passive_view(FmTabPage *page, FmFolderView *view, gboolean on_right);
-FmFolderView *fm_tab_page_get_passive_view(FmTabPage *page);
+/* multi-pane support */
+guint fm_tab_page_get_n_panes(FmTabPage *page);
+guint fm_tab_page_get_active_pane(FmTabPage *page);
+void fm_tab_page_set_active_pane(FmTabPage *page, guint index);
+void fm_tab_page_set_n_panes(FmTabPage *page, guint n_panes);
+FmTabPage *fm_tab_page_get_active_subpage(FmTabPage *page);
+FmTabPage *fm_tab_page_get_nth_subpage(FmTabPage *page, guint index);
+FmFolderView *fm_tab_page_get_nth_view(FmTabPage *page, guint index);
+FmPath *fm_tab_page_get_nth_cwd(FmTabPage *page, guint index);
+void fm_tab_page_chdir_nth(FmTabPage *page, guint index, FmPath *path);
+void fm_tab_page_focus_nth(FmTabPage *page, guint index);
+gint fm_tab_page_find_view(FmTabPage *page, FmFolderView *view);
+void fm_tab_page_set_path_mode(FmTabPage *page, gboolean buttons);
+FmFolderView *fm_tab_page_get_primary_view(FmTabPage *page);
+gboolean fm_tab_page_focus_location(FmTabPage *page);
 
 #if FM_CHECK_VERSION(1, 0, 2)
 void fm_tab_page_set_filter_pattern(FmTabPage *page, const char *pattern);

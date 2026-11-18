@@ -122,7 +122,12 @@ static const char main_menu_xml[] =
     "</menu>"
     "<menuitem action='ShowStatus'/>"
     "<separator/>"
-    "<menuitem action='DualPane'/>"
+    "<menu action='Panes'>"
+      "<menuitem action='Pane1'/>"
+      "<menuitem action='Pane2'/>"
+      "<menuitem action='Pane3'/>"
+      "<menuitem action='Pane4'/>"
+    "</menu>"
     "<menuitem action='Fullscreen' />"
     "<separator/>"
     "<menuitem action='SizeBigger'/>"
@@ -286,8 +291,17 @@ static GtkToggleActionEntry main_win_toggle_actions[]=
     {"ToolbarHome", NULL, N_("Show '_Home' Button"), NULL, NULL, G_CALLBACK(on_toolbar_home), TRUE},
     {"ShowSidePane", NULL, N_("Sho_w Side Pane"), "F9", NULL, G_CALLBACK(on_show_side_pane), TRUE},
     {"ShowStatus", NULL, N_("Show Status B_ar"), "<Ctrl>B", NULL, G_CALLBACK(on_show_status), TRUE},
-    {"DualPane", NULL, N_("_Dual Pane Mode"), "F3", N_("Show two panels with folder views"), G_CALLBACK(on_dual_pane), FALSE},
-    {"Fullscreen", NULL, N_("Fullscreen _Mode"), "F11", NULL, G_CALLBACK(on_fullscreen), FALSE}
+    {"Fullscreen", NULL, N_("Fullscreen _Mode"), "F11", NULL, G_CALLBACK(on_fullscreen), FALSE},
+    /* submenu entry, its items are radio actions defined below */
+    {"Panes", NULL, N_("Pa_nes"), NULL, NULL, NULL}
+};
+
+static GtkRadioActionEntry main_win_pane_actions[]=
+{
+    {"Pane1", NULL, N_("_1 Pane"), NULL, N_("Show a single folder pane"), 1},
+    {"Pane2", NULL, N_("_2 Panes"), "F3", N_("Show two folder panes side by side"), 2},
+    {"Pane3", NULL, N_("_3 Panes"), NULL, N_("Show three folder panes side by side"), 3},
+    {"Pane4", NULL, N_("_4 Panes"), NULL, N_("Show four folder panes side by side"), 4}
 };
 
 #if !FM_CHECK_VERSION(1, 2, 0)

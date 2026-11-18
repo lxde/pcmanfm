@@ -42,6 +42,8 @@ static const char folder_menu_xml[]=
   "<placeholder name='ph1'>"
     "<menuitem action='NewTab'/>"
     "<menuitem action='NewWin'/>"
+    "<menuitem action='OpenInOtherPane'/>"
+    "<menuitem action='OpenInNewPane'/>"
     "<menuitem action='Term'/>"
     /* "<menuitem action='Search'/>" */
   "</placeholder>"
@@ -50,12 +52,16 @@ static const char folder_menu_xml[]=
 static void on_open_in_new_tab(GtkAction* act, FmMainWin* win);
 static void on_open_in_new_win(GtkAction* act, FmMainWin* win);
 static void on_open_folder_in_terminal(GtkAction* act, FmMainWin* win);
+static void on_open_in_other_pane(GtkAction* act, FmMainWin* win);
+static void on_open_in_new_pane(GtkAction* act, FmMainWin* win);
 
 /* Action entries for popup menu entries above */
 static GtkActionEntry folder_menu_actions[]=
 {
     {"NewTab", "tab-new", N_("Open in New T_ab"), NULL, NULL, G_CALLBACK(on_open_in_new_tab)},
     {"NewWin", GTK_STOCK_NEW, N_("Open in New Win_dow"), NULL, NULL, G_CALLBACK(on_open_in_new_win)},
+    {"OpenInOtherPane", NULL, N_("Open in Other _Pane"), NULL, NULL, G_CALLBACK(on_open_in_other_pane)},
+    {"OpenInNewPane", NULL, N_("Open in New Pan_e"), NULL, NULL, G_CALLBACK(on_open_in_new_pane)},
     {"Search", GTK_STOCK_FIND, NULL, NULL, NULL, NULL},
     {"Term", "utilities-terminal", N_("Open in Termina_l"), NULL, NULL, G_CALLBACK(on_open_folder_in_terminal)},
 };
@@ -100,6 +106,18 @@ static void fm_tab_page_realize(GtkWidget *page);
 static void fm_tab_page_unrealize(GtkWidget *page);
 
 static GQuark popup_qdata;
+
+/* One pane is either the page itself (primary pane) or a child FmTabPage
+   embedded into the page's views box (additional pane). */
+struct _FmTabPagePane
+{
+    FmTabPage *host;
+    FmTabPage *sub; /* NULL for the primary pane */
+    GtkWidget *box;
+    GtkWidget *loc_box;
+    GtkWidget *entry;
+    GtkWidget *bar;
+};
 
 G_DEFINE_TYPE(FmTabPage, fm_tab_page, GTK_TYPE_HPANED)
 
@@ -261,6 +279,186 @@ static void _disconnect_focus_in(FmFolderView *folder_view, FmTabPage *page)
     g_list_free(children);
 }
 
+/* ---- multi-pane support ---- */
+
+static FmFolderView *pane_get_view(FmTabPagePane *pane)
+{
+    FmTabPage *page = pane->sub ? pane->sub : pane->host;
+
+    return page->folder_view;
+}
+
+/* Keep the notebook tab title in sync with the active pane of the page. A
+   page embedded as an extra pane has no visible tab of its own, so only the
+   host page is updated here. */
+static void _update_host_label(FmTabPage *page)
+{
+    FmTabPage *active;
+    FmPath *path;
+    char *disp_name, *tip;
+
+    if (page->is_subpage || !page->panes || page->panes->len == 0)
+        return;
+    if (page->active_pane < page->panes->len)
+    {
+        FmTabPagePane *pane = g_ptr_array_index(page->panes, page->active_pane);
+        active = pane->sub ? pane->sub : page;
+    }
+    else
+        active = page;
+    if (!active->folder)
+        return;
+    path = fm_folder_get_path(active->folder);
+    disp_name = fm_path_display_basename(path);
+#if FM_CHECK_VERSION(1, 0, 2)
+    if (active->filter_pattern && active->filter_pattern[0])
+    {
+        char *text = g_strdup_printf("%s [%s]", disp_name,
+                                     active->filter_pattern);
+        g_free(disp_name);
+        disp_name = text;
+    }
+#endif
+    fm_tab_label_set_text(page->tab_label, disp_name);
+    g_free(disp_name);
+    tip = fm_path_display_name(path, FALSE);
+    fm_tab_label_set_tooltip_text(FM_TAB_LABEL(page->tab_label), tip);
+    g_free(tip);
+}
+
+static void _update_primary_location(FmTabPage *page, FmPath *path)
+{
+    FmTabPagePane *pane;
+
+    if (!page->panes || page->panes->len == 0)
+        return;
+    pane = g_ptr_array_index(page->panes, 0);
+    if (!path)
+        path = pane_get_view(pane) ? fm_folder_view_get_cwd(pane_get_view(pane)) : NULL;
+    if (!path)
+        return;
+    fm_path_entry_set_path(FM_PATH_ENTRY(pane->entry), path);
+    fm_path_bar_set_path(FM_PATH_BAR(pane->bar), path);
+}
+
+static void _set_pane_path_mode(FmTabPagePane *pane, gboolean buttons)
+{
+    gtk_widget_set_visible(pane->entry, !buttons);
+    gtk_widget_set_visible(pane->bar, buttons);
+}
+
+static void _set_primary_path_mode(FmTabPage *page, gboolean buttons)
+{
+    FmTabPagePane *pane;
+
+    if (!page->panes || page->panes->len == 0)
+        return;
+    pane = g_ptr_array_index(page->panes, 0);
+    _set_pane_path_mode(pane, buttons);
+}
+
+static void _update_primary_bar_visibility(FmTabPage *page)
+{
+    FmTabPagePane *pane;
+
+    if (!page->panes || page->panes->len == 0)
+        return;
+    pane = g_ptr_array_index(page->panes, 0);
+    gtk_widget_set_visible(pane->loc_box, page->panes->len > 1);
+}
+
+static void on_pane_entry_activate(GtkEntry *entry, FmTabPagePane *pane)
+{
+    FmTabPage *page = pane->sub ? pane->sub : pane->host;
+    FmPath *path = fm_path_entry_get_path(FM_PATH_ENTRY(entry));
+
+    if (!path)
+        return;
+    fm_path_ref(path);
+    fm_tab_page_chdir(page, path);
+    fm_path_unref(path);
+    /* recover from Ctrl+L mode change */
+    _set_primary_path_mode(page, app_config->pathbar_mode_buttons);
+    gtk_widget_grab_focus(GTK_WIDGET(pane_get_view(pane)));
+}
+
+static void on_pane_bar_chdir(FmPathBar *bar, FmPath *path, FmTabPagePane *pane)
+{
+    FmTabPage *page = pane->sub ? pane->sub : pane->host;
+
+    fm_tab_page_chdir(page, path);
+    gtk_widget_grab_focus(GTK_WIDGET(pane_get_view(pane)));
+}
+
+static void on_subpage_chdir(FmTabPage *sub, FmPath *path, FmTabPagePane *pane)
+{
+    if (pane->host->active_pane < pane->host->panes->len
+        && g_ptr_array_index(pane->host->panes, pane->host->active_pane) == pane)
+    {
+        _update_host_label(pane->host);
+        g_signal_emit(pane->host, signals[CHDIR], 0, path);
+    }
+}
+
+static void on_subpage_status(FmTabPage *sub, guint type, const char *text,
+                              FmTabPagePane *pane)
+{
+    if (pane->host->active_pane < pane->host->panes->len
+        && g_ptr_array_index(pane->host->panes, pane->host->active_pane) == pane)
+        g_signal_emit(pane->host, signals[STATUS], 0, type, text);
+}
+
+static void on_subpage_got_focus(FmTabPage *sub, FmTabPagePane *pane)
+{
+    guint i;
+
+    for (i = 0; i < pane->host->panes->len; i++)
+        if (g_ptr_array_index(pane->host->panes, i) == pane)
+        {
+            fm_tab_page_set_active_pane(pane->host, i);
+            return;
+        }
+}
+
+static FmTabPagePane *_pane_new_primary(FmTabPage *page)
+{
+    FmTabPagePane *pane = g_slice_new0(FmTabPagePane);
+
+    pane->host = page;
+    pane->sub = NULL;
+    pane->box = gtk_vbox_new(FALSE, 0);
+    pane->loc_box = gtk_hbox_new(FALSE, 0);
+    pane->entry = GTK_WIDGET(fm_path_entry_new());
+    pane->bar = GTK_WIDGET(fm_path_bar_new());
+    gtk_box_pack_start(GTK_BOX(pane->loc_box), pane->entry, TRUE, TRUE, 0);
+    gtk_box_pack_start(GTK_BOX(pane->loc_box), pane->bar, TRUE, TRUE, 0);
+    gtk_box_pack_start(GTK_BOX(pane->box), pane->loc_box, FALSE, TRUE, 0);
+    gtk_box_pack_start(GTK_BOX(pane->box), GTK_WIDGET(page->folder_view),
+                       TRUE, TRUE, 0);
+    g_signal_connect(pane->entry, "activate",
+                     G_CALLBACK(on_pane_entry_activate), pane);
+    g_signal_connect(pane->bar, "chdir",
+                     G_CALLBACK(on_pane_bar_chdir), pane);
+    g_ptr_array_add(page->panes, pane);
+    gtk_box_pack_start(page->views, pane->box, TRUE, TRUE, 0);
+    /* the bar of the primary pane is shown only in multi-pane mode */
+    gtk_widget_show_all(pane->box);
+    /* show_all() reveals both widgets, apply the configured mode again */
+    _set_pane_path_mode(pane, app_config->pathbar_mode_buttons);
+    _update_primary_bar_visibility(page);
+    return pane;
+}
+
+static void _pane_free(FmTabPagePane *pane)
+{
+    if (pane->sub)
+    {
+        gtk_widget_destroy(GTK_WIDGET(pane->sub));
+        pane->sub = NULL;
+    }
+    g_slice_free(FmTabPagePane, pane);
+}
+
 #if FM_CHECK_VERSION(1, 2, 0)
 static void on_home_path_changed(FmAppConfig *cfg, FmSidePane *sp)
 {
@@ -282,6 +480,22 @@ void fm_tab_page_destroy(GtkObject *object)
     g_debug("fm_tab_page_destroy, folder: %s",
             page->folder ? fm_path_get_basename(fm_folder_get_path(page->folder)) : "(none)");
     free_folder(page);
+    if (page->panes)
+    {
+        guint i;
+
+        for (i = page->panes->len; i > 1; i--)
+        {
+            FmTabPagePane *pane = g_ptr_array_index(page->panes, i - 1);
+
+            g_ptr_array_remove_index(page->panes, i - 1);
+            _pane_free(pane);
+        }
+        if (page->panes->len > 0)
+            g_slice_free(FmTabPagePane, g_ptr_array_index(page->panes, 0));
+        g_ptr_array_free(page->panes, TRUE);
+        page->panes = NULL;
+    }
     if(page->nav_history)
     {
         g_object_unref(page->nav_history);
@@ -508,7 +722,7 @@ static void  on_folder_view_columns_changed(FmFolderView *fv, FmTabPage *page)
 
 static gboolean on_folder_view_focus_in(GtkWidget *widget, GdkEvent *event, FmTabPage *page)
 {
-    g_signal_emit(page, signals[GOT_FOCUS], 0);
+    fm_tab_page_set_active_pane(page, 0);
     return FALSE;
 }
 
@@ -822,6 +1036,61 @@ static void on_open_folder_in_terminal(GtkAction* act, FmMainWin* win)
     }
 }
 
+static FmPath *popup_get_path(GtkAction *act, FmMainWin *win)
+{
+    GObject *act_grp;
+    FmFileInfoList *files;
+    FmFileInfo *fi;
+    FmPath *path = NULL;
+
+    g_object_get(act, "action-group", &act_grp, NULL);
+    files = g_object_get_qdata(act_grp, popup_qdata);
+    g_object_unref(act_grp);
+    if (files)
+    {
+        fi = fm_file_info_list_peek_head(files);
+        if (fi && fm_file_info_is_dir(fi))
+            path = fm_file_info_get_path(fi);
+    }
+    if (!path && win->current_page)
+        path = fm_tab_page_get_cwd(win->current_page);
+    return path;
+}
+
+static void on_open_in_other_pane(GtkAction* act, FmMainWin* win)
+{
+    FmTabPage *page = win->current_page;
+    guint n, active, target;
+    FmPath *path = popup_get_path(act, win);
+
+    if (!page || !path)
+        return;
+    n = fm_tab_page_get_n_panes(page);
+    active = fm_tab_page_get_active_pane(page);
+    if (n < 2)
+        target = 1;
+    else
+        target = (active + 1) % n;
+    fm_path_ref(path);
+    fm_main_win_open_in_pane(win, path, target);
+    fm_path_unref(path);
+}
+
+static void on_open_in_new_pane(GtkAction* act, FmMainWin* win)
+{
+    FmTabPage *page = win->current_page;
+    guint n, target;
+    FmPath *path = popup_get_path(act, win);
+
+    if (!page || !path)
+        return;
+    n = fm_tab_page_get_n_panes(page);
+    target = (n < FM_MAX_PANES) ? n : FM_MAX_PANES - 1;
+    fm_path_ref(path);
+    fm_main_win_open_in_pane(win, path, target);
+    fm_path_unref(path);
+}
+
 /* folder view popups */
 static void update_files_popup(FmFolderView* fv, GtkWindow* win,
                                GtkUIManager* ui, GtkActionGroup* act_grp,
@@ -950,8 +1219,10 @@ static void fm_tab_page_init(FmTabPage *page)
     fm_folder_view_set_selection_mode(folder_view, GTK_SELECTION_MULTIPLE);
     page->nav_history = fm_nav_history_new();
     page->views = GTK_BOX(gtk_hbox_new(TRUE, 4));
-    gtk_box_pack_start(page->views, GTK_WIDGET(folder_view), TRUE, TRUE, 0);
+    page->panes = g_ptr_array_new();
+    page->active_pane = 0;
     gtk_paned_add2(paned, GTK_WIDGET(page->views));
+    _pane_new_primary(page);
     focus_chain = g_list_prepend(focus_chain, page->views);
 
     /* We need this to change tab order to focus folder view before left pane. */
@@ -1145,13 +1416,18 @@ static void fm_tab_page_chdir_without_history(FmTabPage* page, FmPath* path)
 
     fm_side_pane_chdir(page->side_pane, path);
 
+    /* update the location bar of the primary pane */
+    _update_primary_location(page, path);
+    /* if this is the host page, its tab shows the active pane */
+    _update_host_label(page);
+
     /* tell the world that our current working directory is changed */
     g_signal_emit(page, signals[CHDIR], 0, path);
 }
 
 void fm_tab_page_chdir(FmTabPage* page, FmPath* path)
 {
-    FmPath* cwd = fm_tab_page_get_cwd(page);
+    FmPath* cwd = page->folder ? fm_folder_get_path(page->folder) : NULL;
     int scroll_pos;
     if(cwd && path && fm_path_equal(cwd, path))
         return;
@@ -1162,6 +1438,7 @@ void fm_tab_page_chdir(FmTabPage* page, FmPath* path)
 
 void fm_tab_page_set_show_hidden(FmTabPage* page, gboolean show_hidden)
 {
+    page->show_hidden = show_hidden;
     fm_folder_view_set_show_hidden(page->folder_view, show_hidden);
 #if FM_CHECK_VERSION(1, 2, 0)
     fm_side_pane_set_show_hidden(page->side_pane, show_hidden);
@@ -1176,7 +1453,9 @@ void fm_tab_page_set_show_hidden(FmTabPage* page, gboolean show_hidden)
 
 FmPath* fm_tab_page_get_cwd(FmTabPage* page)
 {
-    return page->folder ? fm_folder_get_path(page->folder) : NULL;
+    FmTabPage *active = fm_tab_page_get_active_subpage(page);
+
+    return active->folder ? fm_folder_get_path(active->folder) : NULL;
 }
 
 FmSidePane* fm_tab_page_get_side_pane(FmTabPage* page)
@@ -1186,21 +1465,33 @@ FmSidePane* fm_tab_page_get_side_pane(FmTabPage* page)
 
 FmFolderView* fm_tab_page_get_folder_view(FmTabPage* page)
 {
+    return fm_tab_page_get_active_subpage(page)->folder_view;
+}
+
+FmFolderView* fm_tab_page_get_primary_view(FmTabPage* page)
+{
     return page->folder_view;
 }
 
 FmFolder* fm_tab_page_get_folder(FmTabPage* page)
 {
-    return fm_folder_view_get_folder(page->folder_view);
+    return fm_folder_view_get_folder(fm_tab_page_get_active_subpage(page)->folder_view);
 }
 
 FmNavHistory* fm_tab_page_get_history(FmTabPage* page)
 {
-    return page->nav_history;
+    return fm_tab_page_get_active_subpage(page)->nav_history;
 }
 
 void fm_tab_page_forward(FmTabPage* page)
 {
+    FmTabPage *active = fm_tab_page_get_active_subpage(page);
+
+    if (active != page)
+    {
+        fm_tab_page_forward(active);
+        return;
+    }
 #if FM_CHECK_VERSION(1, 0, 2)
     guint index = fm_nav_history_get_cur_index(page->nav_history);
 
@@ -1227,6 +1518,13 @@ void fm_tab_page_forward(FmTabPage* page)
 
 void fm_tab_page_back(FmTabPage* page)
 {
+    FmTabPage *active = fm_tab_page_get_active_subpage(page);
+
+    if (active != page)
+    {
+        fm_tab_page_back(active);
+        return;
+    }
     if(fm_nav_history_can_back(page->nav_history))
     {
 #if !FM_CHECK_VERSION(1, 0, 2)
@@ -1249,7 +1547,15 @@ void fm_tab_page_back(FmTabPage* page)
 #if FM_CHECK_VERSION(1, 0, 2)
 void fm_tab_page_history(FmTabPage* page, guint history_item)
 {
-    GtkAdjustment* vadjustment = gtk_scrolled_window_get_vadjustment(GTK_SCROLLED_WINDOW(page->folder_view));
+    FmTabPage *active = fm_tab_page_get_active_subpage(page);
+    GtkAdjustment* vadjustment;
+
+    if (active != page)
+    {
+        fm_tab_page_history(active, history_item);
+        return;
+    }
+    vadjustment = gtk_scrolled_window_get_vadjustment(GTK_SCROLLED_WINDOW(page->folder_view));
     int scroll_pos = gtk_adjustment_get_value(vadjustment);
     FmPath *path = fm_nav_history_go_to(page->nav_history, history_item, scroll_pos);
     fm_tab_page_chdir_without_history(page, path);
@@ -1257,8 +1563,17 @@ void fm_tab_page_history(FmTabPage* page, guint history_item)
 #else
 void fm_tab_page_history(FmTabPage* page, GList* history_item_link)
 {
-    const FmNavHistoryItem* item = (FmNavHistoryItem*)history_item_link->data;
-    GtkAdjustment* vadjustment = gtk_scrolled_window_get_vadjustment(GTK_SCROLLED_WINDOW(page->folder_view));
+    FmTabPage *active = fm_tab_page_get_active_subpage(page);
+    const FmNavHistoryItem* item;
+    GtkAdjustment* vadjustment;
+
+    if (active != page)
+    {
+        fm_tab_page_history(active, history_item_link);
+        return;
+    }
+    item = (FmNavHistoryItem*)history_item_link->data;
+    vadjustment = gtk_scrolled_window_get_vadjustment(GTK_SCROLLED_WINDOW(page->folder_view));
     int scroll_pos = gtk_adjustment_get_value(vadjustment);
     fm_nav_history_jump(page->nav_history, history_item_link, scroll_pos);
     item = fm_nav_history_get_cur(page->nav_history);
@@ -1268,18 +1583,30 @@ void fm_tab_page_history(FmTabPage* page, GList* history_item_link)
 
 const char* fm_tab_page_get_title(FmTabPage* page)
 {
-    FmTabLabel* label = page->tab_label;
+    FmTabPage *active = fm_tab_page_get_active_subpage(page);
+    FmTabLabel* label = active->tab_label;
+
     return gtk_label_get_text(label->label);
 }
 
 const char* fm_tab_page_get_status_text(FmTabPage* page, FmStatusTextType type)
 {
-    return (type < FM_STATUS_TEXT_NUM) ? page->status_text[type] : NULL;
+    FmTabPage *active = fm_tab_page_get_active_subpage(page);
+
+    return (type < FM_STATUS_TEXT_NUM) ? active->status_text[type] : NULL;
 }
 
 void fm_tab_page_reload(FmTabPage* page)
 {
-    FmFolder* folder = fm_folder_view_get_folder(page->folder_view);
+    FmTabPage *active = fm_tab_page_get_active_subpage(page);
+    FmFolder* folder;
+
+    if (active != page)
+    {
+        fm_tab_page_reload(active);
+        return;
+    }
+    folder = fm_folder_view_get_folder(page->folder_view);
 
     if(folder)
     {
@@ -1298,108 +1625,206 @@ void fm_tab_page_reload(FmTabPage* page)
     }
 }
 
-/**
- * fm_tab_page_take_view_back
- * @page: the page instance
- *
- * If folder view that is bound to page isn't present in the container,
- * then moves it from the container where it is currently, to the @page.
- * This API should be called only in single-pane mode, for two-pane use
- * fm_tab_page_set_passive_view() instead.
- *
- * Returns: %TRUE if folder was not in @page and moved successfully.
- */
-gboolean fm_tab_page_take_view_back(FmTabPage *page)
+guint fm_tab_page_get_n_panes(FmTabPage *page)
 {
-    GList *panes, *l;
-    GtkWidget *folder_view = GTK_WIDGET(page->folder_view);
-
-    gtk_widget_set_state(folder_view, GTK_STATE_NORMAL);
-    panes = gtk_container_get_children(GTK_CONTAINER(page->views));
-    for (l = panes; l; l = l->next)
-        if ((GtkWidget*)l->data == folder_view)
-            break;
-    g_list_free(panes);
-    if (l)
-        return FALSE;
-    /* we already keep the reference, no need to do it again */
-    gtk_container_remove(GTK_CONTAINER(gtk_widget_get_parent(folder_view)),
-                         folder_view);
-    gtk_box_pack_start(page->views, folder_view, TRUE, TRUE, 0);
-    return TRUE;
+    return page->panes ? page->panes->len : 0;
 }
 
-/**
- * fm_tab_page_set_passive_view
- * @page: the page instance
- * @view: the folder view to add
- * @on_right: %TRUE if @view should be moved to right pane
- *
- * If folder @view isn't already in designed place then moves it from the
- * container where it is currently, to the @page. If @on_right is %TRUE
- * then attempts to move into right pane. If @on_right is %FALSE then
- * attempts to move into left pane.
- *
- * Also if folder view that is bound to @page isn't presented in the
- * container, then moves it from the container where it is currently, to
- * the @page on the side opposite to @view.
- *
- * See also: fm_tab_page_take_view_back().
- *
- * Returns: %TRUE if @view was moved successfully.
- */
-gboolean fm_tab_page_set_passive_view(FmTabPage *page, FmFolderView *view,
-                                      gboolean on_right)
+guint fm_tab_page_get_active_pane(FmTabPage *page)
 {
-    GtkWidget *pane;
+    return page->active_pane;
+}
 
-    g_return_val_if_fail(page != NULL && view != NULL, FALSE);
-    if (!fm_tab_page_take_view_back(page))
+FmTabPage *fm_tab_page_get_nth_subpage(FmTabPage *page, guint index)
+{
+    FmTabPagePane *pane;
+
+    if (!page->panes)
+        /* the page can be queried while being destroyed, be safe */
+        return index == 0 ? page : NULL;
+    if (index >= page->panes->len)
+        return NULL;
+    pane = g_ptr_array_index(page->panes, index);
+    return pane->sub ? pane->sub : page;
+}
+
+FmTabPage *fm_tab_page_get_active_subpage(FmTabPage *page)
+{
+    FmTabPage *sub = fm_tab_page_get_nth_subpage(page, page->active_pane);
+
+    return sub ? sub : page;
+}
+
+FmFolderView *fm_tab_page_get_nth_view(FmTabPage *page, guint index)
+{
+    FmTabPage *sub = fm_tab_page_get_nth_subpage(page, index);
+
+    return sub ? sub->folder_view : NULL;
+}
+
+FmPath *fm_tab_page_get_nth_cwd(FmTabPage *page, guint index)
+{
+    FmTabPage *sub = fm_tab_page_get_nth_subpage(page, index);
+
+    return (sub && sub->folder) ? fm_folder_get_path(sub->folder) : NULL;
+}
+
+void fm_tab_page_chdir_nth(FmTabPage *page, guint index, FmPath *path)
+{
+    FmTabPage *sub = fm_tab_page_get_nth_subpage(page, index);
+
+    if (sub)
+        fm_tab_page_chdir(sub, path);
+}
+
+void fm_tab_page_focus_nth(FmTabPage *page, guint index)
+{
+    FmTabPage *sub = fm_tab_page_get_nth_subpage(page, index);
+
+    if (!sub)
+        return;
+    fm_tab_page_set_active_pane(page, index);
+    if (sub->folder_view)
+        gtk_widget_grab_focus(GTK_WIDGET(sub->folder_view));
+}
+
+gint fm_tab_page_find_view(FmTabPage *page, FmFolderView *view)
+{
+    guint i;
+
+    if (!page->panes)
+        return -1;
+    for (i = 0; i < page->panes->len; i++)
     {
-#if !FM_CHECK_VERSION(1, 2, 0)
-        /* workaround on ExoIconView bug - it doesn't follow state change
-           so we re-add the folder view into our container to force change */
-        GtkWidget *fv = GTK_WIDGET(page->folder_view);
+        FmTabPagePane *pane = g_ptr_array_index(page->panes, i);
 
-        /* we already keep the reference, no need to do it again */
-        gtk_container_remove(GTK_CONTAINER(gtk_widget_get_parent(fv)), fv);
-        gtk_box_pack_start(page->views, fv, TRUE, TRUE, 0);
-#endif
+        if (pane_get_view(pane) == view)
+            return (gint)i;
     }
-    pane = GTK_WIDGET(view);
-    gtk_widget_set_state(pane, GTK_STATE_ACTIVE);
-    g_object_ref(view);
-    /* gtk_widget_reparent() is buggy so we do it manually */
-    if (gtk_widget_get_parent(pane))
-        gtk_container_remove(GTK_CONTAINER(gtk_widget_get_parent(pane)), pane);
-    gtk_box_pack_start(page->views, pane, TRUE, TRUE, 0);
-    g_object_unref(view);
-    if (!on_right)
-        gtk_box_reorder_child(page->views, pane, 0);
-    return TRUE;
+    return -1;
 }
 
-/**
- * fm_tab_page_get_passive_view
- * @page: the page instance
- *
- * Checks if the @page contains some folder view that was added via call
- * to fm_tab_page_set_passive_view() and was not moved out yet.
- *
- * Returns: (transfer none): the folder view or %NULL.
- */
-FmFolderView *fm_tab_page_get_passive_view(FmTabPage *page)
+static void _update_pane_states(FmTabPage *page)
 {
-    GList *panes, *l;
-    FmFolderView *view;
+    guint i;
 
-    panes = gtk_container_get_children(GTK_CONTAINER(page->views));
-    for (l = panes; l; l = l->next)
-        if ((FmFolderView*)l->data != page->folder_view)
-            break;
-    view = l ? l->data : NULL;
-    g_list_free(panes);
-    return view;
+    if (!page->panes)
+        return;
+    for (i = 0; i < page->panes->len; i++)
+    {
+        FmTabPagePane *pane = g_ptr_array_index(page->panes, i);
+
+        gtk_widget_set_state(GTK_WIDGET(pane_get_view(pane)),
+                             i == page->active_pane
+                                 ? GTK_STATE_ACTIVE : GTK_STATE_NORMAL);
+    }
+}
+
+void fm_tab_page_set_active_pane(FmTabPage *page, guint index)
+{
+    if (!page->panes || index >= page->panes->len)
+        return;
+    page->active_pane = index;
+    _update_pane_states(page);
+    _update_host_label(page);
+    /* always notify: focus can move into an already active pane and the
+       window still has to switch its notion of the active folder view */
+    g_signal_emit(page, signals[GOT_FOCUS], 0);
+}
+
+void fm_tab_page_set_n_panes(FmTabPage *page, guint n_panes)
+{
+    if (!page->panes)
+        return;
+    if (n_panes < 1)
+        n_panes = 1;
+    else if (n_panes > FM_MAX_PANES)
+        n_panes = FM_MAX_PANES;
+
+    while (page->panes->len < n_panes)
+    {
+        FmTabPagePane *pane = g_slice_new0(FmTabPagePane);
+        FmTabPagePane *sub_pane;
+        FmTabPage *sub;
+        FmPath *path = fm_tab_page_get_cwd(page);
+
+        if (!path)
+            path = fm_path_get_home();
+        sub = fm_tab_page_new(path);
+        sub->is_subpage = TRUE;
+        sub_pane = g_ptr_array_index(sub->panes, 0);
+        gtk_widget_set_visible(sub_pane->loc_box, TRUE);
+
+        pane->host = page;
+        pane->sub = sub;
+        pane->box = GTK_WIDGET(sub);
+        g_ptr_array_add(page->panes, pane);
+        g_signal_connect(sub, "chdir", G_CALLBACK(on_subpage_chdir), pane);
+        g_signal_connect(sub, "status", G_CALLBACK(on_subpage_status), pane);
+        g_signal_connect(sub, "got-focus",
+                         G_CALLBACK(on_subpage_got_focus), pane);
+        gtk_box_pack_start(page->views, pane->box, TRUE, TRUE, 0);
+        /* show all children first, then hide what is not needed */
+        gtk_widget_show_all(pane->box);
+        /* an additional pane has no side pane of its own */
+        gtk_widget_hide(GTK_WIDGET(sub->side_pane));
+        gtk_widget_set_visible(sub_pane->loc_box, TRUE);
+        _set_primary_path_mode(sub, app_config->pathbar_mode_buttons);
+    }
+
+    /* do not keep an active pane that is going to be destroyed; silently
+       move to the last pane that survives */
+    if (page->active_pane >= n_panes)
+        page->active_pane = n_panes - 1;
+
+    while (page->panes->len > n_panes)
+    {
+        FmTabPagePane *pane;
+
+        pane = g_ptr_array_index(page->panes, page->panes->len - 1);
+        g_ptr_array_remove_index(page->panes, page->panes->len - 1);
+        _pane_free(pane);
+    }
+
+    _update_primary_bar_visibility(page);
+    _update_pane_states(page);
+    _update_host_label(page);
+}
+
+void fm_tab_page_set_path_mode(FmTabPage *page, gboolean buttons)
+{
+    guint i;
+
+    if (!page->panes)
+        return;
+    for (i = 0; i < page->panes->len; i++)
+    {
+        FmTabPagePane *pane = g_ptr_array_index(page->panes, i);
+
+        if (pane->sub)
+            fm_tab_page_set_path_mode(pane->sub, buttons);
+        else
+        {
+            gtk_widget_set_visible(pane->entry, !buttons);
+            gtk_widget_set_visible(pane->bar, buttons);
+        }
+    }
+}
+
+gboolean fm_tab_page_focus_location(FmTabPage *page)
+{
+    FmTabPage *active = fm_tab_page_get_active_subpage(page);
+    FmTabPagePane *pane;
+
+    if (active != page)
+        return fm_tab_page_focus_location(active);
+    if (!page->panes || page->panes->len == 0)
+        return FALSE;
+    pane = g_ptr_array_index(page->panes, 0);
+    gtk_widget_show(pane->entry);
+    gtk_widget_hide(pane->bar);
+    gtk_widget_grab_focus(pane->entry);
+    return TRUE;
 }
 
 #if FM_CHECK_VERSION(1, 0, 2)

@@ -71,8 +71,6 @@ struct _FmMainWin
     gboolean fullscreen;
     gboolean maximized;
     gboolean in_update;
-    gboolean enable_passive_view;
-    gboolean passive_view_on_right;
 };
 
 struct _FmMainWinClass
@@ -89,6 +87,8 @@ FmMainWin* fm_main_win_add_win(FmMainWin* win, FmPath* path);
 
 FmMainWin* fm_main_win_get_last_active(void);
 void fm_main_win_open_in_last_active(FmPath* path);
+void fm_main_win_open_in_pane(FmMainWin* win, FmPath* path, guint pane);
+void fm_main_win_set_pane_count(FmMainWin* win, guint n_panes);
 
 G_END_DECLS
 

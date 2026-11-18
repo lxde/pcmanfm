@@ -34,6 +34,9 @@ G_BEGIN_DECLS
 
 #define app_config   ((FmAppConfig*)fm_config)
 
+/* maximum number of folder panes in one tab/window */
+#define FM_MAX_PANES 4
+
 #define FM_APP_CONFIG_TYPE              (fm_app_config_get_type())
 #define FM_APP_CONFIG(obj)              (G_TYPE_CHECK_INSTANCE_CAST((obj),\
             FM_APP_CONFIG_TYPE, FmAppConfig))
@@ -129,7 +132,7 @@ struct _FmAppConfig
 #endif
     gboolean maximized;
     gboolean pathbar_mode_buttons;
-    gboolean dual_pane;
+    int pane_count; /* number of panes in each window, 1 to 4 */
 
     FmSidePaneMode side_pane_mode;
 
