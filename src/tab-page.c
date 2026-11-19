@@ -127,6 +127,48 @@ struct _FmTabPagePane
 static void on_pane_close_clicked(GtkButton *btn, FmTabPagePane *pane);
 static void _update_pane_close_buttons(FmTabPage *page);
 
+/* Keep the paned handle and its separator minimalist (1px), and give the
+   per-pane location box some breathing room when more than one pane is shown.
+   This is done with a per-widget CSS provider so it works with any theme. */
+#if GTK_CHECK_VERSION(3, 0, 0)
+static GtkCssProvider *pane_css_provider = NULL;
+
+static void init_pane_css(void)
+{
+    if (pane_css_provider)
+        return;
+    pane_css_provider = gtk_css_provider_new();
+    gtk_css_provider_load_from_data(pane_css_provider,
+        "paned > separator {\n"
+        "    background-color: shade(@theme_bg_color, 0.82);\n"
+        "    min-width: 1px;\n"
+        "    border: none;\n"
+        "}\n"
+        ".pane-box {\n"
+        "    border-right: 1px solid shade(@theme_bg_color, 0.82);\n"
+        "    padding-right: 4px;\n"
+        "}\n"
+        ".pane-box:last-child {\n"
+        "    border-right: none;\n"
+        "    padding-right: 0;\n"
+        "}\n"
+        ".pane-locbox {\n"
+        "    padding: 2px 4px 2px 0;\n"
+        "}\n",
+        -1, NULL);
+}
+
+static void apply_pane_css(GtkWidget *widget)
+{
+    GtkStyleContext *ctx;
+
+    init_pane_css();
+    ctx = gtk_widget_get_style_context(widget);
+    gtk_style_context_add_provider(ctx, GTK_STYLE_PROVIDER(pane_css_provider),
+                                   GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
+}
+#endif
+
 G_DEFINE_TYPE(FmTabPage, fm_tab_page, GTK_TYPE_HPANED)
 
 static void fm_tab_page_class_init(FmTabPageClass *klass)
@@ -458,6 +500,12 @@ static FmTabPagePane *_pane_new_primary(FmTabPage *page)
     pane->sub = NULL;
     pane->box = gtk_vbox_new(FALSE, 0);
     pane->loc_box = gtk_hbox_new(FALSE, 0);
+#if GTK_CHECK_VERSION(3, 0, 0)
+    gtk_style_context_add_class(gtk_widget_get_style_context(pane->box),
+                                "pane-box");
+    gtk_style_context_add_class(gtk_widget_get_style_context(pane->loc_box),
+                                "pane-locbox");
+#endif
     pane->entry = GTK_WIDGET(fm_path_entry_new());
     pane->bar = GTK_WIDGET(fm_path_bar_new());
 #if GTK_CHECK_VERSION(3, 0, 0)
@@ -1285,6 +1333,9 @@ static void on_side_pane_destroy(GtkWidget *widget, FmTabPage *page)
 static void fm_tab_page_init(FmTabPage *page)
 {
     GtkPaned* paned = GTK_PANED(page);
+#if GTK_CHECK_VERSION(3, 0, 0)
+    apply_pane_css(GTK_WIDGET(page));
+#endif
     FmTabLabel* tab_label;
     FmFolderView* folder_view;
     GList* focus_chain = NULL;
@@ -1321,7 +1372,8 @@ static void fm_tab_page_init(FmTabPage *page)
     page->folder_view = g_object_ref_sink(folder_view);
     fm_folder_view_set_selection_mode(folder_view, GTK_SELECTION_MULTIPLE);
     page->nav_history = fm_nav_history_new();
-    page->views = GTK_BOX(gtk_hbox_new(TRUE, 4));
+    /* no built-in spacing: panes are separated by an explicit 1px divider */
+    page->views = GTK_BOX(gtk_hbox_new(TRUE, 0));
     page->panes = g_ptr_array_new();
     page->active_pane = 0;
     gtk_paned_add2(paned, GTK_WIDGET(page->views));
@@ -1995,6 +2047,14 @@ void fm_tab_page_set_n_panes(FmTabPage *page, guint n_panes)
         pane->host = page;
         pane->sub = sub;
         pane->box = GTK_WIDGET(sub);
+        /* the directory/status box belongs to the sub page's primary pane */
+        sub_pane = g_ptr_array_index(sub->panes, 0);
+#if GTK_CHECK_VERSION(3, 0, 0)
+        gtk_style_context_add_class(gtk_widget_get_style_context(pane->box),
+                                    "pane-box");
+        gtk_style_context_add_class(
+            gtk_widget_get_style_context(sub_pane->loc_box), "pane-locbox");
+#endif
         g_ptr_array_add(page->panes, pane);
         g_signal_connect(sub, "chdir", G_CALLBACK(on_subpage_chdir), pane);
         g_signal_connect(sub, "status", G_CALLBACK(on_subpage_status), pane);
