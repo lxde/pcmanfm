@@ -108,11 +108,21 @@ scrollbar {
     -GtkScrollbar-has-forward-stepper: false;
 }
 
-/* Keep the divider between the sidebar and file list discreet. */
+/* Keep pane dividers discreet, with a small square close control. */
 paned > separator {
     min-width: 1px;
     min-height: 1px;
     padding: 0;
     border: 0;
     background: alpha(#000000, 0.10);
+}
+
+paned > separator::before {
+    min-width: 10px;
+    min-height: 10px;
+    margin: 0;
+    padding: 0;
+    border: 1px solid alpha(#000000, 0.24);
+    border-radius: 2px;
+    background: #ffffff;
 }
