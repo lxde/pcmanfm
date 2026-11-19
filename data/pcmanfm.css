@@ -1,0 +1,109 @@
+/* PCManFM modern GTK3 interface refresh */
+
+window,
+dialog {
+    background-color: #f7f8fa;
+}
+
+menubar {
+    padding: 2px 4px;
+    border-bottom: 1px solid alpha(#000000, 0.10);
+}
+
+menubar menuitem {
+    padding: 5px 7px;
+    border-radius: 5px;
+}
+
+menubar menuitem:hover,
+menu menuitem:hover {
+    background-image: none;
+    background-color: alpha(#3584e4, 0.13);
+}
+
+toolbar {
+    padding: 5px 6px;
+    border-bottom: 1px solid alpha(#000000, 0.10);
+}
+
+toolbar toolitem,
+toolbar button,
+toolbar toolbutton {
+    margin: 1px;
+}
+
+toolbar button,
+button {
+    border-radius: 7px;
+}
+
+entry {
+    min-height: 28px;
+    padding: 3px 8px;
+    border-radius: 7px;
+}
+
+entry:focus {
+    box-shadow: 0 0 0 2px alpha(#3584e4, 0.24);
+}
+
+notebook {
+    border: 0;
+}
+
+notebook tab {
+    min-height: 28px;
+    margin: 2px 1px 0 1px;
+    padding: 5px 10px;
+    border-radius: 7px 7px 0 0;
+}
+
+notebook tab:checked {
+    background-image: none;
+    background-color: #ffffff;
+}
+
+statusbar {
+    min-height: 26px;
+    padding: 2px 6px;
+    border-top: 1px solid alpha(#000000, 0.10);
+}
+
+frame {
+    border-radius: 8px;
+}
+
+dialog {
+    border-radius: 10px;
+}
+
+dialog buttonbox {
+    padding-top: 8px;
+}
+
+checkbutton,
+radiobutton {
+    padding: 3px 2px;
+}
+
+combobox,
+spinbutton {
+    border-radius: 7px;
+}
+
+.treeview,
+treeview {
+    border: 0;
+}
+
+treeview:selected,
+.view:selected {
+    background-image: none;
+    background-color: alpha(#3584e4, 0.19);
+}
+
+paned > separator {
+    min-width: 1px;
+    min-height: 1px;
+    background: alpha(#000000, 0.10);
+}

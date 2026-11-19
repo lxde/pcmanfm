@@ -2,6 +2,9 @@ NULL=
 
 SUBDIRS=ui
 
+pcmanfmdatadir=$(datadir)/pcmanfm
+pcmanfmdata_DATA=pcmanfm.css
+
 man_MANS=pcmanfm.1
 
 desktopdir=$(datadir)/applications
@@ -21,4 +24,5 @@ EXTRA_DIST= \
 	$(desktop_in_files) \
 	$(desktop_DATA) \
 	$(defconf_DATA) \
+	pcmanfm.css \
 	$(NULL)
