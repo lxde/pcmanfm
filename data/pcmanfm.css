@@ -102,6 +102,12 @@ treeview:selected,
     background-color: alpha(#3584e4, 0.19);
 }
 
+/* Remove the up/down stepper buttons at the ends of scrollbars. */
+scrollbar {
+    -GtkScrollbar-has-backward-stepper: false;
+    -GtkScrollbar-has-forward-stepper: false;
+}
+
 /* Keep the divider between the sidebar and file list discreet. */
 paned > separator {
     min-width: 1px;
