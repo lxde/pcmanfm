@@ -45,6 +45,7 @@
 #include "pref.h"
 #include "pcmanfm.h"
 #include "single-inst.h"
+#include "dbus-service.h"
 
 static int signal_pipe[2] = {-1, -1};
 static gboolean daemon_mode = FALSE;
@@ -233,7 +234,8 @@ int main(int argc, char** argv)
     case SINGLE_INST_ERROR: /* error happened. */
         single_inst_finalize(&inst);
         return 1;
-    case SINGLE_INST_SERVER: ; /* FIXME */
+    case SINGLE_INST_SERVER: /* FIXME */
+        pcmanfm_dbus_service_init();
     }
 
     if(pipe(signal_pipe) == 0)
@@ -305,6 +307,7 @@ int main(int argc, char** argv)
     _tab_page_modules = NULL;
 #endif
 
+    pcmanfm_dbus_service_finalize();
     single_inst_finalize(&inst);
     fm_gtk_finalize();
 

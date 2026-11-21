@@ -18,6 +18,7 @@ pcmanfm_SOURCES = \
 	pref.c \
 	single-inst.c \
 	connect-server.c \
+	dbus-service.c \
 	$(NULL)
 
 EXTRA_DIST= \
@@ -32,6 +33,7 @@ EXTRA_DIST= \
 	pref.h \
 	single-inst.h \
 	connect-server.h \
+	dbus-service.h \
 	gseal-gtk-compat.h \
 	$(NULL)
 
@@ -40,6 +42,7 @@ include_HEADERS = pcmanfm-modules.h
 pcmanfm_CFLAGS = \
 	$(XLIB_CFLAGS) \
 	$(FM_CFLAGS) \
+	$(GIO_CFLAGS) \
 	$(G_CAST_CHECKS) \
 	-Wall \
 	-Werror-implicit-function-declaration \
@@ -48,6 +51,7 @@ pcmanfm_CFLAGS = \
 pcmanfm_LDADD = \
 	$(XLIB_LIBS) \
 	$(FM_LIBS) \
+	$(GIO_LIBS) \
 	$(NULL)
 
 # prepare modules directory
